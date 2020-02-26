@@ -15,19 +15,19 @@
       "ccdUrl": "http://localhost:4452"
     },
     "demo": {
-      "cosUrl": "http://fr-cos-demo.service.core-compute-demo.internal",
+      "cosUrl": "http://finrem-cos-demo.service.core-compute-demo.internal",
       "ccdUrl": "http://ccd-data-store-api-demo.service.core-compute-demo.internal"
     },
     "aat": {
-      "cosUrl": "http://fr-cos-aat.service.core-compute-aat.internal",
+      "cosUrl": "http://finrem-cos-aat.service.core-compute-aat.internal",
       "ccdUrl": "http://ccd-data-store-api-aat.service.core-compute-aat.internal"
     },
     "ithc": {
-      "cosUrl": "http://fr-cos-ithc.service.core-compute-ithc.internal",
+      "cosUrl": "http://finrem-cos-ithc.service.core-compute-ithc.internal",
       "ccdUrl": "http://ccd-data-store-api-ithc.service.core-compute-ithc.internal"
     },
     "prod": {
-      "cosUrl": "http://fr-cos-prod.service.core-compute-prod.internal",
+      "cosUrl": "http://finrem-cos-prod.service.core-compute-prod.internal",
       "ccdUrl": "http://ccd-data-store-api-prod.service.core-compute-prod.internal"
     }
   },
