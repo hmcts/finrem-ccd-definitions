@@ -111,3 +111,17 @@ When we want to release config changes to production:
 4) Upload all the generate Excel files to the release and add give it the same version number from (3)
 5) Raise a RDM ticket (e.g. RDM-5372) and add link to the release created in step (7)
 6) Ask tester to sign off the RDM if changes pass and assign the RDM ticket to someone in the RDM team
+
+
+
+## LEFT TO DO BEFORE GO LIVE
+
+- Update tests and get to work
+- Introduce contested journey config etc
+    - (Replace URLS etc too - "${CCD_DEF_COS_URL}" )
+    - Expand package.json to include contested tasks etc
+    - Reintroduce proper tasks from Divorce package.json - ie generate ITHC etc
+- Replace all references of Divorce to Fin Rem
+- Do CCD urls need changed in base configs
+- Push and replace master
+- Upload to AAT/DEMO and confirm everything still works etc
