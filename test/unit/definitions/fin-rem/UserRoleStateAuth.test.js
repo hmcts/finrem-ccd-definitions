@@ -35,7 +35,7 @@ function checkPerms(entry) {
 }
 
 describe('UserRole authorisations for CaseState', () => {
-  it('should allow minimum R access for all Case Sates per User Role', () => {
+  it('should allow minimum R access for all Case States per User Role', () => {
     // iterate each case type
     // get all state auths for case type
     // get all roles for case type

@@ -39,12 +39,13 @@ withPipeline("nodejs", product, component) {
   loadVaultSecrets(secrets)
 
   after('build') {
-    stage('Generate Divorce Case excel file') {
+    stage('Generate Financial Remedy Consented Case excel file') {
       yarnBuilder.yarn('setup')
       yarnBuilder.yarn('generate-excel-all')
     }
-    stage('Generate Bulk Case excel file') {
-      yarnBuilder.yarn('generate-bulk-excel-all')
+    stage('Generate Financial Remedy Contested Case excel file') {
+      yarnBuilder.yarn('setup')
+      yarnBuilder.yarn('generate-excel-all')
     }
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
   }

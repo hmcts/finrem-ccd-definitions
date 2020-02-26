@@ -50,31 +50,20 @@ describe('CaseTypeTab', () => {
   });
 
   const expected = {
-    History: 1,
-    petitionDetails: 2,
-    aosDetails: 3,
-    dnDetails: 4,
-    outcomeOfDnDetails: 5,
-    DecreeAbsolute: 6,
-    paymentDetailsCourtAdmin: 7,
-    paymentDetailsCourtAdminBeta: 8,
-    paymentDetailsCourtAdminLa: 9,
-    documents: 10,
-    confidentialPetitionerCourtAdmin: 11,
-    confidentialPetitionerCourtAdminBeta: 12,
-    confidentialPetitionerCourtAdminLa: 13,
-    confidentialRespondentCourtAdmin: 14,
-    confidentialRespondentCourtAdminBeta: 15,
-    confidentialRespondentCourtAdminLa: 16,
-    confidentialCoRespondentCourtAdmin: 17,
-    confidentialCoRespondentCourtAdminBeta: 18,
-    confidentialCoRespondentCourtAdminLa: 19,
-    notes: 20,
-    marriageCertificate: 21,
-    coRespondent: 22,
-    SolicitorCoRespondent: 23,
-    LinkedCase: 24,
-    General: 1
+    CaseHistoryViewer: 1,
+    applicantDetails: 2,
+    respondentDetails: 3,
+    divorceDetails: 4,
+    applicationDetails: 5,
+    authorisation: 6,
+    CaseDetails: 7,
+    'Approved Order': 8,
+    PaymentDetails: 9,
+    AdminNotes: 10,
+    CaseOrder: 11,
+    Orders: 12,
+    Notes: 13,
+    Judge: 14
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -88,31 +77,20 @@ describe('CaseTypeTab', () => {
 
   it('should contain a valid Tab IDs', () => {
     expect(tabIds).to.eql([
-      'History',
-      'General',
-      'petitionDetails',
-      'aosDetails',
-      'dnDetails',
-      'outcomeOfDnDetails',
-      'DecreeAbsolute',
-      'paymentDetailsCourtAdmin',
-      'paymentDetailsCourtAdminBeta',
-      'paymentDetailsCourtAdminLa',
-      'documents',
-      'confidentialPetitionerCourtAdmin',
-      'confidentialPetitionerCourtAdminBeta',
-      'confidentialPetitionerCourtAdminLa',
-      'confidentialRespondentCourtAdmin',
-      'confidentialRespondentCourtAdminBeta',
-      'confidentialRespondentCourtAdminLa',
-      'confidentialCoRespondentCourtAdmin',
-      'confidentialCoRespondentCourtAdminBeta',
-      'confidentialCoRespondentCourtAdminLa',
-      'notes',
-      'marriageCertificate',
-      'coRespondent',
-      'SolicitorCoRespondent',
-      'LinkedCase'
+      'CaseHistoryViewer',
+      'applicantDetails',
+      'respondentDetails',
+      'divorceDetails',
+      'applicationDetails',
+      'authorisation',
+      'CaseDetails',
+      'Approved Order',
+      'PaymentDetails',
+      'AdminNotes',
+      'CaseOrder',
+      'Orders',
+      'Notes',
+      'Judge'
     ]);
   });
   it('should contain a valid case field IDs', () => {

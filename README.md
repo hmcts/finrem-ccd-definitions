@@ -81,7 +81,7 @@ This will ensure that callbacks point back to the correct CCD URL.
 * CCD admin `https://admin-web-div-ccd-definitions-pr-<number>.service.core-compute-preview.internal` [Importer username/password can be found here](https://github.com/hmcts/ccd-docker-definition-importer#configuration)
 * CCD data-store-api `http://data-store-api-div-ccd-definitions-pr-<number>.service.core-compute-preview.internal`
 
-To run divorce test on CCD PR environment you need to replace `core_case_data.api.url` on COS and CMS to use your PR `data-store-api` URL 
+To run the tests on CCD PR environment you need to replace `core_case_data.api.url` on COS and CMS to use your PR `data-store-api` URL 
 
 
 ## ccd-definition-processor
@@ -121,7 +121,9 @@ When we want to release config changes to production:
     - (Replace URLS etc too - "${CCD_DEF_COS_URL}" )
     - Expand package.json to include contested tasks etc
     - Reintroduce proper tasks from Divorce package.json - ie generate ITHC etc
+- Remove private user details etc
 - Replace all references of Divorce to Fin Rem
 - Do CCD urls need changed in base configs
+- Replace to FR urls in /fr-ccd-definitions/ files
 - Push and replace master
 - Upload to AAT/DEMO and confirm everything still works etc
