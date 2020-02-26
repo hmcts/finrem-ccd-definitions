@@ -5,6 +5,8 @@
 String product = "div"
 String component = "ccd-definitions"
 
+def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
+
 def secrets = [
         's2s-${env}'      : [
                 secret('microservicekey-ccd-data', 'DATA_STORE_S2S_KEY'),
@@ -31,7 +33,6 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 withPipeline("nodejs", product, component) {
 
   if (env.CHANGE_TITLE && !env.CHANGE_TITLE.startsWith('[NO-CCD]')) {
-    enableDockerBuild()
     installCharts()
   }
 
@@ -39,18 +40,18 @@ withPipeline("nodejs", product, component) {
 
   after('build') {
     stage('Generate Divorce Case excel file') {
-      sh 'yarn setup'
-      sh 'yarn generate-excel-all'
+      yarnBuilder.yarn('setup')
+      yarnBuilder.yarn('generate-excel-all')
     }
     stage('Generate Bulk Case excel file') {
-      sh 'yarn generate-bulk-excel-all'
+      yarnBuilder.yarn('generate-bulk-excel-all')
     }
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
   }
   after('test') {
     // enable yarn audit and send message on master branch only
     try {
-      sh 'yarn audit'
+      yarnBuilder.yarn('audit')
     } catch (error) {
       onMaster {
         slackSend(channel: '#div-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
@@ -60,14 +61,12 @@ withPipeline("nodejs", product, component) {
 
   before('functionalTest:preview') {
     //regenerate files here as build stage can be skipped by pipeline
-    sh 'yarn setup'
-    sh 'yarn generate-excel-all'
-    sh 'yarn generate-bulk-excel-all'
+    yarnBuilder.yarn('setup')
+    yarnBuilder.yarn('generate-excel-all')
+    yarnBuilder.yarn('generate-bulk-excel-all')
   }
 
   after('functionalTest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
   }
-
-  enableSlackNotifications('#div-dev')
 }
