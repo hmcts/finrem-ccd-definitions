@@ -1,0 +1,645 @@
+[
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_DocumentType",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "ElementLabel": "Type of document",
+    "FieldTypeParameter": "FR_fl_OtherDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_DocumentType",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_PensionType",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "ElementLabel": "Type of document",
+    "FieldTypeParameter": "FR_fl_PensionDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_PensionType",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_D81Type",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "ElementLabel": "Type of document",
+    "FieldTypeParameter": "FR_D81_D81rDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_D81Type",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderLabel",
+    "FieldType": "Label",
+    "ElementLabel": "Order Outcome",
+    "HintText": "Order Outcome, see direction(s) below",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderText",
+    "FieldType": "FixedList",
+    "ElementLabel": "Order Direction",
+    "FieldTypeParameter": "FR_fl_OrderAccept",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderParties",
+    "FieldType": "FixedList",
+    "ElementLabel": "Action required by ",
+    "FieldTypeParameter": "FR_fl_Party",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderDate&Times",
+    "FieldType": "Date",
+    "ElementLabel": "Action by ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned, annotated Document",
+    "HintText": "See notes on scanned document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderTextArea",
+    "FieldType": "TextArea",
+    "ElementLabel": "Explanation",
+    "HintText": "Optionally, give explanation, as appropriate",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderLabel",
+    "FieldType": "Label",
+    "ElementLabel": "Order Outcome",
+    "HintText": "Order Outcome, see direction(s) below",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderText",
+    "FieldType": "FixedList",
+    "ElementLabel": "Order Direction",
+    "FieldTypeParameter": "FR_fl_OrderReject",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderParties",
+    "FieldType": "FixedList",
+    "ElementLabel": "Action required by ",
+    "FieldTypeParameter": "FR_fl_Party",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderDate&Times",
+    "FieldType": "Date",
+    "ElementLabel": "Action by ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned, annotated Document",
+    "HintText": "See notes on scanned document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderTextArea",
+    "FieldType": "TextArea",
+    "ElementLabel": "Explanation",
+    "HintText": "Optionally, give explanation, as appropriate",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "ElementLabel": "Type",
+    "FieldTypeParameter": "FR_fl_uploadConsentOrderDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentEmailContent",
+    "FieldType": "TextArea",
+    "ElementLabel": "Email content",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date received",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "ElementLabel": "Type",
+    "FieldTypeParameter": "FR_fl_uploadOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentEmailContent",
+    "FieldType": "TextArea",
+    "ElementLabel": "Email content",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date received",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "ElementLabel": "Type",
+    "FieldTypeParameter": "FR_fl_uploadDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentEmailContent",
+    "FieldType": "TextArea",
+    "ElementLabel": "Email content",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date received",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_order",
+    "FieldType": "TextArea",
+    "ElementLabel": "Please type the order in the box",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_documentUpload",
+    "FieldType": "Document",
+    "ElementLabel": "Upload additional documents",
+    "HintText": "Please upload any additional documents",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_judgeList",
+    "FieldType": "FixedList",
+    "ElementLabel": "Select Judge",
+    "HintText": "Please select the appropriate Judge",
+    "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_judgeName",
+    "FieldType": "TextArea",
+    "ElementLabel": "Name of Judge",
+    "HintText": "Surname of judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_dateOfOrder",
+    "FieldType": "Date",
+    "ElementLabel": "Date of order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_comments",
+    "FieldType": "TextArea",
+    "ElementLabel": "Additional comments",
+    "HintText": "Please add any additional comments for Court Admin (these comments will not be accessible by the Applicant’s solicitor)",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_spacing",
+    "FieldType": "Label",
+    "ElementLabel": "********************",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalAfterText",
+    "FieldType": "TextArea",
+    "ElementLabel": "AND AFTER",
+    "HintText": "The order will already contain the wording ‘AFTER reading the consent order signed by both parties’. Please complete the box below if you want to add an addition line, this will appear on the order as ‘AND AFTER [insert text here]’.",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusal",
+    "FieldType": "MultiSelectList",
+    "ElementLabel": "Reason for Refusal",
+    "HintText": "Please tick all boxes that apply",
+    "FieldTypeParameter": "FR_ms_OrderRefusal",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalOther",
+    "FieldType": "TextArea",
+    "ElementLabel": "Other (please specify)",
+    "HintText": "If Other was ticked please provide details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalDocs",
+    "FieldType": "Document",
+    "ElementLabel": "Upload additional documents",
+    "HintText": "Please upload any additional documents",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalJudge",
+    "FieldType": "FixedList",
+    "ElementLabel": "Select Judge",
+    "HintText": "Please select the appropriate Judge",
+    "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalJudgeName",
+    "FieldType": "TextArea",
+    "ElementLabel": "Name of Judge",
+    "HintText": "Surname of judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalDate",
+    "FieldType": "Date",
+    "ElementLabel": "Date of order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalAddComments",
+    "FieldType": "TextArea",
+    "ElementLabel": "Additional comments",
+    "HintText": "Please add any additional comments for Court Admin (these comments will not be accessible by the Applicant’s solicitor)",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalSpacing",
+    "FieldType": "Label",
+    "ElementLabel": "********************",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_RespondToOrderDocuments",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "ElementLabel": "Type",
+    "FieldTypeParameter": "FR_fl_respondToOrderDocuments",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_RespondToOrderDocuments",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_RespondToOrderDocuments",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date Of Response",
+    "HintText": "Todays Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_RespondToOrderDocuments",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_amendedConsentOrderCollection",
+    "ListElementCode": "amendedConsentOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Amended Consent Order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_amendedConsentOrderCollection",
+    "ListElementCode": "amendedConsentOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Amended Consent Order Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_caseNotes",
+    "ListElementCode": "caseNoteAuthor",
+    "FieldType": "Text",
+    "ElementLabel": "Author",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_caseNotes",
+    "ListElementCode": "caseNoteDate",
+    "FieldType": "Date",
+    "ElementLabel": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_caseNotes",
+    "ListElementCode": "caseNote",
+    "FieldType": "TextArea",
+    "ElementLabel": "Note",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "# Record Meta data",
+    "FieldType": "Label",
+    "ElementLabel": "Scanned Records",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "type",
+    "FieldType": "FixedList",
+    "ElementLabel": "Document Type",
+    "FieldTypeParameter": "ScannedDocumentType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "subtype",
+    "FieldType": "Text",
+    "ElementLabel": "Document Subtype",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "url",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned document url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "controlNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Document Control Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "deliveryDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Delivery Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralLetterDocument",
+    "ListElementCode": "generatedLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_approvedOrder",
+    "ListElementCode": "orderLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Approved Order Letter",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_approvedOrder",
+    "ListElementCode": "consentOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Consent Order Annexed Stamped  ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_approvedOrder",
+    "ListElementCode": "pensionDocuments",
+    "FieldType": "Collection",
+    "ElementLabel": "Pension Documents Stamped",
+    "FieldTypeParameter": "FR_PensionType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_PaymentDocument",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "ElementLabel": "Type of document",
+    "FieldTypeParameter": "FR_fl_paymentDocumentType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_PaymentDocument",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  }
+]

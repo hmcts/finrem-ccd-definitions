@@ -107,7 +107,7 @@ When we want to release config changes to production:
 
 1) Generate all excel files using `yarn generate-excel-all`
 2) Upload the excel file for the AAT env and QA the changes
-3) Create a new release in https://github.com/hmcts/div-ccd-definitions/releases/new
+3) Create a new release in https://github.com/hmcts/finrem-ccd-definitions/releases/new
 4) Upload all the generate Excel files to the release and add give it the same version number from (3)
 5) Raise a RDM ticket (e.g. RDM-5372) and add link to the release created in step (7)
 6) Ask tester to sign off the RDM if changes pass and assign the RDM ticket to someone in the RDM team
@@ -116,14 +116,12 @@ When we want to release config changes to production:
 
 ## LEFT TO DO BEFORE GO LIVE
 
-- Update tests and get to work
 - Introduce contested journey config etc
     - (Replace URLS etc too - "${CCD_DEF_COS_URL}" )
     - Expand package.json to include contested tasks etc
     - Reintroduce proper tasks from Divorce package.json - ie generate ITHC etc
 - Remove private user details etc
-- Replace all references of Divorce to Fin Rem
-- Do CCD urls need changed in base configs
+
 - Replace to FR urls in /fr-ccd-definitions/ files
 - Push and replace master
 - Upload to AAT/DEMO and confirm everything still works etc
