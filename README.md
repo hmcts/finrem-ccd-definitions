@@ -118,7 +118,6 @@ When we want to release config changes to production:
 
 - Introduce contested journey config etc
     - (Replace URLS etc too - "${CCD_DEF_COS_URL}" )
-    - Expand package.json to include contested tasks etc
     - Reintroduce proper tasks from Divorce package.json - ie generate ITHC etc
 - Remove private user details etc
 
