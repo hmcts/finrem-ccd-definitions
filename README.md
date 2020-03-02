@@ -122,4 +122,5 @@ When we want to release config changes to production:
 
 - Remove private user details etc
 - Push and replace master
+- Reintroduce /finrem-ccd-definitions/test/unit/definitions/consented/UserRoleStateAuth.test.js and confirm behaviour for both consented and contested 
 - Upload to AAT/DEMO and confirm everything still works etc
