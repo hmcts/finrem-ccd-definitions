@@ -41,7 +41,7 @@ withPipeline("nodejs", product, component) {
   after('build') {
     stage('Generate Financial Remedy Consented Case excel file') {
       yarnBuilder.yarn('setup')
-      yarnBuilder.yarn('ggenerate-excel-all-consented')
+      yarnBuilder.yarn('generate-excel-all-consented')
     }
     stage('Generate Financial Remedy Contested Case excel file') {
       yarnBuilder.yarn('setup')
