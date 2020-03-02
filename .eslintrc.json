@@ -57,13 +57,15 @@
             }
         ],
         "max-nested-callbacks": [
-            "error", 4
+            "error", 5
         ],
         "max-depth": [
             "error", 4
         ],
         "new-cap": "off",
         "no-sync": "off",
-        "max-lines": "off"
+        "max-lines": "off",
+        "operator-linebreak": "off",
+        "no-console": "off"
     }
 }

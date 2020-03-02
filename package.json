@@ -1,14 +1,13 @@
 {
-  "name": "div-ccd-definitions",
+  "name": "finrem-ccd-definitions",
   "version": "1.0.0",
   "description": "Utility to help creating CCD config definitions",
   "main": "index.js",
-  "repository": "git@github.com:hmcts/div-ccd-definitions.git",
-  "author": "Hosain <hosain.alahmad@hmcts.net>",
+  "repository": "git@github.com:hmcts/fr-ccd-definitions.git",
   "license": "MIT",
   "private": true,
   "engines": {
-    "node": ">=8.11.0 <9.0.0"
+    "node": ">=10.15.2"
   },
   "config": {
     "local": {
@@ -16,48 +15,52 @@
       "ccdUrl": "http://localhost:4452"
     },
     "demo": {
-      "cosUrl": "http://div-cos-demo.service.core-compute-demo.internal",
+      "cosUrl": "http://finrem-cos-demo.service.core-compute-demo.internal",
       "ccdUrl": "http://ccd-data-store-api-demo.service.core-compute-demo.internal"
     },
     "aat": {
-      "cosUrl": "http://div-cos-aat-staging.service.core-compute-aat.internal",
+      "cosUrl": "http://finrem-cos-aat.service.core-compute-aat.internal",
       "ccdUrl": "http://ccd-data-store-api-aat.service.core-compute-aat.internal"
     },
     "ithc": {
-      "cosUrl": "http://div-cos-ithc.service.core-compute-ithc.internal",
+      "cosUrl": "http://finrem-cos-ithc.service.core-compute-ithc.internal",
       "ccdUrl": "http://ccd-data-store-api-ithc.service.core-compute-ithc.internal"
     },
     "prod": {
-      "cosUrl": "http://div-cos-prod.service.core-compute-prod.internal",
+      "cosUrl": "http://finrem-cos-prod.service.core-compute-prod.internal",
       "ccdUrl": "http://ccd-data-store-api-prod.service.core-compute-prod.internal"
     }
   },
   "scripts": {
+    "reset-ccd-submodule": "git submodule update --init --recursive && git submodule foreach --recursive git pull origin master && yarn --cwd ccd-definition-processor install",
     "setup": "git submodule update --init --recursive && yarn --cwd ccd-definition-processor install",
     "lint": "eslint --fix .",
     "test": "NODE_PATH=. mocha test/unit/**/*.js",
+    "test:all": "yarn lint; yarn test; yarn test:a11y; yarn test:functional; yarn audit",
     "test:coverage": "echo test:coverage",
     "test:a11y": "echo test:a11y",
     "test:smoke": "echo smoke",
     "test:functional": "codeceptjs run --steps -c test/functional/codecept.conf.js",
     "start": "node index.js",
     "sonar-scan": "node_modules/sonar-scanner/bin/sonar-scanner",
-    "generate-json": "yarn --cwd ccd-definition-processor xlsx2json -D ../definitions/divorce/json -i ../definitions/divorce/xlsx/ccd-config-base.xlsx && pretty-quick --pattern 'definitions/**/json/**.json'",
-    "generate-excel-local": "DIV_ENV=local CCD_DEF_COS_URL=$npm_package_config_local_cosUrl CCD_DEF_CCD_URL=$npm_package_config_local_ccdUrl yarn run generate-excel",
-    "generate-excel-demo": "DIV_ENV=demo CCD_DEF_COS_URL=$npm_package_config_demo_cosUrl CCD_DEF_CCD_URL=$npm_package_config_demo_ccdUrl yarn run generate-excel",
-    "generate-excel-aat": "DIV_ENV=aat CCD_DEF_COS_URL=$npm_package_config_aat_cosUrl CCD_DEF_CCD_URL=$npm_package_config_aat_ccdUrl yarn run generate-excel",
-    "generate-excel-ithc": "DIV_ENV=ithc CCD_DEF_COS_URL=$npm_package_config_ithc_cosUrl CCD_DEF_CCD_URL=$npm_package_config_ithc_ccdUrl yarn run generate-excel",
-    "generate-excel-prod": "DIV_ENV=prod CCD_DEF_COS_URL=$npm_package_config_prod_cosUrl CCD_DEF_CCD_URL=$npm_package_config_prod_ccdUrl yarn run generate-excel",
-    "generate-excel": "yarn --cwd ccd-definition-processor json2xlsx -D ../definitions/divorce/json -o ../definitions/divorce/xlsx/ccd-config-${DIV_ENV:-base}.xlsx",
-    "generate-excel-all": "yarn generate-excel-local && yarn generate-excel-demo && yarn generate-excel-aat && yarn generate-excel-ithc && yarn generate-excel-prod",
-    "generate-bulk-json": "yarn --cwd ccd-definition-processor xlsx2json -D ../definitions/bulk-action/json -i ../definitions/bulk-action/xlsx/ccd-config-base.xlsx && pretty-quick --pattern 'definitions/**/json/**.json'",
-    "generate-bulk-excel-local": "DIV_ENV=local CCD_DEF_COS_URL=$npm_package_config_local_cosUrl CCD_DEF_CCD_URL=$npm_package_config_local_ccdUrl yarn run generate-bulk-excel",
-    "generate-bulk-excel-demo": "DIV_ENV=demo CCD_DEF_COS_URL=$npm_package_config_demo_cosUrl CCD_DEF_CCD_URL=$npm_package_config_demo_ccdUrl yarn run generate-bulk-excel",
-    "generate-bulk-excel-aat": "DIV_ENV=aat CCD_DEF_COS_URL=$npm_package_config_aat_cosUrl CCD_DEF_CCD_URL=$npm_package_config_aat_ccdUrl yarn run generate-bulk-excel",
-    "generate-bulk-excel-ithc": "DIV_ENV=ithc CCD_DEF_COS_URL=$npm_package_config_ithc_cosUrl CCD_DEF_CCD_URL=$npm_package_config_ithc_ccdUrl yarn run generate-bulk-excel",
-    "generate-bulk-excel-prod": "DIV_ENV=prod CCD_DEF_COS_URL=$npm_package_config_prod_cosUrl CCD_DEF_CCD_URL=$npm_package_config_prod_ccdUrl yarn run generate-bulk-excel",
-    "generate-bulk-excel": "yarn --cwd ccd-definition-processor json2xlsx -D ../definitions/bulk-action/json -o ../definitions/bulk-action/xlsx/ccd-div-bulk-action-config-${DIV_ENV:-base}.xlsx",
-    "generate-bulk-excel-all": "yarn generate-bulk-excel-local && yarn generate-bulk-excel-demo && yarn generate-bulk-excel-aat && yarn generate-bulk-excel-ithc && yarn generate-bulk-excel-prod"
+
+    "generate-json-consented": "yarn --cwd ccd-definition-processor xlsx2json -D ../definitions/consented/json -i ../definitions/consented/xlsx/ccd-config-base-consented.xlsx && pretty-quick --pattern 'definitions/**/json/**.json'",
+    "generate-excel-consented": "yarn --cwd ccd-definition-processor json2xlsx -D ../definitions/consented/json -o ../definitions/consented/xlsx/ccd-config-consented-${FR_ENV:-base}.xlsx",
+    "generate-excel-local-consented": "FR_ENV=local CCD_DEF_COS_URL=$npm_package_config_local_cosUrl CCD_DEF_CCD_URL=$npm_package_config_local_ccdUrl yarn run generate-excel-consented",
+    "generate-excel-demo-consented": "FR_ENV=demo CCD_DEF_COS_URL=$npm_package_config_demo_cosUrl CCD_DEF_CCD_URL=$npm_package_config_demo_ccdUrl yarn run generate-excel-consented",
+    "generate-excel-aat-consented": "FR_ENV=aat CCD_DEF_COS_URL=$npm_package_config_aat_cosUrl CCD_DEF_CCD_URL=$npm_package_config_aat_ccdUrl yarn run generate-excel-consented",
+    "generate-excel-ithc-consented": "FR_ENV=ithc CCD_DEF_COS_URL=$npm_package_config_ithc_cosUrl CCD_DEF_CCD_URL=$npm_package_config_ithc_ccdUrl yarn run generate-excel-consented",
+    "generate-excel-prod-consented": "FR_ENV=prod CCD_DEF_COS_URL=$npm_package_config_prod_cosUrl CCD_DEF_CCD_URL=$npm_package_config_prod_ccdUrl yarn run generate-excel-consented",
+    "generate-excel-all-consented": "yarn generate-excel-local-consented && yarn generate-excel-demo-consented && yarn generate-excel-aat-consented && yarn generate-excel-prod-consented",
+
+    "generate-json-contested": "yarn --cwd ccd-definition-processor xlsx2json -D ../definitions/contested/json -i ../definitions/contested/xlsx/ccd-config-base-contested.xlsx && pretty-quick --pattern 'definitions/**/json/**.json'",
+    "generate-excel-contested": "yarn --cwd ccd-definition-processor json2xlsx -D ../definitions/contested/json -o ../definitions/contested/xlsx/ccd-config-contested-${FR_ENV:-base}.xlsx",
+    "generate-excel-local-contested": "FR_ENV=local CCD_DEF_COS_URL=$npm_package_config_local_cosUrl CCD_DEF_CCD_URL=$npm_package_config_local_ccdUrl yarn run generate-excel-contested",
+    "generate-excel-demo-contested": "FR_ENV=demo CCD_DEF_COS_URL=$npm_package_config_demo_cosUrl CCD_DEF_CCD_URL=$npm_package_config_demo_ccdUrl yarn run generate-excel-contested",
+    "generate-excel-aat-contested": "FR_ENV=aat CCD_DEF_COS_URL=$npm_package_config_aat_cosUrl CCD_DEF_CCD_URL=$npm_package_config_aat_ccdUrl yarn run generate-excel-contested",
+    "generate-excel-ithc-contested": "FR_ENV=ithc CCD_DEF_COS_URL=$npm_package_config_ithc_cosUrl CCD_DEF_CCD_URL=$npm_package_config_ithc_ccdUrl yarn run generate-excel-contested",
+    "generate-excel-prod-contested": "FR_ENV=prod CCD_DEF_COS_URL=$npm_package_config_prod_cosUrl CCD_DEF_CCD_URL=$npm_package_config_prod_ccdUrl yarn run generate-excel-contested",
+    "generate-excel-all-contested": "yarn generate-excel-local-contested && yarn generate-excel-demo-contested && yarn generate-excel-aat-contested && yarn generate-excel-prod-contested"
   },
   "pre-commit": [
     "lint"
@@ -69,7 +72,7 @@
     "config": "^3.0.1",
     "eslint-plugin-codeceptjs": "^1.0.0",
     "express": "^4.16.4",
-    "puppeteer": "^1.18.1"
+    "puppeteer": "^1.20.0"
   },
   "devDependencies": {
     "@hmcts/eslint-config": "^1.4.0",
@@ -84,5 +87,9 @@
     "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0",
     "sonar-scanner": "^3.1.0"
+  },
+  "resolutions": {
+    "eslint-utils": "^1.4.1",
+    "https-proxy-agent": "2.2.3"
   }
 }

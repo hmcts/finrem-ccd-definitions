@@ -2,8 +2,10 @@
 
 @Library("Infrastructure")
 
-String product = "div"
+String product = "finrem"
 String component = "ccd-definitions"
+
+def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
 def secrets = [
         's2s-${env}'      : [
@@ -31,43 +33,41 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 withPipeline("nodejs", product, component) {
 
   if (env.CHANGE_TITLE && !env.CHANGE_TITLE.startsWith('[NO-CCD]')) {
-    enableDockerBuild()
     installCharts()
   }
 
   loadVaultSecrets(secrets)
 
   after('build') {
-    stage('Generate Divorce Case excel file') {
-      sh 'yarn setup'
-      sh 'yarn generate-excel-all'
+    stage('Generate Financial Remedy Consented Case excel file') {
+      yarnBuilder.yarn('setup')
+      yarnBuilder.yarn('generate-excel-all-consented')
     }
-    stage('Generate Bulk Case excel file') {
-      sh 'yarn generate-bulk-excel-all'
+    stage('Generate Financial Remedy Contested Case excel file') {
+      yarnBuilder.yarn('setup')
+      yarnBuilder.yarn('generate-excel-all-contested')
     }
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
   }
   after('test') {
     // enable yarn audit and send message on master branch only
     try {
-      sh 'yarn audit'
+      yarnBuilder.yarn('audit')
     } catch (error) {
       onMaster {
-        slackSend(channel: '#div-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
+        slackSend(channel: '#finrem-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
       }
     }
   }
 
   before('functionalTest:preview') {
     //regenerate files here as build stage can be skipped by pipeline
-    sh 'yarn setup'
-    sh 'yarn generate-excel-all'
-    sh 'yarn generate-bulk-excel-all'
+    yarnBuilder.yarn('setup')
+    yarnBuilder.yarn('generate-excel-all-consented')
+    yarnBuilder.yarn('generate-excel-all-contested')
   }
 
   after('functionalTest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
   }
-
-  enableSlackNotifications('#div-dev')
 }
