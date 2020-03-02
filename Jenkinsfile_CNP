@@ -41,11 +41,11 @@ withPipeline("nodejs", product, component) {
   after('build') {
     stage('Generate Financial Remedy Consented Case excel file') {
       yarnBuilder.yarn('setup')
-      yarnBuilder.yarn('generate-excel-all')
+      yarnBuilder.yarn('ggenerate-excel-all-consented')
     }
     stage('Generate Financial Remedy Contested Case excel file') {
       yarnBuilder.yarn('setup')
-      yarnBuilder.yarn('generate-excel-all')
+      yarnBuilder.yarn('generate-excel-all-contested')
     }
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
   }
@@ -63,8 +63,8 @@ withPipeline("nodejs", product, component) {
   before('functionalTest:preview') {
     //regenerate files here as build stage can be skipped by pipeline
     yarnBuilder.yarn('setup')
-    yarnBuilder.yarn('generate-excel-all')
-    yarnBuilder.yarn('generate-bulk-excel-all')
+    yarnBuilder.yarn('generate-excel-all-consented')
+    yarnBuilder.yarn('generate-excel-all-contested')
   }
 
   after('functionalTest:preview') {

@@ -14,11 +14,15 @@ Run `yarn install && yarn setup` to install the dependencies for both this proje
 
 ## Convert JSON to Excel
 
+Depending on if you want the generated Excel to be for the Consented or Contested Journeys - add the appropriate journey to the end of the command.
+
 ### For all environments
 
-`yarn generate-excel-all` to generate excel configs for all environments (Demo, AAT and Prod) 
+`yarn generate-excel-all-consented` to generate excel configs for all environments (Demo, AAT and Prod) for consented journey
 
-The generated excel files will be in `defintions/consented/xlsx`
+`yarn generate-excel-all-contested` to generate excel configs for all environments (Demo, AAT and Prod) for contested journey
+
+The generated excel files will be in `defintions/consented/xlsx` or `defintions/contested/xlsx` respectively. 
 
 ### For a specific environment
 
@@ -34,19 +38,19 @@ For example
 
 For example
 
-`yarn generate-bulk-excel-aat`
+`yarn generate-excel-aat-consented`
 
-### For all environments bulk-action's config
+or 
 
-`yarn generate-bulk-excel-all` 
+`yarn generate-excel-aat-contested`
 
 ## Convert Excel to JSON
 
-If you prefer to make the changes directly on the excel file, and then convert back to JSON:
+If you prefer to make the changes directly on the Excel file, and then convert back to JSON:
 
-1) Generate a fresh **base** Excel file using the `yarn generate-excel`. The generated excel file will be in `defintions/consented/xlsx/ccd-config-base.xlsx` and will contain placeholder URLs.
+1) Generate a fresh **base** Excel file for the appropriate journey using the `yarn generate-excel-{consented/contested}`. The generated excel file will be in `defintions/{CHOSEN_JOURNEY}/xlsx/ccd-config-base.xlsx` and will contain placeholder URLs.
 2) Make the changes to `ccd-config-base.xlsx` but ensure you don't have any environment-specific URLs (use placeholders instead).
-3) Once you're satisfied with your changes in the Excel file, convert back to JSON using `yarn generate-json`
+3) Once you're satisfied with your changes in the Excel file, convert back to JSON using `yarn generate-json-{consented/contested}`
 4) Review the JSON file changes to ensure all your changes are correct
 
 ## Accessing CCD on preview/per PR
@@ -105,7 +109,7 @@ It's also important to note that once you update to a new reference (i.e you com
 
 When we want to release config changes to production:
 
-1) Generate all excel files using `yarn generate-excel-all`
+1) Generate all excel files using `yarn generate-excel-all-{consented/contested}`
 2) Upload the excel file for the AAT env and QA the changes
 3) Create a new release in https://github.com/hmcts/finrem-ccd-definitions/releases/new
 4) Upload all the generate Excel files to the release and add give it the same version number from (3)
@@ -116,11 +120,6 @@ When we want to release config changes to production:
 
 ## LEFT TO DO BEFORE GO LIVE
 
-- Introduce contested journey config etc
-    - (Replace URLS etc too - "${CCD_DEF_COS_URL}" )
-    - Reintroduce proper tasks from Divorce package.json - ie generate ITHC etc
 - Remove private user details etc
-
-- Replace to FR urls in /fr-ccd-definitions/ files
 - Push and replace master
 - Upload to AAT/DEMO and confirm everything still works etc
