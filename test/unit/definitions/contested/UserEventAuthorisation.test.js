@@ -6,7 +6,6 @@ const AuthorisationCaseField = Object.assign(require('definitions/contested/json
 const AuthorisationCaseState = Object.assign(require('definitions/contested/json/AuthorisationCaseState'), []);
 const CaseEvent = Object.assign(require('definitions/contested/json/CaseEvent'), []);
 const CaseEventToFields = Object.assign(require('definitions/contested/json/CaseEventToFields'), []);
-const CaseRoles = Object.assign(require('definitions/contested/json/CaseRoles'), []);
 
 let AuthCaseEventsActive = [];
 
@@ -79,11 +78,6 @@ describe('Events authorisation validation', () => {
   before(() => {
     AuthCaseEventsActive = AuthorisationCaseEvent.filter(entry => {
       return entry.CRUD === 'CRU' || entry.CRUD === 'RU';
-    });
-
-    // we need to exclude the Case Roles events as its not used for Field Authorisation (is User Role only)
-    AuthCaseEventsActive = differenceWith(AuthCaseEventsActive, CaseRoles, (eventActive, caseRole) => {
-      return eventActive.UserRole === caseRole.ID;
     });
   });
 
