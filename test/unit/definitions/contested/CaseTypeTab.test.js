@@ -50,20 +50,21 @@ describe('CaseTypeTab', () => {
   });
 
   const expected = {
-    CaseHistoryViewer: 1,
-    applicantDetails: 2,
-    respondentDetails: 3,
-    divorceDetails: 4,
-    applicationDetails: 5,
-    authorisation: 6,
-    CaseDetails: 7,
-    'Approved Order': 8,
-    PaymentDetails: 9,
-    AdminNotes: 10,
-    CaseOrder: 11,
-    Orders: 12,
-    Notes: 13,
-    Judge: 14
+    historyTab: 1,
+    applicantDetailsTab: 2,
+    divorceDetailsTab: 3,
+    respondentDetailsTab: 4,
+    natureOfApplicationTab: 5,
+    authorisationTab: 6,
+    applicationDocumentsTab: 7,
+    paymentDetailsTab: 8,
+    notesTab: 9,
+    gatekeepingTab: 11,
+    AdminNotes: 12,
+    judiciaryOutcomeTab: 13,
+    Orders: 14,
+    schedulingTab: 15,
+    hiddenTab: 16
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -77,20 +78,21 @@ describe('CaseTypeTab', () => {
 
   it('should contain a valid Tab IDs', () => {
     expect(tabIds).to.eql([
-      'CaseHistoryViewer',
-      'applicantDetails',
-      'respondentDetails',
-      'divorceDetails',
-      'applicationDetails',
-      'authorisation',
-      'CaseDetails',
-      'Approved Order',
-      'PaymentDetails',
+      'historyTab',
+      'applicantDetailsTab',
+      'divorceDetailsTab',
+      'respondentDetailsTab',
+      'natureOfApplicationTab',
+      'authorisationTab',
+      'applicationDocumentsTab',
+      'paymentDetailsTab',
+      'notesTab',
+      'gatekeepingTab',
       'AdminNotes',
-      'CaseOrder',
+      'judiciaryOutcomeTab',
       'Orders',
-      'Notes',
-      'Judge'
+      'schedulingTab',
+      'hiddenTab'
     ]);
   });
   it('should contain a valid case field IDs', () => {

@@ -536,7 +536,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "propertyAdjutmentOrderDetail",
-    "TabFieldDisplayOrder": 8,
+    "TabFieldDisplayOrder": 6,
     "FieldShowCondition": "additionalPropertyOrderDecision=\"Yes\""
   },
   {
@@ -546,7 +546,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "orderForChildrenLabel",
-    "TabFieldDisplayOrder": 9,
+    "TabFieldDisplayOrder": 7,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
@@ -556,7 +556,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "tabPaymentForChildrenLabel",
-    "TabFieldDisplayOrder": 10,
+    "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
@@ -566,7 +566,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "paymentForChildrenDecision",
-    "TabFieldDisplayOrder": 11,
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
@@ -576,7 +576,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "tabBenefitForChildrenLabel",
-    "TabFieldDisplayOrder": 12,
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
@@ -586,7 +586,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "benefitForChildrenDecision",
-    "TabFieldDisplayOrder": 13,
+    "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
@@ -596,7 +596,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "tabBenefitPaymentChecklistLabel",
-    "TabFieldDisplayOrder": 14,
+    "TabFieldDisplayOrder": 12,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
@@ -606,7 +606,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "benefitPaymentChecklist",
-    "TabFieldDisplayOrder": 15,
+    "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
@@ -616,7 +616,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "issueDate",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1234,7 +1234,7 @@
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
     "TabDisplayOrder": 12,
-    "CaseFieldID": "judgeNotApprovedReasons ",
+    "CaseFieldID": "judgeNotApprovedReasons",
     "TabFieldDisplayOrder": 4
   },
   {
@@ -1287,7 +1287,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "judiciaryOutcomeTab",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "generalOrders",
     "TabFieldDisplayOrder": 6
   },
@@ -1296,7 +1296,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "judiciaryOutcomeTab",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "applicationNotApproved",
     "TabFieldDisplayOrder": 7
   },
@@ -1388,7 +1388,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "timeEstimateLabel",
-    "TabFieldDisplayOrder": 7
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1397,7 +1397,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "timeEstimate",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1406,7 +1406,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingDateLabel",
-    "TabFieldDisplayOrder": 9
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1415,7 +1415,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingDate",
-    "TabFieldDisplayOrder": 10
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1424,7 +1424,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingTimeLabel",
-    "TabFieldDisplayOrder": 11
+    "TabFieldDisplayOrder": 9
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1433,7 +1433,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingTime",
-    "TabFieldDisplayOrder": 12
+    "TabFieldDisplayOrder": 10
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1442,7 +1442,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "chooseCourtLabelSL",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 11
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1451,7 +1451,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "regionListSL",
-    "TabFieldDisplayOrder": 14
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1460,7 +1460,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "allocatedCourtListSL",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1469,7 +1469,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "nottinghamCourtListSL",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1478,7 +1478,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "cfcCourtListSL",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1487,7 +1487,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "londonFRCListSL",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1496,7 +1496,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWestFRCListSL",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1505,7 +1505,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "northEastFRCListSL",
-    "TabFieldDisplayOrder": 20
+    "TabFieldDisplayOrder": 18
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1514,7 +1514,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "southEastFRCListSL",
-    "TabFieldDisplayOrder": 21
+    "TabFieldDisplayOrder": 19
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1523,7 +1523,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "walesFRCListSL",
-    "TabFieldDisplayOrder": 22
+    "TabFieldDisplayOrder": 20
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1532,7 +1532,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "birminghamCourtListSL",
-    "TabFieldDisplayOrder": 23
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1541,7 +1541,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "liverpoolCourtListSL",
-    "TabFieldDisplayOrder": 24
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1550,7 +1550,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "manchesterCourtListSL",
-    "TabFieldDisplayOrder": 25
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1559,7 +1559,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "cleavelandCourtListSL",
-    "TabFieldDisplayOrder": 26
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1568,7 +1568,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "nwyorkshireCourtListSL",
-    "TabFieldDisplayOrder": 27
+    "TabFieldDisplayOrder": 25
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1577,7 +1577,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "humberCourtListSL",
-    "TabFieldDisplayOrder": 28
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1586,7 +1586,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "kentSurreyCourtListSL",
-    "TabFieldDisplayOrder": 29
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1595,7 +1595,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "newportCourtListSL",
-    "TabFieldDisplayOrder": 30
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1604,7 +1604,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "swanseaCourtListSL",
-    "TabFieldDisplayOrder": 31
+    "TabFieldDisplayOrder": 29
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1613,7 +1613,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 32
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1622,7 +1622,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 33
+    "TabFieldDisplayOrder": 31
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1631,7 +1631,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 34
+    "TabFieldDisplayOrder": 32
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1640,7 +1640,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 35
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1649,7 +1649,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 36
+    "TabFieldDisplayOrder": 34
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1658,7 +1658,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "draftDirectionDetailsCollectionRO",
-    "TabFieldDisplayOrder": 37
+    "TabFieldDisplayOrder": 35
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1667,7 +1667,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "directionDetailsCollection",
-    "TabFieldDisplayOrder": 38
+    "TabFieldDisplayOrder": 36
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1676,7 +1676,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "finalOrderCollection",
-    "TabFieldDisplayOrder": 39
+    "TabFieldDisplayOrder": 37
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1694,7 +1694,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "applicantFMName",
-    "TabFieldDisplayOrder": 3,
+    "TabFieldDisplayOrder": 2,
     "TabShowCondition": "hiddenTabValue=\"Hidden\""
   },
   {
@@ -1704,7 +1704,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "applicantLName",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1713,7 +1713,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "applicantSolicitorName",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1722,7 +1722,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "applicantSolicitorFirm",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1731,7 +1731,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "solicitorReference",
-    "TabFieldDisplayOrder": 7
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1740,7 +1740,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "respondentFMName",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1749,7 +1749,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "respondentLName",
-    "TabFieldDisplayOrder": 9
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1758,7 +1758,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "rSolicitorFirm",
-    "TabFieldDisplayOrder": 10
+    "TabFieldDisplayOrder": 9
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1767,7 +1767,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "respondentRepresented",
-    "TabFieldDisplayOrder": 11
+    "TabFieldDisplayOrder": 10
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1776,7 +1776,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "additionalPropertyOrderDecision",
-    "TabFieldDisplayOrder": 12
+    "TabFieldDisplayOrder": 11
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1785,7 +1785,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "dateOfMarriage",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1794,7 +1794,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "dateOfSepration",
-    "TabFieldDisplayOrder": 14
+    "TabFieldDisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1803,7 +1803,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "nameOfCourtDivorceCentre",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1812,7 +1812,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "divorceDecreeAbsoluteDate",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1821,7 +1821,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "divorceDecreeNisiDate",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1830,7 +1830,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "divorcePetitionIssuedDate",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1839,7 +1839,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "addToComplexityListOfCourts",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 18
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1848,7 +1848,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "otherReasonForComplexity",
-    "TabFieldDisplayOrder": 21
+    "TabFieldDisplayOrder": 19
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1857,7 +1857,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "otherReasonForComplexityText",
-    "TabFieldDisplayOrder": 22
+    "TabFieldDisplayOrder": 20
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1866,7 +1866,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "netValueOfHome",
-    "TabFieldDisplayOrder": 23
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1875,7 +1875,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "potentialAllegationChecklist",
-    "TabFieldDisplayOrder": 24
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1884,7 +1884,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "detailPotentialAllegation",
-    "TabFieldDisplayOrder": 25
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1893,7 +1893,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "estimatedAssetsChecklist",
-    "TabFieldDisplayOrder": 26
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1902,7 +1902,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "allocatedCourtList",
-    "TabFieldDisplayOrder": 28
+    "TabFieldDisplayOrder": 25
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1911,7 +1911,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "allocatedCourtListGA",
-    "TabFieldDisplayOrder": 29
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1920,7 +1920,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "fastTrackDecision",
-    "TabFieldDisplayOrder": 32
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1929,7 +1929,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "fastTrackDecisionReason",
-    "TabFieldDisplayOrder": 33
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1938,7 +1938,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specialAssistanceRequiredLabel",
-    "TabFieldDisplayOrder": 34
+    "TabFieldDisplayOrder": 29
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1947,7 +1947,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specialAssistanceRequired",
-    "TabFieldDisplayOrder": 35
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1956,7 +1956,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specificArrangementsRequiredLabel",
-    "TabFieldDisplayOrder": 36
+    "TabFieldDisplayOrder": 31
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1965,6 +1965,6 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specificArrangementsRequired",
-    "TabFieldDisplayOrder": 37
+    "TabFieldDisplayOrder": 32
   }
 ]
