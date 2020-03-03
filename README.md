@@ -1,6 +1,8 @@
-# div-ccd-definitions
+# finrem-ccd-definitions
 Financial Remedy configuration definitions for CCD
  
+ ## Note: For now until we remove the Judge's usernames and email addresses this Github Repo must remain Private
+
 ## Setup
 
 ### Pre-requirements 
@@ -59,9 +61,9 @@ A full CCD instance is created PR via Helm charts which can be accessed using th
 
 If you do not require this, add `[NO-CCD]` at the start of the PR title in GitHub.
 
-* Visit `https://gateway-div-ccd-definitions-pr-<number>.service.core-compute-preview.internal` and whitelist accept the SSL certificate
-* Access the PR on `https://case-management-web-div-ccd-definitions-pr-<number>.service.core-compute-preview.internal`
-* Login with an authorised AAT user [listed here](https://github.com/hmcts/div-ccd-definitions/blob/master/definitions/divorce/json/UserProfile.json)
+* Visit `https://gateway-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` and whitelist accept the SSL certificate
+* Access the PR on `https://case-management-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal`
+* Login with an authorised AAT user [listed here](https://github.com/hmcts/finrem-ccd-definitions/blob/master/definitions/{consented/contested}/json/UserProfile.json)
 
 ### Accessing documents on a CCD PR
 
@@ -74,16 +76,15 @@ To access generated documents on a CCD PR, you have to use the AAT env gateway:
 
 To be able to create a case as a solicitor in a CCD PR, you have to create:
 
-* a CMS PR pointing to the CCD instance (e.g https://github.com/hmcts/div-case-maintenance-service/pull/190)
-* a COS PR pointing to the above CMS PR (e.g https://github.com/hmcts/div-case-orchestration-service/pull/534)
+* a COS PR pointing to the above CMS PR (e.g https://github.com/hmcts/finrem-case-orchestration-service/pull/534)
 * temperately change config.aat.cosUrl in package.json to point to the COS PR
 
 This will ensure that callbacks point back to the correct CCD URL.
 
 ## Applications useful urls
 
-* CCD admin `https://admin-web-div-ccd-definitions-pr-<number>.service.core-compute-preview.internal` [Importer username/password can be found here](https://github.com/hmcts/ccd-docker-definition-importer#configuration)
-* CCD data-store-api `http://data-store-api-div-ccd-definitions-pr-<number>.service.core-compute-preview.internal`
+* CCD admin `https://admin-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` [Importer username/password can be found here](https://github.com/hmcts/ccd-docker-definition-importer#configuration)
+* CCD data-store-api `http://data-store-api-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal`
 
 To run the tests on CCD PR environment you need to replace `core_case_data.api.url` on COS and CMS to use your PR `data-store-api` URL 
 
@@ -119,7 +120,6 @@ When we want to release config changes to production:
 
 ## LEFT TO DO BEFORE GO LIVE
 
-- Delete private info from UserProfiles tab & make repo public
 - Unskip two skipped tests (UserRoleStateAuth.test.js) and confirm behaviour for both consented and contested with Harry/Jakub
 - Upload to AAT/DEMO and confirm everything still works etc
 - Extend to also handle Exception Record config?
