@@ -10,7 +10,7 @@
     "PageDisplayOrder": 1,
     "PageFieldDisplayOrder": 1,
     "ShowSummaryChangeOption": "N",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/consented/set-defaults",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/consented/set-defaults",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -1008,7 +1008,7 @@
     "PageDisplayOrder": 9,
     "PageFieldDisplayOrder": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/consentOrder/file-upload-check",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/field/consentOrder/file-upload-check",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -1098,7 +1098,7 @@
     "PageFieldDisplayOrder": 1,
     "PageShowCondition": "natureOfApplication2 CONTAINS \"Pension Sharing Order\"  OR natureOfApplication2 CONTAINS \"Pension Attachment Order\"  OR natureOfApplication2 CONTAINS \"Pension Compensation Sharing Order\"  OR natureOfApplication2 CONTAINS \"Pension Compensation Attachment Order\"  ",
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/pensionCollection/file-upload-check",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/field/pensionCollection/file-upload-check",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -1160,7 +1160,7 @@
     "PageDisplayOrder": 1,
     "PageFieldDisplayOrder": 1,
     "ShowSummaryChangeOption": "N",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/consented/set-defaults",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/consented/set-defaults",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -2158,7 +2158,7 @@
     "PageDisplayOrder": 9,
     "PageFieldDisplayOrder": 2,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/consentOrder/file-upload-check",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/field/consentOrder/file-upload-check",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -2235,7 +2235,7 @@
     "PageDisplayOrder": 11,
     "PageFieldDisplayOrder": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/pensionCollection/file-upload-check",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/field/pensionCollection/file-upload-check",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -2381,7 +2381,7 @@
     "PageDisplayOrder": 2,
     "PageFieldDisplayOrder": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/fee-lookup",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/fee-lookup",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -2421,7 +2421,7 @@
     "PageFieldDisplayOrder": 2,
     "PageShowCondition": "helpWithFeesQuestion=\"No\"",
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/pba-validate",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/pba-validate",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -2639,7 +2639,7 @@
     "DisplayContext": "COMPLEX",
     "PageDisplayOrder": 1,
     "PageFieldDisplayOrder": 1,
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/preview-consent-order-not-approved",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/documents/preview-consent-order-not-approved",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -3447,7 +3447,7 @@
     "PageDisplayOrder": 1,
     "PageFieldDisplayOrder": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/respondToOrderDocuments/file-upload-check",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/field/respondToOrderDocuments/file-upload-check",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -3569,7 +3569,7 @@
     "PageDisplayOrder": 1,
     "PageFieldDisplayOrder": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/amendedConsentOrderCollection/file-upload-check",
+    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/field/amendedConsentOrderCollection/file-upload-check",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {

@@ -50,7 +50,7 @@ or
 
 If you prefer to make the changes directly on the Excel file, and then convert back to JSON:
 
-1) Generate a fresh **base** Excel file for the appropriate journey using the `yarn generate-excel-{consented/contested}`. The generated excel file will be in `defintions/{CHOSEN_JOURNEY}/xlsx/ccd-config-base.xlsx` and will contain placeholder URLs.
+1) Generate a fresh **base** Excel file for the appropriate journey using the `yarn generate-excel-{consented/contested}`. The generated excel file will be in `defintions/{CHOSEN_JOURNEY}/xlsx/ccd-config-base-{JOURNEY}.xlsx` and will contain placeholder URLs.
 2) Make the changes to `ccd-config-base.xlsx` but ensure you don't have any environment-specific URLs (use placeholders instead).
 3) Once you're satisfied with your changes in the Excel file, convert back to JSON using `yarn generate-json-{consented/contested}`
 4) Review the JSON file changes to ensure all your changes are correct
@@ -64,22 +64,6 @@ If you do not require this, add `[NO-CCD]` at the start of the PR title in GitHu
 * Visit `https://gateway-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` and whitelist accept the SSL certificate
 * Access the PR on `https://case-management-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal`
 * Login with an authorised AAT user [listed here](https://github.com/hmcts/finrem-ccd-definitions/blob/master/definitions/{consented/contested}/json/UserProfile.json)
-
-### Accessing documents on a CCD PR
-
-To access generated documents on a CCD PR, you have to use the AAT env gateway:
-
-* Ensure you're logged in with a user that can access the documents (e.g caseworker or solicitor depending on the case) on https://www-ccd.aat.platform.hmcts.net/
-* Copy the document URL from the Documents tab in CCD, and replace the hostname with `https://gateway-ccd.aat.platform.hmcts.net`
-
-### Creating cases 
-
-To be able to create a case as a solicitor in a CCD PR, you have to create:
-
-* a COS PR pointing to the above CMS PR (e.g https://github.com/hmcts/finrem-case-orchestration-service/pull/534)
-* temperately change config.aat.cosUrl in package.json to point to the COS PR
-
-This will ensure that callbacks point back to the correct CCD URL.
 
 ## Applications useful urls
 
@@ -120,6 +104,7 @@ When we want to release config changes to production:
 
 ## LEFT TO DO BEFORE GO LIVE
 
+- Include update to ReadMe about difference to production uploading and link to confluence places where they're stored
 - Unskip two skipped tests (UserRoleStateAuth.test.js) and confirm behaviour for both consented and contested with Harry/Jakub
 - Upload to AAT/DEMO and confirm everything still works etc
 - Extend to also handle Exception Record config?
