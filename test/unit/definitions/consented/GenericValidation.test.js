@@ -18,7 +18,6 @@ const Config = {
   ComplexTypes: Object.assign(require('definitions/consented/json/ComplexTypes'), []),
   FixedLists: Object.assign(require('definitions/consented/json/FixedLists'), []),
   Jurisdiction: Object.assign(require('definitions/consented/json/Jurisdiction'), []),
-  SearchAlias: Object.assign(require('definitions/consented/json/SearchAlias'), []),
   SearchInputFields: Object.assign(require('definitions/consented/json/SearchInputFields'), []),
   SearchResultFields: Object.assign(require('definitions/consented/json/SearchResultFields'), []),
   State: Object.assign(require('definitions/consented/json/State'), []),
