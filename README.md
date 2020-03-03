@@ -122,3 +122,4 @@ When we want to release config changes to production:
 - Delete private info from UserProfiles tab & make repo public
 - Unskip two skipped tests (UserRoleStateAuth.test.js) and confirm behaviour for both consented and contested with Harry/Jakub
 - Upload to AAT/DEMO and confirm everything still works etc
+- Extend to also handle Exception Record config?
