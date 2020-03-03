@@ -117,10 +117,7 @@ When we want to release config changes to production:
 6) Ask tester to sign off the RDM if changes pass and assign the RDM ticket to someone in the RDM team
 
 
-
 ## LEFT TO DO BEFORE GO LIVE
 
-- Remove private user details etc
-- Push and replace master
-- Reintroduce /finrem-ccd-definitions/test/unit/definitions/consented/UserRoleStateAuth.test.js and confirm behaviour for both consented and contested 
+- Unskip two skipped tests (UserRoleStateAuth.test.js) and confirm behaviour for both consented and contested with Harry/Jakub
 - Upload to AAT/DEMO and confirm everything still works etc
