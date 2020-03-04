@@ -63,8 +63,7 @@
     "generate-excel-all-contested": "yarn generate-excel-local-contested && yarn generate-excel-demo-contested && yarn generate-excel-aat-contested && yarn generate-excel-prod-contested"
   },
   "pre-commit": [
-    "lint",
-    "test"
+    "lint"
   ],
   "dependencies": {
     "@hmcts/nodejs-healthcheck": "1.5.1",

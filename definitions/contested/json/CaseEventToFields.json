@@ -10,7 +10,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/contested/set-defaults",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-defaults",
     "CallBackURLMidEvent_1": "3,4,5"
   },
   {
@@ -1176,7 +1176,7 @@
     "PageDisplayOrder": 15,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/miam-attend-exempt-check",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check",
     "CallBackURLMidEvent_1": "3,4,5"
   },
   {
@@ -1671,7 +1671,7 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/fee-lookup",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/fee-lookup",
     "CallBackURLMidEvent_1": "3,4,5"
   },
   {
@@ -1711,7 +1711,7 @@
     "PageColumnNumber": 1,
     "PageShowCondition": "helpWithFeesQuestion=\"No\"",
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/pba-validate",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/pba-validate",
     "CallBackURLMidEvent_1": "3,4,5"
   },
   {
@@ -3907,7 +3907,7 @@
     "PageDisplayOrder": 15,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "http://finrem-cos-aat.service.core-compute-aat.internal/case-orchestration/miam-attend-exempt-check",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check",
     "CallBackURLMidEvent_1": "3,4,5"
   },
   {

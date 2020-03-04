@@ -4,8 +4,8 @@
     "ID": "FR_DocumentType",
     "ListElementCode": "typeOfDocument",
     "FieldType": "FixedList",
-    "ElementLabel": "Type of document",
     "FieldTypeParameter": "FR_fl_OtherDocument",
+    "ElementLabel": "Type of document",
     "SecurityClassification": "Public"
   },
   {
@@ -21,8 +21,8 @@
     "ID": "FR_PensionType",
     "ListElementCode": "typeOfDocument",
     "FieldType": "FixedList",
-    "ElementLabel": "Type of document",
     "FieldTypeParameter": "FR_fl_PensionDocument",
+    "ElementLabel": "Type of document",
     "SecurityClassification": "Public"
   },
   {
@@ -38,8 +38,8 @@
     "ID": "FR_D81Type",
     "ListElementCode": "typeOfDocument",
     "FieldType": "FixedList",
-    "ElementLabel": "Type of document",
     "FieldTypeParameter": "FR_D81_D81rDocument",
+    "ElementLabel": "Type of document",
     "SecurityClassification": "Public"
   },
   {
@@ -64,8 +64,8 @@
     "ID": "FR_OrderAcceptType",
     "ListElementCode": "orderText",
     "FieldType": "FixedList",
-    "ElementLabel": "Order Direction",
     "FieldTypeParameter": "FR_fl_OrderAccept",
+    "ElementLabel": "Order Direction",
     "SecurityClassification": "Public"
   },
   {
@@ -73,8 +73,8 @@
     "ID": "FR_OrderAcceptType",
     "ListElementCode": "orderParties",
     "FieldType": "FixedList",
-    "ElementLabel": "Action required by ",
     "FieldTypeParameter": "FR_fl_Party",
+    "ElementLabel": "Action required by ",
     "SecurityClassification": "Public"
   },
   {
@@ -117,8 +117,8 @@
     "ID": "FR_OrderRejectType",
     "ListElementCode": "orderText",
     "FieldType": "FixedList",
-    "ElementLabel": "Order Direction",
     "FieldTypeParameter": "FR_fl_OrderReject",
+    "ElementLabel": "Order Direction",
     "SecurityClassification": "Public"
   },
   {
@@ -126,8 +126,8 @@
     "ID": "FR_OrderRejectType",
     "ListElementCode": "orderParties",
     "FieldType": "FixedList",
-    "ElementLabel": "Action required by ",
     "FieldTypeParameter": "FR_fl_Party",
+    "ElementLabel": "Action required by ",
     "SecurityClassification": "Public"
   },
   {
@@ -161,8 +161,8 @@
     "ID": "FR_UploadConsentOrder",
     "ListElementCode": "DocumentType",
     "FieldType": "FixedList",
-    "ElementLabel": "Type",
     "FieldTypeParameter": "FR_fl_uploadConsentOrderDocument",
+    "ElementLabel": "Type",
     "SecurityClassification": "Public"
   },
   {
@@ -210,8 +210,8 @@
     "ID": "FR_UploadOrder",
     "ListElementCode": "DocumentType",
     "FieldType": "FixedList",
-    "ElementLabel": "Type",
     "FieldTypeParameter": "FR_fl_uploadOrder",
+    "ElementLabel": "Type",
     "SecurityClassification": "Public"
   },
   {
@@ -259,8 +259,8 @@
     "ID": "FR_UploadDocument",
     "ListElementCode": "DocumentType",
     "FieldType": "FixedList",
-    "ElementLabel": "Type",
     "FieldTypeParameter": "FR_fl_uploadDocument",
+    "ElementLabel": "Type",
     "SecurityClassification": "Public"
   },
   {
@@ -325,9 +325,9 @@
     "ID": "FR_generalOrder",
     "ListElementCode": "generalOrder_judgeList",
     "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
     "ElementLabel": "Select Judge",
     "HintText": "Please select the appropriate Judge",
-    "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
     "SecurityClassification": "Public"
   },
   {
@@ -378,9 +378,9 @@
     "ID": "FR_orderRefusal",
     "ListElementCode": "orderRefusal",
     "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_OrderRefusal",
     "ElementLabel": "Reason for Refusal",
     "HintText": "Please tick all boxes that apply",
-    "FieldTypeParameter": "FR_ms_OrderRefusal",
     "SecurityClassification": "Public"
   },
   {
@@ -406,9 +406,9 @@
     "ID": "FR_orderRefusal",
     "ListElementCode": "orderRefusalJudge",
     "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
     "ElementLabel": "Select Judge",
     "HintText": "Please select the appropriate Judge",
-    "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
     "SecurityClassification": "Public"
   },
   {
@@ -450,8 +450,8 @@
     "ID": "FR_RespondToOrderDocuments",
     "ListElementCode": "DocumentType",
     "FieldType": "FixedList",
-    "ElementLabel": "Type",
     "FieldTypeParameter": "FR_fl_respondToOrderDocuments",
+    "ElementLabel": "Type",
     "SecurityClassification": "Public"
   },
   {
@@ -532,8 +532,8 @@
     "ID": "ScannedDocument",
     "ListElementCode": "type",
     "FieldType": "FixedList",
-    "ElementLabel": "Document Type",
     "FieldTypeParameter": "ScannedDocumentType",
+    "ElementLabel": "Document Type",
     "SecurityClassification": "Public"
   },
   {
@@ -621,8 +621,8 @@
     "ID": "FR_approvedOrder",
     "ListElementCode": "pensionDocuments",
     "FieldType": "Collection",
-    "ElementLabel": "Pension Documents Stamped",
     "FieldTypeParameter": "FR_PensionType",
+    "ElementLabel": "Pension Documents Stamped",
     "SecurityClassification": "Public"
   },
   {
@@ -630,8 +630,8 @@
     "ID": "FR_PaymentDocument",
     "ListElementCode": "typeOfDocument",
     "FieldType": "FixedList",
-    "ElementLabel": "Type of document",
     "FieldTypeParameter": "FR_fl_paymentDocumentType",
+    "ElementLabel": "Type of document",
     "SecurityClassification": "Public"
   },
   {

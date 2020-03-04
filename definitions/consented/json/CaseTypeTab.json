@@ -57,8 +57,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "midlandsFRCList",
-    "FieldShowCondition": "regionList=\"midlands\"",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 5,
+    "FieldShowCondition": "regionList=\"midlands\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -68,8 +68,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "londonFRCList",
-    "FieldShowCondition": "regionList=\"london\"",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 6,
+    "FieldShowCondition": "regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -79,8 +79,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "northWestFRCList",
-    "FieldShowCondition": "regionList=\"northwest\"",
-    "TabFieldDisplayOrder": 7
+    "TabFieldDisplayOrder": 7,
+    "FieldShowCondition": "regionList=\"northwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -90,8 +90,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "northEastFRCList",
-    "FieldShowCondition": "regionList=\"northeast\"",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 8,
+    "FieldShowCondition": "regionList=\"northeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -101,8 +101,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "southEastFRCList",
-    "FieldShowCondition": "regionList=\"southeast\"",
-    "TabFieldDisplayOrder": 9
+    "TabFieldDisplayOrder": 9,
+    "FieldShowCondition": "regionList=\"southeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -112,8 +112,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "southWestFRCList",
-    "FieldShowCondition": "regionList=\"southwest\"",
-    "TabFieldDisplayOrder": 10
+    "TabFieldDisplayOrder": 10,
+    "FieldShowCondition": "regionList=\"southwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -123,8 +123,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "walesFRCList",
-    "FieldShowCondition": "regionList=\"wales\"",
-    "TabFieldDisplayOrder": 11
+    "TabFieldDisplayOrder": 11,
+    "FieldShowCondition": "regionList=\"wales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -134,8 +134,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "nottinghamCourtList",
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\"",
-    "TabFieldDisplayOrder": 12
+    "TabFieldDisplayOrder": 12,
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -145,8 +145,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "birminghamCourtList",
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\"",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -156,8 +156,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "londonCourtList",
-    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"london\"",
-    "TabFieldDisplayOrder": 14
+    "TabFieldDisplayOrder": 14,
+    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -167,8 +167,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "liverpoolCourtList",
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\"",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -178,8 +178,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "manchesterCourtList",
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\"",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -189,8 +189,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "otherNWCourtList",
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"other\"",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 17,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"other\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -200,8 +200,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "clevelandCourtList",
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleveland\"",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 18,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleveland\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -211,8 +211,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "nwyorkshireCourtList",
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\"",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 19,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -222,8 +222,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "humberCourtList",
-    "FieldShowCondition": "regionList=\"northeast\"  AND southEastFRCList=\"hsyorkshire\"",
-    "TabFieldDisplayOrder": 20
+    "TabFieldDisplayOrder": 20,
+    "FieldShowCondition": "regionList=\"northeast\"  AND southEastFRCList=\"hsyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -233,8 +233,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "kentSurreyCourtList",
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kent\"",
-    "TabFieldDisplayOrder": 21
+    "TabFieldDisplayOrder": 21,
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kent\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -244,8 +244,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "otherSECourtList",
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"other\"",
-    "TabFieldDisplayOrder": 22
+    "TabFieldDisplayOrder": 22,
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"other\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -255,8 +255,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "otherSWCourtList",
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"other\"",
-    "TabFieldDisplayOrder": 23
+    "TabFieldDisplayOrder": 23,
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"other\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -266,8 +266,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "newportCourtList",
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\"",
-    "TabFieldDisplayOrder": 24
+    "TabFieldDisplayOrder": 24,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -277,8 +277,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "swanseaCourtList",
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\"",
-    "TabFieldDisplayOrder": 25
+    "TabFieldDisplayOrder": 25,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -288,8 +288,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "welshOtherCourtList",
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"other\"",
-    "TabFieldDisplayOrder": 26
+    "TabFieldDisplayOrder": 26,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"other\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -319,8 +319,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantContactLabel",
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "TabFieldDisplayOrder": 29
+    "TabFieldDisplayOrder": 29,
+    "FieldShowCondition": "applicantRepresented=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -330,8 +330,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantAddress",
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "TabFieldDisplayOrder": 30
+    "TabFieldDisplayOrder": 30,
+    "FieldShowCondition": "applicantRepresented=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -341,8 +341,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantPhone",
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "TabFieldDisplayOrder": 31
+    "TabFieldDisplayOrder": 31,
+    "FieldShowCondition": "applicantRepresented=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -352,8 +352,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantEmail",
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "TabFieldDisplayOrder": 32
+    "TabFieldDisplayOrder": 32,
+    "FieldShowCondition": "applicantRepresented=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -363,8 +363,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorAbout_Para-1",
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "TabFieldDisplayOrder": 33
+    "TabFieldDisplayOrder": 33,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -374,8 +374,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorName",
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "TabFieldDisplayOrder": 34
+    "TabFieldDisplayOrder": 34,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -385,8 +385,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorFirm",
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "TabFieldDisplayOrder": 35
+    "TabFieldDisplayOrder": 35,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -396,8 +396,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorReference",
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "TabFieldDisplayOrder": 36
+    "TabFieldDisplayOrder": 36,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -407,8 +407,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorAddress",
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "TabFieldDisplayOrder": 37
+    "TabFieldDisplayOrder": 37,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -418,8 +418,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorPhone",
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "TabFieldDisplayOrder": 38
+    "TabFieldDisplayOrder": 38,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -429,8 +429,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorEmail",
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "TabFieldDisplayOrder": 39
+    "TabFieldDisplayOrder": 39,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -440,8 +440,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorDXnumber",
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "TabFieldDisplayOrder": 40
+    "TabFieldDisplayOrder": 40,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -451,8 +451,8 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorAgreeToReceiveEmails",
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "TabFieldDisplayOrder": 41
+    "TabFieldDisplayOrder": 41,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -502,8 +502,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rSolicitorLabel",
-    "FieldShowCondition": "appRespondentRep=\"Yes\"",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 5,
+    "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -513,8 +513,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rSolicitorName",
-    "FieldShowCondition": "appRespondentRep=\"Yes\"",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 6,
+    "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -524,8 +524,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rSolicitorFirm",
-    "FieldShowCondition": "appRespondentRep=\"Yes\"",
-    "TabFieldDisplayOrder": 7
+    "TabFieldDisplayOrder": 7,
+    "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -535,8 +535,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rSolicitorReference",
-    "FieldShowCondition": "appRespondentRep=\"Yes\"",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 8,
+    "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -546,8 +546,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rSolicitorAddress",
-    "FieldShowCondition": "appRespondentRep=\"Yes\"",
-    "TabFieldDisplayOrder": 9
+    "TabFieldDisplayOrder": 9,
+    "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -557,8 +557,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rSolicitorPhone",
-    "FieldShowCondition": "appRespondentRep=\"Yes\"",
-    "TabFieldDisplayOrder": 10
+    "TabFieldDisplayOrder": 10,
+    "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -568,8 +568,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rSolicitorEmail",
-    "FieldShowCondition": "appRespondentRep=\"Yes\"",
-    "TabFieldDisplayOrder": 11
+    "TabFieldDisplayOrder": 11,
+    "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -579,8 +579,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rSolicitorDXnumber",
-    "FieldShowCondition": "appRespondentRep=\"Yes\"",
-    "TabFieldDisplayOrder": 12
+    "TabFieldDisplayOrder": 12,
+    "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -590,8 +590,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rRespondentLabel2",
-    "FieldShowCondition": "appRespondentRep=\"No\"",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "appRespondentRep=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -601,8 +601,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "respondentAddress",
-    "FieldShowCondition": "appRespondentRep=\"No\"",
-    "TabFieldDisplayOrder": 14
+    "TabFieldDisplayOrder": 14,
+    "FieldShowCondition": "appRespondentRep=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -612,8 +612,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "respondentPhone",
-    "FieldShowCondition": "appRespondentRep=\"No\"",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "FieldShowCondition": "appRespondentRep=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -623,8 +623,8 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "respondentEmail",
-    "FieldShowCondition": "appRespondentRep=\"No\"",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "FieldShowCondition": "appRespondentRep=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -764,8 +764,8 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "natureOfApplication5",
-    "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\"",
-    "TabFieldDisplayOrder": 7
+    "TabFieldDisplayOrder": 7,
+    "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -775,8 +775,8 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "natureOfApplication6",
-    "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\"",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 8,
+    "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -786,8 +786,8 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "natureOfApplication7",
-    "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\"",
-    "TabFieldDisplayOrder": 9
+    "TabFieldDisplayOrder": 9,
+    "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -797,8 +797,8 @@
     "TabLabel": "Authorisation",
     "TabDisplayOrder": 6,
     "CaseFieldID": "authorisationLa",
-    "TabShowCondition": "amountToPay=\"5000\"",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "amountToPay=\"5000\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1088,8 +1088,8 @@
     "TabLabel": "Payment details",
     "TabDisplayOrder": 9,
     "CaseFieldID": "payment",
-    "TabShowCondition": "amountToPay=\"5000\"",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "amountToPay=\"5000\""
   },
   {
     "LiveFrom": "01/01/2017",
