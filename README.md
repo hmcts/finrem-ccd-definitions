@@ -50,8 +50,8 @@ or
 
 If you prefer to make the changes directly on the Excel file, and then convert back to JSON:
 
-1) Generate a fresh **base** Excel file for the appropriate journey using the `yarn generate-excel-{consented/contested}`. The generated excel file will be in `defintions/{CHOSEN_JOURNEY}/xlsx/ccd-config-base-{JOURNEY}.xlsx` and will contain placeholder URLs.
-2) Make the changes to `ccd-config-base.xlsx` but ensure you don't have any environment-specific URLs (use placeholders instead).
+1) Generate a fresh **base** Excel file from the existing JSON for the appropriate journey using the `yarn generate-excel-{consented/contested}`. The generated excel file will be in `defintions/{CHOSEN_JOURNEY}/xlsx/ccd-config-base-{JOURNEY}.xlsx` and will contain placeholder URLs.
+2) Make the changes to `ccd-config-base.xlsx` but ensure you don't have any environment-specific URLs (leave the existing placeholders instead).
 3) Once you're satisfied with your changes in the Excel file, convert back to JSON using `yarn generate-json-{consented/contested}`
 4) Review the JSON file changes to ensure all your changes are correct
 
