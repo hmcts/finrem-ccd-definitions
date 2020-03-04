@@ -28,17 +28,9 @@ The generated excel files will be in `defintions/consented/xlsx` or `defintions/
 
 ### For a specific environment
 
-`yarn generate-excel-(local\demo\aat\prod)` 
+`yarn generate-bulk-excel-(local/demo/aat/ithc/prod)` 
 
-For example
-
-`yarn generate-excel-aat`
-
-### For a bulk-action config
-
-`yarn generate-bulk-excel-(local\demo\aat\prod)` 
-
-For example
+For example:
 
 `yarn generate-excel-aat-consented`
 
@@ -79,7 +71,7 @@ This repo makes use of https://github.com/hmcts/ccd-definition-processor to gene
 
 Ideally this should be a published NPM package, so that we can include it in package.json but at the moment we include it as a git submodule
 
-A submodule is simply a pointer to a repo and a commit. If you want to reset that repo to the latest upstream master, run
+A submodule is simply a pointer to a repo and a commit. If you want to reset that repo to the latest upstream master, run:
 
 ```
 yarn reset-ccd-submodule
