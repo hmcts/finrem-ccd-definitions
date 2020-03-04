@@ -49,13 +49,18 @@ If you prefer to make the changes directly to the Excel Configuration file, and 
 
 ## Verification
 
-Eslint is included and will verify the config is properly formatted:
+### Eslint is included and will verify the config is properly formatted:
 
 `yarn lint`
 
-To run the unit tests to verify you have correctly made changes:
+### To run the unit tests to verify you have correctly made changes:
 
 `yarn test`
+
+### Run full E2E Tests for both Journeys:
+
+Please follow the ReadMe.md of this project to run full E2E tests of both the Consented & Contested Journeys on CCD
+https://github.com/hmcts/finrem-ccd-e2e-tests
 
 ## Accessing CCD on preview/per PR
 
@@ -97,7 +102,7 @@ When we want to release config changes to Production (Note this should be done a
 
 1) Generate all the Excel files for the Consented or Contested Journey using `yarn generate-excel-all-{consented/contested}`
 2) You now need to replace the test Judges' data with the correct data stored in Confluence (Note - this must not be stored in the repo and so these changes must not be committed.)
-3) Login to Confluence and navigate to XXX
+3) Login to Confluence and navigate to either https://tools.hmcts.net/confluence/display/FR/Consented+Solicitor+Journey or https://tools.hmcts.net/confluence/display/FR/Contested+Solicitor+Journey 
 4) Replace the entire UserProfile tab from your generated Excel with that from Confluence - this will ensure the appropriate Production users are able to login
 5) Next you have to replace the list of Judges that it is possible to be assigned to. This is done in the 'FixedLists' tab - be careful to only modify what is necessary.
     - If Consented Journey - replace all users associated with 'FR_fl_AssignToJudge'
