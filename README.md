@@ -62,14 +62,6 @@ If you prefer to make the changes directly to the Excel Configuration file, and 
 Please follow the ReadMe.md of this project to run full E2E tests of both the Consented & Contested Journeys on CCD
 https://github.com/hmcts/finrem-ccd-e2e-tests
 
-## Accessing CCD on preview/per PR
-
-A full CCD instance is created PR via Helm charts which can be accessed using the details below. If you do not require this, add `[NO-CCD]` at the start of the PR title in GitHub.
-
-1) Visit `https://gateway-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` and whitelist accept the SSL certificate
-2) Access the PR on `https://case-management-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal`
-3) Login with an authorised AAT user [listed here](https://github.com/hmcts/finrem-ccd-definitions/blob/master/definitions/{consented/contested}/json/UserProfile.json)
-
 
 ## ccd-definition-processor
 
@@ -104,14 +96,12 @@ When we want to release config changes to Production (Note this should be done a
 2) You now need to replace the test Judges' data with the correct data stored in Confluence (Note - this must not be stored in the repo and so these changes must not be committed.)
 3) Login to Confluence and navigate to either https://tools.hmcts.net/confluence/display/FR/Consented+Solicitor+Journey or https://tools.hmcts.net/confluence/display/FR/Contested+Solicitor+Journey 
 4) Replace the entire UserProfile tab from your generated Excel with that from Confluence - this will ensure the appropriate Production users are able to login
-5) Next you have to replace the list of Judges that it is possible to be assigned to. This is done in the 'FixedLists' tab - be careful to only modify what is necessary.
-    - If Consented Journey - replace all users associated with 'FR_fl_AssignToJudge'
-    - If Contested Journey - replace all users associated with 'FR_fl_Judge'
+5) For the Consented Journey - you have to replace the list of Judges that it is possible to be assigned to. This is done in the 'FixedLists' tab,
+replace all users associated with 'FR_fl_AssignToJudge'- be careful to only modify what is necessary.
 5) Raise a RDM ticket (e.g. RDM-5372) and add the appropriate Production Excel Config (5) - remember not to commit these changes
 
 ## LEFT TO DO BEFORE GO LIVE
 
+- Fix functional tests to work for FR
 - Create confluence page for Judges information - update ReadMe to reflect this
-- Unskip two skipped tests (UserRoleStateAuth.test.js) and confirm behaviour for both consented and contested with Harry/Jakub
-- Upload to AAT/DEMO and confirm everything still works etc
 - Extend to also handle Exception Record config?
