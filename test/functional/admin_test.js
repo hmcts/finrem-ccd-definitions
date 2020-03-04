@@ -23,14 +23,14 @@ Scenario('add all the roles', I => {
   I.see('caseworker-divorce-superuser');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
-Scenario('upload divorce config file', I => {
+Scenario('upload Consented Config file', I => {
   I.loginToAdminConsole();
-  I.uploadConfig('../../definitions/divorce/xlsx/ccd-config-aat.xlsx');
-  I.see('Case Definition data successfully imported');
+  I.uploadConfig('../../definitions/consented/xlsx/ccd-config-aat-consented.xlsx');
+  I.see('Consented Case Definition data successfully imported');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
-Scenario('upload bulk action config file', I => {
+Scenario('upload Contested Config file', I => {
   I.loginToAdminConsole();
-  I.uploadConfig('../../definitions/bulk-action/xlsx/ccd-div-bulk-action-config-aat.xlsx');
-  I.see('Case Definition data successfully imported');
+  I.uploadConfig('../../definitions/contested/xlsx/ccd-config-aat-contested.xlsx');
+  I.see('Contested Case Definition data successfully imported');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers

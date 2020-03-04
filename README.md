@@ -62,14 +62,6 @@ If you prefer to make the changes directly to the Excel Configuration file, and 
 Please follow the ReadMe.md of this project to run full E2E tests of both the Consented & Contested Journeys on CCD
 https://github.com/hmcts/finrem-ccd-e2e-tests
 
-## Accessing CCD on preview/per PR
-
-A full CCD instance is created PR via Helm charts which can be accessed using the details below. If you do not require this, add `[NO-CCD]` at the start of the PR title in GitHub.
-
-1) Visit `https://gateway-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` and whitelist accept the SSL certificate
-2) Access the PR on `https://case-management-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal`
-3) Login with an authorised AAT user [listed here](https://github.com/hmcts/finrem-ccd-definitions/blob/master/definitions/{consented/contested}/json/UserProfile.json)
-
 
 ## ccd-definition-processor
 
@@ -111,7 +103,6 @@ When we want to release config changes to Production (Note this should be done a
 
 ## LEFT TO DO BEFORE GO LIVE
 
+- Fix functional tests to work for FR
 - Create confluence page for Judges information - update ReadMe to reflect this
-- Unskip two skipped tests (UserRoleStateAuth.test.js) and confirm behaviour for both consented and contested with Harry/Jakub
-- Upload to AAT/DEMO and confirm everything still works etc
 - Extend to also handle Exception Record config?
