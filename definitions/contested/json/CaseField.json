@@ -1,7 +1,7 @@
 [
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": " FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "beforeYouStart",
     "Label": "## Before You Start",
     "FieldType": "Label",
@@ -9,23 +9,23 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "beforeYouStartPara1",
-    "Label": ">Financial Remedy Online is part of the Divorce project within the HMCTS reform programme. The Divorce project aim is to deliver a transformed end to end service for individuals and/or their legal representatives wishing to make an application to legally end their marriage or civil partnership and resolve associated financial issues.\r\n\r\n>Before you start completing this application you will need:\r\n\r\n*\tA copy of the decree nisi or decree absolute from the divorce case.\r\n*\tYour PBA number or an online help with fees reference number.\r\n*\tA scanned copy of the draft consent order that has been signed by both parties.\r\n*\tA copy of the D81 form signed by both parties.\r\n*\tAny other relevant documents e.g. pension forms, cover letters etc.\r\n\r\n>The pilot will continue to improve and add additional features based on the user feedback we receive. Please check the list below to ensure the application is within the current scope of the pilot: ",
+    "Label": ">Financial Remedy Online is part of the Divorce project within the HMCTS reform programme. The Divorce project aim is to deliver a transformed end to end service for individuals and/or their legal representatives wishing to make an application to legally end their marriage or civil partnership and resolve associated financial issues.\r\n\r\n>Before you start completing this application you will need:\r\n\r\n*\tA copy of the decree nisi or decree absolute from the divorce case.\r\n*\tYour PBA number or an online help with fees reference number.\r\n*\tA scanned copy of the draft consent order that has been signed by both parties.\r\n*\tA text version of the consent order (e.g. a copy of the consent order on Microsoft word). All comments and tracked changes must have been removed from the document.\r\n*\tA copy of the D81 form signed by both parties.\r\n*\tThe name of the Applicant’s local Court (https://courttribunalfinder.service.gov.uk/search/)\r\n*\tYou will have the opportunity to upload any other relevant documents e.g. pension forms, cover letters etc.\r\n\r\n>The pilot will continue to improve and add additional features based on the user feedback we receive. Please check the list below to ensure the application is within the current scope of the pilot: ",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "beforeYouStartPara2",
-    "Label": ">**Scope**\r\n\r\n>Currently, you can use the pilot for any cases that fit the following criteria only:\r\n\r\n*\tThe application is being made as part of a Divorce case (applications on Civil Partnership, judicial separation or nullity cases cannot be accepted at this time)\r\n*\tThe Divorce case must have reached at least Decree Nisi stage \r\n*\tThe Divorce case may have been submitted via paper or online, however, there must be no previous financial remedy proceedings on the case\r\n*\tYou must be representing the Applicant (the applicant for FR proceedings could be either the petitioner or respondent in the divorce proceedings)\r\n*\tThere cannot be a confidential address on the case\r\n\r\n>If your application does not meet this criteria, it will be returned and will have to be submitted via the normal paper process.",
+    "Label": ">**Scope**\r\n\r\n>Currently, you can use the pilot for any cases that fit the following criteria only:\r\n\r\n*\tThe Applicants local Court falls under the Central Family Court or Nottingham Financial Remedy Court\r\n*\tThe application is being made as part of a Divorce case (applications on Civil Partnership, judicial separation or nullity cases cannot be accepted at this time)\r\n*\tThe Divorce case must have reached at least Decree Nisi stage \r\n*\tThe Divorce case may have been submitted via paper or online, however, there must be no previous financial remedy proceedings on the case\r\n*\tYou must be representing the Applicant (the applicant for FR proceedings could be either the petitioner or respondent in the divorce proceedings)\r\n*\tThere cannot be a confidential address on the case\r\n\r\n>If your application does not meet this criteria, it will be returned and will have to be submitted via the normal paper process.",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "isAdmin",
     "Label": "  ",
     "FieldType": "Text",
@@ -33,7 +33,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantRepresentedLabel",
     "Label": "## Is the Applicant represented ? ##",
     "FieldType": "Label",
@@ -41,7 +41,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantRepresented",
     "Label": "          ",
     "FieldType": "YesOrNo",
@@ -49,7 +49,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantContactLabel",
     "Label": "#### Applicant’s Contact details",
     "FieldType": "Label",
@@ -57,7 +57,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantAddress",
     "Label": "          ",
     "FieldType": "AddressUK",
@@ -65,7 +65,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantPhone",
     "Label": "Phone Number",
     "FieldType": "Text",
@@ -73,7 +73,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantEmail",
     "Label": "Email",
     "FieldType": "Email",
@@ -81,97 +81,95 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "solicitorAbout_Para-1",
-    "Label": "#### SOLICITOR DETAILS",
-    "HintText": "Create an application for financial remedy by consent",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantSolicitorDetailLabel",
+    "Label": "## Solicitor Details",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "solicitorName",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantSolicitorName",
     "Label": "Solicitor’s name",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "solicitorFirm",
-    "Label": "Name of your firm",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantSolicitorFirm",
+    "Label": "Solicitor’s firm",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "solicitorReference",
-    "Label": "Your reference",
+    "Label": "Your reference number",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "solicitorAddress",
-    "Label": "Your address",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantSolicitorAddressLabel",
+    "Label": "#### Solicitor’s Contact Details",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantSolicitorAddress",
+    "Label": "          ",
     "FieldType": "AddressUK",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "solicitorPhone",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantSolicitorPhone",
     "Label": "Phone Number",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "solicitorEmail",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantSolicitorEmail",
     "Label": "Email",
     "FieldType": "Email",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "solicitorDXnumber",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantSolicitorDXnumber",
     "Label": "DX number",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "solicitorAgreeToReceiveEmails",
-    "Label": "Future email communications",
-    "HintText": "I confirm I am willing to accept service of all correspondence and orders by email at the email address stated above.",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantSolicitorConsentForEmails",
+    "Label": "Do you consent to receive emails from the court about your case ?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "solicitorAbout_Para-2",
-    "Label": "********************",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "divorceDetailsLabel",
+    "Label": "## Divorce Details",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "divorceAbout_H1",
-    "Label": "#### DIVORCE DETAILS",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceCaseNumber",
     "Label": "Divorce Case Number",
     "HintText": "Enter 10 character alphanumeric divorce case number",
@@ -181,7 +179,31 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "dateOfMarriage",
+    "Label": "Date of marriage",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "dateOfSepration",
+    "Label": "Date of separation",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nameOfCourtDivorceCentre",
+    "Label": "Name of Court / Divorce Centre where petition issued ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceStageReached",
     "Label": "What stage has the divorce reached ?",
     "HintText": "To ensure the application is linked to the divorce file without delay, please upload a copy of the decree [nisi] [absolute]",
@@ -191,7 +213,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceUploadEvidence1",
     "Label": "Upload Decree Nisi ",
     "FieldType": "Document",
@@ -199,7 +221,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceDecreeNisiDate",
     "Label": "Decree Nisi Date",
     "FieldType": "Date",
@@ -207,7 +229,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceUploadEvidence2",
     "Label": "Upload Decree Absolute",
     "FieldType": "Document",
@@ -215,7 +237,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceDecreeAbsoluteDate",
     "Label": "Decree Absolute Date",
     "FieldType": "Date",
@@ -223,15 +245,31 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "applicantDetails",
-    "Label": "#### APPLICANT DETAILS",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "divorceUploadPetition",
+    "Label": "Upload Petition ",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "divorcePetitionIssuedDate",
+    "Label": "Petition Issued Date",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantDetailsLabel",
+    "Label": "## Applicant’s Details",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantFMName",
     "Label": "Current First and Middle names",
     "FieldType": "Text",
@@ -239,7 +277,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantLName",
     "Label": "Current Last Name",
     "FieldType": "Text",
@@ -247,63 +285,71 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "rRespondentLabel",
-    "Label": "#### RESPONDENT DETAILS",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentDetailsLabel",
+    "Label": "## Respondent’s Details ##",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "appRespondentFMName",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentFMName",
     "Label": "Current First and Middle names",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "appRespondentLName",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentLName",
     "Label": "Current Last Name",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "appRespondentRep",
-    "Label": "Is the respondent represented ?",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "rSolicitorLabel",
-    "Label": "#### RESPONDENT SOLICITOR’S DETAILS",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentRepresentedLabel",
+    "Label": "## Is the respondent represented ? ##",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentRepresented",
+    "Label": "          ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "rSolicitorLabel",
+    "Label": "## Respondent’s Solicitor’s Details",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "rSolicitorName",
-    "Label": "Respondent Solicitor’s name",
+    "Label": "Solicitor’s name",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "rSolicitorFirm",
-    "Label": "Respondent solicitor’s firm",
+    "Label": "Solicitor’s firm",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "rSolicitorReference",
     "Label": "Respondent solicitor’s reference",
     "FieldType": "Text",
@@ -311,15 +357,23 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "rSolicitorAddressLabel",
+    "Label": "#### Respondent’s Solicitor’s Contact Details",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "rSolicitorAddress",
-    "Label": "Their  address",
+    "Label": "          ",
     "FieldType": "AddressUK",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "rSolicitorPhone",
     "Label": "Phone Number",
     "FieldType": "Text",
@@ -327,7 +381,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "rSolicitorEmail",
     "Label": "Email",
     "FieldType": "Email",
@@ -335,7 +389,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "rSolicitorDXnumber",
     "Label": "DX number",
     "FieldType": "Text",
@@ -343,23 +397,23 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "rRespondentLabel2",
-    "Label": "#### RESPONDENT SERVICE ADDRESS DETAILS",
+    "Label": "#### Respondent’s Contact details",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "respondentAddress",
-    "Label": "Their address",
-    "FieldType": "AddressGlobalUK",
+    "Label": "          ",
+    "FieldType": "AddressUK",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "respondentPhone",
     "Label": "Phone Number",
     "FieldType": "Text",
@@ -367,7 +421,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "respondentEmail",
     "Label": "Email",
     "FieldType": "Email",
@@ -375,103 +429,633 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "natureOfApplication1",
-    "Label": "#### NATURE OF THE APPLICATION",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "natureOfApplicationLabel",
+    "Label": "#### What is the nature of the application ?",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "natureOfApplication2",
-    "Label": "The application is for:",
-    "HintText": "The applicant is applying for an order by consent in terms of written agreement (a consent order). Within the draft consent order, the Applicant is applying to Court for;",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "natureOfApplicationChecklist",
+    "Label": "  ",
+    "HintText": "Select all that apply",
     "FieldType": "MultiSelectList",
     "FieldTypeParameter": "FR_ms_natureApplication",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "natureOfApplication3a",
-    "Label": "Address details",
-    "HintText": "If the application includes an application for a Property Adjustment Order in relation to land, please provide the address(es) of the property or properties, if applicable",
-    "FieldType": "TextArea",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "natureOfApplication3b",
-    "Label": "Mortgage details",
-    "HintText": "If the application includes an application for a Property Adjustment Order in relation to land, please provide the name(s) and address(es) of any mortgagee(s), if applicable",
-    "FieldType": "TextArea",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "natureOfApplication4",
-    "Label": "#### ORDER FOR CHILDREN",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "propertyAdjutmentOrderDetailLabel",
+    "Label": "## Property adjustment order details",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderForChildrenQuestion1",
-    "Label": "Does the application contain any application for periodical payments, or secured periodical payments for children?",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "propertyAddress",
+    "Label": "Property address",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "mortgageDetail",
+    "Label": "Name(s) and address(es) of any mortgage(s) for property",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalPropertyOrderLabel",
+    "Label": "## Do you want to add additional property ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalPropertyOrderDecision",
+    "Label": "    ",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "natureOfApplication5",
-    "Label": "Is there a written agreement?",
-    "HintText": "If the application contains an application for periodical payments or secured periodical payments for children, has a written agreement made about maintenance for the benefit of children?",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "propertyAdjutmentOrderDetail",
+    "Label": "Additional Property adjustment order details",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_PropertyAdjustmentOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "paymentForChildrenLabel",
+    "Label": "## Does the application contain any periodical payments or secured periodical payments for children ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "paymentForChildrenDecision",
+    "Label": "     ",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "natureOfApplication6",
-    "Label": "Select what the payments are for:",
-    "HintText": "There is no agreement, but the applicant is applying for payments;",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "benefitForChildrenLabel",
+    "Label": "## Has a written agreement been made about maintenance for the benefit of children?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "benefitForChildrenDecision",
+    "Label": "     ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "benefitPaymentChecklistLabel",
+    "Label": "## What payments are you applying for ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "benefitPaymentChecklist",
+    "Label": "      ",
     "FieldType": "MultiSelectList",
-    "FieldTypeParameter": "FR_ms_childrenOrder",
+    "FieldTypeParameter": "FR_ms_benefitPaymentChecklist",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "natureOfApplication7",
-    "Label": "Other – Please give details",
-    "HintText": "If Other, please provide details",
-    "FieldType": "TextArea",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "authorisationLa",
-    "Label": "#### AUTHORISATION",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fastTrackDecisionLabel",
+    "Label": "## Is the application suitable to be dealt with under the Fast Track Procedure?",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "authorisation1",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fastTrackDecision",
+    "Label": "     ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fastTrackDecisionReasonLabel",
+    "Label": "Select all that apply",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fastTrackDecisionReason",
+    "Label": "     ",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_fast_track_reason",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fastTrackMoreInfoContent1",
+    "Label": "> *The types of cases to which the fast track procedure applies are set out in rule 9.9B of the Family Procedure Rules 2010. This rule came into force on 4 June 2018.*\r\n\r\n> *The main differences from the standard track procedure are:*\r\n*\t*Cases allocated to the fast track will be listed 6-10 weeks in advance (as opposed to the standard 12-16 weeks)*\r\n*\t*Financial Statements must be exchanged by no later than 21 days after the date of issue of the application (as opposed to not less than 14 days before the first appointment hearing in the standard track)*\r\n*\t*Financial statements for fast track cases should be filed on Form E1 (rather than the standard Form E)*\r\n*\t*The process at the fast track first hearing will differ from the process at a standard track first appointment hearing*",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "addToComplexityListOfCourtsLbl",
+    "Label": "## Should this application be allocated to the Complexity List of the Financial Remedies Court? ",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "addToComplexityListOfCourts",
+    "Label": "  A complex case could be retained for hearing within the Financial Remedy Centre and/or allocated to a higher tier of Judiciary",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_complexityList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "estimatedAssetsLabel",
+    "Label": "## Please state the current estimated assets in this case:",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "estimatedAssetsChecklist",
+    "Label": "Select all that apply",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_estimatedAssetsChecklist",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "netValueOfHomeLabel",
+    "Label": "## Of the above value, what is the net value of the family home?",
+    "HintText": "The net value is the value after deduction of the sum owing on any mortgage",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "netValueOfHome",
+    "Label": "  ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "potentialAllegationLabel",
+    "Label": "## Please tick any potential allegations/issues which may arise",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "potentialAllegationChecklist",
+    "Label": "Select all that apply",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_potentialAllegationChecklist",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "detailPotentialAllegationLabel",
+    "Label": "## Please give brief details of the potential allegation/issue:",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "detailPotentialAllegation",
+    "Label": "   ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "otherReasonForComplexityLabel",
+    "Label": "## Is there any other reason why the case should be allocated to the Complexity List? ",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "otherReasonForComplexity",
+    "Label": "  ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "otherReasonForComplexityText",
+    "Label": "If yes – please specify",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "chooseCourtLabel",
+    "Label": "## Which Financial Remedies Court are you applying to?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "allocatedCourtList",
+    "Label": "  ",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FR_ct_courtList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "specialAssistanceRequiredLabel",
+    "Label": "#### Does anyone in this application need assistance or special facilities when attending court?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "specialAssistanceRequired",
+    "Label": "  ",
+    "HintText": "For example they need to use British Sign Language, a hearing loop or documents in braille",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "specificArrangementsRequiredLabel",
+    "Label": "#### Does anyone in this application need specific arrangements when attending court?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "specificArrangementsRequired",
+    "Label": "  ",
+    "HintText": "For example you need a separate waiting room to the other person, video link or protective screen due to safety concerns. The court may contact you to discuss your requirements.",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isApplicantsHomeCourt",
+    "Label": "Is there a reason why the hearing should not take place here?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "reasonForLocalCourt",
+    "Label": "Please specify",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantAttendedMIAMLabel",
+    "Label": "## Has the applicant attended a Mediation information & Assessment Meeting (MIAM) in the past 4 months?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantAttendedMIAM",
+    "Label": "        ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "claimingExemptionMIAMLabel",
+    "Label": "## Is the applicant claiming exemption from the requirement to attend a MIAM ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "claimingExemptionMIAM",
+    "Label": "        ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "familyMediatorMIAMLabel",
+    "Label": "## Has a family mediator informed the applicant that a mediator’s exemption applies, and they do not need to attend a MIAM ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "familyMediatorMIAM",
+    "Label": "        ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMExemptionsLabel",
+    "Label": "## MIAM Exemptions : what is the reason(s) for the applicant not attending a MIAM?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMExemptionsSelectAll",
+    "Label": "Select all that apply",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMExemptionsChecklist",
+    "Label": "       ",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_MIAMExemptionsChecklist",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMDomesticViolenceLabel",
+    "Label": "## MIAM Evidence : What evidence of domestic violence or abuse does the applicant have ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMDomesticViolenceSelectAll",
+    "Label": "Select all that apply",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMDomesticViolenceChecklist",
+    "Label": "        ",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_MIAMDomesticViolenceChecklist",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMUrgencyReasonLabel",
+    "Label": "## MIAM Evidence: what reason does the applicant have for the application to be made urgently?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMUrgencyReasonSelectAll",
+    "Label": "Select all that apply",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMUrgencyReasonChecklist",
+    "Label": "        ",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_MIAMUrgencyReasonChecklist",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMPreviousAttendanceLabel",
+    "Label": "## MIAM Evidence : Previous MIAM attendance or MIAM exemption",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMPreviousAttendanceChecklist",
+    "Label": "Select one",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_ms_MIAMPreviousAttendanceChecklist",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMOtherGroundsLabel",
+    "Label": "## MIAM Evidence : What other grounds of exemption apply?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMOtherGroundsChecklist",
+    "Label": "Select one",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_ms_MIAMOtherGroundsChecklist",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMCertificationPageLabel",
+    "Label": "## Enter details of MIAM certification",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "mediatorRegistrationNumber",
+    "Label": "Mediator Registration Number (URN)",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "familyMediatorServiceName",
+    "Label": "Family Mediation Service Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "soleTraderName",
+    "Label": "Sole Trader Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMCertificationPageMessage",
+    "Label": "**You should have a document signed by the mediator confirming this (which you should bring to your first hearing)**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMCertificationPageLabel1",
+    "Label": "## Enter details of MIAM certification",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "mediatorRegistrationNumber1",
+    "Label": "Mediator Registration Number (URN)",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "familyMediatorServiceName1",
+    "Label": "Family Mediation Service Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "soleTraderName1",
+    "Label": "Sole Trader Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMCertificationPageMessage1",
+    "Label": "**You should have a document signed by the mediator confirming this (which you should bring to your first hearing)**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "promptForAnyDocumentLabel",
+    "Label": "## Do you want to upload any other documents ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "promptForAnyDocument",
+    "Label": "          ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadOtherDocumentLabel",
+    "Label": "## Upload other documents",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadAdditionalDocument",
+    "Label": "   ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadAdditionalDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "beforeSavePreConfirmation",
+    "Label": "# Saving your application\r\nOnce you have pressed ‘continue’ at the bottom of this page, you will have the opportunity to check your application and make any necessary amendments.\r\n\r\nTo save a copy of the application, please press the ‘submit’ button at the bottom of the page.\r\n\r\n# What happens next\r\nOnce you have saved a copy of your application, you will be directed to the case file. Here you can use the ‘Next Steps’ options on the top right of the file to administer the case.\r\n\r\nYou will have the option to:\r\n* Update the application\r\n* Authorise, pay for and submit the application\r\n\r\nPlease note, your application will not be sent to the Court and your payment will not be taken until you authorise, pay for and submit the application.\r\n\r\n# If you need help \r\nYou can contact the court if you need help. \r\n************************************************************\r\nSouth West Regional Divorce Centre\r\n<br/>Email: HMCTSFinancialRemedy@justice.gov.uk\r\n<br/>Phone: 0300 303 0642 (from 8.30am to 5pm)\r\n<br/>https://courttribunalfinder.service.gov.uk/courts/south-west-regional-divorce-centre",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "authorisationTitle",
+    "Label": "## AUTHORISATION",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "authorisationLabel",
     "Label": "# I am duly authorised by the Applicant to complete this application.",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "authorisationName",
     "Label": "Solicitor Name",
     "FieldType": "Text",
@@ -479,15 +1063,15 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "authorisationFirm",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "solicitorFirm",
     "Label": "Solicitor Firm",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "authorisation2b",
     "Label": "Solicitor Position",
     "HintText": "Please provide position or office held",
@@ -496,7 +1080,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "authorisation3",
     "Label": "Date",
     "FieldType": "Date",
@@ -504,166 +1088,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "divorceAbout_F1",
-    "Label": " ***************",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "applicationDocL",
-    "Label": "#### APPLICATION",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "miniFormA",
-    "Label": "Online Form A",
-    "HintText": "Online Form A",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "consentOrderL",
-    "Label": "#### CONSENT ORDER",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "consentOrder",
-    "Label": "Draft Consent Order",
-    "HintText": "Please upload a scanned copy of the draft consent order that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "consentOrderText",
-    "Label": "Copy Draft Consent Order",
-    "HintText": "If you are able to upload a text version of the draft consent order, it could reduce the time taken to provide you with a copy of the order, should the Judge approve it. The text version must be the same wording as the signed version you have uploaded but does not require a signature",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "latestConsentOrder",
-    "Label": "Latest Consent Order",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "d81",
-    "Label": "#### D81",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "d81Question",
-    "Label": "Are you uploading a joint D81?",
-    "HintText": "You can either submit one joint D81 form for both parties or one for each applicant and respondent",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "d81Joint",
-    "Label": "Form D81 Joint Document",
-    "HintText": "Joint D81 form, signed by both parties",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "d81Applicant",
-    "Label": "Form D81 Applicant Document",
-    "HintText": "D81 form, signed by Applicant",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "d81Respondent",
-    "Label": "Form D81 Respondent Document",
-    "HintText": "D81 form, signed by Respondent",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "pensionCollectionL",
-    "Label": "#### PENSION DOCUMENTS",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "pensionCollection",
-    "Label": "Pension Documents",
-    "HintText": "Please upload a scanned copy of the draft consent order that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_PensionType",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "otherCollectionL",
-    "Label": "#### OTHER DOCUMENTS",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "copyOfPaperFormA",
-    "Label": "Copy of Paper Form A application documents",
-    "HintText": "Copy of Paper Form A application documents",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_PaymentDocument",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "otherCollection",
-    "Label": "Other Documents",
-    "HintText": "Upload other documentation related to your application",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_DocumentType",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "generalLetterCollection",
-    "Label": "General Letter",
-    "HintText": "General Letter",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_GeneralLetterDocument",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "payment",
     "Label": "#### PAYMENT DETAILS",
     "FieldType": "Label",
@@ -671,7 +1096,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "helpWithFeesQuestion",
     "Label": "Has the applicant applied for help with fees online?",
     "FieldType": "YesOrNo",
@@ -679,7 +1104,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "HWFNumber",
     "Label": "Please enter your Help With Fees reference number",
     "FieldType": "Text",
@@ -687,7 +1112,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "amountToPay",
     "Label": "Amount to pay",
     "FieldType": "MoneyGBP",
@@ -695,7 +1120,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "PBANumber",
     "Label": "Enter your account number",
     "HintText": "Example:PBA0896366",
@@ -704,7 +1129,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "PBAreference",
     "Label": "Enter your reference",
     "HintText": "This will appear on your statement to help identify this payment",
@@ -713,7 +1138,63 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderSummary",
+    "Label": "Order Summary",
+    "FieldType": "OrderSummary",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "paymentMethodPBA",
+    "Label": "Payment Method: **Fee Account**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "paymentMethodHWF",
+    "Label": "Payment Method: **Help with fees**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "solicitorReferenceLabel",
+    "Label": "Your fee reference: **${PBAreference}**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "pbaFeeAccountNumber",
+    "Label": "Fee account number: **${PBANumber}**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hwfFeeReferenceNumber",
+    "Label": "Help with fee reference: **${HWFNumber}**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "makePaymentPreConfirmationInfoText",
+    "Label": "# Sending your application to the Court\r\nOnce you have pressed ‘continue’ at the bottom of this page, you will have the opportunity to check your authorisation and payment information and make any necessary amendments.\r\n\r\nWhen you are happy that the details you have entered are correct, please press the ‘submit’ button at the bottom of the page to send the application to the Court.\r\n\r\n# What happens next\r\nYou will see a confirmation page showing that the case has been submitted and explaining the next steps in the process.\r\n\r\n# If you need help \r\nYou can contact the court if you need help. \r\n************************************************************\r\nSouth West Regional Divorce Centre\r\n<br/>Email: HMCTSFinancialRemedy@justice.gov.uk\r\n<br/>Phone: 0300 303 0642 (from 8.30am to 5pm)\r\n<br/>https://courttribunalfinder.service.gov.uk/courts/south-west-regional-divorce-centre",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "PBAPaymentReference",
     "Label": "PBA Payment reference",
     "HintText": "This will appear on your statement to help identify this payment",
@@ -722,568 +1203,80 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderSummary",
-    "Label": "Order Summary",
-    "FieldType": "OrderSummary",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "pbaFeeAccountNumber",
-    "Label": "Fee account number: **${PBANumber}**",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "timeEstimateLabel",
+    "Label": "#### Time Estimate",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "hwfFeeReferenceNumber",
-    "Label": "Help with fee reference: **${HWFNumber}**",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "timeEstimate",
+    "Label": "  ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingDateLabel",
+    "Label": "#### Hearing Date",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "paymentMethodPBA",
-    "Label": "Payment Method: **Fee Account**",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingDate",
+    "Label": "  ",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fastTrackWranMsg",
+    "Label": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "solicitorReferenceLabel",
-    "Label": "Your fee reference: **${PBAreference}**",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "standardTrackWranMsg",
+    "Label": "\r\nStandard Track: Date of the hearing must be between 12 and 16 weeks",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "paymentMethodHWF",
-    "Label": "Payment Method: **Help with fees**",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingTimeLabel",
+    "Label": "#### Hearing Time",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderDirection",
-    "Label": "Order Direction",
-    "HintText": "Please select appropriate Consent Order Direction",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_fl_OrderDirection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderDirectionOpt1",
-    "Label": "Upload amended draft",
-    "HintText": "Upload a copy of the amended draft",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderDirectionOpt2",
-    "Label": "Order conditions",
-    "HintText": "Please give a full explanation of the conditions that must be met for the consent order to be approved",
-    "FieldType": "TextArea",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderDirectionAbsolute",
-    "Label": "Subject to Decree Absolute?",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "servePensionProvider",
-    "Label": "Does a copy of this order need to be served to the pension provider?",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "servePensionProviderResponsibility",
-    "Label": "Who is responsible for sending a copy of the order to the pension provider?",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_PensionProvider",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "servePensionProviderOther",
-    "Label": "Please Specify",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingTime",
+    "Label": "  ",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderDirectionJudge",
-    "Label": "Select Judge",
-    "HintText": "Please select the appropriate Judge",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderDirectionJudgeName",
-    "Label": "Name of Judge",
-    "HintText": "Surname of judge",
-    "FieldType": "TextArea",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderDirectionDate",
-    "Label": "Date of order",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderDirectionAddComments",
-    "Label": "Additional comments",
-    "HintText": "Please add any additional comments for Court Admin (these comments will not be accessible by the Applicant’s solicitor)",
-    "FieldType": "TextArea",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderRefusalCollection",
-    "Label": "Application Not Approved",
-    "HintText": "Warning: Previous orders will appear at the top of the page. To avoid overwriting a previous order, please ensure you scroll to the bottom of the page and choose ‘Add New’. A blank template will then appear for you to complete.",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_orderRefusal",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderRefusalCollectionNew",
-    "Label": "Application Not Approved",
-    "HintText": "Please choose ‘Add New’. A blank template will then appear for you to complete.",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_orderRefusal",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderRefusalPreviewDocument",
-    "Label": "Preview of Draft Order",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "dueDate",
-    "Label": "Due Date",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "issueDate",
-    "Label": "Issue Date",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "assignedToJudgeReason",
-    "Label": "Assign to a Judge Reason",
-    "HintText": "Assign to a Judge Reason",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_fl_AssignToJudgeReason",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "assignedToJudge",
-    "Label": "Assign to a Judge",
-    "HintText": "Assign to a Judge",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_fl_AssignToJudge",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeDate",
-    "Label": "Assign to a Judge Date",
-    "HintText": "Assign to a Judge Date",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeText",
-    "Label": "Assign to a Judge Text",
-    "HintText": "A few words describing the purpose of the referral",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeDateFromOrderMade",
-    "Label": "Assign to a Judge Date",
-    "HintText": "Assign to a Judge Date",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeTextFromOrderMade",
-    "Label": "Assign to a Judge Text",
-    "HintText": "A few words describing the purpose of the referral",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeDateFromConsOrdApproved",
-    "Label": "Assign to a Judge Date",
-    "HintText": "Assign to a Judge Date",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeTextFromConsOrdApproved",
-    "Label": "Assign to a Judge Text",
-    "HintText": "A few words describing the purpose of the referral",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeDateFromConsOrdMade",
-    "Label": "Assign to a Judge Date",
-    "HintText": "Assign to a Judge Date",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeTextFromConsOrdMade",
-    "Label": "Assign to a Judge Text",
-    "HintText": "A few words describing the purpose of the referral",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeDateFromClose",
-    "Label": "Assign to a Judge Date",
-    "HintText": "Assign to a Judge Date",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeTextFromClose",
-    "Label": "Assign to a Judge Text",
-    "HintText": "A few words describing the purpose of the referral",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeDateFromAwaitingResponse",
-    "Label": "Assign to a Judge Date",
-    "HintText": "Assign to a Judge Date",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeTextFromAwaitingResponse",
-    "Label": "Assign to a Judge Text",
-    "HintText": "A few words describing the purpose of the referral",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeDateFromRespondToOrder",
-    "Label": "Assign to a Judge Date",
-    "HintText": "Assign to a Judge Date",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referToJudgeTextFromRespondToOrder",
-    "Label": "Assign to a Judge Text",
-    "HintText": "A few words describing the purpose of the referral",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "uploadConsentOrderDocuments",
-    "Label": "Upload Consent Order Documents",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_UploadConsentOrder",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "uploadOrder",
-    "Label": "Upload Order",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_UploadOrder",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "uploadDocuments",
-    "Label": "Upload Documents",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_UploadDocument",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "generalOrderCollection",
-    "Label": "General Order",
-    "HintText": "Warning: Previous orders will appear at the top of the page. To avoid overwriting a previous order, please ensure you scroll to the bottom of the page and choose ‘Add New’. A blank template will then appear for you to complete.",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_generalOrder",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "respondToOrderDocuments",
-    "Label": "Respond To Order Documents",
-    "HintText": "Warning: Previous uploaded documents will appear at the top of the page. To avoid overwriting previous documents, you must scroll to the bottom of the page and choose ‘Add New’. A blank template will then appear for you to complete.",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_RespondToOrderDocuments",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "amendedConsentOrderCollection",
-    "Label": "Amended Consent Order",
-    "HintText": "Warning: Previous uploaded documents will appear at the top of the page. To avoid overwriting previous documents, you must scroll to the bottom of the page and choose ‘Add New’. A blank template will then appear for you to complete.",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_amendedConsentOrderCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "createCasePreConfirmationInfoText",
-    "Label": "# Saving your application\r\nOnce you have pressed ‘continue’ at the bottom of this page, you will have the opportunity to check your application and make any necessary amendments.\r\n\r\nTo save a copy of the application, please press the ‘submit’ button at the bottom of the page.\r\n\r\n# What happens next\r\nOnce you have saved a copy of your application, you will be directed to the case file. Here you can use the ‘Next Steps’ options on the top right of the file to administer the case.\r\n\r\nYou will have the option to:\r\n* Authorise, pay for and submit the application\r\n\r\nPlease note, your application will not be sent to the Court and your payment will not be taken until you authorise, pay for and submit the application.\r\n\r\n# If you need help \r\nYou can contact the court if you need help. \r\n************************************************************\r\nCourts and Tribunals Service Centre\r\nPO Box 12746, Harlow, CM20 9QZ\r\n<br/>Email: ContactFinancialRemedy@justice.gov.uk",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "chooseCourtLabelSL",
+    "Label": "#### Hearing Court",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "makePaymentPreConfirmationInfoText",
-    "Label": "# Sending your application to the Court\r\nOnce you have pressed ‘continue’ at the bottom of this page, you will have the opportunity to check your authorisation and payment information and make any necessary amendments.\r\n\r\nWhen you are happy that the details you have entered are correct, please press the ‘submit’ button at the bottom of the page to send the application to the Court.\r\n\r\n# What happens next\r\nYou will see a confirmation page showing that the case has been submitted and explaining the next steps in the process.\r\n\r\n# If you need help \r\nYou can contact the court if you need help. \r\n************************************************************\r\nCourts and Tribunals Service Centre\r\nPO Box 12746, Harlow, CM20 9QZ\r\n<br/>Email: ContactFinancialRemedy@justice.gov.uk",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "respondToOrderInfoText",
-    "Label": "# Sending your documents to the Court\r\n\r\nOnce you have pressed ‘submit’ at the bottom of the next page, any documents you have uploaded will be sent to the Court. You will be able to see copies of these documents in the ‘solicitor response’ tab on the case file.",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "caseNotesCollection",
-    "Label": "Notes",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_caseNotes",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "state",
-    "Label": "state",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "CaseHistoryViewer",
-    "Label": "CaseHistoryViewer",
-    "FieldType": "CaseHistoryViewer",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "caseDetailsLa",
-    "Label": "#### CASE DETAILS",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "scannedDocuments",
-    "Label": "Scanned Documents",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "ScannedDocument",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "evidenceHandled",
-    "Label": "Supplementary evidence handled",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "generalLetterAddressTo",
-    "Label": "Address to",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "GeneralLetterAddressToType",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "generalLetterRecipient",
-    "Label": "Recipient's name",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "generalLetterRecipientAddress",
-    "Label": "Recipient's address ",
-    "FieldType": "AddressUK",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "generalLetterCreatedBy",
-    "Label": "Letter created by",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "generalLetterBody",
-    "Label": "Please fill in the body of the text",
-    "FieldType": "TextArea",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "approvedConsentOrderLetter",
-    "Label": "Approved Consent Order Letter",
-    "HintText": "Generated Approved Consent Order Letter from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "bulkPrintCoverSheetRes",
-    "Label": "Bulk Print Cover Sheet For Respondent",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "bulkPrintLetterIdRes",
-    "Label": "Bulk Print LetterId For Respondent",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "bulkPrintCoverSheetApp",
-    "Label": "Bulk Print Cover Sheet For Applicant",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "bulkPrintLetterIdApp",
-    "Label": "Bulk Print LetterId For Applicant",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "approvedOrderCollection",
-    "Label": "Approved Order Collection",
-    "HintText": "Approved  Order Collection",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_approvedOrder",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "regionList",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "regionListSL",
     "Label": "Please choose the Region in which the Applicant resides",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_region_list",
@@ -1291,28 +1284,27 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "midlandsFRCList",
-    "Label": "This should be the FRC local to the applicant",
-    "HintText": "This should be the FRC local to the applicant",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "allocatedCourtListSL",
+    "Label": "This would usually be the applicants local Court",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_midlands_frc_list",
+    "FieldTypeParameter": "FR_gaInformation_FRCList",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "londonFRCList",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "londonFRCListSL",
     "Label": "This should be the FRC local to the applicant",
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_london_frc_list",
+    "FieldTypeParameter": "FR_london_FRCList",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "northWestFRCList",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "northWestFRCListSL",
     "Label": "This should be the FRC local to the applicant",
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
@@ -1321,8 +1313,8 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "northEastFRCList",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "northEastFRCListSL",
     "Label": "This should be the FRC local to the applicant",
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
@@ -1331,8 +1323,8 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "southEastFRCList",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "southEastFRCListSL",
     "Label": "This should be the FRC local to the applicant",
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
@@ -1341,18 +1333,8 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "southWestFRCList",
-    "Label": "This should be the FRC local to the applicant",
-    "HintText": "This should be the FRC local to the applicant",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_sw_frc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "walesFRCList",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "walesFRCListSL",
     "Label": "This should be the FRC local to the applicant",
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
@@ -1361,152 +1343,1064 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nottinghamCourtListSL",
+    "Label": "This should be the FRC local to the applicant",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_NottinghamList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cfcCourtListSL",
+    "Label": "This should be the FRC local to the applicant",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_CFCList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "birminghamCourtListSL",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_birmingham_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "liverpoolCourtListSL",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_liverpool_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manchesterCourtListSL",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_manchester_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cleavelandCourtListSL",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_cleaveland_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nwyorkshireCourtListSL",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "humberCourtListSL",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_humber_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "kentSurreyCourtListSL",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_kent_surrey_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "newportCourtListSL",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_newport_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "swanseaCourtListSL",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_swansea_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "chooseCourtLabelGA",
+    "Label": "## The hearing centre for the case is:",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "allocatedCourtListGA",
+    "Label": "  ",
+    "HintText": "Choose relevant FRC",
+    "FieldType": "FR_ct_courtList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nottinghamCourtListGA",
+    "Label": "Choose hearing location",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_NottinghamList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cfcCourtListGA",
+    "Label": "Choose hearing location",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_CFCList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeAllocatedLabel",
+    "Label": "## The application is suitable to be heard by a:",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeAllocated",
+    "Label": "  ",
+    "HintText": "Tick all that apply",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_judgeAllocatedList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicationAllocatedToLabel",
+    "Label": "## Should the application be dealt with as a ‘complex case’?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicationAllocatedTo",
+    "Label": "   ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseAllocatedToLabel",
+    "Label": "## Should the application be allocated to the Fast Track?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseAllocatedToDescription",
+    "Label": "The types of cases to which the fast track procedure applies are set out in rule 9.9B of the Family Procedure Rules 2010. This rule came into force on 4 June 2018.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseAllocatedTo",
+    "Label": "    ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeTimeEstimateLabel",
+    "Label": "## Time Estimate for First Appointment Hearing (please specify):",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeTimeEstimate",
+    "Label": "  ",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_judgeTimeEstimateList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeTimeEstimateTextArea",
+    "Label": " Please state ",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "CaseHistoryViewer",
+    "Label": "CaseHistoryViewer",
+    "FieldType": "CaseHistoryViewer",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "miniFormA",
+    "Label": "Online Form A",
+    "HintText": "Online Form A",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "formC",
+    "Label": "Form C",
+    "HintText": "Form C",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "formG",
+    "Label": "Form G",
+    "HintText": "Form G",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseNotesCollection",
+    "Label": "Notes",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_caseNotes",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "issueDate",
+    "Label": "Issue Date",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "state",
+    "Label": "state",
+    "HintText": "state",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadCaseDocumentLabel",
+    "Label": "## Upload case documents",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadCaseDocument",
+    "Label": "                                                                                      ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadGeneralDocuments",
+    "Label": "Upload Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_uploadGeneralDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadConsentOrder",
+    "Label": "Upload Consent Order ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_uploadOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadConsentedOrder",
+    "Label": "Upload Consented Order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadOrder",
+    "Label": "Upload Order ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_uploadOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "assignToJudgeReason",
+    "Label": "Assign to Judge Reason",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_AssignToJudgeReason",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "assignToJudgeText",
+    "Label": "Assign to a Judge Text",
+    "HintText": " A few words describing the purpose of referal",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "subjectToDecreeAbsoluteValue",
+    "Label": "Subject to Decree Absolute?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "selectJudge",
+    "Label": "Select Judge",
+    "HintText": "Please select the appropriate judge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "dateOfOrder",
+    "Label": "Date of order",
+    "HintText": "Date of order",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalComments",
+    "Label": "Additional comments",
+    "HintText": "Please add any additional comments for  court admin (this comments will not be accesible by applicant's solicitor)",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrders",
+    "Label": "General Order",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_genaralOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicationNotApproved",
+    "Label": "Application Not Approved",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_applicationNotApproved",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderForChildrenLabel",
+    "Label": "## Order for children",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "attendingCourtWithAssistanceLabel",
+    "Label": "#### Does anyone in this application need assistance or special facilities when attending court?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "attendingCourtWithAssistance",
+    "Label": "  ",
+    "HintText": "For example they need to use British Sign Language, a hearing loop or documents in braille",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "attendingCourtWithArrangementLabel",
+    "Label": "#### Does anyone in this application need specific arrangements when attending court?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "attendingCourtWithArrangement",
+    "Label": "  ",
+    "HintText": "For example you need a separate waiting room to the other person, video link or protective screen due to safety concerns. The court may contact you to discuss your requirements.",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "copyOfPaperFormA",
+    "Label": "Copy of Paper Form A application documents",
+    "HintText": "Copy of Paper Form A application documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_c_paymentDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "draftDirectionOrderCollection",
+    "Label": "Upload Draft Direction Order  ",
+    "HintText": "PLEASE NOTE: you must upload an editable version of the draft order (for example a 'word' document) - please do not upload a PDF",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_draftDirectionOrderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "draftDirectionDetailsCollection",
+    "Label": "Draft Direction Orders Details ",
+    "HintText": "Draft Direction Orders Details ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_draftDirectionDetailsCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "draftDirectionDetailsCollectionRO",
+    "Label": "Draft Direction Orders Details (Judge)",
+    "HintText": "Draft Direction Orders Details ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_draftDirectionDetailsCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadHearingOrder",
+    "Label": "Upload Direction Order ",
+    "HintText": "Upload Direction Order ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_directionOrderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "directionDetailsCollection",
+    "Label": "Direction Orders Details (Case Worker)",
+    "HintText": "Direction Orders Details ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_directionDetailCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "finalOrderCollection",
+    "Label": "Final Orders",
+    "HintText": "Final Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_directionOrderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeNotApprovedReasons",
+    "Label": "Judge Not Approved Reasons ",
+    "HintText": "Judge Not Approved Reasons ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_c_judgeNotApprovedReasons",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "specialMeasuresApplicationLbl",
+    "Label": "## Special Measures (Application)",
+    "HintText": "Special Measures (Application)",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "specialMeasuresPostHearingLbl",
+    "Label": "## Special Measures (Post Hearing)",
+    "HintText": "Special Measures (Post Hearing)",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "firsttHearingLbl",
+    "Label": "## First Hearing (caseworker S&L)",
+    "HintText": "First Hearing (caseworker S&L)",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hiddenTabValue",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabNatureOfApplication",
+    "Label": "## Nature of application",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabBenefitPaymentChecklistLabel",
+    "Label": "**What payments are you applying for**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabPaymentForChildrenLabel",
+    "Label": "**Does the application contain any periodical payments or secured periodical payments for children**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabBenefitForChildrenLabel",
+    "Label": "**Has a written agreement been made about maintenance for the benefit of children**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabApplicantName",
+    "Label": "**Applicant name** : ${applicantFMName} ${applicantLName}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabApplicantSolicitorFirm",
+    "Label": "**Applicant Solicitor**: ${applicantSolicitorFirm}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabRespondentName",
+    "Label": "**Respondent Name**: ${respondentFMName} ${respondentLName}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabRespondentSolicitorFirm",
+    "Label": "**Respondent Solicitor**: ${rSolicitorFirm}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabRespondentUnrepresented",
+    "Label": "**Respondent unrepresented**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabSolicitorReference",
+    "Label": "**Solicitor Reference** :  ${solicitorReference}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabDateOfMarriage",
+    "Label": "**Date of marriage** : ${dateOfMarriage}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabDateOfSepration",
+    "Label": "**Date of separation** : ${dateOfSepration}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabNameOfCourtDivorceCentre",
+    "Label": "**Name of Court / Divorce Centre where petition issued**: ${nameOfCourtDivorceCentre}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabDivorceDecreeAbsoluteDate",
+    "Label": "**Decree Absolute Date** : ${divorceDecreeAbsoluteDate}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabDivorceDecreeNisiDate",
+    "Label": "**Decree Nisi Date** : ${divorceDecreeNisiDate}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabDivorcePetitionIssuedDate",
+    "Label": "**Petition Issued Date** : ${divorcePetitionIssuedDate}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabComplexityLabel",
+    "Label": "## Complexity:",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabComplexityList",
+    "Label": "The Applicants solicitor has stated that this application should be allocated to the Complexity List of the Financial Remedies Court.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabStandardList",
+    "Label": "The Applicants solicitor has stated that this application should be allocated to the Standard List of the Financial Remedies Court.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabUnsureAboutComplexityList",
+    "Label": "The Applicants solicitor is unsure as to whether the application should be allocated to the Complexity List or to the Standard List of the Financial Remedies Court.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabApplicantCourtList",
+    "Label": "**The Applicants local court is** ",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabEstimatedAssestsCheckList",
+    "Label": "**The assets in this case are currently estimated to be in the order of**  ${estimatedAssetsChecklist}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabNetValueOfHome",
+    "Label": "**The net value of the family home is** ${netValueOfHome}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabPotentialAllegationChecklist",
+    "Label": "**Potential allegations/issues which may arise include** :  ${potentialAllegationChecklist}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabDetailPotentialAllegation",
+    "Label": "**Brief details of the potential allegation/issue** : ${detailPotentialAllegation}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabOtherReasonForComplexity",
+    "Label": "**Other reasons why the case should be allocated to the complexity list**: ${otherReasonForComplexityText}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabFastTrackDecision",
+    "Label": "**Is the application dealt under the Fast Track Procedure** : ${fastTrackDecision}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabFastTrackDecisionReason",
+    "Label": "**Reason for fast track decision**: ${fastTrackDecisionReason}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabJudgesListingDirectionsLabel",
+    "Label": "## Judges Listing Directions ",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabAllocatedCourtListGA",
+    "Label": "**The hearing centre for the case is:**  ",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabJudgeTimeEstimateLabel",
+    "Label": "**Time Estimate for First Appointment Hearing (please specify):**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabCaseAllocatedToLabel",
+    "Label": "**Should the application be allocated to the Fast Track?**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabApplicationAllocatedToLabel",
+    "Label": "**Should the application be dealt with as a ‘complex case’?**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabJudgeAllocatedLabel",
+    "Label": "**The application is suitable to be heard by a:**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "scannedDocuments",
+    "Label": "Scanned Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "ScannedDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "evidenceHandled",
+    "Label": "Supplementary evidence handled",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "regionList",
+    "Label": "Please choose the Region in which the Applicant resides",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_region_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "midlandsFRCList",
+    "Label": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, you will not yet be able to submit your application online.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_gaInformation_FRCList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "londonFRCList",
+    "Label": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, you will not yet be able to submit your application online.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_london_FRCList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "northWestFRCList",
+    "Label": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, you will not yet be able to submit your application online.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_nw_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "northEastFRCList",
+    "Label": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, you will not yet be able to submit your application online.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_ne_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "southEastFRCList",
+    "Label": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, you will not yet be able to submit your application online.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_se_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "walesFRCList",
+    "Label": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, you will not yet be able to submit your application online.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_wales_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "nottinghamCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_nottinghamList",
+    "FieldTypeParameter": "FR_s_NottinghamList",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cfcCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_CFCList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "birminghamCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_birminghamList",
+    "FieldTypeParameter": "FR_birmingham_hc_list",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "londonCourtList",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_londonList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "liverpoolCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_liverpoolList",
+    "FieldTypeParameter": "FR_liverpool_hc_list",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "manchesterCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_manchesterList",
+    "FieldTypeParameter": "FR_manchester_hc_list",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "otherNWCourtList",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cleavelandCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_NWOtherList",
+    "FieldTypeParameter": "FR_cleaveland_hc_list",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "clevelandCourtList",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_clevelandList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "nwyorkshireCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_nw_yorkshireList",
+    "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "humberCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_humberList",
+    "FieldTypeParameter": "FR_humber_hc_list",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "kentSurreyCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_kent_surreyList",
+    "FieldTypeParameter": "FR_kent_surrey_hc_list",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "otherSECourtList",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_SEOtherList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "otherSWCourtList",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_SWOtherList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "newportCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_newportList",
+    "FieldTypeParameter": "FR_newport_hc_list",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "swanseaCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_swanseaList",
+    "FieldTypeParameter": "FR_swansea_hc_list",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "welshOtherCourtList",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_WalesOtherList",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabSpecialAssistanceRequired",
+    "Label": "**Does anyone in this application need assistance or special facilities when attending court?**  : ${specialAssistanceRequired}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabSpecificArrangementsRequired",
+    "Label": "**Does anyone in this application need specific arrangements when attending court?** : ${specificArrangementsRequired}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bulkScanCaseReference",
+    "Label": "Exception Record Reference",
+    "FieldType": "Text",
     "SecurityClassification": "Public"
   }
 ]

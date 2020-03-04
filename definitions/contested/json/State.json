@@ -1,106 +1,186 @@
 [
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "caseAdded",
     "Name": "Application Drafted",
     "DisplayOrder": 1,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "awaitingHWFDecision",
     "Name": "Awaiting HWF Decision",
     "DisplayOrder": 2,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "awaitingPayment",
-    "Name": "Solicitor - Awaiting Payment",
-    "DisplayOrder": 3,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "awaitingPaymentResponse",
     "Name": "Awaiting Payment Response",
-    "DisplayOrder": 4,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+    "DisplayOrder": 3,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicationSubmitted",
     "Name": "Application Submitted",
-    "DisplayOrder": 5,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+    "DisplayOrder": 4,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicationIssued",
     "Name": "Application Issued",
+    "DisplayOrder": 5,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "02/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "gateKeepingAndAllocation",
+    "Name": "Gate Keeping And Allocation",
     "DisplayOrder": 6,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "referredToJudge",
-    "Name": "Awaiting Judicial Response",
+    "LiveFrom": "02/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "schedulingAndHearing",
+    "Name": "Scheduling And Hearing",
     "DisplayOrder": 7,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "orderMade",
-    "Name": "Consent Order Not Approved",
+    "LiveFrom": "02/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "prepareForHearing",
+    "Name": "Prepare For Hearing",
     "DisplayOrder": 8,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "consentOrderApproved",
-    "Name": "Consent Order Approved",
+    "LiveFrom": "02/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseFileSubmitted",
+    "Name": "Ready for Hearing",
     "DisplayOrder": 9,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "consentOrderMade",
-    "Name": "Consent Order Made",
-    "DisplayOrder": 10,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "awaitingResponse",
-    "Name": "Awaiting Response",
-    "DisplayOrder": 11,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "responseReceived",
-    "Name": "Response Received",
-    "DisplayOrder": 12,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "close",
     "Name": "Close",
+    "DisplayOrder": 10,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentProcess",
+    "Name": "Consent Process",
+    "DisplayOrder": 11,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "awaitingJudiciaryResponse",
+    "Name": "Awaiting Judiciary Response",
+    "DisplayOrder": 12,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderApproved",
+    "Name": "Consent Order Approved",
     "DisplayOrder": 13,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderNotApproved",
+    "Name": "Consent Order Not Approved",
+    "DisplayOrder": 14,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderMade",
+    "Name": "Consent Order Made",
+    "DisplayOrder": 15,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseWorkerReview",
+    "Name": "Case Worker Review",
+    "DisplayOrder": 16,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeDraftOrder",
+    "Name": "Judge Draft Order",
+    "DisplayOrder": 17,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "solicitorDraftOrder",
+    "Name": "Solicitor Draft Order",
+    "DisplayOrder": 18,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "reviewOrder",
+    "Name": "Review Order",
+    "DisplayOrder": 19,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "draftOrderNotApproved",
+    "Name": "Draft Order Not Approved",
+    "DisplayOrder": 20,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "scheduleRaiseDirectionsOrder",
+    "Name": "Schedule & Raise Directions Order",
+    "DisplayOrder": 21,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderDrawn",
+    "Name": "Order Drawn",
+    "DisplayOrder": 22,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderSent",
+    "Name": "Order Sent",
+    "DisplayOrder": 23,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   }
 ]

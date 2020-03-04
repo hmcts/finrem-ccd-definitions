@@ -1,79 +1,51 @@
 [
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "[CASE_REFERENCE]",
     "Label": "Case Reference",
     "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "solicitorReference",
     "Label": "Solicitor Reference",
     "DisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "divorceCaseNumber",
-    "Label": "Divorce Case Number",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantLName",
+    "Label": "Applicant Name",
     "DisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "applicantLName",
-    "Label": "Applicant Name",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentLName",
+    "Label": "Respondent Name",
     "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "appRespondentLName",
-    "Label": "Respondent Name",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceHandled",
+    "Label": "Supplementary evidence handled",
     "DisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "issueDate",
-    "Label": "Issue Date",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "[LAST_MODIFIED_DATE]",
+    "Label": "Date of Last Event",
     "DisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "dueDate",
-    "Label": "Due Date",
-    "DisplayOrder": 7
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "evidenceHandled",
-    "Label": "Supplementary evidence handled",
-    "DisplayOrder": 8
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "[LAST_MODIFIED_DATE]",
-    "Label": "Date of Last Event",
-    "DisplayOrder": 9
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "[STATE]",
     "Label": "Status",
-    "DisplayOrder": 10
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "assignedToJudge",
-    "Label": "Judge Name",
-    "DisplayOrder": 11
+    "DisplayOrder": 7
   }
 ]
