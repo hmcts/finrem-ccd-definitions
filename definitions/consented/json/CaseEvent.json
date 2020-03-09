@@ -626,5 +626,17 @@
     "PostConditionState": "applicationSubmitted",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_checkingPayment",
+    "Name": "Checking Payment",
+    "Description": "Checking Payment",
+    "DisplayOrder": 34,
+    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPaymentResponse",
+    "PostConditionState": "checkingPayment",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
