@@ -634,7 +634,7 @@
     "Name": "New Paper Case",
     "Description": "New Paper Case",
     "DisplayOrder": 34,
-    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPaymentResponse",
+    "PreConditionState(s)": "",
     "PostConditionState": "newPaperCase",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
