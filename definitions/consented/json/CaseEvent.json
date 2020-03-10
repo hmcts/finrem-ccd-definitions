@@ -336,7 +336,7 @@
     "Name": "Issue Application",
     "Description": "Issue Application",
     "DisplayOrder": 12,
-    "PreConditionState(s)": "applicationSubmitted",
+    "PreConditionState(s)": "applicationSubmitted;newPaperCase",
     "PostConditionState": "applicationIssued",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/fields/issueDate/get-current-date",
     "RetriesTimeoutAboutToStartEvent": "3,4,5",
@@ -630,12 +630,12 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "FR_checkingPayment",
-    "Name": "Checking Payment",
-    "Description": "Checking Payment",
+    "ID": "FR_newPaperCase",
+    "Name": "New Paper Case",
+    "Description": "New Paper Case",
     "DisplayOrder": 34,
     "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPaymentResponse",
-    "PostConditionState": "checkingPayment",
+    "PostConditionState": "newPaperCase",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   }

@@ -10,9 +10,17 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "newPaperCase",
+    "Name": "New Paper Case",
+    "DisplayOrder": 2,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "awaitingHWFDecision",
     "Name": "Awaiting HWF Decision",
-    "DisplayOrder": 2,
+    "DisplayOrder": 3,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -20,7 +28,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "awaitingPayment",
     "Name": "Solicitor - Awaiting Payment",
-    "DisplayOrder": 3,
+    "DisplayOrder": 4,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -28,14 +36,6 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "awaitingPaymentResponse",
     "Name": "Awaiting Payment Response",
-    "DisplayOrder": 4,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "checkingPayment",
-    "Name": "Checking Payment",
     "DisplayOrder": 5,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
