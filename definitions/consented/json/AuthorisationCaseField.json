@@ -3974,5 +3974,33 @@
     "CaseFieldID": "CaseHistoryViewer",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "11/03/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "applicantRepresentPaper",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "11/03/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "applicantRepresentPaper",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "11/03/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "applicantRepresentPaper",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "11/03/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "applicantRepresentPaper",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
   }
 ]
