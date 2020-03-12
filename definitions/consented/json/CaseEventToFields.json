@@ -2162,6 +2162,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_amendApplicationDetails",
+    "CaseFieldID": "natureOfApplication5b",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 7,
+    "PageDisplayOrder": 7,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_amendApplicationDetails",
     "CaseFieldID": "natureOfApplication6",
     "PageFieldDisplayOrder": 4,
     "DisplayContext": "OPTIONAL",
@@ -2182,6 +2195,30 @@
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_amendApplicationDetails",
+    "CaseFieldID": "ChildSupportAgencyCalculationMade",
+    "PageFieldDisplayOrder": 5,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 7,
+    "PageDisplayOrder": 7,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_amendApplicationDetails",
+    "CaseFieldID": "ChildSupportAgencyCalculationReason",
+    "PageFieldDisplayOrder": 5,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 7,
+    "PageDisplayOrder": 7,
+    "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
   {
