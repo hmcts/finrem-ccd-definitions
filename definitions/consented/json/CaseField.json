@@ -437,6 +437,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "natureOfApplication5b",
+    "Label": "Is there written agreement about maintenance for the benefit of children?",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_NatureOfApplication5b",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "natureOfApplication6",
     "Label": "Select what the payments are for:",
     "HintText": "There is no agreement, but the applicant is applying for payments;",
@@ -451,6 +460,23 @@
     "Label": "Other – Please give details",
     "HintText": "If Other, please provide details",
     "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "ChildSupportAgencyCalculationMade",
+    "Label": "Has the Child Support Agency made any calculation of maintenance in respect of the child(ren)?",
+    "HintText": "If Other, please provide details",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "ChildSupportAgencyCalculationReason",
+    "Label": "If yes, state briefly your reasons for making this application to the court.",
+    "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
