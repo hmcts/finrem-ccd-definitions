@@ -1576,5 +1576,14 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_WalesOtherList",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "11/03/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "applicantRepresentPaper",
+    "Label": "## Is the Applicant represented ? ##",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_ApplicantRepresentPaper",
+    "SecurityClassification": "Public"
   }
 ]

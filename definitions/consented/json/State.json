@@ -10,9 +10,17 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "newPaperCase",
+    "Name": "New Paper Case",
+    "DisplayOrder": 2,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "awaitingHWFDecision",
     "Name": "Awaiting HWF Decision",
-    "DisplayOrder": 2,
+    "DisplayOrder": 3,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -20,7 +28,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "awaitingPayment",
     "Name": "Solicitor - Awaiting Payment",
-    "DisplayOrder": 3,
+    "DisplayOrder": 4,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -28,7 +36,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "awaitingPaymentResponse",
     "Name": "Awaiting Payment Response",
-    "DisplayOrder": 4,
+    "DisplayOrder": 5,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -36,7 +44,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "applicationSubmitted",
     "Name": "Application Submitted",
-    "DisplayOrder": 5,
+    "DisplayOrder": 6,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -44,7 +52,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "applicationIssued",
     "Name": "Application Issued",
-    "DisplayOrder": 6,
+    "DisplayOrder": 7,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -52,7 +60,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "referredToJudge",
     "Name": "Awaiting Judicial Response",
-    "DisplayOrder": 7,
+    "DisplayOrder": 8,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -60,7 +68,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "orderMade",
     "Name": "Consent Order Not Approved",
-    "DisplayOrder": 8,
+    "DisplayOrder": 9,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -68,7 +76,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "consentOrderApproved",
     "Name": "Consent Order Approved",
-    "DisplayOrder": 9,
+    "DisplayOrder": 10,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -76,7 +84,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "consentOrderMade",
     "Name": "Consent Order Made",
-    "DisplayOrder": 10,
+    "DisplayOrder": 11,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -84,7 +92,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "awaitingResponse",
     "Name": "Awaiting Response",
-    "DisplayOrder": 11,
+    "DisplayOrder": 12,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -92,7 +100,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "responseReceived",
     "Name": "Response Received",
-    "DisplayOrder": 12,
+    "DisplayOrder": 13,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   },
   {
@@ -100,7 +108,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "close",
     "Name": "Close",
-    "DisplayOrder": 13,
+    "DisplayOrder": 14,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   }
 ]
