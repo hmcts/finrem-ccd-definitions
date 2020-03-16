@@ -782,7 +782,8 @@
   {
     "LiveFrom": "01/01/2019",
     "ID": "FR_fl_Intention",
-    "ListElementCode": "ApplyToDischargePeriodicalPaymentOrder"
+    "ListElementCode": "ApplyToDischargePeriodicalPaymentOrder",
+    "ListElement": "Apply to discharge periodical payment order"
   },
   {
     "LiveFrom": "01/01/2019",
@@ -1745,6 +1746,18 @@
     "ListElement": "MOLD COUNTY"
   },
   {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ApplicantsRoleInDivorce",
+    "ListElementCode": "FR_ApplicantsRoleInDivorce_1",
+    "ListElement": "Petitioner"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ApplicantsRoleInDivorce",
+    "ListElementCode": "FR_ApplicantsRoleInDivorce_2",
+    "ListElement": "Respondent"
+  },
+  {
     "LiveFrom": "11/03/2020",
     "ID": "FR_ApplicantRepresentPaper",
     "ListElementCode": "FR_applicant_represented_1",
@@ -1779,5 +1792,23 @@
     "ID": "FR_NatureOfApplication5b",
     "ListElementCode": "FR_nature_of_application_1",
     "ListElement": "there is no agreement, but the applicant is applying for payments"
+  },
+  {
+    "LiveFrom": "01/01/2020",
+    "ID": "FR_fl_AuthorisationSignedBy",
+    "ListElementCode": "Applicant",
+    "ListElement": "Applicant"
+  },
+  {
+    "LiveFrom": "01/01/2020",
+    "ID": "FR_fl_AuthorisationSignedBy",
+    "ListElementCode": "Litigation Friend",
+    "ListElement": "Litigation Friend"
+  },
+  {
+    "LiveFrom": "01/01/2020",
+    "ID": "FR_fl_AuthorisationSignedBy",
+    "ListElementCode": "Applicant's solicitor",
+    "ListElement": "Applicant's solicitor"
   }
 ]
