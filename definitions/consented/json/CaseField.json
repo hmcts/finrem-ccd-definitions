@@ -1611,5 +1611,13 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_ApplicantRepresentPaper",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "11/03/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "paperApplication",
+    "Label": "Was the application made on paper?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
   }
 ]
