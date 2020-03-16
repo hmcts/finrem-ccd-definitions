@@ -2566,28 +2566,28 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "authorisationName",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "authorisationFirm",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "authorisation2b",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "authorisation3",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2608,7 +2608,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "HWFNumber",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2629,7 +2629,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "PBANumber",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4106,7 +4106,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "provisionMadeFor",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
@@ -4176,7 +4176,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "applicantIntendsTo",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
@@ -4316,7 +4316,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "applyingForConsentOrder",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
@@ -4414,7 +4414,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "authorisationSolicitorAddress",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
@@ -4456,7 +4456,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "authorisationSigned",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
@@ -4498,7 +4498,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "authorisationSignedBy",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
@@ -4529,6 +4529,13 @@
     "CRUD": "CRU"
   },
   {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "bulkScanCaseReference",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "paperApplication",
@@ -4541,5 +4548,12 @@
     "CaseFieldID": "paperApplication",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "appRespondentFMname",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
   }
 ]
