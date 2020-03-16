@@ -1620,5 +1620,30 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_ApplicantRepresentPaper",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "authorisationSolicitorAddress",
+    "Label": "Authorising solicitor address",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "authorisationSigned",
+    "Label": "Authorisation is signed",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "authorisationSignedBy",
+    "Label": "Authorisation signed by",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_AuthorisationSignedBy",
+    "SecurityClassification": "Public"
   }
 ]
