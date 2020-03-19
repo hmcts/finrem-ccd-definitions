@@ -111,7 +111,7 @@
     "Name": "Amend Application Details",
     "Description": "Amend Application Details",
     "DisplayOrder": 109,
-    "PreConditionState(s)": "caseAdded",
+    "PreConditionState(s)": "caseAdded;newPaperCase",
     "PostConditionState": "caseAdded",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/update-case",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
