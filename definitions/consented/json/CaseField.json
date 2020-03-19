@@ -1673,9 +1673,17 @@
   {
     "LiveFrom": "18/03/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "childrenInfo",
-    "Label": "Children info",
-    "FieldType": "FR_ChildrenInfo",
+    "ID": "childInfo_1",
+    "Label": "Info about child 1",
+    "FieldType": "FR_ChildInfo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "childInfo_2",
+    "Label": "Info about child 2",
+    "FieldType": "FR_ChildInfo",
     "SecurityClassification": "Public"
   }
 ]
