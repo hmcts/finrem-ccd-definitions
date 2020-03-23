@@ -641,5 +641,63 @@
     "FieldType": "Document",
     "ElementLabel": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "name",
+    "FieldType": "Text",
+    "ElementLabel": "Name of child",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "dateOfBirth",
+    "FieldType": "Date",
+    "ElementLabel": "Date of birth",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "gender",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "gender",
+    "ElementLabel": "Gender",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "relationshipToApplicant",
+    "FieldType": "Text",
+    "ElementLabel": "Relationship to applicant",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "relationshipToRespondent",
+    "FieldType": "Text",
+    "ElementLabel": "Relationship to respondent",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "countryOfResidence",
+    "FieldType": "Text",
+    "ElementLabel": "Country of residence",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildrenInfo",
+    "ListElementCode": "childrenInfo",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ChildInfo",
+    "ElementLabel": "Children info",
+    "SecurityClassification": "Public"
   }
 ]
