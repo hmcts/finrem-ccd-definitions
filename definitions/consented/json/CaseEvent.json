@@ -637,5 +637,18 @@
     "PostConditionState": "newPaperCase",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "addPayment",
+    "Name": "Add Payment",
+    "Description": "Add Payment",
+    "DisplayOrder": 35,
+    "PreConditionState(s)": "newPaperCase",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y",
+    "ShowSummary": "Y"
   }
 ]
