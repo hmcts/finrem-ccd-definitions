@@ -345,7 +345,7 @@
     "Name": "Return to S&L",
     "Description": "Return to S&L",
     "DisplayOrder": 23,
-    "PreConditionState(s)": "caseWorkerReview",
+    "PreConditionState(s)": "caseWorkerReview;caseFileSubmitted",
     "PostConditionState": "schedulingAndHearing",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
