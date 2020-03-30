@@ -1675,7 +1675,8 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "childrenInfo",
     "Label": "Info about children",
-    "FieldType": "FR_ChildrenInfo",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ChildInfo",
     "SecurityClassification": "Public"
   }
 ]
