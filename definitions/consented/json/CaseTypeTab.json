@@ -1262,7 +1262,7 @@
     "TabDisplayOrder": 9,
     "CaseFieldID": "payment",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "amountToPay=\"5000\""
+    "TabShowCondition": "amountToPay=\"5000\" OR paperApplication=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
