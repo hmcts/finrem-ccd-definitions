@@ -671,7 +671,7 @@
     "ID": "FR_ChildInfo",
     "ListElementCode": "gender",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "gender",
+    "FieldTypeParameter": "FR_Gender",
     "ElementLabel": "Gender",
     "SecurityClassification": "Public"
   },
@@ -697,15 +697,6 @@
     "ListElementCode": "countryOfResidence",
     "FieldType": "Text",
     "ElementLabel": "Country of residence",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "18/03/2020",
-    "ID": "FR_ChildrenInfo",
-    "ListElementCode": "childrenInfo",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ChildInfo",
-    "ElementLabel": "Children info",
     "SecurityClassification": "Public"
   }
 ]
