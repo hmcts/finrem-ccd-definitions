@@ -396,7 +396,7 @@
     "DisplayOrder": 16,
     "PreConditionState(s)": "referredToJudge",
     "PostConditionState": "consentOrderApproved",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/consent-order-approved",
+    "CallBackURLAboutToSubmitEvent": "http://finrem-cos-pr-262.service.core-compute-preview.internal/case-orchestration/documents/consent-order-approved",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/consent-order-made",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
