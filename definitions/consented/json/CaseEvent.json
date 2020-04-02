@@ -663,5 +663,17 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "08/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_updateCourtInfo",
+    "Name": "Update FR Court Info",
+    "Description": "Update FR Court Info",
+    "DisplayOrder": 37,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
