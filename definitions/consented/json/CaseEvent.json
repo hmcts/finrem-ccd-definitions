@@ -650,5 +650,18 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "paperResponseReceived",
+    "Name": "Paper response received",
+    "Description": "Paper response received",
+    "DisplayOrder": 36,
+    "PreConditionState(s)": "awaitingResponse",
+    "PostConditionState": "responseReceived",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
   }
 ]
