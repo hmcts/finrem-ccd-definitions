@@ -50,14 +50,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "applicantRepresentedPaper",
-    "Label": "          ",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "applicantContactLabel",
     "Label": "#### Applicant’s Contact details",
     "FieldType": "Label",
@@ -1632,10 +1624,10 @@
   {
     "LiveFrom": "11/03/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "applicantRepresentPaper",
+    "ID": "applicantRepresentedPaper",
     "Label": "## Is the Applicant represented ? ##",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_ApplicantRepresentPaper",
+    "FieldTypeParameter": "FR_ApplicantRepresentedPaper",
     "SecurityClassification": "Public"
   },
   {
