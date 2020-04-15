@@ -1677,7 +1677,7 @@
     "ID": "bulkScanCaseReference",
     "Label": "Exception Record Reference",
     "FieldType": "Text",
-    "SecurityClassification": "PUBLIC"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "18/03/2020",
@@ -1686,6 +1686,25 @@
     "Label": "Info about children",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_ChildInfo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "formA",
+    "Label": "Paper Form A",
+    "HintText": "Paper Form A",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "scannedD81s",
+    "Label": "Scanned D81s",
+    "HintText": "Scanned D81s",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
     "SecurityClassification": "Public"
   }
 ]
