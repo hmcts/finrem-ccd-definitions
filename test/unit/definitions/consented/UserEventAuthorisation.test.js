@@ -74,7 +74,7 @@ function checkAuthStateConfig(conditionState, allAuthForEvent, caseType, eventNa
   });
 }
 
-describe.skip('Events authorisation validation', () => {
+describe('Events authorisation validation', () => {
   before(() => {
     AuthCaseEventsActive = AuthorisationCaseEvent.filter(entry => {
       return entry.CRUD === 'CRU' || entry.CRUD === 'RU';
