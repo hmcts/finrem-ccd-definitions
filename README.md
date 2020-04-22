@@ -8,7 +8,7 @@ This allows for the FR CCD Config to be easily edited and stored in Github as JS
 ## Setup
 
 To install the dependencies for both this project and the submodule (ccd-definition-processor), run:
-`yarn install && yarn setup` 
+`yarn install && yarn reset-ccd-submodule` 
 
 ## Convert JSON to Excel
 
@@ -79,6 +79,16 @@ You need to use this if you have accidentally change this pointer reference to s
 
 It's also important to note that once you update to a new reference (i.e you commit a change to the `ccd-definition-processor` _file_) you need to make sure everyone else runs `yarn setup` again to get the updated reference as well.
 
+## Feature toggle
+If you want to test something on local, aat or demo env, but don't want to release it on prod make sure you move 
+all definitions you don't want to release to a file with suffix "-nonprod.json".
+
+To do it, you need to create a folder for files related to that xlsx tab, eg: "AuthorisationCaseEvent" where you move 
+the production file "AuthorisationCaseEvent.json" and you create another one with definitions you don't want to release 
+yet (eg. AuthorisationCaseEvent-noprod.json, but can be any name such as "definitions-for-bsp-ABC-nonprod.json").
+
+When "toggled off" definitions can be released, just move them to the prod file and remove them from nonprod file.
+Then follow the typical release process.
 
 ## Release to AAT / DEMO / ITHC:
 
