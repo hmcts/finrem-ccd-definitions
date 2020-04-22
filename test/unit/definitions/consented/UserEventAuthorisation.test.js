@@ -1,9 +1,9 @@
 const expect = require('chai').expect;
 const { differenceWith, intersectionWith, concat } = require('lodash');
 
-const AuthorisationCaseEvent = Object.assign(require('definitions/consented/json/AuthorisationCaseEvent'), []);
+const AuthorisationCaseEvent = Object.assign(require('definitions/consented/json/AuthorisationCaseEvent/AuthorisationCaseEvent'), []);
 const AuthorisationCaseField = Object.assign(require('definitions/consented/json/AuthorisationCaseField'), []);
-const AuthorisationCaseState = Object.assign(require('definitions/consented/json/AuthorisationCaseState'), []);
+const AuthorisationCaseState = Object.assign(require('definitions/consented/json/AuthorisationCaseState/AuthorisationCaseState'), []);
 const CaseEvent = Object.assign(require('definitions/consented/json/CaseEvent'), []);
 const CaseEventToFields = Object.assign(require('definitions/consented/json/CaseEventToFields'), []);
 

@@ -4,9 +4,9 @@ const expect = require('chai').expect;
 const { uniq } = require('lodash');
 
 const Config = {
-  AuthorisationCaseEvent: Object.assign(require('definitions/consented/json/AuthorisationCaseEvent'), []),
+  AuthorisationCaseEvent: Object.assign(require('definitions/consented/json/AuthorisationCaseEvent/AuthorisationCaseEvent'), []),
   AuthorisationCaseField: Object.assign(require('definitions/consented/json/AuthorisationCaseField'), []),
-  AuthorisationCaseState: Object.assign(require('definitions/consented/json/AuthorisationCaseState'), []),
+  AuthorisationCaseState: Object.assign(require('definitions/consented/json/AuthorisationCaseState/AuthorisationCaseState'), []),
   AuthorisationCaseType: Object.assign(require('definitions/consented/json/AuthorisationCaseType'), []),
   AuthorisationComplexType: Object.assign(require('definitions/consented/json/AuthorisationComplexType'), []),
   CaseEvent: Object.assign(require('definitions/consented/json/CaseEvent'), []),
