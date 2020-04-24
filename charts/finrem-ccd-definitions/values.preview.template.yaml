@@ -25,15 +25,15 @@ ccd:
       value: ${API_GATEWAY_IDAM_SECRET}
 
   userProfileApi:
-    authorisedServices: ccd_admin,ccd_data,ccd_definition,divorce
+    authorisedServices: ccd_admin,ccd_data,ccd_definition,finrem
 
   dataStoreApi:
     s2sKey: ${DATA_STORE_S2S_KEY}
-    s2sAuthorisedServices: divorce,ccd_gw,divorce_ccd_submission
+    s2sAuthorisedServices: finrem,ccd_gw,finrem_ccd_submission
 
   definitionStoreApi:
     s2sKey: ${DEFINITION_STORE_S2S_KEY}
-    s2sAuthorisedServices: ccd_admin,ccd_data,divorce,ccd_gw,divorce_ccd_submission
+    s2sAuthorisedServices: ccd_admin,ccd_data,finrem,ccd_gw,finrem_ccd_submission
 
   caseManagementWeb:
     enabled: true # if you need access to the web ui then enable this, otherwise it won't be deployed
