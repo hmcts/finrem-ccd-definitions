@@ -5,16 +5,15 @@ nodejs:
   # Don't modify below here
   image: ${IMAGE_NAME}
   ingressHost: ${SERVICE_FQDN}
-  keyVaults:
-    finrem:
-      secrets:
-        - microservicekey-divorceCcdSubmission
-        # We might not need the above. Just testing
 
 ccd:
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
+  keyVaults:
+    finrem:
+      secrets:
+        - microservicekey-ccd-data
 
   idam-pr:
     releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
