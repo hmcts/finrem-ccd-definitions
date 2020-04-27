@@ -4,23 +4,23 @@ Scenario('add all the roles', I => {
   I.loginToAdminConsole();
   I.createRole('citizen');
   I.createRole('caseworker');
-  I.createRole('caseworker-divorce-courtadmin');
-  I.createRole('caseworker-divorce-solicitor');
-  I.createRole('caseworker-divorce-courtadmin_beta');
-  I.createRole('caseworker-divorce-systemupdate');
-  I.createRole('caseworker-divorce-bulkscan');
-  I.createRole('caseworker-divorce-courtadmin-la');
-  I.createRole('caseworker-divorce-superuser');
+  I.createRole('caseworker-divorce-financialremedy-courtadmin');
+  I.createRole('caseworker-divorce-financialremedy-solicitor');
+  I.createRole('caseworker-divorce-financialremedy-courtadmin_beta');
+  I.createRole('caseworker-divorce-financialremedy-systemupdate');
+  I.createRole('caseworker-divorce-financialremedy-bulkscan');
+  I.createRole('caseworker-divorce-financialremedy-courtadmin-la');
+  I.createRole('caseworker-divorce-financialremedy-superuser');
   I.click('Manage User Roles');
   I.see('citizen');
   I.see('caseworker');
-  I.see('caseworker-divorce-courtadmin');
-  I.see('caseworker-divorce-solicitor');
-  I.see('caseworker-divorce-courtadmin_beta');
-  I.see('caseworker-divorce-systemupdate');
-  I.see('caseworker-divorce-bulkscan');
-  I.see('caseworker-divorce-courtadmin-la');
-  I.see('caseworker-divorce-superuser');
+  I.see('caseworker-divorce-financialremedy-courtadmin');
+  I.see('caseworker-divorce-financialremedy-solicitor');
+  I.see('caseworker-divorce-financialremedy-courtadmin_beta');
+  I.see('caseworker-divorce-financialremedy-systemupdate');
+  I.see('caseworker-divorce-financialremedy-bulkscan');
+  I.see('caseworker-divorce-financialremedy-courtadmin-la');
+  I.see('caseworker-divorce-financialremedy-superuser');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
 Scenario('upload Consented Config file', I => {
