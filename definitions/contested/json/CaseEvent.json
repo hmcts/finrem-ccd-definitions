@@ -591,17 +591,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "CCD_ADMIN",
-    "Name": "CCD Admin",
-    "DisplayOrder": 7,
-    "PreConditionState(s)": "*",
-    "PostConditionState": "*",
-    "SecurityClassification": "PUBLIC",
-    "ShowSummary": "Yes"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_migrateCase",
     "Name": "Case Data Migration",
     "Description": "Case Data Migration",
