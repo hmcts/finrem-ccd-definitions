@@ -675,5 +675,89 @@
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_awaitingInfo",
+    "Name": "Awaiting Information",
+    "Description": "Awaiting Information",
+    "DisplayOrder": 38,
+    "PreConditionState(s)": "applicationSubmitted;applicationIssued;responseReceived;orderMade;consentOrderApproved",
+    "PostConditionState": "awaitingInfo",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_caseSubmissionFromAwaitingInfo",
+    "Name": "Case Submission",
+    "Description": "Case Submission",
+    "DisplayOrder": 39,
+    "PreConditionState(s)": "awaitingInfo",
+    "PostConditionState": "applicationSubmitted",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_issueApplicationFromAwaitingInfo",
+    "Name": "Issue Application",
+    "Description": "Issue Application",
+    "DisplayOrder": 40,
+    "PreConditionState(s)": "awaitingInfo",
+    "PostConditionState": "applicationIssued",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_responseReceivedFromAwaitingInfo",
+    "Name": "Response Received",
+    "Description": "Response Received",
+    "DisplayOrder": 41,
+    "PreConditionState(s)": "awaitingInfo",
+    "PostConditionState": "responseReceived",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_generalOrderFromAwaitingInfo",
+    "Name": "General Order",
+    "Description": "General Order",
+    "DisplayOrder": 42,
+    "PreConditionState(s)": "awaitingInfo",
+    "PostConditionState": "orderMade",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_consOrdNotApprovedFromAwaitingInfo",
+    "Name": "Consent Order Not Approved",
+    "Description": "Consent Order Not Approved",
+    "DisplayOrder": 43,
+    "PreConditionState(s)": "awaitingInfo",
+    "PostConditionState": "orderMade",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_consOrdApprovedFromAwaitingInfo",
+    "Name": "Consent Order Approved",
+    "Description": "Consent Order Approved",
+    "DisplayOrder": 44,
+    "PreConditionState(s)": "awaitingInfo",
+    "PostConditionState": "consentOrderApproved",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
