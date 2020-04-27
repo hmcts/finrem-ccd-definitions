@@ -5,7 +5,7 @@ const AuthorisationCaseEvent = Object.assign(require('definitions/consented/json
 const AuthorisationCaseField = Object.assign(require('definitions/consented/json/AuthorisationCaseField/AuthorisationCaseField'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/consented/json/AuthorisationCaseState/AuthorisationCaseState'), []);
 const CaseEvent = Object.assign(require('definitions/consented/json/CaseEvent'), []);
-const CaseEventToFields = Object.assign(require('definitions/consented/json/CaseEventToFields'), []);
+const CaseEventToFields = Object.assign(require('definitions/consented/json/CaseEventToFields/CaseEventToFields'), []);
 
 let AuthCaseEventsActive = [];
 

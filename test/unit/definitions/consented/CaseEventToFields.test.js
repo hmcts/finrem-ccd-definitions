@@ -4,7 +4,7 @@ const { find } = require('lodash');
 
 const caseEvent = Object.assign(require('definitions/consented/json/CaseEvent'), []);
 const caseField = Object.assign(require('definitions/consented/json/CaseField/CaseField'), []);
-const caseEventToFeilds = Object.assign(require('definitions/consented/json/CaseEventToFields'), []);
+const caseEventToFeilds = Object.assign(require('definitions/consented/json/CaseEventToFields/CaseEventToFields'), []);
 
 describe('CaseEventToFields', () => {
   it('should contain valid event IDs', () => {
