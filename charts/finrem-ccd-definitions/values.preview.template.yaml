@@ -1,6 +1,12 @@
 tags:
   ccd-idam-pr: true
 
+global:
+  idamApiUrl: https://idam-api.aat.platform.hmcts.net
+  idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
+  ccdAdminWebIngress: ccd-admin-{{ .Release.Name }}.demo.platform.hmcts.net
+  devMode: true
+
 nodejs:
   # Don't modify below here
   image: ${IMAGE_NAME}
