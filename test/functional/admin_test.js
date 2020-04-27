@@ -28,11 +28,11 @@ Scenario('add all the roles', I => {
 Scenario('upload Consented Config file', I => {
   I.loginToAdminConsole();
   I.uploadConfig('../../definitions/consented/xlsx/ccd-config-aat-consented.xlsx');
-  I.see('Consented Case Definition data successfully imported');
+  I.see('Case Definition data successfully imported');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
 Scenario('upload Contested Config file', I => {
   I.loginToAdminConsole();
   I.uploadConfig('../../definitions/contested/xlsx/ccd-config-aat-contested.xlsx');
-  I.see('Contested Case Definition data successfully imported');
+  I.see('Case Definition data successfully imported');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
