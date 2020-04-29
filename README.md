@@ -1,14 +1,14 @@
 # finrem-ccd-definitions
 Financial Remedy configuration definitions for CCD.
 
-This allows for the FR CCD Config to be easily edited and stored in Github as JSON rather than version controlled in Confluence as Xlsx files. 
- 
+This allows for the FR CCD Config to be easily edited and stored in Github as JSON rather than version controlled in Confluence as Xlsx files.
+
 ## Note: For now until we remove the Judge's usernames and email addresses this Github Repo must remain Private
 
 ## Setup
 
 To install the dependencies for both this project and the submodule (ccd-definition-processor), run:
-`yarn install && yarn reset-ccd-submodule` 
+`yarn install && yarn reset-ccd-submodule`
 
 ## Convert JSON to Excel
 
@@ -16,7 +16,7 @@ Depending on if you want the generated Excel to be for the Consented or Conteste
 
 ### Generate Excel Configs for all environments (Local, Demo, ITHC, AAT & Prod)
 
-For Consented Journey: 
+For Consented Journey:
 ```
 yarn generate-excel-all-consented
 ```
@@ -25,7 +25,7 @@ For Contested Journey:
 yarn generate-excel-all-contested
 ```
 
-The generated excel files will be in `defintions/consented/xlsx` or `defintions/contested/xlsx` respectively. 
+The generated excel files will be in `defintions/consented/xlsx` or `defintions/contested/xlsx` respectively.
 
 ### Generate Excel Configs for a specific environment i.e. AAT/DEMO/ITHC
 ```
@@ -34,7 +34,7 @@ yarn generate-bulk-excel-(local/demo/aat/ithc/prod)
 
 E.g.:
 `yarn generate-excel-aat-consented`
-or 
+or
 `yarn generate-excel-aat-contested`
 
 
@@ -80,11 +80,11 @@ You need to use this if you have accidentally change this pointer reference to s
 It's also important to note that once you update to a new reference (i.e you commit a change to the `ccd-definition-processor` _file_) you need to make sure everyone else runs `yarn setup` again to get the updated reference as well.
 
 ## Feature toggle
-If you want to test something on local, aat or demo env, but don't want to release it on prod make sure you move 
+If you want to test something on local, aat or demo env, but don't want to release it on prod make sure you move
 all definitions you don't want to release to a file with suffix "-nonprod.json".
 
-To do it, you need to create a folder for files related to that xlsx tab, eg: "AuthorisationCaseEvent" where you move 
-the production file "AuthorisationCaseEvent.json" and you create another one with definitions you don't want to release 
+To do it, you need to create a folder for files related to that xlsx tab, eg: "AuthorisationCaseEvent" where you move
+the production file "AuthorisationCaseEvent.json" and you create another one with definitions you don't want to release
 yet (eg. AuthorisationCaseEvent-noprod.json, but can be any name such as "definitions-for-bsp-ABC-nonprod.json").
 
 When "toggled off" definitions can be released, just move them to the prod file and remove them from nonprod file.
@@ -97,7 +97,7 @@ https://tools.hmcts.net/confluence/display/BSP/Feature+toggle+for+CCD+definition
 
 When we want to release config changes to AAT/DEMO/ITHC:
 
-1) Generate all the Excel files for the Consented or Contested Journey using `yarn generate-excel-all-{consented/contested}`
+1) Excel files for the Consented or Contested Journey can be found in the `Artifacts` tab of the Jenkins build
 3) Login to the CCD Admin Web Portal for the relevant environment
 4) Go to "Import Case Definition" and upload the appropriate Excel file and verify it uploaded successfully
 
@@ -107,7 +107,7 @@ When we want to release config changes to Production (Note this should be done a
 
 1) Generate all the Excel files for the Consented or Contested Journey using `yarn generate-excel-all-{consented/contested}`
 2) You now need to replace the test Judges' data with the correct data stored in Confluence (Note - this must not be stored in the repo and so these changes must not be committed.)
-3) Login to Confluence and navigate to either https://tools.hmcts.net/confluence/display/FR/Consented+Solicitor+Journey or https://tools.hmcts.net/confluence/display/FR/Contested+Solicitor+Journey 
+3) Login to Confluence and navigate to either https://tools.hmcts.net/confluence/display/FR/Consented+Solicitor+Journey or https://tools.hmcts.net/confluence/display/FR/Contested+Solicitor+Journey
 4) Replace the entire UserProfile tab from your generated Excel with that from Confluence - this will ensure the appropriate Production users are able to login
 5) For the Consented Journey - you have to replace the list of Judges that it is possible to be assigned to. This is done in the 'FixedLists' tab,
 replace all users associated with 'FR_fl_AssignToJudge'- be careful to only modify what is necessary.
