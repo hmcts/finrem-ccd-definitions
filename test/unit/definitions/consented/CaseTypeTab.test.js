@@ -3,7 +3,7 @@ const assert = require('chai').assert;
 const { uniq, uniqWith, map, filter } = require('lodash');
 
 const caseTypeTab = Object.assign(require('definitions/consented/json/CaseTypeTab'), {});
-const caseField = Object.assign(require('definitions/consented/json/CaseField'), {});
+const caseField = Object.assign(require('definitions/consented/json/CaseField/CaseField'), {});
 
 const tabIds = uniq(map(caseTypeTab, 'TabID'));
 

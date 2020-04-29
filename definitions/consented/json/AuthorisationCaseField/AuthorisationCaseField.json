@@ -324,13 +324,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "divRoleOfFrApplicant",
-    "UserRole": "caseworker-divorce-financialremedy",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "rRespondentLabel",
     "UserRole": "caseworker-divorce-financialremedy",
     "CRUD": "CR"
@@ -864,13 +857,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "approvedConsentOrderLetter",
-    "UserRole": "caseworker-divorce-financialremedy",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "consentOrderApprovedNotificationLetter",
     "UserRole": "caseworker-divorce-financialremedy",
     "CRUD": "R"
   },
@@ -1213,13 +1199,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "divRoleOfFrApplicant",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "rRespondentLabel",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
@@ -1753,13 +1732,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "approvedConsentOrderLetter",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "consentOrderApprovedNotificationLetter",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
@@ -2222,13 +2194,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "welshOtherCourtList",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "divRoleOfFrApplicant",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
@@ -2942,13 +2907,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "consentOrderApprovedNotificationLetter",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "bulkPrintCoverSheetRes",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -3351,13 +3309,6 @@
     "CaseFieldID": "welshOtherCourtList",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "divRoleOfFrApplicant",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4048,13 +3999,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "consentOrderApprovedNotificationLetter",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "respondToOrderDocuments",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
@@ -4609,6 +4553,62 @@
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "childrenInfo",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "formA",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "formA",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "formA",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "formA",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "scannedD81s",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "scannedD81s",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "scannedD81s",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "scannedD81s",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRUD"
   }
