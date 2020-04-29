@@ -93,6 +93,13 @@ Then follow the typical release process.
 Please read more here:
 https://tools.hmcts.net/confluence/display/BSP/Feature+toggle+for+CCD+definition
 
+## How to access PR deployment
+GitHub will have the main URL for this deployment. e.g. https://finrem-ccd-definitions-pr-63.service.core-compute-preview.internal/
+However, this URL in itself is not very useful. There are two subdomains that are useful.
+- "case-management-web-" for the Case management UI: e.g. https://case-management-web-finrem-ccd-definitions-pr-63.service.core-compute-preview.internal/
+- "admin-web-" for the Case management UI: e.g. https://admin-web-finrem-ccd-definitions-pr-63.service.core-compute-preview.internal/
+Don't forget to use your own PR number.
+
 ## Release to AAT / DEMO / ITHC:
 
 When we want to release config changes to AAT/DEMO/ITHC:
