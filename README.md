@@ -99,6 +99,7 @@ However, this URL in itself is not very useful. There are two subdomains that ar
 - "case-management-web-" for the Case management UI: e.g. https://case-management-web-finrem-ccd-definitions-pr-63.service.core-compute-preview.internal/
 - "admin-web-" for the Case management UI: e.g. https://admin-web-finrem-ccd-definitions-pr-63.service.core-compute-preview.internal/
 Don't forget to use your own PR number.
+Also note that the default password for the users created automatically in the pipeline is "Testing1234".
 
 ## Release to AAT / DEMO / ITHC:
 
