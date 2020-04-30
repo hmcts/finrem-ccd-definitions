@@ -14,14 +14,13 @@ ccd:
 
   idam-pr:
     releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
-    service:
-      name: Finrem
-      redirect_uri: https://case-management-web-${SERVICE_FQDN}/authenticated
     redirect_uris:
       CCD:
         - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
       CCD Admin:
         - https://admin-web-${SERVICE_FQDN}/oauth2redirect
+      Finrem:
+        - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
 
   apiGateway:
     s2sKey: ${API_GATEWAY_S2S_KEY}
