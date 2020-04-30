@@ -1034,13 +1034,13 @@
     "TabFieldDisplayOrder": 10
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "15/04/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "miniFormA",
+    "CaseFieldID": "formA",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -1050,7 +1050,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "consentOrder",
+    "CaseFieldID": "miniFormA",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -1060,7 +1060,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "consentOrderText",
+    "CaseFieldID": "consentOrder",
     "TabFieldDisplayOrder": 3
   },
   {
@@ -1070,7 +1070,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "latestConsentOrder",
+    "CaseFieldID": "consentOrderText",
     "TabFieldDisplayOrder": 4
   },
   {
@@ -1080,7 +1080,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "d81Joint",
+    "CaseFieldID": "latestConsentOrder",
     "TabFieldDisplayOrder": 5
   },
   {
@@ -1090,7 +1090,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "d81Applicant",
+    "CaseFieldID": "d81Joint",
     "TabFieldDisplayOrder": 6
   },
   {
@@ -1100,7 +1100,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "d81Respondent",
+    "CaseFieldID": "d81Applicant",
     "TabFieldDisplayOrder": 7
   },
   {
@@ -1110,148 +1110,8 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "pensionCollection",
+    "CaseFieldID": "d81Respondent",
     "TabFieldDisplayOrder": 8
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "otherCollection",
-    "TabFieldDisplayOrder": 9
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "divorceUploadEvidence1",
-    "TabFieldDisplayOrder": 10
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "divorceUploadEvidence2",
-    "TabFieldDisplayOrder": 11
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "amendedConsentOrderCollection",
-    "TabFieldDisplayOrder": 12
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "respondToOrderDocuments",
-    "TabFieldDisplayOrder": 13
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": 14
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "generalLetterCollection",
-    "TabFieldDisplayOrder": 15
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintCoverSheetRes",
-    "TabFieldDisplayOrder": 16
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintLetterIdRes",
-    "TabFieldDisplayOrder": 17
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintCoverSheetApp",
-    "TabFieldDisplayOrder": 18
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintLetterIdApp",
-    "TabFieldDisplayOrder": 19
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "uploadDocuments",
-    "TabFieldDisplayOrder": 20
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "copyOfPaperFormA",
-    "TabFieldDisplayOrder": 21
-  },
-  {
-    "LiveFrom": "15/04/2020",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseDetails",
-    "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "formA",
-    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "15/04/2020",
@@ -1261,6 +1121,146 @@
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
     "CaseFieldID": "scannedD81s",
+    "TabFieldDisplayOrder": 9
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "pensionCollection",
+    "TabFieldDisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "otherCollection",
+    "TabFieldDisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "divorceUploadEvidence1",
+    "TabFieldDisplayOrder": 12
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "divorceUploadEvidence2",
+    "TabFieldDisplayOrder": 13
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "amendedConsentOrderCollection",
+    "TabFieldDisplayOrder": 14
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "respondToOrderDocuments",
+    "TabFieldDisplayOrder": 15
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "scannedDocuments",
+    "TabFieldDisplayOrder": 16
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "generalLetterCollection",
+    "TabFieldDisplayOrder": 17
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "bulkPrintCoverSheetRes",
+    "TabFieldDisplayOrder": 18
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "bulkPrintLetterIdRes",
+    "TabFieldDisplayOrder": 19
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "bulkPrintCoverSheetApp",
+    "TabFieldDisplayOrder": 20
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "bulkPrintLetterIdApp",
+    "TabFieldDisplayOrder": 21
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "uploadDocuments",
+    "TabFieldDisplayOrder": 22
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "copyOfPaperFormA",
     "TabFieldDisplayOrder": 23
   },
   {
