@@ -7,10 +7,24 @@ nodejs:
   image: ${IMAGE_NAME}
   ingressHost: ${SERVICE_FQDN}
 
+idam-pr:
+  releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
+  redirect_uris:
+    CCD:
+      - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
+    CCD Admin:
+      - https://admin-web-${SERVICE_FQDN}/oauth2redirect
+    Finrem:
+      - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
+    divorce:
+      - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
+
 ccd:
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
+
+  idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
 
   idam-pr:
     releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
