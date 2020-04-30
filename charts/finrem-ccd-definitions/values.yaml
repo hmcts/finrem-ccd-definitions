@@ -1,2 +1,17 @@
 nodejs:
   applicationPort: 3000
+
+api:
+  url: https://idam-api.aat.platform.hmcts.net
+
+web_public:
+  url: https://idam-web-public.aat.platform.hmcts.net
+
+redirect_uris:
+  test-public-service:
+  - http://localhost/oauth2/receiver
+
+memoryRequests: "512Mi"
+cpuRequests: "25m"
+memoryLimits: "1024Mi"
+cpuLimits: "2500m"

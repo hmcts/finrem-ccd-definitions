@@ -21,6 +21,8 @@ ccd:
         - https://admin-web-${SERVICE_FQDN}/oauth2redirect
       Finrem:
         - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
+      divorce:
+        - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
 
   apiGateway:
     s2sKey: ${API_GATEWAY_S2S_KEY}
@@ -28,15 +30,15 @@ ccd:
       value: ${API_GATEWAY_IDAM_SECRET}
 
   userProfileApi:
-    authorisedServices: ccd_admin,ccd_data,ccd_definition,Finrem
+    authorisedServices: ccd_admin,ccd_data,ccd_definition,divorce,Finrem
 
   dataStoreApi:
     s2sKey: ${DATA_STORE_S2S_KEY}
-    s2sAuthorisedServices: Finrem,ccd_gw,divorce_ccd_submission
+    s2sAuthorisedServices: divorce,Finrem,ccd_gw,divorce_ccd_submission
 
   definitionStoreApi:
     s2sKey: ${DEFINITION_STORE_S2S_KEY}
-    s2sAuthorisedServices: ccd_admin,ccd_data,Finrem,ccd_gw,divorce_ccd_submission
+    s2sAuthorisedServices: ccd_admin,ccd_data,divorce,Finrem,ccd_gw,divorce_ccd_submission
 
   caseManagementWeb:
     enabled: true # if you need access to the web ui then enable this, otherwise it won't be deployed
