@@ -1,68 +1,37 @@
-tags:
-  ccd-idam-pr: true
-
 nodejs:
   # Don't modify below here
   image: ${IMAGE_NAME}
   ingressHost: ${SERVICE_FQDN}
+
+global:
+  idamApiUrl: https://idam-api.aat.platform.hmcts.net
+  idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
+  ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
+  ccdApiGatewayIngress: gateway-finrem-ccd-definitions-${SERVICE_FQDN}.service.core-compute-preview.internal
+  ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
+  devMode: true
 
 ccd:
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
 
-  idam-pr:
-    releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
-    redirect_uris:
-      CCD:
-        - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
-      CCD Admin:
-        - https://admin-web-${SERVICE_FQDN}/oauth2redirect
+  global:
+    idamApiUrl: https://idam-api.aat.platform.hmcts.net
+    idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
+    ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
+    ccdApiGatewayIngress: gateway-finrem-ccd-definitions-${SERVICE_FQDN}.service.core-compute-preview.internal
+    ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
+    devMode: true
 
-  apiGateway:
-    s2sKey: ${API_GATEWAY_S2S_KEY}
-    idamClientSecret:
-      value: ${API_GATEWAY_IDAM_SECRET}
+  ccd-admin-web:
+    nodejs:
+      ingressClass: traefik-no-proxy
+      ingressHost: ccd-admin-{{ .Release.Name }}.demo.platform.hmcts.net
+      secrets:
+        IDAM_OAUTH2_AW_CLIENT_SECRET:
+          disabled: false
 
-  userProfileApi:
-    authorisedServices: ccd_admin,ccd_data,ccd_definition,divorce,finrem
-
-  dataStoreApi:
-    s2sKey: ${DATA_STORE_S2S_KEY}
-    s2sAuthorisedServices: divorce,finrem,ccd_gw,divorce_ccd_submission
-
-  definitionStoreApi:
-    s2sKey: ${DEFINITION_STORE_S2S_KEY}
-    s2sAuthorisedServices: ccd_admin,ccd_data,divorce,finrem,ccd_gw,divorce_ccd_submission
-
-  caseManagementWeb:
-    enabled: true # if you need access to the web ui then enable this, otherwise it won't be deployed
-    environment:
-      NODE_TLS_REJECT_UNAUTHORIZED: 0
-
-  adminWeb:
-    enabled: true # if you need access to the admin web ui then enable this, otherwise it won't be deployed
-    s2sKey: ${ADMIN_S2S_KEY}
-    idamClientSecret:
-      value: ${ADMIN_WEB_IDAM_SECRET}
-    environment:
-      NODE_TLS_REJECT_UNAUTHORIZED: 0
-
-  importer:
-    userprofile:
-      enabled: true
-      jurisdictions:
-        - DIVORCE
-      users:
-        - divorce_as_caseworker_beta@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_bulk_scanner@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_superuser@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_la@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_admin@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_respondent_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      userProfileDatabaseHost: ${SERVICE_NAME}-ccd-postgres
-      userProfileDatabasePort: 5432
-      userProfileDatabaseUser: hmcts
-      userProfileDatabasePassword: hmcts
-      userProfileDatabaseName: user-profile
+  ccd-user-profile-importer:
+    users:
+     - ccd-importer@server.net|DIVORCE|FinancialRemedyMVP2|Submitted
