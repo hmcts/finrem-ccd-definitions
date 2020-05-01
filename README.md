@@ -98,8 +98,7 @@ GitHub will have the main URL for this deployment. e.g. https://finrem-ccd-defin
 However, this URL in itself is not very useful. There are two subdomains that are useful.
 - "case-management-web-" for the Case management UI: e.g. https://case-management-web-finrem-ccd-definitions-pr-63.service.core-compute-preview.internal/
 - "admin-web-" for the Case management UI: e.g. https://admin-web-finrem-ccd-definitions-pr-63.service.core-compute-preview.internal/
-Don't forget to use your own PR number.
-Also note that the default password for the users created automatically in the pipeline is "Testing1234".
+IMPORTANT INFO: We currently have issues with the TLS certificates in AKS AAT. This means that the browser will deny a few calls when you visit the "case management" webapp. To get around this issue, you'll need to check the "Network" tab in Chrome, visit the failing URL and manually accept the risks (browser should tell you it's not safe). The RPE team will be working on a proper solution shortly.
 
 ## Release to AAT / DEMO / ITHC:
 
