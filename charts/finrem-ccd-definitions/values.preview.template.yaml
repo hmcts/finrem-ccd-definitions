@@ -16,6 +16,11 @@ ccd:
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
 
+  rpe-service-auth-provider:
+    java:
+      keyVaults:
+        "s2s":
+
   global:
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
     idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
