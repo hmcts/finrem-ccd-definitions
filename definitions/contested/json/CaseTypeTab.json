@@ -1657,7 +1657,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "draftDirectionDetailsCollectionRO",
+    "CaseFieldID": "solicitorResponsibleForDraftingOrder",
     "TabFieldDisplayOrder": 35
   },
   {
@@ -1666,7 +1666,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "directionDetailsCollection",
+    "CaseFieldID": "draftDirectionDetailsCollectionRO",
     "TabFieldDisplayOrder": 36
   },
   {
@@ -1675,8 +1675,17 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "finalOrderCollection",
+    "CaseFieldID": "directionDetailsCollection",
     "TabFieldDisplayOrder": 37
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "finalOrderCollection",
+    "TabFieldDisplayOrder": 38
   },
   {
     "LiveFrom": "01/01/2017",

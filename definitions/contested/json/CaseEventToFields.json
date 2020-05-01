@@ -10,8 +10,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-defaults",
-    "CallBackURLMidEvent_1": "3,4,5"
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-defaults"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1176,8 +1175,7 @@
     "PageDisplayOrder": 15,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check",
-    "CallBackURLMidEvent_1": "3,4,5"
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1671,8 +1669,7 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/fee-lookup",
-    "CallBackURLMidEvent_1": "3,4,5"
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/fee-lookup"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1711,8 +1708,7 @@
     "PageColumnNumber": 1,
     "PageShowCondition": "helpWithFeesQuestion=\"No\"",
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/pba-validate",
-    "CallBackURLMidEvent_1": "3,4,5"
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/pba-validate"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3907,8 +3903,7 @@
     "PageDisplayOrder": 15,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check",
-    "CallBackURLMidEvent_1": "3,4,5"
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4615,6 +4610,18 @@
     "CaseEventID": "FR_solicitorToDraftOrder",
     "CaseFieldID": "attendingCourtWithArrangement",
     "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorToDraftOrder",
+    "CaseFieldID": "solicitorResponsibleForDraftingOrder",
+    "PageFieldDisplayOrder": 5,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,

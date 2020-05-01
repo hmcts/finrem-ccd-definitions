@@ -1799,6 +1799,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "solicitorResponsibleForDraftingOrder",
+    "Label": "  ",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_solicitorToDraftOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "copyOfPaperFormA",
     "Label": "Copy of Paper Form A application documents",
     "HintText": "Copy of Paper Form A application documents",
