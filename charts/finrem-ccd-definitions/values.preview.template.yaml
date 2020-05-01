@@ -20,6 +20,8 @@ ccd:
     java:
       keyVaults:
         "s2s":
+          resourceGroup: rpe-service-auth-provider
+          secrets:
 
   global:
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
