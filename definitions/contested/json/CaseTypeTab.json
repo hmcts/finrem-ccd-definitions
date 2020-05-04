@@ -1240,6 +1240,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "AdminNotes",
+    "TabLabel": "Admin Notes",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "solicitorResponsibleForDraftingOrder",
+    "TabFieldDisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "judiciaryOutcomeTab",
     "TabLabel": "Judiciary Outcome",
     "TabDisplayOrder": 13,
@@ -1657,7 +1666,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "solicitorResponsibleForDraftingOrder",
+    "CaseFieldID": "draftDirectionDetailsCollectionRO",
     "TabFieldDisplayOrder": 35
   },
   {
@@ -1666,7 +1675,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "draftDirectionDetailsCollectionRO",
+    "CaseFieldID": "directionDetailsCollection",
     "TabFieldDisplayOrder": 36
   },
   {
@@ -1675,17 +1684,8 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "directionDetailsCollection",
-    "TabFieldDisplayOrder": 37
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTab",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 15,
     "CaseFieldID": "finalOrderCollection",
-    "TabFieldDisplayOrder": 38
+    "TabFieldDisplayOrder": 37
   },
   {
     "LiveFrom": "01/01/2017",
