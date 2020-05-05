@@ -256,7 +256,7 @@
     "Name": "HWF Application Accepted",
     "Description": "HWF Application Accepted",
     "DisplayOrder": 6,
-    "PreConditionState(s)": "awaitingHWFDecision",
+    "PreConditionState(s)": "awaitingHWFDecision;newPaperCase",
     "PostConditionState": "applicationSubmitted",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/remove-case-data-state",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
