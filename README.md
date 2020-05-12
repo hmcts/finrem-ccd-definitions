@@ -94,13 +94,18 @@ Please read more here:
 https://tools.hmcts.net/confluence/display/BSP/Feature+toggle+for+CCD+definition
 
 ## How to access PR deployment
-GitHub will have the main URL for this deployment. e.g. https://finrem-ccd-definitions-pr-63.service.core-compute-preview.internal/
+GitHub will have the main URL for this deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
 However, this URL in itself is not very useful. There are two subdomains that are useful.
-- "case-management-web-" for the Case management UI: e.g. https://case-management-web-finrem-ccd-definitions-pr-63.service.core-compute-preview.internal/
-- "admin-web-" for the Case management UI: e.g. https://admin-web-finrem-ccd-definitions-pr-63.service.core-compute-preview.internal/
-IMPORTANT INFO: We currently have issues with the TLS certificates in AKS AAT. This means that the browser will deny a few calls when you visit the "case management" webapp. To get around this issue, you'll need to check the "Network" tab in Chrome, visit the failing URL and manually accept the risks (browser should tell you it's not safe). The RPE team will be working on a proper solution shortly.
 
-## Release to AAT / DEMO / ITHC:
+- "case-management-web-" for the Case management UI: e.g. `https://case-management-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
+
+* Visit `https://gateway-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` in separate tab and whitelist accept the SSL certificate.
+
+* Login with an authorised AAT user [listed here](https://github.com/hmcts/finrem-ccd-definitions/blob/master/definitions/consented/json/UserProfile.json)
+
+- "admin-web-" for the Case management UI: e.g. `https://admin-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
+
+IMPORTANT INFO: We currently have issues with the TLS certificates in AKS AAT. This means that the browser will deny a few calls when you visit the "case management" webapp. To get around this issue, you'll need to check the "Network" tab in Chrome, visit the failing URL and manually accept the risks (browser should tell you it's not safe). The RPE team will be working on a proper solution shortly.
 
 When we want to release config changes to AAT/DEMO/ITHC:
 
