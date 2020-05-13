@@ -2893,6 +2893,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "solicitorResponsibleForDraftingOrderLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "solicitorResponsibleForDraftingOrder",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
@@ -4581,6 +4588,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "attendingCourtWithArrangement",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "solicitorResponsibleForDraftingOrderLabel",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
   },
