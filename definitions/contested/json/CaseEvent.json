@@ -399,6 +399,7 @@
     "DisplayOrder": 27,
     "PreConditionState(s)": "caseFileSubmitted",
     "PostConditionState": "solicitorDraftOrder",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/draft-order",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
