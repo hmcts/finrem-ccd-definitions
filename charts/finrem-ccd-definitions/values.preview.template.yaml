@@ -37,6 +37,8 @@ ccd:
 
   dmStore:
     enabled: true
+    environment:
+      NODE_TLS_REJECT_UNAUTHORIZED: 0
 
   caseManagementWeb:
     enabled: true # if you need access to the web ui then enable this, otherwise it won't be deployed
