@@ -256,7 +256,7 @@
     "Name": "HWF Application Accepted",
     "Description": "HWF Application Accepted",
     "DisplayOrder": 6,
-    "PreConditionState(s)": "awaitingHWFDecision",
+    "PreConditionState(s)": "awaitingHWFDecision;newPaperCase",
     "PostConditionState": "applicationSubmitted",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/remove-case-data-state",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
@@ -440,6 +440,8 @@
     "DisplayOrder": 19,
     "PreConditionState(s)": "orderMade",
     "PostConditionState": "referredToJudge",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
+    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -452,6 +454,8 @@
     "DisplayOrder": 20,
     "PreConditionState(s)": "consentOrderApproved",
     "PostConditionState": "referredToJudge",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
+    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -464,6 +468,8 @@
     "DisplayOrder": 21,
     "PreConditionState(s)": "consentOrderMade",
     "PostConditionState": "referredToJudge",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
+    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -504,6 +510,8 @@
     "DisplayOrder": 24,
     "PreConditionState(s)": "close",
     "PostConditionState": "referredToJudge",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
+    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
