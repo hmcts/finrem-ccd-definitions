@@ -5,7 +5,3 @@ dependencies:
   - name: ccd
     version: ~3.3.5
     repository: '@hmctspublic'
-  - name: dm-store
-    version: ~2.0.7
-    repository: '@hmctspublic'
-    condition: ccd.dmStore.enabled
