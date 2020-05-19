@@ -1252,7 +1252,7 @@
     "TabID": "judiciaryOutcomeTab",
     "TabLabel": "Judiciary Outcome",
     "TabDisplayOrder": 13,
-    "CaseFieldID": "selectJudge",
+    "CaseFieldID": "servePensionProviderOther",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -1261,7 +1261,7 @@
     "TabID": "judiciaryOutcomeTab",
     "TabLabel": "Judiciary Outcome",
     "TabDisplayOrder": 13,
-    "CaseFieldID": "dateOfOrder",
+    "CaseFieldID": "orderDirectionJudge",
     "TabFieldDisplayOrder": 3
   },
   {
@@ -1270,7 +1270,7 @@
     "TabID": "judiciaryOutcomeTab",
     "TabLabel": "Judiciary Outcome",
     "TabDisplayOrder": 13,
-    "CaseFieldID": "additionalComments",
+    "CaseFieldID": "orderDirectionJudgeName",
     "TabFieldDisplayOrder": 4
   },
   {
@@ -1279,7 +1279,7 @@
     "TabID": "judiciaryOutcomeTab",
     "TabLabel": "Judiciary Outcome",
     "TabDisplayOrder": 13,
-    "CaseFieldID": "uploadConsentOrder",
+    "CaseFieldID": "selectJudge",
     "TabFieldDisplayOrder": 5
   },
   {
@@ -1288,7 +1288,7 @@
     "TabID": "judiciaryOutcomeTab",
     "TabLabel": "Judiciary Outcome",
     "TabDisplayOrder": 13,
-    "CaseFieldID": "generalOrders",
+    "CaseFieldID": "dateOfOrder",
     "TabFieldDisplayOrder": 6
   },
   {
@@ -1297,8 +1297,35 @@
     "TabID": "judiciaryOutcomeTab",
     "TabLabel": "Judiciary Outcome",
     "TabDisplayOrder": 13,
-    "CaseFieldID": "applicationNotApproved",
+    "CaseFieldID": "additionalComments",
     "TabFieldDisplayOrder": 7
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "judiciaryOutcomeTab",
+    "TabLabel": "Judiciary Outcome",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "uploadConsentOrder",
+    "TabFieldDisplayOrder": 8
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "judiciaryOutcomeTab",
+    "TabLabel": "Judiciary Outcome",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "generalOrders",
+    "TabFieldDisplayOrder": 9
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "judiciaryOutcomeTab",
+    "TabLabel": "Judiciary Outcome",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "applicationNotApproved",
+    "TabFieldDisplayOrder": 10
   },
   {
     "LiveFrom": "01/01/2017",
