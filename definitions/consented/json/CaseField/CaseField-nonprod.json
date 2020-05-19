@@ -1,10 +1,19 @@
 [
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/05/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "consentOrderApprovedNotificationLetter",
-    "Label": "Approved Consent Order Notification Letter  ",
-    "HintText": "Generated Approved Consent Order Notification Letter from Docmosis",
+    "Label": "Consent Order Approved Notification Letter  ",
+    "HintText": "Generated Consent Order Approved Notification Letter from Docmosis",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/05/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderNotApprovedNotificationLetter",
+    "Label": "Consent Order Not Approved Notification Letter  ",
+    "HintText": "Generated Consent Order Not Approved Notification Letter from Docmosis",
     "FieldType": "Document",
     "SecurityClassification": "Public"
   }

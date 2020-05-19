@@ -1,6 +1,6 @@
 [
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/05/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "Channel": "CaseWorker",
     "TabID": "Approved Order",
@@ -8,5 +8,15 @@
     "TabDisplayOrder": 8,
     "CaseFieldID": "consentOrderApprovedNotificationLetter",
     "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/05/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "Approved Order",
+    "TabLabel": "Approved Order",
+    "TabDisplayOrder": 8,
+    "CaseFieldID": "consentOrderNotApprovedNotificationLetter",
+    "TabFieldDisplayOrder": 3
   }
 ]
