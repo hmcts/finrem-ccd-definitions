@@ -23,6 +23,8 @@ ccd:
     s2sKey: ${API_GATEWAY_S2S_KEY}
     idamClientSecret:
       value: ${API_GATEWAY_IDAM_SECRET}
+    environment:
+      PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
 
   userProfileApi:
     authorisedServices: ccd_admin,ccd_data,ccd_definition,divorce,finrem

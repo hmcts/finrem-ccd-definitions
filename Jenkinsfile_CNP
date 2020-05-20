@@ -32,10 +32,6 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 
 withPipeline("nodejs", product, component) {
 
-  if (env.CHANGE_TITLE && !env.CHANGE_TITLE.startsWith('[NO-CCD]')) {
-    installCharts()
-  }
-
   loadVaultSecrets(secrets)
 
   after('build') {
