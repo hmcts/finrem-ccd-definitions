@@ -1821,6 +1821,23 @@
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
+    {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "solicitorResponsibleForDraftingOrderLabel",
+    "Label": "#### Please select the solicitor responsible to draft the order",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "solicitorResponsibleForDraftingOrder",
+    "Label": "Solicitor to Draft Order",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_solicitorToDraftOrder",
+    "SecurityClassification": "Public"
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
