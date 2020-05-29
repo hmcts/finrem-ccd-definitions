@@ -2184,6 +2184,30 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addSchedulingListingInfo",
+    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "PageFieldDisplayOrder": 28,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addSchedulingListingInfo",
+    "CaseFieldID": "additionalInformationAboutHearing",
+    "PageFieldDisplayOrder": 29,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_giveAllocationDirections",
     "CaseFieldID": "chooseCourtLabelGA",
     "PageFieldDisplayOrder": 1,

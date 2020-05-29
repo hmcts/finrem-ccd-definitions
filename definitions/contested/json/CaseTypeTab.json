@@ -1630,7 +1630,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "specialMeasuresPostHearingLbl",
+    "CaseFieldID": "additionalInformationAboutHearingLabel",
     "TabFieldDisplayOrder": 30
   },
   {
@@ -1639,7 +1639,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
+    "CaseFieldID": "additionalInformationAboutHearing",
     "TabFieldDisplayOrder": 31
   },
   {
@@ -1648,7 +1648,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithAssistance",
+    "CaseFieldID": "specialMeasuresPostHearingLbl",
     "TabFieldDisplayOrder": 32
   },
   {
@@ -1657,7 +1657,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
+    "CaseFieldID": "attendingCourtWithAssistanceLabel",
     "TabFieldDisplayOrder": 33
   },
   {
@@ -1666,7 +1666,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithArrangement",
+    "CaseFieldID": "attendingCourtWithAssistance",
     "TabFieldDisplayOrder": 34
   },
   {
@@ -1675,7 +1675,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "draftDirectionDetailsCollectionRO",
+    "CaseFieldID": "attendingCourtWithArrangementLabel",
     "TabFieldDisplayOrder": 35
   },
   {
@@ -1684,7 +1684,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "directionDetailsCollection",
+    "CaseFieldID": "attendingCourtWithArrangement",
     "TabFieldDisplayOrder": 36
   },
   {
@@ -1693,8 +1693,26 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "finalOrderCollection",
+    "CaseFieldID": "draftDirectionDetailsCollectionRO",
     "TabFieldDisplayOrder": 37
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "directionDetailsCollection",
+    "TabFieldDisplayOrder": 38
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "finalOrderCollection",
+    "TabFieldDisplayOrder": 39
   },
   {
     "LiveFrom": "01/01/2017",
