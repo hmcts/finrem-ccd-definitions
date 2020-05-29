@@ -1727,6 +1727,31 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "servePensionProvider",
+    "Label": "Does a copy of this order need to be served to the pension provider?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "servePensionProviderResponsibility",
+    "Label": "Who is responsible for sending a copy of the order to the pension provider?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_PensionProvider",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "servePensionProviderOther",
+    "Label": "Please Specify",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "selectJudge",
     "Label": "Select Judge",
     "HintText": "Please select the appropriate judge",
