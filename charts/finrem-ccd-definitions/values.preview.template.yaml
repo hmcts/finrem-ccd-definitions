@@ -11,14 +11,6 @@ ccd:
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
 
-  idam-pr:
-    releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
-    redirect_uris:
-      CCD:
-        - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
-      CCD Admin:
-        - https://admin-web-${SERVICE_FQDN}/oauth2redirect
-
   apiGateway:
     s2sKey: ${API_GATEWAY_S2S_KEY}
     idamClientSecret:
