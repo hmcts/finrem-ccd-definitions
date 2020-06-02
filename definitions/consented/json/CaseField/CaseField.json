@@ -1689,5 +1689,21 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "applicantOrganisationPolicy",
+    "Label": "Applicant Solicitor Details",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "respondentOrganisationPolicy",
+    "Label": "Respondent Solicitor Details",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
   }
 ]
