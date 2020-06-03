@@ -17,6 +17,7 @@ describe('CaseTypeTab', () => {
     );
     expect(uniqResult).to.eql(caseTypeTab);
   });
+
   it('should contain a unique tab field display order ID field tab ID (no duplicate field order in a tab)', () => {
     tabIds.forEach(tabId => {
       const allFieldsPerTab = filter(caseTypeTab, field => {
@@ -31,6 +32,7 @@ describe('CaseTypeTab', () => {
       expect(uniqResults).to.eql(allFieldsPerTab);
     });
   });
+
   it('should contain a proper sequence for TabFieldDisplayOrder with no gaps', () => {
     tabIds.forEach(tabId => {
       const allFieldsPerTab = filter(caseTypeTab, field => {
@@ -59,11 +61,12 @@ describe('CaseTypeTab', () => {
     CaseDetails: 7,
     'Approved Order': 8,
     PaymentDetails: 9,
-    AdminNotes: 10,
-    CaseOrder: 11,
-    Orders: 12,
-    Notes: 13,
-    Judge: 14
+    PaymentHistory: 10,
+    AdminNotes: 11,
+    CaseOrder: 12,
+    Orders: 13,
+    Notes: 14,
+    Judge: 15
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -86,6 +89,7 @@ describe('CaseTypeTab', () => {
       'CaseDetails',
       'Approved Order',
       'PaymentDetails',
+      'PaymentHistory',
       'AdminNotes',
       'CaseOrder',
       'Orders',
@@ -93,6 +97,7 @@ describe('CaseTypeTab', () => {
       'Judge'
     ]);
   });
+
   it('should contain a valid case field IDs', () => {
     const validFields = uniq(map(caseField, 'ID'));
     const objectsWithInvalidCaseId = filter(caseTypeTab, field => {
