@@ -1697,5 +1697,13 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "paymentHistory",
+    "Label": "A history of payments associated with a the case",
+    "FieldType": "CasePaymentHistoryViewer",
+    "SecurityClassification": "Public"
   }
 ]
