@@ -2460,5 +2460,21 @@
     "Label": "Exception Record Reference",
     "FieldType": "Text",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantOrganisationPolicy",
+    "Label": "Applicant Solicitor Details",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentOrganisationPolicy",
+    "Label": "Respondent Solicitor Details",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
   }
 ]
