@@ -749,17 +749,19 @@
     "SecurityClassification": "Public"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "ID": "applicantOrganisationPolicy",
-    "Label": "Applicant Solicitor Details",
+    "LiveFrom": "18/03/2020",
+    "ID": "Applicant",
+    "ListElementCode": "OrganisationPolicy",
     "FieldType": "OrganisationPolicy",
+    "ElementLabel": "Applicant Solicitor Details",
     "SecurityClassification": "Public"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "ID": "respondentOrganisationPolicy",
-    "Label": "Respondent Solicitor Details",
+    "LiveFrom": "18/03/2020",
+    "ID": "Respondent",
+    "ListElementCode": "OrganisationPolicy",
     "FieldType": "OrganisationPolicy",
+    "ElementLabel": "Respondent Solicitor Details",
     "SecurityClassification": "Public"
   }
 ]

@@ -690,5 +690,21 @@
     "FieldType": "Text",
     "ElementLabel": "Country of residence",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "Applicant",
+    "ListElementCode": "OrganisationPolicy",
+    "FieldType": "OrganisationPolicy",
+    "ElementLabel": "Applicant Solicitor Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "Respondent",
+    "ListElementCode": "OrganisationPolicy",
+    "FieldType": "OrganisationPolicy",
+    "ElementLabel": "Respondent Solicitor Details",
+    "SecurityClassification": "Public"
   }
 ]

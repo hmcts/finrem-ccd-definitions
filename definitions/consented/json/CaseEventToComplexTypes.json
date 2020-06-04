@@ -158,5 +158,17 @@
     "EventElementLabel": "********************",
     "FieldDisplayOrder": 8,
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "Applicant",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "applicant",
+    "ListElementCode": "organisationPolicy.caseRole",
+    "DisplayContext": "MANDATORY",
+    "DefaultValue": "[APPSOLICITOR]",
+    "FieldDisplayOrder": 1,
+    "ShowSummaryChangeOption": "N"
   }
 ]
