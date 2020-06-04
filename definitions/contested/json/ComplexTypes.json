@@ -747,5 +747,19 @@
     "ElementLabel": "Type of hearing values",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "applicantOrganisationPolicy",
+    "Label": "Applicant Solicitor Details",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentOrganisationPolicy",
+    "Label": "Respondent Solicitor Details",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
   }
 ]
