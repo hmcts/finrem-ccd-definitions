@@ -632,7 +632,7 @@
     "TabDisplayOrder": 3,
     "CaseFieldID": "respondentAddress",
     "TabFieldDisplayOrder": 14,
-    "FieldShowCondition": "appRespondentRep=\"No\""
+    "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1375,7 +1375,7 @@
     "CaseFieldID": "paymentHistory",
     "TabFieldDisplayOrder": 1,
     "TabShowCondition": "paperApplication=\"Yes\""
-  },  
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
@@ -1875,5 +1875,17 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "generalLetterCollection",
     "TabFieldDisplayOrder": 16
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "respondentAddressConfidentialTab",
+    "TabLabel": "Respondent Address Confidential",
+    "TabDisplayOrder": 16,
+    "CaseFieldID": "respondentAddress",
+    "TabFieldDisplayOrder": 1,
+    "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
+    "TabShowCondition": "respondentAddressConfidential=\"Yes\""
   }
 ]
