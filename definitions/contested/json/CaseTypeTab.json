@@ -459,7 +459,7 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "respondentAddress",
     "TabFieldDisplayOrder": 16,
-    "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\\\"Yes\\"
+    "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
