@@ -767,5 +767,19 @@
     "PostConditionState": "consentOrderApproved",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_generalEmail",
+    "Name": "Create General Email",
+    "Description": "Create General Email",
+    "DisplayOrder": 45,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-email-start",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/general-letter",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
