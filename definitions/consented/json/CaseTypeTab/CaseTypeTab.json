@@ -1365,12 +1365,23 @@
     "TabFieldDisplayOrder": 8
   },
   {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment history",
+    "TabDisplayOrder": 10,
+    "CaseFieldID": "paymentHistory",
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "paperApplication=\"Yes\""
+  },  
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "dueDate",
     "TabFieldDisplayOrder": 1
   },
@@ -1380,7 +1391,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "issueDate",
     "TabFieldDisplayOrder": 2
   },
@@ -1390,7 +1401,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "assignedToJudgeReason",
     "TabFieldDisplayOrder": 3
   },
@@ -1400,7 +1411,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "assignedToJudge",
     "TabFieldDisplayOrder": 4
   },
@@ -1410,7 +1421,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeDate",
     "TabFieldDisplayOrder": 5
   },
@@ -1420,7 +1431,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeText",
     "TabFieldDisplayOrder": 6
   },
@@ -1430,7 +1441,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeDateFromOrderMade",
     "TabFieldDisplayOrder": 7
   },
@@ -1440,7 +1451,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeTextFromOrderMade",
     "TabFieldDisplayOrder": 8
   },
@@ -1450,7 +1461,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeDateFromConsOrdApproved",
     "TabFieldDisplayOrder": 9
   },
@@ -1460,7 +1471,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeTextFromConsOrdApproved",
     "TabFieldDisplayOrder": 10
   },
@@ -1470,7 +1481,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeDateFromConsOrdMade",
     "TabFieldDisplayOrder": 11
   },
@@ -1480,7 +1491,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeTextFromConsOrdMade",
     "TabFieldDisplayOrder": 12
   },
@@ -1490,7 +1501,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeDateFromClose",
     "TabFieldDisplayOrder": 13
   },
@@ -1500,7 +1511,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeTextFromClose",
     "TabFieldDisplayOrder": 14
   },
@@ -1510,7 +1521,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeDateFromAwaitingResponse",
     "TabFieldDisplayOrder": 15
   },
@@ -1520,7 +1531,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeTextFromAwaitingResponse",
     "TabFieldDisplayOrder": 16
   },
@@ -1530,7 +1541,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeDateFromRespondToOrder",
     "TabFieldDisplayOrder": 17
   },
@@ -1540,7 +1551,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "referToJudgeTextFromRespondToOrder",
     "TabFieldDisplayOrder": 18
   },
@@ -1550,7 +1561,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "orderDirection",
     "TabFieldDisplayOrder": 1
   },
@@ -1560,7 +1571,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "orderDirectionOpt1",
     "TabFieldDisplayOrder": 2
   },
@@ -1570,7 +1581,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "orderDirectionOpt2",
     "TabFieldDisplayOrder": 3
   },
@@ -1580,7 +1591,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "orderDirectionAbsolute",
     "TabFieldDisplayOrder": 4
   },
@@ -1590,7 +1601,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "servePensionProvider",
     "TabFieldDisplayOrder": 5
   },
@@ -1600,7 +1611,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "servePensionProviderResponsibility",
     "TabFieldDisplayOrder": 6
   },
@@ -1610,7 +1621,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "servePensionProviderOther",
     "TabFieldDisplayOrder": 7
   },
@@ -1620,7 +1631,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "orderDirectionJudge",
     "TabFieldDisplayOrder": 8
   },
@@ -1630,7 +1641,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "orderDirectionJudgeName",
     "TabFieldDisplayOrder": 9
   },
@@ -1640,7 +1651,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "orderDirectionDate",
     "TabFieldDisplayOrder": 10
   },
@@ -1650,7 +1661,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "orderDirectionAddComments",
     "TabFieldDisplayOrder": 11
   },
@@ -1660,7 +1671,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "orderRefusalCollection",
     "TabFieldDisplayOrder": 12
   },
@@ -1670,7 +1681,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "generalOrderCollection",
     "TabFieldDisplayOrder": 13
   },
@@ -1680,7 +1691,7 @@
     "Channel": "CaseWorker",
     "TabID": "Orders",
     "TabLabel": "Orders",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "uploadOrder",
     "TabFieldDisplayOrder": 1
   },
@@ -1690,7 +1701,7 @@
     "Channel": "CaseWorker",
     "TabID": "Orders",
     "TabLabel": "Orders",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "uploadConsentOrderDocuments",
     "TabFieldDisplayOrder": 2
   },
@@ -1700,7 +1711,7 @@
     "Channel": "CaseWorker",
     "TabID": "Notes",
     "TabLabel": "Notes",
-    "TabDisplayOrder": 13,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "caseNotesCollection",
     "TabFieldDisplayOrder": 1
   },
@@ -1710,7 +1721,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "applicantDetails",
     "TabFieldDisplayOrder": 1
   },
@@ -1720,7 +1731,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "applicantFMName",
     "TabFieldDisplayOrder": 2
   },
@@ -1730,7 +1741,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "applicantLName",
     "TabFieldDisplayOrder": 3
   },
@@ -1740,7 +1751,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "rRespondentLabel",
     "TabFieldDisplayOrder": 4
   },
@@ -1750,7 +1761,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "appRespondentFMName",
     "TabFieldDisplayOrder": 5
   },
@@ -1760,7 +1771,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "appRespondentLName",
     "TabFieldDisplayOrder": 6
   },
@@ -1770,7 +1781,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "appRespondentRep",
     "TabFieldDisplayOrder": 7
   },
@@ -1780,7 +1791,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "caseDetailsLa",
     "TabFieldDisplayOrder": 8
   },
@@ -1790,7 +1801,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "miniFormA",
     "TabFieldDisplayOrder": 9
   },
@@ -1800,7 +1811,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "divorceCaseNumber",
     "TabFieldDisplayOrder": 10
   },
@@ -1810,7 +1821,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "divorceDecreeNisiDate",
     "TabFieldDisplayOrder": 11
   },
@@ -1820,7 +1831,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "divorceDecreeAbsoluteDate",
     "TabFieldDisplayOrder": 12
   },
@@ -1830,7 +1841,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "divorceUploadEvidence1",
     "TabFieldDisplayOrder": 13
   },
@@ -1840,7 +1851,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "divorceUploadEvidence2",
     "TabFieldDisplayOrder": 14
   },
@@ -1850,7 +1861,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "assignedToJudge",
     "TabFieldDisplayOrder": 15
   },
@@ -1860,7 +1871,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "generalLetterCollection",
     "TabFieldDisplayOrder": 16
   }
