@@ -7,6 +7,9 @@ nodejs:
   ingressHost: ${SERVICE_FQDN}
 
 ccd:
+  ccd:
+    definitionImporter:
+      enabled: false
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
