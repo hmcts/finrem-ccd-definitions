@@ -76,21 +76,12 @@ ccd:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
       keyVaults:
 
-  importer:
-    userprofile:
-      enabled: true
-      jurisdictions:
-        - DIVORCE
-      users:
-        - divorce_as_caseworker_beta@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_bulk_scanner@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_superuser@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_la@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_admin@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_respondent_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      userProfileDatabaseHost: ${SERVICE_NAME}-ccd-postgres
-      userProfileDatabasePort: 5432
-      userProfileDatabaseUser: hmcts
-      userProfileDatabasePassword: hmcts
-      userProfileDatabaseName: user-profile
+  ccd-user-profile-importer:
+    users:
+      - divorce_as_caseworker_beta@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+      - divorce_as_caseworker_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+      - divorce_as_caseworker_bulk_scanner@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+      - divorce_as_caseworker_superuser@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+      - divorce_as_caseworker_la@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+      - divorce_as_caseworker_admin@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+      - divorce_respondent_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
