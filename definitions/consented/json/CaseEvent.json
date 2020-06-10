@@ -778,7 +778,7 @@
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-email-start",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/general-letter",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-email",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   }
