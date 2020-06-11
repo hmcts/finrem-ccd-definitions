@@ -42,16 +42,6 @@ ccd:
     environment:
       NODE_TLS_REJECT_UNAUTHORIZED: 0
 
-  ccd-definition-store-api:
-    java:
-      imagePullPolicy: Always
-      environment:
-        DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
-        DEFINITION_STORE_IDAM_KEY: ${CCD_DEFINITION_STORE_S2S_SECRET}
-        IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
-      keyVaults:
-      ingressHost: ccd-definition-store-${SERVICE_FQDN}
-
   adminWeb:
     enabled: true # if you need access to the admin web ui then enable this, otherwise it won't be deployed
     s2sKey: ${ADMIN_S2S_KEY}
