@@ -14,6 +14,10 @@ ccd:
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
 
+  ccd-admin-web:
+    nodejs:
+      ingressHost: admin-web-${SERVICE_FQDN}
+
   idam-pr:
     releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
     redirect_uris:
@@ -42,14 +46,6 @@ ccd:
 
   caseManagementWeb:
     enabled: true # if you need access to the web ui then enable this, otherwise it won't be deployed
-    environment:
-      NODE_TLS_REJECT_UNAUTHORIZED: 0
-
-  adminWeb:
-    enabled: true # if you need access to the admin web ui then enable this, otherwise it won't be deployed
-    s2sKey: ${ADMIN_S2S_KEY}
-    idamClientSecret:
-      value: ${ADMIN_WEB_IDAM_SECRET}
     environment:
       NODE_TLS_REJECT_UNAUTHORIZED: 0
 
