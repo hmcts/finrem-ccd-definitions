@@ -22,6 +22,8 @@ ccd:
   ccd-admin-web:
     nodejs:
       ingressHost: admin-web-${SERVICE_FQDN}
+    idamClientSecret:
+      value: ${ADMIN_WEB_IDAM_SECRET}
 
   idam-pr:
     releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
