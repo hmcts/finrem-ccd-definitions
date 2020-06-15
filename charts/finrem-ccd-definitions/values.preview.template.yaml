@@ -9,7 +9,7 @@ nodejs:
 ccd:
   ccd:
     definitionImporter:
-      enabled: true
+      enabled: false
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
