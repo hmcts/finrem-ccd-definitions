@@ -1031,17 +1031,8 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "allocatedCourtList",
-    "TabFieldDisplayOrder": 19
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "gatekeepingTab",
-    "TabLabel": "Gatekeeping and allocation ",
-    "TabDisplayOrder": 11,
     "CaseFieldID": "tabEstimatedAssestsCheckList",
-    "TabFieldDisplayOrder": 20,
+    "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "addToComplexityListOfCourts=\"true*\""
   },
   {
@@ -1051,7 +1042,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabNetValueOfHome",
-    "TabFieldDisplayOrder": 21,
+    "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "addToComplexityListOfCourts=\"true*\""
   },
   {
@@ -1061,7 +1052,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabPotentialAllegationChecklist",
-    "TabFieldDisplayOrder": 22,
+    "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "addToComplexityListOfCourts=\"true*\""
   },
   {
@@ -1071,7 +1062,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDetailPotentialAllegation",
-    "TabFieldDisplayOrder": 23,
+    "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "addToComplexityListOfCourts=\"true*\""
   },
   {
@@ -1081,7 +1072,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabOtherReasonForComplexity",
-    "TabFieldDisplayOrder": 24,
+    "TabFieldDisplayOrder": 22,
     "FieldShowCondition": "otherReasonForComplexity=\"Yes\""
   },
   {
@@ -1091,7 +1082,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabJudgesListingDirectionsLabel",
-    "TabFieldDisplayOrder": 25
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1100,7 +1091,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabAllocatedCourtListGA",
-    "TabFieldDisplayOrder": 26
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1109,7 +1100,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "allocatedCourtList",
-    "TabFieldDisplayOrder": 27
+    "TabFieldDisplayOrder": 25
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1118,7 +1109,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabJudgeAllocatedLabel",
-    "TabFieldDisplayOrder": 28
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1127,7 +1118,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "judgeAllocated",
-    "TabFieldDisplayOrder": 29
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1136,7 +1127,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabApplicationAllocatedToLabel",
-    "TabFieldDisplayOrder": 30
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1145,7 +1136,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "applicationAllocatedTo",
-    "TabFieldDisplayOrder": 31
+    "TabFieldDisplayOrder": 29
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1154,7 +1145,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabCaseAllocatedToLabel",
-    "TabFieldDisplayOrder": 32
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1163,7 +1154,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "caseAllocatedTo",
-    "TabFieldDisplayOrder": 33
+    "TabFieldDisplayOrder": 31
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1172,7 +1163,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabJudgeTimeEstimateLabel",
-    "TabFieldDisplayOrder": 34
+    "TabFieldDisplayOrder": 32
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1181,7 +1172,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "judgeTimeEstimate",
-    "TabFieldDisplayOrder": 35
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1190,7 +1181,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "judgeTimeEstimateTextArea",
-    "TabFieldDisplayOrder": 36
+    "TabFieldDisplayOrder": 34
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1965,7 +1956,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "fastTrackDecision",
-    "TabFieldDisplayOrder": 27
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1974,7 +1965,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "fastTrackDecisionReason",
-    "TabFieldDisplayOrder": 28
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1983,7 +1974,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specialAssistanceRequiredLabel",
-    "TabFieldDisplayOrder": 29
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1992,7 +1983,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specialAssistanceRequired",
-    "TabFieldDisplayOrder": 30
+    "TabFieldDisplayOrder": 29
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2001,7 +1992,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specificArrangementsRequiredLabel",
-    "TabFieldDisplayOrder": 31
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2010,6 +2001,6 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specificArrangementsRequired",
-    "TabFieldDisplayOrder": 32
+    "TabFieldDisplayOrder": 31
   }
 ]
