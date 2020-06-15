@@ -9,10 +9,15 @@ nodejs:
 ccd:
   ccd:
     definitionImporter:
-      enabled: false
+      enabled: true
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
+
+  global:
+    idamApiUrl: https://idam-api.aat.platform.hmcts.net
+    idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
+    dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
 
   ccd-admin-web:
     nodejs:
@@ -30,8 +35,6 @@ ccd:
     s2sKey: ${API_GATEWAY_S2S_KEY}
     idamClientSecret:
       value: ${API_GATEWAY_IDAM_SECRET}
-    environment:
-      PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
 
   userProfileApi:
     authorisedServices: ccd_admin,ccd_data,ccd_definition,divorce,finrem
@@ -62,7 +65,6 @@ ccd:
       environment:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DEFINITION_STORE_IDAM_KEY: ${CCD_DEFINITION_STORE_S2S_SECRET}
-        IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
       keyVaults:
 
   ccd-user-profile-api:
