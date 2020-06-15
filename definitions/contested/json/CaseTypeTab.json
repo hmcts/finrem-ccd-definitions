@@ -1031,15 +1031,6 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "tabApplicantCourtList",
-    "TabFieldDisplayOrder": 18
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "gatekeepingTab",
-    "TabLabel": "Gatekeeping and allocation ",
-    "TabDisplayOrder": 11,
     "CaseFieldID": "allocatedCourtList",
     "TabFieldDisplayOrder": 19
   },
@@ -1117,7 +1108,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "allocatedCourtListGA",
+    "CaseFieldID": "allocatedCourtList",
     "TabFieldDisplayOrder": 27
   },
   {
@@ -1504,7 +1495,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "allocatedCourtListSL",
+    "CaseFieldID": "allocatedCourtList",
     "TabFieldDisplayOrder": 13
   },
   {
@@ -1966,15 +1957,6 @@
     "TabDisplayOrder": 16,
     "CaseFieldID": "allocatedCourtList",
     "TabFieldDisplayOrder": 25
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "hiddenTab",
-    "TabLabel": "Hidden Tab",
-    "TabDisplayOrder": 16,
-    "CaseFieldID": "allocatedCourtListGA",
-    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",

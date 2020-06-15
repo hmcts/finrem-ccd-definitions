@@ -2550,13 +2550,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "tabApplicantCourtList",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "nottinghamCourtListGA",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -2572,13 +2565,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "tabAllocatedCourtListGA",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "allocatedCourtListGA",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
   },
@@ -2991,13 +2977,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "allocatedCourtListSL",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "nottinghamCourtListSL",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -3132,13 +3111,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "chooseCourtLabelGA",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "allocatedCourtListGA",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
   },
@@ -4524,13 +4496,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "tabApplicantCourtList",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "specialAssistanceRequiredLabel",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
@@ -4755,13 +4720,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "allocatedCourtListSL",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "nottinghamCourtListSL",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
@@ -4890,7 +4848,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "allocatedCourtList",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",

@@ -703,15 +703,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "allocatedCourtList",
-    "Label": "  ",
-    "HintText": "This should be the FRC local to the applicant",
-    "FieldType": "FR_ct_courtList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "specialAssistanceRequiredLabel",
     "Label": "#### Does anyone in this application need assistance or special facilities when attending court?",
     "FieldType": "Label",
@@ -1301,15 +1292,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "allocatedCourtListSL",
-    "Label": "This would usually be the applicants local Court",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_gaInformation_FRCList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "londonFRCListSL",
     "Label": "This should be the FRC local to the applicant",
     "HintText": "This should be the FRC local to the applicant",
@@ -1478,7 +1460,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "allocatedCourtListGA",
+    "ID": "allocatedCourtList",
     "Label": "  ",
     "HintText": "Choose relevant FRC",
     "FieldType": "FR_ct_courtList",
@@ -2126,14 +2108,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabUnsureAboutComplexityList",
     "Label": "The Applicants solicitor is unsure as to whether the application should be allocated to the Complexity List or to the Standard List of the Financial Remedies Court.",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "tabApplicantCourtList",
-    "Label": "**The Applicants local court is** ",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
