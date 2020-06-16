@@ -2029,7 +2029,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_addSchedulingListingInfo",
-    "CaseFieldID": "allocatedCourtList",
+    "CaseFieldID": "midlandsFRCListSL",
     "PageFieldDisplayOrder": 16,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
@@ -2048,7 +2048,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "regionListSL=\"midlands\" AND allocatedCourtList=\"nottingham\"",
+    "FieldShowCondition": "regionListSL=\"midlands\" AND midlandsFRCListSL=\"nottingham\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2074,7 +2074,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "regionListSL=\"midlands\" AND allocatedCourtList=\"birmingham\"",
+    "FieldShowCondition": "regionListSL=\"midlands\" AND midlandsFRCListSL=\"birmingham\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
