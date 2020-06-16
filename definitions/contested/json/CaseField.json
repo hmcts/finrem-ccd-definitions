@@ -2460,5 +2460,46 @@
     "Label": "Exception Record Reference",
     "FieldType": "Text",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderAddressto",
+    "Label": "Address to",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_go_Addressto",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderCreatedBy",
+    "Label": "Letter Created by",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderDate",
+    "Label": "Court order date",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderBodyText",
+    "Label": "Please fill in the body of the text",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderDocumentPreview",
+    "Label": "Preview of General Order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
   }
 ]
