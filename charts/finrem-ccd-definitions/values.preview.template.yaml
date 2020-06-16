@@ -21,8 +21,8 @@ ccd:
   ccd-admin-web:
     nodejs:
       ingressHost: admin-web-${SERVICE_FQDN}
-    idamClientSecret:
-      value: ${ADMIN_WEB_IDAM_SECRET}
+      environment:
+        IDAM_OAUTH2_AW_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
 
   idam-pr:
     enabled: true
