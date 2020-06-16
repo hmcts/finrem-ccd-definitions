@@ -1374,7 +1374,7 @@
     "CaseFieldID": "paymentHistory",
     "TabFieldDisplayOrder": 1,
     "TabShowCondition": "paperApplication=\"Yes\""
-  },  
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
@@ -1704,6 +1704,16 @@
     "TabDisplayOrder": 13,
     "CaseFieldID": "uploadConsentOrderDocuments",
     "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "Orders",
+    "TabLabel": "Orders",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "generalOrderLatestDocument",
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
