@@ -1299,6 +1299,17 @@
     "FieldTypeParameter": "FR_london_FRCList",
     "SecurityClassification": "Public"
   },
+
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "midlandsFRCListSL",
+    "Label": "This should be the FRC local to the applicant",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_midlands_FRCList",
+    "SecurityClassification": "Public"
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -2248,7 +2259,7 @@
     "Label": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, you will not yet be able to submit your application online.",
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_gaInformation_FRCList",
+    "FieldTypeParameter": "FR_midlands_FRCList",
     "SecurityClassification": "Public"
   },
   {
