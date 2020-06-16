@@ -15,8 +15,6 @@ ccd:
   consulIP: ${CONSUL_LB_IP}
 
   global:
-    idamApiUrl: https://idam-api.aat.platform.hmcts.net
-    idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
     dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
 
   ccd-admin-web:
