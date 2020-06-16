@@ -33,10 +33,17 @@ ccd:
       CCD Admin:
         - https://admin-web-${SERVICE_FQDN}/oauth2redirect
 
-  apiGateway:
-    s2sKey: ${API_GATEWAY_S2S_KEY}
-    idamClientSecret:
-      value: ${API_GATEWAY_IDAM_SECRET}
+  ccd-api-gateway-web:
+    nodejs:
+      imagePullPolicy: Always
+      environment:
+        ADDRESS_LOOKUP_TOKEN: ${ADDRESS_LOOKUP_TOKEN}
+        IDAM_SERVICE_KEY: ${CCD_API_GATEWAY_S2S_SECRET}
+        IDAM_OAUTH2_CLIENT_SECRET: ${CCD_API_GATEWAY_IDAM_CLIENT_SECRET}
+        PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
+      ingressHost: gateway-${SERVICE_FQDN}
+      ingressIP: ${INGRESS_IP}
+      keyVaults:
 
   userProfileApi:
     authorisedServices: ccd_admin,ccd_data,ccd_definition,divorce,finrem
