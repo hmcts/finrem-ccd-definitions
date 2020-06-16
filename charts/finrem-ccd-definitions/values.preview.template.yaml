@@ -1,6 +1,3 @@
-tags:
-  ccd-idam-pr: true
-
 nodejs:
   # Don't modify below here
   image: ${IMAGE_NAME}
@@ -18,6 +15,8 @@ ccd:
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
     idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
     dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
+    s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+    ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
 
   ccd-admin-web:
     nodejs:
@@ -26,6 +25,7 @@ ccd:
       value: ${ADMIN_WEB_IDAM_SECRET}
 
   idam-pr:
+    enabled: true
     releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
     redirect_uris:
       CCD:
