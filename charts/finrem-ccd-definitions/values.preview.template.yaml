@@ -26,16 +26,28 @@ ccd:
     environment:
       PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
 
-  userProfileApi:
-    authorisedServices: ccd_admin,ccd_data,ccd_definition,divorce,finrem
+  ccd-user-profile-api:
+    java:
+      imagePullPolicy: Always
+      enviroment:
+        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
+      keyVaults:
 
-  dataStoreApi:
-    s2sKey: ${DATA_STORE_S2S_KEY}
-    s2sAuthorisedServices: divorce,finrem,ccd_gw,divorce_ccd_submission
+  ccd-data-store-api:
+    java:
+      imagePullPolicy: Always
+      environment:
+        DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
+        DATA_STORE_IDAM_KEY: ${CCD_DATA_STORE_S2S_SECRET}
+      keyVaults:
 
-  definitionStoreApi:
-    s2sKey: ${DEFINITION_STORE_S2S_KEY}
-    s2sAuthorisedServices: ccd_admin,ccd_data,divorce,finrem,ccd_gw,divorce_ccd_submission
+  ccd-definition-store-api:
+    java:
+      imagePullPolicy: Always
+      environment:
+        DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
+        DEFINITION_STORE_IDAM_KEY: ${CCD_DEFINITION_STORE_S2S_SECRET}
+      keyVaults:
 
   caseManagementWeb:
     enabled: true # if you need access to the web ui then enable this, otherwise it won't be deployed
