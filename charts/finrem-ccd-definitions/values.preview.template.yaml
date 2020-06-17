@@ -1,13 +1,5 @@
 tags:
-  idam-pr: true  #ccd-case-management-web and admin web will add IDAM redirect urls
-
-idam-pr:
-  enabled: true
-  redirect_uris:
-    CCD:
-      - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
-    CCD Admin:
-      - https://admin-web-${SERVICE_FQDN}/oauth2redirect
+  ccd-idam-pr: true
 
 nodejs:
   # Don't modify below here
@@ -15,46 +7,24 @@ nodejs:
   ingressHost: ${SERVICE_FQDN}
 
 ccd:
-  ccd:
-    definitionImporter:
-      enabled: false
-    adminWeb:
-      enabled: true
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
 
-  global:
-    idamApiUrl: https://idam-api.aat.platform.hmcts.net
-    idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
-    dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
-    s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+  idam-pr:
+    releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
+    redirect_uris:
+      CCD:
+        - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
+      CCD Admin:
+        - https://admin-web-${SERVICE_FQDN}/oauth2redirect
 
-  ccd-admin-web:
-    enabled: true # if you need access to the admin web ui then enable this, otherwise it won't be deployed
-    s2sKey: ${ADMIN_S2S_KEY}
+  apiGateway:
+    s2sKey: ${API_GATEWAY_S2S_KEY}
+    idamClientSecret:
+      value: ${API_GATEWAY_IDAM_SECRET}
     environment:
-      NODE_TLS_REJECT_UNAUTHORIZED: 0
-    nodejs:
-      secrets:
-        IDAM_OAUTH2_AW_CLIENT_SECRET:
-          secretRef: ccd-admin-web-oauth2-client-secret
-          key: key
-          disabled: true
-    idam-pr:
-      enabled: true
-
-  ccd-api-gateway-web:
-    nodejs:
-      imagePullPolicy: Always
-      environment:
-        ADDRESS_LOOKUP_TOKEN: ${ADDRESS_LOOKUP_TOKEN}
-        IDAM_SERVICE_KEY: ${CCD_API_GATEWAY_S2S_SECRET}
-        IDAM_OAUTH2_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
-        PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
-      ingressHost: gateway-${SERVICE_FQDN}
-      ingressIP: ${INGRESS_IP}
-      keyVaults:
+      PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
 
   userProfileApi:
     authorisedServices: ccd_admin,ccd_data,ccd_definition,divorce,finrem
@@ -72,37 +42,29 @@ ccd:
     environment:
       NODE_TLS_REJECT_UNAUTHORIZED: 0
 
-  ccd-data-store-api:
-    java:
-      imagePullPolicy: Always
-      environment:
-        DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
-        DATA_STORE_IDAM_KEY: ${CCD_DATA_STORE_S2S_SECRET}
-      keyVaults:
-  ccd-definition-store-api:
-    java:
-      imagePullPolicy: Always
-      environment:
-        DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
-        DEFINITION_STORE_IDAM_KEY: ${CCD_DEFINITION_STORE_S2S_SECRET}
-      keyVaults:
+  adminWeb:
+    enabled: true # if you need access to the admin web ui then enable this, otherwise it won't be deployed
+    s2sKey: ${ADMIN_S2S_KEY}
+    idamClientSecret:
+      value: ${ADMIN_WEB_IDAM_SECRET}
+    environment:
+      NODE_TLS_REJECT_UNAUTHORIZED: 0
 
-  ccd-user-profile-api:
-    java:
-      imagePullPolicy: Always
-      enviroment:
-        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
-      keyVaults:
-
-  ccd-user-profile-importer:
-    users:
-      - divorce_as_caseworker_beta@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      - divorce_as_caseworker_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      - divorce_as_caseworker_bulk_scanner@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      - divorce_as_caseworker_superuser@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      - divorce_as_caseworker_la@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      - divorce_as_caseworker_admin@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      - divorce_respondent_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-  postgresql:
-    persistence:
-      enabled: false
+  importer:
+    userprofile:
+      enabled: true
+      jurisdictions:
+        - DIVORCE
+      users:
+        - divorce_as_caseworker_beta@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+        - divorce_as_caseworker_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+        - divorce_as_caseworker_bulk_scanner@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+        - divorce_as_caseworker_superuser@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+        - divorce_as_caseworker_la@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+        - divorce_as_caseworker_admin@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+        - divorce_respondent_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
+      userProfileDatabaseHost: ${SERVICE_NAME}-ccd-postgres
+      userProfileDatabasePort: 5432
+      userProfileDatabaseUser: hmcts
+      userProfileDatabasePassword: hmcts
+      userProfileDatabaseName: user-profile
