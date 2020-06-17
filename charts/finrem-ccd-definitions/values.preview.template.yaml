@@ -12,12 +12,10 @@ ccd:
   consulIP: ${CONSUL_LB_IP}
 
   global:
-    ccdAdminWebIngress: ""
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
     idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
     dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-    ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
 
   ccd-admin-web:
     nodejs:
@@ -28,7 +26,6 @@ ccd:
         IDAM_OAUTH2_TOKEN_ENDPOINT: '{{ tpl .Values.global.idamApiUrl $}}/oauth2/token'
         IDAM_OAUTH2_LOGOUT_ENDPOINT: '{{ tpl .Values.global.idamApiUrl $}}/session/:token'
         ADMINWEB_ROLES_WHITELIST: 'ccd-import,ccd-import-validate'
-        IDAM_ADMIN_WEB_SERVICE_KEY: AAAAAAAAAAAAAAAA
       secrets:
         IDAM_OAUTH2_AW_CLIENT_SECRET:
           secretRef: ccd-admin-web-oauth2-client-secret
@@ -41,8 +38,10 @@ ccd:
       web_public:
         url: '{{ tpl .Values.global.idamWebUrl $}}'
       redirect_uris:
+        CCD:
+          - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
         CCD Admin:
-          - 'https://{{ tpl .Values.global.ccdAdminWebIngress $}}/oauth2redirect'
+          - https://admin-web-${SERVICE_FQDN}/oauth2redirect
 
   ccd-api-gateway-web:
     nodejs:
