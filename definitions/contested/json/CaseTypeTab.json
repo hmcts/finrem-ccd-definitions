@@ -459,7 +459,7 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "respondentAddress",
     "TabFieldDisplayOrder": 16,
-    "FieldShowCondition": "respondentRepresented=\"No\""
+    "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2048,5 +2048,38 @@
     "TabDisplayOrder": 16,
     "CaseFieldID": "specificArrangementsRequired",
     "TabFieldDisplayOrder": 32
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "RespondentAddressConfidential-solicitor",
+    "TabLabel": "Respondent Address Confidential",
+    "CaseFieldID": "respondentAddress",
+    "UserRole": "[RESPSOLICITOR]",
+    "TabFieldDisplayOrder": 1,
+    "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
+    "TabShowCondition": "respondentAddressConfidential=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "RespondentAddressConfidential-courtadmin",
+    "TabLabel": "Respondent Address Confidential",
+    "CaseFieldID": "respondentAddress",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "TabFieldDisplayOrder": 1,
+    "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
+    "TabShowCondition": "respondentAddressConfidential=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "RespondentAddressConfidential-judiciary",
+    "TabLabel": "Respondent Address Confidential",
+    "CaseFieldID": "respondentAddress",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "TabFieldDisplayOrder": 1,
+    "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
+    "TabShowCondition": "respondentAddressConfidential=\"Yes\""
   }
 ]
