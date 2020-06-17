@@ -20,6 +20,7 @@ ccd:
     idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
     dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+    ccdAdminWebIngress: ccd-admin-web-${SERVICE_FQDN}
 
   idam-pr:
     releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
