@@ -19,20 +19,12 @@ ccd:
 
   ccd-admin-web:
     nodejs:
-      releaseNameOverride: "{{ .Release.Name }}-ccd-admin-web"
-      environment:
-        IDAM_S2S_URL: '{{ tpl .Values.global.s2sUrl $}}'
-        IDAM_BASE_URL: '{{ tpl .Values.global.idamApiUrl $}}'
-        IDAM_OAUTH2_TOKEN_ENDPOINT: '{{ tpl .Values.global.idamApiUrl $}}/oauth2/token'
-        IDAM_OAUTH2_LOGOUT_ENDPOINT: '{{ tpl .Values.global.idamApiUrl $}}/session/:token'
-        ADMINWEB_ROLES_WHITELIST: 'ccd-import,ccd-import-validate'
       secrets:
         IDAM_OAUTH2_AW_CLIENT_SECRET:
           secretRef: ccd-admin-web-oauth2-client-secret
           key: key
           disabled: true
     idam-pr:
-      releaseNameOverride: "{{ .Release.Name }}-ccd-admin-web-idam-pr"
       redirect_uris:
         CCD:
           - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
