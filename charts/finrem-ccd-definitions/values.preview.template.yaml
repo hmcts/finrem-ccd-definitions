@@ -1,3 +1,6 @@
+tags:
+  idam-pr: true  #ccd-case-management-web and admin web will add IDAM redirect urls
+
 nodejs:
   # Don't modify below here
   image: ${IMAGE_NAME}
