@@ -80,3 +80,7 @@ ccd:
       userProfileDatabaseUser: hmcts
       userProfileDatabasePassword: hmcts
       userProfileDatabaseName: user-profile
+
+  postgresql:
+    persistence:
+      enabled: false
