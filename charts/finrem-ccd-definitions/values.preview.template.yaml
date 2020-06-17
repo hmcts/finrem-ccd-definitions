@@ -1,6 +1,14 @@
 tags:
   idam-pr: true  #ccd-case-management-web and admin web will add IDAM redirect urls
 
+idam-pr:
+      enabled: true
+      redirect_uris:
+        CCD:
+          - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
+        CCD Admin:
+          - https://admin-web-${SERVICE_FQDN}/oauth2redirect
+
 nodejs:
   # Don't modify below here
   image: ${IMAGE_NAME}
@@ -10,6 +18,8 @@ ccd:
   ccd:
     definitionImporter:
       enabled: false
+    adminWeb:
+      enabled: true
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
@@ -28,11 +38,7 @@ ccd:
           key: key
           disabled: true
     idam-pr:
-      redirect_uris:
-        CCD:
-          - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
-        CCD Admin:
-          - https://admin-web-${SERVICE_FQDN}/oauth2redirect
+      enabled: true
 
   ccd-api-gateway-web:
     nodejs:
