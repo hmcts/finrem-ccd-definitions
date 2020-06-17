@@ -481,6 +481,16 @@
     "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "respondentRepresented=\"No\""
   },
+    {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "respondentDetailsTab",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "respondentAddressConfidential",
+    "TabFieldDisplayOrder": 19,
+    "FieldShowCondition": "respondentRepresented=\"No\""
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
