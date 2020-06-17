@@ -31,6 +31,10 @@ ccd:
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
 
   ccd-admin-web:
+    enabled: true # if you need access to the admin web ui then enable this, otherwise it won't be deployed
+    s2sKey: ${ADMIN_S2S_KEY}
+    environment:
+      NODE_TLS_REJECT_UNAUTHORIZED: 0
     nodejs:
       secrets:
         IDAM_OAUTH2_AW_CLIENT_SECRET:
