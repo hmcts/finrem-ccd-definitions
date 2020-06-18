@@ -75,7 +75,6 @@ ccd:
 
   ccd-api-gateway-web:
     nodejs:
-      ingressClass: traefik-no-proxy
       ingressHost: gateway-${SERVICE_FQDN}
       keyVaults:
       environment:
