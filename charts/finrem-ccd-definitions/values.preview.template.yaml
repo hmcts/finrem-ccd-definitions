@@ -10,6 +10,10 @@ ccd:
   ccd:
     definitionImporter:
       enabled: false
+    managementWeb:
+       enabled: true
+    apiGatewayWeb:
+      enabled: true
 
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
@@ -21,6 +25,8 @@ ccd:
     dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
     ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
+    ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
+    ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
 
   idam-pr:
     releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
@@ -29,13 +35,6 @@ ccd:
         - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
       CCD Admin:
         - https://admin-web-${SERVICE_FQDN}/oauth2redirect
-
-  apiGateway:
-    s2sKey: ${API_GATEWAY_S2S_KEY}
-    idamClientSecret:
-      value: ${API_GATEWAY_IDAM_SECRET}
-    environment:
-      PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
 
   ccd-user-profile-api:
     java:
@@ -60,11 +59,6 @@ ccd:
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
       keyVaults:
 
-  caseManagementWeb:
-    enabled: true # if you need access to the web ui then enable this, otherwise it won't be deployed
-    environment:
-      NODE_TLS_REJECT_UNAUTHORIZED: 0
-
   ccd-admin-web:
     nodejs:
       image: hmctspublic.azurecr.io/ccd/admin-web:latest
@@ -74,6 +68,18 @@ ccd:
         IDAM_OAUTH2_AW_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
     idam-pr:
       enabled: true
+
+  ccd-case-management-web:
+    nodejs:
+      ingressHost: case-management-web-${SERVICE_FQDN}
+
+  ccd-api-gateway-web:
+    nodejs:
+      ingressClass: traefik-no-proxy
+      ingressHost: gateway-${SERVICE_FQDN}
+      secrets:
+        IDAM_OAUTH2_CLIENT_SECRET:
+          disabled: false
 
   importer:
     userprofile:
