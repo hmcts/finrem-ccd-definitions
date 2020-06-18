@@ -77,6 +77,8 @@ ccd:
     nodejs:
       ingressClass: traefik-no-proxy
       ingressHost: gateway-${SERVICE_FQDN}
+      secrets:
+        IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
 
   importer:
     userprofile:
