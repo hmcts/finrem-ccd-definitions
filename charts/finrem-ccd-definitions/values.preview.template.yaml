@@ -60,6 +60,7 @@ ccd:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
         DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin
+        IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
 
   ccd-admin-web:
     nodejs:
