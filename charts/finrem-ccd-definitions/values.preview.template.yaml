@@ -74,6 +74,8 @@ ccd:
   ccd-case-management-web:
     nodejs:
       ingressHost: case-management-web-${SERVICE_FQDN}
+    idam-pr:
+      enabled: true
 
   ccd-api-gateway-web:
     nodejs:
