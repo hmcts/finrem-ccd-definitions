@@ -42,6 +42,8 @@ ccd:
       enviroment:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
       keyVaults:
+      environment:
+        USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_definition,ccd_admin
 
   ccd-data-store-api:
     java:
@@ -58,6 +60,9 @@ ccd:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
       keyVaults:
+      environment:
+        DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
+        DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin
 
   ccd-admin-web:
     nodejs:
