@@ -73,14 +73,6 @@ ccd:
     nodejs:
       ingressHost: case-management-web-${SERVICE_FQDN}
 
-  ccd-api-gateway-web:
-    nodejs:
-      ingressClass: traefik-no-proxy
-      ingressHost: gateway-${SERVICE_FQDN}
-      secrets:
-        IDAM_OAUTH2_CLIENT_SECRET:
-          disabled: false
-
   importer:
     userprofile:
       enabled: true
