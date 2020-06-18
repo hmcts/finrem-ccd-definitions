@@ -73,6 +73,11 @@ ccd:
     nodejs:
       ingressHost: case-management-web-${SERVICE_FQDN}
 
+  ccd-api-gateway-web:
+    nodejs:
+      ingressClass: traefik-no-proxy
+      ingressHost: gateway-${SERVICE_FQDN}
+
   importer:
     userprofile:
       enabled: true
