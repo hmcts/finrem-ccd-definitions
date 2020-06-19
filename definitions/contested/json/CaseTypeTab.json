@@ -1109,7 +1109,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "midlandsFRCList",
-    "TabFieldDisplayOrder": 26
+    "TabFieldDisplayOrder": 26,
+    "FieldShowCondition": "regionList=\"midlands\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1118,7 +1119,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "nottinghamCourtList",
-    "TabFieldDisplayOrder": 27
+    "TabFieldDisplayOrder": 27,
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1127,7 +1129,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "cfcCourtList",
-    "TabFieldDisplayOrder": 28
+    "TabFieldDisplayOrder": 28,
+    "FieldShowCondition": " regionList=\"london\" AND londonFRCList=\"cfc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1136,7 +1139,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "londonFRCList",
-    "TabFieldDisplayOrder": 29
+    "TabFieldDisplayOrder": 29,
+    "FieldShowCondition": "regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1145,7 +1149,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "northWestFRCList",
-    "TabFieldDisplayOrder": 30
+    "TabFieldDisplayOrder": 30,
+    "FieldShowCondition": "regionList=\"northwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1154,7 +1159,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "northEastFRCList",
-    "TabFieldDisplayOrder": 31
+    "TabFieldDisplayOrder": 31,
+    "FieldShowCondition": "regionList=\"northeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1163,7 +1169,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "southEastFRCList",
-    "TabFieldDisplayOrder": 32
+    "TabFieldDisplayOrder": 32,
+    "FieldShowCondition": "regionList=\"southeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1172,7 +1179,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "walesFRCList",
-    "TabFieldDisplayOrder": 33
+    "TabFieldDisplayOrder": 33,
+    "FieldShowCondition": "regionList=\"wales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1181,7 +1189,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "birminghamCourtList",
-    "TabFieldDisplayOrder": 34
+    "TabFieldDisplayOrder": 34,
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1190,7 +1199,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "liverpoolCourtList",
-    "TabFieldDisplayOrder": 35
+    "TabFieldDisplayOrder": 35,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1199,7 +1209,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "manchesterCourtList",
-    "TabFieldDisplayOrder": 36
+    "TabFieldDisplayOrder": 36,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1208,7 +1219,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "cleavelandCourtList",
-    "TabFieldDisplayOrder": 37
+    "TabFieldDisplayOrder": 37,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1217,7 +1229,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "nwyorkshireCourtList",
-    "TabFieldDisplayOrder": 38
+    "TabFieldDisplayOrder": 38,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1226,7 +1239,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "humberCourtList",
-    "TabFieldDisplayOrder": 39
+    "TabFieldDisplayOrder": 39,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1235,7 +1249,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "kentSurreyCourtList",
-    "TabFieldDisplayOrder": 40
+    "TabFieldDisplayOrder": 40,
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1244,7 +1259,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "newportCourtList",
-    "TabFieldDisplayOrder": 41
+    "TabFieldDisplayOrder": 41,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1253,7 +1269,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "swanseaCourtList",
-    "TabFieldDisplayOrder": 42
+    "TabFieldDisplayOrder": 42,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1640,7 +1657,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "midlandsFRCList",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "regionList=\"midlands\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1649,7 +1667,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "nottinghamCourtList",
-    "TabFieldDisplayOrder": 14
+    "TabFieldDisplayOrder": 14,
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1658,7 +1677,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "cfcCourtList",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"cfc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1667,7 +1687,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "londonFRCList",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "FieldShowCondition": "regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1676,7 +1697,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWestFRCList",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 17,
+    "FieldShowCondition": "regionList=\"northwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1685,7 +1707,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "northEastFRCList",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 18,
+    "FieldShowCondition": "regionList=\"northeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1694,7 +1717,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "southEastFRCList",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 19,
+    "FieldShowCondition": "regionList=\"southeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1703,7 +1727,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "walesFRCList",
-    "TabFieldDisplayOrder": 20
+    "TabFieldDisplayOrder": 20,
+    "FieldShowCondition": "regionList=\"wales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1712,7 +1737,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "birminghamCourtList",
-    "TabFieldDisplayOrder": 21
+    "TabFieldDisplayOrder": 21,
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1721,7 +1747,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "liverpoolCourtList",
-    "TabFieldDisplayOrder": 22
+    "TabFieldDisplayOrder": 22,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1730,7 +1757,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "manchesterCourtList",
-    "TabFieldDisplayOrder": 23
+    "TabFieldDisplayOrder": 23,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1739,7 +1767,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "cleavelandCourtList",
-    "TabFieldDisplayOrder": 24
+    "TabFieldDisplayOrder": 24,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1748,7 +1777,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "nwyorkshireCourtList",
-    "TabFieldDisplayOrder": 25
+    "TabFieldDisplayOrder": 25,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1757,7 +1787,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "humberCourtList",
-    "TabFieldDisplayOrder": 26
+    "TabFieldDisplayOrder": 26,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1766,7 +1797,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "kentSurreyCourtList",
-    "TabFieldDisplayOrder": 27
+    "TabFieldDisplayOrder": 27,
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1775,7 +1807,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "newportCourtList",
-    "TabFieldDisplayOrder": 28
+    "TabFieldDisplayOrder": 28,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1784,7 +1817,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "swanseaCourtList",
-    "TabFieldDisplayOrder": 29
+    "TabFieldDisplayOrder": 29,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
     "LiveFrom": "01/01/2017",
