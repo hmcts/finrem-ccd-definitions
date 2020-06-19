@@ -4801,7 +4801,9 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/general-order",
+    "CallBackURLMidEvent_1": "3,4,5"
   },
   {
   "LiveFrom": "01/01/2017",
@@ -4881,12 +4883,10 @@
     "CaseEventID": "FR_generalOrder",
     "CaseFieldID": "generalOrderPreviewDocument",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "COMPLEX",
+    "DisplayContext": "READONLY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/general-order",
-    "CallBackURLMidEvent_1": "3,4,5"
+    "ShowSummaryChangeOption": "Y"
   }
 ]
