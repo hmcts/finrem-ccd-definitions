@@ -243,7 +243,7 @@
     "Name": "Create General Order",
     "Description": "Create General Order",
     "DisplayOrder": 18,
-    "PreConditionState(s)": "consentOrderNotApproved;consentOrderApproved;consentOrderMade;consentProcess;caseWorkerReview;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;judgeDraftOrder;reviewOrder;draftOrderNotApproved;solicitorDraftOrder;orderDrawn;scheduleRaiseDirectionsOrder",
+    "PreConditionState(s)": "consentOrderNotApproved;consentOrderApproved;consentOrderMade;consentProcess;caseWorkerReview;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;judgeDraftOrder;reviewOrder;draftOrderNotApproved;solicitorDraftOrder;orderDrawn;scheduleRaiseDirectionsOrder;awaitingJudiciaryResponse",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-order-start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-order",
