@@ -217,6 +217,15 @@
   },
   {
     "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_genaralOrder",
+    "ListElementCode": "generalOrder_addressTo",
+    "FieldType": "Text",
+    "ElementLabel": "Addressed to",
+    "HintText": "Please add any additional comments for  court admin (this comments will not be accesible by applicant's solicitor)",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
     "ID": "FR_ct_applicationNotApproved",
     "ListElementCode": "andAfter",
     "FieldType": "Text",
