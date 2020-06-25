@@ -143,7 +143,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "nottinghamCourtListSL",
+    "CaseFieldID": "nottinghamCourtList",
     "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
@@ -154,7 +154,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "birminghamCourtListSL",
+    "CaseFieldID": "birminghamCourtList",
     "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
@@ -165,7 +165,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "londonCourtListSL",
+    "CaseFieldID": "londonCourtList",
     "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"london\""
   },
@@ -176,7 +176,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "liverpoolCourtListSL",
+    "CaseFieldID": "liverpoolCourtList",
     "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
@@ -187,7 +187,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "manchesterCourtListSL",
+    "CaseFieldID": "manchesterCourtList",
     "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
@@ -198,7 +198,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "otherNWCourtListSL",
+    "CaseFieldID": "otherNWCourtList",
     "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"other\""
   },
@@ -209,7 +209,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "clevelandCourtListSL",
+    "CaseFieldID": "clevelandCourtList",
     "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleveland\""
   },
@@ -220,7 +220,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "nwyorkshireCourtListSL",
+    "CaseFieldID": "nwyorkshireCourtList",
     "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
@@ -231,7 +231,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "humberCourtListSL",
+    "CaseFieldID": "humberCourtList",
     "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
@@ -242,7 +242,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "kentSurreyCourtListSL",
+    "CaseFieldID": "kentSurreyCourtList",
     "TabFieldDisplayOrder": 22,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kent\""
   },
@@ -253,7 +253,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "otherSECourtListSL",
+    "CaseFieldID": "otherSECourtList",
     "TabFieldDisplayOrder": 23,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"other\""
   },
@@ -264,7 +264,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "otherSWCourtListSL",
+    "CaseFieldID": "otherSWCourtList",
     "TabFieldDisplayOrder": 24,
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"other\""
   },
@@ -275,7 +275,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "newportCourtListSL",
+    "CaseFieldID": "newportCourtList",
     "TabFieldDisplayOrder": 25,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
   },
@@ -286,7 +286,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "swanseaCourtListSL",
+    "CaseFieldID": "swanseaCourtList",
     "TabFieldDisplayOrder": 26,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
@@ -297,7 +297,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "welshOtherCourtListSL",
+    "CaseFieldID": "welshOtherCourtList",
     "TabFieldDisplayOrder": 27,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"other\""
   },
@@ -1364,7 +1364,7 @@
     "CaseFieldID": "paymentHistory",
     "TabFieldDisplayOrder": 1,
     "TabShowCondition": "paperApplication=\"Yes\""
-  },
+  },  
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
