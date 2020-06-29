@@ -30,6 +30,7 @@ ccd:
     ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
     postgresUsername: hmcts
     postgresPassword: hmcts
+    s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
 
   idam-pr:
     releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
