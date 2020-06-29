@@ -5,14 +5,14 @@ const { uniq } = require('lodash');
 
 const Config = {
   AuthorisationCaseEvent: Object.assign(require('definitions/contested/json/AuthorisationCaseEvent'), []),
-  AuthorisationCaseField: Object.assign(require('definitions/contested/json/AuthorisationCaseField'), []),
+  AuthorisationCaseField: Object.assign(require('definitions/contested/json/AuthorisationCaseField/AuthorisationCaseField'), []),
   AuthorisationCaseState: Object.assign(require('definitions/contested/json/AuthorisationCaseState'), []),
   AuthorisationCaseType: Object.assign(require('definitions/contested/json/AuthorisationCaseType'), []),
   AuthorisationComplexType: Object.assign(require('definitions/contested/json/AuthorisationComplexType'), []),
   CaseEvent: Object.assign(require('definitions/contested/json/CaseEvent'), []),
   CaseEventToComplexTypes: Object.assign(require('definitions/contested/json/CaseEventToComplexTypes'), []),
   CaseEventToFields: Object.assign(require('definitions/contested/json/CaseEventToFields'), []),
-  CaseField: Object.assign(require('definitions/contested/json/CaseField'), []),
+  CaseField: Object.assign(require('definitions/contested/json/CaseField/CaseField'), []),
   CaseType: Object.assign(require('definitions/contested/json/CaseType'), []),
   CaseTypeTab: Object.assign(require('definitions/contested/json/CaseTypeTab'), []),
   ComplexTypes: Object.assign(require('definitions/contested/json/ComplexTypes'), []),
