@@ -73,7 +73,6 @@ ccd:
       keyVaults:
       environment:
         IDAM_OAUTH2_AW_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
-        IDAM_ADMIN_WEB_SERVICE_KEY: AAAAAAAAAAAAAAAA
     idam-pr:
       enabled: true
 
