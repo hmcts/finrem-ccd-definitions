@@ -430,6 +430,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentAddressConfidential",
+    "Label": "Is this address confidential?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "natureOfApplicationLabel",
     "Label": "#### What is the nature of the application ?",
     "FieldType": "Label",
@@ -2459,6 +2467,39 @@
     "ID": "bulkScanCaseReference",
     "Label": "Exception Record Reference",
     "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalEmailRecipient",
+    "Label": "Recipient's email",
+    "FieldType": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalEmailCreatedBy",
+    "Label": "Email created by",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalEmailBody",
+    "Label": "Please fill in the body of the email",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalEmailCollection",
+    "Label": "General Email",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_GeneralEmailDocument",
     "SecurityClassification": "Public"
   }
 ]

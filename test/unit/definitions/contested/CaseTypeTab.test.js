@@ -92,7 +92,11 @@ describe('CaseTypeTab', () => {
       'judiciaryOutcomeTab',
       'Orders',
       'schedulingTab',
-      'hiddenTab'
+      'hiddenTab',
+      'RespondentAddressConfidential-solicitor',
+      'RespondentAddressConfidential-courtadmin',
+      'RespondentAddressConfidential-judiciary'
+
     ]);
   });
   it('should contain a valid case field IDs', () => {
