@@ -747,5 +747,29 @@
     "ElementLabel": "Type of hearing values",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
     "SecurityClassification": "Public"
+  },
+  {
+  "LiveFrom": "01/01/2017",
+  "ID": "FR_GeneralEmailDocument",
+  "ListElementCode": "generalEmailRecipient",
+  "FieldType": "Email",
+  "ElementLabel": "Recipient's email",
+  "SecurityClassification": "Public"
+},
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralEmailDocument",
+    "ListElementCode": "generalEmailCreatedBy",
+    "FieldType": "Text",
+    "ElementLabel": "Email created by",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralEmailDocument",
+    "ListElementCode": "generalEmailBody",
+    "FieldType": "TextArea",
+    "ElementLabel": "Body",
+    "SecurityClassification": "Public"
   }
 ]

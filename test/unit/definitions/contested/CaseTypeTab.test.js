@@ -3,7 +3,7 @@ const assert = require('chai').assert;
 const { uniq, uniqWith, map, filter } = require('lodash');
 
 const caseTypeTab = Object.assign(require('definitions/contested/json/CaseTypeTab'), {});
-const caseField = Object.assign(require('definitions/contested/json/CaseField'), {});
+const caseField = Object.assign(require('definitions/contested/json/CaseField/CaseField'), {});
 
 const tabIds = uniq(map(caseTypeTab, 'TabID'));
 
@@ -92,7 +92,11 @@ describe('CaseTypeTab', () => {
       'judiciaryOutcomeTab',
       'Orders',
       'schedulingTab',
-      'hiddenTab'
+      'hiddenTab',
+      'RespondentAddressConfidential-solicitor',
+      'RespondentAddressConfidential-courtadmin',
+      'RespondentAddressConfidential-judiciary'
+
     ]);
   });
   it('should contain a valid case field IDs', () => {
