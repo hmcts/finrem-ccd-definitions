@@ -1906,7 +1906,7 @@
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentPhone",
     "UserRole": "[RESPSOLICITOR]",
-    "TabFieldDisplayOrder": 1,
+    "TabFieldDisplayOrder": 2,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
     "TabShowCondition": "respondentAddressConfidential=\"Yes\""
   },
@@ -1918,7 +1918,7 @@
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentEmail",
     "UserRole": "[RESPSOLICITOR]",
-    "TabFieldDisplayOrder": 1,
+    "TabFieldDisplayOrder": 3,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
     "TabShowCondition": "respondentAddressConfidential=\"Yes\""
   },
@@ -1942,7 +1942,7 @@
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentPhone",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabFieldDisplayOrder": 1,
+    "TabFieldDisplayOrder": 2,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
     "TabShowCondition": "respondentAddressConfidential=\"Yes\""
   },
@@ -1954,7 +1954,7 @@
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentEmail",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabFieldDisplayOrder": 1,
+    "TabFieldDisplayOrder": 3,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
     "TabShowCondition": "respondentAddressConfidential=\"Yes\""
   },
@@ -1978,7 +1978,7 @@
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentPhone",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "TabFieldDisplayOrder": 1,
+    "TabFieldDisplayOrder": 2,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
     "TabShowCondition": "respondentAddressConfidential=\"Yes\""
   },
@@ -1990,7 +1990,7 @@
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentEmail",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "TabFieldDisplayOrder": 1,
+    "TabFieldDisplayOrder": 3,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
     "TabShowCondition": "respondentAddressConfidential=\"Yes\""
   }
