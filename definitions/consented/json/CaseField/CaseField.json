@@ -470,6 +470,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "natureOfApplication2b",
+    "Label": "The application is for:",
+    "HintText": "The applicant is applying for an order by consent in terms of written agreement (a consent order). Within the draft consent order, the Applicant is applying to Court for;",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_natureApplicationPaper",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "natureOfApplication3a",
     "Label": "Address details",
     "HintText": "If the application includes an application for a Property Adjustment Order in relation to land, please provide the address(es) of the property or properties, if applicable",
