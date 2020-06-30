@@ -1905,7 +1905,6 @@
     "TabID": "RespondentAddressConfidential-solicitor",
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentPhone",
-    "UserRole": "[RESPSOLICITOR]",
     "TabFieldDisplayOrder": 2,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\""
   },
@@ -1916,7 +1915,6 @@
     "TabID": "RespondentAddressConfidential-solicitor",
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentEmail",
-    "UserRole": "[RESPSOLICITOR]",
     "TabFieldDisplayOrder": 3,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\""
   },
@@ -1939,7 +1937,6 @@
     "TabID": "RespondentAddressConfidential-courtadmin",
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentPhone",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 2,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\""
   },
@@ -1950,7 +1947,6 @@
     "TabID": "RespondentAddressConfidential-courtadmin",
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentEmail",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 3,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\""
   },
@@ -1973,7 +1969,6 @@
     "TabID": "RespondentAddressConfidential-judiciary",
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentPhone",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "TabFieldDisplayOrder": 2,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\""
   },
@@ -1984,7 +1979,6 @@
     "TabID": "RespondentAddressConfidential-judiciary",
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentEmail",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "TabFieldDisplayOrder": 3,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\""
   }
