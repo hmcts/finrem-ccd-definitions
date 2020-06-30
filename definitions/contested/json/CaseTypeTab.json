@@ -469,7 +469,7 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "respondentPhone",
     "TabFieldDisplayOrder": 17,
-    "FieldShowCondition": "respondentRepresented=\"No\""
+    "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -479,7 +479,7 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "respondentEmail",
     "TabFieldDisplayOrder": 18,
-    "FieldShowCondition": "respondentRepresented=\"No\""
+    "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
     {
     "LiveFrom": "01/01/2017",
