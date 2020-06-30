@@ -929,7 +929,7 @@
     "PageID": 6,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment  Order\"",
+    "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment Order\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -942,7 +942,7 @@
     "PageID": 6,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment  Order\"",
+    "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment Order\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2079,7 +2079,7 @@
     "PageID": 6,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment  Order\"",
+    "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment Order\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2092,7 +2092,7 @@
     "PageID": 6,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment  Order\"",
+    "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment Order\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -3657,7 +3657,9 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/preview-general-letter",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3706,6 +3708,19 @@
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_generalLetter",
+    "CaseFieldID": "generalLetterPreview",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 2,
+    "PageLabel": "General letter preview",
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
