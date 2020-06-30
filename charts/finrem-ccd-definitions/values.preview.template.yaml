@@ -73,6 +73,7 @@ ccd:
       ingressHost: admin-web-${SERVICE_FQDN}
       keyVaults:
       environment:
+        IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
         IDAM_OAUTH2_AW_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
     idam-pr:
       enabled: true
