@@ -90,6 +90,7 @@ ccd:
       ingressHost: gateway-${SERVICE_FQDN}
       keyVaults:
       environment:
+        IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
         IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
 
   importer:
