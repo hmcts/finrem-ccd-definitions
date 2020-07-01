@@ -804,7 +804,7 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "natureOfApplication3a",
+    "CaseFieldID": "natureOfApplication2b",
     "TabFieldDisplayOrder": 7
   },
   {
@@ -814,7 +814,7 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "natureOfApplication3b",
+    "CaseFieldID": "natureOfApplication3a",
     "TabFieldDisplayOrder": 8
   },
   {
@@ -824,7 +824,7 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "natureOfApplication4",
+    "CaseFieldID": "natureOfApplication3b",
     "TabFieldDisplayOrder": 9
   },
   {
@@ -834,7 +834,7 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "orderForChildrenQuestion1",
+    "CaseFieldID": "natureOfApplication4",
     "TabFieldDisplayOrder": 10
   },
   {
@@ -844,9 +844,8 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "natureOfApplication5",
-    "TabFieldDisplayOrder": 11,
-    "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\""
+    "CaseFieldID": "orderForChildrenQuestion1",
+    "TabFieldDisplayOrder": 11
   },
   {
     "LiveFrom": "01/01/2017",
@@ -855,7 +854,7 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "natureOfApplication5b",
+    "CaseFieldID": "natureOfApplication5",
     "TabFieldDisplayOrder": 12,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\""
   },
@@ -866,7 +865,7 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "ChildSupportAgencyCalculationMade",
+    "CaseFieldID": "natureOfApplication5b",
     "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\""
   },
@@ -877,7 +876,7 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "ChildSupportAgencyCalculationReason",
+    "CaseFieldID": "ChildSupportAgencyCalculationMade",
     "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\""
   },
@@ -888,8 +887,19 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "natureOfApplication6",
+    "CaseFieldID": "ChildSupportAgencyCalculationReason",
     "TabFieldDisplayOrder": 15,
+    "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicationDetails",
+    "TabLabel": "Nature of Application",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "natureOfApplication6",
+    "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\""
   },
   {
@@ -900,7 +910,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "natureOfApplication7",
-    "TabFieldDisplayOrder": 16,
+    "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\""
   },
   {
@@ -911,16 +921,6 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "dischargePeriodicalPaymentSubstituteForLabel",
-    "TabFieldDisplayOrder": 17
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "applicationDetails",
-    "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "dischargePeriodicalPaymentSubstituteFor",
     "TabFieldDisplayOrder": 18
   },
   {
@@ -930,7 +930,7 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "applyingForConsentOrderLabel",
+    "CaseFieldID": "dischargePeriodicalPaymentSubstituteFor",
     "TabFieldDisplayOrder": 19
   },
   {
@@ -940,8 +940,18 @@
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "applyingForConsentOrder",
+    "CaseFieldID": "applyingForConsentOrderLabel",
     "TabFieldDisplayOrder": 20
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicationDetails",
+    "TabLabel": "Nature of Application",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applyingForConsentOrder",
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
