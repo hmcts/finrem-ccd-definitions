@@ -94,7 +94,10 @@ describe('CaseTypeTab', () => {
       'CaseOrder',
       'Orders',
       'Notes',
-      'Judge'
+      'Judge',
+      'RespondentAddressConfidential-solicitor',
+      'RespondentAddressConfidential-courtadmin',
+      'RespondentAddressConfidential-judiciary'
     ]);
   });
 

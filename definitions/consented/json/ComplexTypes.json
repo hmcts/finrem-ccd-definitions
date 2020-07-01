@@ -673,6 +673,7 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_Gender",
     "ElementLabel": "Gender",
+    "FieldShowCondition": "gender=\"Male\" OR gender=\"Female\" OR gender=\"male\" OR gender=\"female\" ",
     "SecurityClassification": "Public"
   },
   {
