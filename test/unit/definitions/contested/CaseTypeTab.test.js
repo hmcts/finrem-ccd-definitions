@@ -93,6 +93,9 @@ describe('CaseTypeTab', () => {
       'Orders',
       'schedulingTab',
       'hiddenTab',
+      'ApplicantAddressConfidential-solicitor',
+      'ApplicantAddressConfidential-courtadmin',
+      'ApplicantAddressConfidential-judiciary',
       'RespondentAddressConfidential-solicitor',
       'RespondentAddressConfidential-courtadmin',
       'RespondentAddressConfidential-judiciary'
