@@ -82,6 +82,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantAddressConfidential",
+    "Label": "Keep the Applicant's contact details private from the Respondent?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantSolicitorDetailLabel",
     "Label": "## Solicitor Details",
     "FieldType": "Label",
