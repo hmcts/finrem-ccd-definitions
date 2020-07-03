@@ -1,3 +1,4 @@
 nodejs:
   applicationPort: 3000
   aadIdentityName: finrem
+  image: ${IMAGE_NAME}
