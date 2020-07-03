@@ -7,9 +7,30 @@ nodejs:
   ingressHost: ${SERVICE_FQDN}
 
 ccd:
+  ccd:
+    definitionImporter:
+      enabled: false
+    managementWeb:
+       enabled: true
+    apiGatewayWeb:
+      enabled: true
+    s2s:
+      enabled: false
+
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
+
+  global:
+    idamApiUrl: https://idam-api.aat.platform.hmcts.net
+    idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
+    dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
+    ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
+    ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
+    ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
+    postgresUsername: hmcts
+    postgresPassword: hmcts
+    s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
 
   idam-pr:
     releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
@@ -19,36 +40,72 @@ ccd:
       CCD Admin:
         - https://admin-web-${SERVICE_FQDN}/oauth2redirect
 
-  apiGateway:
-    s2sKey: ${API_GATEWAY_S2S_KEY}
-    idamClientSecret:
-      value: ${API_GATEWAY_IDAM_SECRET}
-    environment:
-      PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
+  ccd-user-profile-api:
+    java:
+      imagePullPolicy: Always
+      enviroment:
+        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
+      keyVaults:
+      environment:
+        USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_definition,ccd_admin
+      ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
 
-  userProfileApi:
-    authorisedServices: ccd_admin,ccd_data,ccd_definition,divorce,finrem
+  ccd-data-store-api:
+    java:
+      imagePullPolicy: Always
+      environment:
+        DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
+        DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
+        IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
+      keyVaults:
+      ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
-  dataStoreApi:
-    s2sKey: ${DATA_STORE_S2S_KEY}
-    s2sAuthorisedServices: divorce,finrem,ccd_gw,divorce_ccd_submission
+  ccd-definition-store-api:
+    java:
+      imagePullPolicy: Always
+      keyVaults:
+      environment:
+        DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
+        DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
+        DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin
+        IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
+        OIDC_ISSUER: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
+      ingressHost: ccd-definition-store-${SERVICE_FQDN}
 
-  definitionStoreApi:
-    s2sKey: ${DEFINITION_STORE_S2S_KEY}
-    s2sAuthorisedServices: ccd_admin,ccd_data,divorce,finrem,ccd_gw,divorce_ccd_submission
+  ccd-admin-web:
+    nodejs:
+      image: hmctspublic.azurecr.io/ccd/admin-web:latest
+      ingressHost: admin-web-${SERVICE_FQDN}
+      keyVaults:
+      environment:
+        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
+        IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
+        IDAM_OAUTH2_AW_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
+    idam-pr:
+      enabled: true
 
-  caseManagementWeb:
-    enabled: true # if you need access to the web ui then enable this, otherwise it won't be deployed
-    environment:
-      NODE_TLS_REJECT_UNAUTHORIZED: 0
+  ccd-case-management-web:
+    nodejs:
+      environment:
+        CCD_ACTIVITY_URL: null
+        DM_URL: https://gateway-${SERVICE_FQDN}/documents
+        DM_URL_REMOTE: https?://(gateway-${SERVICE_FQDN}:443|dm-store-aat.service.core-compute-aat.internal)/documents
+        NODE_TLS_REJECT_UNAUTHORIZED: 0
+      ingressHost: case-management-web-${SERVICE_FQDN}
+      ingressIP: ${INGRESS_IP}
+    idam-pr:
+      enabled: true
 
-  adminWeb:
-    enabled: true # if you need access to the admin web ui then enable this, otherwise it won't be deployed
-    s2sKey: ${ADMIN_S2S_KEY}
-    idamClientSecret:
-      value: ${ADMIN_WEB_IDAM_SECRET}
-    environment:
-      NODE_TLS_REJECT_UNAUTHORIZED: 0
+  ccd-api-gateway-web:
+    nodejs:
+      keyVaults:
+      environment:
+        IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
+        IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
+        PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
+        ADDRESS_LOOKUP_TOKEN: ${ADDRESS_LOOKUP_TOKEN}
+      ingressHost: gateway-${SERVICE_FQDN}
+      ingressIP: ${INGRESS_IP}
 
   importer:
     userprofile:
@@ -68,3 +125,7 @@ ccd:
       userProfileDatabaseUser: hmcts
       userProfileDatabasePassword: hmcts
       userProfileDatabaseName: user-profile
+
+  postgresql:
+    persistence:
+      enabled: false

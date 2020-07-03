@@ -59,7 +59,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "applicantAddress",
-    "Label": "          ",
+    "Label": "Their address",
     "FieldType": "AddressUK",
     "SecurityClassification": "Public"
   },
@@ -77,6 +77,14 @@
     "ID": "applicantEmail",
     "Label": "Email",
     "FieldType": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "applicantAddressConfidential",
+    "Label": "Keep the Applicant's contact details private from the Respondent?",
+    "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
   {
@@ -371,6 +379,14 @@
     "ID": "respondentEmail",
     "Label": "Email",
     "FieldType": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "respondentAddressConfidential",
+    "Label": "Keep the Respondent's contact details private from the Applicant?",
+    "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
   {
@@ -1327,6 +1343,14 @@
     "ID": "generalLetterBody",
     "Label": "Please fill in the body of the text",
     "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalLetterPreview",
+    "Label": "General letter preview",
+    "FieldType": "Document",
     "SecurityClassification": "Public"
   },
   {
