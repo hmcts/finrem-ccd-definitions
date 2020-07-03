@@ -3452,19 +3452,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_updateContactDetails",
-    "CaseFieldID": "respondentAddressConfidential",
-    "PageFieldDisplayOrder": 36,
-    "DisplayContext": "OPTIONAL",
-    "PageID": "updateContactDetails",
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "appRespondentRep=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_amendCase",
     "CaseFieldID": "divorceCaseNumber",
     "PageFieldDisplayOrder": 1,
