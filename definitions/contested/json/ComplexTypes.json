@@ -279,6 +279,33 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "01/07/2020",
+    "ID": "FR_ct_applicationNotApproved",
+    "ListElementCode": "judgeType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
+    "ElementLabel": "Select Judge",
+    "HintText": "Please select the appropriate Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/07/2020",
+    "ID": "FR_ct_applicationNotApproved",
+    "ListElementCode": "judgeName",
+    "FieldType": "TextArea",
+    "ElementLabel": "Name of Judge",
+    "HintText": "Surname of judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/07/2020",
+    "ID": "FR_ct_applicationNotApproved",
+    "ListElementCode": "notApprovedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "ScannedDocument",
     "ListElementCode": "# Record Meta data",
@@ -764,7 +791,7 @@
   "FieldType": "Email",
   "ElementLabel": "Recipient's email",
   "SecurityClassification": "Public"
-},
+  },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_GeneralEmailDocument",
