@@ -35,17 +35,6 @@ withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
 
-  after('build') {
-    stage('Generate Financial Remedy Consented Case excel file') {
-      yarnBuilder.yarn('setup')
-      yarnBuilder.yarn('generate-excel-all-consented')
-    }
-    stage('Generate Financial Remedy Contested Case excel file') {
-      yarnBuilder.yarn('setup')
-      yarnBuilder.yarn('generate-excel-all-contested')
-    }
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-  }
   after('test') {
     // enable yarn audit and send message on master branch only
     try {
@@ -58,26 +47,30 @@ withPipeline("nodejs", product, component) {
   }
 
   before('functionalTest:preview') {
-    //regenerate files here as build stage can be skipped by pipeline
     yarnBuilder.yarn('setup')
-    yarnBuilder.yarn('generate-excel-aat-consented')
-    yarnBuilder.yarn('generate-excel-aat-contested')
-    env.CCD_ADMIN_URL="https://admin-web-finrem-ccd-definitions-pr-${process.env.CHANGE_ID}.service.core-compute-preview.internal"
+
+    stage('Generate Financial Remedy Consented Case config') {
+      yarnBuilder.yarn('generate-excel-aat-consented')
+    }
+    stage('Generate Financial Remedy Contested Case config') {
+      yarnBuilder.yarn('generate-excel-aat-contested')
+    }
+
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
+    env.CCD_ADMIN_URL="https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
   }
 
   before('functionalTest:aat') {
-    //regenerate files here as build stage can be skipped by pipeline
     yarnBuilder.yarn('setup')
-    yarnBuilder.yarn('generate-excel-all-consented')
-    yarnBuilder.yarn('generate-excel-all-contested')
+
+    stage('Generate Financial Remedy Consented Case config') {
+      yarnBuilder.yarn('generate-excel-all-consented')
+    }
+    stage('Generate Financial Remedy Contested Case config') {
+      yarnBuilder.yarn('generate-excel-all-contested')
+    }
+
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
     env.CCD_ADMIN_URL="https://ccd-admin-web.aat.platform.hmcts.net"
-  }
-
-  after('functionalTest:preview') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
-  }
-
-  after('functionalTest:aat') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
   }
 }
