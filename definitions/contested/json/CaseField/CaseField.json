@@ -2364,7 +2364,6 @@
     "FieldType": "Document",
     "SecurityClassification": "Public"
   },
-
   {
     "LiveFrom": "01/07/2020",
     "CaseTypeID": "FinancialRemedyContested",
@@ -2372,6 +2371,14 @@
     "Label": "Reason For Refusal",
     "HintText": "Please tick all boxes that apply",
     "FieldType": "FR_ms_refusalReason",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/07/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicationNotApprovedOthersTextOrders",
+    "Label": "others (Please specify)",
+    "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
