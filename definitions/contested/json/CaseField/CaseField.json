@@ -2370,7 +2370,8 @@
     "ID": "applicationNotApprovedReasonForRefusal",
     "Label": "Reason For Refusal",
     "HintText": "Please tick all boxes that apply",
-    "FieldType": "FR_ms_refusalReason",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_refusalReason",
     "SecurityClassification": "Public"
   },
   {
@@ -2387,7 +2388,8 @@
     "ID": "applicationNotApprovedJudgeType",
     "Label": "Select Judge",
     "HintText": "Please select the appropriate Judge",
-    "FieldType": "FR_fl_GeneralOrderJudgeType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
     "SecurityClassification": "Public"
   },
   {
