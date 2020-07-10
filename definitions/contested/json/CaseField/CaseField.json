@@ -2287,5 +2287,138 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_GeneralEmailDocument",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplicationLabel",
+    "Label": "#### NATURE OF THE APPLICATION",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplicationChecklist",
+    "Label": "The application is for:",
+    "HintText": "The applicant is applying for an order by consent in terms of written agreement (a consent order). Within the draft consent order, the Applicant is applying to Court for;",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_natureApplication",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplicationAddress",
+    "Label": "Address details",
+    "HintText": "If the application includes an application for a Property Adjustment Order in relation to land, please provide the address(es) of the property or properties, if applicable",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplicationMortgage",
+    "Label": "Mortgage details",
+    "HintText": "If the application includes an application for a Property Adjustment Order in relation to land, please provide the name(s) and address(es) of any mortgagee(s), if applicable",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderLabel",
+    "Label": "#### CONSENT ORDER",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrder",
+    "Label": "Draft Consent Order",
+    "HintText": "Please upload a scanned copy of the draft consent order that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentD81Label",
+    "Label": "#### D81",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentD81Question",
+    "Label": "Are you uploading a joint D81?",
+    "HintText": "You can either submit one joint D81 form for both parties or one for each applicant and respondent",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentD81Joint",
+    "Label": "Form D81 Joint Document",
+    "HintText": "Joint D81 form, signed by both parties",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentD81Applicant",
+    "Label": "Form D81 Applicant Document",
+    "HintText": "D81 form, signed by Applicant",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentD81Respondent",
+    "Label": "Form D81 Respondent Document",
+    "HintText": "D81 form, signed by Respondent",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentPensionCollectionLabel",
+    "Label": "#### PENSION DOCUMENTS",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentPensionCollection",
+    "Label": "Pension Documents",
+    "HintText": "Please upload a scanned copy of the draft consent order that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_PensionType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOtherCollectionLabel",
+    "Label": "#### OTHER DOCUMENTS",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOtherCollection",
+    "Label": "Other Documents",
+    "HintText": "Upload other documentation related to your application",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_DocumentType",
+    "SecurityClassification": "Public"
   }
 ]
