@@ -7,7 +7,7 @@ module.exports = () => {
     // Define custom steps here, use 'this' to access default methods of I.
     // It is recommended to place a general 'login' function here.
     loginToAdminConsole() {
-      this.amOnPage(`https://admin-web-finrem-ccd-definitions-pr-${process.env.CHANGE_ID}.service.core-compute-preview.internal`);
+      this.amOnPage(`${process.env.CCD_ADMIN_URL}`);
       this.see('Sign in');
       this.fillField('username', 'ccd-importer@server.net');
       this.fillField('password', 'Password12');
