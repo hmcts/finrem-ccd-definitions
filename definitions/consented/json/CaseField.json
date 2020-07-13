@@ -59,7 +59,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "applicantAddress",
-    "Label": "          ",
+    "Label": "Their address",
     "FieldType": "AddressUK",
     "SecurityClassification": "Public"
   },
@@ -77,6 +77,14 @@
     "ID": "applicantEmail",
     "Label": "Email",
     "FieldType": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "applicantAddressConfidential",
+    "Label": "Keep the Applicant's contact details private from the Respondent?",
+    "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
   {
@@ -377,7 +385,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "respondentAddressConfidential",
-    "Label": "Is this address confidential?",
+    "Label": "Keep the Respondent's contact details private from the Applicant?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
