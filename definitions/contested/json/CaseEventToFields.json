@@ -5663,7 +5663,7 @@
     "PageLabel": "Consent Order Application",
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "consentD81Question=\"NO\"",
+    "FieldShowCondition": "consentD81Question=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -5699,7 +5699,7 @@
     "CaseEventID": "FR_consentOrder",
     "CaseFieldID": "consentPensionCollection",
     "PageFieldDisplayOrder": 2,
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "OPTIONAL",
     "PageID": 4,
     "PageLabel": "Consent Order Application",
     "PageDisplayOrder": 4,
@@ -5725,7 +5725,7 @@
     "CaseEventID": "FR_consentOrder",
     "CaseFieldID": "consentOtherCollection",
     "PageFieldDisplayOrder": 2,
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "OPTIONAL",
     "PageID": 5,
     "PageLabel": "Consent Order Application",
     "PageDisplayOrder": 5,
