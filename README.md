@@ -91,7 +91,7 @@ When "toggled off" definitions can be released, just move them to the prod file 
 Then follow the typical release process.
 
 Please read more here:
-https://tools.hmcts.net/confluence/display/BSP/Feature+toggle+for+CCD+definition
+https://tools.hmcts.net/confluence/display/FR/Feature+toggles+for+CCD+definition
 
 ## How to access PR deployment
 GitHub will have the main URL for this deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
@@ -115,18 +115,5 @@ When we want to release config changes to AAT/DEMO/ITHC:
 
 ## Release To Production
 
-When we want to release config changes to Production (Note this should be done after verifying the changes on AAT and signed off by QA):
-
-1) Generate all the Excel files for the Consented or Contested Journey using `yarn generate-excel-all-{consented/contested}`
-2) You now need to replace the test Judges' data with the correct data stored in Confluence (Note - this must not be stored in the repo and so these changes must not be committed.)
-3) Login to Confluence and navigate to either https://tools.hmcts.net/confluence/display/FR/Consented+Solicitor+Journey or https://tools.hmcts.net/confluence/display/FR/Contested+Solicitor+Journey
-4) Replace the entire UserProfile tab from your generated Excel with that from Confluence - this will ensure the appropriate Production users are able to login
-5) For the Consented Journey - you have to replace the list of Judges that it is possible to be assigned to. This is done in the 'FixedLists' tab,
-replace all users associated with 'FR_fl_AssignToJudge'- be careful to only modify what is necessary.
-5) Raise a RDM ticket (e.g. RDM-5372) and add the appropriate Production Excel Config (5) - remember not to commit these changes
-
-## LEFT TO DO BEFORE GO LIVE
-
-- Fix functional tests to work for FR
-- Create confluence page for Judges information - update ReadMe to reflect this
-- Extend to also handle Exception Record config?
+Follow this guide for releasing a new config file to Production:
+https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+Production

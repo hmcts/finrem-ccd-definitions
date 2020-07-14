@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const assert = require('chai').assert;
 const { uniq, uniqWith, map, filter } = require('lodash');
 
-const caseTypeTab = Object.assign(require('definitions/contested/json/CaseTypeTab'), {});
+const caseTypeTab = Object.assign(require('definitions/contested/json/CaseTypeTab/CaseTypeTab.json'), {});
 const caseField = Object.assign(require('definitions/contested/json/CaseField/CaseField'), {});
 
 const tabIds = uniq(map(caseTypeTab, 'TabID'));

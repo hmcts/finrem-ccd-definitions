@@ -19,7 +19,7 @@
       "ccdUrl": "http://ccd-data-store-api-demo.service.core-compute-demo.internal"
     },
     "aat": {
-      "cosUrl": "http://finrem-cos-aat.service.core-compute-aat.internal",
+      "cosUrl": "http://finrem-cos-pr-391.service.core-compute-preview.internal",
       "ccdUrl": "http://ccd-data-store-api-aat.service.core-compute-aat.internal"
     },
     "ithc": {
@@ -90,6 +90,7 @@
   },
   "resolutions": {
     "eslint-utils": "^1.4.1",
-    "https-proxy-agent": "2.2.3"
+    "https-proxy-agent": "2.2.3",
+    "lodash": "4.17.17"
   }
 }
