@@ -337,10 +337,11 @@
     "Description": "Issue Application",
     "DisplayOrder": 12,
     "PreConditionState(s)": "applicationSubmitted;newPaperCase",
-    "PostConditionState": "applicationIssued",
+    "PostConditionState": "referredToJudge",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/fields/issueDate/get-current-date",
     "RetriesTimeoutAboutToStartEvent": "3,4,5",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/generate-mini-form-a",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -716,7 +717,8 @@
     "Description": "Issue Application",
     "DisplayOrder": 40,
     "PreConditionState(s)": "awaitingInfo",
-    "PostConditionState": "applicationIssued",
+    "PostConditionState": "referredToJudge",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
