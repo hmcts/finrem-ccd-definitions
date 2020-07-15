@@ -2363,5 +2363,64 @@
     "Label": "Latest General Order",
     "FieldType": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterCollection",
+    "Label": "General Letter",
+    "HintText": "General Letter",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_GeneralLetterDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterAddressTo",
+    "Label": "Address to",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "GeneralLetterAddressToType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterRecipient",
+    "Label": "Recipient's name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterRecipientAddress",
+    "Label": "Recipient's address ",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterCreatedBy",
+    "Label": "Letter created by",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterBody",
+    "Label": "Please fill in the body of the text",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterPreview",
+    "Label": "General letter preview",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
   }
 ]
