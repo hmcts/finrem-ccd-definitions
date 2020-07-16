@@ -385,13 +385,13 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_gaInformation_FRCList",
+    "ID": "FR_midlands_FRCList",
     "ListElementCode": "nottingham",
     "ListElement": "Nottingham FRC"
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_gaInformation_FRCList",
+    "ID": "FR_midlands_FRCList",
     "ListElementCode": "birmingham",
     "ListElement": "Birmingham FRC"
   },
@@ -1585,5 +1585,29 @@
     "ID": "FR_fl_GeneralOrderJudgeType",
     "ListElementCode": "Recorder",
     "ListElement": "Recorder"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "ID": "GeneralLetterAddressToType",
+    "ListElementCode": "applicantSolicitor",
+    "ListElement": "Applicant Solicitor"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "ID": "GeneralLetterAddressToType",
+    "ListElementCode": "respondentSolicitor",
+    "ListElement": "Respondent Solicitor"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "ID": "GeneralLetterAddressToType",
+    "ListElementCode": "respondent",
+    "ListElement": "Respondent"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "ID": "GeneralLetterAddressToType",
+    "ListElementCode": "other",
+    "ListElement": "Other"
   }
 ]

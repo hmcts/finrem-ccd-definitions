@@ -446,14 +446,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respondentAddressConfidential",
-    "Label": "Is this address confidential?",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "natureOfApplicationLabel",
     "Label": "#### What is the nature of the application ?",
     "FieldType": "Label",
@@ -722,15 +714,6 @@
     "ID": "chooseCourtLabel",
     "Label": "## Which Financial Remedies Court are you applying to?",
     "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "allocatedCourtList",
-    "Label": "  ",
-    "HintText": "This should be the FRC local to the applicant",
-    "FieldType": "FR_ct_courtList",
     "SecurityClassification": "Public"
   },
   {
@@ -1316,214 +1299,9 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "regionListSL",
-    "Label": "Please choose the Region in which the Applicant resides",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_region_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "allocatedCourtListSL",
-    "Label": "This would usually be the applicants local Court",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_gaInformation_FRCList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "londonFRCListSL",
-    "Label": "This should be the FRC local to the applicant",
-    "HintText": "This should be the FRC local to the applicant",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_london_FRCList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "northWestFRCListSL",
-    "Label": "This should be the FRC local to the applicant",
-    "HintText": "This should be the FRC local to the applicant",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_nw_frc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "northEastFRCListSL",
-    "Label": "This should be the FRC local to the applicant",
-    "HintText": "This should be the FRC local to the applicant",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_ne_frc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "southEastFRCListSL",
-    "Label": "This should be the FRC local to the applicant",
-    "HintText": "This should be the FRC local to the applicant",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_se_frc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "walesFRCListSL",
-    "Label": "This should be the FRC local to the applicant",
-    "HintText": "This should be the FRC local to the applicant",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_wales_frc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "nottinghamCourtListSL",
-    "Label": "This should be the FRC local to the applicant",
-    "HintText": "This should be the FRC local to the applicant",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_s_NottinghamList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "cfcCourtListSL",
-    "Label": "This should be the FRC local to the applicant",
-    "HintText": "This should be the FRC local to the applicant",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_s_CFCList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "birminghamCourtListSL",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_birmingham_hc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "liverpoolCourtListSL",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_liverpool_hc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "manchesterCourtListSL",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_manchester_hc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "cleavelandCourtListSL",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_cleaveland_hc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "nwyorkshireCourtListSL",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "humberCourtListSL",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_humber_hc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "kentSurreyCourtListSL",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_kent_surrey_hc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "newportCourtListSL",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_newport_hc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "swanseaCourtListSL",
-    "Label": "Where is the Applicant’s Local Court? ",
-    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_swansea_hc_list",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "chooseCourtLabelGA",
     "Label": "## The hearing centre for the case is:",
     "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "allocatedCourtListGA",
-    "Label": "  ",
-    "HintText": "Choose relevant FRC",
-    "FieldType": "FR_ct_courtList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "nottinghamCourtListGA",
-    "Label": "Choose hearing location",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_s_NottinghamList",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "cfcCourtListGA",
-    "Label": "Choose hearing location",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_s_CFCList",
     "SecurityClassification": "Public"
   },
   {
@@ -2156,14 +1934,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "tabApplicantCourtList",
-    "Label": "**The Applicants local court is** ",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabEstimatedAssestsCheckList",
     "Label": "**The assets in this case are currently estimated to be in the order of**  ${estimatedAssetsChecklist}",
     "FieldType": "Label",
@@ -2298,7 +2068,7 @@
     "Label": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, you will not yet be able to submit your application online.",
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_gaInformation_FRCList",
+    "FieldTypeParameter": "FR_midlands_FRCList",
     "SecurityClassification": "Public"
   },
   {
@@ -2591,6 +2361,65 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalOrderLatestDocument",
     "Label": "Latest General Order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterCollection",
+    "Label": "General Letter",
+    "HintText": "General Letter",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_GeneralLetterDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterAddressTo",
+    "Label": "Address to",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "GeneralLetterAddressToType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterRecipient",
+    "Label": "Recipient's name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterRecipientAddress",
+    "Label": "Recipient's address ",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterCreatedBy",
+    "Label": "Letter created by",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterBody",
+    "Label": "Please fill in the body of the text",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterPreview",
+    "Label": "General letter preview",
     "FieldType": "Document",
     "SecurityClassification": "Public"
   }
