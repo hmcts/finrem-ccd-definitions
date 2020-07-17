@@ -367,7 +367,7 @@
     "Description": "Create General Order",
     "DisplayOrder": 14,
     "PreConditionState(s)": "*",
-    "PostConditionState": "*",
+    "PostConditionState": "orderMade",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-order-start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-order",
     "SecurityClassification": "Public",
