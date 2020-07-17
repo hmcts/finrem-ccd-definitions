@@ -717,8 +717,7 @@
     "Description": "Issue Application",
     "DisplayOrder": 40,
     "PreConditionState(s)": "awaitingInfo",
-    "PostConditionState": "referredToJudge",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
+    "PostConditionState": "applicationIssued",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
