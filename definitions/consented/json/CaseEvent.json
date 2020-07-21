@@ -550,7 +550,7 @@
     "Name": "Send Order",
     "Description": "Send Order",
     "DisplayOrder": 27,
-    "PreConditionState(s)": "consentOrderApproved",
+    "PreConditionState(s)": "consentOrderApproved;consentOrderMade",
     "PostConditionState": "consentOrderMade",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/check-latest-consent-order",
     "RetriesTimeoutAboutToStartEvent": "3,4,5",
