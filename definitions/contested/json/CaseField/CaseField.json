@@ -2422,59 +2422,5 @@
     "Label": "General letter preview",
     "FieldType": "Document",
     "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/07/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicationNotApprovedReasonForRefusal",
-    "Label": "Reason For Refusal",
-    "HintText": "Please tick all boxes that apply",
-    "FieldType": "MultiSelectList",
-    "FieldTypeParameter": "FR_ms_refusalReason",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/07/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicationNotApprovedOthersTextOrders",
-    "Label": "others (Please specify)",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/07/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicationNotApprovedJudgeType",
-    "Label": "Select Judge",
-    "HintText": "Please select the appropriate Judge",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/07/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicationNotApprovedJudgeName",
-    "Label": "Name of Judge",
-    "HintText": "Surname of judge",
-    "FieldType": "TextArea",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/07/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicationNotApprovedDateOfOrder",
-    "Label": "Date of order",
-    "HintText": "Date of order",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/07/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicationNotApprovedDocumentPreview",
-    "Label": "Document",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
   }
 ]

@@ -275,8 +275,6 @@
     "DisplayOrder": 20,
     "PreConditionState(s)": "awaitingJudiciaryResponse",
     "PostConditionState": "consentOrderNotApproved",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested-application-not-approved-start",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested-application-not-approved-submit",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
