@@ -9,7 +9,7 @@ const Config = {
   AuthorisationCaseState: Object.assign(require('definitions/consented/json/AuthorisationCaseState'), []),
   AuthorisationCaseType: Object.assign(require('definitions/consented/json/AuthorisationCaseType'), []),
   AuthorisationComplexType: Object.assign(require('definitions/consented/json/AuthorisationComplexType'), []),
-  CaseEvent: Object.assign(require('definitions/consented/json/CaseEvent'), []),
+  CaseEvent: Object.assign(require('definitions/consented/json/CaseEvent/CaseEvent'), []),
   CaseEventToComplexTypes: Object.assign(require('definitions/consented/json/CaseEventToComplexTypes'), []),
   CaseEventToFields: Object.assign(require('definitions/consented/json/CaseEventToFields'), []),
   CaseField: Object.assign(require('definitions/consented/json/CaseField'), []),

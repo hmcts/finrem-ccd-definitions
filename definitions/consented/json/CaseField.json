@@ -1755,5 +1755,81 @@
     "Label": "A history of payments associated with a the case",
     "FieldType": "CasePaymentHistoryViewer",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalOrderAddressTo",
+    "Label": "Address to",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_GeneralOrderAddressTo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalOrderDate",
+    "Label": "Court Order Date",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalOrderCreatedBy",
+    "Label": "Letter created by",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalOrderBodyText",
+    "Label": "Please fill in the body of the order",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalOrderPreviewDocument",
+    "Label": "Preview of General Order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalOrderJudgeType",
+    "Label": "Select Judge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
+    "HintText": "Please select the appropriate Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalOrderRecitals",
+    "Label": "Recitals",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalOrderJudgeName",
+    "Label": "Name of Judge",
+    "HintText": "Surname of judge",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalOrderLatestDocument",
+    "Label": "Latest General Order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
   }
 ]
