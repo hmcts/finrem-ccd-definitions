@@ -6,7 +6,7 @@ const { uniq } = require('lodash');
 const Config = {
   AuthorisationCaseEvent: Object.assign(require('definitions/contested/json/AuthorisationCaseEvent/AuthorisationCaseEvent'), []),
   AuthorisationCaseField: Object.assign(require('definitions/contested/json/AuthorisationCaseField/AuthorisationCaseField'), []),
-  AuthorisationCaseState: Object.assign(require('definitions/contested/json/AuthorisationCaseState'), []),
+  AuthorisationCaseState: Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState.json'), []),
   AuthorisationCaseType: Object.assign(require('definitions/contested/json/AuthorisationCaseType'), []),
   AuthorisationComplexType: Object.assign(require('definitions/contested/json/AuthorisationComplexType'), []),
   CaseEvent: Object.assign(require('definitions/contested/json/CaseEvent.json'), []),
@@ -20,7 +20,7 @@ const Config = {
   Jurisdiction: Object.assign(require('definitions/contested/json/Jurisdiction'), []),
   SearchInputFields: Object.assign(require('definitions/contested/json/SearchInputFields'), []),
   SearchResultFields: Object.assign(require('definitions/contested/json/SearchResultFields'), []),
-  State: Object.assign(require('definitions/contested/json/State/State.json'), []),
+  State: Object.assign(require('definitions/contested/json/State.json'), []),
   UserProfile: Object.assign(require('definitions/contested/json/UserProfile'), []),
   WorkBasketInputFields: Object.assign(require('definitions/contested/json/WorkBasketInputFields'), []),
   WorkBasketResultFields: Object.assign(require('definitions/contested/json/WorkBasketResultFields'), [])
