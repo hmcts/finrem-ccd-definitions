@@ -3,7 +3,7 @@ const { differenceWith } = require('lodash');
 
 const CaseType = Object.assign(require('definitions/contested/json/CaseType'), []);
 const AuthorisationCaseType = Object.assign(require('definitions/contested/json/AuthorisationCaseType'), []);
-const State = Object.assign(require('definitions/contested/json/State'), []);
+const State = Object.assign(require('definitions/contested/json/State/State.json'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/contested/json/AuthorisationCaseState'), []);
 
 const MINIMUM_READ_PERMISSIONS = /C?RU?D?/;

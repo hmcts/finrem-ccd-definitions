@@ -2,9 +2,9 @@ const { expect, assert } = require('chai');
 
 const { find } = require('lodash');
 
-const caseEvent = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent.json'), []);
+const caseEvent = Object.assign(require('definitions/contested/json/CaseEvent.json'), []);
 const caseField = Object.assign(require('definitions/contested/json/CaseField/CaseField'), []);
-const caseEventToFeilds = Object.assign(require('definitions/contested/json/CaseEventToFields/CaseEventToFields.json'), []);
+const caseEventToFeilds = Object.assign(require('definitions/contested/json/CaseEventToFields.json'), []);
 
 describe('CaseEventToFields', () => {
   it('should contain valid event IDs', () => {
