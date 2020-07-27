@@ -6,7 +6,7 @@ const { uniq } = require('lodash');
 const Config = {
   AuthorisationCaseEvent: Object.assign(require('definitions/contested/json/AuthorisationCaseEvent/AuthorisationCaseEvent'), []),
   AuthorisationCaseField: Object.assign(require('definitions/contested/json/AuthorisationCaseField/AuthorisationCaseField'), []),
-  AuthorisationCaseState: Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState'), []),
+  AuthorisationCaseState: Object.assign(require('definitions/contested/json/AuthorisationCaseState.json'), []),
   AuthorisationCaseType: Object.assign(require('definitions/contested/json/AuthorisationCaseType'), []),
   AuthorisationComplexType: Object.assign(require('definitions/contested/json/AuthorisationComplexType'), []),
   CaseEvent: Object.assign(require('definitions/contested/json/CaseEvent'), []),
