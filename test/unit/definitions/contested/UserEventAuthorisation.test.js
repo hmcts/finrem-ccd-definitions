@@ -4,8 +4,8 @@ const { differenceWith, intersectionWith, concat } = require('lodash');
 const AuthorisationCaseEvent = Object.assign(require('definitions/contested/json/AuthorisationCaseEvent/AuthorisationCaseEvent'), []);
 const AuthorisationCaseField = Object.assign(require('definitions/contested/json/AuthorisationCaseField/AuthorisationCaseField'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState.json'), []);
-const CaseEvent = Object.assign(require('definitions/contested/json/CaseEvent.json'), []);
-const CaseEventToFields = Object.assign(require('definitions/contested/json/CaseEventToFields.json'), []);
+const CaseEvent = Object.assign(require('definitions/contested/json/CaseEvent'), []);
+const CaseEventToFields = Object.assign(require('definitions/contested/json/CaseEventToFields'), []);
 
 let AuthCaseEventsActive = [];
 
