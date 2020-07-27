@@ -4,26 +4,26 @@ const expect = require('chai').expect;
 const { uniq } = require('lodash');
 
 const Config = {
-  AuthorisationCaseEvent: Object.assign(require('definitions/contested/json/AuthorisationCaseEvent/AuthorisationCaseEvent.json'), []),
+  AuthorisationCaseEvent: Object.assign(require('definitions/contested/json/AuthorisationCaseEvent/AuthorisationCaseEvent'), []),
   AuthorisationCaseField: Object.assign(require('definitions/contested/json/AuthorisationCaseField/AuthorisationCaseField'), []),
-  AuthorisationCaseState: Object.assign(require('definitions/contested/json/AuthorisationCaseState'), []),
-  AuthorisationCaseType: Object.assign(require('definitions/contested/json/AuthorisationCaseType'), []),
-  AuthorisationComplexType: Object.assign(require('definitions/contested/json/AuthorisationComplexType'), []),
+  AuthorisationCaseState: Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState.json'), []),
+  AuthorisationCaseType: Object.assign(require('definitions/contested/json/AuthorisationCaseType/AuthorisationCaseType.json'), []),
+  AuthorisationComplexType: Object.assign(require('definitions/contested/json/AuthorisationComplexType/AuthorisationComplexType.json'), []),
   CaseEvent: Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent.json'), []),
-  CaseEventToComplexTypes: Object.assign(require('definitions/contested/json/CaseEventToComplexTypes'), []),
-  CaseEventToFields: Object.assign(require('definitions/contested/json/CaseEventToFields/CaseEventToFields.json'), []),
+  CaseEventToComplexTypes: Object.assign(require('definitions/contested/json/CaseEventToComplexTypes/CaseEventToComplexTypes.json'), []),
+  CaseEventToFields: Object.assign(require('definitions/contested/json/CaseEventToFields/CaseEventToFields'), []),
   CaseField: Object.assign(require('definitions/contested/json/CaseField/CaseField'), []),
-  CaseType: Object.assign(require('definitions/contested/json/CaseType'), []),
-  CaseTypeTab: Object.assign(require('definitions/contested/json/CaseTypeTab/CaseTypeTab.json'), []),
-  ComplexTypes: Object.assign(require('definitions/contested/json/ComplexTypes'), []),
-  FixedLists: Object.assign(require('definitions/contested/json/FixedLists'), []),
-  Jurisdiction: Object.assign(require('definitions/contested/json/Jurisdiction'), []),
-  SearchInputFields: Object.assign(require('definitions/contested/json/SearchInputFields'), []),
-  SearchResultFields: Object.assign(require('definitions/contested/json/SearchResultFields'), []),
-  State: Object.assign(require('definitions/contested/json/State'), []),
-  UserProfile: Object.assign(require('definitions/contested/json/UserProfile'), []),
-  WorkBasketInputFields: Object.assign(require('definitions/contested/json/WorkBasketInputFields'), []),
-  WorkBasketResultFields: Object.assign(require('definitions/contested/json/WorkBasketResultFields'), [])
+  CaseType: Object.assign(require('definitions/contested/json/CaseType/CaseType.json'), []),
+  CaseTypeTab: Object.assign(require('definitions/contested/json/CaseTypeTab/CaseTypeTab'), []),
+  ComplexTypes: Object.assign(require('definitions/contested/json/ComplexTypes/ComplexTypes.json'), []),
+  FixedLists: Object.assign(require('definitions/contested/json/FixedLists/FixedLists.json'), []),
+  Jurisdiction: Object.assign(require('definitions/contested/json/Jurisdiction/Jurisdiction.json'), []),
+  SearchInputFields: Object.assign(require('definitions/contested/json/SearchInputFields/SearchInputFields.json'), []),
+  SearchResultFields: Object.assign(require('definitions/contested/json/SearchResultFields/SearchResultFields.json'), []),
+  State: Object.assign(require('definitions/contested/json/State/State.json'), []),
+  UserProfile: Object.assign(require('definitions/contested/json/UserProfile/UserProfile.json'), []),
+  WorkBasketInputFields: Object.assign(require('definitions/contested/json/WorkBasketInputFields/WorkBasketInputFields.json'), []),
+  WorkBasketResultFields: Object.assign(require('definitions/contested/json/WorkBasketResultFields/WorkBasketResultFields.json'), [])
 };
 
 describe('For each config sheet', () => {
