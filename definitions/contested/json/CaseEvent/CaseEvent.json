@@ -321,11 +321,37 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_uploadConsentedOrderWithPayment_solicitor",
+    "Name": "Consent Order Payment",
+    "Description": "Consent Order Payment",
+    "DisplayOrder": 22,
+    "PreConditionState(s)": "caseAdded;prepareForHearing;solicitorDraftOrder",
+    "PostConditionState": "consentProcess",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_uploadConsentedOrderNoPayment",
     "Name": "Consent Order (No Payment)",
     "Description": "Consent Order (No Payment)",
     "DisplayOrder": 24,
     "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_uploadConsentedOrderNoPayment_solicitor",
+    "Name": "Consent Order (No Payment)",
+    "Description": "Consent Order (No Payment)",
+    "DisplayOrder": 23,
+    "PreConditionState(s)": "caseAdded;prepareForHearing;solicitorDraftOrder",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
@@ -726,5 +752,18 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/general-letter",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_consentOrder",
+    "Name": "Consent Order",
+    "Description": "Consent Order",
+    "DisplayOrder": 115,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "consentedOrderSubmitted",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "N",
+    "ShowSummary": "Y"
   }
 ]
