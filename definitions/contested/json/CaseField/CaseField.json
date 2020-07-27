@@ -2365,6 +2365,223 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplicationLabel",
+    "Label": "#### NATURE OF THE APPLICATION",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplicationChecklist",
+    "Label": "The application is for:",
+    "HintText": "The applicant is applying for an order by consent in terms of written agreement (a consent order). Within the draft consent order, the Applicant is applying to Court for;",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_natureApplication",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplicationAddress",
+    "Label": "Address details",
+    "HintText": "If the application includes an application for a Property Adjustment Order in relation to land, please provide the address(es) of the property or properties, if applicable",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplicationMortgage",
+    "Label": "Mortgage details",
+    "HintText": "If the application includes an application for a Property Adjustment Order in relation to land, please provide the name(s) and address(es) of any mortgagee(s), if applicable",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderLabel",
+    "Label": "#### CONSENT ORDER",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrder",
+    "Label": "Draft Consent Order",
+    "HintText": "Please upload a scanned copy of the draft consent order that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentD81Label",
+    "Label": "#### D81",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentD81Question",
+    "Label": "Are you uploading a joint D81?",
+    "HintText": "You can either submit one joint D81 form for both parties or one for each applicant and respondent",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentD81Joint",
+    "Label": "Form D81 Joint Document",
+    "HintText": "Joint D81 form, signed by both parties",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentD81Applicant",
+    "Label": "Form D81 Applicant Document",
+    "HintText": "D81 form, signed by Applicant",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentD81Respondent",
+    "Label": "Form D81 Respondent Document",
+    "HintText": "D81 form, signed by Respondent",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentPensionCollectionLabel",
+    "Label": "#### PENSION DOCUMENTS",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentPensionCollection",
+    "Label": "Pension Documents",
+    "HintText": "If the application contains an application for a pension sharing, pension compensation sharing, pension attachment or pension compensation attachment order, please upload the relevant pension form(s) from the list below",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_PensionType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOtherCollectionLabel",
+    "Label": "#### OTHER DOCUMENTS",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOtherCollection",
+    "Label": "Other Documents",
+    "HintText": "Upload other documentation related to your application",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_DocumentType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderPreSaveText",
+    "Label": "# Saving your application\r\nOnce you have pressed ‘continue’ at the bottom of this page, you will have the opportunity to check your application and make any necessary amendments.\r\n\r\nTo save a copy of the application, please press the ‘submit’ button at the bottom of the page.\r\n\r\n# What happens next\r\n  Once you have submitted your application, it will be forwarded to the nominated FRC for processing. \r\n\r\nIf a fee is required we will contact you to arrange payment. \r\n\r\n# If you need help \r\nYou can contact the court if you need help. \r\n************************************************************\r\nCourts and Tribunals Service Centre\r\nPO Box 12746, Harlow, CM20 9QZ\r\n<br/>Email: ContactFinancialRemedy@justice.gov.uk",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderAddressTo",
+    "Label": "Address to",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_go_Addressto",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderCreatedBy",
+    "Label": "Letter Created by",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderDate",
+    "Label": "Court order date",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderBodyText",
+    "Label": "Please fill in the body of the text",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderPreviewDocument",
+    "Label": "Preview of General Order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderJudgeType",
+    "Label": "Select Judge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
+    "HintText": "Please select the appropriate Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderRecitals",
+    "Label": "Recitals",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderJudgeName",
+    "Label": "Name of Judge",
+    "HintText": "Surname of judge",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrderLatestDocument",
+    "Label": "Latest General Order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalLetterCollection",

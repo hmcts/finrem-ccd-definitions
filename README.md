@@ -83,6 +83,10 @@ It's also important to note that once you update to a new reference (i.e you com
 If you want to test something on local, aat or demo env, but don't want to release it on prod make sure you move
 all definitions you don't want to release to a file with suffix "-nonprod.json".
 
+Similarly, each file can have a "prod" version where we store all definitions that will ONLY go to prod, but not on test environment spreadsheets.
+
+A combination of the 2 can also be used, for example to toggle a CaseEvent to behave differently in PROD and AAT, the CaseEvent can be declared once in the "nonprod" version and once in the "prod" version
+
 To do it, you need to create a folder for files related to that xlsx tab, eg: "AuthorisationCaseEvent" where you move
 the production file "AuthorisationCaseEvent.json" and you create another one with definitions you don't want to release
 yet (eg. AuthorisationCaseEvent-noprod.json, but can be any name such as "definitions-for-bsp-ABC-nonprod.json").

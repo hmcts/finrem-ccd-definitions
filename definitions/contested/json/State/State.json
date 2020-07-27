@@ -182,5 +182,13 @@
     "Name": "Order Sent",
     "DisplayOrder": 23,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentedOrderSubmitted",
+    "Name": "Consented Order Submitted",
+    "DisplayOrder": 24,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   }
 ]
