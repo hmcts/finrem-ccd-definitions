@@ -9,13 +9,132 @@
     "TabFieldDisplayOrder": 17
   },
   {
-    "LiveFrom": "01/06/2020",
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "tabConsentOrderProcess",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationChecklist",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "propertyAdjutmentOrderDetailLabel",
+    "TabFieldDisplayOrder": 3,
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "propertyAddress",
+    "TabFieldDisplayOrder": 4,
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "mortgageDetail",
+    "TabFieldDisplayOrder": 5,
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "propertyAdjutmentOrderDetail",
+    "TabFieldDisplayOrder": 6,
+    "FieldShowCondition": "additionalPropertyOrderDecision=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "orderForChildrenLabel",
+    "TabFieldDisplayOrder": 7,
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "tabPaymentForChildrenLabel",
+    "TabFieldDisplayOrder": 8,
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "paymentForChildrenDecision",
+    "TabFieldDisplayOrder": 9,
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "tabBenefitForChildrenLabel",
+    "TabFieldDisplayOrder": 10,
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "benefitForChildrenDecision",
+    "TabFieldDisplayOrder": 11,
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "tabBenefitPaymentChecklistLabel",
+    "TabFieldDisplayOrder": 12,
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "benefitPaymentChecklist",
+    "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "01/06/2020",
@@ -24,7 +143,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentOrder",
-    "TabFieldDisplayOrder": 2
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/06/2020",
@@ -33,7 +152,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentD81Joint",
-    "TabFieldDisplayOrder": 3
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/06/2020",
@@ -42,7 +161,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentPensionCollection",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 16
   },
   {
     "LiveFrom": "01/06/2020",
@@ -51,6 +170,6 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentOtherCollection",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 17
   }
 ]
