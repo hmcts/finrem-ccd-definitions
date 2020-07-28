@@ -765,5 +765,19 @@
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
     "ShowSummary": "Y"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_consentOrderApproved",
+    "Name": "Consent Application Approved",
+    "Description": "Consent Application Approved",
+    "DisplayOrder": 116,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "consentedOrderApproved",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/contested-consent-order-approved",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "N",
+    "ShowSummary": "Y"
   }
 ]
