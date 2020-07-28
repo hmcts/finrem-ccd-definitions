@@ -6111,6 +6111,32 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrderAssignJudge",
+    "CaseFieldID": "consentSelectJudge",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageLabel": "Consent Assigned to Judge",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrderAssignJudge",
+    "CaseFieldID": "consentJudgeName",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageLabel": "Consent Assigned to Judge",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrderApproved",
     "CaseFieldID": "consentSubjectToDecreeAbsoluteValue",
     "PageFieldDisplayOrder": 1,

@@ -2612,7 +2612,7 @@
     "Label": "Select Judge",
     "HintText": "Please select the appropriate judge",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_fl_Judge",
+    "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
     "SecurityClassification": "Public"
   },
   {
@@ -2621,7 +2621,7 @@
     "ID": "consentJudgeName",
     "Label": "Name of Judge",
     "HintText": "Surname of judge",
-    "FieldType": "TextArea",
+    "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
