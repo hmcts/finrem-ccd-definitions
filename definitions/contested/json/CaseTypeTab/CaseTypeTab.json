@@ -2222,6 +2222,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hiddenTab",
+    "TabLabel": "Hidden Tab",
+    "TabDisplayOrder": 16,
+    "CaseFieldID": "consentD81Question",
+    "TabFieldDisplayOrder": 32
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "ApplicantAddressConfidential-solicitor",
     "TabLabel": "Confidential Applicant",
     "CaseFieldID": "applicantAddress",
