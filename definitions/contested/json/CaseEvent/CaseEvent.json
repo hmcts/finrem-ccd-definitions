@@ -765,5 +765,18 @@
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
     "ShowSummary": "Y"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_assignToJudgeConsent",
+    "Name": "Assign to Judge (consent)",
+    "Description": "Assign to Judge (consent)",
+    "DisplayOrder": 116,
+    "PreConditionState(s)": "consentedOrderSubmitted",
+    "PostConditionState": "awaitingJudiciaryResponseConsent",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y",
+    "ShowSummary": "Y"
   }
 ]
