@@ -1081,20 +1081,6 @@
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrderAssignJudge",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_consentOrderAssignJudge",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_consentOrderAssignJudge",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
   },
@@ -1102,21 +1088,14 @@
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrderApproved",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_consentOrderApproved",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_consentOrderApproved",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_assignToJudgeConsent",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   }
 ]
