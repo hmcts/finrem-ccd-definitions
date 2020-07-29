@@ -773,7 +773,7 @@
     "Name": "Consent Assigned to Judge",
     "Description": "Consent Assigned to Judge",
     "DisplayOrder": 116,
-    "PreConditionState(s)": "*",
+    "PreConditionState(s)": "consentedOrderSubmitted",
     "PostConditionState": "consentedOrderAssignJudge",
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
