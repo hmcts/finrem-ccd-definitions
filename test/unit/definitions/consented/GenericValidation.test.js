@@ -16,12 +16,12 @@ const Config = {
   CaseType: Object.assign(require('definitions/consented/json/CaseType'), []),
   CaseTypeTab: Object.assign(require('definitions/consented/json/CaseTypeTab'), []),
   ComplexTypes: Object.assign(require('definitions/consented/json/ComplexTypes'), []),
-  FixedLists: Object.assign(require('definitions/consented/json/FixedLists'), []),
+  FixedLists: Object.assign(require('definitions/consented/json/FixedLists/FixedLists'), []),
   Jurisdiction: Object.assign(require('definitions/consented/json/Jurisdiction'), []),
   SearchInputFields: Object.assign(require('definitions/consented/json/SearchInputFields'), []),
   SearchResultFields: Object.assign(require('definitions/consented/json/SearchResultFields'), []),
   State: Object.assign(require('definitions/consented/json/State'), []),
-  UserProfile: Object.assign(require('definitions/consented/json/UserProfile'), []),
+  UserProfile: Object.assign(require('definitions/consented/json/UserProfile/UserProfile'), []),
   WorkBasketInputFields: Object.assign(require('definitions/consented/json/WorkBasketInputFields'), []),
   WorkBasketResultFields: Object.assign(require('definitions/consented/json/WorkBasketResultFields'), [])
 };
