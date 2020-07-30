@@ -40,7 +40,7 @@ or
 
 ## Convert Excel to JSON
 
-If you prefer to make the changes directly to the Excel Configuration file, and then convert back to JSON: 
+If you prefer to make the changes directly to the Excel Configuration file, and then convert back to JSON:
 
 1) Generate a fresh **base** Excel file from the existing JSON for the appropriate journey using the `yarn generate-excel-{consented/contested}`. The generated Excel file will be in `defintions/{CHOSEN_JOURNEY}/xlsx/ccd-config-base-{JOURNEY}.xlsx` and will contain placeholder URLs.
 2) Make your changes to `ccd-config-base.xlsx` but ensure you don't modify the placeholder URLS (${CCD_DEF_COS_URL}/). These are used to dynamically change the callback URLs for each environment.
