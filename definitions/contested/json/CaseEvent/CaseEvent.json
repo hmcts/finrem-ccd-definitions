@@ -776,7 +776,33 @@
     "PreConditionState(s)": "consentedOrderSubmitted",
     "PostConditionState": "awaitingJudiciaryResponseConsent",
     "SecurityClassification": "Public",
-    "ShowEventNotes": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_consentOrderAssignJudge",
+    "Name": "Consent Assigned to Judge",
+    "Description": "Consent Assigned to Judge",
+    "DisplayOrder": 117,
+    "PreConditionState(s)": "awaitingJudiciaryResponseConsent",
+    "PostConditionState": "consentedOrderAssignJudge",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "N",
+    "ShowSummary": "Y"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_consentOrderApproved",
+    "Name": "Consent Application Approved",
+    "Description": "Consent Application Approved",
+    "DisplayOrder": 118,
+    "PreConditionState(s)": "consentedOrderAssignJudge",
+    "PostConditionState": "consentedOrderApproved",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/contested-consent-order-approved",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "N",
     "ShowSummary": "Y"
   }
 ]
