@@ -3401,6 +3401,13 @@
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
   },
+    {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalOrderLatestDocument",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyContested",
@@ -3517,13 +3524,6 @@
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "consentOrderPreSaveText",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalOrderLatestDocument",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
