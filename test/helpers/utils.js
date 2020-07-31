@@ -1,7 +1,9 @@
 const { Logger } = require('@hmcts/nodejs-logging');
 const requestModule = require('request-promise-native');
-const request = requestModule.defaults({ 'proxy': 'http://proxyout.reform.hmcts.net:8080' });
+
+const request = requestModule.defaults({ proxy: 'http://proxyout.reform.hmcts.net:8080' });
 const fs = require('fs');
+
 const logger = Logger.getLogger('helpers/utils.js');
 
 const env = process.env.RUNNING_ENV || 'aat';
@@ -14,7 +16,7 @@ async function getUserToken() {
   const password = process.env.PASSWORD_SOLICITOR;
 
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
-  const idamClientSecret =  process.env.IDAM_CLIENT_SECRET;
+  const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
 
   const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
 
@@ -23,7 +25,7 @@ async function getUserToken() {
   const codeResponse = await request.post({
     uri: idamBaseUrl + idamCodePath,
     headers: {
-      Authorization: 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64'),
+      Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   }).catch(error => {
@@ -35,14 +37,12 @@ async function getUserToken() {
   const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${code}`;
   const authTokenResponse = await request.post({
     uri: idamBaseUrl + idamAuthPath,
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
   });
 
-  logger.debug(JSON.parse(authTokenResponse)['access_token']);
+  logger.debug(JSON.parse(authTokenResponse).access_token);
 
-  return JSON.parse(authTokenResponse)['access_token'];
+  return JSON.parse(authTokenResponse).access_token;
 }
 
 async function getUserId(authToken) {
@@ -53,9 +53,7 @@ async function getUserId(authToken) {
   const idamDetailsPath = '/details';
   const userDetails = await request.get({
     uri: idamBaseUrl + idamDetailsPath,
-    headers: {
-      Authorization: `Bearer ${authToken}`
-    }
+    headers: { Authorization: `Bearer ${authToken}` }
   });
 
   logger.debug(JSON.parse(userDetails).id);
@@ -70,16 +68,13 @@ async function getServiceToken() {
 
   const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
   const s2sAuthPath = '/lease';
-  const oneTimePassword = require('otp')({
-    secret: serviceSecret
-  }).totp();
+  // eslint-disable-next-line global-require
+  const oneTimePassword = require('otp')({ secret: serviceSecret }).totp();
 
   const serviceToken = await request({
     method: 'POST',
     uri: s2sBaseUrl + s2sAuthPath,
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       microservice: 'divorce_ccd_submission',
       oneTimePassword
@@ -92,7 +87,6 @@ async function getServiceToken() {
 }
 
 async function createCaseInCcd(dataLocation = './test/data/ccd-consented-basic-data.json') {
-
   const authToken = await getUserToken();
 
   const userId = await getUserId(authToken);
@@ -101,7 +95,7 @@ async function createCaseInCcd(dataLocation = './test/data/ccd-consented-basic-d
 
   logger.info('Creating Case');
 
-  const ccdApiUrl =  process.env.CCD_DATA_API_URL
+  const ccdApiUrl = process.env.CCD_DATA_API_URL;
   const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/FinancialRemedyMVP2/event-triggers/FR_solicitorCreate/token`;
   const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/FinancialRemedyMVP2/cases`;
 
@@ -109,8 +103,8 @@ async function createCaseInCcd(dataLocation = './test/data/ccd-consented-basic-d
     method: 'GET',
     uri: ccdApiUrl + ccdStartCasePath,
     headers: {
-      'Authorization': `Bearer ${authToken}`,
-      'ServiceAuthorization': `Bearer ${serviceToken}`,
+      Authorization: `Bearer ${authToken}`,
+      ServiceAuthorization: `Bearer ${serviceToken}`,
       'Content-Type': 'application/json'
     }
   };
@@ -118,24 +112,24 @@ async function createCaseInCcd(dataLocation = './test/data/ccd-consented-basic-d
   const startCaseResponse = await request(startCaseOptions);
   console.log(startCaseResponse);
   const eventToken = JSON.parse(startCaseResponse).token;
-
-  var data = fs.readFileSync(dataLocation);
-  var saveBody = {
+  /* eslint id-blacklist: ["error", "undefined"] */
+  const data = fs.readFileSync(dataLocation);
+  const saveBody = {
     data: JSON.parse(data),
     event: {
       id: 'FR_solicitorCreate',
       summary: 'Creating Basic Case',
       description: 'For CCD E2E Test'
     },
-    'event_token': eventToken
+    event_token: eventToken
   };
 
   const saveCaseOptions = {
     method: 'POST',
     uri: ccdApiUrl + ccdSaveCasePath,
     headers: {
-      'Authorization': `Bearer ${authToken}`,
-      'ServiceAuthorization': `Bearer ${serviceToken}`,
+      Authorization: `Bearer ${authToken}`,
+      ServiceAuthorization: `Bearer ${serviceToken}`,
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(saveBody)
@@ -152,6 +146,4 @@ async function createCaseInCcd(dataLocation = './test/data/ccd-consented-basic-d
   return caseId;
 }
 
-module.exports = {
-  createCaseInCcd
-};
+module.exports = { createCaseInCcd };
