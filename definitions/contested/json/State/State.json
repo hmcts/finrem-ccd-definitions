@@ -190,5 +190,29 @@
     "Name": "Consented Order Submitted",
     "DisplayOrder": 24,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "awaitingJudiciaryResponseConsent",
+    "Name": "Awaiting Judiciary Response (Consent)",
+    "DisplayOrder": 25,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentedOrderAssignJudge",
+    "Name": "Consent Assigned to Judge",
+    "DisplayOrder": 26,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentedOrderApproved",
+    "Name": "Consented Order Approved",
+    "DisplayOrder": 27,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   }
 ]

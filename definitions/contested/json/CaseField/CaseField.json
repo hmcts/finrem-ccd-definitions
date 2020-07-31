@@ -2563,5 +2563,83 @@
     "Label": "General letter preview",
     "FieldType": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabConsentOrderProcess",
+    "Label": "## CONSENT ORDER PROCESS",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentSubjectToDecreeAbsoluteValue",
+    "Label": "Subject to Decree Absolute?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentServePensionProvider",
+    "Label": "Does a copy of this order need to be served to the pension provider?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentServePensionProviderResponsibility",
+    "Label": "Who is responsible for sending a copy of the order to the pension provider?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_PensionProvider",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentServePensionProviderOther",
+    "Label": "Please Specify",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentSelectJudge",
+    "Label": "Select Judge",
+    "HintText": "Please select the appropriate judge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentJudgeName",
+    "Label": "Name of Judge",
+    "HintText": "Surname of judge",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentDateOfOrder",
+    "Label": "Date of order",
+    "HintText": "Date of order",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentAdditionalComments",
+    "Label": "Additional comments",
+    "HintText": "Please add any additional comments for  court admin (this comments will not be accesible by applicant's solicitor)",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
   }
 ]
