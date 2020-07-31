@@ -18,6 +18,10 @@ async function getUserToken() {
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
   const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
 
+  logger.info(`uid-->${username}`);
+  logger.info(`pwd-->${password}`);
+  logger.info(`idam secret-->${idamClientSecret}`);
+
   const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
 
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
@@ -66,6 +70,8 @@ async function getServiceToken() {
 
   const serviceSecret = process.env.CCD_SUBMIT_S2S_SECRET;
 
+  logger.info(`serviceSecret-->${serviceSecret}`);
+
   const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
   const s2sAuthPath = '/lease';
   // eslint-disable-next-line global-require
@@ -96,6 +102,7 @@ async function createCaseInCcd(dataLocation = './test/data/ccd-consented-basic-d
   logger.info('Creating Case');
 
   const ccdApiUrl = process.env.CCD_DATA_API_URL;
+  logger.info(`ccdApiUrl-->${ccdApiUrl}`);
   const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/FinancialRemedyMVP2/event-triggers/FR_solicitorCreate/token`;
   const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/FinancialRemedyMVP2/cases`;
 
