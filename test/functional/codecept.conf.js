@@ -17,6 +17,6 @@ exports.config = {
   },
   include: { I: './steps_file.js' },
   bootstrap: null,
-  mocha: {},
+  mocha: { reporterOptions: { reportDir: './test/functional/output' } },
   name: 'finrem-ccd-definitions'
 };
