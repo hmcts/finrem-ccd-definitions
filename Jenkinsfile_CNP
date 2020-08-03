@@ -75,6 +75,10 @@ withPipeline("nodejs", product, component) {
     env.CCD_WEB_URL="https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal/v2/case/"
   }
 
+  after('functionalTest:preview') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
+  }
+
   before('functionalTest:aat') {
     yarnBuilder.yarn('setup')
 
