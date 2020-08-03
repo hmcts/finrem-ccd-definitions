@@ -683,7 +683,7 @@
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-letter-start",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/general-letter",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COSGeneral Order (consent)_URL}/case-orchestration/documents/general-letter",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -752,5 +752,20 @@
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
     "ShowSummary": "Y"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_generalOrderConsent",
+    "Name": "Create General Order (consent)",
+    "Description": "Create General Order (consent)",
+    "DisplayOrder": 119,
+    "PreConditionState(s)": "consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentOrderNotApproved",
+    "PostConditionState": "consentOrderNotApproved",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-order-start",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-order",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
   }
 ]
