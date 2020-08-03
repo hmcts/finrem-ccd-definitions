@@ -2651,5 +2651,13 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderRefusal",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "orderRefusalPreviewDocument",
+    "Label": "Preview of Draft Order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
   }
 ]
