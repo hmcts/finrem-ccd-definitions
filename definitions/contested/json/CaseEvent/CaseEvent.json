@@ -683,7 +683,7 @@
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-letter-start",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COSGeneral Order (consent)_URL}/case-orchestration/documents/general-letter",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/general-letter",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
