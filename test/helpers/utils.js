@@ -8,13 +8,8 @@ const logger = Logger.getLogger('helpers/utils.js');
 
 const env = process.env.RUNNING_ENV || 'aat';
 
-async function getUserToken() {
+async function getUserToken(username, password) {
   logger.info('Getting User Token');
-
-  // Setup Details
-  const username = process.env.USERNAME_SOLICITOR;
-  const password = process.env.PASSWORD_SOLICITOR;
-
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
   const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
   const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
@@ -85,8 +80,8 @@ async function getServiceToken() {
   return serviceToken;
 }
 
-async function createCaseInCcd(dataLocation, caseType) {
-  const authToken = await getUserToken();
+async function createCaseInCcd(userName, password, dataLocation, caseType) {
+  const authToken = await getUserToken(userName, password);
 
   const userId = await getUserId(authToken);
 
@@ -146,8 +141,8 @@ async function createCaseInCcd(dataLocation, caseType) {
   return caseId;
 }
 
-async function updateCaseInCcd(caseId, eventId, dataLocation) {
-  const authToken = await getUserToken();
+async function updateCaseInCcd(userName, password, caseId, caseType, eventId, dataLocation) {
+  const authToken = await getUserToken(userName, password);
 
   const userId = await getUserId(authToken);
 
@@ -156,8 +151,9 @@ async function updateCaseInCcd(caseId, eventId, dataLocation) {
   logger.info('Updating case with id %s and event %s', caseId, eventId);
 
   const ccdApiUrl = process.env.CCD_DATA_API_URL;
-  const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/event-triggers/${eventId}/token`;
-  const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/events`;
+  const frCaseType = caseType;
+  const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases/${caseId}/event-triggers/${eventId}/token`;
+  const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases/${caseId}/events`;
 
   const startEventOptions = {
     method: 'GET',
