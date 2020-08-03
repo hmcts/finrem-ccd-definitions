@@ -17,11 +17,6 @@ async function getUserToken() {
 
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
   const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
-
-  logger.info(`uid-->${username}`);
-  logger.info(`pwd-->${password}`);
-  logger.info(`idam secret-->${idamClientSecret}`);
-
   const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
 
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
@@ -69,8 +64,6 @@ async function getServiceToken() {
   logger.info('Getting Service Token');
 
   const serviceSecret = process.env.CCD_SUBMIT_S2S_SECRET;
-
-  logger.info(`serviceSecret-->${serviceSecret}`);
 
   const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
   const s2sAuthPath = '/lease';
@@ -161,13 +154,10 @@ async function updateCaseInCcd(caseId, eventId, dataLocation) {
   const serviceToken = await getServiceToken();
 
   logger.info('Updating case with id %s and event %s', caseId, eventId);
-  const ccdApiUrl = process.env.CCD_DATA_API_URL;
 
-  logger.info(ccdApiUrl);
+  const ccdApiUrl = process.env.CCD_DATA_API_URL;
   const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/event-triggers/${eventId}/token`;
   const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/events`;
-  logger.info(ccdApiUrl + ccdStartEventPath);
-  logger.info(ccdSaveEventPath);
 
   const startEventOptions = {
     method: 'GET',
