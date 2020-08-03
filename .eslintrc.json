@@ -9,7 +9,8 @@
     },
     "extends": "@hmcts",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": 2019
     },
     "plugins": ["mocha", "codeceptjs"],
     "rules": {

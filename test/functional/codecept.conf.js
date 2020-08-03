@@ -4,12 +4,25 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: 'http://localhost:3000',
+      show: false,
       waitForNavigation: 'networkidle0',
-      chrome: { ignoreHTTPSErrors: true }
+      chrome: {
+        ignoreHTTPSErrors: true,
+        args: [
+          '--start-fullscreen',
+          '--proxy-server=proxyout.reform.hmcts.net:8080'
+        ]
+      }
     }
   },
   include: { I: './steps_file.js' },
   bootstrap: null,
-  mocha: {},
+  mocha: {
+    reporterOptions:
+      {
+        reportDir: './test/functional/output',
+        inlineAssets: true
+      }
+  },
   name: 'finrem-ccd-definitions'
 };
