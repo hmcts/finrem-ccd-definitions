@@ -90,6 +90,7 @@ async function createCaseInCcd(userName, password, dataLocation, caseType) {
   logger.info('Creating Case');
 
   const ccdApiUrl = process.env.CCD_DATA_API_URL;
+  logger.info(ccdApiUrl);
   const frCaseType = caseType;
   const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/event-triggers/FR_solicitorCreate/token`;
   const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases`;

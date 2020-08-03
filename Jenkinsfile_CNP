@@ -102,7 +102,7 @@ withPipeline("nodejs", product, component) {
 
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     env.CCD_ADMIN_URL="https://ccd-admin-web.aat.platform.hmcts.net"
-    env.CCD_DATA_API_URL="http://ccd-data-store-api-${env}.service.core-compute-${env}.internal"
+    env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
     env.CCD_WEB_URL="https://www-ccd.aat.platform.hmcts.net/v2/case/"
   }
 
