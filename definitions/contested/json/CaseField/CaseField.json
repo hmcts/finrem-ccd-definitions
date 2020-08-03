@@ -1591,6 +1591,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalOrdersConsent",
+    "Label": "General Order (consent)",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_genaralOrder_consent",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicationNotApproved",
     "Label": "Application Not Approved",
     "FieldType": "Collection",
