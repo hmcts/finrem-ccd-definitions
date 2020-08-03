@@ -25,7 +25,13 @@ def secrets = [
                 secret('fixedlists-consented-judgedetails-2', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_2'),
                 secret('userprofile-consented-judgedetails-1', 'USERPROFILE_CONSENTED_JUDGEDETAILS_1'),
                 secret('userprofile-consented-judgedetails-2', 'USERPROFILE_CONSENTED_JUDGEDETAILS_2'),
-                secret('userprofile-contested-judgedetails', 'USERPROFILE_CONTESTED_JUDGEDETAILS')
+                secret('userprofile-contested-judgedetails', 'USERPROFILE_CONTESTED_JUDGEDETAILS'),
+                secret('username-solicitor', 'USERNAME_SOLICITOR'),
+                secret('password-solicitor', 'PASSWORD_SOLICITOR'),
+                secret('username-caseworker', 'USERNAME_CASEWORKER'),
+                secret('password-caseworker', 'PASSWORD_CASEWORKER'),
+                secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
+                secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET')
         ]
 ]
 
@@ -65,6 +71,8 @@ withPipeline("nodejs", product, component) {
 
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     env.CCD_ADMIN_URL="https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+    env.CCD_DATA_API_URL="http://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+    env.CCD_WEB_URL="https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal/v2/case/"
   }
 
   before('functionalTest:aat') {
@@ -94,6 +102,8 @@ withPipeline("nodejs", product, component) {
 
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     env.CCD_ADMIN_URL="https://ccd-admin-web.aat.platform.hmcts.net"
+    env.CCD_DATA_API_URL="http://ccd-data-store-api-${env}.service.core-compute-${env}.internal"
+    env.CCD_WEB_URL="https://www-ccd.aat.platform.hmcts.net/v2/case/"
   }
 
   after('functionalTest:aat') {

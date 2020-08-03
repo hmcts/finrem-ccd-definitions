@@ -43,7 +43,6 @@
     "test:functional": "codeceptjs run --steps -c test/functional/codecept.conf.js",
     "start": "node index.js",
     "sonar-scan": "node_modules/sonar-scanner/bin/sonar-scanner",
-
     "generate-json-consented": "yarn --cwd ccd-definition-processor xlsx2json -D ../definitions/consented/json -i ../definitions/consented/xlsx/ccd-config-base-consented.xlsx && pretty-quick --pattern 'definitions/**/json/**.json'",
     "generate-excel-consented": "yarn --cwd ccd-definition-processor json2xlsx -D ../definitions/consented/json -o ../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented.xlsx",
     "generate-excel-local-consented": "FR_ENV=local CCD_DEF_COS_URL=$npm_package_config_local_cosUrl CCD_DEF_CCD_URL=$npm_package_config_local_ccdUrl yarn run generate-excel-consented -e *-prod.json",
@@ -52,7 +51,6 @@
     "generate-excel-ithc-consented": "FR_ENV=ithc CCD_DEF_COS_URL=$npm_package_config_ithc_cosUrl CCD_DEF_CCD_URL=$npm_package_config_ithc_ccdUrl yarn run generate-excel-consented -e *-prod.json",
     "generate-excel-prod-consented": "FR_ENV=prod CCD_DEF_COS_URL=$npm_package_config_prod_cosUrl CCD_DEF_CCD_URL=$npm_package_config_prod_ccdUrl yarn run generate-excel-consented -e *-nonprod.json",
     "generate-excel-all-consented": "yarn generate-excel-consented && yarn generate-excel-local-consented && yarn generate-excel-demo-consented && yarn generate-excel-aat-consented && yarn generate-excel-prod-consented",
-
     "generate-json-contested": "yarn --cwd ccd-definition-processor xlsx2json -D ../definitions/contested/json -i ../definitions/contested/xlsx/ccd-config-base-contested.xlsx && pretty-quick --pattern 'definitions/**/json/**.json'",
     "generate-excel-contested": "yarn --cwd ccd-definition-processor json2xlsx -D ../definitions/contested/json -o ../definitions/contested/xlsx/ccd-config-${FR_ENV:-base}-contested.xlsx",
     "generate-excel-local-contested": "FR_ENV=local CCD_DEF_COS_URL=$npm_package_config_local_cosUrl CCD_DEF_CCD_URL=$npm_package_config_local_ccdUrl yarn run generate-excel-contested -e *-prod.json",
@@ -83,9 +81,12 @@
     "husky": "^2.2.0",
     "loadsh": "^0.0.4",
     "mocha": "^6.1.4",
+    "otp": "^0.1.3",
     "pre-commit": "^1.2.2",
     "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
     "sonar-scanner": "^3.1.0"
   },
   "resolutions": {
