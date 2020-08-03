@@ -184,6 +184,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponseConsent",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
@@ -373,6 +380,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponseConsent",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
@@ -556,6 +570,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentedOrderApproved",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
@@ -752,6 +773,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "caseworker-divorce-bulkscan",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponseConsent",
     "UserRole": "caseworker-divorce-bulkscan",
     "CRUD": "R"
@@ -935,6 +963,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentedOrderApproved",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "R"
   },
