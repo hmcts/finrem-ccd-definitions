@@ -6195,11 +6195,11 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_consentOrderNotApproved",
-    "CaseFieldID": "consentOrderNotApprovedCollection",
+    "CaseEventID": "FR_orderRefusal",
+    "CaseFieldID": "orderRefusalCollectionNew",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "COMPLEX",
-    "PageID": "consentOrderNotApprovedCollection",
+    "PageID": "orderRefusalCollectionNew",
     "PageDisplayOrder": 1,
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/preview-consent-order-not-approved",
     "RetriesTimeoutURLMidEvent": "3,4,5"
@@ -6207,7 +6207,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_consentOrderNotApproved",
+    "CaseEventID": "FR_orderRefusal",
     "CaseFieldID": "orderRefusalPreviewDocument",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
