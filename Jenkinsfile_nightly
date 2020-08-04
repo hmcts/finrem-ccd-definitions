@@ -38,10 +38,8 @@ node {
             deleteDir()
             checkout scm
         }
-
-        stage('Journey Tests') {
+        stage('CCD E2E Journey Tests') {
             try {
-            loadVaultSecrets(secrets)
                 env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
                 env.CCD_WEB_URL="https://www-ccd.aat.platform.hmcts.net/v2/case/"
                 sh 'yarn install'
