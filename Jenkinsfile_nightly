@@ -2,10 +2,7 @@
 
 properties([
         [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/finrem-ccd-definitions.git'],
-        pipelineTriggers([cron('00 22 * * *')]),
-        parameters([
-                string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'CNP Environment to Run Tests in')
-        ])
+        pipelineTriggers([cron('00 22 * * *')])
 ])
 
 @Library("Infrastructure")
