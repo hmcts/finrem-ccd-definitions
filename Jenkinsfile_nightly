@@ -13,22 +13,14 @@ properties([
 String product = "finrem"
 String component = "ccd-definitions"
 
-node {
-    ws('workspace/finrem-ccd-definitions') {
-        stage('Checkout') {
-            deleteDir()
-            checkout scm
-        }
-
-        stage('Env Setup') {
-            def secrets = [
+def secrets = [
                     'finrem-${env}'      : [
-                            secret('username-solicitor', 'USERNAME_SOLICITOR'),
-                            secret('password-solicitor', 'PASSWORD_SOLICITOR'),
-                            secret('username-caseworker', 'USERNAME_CASEWORKER'),
-                            secret('password-caseworker', 'PASSWORD_CASEWORKER'),
-                            secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
-                            secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET')
+                        secret('username-solicitor', 'USERNAME_SOLICITOR'),
+                        secret('password-solicitor', 'PASSWORD_SOLICITOR'),
+                        secret('username-caseworker', 'USERNAME_CASEWORKER'),
+                        secret('password-caseworker', 'PASSWORD_CASEWORKER'),
+                        secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
+                        secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET')
                     ]
             ]
 
@@ -40,10 +32,16 @@ node {
                 envVariable: envVar
               ]
             }
+node {
+    ws('workspace/finrem-ccd-definitions') {
+        stage('Checkout') {
+            deleteDir()
+            checkout scm
         }
 
         stage('Journey Tests') {
             try {
+            loadVaultSecrets(secrets)
                 env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
                 env.CCD_WEB_URL="https://www-ccd.aat.platform.hmcts.net/v2/case/"
                 sh 'yarn install'
