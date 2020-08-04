@@ -8,7 +8,7 @@ const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 
 Feature('create Contested case ');
 
-Scenario('Contested Case Creation For Caseworker @nightly', async I => {
+Scenario('Contested Case Creation For Caseworker @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -17,7 +17,7 @@ Scenario('Contested Case Creation For Caseworker @nightly', async I => {
   I.amOnPage(ccdWebUrl + caseId);
 });
 
-Scenario('Contested Case Creation For Judge @nightly', async I => {
+Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
