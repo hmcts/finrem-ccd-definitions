@@ -2659,5 +2659,15 @@
     "Label": "Preview of Draft Order",
     "FieldType": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderRefusalCollection",
+    "Label": "Application Not Approved",
+    "HintText": "Warning: Previous orders will appear at the top of the page. To avoid overwriting a previous order, please ensure you scroll to the bottom of the page and choose ‘Add New’. A blank template will then appear for you to complete.",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_consentOrderNotApproved",
+    "SecurityClassification": "Public"
   }
 ]
