@@ -1,0 +1,67 @@
+#!groovy
+
+properties([
+        [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/finrem-ccd-definitions.git'],
+        pipelineTriggers([cron('00 22 * * *')]),
+        parameters([
+                string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'CNP Environment to Run Tests in')
+        ])
+])
+
+@Library("Infrastructure")
+
+String product = "finrem"
+String component = "ccd-definitions"
+
+node {
+    ws('workspace/finrem-ccd-definitions') {
+        stage('Checkout') {
+            deleteDir()
+            checkout scm
+        }
+
+        stage('Env Setup') {
+            def secrets = [
+                    'finrem-${env}'      : [
+                            secret('username-solicitor', 'USERNAME_SOLICITOR'),
+                            secret('password-solicitor', 'PASSWORD_SOLICITOR'),
+                            secret('username-caseworker', 'USERNAME_CASEWORKER'),
+                            secret('password-caseworker', 'PASSWORD_CASEWORKER'),
+                            secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
+                            secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET')
+                    ]
+            ]
+
+            static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
+              [ $class: 'AzureKeyVaultSecret',
+                secretType: 'Secret',
+                name: secretName,
+                version: '',
+                envVariable: envVar
+              ]
+            }
+        }
+
+        stage('Journey Tests') {
+            try {
+                env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
+                env.CCD_WEB_URL="https://www-ccd.aat.platform.hmcts.net/v2/case/"
+                sh 'yarn install'
+                sh 'yarn test:nightly-functional'
+            }
+            catch (Exception err) {
+                currentBuild.result = 'UNSTABLE'
+                echo "RESULT: ${currentBuild.result}"
+            } finally {
+                archiveArtifacts 'test/functional/output/*'
+            }
+
+        }
+
+        stage('After run') {
+            echo "finished"
+        }
+
+    }
+    deleteDir()
+}
