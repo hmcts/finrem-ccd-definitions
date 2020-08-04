@@ -13,7 +13,7 @@ properties([
 String product = "finrem"
 String component = "ccd-definitions"
 
-withNightlyPipeline("nodejs", product, component) {
+node {
     ws('workspace/finrem-ccd-definitions') {
         stage('Checkout') {
             deleteDir()
