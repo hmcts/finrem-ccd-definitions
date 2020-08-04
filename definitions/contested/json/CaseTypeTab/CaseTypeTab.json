@@ -2579,6 +2579,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "generalOrdersConsent",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 19,
+    "TabShowCondition": "consentD81Question=\"Yes\" OR consentD81Question=\"No\""
   }
 ]
