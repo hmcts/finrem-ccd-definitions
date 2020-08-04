@@ -14,25 +14,26 @@ String product = "finrem"
 String component = "ccd-definitions"
 
 def secrets = [
-                    'finrem-${env}'      : [
-                        secret('username-solicitor', 'USERNAME_SOLICITOR'),
-                        secret('password-solicitor', 'PASSWORD_SOLICITOR'),
-                        secret('username-caseworker', 'USERNAME_CASEWORKER'),
-                        secret('password-caseworker', 'PASSWORD_CASEWORKER'),
-                        secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
-                        secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET')
-                    ]
-            ]
+    'finrem-${env}'   : [
+        secret('username-solicitor', 'USERNAME_SOLICITOR'),
+        secret('password-solicitor', 'PASSWORD_SOLICITOR'),
+        secret('username-caseworker', 'USERNAME_CASEWORKER'),
+        secret('password-caseworker', 'PASSWORD_CASEWORKER'),
+        secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
+        secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET')
+    ]
+]
 
-            static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
-              [ $class: 'AzureKeyVaultSecret',
-                secretType: 'Secret',
-                name: secretName,
-                version: '',
-                envVariable: envVar
-              ]
-            }
-node {
+static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
+  [ $class: 'AzureKeyVaultSecret',
+    secretType: 'Secret',
+    name: secretName,
+    version: '',
+    envVariable: envVar
+  ]
+}
+
+withNightlyPipeline("nodejs", product, component) {
     ws('workspace/finrem-ccd-definitions') {
         stage('Checkout') {
             deleteDir()
