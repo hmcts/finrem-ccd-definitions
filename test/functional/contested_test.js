@@ -7,7 +7,7 @@ const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
 const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 
 Feature('create Contested case ');
-console.log(solicitorUserName);
+
 Scenario('Contested Case Creation For Caseworker @nightly', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested');
   /* eslint-disable */
