@@ -20,7 +20,7 @@ node {
             checkout scm
         }
         stage('Env Setup') {
-            withSubscription('aat') {
+            withSubscription('nonprod') {
                 def az = { cmd -> return sh(script: "env AZURE_CONFIG_DIR=/opt/jenkins/.azure-${env.SUBSCRIPTION_NAME} az ${cmd}", returnStdout: true).trim() }
                 env.USERNAME_SOLICITOR =  az('keyvault secret show --vault-name finrem-aat --name username-solicitor --query value -o tsv').trim()
                 env.PASSWORD_SOLICITOR =  az('keyvault secret show --vault-name finrem-aat --name password-solicitor --query value -o tsv').trim()
