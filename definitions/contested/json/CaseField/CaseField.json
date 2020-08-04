@@ -2641,5 +2641,14 @@
     "HintText": "Please add any additional comments for  court admin (this comments will not be accesible by applicant's solicitor)",
     "FieldType": "Text",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "Contested_ConsentedApprovedOrders",
+    "Label": "Consent Order Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_consentOrder",
+    "SecurityClassification": "Public"
   }
 ]

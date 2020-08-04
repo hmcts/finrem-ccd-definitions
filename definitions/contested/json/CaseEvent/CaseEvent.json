@@ -749,6 +749,7 @@
     "PreConditionState(s)": "consentedOrderAssignJudge",
     "PostConditionState": "consentedOrderApproved",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/contested-consent-order-approved",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/consent-in-contested/consent-order-approved",
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
     "ShowSummary": "Y"
