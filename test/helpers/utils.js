@@ -105,7 +105,6 @@ async function createCaseInCcd(userName, password, dataLocation, caseType) {
   };
 
   const startCaseResponse = await request(startCaseOptions);
-  console.log(startCaseResponse);
   const eventToken = JSON.parse(startCaseResponse).token;
   /* eslint id-blacklist: ["error", "undefined"] */
   const data = fs.readFileSync(dataLocation);

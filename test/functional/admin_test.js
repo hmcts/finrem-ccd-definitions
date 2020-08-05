@@ -1,6 +1,6 @@
 Feature('Admin Web');
 
-Scenario('add all the roles', I => {
+Scenario('add all the roles @pipeline', I => {
   I.loginToAdminConsole();
   I.createRole('citizen');
   I.createRole('caseworker');
@@ -21,13 +21,13 @@ Scenario('add all the roles', I => {
   I.see('caseworker-divorce-financialremedy');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
-Scenario('upload Consented Config file', I => {
+Scenario('upload Consented Config file @pipeline', I => {
   I.loginToAdminConsole();
   I.uploadConfig('../../definitions/consented/xlsx/ccd-config-aat-consented.xlsx');
   I.see('Case Definition data successfully imported');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
-Scenario('upload Contested Config file', I => {
+Scenario('upload Contested Config file @pipeline', I => {
   I.loginToAdminConsole();
   I.uploadConfig('../../definitions/contested/xlsx/ccd-config-aat-contested.xlsx');
   I.see('Case Definition data successfully imported');
