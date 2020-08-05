@@ -1739,10 +1739,71 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "judgeNotApprovedReasons",
-    "Label": "Judge Not Approved Reasons ",
-    "HintText": "Judge Not Approved Reasons ",
+    "Label": "Judge Not Approved Reasons",
+    "HintText": "Judge Not Approved Reasons",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_c_judgeNotApprovedReasons",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "refusalOrderJudgeType",
+    "Label": "Select Judge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
+    "HintText": "Please select the appropriate Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "refusalOrderJudgeName",
+    "Label": "Name of Judge",
+    "HintText": "Surname of judge",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "refusalOrderDate",
+    "Label": "Court order date",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "refusalOrderPreviewDocument",
+    "Label": "Preview of Refusal Order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "refusalOrderCollection",
+    "Label": "Refused Order Collection",
+    "HintText": "Refused Order Collection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_refusedOrderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "latestRefusalOrder",
+    "Label": "Latest Refusal Order Document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "refusalOrderAdditionalDocument",
+    "Label": "Refusal Order Document",
+    "FieldType": "Document",
     "SecurityClassification": "Public"
   },
   {
