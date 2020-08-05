@@ -8,7 +8,7 @@ const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 
 Feature('create Consented case ');
 
-Scenario('Consent Case Creation For Caseworker', async I => {
+Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
@@ -17,7 +17,7 @@ Scenario('Consent Case Creation For Caseworker', async I => {
   I.amOnPage(ccdWebUrl + caseId);
 });
 
-Scenario('Consent Case Creation For Judge', async I => {
+Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
