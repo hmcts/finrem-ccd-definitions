@@ -2669,5 +2669,14 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_consentOrderNotApproved",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "Contested_ConsentedNotApprovedOrders",
+    "Label": "Refused Order Collection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_consentOrder",
+    "SecurityClassification": "Public"
   }
 ]
