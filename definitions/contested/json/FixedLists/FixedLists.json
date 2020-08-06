@@ -35,6 +35,12 @@
     "ListElementCode": "Pension Compensation Attachment Order",
     "ListElement": "Pension Compensation Attachment Order"
   },
+    {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_natureApplication",
+    "ListElementCode": "A settlement or a transfer of property",
+    "ListElement": "A settlement or a transfer of property for the benefit of the child(ren)"
+  },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
@@ -1777,5 +1783,41 @@
     "ID": "FR_fl_RefusalOrderJudgeType",
     "ListElementCode": "Recorder",
     "ListElement": "Recorder"
+  },
+  {
+    "LiveFrom": "10/08/2020",
+    "ID": "FR_ConsentNatureOfApplication6",
+    "ListElementCode": "Step Child or Step Children",
+    "ListElement": "For a stepchild or step children"
+  },
+  {
+    "LiveFrom": "10/08/2020",
+    "ID": "FR_ConsentNatureOfApplication6",
+    "ListElementCode": "In addition to child support",
+    "ListElement": "In addition to child support or maintenance already paid under a Child Support Agency assessment"
+  },
+  {
+    "LiveFrom": "10/08/2020",
+    "ID": "FR_ConsentNatureOfApplication6",
+    "ListElementCode": "disability expenses",
+    "ListElement": "To meet expenses arising from a child’s disability"
+  },
+  {
+    "LiveFrom": "10/08/2020",
+    "ID": "FR_ConsentNatureOfApplication6",
+    "ListElementCode": "training",
+    "ListElement": "To meet expenses incurred by a child in relation to being educated or training for work"
+  },
+  {
+    "LiveFrom": "10/08/2020",
+    "ID": "FR_ConsentNatureOfApplication6",
+    "ListElementCode": "When not habitually resident",
+    "ListElement": "When either the child or the person with care of the child or the absent parent of the child is not habitually resident in the United Kingdom"
+  },
+  {
+    "LiveFrom": "10/08/2020",
+    "ID": "FR_ConsentNatureOfApplication6",
+    "ListElementCode": "Other",
+    "ListElement": "Other"
   }
 ]

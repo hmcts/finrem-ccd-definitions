@@ -2395,6 +2395,50 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "10/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderForChildrenQuestionLabel",
+    "Label": "#### ORDER FOR CHILDREN",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "10/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderForChildrenQuestion1",
+    "Label": "Does the application contain any application for periodical payments, or secured periodical payments for children?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "10/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplication5",
+    "Label": "Is there a written agreement?",
+    "HintText": "If the application contains an application for periodical payments or secured periodical payments for children, has a written agreement made about maintenance for the benefit of children?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "10/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplication6",
+    "Label": "Select what the payments are for:",
+    "HintText": "There is no agreement, but the applicant is applying for payments;",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ConsentNatureOfApplication6",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "10/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplication7",
+    "Label": "Other – Please give details",
+    "HintText": "If Other, please provide details",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "consentOrderLabel",
@@ -2756,6 +2800,15 @@
     "Label": "Refused Order Collection",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_consentOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentMiniFormA",
+    "Label": "Online Form A",
+    "HintText": "Online Form A",
+    "FieldType": "Document",
     "SecurityClassification": "Public"
   }
 ]
