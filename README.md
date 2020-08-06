@@ -101,8 +101,6 @@ However, this URL in itself is not very useful. There are two subdomains that ar
 
 - "case-management-web-" for the Case management UI: e.g. `https://case-management-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
 
-
-
 * Visit `https://gateway-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` in separate tab and whitelist accept the SSL certificate.
 
 * Login with an authorised AAT user [listed here](https://github.com/hmcts/finrem-ccd-definitions/blob/master/definitions/consented/json/UserProfile.json)
