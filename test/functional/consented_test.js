@@ -18,6 +18,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    // TO-DO -Verify data , if needed manual/automate update, state change testing
   }
 });
 
@@ -31,6 +32,7 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    // TO-DO -Verify data , if needed manual/automate update, state change testing
   }
 });
 /* eslint-disable require-await */
@@ -41,5 +43,6 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     I.click('Continue on this URL');
     I.wait('2');
     I.createCase('FinancialRemedyMVP2', 'Consent Order Application');
+    // TO-DO update solicitor journey
   }
 });
