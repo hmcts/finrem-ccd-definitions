@@ -6,12 +6,11 @@ exports.config = {
       url: 'http://localhost:3000',
       show: false,
       waitForNavigation: 'networkidle0',
+      headless: true,
+      ignoreHTTPSErrors: true,
       chrome: {
         ignoreHTTPSErrors: true,
-        args: [
-          '--start-fullscreen',
-          '--proxy-server=proxyout.reform.hmcts.net:8080'
-        ]
+        args: ['--proxy-server=proxyout.reform.hmcts.net:8080']
       }
     }
   },
