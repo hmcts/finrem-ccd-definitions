@@ -1,7 +1,7 @@
 /* eslint-disable no-invalid-this */
 
 function respondentSolicitorDetailsDetails(I) {
-  I.fillField('input[id="rSolicitorName"]', 'MahSol');
+  I.fillField('input[id="rSolicitorName"]', 'ResSol');
   I.fillField('input[id="rSolicitorFirm"]', 'MahFirm');
   I.fillField('input[id="rSolicitorReference"]', 'MahSol73');
   I.fillField('Enter a UK postcode', 'TW3 1SS');

@@ -57,7 +57,8 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     I.savingApplicationInformation();
     I.checkYourAnswers();
     I.see('Consent Order Application');
-
+    // Test amend event
+    I.amendApplicationDetails();
     // TO-DO update solicitor journey
   }
 });

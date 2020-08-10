@@ -1,6 +1,7 @@
 
 // in this file you can append custom step methods to 'I' object
 
+const { amendApplicationDetails } = require('./pages/amend-details/amend-application-details');
 const { checkYourAnswers } = require('./pages/check-your-answers/check-your-answers');
 const { savingApplicationInformation } = require('./pages/saving-application-information/saving-application-information');
 const { optionalDocuments, consentedOtherDocuments } = require('./pages/optional-documents/optional-documents');
@@ -63,7 +64,7 @@ module.exports = () => {
     optionalDocuments,
     consentedOtherDocuments,
     savingApplicationInformation,
-    checkYourAnswers
-
+    checkYourAnswers,
+    amendApplicationDetails
   });
 };
