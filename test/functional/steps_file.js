@@ -1,6 +1,17 @@
 
 // in this file you can append custom step methods to 'I' object
 
+const { checkYourAnswers } = require('./pages/check-your-answers/check-your-answers');
+const { savingApplicationInformation } = require('./pages/saving-application-information/saving-application-information');
+const { optionalDocuments, consentedOtherDocuments } = require('./pages/optional-documents/optional-documents');
+const { d81Question } = require('./pages/d81-question/d81-question');
+const { consentOrder } = require('./pages/consent-order/consent-order');
+const { orderForChildren } = require('./pages/order-for-children/order-for-children');
+const { natureOfApplication } = require('./pages/nature-of-application/nature-of-application');
+const { consentedRespondentDetails } = require('./pages/respondent-details/respondent-details');
+const { applicantDetails } = require('./pages/applicant-details/applicant-details');
+const { divorceDetails } = require('./pages/divorce-details/divorce-details');
+const { solicitorCreate } = require('./pages/solicitor-create/solicitor-create');
 const { waitForContinueButtonEnabled } = require('./pages/common/common');
 const { waitForPage } = require('./pages/common/common');
 const { createCase } = require('./pages/create-case/create-case');
@@ -40,6 +51,19 @@ module.exports = () => {
     },
     createCase,
     waitForPage,
-    waitForContinueButtonEnabled
+    waitForContinueButtonEnabled,
+    solicitorCreate,
+    divorceDetails,
+    applicantDetails,
+    consentedRespondentDetails,
+    natureOfApplication,
+    orderForChildren,
+    consentOrder,
+    d81Question,
+    optionalDocuments,
+    consentedOtherDocuments,
+    savingApplicationInformation,
+    checkYourAnswers
+
   });
 };
