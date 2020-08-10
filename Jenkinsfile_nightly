@@ -30,7 +30,8 @@ node {
         stage('CCD E2E Journey Tests') {
             try {
                 env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
-                env.CCD_WEB_URL="https://www-ccd.aat.platform.hmcts.net/v2/case/"
+                env.CCD_WEB_URL="https://www-ccd.aat.platform.hmcts.net"
+                env.NIGHTLY_TEST="true"
                 sh 'yarn install'
                 sh 'yarn test:nightly-functional'
             }
