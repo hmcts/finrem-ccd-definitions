@@ -15,5 +15,29 @@
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_UploadPensionDocument_Solicitor",
+    "Name": "Upload Pension Documents",
+    "Description": "Upload pension documents",
+    "DisplayOrder": 45,
+    "PreConditionState(s)": "awaitingInfo;awaitingResponse;",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_UploadPensionDocument_CourtAdmin",
+    "Name": "Upload Pension Documents",
+    "Description": "Upload pension documents",
+    "DisplayOrder": 46,
+    "PreConditionState(s)": "applicationSubmitted;applicationIssued;awaitingInfo;awaitingResponse;",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
