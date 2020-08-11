@@ -7,4 +7,10 @@ function savingApplicationInformation() {
   I.click('Continue');
 }
 
-module.exports = { savingApplicationInformation };
+function finalInformationPage() {
+  const I = this;
+  I.waitForPage('#confirmation-body h1:nth-of-type(1)', 'Application Complete');
+  I.click('Close and Return to case details');
+}
+
+module.exports = { savingApplicationInformation, finalInformationPage };

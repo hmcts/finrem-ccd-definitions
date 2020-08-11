@@ -57,8 +57,17 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     I.savingApplicationInformation();
     I.checkYourAnswers();
     I.see('Consent Order Application');
-    // Test amend event
+    // amend event
     I.amendApplicationDetails();
-    // TO-DO update solicitor journey
+    // hwf payment submission
+    I.consentedAuthorisation();
+    I.paymentPage(false);
+    I.hwfPaymentDetails();
+    I.paymentSubmission();
+    I.savingApplicationInformation();
+    I.finalPaymentSubmissionPage();
+    I.finalInformationPage();
+    I.see('Case Submission');
+    // TO-DO update tab verification .
   }
 });

@@ -1,9 +1,14 @@
 
 // in this file you can append custom step methods to 'I' object
 
-const { amendApplicationDetails } = require('./pages/amend-details/amend-application-details');
+const { finalPaymentSubmissionPage } = require('./pages/final-payment-submission-page/final-payment-submission-page');
+const { paymentSubmission } = require('./pages/payment-submission/payment-submisison');
+const { hwfPaymentDetails } = require('./pages/hwf-payment-details/hwf-payment-detail');
+const { paymentPage } = require('./pages/payment-page/payment-page');
+const { consentedAuthorisation } = require('./pages/case-authorisation/case-authorisation');
+const { amendApplicationDetails } = require('./pages/amend-application-details/amend-application-details');
 const { checkYourAnswers } = require('./pages/check-your-answers/check-your-answers');
-const { savingApplicationInformation } = require('./pages/saving-application-information/saving-application-information');
+const { savingApplicationInformation, finalInformationPage } = require('./pages/saving-application-information/saving-application-information');
 const { optionalDocuments, consentedOtherDocuments } = require('./pages/optional-documents/optional-documents');
 const { d81Question } = require('./pages/d81-question/d81-question');
 const { consentOrder } = require('./pages/consent-order/consent-order');
@@ -64,7 +69,13 @@ module.exports = () => {
     optionalDocuments,
     consentedOtherDocuments,
     savingApplicationInformation,
+    finalInformationPage,
     checkYourAnswers,
-    amendApplicationDetails
+    amendApplicationDetails,
+    consentedAuthorisation,
+    paymentPage,
+    hwfPaymentDetails,
+    paymentSubmission,
+    finalPaymentSubmissionPage
   });
 };

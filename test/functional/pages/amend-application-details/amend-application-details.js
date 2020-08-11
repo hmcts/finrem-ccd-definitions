@@ -20,7 +20,7 @@ function amendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForPage('h4', 'RESPONDENT DETAILS');
-  I.fillField('input[id="rSolicitorEmail"]', 'mahsol@mailinator.com');
+  I.fillField('input[id="rSolicitorEmail"]', 'vivupdatesol@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForPage('h4', 'NATURE OF THE APPLICATION');
@@ -61,9 +61,6 @@ function amendApplicationDetails() {
   I.click('Submit');
   I.waitForPage('h2', 'History');
   I.see('Amend Application Details');
-  I.selectOption('select[id="next-step"]', 'Case Submission');
-  I.wait('2');
-  I.click('Go');
 }
 
 module.exports = { amendApplicationDetails };
