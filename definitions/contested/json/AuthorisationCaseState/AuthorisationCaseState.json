@@ -191,6 +191,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseAdded",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -380,6 +387,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseAdded",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
@@ -563,6 +577,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
   },

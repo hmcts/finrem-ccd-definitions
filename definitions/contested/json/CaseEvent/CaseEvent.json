@@ -769,5 +769,18 @@
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_respondToConsentOrder",
+    "Name": "Respond to Consent Order",
+    "Description": "Respond to Consent Order",
+    "DisplayOrder": 120,
+    "PreConditionState(s)": "consentOrderNotApproved",
+    "PostConditionState": "responseReceived",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "N",
+    "ShowSummary": "Y"
   }
 ]
