@@ -1,4 +1,4 @@
-const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
+const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
@@ -6,6 +6,7 @@ const solicitorPassword = process.env.PASSWORD_SOLICITOR;
 const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
 const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 const nightlyTest = process.env.NIGHTLY_TEST;
+const solRef = `AUTO-${createSolicitorReference()}`;
 
 Feature('create Consented case ');
 
@@ -43,6 +44,30 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     I.click('Continue on this URL');
     I.wait('2');
     I.createCase('FinancialRemedyMVP2', 'Consent Order Application');
-    // TO-DO update solicitor journey
+    I.solicitorCreate(solRef);
+    I.divorceDetails();
+    I.applicantDetails();
+    I.consentedRespondentDetails();
+    I.natureOfApplication();
+    I.orderForChildren();
+    I.consentOrder();
+    I.d81Question();
+    I.optionalDocuments();
+    I.consentedOtherDocuments();
+    I.savingApplicationInformation();
+    I.checkYourAnswers();
+    I.see('Consent Order Application');
+    // amend event
+    I.amendApplicationDetails();
+    // hwf payment submission
+    I.consentedAuthorisation();
+    I.paymentPage(false);
+    I.hwfPaymentDetails();
+    I.paymentSubmission();
+    I.savingApplicationInformation();
+    I.finalPaymentSubmissionPage();
+    I.finalInformationPage();
+    I.see('Case Submission');
+    // TO-DO update tab verification .
   }
 });

@@ -10,7 +10,11 @@ exports.config = {
       ignoreHTTPSErrors: true,
       chrome: {
         ignoreHTTPSErrors: true,
-        args: ['--proxy-server=proxyout.reform.hmcts.net:8080']
+        args: [
+          '--no-sandbox',
+          '--start-fullscreen',
+          '--proxy-server=proxyout.reform.hmcts.net:8080'
+        ]
       }
     }
   },
