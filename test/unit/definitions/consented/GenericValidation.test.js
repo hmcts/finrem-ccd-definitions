@@ -12,7 +12,7 @@ const Config = {
   CaseEvent: Object.assign(require('definitions/consented/json/CaseEvent/CaseEvent'), []),
   CaseEventToComplexTypes: Object.assign(require('definitions/consented/json/CaseEventToComplexTypes'), []),
   CaseEventToFields: Object.assign(require('definitions/consented/json/CaseEventToFields'), []),
-  CaseField: Object.assign(require('definitions/consented/json/CaseField'), []),
+  CaseField: Object.assign(require('definitions/consented/json/CaseField/CaseField'), []),
   CaseType: Object.assign(require('definitions/consented/json/CaseType'), []),
   CaseTypeTab: Object.assign(require('definitions/consented/json/CaseTypeTab'), []),
   ComplexTypes: Object.assign(require('definitions/consented/json/ComplexTypes'), []),
