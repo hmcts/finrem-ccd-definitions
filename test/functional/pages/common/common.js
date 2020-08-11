@@ -9,7 +9,6 @@ async function waitForPage(header, headerText) {
       await I.waitForText(headerText, '60', header);
     }
   } catch (error) {
-    await I.takeScreenShot('waitFailed');
     throw error;
   }
 }
