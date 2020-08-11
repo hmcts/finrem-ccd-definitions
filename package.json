@@ -60,8 +60,8 @@
     "generate-excel-ithc-contested": "FR_ENV=ithc CCD_DEF_COS_URL=$npm_package_config_ithc_cosUrl CCD_DEF_CCD_URL=$npm_package_config_ithc_ccdUrl EXCLUDE='*-prod.json' yarn run generate-excel-contested",
     "generate-excel-prod-contested": "FR_ENV=prod CCD_DEF_COS_URL=$npm_package_config_prod_cosUrl CCD_DEF_CCD_URL=$npm_package_config_prod_ccdUrl EXCLUDE='*-nonprod.json' yarn run generate-excel-contested",
     "generate-excel-all-contested": "yarn generate-excel-contested && yarn generate-excel-local-contested && yarn generate-excel-demo-contested && yarn generate-excel-aat-contested && yarn generate-excel-prod-contested",
-    "copy-common-components-consented": "cp -R definitions/common/json/ definitions/consented/json",
-    "copy-common-components-contested": "cp -R definitions/common/json/ definitions/contested/json"
+    "copy-common-components-consented": "cp -R definitions/common/json/* definitions/consented/json",
+    "copy-common-components-contested": "cp -R definitions/common/json/* definitions/contested/json"
   },
   "pre-commit": [
     "lint"
