@@ -3082,6 +3082,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalOrdersConsent",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "applicationNotApproved",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
@@ -5070,6 +5077,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalOrdersConsent",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "applicationNotApproved",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
@@ -5794,5 +5808,47 @@
     "CaseFieldID": "generalLetterPreview",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "orderRefusalPreviewDocument",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "orderRefusalCollectionNew",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "orderRefusalCollection",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "consentedNotApprovedOrders",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "consentedNotApprovedOrders",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "consentedNotApprovedOrders",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
   }
 ]

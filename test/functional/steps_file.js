@@ -1,6 +1,29 @@
 
 // in this file you can append custom step methods to 'I' object
 
+const { finalPaymentSubmissionPage } = require('./pages/final-payment-submission-page/final-payment-submission-page');
+const { paymentSubmission } = require('./pages/payment-submission/payment-submisison');
+const { hwfPaymentDetails } = require('./pages/hwf-payment-details/hwf-payment-detail');
+const { paymentPage } = require('./pages/payment-page/payment-page');
+const { consentedAuthorisation } = require('./pages/case-authorisation/case-authorisation');
+const { amendApplicationDetails } = require('./pages/amend-application-details/amend-application-details');
+const { checkYourAnswers } = require('./pages/check-your-answers/check-your-answers');
+const { savingApplicationInformation, finalInformationPage } = require('./pages/saving-application-information/saving-application-information');
+const { optionalDocuments, consentedOtherDocuments } = require('./pages/optional-documents/optional-documents');
+const { d81Question } = require('./pages/d81-question/d81-question');
+const { consentOrder } = require('./pages/consent-order/consent-order');
+const { orderForChildren } = require('./pages/order-for-children/order-for-children');
+const { natureOfApplication } = require('./pages/nature-of-application/nature-of-application');
+const { consentedRespondentDetails } = require('./pages/respondent-details/respondent-details');
+const { applicantDetails } = require('./pages/applicant-details/applicant-details');
+const { divorceDetails } = require('./pages/divorce-details/divorce-details');
+const { solicitorCreate } = require('./pages/solicitor-create/solicitor-create');
+const { waitForContinueButtonEnabled } = require('./pages/common/common');
+const { waitForPage } = require('./pages/common/common');
+const { createCase } = require('./pages/create-case/create-case');
+const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab } = require('./pages/tab-data-verification/consented-tab-data-verification');
+
+
 module.exports = () => {
   return actor({
 
@@ -24,6 +47,46 @@ module.exports = () => {
       this.click('Import Case Definition');
       this.attachFile('file', path);
       this.click('Submit');
-    }
+    },
+    signInIdam(username, password) {
+      this.amOnPage(`${process.env.CCD_WEB_URL}`);
+      this.wait('5');
+      this.waitForText('Email address');
+      this.fillField('username', username);
+      this.fillField('password', password);
+      this.click('Sign in');
+      this.wait('15');
+    },
+    createCase,
+    waitForPage,
+    waitForContinueButtonEnabled,
+    solicitorCreate,
+    divorceDetails,
+    applicantDetails,
+    consentedRespondentDetails,
+    natureOfApplication,
+    orderForChildren,
+    consentOrder,
+    d81Question,
+    optionalDocuments,
+    consentedOtherDocuments,
+    savingApplicationInformation,
+    finalInformationPage,
+    checkYourAnswers,
+    amendApplicationDetails,
+    consentedAuthorisation,
+    paymentPage,
+    hwfPaymentDetails,
+    paymentSubmission,
+    finalPaymentSubmissionPage,
+    historyTab,
+    applicantTab,
+    respondentTab,
+    divorceTab,
+    natureOfApplicationTab,
+    authorisationTab,
+    caseDocumentsTab,
+    paymentDetailsTab,
+    judgeDetailsTab
   });
 };
