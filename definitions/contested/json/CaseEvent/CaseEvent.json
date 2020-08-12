@@ -756,12 +756,27 @@
     "ShowSummary": "Y"
   },
   {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_consentOrderNotApproved",
+    "Name": "Consent Order Not Approved",
+    "Description": "Consent Order Not Approved",
+    "DisplayOrder": 119,
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/consent-order-not-approved",
+    "PreConditionState(s)": "consentedOrderAssignJudge",
+    "PostConditionState": "consentedOrderNotApproved",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/contested-consent-order-not-approved",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "N",
+    "ShowSummary": "Y"
+  },
+  {
     "LiveFrom": "01/09/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_generalOrderConsent",
     "Name": "Create General Order (consent)",
     "Description": "Create General Order (consent)",
-    "DisplayOrder": 119,
+    "DisplayOrder": 120,
     "PreConditionState(s)": "consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentOrderNotApproved",
     "PostConditionState": "consentOrderNotApproved",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-order-start",
