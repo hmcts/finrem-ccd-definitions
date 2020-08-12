@@ -1,4 +1,5 @@
 const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
+const verifyTabText = require('../data/verify-tab-data.json');
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
@@ -68,6 +69,16 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     I.finalPaymentSubmissionPage();
     I.finalInformationPage();
     I.see('Case Submission');
-    // TO-DO update tab verification .
+    // Tab data verification.
+    // eslint-disable-next-line max-len
+    I.historyTab(verifyTabText.historyTab.tabName, verifyTabText.historyTab.caseSubmissionEvent, verifyTabText.historyTab.hwfCaseSubmissionEndState);
+    I.applicantTab(verifyTabText.applicantTab.tabName);
+    I.respondentTab(verifyTabText.respondentTab.tabName);
+    I.divorceTab(verifyTabText.divorceTab.tabName);
+    I.natureOfApplicationTab(verifyTabText.natureOfApplicationTab.tabName);
+    I.authorisationTab(verifyTabText.authorisationTab.tabName);
+    I.caseDocumentsTab(verifyTabText.caseDocumentsTab.tabName);
+    I.paymentDetailsTab(verifyTabText.paymentDetailsTab.tabName);
+    I.judgeDetailsTab(verifyTabText.judgeDetailsTab.tabName);
   }
 });
