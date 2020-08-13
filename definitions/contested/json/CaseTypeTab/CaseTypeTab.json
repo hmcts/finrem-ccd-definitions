@@ -1529,6 +1529,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "judiciaryOutcomeTab",
+    "TabLabel": "Judiciary Outcome",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "refusalOrderCollection",
+    "TabFieldDisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "Orders",
     "TabLabel": "Orders",
     "TabDisplayOrder": 14,
@@ -1570,6 +1579,15 @@
     "TabDisplayOrder": 14,
     "CaseFieldID": "finalOrderCollection",
     "TabFieldDisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Orders",
+    "TabLabel": "Orders",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "latestRefusalOrder",
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2580,5 +2598,23 @@
     "TabDisplayOrder": 17,
     "CaseFieldID": "Contested_ConsentedApprovedOrders",
     "TabFieldDisplayOrder": 19
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "consentedNotApprovedOrders",
+    "TabFieldDisplayOrder": 20
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "generalOrdersConsent",
+    "TabFieldDisplayOrder": 21
   }
 ]

@@ -1,5 +1,6 @@
 const { Logger } = require('@hmcts/nodejs-logging');
 const requestModule = require('request-promise-native');
+const date = require('moment');
 
 const request = requestModule.defaults({ proxy: 'http://proxyout.reform.hmcts.net:8080' });
 const fs = require('fs');
@@ -105,7 +106,6 @@ async function createCaseInCcd(userName, password, dataLocation, caseType) {
   };
 
   const startCaseResponse = await request(startCaseOptions);
-  console.log(startCaseResponse);
   const eventToken = JSON.parse(startCaseResponse).token;
   /* eslint id-blacklist: ["error", "undefined"] */
   const data = fs.readFileSync(dataLocation);
@@ -196,4 +196,8 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
   return saveEventResponse;
 }
 
-module.exports = { createCaseInCcd, updateCaseInCcd };
+function createSolicitorReference() {
+  return date().valueOf();
+}
+
+module.exports = { createCaseInCcd, updateCaseInCcd, createSolicitorReference };
