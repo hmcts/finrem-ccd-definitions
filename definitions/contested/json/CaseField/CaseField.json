@@ -2715,6 +2715,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "Contested_ConsentedApprovedOrders",
+    "Label": "Consent Order Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_consentOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "orderRefusalCollectionNew",
     "Label": "Application Not Approved",
     "HintText": "Please choose ‘Add New’. A blank template will then appear for you to complete.",
