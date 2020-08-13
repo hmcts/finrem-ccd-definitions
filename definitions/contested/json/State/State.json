@@ -214,5 +214,13 @@
     "Name": "Consented Order Approved",
     "DisplayOrder": 27,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentedOrderNotApproved",
+    "Name": "Consented Order Not Approved",
+    "DisplayOrder": 28,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   }
 ]
