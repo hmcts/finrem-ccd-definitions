@@ -762,7 +762,7 @@
     "Name": "Create General Order (consent)",
     "Description": "Create General Order (consent)",
     "DisplayOrder": 119,
-    "PreConditionState(s)": "consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentOrderNotApproved;responseRecieved",
+    "PreConditionState(s)": "consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentOrderNotApproved",
     "PostConditionState": "consentOrderNotApproved",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-order-start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-order",
