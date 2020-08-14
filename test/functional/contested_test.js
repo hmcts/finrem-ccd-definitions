@@ -77,10 +77,17 @@ Scenario('Consented case in Contested Assigned to Judge@nightly @pipeline', asyn
 Scenario('Contested Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
-    I.wait('2');
+    I.wait('5');
     I.click('Continue on this URL');
     I.wait('2');
     I.createCase('FinancialRemedyContested', 'Form A Application');
     I.contestedSolicitorCreate(solRef);
+    I.contestedDivorceDetails();
+    I.contestedApplicantDetails();
+    I.contestedRespondentDetails();
+    I.contestedNatureOfApplication();
+    I.contestedOrderForChildren();
+    I.fastTrack();
+    I.complexityList();
   }
 });

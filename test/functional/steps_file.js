@@ -1,6 +1,8 @@
 
 // in this file you can append custom step methods to 'I' object
 
+const { complexityList } = require('./pages/contested-pages/complexity-list');
+const { fastTrack } = require('./pages/contested-pages/fast-track');
 const { finalPaymentSubmissionPage } = require('./pages/final-payment-submission-page/final-payment-submission-page');
 const { paymentSubmission } = require('./pages/payment-submission/payment-submisison');
 const { hwfPaymentDetails } = require('./pages/hwf-payment-details/hwf-payment-detail');
@@ -12,12 +14,12 @@ const { savingApplicationInformation, finalInformationPage } = require('./pages/
 const { optionalDocuments, consentedOtherDocuments } = require('./pages/optional-documents/optional-documents');
 const { d81Question } = require('./pages/d81-question/d81-question');
 const { consentOrder } = require('./pages/consent-order/consent-order');
-const { orderForChildren } = require('./pages/order-for-children/order-for-children');
-const { natureOfApplication } = require('./pages/nature-of-application/nature-of-application');
-const { consentedRespondentDetails } = require('./pages/respondent-details/respondent-details');
-const { applicantDetails } = require('./pages/applicant-details/applicant-details');
-const { divorceDetails } = require('./pages/divorce-details/divorce-details');
+const { orderForChildren, contestedOrderForChildren } = require('./pages/order-for-children/order-for-children');
+const { natureOfApplication, contestedNatureOfApplication } = require('./pages/nature-of-application/nature-of-application');
+const { consentedRespondentDetails, contestedRespondentDetails } = require('./pages/respondent-details/respondent-details');
+const { applicantDetails, contestedApplicantDetails } = require('./pages/applicant-details/applicant-details');
 const { solicitorCreate, contestedSolicitorCreate } = require('./pages/solicitor-create/solicitor-create');
+const { divorceDetails, contestedDivorceDetails } = require('./pages/divorce-details/divorce-details');
 const { waitForContinueButtonEnabled } = require('./pages/common/common');
 const { waitForPage } = require('./pages/common/common');
 const { createCase } = require('./pages/create-case/create-case');
@@ -63,10 +65,17 @@ module.exports = () => {
     solicitorCreate,
     contestedSolicitorCreate,
     divorceDetails,
+    contestedDivorceDetails,
     applicantDetails,
+    contestedApplicantDetails,
     consentedRespondentDetails,
+    contestedRespondentDetails,
     natureOfApplication,
+    contestedNatureOfApplication,
     orderForChildren,
+    contestedOrderForChildren,
+    fastTrack,
+    complexityList,
     consentOrder,
     d81Question,
     optionalDocuments,
