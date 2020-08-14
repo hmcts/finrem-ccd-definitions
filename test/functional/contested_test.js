@@ -1,4 +1,4 @@
-const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
+const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
@@ -6,6 +6,7 @@ const solicitorPassword = process.env.PASSWORD_SOLICITOR;
 const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
 const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 const nightlyTest = process.env.NIGHTLY_TEST;
+const solRef = `AUTO-${createSolicitorReference()}`;
 
 Feature('create Contested case ');
 
@@ -69,5 +70,17 @@ Scenario('Consented case in Contested Assigned to Judge@nightly @pipeline', asyn
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
 
     // TO-DO -Verify data , if needed manual/automate update, state change testing
+  }
+});
+
+/* eslint-disable require-await */
+Scenario('Contested Case Creation by Solicitor @nightly', async I => {
+  if (nightlyTest === 'true') {
+    I.signInIdam(solicitorUserName, solicitorPassword);
+    I.wait('2');
+    I.click('Continue on this URL');
+    I.wait('2');
+    I.createCase('FinancialRemedyContested', 'Form A Application');
+    I.contestedSolicitorCreate(solRef);
   }
 });

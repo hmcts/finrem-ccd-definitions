@@ -17,7 +17,7 @@ const { natureOfApplication } = require('./pages/nature-of-application/nature-of
 const { consentedRespondentDetails } = require('./pages/respondent-details/respondent-details');
 const { applicantDetails } = require('./pages/applicant-details/applicant-details');
 const { divorceDetails } = require('./pages/divorce-details/divorce-details');
-const { solicitorCreate } = require('./pages/solicitor-create/solicitor-create');
+const { solicitorCreate, contestedSolicitorCreate } = require('./pages/solicitor-create/solicitor-create');
 const { waitForContinueButtonEnabled } = require('./pages/common/common');
 const { waitForPage } = require('./pages/common/common');
 const { createCase } = require('./pages/create-case/create-case');
@@ -61,6 +61,7 @@ module.exports = () => {
     waitForPage,
     waitForContinueButtonEnabled,
     solicitorCreate,
+    contestedSolicitorCreate,
     divorceDetails,
     applicantDetails,
     consentedRespondentDetails,
