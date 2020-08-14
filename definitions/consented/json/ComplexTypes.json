@@ -305,6 +305,55 @@
   },
   {
     "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_solUploadDocument",
+    "ElementLabel": "Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentEmailContent",
+    "FieldType": "TextArea",
+    "ElementLabel": "Email content",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date received",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
     "ID": "FR_generalOrder",
     "ListElementCode": "generalOrder_addressTo",
     "FieldType": "Text",
