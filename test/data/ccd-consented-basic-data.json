@@ -1,85 +1,123 @@
 {
   "amountToPay": "5000",
-  "applicantRepresented": "Yes",
+  "divorceUploadEvidence1": {
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/30a9eeff-24e5-4e2f-a976-1ac780bc9f4f",
+    "document_filename": "fileupload.txt",
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/30a9eeff-24e5-4e2f-a976-1ac780bc9f4f/binary"
+  },
+  "rSolicitorAddress": {
+    "County": "Essex",
+    "Country": "United Kingdom",
+    "PostCode": "TW3 1SS",
+    "PostTown": "Hounslow",
+    "AddressLine1": "75 Pears Road",
+    "AddressLine2": "Flat2",
+    "AddressLine3": "Ring Road"
+  },
+  "divorceUploadEvidence2": null,
   "solicitorAgreeToReceiveEmails": "Yes",
   "solicitorEmail": "fr_applicant_sol@sharklasers.com",
-  "natureOfApplication2": [
-    "Property Adjustment Order",
-    "Lump Sum Order",
-    "Pension Compensation Sharing Order"
-  ],
-  "solicitorDXnumber": null,
-  "divorceStageReached": "Petition Issued",
-  "authorisationName": "ASSDAS",
-  "applicantFMName": "Rat",
-  "solicitorName": "Mr Automation",
-  "respondentPhone": null,
-  "authorisation3": "2020-07-30",
-  "appRespondentRep": "No",
-  "solicitorReference": "Auto-1234",
-  "d81Joint": {
-    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/93430f4e-1381-4b0a-a7f3-f98cc804eab1",
-    "document_filename": "DivorcePetition 3.pdf",
-    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/93430f4e-1381-4b0a-a7f3-f98cc804eab1/binary"
+  "rSolicitorName": "ResSol",
+  "solicitorDXnumber": "776890",
+  "divorceStageReached": "Decree Nisi",
+  "authorisationName": "Viasda",
+  "applicantFMName": "viv",
+  "divorceDecreeNisiDate": "2019-02-01",
+  "authorisation3": "2020-08-10",
+  "rSolicitorDXnumber": "078890",
+  "d81Joint": null,
+  "otherCollection": [],
+  "applicantLName": "frauto",
+  "rSolicitorEmail": "vivupdatesol@mailinator.com",
+  "solicitorFirm": "Abc Firm",
+  "natureOfApplication3b": "Mortgage Account Details",
+  "natureOfApplication3a": "26 Riverside gardens",
+  "isAdmin": "No",
+  "d81Respondent": {
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/54900b53-9e63-41b9-9a6f-92a706535555",
+    "document_filename": "fileupload.txt",
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/54900b53-9e63-41b9-9a6f-92a706535555/binary"
   },
-  "authorisation2b": "SADSA",
+  "latestConsentOrder": {
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ee276fc0-bf68-41d8-b1a9-a7757f737f3e",
+    "document_filename": "dummy.pdf",
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ee276fc0-bf68-41d8-b1a9-a7757f737f3e/binary"
+  },
+  "walesFRCList": "swansea",
+  "HWFNumber": "HWF22345",
+  "consentOrder": {
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ee276fc0-bf68-41d8-b1a9-a7757f737f3e",
+    "document_filename": "dummy.pdf",
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ee276fc0-bf68-41d8-b1a9-a7757f737f3e/binary"
+  },
+  "authorisationFirm": "Abc Org",
+  "divRoleOfFrApplicant": null,
+  "d81Question": "No",
+  "appRespondentFMName": "kiv",
+  "swanseaCourtList": "FR_swanseaList_6",
+  "applicantRepresented": "Yes",
+  "rSolicitorPhone": "07889009908",
+  "natureOfApplication2": [
+    "Periodical Payment Order",
+    "Lump Sum Order",
+    "Pension Sharing Order",
+    "Pension Attachment Order",
+    "Pension Compensation Sharing Order",
+    "Pension Compensation Attachment Order",
+    "A settlement or a transfer of property",
+    "Property Adjustment Order"
+  ],
+  "natureOfApplication5": "No",
+  "natureOfApplication7": "Other Test",
+  "rSolicitorReference": "MahSol73",
+  "natureOfApplication6": [
+    "Step Child or Step Children",
+    "In addition to child support",
+    "disability expenses",
+    "training",
+    "When not habitually resident",
+    "Other"
+  ],
+  "rSolicitorFirm": "MahFirm",
+  "solicitorName": "Arrow",
+  "appRespondentRep": "Yes",
+  "solicitorReference": "AUTO-consented-Sol",
+  "authorisation2b": "Sol Org reb",
   "pensionCollection": [
     {
-      "id": "a246c0df-4105-4546-a0f6-4b2a07e63d01",
+      "id": "8bb8319b-7f77-4ba0-8cd0-dcc0f1184e9e",
       "value": {
-        "typeOfDocument": "Form PPF1",
+        "typeOfDocument": "Form P1",
         "uploadedDocument": {
-          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/4cc46794-6fe4-40ec-92af-4628308a630c",
-          "document_filename": "AOSInvitation 6.pdf",
-          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/4cc46794-6fe4-40ec-92af-4628308a630c/binary"
+          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bfbfdc0f-cd07-486d-8ccb-179b44705032",
+          "document_filename": "dummy.pdf",
+          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bfbfdc0f-cd07-486d-8ccb-179b44705032/binary"
         }
       }
     }
   ],
-  "otherCollection": [],
-  "applicantLName": "Mouse",
   "solicitorAddress": {
-    "County": "",
+    "County": "Middlesex",
     "Country": "United Kingdom",
-    "PostCode": "NE1 2BA",
-    "PostTown": "Newcastle Upon Tyne",
-    "AddressLine1": "1 Lime Square",
-    "AddressLine2": "City Road",
-    "AddressLine3": ""
+    "PostCode": "TW3 1SS",
+    "PostTown": "Hounslow",
+    "AddressLine1": "67 Pears Road",
+    "AddressLine2": "Near Roundabout",
+    "AddressLine3": "Opposite Tesco"
   },
-  "respondentAddress": {
-    "County": "",
-    "Country": "United Kingdom",
-    "PostCode": "IG1 2BE",
-    "PostTown": "Ilford",
-    "AddressLine1": "1 Lavender Place",
-    "AddressLine2": "",
-    "AddressLine3": ""
-  },
-  "solicitorFirm": "FDS",
-  "appRespondentLName": "Cat",
+  "appRespondentLName": "resp",
   "regionList": "wales",
-  "natureOfApplication3b": "dfd",
-  "natureOfApplication3a": "cfdd",
-  "isAdmin": "No",
-  "divorceCaseNumber": "LV18D80000",
-  "latestConsentOrder": {
-    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/97856b1a-0541-4458-b0a5-9f295566d92d",
-    "document_filename": "DivorcePetition 3.pdf",
-    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/97856b1a-0541-4458-b0a5-9f295566d92d/binary"
-  },
-  "walesFRCList": "other",
-  "solicitorPhone": null,
-  "respondentEmail": "test@mailinator.com",
-  "HWFNumber": "hwf-123-456",
-  "consentOrder": {
-    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/97856b1a-0541-4458-b0a5-9f295566d92d",
-    "document_filename": "DivorcePetition 3.pdf",
-    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/97856b1a-0541-4458-b0a5-9f295566d92d/binary"
-  },
+  "applicantAddress": {},
+  "divorceCaseNumber": "EM18D84321",
+  "applicantEmail": null,
+  "divorceDecreeAbsoluteDate": null,
+  "solicitorPhone": "07766120000",
   "helpWithFeesQuestion": "Yes",
-  "authorisationFirm": "SADAS",
-  "d81Question": "Yes",
-  "appRespondentFMName": "Kitten",
-  "welshOtherCourtList": "FR_WList_4"
+  "d81Applicant": {
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/1a60d5c1-5dfb-44e2-b980-cb7c66b8413f",
+    "document_filename": "fileupload.txt",
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/1a60d5c1-5dfb-44e2-b980-cb7c66b8413f/binary"
+  },
+  "applicantPhone": null,
+  "orderForChildrenQuestion1": "No"
 }

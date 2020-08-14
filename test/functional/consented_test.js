@@ -20,7 +20,16 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    // TO-DO -Verify data , if needed manual/automate update, state change testing
+    // eslint-disable-next-line max-len
+    I.historyTab(verifyTabText.historyTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
+    I.applicantTab(verifyTabText.applicantTab.tabName);
+    I.respondentTab(verifyTabText.respondentTab.tabName);
+    I.divorceTab(verifyTabText.divorceTab.tabName);
+    I.natureOfApplicationTab(verifyTabText.natureOfApplicationTab.tabName);
+    I.authorisationTab(verifyTabText.authorisationTab.tabName);
+    I.caseDocumentsTab(verifyTabText.caseDocumentsTab.tabName);
+    I.paymentDetailsTab(verifyTabText.paymentDetailsTab.tabName);
+    I.judgeDetailsTab(verifyTabText.judgeDetailsTab.tabName);
   }
 });
 
@@ -34,7 +43,17 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    // TO-DO -Verify data , if needed manual/automate update, state change testing
+    // eslint-disable-next-line max-len
+    I.historyTab(verifyTabText.historyTab.tabName, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
+    I.applicantTab(verifyTabText.applicantTab.tabName);
+    I.respondentTab(verifyTabText.respondentTab.tabName);
+    I.divorceTab(verifyTabText.divorceTab.tabName);
+    I.natureOfApplicationTab(verifyTabText.natureOfApplicationTab.tabName);
+    I.authorisationTab(verifyTabText.authorisationTab.tabName);
+    I.caseDocumentsTab(verifyTabText.caseDocumentsTab.tabName, verifyTabText.historyTab.issueApplicationEvent);
+    I.paymentDetailsTab(verifyTabText.paymentDetailsTab.tabName);
+    I.judgeDetailsTab(verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.issueApplicationEvent);
+    I.adminNotesTab(verifyTabText.adminNotesTab.tabName);
   }
 });
 /* eslint-disable require-await */

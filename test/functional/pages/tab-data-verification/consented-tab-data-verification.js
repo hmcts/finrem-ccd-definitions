@@ -5,9 +5,8 @@ function historyTab(tabName, eventName, endState) {
   const I = this;
   I.waitForText(tabName, '5');
   I.click(tabName);
-  if (eventName === 'Case Submission') {
-    I.see(endState);
-  }
+  I.see(eventName);
+  I.see(endState);
 }
 
 function applicantTab(tabName) {
@@ -59,13 +58,16 @@ function authorisationTab(tabName) {
   I.see(verifyTabText.authorisationTab.solicitorFirm);
   I.see(verifyTabText.authorisationTab.signedDate);
 }
-function caseDocumentsTab(tabName) {
+function caseDocumentsTab(tabName, eventName) {
   const I = this;
   I.waitForText(tabName, '5');
   I.click(tabName);
   I.see(verifyTabText.caseDocumentsTab.draftDocumentName);
   I.see(verifyTabText.caseDocumentsTab.latestConsentOrderLabel);
   I.see(verifyTabText.caseDocumentsTab.pensionTypeName);
+  if (eventName === verifyTabText.historyTab.issueApplicationEvent) {
+    I.see(verifyTabText.caseDocumentsTab.onlineFormA);
+  }
 }
 
 function paymentDetailsTab(tabName) {
@@ -76,7 +78,7 @@ function paymentDetailsTab(tabName) {
   I.see(verifyTabText.paymentDetailsTab.feeCode);
   I.see(verifyTabText.paymentDetailsTab.amount);
 }
-function judgeDetailsTab(tabName) {
+function judgeDetailsTab(tabName, eventName) {
   const I = this;
   I.waitForText(tabName, '5');
   I.click(tabName);
@@ -84,7 +86,20 @@ function judgeDetailsTab(tabName) {
   I.see(verifyTabText.judgeDetailsTab.respondentFName);
   I.see(verifyTabText.judgeDetailsTab.decreeNisiDate);
   I.see(verifyTabText.judgeDetailsTab.decreeNisiDocument);
+  if (eventName === verifyTabText.historyTab.issueApplicationEvent) {
+    I.see(verifyTabText.judgeDetailsTab.newApplication);
+  }
 }
+
+function adminNotesTab(tabName) {
+  const I = this;
+  I.waitForText(tabName, '5');
+  I.click(tabName);
+  I.see(verifyTabText.adminNotesTab.assignToJudgeReason);
+  I.see(verifyTabText.adminNotesTab.issueDate);
+  I.see(verifyTabText.adminNotesTab.assignToJudgeText);
+}
+
 
 module.exports = {
   historyTab,
@@ -95,5 +110,6 @@ module.exports = {
   authorisationTab,
   caseDocumentsTab,
   paymentDetailsTab,
-  judgeDetailsTab
+  judgeDetailsTab,
+  adminNotesTab
 };
