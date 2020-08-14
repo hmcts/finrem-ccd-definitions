@@ -198,6 +198,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseAdded",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -394,6 +401,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseAdded",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
@@ -584,6 +598,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
   },
@@ -787,6 +808,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "caseworker-divorce-bulkscan",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseAdded",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRUD"
@@ -977,6 +1005,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "R"
   }
