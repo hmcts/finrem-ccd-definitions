@@ -45,7 +45,7 @@ module.exports = () => {
     },
     uploadConfig(path) {
       this.click('Import Case Definition');
-      this.attachFile('file', path);
+      this.attachFile('file'.concat(`${process.env.GIT_COMMIT}`), path);
       this.click('Submit');
     },
     signInIdam(username, password) {
