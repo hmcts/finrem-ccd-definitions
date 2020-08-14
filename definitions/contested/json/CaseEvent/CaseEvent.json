@@ -712,6 +712,7 @@
     "DisplayOrder": 115,
     "PreConditionState(s)": "*",
     "PostConditionState": "consentedOrderSubmitted",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/generate-mini-form-a",
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
     "ShowSummary": "Y"
