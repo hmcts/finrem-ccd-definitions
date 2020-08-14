@@ -1,5 +1,5 @@
 /* eslint-disable no-invalid-this */
-const verifyTabText = require('../../../data/verify-tab-data.json');
+const verifyTabText = require('../../../data/verify-consented-tab-data.json');
 
 function historyTab(tabName, eventName, endState) {
   const I = this;

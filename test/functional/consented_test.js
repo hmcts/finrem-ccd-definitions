@@ -1,5 +1,5 @@
 const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
-const verifyTabText = require('../data/verify-tab-data.json');
+const verifyTabText = require('../data/verify-consented-tab-data.json');
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
