@@ -1196,6 +1196,15 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "solUploadDocuments",
+    "Label": "Solicitor Upload Documents12",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_solUploadDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "solUploadDocuments",
     "Label": "Solicitor Documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_SolUploadDocument",
