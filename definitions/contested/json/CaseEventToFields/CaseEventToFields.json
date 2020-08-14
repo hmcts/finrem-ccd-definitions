@@ -6399,6 +6399,18 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrderNotApproved",
+    "CaseFieldID": "orderRefusalCollectionNew",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": "orderRefusalCollectionNew",
+    "PageDisplayOrder": 1,
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/preview-consent-order-not-approved",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_respondToConsentOrder",
     "CaseFieldID": "consentOrderLabel",
     "PageFieldDisplayOrder": 1,
@@ -6542,6 +6554,19 @@
     "PageID": 5,
     "PageLabel": "Consent Order Application",
     "PageDisplayOrder": 5,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrderNotApproved",
+    "CaseFieldID": "orderRefusalPreviewDocument",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": "orderRefusalPreviewDocument",
+    "PageLabel": "Consent Order Not Approved",
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   }

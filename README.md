@@ -99,23 +99,25 @@ https://tools.hmcts.net/confluence/display/FR/Feature+toggles+for+CCD+definition
 GitHub will have the main URL for this deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
 However, this URL in itself is not very useful. There are two subdomains that are useful.
 
-- "case-management-web-" for the Case management UI: e.g. `https://case-management-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
-
 * Visit `https://gateway-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` in separate tab and whitelist accept the SSL certificate.
 
-* Login with an authorised AAT user [listed here](https://github.com/hmcts/finrem-ccd-definitions/blob/master/definitions/consented/json/UserProfile.json)
+- "case-management-web-" for the Case management UI: e.g. `https://case-management-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
+
+* Login with an authorised AAT user [listed here](https://github.com/hmcts/finrem-ccd-definitions/blob/master/definitions/consented/json/UserProfile/UserProfile-nonprod.json)
 
 - "admin-web-" for the Case management UI: e.g. `https://admin-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
 
-IMPORTANT INFO: We currently have issues with the TLS certificates in AKS AAT. This means that the browser will deny a few calls when you visit the "case management" webapp. To get around this issue, you'll need to check the "Network" tab in Chrome, visit the failing URL and manually accept the risks (browser should tell you it's not safe). The RPE team will be working on a proper solution shortly.
+Config changes are now uploaded to AAT when a PR branch is merged to master. When we want to release config changes to DEMO/ITHC:
 
-When we want to release config changes to AAT/DEMO/ITHC:
-
-1) Excel files for the Consented or Contested Journey can be found in the `Artifacts` tab of the Jenkins build
+1) Excel files for the Consented or Contested Journey can be found in the `Artifacts` tab of the Jenkins build on merge to master
 3) Login to the CCD Admin Web Portal for the relevant environment
 4) Go to "Import Case Definition" and upload the appropriate Excel file and verify it uploaded successfully
 
 ## Release To Production
+
+Jenkins now generates the config ready to release to PROD, this can be found in the `Artifacts` tab of the Jenkins build on merge to master. 
+
+NOTE: Jenkins will populate Judge details in the PROD configs that is not available locally, so PROD configs should never be used when generated locally and instead should always be taken from Jenkins.
 
 Follow this guide for releasing a new config file to Production:
 https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+Production
