@@ -724,7 +724,7 @@
     "Name": "Assign to Judge (consent)",
     "Description": "Assign to Judge (consent)",
     "DisplayOrder": 116,
-    "PreConditionState(s)": "consentedOrderSubmitted",
+    "PreConditionState(s)": "consentedOrderSubmitted;responseReceived",
     "PostConditionState": "awaitingJudiciaryResponseConsent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -779,12 +779,25 @@
     "Name": "Create General Order (consent)",
     "Description": "Create General Order (consent)",
     "DisplayOrder": 120,
-    "PreConditionState(s)": "consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentOrderNotApproved",
+    "PreConditionState(s)": "consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentOrderNotApproved;responseReceived",
     "PostConditionState": "consentOrderNotApproved",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-order-start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-order",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_respondToConsentOrder",
+    "Name": "Respond to Consent Order",
+    "Description": "Respond to Consent Order",
+    "DisplayOrder": 121,
+    "PreConditionState(s)": "consentOrderNotApproved",
+    "PostConditionState": "responseReceived",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "N",
+    "ShowSummary": "Y"
   }
 ]
