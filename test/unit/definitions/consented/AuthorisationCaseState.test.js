@@ -7,7 +7,7 @@ const caseTypeTabNonProd = Object.assign(require('definitions/consented/json/Aut
 
 describe('AuthorisationCaseState', () => {
   it('should contain a unique case type, state ID and role (no duplicates) - prod', () => {
-    const caseType = caseTypeTab.concat(caseTypeTabProd);
+    const caseType = Object.assign(caseTypeTab, caseTypeTabProd);
     const uniqResult = uniqWith(
       caseType,
       (field1, field2) => {
@@ -18,7 +18,7 @@ describe('AuthorisationCaseState', () => {
     expect(uniqResult).to.eql(caseTypeTab);
   });
   it('should contain a unique case type, state ID and role (no duplicates) - nonprod', () => {
-    const caseType = caseTypeTab.concat(caseTypeTabNonProd);
+    const caseType = Object.assign(caseTypeTab, caseTypeTabNonProd);
     const uniqResult = uniqWith(
       caseType,
       (field1, field2) => {
