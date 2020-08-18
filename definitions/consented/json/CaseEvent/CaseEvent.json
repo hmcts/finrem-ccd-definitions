@@ -332,6 +332,23 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_issueApplication",
+    "Name": "Issue Application",
+    "Description": "Issue Application",
+    "DisplayOrder": 12,
+    "PreConditionState(s)": "applicationSubmitted;newPaperCase",
+    "PostConditionState": "referredToJudge",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/fields/issueDate/get-current-date",
+    "RetriesTimeoutAboutToStartEvent": "3,4,5",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/generate-mini-form-a",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_referToJudge",
     "Name": "Assign To Judge",
     "Description": "Assign To Judge",
@@ -765,6 +782,30 @@
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-email-start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-email",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_UploadPensionDocument_Solicitor",
+    "Name": "Upload Pension Documents",
+    "Description": "Upload pension documents",
+    "DisplayOrder": 46,
+    "PreConditionState(s)": "awaitingInfo;awaitingResponse;",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_UploadPensionDocument_CourtAdmin",
+    "Name": "Upload Pension Documents",
+    "Description": "Upload pension documents",
+    "DisplayOrder": 47,
+    "PreConditionState(s)": "applicationSubmitted;applicationIssued;awaitingInfo;awaitingResponse;",
+    "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   }
