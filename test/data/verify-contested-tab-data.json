@@ -1,5 +1,5 @@
 {
-  "caseType": "consented",
+  "caseType": "contested",
   "historyTab": {
     "tabName": "History",
     "caseSubmissionEvent": "Case Submission",
@@ -11,31 +11,31 @@
   },
   "applicantTab": {
     "tabName": "Applicant",
-    "applicantLastName" : "frauto",
-    "applicantsLocalCourt" : "PORT TALBOT JUSTICE CENTRE",
-    "applicantSolicitorName" : "Arrow",
-    "applicantSolicitorFirm": "Abc Firm",
+    "applicantLastName" : "Tok",
+    "applicantSolicitorName" : "Parrot",
+    "applicantSolicitorFirm": "MSN Firm",
     "applicantEmail" : "fr_applicant_sol@sharklasers.com",
     "applicantEmailCommunication" : "Yes"
   },
   "respondentTab": {
     "tabName": "Respondent",
-    "respondentLastName" : "resp",
+    "respondentLastName" : "Whisper",
     "respondentSolicitorName" : "ResSol",
     "respondentSolicitorFirm": "MahFirm",
-    "respondentEmail" : "vivupdatesol@mailinator.com",
+    "respondentEmail" : "vivcontestedupdatesol@mailinator.com",
     "respondentPostCode" : "TW3 1SS"
   },
   "divorceTab": {
     "tabName": "Divorce",
-    "divorceCaseNumber": "EM18D84321",
-    "decreeNisiFileName": "fileupload.txt"
+    "divorceCaseNumber": "EM18D33333",
+    "decreeNisiFileName": "fileupload.txt",
+    "applicantsLocalCourt": "Brentford Court"
   },
   "natureOfApplicationTab": {
     "tabName": "Nature of Application",
     "applicationFor": "Lump Sum Order",
-    "addressDetails": "26 Riverside gardens",
-    "mortgageDetails": "Mortgage Account Details",
+    "addressDetails": "26 Riverside gardens, SW10XE",
+    "mortgageDetails": "Halifax mortgage",
     "orderForChildren": "No"
   },
   "authorisationTab": {
@@ -45,17 +45,16 @@
     "signedDate": "10 Aug 2020"
   },
   "caseDocumentsTab": {
-    "tabName": "Case Documents",
-    "draftDocumentName": "dummy.pdf",
-    "latestConsentOrderLabel": "Latest Consent Order",
-    "pensionTypeName": "Form P1",
+    "tabName": "Case documents",
+    "draftOnlineFormA": "DraftOnlineForm.pdf",
+    "UploadDecreeNisiFile": "fileupload.txt",
     "onlineFormA": "OnlineForm.pdf"
   },
   "paymentDetailsTab": {
     "tabName": "Payment details",
     "hwfNumber": "HWF22345",
-    "feeCode": "FEE0228",
-    "amount": "£50.00"
+    "feeCode": "FEE0229",
+    "amount": "£255.00"
   },
   "judgeDetailsTab": {
     "tabName": "Judge",
@@ -70,5 +69,16 @@
     "assignToJudgeReason": "Draft consent order",
     "issueDate": "4 Aug 2020",
     "assignToJudgeText": "consent for approval"
+  },
+  "gateKeepingAllocationsTab": {
+    "tabName": "Gatekeeping and allocation",
+    "localCourt": "CENTRAL FAMILY COURT",
+    "fastTrackProcedure": "No",
+    "dateOfMarriage": "1 Feb 2000"
+  },
+  "schedulingAndListingTab": {
+    "tabName": "Scheduling and Listing",
+    "localCourt": "CENTRAL FAMILY COURT",
+    "courtFrc": "London FRC"
   }
 }
