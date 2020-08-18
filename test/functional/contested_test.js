@@ -89,5 +89,21 @@ Scenario('Contested Case Creation by Solicitor @nightly', async I => {
     I.contestedOrderForChildren();
     I.fastTrack();
     I.complexityList();
+    I.applyingToCourt();
+    I.mediationQuestion();
+    I.miamCertification();
+    I.contestedOtherDocuments();
+    I.contestedCheckYourAnswers();
+    I.see('Form A Application');
+    I.contestedAmendApplicationDetails();
+    I.caseSubmitAuthorisation('contested');
+    I.paymentPage(false);
+    I.hwfPaymentDetails();
+    I.paymentSubmission();
+    I.savingApplicationInformation();
+    I.finalPaymentSubmissionPage();
+    I.finalInformationPage();
+    I.see('Case Submission');
+    // To-do Tab data verification.
   }
 });

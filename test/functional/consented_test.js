@@ -80,7 +80,7 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     // amend event
     I.amendApplicationDetails();
     // hwf payment submission
-    I.consentedAuthorisation();
+    I.caseSubmitAuthorisation();
     I.paymentPage(false);
     I.hwfPaymentDetails();
     I.paymentSubmission();

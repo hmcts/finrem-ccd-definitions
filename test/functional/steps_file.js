@@ -1,17 +1,20 @@
 
 // in this file you can append custom step methods to 'I' object
 
+const { miamCertification } = require('./pages/contested-pages/miam-certification');
+const { mediationQuestion } = require('./pages/contested-pages/mediation-questions');
+const { applyingToCourt } = require('./pages/contested-pages/apply-court');
 const { complexityList } = require('./pages/contested-pages/complexity-list');
 const { fastTrack } = require('./pages/contested-pages/fast-track');
 const { finalPaymentSubmissionPage } = require('./pages/final-payment-submission-page/final-payment-submission-page');
 const { paymentSubmission } = require('./pages/payment-submission/payment-submisison');
 const { hwfPaymentDetails } = require('./pages/hwf-payment-details/hwf-payment-detail');
 const { paymentPage } = require('./pages/payment-page/payment-page');
-const { consentedAuthorisation } = require('./pages/case-authorisation/case-authorisation');
-const { amendApplicationDetails } = require('./pages/amend-application-details/amend-application-details');
-const { checkYourAnswers } = require('./pages/check-your-answers/check-your-answers');
+const { caseSubmitAuthorisation } = require('./pages/case-authorisation/case-authorisation');
+const { amendApplicationDetails, contestedAmendApplicationDetails } = require('./pages/amend-application-details/amend-application-details');
+const { checkYourAnswers, contestedCheckYourAnswers } = require('./pages/check-your-answers/check-your-answers');
 const { savingApplicationInformation, finalInformationPage } = require('./pages/saving-application-information/saving-application-information');
-const { optionalDocuments, consentedOtherDocuments } = require('./pages/optional-documents/optional-documents');
+const { optionalDocuments, consentedOtherDocuments, contestedOtherDocuments } = require('./pages/optional-documents/optional-documents');
 const { d81Question } = require('./pages/d81-question/d81-question');
 const { consentOrder } = require('./pages/consent-order/consent-order');
 const { orderForChildren, contestedOrderForChildren } = require('./pages/order-for-children/order-for-children');
@@ -76,15 +79,21 @@ module.exports = () => {
     contestedOrderForChildren,
     fastTrack,
     complexityList,
+    applyingToCourt,
+    mediationQuestion,
+    miamCertification,
     consentOrder,
     d81Question,
     optionalDocuments,
     consentedOtherDocuments,
+    contestedOtherDocuments,
     savingApplicationInformation,
     finalInformationPage,
     checkYourAnswers,
+    contestedCheckYourAnswers,
     amendApplicationDetails,
-    consentedAuthorisation,
+    contestedAmendApplicationDetails,
+    caseSubmitAuthorisation,
     paymentPage,
     hwfPaymentDetails,
     paymentSubmission,
