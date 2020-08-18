@@ -6,7 +6,7 @@ function amendApplicationDetails() {
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.wait('2');
   I.click('Go');
-  I.waitForText('Before You Start', '5');
+  I.waitForText('Before You Start', '10');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('SOLICITOR DETAILS', '5');
