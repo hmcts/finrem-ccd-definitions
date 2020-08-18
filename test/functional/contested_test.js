@@ -78,7 +78,7 @@ Scenario('Consented case in Contested Assigned to Judge@nightly @pipeline', asyn
 Scenario('Contested Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
-    I.wait('5');
+    I.wait('10');
     I.click('Continue on this URL');
     I.wait('2');
     I.createCase('FinancialRemedyContested', 'Form A Application');
