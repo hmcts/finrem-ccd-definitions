@@ -1,21 +1,21 @@
 [
   {
     "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
     "CaseFieldID": "paperApplication",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
     "CaseFieldID": "paperApplication",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
   {
     "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
     "CaseFieldID": "paperApplication",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
