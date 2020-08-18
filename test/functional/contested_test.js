@@ -1,4 +1,5 @@
 const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
+const verifyTabText = require('../data/verify-contested-tab-data.json');
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
@@ -105,5 +106,16 @@ Scenario('Contested Case Creation by Solicitor @nightly', async I => {
     I.finalInformationPage();
     I.see('Case Submission');
     // To-do Tab data verification.
+    // eslint-disable-next-line max-len
+    I.historyTab(verifyTabText.caseType, verifyTabText.historyTab.tabName, verifyTabText.historyTab.caseSubmissionEvent, verifyTabText.historyTab.hwfCaseSubmissionEndState);
+    I.applicantTab(verifyTabText.caseType, verifyTabText.applicantTab.tabName);
+    I.respondentTab(verifyTabText.caseType, verifyTabText.respondentTab.tabName);
+    I.divorceTab(verifyTabText.caseType, verifyTabText.divorceTab.tabName);
+    I.natureOfApplicationTab(verifyTabText.caseType, verifyTabText.natureOfApplicationTab.tabName);
+    I.authorisationTab(verifyTabText.caseType, verifyTabText.authorisationTab.tabName);
+    I.caseDocumentsTab(verifyTabText.caseType, verifyTabText.caseDocumentsTab.tabName);
+    I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+    I.gateKeepingAllocationsTab(verifyTabText.caseType, verifyTabText.gateKeepingAllocationsTab.tabName);
+    I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
   }
 });

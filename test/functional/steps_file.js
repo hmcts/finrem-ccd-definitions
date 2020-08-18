@@ -26,7 +26,7 @@ const { divorceDetails, contestedDivorceDetails } = require('./pages/divorce-det
 const { waitForContinueButtonEnabled } = require('./pages/common/common');
 const { waitForPage } = require('./pages/common/common');
 const { createCase } = require('./pages/create-case/create-case');
-const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab } = require('./pages/tab-data-verification/consented-tab-data-verification');
+const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab, gateKeepingAllocationsTab, schedulingAndListingTab } = require('./pages/tab-data-verification/tab-data-verification');
 
 
 module.exports = () => {
@@ -107,6 +107,8 @@ module.exports = () => {
     caseDocumentsTab,
     paymentDetailsTab,
     judgeDetailsTab,
-    adminNotesTab
+    adminNotesTab,
+    gateKeepingAllocationsTab,
+    schedulingAndListingTab
   });
 };
