@@ -61,7 +61,7 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 
 1) Configure defined env variables from [Jenkinsfile_nightly](https://github.com/hmcts/finrem-ccd-definitions/blob/master/Jenkinsfile_nightly) pipeline .
 2) Values for env variables can be found in Azure finrem aat key vault.
-3) `test:functional` will create cases via API (runs on PR and master AAT).
+3) `yarn test:functional` will create cases via API (runs on PR and master AAT).
 4) `yarn test:nightly-functional` will create both API, UI screen tests and verifies data in tabs (runs on nightly pipeline on AAT).
 
 

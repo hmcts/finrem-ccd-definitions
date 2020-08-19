@@ -7,7 +7,9 @@
     "hwfPaymentAcceptedEvent": "HWF Application Accepted",
     "hwfPaymentAcceptedEndState": "Application Submitted",
     "issueApplicationEvent": "Issue Application",
-    "issueApplicationEndState": "Awaiting Judicial Response"
+    "issueApplicationEndState": "Awaiting Judicial Response",
+    "assignToJudgeEvent": "Allocate to Judge",
+    "assignToJudgeEndState": "Gate Keeping And Allocation"
   },
   "applicantTab": {
     "tabName": "Applicant",
@@ -66,9 +68,7 @@
   },
   "adminNotesTab": {
     "tabName": "Admin Notes",
-    "assignToJudgeReason": "Draft consent order",
-    "issueDate": "4 Aug 2020",
-    "assignToJudgeText": "consent for approval"
+    "issueDate": "1 Nov 2020"
   },
   "gateKeepingAllocationsTab": {
     "tabName": "Gatekeeping and allocation",

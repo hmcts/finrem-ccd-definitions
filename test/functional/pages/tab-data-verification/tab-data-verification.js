@@ -46,7 +46,7 @@ function respondentTab(caseType, tabName) {
     I.see(verifyContestedTabText.respondentTab.respondentLastName);
     I.see(verifyContestedTabText.respondentTab.respondentSolicitorName);
     I.see(verifyContestedTabText.respondentTab.respondentSolicitorFirm);
-    // I.see(verifyContestedTabText.respondentTab.respondentEmail);
+    I.see(verifyContestedTabText.respondentTab.respondentEmail);
     I.see(verifyContestedTabText.respondentTab.respondentPostCode);
   }
 }
@@ -112,10 +112,11 @@ function caseDocumentsTab(caseType, tabName, eventName) {
     }
   }
   if (caseType === 'contested') {
-    I.see(verifyContestedTabText.caseDocumentsTab.draftOnlineFormA);
     I.see(verifyContestedTabText.caseDocumentsTab.UploadDecreeNisiFile);
-    if (eventName === verifyContestedTabText.historyTab.issueApplicationEvent) {
+    if (eventName === verifyContestedTabText.historyTab.assignToJudgeEvent) {
       I.see(verifyContestedTabText.caseDocumentsTab.onlineFormA);
+    } else {
+      I.see(verifyContestedTabText.caseDocumentsTab.draftOnlineFormA);
     }
   }
 }
@@ -169,9 +170,7 @@ function adminNotesTab(caseType, tabName) {
     I.see(verifyTabText.adminNotesTab.assignToJudgeText);
   }
   if (caseType === 'contested') {
-    I.see(verifyContestedTabText.adminNotesTab.assignToJudgeReason);
     I.see(verifyContestedTabText.adminNotesTab.issueDate);
-    I.see(verifyContestedTabText.adminNotesTab.assignToJudgeText);
   }
 }
 
