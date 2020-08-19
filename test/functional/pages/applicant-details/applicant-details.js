@@ -2,7 +2,7 @@
 
 function applicantDetails() {
   const I = this;
-  I.waitForElement('input[id="applicantFMName"]');
+  I.waitForElement('input[id="applicantFMName"]', '5');
   I.fillField('input[id="applicantFMName"]', 'viv');
   I.fillField('input[id="applicantLName"]', 'frauto');
   I.wait('5');

@@ -9,11 +9,11 @@ function amendApplicationDetails() {
   I.waitForText('Before You Start', '10');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('SOLICITOR DETAILS', '5');
+  I.waitForText('SOLICITOR DETAILS', '10');
   I.fillField('input[id="solicitorPhone"]', '07766120000');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('DIVORCE DETAILS', '5');
+  I.waitForText('DIVORCE DETAILS', '10');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D84321');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
