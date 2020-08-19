@@ -1,5 +1,5 @@
 const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
-const verifyTabText = require('../data/verify-tab-data.json');
+const verifyTabText = require('../data/verify-consented-tab-data.json');
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
@@ -20,7 +20,16 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    // TO-DO -Verify data , if needed manual/automate update, state change testing
+    // eslint-disable-next-line max-len
+    I.historyTab(verifyTabText.caseType, verifyTabText.historyTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
+    I.applicantTab(verifyTabText.caseType, verifyTabText.applicantTab.tabName);
+    I.respondentTab(verifyTabText.caseType, verifyTabText.respondentTab.tabName);
+    I.divorceTab(verifyTabText.caseType, verifyTabText.divorceTab.tabName);
+    I.natureOfApplicationTab(verifyTabText.caseType, verifyTabText.natureOfApplicationTab.tabName);
+    I.authorisationTab(verifyTabText.caseType, verifyTabText.authorisationTab.tabName);
+    I.caseDocumentsTab(verifyTabText.caseType, verifyTabText.caseDocumentsTab.tabName);
+    I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+    I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName);
   }
 });
 
@@ -34,7 +43,19 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    // TO-DO -Verify data , if needed manual/automate update, state change testing
+    // eslint-disable-next-line max-len
+    I.historyTab(verifyTabText.caseType, verifyTabText.historyTab.tabName, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
+    I.applicantTab(verifyTabText.caseType, verifyTabText.applicantTab.tabName);
+    I.respondentTab(verifyTabText.caseType, verifyTabText.respondentTab.tabName);
+    I.divorceTab(verifyTabText.caseType, verifyTabText.divorceTab.tabName);
+    I.natureOfApplicationTab(verifyTabText.caseType, verifyTabText.natureOfApplicationTab.tabName);
+    I.authorisationTab(verifyTabText.caseType, verifyTabText.authorisationTab.tabName);
+    // eslint-disable-next-line max-len
+    I.caseDocumentsTab(verifyTabText.caseType, verifyTabText.caseDocumentsTab.tabName, verifyTabText.historyTab.issueApplicationEvent);
+    I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+    // eslint-disable-next-line max-len
+    I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.issueApplicationEvent);
+    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 });
 /* eslint-disable require-await */
@@ -61,7 +82,7 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     // amend event
     I.amendApplicationDetails();
     // hwf payment submission
-    I.consentedAuthorisation();
+    I.caseSubmitAuthorisation();
     I.paymentPage(false);
     I.hwfPaymentDetails();
     I.paymentSubmission();
@@ -71,14 +92,14 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     I.see('Case Submission');
     // Tab data verification.
     // eslint-disable-next-line max-len
-    I.historyTab(verifyTabText.historyTab.tabName, verifyTabText.historyTab.caseSubmissionEvent, verifyTabText.historyTab.hwfCaseSubmissionEndState);
-    I.applicantTab(verifyTabText.applicantTab.tabName);
-    I.respondentTab(verifyTabText.respondentTab.tabName);
-    I.divorceTab(verifyTabText.divorceTab.tabName);
-    I.natureOfApplicationTab(verifyTabText.natureOfApplicationTab.tabName);
-    I.authorisationTab(verifyTabText.authorisationTab.tabName);
-    I.caseDocumentsTab(verifyTabText.caseDocumentsTab.tabName);
-    I.paymentDetailsTab(verifyTabText.paymentDetailsTab.tabName);
-    I.judgeDetailsTab(verifyTabText.judgeDetailsTab.tabName);
+    I.historyTab(verifyTabText.caseType, verifyTabText.historyTab.tabName, verifyTabText.historyTab.caseSubmissionEvent, verifyTabText.historyTab.hwfCaseSubmissionEndState);
+    I.applicantTab(verifyTabText.caseType, verifyTabText.applicantTab.tabName);
+    I.respondentTab(verifyTabText.caseType, verifyTabText.respondentTab.tabName);
+    I.divorceTab(verifyTabText.caseType, verifyTabText.divorceTab.tabName);
+    I.natureOfApplicationTab(verifyTabText.caseType, verifyTabText.natureOfApplicationTab.tabName);
+    I.authorisationTab(verifyTabText.caseType, verifyTabText.authorisationTab.tabName);
+    I.caseDocumentsTab(verifyTabText.caseType, verifyTabText.caseDocumentsTab.tabName);
+    I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+    I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName);
   }
 });

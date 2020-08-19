@@ -13,4 +13,14 @@ function applicantDetails() {
   I.click('Continue');
 }
 
-module.exports = { applicantDetails };
+function contestedApplicantDetails() {
+  const I = this;
+  I.waitForElement('#applicantDetailsLabel h2', '30');
+  I.waitForElement('input[id="applicantFMName"]');
+  I.fillField('input[id="applicantFMName"]', 'Tik');
+  I.fillField('input[id="applicantLName"]', 'Tok');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+}
+
+module.exports = { applicantDetails, contestedApplicantDetails };

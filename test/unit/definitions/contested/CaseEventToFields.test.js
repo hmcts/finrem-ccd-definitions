@@ -5,7 +5,7 @@ const { find } = require('lodash');
 const caseEvent = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent.json'), []);
 const caseField = Object.assign(require('definitions/contested/json/CaseField/CaseField'), []);
 const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField/CaseField-common'), []);
-const caseFieldAll = caseField.concat(caseFieldCommon)
+const caseFieldAll = caseField.concat(caseFieldCommon);
 const caseEventToFeilds = Object.assign(require('definitions/contested/json/CaseEventToFields/CaseEventToFields.json'), []);
 
 describe('CaseEventToFields', () => {

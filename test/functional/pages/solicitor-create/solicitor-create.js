@@ -23,5 +23,28 @@ function solicitorCreate(reference) {
   I.click('Continue');
 }
 
+function contestedSolicitorCreate(reference) {
+  const I = this;
+  I.waitForPage('#applicantSolicitorDetailLabel h2', 'Solicitor Details');
+  I.fillField('input[id="applicantSolicitorName"]', 'Parrot');
+  I.fillField('input[id="applicantSolicitorFirm"]', 'MSN Firm');
+  I.fillField('//*[@id="solicitorReference"]', reference);
+  I.fillField('#applicantSolicitorAddress_applicantSolicitorAddress_postcodeInput', 'TW3 1SS');
 
-module.exports = { solicitorCreate };
+  I.click('#applicantSolicitorAddress_applicantSolicitorAddress #postcodeLookup button');
+  I.waitForElement('#selectAddress', '30');
+  I.wait('5');
+  I.selectOption('select[id="applicantSolicitorAddress_applicantSolicitorAddress_addressList"]', '67 Pears Road, Hounslow');
+  I.fillField('input[id="applicantSolicitorAddress_AddressLine2"]', 'Near Roundabout');
+  I.fillField('input[id="applicantSolicitorAddress_AddressLine3"]', 'Opposite Tesco');
+  I.fillField('input[id="applicantSolicitorAddress_County"]', 'Middlesex');
+  I.fillField('input[id="applicantSolicitorPhone"]', '07000000');
+  I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
+  I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
+  I.checkOption('input[id="applicantSolicitorConsentForEmails-Yes"]');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+}
+
+
+module.exports = { solicitorCreate, contestedSolicitorCreate };

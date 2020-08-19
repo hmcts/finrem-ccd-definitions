@@ -19,5 +19,15 @@ function consentedOtherDocuments() {
   I.click('Continue');
 }
 
+function contestedOtherDocuments() {
+  const I = this;
+  I.waitForPage('input[id="promptForAnyDocument-No"]');
+  I.checkOption('input[id="promptForAnyDocument-No"]');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+}
 
-module.exports = { optionalDocuments, consentedOtherDocuments };
+
+module.exports = { optionalDocuments, consentedOtherDocuments, contestedOtherDocuments };

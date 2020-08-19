@@ -1,4 +1,6 @@
-const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
+const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
+const verifyTabText = require('../data/verify-contested-tab-data.json');
+// eslint-disable max-len
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
@@ -6,6 +8,7 @@ const solicitorPassword = process.env.PASSWORD_SOLICITOR;
 const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
 const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 const nightlyTest = process.env.NIGHTLY_TEST;
+const solRef = `AUTO-${createSolicitorReference()}`;
 
 Feature('create Contested case ');
 
@@ -18,8 +21,17 @@ Scenario('Contested Case Creation For Caseworker @nightly @pipeline', async I =>
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-
-    // TO-DO -Verify data , if needed manual/automate update, state change testing
+    // eslint-disable-next-line max-len
+    I.historyTab(verifyTabText.caseType, verifyTabText.historyTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
+    I.applicantTab(verifyTabText.caseType, verifyTabText.applicantTab.tabName);
+    I.respondentTab(verifyTabText.caseType, verifyTabText.respondentTab.tabName);
+    I.divorceTab(verifyTabText.caseType, verifyTabText.divorceTab.tabName);
+    I.natureOfApplicationTab(verifyTabText.caseType, verifyTabText.natureOfApplicationTab.tabName);
+    I.authorisationTab(verifyTabText.caseType, verifyTabText.authorisationTab.tabName);
+    I.caseDocumentsTab(verifyTabText.caseType, verifyTabText.caseDocumentsTab.tabName);
+    I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+    I.gateKeepingAllocationsTab(verifyTabText.caseType, verifyTabText.gateKeepingAllocationsTab.tabName);
+    I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
   }
 });
 
@@ -34,7 +46,20 @@ Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    // TO-DO -Verify data , if needed manual/automate update, state change testing
+    // eslint-disable-next-line max-len
+    I.historyTab(verifyTabText.caseType, verifyTabText.historyTab.tabName, verifyTabText.historyTab.assignToJudgeEvent, verifyTabText.historyTab.assignToJudgeEndState);
+    I.applicantTab(verifyTabText.caseType, verifyTabText.applicantTab.tabName);
+    I.respondentTab(verifyTabText.caseType, verifyTabText.respondentTab.tabName);
+    I.divorceTab(verifyTabText.caseType, verifyTabText.divorceTab.tabName);
+    I.natureOfApplicationTab(verifyTabText.caseType, verifyTabText.natureOfApplicationTab.tabName);
+    I.authorisationTab(verifyTabText.caseType, verifyTabText.authorisationTab.tabName);
+    // eslint-disable-next-line max-len
+    I.caseDocumentsTab(verifyTabText.caseType, verifyTabText.caseDocumentsTab.tabName, verifyTabText.historyTab.assignToJudgeEvent);
+    I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+    // eslint-disable-next-line max-len
+    I.gateKeepingAllocationsTab(verifyTabText.caseType, verifyTabText.gateKeepingAllocationsTab.tabName, verifyTabText.historyTab.assignToJudgeEvent);
+    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
   }
 });
 
@@ -69,5 +94,51 @@ Scenario('Consented case in Contested Assigned to Judge@nightly @pipeline', asyn
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
 
     // TO-DO -Verify data , if needed manual/automate update, state change testing
+  }
+});
+
+/* eslint-disable require-await */
+Scenario('Contested Case Creation by Solicitor @nightly', async I => {
+  if (nightlyTest === 'true') {
+    I.signInIdam(solicitorUserName, solicitorPassword);
+    I.wait('10');
+    I.click('Continue on this URL');
+    I.wait('2');
+    I.createCase('FinancialRemedyContested', 'Form A Application');
+    I.contestedSolicitorCreate(solRef);
+    I.contestedDivorceDetails();
+    I.contestedApplicantDetails();
+    I.contestedRespondentDetails();
+    I.contestedNatureOfApplication();
+    I.contestedOrderForChildren();
+    I.fastTrack();
+    I.complexityList();
+    I.applyingToCourt();
+    I.mediationQuestion();
+    I.miamCertification();
+    I.contestedOtherDocuments();
+    I.contestedCheckYourAnswers();
+    I.see('Form A Application');
+    I.contestedAmendApplicationDetails();
+    I.caseSubmitAuthorisation('contested');
+    I.paymentPage(false);
+    I.hwfPaymentDetails();
+    I.paymentSubmission();
+    I.savingApplicationInformation();
+    I.finalPaymentSubmissionPage();
+    I.finalInformationPage();
+    I.see('Case Submission');
+    // Tab data verification.
+    // eslint-disable-next-line max-len
+    I.historyTab(verifyTabText.caseType, verifyTabText.historyTab.tabName, verifyTabText.historyTab.caseSubmissionEvent, verifyTabText.historyTab.hwfCaseSubmissionEndState);
+    I.applicantTab(verifyTabText.caseType, verifyTabText.applicantTab.tabName);
+    I.respondentTab(verifyTabText.caseType, verifyTabText.respondentTab.tabName);
+    I.divorceTab(verifyTabText.caseType, verifyTabText.divorceTab.tabName);
+    I.natureOfApplicationTab(verifyTabText.caseType, verifyTabText.natureOfApplicationTab.tabName);
+    I.authorisationTab(verifyTabText.caseType, verifyTabText.authorisationTab.tabName);
+    I.caseDocumentsTab(verifyTabText.caseType, verifyTabText.caseDocumentsTab.tabName);
+    I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+    I.gateKeepingAllocationsTab(verifyTabText.caseType, verifyTabText.gateKeepingAllocationsTab.tabName);
+    I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
   }
 });
