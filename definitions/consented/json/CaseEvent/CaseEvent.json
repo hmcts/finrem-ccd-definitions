@@ -694,7 +694,7 @@
     "Name": "Awaiting Information",
     "Description": "Awaiting Information",
     "DisplayOrder": 38,
-    "PreConditionState(s)": "applicationSubmitted;applicationIssued;responseReceived;orderMade;consentOrderApproved",
+    "PreConditionState(s)": "applicationSubmitted;applicationIssued;responseReceived;orderMade;consentOrderApproved;infoReceived",
     "PostConditionState": "awaitingInfo",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -804,7 +804,7 @@
     "Name": "Upload Pension Documents",
     "Description": "Upload pension documents",
     "DisplayOrder": 47,
-    "PreConditionState(s)": "applicationSubmitted;applicationIssued;awaitingInfo;awaitingResponse;",
+    "PreConditionState(s)": "applicationSubmitted;applicationIssued;awaitingInfo;awaitingResponse;infoReceived",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
