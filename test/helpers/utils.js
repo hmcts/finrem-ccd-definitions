@@ -81,7 +81,7 @@ async function getServiceToken() {
   return serviceToken;
 }
 
-async function createCaseInCcd(userName, password, dataLocation, caseType) {
+async function createCaseInCcd(userName, password, dataLocation, caseType, eventId) {
   const authToken = await getUserToken(userName, password);
 
   const userId = await getUserId(authToken);
@@ -92,7 +92,8 @@ async function createCaseInCcd(userName, password, dataLocation, caseType) {
 
   const ccdApiUrl = process.env.CCD_DATA_API_URL;
   const frCaseType = caseType;
-  const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/event-triggers/FR_solicitorCreate/token`;
+  const frEventId = eventId;
+  const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/event-triggers/${frEventId}/token`;
   const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases`;
 
   const startCaseOptions = {
@@ -109,10 +110,11 @@ async function createCaseInCcd(userName, password, dataLocation, caseType) {
   const eventToken = JSON.parse(startCaseResponse).token;
   /* eslint id-blacklist: ["error", "undefined"] */
   const data = fs.readFileSync(dataLocation);
+
   const saveBody = {
     data: JSON.parse(data),
     event: {
-      id: 'FR_solicitorCreate',
+      id: `${frEventId}`,
       summary: 'Creating Basic Case',
       description: 'For CCD E2E Test'
     },
