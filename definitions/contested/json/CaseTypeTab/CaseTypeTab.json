@@ -824,6 +824,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicationDocumentsTab",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "bulkPrintLetterIdRes",
+    "TabFieldDisplayOrder": 17
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "paymentDetailsTab",
     "TabLabel": "Payment details",
     "TabDisplayOrder": 8,
