@@ -62,6 +62,11 @@ ccd:
       keyVaults:
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
+  ccd-case-print-service:
+    nodejs:
+      environment:
+        IDAM_PRINT_SERVICE_KEY: ${PRINT_S2S_KEY}
+
   ccd-definition-store-api:
     java:
       imagePullPolicy: Always
