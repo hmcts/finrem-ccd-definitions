@@ -11,11 +11,13 @@ ccd:
     definitionImporter:
       enabled: false
     managementWeb:
-       enabled: true
+      enabled: true
     apiGatewayWeb:
       enabled: true
     s2s:
       enabled: false
+    printService:
+      enabled: true
 
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
