@@ -810,7 +810,7 @@
     "DisplayOrder": 122,
     "PreConditionState(s)": "consentedOrderApproved;consentOrderNotApproved",
     "PostConditionState": "*",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/consent-in-contested/send-order",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/consent-in-contested/send-order",
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
     "ShowSummary": "N"
