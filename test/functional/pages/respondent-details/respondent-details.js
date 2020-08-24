@@ -30,4 +30,19 @@ function consentedRespondentDetails() {
   respondentSolicitorDetailsDetails(I);
 }
 
-module.exports = { consentedRespondentDetails };
+function contestedRespondentDetails() {
+  const I = this;
+
+  I.waitForPage('#respondentDetailsLabel h2', 'Respondent’s Details');
+
+  I.fillField('input[id="respondentFMName"]', 'Qunatico');
+  I.fillField('input[id="respondentLName"]', 'Whisper');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+  I.waitForPage('#respondentRepresentedLabel h2', 'Is the respondent represented ?');
+  I.checkOption('input[id="respondentRepresented-Yes"]');
+  I.wait('2');
+  respondentSolicitorDetailsDetails(I);
+}
+
+module.exports = { consentedRespondentDetails, contestedRespondentDetails };

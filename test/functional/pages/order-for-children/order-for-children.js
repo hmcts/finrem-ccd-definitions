@@ -18,4 +18,12 @@ function orderForChildren() {
   // I.wait(5);
 }
 
-module.exports = { orderForChildren };
+function contestedOrderForChildren() {
+  const I = this;
+  I.waitForPage('#paymentForChildrenDecision input');
+  I.checkOption('input[id="paymentForChildrenDecision-No"]');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+}
+
+module.exports = { orderForChildren, contestedOrderForChildren };

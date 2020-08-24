@@ -11,11 +11,13 @@ ccd:
     definitionImporter:
       enabled: false
     managementWeb:
-       enabled: true
+      enabled: true
     apiGatewayWeb:
       enabled: true
     s2s:
       enabled: false
+    printService:
+      enabled: true
 
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
@@ -60,6 +62,12 @@ ccd:
       keyVaults:
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
+  ccd-case-print-service:
+    nodejs:
+      environment:
+        IDAM_PRINT_SERVICE_KEY: ${PRINT_S2S_KEY}
+      ingressHost: ccd-case-print-service-${SERVICE_FQDN}
+
   ccd-definition-store-api:
     java:
       imagePullPolicy: Always
@@ -103,6 +111,7 @@ ccd:
         IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
         IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
         PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
+        PROXY_PRINT_SERVICE: http://ccd-case-print-service-${SERVICE_FQDN}
         ADDRESS_LOOKUP_TOKEN: ${ADDRESS_LOOKUP_TOKEN}
       ingressHost: gateway-${SERVICE_FQDN}
       ingressIP: ${INGRESS_IP}
