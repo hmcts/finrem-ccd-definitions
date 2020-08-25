@@ -18,8 +18,8 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicantDocumentCollection",
-    "Label": "Applicant Documents",
+    "ID": "applicantCorrespondenceCollection",
+    "Label": "Correspondence",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"
@@ -27,8 +27,26 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respondentDocumentCollection",
-    "Label": "Respondent Documents",
+    "ID": "applicantFRFormsCollection",
+    "Label": "Correspondence",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantEvidenceCollection",
+    "Label": "Correspondence",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantTrialBundleCollection",
+    "Label": "Correspondence",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"

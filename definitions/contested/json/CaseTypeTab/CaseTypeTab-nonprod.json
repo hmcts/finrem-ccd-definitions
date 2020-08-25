@@ -14,16 +14,43 @@
     "TabID": "Applicant Documents",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 18,
-    "CaseFieldID": "applicantDocumentCollection",
+    "CaseFieldID": "applicantCorrespondenceCollection",
     "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "applicantFRFormsCollection",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "applicantEvidenceCollection",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "applicantTrialBundleCollection",
+    "TabFieldDisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "Respondent Documents",
-    "TabLabel": "Respondent Documents",
+    "TabLabel": "PLACEHOLDER FOR RESPONDENT",
     "TabDisplayOrder": 19,
-    "CaseFieldID": "respondentDocumentCollection",
+    "CaseFieldID": "applicantFRFormsCollection",
     "TabFieldDisplayOrder": 1
   }
 ]
