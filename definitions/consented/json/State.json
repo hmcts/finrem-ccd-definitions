@@ -114,9 +114,17 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "infoReceived",
+    "Name": "Information Received",
+    "DisplayOrder": 15,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "close",
     "Name": "Close",
-    "DisplayOrder": 15,
+    "DisplayOrder": 16,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   }
 ]

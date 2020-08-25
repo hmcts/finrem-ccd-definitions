@@ -1,8 +1,13 @@
 {
+  "caseType": "consented",
   "historyTab": {
     "tabName": "History",
     "caseSubmissionEvent": "Case Submission",
-    "hwfCaseSubmissionEndState": "Awaiting HWF Decision"
+    "hwfCaseSubmissionEndState": "Awaiting HWF Decision",
+    "hwfPaymentAcceptedEvent": "HWF Application Accepted",
+    "hwfPaymentAcceptedEndState": "Application Submitted",
+    "issueApplicationEvent": "Issue Application",
+    "issueApplicationEndState": "Awaiting Judicial Response"
   },
   "applicantTab": {
     "tabName": "Applicant",
@@ -43,7 +48,8 @@
     "tabName": "Case Documents",
     "draftDocumentName": "dummy.pdf",
     "latestConsentOrderLabel": "Latest Consent Order",
-    "pensionTypeName": "Form P1"
+    "pensionTypeName": "Form P1",
+    "onlineFormA": "OnlineForm.pdf"
   },
   "paymentDetailsTab": {
     "tabName": "Payment details",
@@ -56,6 +62,13 @@
     "applicantFName": "viv",
     "respondentFName": "kiv",
     "decreeNisiDate": "1 Feb 2019",
-    "decreeNisiDocument": "fileupload.txt"
+    "decreeNisiDocument": "fileupload.txt",
+    "newApplication": "New Application"
+  },
+  "adminNotesTab": {
+    "tabName": "Admin Notes",
+    "assignToJudgeReason": "Draft consent order",
+    "issueDate": "4 Aug 2020",
+    "assignToJudgeText": "consent for approval"
   }
 }

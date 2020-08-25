@@ -23,12 +23,12 @@ Scenario('add all the roles @pipeline', I => {
 
 Scenario('upload Consented Config file @pipeline', I => {
   I.loginToAdminConsole();
-  I.uploadConfig('../../definitions/consented/xlsx/ccd-config-aat-consented.xlsx');
+  I.uploadConfig(`../../definitions/consented/xlsx/${process.env.CCD_CONSENTED_FILE_NAME}`);
   I.see('Case Definition data successfully imported');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
 Scenario('upload Contested Config file @pipeline', I => {
   I.loginToAdminConsole();
-  I.uploadConfig('../../definitions/contested/xlsx/ccd-config-aat-contested.xlsx');
+  I.uploadConfig(`../../definitions/contested/xlsx/${process.env.CCD_CONTESTED_FILE_NAME}`);
   I.see('Case Definition data successfully imported');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers

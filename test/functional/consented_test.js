@@ -1,5 +1,5 @@
 const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
-const verifyTabText = require('../data/verify-tab-data.json');
+const verifyTabText = require('../data/verify-consented-tab-data.json');
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
@@ -20,7 +20,8 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    // TO-DO -Verify data , if needed manual/automate update, state change testing
+    // eslint-disable-next-line max-len
+    I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
   }
 });
 
@@ -34,14 +35,16 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    // TO-DO -Verify data , if needed manual/automate update, state change testing
+    // eslint-disable-next-line max-len
+    I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
+    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 });
 /* eslint-disable require-await */
 Scenario('Consent Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
-    I.wait('2');
+    I.waitForText('Continue on this URL', '10');
     I.click('Continue on this URL');
     I.wait('2');
     I.createCase('FinancialRemedyMVP2', 'Consent Order Application');
@@ -61,7 +64,7 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     // amend event
     I.amendApplicationDetails();
     // hwf payment submission
-    I.consentedAuthorisation();
+    I.caseSubmitAuthorisation();
     I.paymentPage(false);
     I.hwfPaymentDetails();
     I.paymentSubmission();
@@ -71,14 +74,6 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     I.see('Case Submission');
     // Tab data verification.
     // eslint-disable-next-line max-len
-    I.historyTab(verifyTabText.historyTab.tabName, verifyTabText.historyTab.caseSubmissionEvent, verifyTabText.historyTab.hwfCaseSubmissionEndState);
-    I.applicantTab(verifyTabText.applicantTab.tabName);
-    I.respondentTab(verifyTabText.respondentTab.tabName);
-    I.divorceTab(verifyTabText.divorceTab.tabName);
-    I.natureOfApplicationTab(verifyTabText.natureOfApplicationTab.tabName);
-    I.authorisationTab(verifyTabText.authorisationTab.tabName);
-    I.caseDocumentsTab(verifyTabText.caseDocumentsTab.tabName);
-    I.paymentDetailsTab(verifyTabText.paymentDetailsTab.tabName);
-    I.judgeDetailsTab(verifyTabText.judgeDetailsTab.tabName);
+    I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.caseSubmissionEvent, verifyTabText.historyTab.hwfCaseSubmissionEndState);
   }
 });
