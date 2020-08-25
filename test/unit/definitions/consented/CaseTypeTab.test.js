@@ -3,8 +3,9 @@ const assert = require('chai').assert;
 const { uniq, uniqWith, map, filter } = require('lodash');
 
 const caseTypeTab = Object.assign(require('definitions/consented/json/CaseTypeTab'), {});
-const caseField = Object.assign(require('definitions/consented/json/CaseField/CaseField'), {});
-
+const caseField = Object.assign(require('definitions/consented/json/CaseField/CaseField'), []);
+const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField/CaseField-common'), []);
+const caseFieldAll = caseField.concat(caseFieldCommon)
 const tabIds = uniq(map(caseTypeTab, 'TabID'));
 
 describe('CaseTypeTab', () => {
@@ -105,7 +106,7 @@ describe('CaseTypeTab', () => {
   });
 
   it('should contain a valid case field IDs', () => {
-    const validFields = uniq(map(caseField, 'ID'));
+    const validFields = uniq(map(caseFieldAll, 'ID'));
     const objectsWithInvalidCaseId = filter(caseTypeTab, field => {
       return validFields.indexOf(field.CaseFieldID) === -1;
     });
