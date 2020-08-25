@@ -6,5 +6,13 @@
     "Label": "General letter preview",
     "FieldType": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "11/03/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "paperApplication",
+    "Label": "Was the application made on paper?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
   }
 ]
