@@ -808,7 +808,7 @@
     "Name": "Send Order (consent)",
     "Description": "Send Order (consent)",
     "DisplayOrder": 122,
-    "PreConditionState(s)": "consentedOrderApproved;consentOrderNotApproved",
+    "PreConditionState(s)": "consentedOrderApproved;consentedOrderNotApproved",
     "PostConditionState": "*",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/consent-in-contested/send-order",
     "SecurityClassification": "Public",
