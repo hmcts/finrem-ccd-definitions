@@ -5,7 +5,7 @@
 String product = "finrem"
 String component = "ccd-definitions"
 
-def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
+//def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
 def secrets = [
         's2s-${env}'      : [
@@ -60,6 +60,7 @@ withPipeline("nodejs", product, component) {
   //  }
   //}
 
+  /*      
   before('functionalTest:preview') {
     yarnBuilder.yarn('setup')
 
@@ -120,5 +121,6 @@ withPipeline("nodejs", product, component) {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
     slackSend(channel: '#finrem-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
   }
+  */
 }
 
