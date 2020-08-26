@@ -5,7 +5,6 @@
 String product = "finrem"
 String component = "ccd-definitions"
 
-def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
 def secrets = [
         's2s-${env}'      : [
@@ -48,17 +47,6 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
-
-  after('test') {
-    // enable yarn audit and send message on master branch only
-    try {
-      yarnBuilder.yarn('audit')
-    } catch (error) {
-      onMaster {
-        slackSend(channel: '#finrem-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
-      }
-    }
-  }
 
 }
 
