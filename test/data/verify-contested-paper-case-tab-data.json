@@ -1,19 +1,13 @@
 {
-  "caseType": "contested",
+  "caseType": "contestedPaper",
   "historyTab": {
     "tabName": "History",
-    "caseSubmissionEvent": "Case Submission",
-    "hwfCaseSubmissionEndState": "Awaiting HWF Decision",
-    "hwfPaymentAcceptedEvent": "HWF Application Accepted",
-    "hwfPaymentAcceptedEndState": "Application Submitted",
+    "manualPaymentEvent": "Manual Payment",
+    "manualPaymentEndState": "Application Submitted",
     "issueApplicationEvent": "Issue Application",
     "issueApplicationEndState": "Awaiting Judicial Response",
     "assignToJudgeEvent": "Allocate to Judge",
-    "assignToJudgeEndState": "Gate Keeping And Allocation",
-    "consentOrderEvent": "Consent Order",
-    "consentOrderEndState": "Consented Order Submitted",
-    "assignToJudgeConsentEvent": "Consent Order",
-    "assignToJudgeConsentEndState": "Consented Order Submitted"
+    "assignToJudgeEndState": "Gate Keeping And Allocation"
   },
   "applicantTab": {
     "tabName": "Applicant",
@@ -84,12 +78,5 @@
     "tabName": "Scheduling and Listing",
     "localCourt": "CENTRAL FAMILY COURT",
     "courtFrc": "London FRC"
-  },
-  "consentOrderProcessTab": {
-    "tabName": "Consent Order Process",
-    "applicationFor": "Property Adjustment Order",
-    "mortgageDetails": "consented case in contested mortgage",
-    "draftOrderDocument": "consentinCOntestedDraftTest.pdf",
-    "pensionDocument": "pensionSampleTest.pdf"
   }
 }
