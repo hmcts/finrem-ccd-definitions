@@ -802,12 +802,25 @@
     "ShowSummary": "Y"
   },
   {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_newPaperCase",
+    "Name": "New Paper Case",
+    "Description": "New Paper Case",
+    "DisplayOrder": 122,
+    "PostConditionState": "caseAdded",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-paper-case-defaults",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "N",
+    "ShowSummary": "Y"
+  },
+  {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_consentSendOrder",
     "Name": "Send Order (consent)",
     "Description": "Send Order (consent)",
-    "DisplayOrder": 122,
+    "DisplayOrder": 123,
     "PreConditionState(s)": "consentedOrderApproved;consentedOrderNotApproved",
     "PostConditionState": "*",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/consent-in-contested/send-order",
