@@ -35,6 +35,9 @@ async function getUserToken(username, password) {
       ).catch(error => {
         console.log(error);
       });
+      if(retryCount > 1) {
+        logger.info("retrying idam code response " + retryCount);
+      }
       retryCount++;
   } while (retryCount <= 3 && statusCode > 300);
 
@@ -49,6 +52,10 @@ async function getUserToken(username, password) {
         uri: idamBaseUrl + idamAuthPath,
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
+      if(retryCount > 1) {
+              logger.info("retrying idam token response " + retryCount);
+      }
+      retryCount++;
   } while (retryCount <= 3 && statusCode > 300);
 
   logger.debug(JSON.parse(authTokenResponse).access_token);
