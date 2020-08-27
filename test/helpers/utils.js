@@ -17,23 +17,39 @@ async function getUserToken(username, password) {
 
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
 
-  const codeResponse = await request.post({
-    uri: idamBaseUrl + idamCodePath,
-    headers: {
-      Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
-  }).catch(error => {
-    console.log(error);
-  });
+  var retryCount = 0;
+  var statusCode = 400;
+  var codeResponse;
+  do {
+      codeResponse = await request.post(
+          {
+            uri: idamBaseUrl + idamCodePath,
+            headers: {
+              Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          },
+          function (error, response, body) {
+                statusCode = response.statusCode;
+          }
+      ).catch(error => {
+        console.log(error);
+      });
+      retryCount++;
+  } while (retryCount <= 3 && statusCode > 300);
 
   const code = JSON.parse(codeResponse).code;
 
   const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${code}`;
-  const authTokenResponse = await request.post({
-    uri: idamBaseUrl + idamAuthPath,
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-  });
+  var authTokenResponse;
+  retryCount = 0;
+  statusCode = 400;
+  do {
+      const authTokenResponse = await request.post({
+        uri: idamBaseUrl + idamAuthPath,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      });
+  } while (retryCount <= 3 && statusCode > 300);
 
   logger.debug(JSON.parse(authTokenResponse).access_token);
 
