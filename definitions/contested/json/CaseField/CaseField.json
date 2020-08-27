@@ -2802,5 +2802,39 @@
     "HintText": "Online Form A",
     "FieldType": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bulkPrintCoverSheetRes",
+    "Label": "Bulk Print Cover Sheet For Respondent / Solicitor",
+    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bulkPrintLetterIdRes",
+    "Label": "Bulk Print LetterId For Respondent / Solicitor",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bulkPrintCoverSheetApp",
+    "Label": "Bulk Print Cover Sheet For Applicant / Solicitor",
+    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bulkPrintLetterIdApp",
+    "Label": "Bulk Print LetterId For Applicant / Solicitor",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
   }
 ]
