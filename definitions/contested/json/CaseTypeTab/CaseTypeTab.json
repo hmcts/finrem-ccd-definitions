@@ -206,6 +206,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "paperApplication",
+    "TabFieldDisplayOrder": 21,
+    "FieldShowCondition": "paperApplication=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce Details",
     "TabDisplayOrder": 3,
