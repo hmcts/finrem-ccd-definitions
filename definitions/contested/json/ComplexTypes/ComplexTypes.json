@@ -909,7 +909,24 @@
     "ID": "FR_consentOrder",
     "ListElementCode": "consentOrder",
     "FieldType": "Document",
-    "ElementLabel": "Document",
+    "ElementLabel": "Consent Order Annexed Stamped",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_consentOrder",
+    "ListElementCode": "orderLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Approved Order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_consentOrder",
+    "ListElementCode": "pensionDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_PensionType",
+    "ElementLabel": "Pension Documents Stamped",
     "SecurityClassification": "Public"
   },
   {
