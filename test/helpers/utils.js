@@ -44,7 +44,6 @@ async function getUserId(authToken) {
   logger.info('Getting User Id');
 
   const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
-
   const idamDetailsPath = '/details';
   const userDetails = await request.get({
     uri: idamBaseUrl + idamDetailsPath,
@@ -65,16 +64,20 @@ async function getServiceToken() {
   const s2sAuthPath = '/lease';
   // eslint-disable-next-line global-require
   const oneTimePassword = require('otp')({ secret: serviceSecret }).totp();
+  const serviceToken = null;
 
-  const serviceToken = await request({
-    method: 'POST',
-    uri: s2sBaseUrl + s2sAuthPath,
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      microservice: 'divorce_ccd_submission',
-      oneTimePassword
-    })
-  });
+  var retries = 0;  
+  do{
+    serviceToken = await request({
+      method: 'POST',
+      uri: s2sBaseUrl + s2sAuthPath,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+       microservice: 'divorce_ccd_submission',
+       oneTimePassword
+      })
+    });
+  } while (serviceToken.status > 300 && retries <= 3)
 
   logger.debug(serviceToken);
 
