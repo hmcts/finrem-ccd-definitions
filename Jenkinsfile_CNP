@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure@docker-agent-build-default-true")
+@Library("Infrastructure")
 
 String product = "finrem"
 String component = "ccd-definitions"
