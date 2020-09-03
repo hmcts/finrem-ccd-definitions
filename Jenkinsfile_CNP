@@ -5,6 +5,7 @@
 String product = "finrem"
 String component = "ccd-definitions"
 
+def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
 def secrets = [
         's2s-${env}'      : [
