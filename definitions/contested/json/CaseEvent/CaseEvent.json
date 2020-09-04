@@ -423,6 +423,7 @@
     "DisplayOrder": 34,
     "PreConditionState(s)": "draftOrderNotApproved",
     "PostConditionState": "solicitorDraftOrder",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested-application-send-refusal",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
