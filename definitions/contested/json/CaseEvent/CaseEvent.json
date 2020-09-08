@@ -814,5 +814,19 @@
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
     "ShowSummary": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_uploadCaseFiles",
+    "Name": "Upload Case Files",
+    "Description": "Upload Case Files",
+    "DisplayOrder": 14,
+    "PreConditionState(s)": "prepareForHearing",
+    "PostConditionState": "prepareForHearing",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/upload-contested-case-documents",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
   }
 ]
