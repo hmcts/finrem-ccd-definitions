@@ -2908,5 +2908,72 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationRecievedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "Label": "Application received from",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationCreatedBy",
+    "FieldType": "Text",
+    "Label": "Application created by",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationHearingRequired",
+    "FieldType": "YesOrNo",
+    "Label": "Is a hearing required?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationTimeEstimate",
+    "FieldType": "Text",
+    "Label": "Time estimate",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationSpecialMeasures",
+    "FieldType": "Text",
+    "Label": "Special measures (optional)",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationLatestDocument",
+    "FieldType": "Document",
+    "Label": "Upload General Application",
+    "HintText": "Please upload a copy of the Application",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDraftOrder",
+    "FieldType": "Document",
+    "Label": "Upload Draft Application",
+    "HintText": "Please upload a copy of the draft order (optional)",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationLatestDocumentDate",
+    "FieldType": "Date",
+    "Label": "Latest General Application Date",
+    "SecurityClassification": "Public"
   }
 ]
