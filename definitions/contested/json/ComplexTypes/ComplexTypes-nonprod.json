@@ -1,20 +1,2 @@
 [
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
-    "ListElementCode": "caseDocumentParty",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_EvidenceParty",
-    "ElementLabel": "Evidence provided on behalf of:",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
-    "ListElementCode": "caseDocumentOther",
-    "FieldType": "Text",
-    "ElementLabel": "Please specify document type",
-    "FieldShowCondition": "caseDocumentType=\"other\"",
-    "SecurityClassification": "Public"
-  }
 ]
