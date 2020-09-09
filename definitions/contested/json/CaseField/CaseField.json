@@ -1459,6 +1459,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationLabel",
+    "Label": "## General Application",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadCaseDocument",
     "Label": "                                                                                      ",
     "FieldType": "Collection",
@@ -2947,7 +2955,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationSpecialMeasures",
     "FieldType": "Text",
-    "Label": "Special measures (optional)",
+    "Label": "Special measures",
     "SecurityClassification": "Public"
   },
   {
@@ -2955,7 +2963,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationLatestDocument",
     "FieldType": "Document",
-    "Label": "Upload General Application",
+    "Label": "Latest General Application",
     "HintText": "Please upload a copy of the Application",
     "SecurityClassification": "Public"
   },
@@ -2974,6 +2982,15 @@
     "ID": "generalApplicationLatestDocumentDate",
     "FieldType": "Date",
     "Label": "Latest General Application Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_generalApplicationCollection",
+    "Label": "General Application Collection",
     "SecurityClassification": "Public"
   }
 ]
