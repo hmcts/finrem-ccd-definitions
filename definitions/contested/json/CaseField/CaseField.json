@@ -2920,7 +2920,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalApplicationRecievedFrom",
+    "ID": "generalApplicationReceivedFrom",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_EvidenceParty",
     "Label": "Application received from",
@@ -2961,10 +2961,18 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDocument",
+    "FieldType": "Document",
+    "Label": "Upload General Application",
+    "HintText": "Please upload a copy of the Application",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationLatestDocument",
     "FieldType": "Document",
     "Label": "Latest General Application",
-    "HintText": "Please upload a copy of the Application",
     "SecurityClassification": "Public"
   },
   {
