@@ -617,10 +617,10 @@ cliui@^5.0.0:
     strip-ansi "^5.2.0"
     wrap-ansi "^5.1.0"
 
-codeceptjs@^2.2.0:
-  version "2.6.6"
-  resolved "https://registry.yarnpkg.com/codeceptjs/-/codeceptjs-2.6.6.tgz#d8b40d480599bf64e5baa1508715837c0a758978"
-  integrity sha512-DzuMcYwS8yUwabP7w/aLfr38VrNHBImIDp3cPT5sGttNbKyzuUiKI+ZXLum5Qt/RJfI6VL65pVrpUIXfWwJ3oA==
+codeceptjs@^2.2.1:
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/codeceptjs/-/codeceptjs-2.6.10.tgz#765e4f6e572011dd2a40bd8f261cd847f6a48e6f"
+  integrity sha512-xTTGju2dpmUzol4UBueyseGVWxrZf9sTBfd2Y4fGO+qv7D18CJqxJd5Ctznp4kwfCDX9Iog16W1VtrwM/G85cw==
   dependencies:
     "@codeceptjs/configure" "^0.4.1"
     allure-js-commons "^1.3.2"
