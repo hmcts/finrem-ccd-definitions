@@ -1585,7 +1585,7 @@
     "ID": "generalOrders",
     "Label": "General Order",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ct_genaralOrder",
+    "FieldTypeParameter": "FR_ct_generalOrder",
     "SecurityClassification": "Public"
   },
   {
@@ -1594,7 +1594,7 @@
     "ID": "generalOrdersConsent",
     "Label": "General Order (consent)",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ct_genaralOrder",
+    "FieldTypeParameter": "FR_ct_generalOrder",
     "SecurityClassification": "Public"
   },
   {
@@ -2835,6 +2835,78 @@
     "ID": "bulkPrintLetterIdApp",
     "Label": "Bulk Print LetterId For Applicant / Solicitor",
     "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appCorrespondenceCollection",
+    "Label": "Correspondence",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appFRFormsCollection",
+    "Label": "FR Forms",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appEvidenceCollection",
+    "Label": "Evidence In Support",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appTrialBundleCollection",
+    "Label": "Trial Bundle",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respCorrespondenceCollection",
+    "Label": "Correspondence",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respFRFormsCollection",
+    "Label": "FR Forms",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respEvidenceCollection",
+    "Label": "Evidence In Support",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respTrialBundleCollection",
+    "Label": "Trial Bundle",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"
   }
 ]
