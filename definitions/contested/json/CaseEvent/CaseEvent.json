@@ -103,18 +103,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_manualPayment",
-    "Name": "Manual Payment",
-    "Description": "Manual Payment",
-    "DisplayOrder": 8,
-    "PreConditionState(s)": "caseAdded",
-    "PostConditionState": "applicationSubmitted",
-    "SecurityClassification": "Public",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_issueApplication",
     "Name": "Issue Application",
     "Description": "Issue Application",
