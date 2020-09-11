@@ -4,7 +4,7 @@ const { find } = require('lodash');
 
 const caseEvent = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent.json'), []);
 const caseEventProd = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent-prod.json'), []);
-const caseEventNonProd = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent-OfflineNotifications-non-prod.json'), []);
+const caseEventNonProd = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent-OfflineNotifications-nonprod.json'), []);
 const caseField = Object.assign(require('definitions/contested/json/CaseField/CaseField'), []);
 const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField/CaseField-common'), []);
 const caseFieldAll = caseField.concat(caseFieldCommon);
