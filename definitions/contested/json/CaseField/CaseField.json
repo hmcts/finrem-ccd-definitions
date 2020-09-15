@@ -1459,6 +1459,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationLabel",
+    "Label": "## General Application",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadCaseDocument",
     "Label": "                                                                                      ",
     "FieldType": "Collection",
@@ -2907,6 +2915,98 @@
     "Label": "Trial Bundle",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "Label": "Application received from",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationCreatedBy",
+    "FieldType": "Text",
+    "Label": "Application created by",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationHearingRequired",
+    "FieldType": "YesOrNo",
+    "Label": "Is a hearing required?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationTimeEstimate",
+    "FieldType": "Text",
+    "Label": "Time estimate",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationSpecialMeasures",
+    "FieldType": "Text",
+    "Label": "Special measures",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDocument",
+    "FieldType": "Document",
+    "Label": "Upload General Application",
+    "HintText": "Please upload a copy of the Application",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationLatestDocument",
+    "FieldType": "Document",
+    "Label": "Latest General Application",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDraftOrder",
+    "FieldType": "Document",
+    "Label": "Upload Draft Order",
+    "HintText": "Please upload a copy of the draft order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationLatestDocumentDate",
+    "FieldType": "Date",
+    "Label": "Latest General Application Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_generalApplicationCollection",
+    "Label": "General Application Collection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationPreState",
+    "FieldType": "Text",
+    "Label": "General Application Pre State",
     "SecurityClassification": "Public"
   }
 ]

@@ -817,5 +817,19 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/upload-contested-case-documents",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_createGeneralApplication",
+    "Name": "Create General Application",
+    "Description": "Create General Application",
+    "DisplayOrder": 124,
+    "PreConditionState(s)": "applicationIssued;schedulingAndHearing;prepareForHearing;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;caseWorkerReview;gateKeepingAndAllocation;caseFileSubmitted;reviewOrder;awaitingJudiciaryResponse;close;orderSent",
+    "PostConditionState": "generalApplication",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/start-general-application",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-application",
+    "ShowEventNotes": "Y"
   }
 ]
