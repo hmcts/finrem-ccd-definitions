@@ -3008,5 +3008,13 @@
     "FieldType": "Text",
     "Label": "General Application Pre State",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationReferToJudgeEmail",
+    "FieldType": "Text",
+    "Label": "Judge's email address",
+    "SecurityClassification": "Public"
   }
 ]
