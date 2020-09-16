@@ -1,5 +1,19 @@
 [
   {
+    "LiveFrom": "01/01/2018",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "applicantOrganisationPolicy",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "PageLabel": "",
+    "PageDisplayOrder": 1,
+    "ShowSummaryChangeOption": "No",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/consented/set-defaults",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_solicitorCreate",
@@ -7,11 +21,9 @@
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 1,
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "N",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/consented/set-defaults",
-    "RetriesTimeoutURLMidEvent": "3,4,5"
+    "ShowSummaryChangeOption": "N"
   },
   {
     "LiveFrom": "01/01/2017",

@@ -173,7 +173,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_ct_genaralOrder",
+    "ID": "FR_ct_generalOrder",
     "ListElementCode": "generalOrderText",
     "FieldType": "Text",
     "ElementLabel": "Please type the order in the box ",
@@ -181,7 +181,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_ct_genaralOrder",
+    "ID": "FR_ct_generalOrder",
     "ListElementCode": "additionalDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
@@ -189,7 +189,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_ct_genaralOrder",
+    "ID": "FR_ct_generalOrder",
     "ListElementCode": "selectJudge",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_Judge",
@@ -199,7 +199,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_ct_genaralOrder",
+    "ID": "FR_ct_generalOrder",
     "ListElementCode": "dateOfOrder",
     "FieldType": "Date",
     "ElementLabel": "Date of order",
@@ -208,20 +208,20 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_ct_genaralOrder",
+    "ID": "FR_ct_generalOrder",
     "ListElementCode": "additionalComments",
     "FieldType": "Text",
     "ElementLabel": "Additional comments",
-    "HintText": "Please add any additional comments for  court admin (this comments will not be accesible by applicant's solicitor)",
+    "HintText": "Please add any additional comments for  court admin (this comments will not be accessible by applicant's solicitor)",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_ct_genaralOrder",
+    "ID": "FR_ct_generalOrder",
     "ListElementCode": "generalOrder_addressTo",
     "FieldType": "Text",
     "ElementLabel": "Addressed to",
-    "HintText": "Please add any additional comments for  court admin (this comments will not be accesible by applicant's solicitor)",
+    "HintText": "Please add any additional comments for  court admin (this comments will not be accessible by applicant's solicitor)",
     "SecurityClassification": "Public"
   },
   {
@@ -933,6 +933,14 @@
     "LiveFrom": "01/06/2020",
     "ID": "FR_ct_refusedOrderCollection",
     "ListElementCode": "refusalOrderAdditionalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "ID": "FR_ct_generalApplicationCollection",
+    "ListElementCode": "generalApplicationDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
     "SecurityClassification": "Public"

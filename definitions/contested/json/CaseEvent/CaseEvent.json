@@ -103,18 +103,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_manualPayment",
-    "Name": "Manual Payment",
-    "Description": "Manual Payment",
-    "DisplayOrder": 8,
-    "PreConditionState(s)": "caseAdded",
-    "PostConditionState": "applicationSubmitted",
-    "SecurityClassification": "Public",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_issueApplication",
     "Name": "Issue Application",
     "Description": "Issue Application",
@@ -423,6 +411,7 @@
     "DisplayOrder": 34,
     "PreConditionState(s)": "draftOrderNotApproved",
     "PostConditionState": "solicitorDraftOrder",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested-application-send-refusal",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
@@ -828,5 +817,19 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/upload-contested-case-documents",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_createGeneralApplication",
+    "Name": "Create General Application",
+    "Description": "Create General Application",
+    "DisplayOrder": 124,
+    "PreConditionState(s)": "applicationIssued;schedulingAndHearing;prepareForHearing;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;caseWorkerReview;gateKeepingAndAllocation;caseFileSubmitted;reviewOrder;awaitingJudiciaryResponse;close;orderSent",
+    "PostConditionState": "generalApplication",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/start-general-application",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-application",
+    "ShowEventNotes": "Y"
   }
 ]

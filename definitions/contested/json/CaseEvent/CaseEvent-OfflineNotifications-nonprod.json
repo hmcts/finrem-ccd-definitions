@@ -8,6 +8,7 @@
     "DisplayOrder": 8,
     "PreConditionState(s)": "caseAdded",
     "PostConditionState": "applicationSubmitted",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/manual-payment",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   }

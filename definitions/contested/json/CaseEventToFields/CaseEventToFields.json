@@ -1,5 +1,19 @@
 [
   {
+    "LiveFrom": "01/01/2018",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "FR_solicitorCreate",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "PageLabel": "",
+    "PageDisplayOrder": 1,
+    "ShowSummaryChangeOption": "No",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-defaults",
+    "CallBackURLMidEvent_1": "3,4,5"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
@@ -7,11 +21,9 @@
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 1,
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "N",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-defaults",
-    "CallBackURLMidEvent_1": "3,4,5"
+    "ShowSummaryChangeOption": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6636,6 +6648,99 @@
     "PageID": "orderRefusalPreviewDocument",
     "PageLabel": "Consent Order Not Approved",
     "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_createGeneralApplication",
+    "CaseFieldID": "generalApplicationReceivedFrom",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": "createGeneralApplication",
+    "PageLabel": "Create General Application",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_createGeneralApplication",
+    "CaseFieldID": "generalApplicationCreatedBy",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": "createGeneralApplication",
+    "PageLabel": "Create General Application",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_createGeneralApplication",
+    "CaseFieldID": "generalApplicationHearingRequired",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "MANDATORY",
+    "PageID": "createGeneralApplication",
+    "PageLabel": "Create General Application",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_createGeneralApplication",
+    "CaseFieldID": "generalApplicationTimeEstimate",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": "createGeneralApplication",
+    "PageLabel": "Create General Application",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "generalApplicationHearingRequired=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_createGeneralApplication",
+    "CaseFieldID": "generalApplicationSpecialMeasures",
+    "PageFieldDisplayOrder": 5,
+    "DisplayContext": "OPTIONAL",
+    "PageID": "createGeneralApplication",
+    "PageLabel": "Create General Application",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "generalApplicationHearingRequired=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_createGeneralApplication",
+    "CaseFieldID": "generalApplicationDocument",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": "createGeneralApplicationDocument",
+    "PageLabel": "Create General Application",
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_createGeneralApplication",
+    "CaseFieldID": "generalApplicationDraftOrder",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": "createGeneralApplicationOrder",
+    "PageLabel": "Create General Application",
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   }
