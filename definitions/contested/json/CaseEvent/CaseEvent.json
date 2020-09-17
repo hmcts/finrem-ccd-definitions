@@ -831,5 +831,18 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/start-general-application",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-application",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_GeneralApplicationOutcome",
+    "Name": "General Application Outcome",
+    "Description": "General Application Outcome",
+    "DisplayOrder": 125,
+    "PreConditionState(s)": "generalApplication",
+    "PostConditionState": "generalApplicationOutcome",
+    "SecurityClassification": "Public",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-application-outcome",
+    "ShowEventNotes": "Y"
   }
 ]
