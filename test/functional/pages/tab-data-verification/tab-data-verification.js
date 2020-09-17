@@ -37,7 +37,7 @@ function applicantTab(caseType, tabName) {
     I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorName);
     I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorFirm);
     I.see(verifyContestedPaperTabText.applicantTab.applicantEmail);
-    I.see(verifyContestedPaperTabText.applicantTab.applicantEmailCommunication);
+    I.see(verifyContestedPaperTabText.applicantTab.applicationMadeOnPaper);
     break;
   }
 }
