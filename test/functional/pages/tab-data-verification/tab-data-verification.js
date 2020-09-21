@@ -37,7 +37,7 @@ function applicantTab(caseType, tabName) {
     I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorName);
     I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorFirm);
     I.see(verifyContestedPaperTabText.applicantTab.applicantEmail);
-    I.see(verifyContestedPaperTabText.applicantTab.applicantEmailCommunication);
+    I.see(verifyContestedPaperTabText.applicantTab.applicationMadeOnPaper);
     break;
   }
 }
@@ -64,8 +64,8 @@ function respondentTab(caseType, tabName) {
     break;
   case 'contestedPaper':
     I.see(verifyContestedPaperTabText.respondentTab.respondentLastName);
-    I.see(verifyContestedPaperTabText.respondentTab.respondentSolicitorName);
-    I.see(verifyContestedPaperTabText.respondentTab.respondentSolicitorFirm);
+    I.see(verifyContestedPaperTabText.respondentTab.respondentRepresented);
+    I.see(verifyContestedPaperTabText.respondentTab.respondentBuildingName);
     I.see(verifyContestedPaperTabText.respondentTab.respondentEmail);
     I.see(verifyContestedPaperTabText.respondentTab.respondentPostCode);
     break;
@@ -170,12 +170,9 @@ function caseDocumentsTab(caseType, tabName, eventName) {
     }
     break;
   case 'contestedPaper':
-    I.see(verifyContestedPaperTabText.caseDocumentsTab.UploadDecreeNisiFile);
-    if (eventName === verifyContestedPaperTabText.historyTab.assignToJudgeEvent) {
-      I.see(verifyContestedPaperTabText.caseDocumentsTab.onlineFormA);
-    } else {
-      I.see(verifyContestedPaperTabText.caseDocumentsTab.draftOnlineFormA);
-    }
+    I.see(verifyContestedPaperTabText.caseDocumentsTab.uploadedOtherDocument);
+    I.see(verifyContestedPaperTabText.caseDocumentsTab.uploadedDecreeNisiFile);
+    I.see(verifyContestedPaperTabText.caseDocumentsTab.uploadedPaperDocument);
     break;
   }
 }
@@ -274,10 +271,8 @@ function gateKeepingAllocationsTab(caseType, tabName, eventName) {
     break;
   case 'contestedPaper':
     I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.localCourt);
-    if (eventName === verifyContestedPaperTabText.historyTab.issueApplicationEvent) {
-      I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.fastTrackProcedure);
-      I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.dateOfMarriage);
-    }
+    I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.fastTrackProcedure);
+    I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.dateOfMarriage);
     break;
   }
 }
@@ -343,9 +338,7 @@ function verifyContestedPaperTabData(caseType, eventName, stateName) {
   I.respondentTab(caseType, verifyContestedPaperTabText.respondentTab.tabName);
   I.divorceTab(caseType, verifyContestedPaperTabText.divorceTab.tabName);
   I.natureOfApplicationTab(caseType, verifyContestedPaperTabText.natureOfApplicationTab.tabName);
-  I.authorisationTab(caseType, verifyContestedPaperTabText.authorisationTab.tabName);
   I.caseDocumentsTab(caseType, verifyContestedPaperTabText.caseDocumentsTab.tabName, eventName);
-  I.paymentDetailsTab(caseType, verifyContestedPaperTabText.paymentDetailsTab.tabName);
   I.gateKeepingAllocationsTab(caseType, verifyContestedPaperTabText.gateKeepingAllocationsTab.tabName, eventName);
   I.schedulingAndListingTab(caseType, verifyContestedPaperTabText.schedulingAndListingTab.tabName);
 }
