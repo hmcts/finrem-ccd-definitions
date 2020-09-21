@@ -18,19 +18,17 @@
   {
     "LiveFrom": "01/08/2020",
     "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
-    "ID": "OrganisationPolicy",
-    "Label": "Applicant Policy Details",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_solicitorCreate",
+    "ID": "ApplicantOrganisationPolicy",
+    "Label": "Applicant Org Policy",
+    "FieldType": "OrganisationPolicy",
     "SecurityClassification": "Public"
   },
   {
   "LiveFrom": "01/08/2020",
   "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
-  "ID": "Organisation",
+  "ID": "OrganisationField",
   "Label": "Applicant Organisation",
-  "FieldType": "Collection",
-  "FieldTypeParameter": "FR_solicitorCreate",
+  "FieldType": "Organisation",
   "SecurityClassification": "Public"
   }
 ]
