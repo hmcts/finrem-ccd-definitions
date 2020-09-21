@@ -1,19 +1,5 @@
 [
   {
-    "LiveFrom": "01/01/2018",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "FR_solicitorCreate",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "COMPLEX",
-    "PageID": 1,
-    "PageLabel": "",
-    "PageDisplayOrder": 1,
-    "ShowSummaryChangeOption": "No",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-defaults",
-    "CallBackURLMidEvent_1": "3,4,5"
-  },
-  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
@@ -23,7 +9,9 @@
     "PageID": 1,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "N"
+    "ShowSummaryChangeOption": "N",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-defaults",
+    "CallBackURLMidEvent_1": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
