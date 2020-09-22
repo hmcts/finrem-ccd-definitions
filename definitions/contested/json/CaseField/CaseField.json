@@ -3072,6 +3072,7 @@
     "ID": "generalApplicationDirectionsHearingRegion",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_region_list",
+    "Label": "Please choose the Region in which the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3080,6 +3081,7 @@
     "ID": "generalApplicationDirectionsMidlandsFRC",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_midlands_FRCList",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3088,6 +3090,7 @@
     "ID": "generalApplicationDirectionsLondonFRC",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_london_FRCList",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3096,6 +3099,7 @@
     "ID": "generalApplicationDirectionsNorthWestFRC",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_nw_frc_list",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3104,6 +3108,7 @@
     "ID": "generalApplicationDirectionsNorthEastFRC",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_ne_frc_list",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3112,6 +3117,7 @@
     "ID": "generalApplicationDirectionsSouthEastFRC",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_se_frc_list",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3120,6 +3126,7 @@
     "ID": "generalApplicationDirectionsWalesFRC",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_wales_frc_list",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3128,6 +3135,7 @@
     "ID": "generalApplicationDirectionsNottinghamCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_NottinghamList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3136,6 +3144,7 @@
     "ID": "generalApplicationDirectionsCfcCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_CFCList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3144,6 +3153,7 @@
     "ID": "generalApplicationDirectionsBirminghamCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_birmingham_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3152,6 +3162,7 @@
     "ID": "generalApplicationDirectionsLiverpoolCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_liverpool_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3160,6 +3171,7 @@
     "ID": "generalApplicationDirectionsManchesterCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_manchester_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3168,6 +3180,7 @@
     "ID": "generalApplicationDirectionsClevelandCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_cleveland_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3176,6 +3189,7 @@
     "ID": "generalApplicationDirectionsNwyorkshireCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3184,6 +3198,7 @@
     "ID": "generalApplicationDirectionsHumberCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_humber_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3192,6 +3207,7 @@
     "ID": "generalApplicationDirectionsKentSurreyCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_kent_surrey_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3200,6 +3216,7 @@
     "ID": "generalApplicationDirectionsNewportCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_newport_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3208,6 +3225,7 @@
     "ID": "generalApplicationDirectionsSwanseaCourt",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_swansea_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
   {
@@ -3215,6 +3233,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirectionsAdditionalInformation",
     "FieldType": "TextArea",
+    "Label": "Additional information about the hearing",
     "SecurityClassification": "Public"
   },
   {
@@ -3222,6 +3241,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirectionsRecitals",
     "FieldType": "TextArea",
+    "Label": "Recitals",
     "SecurityClassification": "Public"
   },
   {
@@ -3230,6 +3250,7 @@
     "ID": "generalApplicationDirectionsJudgeType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_Judge",
+    "Label": "Select judge",
     "SecurityClassification": "Public"
   },
   {
