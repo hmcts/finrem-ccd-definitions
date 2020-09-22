@@ -844,5 +844,18 @@
     "SecurityClassification": "Public",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-application-outcome",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_GeneralApplicationDirections",
+    "Name": "General Application Directions",
+    "Description": "General Application Directions",
+    "DisplayOrder": 126,
+    "PreConditionState(s)": "generalApplicationOutcome",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-application-directions",
+    "ShowEventNotes": "Y"
   }
 ]
