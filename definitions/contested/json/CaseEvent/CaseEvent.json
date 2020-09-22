@@ -852,7 +852,7 @@
     "Name": "General Application Outcome",
     "Description": "General Application Outcome",
     "DisplayOrder": 125,
-    "PreConditionState(s)": "generalApplication",
+    "PreConditionState(s)": "generalApplicationAwaitingJudiciaryResponse",
     "PostConditionState": "generalApplicationOutcome",
     "SecurityClassification": "Public",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-application-outcome",
