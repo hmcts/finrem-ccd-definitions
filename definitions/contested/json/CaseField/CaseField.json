@@ -3267,6 +3267,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirectionsCourtOrderDate",
     "FieldType": "Date",
+    "Label": "Court order date",
     "SecurityClassification": "Public"
   },
   {
@@ -3274,6 +3275,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirectionsTextFromJudge",
     "FieldType": "TextArea",
+    "Label": "Directions from the Judge",
     "SecurityClassification": "Public"
   }
 ]
