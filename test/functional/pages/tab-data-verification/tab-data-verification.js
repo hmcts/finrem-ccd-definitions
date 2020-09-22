@@ -163,10 +163,18 @@ function caseDocumentsTab(caseType, tabName, eventName) {
     I.see(verifyContestedTabText.caseDocumentsTab.UploadDecreeNisiFile);
     if (eventName === verifyContestedTabText.historyTab.assignToJudgeEvent ||
          eventName === verifyContestedTabText.historyTab.consentOrderEvent ||
-         eventName === verifyContestedTabText.historyTab.assignToJudgeConsentEvent) {
+         eventName === verifyContestedTabText.historyTab.assignToJudgeConsentEvent ||
+         eventName === verifyContestedTabText.historyTab.createGeneralApplicationEvent) {
       I.see(verifyContestedTabText.caseDocumentsTab.onlineFormA);
     } else {
       I.see(verifyContestedTabText.caseDocumentsTab.draftOnlineFormA);
+    }
+    if (eventName === verifyContestedTabText.historyTab.createGeneralApplicationEvent) {
+      I.see(verifyContestedTabText.caseDocumentsTab.gaApplicationReceivedFrom);
+      I.see(verifyContestedTabText.caseDocumentsTab.gaHearingRequired);
+      I.see(verifyContestedTabText.caseDocumentsTab.gaLatestApplication);
+      I.see(verifyContestedTabText.caseDocumentsTab.gaUploadDraftOrder);
+      I.see(verifyContestedTabText.caseDocumentsTab.gaApplicationReceivedFrom);
     }
     break;
   case 'contestedPaper':
