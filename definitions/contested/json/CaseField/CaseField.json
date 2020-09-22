@@ -3012,6 +3012,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationReferToJudgeEmail",
+    "FieldType": "Email",
+    "Label": "Judge's email address",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationOutcome",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_generalApplicationOutcome",

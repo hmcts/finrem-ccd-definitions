@@ -1,6 +1,6 @@
 const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
 const verifyTabText = require('../data/verify-contested-tab-data.json');
-// const verifyContestedPaperTabText = require('../data/verify-contested-paper-case-tab-data.json');
+const verifyContestedPaperTabText = require('../data/verify-contested-paper-case-tab-data.json');
 
 // eslint-disable max-len
 
@@ -92,7 +92,7 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    // I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
+    I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
   }
 });
 
