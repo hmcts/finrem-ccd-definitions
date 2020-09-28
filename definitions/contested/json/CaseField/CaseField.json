@@ -1307,6 +1307,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nottinghamCourtListGA",
+    "Label": "Choose hearing location",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_NottinghamList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "judgeAllocatedLabel",
     "Label": "## The application is suitable to be heard by a:",
     "FieldType": "Label",
