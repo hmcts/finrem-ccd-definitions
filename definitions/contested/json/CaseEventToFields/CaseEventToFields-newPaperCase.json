@@ -196,6 +196,18 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "PageFieldDisplayOrder": 16,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
     "CaseFieldID": "divorceDetailsLabel",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
