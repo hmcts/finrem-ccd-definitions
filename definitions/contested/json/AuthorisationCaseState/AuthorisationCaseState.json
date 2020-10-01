@@ -219,6 +219,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseAdded",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -423,6 +430,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
   },
@@ -649,6 +663,13 @@
     "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -865,6 +886,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "caseworker-divorce-bulkscan",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
     "UserRole": "caseworker-divorce-bulkscan",
     "CRUD": "R"
   },
@@ -1300,6 +1328,13 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
     "UserRole": "caseworker-caa",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "R"
   }
 ]
