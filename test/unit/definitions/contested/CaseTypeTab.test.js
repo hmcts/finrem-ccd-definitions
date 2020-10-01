@@ -5,7 +5,7 @@ const { uniq, uniqWith, map, filter } = require('lodash');
 const caseTypeTab = Object.assign(require('definitions/contested/json/CaseTypeTab/CaseTypeTab.json'), {});
 const caseField = Object.assign(require('definitions/contested/json/CaseField/CaseField'), {});
 const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField/CaseField-common'), []);
-const caseFieldAll = caseField.concat(caseFieldCommon)
+const caseFieldAll = caseField.concat(caseFieldCommon);
 const tabIds = uniq(map(caseTypeTab, 'TabID'));
 
 describe('CaseTypeTab', () => {
@@ -66,7 +66,9 @@ describe('CaseTypeTab', () => {
     Orders: 14,
     schedulingTab: 15,
     hiddenTab: 16,
-    consentOrderProcessTab: 17
+    consentOrderProcessTab: 17,
+    'Applicant Documents': 18,
+    'Respondent Documents': 19
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -101,7 +103,9 @@ describe('CaseTypeTab', () => {
       'RespondentAddressConfidential-solicitor',
       'RespondentAddressConfidential-courtadmin',
       'RespondentAddressConfidential-judiciary',
-      'consentOrderProcessTab'
+      'consentOrderProcessTab',
+      'Applicant Documents',
+      'Respondent Documents'
     ]);
   });
   it('should contain a valid case field IDs', () => {

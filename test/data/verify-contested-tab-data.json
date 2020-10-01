@@ -12,8 +12,10 @@
     "assignToJudgeEndState": "Gate Keeping And Allocation",
     "consentOrderEvent": "Consent Order",
     "consentOrderEndState": "Consented Order Submitted",
-    "assignToJudgeConsentEvent": "Consent Order",
-    "assignToJudgeConsentEndState": "Consented Order Submitted"
+    "assignToJudgeConsentEvent": "Assign to Judge (consent)",
+    "assignToJudgeConsentEndState": "Awaiting Judiciary Response (Consent)",
+    "createGeneralApplicationEvent": "Create General Application",
+    "createGeneralApplicationState": "General Application"
   },
   "applicantTab": {
     "tabName": "Applicant",
@@ -54,7 +56,11 @@
     "tabName": "Case documents",
     "draftOnlineFormA": "DraftOnlineForm.pdf",
     "UploadDecreeNisiFile": "fileupload.txt",
-    "onlineFormA": "OnlineForm.pdf"
+    "onlineFormA": "OnlineForm.pdf",
+    "gaApplicationReceivedFrom": "Applicant",
+    "gaHearingRequired": "Yes",
+    "gaLatestApplication": "GeneralApplication.pdf",
+    "gaUploadDraftOrder": "contestedDraftTest.pdf"
   },
   "paymentDetailsTab": {
     "tabName": "Payment details",

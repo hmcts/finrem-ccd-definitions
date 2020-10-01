@@ -103,18 +103,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_manualPayment",
-    "Name": "Manual Payment",
-    "Description": "Manual Payment",
-    "DisplayOrder": 8,
-    "PreConditionState(s)": "caseAdded",
-    "PostConditionState": "applicationSubmitted",
-    "SecurityClassification": "Public",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_issueApplication",
     "Name": "Issue Application",
     "Description": "Issue Application",
@@ -178,19 +166,6 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/hearing",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/prepare-for-hearing",
-    "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_uploadCaseFiles",
-    "Name": "Upload Case Files",
-    "Description": "Upload Case Files",
-    "DisplayOrder": 14,
-    "PreConditionState(s)": "prepareForHearing",
-    "PostConditionState": "prepareForHearing",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
@@ -436,6 +411,7 @@
     "DisplayOrder": 34,
     "PreConditionState(s)": "draftOrderNotApproved",
     "PostConditionState": "solicitorDraftOrder",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested-application-send-refusal",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
@@ -813,5 +789,73 @@
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
     "ShowSummary": "Y"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_consentSendOrder",
+    "Name": "Send Order (consent)",
+    "Description": "Send Order (consent)",
+    "DisplayOrder": 123,
+    "PreConditionState(s)": "consentedOrderApproved;consentedOrderNotApproved",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/consent-in-contested/send-order",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "N",
+    "ShowSummary": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_uploadCaseFiles",
+    "Name": "Upload Case Files",
+    "Description": "Upload Case Files",
+    "DisplayOrder": 14,
+    "PreConditionState(s)": "prepareForHearing",
+    "PostConditionState": "prepareForHearing",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/upload-contested-case-documents",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_createGeneralApplication",
+    "Name": "Create General Application",
+    "Description": "Create General Application",
+    "DisplayOrder": 124,
+    "PreConditionState(s)": "applicationIssued;schedulingAndHearing;prepareForHearing;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;caseWorkerReview;gateKeepingAndAllocation;caseFileSubmitted;reviewOrder;awaitingJudiciaryResponse;close;orderSent",
+    "PostConditionState": "generalApplication",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/start-general-application",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-application",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_generalApplicationReferToJudge",
+    "Name": "Refer to Judge (Application)",
+    "Description": "Refer to Judge (Application)",
+    "DisplayOrder": 125,
+    "PreConditionState(s)": "generalApplication",
+    "PostConditionState": "generalApplicationAwaitingJudiciaryResponse",
+    "SecurityClassification": "Public",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-application-refer-to-judge",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_GeneralApplicationOutcome",
+    "Name": "General Application Outcome",
+    "Description": "General Application Outcome",
+    "DisplayOrder": 125,
+    "PreConditionState(s)": "generalApplicationAwaitingJudiciaryResponse",
+    "PostConditionState": "generalApplicationOutcome",
+    "SecurityClassification": "Public",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-application-outcome",
+    "ShowEventNotes": "Y"
   }
 ]

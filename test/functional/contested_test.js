@@ -1,6 +1,6 @@
 const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
 const verifyTabText = require('../data/verify-contested-tab-data.json');
-// const verifyContestedPaperTabText = require('../data/verify-contested-paper-case-tab-data.json');
+const verifyContestedPaperTabText = require('../data/verify-contested-paper-case-tab-data.json');
 
 // eslint-disable max-len
 
@@ -77,7 +77,7 @@ Scenario('Consented case in Contested Assigned to Judge@nightly @pipeline', asyn
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEvent);
+    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEndState);
     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
   }
@@ -92,7 +92,24 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    // I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
+    I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
+  }
+});
+
+Scenario('Contested case with General Application @nightly @pipeline', async I => {
+  const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  /* eslint-disable */
+  const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+  const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+  const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+  const createGeneralApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_createGeneralApplication', './test/data/ccd-contested-general-applicaition.json');
+  /* eslint-enable */
+  if (nightlyTest === 'true') {
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    // eslint-disable-next-line max-len
+    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.createGeneralApplicationEvent, verifyTabText.historyTab.createGeneralApplicationState);
+    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 });
 

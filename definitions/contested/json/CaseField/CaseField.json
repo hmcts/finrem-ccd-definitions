@@ -1459,6 +1459,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationLabel",
+    "Label": "## General Application",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadCaseDocument",
     "Label": "                                                                                      ",
     "FieldType": "Collection",
@@ -1585,7 +1593,7 @@
     "ID": "generalOrders",
     "Label": "General Order",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ct_genaralOrder",
+    "FieldTypeParameter": "FR_ct_generalOrder",
     "SecurityClassification": "Public"
   },
   {
@@ -1594,7 +1602,7 @@
     "ID": "generalOrdersConsent",
     "Label": "General Order (consent)",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ct_genaralOrder",
+    "FieldTypeParameter": "FR_ct_generalOrder",
     "SecurityClassification": "Public"
   },
   {
@@ -2801,6 +2809,229 @@
     "Label": "Online Form A",
     "HintText": "Online Form A",
     "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bulkPrintCoverSheetRes",
+    "Label": "Bulk Print Cover Sheet For Respondent / Solicitor",
+    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bulkPrintLetterIdRes",
+    "Label": "Bulk Print LetterId For Respondent / Solicitor",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bulkPrintCoverSheetApp",
+    "Label": "Bulk Print Cover Sheet For Applicant / Solicitor",
+    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bulkPrintLetterIdApp",
+    "Label": "Bulk Print LetterId For Applicant / Solicitor",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appCorrespondenceCollection",
+    "Label": "Correspondence",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appFRFormsCollection",
+    "Label": "FR Forms",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appEvidenceCollection",
+    "Label": "Evidence In Support",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appTrialBundleCollection",
+    "Label": "Trial Bundle",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respCorrespondenceCollection",
+    "Label": "Correspondence",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respFRFormsCollection",
+    "Label": "FR Forms",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respEvidenceCollection",
+    "Label": "Evidence In Support",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respTrialBundleCollection",
+    "Label": "Trial Bundle",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "Label": "Application received from",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationCreatedBy",
+    "FieldType": "Text",
+    "Label": "Application created by",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationHearingRequired",
+    "FieldType": "YesOrNo",
+    "Label": "Is a hearing required?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationTimeEstimate",
+    "FieldType": "Text",
+    "Label": "Time estimate",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationSpecialMeasures",
+    "FieldType": "Text",
+    "Label": "Special measures",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDocument",
+    "FieldType": "Document",
+    "Label": "Upload General Application",
+    "HintText": "Please upload a copy of the Application",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationLatestDocument",
+    "FieldType": "Document",
+    "Label": "Latest General Application",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDraftOrder",
+    "FieldType": "Document",
+    "Label": "Upload Draft Order",
+    "HintText": "Please upload a copy of the draft order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationLatestDocumentDate",
+    "FieldType": "Date",
+    "Label": "Latest General Application Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_generalApplicationCollection",
+    "Label": "General Application Collection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationPreState",
+    "FieldType": "Text",
+    "Label": "General Application Pre State",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationReferToJudgeEmail",
+    "FieldType": "Email",
+    "Label": "Judge's email address",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationOutcome",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_generalApplicationOutcome",
+    "Label": "General Application Outcome",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationOutcomeOther",
+    "FieldType": "Text",
+    "Label": "Please Specify",
     "SecurityClassification": "Public"
   }
 ]
