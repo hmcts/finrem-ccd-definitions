@@ -14,5 +14,13 @@
     "Label": "Was the application made on paper?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "ApplicantOrganisationPolicy",
+    "Label": "Applicant Organisation Policy",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
   }
 ]

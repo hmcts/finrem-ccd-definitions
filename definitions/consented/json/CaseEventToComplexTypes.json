@@ -2,6 +2,17 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_orderRefusal",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "OrgPolicyCaseAssignedRole",
+    "DefaultValue": "[APPSOLICITOR]",
+    "EventElementLabel": "Applicant Organisation Policy",
+    "FieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
     "CaseEventID": "FR_orderRefusal",
     "CaseFieldID": "orderRefusalCollection",
     "ListElementCode": "orderRefusalAfterText",
