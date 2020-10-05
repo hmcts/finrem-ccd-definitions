@@ -44,23 +44,26 @@ async function getUserToken(username, password) {
   const code = JSON.parse(codeResponse).code;
 
   const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${code}`;
-  /*var authTokenResponse;
+  var authTokenResponse;
   retryCount = 0;
   statusCode = 400;
   do {
       authTokenResponse = await request.post({
-        uri: idamBaseUrl + idamAuthPath,
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-      });
+          uri: idamBaseUrl + idamAuthPath,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+          },
+         function (error, response, body) {
+               statusCode = response.statusCode;
+         }
+      ).catch(error => {
+               console.log(error);
+             });
       if(retryCount > 1) {
               logger.info("retrying idam token response " + retryCount);
       }
       retryCount++;
-  } while (retryCount <= 3 && statusCode > 300);*/
-  const authTokenResponse = await request.post({
-      uri: idamBaseUrl + idamAuthPath,
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-    });
+  } while (retryCount <= 3 && statusCode > 300);
+
   logger.info('authTokenResponse: '+authTokenResponse);
   logger.debug(JSON.parse(authTokenResponse).access_token);
 
