@@ -3,49 +3,57 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "periodicalPaymentOrder",
-    "ListElement": "Periodical Payment Order"
+    "ListElement": "Periodical Payment Order",
+    "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "Lump Sum Order",
-    "ListElement": "Lump Sum Order"
+    "ListElement": "Lump Sum Order",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "Pension Sharing Order",
-    "ListElement": "Pension Sharing Order"
+    "ListElement": "Pension Sharing Order",
+    "DisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "Pension Attachment Order",
-    "ListElement": "Pension Attachment Order"
+    "ListElement": "Pension Attachment Order",
+    "DisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "Pension Compensation Sharing Order",
-    "ListElement": "Pension Compensation Sharing Order"
+    "ListElement": "Pension Compensation Sharing Order",
+    "DisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "Pension Compensation Attachment Order",
-    "ListElement": "Pension Compensation Attachment Order"
+    "ListElement": "Pension Compensation Attachment Order",
+    "DisplayOrder": 8
   },
     {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "A settlement or a transfer of property",
-    "ListElement": "A settlement or a transfer of property for the benefit of the child(ren)"
+    "ListElement": "A settlement or a transfer of property for the benefit of the child(ren)",
+    "DisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "propertyAdjustmentOrder",
-    "ListElement": "Property Adjustment Order"
+    "ListElement": "Property Adjustment Order",
+    "DisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1950,5 +1958,26 @@
     "ListElementCode": "other",
     "ListElement": "Other",
     "DisplayOrder": 21
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_generalApplicationOutcome",
+    "ListElementCode": "Approved",
+    "ListElement": "Approved",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_generalApplicationOutcome",
+    "ListElementCode": "Not Approved",
+    "ListElement": "Not Approved",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_generalApplicationOutcome",
+    "ListElementCode": "Other",
+    "ListElement": "Other (e.g. list for hearing)",
+    "DisplayOrder": 3
   }
 ]
