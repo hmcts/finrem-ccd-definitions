@@ -704,6 +704,7 @@
     "DisplayOrder": 116,
     "PreConditionState(s)": "consentedOrderSubmitted;responseReceived",
     "PostConditionState": "awaitingJudiciaryResponseConsent",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge-consent-in-contested",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
