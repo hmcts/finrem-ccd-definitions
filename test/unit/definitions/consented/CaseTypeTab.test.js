@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const assert = require('chai').assert;
 const { uniq, uniqWith, map, filter } = require('lodash');
 
-const caseTypeTab = Object.assign(require('definitions/consented/json/CaseTypeTab'), {});
+const caseTypeTab = Object.assign(require('definitions/consented/json/CaseTypeTab/CaseTypeTab.json'), {});
 const caseField = Object.assign(require('definitions/consented/json/CaseField/CaseField'), []);
 const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField/CaseField-common'), []);
 const caseFieldAll = caseField.concat(caseFieldCommon);
