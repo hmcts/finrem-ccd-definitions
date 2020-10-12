@@ -6533,21 +6533,14 @@
   {
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantLName",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "16/03/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respondentLName",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "appRespondentLName",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "dueDate",
     "UserRole": "caseworker-caa",
     "CRUD": "CRU"
   },
