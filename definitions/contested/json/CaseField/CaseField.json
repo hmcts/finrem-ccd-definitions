@@ -3055,7 +3055,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirectionsHearingTime",
     "FieldType": "Text",
-    "Label": "#### Hearing Time",
+    "Label": "  ",
     "SecurityClassification": "Public"
   },
   {
@@ -3276,6 +3276,14 @@
     "ID": "generalApplicationDirectionsTextFromJudge",
     "FieldType": "TextArea",
     "Label": "Directions from the Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsDocument",
+    "FieldType": "Document",
+    "Label": "Hearing / no hearing document",
     "SecurityClassification": "Public"
   }
 ]
