@@ -3055,6 +3055,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirectionsHearingTime",
     "FieldType": "Text",
+    "Label": "#### Hearing Time",
     "SecurityClassification": "Public"
   },
   {
@@ -3232,7 +3233,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirectionsAdditionalInformation",
     "FieldType": "TextArea",
-    "Label": "Additional information about the hearing",
+    "Label": "  ",
     "SecurityClassification": "Public"
   },
   {
