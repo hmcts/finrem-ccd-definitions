@@ -22,5 +22,13 @@
     "Label": "Applicant Organisation Policy",
     "FieldType": "OrganisationPolicy",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "rOrgPolicy",
+    "Label": "Respondent Organisation Policy",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
   }
 ]
