@@ -46,6 +46,18 @@
     "ID": "FR_solicitorCreate",
     "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "rOrgPolicy",
+    "ListElementCode": "OrgPolicyCaseAssignedRole",
+    "DefaultValue": "[RESPSOLICITOR]",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_solicitorCreate",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "rOrgPolicy",
     "ListElementCode": "Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
@@ -60,18 +72,6 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_solicitorCreate",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "rOrgPolicy",
-    "ListElementCode": "OrgPolicyCaseAssignedRole",
-    "DefaultValue": "[RESPSOLICITOR]",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {
     "LiveFrom": "05/08/2020",
