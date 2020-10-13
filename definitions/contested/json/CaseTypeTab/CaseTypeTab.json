@@ -149,7 +149,7 @@
     "TabID": "applicantDetailsTab",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantSolicitorAddressLabel",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
     "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -159,7 +159,7 @@
     "TabID": "applicantDetailsTab",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantSolicitorAddress",
+    "CaseFieldID": "applicantSolicitorAddressLabel",
     "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -169,7 +169,7 @@
     "TabID": "applicantDetailsTab",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantSolicitorPhone",
+    "CaseFieldID": "applicantSolicitorAddress",
     "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -179,7 +179,7 @@
     "TabID": "applicantDetailsTab",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantSolicitorEmail",
+    "CaseFieldID": "applicantSolicitorPhone",
     "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -189,7 +189,7 @@
     "TabID": "applicantDetailsTab",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantSolicitorDXnumber",
+    "CaseFieldID": "applicantSolicitorEmail",
     "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -199,7 +199,7 @@
     "TabID": "applicantDetailsTab",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantSolicitorConsentForEmails",
+    "CaseFieldID": "applicantSolicitorDXnumber",
     "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -209,8 +209,18 @@
     "TabID": "applicantDetailsTab",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "paperApplication",
+    "CaseFieldID": "applicantSolicitorConsentForEmails",
     "TabFieldDisplayOrder": 21,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "paperApplication",
+    "TabFieldDisplayOrder": 22,
     "FieldShowCondition": "paperApplication=\"Yes\""
   },
   {
