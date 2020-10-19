@@ -1,10 +1,21 @@
 tags:
-  ccd-idam-pr: true
+  fr-ccd-stack: true
 
 nodejs:
   # Don't modify below here
   image: ${IMAGE_NAME}
   ingressHost: ${SERVICE_FQDN}
+
+idam-pr:
+  releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
+  enabled: true
+  redirect_uris:
+    CCD:
+      - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
+    CCD Admin:
+      - https://admin-web-${SERVICE_FQDN}/oauth2redirect
+    XUI:
+      - https://xui-${SERVICE_FQDN}/oauth2/callback
 
 xui-webapp:
   enabled: true
@@ -15,10 +26,10 @@ xui-webapp:
     ingressHost: xui-${SERVICE_FQDN}
     environment:
       HEALTH_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}/health
-      HEALTH_CCD_DATA_API: http://${SERVICE_NAME}-ccd-data-store-api/health
+      HEALTH_CCD_DATA_API: http://ccd-data-store-api-${SERVICE_FQDN}/health
       HEALTH_TERMS_AND_CONDITIONS_API: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal/health
       SERVICES_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}
-      SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
+      SERVICES_CCD_DATA_STORE_API: http://ccd-data-store-api-${SERVICE_FQDN}
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
       JURISDICTIONS: DIVORCE
 
@@ -49,14 +60,6 @@ ccd:
     postgresUsername: hmcts
     postgresPassword: hmcts
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-
-  idam-pr:
-    releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
-    redirect_uris:
-      CCD:
-        - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
-      CCD Admin:
-        - https://admin-web-${SERVICE_FQDN}/oauth2redirect
 
   ccd-user-profile-api:
     java:

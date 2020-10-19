@@ -6,8 +6,12 @@ dependencies:
     version: ~4.3.2
     repository: '@hmctspublic'
     tags:
-      - ccd-idam-pr
+      - fr-ccd-stack
   - name: xui-webapp
     version: ~0.2.1
     repository: '@hmctspublic'
     condition: xui-webapp.enabled
+  - name: idam-pr
+    version: 2.2.6
+    repository: '@hmctspublic'
+    condition: idam-pr.enabled
