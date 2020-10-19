@@ -1,8 +1,7 @@
 const { Logger } = require('@hmcts/nodejs-logging');
-const requestModule = require('request-promise-native');
+const request = require('request-promise-native');
 const date = require('moment');
 
-const request = requestModule.defaults({ proxy: 'http://proxyout.reform.hmcts.net:8080' });
 const fs = require('fs');
 
 const logger = Logger.getLogger('helpers/utils.js');
