@@ -1841,7 +1841,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "hearingTimeLabel",
+    "CaseFieldID": "hearingType",
     "TabFieldDisplayOrder": 9
   },
   {
@@ -1850,7 +1850,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "hearingTime",
+    "CaseFieldID": "hearingTimeLabel",
     "TabFieldDisplayOrder": 10
   },
   {
@@ -1859,7 +1859,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "chooseCourtLabelSL",
+    "CaseFieldID": "hearingTime",
     "TabFieldDisplayOrder": 11
   },
   {
@@ -1868,7 +1868,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "regionList",
+    "CaseFieldID": "chooseCourtLabelSL",
     "TabFieldDisplayOrder": 12
   },
   {
@@ -1877,8 +1877,17 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
+    "CaseFieldID": "regionList",
+    "TabFieldDisplayOrder": 13
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
     "CaseFieldID": "midlandsFRCList",
-    "TabFieldDisplayOrder": 13,
+    "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "regionList=\"midlands\""
   },
   {
@@ -1888,7 +1897,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "nottinghamCourtList",
-    "TabFieldDisplayOrder": 14,
+    "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
@@ -1898,7 +1907,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "cfcCourtList",
-    "TabFieldDisplayOrder": 15,
+    "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"cfc\""
   },
   {
@@ -1908,7 +1917,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "londonFRCList",
-    "TabFieldDisplayOrder": 16,
+    "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "regionList=\"london\""
   },
   {
@@ -1918,7 +1927,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWestFRCList",
-    "TabFieldDisplayOrder": 17,
+    "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "regionList=\"northwest\""
   },
   {
@@ -1928,7 +1937,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "northEastFRCList",
-    "TabFieldDisplayOrder": 18,
+    "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "regionList=\"northeast\""
   },
   {
@@ -1938,7 +1947,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "southEastFRCList",
-    "TabFieldDisplayOrder": 19,
+    "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "regionList=\"southeast\""
   },
   {
@@ -1948,7 +1957,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "walesFRCList",
-    "TabFieldDisplayOrder": 20,
+    "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "regionList=\"wales\""
   },
   {
@@ -1958,7 +1967,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "birminghamCourtList",
-    "TabFieldDisplayOrder": 21,
+    "TabFieldDisplayOrder": 22,
     "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
@@ -1968,7 +1977,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "liverpoolCourtList",
-    "TabFieldDisplayOrder": 22,
+    "TabFieldDisplayOrder": 23,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
@@ -1978,7 +1987,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "manchesterCourtList",
-    "TabFieldDisplayOrder": 23,
+    "TabFieldDisplayOrder": 24,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
@@ -1988,7 +1997,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "cleavelandCourtList",
-    "TabFieldDisplayOrder": 24,
+    "TabFieldDisplayOrder": 25,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
   },
   {
@@ -1998,7 +2007,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "nwyorkshireCourtList",
-    "TabFieldDisplayOrder": 25,
+    "TabFieldDisplayOrder": 26,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
@@ -2008,7 +2017,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "humberCourtList",
-    "TabFieldDisplayOrder": 26,
+    "TabFieldDisplayOrder": 27,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
@@ -2018,7 +2027,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "kentSurreyCourtList",
-    "TabFieldDisplayOrder": 27,
+    "TabFieldDisplayOrder": 28,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
   },
   {
@@ -2028,7 +2037,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "newportCourtList",
-    "TabFieldDisplayOrder": 28,
+    "TabFieldDisplayOrder": 29,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
@@ -2038,7 +2047,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "swanseaCourtList",
-    "TabFieldDisplayOrder": 29,
+    "TabFieldDisplayOrder": 30,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
@@ -2048,15 +2057,6 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalInformationAboutHearingLabel",
-    "TabFieldDisplayOrder": 30
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTab",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalInformationAboutHearing",
     "TabFieldDisplayOrder": 31
   },
   {
@@ -2065,7 +2065,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "specialMeasuresPostHearingLbl",
+    "CaseFieldID": "additionalInformationAboutHearing",
     "TabFieldDisplayOrder": 32
   },
   {
@@ -2074,7 +2074,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
+    "CaseFieldID": "specialMeasuresPostHearingLbl",
     "TabFieldDisplayOrder": 33
   },
   {
@@ -2083,7 +2083,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithAssistance",
+    "CaseFieldID": "attendingCourtWithAssistanceLabel",
     "TabFieldDisplayOrder": 34
   },
   {
@@ -2092,7 +2092,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
+    "CaseFieldID": "attendingCourtWithAssistance",
     "TabFieldDisplayOrder": 35
   },
   {
@@ -2101,7 +2101,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithArrangement",
+    "CaseFieldID": "attendingCourtWithArrangementLabel",
     "TabFieldDisplayOrder": 36
   },
   {
@@ -2110,7 +2110,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "draftDirectionDetailsCollectionRO",
+    "CaseFieldID": "attendingCourtWithArrangement",
     "TabFieldDisplayOrder": 37
   },
   {
@@ -2119,7 +2119,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "directionDetailsCollection",
+    "CaseFieldID": "draftDirectionDetailsCollectionRO",
     "TabFieldDisplayOrder": 38
   },
   {
@@ -2128,8 +2128,26 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "finalOrderCollection",
+    "CaseFieldID": "directionDetailsCollection",
     "TabFieldDisplayOrder": 39
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "finalOrderCollection",
+    "TabFieldDisplayOrder": 40
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "additionalHearingDocuments",
+    "TabFieldDisplayOrder": 41
   },
   {
     "LiveFrom": "01/01/2017",

@@ -1211,6 +1211,24 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalHearingDocuments",
+    "Label": "Additional Hearing Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_AdditionalHearingCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingType",
+    "Label": "Type of Hearing",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_hearingTypeDirections",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "timeEstimateLabel",
     "Label": "#### Time Estimate",
     "FieldType": "Label",
