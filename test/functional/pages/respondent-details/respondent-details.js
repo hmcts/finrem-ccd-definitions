@@ -4,6 +4,10 @@ function respondentSolicitorDetailsDetails(I) {
   I.fillField('input[id="rSolicitorName"]', 'ResSol');
   I.fillField('input[id="rSolicitorFirm"]', 'MahFirm');
   I.fillField('input[id="rSolicitorReference"]', 'MahSol73');
+  I.fillField('input[id="RespondentOrganisationPolicy_Organisation_OrganisationID"]', 'repondFirmxyz');
+  I.fillField('input[id="RespondentOrganisationPolicy_Organisation_OrganisationName"]', 'resp baker');
+  I.fillField('input[id="RespondentOrganisationPolicy_OrgPolicyCaseAssignedRole"]', 'respondent solicitor');
+  I.fillField('input[id="RespondentOrganisationPolicy_OrgPolicyReference"]', 'res-sox');
   I.fillField('Enter a UK postcode', 'TW3 1SS');
   I.click('Find address');
   I.wait('5');
