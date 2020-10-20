@@ -64,6 +64,7 @@ ccd:
   ccd-user-profile-api:
     java:
       imagePullPolicy: Always
+      image: hmctspublic.azurecr.io/ccd/user-profile-api:pr-322-64f3761d
       enviroment:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
       keyVaults: []
@@ -74,6 +75,7 @@ ccd:
   ccd-data-store-api:
     java:
       imagePullPolicy: Always
+      image: hmctspublic.azurecr.io/ccd/data-store-api:pr-1172-cd973ce9
       environment:
         DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
@@ -83,6 +85,7 @@ ccd:
 
   ccd-case-print-service:
     nodejs:
+      image: hmctspublic.azurecr.io/ccd/case-print-service:pr-256-b338fd11
       environment:
         IDAM_PRINT_SERVICE_KEY: ${PRINT_S2S_KEY}
       ingressHost: ccd-case-print-service-${SERVICE_FQDN}
@@ -90,6 +93,7 @@ ccd:
   ccd-definition-store-api:
     java:
       imagePullPolicy: Always
+      image: hmctspublic.azurecr.io/ccd/definition-store-api:pr-759-ef6c314d
       keyVaults: []
       environment:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
@@ -126,6 +130,7 @@ ccd:
   ccd-api-gateway-web:
     nodejs:
       keyVaults: []
+      image: hmctspublic.azurecr.io/ccd/api-gateway-web:pr-352-15c7eb58
       environment:
         IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
         IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
