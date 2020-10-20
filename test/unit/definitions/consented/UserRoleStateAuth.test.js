@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const { differenceWith } = require('lodash');
 
 const CaseType = Object.assign(require('definitions/consented/json/CaseType'), []);
-const AuthorisationCaseType = Object.assign(require('definitions/consented/json/AuthorisationCaseType'), []);
+const AuthorisationCaseType = Object.assign(require('definitions/consented/json/AuthorisationCaseType/AuthorisationCaseType.json'), []);
 const State = Object.assign(require('definitions/consented/json/State'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/consented/json/AuthorisationCaseState/AuthorisationCaseState'), []);
 
