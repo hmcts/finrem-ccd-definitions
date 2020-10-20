@@ -15,7 +15,7 @@ idam-pr:
     CCD Admin:
       - https://admin-web-${SERVICE_FQDN}/oauth2redirect
     XUI:
-      - https://xui-${SERVICE_FQDN}/oauth2redirect
+      - https://xui-${SERVICE_FQDN}/oauth2/callback
 
 xui-webapp:
   enabled: true
