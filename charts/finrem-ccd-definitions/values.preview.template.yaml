@@ -22,7 +22,7 @@ xui-webapp:
   nodejs:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-xui-webapp
-    image: hmctspublic.azurecr.io/xui/webapp:pr-665-66931e32
+    image: hmctspublic.azurecr.io/xui/webapp:pr-665-263b36bf
     ingressHost: xui-${SERVICE_FQDN}
     environment:
       HEALTH_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}/health
@@ -75,7 +75,7 @@ ccd:
   ccd-data-store-api:
     java:
       imagePullPolicy: Always
-      image: hmctspublic.azurecr.io/ccd/data-store-api:pr-1172-cd973ce9
+      image: hmctspublic.azurecr.io/ccd/data-store-api:pr-1172-705fe2b1
       environment:
         DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
@@ -93,7 +93,7 @@ ccd:
   ccd-definition-store-api:
     java:
       imagePullPolicy: Always
-      image: hmctspublic.azurecr.io/ccd/definition-store-api:pr-759-ef6c314d
+      image: hmctspublic.azurecr.io/ccd/definition-store-api:pr-759-34549dd7
       keyVaults: []
       environment:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
