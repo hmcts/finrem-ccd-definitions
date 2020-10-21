@@ -17,19 +17,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "FR_dataMigration",
-    "Name": "Data Migration",
-    "Description": "Data Migration",
-    "DisplayOrder": 102,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
-    "PostConditionState": "*",
-    "SecurityClassification": "Public",
-    "ShowSummary": "N",
-    "ShowEventNotes": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_caseNotes",
     "Name": "Add Note",
     "Description": "Add Note",
@@ -268,7 +255,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "FR_paymenetMadeFromHWF",
+    "ID": "FR_paymentMadeFromHWF",
     "Name": "Fee Account Debited",
     "Description": "Fee Account Debited",
     "DisplayOrder": 7,
@@ -320,7 +307,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "FR_paymenetMadeFromAwaitingPayment",
+    "ID": "FR_paymentMadeFromAwaitingPayment",
     "Name": "Fee Account Debited",
     "Description": "Fee Account Debited",
     "DisplayOrder": 11,
