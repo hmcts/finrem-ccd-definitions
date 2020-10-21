@@ -480,6 +480,14 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalDate",
+    "FieldType": "Date",
+    "ElementLabel": "Date of order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
     "ListElementCode": "orderRefusalAddComments",
     "FieldType": "TextArea",
     "ElementLabel": "Additional comments",
