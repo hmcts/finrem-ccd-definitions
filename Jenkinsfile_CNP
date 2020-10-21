@@ -67,9 +67,11 @@ withPipeline("nodejs", product, component) {
 
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
       yarnBuilder.yarn('generate-excel-aat-consented')
+      yarnBuilder.yarn('generate-excel-demo-consented')
     }
     stageWithAgent('Generate Financial Remedy Contested Case config', product) {
       yarnBuilder.yarn('generate-excel-aat-contested')
+      yarnBuilder.yarn('generate-excel-demo-contested')
     }
 
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
