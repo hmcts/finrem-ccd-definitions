@@ -30,7 +30,7 @@ The generated excel files will be in `defintions/consented/xlsx` or `defintions/
 yarn generate-bulk-excel-(local/demo/aat/ithc/prod)
 ```
 
-E.g.:
+E.g.: 
 `yarn generate-excel-aat-consented`
 or
 `yarn generate-excel-aat-contested`
