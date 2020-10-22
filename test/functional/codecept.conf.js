@@ -12,7 +12,7 @@ exports.config = {
         ignoreHTTPSErrors: true,
         args: [
           '--no-sandbox',
-          '--start-fullscreen',
+          '--start-fullscreen'
         ]
       }
     }

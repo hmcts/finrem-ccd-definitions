@@ -63,7 +63,7 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 2) Values for env variables can be found in Azure finrem aat key vault.
 3) `yarn test:functional` will create cases via API (runs on PR and master AAT).
 4) `yarn test:nightly-functional` will create both API, UI screen tests and verifies data in tabs (runs on nightly pipeline on AAT).
-
+5) To create cases on demo, point CCD_DATA_API_URL to ccd demo API url and RUNNING_ENV=demo, run the scenario tests.
 
 ## ccd-definition-processor
 
