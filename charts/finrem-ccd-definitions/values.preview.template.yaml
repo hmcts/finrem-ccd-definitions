@@ -121,7 +121,7 @@ ccd:
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
         IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
         ELASTIC_SEARCH_ENABLED: true
-    ELASTIC_SEARCH_NODES_DISCOVERY_ENABLED: false
+        ELASTIC_SEARCH_NODES_DISCOVERY_ENABLED: false
       keyVaults: []
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
