@@ -1,6 +1,9 @@
 tags:
   fr-ccd-stack: false
 
+elastic:
+  enabled: false
+  
 nodejs:
   # Don't modify below here
   image: ${IMAGE_NAME}
