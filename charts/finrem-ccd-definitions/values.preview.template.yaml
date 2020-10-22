@@ -124,6 +124,8 @@ ccd:
         ELASTIC_SEARCH_NODES_DISCOVERY_ENABLED: false
         ELASTIC_SEARCH_HOSTS: "{{ .Release.Name }}-es-master:9200"
         ELASTIC_SEARCH_DATA_NODES_HOSTS: "http://{{ .Release.Name }}-es-master:9200"
+        ELASTIC_SEARCH_CASE_INDEX_NAME_FORMAT: '%s_cases'
+        ELASTIC_SEARCH_CASE_INDEX_TYPE: _doc
       keyVaults: []
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
