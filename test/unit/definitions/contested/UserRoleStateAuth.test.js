@@ -5,6 +5,7 @@ const CaseType = Object.assign(require('definitions/contested/json/CaseType/Case
 const AuthorisationCaseType = Object.assign(require('definitions/contested/json/AuthorisationCaseType/AuthorisationCaseType.json'), []);
 const State = Object.assign(require('definitions/contested/json/State/State.json'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState.json'), []);
+const AuthorisationCaseStateSACNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-shareACase-nonprod.json'), []);
 
 const MINIMUM_READ_PERMISSIONS = /C?RU?D?/;
 const EXCLUDED_STATES = ['SOTAgreementPayAndSubmitRequired', 'Rejected', 'Withdrawn', 'DNisRefused', 'solicitorAwaitingPaymentConfirmation'];
@@ -44,7 +45,9 @@ describe('UserRole authorisations for CaseState', () => {
     // ensure each role has auth 'R' minimum
     CaseType.forEach(caseTypeEntry => {
       const caseType = caseTypeEntry.ID;
-      const authStatesForCaseType = AuthorisationCaseState.filter(byCaseType(caseType));
+      const AuthorisationCaseStateNonProd = AuthorisationCaseState.concat(AuthorisationCaseStateSACNonProd);
+
+      const authStatesForCaseType = AuthorisationCaseStateNonProd.filter(byCaseType(caseType));
       const authRolesForCaseType = AuthorisationCaseType.filter(byCaseType(caseType));
       const statesForCaseType = State.filter(byCaseType(caseType));
 
