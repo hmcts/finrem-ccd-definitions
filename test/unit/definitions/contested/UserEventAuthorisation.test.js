@@ -59,7 +59,8 @@ function getAuthStateForUserRole(state, userRole, caseType) {
   };
 }
 
-function checkAuthStateConfig(conditionState, allAuthForEvent, caseType, eventName, acceptedPermissions, authorisationCaseStateAll) {
+function checkAuthStateConfig(conditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
+  authorisationCaseStateAll) {
   allAuthForEvent.forEach(authEventEntry => {
     const userRole = authEventEntry.UserRole;
     const conditionAuthState = authorisationCaseStateAll.filter(
@@ -122,7 +123,8 @@ describe('Events authorisation validation', () => {
 
       preConditionStates.forEach(preConditionState => {
         if (preConditionState && preConditionState !== '*') {
-          checkAuthStateConfig(preConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions, AuthorisationCaseStateNonProd);
+          checkAuthStateConfig(preConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
+            AuthorisationCaseStateNonProd);
         }
       });
     });
@@ -139,7 +141,8 @@ describe('Events authorisation validation', () => {
 
       preConditionStates.forEach(preConditionState => {
         if (preConditionState && preConditionState !== '*') {
-          checkAuthStateConfig(preConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions, AuthorisationCaseStateProd);
+          checkAuthStateConfig(preConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
+            AuthorisationCaseStateProd);
         }
       });
     });
@@ -154,7 +157,8 @@ describe('Events authorisation validation', () => {
       const allAuthForEvent = AuthCaseEventsActive.filter(getEventsForEventName(eventName, caseType));
 
       if (postConditionState && postConditionState !== '*') {
-        checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions, AuthorisationCaseStateNonProd);
+        checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
+          AuthorisationCaseStateNonProd);
       }
     });
   });
@@ -168,7 +172,8 @@ describe('Events authorisation validation', () => {
       const allAuthForEvent = AuthCaseEventsActive.filter(getEventsForEventName(eventName, caseType));
 
       if (postConditionState && postConditionState !== '*') {
-        checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions, AuthorisationCaseStateProd);
+        checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
+          AuthorisationCaseStateProd);
       }
     });
   });
@@ -183,7 +188,8 @@ describe('Events authorisation validation', () => {
       const allAuthForEvent = AuthCaseEventsActive.filter(getEventsForEventName(eventName, caseType));
 
       if (!preConditionState && postConditionState && postConditionState !== '*') {
-        checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions, AuthorisationCaseStateNonProd);
+        checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
+          AuthorisationCaseStateNonProd);
       }
     });
   });
@@ -198,7 +204,8 @@ describe('Events authorisation validation', () => {
       const allAuthForEvent = AuthCaseEventsActive.filter(getEventsForEventName(eventName, caseType));
 
       if (!preConditionState && postConditionState && postConditionState !== '*') {
-        checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions, AuthorisationCaseStateProd);
+        checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
+          AuthorisationCaseStateProd);
       }
     });
   });
