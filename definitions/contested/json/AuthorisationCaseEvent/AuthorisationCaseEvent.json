@@ -9,314 +9,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_applicationPaymentSubmission",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_awaitingPaymentResponseFromHWF",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_HWFDecisionMade",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_HWFDecisionMadeFromAwaitingPayment",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_HWFFeeAccountDebited",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_HWFFeeAccountDebitedFromAwaitingPayment",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_manualPayment",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_issueApplication",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_allocateToJudge",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_progressToSchedulingAndListing",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_giveAllocationDirections",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_addSchedulingListingInfo",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_submitUploadedCaseFiles",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendApplication",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_assignToJudge",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_generalOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_applicationNotApproved",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_approveApplication",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadConsentOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_returnTogateKeepingAndAllocation",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_returnToschedulingAndHearing",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_returnToprepareForHearing",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_returnToCaseFileSubmitted",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_caseNotes",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendCase",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_updateContactDetails",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_refund",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadGeneralDocument",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadGeneralDocument",
-    "UserRole": "[RESPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_close",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_judgeToDraftOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorToDraftOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorDraftDirectionOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorDraftDirectionOrder",
-    "UserRole": "[RESPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_draftOrderNotApproved",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_sendRefusalReason",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_draftOrderApproved",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_directionOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_sendOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_prepareForHearing",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_consentSendOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CR"
@@ -994,20 +686,6 @@
     "CRUD": "CR"
   },
   {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "createCase",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "attachScannedDocsWithOcr",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_generalLetter",
@@ -1045,13 +723,6 @@
   {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_consentOrderAssignJudge",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrderApproved",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CR"
@@ -1066,13 +737,6 @@
   {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_consentOrderApproved",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrderNotApproved",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CR"
@@ -1082,13 +746,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrderNotApproved",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_consentOrderNotApproved",
-    "UserRole": "[APPSOLICITOR]",
     "CRUD": "R"
   },
   {
@@ -1106,13 +763,6 @@
     "CRUD": "R"
   },
   {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_assignToJudgeConsent",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_generalOrderConsent",
@@ -1125,20 +775,6 @@
     "CaseEventID": "FR_generalOrderConsent",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_generalOrderConsent",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_respondToConsentOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
   },
   {
     "LiveFrom": "13/12/2019",
@@ -1160,13 +796,6 @@
     "CaseEventID": "FR_newPaperCase",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_newPaperCase",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1181,13 +810,6 @@
     "CaseEventID": "FR_generalApplicationReferToJudge",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_generalApplicationReferToJudge",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
