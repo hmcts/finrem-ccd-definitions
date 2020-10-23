@@ -6,7 +6,8 @@ const AuthorisationCaseField = Object.assign(require('definitions/contested/json
 const AuthorisationCaseState = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState.json'), []);
 const AuthorisationCaseStateSACNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-shareACase-nonprod.json'), []);
 const AuthorisationCaseStateSACProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-shareACase-prod.json'), []);
-const AuthorisationCaseStateAll = AuthorisationCaseState.concat(AuthorisationCaseStateSACProd).concat(AuthorisationCaseStateSACNonProd);
+const AuthorisationCaseStateAll = AuthorisationCaseState
+  .concat(AuthorisationCaseStateSACProd).concat(AuthorisationCaseStateSACNonProd);
 const CaseEvent = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent'), []);
 const CaseEventToFields = Object.assign(require('definitions/contested/json/CaseEventToFields/CaseEventToFields'), []);
 
@@ -58,7 +59,7 @@ function getAuthStateForUserRole(state, userRole, caseType) {
   };
 }
 
-function checkAuthStateConfig(conditionState, allAuthForEvent, caseType, eventName, acceptedPermissions) {  
+function checkAuthStateConfig(conditionState, allAuthForEvent, caseType, eventName, acceptedPermissions) {
   allAuthForEvent.forEach(authEventEntry => {
     const userRole = authEventEntry.UserRole;
     const conditionAuthState = AuthorisationCaseStateAll.filter(
