@@ -3,9 +3,13 @@ const { differenceWith } = require('lodash');
 
 const CaseType = Object.assign(require('definitions/contested/json/CaseType/CaseType.json'), []);
 const AuthorisationCaseType = Object.assign(require('definitions/contested/json/AuthorisationCaseType/AuthorisationCaseType.json'), []);
+const AuthorisationCaseTypeSACNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseType/AuthorisationCaseType-shareACase-nonprod.json'), []);
 const State = Object.assign(require('definitions/contested/json/State/State.json'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState.json'), []);
 const AuthorisationCaseStateSACNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-shareACase-nonprod.json'), []);
+const AuthorisationCaseStateSACProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-shareACase-prod.json'), []);
+const AuthorisationCaseStateAll = AuthorisationCaseState.concat(AuthorisationCaseStateSACProd).concat(AuthorisationCaseStateSACNonProd);
+const AuthorisationCaseTypeAll = AuthorisationCaseType.concat(AuthorisationCaseTypeSACNonProd);
 
 const MINIMUM_READ_PERMISSIONS = /C?RU?D?/;
 const EXCLUDED_STATES = ['SOTAgreementPayAndSubmitRequired', 'Rejected', 'Withdrawn', 'DNisRefused', 'solicitorAwaitingPaymentConfirmation'];
@@ -45,10 +49,8 @@ describe('UserRole authorisations for CaseState', () => {
     // ensure each role has auth 'R' minimum
     CaseType.forEach(caseTypeEntry => {
       const caseType = caseTypeEntry.ID;
-      const AuthorisationCaseStateNonProd = AuthorisationCaseState.concat(AuthorisationCaseStateSACNonProd);
-
-      const authStatesForCaseType = AuthorisationCaseStateNonProd.filter(byCaseType(caseType));
-      const authRolesForCaseType = AuthorisationCaseType.filter(byCaseType(caseType));
+      const authStatesForCaseType = AuthorisationCaseStateAll.filter(byCaseType(caseType));
+      const authRolesForCaseType = AuthorisationCaseTypeAll.filter(byCaseType(caseType));
       const statesForCaseType = State.filter(byCaseType(caseType));
 
       statesForCaseType.forEach(stateEntry => {
