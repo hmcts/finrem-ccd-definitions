@@ -17,13 +17,11 @@ idam-pr:
     CCD Admin:
       - https://admin-web-${SERVICE_FQDN}/oauth2redirect
 
-
 xui-webapp:
   enabled: true
   nodejs:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-xui-webapp
-    image: hmctspublic.azurecr.io/xui/webapp:pr-665-263b36bf
     ingressHost: xui-${SERVICE_FQDN}
     environment:
       HEALTH_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}/health
