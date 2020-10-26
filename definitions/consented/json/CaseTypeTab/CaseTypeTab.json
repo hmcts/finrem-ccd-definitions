@@ -209,6 +209,17 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
+    "CaseFieldID": "lancashireCourtList",
+    "TabFieldDisplayOrder": 18,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
     "CaseFieldID": "clevelandCourtList",
     "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleveland\""
@@ -264,9 +275,64 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
+    "CaseFieldID": "bedfordshireCourtList",
+    "TabFieldDisplayOrder": 23,
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "thamesvalleyCourtList",
+    "TabFieldDisplayOrder": 23,
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
     "CaseFieldID": "otherSWCourtList",
     "TabFieldDisplayOrder": 24,
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"other\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "devonCourtList",
+    "TabFieldDisplayOrder": 24,
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "dorsetCourtList",
+    "TabFieldDisplayOrder": 24,
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "bristolCourtList",
+    "TabFieldDisplayOrder": 24,
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -300,6 +366,17 @@
     "CaseFieldID": "welshOtherCourtList",
     "TabFieldDisplayOrder": 27,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"other\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "northWalesCourtList",
+    "TabFieldDisplayOrder": 27,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
   },
   {
     "LiveFrom": "01/01/2017",
