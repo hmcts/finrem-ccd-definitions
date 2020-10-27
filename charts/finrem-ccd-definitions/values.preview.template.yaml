@@ -6,6 +6,33 @@ nodejs:
   image: ${IMAGE_NAME}
   ingressHost: ${SERVICE_FQDN}
 
+idam-pr:
+  releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
+  enabled: true
+  redirect_uris:
+    XUI:
+      - https://xui-${SERVICE_FQDN}/oauth2/callback
+    CCD:
+      - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
+    CCD Admin:
+      - https://admin-web-${SERVICE_FQDN}/oauth2redirect
+
+xui-webapp:
+  enabled: true
+  nodejs:
+    imagePullPolicy: Always
+    releaseNameOverride: ${SERVICE_NAME}-xui-webapp
+    image: hmctspublic.azurecr.io/xui/webapp:latest
+    ingressHost: xui-${SERVICE_FQDN}
+    environment:
+      HEALTH_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}/health
+      HEALTH_CCD_DATA_API: http://${SERVICE_NAME}-ccd-data-store-api/health
+      HEALTH_TERMS_AND_CONDITIONS_API: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal/health
+      SERVICES_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}
+      SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
+      SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
+      JURISDICTIONS: DIVORCE
+
 ccd:
   ccd:
     definitionImporter:
@@ -33,14 +60,6 @@ ccd:
     postgresUsername: hmcts
     postgresPassword: hmcts
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-
-  idam-pr:
-    releaseNameOverride: ${SERVICE_NAME}-ccd-idam-pr
-    redirect_uris:
-      CCD:
-        - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
-      CCD Admin:
-        - https://admin-web-${SERVICE_FQDN}/oauth2redirect
 
   ccd-user-profile-api:
     java:
@@ -89,8 +108,6 @@ ccd:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
         IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
         IDAM_OAUTH2_AW_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
-    idam-pr:
-      enabled: true
 
   ccd-case-management-web:
     nodejs:
@@ -101,8 +118,6 @@ ccd:
         NODE_TLS_REJECT_UNAUTHORIZED: 0
       ingressHost: case-management-web-${SERVICE_FQDN}
       ingressIP: ${INGRESS_IP}
-    idam-pr:
-      enabled: true
 
   ccd-api-gateway-web:
     nodejs:
