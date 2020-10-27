@@ -839,6 +839,20 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_uploadCaseFilesConsentAssignedToJudge",
+    "Name": "Upload Case Files",
+    "Description": "Upload Case Files",
+    "DisplayOrder": 14,
+    "PreConditionState(s)": "generalApplicationAwaitingJudiciaryResponse",
+    "PostConditionState": "generalApplicationAwaitingJudiciaryResponse",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/upload-contested-case-documents",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_createGeneralApplication",
     "Name": "Create General Application",
     "Description": "Create General Application",
