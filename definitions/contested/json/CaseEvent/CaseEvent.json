@@ -163,9 +163,9 @@
     "DisplayOrder": 13,
     "PreConditionState(s)": "schedulingAndHearing",
     "PostConditionState": "prepareForHearing",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/hearing",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/validate-hearing",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/prepare-for-hearing",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-scheduling-and-listing-details",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
