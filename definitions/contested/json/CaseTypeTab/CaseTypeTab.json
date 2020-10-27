@@ -848,7 +848,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalEmailCollection",
+    "CaseFieldID": "hearingOrderOtherDocuments",
     "TabFieldDisplayOrder": 16
   },
   {
@@ -857,7 +857,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintLetterIdRes",
+    "CaseFieldID": "generalEmailCollection",
     "TabFieldDisplayOrder": 17
   },
   {
@@ -866,7 +866,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintCoverSheetRes",
+    "CaseFieldID": "bulkPrintLetterIdRes",
     "TabFieldDisplayOrder": 18
   },
   {
@@ -875,7 +875,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintLetterIdApp",
+    "CaseFieldID": "bulkPrintCoverSheetRes",
     "TabFieldDisplayOrder": 19
   },
   {
@@ -884,7 +884,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintCoverSheetApp",
+    "CaseFieldID": "bulkPrintLetterIdApp",
     "TabFieldDisplayOrder": 20
   },
   {
@@ -893,7 +893,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationLabel",
+    "CaseFieldID": "bulkPrintCoverSheetApp",
     "TabFieldDisplayOrder": 21
   },
   {
@@ -902,7 +902,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationLabel",
     "TabFieldDisplayOrder": 22
   },
   {
@@ -911,7 +911,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationCreatedBy",
+    "CaseFieldID": "generalApplicationReceivedFrom",
     "TabFieldDisplayOrder": 23
   },
   {
@@ -920,7 +920,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationHearingRequired",
+    "CaseFieldID": "generalApplicationCreatedBy",
     "TabFieldDisplayOrder": 24
   },
   {
@@ -929,7 +929,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationTimeEstimate",
+    "CaseFieldID": "generalApplicationHearingRequired",
     "TabFieldDisplayOrder": 25
   },
   {
@@ -938,7 +938,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationSpecialMeasures",
+    "CaseFieldID": "generalApplicationTimeEstimate",
     "TabFieldDisplayOrder": 26
   },
   {
@@ -947,7 +947,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationLatestDocument",
+    "CaseFieldID": "generalApplicationSpecialMeasures",
     "TabFieldDisplayOrder": 27
   },
   {
@@ -956,7 +956,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationLatestDocumentDate",
+    "CaseFieldID": "generalApplicationLatestDocument",
     "TabFieldDisplayOrder": 28
   },
   {
@@ -965,7 +965,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationDraftOrder",
+    "CaseFieldID": "generalApplicationLatestDocumentDate",
     "TabFieldDisplayOrder": 29
   },
   {
@@ -974,7 +974,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationCollection",
+    "CaseFieldID": "generalApplicationDraftOrder",
     "TabFieldDisplayOrder": 30
   },
   {
@@ -983,7 +983,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationOutcome",
+    "CaseFieldID": "generalApplicationCollection",
     "TabFieldDisplayOrder": 31
   },
   {
@@ -992,8 +992,17 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationOutcomeOther",
+    "CaseFieldID": "generalApplicationOutcome",
     "TabFieldDisplayOrder": 32
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicationDocumentsTab",
+    "TabLabel": "Case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "generalApplicationOutcomeOther",
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/10/2020",
@@ -1002,7 +1011,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
     "CaseFieldID": "generalApplicationDirectionsDocument",
-    "TabFieldDisplayOrder": 33
+    "TabFieldDisplayOrder": 34
   },
   {
     "LiveFrom": "01/01/2017",
