@@ -146,8 +146,6 @@ Scenario('Contested case with General Application @nightly @pipeline', async I =
 Scenario('Contested Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
-    I.wait('10');
-    I.click('Continue on this URL');
     I.wait('2');
     I.createCase('FinancialRemedyContested', 'Form A Application');
     I.contestedSolicitorCreate(solRef);

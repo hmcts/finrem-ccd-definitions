@@ -59,8 +59,6 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
 Scenario('Consent Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
-    I.waitForText('Continue on this URL', '10');
-    I.click('Continue on this URL');
     I.wait('2');
     I.createCase('FinancialRemedyMVP2', 'Consent Order Application');
     I.solicitorCreate(solRef);
