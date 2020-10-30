@@ -100,13 +100,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFilesConsentAssignedToJudgeAwaitingJudicialResponse",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_submitUploadedCaseFiles",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CR"
@@ -402,13 +395,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFilesConsentAssignedToJudgeAwaitingJudicialResponse",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CR"
   },
