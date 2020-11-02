@@ -883,7 +883,7 @@
     "Name": "Amend Final Order",
     "Description": "Amend Final Order",
     "DisplayOrder": 127,
-    "PreConditionState(s)": "consentOrderApproved",
+    "PreConditionState(s)": "consentedOrderApproved",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
