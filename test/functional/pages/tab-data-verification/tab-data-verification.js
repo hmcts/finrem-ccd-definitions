@@ -145,6 +145,7 @@ function authorisationTab(caseType, tabName) {
     break;
   }
 }
+/* eslint-disable */
 function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
   I.waitForText(tabName, '5');
@@ -164,7 +165,8 @@ function caseDocumentsTab(caseType, tabName, eventName) {
     if (eventName === verifyContestedTabText.historyTab.assignToJudgeEvent ||
          eventName === verifyContestedTabText.historyTab.consentOrderEvent ||
          eventName === verifyContestedTabText.historyTab.assignToJudgeConsentEvent ||
-         eventName === verifyContestedTabText.historyTab.createGeneralApplicationEvent) {
+         eventName === verifyContestedTabText.historyTab.createGeneralApplicationEvent ||
+         eventName === verifyContestedTabText.historyTab.submitUploadCaseFilesEvent) {
       I.see(verifyContestedTabText.caseDocumentsTab.onlineFormA);
     } else {
       I.see(verifyContestedTabText.caseDocumentsTab.draftOnlineFormA);

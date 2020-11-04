@@ -23,6 +23,8 @@ node {
                 env.PASSWORD_SOLICITOR =  az('keyvault secret show --vault-name finrem-aat --name password-solicitor --query value -o tsv').trim()
                 env.USERNAME_CASEWORKER =  az('keyvault secret show --vault-name finrem-aat --name username-caseworker --query value -o tsv').trim()
                 env.PASSWORD_CASEWORKER =  az('keyvault secret show --vault-name finrem-aat --name password-caseworker --query value -o tsv').trim()
+                env.USERNAME_JUDGE =  az('keyvault secret show --vault-name finrem-aat --name fr-judge-username --query value -o tsv').trim()
+                env.PASSWORD_JUDGE =  az('keyvault secret show --vault-name finrem-aat --name fr-judge-password --query value -o tsv').trim()
                 env.IDAM_CLIENT_SECRET =  az('keyvault secret show --vault-name finrem-aat --name idam-client-secret --query value -o tsv').trim()
                 env.CCD_SUBMIT_S2S_SECRET =  az('keyvault secret show --vault-name finrem-aat --name ccd-submission-s2s-auth-secret --query value -o tsv').trim()
             }
