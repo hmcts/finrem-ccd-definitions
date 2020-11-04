@@ -145,6 +145,7 @@ function authorisationTab(caseType, tabName) {
     break;
   }
 }
+/* eslint-disable */
 function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
   I.waitForText(tabName, '5');
