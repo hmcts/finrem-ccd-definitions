@@ -164,7 +164,8 @@ function caseDocumentsTab(caseType, tabName, eventName) {
     if (eventName === verifyContestedTabText.historyTab.assignToJudgeEvent ||
          eventName === verifyContestedTabText.historyTab.consentOrderEvent ||
          eventName === verifyContestedTabText.historyTab.assignToJudgeConsentEvent ||
-         eventName === verifyContestedTabText.historyTab.createGeneralApplicationEvent) {
+         eventName === verifyContestedTabText.historyTab.createGeneralApplicationEvent ||
+         eventName === verifyContestedTabText.historyTab.submitUploadCaseFilesEvent) {
       I.see(verifyContestedTabText.caseDocumentsTab.onlineFormA);
     } else {
       I.see(verifyContestedTabText.caseDocumentsTab.draftOnlineFormA);
