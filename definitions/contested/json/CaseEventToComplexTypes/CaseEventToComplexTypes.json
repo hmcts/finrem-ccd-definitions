@@ -182,8 +182,17 @@
     "ID": "FR_amendFinalOrder",
     "CaseEventID": "FR_amendFinalOrder",
     "CaseFieldID": "Contested_ConsentedApprovedOrders",
-    "ListElementCode": "pensionDocuments",
+    "ListElementCode": "pensionDocuments.typeOfDocument",
     "FieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_amendFinalOrder",
+    "CaseEventID": "FR_amendFinalOrder",
+    "CaseFieldID": "Contested_ConsentedApprovedOrders",
+    "ListElementCode": "pensionDocuments.uploadedDocument",
+    "FieldDisplayOrder": 4,
     "DisplayContext": "OPTIONAL"
   }
 ]
