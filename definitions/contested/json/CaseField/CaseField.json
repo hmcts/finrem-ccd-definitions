@@ -2210,6 +2210,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "southWestFRCList",
+    "Label": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, you will not yet be able to submit your application online.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_sw_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "walesFRCList",
     "Label": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, you will not yet be able to submit your application online.",
     "HintText": "This should be the FRC local to the applicant",
@@ -2270,6 +2280,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "lancashireCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_lancashireList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "cleavelandCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
@@ -2310,6 +2330,56 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bedfordshireCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bedfordshireList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "thamesvalleyCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_thamesvalleyList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "devonCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_devonList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "dorsetCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_dorsetList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "bristolCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bristolList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "newportCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
@@ -2325,6 +2395,16 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_swansea_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "northWalesCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_northwalesList",
     "SecurityClassification": "Public"
   },
   {
@@ -3141,6 +3221,15 @@
   {
     "LiveFrom": "01/09/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_southWestFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_sw_frc_list",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirections_walesFRCList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_wales_frc_list",
@@ -3195,6 +3284,15 @@
   {
     "LiveFrom": "01/09/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_lancashireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_lancashireList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirections_cleavelandCourtList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_cleveland_hc_list",
@@ -3231,6 +3329,51 @@
   {
     "LiveFrom": "01/09/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_bedfordshireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bedfordshireList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_thamesvalleyCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_thamesvalleyList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_devonCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_devonList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_dorsetCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_dorsetList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_bristolCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bristolList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirections_newportCourtList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_newport_hc_list",
@@ -3243,6 +3386,15 @@
     "ID": "generalApplicationDirections_swanseaCourtList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_swansea_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_northWalesCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_northwalesList",
     "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },

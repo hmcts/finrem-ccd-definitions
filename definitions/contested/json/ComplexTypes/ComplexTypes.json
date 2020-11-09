@@ -413,6 +413,16 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_courtList",
+    "ListElementCode": "southWestList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_sw_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "region=\"southwest\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
     "ListElementCode": "walesList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_wales_frc_list",
@@ -473,6 +483,16 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_courtList",
+    "ListElementCode": "lancashireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_lancashireList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "region=\"northwest\" AND northWestList=\"lancashire\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
     "ListElementCode": "cleavelandCourtList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_cleveland_hc_list",
@@ -513,6 +533,56 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_courtList",
+    "ListElementCode": "bedfordshireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bedfordshireList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "region=\"southeast\" AND southEastList=\"bedfordshire\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
+    "ListElementCode": "thamesvalleyCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_thamesvalleyList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "region=\"southeast\" AND southEastList=\"thamesvalley\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
+    "ListElementCode": "devonCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_devonList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "region=\"southeast\" AND southEastList=\"devon\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
+    "ListElementCode": "dorsetCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_dorsetList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "region=\"southeast\" AND southEastList=\"thamesvalley\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
+    "ListElementCode": "bristolCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bristolList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "region=\"southeast\" AND southEastList=\"bristol\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
     "ListElementCode": "newportCourtList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_newport_hc_list",
@@ -528,6 +598,16 @@
     "FieldTypeParameter": "FR_swansea_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"wales\" AND walesList=\"swansea\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
+    "ListElementCode": "northWalesCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_northwalesList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "region=\"wales\" AND walesList=\"nowrthwales\"",
     "SecurityClassification": "Public"
   },
   {
