@@ -427,7 +427,7 @@
     "DisplayOrder": 35,
     "PreConditionState(s)": "reviewOrder",
     "PostConditionState": "scheduleRaiseDirectionsOrder",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/move-collection/draftDirectionDetailsCollection/to/draftDirectionDetailsCollectionRO",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/store",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
