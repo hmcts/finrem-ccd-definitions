@@ -884,7 +884,7 @@
     "Description": "Amend Approved Consent Order",
     "DisplayOrder": 127,
     "PreConditionState(s)": "consentedOrderApproved",
-    "PostConditionState": "consentedOrderApproved",
+    "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   }
