@@ -879,12 +879,12 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_amendFinalOrder",
-    "Name": "Amend Final Order",
-    "Description": "Amend Final Order",
+    "ID": "FR_amendApprovedFinalOrder",
+    "Name": "Amend Approved Consent Order",
+    "Description": "Amend Approved Consent Order",
     "DisplayOrder": 127,
     "PreConditionState(s)": "consentedOrderApproved",
-    "PostConditionState": "*",
+    "PostConditionState": "consentedOrderApproved",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   }
