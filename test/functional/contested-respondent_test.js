@@ -1,0 +1,23 @@
+const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
+
+const solicitorUserName = process.env.USERNAME_SOLICITOR;
+const solicitorPassword = process.env.PASSWORD_SOLICITOR;
+const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
+const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
+const runningEnv = process.env.RUNNING_ENV;
+const caaUsername = process.env.USERNAME_CAA;
+const caaPassword = process.env.PASSWORD_CAA;
+const respondentEmail = process.env.USERNAME_RESPONDENT_SOLICITOR;
+
+Feature('Create Cases for Respondent Journey ');
+// Will enable this once XUI Share case available on AAT.
+xScenario('Create and assign Contested Case To Respondent @nightly @pipeline', async I => {
+  if (runningEnv === 'demo') {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    /* eslint-disable */
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-demo-contested-basic-data.json');
+    I.signInXuiOrg(caaUsername, caaPassword);
+    I.assignContestedCase(caseId, respondentEmail);
+  }
+});
