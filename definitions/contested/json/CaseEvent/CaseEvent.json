@@ -2,21 +2,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_solicitorCreate",
-    "Name": "Form A Application",
-    "Description": "Create an application for financial remedy by contested",
-    "DisplayOrder": 1,
-    "PostConditionState": "caseAdded",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/draft-contested-mini-form-a",
-    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/assign-case-access/applicant-solicitor",
-    "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_caseworkerCreate",
     "Name": "Form A Application",
     "Description": "Create an application for financial remedy by contested",
