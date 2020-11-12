@@ -4,7 +4,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_caseworkerCreate",
     "Name": "Form A Application",
-    "Description": "Create an application for financial remedy by contested",
+    "Description": "Create a contested application for financial remedy",
     "DisplayOrder": 1,
     "PostConditionState": "caseAdded",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/draft-contested-mini-form-a",
