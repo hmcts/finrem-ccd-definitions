@@ -14,16 +14,6 @@
     "ID": "FR_solicitorCreate",
     "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "RespondentOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_solicitorCreate",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "RespondentOrganisationPolicy",
     "ListElementCode": "OrgPolicyCaseAssignedRole",
     "DefaultValue": "[RESPSOLICITOR]",
     "EventElementLabel": "Respondent Organisation Policy",
@@ -56,16 +46,6 @@
     "ID": "FR_amendApplicationDetails",
     "CaseEventID": "FR_amendApplicationDetails",
     "CaseFieldID": "RespondentOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_amendApplicationDetails",
-    "CaseEventID": "FR_amendApplicationDetails",
-    "CaseFieldID": "RespondentOrganisationPolicy",
     "ListElementCode": "OrgPolicyCaseAssignedRole",
     "DefaultValue": "[RESPSOLICITOR]",
     "EventElementLabel": "Respondent Organisation Policy",
@@ -92,16 +72,6 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_updateContactDetails",
-    "CaseEventID": "FR_updateContactDetails",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
