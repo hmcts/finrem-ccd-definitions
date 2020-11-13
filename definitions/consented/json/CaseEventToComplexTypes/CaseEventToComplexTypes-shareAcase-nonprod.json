@@ -26,16 +26,6 @@
     "ID": "FR_solicitorCreate",
     "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_solicitorCreate",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
     "ListElementCode": "OrgPolicyReference",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
@@ -69,16 +59,6 @@
     "ID": "FR_amendApplicationDetails",
     "CaseEventID": "FR_amendApplicationDetails",
     "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_amendApplicationDetails",
-    "CaseEventID": "FR_amendApplicationDetails",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
     "ListElementCode": "OrgPolicyReference",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
@@ -105,16 +85,6 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_updateContactDetails",
-    "CaseEventID": "FR_updateContactDetails",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
