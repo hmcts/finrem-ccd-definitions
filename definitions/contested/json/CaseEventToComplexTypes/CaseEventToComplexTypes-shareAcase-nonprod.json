@@ -26,16 +26,6 @@
     "ID": "FR_solicitorCreate",
     "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_solicitorCreate",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
     "ListElementCode": "OrgPolicyReference",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
@@ -62,16 +52,6 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_newPaperCase",
-    "CaseEventID": "FR_newPaperCase",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -110,16 +90,6 @@
     "ID": "FR_updateContactDetails",
     "CaseEventID": "FR_updateContactDetails",
     "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_updateContactDetails",
-    "CaseEventID": "FR_updateContactDetails",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
     "ListElementCode": "OrgPolicyReference",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
@@ -146,16 +116,6 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_amendApplication",
-    "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
