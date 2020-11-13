@@ -7235,5 +7235,17 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "generalApplicationDirectionsHearingRequired=\"No\"",
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApprovedFinalOrder",
+    "CaseFieldID": "Contested_ConsentedApprovedOrders",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": "amendFinalOrder",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   }
 ]

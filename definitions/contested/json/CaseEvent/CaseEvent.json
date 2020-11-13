@@ -875,5 +875,17 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/start-general-application-directions",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-application-directions",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_amendApprovedFinalOrder",
+    "Name": "Amend Approved Consent Order",
+    "Description": "Amend Approved Consent Order",
+    "DisplayOrder": 127,
+    "PreConditionState(s)": "consentedOrderApproved",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
