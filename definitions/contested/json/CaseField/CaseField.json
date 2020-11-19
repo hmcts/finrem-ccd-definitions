@@ -1744,6 +1744,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingOrderOtherDocuments",
+    "Label": "Upload Other Documents ",
+    "HintText": "Upload Other Documents ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "directionDetailsCollection",
     "Label": "Direction Orders Details (Case Worker)",
     "HintText": "Direction Orders Details ",

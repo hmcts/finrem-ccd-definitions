@@ -11,5 +11,19 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/manual-payment",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_directionOrder",
+    "Name": "Upload Order",
+    "Description": "Upload Order",
+    "DisplayOrder": 36,
+    "PreConditionState(s)": "scheduleRaiseDirectionsOrder",
+    "PostConditionState": "orderDrawn",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested-upload-direction-order",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
   }
 ]

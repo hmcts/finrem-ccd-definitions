@@ -22,6 +22,7 @@ function solicitorCreate(reference) {
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.click('Select');
   I.waitForText('SW1H 9AJ');
+  I.fillField('input[id="ApplicantOrganisationPolicy_Organisation_OrganisationID"]', 'somexyz');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -49,6 +50,7 @@ function contestedSolicitorCreate(reference) {
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.click('Select');
   I.waitForText('SW1H 9AJ');
+  I.fillField('input[id="ApplicantOrganisationPolicy_Organisation_OrganisationID"]', 'somexyz');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
