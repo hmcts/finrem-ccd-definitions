@@ -761,7 +761,7 @@
     "Name": "Respond to Consent Order",
     "Description": "Respond to Consent Order",
     "DisplayOrder": 121,
-    "PreConditionState(s)": "consentOrderNotApproved",
+    "PreConditionState(s)": "consentedOrderNotApproved",
     "PostConditionState": "responseReceived",
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
