@@ -2,7 +2,7 @@
 
 function solicitorCreate(reference) {
   const I = this;
-  I.waitForElement('h4', '5');
+  I.waitForElement('h4', '10');
   I.see('SOLICITOR DETAILS');
   I.fillField('input[id="solicitorName"]', 'Arrow');
   I.fillField('input[id="solicitorFirm"]', 'Abc Firm');
@@ -19,8 +19,9 @@ function solicitorCreate(reference) {
   I.fillField('input[id="solicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="solicitorDXnumber"]', '776890');
   I.checkOption('input[id="solicitorAgreeToReceiveEmails-Yes"]');
-  I.fillField('input[id="ApplicantOrganisationPolicy_Organisation_OrganisationID"]', 'somexyz');
-  I.fillField('input[id="ApplicantOrganisationPolicy_Organisation_OrganisationName"]', 'FRApplicantSolicitorFirm');
+  I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
+  I.click('Select');
+  I.waitForText('SW1H 9AJ');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -45,8 +46,9 @@ function contestedSolicitorCreate(reference) {
   I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
   I.checkOption('input[id="applicantSolicitorConsentForEmails-Yes"]');
-  I.fillField('input[id="ApplicantOrganisationPolicy_Organisation_OrganisationID"]', 'somexyz');
-  I.fillField('input[id="ApplicantOrganisationPolicy_Organisation_OrganisationName"]', 'FRApplicantSolicitorFirm');
+  I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
+  I.click('Select');
+  I.waitForText('SW1H 9AJ');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
