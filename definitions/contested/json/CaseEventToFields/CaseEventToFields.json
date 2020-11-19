@@ -10,6 +10,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/set-creator-organisation",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-defaults",
     "CallBackURLMidEvent_1": "3,4,5"
   },
@@ -603,7 +604,7 @@
     "PageID": 6,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
+    "FieldShowCondition": "respondentRepresented=\"Yes\" AND creatorOrganisation=RespondentOrganisationPolicy.organisationID",
     "ShowSummaryChangeOption": "Y"
   },
   {
