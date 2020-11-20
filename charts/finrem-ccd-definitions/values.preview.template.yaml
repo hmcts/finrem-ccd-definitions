@@ -33,16 +33,6 @@ xui-webapp:
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
       JURISDICTIONS: DIVORCE
 
-aac-api:
-  enabled: true
-  java:
-    imagePullPolicy: Always
-    releaseNameOverride: ${SERVICE_NAME}-aac-api
-    image: 'hmctspublic.azurecr.io/aac/manage-case-assignment:latest'
-    ingressHost: aac-api-${SERVICE_FQDN}
-    environment:
-      CCD_DATA_STORE_API_BASE_URL: http://${SERVICE_NAME}-ccd-data-store-api
-
 ccd:
   ccd:
     definitionImporter:
@@ -137,6 +127,7 @@ ccd:
         IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
         PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
         PROXY_PRINT_SERVICE: http://ccd-case-print-service-${SERVICE_FQDN}
+        PROXY_DATA: http://ccd-data-store-api-aat.service.core-compute-aat.internal
         ADDRESS_LOOKUP_TOKEN: ${ADDRESS_LOOKUP_TOKEN}
       ingressHost: gateway-${SERVICE_FQDN}
       ingressIP: ${INGRESS_IP}
