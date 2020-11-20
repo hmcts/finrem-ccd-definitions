@@ -33,6 +33,16 @@ xui-webapp:
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
       JURISDICTIONS: DIVORCE
 
+aac-api:
+  enabled: true
+  nodejs:
+    imagePullPolicy: Always
+    releaseNameOverride: ${SERVICE_NAME}-aac-api
+    image: 'hmctspublic.azurecr.io/aac/manage-case-assignment:latest'
+    ingressHost: aac-api-${SERVICE_FQDN}
+    environment:
+      CCD_DATA_STORE_API_BASE_URL: http://${SERVICE_NAME}-ccd-data-store-api
+
 ccd:
   ccd:
     definitionImporter:
