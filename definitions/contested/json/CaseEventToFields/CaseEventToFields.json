@@ -603,7 +603,7 @@
     "PageID": 6,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\" AND RespondentOrganisationPolicy!=\"\"",
+    "FieldShowCondition": "respondentRepresented=\"Yes\" AND RespondentOrganisationPolicy.organisationID!=\"\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
