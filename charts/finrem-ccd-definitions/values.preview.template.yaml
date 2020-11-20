@@ -35,7 +35,7 @@ xui-webapp:
 
 aac-api:
   enabled: true
-  nodejs:
+  java:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-aac-api
     image: 'hmctspublic.azurecr.io/aac/manage-case-assignment:latest'
