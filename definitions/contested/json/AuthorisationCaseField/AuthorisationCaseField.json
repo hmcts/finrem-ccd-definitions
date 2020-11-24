@@ -1514,9 +1514,23 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rRespondentLabel2",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respondentFMName",
     "UserRole": "[RESPSOLICITOR]",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentDetailsLabel",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1553,7 +1567,6 @@
     "UserRole": "[RESPSOLICITOR]",
     "CRUD": "CRU"
   },
-
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
