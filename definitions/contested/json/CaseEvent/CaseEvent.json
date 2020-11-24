@@ -874,5 +874,17 @@
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_updateRespondentContactDetails",
+    "Name": "Update Respondent Details",
+    "Description": "Update Respondent Details",
+    "DisplayOrder": 128,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
