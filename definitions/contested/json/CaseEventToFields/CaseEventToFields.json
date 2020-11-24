@@ -7260,10 +7260,6 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
-
-
-
-
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -7271,8 +7267,8 @@
     "CaseFieldID": "respondentDetailsLabel",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
-    "PageID": 5,
-    "PageDisplayOrder": 5,
+    "PageID": 1,
+    "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -7283,8 +7279,8 @@
     "CaseFieldID": "respondentFMName",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
-    "PageID": 5,
-    "PageDisplayOrder": 5,
+    "PageID": 1,
+    "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -7295,8 +7291,8 @@
     "CaseFieldID": "respondentLName",
     "PageFieldDisplayOrder": 3,
     "DisplayContext": "MANDATORY",
-    "PageID": 5,
-    "PageDisplayOrder": 5,
+    "PageID": 1,
+    "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -7307,8 +7303,8 @@
     "CaseFieldID": "respondentRepresented",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -7319,8 +7315,8 @@
     "CaseFieldID": "rSolicitorLabel",
     "PageFieldDisplayOrder": 4,
     "DisplayContext": "READONLY",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -7332,8 +7328,8 @@
     "CaseFieldID": "rSolicitorName",
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "OPTIONAL",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -7345,8 +7341,8 @@
     "CaseFieldID": "rSolicitorReference",
     "PageFieldDisplayOrder": 6,
     "DisplayContext": "OPTIONAL",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -7358,8 +7354,8 @@
     "CaseFieldID": "rSolicitorFirm",
     "PageFieldDisplayOrder": 7,
     "DisplayContext": "MANDATORY",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -7371,8 +7367,8 @@
     "CaseFieldID": "rSolicitorAddressLabel",
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "READONLY",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -7384,8 +7380,8 @@
     "CaseFieldID": "rSolicitorAddress",
     "PageFieldDisplayOrder": 9,
     "DisplayContext": "MANDATORY",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -7397,8 +7393,8 @@
     "CaseFieldID": "rSolicitorPhone",
     "PageFieldDisplayOrder": 10,
     "DisplayContext": "OPTIONAL",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -7410,8 +7406,8 @@
     "CaseFieldID": "rSolicitorEmail",
     "PageFieldDisplayOrder": 11,
     "DisplayContext": "OPTIONAL",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -7423,8 +7419,8 @@
     "CaseFieldID": "rRespondentLabel2",
     "PageFieldDisplayOrder": 13,
     "DisplayContext": "READONLY",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -7436,8 +7432,8 @@
     "CaseFieldID": "respondentAddress",
     "PageFieldDisplayOrder": 14,
     "DisplayContext": "MANDATORY",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -7449,8 +7445,8 @@
     "CaseFieldID": "respondentPhone",
     "PageFieldDisplayOrder": 15,
     "DisplayContext": "OPTIONAL",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -7462,8 +7458,8 @@
     "CaseFieldID": "respondentEmail",
     "PageFieldDisplayOrder": 16,
     "DisplayContext": "OPTIONAL",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
