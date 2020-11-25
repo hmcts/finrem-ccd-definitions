@@ -71,6 +71,14 @@
   "specificArrangementsRequired": "Not required",
   "mortgageDetail": "Halifax mortgage",
   "respondentRepresented": "Yes",
+  "RespondentOrganisationPolicy": {
+    "Organisation": {
+      "OrganisationID": "SWNAP0V",
+      "OrganisationName": "financialremedyrespondentorg"
+    },
+    "OrgPolicyReference": "res-sox",
+    "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]"
+  },
   "miniFormA": {
     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/2ec01abc-cb89-44c7-b92a-81e23afa4252",
     "document_filename": "DraftOnlineForm.pdf",
@@ -81,6 +89,14 @@
   "familyMediatorMIAM": null,
   "respondentLName": "Whisper",
   "applicantRepresented": "Yes",
+  "ApplicantOrganisationPolicy": {
+    "Organisation": {
+      "OrganisationID": "A31PTVA",
+      "OrganisationName": "FRApplicantSolicitorFirm"
+    },
+    "OrgPolicyReference": "FRApplicant",
+    "OrgPolicyCaseAssignedRole": "[APPSOLICITOR]"
+  },
   "reasonForLocalCourt": null,
   "rSolicitorPhone": "07889009908",
   "benefitPaymentChecklist": null,

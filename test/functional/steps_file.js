@@ -64,8 +64,7 @@ module.exports = () => {
     },
     signInXuiOrg(username, password) {
       this.amOnPage(`${process.env.XUI_ORG_WEB_URL}`);
-      this.wait('30');
-      this.waitForText('Email address');
+      this.waitForText('Email address', '30');
       this.fillField('username', username);
       this.fillField('password', password);
       this.click('Sign in');
