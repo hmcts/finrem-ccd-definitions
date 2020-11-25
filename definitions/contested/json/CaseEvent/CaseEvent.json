@@ -436,19 +436,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_directionOrder",
-    "Name": "Upload Order",
-    "Description": "Upload Order",
-    "DisplayOrder": 36,
-    "PreConditionState(s)": "scheduleRaiseDirectionsOrder",
-    "PostConditionState": "orderDrawn",
-    "SecurityClassification": "Public",
-    "ShowSummary": "N",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_judgeDraftDirectionOrder",
     "Name": "Upload Draft Order",
     "Description": "Upload Draft Order",
