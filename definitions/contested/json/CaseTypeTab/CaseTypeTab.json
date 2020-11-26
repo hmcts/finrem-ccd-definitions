@@ -1014,6 +1014,15 @@
     "TabFieldDisplayOrder": 34
   },
   {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicationDocumentsTab",
+    "TabLabel": "Case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "generalLetterCollection",
+    "TabFieldDisplayOrder": 35
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "paymentDetailsTab",
@@ -2299,6 +2308,15 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "draftDirectionDetailsCollectionRO",
     "TabFieldDisplayOrder": 46
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "latestDraftHearingOrder",
+    "TabFieldDisplayOrder": 39
   },
   {
     "LiveFrom": "01/01/2017",
