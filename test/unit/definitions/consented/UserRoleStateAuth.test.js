@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const { differenceWith } = require('lodash');
 
 const CaseType = Object.assign(require('definitions/consented/json/CaseType'), []);
-const AuthorisationCaseType = Object.assign(require('definitions/consented/json/AuthorisationCaseType'), []);
+const AuthorisationCaseType = Object.assign(require('definitions/consented/json/AuthorisationCaseType/AuthorisationCaseType.json'), []);
 const State = Object.assign(require('definitions/consented/json/State'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/consented/json/AuthorisationCaseState/AuthorisationCaseState'), []);
 
@@ -34,7 +34,7 @@ function checkPerms(entry) {
   expect(entry.CRUD).to.match(MINIMUM_READ_PERMISSIONS);
 }
 
-describe.skip('UserRole authorisations for CaseState', () => {
+describe('UserRole authorisations for CaseState', () => {
   it('should allow minimum R access for all Case States per User Role', () => {
     // iterate each case type
     // get all state auths for case type

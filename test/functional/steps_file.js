@@ -27,7 +27,7 @@ const { waitForContinueButtonEnabled } = require('./pages/common/common');
 const { waitForPage } = require('./pages/common/common');
 const { createCase } = require('./pages/create-case/create-case');
 const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab, gateKeepingAllocationsTab, schedulingAndListingTab, consentOrderProcessTab, verifyConsentedTabData, verifyContestedTabData, verifyContestedPaperTabData } = require('./pages/tab-data-verification/tab-data-verification');
-
+const { assignContestedCase } = require('./pages/org-assign-cases/org-assign-cases-to-respondent');
 
 module.exports = () => {
   return actor({
@@ -61,6 +61,14 @@ module.exports = () => {
       this.fillField('password', password);
       this.click('Sign in');
       this.wait('15');
+    },
+    signInXuiOrg(username, password) {
+      this.amOnPage(`${process.env.XUI_ORG_WEB_URL}`);
+      this.waitForText('Email address', '30');
+      this.fillField('username', username);
+      this.fillField('password', password);
+      this.click('Sign in');
+      this.wait('10');
     },
     createCase,
     waitForPage,
@@ -113,6 +121,7 @@ module.exports = () => {
     consentOrderProcessTab,
     verifyConsentedTabData,
     verifyContestedTabData,
-    verifyContestedPaperTabData
+    verifyContestedPaperTabData,
+    assignContestedCase
   });
 };

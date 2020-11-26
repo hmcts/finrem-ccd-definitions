@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const { uniqWith } = require('lodash');
 
-const caseTypeTab = Object.assign(require('definitions/consented/json/AuthorisationCaseType'), {});
+const caseTypeTab = Object.assign(require('definitions/consented/json/AuthorisationCaseType/AuthorisationCaseType.json'), {});
 
 describe('AuthorisationCaseType', () => {
   it('should contain a unique case type and role (no duplicates)', () => {

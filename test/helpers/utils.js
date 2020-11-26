@@ -12,8 +12,7 @@ async function getUserToken(username, password) {
   logger.info('Getting User Token');
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
   const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
-  const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
-
+  const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
 
   var retryCount = 0;
@@ -70,7 +69,7 @@ async function getUserToken(username, password) {
 async function getUserId(authToken) {
   logger.info('Getting User Id');
 
-  const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
+  const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 
   const idamDetailsPath = '/details';
   const userDetails = await request.get({

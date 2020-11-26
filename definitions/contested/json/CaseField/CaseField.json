@@ -1211,6 +1211,24 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalHearingDocuments",
+    "Label": "Additional Hearing Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_AdditionalHearingCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingType",
+    "Label": "Type of Hearing",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_hearingTypeDirections",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "timeEstimateLabel",
     "Label": "#### Time Estimate",
     "FieldType": "Label",
@@ -1721,6 +1739,16 @@
     "HintText": "Upload Direction Order ",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_ct_directionOrderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingOrderOtherDocuments",
+    "Label": "Upload Other Documents ",
+    "HintText": "Upload Other Documents ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
     "SecurityClassification": "Public"
   },
   {
@@ -2256,7 +2284,7 @@
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_cleaveland_hc_list",
+    "FieldTypeParameter": "FR_cleveland_hc_list",
     "SecurityClassification": "Public"
   },
   {
@@ -3032,6 +3060,274 @@
     "ID": "generalApplicationOutcomeOther",
     "FieldType": "Text",
     "Label": "Please Specify",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsHearingRequired",
+    "FieldType": "YesOrNo",
+    "Label": "Is a Hearing required?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsHearingDate",
+    "FieldType": "Date",
+    "Label": "  ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsHearingTime",
+    "FieldType": "Text",
+    "Label": "  ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsHearingTimeEstimate",
+    "FieldType": "Text",
+    "Label": "  ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_regionList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_region_list",
+    "Label": "Please choose the Region in which the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_midlandsFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_midlands_FRCList",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_londonFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_london_FRCList",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_northWestFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_nw_frc_list",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_northEastFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_ne_frc_list",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_southEastFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_se_frc_list",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_walesFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_wales_frc_list",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_nottinghamCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_NottinghamList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_cfcCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_CFCList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_birminghamCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_birmingham_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_liverpoolCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_liverpool_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_manchesterCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_manchester_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_cleavelandCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_cleveland_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_nwyorkshireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_humberCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_humber_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_kentSurreyCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_kent_surrey_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_newportCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_newport_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_swanseaCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_swansea_hc_list",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsAdditionalInformation",
+    "FieldType": "TextArea",
+    "Label": "  ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsRecitals",
+    "FieldType": "TextArea",
+    "Label": "Recitals",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsJudgeType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
+    "Label": "Select judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsJudgeName",
+    "Label": "Name of Judge",
+    "HintText": "Surname of judge",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsCourtOrderDate",
+    "FieldType": "Date",
+    "Label": "Court order date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsTextFromJudge",
+    "FieldType": "TextArea",
+    "Label": "Directions from the Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsDocument",
+    "FieldType": "Document",
+    "Label": "Hearing / no hearing document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationNotApprovedReason",
+    "Label": "General application not approved reason",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "latestDraftHearingOrder",
+    "FieldType": "Document",
+    "Label": "Latest draft hearing order",
     "SecurityClassification": "Public"
   }
 ]

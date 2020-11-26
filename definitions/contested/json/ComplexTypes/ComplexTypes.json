@@ -475,7 +475,7 @@
     "ID": "FR_ct_courtList",
     "ListElementCode": "cleavelandCourtList",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_cleaveland_hc_list",
+    "FieldTypeParameter": "FR_cleveland_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"northeast\" AND northEastList=\"cleaveland\"",
     "SecurityClassification": "Public"
@@ -909,7 +909,7 @@
     "ID": "FR_consentOrder",
     "ListElementCode": "consentOrder",
     "FieldType": "Document",
-    "ElementLabel": "Consent Order Annexed Stamped",
+    "ElementLabel": "Consent Order Annexed and Stamped",
     "SecurityClassification": "Public"
   },
   {
@@ -917,7 +917,7 @@
     "ID": "FR_consentOrder",
     "ListElementCode": "orderLetter",
     "FieldType": "Document",
-    "ElementLabel": "Approved Order",
+    "ElementLabel": "Approved Order Letter",
     "SecurityClassification": "Public"
   },
   {
@@ -961,6 +961,14 @@
     "FieldType": "Text",
     "ElementLabel": "Please specify document type",
     "FieldShowCondition": "caseDocumentType=\"other\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_AdditionalHearingCollection",
+    "ListElementCode": "additionalHearingDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Additional Hearing Document",
     "SecurityClassification": "Public"
   }
 ]

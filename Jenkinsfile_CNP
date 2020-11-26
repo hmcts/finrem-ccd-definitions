@@ -33,6 +33,8 @@ def secrets = [
                 secret('password-solicitor', 'PASSWORD_SOLICITOR'),
                 secret('username-caseworker', 'USERNAME_CASEWORKER'),
                 secret('password-caseworker', 'PASSWORD_CASEWORKER'),
+                secret('fr-judge-username','USERNAME_JUDGE'),
+                secret('fr-judge-password', 'PASSWORD_JUDGE'),
                 secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
                 secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET')
         ]
@@ -67,15 +69,17 @@ withPipeline("nodejs", product, component) {
 
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
       yarnBuilder.yarn('generate-excel-aat-consented')
+      yarnBuilder.yarn('generate-excel-demo-consented')
     }
     stageWithAgent('Generate Financial Remedy Contested Case config', product) {
       yarnBuilder.yarn('generate-excel-aat-contested')
+      yarnBuilder.yarn('generate-excel-demo-contested')
     }
 
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     env.CCD_ADMIN_URL="https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     env.CCD_DATA_API_URL="http://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-    env.CCD_WEB_URL="https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal/v2/case/"
+    env.CCD_WEB_URL="https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     env.CCD_CONSENTED_FILE_NAME="ccd-config-aat-consented-${GIT_COMMIT}.xlsx"
     env.CCD_CONTESTED_FILE_NAME="ccd-config-aat-contested-${GIT_COMMIT}.xlsx"
   }
@@ -115,7 +119,8 @@ withPipeline("nodejs", product, component) {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     env.CCD_ADMIN_URL="https://ccd-admin-web.aat.platform.hmcts.net"
     env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
-    env.CCD_WEB_URL="https://www-ccd.aat.platform.hmcts.net"
+    env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
+    env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
     env.CCD_CONSENTED_FILE_NAME="ccd-config-aat-consented-${GIT_COMMIT}.xlsx"
     env.CCD_CONTESTED_FILE_NAME="ccd-config-aat-contested-${GIT_COMMIT}.xlsx"
   }
