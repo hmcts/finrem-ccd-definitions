@@ -3,18 +3,15 @@ const { expect, assert } = require('chai');
 const { find } = require('lodash');
 
 const caseEvent = Object.assign(require('definitions/consented/json/CaseEvent/CaseEvent'), []);
-const caseEventProd = Object.assign(require('definitions/consented/json/CaseEvent/CaseEvent-prod'), []);
-const caseEventNonprod = Object.assign(require('definitions/consented/json/CaseEvent/CaseEvent-nonprod'), []);
 const caseField = Object.assign(require('definitions/consented/json/CaseField/CaseField'), []);
 const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField/CaseField-common'), []);
 const caseFieldAll = caseField.concat(caseFieldCommon);
 const caseEventToFieldsAll = Object.assign(require('definitions/consented/json/CaseEventToFields/CaseEventToFields'), []);
-const caseEventToFieldsNonProd = Object.assign(require('definitions/consented/json/CaseEventToFields/CaseEventToFields-nonprod'), []);
 
 describe('CaseEventToFields', () => {
   it('should contain valid event IDs - nonprod', () => {
-    const caseEventAll = caseEventNonprod.concat(caseEvent);
-    const caseEventToFields = caseEventToFieldsAll.concat(caseEventToFieldsNonProd);
+    const caseEventAll = caseEvent;
+    const caseEventToFields = caseEventToFieldsAll;
 
     const errors = [];
     caseEventToFields.forEach(caseEventToFieldsEntry => {
@@ -29,7 +26,7 @@ describe('CaseEventToFields', () => {
     }
   });
   it('should contain valid event IDs - prod', () => {
-    const caseEventAll = caseEventProd.concat(caseEvent);
+    const caseEventAll = caseEvent;
 
     const errors = [];
     caseEventToFieldsAll.forEach(caseEventToFieldsEntry => {
@@ -57,7 +54,7 @@ describe('CaseEventToFields', () => {
     }
   });
   it('should contain valid field IDs - nonprod', () => {
-    const caseEventToFields = caseEventToFieldsAll.concat(caseEventToFieldsNonProd);
+    const caseEventToFields = caseEventToFieldsAll;
 
     const errors = [];
     caseEventToFields.forEach(caseEventToFieldsEntry => {
