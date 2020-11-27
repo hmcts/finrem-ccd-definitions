@@ -4,10 +4,10 @@ const { differenceWith, intersectionWith, concat } = require('lodash');
 const AuthorisationCaseEvent = Object.assign(require('definitions/contested/json/AuthorisationCaseEvent/AuthorisationCaseEvent'), []);
 const AuthorisationCaseField = Object.assign(require('definitions/contested/json/AuthorisationCaseField/AuthorisationCaseField'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState.json'), []);
-const AuthorisationCaseStateSACNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-shareACase-nonprod.json'), []);
-const AuthorisationCaseStateSACProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-shareACase-prod.json'), []);
-const AuthorisationCaseStateNonProd = AuthorisationCaseState.concat(AuthorisationCaseStateSACNonProd);
-const AuthorisationCaseStateProd = AuthorisationCaseState.concat(AuthorisationCaseStateSACProd);
+const AuthorisationCaseStateRespNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-respSol-nonprod.json'), []);
+const AuthorisationCaseStateRespProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-respSol-prod.json'), []);
+const AuthorisationCaseStateNonProd = AuthorisationCaseState.concat(AuthorisationCaseStateRespNonProd);
+const AuthorisationCaseStateProd = AuthorisationCaseState.concat(AuthorisationCaseStateRespProd);
 const CaseEvent = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent'), []);
 const CaseEventToFields = Object.assign(require('definitions/contested/json/CaseEventToFields/CaseEventToFields'), []);
 

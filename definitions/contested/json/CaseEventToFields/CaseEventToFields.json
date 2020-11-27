@@ -261,6 +261,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "PageFieldDisplayOrder": 18,
+    "DisplayContext": "COMPLEX",
+    "PageID": 2,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "divorceDetailsLabel",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
@@ -5437,6 +5450,18 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_directionOrder",
+    "CaseFieldID": "hearingOrderOtherDocuments",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_directionOrder",
     "CaseFieldID": "directionDetailsCollection",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
@@ -7234,6 +7259,18 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "generalApplicationDirectionsHearingRequired=\"No\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApprovedFinalOrder",
+    "CaseFieldID": "Contested_ConsentedApprovedOrders",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": "amendFinalOrder",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   }
 ]

@@ -56,6 +56,14 @@
   "appRespondentFMName": "kiv",
   "swanseaCourtList": "FR_swanseaList_6",
   "applicantRepresented": "Yes",
+  "ApplicantOrganisationPolicy": {
+    "Organisation": {
+      "OrganisationID": "A31PTVA",
+      "OrganisationName": "FRApplicantSolicitorFirm"
+    },
+    "OrgPolicyReference": "FRApplicant",
+    "OrgPolicyCaseAssignedRole": "[APPSOLICITOR]"
+  },
   "rSolicitorPhone": "07889009908",
   "natureOfApplication2": [
     "Periodical Payment Order",
@@ -81,6 +89,14 @@
   "rSolicitorFirm": "MahFirm",
   "solicitorName": "Arrow",
   "appRespondentRep": "Yes",
+  "RespondentOrganisationPolicy": {
+    "Organisation": {
+      "OrganisationID": "SWNAP0V",
+      "OrganisationName": "financialremedyrespondentorg"
+    },
+    "OrgPolicyReference": "res-sox",
+    "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]"
+  },
   "solicitorReference": "AUTO-consented-Sol",
   "authorisation2b": "Sol Org reb",
   "pensionCollection": [

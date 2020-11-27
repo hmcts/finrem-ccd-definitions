@@ -1,303 +1,107 @@
 [
   {
-    "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "divorceCaseNumber",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "applicantLName",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "respondentLName",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "16/03/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "issueDate",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "d11",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationNotApprovedReason",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "authorisationTitle",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "authorisationLabel",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "authorisationName",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "solicitorFirm",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "authorisation2b",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "authorisation3",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "payment",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "helpWithFeesQuestion",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "HWFNumber",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "amountToPay",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "PBANumber",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "PBAreference",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "orderSummary",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "paymentMethodPBA",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "paymentMethodHWF",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "solicitorReferenceLabel",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "pbaFeeAccountNumber",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "hwfFeeReferenceNumber",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "makePaymentPreConfirmationInfoText",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "PBAPaymentReference",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadCaseDocumentLabel",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadCaseDocument",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "miniFormA",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadConsentedOrder",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadOrder",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "CaseHistoryViewer",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "tabNatureOfApplication",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "tabBenefitPaymentChecklistLabel",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "tabBenefitForChildrenLabel",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "tabPaymentForChildrenLabel",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "formC",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "formG",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "draftDirectionOrderCollection",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "consentedNotApprovedOrders",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appCorrespondenceCollection",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -318,7 +122,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appFRFormsCollection",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -339,7 +143,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appEvidenceCollection",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -360,7 +164,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appTrialBundleCollection",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -381,7 +185,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respCorrespondenceCollection",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -402,7 +206,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respFRFormsCollection",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -423,7 +227,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respEvidenceCollection",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -444,7 +248,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respTrialBundleCollection",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -479,14 +283,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationReceivedFrom",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationReceivedFrom",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -507,14 +304,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationCreatedBy",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationCreatedBy",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -535,14 +325,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationHearingRequired",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationHearingRequired",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -563,14 +346,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationTimeEstimate",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationTimeEstimate",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -591,14 +367,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationSpecialMeasures",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationSpecialMeasures",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -619,14 +388,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationLatestDocument",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationLatestDocument",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -647,14 +409,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationDocument",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationDocument",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -675,14 +430,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationDraftOrder",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationDraftOrder",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -703,14 +451,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationLatestDocumentDate",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationLatestDocumentDate",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -731,14 +472,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationCollection",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationCollection",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -759,14 +493,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationLabel",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationLabel",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
@@ -787,14 +514,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationPreState",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationPreState",
-    "UserRole": "[RESPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
   {
@@ -836,14 +556,14 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationOutcome",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationOutcomeOther",
-    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
@@ -886,20 +606,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "draftDirectionOrderCollection",
-    "UserRole": "[RESPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "uploadGeneralDocuments",
-    "UserRole": "[RESPSOLICITOR]",
     "CRUD": "CRU"
   }
 ]

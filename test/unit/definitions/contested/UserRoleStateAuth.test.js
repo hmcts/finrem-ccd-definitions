@@ -3,12 +3,12 @@ const { differenceWith } = require('lodash');
 
 const CaseType = Object.assign(require('definitions/contested/json/CaseType/CaseType.json'), []);
 const AuthorisationCaseType = Object.assign(require('definitions/contested/json/AuthorisationCaseType/AuthorisationCaseType.json'), []);
-const AuthorisationCaseTypeSACNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseType/AuthorisationCaseType-shareACase-nonprod.json'), []);
+const AuthorisationCaseTypeRespNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseType/AuthorisationCaseType-respSol-nonprod.json'), []);
 const State = Object.assign(require('definitions/contested/json/State/State.json'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState.json'), []);
-const AuthorisationCaseStateSACNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-shareACase-nonprod.json'), []);
-const AuthorisationCaseStateSACProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-shareACase-prod.json'), []);
-const AuthorisationCaseTypeAll = AuthorisationCaseType.concat(AuthorisationCaseTypeSACNonProd);
+const AuthorisationCaseStateRespNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-respSol-nonprod.json'), []);
+const AuthorisationCaseStateRespProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-respSol-prod.json'), []);
+const AuthorisationCaseTypeAll = AuthorisationCaseType.concat(AuthorisationCaseTypeRespNonProd);
 
 const MINIMUM_READ_PERMISSIONS = /C?RU?D?/;
 const EXCLUDED_STATES = ['SOTAgreementPayAndSubmitRequired', 'Rejected', 'Withdrawn', 'DNisRefused', 'solicitorAwaitingPaymentConfirmation'];
@@ -46,7 +46,7 @@ describe('UserRole authorisations for CaseState', () => {
     // get all states for case type
     // for each state
     // ensure each role has auth 'R' minimum
-    const AuthorisationCaseStateAll = AuthorisationCaseState.concat(AuthorisationCaseStateSACNonProd);
+    const AuthorisationCaseStateAll = AuthorisationCaseState.concat(AuthorisationCaseStateRespNonProd);
     CaseType.forEach(caseTypeEntry => {
       const caseType = caseTypeEntry.ID;
       const authStatesForCaseType = AuthorisationCaseStateAll.filter(byCaseType(caseType));
@@ -79,7 +79,7 @@ describe('UserRole authorisations for CaseState', () => {
     // get all states for case type
     // for each state
     // ensure each role has auth 'R' minimum
-    const AuthorisationCaseStateAll = AuthorisationCaseState.concat(AuthorisationCaseStateSACProd);
+    const AuthorisationCaseStateAll = AuthorisationCaseState.concat(AuthorisationCaseStateRespProd);
     CaseType.forEach(caseTypeEntry => {
       const caseType = caseTypeEntry.ID;
       const authStatesForCaseType = AuthorisationCaseStateAll.filter(byCaseType(caseType));
