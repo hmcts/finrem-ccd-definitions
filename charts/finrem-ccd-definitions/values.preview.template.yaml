@@ -52,7 +52,7 @@ elasticsearch:
     path: /
     hosts:
       - es-${SERVICE_FQDN}
-      
+
 logstash:
   image:
     repository: hmctspublic.azurecr.io/ccd/logstash
@@ -125,8 +125,8 @@ ccd:
         ELASTIC_SEARCH_DATA_NODES_HOSTS: "http://{{ .Release.Name }}-es-master:9200"
         ELASTIC_SEARCH_CASE_INDEX_NAME_FORMAT: '%s_cases'
         ELASTIC_SEARCH_CASE_INDEX_TYPE: _doc
-        DEFINITION_STORE_HOST: ccd-definition-store-${SERVICE_FQDN}
-        USER_PROFILE_HOST: ccd-user-profile-api-${SERVICE_FQDN}
+        DEFINITION_STORE_HOST: https://ccd-definition-store-${SERVICE_FQDN}/
+        USER_PROFILE_HOST: https://ccd-user-profile-api-${SERVICE_FQDN}/
         ENABLE_DB_MIGRATE: true
       keyVaults: []
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
