@@ -1,10 +1,13 @@
 tags:
-  ccd-pr: false
+  fr-ccd-stack: false
 
 idam-pr:
   enabled: false
 
 xui-webapp:
+  enabled: false
+
+elastic:
   enabled: false
   
 nodejs:

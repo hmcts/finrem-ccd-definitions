@@ -52,6 +52,7 @@ elasticsearch:
     path: /
     hosts:
       - es-${SERVICE_FQDN}
+      
 logstash:
   image:
     repository: hmctspublic.azurecr.io/ccd/logstash
@@ -72,7 +73,7 @@ logstash:
     db.user: "javapostgres"
     db.pwd: "javapassword"
     es.data.nodes.url: "http://{{ .Release.Name }}-es-master:9200"
-    
+
 ccd:
   ccd:
     definitionImporter:
