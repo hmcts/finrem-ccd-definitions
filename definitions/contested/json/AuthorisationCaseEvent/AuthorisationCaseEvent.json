@@ -1272,5 +1272,26 @@
     "CaseEventID": "FR_GeneralApplicationDirections",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_AmendAppSolicitorOrganisationDetails",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_AmendAppSolicitorOrganisationDetails",
+    "UserRole": "caseworker-divorce-financialremedy-solictor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_AmendAppSolicitorOrganisationDetails",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
   }
 ]
