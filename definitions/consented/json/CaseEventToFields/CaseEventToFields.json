@@ -553,19 +553,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "otherNWCourtList",
-    "PageFieldDisplayOrder": 17,
-    "DisplayContext": "MANDATORY",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"other\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "lancashireCourtList",
     "PageFieldDisplayOrder": 17,
     "DisplayContext": "MANDATORY",
@@ -631,19 +618,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "otherSECourtList",
-    "PageFieldDisplayOrder": 22,
-    "DisplayContext": "MANDATORY",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"other\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "bedfordshireCourtList",
     "PageFieldDisplayOrder": 22,
     "DisplayContext": "MANDATORY",
@@ -664,19 +638,6 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "otherSWCourtList",
-    "PageFieldDisplayOrder": 23,
-    "DisplayContext": "MANDATORY",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -742,19 +703,6 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "welshOtherCourtList",
-    "PageFieldDisplayOrder": 26,
-    "DisplayContext": "MANDATORY",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1794,19 +1742,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_amendApplicationDetails",
-    "CaseFieldID": "otherNWCourtList",
-    "PageFieldDisplayOrder": 17,
-    "DisplayContext": "MANDATORY",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"other\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_amendApplicationDetails",
     "CaseFieldID": "lancashireCourtList",
     "PageFieldDisplayOrder": 17,
     "DisplayContext": "MANDATORY",
@@ -1872,19 +1807,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_amendApplicationDetails",
-    "CaseFieldID": "otherSECourtList",
-    "PageFieldDisplayOrder": 22,
-    "DisplayContext": "MANDATORY",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"other\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_amendApplicationDetails",
     "CaseFieldID": "bedfordshireCourtList",
     "PageFieldDisplayOrder": 22,
     "DisplayContext": "MANDATORY",
@@ -1905,19 +1827,6 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_amendApplicationDetails",
-    "CaseFieldID": "otherSWCourtList",
-    "PageFieldDisplayOrder": 23,
-    "DisplayContext": "MANDATORY",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1983,19 +1892,6 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_amendApplicationDetails",
-    "CaseFieldID": "welshOtherCourtList",
-    "PageFieldDisplayOrder": 26,
-    "DisplayContext": "MANDATORY",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -4303,19 +4199,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_updateCourtInfo",
-    "CaseFieldID": "otherNWCourtList",
-    "PageFieldDisplayOrder": 14,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"other\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_updateCourtInfo",
     "CaseFieldID": "lancashireCourtList",
     "PageFieldDisplayOrder": 14,
     "DisplayContext": "MANDATORY",
@@ -4381,19 +4264,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_updateCourtInfo",
-    "CaseFieldID": "otherSECourtList",
-    "PageFieldDisplayOrder": 19,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"other\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_updateCourtInfo",
     "CaseFieldID": "bedfordshireCourtList",
     "PageFieldDisplayOrder": 19,
     "DisplayContext": "MANDATORY",
@@ -4414,19 +4284,6 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_updateCourtInfo",
-    "CaseFieldID": "otherSWCourtList",
-    "PageFieldDisplayOrder": 20,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -4492,19 +4349,6 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_updateCourtInfo",
-    "CaseFieldID": "welshOtherCourtList",
-    "PageFieldDisplayOrder": 23,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
