@@ -30,5 +30,23 @@
     "Label": "Respondent Organisation Policy",
     "FieldType": "OrganisationPolicy",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "bulkPrintCoverSheetAppConfidential",
+    "Label": "Confidential Applicant Coversheet",
+    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "bulkPrintCoverSheetResConfidential",
+    "Label": "Confidential Respondent Coversheet",
+    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
   }
 ]
