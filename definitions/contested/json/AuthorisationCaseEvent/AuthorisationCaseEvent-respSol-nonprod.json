@@ -9,13 +9,6 @@
   {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_createGeneralApplication",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_GeneralApplicationOutcome",
     "UserRole": "[APPSOLICITOR]",
     "CRUD": "R"
@@ -404,12 +397,5 @@
     "CaseEventID": "FR_generalApplicationReferToJudge",
     "UserRole": "[APPSOLICITOR]",
     "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_createGeneralApplication",
-    "UserRole": "[RESPSOLICITOR]",
-    "CRUD": "CR"
   }
 ]

@@ -863,6 +863,13 @@
   {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_createGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_GeneralApplicationOutcome",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CR"
