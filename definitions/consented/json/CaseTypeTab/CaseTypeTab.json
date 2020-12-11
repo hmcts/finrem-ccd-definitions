@@ -1347,7 +1347,7 @@
     "TabDisplayOrder": 7,
     "CaseFieldID": "confidentialCoverSheetLabel",
     "TabFieldDisplayOrder": 26,
-    "FieldShowCondition": "bulkPrintCoverSheetAppConfidential !=null OR bulkPrintCoverSheetResConfidential !=null"
+    "FieldShowCondition": "bulkPrintCoverSheetAppConfidential !=\"*\" OR bulkPrintCoverSheetResConfidential !=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
