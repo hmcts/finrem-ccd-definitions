@@ -1345,8 +1345,19 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
+    "CaseFieldID": "confidentialCoverSheetLabel",
+    "TabFieldDisplayOrder": 26,
+    "FieldShowCondition": "bulkPrintCoverSheetAppConfidential !=null OR bulkPrintCoverSheetResConfidential !=null"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 7,
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
-    "TabFieldDisplayOrder": 26
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1356,7 +1367,7 @@
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 7,
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
-    "TabFieldDisplayOrder": 27
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",

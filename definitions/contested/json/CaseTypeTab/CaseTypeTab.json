@@ -1013,14 +1013,24 @@
     "CaseFieldID": "generalApplicationDirectionsDocument",
     "TabFieldDisplayOrder": 34
   },
-    {
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicationDocumentsTab",
+    "TabLabel": "Case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "confidentialCoverSheetLabel",
+    "TabFieldDisplayOrder": 35,
+    "FieldShowCondition": "bulkPrintCoverSheetAppConfidential !=null OR bulkPrintCoverSheetResConfidential !=null"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
-    "TabFieldDisplayOrder": 35
+    "TabFieldDisplayOrder": 36
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1029,7 +1039,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
-    "TabFieldDisplayOrder": 36
+    "TabFieldDisplayOrder": 37
   },
   {
     "LiveFrom": "01/01/2017",
