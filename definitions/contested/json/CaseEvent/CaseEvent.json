@@ -384,8 +384,8 @@
     "PreConditionState(s)": "solicitorDraftOrder",
     "PostConditionState": "reviewOrder",
     "SecurityClassification": "Public",
-    "ShowSummary": "N",
-    "ShowEventNotes": "Y"
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -427,7 +427,7 @@
     "DisplayOrder": 35,
     "PreConditionState(s)": "reviewOrder",
     "PostConditionState": "scheduleRaiseDirectionsOrder",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/move-collection/draftDirectionDetailsCollection/to/draftDirectionDetailsCollectionRO",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/store",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
@@ -442,7 +442,7 @@
     "DisplayOrder": 37,
     "PreConditionState(s)": "judgeDraftOrder",
     "PostConditionState": "scheduleRaiseDirectionsOrder",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/move-collection/draftDirectionDetailsCollection/to/draftDirectionDetailsCollectionRO",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/store",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
@@ -746,7 +746,7 @@
     "Description": "Create General Order (consent)",
     "DisplayOrder": 120,
     "PreConditionState(s)": "consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentOrderNotApproved;responseReceived",
-    "PostConditionState": "consentOrderNotApproved",
+    "PostConditionState": "consentedOrderNotApproved",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-order-start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-order",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-order-raised",
@@ -761,7 +761,7 @@
     "Name": "Respond to Consent Order",
     "Description": "Respond to Consent Order",
     "DisplayOrder": 121,
-    "PreConditionState(s)": "consentOrderNotApproved",
+    "PreConditionState(s)": "consentedOrderNotApproved",
     "PostConditionState": "responseReceived",
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
@@ -821,7 +821,8 @@
     "SecurityClassification": "Public",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/start-general-application",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-application",
-    "ShowEventNotes": "Y"
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -873,6 +874,33 @@
     "PreConditionState(s)": "consentedOrderApproved",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_manualPayment",
+    "Name": "Manual Payment",
+    "Description": "Manual Payment",
+    "DisplayOrder": 8,
+    "PreConditionState(s)": "caseAdded",
+    "PostConditionState": "applicationSubmitted",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/manual-payment",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_directionOrder",
+    "Name": "Upload Order",
+    "Description": "Upload Order",
+    "DisplayOrder": 36,
+    "PreConditionState(s)": "scheduleRaiseDirectionsOrder",
+    "PostConditionState": "orderDrawn",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested-upload-direction-order",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   }
 ]

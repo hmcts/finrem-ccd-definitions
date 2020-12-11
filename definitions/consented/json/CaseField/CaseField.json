@@ -1531,11 +1531,11 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "otherNWCourtList",
+    "ID": "lancashireCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_NWOtherList",
+    "FieldTypeParameter": "FR_lancashireList",
     "SecurityClassification": "Public"
   },
   {
@@ -1581,21 +1581,51 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "otherSECourtList",
+    "ID": "bedfordshireCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_SEOtherList",
+    "FieldTypeParameter": "FR_bedfordshireList",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "otherSWCourtList",
+    "ID": "thamesvalleyCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_SWOtherList",
+    "FieldTypeParameter": "FR_thamesvalleyList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "devonCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_devonList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "dorsetCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_dorsetList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "bristolCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bristolList",
     "SecurityClassification": "Public"
   },
   {
@@ -1621,11 +1651,11 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "welshOtherCourtList",
+    "ID": "northWalesCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_WalesOtherList",
+    "FieldTypeParameter": "FR_northwalesList",
     "SecurityClassification": "Public"
   },
   {
