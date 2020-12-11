@@ -7,11 +7,7 @@ dependencies:
     repository: '@hmctspublic'
     tags:
       - ccd-pr
-  - name: xui-webapp
-    version: ~0.2.1
+  - name: aac-manage-case-assignment
+    version: ~0.1.0
     repository: '@hmctspublic'
-    condition: xui-webapp.enabled
-  - name: idam-pr
-    version: 2.2.6
-    repository: '@hmctspublic'
-    condition: idam-pr.enabled
+    condition: aac-manage-case-assignment.enabled

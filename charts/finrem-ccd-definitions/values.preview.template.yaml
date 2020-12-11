@@ -6,50 +6,18 @@ nodejs:
   image: ${IMAGE_NAME}
   ingressHost: ${SERVICE_FQDN}
 
-idam-pr:
-  releaseNameOverride: ${SERVICE_NAME}-ccd-pr
+aac-manage-case-assignment:
   enabled: true
-  redirect_uris:
-    XUI:
-      - https://xui-${SERVICE_FQDN}/oauth2/callback
-    CCD:
-      - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
-    CCD Admin:
-      - https://admin-web-${SERVICE_FQDN}/oauth2redirect
-
-xui-webapp:
-  enabled: true
-  nodejs:
+  java:
     imagePullPolicy: Always
-    releaseNameOverride: ${SERVICE_NAME}-xui-webapp
-    image: hmctspublic.azurecr.io/xui/webapp:prod-3eaff6d3
-    ingressHost: xui-${SERVICE_FQDN}
+    image: 'hmctspublic.azurecr.io/aac/manage-case-assignment:latest'
     environment:
-      HEALTH_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}/health
-      HEALTH_CCD_DATA_API: http://${SERVICE_NAME}-ccd-data-store-api/health
-      HEALTH_TERMS_AND_CONDITIONS_API: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal/health
-      SERVICES_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}
-      SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
-      SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
-      JURISDICTIONS: DIVORCE
+      S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+      CCD_DATA_STORE_API_BASE_URL: http://ccd-data-store-api-${SERVICE_FQDN}.service.core-compute-preview.internal
+    keyVaults: []
+    ingressHost: aac-manage-case-assignment-${SERVICE_FQDN}
 
 ccd:
-  ccd:
-    definitionImporter:
-      enabled: false
-    managementWeb:
-      enabled: true
-    apiGatewayWeb:
-      enabled: true
-    s2s:
-      enabled: false
-    printService:
-      enabled: true
-
-  ingressHost: ${SERVICE_FQDN}
-  ingressIP: ${INGRESS_IP}
-  consulIP: ${CONSUL_LB_IP}
-
   global:
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
     idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
@@ -61,16 +29,6 @@ ccd:
     postgresPassword: hmcts
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
 
-  ccd-user-profile-api:
-    java:
-      imagePullPolicy: Always
-      enviroment:
-        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
-      keyVaults: []
-      environment:
-        USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_definition,ccd_admin
-      ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
-
   ccd-data-store-api:
     java:
       imagePullPolicy: Always
@@ -80,75 +38,6 @@ ccd:
         IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
       keyVaults: []
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
-
-  ccd-case-print-service:
-    nodejs:
-      environment:
-        IDAM_PRINT_SERVICE_KEY: ${PRINT_S2S_KEY}
-      ingressHost: ccd-case-print-service-${SERVICE_FQDN}
-
-  ccd-definition-store-api:
-    java:
-      imagePullPolicy: Always
-      keyVaults: []
-      environment:
-        DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
-        DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
-        DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin
-        IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
-        OIDC_ISSUER: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
-      ingressHost: ccd-definition-store-${SERVICE_FQDN}
-
-  ccd-admin-web:
-    nodejs:
-      image: hmctspublic.azurecr.io/ccd/admin-web:latest
-      ingressHost: admin-web-${SERVICE_FQDN}
-      keyVaults: []
-      environment:
-        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
-        IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
-        IDAM_OAUTH2_AW_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
-
-  ccd-case-management-web:
-    nodejs:
-      environment:
-        CCD_ACTIVITY_URL: null
-        DM_URL: https://gateway-${SERVICE_FQDN}/documents
-        DM_URL_REMOTE: https?://(gateway-${SERVICE_FQDN}:443|dm-store-aat.service.core-compute-aat.internal)/documents
-        NODE_TLS_REJECT_UNAUTHORIZED: 0
-      ingressHost: case-management-web-${SERVICE_FQDN}
-      ingressIP: ${INGRESS_IP}
-
-  ccd-api-gateway-web:
-    nodejs:
-      keyVaults: []
-      environment:
-        IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
-        IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
-        PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
-        PROXY_PRINT_SERVICE: http://ccd-case-print-service-${SERVICE_FQDN}
-        ADDRESS_LOOKUP_TOKEN: ${ADDRESS_LOOKUP_TOKEN}
-      ingressHost: gateway-${SERVICE_FQDN}
-      ingressIP: ${INGRESS_IP}
-
-  importer:
-    userprofile:
-      enabled: true
-      jurisdictions:
-        - DIVORCE
-      users:
-        - divorce_as_caseworker_beta@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_bulk_scanner@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_superuser@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_la@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_as_caseworker_admin@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-        - divorce_respondent_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      userProfileDatabaseHost: ${SERVICE_NAME}-ccd-postgres
-      userProfileDatabasePort: 5432
-      userProfileDatabaseUser: hmcts
-      userProfileDatabasePassword: hmcts
-      userProfileDatabaseName: user-profile
 
   postgresql:
     persistence:
