@@ -17,6 +17,21 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_migrateFrcCase",
+    "Name": "Case Data FRC Migration",
+    "Description": "Case Data FRC Migration",
+    "DisplayOrder": 101,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/ccd-data-migration/migrateFrc",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_caseNotes",
     "Name": "Add Note",
     "Description": "Add Note",
