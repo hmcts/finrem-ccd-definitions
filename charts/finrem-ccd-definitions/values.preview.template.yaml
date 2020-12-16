@@ -22,6 +22,8 @@ ccd:
   ccd:
     s2s:
       enabled: false
+    definitionImporter:
+      enabled: false
 
   global:
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
