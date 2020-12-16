@@ -15,3 +15,8 @@ dependencies:
     version: 2.2.6
     repository: '@hmctspublic'
     condition: idam-pr.enabled
+  - name: finrem-cos
+    version: ~0.0.13
+    repository: '@hmctspublic'
+    tags:
+      - ccd-pr

@@ -34,6 +34,25 @@ xui-webapp:
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
       JURISDICTIONS: DIVORCE
 
+finrem-cos:
+  java:
+    imagePullPolicy: Always
+    releaseNameOverride: ${SERVICE_NAME}-cos
+    image: 'hmctspublic.azurecr.io/finrem-cos:latest'
+    ingressHost: cos-${SERVICE_FQDN}
+    environment:
+      FEATURE_CONTESTED_PRINT_DRAFT_ORDER_NOT_APPROVED: true
+      FEATURE_CONTESTED_PRINT_GENERAL_ORDER: true
+      FEATURE_SHARE_A_CASE: true
+      FEATURE_RESPONDENT_JOURNEY: true
+      FEATURE_OFFLINE_NOTIFICATIONS: true
+      ACA_SERVICE_API_BASEURL: http://finrem-ccd-definitions-pr-354-aac-api
+      CCD_DATA_STORE_API_BASEURL: http://finrem-ccd-definitions-pr-354-ccd-data-store-api
+    keyVaults:
+      finrem:
+        secrets:
+          - finrem-case-orchestration-service-s2s-key
+          - idam-secret
 ccd:
   ccd:
     definitionImporter:
