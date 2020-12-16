@@ -26,10 +26,11 @@ xui-webapp:
     ingressHost: xui-${SERVICE_FQDN}
     environment:
       HEALTH_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}/health
-      HEALTH_CCD_DATA_API: http://${SERVICE_NAME}-ccd-data-store-api/health
+      HEALTH_CCD_DATA_API: http://finrem-ccd-definitions-pr-354-ccd-data-store-api/health
       HEALTH_TERMS_AND_CONDITIONS_API: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal/health
       SERVICES_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}
-      SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
+      SERVICES_CCD_DATA_STORE_API: http://finrem-ccd-definitions-pr-354-ccd-data-store-api
+      SERVICES_CCD_CASE_ASSIGNMENT_API: http://finrem-ccd-definitions-pr-354-aac-api
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
       JURISDICTIONS: DIVORCE
 
@@ -92,7 +93,7 @@ ccd:
       imagePullPolicy: Always
       keyVaults: []
       environment:
-        DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
+        DEFINITION_STORE_DB_HOST: finrem-ccd-definitions-pr-354-postgresql
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
         DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin
         IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
@@ -105,7 +106,7 @@ ccd:
       ingressHost: admin-web-${SERVICE_FQDN}
       keyVaults: []
       environment:
-        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
+        USER_PROFILE_DB_HOST: finrem-ccd-definitions-pr-354-postgresql
         IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
         IDAM_OAUTH2_AW_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
 
