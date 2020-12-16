@@ -38,7 +38,7 @@ finrem-cos:
   java:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-cos
-    image: 'hmctspublic.azurecr.io/finrem-cos:latest'
+    image: hmctspublic.azurecr.io/finrem/cos:latest
     ingressHost: cos-${SERVICE_FQDN}
     environment:
       FEATURE_CONTESTED_PRINT_DRAFT_ORDER_NOT_APPROVED: true
