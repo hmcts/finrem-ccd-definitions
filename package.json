@@ -23,7 +23,7 @@
       "ccdUrl": "http://ccd-data-store-api-aat.service.core-compute-aat.internal"
     },
     "preview": {
-      "cosUrl": "http://cos-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal",
+      "cosUrl": "http://cos-finrem-ccd-definitions-pr-${env.CHANGE_ID}.service.core-compute-preview.internal",
       "ccdUrl": "http://ccd-data-store-api-pr-354.service.core-compute-preview.internal"
     },
     "ithc": {
