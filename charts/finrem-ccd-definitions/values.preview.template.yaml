@@ -16,8 +16,13 @@ aac-manage-case-assignment:
       CCD_DATA_STORE_API_BASE_URL: http://ccd-data-store-api-${SERVICE_FQDN}.service.core-compute-preview.internal
     keyVaults: []
     ingressHost: aac-manage-case-assignment-${SERVICE_FQDN}
+    releaseNameOverride: ${SERVICE_NAME}-aac-api
 
 ccd:
+  ccd:
+    s2s:
+      enabled: false
+
   global:
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
     idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
