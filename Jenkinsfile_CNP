@@ -70,7 +70,7 @@ withPipeline("nodejs", product, component) {
   before('functionalTest:preview') {
     yarnBuilder.yarn('setup')
 
-    env.CHANGE_ID = ${CHANGE_ID}
+    env.CHANGE_ID = "${CHANGE_ID}"
 
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
       yarnBuilder.yarn('generate-excel-preview-consented')
