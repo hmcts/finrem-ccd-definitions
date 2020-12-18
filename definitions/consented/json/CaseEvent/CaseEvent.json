@@ -418,8 +418,6 @@
     "DisplayOrder": 17,
     "PreConditionState(s)": "orderMade",
     "PostConditionState": "*",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/consent-order-available",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -432,8 +430,6 @@
     "DisplayOrder": 18,
     "PreConditionState(s)": "consentOrderApproved",
     "PostConditionState": "consentOrderMade",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/consent-order-available",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -562,6 +558,8 @@
     "RetriesTimeoutAboutToStartEvent": "3,4,5",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/bulk-print",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/consent-order-available",
+    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
