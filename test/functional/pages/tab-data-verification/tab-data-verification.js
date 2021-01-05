@@ -5,8 +5,7 @@ const verifyContestedPaperTabText = require('../../../data/verify-contested-pape
 
 function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
-  I.waitForText(tabName, '15');
-  I.click(tabName);
+  I.waitForText(tabName, '30');
   I.see(eventName);
   I.see(endState);
 }
@@ -14,10 +13,10 @@ function historyTab(caseType, tabName, eventName, endState) {
 function applicantTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.click('div[id="mat-tab-label-0-1"]');
     I.see(verifyTabText.applicantTab.applicantLastName);
     I.see(verifyTabText.applicantTab.applicantsLocalCourt);
     I.see(verifyTabText.applicantTab.applicantSolicitorName);
@@ -26,6 +25,7 @@ function applicantTab(caseType, tabName) {
     I.see(verifyTabText.applicantTab.applicantEmailCommunication);
     break;
   case 'contested':
+    I.click('div[id="mat-tab-label-0-1"]');
     I.see(verifyContestedTabText.applicantTab.applicantLastName);
     I.see(verifyContestedTabText.applicantTab.applicantSolicitorName);
     I.see(verifyContestedTabText.applicantTab.applicantSolicitorFirm);
@@ -33,6 +33,7 @@ function applicantTab(caseType, tabName) {
     I.see(verifyContestedTabText.applicantTab.applicantEmailCommunication);
     break;
   case 'contestedPaper':
+    I.click('div[id="mat-tab-label-0-1"]');
     I.see(verifyContestedPaperTabText.applicantTab.applicantLastName);
     I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorName);
     I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorFirm);
@@ -45,10 +46,10 @@ function applicantTab(caseType, tabName) {
 function respondentTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.click('div[id="mat-tab-label-0-2"]');
     I.see(verifyTabText.respondentTab.respondentLastName);
     I.see(verifyTabText.respondentTab.respondentSolicitorName);
     I.see(verifyTabText.respondentTab.respondentSolicitorFirm);
@@ -56,6 +57,7 @@ function respondentTab(caseType, tabName) {
     I.see(verifyTabText.respondentTab.respondentPostCode);
     break;
   case 'contested':
+    I.click('div[id="mat-tab-label-0-3"]');
     I.see(verifyContestedTabText.respondentTab.respondentLastName);
     I.see(verifyContestedTabText.respondentTab.respondentSolicitorName);
     I.see(verifyContestedTabText.respondentTab.respondentSolicitorFirm);
@@ -63,6 +65,7 @@ function respondentTab(caseType, tabName) {
     I.see(verifyContestedTabText.respondentTab.respondentPostCode);
     break;
   case 'contestedPaper':
+    I.click('div[id="mat-tab-label-0-3"]');
     I.see(verifyContestedPaperTabText.respondentTab.respondentLastName);
     I.see(verifyContestedPaperTabText.respondentTab.respondentRepresented);
     I.see(verifyContestedPaperTabText.respondentTab.respondentBuildingName);
@@ -75,19 +78,21 @@ function respondentTab(caseType, tabName) {
 function divorceTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.click('div[id="mat-tab-label-0-3"]');
     I.see(verifyTabText.divorceTab.divorceCaseNumber);
     I.see(verifyTabText.divorceTab.decreeNisiFileName);
     break;
   case 'contested':
+    I.click('div[id="mat-tab-label-0-2"]');
     I.see(verifyContestedTabText.divorceTab.divorceCaseNumber);
     I.see(verifyContestedTabText.divorceTab.decreeNisiFileName);
     I.see(verifyContestedTabText.divorceTab.applicantsLocalCourt);
     break;
   case 'contestedPaper':
+    I.click('div[id="mat-tab-label-0-2"]');
     I.see(verifyContestedPaperTabText.divorceTab.divorceCaseNumber);
     I.see(verifyContestedPaperTabText.divorceTab.decreeNisiFileName);
     I.see(verifyContestedPaperTabText.divorceTab.applicantsLocalCourt);
@@ -98,22 +103,24 @@ function divorceTab(caseType, tabName) {
 function natureOfApplicationTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.click('div[id="mat-tab-label-0-4"]');
     I.see(verifyTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
     I.see(verifyTabText.natureOfApplicationTab.orderForChildren);
     break;
   case 'contested':
+    I.click('div[id="mat-tab-label-0-4"]');
     I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyContestedTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyContestedTabText.natureOfApplicationTab.mortgageDetails);
     I.see(verifyContestedTabText.natureOfApplicationTab.orderForChildren);
     break;
   case 'contestedPaper':
+    I.click('div[id="mat-tab-label-0-4"]');
     I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyContestedPaperTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyContestedPaperTabText.natureOfApplicationTab.mortgageDetails);
@@ -125,15 +132,16 @@ function natureOfApplicationTab(caseType, tabName) {
 function authorisationTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.click('div[id="mat-tab-label-0-5"]');
     I.see(verifyTabText.authorisationTab.solicitorName);
     I.see(verifyTabText.authorisationTab.solicitorFirm);
     I.see(verifyTabText.authorisationTab.signedDate);
     break;
   case 'contested':
+    I.click('div[id="mat-tab-label-0-5"]');
     I.see(verifyContestedTabText.authorisationTab.solicitorName);
     I.see(verifyContestedTabText.authorisationTab.solicitorFirm);
     I.see(verifyContestedTabText.authorisationTab.signedDate);
@@ -149,10 +157,10 @@ function authorisationTab(caseType, tabName) {
 function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.click('div[id="mat-tab-label-0-6"]');
     I.see(verifyTabText.caseDocumentsTab.draftDocumentName);
     I.see(verifyTabText.caseDocumentsTab.latestConsentOrderLabel);
     I.see(verifyTabText.caseDocumentsTab.pensionTypeName);
@@ -161,6 +169,7 @@ function caseDocumentsTab(caseType, tabName, eventName) {
     }
     break;
   case 'contested':
+    I.click('div[id="mat-tab-label-0-6"]');
     I.see(verifyContestedTabText.caseDocumentsTab.UploadDecreeNisiFile);
     if (eventName === verifyContestedTabText.historyTab.assignToJudgeEvent ||
          eventName === verifyContestedTabText.historyTab.consentOrderEvent ||
@@ -180,6 +189,7 @@ function caseDocumentsTab(caseType, tabName, eventName) {
     }
     break;
   case 'contestedPaper':
+    I.click('div[id="mat-tab-label-0-5"]');
     I.see(verifyContestedPaperTabText.caseDocumentsTab.uploadedOtherDocument);
     I.see(verifyContestedPaperTabText.caseDocumentsTab.uploadedDecreeNisiFile);
     I.see(verifyContestedPaperTabText.caseDocumentsTab.uploadedPaperDocument);
@@ -190,20 +200,22 @@ function caseDocumentsTab(caseType, tabName, eventName) {
 function paymentDetailsTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.click('div[id="mat-tab-label-0-7"]');
     I.see(verifyTabText.paymentDetailsTab.hwfNumber);
     I.see(verifyTabText.paymentDetailsTab.feeCode);
     I.see(verifyTabText.paymentDetailsTab.amount);
     break;
   case 'contested':
+    I.click('div[id="mat-tab-label-0-7"]');
     I.see(verifyContestedTabText.paymentDetailsTab.hwfNumber);
     I.see(verifyContestedTabText.paymentDetailsTab.feeCode);
     I.see(verifyContestedTabText.paymentDetailsTab.amount);
     break;
   case 'contestedPaper':
+    I.click('div[id="mat-tab-label-0-6"]');
     I.see(verifyContestedPaperTabText.paymentDetailsTab.hwfNumber);
     I.see(verifyContestedPaperTabText.paymentDetailsTab.feeCode);
     I.see(verifyContestedPaperTabText.paymentDetailsTab.amount);
@@ -212,11 +224,12 @@ function paymentDetailsTab(caseType, tabName) {
 }
 function judgeDetailsTab(caseType, tabName, eventName) {
   const I = this;
+  I.wait(5);
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.click('div[id="mat-tab-label-0-8"]');
     I.see(verifyTabText.judgeDetailsTab.applicantFName);
     I.see(verifyTabText.judgeDetailsTab.respondentFName);
     I.see(verifyTabText.judgeDetailsTab.decreeNisiDate);
@@ -249,18 +262,20 @@ function judgeDetailsTab(caseType, tabName, eventName) {
 function adminNotesTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.click('div[id="mat-tab-label-0-8"]');
     I.see(verifyTabText.adminNotesTab.assignToJudgeReason);
     I.see(verifyTabText.adminNotesTab.issueDate);
     I.see(verifyTabText.adminNotesTab.assignToJudgeText);
     break;
   case 'contested':
+    I.click('div[id="mat-tab-label-0-9"]');
     I.see(verifyContestedTabText.adminNotesTab.issueDate);
     break;
   case 'contestedPaper':
+    I.click('div[id="mat-tab-label-0-9"]');
     I.see(verifyContestedPaperTabText.adminNotesTab.issueDate);
     break;
   }
@@ -269,10 +284,10 @@ function adminNotesTab(caseType, tabName) {
 function gateKeepingAllocationsTab(caseType, tabName, eventName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
+    I.click('div[id="mat-tab-label-0-8"]');
     I.see(verifyContestedTabText.gateKeepingAllocationsTab.localCourt);
     if (eventName === verifyContestedTabText.historyTab.issueApplicationEvent) {
       I.see(verifyContestedTabText.gateKeepingAllocationsTab.fastTrackProcedure);
@@ -280,6 +295,7 @@ function gateKeepingAllocationsTab(caseType, tabName, eventName) {
     }
     break;
   case 'contestedPaper':
+    I.click('div[id="mat-tab-label-0-8"]');
     I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.localCourt);
     I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.fastTrackProcedure);
     I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.dateOfMarriage);
@@ -290,14 +306,15 @@ function gateKeepingAllocationsTab(caseType, tabName, eventName) {
 function schedulingAndListingTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
+    I.click('div[id="mat-tab-label-0-10"]');
     I.see(verifyContestedTabText.schedulingAndListingTab.localCourt);
     I.see(verifyContestedTabText.schedulingAndListingTab.courtFrc);
     break;
   case 'contestedPaper':
+    I.click('div[id="mat-tab-label-0-10"]');
     I.see(verifyContestedPaperTabText.schedulingAndListingTab.localCourt);
     I.see(verifyContestedPaperTabText.schedulingAndListingTab.courtFrc);
     break;
@@ -307,7 +324,7 @@ function schedulingAndListingTab(caseType, tabName) {
 function consentOrderProcessTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
-  I.click(tabName);
+  I.click('div[id="mat-tab-label-0-11"]');
   I.see(verifyContestedTabText.consentOrderProcessTab.applicationFor);
   I.see(verifyContestedTabText.consentOrderProcessTab.mortgageDetails);
   I.see(verifyContestedTabText.consentOrderProcessTab.draftOrderDocument);
@@ -324,7 +341,6 @@ function verifyConsentedTabData(caseType, eventName, stateName) {
   I.authorisationTab(caseType, verifyTabText.authorisationTab.tabName);
   I.caseDocumentsTab(caseType, verifyTabText.caseDocumentsTab.tabName, eventName);
   I.paymentDetailsTab(caseType, verifyTabText.paymentDetailsTab.tabName);
-  I.judgeDetailsTab(caseType, verifyTabText.judgeDetailsTab.tabName, eventName);
 }
 
 function verifyContestedTabData(caseType, eventName, stateName) {
