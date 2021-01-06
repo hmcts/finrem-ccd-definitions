@@ -2,7 +2,7 @@
 
 function solicitorCreate(reference) {
   const I = this;
-  I.waitForElement('h4', '10');
+  I.waitForElement('h4', '15');
   I.see('SOLICITOR DETAILS');
   I.fillField('input[id="solicitorName"]', 'Arrow');
   I.fillField('input[id="solicitorFirm"]', 'Abc Firm');
