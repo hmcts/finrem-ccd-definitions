@@ -28,6 +28,7 @@ const { waitForPage } = require('./pages/common/common');
 const { createCase } = require('./pages/create-case/create-case');
 const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab, gateKeepingAllocationsTab, schedulingAndListingTab, consentOrderProcessTab, verifyConsentedTabData, verifyContestedTabData, verifyContestedPaperTabData } = require('./pages/tab-data-verification/tab-data-verification');
 const { assignContestedCase } = require('./pages/org-assign-cases/org-assign-cases-to-respondent');
+const { assignContestedShareCase } = require('./pages/share-case-in-org/share-case-in-org');
 
 module.exports = () => {
   return actor({
@@ -122,6 +123,7 @@ module.exports = () => {
     verifyConsentedTabData,
     verifyContestedTabData,
     verifyContestedPaperTabData,
-    assignContestedCase
+    assignContestedCase,
+    assignContestedShareCase
   });
 };

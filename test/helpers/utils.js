@@ -136,7 +136,6 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
   const eventToken = JSON.parse(startCaseResponse).token;
   /* eslint id-blacklist: ["error", "undefined"] */
   const data = fs.readFileSync(dataLocation);
-
   const saveBody = {
     data: JSON.parse(data),
     event: {
@@ -169,7 +168,7 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
   return caseId;
 }
 
-async function updateCaseInCcd(userName, password, caseId, caseType, eventId, dataLocation) {
+async function updateCaseInCcd(userName, password, caseId, caseType, eventId, dataLocation,shareCaseRef) {
   const authToken = await getUserToken(userName, password);
 
   const userId = await getUserId(authToken);
@@ -198,8 +197,10 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
   const eventToken = JSON.parse(startEventResponse).token;
 
   const data = fs.readFileSync(dataLocation);
+  let updatedData = JSON.stringify(JSON.parse(data));
+  updatedData = updatedData.replace("ReplaceForShareCase",shareCaseRef);
   const saveBody = {
-    data: JSON.parse(data),
+    data: JSON.parse(updatedData),
     event: {
       id: eventId,
       summary: 'Updating Case',
