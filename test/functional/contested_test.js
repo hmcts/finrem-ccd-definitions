@@ -199,3 +199,14 @@ Scenario('Contested Case Creation by Solicitor @nightly', async I => {
     I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.caseSubmissionEvent, verifyTabText.historyTab.hwfCaseSubmissionEndState);
   }
 });
+Scenario('Contested share case @nightly @pipeline', async I => {
+  if (nightlyTest === 'true') {
+    /* eslint-disable */
+  const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+  const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json',solRef);
+  /* eslint-enable */
+    I.signInIdam(solicitorUserName, solicitorPassword);
+    I.assignContestedShareCase(caseId, solRef);
+  }
+});

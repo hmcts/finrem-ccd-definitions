@@ -2,18 +2,18 @@
 
 function amendApplicationDetails() {
   const I = this;
-  I.waitForElement('.tabs', '30');
+  I.waitForText('History', '15');
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.wait('2');
   I.click('Go');
-  I.waitForText('Before You Start', '10');
+  I.waitForText('Before You Start', '15');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('SOLICITOR DETAILS', '10');
   I.fillField('input[id="solicitorPhone"]', '07766120000');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('DIVORCE DETAILS', '10');
+  I.waitForText('DIVORCE DETAILS', '15');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D84321');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -65,7 +65,7 @@ function amendApplicationDetails() {
 
 function contestedAmendApplicationDetails() {
   const I = this;
-  I.waitForPage('.tabs-content');
+  I.waitForText('History', '15');
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.click('Go');
 
