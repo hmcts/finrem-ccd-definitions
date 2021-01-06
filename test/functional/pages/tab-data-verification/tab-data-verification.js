@@ -275,7 +275,7 @@ function adminNotesTab(caseType, tabName) {
     I.see(verifyContestedTabText.adminNotesTab.issueDate);
     break;
   case 'contestedPaper':
-    I.click('div[id="mat-tab-label-0-9"]');
+    I.click('div[id="mat-tab-label-0-7"]');
     I.see(verifyContestedPaperTabText.adminNotesTab.issueDate);
     break;
   }
@@ -295,7 +295,7 @@ function gateKeepingAllocationsTab(caseType, tabName, eventName) {
     }
     break;
   case 'contestedPaper':
-    I.click('div[id="mat-tab-label-0-8"]');
+    I.click('div[id="mat-tab-label-0-6"]');
     I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.localCourt);
     I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.fastTrackProcedure);
     I.see(verifyContestedPaperTabText.gateKeepingAllocationsTab.dateOfMarriage);
@@ -314,7 +314,7 @@ function schedulingAndListingTab(caseType, tabName) {
     I.see(verifyContestedTabText.schedulingAndListingTab.courtFrc);
     break;
   case 'contestedPaper':
-    I.click('div[id="mat-tab-label-0-10"]');
+    I.click('div[id="mat-tab-label-0-8"]');
     I.see(verifyContestedPaperTabText.schedulingAndListingTab.localCourt);
     I.see(verifyContestedPaperTabText.schedulingAndListingTab.courtFrc);
     break;

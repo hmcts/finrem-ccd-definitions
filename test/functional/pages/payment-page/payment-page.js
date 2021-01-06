@@ -2,7 +2,7 @@
 
 function paymentPage(pbaValue) {
   const I = this;
-  I.waitForText('PAYMENT DETAILS', '5');
+  I.waitForText('PAYMENT DETAILS', '15');
   if (pbaValue === false) {
     I.checkOption('input[id="helpWithFeesQuestion-Yes"]');
   } else {
