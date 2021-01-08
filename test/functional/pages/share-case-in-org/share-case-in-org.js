@@ -8,7 +8,7 @@ function assignContestedShareCase(caseId, solRef) {
   I.waitForText('North Wales Court List', '20');
   I.fillField('input[id="solicitorReference"]', solRef);
   I.click('Apply');
-  I.waitForText('Case Reference', '5');
+  I.waitForText('Case Reference', '15');
   I.checkOption(`input[id="select-${caseId}"]`);
   I.click('Share Case');
   I.waitForText('Add recipient', '15');

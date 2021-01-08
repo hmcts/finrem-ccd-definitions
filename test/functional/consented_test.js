@@ -73,7 +73,7 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     I.consentedOtherDocuments();
     I.savingApplicationInformation();
     I.checkYourAnswers();
-    I.see('Consent Order Application');
+    I.waitForText('Consent Order Application', '20');
     // amend event
     I.amendApplicationDetails();
     // hwf payment submission
@@ -84,9 +84,6 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     I.savingApplicationInformation();
     I.finalPaymentSubmissionPage();
     I.finalInformationPage();
-    I.see('Case Submission');
-    // Tab data verification.
-    // eslint-disable-next-line max-len
-    I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.caseSubmissionEvent, verifyTabText.historyTab.hwfCaseSubmissionEndState);
+    I.waitForText('History', '10');
   }
 });
