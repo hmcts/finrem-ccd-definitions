@@ -194,9 +194,7 @@ Scenario('Contested Case Creation by Solicitor @nightly', async I => {
     I.finalPaymentSubmissionPage();
     I.finalInformationPage();
     I.see('Case Submission');
-    // Tab data verification.
-    // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.caseSubmissionEvent, verifyTabText.historyTab.hwfCaseSubmissionEndState);
+    I.waitForText('History', '10');
   }
 });
 Scenario('Contested share case @nightly @pipeline', async I => {
