@@ -31,6 +31,7 @@ def secrets = [
                 secret('userprofile-consented-judgedetails-4', 'USERPROFILE_CONSENTED_JUDGEDETAILS_4'),
                 secret('userprofile-consented-judgedetails-5', 'USERPROFILE_CONSENTED_JUDGEDETAILS_5'),
                 secret('userprofile-consented-judgedetails-6', 'USERPROFILE_CONSENTED_JUDGEDETAILS_6'),
+                secret('userprofile-consented-judgedetails-7', 'USERPROFILE_CONSENTED_JUDGEDETAILS_7'),
                 secret('userprofile-contested-judgedetails', 'USERPROFILE_CONTESTED_JUDGEDETAILS'),
                 secret('username-solicitor', 'USERNAME_SOLICITOR'),
                 secret('password-solicitor', 'PASSWORD_SOLICITOR'),
@@ -102,6 +103,7 @@ withPipeline("nodejs", product, component) {
         sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_4} > UserProfile-judgeDetails4-prod.json'
         sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_5} > UserProfile-judgeDetails5-prod.json'
         sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_6} > UserProfile-judgeDetails6-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_7} > UserProfile-judgeDetails7-prod.json'
       }
 
       dir('definitions/consented/json/FixedLists'){
