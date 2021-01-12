@@ -5,6 +5,7 @@ function assignContestedCase(caseId, respondentEmail) {
   I.click('Unassigned cases');
   I.waitForText('Case Reference', '10');
   I.click('FinancialRemedyContested');
+  I.waitForText('State', '10');
   I.checkOption(`select-${caseId}`);
   I.waitForText('Share case', '5');
   I.click('Share case');
