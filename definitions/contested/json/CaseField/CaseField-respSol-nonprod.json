@@ -1,0 +1,20 @@
+[
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appConfidentialDocsCollection",
+    "Label": "Confidential Applicant Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respConfidentialDocsCollection",
+    "Label": "Confidential Respondent Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  }
+]

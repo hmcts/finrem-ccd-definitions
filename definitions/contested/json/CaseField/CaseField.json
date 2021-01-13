@@ -2992,15 +2992,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "appConfidentialDocsCollection",
-    "Label": "Confidential Applicant Documents",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "respCorrespondenceCollection",
     "Label": "Correspondence",
     "FieldType": "Collection",
@@ -3030,15 +3021,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "respTrialBundleCollection",
     "Label": "Trial Bundle",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respConfidentialDocsCollection",
-    "Label": "Confidential Respondent Documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"
