@@ -84,6 +84,6 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     I.savingApplicationInformation();
     I.finalPaymentSubmissionPage();
     I.finalInformationPage();
-    I.waitForText('History', '10');
+    I.waitForText('History', '30');
   }
 });

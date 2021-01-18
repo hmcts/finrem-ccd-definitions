@@ -2,7 +2,7 @@
 
 function amendApplicationDetails() {
   const I = this;
-  I.waitForText('History', '20');
+  I.waitForText('History', '30');
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.wait('2');
   I.click('Go');
@@ -65,7 +65,7 @@ function amendApplicationDetails() {
 
 function contestedAmendApplicationDetails() {
   const I = this;
-  I.waitForText('History', '20');
+  I.waitForText('History', '30');
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.click('Go');
 
