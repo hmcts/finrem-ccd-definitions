@@ -541,7 +541,7 @@
     "PreConditionState(s)": "orderMade",
     "PostConditionState": "awaitingResponse",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/bulk-print",
-    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/consent-order-not-approved-sent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -555,11 +555,8 @@
     "PreConditionState(s)": "consentOrderApproved",
     "PostConditionState": "consentOrderMade",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/check-latest-consent-order",
-    "RetriesTimeoutAboutToStartEvent": "3,4,5",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/bulk-print",
-    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/consent-order-available",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -623,7 +620,6 @@
     "PreConditionState(s)": "referredToJudge",
     "PostConditionState": "referredToJudge",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
