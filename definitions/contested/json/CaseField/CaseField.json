@@ -1708,7 +1708,25 @@
     "Label": "Upload Draft Direction Order  ",
     "HintText": "PLEASE NOTE: you must upload an editable version of the draft order (for example a 'word' document) - please do not upload a PDF",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ct_draftDirectionOrderCollection",
+    "FieldTypeParameter": "FR_ct_draftDirectionOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "latestDraftDirectionOrder",
+    "Label": "Latest Draft Direction Order  ",
+    "HintText": "PLEASE NOTE: you must upload an editable version of the draft order (for example a 'word' document) - please do not upload a PDF",
+    "FieldType": "FR_ct_draftDirectionOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgesAmendedOrderCollection",
+    "Label": "Judge's amended direction orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_draftDirectionOrder",
     "SecurityClassification": "Public"
   },
   {
