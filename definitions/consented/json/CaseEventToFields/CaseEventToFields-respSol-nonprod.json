@@ -37,5 +37,45 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "appRespondentRep=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_updateRespondentContactDetails",
+    "CaseFieldID": "rSolicitorLabel",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "appRespondentRep=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_updateRespondentContactDetails",
+    "CaseFieldID": "rSolicitorEmail",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "appRespondentRep=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_updateRespondentContactDetails",
+    "CaseFieldID": "appRespondentRep",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "rSolicitorLabel=\"ABC\"",
+    "ShowSummaryChangeOption": "N",
+    "ShowEventNotes": "N"
   }
 ]
