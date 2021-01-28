@@ -2,7 +2,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_amendApplicationDetails",
+    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "PageFieldDisplayOrder": 7,
     "DisplayContext": "COMPLEX",
@@ -15,12 +15,12 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_updateContactDetails",
+    "CaseEventID": "FR_amendApplicationDetails",
     "CaseFieldID": "RespondentOrganisationPolicy",
-    "PageFieldDisplayOrder": 27,
+    "PageFieldDisplayOrder": 7,
     "DisplayContext": "COMPLEX",
-    "PageID": "updateContactDetails",
-    "PageDisplayOrder": 4,
+    "PageID": 5,
+    "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
     "FieldShowCondition": "appRespondentRep=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
