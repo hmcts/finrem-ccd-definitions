@@ -482,13 +482,23 @@
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "respondentDetailsTab",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "RespSolNotificationsEmailConsent",
+    "TabFieldDisplayOrder": 16,
+    "FieldShowCondition": "respondentRepresented=\"Yes\""
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 4,
     "CaseFieldID": "rRespondentLabel2",
-    "TabFieldDisplayOrder": 16,
+    "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "respondentRepresented=\"No\""
   },
   {
@@ -498,16 +508,6 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 4,
     "CaseFieldID": "respondentAddress",
-    "TabFieldDisplayOrder": 17,
-    "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "respondentDetailsTab",
-    "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
-    "CaseFieldID": "respondentPhone",
     "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
@@ -517,7 +517,7 @@
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 4,
-    "CaseFieldID": "respondentEmail",
+    "CaseFieldID": "respondentPhone",
     "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
@@ -527,8 +527,18 @@
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 4,
-    "CaseFieldID": "respondentAddressConfidential",
+    "CaseFieldID": "respondentEmail",
     "TabFieldDisplayOrder": 20,
+    "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "respondentDetailsTab",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "respondentAddressConfidential",
+    "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "respondentRepresented=\"No\""
   },
   {
