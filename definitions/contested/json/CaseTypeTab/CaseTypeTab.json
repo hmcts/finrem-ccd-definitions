@@ -1050,6 +1050,15 @@
     "TabFieldDisplayOrder": 38
   },
   {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicationDocumentsTab",
+    "TabLabel": "Case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "orderApprovedCoverLetter",
+    "TabFieldDisplayOrder": 39
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "paymentDetailsTab",
@@ -1889,22 +1898,13 @@
     "TabFieldDisplayOrder": 5
   },
   {
-    "LiveFrom": "01/01/2021",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "Orders",
-    "TabLabel": "Orders",
-    "TabDisplayOrder": 14,
-    "CaseFieldID": "orderApprovedCoverLetter",
-    "TabFieldDisplayOrder": 6
-  },
-  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "Orders",
     "TabLabel": "Orders",
     "TabDisplayOrder": 14,
     "CaseFieldID": "latestRefusalOrder",
-    "TabFieldDisplayOrder": 7
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
