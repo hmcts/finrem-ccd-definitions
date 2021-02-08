@@ -96,11 +96,21 @@ withPipeline("nodejs", product, component) {
     yarnBuilder.yarn('setup')
 
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
-      dir('definitions/consented/json'){
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
+      dir('definitions/consented/json/UserProfile'){
         sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
         sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_2} > UserProfile-judgeDetails2-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_3} > UserProfile-judgeDetails3-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_4} > UserProfile-judgeDetails4-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_5} > UserProfile-judgeDetails5-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_6} > UserProfile-judgeDetails6-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_7} > UserProfile-judgeDetails7-prod.json'
+      }
+
+      dir('definitions/consented/json/FixedLists'){
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
       }
 
       yarnBuilder.yarn('generate-excel-all-consented')
