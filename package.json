@@ -26,6 +26,10 @@
       "cosUrl": "http://finrem-cos-ithc.service.core-compute-ithc.internal",
       "ccdUrl": "http://ccd-data-store-api-ithc.service.core-compute-ithc.internal"
     },
+    "perftest": {
+      "cosUrl": "http://finrem-cos-perftest.service.core-compute-perftest.internal",
+      "ccdUrl": "http://ccd-data-store-api-perftest.service.core-compute-perftest.internal"
+    },
     "prod": {
       "cosUrl": "http://finrem-cos-prod.service.core-compute-prod.internal",
       "ccdUrl": "http://ccd-data-store-api-prod.service.core-compute-prod.internal"
@@ -51,6 +55,7 @@
     "generate-excel-demo-prod-like-consented": "FR_ENV=demo-prod-like CCD_DEF_COS_URL=$npm_package_config_demo_cosUrl CCD_DEF_CCD_URL=$npm_package_config_demo_ccdUrl EXCLUDE='*-nonprod.json' yarn run generate-excel-consented",
     "generate-excel-aat-consented": "FR_ENV=aat CCD_DEF_COS_URL=$npm_package_config_aat_cosUrl CCD_DEF_CCD_URL=$npm_package_config_aat_ccdUrl EXCLUDE='*-prod.json' yarn run generate-excel-consented",
     "generate-excel-ithc-consented": "FR_ENV=ithc CCD_DEF_COS_URL=$npm_package_config_ithc_cosUrl CCD_DEF_CCD_URL=$npm_package_config_ithc_ccdUrl EXCLUDE='*-prod.json' yarn run generate-excel-consented",
+    "generate-excel-perftest-consented": "FR_ENV=perftest CCD_DEF_COS_URL=$npm_package_config_perftest_cosUrl CCD_DEF_CCD_URL=$npm_package_config_perftest_ccdUrl EXCLUDE='*-prod.json' yarn run generate-excel-consented",
     "generate-excel-prod-consented": "FR_ENV=prod CCD_DEF_COS_URL=$npm_package_config_prod_cosUrl CCD_DEF_CCD_URL=$npm_package_config_prod_ccdUrl EXCLUDE='*-nonprod.json' yarn run generate-excel-consented",
     "generate-excel-all-consented": "yarn generate-excel-consented && yarn generate-excel-local-consented && yarn generate-excel-demo-consented && yarn generate-excel-aat-consented && yarn generate-excel-prod-consented",
     "generate-json-contested": "yarn --cwd ccd-definition-processor xlsx2json -D ../definitions/contested/json -i ../definitions/contested/xlsx/ccd-config-base-contested.xlsx && pretty-quick --pattern 'definitions/**/json/**.json'",
@@ -60,6 +65,7 @@
     "generate-excel-demo-prod-like-contested": "FR_ENV=demo-prod-like CCD_DEF_COS_URL=$npm_package_config_demo_cosUrl CCD_DEF_CCD_URL=$npm_package_config_demo_ccdUrl EXCLUDE='*-nonprod.json' yarn run generate-excel-contested",
     "generate-excel-aat-contested": "FR_ENV=aat CCD_DEF_COS_URL=$npm_package_config_aat_cosUrl CCD_DEF_CCD_URL=$npm_package_config_aat_ccdUrl EXCLUDE='*-prod.json' yarn run generate-excel-contested",
     "generate-excel-ithc-contested": "FR_ENV=ithc CCD_DEF_COS_URL=$npm_package_config_ithc_cosUrl CCD_DEF_CCD_URL=$npm_package_config_ithc_ccdUrl EXCLUDE='*-prod.json' yarn run generate-excel-contested",
+    "generate-excel-perftest-contested": "FR_ENV=perftest CCD_DEF_COS_URL=$npm_package_config_perftest_cosUrl CCD_DEF_CCD_URL=$npm_package_config_perftest_ccdUrl EXCLUDE='*-prod.json' yarn run generate-excel-contested",
     "generate-excel-prod-contested": "FR_ENV=prod CCD_DEF_COS_URL=$npm_package_config_prod_cosUrl CCD_DEF_CCD_URL=$npm_package_config_prod_ccdUrl EXCLUDE='*-nonprod.json' yarn run generate-excel-contested",
     "generate-excel-all-contested": "yarn generate-excel-contested && yarn generate-excel-local-contested && yarn generate-excel-demo-contested && yarn generate-excel-aat-contested && yarn generate-excel-prod-contested",
     "copy-common-components-consented": "cp -R definitions/common/json/* definitions/consented/json",
