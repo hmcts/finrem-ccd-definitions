@@ -117,6 +117,7 @@ ccd:
         DM_URL_REMOTE: https?://(gateway-${SERVICE_FQDN}:443|dm-store-aat.service.core-compute-aat.internal)/documents
         NODE_TLS_REJECT_UNAUTHORIZED: 0
         APPINSIGHTS_INSTRUMENTATIONKEY: ${APPINSIGHTS_INSTRUMENTATIONKEY}
+        APPINSIGHTS_ENABLED: false
       ingressHost: case-management-web-${SERVICE_FQDN}
       ingressIP: ${INGRESS_IP}
 
