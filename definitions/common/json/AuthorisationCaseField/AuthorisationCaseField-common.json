@@ -61,5 +61,26 @@
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "RespSolNotificationsEmailConsent",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "RespSolNotificationsEmailConsent",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "RespSolNotificationsEmailConsent",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
   }
 ]
