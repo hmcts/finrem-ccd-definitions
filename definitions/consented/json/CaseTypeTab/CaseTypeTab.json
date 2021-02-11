@@ -657,6 +657,17 @@
     "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "respondentDetails",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "RespSolNotificationsEmailConsent",
+    "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "appRespondentRep=\"Yes\""
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "Channel": "CaseWorker",
@@ -664,7 +675,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rRespondentLabel2",
-    "TabFieldDisplayOrder": 13,
+    "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "appRespondentRep=\"No\""
   },
   {
@@ -675,17 +686,6 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "respondentAddress",
-    "TabFieldDisplayOrder": 14,
-    "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "respondentDetails",
-    "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
-    "CaseFieldID": "respondentPhone",
     "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
@@ -696,7 +696,7 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "respondentEmail",
+    "CaseFieldID": "respondentPhone",
     "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
@@ -707,8 +707,19 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "respondentAddressConfidential",
+    "CaseFieldID": "respondentEmail",
     "TabFieldDisplayOrder": 17,
+    "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "respondentDetails",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "respondentAddressConfidential",
+    "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "appRespondentRep=\"No\""
   },
   {

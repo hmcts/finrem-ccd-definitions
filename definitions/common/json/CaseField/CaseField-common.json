@@ -56,5 +56,14 @@
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "RespSolNotificationsEmailConsent",
+    "Label": "Future email communications",
+    "HintText": "I confirm I am willing to accept service of all correspondence and orders by email at the email address stated above",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
   }
 ]
