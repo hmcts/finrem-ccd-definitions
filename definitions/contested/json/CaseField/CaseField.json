@@ -3517,5 +3517,40 @@
     "FieldType": "Document",
     "Label": "Latest draft hearing order",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderApprovedJudgeType",
+    "Label": "Select Judge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
+    "HintText": "Please select the appropriate Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderApprovedJudgeName",
+    "Label": "Name of Judge",
+    "HintText": "Surname of judge",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderApprovedDate",
+    "Label": "Court order date",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderApprovedCoverLetter",
+    "Label": "Order approved cover letter",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
   }
 ]
