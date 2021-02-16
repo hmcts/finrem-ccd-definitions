@@ -3552,5 +3552,15 @@
     "Label": "Order approved cover letter",
     "FieldType": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "assignedToJudge",
+    "Label": "The Judge reserved for this case:",
+    "HintText": "Select a Judge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_AssignToJudge",
+    "SecurityClassification": "Public"
   }
 ]
