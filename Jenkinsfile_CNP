@@ -72,12 +72,12 @@ withPipeline("nodejs", product, component) {
     yarnBuilder.yarn('setup')
 
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
-      yarnBuilder.yarn('generate-excel-preview-consented')
+      npm run generate-excel-preview-consented --cosUrl="http://cos-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       yarnBuilder.yarn('generate-excel-aat-consented')
       yarnBuilder.yarn('generate-excel-demo-consented')
     }
     stageWithAgent('Generate Financial Remedy Contested Case config', product) {
-      yarnBuilder.yarn('generate-excel-preview-contested')
+      npm run generate-excel-preview-contested --cosUrl="http://cos-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       yarnBuilder.yarn('generate-excel-aat-contested')
       yarnBuilder.yarn('generate-excel-demo-contested')
     }
