@@ -33,6 +33,14 @@ xui-webapp:
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
       JURISDICTIONS: DIVORCE
 
+finrem-cos:
+  java:
+    image: hmctspublic.azurecr.io/finrem/cos:latest
+    ingressHost: cos-${SERVICE_FQDN}
+    environment:
+      FEATURE_RESPONDENT_JOURNEY: true
+      FEATURE_ASSIGN_CASE_ACCESS: false
+
 ccd:
   ccd:
     definitionImporter:
