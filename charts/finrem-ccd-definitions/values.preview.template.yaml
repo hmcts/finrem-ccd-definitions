@@ -35,6 +35,7 @@ xui-webapp:
 
 finrem-cos:
   java:
+    releaseNameOverride: ${SERVICE_NAME}-cos
     image: hmctspublic.azurecr.io/finrem/cos:latest
     ingressHost: cos-${SERVICE_FQDN}
     environment:
