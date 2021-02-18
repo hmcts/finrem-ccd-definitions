@@ -1766,6 +1766,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "AdminNotes",
+    "TabLabel": "Admin Notes",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "assignedToJudge",
+    "TabFieldDisplayOrder": 7
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "judiciaryOutcomeTab",
     "TabLabel": "Judiciary Outcome",
     "TabDisplayOrder": 13,
