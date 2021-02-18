@@ -71,7 +71,7 @@ withPipeline("nodejs", product, component) {
   before('functionalTest:preview') {
     yarnBuilder.yarn('setup')
 
-    env.CCD_COS_URL="http://cos-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+    env.CCD_DEF_COS_URL="http://cos-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
 
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
       yarnBuilder.yarn('generate-excel-preview-consented')
