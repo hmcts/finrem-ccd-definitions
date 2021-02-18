@@ -48,5 +48,12 @@
     "CaseFieldID": "[STATE]",
     "Label": "Status",
     "DisplayOrder": 7
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "assignedToJudge",
+    "Label": "Judge Name",
+    "DisplayOrder": 8
   }
 ]
