@@ -77,7 +77,7 @@ withPipeline("nodejs", product, component) {
       yarnBuilder.yarn('generate-excel-demo-consented')
     }
     stageWithAgent('Generate Financial Remedy Contested Case config', product) {
-      yarnBuilder.yarn('generate-excel-preview-constested')
+      yarnBuilder.yarn('generate-excel-preview-contested')
       yarnBuilder.yarn('generate-excel-aat-contested')
       yarnBuilder.yarn('generate-excel-demo-contested')
     }
