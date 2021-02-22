@@ -25,6 +25,10 @@ def secrets = [
                 secret('fixedlists-consented-judgedetails-2', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_2'),
                 secret('fixedlists-consented-judgedetails-3', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_3'),
                 secret('fixedlists-consented-judgedetails-4', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_4'),
+                secret('fixedlists-consented-judgedetails-5', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_5'),
+                secret('fixedlists-consented-judgedetails-6', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_6'),
+                secret('fixedlists-consented-judgedetails-7', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_7'),
+                secret('fixedlists-consented-judgedetails-8', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_8'),
                 secret('userprofile-consented-judgedetails-1', 'USERPROFILE_CONSENTED_JUDGEDETAILS_1'),
                 secret('userprofile-consented-judgedetails-2', 'USERPROFILE_CONSENTED_JUDGEDETAILS_2'),
                 secret('userprofile-consented-judgedetails-3', 'USERPROFILE_CONSENTED_JUDGEDETAILS_3'),
@@ -32,6 +36,8 @@ def secrets = [
                 secret('userprofile-consented-judgedetails-5', 'USERPROFILE_CONSENTED_JUDGEDETAILS_5'),
                 secret('userprofile-consented-judgedetails-6', 'USERPROFILE_CONSENTED_JUDGEDETAILS_6'),
                 secret('userprofile-consented-judgedetails-7', 'USERPROFILE_CONSENTED_JUDGEDETAILS_7'),
+                secret('userprofile-consented-judgedetails-8', 'USERPROFILE_CONSENTED_JUDGEDETAILS_8'),
+                secret('userprofile-consented-judgedetails-9', 'USERPROFILE_CONSENTED_JUDGEDETAILS_9'),
                 secret('userprofile-contested-judgedetails', 'USERPROFILE_CONTESTED_JUDGEDETAILS'),
                 secret('username-solicitor', 'USERNAME_SOLICITOR'),
                 secret('password-solicitor', 'PASSWORD_SOLICITOR'),
@@ -106,6 +112,8 @@ withPipeline("nodejs", product, component) {
         sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_5} > UserProfile-judgeDetails5-prod.json'
         sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_6} > UserProfile-judgeDetails6-prod.json'
         sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_7} > UserProfile-judgeDetails7-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_8} > UserProfile-judgeDetails8-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_9} > UserProfile-judgeDetails9-prod.json'
       }
 
       dir('definitions/consented/json/FixedLists'){
@@ -113,6 +121,10 @@ withPipeline("nodejs", product, component) {
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
       }
 
       yarnBuilder.yarn('generate-excel-all-consented')
@@ -124,6 +136,10 @@ withPipeline("nodejs", product, component) {
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
       }
 
       yarnBuilder.yarn('generate-excel-all-contested')
