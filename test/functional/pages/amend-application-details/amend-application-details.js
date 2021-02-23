@@ -11,6 +11,8 @@ function amendApplicationDetails() {
   I.click('Continue');
   I.waitForText('SOLICITOR DETAILS', '20');
   I.fillField('input[id="solicitorPhone"]', '07766120000');
+  I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
+  I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('DIVORCE DETAILS', '20');
