@@ -68,7 +68,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
     "ID": "applicantSolicitorAssigned",
     "Label": "Has applicant solicitor been assigned to case?",
     "FieldType": "YesOrNo",
