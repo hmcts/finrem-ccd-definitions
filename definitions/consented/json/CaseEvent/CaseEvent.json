@@ -204,7 +204,7 @@
     "DisplayOrder": 2,
     "PreConditionState(s)": "caseAdded",
     "PostConditionState": "applicationSubmitted",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/fields/authorisation3/get-current-date",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/assign-applicant-solicitor",
     "RetriesTimeoutAboutToStartEvent": "3,4,5",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/pba-payment",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/payment-confirmation",
