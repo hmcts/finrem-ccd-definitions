@@ -3,8 +3,9 @@
 function assignContestedCase(caseId, respondentEmail) {
   const I = this;
   I.click('Unassigned cases');
-  I.waitForText('Case Reference', '10');
+  I.wait('30');
   I.click('FinancialRemedyContested');
+  I.waitForText('Case Reference', '10');
   I.waitForText('State', '10');
   I.checkOption(`select-${caseId}`);
   I.waitForText('Share case', '5');
