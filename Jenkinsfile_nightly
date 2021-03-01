@@ -2,7 +2,7 @@
 
 properties([
         [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/finrem-ccd-definitions.git'],
-        pipelineTriggers([cron('00 22 * * *')])
+        pipelineTriggers([cron('00 21 * * *')])
 ])
 
 @Library("Infrastructure")
