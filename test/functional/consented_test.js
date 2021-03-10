@@ -60,7 +60,7 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
-    I.createCase('FinancialRemedyMVP2', 'Consent Order Application');
+    await I.createCase('FinancialRemedyMVP2', 'Consent Order Application');
     I.solicitorCreate(solRef);
     I.divorceDetails();
     I.applicantDetails();
