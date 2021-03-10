@@ -4,7 +4,7 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: 'http://localhost:3000',
-      show: false,
+      show: true,
       waitForNavigation: 'domcontentloaded',
       headless: true,
       ignoreHTTPSErrors: true,
@@ -15,7 +15,8 @@ exports.config = {
           '--start-fullscreen'
         ]
       }
-    }
+    },
+    PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
   },
   include: { I: './steps_file.js' },
   bootstrap: null,
