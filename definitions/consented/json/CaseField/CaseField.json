@@ -1854,5 +1854,29 @@
     "Label": "Latest General Order",
     "FieldType": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "NameOfLocalCourt",
+    "Label": "Name of Local Court",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "EmailAddressOfLocalCourt",
+    "Label": "Email Address of Local Court",
+    "FieldType": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "InstructionToLocalCourt",
+    "Label": "Instruction to Court",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
   }
 ]

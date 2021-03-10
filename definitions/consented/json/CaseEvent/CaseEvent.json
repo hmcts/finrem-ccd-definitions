@@ -184,6 +184,20 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_TransferToLocalCourt",
+    "Name": "Transferred to local court",
+    "Description": "Transferred to local court",
+    "DisplayOrder": 115,
+    "PreConditionState(s)": "orderMade;awaitingResponse",
+    "PostConditionState": "*",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/consent-order-hearing-request",
+    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_solicitorCreate",
     "Name": "Consent Order Application",
     "Description": "Create an application for financial remedy by consent",

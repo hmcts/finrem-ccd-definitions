@@ -268,6 +268,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_TransferToLocalCourt",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_generalLetter",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CR"
@@ -611,6 +618,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_TransferToLocalCourt",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_callbackRejectedOrder",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
@@ -908,6 +922,13 @@
     "CaseEventID": "FR_close",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_TransferToLocalCourt",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CR"
   },
   {
     "LiveFrom": "01/01/2017",

@@ -67,7 +67,8 @@ describe('CaseTypeTab', () => {
     CaseOrder: 12,
     Orders: 13,
     Notes: 14,
-    Judge: 15
+    Judge: 15,
+    TransferToLocalCourt: 16
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -96,6 +97,7 @@ describe('CaseTypeTab', () => {
       'Orders',
       'Notes',
       'Judge',
+      'TransferToLocalCourt',
       'ApplicantAddressConfidential-solicitor',
       'ApplicantAddressConfidential-courtadmin',
       'ApplicantAddressConfidential-judiciary',
