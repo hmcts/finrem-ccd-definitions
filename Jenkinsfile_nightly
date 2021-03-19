@@ -45,7 +45,7 @@ node {
                 currentBuild.result = 'ERROR'
                 echo "RESULT: ${currentBuild.result}"
             } finally {
-                archiveArtifacts 'test/functional/output/*'
+                archiveArtifacts 'test/functional/output/**/*'
             }
 
         }
