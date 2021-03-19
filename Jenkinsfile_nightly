@@ -40,8 +40,9 @@ node {
                 env.NIGHTLY_TEST="true"
                 sh 'yarn install'
                 sh 'yarn test:nightly-functional'
-               archiveArtifacts 'test/functional/output/**/*'
-            }
+
+                archiveArtifacts 'test/functional/output/**/*'
+
 
         }
 
