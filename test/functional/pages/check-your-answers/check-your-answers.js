@@ -1,8 +1,9 @@
 /* eslint-disable no-invalid-this */
 
-function checkYourAnswers() {
+async function checkYourAnswers() {
   const I = this;
   I.waitForElement('.check-your-answers', '60');
+  await I.runAccessibilityTest();
   I.see('SOLICITOR DETAILS');
   I.see('DIVORCE DETAILS');
   I.see('APPLICANT DETAILS');
@@ -10,9 +11,10 @@ function checkYourAnswers() {
   I.click('Submit');
 }
 
-function contestedCheckYourAnswers() {
+async function contestedCheckYourAnswers() {
   const I = this;
   I.waitForPage('.check-your-answers');
+  await I.runAccessibilityTest();
   I.see('Solicitor Details');
   I.see('Divorce Details');
   I.see('Applicant’s Details');

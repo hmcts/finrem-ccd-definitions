@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict';
 
 const Helper = codecept_helper;
@@ -14,7 +15,7 @@ class PuppeteerHelper extends Helper {
       return;
     }
     const url = await this.helpers[helperName].grabCurrentUrl();
-    const page = await this.helpers[helperName];
+    const { page } = await this.helpers[helperName];
     await runAccessibility(url, page);
   }
   _finishTest() {

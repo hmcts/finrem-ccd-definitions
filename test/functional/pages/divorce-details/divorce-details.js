@@ -1,9 +1,9 @@
 /* eslint-disable no-invalid-this */
 
-function divorceDetails() {
+async function divorceDetails() {
   const I = this;
+  await I.runAccessibilityTest();
   I.waitForPage('h4', 'DIVORCE DETAILS');
-
   I.fillField('input[id="divorceCaseNumber"]', 'LV18D81234');
   I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi');
   I.wait('5');
@@ -17,8 +17,9 @@ function divorceDetails() {
   I.click('Continue');
 }
 
-function contestedDivorceDetails() {
+async function contestedDivorceDetails() {
   const I = this;
+  await I.runAccessibilityTest();
   I.waitForPage('#divorceDetailsLabel h2', 'Divorce Details');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D54321');
   I.fillField('input[id="dateOfMarriage-day"]', '1');

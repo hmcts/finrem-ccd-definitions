@@ -1,3 +1,4 @@
+/* eslint-disable */
 const HTMLCS = require('html_codesniffer');
 const fs = require('fs');
 // const testConfig = require('src/test/config.js');
@@ -25,7 +26,7 @@ function updateResultObject(url, pageTitle, screenshotReportRef, accessibilityEr
   }
 
   resultObj.tests.push({
-    name: `${urlArr[urlArr.length - 2]}/${urlArr[urlArr.length - 1]}`,
+    name: `${urlArr[urlArr.length - '2']}/${urlArr[urlArr.length - '1']}`,
     pageUrl: url,
     documentTitle: pageTitle,
     status: isPageAccessible,
