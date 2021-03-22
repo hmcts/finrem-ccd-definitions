@@ -2,8 +2,8 @@ const fs = require('fs');
 // const testConfig = require('src/test/config.js');
 
 function generateAccessibilityReport(reportJson) {
-  const result = `var replacejsoncontent = ${JSON.stringify(reportJson)}`;
   consoleReport(reportJson);
+  const result = `var replacejsoncontent = ${JSON.stringify(reportJson)}`;
   const sourceReport = `${__dirname}/Report.html`;
   const destReport = './test/functional/output/a11y.html';
   const destJson = './test/functional/output/a11y_output.js';
