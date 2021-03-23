@@ -9,7 +9,7 @@ const result = {
 };
 
 const resultObj = {
-  appName: 'Manage cases',
+  appName: 'FR Manage cases',
   passCount: 0,
   failCount: 0,
   tests: []
