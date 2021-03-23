@@ -862,12 +862,12 @@
     "TabFieldDisplayOrder": 16
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalEmailCollection",
+    "CaseFieldID": "generalLetterCollection",
     "TabFieldDisplayOrder": 17
   },
   {
@@ -876,7 +876,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintLetterIdRes",
+    "CaseFieldID": "generalEmailCollection",
     "TabFieldDisplayOrder": 18
   },
   {
@@ -885,7 +885,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintCoverSheetRes",
+    "CaseFieldID": "bulkPrintLetterIdRes",
     "TabFieldDisplayOrder": 19
   },
   {
@@ -894,7 +894,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintLetterIdApp",
+    "CaseFieldID": "bulkPrintCoverSheetRes",
     "TabFieldDisplayOrder": 20
   },
   {
@@ -903,7 +903,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintCoverSheetApp",
+    "CaseFieldID": "bulkPrintLetterIdApp",
     "TabFieldDisplayOrder": 21
   },
   {
@@ -912,7 +912,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationLabel",
+    "CaseFieldID": "bulkPrintCoverSheetApp",
     "TabFieldDisplayOrder": 22
   },
   {
@@ -921,7 +921,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationLabel",
     "TabFieldDisplayOrder": 23
   },
   {
@@ -930,7 +930,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationCreatedBy",
+    "CaseFieldID": "generalApplicationReceivedFrom",
     "TabFieldDisplayOrder": 24
   },
   {
@@ -939,7 +939,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationHearingRequired",
+    "CaseFieldID": "generalApplicationCreatedBy",
     "TabFieldDisplayOrder": 25
   },
   {
@@ -948,7 +948,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationTimeEstimate",
+    "CaseFieldID": "generalApplicationHearingRequired",
     "TabFieldDisplayOrder": 26
   },
   {
@@ -957,7 +957,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationSpecialMeasures",
+    "CaseFieldID": "generalApplicationTimeEstimate",
     "TabFieldDisplayOrder": 27
   },
   {
@@ -966,7 +966,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationLatestDocument",
+    "CaseFieldID": "generalApplicationSpecialMeasures",
     "TabFieldDisplayOrder": 28
   },
   {
@@ -975,7 +975,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationLatestDocumentDate",
+    "CaseFieldID": "generalApplicationLatestDocument",
     "TabFieldDisplayOrder": 29
   },
   {
@@ -984,7 +984,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationDraftOrder",
+    "CaseFieldID": "generalApplicationLatestDocumentDate",
     "TabFieldDisplayOrder": 30
   },
   {
@@ -993,7 +993,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationCollection",
+    "CaseFieldID": "generalApplicationDraftOrder",
     "TabFieldDisplayOrder": 31
   },
   {
@@ -1002,7 +1002,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationOutcome",
+    "CaseFieldID": "generalApplicationCollection",
     "TabFieldDisplayOrder": 32
   },
   {
@@ -1011,8 +1011,17 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "generalApplicationOutcomeOther",
+    "CaseFieldID": "generalApplicationOutcome",
     "TabFieldDisplayOrder": 33
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicationDocumentsTab",
+    "TabLabel": "Case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "generalApplicationOutcomeOther",
+    "TabFieldDisplayOrder": 34
   },
   {
     "LiveFrom": "01/10/2020",
@@ -1021,15 +1030,6 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
     "CaseFieldID": "generalApplicationDirectionsDocument",
-    "TabFieldDisplayOrder": 34
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "applicationDocumentsTab",
-    "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "confidentialCoverSheetLabel",
     "TabFieldDisplayOrder": 35
   },
   {
@@ -1038,7 +1038,7 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
+    "CaseFieldID": "confidentialCoverSheetLabel",
     "TabFieldDisplayOrder": 36
   },
   {
@@ -1047,16 +1047,16 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "bulkPrintCoverSheetResConfidential",
+    "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
     "TabFieldDisplayOrder": 37
   },
   {
-    "LiveFrom": "01/01/2021",
+    "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "judgesAmendedOrderCollection",
+    "CaseFieldID": "bulkPrintCoverSheetResConfidential",
     "TabFieldDisplayOrder": 38
   },
   {
@@ -1065,8 +1065,17 @@
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
     "TabDisplayOrder": 7,
-    "CaseFieldID": "orderApprovedCoverLetter",
+    "CaseFieldID": "judgesAmendedOrderCollection",
     "TabFieldDisplayOrder": 39
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicationDocumentsTab",
+    "TabLabel": "Case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "orderApprovedCoverLetter",
+    "TabFieldDisplayOrder": 40
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3147,6 +3156,87 @@
     "TabFieldDisplayOrder": 31
   },
   {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "appFormEExhibitsCollection",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "appChronologiesCollection",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "appQACollection",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "appStatementsExhibitsCollection",
+    "TabFieldDisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "appCaseSummariesCollection",
+    "TabFieldDisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "appFormsHCollection",
+    "TabFieldDisplayOrder": 6
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "appExpertEvidenceCollection",
+    "TabFieldDisplayOrder": 7
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "appCorrespondenceDocsCollection",
+    "TabFieldDisplayOrder": 8
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "appOtherCollection",
+    "TabFieldDisplayOrder": 9
+  },
+  {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "Applicant Documents",
@@ -3192,6 +3282,87 @@
     "TabFieldDisplayOrder": 14
   },
   {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respFormEExhibitsCollection",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respChronologiesCollection",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respQACollection",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respStatementsExhibitsCollection",
+    "TabFieldDisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respCaseSummariesCollection",
+    "TabFieldDisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respFormsHCollection",
+    "TabFieldDisplayOrder": 6
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respExpertEvidenceCollection",
+    "TabFieldDisplayOrder": 7
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respCorrespondenceDocsColl",
+    "TabFieldDisplayOrder": 8
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respOtherCollection",
+    "TabFieldDisplayOrder": 9
+  },
+  {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "Respondent Documents",
@@ -3235,5 +3406,203 @@
     "TabDisplayOrder": 19,
     "CaseFieldID": "respConfidentialDocsCollection",
     "TabFieldDisplayOrder": 14
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appHearingBundlesCollectionShared",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appFormEExhibitsCollectionShared",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appChronologiesCollectionShared",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appQACollectionShared",
+    "TabFieldDisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appStatementsExhibitsCollShared",
+    "TabFieldDisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appCaseSummariesCollectionShared",
+    "TabFieldDisplayOrder": 6
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appFormsHCollectionShared",
+    "TabFieldDisplayOrder": 7
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appExpertEvidenceCollectionShared",
+    "TabFieldDisplayOrder": 8
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appCorrespondenceDocsCollShared",
+    "TabFieldDisplayOrder": 9
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appOtherCollectionShared",
+    "TabFieldDisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "respHearingBundlesCollShared",
+    "TabFieldDisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "respFormEExhibitsCollectionShared",
+    "TabFieldDisplayOrder": 12
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "respChronologiesCollectionShared",
+    "TabFieldDisplayOrder": 13
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "respQACollectionShared",
+    "TabFieldDisplayOrder": 14
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "respStatementsExhibitsCollShared",
+    "TabFieldDisplayOrder": 15
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "respCaseSummariesCollectionShared",
+    "TabFieldDisplayOrder": 16
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "respFormsHCollectionShared",
+    "TabFieldDisplayOrder": 17
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "respExpertEvidenceCollShared",
+    "TabFieldDisplayOrder": 18
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "respCorrespondenceDocsCollShared",
+    "TabFieldDisplayOrder": 19
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Shared Documents",
+    "TabLabel": "Shared Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "respOtherCollectionShared",
+    "TabFieldDisplayOrder": 20
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Trial Bundle",
+    "TabLabel": "Trial Bundle",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "appHearingBundlesCollection",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Trial Bundle",
+    "TabLabel": "Trial Bundle",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "respHearingBundlesCollection",
+    "TabFieldDisplayOrder": 2
   }
 ]
