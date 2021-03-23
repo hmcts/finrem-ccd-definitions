@@ -4,10 +4,6 @@ const { differenceWith, intersectionWith, concat } = require('lodash');
 const AuthorisationCaseEvent = Object.assign(require('definitions/contested/json/AuthorisationCaseEvent/AuthorisationCaseEvent'), []);
 const AuthorisationCaseField = Object.assign(require('definitions/contested/json/AuthorisationCaseField/AuthorisationCaseField'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState.json'), []);
-const AuthorisationCaseStateRespNonProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-respSol-nonprod.json'), []);
-const AuthorisationCaseStateRespProd = Object.assign(require('definitions/contested/json/AuthorisationCaseState/AuthorisationCaseState-respSol-prod.json'), []);
-const AuthorisationCaseStateNonProd = AuthorisationCaseState.concat(AuthorisationCaseStateRespNonProd);
-const AuthorisationCaseStateProd = AuthorisationCaseState.concat(AuthorisationCaseStateRespProd);
 const CaseEvent = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent'), []);
 const CaseEventToFields = Object.assign(require('definitions/contested/json/CaseEventToFields/CaseEventToFields'), []);
 
@@ -112,7 +108,7 @@ describe('Events authorisation validation', () => {
     });
   });
 
-  it('should give user minimum RU access for all pre-condition states - nonprod', () => {
+  it('should give user minimum RU access for all pre-condition states', () => {
     CaseEvent.forEach(event => {
       const acceptedPermissions = /C?RU?D?/;
       const eventName = event.ID;
@@ -124,42 +120,9 @@ describe('Events authorisation validation', () => {
       preConditionStates.forEach(preConditionState => {
         if (preConditionState && preConditionState !== '*') {
           checkAuthStateConfig(preConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
-            AuthorisationCaseStateNonProd);
+            AuthorisationCaseState);
         }
       });
-    });
-  });
-
-  it('should give user minimum RU access for all pre-condition states - prod', () => {
-    CaseEvent.forEach(event => {
-      const acceptedPermissions = /C?RU?D?/;
-      const eventName = event.ID;
-      const basePreConditionStates = event['PreConditionState(s)'];
-      const preConditionStates = basePreConditionStates ? basePreConditionStates.split(';') : [];
-      const caseType = event.CaseTypeID;
-      const allAuthForEvent = AuthCaseEventsActive.filter(getEventsForEventName(eventName, caseType));
-
-      preConditionStates.forEach(preConditionState => {
-        if (preConditionState && preConditionState !== '*') {
-          checkAuthStateConfig(preConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
-            AuthorisationCaseStateProd);
-        }
-      });
-    });
-  });
-
-  it('should give user minimum R access for all post-condition states - nonprod', () => {
-    CaseEvent.forEach(event => {
-      const acceptedPermissions = /C?RU?D?/;
-      const eventName = event.ID;
-      const postConditionState = event.PostConditionState;
-      const caseType = event.CaseTypeID;
-      const allAuthForEvent = AuthCaseEventsActive.filter(getEventsForEventName(eventName, caseType));
-
-      if (postConditionState && postConditionState !== '*') {
-        checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
-          AuthorisationCaseStateNonProd);
-      }
     });
   });
 
@@ -173,23 +136,7 @@ describe('Events authorisation validation', () => {
 
       if (postConditionState && postConditionState !== '*') {
         checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
-          AuthorisationCaseStateProd);
-      }
-    });
-  });
-
-  it('should give user minimum CR access for all post-condition states which have empty pre-condition states - nonprod', () => {
-    CaseEvent.forEach(event => {
-      const acceptedPermissions = /CRU?D?/;
-      const eventName = event.ID;
-      const preConditionState = event['PreConditionState(s)'];
-      const postConditionState = event.PostConditionState;
-      const caseType = event.CaseTypeID;
-      const allAuthForEvent = AuthCaseEventsActive.filter(getEventsForEventName(eventName, caseType));
-
-      if (!preConditionState && postConditionState && postConditionState !== '*') {
-        checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
-          AuthorisationCaseStateNonProd);
+          AuthorisationCaseState);
       }
     });
   });
@@ -205,7 +152,7 @@ describe('Events authorisation validation', () => {
 
       if (!preConditionState && postConditionState && postConditionState !== '*') {
         checkAuthStateConfig(postConditionState, allAuthForEvent, caseType, eventName, acceptedPermissions,
-          AuthorisationCaseStateProd);
+          AuthorisationCaseState);
       }
     });
   });
