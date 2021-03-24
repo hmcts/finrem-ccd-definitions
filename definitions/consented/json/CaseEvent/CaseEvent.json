@@ -901,5 +901,19 @@
     "PostConditionState": "consentOrderApproved",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_TransferredToLocalCourt",
+    "Name": "Transfer to Local Court",
+    "Description": "Transfer to Local Court",
+    "DisplayOrder": 56,
+    "PreConditionState(s)": "orderMade;awaitingResponse",
+    "PostConditionState": "*",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/transfer-to-local-court",
+    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
