@@ -4,6 +4,7 @@ const { find } = require('lodash');
 
 const caseEvent = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent.json'), []);
 const caseEventProd = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent-prod.json'), []);
+const caseEventNonProdRespSol = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent-respSol-nonprod.json'), []);
 const caseField = Object.assign(require('definitions/contested/json/CaseField/CaseField'), []);
 const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField/CaseField-common'), []);
 const caseFieldAll = caseField.concat(caseFieldCommon);
@@ -12,6 +13,20 @@ const caseEventToFields = Object.assign(require('definitions/contested/json/Case
 describe('CaseEventToFields', () => {
   it('should contain valid event IDs - prod', () => {
     const caseEventAll = caseEvent.concat(caseEventProd);
+    const errors = [];
+    caseEventToFields.forEach(caseEventToFieldsEntry => {
+      try {
+        expect(find(caseEventAll, ['ID', caseEventToFieldsEntry.CaseEventID])).to.be.an('object');
+      } catch (error) {
+        errors.push(`Event ID ${caseEventToFieldsEntry.CaseEventID} is not valid`);
+      }
+    });
+    if (errors.length) {
+      assert.fail(`Found invalid case IDs - ${errors}`);
+    }
+  });
+  it('should contain valid event IDs - nonprod', () => {
+    const caseEventAll = caseEvent.concat(caseEventNonProdRespSol);
     const errors = [];
     caseEventToFields.forEach(caseEventToFieldsEntry => {
       try {
