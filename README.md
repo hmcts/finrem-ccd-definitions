@@ -25,10 +25,10 @@ yarn generate-excel-all-contested
 
 The generated excel files will be in `defintions/consented/xlsx` or `defintions/contested/xlsx` respectively.
 
-### Generate Excel Configs for a specific environment i.e. AAT/DEMO/DEMO-PROD-LIKE/ITHC
+### Generate Excel Configs for a specific environment i.e. AAT/DEMO/DEMO-PROD-LIKE/ITHC/PERFTEST
 * Note DEMO-PROD-LIKE does not include '-nonprod' files so should be a replication of the Production config, just pointing to Demo.
 ```
-yarn generate-bulk-excel-(local/demo/aat/ithc/demo-prod-like/prod)
+yarn generate-bulk-excel-(local/demo/aat/ithc/perftest/demo-prod-like/prod)
 ```
 
 E.g.:
