@@ -7,7 +7,6 @@ const State = Object.assign(require('definitions/consented/json/State'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/consented/json/AuthorisationCaseState/AuthorisationCaseState'), []);
 
 const MINIMUM_READ_PERMISSIONS = /C?RU?D?/;
-const EXCLUDED_STATES = ['SOTAgreementPayAndSubmitRequired', 'Rejected', 'Withdrawn', 'DNisRefused', 'solicitorAwaitingPaymentConfirmation'];
 
 function byCaseType(caseType) {
   return entry => {
@@ -49,9 +48,6 @@ describe('UserRole authorisations for CaseState', () => {
       const statesForCaseType = State.filter(byCaseType(caseType));
 
       statesForCaseType.forEach(stateEntry => {
-        if (EXCLUDED_STATES.includes(stateEntry.ID)) {
-          return;
-        }
         const authForState = authStatesForCaseType.filter(byStateName(stateEntry));
         if (authForState.length !== authRolesForCaseType.length) {
           const missingAuthCount = authRolesForCaseType.length - authForState.length;
