@@ -1,8 +1,9 @@
 /* eslint-disable no-invalid-this */
 
-function solicitorCreate(reference) {
+async function solicitorCreate(reference) {
   const I = this;
   I.waitForElement('h4', '15');
+  await I.runAccessibilityTest();
   I.see('SOLICITOR DETAILS');
   I.fillField('input[id="solicitorName"]', 'Arrow');
   I.fillField('input[id="solicitorFirm"]', 'Abc Firm');
@@ -27,9 +28,10 @@ function solicitorCreate(reference) {
   I.click('Continue');
 }
 
-function contestedSolicitorCreate(reference) {
+async function contestedSolicitorCreate(reference) {
   const I = this;
   I.waitForPage('#applicantSolicitorDetailLabel h2', 'Solicitor Details');
+  await I.runAccessibilityTest();
   I.fillField('input[id="applicantSolicitorName"]', 'Parrot');
   I.fillField('input[id="applicantSolicitorFirm"]', 'MSN Firm');
   I.fillField('//*[@id="solicitorReference"]', reference);

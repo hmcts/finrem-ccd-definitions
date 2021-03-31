@@ -42,16 +42,12 @@ node {
                 sh 'yarn test:nightly-functional'
             }
             catch (Exception err) {
-                currentBuild.result = 'UNSTABLE'
+                currentBuild.result = 'ERROR'
                 echo "RESULT: ${currentBuild.result}"
             } finally {
-                archiveArtifacts 'test/functional/output/*'
+                archiveArtifacts 'test/functional/output/**/*'
             }
 
-        }
-
-        stage('After run') {
-            echo "finished"
         }
 
     }

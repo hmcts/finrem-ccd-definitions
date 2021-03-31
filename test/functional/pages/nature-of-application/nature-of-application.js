@@ -1,10 +1,10 @@
 /* eslint-disable no-invalid-this */
 
-function natureOfApplication() {
+async function natureOfApplication() {
   const I = this;
   // I.wait(5);
   I.waitForPage('h4', 'NATURE OF THE APPLICATION');
-
+  await I.runAccessibilityTest();
   I.checkOption('input[value="Periodical Payment Order"]');
   I.checkOption('input[value="Lump Sum Order"]');
   I.checkOption('input[value="Pension Sharing Order"]');
@@ -19,9 +19,11 @@ function natureOfApplication() {
   I.click('Continue');
 }
 
-function contestedNatureOfApplication() {
+async function contestedNatureOfApplication() {
   const I = this;
+
   I.waitForPage('input[value="periodicalPaymentOrder"]');
+  await I.runAccessibilityTest();
   I.checkOption('input[value="periodicalPaymentOrder"]');
   I.checkOption('input[value="Lump Sum Order"]');
   I.checkOption('input[value="Pension Sharing Order"]');

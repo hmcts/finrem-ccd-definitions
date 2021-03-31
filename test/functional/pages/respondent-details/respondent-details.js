@@ -23,11 +23,11 @@ function respondentSolicitorDetailsDetails(I) {
   I.click('Continue');
 }
 
-function consentedRespondentDetails() {
+async function consentedRespondentDetails() {
   const I = this;
 
   I.waitForPage('h4', 'RESPONDENT DETAILS');
-
+  await I.runAccessibilityTest();
   I.fillField('input[id="appRespondentFMName"]', 'kiv');
   I.fillField('input[id="appRespondentLName"]', 'resp');
   I.checkOption('input[id="appRespondentRep-Yes"]');
@@ -35,11 +35,11 @@ function consentedRespondentDetails() {
   respondentSolicitorDetailsDetails(I);
 }
 
-function contestedRespondentDetails() {
+async function contestedRespondentDetails() {
   const I = this;
 
   I.waitForPage('#respondentDetailsLabel h2', 'Respondent’s Details');
-
+  await I.runAccessibilityTest();
   I.fillField('input[id="respondentFMName"]', 'Qunatico');
   I.fillField('input[id="respondentLName"]', 'Whisper');
   I.waitForContinueButtonEnabled();
