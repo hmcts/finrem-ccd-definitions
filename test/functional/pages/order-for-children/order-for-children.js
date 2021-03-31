@@ -1,8 +1,9 @@
 /* eslint-disable no-invalid-this */
 
-function orderForChildren() {
+async function orderForChildren() {
   const I = this;
   I.waitForPage('input[id="orderForChildrenQuestion1-Yes"]');
+  await I.runAccessibilityTest();
   I.checkOption('input[id="orderForChildrenQuestion1-Yes"]');
   I.checkOption('input[id="natureOfApplication5-No"]');
   I.checkOption('input[id="natureOfApplication6-Step Child or Step Children"]');
@@ -18,9 +19,10 @@ function orderForChildren() {
   // I.wait(5);
 }
 
-function contestedOrderForChildren() {
+async function contestedOrderForChildren() {
   const I = this;
   I.waitForPage('#paymentForChildrenDecision input');
+  await I.runAccessibilityTest();
   I.checkOption('input[id="paymentForChildrenDecision-No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');

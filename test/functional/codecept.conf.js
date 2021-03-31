@@ -15,7 +15,8 @@ exports.config = {
           '--start-fullscreen'
         ]
       }
-    }
+    },
+    PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
   },
   include: { I: './steps_file.js' },
   bootstrap: null,

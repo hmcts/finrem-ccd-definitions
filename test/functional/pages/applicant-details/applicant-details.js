@@ -1,8 +1,9 @@
 /* eslint-disable no-invalid-this */
 
-function applicantDetails() {
+async function applicantDetails() {
   const I = this;
   I.waitForElement('input[id="applicantFMName"]', '5');
+  await I.runAccessibilityTest();
   I.fillField('input[id="applicantFMName"]', 'viv');
   I.fillField('input[id="applicantLName"]', 'frauto');
   I.wait('5');
@@ -13,9 +14,10 @@ function applicantDetails() {
   I.click('Continue');
 }
 
-function contestedApplicantDetails() {
+async function contestedApplicantDetails() {
   const I = this;
   I.waitForElement('#applicantDetailsLabel h2', '30');
+  await I.runAccessibilityTest();
   I.waitForElement('input[id="applicantFMName"]');
   I.fillField('input[id="applicantFMName"]', 'Tik');
   I.fillField('input[id="applicantLName"]', 'Tok');
