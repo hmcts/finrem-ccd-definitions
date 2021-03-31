@@ -68,7 +68,9 @@ describe('CaseTypeTab', () => {
     hiddenTab: 16,
     consentOrderProcessTab: 17,
     'Applicant Documents': 18,
-    'Respondent Documents': 19
+    'Respondent Documents': 19,
+    'Trial Bundle': 20,
+    'Shared Documents': 20
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -105,7 +107,9 @@ describe('CaseTypeTab', () => {
       'RespondentAddressConfidential-judiciary',
       'consentOrderProcessTab',
       'Applicant Documents',
-      'Respondent Documents'
+      'Respondent Documents',
+      'Trial Bundle',
+      'Shared Documents'
     ]);
   });
   it('should contain a valid case field IDs', () => {

@@ -1,8 +1,9 @@
 /* eslint-disable no-invalid-this */
 
-function paymentPage(pbaValue) {
+async function paymentPage(pbaValue) {
   const I = this;
   I.waitForText('PAYMENT DETAILS', '15');
+  await I.runAccessibilityTest();
   if (pbaValue === false) {
     I.checkOption('input[id="helpWithFeesQuestion-Yes"]');
   } else {

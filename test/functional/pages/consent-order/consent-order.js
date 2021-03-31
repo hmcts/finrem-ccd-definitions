@@ -1,7 +1,8 @@
 /* eslint-disable no-invalid-this */
 
-function consentOrder() {
+async function consentOrder() {
   const I = this;
+  await I.runAccessibilityTest();
   I.waitForPage('h4', 'CONSENT ORDER');
   I.attachFile('input[id="consentOrder"]', '../data/dummy.pdf');
   I.wait('2');

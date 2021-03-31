@@ -1,8 +1,9 @@
 /* eslint-disable no-invalid-this */
 
-function caseSubmitAuthorisation(casetype) {
+async function caseSubmitAuthorisation(casetype) {
   const I = this;
   I.waitForPage('select[id="next-step"]');
+  await I.runAccessibilityTest();
   I.selectOption('select[id="next-step"]', 'Case Submission');
   I.wait('2');
   I.click('Go');

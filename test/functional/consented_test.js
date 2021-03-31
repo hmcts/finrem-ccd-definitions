@@ -60,30 +60,30 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
-    I.createCase('FinancialRemedyMVP2', 'Consent Order Application');
-    I.solicitorCreate(solRef);
-    I.divorceDetails();
-    I.applicantDetails();
-    I.consentedRespondentDetails();
-    I.natureOfApplication();
-    I.orderForChildren();
-    I.consentOrder();
-    I.d81Question();
-    I.optionalDocuments();
-    I.consentedOtherDocuments();
-    I.savingApplicationInformation();
-    I.checkYourAnswers();
+    await I.createCase('FinancialRemedyMVP2', 'Consent Order Application');
+    await I.solicitorCreate(solRef);
+    await I.divorceDetails();
+    await I.applicantDetails();
+    await I.consentedRespondentDetails();
+    await I.natureOfApplication();
+    await I.orderForChildren();
+    await I.consentOrder();
+    await I.d81Question();
+    await I.optionalDocuments();
+    await I.consentedOtherDocuments();
+    await I.savingApplicationInformation();
+    await I.checkYourAnswers();
     I.waitForText('Consent Order Application', '20');
     // amend event
     I.amendApplicationDetails();
     // hwf payment submission
-    I.caseSubmitAuthorisation();
-    I.paymentPage(false);
-    I.hwfPaymentDetails();
-    I.paymentSubmission();
-    I.savingApplicationInformation();
-    I.finalPaymentSubmissionPage();
-    I.finalInformationPage();
+    await I.caseSubmitAuthorisation();
+    await I.paymentPage(false);
+    await I.hwfPaymentDetails();
+    await I.paymentSubmission();
+    await I.savingApplicationInformation();
+    await I.finalPaymentSubmissionPage();
+    await I.finalInformationPage();
     I.waitForText('History', '30');
   }
 });

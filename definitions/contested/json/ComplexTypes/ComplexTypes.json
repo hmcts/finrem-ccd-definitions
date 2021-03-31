@@ -1050,5 +1050,21 @@
     "FieldType": "Document",
     "ElementLabel": "Additional Hearing Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "caseDocumentConfidential",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is the document confidential?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "hearingDetails",
+    "FieldType": "TextArea",
+    "ElementLabel": "Provide the date of hearing and a description of the document",
+    "SecurityClassification": "Public"
   }
 ]
