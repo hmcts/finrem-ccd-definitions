@@ -7,7 +7,9 @@
     "hwfPaymentAcceptedEvent": "HWF Application Accepted",
     "hwfPaymentAcceptedEndState": "Application Submitted",
     "issueApplicationEvent": "Issue Application",
-    "issueApplicationEndState": "Awaiting Judicial Response"
+    "issueApplicationEndState": "Awaiting Judicial Response",
+    "sendOrderEvent": "Send Order",
+    "approveSendOrderEndState": "Consent Order Made"
   },
   "applicantTab": {
     "tabName": "Applicant",
@@ -70,5 +72,11 @@
     "assignToJudgeReason": "Draft consent order",
     "issueDate": "4 Aug 2020",
     "assignToJudgeText": "consent for approval"
+  },
+  "approvedOrderTab": {
+    "tabName": "Approved Order",
+    "approvedLetter": "ApprovedConsentOrderLetter.pdf",
+    "consentedAnnexedStamped": "dummy.pdf",
+    "typeOfPensionDocumentTypeStamped": "Form P1"
   }
 }

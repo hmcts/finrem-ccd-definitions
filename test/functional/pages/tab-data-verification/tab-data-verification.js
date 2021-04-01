@@ -281,6 +281,19 @@ function adminNotesTab(caseType, tabName) {
   }
 }
 
+function approvedOrderTab(caseType, tabName) {
+  const I = this;
+  I.waitForText(tabName, '5');
+  // eslint-disable-next-line default-case
+  switch (caseType) {
+  case 'consented':
+    I.click('div[id="mat-tab-label-0-7"]');
+    I.see(verifyTabText.approvedOrderTab.approvedLetter);
+    I.see(verifyTabText.approvedOrderTab.consentedAnnexedStamped);
+    I.see(verifyTabText.approvedOrderTab.typeOfPensionDocumentTypeStamped);
+    break;
+  }
+}
 function gateKeepingAllocationsTab(caseType, tabName, eventName) {
   const I = this;
   I.waitForText(tabName, '5');
@@ -340,8 +353,7 @@ function verifyConsentedTabData(caseType, eventName, stateName) {
   I.natureOfApplicationTab(caseType, verifyTabText.natureOfApplicationTab.tabName);
   I.authorisationTab(caseType, verifyTabText.authorisationTab.tabName);
   I.caseDocumentsTab(caseType, verifyTabText.caseDocumentsTab.tabName, eventName);
-  I.paymentDetailsTab(caseType, verifyTabText.paymentDetailsTab.tabName);
-}
+ }
 
 function verifyContestedTabData(caseType, eventName, stateName) {
   const I = this;
@@ -380,6 +392,7 @@ module.exports = {
   paymentDetailsTab,
   judgeDetailsTab,
   adminNotesTab,
+  approvedOrderTab,
   gateKeepingAllocationsTab,
   schedulingAndListingTab,
   consentOrderProcessTab,
