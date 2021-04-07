@@ -1870,7 +1870,7 @@
     "ID": "transferLocalCourtEmail",
     "Label": "Email address of Local Court",
     "HintText": "Email address of Local Court",
-    "FieldType": "Text",
+    "FieldType": "Email",
     "SecurityClassification": "Public"
   },
   {
@@ -1880,6 +1880,16 @@
     "Label": "Instructions to Court",
     "HintText": "Instructions to Court",
     "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "transferLocalCourtEmailCollection",
+    "Label": "Transfer to Local Court Email",
+    "HintText": "Transfer to Local Court Email",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_TransferCourtEmail",
     "SecurityClassification": "Public"
   }
 ]
