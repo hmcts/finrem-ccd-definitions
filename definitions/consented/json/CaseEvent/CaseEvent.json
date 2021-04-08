@@ -924,8 +924,7 @@
     "DisplayOrder": 56,
     "PreConditionState(s)": "orderMade;awaitingResponse",
     "PostConditionState": "*",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/transfer-to-local-court",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/transfer-to-local-court",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   }
