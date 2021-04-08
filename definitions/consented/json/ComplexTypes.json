@@ -778,7 +778,7 @@
     "ID": "FR_TransferCourtEmail",
     "ListElementCode": "transferLocalCourtEmail",
     "FieldType": "Email",
-    "ElementLabel": "Recipient's email",
+    "ElementLabel": "Court Email Address",
     "SecurityClassification": "Public"
   },
   {
@@ -786,7 +786,7 @@
     "ID": "FR_TransferCourtEmail",
     "ListElementCode": "transferLocalCourtName",
     "FieldType": "Text",
-    "ElementLabel": "Email created by",
+    "ElementLabel": "Court Name",
     "SecurityClassification": "Public"
   },
   {
@@ -794,7 +794,7 @@
     "ID": "FR_TransferCourtEmail",
     "ListElementCode": "transferLocalCourtInstructions",
     "FieldType": "Text",
-    "ElementLabel": "Body",
+    "ElementLabel": "Additional Comments",
     "SecurityClassification": "Public"
   }
 ]
