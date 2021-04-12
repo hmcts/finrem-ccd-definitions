@@ -1805,7 +1805,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "otherReasonForComplexityText  ",
+    "CaseFieldID": "otherReasonForComplexityText",
     "TabFieldDisplayOrder": 70
   },
   {
@@ -2659,7 +2659,7 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "otherReasonForComplexity",
+    "CaseFieldID": "regionList",
     "TabFieldDisplayOrder": 19
   },
   {
@@ -2668,7 +2668,7 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "otherReasonForComplexityText",
+    "CaseFieldID": "fastTrackDecision",
     "TabFieldDisplayOrder": 20
   },
   {
@@ -2677,44 +2677,8 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "potentialAllegationChecklist",
-    "TabFieldDisplayOrder": 22
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "hiddenTab",
-    "TabLabel": "Hidden Tab",
-    "TabDisplayOrder": 16,
-    "CaseFieldID": "detailPotentialAllegation",
-    "TabFieldDisplayOrder": 23
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "hiddenTab",
-    "TabLabel": "Hidden Tab",
-    "TabDisplayOrder": 16,
-    "CaseFieldID": "regionList",
-    "TabFieldDisplayOrder": 25
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "hiddenTab",
-    "TabLabel": "Hidden Tab",
-    "TabDisplayOrder": 16,
-    "CaseFieldID": "fastTrackDecision",
-    "TabFieldDisplayOrder": 26
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "hiddenTab",
-    "TabLabel": "Hidden Tab",
-    "TabDisplayOrder": 16,
     "CaseFieldID": "fastTrackDecisionReason",
-    "TabFieldDisplayOrder": 27
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2723,7 +2687,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specialAssistanceRequiredLabel",
-    "TabFieldDisplayOrder": 28
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2732,7 +2696,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specialAssistanceRequired",
-    "TabFieldDisplayOrder": 29
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2741,7 +2705,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specificArrangementsRequiredLabel",
-    "TabFieldDisplayOrder": 30
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2750,7 +2714,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "specificArrangementsRequired",
-    "TabFieldDisplayOrder": 31
+    "TabFieldDisplayOrder": 25
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2759,7 +2723,7 @@
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
     "CaseFieldID": "consentD81Question",
-    "TabFieldDisplayOrder": 32
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
