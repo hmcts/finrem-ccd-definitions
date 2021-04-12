@@ -1712,6 +1712,42 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "estimatedAssetsLabel",
+    "TabFieldDisplayOrder": 60
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "estimatedAssetsChecklist",
+    "TabFieldDisplayOrder": 61
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "netValueOfHomeLabel",
+    "TabFieldDisplayOrder": 62
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "netValueOfHome",
+    "TabFieldDisplayOrder": 63
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
     "TabDisplayOrder": 12,
@@ -2578,15 +2614,6 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "netValueOfHome",
-    "TabFieldDisplayOrder": 21
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "hiddenTab",
-    "TabLabel": "Hidden Tab",
-    "TabDisplayOrder": 16,
     "CaseFieldID": "potentialAllegationChecklist",
     "TabFieldDisplayOrder": 22
   },
@@ -2598,15 +2625,6 @@
     "TabDisplayOrder": 16,
     "CaseFieldID": "detailPotentialAllegation",
     "TabFieldDisplayOrder": 23
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "hiddenTab",
-    "TabLabel": "Hidden Tab",
-    "TabDisplayOrder": 16,
-    "CaseFieldID": "estimatedAssetsChecklist",
-    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
