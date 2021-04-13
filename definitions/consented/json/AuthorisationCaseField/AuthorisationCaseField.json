@@ -5542,5 +5542,40 @@
     "CaseFieldID": "RespSolNotificationsEmailConsent",
     "UserRole": "[RESPSOLICITOR]",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "transferLocalCourtName",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "transferLocalCourtEmail",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "transferLocalCourtInstructions",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "transferLocalCourtEmailCollection",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "transferLocalCourtEmailCollection",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
   }
 ]

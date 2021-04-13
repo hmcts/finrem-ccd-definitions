@@ -1349,5 +1349,26 @@
     "CaseEventID": "FR_updateRespondentContactDetails",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_TransferredToLocalCourt",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_TransferredToLocalCourt",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_TransferredToLocalCourt",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
   }
 ]

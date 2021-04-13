@@ -4554,5 +4554,41 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_TransferredToLocalCourt",
+    "CaseFieldID": "transferLocalCourtName",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_TransferredToLocalCourt",
+    "CaseFieldID": "transferLocalCourtEmail",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_TransferredToLocalCourt",
+    "CaseFieldID": "transferLocalCourtInstructions",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   }
 ]
