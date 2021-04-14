@@ -2560,7 +2560,7 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "regionList",
+    "CaseFieldID": "otherReasonForComplexity",
     "TabFieldDisplayOrder": 19
   },
   {
@@ -2569,7 +2569,7 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "fastTrackDecision",
+    "CaseFieldID": "otherReasonForComplexityText",
     "TabFieldDisplayOrder": 20
   },
   {
@@ -2578,7 +2578,7 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "fastTrackDecisionReason",
+    "CaseFieldID": "netValueOfHome",
     "TabFieldDisplayOrder": 21
   },
   {
@@ -2587,7 +2587,7 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "specialAssistanceRequiredLabel",
+    "CaseFieldID": "potentialAllegationChecklist",
     "TabFieldDisplayOrder": 22
   },
   {
@@ -2596,7 +2596,7 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "specialAssistanceRequired",
+    "CaseFieldID": "detailPotentialAllegation",
     "TabFieldDisplayOrder": 23
   },
   {
@@ -2605,7 +2605,7 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "specificArrangementsRequiredLabel",
+    "CaseFieldID": "estimatedAssetsChecklist",
     "TabFieldDisplayOrder": 24
   },
   {
@@ -2614,7 +2614,7 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "specificArrangementsRequired",
+    "CaseFieldID": "regionList",
     "TabFieldDisplayOrder": 25
   },
   {
@@ -2623,8 +2623,62 @@
     "TabID": "hiddenTab",
     "TabLabel": "Hidden Tab",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "consentD81Question",
+    "CaseFieldID": "fastTrackDecision",
     "TabFieldDisplayOrder": 26
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hiddenTab",
+    "TabLabel": "Hidden Tab",
+    "TabDisplayOrder": 16,
+    "CaseFieldID": "fastTrackDecisionReason",
+    "TabFieldDisplayOrder": 27
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hiddenTab",
+    "TabLabel": "Hidden Tab",
+    "TabDisplayOrder": 16,
+    "CaseFieldID": "specialAssistanceRequiredLabel",
+    "TabFieldDisplayOrder": 28
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hiddenTab",
+    "TabLabel": "Hidden Tab",
+    "TabDisplayOrder": 16,
+    "CaseFieldID": "specialAssistanceRequired",
+    "TabFieldDisplayOrder": 29
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hiddenTab",
+    "TabLabel": "Hidden Tab",
+    "TabDisplayOrder": 16,
+    "CaseFieldID": "specificArrangementsRequiredLabel",
+    "TabFieldDisplayOrder": 30
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hiddenTab",
+    "TabLabel": "Hidden Tab",
+    "TabDisplayOrder": 16,
+    "CaseFieldID": "specificArrangementsRequired",
+    "TabFieldDisplayOrder": 31
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hiddenTab",
+    "TabLabel": "Hidden Tab",
+    "TabDisplayOrder": 16,
+    "CaseFieldID": "consentD81Question",
+    "TabFieldDisplayOrder": 32
   },
   {
     "LiveFrom": "01/01/2017",
