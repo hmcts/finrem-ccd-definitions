@@ -170,12 +170,12 @@ function caseDocumentsTab(caseType, tabName, eventName) {
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-6"]');
-    I.see(verifyContestedTabText.caseDocumentsTab.UploadDecreeNisiFile);
     if (eventName === verifyContestedTabText.historyTab.assignToJudgeEvent ||
          eventName === verifyContestedTabText.historyTab.consentOrderEvent ||
          eventName === verifyContestedTabText.historyTab.assignToJudgeConsentEvent ||
          eventName === verifyContestedTabText.historyTab.createGeneralApplicationEvent ||
-         eventName === verifyContestedTabText.historyTab.submitUploadCaseFilesEvent) {
+         eventName === verifyContestedTabText.historyTab.submitUploadCaseFilesEvent ||
+         eventName === verifyContestedTabText.historyTab.sendOrderEvent) {
       I.see(verifyContestedTabText.caseDocumentsTab.onlineFormA);
     } else {
       I.see(verifyContestedTabText.caseDocumentsTab.draftOnlineFormA);
@@ -294,6 +294,19 @@ function approvedOrderTab(caseType, tabName) {
     break;
   }
 }
+function contestedOrderTab(caseType, tabName) {
+  const I = this;
+  I.waitForText(tabName, '5');
+  // eslint-disable-next-line default-case
+  switch (caseType) {
+  case 'contested':
+    I.click('div[id="mat-tab-label-0-10"]');
+    I.see(verifyContestedTabText.OrdersTab.OrdersLabel);
+    I.see(verifyContestedTabText.OrdersTab.OrderFileName);
+    break;
+  }
+}
+
 function gateKeepingAllocationsTab(caseType, tabName, eventName) {
   const I = this;
   I.waitForText(tabName, '5');
@@ -366,8 +379,7 @@ function verifyContestedTabData(caseType, eventName, stateName) {
   I.caseDocumentsTab(caseType, verifyContestedTabText.caseDocumentsTab.tabName, eventName);
   I.paymentDetailsTab(caseType, verifyContestedTabText.paymentDetailsTab.tabName);
   I.gateKeepingAllocationsTab(caseType, verifyContestedTabText.gateKeepingAllocationsTab.tabName, eventName);
-  I.schedulingAndListingTab(caseType, verifyContestedTabText.schedulingAndListingTab.tabName);
-}
+  }
 
 function verifyContestedPaperTabData(caseType, eventName, stateName) {
   const I = this;
@@ -392,6 +404,7 @@ module.exports = {
   paymentDetailsTab,
   judgeDetailsTab,
   adminNotesTab,
+  contestedOrderTab,
   approvedOrderTab,
   gateKeepingAllocationsTab,
   schedulingAndListingTab,

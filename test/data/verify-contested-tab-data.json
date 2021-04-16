@@ -12,6 +12,8 @@
     "assignToJudgeEndState": "Gate Keeping And Allocation",
     "submitUploadCaseFilesEvent": "Submit Uploaded Case Files",
     "submitUploadCaseFilesEndState": "Ready for Hearing",
+    "sendOrderEvent": "Send Order",
+    "sendOrderState": "Order Sent",
     "consentOrderEvent": "Consent Order",
     "consentOrderEndState": "Consented Order Submitted",
     "assignToJudgeConsentEvent": "Assign to Judge (consent)",
@@ -92,6 +94,11 @@
     "tabName": "Scheduling and Listing",
     "localCourt": "CENTRAL FAMILY COURT",
     "courtFrc": "London FRC"
+  },
+  "OrdersTab": {
+    "tabName": "Orders",
+    "OrdersLabel": "Final Orders",
+    "OrderFileName": "DraftOrder.pdf"
   },
   "consentOrderProcessTab": {
     "tabName": "Consent Order Process",
