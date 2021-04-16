@@ -191,7 +191,7 @@ function caseDocumentsTab(caseType, tabName, eventName) {
   case 'contestedPaper':
     I.click('div[id="mat-tab-label-0-5"]');
     I.see(verifyContestedPaperTabText.caseDocumentsTab.uploadedOtherDocument);
-    I.see(verifyContestedPaperTabText.caseDocumentsTab.uploadedDecreeNisiFile);
+    I.see(verifyContestedPaperTabText.caseDocumentsTab.uploadedPaperDocumentLabel);
     I.see(verifyContestedPaperTabText.caseDocumentsTab.uploadedPaperDocument);
     break;
   }
