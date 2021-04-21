@@ -49,7 +49,7 @@
     "test:a11y": "echo test:a11y",
     "test:smoke": "echo smoke",
     "test:functional": "codeceptjs run --steps -c test/functional/codecept.conf.js --grep @pipeline --reporter mochawesome",
-    "test:nightly-functional": "TESTS_FOR_ACCESSIBILITY='true' codeceptjs run --steps -c test/functional/codecept.conf.js --grep @nightly --reporter mochawesome",
+    "test:fullfunctional": "TESTS_FOR_ACCESSIBILITY='true' codeceptjs run --steps -c test/functional/codecept.conf.js --grep @nightly --reporter mochawesome",
     "test-crossbrowser-e2e": "TESTS_FOR_CROSS_BROWSER='true' codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} --plugins retryFailedStep --steps -c test/functional/saucelabs.conf.js  --grep @crossBrowser --reporter mochawesome",
     "test:crossbrowser": "./bin/run-crossbrowser-tests.sh",
     "start": "node index.js",
