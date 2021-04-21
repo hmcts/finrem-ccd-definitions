@@ -1,9 +1,12 @@
 /* eslint-disable no-invalid-this */
+const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function solicitorCreate(reference) {
   const I = this;
   I.waitForElement('h4', '15');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.see('SOLICITOR DETAILS');
   I.fillField('input[id="solicitorName"]', 'Arrow');
   I.fillField('input[id="solicitorFirm"]', 'Abc Firm');
@@ -31,7 +34,9 @@ async function solicitorCreate(reference) {
 async function contestedSolicitorCreate(reference) {
   const I = this;
   I.waitForPage('#applicantSolicitorDetailLabel h2', 'Solicitor Details');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.fillField('input[id="applicantSolicitorName"]', 'Parrot');
   I.fillField('input[id="applicantSolicitorFirm"]', 'MSN Firm');
   I.fillField('//*[@id="solicitorReference"]', reference);

@@ -1,9 +1,12 @@
 /* eslint-disable no-invalid-this */
+const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function optionalDocuments() {
   const I = this;
   I.waitForPage('h4', 'PENSION DOCUMENTS');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.click('Add new', { css: '#pensionCollection>div>button' });
   I.wait('2');
   I.selectOption('select[id=pensionCollection_0_typeOfDocument]', 'Form P1');
@@ -15,7 +18,9 @@ async function optionalDocuments() {
 async function consentedOtherDocuments() {
   const I = this;
   I.waitForPage('h4', 'OTHER DOCUMENTS');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
@@ -23,7 +28,9 @@ async function consentedOtherDocuments() {
 async function contestedOtherDocuments() {
   const I = this;
   I.waitForPage('input[id="promptForAnyDocument-No"]');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.checkOption('input[id="promptForAnyDocument-No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');

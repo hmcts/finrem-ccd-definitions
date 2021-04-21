@@ -1,9 +1,12 @@
 /* eslint-disable no-invalid-this */
+const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function checkYourAnswers() {
   const I = this;
   I.waitForElement('.check-your-answers', '60');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.see('SOLICITOR DETAILS');
   I.see('DIVORCE DETAILS');
   I.see('APPLICANT DETAILS');
@@ -14,7 +17,9 @@ async function checkYourAnswers() {
 async function contestedCheckYourAnswers() {
   const I = this;
   I.waitForPage('.check-your-answers');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.see('Solicitor Details');
   I.see('Divorce Details');
   I.see('Applicant’s Details');

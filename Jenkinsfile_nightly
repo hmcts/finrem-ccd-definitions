@@ -49,7 +49,21 @@ node {
             }
 
         }
+    stage('FR CrossBrowser Tests') {
+            try {
+                env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
+                env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
+                env.NIGHTLY_TEST="true"
+                enableCrossBrowserTest()
+            }
+            catch (Exception err) {
+                currentBuild.result = 'ERROR'
+                echo "RESULT: ${currentBuild.result}"
+            } finally {
+                archiveArtifacts 'test/functional/output/**/*'
+            }
 
+        }
     }
     deleteDir()
 }
