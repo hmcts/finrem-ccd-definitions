@@ -7,7 +7,6 @@ async function createCase(type, event) {
   I.waitForElement('a[href="/cases/case-filter"]', '60');
   I.click('Create case');
   I.waitForPage('h1', 'Create Case');
-  console.log(testForAccessibility);
   if(testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }

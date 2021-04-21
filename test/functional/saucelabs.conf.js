@@ -6,7 +6,7 @@ const browser = 'chrome';
 const defaultSauceOptions = {
   username: process.env.SAUCE_USERNAME || conf.saucelabs.username,
   accessKey: process.env.SAUCE_ACCESS_KEY || conf.saucelabs.key,
-  tunnelIdentifier: process.env.SAUCE_TUNNEL_IDENTIFIER || conf.saucelabs.tunnelId,
+  tunnelIdentifier: process.env.SAUCE_TUNNEL_IDENTIFIER || 'reformtunnel',
   acceptSslCerts: true,
   tags: ['FinancialRemedy']
 };
