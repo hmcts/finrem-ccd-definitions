@@ -19,7 +19,7 @@ def secrets = [
     secret('username-caseworker', 'USERNAME_CASEWORKER'),
     secret('password-caseworker', 'PASSWORD_CASEWORKER'),
     secret('fr-judge-username', 'USERNAME_JUDGE'),
-    secret('fr-judge-passwordr', 'PASSWORD_JUDGE'),
+    secret('fr-judge-password', 'PASSWORD_JUDGE'),
     secret('username-caa', 'USERNAME_CAA'),
     secret('password-caa', 'PASSWORD_CAA'),
     secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
