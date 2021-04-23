@@ -61,7 +61,7 @@ function amendApplicationDetails() {
   I.see('APPLICANT DETAILS');
   I.see('RESPONDENT DETAILS');
   I.click('Submit');
-  I.waitForPage('h2', 'History');
+  I.waitForText('History', '60');
   I.see('Amend Application Details');
 }
 
@@ -151,6 +151,7 @@ function contestedAmendApplicationDetails() {
   I.see('Is the respondent represented ?');
   I.see('Do you want to upload any other documents ?');
   I.click('Submit');
+  I.waitForText('History', '60');
   I.see('Amend Application Details');
 }
 

@@ -106,6 +106,8 @@ Scenario('Contested Case Approved and Send Order @nightly @pipeline @crossBrowse
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
     I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.sendOrderState);
+    I.wait(2);
+    I.click({css: '.mat-tab-header-pagination-after'});
     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
   }
