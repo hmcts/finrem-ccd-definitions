@@ -214,7 +214,7 @@ Scenario('Contested Case Creation by Solicitor @nightly @crossBrowser', async I 
     await I.miamCertification();
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers();
-    I.see('Form A Application');
+    I.waitForText('Form A Application', '60')
     I.contestedAmendApplicationDetails();
     await I.caseSubmitAuthorisation('contested');
     await I.paymentPage(false);
