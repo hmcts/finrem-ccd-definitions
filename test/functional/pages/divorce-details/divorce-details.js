@@ -10,7 +10,7 @@ async function divorceDetails() {
   I.fillField('input[id="divorceCaseNumber"]', 'LV18D81234');
   I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi');
   I.wait('5');
-  I.attachFile('input[type="file"]', '../data/fileupload.txt');
+  I.retry('3').attachFile('input[type="file"]', '../data/fileupload.txt');
   I.wait('5');
   I.fillField('input[id="divorceDecreeNisiDate-day"]', '1');
   I.fillField('input[id="divorceDecreeNisiDate-month"]', '2');
@@ -38,7 +38,7 @@ async function contestedDivorceDetails() {
   I.fillField('input[id="divorcePetitionIssuedDate-year"]', '2020');
   I.fillField('#nameOfCourtDivorceCentre', 'Brentford Court');
   I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi');
-  I.attachFile('input[type="file"]', '../data/fileupload.txt');
+  I.retry('3').attachFile('input[type="file"]', '../data/fileupload.txt');
   I.fillField('input[id="divorceDecreeNisiDate-day"]', '15');
   I.fillField('input[id="divorceDecreeNisiDate-month"]', '8');
   I.fillField('input[id="divorceDecreeNisiDate-year"]', '2020');
