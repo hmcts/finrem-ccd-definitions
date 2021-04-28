@@ -22,6 +22,7 @@ async function solicitorCreate(reference) {
   I.fillField('input[id="solicitorPhone"]', '07700000');
   I.fillField('input[id="solicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="solicitorDXnumber"]', '776890');
+  I.waitForText('Search for an organisation','30')
   I.checkOption('input[id="solicitorAgreeToReceiveEmails-Yes"]');
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.click('Select');
@@ -52,6 +53,7 @@ async function contestedSolicitorCreate(reference) {
   I.fillField('input[id="applicantSolicitorPhone"]', '07000000');
   I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
+  I.waitForText('Search for an organisation','30')
   I.checkOption('input[id="applicantSolicitorConsentForEmails-Yes"]');
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.click('Select');
