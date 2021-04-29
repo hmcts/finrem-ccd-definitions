@@ -1,9 +1,12 @@
 /* eslint-disable no-invalid-this */
+const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function solicitorCreate(reference) {
   const I = this;
   I.waitForElement('h4', '15');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.see('SOLICITOR DETAILS');
   I.fillField('input[id="solicitorName"]', 'Arrow');
   I.fillField('input[id="solicitorFirm"]', 'Abc Firm');
@@ -19,6 +22,7 @@ async function solicitorCreate(reference) {
   I.fillField('input[id="solicitorPhone"]', '07700000');
   I.fillField('input[id="solicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="solicitorDXnumber"]', '776890');
+  I.waitForText('Search for an organisation','30')
   I.checkOption('input[id="solicitorAgreeToReceiveEmails-Yes"]');
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.click('Select');
@@ -31,7 +35,9 @@ async function solicitorCreate(reference) {
 async function contestedSolicitorCreate(reference) {
   const I = this;
   I.waitForPage('#applicantSolicitorDetailLabel h2', 'Solicitor Details');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.fillField('input[id="applicantSolicitorName"]', 'Parrot');
   I.fillField('input[id="applicantSolicitorFirm"]', 'MSN Firm');
   I.fillField('//*[@id="solicitorReference"]', reference);
@@ -47,6 +53,7 @@ async function contestedSolicitorCreate(reference) {
   I.fillField('input[id="applicantSolicitorPhone"]', '07000000');
   I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
+  I.waitForText('Search for an organisation','30')
   I.checkOption('input[id="applicantSolicitorConsentForEmails-Yes"]');
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.click('Select');

@@ -1,13 +1,15 @@
 /* eslint-disable no-invalid-this */
 
-// const runAccessibilityTest = require('../../../helpers/PuppeteerHelper');
+const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function createCase(type, event) {
   const I = this;
   I.waitForElement('a[href="/cases/case-filter"]', '60');
   I.click('Create case');
   I.waitForPage('h1', 'Create Case');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.waitForElement('select[id="cc-jurisdiction"]>option:nth-of-type(2)', '60');
   I.selectOption('select[id="cc-jurisdiction"]', 'Family Divorce');
   I.wait('1');

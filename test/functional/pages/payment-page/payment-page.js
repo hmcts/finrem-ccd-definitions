@@ -1,9 +1,12 @@
 /* eslint-disable no-invalid-this */
+const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function paymentPage(pbaValue) {
   const I = this;
   I.waitForText('PAYMENT DETAILS', '15');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   if (pbaValue === false) {
     I.checkOption('input[id="helpWithFeesQuestion-Yes"]');
   } else {

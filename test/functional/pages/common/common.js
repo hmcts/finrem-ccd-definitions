@@ -4,9 +4,9 @@ async function waitForPage(header, headerText) {
 
   try {
     if (headerText === undefined) {
-      await I.waitForElement(header, '60');
+      await I.waitForElement(header, '90');
     } else {
-      await I.waitForText(headerText, '60', header);
+      await I.waitForText(headerText, '90', header);
     }
   } catch (error) {
     throw error;
@@ -16,7 +16,7 @@ async function waitForPage(header, headerText) {
 function waitForContinueButtonEnabled() {
   const I = this;
 
-  I.waitForElement('button[type = "submit"]:not(:disabled)', '30');
+  I.waitForElement('button[type = "submit"]:not(:disabled)', '90');
   I.scrollTo('button[type = "submit"]:not(:disabled)');
 }
 

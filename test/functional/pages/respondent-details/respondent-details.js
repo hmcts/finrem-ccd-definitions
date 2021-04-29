@@ -1,10 +1,11 @@
 /* eslint-disable no-invalid-this */
+const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 function respondentSolicitorDetailsDetails(I) {
   I.fillField('input[id="rSolicitorName"]', 'ResSol');
   I.fillField('input[id="rSolicitorFirm"]', 'MahFirm');
   I.fillField('input[id="rSolicitorReference"]', 'MahSol73');
-  I.waitForText('Search for an organisation', '5');
+  I.waitForText('Search for an organisation', '30');
   I.fillField('input[id="search-org-text"]', 'financialremedyrespondentorg');
   I.click('Select');
   I.waitForText('SW1H 9AJ', '5');
@@ -27,7 +28,9 @@ async function consentedRespondentDetails() {
   const I = this;
 
   I.waitForPage('h4', 'RESPONDENT DETAILS');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.fillField('input[id="appRespondentFMName"]', 'kiv');
   I.fillField('input[id="appRespondentLName"]', 'resp');
   I.checkOption('input[id="appRespondentRep-Yes"]');
@@ -39,7 +42,9 @@ async function contestedRespondentDetails() {
   const I = this;
 
   I.waitForPage('#respondentDetailsLabel h2', 'Respondent’s Details');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.fillField('input[id="respondentFMName"]', 'Qunatico');
   I.fillField('input[id="respondentLName"]', 'Whisper');
   I.waitForContinueButtonEnabled();

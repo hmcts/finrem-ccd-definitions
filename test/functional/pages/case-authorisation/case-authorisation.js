@@ -1,13 +1,16 @@
 /* eslint-disable no-invalid-this */
+const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function caseSubmitAuthorisation(casetype) {
   const I = this;
   I.waitForPage('select[id="next-step"]');
-  await I.runAccessibilityTest();
+  if(testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
   I.selectOption('select[id="next-step"]', 'Case Submission');
   I.wait('2');
   I.click('Go');
-  I.waitForText('AUTHORISATION', '15');
+  I.waitForText('AUTHORISATION', '30');
   I.fillField('input[id="authorisationName"]', 'Viasda');
   if (casetype === 'contested') {
     I.fillField('input[id="solicitorFirm"]', 'Abc Org');

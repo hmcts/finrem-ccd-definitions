@@ -2,20 +2,21 @@
 
 function amendApplicationDetails() {
   const I = this;
-  I.waitForText('History', '30');
+  I.waitForText('History', '60');
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.wait('2');
   I.click('Go');
-  I.waitForText('Before You Start', '20');
+  I.waitForText('Before You Start', '30');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('SOLICITOR DETAILS', '20');
+  I.waitForText('SOLICITOR DETAILS', '30');
   I.fillField('input[id="solicitorPhone"]', '07766120000');
+  I.waitForText("Search for an organisation","30")
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('DIVORCE DETAILS', '20');
+  I.waitForText('DIVORCE DETAILS', '30');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D84321');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -61,13 +62,13 @@ function amendApplicationDetails() {
   I.see('APPLICANT DETAILS');
   I.see('RESPONDENT DETAILS');
   I.click('Submit');
-  I.waitForPage('h2', 'History');
+  I.waitForText('History', '60');
   I.see('Amend Application Details');
 }
 
 function contestedAmendApplicationDetails() {
   const I = this;
-  I.waitForText('History', '30');
+  I.waitForText('History', '60');
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.click('Go');
 
@@ -151,6 +152,7 @@ function contestedAmendApplicationDetails() {
   I.see('Is the respondent represented ?');
   I.see('Do you want to upload any other documents ?');
   I.click('Submit');
+  I.waitForText('History', '60');
   I.see('Amend Application Details');
 }
 

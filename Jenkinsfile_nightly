@@ -1,8 +1,10 @@
 #!groovy
-
 properties([
-        [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/finrem-ccd-definitions.git'],
-        pipelineTriggers([cron('00 21 * * *')])
+        pipelineTriggers([cron('00 20 * * *')]),
+        parameters([
+                string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
+                string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
+        ])
 ])
 
 @Library("Infrastructure")
@@ -10,46 +12,48 @@ properties([
 String product = "finrem"
 String component = "ccd-definitions"
 
-node {
-    ws('workspace/finrem-ccd-definitions') {
-        stage('Checkout') {
-            deleteDir()
-            checkout scm
-        }
-        stage('Env Setup') {
-            withSubscription('nonprod') {
-                def az = { cmd -> return sh(script: "env AZURE_CONFIG_DIR=/opt/jenkins/.azure-${env.SUBSCRIPTION_NAME} az ${cmd}", returnStdout: true).trim() }
-                env.USERNAME_SOLICITOR =  az('keyvault secret show --vault-name finrem-aat --name username-solicitor --query value -o tsv').trim()
-                env.PASSWORD_SOLICITOR =  az('keyvault secret show --vault-name finrem-aat --name password-solicitor --query value -o tsv').trim()
-                env.USERNAME_CASEWORKER =  az('keyvault secret show --vault-name finrem-aat --name username-caseworker --query value -o tsv').trim()
-                env.PASSWORD_CASEWORKER =  az('keyvault secret show --vault-name finrem-aat --name password-caseworker --query value -o tsv').trim()
-                env.USERNAME_JUDGE =  az('keyvault secret show --vault-name finrem-aat --name fr-judge-username --query value -o tsv').trim()
-                env.PASSWORD_JUDGE =  az('keyvault secret show --vault-name finrem-aat --name fr-judge-password --query value -o tsv').trim()
-                env.USERNAME_CAA =  az('keyvault secret show --vault-name finrem-aat --name username-caa --query value -o tsv').trim()
-                env.PASSWORD_CAA =  az('keyvault secret show --vault-name finrem-aat --name password-caa --query value -o tsv').trim()
-                env.USERNAME_RESPONDENT_SOLICITOR =  az('keyvault secret show --vault-name finrem-aat --name username-respondent-solicitor --query value -o tsv').trim()
-                env.IDAM_CLIENT_SECRET =  az('keyvault secret show --vault-name finrem-aat --name idam-client-secret --query value -o tsv').trim()
-                env.CCD_SUBMIT_S2S_SECRET =  az('keyvault secret show --vault-name finrem-aat --name ccd-submission-s2s-auth-secret --query value -o tsv').trim()
-            }
-        }
-        stage('CCD E2E Journey Tests') {
-            try {
-                env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
-                env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
-                env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
-                env.NIGHTLY_TEST="true"
-                sh 'yarn install'
-                sh 'yarn test:nightly-functional'
-            }
-            catch (Exception err) {
-                currentBuild.result = 'ERROR'
-                echo "RESULT: ${currentBuild.result}"
-            } finally {
-                archiveArtifacts 'test/functional/output/**/*'
-            }
+def secrets = [
+  'finrem-${env}': [
+    secret('username-solicitor', 'USERNAME_SOLICITOR'),
+    secret('password-solicitor', 'PASSWORD_SOLICITOR'),
+    secret('username-caseworker', 'USERNAME_CASEWORKER'),
+    secret('password-caseworker', 'PASSWORD_CASEWORKER'),
+    secret('fr-judge-username', 'USERNAME_JUDGE'),
+    secret('fr-judge-password', 'PASSWORD_JUDGE'),
+    secret('username-caa', 'USERNAME_CAA'),
+    secret('password-caa', 'PASSWORD_CAA'),
+    secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
+    secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
+    secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET')
+  ]
+]
 
-        }
-
-    }
-    deleteDir()
+static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
+  [ $class: 'AzureKeyVaultSecret',
+    secretType: 'Secret',
+    name: secretName,
+    version: '',
+    envVariable: envVar
+  ]
 }
+
+withNightlyPipeline("nodejs", product, component) {
+    env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
+    env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
+    env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
+    env.NIGHTLY_TEST="true"
+    env.NODE_ENV = 'ci'
+
+    loadVaultSecrets(secrets)
+    enableFullFunctionalTest()
+    enableCrossBrowserTest()
+
+    after('fullFunctionalTest') {
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
+    }
+    after('crossBrowserTest') {
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
+      }
+}
+
+
