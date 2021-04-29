@@ -8,7 +8,9 @@ async function orderForChildren() {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[id="orderForChildrenQuestion1-Yes"]');
+  I.waitForText('Is there a written agreement? (Optional)','30');
   I.checkOption('input[id="natureOfApplication5-No"]');
+  I.waitForText('Other','30');
   I.checkOption('input[id="natureOfApplication6-Step Child or Step Children"]');
   I.checkOption('input[id="natureOfApplication6-In addition to child support"]');
   I.checkOption('input[id="natureOfApplication6-disability expenses"]');

@@ -8,15 +8,17 @@ function complexityList() {
   for (let checkBoxCtr = '1'; checkBoxCtr <= '5'; checkBoxCtr++) {
     I.checkOption(`#estimatedAssetsChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
-
+  I.wait('2');
   I.fillField('#netValueOfHome', '100000');
-
+  I.waitForText('Pre- or post-nuptial agreements','30');
   for (let checkBoxCtr = '1'; checkBoxCtr <= '15'; checkBoxCtr++) {
     I.checkOption(`#potentialAllegationChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
+  I.wait('2');
   I.fillField('#detailPotentialAllegation', 'Test allegation');
-
+  I.wait('2');
   I.checkOption('#otherReasonForComplexity-Yes');
+  I.waitForText('If yes – please specify','30');
   I.fillField('#otherReasonForComplexityText', 'Test reason for complexity list');
 
 
