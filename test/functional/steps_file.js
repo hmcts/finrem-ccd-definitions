@@ -30,6 +30,8 @@ const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplication
 const { assignContestedCase } = require('./pages/org-assign-cases/org-assign-cases-to-respondent');
 const { assignContestedShareCase } = require('./pages/share-case-in-org/share-case-in-org');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
+const adminUserName = process.env.CCD_ADMIN_USER_NAME
+const adminPassword = process.env.CCD_ADMIN_PASSWORD
 
 module.exports = () => {
   return actor({
@@ -39,8 +41,8 @@ module.exports = () => {
     loginToAdminConsole() {
       this.amOnPage(`${process.env.CCD_ADMIN_URL}`);
       this.see('Sign in');
-      this.fillField('username', 'ccd-importer@server.net');
-      this.fillField('password', 'Password12');
+      this.fillField('username', adminUserName);
+      this.fillField('password', adminPassword);
       this.click('Sign in');
       this.see('Welcome to CCD Admin Web');
     },
