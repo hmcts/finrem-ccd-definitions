@@ -57,9 +57,7 @@ describe('UserRole authorisations for CaseState', () => {
           console.log(`Missing ${missingAuthCount} authorisations for state: ${stateEntry.ID}`);
           console.dir(diffAuthStates);
         }
-        // we can't make it pass since caa role MUST be revoked permissions for some states
-        // please see: RPET-980 for more details
-        // expect(authForState.length).to.eql(authRolesForCaseType.length);
+        expect(authForState.length).to.eql(authRolesForCaseType.length);
         authForState.forEach(checkPerms);
       });
     });
