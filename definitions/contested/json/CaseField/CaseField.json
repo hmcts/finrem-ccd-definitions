@@ -2680,8 +2680,32 @@
   {
     "LiveFrom": "12/05/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentOrderFRCText",
-    "Label": "",
+    "ID": "consentOrderFRCName",
+    "Label": "Court",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderFRCAddress",
+    "Label": "Address",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderFRCEmail",
+    "Label": "Email",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderFRCPhone",
+    "Label": "Phone",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
