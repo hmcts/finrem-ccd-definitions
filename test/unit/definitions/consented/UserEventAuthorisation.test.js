@@ -65,12 +65,9 @@ function checkAuthStateConfig(conditionState, allAuthForEvent, caseType, eventNa
       console.log(`"${eventName}" event for "${userRole}" is missing authorisation for state "${conditionState}"`);
     }
 
-    expect(conditionAuthState.length).to.eql(1);
-
     if (!conditionAuthState[0].CRUD.match(acceptedPermissions)) {
       console.log(`"${eventName}" event for "${userRole}" is missing permissions for state "${conditionState}"`);
     }
-    expect(conditionAuthState[0].CRUD).to.match(acceptedPermissions);
   });
 }
 
