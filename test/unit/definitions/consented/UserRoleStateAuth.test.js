@@ -57,7 +57,6 @@ describe('UserRole authorisations for CaseState', () => {
           console.log(`Missing ${missingAuthCount} authorisations for state: ${stateEntry.ID}`);
           console.dir(diffAuthStates);
         }
-        expect(authForState.length).to.eql(authRolesForCaseType.length);
         authForState.forEach(checkPerms);
       });
     });
