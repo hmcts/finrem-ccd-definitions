@@ -123,6 +123,7 @@ Config changes are now uploaded to AAT when a PR branch is merged to master. Whe
 Jenkins now generates the config ready to release to PROD, this can be found in the `Artifacts` tab of the Jenkins build on merge to master. 
 
 NOTE: Jenkins will populate Judge details in the PROD configs that is not available locally, so PROD configs should never be used when generated locally and instead should always be taken from Jenkins.
+The latest count for the total number of judges is: 564 
 
 Follow this guide for releasing a new config file to Production:
 https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+Production
