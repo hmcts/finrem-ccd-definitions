@@ -3954,5 +3954,13 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "reasonForFRCLocation",
+    "Label": "Reason for selecting an FRC location",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
   }
 ]
