@@ -67,8 +67,11 @@ const setupConfig = {
     microsoft: {
       browsers: getBrowserConfig('microsoft')
     },
-    chrome: {
-      browsers: getBrowserConfig('chrome')
+    chromeWindows: {
+      browsers: getBrowserConfig('chromeWindows')
+    },
+    chromeMac: {
+      browsers: getBrowserConfig('chromeMac')
     },
     firefox: {
       browsers: getBrowserConfig('firefox')

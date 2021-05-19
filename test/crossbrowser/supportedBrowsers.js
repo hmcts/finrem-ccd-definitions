@@ -13,13 +13,15 @@ const supportedBrowsers = {
       }
     }
   },
-  chrome: {
+  chromeWindows: {
     chrome_win_latest: {
       browserName: 'chrome',
       platformName: LATEST_WINDOWS,
       browserVersion: 'latest',
       'sauce:options': { name: 'WIN_CHROME_LATEST_FR_E2E' }
-    },
+    }
+  },
+  chromeMac: {
     chrome_mac_latest: {
       browserName: 'chrome',
       platformName: LATEST_MAC,
