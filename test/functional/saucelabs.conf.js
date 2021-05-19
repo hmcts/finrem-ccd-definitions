@@ -73,8 +73,11 @@ const setupConfig = {
     chromeMac: {
       browsers: getBrowserConfig('chromeMac')
     },
-    firefox: {
-      browsers: getBrowserConfig('firefox')
+    firefoxWindows: {
+      browsers: getBrowserConfig('firefoxWindows')
+    },
+    firefoxMac: {
+      browsers: getBrowserConfig('firefoxMac')
     }
   },
   name: 'FR Frontend Tests'

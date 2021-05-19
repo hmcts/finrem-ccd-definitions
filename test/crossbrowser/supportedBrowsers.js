@@ -29,7 +29,7 @@ const supportedBrowsers = {
       'sauce:options': { name: 'MAC_CHROME_LATEST_FR_E2E' }
     }
   },
-  firefox: {
+  firefoxWindows: {
     firefox_win_latest: {
       browserName: 'firefox',
       platformName: LATEST_WINDOWS,
@@ -38,7 +38,9 @@ const supportedBrowsers = {
         name: 'WIN_FIREFOX_LATEST_FR_E2E',
         screenResolution: '1400x1050'
       }
-    },
+    }
+  },
+  firefoxMac: {
     firefox_mac_latest: {
       browserName: 'firefox',
       platformName: LATEST_MAC,
