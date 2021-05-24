@@ -67,11 +67,17 @@ const setupConfig = {
     microsoft: {
       browsers: getBrowserConfig('microsoft')
     },
-    chrome: {
-      browsers: getBrowserConfig('chrome')
+    chromeWindows: {
+      browsers: getBrowserConfig('chromeWindows')
     },
-    firefox: {
-      browsers: getBrowserConfig('firefox')
+    chromeMac: {
+      browsers: getBrowserConfig('chromeMac')
+    },
+    firefoxWindows: {
+      browsers: getBrowserConfig('firefoxWindows')
+    },
+    firefoxMac: {
+      browsers: getBrowserConfig('firefoxMac')
     }
   },
   name: 'FR Frontend Tests'

@@ -152,8 +152,10 @@ function contestedAmendApplicationDetails() {
   I.see('Is the respondent represented ?');
   I.see('Do you want to upload any other documents ?');
   I.click('Submit');
+  I.wait('5');
   I.waitForText('History', '60');
   I.see('Amend Application Details');
+  I.wait('5');
 }
 
 module.exports = { amendApplicationDetails, contestedAmendApplicationDetails };
