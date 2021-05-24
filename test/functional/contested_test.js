@@ -224,7 +224,7 @@ Scenario('Contested Case Creation by Solicitor @nightly @crossBrowser', async I 
     await I.finalPaymentSubmissionPage();
     await I.finalInformationPage();
     I.see('Case Submission');
-    I.waitForText('History', '10');
+    I.waitForText('History', '30');
   }
 });
 Scenario('Contested share case @nightly @pipeline', async I => {

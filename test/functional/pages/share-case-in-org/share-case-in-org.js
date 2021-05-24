@@ -5,7 +5,7 @@ function assignContestedShareCase(caseId, solRef) {
   I.waitForText('Case type', '10');
   I.selectOption('select[id="wb-case-type"]', 'Contested Financial Remedy');
   I.selectOption('select[id="wb-case-state"]', 'Any');
-  I.waitForText('North Wales Court List', '20');
+  I.waitForText('North Wales Court List', '40');
   I.fillField('input[id="solicitorReference"]', solRef);
   I.click('Apply');
   I.waitForText('Case Reference', '15');
