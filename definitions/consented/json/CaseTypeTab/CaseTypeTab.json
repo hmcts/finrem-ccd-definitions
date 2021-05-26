@@ -1,16 +1,5 @@
 [
   {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "CaseHistoryViewer",
-    "TabLabel": "History",
-    "TabDisplayOrder": 1,
-    "CaseFieldID": "CaseHistoryViewer",
-    "UserRole": "[APPSOLICITOR]",
-    "TabFieldDisplayOrder": 1
-  },
-  {
     "LiveFrom": "26/05/2021",
     "CaseTypeID": "FinancialRemedyMVP2",
     "Channel": "CaseWorker",
@@ -19,6 +8,17 @@
     "TabDisplayOrder": 1,
     "CaseFieldID": "[STATE]",
     "UserRole": "[RESPSOLICITOR]",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseHistoryViewer",
+    "TabLabel": "History",
+    "TabDisplayOrder": 1,
+    "CaseFieldID": "CaseHistoryViewer",
+    "UserRole": "[APPSOLICITOR]",
     "TabFieldDisplayOrder": 1
   },
   {
