@@ -32,7 +32,8 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "midlandsFRCList",
     "Label": "Midlands FRC's",
-    "DisplayOrder": 5
+    "DisplayOrder": 5,
+    "FieldShowCondition": "regionList=\"midlands\""
   },
   {
     "LiveFrom": "01/01/2017",
