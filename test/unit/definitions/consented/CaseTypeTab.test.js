@@ -60,7 +60,7 @@ describe('CaseTypeTab', () => {
   });
 
   const expected = {
-    State: 1,
+    state: 1,
     CaseHistoryViewer: 1,
     applicantDetails: 2,
     respondentDetails: 3,
@@ -90,7 +90,7 @@ describe('CaseTypeTab', () => {
   it('should contain a valid Tab IDs', () => {
     expect(tabIds).to.eql([
       'CaseHistoryViewer',
-      'State',
+      'state',
       'applicantDetails',
       'respondentDetails',
       'divorceDetails',
