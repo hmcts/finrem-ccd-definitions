@@ -8,13 +8,6 @@ const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField
 const caseFieldAll = caseField.concat(caseFieldCommon);
 const tabIds = uniq(map(caseTypeTab, 'TabID'));
 
-function ignoreMetaDataFields(field, validFields) {
-  if (field.CaseFieldID !== '[STATE]') {
-    return validFields.indexOf(field.CaseFieldID) === -1;
-  }
-  return false;
-}
-
 describe('CaseTypeTab', () => {
   it('should contain a unique case field ID per tab ID (no duplicate field in a tab)', () => {
     const uniqResult = uniqWith(
@@ -124,7 +117,7 @@ describe('CaseTypeTab', () => {
   it('should contain a valid case field IDs', () => {
     const validFields = uniq(map(caseFieldAll, 'ID'));
     const objectsWithInvalidCaseId = filter(caseTypeTab, field => {
-      return ignoreMetaDataFields(field, validFields);
+      return validFields.indexOf(field.CaseFieldID) === -1;
     });
     expect(objectsWithInvalidCaseId).to.eql([]);
   });
