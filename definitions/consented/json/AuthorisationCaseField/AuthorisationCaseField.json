@@ -1781,8 +1781,23 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "CaseHistoryViewer",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPSOLICITOR]",
+    "UserRole": "[APPSOLICITOR]",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "27/05/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "CaseHistoryViewer",
+    "UserRole": "[CREATOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "27/05/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "LabelState",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
