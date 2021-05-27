@@ -40,7 +40,8 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "londonFRCList",
     "Label": "London FRC's",
-    "DisplayOrder": 6
+    "DisplayOrder": 6,
+    "FieldShowCondition": "regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
