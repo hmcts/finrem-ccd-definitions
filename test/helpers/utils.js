@@ -11,7 +11,7 @@ const env = process.env.RUNNING_ENV || 'aat';
 async function getUserToken(username, password) {
   logger.info('Getting User Token');
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
-  const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
+  const idamClientSecret = 'thUphEveC2Ekuqedaneh4jEcRuba4t2t';
   const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
 
