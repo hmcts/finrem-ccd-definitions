@@ -41,8 +41,8 @@ module.exports = () => {
     loginToAdminConsole() {
       this.amOnPage(`${process.env.CCD_ADMIN_URL}`);
       this.see('Sign in');
-      this.fillField('username', 'ccd-importer@server.net');
-      this.fillField('password', 'Password12');
+      this.fillField('username', adminUserName);
+      this.fillField('password', adminPassword);
       this.click('Sign in');
       this.see('Welcome to CCD Admin Web');
     },
