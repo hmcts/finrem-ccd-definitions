@@ -33,14 +33,15 @@
     "CaseFieldID": "midlandsFRCList",
     "Label": "Midlands FRC's",
     "DisplayOrder": 5,
-    "FieldShowCondition": "regionList=\"midlands\""
+    "FieldShowCondition": "regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "londonFRCList",
     "Label": "London FRC's",
-    "DisplayOrder": 6
+    "DisplayOrder": 6,
+    "FieldShowCondition": "regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -54,21 +55,24 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "northEastFRCList",
     "Label": "North East FRC's",
-    "DisplayOrder": 8
+    "DisplayOrder": 8,
+    "FieldShowCondition": "regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "southEastFRCList",
     "Label": "South East FRC's",
-    "DisplayOrder": 9
+    "DisplayOrder": 9,
+    "FieldShowCondition": "regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "southWestFRCList",
     "Label": "South West FRC's",
-    "DisplayOrder": 10
+    "DisplayOrder": 10,
+    "FieldShowCondition": "regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
