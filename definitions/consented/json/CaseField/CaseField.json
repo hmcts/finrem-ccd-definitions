@@ -1891,5 +1891,13 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_TransferCourtEmail",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "27/05/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "LabelState",
+    "Label": "#### Case State: ${[STATE]}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
   }
 ]
