@@ -40,7 +40,7 @@
     }
   },
   "scripts": {
-    "reset-ccd-submodule": "git submodule update --init --recursive && git submodule foreach --recursive git pull origin master && yarn --cwd ccd-definition-processor install",
+    "reset-ccd-submodule": "git submodule update --init --recursive && git submodule foreach --recursive git pull origin dfr-19-show-hide-court-filters && yarn --cwd ccd-definition-processor install",
     "setup": "git submodule update --init --recursive && yarn --cwd ccd-definition-processor install",
     "lint": "eslint --fix .",
     "test": "NODE_PATH=. mocha test/unit/**/*.js",
