@@ -11,7 +11,9 @@ async function checkYourAnswers() {
   I.see('DIVORCE DETAILS');
   I.see('APPLICANT DETAILS');
   I.see('RESPONDENT DETAILS');
-  I.click('Submit');
+  I.wait('2');
+  I.retry('2').click('Submit');
+  I.wait('30');
 }
 
 async function contestedCheckYourAnswers() {
@@ -27,6 +29,7 @@ async function contestedCheckYourAnswers() {
   I.see('Is the respondent represented ?');
   I.see('Do you want to add additional property ?');
   I.see('Do you want to upload any other documents ?');
+  I.wait('2');
   I.retry('2').click('Submit');
   I.wait('30');
 }

@@ -877,13 +877,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "CaseHistoryViewer",
-    "UserRole": "caseworker-divorce-financialremedy",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "approvedConsentOrderLetter",
     "UserRole": "caseworker-divorce-financialremedy",
     "CRUD": "R"
@@ -1781,8 +1774,15 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "CaseHistoryViewer",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPSOLICITOR]",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "27/05/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "LabelState",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
