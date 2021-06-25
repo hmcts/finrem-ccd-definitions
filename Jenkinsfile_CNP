@@ -119,6 +119,7 @@ withPipeline("nodejs", product, component) {
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
       }
 
       yarnBuilder.yarn('generate-excel-all-consented')
@@ -131,6 +132,7 @@ withPipeline("nodejs", product, component) {
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
         sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
       }
 
       yarnBuilder.yarn('generate-excel-all-contested')
