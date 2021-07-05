@@ -1732,6 +1732,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "reasonForFRCLocation",
+    "TabFieldDisplayOrder": 60
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
     "TabDisplayOrder": 12,

@@ -8230,5 +8230,26 @@
     "CaseFieldID": "respOtherCollectionShared",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "reasonForFRCLocation",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "reasonForFRCLocation",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "reasonForFRCLocation",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
   }
 ]
