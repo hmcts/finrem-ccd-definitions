@@ -6490,7 +6490,9 @@
     "PageLabel": "Consent Order Application",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-frc-details",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6761,6 +6763,58 @@
     "PageID": 7,
     "PageLabel": "Consent Order Application",
     "PageDisplayOrder": 7,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrder",
+    "CaseFieldID": "consentOrderFRCName",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 7,
+    "PageLabel": "Consent Order Application",
+    "PageDisplayOrder": 8,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrder",
+    "CaseFieldID": "consentOrderFRCAddress",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 7,
+    "PageLabel": "Consent Order Application",
+    "PageDisplayOrder": 9,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrder",
+    "CaseFieldID": "consentOrderFRCEmail",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 7,
+    "PageLabel": "Consent Order Application",
+    "PageDisplayOrder": 10,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrder",
+    "CaseFieldID": "consentOrderFRCPhone",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 7,
+    "PageLabel": "Consent Order Application",
+    "PageDisplayOrder": 11,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N"
   },

@@ -2673,8 +2673,40 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "consentOrderPreSaveText",
-    "Label": "# Saving your application\r\nOnce you have pressed ‘continue’ at the bottom of this page, you will have the opportunity to check your application and make any necessary amendments.\r\n\r\nTo save a copy of the application, please press the ‘submit’ button at the bottom of the page.\r\n\r\n# What happens next\r\n  Once you have submitted your application, it will be forwarded to the nominated FRC for processing. \r\n\r\nIf a fee is required we will contact you to arrange payment. \r\n\r\n# If you need help \r\nYou can contact the court if you need help. \r\n************************************************************\r\nCourts and Tribunals Service Centre\r\nPO Box 12746, Harlow, CM20 9QZ\r\n<br/>Email: ContactFinancialRemedy@justice.gov.uk",
+    "Label": "# Saving your application\r\nOnce you have pressed ‘continue’ at the bottom of this page, you will have the opportunity to check your application and make any necessary amendments.\r\n\r\nTo save a copy of the application, please press the ‘submit’ button at the bottom of the page.\r\n\r\n# What happens next\r\n  Once you have submitted your application, it will be forwarded to the nominated FRC for processing. \r\n\r\nIf a fee is required we will contact you to arrange payment. \r\n\r\n# If you need help \r\nYou can contact the court if you need help. \r\n************************************************************\r\n",
     "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderFRCName",
+    "Label": "Court",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderFRCAddress",
+    "Label": "Address",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderFRCEmail",
+    "Label": "Email",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderFRCPhone",
+    "Label": "Phone",
+    "FieldType": "Text",
     "SecurityClassification": "Public"
   },
   {
