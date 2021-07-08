@@ -32,174 +32,199 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "midlandsFRCList",
     "Label": "Midlands FRC's",
-    "DisplayOrder": 5
+    "DisplayOrder": 5,
+    "FieldShowCondition": "regionList=\"midlands\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "londonFRCList",
     "Label": "London FRC's",
-    "DisplayOrder": 6
+    "DisplayOrder": 6,
+    "FieldShowCondition": "regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "northWestFRCList",
     "Label": "NorthWest FRC's",
-    "DisplayOrder": 7
+    "DisplayOrder": 7,
+    "FieldShowCondition": "regionList=\"northwest\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "northEastFRCList",
     "Label": "North East FRC's",
-    "DisplayOrder": 8
+    "DisplayOrder": 8,
+    "FieldShowCondition": "regionList=\"northeast\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "southEastFRCList",
     "Label": "South East FRC's",
-    "DisplayOrder": 9
+    "DisplayOrder": 9,
+    "FieldShowCondition": "regionList=\"southeast\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "southWestFRCList",
     "Label": "South West FRC's",
-    "DisplayOrder": 10
+    "DisplayOrder": 10,
+    "FieldShowCondition": "regionList=\"southwest\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "walesFRCList",
     "Label": "Wales FRC's",
-    "DisplayOrder": 11
+    "DisplayOrder": 11,
+    "FieldShowCondition": "regionList=\"wales\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "nottinghamCourtList",
     "Label": "Nottingham Court List",
-    "DisplayOrder": 12
+    "DisplayOrder": 12,
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "birminghamCourtList",
     "Label": "Birmingham Court List",
-    "DisplayOrder": 13
+    "DisplayOrder": 13,
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "londonCourtList",
     "Label": "London Court List",
-    "DisplayOrder": 14
+    "DisplayOrder": 14,
+    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "liverpoolCourtList",
     "Label": "Liverpool Court List",
-    "DisplayOrder": 15
+    "DisplayOrder": 15,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "manchesterCourtList",
     "Label": "Manchester Court List",
-    "DisplayOrder": 16
+    "DisplayOrder": 16,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "lancashireCourtList",
     "Label": "Lancashire Court List",
-    "DisplayOrder": 18
+    "DisplayOrder": 18,
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "clevelandCourtList",
-    "Label": "Cleaveland Court List",
-    "DisplayOrder": 19
+    "Label": "Cleveland Court List",
+    "DisplayOrder": 19,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleveland\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "nwyorkshireCourtList",
     "Label": "N&W Yorkshire Court List",
-    "DisplayOrder": 20
+    "DisplayOrder": 20,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "humberCourtList",
     "Label": "Humber & S Yorkshire Courts",
-    "DisplayOrder": 21
+    "DisplayOrder": 21,
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "kentSurreyCourtList",
     "Label": "Kent, Surrey & Sussex Courts",
-    "DisplayOrder": 22
+    "DisplayOrder": 22,
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kent\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "bedfordshireCourtList",
     "Label": "Bedfordshire Court List",
-    "DisplayOrder": 24
+    "DisplayOrder": 24,
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "thamesvalleyCourtList",
     "Label": "Thames Valley Court List",
-    "DisplayOrder": 25
+    "DisplayOrder": 25,
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "devonCourtList",
     "Label": "Devon Court List",
-    "DisplayOrder": 27
+    "DisplayOrder": 27,
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "dorsetCourtList",
     "Label": "Dorset Court List",
-    "DisplayOrder": 28
+    "DisplayOrder": 28,
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "bristolCourtList",
     "Label": "Bristol Court List",
-    "DisplayOrder": 29
+    "DisplayOrder": 29,
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "newportCourtList",
     "Label": "Newport Court List",
-    "DisplayOrder": 30
+    "DisplayOrder": 30,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "swanseaCourtList",
     "Label": "Swansea Court List",
-    "DisplayOrder": 31
+    "DisplayOrder": 31,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "northWalesCourtList",
     "Label": "North Wales Court List",
-    "DisplayOrder": 33
+    "DisplayOrder": 33,
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
   }
 ]
