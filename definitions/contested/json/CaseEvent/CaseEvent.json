@@ -776,8 +776,8 @@
     "Description": "New Paper Case",
     "DisplayOrder": 122,
     "PostConditionState": "caseAdded",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-paper-case-defaults",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-paper-case-org-policy",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-paper-case-defaults",
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
     "ShowSummary": "Y"
