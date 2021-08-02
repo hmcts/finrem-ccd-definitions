@@ -1091,6 +1091,7 @@
     "PageID": 13,
     "PageDisplayOrder": 13,
     "PageColumnNumber": 1,
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-frc-details",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1935,6 +1936,58 @@
     "DisplayContext": "READONLY",
     "PageID": 24,
     "PageDisplayOrder": 24,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "02/08/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "consentOrderFRCName",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 24,
+    "PageLabel": "Consent Order Application",
+    "PageDisplayOrder": 25,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "02/08/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "consentOrderFRCAddress",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 24,
+    "PageLabel": "Consent Order Application",
+    "PageDisplayOrder": 26,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "02/08/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "consentOrderFRCEmail",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 24,
+    "PageLabel": "Consent Order Application",
+    "PageDisplayOrder": 27,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "02/08/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "consentOrderFRCPhone",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 24,
+    "PageLabel": "Consent Order Application",
+    "PageDisplayOrder": 28,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N"
   },
