@@ -1,4 +1,5 @@
 # finrem-ccd-definitions
+
 Financial Remedy configuration definitions for CCD.
 
 This allows for the FR CCD Config to be easily edited and stored in Github as JSON rather than version controlled in Confluence as Xlsx files.
@@ -15,19 +16,20 @@ Depending on if you want the generated Excel to be for the Consented or Conteste
 ### Generate Excel Configs for all environments (Local, Demo, ITHC, AAT & Prod)
 
 For Consented Journey:
-```
+```sh
 yarn generate-excel-all-consented
 ```
 For Contested Journey:
-```
+```sh
 yarn generate-excel-all-contested
 ```
 
 The generated excel files will be in `defintions/consented/xlsx` or `defintions/contested/xlsx` respectively.
 
 ### Generate Excel Configs for a specific environment i.e. AAT/DEMO/DEMO-PROD-LIKE/ITHC/PERFTEST
+
 * Note DEMO-PROD-LIKE does not include '-nonprod' files so should be a replication of the Production config, just pointing to Demo.
-```
+```sh
 yarn generate-bulk-excel-(local/demo/aat/ithc/perftest/demo-prod-like/prod)
 ```
 
@@ -74,7 +76,7 @@ Ideally this should be a published NPM package, so that we can include it in pac
 
 A submodule is simply a pointer to a repo and a commit. If you want to reset that repo to the latest upstream master, run:
 
-```
+```sh
 yarn reset-ccd-submodule
 ```
 
@@ -83,6 +85,7 @@ You need to use this if you have accidentally change this pointer reference to s
 It's also important to note that once you update to a new reference (i.e you commit a change to the `ccd-definition-processor` _file_) you need to make sure everyone else runs `yarn setup` again to get the updated reference as well.
 
 ## Feature toggle
+
 If you want to test something on local, aat or demo env, but don't want to release it on prod make sure you move
 all definitions you don't want to release to a file with suffix "-nonprod.json".
 
@@ -101,6 +104,7 @@ Please read more here:
 https://tools.hmcts.net/confluence/display/FR/Feature+toggles+for+CCD+definition
 
 ## How to access PR deployment
+
 GitHub will have the main URL for this deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
 However, this URL in itself is not very useful. There are two subdomains that are useful.
 
@@ -126,6 +130,7 @@ Config changes are now uploaded to AAT when a PR branch is merged to master. Whe
 Jenkins now generates the config ready to release to PROD, this can be found in the `Artifacts` tab of the Jenkins build on merge to master.
 
 NOTE: Jenkins will populate Judge details in the PROD configs that is not available locally, so PROD configs should never be used when generated locally and instead should always be taken from Jenkins.
+
 ## Latest number of judges: 623
 
 Follow this guide for releasing a new config file to Production:
