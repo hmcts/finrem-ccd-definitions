@@ -156,7 +156,11 @@ function authorisationTab(caseType, tabName) {
 /* eslint-disable */
 function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
+  if (!I.see(tabName)) {
+    I.click('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple')
+  }
+  I.waitForText(tabName, 30);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
