@@ -9,7 +9,7 @@ async function orderForChildren() {
   }
   I.checkOption('input[id="orderForChildrenQuestion1_Yes"]');
   I.waitForText('Is there a written agreement? (Optional)','30');
-  I.checkOption('input[id="natureOfApplication5-No"]');
+  I.checkOption('input[id="natureOfApplication5_No"]');
   I.waitForText('Other','30');
   I.checkOption('input[id="natureOfApplication6-Step Child or Step Children"]');
   I.checkOption('input[id="natureOfApplication6-In addition to child support"]');
@@ -30,7 +30,7 @@ async function contestedOrderForChildren() {
   if(testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
-  I.checkOption('input[id="paymentForChildrenDecision-No"]');
+  I.checkOption('input[id="paymentForChildrenDecision_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }

@@ -27,11 +27,11 @@ async function consentedOtherDocuments() {
 
 async function contestedOtherDocuments() {
   const I = this;
-  I.waitForPage('input[id="promptForAnyDocument-No"]');
+  I.waitForPage('input[id="promptForAnyDocument_No"]');
   if(testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
-  I.checkOption('input[id="promptForAnyDocument-No"]');
+  I.checkOption('input[id="promptForAnyDocument_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForContinueButtonEnabled();

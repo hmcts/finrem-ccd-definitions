@@ -42,7 +42,7 @@ async function contestedNatureOfApplication() {
   I.waitForElement('#propertyAddress', '30');
   I.fillField('#propertyAddress', '26 Riverside gardens, SW10XE');
   I.fillField('#mortgageDetail', 'Halifax mortgage');
-  I.checkOption('input[id="additionalPropertyOrderDecision-No"]');
+  I.checkOption('input[id="additionalPropertyOrderDecision_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }

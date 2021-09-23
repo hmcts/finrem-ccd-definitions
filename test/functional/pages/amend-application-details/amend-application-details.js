@@ -31,13 +31,13 @@ function amendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForPage('h4', 'ORDER FOR CHILDREN');
-  I.checkOption('input[id="orderForChildrenQuestion1-No"]');
+  I.checkOption('input[id="orderForChildrenQuestion1_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForPage('h4', 'D81');
-  I.checkOption('input[id="d81Question-No"]');
+  I.checkOption('input[id="d81Question_No"]');
   I.wait('2');
   I.attachFile('input[id="d81Applicant"]', '../data/fileupload.txt');
   I.wait('2');
@@ -122,8 +122,8 @@ function contestedAmendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  I.waitForPage('input[id="isApplicantsHomeCourt-No"]');
-  I.checkOption('input[id="isApplicantsHomeCourt-No"]');
+  I.waitForPage('input[id="isApplicantsHomeCourt_No"]');
+  I.checkOption('input[id="isApplicantsHomeCourt_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 

@@ -10,7 +10,7 @@ async function paymentPage(pbaValue) {
   if (pbaValue === false) {
     I.checkOption('input[id="helpWithFeesQuestion_Yes"]');
   } else {
-    I.checkOption('input[id="helpWithFeesQuestion-No"]');
+    I.checkOption('input[id="helpWithFeesQuestion_No"]');
   }
   I.waitForContinueButtonEnabled();
   I.click('Continue');
