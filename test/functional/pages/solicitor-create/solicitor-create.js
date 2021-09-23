@@ -43,7 +43,7 @@ async function contestedSolicitorCreate(reference) {
   I.fillField('//*[@id="solicitorReference"]', reference);
   I.fillField('#applicantSolicitorAddress_applicantSolicitorAddress_postcodeInput', 'TW3 1SS');
 
-  I.click('#applicantSolicitorAddress_applicantSolicitorAddress #postcodeLookup button');
+  I.click('div[id="applicantSolicitorAddress_applicantSolicitorAddress_postcodeLookup"] button[type="button"]');
   I.waitForElement('#selectAddress', '30');
   I.wait('5');
   I.selectOption('select[id="applicantSolicitorAddress_applicantSolicitorAddress_addressList"]', '67 Pears Road, Hounslow');
