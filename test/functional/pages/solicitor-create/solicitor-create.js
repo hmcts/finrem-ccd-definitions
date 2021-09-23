@@ -12,7 +12,7 @@ async function solicitorCreate(reference) {
   I.fillField('input[id="solicitorFirm"]', 'Abc Firm');
   I.fillField('input[id="solicitorReference"]', reference);
   I.fillField('#solicitorAddress_solicitorAddress_postcodeInput', 'TW3 1SS');
-  I.click('#solicitorAddress_solicitorAddress #postcodeLookup button');
+  I.click('div[id="solicitorAddress_solicitorAddress_postcodeLookup"] button[type="button"]');
   I.waitForElement('#selectAddress', '30');
   I.wait('5');
   I.selectOption('Select an address', '67 Pears Road, Hounslow');
