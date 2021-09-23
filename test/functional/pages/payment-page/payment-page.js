@@ -8,7 +8,7 @@ async function paymentPage(pbaValue) {
     await I.runAccessibilityTest();
   }
   if (pbaValue === false) {
-    I.checkOption('input[id="helpWithFeesQuestion-Yes"]');
+    I.checkOption('input[id="helpWithFeesQuestion_Yes"]');
   } else {
     I.checkOption('input[id="helpWithFeesQuestion-No"]');
   }

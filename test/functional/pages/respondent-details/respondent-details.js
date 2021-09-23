@@ -33,7 +33,7 @@ async function consentedRespondentDetails() {
   }
   I.fillField('input[id="appRespondentFMName"]', 'kiv');
   I.fillField('input[id="appRespondentLName"]', 'resp');
-  I.checkOption('input[id="appRespondentRep-Yes"]');
+  I.checkOption('input[id="appRespondentRep_Yes"]');
   I.wait('2');
   respondentSolicitorDetailsDetails(I);
 }
@@ -50,7 +50,7 @@ async function contestedRespondentDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForPage('#respondentRepresentedLabel h2', 'Is the respondent represented ?');
-  I.checkOption('input[id="respondentRepresented-Yes"]');
+  I.checkOption('input[id="respondentRepresented_Yes"]');
   I.wait('2');
   respondentSolicitorDetailsDetails(I);
 }

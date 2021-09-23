@@ -2,8 +2,8 @@
 
 function mediationQuestion() {
   const I = this;
-  I.waitForPage('input[id="applicantAttendedMIAM-Yes"]');
-  I.checkOption('input[id="applicantAttendedMIAM-Yes"]');
+  I.waitForPage('input[id="applicantAttendedMIAM_Yes"]');
+  I.checkOption('input[id="applicantAttendedMIAM_Yes"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }

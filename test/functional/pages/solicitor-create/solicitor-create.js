@@ -16,14 +16,14 @@ async function solicitorCreate(reference) {
   I.waitForElement('#selectAddress', '30');
   I.wait('5');
   I.selectOption('Select an address', '67 Pears Road, Hounslow');
-  I.fillField('input[id="solicitorAddress_AddressLine2"]', 'Near Roundabout');
-  I.fillField('input[id="solicitorAddress_AddressLine3"]', 'Opposite Tesco');
-  I.fillField('input[id="solicitorAddress_County"]', 'Middlesex');
+  I.fillField('input[id="solicitorAddress__detailAddressLine2"]', 'Near Roundabout');
+  I.fillField('input[id="solicitorAddress__detailAddressLine3"]', 'Opposite Tesco');
+  I.fillField('input[id="solicitorAddress__detailCounty"]', 'Middlesex');
   I.fillField('input[id="solicitorPhone"]', '07700000');
   I.fillField('input[id="solicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="solicitorDXnumber"]', '776890');
   I.waitForText('Search for an organisation','30')
-  I.checkOption('input[id="solicitorAgreeToReceiveEmails-Yes"]');
+  I.checkOption('input[id="solicitorAgreeToReceiveEmails_Yes"]');
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.click('Select');
   I.waitForText('SW1H 9AJ');
@@ -47,14 +47,14 @@ async function contestedSolicitorCreate(reference) {
   I.waitForElement('#selectAddress', '30');
   I.wait('5');
   I.selectOption('select[id="applicantSolicitorAddress_applicantSolicitorAddress_addressList"]', '67 Pears Road, Hounslow');
-  I.fillField('input[id="applicantSolicitorAddress_AddressLine2"]', 'Near Roundabout');
-  I.fillField('input[id="applicantSolicitorAddress_AddressLine3"]', 'Opposite Tesco');
-  I.fillField('input[id="applicantSolicitorAddress_County"]', 'Middlesex');
+  I.fillField('input[id="applicantSolicitorAddress__detailAddressLine2"]', 'Near Roundabout');
+  I.fillField('input[id="applicantSolicitorAddress__detailAddressLine3"]', 'Opposite Tesco');
+  I.fillField('input[id="applicantSolicitorAddress__detailCounty"]', 'Middlesex');
   I.fillField('input[id="applicantSolicitorPhone"]', '07000000');
   I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
   I.waitForText('Search for an organisation','30')
-  I.checkOption('input[id="applicantSolicitorConsentForEmails-Yes"]');
+  I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.click('Select');
   I.waitForText('SW1H 9AJ');

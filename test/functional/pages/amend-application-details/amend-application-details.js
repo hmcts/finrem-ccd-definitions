@@ -95,7 +95,7 @@ function contestedAmendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  I.waitForPage('#respondentRepresented-Yes');
+  I.waitForPage('#respondentRepresented_Yes');
   I.fillField('input[id="rSolicitorEmail"]', 'vivcontestedupdatesol@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');

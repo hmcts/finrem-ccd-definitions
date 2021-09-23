@@ -17,7 +17,7 @@ function complexityList() {
   I.wait('2');
   I.fillField('#detailPotentialAllegation', 'Test allegation');
   I.wait('2');
-  I.checkOption('#otherReasonForComplexity-Yes');
+  I.checkOption('#otherReasonForComplexity_Yes');
   I.waitForText('If yes – please specify','30');
   I.fillField('#otherReasonForComplexityText', 'Test reason for complexity list');
 
