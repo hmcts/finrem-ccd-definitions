@@ -28,6 +28,7 @@ function amendApplicationDetails() {
   I.click('Continue');
   I.waitForPage('h4', 'NATURE OF THE APPLICATION');
   I.checkOption('input[value="Property Adjustment Order"]');
+  I.checkOption('input[value="Pension Sharing Order"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForPage('h4', 'ORDER FOR CHILDREN');
@@ -130,7 +131,7 @@ function contestedAmendApplicationDetails() {
   I.waitForPage('#applicantAttendedMIAMLabel');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.reload();
+  I.refreshPage();
   I.waitForPage('#applicantAttendedMIAMLabel');
   I.waitForContinueButtonEnabled();
   I.click('Continue');

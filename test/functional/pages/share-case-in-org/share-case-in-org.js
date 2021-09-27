@@ -2,7 +2,7 @@
 
 function assignContestedShareCase(caseId, solRef) {
   const I = this;
-  I.waitForText('Case type', '30');
+  I.waitForText('Case type', '90');
   I.selectOption('select[id="wb-jurisdiction"]', 'Family Divorce');
   I.selectOption('select[id="wb-case-type"]', 'Contested Financial Remedy');
   I.selectOption('select[id="wb-case-state"]', 'Any');
