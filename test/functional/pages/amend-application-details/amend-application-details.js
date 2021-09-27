@@ -16,7 +16,7 @@ function amendApplicationDetails() {
   I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('DIVORCE DETAILS', '30');
+  I.waitForText('DIVORCE DETAILS', '90');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D84321');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -127,6 +127,10 @@ function contestedAmendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
+  I.waitForPage('#applicantAttendedMIAMLabel');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+  I.reload();
   I.waitForPage('#applicantAttendedMIAMLabel');
   I.waitForContinueButtonEnabled();
   I.click('Continue');

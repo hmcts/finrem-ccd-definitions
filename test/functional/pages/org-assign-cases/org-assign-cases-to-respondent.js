@@ -2,12 +2,13 @@
 
 function assignContestedCase(caseId, respondentEmail) {
   const I = this;
+  I.waitForText('Unassigned cases', '60');
   I.click('Unassigned cases');
   I.wait('30');
-  I.click('FinancialRemedyContested');
+  I.click({xpath: '//div[contains(text(),\'FinancialRemedyContested\')]'});
   I.waitForText('Case Reference', '60');
   I.waitForText('State', '10');
-  I.checkOption(`select-${caseId}`);
+  I.click(`input[id="select-${caseId}"]`);
   I.waitForText('Share case', '5');
   I.click('Share case');
   I.waitForText('Selected cases', '10');
