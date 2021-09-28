@@ -150,7 +150,7 @@ function contestedAmendApplicationDetails() {
   I.click('Continue');
 
   I.waitForPage('.check-your-answers');
-  // The necessary refresh on L134 has cleared the check your answers page.
+  // The necessary refresh on L134 has cleared the check your answers page. To be fixed in @DFR-586
 
   // I.see('Solicitor Details');
   // I.see('Divorce Details');

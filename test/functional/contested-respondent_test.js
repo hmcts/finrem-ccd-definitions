@@ -11,8 +11,8 @@ const respondentEmail = process.env.USERNAME_RESPONDENT_SOLICITOR;
 const nightlyTest = process.env.NIGHTLY_TEST;
 
 Feature('Create Cases for Respondent Journey ');
-// Will enable this once XUI Share case available on AAT.
-Scenario('Create and assign Contested Case To Respondent @broken @pipeline', async I => {
+// To be fixed in @DFR-585
+Scenario('Create and assign Contested Case To Respondent @pipeline', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     /* eslint-disable */
