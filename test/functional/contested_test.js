@@ -227,7 +227,7 @@ Scenario('Contested Case Creation by Solicitor @nightly @crossBrowser', async I 
     I.waitForText('History', '30');
   }
 });
-Scenario('Contested share case @nightly @pipeline', async I => {
+Scenario('Contested share case @fine @pipeline', async I => {
   if (nightlyTest === 'true') {
     /* eslint-disable */
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
