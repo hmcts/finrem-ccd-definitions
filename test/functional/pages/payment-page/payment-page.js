@@ -4,7 +4,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 async function paymentPage(pbaValue) {
   const I = this;
   I.waitForText('PAYMENT DETAILS', '15');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   if (pbaValue === false) {

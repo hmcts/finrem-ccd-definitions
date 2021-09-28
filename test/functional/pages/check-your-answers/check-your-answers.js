@@ -4,7 +4,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 async function checkYourAnswers() {
   const I = this;
   I.waitForElement('.check-your-answers', '60');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.see('SOLICITOR DETAILS');
@@ -19,7 +19,7 @@ async function checkYourAnswers() {
 async function contestedCheckYourAnswers() {
   const I = this;
   I.waitForPage('.check-your-answers');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.see('Solicitor Details');

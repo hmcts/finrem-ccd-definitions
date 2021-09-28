@@ -3,7 +3,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function consentOrder() {
   const I = this;
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.waitForPage('h4', 'CONSENT ORDER');

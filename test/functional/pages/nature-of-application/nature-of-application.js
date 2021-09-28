@@ -26,7 +26,7 @@ async function contestedNatureOfApplication() {
   const I = this;
 
   I.waitForPage('input[value="periodicalPaymentOrder"]');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[value="periodicalPaymentOrder"]');

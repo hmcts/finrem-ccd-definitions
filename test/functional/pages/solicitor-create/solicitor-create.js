@@ -4,7 +4,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 async function solicitorCreate(reference) {
   const I = this;
   I.waitForElement('h4', '15');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.see('SOLICITOR DETAILS');
@@ -35,7 +35,7 @@ async function solicitorCreate(reference) {
 async function contestedSolicitorCreate(reference) {
   const I = this;
   I.waitForPage('#applicantSolicitorDetailLabel h2', 'Solicitor Details');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.fillField('input[id="applicantSolicitorName"]', 'Parrot');

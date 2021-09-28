@@ -28,7 +28,7 @@ async function consentedRespondentDetails() {
   const I = this;
 
   I.waitForPage('h4', 'RESPONDENT DETAILS');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.fillField('input[id="appRespondentFMName"]', 'kiv');
@@ -42,7 +42,7 @@ async function contestedRespondentDetails() {
   const I = this;
 
   I.waitForPage('#respondentDetailsLabel h2', 'Respondent’s Details');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.fillField('input[id="respondentFMName"]', 'Qunatico');

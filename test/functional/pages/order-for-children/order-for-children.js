@@ -4,7 +4,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 async function orderForChildren() {
   const I = this;
   I.waitForPage('input[id="orderForChildrenQuestion1_Yes"]');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[id="orderForChildrenQuestion1_Yes"]');
@@ -27,7 +27,7 @@ async function orderForChildren() {
 async function contestedOrderForChildren() {
   const I = this;
   I.waitForPage('#paymentForChildrenDecision input');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[id="paymentForChildrenDecision_No"]');
