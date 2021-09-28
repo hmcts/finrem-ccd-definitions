@@ -19,10 +19,9 @@ async function amendApplicationDetails() {
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D84321');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.waitForText('APPLICANT DETAILS', '90');
   I.waitForContinueButtonEnabled();
-  await I.runAccessibilityTest();
   I.click('Continue');
-  await I.runAccessibilityTest();
   I.waitForText('RESPONDENT DETAILS', '30');
   I.fillField('input[id="rSolicitorEmail"]', 'vivupdatesol@mailinator.com');
   I.waitForContinueButtonEnabled();

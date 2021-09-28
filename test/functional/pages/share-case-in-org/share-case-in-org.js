@@ -6,7 +6,7 @@ async function assignContestedShareCase(caseId, solRef) {
   I.selectOption('select[id="wb-jurisdiction"]', 'Family Divorce');
   I.selectOption('select[id="wb-case-type"]', 'Contested Financial Remedy');
   I.selectOption('select[id="wb-case-state"]', 'Any');
-  await I.runAccessibilityTest();
+  I.waitForText('Solicitor Reference', '30');
   I.fillField('input[id="solicitorReference"]', solRef);
   I.click('Apply');
   I.waitForText('Case Reference', '15');
