@@ -78,7 +78,7 @@ Scenario('Consent Case approve and send order @nightly @pipeline @crossBrowser',
   }
 });
 /* eslint-disable require-await */
-Scenario('Consent Case Creation by Solicitor @now @crossBrowser', async I => {
+Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
