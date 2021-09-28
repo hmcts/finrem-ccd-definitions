@@ -160,8 +160,6 @@ function contestedAmendApplicationDetails() {
   // I.see('Do you want to upload any other documents ?');
 
   I.waitForText('Check your answers', '30');
-  I.see('PENSION DOCUMENTS');
-  I.see('OTHER DOCUMENTS');
   I.click('Submit');
   I.wait('5');
   I.waitForText('History', '60');
