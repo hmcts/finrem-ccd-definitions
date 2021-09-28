@@ -95,7 +95,6 @@ Scenario('Consent Case Creation by Solicitor @now @crossBrowser', async I => {
     await I.consentedOtherDocuments();
     await I.savingApplicationInformation();
     await I.checkYourAnswers();
-    I.waitForText('Consent Order Application', '30');
     // amend event
     I.amendApplicationDetails();
     // hwf payment submission

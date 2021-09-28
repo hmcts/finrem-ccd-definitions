@@ -2,7 +2,6 @@
 
 function amendApplicationDetails() {
   const I = this;
-  I.waitForText('History', '60');
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.wait('2');
   I.click('Go');
@@ -28,13 +27,16 @@ function amendApplicationDetails() {
   I.click('Continue');
   I.waitForPage('h4', 'NATURE OF THE APPLICATION');
   I.checkOption('input[value="Property Adjustment Order"]');
-  I.checkOption('input[value="Pension Sharing Order"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForPage('h4', 'ORDER FOR CHILDREN');
   I.checkOption('input[id="orderForChildrenQuestion1_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.waitForText('Draft Consent Order', '30')
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+  I.refreshPage();
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForPage('h4', 'D81');
@@ -43,6 +45,7 @@ function amendApplicationDetails() {
   I.attachFile('input[id="d81Applicant"]', '../data/fileupload.txt');
   I.wait('2');
   I.attachFile('input[id="d81Respondent"]', '../data/fileupload.txt');
+  I.wait('10');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForPage('h4', 'PENSION DOCUMENTS');
@@ -58,18 +61,14 @@ function amendApplicationDetails() {
   I.click('Continue');
 
   I.waitForPage('.check-your-answers h2', 'Check your answers');
-  I.see('SOLICITOR DETAILS');
-  I.see('DIVORCE DETAILS');
-  I.see('APPLICANT DETAILS');
-  I.see('RESPONDENT DETAILS');
+  I.see('OTHER DOCUMENTS');
   I.click('Submit');
-  I.waitForText('History', '60');
-  I.see('Amend Application Details');
+  I.waitForText('SOLICITOR DETAILS', 60);
+  I.see('APPLICANT DETAILS');
 }
 
 function contestedAmendApplicationDetails() {
   const I = this;
-  I.waitForText('History', '60');
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.click('Go');
 
