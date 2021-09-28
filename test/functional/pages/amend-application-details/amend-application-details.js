@@ -1,6 +1,6 @@
 /* eslint-disable no-invalid-this */
 
-async function amendApplicationDetails() {
+function amendApplicationDetails() {
   const I = this;
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.wait('2');
