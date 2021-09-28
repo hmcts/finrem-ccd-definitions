@@ -14,7 +14,7 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 
 Feature('create Consented case ');
 
-Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
+Scenario('Consent Case Creation For Caseworker @fine @pipeline', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     /* eslint-disable */
@@ -36,7 +36,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
   }
 });
 
-Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
+Scenario('Consent Case Creation For Judge @fine @pipeline', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     /* eslint-disable */

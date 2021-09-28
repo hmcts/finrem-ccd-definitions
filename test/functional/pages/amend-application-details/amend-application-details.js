@@ -1,6 +1,6 @@
 /* eslint-disable no-invalid-this */
 
-function amendApplicationDetails() {
+async function amendApplicationDetails() {
   const I = this;
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.wait('2');
@@ -20,16 +20,18 @@ function amendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForContinueButtonEnabled();
+  await I.runAccessibilityTest();
   I.click('Continue');
-  I.waitForPage('h4', 'RESPONDENT DETAILS');
+  await I.runAccessibilityTest();
+  I.waitForText('RESPONDENT DETAILS', '30');
   I.fillField('input[id="rSolicitorEmail"]', 'vivupdatesol@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'NATURE OF THE APPLICATION');
+  I.waitForText('NATURE OF THE APPLICATION', '30');
   I.checkOption('input[value="Property Adjustment Order"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'ORDER FOR CHILDREN');
+  I.waitForText('ORDER FOR CHILDREN', '30');
   I.checkOption('input[id="orderForChildrenQuestion1_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -39,7 +41,7 @@ function amendApplicationDetails() {
   I.refreshPage();
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'D81');
+  I.waitForText('D81', '30');
   I.checkOption('input[id="d81Question_No"]');
   I.wait('2');
   I.attachFile('input[id="d81Applicant"]', '../data/fileupload.txt');
@@ -48,10 +50,10 @@ function amendApplicationDetails() {
   I.wait('10');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'PENSION DOCUMENTS');
+  I.waitForText('PENSION DOCUMENTS', '30');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'OTHER DOCUMENTS');
+  I.waitForText('OTHER DOCUMENTS', '30');
 
   I.waitForContinueButtonEnabled();
   I.click('Continue');

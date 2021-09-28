@@ -22,7 +22,7 @@ async function contestedCheckYourAnswers() {
   if(testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
-  I.see('Consent Order Application', '30');
+  I.see('Consent Order Application');
   I.see('Solicitor Details');
   I.see('Divorce Details');
   I.see('Applicant’s Details');

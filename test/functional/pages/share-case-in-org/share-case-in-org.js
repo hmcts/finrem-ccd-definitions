@@ -1,11 +1,12 @@
 /* eslint-disable no-invalid-this */
 
-function assignContestedShareCase(caseId, solRef) {
+async function assignContestedShareCase(caseId, solRef) {
   const I = this;
   I.waitForText('Case type', '90');
   I.selectOption('select[id="wb-jurisdiction"]', 'Family Divorce');
   I.selectOption('select[id="wb-case-type"]', 'Contested Financial Remedy');
   I.selectOption('select[id="wb-case-state"]', 'Any');
+  await I.runAccessibilityTest();
   I.fillField('input[id="solicitorReference"]', solRef);
   I.click('Apply');
   I.waitForText('Case Reference', '15');
