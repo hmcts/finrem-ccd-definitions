@@ -150,7 +150,7 @@ function contestedAmendApplicationDetails() {
   I.click('Continue');
 
   I.waitForPage('.check-your-answers');
-  // This seems broken.
+  // The necessary refresh on L134 has cleared the check your answers page.
 
   // I.see('Solicitor Details');
   // I.see('Divorce Details');
@@ -158,6 +158,10 @@ function contestedAmendApplicationDetails() {
   // I.see('Respondent’s Details');
   // I.see('Is the respondent represented ?');
   // I.see('Do you want to upload any other documents ?');
+
+  I.waitForText('Check your answers', '30');
+  I.see('PENSION DOCUMENTS');
+  I.see('OTHER DOCUMENTS');
   I.click('Submit');
   I.wait('5');
   I.waitForText('History', '60');
