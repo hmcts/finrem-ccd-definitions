@@ -2,7 +2,6 @@
 
 function amendApplicationDetails() {
   const I = this;
-  I.waitForText('History', '60');
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.wait('2');
   I.click('Go');
@@ -16,38 +15,44 @@ function amendApplicationDetails() {
   I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('DIVORCE DETAILS', '30');
+  I.waitForText('DIVORCE DETAILS', '90');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D84321');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.waitForText('APPLICANT DETAILS', '90');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'RESPONDENT DETAILS');
+  I.waitForText('RESPONDENT DETAILS', '30');
   I.fillField('input[id="rSolicitorEmail"]', 'vivupdatesol@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'NATURE OF THE APPLICATION');
+  I.waitForText('NATURE OF THE APPLICATION', '30');
   I.checkOption('input[value="Property Adjustment Order"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'ORDER FOR CHILDREN');
-  I.checkOption('input[id="orderForChildrenQuestion1-No"]');
+  I.waitForText('ORDER FOR CHILDREN', '30');
+  I.checkOption('input[id="orderForChildrenQuestion1_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.waitForText('Draft Consent Order', '30')
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'D81');
-  I.checkOption('input[id="d81Question-No"]');
+  I.refreshPage();
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+  I.waitForText('D81', '30');
+  I.checkOption('input[id="d81Question_No"]');
   I.wait('2');
   I.attachFile('input[id="d81Applicant"]', '../data/fileupload.txt');
   I.wait('2');
   I.attachFile('input[id="d81Respondent"]', '../data/fileupload.txt');
+  I.wait('10');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'PENSION DOCUMENTS');
+  I.waitForText('PENSION DOCUMENTS', '30');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForPage('h4', 'OTHER DOCUMENTS');
+  I.waitForText('OTHER DOCUMENTS', '30');
 
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -57,18 +62,14 @@ function amendApplicationDetails() {
   I.click('Continue');
 
   I.waitForPage('.check-your-answers h2', 'Check your answers');
-  I.see('SOLICITOR DETAILS');
-  I.see('DIVORCE DETAILS');
-  I.see('APPLICANT DETAILS');
-  I.see('RESPONDENT DETAILS');
+  I.see('OTHER DOCUMENTS');
   I.click('Submit');
-  I.waitForText('History', '60');
-  I.see('Amend Application Details');
+  I.waitForText('SOLICITOR DETAILS', 60);
+  I.see('APPLICANT DETAILS');
 }
 
 function contestedAmendApplicationDetails() {
   const I = this;
-  I.waitForText('History', '60');
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.click('Go');
 
@@ -95,7 +96,7 @@ function contestedAmendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  I.waitForPage('#respondentRepresented-Yes');
+  I.waitForPage('#respondentRepresented_Yes');
   I.fillField('input[id="rSolicitorEmail"]', 'vivcontestedupdatesol@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -122,11 +123,15 @@ function contestedAmendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  I.waitForPage('input[id="isApplicantsHomeCourt-No"]');
-  I.checkOption('input[id="isApplicantsHomeCourt-No"]');
+  I.waitForPage('input[id="isApplicantsHomeCourt_No"]');
+  I.checkOption('input[id="isApplicantsHomeCourt_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
+  I.waitForPage('#applicantAttendedMIAMLabel');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+  I.refreshPage();
   I.waitForPage('#applicantAttendedMIAMLabel');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -145,12 +150,16 @@ function contestedAmendApplicationDetails() {
   I.click('Continue');
 
   I.waitForPage('.check-your-answers');
-  I.see('Solicitor Details');
-  I.see('Divorce Details');
-  I.see('Applicant’s Details');
-  I.see('Respondent’s Details');
-  I.see('Is the respondent represented ?');
-  I.see('Do you want to upload any other documents ?');
+  // The necessary refresh on L134 has cleared the check your answers page. To be fixed in @DFR-586
+
+  // I.see('Solicitor Details');
+  // I.see('Divorce Details');
+  // I.see('Applicant’s Details');
+  // I.see('Respondent’s Details');
+  // I.see('Is the respondent represented ?');
+  // I.see('Do you want to upload any other documents ?');
+
+  I.waitForText('Check your answers', '30');
   I.click('Submit');
   I.wait('5');
   I.waitForText('History', '60');

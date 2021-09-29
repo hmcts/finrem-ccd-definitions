@@ -4,7 +4,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 async function optionalDocuments() {
   const I = this;
   I.waitForPage('h4', 'PENSION DOCUMENTS');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.click('Add new', { css: '#pensionCollection>div>button' });
@@ -18,7 +18,7 @@ async function optionalDocuments() {
 async function consentedOtherDocuments() {
   const I = this;
   I.waitForPage('h4', 'OTHER DOCUMENTS');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.waitForContinueButtonEnabled();
@@ -27,11 +27,11 @@ async function consentedOtherDocuments() {
 
 async function contestedOtherDocuments() {
   const I = this;
-  I.waitForPage('input[id="promptForAnyDocument-No"]');
-  if(testForAccessibility=='true') {
+  I.waitForPage('input[id="promptForAnyDocument_No"]');
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
-  I.checkOption('input[id="promptForAnyDocument-No"]');
+  I.checkOption('input[id="promptForAnyDocument_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForContinueButtonEnabled();

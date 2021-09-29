@@ -6,9 +6,9 @@ const browser = 'chrome';
 const defaultSauceOptions = {
   username: process.env.SAUCE_USERNAME || conf.saucelabs.username,
   accessKey: process.env.SAUCE_ACCESS_KEY || conf.saucelabs.key,
-  tunnelIdentifier: process.env.SAUCE_TUNNEL_IDENTIFIER || 'reformtunnel',
   acceptSslCerts: true,
-  tags: ['FinancialRemedy']
+  tags: ['FinancialRemedy'],
+  screenResolution: '1400x1050'
 };
 function merge (intoObject, fromObject) {
   return Object.assign({}, intoObject, fromObject);

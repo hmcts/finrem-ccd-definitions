@@ -139,7 +139,7 @@ Scenario('Consented case in Contested @nightly @pipeline', async I => {
   }
 });
 
-Scenario('Consented case in Contested Assigned to Judge@nightly @pipeline', async I => {
+Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -196,7 +196,7 @@ Scenario('Contested case with General Application @nightly @pipeline', async I =
 });
 
 /* eslint-disable require-await */
-Scenario('Contested Case Creation by Solicitor @nightly @crossBrowser', async I => {
+Scenario('Contested Case Creation by Solicitor  @nightly @crossBrowser', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');

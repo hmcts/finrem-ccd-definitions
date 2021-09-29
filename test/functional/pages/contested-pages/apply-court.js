@@ -12,7 +12,7 @@ function applyingToCourt() {
 
   I.fillField('#specialAssistanceRequired', 'Not required');
   I.fillField('#specificArrangementsRequired', 'Not required');
-  I.click('#isApplicantsHomeCourt-No');
+  I.click('#isApplicantsHomeCourt_No');
 
   I.waitForContinueButtonEnabled();
   I.click('Continue');

@@ -82,7 +82,7 @@ Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I =>
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
-    await I.createCase('FinancialRemedyMVP2', 'Consent Order Application');
+    await I.createCase('Financial Remedy Consented', 'Consent Order Application');
     await I.solicitorCreate(solRef);
     await I.divorceDetails();
     await I.applicantDetails();
@@ -95,7 +95,6 @@ Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I =>
     await I.consentedOtherDocuments();
     await I.savingApplicationInformation();
     await I.checkYourAnswers();
-    I.waitForText('Consent Order Application', '30');
     // amend event
     I.amendApplicationDetails();
     // hwf payment submission

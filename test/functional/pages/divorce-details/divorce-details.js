@@ -3,7 +3,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function divorceDetails() {
   const I = this;
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.waitForPage('h4', 'DIVORCE DETAILS');
@@ -22,7 +22,7 @@ async function divorceDetails() {
 
 async function contestedDivorceDetails() {
   const I = this;
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.waitForPage('#divorceDetailsLabel h2', 'Divorce Details');

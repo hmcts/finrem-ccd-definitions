@@ -2,11 +2,11 @@
 
 function d81Question() {
   const I = this;
-  I.waitForPage('input[id="d81Question-Yes"]');
-  I.checkOption('input[id="d81Question-Yes"]');
+  I.waitForPage('input[id="d81Question_Yes"]');
+  I.checkOption('input[id="d81Question_Yes"]');
   I.waitForText('Form D81 Joint Document','30')
   I.attachFile('input[type="file"]', '../data/fileupload.txt');
-  I.waitForContinueButtonEnabled();
+  I.wait('10');
   I.click('Continue');
 }
 

@@ -7,7 +7,7 @@ async function createCase(type, event) {
   I.waitForElement('a[href="/cases/case-filter"]', '60');
   I.click('Create case');
   I.waitForPage('h1', 'Create Case');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.waitForElement('select[id="cc-jurisdiction"]>option:nth-of-type(2)', '60');
@@ -16,6 +16,7 @@ async function createCase(type, event) {
   I.selectOption('select[id="cc-case-type"]', type);
   I.wait('1');
   I.selectOption('select[id= "cc-event"]', event);
+  I.wait('1');
   I.click('Start');
   I.waitForPage('h2', 'Before You Start');
   I.waitForContinueButtonEnabled();

@@ -4,7 +4,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 async function hwfPaymentDetails() {
   const I = this;
   I.waitForPage('#caseEditForm span.form-label', 'Please enter your Help With Fees reference number');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.fillField('input[id="HWFNumber"]', 'HWF22345');

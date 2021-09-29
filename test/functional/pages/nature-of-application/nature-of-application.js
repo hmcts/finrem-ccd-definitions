@@ -3,12 +3,11 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function natureOfApplication() {
   const I = this;
-  // I.wait(5);
   I.waitForPage('h4', 'NATURE OF THE APPLICATION');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
-  I.checkOption('input[value="Periodical Payment Order"]');
+  I.checkOption('input[id=\'natureOfApplication2-Periodical Payment Order\']');
   I.checkOption('input[value="Lump Sum Order"]');
   I.checkOption('input[value="Property Adjustment Order"]');
   I.checkOption('input[value="Pension Sharing Order"]');
@@ -27,7 +26,7 @@ async function contestedNatureOfApplication() {
   const I = this;
 
   I.waitForPage('input[value="periodicalPaymentOrder"]');
-  if(testForAccessibility=='true') {
+  if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[value="periodicalPaymentOrder"]');
@@ -42,7 +41,7 @@ async function contestedNatureOfApplication() {
   I.waitForElement('#propertyAddress', '30');
   I.fillField('#propertyAddress', '26 Riverside gardens, SW10XE');
   I.fillField('#mortgageDetail', 'Halifax mortgage');
-  I.checkOption('input[id="additionalPropertyOrderDecision-No"]');
+  I.checkOption('input[id="additionalPropertyOrderDecision_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
