@@ -15,11 +15,11 @@ Depending on if you want the generated Excel to be for the Consented or Conteste
 ### Generate Excel Configs for all environments (Local, Demo, ITHC, AAT & Prod)
 
 For Consented Journey:
-```
+```sh
 yarn generate-excel-all-consented
 ```
 For Contested Journey:
-```
+```sh
 yarn generate-excel-all-contested
 ```
 
@@ -27,7 +27,7 @@ The generated excel files will be in `defintions/consented/xlsx` or `defintions/
 
 ### Generate Excel Configs for a specific environment i.e. AAT/DEMO/DEMO-PROD-LIKE/ITHC/PERFTEST
 * Note DEMO-PROD-LIKE does not include '-nonprod' files so should be a replication of the Production config, just pointing to Demo.
-```
+```sh
 yarn generate-bulk-excel-(local/demo/aat/ithc/perftest/demo-prod-like/prod)
 ```
 
@@ -74,7 +74,7 @@ Ideally this should be a published NPM package, so that we can include it in pac
 
 A submodule is simply a pointer to a repo and a commit. If you want to reset that repo to the latest upstream master, run:
 
-```
+```sh
 yarn reset-ccd-submodule
 ```
 
