@@ -220,7 +220,9 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
     body: JSON.stringify(saveBody)
   };
 
-  const saveEventResponse = await request(saveEventOptions);
+  const saveEventResponse = await request(saveEventOptions).catch(error => {
+    console.log(error);
+  });
 
   return saveEventResponse;
 }
