@@ -18,7 +18,7 @@ async function createCase(type, event) {
   I.selectOption('select[id= "cc-event"]', event);
   I.wait('1');
   I.click('Start');
-  I.waitForPage('h2', 'Before You Start');
+  I.waitForText('Before You Start', '30');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
