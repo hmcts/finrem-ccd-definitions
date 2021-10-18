@@ -1,4 +1,6 @@
 /* eslint-disable no-invalid-this */
+const runningEnv = process.env.RUNNING_ENV;
+const email = runningEnv === 'demo'? 'fr_applicant_sol2@sharklasers.com': 'fr_applicant_sol1@sharklasers.com';
 
 function assignContestedShareCase(caseId, solRef) {
   const I = this;
@@ -22,7 +24,7 @@ function assignContestedShareCase(caseId, solRef) {
   I.click('Add');
   I.wait('2');
   I.click('Continue');
-  I.waitForText('fr_applicant_sol1@sharklasers.com', '15');
+  I.waitForText(email, '15');
   I.click('Confirm');
   I.waitForText('Your cases have been updated', '10');
   I.see('If you\'ve shared one or more cases,');

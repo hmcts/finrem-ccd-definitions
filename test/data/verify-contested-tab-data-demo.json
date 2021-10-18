@@ -1,0 +1,110 @@
+{
+  "caseType": "contested",
+  "historyTab": {
+    "tabName": "History",
+    "caseSubmissionEvent": "Case Submission",
+    "hwfCaseSubmissionEndState": "Awaiting HWF Decision",
+    "hwfPaymentAcceptedEvent": "HWF Application Accepted",
+    "hwfPaymentAcceptedEndState": "Application Submitted",
+    "issueApplicationEvent": "Issue Application",
+    "issueApplicationEndState": "Awaiting Judicial Response",
+    "assignToJudgeEvent": "Allocate to Judge",
+    "assignToJudgeEndState": "Gate Keeping And Allocation",
+    "submitUploadCaseFilesEvent": "Submit Uploaded Case Files",
+    "submitUploadCaseFilesEndState": "Ready for Hearing",
+    "sendOrderEvent": "Send Order",
+    "sendOrderState": "Order Sent",
+    "consentOrderEvent": "Consent Order",
+    "consentOrderEndState": "Consented Order Submitted",
+    "assignToJudgeConsentEvent": "Assign to Judge (consent)",
+    "assignToJudgeConsentEndState": "Awaiting Judiciary Response (Consent)",
+    "createGeneralApplicationEvent": "Create General Application",
+    "createGeneralApplicationState": "General Application"
+  },
+  "applicantTab": {
+    "tabName": "Applicant",
+    "applicantLastName" : "Tok",
+    "applicantSolicitorName" : "Parrot",
+    "applicantSolicitorFirm": "MSN Firm",
+    "applicantEmail" : "fr_applicant_sol@sharklasers.com",
+    "applicantEmailCommunication" : "Yes"
+  },
+  "respondentTab": {
+    "tabName": "Respondent",
+    "respondentLastName" : "Whisper",
+    "respondentSolicitorName" : "ResSol",
+    "respondentSolicitorFirm": "MahFirm",
+    "respondentEmail" : "vivcontestedupdatesol@mailinator.com",
+    "respondentPostCode" : "N12 7LD"
+  },
+  "divorceTab": {
+    "tabName": "Divorce",
+    "divorceCaseNumber": "EM18D84321",
+    "decreeNisiFileName": "fileupload.txt",
+    "applicantsLocalCourt": "Brentford Court"
+  },
+  "natureOfApplicationTab": {
+    "tabName": "Nature of Application",
+    "applicationFor": "Lump Sum Order",
+    "addressDetails": "26 Riverside gardens, SW10XE",
+    "mortgageDetails": "Halifax mortgage",
+    "orderForChildren": "No"
+  },
+  "authorisationTab": {
+    "tabName": "Authorisation",
+    "solicitorName": "Viasda",
+    "solicitorFirm": "Abc Org",
+    "signedDate": "10 Aug 2020"
+  },
+  "caseDocumentsTab": {
+    "tabName": "Case documents",
+    "draftOnlineFormA": "DraftOnlineForm.pdf",
+    "UploadDecreeNisiFile": "fileupload.txt",
+    "onlineFormA": "OnlineForm.pdf",
+    "gaApplicationReceivedFrom": "Applicant",
+    "gaHearingRequired": "Yes",
+    "gaLatestApplication": "DraftOrder.pdf",
+    "gaUploadDraftOrder": "DraftOrder.pdf"
+  },
+  "paymentDetailsTab": {
+    "tabName": "Payment details",
+    "hwfNumber": "HWF22345",
+    "feeCode": "FEE0229",
+    "amount": "£275.00"
+  },
+  "judgeDetailsTab": {
+    "tabName": "Judge",
+    "applicantFName": "viv",
+    "respondentFName": "kiv",
+    "decreeNisiDate": "1 Feb 2019",
+    "decreeNisiDocument": "fileupload.txt",
+    "newApplication": "New Application"
+  },
+  "adminNotesTab": {
+    "tabName": "Admin Notes",
+    "issueDate": "1 Nov 2020"
+  },
+  "gateKeepingAllocationsTab": {
+    "tabName": "Gatekeeping and allocation",
+    "localCourt": "CENTRAL FAMILY COURT",
+    "fastTrackProcedure": "No",
+    "dateOfMarriage": "1 Feb 2000"
+  },
+  "schedulingAndListingTab": {
+    "tabName": "Scheduling and Listing",
+    "localCourt": "CENTRAL FAMILY COURT",
+    "courtFrc": "London FRC"
+  },
+  "OrdersTab": {
+    "tabName": "Orders",
+    "OrdersLabel": "Final Orders",
+    "OrderFileName": "DraftOrder.pdf"
+  },
+  "consentOrderProcessTab": {
+    "tabName": "Consent Order Process",
+    "applicationFor": "Property Adjustment Order",
+    "mortgageDetails": "consented case in contested mortgage",
+    "draftOrderDocument": "consentedInContestedDraftTest.pdf",
+    "pensionDocument": "pensionSampleTest.pdf"
+  }
+}

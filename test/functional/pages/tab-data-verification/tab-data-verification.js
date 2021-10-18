@@ -2,8 +2,8 @@
 const runningEnv = process.env.RUNNING_ENV;
 const fileEnv = runningEnv === 'demo'? '-demo': '';
 const verifyTabText = require(`../../../data/verify-consented-tab-data${fileEnv}.json`);
-const verifyContestedTabText = require('../../../data/verify-contested-tab-data.json');
-const verifyContestedPaperTabText = require('../../../data/verify-contested-paper-case-tab-data.json');
+const verifyContestedTabText = require(`../../../data/verify-contested-tab-data${fileEnv}.json`);
+const verifyContestedPaperTabText = require(`../../../data/verify-contested-paper-case-tab-data${fileEnv}.json`);
 
 function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
