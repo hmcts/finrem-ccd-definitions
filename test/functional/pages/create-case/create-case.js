@@ -1,6 +1,7 @@
 /* eslint-disable no-invalid-this */
 
 const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
+const jurisdiction = runningEnv === 'demo'? 'Family Divorce - v104-26.1': 'Family Divorce';
 
 async function createCase(type, event) {
   const I = this;
@@ -11,7 +12,7 @@ async function createCase(type, event) {
     await I.runAccessibilityTest();
   }
   I.waitForElement('select[id="cc-jurisdiction"]>option:nth-of-type(2)', '60');
-  I.selectOption('select[id="cc-jurisdiction"]', 'Family Divorce');
+  I.selectOption('select[id="cc-jurisdiction"]', jurisdiction);
   I.wait('1');
   I.selectOption('select[id="cc-case-type"]', type);
   I.wait('1');

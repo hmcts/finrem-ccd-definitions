@@ -1,11 +1,12 @@
 /* eslint-disable no-invalid-this */
 const runningEnv = process.env.RUNNING_ENV;
 const email = runningEnv === 'demo'? 'fr_applicant_sol2@sharklasers.com': 'fr_applicant_sol1@sharklasers.com';
+const jurisdiction = runningEnv === 'demo'? 'Family Divorce - v104-26.1': 'Family Divorce';
 
 function assignContestedShareCase(caseId, solRef) {
   const I = this;
   I.waitForText('Case type', '90');
-  I.selectOption('select[id="wb-jurisdiction"]', 'Family Divorce');
+  I.selectOption('select[id="wb-jurisdiction"]', jurisdiction);
   I.selectOption('select[id="wb-case-type"]', 'Contested Financial Remedy');
   I.selectOption('select[id="wb-case-state"]', 'Any');
   I.waitForText('Solicitor Reference', '30');
