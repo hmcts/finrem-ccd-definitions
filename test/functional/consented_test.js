@@ -9,11 +9,11 @@ const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 const judgeUserName = process.env.USERNAME_JUDGE;
 const judgePassword = process.env.PASSWORD_JUDGE;
 const nightlyTest = process.env.NIGHTLY_TEST;
-const runningEnv = process.env.RUNNING_ENV;
+const runningEnv = process.env.RUNNING_ENV || 'aat';
 const solRef = `AUTO-${createSolicitorReference()}`;
 const fileEnv = runningEnv === 'demo'? '-demo': '';
 
-Feature('create Consented case ');
+Feature(`create Consented case for enviroment ${runningEnv}`);
 
 Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, `./test/data/ccd-consented-basic-data${fileEnv}.json`, 'FinancialRemedyMVP2', 'FR_solicitorCreate');

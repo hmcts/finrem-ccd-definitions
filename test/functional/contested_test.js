@@ -13,10 +13,10 @@ const judgeUserName = process.env.USERNAME_JUDGE;
 const judgePassword = process.env.PASSWORD_JUDGE;
 const nightlyTest = process.env.NIGHTLY_TEST;
 const solRef = `AUTO-${createSolicitorReference()}`;
-const runningEnv = process.env.RUNNING_ENV;
+const runningEnv = process.env.RUNNING_ENV || 'aat';
 const fileEnv = runningEnv === 'demo'? '-demo': '';
 
-Feature('create Contested case ');
+Feature(`Create Contested case for enviroment ${runningEnv}`);
 
 Scenario('Contested Case Creation For Caseworker @nightly @pipeline', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, `./test/data/ccd-contested-basic-data${fileEnv}.json`, 'FinancialRemedyContested', 'FR_solicitorCreate');

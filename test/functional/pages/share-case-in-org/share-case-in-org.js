@@ -1,5 +1,5 @@
 /* eslint-disable no-invalid-this */
-const runningEnv = process.env.RUNNING_ENV;
+const runningEnv = process.env.RUNNING_ENV || 'aat';
 const email = runningEnv === 'demo'? 'fr_applicant_sol2@sharklasers.com': 'fr_applicant_sol1@sharklasers.com';
 const jurisdiction = runningEnv === 'demo'? 'Family Divorce - v104-26.1': 'Family Divorce';
 
