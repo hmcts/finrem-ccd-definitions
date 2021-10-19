@@ -32,6 +32,7 @@ const { assignContestedShareCase } = require('./pages/share-case-in-org/share-ca
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
+const runningEnv = process.env.RUNNING_ENV || 'aat';
 
 module.exports = () => {
   return actor({
