@@ -1,6 +1,7 @@
 /* eslint-disable no-invalid-this */
 
 const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
+const runningEnv = process.env.RUNNING_ENV || 'aat';
 const jurisdiction = runningEnv === 'demo'? 'Family Divorce - v104-26.1': 'Family Divorce';
 
 async function createCase(type, event) {
