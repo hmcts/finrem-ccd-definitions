@@ -19,6 +19,7 @@ function applicantTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-1"]');
+    I.wait(30);
     I.see(verifyTabText.applicantTab.applicantLastName);
     I.see(verifyTabText.applicantTab.applicantsLocalCourt);
     I.see(verifyTabText.applicantTab.applicantSolicitorName);
@@ -52,6 +53,7 @@ function respondentTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-2"]');
+    I.wait(30);
     I.see(verifyTabText.respondentTab.respondentLastName);
     I.see(verifyTabText.respondentTab.respondentSolicitorName);
     I.see(verifyTabText.respondentTab.respondentSolicitorFirm);
@@ -79,17 +81,19 @@ function respondentTab(caseType, tabName) {
 
 function divorceTab(caseType, tabName) {
   const I = this;
+  I.wait(5);
   I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-3"]');
-    I.wait(10);
+    I.wait(30);
     I.see(verifyTabText.divorceTab.divorceCaseNumber);
     I.see(verifyTabText.divorceTab.decreeNisiFileName);
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-2"]');
+    I.wait(30);
     I.see(verifyContestedTabText.divorceTab.divorceCaseNumber);
     I.see(verifyContestedTabText.divorceTab.decreeNisiFileName);
     I.see(verifyContestedTabText.divorceTab.applicantsLocalCourt);
@@ -110,6 +114,7 @@ function natureOfApplicationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-4"]');
+    I.wait(30);
     I.see(verifyTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
@@ -139,6 +144,7 @@ function authorisationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-5"]');
+    I.wait(30);
     I.see(verifyTabText.authorisationTab.solicitorName);
     I.see(verifyTabText.authorisationTab.solicitorFirm);
     I.see(verifyTabText.authorisationTab.signedDate);
@@ -168,6 +174,7 @@ function caseDocumentsTab(caseType, tabName, eventName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-6"]');
+    I.wait(30);
     I.see(verifyTabText.caseDocumentsTab.draftDocumentName);
     I.see(verifyTabText.caseDocumentsTab.latestConsentOrderLabel);
     I.see(verifyTabText.caseDocumentsTab.pensionTypeName);
@@ -211,6 +218,7 @@ function paymentDetailsTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-7"]');
+    I.wait(30);
     I.see(verifyTabText.paymentDetailsTab.hwfNumber);
     I.see(verifyTabText.paymentDetailsTab.feeCode);
     I.see(verifyTabText.paymentDetailsTab.amount);
@@ -237,6 +245,7 @@ function judgeDetailsTab(caseType, tabName, eventName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-8"]');
+    I.wait(30);
     I.see(verifyTabText.judgeDetailsTab.applicantFName);
     I.see(verifyTabText.judgeDetailsTab.respondentFName);
     I.see(verifyTabText.judgeDetailsTab.decreeNisiDate);
@@ -273,6 +282,7 @@ function adminNotesTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-8"]');
+    I.wait(30);
     I.see(verifyTabText.adminNotesTab.assignToJudgeReason);
     I.see(verifyTabText.adminNotesTab.issueDate);
     I.see(verifyTabText.adminNotesTab.assignToJudgeText);
@@ -295,6 +305,7 @@ function approvedOrderTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-7"]');
+    I.wait(30);
     I.see(verifyTabText.approvedOrderTab.approvedLetter);
     I.see(verifyTabText.approvedOrderTab.consentedAnnexedStamped);
     I.see(verifyTabText.approvedOrderTab.typeOfPensionDocumentTypeStamped);
@@ -343,6 +354,7 @@ function schedulingAndListingTab(caseType, tabName) {
   switch (caseType) {
   case 'contested':
     I.click('div[id="mat-tab-label-0-10"]');
+    I.wait(30);
     I.see(verifyContestedTabText.schedulingAndListingTab.localCourt);
     I.see(verifyContestedTabText.schedulingAndListingTab.courtFrc);
     break;
