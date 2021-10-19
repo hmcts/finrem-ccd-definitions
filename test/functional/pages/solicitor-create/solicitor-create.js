@@ -57,7 +57,8 @@ async function contestedSolicitorCreate(reference) {
   I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.click('Select');
-  I.waitForText('SW1H 9AJ');
+  I.wait(10);
+  I.waitForText('SW1H 9AJ', '30');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
