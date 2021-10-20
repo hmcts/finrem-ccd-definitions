@@ -10,9 +10,11 @@ function amendApplicationDetails() {
   I.click('Continue');
   I.waitForText('SOLICITOR DETAILS', '30');
   I.fillField('input[id="solicitorPhone"]', '07766120000');
-  I.waitForText("Search for an organisation","30")
-  I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
-  I.click('Select');
+  // demo doesnt let you fill in the organisation selection
+  // I.waitForText("Search for an organisation","30")
+  // I.wait('20');
+  // I.fillField('input[id="search-org-text"]', solicitorData.solicitorSearchText);
+  // I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('DIVORCE DETAILS', '90');

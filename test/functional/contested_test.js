@@ -164,8 +164,8 @@ Scenario('Contested case with General Application @nightly @pipeline', async I =
   }
 });
 
-/* eslint-disable require-await */
-xScenario('Contested Case Creation by Solicitor  @nightly @crossBrowser', async I => {
+
+Scenario('Contested Case Creation by Solicitor  @nightly @pipeline @crossBrowser', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');

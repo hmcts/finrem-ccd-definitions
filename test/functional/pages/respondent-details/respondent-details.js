@@ -1,25 +1,28 @@
 /* eslint-disable no-invalid-this */
 const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
+const runningEnv = process.env.RUNNING_ENV || 'aat';
+const fileEnv = runningEnv === 'demo'? '-demo': '';
+const solicitorData = require(`../../../data/respondent-solicitor-data${fileEnv}.json`);
 
 function respondentSolicitorDetailsDetails(I) {
-  I.fillField('input[id="rSolicitorName"]', 'ResSol');
-  I.fillField('input[id="rSolicitorFirm"]', 'MahFirm');
-  I.fillField('input[id="rSolicitorReference"]', 'MahSol73');
+  I.fillField('input[id="rSolicitorName"]', solicitorData.solicitorName);
+  I.fillField('input[id="rSolicitorFirm"]', solicitorData.solicitorFirm);
+  I.fillField('input[id="rSolicitorReference"]', solicitorData.solicitorReference);
   I.waitForText('Search for an organisation', '30');
-  I.fillField('input[id="search-org-text"]', 'financialremedyrespondentorg');
+  I.fillField('input[id="search-org-text"]', solicitorData.solicitorSearchText);
   I.click('Select');
-  I.waitForText('SW1H 9AJ', '5');
-  I.fillField('input[id="RespondentOrganisationPolicy_OrgPolicyReference"]', 'res-sox');
-  I.fillField('Enter a UK postcode', 'TW3 1SS');
+  I.waitForText(solicitorData.solicitorOrgPostcode, '5');
+  I.fillField('input[id="RespondentOrganisationPolicy_OrgPolicyReference"]', solicitorData.solicitorOrgReference);
+  I.fillField('Enter a UK postcode', solicitorData.solicitorPostcode);
   I.click('Find address');
   I.wait('5');
-  I.selectOption('Select an address', '75 Pears Road, Hounslow');
-  I.fillField('input[id="rSolicitorAddress__detailAddressLine2"]', 'Flat2');
-  I.fillField('input[id="rSolicitorAddress__detailAddressLine3"]', 'Ring Road');
-  I.fillField('input[id="rSolicitorAddress__detailCounty"]', 'Essex');
-  I.fillField('input[id="rSolicitorPhone"]', '07889009908');
-  I.fillField('input[id="rSolicitorEmail"]', 'vivrepondent@mailinator.com');
-  I.fillField('input[id="rSolicitorDXnumber"]', '078890');
+  I.selectOption('Select an address', solicitorData.solicitorSelectAddress);
+  I.fillField('input[id="rSolicitorAddress__detailAddressLine2"]', solicitorData.solicitorAddressLine2);
+  I.fillField('input[id="rSolicitorAddress__detailAddressLine3"]', solicitorData.solicitorAddressLine3);
+  I.fillField('input[id="rSolicitorAddress__detailCounty"]', solicitorData.solicitorCounty);
+  I.fillField('input[id="rSolicitorPhone"]', solicitorData.solicitorPhone);
+  I.fillField('input[id="rSolicitorEmail"]', solicitorData.solicitorEmail);
+  I.fillField('input[id="rSolicitorDXnumber"]', solicitorData.solicitorDXNumber);
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
