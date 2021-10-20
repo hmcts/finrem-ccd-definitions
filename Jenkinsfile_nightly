@@ -4,6 +4,8 @@ properties([
         parameters([
                 string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
                 string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
+                string(name: 'CCD_ADMIN_URL', defaultValue: 'https://ccd-admin-web.aat.platform.hmcts.net', description: 'The URL you want to run ccd admin test'),
+                string(name: 'DELAY', defaultValue: '0', description: 'end to end extra delay on')
         ])
 ])
 
@@ -43,8 +45,10 @@ withNightlyPipeline("nodejs", product, component) {
     env.CCD_WEB_URL = params.CCD_WEB_URL
     env.RUNNING_ENV = params.RUNNING_ENV
     env.XUI_ORG_WEB_URL =params.CCD_WEB_URL
+    env.CCD_ADMIN_URL =params.CCD_ADMIN_URL
     env.NIGHTLY_TEST="true"
     env.NODE_ENV = 'ci'
+    env.DELAY =params.DELAY
      
     loadVaultSecrets(secrets)
     enableFullFunctionalTest()
