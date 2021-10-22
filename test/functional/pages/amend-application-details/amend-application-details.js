@@ -1,4 +1,5 @@
 /* eslint-disable no-invalid-this */
+const testDelay = parseInt(process.env.DELAY || '0');
 
 function amendApplicationDetails() {
   const I = this;
@@ -17,6 +18,7 @@ function amendApplicationDetails() {
   // I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(testDelay);
   I.waitForText('DIVORCE DETAILS', '90');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D84321');
   I.waitForContinueButtonEnabled();
@@ -24,14 +26,17 @@ function amendApplicationDetails() {
   I.waitForText('APPLICANT DETAILS', '90');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(testDelay);
   I.waitForText('RESPONDENT DETAILS', '30');
   I.fillField('input[id="rSolicitorEmail"]', 'vivupdatesol@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(testDelay);
   I.waitForText('NATURE OF THE APPLICATION', '30');
   I.checkOption('input[value="Property Adjustment Order"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(testDelay);
   I.waitForText('ORDER FOR CHILDREN', '30');
   I.checkOption('input[id="orderForChildrenQuestion1_No"]');
   I.waitForContinueButtonEnabled();
@@ -42,6 +47,7 @@ function amendApplicationDetails() {
   I.refreshPage();
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(testDelay);
   I.waitForText('D81', '30');
   I.checkOption('input[id="d81Question_No"]');
   I.wait('2');
@@ -51,18 +57,21 @@ function amendApplicationDetails() {
   I.wait('10');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(testDelay);
   I.waitForText('PENSION DOCUMENTS', '30');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(testDelay);
   I.waitForText('OTHER DOCUMENTS', '30');
 
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(testDelay);
   I.waitForPage('#createCasePreConfirmationInfoText h1', 'Saving your application');
 
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
+  I.wait(testDelay);
   I.waitForPage('.check-your-answers h2', 'Check your answers');
   I.see('OTHER DOCUMENTS');
   I.click('Submit');
@@ -78,12 +87,12 @@ function contestedAmendApplicationDetails() {
   I.waitForPage('#beforeYouStart');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
+  I.wait(testDelay);
   I.waitForPage('input[id="applicantSolicitorPhone"]');
   I.fillField('input[id="applicantSolicitorPhone"]', '07766121111');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
+  I.wait(testDelay);
 
   I.waitForPage('input[id="divorceCaseNumber"]');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D33333');
@@ -115,20 +124,21 @@ function contestedAmendApplicationDetails() {
   I.waitForPage('#paymentForChildrenDecision');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
+  I.wait(testDelay);
   I.waitForPage('#fastTrackDecision');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
+  I.wait(testDelay);
 
   I.waitForPage('#addToComplexityListOfCourts');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
+  I.wait(testDelay);
   I.waitForPage('input[id="isApplicantsHomeCourt_No"]');
   I.checkOption('input[id="isApplicantsHomeCourt_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(testDelay);
 
   I.waitForPage('#applicantAttendedMIAMLabel');
   I.waitForContinueButtonEnabled();
@@ -137,20 +147,20 @@ function contestedAmendApplicationDetails() {
   I.waitForPage('#applicantAttendedMIAMLabel');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
+  I.wait(testDelay);
   I.waitForPage('#soleTraderName');
   I.fillField('#soleTraderName', 'sole trading');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
+  I.wait(testDelay);
   I.waitForPage('#promptForAnyDocument');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
+  I.wait(testDelay);
   I.waitForPage('#beforeSavePreConfirmation');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
+  I.wait(testDelay);
   I.waitForPage('.check-your-answers');
   // The necessary refresh on L134 has cleared the check your answers page. To be fixed in @DFR-586
 
