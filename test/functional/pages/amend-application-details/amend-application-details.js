@@ -68,7 +68,7 @@ function amendApplicationDetails() {
   I.see('APPLICANT DETAILS');
 }
 
-function contestedAmendApplicationDetails() {
+async function contestedAmendApplicationDetails() {
   const I = this;
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.click('Go');
@@ -100,6 +100,9 @@ function contestedAmendApplicationDetails() {
   I.fillField('input[id="rSolicitorEmail"]', 'vivcontestedupdatesol@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(10);
+  await I.runAccessibilityTest();
+  await I.runAccessibilityTest();
 
   I.waitForPage('input[id="natureOfApplicationChecklist-propertyAdjustmentOrder"]');
   I.checkOption('input[id="natureOfApplicationChecklist-propertyAdjustmentOrder"]');

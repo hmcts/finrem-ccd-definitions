@@ -1,7 +1,7 @@
 /* eslint-disable no-invalid-this */
 const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
-function respondentSolicitorDetailsDetails(I) {
+async function respondentSolicitorDetailsDetails(I) {
   I.fillField('input[id="rSolicitorName"]', 'ResSol');
   I.fillField('input[id="rSolicitorFirm"]', 'MahFirm');
   I.fillField('input[id="rSolicitorReference"]', 'MahSol73');
@@ -22,6 +22,8 @@ function respondentSolicitorDetailsDetails(I) {
   I.fillField('input[id="rSolicitorDXnumber"]', '078890');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait('5');
+  await I.runAccessibilityTest();
 }
 
 async function consentedRespondentDetails() {
