@@ -305,6 +305,7 @@ function adminNotesTab(caseType, tabName) {
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-9"]');
+    I.wait(testDelay);
     I.see(verifyContestedTabText.adminNotesTab.issueDate);
     break;
   case 'contestedPaper':
