@@ -1,5 +1,8 @@
 /* eslint-disable no-invalid-this */
 const testDelay = parseInt(process.env.DELAY || '0');
+const runningEnv = process.env.RUNNING_ENV || 'aat';
+const fileEnv = runningEnv === 'demo'? '-demo': '';
+const solicitorData = require(`../../../data/applicant-solicitor-data${fileEnv}.json`);
 
 function amendApplicationDetails() {
   const I = this;
@@ -12,10 +15,10 @@ function amendApplicationDetails() {
   I.waitForText('SOLICITOR DETAILS', '30');
   I.fillField('input[id="solicitorPhone"]', '07766120000');
   // demo doesnt let you fill in the organisation selection
-  // I.waitForText("Search for an organisation","30")
-  // I.wait('20');
-  // I.fillField('input[id="search-org-text"]', solicitorData.solicitorSearchText);
-  // I.click('Select');
+  I.waitForText("Search for an organisation","30")
+  I.wait('20');
+  I.fillField('input[id="search-org-text"]', solicitorData.solicitorSearchText);
+  I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.wait(testDelay);
