@@ -5,7 +5,6 @@ const verifyTabText = require(`../../../data/verify-consented-tab-data${fileEnv}
 const verifyContestedTabText = require(`../../../data/verify-contested-tab-data${fileEnv}.json`);
 const verifyContestedPaperTabText = require(`../../../data/verify-contested-paper-case-tab-data${fileEnv}.json`);
 const testDelay = parseInt(process.env.DELAY || '0');
-console.log("TEST DELAY =====> ", testDelay);
 
 function historyTab(caseType, tabName, eventName, endState) {
   const I = this;

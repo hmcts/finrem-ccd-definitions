@@ -15,10 +15,6 @@ const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&red
 const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
 const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
 
-
-console.log('ENVIROMENT ====> ', env);
-console.log('ccdApiUrl ====> ', ccdApiUrl);
-
 async function getUserToken(username, password) {
   logger.info('Getting User Token');
  
