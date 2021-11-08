@@ -35,23 +35,6 @@ async function solicitorCreate(reference) {
   I.click('Continue');
 }
 
-
-const contestedData = {
-  "solicitorName": "Parrot",
-  "solicitorFirm": "MSN Firm",
-  "solicitorPostcode": "TW3 1SS",
-  "solicitorSelectAddress": "67 Pears Road, Hounslow",
-  "solicitorAddressLine2": "Near Roundabout",
-  "solicitorAddressLine3": "Opposite Tesco",
-  "solicitorCounty": "Middlesex",
-  "solicitorPhone": "07700000",
-  "solicitorEmail": "fr_applicant_sol@sharklasers.com",
-  "solicitorDXNumber": "776890",
-  "solicitorSearchText": "FRApplicantSolicitorFirm",
-  "solicitorReference": "FRApplicant",
-  "solicitorOrgPostcode": "SW1H 9AJ"
-}
-
 async function contestedSolicitorCreate(reference) {
   const I = this;
   I.waitForPage('#applicantSolicitorDetailLabel h2', 'Solicitor Details');
