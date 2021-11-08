@@ -5,7 +5,7 @@ properties([
                 string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
                 string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
                 string(name: 'CCD_ADMIN_URL', defaultValue: 'https://ccd-admin-web.aat.platform.hmcts.net', description: 'The URL you want to run ccd admin test'),
-                string(name: 'DELAY', defaultValue: '0', description: 'end to end extra delay on')
+                string(name: 'DELAY', defaultValue: '0', description: 'end to end extra delay on when the enviroment is slow, otherwise leave it as 0')
         ])
 ])
 
