@@ -4,15 +4,19 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: 'http://localhost:3000',
-      show: false,
+      show: true,
       waitForNavigation: 'domcontentloaded',
-      headless: true,
+      // headless: true,
       ignoreHTTPSErrors: true,
       chrome: {
         ignoreHTTPSErrors: true,
+        'defaultViewport': {
+          'width': 1280,
+          'height': 960
+        },
         args: [
           '--no-sandbox',
-          '--start-fullscreen'
+          '--window-size=1440,1400'
         ]
       }
     },
