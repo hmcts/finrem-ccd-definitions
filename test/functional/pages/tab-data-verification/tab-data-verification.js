@@ -16,6 +16,7 @@ function applicantTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.waitForClickable('div[id="mat-tab-label-0-1"]');
     I.click('div[id="mat-tab-label-0-1"]');
     I.waitForText(verifyTabText.applicantTab.applicantLastName, '30');
     I.waitForText(verifyTabText.applicantTab.applicantsLocalCourt, '30');
@@ -49,6 +50,7 @@ function respondentTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.waitForClickable('div[id="mat-tab-label-0-2"]');
     I.click('div[id="mat-tab-label-0-2"]');
     I.waitForText(verifyTabText.respondentTab.respondentLastName, '30');
     I.waitForText(verifyTabText.respondentTab.respondentSolicitorName, '30');
@@ -81,8 +83,8 @@ async function divorceTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.waitForClickable('div[id="mat-tab-label-0-3"]');
     I.click('div[id="mat-tab-label-0-3"]');
-    I.wait('30');
     await I.runAccessibilityTest();
     I.waitForText(verifyTabText.divorceTab.divorceCaseNumber, '30');
     I.waitForText(verifyTabText.divorceTab.decreeNisiFileName, '30');
@@ -108,6 +110,7 @@ function natureOfApplicationTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.waitForClickable('div[id="mat-tab-label-0-4"]');
     I.click('div[id="mat-tab-label-0-4"]');
     I.waitForText(verifyTabText.natureOfApplicationTab.applicationFor, '30');
     I.waitForText(verifyTabText.natureOfApplicationTab.addressDetails, '30');
@@ -137,6 +140,7 @@ function authorisationTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.waitForClickable('div[id="mat-tab-label-0-5"]');
     I.click('div[id="mat-tab-label-0-5"]');
     I.waitForText(verifyTabText.authorisationTab.solicitorName, '30');
     I.waitForText(verifyTabText.authorisationTab.solicitorFirm, '30');
@@ -166,6 +170,7 @@ function caseDocumentsTab(caseType, tabName, eventName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.waitForClickable('div[id="mat-tab-label-0-6"]');
     I.click('div[id="mat-tab-label-0-6"]');
     I.waitForText(verifyTabText.caseDocumentsTab.draftDocumentName, '30');
     I.waitForText(verifyTabText.caseDocumentsTab.latestConsentOrderLabel, '30');
@@ -209,6 +214,7 @@ function paymentDetailsTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.waitForClickable('div[id="mat-tab-label-0-7"]');
     I.click('div[id="mat-tab-label-0-7"]');
     I.see(verifyTabText.paymentDetailsTab.hwfNumber);
     I.see(verifyTabText.paymentDetailsTab.feeCode);
@@ -235,6 +241,7 @@ function judgeDetailsTab(caseType, tabName, eventName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.waitForClickable('div[id="mat-tab-label-0-8"]');
     I.click('div[id="mat-tab-label-0-8"]');
     I.see(verifyTabText.judgeDetailsTab.applicantFName);
     I.see(verifyTabText.judgeDetailsTab.respondentFName);
