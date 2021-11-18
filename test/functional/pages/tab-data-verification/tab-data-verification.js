@@ -6,23 +6,23 @@ const verifyContestedPaperTabText = require('../../../data/verify-contested-pape
 function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
   I.waitForText(tabName, '30');
-  I.waitForText(eventName, '10');
-  I.waitForText(endState, '10');
+  I.waitForText(eventName, '30');
+  I.waitForText(endState, '30');
 }
 
 function applicantTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '10');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-1"]');
-    I.waitForText(verifyTabText.applicantTab.applicantLastName, '10');
-    I.waitForText(verifyTabText.applicantTab.applicantsLocalCourt, '10');
-    I.waitForText(verifyTabText.applicantTab.applicantSolicitorName, '10');
-    I.waitForText(verifyTabText.applicantTab.applicantSolicitorFirm, '10');
-    I.waitForText(verifyTabText.applicantTab.applicantEmail, '10');
-    I.waitForText(verifyTabText.applicantTab.applicantEmailCommunication, '10');
+    I.waitForText(verifyTabText.applicantTab.applicantLastName, '30');
+    I.waitForText(verifyTabText.applicantTab.applicantsLocalCourt, '30');
+    I.waitForText(verifyTabText.applicantTab.applicantSolicitorName, '30');
+    I.waitForText(verifyTabText.applicantTab.applicantSolicitorFirm, '30');
+    I.waitForText(verifyTabText.applicantTab.applicantEmail, '30');
+    I.waitForText(verifyTabText.applicantTab.applicantEmailCommunication, '30');
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-1"]');
@@ -45,16 +45,16 @@ function applicantTab(caseType, tabName) {
 
 function respondentTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '10');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-2"]');
-    I.waitForText(verifyTabText.respondentTab.respondentLastName, '10');
-    I.waitForText(verifyTabText.respondentTab.respondentSolicitorName, '10');
-    I.waitForText(verifyTabText.respondentTab.respondentSolicitorFirm, '10');
-    I.waitForText(verifyTabText.respondentTab.respondentEmail, '10');
-    I.waitForText(verifyTabText.respondentTab.respondentPostCode, '10');
+    I.waitForText(verifyTabText.respondentTab.respondentLastName, '30');
+    I.waitForText(verifyTabText.respondentTab.respondentSolicitorName, '30');
+    I.waitForText(verifyTabText.respondentTab.respondentSolicitorFirm, '30');
+    I.waitForText(verifyTabText.respondentTab.respondentEmail, '30');
+    I.waitForText(verifyTabText.respondentTab.respondentPostCode, '30');
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-3"]');
@@ -82,24 +82,8 @@ async function divorceTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-3"]');
-    await I.runAccessibilityTest();
-    I.wait('1');
-    await I.runAccessibilityTest();
-    I.wait('1');
-    await I.runAccessibilityTest();
-    I.wait('1');
-    await I.runAccessibilityTest();
-    I.wait('1');
-    await I.runAccessibilityTest();
-    I.wait('1');
-    await I.runAccessibilityTest();
-    I.wait('1');
-    await I.runAccessibilityTest();
-    I.wait('1');
-    await I.runAccessibilityTest();
-    I.wait('1');
-    I.waitForText(verifyTabText.divorceTab.divorceCaseNumber, '10');
-    I.waitForText(verifyTabText.divorceTab.decreeNisiFileName, '10');
+    I.waitForText(verifyTabText.divorceTab.divorceCaseNumber, '30');
+    I.waitForText(verifyTabText.divorceTab.decreeNisiFileName, '30');
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-2"]');
@@ -123,10 +107,10 @@ function natureOfApplicationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-4"]');
-    I.waitForText(verifyTabText.natureOfApplicationTab.applicationFor, '10');
-    I.waitForText(verifyTabText.natureOfApplicationTab.addressDetails, '10');
-    I.waitForText(verifyTabText.natureOfApplicationTab.mortgageDetails, '10');
-    I.waitForText(verifyTabText.natureOfApplicationTab.orderForChildren, '10');
+    I.waitForText(verifyTabText.natureOfApplicationTab.applicationFor, '30');
+    I.waitForText(verifyTabText.natureOfApplicationTab.addressDetails, '30');
+    I.waitForText(verifyTabText.natureOfApplicationTab.mortgageDetails, '30');
+    I.waitForText(verifyTabText.natureOfApplicationTab.orderForChildren, '30');
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-4"]');
@@ -152,9 +136,9 @@ function authorisationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-5"]');
-    I.waitForText(verifyTabText.authorisationTab.solicitorName, '10');
-    I.waitForText(verifyTabText.authorisationTab.solicitorFirm, '10');
-    I.waitForText(verifyTabText.authorisationTab.signedDate, '10');
+    I.waitForText(verifyTabText.authorisationTab.solicitorName, '30');
+    I.waitForText(verifyTabText.authorisationTab.solicitorFirm, '30');
+    I.waitForText(verifyTabText.authorisationTab.signedDate, '30');
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-5"]');
@@ -181,11 +165,11 @@ function caseDocumentsTab(caseType, tabName, eventName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-6"]');
-    I.waitForText(verifyTabText.caseDocumentsTab.draftDocumentName, '10');
-    I.waitForText(verifyTabText.caseDocumentsTab.latestConsentOrderLabel, '10');
-    I.waitForText(verifyTabText.caseDocumentsTab.pensionTypeName, '10');
+    I.waitForText(verifyTabText.caseDocumentsTab.draftDocumentName, '30');
+    I.waitForText(verifyTabText.caseDocumentsTab.latestConsentOrderLabel, '30');
+    I.waitForText(verifyTabText.caseDocumentsTab.pensionTypeName, '30');
     if (eventName === verifyTabText.historyTab.issueApplicationEvent) {
-      I.waitForText(verifyTabText.caseDocumentsTab.onlineFormA, '10');
+      I.waitForText(verifyTabText.caseDocumentsTab.onlineFormA, '30');
     }
     break;
   case 'contested':
