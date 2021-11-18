@@ -28,6 +28,7 @@ Scenario('Consent Case Creation For Caseworker @now @pipeline', async I => {
     if (nightlyTest === 'true') {
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+      I.wait('10');
       I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
       I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
       I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
