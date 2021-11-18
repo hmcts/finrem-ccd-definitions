@@ -75,13 +75,14 @@ function respondentTab(caseType, tabName) {
   }
 }
 
-function divorceTab(caseType, tabName) {
+async function divorceTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-3"]');
+    await I.runAccessibilityTest();
     I.waitForText(verifyTabText.divorceTab.divorceCaseNumber, '10');
     I.waitForText(verifyTabText.divorceTab.decreeNisiFileName, '10');
     break;
