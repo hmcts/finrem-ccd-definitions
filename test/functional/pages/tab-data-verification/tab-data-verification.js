@@ -6,8 +6,8 @@ const verifyContestedPaperTabText = require('../../../data/verify-contested-pape
 function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
   I.waitForText(tabName, '30');
-  I.see(eventName);
-  I.see(endState);
+  I.waitForText(eventName, '10');
+  I.waitForText(endState, '10');
 }
 
 function applicantTab(caseType, tabName) {
@@ -17,12 +17,12 @@ function applicantTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-1"]');
-    I.see(verifyTabText.applicantTab.applicantLastName);
-    I.see(verifyTabText.applicantTab.applicantsLocalCourt);
-    I.see(verifyTabText.applicantTab.applicantSolicitorName);
-    I.see(verifyTabText.applicantTab.applicantSolicitorFirm);
-    I.see(verifyTabText.applicantTab.applicantEmail);
-    I.see(verifyTabText.applicantTab.applicantEmailCommunication);
+    I.waitForText(verifyTabText.applicantTab.applicantLastName, '10');
+    I.waitForText(verifyTabText.applicantTab.applicantsLocalCourt, '10');
+    I.waitForText(verifyTabText.applicantTab.applicantSolicitorName, '10');
+    I.waitForText(verifyTabText.applicantTab.applicantSolicitorFirm, '10');
+    I.waitForText(verifyTabText.applicantTab.applicantEmail, '10');
+    I.waitForText(verifyTabText.applicantTab.applicantEmailCommunication, '10');
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-1"]');
@@ -50,11 +50,11 @@ function respondentTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-2"]');
-    I.see(verifyTabText.respondentTab.respondentLastName);
-    I.see(verifyTabText.respondentTab.respondentSolicitorName);
-    I.see(verifyTabText.respondentTab.respondentSolicitorFirm);
-    I.see(verifyTabText.respondentTab.respondentEmail);
-    I.see(verifyTabText.respondentTab.respondentPostCode);
+    I.waitForText(verifyTabText.respondentTab.respondentLastName, '10');
+    I.waitForText(verifyTabText.respondentTab.respondentSolicitorName, '10');
+    I.waitForText(verifyTabText.respondentTab.respondentSolicitorFirm, '10');
+    I.waitForText(verifyTabText.respondentTab.respondentEmail, '10');
+    I.waitForText(verifyTabText.respondentTab.respondentPostCode, '10');
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-3"]');
@@ -82,8 +82,8 @@ function divorceTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-3"]');
-    I.see(verifyTabText.divorceTab.divorceCaseNumber);
-    I.see(verifyTabText.divorceTab.decreeNisiFileName);
+    I.waitForText(verifyTabText.divorceTab.divorceCaseNumber, '10');
+    I.waitForText(verifyTabText.divorceTab.decreeNisiFileName, '10');
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-2"]');
@@ -107,10 +107,10 @@ function natureOfApplicationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-4"]');
-    I.see(verifyTabText.natureOfApplicationTab.applicationFor);
-    I.see(verifyTabText.natureOfApplicationTab.addressDetails);
-    I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
-    I.see(verifyTabText.natureOfApplicationTab.orderForChildren);
+    I.waitForText(verifyTabText.natureOfApplicationTab.applicationFor, '10');
+    I.waitForText(verifyTabText.natureOfApplicationTab.addressDetails, '10');
+    I.waitForText(verifyTabText.natureOfApplicationTab.mortgageDetails, '10');
+    I.waitForText(verifyTabText.natureOfApplicationTab.orderForChildren, '10');
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-4"]');
@@ -136,9 +136,9 @@ function authorisationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-5"]');
-    I.see(verifyTabText.authorisationTab.solicitorName);
-    I.see(verifyTabText.authorisationTab.solicitorFirm);
-    I.see(verifyTabText.authorisationTab.signedDate);
+    I.waitForText(verifyTabText.authorisationTab.solicitorName, '10');
+    I.waitForText(verifyTabText.authorisationTab.solicitorFirm, '10');
+    I.waitForText(verifyTabText.authorisationTab.signedDate, '10');
     break;
   case 'contested':
     I.click('div[id="mat-tab-label-0-5"]');
@@ -165,11 +165,11 @@ function caseDocumentsTab(caseType, tabName, eventName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-6"]');
-    I.see(verifyTabText.caseDocumentsTab.draftDocumentName);
-    I.see(verifyTabText.caseDocumentsTab.latestConsentOrderLabel);
-    I.see(verifyTabText.caseDocumentsTab.pensionTypeName);
+    I.waitForText(verifyTabText.caseDocumentsTab.draftDocumentName, '10');
+    I.waitForText(verifyTabText.caseDocumentsTab.latestConsentOrderLabel, '10');
+    I.waitForText(verifyTabText.caseDocumentsTab.pensionTypeName, '10');
     if (eventName === verifyTabText.historyTab.issueApplicationEvent) {
-      I.see(verifyTabText.caseDocumentsTab.onlineFormA);
+      I.waitForText(verifyTabText.caseDocumentsTab.onlineFormA, '10');
     }
     break;
   case 'contested':
