@@ -82,6 +82,8 @@ async function divorceTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-3"]');
+    I.wait('30');
+    await I.runAccessibilityTest();
     I.waitForText(verifyTabText.divorceTab.divorceCaseNumber, '30');
     I.waitForText(verifyTabText.divorceTab.decreeNisiFileName, '30');
     break;
