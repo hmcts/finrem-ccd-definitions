@@ -83,6 +83,21 @@ async function divorceTab(caseType, tabName) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-3"]');
     await I.runAccessibilityTest();
+    I.wait('1');
+    await I.runAccessibilityTest();
+    I.wait('1');
+    await I.runAccessibilityTest();
+    I.wait('1');
+    await I.runAccessibilityTest();
+    I.wait('1');
+    await I.runAccessibilityTest();
+    I.wait('1');
+    await I.runAccessibilityTest();
+    I.wait('1');
+    await I.runAccessibilityTest();
+    I.wait('1');
+    await I.runAccessibilityTest();
+    I.wait('1');
     I.waitForText(verifyTabText.divorceTab.divorceCaseNumber, '10');
     I.waitForText(verifyTabText.divorceTab.decreeNisiFileName, '10');
     break;
