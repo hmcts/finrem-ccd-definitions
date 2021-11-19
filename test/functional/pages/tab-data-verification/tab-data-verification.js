@@ -134,14 +134,14 @@ function natureOfApplicationTab(caseType, tabName) {
   }
 }
 
-async function authorisationTab(caseType, tabName) {
+function authorisationTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.waitForClickable('div[id="mat-tab-label-0-5"]', '40');
-    await I.runAccessibilityTest();
+    //I.waitForClickable('div[id="mat-tab-label-0-5"]', '40');
+    I.wait('30');
     I.click('div[id="mat-tab-label-0-5"]');
     I.waitForText(verifyTabText.authorisationTab.solicitorName, '30');
     I.waitForText(verifyTabText.authorisationTab.solicitorFirm, '30');
