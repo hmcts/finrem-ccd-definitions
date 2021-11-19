@@ -171,7 +171,8 @@ function caseDocumentsTab(caseType, tabName, eventName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.waitForClickable('div[id="mat-tab-label-0-6"]', '30');
+    //I.waitForClickable('div[id="mat-tab-label-0-6"]', '30');
+    I.wait('30');
     I.click('div[id="mat-tab-label-0-6"]');
     I.waitForText(verifyTabText.caseDocumentsTab.draftDocumentName, '30');
     I.waitForText(verifyTabText.caseDocumentsTab.latestConsentOrderLabel, '30');
@@ -215,7 +216,8 @@ function paymentDetailsTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.waitForClickable('div[id="mat-tab-label-0-7"]', '30');
+    //I.waitForClickable('div[id="mat-tab-label-0-7"]', '30');
+    I.wait('30');
     I.click('div[id="mat-tab-label-0-7"]');
     I.see(verifyTabText.paymentDetailsTab.hwfNumber);
     I.see(verifyTabText.paymentDetailsTab.feeCode);
@@ -242,7 +244,8 @@ function judgeDetailsTab(caseType, tabName, eventName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.waitForClickable('div[id="mat-tab-label-0-8"]', '30');
+    //I.waitForClickable('div[id="mat-tab-label-0-8"]', '30');
+    I.wait('30');
     I.click('div[id="mat-tab-label-0-8"]');
     I.see(verifyTabText.judgeDetailsTab.applicantFName);
     I.see(verifyTabText.judgeDetailsTab.respondentFName);
@@ -279,6 +282,7 @@ function adminNotesTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.wait('30');
     I.click('div[id="mat-tab-label-0-8"]');
     I.see(verifyTabText.adminNotesTab.assignToJudgeReason);
     I.see(verifyTabText.adminNotesTab.issueDate);
@@ -301,6 +305,7 @@ function approvedOrderTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.wait('30');
     I.click('div[id="mat-tab-label-0-7"]');
     I.see(verifyTabText.approvedOrderTab.approvedLetter);
     I.see(verifyTabText.approvedOrderTab.consentedAnnexedStamped);
@@ -314,6 +319,7 @@ function contestedOrderTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
+    I.wait('30');
     I.click('div[id="mat-tab-label-0-10"]');
     I.see(verifyContestedTabText.OrdersTab.OrdersLabel);
     I.see(verifyContestedTabText.OrdersTab.OrderFileName);
