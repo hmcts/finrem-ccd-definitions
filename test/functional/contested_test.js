@@ -42,6 +42,7 @@ Scenario('Contested Case Creation For Judge @now @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait(testDelay);
+
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
     I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeEvent, verifyTabText.historyTab.assignToJudgeEndState);
