@@ -132,6 +132,7 @@ Scenario('Consented case in Contested Assigned to Judge @now @pipeline', async I
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
+    I.wait(testDelay);
     I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEndState);
     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
