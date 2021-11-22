@@ -6,6 +6,7 @@ properties([
                 string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
                 string(name: 'CCD_ADMIN_URL', defaultValue: 'https://ccd-admin-web.aat.platform.hmcts.net', description: 'The URL you want to run ccd admin test'),
                 string(name: 'DELAY', defaultValue: '0', description: 'end to end extra delay on when the enviroment is slow, otherwise leave it as 0')
+                string(name: 'ENABLED_CROSSBROWSER', defaultValue: 'true', description: 'true to enable the crossbrowser test')
         ])
 ])
 
@@ -49,17 +50,21 @@ withNightlyPipeline("nodejs", product, component) {
     env.NIGHTLY_TEST="true"
     env.NODE_ENV = 'ci'
     env.DELAY =params.DELAY
+    env.ENABLED_CROSSBROWSER =params.ENABLED_CROSSBROWSER
      
     loadVaultSecrets(secrets)
     enableFullFunctionalTest()
-    enableCrossBrowserTest()
+
+    if(params.ENABLED_CROSSBROWSER == "true"){
+      enableCrossBrowserTest()
+    }
 
     after('fullFunctionalTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
     }
     after('crossBrowserTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
-      }
+    }
 }
 
 
