@@ -81,6 +81,7 @@ function divorceTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
+    I.wait('30')
     I.click('div[id="mat-tab-label-0-3"]');
     I.wait('30')
     I.runAccessibilityTest();
