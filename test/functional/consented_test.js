@@ -29,7 +29,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
   }
 });
 
-Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
+xScenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, `./test/data/ccd-consented-basic-data${fileEnv}.json`, 'FinancialRemedyMVP2', 'FR_solicitorCreate');
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
   const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', `./test/data/ccd-consented-basic-data${fileEnv}.json`);
@@ -46,7 +46,7 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   }
 });
 
-Scenario('Consent Case approve and send order @nightly @pipeline @crossBrowser', async I => {
+xScenario('Consent Case approve and send order @nightly @pipeline @crossBrowser', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, `./test/data/ccd-consented-basic-data${fileEnv}.json`, 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', `./test/data/ccd-consented-basic-data${fileEnv}.json`);
@@ -64,7 +64,7 @@ Scenario('Consent Case approve and send order @nightly @pipeline @crossBrowser',
   }
 });
 
-Scenario('Consent Case Creation by Solicitor @nightly @pipeline @crossBrowser', async I => {
+xScenario('Consent Case Creation by Solicitor @nightly @pipeline @crossBrowser', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');

@@ -13,13 +13,13 @@ function historyTab(caseType, tabName, eventName, endState) {
   I.see(endState);
 }
 
-function applicantTab(caseType, tabName) {
+async function applicantTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '10');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.click('div[id="mat-tab-label-0-1"]');
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
     I.wait(testDelay);
     I.see(verifyTabText.applicantTab.applicantLastName);
     I.see(verifyTabText.applicantTab.applicantsLocalCourt);
@@ -49,13 +49,13 @@ function applicantTab(caseType, tabName) {
   }
 }
 
-function respondentTab(caseType, tabName) {
+async function respondentTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '10');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.click('div[id="mat-tab-label-0-2"]');
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
     I.wait(testDelay);
     I.see(verifyTabText.respondentTab.respondentLastName);
     I.see(verifyTabText.respondentTab.respondentSolicitorName);
@@ -84,14 +84,14 @@ function respondentTab(caseType, tabName) {
   }
 }
 
-function divorceTab(caseType, tabName) {
+async function divorceTab(caseType, tabName) {
   const I = this;
   I.wait(5);
   I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.click('div[id="mat-tab-label-0-3"]');
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-3"]');
     I.wait(testDelay);
     I.see(verifyTabText.divorceTab.divorceCaseNumber);
     I.see(verifyTabText.divorceTab.decreeNisiFileName);
@@ -113,14 +113,15 @@ function divorceTab(caseType, tabName) {
   }
 }
 
-function natureOfApplicationTab(caseType, tabName) {
+async function natureOfApplicationTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.click('div[id="mat-tab-label-0-4"]');
-    I.wait(testDelay);
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
+    // I.click('div[id="mat-tab-label-0-4"]');
+    // I.wait(testDelay);
     I.see(verifyTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
