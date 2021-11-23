@@ -75,15 +75,13 @@ function respondentTab(caseType, tabName) {
   }
 }
 
-function divorceTab(caseType, tabName) {
+async function divorceTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.wait('30')
-    I.click('div[id="mat-tab-label-0-3"]');
-    I.wait('30')
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-3"]');
     I.runAccessibilityTest();
     I.see(verifyTabText.divorceTab.divorceCaseNumber);
     I.see(verifyTabText.divorceTab.decreeNisiFileName);
@@ -103,13 +101,13 @@ function divorceTab(caseType, tabName) {
   }
 }
 
-function natureOfApplicationTab(caseType, tabName) {
+async function natureOfApplicationTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.click('div[id="mat-tab-label-0-4"]');
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
     I.see(verifyTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
