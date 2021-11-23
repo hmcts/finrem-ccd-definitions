@@ -120,7 +120,7 @@ Scenario('Consented case in Contested @now @pipeline', async I => {
   }
 });
 
-Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline', async I => {
+Scenario('Consented case in Contested Assigned to Judge @now @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, `./test/data/ccd-contested-basic-data${fileEnv}.json`, 'FinancialRemedyContested', 'FR_solicitorCreate');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
