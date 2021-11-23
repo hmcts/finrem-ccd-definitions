@@ -107,7 +107,7 @@ function natureOfApplicationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-4"]');
-    I.see(verifyTabText.natureOfApplicationTab.applicationFor);
+    I.waitForText(verifyTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
     I.see(verifyTabText.natureOfApplicationTab.orderForChildren);
