@@ -82,7 +82,9 @@ function divorceTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-3"]');
-    I.waitForText(verifyTabText.divorceTab.divorceCaseNumber, '30');
+    I.wait('30')
+    I.runAccessibilityTest();
+    I.see(verifyTabText.divorceTab.divorceCaseNumber);
     I.see(verifyTabText.divorceTab.decreeNisiFileName);
     break;
   case 'contested':
@@ -107,7 +109,7 @@ function natureOfApplicationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     I.click('div[id="mat-tab-label-0-4"]');
-    I.waitForText(verifyTabText.natureOfApplicationTab.applicationFor);
+    I.see(verifyTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
     I.see(verifyTabText.natureOfApplicationTab.orderForChildren);
