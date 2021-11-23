@@ -1,7 +1,7 @@
 const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
 const verifyTabText = require('../data/verify-contested-tab-data.json');
 const verifyContestedPaperTabText = require('../data/verify-contested-paper-case-tab-data.json');
-const testDelay = parseInt(process.env.DELAY || '0');
+//const testDelay = parseInt(process.env.DELAY || '0');
 
 // eslint-disable max-len
 
@@ -41,7 +41,7 @@ Scenario('Contested Case Creation For Judge @now @pipeline', async I => {
   /* eslint-enable */
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait(testDelay);
+    //I.wait(testDelay);
 
     // line space
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
@@ -113,7 +113,7 @@ Scenario('Consented case in Contested @now @pipeline', async I => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    I.wait(testDelay);
+    //I.wait(testDelay);
     I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.consentOrderEvent, verifyTabText.historyTab.consentOrderEndState);
     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
@@ -134,7 +134,7 @@ Scenario('Consented case in Contested Assigned to Judge @now @pipeline', async I
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    I.wait(testDelay);
+    //I.wait(testDelay);
     I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEndState);
     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
@@ -165,7 +165,7 @@ Scenario('Contested case with General Application @now @pipeline', async I => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    I.wait(testDelay);
+    //I.wait(testDelay);
     I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.createGeneralApplicationEvent, verifyTabText.historyTab.createGeneralApplicationState);
     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
