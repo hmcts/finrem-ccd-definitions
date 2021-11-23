@@ -366,7 +366,6 @@ function verifyConsentedTabData(caseType, eventName, stateName) {
   I.historyTab(caseType, verifyTabText.historyTab.tabName, eventName, stateName);
   I.applicantTab(caseType, verifyTabText.applicantTab.tabName);
   I.respondentTab(caseType, verifyTabText.respondentTab.tabName);
-  I.divorceTab(caseType, verifyTabText.divorceTab.tabName);
   I.natureOfApplicationTab(caseType, verifyTabText.natureOfApplicationTab.tabName);
   I.authorisationTab(caseType, verifyTabText.authorisationTab.tabName);
   I.caseDocumentsTab(caseType, verifyTabText.caseDocumentsTab.tabName, eventName);
