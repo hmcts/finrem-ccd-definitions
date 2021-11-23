@@ -130,13 +130,13 @@ async function natureOfApplicationTab(caseType, tabName) {
   }
 }
 
-function authorisationTab(caseType, tabName) {
+async function authorisationTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.click('div[id="mat-tab-label-0-5"]');
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-5"]');
     I.see(verifyTabText.authorisationTab.solicitorName);
     I.see(verifyTabText.authorisationTab.solicitorFirm);
     I.see(verifyTabText.authorisationTab.signedDate);
@@ -155,7 +155,7 @@ function authorisationTab(caseType, tabName) {
   }
 }
 /* eslint-disable */
-function caseDocumentsTab(caseType, tabName, eventName) {
+async function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
   I.waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
   if (!I.see(tabName)) {
@@ -165,7 +165,7 @@ function caseDocumentsTab(caseType, tabName, eventName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.click('div[id="mat-tab-label-0-6"]');
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-6"]');
     I.see(verifyTabText.caseDocumentsTab.draftDocumentName);
     I.see(verifyTabText.caseDocumentsTab.latestConsentOrderLabel);
     I.see(verifyTabText.caseDocumentsTab.pensionTypeName);
@@ -202,13 +202,14 @@ function caseDocumentsTab(caseType, tabName, eventName) {
   }
 }
 
-function paymentDetailsTab(caseType, tabName) {
+async function paymentDetailsTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.click('div[id="mat-tab-label-0-7"]');
+    await I.waitForNavigationToComplete(".mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple");
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
     I.see(verifyTabText.paymentDetailsTab.hwfNumber);
     I.see(verifyTabText.paymentDetailsTab.feeCode);
     I.see(verifyTabText.paymentDetailsTab.amount);
