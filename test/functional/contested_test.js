@@ -102,7 +102,7 @@ Scenario('Contested Case Approved and Send Order @nightly @pipeline @crossBrowse
   }
 });
 
-Scenario('Consented case in Contested @nightly @pipeline', async I => {
+Scenario('Consented case in Contested @now @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, `./test/data/ccd-contested-basic-data${fileEnv}.json`, 'FinancialRemedyContested', 'FR_solicitorCreate');
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
   const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', `./test/data/ccd-contested-basic-data${fileEnv}.json`);
