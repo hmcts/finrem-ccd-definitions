@@ -290,7 +290,7 @@ function judgeDetailsTab(caseType, tabName, eventName) {
   }
 }
 
-function adminNotesTab(caseType, tabName) {
+async function adminNotesTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
@@ -305,6 +305,7 @@ function adminNotesTab(caseType, tabName) {
   case 'contested':
     I.click('div[id="mat-tab-label-0-9"]');
     I.wait(testDelay);
+    await I.runAccessibilityTest();
     I.see(verifyContestedTabText.adminNotesTab.issueDate);
     break;
   case 'contestedPaper':
