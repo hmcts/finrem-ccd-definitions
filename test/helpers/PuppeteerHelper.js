@@ -24,6 +24,12 @@ class PuppeteerHelper extends Helper {
     }
     generateAccessibilityReport(getAccessibilityTestResult());
   }
+
+  async waitForNavigationToComplete(locator) {
+    const page = this.helpers[helperName].page;
+    await page.waitForSelector(locator, {visible: true});
+    await page.click(locator);
+  }
 }
 
 module.exports = PuppeteerHelper;
