@@ -12,17 +12,20 @@ const nightlyTest = process.env.NIGHTLY_TEST;
 const runningEnv = process.env.RUNNING_ENV || 'aat';
 const solRef = `AUTO-${createSolicitorReference()}`;
 const fileEnv = runningEnv === 'demo'? '-demo': '';
+const testDelay = parseInt(process.env.DELAY || '0');
 
 Feature(`create Consented case for enviroment ${runningEnv}`);
 
 Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, `./test/data/ccd-consented-basic-data${fileEnv}.json`, 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+  I.wait(testDelay);
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
   const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', `./test/data/ccd-consented-basic-data${fileEnv}.json`);
 
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait(testDelay);
     I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
     I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
     I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
@@ -31,6 +34,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
 
 Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, `./test/data/ccd-consented-basic-data${fileEnv}.json`, 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+  I.wait(testDelay);
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
   const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', `./test/data/ccd-consented-basic-data${fileEnv}.json`);
   const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_issueApplication', './test/data/ccd-consented-case-worker-issue-data.json');
@@ -39,6 +43,7 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait(testDelay);
     // eslint-disable-next-line max-len
     I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
     I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
@@ -48,6 +53,7 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
 
 Scenario('Consent Case approve and send order @nightly @pipeline @crossBrowser', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, `./test/data/ccd-consented-basic-data${fileEnv}.json`, 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+    I.wait(testDelay);
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', `./test/data/ccd-consented-basic-data${fileEnv}.json`);
     const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_issueApplication', './test/data/ccd-consented-case-worker-issue-data.json');
@@ -58,6 +64,7 @@ Scenario('Consent Case approve and send order @nightly @pipeline @crossBrowser',
     if (nightlyTest === 'true') {
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+      I.wait(testDelay);
       // eslint-disable-next-line max-len
       I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
       I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
