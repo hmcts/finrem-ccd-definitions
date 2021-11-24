@@ -14,7 +14,7 @@ Depending on if you want the generated Excel to be for the Consented or Conteste
 
 ### Generate Excel Configs for all environments (Local, Demo, ITHC, AAT & Prod)
 
-For Consented Journey: 
+For Consented Journey:
 ```
 yarn generate-excel-all-consented
 ```
