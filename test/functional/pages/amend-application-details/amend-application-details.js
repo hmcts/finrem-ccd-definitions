@@ -6,6 +6,7 @@ const solicitorData = require(`../../../data/applicant-solicitor-data${fileEnv}.
 
 function amendApplicationDetails() {
   const I = this;
+  I.wait(testDelay);
   I.selectOption('select[id="next-step"]', 'Amend Application Details');
   I.wait('2');
   I.click('Go');

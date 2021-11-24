@@ -55,7 +55,7 @@ Scenario('Consent Case approve and send order @nightly @pipeline @crossBrowser',
     const sendOrder = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_sendOrderForApproved', './test/data/ccd-caseworker-send-order.json');
 
   /* eslint-enable */
-    if (nightlyTest === 'true' && runningEnv !== 'demo') { //DEMO do not have the history tab forr this scenario
+    if (nightlyTest === 'true') {
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
