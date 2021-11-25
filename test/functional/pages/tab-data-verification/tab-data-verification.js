@@ -6,11 +6,10 @@ const verifyContestedTabText = require(`../../../data/verify-contested-tab-data$
 const verifyContestedPaperTabText = require(`../../../data/verify-contested-paper-case-tab-data${fileEnv}.json`);
 const testDelay = parseInt(process.env.DELAY || '0');
 
-function historyTab(caseType, tabName, eventName, endState) {
+async function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
   I.waitForText(tabName, '30');
   I.see(eventName);
-  I.wait(testDelay);
   I.see(endState);
 }
 
@@ -370,7 +369,7 @@ async function consentOrderProcessTab(caseType, tabName) {
   I.see(verifyContestedTabText.consentOrderProcessTab.pensionDocument);
 }
 
-function verifyConsentedTabData(caseType, eventName, stateName) {
+async function verifyConsentedTabData(caseType, eventName, stateName) {
   const I = this;
   I.historyTab(caseType, verifyTabText.historyTab.tabName, eventName, stateName);
   I.applicantTab(caseType, verifyTabText.applicantTab.tabName);
@@ -381,7 +380,7 @@ function verifyConsentedTabData(caseType, eventName, stateName) {
   I.caseDocumentsTab(caseType, verifyTabText.caseDocumentsTab.tabName, eventName);
  }
 
-function verifyContestedTabData(caseType, eventName, stateName) {
+async function verifyContestedTabData(caseType, eventName, stateName) {
   const I = this;
   I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
   I.applicantTab(caseType, verifyContestedTabText.applicantTab.tabName);

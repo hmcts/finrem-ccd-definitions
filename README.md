@@ -66,6 +66,18 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 4) `yarn test:nightly-functional` will create both API, UI screen tests and verifies data in tabs (runs on nightly pipeline on AAT).
 5) To create cases on demo, point CCD_DATA_API_URL to ccd demo API url and RUNNING_ENV=demo, run the scenario tests.
 
+### Run E2E Tests for Demo:
+You could run end to end on Demo both on nightly jenkins pipeline or from local.
+1. From Nightly jenkins, you could `Build with Parameters`.
+RUNNING_ENV = demo or aat
+CCD_WEB_URL = https://manage-case.demo.platform.hmcts.net/ or https://manage-case.aat.platform.hmcts.net/
+DELAY = 0 (default to 0, but when the enviroment either AAT/demo is slow, you might want to increase this)
+ENABLED_CROSSBROWSER = default to true (but you might want to set it to false for demo build)
+
+2. locally
+You could run `test:functional-demo` to run all the test for demo
+`test:functional-consented-demo` to run only consented tests
+`test:functional-contested-demo` to run only contested tests
 ## ccd-definition-processor
 
 This repo makes use of https://github.com/hmcts/ccd-definition-processor to generate the excel file. You may have to update this repo if, for example, you need to add a column to the definitions spreadsheet.

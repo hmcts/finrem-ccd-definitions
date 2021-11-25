@@ -72,7 +72,6 @@ function amendApplicationDetails() {
   I.click('Continue');
   I.wait(testDelay);
   I.waitForPage('#createCasePreConfirmationInfoText h1', 'Saving your application');
-
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.wait(testDelay);
