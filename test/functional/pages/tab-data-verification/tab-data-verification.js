@@ -112,6 +112,7 @@ async function natureOfApplicationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
+    I.wait(testDelay);
     I.see(verifyTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
@@ -141,6 +142,7 @@ async function authorisationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-5"]');
+    I.wait(testDelay);
     I.see(verifyTabText.authorisationTab.solicitorName);
     I.see(verifyTabText.authorisationTab.solicitorFirm);
     I.see(verifyTabText.authorisationTab.signedDate);
@@ -382,15 +384,15 @@ async function verifyConsentedTabData(caseType, eventName, stateName) {
 
 async function verifyContestedTabData(caseType, eventName, stateName) {
   const I = this;
-  I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
-  I.applicantTab(caseType, verifyContestedTabText.applicantTab.tabName);
-  I.respondentTab(caseType, verifyContestedTabText.respondentTab.tabName);
-  I.divorceTab(caseType, verifyContestedTabText.divorceTab.tabName);
-  I.natureOfApplicationTab(caseType, verifyContestedTabText.natureOfApplicationTab.tabName);
-  I.authorisationTab(caseType, verifyContestedTabText.authorisationTab.tabName);
-  I.caseDocumentsTab(caseType, verifyContestedTabText.caseDocumentsTab.tabName, eventName);
-  I.paymentDetailsTab(caseType, verifyContestedTabText.paymentDetailsTab.tabName);
-  I.gateKeepingAllocationsTab(caseType, verifyContestedTabText.gateKeepingAllocationsTab.tabName, eventName);
+  await I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+  await I.applicantTab(caseType, verifyContestedTabText.applicantTab.tabName);
+  await I.respondentTab(caseType, verifyContestedTabText.respondentTab.tabName);
+  await I.divorceTab(caseType, verifyContestedTabText.divorceTab.tabName);
+  await I.natureOfApplicationTab(caseType, verifyContestedTabText.natureOfApplicationTab.tabName);
+  await I.authorisationTab(caseType, verifyContestedTabText.authorisationTab.tabName);
+  await I.caseDocumentsTab(caseType, verifyContestedTabText.caseDocumentsTab.tabName, eventName);
+  await I.paymentDetailsTab(caseType, verifyContestedTabText.paymentDetailsTab.tabName);
+  await I.gateKeepingAllocationsTab(caseType, verifyContestedTabText.gateKeepingAllocationsTab.tabName, eventName);
   }
 
 function verifyContestedPaperTabData(caseType, eventName, stateName) {
