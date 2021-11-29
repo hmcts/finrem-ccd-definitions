@@ -29,6 +29,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline @consented', a
     await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
     await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
     await I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
+
   }
 });
 

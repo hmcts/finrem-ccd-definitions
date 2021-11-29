@@ -26,11 +26,11 @@ Scenario('Contested Case Creation For Caseworker @nightly @pipeline @contested',
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', `./test/data/ccd-contested-basic-data${fileEnv}.json`);
     /* eslint-enable */
     if (nightlyTest === 'true') {
-      I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-      I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-      I.wait(testDelay);
+      await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+      await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+      await I.wait(testDelay);
       // eslint-disable-next-line max-len
-      I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
+      await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
     }
 });
 
@@ -43,12 +43,12 @@ Scenario('Contested Case Creation For Judge @nightly @pipeline @contested', asyn
   const assignToJudge = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_allocateToJudge', './test/data/ccd-contested-case-worker-issue-data.json');
   /* eslint-enable */
   if (nightlyTest === 'true') {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    I.wait(testDelay);
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeEvent, verifyTabText.historyTab.assignToJudgeEndState);
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    await I.wait(testDelay);
+    await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeEvent, verifyTabText.historyTab.assignToJudgeEndState);
+    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 });
 
@@ -66,13 +66,13 @@ Scenario('Contested Case Creation For Ready For Hearing @nightly @pipeline @cont
 
   /* eslint-enable */
   if (nightlyTest === 'true') {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    I.wait(testDelay);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.wait(testDelay);
     // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.submitUploadCaseFilesEvent, verifyTabText.historyTab.submitUploadCaseFilesEndState);
-    I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.submitUploadCaseFilesEvent, verifyTabText.historyTab.submitUploadCaseFilesEndState);
+    await I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
+    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 });
 
@@ -96,15 +96,15 @@ Scenario('Contested Case Approved and Send Order @nightly @pipeline @crossBrowse
 
   /* eslint-enable */
   if (nightlyTest === 'true') {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    I.wait(testDelay);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.wait(testDelay);
     // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.sendOrderState);
-    I.wait(2);
-    I.click({css: '.mat-tab-header-pagination-after'});
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-    I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
+    await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.sendOrderState);
+    await I.wait(testDelay);
+    await I.click({css: '.mat-tab-header-pagination-after'});
+    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    await I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
   }
 });
 
@@ -116,13 +116,13 @@ Scenario('Consented case in Contested @nightly @pipeline @contested', async I =>
   const contestToConsent = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_consentOrder', `./test/data/ccd-contested-to-consented${fileEnv}.json`);
   /* eslint-enable */
   if (nightlyTest === 'true') {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    I.wait(testDelay);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.wait(testDelay);
     // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.consentOrderEvent, verifyTabText.historyTab.consentOrderEndState);
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-    I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
+    await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.consentOrderEvent, verifyTabText.historyTab.consentOrderEndState);
+    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
   }
 });
 
@@ -139,13 +139,13 @@ Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline @cont
 
   /* eslint-enable */
   if (nightlyTest === 'true') {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    I.wait(testDelay);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.wait(testDelay);
     // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEndState);
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-    I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
+    await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEndState);
+    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
   }
 });
 
@@ -154,11 +154,11 @@ Scenario('Contested Paper Case Creation @nightly @pipeline @contested', async I 
   const manualPayment = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_manualPayment', `./test/data/ccd-contested-paper-case-basic-data${fileEnv}.json`);
   /* eslint-enable */
   if (nightlyTest === 'true') {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    I.wait(testDelay);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.wait(testDelay);
     // eslint-disable-next-line max-len
-    I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
+    await I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
   }
 });
 
@@ -172,12 +172,12 @@ Scenario('Contested case with General Application @nightly @pipeline @contested'
   const createGeneralApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_createGeneralApplication', `./test/data/ccd-contested-general-applicaition${fileEnv}.json`);
   /* eslint-enable */
   if (nightlyTest === 'true') {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    I.wait(testDelay);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.wait(testDelay);
     // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.createGeneralApplicationEvent, verifyTabText.historyTab.createGeneralApplicationState);
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.createGeneralApplicationEvent, verifyTabText.historyTab.createGeneralApplicationState);
+    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 });
 
@@ -221,7 +221,7 @@ Scenario('Contested share case @nightly @pipeline @contested', async I => {
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
   const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', `./test/data/ccd-contested-basic-data${fileEnv}.json`,solRef);
   /* eslint-enable */
-    I.signInIdam(solicitorUserName, solicitorPassword);
-    I.assignContestedShareCase(caseId, solRef);
+  await I.signInIdam(solicitorUserName, solicitorPassword);
+  await  I.assignContestedShareCase(caseId, solRef);
   }
 });

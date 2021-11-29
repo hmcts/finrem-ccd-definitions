@@ -395,16 +395,16 @@ async function verifyContestedTabData(caseType, eventName, stateName) {
   await I.gateKeepingAllocationsTab(caseType, verifyContestedTabText.gateKeepingAllocationsTab.tabName, eventName);
   }
 
-function verifyContestedPaperTabData(caseType, eventName, stateName) {
+async function verifyContestedPaperTabData(caseType, eventName, stateName) {
   const I = this;
-  I.historyTab(caseType, verifyContestedPaperTabText.historyTab.tabName, eventName, stateName);
-  I.applicantTab(caseType, verifyContestedPaperTabText.applicantTab.tabName);
-  I.respondentTab(caseType, verifyContestedPaperTabText.respondentTab.tabName);
-  I.divorceTab(caseType, verifyContestedPaperTabText.divorceTab.tabName);
-  I.natureOfApplicationTab(caseType, verifyContestedPaperTabText.natureOfApplicationTab.tabName);
-  I.caseDocumentsTab(caseType, verifyContestedPaperTabText.caseDocumentsTab.tabName, eventName);
-  I.gateKeepingAllocationsTab(caseType, verifyContestedPaperTabText.gateKeepingAllocationsTab.tabName, eventName);
-  I.schedulingAndListingTab(caseType, verifyContestedPaperTabText.schedulingAndListingTab.tabName);
+  await I.historyTab(caseType, verifyContestedPaperTabText.historyTab.tabName, eventName, stateName);
+  await I.applicantTab(caseType, verifyContestedPaperTabText.applicantTab.tabName);
+  await I.respondentTab(caseType, verifyContestedPaperTabText.respondentTab.tabName);
+  await I.divorceTab(caseType, verifyContestedPaperTabText.divorceTab.tabName);
+  await I.natureOfApplicationTab(caseType, verifyContestedPaperTabText.natureOfApplicationTab.tabName);
+  await I.caseDocumentsTab(caseType, verifyContestedPaperTabText.caseDocumentsTab.tabName, eventName);
+  await I.gateKeepingAllocationsTab(caseType, verifyContestedPaperTabText.gateKeepingAllocationsTab.tabName, eventName);
+  await I.schedulingAndListingTab(caseType, verifyContestedPaperTabText.schedulingAndListingTab.tabName);
 }
 
 module.exports = {
