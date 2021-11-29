@@ -371,13 +371,13 @@ async function consentOrderProcessTab(caseType, tabName) {
 
 async function verifyConsentedTabData(caseType, eventName, stateName) {
   const I = this;
-  I.historyTab(caseType, verifyTabText.historyTab.tabName, eventName, stateName);
-  I.applicantTab(caseType, verifyTabText.applicantTab.tabName);
-  I.respondentTab(caseType, verifyTabText.respondentTab.tabName);
-  I.divorceTab(caseType, verifyTabText.divorceTab.tabName);
-  I.natureOfApplicationTab(caseType, verifyTabText.natureOfApplicationTab.tabName);
-  I.authorisationTab(caseType, verifyTabText.authorisationTab.tabName);
-  I.caseDocumentsTab(caseType, verifyTabText.caseDocumentsTab.tabName, eventName);
+  await I.historyTab(caseType, verifyTabText.historyTab.tabName, eventName, stateName);
+  await I.applicantTab(caseType, verifyTabText.applicantTab.tabName);
+  await I.respondentTab(caseType, verifyTabText.respondentTab.tabName);
+  await I.divorceTab(caseType, verifyTabText.divorceTab.tabName);
+  await I.natureOfApplicationTab(caseType, verifyTabText.natureOfApplicationTab.tabName);
+  await I.authorisationTab(caseType, verifyTabText.authorisationTab.tabName);
+  await I.caseDocumentsTab(caseType, verifyTabText.caseDocumentsTab.tabName, eventName);
  }
 
 async function verifyContestedTabData(caseType, eventName, stateName) {
