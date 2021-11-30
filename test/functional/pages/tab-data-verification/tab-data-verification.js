@@ -112,8 +112,6 @@ async function natureOfApplicationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
-    I.wait(testDelay);
-    I.wait(testDelay);
     I.see(verifyTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
