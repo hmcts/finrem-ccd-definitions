@@ -113,6 +113,7 @@ async function natureOfApplicationTab(caseType, tabName) {
   case 'consented':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
     I.wait(testDelay);
+    I.wait(testDelay);
     I.see(verifyTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
@@ -120,6 +121,7 @@ async function natureOfApplicationTab(caseType, tabName) {
     break;
   case 'contested':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
+    I.wait(testDelay);
     I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor);
     I.see(verifyContestedTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyContestedTabText.natureOfApplicationTab.mortgageDetails);
@@ -149,6 +151,7 @@ async function authorisationTab(caseType, tabName) {
     break;
   case 'contested':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-5"]');
+    I.wait(testDelay);
     I.see(verifyContestedTabText.authorisationTab.solicitorName);
     I.see(verifyContestedTabText.authorisationTab.solicitorFirm);
     I.see(verifyContestedTabText.authorisationTab.signedDate);
@@ -223,6 +226,7 @@ async function paymentDetailsTab(caseType, tabName) {
     break;
   case 'contested':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
+    I.wait(testDelay);
     I.see(verifyContestedTabText.paymentDetailsTab.hwfNumber);
     I.see(verifyContestedTabText.paymentDetailsTab.feeCode);
     I.see(verifyContestedTabText.paymentDetailsTab.amount);
@@ -280,12 +284,14 @@ async function adminNotesTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-8"]');
+    I.wait(testDelay);
     I.see(verifyTabText.adminNotesTab.assignToJudgeReason);
     I.see(verifyTabText.adminNotesTab.issueDate);
     I.see(verifyTabText.adminNotesTab.assignToJudgeText);
     break;
   case 'contested':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-9"]');
+    I.wait(testDelay);
     I.see(verifyContestedTabText.adminNotesTab.issueDate);
     break;
   case 'contestedPaper':
@@ -328,6 +334,7 @@ async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
   switch (caseType) {
   case 'contested':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-8"]');
+    I.wait(testDelay);
     I.see(verifyContestedTabText.gateKeepingAllocationsTab.localCourt);
     if (eventName === verifyContestedTabText.historyTab.issueApplicationEvent) {
       I.see(verifyContestedTabText.gateKeepingAllocationsTab.fastTrackProcedure);
