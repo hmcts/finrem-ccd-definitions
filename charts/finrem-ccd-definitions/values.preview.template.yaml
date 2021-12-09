@@ -86,6 +86,13 @@ ccd:
       keyVaults: []
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
+  am-role-assignment-service:
+    java:
+      keyVaults:
+        am:
+          secrets:
+            - role-assignment-service-LD-SDK-KEY
+
   ccd-case-print-service:
     nodejs:
       environment:
