@@ -53,7 +53,7 @@ ccd:
   global:
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
     idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
-    dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
+    dmStoreUrl: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
     ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
     ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
     ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
