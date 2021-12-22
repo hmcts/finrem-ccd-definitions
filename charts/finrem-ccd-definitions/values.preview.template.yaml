@@ -126,7 +126,7 @@ ccd:
       environment:
         CCD_ACTIVITY_URL: null
         DM_URL: https://gateway-${SERVICE_FQDN}/documents
-        DM_URL_REMOTE: https?://(gateway-${SERVICE_FQDN}:443|dm-store-aat.service.core-compute-aat.internal)/documents
+        DM_URL_REMOTE: https?://(gateway-${SERVICE_FQDN}:443|ccd-case-document-am-api-aat.service.core-compute-aat.internal)/documents
         NODE_TLS_REJECT_UNAUTHORIZED: 0
         APPINSIGHTS_ENABLED: false
       ingressHost: case-management-web-${SERVICE_FQDN}
@@ -138,7 +138,7 @@ ccd:
       environment:
         IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
         IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
-        PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
+        PROXY_DOCUMENT_MANAGEMENT: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
         PROXY_PRINT_SERVICE: http://ccd-case-print-service-${SERVICE_FQDN}
         ADDRESS_LOOKUP_TOKEN: ${ADDRESS_LOOKUP_TOKEN}
       ingressHost: gateway-${SERVICE_FQDN}
