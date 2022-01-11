@@ -1297,9 +1297,26 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
+    "CaseFieldID": "tabComplexityList",
+    "TabFieldDisplayOrder": 15
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "tabStandardList",
+    "TabFieldDisplayOrder": 16
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
     "CaseFieldID": "tabUnsureAboutComplexityList",
-    "TabFieldDisplayOrder": 17,
-    "FieldShowCondition": "addToComplexityListOfCourts=\"trueDontKnow\""
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1308,8 +1325,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabEstimatedAssestsCheckList",
-    "TabFieldDisplayOrder": 18,
-    "FieldShowCondition": "addToComplexityListOfCourts=\"true*\""
+    "TabFieldDisplayOrder": 18
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1318,8 +1334,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabNetValueOfHome",
-    "TabFieldDisplayOrder": 19,
-    "FieldShowCondition": "addToComplexityListOfCourts=\"true*\""
+    "TabFieldDisplayOrder": 19
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1328,8 +1343,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabPotentialAllegationChecklist",
-    "TabFieldDisplayOrder": 20,
-    "FieldShowCondition": "addToComplexityListOfCourts=\"true*\""
+    "TabFieldDisplayOrder": 20
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1338,8 +1352,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDetailPotentialAllegation",
-    "TabFieldDisplayOrder": 21,
-    "FieldShowCondition": "addToComplexityListOfCourts=\"true*\""
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1348,8 +1361,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabOtherReasonForComplexity",
-    "TabFieldDisplayOrder": 22,
-    "FieldShowCondition": "otherReasonForComplexity=\"Yes\""
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
