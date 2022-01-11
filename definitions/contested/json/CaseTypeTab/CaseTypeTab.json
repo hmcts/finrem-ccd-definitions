@@ -1297,26 +1297,6 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "tabComplexityList",
-    "TabFieldDisplayOrder": 15,
-    "FieldShowCondition": "addToComplexityListOfCourts=\"trueYes\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "gatekeepingTab",
-    "TabLabel": "Gatekeeping and allocation ",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "tabStandardList",
-    "TabFieldDisplayOrder": 16,
-    "FieldShowCondition": "addToComplexityListOfCourts=\"falseNo\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "gatekeepingTab",
-    "TabLabel": "Gatekeeping and allocation ",
-    "TabDisplayOrder": 11,
     "CaseFieldID": "tabUnsureAboutComplexityList",
     "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "addToComplexityListOfCourts=\"trueDontKnow\""
