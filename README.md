@@ -1,5 +1,6 @@
 # finrem-ccd-definitions
 Financial Remedy configuration definitions for CCD.
+# adding cos pr to ccd definitions
 
 This allows for the FR CCD Config to be easily edited and stored in Github as JSON rather than version controlled in Confluence as Xlsx files.
 
