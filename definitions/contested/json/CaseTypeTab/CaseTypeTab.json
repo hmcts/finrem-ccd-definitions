@@ -1298,7 +1298,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabComplexityList",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "FieldShowCondition": "addToComplexityListOfCourts=\"trueYes\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1307,7 +1308,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabStandardList",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "FieldShowCondition": "addToComplexityListOfCourts=\"falseNo\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1316,7 +1318,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabUnsureAboutComplexityList",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 17,
+    "FieldShowCondition": "addToComplexityListOfCourts=\"trueDontKnow\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1361,7 +1364,8 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabOtherReasonForComplexity",
-    "TabFieldDisplayOrder": 22
+    "TabFieldDisplayOrder": 22,
+    "FieldShowCondition": "otherReasonForComplexity=\"Yes\""
   },
   {
     "LiveFrom": "01/01/2017",
