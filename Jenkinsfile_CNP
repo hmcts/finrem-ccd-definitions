@@ -50,6 +50,9 @@ def secrets = [
                 secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
                 secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
                 secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD')
+        ],
+        'am-${env}'      : [
+                secret('role-assignment-service-LD-SDK-KEY', 'FIN_LD_SDK_KEY'),
         ]
 ]
 
