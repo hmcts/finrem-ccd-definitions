@@ -44,7 +44,7 @@ module.exports = () => {
       this.fillField('username', adminUserName);
       this.fillField('password', adminPassword);
       this.click('Sign in');
-      this.see('Welcome to CCD Admin Web');
+      //this.see('Welcome to CCD Admin Web');
     },
     createRole(role) {
       this.click('Manage User Roles');
