@@ -235,7 +235,7 @@
     "Name": "Create General Order",
     "Description": "Create General Order",
     "DisplayOrder": 19,
-    "PreConditionState(s)": "caseWorkerReview;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;judgeDraftOrder;reviewOrder;draftOrderNotApproved;solicitorDraftOrder;orderDrawn;scheduleRaiseDirectionsOrder;awaitingJudiciaryResponse;applicationSubmitted;applicationIssued",
+    "PreConditionState(s)": "caseWorkerReview;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;judgeDraftOrder;reviewOrder;draftOrderNotApproved;solicitorDraftOrder;orderDrawn;scheduleRaiseDirectionsOrder;awaitingJudiciaryResponse;applicationIssued",
     "PostConditionState": "orderDrawn",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-order-start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-order",
@@ -956,6 +956,18 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "10/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_revertFromSchedulingToSubmitted",
+    "Name": "Revert Scheduling to Submitted",
+    "Description": "Revert from Scheduling to Submitted",
+    "DisplayOrder": 131,
+    "PreConditionState(s)": "schedulingAndHearing",
+    "PostConditionState": "applicationSubmitted",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   },
   {
     "LiveFrom": "10/11/2021",
