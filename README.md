@@ -1,6 +1,6 @@
 # finrem-ccd-definitions
 # new build to check if finrem is fixed
-# new build 
+# new build for re -run
 
 Financial Remedy configuration definitions for CCD.
 
