@@ -803,7 +803,7 @@
     "Name": "Upload Case Files",
     "Description": "Upload Case Files",
     "DisplayOrder": 14,
-    "PreConditionState(s)": "prepareForHearing;consentedOrderAssignJudge;generalApplicationAwaitingJudiciaryResponse",
+    "PreConditionState(s)": "prepareForHearing;consentedOrderAssignJudge;generalApplicationAwaitingJudiciaryResponse;applicationIssued;caseFileSubmitted",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/upload-contested-case-documents",
