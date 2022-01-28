@@ -60,7 +60,7 @@
     "Name": "Amended Consent Order",
     "Description": "Amended Consent Order",
     "DisplayOrder": 105,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
+    "PreConditionState(s)": "awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
     "PostConditionState": "*",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/update-latest-consent-order",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
