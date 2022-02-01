@@ -676,7 +676,7 @@
     "Name": "Consent Order",
     "Description": "Consent Order",
     "DisplayOrder": 115,
-    "PreConditionState(s)": "applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;caseFileSubmitted;close;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;responseReceived;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome",
+    "PreConditionState(s)": "applicationIssued",
     "PostConditionState": "consentedOrderSubmitted",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/generate-mini-form-a",
     "SecurityClassification": "Public",
