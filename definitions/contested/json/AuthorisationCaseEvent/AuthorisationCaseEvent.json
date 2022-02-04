@@ -639,6 +639,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_revertFromSchedulingToSubmitted",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
