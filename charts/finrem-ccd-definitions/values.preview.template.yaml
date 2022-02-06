@@ -32,7 +32,7 @@ xui-webapp:
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
       JURISDICTIONS: DIVORCE
-      SERVICES_DOCUMENTS_API_V2: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal/v2
+      SERVICES_DOCUMENTS_API_V2: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
 
 ccd:
   ccd:
