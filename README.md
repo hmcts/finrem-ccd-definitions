@@ -9,6 +9,9 @@ This allows for the FR CCD Config to be easily edited and stored in Github as JS
 To install the dependencies for both this project and the submodule (ccd-definition-processor), run:
 `yarn install && yarn reset-ccd-submodule`
 
+If you are using a Mac with an M1 chip and the above doesn't work, run:
+`npm install && npm run reset-ccd-submodule`
+
 ## Convert JSON to Excel
 
 Depending on if you want the generated Excel to be for the Consented or Contested Journeys - add the appropriate journey to the end of the command.
