@@ -50,6 +50,7 @@
     "DisplayOrder": 104,
     "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
     "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/default-values",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -115,6 +116,7 @@
     "DisplayOrder": 109,
     "PreConditionState(s)": "caseAdded;newPaperCase",
     "PostConditionState": "caseAdded",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/default-values",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/update-case",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
