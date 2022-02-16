@@ -1036,6 +1036,15 @@
   },
   {
     "LiveFrom": "01/01/2017",
+    "ID": "FR_noticeOfChange",
+    "ListElementCode": "representedParty",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_representedParty",
+    "ElementLabel": "Select Party:",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
     "ID": "FR_uploadCaseDocument",
     "ListElementCode": "caseDocumentOther",
     "FieldType": "Text",
