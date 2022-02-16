@@ -980,5 +980,18 @@
     "PostConditionState": "prepareForHearing",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "1/1/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_noticeOfChange",
+    "Name": "Notice of Change",
+    "Description": "Initiate a Notice of Change",
+    "DisplayOrder": 133,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "noticeOfChange",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
   }
 ]
