@@ -1036,15 +1036,6 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_noticeOfChange",
-    "ListElementCode": "representedParty",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_representedParty",
-    "ElementLabel": "Select Party:",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
     "ID": "FR_uploadCaseDocument",
     "ListElementCode": "caseDocumentOther",
     "FieldType": "Text",
@@ -1074,6 +1065,23 @@
     "ListElementCode": "hearingDetails",
     "FieldType": "TextArea",
     "ElementLabel": "Provide the date of hearing and a description of the document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_noticeOfChange",
+    "ListElementCode": "representedParty",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_representedParty",
+    "ElementLabel": "Select Party:",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_noticeOfChange",
+    "ListElementCode": "isPartyRepresented",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Are they represented by a solicitor?",
     "SecurityClassification": "Public"
   }
 ]
