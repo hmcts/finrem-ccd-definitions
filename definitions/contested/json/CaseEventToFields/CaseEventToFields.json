@@ -8220,12 +8220,19 @@
     "LiveFrom": "01/01/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_nocRequest",
+    "CaseFieldID": ""
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_nocRequest",
     "CaseFieldID": "changeOrganisationRequestField",
-    "PageFieldDisplayOrder": "1",
+    "PageFieldDisplayOrder": 1,
     "DisplayContext": "COMPLEX",
     "PageId": "1",
     "PageLabel": "Change Organisation Request",
-    "PageDisplayOrder": "1",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N"
   }
 ]

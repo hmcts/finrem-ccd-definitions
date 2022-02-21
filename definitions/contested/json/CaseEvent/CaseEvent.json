@@ -1005,7 +1005,7 @@
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/noc-about-to-start",
-    "CallBackURLSubmittedEvent": "",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/noc-submitted",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"

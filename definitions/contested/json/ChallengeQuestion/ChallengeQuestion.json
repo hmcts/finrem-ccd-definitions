@@ -16,7 +16,7 @@
     "DisplayOrder": "2",
     "QuestionText": "Online Case Reference",
     "AnswerFieldType": "Text",
-    "Answer": "",
+    "Answer": "${noticeOfChangeAnswers.onlineCaseReference}:[APPSOLICITOR], ${noticeOfChangeAnswers.onlineCaseReference}:[RESPSOLICITOR]",
     "QuestionId": "onlineCaseReference"
   },
   {
@@ -26,7 +26,7 @@
     "DisplayOrder": "3",
     "QuestionText": "Divorce / Separation Case Reference",
     "AnswerFieldType": "Text",
-    "Answer": "",
+    "Answer": "${noticeOfChangeAnswers.familyManReference}:[APPSOLICITOR], ${noticeOfChangeAnswers.familyManReference}:[RESPSOLICITOR]",
     "QuestionId": "familyManReference"
   },
   {
@@ -36,7 +36,7 @@
     "DisplayOrder": "4",
     "QuestionText": "Your client's first name",
     "AnswerFieldType": "Text",
-    "Answer": "",
+    "Answer": "${noticeOfChangeAnswers.clientFirstName}:[APPSOLICITOR], ${noticeOfChangeAnswers.clientFirstName}:[RESPSOLICITOR]",
     "QuestionId": "clientFirstName"
   },
   {
@@ -46,7 +46,7 @@
     "DisplayOrder": "5",
     "QuestionText": "Your client's last name",
     "AnswerFieldType": "Text",
-    "Answer": "",
+    "Answer": "${noticeOfChangeAnswers.clientLastName}:[APPSOLICITOR], ${noticeOfChangeAnswers.clientLastName}:[RESPSOLICITOR]",
     "QuestionId": "clientLastName"
   }
 ]
