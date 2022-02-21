@@ -990,7 +990,7 @@
     "DisplayOrder": 133,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_AAC_URL}/noc/check-noc-approval",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/check-noc-approval",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"

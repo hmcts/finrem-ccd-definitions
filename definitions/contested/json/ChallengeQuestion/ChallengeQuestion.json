@@ -4,28 +4,49 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "NoCChallenge",
     "DisplayOrder": "1",
-    "QuestionText": "Applicant's name",
-    "AnswerFieldType": "Text",
+    "QuestionText": "Notice of Change",
+    "AnswerFieldType": "",
     "Answer": "",
-    "QuestionId": "applicantName"
+    "QuestionId": "request"
   },
   {
     "LiveFrom": "01/01/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "NoCChallenge",
     "DisplayOrder": "2",
-    "QuestionText": "Your client's first name",
+    "QuestionText": "Online Case Reference",
     "AnswerFieldType": "Text",
     "Answer": "",
-    "QuestionId": "respondentFirstName"
+    "QuestionId": "onlineCaseReference"
   },
   {
     "LiveFrom": "01/01/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "NoCChallenge",
     "DisplayOrder": "3",
-    "QuestionText": "Your client's last name",
+    "QuestionText": "Divorce / Separation Case Reference",
+    "AnswerFieldType": "Text",
     "Answer": "",
-    "QuestionId": "respondentLastName"
+    "QuestionId": "familyManReference"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "NoCChallenge",
+    "DisplayOrder": "4",
+    "QuestionText": "Your client's first name",
+    "AnswerFieldType": "Text",
+    "Answer": "",
+    "QuestionId": "clientFirstName"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "NoCChallenge",
+    "DisplayOrder": "5",
+    "QuestionText": "Your client's last name",
+    "AnswerFieldType": "Text",
+    "Answer": "",
+    "QuestionId": "clientLastName"
   }
 ]
