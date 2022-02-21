@@ -990,7 +990,7 @@
     "DisplayOrder": 133,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/check-noc-approval",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_AAC_URL}/noc/check-noc-approval", //need to get manage-case url
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
@@ -1017,6 +1017,7 @@
     "DisplayOrder": 135,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_AAC_URL}/noc/apply-decision",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "N"

@@ -8215,5 +8215,17 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "nocRequest",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "PageFieldDisplayOrder": "1",
+    "DisplayContext": "COMPLEX",
+    "PageId": "SingleFormPageWithComplex",
+    "PageLabel": "Change Organisation Request",
+    "PageDisplayOrder": "1",
+    "ShowSummaryChangeOption": "N"
   }
 ]
