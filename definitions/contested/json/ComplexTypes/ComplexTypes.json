@@ -1066,5 +1066,37 @@
     "FieldType": "TextArea",
     "ElementLabel": "Provide the date of hearing and a description of the document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "ID": "NoticeOfChangeAnswers",
+    "ListElementCode": "onlineCaseReference",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "ID": "NoticeOfChangeAnswers",
+    "ListElementCode": "familyManReference",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "ID": "NoticeOfChangeAnswers",
+    "ListElementCode": "clientFirstName",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "ID": "NoticeOfChangeAnswers",
+    "ListElementCode": "clientLastName",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
   }
 ]
