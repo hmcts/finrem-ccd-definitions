@@ -1004,22 +1004,9 @@
     "DisplayOrder": 134,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_AAC_URL}/noc/apply-decision",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2021",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_updateRepresentation",
-    "Name": "Update representation",
-    "Description": "Update representation via NoC",
-    "DisplayOrder": 135,
-    "PreConditionState(s)": "*",
-    "PostConditionState": "*",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_AAC_URL}/noc/apply-decision",
-    "SecurityClassification": "Public",
-    "ShowSummary": "N",
-    "ShowEventNotes": "N"
   }
 ]
