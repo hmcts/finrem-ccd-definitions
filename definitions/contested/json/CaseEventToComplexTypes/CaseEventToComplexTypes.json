@@ -485,64 +485,6 @@
   },
   {
     "LiveFrom": "01/01/2021",
-    "ID": "ApplicantOrganisationPolicy",
-    "CaseEventID": "FR_nocRequest",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationID",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2021",
-    "ID": "ApplicantOrganisationPolicy",
-    "CaseEventID": "FR_nocRequest",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "OrgPolicyReference",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "ApplicantOrganisationPolicy",
-    "CaseEventID": "FR_nocRequest",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "OrgPolicyCaseAssignedRole",
-    "DefaultValue": "[APPSOLICITOR]",
-    "EventElementLabel": "Applicant Organisation Policy",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2021",
-    "ID": "RespondentOrganisationPolicy",
-    "CaseEventID": "FR_nocRequest",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationID",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2021",
-    "ID": "RespondentOrganisationPolicy",
-    "CaseEventID": "FR_nocRequest",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "ListElementCode": "OrgPolicyReference",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "RespondentOrganisationPolicy",
-    "CaseEventID": "FR_nocRequest",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "ListElementCode": "OrgPolicyCaseAssignedRole",
-    "DefaultValue": "[RESPSOLICITOR]",
-    "EventElementLabel": "Respondent Organisation Policy",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2021",
     "ID": "NoticeOfChangeAnswers",
     "CaseEventID": "FR_nocRequest",
     "CaseFieldID": "NoticeOfChangeAnswers",
