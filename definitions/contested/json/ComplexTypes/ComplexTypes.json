@@ -1078,7 +1078,7 @@
   {
     "LiveFrom": "01/01/2021",
     "ID": "NoticeOfChangeAnswers",
-    "ListElementCode": "familyManReference",
+    "ListElementCode": "D8caseReference",
     "FieldType": "Text",
     "ElementLabel": " ",
     "SecurityClassification": "Public"
@@ -1086,7 +1086,7 @@
   {
     "LiveFrom": "01/01/2021",
     "ID": "NoticeOfChangeAnswers",
-    "ListElementCode": "clientFirstName",
+    "ListElementCode": "applicantFMName",
     "FieldType": "Text",
     "ElementLabel": " ",
     "SecurityClassification": "Public"
@@ -1094,7 +1094,23 @@
   {
     "LiveFrom": "01/01/2021",
     "ID": "NoticeOfChangeAnswers",
-    "ListElementCode": "clientLastName",
+    "ListElementCode": "appRespondentFMName",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "ID": "NoticeOfChangeAnswers",
+    "ListElementCode": "applicantLName",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "ID": "NoticeOfChangeAnswers",
+    "ListElementCode": "appRespondentLName",
     "FieldType": "Text",
     "ElementLabel": " ",
     "SecurityClassification": "Public"

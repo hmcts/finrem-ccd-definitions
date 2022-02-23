@@ -26,7 +26,7 @@
     "DisplayOrder": "3",
     "QuestionText": "Divorce / Separation Case Reference",
     "AnswerFieldType": "Text",
-    "Answer": "${noticeOfChangeAnswers.familyManReference}:[APPSOLICITOR], ${noticeOfChangeAnswers.familyManReference}:[RESPSOLICITOR]",
+    "Answer": "${noticeOfChangeAnswers.D8caseReference}:[APPSOLICITOR], ${noticeOfChangeAnswers.D8caseReference}:[RESPSOLICITOR]",
     "QuestionId": "familyManReference"
   },
   {
@@ -36,7 +36,7 @@
     "DisplayOrder": "4",
     "QuestionText": "Your client's first name",
     "AnswerFieldType": "Text",
-    "Answer": "${noticeOfChangeAnswers.clientFirstName}:[APPSOLICITOR], ${noticeOfChangeAnswers.clientFirstName}:[RESPSOLICITOR]",
+    "Answer": "${noticeOfChangeAnswers.applicantFMName}:[APPSOLICITOR], ${noticeOfChangeAnswers.appRespondentFMName}:[RESPSOLICITOR]",
     "QuestionId": "clientFirstName"
   },
   {
@@ -46,7 +46,7 @@
     "DisplayOrder": "5",
     "QuestionText": "Your client's last name",
     "AnswerFieldType": "Text",
-    "Answer": "${noticeOfChangeAnswers.clientLastName}:[APPSOLICITOR], ${noticeOfChangeAnswers.clientLastName}:[RESPSOLICITOR]",
+    "Answer": "${noticeOfChangeAnswers.applicantLName}:[APPSOLICITOR], ${noticeOfChangeAnswers.appRespondentLName}:[RESPSOLICITOR]",
     "QuestionId": "clientLastName"
   }
 ]
