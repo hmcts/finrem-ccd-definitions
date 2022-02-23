@@ -8465,7 +8465,14 @@
   {
     "LiveFrom": "17/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "noticeOfChangeAnswers",
+    "CaseFieldID": "noticeOfChangeAnswersAppSol",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "noticeOfChangeAnswersRespSol",
     "UserRole": "caseworker-caa",
     "CRUD": "CRU"
   }

@@ -1069,7 +1069,7 @@
   },
   {
     "LiveFrom": "01/01/2021",
-    "ID": "NoticeOfChangeAnswers",
+    "ID": "NoticeOfChangeAnswersAppSol",
     "ListElementCode": "divorceCaseNumber",
     "FieldType": "Text",
     "ElementLabel": " ",
@@ -1077,7 +1077,7 @@
   },
   {
     "LiveFrom": "01/01/2021",
-    "ID": "NoticeOfChangeAnswers",
+    "ID": "NoticeOfChangeAnswersAppSol",
     "ListElementCode": "applicantFMName",
     "FieldType": "Text",
     "ElementLabel": " ",
@@ -1085,7 +1085,7 @@
   },
   {
     "LiveFrom": "01/01/2021",
-    "ID": "NoticeOfChangeAnswers",
+    "ID": "NoticeOfChangeAnswersAppSol",
     "ListElementCode": "appRespondentFMName",
     "FieldType": "Text",
     "ElementLabel": " ",
@@ -1093,7 +1093,15 @@
   },
   {
     "LiveFrom": "01/01/2021",
-    "ID": "NoticeOfChangeAnswers",
+    "ID": "NoticeOfChangeAnswersRespSol",
+    "ListElementCode": "divorceCaseNumber",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "ID": "NoticeOfChangeAnswersRespSol",
     "ListElementCode": "applicantLName",
     "FieldType": "Text",
     "ElementLabel": " ",
@@ -1101,7 +1109,7 @@
   },
   {
     "LiveFrom": "01/01/2021",
-    "ID": "NoticeOfChangeAnswers",
+    "ID": "NoticeOfChangeAnswersRespSol",
     "ListElementCode": "appRespondentLName",
     "FieldType": "Text",
     "ElementLabel": " ",
