@@ -7,19 +7,29 @@ exports.config = {
       show: false,
       waitForNavigation: 'domcontentloaded',
       headless: true,
-      ignoreHTTPSErrors: true,
+        keepCookies: false,
+        keepBrowserState: false,
+        smartWait: 50000,
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
-          '--no-sandbox',
-          '--start-fullscreen'
+            '--smartwait',
+            '--disable-gpu',
+            '--no-sandbox',
+            '--allow-running-insecure-content',
+            '--ignore-certificate-errors',
+            '--window-size=1440,1400'
+
         ]
       }
     },
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
   },
   include: { I: './steps_file.js' },
-  bootstrap: null,
+    autoDelay: {
+            enabled: true
+        },
+  bootstrap: false,
   mocha: {
     reporterOptions:
       {
