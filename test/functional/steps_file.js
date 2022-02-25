@@ -61,10 +61,10 @@ module.exports = () => {
       this.amOnPage(`${process.env.CCD_WEB_URL}`);
       this.wait('5');
       if(crossBrowser=='true'){
-        this.wait('10');
+        this.wait('15');
       }
       this.waitForText('Email address',30);
-      this.fillField('username', username);
+        this.fillField('username', username);
       this.fillField('password', password);
       this.click('Sign in');
       this.wait('15');
