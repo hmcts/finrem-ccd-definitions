@@ -3,7 +3,8 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function savingApplicationInformation() {
   const I = this;
-  I.waitForElement('//a[contains(@href,"mailto")]', '60');
+  I.waitForText('Email',30)
+  //I.waitForElement('//a[contains(@href,"mailto")]', '80');
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
