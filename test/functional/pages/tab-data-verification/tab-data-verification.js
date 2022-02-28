@@ -10,7 +10,7 @@ function historyTab(caseType, tabName, eventName, endState) {
   I.see(endState);
 }
 
-async function applicantTab(caseType, tabName) {
+ function applicantTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
@@ -25,7 +25,7 @@ async function applicantTab(caseType, tabName) {
     I.see(verifyTabText.applicantTab.applicantEmailCommunication);
     break;
   case 'contested':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
+      I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
     I.see(verifyContestedTabText.applicantTab.applicantLastName);
     I.see(verifyContestedTabText.applicantTab.applicantSolicitorName);
     I.see(verifyContestedTabText.applicantTab.applicantSolicitorFirm);
@@ -43,7 +43,7 @@ async function applicantTab(caseType, tabName) {
   }
 }
 
-async function respondentTab(caseType, tabName) {
+ function respondentTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
@@ -75,7 +75,7 @@ async function respondentTab(caseType, tabName) {
   }
 }
 
-async function divorceTab(caseType, tabName) {
+ function divorceTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
@@ -101,7 +101,7 @@ async function divorceTab(caseType, tabName) {
   }
 }
 
-async function natureOfApplicationTab(caseType, tabName) {
+ function natureOfApplicationTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
@@ -130,7 +130,7 @@ async function natureOfApplicationTab(caseType, tabName) {
   }
 }
 
-async function authorisationTab(caseType, tabName) {
+ function authorisationTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
@@ -155,7 +155,7 @@ async function authorisationTab(caseType, tabName) {
   }
 }
 /* eslint-disable */
-async function caseDocumentsTab(caseType, tabName, eventName) {
+ function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
   I.waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
   if (!I.see(tabName)) {
@@ -202,7 +202,7 @@ async function caseDocumentsTab(caseType, tabName, eventName) {
   }
 }
 
-async function paymentDetailsTab(caseType, tabName) {
+ function paymentDetailsTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
@@ -228,7 +228,7 @@ async function paymentDetailsTab(caseType, tabName) {
     break;
   }
 }
-async function judgeDetailsTab(caseType, tabName, eventName) {
+ function judgeDetailsTab(caseType, tabName, eventName) {
   const I = this;
   I.wait(5);
   I.waitForText(tabName, '30');
@@ -265,7 +265,7 @@ async function judgeDetailsTab(caseType, tabName, eventName) {
   }
 }
 
-async function adminNotesTab(caseType, tabName) {
+ function adminNotesTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
@@ -287,7 +287,7 @@ async function adminNotesTab(caseType, tabName) {
   }
 }
 
-async function approvedOrderTab(caseType, tabName) {
+ function approvedOrderTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
@@ -300,7 +300,7 @@ async function approvedOrderTab(caseType, tabName) {
     break;
   }
 }
-async function contestedOrderTab(caseType, tabName) {
+ function contestedOrderTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
