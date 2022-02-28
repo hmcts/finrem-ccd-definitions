@@ -12,7 +12,7 @@ function historyTab(caseType, tabName, eventName, endState) {
 
 async function applicantTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '10');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -45,7 +45,7 @@ async function applicantTab(caseType, tabName) {
 
 async function respondentTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '10');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -77,7 +77,7 @@ async function respondentTab(caseType, tabName) {
 
 async function divorceTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -103,7 +103,7 @@ async function divorceTab(caseType, tabName) {
 
 async function natureOfApplicationTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -132,7 +132,7 @@ async function natureOfApplicationTab(caseType, tabName) {
 
 async function authorisationTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -204,7 +204,7 @@ async function caseDocumentsTab(caseType, tabName, eventName) {
 
 async function paymentDetailsTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -231,7 +231,7 @@ async function paymentDetailsTab(caseType, tabName) {
 async function judgeDetailsTab(caseType, tabName, eventName) {
   const I = this;
   I.wait(5);
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -267,7 +267,7 @@ async function judgeDetailsTab(caseType, tabName, eventName) {
 
 async function adminNotesTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -289,7 +289,7 @@ async function adminNotesTab(caseType, tabName) {
 
 async function approvedOrderTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -302,7 +302,7 @@ async function approvedOrderTab(caseType, tabName) {
 }
 async function contestedOrderTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
@@ -315,7 +315,7 @@ async function contestedOrderTab(caseType, tabName) {
 
 async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
@@ -337,7 +337,7 @@ async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
 
 async function schedulingAndListingTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
@@ -355,7 +355,7 @@ async function schedulingAndListingTab(caseType, tabName) {
 
 async function consentOrderProcessTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.waitForText(tabName, '30');
    I.waitForNavigationToComplete('div[id="mat-tab-label-0-11"]');
   I.see(verifyContestedTabText.consentOrderProcessTab.applicationFor);
   I.see(verifyContestedTabText.consentOrderProcessTab.mortgageDetails);
