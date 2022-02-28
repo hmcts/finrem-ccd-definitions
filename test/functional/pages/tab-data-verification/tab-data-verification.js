@@ -77,6 +77,7 @@ function historyTab(caseType, tabName, eventName, endState) {
 
  function divorceTab(caseType, tabName) {
   const I = this;
+  I.wait(30);
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
