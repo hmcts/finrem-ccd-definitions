@@ -15,7 +15,35 @@ dependencies:
     version: ~0.2.1
     repository: '@hmctspublic'
     condition: xui-webapp.enabled
+  - name: xui-mo-webapp
+    version: ~1.1.0
+    repository: '@hmctspublic'
+    condition: xui-mo-webapp.enabled
+  - name: aac-manage-case-assignment
+    version: ~0.1.6
+    repository: '@hmctspublic'
+    condition: aac-manage-case-assignment.enabled
   - name: idam-pr
     version: 2.2.6
     repository: '@hmctspublic'
     condition: idam-pr.enabled
+  - name: finrem-cos
+    version: 0.2.6
+    repository: '@hmctspublic'
+    condition: finrem-cos.enabled
+  - name: finrem-dgcs
+    version: 0.2.4
+    repository: '@hmctspublic'
+    condition: finrem-dgcs.enabled
+  - name: finrem-emca
+    version: 0.2.3
+    repository: '@hmctspublic'
+    condition: finrem-emca.enabled
+  - name: finrem-ns
+    version: 0.2.4
+    repository: '@hmctspublic'
+    condition: finrem-ns.enabled
+  - name: finrem-ps
+    version: 0.2.5
+    repository: '@hmctspublic'
+    condition: finrem-ps.enabled
