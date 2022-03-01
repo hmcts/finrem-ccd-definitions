@@ -72,15 +72,15 @@ Scenario('Consent Case approve and send order @nightly @pipeline @crossBrowser',
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
-      I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
-      I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
+     await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
+     await I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
   }
 });
 /* eslint-disable require-await */
 Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
-    I.wait('2');
+    await I.wait('2');
     await I.createCase('Financial Remedy Consented', 'Consent Order Application');
     await I.solicitorCreate(solRef);
     await I.divorceDetails();
@@ -95,7 +95,7 @@ Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I =>
     await I.savingApplicationInformation();
     await I.checkYourAnswers();
     // amend event
-    I.amendApplicationDetails();
+    await I.amendApplicationDetails();
     // hwf payment submission
     await I.caseSubmitAuthorisation();
     await I.paymentPage(false);
@@ -104,6 +104,6 @@ Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I =>
     await I.savingApplicationInformation();
     await I.finalPaymentSubmissionPage();
     await I.finalInformationPage();
-    I.waitForText('History', '30');
+    await I.waitForText('History', '30');
   }
 });
