@@ -48,7 +48,7 @@ xui-mo-webapp:
       MANAGE_ORG_LINK: https://xui-mo-${SERVICE_FQDN}
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_MCA_PROXY_API: http://${SERVICE_NAME}-aac-manage-case-assignment
-      CASE_TYPES: DIVORCE
+      CASE_TYPES: FINREM
 
 finrem-cos:
   enabled: true
@@ -335,10 +335,17 @@ aac-manage-case-assignment:
     keyVaults:
       aac:
         secrets:
-          - aac-manage-case-s2s-secret
-          - idam-mca-client-secret
-          - idam-mca-system-user-username
-          - idam-mca-system-user-password
-          - idam-noc-approver-username
-          - idam-noc-approver-password
-          - notify-mca-api-key-secret
+          - name: aac-manage-case-s2s-secret
+            alias: AAC_MANAGE_CASE_S2S_AUTH
+          - name: idam-mca-client-secret
+            alias: IDAM_MCA_CLIENT_SECRET
+          - name: idam-mca-system-user-username
+            alias: IDAM_MCA_SYSTEM_USER_USERNAME
+          - name: idam-mca-system-user-password
+            alias: IDAM_MCA_SYSTEM_USER_PASSWORD
+          - name: idam-noc-approver-username
+            alias: IDAM_NOC_APPROVER_USERNAME
+          - name: idam-noc-approver-password
+            alias: IDAM_NOC_APPROVER_PASSWORD
+          - name: notify-mca-api-key-secret
+            alias: NOTIFY_MCA_API_KEY_SECRET
