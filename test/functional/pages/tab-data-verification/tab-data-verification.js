@@ -115,6 +115,7 @@ async function historyTab(caseType, tabName, eventName, endState) {
      switch (caseType) {
      case 'consented':
          await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
+         await I.waitForText(tabName, '30');
          await I.see(verifyTabText.natureOfApplicationTab.applicationFor);
          await I.see(verifyTabText.natureOfApplicationTab.addressDetails);
          await I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
