@@ -12,11 +12,13 @@ function historyTab(caseType, tabName, eventName, endState) {
 
  function applicantTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '30');
+
+
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
       I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
+      I.waitForText(tabName, '30');
     I.see(verifyTabText.applicantTab.applicantLastName);
     I.see(verifyTabText.applicantTab.applicantsLocalCourt);
     I.see(verifyTabText.applicantTab.applicantSolicitorName);
@@ -26,6 +28,7 @@ function historyTab(caseType, tabName, eventName, endState) {
     break;
   case 'contested':
       I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
+      I.waitForText(tabName, '30');
     I.see(verifyContestedTabText.applicantTab.applicantLastName);
     I.see(verifyContestedTabText.applicantTab.applicantSolicitorName);
     I.see(verifyContestedTabText.applicantTab.applicantSolicitorFirm);
@@ -33,7 +36,8 @@ function historyTab(caseType, tabName, eventName, endState) {
     I.see(verifyContestedTabText.applicantTab.applicantEmailCommunication);
     break;
   case 'contestedPaper':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
+      I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
+      I.waitForText(tabName, '30');
     I.see(verifyContestedPaperTabText.applicantTab.applicantLastName);
     I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorName);
     I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorFirm);
@@ -45,11 +49,13 @@ function historyTab(caseType, tabName, eventName, endState) {
 
  function respondentTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '30');
+
+
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
+    I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
+      I.waitForText(tabName, '30');
     I.see(verifyTabText.respondentTab.respondentLastName);
     I.see(verifyTabText.respondentTab.respondentSolicitorName);
     I.see(verifyTabText.respondentTab.respondentSolicitorFirm);
@@ -364,16 +370,16 @@ async function consentOrderProcessTab(caseType, tabName) {
   I.see(verifyContestedTabText.consentOrderProcessTab.pensionDocument);
 }
 
-function verifyConsentedTabData(caseType, eventName, stateName) {
-  const I = this;
-  I.historyTab(caseType, verifyTabText.historyTab.tabName, eventName, stateName);
-  I.applicantTab(caseType, verifyTabText.applicantTab.tabName);
-  I.respondentTab(caseType, verifyTabText.respondentTab.tabName);
-  I.divorceTab(caseType, verifyTabText.divorceTab.tabName);
-  I.natureOfApplicationTab(caseType, verifyTabText.natureOfApplicationTab.tabName);
-  I.authorisationTab(caseType, verifyTabText.authorisationTab.tabName);
-  I.caseDocumentsTab(caseType, verifyTabText.caseDocumentsTab.tabName, eventName);
- }
+async function verifyConsentedTabData(caseType, eventName, stateName) {
+    const I = this;
+    await I.historyTab(caseType, verifyTabText.historyTab.tabName, eventName, stateName);
+    await I.applicantTab(caseType, verifyTabText.applicantTab.tabName);
+    await I.respondentTab(caseType, verifyTabText.respondentTab.tabName);
+    await I.divorceTab(caseType, verifyTabText.divorceTab.tabName);
+    await I.natureOfApplicationTab(caseType, verifyTabText.natureOfApplicationTab.tabName);
+    await I.authorisationTab(caseType, verifyTabText.authorisationTab.tabName);
+    await I.caseDocumentsTab(caseType, verifyTabText.caseDocumentsTab.tabName, eventName);
+}
 
 function verifyContestedTabData(caseType, eventName, stateName) {
   const I = this;
