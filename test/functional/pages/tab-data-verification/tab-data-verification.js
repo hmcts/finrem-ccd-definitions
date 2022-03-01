@@ -3,28 +3,28 @@ const verifyTabText = require('../../../data/verify-consented-tab-data.json');
 const verifyContestedTabText = require('../../../data/verify-contested-tab-data.json');
 const verifyContestedPaperTabText = require('../../../data/verify-contested-paper-case-tab-data.json');
 
-function historyTab(caseType, tabName, eventName, endState) {
+async function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
-  I.waitForText(tabName, '30');
-  I.see(eventName);
-  I.see(endState);
+  await I.waitForText(tabName, '30');
+  await I.see(eventName);
+  await I.see(endState);
 }
 
- function applicantTab(caseType, tabName) {
+ async function applicantTab(caseType, tabName) {
   const I = this;
-     I.waitForText(tabName, '30');
+     await I.waitForText(tabName, '30');
 
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-      I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
-      I.waitForText(tabName, '30');
-    I.see(verifyTabText.applicantTab.applicantLastName);
-    I.see(verifyTabText.applicantTab.applicantsLocalCourt);
-    I.see(verifyTabText.applicantTab.applicantSolicitorName);
-    I.see(verifyTabText.applicantTab.applicantSolicitorFirm);
-    I.see(verifyTabText.applicantTab.applicantEmail);
-    I.see(verifyTabText.applicantTab.applicantEmailCommunication);
+      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
+      await I.waitForText(tabName, '30');
+      await I.see(verifyTabText.applicantTab.applicantLastName);
+      await I.see(verifyTabText.applicantTab.applicantsLocalCourt);
+      await I.see(verifyTabText.applicantTab.applicantSolicitorName);
+      await I.see(verifyTabText.applicantTab.applicantSolicitorFirm);
+      await I.see(verifyTabText.applicantTab.applicantEmail);
+      await I.see(verifyTabText.applicantTab.applicantEmailCommunication);
     break;
   case 'contested':
       I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
@@ -47,20 +47,20 @@ function historyTab(caseType, tabName, eventName, endState) {
   }
 }
 
- function respondentTab(caseType, tabName) {
+ async function respondentTab(caseType, tabName) {
   const I = this;
 
      I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
-      I.waitForText(tabName, '30');
-    I.see(verifyTabText.respondentTab.respondentLastName);
-    I.see(verifyTabText.respondentTab.respondentSolicitorName);
-    I.see(verifyTabText.respondentTab.respondentSolicitorFirm);
-    I.see(verifyTabText.respondentTab.respondentEmail);
-    I.see(verifyTabText.respondentTab.respondentPostCode);
+      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
+      await I.waitForText(tabName, '30');
+      await I.see(verifyTabText.respondentTab.respondentLastName);
+      await I.see(verifyTabText.respondentTab.respondentSolicitorName);
+      await I.see(verifyTabText.respondentTab.respondentSolicitorFirm);
+      await I.see(verifyTabText.respondentTab.respondentEmail);
+      await I.see(verifyTabText.respondentTab.respondentPostCode);
     break;
   case 'contested':
      I.waitForNavigationToComplete('div[id="mat-tab-label-0-3"]');
@@ -81,17 +81,17 @@ function historyTab(caseType, tabName, eventName, endState) {
   }
 }
 
- function divorceTab(caseType, tabName) {
+ async function divorceTab(caseType, tabName) {
   const I = this;
-  I.wait(30);
-  I.waitForText(tabName, '30');
+     await I.wait(30);
+     await I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-3"]');
-    I.runAccessibilityTest();
-    I.see(verifyTabText.divorceTab.divorceCaseNumber);
-    I.see(verifyTabText.divorceTab.decreeNisiFileName);
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-3"]');
+    await I.runAccessibilityTest();
+   await I.see(verifyTabText.divorceTab.divorceCaseNumber);
+   await I.see(verifyTabText.divorceTab.decreeNisiFileName);
     break;
   case 'contested':
      I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
@@ -108,45 +108,45 @@ function historyTab(caseType, tabName, eventName, endState) {
   }
 }
 
- function natureOfApplicationTab(caseType, tabName) {
-  const I = this;
-  I.waitForText(tabName, '30');
-  // eslint-disable-next-line default-case
-  switch (caseType) {
-  case 'consented':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
-    I.see(verifyTabText.natureOfApplicationTab.applicationFor);
-    I.see(verifyTabText.natureOfApplicationTab.addressDetails);
-    I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
-    I.see(verifyTabText.natureOfApplicationTab.orderForChildren);
-    break;
-  case 'contested':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
-    I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor);
-    I.see(verifyContestedTabText.natureOfApplicationTab.addressDetails);
-    I.see(verifyContestedTabText.natureOfApplicationTab.mortgageDetails);
-    I.see(verifyContestedTabText.natureOfApplicationTab.orderForChildren);
-    break;
-  case 'contestedPaper':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
-    I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor);
-    I.see(verifyContestedPaperTabText.natureOfApplicationTab.addressDetails);
-    I.see(verifyContestedPaperTabText.natureOfApplicationTab.mortgageDetails);
-    I.see(verifyContestedPaperTabText.natureOfApplicationTab.orderForChildren);
-    break;
-  }
-}
+ async function natureOfApplicationTab(caseType, tabName) {
+     const I = this;
+     await I.waitForText(tabName, '30');
+     // eslint-disable-next-line default-case
+     switch (caseType) {
+     case 'consented':
+         await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
+         await I.see(verifyTabText.natureOfApplicationTab.applicationFor);
+         await I.see(verifyTabText.natureOfApplicationTab.addressDetails);
+         await I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
+         await I.see(verifyTabText.natureOfApplicationTab.orderForChildren);
+         break;
+     case 'contested':
+         await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
+         await I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor);
+         await I.see(verifyContestedTabText.natureOfApplicationTab.addressDetails);
+         await I.see(verifyContestedTabText.natureOfApplicationTab.mortgageDetails);
+         await I.see(verifyContestedTabText.natureOfApplicationTab.orderForChildren);
+         break;
+     case 'contestedPaper':
+         I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
+         I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor);
+         I.see(verifyContestedPaperTabText.natureOfApplicationTab.addressDetails);
+         I.see(verifyContestedPaperTabText.natureOfApplicationTab.mortgageDetails);
+         I.see(verifyContestedPaperTabText.natureOfApplicationTab.orderForChildren);
+         break;
+     }
+ }
 
- function authorisationTab(caseType, tabName) {
+async function authorisationTab(caseType, tabName) {
   const I = this;
   I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-5"]');
-    I.see(verifyTabText.authorisationTab.solicitorName);
-    I.see(verifyTabText.authorisationTab.solicitorFirm);
-    I.see(verifyTabText.authorisationTab.signedDate);
+      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-5"]');
+      await I.see(verifyTabText.authorisationTab.solicitorName);
+      await I.see(verifyTabText.authorisationTab.solicitorFirm);
+      await I.see(verifyTabText.authorisationTab.signedDate);
     break;
   case 'contested':
      I.waitForNavigationToComplete('div[id="mat-tab-label-0-5"]');
@@ -162,22 +162,22 @@ function historyTab(caseType, tabName, eventName, endState) {
   }
 }
 /* eslint-disable */
- function caseDocumentsTab(caseType, tabName, eventName) {
+async function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
-  I.waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
+     await I.waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
   if (!I.see(tabName)) {
-     I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple')
+      await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple')
   }
   I.waitForText(tabName, 30);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-6"]');
-    I.see(verifyTabText.caseDocumentsTab.draftDocumentName);
-    I.see(verifyTabText.caseDocumentsTab.latestConsentOrderLabel);
-    I.see(verifyTabText.caseDocumentsTab.pensionTypeName);
+      await  I.waitForNavigationToComplete('div[id="mat-tab-label-0-6"]');
+      await I.see(verifyTabText.caseDocumentsTab.draftDocumentName);
+      await I.see(verifyTabText.caseDocumentsTab.latestConsentOrderLabel);
+      await I.see(verifyTabText.caseDocumentsTab.pensionTypeName);
     if (eventName === verifyTabText.historyTab.issueApplicationEvent) {
-      I.see(verifyTabText.caseDocumentsTab.onlineFormA);
+        await I.see(verifyTabText.caseDocumentsTab.onlineFormA);
     }
     break;
   case 'contested':
@@ -209,17 +209,17 @@ function historyTab(caseType, tabName, eventName, endState) {
   }
 }
 
- function paymentDetailsTab(caseType, tabName) {
+async function paymentDetailsTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '30');
+     await I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-     I.waitForNavigationToComplete(".mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple");
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
-    I.see(verifyTabText.paymentDetailsTab.hwfNumber);
-    I.see(verifyTabText.paymentDetailsTab.feeCode);
-    I.see(verifyTabText.paymentDetailsTab.amount);
+      await I.waitForNavigationToComplete(".mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple");
+      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
+      await I.see(verifyTabText.paymentDetailsTab.hwfNumber);
+      await I.see(verifyTabText.paymentDetailsTab.feeCode);
+      await I.see(verifyTabText.paymentDetailsTab.amount);
     break;
   case 'contested':
      I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
@@ -235,20 +235,20 @@ function historyTab(caseType, tabName, eventName, endState) {
     break;
   }
 }
- function judgeDetailsTab(caseType, tabName, eventName) {
+async function judgeDetailsTab(caseType, tabName, eventName) {
   const I = this;
-  I.wait(5);
-  I.waitForText(tabName, '30');
+     await I.wait(5);
+     await I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-8"]');
-    I.see(verifyTabText.judgeDetailsTab.applicantFName);
-    I.see(verifyTabText.judgeDetailsTab.respondentFName);
-    I.see(verifyTabText.judgeDetailsTab.decreeNisiDate);
-    I.see(verifyTabText.judgeDetailsTab.decreeNisiDocument);
+      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-8"]');
+      await I.see(verifyTabText.judgeDetailsTab.applicantFName);
+      await I.see(verifyTabText.judgeDetailsTab.respondentFName);
+      await I.see(verifyTabText.judgeDetailsTab.decreeNisiDate);
+      await I.see(verifyTabText.judgeDetailsTab.decreeNisiDocument);
     if (eventName === verifyTabText.historyTab.issueApplicationEvent) {
-      I.see(verifyTabText.judgeDetailsTab.newApplication);
+        await I.see(verifyTabText.judgeDetailsTab.newApplication);
     }
     break;
   case 'contested':
@@ -272,16 +272,16 @@ function historyTab(caseType, tabName, eventName, endState) {
   }
 }
 
- function adminNotesTab(caseType, tabName) {
+ async function adminNotesTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '30');
+     await I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-8"]');
-    I.see(verifyTabText.adminNotesTab.assignToJudgeReason);
-    I.see(verifyTabText.adminNotesTab.issueDate);
-    I.see(verifyTabText.adminNotesTab.assignToJudgeText);
+      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-8"]');
+      await I.see(verifyTabText.adminNotesTab.assignToJudgeReason);
+      await I.see(verifyTabText.adminNotesTab.issueDate);
+      await I.see(verifyTabText.adminNotesTab.assignToJudgeText);
     break;
   case 'contested':
      I.waitForNavigationToComplete('div[id="mat-tab-label-0-9"]');
@@ -294,22 +294,22 @@ function historyTab(caseType, tabName, eventName, endState) {
   }
 }
 
- function approvedOrderTab(caseType, tabName) {
+async function approvedOrderTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '30');
+     await I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-     I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
-    I.see(verifyTabText.approvedOrderTab.approvedLetter);
-    I.see(verifyTabText.approvedOrderTab.consentedAnnexedStamped);
-    I.see(verifyTabText.approvedOrderTab.typeOfPensionDocumentTypeStamped);
+      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
+      await I.see(verifyTabText.approvedOrderTab.approvedLetter);
+      await I.see(verifyTabText.approvedOrderTab.consentedAnnexedStamped);
+      await I.see(verifyTabText.approvedOrderTab.typeOfPensionDocumentTypeStamped);
     break;
   }
 }
- function contestedOrderTab(caseType, tabName) {
+async function contestedOrderTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '30');
+     await I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
@@ -322,7 +322,7 @@ function historyTab(caseType, tabName, eventName, endState) {
 
 async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
   const I = this;
-  I.waitForText(tabName, '30');
+    await I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
@@ -344,7 +344,7 @@ async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
 
 async function schedulingAndListingTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '30');
+  await I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
@@ -362,12 +362,12 @@ async function schedulingAndListingTab(caseType, tabName) {
 
 async function consentOrderProcessTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '30');
-   I.waitForNavigationToComplete('div[id="mat-tab-label-0-11"]');
-  I.see(verifyContestedTabText.consentOrderProcessTab.applicationFor);
-  I.see(verifyContestedTabText.consentOrderProcessTab.mortgageDetails);
-  I.see(verifyContestedTabText.consentOrderProcessTab.draftOrderDocument);
-  I.see(verifyContestedTabText.consentOrderProcessTab.pensionDocument);
+    await I.waitForText(tabName, '30');
+    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-11"]');
+    await I.see(verifyContestedTabText.consentOrderProcessTab.applicationFor);
+    await I.see(verifyContestedTabText.consentOrderProcessTab.mortgageDetails);
+    await I.see(verifyContestedTabText.consentOrderProcessTab.draftOrderDocument);
+    await I.see(verifyContestedTabText.consentOrderProcessTab.pensionDocument);
 }
 
 async function verifyConsentedTabData(caseType, eventName, stateName) {
