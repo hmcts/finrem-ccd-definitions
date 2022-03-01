@@ -123,9 +123,8 @@ finrem-emca:
       finrem:
         secrets:
           - name: finrem-doc-s2s-auth-secret
-            alias: FINREM_DOC_S2S_AUTH_SECRET
+            alias: idam.auth.secret
           - name: AppInsightsInstrumentationKey
-            alias: APP_INSIGHTS_INSTRUMENTATION_KEY
 
 finrem-ns:
   enabled: true
