@@ -52,9 +52,9 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
-      I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
-      I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
-      I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+      await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
+      await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+      await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     }
   }
 });
