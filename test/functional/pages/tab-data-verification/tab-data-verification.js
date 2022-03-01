@@ -12,7 +12,7 @@ function historyTab(caseType, tabName, eventName, endState) {
 
  function applicantTab(caseType, tabName) {
   const I = this;
-
+     I.waitForText(tabName, '30');
 
   // eslint-disable-next-line default-case
   switch (caseType) {
@@ -50,7 +50,7 @@ function historyTab(caseType, tabName, eventName, endState) {
  function respondentTab(caseType, tabName) {
   const I = this;
 
-
+     I.waitForText(tabName, '30');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
