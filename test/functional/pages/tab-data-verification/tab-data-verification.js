@@ -59,8 +59,9 @@ async function historyTab(caseType, tabName, eventName, endState) {
       await I.see(verifyTabText.respondentTab.respondentLastName);
       await I.see(verifyTabText.respondentTab.respondentSolicitorName);
       await I.see(verifyTabText.respondentTab.respondentSolicitorFirm);
-      await I.see(verifyTabText.respondentTab.respondentEmail);
       await I.see(verifyTabText.respondentTab.respondentPostCode);
+      await I.see(verifyTabText.respondentTab.respondentEmail);
+
     break;
   case 'contested':
      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-3"]');
@@ -92,8 +93,9 @@ async function historyTab(caseType, tabName, eventName, endState) {
   case 'consented':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-3"]');
     I.waitForText(verifyTabText.divorceTab.divorceCaseNumber,30)
-    await I.runAccessibilityTest();
+    //await I.runAccessibilityTest();
    await I.see(verifyTabText.divorceTab.divorceCaseNumber);
+   await I.waitForText(verifyTabText.divorceTab.decreeNisiFileName,30);
    await I.see(verifyTabText.divorceTab.decreeNisiFileName);
     break;
   case 'contested':
@@ -120,7 +122,8 @@ async function historyTab(caseType, tabName, eventName, endState) {
      switch (caseType) {
      case 'consented':
          await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
-         await I.waitForText(verifyTabText.natureOfApplicationTab.applicationFor, 60);
+         await I.waitForEnabled('div[id="mat-tab-label-0-4"]',30);
+         await I.waitForText(verifyTabText.natureOfApplicationTab.applicationFor, 30);
          await I.see(verifyTabText.natureOfApplicationTab.applicationFor);
          await I.see(verifyTabText.natureOfApplicationTab.addressDetails);
          await I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
@@ -128,7 +131,7 @@ async function historyTab(caseType, tabName, eventName, endState) {
          break;
      case 'contested':
          await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
-         await I.waitForText(verifyContestedTabText.natureOfApplicationTab.applicationFor,60);
+         await I.waitForText(verifyContestedTabText.natureOfApplicationTab.applicationFor,30);
          await I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor);
          await I.see(verifyContestedTabText.natureOfApplicationTab.addressDetails);
          await I.see(verifyContestedTabText.natureOfApplicationTab.mortgageDetails);
@@ -136,7 +139,7 @@ async function historyTab(caseType, tabName, eventName, endState) {
          break;
      case 'contestedPaper':
          await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
-         await I.waitForText(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor,60)
+         await I.waitForText(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor,30)
          await I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor);
         await I.see(verifyContestedPaperTabText.natureOfApplicationTab.addressDetails);
          await I.see(verifyContestedPaperTabText.natureOfApplicationTab.mortgageDetails);
@@ -409,29 +412,31 @@ async function verifyConsentedTabData(caseType, eventName, stateName) {
     await I.caseDocumentsTab(caseType, verifyTabText.caseDocumentsTab.tabName, eventName);
 }
 
-function verifyContestedTabData(caseType, eventName, stateName) {
+async function verifyContestedTabData(caseType, eventName, stateName)
+{
   const I = this;
-  I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
-  I.applicantTab(caseType, verifyContestedTabText.applicantTab.tabName);
-  I.respondentTab(caseType, verifyContestedTabText.respondentTab.tabName);
-  I.divorceTab(caseType, verifyContestedTabText.divorceTab.tabName);
-  I.natureOfApplicationTab(caseType, verifyContestedTabText.natureOfApplicationTab.tabName);
-  I.authorisationTab(caseType, verifyContestedTabText.authorisationTab.tabName);
-  I.caseDocumentsTab(caseType, verifyContestedTabText.caseDocumentsTab.tabName, eventName);
-  I.paymentDetailsTab(caseType, verifyContestedTabText.paymentDetailsTab.tabName);
-  I.gateKeepingAllocationsTab(caseType, verifyContestedTabText.gateKeepingAllocationsTab.tabName, eventName);
+  await I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+    await I.applicantTab(caseType, verifyContestedTabText.applicantTab.tabName);
+    await I.respondentTab(caseType, verifyContestedTabText.respondentTab.tabName);
+    await I.divorceTab(caseType, verifyContestedTabText.divorceTab.tabName);
+    await I.natureOfApplicationTab(caseType, verifyContestedTabText.natureOfApplicationTab.tabName);
+    await I.authorisationTab(caseType, verifyContestedTabText.authorisationTab.tabName);
+    await I.caseDocumentsTab(caseType, verifyContestedTabText.caseDocumentsTab.tabName, eventName);
+    await I.paymentDetailsTab(caseType, verifyContestedTabText.paymentDetailsTab.tabName);
+    await I.gateKeepingAllocationsTab(caseType, verifyContestedTabText.gateKeepingAllocationsTab.tabName, eventName);
   }
 
-function verifyContestedPaperTabData(caseType, eventName, stateName) {
-  const I = this;
-  I.historyTab(caseType, verifyContestedPaperTabText.historyTab.tabName, eventName, stateName);
-  I.applicantTab(caseType, verifyContestedPaperTabText.applicantTab.tabName);
-  I.respondentTab(caseType, verifyContestedPaperTabText.respondentTab.tabName);
-  I.divorceTab(caseType, verifyContestedPaperTabText.divorceTab.tabName);
-  I.natureOfApplicationTab(caseType, verifyContestedPaperTabText.natureOfApplicationTab.tabName);
-  I.caseDocumentsTab(caseType, verifyContestedPaperTabText.caseDocumentsTab.tabName, eventName);
-  I.gateKeepingAllocationsTab(caseType, verifyContestedPaperTabText.gateKeepingAllocationsTab.tabName, eventName);
-  I.schedulingAndListingTab(caseType, verifyContestedPaperTabText.schedulingAndListingTab.tabName);
+async function verifyContestedPaperTabData(caseType, eventName, stateName)
+{
+    const I = this;
+    await I.historyTab(caseType, verifyContestedPaperTabText.historyTab.tabName, eventName, stateName);
+    await I.applicantTab(caseType, verifyContestedPaperTabText.applicantTab.tabName);
+    await I.respondentTab(caseType, verifyContestedPaperTabText.respondentTab.tabName);
+    await I.divorceTab(caseType, verifyContestedPaperTabText.divorceTab.tabName);
+    await I.natureOfApplicationTab(caseType, verifyContestedPaperTabText.natureOfApplicationTab.tabName);
+    await I.caseDocumentsTab(caseType, verifyContestedPaperTabText.caseDocumentsTab.tabName, eventName);
+    await I.gateKeepingAllocationsTab(caseType, verifyContestedPaperTabText.gateKeepingAllocationsTab.tabName, eventName);
+    await I.schedulingAndListingTab(caseType, verifyContestedPaperTabText.schedulingAndListingTab.tabName);
 }
 
 module.exports = {

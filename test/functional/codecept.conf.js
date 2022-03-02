@@ -1,5 +1,5 @@
 exports.config = {
-  tests: './*_test.js',
+  tests: './consented_test.js',
   output: './output',
   helpers: {
     Puppeteer: {
@@ -10,6 +10,7 @@ exports.config = {
         keepCookies: false,
         keepBrowserState: false,
         smartWait: 50000,
+        waitForTimeout: 90000,
       chrome: {
         ignoreHTTPSErrors: true,
         args: [

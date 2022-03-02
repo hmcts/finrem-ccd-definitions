@@ -32,7 +32,7 @@ Scenario('Contested Case Creation For Caseworker @nightly @pipeline', async I =>
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
-      I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
+      await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
     }
   }
 });
@@ -56,8 +56,8 @@ Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
-      I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeEvent, verifyTabText.historyTab.assignToJudgeEndState);
-      I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+      await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeEvent, verifyTabText.historyTab.assignToJudgeEndState);
+      await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     }
   }
 });
@@ -78,9 +78,9 @@ Scenario('Contested Case Creation For Ready For Hearing @nightly @pipeline', asy
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.submitUploadCaseFilesEvent, verifyTabText.historyTab.submitUploadCaseFilesEndState);
-    I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.submitUploadCaseFilesEvent, verifyTabText.historyTab.submitUploadCaseFilesEndState);
+   await  I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
+   await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 });
 
@@ -102,14 +102,14 @@ Scenario('Contested Case Approved and Send Order @nightly @pipeline @crossBrowse
 
   /* eslint-enable */
   if (nightlyTest === 'true') {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+   await  I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.sendOrderState);
+    await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.sendOrderState);
     I.wait(2);
     I.click({css: '.mat-tab-header-pagination-after'});
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-    I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
+    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    await I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
   }
 });
 
@@ -132,9 +132,9 @@ Scenario('Consented case in Contested @nightly @pipeline', async I => {
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
-      I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.consentOrderEvent, verifyTabText.historyTab.consentOrderEndState);
-      I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-      I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
+      await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.consentOrderEvent, verifyTabText.historyTab.consentOrderEndState);
+      await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+      await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
     }
   }
 });
@@ -153,9 +153,9 @@ Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline', asy
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEndState);
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-    I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
+    await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEndState);
+    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
   }
 });
 
@@ -173,7 +173,7 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
-      I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
+      await I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
     }
   }
 });
@@ -190,8 +190,8 @@ Scenario('Contested case with General Application @nightly @pipeline', async I =
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.createGeneralApplicationEvent, verifyTabText.historyTab.createGeneralApplicationState);
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+    await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.createGeneralApplicationEvent, verifyTabText.historyTab.createGeneralApplicationState);
+    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 });
 
@@ -234,7 +234,7 @@ Scenario('Contested share case @nightly @pipeline', async I => {
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
   const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json',solRef);
   /* eslint-enable */
-    I.signInIdam(solicitorUserName, solicitorPassword);
-    I.assignContestedShareCase(caseId, solRef);
+    await I.signInIdam(solicitorUserName, solicitorPassword);
+    await I.assignContestedShareCase(caseId, solRef);
   }
 });
