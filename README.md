@@ -9,8 +9,20 @@ This allows for the FR CCD Config to be easily edited and stored in Github as JS
 To install the dependencies for both this project and the submodule (ccd-definition-processor), run:
 `yarn install && yarn reset-ccd-submodule`
 
-If you are using a Mac with an M1 chip and the above doesn't work, run:
-`npm install && npm run reset-ccd-submodule`
+## Setup for M1 chip Macs
+
+If running yarn install throws an error with this output:
+
+`The chromium binary is not available for arm64`
+
+1) Run `brew insall chromium`
+2) Run `xattr -cr /Applications/Chromium.app`
+3) Add these env variables to your .zhrsc file  
+`export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true`
+``export PUPPETEER_EXECUTABLE_PATH=`which chromium` ``
+4) Save file and restart terminal
+5) Run `source ~/.zhsrc`
+6) `yarn install && yarn reset-ccd-submodule`
 
 ## Convert JSON to Excel
 
