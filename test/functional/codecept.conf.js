@@ -38,5 +38,18 @@ exports.config = {
         inlineAssets: true
       }
   },
+    plugins: {
+        screenshotOnFail: {
+            enabled: true,
+            fullPageScreenshots: true
+        },
+        retryFailedStep: {
+            enabled: true,
+            retries: 1
+        },
+        autoDelay: {
+            enabled: true
+        }
+    },
   name: 'finrem-ccd-definitions'
 };
