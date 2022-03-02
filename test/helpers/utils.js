@@ -215,7 +215,8 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
     headers: {
       Authorization: `Bearer ${authToken}`,
       ServiceAuthorization: `Bearer ${serviceToken}`,
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'disableWarnings': 'true'
     },
     body: JSON.stringify(saveBody)
   };
