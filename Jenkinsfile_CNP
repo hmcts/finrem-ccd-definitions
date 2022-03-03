@@ -82,6 +82,9 @@ withPipeline("nodejs", product, component) {
   before('functionalTest:preview') {
     yarnBuilder.yarn('setup')
 
+    env.COS_API_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
+    env.AAC_API_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-aac-manage-case-assignment"
+    env.CCD_DATA_API_URL="http://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
       yarnBuilder.yarn('generate-excel-preview-consented')
       yarnBuilder.yarn('generate-excel-aat-consented')
@@ -95,9 +98,6 @@ withPipeline("nodejs", product, component) {
 
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     env.CCD_ADMIN_URL="https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-    env.COS_API_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
-    env.AAC_API_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-aac-manage-case-assignment"
-    env.CCD_DATA_API_URL="http://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     env.CCD_WEB_URL="https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     env.CCD_CONSENTED_FILE_NAME="ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
     env.CCD_CONTESTED_FILE_NAME="ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
