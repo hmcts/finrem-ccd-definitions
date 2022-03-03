@@ -42,7 +42,7 @@ exports.config = {
             fullPageScreenshots: true
         },
         retryFailedStep: {
-            enabled: true,
+            enabled: false,
 
         },
         autoDelay: {
