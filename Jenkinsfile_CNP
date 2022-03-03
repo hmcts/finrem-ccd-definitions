@@ -54,12 +54,12 @@ def secrets = [
                 secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
                 secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
                 secret('finrem-doc-s2s-auth-secret', 'FINREM_DOC_S2S_AUTH_SECRET'),
-                secret('docmosis-api-key', 'DOCMOSIS_API_KEY'),
+                secret('docmosis-api-key', 'PDF_SERVICE_ACCESS_KEY'),
                 secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
-                secret('docmosis-endpoint', 'DOCMOSIS_ENDPOINT'),
-                secret('gov-uk-notification-key', 'GOV_UK_NOTIFICATION_KEY'),
+                secret('docmosis-endpoint', 'PDF_SERVICE_BASEURL'),
+                secret('gov-uk-notification-key', 'UK_GOV_NOTIFY_API_KEY'),
                 secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY'),
-                secret('finrem-doc-s2s-auth-secret', 'AUTH_PROVIDER_DOCUMENTGENERATOR_CLIENT_KEY')
+                secret('finrem-doc-s2s-auth-secret', 'AUTH_PROVIDER_SERVICE_CLIENT_KEY')
 
         ]
 ]

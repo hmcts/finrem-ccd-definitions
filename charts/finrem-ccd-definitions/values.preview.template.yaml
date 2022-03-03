@@ -71,8 +71,9 @@ finrem-cos:
       EVIDENCE_MANAGEMENT_SERVICE_BASEURL: http://${SERVICE_NAME}-finrem-emca
       ACA_SERVICE_API_BASEURL: http://${SERVICE_NAME}-aac-manage-case-assignment
       CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
-      AUTH_PROVIDER_CCDSUBMISSION_CLIENT_KEY: ${CCD_SUBMIT_S2S_AUTH_SECRET}
-      AUTH_PROVIDER_DOCUMENTGENERATOR_CLIENT_KEY: ${AUTH_PROVIDER_DOCUMENTGENERATOR_CLIENT_KEY}
+      CCD_SUBMIT_S2S_AUTH_SECRET: ${CCD_SUBMIT_S2S_AUTH_SECRET}
+      AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
+      UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
     keyVaults:
       finrem:
         secrets:
@@ -83,7 +84,7 @@ finrem-cos:
           - name: idam-secret
             alias: IDAM_CLIENT_SECRET
           - name: finrem-doc-s2s-auth-secret
-            alias: AUTH_PROVIDER_DOCUMENTGENERATOR_CLIENT_KEY
+            alias: AUTH_PROVIDER_SERVICE_CLIENT_KEY
           - name: ccd-submission-s2s-auth-secret
             alias: CCD_SUBMIT_S2S_AUTH_SECRET
 
@@ -98,21 +99,24 @@ finrem-dgcs:
         EVIDENCE_MANAGEMENT_CLIENT_API_BASEURL: http://${SERVICE_NAME}-finrem-emca
         SEND_LETTER_SERIVCE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
         AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        PDF_SERVICE_BASEURL: "https://docmosis.aat.platform.hmcts.net"
+        PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
         IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
+        PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
     keyVaults:
       finrem:
         secrets:
           - name: finrem-doc-s2s-auth-secret
-            alias: FINREM_DOC_S2S_AUTH_SECRET
+            alias: AUTH_PROVIDER_SERVICE_CLIENT_KEY
           - name: idam-secret
             alias: IDAM_CLIENT_SECRET
           - name: docmosis-api-key
-            alias: DOCMOSIS_API_KEY
+            alias: PDF_SERVICE_ACCESS_KEY
           - name: docmosis-endpoint
-            alias: DOCMOSIS_ENDPOINT
+            alias: PDF_SERVICE_BASEURL
           - name: AppInsightsInstrumentationKey
             alias: APP_INSIGHTS_INSTRUMENTATION_KEY
+
 
 finrem-emca:
   enabled: true
@@ -125,11 +129,12 @@ finrem-emca:
         IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
         AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
         DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
+        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
     keyVaults:
       finrem:
         secrets:
           - name: finrem-doc-s2s-auth-secret
-            alias: idam.auth.secret
+            alias: AUTH_PROVIDER_SERVICE_CLIENT_KEY
           - name: AppInsightsInstrumentationKey
             alias: APP_INSIGHTS_INSTRUMENTATION_KEY
 
@@ -140,13 +145,15 @@ finrem-ns:
     image: hmctspublic.azurecr.io/finrem/ns:latest
     releaseNameOverride: ${SERVICE_NAME}-finrem-ns
     ingressHost: ns-${SERVICE_FQDN}
+    environment:
+      UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
     keyVaults:
       finrem:
         secrets:
           - name: AppInsightsInstrumentationKey
             alias: APP_INSIGHTS_INSTRUMENTATION_KEY
           - name: gov-uk-notification-key
-            alias: GOV_UK_NOTIFICATION_KEY
+            alias: UK_GOV_NOTIFY_API_KEY
 
 finrem-ps:
   enabled: true
@@ -162,6 +169,9 @@ finrem-ps:
         PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
         IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
         PAYMENT_API_URL: http://payment-api-aat.service.core-compute-aat.internal
+        FINREM_PAYMENTS_SERVICE_S2S_KEY: ${FINREM_PAYMENTS_SERVICE_S2S_KEY}
+        USERNAME_SOLICITOR: ${USERNAME_SOLICITOR}
+        PASSWORD_SOLICITOR: ${PASSWORD_SOLICITOR}
     keyVaults:
       finrem:
         secrets:
