@@ -23,14 +23,29 @@ Scenario('add all the roles @pipeline', I => {
   I.see('caseworker-caa');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
-Scenario('upload Consented Config file @pipeline', I => {
-  I.loginToAdminConsole();
-  I.uploadConfig(`../../definitions/consented/xlsx/${process.env.CCD_CONSENTED_FILE_NAME}`);
-  I.see('Case Definition data successfully imported');
-}).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+if (process.env.IMPORT_PREVIEW) {
+  Scenario('upload Consented preview config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/consented/xlsx/ccd-config-preview-consented-base.xlsx`);
+    I.see('Case Definition data successfully imported');
+  }).retry({retries: 3, minTimeout: 30000});
 
-Scenario('upload Contested Config file @pipeline', I => {
-  I.loginToAdminConsole();
-  I.uploadConfig(`../../definitions/contested/xlsx/${process.env.CCD_CONTESTED_FILE_NAME}`);
-  I.see('Case Definition data successfully imported');
-}).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+  Scenario('upload Contested preview config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/contested/xlsx/ccd-config-preview-contested-base.xlsx`);
+  }).retry({retries: 3, minTimeout: 300000})
+}
+
+if (process.env.IMPORT_AAT) {
+  Scenario('upload Consented aat Config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/consented/xlsx/ccd-config-aat-consented-base.xlsx`);
+    I.see('Case Definition data successfully imported');
+  }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+
+  Scenario('upload Contested aat Config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/contested/xlsx/ccd-config-aat-contested-base.xlsx`);
+    I.see('Case Definition data successfully imported');
+  }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+}

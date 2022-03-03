@@ -141,6 +141,7 @@ withPipeline("nodejs", product, component) {
       }
 
       yarnBuilder.yarn('generate-excel-all-consented')
+      env.IMPORT_AAT=true
     }
 
     stageWithAgent('Generate Financial Remedy Contested Case config', product) {
