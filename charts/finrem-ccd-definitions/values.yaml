@@ -6,7 +6,27 @@ idam-pr:
 
 xui-webapp:
   enabled: false
-  
+
+xui-mo-webapp:
+  enabled: false
+aac-manage-case-assignment:
+  enabled: false
+
 nodejs:
   applicationPort: 3000
   aadIdentityName: finrem
+
+finrem-cos:
+  enabled: false
+
+finrem-dgcs:
+  enabled: false
+
+finrem-emca:
+  enabled: false
+
+finrem-ps:
+  enabled: false
+
+finrem-ns:
+  enabled: false

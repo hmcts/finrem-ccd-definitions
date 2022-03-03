@@ -9,6 +9,21 @@ This allows for the FR CCD Config to be easily edited and stored in Github as JS
 To install the dependencies for both this project and the submodule (ccd-definition-processor), run:
 `yarn install && yarn reset-ccd-submodule`
 
+## Setup for M1 chip Macs
+
+If running yarn install throws an error with this output:
+
+`The chromium binary is not available for arm64`
+
+1) Run `brew insall chromium`
+2) Run `xattr -cr /Applications/Chromium.app`
+3) Add these env variables to your .zhrsc file  
+`export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true`
+``export PUPPETEER_EXECUTABLE_PATH=`which chromium` ``
+4) Save file and restart terminal
+5) Run `source ~/.zhsrc`
+6) `yarn install && yarn reset-ccd-submodule`
+
 ## Convert JSON to Excel
 
 Depending on if you want the generated Excel to be for the Consented or Contested Journeys - add the appropriate journey to the end of the command.
@@ -130,7 +145,7 @@ Jenkins now generates the config ready to release to PROD, this can be found in 
 
 NOTE: Jenkins will populate Judge details in the PROD configs that is not available locally, so PROD configs should never be used when generated locally and instead should always be taken from Jenkins.
 
-## Latest number of judges: 658
+## Latest number of judges: 891
 
 Follow this guide for releasing a new config file to Production:
 https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+Production
