@@ -71,6 +71,8 @@ finrem-cos:
       EVIDENCE_MANAGEMENT_SERVICE_BASEURL: http://${SERVICE_NAME}-finrem-emca
       ACA_SERVICE_API_BASEURL: http://${SERVICE_NAME}-aac-manage-case-assignment
       CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
+      AUTH_PROVIDER_CCDSUBMISSION_CLIENT_KEY: ${CCD_SUBMIT_S2S_AUTH_SECRET}
+      AUTH_PROVIDER_DOCUMENTGENERATOR_CLIENT_KEY: ${AUTH_PROVIDER_DOCUMENTGENERATOR_CLIENT_KEY}
     keyVaults:
       finrem:
         secrets:
@@ -80,6 +82,10 @@ finrem-cos:
             alias: FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY
           - name: idam-secret
             alias: IDAM_CLIENT_SECRET
+          - name: finrem-doc-s2s-auth-secret
+            alias: AUTH_PROVIDER_DOCUMENTGENERATOR_CLIENT_KEY
+          - name: ccd-submission-s2s-auth-secret
+            alias: CCD_SUBMIT_S2S_AUTH_SECRET
 
 finrem-dgcs:
   enabled: true

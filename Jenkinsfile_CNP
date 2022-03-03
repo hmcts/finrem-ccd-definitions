@@ -58,7 +58,8 @@ def secrets = [
                 secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
                 secret('docmosis-endpoint', 'DOCMOSIS_ENDPOINT'),
                 secret('gov-uk-notification-key', 'GOV_UK_NOTIFICATION_KEY'),
-                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY')
+                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY'),
+                secret('finrem-doc-s2s-auth-secret', 'AUTH_PROVIDER_DOCUMENTGENERATOR_CLIENT_KEY')
 
         ]
 ]
