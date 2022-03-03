@@ -21,7 +21,8 @@ def secrets = [
                 secret('postcode-info-address-lookup-token', 'ADDRESS_LOOKUP_TOKEN'),
                 secret('idam-data-store-client-secret','IDAM_OAUTH2_DATA_STORE_CLIENT_SECRET'),
                 secret('idam-data-store-system-user-username','IDAM_DATA_STORE_SYSTEM_USER_USERNAME'),
-                secret('idam-data-store-system-user-password','IDAM_DATA_STORE_SYSTEM_USER_PASSWORD')
+                secret('idam-data-store-system-user-password','IDAM_DATA_STORE_SYSTEM_USER_PASSWORD'),
+                secret('AppInsightsInstrumentationKey', 'APP_INSIGHTS_INSTRUMENTATION_KEY')
         ],
         'finrem-${env}'      : [
                 secret('fixedlists-consented-judgedetails-1', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_1'),
@@ -51,7 +52,14 @@ def secrets = [
                 secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
                 secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
                 secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
-                secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD')
+                secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
+                secret('finrem-doc-s2s-auth-secret', 'FINREM_DOC_S2S_AUTH_SECRET'),
+                secret('docmosis-api-key', 'DOCMOSIS_API_KEY'),
+                secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
+                secret('docmosis-endpoint', 'DOCMOSIS_ENDPOINT'),
+                secret('gov-uk-notification-key', 'GOV_UK_NOTIFICATION_KEY'),
+                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY')
+
         ]
 ]
 
@@ -101,6 +109,7 @@ withPipeline("nodejs", product, component) {
     env.CCD_WEB_URL="https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     env.CCD_CONSENTED_FILE_NAME="ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
     env.CCD_CONTESTED_FILE_NAME="ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
+    env.IMPORT_PREVIEW=true
   }
 
   after('functionalTest:preview') {

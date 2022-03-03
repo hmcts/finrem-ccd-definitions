@@ -1,5 +1,5 @@
 tags:
-  ccd-pr: true
+  finrem-ccd-stack: true
 
 nodejs:
   # Don't modify below here
@@ -125,6 +125,7 @@ finrem-emca:
           - name: finrem-doc-s2s-auth-secret
             alias: idam.auth.secret
           - name: AppInsightsInstrumentationKey
+            alias: APP_INSIGHTS_INSTRUMENTATION_KEY
 
 finrem-ns:
   enabled: true
