@@ -1,5 +1,5 @@
 exports.config = {
-  tests: './consented_test.js',
+  tests: './contested_test.js',
   output: './output',
   helpers: {
     Puppeteer: {
@@ -27,9 +27,7 @@ exports.config = {
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
   },
   include: { I: './steps_file.js' },
-    autoDelay: {
-            enabled: true
-        },
+
   bootstrap: false,
   mocha: {
     reporterOptions:
@@ -45,10 +43,13 @@ exports.config = {
         },
         retryFailedStep: {
             enabled: true,
-            retries: 1
+
         },
         autoDelay: {
-            enabled: true
+            enabled: true,
+            delayAfter:300,
+            delayBefore:300
+
         }
     },
   name: 'finrem-ccd-definitions'
