@@ -65,7 +65,7 @@ finrem-cos:
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
       IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-      DOCUMENT_GENERATOR_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-dgs
+      DOCUMENT_GENERATOR_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-dgcs
       FINREM_NOTIFICATION_SERVICE_BASE_URL: http://${SERVICE_NAME}-finrem-ns
       PAYMENT_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-ps
       EVIDENCE_MANAGEMENT_SERVICE_BASEURL: http://${SERVICE_NAME}-finrem-emca
