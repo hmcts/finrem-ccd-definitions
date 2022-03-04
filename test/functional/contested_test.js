@@ -35,7 +35,7 @@ Scenario('Contested Case Creation For Caseworker @nightly @pipeline', async I =>
       await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
     }
   }
-}).retry(2);
+});
 
 Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
@@ -60,7 +60,7 @@ Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
       await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     }
   }
-}).retry(2);
+});
 
 Scenario('Contested Case Creation For Ready For Hearing @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -84,7 +84,7 @@ Scenario('Contested Case Creation For Ready For Hearing @nightly @pipeline', asy
       I.click({css: '.mat-tab-header-pagination-after'});
    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
-}).retry(2);
+});
 
 Scenario('Contested Case Approved and Send Order @nightly @pipeline @crossBrowser', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -113,7 +113,7 @@ Scenario('Contested Case Approved and Send Order @nightly @pipeline @crossBrowse
     await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     await I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
   }
-}).retry(2);
+});
 
 Scenario('Consented case in Contested @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
@@ -141,7 +141,7 @@ Scenario('Consented case in Contested @nightly @pipeline', async I => {
       await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
     }
   }
-}).retry(2);
+});
 
 Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -163,7 +163,7 @@ Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline', asy
     await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
   }
-}).retry(2);
+});
 
 Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
@@ -182,7 +182,7 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
       await I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
     }
   }
-}).retry(2);
+});
 
 Scenario('Contested case with General Application @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -201,7 +201,7 @@ Scenario('Contested case with General Application @nightly @pipeline', async I =
       I.click({css: '.mat-tab-header-pagination-after'});
     await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
-}).retry(2);
+});
 
 /* eslint-disable require-await */
 Scenario('Contested Case Creation by Solicitor  @nightly @crossBrowser', async I => {
@@ -234,7 +234,7 @@ Scenario('Contested Case Creation by Solicitor  @nightly @crossBrowser', async I
     I.see('Case Submission');
     I.waitForText('History', '30');
   }
-}).retry(2);
+});
 Scenario('Contested share case @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     /* eslint-disable */
@@ -245,4 +245,4 @@ Scenario('Contested share case @nightly @pipeline', async I => {
     await I.signInIdam(solicitorUserName, solicitorPassword);
     await I.assignContestedShareCase(caseId, solRef);
   }
-}).retry(2);
+});
