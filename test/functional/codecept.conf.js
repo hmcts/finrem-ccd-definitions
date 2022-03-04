@@ -10,7 +10,7 @@ exports.config = {
         keepCookies: false,
         keepBrowserState: false,
         smartWait: 50000,
-        waitForTimeout: 90000,
+        waitForTimeout: 120000,
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
@@ -42,7 +42,7 @@ exports.config = {
             fullPageScreenshots: true
         },
         retryFailedStep: {
-            enabled: false,
+            enabled: true,
 
         },
         autoDelay: {
