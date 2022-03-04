@@ -1,5 +1,5 @@
 exports.config = {
-  tests: './*_test.js',
+  tests: './contested_test.js',
   output: './output',
   helpers: {
     Puppeteer: {
@@ -42,7 +42,7 @@ exports.config = {
             fullPageScreenshots: true
         },
         retryFailedStep: {
-            enabled: true,
+            enabled: false,
 
         },
         autoDelay: {
