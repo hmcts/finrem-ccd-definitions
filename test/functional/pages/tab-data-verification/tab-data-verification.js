@@ -42,6 +42,7 @@ async function historyTab(caseType, tabName, eventName, endState) {
 
       await I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
       await I.waitForEnabled('div[id="mat-tab-label-0-1"]');
+      await I.wait(10);
       await I.waitForText(verifyContestedTabText.applicantTab.applicantLastName);
      await I.see(verifyContestedTabText.applicantTab.applicantLastName);
     await I.see(verifyContestedTabText.applicantTab.applicantSolicitorName);
