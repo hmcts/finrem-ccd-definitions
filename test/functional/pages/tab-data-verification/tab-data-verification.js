@@ -7,9 +7,9 @@ async function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
   //pause();
 
-    if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-    }
+   // if (!I.see(tabName)) {
+        //await I.waitForNavigationToComplete('//mat-tab-header/div[1]/div[1]');
+   // }
   await I.waitForText(tabName);
   await I.see(eventName);
   await I.see(endState);
@@ -18,8 +18,8 @@ async function historyTab(caseType, tabName, eventName, endState) {
  async function applicantTab(caseType, tabName) {
   const I = this;
      if (!I.see(tabName)) {
-         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+         //await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+         await I.waitForText(tabName);
      }
      await I.waitForText(tabName);
     // pause();
@@ -30,6 +30,7 @@ async function historyTab(caseType, tabName, eventName, endState) {
   case 'consented':
       await I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
       await I.waitForEnabled('div[id="mat-tab-label-0-1"]');
+      //await I.wait
       await I.waitForText(verifyTabText.applicantTab.applicantLastName);
       await I.see(verifyTabText.applicantTab.applicantLastName);
       await I.see(verifyTabText.applicantTab.applicantsLocalCourt);
@@ -67,10 +68,10 @@ async function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
 
      if (!I.see(tabName)) {
-         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+         //await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+         I.waitForText(tabName);
      }
-  I.waitForText(tabName);
+
     // await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
      // eslint-disable-next-line default-case
@@ -115,10 +116,10 @@ async function historyTab(caseType, tabName, eventName, endState) {
     // await I.waitForText(tabName);
      // eslint-disable-next-line default-case
      if (!I.see(tabName)) {
-         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+        // await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+         await I.waitForText(tabName);
      }
-     await I.waitForText(tabName);
+
   switch (caseType) {
   case 'consented':
       await I.waitForNavigationToComplete('div[id="mat-tab-label-0-3"]');
@@ -132,6 +133,8 @@ async function historyTab(caseType, tabName, eventName, endState) {
   case 'contested':
      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
       await I.waitForEnabled('div[id="mat-tab-label-0-2"]');
+      //await I.refreshPage();
+      await I.wait(10);
       await I.waitForText(verifyContestedTabText.divorceTab.divorceCaseNumber)
       await I.see(verifyContestedTabText.divorceTab.divorceCaseNumber);
       await I.see(verifyContestedTabText.divorceTab.decreeNisiFileName);
@@ -151,10 +154,10 @@ async function historyTab(caseType, tabName, eventName, endState) {
  async function natureOfApplicationTab(caseType, tabName) {
      const I = this;
      if (!I.see(tabName)) {
-         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+        // await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+         await I.waitForText(tabName);
      }
-     await I.waitForText(tabName);
+
    //  await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
      // eslint-disable-next-line default-case
@@ -197,7 +200,7 @@ async function authorisationTab(caseType, tabName) {
  // I.waitForText(tabName);
    // await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+       // await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
 
     }
     // eslint-disable-next-line default-case
@@ -234,10 +237,10 @@ async function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
      //await I.waitForText(verifyContestedPaperTabText.historyTab.tabName);
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+        //await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+        I.waitForText(tabName);
     }
-  I.waitForText(tabName);
+
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -290,10 +293,10 @@ async function paymentDetailsTab(caseType, tabName) {
     // await I.waitForText(tabName);
     //await I.waitForNavigationToComplete(".mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple");
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+        //await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+        I.waitForText(tabName);
     }
-    I.waitForText(tabName);
+
     // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -328,10 +331,10 @@ async function judgeDetailsTab(caseType, tabName, eventName) {
     // await I.waitForText(tabName);
   //  await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+       // await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+        I.waitForText(tabName);
     }
-    I.waitForText(tabName);
+
     // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -372,10 +375,10 @@ async function judgeDetailsTab(caseType, tabName, eventName) {
  async function adminNotesTab(caseType, tabName) {
   const I = this;
      if (!I.see(tabName)) {
-         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+         //await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+         await I.waitForText(tabName);
      }
-     await I.waitForText(tabName);
+
     // await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
      // eslint-disable-next-line default-case
   switch (caseType) {
@@ -404,10 +407,10 @@ async function judgeDetailsTab(caseType, tabName, eventName) {
 async function approvedOrderTab(caseType, tabName) {
   const I = this;
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+      //  await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+        await I.waitForText(tabName);
     }
-    await I.waitForText(tabName);
+
    // await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
     // eslint-disable-next-line default-case
@@ -426,9 +429,9 @@ async function contestedOrderTab(caseType, tabName) {
   const I = this;
     if (!I.see(tabName)) {
         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+        await I.waitForText(tabName);
     }
-   await I.waitForText(tabName);
+
     //await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
     // eslint-disable-next-line default-case
@@ -446,10 +449,10 @@ async function contestedOrderTab(caseType, tabName) {
 async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
   const I = this;
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+       // await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+        await I.waitForText(tabName);
     }
-    await I.waitForText(tabName);
+
     //await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
     // eslint-disable-next-line default-case
@@ -478,10 +481,10 @@ async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
 async function schedulingAndListingTab(caseType, tabName) {
   const I = this;
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+       // await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+        await I.waitForText(tabName);
     }
-  await I.waitForText(tabName);
+
     //await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
     // eslint-disable-next-line default-case
@@ -508,10 +511,10 @@ async function consentOrderProcessTab(caseType, tabName) {
     //await I.waitForText(tabName, '30');
     //await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
-
+       // await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+        I.waitForText(tabName);
     }
-    I.waitForText(tabName);
+
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-11"]');
     await I.waitForEnabled('div[id="mat-tab-label-0-11"]');
     await I.waitForText(verifyContestedTabText.consentOrderProcessTab.applicationFor);
@@ -525,8 +528,8 @@ async function verifyConsentedTabData(caseType, eventName, stateName) {
     const I = this;
     await I.historyTab(caseType, verifyTabText.historyTab.tabName, eventName, stateName);
     await I.applicantTab(caseType, verifyTabText.applicantTab.tabName);
-    await I.divorceTab(caseType, verifyTabText.divorceTab.tabName);
     await I.respondentTab(caseType, verifyTabText.respondentTab.tabName);
+    await I.divorceTab(caseType, verifyTabText.divorceTab.tabName);
     await I.natureOfApplicationTab(caseType, verifyTabText.natureOfApplicationTab.tabName);
     await I.authorisationTab(caseType, verifyTabText.authorisationTab.tabName);
     await I.caseDocumentsTab(caseType, verifyTabText.caseDocumentsTab.tabName, eventName);
@@ -536,6 +539,7 @@ async function verifyContestedTabData(caseType, eventName, stateName)
 {
   const I = this;
   await I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+  //pause();
     await I.applicantTab(caseType, verifyContestedTabText.applicantTab.tabName);
     await I.divorceTab(caseType, verifyContestedTabText.divorceTab.tabName);
     await I.respondentTab(caseType, verifyContestedTabText.respondentTab.tabName);
