@@ -6,11 +6,11 @@ const verifyContestedPaperTabText = require('../../../data/verify-contested-pape
 async function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
   //pause();
-    await I.waitForText(tabName);
+
     if (!I.see(tabName)) {
         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4 mat-ripple mat-tab-header-pagination');
     }
-  //await I.waitForText(tabName);
+  await I.waitForText(tabName);
   await I.see(eventName);
   await I.see(endState);
 }
@@ -18,10 +18,10 @@ async function historyTab(caseType, tabName, eventName, endState) {
  async function applicantTab(caseType, tabName) {
   const I = this;
      if (!I.see(tabName)) {
-         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
      }
-    // await I.waitForText(tabName);
+     await I.waitForText(tabName);
     // pause();
     // await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
     // mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4 mat-ripple mat-tab-header-pagination-disabled
@@ -43,7 +43,7 @@ async function historyTab(caseType, tabName, eventName, endState) {
       await I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
       await I.waitForEnabled('div[id="mat-tab-label-0-1"]');
       await I.wait(10);
-      await I.waitForText(verifyContestedTabText.applicantTab.applicantLastName);
+      await I.waitForText(verifyContestedTabText.applicantTab.applicantEmailCommunication);
      await I.see(verifyContestedTabText.applicantTab.applicantLastName);
     await I.see(verifyContestedTabText.applicantTab.applicantSolicitorName);
     await I.see(verifyContestedTabText.applicantTab.applicantSolicitorFirm);
@@ -67,10 +67,10 @@ async function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
 
      if (!I.see(tabName)) {
-         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
      }
-  //I.waitForText(tabName);
+  I.waitForText(tabName);
     // await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
      // eslint-disable-next-line default-case
@@ -115,9 +115,10 @@ async function historyTab(caseType, tabName, eventName, endState) {
     // await I.waitForText(tabName);
      // eslint-disable-next-line default-case
      if (!I.see(tabName)) {
-         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
      }
+     await I.waitForText(tabName);
   switch (caseType) {
   case 'consented':
       await I.waitForNavigationToComplete('div[id="mat-tab-label-0-3"]');
@@ -150,10 +151,10 @@ async function historyTab(caseType, tabName, eventName, endState) {
  async function natureOfApplicationTab(caseType, tabName) {
      const I = this;
      if (!I.see(tabName)) {
-         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
      }
-     //await I.waitForText(tabName);
+     await I.waitForText(tabName);
    //  await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
      // eslint-disable-next-line default-case
@@ -171,6 +172,7 @@ async function historyTab(caseType, tabName, eventName, endState) {
      case 'contested':
          await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
          await I.waitForEnabled('div[id="mat-tab-label-0-4"]');
+         await I.see(verifyContestedTabText.natureOfApplicationTab.orderForChildren);
          await I.waitForText(verifyContestedTabText.natureOfApplicationTab.applicationFor);
          await I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor);
          await I.see(verifyContestedTabText.natureOfApplicationTab.addressDetails);
@@ -232,10 +234,10 @@ async function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
      //await I.waitForText(verifyContestedPaperTabText.historyTab.tabName);
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
     }
-  //I.waitForText(tabName);
+  I.waitForText(tabName);
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -260,10 +262,12 @@ async function caseDocumentsTab(caseType, tabName, eventName) {
          eventName === verifyContestedTabText.historyTab.sendOrderEvent) {
       I.see(verifyContestedTabText.caseDocumentsTab.onlineFormA);
     } else {
-     await  I.see(verifyContestedTabText.caseDocumentsTab.draftOnlineFormA);
+     await I.waitForText(verifyContestedTabText.caseDocumentsTab.draftOnlineFormA);
+        await  I.see(verifyContestedTabText.caseDocumentsTab.draftOnlineFormA);
     }
     if (eventName === verifyContestedTabText.historyTab.createGeneralApplicationEvent) {
-     await  I.see(verifyContestedTabText.caseDocumentsTab.gaApplicationReceivedFrom);
+        await I.waitForText(verifyContestedTabText.caseDocumentsTab.gaApplicationReceivedFrom);
+        await  I.see(verifyContestedTabText.caseDocumentsTab.gaApplicationReceivedFrom);
       await I.see(verifyContestedTabText.caseDocumentsTab.gaHearingRequired);
      await  I.see(verifyContestedTabText.caseDocumentsTab.gaLatestApplication);
      await  I.see(verifyContestedTabText.caseDocumentsTab.gaUploadDraftOrder);
@@ -286,9 +290,10 @@ async function paymentDetailsTab(caseType, tabName) {
     // await I.waitForText(tabName);
     //await I.waitForNavigationToComplete(".mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple");
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
     }
+    I.waitForText(tabName);
     // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -323,9 +328,10 @@ async function judgeDetailsTab(caseType, tabName, eventName) {
     // await I.waitForText(tabName);
   //  await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
     }
+    I.waitForText(tabName);
     // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -366,10 +372,10 @@ async function judgeDetailsTab(caseType, tabName, eventName) {
  async function adminNotesTab(caseType, tabName) {
   const I = this;
      if (!I.see(tabName)) {
-         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+         await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
      }
-    // await I.waitForText(tabName);
+     await I.waitForText(tabName);
     // await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
      // eslint-disable-next-line default-case
   switch (caseType) {
@@ -398,10 +404,10 @@ async function judgeDetailsTab(caseType, tabName, eventName) {
 async function approvedOrderTab(caseType, tabName) {
   const I = this;
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
     }
-    // await I.waitForText(tabName);
+    await I.waitForText(tabName);
    // await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
     // eslint-disable-next-line default-case
@@ -419,10 +425,10 @@ async function approvedOrderTab(caseType, tabName) {
 async function contestedOrderTab(caseType, tabName) {
   const I = this;
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
     }
-   //  await I.waitForText(tabName);
+   await I.waitForText(tabName);
     //await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
     // eslint-disable-next-line default-case
@@ -440,10 +446,10 @@ async function contestedOrderTab(caseType, tabName) {
 async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
   const I = this;
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
     }
-    //await I.waitForText(tabName);
+    await I.waitForText(tabName);
     //await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
     // eslint-disable-next-line default-case
@@ -472,10 +478,10 @@ async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
 async function schedulingAndListingTab(caseType, tabName) {
   const I = this;
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
     }
-  //await I.waitForText(tabName);
+  await I.waitForText(tabName);
     //await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
 
     // eslint-disable-next-line default-case
@@ -502,9 +508,10 @@ async function consentOrderProcessTab(caseType, tabName) {
     //await I.waitForText(tabName, '30');
     //await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
+        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
 
     }
+    I.waitForText(tabName);
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-11"]');
     await I.waitForEnabled('div[id="mat-tab-label-0-11"]');
     await I.waitForText(verifyContestedTabText.consentOrderProcessTab.applicationFor);

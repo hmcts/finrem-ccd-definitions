@@ -59,7 +59,7 @@ Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
       await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     }
   }
-});
+}).retry(2);
 
 Scenario('Contested Case Creation For Ready For Hearing @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -83,7 +83,7 @@ Scenario('Contested Case Creation For Ready For Hearing @nightly @pipeline', asy
      // I.click({css: '.mat-tab-header-pagination-after'});
    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
-});
+}).retry(2);
 
 Scenario('Contested Case Approved and Send Order @nightly @pipeline @crossBrowser', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -112,9 +112,9 @@ Scenario('Contested Case Approved and Send Order @nightly @pipeline @crossBrowse
     await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     await I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
   }
-});
+}).retry(2);
 
-Scenario('Consented case in Contested @nightly @pipeline', async I => {
+xScenario('Consented case in Contested @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     /* eslint-disable */
@@ -140,9 +140,9 @@ Scenario('Consented case in Contested @nightly @pipeline', async I => {
       await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
     }
   }
-});
+}).retry(2);
 
-Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline', async I => {
+xScenario('Consented case in Contested Assigned to Judge @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -162,9 +162,9 @@ Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline', asy
     await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
   }
-});
+}).retry(2);
 
-Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
+xScenario('Contested Paper Case Creation @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-demo-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
     /* eslint-disable */
@@ -181,9 +181,9 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
       await I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
     }
   }
-});
+}).retry(2);
 
-Scenario('Contested case with General Application @nightly @pipeline', async I => {
+xScenario('Contested case with General Application @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
