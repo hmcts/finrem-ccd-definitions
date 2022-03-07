@@ -184,7 +184,7 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
   }
 });
 
-xScenario('Contested case with General Application @nightly @pipeline', async I => {
+Scenario('Contested case with General Application @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -204,10 +204,11 @@ xScenario('Contested case with General Application @nightly @pipeline', async I 
 });
 
 /* eslint-disable require-await */
-Scenario('Contested Case Creation by Solicitor  @nightly @crossBrowser', async I => {
+xScenario('Contested Case Creation by Solicitor  @nightly @crossBrowser', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
+    //pause();
     await I.createCase('FinancialRemedyContested', 'Form A Application');
     await I.contestedSolicitorCreate(solRef);
     await I.contestedDivorceDetails();
@@ -235,7 +236,7 @@ Scenario('Contested Case Creation by Solicitor  @nightly @crossBrowser', async I
     I.waitForText('History', '30');
   }
 });
-Scenario('Contested share case @nightly @pipeline', async I => {
+xScenario('Contested share case @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     /* eslint-disable */
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
