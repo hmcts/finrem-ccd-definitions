@@ -184,7 +184,7 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
   }
 });
 
-Scenario('Contested case with General Application @nightly @pipeline', async I => {
+xScenario('Contested case with General Application @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
