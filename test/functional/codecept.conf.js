@@ -5,12 +5,15 @@ exports.config = {
     Puppeteer: {
       url: 'http://localhost:3000',
       show: false,
-      waitForNavigation: 'domcontentloaded',
+      waitForNavigation: 'load',
       headless: true,
         keepCookies: false,
         keepBrowserState: false,
         smartWait: 50000,
         waitForTimeout: 120000,
+        defaultViewport:null,
+        slowMo:100,
+
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
@@ -21,12 +24,18 @@ exports.config = {
             '--ignore-certificate-errors',
             '--window-size=1440,1400'
 
+
         ]
       }
     },
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
   },
   include: { I: './steps_file.js' },
+    multiple: {
+        'parallel': {
+            'chunks': 3
+        }
+    },
 
   bootstrap: false,
   mocha: {
@@ -51,6 +60,7 @@ exports.config = {
             delayBefore:300
 
         }
+
     },
   name: 'finrem-ccd-definitions'
 };
