@@ -529,8 +529,8 @@ async function verifyContestedTabData(caseType, eventName, stateName)
   const I = this;
   await I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
     await I.applicantTab(caseType, verifyContestedTabText.applicantTab.tabName);
-    await I.respondentTab(caseType, verifyContestedTabText.respondentTab.tabName);
     await I.divorceTab(caseType, verifyContestedTabText.divorceTab.tabName);
+    await I.respondentTab(caseType, verifyContestedTabText.respondentTab.tabName);
     await I.natureOfApplicationTab(caseType, verifyContestedTabText.natureOfApplicationTab.tabName);
     await I.authorisationTab(caseType, verifyContestedTabText.authorisationTab.tabName);
     await I.caseDocumentsTab(caseType, verifyContestedTabText.caseDocumentsTab.tabName, eventName);
@@ -543,8 +543,8 @@ async function verifyContestedPaperTabData(caseType, eventName, stateName)
     const I = this;
     await I.historyTab(caseType, verifyContestedPaperTabText.historyTab.tabName, eventName, stateName);
     await I.applicantTab(caseType, verifyContestedPaperTabText.applicantTab.tabName);
-    await I.respondentTab(caseType, verifyContestedPaperTabText.respondentTab.tabName);
     await I.divorceTab(caseType, verifyContestedPaperTabText.divorceTab.tabName);
+    await I.respondentTab(caseType, verifyContestedPaperTabText.respondentTab.tabName);
     await I.natureOfApplicationTab(caseType, verifyContestedPaperTabText.natureOfApplicationTab.tabName);
     await I.caseDocumentsTab(caseType, verifyContestedPaperTabText.caseDocumentsTab.tabName, eventName);
     await I.gateKeepingAllocationsTab(caseType, verifyContestedPaperTabText.gateKeepingAllocationsTab.tabName, eventName);
