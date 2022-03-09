@@ -92,7 +92,7 @@ Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I =>
     await I.d81Question();
     await I.optionalDocuments();
     await I.consentedOtherDocuments();
-    await I.savingApplicationInformation();
+    await I.savingApplicationInformation('consented');
     await I.checkYourAnswers();
     // amend event
     I.amendApplicationDetails();
@@ -101,7 +101,7 @@ Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I =>
     await I.paymentPage(false);
     await I.hwfPaymentDetails();
     await I.paymentSubmission();
-    await I.savingApplicationInformation();
+    await I.savingApplicationInformation('consented');
     await I.finalPaymentSubmissionPage();
     await I.finalInformationPage();
     I.waitForText('History', '30');
