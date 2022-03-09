@@ -81,14 +81,15 @@ withPipeline("nodejs", product, component) {
 
   before('functionalTest:preview') {
     yarnBuilder.yarn('setup')
-    env.COS_API_URL="http://cos-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     sh 'printenv'
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
+      env.COS_API_URL="http://cos-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       yarnBuilder.yarn('generate-excel-preview-consented')
       yarnBuilder.yarn('generate-excel-aat-consented')
       yarnBuilder.yarn('generate-excel-demo-consented')
     }
     stageWithAgent('Generate Financial Remedy Contested Case config', product) {
+      env.COS_API_URL="http://cos-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       yarnBuilder.yarn('generate-excel-preview-contested')
       yarnBuilder.yarn('generate-excel-aat-contested')
       yarnBuilder.yarn('generate-excel-demo-contested')
