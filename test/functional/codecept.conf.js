@@ -1,5 +1,5 @@
 exports.config = {
-  tests: './contested_test.js',
+  tests: './*_test.js',
   output: './output',
   helpers: {
     Puppeteer: {
@@ -10,9 +10,9 @@ exports.config = {
         keepCookies: false,
         keepBrowserState: false,
         smartWait: 50000,
-        waitForTimeout: 120000,
+        waitForTimeout: 180000,
+        getPageTimeout: 120000,
         defaultViewport:null,
-        slowMo:100,
 
       chrome: {
         ignoreHTTPSErrors: true,
@@ -33,7 +33,7 @@ exports.config = {
   include: { I: './steps_file.js' },
     multiple: {
         'parallel': {
-            'chunks': 3
+            'chunks': 2
         }
     },
 
@@ -51,8 +51,15 @@ exports.config = {
             fullPageScreenshots: true
         },
         retryFailedStep: {
-            enabled: false,
+            enabled: true,
+            retries: 1
 
+        },
+        multiple: {
+            parallel: {
+                chunks:2,
+                browsers: ['chrome']
+            }
         },
         autoDelay: {
             enabled: true,

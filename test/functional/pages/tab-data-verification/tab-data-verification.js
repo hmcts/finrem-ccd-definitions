@@ -21,7 +21,7 @@ async function historyTab(caseType, tabName, eventName, endState) {
          //await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
          await I.waitForText(tabName);
      }
-     await I.waitForText(tabName);
+    // await I.waitForText(tabName);
     // pause();
     // await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
     // mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4 mat-ripple mat-tab-header-pagination-disabled
@@ -33,6 +33,7 @@ async function historyTab(caseType, tabName, eventName, endState) {
       //await I.wait
       await I.waitForText(verifyTabText.applicantTab.applicantLastName);
       await I.see(verifyTabText.applicantTab.applicantLastName);
+      await I.waitForText(verifyTabText.applicantTab.applicantsLocalCourt);
       await I.see(verifyTabText.applicantTab.applicantsLocalCourt);
       await I.see(verifyTabText.applicantTab.applicantSolicitorName);
       await I.see(verifyTabText.applicantTab.applicantSolicitorFirm);
@@ -44,8 +45,9 @@ async function historyTab(caseType, tabName, eventName, endState) {
       await I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
       await I.waitForEnabled('div[id="mat-tab-label-0-1"]');
       await I.wait(10);
-      await I.waitForText(verifyContestedTabText.applicantTab.applicantEmailCommunication);
+      await I.waitForText(verifyContestedTabText.applicantTab.applicantLastName);
      await I.see(verifyContestedTabText.applicantTab.applicantLastName);
+      await I.waitForText(verifyContestedTabText.applicantTab.applicantSolicitorName);
     await I.see(verifyContestedTabText.applicantTab.applicantSolicitorName);
     await I.see(verifyContestedTabText.applicantTab.applicantSolicitorFirm);
     await I.see(verifyContestedTabText.applicantTab.applicantEmail);
@@ -90,7 +92,7 @@ async function historyTab(caseType, tabName, eventName, endState) {
   case 'contested':
      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-3"]');
       await I.waitForEnabled('div[id="mat-tab-label-0-3"]');
-     await I.waitForText(verifyContestedTabText.respondentTab.respondentLastName)
+     await I.waitForText(verifyContestedTabText.respondentTab.respondentPostCode)
     await I.see(verifyContestedTabText.respondentTab.respondentLastName);
     await I.see(verifyContestedTabText.respondentTab.respondentSolicitorName);
     await I.see(verifyContestedTabText.respondentTab.respondentSolicitorFirm);
@@ -133,8 +135,8 @@ async function historyTab(caseType, tabName, eventName, endState) {
   case 'contested':
      await I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
       await I.waitForEnabled('div[id="mat-tab-label-0-2"]');
-      //await I.refreshPage();
       await I.wait(10);
+
       await I.waitForText(verifyContestedTabText.divorceTab.divorceCaseNumber)
       await I.see(verifyContestedTabText.divorceTab.divorceCaseNumber);
       await I.see(verifyContestedTabText.divorceTab.decreeNisiFileName);
@@ -197,11 +199,11 @@ async function historyTab(caseType, tabName, eventName, endState) {
 async function authorisationTab(caseType, tabName) {
   const I = this;
 
- // I.waitForText(tabName);
-   // await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
+
+    await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple');
     if (!I.see(tabName)) {
        // await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination')
-
+        I.waitForText(tabName);
     }
     // eslint-disable-next-line default-case
   switch (caseType) {
@@ -428,7 +430,7 @@ async function approvedOrderTab(caseType, tabName) {
 async function contestedOrderTab(caseType, tabName) {
   const I = this;
     if (!I.see(tabName)) {
-        await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
+       // await I.waitForNavigationToComplete('mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple mat-tab-header-pagination');
         await I.waitForText(tabName);
     }
 
@@ -441,6 +443,7 @@ async function contestedOrderTab(caseType, tabName) {
       await I.waitForEnabled('div[id="mat-tab-label-0-10"]');
      await I.waitForText(verifyContestedTabText.OrdersTab.OrdersLabel);
     await I.see(verifyContestedTabText.OrdersTab.OrdersLabel);
+    wait(1);
     await I.see(verifyContestedTabText.OrdersTab.OrderFileName);
     break;
   }
@@ -527,8 +530,9 @@ async function consentOrderProcessTab(caseType, tabName) {
 async function verifyConsentedTabData(caseType, eventName, stateName) {
     const I = this;
     await I.historyTab(caseType, verifyTabText.historyTab.tabName, eventName, stateName);
-    await I.applicantTab(caseType, verifyTabText.applicantTab.tabName);
+    I.wait(10);
     await I.respondentTab(caseType, verifyTabText.respondentTab.tabName);
+    await I.applicantTab(caseType, verifyTabText.applicantTab.tabName);
     await I.divorceTab(caseType, verifyTabText.divorceTab.tabName);
     await I.natureOfApplicationTab(caseType, verifyTabText.natureOfApplicationTab.tabName);
     await I.authorisationTab(caseType, verifyTabText.authorisationTab.tabName);
@@ -539,9 +543,9 @@ async function verifyContestedTabData(caseType, eventName, stateName)
 {
   const I = this;
   await I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
-  //pause();
-    await I.applicantTab(caseType, verifyContestedTabText.applicantTab.tabName);
+  I.wait(10);
     await I.divorceTab(caseType, verifyContestedTabText.divorceTab.tabName);
+    await I.applicantTab(caseType, verifyContestedTabText.applicantTab.tabName);
     await I.respondentTab(caseType, verifyContestedTabText.respondentTab.tabName);
     await I.natureOfApplicationTab(caseType, verifyContestedTabText.natureOfApplicationTab.tabName);
     await I.authorisationTab(caseType, verifyContestedTabText.authorisationTab.tabName);
@@ -553,9 +557,10 @@ async function verifyContestedTabData(caseType, eventName, stateName)
 async function verifyContestedPaperTabData(caseType, eventName, stateName)
 {
     const I = this;
-    await I.historyTab(caseType, verifyContestedPaperTabText.historyTab.tabName, eventName, stateName);
-    await I.applicantTab(caseType, verifyContestedPaperTabText.applicantTab.tabName);
+    await I.historyTab(caseType, verifyContestedPaperTabText.historyTab.tabName, eventName, stateName)
+    I.wait(10);
     await I.divorceTab(caseType, verifyContestedPaperTabText.divorceTab.tabName);
+    await I.applicantTab(caseType, verifyContestedPaperTabText.applicantTab.tabName);
     await I.respondentTab(caseType, verifyContestedPaperTabText.respondentTab.tabName);
     await I.natureOfApplicationTab(caseType, verifyContestedPaperTabText.natureOfApplicationTab.tabName);
     await I.caseDocumentsTab(caseType, verifyContestedPaperTabText.caseDocumentsTab.tabName, eventName);

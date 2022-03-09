@@ -56,6 +56,8 @@ Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
       await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeEvent, verifyTabText.historyTab.assignToJudgeEndState);
+        I.wait(2);
+        I.click({css: '.mat-tab-header-pagination-after'});
       await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     }
   }
@@ -78,9 +80,12 @@ Scenario('Contested Case Creation For Ready For Hearing @nightly @pipeline', asy
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
     await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.submitUploadCaseFilesEvent, verifyTabText.historyTab.submitUploadCaseFilesEndState);
-   await  I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
-     // I.wait(2);
-     // I.click({css: '.mat-tab-header-pagination-after'});
+    await  I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
+      I.wait(3);
+
+         if(I.isElementEnabled({css:'.mat-tab-header-pagination-after'}))
+         I.click({ css: '.mat-tab-header-pagination-after' });
+
    await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 }).retry(0);
@@ -108,9 +113,11 @@ Scenario('Contested Case Approved and Send Order @nightly @pipeline @crossBrowse
    await I.wait(2);
     // eslint-disable-next-line max-len
     await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.sendOrderState);
-   // I.wait(2);
-   // I.click({css: '.mat-tab-header-pagination-after'});
+   I.wait(2);
+    I.click({css: '.mat-tab-header-pagination-after'});
     await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+      I.wait(3);
+      I.click({css: '.mat-tab-header-pagination-after'});
     await I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
   }
 }).retry(0);
@@ -135,8 +142,8 @@ Scenario('Consented case in Contested @nightly @pipeline', async I => {
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
       await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.consentOrderEvent, verifyTabText.historyTab.consentOrderEndState);
-       // I.wait(2);
-       // I.click({css: '.mat-tab-header-pagination-after'});
+       I.wait(2);
+       I.click({css: '.mat-tab-header-pagination-after'});
       await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
       await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
     }
@@ -158,8 +165,9 @@ Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline', asy
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
     await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEndState);
-      //I.wait(2);
-      //I.click({css: '.mat-tab-header-pagination-after'});
+      I.wait(2);
+      if({css: '.mat-tab-header-pagination-after'})
+      I.click({css: '.mat-tab-header-pagination-after'});
     await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
   }
@@ -197,8 +205,9 @@ Scenario('Contested case with General Application @nightly @pipeline', async I =
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
     await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.createGeneralApplicationEvent, verifyTabText.historyTab.createGeneralApplicationState);
-      //I.wait(2);
-      //I.click({css: '.mat-tab-header-pagination-after'});
+      I.wait(2);
+      I.click({css: '.mat-tab-header-pagination-after'});
+
     await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 }).retry(0);

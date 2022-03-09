@@ -30,6 +30,8 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
       await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+        I.wait(2);
+        I.click({css: '.mat-tab-header-pagination-after'});
       await I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
     }
   }
@@ -54,7 +56,9 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
       // eslint-disable-next-line max-len
       await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
       await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
-      await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+        I.click({css: '.mat-tab-header-pagination-after'});
+        I.wait(2);
+        await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     }
   }
 });
@@ -73,7 +77,7 @@ Scenario('Consent Case approve and send order @nightly @pipeline @crossBrowser',
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
      await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
-     await I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
+        await I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
   }
 });
 /* eslint-disable require-await */

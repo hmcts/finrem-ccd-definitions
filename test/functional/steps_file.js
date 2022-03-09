@@ -68,6 +68,12 @@ module.exports = () => {
       this.fillField('password', password);
       this.click('Sign in');
       this.wait('15');
+      this.waitForElement('button[name="cookies"]');
+      this.click('button[name="cookies"]');
+      this.wait('5');
+      //pause();
+
+
     },
     signInXuiOrg(username, password) {
       this.amOnPage(`${process.env.XUI_ORG_WEB_URL}`);
