@@ -123,7 +123,7 @@ https://tools.hmcts.net/confluence/display/FR/Feature+toggles+for+CCD+definition
 GitHub will have the main URL for this deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
 However, this URL in itself is not very useful. There are two subdomains that are useful.
 
-* Visit `https://gateway-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` in separate tab and whitelist accept the SSL certificate.
+* Visit `https://gateway-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` in separate tab and whitelist accept the SSL certificate
 
 - "case-management-web-" for the Case management UI: e.g. `https://case-management-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
 
