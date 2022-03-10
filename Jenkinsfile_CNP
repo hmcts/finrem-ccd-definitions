@@ -21,7 +21,8 @@ def secrets = [
                 secret('postcode-info-address-lookup-token', 'ADDRESS_LOOKUP_TOKEN'),
                 secret('idam-data-store-client-secret','IDAM_OAUTH2_DATA_STORE_CLIENT_SECRET'),
                 secret('idam-data-store-system-user-username','IDAM_DATA_STORE_SYSTEM_USER_USERNAME'),
-                secret('idam-data-store-system-user-password','IDAM_DATA_STORE_SYSTEM_USER_PASSWORD')
+                secret('idam-data-store-system-user-password','IDAM_DATA_STORE_SYSTEM_USER_PASSWORD'),
+                secret('AppInsightsInstrumentationKey', 'APP_INSIGHTS_INSTRUMENTATION_KEY')
         ],
         'finrem-${env}'      : [
                 secret('fixedlists-consented-judgedetails-1', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_1'),
@@ -52,7 +53,13 @@ def secrets = [
                 secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
                 secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
                 secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
+                secret('finrem-doc-s2s-auth-secret', 'AUTH_PROVIDER_SERVICE_CLIENT_KEY'),
                 secret('docmosis-api-key', 'PDF_SERVICE_ACCESS_KEY'),
+                secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
+                secret('docmosis-endpoint', 'PDF_SERVICE_BASEURL'),
+                secret('gov-uk-notification-key', 'UK_GOV_NOTIFY_API_KEY'),
+                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY')
+
         ]
 ]
 

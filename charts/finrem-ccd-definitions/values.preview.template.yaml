@@ -71,6 +71,9 @@ finrem-cos:
       EVIDENCE_MANAGEMENT_SERVICE_BASEURL: http://${SERVICE_NAME}-finrem-emca
       ACA_SERVICE_API_BASEURL: http://${SERVICE_NAME}-aac-manage-case-assignment
       CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
+      CCD_SUBMIT_S2S_AUTH_SECRET: ${CCD_SUBMIT_S2S_AUTH_SECRET}
+      AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
+      UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
     keyVaults:
       finrem:
         secrets:
@@ -92,8 +95,9 @@ finrem-dgcs:
         EVIDENCE_MANAGEMENT_CLIENT_API_BASEURL: http://${SERVICE_NAME}-finrem-emca
         SEND_LETTER_SERIVCE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
         AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        PDF_SERVICE_BASEURL: "https://docmosis.aat.platform.hmcts.net"
+        PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
         IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
         PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
     keyVaults:
       finrem:
