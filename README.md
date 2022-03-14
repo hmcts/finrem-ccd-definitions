@@ -17,7 +17,7 @@ If running yarn install throws an error with this output:
 
 1) Run `brew insall chromium`
 2) Run `xattr -cr /Applications/Chromium.app`
-3) Add these env variables to your .zhrsc file  
+3) Add these env variables to your .zhrsc file
 `export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true`
 ``export PUPPETEER_EXECUTABLE_PATH=`which chromium` ``
 4) Save file and restart terminal
@@ -117,6 +117,8 @@ Then follow the typical release process.
 
 Please read more here:
 https://tools.hmcts.net/confluence/display/FR/Feature+toggles+for+CCD+definition
+
+
 
 ## How to access PR deployment
 
