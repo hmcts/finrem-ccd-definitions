@@ -108,21 +108,24 @@ async function natureOfApplicationTab(caseType, tabName) {
   switch (caseType) {
   case 'consented':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
-    I.see(verifyTabText.natureOfApplicationTab.applicationFor);
+    I.see(verifyTabText.natureOfApplicationTab.applicationFor1);
+    I.see(verifyTabText.natureOfApplicationTab.applicationFor2);
     I.see(verifyTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
     I.see(verifyTabText.natureOfApplicationTab.orderForChildren);
     break;
   case 'contested':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
-    I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor);
+    I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor1);
+    I.see(verifyTabText.natureOfApplicationTab.applicationFor2);
     I.see(verifyContestedTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyContestedTabText.natureOfApplicationTab.mortgageDetails);
     I.see(verifyContestedTabText.natureOfApplicationTab.orderForChildren);
     break;
   case 'contestedPaper':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-4"]');
-    I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor);
+      I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor1);
+    I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor2);
     I.see(verifyContestedPaperTabText.natureOfApplicationTab.addressDetails);
     I.see(verifyContestedPaperTabText.natureOfApplicationTab.mortgageDetails);
     I.see(verifyContestedPaperTabText.natureOfApplicationTab.orderForChildren);
