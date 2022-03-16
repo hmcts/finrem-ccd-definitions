@@ -21,4 +21,5 @@ async function finalInformationPage() {
   I.click('Close and Return to case details');
 }
 
+
 module.exports = { savingApplicationInformation, finalInformationPage };
