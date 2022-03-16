@@ -48,7 +48,7 @@ xui-mo-webapp:
       MANAGE_ORG_LINK: https://xui-mo-${SERVICE_FQDN}
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_MCA_PROXY_API: http://${SERVICE_NAME}-aac-manage-case-assignment
-      CASE_TYPES: FINREM
+      CASE_TYPES: FinancialRemedyContested,FinancialRemedyMVP2
 
 finrem-cos:
   enabled: true
@@ -174,13 +174,13 @@ finrem-ps:
           - name: AppInsightsInstrumentationKey
             alias: APP_INSIGHTS_INSTRUMENTATION_KEY
           - name: finrem-payment-service-s2s-key
-            alias: FINREM_PAYMENTS_SERVICE_S2S_KEY
+            alias: AUTH_PROVIDER_SERVICE_CLIENT_KEY
           - name: idam-secret
-            alias: IDAM_CLIENT_SECRET
+            alias: OAUTH2_CLIENT_FINREM
           - name: username-solicitor
-            alias: USERNAME_SOLICITOR
-          - name: password-solicitor
-            alias: PASSWORD_SOLICITOR
+            alias: USERNAME-SOLICITOR
+          - name: password-solicitorf
+            alias: PASSWORD-SOLICITOR
 
 ccd:
   ccd:
@@ -341,7 +341,7 @@ aac-manage-case-assignment:
       S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       MCA_DS_PROXY_URLS_ALLOWED_LIST: /searchCases.*,/internal/searchCases.*,/internal/cases.*
       MCA_DEF_STORE_PROXY_URLS_ALLOWED_LIST: /api/display/challenge-questions.*
-      MANAGE_CASE_S2S_AUTHORISED_SERVICES: xui_webapp,ccd_data,fpl_case_service,divorce_frontend,divorce_ccd_submission
+      MANAGE_CASE_S2S_AUTHORISED_SERVICES: xui_webapp,ccd_data,fpl_case_service,divorce_frontend,divorce_ccd_submission,finrem_case_orchestration
       CCD_DATA_STORE_API_BASE_URL: http://${SERVICE_NAME}-ccd-data-store-api
       CCD_DEFINITION_STORE_API_BASE_URL: http://${SERVICE_NAME}-ccd-definition-store
       PRD_HOST: http://rd-professional-api-aat.service.core-compute-aat.internal
@@ -350,17 +350,10 @@ aac-manage-case-assignment:
     keyVaults:
       aac:
         secrets:
-          - name: aac-manage-case-s2s-secret
-            alias: AAC_MANAGE_CASE_S2S_AUTH
-          - name: idam-mca-client-secret
-            alias: IDAM_MCA_CLIENT_SECRET
-          - name: idam-mca-system-user-username
-            alias: IDAM_MCA_SYSTEM_USER_USERNAME
-          - name: idam-mca-system-user-password
-            alias: IDAM_MCA_SYSTEM_USER_PASSWORD
-          - name: idam-noc-approver-username
-            alias: IDAM_NOC_APPROVER_USERNAME
-          - name: idam-noc-approver-password
-            alias: IDAM_NOC_APPROVER_PASSWORD
-          - name: notify-mca-api-key-secret
-            alias: NOTIFY_MCA_API_KEY_SECRET
+          - aac-manage-case-s2s-secret
+          - idam-mca-client-secret
+          - idam-mca-system-user-username
+          - idam-mca-system-user-password
+          - idam-noc-approver-username
+          - idam-noc-approver-password
+          - notify-mca-api-key-secret
