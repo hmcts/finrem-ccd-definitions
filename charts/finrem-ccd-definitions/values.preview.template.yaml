@@ -360,7 +360,7 @@ ccd:
   logstash:
     image:
       repository: hmctspublic.azurecr.io/ccd/logstash
-      tag: ccd-divorce-logstash-latest
+      tag: latest
       pullPolicy: Always
     logstashJavaOpts: -Xmx1g -Xms512M
     persistence:
