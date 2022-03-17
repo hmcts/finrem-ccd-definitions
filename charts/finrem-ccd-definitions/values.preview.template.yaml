@@ -165,7 +165,8 @@ finrem-ps:
         PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
         IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
         PAYMENT_API_URL: http://payment-api-aat.service.core-compute-aat.internal
-        FINREM_PAYMENTS_SERVICE_S2S_KEY: ${FINREM_PAYMENTS_SERVICE_S2S_KEY}
+        FINREM_PAYMENTS_SERVICE_S2S_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
+        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
         USERNAME_SOLICITOR: ${USERNAME_SOLICITOR}
         PASSWORD_SOLICITOR: ${PASSWORD_SOLICITOR}
     keyVaults:
