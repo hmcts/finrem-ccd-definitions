@@ -9,6 +9,7 @@ function assignContestedShareCase(caseId, solRef) {
   I.waitForText('Solicitor Reference', '30');
   I.fillField('input[id="solicitorReference"]', solRef);
   I.click('Apply');
+    I.wait('5');
   I.waitForText('Case Reference', '15');
   I.checkOption(`input[id="select-${caseId}"]`);
   I.click('Share Case');
