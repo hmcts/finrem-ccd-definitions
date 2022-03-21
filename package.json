@@ -52,6 +52,7 @@
     "test:fullfunctional": "TESTS_FOR_ACCESSIBILITY='true' codeceptjs run --steps -c test/functional/codecept.conf.js --grep @nightly --reporter mochawesome",
     "test-crossbrowser-e2e": "TESTS_FOR_CROSS_BROWSER='true' codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} --plugins retryFailedStep --steps -c test/functional/saucelabs.conf.js  --grep @crossBrowser --reporter mochawesome",
     "test:crossbrowser": "./bin/run-crossbrowser-tests.sh",
+    "test:local": "./bin/run-functional-tests-local.sh",
       "start": "node index.js",
     "sonar-scan": "node_modules/sonar-scanner/bin/sonar-scanner",
     "generate-json-consented": "yarn --cwd ccd-definition-processor xlsx2json -D ../definitions/consented/json -i ../definitions/consented/xlsx/ccd-config-base-consented.xlsx && pretty-quick --pattern 'definitions/**/json/**.json'",
@@ -89,7 +90,7 @@
     "config": "^3.3.3",
     "eslint-plugin-codeceptjs": "^1.3.0",
     "express": "^4.16.4",
-    "puppeteer":  "^13.1.2"
+    "puppeteer": "^5.4.1"
 
   },
   "devDependencies": {
