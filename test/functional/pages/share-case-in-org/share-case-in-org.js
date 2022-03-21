@@ -6,7 +6,7 @@ function assignContestedShareCase(caseId, solRef) {
   I.selectOption('select[id="wb-jurisdiction"]', 'Family Divorce');
   I.selectOption('select[id="wb-case-type"]', 'Contested Financial Remedy');
   I.selectOption('select[id="wb-case-state"]', 'Any');
-  I.waitForText('Solicitor Reference', '30');
+  I.waitForText('Solicitor Reference', '90');
   I.fillField('input[id="solicitorReference"]', solRef);
   I.click('Apply');
   I.wait('5');
