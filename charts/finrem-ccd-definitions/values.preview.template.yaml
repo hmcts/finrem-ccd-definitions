@@ -233,6 +233,8 @@ ccd:
 
   ccd-user-profile-api:
     java:
+      autoscaling:
+        enabled: false
       imagePullPolicy: Always
       enviroment:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
@@ -273,6 +275,8 @@ ccd:
 
   ccd-case-print-service:
     nodejs:
+      autoscaling:
+        enabled: false
       environment:
         IDAM_PRINT_SERVICE_KEY: ${PRINT_S2S_KEY}
       ingressHost: ccd-case-print-service-${SERVICE_FQDN}
