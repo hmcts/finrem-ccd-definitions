@@ -217,6 +217,8 @@ ccd:
 
   ccd-user-profile-api:
     java:
+      autoscaling:
+        enabled: false
       imagePullPolicy: Always
       enviroment:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
