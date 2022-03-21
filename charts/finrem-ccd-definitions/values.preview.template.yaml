@@ -340,6 +340,14 @@ ccd:
     clusterName: "es"
     imageTag: "7.17.0"
     replicas: 1
+    devmemoryRequests: 512Mi
+    devcpuRequests: "1000m"
+    devmemoryLimits: 1024Mi
+    devcpuLimits: "2500m"
+    resources:
+      requests:
+        cpu: 1000m
+        memory: 512Mi
     minimumMasterNodes: 1
     antiAffinity: "soft"
     esJavaOpts: "-Xmx512m -Xms512m"
