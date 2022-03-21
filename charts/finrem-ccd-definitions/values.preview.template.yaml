@@ -22,7 +22,6 @@ idam-pr:
 xui-webapp:
   enabled: true
   nodejs:
-    keyVaults: []
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-xui-webapp
     image: hmctspublic.azurecr.io/xui/webapp:latest
@@ -50,6 +49,23 @@ xui-mo-webapp:
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_MCA_PROXY_API: http://${SERVICE_NAME}-aac-manage-case-assignment
       CASE_TYPES: FinancialRemedyContested,FinancialRemedyMVP2
+    keyVaults:
+      rpx:
+        secrets:
+          - name: appinsights-instrumentationkey-mc
+            alias: APPINSIGHTS_INSTRUMENTATIONKEY
+          - name: mc-s2s-client-secret
+            alias: S2S_SECRET
+          - name: mc-idam-client-secret
+            alias: IDAM_SECRET
+          - name: webapp-redis-connection-string
+            alias: REDISCLOUD_URL
+          - name: launch-darkly-client-id
+            alias: LAUNCH_DARKLY_CLIENT_ID
+          - name: system-user-name
+            alias: SYSTEM_USER_NAME
+          - name: system-user-password
+            alias: SYSTEM_USER_PASSWORD
 
 finrem-cos:
   enabled: true
