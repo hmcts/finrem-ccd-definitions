@@ -66,6 +66,8 @@ xui-mo-webapp:
             alias: SYSTEM_USER_NAME
           - name: system-user-password
             alias: SYSTEM_USER_PASSWORD
+          - name: xui-oauth2-token
+            alias: XUI_OAUTH2_TOKEN
 
 finrem-cos:
   enabled: true
