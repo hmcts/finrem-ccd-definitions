@@ -18,6 +18,15 @@ exports.config = {
     },
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
   },
+    plugins: {
+        retryFailedStep: {
+            enabled: true,
+            retries: 2
+        },
+        autoDelay: {
+            enabled: true
+        }
+    },
   include: { I: './steps_file.js' },
   bootstrap: null,
   mocha: {
