@@ -974,9 +974,9 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_revertToPrepareForHearing",
     "Name": "Revert to Prepare For Hearing",
-    "Description": "Revert from Consent Process to Prepare For Hearing",
+    "Description": "Revert Case State to Prepare For Hearing",
     "DisplayOrder": 132,
-    "PreConditionState(s)": "consentProcess",
+    "PreConditionState(s)": "consentProcess, consentedOrderNotApproved, consentedOrderAssignJudge, caseFileSubmitted, consentedOrderSubmitted",
     "PostConditionState": "prepareForHearing",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
