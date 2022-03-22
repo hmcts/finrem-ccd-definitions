@@ -35,23 +35,6 @@ xui-webapp:
       SERVICES_CCD_CASE_ASSIGNMENT_API: http://aac-${SERVICE_FQDN}
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
       JURISDICTIONS: DIVORCE
-    keyVaults:
-      rpx:
-        secrets:
-          - name: appinsights-instrumentationkey-mc
-            alias: APPINSIGHTS_INSTRUMENTATIONKEY
-          - name: mc-s2s-client-secret
-            alias: S2S_SECRET
-          - name: mc-idam-client-secret
-            alias: IDAM_SECRET
-          - name: webapp-redis-connection-string
-            alias: REDISCLOUD_URL
-          - name: launch-darkly-client-id
-            alias: LAUNCH_DARKLY_CLIENT_ID
-          - name: system-user-name
-            alias: SYSTEM_USER_NAME
-          - name: system-user-password
-            alias: SYSTEM_USER_PASSWORD
 
 xui-mo-webapp:
   enabled: true
@@ -77,6 +60,8 @@ xui-mo-webapp:
             alias: REDISCLOUD_URL
           - name: launch-darkly-client-id
             alias: LAUNCH_DARKLY_CLIENT_ID
+          - name: xui-oauth2-token
+            alias: IDAM_SECRET
           - name: google-analytics-key
             alias: google-analytics-key
 
