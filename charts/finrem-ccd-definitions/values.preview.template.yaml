@@ -35,20 +35,6 @@ xui-webapp:
       SERVICES_CCD_CASE_ASSIGNMENT_API: http://aac-${SERVICE_FQDN}
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
       JURISDICTIONS: DIVORCE
-
-xui-mo-webapp:
-  enabled: true
-  nodejs:
-    imagePullPolicy: Always
-    releaseNameOverride: ${SERVICE_NAME}-xui-mo-webapp
-    image: hmctspublic.azurecr.io/xui/mo-webapp:latest
-    ingressHost: xui-mo-${SERVICE_FQDN}
-    environment:
-      MANAGE_CASE_LINK: https://xui-${SERVICE_FQDN}/cases
-      MANAGE_ORG_LINK: https://xui-mo-${SERVICE_FQDN}
-      SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
-      SERVICES_MCA_PROXY_API: http://${SERVICE_NAME}-aac-manage-case-assignment
-      CASE_TYPES: FinancialRemedyContested,FinancialRemedyMVP2
     keyVaults:
       rpx:
         secrets:
@@ -66,6 +52,33 @@ xui-mo-webapp:
             alias: SYSTEM_USER_NAME
           - name: system-user-password
             alias: SYSTEM_USER_PASSWORD
+
+xui-mo-webapp:
+  enabled: true
+  nodejs:
+    imagePullPolicy: Always
+    releaseNameOverride: ${SERVICE_NAME}-xui-mo-webapp
+    image: hmctspublic.azurecr.io/xui/mo-webapp:latest
+    ingressHost: xui-mo-${SERVICE_FQDN}
+    environment:
+      MANAGE_CASE_LINK: https://xui-${SERVICE_FQDN}/cases
+      MANAGE_ORG_LINK: https://xui-mo-${SERVICE_FQDN}
+      SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
+      SERVICES_MCA_PROXY_API: http://${SERVICE_NAME}-aac-manage-case-assignment
+      CASE_TYPES: FinancialRemedyContested,FinancialRemedyMVP2
+    keyVaults:
+      rpx:
+        secrets:
+          - name: appinsights-instrumentationkey-mo
+            alias: APPINSIGHTS_INSTRUMENTATIONKEY
+          - name: mo-s2s-client-secret
+            alias: S2S_SECRET
+          - name: mo-webapp-redis-connection-string
+            alias: REDISCLOUD_URL
+          - name: launch-darkly-client-id
+            alias: LAUNCH_DARKLY_CLIENT_ID
+          - name: google-analytics-key
+            alias: google-analytics-key
 
 finrem-cos:
   enabled: true
