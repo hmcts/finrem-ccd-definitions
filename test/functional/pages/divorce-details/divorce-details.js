@@ -38,7 +38,7 @@ async function contestedDivorceDetails() {
   I.fillField('input[id="divorcePetitionIssuedDate-year"]', '2020');
   I.fillField('#nameOfCourtDivorceCentre', 'Brentford Court');
   I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi');
-  I.wait('2');
+  I.wait('5');
   I.retry('3').attachFile('input[type="file"]', '../data/fileupload.txt');
   I.wait('5');
   I.fillField('input[id="divorceDecreeNisiDate-day"]', '15');
