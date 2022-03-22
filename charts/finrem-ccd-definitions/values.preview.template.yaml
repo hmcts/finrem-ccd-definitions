@@ -61,7 +61,7 @@ xui-mo-webapp:
           - name: launch-darkly-client-id
             alias: LAUNCH_DARKLY_CLIENT_ID
           - name: xui-oauth2-token
-            alias: IDAM_SECRET
+            alias: XUI_OAUTH2_TOKEN
           - name: google-analytics-key
             alias: google-analytics-key
 
