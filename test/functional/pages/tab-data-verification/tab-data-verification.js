@@ -6,7 +6,7 @@ const verifyContestedPaperTabText = require('../../../data/verify-contested-pape
 function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
 
-  I.waitForText(tabName, '30');
+  I.retry(3).waitForText(tabName, '30');
     I.waitForEnabled('mat-tab-label-0-0');
   I.see(eventName);
   I.see(endState);
