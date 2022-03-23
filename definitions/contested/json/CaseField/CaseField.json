@@ -189,7 +189,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "dateOfMarriage",
-    "Label": "Date of marriage",
+    "Label": "Date of marriage / civil partnership",
     "FieldType": "Date",
     "SecurityClassification": "Public"
   },
@@ -1979,7 +1979,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabDateOfMarriage",
-    "Label": "**Date of marriage** : ${dateOfMarriage}",
+    "Label": "**Date of marriage / civil partnership** : ${dateOfMarriage}",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
