@@ -8,6 +8,8 @@ exports.config = {
       waitForNavigation: 'domcontentloaded',
       headless: true,
       ignoreHTTPSErrors: true,
+        smartWait: 50000,
+        waitForTimeout: 90000,
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
