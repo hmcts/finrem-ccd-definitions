@@ -231,7 +231,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceDecreeNisiDate",
-    "Label": "Decree Nisi Date",
+    "Label": "Date order granted",
     "FieldType": "Date",
     "SecurityClassification": "Public"
   },
@@ -2011,7 +2011,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabDivorceDecreeNisiDate",
-    "Label": "**Decree Nisi Date** : ${divorceDecreeNisiDate}",
+    "Label": "**Date order granted** : ${divorceDecreeNisiDate}",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
