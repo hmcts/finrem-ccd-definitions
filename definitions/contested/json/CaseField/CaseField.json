@@ -4002,5 +4002,305 @@
     "Label": "Reason for selecting an FRC location",
     "FieldType": "TextArea",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimHearingType",
+    "Label": "Type of Hearing",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_interimHearingTypeDirections",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimTimeEstimate",
+    "Label": "  ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimHearingDate",
+    "Label": "  ",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimHearingTime",
+    "Label": "  ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimRegionList",
+    "Label": "Please choose the Region in which the Applicant resides",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_region_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimLondonFRCList",
+    "Label": "If the FRC is not on the pilot, your application cannot proceed online. Please make a paper application direct to the FRC.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_london_FRCList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimNorthWestFRCList",
+    "Label": "If the FRC is not on the pilot, your application cannot proceed online. Please make a paper application direct to the FRC.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_nw_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimNorthEastFRCList",
+    "Label": "If the FRC is not on the pilot, your application cannot proceed online. Please make a paper application direct to the FRC.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_ne_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimSouthEastFRCList",
+    "Label": "If the FRC is not on the pilot, your application cannot proceed online. Please make a paper application direct to the FRC.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_se_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimSouthWestFRCList",
+    "Label": "If the FRC is not on the pilot, your application cannot proceed online. Please make a paper application direct to the FRC.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_sw_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimWalesFRCList",
+    "Label": "If the FRC is not on the pilot, your application cannot proceed online. Please make a paper application direct to the FRC.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_wales_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimMidlandsFRCList",
+    "Label": "If the FRC is not on the pilot, your application cannot proceed online. Please make a paper application direct to the FRC.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_midlands_FRCList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimNottinghamCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_NottinghamList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimCfcCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_CFCList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimBirminghamCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_birmingham_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimLiverpoolCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_liverpool_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimManchesterCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_manchester_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimLancashireCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_lancashireList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimCleavelandCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_cleveland_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimNwyorkshireCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimHumberCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_humber_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimKentSurreyCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_kent_surrey_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimBedfordshireCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bedfordshireList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimThamesvalleyCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_thamesvalleyList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimDevonCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_devonList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimDorsetCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_dorsetList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimBristolCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bristolList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimNewportCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_newport_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimSwanseaCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_swansea_hc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimNorthWalesCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_northwalesList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimAdditionalInformationAboutHearing",
+    "Label": "  ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
   }
 ]
