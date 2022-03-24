@@ -976,7 +976,19 @@
     "Name": "Revert to Prepare For Hearing",
     "Description": "Revert Case State to Prepare For Hearing",
     "DisplayOrder": 132,
-    "PreConditionState(s)": "consentProcess;consentedOrderNotApproved;consentedOrderAssignJudge;caseFileSubmitted;consentedOrderSubmitted",
+    "PreConditionState(s)": "consentProcess",
+    "PostConditionState": "prepareForHearing",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "10/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_revertToPrepareForHearingSuperuser",
+    "Name": "Revert to Prepare For Hearing",
+    "Description": "Revert Case State to Prepare For Hearing",
+    "DisplayOrder": 133,
+    "PreConditionState(s)": "consentedOrderNotApproved;consentedOrderAssignJudge;caseFileSubmitted;consentedOrderSubmitted",
     "PostConditionState": "prepareForHearing",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
