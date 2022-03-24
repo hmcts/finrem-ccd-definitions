@@ -15,13 +15,13 @@ If running yarn install throws an error with this output:
 
 `The chromium binary is not available for arm64`
 
-1) Run `brew insall chromium`
+1) Run `brew install chromium`
 2) Run `xattr -cr /Applications/Chromium.app`
-3) Add these env variables to your .zhrsc file  
+3) Add these env variables to your .zshrc file  
 `export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true`
 ``export PUPPETEER_EXECUTABLE_PATH=`which chromium` ``
 4) Save file and restart terminal
-5) Run `source ~/.zhsrc`
+5) Run `source ~/.zshrc`
 6) `yarn install && yarn reset-ccd-submodule`
 
 ## Convert JSON to Excel
