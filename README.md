@@ -17,7 +17,7 @@ If running yarn install throws an error with this output:
 
 1) Run `brew insall chromium`
 2) Run `xattr -cr /Applications/Chromium.app`
-3) Add these env variables to your .zhrsc file  
+3) Add these env variables to your .zhrsc file
 `export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true`
 ``export PUPPETEER_EXECUTABLE_PATH=`which chromium` ``
 4) Save file and restart terminal
@@ -82,6 +82,12 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 3) `yarn test:functional` will create cases via API (runs on PR and master AAT).
 4) `yarn test:nightly-functional` will create both API, UI screen tests and verifies data in tabs (runs on nightly pipeline on AAT).
 5) To create cases on demo, point CCD_DATA_API_URL to ccd demo API url and RUNNING_ENV=demo, run the scenario tests.
+
+### Run full UI E2E Tests for both Journeys from local pointing to AAT
+1.make a copy of example-run-functional-test-local.sh as run-functional-test-local.sh
+2.make it git ignore (this file not be checked in)
+3.update the secrets and user credentials
+4. run `yarn test:local`
 
 ## ccd-definition-processor
 
