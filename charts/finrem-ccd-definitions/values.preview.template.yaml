@@ -71,7 +71,7 @@ finrem-cos:
       EVIDENCE_MANAGEMENT_SERVICE_BASEURL: http://${SERVICE_NAME}-finrem-emca
       ACA_SERVICE_API_BASEURL: http://${SERVICE_NAME}-aac-manage-case-assignment
       CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
-      AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
+      AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY}
       UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
     keyVaults:
       finrem:
@@ -79,7 +79,7 @@ finrem-cos:
           - name: AppInsightsInstrumentationKey
             alias: azure.application-insights.instrumentation-key
           - name: finrem-case-orchestration-service-s2s-key
-            alias: AUTH_PROVIDER_SERVICE_CLIENT_KEY
+            alias: FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY
           - name: idam-secret
             alias: OAUTH2_CLIENT_FINREM
 
@@ -97,13 +97,13 @@ finrem-dgcs:
         AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
         PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
         IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
+        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_DOC_GEN_SERVICE_S2S_KEY}
         PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
     keyVaults:
       finrem:
         secrets:
           - name: finrem-doc-s2s-auth-secret
-            alias: AUTH_PROVIDER_SERVICE_CLIENT_KEY
+            alias: FINREM_DOC_GEN_SERVICE_S2S_KEY
           - name: idam-secret
             alias: IDAM_CLIENT_SECRET
           - name: docmosis-api-key
@@ -125,7 +125,7 @@ finrem-emca:
         IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
         AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
         DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
-        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
+        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_DOC_GEN_SERVICE_S2S_KEY}
     keyVaults:
       finrem:
         secrets:
@@ -165,8 +165,7 @@ finrem-ps:
         PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
         IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
         PAYMENT_API_URL: http://payment-api-aat.service.core-compute-aat.internal
-        FINREM_PAYMENTS_SERVICE_S2S_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
-        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${AUTH_PROVIDER_SERVICE_CLIENT_KEY}
+        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_PAYMENTS_SERVICE_S2S_KEY}
         USERNAME_SOLICITOR: ${USERNAME_SOLICITOR}
         PASSWORD_SOLICITOR: ${PASSWORD_SOLICITOR}
     keyVaults:
@@ -175,7 +174,7 @@ finrem-ps:
           - name: AppInsightsInstrumentationKey
             alias: APP_INSIGHTS_INSTRUMENTATION_KEY
           - name: finrem-payment-service-s2s-key
-            alias: AUTH_PROVIDER_SERVICE_CLIENT_KEY
+            alias: FINREM_PAYMENTS_SERVICE_S2S_KEY
           - name: idam-secret
             alias: OAUTH2_CLIENT_FINREM
           - name: username-solicitor
