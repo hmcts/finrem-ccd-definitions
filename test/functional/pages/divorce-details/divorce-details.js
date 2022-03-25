@@ -25,7 +25,7 @@ async function contestedDivorceDetails() {
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
-  I.waitForPage('#divorceDetailsLabel h2', 'Divorce / Dissolution Details');
+  I.waitForPage('#divorceDetailsLabel h2', 'Divorce Details');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D54321');
   I.fillField('input[id="dateOfMarriage-day"]', '1');
   I.fillField('input[id="dateOfMarriage-month"]', '2');

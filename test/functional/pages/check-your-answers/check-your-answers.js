@@ -23,7 +23,7 @@ async function contestedCheckYourAnswers() {
     await I.runAccessibilityTest();
   }
   I.see('Solicitor Details');
-  I.see('Divorce / Dissolution Details');
+  I.see('Divorce Details');
   I.see('Applicant’s Details');
   I.see('Respondent’s Details');
   I.see('Is the respondent represented ?');
