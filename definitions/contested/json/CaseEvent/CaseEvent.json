@@ -1001,7 +1001,7 @@
     "ID": "applyNocDecision",
     "Name": "Apply NoC Decision",
     "Description": "Apply Notice of Change Request",
-    "DisplayOrder": 72,
+    "DisplayOrder": 134,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_AAC_URL}/noc/apply-decision",
