@@ -1,7 +1,3 @@
-x-deploy-enabled: &deploy-enabled
-  enabled: false
-
-
 tags:
   finrem-ccd-stack: true
 
@@ -11,8 +7,8 @@ nodejs:
   ingressHost: ${SERVICE_FQDN}
 
 idam-pr:
-  <<: *deploy-enabled
   releaseNameOverride: ${SERVICE_NAME}-ccd-pr
+  enabled: true
   redirect_uris:
     XUI:
       - https://xui-${SERVICE_FQDN}/oauth2/callback
@@ -24,7 +20,7 @@ idam-pr:
       - https://admin-web-${SERVICE_FQDN}/oauth2redirect
 
 xui-webapp:
-  <<: *deploy-enabled
+  enabled: true
   nodejs:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-xui-webapp
@@ -41,7 +37,7 @@ xui-webapp:
       JURISDICTIONS: DIVORCE
 
 xui-mo-webapp:
-  <<: *deploy-enabled
+  enabled: true
   nodejs:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-xui-mo-webapp
@@ -55,7 +51,7 @@ xui-mo-webapp:
       CASE_TYPES: "FinancialRemedyMVP2,FinancialRemedyContested"
 
 finrem-cos:
-  <<: *deploy-enabled
+  enabled: true
   java:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/cos:pr-644
@@ -89,7 +85,7 @@ finrem-cos:
 
 
 finrem-dgcs:
-  <<: *deploy-enabled
+  enabled: true
   java:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/dgcs:latest
@@ -119,7 +115,7 @@ finrem-dgcs:
 
 
 finrem-emca:
-  <<: *deploy-enabled
+  enabled: true
   java:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/emca:latest
@@ -139,7 +135,7 @@ finrem-emca:
             alias: APP_INSIGHTS_INSTRUMENTATION_KEY
 
 finrem-ns:
-  <<: *deploy-enabled
+  enabled: true
   java:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/ns:latest
@@ -156,7 +152,7 @@ finrem-ns:
             alias: UK_GOV_NOTIFY_API_KEY
 
 finrem-ps:
-  <<: *deploy-enabled
+  enabled: true
   java:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/ps:latest
@@ -191,15 +187,15 @@ ccd:
     definitionImporter:
       enabled: false
     managementWeb:
-      <<: *deploy-enabled
+      enabled: true
     apiGatewayWeb:
-      <<: *deploy-enabled
+      enabled: true
     s2s:
       enabled: false
     printService:
-      <<: *deploy-enabled
+      enabled: true
     elastic:
-      <<: *deploy-enabled
+      enabled: true
 
 
   ingressHost: ${SERVICE_FQDN}
@@ -332,7 +328,7 @@ ccd:
 
   importer:
     userprofile:
-      <<: *deploy-enabled
+      enabled: true
       jurisdictions:
         - DIVORCE
       users:
@@ -377,7 +373,7 @@ ccd:
     persistence:
       enabled: false
     ingress:
-      <<: *deploy-enabled
+      enabled: true
       annotations:
         kubernetes.io/ingress.class: traefik
       path: /
@@ -416,7 +412,7 @@ ccd:
       initialDelaySeconds: 90
 
 aac-manage-case-assignment:
-  <<: *deploy-enabled
+  enabled: true
   java:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-aac-manage-case-assignment
