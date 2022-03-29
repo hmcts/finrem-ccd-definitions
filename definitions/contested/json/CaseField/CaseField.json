@@ -4002,5 +4002,93 @@
     "Label": "Reason for selecting an FRC location",
     "FieldType": "TextArea",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocLabel",
+    "Label": "Change Representation",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocParty",
+    "Label": "Select Party: ",
+    "FieldType": "FixedRadioList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocPartyIsRepresented",
+    "Label": "Are they represented by a solicitor?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocPartyAddressLabel",
+    "Label": "Service Address",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocPartyAddress",
+    "Label": "        ",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocIsSolicitorDigital",
+    "Label": "Is the solicitor digital?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocNewSolicitorName",
+    "Label": "Solicitor's name",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocNewSolicitorPhoneNumber",
+    "Label": "Solicitor's Phone Number",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocNewSolicitorEmail",
+    "Label": "Solicitor's Email",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocNewSolicitorFirm",
+    "Label": "Solicitor's Firm / DX Address",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocNewSolicitorOrganisationPolicy",
+    "Label": "Solicitor's Firm / DX Address",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
   }
 ]
