@@ -7,7 +7,7 @@ function historyTab(caseType, tabName, eventName, endState) {
   const I = this;
 
   I.retry(3).waitForText(tabName, '30');
-    I.waitForEnabled('mat-tab-label-0-0');
+   // I.waitForEnabled('mat-tab-label-0-0');
   I.see(eventName);
   I.see(endState);
 }
