@@ -989,6 +989,7 @@
     "Description": "List for Interim Hearing",
     "DisplayOrder": 133,
     "PreConditionState(s)": "applicationIssued",
+    "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
