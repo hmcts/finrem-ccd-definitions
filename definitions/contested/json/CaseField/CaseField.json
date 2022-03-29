@@ -4079,16 +4079,34 @@
     "LiveFrom": "19/05/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "nocNewSolicitorFirm",
-    "Label": "Solicitor's Firm / DX Address",
+    "Label": "Solicitor's Firm Name",
     "FieldType": "TextArea",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "19/05/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "nocNewSolicitorOrganisationPolicy",
-    "Label": "Solicitor's Firm / DX Address",
-    "FieldType": "OrganisationPolicy",
+    "ID": "nocNewSolicitorFirmAddress",
+    "Label": "Solicitor's Firm Address",
+    "FieldType": "TextArea",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocNewSolicitorOrganisation",
+    "Label": "Solicitor's Firm / DX Address",
+    "FieldType": "Organisation",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "changeOfRepresentatives",
+    "Label": "Change of representatives",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "ChangeOfRepresentation",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
