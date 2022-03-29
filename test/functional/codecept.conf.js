@@ -23,7 +23,7 @@ exports.config = {
     plugins: {
         retryFailedStep: {
             enabled: true,
-            retries: 2
+            retries: 1
         },
         autoDelay: {
             enabled: true
