@@ -1899,5 +1899,13 @@
     "Label": "#### Case State: ${[STATE]}",
     "FieldType": "Label",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "changeOrganisationRequestField",
+    "Label": "Change Organisation Request",
+    "FieldType": "ChangeOrganisationRequest",
+    "SecurityClassification": "Public"
   }
 ]
