@@ -1069,6 +1069,22 @@
   },
   {
     "LiveFrom": "01/01/2017",
+    "ID": "RepresentativeOrganisation",
+    "ListElementCode": "orgName",
+    "FieldType": "Text",
+    "ElementLabel": "Organisation Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentativeOrganisation",
+    "ListElementCode": "orgAddress",
+    "FieldType": "TextArea",
+    "ElementLabel": "Organisation Address",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
     "ID": "ChangedRepresentative",
     "ListElementCode": "firstName",
     "FieldType": "Text",
@@ -1095,7 +1111,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "ChangedRepresentative",
     "ListElementCode": "organisation",
-    "FieldType": "Organisation",
+    "FieldType": "RepresentativeOrganisation",
     "ElementLabel": "Organisation",
     "SecurityClassification": "Public"
   },
