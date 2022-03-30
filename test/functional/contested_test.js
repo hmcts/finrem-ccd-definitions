@@ -235,6 +235,7 @@ Scenario('Contested share case @nightly @pipeline', async I => {
   const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json',solRef);
   /* eslint-enable */
     I.signInIdam(solicitorUserName, solicitorPassword);
+      I.wait('2');
     I.assignContestedShareCase(caseId, solRef);
   }
 });
