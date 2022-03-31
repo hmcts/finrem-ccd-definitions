@@ -4055,16 +4055,8 @@
   {
     "LiveFrom": "19/05/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "nocNewSolicitorFName",
-    "Label": "Solicitor's first name",
-    "FieldType": "TextArea",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "19/05/2021",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "nocNewSolicitorLName",
-    "Label": "Solicitor's last name",
+    "ID": "nocNewSolicitorName",
+    "Label": "Solicitor's name",
     "FieldType": "TextArea",
     "SecurityClassification": "Public"
   },
