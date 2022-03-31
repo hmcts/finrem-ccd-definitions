@@ -8685,5 +8685,26 @@
     "CaseFieldID": "nocNewSolicitorOrganisation",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "nocNewSolicitorAddress",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "nocNewSolicitorAddress",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "nocNewSolicitorAddress",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
   }
 ]
