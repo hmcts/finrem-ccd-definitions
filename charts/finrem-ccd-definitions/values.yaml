@@ -1,5 +1,5 @@
 tags:
-  ccd-pr: false
+  finrem-ccd-stack: false
 
 idam-pr:
   enabled: false
@@ -9,6 +9,10 @@ xui-webapp:
 
 xui-mo-webapp:
   enabled: false
+
+elastic:
+  enabled: false
+
 aac-manage-case-assignment:
   enabled: false
 
