@@ -4093,7 +4093,7 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "intrimPromptForAnyDocument",
+    "CaseFieldID": "intrimPromptForAnyDocumentLabel",
     "TabFieldDisplayOrder": 50
   },
   {
@@ -4102,7 +4102,25 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "intrimUploadAdditionalDocument",
+    "CaseFieldID": "intrimPromptForAnyDocument",
     "TabFieldDisplayOrder": 51
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "intrimUploadOtherDocumentLabel",
+    "TabFieldDisplayOrder": 52
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "intrimUploadAdditionalDocument",
+    "TabFieldDisplayOrder": 53
   }
 ]
