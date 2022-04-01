@@ -4015,7 +4015,7 @@
     "LiveFrom": "19/05/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "nocParty",
-    "Label": "Select Party: ",
+    "Label": "Select Party to which the change in representation applies: ",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "nocPartyList",
     "SecurityClassification": "Public"
@@ -4108,7 +4108,6 @@
     "ID": "updateIncludesRepresentativeChange",
     "Label": "Does this update include a change in representation for either party?",
     "FieldType": "YesOrNo",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  }
+    "SecurityClassification": "Public"
+  },
 ]
