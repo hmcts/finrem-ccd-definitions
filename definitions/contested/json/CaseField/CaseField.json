@@ -4319,5 +4319,38 @@
     "HintText": "Interim Hearing (caseworker S&L)",
     "FieldType": "Label",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intrimPromptForAnyDocumentLabel",
+    "Label": "## Do you want to upload any other documents ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intrimPromptForAnyDocument",
+    "Label": "          ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intrimUploadOtherDocumentLabel",
+    "Label": "## Upload other documents",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intrimUploadAdditionalDocument",
+    "Label": "   ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadAdditionalDocument",
+    "SecurityClassification": "Public"
   }
 ]

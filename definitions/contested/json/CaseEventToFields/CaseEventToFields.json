@@ -8710,5 +8710,55 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addListForInterimHearingInfo",
+    "CaseFieldID": "intrimPromptForAnyDocumentLabel",
+    "PageFieldDisplayOrder": 31,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addListForInterimHearingInfo",
+    "CaseFieldID": "intrimPromptForAnyDocument",
+    "PageFieldDisplayOrder": 32,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addListForInterimHearingInfo",
+    "CaseFieldID": "intrimUploadOtherDocumentLabel",
+    "PageFieldDisplayOrder": 33,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "intrimPromptForAnyDocument=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addListForInterimHearingInfo",
+    "CaseFieldID": "intrimUploadAdditionalDocument",
+    "PageFieldDisplayOrder": 34,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "intrimPromptForAnyDocument=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
   }
 ]
