@@ -3349,7 +3349,7 @@
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -3426,7 +3426,7 @@
     "PageFieldDisplayOrder": 11,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
-    "PageDisplayOrder": 3,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3439,7 +3439,7 @@
     "PageFieldDisplayOrder": 12,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
-    "PageDisplayOrder": 3,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3452,7 +3452,7 @@
     "PageFieldDisplayOrder": 13,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
-    "PageDisplayOrder": 3,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3465,7 +3465,7 @@
     "PageFieldDisplayOrder": 14,
     "DisplayContext": "OPTIONAL",
     "PageID": 2,
-    "PageDisplayOrder": 4,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3491,7 +3491,7 @@
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 3,
-    "PageDisplayOrder": 4,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "PageShowCondition": "updateIncludesRepresentativeChange=\"No\" OR nocParty=\"applicant\""
@@ -3504,7 +3504,7 @@
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 3,
-    "PageDisplayOrder": 4,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -3516,7 +3516,7 @@
     "PageFieldDisplayOrder": 3,
     "DisplayContext": "MANDATORY",
     "PageID": 3,
-    "PageDisplayOrder": 4,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -3528,7 +3528,7 @@
     "PageFieldDisplayOrder": 4,
     "DisplayContext": "READONLY",
     "PageID": 3,
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -3541,7 +3541,7 @@
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "MANDATORY",
     "PageID": 3,
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -3554,7 +3554,7 @@
     "PageFieldDisplayOrder": 6,
     "DisplayContext": "OPTIONAL",
     "PageID": 3,
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -3567,7 +3567,7 @@
     "PageFieldDisplayOrder": 7,
     "DisplayContext": "OPTIONAL",
     "PageID": 3,
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -3580,7 +3580,7 @@
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "OPTIONAL",
     "PageID": 3,
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -3593,7 +3593,7 @@
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "PageShowCondition": "updateIncludesRepresentativeChange=\"No\" OR nocParty=\"respondent\""
@@ -3606,7 +3606,7 @@
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -3618,7 +3618,7 @@
     "PageFieldDisplayOrder": 3,
     "DisplayContext": "READONLY",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3631,7 +3631,7 @@
     "PageFieldDisplayOrder": 4,
     "DisplayContext": "OPTIONAL",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3644,7 +3644,7 @@
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "OPTIONAL",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3657,7 +3657,7 @@
     "PageFieldDisplayOrder": 6,
     "DisplayContext": "MANDATORY",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3670,7 +3670,7 @@
     "PageFieldDisplayOrder": 7,
     "DisplayContext": "READONLY",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3683,7 +3683,7 @@
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "MANDATORY",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3696,7 +3696,7 @@
     "PageFieldDisplayOrder": 9,
     "DisplayContext": "OPTIONAL",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3709,7 +3709,7 @@
     "PageFieldDisplayOrder": 10,
     "DisplayContext": "OPTIONAL",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3722,7 +3722,7 @@
     "PageFieldDisplayOrder": 11,
     "DisplayContext": "OPTIONAL",
     "PageID": 4,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3772,7 +3772,7 @@
     "PageFieldDisplayOrder": 4,
     "DisplayContext": "READONLY",
     "PageID": 5,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -3785,7 +3785,7 @@
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "MANDATORY",
     "PageID": 5,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -3798,7 +3798,7 @@
     "PageFieldDisplayOrder": 6,
     "DisplayContext": "OPTIONAL",
     "PageID": 5,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -3811,7 +3811,7 @@
     "PageFieldDisplayOrder": 7,
     "DisplayContext": "OPTIONAL",
     "PageID": 5,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -3824,7 +3824,7 @@
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "OPTIONAL",
     "PageID": 5,
-    "PageDisplayOrder": 6,
+    "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
