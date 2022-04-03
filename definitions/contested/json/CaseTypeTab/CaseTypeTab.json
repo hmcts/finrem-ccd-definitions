@@ -3630,6 +3630,6 @@
     "TabDisplayOrder": 21,
     "CaseFieldID": "changeOfRepresentatives",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "changeOfRepresentatives!=\"\""
+    "TabShowCondition": "changeOfRepresentatives!=\"\" OR updateIncludesRepresentativeChange!=\"\""
   }
 ]
