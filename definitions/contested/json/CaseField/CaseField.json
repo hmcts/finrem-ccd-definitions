@@ -4118,5 +4118,21 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "repChangeTypeList",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "ApplicantPreviousRepresentative",
+    "Label": "  ",
+    "FieldType": "ChangedRepresentative",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "RespondentPreviousRepresentative",
+    "Label": "  ",
+    "FieldType": "ChangedRepresentative",
+    "SecurityClassification": "Public"
   }
 ]
