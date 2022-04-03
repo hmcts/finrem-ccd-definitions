@@ -4010,5 +4010,57 @@
     "Label": "Reason for selecting an FRC location",
     "FieldType": "TextArea",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocParty",
+    "Label": "Select Party to which the change in representation applies: ",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "nocPartyList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "changeOfRepresentatives",
+    "Label": "Change of representatives",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "ChangeOfRepresentation",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "updateIncludesRepresentativeChange",
+    "Label": "Does this update include a change in representation for either party?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "natureOfRepresentationChange",
+    "Label": "Are you adding, removing or replacing representation?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "repChangeTypeList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "ApplicantPreviousRepresentative",
+    "Label": "  ",
+    "FieldType": "ChangedRepresentative",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "RespondentPreviousRepresentative",
+    "Label": "  ",
+    "FieldType": "ChangedRepresentative",
+    "SecurityClassification": "Public"
   }
 ]
