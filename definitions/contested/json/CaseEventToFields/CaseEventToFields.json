@@ -3609,7 +3609,7 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "updateIncludesRepresentativeChange=\"No\" OR (nocParty=\"respondent\" AND updateIncludesRepresentationChange!=\"removing\")"
+    "PageShowCondition": "updateIncludesRepresentativeChange=\"No\" OR (nocParty=\"respondent\" AND natureOfRepresentationChange!=\"removing\")"
   },
   {
     "LiveFrom": "01/01/2017",
