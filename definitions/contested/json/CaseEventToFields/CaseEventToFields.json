@@ -3339,7 +3339,7 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "updateIncludesRepresentativeChange=\"No\" OR nocParty=\"applicant\""
+    "PageShowCondition": "updateIncludesRepresentativeChange=\"No\" OR (nocParty=\"applicant\" AND natureOfRepresentationChange!=\"removing\")"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3609,7 +3609,7 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "updateIncludesRepresentativeChange=\"No\" OR nocParty=\"respondent\""
+    "PageShowCondition": "updateIncludesRepresentativeChange=\"No\" OR (nocParty=\"respondent\" AND updateIncludesRepresentationChange!=\"removing\")"
   },
   {
     "LiveFrom": "01/01/2017",
