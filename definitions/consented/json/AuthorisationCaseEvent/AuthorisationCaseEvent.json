@@ -1403,7 +1403,14 @@
     "LiveFrom": "01/01/2021",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "applyNocDecision",
-    "UserRole": "caseworker-approver",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "applyNocDecision",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   }
 ]
