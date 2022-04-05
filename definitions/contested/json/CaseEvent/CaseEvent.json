@@ -166,7 +166,7 @@
     "PostConditionState": "prepareForHearing",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/hearing",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/prepare-for-hearing ",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/prepare-for-hearing",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
