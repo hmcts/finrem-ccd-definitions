@@ -988,7 +988,7 @@
     "Name": "List for Interim Hearing",
     "Description": "List for Interim Hearing",
     "DisplayOrder": 133,
-    "PreConditionState(s)": "applicationIssued",
+    "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-for-interim-hearing",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
