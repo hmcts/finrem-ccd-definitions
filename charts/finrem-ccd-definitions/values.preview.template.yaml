@@ -230,6 +230,7 @@ ccd:
       autoscaling:
         enabled: false
       imagePullPolicy: Always
+      image: hmctspublic.azurecr.io/ccd/data-store-api:pr-1938
       environment:
         DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
@@ -268,6 +269,7 @@ ccd:
       autoscaling:
         enabled: false
       imagePullPolicy: Always
+      image: hmctspublic.azurecr.io/ccd/definition-store-api:latest
       keyVaults: []
       environment:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
