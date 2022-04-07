@@ -421,7 +421,7 @@ aac-manage-case-assignment:
   java:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-aac-manage-case-assignment
-    image: hmctspublic.azurecr.io/aac/manage-case-assignment:latest
+    image: hmctspublic.azurecr.io/aac/manage-case-assignment:pr-380
     ingressHost: aac-${SERVICE_FQDN}
     environment:
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
