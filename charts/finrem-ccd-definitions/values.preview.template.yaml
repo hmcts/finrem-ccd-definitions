@@ -63,6 +63,7 @@ finrem-cos:
       FEATURE_USE_USER_TOKEN: true
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
+      IDAM_API_XUI_REDIRECT_URL: https://manage-case.aat.platform.hmcts.net/oauth2/callback
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
       IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       DOCUMENT_GENERATOR_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-dgcs
@@ -73,6 +74,9 @@ finrem-cos:
       CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
       AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY}
       UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
+      NOC_APPROVER_USERNAME: ${NOC_APPROVER_USERNAME}
+      NOC_APPROVER_PASSWORD: ${NOC_APPROVER_PASSWORD}
+      IDAM_XUI_SECRET: ${IDAM_XUI_SECRET}
     keyVaults:
       finrem:
         secrets:
@@ -82,7 +86,12 @@ finrem-cos:
             alias: FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY
           - name: idam-secret
             alias: OAUTH2_CLIENT_FINREM
-
+          - name: idam-xui-secret
+            alias: IDAM_XUI_SECRET
+          - name: aac-noc-approver-username
+            alias: NOC_APPROVER_USERNAME
+          - name: aac-noc-approver-password
+            alias: NOC_APPROVER_PASSWORD
 
 finrem-dgcs:
   enabled: true

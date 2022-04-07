@@ -58,7 +58,10 @@ def secrets = [
                 secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
                 secret('docmosis-endpoint', 'PDF_SERVICE_BASEURL'),
                 secret('gov-uk-notification-key', 'UK_GOV_NOTIFY_API_KEY'),
-                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY')
+                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY'),
+                secret("aac-noc-approver-username", "NOC_APPROVER_USERNAME"),
+                secret("aac-noc-approver-password", "NOC_APPROVER_PASSWORD"),
+                secret("idam-xui-secret", "IDAM_XUI_SECRET")
 
         ]
 ]
