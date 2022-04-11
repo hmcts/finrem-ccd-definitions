@@ -149,3 +149,13 @@ NOTE: Jenkins will populate Judge details in the PROD configs that is not availa
 
 Follow this guide for releasing a new config file to Production:
 https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+Production
+
+## Preview deployment for PRs in testing
+The team leveraged the fact this service has set up charts with all services needed for running the full Financial Remedy solution to create 
+deployments to Preview with the PRs so Developers and Testers can work on changes without the weight that a local environment has on machine resources.
+
+The deployment can be switched ON and OFF by setting the flags true or false in charts/finrem-ccd-definitions/values.preview.template.yaml
+
+More details can be found [here](https://tools.hmcts.net/confluence/display/RSE/Divorce+Local+Environment+Set+up+using+Preview):
+
+
