@@ -42,6 +42,22 @@
   {
     "LiveFrom": "05/08/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "PrepopulateToUsersOrganisation",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "PreviousOrganisation",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "ListElementCode": "OrgPolicyCaseAssignedRole",
     "UserRole": "caseworker-caa",
@@ -76,6 +92,22 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "ListElementCode": "Organisation.OrganisationName",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "ListElementCode": "PrepopulateToUsersOrganisation",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "ListElementCode": "PreviousOrganisation",
     "UserRole": "caseworker-caa",
     "CRUD": "CRU"
   }
