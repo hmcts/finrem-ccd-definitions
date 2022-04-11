@@ -682,8 +682,6 @@
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/org-policies",
-    "CallBackURLMidEvent_1": "3,4,5",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -708,6 +706,8 @@
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/org-policies",
+    "CallBackURLMidEvent_1": "3,4,5",
     "ShowSummaryChangeOption": "Y"
   },
   {
