@@ -10,6 +10,8 @@ exports.config = {
       ignoreHTTPSErrors: true,
       chrome: {
         ignoreHTTPSErrors: true,
+          smartWait: 50000,
+          waitForTimeout: 90000,
         args: [
           '--no-sandbox',
           '--start-fullscreen'
@@ -18,6 +20,15 @@ exports.config = {
     },
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
   },
+    plugins: {
+        retryFailedStep: {
+            enabled: true,
+            retries: 1
+        },
+        autoDelay: {
+            enabled: true
+        }
+    },
   include: { I: './steps_file.js' },
   bootstrap: null,
   mocha: {
