@@ -7,6 +7,7 @@
     "Description": "Create an application for financial remedy by contested",
     "DisplayOrder": 1,
     "PostConditionState": "caseAdded",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/default-values",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/draft-contested-mini-form-a",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
@@ -193,6 +194,7 @@
     "DisplayOrder": 16,
     "PreConditionState(s)": "caseAdded",
     "PostConditionState": "caseAdded",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/default-values",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/update-contested-case",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
@@ -512,6 +514,7 @@
     "DisplayOrder": 102,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/default-values",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
