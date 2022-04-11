@@ -156,6 +156,13 @@ deployments to Preview with the PRs so Developers and Testers can work on change
 
 The deployment can be switched ON and OFF by setting the flags true or false in charts/finrem-ccd-definitions/values.preview.template.yaml
 
-More details can be found [here](https://tools.hmcts.net/confluence/display/RSE/Divorce+Local+Environment+Set+up+using+Preview):
+More details can be found [here](https://tools.hmcts.net/confluence/display/RSE/Divorce+Local+Environment+Set+up+using+Preview)
 
+## ATTENTION! 
+If you switch the Preview deployment ON, 
+remember to switch it back OFF by committing the flags, for both, 
+CCD stack and Financial Remedy stack to the repo as FALSE 
+and remove the deployment from Kubernetes by running
+
+helm uninstall -n financial-remedy finrem-ccd-definitions-pr-<Your PR Number>
 
