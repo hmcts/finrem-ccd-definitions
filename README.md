@@ -164,5 +164,5 @@ remember to switch it back OFF by committing the flags, for both,
 CCD stack and Financial Remedy stack to the repo as FALSE 
 and remove the deployment from Kubernetes by running
 
-helm uninstall -n financial-remedy finrem-ccd-definitions-pr-<Your PR Number>
+`helm uninstall -n financial-remedy finrem-ccd-definitions-pr-<number>`
 
