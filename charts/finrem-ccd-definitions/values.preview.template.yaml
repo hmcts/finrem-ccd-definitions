@@ -1,9 +1,10 @@
 x-deploy-enabled: &deploy-enabled
+  #Switch true or false to deploy the Financial Remedy stack to Preview
   enabled: false
 
-
 tags:
-  finrem-ccd-stack: true
+  #Switch true or false to deploy the CCD stack to Preview
+  finrem-ccd-stack: false
 
 nodejs:
   # Don't modify below here
