@@ -27,6 +27,14 @@
     "LiveFrom": "05/08/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "Organisation.OrganisationName",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
     "ListElementCode": "Organisation.OrganisationID",
     "UserRole": "caseworker-caa",
     "CRUD": "CRU"
@@ -60,6 +68,14 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "ListElementCode": "Organisation.OrganisationID",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "ListElementCode": "Organisation.OrganisationName",
     "UserRole": "caseworker-caa",
     "CRUD": "CRU"
   }
