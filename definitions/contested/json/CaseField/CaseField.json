@@ -213,7 +213,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceStageReached",
-    "Label": "What stage has the divorce reached ?",
+    "Label": "What stage has the case reached?",
     "HintText": "To ensure the application is linked to the divorce file without delay, please upload a copy of the decree [nisi] [absolute]",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_StageReached",
@@ -223,7 +223,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceUploadEvidence1",
-    "Label": "Upload Decree Nisi ",
+    "Label": "Upload Decree Nisi / conditional order",
     "FieldType": "Document",
     "SecurityClassification": "Public"
   },
@@ -231,7 +231,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceDecreeNisiDate",
-    "Label": "Decree Nisi Date",
+    "Label": "Date order granted",
     "FieldType": "Date",
     "SecurityClassification": "Public"
   },
@@ -263,7 +263,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorcePetitionIssuedDate",
-    "Label": "Petition Issued Date",
+    "Label": "Application Issued Date",
     "FieldType": "Date",
     "SecurityClassification": "Public"
   },
@@ -2011,7 +2011,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabDivorceDecreeNisiDate",
-    "Label": "**Decree Nisi Date** : ${divorceDecreeNisiDate}",
+    "Label": "**Date order granted** : ${divorceDecreeNisiDate}",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
@@ -2019,7 +2019,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabDivorcePetitionIssuedDate",
-    "Label": "**Petition Issued Date** : ${divorcePetitionIssuedDate}",
+    "Label": "**Application Issued Date** : ${divorcePetitionIssuedDate}",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
