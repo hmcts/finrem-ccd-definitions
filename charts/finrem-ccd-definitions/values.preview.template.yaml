@@ -4,7 +4,7 @@ x-deploy-enabled: &deploy-enabled
 
 tags:
   #Switch true or false to deploy the CCD stack to Preview
-  finrem-ccd-stack: false
+  finrem-ccd-stack: true
 
 nodejs:
   # Don't modify below here
