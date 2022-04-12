@@ -1,6 +1,6 @@
 x-deploy-finrem-stack-variable: &deploy-finrem-stack
   #Switch true or false to deploy the Financial Remedy stack to Preview
-  enabled: false
+  enabled: true
 
 tags:
   #Switch true or false to deploy the CCD stack to Preview
