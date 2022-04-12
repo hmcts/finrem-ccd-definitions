@@ -7,6 +7,7 @@
     "Description": "Create an application for financial remedy by contested",
     "DisplayOrder": 1,
     "PostConditionState": "caseAdded",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/default-values",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/draft-contested-mini-form-a",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
@@ -193,6 +194,7 @@
     "DisplayOrder": 16,
     "PreConditionState(s)": "caseAdded",
     "PostConditionState": "caseAdded",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/default-values",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/update-contested-case",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
@@ -512,6 +514,7 @@
     "DisplayOrder": 102,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/default-values",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -676,7 +679,7 @@
     "Name": "Consent Order",
     "Description": "Consent Order",
     "DisplayOrder": 115,
-    "PreConditionState(s)": "*",
+    "PreConditionState(s)": "applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;caseFileSubmitted;close;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;responseReceived;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;prepareForHearing",
     "PostConditionState": "consentedOrderSubmitted",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/generate-mini-form-a",
     "SecurityClassification": "Public",
@@ -979,6 +982,22 @@
     "PreConditionState(s)": "consentProcess",
     "PostConditionState": "prepareForHearing",
     "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_addListForInterimHearingInfo",
+    "Name": "List for Interim Hearing",
+    "Description": "List for Interim Hearing",
+    "DisplayOrder": 133,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-for-interim-hearing",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/prepare-for-interim-hearing",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   }
 ]

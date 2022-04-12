@@ -350,6 +350,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "divorceDetailsTab",
+    "TabLabel": "Divorce Details",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "civilPartnership",
+    "TabFieldDisplayOrder": 13
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 4,
@@ -3620,5 +3629,516 @@
     "TabDisplayOrder": 20,
     "CaseFieldID": "respOtherCollectionShared",
     "TabFieldDisplayOrder": 20
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "specialMeasuresApplicationLbl",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "tabSpecialAssistanceRequired",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "tabSpecificArrangementsRequired",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearingLbl",
+    "TabFieldDisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "timeEstimateLabel",
+    "TabFieldDisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimTimeEstimate",
+    "TabFieldDisplayOrder": 6
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "hearingDateLabel",
+    "TabFieldDisplayOrder": 7
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearingDate",
+    "TabFieldDisplayOrder": 8
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearingType",
+    "TabFieldDisplayOrder": 9
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "hearingTimeLabel",
+    "TabFieldDisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearingTime",
+    "TabFieldDisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "chooseCourtLabelSL",
+    "TabFieldDisplayOrder": 12
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_regionList",
+    "TabFieldDisplayOrder": 13
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_midlandsFRCList",
+    "TabFieldDisplayOrder": 14,
+    "FieldShowCondition": "interim_regionList=\"midlands\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_nottinghamCourtList",
+    "TabFieldDisplayOrder": 15,
+    "FieldShowCondition": "interim_regionList=\"midlands\" AND interim_midlandsFRCList=\"nottingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_cfcCourtList",
+    "TabFieldDisplayOrder": 16,
+    "FieldShowCondition": "interim_regionList=\"london\" AND interim_londonFRCList=\"cfc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_londonFRCList",
+    "TabFieldDisplayOrder": 17,
+    "FieldShowCondition": "interim_regionList=\"london\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_northWestFRCList",
+    "TabFieldDisplayOrder": 18,
+    "FieldShowCondition": "interim_regionList=\"northwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_northEastFRCList",
+    "TabFieldDisplayOrder": 19,
+    "FieldShowCondition": "interim_regionList=\"northeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_southEastFRCList",
+    "TabFieldDisplayOrder": 20,
+    "FieldShowCondition": "interim_regionList=\"southeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_southWestFRCList",
+    "TabFieldDisplayOrder": 21,
+    "FieldShowCondition": "interim_regionList=\"southwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_walesFRCList",
+    "TabFieldDisplayOrder": 22,
+    "FieldShowCondition": "interim_regionList=\"wales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_birminghamCourtList",
+    "TabFieldDisplayOrder": 23,
+    "FieldShowCondition": "interim_regionList=\"midlands\" AND interim_midlandsFRCList=\"birmingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_liverpoolCourtList",
+    "TabFieldDisplayOrder": 24,
+    "FieldShowCondition": "interim_regionList=\"northwest\" AND interim_northWestFRCList=\"liverpool\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_manchesterCourtList",
+    "TabFieldDisplayOrder": 25,
+    "FieldShowCondition": "interim_regionList=\"northwest\" AND interim_northWestFRCList=\"manchester\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_lancashireCourtList",
+    "TabFieldDisplayOrder": 26,
+    "FieldShowCondition": "interim_regionList=\"northwest\" AND interim_northWestFRCList=\"lancashire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_cleavelandCourtList",
+    "TabFieldDisplayOrder": 27,
+    "FieldShowCondition": "interim_regionList=\"northeast\" AND interim_northEastFRCList=\"cleaveland\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_nwyorkshireCourtList",
+    "TabFieldDisplayOrder": 28,
+    "FieldShowCondition": "interim_regionList=\"northeast\" AND interim_northEastFRCList=\"nwyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_humberCourtList",
+    "TabFieldDisplayOrder": 29,
+    "FieldShowCondition": "interim_regionList=\"northeast\" AND interim_northEastFRCList=\"hsyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_kentSurreyCourtList",
+    "TabFieldDisplayOrder": 30,
+    "FieldShowCondition": "interim_regionList=\"southeast\" AND interim_southEastFRCList=\"kentfrc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_bedfordshireCourtList",
+    "TabFieldDisplayOrder": 31,
+    "FieldShowCondition": "interim_regionList=\"southeast\" AND interim_southEastFRCList=\"bedfordshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_thamesvalleyCourtList",
+    "TabFieldDisplayOrder": 32,
+    "FieldShowCondition": "interim_regionList=\"southeast\" AND interim_southEastFRCList=\"thamesvalley\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_devonCourtList",
+    "TabFieldDisplayOrder": 33,
+    "FieldShowCondition": "interim_regionList=\"southwest\" AND interim_southWestFRCList=\"devon\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_dorsetCourtList",
+    "TabFieldDisplayOrder": 34,
+    "FieldShowCondition": "interim_regionList=\"southwest\" AND interim_southWestFRCList=\"dorset\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_bristolCourtList",
+    "TabFieldDisplayOrder": 35,
+    "FieldShowCondition": "interim_regionList=\"southwest\" AND interim_southWestFRCList=\"bristol\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_newportCourtList",
+    "TabFieldDisplayOrder": 36,
+    "FieldShowCondition": "interim_regionList=\"wales\" AND interim_walesFRCList=\"newport\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_swanseaCourtList",
+    "TabFieldDisplayOrder": 37,
+    "FieldShowCondition": "interim_regionList=\"wales\" AND interim_walesFRCList=\"swansea\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_northWalesCourtList",
+    "TabFieldDisplayOrder": 38,
+    "FieldShowCondition": "interim_regionList=\"wales\" AND interim_walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "TabFieldDisplayOrder": 39
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimAdditionalInformationAboutHearing",
+    "TabFieldDisplayOrder": 40
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "specialMeasuresPostHearingLbl",
+    "TabFieldDisplayOrder": 41
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "attendingCourtWithAssistanceLabel",
+    "TabFieldDisplayOrder": 42
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "attendingCourtWithAssistance",
+    "TabFieldDisplayOrder": 43
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "attendingCourtWithArrangementLabel",
+    "TabFieldDisplayOrder": 44
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "attendingCourtWithArrangement",
+    "TabFieldDisplayOrder": 45
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "draftDirectionDetailsCollectionRO",
+    "TabFieldDisplayOrder": 46
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "latestDraftHearingOrder",
+    "TabFieldDisplayOrder": 47
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "directionDetailsCollection",
+    "TabFieldDisplayOrder": 48
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "additionalHearingDocuments",
+    "TabFieldDisplayOrder": 49
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimPromptForAnyDocumentLabel",
+    "TabFieldDisplayOrder": 50
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimPromptForAnyDocument",
+    "TabFieldDisplayOrder": 51
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimUploadOtherDocumentLabel",
+    "TabFieldDisplayOrder": 52
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimUploadAdditionalDocument",
+    "TabFieldDisplayOrder": 53
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearingDirectionsDocument",
+    "TabFieldDisplayOrder": 54
   }
 ]

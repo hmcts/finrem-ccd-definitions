@@ -220,7 +220,7 @@ Scenario('Contested Case Creation by Solicitor  @nightly @crossBrowser', async I
     await I.paymentPage(false);
     await I.hwfPaymentDetails();
     await I.paymentSubmission();
-    await I.savingApplicationInformation();
+    await I.savingApplicationInformation('contested');
     await I.finalPaymentSubmissionPage();
     await I.finalInformationPage();
     I.see('Case Submission');
