@@ -171,7 +171,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceDetailsLabel",
-    "Label": "## Divorce Details",
+    "Label": "## Divorce / Dissolution Details",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
@@ -179,8 +179,8 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceCaseNumber",
-    "Label": "Divorce Case Number",
-    "HintText": "Please enter 10 digit alphanumeric case number or 16 digit CCD case number",
+    "Label": "Divorce / Dissolution Case Number",
+    "HintText": "Enter 10 character alphanumeric divorce case number",
     "FieldType": "Text",
     "RegularExpression": "^([A-Z|a-z][A-Z|a-z])\\d{2}[D|d]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[J|d]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[N|d]\\d{5}$|\\b\\d{4}[ -]\\d{4}[ -]\\d{4}[ -]\\d{4}\\b|\\b\\d{4}\\d{4}\\d{4}\\d{4}\\b",
     "SecurityClassification": "Public"
@@ -213,7 +213,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceStageReached",
-    "Label": "What stage has the case reached?",
+    "Label": "What stage has the divorce / dissolution case reached ?",
     "HintText": "To ensure the application is linked to the divorce file without delay, please upload a copy of the decree [nisi] [absolute]",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_StageReached",
