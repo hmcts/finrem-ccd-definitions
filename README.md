@@ -154,15 +154,13 @@ https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+P
 The team leveraged the fact this service has set up charts with all services needed for running the full Financial Remedy solution to create 
 deployments to Preview with the PRs so Developers and Testers can work on changes without the weight that a local environment has on machine resources.
 
-The deployment can be switched ON and OFF by setting the flags true or false in charts/finrem-ccd-definitions/values.preview.template.yaml
+The deployment can be switched ON by commenting `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
 
 More details can be found [here](https://tools.hmcts.net/confluence/display/RSE/Divorce+Local+Environment+Set+up+using+Preview)
 
 ## ATTENTION! 
 If you switch the Preview deployment ON, 
-remember to switch it back OFF by committing the flags, for both, 
-CCD stack and Financial Remedy stack to the repo as FALSE 
-and remove the deployment from Kubernetes by running
+remember to switch it back OFF by removing the comment on `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
 
 `helm uninstall -n financial-remedy finrem-ccd-definitions-pr-<number>`
 
