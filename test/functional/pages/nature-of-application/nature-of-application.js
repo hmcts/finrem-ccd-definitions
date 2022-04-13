@@ -8,6 +8,7 @@ async function natureOfApplication() {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[id=\'natureOfApplication2-Periodical Payment Order\']');
+  I.checkOption('input[value="Maintenance Pending Suit"]');
   I.checkOption('input[value="Lump Sum Order"]');
   I.checkOption('input[value="Property Adjustment Order"]');
   I.checkOption('input[value="Pension Sharing Order"]');
@@ -29,6 +30,7 @@ async function contestedNatureOfApplication() {
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
+  I.checkOption('input[value="Maintenance Pending Suit"]');
   I.checkOption('input[value="periodicalPaymentOrder"]');
   I.checkOption('input[value="Lump Sum Order"]');
   I.checkOption('input[value="Pension Sharing Order"]');
