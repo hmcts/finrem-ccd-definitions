@@ -1782,6 +1782,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "directionDetailsCollectionInterim",
+    "Label": "Next Hearing Details",
+    "HintText": "Direction Orders Details ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_directionDetailCollectionInterim",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "finalOrderCollection",
     "Label": "Final Orders",
     "HintText": "Final Orders",
