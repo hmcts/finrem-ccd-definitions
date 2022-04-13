@@ -191,7 +191,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "divorceStageReached",
-    "Label": "What stage has the divorce / dissolution  case stage reached ?",
+    "Label": "What stage has the divorce / dissolution case stage reached ?",
     "HintText": "To ensure the application is linked to the divorce file without delay, please upload a copy of the decree [nisi] [absolute]",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_StageReached",
@@ -201,7 +201,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "divorceUploadEvidence1",
-    "Label": "Upload Decree Nisi ",
+    "Label": "Upload Decree Nisi / conditional order",
     "FieldType": "Document",
     "SecurityClassification": "Public"
   },
@@ -209,7 +209,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "divorceDecreeNisiDate",
-    "Label": "Decree Nisi Date",
+    "Label": "Date order granted",
     "FieldType": "Date",
     "SecurityClassification": "Public"
   },
