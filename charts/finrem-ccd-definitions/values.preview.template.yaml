@@ -92,13 +92,13 @@ finrem-dgcs:
     releaseNameOverride: ${SERVICE_NAME}-finrem-dgcs
     ingressHost: dgcs-${SERVICE_FQDN}
     environment:
-      EVIDENCE_MANAGEMENT_CLIENT_API_BASEURL: http://${SERVICE_NAME}-finrem-emca
-      SEND_LETTER_SERIVCE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
-      AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-      PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
-      IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-      AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_DOC_GEN_SERVICE_S2S_KEY}
-      PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
+        EVIDENCE_MANAGEMENT_CLIENT_API_BASEURL: http://${SERVICE_NAME}-finrem-emca
+        SEND_LETTER_SERIVCE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
+        AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+        PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
+        IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_DOC_GEN_SERVICE_S2S_KEY}
+        PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
     keyVaults:
       finrem:
         secrets:
@@ -122,10 +122,10 @@ finrem-emca:
     releaseNameOverride: ${SERVICE_NAME}-finrem-emca
     ingressHost: emca-${SERVICE_FQDN}
     environment:
-      IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
-      AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-      DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
-      AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_DOC_GEN_SERVICE_S2S_KEY}
+        IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
+        AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+        DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
+        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_DOC_GEN_SERVICE_S2S_KEY}
     keyVaults:
       finrem:
         secrets:
@@ -159,15 +159,15 @@ finrem-ps:
     releaseNameOverride: ${SERVICE_NAME}-finrem-ps
     ingressHost: ps-${SERVICE_FQDN}
     environment:
-      AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-      IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
-      FEES_API_URL: http://fees-register-api-aat.service.core-compute-aat.internal
-      PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
-      IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-      PAYMENT_API_URL: http://payment-api-aat.service.core-compute-aat.internal
-      AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_PAYMENTS_SERVICE_S2S_KEY}
-      USERNAME_SOLICITOR: ${USERNAME_SOLICITOR}
-      PASSWORD_SOLICITOR: ${PASSWORD_SOLICITOR}
+        AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+        IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
+        FEES_API_URL: http://fees-register-api-aat.service.core-compute-aat.internal
+        PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
+        IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+        PAYMENT_API_URL: http://payment-api-aat.service.core-compute-aat.internal
+        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_PAYMENTS_SERVICE_S2S_KEY}
+        USERNAME_SOLICITOR: ${USERNAME_SOLICITOR}
+        PASSWORD_SOLICITOR: ${PASSWORD_SOLICITOR}
     keyVaults:
       finrem:
         secrets:
@@ -220,7 +220,7 @@ ccd:
       imagePullPolicy: Always
       enviroment:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
-      keyVaults: [ ]
+      keyVaults: []
       environment:
         USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_definition,ccd_admin
       ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
@@ -245,7 +245,7 @@ ccd:
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOSTS: ${SERVICE_NAME}-es-master:9200
         ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
-      keyVaults: [ ]
+      keyVaults: []
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
   am-role-assignment-service:
@@ -268,7 +268,7 @@ ccd:
       autoscaling:
         enabled: false
       imagePullPolicy: Always
-      keyVaults: [ ]
+      keyVaults: []
       environment:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
@@ -285,7 +285,7 @@ ccd:
         enabled: false
       image: hmctspublic.azurecr.io/ccd/admin-web:latest
       ingressHost: admin-web-${SERVICE_FQDN}
-      keyVaults: [ ]
+      keyVaults: []
       environment:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
         IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
@@ -316,7 +316,7 @@ ccd:
     nodejs:
       autoscaling:
         enabled: false
-      keyVaults: [ ]
+      keyVaults: []
       environment:
         IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
         IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
