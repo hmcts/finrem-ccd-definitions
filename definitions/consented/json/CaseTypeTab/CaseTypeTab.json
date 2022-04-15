@@ -2235,5 +2235,16 @@
     "CaseFieldID": "respondentEmail",
     "TabFieldDisplayOrder": 3,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "ChangeOfRepresentativesTab",
+    "TabLabel": "Change of representatives",
+    "TabDisplayOrder": 16,
+    "CaseFieldID": "ChangeOfRepresentatives",
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "changeOfRepresentatives!=\"\""
   }
 ]

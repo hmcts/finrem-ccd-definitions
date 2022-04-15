@@ -4376,5 +4376,15 @@
     "FieldType": "Document",
     "Label": "Interim Hearing",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "ChangeOfRepresentatives",
+    "Label": "Change of representatives",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "ChangeOfRepresentation",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]

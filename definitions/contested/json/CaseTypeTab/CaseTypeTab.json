@@ -4140,5 +4140,16 @@
     "TabDisplayOrder": 21,
     "CaseFieldID": "interimHearingDirectionsDocument",
     "TabFieldDisplayOrder": 54
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "Channel": "CaseWorker",
+    "TabID": "ChangeOfRepresentativesTab",
+    "TabLabel": "Change of representatives",
+    "TabDisplayOrder": 22,
+    "CaseFieldID": "ChangeOfRepresentatives",
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "changeOfRepresentatives!=\"\""
   }
 ]
