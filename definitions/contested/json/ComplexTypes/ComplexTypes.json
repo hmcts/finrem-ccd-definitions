@@ -1069,7 +1069,45 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_ct_directionDetailCollection",
+    "ID": "FR_ct_directionDetailCollectionInterim",
+    "ListElementCode": "hearingCourtLbl",
+    "FieldType": "Label",
+    "ElementLabel": "#### Hearing Court",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_directionDetailCollectionInterim",
+    "ListElementCode": "localCourt",
+    "FieldType": "FR_ct_courtList",
+    "ElementLabel": "This would usually be the applicants local Court",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_directionDetailCollectionInterim",
+    "ListElementCode": "nottinghamList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_NottinghamList",
+    "ElementLabel": "Nottingham List",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"nottingham\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_directionDetailCollectionInterim",
+    "ListElementCode": "cfcList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_CFCList",
+    "ElementLabel": "CFC List",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"cfc\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_directionDetailCollectionInterim",
     "ListElementCode": "interimTypeOfHearing",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_interimHearingTypeDirections",
@@ -1079,7 +1117,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_ct_directionDetailCollection",
+    "ID": "FR_ct_directionDetailCollectionInterim",
     "ListElementCode": "interimTimeEstimate",
     "FieldType": "Text",
     "ElementLabel": "Time Estimate",
@@ -1088,7 +1126,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_ct_directionDetailCollection",
+    "ID": "FR_ct_directionDetailCollectionInterim",
     "ListElementCode": "interimDateOfHearing",
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
@@ -1097,8 +1135,8 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_ct_directionDetailCollection",
-    "ListElementCode": "interimeHearingTime",
+    "ID": "FR_ct_directionDetailCollectionInterim",
+    "ListElementCode": "interimHearingTime",
     "FieldType": "Text",
     "ElementLabel": "Interim Hearing Time",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
@@ -1190,6 +1228,13 @@
     "ListElementCode": "removed",
     "FieldType": "ChangedRepresentative",
     "ElementLabel": "Removed representative",
+    "SecurityClassification": "Public"
+  },
+  {
+    "ID": "FR_ct_directionDetailCollectionInterim",
+    "ListElementCode": "isAnotherHearingYN",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is there another hearing to be listed ?",
     "SecurityClassification": "Public"
   }
 ]
