@@ -5,8 +5,7 @@ async function divorceDetails() {
   const I = this;
   if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
-  }
-  I.waitForPage('h4', 'DIVORCE DETAILS');
+  }I.waitForPage('h4', 'DIVORCE / DISSOLUTION DETAILS');
   I.fillField('input[id="divorceCaseNumber"]', 'LV18D81234');
   I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi');
   I.wait('5');
@@ -25,7 +24,7 @@ async function contestedDivorceDetails() {
   if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
-  I.waitForPage('#divorceDetailsLabel h2', 'Divorce Details');
+  I.waitForPage('#divorceDetailsLabel h2', 'Divorce / Dissolution Details');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D54321');
   I.fillField('input[id="dateOfMarriage-day"]', '1');
   I.fillField('input[id="dateOfMarriage-month"]', '2');
