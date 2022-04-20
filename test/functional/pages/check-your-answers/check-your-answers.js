@@ -8,7 +8,7 @@ async function checkYourAnswers() {
     await I.runAccessibilityTest();
   }
   I.see('SOLICITOR DETAILS');
-  I.see('DIVORCE DETAILS');
+  I.see('Divorce / Dissolution Details');
   I.see('APPLICANT DETAILS');
   I.see('RESPONDENT DETAILS');
   I.wait('2');
@@ -23,7 +23,7 @@ async function contestedCheckYourAnswers() {
     await I.runAccessibilityTest();
   }
   I.see('Solicitor Details');
-  I.see('Divorce Details');
+  I.see('Divorce / Dissolution Details');
   I.see('Applicant’s Details');
   I.see('Respondent’s Details');
   I.see('Is the respondent represented ?');
