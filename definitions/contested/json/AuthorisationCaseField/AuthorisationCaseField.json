@@ -8517,5 +8517,26 @@
     "CaseFieldID": "civilPartnership",
     "UserRole": "caseworker-caa",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "currentUserCaseRole",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "currentUserCaseRole",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "currentUserCaseRole",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
   }
 ]

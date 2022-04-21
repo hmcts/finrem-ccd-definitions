@@ -930,5 +930,17 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/transfer-to-local-court",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "10/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_updateCaseDetailsSolicitor",
+    "Name": "Update Contact Details",
+    "Description": "Update solicitor contact details",
+    "DisplayOrder": 57,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]

@@ -983,5 +983,18 @@
     "PostConditionState": "prepareForHearing",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "10/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_updateCaseDetailsSolicitor",
+    "Name": "Update Contact Details",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/get-user-roles",
+    "Description": "Update solicitor contact details",
+    "DisplayOrder": 133,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
