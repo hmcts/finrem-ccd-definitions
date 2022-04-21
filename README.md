@@ -15,13 +15,13 @@ If running yarn install throws an error with this output:
 
 `The chromium binary is not available for arm64`
 
-1) Run `brew insall chromium`
+1) Run `brew install chromium`
 2) Run `xattr -cr /Applications/Chromium.app`
-3) Add these env variables to your .zhrsc file  
+3) Add these env variables to your .zshrc file  
 `export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true`
 ``export PUPPETEER_EXECUTABLE_PATH=`which chromium` ``
 4) Save file and restart terminal
-5) Run `source ~/.zhsrc`
+5) Run `source ~/.zshrc`
 6) `yarn install && yarn reset-ccd-submodule`
 
 ## Convert JSON to Excel
@@ -149,3 +149,17 @@ NOTE: Jenkins will populate Judge details in the PROD configs that is not availa
 
 Follow this guide for releasing a new config file to Production:
 https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+Production
+
+## Preview deployment for PRs in testing
+The team leveraged the fact this service has set up charts with all services needed for running the full Financial Remedy solution to create 
+deployments to Preview with the PRs so Developers and Testers can work on changes without the weight that a local environment has on machine resources.
+
+The deployment can be switched ON by commenting `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
+
+More details can be found [here](https://tools.hmcts.net/confluence/display/RSE/Divorce+Local+Environment+Set+up+using+Preview)
+
+## ATTENTION! 
+If you switch the Preview deployment ON, 
+remember to switch it back OFF by removing the comment on `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
+
+
