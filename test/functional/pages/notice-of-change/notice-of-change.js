@@ -18,7 +18,7 @@ module.exports = {
         }
         I.fillField(this.fields.caseRefSearch, 'caseRef');
         await I.retryUntilExists(() => I.click('Continue'), this.fields.familyManReference);
-        I.fillField(this.fields.familyManReference, 'boo');
+        I.fillField(this.fields.familyManReference, 'EM18D54321');
         I.fillField(this.fields.clientFirstName, 'John');
         I.fillField(this.fields.clientLastName, 'Smith');
 

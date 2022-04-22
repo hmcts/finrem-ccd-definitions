@@ -492,7 +492,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "CaseFieldID": "ApplicantOrganisationPolicy.Organisation",
     "TabFieldDisplayOrder": 44,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -2248,24 +2248,42 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "ChangeOfRepresentativesTab-judiciary",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "TabLabel": "Change of representatives",
-    "TabDisplayOrder": 16,
+    "TabDisplayOrder": 22,
     "CaseFieldID": "ChangeOfRepresentatives",
-    "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "ChangeOfRepresentatives!=\"\""
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "ChangeOfRepresentativesTab-judiciary",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "TabLabel": "Change of representatives",
+    "TabDisplayOrder": 22,
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "ChangeOfRepresentativesTab-courtadmin",
     "TabLabel": "Change of representatives",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabDisplayOrder": 17,
+    "TabDisplayOrder": 23,
     "CaseFieldID": "ChangeOfRepresentatives",
-    "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "ChangeOfRepresentatives!=\"\""
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "ChangeOfRepresentativesTab-courtadmin",
+    "TabLabel": "Change of representatives",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "TabDisplayOrder": 23,
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "TabFieldDisplayOrder": 2
   }
 ]
