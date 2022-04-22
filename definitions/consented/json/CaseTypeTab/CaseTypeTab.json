@@ -2249,8 +2249,11 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "ChangeOfRepresentativesTab-judiciary",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "TabID": "ChangeOfRepresentativesTab",
+    "UserRoles": [
+      "caseworker-divorce-financialremedy-judiciary",
+      "caseworker-divorce-financialremedy-courtadmin"
+    ],
     "TabLabel": "Change of representatives",
     "TabDisplayOrder": 16,
     "CaseFieldID": "ChangeOfRepresentatives",
@@ -2259,30 +2262,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "ChangeOfRepresentativesTab-judiciary",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "TabID": "ChangeOfRepresentativesTab",
+    "UserRoles": [
+      "caseworker-divorce-financialremedy-judiciary",
+      "caseworker-divorce-financialremedy-courtadmin"
+    ],
     "TabLabel": "Change of representatives",
     "TabDisplayOrder": 16,
-    "CaseFieldID": "ApplicantOrganisationPolicy",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "ChangeOfRepresentativesTab-courtadmin",
-    "TabLabel": "Change of representatives",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabDisplayOrder": 17,
-    "CaseFieldID": "ChangeOfRepresentatives",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "ChangeOfRepresentativesTab-courtadmin",
-    "TabLabel": "Change of representatives",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabDisplayOrder": 17,
     "CaseFieldID": "ApplicantOrganisationPolicy",
     "TabFieldDisplayOrder": 2
   }
