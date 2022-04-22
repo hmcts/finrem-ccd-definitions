@@ -492,7 +492,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "ApplicantOrganisationPolicy.Organisation",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
     "TabFieldDisplayOrder": 44,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -2252,7 +2252,7 @@
     "TabID": "ChangeOfRepresentativesTab-judiciary",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "TabLabel": "Change of representatives",
-    "TabDisplayOrder": 22,
+    "TabDisplayOrder": 16,
     "CaseFieldID": "ChangeOfRepresentatives",
     "TabFieldDisplayOrder": 1
   },
@@ -2262,7 +2262,7 @@
     "TabID": "ChangeOfRepresentativesTab-judiciary",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "TabLabel": "Change of representatives",
-    "TabDisplayOrder": 22,
+    "TabDisplayOrder": 16,
     "CaseFieldID": "ApplicantOrganisationPolicy",
     "TabFieldDisplayOrder": 2
   },
@@ -2272,7 +2272,7 @@
     "TabID": "ChangeOfRepresentativesTab-courtadmin",
     "TabLabel": "Change of representatives",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabDisplayOrder": 23,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "ChangeOfRepresentatives",
     "TabFieldDisplayOrder": 1
   },
@@ -2282,7 +2282,7 @@
     "TabID": "ChangeOfRepresentativesTab-courtadmin",
     "TabLabel": "Change of representatives",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabDisplayOrder": 23,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "ApplicantOrganisationPolicy",
     "TabFieldDisplayOrder": 2
   }
