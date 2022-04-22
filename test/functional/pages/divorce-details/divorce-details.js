@@ -45,6 +45,8 @@ async function contestedDivorceDetails() {
   I.fillField('input[id="divorceDecreeNisiDate-year"]', '2020');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+
+
 }
 
 module.exports = { divorceDetails, contestedDivorceDetails };
