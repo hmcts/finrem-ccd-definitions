@@ -640,6 +640,8 @@
     "DisplayContext": "MANDATORY",
     "PageID": 6,
     "PageDisplayOrder": 6,
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/org-policies",
+    "CallBackURLMidEvent_1": "3,4,5",
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -653,7 +655,6 @@
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/org-policies",
     "PageShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\"",
     "ShowSummaryChangeOption": "Y"
   },
