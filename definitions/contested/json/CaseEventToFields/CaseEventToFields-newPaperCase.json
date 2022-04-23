@@ -653,6 +653,7 @@
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/org-policies",
     "PageShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\"",
     "ShowSummaryChangeOption": "Y"
   },
