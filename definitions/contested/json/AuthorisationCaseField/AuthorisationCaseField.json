@@ -9602,5 +9602,26 @@
     "CaseFieldID": "nocParty",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
   }
 ]
