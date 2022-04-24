@@ -488,45 +488,9 @@
     "ID": "ChangeOrganisationRequest",
     "CaseEventID": "removeRepresentationRequest",
     "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "OrganisationToAdd.OrganisationID",
-    "FieldDisplayOrder": "1",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2021",
-    "ID": "ChangeOrganisationRequest",
-    "CaseEventID": "removeRepresentationRequest",
-    "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "OrganisationToAdd.OrganisationName",
-    "FieldDisplayOrder": "2",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2021",
-    "ID": "ChangeOrganisationRequest",
-    "CaseEventID": "removeRepresentationRequest",
-    "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "OrganisationToRemove.OrganisationID",
-    "FieldDisplayOrder": "3",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2021",
-    "ID": "ChangeOrganisationRequest",
-    "CaseEventID": "removeRepresentationRequest",
-    "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "OrganisationToRemove.OrganisationName",
-    "FieldDisplayOrder": "4",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2021",
-    "ID": "ChangeOrganisationRequest",
-    "CaseEventID": "removeRepresentationRequest",
-    "CaseFieldID": "changeOrganisationRequestField",
     "ListElementCode": "CaseRoleId",
     "FieldDisplayOrder": "5",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "01/01/2021",
@@ -545,6 +509,6 @@
     "ListElementCode": "ApprovalStatus",
     "DefaultValue": "1",
     "FieldDisplayOrder": "7",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   }
 ]
