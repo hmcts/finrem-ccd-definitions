@@ -1038,7 +1038,7 @@
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_AAC_URL}/noc/noc-prepare",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_AAC_URL}/set-organisation-to-remove",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_AAC_URL}/noc/set-organisation-to-remove",
     "CallBackURLSubmittedEvent": "${CCD_DEF_AAC_URL}/noc/check-noc-approval",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
