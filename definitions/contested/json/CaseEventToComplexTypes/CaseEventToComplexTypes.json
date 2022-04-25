@@ -498,8 +498,9 @@
     "CaseEventID": "removeRepresentationRequest",
     "CaseFieldID": "changeOrganisationRequestField",
     "ListElementCode": "ApprovalStatus",
+    "EventHintText": "Please set this field to 1 to auto-approve the request",
     "DefaultValue": "1",
     "FieldDisplayOrder": "7",
-    "DisplayContext": "READONLY"
+    "DisplayContext": "MANDATORY"
   }
 ]
