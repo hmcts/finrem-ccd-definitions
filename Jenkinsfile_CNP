@@ -58,7 +58,16 @@ def secrets = [
                 secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
                 secret('docmosis-endpoint', 'PDF_SERVICE_BASEURL'),
                 secret('gov-uk-notification-key', 'UK_GOV_NOTIFY_API_KEY'),
-                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY')
+                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY'),
+                secret('idam-caa-username', 'IDAM_CAA_USERNAME'),
+                secret('idam-caa-password', 'IDAM_CAA_PASSWORD'),
+                secret('manage-case-s2s-key', 'MANAGE_CASE_S2S_KEY'),
+                secret('idam-noc-approver-username', 'IDAM_NOC_APPROVER_USERNAME'),
+                secret('idam-noc-approver-password', 'IDAM_NOC_APPROVER_PASSWORD'),
+                secret('notify-mca-api-key', 'NOTIFY_MCA_API_KEY'),
+                secret('finrem-system-update-username', 'FINREM_SYSTEMUPDATE_USERNAME'),
+                secret('finrem-system-update-password', 'FINREM_SYSTEMUPDATE_PASSWORD'),
+                secret('idam-mca-client-secret', 'IDAM_MCA_CLIENT_SECRET')
 
         ]
 ]
