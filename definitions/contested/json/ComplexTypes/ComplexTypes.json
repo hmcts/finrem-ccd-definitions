@@ -1228,5 +1228,41 @@
     "FieldType": "YesOrNo",
     "ElementLabel": "Is there another hearing to be listed ?",
     "SecurityClassification": "Public"
+  },
+  {
+    "ID": "ListItem",
+    "ListElementCode": "code",
+    "FieldType": "Text",
+    "ElementLabel": "Currently selected item's code in dynamic list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "ID": "ListItem",
+    "ListElementCode": "label",
+    "FieldType": "Text",
+    "ElementLabel": "Currently selected item's label in dynamic list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "ID": "CaseRoleId",
+    "ListElementCode": "value",
+    "FieldType": "ListItem",
+    "ElementLabel": "currently selected item for dynamic list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "ID": "CaseRoleId",
+    "ListElementCode": "list_items",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "ListItem",
+    "ElementLabel": "currently selected item for dynamic list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "ID": "changeOrganisationRequestField",
+    "ListElementCode": "CaseRoleId",
+    "FieldType": "DynamicList",
+    "ElementLabel": "List of case role ids for FR",
+    "SecurityClassification": "Public"
   }
 ]

@@ -497,18 +497,18 @@
     "ID": "ChangeOrganisationRequest",
     "CaseEventID": "removeRepresentationRequest",
     "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "RequestTimestamp",
-    "FieldDisplayOrder": "6",
-    "DisplayContext": "OPTIONAL"
+    "ListElementCode": "ApprovalStatus",
+    "DefaultValue": "1",
+    "FieldDisplayOrder": "7",
+    "DisplayContext": "READONLY"
   },
   {
     "LiveFrom": "01/01/2021",
     "ID": "ChangeOrganisationRequest",
     "CaseEventID": "removeRepresentationRequest",
     "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "ApprovalStatus",
-    "DefaultValue": "1",
-    "FieldDisplayOrder": "7",
-    "DisplayContext": "MANDATORY"
+    "ListElementCode": "CaseRoleId.value.code",
+    "FieldDisplayOrder": "8",
+    "DisplayContext": "OPTIONAL"
   }
 ]
