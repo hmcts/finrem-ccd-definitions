@@ -46,6 +46,7 @@ async function contestedDivorceDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
+
 }
 
 module.exports = { divorceDetails, contestedDivorceDetails };
