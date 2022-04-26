@@ -3384,13 +3384,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateContactDetails",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "CaseFieldID": "changeOrganisationRequestField",
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "COMPLEX",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "updateIncludesRepresentativeChange=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -3667,13 +3667,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateContactDetails",
-    "CaseFieldID": "RespondentOrganisationPolicy",
+    "CaseFieldID": "changeOrganisationRequestField",
     "PageFieldDisplayOrder": 6,
     "DisplayContext": "COMPLEX",
     "PageID": 4,
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\" AND updateIncludesRepresentativeChange=\"Yes\"",
+    "FieldShowCondition": "updateIncludesRepresentativeChange=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {

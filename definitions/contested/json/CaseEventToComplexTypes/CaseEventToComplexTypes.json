@@ -482,5 +482,26 @@
     "DefaultValue": "1",
     "FieldDisplayOrder": "7",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "ChangeOrganisationRequest",
+    "CaseEventID": "FR_updateContactDetails",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "ListElementCode": "OrganisationToAdd",
+    "EventElementLabel": "Organisation to Add",
+    "FieldDisplayOrder": "1",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR respondentRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "ChangeOrganisationRequest",
+    "CaseEventID": "FR_updateContactDetails",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "ListElementCode": "OrganisationToRemove",
+    "EventElementLabel": "Organisation to Remove",
+    "FieldDisplayOrder": "2",
+    "DisplayContext": "OPTIONAL"
   }
 ]
