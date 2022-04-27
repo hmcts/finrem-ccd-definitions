@@ -484,22 +484,41 @@
     "DisplayContext": "OPTIONAL"
   },
   {
-    "LiveFrom": "05/08/2020",
+    "LiveFrom": "01/01/2017",
     "ID": "ChangeOrganisationRequest",
     "CaseEventID": "FR_updateRepresentation",
     "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "OrganisationToAdd",
+    "ListElementCode": "OrganisationToAdd.OrganisationID",
     "FieldDisplayOrder": "1",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "applicantRepresented=\"Yes\" OR respondentRepresented=\"Yes\""
   },
   {
-    "LiveFrom": "05/08/2020",
+    "LiveFrom": "01/01/2017",
     "ID": "ChangeOrganisationRequest",
     "CaseEventID": "FR_updateRepresentation",
     "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "OrganisationToRemove",
+    "ListElementCode": "OrganisationToAdd.OrganisationName",
     "FieldDisplayOrder": "2",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR respondentRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangeOrganisationRequest",
+    "CaseEventID": "FR_updateRepresentation",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "ListElementCode": "OrganisationToRemove.OrganisationID",
+    "FieldDisplayOrder": "3",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangeOrganisationRequest",
+    "CaseEventID": "FR_updateRepresentation",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "ListElementCode": "OrganisationToRemove.OrganisationName",
+    "FieldDisplayOrder": "4",
     "DisplayContext": "OPTIONAL"
   }
 ]
