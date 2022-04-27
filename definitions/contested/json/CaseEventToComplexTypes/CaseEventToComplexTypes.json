@@ -485,40 +485,38 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "ChangeOrganisationRequest",
+    "ID": "OrganisationPolicy",
     "CaseEventID": "FR_updateRepresentation",
-    "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "OrganisationToAdd.OrganisationID",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "Organisation.OrganisationID",
     "FieldDisplayOrder": "1",
-    "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR respondentRepresented=\"Yes\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "ChangeOrganisationRequest",
-    "CaseEventID": "FR_updateRepresentation",
-    "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "OrganisationToAdd.OrganisationName",
-    "FieldDisplayOrder": "2",
-    "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR respondentRepresented=\"Yes\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "ChangeOrganisationRequest",
-    "CaseEventID": "FR_updateRepresentation",
-    "CaseFieldID": "changeOrganisationRequestField",
-    "ListElementCode": "OrganisationToRemove.OrganisationID",
-    "FieldDisplayOrder": "3",
     "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "ChangeOrganisationRequest",
+    "ID": "OrganisationPolicy",
     "CaseEventID": "FR_updateRepresentation",
-    "CaseFieldID": "changeOrganisationRequestField",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "Organisation.OrganisationName",
+    "FieldDisplayOrder": "2",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "OrganisationPolicy",
+    "CaseEventID": "FR_updateRepresentation",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "ListElementCode": "OrganisationToRemove.OrganisationID",
+    "FieldDisplayOrder": "1",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "OrganisationPolicy",
+    "CaseEventID": "FR_updateRepresentation",
+    "CaseFieldID": "RespondentOrganisationPolicy",
     "ListElementCode": "OrganisationToRemove.OrganisationName",
-    "FieldDisplayOrder": "4",
+    "FieldDisplayOrder": "2",
     "DisplayContext": "OPTIONAL"
   }
 ]
