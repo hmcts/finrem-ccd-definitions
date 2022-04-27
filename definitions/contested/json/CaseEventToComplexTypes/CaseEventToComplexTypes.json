@@ -486,10 +486,9 @@
   {
     "LiveFrom": "05/08/2020",
     "ID": "ChangeOrganisationRequest",
-    "CaseEventID": "FR_updateContactDetails",
+    "CaseEventID": "FR_updateRepresentation",
     "CaseFieldID": "changeOrganisationRequestField",
     "ListElementCode": "OrganisationToAdd",
-    "EventElementLabel": "Organisation to Add",
     "FieldDisplayOrder": "1",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "applicantRepresented=\"Yes\" OR respondentRepresented=\"Yes\""
@@ -497,10 +496,9 @@
   {
     "LiveFrom": "05/08/2020",
     "ID": "ChangeOrganisationRequest",
-    "CaseEventID": "FR_updateContactDetails",
+    "CaseEventID": "FR_updateRepresentation",
     "CaseFieldID": "changeOrganisationRequestField",
     "ListElementCode": "OrganisationToRemove",
-    "EventElementLabel": "Organisation to Remove",
     "FieldDisplayOrder": "2",
     "DisplayContext": "OPTIONAL"
   }
