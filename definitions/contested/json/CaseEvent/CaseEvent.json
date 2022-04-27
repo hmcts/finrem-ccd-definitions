@@ -1038,8 +1038,6 @@
     "DisplayOrder": 137,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/remove-details",
-    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/representation-change",
     "SecurityClassification": "Public",
     "ShowSummary": "N",

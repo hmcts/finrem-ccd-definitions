@@ -490,7 +490,7 @@
     "CaseFieldID": "ApplicantOrganisationPolicy",
     "ListElementCode": "Organisation.OrganisationID",
     "FieldDisplayOrder": "1",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -506,16 +506,16 @@
     "ID": "OrganisationPolicy",
     "CaseEventID": "FR_updateRepresentation",
     "CaseFieldID": "RespondentOrganisationPolicy",
-    "ListElementCode": "OrganisationToRemove.OrganisationID",
+    "ListElementCode": "Organisation.OrganisationID",
     "FieldDisplayOrder": "1",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "OrganisationPolicy",
     "CaseEventID": "FR_updateRepresentation",
     "CaseFieldID": "RespondentOrganisationPolicy",
-    "ListElementCode": "OrganisationToRemove.OrganisationName",
+    "ListElementCode": "Organisation.OrganisationName",
     "FieldDisplayOrder": "2",
     "DisplayContext": "OPTIONAL"
   }
