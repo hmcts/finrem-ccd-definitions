@@ -485,38 +485,46 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "OrganisationPolicy",
+    "ID": "FR_updateRepresentation",
+    "CaseEventID": "FR_updateRepresentation",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "OrgPolicyCaseAssignedRole",
+    "DefaultValue": "[APPSOLICITOR]",
+    "EventElementLabel": "Applicant Organisation Policy",
+    "FieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "nocParty=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_updateRepresentation",
     "CaseEventID": "FR_updateRepresentation",
     "CaseFieldID": "ApplicantOrganisationPolicy",
     "ListElementCode": "Organisation.OrganisationID",
-    "FieldDisplayOrder": "1",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "OrganisationPolicy",
+    "ID": "FR_updateRepresentation",
     "CaseEventID": "FR_updateRepresentation",
-    "CaseFieldID": "ApplicantOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "FieldDisplayOrder": "2",
-    "DisplayContext": "OPTIONAL"
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "ListElementCode": "OrgPolicyCaseAssignedRole",
+    "DefaultValue": "[RESPSOLICITOR]",
+    "EventElementLabel": "Respondent's Organisation Policy",
+    "FieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "nocParty=\"IMPOSSIBLAW\""
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "OrganisationPolicy",
+    "ID": "FR_updateRepresentation",
     "CaseEventID": "FR_updateRepresentation",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "ListElementCode": "Organisation.OrganisationID",
-    "FieldDisplayOrder": "1",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "OrganisationPolicy",
-    "CaseEventID": "FR_updateRepresentation",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "ListElementCode": "Organisation.OrganisationName",
-    "FieldDisplayOrder": "2",
-    "DisplayContext": "OPTIONAL"
   }
 ]
