@@ -3390,7 +3390,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" AND updateIncludesRepresentativeChange=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
