@@ -4,56 +4,63 @@
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "periodicalPaymentOrder",
     "ListElement": "Periodical Payment Order",
-    "DisplayOrder": 4
+    "DisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_natureApplication",
+    "ListElementCode": "Maintenance Pending Suit",
+    "ListElement": "Maintenance Pending Suit",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "Lump Sum Order",
     "ListElement": "Lump Sum Order",
-    "DisplayOrder": 1
+    "DisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "Pension Sharing Order",
     "ListElement": "Pension Sharing Order",
-    "DisplayOrder": 5
+    "DisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "Pension Attachment Order",
     "ListElement": "Pension Attachment Order",
-    "DisplayOrder": 7
+    "DisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "Pension Compensation Sharing Order",
     "ListElement": "Pension Compensation Sharing Order",
-    "DisplayOrder": 6
+    "DisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "Pension Compensation Attachment Order",
     "ListElement": "Pension Compensation Attachment Order",
-    "DisplayOrder": 8
+    "DisplayOrder": 9
   },
     {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "A settlement or a transfer of property",
     "ListElement": "A settlement or a transfer of property for the benefit of the child(ren)",
-    "DisplayOrder": 3
+    "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "propertyAdjustmentOrder",
     "ListElement": "Property Adjustment Order",
-    "DisplayOrder": 2
+    "DisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1294,50 +1301,62 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_documentType",
+    "ListElementCode": "statementInsupportIncludingMPS",
+    "ListElement": "Statement in support (including MPS)",
+    "DisplayOrder": 6
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_s_documentType",
     "ListElementCode": "scheduleOfAssets",
-    "ListElement": "Schedule of assets"
+    "ListElement": "Schedule of assets",
+    "DisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_documentType",
     "ListElementCode": "letter",
-    "ListElement": "Letter"
+    "ListElement": "Letter",
+    "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_documentType",
     "ListElementCode": "noticeOfActing",
-    "ListElement": "Notice of acting"
+    "ListElement": "Notice of acting",
+    "DisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_documentType",
     "ListElementCode": "allocationQuestionnaire",
-    "ListElement": "Allocation Questionnaire"
+    "ListElement": "Allocation Questionnaire",
+    "DisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_documentType",
     "ListElementCode": "other",
-    "ListElement": "Other"
+    "ListElement": "Other",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_StageReached",
     "ListElementCode": "Decree Nisi",
-    "ListElement": "Decree Nisi "
+    "ListElement": "Decree Nisi / Conditional Order"
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_StageReached",
     "ListElementCode": "Decree Absolute",
-    "ListElement": "Decree Absolute "
+    "ListElement": "Decree Absolute / Final Order"
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_StageReached",
     "ListElementCode": "Petition Issued",
-    "ListElement": "Petition Issued "
+    "ListElement": "Petition / Application Issued"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1505,7 +1524,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_judgeTimeEstimateList",
     "ListElementCode": "additionalTime",
-    "ListElement": "Additional time is needed"
+    "ListElement": "Additional time is needed (Or add in another directions about the hearing, e.g. directions for listing of MPS application)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1534,56 +1553,79 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_uploadGeneralDocument",
+    "ListElementCode": "Final order",
+    "ListElement": "Final order",
+    "DisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_uploadGeneralDocument",
+    "ListElementCode": "Conditional order",
+    "ListElement": "Conditional order",
+    "DisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_uploadGeneralDocument",
     "ListElementCode": "Notice of Acting",
-    "ListElement": "Notice of Acting"
+    "ListElement": "Notice of Acting",
+    "DisplayOrder": 9
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_uploadGeneralDocument",
     "ListElementCode": "Letter/Email from Applicant",
-    "ListElement": "Letter/Email from Applicant"
+    "ListElement": "Letter/Email from Applicant",
+    "DisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_uploadGeneralDocument",
     "ListElementCode": "Letter/Email from Applicant Solicitor",
-    "ListElement": "Letter/Email from Applicant Solicitor"
+    "ListElement": "Letter/Email from Applicant Solicitor",
+    "DisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_uploadGeneralDocument",
     "ListElementCode": "Letter/Email from Respondent ",
-    "ListElement": "Letter/Email from Respondent "
+    "ListElement": "Letter/Email from Respondent ",
+    "DisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_uploadGeneralDocument",
     "ListElementCode": "Letter/Email from Respondent Solicitor",
-    "ListElement": "Letter/Email from Respondent Solicitor"
+    "ListElement": "Letter/Email from Respondent Solicitor",
+    "DisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_uploadGeneralDocument",
     "ListElementCode": "Application",
-    "ListElement": "Application"
+    "ListElement": "Application",
+    "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_uploadGeneralDocument",
     "ListElementCode": "Draft Order",
-    "ListElement": "Draft Order"
+    "ListElement": "Draft Order",
+    "DisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_uploadGeneralDocument",
     "ListElementCode": "Statement / Report",
-    "ListElement": "Statement / Report"
+    "ListElement": "Statement / Report",
+    "DisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_uploadGeneralDocument",
     "ListElementCode": "Other",
-    "ListElement": "Other"
+    "ListElement": "Other",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1691,7 +1733,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_refusalReason",
     "ListElementCode": "FR_ms_refusalReason_4",
-    "ListElement": "Entire Divorce case to be transferred to the Applicant’s home court to consider listing directions"
+    "ListElement": "Entire case to be transferred to the Applicant’s home court to consider listing directions"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1829,7 +1871,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_hearingTimeDirections",
     "ListElementCode": "additionalTimeReq",
-    "ListElement": "Additional time is needed"
+    "ListElement": "Additional time is needed (Or add in another directions about the hearing, e.g. directions for listing of MPS application)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2066,7 +2108,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Transferred to Applicant's home Court",
-    "ListElement": "Entire Divorce case to be transferred to the Applicant’s home court to consider listing directions"
+    "ListElement": "Entire case to be transferred to the Applicant’s home court to consider listing directions"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2316,9 +2358,23 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
+    "ListElementCode": "Conditional order",
+    "ListElement": "Conditional order",
+    "DisplayOrder": 22
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_s_caseDocumentType",
+    "ListElementCode": "Final order",
+    "ListElement": "Final order",
+    "DisplayOrder": 23
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_s_caseDocumentType",
     "ListElementCode": "other",
     "ListElement": "Other",
-    "DisplayOrder": 22
+    "DisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2340,5 +2396,40 @@
     "ListElementCode": "Other",
     "ListElement": "Other (e.g. list for hearing)",
     "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_interimHearingTypeDirections",
+    "ListElementCode": "Maintenance Pending Suit (MPS)",
+      "ListElement": "Maintenance Pending Suit (MPS)",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_interimHearingTypeDirections",
+    "ListElementCode": "First Directions Appointment (FDA)",
+    "ListElement": "First Directions Appointment (FDA)",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_interimHearingTypeDirections",
+    "ListElementCode": "Financial Dispute Resolution (FDR)",
+    "ListElement": "Financial Dispute Resolution (FDR)",
+    "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_interimHearingTypeDirections",
+    "ListElementCode": "Final Hearing (FH)",
+    "ListElement": "Final Hearing (FH)",
+    "DisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_interimHearingTypeDirections",
+    "ListElementCode": "Directions (DIR)",
+    "ListElement": "Directions (DIR)",
+    "DisplayOrder": 5
   }
 ]
