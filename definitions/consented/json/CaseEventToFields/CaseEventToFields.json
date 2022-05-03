@@ -1097,7 +1097,9 @@
     "PageID": 9,
     "PageDisplayOrder": 10,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/org-policies",
+    "CallBackURLMidEvent_1": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4626,5 +4628,18 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "nocRequest",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "PageLabel": "Change Organisation Request",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
   }
 ]

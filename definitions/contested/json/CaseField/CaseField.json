@@ -4022,6 +4022,14 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "changeOrganisationRequestField",
+    "Label": "Change Organisation Request",
+    "FieldType": "ChangeOrganisationRequest",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "19/05/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "civilPartnership",
@@ -4378,5 +4386,15 @@
     "FieldType": "Document",
     "Label": "Interim Hearing",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "ChangeOfRepresentatives",
+    "Label": "Change of representatives",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "ChangeOfRepresentation",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]

@@ -1144,6 +1144,85 @@
   },
   {
     "LiveFrom": "01/01/2017",
+    "ID": "ChangedRepresentative",
+    "ListElementCode": "name",
+    "FieldType": "Text",
+    "ElementLabel": "Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangedRepresentative",
+    "ListElementCode": "email",
+    "FieldType": "Email",
+    "ElementLabel": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangedRepresentative",
+    "ListElementCode": "organisation",
+    "FieldType": "Organisation",
+    "ElementLabel": "Organisation",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangeOfRepresentation",
+    "ListElementCode": "party",
+    "FieldType": "Text",
+    "ElementLabel": "Party",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangeOfRepresentation",
+    "ListElementCode": "name",
+    "FieldType": "Text",
+    "ElementLabel": "Client Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangeOfRepresentation",
+    "ListElementCode": "date",
+    "FieldType": "Date",
+    "ElementLabel": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangeOfRepresentation",
+    "ListElementCode": "by",
+    "FieldType": "Text",
+    "ElementLabel": "Updated by",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangeOfRepresentation",
+    "ListElementCode": "via",
+    "FieldType": "Text",
+    "ElementLabel": "Updated via",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangeOfRepresentation",
+    "ListElementCode": "added",
+    "FieldType": "ChangedRepresentative",
+    "ElementLabel": "Added representative",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangeOfRepresentation",
+    "ListElementCode": "removed",
+    "FieldType": "ChangedRepresentative",
+    "ElementLabel": "Removed representative",
+    "SecurityClassification": "Public"
+  },
+  {
     "ID": "FR_ct_directionDetailCollectionInterim",
     "ListElementCode": "isAnotherHearingYN",
     "FieldType": "YesOrNo",
