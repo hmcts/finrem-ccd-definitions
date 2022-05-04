@@ -1011,7 +1011,7 @@
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/validateHearingDate",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/rearrangeUploadedHearingBundles",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/sortUploadedHearingBundles",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
