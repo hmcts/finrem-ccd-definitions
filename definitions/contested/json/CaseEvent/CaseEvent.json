@@ -1010,8 +1010,8 @@
     "PreConditionState(s)": "prepareForHearing;caseFileSubmitted;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;generalApplicationAwaitingJudiciaryResponse;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;generalApplication;generalApplicationOutcome",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/validateHearingDate",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/sortUploadedHearingBundles",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/sortUploadedHearingBundles",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
