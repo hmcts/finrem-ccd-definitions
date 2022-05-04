@@ -1007,10 +1007,11 @@
     "Name": "Manage Hearing Bundles",
     "Description": "Manage Hearing Bundles",
     "DisplayOrder": 134,
-    "PreConditionState(s)": "applicationSubmitted;prepareForHearing;caseFileSubmitted;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;generalApplicationAwaitingJudiciaryResponse;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;generalApplication;generalApplicationOutcome",
+    "PreConditionState(s)": "prepareForHearing;caseFileSubmitted;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;generalApplicationAwaitingJudiciaryResponse;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;generalApplication;generalApplicationOutcome",
     "PostConditionState": "*",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/validateHearingDate",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/validateHearingDate",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/rearrangeUploadedHearingBundles",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
