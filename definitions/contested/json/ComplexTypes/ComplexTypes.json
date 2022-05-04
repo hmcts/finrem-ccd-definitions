@@ -1149,5 +1149,13 @@
     "FieldType": "YesOrNo",
     "ElementLabel": "Is there another hearing to be listed ?",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "caseDocuments",
+    "FieldType": "Document",
+    "ElementLabel": "Please upload hearing bundle ",
+    "SecurityClassification": "Public"
   }
 ]
