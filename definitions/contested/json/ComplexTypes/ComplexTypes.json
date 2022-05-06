@@ -1164,7 +1164,7 @@
     "ListElementCode": "bundleUploadDate",
     "FieldType": "DateTime",
     "ElementLabel": "Bundle Upload Date",
-    "FieldShowCondition": "Document=\"IMPOSSIBLE\"",
+    "FieldShowCondition": "bundleDocuments=\"IMPOSSIBLE\"",
     "SecurityClassification": "Public"
   }
 ]
