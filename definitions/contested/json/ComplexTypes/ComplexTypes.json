@@ -1153,6 +1153,14 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "hearingBundleDate",
+    "FieldType": "Date",
+    "ElementLabel": "Hearing Bundle Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
     "ListElementCode": "bundleDocuments",
     "FieldType": "Document",
     "ElementLabel": "Hearing Bundle",
@@ -1162,8 +1170,17 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_hearingUploadBundle",
     "ListElementCode": "bundleUploadDate",
-    "FieldType": "DateTime",
+    "FieldType": "Date",
     "ElementLabel": "Bundle Upload Date",
+    "HintText": "If not entered it will get updated with current date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "hearingBundleDescription",
+    "FieldType": "Text",
+    "ElementLabel": "Add a description",
     "SecurityClassification": "Public"
   }
 ]

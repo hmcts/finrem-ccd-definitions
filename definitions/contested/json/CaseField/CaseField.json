@@ -4382,26 +4382,10 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "hearingBundleDate",
-    "Label": "Hearing Bundle Date",
-    "FieldType": "Date",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "hearingUploadBundle",
     "Label": "Hearing Bundles ",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_hearingUploadBundle",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "hearingBundleDescription",
-    "Label": "Add a description",
-    "FieldType": "Text",
     "SecurityClassification": "Public"
   }
 ]
