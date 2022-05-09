@@ -6,7 +6,7 @@
     "DisplayOrder": "1",
     "QuestionText": "Divorce / Dissolution Case Reference",
     "AnswerFieldType": "Text",
-    "Answer": "${divorceCaseNumber}:[APPSOLICITOR],${divorceCaseNumber}:[RESPSOLICITOR]",
+    "Answer": "${divorceCaseNumber}:[APPSOLICITOR],${divorceCaseNumber}:[RESPSOLICITOR],${divorceCaseNumber}:[respsolicitor],${divorceCaseNumber}:[Respsolicitor],${divorceCaseNumber}:[RespSolicitor]",
     "QuestionId": "familyManReference"
   },
   {
@@ -16,7 +16,7 @@
     "DisplayOrder": "2",
     "QuestionText": "Your client's first name",
     "AnswerFieldType": "Text",
-    "Answer": "${applicantFMName}:[APPSOLICITOR],${respondentFMName}:[RESPSOLICITOR]",
+    "Answer": "${applicantFMName}:[APPSOLICITOR],${respondentFMName}:[RESPSOLICITOR],${respondentFMName}:[respsolicitor],${respondentFMName}:[Respsolicitor],${respondentFMName}:[RespSolicitor]",
     "QuestionId": "clientFirstName"
   },
   {
@@ -26,7 +26,7 @@
     "DisplayOrder": "3",
     "QuestionText": "Your client's last name",
     "AnswerFieldType": "Text",
-    "Answer": "${applicantLName}:[APPSOLICITOR],${respondentLName}:[RESPSOLICITOR]",
+    "Answer": "${applicantLName}:[APPSOLICITOR],${respondentLName}:[RESPSOLICITOR],${respondentLName}:[respsolicitor],${respondentLName}:[Respsolicitor],${respondentLName}:[RespSolicitor]",
     "QuestionId": "clientLastName"
   }
 ]
