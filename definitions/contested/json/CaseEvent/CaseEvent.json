@@ -527,6 +527,7 @@
     "DisplayOrder": 103,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/set-update-defaults",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/remove-details",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/notice-of-change/caseworker",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
