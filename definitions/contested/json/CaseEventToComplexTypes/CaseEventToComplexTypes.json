@@ -418,5 +418,36 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDocuments.bundleUploadDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "FieldShowCondition": "hearingUploadBundle.hearingBundleDocuments.bundleDocuments=\"IMPOSSIBLE\"",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDocuments.bundleDocuments",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDescription",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
   }
 ]
