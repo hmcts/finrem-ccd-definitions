@@ -72,7 +72,7 @@ describe('CaseTypeTab', () => {
     'Respondent Documents': 19,
     'Trial Bundle': 20,
     'Shared Documents': 20,
-    'interimSchedulingTab': 21
+    interimSchedulingTab: 21
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
