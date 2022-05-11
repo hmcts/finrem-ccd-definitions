@@ -1027,5 +1027,17 @@
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_uploadConfidentialDocument",
+    "Name": "Manage confidential documents",
+    "Description": "Manage confidential documents",
+    "DisplayOrder": 105,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
