@@ -236,5 +236,6 @@ Scenario('Contested share case @nightly @pipeline', async I => {
   /* eslint-enable */
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.assignContestedShareCase(caseId, solRef);
+
   }
 });
