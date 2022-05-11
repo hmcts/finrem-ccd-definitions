@@ -4396,5 +4396,14 @@
     "FieldTypeParameter": "RepresentationUpdate",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "confidentialDocumentsUploaded",
+    "Label": "Confidential documents uploaded",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_UploadConfidentialDocument",
+    "SecurityClassification": "Public"
   }
 ]
