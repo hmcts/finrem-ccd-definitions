@@ -184,7 +184,7 @@ withPipeline("nodejs", product, component) {
   }
 
   onPR {
-    enableCleanupOfHelmReleaseOnSuccess()
+    #!enableCleanupOfHelmReleaseOnSuccess()
   }
 }
 
