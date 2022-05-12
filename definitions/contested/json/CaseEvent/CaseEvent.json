@@ -1010,6 +1010,7 @@
     "PreConditionState(s)": "applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;caseFileSubmitted;close;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;responseReceived;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;prepareForHearing",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/update-frc",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
