@@ -1,7 +1,5 @@
 #!groovy
 
-import uk.gov.hmcts.contino.GithubAPI
-
 @Library("Infrastructure")
 
 String product = "finrem"
@@ -72,10 +70,6 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
     version: '',
     envVariable: envVar
   ]
-}
-
-def checkForNoCleanupLabel(branch_name) {
-  return new GithubAPI(this).getLabelsbyPattern(branch_name, "cleanup").contains("no_cleanup")
 }
 
 withPipeline("nodejs", product, component) {
@@ -180,9 +174,7 @@ withPipeline("nodejs", product, component) {
   }
 
   onPR {
-    if (!checkForNoCleanupLabel(env.BRANCH_NAME)) {
-      enableCleanupOfHelmReleaseOnSuccess()
-    }
+    // enableCleanupOfHelmReleaseOnSuccess()
   }
 }
 
