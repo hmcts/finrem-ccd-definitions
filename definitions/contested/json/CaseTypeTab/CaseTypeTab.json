@@ -4142,11 +4142,20 @@
     "TabFieldDisplayOrder": 54
   },
   {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "confidentialDocumentsTab",
+    "TabLabel": "Confidential documents",
+    "TabDisplayOrder": 22,
+    "CaseFieldID": "confidentialDocumentsUploaded",
+    "TabFieldDisplayOrder": 55
+  },
+  {
     "LiveFrom": "01/10/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "hearingBundleTab",
     "TabLabel": "Hearing Bundle",
-    "TabDisplayOrder": 22,
+    "TabDisplayOrder": 23,
     "CaseFieldID": "hearingUploadBundle",
     "TabFieldDisplayOrder": 1
   }

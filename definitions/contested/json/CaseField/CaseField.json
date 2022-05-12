@@ -4382,6 +4382,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "confidentialDocumentsUploaded",
+    "Label": "Confidential documents uploaded",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_UploadConfidentialDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "hearingUploadBundle",
     "Label": "Hearing Bundles ",
     "FieldType": "Collection",
