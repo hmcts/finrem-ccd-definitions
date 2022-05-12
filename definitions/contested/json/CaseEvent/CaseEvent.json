@@ -370,7 +370,6 @@
     "Name": "Solicitor To Draft Order",
     "Description": "Solicitor To Draft Order",
     "DisplayOrder": 31,
-    "PreConditionState(s)": "caseFileSubmitted",
     "PostConditionState": "solicitorDraftOrder",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/draft-order",
     "SecurityClassification": "Public",
