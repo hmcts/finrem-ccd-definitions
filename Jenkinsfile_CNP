@@ -190,8 +190,10 @@ withPipeline("nodejs", product, component) {
   }
 
 
-//  onPR {
-//    enableCleanupOfHelmReleaseOnSuccess()
-//  }
+  onPR {
+    if (!checkForNoCleanupLabel(env.BRANCH_NAME)) {
+      enableCleanupOfHelmReleaseOnSuccess()
+    }
+  }
 }
 
