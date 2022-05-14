@@ -8819,6 +8819,8 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/validatePdfBundle",
+    "CallBackURLMidEvent_1": "3,4,5"
   }
 ]
