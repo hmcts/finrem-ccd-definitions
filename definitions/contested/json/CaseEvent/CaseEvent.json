@@ -1011,5 +1011,17 @@
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_manageCaseDocument",
+    "Name": "Manage case document",
+    "Description": "Manage case document",
+    "DisplayOrder": 106,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "applicationSubmitted;applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;caseWorkerReview;prepareForHearing;orderSent;readyForHearing;solicitorDraftDrder;judgeDraftOrder;draftNotApproved;reviewOrder;scheduleAndRaiseDirectionOrder;orderDrawn;consentOrder;generalApplication",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]
