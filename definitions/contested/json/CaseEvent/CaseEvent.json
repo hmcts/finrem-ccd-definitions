@@ -1020,7 +1020,7 @@
     "Description": "Upload Approved Order",
     "DisplayOrder": 142,
     "PreConditionState(s)": "caseFileSubmitted;prepareForHearing",
-    "PostConditionState": "*",
+    "PostConditionState": "orderDrawn",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   }
