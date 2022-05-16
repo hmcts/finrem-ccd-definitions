@@ -1011,5 +1011,17 @@
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_uploadApprovedOrder",
+    "Name": "Upload Approved Order",
+    "Description": "Upload Approved Order",
+    "DisplayOrder": 142,
+    "PreConditionState(s)": "caseFileSubmitted;prepareForHearing",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]

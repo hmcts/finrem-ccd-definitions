@@ -4387,5 +4387,35 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_UploadConfidentialDocument",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseWorkerDraftDirectionOrderCollection",
+    "Label": "Upload Draft Direction Order  ",
+    "HintText": "PLEASE NOTE: you must upload an editable version of the draft order (for example a 'word' document) - please do not upload a PDF",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_draftDirectionOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseWorkerDraftDirectionDetailsCollection",
+    "Label": "Draft Direction Orders Details ",
+    "HintText": "Draft Direction Orders Details ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_draftDirectionDetailsCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseWorkerUploadHearingOrder",
+    "Label": "Upload Approved Order ",
+    "HintText": "Upload Approved Order ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_directionOrderCollection",
+    "SecurityClassification": "Public"
   }
 ]
