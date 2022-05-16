@@ -1021,6 +1021,8 @@
     "DisplayOrder": 142,
     "PreConditionState(s)": "caseFileSubmitted;prepareForHearing",
     "PostConditionState": "orderDrawn",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/approved-order/start",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/upload-approved-order",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   }
