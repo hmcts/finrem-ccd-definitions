@@ -4144,6 +4144,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "confidentialDocumentsTab",
+    "TabLabel": "Confidential documents",
+    "TabDisplayOrder": 22,
+    "CaseFieldID": "confidentialDocumentsUploaded",
+    "TabFieldDisplayOrder": 55
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "ChangeOfRepresentativesTab-judiciary",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "TabLabel": "Change of representatives",
