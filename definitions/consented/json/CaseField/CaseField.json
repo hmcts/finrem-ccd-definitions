@@ -1925,5 +1925,22 @@
     "FieldTypeParameter": "RepresentationUpdate",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "nocParty",
+    "Label": "Select Party to which the change in representation applies: ",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "nocPartyList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "updateIncludesRepresentativeChange",
+    "Label": "Does this update include a change in representation for either party?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
   }
 ]

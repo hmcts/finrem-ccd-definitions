@@ -54,13 +54,15 @@ finrem-cos:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/cos:pr-666
+    image: hmctspublic.azurecr.io/finrem/cos:pr-667
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
     environment:
+      FEATURE_CASEWORKER_NOC: false
       FEATURE_RESPONDENT_JOURNEY: true
       FEATURE_ASSIGN_CASE_ACCESS: true
       FEATURE_USE_USER_TOKEN: true
+      FEATURE_SOLICITOR_NOC: false
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
@@ -147,7 +149,7 @@ finrem-ns:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/ns:pr-275
+    image: hmctspublic.azurecr.io/finrem/ns:pr-277
     releaseNameOverride: ${SERVICE_NAME}-finrem-ns
     ingressHost: ns-${SERVICE_FQDN}
     environment:
@@ -450,6 +452,7 @@ aac-manage-case-assignment:
       MANAGE_CASE_S2S_KEY: ${MANAGE_CASE_S2S_KEY}
       IDAM_NOC_APPROVER_USERNAME: ${IDAM_NOC_APPROVER_USERNAME}
       IDAM_NOC_APPROVER_PASSWORD: ${IDAM_NOC_APPROVER_PASSWORD}
-      NOTIFY_MCA_API_KEY: ${NOTIFY_MCA_API_KEY}
+      NOTIFY_MCA_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
+      NOTIFY_EMAIL_TEMPLATE_ID: 85f22924-7b45-4fc6-9954-c08a8833f6a0
     autoscaling:
       enabled: false
