@@ -4981,6 +4981,13 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "ApplicantOrganisationPolicy",
     "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "16/03/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRU"
   },
   {
@@ -4988,7 +4995,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "16/03/2020",
@@ -5509,6 +5516,13 @@
     "CRUD": "CRU"
   },
   {
+    "LiveFrom": "16/03/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "rSolicitorLabel",
@@ -5572,6 +5586,13 @@
     "CRUD": "CRU"
   },
   {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "civilPartnership",
@@ -5612,5 +5633,299 @@
     "CaseFieldID": "civilPartnership",
     "UserRole": "caseworker-caa",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "solicitorAddress",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "solicitorName",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "solicitorEmail",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "solicitorPhone",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "solicitorFirm",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "solicitorAgreeToReceiveEmails",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "applicantRepresented",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "applicantRepresentedPaper",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "solicitorDXnumber",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "appRespondentRep",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "rSolicitorName",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "rSolicitorFirm",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "rSolicitorAddress",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "rSolicitorReference",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "rSolicitorPhone",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "rSolicitorEmail",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "rSolicitorDXnumber",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RespSolNotificationsEmailConsent",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-divorce-financialremedy",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   }
 ]

@@ -2235,5 +2235,25 @@
     "CaseFieldID": "respondentEmail",
     "TabFieldDisplayOrder": 3,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "TabID": "ChangeOfRepresentativesTab-judiciary",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "TabLabel": "Change of representatives",
+    "TabDisplayOrder": 16,
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "TabID": "ChangeOfRepresentativesTab-courtadmin",
+    "TabLabel": "Change of representatives",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "TabFieldDisplayOrder": 1
   }
 ]
