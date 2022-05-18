@@ -1,6 +1,6 @@
 # finrem-ccd-definitions
 
-Financial Remedy configuration definitions for CCD.
+Financial Remedy configuration definitions for CCD. dummy
 
 This allows for the FR CCD Config to be easily edited and stored in Github as JSON rather than version controlled in Confluence as Xlsx files.
 
