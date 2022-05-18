@@ -4151,11 +4151,31 @@
     "TabFieldDisplayOrder": 55
   },
   {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "ChangeOfRepresentativesTab-judiciary",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "TabLabel": "Change of representatives",
+    "TabDisplayOrder": 23,
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "ChangeOfRepresentativesTab-courtadmin",
+    "TabLabel": "Change of representatives",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "TabDisplayOrder": 24,
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "TabFieldDisplayOrder": 1
+  },
+  {
     "LiveFrom": "01/10/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "hearingBundleTab",
     "TabLabel": "Hearing Bundle",
-    "TabDisplayOrder": 23,
+    "TabDisplayOrder": 25,
     "CaseFieldID": "hearingUploadBundle",
     "TabFieldDisplayOrder": 1
   }

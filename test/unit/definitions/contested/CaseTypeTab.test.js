@@ -74,7 +74,9 @@ describe('CaseTypeTab', () => {
     'Shared Documents': 20,
     interimSchedulingTab: 21,
     confidentialDocumentsTab: 22,
-    hearingBundleTab: 23
+    'ChangeOfRepresentativesTab-judiciary': 23,
+    'ChangeOfRepresentativesTab-courtadmin': 24,
+    hearingBundleTab: 25
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -117,6 +119,8 @@ describe('CaseTypeTab', () => {
       'Shared Documents',
       'interimSchedulingTab',
       'confidentialDocumentsTab',
+      'ChangeOfRepresentativesTab-judiciary',
+      'ChangeOfRepresentativesTab-courtadmin',
       'hearingBundleTab'
     ]);
   });
