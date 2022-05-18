@@ -530,6 +530,16 @@
     "ID": "FR_manageHearingBundles",
     "CaseEventID": "FR_manageHearingBundles",
     "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleFdr",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
     "ListElementCode": "hearingBundleDocuments.bundleDocuments",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
