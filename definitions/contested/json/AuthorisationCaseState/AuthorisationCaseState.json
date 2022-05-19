@@ -906,27 +906,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "caseAdded",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "awaitingHWFDecision",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "applicationSubmitted",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "applicationIssued",
     "UserRole": "caseworker-caa",
     "CRUD": "CRUD"
@@ -935,13 +914,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "gateKeepingAndAllocation",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "awaitingPaymentResponse",
     "UserRole": "caseworker-caa",
     "CRUD": "CRUD"
   },
@@ -963,13 +935,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseFileSubmitted",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "close",
     "UserRole": "caseworker-caa",
     "CRUD": "CRUD"
   },
@@ -1130,9 +1095,9 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "caseAdded",
-    "UserRole": "caseworker-approver",
-    "CRUD": "CRUD"
+    "CaseStateID": "close",
+    "UserRole": "caseworker-caa",
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1187,13 +1152,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseFileSubmitted",
-    "UserRole": "caseworker-approver",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "close",
     "UserRole": "caseworker-approver",
     "CRUD": "CRUD"
   },
