@@ -58,11 +58,11 @@ finrem-cos:
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
     environment:
-      FEATURE_CASEWORKER_NOC: true
+      FEATURE_CASEWORKER_NOC: false
       FEATURE_RESPONDENT_JOURNEY: true
       FEATURE_ASSIGN_CASE_ACCESS: true
       FEATURE_USE_USER_TOKEN: true
-      FEATURE_SOLICITOR_NOC: true
+      FEATURE_SOLICITOR_NOC: false
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
