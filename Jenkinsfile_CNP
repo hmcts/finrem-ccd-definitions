@@ -1,5 +1,7 @@
 #!groovy
 
+import uk.gov.hmcts.contino.GithubAPI
+
 @Library("Infrastructure")
 
 String product = "finrem"
@@ -58,7 +60,17 @@ def secrets = [
                 secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
                 secret('docmosis-endpoint', 'PDF_SERVICE_BASEURL'),
                 secret('gov-uk-notification-key', 'UK_GOV_NOTIFY_API_KEY'),
-                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY')
+                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY'),
+                secret('idam-caa-username', 'IDAM_CAA_USERNAME'),
+                secret('idam-caa-password', 'IDAM_CAA_PASSWORD'),
+                secret('manage-case-s2s-key', 'MANAGE_CASE_S2S_KEY'),
+                secret('idam-noc-approver-username', 'IDAM_NOC_APPROVER_USERNAME'),
+                secret('idam-noc-approver-password', 'IDAM_NOC_APPROVER_PASSWORD'),
+                secret('notify-mca-api-key', 'NOTIFY_MCA_API_KEY'),
+                secret('finrem-system-update-username', 'FINREM_SYSTEMUPDATE_USERNAME'),
+                secret('finrem-system-update-password', 'FINREM_SYSTEMUPDATE_PASSWORD'),
+                secret('idam-mca-client-secret', 'IDAM_MCA_CLIENT_SECRET'),
+                secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET')
 
         ]
 ]
@@ -70,6 +82,10 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
     version: '',
     envVariable: envVar
   ]
+}
+
+def checkForNoCleanupLabel(branch_name) {
+  return new GithubAPI(this).getLabelsbyPattern(branch_name, "cleanup").contains("no_cleanup")
 }
 
 withPipeline("nodejs", product, component) {
@@ -173,8 +189,11 @@ withPipeline("nodejs", product, component) {
     slackSend(channel: '#finrem-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
   }
 
+
   onPR {
-    enableCleanupOfHelmReleaseOnSuccess()
+    if (!checkForNoCleanupLabel(env.BRANCH_NAME)) {
+      enableCleanupOfHelmReleaseOnSuccess()
+    }
   }
 }
 
