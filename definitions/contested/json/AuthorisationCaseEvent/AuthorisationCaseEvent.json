@@ -1433,5 +1433,19 @@
     "CaseEventID": "applyNocDecision",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_ClearNocRequests",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_ClearNocRequests",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
   }
 ]

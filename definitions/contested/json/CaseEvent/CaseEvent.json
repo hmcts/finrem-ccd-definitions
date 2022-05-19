@@ -1043,5 +1043,19 @@
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_ClearNocRequests",
+    "Name": "Clear Notice of Change Requests",
+    "Description": "Clear Notice of Change Requests",
+    "DisplayOrder": 148,
+    "PreConditionState(s)": "applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;responseReceived;consentedOrderSubmitted",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/clear-noc-requests",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
   }
 ]
