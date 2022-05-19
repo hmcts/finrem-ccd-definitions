@@ -993,7 +993,7 @@
     "Name": "NoC Request",
     "Description": "Notice of Change Request",
     "DisplayOrder": 133,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPaymentResponse;applicationSubmitted;applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;responseReceived;consentedOrderSubmitted",
+    "PreConditionState(s)": "applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;responseReceived;consentedOrderSubmitted",
     "PostConditionState": "*",
     "CallBackURLSubmittedEvent": "${CCD_DEF_AAC_URL}/noc/check-noc-approval",
     "SecurityClassification": "Public",
