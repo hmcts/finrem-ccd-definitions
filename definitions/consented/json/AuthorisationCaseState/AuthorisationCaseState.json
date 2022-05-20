@@ -674,41 +674,6 @@
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseStateID": "caseAdded",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseStateID": "awaitingHWFDecision",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseStateID": "awaitingPayment",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseStateID": "awaitingPaymentResponse",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseStateID": "applicationSubmitted",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "newPaperCase",
     "UserRole": "caseworker-caa",
     "CRUD": "CRU"
@@ -777,18 +742,11 @@
     "CRUD": "CRU"
   },
   {
-    "LiveFrom": "01/01/2019",
+    "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "close",
     "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseStateID": "caseAdded",
-    "UserRole": "caseworker-approver",
-    "CRUD": "CRUD"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2019",
@@ -887,12 +845,5 @@
     "CaseStateID": "infoReceived",
     "UserRole": "caseworker-approver",
     "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseStateID": "close",
-    "UserRole": "caseworker-approver",
-    "CRUD": "CRU"
   }
 ]
