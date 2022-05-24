@@ -72,7 +72,7 @@ describe('CaseTypeTab', () => {
     'Respondent Documents': 19,
     'Trial Bundle': 20,
     'Shared Documents': 20,
-    'interimSchedulingTab': 21,
+    interimSchedulingTab: 21,
     confidentialDocumentsTab: 22,
     'ChangeOfRepresentativesTab-judiciary': 23,
     'ChangeOfRepresentativesTab-courtadmin': 24
