@@ -4422,5 +4422,14 @@
     "Label": "Does this update include a change in representation for either party?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "sendOrderPostStateOption",
+    "Label": "What state should this case move to:",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_sendOrderPostStateOption",
+    "SecurityClassification": "Public"
   }
 ]
