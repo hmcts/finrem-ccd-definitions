@@ -796,5 +796,85 @@
     "FieldType": "Text",
     "ElementLabel": "Additional Comments",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangedRepresentative",
+    "ListElementCode": "name",
+    "FieldType": "Text",
+    "ElementLabel": "Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangedRepresentative",
+    "ListElementCode": "email",
+    "FieldType": "Email",
+    "ElementLabel": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangedRepresentative",
+    "ListElementCode": "organisation",
+    "FieldType": "Organisation",
+    "ElementLabel": "Organisation",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "party",
+    "FieldType": "Text",
+    "ElementLabel": "Party",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "name",
+    "FieldType": "Text",
+    "ElementLabel": "Client Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "date",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "by",
+    "FieldType": "Text",
+    "ElementLabel": "Updated by",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "via",
+    "FieldType": "Text",
+    "ElementLabel": "Updated via",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "added",
+    "FieldType": "ChangedRepresentative",
+    "ElementLabel": "Added representative",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "removed",
+    "FieldType": "ChangedRepresentative",
+    "ElementLabel": "Removed representative",
+    "SecurityClassification": "Public"
   }
 ]
