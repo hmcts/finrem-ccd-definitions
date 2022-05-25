@@ -1050,8 +1050,8 @@
     "ID": "FR_manageCaseDocument",
     "Name": "Manage case document",
     "Description": "Manage case document",
-    "DisplayOrder": 106,
-    "PreConditionState": "applicationSubmitted;applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;caseWorkerReview;prepareForHearing;orderSent;caseFileSubmitted;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;consentOrderApproved;generalApplication",
+    "DisplayOrder": 105,
+    "PreConditionState(s)": "applicationSubmitted;applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;caseWorkerReview;prepareForHearing;orderSent;caseFileSubmitted;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;consentOrderApproved;generalApplication",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
