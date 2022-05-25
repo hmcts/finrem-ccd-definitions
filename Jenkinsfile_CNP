@@ -241,7 +241,7 @@ if (checkLabel("atLeastOneEnabled")) {
           pipelineTriggers([cron('00 20 * * *')]),
           parameters([
                   string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
-                  string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
+                  string(name: 'CCD_WEB_URL', defaultValue: "https://case-management-web-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal/", description: 'The URL you want to run solicitor tests against'),
           ])
   ])
 
