@@ -83,6 +83,15 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 4) `yarn test:nightly-functional` will create both API, UI screen tests and verifies data in tabs (runs on nightly pipeline on AAT).
 5) To create cases on demo, point CCD_DATA_API_URL to ccd demo API url and RUNNING_ENV=demo, run the scenario tests.
 
+### Running additional tests in the Jenkins PR Pipeline
+1. Add one or more appropriate labels to your PR in GitHub. Valid labels are:
+
+- ```enable_full_functional_test```
+- ```enable_all_tests_and_scans```
+
+2. Trigger a build of your PR in Jenkins.  Once the regular pipeline completes, the nightly pipeline will trigger to execute your chosen test(s).
+
+
 ## ccd-definition-processor
 
 This repo makes use of https://github.com/hmcts/ccd-definition-processor to generate the excel file. You may have to update this repo if, for example, you need to add a column to the definitions spreadsheet.
@@ -154,12 +163,8 @@ https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+P
 The team leveraged the fact this service has set up charts with all services needed for running the full Financial Remedy solution to create 
 deployments to Preview with the PRs so Developers and Testers can work on changes without the weight that a local environment has on machine resources.
 
-The deployment can be switched ON by commenting `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
+The deployment can be switched ON by adding a label to the PR Repo in GitHub called 'no_cleanup'.
 
 More details can be found [here](https://tools.hmcts.net/confluence/display/RSE/Divorce+Local+Environment+Set+up+using+Preview)
-
-## ATTENTION! 
-If you switch the Preview deployment ON, 
-remember to switch it back OFF by removing the comment on `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
 
 
