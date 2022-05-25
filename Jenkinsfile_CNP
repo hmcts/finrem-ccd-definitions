@@ -238,7 +238,6 @@ withPipeline("nodejs", product, component) {
 
 if (checkLabel("atLeastOneEnabled")) {
   properties([
-          pipelineTriggers([cron('00 20 * * *')]),
           parameters([
                   string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
                   string(name: 'CCD_WEB_URL', defaultValue: "https://case-management-web-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal/", description: 'The URL you want to run solicitor tests against'),
@@ -247,9 +246,9 @@ if (checkLabel("atLeastOneEnabled")) {
 
   withNightlyPipeline("nodejs", product, component) {
     onPR() {
-      env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
-      env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
-      env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
+      env.CCD_WEB_URL="https://case-management-web-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+      env.CCD_DATA_API_URL="http://ccd-data-store-api-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+      env.XUI_ORG_WEB_URL="https://xui-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.NIGHTLY_TEST="true"
       env.NODE_ENV = 'ci'
 
@@ -270,6 +269,7 @@ if (checkLabel("atLeastOneEnabled")) {
 // If the no_cleanup label is not present, cleanup the release (don't call checkLabel() here)
 if (!labelStates.no_cleanup) {
   withPipeline("nodejs", product, component) {
+    env.NIGHTLY_TEST="false"
     enableCleanupOfHelmReleaseOnSuccess()
   }
 }
