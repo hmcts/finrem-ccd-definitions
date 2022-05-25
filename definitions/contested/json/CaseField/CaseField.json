@@ -4430,5 +4430,13 @@
     "Label": "Does this update include a change in representation for either party?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingCourtLabel",
+    "FieldType": "Label",
+    "Label": "## Hearing Court",
+    "SecurityClassification": "Public"
   }
 ]
