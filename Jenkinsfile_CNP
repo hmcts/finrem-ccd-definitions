@@ -263,11 +263,16 @@ if (checkLabel("atLeastOneEnabled")) {
         }
       }
 
-      // If the no_cleanup label is not present, cleanup the release (don't call checkLabel() here)
-      if (!labelStates.no_cleanup) {
-        enableCleanupOfHelmReleaseOnSuccess()
-      }
     }
   }
 }
+
+// If the no_cleanup label is not present, cleanup the release (don't call checkLabel() here)
+if (!labelStates.no_cleanup) {
+  withPipeline("nodejs", product, component) {
+    enableCleanupOfHelmReleaseOnSuccess()
+  }
+}
+
+
 
