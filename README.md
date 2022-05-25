@@ -89,7 +89,7 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 - ```enable_full_functional_test```
 - ```enable_all_tests_and_scans```
 
-2. Trigger a build of your PR in Jenkins.  Once the regular pipeline completes, the nightly pipeline will trigger to execute your chosen test(s).
+2. Trigger a build of your PR in Jenkins. Once the regular pipeline completes, the nightly pipeline will trigger to execute your chosen test(s).
 
 
 ## ccd-definition-processor
