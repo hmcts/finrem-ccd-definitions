@@ -12,6 +12,7 @@ Scenario('add all the roles @pipeline', I => {
   I.createRole('caseworker-divorce-financialremedy');
   I.createRole('caseworker-caa');
   I.createRole('IDAM_SUPER_USER');
+  I.createRole('caseworker-approver');
   I.click('Manage User Roles');
   I.see('citizen');
   I.see('caseworker');
@@ -23,16 +24,32 @@ Scenario('add all the roles @pipeline', I => {
   I.see('caseworker-divorce-financialremedy');
   I.see('caseworker-caa');
   I.see('IDAM_SUPER_USER')
+  I.see('caseworker-approver');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
-Scenario('upload Consented Config file @pipeline', I => {
-  I.loginToAdminConsole();
-  I.uploadConfig(`../../definitions/consented/xlsx/${process.env.CCD_CONSENTED_FILE_NAME}`);
-  I.see('Case Definition data successfully imported');
-}).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+if (process.env.IMPORT_PREVIEW) {
+  Scenario('upload Consented preview config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/consented/xlsx/ccd-config-preview-consented-${process.env.GIT_COMMIT}.xlsx`);
+    I.see('Case Definition data successfully imported');
+  }).retry({retries: 3, minTimeout: 30000});
 
-Scenario('upload Contested Config file @pipeline', I => {
-  I.loginToAdminConsole();
-  I.uploadConfig(`../../definitions/contested/xlsx/${process.env.CCD_CONTESTED_FILE_NAME}`);
-  I.see('Case Definition data successfully imported');
-}).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+  Scenario('upload Contested preview config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/contested/xlsx/ccd-config-preview-contested-${process.env.GIT_COMMIT}.xlsx`);
+  }).retry({retries: 3, minTimeout: 300000})
+}
+
+if (process.env.IMPORT_AAT) {
+  Scenario('upload Consented aat Config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/consented/xlsx/ccd-config-aat-consented-${process.env.GIT_COMMIT}.xlsx`);
+    I.see('Case Definition data successfully imported');
+  }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+
+  Scenario('upload Contested aat Config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/contested/xlsx/ccd-config-aat-contested-${process.env.GIT_COMMIT}.xlsx`);
+    I.see('Case Definition data successfully imported');
+  }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+}
