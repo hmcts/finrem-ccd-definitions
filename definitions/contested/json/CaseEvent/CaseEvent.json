@@ -989,9 +989,9 @@
   {
     "LiveFrom": "10/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_revertCaseToPrepareForHearing",
+    "ID": "FR_revertToPrepForHearing",
     "Name": "Revert to Prepare For Hearing",
-    "Description": "Revert Case State to Prepare For Hearing",
+    "Description": "Revert to Prepare For Hearing",
     "DisplayOrder": 133,
     "PreConditionState(s)": "consentedOrderNotApproved;consentedOrderAssignJudge;caseFileSubmitted;consentedOrderSubmitted",
     "PostConditionState": "prepareForHearing",
