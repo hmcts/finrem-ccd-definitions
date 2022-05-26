@@ -263,14 +263,11 @@ if (checkLabel("atLeastOneEnabled")) {
 //      }
 
     }
-  }
-}
-
-// If the no_cleanup label is not present, cleanup the release (don't call checkLabel() here)
-if (!labelStates.no_cleanup) {
-  withPipeline("nodejs", product, component) {
-    env.NIGHTLY_TEST="false"
-    enableCleanupOfHelmReleaseOnSuccess()
+    // If the no_cleanup label is not present, cleanup the release (don't call checkLabel() here)
+    if (!labelStates.no_cleanup) {
+      // Can't use enableCleanupOfHelmReleaseOnSuccess() as not configured on nightly pipeline
+      // Can we use helmUninstall(???) here?  Request in with platops.
+    }
   }
 }
 
