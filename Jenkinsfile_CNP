@@ -254,12 +254,12 @@ if (checkLabel("atLeastOneEnabled")) {
 
       loadVaultSecrets(secrets)
 
-//      if (checkLabel("enable_full_functional_test")) {
-//        enableFullFunctionalTest()
-//
-//        after('fullFunctionalTest') {
-//          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
-//        }
+      if (checkLabel("enable_full_functional_test")) {
+        enableFullFunctionalTest()
+
+        after('fullFunctionalTest') {
+          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
+        }
       }
 
     }
