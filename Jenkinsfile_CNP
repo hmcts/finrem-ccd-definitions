@@ -230,7 +230,7 @@ withPipeline("nodejs", product, component) {
   onPR {
     if (checkLabel("enable_full_functional_test")) {
       try{
-        yarn("test:fullfunctional")
+        yarnBuilder.yarn("test:fullfunctional")
       }
       finally {
         steps.junit allowEmptyResults: true, testResults: 'functional-output/**/*result.xml'
