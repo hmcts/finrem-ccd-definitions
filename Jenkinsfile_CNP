@@ -267,6 +267,9 @@ if (checkLabel("atLeastOneEnabled")) {
     if (!labelStates.no_cleanup) {
       // Can't use enableCleanupOfHelmReleaseOnSuccess() as not configured on nightly pipeline
       // Can we use helmUninstall(???) here?  Request in with platops.
+      final uk.gov.hmcts.contino.AppPipelineConfig config
+      this.config = config
+      config.clearHelmRelease = true
     }
   }
 }
