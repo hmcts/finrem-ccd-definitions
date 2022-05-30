@@ -229,12 +229,14 @@ withPipeline("nodejs", product, component) {
 
   onPR {
     if (checkLabel("enable_full_functional_test")) {
-      try{
-        yarnBuilder.yarn("test:fullfunctional")
-      }
-      finally {
-        steps.junit allowEmptyResults: true, testResults: 'functional-output/**/*result.xml'
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**'
+      stageWithAgent('Full Functional Test', product) {
+        try{
+          yarnBuilder.yarn("test:fullfunctional")
+        }
+        finally {
+          steps.junit allowEmptyResults: true, testResults: 'functional-output/**/*result.xml'
+          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**'
+        }
       }
     }
 
