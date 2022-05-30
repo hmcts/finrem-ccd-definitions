@@ -266,7 +266,7 @@ if (checkLabel("atLeastOneEnabled")) {
       if (!labelStates.no_cleanup) {
         // Can't use enableCleanupOfHelmReleaseOnSuccess() as not configured on nightly pipeline
         // Can we use helmUninstall(???) here?  Request in with platops.
-        def helm = new Helm(this)
+        def helm = new Helm(this, "${product}-${component}")
         helm.delete("${product}-${component}-pr-${CHANGE_ID}", "financial-remedy")
       }
     }
