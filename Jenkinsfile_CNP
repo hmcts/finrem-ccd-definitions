@@ -227,49 +227,14 @@ withPipeline("nodejs", product, component) {
     slackSend(channel: '#finrem-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
   }
 
-
   onPR {
-    // If any of the additional test labels or the no_cleanup label are present, do not cleanup here!
-    if (!checkLabel("no_cleanup") && !checkLabel("atLeastOneEnabled")) {
+    if (checkLabel("enable_full_functional_test")) {
+      yarnBuilder.fullFunctionalTest()
+    }
+
+    // If the no_cleanup label is present, do not cleanup here!
+    if (!checkLabel("no_cleanup")) {
       enableCleanupOfHelmReleaseOnSuccess()
     }
   }
 }
-
-if (checkLabel("atLeastOneEnabled")) {
-  properties([
-          parameters([
-                  string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
-                  string(name: 'CCD_WEB_URL', defaultValue: "https://case-management-web-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal/", description: 'The URL you want to run solicitor tests against'),
-          ])
-  ])
-
-  withNightlyPipeline("nodejs", product, component) {
-    onPR() {
-      env.CCD_WEB_URL="https://case-management-web-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.CCD_DATA_API_URL="http://ccd-data-store-api-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.XUI_ORG_WEB_URL="https://xui-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.NIGHTLY_TEST="true"
-      env.NODE_ENV = 'ci'
-
-      loadVaultSecrets(secrets)
-
-//      if (checkLabel("enable_full_functional_test")) {
-//        enableFullFunctionalTest()
-//
-//        after('fullFunctionalTest') {
-//          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
-//        }
-//      }
-
-    }
-    // If the no_cleanup label is not present, cleanup the release (don't call checkLabel() here)
-    if (!labelStates.no_cleanup) {
-      // Can't use enableCleanupOfHelmReleaseOnSuccess() as not configured on nightly pipeline
-      // Can we use helmUninstall(???) here?  Request in with platops.
-    }
-  }
-}
-
-
-
