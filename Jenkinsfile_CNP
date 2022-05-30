@@ -229,7 +229,13 @@ withPipeline("nodejs", product, component) {
 
   onPR {
     if (checkLabel("enable_full_functional_test")) {
-      yarnBuilder.fullFunctionalTest()
+      try{
+        yarn("test:fullfunctional")
+      }
+      finally {
+        steps.junit allowEmptyResults: true, testResults: 'functional-output/**/*result.xml'
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**'
+      }
     }
 
     // If the no_cleanup label is present, do not cleanup here!
