@@ -262,13 +262,13 @@ if (checkLabel("atLeastOneEnabled")) {
         }
       }
 
-    }
-    // If the no_cleanup label is not present, cleanup the release (don't call checkLabel() here)
-    if (!labelStates.no_cleanup) {
-      // Can't use enableCleanupOfHelmReleaseOnSuccess() as not configured on nightly pipeline
-      // Can we use helmUninstall(???) here?  Request in with platops.
-      def helm = new Helm(this)
-      helm.delete(CHANGE_ID, "financial-remedy")
+      // If the no_cleanup label is not present, cleanup the release (don't call checkLabel() here)
+      if (!labelStates.no_cleanup) {
+        // Can't use enableCleanupOfHelmReleaseOnSuccess() as not configured on nightly pipeline
+        // Can we use helmUninstall(???) here?  Request in with platops.
+        def helm = new Helm(this)
+        helm.delete("${product}-${component}-pr-${CHANGE_ID}", "financial-remedy")
+      }
     }
   }
 }
