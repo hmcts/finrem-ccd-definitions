@@ -1,6 +1,7 @@
 #!groovy
 
 import uk.gov.hmcts.contino.GithubAPI
+import uk.gov.hmcts.contino.Helm
 
 @Library("Infrastructure")
 
@@ -227,7 +228,6 @@ withPipeline("nodejs", product, component) {
     slackSend(channel: '#finrem-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
   }
 
-
   onPR {
     // If any of the additional test labels or the no_cleanup label are present, do not cleanup here!
     if (!checkLabel("no_cleanup") && !checkLabel("atLeastOneEnabled")) {
@@ -254,19 +254,21 @@ if (checkLabel("atLeastOneEnabled")) {
 
       loadVaultSecrets(secrets)
 
-//      if (checkLabel("enable_full_functional_test")) {
-//        enableFullFunctionalTest()
-//
-//        after('fullFunctionalTest') {
-//          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
-//        }
-//      }
+      if (checkLabel("enable_full_functional_test")) {
+        enableFullFunctionalTest()
+
+        after('fullFunctionalTest') {
+          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
+        }
+      }
 
     }
     // If the no_cleanup label is not present, cleanup the release (don't call checkLabel() here)
     if (!labelStates.no_cleanup) {
       // Can't use enableCleanupOfHelmReleaseOnSuccess() as not configured on nightly pipeline
       // Can we use helmUninstall(???) here?  Request in with platops.
+      def helm = new Helm(this)
+      helm.delete(CHANGE_ID, "financial-remedy")
     }
   }
 }
