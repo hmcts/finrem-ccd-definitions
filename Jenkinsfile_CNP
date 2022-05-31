@@ -254,21 +254,12 @@ if (checkLabel("atLeastOneEnabled")) {
 
       loadVaultSecrets(secrets)
 
-//      if (checkLabel("enable_full_functional_test")) {
-//        enableFullFunctionalTest()
-//
-//        after('fullFunctionalTest') {
-//          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
-//        }
-//      }
+      if (checkLabel("enable_full_functional_test")) {
+        enableFullFunctionalTest()
 
-      // If the no_cleanup label is not present, cleanup the release (don't call checkLabel() here)
-      if (!labelStates.no_cleanup) {
-        // Can't use enableCleanupOfHelmReleaseOnSuccess() as not configured on nightly pipeline
-        // Can we use helmUninstall(???) here?  Request in with platops.
-        final uk.gov.hmcts.contino.AppPipelineConfig config
-        this.config = config
-        config.clearHelmRelease = true
+        after('fullFunctionalTest') {
+          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
+        }
       }
     }
   }
