@@ -8318,9 +8318,9 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
-    "CaseFieldID": "applicantRepresentedLabel",
+    "CaseFieldID": "applicantSolicitorName",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "READONLY",
+    "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
@@ -8331,38 +8331,12 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
-    "CaseFieldID": "applicantRepresented",
+    "CaseFieldID": "applicantSolicitorFirm",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_updateCaseDetailsSolicitor",
-    "CaseFieldID": "applicantSolicitorName",
-    "PageFieldDisplayOrder": 3,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_updateCaseDetailsSolicitor",
-    "CaseFieldID": "applicantSolicitorFirm",
-    "PageFieldDisplayOrder": 4,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8370,12 +8344,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "solicitorReference",
-    "PageFieldDisplayOrder": 5,
+    "PageFieldDisplayOrder": 3,
     "DisplayContext": "OPTIONAL",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8383,12 +8356,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "applicantSolicitorAddressLabel",
-    "PageFieldDisplayOrder": 6,
+    "PageFieldDisplayOrder": 4,
     "DisplayContext": "READONLY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8396,12 +8368,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "applicantSolicitorAddress",
-    "PageFieldDisplayOrder": 7,
+    "PageFieldDisplayOrder": 5,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8409,12 +8380,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "applicantSolicitorPhone",
-    "PageFieldDisplayOrder": 8,
+    "PageFieldDisplayOrder": 6,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8422,12 +8392,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "applicantSolicitorEmail",
-    "PageFieldDisplayOrder": 9,
+    "PageFieldDisplayOrder": 7,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8435,36 +8404,10 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "applicantSolicitorConsentForEmails",
-    "PageFieldDisplayOrder": 10,
+    "PageFieldDisplayOrder": 8,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_updateCaseDetailsSolicitor",
-    "CaseFieldID": "respondentRepresentedLabel",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "READONLY",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserCaseRole=\"[RESPSOLICITOR]\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_updateCaseDetailsSolicitor",
-    "CaseFieldID": "respondentRepresented",
-    "PageFieldDisplayOrder": 2,
-    "DisplayContext": "MANDATORY",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -8473,12 +8416,12 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "rSolicitorName",
-    "PageFieldDisplayOrder": 3,
+    "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
+    "PageShowCondition": "currentUserCaseRole=\"[RESPSOLICITOR]\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8486,12 +8429,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "rSolicitorFirm",
-    "PageFieldDisplayOrder": 4,
+    "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8499,12 +8441,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "rSolicitorReference",
-    "PageFieldDisplayOrder": 5,
+    "PageFieldDisplayOrder": 3,
     "DisplayContext": "OPTIONAL",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8512,12 +8453,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "rSolicitorAddressLabel",
-    "PageFieldDisplayOrder": 6,
+    "PageFieldDisplayOrder": 4,
     "DisplayContext": "READONLY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8525,12 +8465,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "rSolicitorAddress",
-    "PageFieldDisplayOrder": 7,
+    "PageFieldDisplayOrder": 5,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8538,12 +8477,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "rSolicitorPhone",
-    "PageFieldDisplayOrder": 8,
+    "PageFieldDisplayOrder": 6,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8551,12 +8489,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "rSolicitorEmail",
-    "PageFieldDisplayOrder": 9,
+    "PageFieldDisplayOrder": 7,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8564,12 +8501,11 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "RespSolNotificationsEmailConsent",
-    "PageFieldDisplayOrder": 10,
+    "PageFieldDisplayOrder": 8,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8582,7 +8518,6 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
