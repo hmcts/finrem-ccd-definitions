@@ -7312,42 +7312,56 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "divorceCaseNumber",
     "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "applicantLName",
     "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respondentLName",
     "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "issueDate",
     "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "ApplicantOrganisationPolicy",
     "UserRole": "caseworker-caa",
-    "CRUD": "CRU"
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantFMName",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentFMName",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7452,6 +7466,13 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRU"
   },
   {
@@ -8519,6 +8540,13 @@
     "CRUD": "R"
   },
   {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "civilPartnership",
@@ -8558,7 +8586,175 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "civilPartnership",
     "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "solicitorReference",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantSolicitorPhone",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantSolicitorAddress",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantSolicitorEmail",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantSolicitorName",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantSolicitorFirm",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantSolicitorConsentForEmails",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantRepresented",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantSolicitorDXnumber",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantShareDocs",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentRepresented",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorName",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorFirm",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorAddress",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorReference",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorPhone",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorEmail",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorDXnumber",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RespSolNotificationsEmailConsent",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentShareDocs",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -9336,8 +9532,154 @@
     "CaseFieldID": "interimHearingDirectionsDocument",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
-  }
-,
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-divorce-financialremedy",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "nocParty",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "updateIncludesRepresentativeChange",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -9351,6 +9693,62 @@
     "CaseFieldID": "confidentialDocumentsUploaded",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingCourtLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingCourtLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingCourtLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingCourtLabel",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingCourtLabel",
+    "UserRole": "caseworker-caa",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "changeOrganisationRequestField",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",

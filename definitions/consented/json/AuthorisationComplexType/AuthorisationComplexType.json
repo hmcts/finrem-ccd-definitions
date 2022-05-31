@@ -1,66 +1,98 @@
 [
     {
-        "LiveFrom": "05/08/2020",
-        "CaseTypeID": "FinancialRemedyMVP2",
-        "CaseFieldID": "ApplicantOrganisationPolicy",
-        "ListElementCode": "OrgPolicyCaseAssignedRole",
-        "UserRole": "caseworker-caa",
-        "CRUD": "CRU"
-      },
-      {
-        "LiveFrom": "05/08/2020",
-        "CaseTypeID": "FinancialRemedyMVP2",
-        "CaseFieldID": "ApplicantOrganisationPolicy",
-        "ListElementCode": "OrgPolicyReference",
-        "UserRole": "caseworker-caa",
-        "CRUD": "CRU"
-      },
-      {
-        "LiveFrom": "05/08/2020",
-        "CaseTypeID": "FinancialRemedyMVP2",
-        "CaseFieldID": "ApplicantOrganisationPolicy",
-        "ListElementCode": "Organisation",
-        "UserRole": "caseworker-caa",
-        "CRUD": "CRU"
-      },
-      {
-        "LiveFrom": "05/08/2020",
-        "CaseTypeID": "FinancialRemedyMVP2",
-        "CaseFieldID": "ApplicantOrganisationPolicy",
-        "ListElementCode": "Organisation.OrganisationID",
-        "UserRole": "caseworker-caa",
-        "CRUD": "CRU"
-      },
-      {
-        "LiveFrom": "05/08/2020",
-        "CaseTypeID": "FinancialRemedyMVP2",
-        "CaseFieldID": "RespondentOrganisationPolicy",
-        "ListElementCode": "OrgPolicyCaseAssignedRole",
-        "UserRole": "caseworker-caa",
-        "CRUD": "CRU"
-      },
-      {
-        "LiveFrom": "05/08/2020",
-        "CaseTypeID": "FinancialRemedyMVP2",
-        "CaseFieldID": "RespondentOrganisationPolicy",
-        "ListElementCode": "OrgPolicyReference",
-        "UserRole": "caseworker-caa",
-        "CRUD": "CRU"
-      },
-      {
-        "LiveFrom": "05/08/2020",
-        "CaseTypeID": "FinancialRemedyMVP2",
-        "CaseFieldID": "RespondentOrganisationPolicy",
-        "ListElementCode": "Organisation",
-        "UserRole": "caseworker-caa",
-        "CRUD": "CRU"
-      },
-      {
-        "LiveFrom": "05/08/2020",
-        "CaseTypeID": "FinancialRemedyMVP2",
-        "CaseFieldID": "RespondentOrganisationPolicy",
-        "ListElementCode": "Organisation.OrganisationID",
-        "UserRole": "caseworker-caa",
-        "CRUD": "CRU"
-      }
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "ApplicantOrganisationPolicy",
+      "ListElementCode": "OrgPolicyCaseAssignedRole",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "ApplicantOrganisationPolicy",
+      "ListElementCode": "OrgPolicyReference",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "ApplicantOrganisationPolicy",
+      "ListElementCode": "Organisation",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "ApplicantOrganisationPolicy",
+      "ListElementCode": "Organisation.OrganisationID",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "ApplicantOrganisationPolicy",
+      "ListElementCode": "Organisation.OrganisationName",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "ApplicantOrganisationPolicy",
+      "ListElementCode": "PrepopulateToUsersOrganisation",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "RespondentOrganisationPolicy",
+      "ListElementCode": "OrgPolicyCaseAssignedRole",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "RespondentOrganisationPolicy",
+      "ListElementCode": "OrgPolicyReference",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "RespondentOrganisationPolicy",
+      "ListElementCode": "Organisation",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "RespondentOrganisationPolicy",
+      "ListElementCode": "Organisation.OrganisationID",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "RespondentOrganisationPolicy",
+      "ListElementCode": "Organisation.OrganisationName",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    },
+    {
+      "LiveFrom": "05/08/2020",
+      "CaseTypeID": "FinancialRemedyMVP2",
+      "CaseFieldID": "RespondentOrganisationPolicy",
+      "ListElementCode": "PrepopulateToUsersOrganisation",
+      "UserRole": "caseworker-caa",
+      "CRUD": "CRUD"
+    }
 ]
