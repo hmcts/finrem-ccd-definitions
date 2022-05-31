@@ -91,6 +91,8 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 
 2. Trigger a build of your PR in Jenkins. Once the regular pipeline completes, the nightly pipeline will trigger to execute your chosen test(s).
 
+#### NB: Adding either of these labels will prevent the PR build from being [automatically cleaned up](#preview-deployment-for-prs-in-testing)
+
 
 ## ccd-definition-processor
 
