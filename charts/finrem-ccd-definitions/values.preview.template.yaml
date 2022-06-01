@@ -54,7 +54,7 @@ finrem-cos:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/cos:pr-673-d7858cf-20220523083428
+    image: hmctspublic.azurecr.io/finrem/cos:pr-673-67f8b62-20220601173616
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
     environment:
