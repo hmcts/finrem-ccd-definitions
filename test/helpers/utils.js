@@ -8,12 +8,20 @@ const logger = Logger.getLogger('helpers/utils.js');
 
 const env = process.env.RUNNING_ENV || 'aat';
 
-async function getUserToken(username, password) {
-  logger.info('Getting User Token');
+
 const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
 const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
 const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
+const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
+const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
+
+async function getUserToken(username, password) {
+  logger.info('Getting User Token');
+  const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
+  //const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
+  //const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
+  //const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
 
   var retryCount = 0;
   var statusCode = 400;
@@ -87,7 +95,7 @@ async function getServiceToken() {
 
   const serviceSecret = process.env.CCD_SUBMIT_S2S_SECRET;
 
-  //const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
+  const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
   const s2sAuthPath = '/lease';
   // eslint-disable-next-line global-require
   const oneTimePassword = require('otp')({ secret: serviceSecret }).totp();
@@ -116,7 +124,7 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
 
   logger.info('Creating Case');
 
-  //const ccdApiUrl = process.env.CCD_DATA_API_URL;
+  const ccdApiUrl = process.env.CCD_DATA_API_URL;
   const frCaseType = caseType;
   const frEventId = eventId;
   const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/event-triggers/${frEventId}/token`;
