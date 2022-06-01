@@ -12,7 +12,8 @@ function historyTab(caseType, tabName, eventName, endState) {
 
 async function applicantTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '10');
+  //I.waitForText(tabName, '10');
+    I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':

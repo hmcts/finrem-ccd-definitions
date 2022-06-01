@@ -8,6 +8,8 @@ exports.config = {
       waitForNavigation: 'domcontentloaded',
       headless: true,
       ignoreHTTPSErrors: true,
+        smartWait: 50000,
+        waitForTimeout: 90000,
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
@@ -18,6 +20,15 @@ exports.config = {
     },
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
   },
+    plugins: {
+        retryFailedStep: {
+            enabled: true,
+            retries: 1
+        },
+        autoDelay: {
+            enabled: true
+        }
+    },
   include: { I: './steps_file.js' },
   bootstrap: null,
   mocha: {

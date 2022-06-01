@@ -226,7 +226,7 @@ Scenario('Contested Case Creation by Solicitor  @nightly @crossBrowser', async I
     I.see('Case Submission');
     I.waitForText('History', '30');
   }
-});
+}).retry(3);
 Scenario('Contested share case @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     /* eslint-disable */
