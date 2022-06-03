@@ -237,6 +237,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "scanDocuments",
+    "TabFieldDisplayOrder": 22,
+    "FieldShowCondition": "typeOfdocs=\"applicantDoc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
     "TabDisplayOrder": 3,
@@ -560,6 +570,16 @@
     "CaseFieldID": "respondentAddressConfidential",
     "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "respondentRepresented=\"No\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "respondentDetailsTab",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "scanDocuments",
+    "TabFieldDisplayOrder": 21,
+    "FieldShowCondition": "typeOfdocs=\"respondentDoc\""
   },
   {
     "LiveFrom": "01/01/2017",
