@@ -4430,5 +4430,14 @@
     "FieldType": "Label",
     "Label": "## Hearing Court",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "scanDocuments",
+    "Label": "Scanned Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "ScanDocuments",
+    "SecurityClassification": "Public"
   }
 ]

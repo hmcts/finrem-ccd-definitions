@@ -1269,5 +1269,79 @@
     "FieldType": "Text",
     "ElementLabel": "File name",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScanDocuments",
+    "ListElementCode": "# Record Meta data",
+    "FieldType": "Label",
+    "ElementLabel": "Scanned Records",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScanDocuments",
+    "ListElementCode": "type",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "ScannedDocumentType",
+    "ElementLabel": "Document Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScanDocuments",
+    "ListElementCode": "url",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned document url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScanDocuments",
+    "ListElementCode": "controlNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Document Control Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScanDocuments",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScanDocuments",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScanDocuments",
+    "ListElementCode": "deliveryDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Delivery Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScanDocuments",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScanDocuments",
+    "ListElementCode": "typeOfdocs",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "docTypeOption",
+    "ElementLabel": "What type of a document is this?",
+    "SecurityClassification": "Public"
   }
 ]

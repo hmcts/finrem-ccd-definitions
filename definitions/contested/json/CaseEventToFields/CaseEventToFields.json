@@ -9251,5 +9251,18 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "scanDocuments",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageLabel": "BulkScanning",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   }
 ]
