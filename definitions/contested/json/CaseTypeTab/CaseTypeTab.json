@@ -242,7 +242,7 @@
     "TabDisplayOrder": 2,
     "CaseFieldID": "scanDocuments",
     "TabFieldDisplayOrder": 23,
-    "FieldShowCondition": "typeOfDocs=\"applicantDoc\""
+    "FieldShowCondition": "scanDocuments.typeOfDocs=\"applicantDoc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -579,7 +579,7 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "scanDocuments",
     "TabFieldDisplayOrder": 22,
-    "FieldShowCondition": "typeOfDocs=\"respondentDoc\""
+    "FieldShowCondition": "scanDocuments.typeOfDocs=\"Respondent document\""
   },
   {
     "LiveFrom": "01/01/2017",
