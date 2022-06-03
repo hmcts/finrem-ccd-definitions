@@ -520,7 +520,17 @@
     "ID": "moveScannedDocs",
     "CaseEventID": "moveScannedDocs",
     "CaseFieldID": "scanDocuments",
-    "ListElementCode": "type",
+    "ListElementCode": "# Record Meta data",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "scanDocuments",
+    "ListElementCode": "scanDocType",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
@@ -590,7 +600,7 @@
     "ID": "moveScannedDocs",
     "CaseEventID": "moveScannedDocs",
     "CaseFieldID": "scanDocuments",
-    "ListElementCode": "typeOfdocs",
+    "ListElementCode": "typeOfDocs",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"

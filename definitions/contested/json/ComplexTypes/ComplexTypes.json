@@ -1281,7 +1281,7 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "ScanDocuments",
-    "ListElementCode": "type",
+    "ListElementCode": "scanDocType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "ScannedDocumentType",
     "ElementLabel": "Document Type",
@@ -1338,7 +1338,7 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "ScanDocuments",
-    "ListElementCode": "typeOfdocs",
+    "ListElementCode": "typeOfDocs",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "docTypeOption",
     "ElementLabel": "What type of a document is this?",
