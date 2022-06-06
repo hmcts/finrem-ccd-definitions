@@ -1338,7 +1338,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocuments",
+    "ID": "respondentScanDocsCollection",
     "ListElementCode": "scanDocType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "ScannedDocumentType",
@@ -1347,7 +1347,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocuments",
+    "ID": "respondentScanDocsCollection",
     "ListElementCode": "url",
     "FieldType": "Document",
     "ElementLabel": "Scanned document url",
@@ -1355,7 +1355,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocuments",
+    "ID": "respondentScanDocsCollection",
     "ListElementCode": "controlNumber",
     "FieldType": "Text",
     "ElementLabel": "Document Control Number",
@@ -1363,7 +1363,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocuments",
+    "ID": "respondentScanDocsCollection",
     "ListElementCode": "fileName",
     "FieldType": "Text",
     "ElementLabel": "File Name",
@@ -1371,7 +1371,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocuments",
+    "ID": "respondentScanDocsCollection",
     "ListElementCode": "scannedDate",
     "FieldType": "DateTime",
     "ElementLabel": "Scanned Date",
@@ -1379,7 +1379,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocuments",
+    "ID": "respondentScanDocsCollection",
     "ListElementCode": "deliveryDate",
     "FieldType": "DateTime",
     "ElementLabel": "Delivery Date",
@@ -1387,7 +1387,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocuments",
+    "ID": "respondentScanDocsCollection",
     "ListElementCode": "exceptionRecordReference",
     "FieldType": "Text",
     "ElementLabel": "Exception record reference",
@@ -1395,7 +1395,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocuments",
+    "ID": "respondentScanDocsCollection",
     "ListElementCode": "typeOfDocs",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "docTypeOption",
