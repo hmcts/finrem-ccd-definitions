@@ -1329,15 +1329,6 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "applicantScanDocsCollection",
-    "ListElementCode": "typeOfDocs",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "docTypeOption",
-    "ElementLabel": "What type of a document is this?",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
     "ID": "respondentScanDocsCollection",
     "ListElementCode": "scanDocType",
     "FieldType": "FixedList",
@@ -1391,15 +1382,6 @@
     "ListElementCode": "exceptionRecordReference",
     "FieldType": "Text",
     "ElementLabel": "Exception record reference",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocsCollection",
-    "ListElementCode": "typeOfDocs",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "docTypeOption",
-    "ElementLabel": "What type of a document is this?",
     "SecurityClassification": "Public"
   }
 ]

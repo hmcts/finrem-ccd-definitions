@@ -9256,13 +9256,40 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "moveScannedDocs",
-    "CaseFieldID": "applicantScanDocuments",
+    "CaseFieldID": "typeOfDocument",
     "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "applicantScanDocuments",
+    "PageFieldDisplayOrder": 2,
     "DisplayContext": "COMPLEX",
     "PageID": 1,
     "PageLabel": "BulkScanning",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "typeOfDocument=\"applicantDoc\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "respondentScanDocuments",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "PageLabel": "BulkScanning",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "typeOfDocument=\"respondentDoc\"",
     "ShowSummaryChangeOption": "Y"
   }
 ]
