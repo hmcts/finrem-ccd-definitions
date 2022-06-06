@@ -1272,7 +1272,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "ScanDocuments",
+    "ID": "applicantScanDocsCollection",
     "ListElementCode": "scanDocType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "ScannedDocumentType",
@@ -1281,7 +1281,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "ScanDocuments",
+    "ID": "applicantScanDocsCollection",
     "ListElementCode": "url",
     "FieldType": "Document",
     "ElementLabel": "Scanned document url",
@@ -1289,7 +1289,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "ScanDocuments",
+    "ID": "applicantScanDocsCollection",
     "ListElementCode": "controlNumber",
     "FieldType": "Text",
     "ElementLabel": "Document Control Number",
@@ -1297,7 +1297,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "ScanDocuments",
+    "ID": "applicantScanDocsCollection",
     "ListElementCode": "fileName",
     "FieldType": "Text",
     "ElementLabel": "File Name",
@@ -1305,7 +1305,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "ScanDocuments",
+    "ID": "applicantScanDocsCollection",
     "ListElementCode": "scannedDate",
     "FieldType": "DateTime",
     "ElementLabel": "Scanned Date",
@@ -1313,7 +1313,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "ScanDocuments",
+    "ID": "applicantScanDocsCollection",
     "ListElementCode": "deliveryDate",
     "FieldType": "DateTime",
     "ElementLabel": "Delivery Date",
@@ -1321,7 +1321,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "ScanDocuments",
+    "ID": "applicantScanDocsCollection",
     "ListElementCode": "exceptionRecordReference",
     "FieldType": "Text",
     "ElementLabel": "Exception record reference",
@@ -1329,7 +1329,73 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "ScanDocuments",
+    "ID": "applicantScanDocsCollection",
+    "ListElementCode": "typeOfDocs",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "docTypeOption",
+    "ElementLabel": "What type of a document is this?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocuments",
+    "ListElementCode": "scanDocType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "ScannedDocumentType",
+    "ElementLabel": "Document Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocuments",
+    "ListElementCode": "url",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned document url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocuments",
+    "ListElementCode": "controlNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Document Control Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocuments",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocuments",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocuments",
+    "ListElementCode": "deliveryDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Delivery Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocuments",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocuments",
     "ListElementCode": "typeOfDocs",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "docTypeOption",

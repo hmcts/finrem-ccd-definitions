@@ -4434,10 +4434,19 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "scanDocuments",
+    "ID": "applicantScanDocuments",
     "Label": "Scanned Documents",
     "FieldType": "Collection",
-    "FieldTypeParameter": "ScanDocuments",
+    "FieldTypeParameter": "applicantScanDocsCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentScanDocuments",
+    "Label": "Scanned Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "respondentScanDocsCollection",
     "SecurityClassification": "Public"
   }
 ]
