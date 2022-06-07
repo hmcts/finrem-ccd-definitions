@@ -517,6 +517,57 @@
   },
   {
     "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleFdr",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDocuments.bundleDocuments",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDocuments.bundleUploadDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "hearingUploadBundle.hearingBundleDocuments.bundleDocuments=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDescription",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
     "ID": "FR_moveScannedDocs",
     "CaseEventID": "moveScannedDocs",
     "CaseFieldID": "applicantScanDocuments",

@@ -4434,6 +4434,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingUploadBundle",
+    "Label": "Hearing Bundles ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_hearingUploadBundle",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "typeOfDocument",
     "Label": "What type of a document is this?",
     "FieldType": "FixedRadioList",
