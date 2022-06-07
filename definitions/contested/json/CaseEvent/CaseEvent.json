@@ -1054,6 +1054,8 @@
     "PreConditionState(s)": "applicationSubmitted;applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;caseWorkerReview;prepareForHearing;orderSent;caseFileSubmitted;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;consentOrderApproved;generalApplication",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/manage-case-documents",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/manage-case-documents-submit",
     "ShowEventNotes": "Y"
   },
   {
