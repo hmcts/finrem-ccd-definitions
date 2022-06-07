@@ -106,4 +106,4 @@ Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I =>
     await I.finalInformationPage();
     I.waitForText('History', '30');
   }
-});
+}).retry(3);

@@ -3,12 +3,12 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function divorceDetails() {
   const I = this;
-  if (testForAccessibility=='true') {
+  if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
   I.waitForPage('h4', 'DIVORCE DETAILS');
   I.fillField('input[id="divorceCaseNumber"]', 'LV18D81234');
-  I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi');
+  I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi / Conditional Order');
   I.wait('5');
   I.retry('3').attachFile('input[type="file"]', '../data/fileupload.txt');
   I.wait('5');
@@ -22,7 +22,7 @@ async function divorceDetails() {
 
 async function contestedDivorceDetails() {
   const I = this;
-  if (testForAccessibility=='true') {
+  if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
   I.waitForPage('#divorceDetailsLabel h2', 'Divorce Details');
