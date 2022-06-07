@@ -20,6 +20,7 @@ exports.config = {
     },
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
   },
+
     plugins: {
         retryFailedStep: {
             enabled: true,
