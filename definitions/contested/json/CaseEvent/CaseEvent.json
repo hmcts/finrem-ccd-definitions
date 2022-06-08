@@ -1069,5 +1069,21 @@
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_manageHearingBundles",
+    "Name": "Manage Hearing Bundles",
+    "Description": "Manage Hearing Bundles",
+    "DisplayOrder": 134,
+    "PreConditionState(s)": "prepareForHearing;caseFileSubmitted;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;generalApplicationAwaitingJudiciaryResponse;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;generalApplication;generalApplicationOutcome",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/validateHearingDate",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/sortUploadedHearingBundles",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
   }
 ]
