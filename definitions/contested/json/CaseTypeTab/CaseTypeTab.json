@@ -4169,5 +4169,62 @@
     "TabDisplayOrder": 24,
     "CaseFieldID": "RepresentationUpdateHistory",
     "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageCaseDocumentsTab",
+    "TabLabel": "Manage case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "applicantDocumentsLbl",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageCaseDocumentsTab",
+    "TabLabel": "Manage case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "applicantDocuments",
+    "DisplayContextParameter": "#TABLE(DocumentFileName, DocumentDateAdded, DocumentType, remove)",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageCaseDocumentsTab",
+    "TabLabel": "Manage case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "respondentDocumentsLbl",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageCaseDocumentsTab",
+    "TabLabel": "Manage case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "respondentDocuments",
+    "DisplayContextParameter": "#TABLE(DocumentFileName, DocumentDateAdded, DocumentType, remove)",
+    "TabFieldDisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageCaseDocumentsTab",
+    "TabLabel": "Manage case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "caseDocumentsLbl",
+    "TabFieldDisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageCaseDocumentsTab",
+    "TabLabel": "Manage case documents",
+    "TabDisplayOrder": 7,
+    "CaseFieldID": "caseDocumentsUploaded",
+    "DisplayContextParameter": "#TABLE(DocumentFileName, DocumentDateAdded, DocumentType, remove)",
+    "TabFieldDisplayOrder": 6
   }
 ]
