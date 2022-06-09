@@ -4424,60 +4424,6 @@
     "SecurityClassification": "Public"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicantDocumentsLbl",
-    "Label": "## Applicant documents",
-    "HintText": "Applicant documents",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respondentDocumentsLbl",
-    "Label": "## Respondent documents",
-    "HintText": "Respondent documents",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "caseDocumentsLbl",
-    "Label": "## Case documents",
-    "HintText": "Case documents",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicantDocuments",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "DocumentDetails",
-    "Label": " ",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respondentDocuments",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "DocumentDetails",
-    "Label": " ",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "caseDocumentsUploaded",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "DocumentDetails",
-    "Label": " ",
-    "SecurityClassification": "Public"
-  },
-  {
     "LiveFrom": "01/09/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "hearingCourtLabel",
