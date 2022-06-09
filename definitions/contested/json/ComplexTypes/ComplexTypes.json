@@ -1028,15 +1028,6 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_uploadCaseDocument",
-    "ListElementCode": "caseDocumentParty",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_EvidenceParty",
-    "ElementLabel": "Evidence provided on behalf of:",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
     "ListElementCode": "caseDocumentOther",
     "FieldType": "Text",
     "ElementLabel": "Please specify document type",
@@ -1057,6 +1048,27 @@
     "ListElementCode": "caseDocumentConfidential",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the document confidential?",
+    "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "caseDocumentFdr",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
+    "FieldShowCondition": "caseDocumentConfidential=\"No\"",
+    "HintText": "Document will be placed in the FDR documents tab",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "caseDocumentParty",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "ElementLabel": "What type of document is this?",
+    "FieldShowCondition": "caseDocumentFdr=\"No\"",
     "SecurityClassification": "Public"
   },
   {
