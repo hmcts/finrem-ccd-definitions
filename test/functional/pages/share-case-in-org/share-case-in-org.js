@@ -9,10 +9,10 @@ function assignContestedShareCase(caseId, solRef) {
   I.waitForText('Solicitor Reference', '30');
   I.fillField('input[id="solicitorReference"]', solRef);
   I.click('Apply');
-  I.waitForText('Case Reference', '15');
+  I.waitForText('Case Reference');
   I.checkOption(`input[id="select-${caseId}"]`);
   I.click('Share Case');
-  I.waitForText('Add recipient', '15');
+  I.waitForText('Add recipient');
   I.wait('5');
   I.click({ css: '.govuk-input' });
   I.fillField({ css: '.govuk-input' }, 'fr_');
