@@ -246,7 +246,8 @@ if (checkLabel("atLeastOneEnabled")) {
 
   withNightlyPipeline("nodejs", product, component) {
     onPR() {
-      env.CCD_WEB_URL="https://case-management-web-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+
+      env.CCD_WEB_URL="https://xui-management-web-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_DATA_API_URL="http://ccd-data-store-api-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.XUI_ORG_WEB_URL="https://xui-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.NIGHTLY_TEST="true"
