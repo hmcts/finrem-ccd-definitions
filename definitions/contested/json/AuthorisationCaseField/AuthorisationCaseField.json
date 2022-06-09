@@ -7380,6 +7380,13 @@
   {
     "LiveFrom": "01/01/2021",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "orderApprovedJudgeType",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "orderApprovedJudgeName",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
@@ -7387,8 +7394,22 @@
   {
     "LiveFrom": "01/01/2021",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "orderApprovedJudgeName",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "orderApprovedDate",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "orderApprovedDate",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
   {
