@@ -19,9 +19,9 @@ async function applicantDetails() {
 
 async function contestedApplicantDetails() {
   const I = this;
-  I.waitForText('Applicant’s Details')
+  //I.waitForText('Applicant’s Details')
     I.waitForElement('input[id="applicantFMName"]');
-    //I.retry(3).waitForElement('#applicantDetailsLabel', '30');
+    I.retry(3).waitForElement('#applicantDetailsLabel');
   if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
