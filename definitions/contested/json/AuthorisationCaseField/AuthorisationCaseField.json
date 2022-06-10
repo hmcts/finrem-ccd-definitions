@@ -9791,5 +9791,33 @@
     "CaseFieldID": "sendOrderPostStateOption",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/05/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "finalOrderYN",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/05/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "finalOrderYN",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/05/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "finalOrderYN",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/05/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "finalOrderYN",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "R"
   }
 ]

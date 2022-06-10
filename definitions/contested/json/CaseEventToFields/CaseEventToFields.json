@@ -9363,6 +9363,20 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
+  {    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_uploadApprovedOrder",
+    "CaseFieldID": "finalOrderYN",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 3,
+    "PageLabel": "Upload Order",
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "uploadOtherDocumentLabel=\"IMPOSSIBLAW\""
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -9374,6 +9388,7 @@
     "PageLabel": "Upload Order",
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
+    "PageShowCondition": "finalOrderYN=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   }
 ]

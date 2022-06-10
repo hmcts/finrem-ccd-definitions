@@ -4448,5 +4448,13 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_postStateOption",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "finalOrderYN",
+    "Label": "Is this the final order?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
   }
 ]
