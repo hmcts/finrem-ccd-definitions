@@ -4022,6 +4022,14 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "changeOrganisationRequestField",
+    "Label": "Change Organisation Request",
+    "FieldType": "ChangeOrganisationRequest",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "19/05/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "civilPartnership",
@@ -4386,6 +4394,59 @@
     "Label": "Confidential documents uploaded",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_UploadConfidentialDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "RepresentationUpdateHistory",
+    "Label": "Change of representatives",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "RepresentationUpdate",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "19/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "nocParty",
+    "Label": "Select Party to which the change in representation applies: ",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "nocPartyList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "updateIncludesRepresentativeChange",
+    "Label": "Does this update include a change in representation for either party?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingCourtLabel",
+    "FieldType": "Label",
+    "Label": "## Hearing Court",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingUploadBundle",
+    "Label": "Hearing Bundles ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_hearingUploadBundle",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "sendOrderPostStateOption",
+    "Label": "What state should this case move to:",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_postStateOption",
     "SecurityClassification": "Public"
   }
 ]

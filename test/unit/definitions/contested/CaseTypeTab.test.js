@@ -73,7 +73,10 @@ describe('CaseTypeTab', () => {
     'Trial Bundle': 20,
     'Shared Documents': 20,
     interimSchedulingTab: 21,
-    confidentialDocumentsTab: 22
+    confidentialDocumentsTab: 22,
+    'ChangeOfRepresentativesTab-judiciary': 23,
+    'ChangeOfRepresentativesTab-courtadmin': 24,
+    hearingBundleTab: 25
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -115,7 +118,10 @@ describe('CaseTypeTab', () => {
       'Trial Bundle',
       'Shared Documents',
       'interimSchedulingTab',
-      'confidentialDocumentsTab'
+      'confidentialDocumentsTab',
+      'ChangeOfRepresentativesTab-judiciary',
+      'ChangeOfRepresentativesTab-courtadmin',
+      'hearingBundleTab'
     ]);
   });
   it('should contain a valid case field IDs', () => {
