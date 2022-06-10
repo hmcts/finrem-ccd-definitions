@@ -6,6 +6,7 @@ This allows for the FR CCD Config to be easily edited and stored in Github as JS
 
 ## Setup
 
+
 To install the dependencies for both this project and the submodule (ccd-definition-processor), run:
 `yarn install && yarn reset-ccd-submodule`
 
