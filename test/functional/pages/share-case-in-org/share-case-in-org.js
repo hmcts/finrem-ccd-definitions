@@ -12,7 +12,7 @@ function assignContestedShareCase(caseId, solRef) {
   I.waitForText('Case Reference');
   I.checkOption(`input[id="select-${caseId}"]`);
   I.click('Share Case');
-  I.waitForText(' Add recipient ',90);
+  I.waitForText('Enter email address',90);
   I.wait('5');
   I.click({ css: '.govuk-input' });
   I.fillField({ css: '.govuk-input' }, 'fr_');
