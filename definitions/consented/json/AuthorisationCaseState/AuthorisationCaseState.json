@@ -676,76 +676,279 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "newPaperCase",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "applicationIssued",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "referredToJudge",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "orderMade",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "consentOrderApproved",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "consentOrderMade",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "awaitingResponse",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "responseReceived",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "awaitingInfo",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "infoReceived",
     "UserRole": "caseworker-caa",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "close",
+    "UserRole": "caseworker-caa",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingHWFDecision",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingPayment",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingPaymentResponse",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "applicationSubmitted",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "newPaperCase",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "referredToJudge",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "orderMade",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingResponse",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "responseReceived",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingInfo",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "infoReceived",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "caseAdded",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingHWFDecision",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingPayment",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingPaymentResponse",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "applicationSubmitted",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+  "LiveFrom": "01/01/2019",
+  "CaseTypeID": "FinancialRemedyMVP2",
+  "CaseStateID": "applicationIssued",
+  "UserRole": "IDAM_SUPER_USER",
+  "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "referredToJudge",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "orderMade",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingResponse",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "responseReceived",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "close",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingInfo",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "infoReceived",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRUD"
   }
 ]

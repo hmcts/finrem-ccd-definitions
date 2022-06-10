@@ -908,35 +908,189 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "applicationIssued",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "gateKeepingAndAllocation",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "schedulingAndHearing",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "prepareForHearing",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseFileSubmitted",
     "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "draftOrderNotApproved",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -948,156 +1102,212 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingHWFDecision",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationSubmitted",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingPaymentResponse",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentProcess",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponse",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentOrderApproved",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentOrderNotApproved",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentOrderMade",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseWorkerReview",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "judgeDraftOrder",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "solicitorDraftOrder",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "reviewOrder",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "draftOrderNotApproved",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "scheduleRaiseDirectionsOrder",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "orderDrawn",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "orderSent",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentedOrderSubmitted",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponseConsent",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentedOrderAssignJudge",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentedOrderApproved",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "responseReceived",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentedOrderNotApproved",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplication",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplicationOutcome",
-    "UserRole": "caseworker-caa",
-    "CRUD": "R"
+    "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1763,5 +1973,229 @@
     "CaseStateID": "generalApplicationOutcome",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseAdded",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingHWFDecision",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingPaymentResponse",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationSubmitted",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "close",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "draftOrderNotApproved",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "IDAM_SUPER_USER",
+    "CRUD": "CRU"
   }
 ]

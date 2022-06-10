@@ -54,13 +54,16 @@ finrem-cos:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/pr-625
+    image: hmctspublic.azurecr.io/finrem/cos:pr-673
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
     environment:
+      FEATURE_MANAGE_BUNDLE: true
+      FEATURE_CASEWORKER_NOC: true
       FEATURE_RESPONDENT_JOURNEY: true
-      FEATURE_ASSIGN_CASE_ACCESS: false
+      FEATURE_ASSIGN_CASE_ACCESS: true
       FEATURE_USE_USER_TOKEN: true
+      FEATURE_SOLICITOR_NOC: true
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
@@ -73,6 +76,9 @@ finrem-cos:
       CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
       AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY}
       UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
+      FINREM_SYSTEMUPDATE_USERNAME: ${FINREM_SYSTEMUPDATE_USERNAME}
+      FINREM_SYSTEMUPDATE_PASSWORD: ${FINREM_SYSTEMUPDATE_PASSWORD}
+      FINREM_IDAM_CLIENT_SECRET: ${FINREM_IDAM_CLIENT_SECRET}
     keyVaults:
       finrem:
         secrets:
@@ -82,6 +88,12 @@ finrem-cos:
             alias: FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY
           - name: idam-secret
             alias: OAUTH2_CLIENT_FINREM
+          - name: finrem-system-update-username
+            alias: FINREM_SYSTEMUPDATE_USERNAME
+          - name: finrem-system-update-password
+            alias: FINREM_SYSTEMUPDATE_PASSWORD
+          - name: finrem-idam-client-secret
+            alias: FINREM_IDAM_CLIENT_SECRET
 
 
 finrem-dgcs:
@@ -230,10 +242,11 @@ ccd:
       autoscaling:
         enabled: false
       imagePullPolicy: Always
+      image: hmctspublic.azurecr.io/ccd/data-store-api:latest
       environment:
         DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
-        DATA_STORE_S2S_AUTHORISED_SERVICES: ccd_gw,ccd_gateway,fpl_case_service,ccd_data,ccd_ps,aac_manage_case_assignment,xui_webapp,ccd_case_document_am_api,divorce_ccd_submission,divorce_frontend
+        DATA_STORE_S2S_AUTHORISED_SERVICES: ccd_gw,ccd_gateway,fpl_case_service,ccd_data,ccd_ps,aac_manage_case_assignment,xui_webapp,ccd_case_document_am_api,divorce_ccd_submission,divorce_frontend,finrem_case_orchestration
         CCD_S2S_AUTHORISED_SERVICES_CASE_USER_ROLES: aac_manage_case_assignment,fpl_case_service,finrem_case_orchestration,iac,divorce_frontend,civil_service
         IDAM_API_BASE_URL: https://idam-api.aat.platform.hmcts.net
         IDAM_OIDC_URL: https://idam-web-public.aat.platform.hmcts.net
@@ -245,6 +258,9 @@ ccd:
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOSTS: ${SERVICE_NAME}-es-master:9200
         ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
+        ENABLE_ATTRIBUTE_BASED_ACCESS_CONTROL: true
+        ENABLE_PSEUDO_ROLE_ASSIGNMENTS_GENERATION: true
+        ENABLE_PSEUDO_ACCESS_PROFILES_GENERATION: true
       keyVaults: []
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
@@ -268,11 +284,12 @@ ccd:
       autoscaling:
         enabled: false
       imagePullPolicy: Always
+      image: hmctspublic.azurecr.io/ccd/definition-store-api:latest
       keyVaults: []
       environment:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
-        DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin
+        DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin,aac_manage_case_assignment
         IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
         OIDC_ISSUER: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
         ELASTIC_SEARCH_ENABLED: true
@@ -418,6 +435,7 @@ aac-manage-case-assignment:
     releaseNameOverride: ${SERVICE_NAME}-aac-manage-case-assignment
     image: hmctspublic.azurecr.io/aac/manage-case-assignment:latest
     ingressHost: aac-${SERVICE_FQDN}
+    keyVaults: []
     environment:
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       IDAM_OIDC_URL: https://idam-web-public.aat.platform.hmcts.net
@@ -429,22 +447,13 @@ aac-manage-case-assignment:
       CCD_DATA_STORE_API_BASE_URL: http://${SERVICE_NAME}-ccd-data-store-api
       CCD_DEFINITION_STORE_API_BASE_URL: http://${SERVICE_NAME}-ccd-definition-store
       PRD_HOST: http://rd-professional-api-aat.service.core-compute-aat.internal
+      IDAM_CAA_USERNAME: ${IDAM_CAA_USERNAME}
+      IDAM_CAA_PASSWORD: ${IDAM_CAA_PASSWORD}
+      IDAM_CLIENT_SECRET: ${IDAM_MCA_CLIENT_SECRET}
+      MANAGE_CASE_S2S_KEY: ${MANAGE_CASE_S2S_KEY}
+      IDAM_NOC_APPROVER_USERNAME: ${IDAM_NOC_APPROVER_USERNAME}
+      IDAM_NOC_APPROVER_PASSWORD: ${IDAM_NOC_APPROVER_PASSWORD}
+      NOTIFY_MCA_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
+      NOTIFY_EMAIL_TEMPLATE_ID: 85f22924-7b45-4fc6-9954-c08a8833f6a0
     autoscaling:
       enabled: false
-    keyVaults:
-      aac:
-        secrets:
-          - name: aac-manage-case-s2s-secret
-            alias: MANAGE_CASE_S2S_KEY
-          - name: idam-mca-client-secret
-            alias: IDAM_CLIENT_SECRET
-          - name: idam-mca-system-user-username
-            alias: IDAM_CAA_USERNAME
-          - name: idam-mca-system-user-password
-            alias: IDAM_CAA_PASSWORD
-          - name: idam-noc-approver-username
-            alias: IDAM_NOC_APPROVER_USERNAME
-          - name: idam-noc-approver-password
-            alias: IDAM_NOC_APPROVER_PASSWORD
-          - name: notify-mca-api-key-secret
-            alias: NOTIFY_MCA_API_KEY
