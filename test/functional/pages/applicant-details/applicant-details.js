@@ -19,7 +19,7 @@ async function applicantDetails() {
 
 async function contestedApplicantDetails() {
   const I = this;
-    I.waitForElement('#applicantDetailsLabel', '30');
+    //I.waitForElement('#applicantDetailsLabel', '30');
   if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
