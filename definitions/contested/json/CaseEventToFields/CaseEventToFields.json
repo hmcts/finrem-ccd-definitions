@@ -9327,13 +9327,25 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
-   "LiveFrom": "01/01/2021",
-   "CaseTypeID": "FinancialRemedyContested",
-   "CaseEventID": "FR_uploadApprovedOrder",
-   "CaseFieldID": "orderApprovedDate",
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_uploadApprovedOrder",
+    "CaseFieldID": "orderApprovedDate",
     "PageFieldDisplayOrder": 3,
-   "DisplayContext": "MANDATORY",
-   "PageID": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_uploadApprovedOrder",
+    "CaseFieldID": "draftDirectionOrderCollection",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
