@@ -20,7 +20,7 @@ async function applicantDetails() {
 async function contestedApplicantDetails() {
   const I = this;
   //I.waitForText('Applicant’s Details')
-    I.retry(3).waitForElement('#applicantDetailsLabel');
+    I.waitForElement('#applicantDetailsLabel');
     I.waitForElement('input[id="applicantFMName"]');
 
   if (testForAccessibility==='true') {
