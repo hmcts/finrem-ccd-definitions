@@ -19,6 +19,7 @@ async function applicantDetails() {
 
 async function contestedApplicantDetails() {
   const I = this;
+  I.wait(2);
   //I.waitForText('Applicant’s Details')
     I.waitForElement('#applicantDetailsLabel');
     I.waitForElement('input[id="applicantFMName"]');
