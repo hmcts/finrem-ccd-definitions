@@ -12,6 +12,7 @@ const nightlyTest = process.env.NIGHTLY_TEST;
 const runningEnv = process.env.RUNNING_ENV;
 const solRef = `AUTO-${createSolicitorReference()}`;
 
+
 Feature('create Consented case ');
 
 Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
