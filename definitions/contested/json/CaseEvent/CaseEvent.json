@@ -675,6 +675,21 @@
     "ShowEventNotes": "Y"
   },
   {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_judgeDraftDirectionOrder",
+    "Name": "Upload Draft Order",
+    "Description": "Upload Draft Order",
+    "DisplayOrder": 37,
+    "PreConditionState(s)": "consentOrderNotApproved;consentOrderApproved;consentOrderMade;consentProcess;caseWorkerReview;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;judgeDraftOrder;reviewOrder;draftOrderNotApproved;solicitorDraftOrder;orderDrawn;scheduleRaiseDirectionsOrder;awaitingJudiciaryResponse",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/start",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/store",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
+  },
+  {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_consentOrder",
