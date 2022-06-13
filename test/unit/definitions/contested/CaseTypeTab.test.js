@@ -76,6 +76,7 @@ describe('CaseTypeTab', () => {
     confidentialDocumentsTab: 22,
     'ChangeOfRepresentativesTab-judiciary': 23,
     'ChangeOfRepresentativesTab-courtadmin': 24,
+    manageCaseDocumentsTab: 7,
     hearingBundleTab: 25
   };
   tabIds.forEach(tabId => {
@@ -121,6 +122,7 @@ describe('CaseTypeTab', () => {
       'confidentialDocumentsTab',
       'ChangeOfRepresentativesTab-judiciary',
       'ChangeOfRepresentativesTab-courtadmin',
+      'manageCaseDocumentsTab',
       'hearingBundleTab'
     ]);
   });
