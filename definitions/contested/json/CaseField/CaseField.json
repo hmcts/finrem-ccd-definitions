@@ -4484,5 +4484,23 @@
     "FieldType": "Label",
     "Label": "## Hearing Court",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingUploadBundle",
+    "Label": "Hearing Bundles ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_hearingUploadBundle",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "sendOrderPostStateOption",
+    "Label": "What state should this case move to:",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_postStateOption",
+    "SecurityClassification": "Public"
   }
 ]

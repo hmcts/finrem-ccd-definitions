@@ -1301,5 +1301,56 @@
     "FieldType": "Text",
     "ElementLabel": "Remove",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingBundle",
+    "ListElementCode": "bundleDocuments",
+    "FieldType": "Document",
+    "ElementLabel": "Bundle Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingBundle",
+    "ListElementCode": "bundleUploadDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Bundle Upload Date",
+    "SecurityClassification": "Public",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "hearingBundleDate",
+    "FieldType": "Date",
+    "ElementLabel": "Hearing Bundle Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "hearingBundleFdr",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a Financial dispute resolution(FDR) hearing?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "hearingBundleDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_hearingBundle",
+    "ElementLabel": "Upload Hearing Bundle",
+    "HintText": "Please note you should only update and amend your own firm's hearing bundle",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "hearingBundleDescription",
+    "FieldType": "Text",
+    "ElementLabel": "Add a description",
+    "SecurityClassification": "Public"
   }
 ]
