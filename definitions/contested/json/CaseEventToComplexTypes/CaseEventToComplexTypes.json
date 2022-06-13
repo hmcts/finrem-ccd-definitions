@@ -247,7 +247,7 @@
     "ListElementCode": "Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -279,7 +279,7 @@
     "ListElementCode": "Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -407,7 +407,7 @@
     "ListElementCode": "Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -513,6 +513,57 @@
     "ListElementCode": "ApprovalStatus",
     "DefaultValue": "1",
     "FieldDisplayOrder": "7",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleFdr",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDocuments.bundleDocuments",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDocuments.bundleUploadDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "hearingUploadBundle.hearingBundleDocuments.bundleDocuments=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageHearingBundles",
+    "CaseEventID": "FR_manageHearingBundles",
+    "CaseFieldID": "hearingUploadBundle",
+    "ListElementCode": "hearingBundleDescription",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
   }
 ]
