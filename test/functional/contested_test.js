@@ -83,8 +83,7 @@ Scenario('Contested Case Creation For Ready For Hearing @nightlyContested @pipel
     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 });
-
-Scenario('Contested Case Approved and Send Order @nightlyContested @pipeline @crossBrowser', async I => {
+Scenario('Contested Case Approved and Send Order @nightlyContested @pipeline @crossBrowser1', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   /* eslint-disable */
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -196,7 +195,7 @@ Scenario('Contested case with General Application @nightlyContested @pipeline', 
 });
 
 /* eslint-disable require-await */
-Scenario('Contested Case Creation by Solicitor  @nightlyContested @crossBrowser', async I => {
+Scenario('Contested Case Creation by Solicitor  @nightlyContested @crossBrowser1', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
