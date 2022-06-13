@@ -8,13 +8,18 @@ exports.config = {
         waitForTimeout: 90000,
       show: false,
       waitForNavigation: 'domcontentloaded',
+        restart: true,
+        keepCookies: false,
+        keepBrowserState: false,
       headless: true,
       ignoreHTTPSErrors: true,
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
-          '--no-sandbox',
-          '--start-fullscreen'
+            '--no-sandbox',
+            '--smartwait',
+            '--window-size=1440,1400',
+            '--disable-gpu'
         ]
       }
     },
@@ -27,6 +32,10 @@ exports.config = {
         },
         autoDelay: {
             enabled: true
+        },
+        screenshotOnFail: {
+            enabled: true,
+            fullPageScreenshots: 'true'
         }
     },
   include: { I: './steps_file.js' },
