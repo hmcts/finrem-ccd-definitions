@@ -1,6 +1,6 @@
 exports.config = {
   tests: './*_test.js',
-  output: './output',
+  output: './output/XUI',
   helpers: {
     Puppeteer: {
       url: 'http://localhost:3000',
@@ -20,6 +20,7 @@ exports.config = {
             '--smartwait',
             '--window-size=1440,1400',
             '--disable-gpu'
+
         ]
       }
     },
@@ -27,8 +28,7 @@ exports.config = {
   },
     plugins: {
         retryFailedStep: {
-            enabled: true,
-            retries: 1
+            enabled: true
         },
         autoDelay: {
             enabled: true
@@ -48,7 +48,8 @@ exports.config = {
   mocha: {
     reporterOptions:
       {
-        reportDir: './test/functional/output',
+        reportDir: './test/functional/output/XUI',
+          reportName: 'FinRemTests',
         inlineAssets: true
       }
   },
