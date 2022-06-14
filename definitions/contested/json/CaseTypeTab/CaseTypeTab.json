@@ -4209,25 +4209,6 @@
     "TabFieldDisplayOrder": 4
   },
   {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageCaseDocumentsTab",
-    "TabLabel": "Manage case documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "caseDocumentsLbl",
-    "TabFieldDisplayOrder": 5
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageCaseDocumentsTab",
-    "TabLabel": "Manage case documents",
-    "TabDisplayOrder": 7,
-    "CaseFieldID": "caseDocumentsUploaded",
-    "DisplayContextParameter": "#TABLE(DocumentFileName, DocumentDateAdded, DocumentType, remove)",
-    "TabFieldDisplayOrder": 6
-  },
-  {
     "LiveFrom": "01/10/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "hearingBundleTab",
