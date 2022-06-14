@@ -56,7 +56,7 @@
     "test:smoke": "echo smoke",
     "test:functional": "codeceptjs run --steps -c test/functional/codecept.conf.js --grep @pipeline --reporter mochawesome",
     "test:fullfunctional": "TESTS_FOR_ACCESSIBILITY='false' codeceptjs run --steps -c test/functional/codecept.conf.js --grep @nightly --reporter mochawesome",
-    "test-crossbrowser-e2e": "TESTS_FOR_CROSS_BROWSER='true' codeceptjs run ${BROWSER_GROUP:-'--all'} --plugins retryFailedStep --steps -c test/functional/saucelabs.conf.js  --grep @crossbrowser --reporter mochawesome",
+    "test-crossbrowser-e2e": "TESTS_FOR_CROSS_BROWSER='true' codeceptjs run ${BROWSER_GROUP:-'--all'} --plugins retryFailedStep --steps -c test/functional/saucelabs.conf.js --grep @crossbrowser --reporter mochawesome",
     "test:crossbrowser": "./bin/run-crossbrowser-tests.sh",
     "start": "node index.js",
     "sonar-scan": "node_modules/sonar-scanner/bin/sonar-scanner",
