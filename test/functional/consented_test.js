@@ -60,7 +60,7 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   }
 });
 
-Scenario('Consent Case approve and send order @crossbrowser @nightly @pipeline ', async I => {
+Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
