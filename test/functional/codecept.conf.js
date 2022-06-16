@@ -48,7 +48,7 @@ exports.config = {
   mocha: {
     reporterOptions:
       {
-        reportDir: 'test/functional/output/**/*',
+        reportDir: './functional-output/xui',
           reportName: 'FinRemTests',
         inlineAssets: true
       }
