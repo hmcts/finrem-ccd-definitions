@@ -17,7 +17,7 @@ If running yarn install throws an error with this output:
 
 1) Run `brew install chromium`
 2) Run `xattr -cr /Applications/Chromium.app`
-3) Add these env variables to your .zshrc file  
+3) Add these env variables to your .zshrc file
 `export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true`
 ``export PUPPETEER_EXECUTABLE_PATH=`which chromium` ``
 4) Save file and restart terminal
@@ -162,7 +162,7 @@ Follow this guide for releasing a new config file to Production:
 https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+Production
 
 ## Preview deployment for PRs in testing
-The team leveraged the fact this service has set up charts with all services needed for running the full Financial Remedy solution to create 
+The team leveraged the fact this service has set up charts with all services needed for running the full Financial Remedy solution to create
 deployments to Preview with the PRs so Developers and Testers can work on changes without the weight that a local environment has on machine resources.
 
 The deployment can be switched ON by adding a label to the PR Repo in GitHub called 'no_cleanup'.
