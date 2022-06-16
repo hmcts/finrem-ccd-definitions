@@ -4448,5 +4448,32 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_postStateOption",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "typeOfDocument",
+    "Label": "What type of a document is this?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "docTypeOption",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantScanDocuments",
+    "Label": "Applicant Scanned Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "applicantScanDocsCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentScanDocuments",
+    "Label": "Respondent Scanned Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "respondentScanDocsCollection",
+    "SecurityClassification": "Public"
   }
 ]
