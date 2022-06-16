@@ -1,6 +1,6 @@
 exports.config = {
   tests: './*_test.js',
-  output: './output/XUI',
+  output: './functional-output/xui',
   helpers: {
     Puppeteer: {
       url: 'http://localhost:3000',
