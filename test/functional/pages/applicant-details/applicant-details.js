@@ -4,7 +4,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 async function applicantDetails() {
   const I = this;
   I.waitForElement('input[id="applicantFMName"]', '10');
-  if (testForAccessibility=='true') {
+  if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
   I.fillField('input[id="applicantFMName"]', 'viv');
@@ -19,11 +19,15 @@ async function applicantDetails() {
 
 async function contestedApplicantDetails() {
   const I = this;
-  I.waitForElement('#applicantDetailsLabel h2', '30');
-  if (testForAccessibility=='true') {
+
+  //I.waitForText('Applicant’s Details')
+    I.waitForElement('#applicantDetailsLabel');
+    I.waitForElement('input[id="applicantFMName"]');
+
+  if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
-  I.waitForElement('input[id="applicantFMName"]');
+  //I.waitForElement('input[id="applicantFMName"]');
   I.fillField('input[id="applicantFMName"]', 'Tik');
   I.fillField('input[id="applicantLName"]', 'Tok');
   I.waitForContinueButtonEnabled();
