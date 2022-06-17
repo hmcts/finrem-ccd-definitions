@@ -4456,5 +4456,15 @@
     "Label": "Is there another hearing",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingNoticesDocumentCollection",
+    "Label": "Hearing Notices Documents ",
+    "HintText": "Hearing Notices Documents ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public"
   }
 ]
