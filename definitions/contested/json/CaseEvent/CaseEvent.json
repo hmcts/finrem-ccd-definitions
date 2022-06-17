@@ -1089,6 +1089,18 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "moveScannedDocs",
+    "Name": "Move Scanned Documents",
+    "Description": "Move Scanned Documents",
+    "DisplayOrder": 141,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_uploadApprovedOrder",
     "Name": "Upload Approved Order",
     "Description": "Upload Approved Order",
