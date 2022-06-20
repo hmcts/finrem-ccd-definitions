@@ -565,5 +565,145 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "applicantScanDocuments",
+    "ListElementCode": "scanDocType",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "applicantScanDocuments",
+    "ListElementCode": "url",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "applicantScanDocuments",
+    "ListElementCode": "controlNumber",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "applicantScanDocuments",
+    "ListElementCode": "fileName",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "applicantScanDocuments",
+    "ListElementCode": "scannedDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "applicantScanDocuments",
+    "ListElementCode": "deliveryDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "applicantScanDocuments",
+    "ListElementCode": "exceptionRecordReference",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "respondentScanDocuments",
+    "ListElementCode": "scanDocType",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "respondentScanDocuments",
+    "ListElementCode": "url",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "respondentScanDocuments",
+    "ListElementCode": "controlNumber",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "respondentScanDocuments",
+    "ListElementCode": "fileName",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "respondentScanDocuments",
+    "ListElementCode": "scannedDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "respondentScanDocuments",
+    "ListElementCode": "deliveryDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_moveScannedDocs",
+    "CaseEventID": "moveScannedDocs",
+    "CaseFieldID": "respondentScanDocuments",
+    "ListElementCode": "exceptionRecordReference",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
   }
 ]

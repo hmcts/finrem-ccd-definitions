@@ -17,7 +17,7 @@ function waitForContinueButtonEnabled() {
   const I = this;
 
   I.waitForElement('button[type = "submit"]:not(:disabled)', '90');
-  I.scrollTo('button[type = "submit"]:not(:disabled)');
+  //I.scrollTo('button[type = "submit"]:not(:disabled)');
 }
 
 module.exports = { waitForPage, waitForContinueButtonEnabled };
