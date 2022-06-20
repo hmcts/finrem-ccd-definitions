@@ -1269,5 +1269,170 @@
     "FieldType": "Text",
     "ElementLabel": "File name",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingBundle",
+    "ListElementCode": "bundleDocuments",
+    "FieldType": "Document",
+    "ElementLabel": "Bundle Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingBundle",
+    "ListElementCode": "bundleUploadDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Bundle Upload Date",
+    "SecurityClassification": "Public",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "hearingBundleDate",
+    "FieldType": "Date",
+    "ElementLabel": "Hearing Bundle Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "hearingBundleFdr",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a Financial dispute resolution(FDR) hearing?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "hearingBundleDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_hearingBundle",
+    "ElementLabel": "Upload Hearing Bundle",
+    "HintText": "Please note you should only update and amend your own firm's hearing bundle",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_hearingUploadBundle",
+    "ListElementCode": "hearingBundleDescription",
+    "FieldType": "Text",
+    "ElementLabel": "Add a description",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "applicantScanDocsCollection",
+    "ListElementCode": "scanDocType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "ScannedDocumentType",
+    "ElementLabel": "Document Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "applicantScanDocsCollection",
+    "ListElementCode": "url",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned document url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "applicantScanDocsCollection",
+    "ListElementCode": "controlNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Document Control Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "applicantScanDocsCollection",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "applicantScanDocsCollection",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "applicantScanDocsCollection",
+    "ListElementCode": "deliveryDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Delivery Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "applicantScanDocsCollection",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocsCollection",
+    "ListElementCode": "scanDocType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "ScannedDocumentType",
+    "ElementLabel": "Document Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocsCollection",
+    "ListElementCode": "url",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned document url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocsCollection",
+    "ListElementCode": "controlNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Document Control Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocsCollection",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocsCollection",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocsCollection",
+    "ListElementCode": "deliveryDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Delivery Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocsCollection",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
+    "SecurityClassification": "Public"
   }
 ]
