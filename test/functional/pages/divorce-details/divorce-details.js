@@ -3,12 +3,12 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function divorceDetails() {
   const I = this;
-  if (testForAccessibility=='true') {
+  if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
-  I.waitForPage('h4', 'DIVORCE DETAILS');
+  I.waitForPage('h4', 'DIVORCE / DISSOLUTION DETAILS');
   I.fillField('input[id="divorceCaseNumber"]', 'LV18D81234');
-  I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi');
+  I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi / Conditional Order');
   I.wait('5');
   I.retry('3').attachFile('input[type="file"]', '../data/fileupload.txt');
   I.wait('5');
@@ -22,10 +22,10 @@ async function divorceDetails() {
 
 async function contestedDivorceDetails() {
   const I = this;
-  if (testForAccessibility=='true') {
+  if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
-  I.waitForPage('#divorceDetailsLabel h2', 'Divorce Details');
+  I.waitForPage('#divorceDetailsLabel h2', 'Divorce / Dissolution Details');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D54321');
   I.fillField('input[id="dateOfMarriage-day"]', '1');
   I.fillField('input[id="dateOfMarriage-month"]', '2');
@@ -37,7 +37,7 @@ async function contestedDivorceDetails() {
   I.fillField('input[id="divorcePetitionIssuedDate-month"]', '8');
   I.fillField('input[id="divorcePetitionIssuedDate-year"]', '2020');
   I.fillField('#nameOfCourtDivorceCentre', 'Brentford Court');
-  I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi');
+  I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi / Conditional Order');
   I.wait('2');
   I.retry('3').attachFile('input[type="file"]', '../data/fileupload.txt');
   I.wait('5');

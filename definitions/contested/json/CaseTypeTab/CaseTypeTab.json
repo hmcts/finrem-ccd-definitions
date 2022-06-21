@@ -3228,6 +3228,15 @@
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "applicantScanDocuments",
+    "TabFieldDisplayOrder": 15
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "Respondent Documents",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 19,
@@ -3269,6 +3278,14 @@
     "TabDisplayOrder": 19,
     "CaseFieldID": "respConfidentialDocsCollection",
     "TabFieldDisplayOrder": 14
+  },  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respondentScanDocuments",
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/02/2021",
