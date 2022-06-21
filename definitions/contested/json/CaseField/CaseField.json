@@ -4479,19 +4479,21 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "anotherHearingYN",
-    "Label": "Is there another hearing",
-    "FieldType": "YesOrNo",
+    "ID": "hearingNoticesDocumentCollection",
+    "Label": "Hearing Notices Documents",
+    "HintText": "Hearing Notices Documents ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "hearingNoticesDocumentCollection",
-    "Label": "Hearing Notices Documents ",
-    "HintText": "Hearing Notices Documents ",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
+    "ID": "hearingDirectionDetailsCollection",
+    "Label": "Additional Hearing Details",
+    "HintText": "Additional Hearing Details",
+    "FieldType": "Label",
+    "FieldTypeParameter": "FR_ct_hearingInformationCollection",
     "SecurityClassification": "Public"
   }
 ]

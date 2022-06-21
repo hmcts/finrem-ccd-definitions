@@ -1663,7 +1663,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "hearingNoticesDocumentCollection",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4911,7 +4911,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "hearingNoticesDocumentCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -9858,28 +9858,28 @@
   {
     "LiveFrom": "01/05/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "anotherHearingYN",
+    "CaseFieldID": "hearingDirectionDetailsCollection",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/05/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "anotherHearingYN",
+    "CaseFieldID": "hearingDirectionDetailsCollection",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
     "LiveFrom": "01/05/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "anotherHearingYN",
+    "CaseFieldID": "hearingDirectionDetailsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/05/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "anotherHearingYN",
+    "CaseFieldID": "hearingDirectionDetailsCollection",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "R"
   }
