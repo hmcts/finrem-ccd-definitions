@@ -711,7 +711,7 @@
     "ID": "FR_manageLitigantDocument",
     "CaseEventID": "FR_manageLitigantDocument",
     "CaseFieldID": "litigantDocumentsCollection",
-    "ListElementCode": "caseDocument",
+    "ListElementCode": "caseDocuments",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
@@ -745,6 +745,17 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageLitigantDocument",
+    "CaseEventID": "FR_manageLitigantDocument",
+    "CaseFieldID": "litigantDocumentsCollection",
+    "ListElementCode": "caseDocumentConfidential",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "caseDocumentType=\"nil\""
   },
   {
     "LiveFrom": "05/08/2020",
