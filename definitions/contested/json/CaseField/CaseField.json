@@ -4426,36 +4426,9 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicantDocumentsLbl",
-    "Label": "## Applicant documents",
-    "HintText": "Applicant documents",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respondentDocumentsLbl",
-    "Label": "## Respondent documents",
-    "HintText": "Respondent documents",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicantDocuments",
+    "ID": "litigantDocumentsCollection",
     "FieldType": "Collection",
-    "FieldTypeParameter": "DocumentDetails",
-    "Label": " ",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respondentDocuments",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "DocumentDetails",
+    "FieldTypeParameter": "FR_manageLitigantDocument",
     "Label": " ",
     "SecurityClassification": "Public"
   },

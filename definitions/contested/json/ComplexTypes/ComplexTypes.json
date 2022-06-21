@@ -1272,18 +1272,53 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "DocumentDetails",
-    "ListElementCode": "DocumentFileName",
-    "FieldType": "Text",
-    "ElementLabel": "Name",
+    "ID": "FR_manageLitigantDocument",
+    "ListElementCode": "caseDocumentType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_caseDocumentType",
+    "ElementLabel": "Document type",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "DocumentDetails",
-    "ListElementCode": "DocumentType",
+    "ID": "FR_manageLitigantDocument",
+    "ListElementCode": "caseDocumentParty",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "ElementLabel": "Evidence provided on behalf of:",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageLitigantDocument",
+    "ListElementCode": "caseDocumentOther",
     "FieldType": "Text",
-    "ElementLabel": "Document type",
+    "ElementLabel": "Please specify document type",
+    "FieldShowCondition": "caseDocumentType=\"other\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageLitigantDocument",
+    "ListElementCode": "hearingDetails",
+    "FieldType": "TextArea",
+    "ElementLabel": "Provide the date of hearing and a description of the document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageLitigantDocument",
+    "ListElementCode": "caseDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Please upload any case documents ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageLitigantDocument",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
     "SecurityClassification": "Public"
   },
   {
