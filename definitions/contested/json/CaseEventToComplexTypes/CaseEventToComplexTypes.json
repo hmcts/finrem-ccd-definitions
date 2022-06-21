@@ -705,5 +705,55 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageLitigantDocument",
+    "CaseEventID": "FR_manageLitigantDocument",
+    "CaseFieldID": "litigantDocumentsCollection",
+    "ListElementCode": "caseDocument",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageLitigantDocument",
+    "CaseEventID": "FR_manageLitigantDocument",
+    "CaseFieldID": "litigantDocumentsCollection",
+    "ListElementCode": "caseDocumentType",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageLitigantDocument",
+    "CaseEventID": "FR_manageLitigantDocument",
+    "CaseFieldID": "litigantDocumentsCollection",
+    "ListElementCode": "caseDocumentOther",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageLitigantDocument",
+    "CaseEventID": "FR_manageLitigantDocument",
+    "CaseFieldID": "litigantDocumentsCollection",
+    "ListElementCode": "caseDocumentParty",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageLitigantDocument",
+    "CaseEventID": "FR_manageLitigantDocument",
+    "CaseFieldID": "litigantDocumentsCollection",
+    "ListElementCode": "hearingDetails",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
   }
 ]
