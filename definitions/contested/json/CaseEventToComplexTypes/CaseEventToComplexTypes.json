@@ -741,10 +741,20 @@
     "ID": "FR_manageLitigantDocument",
     "CaseEventID": "FR_manageLitigantDocument",
     "CaseFieldID": "litigantDocumentsCollection",
+    "ListElementCode": "caseDocumentFdr",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_manageLitigantDocument",
+    "CaseEventID": "FR_manageLitigantDocument",
+    "CaseFieldID": "litigantDocumentsCollection",
     "ListElementCode": "caseDocumentParty",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
