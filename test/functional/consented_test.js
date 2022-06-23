@@ -12,6 +12,7 @@ const nightlyTest = process.env.NIGHTLY_TEST;
 const runningEnv = process.env.RUNNING_ENV;
 const solRef = `AUTO-${createSolicitorReference()}`;
 
+
 Feature('create Consented case ');
 
 Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
@@ -59,7 +60,7 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   }
 });
 
-Scenario('Consent Case approve and send order @nightly @pipeline @crossBrowser', async I => {
+Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
@@ -77,7 +78,7 @@ Scenario('Consent Case approve and send order @nightly @pipeline @crossBrowser',
   }
 });
 /* eslint-disable require-await */
-Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I => {
+Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
@@ -106,4 +107,4 @@ Scenario('Consent Case Creation by Solicitor @nightly @crossBrowser', async I =>
     await I.finalInformationPage();
     I.waitForText('History', '30');
   }
-});
+}).retry(3);
