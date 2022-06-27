@@ -9,11 +9,12 @@
     "SecurityClassification": "Public"
   },
   {
-    "LiveFrom": "01/09/2020",
+    "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "interimHearingDocuments",
-    "FieldType": "Document",
-    "Label": "Interim Hearing",
+    "Label": "Interim Hearing Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_iHBulkPrintDocument",
     "SecurityClassification": "Public"
   },
   {
