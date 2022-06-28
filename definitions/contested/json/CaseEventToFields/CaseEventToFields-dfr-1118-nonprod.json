@@ -11,5 +11,35 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_listForInterimHearing",
+    "CaseFieldID": "iHCollectionItemIds",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageLabel": "Interim Hearings",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "interimHearings=\"banana\"",
+    "ShowSummaryChangeOption": "Y",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_listForInterimHearing",
+    "CaseFieldID": "interimHearingDocuments",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageLabel": "Interim Hearings",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "interimHearings=\"banana\"",
+    "ShowSummaryChangeOption": "Y",
+    "RetainHiddenValue": "Yes"
   }
 ]
