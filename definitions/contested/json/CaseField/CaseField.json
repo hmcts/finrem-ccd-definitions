@@ -4512,5 +4512,15 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingNoticeDocumentPack",
+    "Label": "Hearing notice pack to send",
+    "HintText": "Hearing notice pack to send",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public"
   }
 ]
