@@ -872,14 +872,14 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_judgeToDraftOrder",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorToDraftOrder",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1489,5 +1489,54 @@
     "CaseEventID": "FR_manageHearingBundles",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "moveScannedDocs",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "moveScannedDocs",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_revertToPrepForHearing",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_revertToPrepForHearing",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_revertToPrepForHearing",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_revertToPrepForHearing",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_revertToPrepForHearing",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "R"
   }
 ]
