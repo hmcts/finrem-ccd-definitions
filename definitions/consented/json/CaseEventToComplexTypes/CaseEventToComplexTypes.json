@@ -191,7 +191,6 @@
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
   },
-
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_amendApplicationDetails",
@@ -414,6 +413,37 @@
     "ListElementCode": "ApprovalStatus",
     "DefaultValue": "1",
     "FieldDisplayOrder": "7",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_updateOrganisation",
+    "CaseEventID": "FR_updateOrganisation",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "OrgPolicyCaseAssignedRole",
+    "DefaultValue": "[APPSOLICITOR]",
+    "EventElementLabel": "Applicant Organisation Policy",
+    "FieldDisplayOrder": 1,
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_updateOrganisation",
+    "CaseEventID": "FR_updateOrganisation",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "Organisation.OrganisationID",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_updateOrganisation",
+    "CaseEventID": "FR_updateOrganisation",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "OrgPolicyReference",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
   }
 ]
