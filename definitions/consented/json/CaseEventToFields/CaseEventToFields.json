@@ -3113,20 +3113,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_generalOrder",
-    "CaseFieldID": "generalOrderAddressTo",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/preview-general-order",
-    "CallBackURLMidEvent_1": "3,4,5"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_generalOrder",
     "CaseFieldID": "generalOrderCreatedBy",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
@@ -4682,6 +4668,18 @@
     "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
     "FieldShowCondition": "appRespondentRep=\"No\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_updateOrganisation",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   }
 ]
