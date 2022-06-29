@@ -1476,18 +1476,20 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageLitigantDocument",
-    "ListElementCode": "caseDocumentParty",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_LitigantParty",
-    "ElementLabel": "Evidence of behalf of:",
+    "ListElementCode": "caseDocumentFdr",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
+    "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageLitigantDocument",
-    "ListElementCode": "hearingDetails",
-    "FieldType": "TextArea",
-    "ElementLabel": "Provide the date of hearing and a description of the document",
+    "ListElementCode": "caseDocumentParty",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "FieldShowCondition": "caseDocumentFdr=\"No\"",
+    "ElementLabel": "Evidence of behalf of:",
     "SecurityClassification": "Public"
   },
   {
@@ -1503,11 +1505,9 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageLitigantDocument",
-    "ListElementCode": "caseDocumentFdr",
-    "FieldType": "YesOrNo",
-    "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
-    "FieldShowCondition": "caseDocumentType=\"nil\"",
-    "HintText": "Document will be placed in the FDR documents tab",
+    "ListElementCode": "hearingDetails",
+    "FieldType": "TextArea",
+    "ElementLabel": "Provide the date of hearing and a description of the document",
     "SecurityClassification": "Public"
   }
 ]
