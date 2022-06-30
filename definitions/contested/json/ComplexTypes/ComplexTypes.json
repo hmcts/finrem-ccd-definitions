@@ -1449,7 +1449,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_manageLitigantDocument",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocuments",
     "FieldType": "Document",
     "ElementLabel": "Please upload any case documents ",
@@ -1457,7 +1457,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_manageLitigantDocument",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_caseDocumentType",
@@ -1466,7 +1466,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_manageLitigantDocument",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentOther",
     "FieldType": "Text",
     "ElementLabel": "Please specify document type",
@@ -1475,7 +1475,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_manageLitigantDocument",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
@@ -1484,7 +1484,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_manageLitigantDocument",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentParty",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_EvidenceParty",
@@ -1494,7 +1494,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_manageLitigantDocument",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentConfidential",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the document confidential?",
@@ -1504,7 +1504,7 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_manageLitigantDocument",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "hearingDetails",
     "FieldType": "TextArea",
     "ElementLabel": "Provide the date of hearing and a description of the document",
