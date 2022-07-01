@@ -921,5 +921,37 @@
     "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "hearingDetails",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
+    "CaseEventID": "FR_manageCaseDocuments",
+    "CaseFieldID": "manageCaseDocumentCollection",
+    "ListElementCode": "DocumentEmailContent",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
+    "CaseEventID": "FR_manageCaseDocuments",
+    "CaseFieldID": "manageCaseDocumentCollection",
+    "ListElementCode": "DocumentDateAdded",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
+    "CaseEventID": "FR_manageCaseDocuments",
+    "CaseFieldID": "manageCaseDocumentCollection",
+    "ListElementCode": "DocumentComment",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
+    "CaseEventID": "FR_manageCaseDocuments",
+    "CaseFieldID": "manageCaseDocumentCollection",
+    "ListElementCode": "DocumentFileName",
+    "DisplayContext": "OPTIONAL"
   }
 ]
