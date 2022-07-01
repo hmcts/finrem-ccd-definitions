@@ -4172,7 +4172,7 @@
     "TabLabel": "Confidential documents",
     "TabDisplayOrder": 22,
     "CaseFieldID": "confidentialDocumentsUploaded",
-    "TabFieldDisplayOrder": 55
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4202,5 +4202,14 @@
     "TabDisplayOrder": 25,
     "CaseFieldID": "hearingUploadBundle",
     "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "fdrDocumentsTab",
+    "TabLabel": "FDR documents",
+    "TabDisplayOrder": 37,
+    "CaseFieldID": "fdrCaseDocumentCollection",
+    "TabFieldDisplayOrder": 14
   }
 ]
