@@ -184,7 +184,7 @@
     "Label": "Divorce / Dissolution Case Number",
     "HintText": "Enter 10 character alphanumeric divorce case number",
     "FieldType": "Text",
-    "RegularExpression": "^([A-Z|a-z][A-Z|a-z])\\d{2}[D|d]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[J|d]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[N|d]\\d{5}$|\\b\\d{4}[ -]\\d{4}[ -]\\d{4}[ -]\\d{4}\\b|\\b\\d{4}\\d{4}\\d{4}\\d{4}\\b",
+    "RegularExpression": "^([A-Z|a-z][A-Z|a-z])\\d{2}[D|d]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[J|j]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[N|n]\\d{5}$|\\b\\d{4}[ -]\\d{4}[ -]\\d{4}[ -]\\d{4}\\b|\\b\\d{4}\\d{4}\\d{4}\\d{4}\\b",
     "SecurityClassification": "Public"
   },
   {
@@ -1941,6 +1941,30 @@
     "ID": "updateIncludesRepresentativeChange",
     "Label": "Does this update include a change in representation for either party?",
     "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "currentUserCaseRole",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "solicitorAddressLabel",
+    "Label": "Solicitor Address Label",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "rSolicitorAddressLabel",
+    "Label": "Respondent Solicitor Address Label ",
+    "FieldType": "Label",
     "SecurityClassification": "Public"
   }
 ]

@@ -964,6 +964,19 @@
     "ShowEventNotes": "Y"
   },
   {
+    "LiveFrom": "10/11/2021",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_updateCaseDetailsSolicitor",
+    "Name": "Update Contact Details",
+    "Description": "Update solicitor contact details",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/get-user-roles",
+    "DisplayOrder": 57,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
     "LiveFrom": "01/01/2021",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_updateOrganisation",
