@@ -44,6 +44,6 @@ dependencies:
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-ns.enabled
   - name: finrem-ps
-    version: 0.2.5
+    version: 0.2.10
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-ps.enabled
