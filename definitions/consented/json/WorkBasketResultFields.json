@@ -66,15 +66,22 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "[LAST_STATE_MODIFIED_DATE]",
+    "Label": "Last state modified date",
+    "DisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "[STATE]",
     "Label": "Status",
-    "DisplayOrder": 10
+    "DisplayOrder": 11
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "assignedToJudge",
     "Label": "Judge Name",
-    "DisplayOrder": 11
+    "DisplayOrder": 12
   }
 ]
