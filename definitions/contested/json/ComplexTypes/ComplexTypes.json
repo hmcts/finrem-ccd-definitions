@@ -540,7 +540,7 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_devonList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldShowCondition": "region=\"southeast\" AND southEastList=\"devon\"",
+    "FieldShowCondition": "region=\"southwest\" AND southWestList=\"devon\"",
     "SecurityClassification": "Public"
   },
   {
@@ -560,7 +560,7 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_bristolList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldShowCondition": "region=\"southeast\" AND southEastList=\"bristol\"",
+    "FieldShowCondition": "region=\"southwest\" AND southWestList=\"bristol\"",
     "SecurityClassification": "Public"
   },
   {
@@ -590,7 +590,7 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_northwalesList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldShowCondition": "region=\"wales\" AND walesList=\"nowrthwales\"",
+    "FieldShowCondition": "region=\"wales\" AND walesList=\"northwales\"",
     "SecurityClassification": "Public"
   },
   {
