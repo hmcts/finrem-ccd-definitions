@@ -921,5 +921,13 @@
     "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentConfidential",
     "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
+    "CaseEventID": "FR_manageCaseDocuments",
+    "CaseFieldID": "manageCaseDocumentCollection",
+    "ListElementCode": "documentUploadDate",
+    "DisplayContext": "READONLY"
   }
 ]
