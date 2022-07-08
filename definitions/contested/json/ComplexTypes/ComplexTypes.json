@@ -1083,8 +1083,9 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_uploadCaseDocument",
     "ListElementCode": "documentUploadDate",
-    "FieldType": "Text",
+    "FieldType": "Date",
     "ElementLabel": "Date uploaded",
+    "FieldShowCondition": "caseDocumentType=\"nil\"",
     "SecurityClassification": "Public"
   },
   {
@@ -1522,7 +1523,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageCaseDocuments",
     "ListElementCode": "documentUploadDate",
-    "FieldType": "Text",
+    "FieldType": "Date",
     "ElementLabel": "Date uploaded",
     "SecurityClassification": "Public",
     "FieldShowCondition": "caseDocumentType=\"nil\""
