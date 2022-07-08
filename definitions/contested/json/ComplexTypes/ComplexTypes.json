@@ -1081,6 +1081,14 @@
   },
   {
     "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "documentUploadDate",
+    "FieldType": "Text",
+    "ElementLabel": "Date uploaded",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
     "ID": "FR_ct_directionDetailCollectionInterim",
     "ListElementCode": "hearingCourtLbl",
     "FieldType": "Label",
@@ -1514,8 +1522,18 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageCaseDocuments",
     "ListElementCode": "documentUploadDate",
-    "FieldType": "DateTime",
+    "FieldType": "Text",
     "ElementLabel": "Date uploaded",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "caseDocumentType=\"nil\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "documentUploadDate",
+    "FieldType": "Text",
+    "ElementLabel": "Date uploaded",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "caseDocumentType=\"nil\""
   }
 ]
