@@ -641,7 +641,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "consentOrderL",
-    "Label": "#### CONSENT ORDER ${customLabel}",
+    "Label": "#### ${consentVariationOrderLabelC}",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
@@ -649,8 +649,8 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "consentOrder",
-    "Label": "Draft Consent Order",
-    "HintText": "Please upload a scanned copy of the draft consent order that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
+    "Label": "Draft ${consentVariationOrderLabelC}",
+    "HintText": "Please upload a scanned copy of the draft ${consentVariationOrderLabelL} that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
     "FieldType": "Document",
     "SecurityClassification": "Public"
   },
@@ -756,9 +756,19 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "otherCollection",
     "Label": "Other Documents",
-    "HintText": "Upload other documentation related to your application",
+    "HintText": "${otherDocLabel}",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_DocumentType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "otherVariationCollection",
+    "Label": "Other Variation Documents",
+    "HintText": "${otherDocLabel}",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_VariationDocumentType",
     "SecurityClassification": "Public"
   },
   {

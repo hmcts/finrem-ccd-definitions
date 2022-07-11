@@ -876,5 +876,22 @@
     "FieldType": "ChangedRepresentative",
     "ElementLabel": "Removed representative",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_VariationDocumentType",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_VariationOtherDocument",
+    "ElementLabel": "Type of document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_VariationDocumentType",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
   }
 ]
