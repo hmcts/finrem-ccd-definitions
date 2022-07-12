@@ -3708,6 +3708,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "timeEstimateLabel",
+    "FieldShowCondition": "interimTimeEstimate !=\" \"",
     "TabFieldDisplayOrder": 5
   },
   {
@@ -3726,6 +3727,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "hearingDateLabel",
+    "FieldShowCondition": "interimHearingDate !=\" \"",
     "TabFieldDisplayOrder": 7
   },
   {
@@ -3753,6 +3755,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "hearingTimeLabel",
+    "FieldShowCondition": "interimHearingTime !=\" \"",
     "TabFieldDisplayOrder": 10
   },
   {
@@ -3771,6 +3774,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "chooseCourtLabelSL",
+    "FieldShowCondition": "interim_regionList!=\" \"",
     "TabFieldDisplayOrder": 12
   },
   {
@@ -4039,6 +4043,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "FieldShowCondition": "interimAdditionalInformationAboutHearing !=\" \"",
     "TabFieldDisplayOrder": 39
   },
   {
@@ -4138,6 +4143,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interimPromptForAnyDocumentLabel",
+    "FieldShowCondition": "interimPromptForAnyDocument !=\" \"",
     "TabFieldDisplayOrder": 50
   },
   {
@@ -4156,6 +4162,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interimUploadOtherDocumentLabel",
+    "FieldShowCondition": "interimUploadAdditionalDocument !=\" \"",
     "TabFieldDisplayOrder": 52
   },
   {
@@ -4222,5 +4229,23 @@
     "TabDisplayOrder": 37,
     "CaseFieldID": "fdrCaseDocumentCollection",
     "TabFieldDisplayOrder": 14
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearings",
+    "TabFieldDisplayOrder": 55
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearingDocuments",
+    "TabFieldDisplayOrder": 56
   }
 ]
