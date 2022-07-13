@@ -443,7 +443,7 @@
     "Name": "Upload Draft Order",
     "Description": "Upload Draft Order",
     "DisplayOrder": 37,
-    "PreConditionState(s)": "judgeDraftOrder;prepareForHearing",
+    "PreConditionState(s)": "judgeDraftOrder;prepareForHearing;caseFileSubmitted",
     "PostConditionState": "scheduleRaiseDirectionsOrder",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/store",
@@ -1019,7 +1019,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_addListForInterimHearingInfo",
     "Name": "List for Interim Hearing",
-    "Description": "List for Interim Hearing",
+    "Description": "Above event is not in use",
     "DisplayOrder": 133,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
@@ -1110,5 +1110,22 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_listForInterimHearing",
+    "Name": "List for Interim Hearing",
+    "Description": "List for Interim Hearing",
+    "DisplayOrder": 142,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
   }
 ]
