@@ -3690,6 +3690,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "timeEstimateLabel",
+    "FieldShowCondition": "interimTimeEstimate !=\" \"",
     "TabFieldDisplayOrder": 5
   },
   {
@@ -3708,6 +3709,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "hearingDateLabel",
+    "FieldShowCondition": "interimHearingDate !=\" \"",
     "TabFieldDisplayOrder": 7
   },
   {
@@ -3735,6 +3737,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "hearingTimeLabel",
+    "FieldShowCondition": "interimHearingTime !=\" \"",
     "TabFieldDisplayOrder": 10
   },
   {
@@ -3753,6 +3756,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "chooseCourtLabelSL",
+    "FieldShowCondition": "interim_regionList!=\" \"",
     "TabFieldDisplayOrder": 12
   },
   {
@@ -4021,6 +4025,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "FieldShowCondition": "interimAdditionalInformationAboutHearing !=\" \"",
     "TabFieldDisplayOrder": 39
   },
   {
@@ -4120,6 +4125,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interimPromptForAnyDocumentLabel",
+    "FieldShowCondition": "interimPromptForAnyDocument !=\" \"",
     "TabFieldDisplayOrder": 50
   },
   {
@@ -4138,6 +4144,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interimUploadOtherDocumentLabel",
+    "FieldShowCondition": "interimUploadAdditionalDocument !=\" \"",
     "TabFieldDisplayOrder": 52
   },
   {
@@ -4165,7 +4172,7 @@
     "TabLabel": "Confidential documents",
     "TabDisplayOrder": 22,
     "CaseFieldID": "confidentialDocumentsUploaded",
-    "TabFieldDisplayOrder": 55
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4195,5 +4202,14 @@
     "TabDisplayOrder": 25,
     "CaseFieldID": "hearingUploadBundle",
     "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "fdrDocumentsTab",
+    "TabLabel": "FDR documents",
+    "TabDisplayOrder": 37,
+    "CaseFieldID": "fdrCaseDocumentCollection",
+    "TabFieldDisplayOrder": 14
   }
 ]

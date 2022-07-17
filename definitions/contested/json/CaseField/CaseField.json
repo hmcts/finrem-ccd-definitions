@@ -19,7 +19,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "beforeYouStartPara2",
-    "Label": ">**Scope**\r\n\r\n>Currently, you can use the pilot for any cases that fit the following criteria only:\r\n\r\n*\tThe application is being made as part of a Divorce case (applications on Civil Partnership, judicial separation or nullity cases cannot be accepted at this time)\r\n*\tThe Divorce case may have been submitted via paper or online, however, there must be no previous financial remedy proceedings on the case\r\n*\tYou must be representing the Applicant (the applicant for FR proceedings could be either the petitioner or respondent in the divorce proceedings)\r\n*\tYou are not applying for Maintenance Pending Suit\r\n\r\n>If your application does not meet these criteria, it will be returned and will have to be submitted via the normal paper process.",
+    "Label": ">**Scope**\r\n\r\n>Currently, you can use the pilot for any cases that fit the following criteria only:\r\n\r\n*\tThe application is being made as part of a Divorce/Dissolution case, including Civil Partnership, Judicial Separation or Nullity.\r\n*\tThe Divorce case may have been submitted via paper or online, however, there must be no previous financial remedy proceedings on the case\r\n*\tYou must be representing the Applicant (the applicant for FR proceedings could be either the petitioner or respondent in the divorce proceedings)\r\n\r\n>If your application does not meet these criteria, it will be returned and will have to be submitted via the normal paper process.",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
@@ -182,7 +182,7 @@
     "Label": "Divorce / Dissolution Case Number",
     "HintText": "Enter 10 character alphanumeric divorce case number",
     "FieldType": "Text",
-    "RegularExpression": "^([A-Z|a-z][A-Z|a-z])\\d{2}[D|d]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[J|d]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[N|d]\\d{5}$|\\b\\d{4}[ -]\\d{4}[ -]\\d{4}[ -]\\d{4}\\b|\\b\\d{4}\\d{4}\\d{4}\\d{4}\\b",
+    "RegularExpression": "^([A-Z|a-z][A-Z|a-z])\\d{2}[D|d]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[J|j]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[N|n]\\d{5}$|\\b\\d{4}[ -]\\d{4}[ -]\\d{4}[ -]\\d{4}\\b|\\b\\d{4}\\d{4}\\d{4}\\d{4}\\b",
     "SecurityClassification": "Public"
   },
   {
@@ -4434,6 +4434,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "currentUserCaseRole",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "hearingUploadBundle",
     "Label": "Hearing Bundles ",
     "FieldType": "Collection",
@@ -4474,6 +4482,42 @@
     "Label": "Respondent Scanned Documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "respondentScanDocsCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fdrCaseDocumentCollection",
+    "Label": "                                                                                      ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimHearings",
+    "Label": "Interim Hearings",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "interimHearingsCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimHearingDocuments",
+    "Label": "Interim Hearing Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_iHBulkPrintDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "iHCollectionItemIds",
+    "Label": " ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_iHCollectionItemIds",
     "SecurityClassification": "Public"
   }
 ]
