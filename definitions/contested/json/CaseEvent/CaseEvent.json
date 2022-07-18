@@ -736,7 +736,7 @@
     "Name": "Consent Order Not Approved",
     "Description": "Consent Order Not Approved",
     "DisplayOrder": 119,
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/consent-order-not-approved",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "PreConditionState(s)": "consentedOrderAssignJudge",
     "PostConditionState": "consentedOrderNotApproved",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/contested-consent-order-not-approved",
