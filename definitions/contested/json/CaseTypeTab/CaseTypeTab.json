@@ -4184,6 +4184,24 @@
     "TabFieldDisplayOrder": 54
   },
   {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearings",
+    "TabFieldDisplayOrder": 55
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearingDocuments",
+    "TabFieldDisplayOrder": 56
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "confidentialDocumentsTab",
@@ -4229,23 +4247,5 @@
     "TabDisplayOrder": 37,
     "CaseFieldID": "fdrCaseDocumentCollection",
     "TabFieldDisplayOrder": 14
-  },
-  {
-    "LiveFrom": "01/10/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 21,
-    "CaseFieldID": "interimHearings",
-    "TabFieldDisplayOrder": 55
-  },
-  {
-    "LiveFrom": "01/10/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 21,
-    "CaseFieldID": "interimHearingDocuments",
-    "TabFieldDisplayOrder": 56
   }
 ]
