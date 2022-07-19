@@ -2422,8 +2422,26 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalHearingDocuments",
+    "CaseFieldID": "hearingDirectionDetailsCollection",
     "TabFieldDisplayOrder": 49
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "additionalHearingDocuments",
+    "TabFieldDisplayOrder": 50
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearingNoticesDocumentCollection",
+    "TabFieldDisplayOrder": 51
   },
   {
     "LiveFrom": "01/01/2017",

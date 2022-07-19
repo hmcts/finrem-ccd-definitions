@@ -1803,5 +1803,96 @@
     "FieldType": "Text",
     "ElementLabel": " ",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_hearingInformationCollection",
+    "ListElementCode": "isThisFinalYN",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this the final order?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_hearingInformationCollection",
+    "ListElementCode": "isAnotherHearingYN",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is there another hearing to be listed ?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_hearingInformationCollection",
+    "ListElementCode": "timeEstimate",
+    "FieldType": "Text",
+    "ElementLabel": "Time Estimate",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_hearingInformationCollection",
+    "ListElementCode": "dateOfHearing",
+    "FieldType": "Date",
+    "ElementLabel": "Hearing Date",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_hearingInformationCollection",
+    "ListElementCode": "hearingTime",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing Time",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_hearingInformationCollection",
+    "ListElementCode": "hearingCourtLbl",
+    "FieldType": "Label",
+    "ElementLabel": "#### Hearing Court",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_hearingInformationCollection",
+    "ListElementCode": "localCourt",
+    "FieldType": "FR_ct_courtList",
+    "ElementLabel": "This would usually be the applicants local Court",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_hearingInformationCollection",
+    "ListElementCode": "nottinghamList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_NottinghamList",
+    "ElementLabel": "Nottingham List",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"nottingham\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_hearingInformationCollection",
+    "ListElementCode": "cfcList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_CFCList",
+    "ElementLabel": "CFC List",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"cfc\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_hearingInformationCollection",
+    "ListElementCode": "typeOfHearing",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_hearingTypeDirections",
+    "ElementLabel": "Type of hearing values",
+    "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
+    "SecurityClassification": "Public"
   }
 ]
