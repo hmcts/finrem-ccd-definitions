@@ -165,7 +165,6 @@
     "DisplayOrder": 13,
     "PreConditionState(s)": "schedulingAndHearing",
     "PostConditionState": "prepareForHearing",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
