@@ -4487,6 +4487,34 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingNoticesDocumentCollection",
+    "Label": "Hearing Notices Documents",
+    "HintText": "Hearing Notices Documents ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingDirectionDetailsCollection",
+    "Label": "Additional Hearing Details",
+    "HintText": "Additional Hearing Details",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_hearingInformationCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadOtherDocumentLabelOptional",
+    "Label": "## Upload other documents (Optional)",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "fdrCaseDocumentCollection",
     "Label": "                                                                                      ",
     "FieldType": "Collection",
@@ -4518,6 +4546,25 @@
     "Label": " ",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_iHCollectionItemIds",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingNoticeDocumentPack",
+    "Label": "Hearing notice pack to send",
+    "HintText": "Hearing notice pack to send",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageCaseDocumentCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageCaseDocuments",
+    "Label": " ",
     "SecurityClassification": "Public"
   }
 ]
