@@ -84,6 +84,13 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 4) `yarn test:nightly-functional` will create both API, UI screen tests and verifies data in tabs (runs on nightly pipeline on AAT).
 5) To create cases on demo, point CCD_DATA_API_URL to ccd demo API url and RUNNING_ENV=demo, run the scenario tests.
 
+### Running additional tests in the Jenkins PR Pipeline
+1. Add one or more appropriate labels to your PR in GitHub. Valid labels are:
+
+- ```enable_full_functional_tests```
+
+2. Trigger a build of your PR in Jenkins.
+
 ## ccd-definition-processor
 
 This repo makes use of https://github.com/hmcts/ccd-definition-processor to generate the excel file. You may have to update this repo if, for example, you need to add a column to the definitions spreadsheet.
