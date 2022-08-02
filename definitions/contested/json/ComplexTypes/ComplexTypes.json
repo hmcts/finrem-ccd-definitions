@@ -1989,7 +1989,7 @@
     "ListElementCode": "generalApplicationTimeEstimate",
     "FieldType": "Text",
     "ElementLabel": "Time estimate",
-    "ShowSummaryChangeOption": "Y"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1997,7 +1997,7 @@
     "ListElementCode": "generalApplicationSpecialMeasures",
     "FieldType": "Text",
     "ElementLabel": "Special measures",
-    "ShowSummaryChangeOption": "Y"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2006,7 +2006,7 @@
     "FieldType": "Document",
     "ElementLabel": "Upload General Application",
     "HintText": "Please upload a copy of the application as a word or PDF document (word documents will be converted to PDF after submission).",
-    "ShowSummaryChangeOption": "Y"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2015,6 +2015,6 @@
     "FieldType": "Document",
     "ElementLabel": "Upload Draft Order",
     "HintText": "Please upload a copy of the draft order as a word or PDF document (word documents will be converted to PDF after submission)",
-    "ShowSummaryChangeOption": "Y"
+    "SecurityClassification": "Public"
   }
 ]

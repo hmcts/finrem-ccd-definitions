@@ -928,6 +928,8 @@
     "CaseEventID": "createGeneralApplication",
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -936,6 +938,8 @@
     "CaseEventID": "createGeneralApplication",
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationCreatedBy",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -944,6 +948,8 @@
     "CaseEventID": "createGeneralApplication",
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationHearingRequired",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -952,7 +958,9 @@
     "CaseEventID": "createGeneralApplication",
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationTimeEstimate",
-    "FieldShowCondition": "generalApplicationHearingRequired=\"Yes\"",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "FieldShowCondition": "generalApplications.generalApplicationHearingRequired=\"Yes\"",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -961,7 +969,9 @@
     "CaseEventID": "createGeneralApplication",
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationSpecialMeasures",
-    "FieldShowCondition": "generalApplicationHearingRequired=\"Yes\"",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "FieldShowCondition": "generalApplications.generalApplicationHearingRequired=\"Yes\"",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -970,6 +980,8 @@
     "CaseEventID": "createGeneralApplication",
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationDocument",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -978,6 +990,8 @@
     "CaseEventID": "createGeneralApplication",
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationDraftOrder",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
   }
 ]
