@@ -54,7 +54,7 @@ finrem-cos:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/cos:latest
+    image: hmctspublic.azurecr.io/finrem/cos:pr-730
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
     environment:
@@ -368,7 +368,6 @@ ccd:
       enabled: false
 
   elasticsearch:
-    nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     imageTag: "7.17.0"
     replicas: 1
