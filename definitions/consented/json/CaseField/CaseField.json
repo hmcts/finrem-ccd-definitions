@@ -1976,5 +1976,29 @@
     "Label": "Respondent Solicitor Address Label ",
     "FieldType": "Label",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentVariationOrderLabelC",
+    "Label": "consent/variation order",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentVariationOrderLabelL",
+    "Label": "consent/variation order",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "otherDocLabel",
+    "Label": "Upload other consent order documentation related to your application",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
   }
 ]
