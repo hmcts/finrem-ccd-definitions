@@ -87,13 +87,9 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 ### Running additional tests in the Jenkins PR Pipeline
 1. Add one or more appropriate labels to your PR in GitHub. Valid labels are:
 
-- ```enable_full_functional_test```
-- ```enable_all_tests_and_scans```
+- ```enable_full_functional_tests```
 
-2. Trigger a build of your PR in Jenkins. Once the regular pipeline completes, the nightly pipeline will trigger to execute your chosen test(s).
-
-#### NB: Adding either of these labels will prevent the PR build from being [automatically cleaned up](#preview-deployment-for-prs-in-testing)
-
+2. Trigger a build of your PR in Jenkins.
 
 ## ccd-definition-processor
 
@@ -166,8 +162,12 @@ https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+P
 The team leveraged the fact this service has set up charts with all services needed for running the full Financial Remedy solution to create
 deployments to Preview with the PRs so Developers and Testers can work on changes without the weight that a local environment has on machine resources.
 
-The deployment can be switched ON by adding a label to the PR Repo in GitHub called 'no_cleanup'.
+The deployment can be switched ON by commenting `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
 
 More details can be found [here](https://tools.hmcts.net/confluence/display/RSE/Divorce+Local+Environment+Set+up+using+Preview)
+
+## ATTENTION! 
+If you switch the Preview deployment ON, 
+remember to switch it back OFF by removing the comment on `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
 
 
