@@ -670,7 +670,7 @@
     "ID": "FR_approvedOrder",
     "ListElementCode": "consentOrder",
     "FieldType": "Document",
-    "ElementLabel": "Consent Order Annexed and Stamped  ",
+    "ElementLabel": "Consent Order / Variation Order Annexed and Stamped",
     "SecurityClassification": "Public"
   },
   {
@@ -875,6 +875,23 @@
     "ListElementCode": "removed",
     "FieldType": "ChangedRepresentative",
     "ElementLabel": "Removed representative",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_VariationDocumentType",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_VariationOtherDocument",
+    "ElementLabel": "Type of document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_VariationDocumentType",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
     "SecurityClassification": "Public"
   }
 ]
