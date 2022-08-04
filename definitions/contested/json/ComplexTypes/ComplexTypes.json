@@ -2016,5 +2016,13 @@
     "ElementLabel": "Upload Draft Order",
     "HintText": "Please upload a copy of the draft order as a word or PDF document (word documents will be converted to PDF after submission)",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationCreatedDate",
+    "FieldType": "Date",
+    "ElementLabel": "Date Created",
+    "SecurityClassification": "Public"
   }
 ]

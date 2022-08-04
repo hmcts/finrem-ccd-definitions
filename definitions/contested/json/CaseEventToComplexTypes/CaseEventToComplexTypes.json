@@ -940,7 +940,8 @@
     "ListElementCode": "generalApplicationCreatedBy",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -993,5 +994,16 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationCreatedDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
   }
 ]
