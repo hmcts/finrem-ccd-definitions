@@ -41,7 +41,7 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 
 withNightlyPipeline("nodejs", product, component) {
     env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
-    env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
+    env.CCD_DATA_API_URL="https://ccd-data-store-api-aat.service.core-compute-aat.internal"
     env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
     env.NIGHTLY_TEST="true"
     env.NODE_ENV = 'ci'
