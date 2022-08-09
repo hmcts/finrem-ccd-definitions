@@ -3166,7 +3166,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationLatestDocument",
     "FieldType": "Document",
-    "Label": "Latest General Application",
+    "Label": "General Application",
     "SecurityClassification": "Public"
   },
   {
@@ -3183,7 +3183,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationLatestDocumentDate",
     "FieldType": "Date",
-    "Label": "Latest General Application Date",
+    "Label": "General Application Date",
     "SecurityClassification": "Public"
   },
   {
@@ -4574,6 +4574,14 @@
     "Label": "General Applications",
     "FieldType": "Collection",
     "FieldTypeParameter": "generalApplicationCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationTracking",
+    "Label": " ",
+    "FieldType": "Text",
     "SecurityClassification": "Public"
   }
 ]
