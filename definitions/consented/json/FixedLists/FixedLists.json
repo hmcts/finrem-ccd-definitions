@@ -21,25 +21,29 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_OtherDocument",
     "ListElementCode": "ScheduleOfAssets",
-    "ListElement": "Schedule of Assets"
+    "ListElement": "Schedule of Assets",
+    "DisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_OtherDocument",
     "ListElementCode": "Letter",
-    "ListElement": "Letter"
+    "ListElement": "Letter",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_OtherDocument",
     "ListElementCode": "Notice of acting",
-    "ListElement": "Notice of acting"
+    "ListElement": "Notice of acting",
+    "DisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_OtherDocument",
     "ListElementCode": "Other",
-    "ListElement": "Other"
+    "ListElement": "Other",
+    "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -641,13 +645,13 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_AssignToJudgeReason",
     "ListElementCode": "Draft consent order",
-    "ListElement": "Draft consent order"
+    "ListElement": "Draft consent/variation order"
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_AssignToJudgeReason",
     "ListElementCode": "Resubmitted draft consent order",
-    "ListElement": "Resubmitted draft consent order"
+    "ListElement": "Resubmitted draft consent/variation order"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1906,6 +1910,27 @@
     "ID": "nocPartyList",
     "ListElementCode": "respondent",
     "ListElement": "Respondent",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_natureApplication",
+    "ListElementCode": "Variation Order",
+    "ListElement": "Variation Order",
+    "DisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_VariationOtherDocument",
+    "ListElementCode": "originalOrder",
+    "ListElement": "Original order",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_VariationOtherDocument",
+    "ListElementCode": "Other",
+    "ListElement": "Other documents",
     "DisplayOrder": 2
   }
 ]
