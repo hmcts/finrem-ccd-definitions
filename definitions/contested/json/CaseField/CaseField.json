@@ -1443,6 +1443,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "outOfFamilyCourtResolution",
+    "Label": "Out Of Family Court Resolution",
+    "HintText": "Out Of Family Court Resolution",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "caseNotesCollection",
     "Label": "Notes",
     "FieldType": "Collection",
