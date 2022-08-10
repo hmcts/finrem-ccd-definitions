@@ -106,9 +106,9 @@ withPipeline("nodejs", product, component) {
   before('functionalTest:preview') {
     yarnBuilder.yarn('setup')
 
-    env.COS_API_URL="http://cos-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-    env.AAC_API_URL="http://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-    env.CCD_DATA_API_URL="http://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+    env.COS_API_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
+    env.AAC_API_URL="https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+    env.CCD_DATA_API_URL="https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
       yarnBuilder.yarn('generate-excel-preview-consented')
       yarnBuilder.yarn('generate-excel-aat-consented')
