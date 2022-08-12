@@ -1,5 +1,6 @@
 #!groovy
 
+//Trigger a build by adding a comment
 import uk.gov.hmcts.contino.GithubAPI
 
 @Library("Infrastructure")
