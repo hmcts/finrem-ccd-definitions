@@ -1,0 +1,18 @@
+[
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationRejectReason",
+    "Label": "Rejection Reason",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "05/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationList",
+    "Label": "Available General List",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public"
+  }
+]
