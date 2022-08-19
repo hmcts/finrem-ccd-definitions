@@ -930,5 +930,70 @@
     "ListElementCode": "caseDocumentUploadDateTime",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "manageCaseDocumentCollection=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseDocument",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocuments",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseDocument",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentType",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseDocument",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentOther",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseDocument",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "hearingDetails",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseDocument",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentConfidential",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseDocument",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentFdr",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseDocument",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentParty",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseDocument",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentUploadDateTime",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "manageCaseDocumentCollection=\"IMPOSSIBLAW\""
   }
 ]
