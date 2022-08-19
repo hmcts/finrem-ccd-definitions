@@ -7003,6 +7003,18 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalApplicationReferToJudge",
+    "CaseFieldID": "generalApplicationReferList",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": "generalApplicationReferToJudge",
+    "PageLabel": "Refer to Judge (Application)",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_GeneralApplicationOutcome",
     "CaseFieldID": "generalApplicationOutcome",
     "PageFieldDisplayOrder": 1,
