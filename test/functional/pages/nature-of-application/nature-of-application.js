@@ -31,13 +31,13 @@ async function contestedNatureOfApplication() {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[value="Maintenance Pending Suit"]');
-  I.checkOption('input[value="periodicalPaymentOrder"]');
+  I.checkOption('input[value="Periodical Payment Order"]');
   I.checkOption('input[value="Lump Sum Order"]');
   I.checkOption('input[value="Pension Sharing Order"]');
   I.checkOption('input[value="Pension Attachment Order"]');
   I.checkOption('input[value="Pension Compensation Sharing Order"]');
   I.checkOption('input[value="Pension Compensation Attachment Order"]');
-  I.checkOption('input[value="propertyAdjustmentOrder"]');
+  I.checkOption('input[value="Property Adjustment Order"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForElement('#propertyAddress', '30');
