@@ -1000,6 +1000,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_UploadConfidentialDocument",
     "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
     "ListElementCode": "DocumentType",
     "DisplayContext": "OPTIONAL"
   },
@@ -1007,6 +1008,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_UploadConfidentialDocument",
     "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
     "ListElementCode": "DocumentLink",
     "DisplayContext": "OPTIONAL"
   },
@@ -1014,6 +1016,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_UploadConfidentialDocument",
     "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
     "ListElementCode": "DocumentDateAdded",
     "DisplayContext": "OPTIONAL"
   },
@@ -1021,6 +1024,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_UploadConfidentialDocument",
     "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
     "ListElementCode": "DocumentComment",
     "DisplayContext": "OPTIONAL"
   },
@@ -1028,6 +1032,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_UploadConfidentialDocument",
     "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
     "ListElementCode": "DocumentFileName",
     "DisplayContext": "OPTIONAL"
   },
@@ -1035,8 +1040,9 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_UploadConfidentialDocument",
     "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
     "ListElementCode": "confidentialDocumentUploadDateTime",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "uploadCaseDocument=\"IMPOSSIBLAW\""
+    "FieldShowCondition": "confidentialDocumentsUploaded=\"IMPOSSIBLAW\""
   }
 ]
