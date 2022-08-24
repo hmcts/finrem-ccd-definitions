@@ -1044,5 +1044,62 @@
     "ListElementCode": "confidentialDocumentUploadDateTime",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "confidentialDocumentsUploaded=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentType",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentEmailContent",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentLink",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentDateAdded",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentComment",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentFileName",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "generalDocumentUploadDateTime",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "uploadGeneralDocuments=\"IMPOSSIBLAW\""
   }
 ]
