@@ -11,7 +11,7 @@
     "LiveFrom": "05/10/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationList",
-    "Label": "Available General List",
+    "Label": "Please select from general application",
     "FieldType": "DynamicList",
     "SecurityClassification": "Public"
   },
@@ -19,9 +19,32 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationReferList",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationReferCollection",
+    "Label": "Please select from general application",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationReferDetail",
+    "Label": "General application refer detail",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationOutcomeList",
+    "Label": "Please select from general application",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsList",
+    "Label": "Please select from general application",
+    "FieldType": "DynamicList",
     "SecurityClassification": "Public"
   }
 ]

@@ -29,10 +29,21 @@
     "CaseEventID": "FR_generalApplicationReferToJudge",
     "CaseFieldID": "generalApplicationReferList",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "COMPLEX",
+    "DisplayContext": "MANDATORY",
     "PageID": "generalApplicationReferToJudge",
-    "PageLabel": "Refer to Judge (Application)",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalApplicationReferToJudge",
+    "CaseFieldID": "generalApplicationReferDetail",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "MANDATORY",
+    "PageID": "generalApplicationReferToJudge",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "generalApplicationReferToJudgeEmail=\"@IMPOSSIBLE@\""
   }
 ]

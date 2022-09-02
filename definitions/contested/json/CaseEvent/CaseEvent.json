@@ -823,7 +823,7 @@
     "Name": "Refer to Judge (Application)",
     "Description": "Refer to Judge (Application)",
     "DisplayOrder": 125,
-    "PreConditionState(s)": "generalApplication",
+    "PreConditionState(s)": "generalApplication;generalApplicationAwaitingJudiciaryResponse",
     "PostConditionState": "generalApplicationAwaitingJudiciaryResponse",
     "SecurityClassification": "Public",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
@@ -841,6 +841,8 @@
     "PreConditionState(s)": "generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome",
     "PostConditionState": "generalApplicationOutcome",
     "SecurityClassification": "Public",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-application-outcome",
     "ShowEventNotes": "Y"
   },
@@ -854,8 +856,8 @@
     "PreConditionState(s)": "generalApplicationOutcome",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/start-general-application-directions",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-application-directions",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "ShowEventNotes": "Y"
   },
   {
