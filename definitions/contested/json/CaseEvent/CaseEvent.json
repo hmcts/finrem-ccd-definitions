@@ -790,6 +790,7 @@
   {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_consentSendOrder",
     "Name": "Send Order (consent)",
     "Description": "Send Order (consent)",
@@ -1157,5 +1158,17 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_manageBarrister",
+    "Name": "Manage Barrister",
+    "Description": "Manage Barrister",
+    "DisplayOrder": 143,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
   }
 ]

@@ -4575,5 +4575,23 @@
     "FieldTypeParameter": "FR_manageCaseDocuments",
     "Label": " ",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageCaseDocuments",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageBarristerCollection",
+    "Label": "Barrister Details",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "BarristerCollection",
+    "SecurityClassification": "Public"
   }
 ]

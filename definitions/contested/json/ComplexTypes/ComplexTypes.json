@@ -1957,5 +1957,37 @@
     "FieldShowCondition": "caseDocumentType=\"nil\"",
     "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "BarristerCollection",
+    "ListElementCode": "# Record Meta data",
+    "FieldType": "Label",
+    "ElementLabel": "Barrister Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "BarristerCollection",
+    "ListElementCode": "fullName",
+    "FieldType": "text",
+    "ElementLabel": "Full Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "BarristerCollection",
+    "ListElementCode": "email",
+    "FieldType": "Text",
+    "ElementLabel": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "BarristerCollection",
+    "ListElementCode": "phoneNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Phone Number",
+    "SecurityClassification": "Public"
   }
 ]
