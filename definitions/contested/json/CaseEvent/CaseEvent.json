@@ -1157,5 +1157,23 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "createFlags",
+    "Name": "Create Flag",
+    "Description": "Create Flag",
+    "DisplayOrder": 143,
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageFlags",
+    "Name": "Manage Flag",
+    "Description": "Manage Flag",
+    "DisplayOrder": 144,
+    "SecurityClassification": "Public"
   }
 ]

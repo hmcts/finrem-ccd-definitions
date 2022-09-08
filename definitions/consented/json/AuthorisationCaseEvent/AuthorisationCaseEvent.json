@@ -1426,5 +1426,19 @@
     "CaseEventID": "FR_updateOrganisation",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "createFlags",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "manageFlags",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
   }
 ]
