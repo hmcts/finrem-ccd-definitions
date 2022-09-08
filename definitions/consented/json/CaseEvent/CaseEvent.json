@@ -407,7 +407,6 @@
     "DisplayOrder": 16,
     "PreConditionState(s)": "referredToJudge",
     "PostConditionState": "consentOrderApproved",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
