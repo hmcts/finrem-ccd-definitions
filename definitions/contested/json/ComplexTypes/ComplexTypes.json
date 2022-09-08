@@ -1963,7 +1963,7 @@
     "ID": "FR_BarristerCollection",
     "ListElementCode": "barristerLabel",
     "FieldType": "Label",
-    "ElementLabel": "Manage Barrister",
+    "ElementLabel": "Barrister Details",
     "SecurityClassification": "Public"
   },
   {
@@ -1989,5 +1989,14 @@
     "FieldType": "Text",
     "ElementLabel": "Phone Number",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "organisation",
+    "FieldType": "Organisation",
+    "ElementLabel": "Organisation",
+    "SecurityClassification": "Public"
   }
+
 ]
