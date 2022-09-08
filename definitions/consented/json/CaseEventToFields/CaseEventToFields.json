@@ -1284,7 +1284,6 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/consented/set-defaults",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -1321,6 +1320,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "applicantRepresented=\"DONTSHOW\"",
     "ShowSummaryChangeOption": "N"
   },
   {
@@ -1333,7 +1333,6 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "isAdmin=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1342,11 +1341,10 @@
     "CaseEventID": "FR_amendApplicationDetails",
     "CaseFieldID": "applicantRepresented",
     "PageFieldDisplayOrder": 2,
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "READONLY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "isAdmin=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
