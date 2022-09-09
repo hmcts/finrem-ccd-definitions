@@ -10246,5 +10246,33 @@
     "CaseFieldID": "outOfFamilyCourtResolution",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "caseFlags",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "appellantFlags",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "respondentFlags",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "flagLauncher",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
   }
 ]
