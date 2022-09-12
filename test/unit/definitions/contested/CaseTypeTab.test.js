@@ -77,7 +77,9 @@ describe('CaseTypeTab', () => {
     'ChangeOfRepresentativesTab-judiciary': 23,
     'ChangeOfRepresentativesTab-courtadmin': 24,
     hearingBundleTab: 25,
-    fdrDocumentsTab: 37
+    fdrDocumentsTab: 37,
+    caseFlags: 38
+
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -123,7 +125,8 @@ describe('CaseTypeTab', () => {
       'ChangeOfRepresentativesTab-judiciary',
       'ChangeOfRepresentativesTab-courtadmin',
       'hearingBundleTab',
-      'fdrDocumentsTab'
+      'fdrDocumentsTab',
+      'caseFlags'
     ]);
   });
   it('should contain a valid case field IDs', () => {
