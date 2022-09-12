@@ -4575,37 +4575,5 @@
     "FieldTypeParameter": "FR_manageCaseDocuments",
     "Label": " ",
     "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "caseFlags",
-    "FieldType": "Flags",
-    "Label": "Case Flags",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "appellantFlags",
-    "FieldType": "Flags",
-    "Label": "Flags for Appellant",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respondentFlags",
-    "FieldType": "Flags",
-    "Label": "Flags for Respondent",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "flagLauncher",
-    "FieldType": "FlagLauncher",
-    "Label": "Launch the Flags screen",
-    "SecurityClassification": "Public"
   }
 ]
