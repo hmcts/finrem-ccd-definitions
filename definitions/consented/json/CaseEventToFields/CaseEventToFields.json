@@ -1284,6 +1284,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/consented/set-defaults",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -1333,6 +1334,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "isAdmin=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1341,7 +1343,7 @@
     "CaseEventID": "FR_amendApplicationDetails",
     "CaseFieldID": "applicantRepresented",
     "PageFieldDisplayOrder": 2,
-    "DisplayContext": "READONLY",
+    "DisplayContext": "MANDATORY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
@@ -1409,7 +1411,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1422,7 +1424,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1435,7 +1437,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1448,7 +1450,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1461,7 +1463,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1474,7 +1476,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1487,7 +1489,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1500,7 +1502,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1513,7 +1515,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1526,7 +1528,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1539,7 +1541,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
