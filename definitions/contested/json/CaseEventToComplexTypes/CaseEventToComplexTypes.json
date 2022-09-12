@@ -1015,5 +1015,38 @@
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationStatus",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationOutcomeOther",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationDirectionsDocument",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
   }
 ]

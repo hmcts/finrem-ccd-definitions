@@ -2042,5 +2042,29 @@
     "FieldType": "Date",
     "ElementLabel": "Date Created",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationStatus",
+    "FieldType": "Text",
+    "ElementLabel": "Status",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationOutcomeOther",
+    "FieldType": "Text",
+    "ElementLabel": "Outcome details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationDirectionsDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Hearing / no hearing document",
+    "SecurityClassification": "Public"
   }
 ]
