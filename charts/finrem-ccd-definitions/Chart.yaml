@@ -1,18 +1,19 @@
 apiVersion: v2
 description: Financial Remedy - CCD Definitions
 name: finrem-ccd-definitions
-version: 2.2.7
+
+version: 2.2.11
 dependencies:
   - name: nodejs
-    version: 2.4.1
+    version: 2.4.6
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
   - name: ccd
-    version: 6.0.0
+    version: 8.0.17
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     tags:
       - finrem-ccd-stack
   - name: xui-webapp
-    version: ~0.2.1
+    version: ~1.0.0
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: xui-webapp.enabled
   - name: xui-mo-webapp
@@ -20,30 +21,26 @@ dependencies:
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: xui-mo-webapp.enabled
   - name: aac-manage-case-assignment
-    version: ~0.1.6
+    version: ~0.2.0
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: aac-manage-case-assignment.enabled
   - name: idam-pr
-    version: 2.2.6
+    version: 2.2.7
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: idam-pr.enabled
   - name: finrem-cos
-    version: 0.2.6
+    version: 0.2.14
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-cos.enabled
   - name: finrem-dgcs
-    version: 0.2.4
+    version: 0.2.9
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-dgcs.enabled
   - name: finrem-emca
-    version: 0.2.3
+    version: 0.2.8
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-emca.enabled
   - name: finrem-ns
-    version: 0.2.4
+    version: 0.2.8
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-ns.enabled
-  - name: finrem-ps
-    version: 0.2.5
-    repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
-    condition: finrem-ps.enabled

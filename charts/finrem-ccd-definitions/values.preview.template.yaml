@@ -29,11 +29,11 @@ xui-webapp:
     environment:
       HEALTH_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}/health
       HEALTH_CCD_DATA_API: http://${SERVICE_NAME}-ccd-data-store-api/health
-      HEALTH_TERMS_AND_CONDITIONS_API: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal/health
-      SERVICES_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}
+      HEALTH_TERMS_AND_CONDITIONS_API: http://xui-terms-and-conditions-${SERVICE_FQDN}/health
+      SERVICES_CCD_COMPONENT_API: http://${SERVICE_NAME}-ccd-api-gw
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_CCD_CASE_ASSIGNMENT_API: http://aac-${SERVICE_FQDN}
-      SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}.service.core-compute-preview.internal
+      SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}
       JURISDICTIONS: DIVORCE
 
 xui-mo-webapp:
@@ -163,37 +163,6 @@ finrem-ns:
             alias: APP_INSIGHTS_INSTRUMENTATION_KEY
           - name: gov-uk-notification-key
             alias: UK_GOV_NOTIFY_API_KEY
-
-finrem-ps:
-  enabled: true
-  java:
-    imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/ps:latest
-    releaseNameOverride: ${SERVICE_NAME}-finrem-ps
-    ingressHost: ps-${SERVICE_FQDN}
-    environment:
-        AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
-        FEES_API_URL: http://fees-register-api-aat.service.core-compute-aat.internal
-        PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
-        IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        PAYMENT_API_URL: http://payment-api-aat.service.core-compute-aat.internal
-        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_PAYMENTS_SERVICE_S2S_KEY}
-        USERNAME_SOLICITOR: ${USERNAME_SOLICITOR}
-        PASSWORD_SOLICITOR: ${PASSWORD_SOLICITOR}
-    keyVaults:
-      finrem:
-        secrets:
-          - name: AppInsightsInstrumentationKey
-            alias: APP_INSIGHTS_INSTRUMENTATION_KEY
-          - name: finrem-payment-service-s2s-key
-            alias: FINREM_PAYMENTS_SERVICE_S2S_KEY
-          - name: idam-secret
-            alias: OAUTH2_CLIENT_FINREM
-          - name: username-solicitor
-            alias: USERNAME-SOLICITOR
-          - name: password-solicitor
-            alias: PASSWORD-SOLICITOR
 
 ccd:
   ccd:
@@ -368,6 +337,7 @@ ccd:
       enabled: false
 
   elasticsearch:
+    nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     imageTag: "7.17.0"
     replicas: 1
