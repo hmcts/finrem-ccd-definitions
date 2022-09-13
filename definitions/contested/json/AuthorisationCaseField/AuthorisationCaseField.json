@@ -10253,5 +10253,369 @@
     "CaseFieldID": "barristerCollection",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "CaseHistoryViewer",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appConfidentialDocsCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appHearingBundlesCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appFormEExhibitsCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appChronologiesCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appQACollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appStatementsExhibitsCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appCaseSummariesCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appFormsHCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appExpertEvidenceCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appCorrespondenceDocsCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appOtherCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantShareDocs",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingUploadBundle",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetApp",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "27/05/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "LabelState",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rRespondentLabel2",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentFMName",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentDetailsLabel",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentLName",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentRepresented",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentAddress",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentPhone",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentEmail",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentAddressConfidential",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorLabel",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorName",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorFirm",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorReference",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorAddressLabel",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorAddress",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorPhone",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorEmail",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RespSolNotificationsEmailConsent",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rSolicitorDXnumber",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respConfidentialDocsCollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respHearingBundlesCollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respFormEExhibitsCollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respChronologiesCollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respQACollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respStatementsExhibitsCollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respCaseSummariesCollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respFormsHCollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respExpertEvidenceCollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respCorrespondenceDocsColl",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respOtherCollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentShareDocs",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "civilPartnership",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RepresentationUpdateHistory",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingUploadBundle",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetRes",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
   }
 ]
