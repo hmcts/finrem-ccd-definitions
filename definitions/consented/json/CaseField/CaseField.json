@@ -1994,11 +1994,19 @@
     "SecurityClassification": "Public"
   },
   {
-    "LiveFrom": "01/01/2022",
+    "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "otherDocLabel",
     "Label": "Upload other consent order documentation related to your application",
     "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseFlags",
+    "Label": "Case Flags",
+    "FieldType": "Flags",
     "SecurityClassification": "Public"
   }
 ]
