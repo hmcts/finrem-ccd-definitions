@@ -65,5 +65,14 @@
     "HintText": "I confirm I am willing to accept service of all correspondence and orders by email at the email address stated above",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/08/2022",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "caseFlags",
+    "Label": "Case Flags",
+    "HintText": "Case Flags HINT TEXT",
+    "FieldType": "Flags",
+    "SecurityClassification": "Public"
   }
 ]
