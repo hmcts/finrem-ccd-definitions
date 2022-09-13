@@ -4256,5 +4256,46 @@
     "TabDisplayOrder": 37,
     "CaseFieldID": "fdrCaseDocumentCollection",
     "TabFieldDisplayOrder": 14
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlags",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 38,
+    "CaseFieldID": "caseFlags",
+    "FieldShowCondition": "*",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlags",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 38,
+    "CaseFieldID": "applicantFlags",
+    "FieldShowCondition": "*",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlags",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 38,
+    "CaseFieldID": "respondentFlags",
+    "FieldShowCondition": "*",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlags",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 38,
+    "CaseFieldID": "flagLauncher",
+    "FieldShowCondition": "*",
+    "TabFieldDisplayOrder": 4,
+    "DisplayContextParameter": "#ARGUMENT(READ)"
   }
 ]
