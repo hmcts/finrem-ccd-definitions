@@ -1615,5 +1615,19 @@
     "CaseEventID": "FR_manageBarrister",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageBarrister",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageBarrister",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "CRUD"
   }
 ]
