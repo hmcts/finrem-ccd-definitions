@@ -1613,28 +1613,14 @@
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "createFlags",
-    "UserRoles": [
-      "caseworker",
-      "caseworker-caa",
-      "caseworker-divorce-financialremedy-courtadmin",
-      "caseworker-divorce-financialremedy-judiciary",
-      "caseworker-divorce-financialremedy",
-      "caseworker-divorce-financialremedy-superuser"
-    ],
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "manageFlags",
-    "UserRoles": [
-      "caseworker",
-      "caseworker-caa",
-      "caseworker-divorce-financialremedy-courtadmin",
-      "caseworker-divorce-financialremedy-judiciary",
-      "caseworker-divorce-financialremedy",
-      "caseworker-divorce-financialremedy-superuser"
-    ],
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   }
 ]

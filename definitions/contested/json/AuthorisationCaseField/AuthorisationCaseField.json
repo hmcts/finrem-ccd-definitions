@@ -10251,56 +10251,28 @@
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "caseFlags",
-    "UserRoles": [
-      "caseworker",
-      "caseworker-caa",
-      "caseworker-divorce-financialremedy-courtadmin",
-      "caseworker-divorce-financialremedy-judiciary",
-      "caseworker-divorce-financialremedy",
-      "caseworker-divorce-financialremedy-superuser"
-    ],
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "applicantFlags",
-    "UserRoles": [
-      "caseworker",
-      "caseworker-caa",
-      "caseworker-divorce-financialremedy-courtadmin",
-      "caseworker-divorce-financialremedy-judiciary",
-      "caseworker-divorce-financialremedy",
-      "caseworker-divorce-financialremedy-superuser"
-    ],
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respondentFlags",
-    "UserRoles": [
-      "caseworker",
-      "caseworker-caa",
-      "caseworker-divorce-financialremedy-courtadmin",
-      "caseworker-divorce-financialremedy-judiciary",
-      "caseworker-divorce-financialremedy",
-      "caseworker-divorce-financialremedy-superuser"
-    ],
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "flagLauncher",
-    "UserRoles": [
-      "caseworker",
-      "caseworker-caa",
-      "caseworker-divorce-financialremedy-courtadmin",
-      "caseworker-divorce-financialremedy-judiciary",
-      "caseworker-divorce-financialremedy",
-      "caseworker-divorce-financialremedy-superuser"
-    ],
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
   }
 ]
