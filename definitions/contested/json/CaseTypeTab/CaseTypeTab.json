@@ -4229,5 +4229,42 @@
     "TabDisplayOrder": 27,
     "CaseFieldID": "generalApplications",
     "TabFieldDisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlags",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 28,
+    "CaseFieldID": "caseFlags",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlags",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 28,
+    "CaseFieldID": "applicantFlags",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlags",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 28,
+    "CaseFieldID": "respondentFlags",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlags",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 28,
+    "CaseFieldID": "flagLauncher",
+    "TabFieldDisplayOrder": 4,
+    "DisplayContextParameter": "#ARGUMENT(READ)"
   }
 ]
