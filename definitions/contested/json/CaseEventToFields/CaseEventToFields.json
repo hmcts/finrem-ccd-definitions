@@ -9724,12 +9724,10 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "generalApplicationReferToJudgeEmail=\"@IMPOSSIBLE@\""
   },
-
-
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorCreate",
+    "CaseEventID": "FR_issueApplication",
     "CaseFieldID": "applicantFlags",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
@@ -9742,7 +9740,7 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorCreate",
+    "CaseEventID": "FR_issueApplication",
     "CaseFieldID": "respondentFlags",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
