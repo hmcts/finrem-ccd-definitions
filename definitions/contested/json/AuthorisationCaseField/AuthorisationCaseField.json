@@ -10250,8 +10250,29 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "barristerCollection",
+    "CaseFieldID": "appBarristerCollection",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appBarristerCollection",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CRUD"
+  },
+  {
+  "LiveFrom": "01/01/2017",
+  "CaseTypeID": "FinancialRemedyContested",
+  "CaseFieldID": "respBarristerCollection",
+  "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+  "CRUD": "CRUD"
+},
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respBarristerCollection",
+    "UserRole": "[RESPSOLICITOR]",
     "CRUD": "CRUD"
   },
   {

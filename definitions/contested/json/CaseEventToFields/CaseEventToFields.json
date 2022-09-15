@@ -9632,13 +9632,29 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageBarrister",
-    "CaseFieldID": "barristerCollection",
+    "CaseFieldID": "appBarristerCollection",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageLabel": "Manage Barrister",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "PageShowCondition": "currentUserCaseRole=\"[APPSOLICITOR]\""
+
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
+    "PageLabel": "Manage Barrister",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "PageShowCondition": "currentUserCaseRole=\"[RESPSOLICITOR]\""
   }
 ]

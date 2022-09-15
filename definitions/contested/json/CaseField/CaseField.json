@@ -4579,7 +4579,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "barristerCollection",
+    "ID": "appBarristerCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_BarristerCollection",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respBarristerCollection",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_BarristerCollection",
     "Label": " ",
