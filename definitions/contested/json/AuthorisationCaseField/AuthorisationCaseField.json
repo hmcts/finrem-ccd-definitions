@@ -10249,30 +10249,58 @@
   },
   {
     "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "caseFlags",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "UserRoles": [
+      "caseworker",
+      "caseworker-caa",
+      "caseworker-divorce-financialremedy-courtadmin",
+      "caseworker-divorce-financialremedy-judiciary",
+      "caseworker-divorce-financialremedy",
+      "caseworker-divorce-financialremedy-superuser"
+    ],
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "applicantFlags",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "UserRoles": [
+      "caseworker",
+      "caseworker-caa",
+      "caseworker-divorce-financialremedy-courtadmin",
+      "caseworker-divorce-financialremedy-judiciary",
+      "caseworker-divorce-financialremedy",
+      "caseworker-divorce-financialremedy-superuser"
+    ],
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respondentFlags",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "UserRoles": [
+      "caseworker",
+      "caseworker-caa",
+      "caseworker-divorce-financialremedy-courtadmin",
+      "caseworker-divorce-financialremedy-judiciary",
+      "caseworker-divorce-financialremedy",
+      "caseworker-divorce-financialremedy-superuser"
+    ],
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "flagLauncher",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "UserRoles": [
+      "caseworker",
+      "caseworker-caa",
+      "caseworker-divorce-financialremedy-courtadmin",
+      "caseworker-divorce-financialremedy-judiciary",
+      "caseworker-divorce-financialremedy",
+      "caseworker-divorce-financialremedy-superuser"
+    ],
     "CRUD": "R"
   }
 ]

@@ -1608,5 +1608,33 @@
     "CaseEventID": "FR_manageCaseDocuments",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createFlags",
+    "UserRoles": [
+      "caseworker",
+      "caseworker-caa",
+      "caseworker-divorce-financialremedy-courtadmin",
+      "caseworker-divorce-financialremedy-judiciary",
+      "caseworker-divorce-financialremedy",
+      "caseworker-divorce-financialremedy-superuser"
+    ],
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageFlags",
+    "UserRoles": [
+      "caseworker",
+      "caseworker-caa",
+      "caseworker-divorce-financialremedy-courtadmin",
+      "caseworker-divorce-financialremedy-judiciary",
+      "caseworker-divorce-financialremedy",
+      "caseworker-divorce-financialremedy-superuser"
+    ],
+    "CRUD": "CRU"
   }
 ]

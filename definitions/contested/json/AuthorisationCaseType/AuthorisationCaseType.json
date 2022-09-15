@@ -58,5 +58,18 @@
     "CaseTypeID": "FinancialRemedyContested",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "UserRoles": [
+      "caseworker",
+      "caseworker-caa",
+      "caseworker-divorce-financialremedy-courtadmin",
+      "caseworker-divorce-financialremedy-judiciary",
+      "caseworker-divorce-financialremedy",
+      "caseworker-divorce-financialremedy-superuser"
+    ],
+    "CRUD": "CRU"
   }
 ]
