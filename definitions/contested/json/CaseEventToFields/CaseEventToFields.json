@@ -9727,7 +9727,7 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_issueApplication",
+    "CaseEventID": "createCase",
     "CaseFieldID": "applicantFlags",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
@@ -9740,7 +9740,7 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_issueApplication",
+    "CaseEventID": "createCase",
     "CaseFieldID": "respondentFlags",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
@@ -9753,7 +9753,7 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendCase",
+    "CaseEventID": "amendCase",
     "CaseFieldID": "applicantFlags",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
@@ -9766,7 +9766,7 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendCase",
+    "CaseEventID": "amendCase",
     "CaseFieldID": "respondentFlags",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
