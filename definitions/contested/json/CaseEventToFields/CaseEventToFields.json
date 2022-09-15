@@ -9676,5 +9676,52 @@
     "FieldShowCondition": "generalApplications=\"IMPOSSIBLE\"",
     "ShowSummaryChangeOption": "Y",
     "RetainHiddenValue": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "rejectGeneralApplication",
+    "CaseFieldID": "generalApplicationList",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "rejectGeneralApplication",
+    "CaseFieldID": "generalApplicationRejectReason",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalApplicationReferToJudge",
+    "CaseFieldID": "generalApplicationReferList",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": "generalApplicationReferToJudge",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalApplicationReferToJudge",
+    "CaseFieldID": "generalApplicationReferDetail",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "MANDATORY",
+    "PageID": "generalApplicationReferToJudge",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "generalApplicationReferToJudgeEmail=\"@IMPOSSIBLE@\""
   }
 ]

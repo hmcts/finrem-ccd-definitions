@@ -1629,5 +1629,26 @@
     "CaseEventID": "createGeneralApplication",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "rejectGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "rejectGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "rejectGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
   }
 ]
