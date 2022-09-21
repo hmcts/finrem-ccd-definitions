@@ -1094,7 +1094,7 @@
     "ID": "FR_BarristerCollection",
     "CaseEventID": "FR_manageBarrister",
     "CaseFieldID": "appBarristerCollection",
-    "ListElementCode": "organisation",
+    "ListElementCode": "Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
@@ -1144,7 +1144,7 @@
     "ID": "FR_BarristerCollection",
     "CaseEventID": "FR_manageBarrister",
     "CaseFieldID": "respBarristerCollection",
-    "ListElementCode": "organisation",
+    "ListElementCode": "Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
