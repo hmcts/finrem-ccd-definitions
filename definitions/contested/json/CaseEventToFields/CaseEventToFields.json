@@ -9744,28 +9744,26 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageBarrister",
     "CaseFieldID": "barristerPartyLabel",
-    "PageFieldDisplayOrder": 1,
+    "PageFieldDisplayOrder": 2,
     "DisplayContext": "READONLY",
     "PageID": 1,
     "PageLabel": "Manage Barrister",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserCaseRole=\"[CASEWORKER]\""
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageBarrister",
     "CaseFieldID": "barristerParty",
-    "PageFieldDisplayOrder": 1,
+    "PageFieldDisplayOrder": 3,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageLabel": "Manage Barrister",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserCaseRole=\"[CASEWORKER]\""
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -9793,8 +9791,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
-    "PageShowCondition": "currentUserCaseRole=\"[APPSOLICITOR]\" OR barristerParty=\"applicant\""
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -9822,7 +9819,6 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
-    "PageShowCondition": "currentUserCaseRole=\"[RESPSOLICITOR]\" OR barristerParty=\"respondent\""
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   }
 ]
