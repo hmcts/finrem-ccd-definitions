@@ -1048,5 +1048,105 @@
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "appBarristerCollection",
+    "ListElementCode": "barristerLabel",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "appBarristerCollection",
+    "ListElementCode": "name",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "appBarristerCollection",
+    "ListElementCode": "email",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "appBarristerCollection",
+    "ListElementCode": "phoneNumber",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "appBarristerCollection",
+    "ListElementCode": "organisation",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "ListElementCode": "barristerLabel",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "ListElementCode": "name",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "ListElementCode": "email",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "ListElementCode": "phoneNumber",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "ListElementCode": "organisation",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
   }
 ]
