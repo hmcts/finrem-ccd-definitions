@@ -9793,6 +9793,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "PageShowCondition": "currentUserCaseRole=\"[APPSOLICITOR]\" OR barristerParty=\"applicant\""
   },
   {
@@ -9821,6 +9822,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "PageShowCondition": "currentUserCaseRole=\"[RESPSOLICITOR]\" OR barristerParty=\"respondent\""
   }
 ]
