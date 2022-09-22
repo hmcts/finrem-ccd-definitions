@@ -9727,58 +9727,6 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "createCase",
-    "CaseFieldID": "applicantFlags",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "OPTIONAL",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "RetainHiddenValue": "Yes"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "createCase",
-    "CaseFieldID": "respondentFlags",
-    "PageFieldDisplayOrder": 2,
-    "DisplayContext": "OPTIONAL",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "RetainHiddenValue": "Yes"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "amendCase",
-    "CaseFieldID": "applicantFlags",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "OPTIONAL",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "RetainHiddenValue": "Yes"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "amendCase",
-    "CaseFieldID": "respondentFlags",
-    "PageFieldDisplayOrder": 2,
-    "DisplayContext": "OPTIONAL",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "RetainHiddenValue": "Yes"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "createFlags",
     "CaseFieldID": "caseFlags",
     "PageFieldDisplayOrder": 1,
@@ -9786,7 +9734,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "[STATE]=\"*\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -9799,7 +9747,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "[STATE]=\"*\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -9812,7 +9760,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "[STATE]=\"*\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -9837,7 +9785,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "[STATE]=\"*\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -9850,7 +9798,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "[STATE]=\"*\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -9863,7 +9811,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "[STATE]=\"*\"",
     "RetainHiddenValue": "Yes"
   },
   {
