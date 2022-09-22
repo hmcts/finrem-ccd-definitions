@@ -9551,7 +9551,7 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "interimHearings=\"banana\"",
     "ShowSummaryChangeOption": "Y",
-    "RetainHiddenValue": "Yes"
+    "RetainHiddenValue": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -9737,7 +9737,8 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
     "FieldShowCondition": "appBarristerCollection=\"IMPOSSIBLE_VALUE\"",
-    "PageShowCondition": "currentUserCaseRole=\"[CASEWORKER]\""
+    "PageShowCondition": "currentUserCaseRole=\"[CASEWORKER]\"",
+    "RetainHiddenValue": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
