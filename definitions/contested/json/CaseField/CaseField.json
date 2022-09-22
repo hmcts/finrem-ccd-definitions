@@ -180,7 +180,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceCaseNumber",
     "Label": "Divorce / Dissolution Case Number",
-    "HintText": "Enter 10 character alphanumeric divorce case number",
+    "HintText": "Please enter 10 digit alphanumeric case number or 16 digit CCD case number",
     "FieldType": "Text",
     "RegularExpression": "^([A-Z|a-z][A-Z|a-z])\\d{2}[D|d]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[J|j]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[N|n]\\d{5}$|\\b\\d{4}[ -]\\d{4}[ -]\\d{4}[ -]\\d{4}\\b|\\b\\d{4}\\d{4}\\d{4}\\d{4}\\b",
     "SecurityClassification": "Public"
@@ -1437,6 +1437,15 @@
     "ID": "formG",
     "Label": "Form G",
     "HintText": "Form G",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "outOfFamilyCourtResolution",
+    "Label": "Out Of Family Court Resolution",
+    "HintText": "Out Of Family Court Resolution",
     "FieldType": "Document",
     "SecurityClassification": "Public"
   },
@@ -3166,7 +3175,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationLatestDocument",
     "FieldType": "Document",
-    "Label": "Latest General Application",
+    "Label": "General Application",
     "SecurityClassification": "Public"
   },
   {
@@ -3183,7 +3192,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationLatestDocumentDate",
     "FieldType": "Date",
-    "Label": "Latest General Application Date",
+    "Label": "General Application Date",
     "SecurityClassification": "Public"
   },
   {
@@ -4487,10 +4496,149 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingNoticesDocumentCollection",
+    "Label": "Hearing Notices Documents",
+    "HintText": "Hearing Notices Documents ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingDirectionDetailsCollection",
+    "Label": "Additional Hearing Details",
+    "HintText": "Additional Hearing Details",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_hearingInformationCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadOtherDocumentLabelOptional",
+    "Label": "## Upload other documents (Optional)",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "fdrCaseDocumentCollection",
     "Label": "                                                                                      ",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimHearings",
+    "Label": "Interim Hearings",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "interimHearingsCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimHearingDocuments",
+    "Label": "Interim Hearing Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_iHBulkPrintDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "iHCollectionItemIds",
+    "Label": " ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_iHCollectionItemIds",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingNoticeDocumentPack",
+    "Label": "Hearing notice pack to send",
+    "HintText": "Hearing notice pack to send",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageCaseDocumentCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageCaseDocuments",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplications",
+    "Label": "General Applications",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "generalApplicationCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationTracking",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationRejectReason",
+    "Label": "Rejection Reason",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "05/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationList",
+    "Label": "Please select from general application",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationReferList",
+    "Label": "Please select from general application",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationReferDetail",
+    "Label": "General application refer detail",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationOutcomeList",
+    "Label": "Please select from general application",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsList",
+    "Label": "Please select from general application",
+    "FieldType": "DynamicList",
     "SecurityClassification": "Public"
   }
 ]

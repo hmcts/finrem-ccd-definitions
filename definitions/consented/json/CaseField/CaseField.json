@@ -19,7 +19,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "beforeYouStartPara2",
-    "Label": ">**Scope**\r\n\r\n>In line with Practice Direction 41B and 36T, From 24 August 2020, Legal Professionals must use this portal to issue consent applications that meet the following criteria:\r\n\r\n-\tThe application is being made as part of a Divorce case (applications on Civil Partnership, judicial separation or nullity cases cannot be accepted at this time)\r\n-\tThe Divorce case must have reached at least Decree Nisi stage \r\n-\tThe Divorce case may have been submitted via paper or online, however, there must be __no previous or existing__ financial remedy proceedings on the case\r\n-\tYou must be representing the Applicant (the applicant for FR proceedings could be either the petitioner or respondent in the divorce proceedings)\r\n\r\n>If your application does not meet these criteria, it will be returned, and you will need to submit your application via the paper process.",
+    "Label": ">**Scope**\r\n\r\n>In line with Practice Direction 41B and 36T, From 24 August 2020, Legal Professionals must use this portal to issue consent applications that meet the following criteria:\r\n\r\n-\tThe application is being made as part of a Divorce/Dissolution case, including Civil Partnership, Judicial Separation or Nullity.\r\n-\tThe Divorce/Dissolution case must have reached at least Decree Nisi stage. \r\n-\tThe Divorce/Dissolution case may have been submitted via paper or online, however, there must be no previous or existing financial remedy proceedings on the case, unless you are applying to vary the existing orders.\r\n-\tYou must be representing the Applicant (the applicant for FR proceedings could be either the petitioner or respondent in the divorce proceedings).\r\n\r\n>If your application does not meet these criteria, it will be returned, and you will need to submit your application via the paper process.",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
@@ -182,7 +182,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "divorceCaseNumber",
     "Label": "Divorce / Dissolution Case Number",
-    "HintText": "Enter 10 character alphanumeric divorce case number",
+    "HintText": "Please enter 10 digit alphanumeric case number or 16 digit CCD case number",
     "FieldType": "Text",
     "RegularExpression": "^([A-Z|a-z][A-Z|a-z])\\d{2}[D|d]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[J|j]\\d{5}$|^([A-Z|a-z][A-Z|a-z])\\d{2}[N|n]\\d{5}$|\\b\\d{4}[ -]\\d{4}[ -]\\d{4}[ -]\\d{4}\\b|\\b\\d{4}\\d{4}\\d{4}\\d{4}\\b",
     "SecurityClassification": "Public"
@@ -641,7 +641,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "consentOrderL",
-    "Label": "#### CONSENT ORDER",
+    "Label": "#### ${consentVariationOrderLabelC}",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
@@ -649,8 +649,8 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "consentOrder",
-    "Label": "Draft Consent Order",
-    "HintText": "Please upload a scanned copy of the draft consent order that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
+    "Label": "Draft ${consentVariationOrderLabelC}",
+    "HintText": "Please upload a scanned copy of the draft ${consentVariationOrderLabelL} that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
     "FieldType": "Document",
     "SecurityClassification": "Public"
   },
@@ -756,9 +756,19 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "otherCollection",
     "Label": "Other Documents",
-    "HintText": "Upload other documentation related to your application",
+    "HintText": "${otherDocLabel}",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_DocumentType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "otherVariationCollection",
+    "Label": "Other Variation Documents",
+    "HintText": "${otherDocLabel}",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_VariationDocumentType",
     "SecurityClassification": "Public"
   },
   {
@@ -1965,6 +1975,30 @@
     "ID": "rSolicitorAddressLabel",
     "Label": "Respondent Solicitor Address Label ",
     "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentVariationOrderLabelC",
+    "Label": "consent/variation order",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentVariationOrderLabelL",
+    "Label": "consent/variation order",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "otherDocLabel",
+    "Label": "Upload other consent order documentation related to your application",
+    "FieldType": "Text",
     "SecurityClassification": "Public"
   }
 ]

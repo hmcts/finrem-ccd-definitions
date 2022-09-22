@@ -969,7 +969,51 @@
     "PageID": 6,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "consentVariationOrderLabelC",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 6,
+    "PageDisplayOrder": 6,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "natureOfApplication2 CONTAINS \"banana\"",
+    "RetainHiddenValue": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "consentVariationOrderLabelL",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 6,
+    "PageDisplayOrder": 6,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "natureOfApplication2 CONTAINS \"banana\"",
+    "RetainHiddenValue": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "otherDocLabel",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 6,
+    "PageDisplayOrder": 6,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "d81Question=\"banana\"",
+    "RetainHiddenValue": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1201,6 +1245,20 @@
     "PageID": 11,
     "PageDisplayOrder": 12,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "consentVariationOrderLabelC !=\"Consent / Variation Order\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "otherVariationCollection",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "MANDATORY",
+    "PageID": 11,
+    "PageDisplayOrder": 12,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "consentVariationOrderLabelC =\"Consent / Variation Order\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1263,6 +1321,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "applicantRepresented=\"DONTSHOW\"",
     "ShowSummaryChangeOption": "N"
   },
   {
@@ -1288,7 +1347,6 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "isAdmin=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2185,6 +2243,8 @@
     "PageID": 6,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2212,6 +2272,48 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment Order\"",
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_amendApplicationDetails",
+    "CaseFieldID": "consentVariationOrderLabelC",
+    "PageFieldDisplayOrder": 5,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 6,
+    "PageDisplayOrder": 6,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "natureOfApplication2 CONTAINS \"banana\"",
+    "RetainHiddenValue": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_amendApplicationDetails",
+    "CaseFieldID": "consentVariationOrderLabelL",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 6,
+    "PageDisplayOrder": 6,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "natureOfApplication2 CONTAINS \"banana\"",
+    "RetainHiddenValue": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_amendApplicationDetails",
+    "CaseFieldID": "otherDocLabel",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 6,
+    "PageDisplayOrder": 6,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "d81Question=\"banana\"",
+    "RetainHiddenValue": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2301,6 +2403,8 @@
     "PageID": 9,
     "PageDisplayOrder": 10,
     "PageColumnNumber": 1,
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2378,6 +2482,8 @@
     "PageID": 10,
     "PageDisplayOrder": 11,
     "PageColumnNumber": 1,
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2402,6 +2508,20 @@
     "PageID": 11,
     "PageDisplayOrder": 12,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "consentVariationOrderLabelC !=\"Consent / Variation Order\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_amendApplicationDetails",
+    "CaseFieldID": "otherVariationCollection",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "MANDATORY",
+    "PageID": 11,
+    "PageDisplayOrder": 12,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "consentVariationOrderLabelC =\"Consent / Variation Order\"",
     "ShowSummaryChangeOption": "Y"
   },
   {

@@ -84,46 +84,8 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
   ]
 }
 
-def labels = [
-        "enable_full_functional_test",
-]
-
-def populateLabelStates(labels) {
-  def states = [:]
-  // Get labels from GitHub repo
-  def GhApi = new GithubAPI(this)
-  def repoLabels = GhApi.getLabelsbyPattern(env.BRANCH_NAME, "enable_")
-
-  // Check existence of provided label, and store in states map
-  def getLabelState = { label ->
-    if (label == "atLeastOneEnabled") {
-      return
-    }
-    def labelExists = repoLabels.contains(label) ? true : false
-    states.put(label, labelExists)
-  }
-
-  // Iterate over labels List to build labelStates map
-  labels.each { label -> getLabelState(label) }
-
-  // Hardcode enable_all_tests_and_scans label
-  if (!states.containsKey("enable_all_tests_and_scans")) {
-    getLabelState("enable_all_tests_and_scans")
-  }
-
-  // Check if at least one test/scan label is true
-  states.put("atLeastOneEnabled", states.any {key, value -> value == true })
-
-  // Redefine repoLabels to check for no_cleanup - do this *after* setting atLeastOneEnabled
-  repoLabels = GhApi.getLabelsbyPattern(env.BRANCH_NAME, "cleanup")
-  getLabelState("no_cleanup")
-
-  return states
-}
-labelStates = populateLabelStates(labels)
-
-def checkLabel(label) {
-  return (labelStates.enable_all_tests_and_scans || labelStates.get(label))
+def checkForNoCleanupLabel(branch_name) {
+  return new GithubAPI(this).getLabelsbyPattern(branch_name, "cleanup").contains("no_cleanup")
 }
 
 withPipeline("nodejs", product, component) {
@@ -144,9 +106,9 @@ withPipeline("nodejs", product, component) {
   before('functionalTest:preview') {
     yarnBuilder.yarn('setup')
 
-    env.COS_API_URL="http://cos-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-    env.AAC_API_URL="http://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-    env.CCD_DATA_API_URL="http://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+    env.COS_API_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
+    env.AAC_API_URL="https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+    env.CCD_DATA_API_URL="https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
       yarnBuilder.yarn('generate-excel-preview-consented')
       yarnBuilder.yarn('generate-excel-aat-consented')
@@ -229,41 +191,9 @@ withPipeline("nodejs", product, component) {
 
 
   onPR {
-    // If any of the additional test labels or the no_cleanup label are present, do not cleanup here!
-    if (!checkLabel("no_cleanup") && !checkLabel("atLeastOneEnabled")) {
+    if (!checkForNoCleanupLabel(env.BRANCH_NAME)) {
       enableCleanupOfHelmReleaseOnSuccess()
     }
   }
 }
-
-if (checkLabel("atLeastOneEnabled")) {
-  properties([
-          parameters([
-                  string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
-                  string(name: 'CCD_WEB_URL', defaultValue: "https://case-management-web-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal/", description: 'The URL you want to run solicitor tests against'),
-          ])
-  ])
-
-  withNightlyPipeline("nodejs", product, component) {
-    onPR() {
-      env.CCD_WEB_URL="https://case-management-web-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.CCD_DATA_API_URL="http://ccd-data-store-api-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.XUI_ORG_WEB_URL="https://xui-${product}-${component}-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.NIGHTLY_TEST="true"
-      env.NODE_ENV = 'ci'
-
-      loadVaultSecrets(secrets)
-
-      if (checkLabel("enable_full_functional_test")) {
-        enableFullFunctionalTest()
-
-        after('fullFunctionalTest') {
-          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/**/*'
-        }
-      }
-    }
-  }
-}
-
-
 
