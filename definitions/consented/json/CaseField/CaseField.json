@@ -2000,5 +2000,14 @@
     "Label": "Upload other consent order documentation related to your application",
     "FieldType": "Text",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "listForHearings",
+    "Label": "List for hearings",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "hearingCollection",
+    "SecurityClassification": "Public"
   }
 ]
