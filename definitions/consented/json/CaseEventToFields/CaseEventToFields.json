@@ -1321,6 +1321,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "applicantRepresented=\"DONTSHOW\"",
     "ShowSummaryChangeOption": "N"
   },
   {
@@ -1346,7 +1347,6 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "isAdmin=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
