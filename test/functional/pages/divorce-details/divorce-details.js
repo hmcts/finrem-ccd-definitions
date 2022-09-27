@@ -6,7 +6,7 @@ async function divorceDetails() {
   if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
-  I.waitForPage('h4', 'DIVORCE / DISSOLUTION DETAILS');
+  I.waitForPage('h4', 'APPLICATION DETAILS');
   I.fillField('input[id="divorceCaseNumber"]', 'LV18D81234');
   I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi / Conditional Order');
   I.wait('5');
