@@ -292,7 +292,7 @@
     "Name": "Upload Order",
     "Description": "Upload Order",
     "DisplayOrder": 25,
-    "PreConditionState(s)": "consentOrderNotApproved;generalApplicationOutcome",
+    "PreConditionState(s)": "consentOrderNotApproved",
     "PostConditionState": "caseWorkerReview",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
