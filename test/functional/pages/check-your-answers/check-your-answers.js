@@ -8,7 +8,7 @@ async function checkYourAnswers() {
     await I.runAccessibilityTest();
   }
   I.see('SOLICITOR DETAILS');
-  I.see('DIVORCE / DISSOLUTION DETAILS');
+  I.see('APPLICATION DETAILS');
   I.see('APPLICANT DETAILS');
   I.see('RESPONDENT DETAILS');
   I.wait('2');
