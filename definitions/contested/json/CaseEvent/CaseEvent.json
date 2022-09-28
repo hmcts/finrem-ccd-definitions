@@ -1184,7 +1184,7 @@
     "Name": "Reject General Application",
     "Description": "Reject General Application",
     "DisplayOrder": 125,
-    "PreConditionState(s)": "generalApplication;",
+    "PreConditionState(s)": "generalApplication",
     "PostConditionState": "generalApplication",
     "SecurityClassification": "Public",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
