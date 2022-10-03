@@ -131,7 +131,7 @@ finrem-emca:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/emca:latest
+    image: hmctspublic.azurecr.io/finrem/emca:pr-88
     releaseNameOverride: ${SERVICE_NAME}-finrem-emca
     ingressHost: emca-${SERVICE_FQDN}
     environment:
