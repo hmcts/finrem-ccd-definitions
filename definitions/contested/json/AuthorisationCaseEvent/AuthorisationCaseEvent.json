@@ -1208,14 +1208,14 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_createGeneralApplication",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_createGeneralApplication",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "13/12/2019",
@@ -1606,6 +1606,48 @@
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageCaseDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "rejectGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "rejectGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "rejectGeneralApplication",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   }
