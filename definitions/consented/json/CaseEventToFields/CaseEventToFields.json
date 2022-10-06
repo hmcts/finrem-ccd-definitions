@@ -5021,7 +5021,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "[STATE]=\"*\"",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -5034,7 +5034,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "[STATE]=\"*\"",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -5047,7 +5047,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "[STATE]=\"*\"",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -5056,7 +5056,7 @@
     "CaseEventID": "createFlags",
     "CaseFieldID": "flagLauncher",
     "PageFieldDisplayOrder": 4,
-    "DisplayContext": "READONLY",
+    "DisplayContext": "COMPLEX",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
@@ -5072,7 +5072,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "[STATE]=\"*\"",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -5085,7 +5085,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "[STATE]=\"*\"",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -5098,7 +5098,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "[STATE]=\"*\"",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -5107,7 +5107,7 @@
     "CaseEventID": "manageFlags",
     "CaseFieldID": "flagLauncher",
     "PageFieldDisplayOrder": 4,
-    "DisplayContext": "READONLY",
+    "DisplayContext": "COMPLEX",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
