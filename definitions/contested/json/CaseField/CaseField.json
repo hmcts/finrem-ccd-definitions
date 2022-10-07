@@ -1277,6 +1277,39 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalHearingDocumentsOptionLabel",
+    "Label": "#### Do you want to upload any other documents ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalHearingDocumentsOption",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalListOfHearingDocumentsLabel",
+    "Label": "#### Please upload any additional documents related to hearing.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalListOfHearingDocuments",
+    "Label": " ",
+    "FieldType": "Document",
+    "FieldShowCondition": "additionalHearingDocumentsOption=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "fastTrackWranMsg",
     "Label": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks",
     "FieldType": "Label",
