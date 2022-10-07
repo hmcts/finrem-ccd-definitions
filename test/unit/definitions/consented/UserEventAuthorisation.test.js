@@ -74,11 +74,12 @@ function checkAuthStateConfig(conditionState, allAuthForEvent, caseType, eventNa
 describe('Events authorisation validation', () => {
   before(() => {
     AuthCaseEventsActive = AuthorisationCaseEvent.filter(entry => {
-      return entry.CRUD === 'CRU' || entry.CRUD === 'RU';
+      return entry.CRUD === 'CRU' || entry.CRUD === 'RU' || entry.CRUD === 'R';
     });
   });
 
-  it('should have at least CRU or RU access level for all MANDATORY, OPTIONAL and READONLY show/hide event fields', () => {
+  it('should have at least CRU, RU or R (for ui components only) access level for all MANDATORY, OPTIONAL and READONLY' +
+      ' show/hide event fields', () => {
     AuthCaseEventsActive.forEach(eventAuth => {
       const userRole = eventAuth.UserRole;
       const eventName = eventAuth.CaseEventID;
