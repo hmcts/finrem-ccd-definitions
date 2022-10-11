@@ -9778,29 +9778,14 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageBarrister",
-    "CaseFieldID": "currentUserCaseRole",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "OPTIONAL",
-    "PageID": 1,
-    "PageLabel": "Manage Barrister",
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "N",
-    "FieldShowCondition": "appBarristerCollection=\"IMPOSSIBLE_VALUE\"",
-    "PageShowCondition": "currentUserCaseRole=\"[CASEWORKER]\"",
-    "RetainHiddenValue": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_manageBarrister",
     "CaseFieldID": "barristerPartyLabel",
-    "PageFieldDisplayOrder": 2,
+    "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 1,
     "PageLabel": "Manage Barrister",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
+    "PageShowCondition": "currentUserCaseRole=\"[CASEWORKER]\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -9808,7 +9793,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageBarrister",
     "CaseFieldID": "barristerParty",
-    "PageFieldDisplayOrder": 3,
+    "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageLabel": "Manage Barrister",
@@ -9871,5 +9856,18 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "currentUserCaseRole",
+    "PageFieldDisplayOrder": 8,
+    "DisplayContext": "READONLY",
+    "PageID": 3,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition": "appBarristerCollection=\"IMPOSSIBLE_VALUE\""
   }
 ]
