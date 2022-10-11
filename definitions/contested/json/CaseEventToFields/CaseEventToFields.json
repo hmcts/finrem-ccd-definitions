@@ -9810,7 +9810,7 @@
     "DisplayContext": "READONLY",
     "PageID": 2,
     "PageLabel": "Manage Barrister",
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "PageShowCondition": "currentUserCaseRole=\"[APPSOLICITOR]\" OR barristerParty=\"applicant\""
@@ -9824,7 +9824,7 @@
     "DisplayContext": "COMPLEX",
     "PageID": 2,
     "PageLabel": "Manage Barrister",
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
@@ -9838,7 +9838,7 @@
     "DisplayContext": "READONLY",
     "PageID": 3,
     "PageLabel": "Manage Barrister",
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "PageShowCondition": "currentUserCaseRole=\"[RESPSOLICITOR]\" OR barristerParty=\"respondent\""
@@ -9852,7 +9852,7 @@
     "DisplayContext": "COMPLEX",
     "PageID": 3,
     "PageLabel": "Manage Barrister",
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
@@ -9863,9 +9863,9 @@
     "CaseEventID": "FR_manageBarrister",
     "CaseFieldID": "currentUserCaseRole",
     "PageFieldDisplayOrder": 8,
-    "DisplayContext": "READONLY",
+    "DisplayContext": "OPTIONAL",
     "PageID": 3,
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
     "FieldShowCondition": "appBarristerCollection=\"IMPOSSIBLE_VALUE\""
