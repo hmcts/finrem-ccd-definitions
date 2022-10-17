@@ -71,7 +71,8 @@ describe('CaseTypeTab', () => {
     Judge: 15,
     'ChangeOfRepresentativesTab-judiciary': 16,
     'ChangeOfRepresentativesTab-courtadmin': 17,
-    caseFlagsTab: 18
+    scheduleAndListingHearingTab: 18,
+    caseFlagsTab: 19
 
   };
   tabIds.forEach(tabId => {
@@ -110,6 +111,7 @@ describe('CaseTypeTab', () => {
       'RespondentAddressConfidential-judiciary',
       'ChangeOfRepresentativesTab-judiciary',
       'ChangeOfRepresentativesTab-courtadmin',
+      'scheduleAndListingHearingTab',
       'caseFlagsTab'
     ]);
   });
