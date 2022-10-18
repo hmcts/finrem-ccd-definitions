@@ -444,7 +444,7 @@
     "Name": "Upload Draft Order",
     "Description": "Upload Draft Order",
     "DisplayOrder": 37,
-    "PreConditionState(s)": "judgeDraftOrder;prepareForHearing;caseFileSubmitted;prepareForHearing",
+    "PreConditionState(s)": "judgeDraftOrder;prepareForHearing;caseFileSubmitted",
     "PostConditionState": "scheduleRaiseDirectionsOrder",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/store",
