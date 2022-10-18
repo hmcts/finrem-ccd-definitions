@@ -2098,5 +2098,45 @@
     "FieldType": "Document",
     "ElementLabel": "Hearing / no hearing document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "barristerLabel",
+    "FieldType": "Label",
+    "ElementLabel": "Barrister Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "name",
+    "FieldType": "Text",
+    "ElementLabel": "Full Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "email",
+    "FieldType": "Text",
+    "ElementLabel": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "phoneNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Phone Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "Organisation",
+    "FieldType": "Organisation",
+    "ElementLabel": "Organisation Identifier",
+    "SecurityClassification": "Public"
   }
 ]
