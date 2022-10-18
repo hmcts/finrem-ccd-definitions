@@ -2294,7 +2294,7 @@
     "TabDisplayOrder": 19,
     "CaseFieldID": "applicantFlags",
     "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/09/2022",
@@ -2304,7 +2304,7 @@
     "TabDisplayOrder": 19,
     "CaseFieldID": "respondentFlags",
     "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/09/2022",
@@ -2313,7 +2313,7 @@
     "TabLabel": "Case Flags",
     "TabDisplayOrder": 19,
     "CaseFieldID": "flagLauncher",
-    "TabFieldDisplayOrder": 8,
+    "TabFieldDisplayOrder": 5,
     "DisplayContextParameter": "#ARGUMENT(READ)"
   }
 ]
