@@ -6133,21 +6133,7 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "caseFlagsLbl",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "caseFlags",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "applicantFlagsLbl",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
@@ -6161,21 +6147,7 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "respondentFlagsLbl",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "respondentFlags",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "flagLauncherLbl",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
@@ -6184,26 +6156,12 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "flagLauncher",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "caseFlagsLbl",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "caseFlags",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "applicantFlagsLbl",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
   },
@@ -6217,21 +6175,7 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "respondentFlagsLbl",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "respondentFlags",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "flagLauncherLbl",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
   },
@@ -6240,6 +6184,6 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "flagLauncher",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "CRU"
   }
 ]

@@ -4263,7 +4263,8 @@
     "TabID": "caseFlagsTab",
     "TabLabel": "Case Flags",
     "TabDisplayOrder": 28,
-    "CaseFieldID": "caseFlagsLbl",
+    "CaseFieldID": "caseFlags",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -4272,7 +4273,8 @@
     "TabID": "caseFlagsTab",
     "TabLabel": "Case Flags",
     "TabDisplayOrder": 28,
-    "CaseFieldID": "caseFlags",
+    "CaseFieldID": "applicantFlags",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -4281,7 +4283,8 @@
     "TabID": "caseFlagsTab",
     "TabLabel": "Case Flags",
     "TabDisplayOrder": 28,
-    "CaseFieldID": "applicantFlagsLbl",
+    "CaseFieldID": "respondentFlags",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "TabFieldDisplayOrder": 3
   },
   {
@@ -4290,44 +4293,8 @@
     "TabID": "caseFlagsTab",
     "TabLabel": "Case Flags",
     "TabDisplayOrder": 28,
-    "CaseFieldID": "applicantFlags",
-    "TabFieldDisplayOrder": 4
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "caseFlagsTab",
-    "TabLabel": "Case Flags",
-    "TabDisplayOrder": 28,
-    "CaseFieldID": "respondentFlagsLbl",
-    "TabFieldDisplayOrder": 5
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "caseFlagsTab",
-    "TabLabel": "Case Flags",
-    "TabDisplayOrder": 28,
-    "CaseFieldID": "respondentFlags",
-    "TabFieldDisplayOrder": 6
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "caseFlagsTab",
-    "TabLabel": "Case Flags",
-    "TabDisplayOrder": 28,
-    "CaseFieldID": "flagLauncherLbl",
-    "TabFieldDisplayOrder": 7
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "caseFlagsTab",
-    "TabLabel": "Case Flags",
-    "TabDisplayOrder": 28,
     "CaseFieldID": "flagLauncher",
-    "TabFieldDisplayOrder": 8,
+    "TabFieldDisplayOrder": 4,
     "DisplayContextParameter": "#ARGUMENT(READ)"
   }
 ]

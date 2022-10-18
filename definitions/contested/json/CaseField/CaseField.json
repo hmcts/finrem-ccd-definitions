@@ -4677,28 +4677,10 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "caseFlagsLbl",
-    "Label": "## Case Flags",
-    "HintText": "Case Flags",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "caseFlags",
     "Label": "Case Flags",
     "HintText": "Case Flags",
     "FieldType": "Flags",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicantFlagsLbl",
-    "Label": "## Flags for Applicant",
-    "HintText": "Case Flags (Applicant)",
-    "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
@@ -4713,28 +4695,10 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respondentFlagsLbl",
-    "Label": "## Flags for Respondent",
-    "HintText": "Case Flags (Respondent)",
-    "FieldType": "Label",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "respondentFlags",
     "Label": "Flags for Respondent",
     "HintText": "Flags for Respondent",
     "FieldType": "Flags",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "flagLauncherLbl",
-    "Label": "## Launch the Flags screen",
-    "HintText": "Launch the Flags screen",
-    "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
