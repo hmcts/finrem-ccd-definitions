@@ -1277,6 +1277,39 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalHearingDocumentsOptionLabel",
+    "Label": "#### Do you want to upload any other documents ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalHearingDocumentsOption",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalListOfHearingDocumentsLabel",
+    "Label": "#### Please upload any additional documents related to hearing.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalListOfHearingDocuments",
+    "Label": " ",
+    "FieldType": "Document",
+    "FieldShowCondition": "additionalHearingDocumentsOption=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "fastTrackWranMsg",
     "Label": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks",
     "FieldType": "Label",
@@ -4639,6 +4672,57 @@
     "ID": "generalApplicationDirectionsList",
     "Label": "Please select from general application",
     "FieldType": "DynamicList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appBarristerCollectionLabel",
+    "FieldType": "Label",
+    "Label": "## Applicant's Barristers",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appBarristerCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_BarristerCollection",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respBarristerCollectionLabel",
+    "FieldType": "Label",
+    "Label": "## Respondent's Barristers",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respBarristerCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_BarristerCollection",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "barristerParty",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "barristerPartyList",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "barristerPartyLabel",
+    "FieldType": "Label",
+    "Label": "Select Party to which the barrister change applies: ",
     "SecurityClassification": "Public"
   }
 ]

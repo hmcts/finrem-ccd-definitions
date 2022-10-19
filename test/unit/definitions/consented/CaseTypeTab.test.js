@@ -70,7 +70,8 @@ describe('CaseTypeTab', () => {
     Notes: 14,
     Judge: 15,
     'ChangeOfRepresentativesTab-judiciary': 16,
-    'ChangeOfRepresentativesTab-courtadmin': 17
+    'ChangeOfRepresentativesTab-courtadmin': 17,
+    scheduleAndListingHearingTab: 18
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -107,7 +108,8 @@ describe('CaseTypeTab', () => {
       'RespondentAddressConfidential-courtadmin',
       'RespondentAddressConfidential-judiciary',
       'ChangeOfRepresentativesTab-judiciary',
-      'ChangeOfRepresentativesTab-courtadmin'
+      'ChangeOfRepresentativesTab-courtadmin',
+      'scheduleAndListingHearingTab'
     ]);
   });
 

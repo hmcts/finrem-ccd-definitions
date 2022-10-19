@@ -25,5 +25,23 @@
     "Description": "Role specified by CCD",
     "JurisdictionID": "DIVORCE",
     "SecurityClassification": "Public"
+  },
+  {
+  "LiveFrom": "01/01/2019",
+  "CaseTypeID": "FinancialRemedyContested",
+  "ID": "[APPBARRISTER]",
+  "Name": "Applicant's Barrister",
+  "Description": "Applicant's Barrister",
+  "JurisdictionID": "DIVORCE",
+  "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "[RESPBARRISTER]",
+    "Name": "Respondent's Barrister",
+    "Description": "Respondent's Barrister",
+    "JurisdictionID": "DIVORCE",
+    "SecurityClassification": "Public"
   }
 ]

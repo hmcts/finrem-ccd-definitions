@@ -21,7 +21,7 @@ async function contestedApplicantDetails() {
   const I = this;
 
   //I.waitForText('Applicant’s Details')
-    I.waitForElement('#applicantDetailsLabel');
+    I.waitForElement('h2', 'Applicant’s Details');
     I.waitForElement('input[id="applicantFMName"]');
 
   if (testForAccessibility==='true') {

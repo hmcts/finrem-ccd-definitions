@@ -15,7 +15,7 @@ function amendApplicationDetails() {
   I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('DIVORCE / DISSOLUTION DETAILS', '90');
+  I.waitForText('APPLICATION DETAILS', '90');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D84321');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
