@@ -385,7 +385,7 @@
     "Name": "Upload Draft Order",
     "Description": "Upload Draft Order",
     "DisplayOrder": 32,
-    "PreConditionState(s)": "solicitorDraftOrder;caseFileSubmitted",
+    "PreConditionState(s)": "solicitorDraftOrder;caseFileSubmitted;prepareForHearing",
     "PostConditionState": "reviewOrder",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
