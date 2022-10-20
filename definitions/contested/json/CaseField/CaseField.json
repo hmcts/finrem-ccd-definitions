@@ -1020,6 +1020,22 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "01/01/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "urgentCaseQuestionLabel",
+    "Label": "## Is this an urgent case ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "promptForUrgentCaseQuestion",
+    "Label": "          ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadOtherDocumentLabel",
