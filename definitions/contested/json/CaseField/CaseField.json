@@ -464,6 +464,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "natureOfApplicationChecklistSchedule",
+    "Label": "  ",
+    "HintText": "Select all that apply",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_natureApplication_sch",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "propertyAdjutmentOrderDetailLabel",
     "Label": "## Property adjustment order details",
     "FieldType": "Label",
@@ -4723,6 +4733,40 @@
     "ID": "barristerPartyLabel",
     "FieldType": "Label",
     "Label": "Select Party to which the barrister change applies: ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "typeOfApplicationLabel",
+    "FieldType": "Label",
+    "Label": "## What type of application is this?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "typeOfApplication",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "schedule1OrMatrimonialAndCPList",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "childrenDetailsLabel",
+    "FieldType": "Label",
+    "Label": "## Child(ren) details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "childrenCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_childrenCollection",
+    "Label": " ",
     "SecurityClassification": "Public"
   }
 ]
