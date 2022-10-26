@@ -90,6 +90,7 @@ def checkForNoCleanupLabel(branch_name) {
 
 withPipeline("nodejs", product, component) {
 
+  enableHighLevelDataSetup()
   loadVaultSecrets(secrets)
 
   after('test') {
