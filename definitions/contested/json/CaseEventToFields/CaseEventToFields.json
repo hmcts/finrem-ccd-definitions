@@ -898,6 +898,7 @@
     "PageID": 11,
     "PageDisplayOrder": 11,
     "PageColumnNumber": 1,
+    "PageShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\"",
     "FieldShowCondition": "paymentForChildrenDecision=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
@@ -911,7 +912,6 @@
     "PageID": 11,
     "PageDisplayOrder": 11,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "paymentForChildrenDecision=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -4214,6 +4214,7 @@
     "PageID": 11,
     "PageDisplayOrder": 11,
     "PageColumnNumber": 1,
+    "PageShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\"",
     "FieldShowCondition": "paymentForChildrenDecision=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
