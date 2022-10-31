@@ -111,6 +111,7 @@
     "DisplayOrder": 9,
     "PreConditionState(s)": "applicationSubmitted",
     "PostConditionState": "applicationIssued",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/generate-contested-mini-form-a",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/contest-application-issued",
