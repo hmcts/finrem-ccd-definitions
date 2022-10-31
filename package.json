@@ -84,7 +84,9 @@
     "generate-excel-all-contested": "yarn generate-excel-contested && yarn generate-excel-local-contested && yarn generate-excel-demo-contested && yarn generate-excel-aat-contested && yarn generate-excel-ithc-contested && yarn generate-excel-demo-prod-like-contested && yarn generate-excel-perftest-contested && yarn generate-excel-prod-contested",
     "copy-common-components-consented": "cp -R definitions/common/json/* definitions/consented/json",
     "copy-common-components-contested": "cp -R definitions/common/json/* definitions/contested/json",
-    "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested"
+    "copy-xlxs-to-resources": "cp -R /definitions/contested/xlsx/ccd-config-${FR_ENV:-base}-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R /definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
+    "highLevelDataSetup": "yarn run copy-xlxs-to-resources && ./gradlew highLevelDataSetup --args=$1"
   },
   "pre-commit": [
     "lint"
