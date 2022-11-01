@@ -1022,6 +1022,22 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "promptForUrgentCaseQuestionLabel",
+    "Label": "## Is this an urgent case ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "promptForUrgentCaseQuestion",
+    "Label": "          ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadOtherDocumentLabel",
     "Label": "## Upload other documents",
     "FieldType": "Label",
