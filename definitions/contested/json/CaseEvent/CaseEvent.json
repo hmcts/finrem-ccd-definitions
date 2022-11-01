@@ -897,7 +897,7 @@
     "Name": "Manual Payment",
     "Description": "Manual Payment",
     "DisplayOrder": 8,
-    "PreConditionState(s)": "caseAdded",
+    "PreConditionState(s)": "caseAdded;paperCaseAdded",
     "PostConditionState": "applicationSubmitted",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/manual-payment",
     "SecurityClassification": "Public",
