@@ -226,5 +226,12 @@
     "Label": "North Wales Court List",
     "DisplayOrder": 29,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "promptForUrgentCaseQuestion",
+    "Label": "Urgent Case",
+    "DisplayOrder": 30
   }
 ]
