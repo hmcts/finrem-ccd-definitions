@@ -662,7 +662,7 @@
     "TabDisplayOrder": 5,
     "CaseFieldID": "natureOfApplicationChecklistSchedule",
     "FieldShowCondition": "typeOfApplication=\"Under paragraph 1 or 2 of schedule 1 children act 1989\"",
-    "TabFieldDisplayOrder": 2
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -671,16 +671,6 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "propertyAdjutmentOrderDetailLabel",
-    "TabFieldDisplayOrder": 3,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "natureOfApplicationTab",
-    "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "propertyAddress",
     "TabFieldDisplayOrder": 4,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
@@ -690,7 +680,7 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "mortgageDetail",
+    "CaseFieldID": "propertyAddress",
     "TabFieldDisplayOrder": 5,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
@@ -700,8 +690,18 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "propertyAdjutmentOrderDetail",
+    "CaseFieldID": "mortgageDetail",
     "TabFieldDisplayOrder": 6,
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "natureOfApplicationTab",
+    "TabLabel": "Nature of Application",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "propertyAdjutmentOrderDetail",
+    "TabFieldDisplayOrder": 7,
     "FieldShowCondition": "additionalPropertyOrderDecision=\"Yes\""
   },
   {
@@ -711,16 +711,6 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
     "CaseFieldID": "orderForChildrenLabel",
-    "TabFieldDisplayOrder": 7,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "natureOfApplicationTab",
-    "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "tabPaymentForChildrenLabel",
     "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
   },
@@ -730,7 +720,7 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "paymentForChildrenDecision",
+    "CaseFieldID": "tabPaymentForChildrenLabel",
     "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
   },
@@ -740,7 +730,7 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "tabBenefitForChildrenLabel",
+    "CaseFieldID": "paymentForChildrenDecision",
     "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
   },
@@ -750,7 +740,7 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "benefitForChildrenDecision",
+    "CaseFieldID": "tabBenefitForChildrenLabel",
     "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
   },
@@ -760,9 +750,9 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "benefitPaymentChecklistLabel",
+    "CaseFieldID": "benefitForChildrenDecision",
     "TabFieldDisplayOrder": 12,
-    "FieldShowCondition": "benefitForChildrenDecision=\"No\""
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -770,7 +760,7 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
-    "CaseFieldID": "benefitPaymentChecklist",
+    "CaseFieldID": "benefitPaymentChecklistLabel",
     "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "benefitForChildrenDecision=\"No\""
   },
@@ -780,8 +770,18 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 5,
+    "CaseFieldID": "benefitPaymentChecklist",
+    "TabFieldDisplayOrder": 14,
+    "FieldShowCondition": "benefitForChildrenDecision=\"No\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "natureOfApplicationTab",
+    "TabLabel": "Nature of Application",
+    "TabDisplayOrder": 5,
     "CaseFieldID": "issueDate",
-    "TabFieldDisplayOrder": 14
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
