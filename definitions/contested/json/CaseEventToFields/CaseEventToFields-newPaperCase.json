@@ -1668,7 +1668,7 @@
     "PageID": 20,
     "PageDisplayOrder": 20,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"variationOrder\"",
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"variationOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"variationOrder\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1681,7 +1681,7 @@
     "PageID": 20,
     "PageDisplayOrder": 20,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"variationOrder\"",
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"variationOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"variationOrder\"",
     "ShowSummaryChangeOption": "Y"
   },
   {

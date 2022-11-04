@@ -1210,6 +1210,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDateOfMarriage",
+    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
     "TabFieldDisplayOrder": 6
   },
   {
@@ -1219,6 +1220,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDateOfSepration",
+    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
     "TabFieldDisplayOrder": 7
   },
   {
@@ -1228,6 +1230,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDivorcePetitionIssuedDate",
+    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
     "TabFieldDisplayOrder": 8
   },
   {
@@ -1237,6 +1240,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabNameOfCourtDivorceCentre",
+    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
     "TabFieldDisplayOrder": 9
   },
   {
@@ -1247,7 +1251,7 @@
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDivorceDecreeAbsoluteDate",
     "TabFieldDisplayOrder": 10,
-    "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
+    "FieldShowCondition": "divorceStageReached=\"Decree Absolute\" AND typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1257,7 +1261,7 @@
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDivorceDecreeNisiDate",
     "TabFieldDisplayOrder": 11,
-    "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
+    "FieldShowCondition": "divorceStageReached=\"Decree Nisi\" AND typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\""
   },
   {
     "LiveFrom": "01/01/2017",
