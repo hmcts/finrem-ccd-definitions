@@ -1038,6 +1038,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": " promptForUrgentCaseQuestion ",
+    "Label": "Provide details as to why the case is urgent",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadOtherDocumentLabel",
     "Label": "## Upload other documents",
     "FieldType": "Label",
