@@ -10,188 +10,190 @@ String component = "ccd-definitions"
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
 def secrets = [
-        's2s-${env}'      : [
-                secret('microservicekey-ccd-data', 'DATA_STORE_S2S_KEY'),
-                secret('microservicekey-ccd-definition', 'DEFINITION_STORE_S2S_KEY'),
-                secret('microservicekey-ccd-gw', 'API_GATEWAY_S2S_KEY'),
-                secret('microservicekey-ccd-ps', 'PRINT_S2S_KEY'),
-                secret('microservicekey-ccd-admin', 'ADMIN_S2S_KEY')
-        ],
-        'ccd-${env}'      : [
-                secret('ccd-api-gateway-oauth2-client-secret', 'API_GATEWAY_IDAM_SECRET'),
-                secret('ccd-admin-web-oauth2-client-secret', 'ADMIN_WEB_IDAM_SECRET'),
-                secret('postcode-info-address-lookup-token', 'ADDRESS_LOOKUP_TOKEN'),
-                secret('idam-data-store-client-secret','IDAM_OAUTH2_DATA_STORE_CLIENT_SECRET'),
-                secret('idam-data-store-system-user-username','IDAM_DATA_STORE_SYSTEM_USER_USERNAME'),
-                secret('idam-data-store-system-user-password','IDAM_DATA_STORE_SYSTEM_USER_PASSWORD'),
-                secret('AppInsightsInstrumentationKey', 'APP_INSIGHTS_INSTRUMENTATION_KEY')
-        ],
-        'finrem-${env}'      : [
-                secret('fixedlists-consented-judgedetails-1', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_1'),
-                secret('fixedlists-consented-judgedetails-2', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_2'),
-                secret('fixedlists-consented-judgedetails-3', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_3'),
-                secret('fixedlists-consented-judgedetails-4', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_4'),
-                secret('fixedlists-consented-judgedetails-5', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_5'),
-                secret('fixedlists-consented-judgedetails-6', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_6'),
-                secret('fixedlists-consented-judgedetails-7', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_7'),
-                secret('fixedlists-consented-judgedetails-8', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_8'),
-                secret('userprofile-consented-judgedetails-1', 'USERPROFILE_CONSENTED_JUDGEDETAILS_1'),
-                secret('userprofile-consented-judgedetails-2', 'USERPROFILE_CONSENTED_JUDGEDETAILS_2'),
-                secret('userprofile-consented-judgedetails-3', 'USERPROFILE_CONSENTED_JUDGEDETAILS_3'),
-                secret('userprofile-consented-judgedetails-4', 'USERPROFILE_CONSENTED_JUDGEDETAILS_4'),
-                secret('userprofile-consented-judgedetails-5', 'USERPROFILE_CONSENTED_JUDGEDETAILS_5'),
-                secret('userprofile-consented-judgedetails-6', 'USERPROFILE_CONSENTED_JUDGEDETAILS_6'),
-                secret('userprofile-consented-judgedetails-7', 'USERPROFILE_CONSENTED_JUDGEDETAILS_7'),
-                secret('userprofile-consented-judgedetails-8', 'USERPROFILE_CONSENTED_JUDGEDETAILS_8'),
-                secret('userprofile-consented-judgedetails-9', 'USERPROFILE_CONSENTED_JUDGEDETAILS_9'),
-                secret('userprofile-contested-judgedetails', 'USERPROFILE_CONTESTED_JUDGEDETAILS'),
-                secret('username-solicitor', 'USERNAME_SOLICITOR'),
-                secret('password-solicitor', 'PASSWORD_SOLICITOR'),
-                secret('username-caseworker', 'USERNAME_CASEWORKER'),
-                secret('password-caseworker', 'PASSWORD_CASEWORKER'),
-                secret('fr-judge-username','USERNAME_JUDGE'),
-                secret('fr-judge-password', 'PASSWORD_JUDGE'),
-                secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
-                secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
-                secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
-                secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
-                secret('finrem-doc-s2s-auth-secret', 'FINREM_DOC_GEN_SERVICE_S2S_KEY'),
-                secret('docmosis-api-key', 'PDF_SERVICE_ACCESS_KEY'),
-                secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
-                secret('docmosis-endpoint', 'PDF_SERVICE_BASEURL'),
-                secret('gov-uk-notification-key', 'UK_GOV_NOTIFY_API_KEY'),
-                secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY'),
-                secret('idam-caa-username', 'IDAM_CAA_USERNAME'),
-                secret('idam-caa-password', 'IDAM_CAA_PASSWORD'),
-                secret('manage-case-s2s-key', 'MANAGE_CASE_S2S_KEY'),
-                secret('idam-noc-approver-username', 'IDAM_NOC_APPROVER_USERNAME'),
-                secret('idam-noc-approver-password', 'IDAM_NOC_APPROVER_PASSWORD'),
-                secret('notify-mca-api-key', 'NOTIFY_MCA_API_KEY'),
-                secret('finrem-system-update-username', 'FINREM_SYSTEMUPDATE_USERNAME'),
-                secret('finrem-system-update-password', 'FINREM_SYSTEMUPDATE_PASSWORD'),
-                secret('idam-mca-client-secret', 'IDAM_MCA_CLIENT_SECRET'),
-                secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET')
+    's2s-${env}'   : [
+        secret('microservicekey-ccd-data', 'DATA_STORE_S2S_KEY'),
+        secret('microservicekey-ccd-definition', 'DEFINITION_STORE_S2S_KEY'),
+        secret('microservicekey-ccd-gw', 'API_GATEWAY_S2S_KEY'),
+        secret('microservicekey-ccd-ps', 'PRINT_S2S_KEY'),
+        secret('microservicekey-ccd-admin', 'ADMIN_S2S_KEY')
+    ],
+    'ccd-${env}'   : [
+        secret('ccd-api-gateway-oauth2-client-secret', 'API_GATEWAY_IDAM_SECRET'),
+        secret('ccd-admin-web-oauth2-client-secret', 'ADMIN_WEB_IDAM_SECRET'),
+        secret('postcode-info-address-lookup-token', 'ADDRESS_LOOKUP_TOKEN'),
+        secret('idam-data-store-client-secret', 'IDAM_OAUTH2_DATA_STORE_CLIENT_SECRET'),
+        secret('idam-data-store-system-user-username', 'IDAM_DATA_STORE_SYSTEM_USER_USERNAME'),
+        secret('idam-data-store-system-user-password', 'IDAM_DATA_STORE_SYSTEM_USER_PASSWORD'),
+        secret('definition-importer-username', 'DEFINITION_IMPORTER_USERNAME'),
+        secret('definition-importer-password', 'DEFINITION_IMPORTER_PASSWORD'),
+        secret('AppInsightsInstrumentationKey', 'APP_INSIGHTS_INSTRUMENTATION_KEY')
+    ],
+    'finrem-${env}': [
+        secret('fixedlists-consented-judgedetails-1', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_1'),
+        secret('fixedlists-consented-judgedetails-2', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_2'),
+        secret('fixedlists-consented-judgedetails-3', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_3'),
+        secret('fixedlists-consented-judgedetails-4', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_4'),
+        secret('fixedlists-consented-judgedetails-5', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_5'),
+        secret('fixedlists-consented-judgedetails-6', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_6'),
+        secret('fixedlists-consented-judgedetails-7', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_7'),
+        secret('fixedlists-consented-judgedetails-8', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_8'),
+        secret('userprofile-consented-judgedetails-1', 'USERPROFILE_CONSENTED_JUDGEDETAILS_1'),
+        secret('userprofile-consented-judgedetails-2', 'USERPROFILE_CONSENTED_JUDGEDETAILS_2'),
+        secret('userprofile-consented-judgedetails-3', 'USERPROFILE_CONSENTED_JUDGEDETAILS_3'),
+        secret('userprofile-consented-judgedetails-4', 'USERPROFILE_CONSENTED_JUDGEDETAILS_4'),
+        secret('userprofile-consented-judgedetails-5', 'USERPROFILE_CONSENTED_JUDGEDETAILS_5'),
+        secret('userprofile-consented-judgedetails-6', 'USERPROFILE_CONSENTED_JUDGEDETAILS_6'),
+        secret('userprofile-consented-judgedetails-7', 'USERPROFILE_CONSENTED_JUDGEDETAILS_7'),
+        secret('userprofile-consented-judgedetails-8', 'USERPROFILE_CONSENTED_JUDGEDETAILS_8'),
+        secret('userprofile-consented-judgedetails-9', 'USERPROFILE_CONSENTED_JUDGEDETAILS_9'),
+        secret('userprofile-contested-judgedetails', 'USERPROFILE_CONTESTED_JUDGEDETAILS'),
+        secret('username-solicitor', 'USERNAME_SOLICITOR'),
+        secret('password-solicitor', 'PASSWORD_SOLICITOR'),
+        secret('username-caseworker', 'USERNAME_CASEWORKER'),
+        secret('password-caseworker', 'PASSWORD_CASEWORKER'),
+        secret('fr-judge-username', 'USERNAME_JUDGE'),
+        secret('fr-judge-password', 'PASSWORD_JUDGE'),
+        secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
+        secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
+        secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
+        secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
+        secret('finrem-doc-s2s-auth-secret', 'FINREM_DOC_GEN_SERVICE_S2S_KEY'),
+        secret('docmosis-api-key', 'PDF_SERVICE_ACCESS_KEY'),
+        secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
+        secret('docmosis-endpoint', 'PDF_SERVICE_BASEURL'),
+        secret('gov-uk-notification-key', 'UK_GOV_NOTIFY_API_KEY'),
+        secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY'),
+        secret('idam-caa-username', 'IDAM_CAA_USERNAME'),
+        secret('idam-caa-password', 'IDAM_CAA_PASSWORD'),
+        secret('manage-case-s2s-key', 'MANAGE_CASE_S2S_KEY'),
+        secret('idam-noc-approver-username', 'IDAM_NOC_APPROVER_USERNAME'),
+        secret('idam-noc-approver-password', 'IDAM_NOC_APPROVER_PASSWORD'),
+        secret('notify-mca-api-key', 'NOTIFY_MCA_API_KEY'),
+        secret('finrem-system-update-username', 'FINREM_SYSTEMUPDATE_USERNAME'),
+        secret('finrem-system-update-password', 'FINREM_SYSTEMUPDATE_PASSWORD'),
+        secret('idam-mca-client-secret', 'IDAM_MCA_CLIENT_SECRET'),
+        secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET')
 
-        ]
+    ]
 ]
 
 static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
-  [ $class: 'AzureKeyVaultSecret',
-    secretType: 'Secret',
-    name: secretName,
-    version: '',
-    envVariable: envVar
-  ]
+    [$class     : 'AzureKeyVaultSecret',
+     secretType : 'Secret',
+     name       : secretName,
+     version    : '',
+     envVariable: envVar
+    ]
 }
 
 def checkForNoCleanupLabel(branch_name) {
-  return new GithubAPI(this).getLabelsbyPattern(branch_name, "cleanup").contains("no_cleanup")
+    return new GithubAPI(this).getLabelsbyPattern(branch_name, "cleanup").contains("no_cleanup")
 }
 
 withPipeline("nodejs", product, component) {
 
-  enableHighLevelDataSetup()
-  loadVaultSecrets(secrets)
+    enableHighLevelDataSetup()
+    loadVaultSecrets(secrets)
 
-  after('test') {
-    // enable yarn audit and send message on master branch only
-    try {
-      yarnBuilder.yarn('audit')
-    } catch (error) {
-      onMaster {
-        slackSend(channel: '#finrem-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
-      }
+    after('test') {
+        // enable yarn audit and send message on master branch only
+        try {
+            yarnBuilder.yarn('audit')
+        } catch (error) {
+            onMaster {
+                slackSend(channel: '#finrem-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
+            }
+        }
     }
-  }
 
-  before('functionalTest:preview') {
-    yarnBuilder.yarn('setup')
+    before('functionalTest:preview') {
+        yarnBuilder.yarn('setup')
 
-    env.CCD_ADMIN_URL="https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-    env.CCD_WEB_URL="https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-  }
-
-  after('functionalTest:preview') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
-  }
-
-  before('highLevelDataSetup') {
-      if(env.ENV == 'preview'){
-          env.COS_API_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
-          env.AAC_API_URL="https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-          env.CCD_DATA_API_URL="https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-          stageWithAgent('Generate Financial Remedy Consented Case config', product) {
-              yarnBuilder.yarn('generate-excel-preview-consented')
-          }
-          stageWithAgent('Generate Financial Remedy Contested Case config', product) {
-              yarnBuilder.yarn('generate-excel-preview-contested')
-          }
-
-          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-      }else {
-          stageWithAgent('Generate Financial Remedy Consented Case config', product) {
-              dir('definitions/consented/json/UserProfile') {
-                  sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
-                  sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_2} > UserProfile-judgeDetails2-prod.json'
-                  sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_3} > UserProfile-judgeDetails3-prod.json'
-                  sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_4} > UserProfile-judgeDetails4-prod.json'
-                  sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_5} > UserProfile-judgeDetails5-prod.json'
-                  sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_6} > UserProfile-judgeDetails6-prod.json'
-              }
-
-              dir('definitions/consented/json/FixedLists') {
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
-              }
-
-              yarnBuilder.yarn('generate-excel-all-consented')
-          }
-
-          stageWithAgent('Generate Financial Remedy Contested Case config', product) {
-              dir('definitions/contested/json/FixedLists') {
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
-                  sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
-              }
-
-              yarnBuilder.yarn('generate-excel-all-contested')
-          }
-          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-      }
-  }
-
-  before('functionalTest:aat') {
-    yarnBuilder.yarn('setup')
-
-    env.CCD_ADMIN_URL="https://ccd-admin-web.aat.platform.hmcts.net"
-    env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
-    env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
-    env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
-    env.CCD_CONSENTED_FILE_NAME="ccd-config-aat-consented-${GIT_COMMIT}.xlsx"
-    env.CCD_CONTESTED_FILE_NAME="ccd-config-aat-contested-${GIT_COMMIT}.xlsx"
-  }
-
-  after('functionalTest:aat') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
-    slackSend(channel: '#finrem-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
-  }
-
-
-  onPR {
-    if (!checkForNoCleanupLabel(env.BRANCH_NAME)) {
-      enableCleanupOfHelmReleaseOnSuccess()
+        env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+        env.CCD_WEB_URL = "https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     }
-  }
+
+    after('functionalTest:preview') {
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
+    }
+
+    before('highLevelDataSetup') {
+        if (env.ENV == 'preview') {
+            env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
+            env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+            env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+            stageWithAgent('Generate Financial Remedy Consented Case config', product) {
+                yarnBuilder.yarn('generate-excel-preview-consented')
+            }
+            stageWithAgent('Generate Financial Remedy Contested Case config', product) {
+                yarnBuilder.yarn('generate-excel-preview-contested')
+            }
+
+            steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+        } else {
+            stageWithAgent('Generate Financial Remedy Consented Case config', product) {
+                dir('definitions/consented/json/UserProfile') {
+                    sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
+                    sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_2} > UserProfile-judgeDetails2-prod.json'
+                    sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_3} > UserProfile-judgeDetails3-prod.json'
+                    sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_4} > UserProfile-judgeDetails4-prod.json'
+                    sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_5} > UserProfile-judgeDetails5-prod.json'
+                    sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_6} > UserProfile-judgeDetails6-prod.json'
+                }
+
+                dir('definitions/consented/json/FixedLists') {
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
+                }
+
+                yarnBuilder.yarn('generate-excel-all-consented')
+            }
+
+            stageWithAgent('Generate Financial Remedy Contested Case config', product) {
+                dir('definitions/contested/json/FixedLists') {
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
+                    sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
+                }
+
+                yarnBuilder.yarn('generate-excel-all-contested')
+            }
+            steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+        }
+    }
+
+    before('functionalTest:aat') {
+        yarnBuilder.yarn('setup')
+
+        env.CCD_ADMIN_URL = "https://ccd-admin-web.aat.platform.hmcts.net"
+        env.CCD_DATA_API_URL = "http://ccd-data-store-api-aat.service.core-compute-aat.internal"
+        env.CCD_WEB_URL = "https://manage-case.aat.platform.hmcts.net"
+        env.XUI_ORG_WEB_URL = "https://manage-org.aat.platform.hmcts.net"
+        env.CCD_CONSENTED_FILE_NAME = "ccd-config-aat-consented-${GIT_COMMIT}.xlsx"
+        env.CCD_CONTESTED_FILE_NAME = "ccd-config-aat-contested-${GIT_COMMIT}.xlsx"
+    }
+
+    after('functionalTest:aat') {
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
+        slackSend(channel: '#finrem-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
+    }
+
+
+    onPR {
+        if (!checkForNoCleanupLabel(env.BRANCH_NAME)) {
+            enableCleanupOfHelmReleaseOnSuccess()
+        }
+    }
 }
 
