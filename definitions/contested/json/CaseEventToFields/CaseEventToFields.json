@@ -1989,7 +1989,6 @@
   "PageID": 23,
   "PageDisplayOrder": 23,
   "PageColumnNumber": 1,
-  "FieldShowCondition": "applicantRepresented=\"No\"",
   "ShowSummaryChangeOption": "Y"
 },
   {
@@ -1997,7 +1996,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "urgentCaseQuestionDetails",
-    "PageFieldDisplayOrder": 8,
+    "PageFieldDisplayOrder": 9,
     "DisplayContext": "MANDATORY",
     "PageID": 23,
     "PageDisplayOrder": 23,
