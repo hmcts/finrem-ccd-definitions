@@ -1652,24 +1652,38 @@
     "CRUD": "R"
   },
   {
-    "LiveFrom": "13/12/2019",
+    "LiveFrom": "22/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "migrateGeneralApplication",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CR"
+    "CaseEventID": "updateGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
   },
   {
-    "LiveFrom": "13/12/2019",
+    "LiveFrom": "22/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "migrateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
+    "CRUD": "CRU"
   },
   {
-    "LiveFrom": "13/12/2019",
+    "LiveFrom": "22/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "migrateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "updateGeneralApplication",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "updateGeneralApplication",
+    "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "R"
   }
 ]

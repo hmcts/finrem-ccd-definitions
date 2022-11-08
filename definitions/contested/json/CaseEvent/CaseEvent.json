@@ -1216,9 +1216,9 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "migrateGeneralApplication",
-    "Name": "Migrate General Application",
-    "Description": "Migrate General Application",
+    "ID": "updateGeneralApplication",
+    "Name": "Update General Appl. Status",
+    "Description": "Update General Application Status",
     "DisplayOrder": 146,
     "PreConditionState(s)": "applicationIssued;schedulingAndHearing;prepareForHearing;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;caseWorkerReview;gateKeepingAndAllocation;caseFileSubmitted;reviewOrder;awaitingJudiciaryResponse;close;orderSent;generalApplication;generalApplicationOutcome",
     "PostConditionState": "generalApplicationOutcome",
