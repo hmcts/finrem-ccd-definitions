@@ -4726,6 +4726,22 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "variationOrderDocumentLabel",
+    "Label": "## Upload original order to be varied",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "variationOrderDocument",
+    "Label": "Original order to be varied",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "caseFlags",
