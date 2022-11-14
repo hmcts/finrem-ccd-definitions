@@ -127,6 +127,7 @@ withPipeline("nodejs", product, component) {
                 yarnBuilder.yarn('generate-excel-preview-contested')
             }
 
+            yarnBuilder.yarn('copy-preview-xlxs-to-resources')
             steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
         } else {
             stageWithAgent('Generate Financial Remedy Consented Case config', product) {
@@ -168,6 +169,18 @@ withPipeline("nodejs", product, component) {
                 yarnBuilder.yarn('generate-excel-all-contested')
             }
             steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+
+            if (env.ENV == 'aat') {
+                yarnBuilder.yarn('copy-aat-xlxs-to-resources')
+            } else if (env.ENV == 'ithc') {
+                yarnBuilder.yarn('copy-ithc-xlxs-to-resources')
+            } else if (env.ENV == 'perftest') {
+                yarnBuilder.yarn('copy-perftest-xlxs-to-resources')
+            } else if (env.ENV == 'demo') {
+                yarnBuilder.yarn('copy-demo-xlxs-to-resources')
+            } else if (env.ENV == 'prod') {
+                yarnBuilder.yarn('copy-prod-xlxs-to-resources')
+            }
         }
     }
 
