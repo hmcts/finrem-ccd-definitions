@@ -91,8 +91,7 @@
     "copy-ithc-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-ithc-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-ithc-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "copy-perftest-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-perftest-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-perftest-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "copy-prod-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-prod-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-prod-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
-    "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
-    "highLevelDataSetup": "./gradlew highLevelDataSetup --args=$1"
+    "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested"
   },
   "pre-commit": [
     "lint"
