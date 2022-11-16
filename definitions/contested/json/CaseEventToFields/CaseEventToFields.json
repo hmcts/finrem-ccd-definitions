@@ -898,7 +898,7 @@
     "PageID": 11,
     "PageDisplayOrder": 11,
     "PageColumnNumber": 1,
-    "PageShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\"",
+    "PageShowCondition": "(typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\" AND natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" AND paymentForChildrenDecision=\"Yes\") OR (typeOfApplication=\"Under paragraph 1 or 2 of schedule 1 children act 1989\" AND natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\" AND paymentForChildrenDecision=\"Yes\")",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -4326,7 +4326,7 @@
     "PageID": 11,
     "PageDisplayOrder": 11,
     "PageColumnNumber": 1,
-    "PageShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\"",
+    "PageShowCondition": "(typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\" AND natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" AND paymentForChildrenDecision=\"Yes\") OR (typeOfApplication=\"Under paragraph 1 or 2 of schedule 1 children act 1989\" AND natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\" AND paymentForChildrenDecision=\"Yes\")",
     "ShowSummaryChangeOption": "Y"
   },
   {
