@@ -52,9 +52,9 @@ jacocoTestReport {
 // endregion
 
 task highLevelDataSetup(type: JavaExec) {
-    dependsOn aatClasses
+    dependsOn classes
     main = "finrem.HighLevelDataSetupApp"
-    classpath += configurations.cucumberRuntime + sourceSets.aat.runtimeClasspath
+    classpath +=  sourceSets.test.runtimeClasspath
     jvmArgs = ['--add-opens=java.base/java.lang.reflect=ALL-UNNAMED']
 }
 
