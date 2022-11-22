@@ -116,18 +116,16 @@ withPipeline("nodejs", product, component) {
     }
 
     before('highLevelDataSetup') {
+        sh 'echo generate excel for ${env.ENV}, ${env}'
         if (env.ENV == 'preview') {
             env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
             env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
             env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-            stageWithAgent('Generate Financial Remedy Consented Case config', product) {
-                yarnBuilder.yarn('generate-excel-aat-consented')
-            }
-            stageWithAgent('Generate Financial Remedy Contested Case config', product) {
-                yarnBuilder.yarn('generate-excel-aat-contested')
-            }
+            sh 'echo generate excel for ${env.ENV}, ${env}'
+            yarnBuilder.yarn('generate-excel-preview-consented')
+            yarnBuilder.yarn('generate-excel-preview-contested')
 
-            yarnBuilder.yarn('copy-aat-xlxs-to-resources')
+            yarnBuilder.yarn('copy-preview-xlxs-to-resources')
             steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
         } else {
             stageWithAgent('Generate Financial Remedy Consented Case config', product) {
