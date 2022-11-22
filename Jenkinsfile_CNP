@@ -124,7 +124,7 @@ withPipeline("nodejs", product, component) {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
     }
 
-    before('highLevelDataSetup') {
+    after('test') {
         sh 'echo generate excel for ${env.ENV}, ${env}'
         if (env.ENV == 'preview') {
             env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
