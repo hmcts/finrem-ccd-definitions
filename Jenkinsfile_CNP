@@ -109,6 +109,15 @@ withPipeline("nodejs", product, component) {
 
         env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
         env.CCD_WEB_URL = "https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+        env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
+        env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+        env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+        sh 'echo generate excel for ${env.ENV}, ${env}'
+        yarnBuilder.yarn('generate-excel-preview-consented')
+        yarnBuilder.yarn('generate-excel-preview-contested')
+
+        yarnBuilder.yarn('copy-preview-xlxs-to-resources')
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     }
 
     after('functionalTest:preview') {
