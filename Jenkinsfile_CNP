@@ -128,7 +128,8 @@ withPipeline("nodejs", product, component) {
     }
 
   before('functionalTest:preview') {
-      yarnBuilder.yarn('setup')
+      yarnBuilder.yarn('copy-preview-xlxs-to-resources')
+      yarnBuilder.yarn('copy-aat-xlxs-to-resources')
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
       env.IMPORT_PREVIEW=true
   }
