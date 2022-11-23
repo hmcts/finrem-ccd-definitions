@@ -91,6 +91,7 @@ def checkForNoCleanupLabel(branch_name) {
 withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
+  enableHighLevelDataSetup()
 
   after('test') {
     // enable yarn audit and send message on master branch only
@@ -111,13 +112,9 @@ withPipeline("nodejs", product, component) {
     env.CCD_DATA_API_URL="https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
     stageWithAgent('Generate Financial Remedy Consented Case config', product) {
       yarnBuilder.yarn('generate-excel-preview-consented')
-      yarnBuilder.yarn('generate-excel-aat-consented')
-      yarnBuilder.yarn('generate-excel-demo-consented')
     }
     stageWithAgent('Generate Financial Remedy Contested Case config', product) {
       yarnBuilder.yarn('generate-excel-preview-contested')
-      yarnBuilder.yarn('generate-excel-aat-contested')
-      yarnBuilder.yarn('generate-excel-demo-contested')
     }
 
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
