@@ -104,7 +104,7 @@ withPipeline("nodejs", product, component) {
     }
   }
 
-  before('functionalTest:preview') {
+  before('highLevelDataSetup:preview') {
     yarnBuilder.yarn('setup')
 
     env.COS_API_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
@@ -123,6 +123,7 @@ withPipeline("nodejs", product, component) {
     env.CCD_CONSENTED_FILE_NAME="ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
     env.CCD_CONTESTED_FILE_NAME="ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
     env.IMPORT_PREVIEW=true
+    yarnBuilder.yarn('copy-preview-xlxs-to-resources');
   }
 
   after('functionalTest:preview') {
