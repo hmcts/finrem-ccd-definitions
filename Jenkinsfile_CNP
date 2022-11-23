@@ -129,7 +129,7 @@ withPipeline("nodejs", product, component) {
   before('functionalTest:preview') {
       yarnBuilder.yarn('copy-preview-xlxs-to-resources')
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-      env.IMPORT_PREVIEW=true
+      //env.IMPORT_PREVIEW=true
   }
 
   after('functionalTest:preview') {
