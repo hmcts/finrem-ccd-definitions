@@ -118,7 +118,7 @@ withPipeline("nodejs", product, component) {
         yarnBuilder.yarn('generate-excel-preview-contested')
       }
       yarnBuilder.yarn('copy-preview-xlxs-to-resources');
-      steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_WEB_URL = "https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_CONSENTED_FILE_NAME = "ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
@@ -166,7 +166,7 @@ withPipeline("nodejs", product, component) {
         if(env.ENV == "aat") {
           yarnBuilder.yarn('generate-excel-aat-contested')
           yarnBuilder.yarn('copy-aat-xlxs-to-resources');
-          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+
           env.CCD_ADMIN_URL="https://ccd-admin-web.aat.platform.hmcts.net"
           env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
           env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
@@ -179,6 +179,7 @@ withPipeline("nodejs", product, component) {
   }
 
   after('functionalTest:preview') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
   }
 
