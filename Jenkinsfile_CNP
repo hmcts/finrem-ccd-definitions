@@ -105,7 +105,8 @@ withPipeline("nodejs", product, component) {
   }
 
   before('highleveldatasetup') {
-    if (env == 'preview') {
+    sh 'echo ----------------------------------------------------------------- ${env}'
+    if (env.ENV == 'preview') {
       yarnBuilder.yarn('setup')
 
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
@@ -147,7 +148,7 @@ withPipeline("nodejs", product, component) {
           sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
         }
 
-        yarnBuilder.yarn('generate-excel-${env}-consented')
+        yarnBuilder.yarn('generate-excel-${env.ENV}-consented')
         env.IMPORT_AAT=true
       }
 
@@ -163,17 +164,17 @@ withPipeline("nodejs", product, component) {
           sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
         }
 
-        yarnBuilder.yarn('generate-excel-${env}-contested')
+        yarnBuilder.yarn('generate-excel-${env.ENV}-contested')
       }
 
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-      env.CCD_ADMIN_URL="https://ccd-admin-web.${env}.platform.hmcts.net"
-      env.CCD_DATA_API_URL="http://ccd-data-store-api-${env}.service.core-compute-aat.internal"
-      env.CCD_WEB_URL="https://manage-case.${env}.platform.hmcts.net"
-      env.XUI_ORG_WEB_URL="https://manage-org.${env}.platform.hmcts.net"
-      env.CCD_CONSENTED_FILE_NAME="ccd-config-${env}-consented-${GIT_COMMIT}.xlsx"
-      env.CCD_CONTESTED_FILE_NAME="ccd-config-${env}-contested-${GIT_COMMIT}.xlsx"
-      yarnBuilder.yarn('copy-${env}-xlxs-to-resources');
+      env.CCD_ADMIN_URL="https://ccd-admin-web.${env.ENV}.platform.hmcts.net"
+      env.CCD_DATA_API_URL="http://ccd-data-store-api-${env.ENV}.service.core-compute-aat.internal"
+      env.CCD_WEB_URL="https://manage-case.${env.ENV}.platform.hmcts.net"
+      env.XUI_ORG_WEB_URL="https://manage-org.${env.ENV}.platform.hmcts.net"
+      env.CCD_CONSENTED_FILE_NAME="ccd-config-${env.ENV}-consented-${GIT_COMMIT}.xlsx"
+      env.CCD_CONTESTED_FILE_NAME="ccd-config-${env.ENV}-contested-${GIT_COMMIT}.xlsx"
+      yarnBuilder.yarn('copy-${env.ENV}-xlxs-to-resources');
     }
   }
 
