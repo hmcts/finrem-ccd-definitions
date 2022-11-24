@@ -105,7 +105,7 @@ withPipeline("nodejs", product, component) {
   }
 
   before('highleveldatasetup') {
-    if (env.ENV == 'preview') {
+    if (env == 'preview') {
       yarnBuilder.yarn('setup')
 
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
