@@ -104,7 +104,7 @@ withPipeline("nodejs", product, component) {
     }
   }
 
-  after('highleveldatasetup') {
+  before('highleveldatasetup') {
     if (env.ENV == 'preview') {
       yarnBuilder.yarn('setup')
 
