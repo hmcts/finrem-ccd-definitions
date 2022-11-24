@@ -105,8 +105,7 @@ withPipeline("nodejs", product, component) {
   }
 
   before('highleveldatasetup') {
-    sh 'echo Check----------------------------------------------------------------- ${env.ENV}'
-    if (env.ENV == 'preview') {
+    if (env.ENV == "preview") {
       yarnBuilder.yarn('setup')
 
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
@@ -118,14 +117,14 @@ withPipeline("nodejs", product, component) {
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn('generate-excel-preview-contested')
       }
-
+      yarnBuilder.yarn('copy-preview-xlxs-to-resources');
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_WEB_URL = "https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_CONSENTED_FILE_NAME = "ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
       env.CCD_CONTESTED_FILE_NAME = "ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
       env.IMPORT_PREVIEW = true
-      yarnBuilder.yarn('copy-preview-xlxs-to-resources');
+
     } else {
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         dir('definitions/consented/json/UserProfile'){
@@ -148,7 +147,9 @@ withPipeline("nodejs", product, component) {
           sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
         }
 
-        yarnBuilder.yarn('generate-excel-${env.ENV}-consented')
+        if(env.ENV == "aat") {
+          yarnBuilder.yarn('generate-excel-aat-consented')
+        }
         env.IMPORT_AAT=true
       }
 
@@ -164,9 +165,14 @@ withPipeline("nodejs", product, component) {
           sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
         }
 
-        yarnBuilder.yarn('generate-excel-${env.ENV}-contested')
-      }
+        if(env.ENV == "aat") {
+          yarnBuilder.yarn('generate-excel-aat-contested')
+        }
 
+      }
+      if(env.ENV == "aat") {
+        yarnBuilder.yarn('copy-aat-xlxs-to-resources');
+      }
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
       env.CCD_ADMIN_URL="https://ccd-admin-web.${env.ENV}.platform.hmcts.net"
       env.CCD_DATA_API_URL="http://ccd-data-store-api-${env.ENV}.service.core-compute-aat.internal"
@@ -174,7 +180,7 @@ withPipeline("nodejs", product, component) {
       env.XUI_ORG_WEB_URL="https://manage-org.${env.ENV}.platform.hmcts.net"
       env.CCD_CONSENTED_FILE_NAME="ccd-config-${env.ENV}-consented-${GIT_COMMIT}.xlsx"
       env.CCD_CONTESTED_FILE_NAME="ccd-config-${env.ENV}-contested-${GIT_COMMIT}.xlsx"
-      yarnBuilder.yarn('copy-${env.ENV}-xlxs-to-resources');
+
     }
   }
 
