@@ -172,14 +172,14 @@ withPipeline("nodejs", product, component) {
       }
       if(env.ENV == "aat") {
         yarnBuilder.yarn('copy-aat-xlxs-to-resources');
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+        env.CCD_ADMIN_URL="https://ccd-admin-web.aat.platform.hmcts.net"
+        env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
+        env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
+        env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
+        env.CCD_CONSENTED_FILE_NAME="ccd-config-aat-consented-${GIT_COMMIT}.xlsx"
+        env.CCD_CONTESTED_FILE_NAME="ccd-config-aat-contested-${GIT_COMMIT}.xlsx"
       }
-      steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-      env.CCD_ADMIN_URL="https://ccd-admin-web.${env.ENV}.platform.hmcts.net"
-      env.CCD_DATA_API_URL="http://ccd-data-store-api-${env.ENV}.service.core-compute-aat.internal"
-      env.CCD_WEB_URL="https://manage-case.${env.ENV}.platform.hmcts.net"
-      env.XUI_ORG_WEB_URL="https://manage-org.${env.ENV}.platform.hmcts.net"
-      env.CCD_CONSENTED_FILE_NAME="ccd-config-${env.ENV}-consented-${GIT_COMMIT}.xlsx"
-      env.CCD_CONTESTED_FILE_NAME="ccd-config-${env.ENV}-contested-${GIT_COMMIT}.xlsx"
 
     }
   }
