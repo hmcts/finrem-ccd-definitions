@@ -126,7 +126,7 @@ withPipeline("nodejs", product, component) {
       env.IMPORT_PREVIEW = true
 
     } else {
-      stageWithAgent('Generate Financial Remedy Consented Case config', product) {
+
         dir('definitions/consented/json/UserProfile'){
           sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
           sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_2} > UserProfile-judgeDetails2-prod.json'
@@ -151,9 +151,7 @@ withPipeline("nodejs", product, component) {
           yarnBuilder.yarn('generate-excel-aat-consented')
         }
         env.IMPORT_AAT=true
-      }
 
-      stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         dir('definitions/contested/json/FixedLists'){
           sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
           sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
@@ -167,19 +165,15 @@ withPipeline("nodejs", product, component) {
 
         if(env.ENV == "aat") {
           yarnBuilder.yarn('generate-excel-aat-contested')
+          yarnBuilder.yarn('copy-aat-xlxs-to-resources');
+          steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+          env.CCD_ADMIN_URL="https://ccd-admin-web.aat.platform.hmcts.net"
+          env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
+          env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
+          env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
+          env.CCD_CONSENTED_FILE_NAME="ccd-config-aat-consented-${GIT_COMMIT}.xlsx"
+          env.CCD_CONTESTED_FILE_NAME="ccd-config-aat-contested-${GIT_COMMIT}.xlsx"
         }
-
-      }
-      if(env.ENV == "aat") {
-        yarnBuilder.yarn('copy-aat-xlxs-to-resources');
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-        env.CCD_ADMIN_URL="https://ccd-admin-web.aat.platform.hmcts.net"
-        env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
-        env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
-        env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
-        env.CCD_CONSENTED_FILE_NAME="ccd-config-aat-consented-${GIT_COMMIT}.xlsx"
-        env.CCD_CONTESTED_FILE_NAME="ccd-config-aat-contested-${GIT_COMMIT}.xlsx"
-      }
 
     }
   }
