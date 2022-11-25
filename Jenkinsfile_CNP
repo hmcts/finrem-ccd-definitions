@@ -103,6 +103,7 @@ withPipeline("nodejs", product, component) {
       }
     }
 
+    sh 'echo -------------------------------------------------------------- ${env.ENV}'
     yarnBuilder.yarn('setup')
 
     env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
