@@ -104,7 +104,7 @@ withPipeline("nodejs", product, component) {
     }
   }
 
-  before('smoketest:preview') {
+  after('aksdeploy:preview') {
     yarnBuilder.yarn('setup')
 
     env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
@@ -122,7 +122,7 @@ withPipeline("nodejs", product, component) {
     env.IMPORT_PREVIEW = true
   }
 
-  before('smoketest:aat') {
+  after('aksdeploy:aat') {
 
         dir('definitions/consented/json/UserProfile'){
           sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
