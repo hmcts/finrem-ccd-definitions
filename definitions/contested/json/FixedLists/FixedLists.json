@@ -744,7 +744,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_lancashireList",
     "ListElementCode": "FR_lancashireList_1",
-    "ListElement": "PRESTON COMBINED COURT CENTRE"
+    "ListElement": "PRESTON DESIGNATED FAMILY COURT"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -798,7 +798,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_cleveland_hc_list",
     "ListElementCode": "FR_cleaveland_hc_list_1",
-    "ListElement": "NEWCASTLE UPON TYNE JUSTICE CENTRE"
+    "ListElement": "NEWCASTLE CIVIL AND FAMILY COURTS AND TRIBUNALS CENTRE"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1201,6 +1201,18 @@
     "ID": "FR_bristolList",
     "ListElementCode": "FR_bristolList_6",
     "ListElement": "WESTON SUPER MARE COUNTY AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_bristolList",
+    "ListElementCode": "FR_bristolList_7",
+    "ListElement": "BRISTOL MAGISTRATES COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_bristolList",
+    "ListElementCode": "FR_bristolList_8",
+    "ListElement": "SWINDON MAGISTRATES COURT"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2487,5 +2499,26 @@
     "ListElementCode": "respondentDoc",
     "ListElement": "Respondent document",
     "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "barristerPartyList",
+    "ListElementCode": "applicant",
+    "ListElement": "Applicant",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "barristerPartyList",
+    "ListElementCode": "respondent",
+    "ListElement": "Respondent",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_natureApplication",
+    "ListElementCode": "variationOrder",
+    "ListElement": "Variation Order",
+    "DisplayOrder": 10
   }
 ]

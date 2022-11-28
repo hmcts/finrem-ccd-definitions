@@ -37,7 +37,7 @@
     "ListElementCode": "orderRefusalJudge",
     "EventElementLabel": "Select Judge",
     "FieldDisplayOrder": 4,
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -47,7 +47,7 @@
     "ListElementCode": "orderRefusalJudgeName",
     "EventElementLabel": "Name of Judge",
     "FieldDisplayOrder": 5,
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -920,6 +920,413 @@
     "CaseEventID": "FR_manageCaseDocuments",
     "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentConfidential",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
+    "CaseEventID": "FR_manageCaseDocuments",
+    "CaseFieldID": "manageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentUploadDateTime",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "manageCaseDocumentCollection=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseFiles",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocuments",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseFiles",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentType",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseFiles",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentOther",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseFiles",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "hearingDetails",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseFiles",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentConfidential",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseFiles",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentFdr",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseFiles",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentParty",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "CaseEventID": "FR_uploadCaseFiles",
+    "CaseFieldID": "uploadCaseDocument",
+    "ListElementCode": "caseDocumentUploadDateTime",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "uploadCaseDocument=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConfidentialDocument",
+    "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
+    "ListElementCode": "DocumentType",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConfidentialDocument",
+    "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
+    "ListElementCode": "DocumentLink",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConfidentialDocument",
+    "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
+    "ListElementCode": "DocumentDateAdded",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConfidentialDocument",
+    "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
+    "ListElementCode": "DocumentComment",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConfidentialDocument",
+    "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
+    "ListElementCode": "DocumentFileName",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConfidentialDocument",
+    "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
+    "ListElementCode": "confidentialDocumentUploadDateTime",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "confidentialDocumentsUploaded=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentType",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentEmailContent",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentLink",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentDateAdded",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentComment",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "DocumentFileName",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_uploadGeneralDocument",
+    "CaseEventID": "FR_uploadGeneralDocument",
+    "CaseFieldID": "uploadGeneralDocuments",
+    "ListElementCode": "generalDocumentUploadDateTime",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "uploadGeneralDocuments=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationCreatedBy",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationHearingRequired",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationTimeEstimate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "FieldShowCondition": "generalApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationSpecialMeasures",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "FieldShowCondition": "generalApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationDocument",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationDraftOrder",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "gaSupportDocuments.supportDocument",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationCreatedDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationStatus",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationOutcomeOther",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationDirectionsDocument",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "appBarristerCollection",
+    "ListElementCode": "barristerLabel",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "appBarristerCollection",
+    "ListElementCode": "name",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "appBarristerCollection",
+    "ListElementCode": "email",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "appBarristerCollection",
+    "ListElementCode": "phoneNumber",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "appBarristerCollection",
+    "ListElementCode": "Organisation.OrganisationID",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "ListElementCode": "barristerLabel",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "ListElementCode": "name",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "ListElementCode": "email",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "ListElementCode": "phoneNumber",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_BarristerCollection",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "respBarristerCollection",
+    "ListElementCode": "Organisation.OrganisationID",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
   }
 ]

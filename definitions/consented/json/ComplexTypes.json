@@ -893,5 +893,331 @@
     "FieldType": "Document",
     "ElementLabel": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "hearingType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_hearingTypeDirections",
+    "ElementLabel": "Type of hearing",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "hearingTimeEstimate",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing time estimate",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "hearingDate",
+    "FieldType": "Date",
+    "ElementLabel": "Hearing date",
+    "HintText": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks.\nStandard Track: Date of the hearing must be between 12 and 16 weeks\r\n",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "hearingTime",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing time",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "regionList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_region_list",
+    "ElementLabel": "Please choose the Region in which the Applicant resides",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "midlandsFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_midlands_FRCList",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"midlands\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "londonFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_london_FRCList",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"london\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "northWestFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_nw_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"northwest\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "northEastFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_ne_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"northeast\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "southEastFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_se_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"southeast\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "southWestFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_sw_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"southwest\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "walesFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_wales_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"wales\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "nottinghamCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_NottinghamList",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "cfcCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_CFCList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"cfc\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "birminghamCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_birmingham_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "liverpoolCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_liverpool_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "manchesterCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_manchester_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "lancashireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_lancashireList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "cleavelandCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_cleveland_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleveland\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "nwyorkshireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "humberCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_humber_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "kentSurreyCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_kent_surrey_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kent\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "bedfordshireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bedfordshireList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "thamesvalleyCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_thamesvalleyList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "devonCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_devonList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "dorsetCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_dorsetList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "bristolCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bristolList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "newportCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_newport_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "swanseaCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_swansea_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "northWalesCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_northwalesList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "additionalInformationAboutHearing",
+    "FieldType": "Text",
+    "ElementLabel": "Additional information about the hearing",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "promptForAnyDocument",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Do you want to upload any other documents ?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "uploadAdditionalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Please upload any additional documents related to you application.",
+    "FieldShowCondition": "promptForAnyDocument=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "hearingNotice",
+    "FieldType": "Document",
+    "ElementLabel": "Hearing notice",
+    "SecurityClassification": "Public"
   }
 ]

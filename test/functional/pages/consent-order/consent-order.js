@@ -6,7 +6,7 @@ async function consentOrder() {
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
-  I.waitForPage('h4', 'CONSENT ORDER');
+  I.waitForPage('h4', 'Consent Order');
   I.attachFile('input[id="consentOrder"]', '../data/dummy.pdf');
   I.wait('8');
   I.waitForContinueButtonEnabled();

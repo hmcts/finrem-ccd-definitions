@@ -388,85 +388,106 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Insufficient information provided – A",
-    "ListElement": "Insufficient information has been provided as to the parties’ capital positions if the order were effected"
+    "ListElement": "Insufficient information has been provided as to the parties’ capital positions if the order were effected",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Insufficient information provided – B",
-    "ListElement": "Insufficient information has been provided as to the parties’ housing needs and whether they are met by the order"
+    "ListElement": "Insufficient information has been provided as to the parties’ housing needs and whether they are met by the order",
+    "DisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Insufficient information provided – C",
-    "ListElement": "Insufficient information has been provided as to the justification for departure from equality of capital"
+    "ListElement": "Insufficient information has been provided as to the justification for departure from equality of capital",
+    "DisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Insufficient information provided – D",
-    "ListElement": "Insufficient information has been provided as to the parties’ pension provision if the order were effected"
+    "ListElement": "Insufficient information has been provided as to the parties’ pension provision if the order were effected",
+    "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Insufficient information provided – E",
-    "ListElement": "Insufficient information has been provided as to the children’s housing needs and whether they are met by the order"
+    "ListElement": "Insufficient information has been provided as to the children’s housing needs and whether they are met by the order",
+    "DisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Pension annex",
-    "ListElement": "The pension annex has not been attached"
+    "ListElement": "The pension annex has not been attached",
+    "DisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Respondent – independent legal advice",
-    "ListElement": "It is unclear whether the Respondent has obtained independent legal advice"
+    "ListElement": "It is unclear whether the Respondent has obtained independent legal advice",
+    "DisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "The D81 incomplete",
-    "ListElement": "The D81 form is incomplete"
+    "ListElement": "The D81 form is incomplete",
+    "DisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Hearing fixed for first available date",
-    "ListElement": "Application should be fixed for hearing on first available date for 20 minutes when the Court will consider whether the draft order should be approved. Both parties should attend and if they do not do so the Court may not approve the order"
+    "ListElement": "Application should be fixed for hearing on first available date for 20 minutes when the Court will consider whether the draft order should be approved. Both parties should attend and if they do not do so the Court may not approve the order",
+    "DisplayOrder": 9
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Transferred to Applicant’s home Court",
-    "ListElement": "Financial Remedy application to be transferred to the Applicant’s home court to consider listing directions"
+    "ListElement": "Financial Remedy application to be transferred to the Applicant’s home court to consider listing directions",
+    "DisplayOrder": 10
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Transferred to Applicant's home Court",
-    "ListElement": "Entire case to be transferred to the Applicant’s home court to consider listing directions"
+    "ListElement": "Entire case to be transferred to the Applicant’s home court to consider listing directions",
+    "DisplayOrder": 11
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Order does not appear fair",
-    "ListElement": "The proposed order does not appear to be fair taking account of S25 Matrimonial Causes Act 1973.  The parties are requested to explain more fully the thinking behind the order and why it is fair."
+    "ListElement": "The proposed order does not appear to be fair taking account of S25 Matrimonial Causes Act 1973.  The parties are requested to explain more fully the thinking behind the order and why it is fair.",
+    "DisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Provide pension values/property",
-    "ListElement": "Please provide a breakdown of the pension values/property values as it is not possible to understand the values of what each party will receive."
+    "ListElement": "Please provide a breakdown of the pension values/property values as it is not possible to understand the values of what each party will receive.",
+    "DisplayOrder": 13
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_OrderRefusal",
+    "ListElementCode": "Application for a consent/variation order reconsidered",
+    "ListElement": "The application for a consent/variation order can be reconsidered without a hearing if the parties address the above issues.",
+    "DisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Other (please specify)",
-    "ListElement": "If other (please specify in text box provided)"
+    "ListElement": "If other (please specify in text box provided)",
+    "DisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1260,7 +1281,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_lancashireList",
     "ListElementCode": "FR_lancashireList_1",
-    "ListElement": "PRESTON COMBINED COURT CENTRE"
+    "ListElement": "PRESTON DESIGNATED FAMILY COURT"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1314,7 +1335,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_clevelandList",
     "ListElementCode": "FR_clevelandList_1",
-    "ListElement": "NEWCASTLE UPON TYNE JUSTICE CENTRE"
+    "ListElement": "NEWCASTLE CIVIL AND FAMILY COURTS AND TRIBUNALS CENTRE"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1932,5 +1953,521 @@
     "ListElementCode": "Other",
     "ListElement": "Other documents",
     "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_hearingTypeDirections",
+    "ListElementCode": "First Directions Appointment (FDA)",
+    "ListElement": "First Directions Appointment (FDA)"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_hearingTypeDirections",
+    "ListElementCode": "Financial Dispute Resolution (FDR)",
+    "ListElement": "Financial Dispute Resolution (FDR)"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_hearingTypeDirections",
+    "ListElementCode": "Final Hearing (FH)",
+    "ListElement": "Final Hearing (FH)"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_hearingTypeDirections",
+    "ListElementCode": "Directions (DIR)",
+    "ListElement": "Directions (DIR)"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_london_FRCList",
+    "ListElementCode": "cfc",
+    "ListElement": "London FRC"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_midlands_FRCList",
+    "ListElementCode": "nottingham",
+    "ListElement": "Nottingham FRC"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_midlands_FRCList",
+    "ListElementCode": "birmingham",
+    "ListElement": "Birmingham FRC"
+  },
+  {
+    "LiveFrom": "03/01/2017",
+    "ID": "FR_s_NottinghamList",
+    "ListElementCode": "FR_s_NottinghamList_1",
+    "ListElement": "NOTTINGHAM COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "04/01/2017",
+    "ID": "FR_s_NottinghamList",
+    "ListElementCode": "FR_s_NottinghamList_2",
+    "ListElement": "DERBY COMBINED COURT CENTRE"
+  },
+  {
+    "LiveFrom": "05/01/2017",
+    "ID": "FR_s_NottinghamList",
+    "ListElementCode": "FR_s_NottinghamList_3",
+    "ListElement": "LEICESTER COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "06/01/2017",
+    "ID": "FR_s_NottinghamList",
+    "ListElementCode": "FR_s_NottinghamList_4",
+    "ListElement": "LINCOLN COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "07/01/2017",
+    "ID": "FR_s_NottinghamList",
+    "ListElementCode": "FR_s_NottinghamList_5",
+    "ListElement": "NORTHAMPTON CROWN, COUNTY AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "08/01/2017",
+    "ID": "FR_s_NottinghamList",
+    "ListElementCode": "FR_s_NottinghamList_6",
+    "ListElement": "CHESTERFIELD COUNTY COURT"
+  },
+  {
+    "LiveFrom": "09/01/2017",
+    "ID": "FR_s_NottinghamList",
+    "ListElementCode": "FR_s_NottinghamList_7",
+    "ListElement": "MANSFIELD MAGISTRATES AND COUNTY COURT"
+  },
+  {
+    "LiveFrom": "10/01/2017",
+    "ID": "FR_s_NottinghamList",
+    "ListElementCode": "FR_s_NottinghamList_8",
+    "ListElement": "BOSTON COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "03/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_1",
+    "ListElement": "BROMLEY COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "04/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_2",
+    "ListElement": "CROYDON COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "05/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_3",
+    "ListElement": "EDMONTON COOUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "06/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_4",
+    "ListElement": "KINGSTON-UPON-THAMES COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "07/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_5",
+    "ListElement": "ROMFORD COUNTY AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "08/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_6",
+    "ListElement": "BARNET CIVIL AND FAMILY COURTS CENTRE"
+  },
+  {
+    "LiveFrom": "10/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_8",
+    "ListElement": "BRENTFORD COUNTY AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "11/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_9",
+    "ListElement": "CENTRAL FAMILY COURT"
+  },
+  {
+    "LiveFrom": "13/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_11",
+    "ListElement": "EAST LONDON FAMILY COURT"
+  },
+  {
+    "LiveFrom": "16/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_14",
+    "ListElement": "UXBRIDGE COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "17/01/2017",
+    "ID": "FR_s_CFCList",
+    "ListElementCode": "FR_s_CFCList_16",
+    "ListElement": "WILLESDEN COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_1",
+    "ListElement": "BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_2",
+    "ListElement": "COVENTRY COMBINED COURT CENTRE"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_3",
+    "ListElement": "TELFORD COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_4",
+    "ListElement": "WOLVERHAMPTON COMBINED COURT CENTRE"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_5",
+    "ListElement": "DUDLEY COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_6",
+    "ListElement": "WALSALL COUNTY AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_7",
+    "ListElement": "STOKE ON TRENT COMBINED COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_8",
+    "ListElement": "WORCESTER COMBINED COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_9",
+    "ListElement": "STAFFORD COMBINED COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_10",
+    "ListElement": "HEREFORD COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_liverpool_hc_list",
+    "ListElementCode": "FR_liverpool_hc_list_1",
+    "ListElement": "LIVERPOOL CIVIL AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_liverpool_hc_list",
+    "ListElementCode": "FR_liverpool_hc_list_2",
+    "ListElement": "CHESTER CIVIL AND FAMILY JUSTICE CENTRE"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_liverpool_hc_list",
+    "ListElementCode": "FR_liverpool_hc_list_3",
+    "ListElement": "CREWE COUNTY COURT AND FAMILY COURT "
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_liverpool_hc_list",
+    "ListElementCode": "FR_liverpool_hc_list_4",
+    "ListElement": "ST. HELENS COUNTY COURT AND FAMILY COURT "
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_liverpool_hc_list",
+    "ListElementCode": "FR_liverpool_hc_list_5",
+    "ListElement": "BIRKENHEAD COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manchester_hc_list",
+    "ListElementCode": "FR_manchester_hc_list_1",
+    "ListElement": "MANCHESTER COUNTY AND FAMILY COURT "
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manchester_hc_list",
+    "ListElementCode": "FR_manchester_hc_list_2",
+    "ListElement": "STOCKPORT COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manchester_hc_list",
+    "ListElementCode": "FR_manchester_hc_list_3",
+    "ListElement": "WIGAN COUNTY COURT AND FAMILY COURT "
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_cleveland_hc_list",
+    "ListElementCode": "FR_cleaveland_hc_list_1",
+    "ListElement": "NEWCASTLE CIVIL AND FAMILY COURTS AND TRIBUNALS CENTRE"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_cleveland_hc_list",
+    "ListElementCode": "FR_cleaveland_hc_list_2",
+    "ListElement": "DURHAM JUSTICE CENTRE"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_cleveland_hc_list",
+    "ListElementCode": "FR_cleaveland_hc_list_3",
+    "ListElement": "SUNDERLAND COUNTY AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_cleveland_hc_list",
+    "ListElementCode": "FR_cleaveland_hc_list_4",
+    "ListElement": "Middlesbrough County Court at Teesside Combined Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_cleveland_hc_list",
+    "ListElementCode": "FR_cleaveland_hc_list_5",
+    "ListElement": "Gateshead County Court and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_cleveland_hc_list",
+    "ListElementCode": "FR_cleaveland_hc_list_6",
+    "ListElement": "South Shields County Court and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_cleveland_hc_list",
+    "ListElementCode": "FR_cleaveland_hc_list_7",
+    "ListElement": "North Shields County Court and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_cleveland_hc_list",
+    "ListElementCode": "FR_cleaveland_hc_list_8",
+    "ListElement": "Darlington County Court and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_nw_yorkshire_hc_list",
+    "ListElementCode": "FR_nw_yorkshire_hc_list_1",
+    "ListElement": "Harrogate Justice Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_nw_yorkshire_hc_list",
+    "ListElementCode": "FR_nw_yorkshire_hc_list_2",
+    "ListElement": "Bradford Combined Court Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_nw_yorkshire_hc_list",
+    "ListElementCode": "FR_nw_yorkshire_hc_list_3",
+    "ListElement": "Huddersfield County Court and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_nw_yorkshire_hc_list",
+    "ListElementCode": "FR_nw_yorkshire_hc_list_4",
+    "ListElement": "Wakefield Civil and Family Justice Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_nw_yorkshire_hc_list",
+    "ListElementCode": "FR_nw_yorkshire_hc_list_5",
+    "ListElement": "York County Court and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_nw_yorkshire_hc_list",
+    "ListElementCode": "FR_nw_yorkshire_hc_list_6",
+    "ListElement": "Scarborough Justice Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_nw_yorkshire_hc_list",
+    "ListElementCode": "FR_nw_yorkshire_hc_list_7",
+    "ListElement": "Skipton County Court and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_nw_yorkshire_hc_list",
+    "ListElementCode": "FR_nw_yorkshire_hc_list_8",
+    "ListElement": "Leeds Combined Court Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_humber_hc_list",
+    "ListElementCode": "FR_humber_hc_list_1",
+    "ListElement": "Sheffield Family Hearing Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_humber_hc_list",
+    "ListElementCode": "FR_humber_hc_list_2",
+    "ListElement": "Kingston-upon-Hull Combined Court Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_humber_hc_list",
+    "ListElementCode": "FR_humber_hc_list_3",
+    "ListElement": "Doncaster Justice Centre North"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_humber_hc_list",
+    "ListElementCode": "FR_humber_hc_list_4",
+    "ListElement": "Great Grimsby Combined Court Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_humber_hc_list",
+    "ListElementCode": "FR_humber_hc_list_5",
+    "ListElement": "Barnsley Law Courts"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_kent_surrey_hc_list",
+    "ListElementCode": "FR_kent_surrey_hc_list_1",
+    "ListElement": "CANTERBURY FAMILY COURT HEARING CENTRE"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_kent_surrey_hc_list",
+    "ListElementCode": "FR_kent_surrey_hc_list_2",
+    "ListElement": "MAIDSTONE COMBINED COURT CENTRE"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_kent_surrey_hc_list",
+    "ListElementCode": "FR_kent_surrey_hc_list_3",
+    "ListElement": "DARTFORD COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_kent_surrey_hc_list",
+    "ListElementCode": "FR_kent_surrey_hc_list_4",
+    "ListElement": "MEDWAY COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_kent_surrey_hc_list",
+    "ListElementCode": "FR_kent_surrey_hc_list_5",
+    "ListElement": "GUILDFORD COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_kent_surrey_hc_list",
+    "ListElementCode": "FR_kent_surrey_hc_list_6",
+    "ListElement": "STAINES COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_kent_surrey_hc_list",
+    "ListElementCode": "FR_kent_surrey_hc_list_7",
+    "ListElement": "BRIGHTON COUNTY AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_kent_surrey_hc_list",
+    "ListElementCode": "FR_kent_surrey_hc_list_8",
+    "ListElement": "WORTHING COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_kent_surrey_hc_list",
+    "ListElementCode": "FR_kent_surrey_hc_list_9",
+    "ListElement": "HASTINGS COUNTY COURT AND FAMILY COURT HEARING CENTRE"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_kent_surrey_hc_list",
+    "ListElementCode": "FR_kent_surrey_hc_list_10",
+    "ListElement": "HORSHAM COUNTY COURT AND FAMILY COURT"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_newport_hc_list",
+    "ListElementCode": "FR_newport_hc_list_1",
+    "ListElement": "Newport Civil and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_newport_hc_list",
+    "ListElementCode": "FR_newport_hc_list_2",
+    "ListElement": "Cardiff Civil & Family Justice Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_newport_hc_list",
+    "ListElementCode": "FR_newport_hc_list_3",
+    "ListElement": "Merthyr Tydfil Combined Court Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_newport_hc_list",
+    "ListElementCode": "FR_newport_hc_list_4",
+    "ListElement": "Pontypridd County and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_newport_hc_list",
+    "ListElementCode": "FR_newport_hc_list_5",
+    "ListElement": "Blackwood Civil and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_swansea_hc_list",
+    "ListElementCode": "FR_swansea_hc_list_1",
+    "ListElement": "Swansea Civil & Family Justice Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_swansea_hc_list",
+    "ListElementCode": "FR_swansea_hc_list_2",
+    "ListElement": "Aberystwyth Justice Centre"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_swansea_hc_list",
+    "ListElementCode": "FR_swansea_hc_list_3",
+    "ListElement": "Haverfordwest County & Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_swansea_hc_list",
+    "ListElementCode": "FR_swansea_hc_list_4",
+    "ListElement": "Carmarthen County and Family Court"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_swansea_hc_list",
+    "ListElementCode": "FR_swansea_hc_list_5",
+    "ListElement": "Llanelli Law Courts"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_swansea_hc_list",
+    "ListElementCode": "FR_swansea_hc_list_6",
+    "ListElement": "Port Talbot Justice Centre"
   }
 ]
