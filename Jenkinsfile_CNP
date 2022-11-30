@@ -129,16 +129,16 @@ withPipeline("nodejs", product, component) {
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      yarnBuilder.yarn('generate-excel-${env.ENV}-consented')
-      yarnBuilder.yarn('generate-excel-${env.ENV}-contested')
+      yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
+      yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
 
-      yarnBuilder.yarn('copy-${env.ENV}-xlxs-to-resources');
+      yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources");
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_WEB_URL = "https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_CONSENTED_FILE_NAME = "ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
       env.CCD_CONTESTED_FILE_NAME = "ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
-      env.IMPORT_PREVIEW = true
+      //env.IMPORT_PREVIEW = true
     } else {
       yarnBuilder.yarn('setup')
       dir('definitions/consented/json/UserProfile'){
