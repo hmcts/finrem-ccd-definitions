@@ -129,10 +129,10 @@ withPipeline("nodejs", product, component) {
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
-      yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
+      yarnBuilder.yarn("generate-excel-preview-consented")
+      yarnBuilder.yarn("generate-excel-preview-contested")
 
-      yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources");
+      yarnBuilder.yarn("copy-preview-xlxs-to-resources");
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_WEB_URL = "https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
@@ -183,19 +183,16 @@ withPipeline("nodejs", product, component) {
     }
   }
 
-  after('functionalTest:preview') {
+  after('functionalTest') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
-  }
-
-  after('functionalTest:aat') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
-    env.ENV = 'prod'
-    yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
-    yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
-    yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources");
-    slackSend(channel: '#finrem-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
+    if ('aat' == env.ENV) {
+      env.ENV = 'prod'
+      yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
+      yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
+      yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources");
+      slackSend(channel: '#finrem-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
+    }
   }
 
   onPR {
