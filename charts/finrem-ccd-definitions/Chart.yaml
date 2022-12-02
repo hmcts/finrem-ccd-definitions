@@ -4,7 +4,7 @@ name: finrem-ccd-definitions
 version: 2.2.11
 dependencies:
   - name: nodejs
-    version: 2.4.6
+    version: 2.4.8
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
   - name: ccd
     version: 8.0.20
