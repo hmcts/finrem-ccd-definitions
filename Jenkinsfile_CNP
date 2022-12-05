@@ -125,8 +125,7 @@ withPipeline("nodejs", product, component) {
         slackSend(channel: '#finrem-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
       }
     }
-  }
-  after('checkout') {
+
     if('preview' == env.ENV) {
       yarnBuilder.yarn('setup')
 
@@ -135,8 +134,6 @@ withPipeline("nodejs", product, component) {
       env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       yarnBuilder.yarn("generate-excel-preview-consented")
       yarnBuilder.yarn("generate-excel-preview-contested")
-
-
       yarnBuilder.yarn("copy-preview-xlxs-to-resources");
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
