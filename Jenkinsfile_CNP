@@ -88,6 +88,9 @@ def checkForNoCleanupLabel(branch_name) {
   return new GithubAPI(this).getLabelsbyPattern(branch_name, "cleanup").contains("no_cleanup")
 }
 
+// Configure branches to sync with master branch
+def branchesToSync = ['demo', 'ithc', 'perftest']
+
 withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
@@ -122,7 +125,8 @@ withPipeline("nodejs", product, component) {
         slackSend(channel: '#finrem-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
       }
     }
-
+  }
+  after('checkout') {
     if('preview' == env.ENV) {
       yarnBuilder.yarn('setup')
 
@@ -187,7 +191,6 @@ withPipeline("nodejs", product, component) {
 
   afterSuccess('functionalTest') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
     if ('aat' == env.ENV) {
       env.ENV = 'prod'
