@@ -188,7 +188,7 @@ withPipeline("nodejs", product, component) {
 
 
   afterSuccess('functionalTest') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
     if ('aat' == env.ENV) {
       env.ENV = 'prod'
