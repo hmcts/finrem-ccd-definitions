@@ -26,3 +26,16 @@ Scenario('add all the roles @pipeline', I => {
   I.see('caseworker-divorce-financialremedy-superuser')
   I.see('caseworker-approver');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+
+if (process.env.IMPORT_PREVIEW) {
+  Scenario('upload Consented preview config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/consented/xlsx/ccd-config-preview-consented-${process.env.GIT_COMMIT}.xlsx`);
+    I.see('Case Definition data successfully imported');
+  }).retry({retries: 3, minTimeout: 30000});
+
+  Scenario('upload Contested preview config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/contested/xlsx/ccd-config-preview-contested-${process.env.GIT_COMMIT}.xlsx`);
+  }).retry({retries: 3, minTimeout: 300000})
+}

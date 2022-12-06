@@ -135,12 +135,12 @@ withPipeline("nodejs", product, component) {
       env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       yarnBuilder.yarn("generate-excel-preview-consented")
       yarnBuilder.yarn("generate-excel-preview-contested")
-      yarnBuilder.yarn("copy-preview-xlxs-to-resources");
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_WEB_URL = "https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_CONSENTED_FILE_NAME = "ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
       env.CCD_CONTESTED_FILE_NAME = "ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
+      env.IMPORT_PREVIEW=true
     } else {
       yarnBuilder.yarn('setup')
       dir('definitions/consented/json/UserProfile'){
