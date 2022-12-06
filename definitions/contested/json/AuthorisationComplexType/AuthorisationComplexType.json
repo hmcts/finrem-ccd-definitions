@@ -9,6 +9,14 @@
   },
   {
     "LiveFrom": "05/08/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "ListElementCode": "LastNoCRequestedBy",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "05/08/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "ApplicantOrganisationPolicy",
     "ListElementCode": "OrgPolicyReference",
@@ -52,6 +60,14 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "ListElementCode": "OrgPolicyCaseAssignedRole",
+    "UserRole": "caseworker-caa",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "ListElementCode": "LastNoCRequestedBy",
     "UserRole": "caseworker-caa",
     "CRUD": "CRUD"
   },
