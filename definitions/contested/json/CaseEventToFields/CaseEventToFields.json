@@ -1971,6 +1971,18 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "promptForUrgentCaseQuestion",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 23,
+    "PageDisplayOrder": 23,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "beforeSavePreConfirmation",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
