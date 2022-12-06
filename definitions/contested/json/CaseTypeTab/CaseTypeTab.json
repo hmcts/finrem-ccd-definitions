@@ -2922,6 +2922,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationChecklist",
+    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -2930,9 +2931,19 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
+    "CaseFieldID": "consentNatureOfApplicationChecklistSchedule",
+    "FieldShowCondition": "typeOfApplication=\"Under paragraph 1 or 2 of schedule 1 children act 1989\"",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationAddress",
-    "TabFieldDisplayOrder": 3,
-    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
+    "TabFieldDisplayOrder": 4,
+    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\" AND consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2941,8 +2952,8 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationMortgage",
-    "TabFieldDisplayOrder": 4,
-    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
+    "TabFieldDisplayOrder": 5,
+    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\" AND consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
   {
     "LiveFrom": "10/08/2020",
@@ -2951,8 +2962,8 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentOrderForChildrenQuestionLabel",
-    "TabFieldDisplayOrder": 5,
-    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+    "TabFieldDisplayOrder": 6,
+    "FieldShowCondition": "consentNatureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\" OR consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "10/08/2020",
@@ -2961,8 +2972,8 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentOrderForChildrenQuestion1",
-    "TabFieldDisplayOrder": 6,
-    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+    "TabFieldDisplayOrder": 7,
+    "FieldShowCondition": "consentNatureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\" OR consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "10/08/2020",
@@ -2971,7 +2982,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplication5",
-    "TabFieldDisplayOrder": 7,
+    "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "consentOrderForChildrenQuestion1=\"Yes\""
   },
   {
@@ -2981,7 +2992,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplication6",
-    "TabFieldDisplayOrder": 8,
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "consentOrderForChildrenQuestion1=\"Yes\" AND consentNatureOfApplication5=\"No\""
   },
   {
@@ -2991,8 +3002,17 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplication7",
-    "TabFieldDisplayOrder": 9,
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "consentOrderForChildrenQuestion1=\"Yes\" AND consentNatureOfApplication5=\"No\" AND consentNatureOfApplication6=\"Other\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "consentVariationOrderDocument",
+    "TabFieldDisplayOrder": 11
   },
   {
     "LiveFrom": "01/06/2020",
@@ -3001,7 +3021,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentOrder",
-    "TabFieldDisplayOrder": 10
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/06/2020",
@@ -3010,7 +3030,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentD81Joint",
-    "TabFieldDisplayOrder": 11,
+    "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "consentD81Question=\"Yes\""
   },
   {
@@ -3020,7 +3040,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentD81Applicant",
-    "TabFieldDisplayOrder": 12,
+    "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "consentD81Question=\"No\""
   },
   {
@@ -3030,7 +3050,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentD81Respondent",
-    "TabFieldDisplayOrder": 13,
+    "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "consentD81Question=\"No\""
   },
   {
@@ -3040,24 +3060,6 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentPensionCollection",
-    "TabFieldDisplayOrder": 14
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "consentOrderProcessTab",
-    "TabLabel": "Consent Order Process",
-    "TabDisplayOrder": 17,
-    "CaseFieldID": "consentOtherCollection",
-    "TabFieldDisplayOrder": 15
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "consentOrderProcessTab",
-    "TabLabel": "Consent Order Process",
-    "TabDisplayOrder": 17,
-    "CaseFieldID": "consentSubjectToDecreeAbsoluteValue",
     "TabFieldDisplayOrder": 16
   },
   {
@@ -3066,7 +3068,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "consentServePensionProvider",
+    "CaseFieldID": "consentOtherCollection",
     "TabFieldDisplayOrder": 17
   },
   {
@@ -3075,8 +3077,26 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
+    "CaseFieldID": "consentSubjectToDecreeAbsoluteValue",
+    "TabFieldDisplayOrder": 18
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "consentServePensionProvider",
+    "TabFieldDisplayOrder": 19
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
     "CaseFieldID": "consentServePensionProviderResponsibility",
-    "TabFieldDisplayOrder": 18,
+    "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "consentServePensionProvider=\"Yes\""
   },
   {
@@ -3086,7 +3106,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentServePensionProviderOther",
-    "TabFieldDisplayOrder": 19,
+    "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "consentServePensionProvider=\"Yes\" AND consentServePensionProviderResponsibility=\"other\""
   },
   {
@@ -3096,24 +3116,6 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentSelectJudge",
-    "TabFieldDisplayOrder": 20
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "consentOrderProcessTab",
-    "TabLabel": "Consent Order Process",
-    "TabDisplayOrder": 17,
-    "CaseFieldID": "consentJudgeName",
-    "TabFieldDisplayOrder": 21
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "consentOrderProcessTab",
-    "TabLabel": "Consent Order Process",
-    "TabDisplayOrder": 17,
-    "CaseFieldID": "consentDateOfOrder",
     "TabFieldDisplayOrder": 22
   },
   {
@@ -3122,7 +3124,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "consentAdditionalComments",
+    "CaseFieldID": "consentJudgeName",
     "TabFieldDisplayOrder": 23
   },
   {
@@ -3131,7 +3133,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "Contested_ConsentedApprovedOrders",
+    "CaseFieldID": "consentDateOfOrder",
     "TabFieldDisplayOrder": 24
   },
   {
@@ -3140,7 +3142,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "consentedNotApprovedOrders",
+    "CaseFieldID": "consentAdditionalComments",
     "TabFieldDisplayOrder": 25
   },
   {
@@ -3149,7 +3151,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "generalOrdersConsent",
+    "CaseFieldID": "Contested_ConsentedApprovedOrders",
     "TabFieldDisplayOrder": 26
   },
   {
@@ -3158,25 +3160,25 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "consentMiniFormA",
+    "CaseFieldID": "consentedNotApprovedOrders",
     "TabFieldDisplayOrder": 27
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "bulkPrintLetterIdRes",
+    "CaseFieldID": "generalOrdersConsent",
     "TabFieldDisplayOrder": 28
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "bulkPrintCoverSheetRes",
+    "CaseFieldID": "consentMiniFormA",
     "TabFieldDisplayOrder": 29
   },
   {
@@ -3185,7 +3187,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "bulkPrintLetterIdApp",
+    "CaseFieldID": "bulkPrintLetterIdRes",
     "TabFieldDisplayOrder": 30
   },
   {
@@ -3194,8 +3196,26 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "bulkPrintCoverSheetApp",
+    "CaseFieldID": "bulkPrintCoverSheetRes",
     "TabFieldDisplayOrder": 31
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "bulkPrintLetterIdApp",
+    "TabFieldDisplayOrder": 32
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "bulkPrintCoverSheetApp",
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/06/2020",
