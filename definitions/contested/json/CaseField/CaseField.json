@@ -4754,7 +4754,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "promptForUrgentCaseQuestion",
     "Label": "Is this an urgent case ?",
-    "FieldType": "FixedRadioList",
+    "FieldType": "MultiSelectList",
     "FieldTypeParameter": "FR_urgentCaseList",
     "SecurityClassification": "Public"
   }
