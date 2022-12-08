@@ -296,7 +296,7 @@
     "TabLabel": "Divorce / Dissolution Details",
     "TabDisplayOrder": 4,
     "CaseFieldID": "divorceDetailsLabel",
-    "TabShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
+    "TabShowCondition": "dateOfMarriage !=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
