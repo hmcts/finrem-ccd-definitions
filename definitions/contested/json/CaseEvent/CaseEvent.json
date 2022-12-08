@@ -535,6 +535,7 @@
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "SecurityClassification": "Public",
+    "EventEnablingCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
     "ShowEventNotes": "Y"
   },
   {

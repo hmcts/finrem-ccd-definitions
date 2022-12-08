@@ -11,7 +11,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "beforeYouStartPara1",
-    "Label": ">Financial Remedy Online is part of the Divorce project within the HMCTS reform programme. The Divorce project aim is to deliver a transformed end to end service for individuals and/or their legal representatives wishing to make an application to legally end their marriage or civil partnership and resolve associated financial issues.\r\n\r\n>Before you start completing this application you will need:\r\n\r\n*\tYour PBA number or an online help with fees reference number.\r\n*\tThe name of the Applicant’s local Court (https://www.find-court-tribunal.service.gov.uk/)\r\n*\tYou will have the opportunity to upload any other relevant documents e.g. pension forms, cover letters etc throughout the course of this application\r\n\r\n>The pilot will continue to improve and add additional features based on the user feedback we receive. Please check the list below to ensure the application is within the current scope of the pilot: ",
+    "Label": "Before you start completing this application you will need:\r\n\r\n*\tYour PBA number or an online help with fees reference number.\r\n*\tThe name of the Applicant’s local Court (https://www.find-court-tribunal.service.gov.uk/)\r\n*\tYou will have the opportunity to upload any other relevant documents e.g. pension forms, cover letters etc throughout the course of this application\r\n\r\n>The project team will continue to improve and add additional features based on the user feedback we receive. Please check the list below to ensure the application is within the current scope of the platform: ",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
@@ -19,7 +19,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "beforeYouStartPara2",
-    "Label": ">**Scope**\r\n\r\n>Currently, you can use the pilot for any cases that fit the following criteria only:\r\n\r\n*\tThe application is being made as part of a Divorce/Dissolution case, including Civil Partnership, Judicial Separation or Nullity.\r\n*\tThe Divorce case may have been submitted via paper or online, however, there must be no previous financial remedy proceedings on the case\r\n*\tYou must be representing the Applicant (the applicant for FR proceedings could be either the petitioner or respondent in the divorce proceedings)\r\n\r\n>If your application does not meet these criteria, it will be returned and will have to be submitted via the normal paper process.",
+    "Label": ">**Scope**\r\n\r\n>Currently, you can use the FR platform for any cases that fit the following criteria:\r\n\r\n*\tThe application is being made as part of a Divorce/Dissolution case, including Civil Partnership, Judicial Separation or Nullity.\r\n*\tIs a Schedule 1 application of the Children Act 1989\r\n*\tIs an application for a variation order\r\n*\tThe Divorce case, or Children’s matter may have been submitted via paper or online, however, there must be no previous financial remedy proceedings on the case unless you are applying to vary the same.\r\n*\tYou must be representing the Applicant (the applicant for FR proceedings could be either the petitioner or respondent in the divorce proceedings)\r\n\r\n>If your application does not meet these criteria, it will be returned and will have to be submitted via the normal paper process.",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
@@ -464,6 +464,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "natureOfApplicationChecklistSchedule",
+    "Label": "  ",
+    "HintText": "Select all that apply",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_natureApplication_sch",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "propertyAdjutmentOrderDetailLabel",
     "Label": "## Property adjustment order details",
     "FieldType": "Label",
@@ -537,7 +547,23 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "benefitForChildrenLabelSchedule",
+    "Label": "## Has a written agreement been made about maintenance for the benefit of children?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "benefitForChildrenDecision",
+    "Label": "     ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "benefitForChildrenDecisionSchedule",
     "Label": "     ",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
@@ -553,7 +579,24 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "benefitPaymentChecklistLabelSchedule",
+    "Label": "## What payments are you applying for ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "benefitPaymentChecklist",
+    "Label": "      ",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_benefitPaymentChecklist",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "benefitPaymentChecklistSchedule",
     "Label": "      ",
     "FieldType": "MultiSelectList",
     "FieldTypeParameter": "FR_ms_benefitPaymentChecklist",
@@ -2568,6 +2611,16 @@
     "HintText": "The applicant is applying for an order by consent in terms of written agreement (a consent order). Within the draft consent order, the Applicant is applying to Court for;",
     "FieldType": "MultiSelectList",
     "FieldTypeParameter": "FR_ms_natureApplication",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentNatureOfApplicationChecklistSchedule",
+    "Label": "The application is for:",
+    "HintText": "The applicant is applying for an order by consent in terms of written agreement (a consent order). Within the draft consent order, the Applicant is applying to Court for;",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_natureApplication_sch",
     "SecurityClassification": "Public"
   },
   {
@@ -4744,9 +4797,51 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentVariationOrderDocument",
+    "Label": "Original order to be varied",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "isNocRejected",
     "Label": " ",
     "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "typeOfApplicationLabel",
+    "FieldType": "Label",
+    "Label": "## What type of application is this?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "typeOfApplication",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "schedule1OrMatrimonialAndCPList",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "childrenDetailsLabel",
+    "FieldType": "Label",
+    "Label": "## Child(ren) details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "childrenCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_childrenCollection",
+    "Label": " ",
     "SecurityClassification": "Public"
   }
 ]
