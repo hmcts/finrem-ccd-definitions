@@ -140,42 +140,48 @@ withPipeline("nodejs", product, component) {
       env.CCD_WEB_URL = "https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_CONSENTED_FILE_NAME = "ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
       env.CCD_CONTESTED_FILE_NAME = "ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
+      steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
       env.IMPORT_PREVIEW=true
     } else {
       yarnBuilder.yarn('setup')
-      dir('definitions/consented/json/UserProfile'){
-        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
-        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_2} > UserProfile-judgeDetails2-prod.json'
-        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_3} > UserProfile-judgeDetails3-prod.json'
-        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_4} > UserProfile-judgeDetails4-prod.json'
-        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_5} > UserProfile-judgeDetails5-prod.json'
-        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_6} > UserProfile-judgeDetails6-prod.json'
+      stageWithAgent('Generate Financial Remedy Consented Case config', product) {
+        dir('definitions/consented/json/UserProfile') {
+          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
+          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_2} > UserProfile-judgeDetails2-prod.json'
+          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_3} > UserProfile-judgeDetails3-prod.json'
+          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_4} > UserProfile-judgeDetails4-prod.json'
+          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_5} > UserProfile-judgeDetails5-prod.json'
+          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_6} > UserProfile-judgeDetails6-prod.json'
+        }
+
+        dir('definitions/consented/json/FixedLists') {
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
+        }
+
+        yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
       }
 
-      dir('definitions/consented/json/FixedLists'){
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
+      stageWithAgent('Generate Financial Remedy Contested Case config', product) {
+        dir('definitions/contested/json/FixedLists') {
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
+          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
+        }
+        yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
+        yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
       }
-
-      yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
-      dir('definitions/contested/json/FixedLists'){
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
-        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
-      }
-      yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
-      yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources");
 
       env.CCD_ADMIN_URL="https://ccd-admin-web.${env.ENV}.platform.hmcts.net"
       env.CCD_DATA_API_URL="http://ccd-data-store-api-${env.ENV}.service.core-compute-aat.internal"
