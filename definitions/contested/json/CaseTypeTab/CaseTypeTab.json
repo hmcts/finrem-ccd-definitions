@@ -296,7 +296,7 @@
     "TabLabel": "Divorce / Dissolution Details",
     "TabDisplayOrder": 4,
     "CaseFieldID": "divorceDetailsLabel",
-    "TabShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
+    "TabShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -651,7 +651,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 6,
     "CaseFieldID": "natureOfApplicationChecklist",
-    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -1210,7 +1210,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDateOfMarriage",
-    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 6
   },
   {
@@ -1220,7 +1220,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDateOfSepration",
-    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 7
   },
   {
@@ -1230,7 +1230,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDivorcePetitionIssuedDate",
-    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 8
   },
   {
@@ -1240,7 +1240,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabNameOfCourtDivorceCentre",
-    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 9
   },
   {
@@ -1251,7 +1251,7 @@
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDivorceDecreeAbsoluteDate",
     "TabFieldDisplayOrder": 10,
-    "FieldShowCondition": "divorceStageReached=\"Decree Absolute\" AND typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\""
+    "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1261,7 +1261,7 @@
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDivorceDecreeNisiDate",
     "TabFieldDisplayOrder": 11,
-    "FieldShowCondition": "divorceStageReached=\"Decree Nisi\" AND typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\""
+    "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1795,6 +1795,16 @@
     "TabDisplayOrder": 12,
     "CaseFieldID": "assignedToJudge",
     "TabFieldDisplayOrder": 7
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "AdminNotes",
+    "TabLabel": "Admin Notes",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "tabCcdCaseNumber",
+    "FieldShowCondition": "typeOfApplication=\"Under paragraph 1 or 2 of schedule 1 children act 1989\"",
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2922,7 +2932,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationChecklist",
-    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -2943,7 +2953,7 @@
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationAddress",
     "TabFieldDisplayOrder": 4,
-    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\" AND consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2953,7 +2963,7 @@
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationMortgage",
     "TabFieldDisplayOrder": 5,
-    "FieldShowCondition": "typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\" AND consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
+    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
   {
     "LiveFrom": "10/08/2020",
