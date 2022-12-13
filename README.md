@@ -66,7 +66,7 @@ If you prefer to make the changes directly to the Excel Configuration file, and 
 
 ## Verification
 
-### Eslint is included and will verify the config is properly formatted:
+### Eslint is included and will verify the config is properly formatted :
 
 `yarn lint`
 
