@@ -133,8 +133,12 @@ withPipeline("nodejs", product, component) {
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      yarnBuilder.yarn("generate-excel-preview-consented")
-      yarnBuilder.yarn("generate-excel-preview-contested")
+      stageWithAgent('Generate Financial Remedy Consented Case config', product) {
+        yarnBuilder.yarn("generate-excel-preview-consented")
+      }
+      stageWithAgent('Generate Financial Remedy Contested Case config', product) {
+        yarnBuilder.yarn("generate-excel-preview-contested")
+      }
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_WEB_URL = "https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
