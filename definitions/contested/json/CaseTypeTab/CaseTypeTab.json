@@ -255,10 +255,48 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "typeOfApplicationLabel",
+    "TabFieldDisplayOrder": 25
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "typeOfApplication",
+    "TabFieldDisplayOrder": 26
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedule1ChildTab",
+    "TabLabel": "Schedule 1/Child Details",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "childrenDetailsLabel",
+    "TabShowCondition": "typeOfApplication=\"Under paragraph 1 or 2 of schedule 1 children act 1989\"",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedule1ChildTab",
+    "TabLabel": "Schedule 1/Child Details",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "childrenCollection",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "divorceDetailsLabel",
+    "TabShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -266,7 +304,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "divorceCaseNumber",
     "TabFieldDisplayOrder": 2
   },
@@ -275,7 +313,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "dateOfMarriage",
     "TabFieldDisplayOrder": 3
   },
@@ -284,7 +322,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "dateOfSepration",
     "TabFieldDisplayOrder": 4
   },
@@ -293,7 +331,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "divorcePetitionIssuedDate",
     "TabFieldDisplayOrder": 5
   },
@@ -302,7 +340,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "nameOfCourtDivorceCentre",
     "TabFieldDisplayOrder": 6
   },
@@ -311,7 +349,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "divorceStageReached",
     "TabFieldDisplayOrder": 7
   },
@@ -320,7 +358,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "divorceUploadEvidence1",
     "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
@@ -330,7 +368,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "divorceDecreeNisiDate",
     "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
@@ -340,7 +378,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "divorceUploadEvidence2",
     "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
@@ -350,7 +388,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "divorceDecreeAbsoluteDate",
     "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
@@ -360,7 +398,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce / Dissolution Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "divorceUploadPetition",
     "TabFieldDisplayOrder": 12,
     "FieldShowCondition": "divorceStageReached=\"Petition Issued\""
@@ -370,7 +408,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "divorceDetailsTab",
     "TabLabel": "Divorce Details",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "civilPartnership",
     "TabFieldDisplayOrder": 13
   },
@@ -379,7 +417,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentDetailsLabel",
     "TabFieldDisplayOrder": 1
   },
@@ -388,7 +426,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentFMName",
     "TabFieldDisplayOrder": 2
   },
@@ -397,7 +435,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentLName",
     "TabFieldDisplayOrder": 3
   },
@@ -406,7 +444,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentRepresentedLabel",
     "TabFieldDisplayOrder": 4
   },
@@ -415,7 +453,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentRepresented",
     "TabFieldDisplayOrder": 5
   },
@@ -424,7 +462,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorLabel",
     "TabFieldDisplayOrder": 6,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -434,7 +472,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorName",
     "TabFieldDisplayOrder": 7,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -444,7 +482,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorReference",
     "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -454,7 +492,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorFirm",
     "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -464,7 +502,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "RespondentOrganisationPolicy",
     "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -474,7 +512,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorAddressLabel",
     "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -484,7 +522,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorAddress",
     "TabFieldDisplayOrder": 12,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -494,7 +532,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorPhone",
     "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -504,7 +542,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorEmail",
     "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -514,7 +552,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorDXnumber",
     "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -524,7 +562,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "RespSolNotificationsEmailConsent",
     "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
@@ -534,7 +572,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rRespondentLabel2",
     "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "respondentRepresented=\"No\""
@@ -544,7 +582,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentAddress",
     "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
@@ -554,7 +592,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentPhone",
     "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
@@ -564,7 +602,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentEmail",
     "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
@@ -574,7 +612,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respBarristerCollectionLabel",
     "TabFieldDisplayOrder": 21
   },
@@ -583,7 +621,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respBarristerCollection",
     "TabFieldDisplayOrder": 22
   },
@@ -592,7 +630,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "respondentDetailsTab",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentAddressConfidential",
     "TabFieldDisplayOrder": 23,
     "FieldShowCondition": "respondentRepresented=\"No\""
@@ -602,7 +640,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "tabNatureOfApplication",
     "TabFieldDisplayOrder": 1
   },
@@ -611,8 +649,9 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "natureOfApplicationChecklist",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -620,18 +659,18 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "propertyAdjutmentOrderDetailLabel",
-    "TabFieldDisplayOrder": 3,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "natureOfApplicationChecklistSchedule",
+    "FieldShowCondition": "typeOfApplication=\"Under paragraph 1 or 2 of schedule 1 children act 1989\"",
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "propertyAddress",
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "propertyAdjutmentOrderDetailLabel",
     "TabFieldDisplayOrder": 4,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
@@ -640,8 +679,8 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "mortgageDetail",
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "propertyAddress",
     "TabFieldDisplayOrder": 5,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
@@ -650,9 +689,19 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "propertyAdjutmentOrderDetail",
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "mortgageDetail",
     "TabFieldDisplayOrder": 6,
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "natureOfApplicationTab",
+    "TabLabel": "Nature of Application",
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "propertyAdjutmentOrderDetail",
+    "TabFieldDisplayOrder": 7,
     "FieldShowCondition": "additionalPropertyOrderDecision=\"Yes\""
   },
   {
@@ -660,86 +709,86 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "orderForChildrenLabel",
-    "TabFieldDisplayOrder": 7,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "natureOfApplicationTab",
-    "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "tabPaymentForChildrenLabel",
     "TabFieldDisplayOrder": 8,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "paymentForChildrenDecision",
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "tabPaymentForChildrenLabel",
     "TabFieldDisplayOrder": 9,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "tabBenefitForChildrenLabel",
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "paymentForChildrenDecision",
     "TabFieldDisplayOrder": 10,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "benefitForChildrenDecision",
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "tabBenefitForChildrenLabel",
     "TabFieldDisplayOrder": 11,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "tabBenefitPaymentChecklistLabel",
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "benefitForChildrenDecision",
     "TabFieldDisplayOrder": 12,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
-    "CaseFieldID": "benefitPaymentChecklist",
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "benefitPaymentChecklistLabel",
     "TabFieldDisplayOrder": 13,
-    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+    "FieldShowCondition": "benefitForChildrenDecision=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "benefitPaymentChecklist",
+    "TabFieldDisplayOrder": 14,
+    "FieldShowCondition": "benefitForChildrenDecision=\"No\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "natureOfApplicationTab",
+    "TabLabel": "Nature of Application",
+    "TabDisplayOrder": 6,
     "CaseFieldID": "issueDate",
-    "TabFieldDisplayOrder": 14
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "authorisationTab",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "authorisationName",
     "TabFieldDisplayOrder": 2
   },
@@ -748,7 +797,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "authorisationTab",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "solicitorFirm",
     "TabFieldDisplayOrder": 3
   },
@@ -757,7 +806,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "authorisationTab",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "authorisation2b",
     "TabFieldDisplayOrder": 4
   },
@@ -766,7 +815,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "authorisationTab",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "authorisation3",
     "TabFieldDisplayOrder": 5
   },
@@ -775,7 +824,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "miniFormA",
     "TabFieldDisplayOrder": 1
   },
@@ -784,7 +833,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "formC",
     "TabFieldDisplayOrder": 2
   },
@@ -793,7 +842,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "formG",
     "TabFieldDisplayOrder": 3
   },
@@ -802,7 +851,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "outOfFamilyCourtResolution",
     "TabFieldDisplayOrder": 4
   },
@@ -811,7 +860,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "divorceUploadEvidence1",
     "TabFieldDisplayOrder": 5,
     "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
@@ -821,7 +870,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "divorceUploadEvidence2",
     "TabFieldDisplayOrder": 6,
     "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
@@ -831,7 +880,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "divorceUploadPetition",
     "TabFieldDisplayOrder": 7,
     "FieldShowCondition": "divorceStageReached=\"Petition Issued\""
@@ -841,7 +890,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "uploadOtherDocumentLabel",
     "TabFieldDisplayOrder": 8
   },
@@ -850,7 +899,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "uploadAdditionalDocument",
     "TabFieldDisplayOrder": 9
   },
@@ -859,7 +908,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "uploadCaseDocumentLabel",
     "TabFieldDisplayOrder": 10
   },
@@ -868,7 +917,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "uploadCaseDocument",
     "TabFieldDisplayOrder": 11
   },
@@ -877,7 +926,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "uploadGeneralDocuments",
     "TabFieldDisplayOrder": 12
   },
@@ -886,7 +935,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "scannedDocuments",
     "TabFieldDisplayOrder": 13
   },
@@ -895,7 +944,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "copyOfPaperFormA",
     "TabFieldDisplayOrder": 14
   },
@@ -904,7 +953,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "draftDirectionOrderCollection",
     "TabFieldDisplayOrder": 15
   },
@@ -913,7 +962,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "uploadHearingOrder",
     "TabFieldDisplayOrder": 16
   },
@@ -922,7 +971,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "hearingOrderOtherDocuments",
     "TabFieldDisplayOrder": 17
   },
@@ -931,7 +980,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "generalLetterCollection",
     "TabFieldDisplayOrder": 18
   },
@@ -940,7 +989,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "generalEmailCollection",
     "TabFieldDisplayOrder": 19
   },
@@ -949,7 +998,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "bulkPrintLetterIdRes",
     "TabFieldDisplayOrder": 20
   },
@@ -958,7 +1007,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "bulkPrintCoverSheetRes",
     "TabFieldDisplayOrder": 21
   },
@@ -967,7 +1016,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "bulkPrintLetterIdApp",
     "TabFieldDisplayOrder": 22
   },
@@ -976,7 +1025,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "bulkPrintCoverSheetApp",
     "TabFieldDisplayOrder": 23
   },
@@ -985,7 +1034,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "confidentialCoverSheetLabel",
     "TabFieldDisplayOrder": 24
   },
@@ -994,7 +1043,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
     "TabFieldDisplayOrder": 25
   },
@@ -1003,7 +1052,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
     "TabFieldDisplayOrder": 26
   },
@@ -1012,7 +1061,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "judgesAmendedOrderCollection",
     "TabFieldDisplayOrder": 27
   },
@@ -1021,7 +1070,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "orderApprovedCoverLetter",
     "TabFieldDisplayOrder": 28
   },
@@ -1030,7 +1079,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "applicationDocumentsTab",
     "TabLabel": "Case documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "variationOrderDocument",
     "TabFieldDisplayOrder": 29
   },
@@ -1039,7 +1088,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "paymentDetailsTab",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 8,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "helpWithFeesQuestion",
     "TabFieldDisplayOrder": 1
   },
@@ -1048,7 +1097,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "paymentDetailsTab",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 8,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "HWFNumber",
     "TabFieldDisplayOrder": 2
   },
@@ -1057,7 +1106,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "paymentDetailsTab",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 8,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "amountToPay",
     "TabFieldDisplayOrder": 3
   },
@@ -1066,7 +1115,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "paymentDetailsTab",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 8,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "PBANumber",
     "TabFieldDisplayOrder": 4
   },
@@ -1075,7 +1124,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "paymentDetailsTab",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 8,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "PBAreference",
     "TabFieldDisplayOrder": 5
   },
@@ -1084,7 +1133,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "paymentDetailsTab",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 8,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "orderSummary",
     "TabFieldDisplayOrder": 6
   },
@@ -1093,7 +1142,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "paymentDetailsTab",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 8,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "PBAPaymentReference",
     "TabFieldDisplayOrder": 7
   },
@@ -1102,7 +1151,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "notesTab",
     "TabLabel": "Notes",
-    "TabDisplayOrder": 9,
+    "TabDisplayOrder": 10,
     "CaseFieldID": "caseNotesCollection",
     "TabFieldDisplayOrder": 1
   },
@@ -1161,6 +1210,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDateOfMarriage",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 6
   },
   {
@@ -1170,6 +1220,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDateOfSepration",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 7
   },
   {
@@ -1179,6 +1230,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDivorcePetitionIssuedDate",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 8
   },
   {
@@ -1188,6 +1240,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabNameOfCourtDivorceCentre",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 9
   },
   {
@@ -1742,6 +1795,16 @@
     "TabDisplayOrder": 12,
     "CaseFieldID": "assignedToJudge",
     "TabFieldDisplayOrder": 7
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "AdminNotes",
+    "TabLabel": "Admin Notes",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "tabCcdCaseNumber",
+    "FieldShowCondition": "typeOfApplication=\"Under paragraph 1 or 2 of schedule 1 children act 1989\"",
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2869,6 +2932,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationChecklist",
+    "FieldShowCondition": "dateOfMarriage!=\"\"",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -2877,8 +2941,18 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
+    "CaseFieldID": "consentNatureOfApplicationChecklistSchedule",
+    "FieldShowCondition": "typeOfApplication=\"Under paragraph 1 or 2 of schedule 1 children act 1989\"",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationAddress",
-    "TabFieldDisplayOrder": 3,
+    "TabFieldDisplayOrder": 4,
     "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
   {
@@ -2888,7 +2962,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationMortgage",
-    "TabFieldDisplayOrder": 4,
+    "TabFieldDisplayOrder": 5,
     "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
   {
@@ -2898,8 +2972,8 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentOrderForChildrenQuestionLabel",
-    "TabFieldDisplayOrder": 5,
-    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+    "TabFieldDisplayOrder": 6,
+    "FieldShowCondition": "consentNatureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\" OR consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "10/08/2020",
@@ -2908,8 +2982,8 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentOrderForChildrenQuestion1",
-    "TabFieldDisplayOrder": 6,
-    "FieldShowCondition": "consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
+    "TabFieldDisplayOrder": 7,
+    "FieldShowCondition": "consentNatureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\" OR consentNatureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\""
   },
   {
     "LiveFrom": "10/08/2020",
@@ -2918,7 +2992,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplication5",
-    "TabFieldDisplayOrder": 7,
+    "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "consentOrderForChildrenQuestion1=\"Yes\""
   },
   {
@@ -2928,7 +3002,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplication6",
-    "TabFieldDisplayOrder": 8,
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "consentOrderForChildrenQuestion1=\"Yes\" AND consentNatureOfApplication5=\"No\""
   },
   {
@@ -2938,8 +3012,17 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplication7",
-    "TabFieldDisplayOrder": 9,
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "consentOrderForChildrenQuestion1=\"Yes\" AND consentNatureOfApplication5=\"No\" AND consentNatureOfApplication6=\"Other\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "consentVariationOrderDocument",
+    "TabFieldDisplayOrder": 11
   },
   {
     "LiveFrom": "01/06/2020",
@@ -2948,7 +3031,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentOrder",
-    "TabFieldDisplayOrder": 10
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/06/2020",
@@ -2957,7 +3040,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentD81Joint",
-    "TabFieldDisplayOrder": 11,
+    "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "consentD81Question=\"Yes\""
   },
   {
@@ -2967,7 +3050,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentD81Applicant",
-    "TabFieldDisplayOrder": 12,
+    "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "consentD81Question=\"No\""
   },
   {
@@ -2977,7 +3060,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentD81Respondent",
-    "TabFieldDisplayOrder": 13,
+    "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "consentD81Question=\"No\""
   },
   {
@@ -2987,24 +3070,6 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentPensionCollection",
-    "TabFieldDisplayOrder": 14
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "consentOrderProcessTab",
-    "TabLabel": "Consent Order Process",
-    "TabDisplayOrder": 17,
-    "CaseFieldID": "consentOtherCollection",
-    "TabFieldDisplayOrder": 15
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "consentOrderProcessTab",
-    "TabLabel": "Consent Order Process",
-    "TabDisplayOrder": 17,
-    "CaseFieldID": "consentSubjectToDecreeAbsoluteValue",
     "TabFieldDisplayOrder": 16
   },
   {
@@ -3013,7 +3078,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "consentServePensionProvider",
+    "CaseFieldID": "consentOtherCollection",
     "TabFieldDisplayOrder": 17
   },
   {
@@ -3022,8 +3087,26 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
+    "CaseFieldID": "consentSubjectToDecreeAbsoluteValue",
+    "TabFieldDisplayOrder": 18
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "consentServePensionProvider",
+    "TabFieldDisplayOrder": 19
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
     "CaseFieldID": "consentServePensionProviderResponsibility",
-    "TabFieldDisplayOrder": 18,
+    "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "consentServePensionProvider=\"Yes\""
   },
   {
@@ -3033,7 +3116,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentServePensionProviderOther",
-    "TabFieldDisplayOrder": 19,
+    "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "consentServePensionProvider=\"Yes\" AND consentServePensionProviderResponsibility=\"other\""
   },
   {
@@ -3043,24 +3126,6 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentSelectJudge",
-    "TabFieldDisplayOrder": 20
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "consentOrderProcessTab",
-    "TabLabel": "Consent Order Process",
-    "TabDisplayOrder": 17,
-    "CaseFieldID": "consentJudgeName",
-    "TabFieldDisplayOrder": 21
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "consentOrderProcessTab",
-    "TabLabel": "Consent Order Process",
-    "TabDisplayOrder": 17,
-    "CaseFieldID": "consentDateOfOrder",
     "TabFieldDisplayOrder": 22
   },
   {
@@ -3069,7 +3134,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "consentAdditionalComments",
+    "CaseFieldID": "consentJudgeName",
     "TabFieldDisplayOrder": 23
   },
   {
@@ -3078,7 +3143,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "Contested_ConsentedApprovedOrders",
+    "CaseFieldID": "consentDateOfOrder",
     "TabFieldDisplayOrder": 24
   },
   {
@@ -3087,7 +3152,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "consentedNotApprovedOrders",
+    "CaseFieldID": "consentAdditionalComments",
     "TabFieldDisplayOrder": 25
   },
   {
@@ -3096,7 +3161,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "generalOrdersConsent",
+    "CaseFieldID": "Contested_ConsentedApprovedOrders",
     "TabFieldDisplayOrder": 26
   },
   {
@@ -3105,25 +3170,25 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "consentMiniFormA",
+    "CaseFieldID": "consentedNotApprovedOrders",
     "TabFieldDisplayOrder": 27
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "bulkPrintLetterIdRes",
+    "CaseFieldID": "generalOrdersConsent",
     "TabFieldDisplayOrder": 28
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "bulkPrintCoverSheetRes",
+    "CaseFieldID": "consentMiniFormA",
     "TabFieldDisplayOrder": 29
   },
   {
@@ -3132,7 +3197,7 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "bulkPrintLetterIdApp",
+    "CaseFieldID": "bulkPrintLetterIdRes",
     "TabFieldDisplayOrder": 30
   },
   {
@@ -3141,8 +3206,26 @@
     "TabID": "consentOrderProcessTab",
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
-    "CaseFieldID": "bulkPrintCoverSheetApp",
+    "CaseFieldID": "bulkPrintCoverSheetRes",
     "TabFieldDisplayOrder": 31
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "bulkPrintLetterIdApp",
+    "TabFieldDisplayOrder": 32
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "consentOrderProcessTab",
+    "TabLabel": "Consent Order Process",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "bulkPrintCoverSheetApp",
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/06/2020",
