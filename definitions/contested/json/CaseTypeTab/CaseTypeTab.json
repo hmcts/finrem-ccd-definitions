@@ -296,7 +296,7 @@
     "TabLabel": "Divorce / Dissolution Details",
     "TabDisplayOrder": 4,
     "CaseFieldID": "divorceDetailsLabel",
-    "TabShowCondition": "dateOfMarriage!=\"\"",
+    "TabShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -651,7 +651,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 6,
     "CaseFieldID": "natureOfApplicationChecklist",
-    "FieldShowCondition": "dateOfMarriage!=\"\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -1210,7 +1210,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDateOfMarriage",
-    "FieldShowCondition": "dateOfMarriage!=\"\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
     "TabFieldDisplayOrder": 6
   },
   {
@@ -1220,7 +1220,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDateOfSepration",
-    "FieldShowCondition": "dateOfMarriage!=\"\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
     "TabFieldDisplayOrder": 7
   },
   {
@@ -1230,7 +1230,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabDivorcePetitionIssuedDate",
-    "FieldShowCondition": "dateOfMarriage!=\"\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
     "TabFieldDisplayOrder": 8
   },
   {
@@ -1240,7 +1240,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabNameOfCourtDivorceCentre",
-    "FieldShowCondition": "dateOfMarriage!=\"\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
     "TabFieldDisplayOrder": 9
   },
   {
@@ -2932,7 +2932,7 @@
     "TabLabel": "Consent Order Process",
     "TabDisplayOrder": 17,
     "CaseFieldID": "consentNatureOfApplicationChecklist",
-    "FieldShowCondition": "dateOfMarriage!=\"\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
     "TabFieldDisplayOrder": 2
   },
   {

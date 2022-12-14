@@ -6577,6 +6577,20 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom:": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrder",
+    "CaseFieldID": "nameOfCourtDivorceCentre",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageLabel": "Consent Order Application",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "warningMessage=\"DONOTSHOW\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrder",
@@ -6602,7 +6616,7 @@
     "PageLabel": "Consent Order Application",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "dateOfMarriage!=\"\" OR typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\"  OR nameOfCourtDivorceCentre!=\"\" OR typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -6999,6 +7013,20 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom:": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrderApproved",
+    "CaseFieldID": "nameOfCourtDivorceCentre",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageLabel": "Approve Application",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "consentServePensionProvider=\"banana\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrderApproved",
@@ -7009,7 +7037,7 @@
     "PageLabel": "Approve Application",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "dateOfMarriage!=\"\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\"  OR nameOfCourtDivorceCentre!=\"\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -7023,7 +7051,7 @@
     "PageLabel": "Approve Application",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "dateOfMarriage!=\"\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
