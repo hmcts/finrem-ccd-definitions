@@ -9,6 +9,7 @@
     "PostConditionState": "caseAdded",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/draft-contested-mini-form-a",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
@@ -533,6 +534,7 @@
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "SecurityClassification": "Public",
+    "EventEnablingCondition": "typeOfApplication!=\"Under paragraph 1 or 2 of schedule 1 children act 1989\"",
     "ShowEventNotes": "Y"
   },
   {
@@ -802,6 +804,7 @@
     "PostConditionState": "paperCaseAdded",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-paper-case-defaults",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-paper-case-org-policy",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
     "ShowSummary": "Y"
@@ -1226,6 +1229,20 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_regenerateFormC",
+    "Name": "Re-generate Form C",
+    "Description": "Re-generate Form C",
+    "DisplayOrder": 146,
+    "PreConditionState(s)": "gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
   }
