@@ -1714,7 +1714,7 @@
     "PageID": 21,
     "PageDisplayOrder": 21,
     "PageColumnNumber": 1,
-    "PageShowCondition": "natureOfApplicationChecklist CONTAINS \"variationOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"variationOrder\"",
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"variationOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"variationOrder\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1727,6 +1727,7 @@
     "PageID": 21,
     "PageDisplayOrder": 21,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"variationOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"variationOrder\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -3761,7 +3762,7 @@
     "PageID": 24,
     "PageDisplayOrder": 24,
     "PageColumnNumber": 1,
-    "PageShowCondition": "natureOfApplicationChecklist CONTAINS \"variationOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"variationOrder\"",
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"variationOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"variationOrder\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -3774,6 +3775,7 @@
     "PageID": 24,
     "PageDisplayOrder": 24,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"variationOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"variationOrder\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
