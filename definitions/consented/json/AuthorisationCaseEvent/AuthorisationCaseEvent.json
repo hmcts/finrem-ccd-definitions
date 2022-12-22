@@ -1447,5 +1447,19 @@
     "CaseEventID": "FR_listForHearing",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/12/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_referToJudgeFromReadyForHearing",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "01/12/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_reassignJudgeFromReadyForHearing",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CR"
   }
 ]

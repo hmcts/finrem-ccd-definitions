@@ -126,5 +126,13 @@
     "Name": "Close",
     "DisplayOrder": 16,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
+  },
+  {
+    "LiveFrom": "01/12/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "readyForHearing",
+    "Name": "Ready For Hearing",
+    "DisplayOrder": 17,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${appRespondentLName}**"
   }
 ]
