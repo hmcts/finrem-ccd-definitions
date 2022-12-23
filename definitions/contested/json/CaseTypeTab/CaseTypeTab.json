@@ -54,7 +54,7 @@
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantContactLabel",
     "TabFieldDisplayOrder": 4,
-    "FieldShowCondition": "applicantAddressConfidential!=\"Yes\""
+    "FieldShowCondition": "applicantAddress=\"*\" AND applicantAddress.AddressLine1=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -111,8 +111,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantAddressConfidential",
-    "TabFieldDisplayOrder": 10,
-    "FieldShowCondition": "applicantRepresented=\"No\""
+    "TabFieldDisplayOrder": 10
   },
   {
     "LiveFrom": "01/01/2017",
