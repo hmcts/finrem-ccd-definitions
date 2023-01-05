@@ -104,7 +104,7 @@
     "Name": "Upload document",
     "Description": "Upload document",
     "DisplayOrder": 108,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
+    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;readyForHearing",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -821,7 +821,7 @@
     "Name": "Solicitor Upload document",
     "Description": "Solicitor Upload document",
     "DisplayOrder": 48,
-    "PreConditionState(s)": "awaitingInfo;readyForHearing",
+    "PreConditionState(s)": "awaitingInfo",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -1007,6 +1007,33 @@
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2023",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_generalOrder_Judge",
+    "Name": "General Order",
+    "Description": "General Order",
+    "DisplayOrder": 62,
+    "PreConditionState(s)": "readyForHearing",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-order-start",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-order",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-order-raised",
+    "SecurityClassification": "Public",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_uploadDocument_Solicitor",
+    "Name": "Upload document",
+    "Description": "Upload document",
+    "DisplayOrder": 63,
+    "PreConditionState(s)": "readyForHearing",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   }
 ]
