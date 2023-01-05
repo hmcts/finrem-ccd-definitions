@@ -513,6 +513,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "highCourtFRCList",
+    "PageFieldDisplayOrder": 11,
+    "DisplayContext": "MANDATORY",
+    "PageID": 4,
+    "PageDisplayOrder": 4,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "nottinghamCourtList",
     "PageFieldDisplayOrder": 12,
     "DisplayContext": "MANDATORY",
@@ -1781,6 +1794,19 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_amendApplicationDetails",
+    "CaseFieldID": "highCourtFRCList",
+    "PageFieldDisplayOrder": 11,
+    "DisplayContext": "MANDATORY",
+    "PageID": 4,
+    "PageDisplayOrder": 4,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -3828,6 +3854,19 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_updateCourtInfo",
+    "CaseFieldID": "highCourtFRCList",
+    "PageFieldDisplayOrder": 8,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
