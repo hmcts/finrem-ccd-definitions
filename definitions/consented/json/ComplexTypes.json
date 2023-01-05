@@ -1200,6 +1200,16 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "hearingCollection",
+    "ListElementCode": "highCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_highCourtList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
     "ListElementCode": "additionalInformationAboutHearing",
     "FieldType": "Text",
     "ElementLabel": "Additional information about the hearing",

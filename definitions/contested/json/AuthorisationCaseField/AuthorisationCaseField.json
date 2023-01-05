@@ -1337,6 +1337,13 @@
     "CRUD": "CRU"
   },
   {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "highCourtList",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "consentOtherCollection",
@@ -3629,6 +3636,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "northWalesCourtList",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "highCourtList",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
@@ -6057,6 +6071,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "highCourtList",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "tabSpecificArrangementsRequired",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
@@ -7136,6 +7157,13 @@
     "LiveFrom": "01/09/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationDirections_walesFRCList",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalApplicationDirections_highCourtFRCList",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
@@ -9439,6 +9467,27 @@
     "LiveFrom": "09/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "interim_northWalesCourtList",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "interim_highCourtList",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "interim_highCourtList",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "interim_highCourtList",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },

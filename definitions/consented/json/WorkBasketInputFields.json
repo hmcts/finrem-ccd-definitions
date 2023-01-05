@@ -234,5 +234,13 @@
     "Label": "North Wales Court List",
     "DisplayOrder": 33,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "highCourtList",
+    "Label": "High Court Family Division Court List",
+    "DisplayOrder": 33,
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\""
   }
 ]

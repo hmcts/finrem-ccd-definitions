@@ -363,6 +363,17 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
+    "CaseFieldID": "highCourtList",
+    "TabFieldDisplayOrder": 30,
+    "FieldShowCondition": "regionList=\"highcourt\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
     "CaseFieldID": "divRoleOfFrApplicant",
     "TabFieldDisplayOrder": 31
   },

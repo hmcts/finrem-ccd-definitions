@@ -1649,6 +1649,16 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
+    "CaseFieldID": "highCourtList",
+    "TabFieldDisplayOrder": 50,
+    "FieldShowCondition": "regionList=\"highcourt\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
     "CaseFieldID": "tabJudgeAllocatedLabel",
     "TabFieldDisplayOrder": 51
   },
@@ -2325,6 +2335,16 @@
     "CaseFieldID": "northWalesCourtList",
     "TabFieldDisplayOrder": 38,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "highCourtList",
+    "TabFieldDisplayOrder": 39,
+    "FieldShowCondition": "regionList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3911,6 +3931,16 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_highCourtFRCList",
+    "TabFieldDisplayOrder": 22,
+    "FieldShowCondition": "interim_regionList=\"highcourt\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
     "CaseFieldID": "interim_birminghamCourtList",
     "TabFieldDisplayOrder": 23,
     "FieldShowCondition": "interim_regionList=\"midlands\" AND interim_midlandsFRCList=\"birmingham\""
@@ -4064,6 +4094,16 @@
     "CaseFieldID": "interim_northWalesCourtList",
     "TabFieldDisplayOrder": 38,
     "FieldShowCondition": "interim_regionList=\"wales\" AND interim_walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_highCourtList",
+    "TabFieldDisplayOrder": 39,
+    "FieldShowCondition": "interim_regionList=\"highcourt\" AND interim_highCourtFRCList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
