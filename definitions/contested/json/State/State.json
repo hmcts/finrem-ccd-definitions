@@ -254,5 +254,13 @@
     "Name": "General Application Outcome",
     "DisplayOrder": 32,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
+  },
+  {
+    "LiveFrom": "01/10/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "paperCaseAdded",
+    "Name": "Application Drafted",
+    "DisplayOrder": 33,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}**"
   }
 ]

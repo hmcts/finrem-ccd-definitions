@@ -195,6 +195,7 @@
     "PostConditionState": "caseAdded",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
@@ -407,6 +408,7 @@
     "DisplayOrder": 16,
     "PreConditionState(s)": "referredToJudge",
     "PostConditionState": "consentOrderApproved",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
@@ -648,6 +650,7 @@
     "Description": "New Paper Case",
     "DisplayOrder": 34,
     "PostConditionState": "newPaperCase",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
