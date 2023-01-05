@@ -4377,12 +4377,21 @@
     "TabFieldDisplayOrder": 11
   },
   {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "generalApplicationsTab",
+    "TabLabel": "General Applications",
+    "TabDisplayOrder": 27,
+    "CaseFieldID": "generalApplicationDirectionsDocument",
+    "TabFieldDisplayOrder": 12
+  },
+  {
     "LiveFrom": "01/01/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "generalApplicationsTab",
     "TabLabel": "General Applications",
     "TabDisplayOrder": 27,
     "CaseFieldID": "generalApplications",
-    "TabFieldDisplayOrder": 12
+    "TabFieldDisplayOrder": 13
   }
 ]
