@@ -155,7 +155,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "highCourtFRCList",
-    "TabFieldDisplayOrder": 12,
+    "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "regionList=\"highcourt\""
   },
   {
@@ -364,7 +364,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "highCourtList",
-    "TabFieldDisplayOrder": 30,
+    "TabFieldDisplayOrder": 31,
     "FieldShowCondition": "regionList=\"highcourt\""
   },
   {
@@ -375,16 +375,6 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "divRoleOfFrApplicant",
-    "TabFieldDisplayOrder": 31
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "applicantDetails",
-    "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantRepresentedLabel",
     "TabFieldDisplayOrder": 32
   },
   {
@@ -394,7 +384,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantRepresented",
+    "CaseFieldID": "applicantRepresentedLabel",
     "TabFieldDisplayOrder": 33
   },
   {
@@ -404,8 +394,18 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
+    "CaseFieldID": "applicantRepresented",
+    "TabFieldDisplayOrder": 34
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
     "CaseFieldID": "applicantContactLabel",
-    "TabFieldDisplayOrder": 34,
+    "TabFieldDisplayOrder": 35,
     "FieldShowCondition": "applicantRepresented=\"No\""
   },
   {
@@ -416,17 +416,6 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantAddress",
-    "TabFieldDisplayOrder": 35,
-    "FieldShowCondition": "applicantRepresented=\"No\" AND applicantAddressConfidential!=\"Yes\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "applicantDetails",
-    "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantPhone",
     "TabFieldDisplayOrder": 36,
     "FieldShowCondition": "applicantRepresented=\"No\" AND applicantAddressConfidential!=\"Yes\""
   },
@@ -437,7 +426,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantEmail",
+    "CaseFieldID": "applicantPhone",
     "TabFieldDisplayOrder": 37,
     "FieldShowCondition": "applicantRepresented=\"No\" AND applicantAddressConfidential!=\"Yes\""
   },
@@ -448,8 +437,19 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "applicantAddressConfidential",
+    "CaseFieldID": "applicantEmail",
     "TabFieldDisplayOrder": 38,
+    "FieldShowCondition": "applicantRepresented=\"No\" AND applicantAddressConfidential!=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "applicantAddressConfidential",
+    "TabFieldDisplayOrder": 39,
     "FieldShowCondition": "applicantRepresented=\"No\""
   },
   {
@@ -460,17 +460,6 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorAbout_Para-1",
-    "TabFieldDisplayOrder": 39,
-    "FieldShowCondition": "applicantRepresented=\"Yes\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "applicantDetails",
-    "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
-    "CaseFieldID": "solicitorName",
     "TabFieldDisplayOrder": 40,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -481,7 +470,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "solicitorFirm",
+    "CaseFieldID": "solicitorName",
     "TabFieldDisplayOrder": 41,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -492,7 +481,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "solicitorReference",
+    "CaseFieldID": "solicitorFirm",
     "TabFieldDisplayOrder": 42,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -503,7 +492,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "solicitorAddress",
+    "CaseFieldID": "solicitorReference",
     "TabFieldDisplayOrder": 43,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -514,7 +503,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "CaseFieldID": "solicitorAddress",
     "TabFieldDisplayOrder": 44,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -525,7 +514,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "solicitorPhone",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
     "TabFieldDisplayOrder": 45,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -536,7 +525,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "solicitorEmail",
+    "CaseFieldID": "solicitorPhone",
     "TabFieldDisplayOrder": 46,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -547,7 +536,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "solicitorDXnumber",
+    "CaseFieldID": "solicitorEmail",
     "TabFieldDisplayOrder": 47,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -558,7 +547,7 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
-    "CaseFieldID": "solicitorAgreeToReceiveEmails",
+    "CaseFieldID": "solicitorDXnumber",
     "TabFieldDisplayOrder": 48,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
@@ -569,8 +558,19 @@
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
+    "CaseFieldID": "solicitorAgreeToReceiveEmails",
+    "TabFieldDisplayOrder": 49,
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "applicantDetails",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
     "CaseFieldID": "childrenInfo",
-    "TabFieldDisplayOrder": 49
+    "TabFieldDisplayOrder": 50
   },
   {
     "LiveFrom": "01/01/2017",
