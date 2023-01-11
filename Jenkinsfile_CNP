@@ -89,7 +89,7 @@ def checkForNoCleanupLabel(branch_name) {
 }
 
 // Configure branches to sync with master branch
-def branchesToSync = ['demo', 'ithc', 'perftest']
+def branchesToSync = ['ithc', 'perftest']
 
 withPipeline("nodejs", product, component) {
 
