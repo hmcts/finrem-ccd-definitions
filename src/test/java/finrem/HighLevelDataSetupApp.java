@@ -22,6 +22,6 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
 
     @Override
     protected void doLoadTestData() {
-        importDefinitions();
+        //importDefinitions();
     }
 }
