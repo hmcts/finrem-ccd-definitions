@@ -84,7 +84,15 @@
     "generate-excel-all-contested": "yarn generate-excel-contested && yarn generate-excel-local-contested && yarn generate-excel-demo-contested && yarn generate-excel-aat-contested && yarn generate-excel-ithc-contested && yarn generate-excel-demo-prod-like-contested && yarn generate-excel-perftest-contested && yarn generate-excel-prod-contested",
     "copy-common-components-consented": "cp -R definitions/common/json/* definitions/consented/json",
     "copy-common-components-contested": "cp -R definitions/common/json/* definitions/contested/json",
-    "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested"
+    "copy-local-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-local-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-local-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-preview-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-preview-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-preview-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-aat-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-aat-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-aat-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-demo-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-demo-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-demo-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-ithc-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-ithc-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-ithc-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-perftest-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-perftest-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-perftest-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-prod-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-prod-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-prod-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
+    "highLevelDataSetup": "echo './gradlew highLevelDataSetup --args=$1' > ./temp.sh && sh ./temp.sh"
   },
   "pre-commit": [
     "lint"
