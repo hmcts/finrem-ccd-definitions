@@ -2,7 +2,7 @@
 
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure")
+@Library("Infrastructure@enable-logging-on-ft")
 
 String product = "finrem"
 String component = "ccd-definitions"
@@ -147,6 +147,7 @@ withPipeline("nodejs", product, component) {
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
       env.IMPORT_PREVIEW=true
     } else {
+
       yarnBuilder.yarn('setup')
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         dir('definitions/consented/json/UserProfile') {
@@ -200,7 +201,7 @@ withPipeline("nodejs", product, component) {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
   }
 
-  afterSuccess('functionalTest') {
+  afterSuccess('functionalTest:aat') {
 
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
     if ('aat' == env.ENV) {
