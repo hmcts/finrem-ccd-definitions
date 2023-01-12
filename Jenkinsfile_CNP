@@ -88,33 +88,9 @@ def checkForNoCleanupLabel(branch_name) {
   return new GithubAPI(this).getLabelsbyPattern(branch_name, "cleanup").contains("no_cleanup")
 }
 
-// Configure branches to sync with master branch
-def branchesToSync = ['ithc', 'perftest']
-
 withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
-  enableHighLevelDataSetup()
-
-  onMaster() {
-    env.ENV='aat'
-  }
-
-  onPR() {
-    env.ENV='preview'
-  }
-
-  onIthc() {
-    env.ENV='ithc'
-  }
-
-  onDemo() {
-    env.ENV='demo'
-  }
-
-  onPerftest() {
-    env.ENV='perftest'
-  }
 
   afterSuccess('test') {
     // enable yarn audit and send message on master branch only
@@ -126,94 +102,93 @@ withPipeline("nodejs", product, component) {
       }
     }
   }
-  before('highleveldatasetup') {
-    if('preview' == env.ENV) {
-      yarnBuilder.yarn('setup')
 
-      env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
-      env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      stageWithAgent('Generate Financial Remedy Consented Case config', product) {
-        yarnBuilder.yarn("generate-excel-preview-consented")
-      }
-      stageWithAgent('Generate Financial Remedy Contested Case config', product) {
-        yarnBuilder.yarn("generate-excel-preview-contested")
-      }
+  before('functionalTest:preview') {
+    yarnBuilder.yarn('setup')
 
-      env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.CCD_WEB_URL = "https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.CCD_CONSENTED_FILE_NAME = "ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
-      env.CCD_CONTESTED_FILE_NAME = "ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
-      steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-      env.IMPORT_PREVIEW=true
-    } else {
-      yarnBuilder.yarn('setup')
-      stageWithAgent('Generate Financial Remedy Consented Case config', product) {
-        dir('definitions/consented/json/UserProfile') {
-          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
-          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_2} > UserProfile-judgeDetails2-prod.json'
-          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_3} > UserProfile-judgeDetails3-prod.json'
-          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_4} > UserProfile-judgeDetails4-prod.json'
-          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_5} > UserProfile-judgeDetails5-prod.json'
-          sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_6} > UserProfile-judgeDetails6-prod.json'
-        }
-
-        dir('definitions/consented/json/FixedLists') {
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
-        }
-
-        yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
-        if ('aat' == env.ENV) {
-          yarnBuilder.yarn("generate-excel-prod-consented")
-        }
-      }
-
-      stageWithAgent('Generate Financial Remedy Contested Case config', product) {
-        dir('definitions/contested/json/FixedLists') {
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
-          sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
-        }
-        yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
-        yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
-        if ('aat' == env.ENV) {
-          yarnBuilder.yarn("generate-excel-prod-contested")
-        }
-      }
-
-      env.CCD_ADMIN_URL="https://ccd-admin-web.${env.ENV}.platform.hmcts.net"
-      env.CCD_DATA_API_URL="http://ccd-data-store-api-${env.ENV}.service.core-compute-aat.internal"
-      env.CCD_WEB_URL="https://manage-case.${env.ENV}.platform.hmcts.net"
-      env.XUI_ORG_WEB_URL="https://manage-org.${env.ENV}.platform.hmcts.net"
-      env.CCD_CONSENTED_FILE_NAME="ccd-config-${env.ENV}-consented-${GIT_COMMIT}.xlsx"
-      env.CCD_CONTESTED_FILE_NAME="ccd-config-${env.ENV}-contested-${GIT_COMMIT}.xlsx"
+    env.COS_API_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
+    env.AAC_API_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-aac-manage-case-assignment"
+    env.CCD_DATA_API_URL="https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+    stageWithAgent('Generate Financial Remedy Consented Case config', product) {
+      yarnBuilder.yarn('generate-excel-preview-consented')
+      yarnBuilder.yarn('generate-excel-aat-consented')
+      yarnBuilder.yarn('generate-excel-demo-consented')
     }
-  }
+    stageWithAgent('Generate Financial Remedy Contested Case config', product) {
+      yarnBuilder.yarn('generate-excel-preview-contested')
+      yarnBuilder.yarn('generate-excel-aat-contested')
+      yarnBuilder.yarn('generate-excel-demo-contested')
+    }
 
-  before('functionalTest') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+    env.CCD_ADMIN_URL="https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+    env.CCD_WEB_URL="https://case-management-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+    env.CCD_CONSENTED_FILE_NAME="ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
+    env.CCD_CONTESTED_FILE_NAME="ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
+    env.IMPORT_PREVIEW=true
   }
 
-  afterSuccess('functionalTest') {
-
+  afterSuccess('functionalTest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
-    if ('aat' == env.ENV) {
-      yarnBuilder.yarn("copy-prod-xlxs-to-resources");
-      slackSend(channel: '#finrem-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
-    }
   }
+
+  before('functionalTest:aat') {
+    yarnBuilder.yarn('setup')
+
+    stageWithAgent('Generate Financial Remedy Consented Case config', product) {
+      dir('definitions/consented/json/UserProfile'){
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_2} > UserProfile-judgeDetails2-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_3} > UserProfile-judgeDetails3-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_4} > UserProfile-judgeDetails4-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_5} > UserProfile-judgeDetails5-prod.json'
+        sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_6} > UserProfile-judgeDetails6-prod.json'
+      }
+
+      dir('definitions/consented/json/FixedLists'){
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
+      }
+
+      yarnBuilder.yarn('generate-excel-all-consented')
+      env.IMPORT_AAT=true
+    }
+
+    stageWithAgent('Generate Financial Remedy Contested Case config', product) {
+      dir('definitions/contested/json/FixedLists'){
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_4} > FixedLists-judgeDetails4-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_5} > FixedLists-judgeDetails5-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
+        sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
+      }
+
+      yarnBuilder.yarn('generate-excel-all-contested')
+    }
+
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+    env.CCD_ADMIN_URL="https://ccd-admin-web.aat.platform.hmcts.net"
+    env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
+    env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
+    env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
+    env.CCD_CONSENTED_FILE_NAME="ccd-config-aat-consented-${GIT_COMMIT}.xlsx"
+    env.CCD_CONTESTED_FILE_NAME="ccd-config-aat-contested-${GIT_COMMIT}.xlsx"
+  }
+
+  afterSuccess('functionalTest:aat') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
+    slackSend(channel: '#finrem-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
+  }
+
 
   onPR {
     if (!checkForNoCleanupLabel(env.BRANCH_NAME)) {
