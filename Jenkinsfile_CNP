@@ -147,7 +147,6 @@ withPipeline("nodejs", product, component) {
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
       env.IMPORT_PREVIEW=true
     } else {
-
       yarnBuilder.yarn('setup')
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         dir('definitions/consented/json/UserProfile') {

@@ -39,3 +39,17 @@ if (process.env.IMPORT_PREVIEW) {
     I.uploadConfig(`../../definitions/contested/xlsx/ccd-config-preview-contested-${process.env.GIT_COMMIT}.xlsx`);
   }).retry({retries: 3, minTimeout: 300000})
 }
+
+if (process.env.IMPORT_AAT) {
+  Scenario('upload Consented aat Config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/consented/xlsx/ccd-config-aat-consented-${process.env.GIT_COMMIT}.xlsx`);
+    I.see('Case Definition data successfully imported');
+  }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+
+  Scenario('upload Contested aat Config file @pipeline', I => {
+    I.loginToAdminConsole();
+    I.uploadConfig(`../../definitions/contested/xlsx/ccd-config-aat-contested-${process.env.GIT_COMMIT}.xlsx`);
+    I.see('Case Definition data successfully imported');
+  }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
+}
