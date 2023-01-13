@@ -24,7 +24,8 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
 
     @Override
     protected void doLoadTestData() {
-        System.out.println(TestAutomationConfig.INSTANCE.getDefinitionStoreUrl()
+        List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
+        System.out.println(definitionFileResources
                 + " definition file is skipped on " +
                  getDataSetupEnvironment());
         //importDefinitions();
