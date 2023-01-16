@@ -110,14 +110,9 @@ function contestedAmendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  I.waitForPage('#paymentForChildrenDecision');
-  I.waitForContinueButtonEnabled();
-  I.click('Continue');
-
   I.waitForPage('#fastTrackDecision');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
 
   I.waitForPage('#addToComplexityListOfCourts');
   I.waitForContinueButtonEnabled();
@@ -131,13 +126,8 @@ function contestedAmendApplicationDetails() {
   I.waitForPage('#applicantAttendedMIAMLabel');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.refreshPage();
-  I.waitForPage('#applicantAttendedMIAMLabel');
-  I.waitForContinueButtonEnabled();
-  I.click('Continue');
 
-  I.waitForPage('#soleTraderName');
-  I.fillField('#soleTraderName', 'sole trading');
+  I.waitForPage('#applicantAttendedMIAMLabel');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
@@ -150,16 +140,14 @@ function contestedAmendApplicationDetails() {
   I.click('Continue');
 
   I.waitForPage('.check-your-answers');
-  // The necessary refresh on L134 has cleared the check your answers page. To be fixed in @DFR-586
-
-  // I.see('Solicitor Details');
-  // I.see('Divorce Details');
-  // I.see('Applicant’s Details');
-  // I.see('Respondent’s Details');
-  // I.see('Is the respondent represented ?');
-  // I.see('Do you want to upload any other documents ?');
-
   I.waitForText('Check your answers', '30');
+  I.see('Solicitor Details');
+  I.see('Applicant’s Details');
+  I.see('Respondent’s Details');
+  I.see('Is the respondent represented ?');
+  I.see('Do you want to upload any other documents ?');
+
+
   I.click('Submit');
   I.wait('5');
   I.waitForText('History', '60');

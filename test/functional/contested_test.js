@@ -204,7 +204,6 @@ Scenario('Contested Case Creation by Solicitor @crossbrowser @nightly', async I 
     await I.contestedApplicantDetails();
     await I.contestedRespondentDetails();
     await I.contestedNatureOfApplication();
-    await I.contestedOrderForChildren();
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
@@ -222,9 +221,9 @@ Scenario('Contested Case Creation by Solicitor @crossbrowser @nightly', async I 
     await I.finalPaymentSubmissionPage();
     await I.finalInformationPage();
     I.see('Case Submission');
-    I.waitForText('History', '30');
   }
-}).retry(2);;
+}).retry(2);
+
 Scenario('Contested share case @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     /* eslint-disable */

@@ -5,11 +5,6 @@ function respondentSolicitorDetailsDetails(I) {
   I.fillField('input[id="rSolicitorName"]', 'ResSol');
   I.fillField('input[id="rSolicitorFirm"]', 'MahFirm');
   I.fillField('input[id="rSolicitorReference"]', 'MahSol73');
-  I.waitForText('Search for an organisation', '30');
-  I.fillField('input[id="search-org-text"]', 'financialremedyrespondentorg');
-  I.click('Select');
-  I.waitForText('SW1H 9AJ', '5');
-  I.fillField('input[id="RespondentOrganisationPolicy_OrgPolicyReference"]', 'res-sox');
   I.fillField('Enter a UK postcode', 'TW3 1SS');
   I.click('Find address');
   I.wait('5');

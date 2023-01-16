@@ -55,12 +55,14 @@ async function contestedSolicitorCreate(reference) {
   I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
   I.waitForText('Search for an organisation','30')
   I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
-  I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
+  I.fillField('input[id="search-org-text"]', 'FinRem-1-Org');
   I.click('Select');
-  I.waitForText('SW1H 9AJ');
+  I.waitForText('EC3A 2AD');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+
+  //TODO add schedule 1 question
 }
 
 
