@@ -238,10 +238,9 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "highCourtList",
-    "Label": "High Court Family Division Court List",
-    "DisplayOrder": 29,
-    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\""
+    "CaseFieldID": "promptForUrgentCaseQuestion",
+    "Label": "Urgent Case",
+    "DisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
