@@ -883,7 +883,7 @@ config@^3.3.3:
   resolved "https://registry.yarnpkg.com/config/-/config-3.3.3.tgz#d3c110fce543022c2fde28712e4f1b8440dee101"
   integrity sha512-T3RmZQEAji5KYqUQpziWtyGJFli6Khz7h0rpxDwYNjSkr5ynyTWwO7WpfjHzTXclNCDfSWQRcwMb+NwxJesCKw==
   dependencies:
-    json5 ">=2.2.2"
+    json5 "^2.1.1"
 
 content-disposition@0.5.4:
   version "0.5.4"
@@ -4269,7 +4269,7 @@ webdriverio@^5.15.2:
     serialize-error "^5.0.0"
     webdriver "5.23.0"
 
-webdriverio@^6.11.3:
+webdriverio@^6.12.1:
   version "6.12.1"
   resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-6.12.1.tgz#5b6f1167373bd7a154419d8a930ef1ffda9d0537"
   integrity sha512-Nx7ge0vTWHVIRUbZCT+IuMwB5Q0Q5nLlYdgnmmJviUKLuc3XtaEBkYPTbhHWHgSBXsPZMIc023vZKNkn+6iyeQ==
@@ -4430,7 +4430,7 @@ yargs-unparser@1.6.0:
   resolved "https://registry.yarnpkg.com/yargs-unparser/-/yargs-unparser-1.6.0.tgz#ef25c2c769ff6bd09e4b0f9d7c605fb27846ea9f"
   integrity sha512-W9tKgmSn0DpSatfri0nx52Joq5hVXgeLiqR/5G0sZNDoLZFOr/xjBUDcShCOGNsBnEMNo1KAMBkTej1Hm62HTw==
   dependencies:
-    flat ">=5.0.1"
+    flat "^4.1.0"
     lodash "^4.17.15"
     yargs "^13.3.0"
 
