@@ -166,6 +166,7 @@ withPipeline("nodejs", product, component) {
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
+            sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_9} > FixedLists-judgeDetails9-prod.json'
           }
           yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
           yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
