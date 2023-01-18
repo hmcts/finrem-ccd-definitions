@@ -431,43 +431,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_newPaperCase",
-    "CaseFieldID": "urgentCaseLabel",
-    "PageFieldDisplayOrder": 7,
-    "DisplayContext": "READONLY",
-    "PageID": 19,
-    "PageDisplayOrder": 19,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_newPaperCase",
-    "CaseFieldID": "promptForUrgentCaseQuestion",
-    "PageFieldDisplayOrder": 8,
-    "DisplayContext": "MANDATORY",
-    "PageID": 19,
-    "PageDisplayOrder": 19,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_newPaperCase",
-    "CaseFieldID": "urgentCaseQuestionDetailsTextArea",
-    "PageFieldDisplayOrder": 9,
-    "DisplayContext": "MANDATORY",
-    "PageID": 19,
-    "PageDisplayOrder": 19,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "promptForUrgentCaseQuestion=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_newPaperCase",
     "CaseFieldID": "childrenDetailsLabel",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
@@ -1821,6 +1784,44 @@
     "FieldShowCondition": "promptForAnyDocument=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
+
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "urgentCaseLabel",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "READONLY",
+    "PageID": 21,
+    "PageDisplayOrder": 21,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "promptForUrgentCaseQuestion",
+    "PageFieldDisplayOrder": 8,
+    "DisplayContext": "MANDATORY",
+    "PageID": 21,
+    "PageDisplayOrder": 21,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "urgentCaseQuestionDetailsTextArea",
+    "PageFieldDisplayOrder": 9,
+    "DisplayContext": "MANDATORY",
+    "PageID": 21,
+    "PageDisplayOrder": 21,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "promptForUrgentCaseQuestion=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -1828,8 +1829,8 @@
     "CaseFieldID": "copyOfPaperFormA",
     "PageFieldDisplayOrder": 10,
     "DisplayContext": "MANDATORY",
-    "PageID": 19,
-    "PageDisplayOrder": 19,
+    "PageID": 21,
+    "PageDisplayOrder": 21,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -2295,43 +2296,6 @@
     "PageID": 4,
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendPaperApplication",
-    "CaseFieldID": "urgentCaseLabel",
-    "PageFieldDisplayOrder": 5,
-    "DisplayContext": "READONLY",
-    "PageID": 23,
-    "PageDisplayOrder": 23,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendPaperApplication",
-    "CaseFieldID": "promptForUrgentCaseQuestion",
-    "PageFieldDisplayOrder": 6,
-    "DisplayContext": "MANDATORY",
-    "PageID": 23,
-    "PageDisplayOrder": 23,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendPaperApplication",
-    "CaseFieldID": "urgentCaseQuestionDetailsTextArea",
-    "PageFieldDisplayOrder": 7,
-    "DisplayContext": "MANDATORY",
-    "PageID": 23,
-    "PageDisplayOrder": 23,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "promptForUrgentCaseQuestion=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -3920,6 +3884,43 @@
     "PageDisplayOrder": 25,
     "PageColumnNumber": 1,
     "FieldShowCondition": "promptForAnyDocument=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "urgentCaseLabel",
+    "PageFieldDisplayOrder": 5,
+    "DisplayContext": "READONLY",
+    "PageID": 25,
+    "PageDisplayOrder": 25,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "promptForUrgentCaseQuestion",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "MANDATORY",
+    "PageID": 25,
+    "PageDisplayOrder": 25,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "urgentCaseQuestionDetailsTextArea",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "MANDATORY",
+    "PageID": 25,
+    "PageDisplayOrder": 25,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "promptForUrgentCaseQuestion=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
