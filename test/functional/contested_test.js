@@ -211,8 +211,8 @@ Scenario('Contested Case Creation by Solicitor @crossbrowser @nightly', async I 
     await I.miamCertification();
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers();
-    I.waitForText('Form A Application', '60')
-    I.contestedAmendApplicationDetails();
+    await I.waitForText('Form A Application', '60')
+    await I.contestedAmendApplicationDetails();
     await I.caseSubmitAuthorisation('contested');
     await I.paymentPage(false);
     await I.hwfPaymentDetails();
@@ -220,7 +220,7 @@ Scenario('Contested Case Creation by Solicitor @crossbrowser @nightly', async I 
     await I.savingApplicationInformation('contested');
     await I.finalPaymentSubmissionPage();
     await I.finalInformationPage();
-    I.see('Case Submission');
+    await I.see('Case Submission');
   }
 }).retry(2);
 
