@@ -9,7 +9,6 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     private static final String definitionsPath = "ccd_definition";
     private static final List<CcdEnvironment> SKIPPED_ENVS = Arrays.asList(
             CcdEnvironment.DEMO,
-            CcdEnvironment.AAT,
             CcdEnvironment.PROD);
 
     public HighLevelDataSetupApp(CcdEnvironment dataSetupEnvironment) {
