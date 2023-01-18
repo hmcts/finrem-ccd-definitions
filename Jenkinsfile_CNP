@@ -2,7 +2,7 @@
 
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure@enable-logging-on-ft")
+@Library("Infrastructure")
 
 String product = "finrem"
 String component = "ccd-definitions"
@@ -35,6 +35,7 @@ def secrets = [
                 secret('fixedlists-consented-judgedetails-6', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_6'),
                 secret('fixedlists-consented-judgedetails-7', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_7'),
                 secret('fixedlists-consented-judgedetails-8', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_8'),
+                secret('fixedlists-consented-judgedetails-9', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_9'),
                 secret('userprofile-consented-judgedetails-1', 'USERPROFILE_CONSENTED_JUDGEDETAILS_1'),
                 secret('userprofile-consented-judgedetails-2', 'USERPROFILE_CONSENTED_JUDGEDETAILS_2'),
                 secret('userprofile-consented-judgedetails-3', 'USERPROFILE_CONSENTED_JUDGEDETAILS_3'),
@@ -89,7 +90,7 @@ def checkForNoCleanupLabel(branch_name) {
 }
 
 // Configure branches to sync with master branch
-def branchesToSync = ['ithc', 'perftest']
+def branchesToSync = ['demo', 'ithc', 'perftest']
 
 withPipeline("nodejs", product, component) {
 
@@ -149,6 +150,7 @@ withPipeline("nodejs", product, component) {
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_6} > FixedLists-judgeDetails6-prod.json'
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
+            sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_9} > FixedLists-judgeDetails9-prod.json'
           }
 
           yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
