@@ -130,7 +130,6 @@ withPipeline("nodejs", product, component) {
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
       env.IMPORT_PREVIEW=true
     } else {
-      withSubscription(env.ENV != 'prod' ? 'nonprod' : 'prod') {
 
         stageWithAgent('Generate Financial Remedy Consented Case config', product) {
           dir('definitions/consented/json/UserProfile') {
@@ -158,6 +157,8 @@ withPipeline("nodejs", product, component) {
           yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
           yarnBuilder.yarn('setup')
           yarnBuilder.yarn("generate-excel-aat-consented")
+          yarnBuilder.yarn('setup')
+          yarnBuilder.yarn("generate-excel-prod-consented")
         }
 
         stageWithAgent('Generate Financial Remedy Contested Case config', product) {
@@ -176,6 +177,8 @@ withPipeline("nodejs", product, component) {
           yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
           yarnBuilder.yarn('setup')
           yarnBuilder.yarn("generate-excel-aat-contested")
+          yarnBuilder.yarn('setup')
+          yarnBuilder.yarn("generate-excel-prod-contested")
           yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
         }
 
@@ -186,7 +189,7 @@ withPipeline("nodejs", product, component) {
         env.XUI_ORG_WEB_URL="https://manage-org.${env.ENV}.platform.hmcts.net"
         env.CCD_CONSENTED_FILE_NAME="ccd-config-${env.ENV}-consented-${GIT_COMMIT}.xlsx"
         env.CCD_CONTESTED_FILE_NAME="ccd-config-${env.ENV}-contested-${GIT_COMMIT}.xlsx"
-      }
+
     }
   }
 
