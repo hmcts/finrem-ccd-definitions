@@ -134,7 +134,7 @@ withPipeline("nodejs", product, component) {
     } else {
 
       withSubscription(env.ENV != 'prod' ? 'nonprod' : 'prod') {
-        withTeamSecrets(pipelineConf, env.ENV) {
+        withTeamSecrets(pipelineConf, 'aat') {
           stageWithAgent('Generate Financial Remedy Consented Case config', product) {
             dir('definitions/consented/json/UserProfile') {
               sh 'echo ---- ${USERPROFILE_CONSENTED_JUDGEDETAILS_1}'
