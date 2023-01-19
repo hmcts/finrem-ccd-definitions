@@ -407,7 +407,7 @@
     "Description": "Approve Application",
     "DisplayOrder": 16,
     "PreConditionState(s)": "referredToJudge;readyForHearing",
-    "PostConditionState": "consentOrderApproved",
+    "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
