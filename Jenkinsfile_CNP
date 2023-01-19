@@ -154,7 +154,9 @@ withPipeline("nodejs", product, component) {
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_9} > FixedLists-judgeDetails9-prod.json'
           }
 
+          yarnBuilder.yarn('setup')
           yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
+          yarnBuilder.yarn('setup')
           yarnBuilder.yarn("generate-excel-prod-consented")
         }
 
@@ -170,7 +172,9 @@ withPipeline("nodejs", product, component) {
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_9} > FixedLists-judgeDetails9-prod.json'
           }
+          yarnBuilder.yarn('setup')
           yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
+          yarnBuilder.yarn('setup')
           yarnBuilder.yarn("generate-excel-prod-contested")
           yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
         }
