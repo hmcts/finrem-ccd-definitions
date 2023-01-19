@@ -110,8 +110,8 @@ withPipeline("nodejs", product, component) {
   }
   before('highleveldatasetup') {
     echo "CCD definition upload for environment: ${env.ENV}"
+    yarnBuilder.yarn('setup')
     if('preview' == env.ENV) {
-      yarnBuilder.yarn('setup')
 
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
@@ -131,7 +131,7 @@ withPipeline("nodejs", product, component) {
       env.IMPORT_PREVIEW=true
     } else {
       withSubscription(env.ENV != 'prod' ? 'nonprod' : 'prod') {
-        yarnBuilder.yarn('setup')
+
         stageWithAgent('Generate Financial Remedy Consented Case config', product) {
           dir('definitions/consented/json/UserProfile') {
             sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
