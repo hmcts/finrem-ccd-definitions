@@ -146,7 +146,6 @@ withPipeline("nodejs", product, component) {
             }
 
             dir('definitions/consented/json/FixedLists') {
-              sh 'echo FixedList---- ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1}'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_3} > FixedLists-judgeDetails3-prod.json'
