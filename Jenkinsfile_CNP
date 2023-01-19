@@ -99,7 +99,7 @@ withPipeline("nodejs", product, component) {
   loadVaultSecrets(secrets)
   enableHighLevelDataSetup()
   syncBranchesWithMaster(branchesToSync)
-
+  pipelineConf = config
   afterSuccess('test') {
     // enable yarn audit and send message on master branch only
     try {
