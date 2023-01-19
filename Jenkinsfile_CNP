@@ -157,7 +157,7 @@ withPipeline("nodejs", product, component) {
           yarnBuilder.yarn('setup')
           yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
           yarnBuilder.yarn('setup')
-          yarnBuilder.yarn("generate-excel-prod-consented")
+          yarnBuilder.yarn("generate-excel-aat-consented")
         }
 
         stageWithAgent('Generate Financial Remedy Contested Case config', product) {
@@ -175,7 +175,7 @@ withPipeline("nodejs", product, component) {
           yarnBuilder.yarn('setup')
           yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
           yarnBuilder.yarn('setup')
-          yarnBuilder.yarn("generate-excel-prod-contested")
+          yarnBuilder.yarn("generate-excel-aat-contested")
           yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
         }
 
