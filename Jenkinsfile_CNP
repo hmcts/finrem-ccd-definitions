@@ -154,7 +154,8 @@ withPipeline("nodejs", product, component) {
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_9} > FixedLists-judgeDetails9-prod.json'
           }
 
-          yarnBuilder.yarn("generate-excel-all-consented")
+          yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
+          yarnBuilder.yarn("generate-excel-prod-consented")
         }
 
         stageWithAgent('Generate Financial Remedy Contested Case config', product) {
@@ -169,7 +170,8 @@ withPipeline("nodejs", product, component) {
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
             sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_9} > FixedLists-judgeDetails9-prod.json'
           }
-          yarnBuilder.yarn("generate-excel-all-contested")
+          yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
+          yarnBuilder.yarn("generate-excel-prod-contested")
           yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
         }
 
