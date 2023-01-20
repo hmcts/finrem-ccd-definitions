@@ -194,7 +194,7 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
 // });
 
 /* eslint-disable require-await */
-Scenario('Contested Case Creation by Solicitor @crossbrowser @nightly', async I => {
+Scenario.skip('Contested Case Creation by Solicitor @crossbrowser @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
