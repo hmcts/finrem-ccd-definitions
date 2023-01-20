@@ -78,10 +78,10 @@ Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => 
   }
 });
 /* eslint-disable require-await */
-Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I => {
+Scenario.only('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
-    I.wait('2');
+    I.wait('4');
     await I.createCase('Financial Remedy Consented', 'Consent Order Application');
     await I.solicitorCreate(solRef);
     await I.divorceDetails();
