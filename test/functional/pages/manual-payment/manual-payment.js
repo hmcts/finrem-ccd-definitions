@@ -8,6 +8,7 @@ async function manualPayment(){
   I.click('//*[@id="copyOfPaperFormA"]/div/button');
   I.selectOption('#copyOfPaperFormA_0_typeOfDocument', 'Copy of paper form A');
   I.attachFile('input[type="file"]', '../data/dummy.pdf');
+  I.wait('5');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('Event summary (optional)');
