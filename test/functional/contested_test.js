@@ -237,7 +237,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @crossbrowser @pipeli
   }
 }).retry(2);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker @crossbrowser @test1', async I => {
+Scenario('Contested Matrimonial Case Creation by Caseworker @crossbrowser @pipeline', async I => {
   if (nightlyTest !== 'true') {
     return;
   }
