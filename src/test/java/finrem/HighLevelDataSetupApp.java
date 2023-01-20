@@ -3,7 +3,8 @@ package finrem;
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     private static final String definitionsPath = "ccd_definition";
