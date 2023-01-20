@@ -233,4 +233,4 @@ function createCaseworkerReference() {
   return 'CA' + date().valueOf();
 }
 
-module.exports = { createCaseInCcd, updateCaseInCcd, createSolicitorReference };
+module.exports = { createCaseInCcd, updateCaseInCcd, createSolicitorReference, createCaseworkerReference };

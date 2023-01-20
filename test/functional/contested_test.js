@@ -1,4 +1,4 @@
-const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
+const { createCaseInCcd, updateCaseInCcd, createSolicitorReference, createCaseworkerReference } = require('../helpers/utils');
 const verifyTabText = require('../data/verify-contested-tab-data.json');
 const verifyContestedPaperTabText = require('../data/verify-contested-paper-case-tab-data.json');
 
