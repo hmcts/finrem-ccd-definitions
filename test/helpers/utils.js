@@ -229,4 +229,8 @@ function createSolicitorReference() {
   return date().valueOf();
 }
 
+function createCaseworkerReference() {
+  return 'CA' + date().valueOf();
+}
+
 module.exports = { createCaseInCcd, updateCaseInCcd, createSolicitorReference };

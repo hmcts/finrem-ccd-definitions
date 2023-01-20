@@ -32,7 +32,7 @@ async function solicitorCreate(reference) {
   I.click('Continue');
 }
 
-async function contestedSolicitorCreate(reference) {
+async function contestedSolicitorCreate(reference, applicaionType) {
   const I = this;
   I.waitForPage('#applicantSolicitorDetailLabel h2', 'Solicitor Details');
   if (testForAccessibility=='true') {
@@ -62,7 +62,9 @@ async function contestedSolicitorCreate(reference) {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  //TODO add schedule 1 question
+  if (applicaionType== 'Schedule1') {
+    I.checkOption("#typeOfApplication-Under paragraph 1 or 2 of schedule 1 children act 1989");
+  }
 }
 
 

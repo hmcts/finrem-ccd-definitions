@@ -40,6 +40,9 @@ async function contestedNatureOfApplication() {
   I.checkOption('input[id="additionalPropertyOrderDecision_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  // I.checkOption('input[id="paymentForChildrenDecision_No"]');
+  // I.waitForContinueButtonEnabled();
+  // I.click('Continue');
 }
 
 module.exports = { natureOfApplication, contestedNatureOfApplication };
