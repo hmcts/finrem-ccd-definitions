@@ -5,8 +5,8 @@ const verifyContestedPaperTabText = require('../data/verify-contested-paper-case
 // eslint-disable max-len
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
-const solicitorUserName = "fr_court_judge@mailinator.com";
-const solicitorPassword = "Testing1234";
+const solicitorUserName = process.env.USERNAME_SOLICITOR;
+const solicitorPassword = process.env.PASSWORD_SOLICITOR;
 const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
 const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 const judgeUserName = process.env.USERNAME_JUDGE;

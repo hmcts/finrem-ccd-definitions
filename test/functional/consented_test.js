@@ -2,8 +2,8 @@ const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('
 const verifyTabText = require('../data/verify-consented-tab-data.json');
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
-const solicitorUserName = "fr_court_judge@mailinator.com";
-const solicitorPassword = "Testing1234";
+const solicitorUserName = process.env.USERNAME_SOLICITOR;
+const solicitorPassword = process.env.PASSWORD_SOLICITOR;
 const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
 const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 const judgeUserName = process.env.USERNAME_JUDGE;
@@ -78,10 +78,10 @@ Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => 
   }
 });
 /* eslint-disable require-await */
-Scenario.only('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I => {
+Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
-    I.wait('4');
+    I.wait('2');
     await I.createCase('Financial Remedy Consented', 'Consent Order Application');
     await I.solicitorCreate(solRef);
     await I.divorceDetails();
