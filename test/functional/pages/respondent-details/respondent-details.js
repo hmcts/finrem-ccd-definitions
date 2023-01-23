@@ -5,9 +5,16 @@ function respondentSolicitorDetailsDetails(I) {
   I.fillField('input[id="rSolicitorName"]', 'ResSol');
   I.fillField('input[id="rSolicitorFirm"]', 'MahFirm');
   I.fillField('input[id="rSolicitorReference"]', 'MahSol73');
+
+  I.waitForText('Search for an organisation', 60);
+  I.fillField('input[id="search-org-text"]', 'finrem-2');
+  I.click('Select');
+  I.waitForText('EC3A 2AD', '5');
+  I.fillField('input[id="RespondentOrganisationPolicy_OrgPolicyReference"]', 'res-sox');
+
   I.fillField('Enter a UK postcode', 'TW3 1SS');
   I.click('Find address');
-  I.wait('5');
+  I.wait(5);
   I.selectOption('Select an address', '75 Pears Road, Hounslow');
   I.fillField('input[id="rSolicitorAddress__detailAddressLine2"]', 'Flat2');
   I.fillField('input[id="rSolicitorAddress__detailAddressLine3"]', 'Ring Road');

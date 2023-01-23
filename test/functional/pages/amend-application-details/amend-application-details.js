@@ -100,6 +100,7 @@ function contestedAmendApplicationDetails() {
   I.fillField('input[id="rSolicitorEmail"]', 'vivcontestedupdatesol@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait(60);
 
   I.waitForPage('input[id="natureOfApplicationChecklist-propertyAdjustmentOrder"]');
   I.checkOption('input[id="natureOfApplicationChecklist-propertyAdjustmentOrder"]');

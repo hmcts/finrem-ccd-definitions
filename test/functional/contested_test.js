@@ -1,4 +1,4 @@
-const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
+const { createCaseInCcd, updateCaseInCcd, createSolicitorReference, createCaseworkerReference } = require('../helpers/utils');
 const verifyTabText = require('../data/verify-contested-tab-data.json');
 const verifyContestedPaperTabText = require('../data/verify-contested-paper-case-tab-data.json');
 
@@ -13,6 +13,8 @@ const judgeUserName = process.env.USERNAME_JUDGE;
 const judgePassword = process.env.PASSWORD_JUDGE;
 const nightlyTest = process.env.NIGHTLY_TEST;
 const solRef = `AUTO-${createSolicitorReference()}`;
+const CaRef= `AUTO-${createCaseworkerReference()}`;
+
 const runningEnv = process.env.RUNNING_ENV;
 
 Feature('create Contested case ');
@@ -193,36 +195,6 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
 //   }
 // });
 
-/* eslint-disable require-await */
-Scenario('Contested Case Creation by Solicitor @crossbrowser @nightly', async I => {
-  if (nightlyTest === 'true') {
-    I.signInIdam(solicitorUserName, solicitorPassword);
-    I.wait('2');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedSolicitorCreate(solRef);
-    await I.contestedDivorceDetails();
-    await I.contestedApplicantDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplication();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestion();
-    await I.miamCertification();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers();
-    await I.waitForText('Form A Application', '60')
-    await I.contestedAmendApplicationDetails();
-    await I.caseSubmitAuthorisation('contested');
-    await I.paymentPage(false);
-    await I.hwfPaymentDetails();
-    await I.paymentSubmission();
-    await I.savingApplicationInformation('contested');
-    await I.finalPaymentSubmissionPage();
-    await I.finalInformationPage();
-    await I.see('Case Submission');
-  }
-}).retry(2);
 
 Scenario('Contested share case @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
@@ -235,3 +207,61 @@ Scenario('Contested share case @nightly @pipeline', async I => {
     I.assignContestedShareCase(caseId, solRef);
   }
 });
+
+
+
+/* eslint-disable require-await */
+Scenario('Contested Matrimonial Case Creation by Solicitor @crossbrowser @pipeline', async I => {
+  if (nightlyTest === 'true') {
+    I.signInIdam(solicitorUserName, solicitorPassword);
+    I.wait('2');
+    await I.createCase('FinancialRemedyContested', 'Form A Application');
+    await I.contestedSolicitorCreate(solRef, 'Matrimonial');
+    await I.contestedDivorceDetails();
+    await I.contestedApplicantDetails();
+    await I.contestedRespondentDetails();
+    await I.contestedNatureOfApplication();
+    await I.fastTrack();
+    await I.complexityList();
+    await I.applyingToCourt();
+    await I.mediationQuestion();
+    await I.miamCertification();
+    await I.contestedOtherDocuments();
+    await I.contestedCheckYourAnswers();
+    I.waitForText('Form A Application', '60')
+    I.contestedAmendApplicationDetails();
+    await I.caseSubmitAuthorisation('contested');
+    await I.paymentPage(false);
+    await I.hwfPaymentDetails();
+    await I.paymentSubmission();
+    await I.savingApplicationInformation('contested');
+    await I.finalPaymentSubmissionPage();
+    await I.finalInformationPage();
+    I.see('Case Submission');
+  }
+}).retry(2);
+
+Scenario('Contested Matrimonial Case Creation by Caseworker @crossbrowser @test1', async I => {
+  if (nightlyTest !== 'true') {
+    return;
+  }
+  I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+  I.wait('2');
+  await I.createCase('FinancialRemedyContested', 'Form A Application');
+  await I.contestedCaseworkerCreate(CaRef, 'Matrimonial', true);
+  await I.contestedDivorceDetails();
+  await I.contestedApplicantDetails();
+  await I.contestedRespondentDetails();
+  await I.contestedNatureOfApplication();
+  await I.fastTrack();
+  await I.complexityList();
+  await I.applyingToCourt();
+  await I.mediationQuestion();
+  await I.miamCertification();
+  await I.contestedOtherDocuments();
+  await I.contestedCheckYourAnswers();
+  I.waitForText('Form A Application', '60');
+  await I.manualPayment();
+  await I.issueApplication();
+}).retry(2);
+

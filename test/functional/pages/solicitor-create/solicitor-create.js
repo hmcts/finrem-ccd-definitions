@@ -32,7 +32,7 @@ async function solicitorCreate(reference) {
   I.click('Continue');
 }
 
-async function contestedSolicitorCreate(reference) {
+async function contestedSolicitorCreate(reference, applicationType) {
   const I = this;
   I.waitForPage('#applicantSolicitorDetailLabel h2', 'Solicitor Details');
   if (testForAccessibility=='true') {
@@ -53,7 +53,7 @@ async function contestedSolicitorCreate(reference) {
   I.fillField('input[id="applicantSolicitorPhone"]', '07000000');
   I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
-  I.waitForText('Search for an organisation','30')
+  I.waitForText('Search for an organisation',60);
   I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
   I.fillField('input[id="search-org-text"]', 'FinRem-1-Org');
   I.click('Select');
@@ -62,7 +62,9 @@ async function contestedSolicitorCreate(reference) {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  //TODO add schedule 1 question
+  if (applicationType== 'Schedule1') {
+    I.checkOption("#typeOfApplication-Under paragraph 1 or 2 of schedule 1 children act 1989");
+  }
 }
 
 
