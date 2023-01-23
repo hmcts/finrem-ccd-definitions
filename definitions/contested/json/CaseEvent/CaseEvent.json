@@ -1247,6 +1247,21 @@
     "ShowEventNotes": "N"
   },
   {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "updateGeneralApplication",
+    "Name": "Update General App Status",
+    "Description": "Update General Application Status",
+    "DisplayOrder": 147,
+    "PreConditionState(s)": "generalApplicationAwaitingJudiciaryResponse",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
+  },
+  {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "createFlags",

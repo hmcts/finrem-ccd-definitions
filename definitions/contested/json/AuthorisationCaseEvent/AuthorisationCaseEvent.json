@@ -1797,5 +1797,40 @@
     "CaseEventID": "FR_regenerateFormC",
     "UserRole": "[RESPBARRISTER]",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "updateGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "updateGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "updateGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "updateGeneralApplication",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "updateGeneralApplication",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "R"
   }
 ]

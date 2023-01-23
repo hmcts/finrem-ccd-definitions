@@ -61,7 +61,7 @@
     "start": "node index.js",
     "sonar-scan": "node_modules/sonar-scanner/bin/sonar-scanner",
     "generate-json-consented": "yarn --cwd ccd-definition-processor xlsx2json -D ../definitions/consented/json -i ../definitions/consented/xlsx/ccd-config-base-consented.xlsx && pretty-quick --pattern 'definitions/**/json/**.json'",
-    "generate-excel-consented": "yarn run copy-common-components-consented && CCD_DEF_CASE_TYPE_ID=FinancialRemedyMVP2 yarn --cwd ccd-definition-processor json2xlsx -D ../definitions/consented/json -o ../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-${GIT_COMMIT:-base}.xlsx -e ${EXCLUDE}",
+    "generate-excel-consented": "yarn run copy-common-components-consented && CCD_DEF_CASE_TYPE_ID=FinancialRemedyMVP2 yarn --cwd ccd-definition-processor json2xlsx -D ../definitions/consented/json -e ${EXCLUDE} -o ../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-${GIT_COMMIT:-base}.xlsx",
     "generate-excel-local-consented": "FR_ENV=local CCD_DEF_COS_URL=http://localhost:9000 CCD_DEF_CCD_URL=$npm_package_config_local_ccdUrl EXCLUDE='*-prod.json' yarn run generate-excel-consented",
     "generate-excel-preview-consented": "FR_ENV=preview  CCD_DEF_COS_URL=$COS_API_URL CCD_DEF_CCD_URL=$CCD_DATA_API_URL CCD_DEF_AAC_URL=$AAC_API_URL EXCLUDE='*-prod.json' yarn run generate-excel-consented",
     "generate-excel-aat-consented": "FR_ENV=aat CCD_DEF_COS_URL=$npm_package_config_aat_cosUrl CCD_DEF_CCD_URL=$npm_package_config_aat_ccdUrl CCD_DEF_AAC_URL=$npm_package_config_aat_aacUrl EXCLUDE='*-prod.json' yarn run generate-excel-consented",
@@ -72,7 +72,7 @@
     "generate-excel-prod-consented": "FR_ENV=prod CCD_DEF_COS_URL=$npm_package_config_prod_cosUrl CCD_DEF_CCD_URL=$npm_package_config_prod_ccdUrl CCD_DEF_AAC_URL=$npm_package_config_prod_aacUrl EXCLUDE='*-nonprod.json' yarn run generate-excel-consented",
     "generate-excel-all-consented": "yarn generate-excel-consented && yarn generate-excel-local-consented && yarn generate-excel-demo-consented && yarn generate-excel-aat-consented && yarn generate-excel-ithc-consented && yarn generate-excel-demo-prod-like-consented && yarn generate-excel-perftest-consented && yarn generate-excel-prod-consented",
     "generate-json-contested": "yarn --cwd ccd-definition-processor xlsx2json -D ../definitions/contested/json -i ../definitions/contested/xlsx/ccd-config-base-contested.xlsx && pretty-quick --pattern 'definitions/**/json/**.json'",
-    "generate-excel-contested": "yarn run copy-common-components-contested && CCD_DEF_CASE_TYPE_ID=FinancialRemedyContested yarn --cwd ccd-definition-processor json2xlsx -D ../definitions/contested/json -o ../definitions/contested/xlsx/ccd-config-${FR_ENV:-base}-contested-${GIT_COMMIT:-base}.xlsx -e ${EXCLUDE}",
+    "generate-excel-contested": "yarn run copy-common-components-contested && CCD_DEF_CASE_TYPE_ID=FinancialRemedyContested yarn --cwd ccd-definition-processor json2xlsx -D ../definitions/contested/json -e ${EXCLUDE} -o ../definitions/contested/xlsx/ccd-config-${FR_ENV:-base}-contested-${GIT_COMMIT:-base}.xlsx",
     "generate-excel-local-contested": "FR_ENV=local CCD_DEF_COS_URL=http://localhost:9000 CCD_DEF_CCD_URL=$npm_package_config_local_ccdUrl EXCLUDE='*-prod.json' yarn run generate-excel-contested",
     "generate-excel-preview-contested": "FR_ENV=preview CCD_DEF_COS_URL=$COS_API_URL CCD_DEF_CCD_URL=$CCD_DATA_API_URL CCD_DEF_AAC_URL=$AAC_API_URL EXCLUDE='*-prod.json' yarn run generate-excel-contested",
     "generate-excel-aat-contested": "FR_ENV=aat CCD_DEF_COS_URL=$npm_package_config_aat_cosUrl CCD_DEF_CCD_URL=$npm_package_config_aat_ccdUrl CCD_DEF_AAC_URL=$npm_package_config_aat_aacUrl EXCLUDE='*-prod.json' yarn run generate-excel-contested",
@@ -84,7 +84,15 @@
     "generate-excel-all-contested": "yarn generate-excel-contested && yarn generate-excel-local-contested && yarn generate-excel-demo-contested && yarn generate-excel-aat-contested && yarn generate-excel-ithc-contested && yarn generate-excel-demo-prod-like-contested && yarn generate-excel-perftest-contested && yarn generate-excel-prod-contested",
     "copy-common-components-consented": "cp -R definitions/common/json/* definitions/consented/json",
     "copy-common-components-contested": "cp -R definitions/common/json/* definitions/contested/json",
-    "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested"
+    "copy-local-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-local-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-local-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-preview-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-preview-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-preview-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-aat-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-aat-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-aat-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-demo-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-demo-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-demo-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-ithc-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-ithc-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-ithc-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-perftest-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-perftest-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-perftest-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-prod-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-prod-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-prod-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
+    "highLevelDataSetup": "echo 'bash ./gradlew highLevelDataSetup --args=$1 && sh bin/after-data-setup-step.sh' > ./temp.sh && sh ./temp.sh"
   },
   "pre-commit": [
     "lint"
@@ -116,7 +124,7 @@
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
     "sonar-scanner": "^3.1.0",
-    "webdriverio": "^6.11.3"
+    "webdriverio": "^6.12.1"
   },
   "resolutions": {
     "bl": "4.0.3",
