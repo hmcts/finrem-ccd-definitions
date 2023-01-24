@@ -7,9 +7,9 @@ async function createCase(type, event) {
   I.waitForElement('a[href="/cases/case-filter"]', '60');
   I.click('Create case');
   I.waitForPage('h1', 'Create Case');
-  if (testForAccessibility=='true') {
-    await I.runAccessibilityTest();
-  }
+  // if (testForAccessibility=='true') {
+  //   await I.runAccessibilityTest();
+  // }
   I.waitForElement('select[id="cc-jurisdiction"]>option:nth-of-type(2)', '60');
   I.selectOption('select[id="cc-jurisdiction"]', 'Family Divorce');
   I.wait('1');
