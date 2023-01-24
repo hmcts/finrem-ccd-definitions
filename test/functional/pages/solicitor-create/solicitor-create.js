@@ -59,12 +59,11 @@ async function contestedSolicitorCreate(reference, applicationType) {
   I.click('Select');
   I.waitForText('EC3A 2AD');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
+  if (applicationType== 'Schedule1') {
+    I.checkOption('input[id="typeOfApplication-Under paragraph 1 or 2 of schedule 1 children act 1989"]');
+  }
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
-  if (applicationType== 'Schedule1') {
-    I.checkOption("#typeOfApplication-Under paragraph 1 or 2 of schedule 1 children act 1989");
-  }
 }
 
 

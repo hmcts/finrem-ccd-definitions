@@ -38,9 +38,9 @@ async function contestedDivorceDetails() {
   I.fillField('input[id="divorcePetitionIssuedDate-year"]', '2020');
   I.fillField('#nameOfCourtDivorceCentre', 'Brentford Court');
   I.selectOption('select[id="divorceStageReached"]', 'Petition / Application Issued');
-  I.wait('2');
+  I.wait(5);
   I.retry('3').attachFile('input[id="divorceUploadPetition"]', '../data/dummy.pdf', );
-  I.wait('5');
+  I.wait(10);
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }

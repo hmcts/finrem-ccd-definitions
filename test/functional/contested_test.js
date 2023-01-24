@@ -211,7 +211,7 @@ Scenario('Contested share case @nightly @pipeline', async I => {
 
 
 /* eslint-disable require-await */
-Scenario('Contested Matrimonial Case Creation by Solicitor @crossbrowser @pipeline', async I => {
+Scenario('Contested Matrimonial Case Creation by Solicitor @crossbrowser @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
@@ -227,7 +227,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @crossbrowser @pipeli
     await I.mediationQuestion();
     await I.miamCertification();
     await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers();
+    await I.contestedCheckYourAnswers('Matrimonial');
     I.waitForText('Form A Application', '60')
     I.contestedAmendApplicationDetails();
     await I.caseSubmitAuthorisation('contested');
@@ -239,9 +239,31 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @crossbrowser @pipeli
     await I.finalInformationPage();
     I.see('Case Submission');
   }
+})//.retry(2);
+
+Scenario('Contested Schedule 1 Case Creation by Solicitor @crossbrowser @nightly ', async I => {
+  if (nightlyTest === 'true') {
+    I.signInIdam(solicitorUserName, solicitorPassword);
+    I.wait('2');
+    await I.createCase('FinancialRemedyContested', 'Form A Application');
+    await I.contestedSolicitorCreate(solRef, 'Schedule1');
+    await I.contestedApplicantDetails();
+    await I.childrenDetails();
+    await I.contestedRespondentDetails();
+    await I.contestedNatureOfApplicationForSchedule1();
+    await I.fastTrack();
+    await I.complexityList();
+    await I.applyingToCourt();
+    await I.mediationQuestion();
+    await I.miamCertification();
+    await I.contestedOtherDocuments();
+    await I.contestedCheckYourAnswers('Schedule1');
+    I.waitForText('Form A Application', '60')
+
+  }
 }).retry(2);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker @crossbrowser @test1', async I => {
+Scenario('Contested Matrimonial Case Creation by Caseworker @crossbrowser @nightly', async I => {
   if (nightlyTest !== 'true') {
     return;
   }
@@ -259,7 +281,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @crossbrowser @test1
   await I.mediationQuestion();
   await I.miamCertification();
   await I.contestedOtherDocuments();
-  await I.contestedCheckYourAnswers();
+  await I.contestedCheckYourAnswers('Matrimonial');
   I.waitForText('Form A Application', '60');
   await I.manualPayment();
   await I.issueApplication();

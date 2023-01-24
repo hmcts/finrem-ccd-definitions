@@ -16,18 +16,23 @@ async function checkYourAnswers() {
   I.wait('30');
 }
 
-async function contestedCheckYourAnswers() {
+async function contestedCheckYourAnswers(applicationType) {
   const I = this;
   I.waitForPage('.check-your-answers');
   if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
   I.see('Solicitor Details');
-  I.see('Divorce / Dissolution Details');
+  if (applicationType== 'Matrimonial'){
+    I.see('Divorce / Dissolution Details');
+  }
   I.see('Applicant’s Details');
   I.see('Respondent’s Details');
   I.see('Is the respondent represented ?');
   I.see('Do you want to upload any other documents ?');
+  if (applicationType== 'Schedule1') {
+    I.see('Child(ren) details');
+  }
   I.wait('2');
   I.retry('2').click('Submit');
   I.wait('30');
