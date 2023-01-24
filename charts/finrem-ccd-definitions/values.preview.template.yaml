@@ -151,7 +151,7 @@ finrem-ns:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/ns:pr-318
+    image: hmctspublic.azurecr.io/finrem/ns:latest
     releaseNameOverride: ${SERVICE_NAME}-finrem-ns
     ingressHost: ns-${SERVICE_FQDN}
     environment:
