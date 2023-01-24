@@ -582,6 +582,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "COMPLEX",
+    "PageID": 7,
+    "PageDisplayOrder": 7,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "respondentRepresented=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "rSolicitorLabel",
     "PageFieldDisplayOrder": 4,
     "DisplayContext": "READONLY",
@@ -4096,6 +4109,19 @@
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "COMPLEX",
+    "PageID": 7,
+    "PageDisplayOrder": 7,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8244,45 +8270,6 @@
     "PageLabel": "Reserve For Judge",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "PageFieldDisplayOrder": 3,
-    "DisplayContext": "COMPLEX",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_newPaperCase",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "PageFieldDisplayOrder": 3,
-    "DisplayContext": "COMPLEX",
-    "PageID": 5,
-    "PageDisplayOrder": 5,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/10/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "PageFieldDisplayOrder": 3,
-    "DisplayContext": "COMPLEX",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
