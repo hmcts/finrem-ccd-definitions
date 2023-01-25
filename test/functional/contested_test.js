@@ -211,7 +211,7 @@ Scenario('Contested share case @nightly @pipeline', async I => {
 
 
 /* eslint-disable require-await */
-Scenario('Contested Matrimonial Case Creation by Solicitor @crossbrowser @nightly', async I => {
+Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
@@ -241,7 +241,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @crossbrowser @nightl
   }
 })//.retry(2);
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor @crossbrowser @nightly ', async I => {
+Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly ', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
@@ -263,7 +263,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @crossbrowser @nightly
   }
 }).retry(2);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker @crossbrowser @nightly', async I => {
+Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I => {
   if (nightlyTest !== 'true') {
     return;
   }
