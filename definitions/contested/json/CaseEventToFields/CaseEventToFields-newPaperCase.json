@@ -517,6 +517,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "COMPLEX",
+    "PageID": 6,
+    "PageDisplayOrder": 6,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "respondentRepresented=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
     "CaseFieldID": "rSolicitorLabel",
     "PageFieldDisplayOrder": 4,
     "DisplayContext": "READONLY",
@@ -1254,6 +1267,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "highCourtFRCList",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "MANDATORY",
+    "PageID": 12,
+    "PageDisplayOrder": 12,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
     "CaseFieldID": "midlandsFRCList",
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "MANDATORY",
@@ -1495,6 +1521,19 @@
     "PageDisplayOrder": 12,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "highCourtList",
+    "PageFieldDisplayOrder": 19,
+    "DisplayContext": "MANDATORY",
+    "PageID": 12,
+    "PageDisplayOrder": 12,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2608,6 +2647,19 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "COMPLEX",
+    "PageID": 7,
+    "PageDisplayOrder": 7,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "respondentRepresented=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
     "LiveFrom": "01/10/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendPaperApplication",
@@ -3344,6 +3396,19 @@
     "LiveFrom": "01/10/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "highCourtFRCList",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "MANDATORY",
+    "PageID": 15,
+    "PageDisplayOrder": 15,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
     "CaseFieldID": "midlandsFRCList",
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "MANDATORY",
@@ -3585,6 +3650,19 @@
     "PageDisplayOrder": 15,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "highCourtList",
+    "PageFieldDisplayOrder": 19,
+    "DisplayContext": "MANDATORY",
+    "PageID": 15,
+    "PageDisplayOrder": 15,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -4157,18 +4235,5 @@
     "PageDisplayOrder": 26,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N"
-  },
-  {
-    "LiveFrom": "01/10/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendPaperApplication",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "PageFieldDisplayOrder": 3,
-    "DisplayContext": "COMPLEX",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "respondentRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
   }
 ]

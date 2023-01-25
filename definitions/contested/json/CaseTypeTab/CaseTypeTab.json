@@ -1677,8 +1677,9 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "tabJudgeAllocatedLabel",
-    "TabFieldDisplayOrder": 51
+    "CaseFieldID": "highCourtList",
+    "TabFieldDisplayOrder": 51,
+    "FieldShowCondition": "regionList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1686,7 +1687,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "judgeAllocated",
+    "CaseFieldID": "tabJudgeAllocatedLabel",
     "TabFieldDisplayOrder": 52
   },
   {
@@ -1695,7 +1696,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "tabApplicationAllocatedToLabel",
+    "CaseFieldID": "judgeAllocated",
     "TabFieldDisplayOrder": 53
   },
   {
@@ -1704,7 +1705,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "applicationAllocatedTo",
+    "CaseFieldID": "tabApplicationAllocatedToLabel",
     "TabFieldDisplayOrder": 54
   },
   {
@@ -1713,7 +1714,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "tabCaseAllocatedToLabel",
+    "CaseFieldID": "applicationAllocatedTo",
     "TabFieldDisplayOrder": 55
   },
   {
@@ -1722,7 +1723,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "caseAllocatedTo",
+    "CaseFieldID": "tabCaseAllocatedToLabel",
     "TabFieldDisplayOrder": 56
   },
   {
@@ -1731,7 +1732,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "tabJudgeTimeEstimateLabel",
+    "CaseFieldID": "caseAllocatedTo",
     "TabFieldDisplayOrder": 57
   },
   {
@@ -1740,7 +1741,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "judgeTimeEstimate",
+    "CaseFieldID": "tabJudgeTimeEstimateLabel",
     "TabFieldDisplayOrder": 58
   },
   {
@@ -1749,7 +1750,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "judgeTimeEstimateTextArea",
+    "CaseFieldID": "judgeTimeEstimate",
     "TabFieldDisplayOrder": 59
   },
   {
@@ -1758,8 +1759,17 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "reasonForFRCLocation",
+    "CaseFieldID": "judgeTimeEstimateTextArea",
     "TabFieldDisplayOrder": 60
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "reasonForFRCLocation",
+    "TabFieldDisplayOrder": 61
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2360,8 +2370,9 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalInformationAboutHearingLabel",
-    "TabFieldDisplayOrder": 39
+    "CaseFieldID": "highCourtList",
+    "TabFieldDisplayOrder": 39,
+    "FieldShowCondition": "regionList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2369,7 +2380,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalInformationAboutHearing",
+    "CaseFieldID": "additionalInformationAboutHearingLabel",
     "TabFieldDisplayOrder": 40
   },
   {
@@ -2378,7 +2389,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalListOfHearingDocuments",
+    "CaseFieldID": "additionalInformationAboutHearing",
     "TabFieldDisplayOrder": 41
   },
   {
@@ -2387,7 +2398,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "specialMeasuresPostHearingLbl",
+    "CaseFieldID": "additionalListOfHearingDocuments",
     "TabFieldDisplayOrder": 42
   },
   {
@@ -2396,7 +2407,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
+    "CaseFieldID": "specialMeasuresPostHearingLbl",
     "TabFieldDisplayOrder": 43
   },
   {
@@ -2405,7 +2416,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithAssistance",
+    "CaseFieldID": "attendingCourtWithAssistanceLabel",
     "TabFieldDisplayOrder": 44
   },
   {
@@ -2414,7 +2425,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
+    "CaseFieldID": "attendingCourtWithAssistance",
     "TabFieldDisplayOrder": 45
   },
   {
@@ -2423,7 +2434,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "attendingCourtWithArrangement",
+    "CaseFieldID": "attendingCourtWithArrangementLabel",
     "TabFieldDisplayOrder": 46
   },
   {
@@ -2432,7 +2443,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "draftDirectionDetailsCollectionRO",
+    "CaseFieldID": "attendingCourtWithArrangement",
     "TabFieldDisplayOrder": 47
   },
   {
@@ -2441,7 +2452,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "latestDraftHearingOrder",
+    "CaseFieldID": "draftDirectionDetailsCollectionRO",
     "TabFieldDisplayOrder": 48
   },
   {
@@ -2450,7 +2461,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "directionDetailsCollection",
+    "CaseFieldID": "latestDraftHearingOrder",
     "TabFieldDisplayOrder": 49
   },
   {
@@ -2459,7 +2470,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "hearingDirectionDetailsCollection",
+    "CaseFieldID": "directionDetailsCollection",
     "TabFieldDisplayOrder": 50
   },
   {
@@ -2468,7 +2479,7 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalHearingDocuments",
+    "CaseFieldID": "hearingDirectionDetailsCollection",
     "TabFieldDisplayOrder": 51
   },
   {
@@ -2477,8 +2488,17 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "hearingNoticesDocumentCollection",
+    "CaseFieldID": "additionalHearingDocuments",
     "TabFieldDisplayOrder": 52
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearingNoticesDocumentCollection",
+    "TabFieldDisplayOrder": 53
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3939,8 +3959,18 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "interim_birminghamCourtList",
+    "CaseFieldID": "interim_highCourtFRCList",
     "TabFieldDisplayOrder": 23,
+    "FieldShowCondition": "interim_regionList=\"highcourt\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_birminghamCourtList",
+    "TabFieldDisplayOrder": 24,
     "FieldShowCondition": "interim_regionList=\"midlands\" AND interim_midlandsFRCList=\"birmingham\""
   },
   {
@@ -3950,7 +3980,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_liverpoolCourtList",
-    "TabFieldDisplayOrder": 24,
+    "TabFieldDisplayOrder": 25,
     "FieldShowCondition": "interim_regionList=\"northwest\" AND interim_northWestFRCList=\"liverpool\""
   },
   {
@@ -3960,7 +3990,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_manchesterCourtList",
-    "TabFieldDisplayOrder": 25,
+    "TabFieldDisplayOrder": 26,
     "FieldShowCondition": "interim_regionList=\"northwest\" AND interim_northWestFRCList=\"manchester\""
   },
   {
@@ -3970,7 +4000,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_lancashireCourtList",
-    "TabFieldDisplayOrder": 26,
+    "TabFieldDisplayOrder": 27,
     "FieldShowCondition": "interim_regionList=\"northwest\" AND interim_northWestFRCList=\"lancashire\""
   },
   {
@@ -3980,7 +4010,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_cleavelandCourtList",
-    "TabFieldDisplayOrder": 27,
+    "TabFieldDisplayOrder": 28,
     "FieldShowCondition": "interim_regionList=\"northeast\" AND interim_northEastFRCList=\"cleaveland\""
   },
   {
@@ -3990,7 +4020,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_nwyorkshireCourtList",
-    "TabFieldDisplayOrder": 28,
+    "TabFieldDisplayOrder": 29,
     "FieldShowCondition": "interim_regionList=\"northeast\" AND interim_northEastFRCList=\"nwyorkshire\""
   },
   {
@@ -4000,7 +4030,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_humberCourtList",
-    "TabFieldDisplayOrder": 29,
+    "TabFieldDisplayOrder": 30,
     "FieldShowCondition": "interim_regionList=\"northeast\" AND interim_northEastFRCList=\"hsyorkshire\""
   },
   {
@@ -4010,7 +4040,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_kentSurreyCourtList",
-    "TabFieldDisplayOrder": 30,
+    "TabFieldDisplayOrder": 31,
     "FieldShowCondition": "interim_regionList=\"southeast\" AND interim_southEastFRCList=\"kentfrc\""
   },
   {
@@ -4020,7 +4050,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_bedfordshireCourtList",
-    "TabFieldDisplayOrder": 31,
+    "TabFieldDisplayOrder": 32,
     "FieldShowCondition": "interim_regionList=\"southeast\" AND interim_southEastFRCList=\"bedfordshire\""
   },
   {
@@ -4030,7 +4060,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_thamesvalleyCourtList",
-    "TabFieldDisplayOrder": 32,
+    "TabFieldDisplayOrder": 33,
     "FieldShowCondition": "interim_regionList=\"southeast\" AND interim_southEastFRCList=\"thamesvalley\""
   },
   {
@@ -4040,7 +4070,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_devonCourtList",
-    "TabFieldDisplayOrder": 33,
+    "TabFieldDisplayOrder": 34,
     "FieldShowCondition": "interim_regionList=\"southwest\" AND interim_southWestFRCList=\"devon\""
   },
   {
@@ -4050,7 +4080,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_dorsetCourtList",
-    "TabFieldDisplayOrder": 34,
+    "TabFieldDisplayOrder": 35,
     "FieldShowCondition": "interim_regionList=\"southwest\" AND interim_southWestFRCList=\"dorset\""
   },
   {
@@ -4060,7 +4090,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_bristolCourtList",
-    "TabFieldDisplayOrder": 35,
+    "TabFieldDisplayOrder": 36,
     "FieldShowCondition": "interim_regionList=\"southwest\" AND interim_southWestFRCList=\"bristol\""
   },
   {
@@ -4070,7 +4100,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_newportCourtList",
-    "TabFieldDisplayOrder": 36,
+    "TabFieldDisplayOrder": 37,
     "FieldShowCondition": "interim_regionList=\"wales\" AND interim_walesFRCList=\"newport\""
   },
   {
@@ -4080,7 +4110,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_swanseaCourtList",
-    "TabFieldDisplayOrder": 37,
+    "TabFieldDisplayOrder": 38,
     "FieldShowCondition": "interim_regionList=\"wales\" AND interim_walesFRCList=\"swansea\""
   },
   {
@@ -4090,8 +4120,18 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interim_northWalesCourtList",
-    "TabFieldDisplayOrder": 38,
+    "TabFieldDisplayOrder": 39,
     "FieldShowCondition": "interim_regionList=\"wales\" AND interim_walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interim_highCourtList",
+    "TabFieldDisplayOrder": 40,
+    "FieldShowCondition": "interim_regionList=\"highcourt\" AND interim_highCourtFRCList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4101,24 +4141,6 @@
     "TabDisplayOrder": 21,
     "CaseFieldID": "additionalInformationAboutHearingLabel",
     "FieldShowCondition": "interimAdditionalInformationAboutHearing !=\" \"",
-    "TabFieldDisplayOrder": 39
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 21,
-    "CaseFieldID": "interimAdditionalInformationAboutHearing",
-    "TabFieldDisplayOrder": 40
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 21,
-    "CaseFieldID": "specialMeasuresPostHearingLbl",
     "TabFieldDisplayOrder": 41
   },
   {
@@ -4127,7 +4149,7 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
+    "CaseFieldID": "interimAdditionalInformationAboutHearing",
     "TabFieldDisplayOrder": 42
   },
   {
@@ -4136,7 +4158,7 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "attendingCourtWithAssistance",
+    "CaseFieldID": "specialMeasuresPostHearingLbl",
     "TabFieldDisplayOrder": 43
   },
   {
@@ -4145,7 +4167,7 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
+    "CaseFieldID": "attendingCourtWithAssistanceLabel",
     "TabFieldDisplayOrder": 44
   },
   {
@@ -4154,7 +4176,7 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "attendingCourtWithArrangement",
+    "CaseFieldID": "attendingCourtWithAssistance",
     "TabFieldDisplayOrder": 45
   },
   {
@@ -4163,7 +4185,7 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "draftDirectionDetailsCollectionRO",
+    "CaseFieldID": "attendingCourtWithArrangementLabel",
     "TabFieldDisplayOrder": 46
   },
   {
@@ -4172,7 +4194,7 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "latestDraftHearingOrder",
+    "CaseFieldID": "attendingCourtWithArrangement",
     "TabFieldDisplayOrder": 47
   },
   {
@@ -4181,7 +4203,7 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "directionDetailsCollectionInterim",
+    "CaseFieldID": "draftDirectionDetailsCollectionRO",
     "TabFieldDisplayOrder": 48
   },
   {
@@ -4190,8 +4212,26 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "additionalHearingDocuments",
+    "CaseFieldID": "latestDraftHearingOrder",
     "TabFieldDisplayOrder": 49
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "directionDetailsCollectionInterim",
+    "TabFieldDisplayOrder": 50
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "additionalHearingDocuments",
+    "TabFieldDisplayOrder": 51
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4201,7 +4241,7 @@
     "TabDisplayOrder": 21,
     "CaseFieldID": "interimPromptForAnyDocumentLabel",
     "FieldShowCondition": "interimPromptForAnyDocument !=\" \"",
-    "TabFieldDisplayOrder": 50
+    "TabFieldDisplayOrder": 52
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4210,7 +4250,7 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interimPromptForAnyDocument",
-    "TabFieldDisplayOrder": 51
+    "TabFieldDisplayOrder": 53
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4220,7 +4260,7 @@
     "TabDisplayOrder": 21,
     "CaseFieldID": "interimUploadOtherDocumentLabel",
     "FieldShowCondition": "interimUploadAdditionalDocument !=\" \"",
-    "TabFieldDisplayOrder": 52
+    "TabFieldDisplayOrder": 54
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4229,24 +4269,6 @@
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
     "CaseFieldID": "interimUploadAdditionalDocument",
-    "TabFieldDisplayOrder": 53
-  },
-  {
-    "LiveFrom": "01/10/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 21,
-    "CaseFieldID": "interimHearingDirectionsDocument",
-    "TabFieldDisplayOrder": 54
-  },
-  {
-    "LiveFrom": "01/10/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 21,
-    "CaseFieldID": "interimHearings",
     "TabFieldDisplayOrder": 55
   },
   {
@@ -4255,8 +4277,26 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "interimHearingDocuments",
+    "CaseFieldID": "interimHearingDirectionsDocument",
     "TabFieldDisplayOrder": 56
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearings",
+    "TabFieldDisplayOrder": 57
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "interimSchedulingTab",
+    "TabLabel": "Scheduling and Listing for Interim Hearing",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "interimHearingDocuments",
+    "TabFieldDisplayOrder": 58
   },
   {
     "LiveFrom": "01/01/2017",
