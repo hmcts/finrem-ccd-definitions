@@ -44,7 +44,7 @@ const setupConfig = {
       capabilities: {}
     },
     SauceLabsReportingHelper: {
-      require: '../helpers/SauceLabsReportingHelper.js'
+      require: '../helpers/sauceLabsReportingHelper.js'
     },
     SauceLabsBrowserHelper: {
       require: '../helpers/SauceLabsBrowserHelper.js'
