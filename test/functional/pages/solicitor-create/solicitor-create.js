@@ -53,7 +53,7 @@ async function contestedSolicitorCreate(reference, applicationType) {
   I.fillField('input[id="applicantSolicitorAddress__detailAddressLine3"]', 'Opposite Tesco');
   I.fillField('input[id="applicantSolicitorAddress__detailCounty"]', 'Middlesex');
   I.fillField('input[id="applicantSolicitorPhone"]', '07000000');
-  I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
+  I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_solicitor1@mailinator.com');
   I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
   I.waitForText('Search for an organisation','60');
   I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
