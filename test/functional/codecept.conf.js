@@ -40,11 +40,11 @@ exports.config = {
     },
   include: { I: './steps_file.js' },
   bootstrap: null,
-    multiple: {
-        'parallel': {
-            'chunks': 3
-        }
-    },
+    // multiple: {
+    //     'parallel': {
+    //         'chunks': 2
+    //     }
+    // },
   mocha: {
     reporterOptions:
       {

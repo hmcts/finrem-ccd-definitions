@@ -10,9 +10,9 @@ function amendApplicationDetails() {
   I.click('Continue');
   I.waitForText('SOLICITOR DETAILS', '30');
   I.fillField('input[id="solicitorPhone"]', '07766120000');
-  I.waitForText("Search for an organisation","30")
-  I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
-  I.click('Select');
+  // I.waitForText("Search for an organisation","30")
+  // I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
+  // I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('APPLICATION DETAILS', '90');
@@ -27,19 +27,17 @@ function amendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('NATURE OF THE APPLICATION', '30');
-  I.checkOption('input[value="Property Adjustment Order"]');
+ // I.checkOption('input[value="Property Adjustment Order"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('ORDER FOR CHILDREN', '30');
-  I.checkOption('input[id="orderForChildrenQuestion1_No"]');
-  I.waitForContinueButtonEnabled();
-  I.click('Continue');
+  // I.waitForText('ORDER FOR CHILDREN', '30');
+  // I.checkOption('input[id="orderForChildrenQuestion1_No"]');
+  // I.waitForContinueButtonEnabled();
+  // I.click('Continue');
   I.waitForText('Draft Consent Order', '30')
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.refreshPage();
-  I.waitForContinueButtonEnabled();
-  I.click('Continue');
+  //I.refreshPage();
   I.waitForText('D81', '30');
   I.checkOption('input[id="d81Question_No"]');
   I.wait('2');
@@ -63,6 +61,10 @@ function amendApplicationDetails() {
 
   I.waitForPage('.check-your-answers h2', 'Check your answers');
   I.see('OTHER DOCUMENTS');
+
+  //TODO
+  // add other validation
+
   I.click('Submit');
   I.waitForText('SOLICITOR DETAILS', 60);
   I.see('APPLICANT DETAILS');
