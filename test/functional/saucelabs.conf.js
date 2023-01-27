@@ -46,6 +46,9 @@ const setupConfig = {
     SauceLabsReportingHelper: {
       require: '../helpers/sauceLabsReportingHelper.js'
     },
+    SauceLabsBrowserHelper: {
+      require: '../helpers/SauceLabsBrowserHelper.js'
+    },
     Mochawesome: {
       uniqueScreenshotNames: 'true'
     }
