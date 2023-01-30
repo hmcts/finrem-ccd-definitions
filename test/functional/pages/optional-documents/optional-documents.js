@@ -32,6 +32,7 @@ async function contestedOtherDocuments() {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[id="promptForAnyDocument_No"]');
+  I.checkOption('input[id="promptForUrgentCaseQuestion_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForContinueButtonEnabled();
