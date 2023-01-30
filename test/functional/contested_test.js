@@ -13,7 +13,7 @@ const judgeUserName = process.env.USERNAME_JUDGE;
 const judgePassword = process.env.PASSWORD_JUDGE;
 const nightlyTest = process.env.NIGHTLY_TEST;
 const solRef = `AUTO-${createSolicitorReference()}`;
-const CaRef= `AUTO-${createCaseworkerReference()}`;
+const caRef= `AUTO-${createCaseworkerReference()}`;
 
 const runningEnv = process.env.RUNNING_ENV;
 
@@ -270,7 +270,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly ', async I 
   I.signInIdam(caseWorkerUserName, caseWorkerPassword);
   I.wait('2');
   await I.createCase('FinancialRemedyContested', 'Form A Application');
-  await I.contestedCaseworkerCreate(CaRef, 'Matrimonial', true);
+  await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
   await I.contestedDivorceDetails();
   await I.contestedApplicantDetails();
   await I.contestedRespondentDetails();
