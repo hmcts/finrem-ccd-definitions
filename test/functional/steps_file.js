@@ -34,6 +34,7 @@ const {pbaPayment} = require('./pages/pba-payment/pba-payment');
 const {manualPayment} = require('./pages/manual-payment/manual-payment');
 const {issueApplication} = require('./pages/issue-application/issue-application');
 const {childrenDetails} = require('./pages/children-details/children-details');
+const {allocateJudge} = require('./pages/allocate-judge/allocate-judge');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -73,6 +74,12 @@ module.exports = () => {
       this.fillField('password', password);
       this.click('Sign in');
       this.wait('15');
+    },
+
+    signOut() {
+      this.amOnPage(`${process.env.CCD_WEB_URL}`);
+      this.wait('5');
+      this.click('Sign out');
     },
     signInXuiOrg(username, password) {
       this.amOnPage(`${process.env.XUI_ORG_WEB_URL}`);
@@ -143,6 +150,7 @@ module.exports = () => {
     manualPayment,
     issueApplication,
     childrenDetails,
-    contestedNatureOfApplicationForSchedule1
+    contestedNatureOfApplicationForSchedule1,
+    allocateJudge
   });
 };

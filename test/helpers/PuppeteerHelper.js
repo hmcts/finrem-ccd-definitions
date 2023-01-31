@@ -30,6 +30,14 @@ class PuppeteerHelper extends Helper {
     await page.waitForSelector(locator, {visible: true});
     await page.click(locator);
   }
+
+  async getCaseRef() {
+    const page = this.helpers[helperName].page;
+    pause();
+    const text = await page.$("#undefined");
+    const caseRef = text.getText();
+    return caseRef;
+  }
 }
 
 module.exports = PuppeteerHelper;

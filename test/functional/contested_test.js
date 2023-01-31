@@ -239,7 +239,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @pipeline', 
     await I.finalInformationPage();
     I.see('Case Submission');
   }
-})//.retry(2);
+}).retry(2);
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly ', async I => {
   if (nightlyTest === 'true') {
@@ -287,3 +287,33 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly ', async I 
   await I.issueApplication();
 }).retry(2);
 
+
+Scenario('Contested Matrimonial Case Creation by Caseworker E2E', async I => {
+  if (nightlyTest !== 'true') {
+    return;
+  }
+  I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+  I.wait('2');
+  await I.createCase('FinancialRemedyContested', 'Form A Application');
+  await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
+  await I.contestedDivorceDetails();
+  await I.contestedApplicantDetails();
+  await I.contestedRespondentDetails();
+  await I.contestedNatureOfApplication();
+  await I.fastTrack();
+  await I.complexityList();
+  await I.applyingToCourt();
+  await I.mediationQuestion();
+  await I.miamCertification();
+  await I.contestedOtherDocuments();
+  await I.contestedCheckYourAnswers('Matrimonial');
+  I.waitForText('Form A Application', '60');
+  await I.manualPayment();
+  await I.issueApplication();
+  await I.allocateJudge();
+  // I.waitForText('Allocate to Judge', '60');
+  // I.signOut();
+  // I.signInIdam(judgeUserName, judgePassword);
+
+
+}).retry(2);
