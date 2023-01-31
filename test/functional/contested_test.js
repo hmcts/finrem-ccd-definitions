@@ -239,7 +239,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @pipeline', 
     await I.finalInformationPage();
     I.see('Case Submission');
   }
-})//.retry(2);
+}).retry(2);
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly ', async I => {
   if (nightlyTest === 'true') {
