@@ -8,14 +8,7 @@ async function divorceDetails() {
   }
   I.waitForPage('h4', 'APPLICATION DETAILS');
   I.fillField('input[id="divorceCaseNumber"]', 'LV18D81234');
-  I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi / Conditional Order');
-  I.wait('5');
-  I.retry('3').attachFile('input[type="file"]', '../data/fileupload.txt');
-  I.wait('5');
-  I.fillField('input[id="divorceDecreeNisiDate-day"]', '1');
-  I.fillField('input[id="divorceDecreeNisiDate-month"]', '2');
-  I.fillField('input[id="divorceDecreeNisiDate-year"]', '2019');
-  I.wait('2');
+  I.selectOption('select[id="divorceStageReached"]', 'Petition / Application Issued');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
@@ -37,13 +30,10 @@ async function contestedDivorceDetails() {
   I.fillField('input[id="divorcePetitionIssuedDate-month"]', '8');
   I.fillField('input[id="divorcePetitionIssuedDate-year"]', '2020');
   I.fillField('#nameOfCourtDivorceCentre', 'Brentford Court');
-  I.selectOption('select[id="divorceStageReached"]', 'Decree Nisi / Conditional Order');
-  I.wait('2');
-  I.retry('3').attachFile('input[type="file"]', '../data/fileupload.txt');
-  I.wait('5');
-  I.fillField('input[id="divorceDecreeNisiDate-day"]', '15');
-  I.fillField('input[id="divorceDecreeNisiDate-month"]', '8');
-  I.fillField('input[id="divorceDecreeNisiDate-year"]', '2020');
+  I.selectOption('select[id="divorceStageReached"]', 'Petition / Application Issued');
+  I.wait(5);
+  I.retry('3').attachFile('input[id="divorceUploadPetition"]', '../data/dummy.pdf', );
+  I.wait(10);
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
