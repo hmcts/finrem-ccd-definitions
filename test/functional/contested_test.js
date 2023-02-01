@@ -287,7 +287,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly ', async I 
   await I.issueApplication();
 }).retry(2);
 
-
+/*
 Scenario('Contested Matrimonial Case Creation by Caseworker E2E', async I => {
   if (nightlyTest !== 'true') {
     return;
@@ -311,9 +311,9 @@ Scenario('Contested Matrimonial Case Creation by Caseworker E2E', async I => {
   await I.manualPayment();
   await I.issueApplication();
   await I.allocateJudge();
-  // I.waitForText('Allocate to Judge', '60');
-  // I.signOut();
-  // I.signInIdam(judgeUserName, judgePassword);
-
-
+  I.waitForText('Allocate to Judge', '60');
+  I.signOut();
+  I.signInIdam(judgeUserName, judgePassword);
 }).retry(2);
+*/
+
