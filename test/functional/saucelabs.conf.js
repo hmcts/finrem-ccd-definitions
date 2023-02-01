@@ -67,8 +67,7 @@ const setupConfig = {
       retries: 1
     },
     autoDelay: {
-      enabled: true,
-      delayAfter: 2000
+      enabled: true
     }
   },
   multiple: {
