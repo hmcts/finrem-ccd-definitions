@@ -1008,5 +1008,20 @@
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2023",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_readyForHearing",
+    "Name": "Ready for hearing",
+    "Description": "Ready for Hearing",
+    "DisplayOrder": 62,
+    "PreConditionState(s)": "responseReceived;awaitingInfo;awaitingResponse",
+    "PostConditionState": "readyForHearing",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
   }
 ]
