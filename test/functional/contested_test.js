@@ -317,3 +317,31 @@ Scenario('Contested Matrimonial Case Creation by Caseworker E2E', async I => {
 }).retry(2);
 */
 
+
+Scenario('Manage Confidential Documents @nightly ', async I => {
+  //login as a caseworker, create contested case
+  if (nightlyTest !== 'true') {
+    return;
+  }
+  I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+  I.wait('2');
+  await I.createCase('FinancialRemedyContested', 'Form A Application');
+  await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
+  await I.contestedDivorceDetails();
+  await I.contestedApplicantDetails();
+  await I.contestedRespondentDetails();
+  await I.contestedNatureOfApplication();
+  await I.fastTrack();
+  await I.complexityList();
+  await I.applyingToCourt();
+  await I.mediationQuestion();
+  await I.miamCertification();
+  await I.contestedOtherDocuments();
+  await I.contestedCheckYourAnswers('Matrimonial');
+  I.waitForText('Form A Application', '60');
+  await I.manualPayment();
+  await I.issueApplication();
+  await I.uploadCaseFiles();
+  await I.manageConfidentialDocuments();
+
+}).retry(2);
