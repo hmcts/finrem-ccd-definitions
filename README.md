@@ -160,7 +160,7 @@ https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+P
 
 ## Preview deployment for PRs in testing
 The team leveraged the fact this service has set up charts with all services needed for running the full Financial Remedy solution to create
-deployments to Preview with the PRs so Developers and Testers can work on changes without the weight that a local environment has on machine resources.
+deployments to Preview with the PR images so Developers and Testers can work on changes without the added weight that a local environment has on machine resources.
 
 The deployment can be switched ON by commenting `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
 
