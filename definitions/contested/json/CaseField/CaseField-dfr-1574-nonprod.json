@@ -1,0 +1,21 @@
+[
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenersDetailsLabel",
+    "FieldType": "Label",
+    "Label": "## Intervener's details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenersCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageInterveners",
+    "Label": " ",
+    "Min" : 1,
+    "Max" : 4,
+    "SecurityClassification": "Public"
+  }
+]
