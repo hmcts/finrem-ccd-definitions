@@ -1,6 +1,8 @@
 const { createCaseInCcd, updateCaseInCcd, createSolicitorReference, createCaseworkerReference } = require('../helpers/utils');
 const verifyTabText = require('../data/verify-contested-tab-data.json');
 const verifyContestedPaperTabText = require('../data/verify-contested-paper-case-tab-data.json');
+const { Logger } = require('@hmcts/nodejs-logging');
+const logger = Logger.getLogger('helpers/utils.js');
 
 // eslint-disable max-len
 
@@ -318,7 +320,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker E2E', async I => {
 */
 
 
-Scenario('Manage Confidential Documents @nightly ', async I => {
+Scenario('Upload Case Files Confidential Documents @nightly', async I => {
   //login as a caseworker, create contested case
   if (nightlyTest !== 'true') {
     return;
@@ -342,6 +344,35 @@ Scenario('Manage Confidential Documents @nightly ', async I => {
   await I.manualPayment();
   await I.issueApplication();
   await I.uploadCaseFiles();
-  await I.manageConfidentialDocuments();
+  await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.uploadCaseFiles, verifyTabText.confidentialDocumentsTab);
+  logger.info('Confidential documents verified on Confidential documents tab');
+})//.retry(2);
 
+Scenario('Manage Confidential Documents @nightly', async I => {
+  //login as a caseworker, create contested case
+  if (nightlyTest !== 'true') {
+    return;
+  }
+  I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+  I.wait('2');
+  await I.createCase('FinancialRemedyContested', 'Form A Application');
+  await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
+  await I.contestedDivorceDetails();
+  await I.contestedApplicantDetails();
+  await I.contestedRespondentDetails();
+  await I.contestedNatureOfApplication();
+  await I.fastTrack();
+  await I.complexityList();
+  await I.applyingToCourt();
+  await I.mediationQuestion();
+  await I.miamCertification();
+  await I.contestedOtherDocuments();
+  await I.contestedCheckYourAnswers('Matrimonial');
+  I.waitForText('Form A Application', '60');
+  await I.manualPayment();
+  await I.issueApplication();
+  await I.manageConfidentialDocuments();
+  logger.info('Manage confidential documents event completed');
+  await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.manageConfidentialDocuments, verifyTabText.confidentialDocumentsTab);
+  logger.info('Confidential documents verified on Confidential documents tab');
 }).retry(2);

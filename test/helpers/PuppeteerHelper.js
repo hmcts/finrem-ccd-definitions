@@ -38,6 +38,16 @@ class PuppeteerHelper extends Helper {
     const caseRef = text.getText();
     return caseRef;
   }
+
+  async clickTab(tabTitle) {
+    const page = this.helpers[helperName].page;
+    const tabXPath = `//div[text()='${tabTitle}']`;
+    const tabExists = await page.waitForXPath(tabXPath, {timeout: 6000}) ? true : false;
+    if (tabExists) {
+      const clickableTab = await page.$x(tabXPath);
+      await page.evaluate(el => {return el.click();}, clickableTab[0]);
+    }
+  }
 }
 
 module.exports = PuppeteerHelper;
