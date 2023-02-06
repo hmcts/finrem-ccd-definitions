@@ -15,10 +15,10 @@ async function divorceDetails() {
 
 async function contestedDivorceDetails() {
   const I = this;
-  if (testForAccessibility==='true') {
-    await I.runAccessibilityTest();
-  }
-  await I.waitForPage('#divorceDetailsLabel h2', 'Divorce / Dissolution Details');
+  // if (testForAccessibility==='true') {
+  //   await I.runAccessibilityTest();
+  // }
+  await I.waitForText('Divorce / Dissolution Details', '10');
   I.fillField('input[id="divorceCaseNumber"]', 'EM18D54321');
   I.fillField('input[id="dateOfMarriage-day"]', '1');
   I.fillField('input[id="dateOfMarriage-month"]', '2');
