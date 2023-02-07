@@ -243,7 +243,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @pipeline', 
   }
 }).retry(2);
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly ', async I => {
+Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
@@ -320,7 +320,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker E2E', async I => {
 */
 
 
-Scenario('Upload Case Files Confidential Documents @nightly', async I => {
+Scenario('Upload Case Files Confidential Documents @nightly @pipeline', async I => {
   //login as a caseworker, create contested case
   if (nightlyTest !== 'true') {
     return;
@@ -348,7 +348,7 @@ Scenario('Upload Case Files Confidential Documents @nightly', async I => {
   logger.info('Confidential documents verified on Confidential documents tab');
 })//.retry(2);
 
-Scenario('Manage Confidential Documents @nightly', async I => {
+Scenario('Manage Confidential Documents @nightly @pipeline', async I => {
   //login as a caseworker, create contested case
   if (nightlyTest !== 'true') {
     return;
