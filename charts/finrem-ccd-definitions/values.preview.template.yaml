@@ -81,7 +81,7 @@ finrem-cos:
       FINREM_IDAM_CLIENT_SECRET: ${FINREM_IDAM_CLIENT_SECRET}
       CTSC_OPENING_HOURS: from 8am to 6pm, Monday to Friday
       PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
-      SEND_LETTER_SERIVCE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
+      SEND_LETTER_SERVICE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
       DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
     keyVaults:
       finrem:
