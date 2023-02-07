@@ -243,7 +243,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @pipeline', 
   }
 }).retry(2);
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
+Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
@@ -265,7 +265,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => 
   }
 }).retry(2);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker @nightly ', async I => {
+Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @pipeline', async I => {
   if (nightlyTest !== 'true') {
     return;
   }
