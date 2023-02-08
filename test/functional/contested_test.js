@@ -214,7 +214,6 @@ Scenario('Contested share case @nightly @pipeline', async I => {
 
 /* eslint-disable require-await */
 Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @pipeline', async I => {
-  if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -240,11 +239,9 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @pipeline', 
     await I.finalPaymentSubmissionPage();
     await I.finalInformationPage();
     I.see('Case Submission');
-  }
 }).retry(2);
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly @pipeline', async I => {
-  if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -261,14 +258,9 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly @pipeline', a
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Schedule1');
     I.waitForText('Form A Application', '60')
-
-  }
 }).retry(2);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @pipeline', async I => {
-  if (nightlyTest !== 'true') {
-    return;
-  }
+Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @pipeline @test', async I => {
   I.signInIdam(caseWorkerUserName, caseWorkerPassword);
   I.wait('2');
   await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -291,9 +283,6 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @pipeline',
 
 /*
 Scenario('Contested Matrimonial Case Creation by Caseworker E2E', async I => {
-  if (nightlyTest !== 'true') {
-    return;
-  }
   I.signInIdam(caseWorkerUserName, caseWorkerPassword);
   I.wait('2');
   await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -322,9 +311,6 @@ Scenario('Contested Matrimonial Case Creation by Caseworker E2E', async I => {
 
 Scenario('Upload Case Files Confidential Documents @nightly @pipeline', async I => {
   //login as a caseworker, create contested case
-  if (nightlyTest !== 'true') {
-    return;
-  }
   I.signInIdam(caseWorkerUserName, caseWorkerPassword);
   I.wait('2');
   await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -350,9 +336,6 @@ Scenario('Upload Case Files Confidential Documents @nightly @pipeline', async I 
 
 Scenario('Manage Confidential Documents @nightly @pipeline', async I => {
   //login as a caseworker, create contested case
-  if (nightlyTest !== 'true') {
-    return;
-  }
   I.signInIdam(caseWorkerUserName, caseWorkerPassword);
   I.wait('2');
   await I.createCase('FinancialRemedyContested', 'Form A Application');
