@@ -213,7 +213,7 @@ Scenario('Contested share case @nightly @pipeline', async I => {
 
 
 /* eslint-disable require-await */
-Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @pipeline', async I => {
+Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -241,7 +241,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @pipeline', 
     I.see('Case Submission');
 }).retry(3);
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly @pipeline', async I => {
+Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
