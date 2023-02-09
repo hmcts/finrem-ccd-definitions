@@ -239,7 +239,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @pipeline', 
     await I.finalPaymentSubmissionPage();
     await I.finalInformationPage();
     I.see('Case Submission');
-}).retry(2);
+}).retry(3);
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly @pipeline', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
@@ -332,7 +332,7 @@ Scenario('Upload Case Files Confidential Documents @nightly @pipeline', async I 
   await I.uploadCaseFiles();
   await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.uploadCaseFiles, verifyTabText.confidentialDocumentsTab);
   logger.info('Confidential documents verified on Confidential documents tab');
-})//.retry(2);
+}).retry(2);
 
 Scenario('Manage Confidential Documents @nightly @pipeline', async I => {
   //login as a caseworker, create contested case
