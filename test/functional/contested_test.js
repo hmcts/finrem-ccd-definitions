@@ -260,7 +260,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => 
     I.waitForText('Form A Application', '60')
 }).retry(2);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @pipeline @test', async I => {
+Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @pipeline', async I => {
   I.signInIdam(caseWorkerUserName, caseWorkerPassword);
   I.wait('2');
   await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -280,33 +280,6 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @pipeline @
   await I.manualPayment();
   await I.issueApplication();
 }).retry(2);
-
-/*
-Scenario('Contested Matrimonial Case Creation by Caseworker E2E', async I => {
-  I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-  I.wait('2');
-  await I.createCase('FinancialRemedyContested', 'Form A Application');
-  await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
-  await I.contestedDivorceDetails();
-  await I.contestedApplicantDetails();
-  await I.contestedRespondentDetails();
-  await I.contestedNatureOfApplication();
-  await I.fastTrack();
-  await I.complexityList();
-  await I.applyingToCourt();
-  await I.mediationQuestion();
-  await I.miamCertification();
-  await I.contestedOtherDocuments();
-  await I.contestedCheckYourAnswers('Matrimonial');
-  I.waitForText('Form A Application', '60');
-  await I.manualPayment();
-  await I.issueApplication();
-  await I.allocateJudge();
-  I.waitForText('Allocate to Judge', '60');
-  I.signOut();
-  I.signInIdam(judgeUserName, judgePassword);
-}).retry(2);
-*/
 
 
 Scenario('Upload Case Files Confidential Documents @nightly @pipeline', async I => {
