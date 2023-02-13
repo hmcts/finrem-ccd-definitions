@@ -42,9 +42,25 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageInterveners",
-    "ListElementCode": "solicitorfullname",
+    "ListElementCode": "dateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date added",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageInterveners",
+    "ListElementCode": "intervenerNumber",
     "FieldType": "Text",
-    "ElementLabel": "Solicitor's Full Name",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageInterveners",
+    "ListElementCode": "solicitorFullname",
+    "FieldType": "Text",
+    "ElementLabel": "Legal Representative Name",
     "SecurityClassification": "Public"
   },
   {
@@ -70,5 +86,93 @@
     "FieldType": "Organisation",
     "ElementLabel": "Organisation Identifier",
     "SecurityClassification": "Public"
-  }
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerAddress",
+    "ListElementCode": "address",
+    "FieldType": "AddressUK",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerAddress",
+    "ListElementCode": "email",
+    "FieldType": "Text",
+    "ElementLabel": "Email address",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerAddress",
+    "ListElementCode": "phoneNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Phone number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerAddress",
+    "ListElementCode": "represented",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is the Intervener represented ?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerAddress",
+    "ListElementCode": "dateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date added",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerSolicitor",
+    "ListElementCode": "solicitorFullname",
+    "FieldType": "Text",
+    "ElementLabel": "Legal Representative Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerSolicitor",
+    "ListElementCode": "solicitorEmail",
+    "FieldType": "Text",
+    "ElementLabel": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerSolicitor",
+    "ListElementCode": "solicitorPhoneNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Phone Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerSolicitor",
+    "ListElementCode": "Organisation",
+    "FieldType": "Organisation",
+    "ElementLabel": "Organisation Identifier",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenersHolder",
+    "ListElementCode": "intervenerCode",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+  "LiveFrom": "01/01/2017",
+  "ID": "FR_intervenersHolder",
+  "ListElementCode": "intervenerValue",
+  "FieldType": "Text",
+  "ElementLabel": " ",
+  "SecurityClassification": "Public"
+}
 ]

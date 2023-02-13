@@ -10,12 +10,125 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervenersCollection",
+    "ID": "intervenerCollection",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_manageInterveners",
     "Label": " ",
     "Min" : 1,
     "Max" : 4,
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerOneAddress",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerAddress",
+    "Label": "Intervener Contact Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerOneSolicitor",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerSolicitor",
+    "Label": "Intervener Legal Representative Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerTwoAddress",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerAddress",
+    "Label": "Intervener Contact Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerTwoSolicitor",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerSolicitor",
+    "Label": "Intervener Legal Representative Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerThreeAddress",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerAddress",
+    "Label": "Intervener Contact Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerThreeSolicitor",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerSolicitor",
+    "Label": "Intervener Legal Representative Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerFourAddress",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerAddress",
+    "Label": "Intervener Contact Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerFourSolicitor",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerSolicitor",
+    "Label": "Intervener Legal Representative Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerOneFullname",
+    "FieldType": "Text",
+    "Label": "Intervener Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerTwoFullname",
+    "FieldType": "Text",
+    "Label": "Intervener Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerThreeFullname",
+    "FieldType": "Text",
+    "Label": "Intervener Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerFourFullname",
+    "FieldType": "Text",
+    "Label": "Intervener Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenersHolder",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenersHolder",
+    "Label": " ",
     "SecurityClassification": "Public"
   }
 ]
