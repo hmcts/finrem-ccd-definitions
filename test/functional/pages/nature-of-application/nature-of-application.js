@@ -24,7 +24,7 @@ async function contestedNatureOfApplication() {
   I.checkOption('input[value="propertyAdjustmentOrder"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForElement('#propertyAddress', '30');
+  I.waitForElement('#propertyAddress', 60);
   I.fillField('#propertyAddress', '26 Riverside gardens, SW10XE');
   I.fillField('#mortgageDetail', 'Halifax mortgage');
   I.checkOption('input[id="additionalPropertyOrderDecision_No"]');

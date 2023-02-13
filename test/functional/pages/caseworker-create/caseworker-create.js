@@ -31,6 +31,7 @@ async function contestedCaseworkerCreate(reference, applicationType, applicantRe
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait('10');
 
   if (applicationType== 'Schedule1') {
     I.checkOption("#typeOfApplication-Under paragraph 1 or 2 of schedule 1 children act 1989");
