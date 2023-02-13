@@ -8,7 +8,7 @@ async function issueApplication(){
   I.click('Continue');
   I.waitForText('Event summary (optional)');
   I.click('Submit');
-  I.waitForText(' Issue Application', '60');
+  I.waitForText('Issue Application', '60');
 }
 
 module.exports = { issueApplication };
