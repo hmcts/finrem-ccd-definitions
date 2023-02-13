@@ -180,7 +180,7 @@
     "Name": "Close Case",
     "Description": "Close Case",
     "DisplayOrder": 114,
-    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived",
+    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;newPaperCase",
     "PostConditionState": "close",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
