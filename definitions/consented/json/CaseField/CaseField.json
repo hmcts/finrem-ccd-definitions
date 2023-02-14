@@ -920,7 +920,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "orderDirectionAbsolute",
-    "Label": "Subject to Decree Absolute?",
+    "Label": "Subject to Decree Absolute/Final Order?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
@@ -1491,6 +1491,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "highCourtFRCList",
+    "Label": "This should be the FRC local to the applicant",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_hc_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "nottinghamCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
@@ -1666,6 +1676,16 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_northwalesList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "highCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_highCourtList",
     "SecurityClassification": "Public"
   },
   {

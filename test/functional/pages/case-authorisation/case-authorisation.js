@@ -3,7 +3,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function caseSubmitAuthorisation(casetype) {
   const I = this;
-  I.waitForPage('select[id="next-step"]');
+  await I.waitForPage('select[id="next-step"]');
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }

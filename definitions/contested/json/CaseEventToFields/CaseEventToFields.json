@@ -79,58 +79,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "applicantContactLabel",
-    "PageFieldDisplayOrder": 3,
-    "DisplayContext": "READONLY",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "applicantAddress",
-    "PageFieldDisplayOrder": 4,
-    "DisplayContext": "MANDATORY",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "applicantPhone",
-    "PageFieldDisplayOrder": 6,
-    "DisplayContext": "OPTIONAL",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "applicantEmail",
-    "PageFieldDisplayOrder": 7,
-    "DisplayContext": "OPTIONAL",
-    "PageID": 2,
-    "PageDisplayOrder": 3,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "applicantSolicitorDetailLabel",
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "READONLY",
@@ -489,6 +437,54 @@
     "DisplayContext": "MANDATORY",
     "PageID": 4,
     "PageDisplayOrder": 4,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "applicantContactLabel",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "READONLY",
+    "PageID": 4,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "applicantAddress",
+    "PageFieldDisplayOrder": 5,
+    "DisplayContext": "MANDATORY",
+    "PageID": 4,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "applicantPhone",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 4,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "applicantEmail",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 4,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -1333,6 +1329,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "highCourtFRCList",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "MANDATORY",
+    "PageID": 15,
+    "PageDisplayOrder": 15,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "midlandsFRCList",
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "MANDATORY",
@@ -1574,6 +1583,19 @@
     "PageDisplayOrder": 15,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "highCourtList",
+    "PageFieldDisplayOrder": 19,
+    "DisplayContext": "MANDATORY",
+    "PageID": 15,
+    "PageDisplayOrder": 15,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2713,6 +2735,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_addSchedulingListingInfo",
+    "CaseFieldID": "highCourtFRCList",
+    "PageFieldDisplayOrder": 16,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addSchedulingListingInfo",
     "CaseFieldID": "midlandsFRCList",
     "PageFieldDisplayOrder": 17,
     "DisplayContext": "MANDATORY",
@@ -2960,6 +2995,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_addSchedulingListingInfo",
+    "CaseFieldID": "highCourtList",
+    "PageFieldDisplayOrder": 28,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addSchedulingListingInfo",
     "CaseFieldID": "additionalInformationAboutHearingLabel",
     "PageFieldDisplayOrder": 29,
     "DisplayContext": "READONLY",
@@ -3131,6 +3179,19 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_giveAllocationDirections",
+    "CaseFieldID": "highCourtFRCList",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -3384,6 +3445,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_giveAllocationDirections",
+    "CaseFieldID": "highCourtList",
+    "PageFieldDisplayOrder": 19,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_giveAllocationDirections",
     "CaseFieldID": "reasonForFRCLocation",
     "PageFieldDisplayOrder": 20,
     "DisplayContext": "OPTIONAL",
@@ -3606,58 +3680,6 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/10/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "applicantContactLabel",
-    "PageFieldDisplayOrder": 3,
-    "DisplayContext": "READONLY",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/10/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "applicantAddress",
-    "PageFieldDisplayOrder": 4,
-    "DisplayContext": "MANDATORY",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/10/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "applicantPhone",
-    "PageFieldDisplayOrder": 5,
-    "DisplayContext": "OPTIONAL",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/10/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "applicantEmail",
-    "PageFieldDisplayOrder": 6,
-    "DisplayContext": "OPTIONAL",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -4022,6 +4044,54 @@
     "DisplayContext": "MANDATORY",
     "PageID": 4,
     "PageDisplayOrder": 4,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "applicantContactLabel",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "READONLY",
+    "PageID": 4,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "applicantAddress",
+    "PageFieldDisplayOrder": 5,
+    "DisplayContext": "MANDATORY",
+    "PageID": 4,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "applicantPhone",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 4,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "applicantEmail",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 4,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -4861,6 +4931,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "highCourtFRCList",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "MANDATORY",
+    "PageID": 15,
+    "PageDisplayOrder": 15,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
     "CaseFieldID": "midlandsFRCList",
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "MANDATORY",
@@ -5102,6 +5185,19 @@
     "PageDisplayOrder": 15,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "highCourtList",
+    "PageFieldDisplayOrder": 19,
+    "DisplayContext": "MANDATORY",
+    "PageID": 15,
+    "PageDisplayOrder": 15,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -7913,6 +8009,19 @@
     "LiveFrom": "01/09/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_GeneralApplicationDirections",
+    "CaseFieldID": "generalApplicationDirections_highCourtFRCList",
+    "PageFieldDisplayOrder": 17,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "generalApplicationDirectionsHearingRequired=\"Yes\" AND generalApplicationDirections_regionList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_GeneralApplicationDirections",
     "CaseFieldID": "generalApplicationDirections_midlandsFRCList",
     "PageFieldDisplayOrder": 18,
     "DisplayContext": "MANDATORY",
@@ -8154,6 +8263,19 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "generalApplicationDirectionsHearingRequired=\"Yes\" AND generalApplicationDirections_regionList=\"wales\" AND generalApplicationDirections_walesFRCList=\"northwales\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_GeneralApplicationDirections",
+    "CaseFieldID": "generalApplicationDirections_highCourtList",
+    "PageFieldDisplayOrder": 29,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "generalApplicationDirectionsHearingRequired=\"Yes\" AND generalApplicationDirections_regionList=\"highcourt\" AND generalApplicationDirections_highCourtFRCList=\"highcourt\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -8585,6 +8707,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_addListForInterimHearingInfo",
+    "CaseFieldID": "interim_highCourtFRCList",
+    "PageFieldDisplayOrder": 16,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "interim_regionList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addListForInterimHearingInfo",
     "CaseFieldID": "interim_midlandsFRCList",
     "PageFieldDisplayOrder": 17,
     "DisplayContext": "MANDATORY",
@@ -8832,6 +8967,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_addListForInterimHearingInfo",
+    "CaseFieldID": "interim_highCourtList",
+    "PageFieldDisplayOrder": 28,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "interim_regionList=\"highcourt\" AND interim_highCourtFRCList=\"highcourt\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addListForInterimHearingInfo",
     "CaseFieldID": "additionalInformationAboutHearingLabel",
     "PageFieldDisplayOrder": 29,
     "DisplayContext": "READONLY",
@@ -9015,6 +9163,19 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_updateFRCInformation",
+    "CaseFieldID": "highCourtFRCList",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -9262,6 +9423,19 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_updateFRCInformation",
+    "CaseFieldID": "highCourtList",
+    "PageFieldDisplayOrder": 19,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -9528,7 +9702,6 @@
     "PageID": 3,
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -9541,7 +9714,6 @@
     "PageID": 3,
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -9554,7 +9726,6 @@
     "PageID": 3,
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -9567,7 +9738,6 @@
     "PageID": 3,
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -9580,7 +9750,6 @@
     "PageID": 3,
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -10262,7 +10431,8 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
     "LiveFrom": "01/01/2017",
