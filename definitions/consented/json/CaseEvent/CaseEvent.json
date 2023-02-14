@@ -36,7 +36,7 @@
     "Name": "Add Note",
     "Description": "Add Note",
     "DisplayOrder": 103,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
+    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;newPaperCase",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -104,7 +104,7 @@
     "Name": "Upload document",
     "Description": "Upload document",
     "DisplayOrder": 108,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;readyForHearing",
+    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;readyForHearing;newPaperCase",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -144,7 +144,7 @@
     "Name": "Refund",
     "Description": "Refund",
     "DisplayOrder": 111,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
+    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;newPaperCase",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -294,7 +294,7 @@
     "Name": "Awaiting Payment Response",
     "Description": "Awaiting Payment Response",
     "DisplayOrder": 8,
-    "PreConditionState(s)": "awaitingPayment",
+    "PreConditionState(s)": "awaitingPayment;newPaperCase",
     "PostConditionState": "awaitingPaymentResponse",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -699,7 +699,7 @@
     "Name": "Awaiting Information",
     "Description": "Awaiting Information",
     "DisplayOrder": 38,
-    "PreConditionState(s)": "applicationSubmitted;applicationIssued;responseReceived;orderMade;consentOrderApproved;infoReceived",
+    "PreConditionState(s)": "applicationSubmitted;applicationIssued;responseReceived;orderMade;consentOrderApproved;infoReceived;newPaperCase",
     "PostConditionState": "awaitingInfo",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
