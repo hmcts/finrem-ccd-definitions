@@ -112,6 +112,7 @@ withPipeline("nodejs", product, component) {
   }
   before('highleveldatasetup') {
     echo "CCD definition upload for environment: ${env.ENV}"
+    env.RUNNING_ENV = env.ENV;
     yarnBuilder.yarn('setup')
     if('preview' == env.ENV) {
 
