@@ -700,7 +700,7 @@
     "Description": "Awaiting Information",
     "DisplayOrder": 38,
     "PreConditionState(s)": "applicationSubmitted;applicationIssued;responseReceived;orderMade;consentOrderApproved;infoReceived;newPaperCase",
-    "PostConditionState": "*",
+    "PostConditionState": "awaitingInf",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
