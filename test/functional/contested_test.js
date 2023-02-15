@@ -22,12 +22,6 @@ const runningEnv = process.env.RUNNING_ENV;
 Feature('create Contested case ');
 
 Scenario('Contested Case Creation For Caseworker @nightly @pipeline', async I => {
-  console.log('ccdWebUrl-------------------------' + ccdWebUrl);
-  console.log('solicitorUserName-------------------------' + solicitorUserName);
-  console.log('caseWorkerUserName-------------------------' + caseWorkerUserName);
-  console.log('judgeUserName-------------------------' + judgeUserName);
-  console.log('nightlyTest-------------------------' + nightlyTest);
-  console.log('runningEnv-------------------------' + runningEnv);
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     /* eslint-disable */
