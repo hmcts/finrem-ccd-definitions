@@ -345,6 +345,14 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_courtList",
+    "ListElementCode": "localCourtLbl",
+    "FieldType": "Label",
+    "ElementLabel": "This would usually be the applicants local Court",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
     "ListElementCode": "region",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_region_list",
@@ -419,6 +427,16 @@
     "FieldTypeParameter": "FR_wales_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "region=\"wales\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
+    "ListElementCode": "hcCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_hc_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "region=\"highcourt\"",
     "SecurityClassification": "Public"
   },
   {
@@ -599,6 +617,16 @@
     "FieldTypeParameter": "FR_northwalesList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"wales\" AND walesList=\"northwales\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
+    "ListElementCode": "highCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_highCourtList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "region=\"highcourt\" AND hcCourtList=\"highcourt\"",
     "SecurityClassification": "Public"
   },
   {
@@ -794,7 +822,7 @@
     "ID": "FR_ct_directionDetailCollection",
     "ListElementCode": "localCourt",
     "FieldType": "FR_ct_courtList",
-    "ElementLabel": "This would usually be the applicants local Court",
+    "ElementLabel": " ",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
     "SecurityClassification": "Public"
   },
@@ -1109,7 +1137,7 @@
     "ID": "FR_ct_directionDetailCollectionInterim",
     "ListElementCode": "localCourt",
     "FieldType": "FR_ct_courtList",
-    "ElementLabel": "This would usually be the applicants local Court",
+    "ElementLabel": " ",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
     "SecurityClassification": "Public"
   },
@@ -1610,6 +1638,16 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "interimHearingsCollection",
+    "ListElementCode": "interim_highCourtFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_hc_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "interim_regionList=\"highcourt\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "interimHearingsCollection",
     "ListElementCode": "interim_nottinghamCourtList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_NottinghamList",
@@ -1790,6 +1828,16 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "interimHearingsCollection",
+    "ListElementCode": "interim_highCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_highCourtList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "interim_regionList=\"highcourt\" AND interim_highCourtFRCList=\"highcourt\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "interimHearingsCollection",
     "ListElementCode": "interimAdditionalInformationAboutHearing",
     "FieldType": "Text",
     "ElementLabel": "Additional information about the hearing",
@@ -1885,7 +1933,7 @@
     "ID": "FR_ct_hearingInformationCollection",
     "ListElementCode": "localCourt",
     "FieldType": "FR_ct_courtList",
-    "ElementLabel": "This would usually be the applicants local Court",
+    "ElementLabel": " ",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
     "SecurityClassification": "Public"
   },
@@ -2097,6 +2145,115 @@
     "ListElementCode": "generalApplicationDirectionsDocument",
     "FieldType": "Document",
     "ElementLabel": "Hearing / no hearing document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "barristerLabel",
+    "FieldType": "Label",
+    "ElementLabel": "Barrister Details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "name",
+    "FieldType": "Text",
+    "ElementLabel": "Full Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "email",
+    "FieldType": "Text",
+    "ElementLabel": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "phoneNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Phone Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "Organisation",
+    "FieldType": "Organisation",
+    "ElementLabel": "Organisation Identifier",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_childrenCollection",
+    "ListElementCode": "childrenLivesInEnglandOrWales",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Does the child live in England or Wales?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_childrenCollection",
+    "ListElementCode": "childFullname",
+    "FieldType": "Text",
+    "ElementLabel": "Full Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_childrenCollection",
+    "ListElementCode": "childDateOfBirth",
+    "FieldType": "Date",
+    "ElementLabel": "Date of birth",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_childrenCollection",
+    "ListElementCode": "childGender",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_childGender",
+    "ElementLabel": "Gender",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_childrenCollection",
+    "ListElementCode": "childApplicantRelation",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_childRelation",
+    "ElementLabel": "Relationship of applicant to the child",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_childrenCollection",
+    "ListElementCode": "childApplicantRelationOther",
+    "FieldType": "TextArea",
+    "ElementLabel": "Please specify",
+    "FieldShowCondition": "childApplicantRelation=\"Other\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_childrenCollection",
+    "ListElementCode": "childRespondentRelation",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_childRelation",
+    "ElementLabel": "Relationship of respondent to the child",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_childrenCollection",
+    "ListElementCode": "childRespondentRelationOther",
+    "FieldType": "TextArea",
+    "ElementLabel": "Please specify",
+    "FieldShowCondition": "childRespondentRelation=\"Other\"",
     "SecurityClassification": "Public"
   }
 ]

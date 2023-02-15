@@ -3,7 +3,14 @@
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_updateCaseDetailsSolicitor",
+    "UserRole": "[RESPSOLICITOR]",
     "CRUD": "CRU"
   },
   {

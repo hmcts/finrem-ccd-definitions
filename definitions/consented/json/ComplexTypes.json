@@ -1010,6 +1010,16 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "hearingCollection",
+    "ListElementCode": "highCourtFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_hc_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"highcourt\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
     "ListElementCode": "nottinghamCourtList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_NottinghamList",
@@ -1074,7 +1084,7 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_cleveland_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\"",
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleveland\"",
     "SecurityClassification": "Public"
   },
   {
@@ -1185,6 +1195,16 @@
     "FieldTypeParameter": "FR_northwalesList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "highCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_highCourtList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\"",
     "SecurityClassification": "Public"
   },
   {

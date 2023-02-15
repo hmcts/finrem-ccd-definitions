@@ -32,7 +32,7 @@ xui-webapp:
       HEALTH_TERMS_AND_CONDITIONS_API: http://xui-terms-and-conditions-${SERVICE_FQDN}/health
       SERVICES_CCD_COMPONENT_API: http://${SERVICE_NAME}-ccd-api-gw
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
-      SERVICES_CCD_CASE_ASSIGNMENT_API: http://aac-${SERVICE_FQDN}
+      SERVICES_CCD_CASE_ASSIGNMENT_API: http://${SERVICE_NAME}-aac-manage-case-assignment
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}
       JURISDICTIONS: DIVORCE
 
@@ -197,18 +197,19 @@ ccd:
 
   ccd-user-profile-api:
     java:
+      disableKeyVaults: true
       autoscaling:
         enabled: false
       imagePullPolicy: Always
       enviroment:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
-      keyVaults: []
       environment:
         USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_definition,ccd_admin
       ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
 
   ccd-data-store-api:
     java:
+      disableKeyVaults: true
       autoscaling:
         enabled: false
       imagePullPolicy: Always
@@ -231,11 +232,11 @@ ccd:
         ENABLE_ATTRIBUTE_BASED_ACCESS_CONTROL: true
         ENABLE_PSEUDO_ROLE_ASSIGNMENTS_GENERATION: true
         ENABLE_PSEUDO_ACCESS_PROFILES_GENERATION: true
-      keyVaults: []
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
   am-role-assignment-service:
     java:
+      disableKeyVaults: true
       keyVaults:
         am:
           secrets:
@@ -243,6 +244,7 @@ ccd:
 
   ccd-case-print-service:
     nodejs:
+      disableKeyVaults: true
       autoscaling:
         enabled: false
       environment:
@@ -251,11 +253,11 @@ ccd:
 
   ccd-definition-store-api:
     java:
+      disableKeyVaults: true
       autoscaling:
         enabled: false
       imagePullPolicy: Always
       image: hmctspublic.azurecr.io/ccd/definition-store-api:latest
-      keyVaults: []
       environment:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
@@ -268,11 +270,11 @@ ccd:
 
   ccd-admin-web:
     nodejs:
+      disableKeyVaults: true
       autoscaling:
         enabled: false
       image: hmctspublic.azurecr.io/ccd/admin-web:latest
       ingressHost: admin-web-${SERVICE_FQDN}
-      keyVaults: []
       environment:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
         IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
@@ -280,6 +282,7 @@ ccd:
 
   ccd-case-management-web:
     nodejs:
+      disableKeyVaults: true
       devmemoryRequests: 512Mi
       devcpuRequests: "1000m"
       devmemoryLimits: 1024Mi
@@ -301,9 +304,9 @@ ccd:
 
   ccd-api-gateway-web:
     nodejs:
+      disableKeyVaults: true
       autoscaling:
         enabled: false
-      keyVaults: []
       environment:
         IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
         IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
@@ -339,7 +342,6 @@ ccd:
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
-    imageTag: "7.17.0"
     replicas: 1
     initResources:
       limits:
@@ -360,13 +362,6 @@ ccd:
         value: .security*,.watches,.triggered_watches,.watcher-history-*,.logstash_dead_letter,.ml*
     persistence:
       enabled: false
-    ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: traefik
-      path: /
-      hosts:
-        - es-${SERVICE_FQDN}
 
   logstash:
     devmemoryRequests: 512Mi
@@ -402,11 +397,11 @@ ccd:
 aac-manage-case-assignment:
   enabled: true
   java:
+    disableKeyVaults: true
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-aac-manage-case-assignment
     image: hmctspublic.azurecr.io/aac/manage-case-assignment:latest
     ingressHost: aac-${SERVICE_FQDN}
-    keyVaults: []
     environment:
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       IDAM_OIDC_URL: https://idam-web-public.aat.platform.hmcts.net
