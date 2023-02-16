@@ -32,7 +32,7 @@ dependencies:
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-cos.enabled
   - name: finrem-dgcs
-    version: 0.2.10
+    version: 0.2.13
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-dgcs.enabled
   - name: finrem-emca
