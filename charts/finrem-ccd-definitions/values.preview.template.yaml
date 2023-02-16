@@ -23,7 +23,7 @@ xui-webapp:
   enabled: true
   nodejs:
     imagePullPolicy: Always
-    releaseNameOverride: ${SERVICE_NAME}.preview.platform.hmcts.net-xui-webapp
+    releaseNameOverride: ${SERVICE_NAME}-xui-webapp
     image: hmctspublic.azurecr.io/xui/webapp:latest
     ingressHost: xui-${SERVICE_NAME}.preview.platform.hmcts.net
     environment:
@@ -40,7 +40,7 @@ xui-mo-webapp:
   enabled: true
   nodejs:
     imagePullPolicy: Always
-    releaseNameOverride: ${SERVICE_NAME}.preview.platform.hmcts.net-xui-mo-webapp
+    releaseNameOverride: ${SERVICE_NAME}-xui-mo-webapp
     image: hmctspublic.azurecr.io/xui/mo-webapp:latest
     ingressHost: xui-mo-${SERVICE_NAME}.preview.platform.hmcts.net
     environment:
@@ -55,7 +55,7 @@ finrem-cos:
   java:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/cos:latest
-    releaseNameOverride: ${SERVICE_NAME}.preview.platform.hmcts.net-finrem-cos
+    releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_NAME}.preview.platform.hmcts.net
     environment:
       FEATURE_MANAGE_BUNDLE: true
@@ -102,7 +102,7 @@ finrem-dgcs:
   java:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/dgcs:latest
-    releaseNameOverride: ${SERVICE_NAME}.preview.platform.hmcts.net-finrem-dgcs
+    releaseNameOverride: ${SERVICE_NAME}-finrem-dgcs
     ingressHost: dgcs-${SERVICE_NAME}.preview.platform.hmcts.net
     environment:
         EVIDENCE_MANAGEMENT_CLIENT_API_BASEURL: http://${SERVICE_NAME}.preview.platform.hmcts.net-finrem-emca
@@ -132,7 +132,7 @@ finrem-emca:
   java:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/emca:latest
-    releaseNameOverride: ${SERVICE_NAME}.preview.platform.hmcts.net-finrem-emca
+    releaseNameOverride: ${SERVICE_NAME}-finrem-emca
     ingressHost: emca-${SERVICE_NAME}.preview.platform.hmcts.net
     environment:
         IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
@@ -152,7 +152,7 @@ finrem-ns:
   java:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/ns:latest
-    releaseNameOverride: ${SERVICE_NAME}.preview.platform.hmcts.net-finrem-ns
+    releaseNameOverride: ${SERVICE_NAME}-finrem-ns
     ingressHost: ns-${SERVICE_NAME}.preview.platform.hmcts.net
     environment:
       UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
@@ -329,7 +329,7 @@ ccd:
         - divorce_as_caseworker_la@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
         - divorce_as_caseworker_admin@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
         - divorce_respondent_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      userProfileDatabaseHost: ${SERVICE_NAME}.preview.platform.hmcts.net-ccd-postgres
+      userProfileDatabaseHost: ${SERVICE_NAME}-ccd-postgres
       userProfileDatabasePort: 5432
       userProfileDatabaseUser: hmcts
       userProfileDatabasePassword: hmcts
@@ -340,7 +340,7 @@ ccd:
       enabled: false
 
   elasticsearch:
-    nameOverride: ${SERVICE_NAME}.preview.platform.hmcts.net-es
+    nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     replicas: 1
     initResources:
@@ -399,7 +399,7 @@ aac-manage-case-assignment:
   java:
     disableKeyVaults: true
     imagePullPolicy: Always
-    releaseNameOverride: ${SERVICE_NAME}.preview.platform.hmcts.net-aac-manage-case-assignment
+    releaseNameOverride: ${SERVICE_NAME}-aac-manage-case-assignment
     image: hmctspublic.azurecr.io/aac/manage-case-assignment:latest
     ingressHost: aac-${SERVICE_NAME}.preview.platform.hmcts.net
     environment:
