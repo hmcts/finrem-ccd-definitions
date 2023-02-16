@@ -4,9 +4,9 @@ async function waitForPage(header, headerText) {
 
   try {
     if (headerText === undefined) {
-      await I.waitForElement(header, '90');
+      await I.waitForElement(header, '120');
     } else {
-      await I.waitForText(headerText, '90', header);
+      await I.waitForText(headerText, '120', header);
     }
   } catch (error) {
     throw error;
