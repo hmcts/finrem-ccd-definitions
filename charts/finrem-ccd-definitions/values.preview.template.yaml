@@ -7,7 +7,7 @@ nodejs:
   ingressHost: ${SERVICE_NAME}.preview.platform.hmcts.net
 
 idam-pr:
-  releaseNameOverride: ${SERVICE_NAME}.preview.platform.hmcts.net-ccd-pr
+  releaseNameOverride: ${SERVICE_NAME}-ccd-pr
   enabled: true
   redirect_uris:
     XUI:
