@@ -18,6 +18,33 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2Option",
+    "Label": "Please select appropriate option",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_intervener2Option",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3Option",
+    "Label": "Please select appropriate option",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_intervener3Option",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener4Option",
+    "Label": "Please select appropriate option",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_intervener4Option",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intervener1Label",
@@ -79,7 +106,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intervener1SolName",
-    "Label": "Solicitor's Full Name",
+    "Label": "Representative Full Name",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
@@ -87,7 +114,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intervener1SolEmail",
-    "Label": "Email address",
+    "Label": "Representative Email address",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
@@ -95,7 +122,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intervener1SolPhone",
-    "Label": "Phone number",
+    "Label": "Representative Phone number",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
@@ -103,6 +130,185 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intervener1Organisation",
+    "Label": "Intervener Organisation Policy",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
+  },
+
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2Label",
+    "Label": "## Second intervener details",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2Name",
+    "Label": "Intervener's Full Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2Address",
+    "Label": " ",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2Email",
+    "Label": "Email address",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2Phone",
+    "Label": "Phone number",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2Represented",
+    "Label": "Is the Intervener represented ?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2DateAdded",
+    "Label": " ",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2SolName",
+    "Label": "Representative Full Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2SolEmail",
+    "Label": "Representative Email address",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2SolPhone",
+    "Label": "Representative Phone number",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2Organisation",
+    "Label": "Intervener Organisation Policy",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
+  },
+
+
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3Label",
+    "Label": "## Third intervener details",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3Name",
+    "Label": "Intervener's Full Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3Address",
+    "Label": " ",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3Email",
+    "Label": "Email address",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3Phone",
+    "Label": "Phone number",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3Represented",
+    "Label": "Is the Intervener represented ?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3DateAdded",
+    "Label": " ",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3SolName",
+    "Label": "Representative Full Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3SolEmail",
+    "Label": "Representative Email address",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3SolPhone",
+    "Label": "Representative Phone number",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3Organisation",
     "Label": "Intervener Organisation Policy",
     "FieldType": "OrganisationPolicy",
     "SecurityClassification": "Public"
