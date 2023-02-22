@@ -11,3 +11,11 @@ test/functional/output
 package-lock.json
 definitions/consented/json/**/*-common*
 definitions/contested/json/**/*-common*
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
