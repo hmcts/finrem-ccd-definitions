@@ -9,19 +9,19 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "manageInterveners",
-    "CaseFieldID": "intervener1Option",
+    "CaseFieldID": "intervenerOptionList",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "PageShowCondition": "intervenersList=\"intervener1\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -34,7 +34,7 @@
     "PageID": 3,
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "PageShowCondition": "intervener1Option=\"addIntervener1\"",
+    "PageShowCondition": "intervenerOptionList=\"addIntervener1\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -166,26 +166,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "manageInterveners",
-    "CaseFieldID": "intervener2Option",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "MANDATORY",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "PageShowCondition": "intervenersList=\"intervener2\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "manageInterveners",
     "CaseFieldID": "intervener2Label",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 5,
     "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
-    "PageShowCondition": "intervener2Option=\"addIntervener2\"",
+    "PageShowCondition": "intervenerOptionList=\"addIntervener2\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -317,26 +304,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "manageInterveners",
-    "CaseFieldID": "intervener3Option",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "MANDATORY",
-    "PageID": 6,
-    "PageDisplayOrder": 6,
-    "PageColumnNumber": 1,
-    "PageShowCondition": "intervenersList=\"intervener3\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "manageInterveners",
     "CaseFieldID": "intervener3Label",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
-    "PageShowCondition": "intervener3Option=\"addIntervener3\"",
+    "PageShowCondition": "intervenerOptionList=\"addIntervener3\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -468,26 +442,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "manageInterveners",
-    "CaseFieldID": "intervener4Option",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "MANDATORY",
-    "PageID": 8,
-    "PageDisplayOrder": 8,
-    "PageColumnNumber": 1,
-    "PageShowCondition": "intervenersList=\"intervener4\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "manageInterveners",
     "CaseFieldID": "intervener4Label",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 9,
     "PageDisplayOrder": 9,
     "PageColumnNumber": 1,
-    "PageShowCondition": "intervener4Option=\"addIntervener4\"",
+    "PageShowCondition": "intervenerOptionList=\"addIntervener4\"",
     "ShowSummaryChangeOption": "Y"
   },
   {

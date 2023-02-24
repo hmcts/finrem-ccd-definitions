@@ -10,37 +10,9 @@
   {
     "LiveFrom": "01/01/2019",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener1Option",
+    "ID": "intervenerOptionList",
     "Label": "Please select appropriate option",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_intervener1Option",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener2Option",
-    "Label": "Please select appropriate option",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_intervener2Option",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener3Option",
-    "Label": "Please select appropriate option",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_intervener3Option",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener4Option",
-    "Label": "Please select appropriate option",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_intervener4Option",
+    "FieldType": "DynamicRadioList",
     "SecurityClassification": "Public"
   },
   {
