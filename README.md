@@ -10,7 +10,7 @@ This allows for the FR CCD Config to be easily edited and stored in Github as JS
 To install the dependencies for both this project and the submodule (ccd-definition-processor), run:
 `yarn install && yarn reset-ccd-submodule`
 
-## Setup for M1 chip Mac
+## Setup for M1 chip Macs
 
 If running yarn install throws an error with this output:
 
