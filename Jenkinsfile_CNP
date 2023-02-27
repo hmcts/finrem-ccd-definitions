@@ -112,9 +112,10 @@ withPipeline("nodejs", product, component) {
   }
   before('highleveldatasetup') {
     echo "CCD definition upload for environment: ${env.ENV}"
+    env.RUNNING_ENV = env.ENV;
     yarnBuilder.yarn('setup')
     if('preview' == env.ENV) {
-
+      env.RUNNING_ENV = "aat"
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
       env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
