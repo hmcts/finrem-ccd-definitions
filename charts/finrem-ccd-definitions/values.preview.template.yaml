@@ -101,7 +101,7 @@ finrem-dgcs:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/dgcs:latest
+    image: hmctspublic.azurecr.io/finrem/dgcs:pr-165
     releaseNameOverride: ${SERVICE_NAME}-finrem-dgcs
     ingressHost: dgcs-${SERVICE_FQDN}
     environment:
