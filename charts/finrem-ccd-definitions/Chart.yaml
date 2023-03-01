@@ -40,6 +40,6 @@ dependencies:
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-emca.enabled
   - name: finrem-ns
-    version: 0.2.10
+    version: 0.2.11
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-ns.enabled
