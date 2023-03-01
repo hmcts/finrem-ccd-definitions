@@ -1657,7 +1657,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "subjectToDecreeAbsoluteValue",
-    "Label": "Subject to Decree Absolute?",
+    "Label": "Subject to Decree Absolute/Final Order?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
@@ -2385,6 +2385,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "highCourtFRCList",
+    "Label": "If the FRC is not on the pilot, your application cannot proceed online. Please make a paper application direct to the FRC.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_hc_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "nottinghamCourtList",
     "Label": "Where is the Applicant’s Local Court? ",
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
@@ -2560,6 +2570,16 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_northwalesList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "highCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_highCourtList",
     "SecurityClassification": "Public"
   },
   {
@@ -2993,7 +3013,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "consentSubjectToDecreeAbsoluteValue",
-    "Label": "Subject to Decree Absolute?",
+    "Label": "Subject to Decree Absolute/Final Order?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
@@ -3462,6 +3482,15 @@
   {
     "LiveFrom": "01/09/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_highCourtFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_hc_frc_list",
+    "Label": "Please choose the FRC which covers the area within which the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationDirections_nottinghamCourtList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_NottinghamList",
@@ -3618,6 +3647,15 @@
     "ID": "generalApplicationDirections_northWalesCourtList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_northwalesList",
+    "Label": "Please give the name of the Court where the Hearing takes place",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirections_highCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_highCourtList",
     "Label": "Please give the name of the Court where the Hearing takes place",
     "SecurityClassification": "Public"
   },
@@ -4269,6 +4307,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interim_highCourtFRCList",
+    "Label": "If the FRC is not on the pilot, your application cannot proceed online. Please make a paper application direct to the FRC.",
+    "HintText": "This should be the FRC local to the applicant",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_hc_frc_list",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "interim_midlandsFRCList",
     "Label": "If the FRC is not on the pilot, your application cannot proceed online. Please make a paper application direct to the FRC.",
     "HintText": "This should be the FRC local to the applicant",
@@ -4454,6 +4502,16 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_northwalesList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interim_highCourtList",
+    "Label": "Where is the Applicant’s Local Court? ",
+    "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_highCourtList",
     "SecurityClassification": "Public"
   },
   {

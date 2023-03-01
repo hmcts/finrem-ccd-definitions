@@ -402,6 +402,25 @@ function verifyContestedPaperTabData(caseType, eventName, stateName) {
   I.schedulingAndListingTab(caseType, verifyContestedPaperTabText.schedulingAndListingTab.tabName);
 }
 
+async function verifyContestedConfidentialTabData(eventName, tabName) {
+  const I = this;
+
+  //I.waitForText(tabName, '5');
+    switch (eventName) {
+    case 'Upload Case Files':
+      I.see(verifyContestedTabText.confidentialDocumentsTab.type);
+      I.see(verifyContestedTabText.confidentialDocumentsTab.documentUrl);
+      I.see(verifyContestedTabText.confidentialDocumentsTab.comment);
+      I.see(verifyContestedTabText.confidentialDocumentsTab.fileName);
+      break;
+    case 'Manage confidential documents':
+      I.see(verifyContestedTabText.confidentialDocumentsTab.type);
+      I.see(verifyContestedTabText.confidentialDocumentsTab.manageConfDocumentUrl);
+      break;
+    }
+
+}
+
 module.exports = {
   historyTab,
   applicantTab,
@@ -420,5 +439,6 @@ module.exports = {
   consentOrderProcessTab,
   verifyConsentedTabData,
   verifyContestedTabData,
-  verifyContestedPaperTabData
+  verifyContestedPaperTabData,
+  verifyContestedConfidentialTabData
 };
