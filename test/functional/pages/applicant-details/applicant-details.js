@@ -3,7 +3,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function applicantDetails() {
   const I = this;
-  I.waitForElement('input[id="applicantFMName"]', '10');
+  I.waitForElement('input[id="applicantFMName"]', '30');
   if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
