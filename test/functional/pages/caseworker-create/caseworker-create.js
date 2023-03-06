@@ -15,7 +15,7 @@ async function contestedCaseworkerCreate(reference, applicationType, applicantRe
 
   I.click('div[id="applicantSolicitorAddress_applicantSolicitorAddress_postcodeLookup"] button[type="button"]');
   I.waitForElement('#selectAddress', '30');
-  I.wait('5');
+  I.wait('10');
   I.selectOption('select[id="applicantSolicitorAddress_applicantSolicitorAddress_addressList"]', '67 Pears Road, Hounslow');
   I.fillField('input[id="applicantSolicitorAddress__detailAddressLine2"]', 'Near Roundabout');
   I.fillField('input[id="applicantSolicitorAddress__detailAddressLine3"]', 'Opposite Tesco');

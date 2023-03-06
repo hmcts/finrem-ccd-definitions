@@ -22,19 +22,18 @@ function amendApplicationDetails() {
   I.waitForText('APPLICANT DETAILS', '90');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('RESPONDENT DETAILS', '30');
+  I.waitForText('RESPONDENT DETAILS', '90');
   I.fillField('input[id="rSolicitorEmail"]', 'vivupdatesol@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('NATURE OF THE APPLICATION', '30');
- // I.checkOption('input[value="Property Adjustment Order"]');
+  I.waitForText('NATURE OF THE APPLICATION', '90');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   // I.waitForText('ORDER FOR CHILDREN', '30');
   // I.checkOption('input[id="orderForChildrenQuestion1_No"]');
   // I.waitForContinueButtonEnabled();
   // I.click('Continue');
-  I.waitForText('Draft Consent Order', '30')
+  I.waitForText('Draft Consent Order', '90')
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   //I.refreshPage();
@@ -110,6 +109,10 @@ function contestedAmendApplicationDetails() {
   I.click('Continue');
 
   I.waitForPage('#propertyAdjutmentOrderDetailLabel');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+
+  I.waitForPage('#paymentForChildrenDecision input');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
