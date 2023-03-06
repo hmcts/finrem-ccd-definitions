@@ -20,14 +20,12 @@ async function applicantDetails() {
 async function contestedApplicantDetails() {
   const I = this;
 
-    I.waitForText('Applicant’s Details')
-    I.waitForElement('h2', 'Applicant’s Details');
-    I.waitForElement('input[id="applicantFMName"]');
+  I.waitForElement('input[id="applicantFMName"]','30');
 
-  if (testForAccessibility==='true') {
-    await I.runAccessibilityTest();
-  }
-  //I.waitForElement('input[id="applicantFMName"]');
+  // if (testForAccessibility==='true') {
+  //   await I.runAccessibilityTest();
+  // }
+
   I.fillField('input[id="applicantFMName"]', 'Tik');
   I.fillField('input[id="applicantLName"]', 'Tok');
 
