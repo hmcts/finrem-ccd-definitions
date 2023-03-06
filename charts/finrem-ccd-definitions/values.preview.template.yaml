@@ -351,11 +351,11 @@ ccd:
     replicas: 1
     initResources:
       limits:
-        cpu: "500m"
-        memory: "512Mi"
+        cpu: "1000m"
+        memory: "1024Mi"
       requests:
-        cpu: "25m"
-        memory: "512Mi"
+        cpu: "50m"
+        memory: "1024Mi"
     minimumMasterNodes: 1
     antiAffinity: "soft"
     esJavaOpts: "-Xmx1g -Xms1g"
@@ -377,7 +377,7 @@ ccd:
     resources:
       requests:
         cpu: 1000m
-        memory: 512Mi
+        memory: 1024Mi
     image:
       repository: hmctspublic.azurecr.io/ccd/logstash
       tag: ccd-divorce-logstash-latest
