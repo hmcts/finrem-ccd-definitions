@@ -27,7 +27,7 @@ async function solicitorCreate(reference) {
   I.fillField('input[id="search-org-text"]', 'finrem-1');
   I.click('Select');
   I.waitForText('EC3A 2AD');
-  I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
+  I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FinRem-1-Org');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
