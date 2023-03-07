@@ -24,8 +24,7 @@ async function natureOfApplication() {
 
 async function contestedNatureOfApplication() {
   const I = this;
-
-  await I.waitForPage('input[value="periodicalPaymentOrder"]');
+  I.waitForPage('h1', 'Form A Application');
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
