@@ -24,10 +24,10 @@ async function solicitorCreate(reference) {
   I.fillField('input[id="solicitorDXnumber"]', '776890');
   I.waitForText('Search for an organisation','30')
   I.checkOption('input[id="solicitorAgreeToReceiveEmails_Yes"]');
-  I.fillField('input[id="search-org-text"]', 'finrem-1');
+  I.fillField('input[id="search-org-text"]', 'FinRem-1-Org');
   I.click('Select');
   I.waitForText('EC3A 2AD');
-  I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FinRem-1-Org');
+  I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
