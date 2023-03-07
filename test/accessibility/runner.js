@@ -1,3 +1,4 @@
+/* eslint-disable */
 const HTMLCS = require('html_codesniffer');
 const fs = require('fs');
 // const testConfig = require('src/test/config.js');
@@ -50,7 +51,7 @@ async function runAccessibility(url, page) {
 
   try {
     await page.screenshot({ path: `${screenshotPath}/${screenshotName}`, fullPage: true });
-  } catch (err) {
+  } catch (error) {
     fs.mkdirSync(screenshotPath, { recursive: true });
     await page.screenshot({ path: `${screenshotPath}/${screenshotName}`, fullPage: true });
   }
