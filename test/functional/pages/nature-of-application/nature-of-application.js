@@ -46,4 +46,13 @@ async function contestedNatureOfApplication() {
   I.click('Continue');
 }
 
-module.exports = { natureOfApplication, contestedNatureOfApplication };
+async function contestedNatureOfApplicationForSchedule1(){
+  const I = this;
+
+  await I.waitForText('What is the nature of the application ?');
+  I.checkOption('input[id="natureOfApplicationChecklistSchedule-Interim child periodical payments"]');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+}
+
+module.exports = { natureOfApplication, contestedNatureOfApplication, contestedNatureOfApplicationForSchedule1 };
