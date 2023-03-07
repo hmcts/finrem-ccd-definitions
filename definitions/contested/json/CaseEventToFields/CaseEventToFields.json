@@ -10493,7 +10493,7 @@
     "PageID": "generalApplicationReferToJudge",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "generalApplicationReferToJudgeEmail=\"@IMPOSSIBLE@\""
+    "FieldShowCondition": "generalApplicationReferToJudgeEmail=\"IMPOSSIBLE\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -10506,7 +10506,7 @@
     "PageLabel": "Manage Barrister",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "PageShowCondition": "currentUserCaseRole=\"[CASEWORKER]\"",
+    "PageShowCondition": "currentUserCaseRoleLabel=\"CASEWORKER\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -10534,7 +10534,7 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserCaseRole=\"[APPSOLICITOR]\" OR barristerParty=\"applicant\""
+    "PageShowCondition": "currentUserCaseRoleLabel=\"APPSOLICITOR\" OR barristerParty=\"applicant\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -10562,7 +10562,7 @@
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserCaseRole=\"[RESPSOLICITOR]\" OR barristerParty=\"respondent\""
+    "PageShowCondition": "currentUserCaseRoleLabel=\"RESPSOLICITOR\" OR barristerParty=\"respondent\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -10584,6 +10584,19 @@
     "CaseEventID": "FR_manageBarrister",
     "CaseFieldID": "currentUserCaseRole",
     "PageFieldDisplayOrder": 8,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 3,
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition": "appBarristerCollection=\"IMPOSSIBLE_VALUE\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageBarrister",
+    "CaseFieldID": "currentUserCaseRoleLabel",
+    "PageFieldDisplayOrder": 9,
     "DisplayContext": "OPTIONAL",
     "PageID": 3,
     "PageDisplayOrder": 3,
