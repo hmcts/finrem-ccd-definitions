@@ -1,5 +1,7 @@
-const { getAccessibilityTestResult } = require('./accessibility/runner');
-const { generateAccessibilityReport } = require('../../reporter/customReporter');
+/* eslint-disable */
+'use strict';
+const { getAccessibilityTestResult } = require('../accessibility/runner');
+const { generateAccessibilityReport } = require('../reporter/customReporter');
 
 const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'true';
 
