@@ -25,6 +25,7 @@ function updateResultObject(url, pageTitle, screenshotReportRef, accessibilityEr
     resultObj.failCount += 1;
   }
 
+  console.log('url -----------------------' + JSON.stringify(urlArr));
   resultObj.tests.push({
     name: `${urlArr[urlArr.length - 2]}/${urlArr[urlArr.length - 1]}`,
     pageUrl: url,
