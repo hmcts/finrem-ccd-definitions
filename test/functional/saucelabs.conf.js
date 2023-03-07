@@ -49,6 +49,9 @@ const setupConfig = {
     SauceLabsBrowserHelper: {
       require: '../helpers/SauceLabsBrowserHelper.js'
     },
+    JSWait: {
+      require: '../helpers/JSWait.js'
+    },
     Mochawesome: {
       uniqueScreenshotNames: 'true'
     }
