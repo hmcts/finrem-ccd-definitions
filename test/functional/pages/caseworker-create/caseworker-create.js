@@ -26,7 +26,9 @@ async function contestedCaseworkerCreate(reference, applicationType, applicantRe
   I.waitForText('Search for an organisation','30')
   I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
   I.fillField('input[id="search-org-text"]', 'FinRem-1-Org');
+  I.wait('5');
   I.click('Select');
+  I.wait('5');
   I.waitForText('EC3A 2AD');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
