@@ -24,18 +24,18 @@ async function natureOfApplication() {
 
 async function contestedNatureOfApplication() {
   const I = this;
-  I.waitForPage('h1', 'Form A Application');
+  I.waitForPage('input[id="periodicalPaymentOrder"]');
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[value="Maintenance Pending Suit"]');
-  I.checkOption('input[value="Periodical Payment Order"]');
+  I.checkOption('input[id="periodicalPaymentOrder"]');
   I.checkOption('input[value="Lump Sum Order"]');
   I.checkOption('input[value="Pension Sharing Order"]');
   I.checkOption('input[value="Pension Attachment Order"]');
   I.checkOption('input[value="Pension Compensation Sharing Order"]');
   I.checkOption('input[value="Pension Compensation Attachment Order"]');
-  I.checkOption('input[value="Property Adjustment Order"]');
+  I.checkOption('input[id="propertyAdjustmentOrder"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForElement('#propertyAddress', 60);
