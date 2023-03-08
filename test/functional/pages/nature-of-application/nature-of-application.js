@@ -24,18 +24,18 @@ async function natureOfApplication() {
 
 async function contestedNatureOfApplication() {
   const I = this;
-  I.waitForPage('input[id="natureOfApplicationChecklist-periodicalPaymentOrder"]');
+  I.waitForPage('input[for="natureOfApplicationChecklist-periodicalPaymentOrder"]');
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[value="Maintenance Pending Suit"]');
-  I.checkOption('input[id="natureOfApplicationChecklist-periodicalPaymentOrder"]');
+  I.checkOption('input[for="natureOfApplicationChecklist-periodicalPaymentOrder"]');
   I.checkOption('input[value="Lump Sum Order"]');
   I.checkOption('input[value="Pension Sharing Order"]');
   I.checkOption('input[value="Pension Attachment Order"]');
   I.checkOption('input[value="Pension Compensation Sharing Order"]');
   I.checkOption('input[value="Pension Compensation Attachment Order"]');
-  I.checkOption('input[id="natureOfApplicationChecklist-propertyAdjustmentOrder"]');
+  I.checkOption('input[for="natureOfApplicationChecklist-propertyAdjustmentOrder"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForElement('#propertyAddress', 60);
@@ -50,7 +50,7 @@ async function contestedNatureOfApplicationForSchedule1(){
   const I = this;
 
   await I.waitForText('What is the nature of the application ?');
-  I.checkOption('input[id="natureOfApplicationChecklistSchedule-Interim child periodical payments"]');
+  I.checkOption('input[for="natureOfApplicationChecklistSchedule-Interim child periodical payments"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }

@@ -10,7 +10,7 @@ async function caseSubmitAuthorisation(casetype) {
   I.selectOption('select[id="next-step"]', 'Case Submission');
   I.wait('2');
   I.click('Go');
-  I.waitForText('AUTHORISATION', '90');
+  I.waitForText('AUTHORISATION', '30');
   I.fillField('input[id="authorisationName"]', 'Viasda');
   if (casetype === 'contested') {
     I.fillField('input[id="solicitorFirm"]', 'Abc Org');
