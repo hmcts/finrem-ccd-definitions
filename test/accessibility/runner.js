@@ -14,6 +14,26 @@ const resultObj = {
   failCount: 0,
   tests: []
 };
+function updateResultObject(url, pageTitle, screenshotReportRef, accessibilityErrorsOnThePage) {
+  const isPageAccessible = accessibilityErrorsOnThePage.length === 0 ? result.PASSED : result.FAILED;
+
+  const urlArr = url.split('/');
+
+  if (isPageAccessible === result.PASSED) {
+    resultObj.passCount += 1;
+  } else {
+    resultObj.failCount += 1;
+  }
+
+  resultObj.tests.push({
+    name: `${urlArr[urlArr.length - 2]}/${urlArr[urlArr.length - 1]}`,
+    pageUrl: url,
+    documentTitle: pageTitle,
+    status: isPageAccessible,
+    screenshot: screenshotReportRef,
+    a11yIssues: accessibilityErrorsOnThePage
+  });
+}
 
 async function runAccessibility(url, page) {
   // Add HMTL code sniffer script
@@ -59,26 +79,6 @@ async function runAccessibility(url, page) {
   updateResultObject(url, await page.title(), screenshotReportRef, accessibilityErrorsOnThePage);
 }
 
-function updateResultObject(url, pageTitle, screenshotReportRef, accessibilityErrorsOnThePage) {
-  const isPageAccessible = accessibilityErrorsOnThePage.length === 0 ? result.PASSED : result.FAILED;
-
-  const urlArr = url.split('/');
-
-  if (isPageAccessible === result.PASSED) {
-    resultObj.passCount += 1;
-  } else {
-    resultObj.failCount += 1;
-  }
-
-  resultObj.tests.push({
-    name: `${urlArr[urlArr.length - 2]}/${urlArr[urlArr.length - 1]}`,
-    pageUrl: url,
-    documentTitle: pageTitle,
-    status: isPageAccessible,
-    screenshot: screenshotReportRef,
-    a11yIssues: accessibilityErrorsOnThePage
-  });
-}
 
 function getAccessibilityTestResult() {
   return resultObj;
