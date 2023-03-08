@@ -29,7 +29,7 @@ async function contestedNatureOfApplication() {
     await I.runAccessibilityTest();
   }
   I.checkOption('input[value="Maintenance Pending Suit"]');
-  I.checkOption('input[value="periodicalPaymentOrder"]');
+  I.checkOption('input[value="Periodical Payment Order"]');
   I.checkOption('input[value="Lump Sum Order"]');
   I.checkOption('input[value="Pension Sharing Order"]');
   I.checkOption('input[value="Pension Attachment Order"]');
