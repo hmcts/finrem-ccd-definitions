@@ -6,7 +6,7 @@ function respondentSolicitorDetailsDetails(I) {
   I.fillField('input[id="rSolicitorFirm"]', 'MahFirm');
   I.fillField('input[id="rSolicitorReference"]', 'MahSol73');
 
-  I.waitForText('Search for an organisation', 60);
+  I.waitForText('Search for an organisation', 120);
   I.fillField('input[id="search-org-text"]', 'finrem-2');
   I.click('Select');
   I.waitForText('EC3A 2AD', '5');

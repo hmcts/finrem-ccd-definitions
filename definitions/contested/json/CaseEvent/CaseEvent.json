@@ -492,7 +492,7 @@
     "Name": "Prepare For Hearing",
     "Description": "Prepare For Hearing",
     "DisplayOrder": 39,
-    "PreConditionState(s)": "orderSent",
+    "PreConditionState(s)": "orderSent;close;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;consentedOrderNotApproved;consentedOrderApproved;consentedOrderAssignJudge;reviewOrder",
     "PostConditionState": "prepareForHearing",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/prepare-for-hearing-order-sent",
     "SecurityClassification": "Public",
@@ -903,7 +903,9 @@
     "DisplayOrder": 8,
     "PreConditionState(s)": "caseAdded;paperCaseAdded",
     "PostConditionState": "applicationSubmitted",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/manual-payment",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
