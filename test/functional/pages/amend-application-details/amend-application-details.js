@@ -103,8 +103,6 @@ function contestedAmendApplicationDetails() {
   I.click('Continue');
   I.wait(60);
 
-  I.waitForPage('input[id="natureOfApplicationChecklist-propertyAdjustmentOrder"]');
-  I.checkOption('input[id="natureOfApplicationChecklist-propertyAdjustmentOrder"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 

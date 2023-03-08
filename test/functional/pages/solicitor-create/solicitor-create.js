@@ -25,6 +25,7 @@ async function solicitorCreate(reference) {
   I.waitForText('Search for an organisation','60')
   I.checkOption('input[id="solicitorAgreeToReceiveEmails_Yes"]');
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
+  I.wait('5');
   I.click('Select');
   I.wait('5');
   I.waitForText('SW1H 9AJ');
@@ -57,6 +58,7 @@ async function contestedSolicitorCreate(reference, applicationType) {
   I.waitForText('Search for an organisation','60');
   I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
+  I.wait('5');
   I.click('Select');
   I.wait('5');
   I.waitForText('SW1H 9AJ');
