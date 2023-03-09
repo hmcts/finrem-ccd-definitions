@@ -97,7 +97,7 @@ Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I =
     // amend event
     I.amendApplicationDetails();
     // hwf payment submission
-    await I.caseSubmitAuthorisation();
+    await I.caseSubmitAuthorisation('consented');
     await I.paymentPage(false);
     await I.hwfPaymentDetails();
     await I.paymentSubmission();

@@ -24,7 +24,10 @@ exports.config = {
         ]
       }
     },
-    PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
+    PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' },
+    'JSWait': {
+        require: '../helpers/JSWait.js'
+    }
   },
     plugins: {
         retryFailedStep: {
