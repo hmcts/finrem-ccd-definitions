@@ -222,6 +222,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I =>
     await I.contestedApplicantDetails();
     await I.contestedRespondentDetails();
     await I.contestedNatureOfApplication();
+    await I.contestedOrderForChildren();
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
@@ -270,6 +271,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @pipeline',
     await I.contestedApplicantDetails();
     await I.contestedRespondentDetails();
     await I.contestedNatureOfApplication();
+    await I.contestedOrderForChildren();
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
@@ -295,6 +297,7 @@ Scenario('Upload Case Files Confidential Documents @nightly @pipeline', async I 
     await I.contestedApplicantDetails();
     await I.contestedRespondentDetails();
     await I.contestedNatureOfApplication();
+    await I.contestedOrderForChildren();
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
@@ -322,6 +325,7 @@ Scenario('Manage Confidential Documents @nightly @pipeline', async I => {
     await I.contestedApplicantDetails();
     await I.contestedRespondentDetails();
     await I.contestedNatureOfApplication();
+    await I.contestedOrderForChildren();
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
