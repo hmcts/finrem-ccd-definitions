@@ -24,8 +24,7 @@ async function natureOfApplication() {
 
 async function contestedNatureOfApplication() {
   const I = this;
-
-  await I.waitForPage('input[value="periodicalPaymentOrder"]');
+  I.waitForPage('input[value="periodicalPaymentOrder"]');
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
@@ -39,7 +38,7 @@ async function contestedNatureOfApplication() {
   I.checkOption('input[value="propertyAdjustmentOrder"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForElement('#propertyAddress', 60);
+  I.waitForElement('#propertyAddress', '30');
   I.fillField('#propertyAddress', '26 Riverside gardens, SW10XE');
   I.fillField('#mortgageDetail', 'Halifax mortgage');
   I.checkOption('input[id="additionalPropertyOrderDecision_No"]');
@@ -47,4 +46,13 @@ async function contestedNatureOfApplication() {
   I.click('Continue');
 }
 
-module.exports = { natureOfApplication, contestedNatureOfApplication };
+async function contestedNatureOfApplicationForSchedule1(){
+  const I = this;
+
+  await I.waitForText('What is the nature of the application ?');
+  I.checkOption('input[value="Interim child periodical payments"]');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+}
+
+module.exports = { natureOfApplication, contestedNatureOfApplication, contestedNatureOfApplicationForSchedule1 };

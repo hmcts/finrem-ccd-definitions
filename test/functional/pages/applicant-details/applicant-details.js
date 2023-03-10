@@ -22,9 +22,9 @@ async function contestedApplicantDetails() {
 
   I.waitForElement('input[id="applicantFMName"]','30');
 
-  // if (testForAccessibility==='true') {
-  //   await I.runAccessibilityTest();
-  // }
+  if (testForAccessibility==='true') {
+    await I.runAccessibilityTest();
+  }
 
   I.fillField('input[id="applicantFMName"]', 'Tik');
   I.fillField('input[id="applicantLName"]', 'Tok');
