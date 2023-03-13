@@ -26,6 +26,8 @@ xui-webapp:
     releaseNameOverride: ${SERVICE_NAME}-xui-webapp
     image: hmctspublic.azurecr.io/xui/webapp:latest
     ingressHost: xui-${SERVICE_FQDN}
+    devmemoryRequests: 1024Mi
+    devmemoryLimits: 2048Mi
     environment:
       HEALTH_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}/health
       HEALTH_CCD_DATA_API: http://${SERVICE_NAME}-ccd-data-store-api/health
@@ -214,6 +216,10 @@ ccd:
         enabled: false
       imagePullPolicy: Always
       image: hmctspublic.azurecr.io/ccd/data-store-api:latest
+      devmemoryRequests: 1024Mi
+      devcpuRequests: 2000m
+      devmemoryLimits: 2058Mi
+      devcpuLimits: 2000m
       environment:
         DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
@@ -345,14 +351,14 @@ ccd:
     replicas: 1
     initResources:
       limits:
-        cpu: "500m"
-        memory: "512Mi"
+        cpu: "1000m"
+        memory: "1024Mi"
       requests:
-        cpu: "25m"
-        memory: "512Mi"
+        cpu: "50m"
+        memory: "1024Mi"
     minimumMasterNodes: 1
     antiAffinity: "soft"
-    esJavaOpts: "-Xmx512m -Xms512m"
+    esJavaOpts: "-Xmx1g -Xms1g"
     extraEnvs:
       - name: discovery.type
         value: single-node
@@ -371,7 +377,7 @@ ccd:
     resources:
       requests:
         cpu: 1000m
-        memory: 512Mi
+        memory: 1024Mi
     image:
       repository: hmctspublic.azurecr.io/ccd/logstash
       tag: ccd-divorce-logstash-latest
