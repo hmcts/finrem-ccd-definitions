@@ -15,7 +15,7 @@ async function contestedCaseworkerCreate(reference, applicationType, applicantRe
 
   I.click('div[id="applicantSolicitorAddress_applicantSolicitorAddress_postcodeLookup"] button[type="button"]');
   I.waitForElement('#selectAddress', '30');
-  I.wait('5');
+  I.wait('10');
   I.selectOption('select[id="applicantSolicitorAddress_applicantSolicitorAddress_addressList"]', '67 Pears Road, Hounslow');
   I.fillField('input[id="applicantSolicitorAddress__detailAddressLine2"]', 'Near Roundabout');
   I.fillField('input[id="applicantSolicitorAddress__detailAddressLine3"]', 'Opposite Tesco');
@@ -26,11 +26,14 @@ async function contestedCaseworkerCreate(reference, applicationType, applicantRe
   I.waitForText('Search for an organisation','30')
   I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
   I.fillField('input[id="search-org-text"]', 'FinRem-1-Org');
+  I.wait('5');
   I.click('Select');
+  I.wait('5');
   I.waitForText('EC3A 2AD');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
+  I.wait('10');
 
   if (applicationType== 'Schedule1') {
     I.checkOption("#typeOfApplication-Under paragraph 1 or 2 of schedule 1 children act 1989");
