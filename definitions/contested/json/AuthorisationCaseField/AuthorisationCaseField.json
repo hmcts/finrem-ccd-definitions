@@ -7373,6 +7373,13 @@
   {
     "LiveFrom": "01/09/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalApplicationDirections_highCourtList",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/09/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationDirectionsAdditionalInformation",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
@@ -10055,6 +10062,27 @@
     "LiveFrom": "10/07/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "currentUserCaseRole",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "currentUserCaseRoleLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "currentUserCaseRoleLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "currentUserCaseRoleLabel",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },

@@ -22,11 +22,13 @@ async function solicitorCreate(reference) {
   I.fillField('input[id="solicitorPhone"]', '07700000');
   I.fillField('input[id="solicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="solicitorDXnumber"]', '776890');
-  I.waitForText('Search for an organisation','30')
+  I.waitForText('Search for an organisation','60')
   I.checkOption('input[id="solicitorAgreeToReceiveEmails_Yes"]');
-  I.fillField('input[id="search-org-text"]', 'finrem-1');
+  I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
+  I.wait('5');
   I.click('Select');
-  I.waitForText('EC3A 2AD');
+  I.wait('5');
+  I.waitForText('SW1H 9AJ');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -53,11 +55,13 @@ async function contestedSolicitorCreate(reference, applicationType) {
   I.fillField('input[id="applicantSolicitorPhone"]', '07000000');
   I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
-  I.waitForText('Search for an organisation',60);
+  I.waitForText('Search for an organisation','60');
   I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
-  I.fillField('input[id="search-org-text"]', 'FinRem-1-Org');
+  I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
+  I.wait('5');
   I.click('Select');
-  I.waitForText('EC3A 2AD');
+  I.wait('5');
+  I.waitForText('SW1H 9AJ');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
   if (applicationType== 'Schedule1') {
     I.checkOption('input[id="typeOfApplication-Under paragraph 1 or 2 of schedule 1 children act 1989"]');

@@ -17,9 +17,11 @@
     "consentOrderEvent": "Consent Order",
     "consentOrderEndState": "Consented Order Submitted",
     "assignToJudgeConsentEvent": "Assign to Judge (consent)",
-    "assignToJudgeConsentEndState": "Awaiting Judiciary Response (Consent)",
+    "assignToJudgeConsentEndState": "Consent Assigned to Judge",
     "createGeneralApplicationEvent": "Create General Application",
-    "createGeneralApplicationState": "General Application"
+    "createGeneralApplicationState": "General Application",
+    "uploadCaseFiles": "Upload Case Files",
+    "manageConfidentialDocuments": "Manage confidential documents"
   },
   "applicantTab": {
     "tabName": "Applicant",
@@ -107,5 +109,13 @@
     "mortgageDetails": "consented case in contested mortgage",
     "draftOrderDocument": "consentedInContestedDraftTest.pdf",
     "pensionDocument": "pensionSampleTest.pdf"
+  },
+  "confidentialDocumentsTab": {
+    "tabName": "Confidential documents",
+    "type": "Chronology",
+    "documentUrl": "confidentialDoc.pdf",
+    "comment": "this is confidential document",
+    "fileName": "confidentialDoc.pdf",
+    "manageConfDocumentUrl": "manageConfidentialDoc.pdf"
   }
 }
