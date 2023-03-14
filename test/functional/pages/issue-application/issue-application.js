@@ -1,3 +1,10 @@
+const { constant } = require('loadsh/util');
+
+module.exports = { issueApplication,
+  fields: {
+    caseReference: '//*[@id="undefined"]/dt/ccd-markdown/div/markdown/p/strong',
+  }
+};
 async function issueApplication(){
   const I = this;
   await I.waitForPage('select[id="next-step"]');
@@ -9,6 +16,8 @@ async function issueApplication(){
   I.waitForText('Event summary (optional)');
   I.click('Submit');
   I.waitForText('Issue Application', '60');
+  pause();
+  const caRef = I.grabTextFrom(this.caseReference);
+  return caRef;
 }
 
-module.exports = { issueApplication };

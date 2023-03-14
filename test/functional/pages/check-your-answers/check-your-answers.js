@@ -40,4 +40,18 @@ async function contestedCheckYourAnswers(applicationType) {
   //TODO validate more questions here
 }
 
-module.exports = { checkYourAnswers, contestedCheckYourAnswers };
+async function checkYourAnswersListForHearing() {
+  const I = this;
+  I.waitForElement('.check-your-answers', '60');
+  I.see('Time Estimate');
+  I.see('Hearing Date');
+  I.see('Hearing Time');
+  I.see('Hearing Court');
+  I.see('Additional information about the hearing');
+  I.see('Do you want to upload any other documents ?');
+  I.retry('2').click('Submit');
+  I.retry('2').click('Ignore Warning and Go');
+  I.wait('30');
+}
+
+module.exports = { checkYourAnswers, contestedCheckYourAnswers, checkYourAnswersListForHearing };

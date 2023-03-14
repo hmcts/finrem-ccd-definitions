@@ -37,6 +37,8 @@ const {childrenDetails} = require('./pages/children-details/children-details');
 const {allocateJudge} = require('./pages/allocate-judge/allocate-judge');
 const {uploadCaseFiles} = require('./pages/upload-case-files/upload-case-files');
 const {manageConfidentialDocuments} = require('./pages/manage-confidential-documents/manage-confidential-documents');
+const {progressToListing} = require('./pages/progress-to-listing/progress-to-listing');
+const {listForHearing} = require('./pages/list-for-hearing/list-for-hearing');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -156,6 +158,8 @@ module.exports = () => {
     allocateJudge,
     uploadCaseFiles,
     manageConfidentialDocuments,
-    verifyContestedConfidentialTabData
+    verifyContestedConfidentialTabData,
+    progressToListing,
+    listForHearing
   });
 };

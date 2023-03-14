@@ -342,3 +342,44 @@ Scenario('Manage Confidential Documents @nightly @pipeline', async I => {
     logger.info('Confidential documents verified on Confidential documents tab');
   }
 }).retry(2);
+
+Scenario('progress to listing for contested case @nightly @pipeline @test', async I => {
+  if (nightlyTest === 'true') {
+    //login as a caseworker, create contested case
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.wait('2');
+    await I.createCase('FinancialRemedyContested', 'Form A Application');
+    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
+    await I.contestedDivorceDetails();
+    await I.contestedApplicantDetails();
+    await I.contestedRespondentDetails();
+    await I.contestedNatureOfApplication();
+    await I.contestedOrderForChildren();
+    await I.fastTrack();
+    await I.complexityList();
+    await I.applyingToCourt();
+    await I.mediationQuestion();
+    await I.miamCertification();
+    await I.contestedOtherDocuments();
+    await I.contestedCheckYourAnswers('Matrimonial');
+    I.waitForText('Form A Application', '60');
+    await I.manualPayment();
+    const caseReference = await I.issueApplication();
+
+    await I.allocateJudge();
+    I.waitForText('Allocate to Judge', '10');
+    I.see('Allocate to Judge');
+    I.signOut();
+    I.signInIdam(judgeUserName, judgePassword);
+    I.wait('2');
+
+
+
+    await I.progressToListing();
+    await I.listForHearing();
+    I.waitForText('List for Hearing');
+
+  }
+})//.retry(2);
+
+
