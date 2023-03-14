@@ -3,7 +3,7 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function applicantDetails() {
   const I = this;
-  I.waitForElement('input[id="applicantFMName"]', '10');
+  I.waitForElement('input[id="applicantFMName"]', '30');
   if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
@@ -20,16 +20,21 @@ async function applicantDetails() {
 async function contestedApplicantDetails() {
   const I = this;
 
-  //I.waitForText('Applicant’s Details')
-    I.waitForElement('h2', 'Applicant’s Details');
-    I.waitForElement('input[id="applicantFMName"]');
+  I.waitForElement('input[id="applicantFMName"]','30');
 
   if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
-  //I.waitForElement('input[id="applicantFMName"]');
+
   I.fillField('input[id="applicantFMName"]', 'Tik');
   I.fillField('input[id="applicantLName"]', 'Tok');
+
+  I.fillField('#applicantAddress_applicantAddress_postcodeInput', 'LS29 9DR');
+  I.click('Find address');
+  I.waitForElement('#selectAddress', '30');
+  I.wait('5');
+  I.selectOption('select[id="applicantAddress_applicantAddress_addressList"]', '27a, Church Street, Ilkley');
+
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }

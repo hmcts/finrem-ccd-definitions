@@ -37,7 +37,7 @@
     "ListElementCode": "orderRefusalJudge",
     "EventElementLabel": "Select Judge",
     "FieldDisplayOrder": 4,
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -47,7 +47,7 @@
     "ListElementCode": "orderRefusalJudgeName",
     "EventElementLabel": "Name of Judge",
     "FieldDisplayOrder": 5,
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1328,5 +1328,132 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationCreatedBy",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationHearingRequired",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationTimeEstimate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "FieldShowCondition": "generalApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationSpecialMeasures",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "FieldShowCondition": "generalApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationDocument",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationDraftOrder",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "gaSupportDocuments.supportDocument",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationCreatedDate",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationStatus",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationOutcomeOther",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationDirectionsDocument",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
   }
 ]
