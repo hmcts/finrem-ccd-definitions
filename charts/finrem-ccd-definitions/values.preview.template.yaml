@@ -74,6 +74,8 @@ finrem-cos:
       FINREM_NOTIFICATION_SERVICE_BASE_URL: http://${SERVICE_NAME}-finrem-ns
       PAYMENT_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-ps
       EVIDENCE_MANAGEMENT_SERVICE_BASEURL: http://${SERVICE_NAME}-finrem-emca
+      DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
+      SEND_LETTER_SERVICE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
       ACA_SERVICE_API_BASEURL: http://${SERVICE_NAME}-aac-manage-case-assignment
       CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
       AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY}
