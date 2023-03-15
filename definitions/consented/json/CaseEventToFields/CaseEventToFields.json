@@ -4880,7 +4880,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserForConsentedCaseRoleLabel=\"APPSOLICITOR\""
+    "PageShowCondition": "currentUserCaseRoleLabel=\"APPSOLICITOR\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4977,7 +4977,7 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserForConsentedCaseRoleLabel=\"RESPSOLICITOR\""
+    "PageShowCondition": "currentUserCaseRoleLabel=\"RESPSOLICITOR\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5080,7 +5080,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
-    "CaseFieldID": "currentUserForConsentedCaseRoleLabel",
+    "CaseFieldID": "currentUserCaseRoleLabel",
     "PageFieldDisplayOrder": 10,
     "DisplayContext": "READONLY",
     "PageID": 2,
