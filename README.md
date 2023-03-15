@@ -170,4 +170,3 @@ More details can be found [here](https://tools.hmcts.net/confluence/display/RSE/
 If you switch the Preview deployment ON, 
 remember to switch it back OFF by removing the comment on `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
 
-
