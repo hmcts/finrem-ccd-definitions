@@ -18,8 +18,10 @@ async function listForHearing(){
   I.checkOption('input[id="additionalHearingDocumentsOption_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-
-
+  I.waitForText('Check your answers');
+  I.click('Submit');
+  I.waitForText('Ignore Warning and Go');
+  I.click('Ignore Warning and Go');
 }
 
 module.exports = { listForHearing };

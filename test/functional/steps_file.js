@@ -32,13 +32,15 @@ const { assignContestedShareCase } = require('./pages/share-case-in-org/share-ca
 const {contestedCaseworkerCreate} = require('./pages/caseworker-create/caseworker-create');
 const {pbaPayment} = require('./pages/pba-payment/pba-payment');
 const {manualPayment} = require('./pages/manual-payment/manual-payment');
-const {issueApplication} = require('./pages/issue-application/issue-application');
+const {issueApplication, getCaseRefFromScreen} = require('./pages/issue-application/issue-application');
 const {childrenDetails} = require('./pages/children-details/children-details');
 const {allocateJudge} = require('./pages/allocate-judge/allocate-judge');
 const {uploadCaseFiles} = require('./pages/upload-case-files/upload-case-files');
 const {manageConfidentialDocuments} = require('./pages/manage-confidential-documents/manage-confidential-documents');
 const {progressToListing} = require('./pages/progress-to-listing/progress-to-listing');
 const {listForHearing} = require('./pages/list-for-hearing/list-for-hearing');
+const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-reference');
+const {giveAllocationDirection} = require('./pages/give-allocation-direction/give-allocation-direction');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -160,6 +162,9 @@ module.exports = () => {
     manageConfidentialDocuments,
     verifyContestedConfidentialTabData,
     progressToListing,
-    listForHearing
+    listForHearing,
+    getCaseRefFromScreen,
+    enterCaseReference,
+    giveAllocationDirection
   });
 };
