@@ -43,18 +43,8 @@ const setupConfig = {
       region: 'eu',
       capabilities: {}
     },
-    SauceLabsReportingHelper: {
-      require: '../helpers/sauceLabsReportingHelper.js'
-    },
-    SauceLabsBrowserHelper: {
-      require: '../helpers/SauceLabsBrowserHelper.js'
-    },
-    JSWait: {
-      require: '../helpers/JSWait.js'
-    },
-    Mochawesome: {
-      uniqueScreenshotNames: 'true'
-    }
+    SauceLabsReportingHelper: { require: '../helpers/sauceLabsReportingHelper.js' },
+    SauceLabsBrowserHelper: { require: '../helpers/SauceLabsBrowserHelper.js' }
   },
   include: { I: './steps_file.js' },
   mocha: {
