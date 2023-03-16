@@ -717,7 +717,7 @@
     "DisplayOrder": 116,
     "PreConditionState(s)": "consentedOrderSubmitted;responseReceived",
     "PostConditionState": "consentedOrderAssignJudge",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge-consent-in-contested",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
