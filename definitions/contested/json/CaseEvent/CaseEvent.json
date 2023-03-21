@@ -113,9 +113,9 @@
     "PreConditionState(s)": "applicationSubmitted",
     "PostConditionState": "applicationIssued",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/generate-contested-mini-form-a",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/contest-application-issued",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
