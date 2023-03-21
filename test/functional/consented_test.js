@@ -90,13 +90,14 @@ Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I =
     await I.natureOfApplication();
     await I.consentOrder();
     await I.d81Question();
+    await I.optionalDocuments();
     await I.consentedOtherDocuments();
     await I.savingApplicationInformation('consented');
     await I.checkYourAnswers();
     // amend event
     I.amendApplicationDetails();
     // hwf payment submission
-    await I.caseSubmitAuthorisation();
+    await I.caseSubmitAuthorisation('consented');
     await I.paymentPage(false);
     await I.hwfPaymentDetails();
     await I.paymentSubmission();
