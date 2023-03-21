@@ -41,6 +41,7 @@ const {progressToListing} = require('./pages/progress-to-listing/progress-to-lis
 const {listForHearing} = require('./pages/list-for-hearing/list-for-hearing');
 const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-reference');
 const {giveAllocationDirection} = require('./pages/give-allocation-direction/give-allocation-direction');
+const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -165,6 +166,7 @@ module.exports = () => {
     listForHearing,
     getCaseRefFromScreen,
     enterCaseReference,
-    giveAllocationDirection
+    giveAllocationDirection,
+    updateContactDetails
   });
 };

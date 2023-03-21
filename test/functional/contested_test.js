@@ -232,7 +232,10 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I =>
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Matrimonial');
     I.waitForText('Form A Application', '60')
+
+  //amend application
     I.contestedAmendApplicationDetails();
+
     await I.caseSubmitAuthorisation('contested');
     await I.paymentPage(false);
     await I.hwfPaymentDetails();
@@ -388,7 +391,7 @@ Scenario('progress to listing for contested case @nightly @pipeline', async I =>
 }).retry(2);
 
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
+Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I => {
   I.signInIdam(caseWorkerUserName, caseWorkerPassword);
   I.wait('2');
   await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -408,3 +411,28 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => 
 }).retry(2);
 
 
+Scenario('Update Contact Details for contested Case @nightly @pipeline', async I => {
+  //caseworker, type-matrimonial
+  if (nightlyTest === 'true') {
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.wait('2');
+    await I.createCase('FinancialRemedyContested', 'Form A Application');
+    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
+    await I.contestedDivorceDetails();
+    await I.contestedApplicantDetails();
+    await I.contestedRespondentDetails();
+    await I.contestedNatureOfApplication();
+    await I.contestedOrderForChildren();
+    await I.fastTrack();
+    await I.complexityList();
+    await I.applyingToCourt();
+    await I.mediationQuestion();
+    await I.miamCertification();
+    await I.contestedOtherDocuments();
+    await I.contestedCheckYourAnswers('Matrimonial');
+    I.waitForText('Form A Application');
+    await I.manualPayment();
+    await I.issueApplication();
+    await I.updateContactDetails();
+  }
+}).retry(2);
