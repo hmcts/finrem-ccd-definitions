@@ -332,10 +332,9 @@ ccd:
       requests:
         cpu: 1000m
         memory: 1024Mi
-    image:
-      repository: hmctspublic.azurecr.io/ccd/logstash
-      tag: ccd-divorce-logstash-latest
-      pullPolicy: Always
+    image: hmctspublic.azurecr.io/ccd/logstash
+    imageTag: ccd-divorce-logstash-latest
+    imagePullPolicy: "IfNotPresent"
     logstashJavaOpts: -Xmx1g -Xms512M
     persistence:
       enabled: false
