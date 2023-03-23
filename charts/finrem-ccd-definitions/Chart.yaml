@@ -11,6 +11,10 @@ dependencies:
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     tags:
       - finrem-ccd-stack
+  - name: logstash
+    version: 8.5.1
+    repository: 'https://helm.elastic.co'
+    condition: ccd.elastic.enabled
   - name: xui-webapp
     version: ~1.0.0
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
