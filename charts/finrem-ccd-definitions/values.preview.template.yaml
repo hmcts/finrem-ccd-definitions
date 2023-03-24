@@ -70,10 +70,7 @@ finrem-cos:
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
       IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-      DOCUMENT_GENERATOR_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-dgcs
       FINREM_NOTIFICATION_SERVICE_BASE_URL: http://${SERVICE_NAME}-finrem-ns
-      PAYMENT_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-ps
-      EVIDENCE_MANAGEMENT_SERVICE_BASEURL: http://${SERVICE_NAME}-finrem-emca
       ACA_SERVICE_API_BASEURL: http://${SERVICE_NAME}-aac-manage-case-assignment
       CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
       AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY}
@@ -335,10 +332,9 @@ ccd:
       requests:
         cpu: 1000m
         memory: 1024Mi
-    image:
-      repository: hmctspublic.azurecr.io/ccd/logstash
-      tag: ccd-divorce-logstash-latest
-      pullPolicy: Always
+    image: hmctspublic.azurecr.io/imported/logstash/logstash
+    imageTag: 8.5.1
+    imagePullPolicy: "IfNotPresent"
     logstashJavaOpts: -Xmx1g -Xms512M
     persistence:
       enabled: false
