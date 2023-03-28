@@ -494,7 +494,6 @@
     "DisplayOrder": 39,
     "PreConditionState(s)": "orderSent;close;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;consentedOrderNotApproved;consentedOrderApproved;consentedOrderAssignJudge;reviewOrder",
     "PostConditionState": "prepareForHearing",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/prepare-for-hearing-order-sent",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
@@ -717,7 +716,7 @@
     "DisplayOrder": 116,
     "PreConditionState(s)": "consentedOrderSubmitted;responseReceived",
     "PostConditionState": "consentedOrderAssignJudge",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge-consent-in-contested",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
