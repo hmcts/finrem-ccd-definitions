@@ -28,6 +28,8 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
     /* eslint-disable */
     if (nightlyTest === 'true') {
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+      logger.info('caseworker user', +caseWorkerUserName);
+      logger.info('caseworker password', +caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
       I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
@@ -81,6 +83,8 @@ Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => 
 Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
+    logger.info('solicitor user', +solicitorUserName);
+    logger.info('solicitor password', +solicitorPassword);
     I.wait('2');
     await I.createCase('Financial Remedy Consented', 'Consent Order Application');
     await I.solicitorCreate(solRef);
