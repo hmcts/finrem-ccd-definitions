@@ -46,8 +46,8 @@ xui-mo-webapp:
     image: hmctspublic.azurecr.io/xui/mo-webapp:latest
     ingressHost: xui-mo-${SERVICE_NAME}.preview.platform.hmcts.net
     environment:
-      MANAGE_CASE_LINK: https://xui-${SERVICE_FQDN}/cases
-      MANAGE_ORG_LINK: https://xui-mo-${SERVICE_FQDN}
+      MANAGE_CASE_LINK: https://xui-${SERVICE_NAME}.preview.platform.hmcts.net/cases
+      MANAGE_ORG_LINK: https://xui-mo-${SERVICE_NAME}.preview.platform.hmcts.net
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_MCA_PROXY_API: http://${SERVICE_NAME}-aac-manage-case-assignment
       CASE_TYPES: "FinancialRemedyMVP2,FinancialRemedyContested"
