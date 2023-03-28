@@ -4,20 +4,20 @@ tags:
 nodejs:
   # Don't modify below here
   image: ${IMAGE_NAME}
-  ingressHost: ${SERVICE_FQDN}
+  ingressHost: {SERVICE_NAME}.preview.platform.hmcts.net
 
 idam-pr:
   releaseNameOverride: ${SERVICE_NAME}-ccd-pr
   enabled: true
   redirect_uris:
     XUI:
-      - https://xui-${SERVICE_FQDN}/oauth2/callback
+      - https://xui-{SERVICE_NAME}.preview.platform.hmcts.net/oauth2/callback
     XUIMO:
-      - https://xui-mo-${SERVICE_FQDN}/oauth2/callback
+      - https://xui-mo-{SERVICE_NAME}.preview.platform.hmcts.net/oauth2/callback
     CCD:
-      - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
+      - https://case-management-web-{SERVICE_NAME}.preview.platform.hmcts.net/oauth2redirect
     CCD Admin:
-      - https://admin-web-${SERVICE_FQDN}/oauth2redirect
+      - https://admin-web-{SERVICE_NAME}.preview.platform.hmcts.net/oauth2redirect
 
 xui-webapp:
   enabled: true
@@ -25,7 +25,7 @@ xui-webapp:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-xui-webapp
     image: hmctspublic.azurecr.io/xui/webapp:latest
-    ingressHost: xui-${SERVICE_FQDN}
+    ingressHost: xui-{SERVICE_NAME}.preview.platform.hmcts.net
     devmemoryRequests: 1024Mi
     devmemoryLimits: 2048Mi
     environment:
@@ -44,7 +44,7 @@ xui-mo-webapp:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-xui-mo-webapp
     image: hmctspublic.azurecr.io/xui/mo-webapp:latest
-    ingressHost: xui-mo-${SERVICE_FQDN}
+    ingressHost: xui-mo-{SERVICE_NAME}.preview.platform.hmcts.net
     environment:
       MANAGE_CASE_LINK: https://xui-${SERVICE_FQDN}/cases
       MANAGE_ORG_LINK: https://xui-mo-${SERVICE_FQDN}
@@ -58,7 +58,7 @@ finrem-cos:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/cos:latest
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
-    ingressHost: cos-${SERVICE_FQDN}
+    ingressHost: cos-{SERVICE_NAME}.preview.platform.hmcts.net
     environment:
       FEATURE_MANAGE_BUNDLE: true
       FEATURE_CASEWORKER_NOC: true
@@ -109,7 +109,7 @@ finrem-ns:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/ns:latest
     releaseNameOverride: ${SERVICE_NAME}-finrem-ns
-    ingressHost: ns-${SERVICE_FQDN}
+    ingressHost: ns-{SERVICE_NAME}.preview.platform.hmcts.net
     environment:
       UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
     keyVaults:
@@ -136,7 +136,7 @@ ccd:
       enabled: true
 
 
-  ingressHost: ${SERVICE_FQDN}
+  ingressHost: {SERVICE_NAME}.preview.platform.hmcts.net
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
 
@@ -144,9 +144,9 @@ ccd:
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
     idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
     dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
-    ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
-    ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
-    ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
+    ccdAdminWebIngress: admin-web-{SERVICE_NAME}.preview.platform.hmcts.net
+    ccdApiGatewayIngress: gateway-{SERVICE_NAME}.preview.platform.hmcts.net
+    ccdCaseManagementWebIngress: case-management-web-{SERVICE_NAME}.preview.platform.hmcts.net
     postgresUsername: hmcts
     postgresPassword: hmcts
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
@@ -209,7 +209,7 @@ ccd:
         enabled: false
       environment:
         IDAM_PRINT_SERVICE_KEY: ${PRINT_S2S_KEY}
-      ingressHost: ccd-case-print-service-${SERVICE_FQDN}
+      ingressHost: ccd-case-print-service-{SERVICE_NAME}.preview.platform.hmcts.net
 
   ccd-definition-store-api:
     java:
@@ -226,7 +226,7 @@ ccd:
         OIDC_ISSUER: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
-      ingressHost: ccd-definition-store-${SERVICE_FQDN}
+      ingressHost: ccd-definition-store-{SERVICE_NAME}.preview.platform.hmcts.net
 
   ccd-admin-web:
     nodejs:
@@ -234,7 +234,7 @@ ccd:
       autoscaling:
         enabled: false
       image: hmctspublic.azurecr.io/ccd/admin-web:latest
-      ingressHost: admin-web-${SERVICE_FQDN}
+      ingressHost: admin-web-{SERVICE_NAME}.preview.platform.hmcts.net
       environment:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
         IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
@@ -259,7 +259,7 @@ ccd:
         DM_URL_REMOTE: https?://(gateway-${SERVICE_FQDN}:443|dm-store-aat.service.core-compute-aat.internal)/documents
         NODE_TLS_REJECT_UNAUTHORIZED: 0
         APPINSIGHTS_ENABLED: false
-      ingressHost: case-management-web-${SERVICE_FQDN}
+      ingressHost: case-management-web-{SERVICE_NAME}.preview.platform.hmcts.net
       ingressIP: ${INGRESS_IP}
 
   ccd-api-gateway-web:
@@ -271,9 +271,9 @@ ccd:
         IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
         IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
         PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
-        PROXY_PRINT_SERVICE: http://ccd-case-print-service-${SERVICE_FQDN}
+        PROXY_PRINT_SERVICE: http://ccd-case-print-service-{SERVICE_NAME}.preview.platform.hmcts.net
         ADDRESS_LOOKUP_TOKEN: ${ADDRESS_LOOKUP_TOKEN}
-      ingressHost: gateway-${SERVICE_FQDN}
+      ingressHost: gateway-{SERVICE_NAME}.preview.platform.hmcts.net
       ingressIP: ${INGRESS_IP}
 
   importer:
@@ -360,7 +360,7 @@ aac-manage-case-assignment:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-aac-manage-case-assignment
     image: hmctspublic.azurecr.io/aac/manage-case-assignment:latest
-    ingressHost: aac-${SERVICE_FQDN}
+    ingressHost: aac-{SERVICE_NAME}.preview.platform.hmcts.net
     environment:
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       IDAM_OIDC_URL: https://idam-web-public.aat.platform.hmcts.net
