@@ -25,17 +25,17 @@ xui-webapp:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-xui-webapp
     image: hmctspublic.azurecr.io/xui/webapp:latest
-    ingressHost: xui-{SERVICE_NAME}.preview.platform.hmcts.net
+    ingressHost: xui-${SERVICE_FQDN}
     devmemoryRequests: 1024Mi
     devmemoryLimits: 2048Mi
     environment:
-      HEALTH_CCD_COMPONENT_API: http://gateway-{SERVICE_NAME}.preview.platform.hmcts.net/health
-      HEALTH_CCD_DATA_API: http://${SERVICE_NAME}-ccd-data-store-api.preview.platform.hmcts.net/health
-      HEALTH_TERMS_AND_CONDITIONS_API: http://xui-terms-and-conditions-{SERVICE_NAME}.preview.platform.hmcts.net/health
+      HEALTH_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}/health
+      HEALTH_CCD_DATA_API: http://${SERVICE_NAME}-ccd-data-store-api/health
+      HEALTH_TERMS_AND_CONDITIONS_API: http://xui-terms-and-conditions-${SERVICE_FQDN}/health
       SERVICES_CCD_COMPONENT_API: http://${SERVICE_NAME}-ccd-api-gw
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_CCD_CASE_ASSIGNMENT_API: http://${SERVICE_NAME}-aac-manage-case-assignment
-      SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-{SERVICE_NAME}.preview.platform.hmcts.net
+      SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}
       JURISDICTIONS: DIVORCE
 
 xui-mo-webapp:
@@ -44,10 +44,10 @@ xui-mo-webapp:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-xui-mo-webapp
     image: hmctspublic.azurecr.io/xui/mo-webapp:latest
-    ingressHost: xui-mo-{SERVICE_NAME}.preview.platform.hmcts.net
+    ingressHost: xui-mo-${SERVICE_FQDN}
     environment:
-      MANAGE_CASE_LINK: https://xui-{SERVICE_NAME}.preview.platform.hmcts.net/cases
-      MANAGE_ORG_LINK: https://xui-mo-{SERVICE_NAME}.preview.platform.hmcts.net
+      MANAGE_CASE_LINK: https://xui-${SERVICE_FQDN}/cases
+      MANAGE_ORG_LINK: https://xui-mo-${SERVICE_FQDN}
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_MCA_PROXY_API: http://${SERVICE_NAME}-aac-manage-case-assignment
       CASE_TYPES: "FinancialRemedyMVP2,FinancialRemedyContested"
@@ -58,7 +58,7 @@ finrem-cos:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/cos:latest
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
-    ingressHost: cos-{SERVICE_NAME}.preview.platform.hmcts.net
+    ingressHost: cos-${SERVICE_FQDN}
     environment:
       FEATURE_MANAGE_BUNDLE: true
       FEATURE_CASEWORKER_NOC: true
@@ -109,7 +109,7 @@ finrem-ns:
     imagePullPolicy: Always
     image: hmctspublic.azurecr.io/finrem/ns:latest
     releaseNameOverride: ${SERVICE_NAME}-finrem-ns
-    ingressHost: ns-{SERVICE_NAME}.preview.platform.hmcts.net
+    ingressHost: ns-${SERVICE_FQDN}
     environment:
       UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
     keyVaults:
@@ -144,9 +144,9 @@ ccd:
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
     idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
     dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
-    ccdAdminWebIngress: admin-web-{SERVICE_NAME}.preview.platform.hmcts.net
-    ccdApiGatewayIngress: gateway-{SERVICE_NAME}.preview.platform.hmcts.net
-    ccdCaseManagementWebIngress: case-management-web-{SERVICE_NAME}.preview.platform.hmcts.net
+    ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
+    ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
+    ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
     postgresUsername: hmcts
     postgresPassword: hmcts
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
@@ -161,7 +161,7 @@ ccd:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
       environment:
         USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_definition,ccd_admin
-      ingressHost: ccd-user-profile-api-{SERVICE_NAME}.preview.platform.hmcts.net
+      ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
 
   ccd-data-store-api:
     java:
@@ -192,7 +192,7 @@ ccd:
         ENABLE_ATTRIBUTE_BASED_ACCESS_CONTROL: true
         ENABLE_PSEUDO_ROLE_ASSIGNMENTS_GENERATION: true
         ENABLE_PSEUDO_ACCESS_PROFILES_GENERATION: true
-      ingressHost: ccd-data-store-api-{SERVICE_NAME}.preview.platform.hmcts.net
+      ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
   am-role-assignment-service:
     java:
@@ -209,7 +209,7 @@ ccd:
         enabled: false
       environment:
         IDAM_PRINT_SERVICE_KEY: ${PRINT_S2S_KEY}
-      ingressHost: ccd-case-print-service-{SERVICE_NAME}.preview.platform.hmcts.net
+      ingressHost: ccd-case-print-service-${SERVICE_FQDN}
 
   ccd-definition-store-api:
     java:
@@ -226,7 +226,7 @@ ccd:
         OIDC_ISSUER: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
-      ingressHost: ccd-definition-store-{SERVICE_NAME}.preview.platform.hmcts.net
+      ingressHost: ccd-definition-store-${SERVICE_FQDN}
 
   ccd-admin-web:
     nodejs:
@@ -234,7 +234,7 @@ ccd:
       autoscaling:
         enabled: false
       image: hmctspublic.azurecr.io/ccd/admin-web:latest
-      ingressHost: admin-web-{SERVICE_NAME}.preview.platform.hmcts.net
+      ingressHost: admin-web-${SERVICE_FQDN}
       environment:
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
         IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
@@ -255,11 +255,11 @@ ccd:
         enabled: false
       environment:
         CCD_ACTIVITY_URL: null
-        DM_URL: https://gateway-{SERVICE_NAME}.preview.platform.hmcts.net/documents
+        DM_URL: https://gateway-${SERVICE_FQDN}/documents
         DM_URL_REMOTE: https?://(gateway-${SERVICE_FQDN}:443|dm-store-aat.service.core-compute-aat.internal)/documents
         NODE_TLS_REJECT_UNAUTHORIZED: 0
         APPINSIGHTS_ENABLED: false
-      ingressHost: case-management-web-{SERVICE_NAME}.preview.platform.hmcts.net
+      ingressHost: case-management-web-${SERVICE_FQDN}
       ingressIP: ${INGRESS_IP}
 
   ccd-api-gateway-web:
@@ -273,7 +273,7 @@ ccd:
         PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
         PROXY_PRINT_SERVICE: http://ccd-case-print-service-${SERVICE_FQDN}
         ADDRESS_LOOKUP_TOKEN: ${ADDRESS_LOOKUP_TOKEN}
-      ingressHost: gateway-{SERVICE_NAME}.preview.platform.hmcts.net
+      ingressHost: gateway-${SERVICE_FQDN}
       ingressIP: ${INGRESS_IP}
 
   importer:
@@ -360,7 +360,7 @@ aac-manage-case-assignment:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-aac-manage-case-assignment
     image: hmctspublic.azurecr.io/aac/manage-case-assignment:latest
-    ingressHost: aac-{SERVICE_NAME}.preview.platform.hmcts.net
+    ingressHost: aac-${SERVICE_FQDN}
     environment:
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       IDAM_OIDC_URL: https://idam-web-public.aat.platform.hmcts.net
