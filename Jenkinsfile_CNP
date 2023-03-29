@@ -179,7 +179,7 @@ withPipeline("nodejs", product, component) {
 
           steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
           env.CCD_ADMIN_URL = "https://ccd-admin-web.${env.ENV}.platform.hmcts.net"
-          env.CCD_DATA_API_URL = "http://ccd-data-store-api-${env.ENV}.preview.platform.hmcts.net"
+          env.CCD_DATA_API_URL = "http://ccd-data-store-api-${env.ENV}.service.core-compute-aat.internal"
           env.CCD_WEB_URL = "https://manage-case.${env.ENV}.platform.hmcts.net"
           env.XUI_ORG_WEB_URL = "https://manage-org.${env.ENV}.platform.hmcts.net"
           env.CCD_CONSENTED_FILE_NAME = "ccd-config-${env.ENV}-consented-${GIT_COMMIT}.xlsx"
