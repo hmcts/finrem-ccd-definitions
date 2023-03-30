@@ -78,7 +78,8 @@ Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => 
   }
 });
 /* eslint-disable require-await */
-Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I => {
+//DFR-1955
+/* Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
@@ -107,3 +108,4 @@ Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I =
     I.waitForText('History', '30');
   }
 }).retry(3);
+*/
