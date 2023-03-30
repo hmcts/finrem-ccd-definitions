@@ -1455,5 +1455,134 @@
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1Organisation",
+    "ListElementCode": "OrgPolicyCaseAssignedRole",
+    "DefaultValue": "[INTVRSOLICITOR1]",
+    "EventElementLabel": "Organisation Policy",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "intervener1Represented=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1Organisation",
+    "ListElementCode": "Organisation.OrganisationID",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1Organisation",
+    "ListElementCode": "OrgPolicyReference",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2Organisation",
+    "ListElementCode": "OrgPolicyCaseAssignedRole",
+    "DefaultValue": "[INTVRSOLICITOR2]",
+    "EventElementLabel": "Organisation Policy",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "intervener2Represented=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2Organisation",
+    "ListElementCode": "Organisation.OrganisationID",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2Organisation",
+    "ListElementCode": "OrgPolicyReference",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3Organisation",
+    "ListElementCode": "OrgPolicyCaseAssignedRole",
+    "DefaultValue": "[INTVRSOLICITOR3]",
+    "EventElementLabel": "Organisation Policy",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "intervener3Represented=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3Organisation",
+    "ListElementCode": "Organisation.OrganisationID",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3Organisation",
+    "ListElementCode": "OrgPolicyReference",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4Organisation",
+    "ListElementCode": "OrgPolicyCaseAssignedRole",
+    "DefaultValue": "[INTVRSOLICITOR4]",
+    "EventElementLabel": "Organisation Policy",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "intervener4Represented=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4Organisation",
+    "ListElementCode": "Organisation.OrganisationID",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4Organisation",
+    "ListElementCode": "OrgPolicyReference",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
   }
 ]

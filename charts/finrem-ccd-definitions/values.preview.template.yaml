@@ -26,6 +26,8 @@ xui-webapp:
     releaseNameOverride: ${SERVICE_NAME}-xui-webapp
     image: hmctspublic.azurecr.io/xui/webapp:latest
     ingressHost: xui-${SERVICE_FQDN}
+    devmemoryRequests: 1024Mi
+    devmemoryLimits: 2048Mi
     environment:
       HEALTH_CCD_COMPONENT_API: http://gateway-${SERVICE_FQDN}/health
       HEALTH_CCD_DATA_API: http://${SERVICE_NAME}-ccd-data-store-api/health
@@ -68,10 +70,7 @@ finrem-cos:
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
       IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-      DOCUMENT_GENERATOR_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-dgcs
       FINREM_NOTIFICATION_SERVICE_BASE_URL: http://${SERVICE_NAME}-finrem-ns
-      PAYMENT_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-ps
-      EVIDENCE_MANAGEMENT_SERVICE_BASEURL: http://${SERVICE_NAME}-finrem-emca
       ACA_SERVICE_API_BASEURL: http://${SERVICE_NAME}-aac-manage-case-assignment
       CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
       AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY}
@@ -80,6 +79,10 @@ finrem-cos:
       FINREM_SYSTEMUPDATE_PASSWORD: ${FINREM_SYSTEMUPDATE_PASSWORD}
       FINREM_IDAM_CLIENT_SECRET: ${FINREM_IDAM_CLIENT_SECRET}
       CTSC_OPENING_HOURS: from 8am to 6pm, Monday to Friday
+      PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
+      PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
+      SEND_LETTER_SERVICE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
+      DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
     keyVaults:
       finrem:
         secrets:
@@ -95,57 +98,10 @@ finrem-cos:
             alias: FINREM_SYSTEMUPDATE_PASSWORD
           - name: finrem-idam-client-secret
             alias: FINREM_IDAM_CLIENT_SECRET
-
-
-finrem-dgcs:
-  enabled: true
-  java:
-    imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/dgcs:latest
-    releaseNameOverride: ${SERVICE_NAME}-finrem-dgcs
-    ingressHost: dgcs-${SERVICE_FQDN}
-    environment:
-        EVIDENCE_MANAGEMENT_CLIENT_API_BASEURL: http://${SERVICE_NAME}-finrem-emca
-        SEND_LETTER_SERIVCE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
-        AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
-        IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_DOC_GEN_SERVICE_S2S_KEY}
-        PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
-    keyVaults:
-      finrem:
-        secrets:
-          - name: finrem-doc-s2s-auth-secret
-            alias: FINREM_DOC_GEN_SERVICE_S2S_KEY
-          - name: idam-secret
-            alias: IDAM_CLIENT_SECRET
           - name: docmosis-api-key
             alias: PDF_SERVICE_ACCESS_KEY
           - name: docmosis-endpoint
             alias: PDF_SERVICE_BASEURL
-          - name: AppInsightsInstrumentationKey
-            alias: APP_INSIGHTS_INSTRUMENTATION_KEY
-
-
-finrem-emca:
-  enabled: true
-  java:
-    imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/emca:latest
-    releaseNameOverride: ${SERVICE_NAME}-finrem-emca
-    ingressHost: emca-${SERVICE_FQDN}
-    environment:
-        IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
-        AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
-        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_DOC_GEN_SERVICE_S2S_KEY}
-    keyVaults:
-      finrem:
-        secrets:
-          - name: finrem-doc-s2s-auth-secret
-            alias: idam.auth.secret
-          - name: AppInsightsInstrumentationKey
-            alias: APP_INSIGHTS_INSTRUMENTATION_KEY
 
 finrem-ns:
   enabled: true
@@ -214,6 +170,10 @@ ccd:
         enabled: false
       imagePullPolicy: Always
       image: hmctspublic.azurecr.io/ccd/data-store-api:latest
+      devmemoryRequests: 1024Mi
+      devcpuRequests: 2000m
+      devmemoryLimits: 2058Mi
+      devcpuLimits: 2000m
       environment:
         DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
@@ -345,14 +305,14 @@ ccd:
     replicas: 1
     initResources:
       limits:
-        cpu: "500m"
-        memory: "512Mi"
+        cpu: "1000m"
+        memory: "1024Mi"
       requests:
-        cpu: "25m"
-        memory: "512Mi"
+        cpu: "50m"
+        memory: "1024Mi"
     minimumMasterNodes: 1
     antiAffinity: "soft"
-    esJavaOpts: "-Xmx512m -Xms512m"
+    esJavaOpts: "-Xmx1g -Xms1g"
     extraEnvs:
       - name: discovery.type
         value: single-node
@@ -371,11 +331,10 @@ ccd:
     resources:
       requests:
         cpu: 1000m
-        memory: 512Mi
-    image:
-      repository: hmctspublic.azurecr.io/ccd/logstash
-      tag: ccd-divorce-logstash-latest
-      pullPolicy: Always
+        memory: 1024Mi
+    image: hmctspublic.azurecr.io/imported/logstash/logstash
+    imageTag: 8.5.1
+    imagePullPolicy: "IfNotPresent"
     logstashJavaOpts: -Xmx1g -Xms512M
     persistence:
       enabled: false

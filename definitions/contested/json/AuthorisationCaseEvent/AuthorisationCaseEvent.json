@@ -1024,6 +1024,20 @@
   {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalOrderCourtAdmin",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalOrderCourtAdmin",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrderAssignJudge",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CR"
@@ -1831,6 +1845,20 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "updateGeneralApplication",
     "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageInterveners",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/10/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageInterveners",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   }
 ]
