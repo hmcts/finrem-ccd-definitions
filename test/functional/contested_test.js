@@ -436,3 +436,9 @@ Scenario('Update Contact Details for contested Case @nightly @pipeline', async I
     await I.updateContactDetails();
   }
 }).retry(2);
+
+Scenario('Caseworker refunds an issued case @Johnny', async I => {
+  //login as a caseworker, create contested case
+  console.log("Johnnys test starting");
+  I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+})
