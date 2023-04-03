@@ -3,15 +3,15 @@ exports.config = {
   output: './functional-output/xui',
   helpers: {
     Puppeteer: {
-      url: 'https://manage-case.aat.platform.hmcts.net',
+      url: 'http://localhost:3000',
         smartWait: 50000,
         waitForTimeout: 90000,
-      show: true,
+      show: false,
       waitForNavigation: 'domcontentloaded',
         restart: true,
         keepCookies: false,
         keepBrowserState: false,
-      headless: false,
+      headless: true,
       ignoreHTTPSErrors: true,
       chrome: {
         ignoreHTTPSErrors: true,
