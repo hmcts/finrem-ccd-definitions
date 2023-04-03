@@ -674,8 +674,8 @@
     "DisplayOrder": 113,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-letter-start",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/general-letter",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -688,8 +688,8 @@
     "DisplayOrder": 114,
     "PreConditionState(s)": "consentOrderNotApproved;consentOrderApproved;consentOrderMade;consentProcess;caseWorkerReview;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;judgeDraftOrder;reviewOrder;draftOrderNotApproved;solicitorDraftOrder;orderDrawn;scheduleRaiseDirectionsOrder;awaitingJudiciaryResponse",
     "PostConditionState": "*",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-letter-start",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/general-letter",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
