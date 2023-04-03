@@ -300,7 +300,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightl
 }).retry(2);
 */
 
-Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @pipeline', async I => {
+Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('2');
@@ -324,7 +324,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @pipeline',
   }
 }).retry(2);
 
-Scenario('Upload Case Files (Confidential Documents) @nightly @pipeline', async I => {
+Scenario('Upload Case Files (Confidential Documents) @nightly', async I => {
   //login as a caseworker, create contested case
   if (nightlyTest === 'true') {
       //TODO- issue case using API
@@ -353,81 +353,50 @@ Scenario('Upload Case Files (Confidential Documents) @nightly @pipeline', async 
   }
 }).retry(2);
 
-Scenario('Manage Confidential Documents @nightly @pipeline', async I => {
-  if (nightlyTest === 'true') {
-    //login as a caseworker, create contested case
-      //TODO- issue case using API
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait('2');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
-    await I.contestedDivorceDetails();
-    await I.contestedApplicantDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplication();
-    await I.contestedOrderForChildren();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestion();
-    await I.miamCertification();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers('Matrimonial');
-    I.waitForText('Form A Application', '60');
-    await I.manualPayment();
-    await I.issueApplication();
+Scenario('Manage Confidential Documents @nightly', async I => {
+
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.manageConfidentialDocuments();
     logger.info('Manage confidential documents event completed');
     await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.manageConfidentialDocuments, verifyTabText.confidentialDocumentsTab);
     logger.info('Confidential documents verified on Confidential documents tab');
-  }
+
 }).retry(2);
 
-Scenario('progress to listing for contested case @nightly @pipeline', async I => {
-  if (nightlyTest === 'true') {
-      //TODO- add API calls
-    //login as a caseworker, create contested case
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    await I.waitForText('Manage Cases');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
-    await I.contestedDivorceDetails();
-    await I.contestedApplicantDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplication();
-   await I.contestedOrderForChildren();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestion();
-    await I.miamCertification();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers('Matrimonial');
-    I.waitForText('Form A Application', '60');
-    await I.manualPayment();
-   await I.issueApplication();
-    caseRef= await I.getCaseRefFromScreen();
-    caseRef = caseRef.replace(/\D/gi, '');
-    logger.info('---------------------case number------------------------', caseRef);
-    logger.info('--------------case worker created case ' +caseRef+ ' successfully-----------------');
+Scenario('progress to listing for contested case @nightly', async I => {
+
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    logger.info('---------------------case number------------------------', caseId);
+    logger.info('--------------case worker created case ' +caseId+ ' successfully-----------------');
     await I.allocateJudge();
     await I.see('Allocate to Judge');
     await I.signOut();
     await I.signInIdam(judgeUserName, judgePassword);
     await I.waitForText('Judicial Case Manager');
-    await I.enterCaseReference(caseRef);
+    await I.enterCaseReference(caseId);
     await I.see('Gate Keeping And Allocation');
     await I.giveAllocationDirection();
     await I.signOut();
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.waitForText('Manage Cases');
-    await I.enterCaseReference(caseRef);
+    await I.enterCaseReference(caseId);
     await I.listForHearing();
      I.waitForText('List for Hearing');
-  }
 }).retry(2);
 
-Scenario('Update Contact Details for contested Case @nightly @pipeline', async I => {
+Scenario('Update Contact Details for contested Case @nightly', async I => {
   //caseworker, type-matrimonial
  if (nightlyTest === 'true') {
     //TODO- add API call
