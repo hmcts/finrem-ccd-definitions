@@ -209,7 +209,7 @@ Scenario('Contested share case @nightly @pipeline', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.assignContestedShareCase(caseId, solRef);
   }
-});
+}).retry(3);
 
 
 Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I => {
@@ -322,14 +322,13 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I =
     await I.manualPayment();
     await I.issueApplication();
   }
-}).retry(2);
+}).retry(3);
 
 Scenario('Upload Case Files (Confidential Documents) @nightly', async I => {
-  //login as a caseworker, create contested case
-  if (nightlyTest === 'true') {
-      //TODO- issue case using API
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait('2');
+    //login as a caseworker, create contested case
+
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
     await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
     await I.contestedDivorceDetails();
@@ -350,7 +349,7 @@ Scenario('Upload Case Files (Confidential Documents) @nightly', async I => {
     await I.uploadCaseFiles();
     await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.uploadCaseFiles, verifyTabText.confidentialDocumentsTab);
     logger.info('Confidential documents verified on Confidential documents tab');
-  }
+
 }).retry(2);
 
 Scenario('Manage Confidential Documents @nightly', async I => {

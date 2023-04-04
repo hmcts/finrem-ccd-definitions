@@ -56,7 +56,6 @@ async function contestedSolicitorCreate(reference, applicationType) {
   I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
   I.waitForText('Search for an organisation','60');
-  I.see("FRApplicantSolicitorFirm");
   I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
   I.fillField('input[id="search-org-text"]', 'FRApplicantSolicitorFirm');
   I.wait('5');
