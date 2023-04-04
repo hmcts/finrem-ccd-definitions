@@ -1,0 +1,18 @@
+[
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "applicantDocumentsLabel",
+    "Label": "## Select the documents you wish to share",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "05/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantDocuments",
+    "Label": "List of documents",
+    "FieldType": "DynamicMultiSelectList",
+    "SecurityClassification": "Public"
+  }
+]
