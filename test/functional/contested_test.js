@@ -438,7 +438,14 @@ Scenario('Update Contact Details for contested Case @nightly @pipeline', async I
 }).retry(2);
 
 Scenario('Caseworker refunds an issued case @Johnny', async I => {
-  //login as a caseworker, create contested case
-  console.log("Johnnys test starting");
+  console.log("Johnny's test starting");
+
+  //Using API to create a case as a solicitor
+  const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  console.log("Case created with ID" + caseId)
+  
+  const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+
+
   I.signInIdam(caseWorkerUserName, caseWorkerPassword);
 })
