@@ -1,39 +1,58 @@
 [
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "appOtherCollection",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRU"
+    "CaseFieldID": "documentsLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "applicantDocuments",
+    "CaseFieldID": "documentsLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "sourceDocumentList",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "applicantDocuments",
+    "CaseFieldID": "sourceDocumentList",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
-
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "applicantDocumentsLabel",
+    "CaseFieldID": "rolesLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "rolesLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "solicitorRoleList",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "applicantDocumentsLabel",
+    "CaseFieldID": "solicitorRoleList",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   }
-
 ]

@@ -1,8 +1,8 @@
 [
   {
     "LiveFrom": "01/08/2020",
-    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
-    "ID": "applicantDocumentsLabel",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "documentsLabel",
     "Label": "## Select the documents you wish to share",
     "FieldType": "Label",
     "SecurityClassification": "Public"
@@ -10,8 +10,24 @@
   {
     "LiveFrom": "05/10/2020",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicantDocuments",
+    "ID": "sourceDocumentList",
     "Label": "List of documents",
+    "FieldType": "DynamicMultiSelectList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "rolesLabel",
+    "Label": "## Share documents with",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "05/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "solicitorRoleList",
+    "Label": " ",
     "FieldType": "DynamicMultiSelectList",
     "SecurityClassification": "Public"
   }
