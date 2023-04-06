@@ -300,7 +300,7 @@ ccd:
       enabled: false
 
   elasticsearch:
-    nameOverride: ${SERVICE_NAME}-es-master
+    nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     replicas: 1
     initResources:
