@@ -301,19 +301,12 @@ ccd:
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
-    imageTag: "7.17.1"
     clusterName: "es"
+    imageTag: "7.17.0"
     replicas: 1
-    initResources:
-      limits:
-        cpu: "1000m"
-        memory: "1024Mi"
-      requests:
-        cpu: "50m"
-        memory: "1024Mi"
     minimumMasterNodes: 1
     antiAffinity: "soft"
-    esJavaOpts: "-Xmx1g -Xms1g"
+    esJavaOpts: "-Xmx512m -Xms512m"
     extraEnvs:
       - name: discovery.type
         value: single-node
@@ -325,8 +318,11 @@ ccd:
       enabled: false
 
   logstash:
+    elasticsearch:
+      host: ${SERVICE_NAME}-es-master
+      port: 9200
     image: hmctspublic.azurecr.io/ccd/logstash
-    imageTag: "latest"
+    imageTag: "ccd-probate-logstash-latest"
     extraEnvs:
       - name: DATA_STORE_URL
         value: jdbc:postgresql://${SERVICE_NAME}-postgresql:5432/data-store?ssl=disable&stringtype=unspecified
@@ -356,6 +352,7 @@ ccd:
         cpu: "2500m"
         memory: "1024Mi"
     configTpl:
+      xpack.monitoring.enabled: "false"
       db.url: jdbc:postgresql://${SERVICE_NAME}-postgresql:5432/data-store?ssl=disable&stringtype=unspecified
       db.user: hmcts
       db.pwd: hmcts
