@@ -187,8 +187,8 @@ ccd:
         CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
         ROLE_ASSIGNMENT_URL: http://am-role-assignment-service-aat.service.core-compute-aat.internal
         ELASTIC_SEARCH_ENABLED: true
-        ELASTIC_SEARCH_HOSTS: http://${SERVICE_NAME}-es:9200
-        ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es:9200
+        ELASTIC_SEARCH_HOSTS: ${SERVICE_NAME}-es-master:9200
+        ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
         ENABLE_ATTRIBUTE_BASED_ACCESS_CONTROL: true
         ENABLE_PSEUDO_ROLE_ASSIGNMENTS_GENERATION: true
         ENABLE_PSEUDO_ACCESS_PROFILES_GENERATION: true
@@ -300,7 +300,7 @@ ccd:
       enabled: false
 
   elasticsearch:
-    nameOverride: ${SERVICE_NAME}-es
+    nameOverride: ${SERVICE_NAME}-es-master
     clusterName: "es"
     replicas: 1
     initResources:
@@ -341,14 +341,14 @@ ccd:
       - name: pipeline
         mountPath: /usr/share/logstash/files
     elasticsearch:
-      host: ${SERVICE_NAME}-es
+      host: ${SERVICE_NAME}-es-master
       port: 9200
     configTpl:
       xpack.monitoring.enabled: "false"
       db.url: jdbc:postgresql://${SERVICE_NAME}-postgresql:5432/data-store?ssl=disable&stringtype=unspecified
       db.user: hmcts
       db.pwd: hmcts
-      es.data.nodes.url: http://${SERVICE_NAME}-es:9200
+      es.data.nodes.url: http://${SERVICE_NAME}-es-master:9200
     livenessProbe:
       initialDelaySeconds: 90
 
