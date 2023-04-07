@@ -332,7 +332,7 @@ ccd:
       requests:
         cpu: 1000m
         memory: 1024Mi
-    image: hmctspublic.azurecr.io/ccd/logstash
+    image: "hmctspublic.azurecr.io/ccd/logstash"
     imageTag: "latest"
     logstashJavaOpts: -Xmx1g -Xms512M
     persistence:
