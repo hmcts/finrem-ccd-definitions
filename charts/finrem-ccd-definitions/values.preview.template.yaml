@@ -189,8 +189,6 @@ ccd:
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOSTS: ${SERVICE_NAME}-es-master:9200
         ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
-        ES_DATA_NODES_URL: http://${SERVICE_NAME}-es-master:9200
-        ES_URL: http://${SERVICE_NAME}-es-master:9200
         ENABLE_ATTRIBUTE_BASED_ACCESS_CONTROL: true
         ENABLE_PSEUDO_ROLE_ASSIGNMENTS_GENERATION: true
         ENABLE_PSEUDO_ACCESS_PROFILES_GENERATION: true
@@ -321,27 +319,6 @@ ccd:
   logstash:
     image: hmctspublic.azurecr.io/ccd/logstash
     imageTag: "latest"
-    extraEnvs:
-      - name: DATA_STORE_URL
-        value: jdbc:postgresql://${SERVICE_NAME}-postgresql:5432/data-store?ssl=disable&stringtype=unspecified
-      - name: DATA_STORE_USER
-        value: hmcts
-      - name: DATA_STORE_PASS
-        value: hmcts
-      - name: DB_URL
-        value: jdbc:postgresql://${SERVICE_NAME}-postgresql:5432/data-store?ssl=disable&stringtype=unspecified
-      - name: DB_USER
-        value: hmcts
-      - name: DB_PWD
-        value: hmcts
-      - name: ELASTIC_SEARCH_HOSTS
-        value: http://${SERVICE_NAME}-es-master:9200
-      - name: ES_DATA_NODES_URL
-        value: http://${SERVICE_NAME}-es-master:9200
-      - name: ELASTIC_SEARCH_DATA_NODES_HOSTS
-        value: http://${SERVICE_NAME}-es-master:9200
-      - name: ES_URL
-        value: http://${SERVICE_NAME}-es-master:9200
     resources:
       requests:
         cpu: "500m"
