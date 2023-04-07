@@ -189,6 +189,8 @@ ccd:
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOSTS: ${SERVICE_NAME}-es-master:9200
         ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
+        ES_DATA_NODES_URL: http://${SERVICE_NAME}-es-master:9200
+        ES_URL: http://${SERVICE_NAME}-es-master:9200
         ENABLE_ATTRIBUTE_BASED_ACCESS_CONTROL: true
         ENABLE_PSEUDO_ROLE_ASSIGNMENTS_GENERATION: true
         ENABLE_PSEUDO_ACCESS_PROFILES_GENERATION: true
@@ -303,13 +305,6 @@ ccd:
     nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     replicas: 1
-    initResources:
-      limits:
-        cpu: "1000m"
-        memory: "1024Mi"
-      requests:
-        cpu: "50m"
-        memory: "1024Mi"
     minimumMasterNodes: 1
     antiAffinity: "soft"
     esJavaOpts: "-Xmx1g -Xms1g"
@@ -339,7 +334,7 @@ ccd:
         value: hmcts
       - name: DB_PWD
         value: hmcts
-      - name: ES_HOSTS
+      - name: ELASTIC_SEARCH_HOSTS
         value: http://${SERVICE_NAME}-es-master:9200
       - name: ES_DATA_NODES_URL
         value: http://${SERVICE_NAME}-es-master:9200
