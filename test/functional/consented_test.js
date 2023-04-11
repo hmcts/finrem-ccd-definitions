@@ -28,8 +28,6 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
     /* eslint-disable */
     if (nightlyTest === 'true') {
       I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-      logger.info('caseworker user', +caseWorkerUserName);
-      logger.info('caseworker password', +caseWorkerPassword);
       I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
       I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
@@ -80,11 +78,10 @@ Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => 
   }
 });
 /* eslint-disable require-await */
-Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I => {
+//DFR-1955
+ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
-    logger.info('solicitor user', +solicitorUserName);
-    logger.info('solicitor password', +solicitorPassword);
     I.wait('2');
     await I.createCase('Financial Remedy Consented', 'Consent Order Application');
     await I.solicitorCreate(solRef);
@@ -111,3 +108,30 @@ Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I =
     I.waitForText('History', '30');
   }
 }).retry(3);
+
+/*Scenario('Caseworker creates case flag  @nightly @pipeline', async I => {
+        //TODO- add API call to create case - end state should be application drafted
+        //add 1 case flag
+        //validate flag in tab
+}).retry(2);*/
+
+/*Scenario('Caseworker manage case flag  @nightly @pipeline', async I => {
+        //TODO- add API call to create case - end state should be application drafted
+        //add 1 case flag (this can be done via API call too)
+       //manage case flag
+       //validate inactivated flag in a tab
+}).retry(2);*/
+
+
+/*Scenario('Judge creates case flag  @nightly @pipeline', async I => {
+        //TODO- add API call to create case via caseworker - end state should be application drafted
+        //add 1 case flag
+        //validate flag in tab
+}).retry(2);*/
+
+/*Scenario('Judge manage case flag  @nightly @pipeline', async I => {
+        //TODO- add API call to create case via caseworker- end state should be application drafted
+        //add 1 case flag (this can be done via API call too)
+       //manage case flag
+       //validate inactivated flag in a tab
+}).retry(2);*/

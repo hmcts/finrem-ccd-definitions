@@ -7,7 +7,7 @@ properties([
         ])
 ])
 
-@Library("Infrastructure")
+@Library("Infrastructure@enable-logging-on-ft")
 
 String product = "finrem"
 String component = "ccd-definitions"
