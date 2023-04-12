@@ -198,7 +198,6 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
 //   }
 // });
 
-
 Scenario('Contested share case @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     /* eslint-disable */
@@ -209,8 +208,7 @@ Scenario('Contested share case @nightly @pipeline', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.assignContestedShareCase(caseId, solRef);
   }
-});
-
+}).retry(3);
 
 Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
@@ -221,7 +219,6 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I =>
     await I.contestedApplicantDetails();
     await I.contestedRespondentDetails();
     await I.contestedNatureOfApplication();
-    await I.contestedOrderForChildren();
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
@@ -231,30 +228,6 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I =>
     await I.contestedCheckYourAnswers('Matrimonial');
     I.waitForText('Form A Application', '60')
 }).retry(3);
-
-//TODO
-/*Scenario('Contested Matrimonial Case Submission and amend application by Solicitor @nightly', async I => {
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-    if (nightlyTest === 'true') {
-        await I.signInIdam(solicitorUserName, solicitorPassword);
-        await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-
-        //amend application
-        I.contestedAmendApplicationDetails();
-
-        await I.caseSubmitAuthorisation('contested');
-        await I.paymentPage(false);
-        await I.hwfPaymentDetails();
-        await I.paymentSubmission();
-        pause();
-        await I.savingApplicationInformation('contested');
-        await I.finalPaymentSubmissionPage();
-        await I.finalInformationPage();
-        I.see('Case Submission');
-    }
-}).retry(3);*/
-
-
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
@@ -294,14 +267,9 @@ Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I =>
     I.waitForText('Form A Application', '60')
 }).retry(2);
 
-/*
-Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async I => {
-   //TODO
-}).retry(2);
-*/
-
 Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I => {
   if (nightlyTest === 'true') {
+      //TODO- issue case using API
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -310,7 +278,6 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I =
     await I.contestedApplicantDetails();
     await I.contestedRespondentDetails();
     await I.contestedNatureOfApplication();
-    await I.contestedOrderForChildren();
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
@@ -322,21 +289,19 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I =
     await I.manualPayment();
     await I.issueApplication();
   }
-}).retry(2);
+}).retry(3);
 
 Scenario('Upload Case Files (Confidential Documents) @nightly', async I => {
-  //login as a caseworker, create contested case
-  if (nightlyTest === 'true') {
-      //TODO- issue case using API
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait('2');
+    //login as a caseworker, create contested case
+
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
     await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
     await I.contestedDivorceDetails();
     await I.contestedApplicantDetails();
     await I.contestedRespondentDetails();
     await I.contestedNatureOfApplication();
-    await I.contestedOrderForChildren();
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
@@ -350,7 +315,7 @@ Scenario('Upload Case Files (Confidential Documents) @nightly', async I => {
     await I.uploadCaseFiles();
     await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.uploadCaseFiles, verifyTabText.confidentialDocumentsTab);
     logger.info('Confidential documents verified on Confidential documents tab');
-  }
+
 }).retry(2);
 
 Scenario('Manage Confidential Documents @nightly', async I => {
@@ -409,53 +374,27 @@ Scenario('Update Contact Details for contested Case @nightly ', async I => {
 
 }).retry(2);
 
-/*Scenario('Caseworker creates case flag  @nightly @pipeline', async I => {
-//case type - matrimonial
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag
-        //validate flag in tab
-}).retry(2);*/
+Scenario('Contested Add Note   @nightly ', async I => { //Matrimonial
+  const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+  const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+  const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
 
-/*Scenario('Caseworker manage case flag  @nightly @pipeline', async I => {
-//case type - matrimonial
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag (this can be done via API call too)
-       //manage case flag
-       //validate inactivated flag in a tab
-}).retry(2);*/
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.addNote();
+});
 
+Scenario('Contested Add Note   @nightly ', async I => { //Matrimonial
+  const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+  const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+  const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
 
-/*Scenario('Judge creates case flag  @nightly @pipeline', async I => {
-//case type - matrimonial
-        //TODO- add API call to create case via caseworker - end state should be application drafted
-        //add 1 case flag
-        //validate flag in tab
-}).retry(2);*/
-
-/*Scenario('Judge manage case flag  @nightly @pipeline', async I => {
-//case type - matrimonial
-        //TODO- add API call to create case via caseworker- end state should be application drafted
-        //add 1 case flag (this can be done via API call too)
-       //manage case flag
-       //validate inactivated flag in a tab
-}).retry(2);*/
-
-/*Scenario('Caseworker creates case flag  @nightly @pipeline', async I => {
-//case type - schedule 1
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag
-        //validate flag in tab
-}).retry(2);*/
-
-/*Scenario('Caseworker manage case flag  @nightly @pipeline', async I => {
-//case type - schedule 1
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag (this can be done via API call too)
-       //manage case flag
-       //validate inactivated flag in a tab
-}).retry(2);*/
-
-//GA and paper case -case flag
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.addNote();
+});
 
 
 

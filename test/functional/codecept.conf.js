@@ -24,29 +24,8 @@ exports.config = {
         ]
       }
     },
-      // Playwright: {
-      //     url: 'https://manage-case.aat.platform.hmcts.net',
-      //     smartWait: 50000,
-      //     waitForTimeout: 90000,
-      //     show: true,
-      //     waitForNavigation: 'networkidle0',
-      //     restart: true,
-      //     keepCookies: false,
-      //     keepBrowserState: false,
-      //     headless: false,
-      //     ignoreHTTPSErrors: true,
-      //     chrome: {
-      //         ignoreHTTPSErrors: true,
-      //         args: [
-      //             '--no-sandbox',
-      //             '--smartwait',
-      //             '--window-size=1440,1400',
-      //             '--disable-gpu'
-      //
-      //         ]
-      //     }
-      // },
 
+      //just adding helper class here
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' },
     'JSWait': {
         require: '../helpers/JSWait.js'
