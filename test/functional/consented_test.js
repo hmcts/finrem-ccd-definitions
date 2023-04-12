@@ -108,30 +108,3 @@ Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => 
     I.waitForText('History', '30');
   }
 }).retry(3);
-
-/*Scenario('Caseworker creates case flag  @nightly @pipeline', async I => {
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag
-        //validate flag in tab
-}).retry(2);*/
-
-/*Scenario('Caseworker manage case flag  @nightly @pipeline', async I => {
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag (this can be done via API call too)
-       //manage case flag
-       //validate inactivated flag in a tab
-}).retry(2);*/
-
-
-/*Scenario('Judge creates case flag  @nightly @pipeline', async I => {
-        //TODO- add API call to create case via caseworker - end state should be application drafted
-        //add 1 case flag
-        //validate flag in tab
-}).retry(2);*/
-
-/*Scenario('Judge manage case flag  @nightly @pipeline', async I => {
-        //TODO- add API call to create case via caseworker- end state should be application drafted
-        //add 1 case flag (this can be done via API call too)
-       //manage case flag
-       //validate inactivated flag in a tab
-}).retry(2);*/
