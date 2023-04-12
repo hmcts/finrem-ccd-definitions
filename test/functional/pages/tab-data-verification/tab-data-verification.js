@@ -421,16 +421,11 @@ async function verifyContestedConfidentialTabData(eventName, tabName) {
 
 }
 
-async function
-contestedIntervenersTab(caseType, tabName) {
+async function contestedIntervenersTab(caseType, tabName) {
 
   const I = this;
-  I.waitForText(tabName, '5');
-  await I.waitForNavigationToComplete('div[id="mat-tab-label-0-12"]');
-  I.waitForText('Intervener\'s Full Name', 30);
   I.see(verifyContestedTabText.IntervenersTab.name);
   I.see(verifyContestedTabText.IntervenersTab.email);
-  I.waitForText('Organisation', 30);
   I.see(verifyContestedTabText.IntervenersTab.organization);
 }
 
