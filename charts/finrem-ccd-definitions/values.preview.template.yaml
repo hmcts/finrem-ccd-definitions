@@ -314,13 +314,6 @@ ccd:
     minimumMasterNodes: 1
     antiAffinity: "soft"
     esJavaOpts: "-Xmx1g -Xms1g"
-    extraEnvs:
-      - name: discovery.type
-        value: single-node
-      - name: cluster.initial_master_nodes
-        value: ""
-      - name: action.auto_create_index
-        value: .security*,.watches,.triggered_watches,.watcher-history-*,.logstash_dead_letter,.ml*
     persistence:
       enabled: false
 
