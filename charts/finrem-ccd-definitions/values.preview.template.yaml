@@ -301,6 +301,7 @@ ccd:
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
+    imageTag: "7.17.1"
     clusterName: "es"
     replicas: 1
     initResources:
