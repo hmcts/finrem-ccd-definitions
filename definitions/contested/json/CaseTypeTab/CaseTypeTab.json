@@ -4531,6 +4531,14 @@
     "TabLabel": "Hearing Bundle",
     "TabDisplayOrder": 25,
     "CaseFieldID": "hearingUploadBundle",
+    "UserRoles": [
+      "[APPSOLICITOR]",
+      "[RESPSOLICITOR]",
+      "[APPBARRISTER]",
+      "[RESPBARRISTER]",
+      "caseworker-divorce-financialremedy-courtadmin",
+      "caseworker-divorce-financialremedy-judiciary"
+    ],
     "TabFieldDisplayOrder": 1
   },
   {

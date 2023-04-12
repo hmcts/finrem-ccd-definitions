@@ -9943,36 +9943,19 @@
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "hearingUploadBundle",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/09/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "hearingUploadBundle",
-    "UserRole": "[RESPSOLICITOR]",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/09/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "hearingUploadBundle",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/09/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "hearingUploadBundle",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/09/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "hearingUploadBundle",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "[APPSOLICITOR]",
+          "[RESPSOLICITOR]",
+          "[APPBARRISTER]",
+          "[RESPBARRISTER]",
+          "caseworker-divorce-financialremedy-courtadmin",
+          "caseworker-divorce-financialremedy-judiciary"
+        ],
+        "CRUD": "CRUD"
+      }
+    ]
   },
   {
     "LiveFrom": "01/05/2022",
@@ -10710,13 +10693,6 @@
     "CRUD": "CRU"
   },
   {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "hearingUploadBundle",
-    "UserRole": "[APPBARRISTER]",
-    "CRUD": "CRUD"
-  },
-  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "bulkPrintCoverSheetApp",
@@ -10960,13 +10936,6 @@
     "CaseFieldID": "RepresentationUpdateHistory",
     "UserRole": "[RESPBARRISTER]",
     "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/09/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "hearingUploadBundle",
-    "UserRole": "[RESPBARRISTER]",
-    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
