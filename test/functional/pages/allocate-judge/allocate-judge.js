@@ -8,8 +8,6 @@ function allocateJudge() {
   I.click('Go');
   I.waitForText('Event summary (optional)');
   I.click('Submit');
-  pause();
-  const caseRef = I.getCaseRef();
 }
 
 module.exports = { allocateJudge };
