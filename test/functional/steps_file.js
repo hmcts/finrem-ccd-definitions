@@ -43,6 +43,7 @@ const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-re
 const {giveAllocationDirection} = require('./pages/give-allocation-direction/give-allocation-direction');
 const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
 const {manageInterveners} = require('./pages/manage-interveners/manage-interveners');
+const {addNote} = require('./pages/add-note/add-note');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -170,6 +171,7 @@ module.exports = () => {
     giveAllocationDirection,
     updateContactDetails,
     manageInterveners,
-    contestedIntervenersTab
+    contestedIntervenersTab,
+    addNote
   });
 };
