@@ -335,7 +335,6 @@ ccd:
         memory: 1024Mi
     image: hmctspublic.azurecr.io/ccd/logstash
     imageTag: "ccd-divorce-logstash-latest"
-    imagePullPolicy: "IfNotPresent"
     logstashJavaOpts: -Xmx1g -Xms512M
     extraEnvs:
       - name: DB_URL
