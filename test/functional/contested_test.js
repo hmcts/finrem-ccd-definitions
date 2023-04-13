@@ -455,7 +455,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightl
 }).retry(2);
 
 
-Scenario('Contested Add Note   @nightly ', async I => {
+Scenario('Contested Add Note @nightly ', async I => {
     //Matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -467,7 +467,7 @@ Scenario('Contested Add Note   @nightly ', async I => {
     await I.addNote();
 });
 
-Scenario('Contested Manage Barrister   @nightly ', async I => {
+Scenario('Contested Manage Barrister @nightly', async I => {
     //Matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
