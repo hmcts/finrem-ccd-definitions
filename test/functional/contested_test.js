@@ -413,5 +413,5 @@ Scenario('Caseworker refunds an issued case @Johnny', async I => {
   I.signInIdam(caseWorkerUserName, caseWorkerPassword);
   I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
 
-  I.refundCase()
+  await I.refundCase()
 })
