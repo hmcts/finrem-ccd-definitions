@@ -43,14 +43,14 @@ Scenario('Contested Case Creation For Caseworker @nightly @pipeline', async I =>
 });
 
 Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
-  // if (runningEnv === 'demo') {
-  //   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-  //   /* eslint-disable */
-  //   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
-  //   const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-demo-contested-basic-data.json');
-  //   const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
-  //   const assignToJudge = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_allocateToJudge', './test/data/ccd-contested-case-worker-issue-data.json');
-  // } else {
+  if (runningEnv === 'demo') {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    /* eslint-disable */
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-demo-contested-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+    const assignToJudge = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_allocateToJudge', './test/data/ccd-contested-case-worker-issue-data.json');
+  } else {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -63,7 +63,7 @@ Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
       // eslint-disable-next-line max-len
       I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeEvent, verifyTabText.historyTab.assignToJudgeEndState);
       I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-   // }
+    }
   }
 });
 
@@ -386,7 +386,7 @@ Scenario('Contested Add Note   @nightly ', async I => { //Matrimonial
 
 
 Scenario('Contested Matrimonial case Amend application and Case submission  by Solicitor @nightly', async I => {
-    //The json file used to create case is new case data - this can be use to create a case via solicitor, case type matrimonial.
+    //The json file used to create case is new case data - this can be used to create a case via solicitor, case type matrimonial.
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
 
     if (nightlyTest === 'true') {
@@ -424,11 +424,16 @@ Scenario('Add Interveners @nightly', async I => {
 }).retry(2);
 
 
-/*
-Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async I => {
-   //TODO
+Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly @test1', async I => {
+    //The json file used to create case is new case data - this can be used to create a case via solicitor, case type schedule 1.
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+
+    await I.signInIdam(solicitorUserName, solicitorPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+
+    await I.schedule1Tab(verifyTabText.Schedule1Tab.tabName);
+    logger.info('Schedule 1 tab verified...')
 }).retry(2);
-*/
 
 
 /*Scenario('Caseworker creates case flag  @nightly @pipeline', async I => {

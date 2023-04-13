@@ -429,6 +429,14 @@ async function contestedIntervenersTab(caseType, tabName) {
   I.see(verifyContestedTabText.IntervenersTab.organization);
 }
 
+async function schedule1Tab(tabName) {
+
+  const I = this;
+  await I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
+  I.see(verifyContestedTabText.Schedule1Tab.name);
+  I.see(verifyContestedTabText.Schedule1Tab.dob);
+}
+
 
 module.exports = {
   historyTab,
@@ -450,5 +458,6 @@ module.exports = {
   verifyContestedTabData,
   verifyContestedPaperTabData,
   verifyContestedConfidentialTabData,
-  contestedIntervenersTab
+  contestedIntervenersTab,
+  schedule1Tab
 };
