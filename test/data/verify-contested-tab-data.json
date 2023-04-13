@@ -21,7 +21,8 @@
     "createGeneralApplicationEvent": "Create General Application",
     "createGeneralApplicationState": "General Application",
     "uploadCaseFiles": "Upload Case Files",
-    "manageConfidentialDocuments": "Manage confidential documents"
+    "manageConfidentialDocuments": "Manage confidential documents",
+    "manageIntervenersEvent": "Manage Interveners"
   },
   "applicantTab": {
     "tabName": "Applicant",
@@ -117,5 +118,11 @@
     "comment": "this is confidential document",
     "fileName": "confidentialDoc.pdf",
     "manageConfDocumentUrl": "manageConfidentialDoc.pdf"
+  },
+  "IntervenersTab": {
+    "tabName": "Intervener 1",
+    "name": "Molly Guerra",
+    "organization": "FinRem-2-Org",
+    "email": "fr_respondent_solicitor1@mailinator.com"
   }
 }
