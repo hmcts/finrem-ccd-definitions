@@ -44,10 +44,11 @@ const {giveAllocationDirection} = require('./pages/give-allocation-direction/giv
 const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
 const {manageInterveners} = require('./pages/manage-interveners/manage-interveners');
 const {addNote} = require('./pages/add-note/add-note');
+const {refundCase} = require('./pages/refund-case/refund-case.js');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
-
+const {manageBarristerApplicant, manageBarristerRespondent} = require('./pages/manage-barrister/manage-barrister');
 module.exports = () => {
   return actor({
 
@@ -172,7 +173,10 @@ module.exports = () => {
     updateContactDetails,
     manageInterveners,
     contestedIntervenersTab,
+    refundCase,
+    addNote,
+    manageBarristerApplicant,
+    manageBarristerRespondent
     schedule1Tab,
-    addNote
   });
 };

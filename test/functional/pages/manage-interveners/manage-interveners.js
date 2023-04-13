@@ -22,10 +22,8 @@ async function manageInterveners(){
 
   //Intervener presented
   I.checkOption('input[id="intervener1Represented_Yes"]');
-
   I.fillField('input[id="intervener1SolName"]', 'Miranda Wiley');
   I.fillField('input[id="intervener1SolEmail"]', 'fr_respondent_solicitor1@mailinator.com');
-
   I.waitForText('Search for an organisation','30');
   I.fillField('input[id="search-org-text"]', 'FinRem-2-Org');
   I.click('Select');
