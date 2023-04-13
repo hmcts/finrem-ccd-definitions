@@ -176,7 +176,7 @@ module.exports = () => {
     refundCase,
     addNote,
     manageBarristerApplicant,
-    manageBarristerRespondent
+    manageBarristerRespondent,
     schedule1Tab,
   });
 };
