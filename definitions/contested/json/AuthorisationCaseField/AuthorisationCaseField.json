@@ -192,24 +192,8 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "divorceUploadEvidence1",
-    "AccessControl": [
-      {
-        "UserRoles": [
-          "[APPSOLICITOR]",
-          "[RESPSOLICITOR]",
-          "[APPBARRISTER]",
-          "[RESPBARRISTER]",
-          "caseworker-divorce-financialremedy-courtadmin"
-        ],
-        "CRUD": "CRUD"
-      },
-      {
-        "UserRoles": [
-          "caseworker-divorce-financialremedy-judiciary"
-        ],
-        "CRUD": "R"
-      }
-    ]
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
