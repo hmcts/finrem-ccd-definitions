@@ -47,7 +47,7 @@ const {addNote} = require('./pages/add-note/add-note');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
-
+const {manageBarristerApplicant, manageBarristerRespondent} = require('./pages/manage-barrister/manage-barrister');
 module.exports = () => {
   return actor({
 
@@ -172,6 +172,8 @@ module.exports = () => {
     updateContactDetails,
     manageInterveners,
     contestedIntervenersTab,
-    addNote
+    addNote,
+    manageBarristerApplicant,
+    manageBarristerRespondent
   });
 };

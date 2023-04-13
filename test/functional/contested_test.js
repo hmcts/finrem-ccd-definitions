@@ -212,7 +212,7 @@ Scenario('Contested share case @nightly @pipeline', async I => {
 }).retry(3);
 
 
-Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @test1', async I => {
+Scenario('Contested Matrimonial Case Creation by Solicitor @nightly ', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -483,4 +483,16 @@ Scenario('Contested Add Note   @nightly ', async I => { //Matrimonial
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.addNote();
+});
+
+Scenario('Contested Manage Barrister   @nightly ', async I => { //Matrimonial
+  const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+  const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+  const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+
+  I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+  I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+  await I.manageBarristerApplicant();
+  await I.manageBarristerRespondent();
 });

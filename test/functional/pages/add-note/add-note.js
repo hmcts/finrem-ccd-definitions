@@ -18,7 +18,7 @@ function addNote() {
   I.wait('2');
   I.fillField('Note', 'Thank you');
   I.click('Continue');
-   I.see('Add Note');
+  I.see('Add Note');
 
 }
 
