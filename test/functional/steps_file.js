@@ -44,7 +44,7 @@ const {giveAllocationDirection} = require('./pages/give-allocation-direction/giv
 const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
 const {manageInterveners} = require('./pages/manage-interveners/manage-interveners');
 const {addNote} = require('./pages/add-note/add-note');
-const {refund} = require('./pages/refund/refund');
+const {refundCase} = require('./pages/refund-case/refund-case');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -174,6 +174,6 @@ module.exports = () => {
     manageInterveners,
     contestedIntervenersTab,
     addNote,
-    refund
+    refundCase
   });
 };

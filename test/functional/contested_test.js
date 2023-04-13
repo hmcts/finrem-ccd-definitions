@@ -409,9 +409,13 @@ Scenario('Caseworker refunds an issued case @Johnny', async I => {
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
   console.log("Case submitted")
 
+  const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+  const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+
   //Signing in as a caseworker and navigating to the case
   I.signInIdam(caseWorkerUserName, caseWorkerPassword);
   I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
 
+  //Starting refundCase function
   await I.refundCase()
 })
