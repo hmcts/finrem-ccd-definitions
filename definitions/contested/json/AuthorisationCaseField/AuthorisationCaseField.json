@@ -221,7 +221,21 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "divorceUploadEvidence2",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "divorceDecreeAbsoluteDate",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "divorceUploadPetition",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
@@ -1069,19 +1083,8 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "miniFormA",
-    "AccessControl": [
-      {
-        "UserRoles": [
-          "[APPSOLICITOR]",
-          "[RESPSOLICITOR]",
-          "[APPBARRISTER]",
-          "[RESPBARRISTER]",
-          "caseworker-divorce-financialremedy-courtadmin",
-          "caseworker-divorce-financialremedy-judiciary"
-        ],
-        "CRUD": "CRUD"
-      }
-    ]
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1143,6 +1146,20 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "tabPaymentForChildrenLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "formC",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "formG",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
@@ -1639,48 +1656,23 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "miniFormA",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "formC",
-    "AccessControl": [
-      {
-        "UserRoles": [
-          "caseworker-divorce-financialremedy-courtadmin"
-        ],
-        "CRUD": "CRUD"
-      },
-      {
-        "UserRoles": [
-          "[APPSOLICITOR]",
-          "[RESPSOLICITOR]",
-          "[APPBARRISTER]",
-          "[RESPBARRISTER]",
-          "caseworker-divorce-financialremedy-judiciary"
-        ],
-        "CRUD": "R"
-      }
-    ]
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "formG",
-    "AccessControl": [
-      {
-        "UserRoles": [
-          "caseworker-divorce-financialremedy-courtadmin"
-        ],
-        "CRUD": "CRUD"
-      },
-      {
-        "UserRoles": [
-          "[APPSOLICITOR]",
-          "[RESPSOLICITOR]",
-          "[APPBARRISTER]",
-          "[RESPBARRISTER]",
-          "caseworker-divorce-financialremedy-judiciary"
-        ],
-        "CRUD": "R"
-      }
-    ]
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1979,6 +1971,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "divorceUploadEvidence1",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "divorceDecreeNisiDate",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
@@ -1987,24 +1986,8 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "divorceUploadEvidence2",
-    "AccessControl": [
-      {
-        "UserRoles": [
-          "[APPSOLICITOR]",
-          "[RESPSOLICITOR]",
-          "[APPBARRISTER]",
-          "[RESPBARRISTER]",
-          "caseworker-divorce-financialremedy-courtadmin"
-        ],
-        "CRUD": "CRUD"
-      },
-      {
-        "UserRoles": [
-          "caseworker-divorce-financialremedy-judiciary"
-        ],
-        "CRUD": "R"
-      }
-    ]
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2016,24 +1999,9 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "divorceUploadPetition", "AccessControl": [
-    {
-      "UserRoles": [
-        "[APPSOLICITOR]",
-        "[RESPSOLICITOR]",
-        "[APPBARRISTER]",
-        "[RESPBARRISTER]",
-        "caseworker-divorce-financialremedy-courtadmin"
-      ],
-      "CRUD": "CRUD"
-    },
-    {
-      "UserRoles": [
-        "caseworker-divorce-financialremedy-judiciary"
-      ],
-      "CRUD": "R"
-    }
-  ]
+    "CaseFieldID": "divorceUploadPetition",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4460,6 +4428,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "divorceUploadEvidence1",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "divorceDecreeNisiDate",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
@@ -4467,7 +4442,21 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "divorceUploadEvidence2",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "divorceDecreeAbsoluteDate",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "divorceUploadPetition",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
@@ -4867,6 +4856,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "caseNotesCollection",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "miniFormA",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
   },
@@ -8716,6 +8712,20 @@
   {
     "LiveFrom": "17/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "formC",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "formG",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "changeOrganisationRequestField",
     "UserRole": "caseworker-caa",
     "CRUD": "CRUD"
@@ -10408,24 +10418,22 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "outOfFamilyCourtResolution",
-    "AccessControl": [
-    {
-      "UserRoles": [
-        "caseworker-divorce-financialremedy-courtadmin"
-      ],
-      "CRUD": "CRUD"
-    },
-    {
-      "UserRoles": [
-        "[APPSOLICITOR]",
-        "[RESPSOLICITOR]",
-        "[APPBARRISTER]",
-        "[RESPBARRISTER]",
-        "caseworker-divorce-financialremedy-judiciary"
-      ],
-      "CRUD": "R"
-    }
-  ]
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "outOfFamilyCourtResolution",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "17/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "outOfFamilyCourtResolution",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
