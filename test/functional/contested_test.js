@@ -443,7 +443,7 @@ Scenario('Caseworker refunds an issued case @nightly', async I => {
 })
 
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly @test1', async I => {
+Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async I => {
     //The json file used to create case is new case data - this can be used to create a case via solicitor, case type schedule 1.
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
 
