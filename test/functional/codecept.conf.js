@@ -24,6 +24,8 @@ exports.config = {
         ]
       }
     },
+
+      //just adding helper class here
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' },
     'JSWait': {
         require: '../helpers/JSWait.js'
