@@ -198,7 +198,6 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
 //   }
 // });
 
-
 Scenario('Contested share case @nightly @pipeline', async I => {
   if (nightlyTest === 'true') {
     /* eslint-disable */
@@ -211,8 +210,7 @@ Scenario('Contested share case @nightly @pipeline', async I => {
   }
 }).retry(3);
 
-
-Scenario('Contested Matrimonial Case Creation by Solicitor @nightly ', async I => {
+Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -228,32 +226,8 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly ', async I =
     await I.miamCertification();
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Matrimonial');
-    I.waitForText('Form A Application', '60')
+    I.waitForText('Form A Application', '60');
 }).retry(3);
-
-//TODO
-/*Scenario('Contested Matrimonial Case Submission and amend application by Solicitor @nightly', async I => {
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-    if (nightlyTest === 'true') {
-        await I.signInIdam(solicitorUserName, solicitorPassword);
-        await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-
-        //amend application
-        I.contestedAmendApplicationDetails();
-
-        await I.caseSubmitAuthorisation('contested');
-        await I.paymentPage(false);
-        await I.hwfPaymentDetails();
-        await I.paymentSubmission();
-        pause();
-        await I.savingApplicationInformation('contested');
-        await I.finalPaymentSubmissionPage();
-        await I.finalInformationPage();
-        I.see('Case Submission');
-    }
-}).retry(3);*/
-
-
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
@@ -292,12 +266,6 @@ Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I =>
     await I.contestedCheckYourAnswers('Schedule1');
     I.waitForText('Form A Application', '60')
 }).retry(2);
-
-/*
-Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async I => {
-   //TODO
-}).retry(2);
-*/
 
 Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I => {
   if (nightlyTest === 'true') {
@@ -405,21 +373,81 @@ Scenario('Update Contact Details for contested Case @nightly ', async I => {
 
 }).retry(2);
 
-//
-// Scenario('Add Interveners @nightly', async I => {
-//     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-//     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
-//     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
-//     const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
-//
-//     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-//     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-//     I.wait('5');
-//     await I.manageInterveners();
-//     logger.info('Manage Interveners event completed');
-//     await I.contestedIntervenersTab(verifyTabText.historyTab.manageIntervenersEvent, verifyTabText.IntervenersTab);
-//     logger.info('Interveners tab verified');
-// }).retry(2);
+Scenario('Contested Add Note   @nightly ', async I => { //Matrimonial
+  const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+  const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+  const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.addNote();
+});
+
+
+Scenario('Contested Matrimonial case Amend application and Case submission  by Solicitor @nightly', async I => {
+    //The json file used to create case is new case data - this can be use to create a case via solicitor, case type matrimonial.
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+
+    if (nightlyTest === 'true') {
+        await I.signInIdam(solicitorUserName, solicitorPassword);
+        await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+
+        //amend application
+        I.contestedAmendApplicationDetails();
+
+        //case submission
+        await I.caseSubmitAuthorisation('contested');
+        await I.paymentPage(false);
+        await I.hwfPaymentDetails();
+        await I.paymentSubmission();
+        await I.savingApplicationInformation('contested');
+        await I.finalPaymentSubmissionPage();
+        await I.finalInformationPage();
+        I.see('Case Submission');
+    }
+}).retry(2);
+
+Scenario('Add Interveners @nightly', async I => {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('5');
+    await I.manageInterveners();
+    logger.info('Manage Interveners event completed');
+    await I.contestedIntervenersTab(verifyTabText.historyTab.manageIntervenersEvent, verifyTabText.IntervenersTab);
+    logger.info('Interveners tab verified');
+}).retry(2);
+
+
+Scenario('Caseworker refunds an issued case @nightly', async I => {
+  logger.info("Refund test starting");
+
+  //Using API to create a case as a solicitor, and then issue case
+  const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+  const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+  const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+
+  //Signing in as a caseworker and navigating to the case
+  I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+  I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+
+  //Starting refundCase function
+  await I.refundCase()
+  logger.info("Refund test completed");
+})
+
+/*
+Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async I => {
+   //TODO
+}).retry(2);
+*/
+
 
 /*Scenario('Caseworker creates case flag  @nightly @pipeline', async I => {
 //case type - matrimonial

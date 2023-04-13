@@ -39,6 +39,13 @@ async function manageInterveners(){
   I.click('Submit');
   I.wait(5);
   I.waitForText('Manage Interveners', '30');
+
+  //click tab
+  await I.clickTab('Intervener 1');
+  I.wait('5');
+  I.waitForText('Intervener\'s Full Name');
+  I.waitForText('Organisation');
+
 }
 
 module.exports = { manageInterveners };
