@@ -44,7 +44,11 @@ const {giveAllocationDirection} = require('./pages/give-allocation-direction/giv
 const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
 const {manageInterveners} = require('./pages/manage-interveners/manage-interveners');
 const {addNote} = require('./pages/add-note/add-note');
-const {refundCase} = require('./pages/refund-case/refund-case.js');
+const {refundCase} = require('./pages/refund-case/refund-case');
+const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-order');
+const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-approve');
+const {uploadOrder} = require('./pages/upload-order/upload-order');
+const {sendOrder} = require('./pages/send-order/send-order');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -179,6 +183,10 @@ module.exports = () => {
     manageBarristerRespondent,
     schedule1Tab,
     changeOfRepresentativesTab,
-    verifyManageBarristerEvent
+    verifyManageBarristerEvent,
+    uploadDraftOrder,
+    draftOrderApprove,
+    uploadOrder,
+    sendOrder
   });
 };
