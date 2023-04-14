@@ -5,7 +5,6 @@ Scenario('add all the roles @pipeline', I => {
   I.createRole('citizen');
   I.createRole('caseworker');
   I.createRole('caseworker-divorce-financialremedy-courtadmin');
-  I.createRole('caseworker-divorce-financialremedy-solicitor');
   I.createRole('caseworker-divorce-financialremedy-judiciary');
   I.createRole('caseworker-divorce-systemupdate');
   I.createRole('caseworker-divorce-bulkscan');
@@ -23,7 +22,6 @@ Scenario('add all the roles @pipeline', I => {
   I.see('citizen');
   I.see('caseworker');
   I.see('caseworker-divorce-financialremedy-courtadmin');
-  I.see('caseworker-divorce-financialremedy-solicitor');
   I.see('caseworker-divorce-financialremedy-judiciary');
   I.see('caseworker-divorce-systemupdate');
   I.see('caseworker-divorce-bulkscan');
