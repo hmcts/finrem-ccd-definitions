@@ -4880,7 +4880,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserCaseRole=\"[APPSOLICITOR]\""
+    "PageShowCondition": "currentUserCaseRoleLabel=\"APPSOLICITOR\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4977,7 +4977,7 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserCaseRole=\"[RESPSOLICITOR]\""
+    "PageShowCondition": "currentUserCaseRoleLabel=\"RESPSOLICITOR\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5068,7 +5068,20 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "currentUserCaseRole",
-    "PageFieldDisplayOrder": 8,
+    "PageFieldDisplayOrder": 9,
+    "DisplayContext": "READONLY",
+    "PageID": 2,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "rSolicitorAddressLabel=\" \""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_updateCaseDetailsSolicitor",
+    "CaseFieldID": "currentUserCaseRoleLabel",
+    "PageFieldDisplayOrder": 10,
     "DisplayContext": "READONLY",
     "PageID": 2,
     "PageDisplayOrder": 2,
