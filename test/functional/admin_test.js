@@ -13,6 +13,12 @@ Scenario('add all the roles @pipeline', I => {
   I.createRole('caseworker-caa');
   I.createRole('caseworker-divorce-financialremedy-superuser');
   I.createRole('caseworker-approver');
+  I.createRole('[APPSOLICITOR]');
+  I.createRole('[RESPSOLICITOR]');
+  I.createRole('[INTVRSOLICITOR1]');
+  I.createRole('[INTVRSOLICITOR2]');
+  I.createRole('[INTVRSOLICITOR3]');
+  I.createRole('[INTVRSOLICITOR4]');
   I.click('Manage User Roles');
   I.see('citizen');
   I.see('caseworker');
@@ -23,8 +29,14 @@ Scenario('add all the roles @pipeline', I => {
   I.see('caseworker-divorce-bulkscan');
   I.see('caseworker-divorce-financialremedy');
   I.see('caseworker-caa');
-  I.see('caseworker-divorce-financialremedy-superuser')
+  I.see('caseworker-divorce-financialremedy-superuser');
   I.see('caseworker-approver');
+  I.createRole('[APPSOLICITOR]');
+  I.createRole('[RESPSOLICITOR]');
+  I.createRole('[INTVRSOLICITOR1]');
+  I.createRole('[INTVRSOLICITOR2]');
+  I.createRole('[INTVRSOLICITOR3]');
+  I.createRole('[INTVRSOLICITOR4]');
 }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
 if (process.env.IMPORT_PREVIEW) {
