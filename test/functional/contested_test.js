@@ -449,7 +449,6 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightl
 
     await I.signInIdam(solicitorUserName, solicitorPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-
     await I.schedule1Tab(verifyTabText.Schedule1Tab.tabName);
     logger.info('Schedule 1 tab verified...')
 }).retry(2);
@@ -478,6 +477,11 @@ Scenario('Contested Manage Barrister @nightly', async I => {
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.manageBarristerApplicant();
     await I.manageBarristerRespondent();
+    await I.verifyManageBarristerEvent(verifyTabText.caseType, verifyTabText.historyTab.manageBarristerEvent, verifyTabText.historyTab.issueApplicationEndState);
+    await I.clickTab('Change of representatives');
+    I.waitForText('FinRem-1-Org', 30);
+    await I.changeOfRepresentativesTab(verifyTabText.historyTab.manageBarristerEvent);
+    logger.info("manage barrister tab verified...");
 });
 
 

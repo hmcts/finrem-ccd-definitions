@@ -7,7 +7,7 @@
     "hwfPaymentAcceptedEvent": "HWF Application Accepted",
     "hwfPaymentAcceptedEndState": "Application Submitted",
     "issueApplicationEvent": "Issue Application",
-    "issueApplicationEndState": "Awaiting Judicial Response",
+    "issueApplicationEndState": "Application Issued",
     "assignToJudgeEvent": "Allocate to Judge",
     "assignToJudgeEndState": "Gate Keeping And Allocation",
     "submitUploadCaseFilesEvent": "Submit Uploaded Case Files",
@@ -22,7 +22,8 @@
     "createGeneralApplicationState": "General Application",
     "uploadCaseFiles": "Upload Case Files",
     "manageConfidentialDocuments": "Manage confidential documents",
-    "manageIntervenersEvent": "Manage Interveners"
+    "manageIntervenersEvent": "Manage Interveners",
+    "manageBarristerEvent": "Manage Barrister"
   },
   "applicantTab": {
     "tabName": "Applicant",
@@ -129,5 +130,24 @@
     "tabName": "Schedule 1/Child Details",
     "name": "Russell Merritt",
     "dob": "21 May 2019"
+  },
+  "ChangeOfRepresentativesTab": {
+    "tabName": "Change of representatives",
+    "applicantHeader": "Change of representatives 1",
+    "respondentHeader": "Change of representatives 2",
+    "applicantParty": "Applicant",
+    "respondentParty": "Respondent",
+    "applicantClientName": "Tik Tok",
+    "respondentClientName": "Qunatico Whisper",
+    "applicantUpdatedBy": "Claire Mumford",
+    "respondentUpdatedBy": "Claire Mumford",
+    "applicantUpdatedVia": "Manage Barristers",
+    "respondentUpdatedVia": "Manage Barristers",
+    "applicantOrganisation": "FinRem-1-Org",
+    "respondentOrganisation": "FinRem-2-Org",
+    "applicantName": "FR App Barrister",
+    "respondentName": "FR Resp Barrister",
+    "applicantEmail": "fr_applicant_barrister3@mailinator.com",
+    "respondentEmail": "fr_res_barrister1@mailinator.com"
   }
 }

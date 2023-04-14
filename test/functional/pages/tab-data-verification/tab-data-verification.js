@@ -421,7 +421,7 @@ async function verifyContestedConfidentialTabData(eventName, tabName) {
 
 }
 
-async function contestedIntervenersTab(caseType, tabName) {
+async function contestedIntervenersTab(event, tabName) {
 
   const I = this;
   I.see(verifyContestedTabText.IntervenersTab.name);
@@ -437,6 +437,32 @@ async function schedule1Tab(tabName) {
   I.see(verifyContestedTabText.Schedule1Tab.dob);
 }
 
+async function changeOfRepresentativesTab(tabName) {
+
+  const I = this;
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.tabName);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantHeader);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentHeader);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantParty);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentParty);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantClientName);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentClientName);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantUpdatedBy);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentUpdatedBy);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantUpdatedVia);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentUpdatedVia);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantOrganisation);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentOrganisation);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantName);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentName);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantEmail);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentEmail);
+}
+
+function verifyManageBarristerEvent(caseType, eventName, stateName) {
+  const I = this;
+  I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+}
 
 module.exports = {
   historyTab,
@@ -459,5 +485,7 @@ module.exports = {
   verifyContestedPaperTabData,
   verifyContestedConfidentialTabData,
   contestedIntervenersTab,
-  schedule1Tab
+  schedule1Tab,
+  changeOfRepresentativesTab,
+  verifyManageBarristerEvent
 };
