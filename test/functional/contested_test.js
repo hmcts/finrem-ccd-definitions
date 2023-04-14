@@ -7,8 +7,8 @@ const logger = Logger.getLogger('helpers/utils.js');
 // eslint-disable max-len
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
-const solicitorUserName = "fr_applicant_solicitor1@mailinator.com";
-const solicitorPassword = "Testing1234";
+const solicitorUserName = process.env.USERNAME_SOLICITOR;
+const solicitorPassword = process.env.PASSWORD_SOLICITOR;
 const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
 const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 const judgeUserName = process.env.USERNAME_JUDGE;
