@@ -22,24 +22,13 @@ Feature('Contested Events');
 Scenario('Upload Case Files (Confidential Documents) @nightly', async I => {
     //login as a caseworker, create contested case
 
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    await I.wait('2');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
-    await I.contestedDivorceDetails();
-    await I.contestedApplicantDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplication();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestion();
-    await I.miamCertification();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers('Matrimonial');
-    I.waitForText('Form A Application', '60');
-    await I.manualPayment();
-    await I.issueApplication();
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.uploadCaseFiles();
     await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.uploadCaseFiles, verifyTabText.confidentialDocumentsTab);
     logger.info('Confidential documents verified on Confidential documents tab');
@@ -102,7 +91,7 @@ Scenario('Update Contact Details for contested Case @nightly ', async I => {
 
 }).retry(2);
 
-Scenario('Contested Add Note   @nightly ', async I => { //Matrimonial
+Scenario('Contested Add Note  @nightly ', async I => { //Matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -136,7 +125,7 @@ Scenario('Contested Matrimonial case Amend application and Case submission  by S
     }
 }).retry(2);
 
-Scenario('Caseworker refunds an issued case @nightly @test1', async I => {
+Scenario('Caseworker refunds an issued case @nightly', async I => {
     logger.info("Refund test starting");
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
