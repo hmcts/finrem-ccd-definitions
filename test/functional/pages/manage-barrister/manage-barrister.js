@@ -35,6 +35,7 @@ function manageBarristerRespondent() {
   I.click('Go');
   I.waitForText('Manage Barrister', '30');
   I.checkOption('input[id="barristerParty-respondent"]');
+  I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('Respondent\'s Barristers');
   I.click('Add new');
