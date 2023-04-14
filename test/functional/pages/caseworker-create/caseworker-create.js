@@ -31,13 +31,14 @@ async function contestedCaseworkerCreate(reference, applicationType, applicantRe
   I.wait('5');
   I.waitForText('EC3A 2AD');
   I.fillField('input[id="ApplicantOrganisationPolicy_OrgPolicyReference"]', 'FRApplicant');
+
+  if (applicationType== 'Schedule1') {
+    I.checkOption('input[id="typeOfApplication-Under paragraph 1 or 2 of schedule 1 children act 1989"]');
+  }
+
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.wait('10');
-
-  if (applicationType== 'Schedule1') {
-    I.checkOption("#typeOfApplication-Under paragraph 1 or 2 of schedule 1 children act 1989");
-  }
 }
 
 

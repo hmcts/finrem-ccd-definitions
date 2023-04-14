@@ -26,17 +26,24 @@ const { divorceDetails, contestedDivorceDetails } = require('./pages/divorce-det
 const { waitForContinueButtonEnabled } = require('./pages/common/common');
 const { waitForPage } = require('./pages/common/common');
 const { createCase } = require('./pages/create-case/create-case');
-const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab, contestedOrderTab, approvedOrderTab, gateKeepingAllocationsTab, schedulingAndListingTab, consentOrderProcessTab, verifyConsentedTabData, verifyContestedTabData, verifyContestedPaperTabData, verifyContestedConfidentialTabData } = require('./pages/tab-data-verification/tab-data-verification');
+const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab, contestedOrderTab, approvedOrderTab, gateKeepingAllocationsTab, schedulingAndListingTab, consentOrderProcessTab, verifyConsentedTabData, verifyContestedTabData, verifyContestedPaperTabData, verifyContestedConfidentialTabData, contestedIntervenersTab } = require('./pages/tab-data-verification/tab-data-verification');
 const { assignContestedCase } = require('./pages/org-assign-cases/org-assign-cases-to-respondent');
 const { assignContestedShareCase } = require('./pages/share-case-in-org/share-case-in-org');
 const {contestedCaseworkerCreate} = require('./pages/caseworker-create/caseworker-create');
 const {pbaPayment} = require('./pages/pba-payment/pba-payment');
 const {manualPayment} = require('./pages/manual-payment/manual-payment');
-const {issueApplication} = require('./pages/issue-application/issue-application');
+const {issueApplication, getCaseRefFromScreen} = require('./pages/issue-application/issue-application');
 const {childrenDetails} = require('./pages/children-details/children-details');
 const {allocateJudge} = require('./pages/allocate-judge/allocate-judge');
 const {uploadCaseFiles} = require('./pages/upload-case-files/upload-case-files');
 const {manageConfidentialDocuments} = require('./pages/manage-confidential-documents/manage-confidential-documents');
+const {progressToListing} = require('./pages/progress-to-listing/progress-to-listing');
+const {listForHearing} = require('./pages/list-for-hearing/list-for-hearing');
+const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-reference');
+const {giveAllocationDirection} = require('./pages/give-allocation-direction/give-allocation-direction');
+const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
+const {manageInterveners} = require('./pages/manage-interveners/manage-interveners');
+const {addNote} = require('./pages/add-note/add-note');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -156,6 +163,15 @@ module.exports = () => {
     allocateJudge,
     uploadCaseFiles,
     manageConfidentialDocuments,
-    verifyContestedConfidentialTabData
+    verifyContestedConfidentialTabData,
+    progressToListing,
+    listForHearing,
+    getCaseRefFromScreen,
+    enterCaseReference,
+    giveAllocationDirection,
+    updateContactDetails,
+    manageInterveners,
+    contestedIntervenersTab,
+    addNote
   });
 };
