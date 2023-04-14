@@ -3,7 +3,6 @@ const verifyTabText = require('../data/verify-contested-tab-data.json');
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('helpers/utils.js');
 
-// eslint-disable max-len
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
@@ -13,7 +12,6 @@ const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 const judgeUserName = process.env.USERNAME_JUDGE;
 const judgePassword = process.env.PASSWORD_JUDGE;
 const nightlyTest = process.env.NIGHTLY_TEST;
-const caRef= `AUTO-${createCaseworkerReference()}`;
 const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Events');
