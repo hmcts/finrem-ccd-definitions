@@ -14,9 +14,10 @@ function assignContestedCase(caseId, respondentEmail) {
   I.waitForText('Selected cases', '10');
   I.wait('2');
   I.click({ css: '.govuk-input' });
-  I.fillField({ css: '.govuk-input' }, 'fr_');
-  I.waitForElement({ css: '#mat-option-1 > .mat-option-text' }, '30');
-  I.click({ css: '#mat-option-1 > .mat-option-text' });
+  I.wait('2');
+  I.fillField({ css: '.govuk-input' }, 'fr_respondent');
+  I.waitForElement({ css: '#mat-option-2 > .mat-option-text' }, '30');
+  I.click({ css: '#mat-option-2 > .mat-option-text' });
   I.wait('2');
   I.click('Add');
   I.wait('2');
