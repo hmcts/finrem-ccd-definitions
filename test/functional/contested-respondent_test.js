@@ -11,7 +11,7 @@ const respondentEmail = process.env.USERNAME_RESPONDENT_SOLICITOR;
 const nightlyTest = process.env.NIGHTLY_TEST;
 
 Feature('Create Cases for Respondent Journey ');
-// To be fixed in @DFR-585
+
 Scenario('Create and assign Contested Case To Respondent @pipeline @nightly', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
