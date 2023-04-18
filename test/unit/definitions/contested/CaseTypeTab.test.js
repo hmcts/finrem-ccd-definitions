@@ -80,10 +80,11 @@ describe('CaseTypeTab', () => {
     hearingBundleTab: 25,
     fdrDocumentsTab: 26,
     generalApplicationsTab: 27,
-    firstIntervener: 28,
-    secondIntervener: 29,
-    thirdIntervener: 30,
-    fourthIntervener: 31
+    caseFlagsTab: 28,
+    firstIntervener: 29,
+    secondIntervener: 30,
+    thirdIntervener: 31,
+    fourthIntervener: 32
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -132,6 +133,7 @@ describe('CaseTypeTab', () => {
       'hearingBundleTab',
       'fdrDocumentsTab',
       'generalApplicationsTab',
+      'caseFlagsTab',
       'firstIntervener',
       'secondIntervener',
       'thirdIntervener',
