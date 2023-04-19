@@ -6,6 +6,7 @@ async function listForInterimHearing() {
   I.click('Go');
   I.waitForText('List for Interim Hearing', '30');
   I.click('Add new');
+  I.wait('2');
   I.selectOption('select[id="interimHearings_0_interimHearingType"]', 'Directions (DIR)');
   I.fillField('input[id="interimHearings_0_interimHearingTimeEstimate"]', '10:30');
   I.fillField('input[id="interimHearingDate-day"]', '10');
