@@ -973,7 +973,7 @@
     "Name": "Update Contact Details",
     "Description": "Update solicitor contact details",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/get-user-roles",
-    "DisplayOrder": 57,
+    "DisplayOrder": 59,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
@@ -1038,5 +1038,31 @@
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "createFlags",
+    "Name": "Create Flag",
+    "Description": "Create Case Flag",
+    "DisplayOrder": 62,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "manageFlags",
+    "Name": "Manage Flags",
+    "Description": "Manage Case Flags",
+    "DisplayOrder": 63,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "N"
   }
 ]
