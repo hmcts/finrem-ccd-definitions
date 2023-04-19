@@ -16,7 +16,7 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 Feature('Consented case flag');
 
 
-Scenario('Caseworker creates case flag  @nightly @test1', async I => {
+Scenario('Caseworker creates case flag  @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
 
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
