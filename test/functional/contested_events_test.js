@@ -194,7 +194,9 @@ Scenario('Contested E2E @nightly', async I => {
     logger.info('-----------completed E2E contested test for -------------', caseId);
 }).retry(2);
 
-Scenario('Solicitor creates a general application @Johnny', async I => {
+
+//Hearing not required currently - modify so hearing is required and supporting document added
+Scenario('Solicitor creates a general application with no hearing required @Johnny', async I => {
     logger.info("General application test starting");
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -204,6 +206,7 @@ Scenario('Solicitor creates a general application @Johnny', async I => {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.solicitorCreateGeneralApplication();
+    await I.verifyGeneralApplicationTab();
 
     logger.info("General application test completed");
 })

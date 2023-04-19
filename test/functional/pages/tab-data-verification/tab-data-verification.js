@@ -464,6 +464,15 @@ function verifyManageBarristerEvent(caseType, eventName, stateName) {
   I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
 }
 
+function verifyGeneralApplicationTab() {
+  const I = this;
+  I.see(verifyContestedTabText.GeneralApplicationsTab.tabName);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.tableHeader);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.applicationReceivedFrom);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.createdBy);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.hearingRequired);
+}
+
 module.exports = {
   historyTab,
   applicantTab,
@@ -487,5 +496,6 @@ module.exports = {
   contestedIntervenersTab,
   schedule1Tab,
   changeOfRepresentativesTab,
-  verifyManageBarristerEvent
+  verifyManageBarristerEvent,
+  verifyGeneralApplicationTab
 };
