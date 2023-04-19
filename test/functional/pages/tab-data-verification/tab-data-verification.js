@@ -464,6 +464,11 @@ function verifyManageBarristerEvent(caseType, eventName, stateName) {
   I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
 }
 
+function verifyCaseFlagEvent(caseType, eventName, stateName) {
+  const I = this;
+  I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+}
+
 function verifyListForInterimHearing() {
   const I = this;
   I.see(verifyContestedTabText.listForInterimHearingTab.tabName);
@@ -503,5 +508,6 @@ module.exports = {
   schedule1Tab,
   changeOfRepresentativesTab,
   verifyManageBarristerEvent,
-  verifyListForInterimHearing
+  verifyListForInterimHearing,
+  verifyCaseFlagEvent
 };
