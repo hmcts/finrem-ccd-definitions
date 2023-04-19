@@ -4,9 +4,9 @@ function addNote() {
   I.selectOption('select[id="next-step"]', 'Add Note');
   I.wait('2');
   I.click('Go');
+  I.wait('2');
   I.waitForText('Notes');
   I.click('Add new');
-  I.wait('2');
   I.waitForText('Author');
   I.fillField('input[id="caseNotesCollection_0_caseNoteAuthor"]', 'Peter');
   I.fillField('input[id="caseNoteDate-day"]', '111');
