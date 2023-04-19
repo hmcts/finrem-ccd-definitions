@@ -464,6 +464,21 @@ function verifyManageBarristerEvent(caseType, eventName, stateName) {
   I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
 }
 
+function verifyListForInterimHearing() {
+  const I = this;
+  I.see(verifyContestedTabText.listForInterimHearingTab.tabName);
+  I.see(verifyContestedTabText.listForInterimHearingTab.typeOfHearing);
+  I.see(verifyContestedTabText.listForInterimHearingTab.timeEstimate);
+  I.see(verifyContestedTabText.listForInterimHearingTab.hearingDate);
+  I.see(verifyContestedTabText.listForInterimHearingTab.hearingTime);
+  I.see(verifyContestedTabText.listForInterimHearingTab.region);
+  I.see(verifyContestedTabText.listForInterimHearingTab.FRC);
+  I.see(verifyContestedTabText.listForInterimHearingTab.closestCourt);
+  I.see(verifyContestedTabText.listForInterimHearingTab.addInfo);
+  I.see(verifyContestedTabText.listForInterimHearingTab.uploadDocument);
+  I.see(verifyContestedTabText.listForInterimHearingTab.documentName);
+}
+
 module.exports = {
   historyTab,
   applicantTab,
@@ -487,5 +502,7 @@ module.exports = {
   contestedIntervenersTab,
   schedule1Tab,
   changeOfRepresentativesTab,
-  verifyManageBarristerEvent
+  verifyManageBarristerEvent,
+  //listForInterimHearingTab,
+  verifyListForInterimHearing
 };
