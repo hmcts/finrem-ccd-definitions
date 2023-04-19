@@ -503,6 +503,5 @@ module.exports = {
   schedule1Tab,
   changeOfRepresentativesTab,
   verifyManageBarristerEvent,
-  //listForInterimHearingTab,
   verifyListForInterimHearing
 };
