@@ -12,7 +12,7 @@ exports.config = {
         restart: true,
         keepCookies: false,
         keepBrowserState: false,
-      headless: false,
+      headless: true,
       ignoreHTTPSErrors: true,
       chrome: {
         ignoreHTTPSErrors: true,
