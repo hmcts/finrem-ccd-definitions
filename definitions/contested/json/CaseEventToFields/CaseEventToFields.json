@@ -10643,7 +10643,6 @@
     "ShowSummaryChangeOption": "Y",
     "RetainHiddenValue": "Y"
   },
-
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -11220,5 +11219,107 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "intervener4Represented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createFlags",
+    "CaseFieldID": "caseFlags",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createFlags",
+    "CaseFieldID": "applicantFlags",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createFlags",
+    "CaseFieldID": "respondentFlags",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createFlags",
+    "CaseFieldID": "flagLauncher",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "DisplayContextParameter": "#ARGUMENT(CREATE)"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageFlags",
+    "CaseFieldID": "caseFlags",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageFlags",
+    "CaseFieldID": "applicantFlags",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageFlags",
+    "CaseFieldID": "respondentFlags",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageFlags",
+    "CaseFieldID": "flagLauncher",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "DisplayContextParameter": "#ARGUMENT(UPDATE)"
   }
 ]

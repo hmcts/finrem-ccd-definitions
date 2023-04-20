@@ -2045,5 +2045,40 @@
     "Label": "Upload Consent Order",
     "FieldType": "Document",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseFlags",
+    "Label": "Case Flags",
+    "HintText": "Case Flags",
+    "FieldType": "Flags",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "applicantFlags",
+    "Label": "Flags for Applicant",
+    "HintText": "Flags for Applicant",
+    "FieldType": "Flags",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "respondentFlags",
+    "Label": "Flags for Respondent",
+    "HintText": "Flags for Respondent",
+    "FieldType": "Flags",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "flagLauncher",
+    "Label": "Launch the Flags screen",
+    "FieldType": "FlagLauncher",
+    "SecurityClassification": "Public"
   }
 ]
