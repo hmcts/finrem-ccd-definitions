@@ -196,7 +196,7 @@ module.exports = () => {
     createCaseFlag,
     validateCaseFlagAlertMessage,
     validateCaseFlagTab,
-    verifyCaseFlagEvent,,
+    verifyCaseFlagEvent,
     solicitorCreateGeneralApplication,
     verifyGeneralApplicationTab,
     caseWorkerReferGeneralApplication,
