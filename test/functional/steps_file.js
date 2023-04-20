@@ -202,7 +202,7 @@ module.exports = () => {
     verifyGeneralApplicationTab,
     caseWorkerReferGeneralApplication,
     judgeGeneralApplicationOutcome,
-    generalApplicationDirections
+    generalApplicationDirections,
     manageFlags
   });
 };
