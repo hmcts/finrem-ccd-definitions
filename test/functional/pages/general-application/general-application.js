@@ -8,7 +8,7 @@ function solicitorCreateGeneralApplication() {
     I.click("Add new");
     I.checkOption("Applicant");
     I.checkOption("No");
-    I.attachFile('input[type="file"]', '../data/confidentialDoc.pdf');
+    I.attachFile('input[type="file"]', '../data/dummy.pdf');
     I.wait("5");
     I.waitForContinueButtonEnabled();
     I.click("Continue");
