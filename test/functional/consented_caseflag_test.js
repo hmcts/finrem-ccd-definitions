@@ -16,11 +16,16 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 Feature('Consented case flag');
 
 
-/*Scenario('Caseworker creates case flag  @nightly @pipeline', async I => {
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag
-        //validate flag in tab
-}).retry(2);*/
+Scenario('Caseworker creates case flag  @nightly', async I => {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.createCaseFlag();
+    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
+    await I.validateCaseFlagAlertMessage();
+    await I.validateCaseFlagTab();
+}).retry(2);
 
 /*Scenario('Caseworker manage case flag  @nightly @pipeline', async I => {
         //TODO- add API call to create case - end state should be application drafted

@@ -150,6 +150,19 @@
     "applicantEmail": "fr_applicant_barrister3@mailinator.com",
     "respondentEmail": "fr_res_barrister1@mailinator.com"
   },
+  "listForInterimHearingTab": {
+    "tabName": "Scheduling and Listing for Interim Hearing",
+    "typeOfHearing": "Directions (DIR)",
+    "timeEstimate": "10:30",
+    "hearingDate" : "10 Jan 2022",
+    "hearingTime" : "11:30",
+    "region" : "High Court Family Division",
+    "FRC" : "High Court Family Division FRC",
+    "closestCourt": "High Court Family Division",
+    "addInfo": "This is an additional information",
+    "uploadDocument": "Yes",
+    "documentName": "dummy.pdf"
+  },
   "GeneralApplicationsTab": {
     "tabName": "General Applications",
     "tableHeader": "General Applications 1",
@@ -158,4 +171,5 @@
     "hearingRequired": "Yes",
     "timeEstimate": "10"
   }
+
 }

@@ -193,3 +193,17 @@ Scenario('Contested E2E @nightly', async I => {
     await I.sendOrder();
     logger.info('-----------completed E2E contested test for -------------', caseId);
 }).retry(2);
+
+Scenario('Caseworker runs List for Interim Hearing @nightly', async I => {
+    logger.info("List for Interim Hearing test starting");
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.listForInterimHearing();
+    await I.verifyListForInterimHearing();
+    logger.info("List Of Interim Hearing Completed");
+})
