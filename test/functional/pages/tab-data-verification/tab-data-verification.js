@@ -464,13 +464,15 @@ function verifyManageBarristerEvent(caseType, eventName, stateName) {
   I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
 }
 
-function verifyGeneralApplicationTab() {
+function verifyGeneralApplicationTab(status) {
   const I = this;
   I.see(verifyContestedTabText.GeneralApplicationsTab.tabName);
   I.see(verifyContestedTabText.GeneralApplicationsTab.tableHeader);
   I.see(verifyContestedTabText.GeneralApplicationsTab.applicationReceivedFrom);
   I.see(verifyContestedTabText.GeneralApplicationsTab.createdBy);
   I.see(verifyContestedTabText.GeneralApplicationsTab.hearingRequired);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.timeEstimate);
+  I.see(status);
 }
 
 module.exports = {

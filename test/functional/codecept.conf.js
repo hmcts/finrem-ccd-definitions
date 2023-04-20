@@ -7,6 +7,7 @@ exports.config = {
         smartWait: 50000,
         waitForTimeout: 90000,
       show: true,
+      windowSize: "1440x700",
       waitForNavigation: 'domcontentloaded',
         restart: true,
         keepCookies: false,

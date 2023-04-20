@@ -49,7 +49,7 @@ const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-orde
 const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-approve');
 const {uploadOrder} = require('./pages/upload-order/upload-order');
 const {sendOrder} = require('./pages/send-order/send-order');
-const {solicitorCreateGeneralApplication} = require('./pages/general-application/general-application');
+const {solicitorCreateGeneralApplication, caseWorkerReferGeneralApplication, judgeGeneralApplicationOutcome, generalApplicationDirections} = require('./pages/general-application/general-application');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -190,6 +190,9 @@ module.exports = () => {
     uploadOrder,
     sendOrder,
     solicitorCreateGeneralApplication,
-    verifyGeneralApplicationTab
+    verifyGeneralApplicationTab,
+    caseWorkerReferGeneralApplication,
+    judgeGeneralApplicationOutcome,
+    generalApplicationDirections
   });
 };

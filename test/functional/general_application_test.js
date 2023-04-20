@@ -19,8 +19,7 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('General Application Flow');
 
-//Hearing not required currently - modify so hearing is required and supporting document added
-Scenario('Solicitor creates a general application with no hearing required @Johnny', async I => {
+Scenario('General Application e2e Test @Johnny', async I => {
     logger.info("General application test starting");
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -29,8 +28,28 @@ Scenario('Solicitor creates a general application with no hearing required @John
 
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    await I.solicitorCreateGeneralApplication();
-    await I.verifyGeneralApplicationTab();
 
-    logger.info("General application test completed");
+    await I.solicitorCreateGeneralApplication();
+    await I.verifyGeneralApplicationTab("Created");
+
+    I.signOut();
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+
+    await I.caseWorkerReferGeneralApplication();
+    await I.verifyGeneralApplicationTab("Referred To Judge");
+
+    I.signOut();
+    I.signInIdam(judgeUserName, judgePassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+
+    await I.judgeGeneralApplicationOutcome();
+    await I.verifyGeneralApplicationTab("Approved");
+
+    I.signOut();
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+
+    await I.generalApplicationDirections();
+    await I.verifyGeneralApplicationTab("Approved, Completed");
 })
