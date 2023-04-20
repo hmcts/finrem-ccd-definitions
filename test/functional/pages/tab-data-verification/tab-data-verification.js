@@ -484,6 +484,17 @@ function verifyListForInterimHearing() {
   I.see(verifyContestedTabText.listForInterimHearingTab.documentName);
 }
 
+function verifyGeneralApplicationTab(status) {
+  const I = this;
+  I.see(verifyContestedTabText.GeneralApplicationsTab.tabName);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.tableHeader);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.applicationReceivedFrom);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.createdBy);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.hearingRequired);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.timeEstimate);
+  I.see(status);
+}
+
 module.exports = {
   historyTab,
   applicantTab,
@@ -509,5 +520,6 @@ module.exports = {
   changeOfRepresentativesTab,
   verifyManageBarristerEvent,
   verifyListForInterimHearing,
-  verifyCaseFlagEvent
+  verifyCaseFlagEvent,
+  verifyGeneralApplicationTab
 };
