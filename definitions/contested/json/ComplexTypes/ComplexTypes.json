@@ -1110,7 +1110,7 @@
     "ID": "FR_uploadCaseDocument",
     "ListElementCode": "caseDocumentParty",
     "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "FieldTypeParameter": "evidenceParty",
     "ElementLabel": "What type of document is this?",
     "FieldShowCondition": "caseDocumentFdr=\"DoNotShow\"",
     "SecurityClassification": "Public",
