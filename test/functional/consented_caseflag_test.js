@@ -11,39 +11,66 @@ const judgePassword = process.env.PASSWORD_JUDGE;
 const nightlyTest = process.env.NIGHTLY_TEST;
 const runningEnv = process.env.RUNNING_ENV;
 const solRef = `AUTO-${createSolicitorReference()}`;
+const { Logger } = require('@hmcts/nodejs-logging');
+const logger = Logger.getLogger('helpers/utils.js');
 
 
 Feature('Consented case flag');
 
-
 Scenario('Caseworker creates case flag  @nightly', async I => {
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
 
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
     await I.validateCaseFlagAlertMessage();
-    await I.validateCaseFlagTab();
+    await I.validateCaseFlagTab('Active');
 }).retry(2);
 
-/*Scenario('Caseworker manage case flag  @nightly @pipeline', async I => {
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag (this can be done via API call too)
-       //manage case flag
-       //validate inactivated flag in a tab
-}).retry(2);*/
+Scenario('Caseworker manage case flag  @nightly', async I => {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_issueApplication', './test/data/ccd-consented-case-worker-issue-data.json');
+    const caseFlag = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'createFlags', './test/data/ccd-consented-case-flag-data.json');
 
 
-/*Scenario('Judge creates case flag  @nightly @pipeline', async I => {
-        //TODO- add API call to create case via caseworker - end state should be application drafted
-        //add 1 case flag
-        //validate flag in tab
-}).retry(2);*/
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    const flagStatus = await I.manageFlags();
+    await I.clickTab('Case Flags');
+    await I.validateCaseFlagTab(flagStatus);
+    logger.info('manage case event completed and verified');
+}).retry(2);
 
-/*Scenario('Judge manage case flag  @nightly @pipeline', async I => {
-        //TODO- add API call to create case via caseworker- end state should be application drafted
-        //add 1 case flag (this can be done via API call too)
-       //manage case flag
-       //validate inactivated flag in a tab
-}).retry(2);*/
+
+Scenario('Judge creates case flag  @nightly', async I => {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_issueApplication', './test/data/ccd-consented-case-worker-issue-data.json');
+
+    I.signInIdam(judgeUserName, judgePassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.createCaseFlag();
+    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.issueApplicationEndState);
+    await I.validateCaseFlagAlertMessage();
+    await I.validateCaseFlagTab('Active');
+    logger.info('manage case event completed and verified');
+}).retry(2);
+
+Scenario('Judge manage case flag  @nightly', async I => {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_issueApplication', './test/data/ccd-consented-case-worker-issue-data.json');
+    const caseFlag = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'createFlags', './test/data/ccd-consented-case-flag-data.json');
+
+    I.signInIdam(judgeUserName, judgePassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    const flagStatus = await I.manageFlags();
+    await I.clickTab('Case Flags');
+    await I.validateCaseFlagTab(flagStatus);
+    logger.info('manage case event completed and verified');
+}).retry(2);

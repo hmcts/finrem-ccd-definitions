@@ -19,7 +19,7 @@ async function createCaseFlag(){
   I.click('Next');
 
   I.waitForText('Add comments for this flag');
-  I.fillField('Add comments for this flag', 'This is case flag for vulnerable user');
+  I.fillField('Add comments for this flag', 'this is comment');
   I.click('Next');
   I.waitForText('Submit');
   I.click('Submit');
@@ -35,12 +35,17 @@ async function validateCaseFlagAlertMessage(){
   I.waitForText('Case flags');
 }
 
-async function validateCaseFlagTab() {
+async function validateCaseFlagTab(flagStatus) {
   const I = this;
   I.see('Vulnerable user');
-  I.see('This is case flag for vulnerable user');
-  const flagStatus = I.grabTextFrom('//*[@id="case-viewer-field-read--flagLauncher"]/span/ccd-field-read/div/ccd-field-read-label/div/ccd-read-case-flag-field/div[1]/ccd-case-flag-table/table/tbody[2]/tr/td[5]/strong');
-  assert(flagStatus, 'Active');
+  I.see('this is comment');
+  const actualFlagStatus = I.grabTextFrom('//*[@id="case-viewer-field-read--flagLauncher"]/span/ccd-field-read/div/ccd-field-read-label/div/ccd-read-case-flag-field/div[1]/ccd-case-flag-table/table/tbody[2]/tr/td[5]/strong');
+  if (flagStatus.ignoreCase=== 'Active') {
+    assert(actualFlagStatus, flagStatus);
+  } else {
+    //Inactive
+    assert(actualFlagStatus, flagStatus);
+  }
   I.see('Case level flags');
 }
 

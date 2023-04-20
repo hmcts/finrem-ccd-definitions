@@ -52,6 +52,7 @@ const {sendOrder} = require('./pages/send-order/send-order');
 const {listForInterimHearing} = require('./pages/list-of-interim-hearing/list-of-interim-hearing');
 const {createCaseFlag, validateCaseFlagAlertMessage, validateCaseFlagTab} = require('./pages/create-case-flag/create-case-flag');
 const {manageBarristerApplicant, manageBarristerRespondent} = require('./pages/manage-barrister/manage-barrister');
+const {manageFlags} = require('./pages/manage-flags/manage-case-flags');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -196,5 +197,6 @@ module.exports = () => {
     validateCaseFlagAlertMessage,
     validateCaseFlagTab,
     verifyCaseFlagEvent,
+    manageFlags
   });
 };
