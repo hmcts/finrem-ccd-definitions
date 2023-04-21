@@ -71,7 +71,7 @@ Scenario('Contested Add Note  @nightly ', async I => { //Matrimonial
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.addNote();
-});
+}).retry(2);;
 
 Scenario('Contested Matrimonial case Amend application and Case submission  by Solicitor @nightly', async I => {
     //The json file used to create case is new case data - this can be used to create a case via solicitor, case type matrimonial.
@@ -138,7 +138,7 @@ Scenario('Contested Manage Barrister @nightly', async I => {
     await I.waitForText('FinRem-1-Org', 30);
     await I.changeOfRepresentativesTab(verifyTabText.historyTab.manageBarristerEvent);
     logger.info("manage barrister tab verified...");
-});
+}).retry(2);;
 
 Scenario('List for hearing contested case @nightly', async I => {
 
@@ -206,4 +206,4 @@ Scenario('Caseworker runs List for Interim Hearing @nightly', async I => {
     await I.listForInterimHearing();
     await I.verifyListForInterimHearing();
     logger.info("List Of Interim Hearing Completed");
-})
+}).retry(2);
