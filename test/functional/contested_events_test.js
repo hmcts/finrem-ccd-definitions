@@ -71,7 +71,7 @@ Scenario('Contested Add Note  @nightly ', async I => { //Matrimonial
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.addNote();
-}).retry(2);;
+}).retry(2);
 
 Scenario('Contested Matrimonial case Amend application and Case submission  by Solicitor @nightly', async I => {
     //The json file used to create case is new case data - this can be used to create a case via solicitor, case type matrimonial.
