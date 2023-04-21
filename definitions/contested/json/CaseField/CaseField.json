@@ -5352,6 +5352,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv4FdrCaseDocuments",
+    "Label": "FDR Case documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv4HearingBundles",
     "Label": "Hearing Bundles",
     "FieldType": "Collection",
@@ -5435,6 +5444,15 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv4Other",
     "Label": "Other",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv3FdrCaseDocuments",
+    "Label": "FDR Case documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"
@@ -5532,6 +5550,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv2FdrCaseDocuments",
+    "Label": "FDR Case documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv2HearingBundles",
     "Label": "Hearing Bundles",
     "FieldType": "Collection",
@@ -5615,6 +5642,15 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv2Other",
     "Label": "Other",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv1FdrCaseDocuments",
+    "Label": "FDR Case documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"

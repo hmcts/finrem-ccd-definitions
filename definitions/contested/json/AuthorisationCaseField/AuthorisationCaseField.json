@@ -13303,6 +13303,34 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv1FdrCaseDocuments",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv1FdrCaseDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv1FdrCaseDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv1FdrCaseDocuments",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv1HearingBundles",
     "UserRole": "[INTVRSOLICITOR1]",
     "CRUD": "CRU"
@@ -13583,6 +13611,34 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv2FdrCaseDocuments",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv2FdrCaseDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv2FdrCaseDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv2FdrCaseDocuments",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2HearingBundles",
     "UserRole": "[INTVRSOLICITOR2]",
     "CRUD": "CRU"
@@ -13605,7 +13661,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2HearingBundles",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER2]",
     "CRUD": "CRU"
   },
   {
@@ -13633,7 +13689,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2Summaries",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER2]",
     "CRUD": "CRU"
   },
   {
@@ -13661,7 +13717,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2Chronologies",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER2]",
     "CRUD": "CRU"
   },
   {
@@ -13689,7 +13745,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2CorrespDocs",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER2]",
     "CRUD": "CRU"
   },
   {
@@ -13717,7 +13773,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2ExpertEvidence",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER2]",
     "CRUD": "CRU"
   },
   {
@@ -13745,7 +13801,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2FormEsExhibits",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER2]",
     "CRUD": "CRU"
   },
   {
@@ -13773,7 +13829,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2FormHs",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER2]",
     "CRUD": "CRU"
   },
   {
@@ -13801,7 +13857,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2Other",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER2]",
     "CRUD": "CRU"
   },
   {
@@ -13829,7 +13885,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2Qa",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER2]",
     "CRUD": "CRU"
   },
   {
@@ -13857,7 +13913,35 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv2StmtsExhibits",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv3FdrCaseDocuments",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv3FdrCaseDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv3FdrCaseDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv3FdrCaseDocuments",
+    "UserRole": "[INTVRBARRISTER3]",
     "CRUD": "CRU"
   },
   {
@@ -13885,7 +13969,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv3HearingBundles",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER3]",
     "CRUD": "CRU"
   },
   {
@@ -13913,7 +13997,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv3Summaries",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER3]",
     "CRUD": "CRU"
   },
   {
@@ -13941,7 +14025,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv3Chronologies",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER3]",
     "CRUD": "CRU"
   },
   {
@@ -13969,7 +14053,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv3CorrespDocs",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER3]",
     "CRUD": "CRU"
   },
   {
@@ -13997,7 +14081,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv3ExpertEvidence",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER3]",
     "CRUD": "CRU"
   },
   {
@@ -14025,7 +14109,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv3FormEsExhibits",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER3]",
     "CRUD": "CRU"
   },
   {
@@ -14053,7 +14137,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv3FormHs",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER3]",
     "CRUD": "CRU"
   },
   {
@@ -14081,7 +14165,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv3Other",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER3]",
     "CRUD": "CRU"
   },
   {
@@ -14109,7 +14193,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv3Qa",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER3]",
     "CRUD": "CRU"
   },
   {
@@ -14137,7 +14221,35 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv3StmtsExhibits",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv4FdrCaseDocuments",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv4FdrCaseDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv4FdrCaseDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intv4FdrCaseDocuments",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14165,7 +14277,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv4HearingBundles",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14193,7 +14305,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv4Summaries",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14221,7 +14333,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv4Chronologies",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14249,7 +14361,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv4CorrespDocs",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14277,7 +14389,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv4ExpertEvidence",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14305,7 +14417,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv4FormEsExhibits",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14333,7 +14445,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv4FormHs",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14361,7 +14473,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv4Other",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14389,7 +14501,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv4Qa",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14417,7 +14529,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "intv4StmtsExhibits",
-    "UserRole": "[INTVRBARRISTER1]",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   }
 ]

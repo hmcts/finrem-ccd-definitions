@@ -5172,6 +5172,15 @@
   {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "intv1Documents",
+    "TabLabel": "Intervener 1 documents",
+    "TabDisplayOrder": 33,
+    "CaseFieldID": "intv1FdrCaseDocuments",
+    "TabFieldDisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "intv2Documents",
     "TabLabel": "Intervener 2 documents",
     "TabDisplayOrder": 34,
@@ -5258,6 +5267,15 @@
     "TabDisplayOrder": 34,
     "CaseFieldID": "intv2Qa",
     "TabFieldDisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "intv2Documents",
+    "TabLabel": "Intervener 2 documents",
+    "TabDisplayOrder": 34,
+    "CaseFieldID": "intv2FdrCaseDocuments",
+    "TabFieldDisplayOrder": 11
   },
   {
     "LiveFrom": "01/02/2021",
@@ -5352,6 +5370,15 @@
   {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "intv3Documents",
+    "TabLabel": "Intervener 3 documents",
+    "TabDisplayOrder": 35,
+    "CaseFieldID": "intv3FdrCaseDocuments",
+    "TabFieldDisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "intv4Documents",
     "TabLabel": "Intervener 4 documents",
     "TabDisplayOrder": 36,
@@ -5438,5 +5465,14 @@
     "TabDisplayOrder": 36,
     "CaseFieldID": "intv4Qa",
     "TabFieldDisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "intv4Documents",
+    "TabLabel": "Intervener 4 documents",
+    "TabDisplayOrder": 36,
+    "CaseFieldID": "intv4FdrCaseDocuments",
+    "TabFieldDisplayOrder": 11
   }
 ]
