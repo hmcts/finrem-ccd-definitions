@@ -120,7 +120,7 @@ Scenario('Contested Add Note @nightly ', async I => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.addNote();
-});
+}).retry(2);
 
 Scenario('Contested Manage Barrister @nightly', async I => {
     //Matrimonial
@@ -138,7 +138,7 @@ Scenario('Contested Manage Barrister @nightly', async I => {
     await I.waitForText('FinRem-1-Org', 30);
     await I.changeOfRepresentativesTab(verifyTabText.historyTab.manageBarristerEvent);
     logger.info("manage barrister tab verified...");
-}).retry(2);;
+}).retry(2);
 
 Scenario('List for hearing contested case @nightly', async I => {
 
