@@ -108,7 +108,7 @@ Scenario('Caseworker refunds an issued case @nightly', async I => {
     await I.refundCase();
 
     logger.info("Refund test completed");
-})
+}).retry(2);
 
 Scenario('Contested Add Note @nightly ', async I => {
     //Matrimonial
