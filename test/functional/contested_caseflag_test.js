@@ -19,53 +19,75 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Case flag');
 
+Scenario('Caseworker creates case flag  @nightly', async I => {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.createCaseFlag();
+    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
+    await I.validateCaseFlagAlertMessage();
+    await I.validateCaseFlagTab('Active');
+    logger.info('case flag created and verified');
+}).retry(2);
+
+Scenario('Caseworker manage case flag  @nightly', async I => {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+    const caseFlag = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'createFlags', './test/data/ccd-consented-case-flag-data.json');
+
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    const flagStatus = await I.manageFlags();
+    await I.clickTab('Case Flags');
+    await I.validateCaseFlagTab(flagStatus);
+    logger.info('manage case event completed and verified');
+}).retry(2);
 
 
+Scenario('Judge creates case flag  @nightly', async I => {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
 
-/*Scenario('Caseworker creates case flag  @nightly @pipeline', async I => {
-//case type - matrimonial
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag
-        //validate flag in tab
-}).retry(2);*/
-
-/*Scenario('Caseworker manage case flag  @nightly @pipeline', async I => {
-//case type - matrimonial
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag (this can be done via API call too)
-       //manage case flag
-       //validate inactivated flag in a tab
-}).retry(2);*/
+    I.signInIdam(judgeUserName, judgePassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.createCaseFlag();
+    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
+    await I.validateCaseFlagAlertMessage();
+    await I.validateCaseFlagTab('Active');
+    logger.info('case flag created and verified');
+}).retry(2);
 
 
-/*Scenario('Judge creates case flag  @nightly @pipeline', async I => {
-//case type - matrimonial
-        //TODO- add API call to create case via caseworker - end state should be application drafted
-        //add 1 case flag
-        //validate flag in tab
-}).retry(2);*/
+Scenario('Caseworker creates case flag for schedule 1 case @nightly', async I => {
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
 
-/*Scenario('Judge manage case flag  @nightly @pipeline', async I => {
-//case type - matrimonial
-        //TODO- add API call to create case via caseworker- end state should be application drafted
-        //add 1 case flag (this can be done via API call too)
-       //manage case flag
-       //validate inactivated flag in a tab
-}).retry(2);*/
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.createCaseFlag();
+    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
+    await I.validateCaseFlagAlertMessage();
+    await I.validateCaseFlagTab('Active');
+    logger.info('case flag created and verified for schedule 1 case');
+}).retry(2);
 
-/*Scenario('Caseworker creates case flag  @nightly @pipeline', async I => {
-//case type - schedule 1
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag
-        //validate flag in tab
-}).retry(2);*/
+Scenario('Create case flag with General Application @nightly', async I => {
 
-/*Scenario('Caseworker manage case flag  @nightly @pipeline', async I => {
-//case type - schedule 1
-        //TODO- add API call to create case - end state should be application drafted
-        //add 1 case flag (this can be done via API call too)
-       //manage case flag
-       //validate inactivated flag in a tab
-}).retry(2);*/
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+    const createGeneralApplication = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'createGeneralApplication', './test/data/ccd-contested-general-application-data.json');
+    const referToJudgeApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_generalApplicationReferToJudge', './test/data/ccd-contested-general-application-refer-to-judge-data.json');
 
-//GA and paper case -case flag
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.createCaseFlag();
+    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.awaitingJudiciaryResponseEndState);
+    await I.validateCaseFlagAlertMessage();
+    await I.validateCaseFlagTab('Active');
+    logger.info('case flag created and verified for schedule 1 case');
+
+}).retry(2);
+//paper case -case flag

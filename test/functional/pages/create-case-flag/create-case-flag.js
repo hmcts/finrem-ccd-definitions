@@ -40,12 +40,7 @@ async function validateCaseFlagTab(flagStatus) {
   I.see('Vulnerable user');
   I.see('this is comment');
   const actualFlagStatus = I.grabTextFrom('//*[@id="case-viewer-field-read--flagLauncher"]/span/ccd-field-read/div/ccd-field-read-label/div/ccd-read-case-flag-field/div[1]/ccd-case-flag-table/table/tbody[2]/tr/td[5]/strong');
-  if (flagStatus.ignoreCase=== 'Active') {
-    assert(actualFlagStatus, flagStatus);
-  } else {
-    //Inactive
-    assert(actualFlagStatus, flagStatus);
-  }
+  assert(actualFlagStatus, flagStatus);
   I.see('Case level flags');
 }
 

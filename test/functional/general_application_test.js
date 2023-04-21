@@ -17,7 +17,7 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 const caRef= `AUTO-${createCaseworkerReference()}`;
 const runningEnv = process.env.RUNNING_ENV;
 
-Feature('General Application Flow');
+Feature('General Application');
 
 Scenario('General Application e2e Test @nightly', async I => {
     logger.info("General application test starting");
