@@ -91,7 +91,7 @@ Scenario('Create case flag with General Application @nightly', async I => {
 
 }).retry(2);
 
-Scenario('Case flag for Paper Case @nightly @test1', async I => {
+Scenario('Case flag for Paper Case @nightly', async I => {
     const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
 
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
