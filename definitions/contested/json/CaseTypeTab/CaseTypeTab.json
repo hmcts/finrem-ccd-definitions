@@ -4660,13 +4660,53 @@
     "TabFieldDisplayOrder": 13
   },
   {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlagsTab",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 28,
+    "CaseFieldID": "caseFlags",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlagsTab",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 28,
+    "CaseFieldID": "applicantFlags",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlagsTab",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 28,
+    "CaseFieldID": "respondentFlags",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "TabFieldDisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFlagsTab",
+    "TabLabel": "Case Flags",
+    "TabDisplayOrder": 28,
+    "CaseFieldID": "flagLauncher",
+    "TabFieldDisplayOrder": 4,
+    "DisplayContextParameter": "#ARGUMENT(READ)"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "Channel": "CaseWorker",
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1Name",
-    "TabDisplayOrder": 28,
+    "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 1
   },
   {
@@ -4675,7 +4715,7 @@
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1Address",
-    "TabDisplayOrder": 28,
+    "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 2
   },
   {
@@ -4684,7 +4724,7 @@
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1Email",
-    "TabDisplayOrder": 28,
+    "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 3
   },
   {
@@ -4693,7 +4733,7 @@
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1Phone",
-    "TabDisplayOrder": 28,
+    "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 4
   },
   {
@@ -4702,7 +4742,7 @@
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1Represented",
-    "TabDisplayOrder": 28,
+    "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 5
   },
   {
@@ -4711,7 +4751,7 @@
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1DateAdded",
-    "TabDisplayOrder": 28,
+    "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 6
   },
   {
@@ -4721,7 +4761,7 @@
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1SolName",
-    "TabDisplayOrder": 28,
+    "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 7
   },
   {
@@ -4731,7 +4771,7 @@
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1SolEmail",
-    "TabDisplayOrder": 28,
+    "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 8
   },
   {
@@ -4741,7 +4781,7 @@
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1SolPhone",
-    "TabDisplayOrder": 28,
+    "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 9
   },
   {
@@ -4751,7 +4791,7 @@
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1Organisation",
-    "TabDisplayOrder": 28,
+    "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 10
   },
   {
@@ -4761,7 +4801,7 @@
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2Name",
-    "TabDisplayOrder": 29,
+    "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 1
   },
   {
@@ -4770,7 +4810,7 @@
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2Address",
-    "TabDisplayOrder": 29,
+    "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 2
   },
   {
@@ -4779,7 +4819,7 @@
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2Email",
-    "TabDisplayOrder": 29,
+    "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 3
   },
   {
@@ -4788,7 +4828,7 @@
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2Phone",
-    "TabDisplayOrder": 29,
+    "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 4
   },
   {
@@ -4797,7 +4837,7 @@
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2Represented",
-    "TabDisplayOrder": 29,
+    "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 5
   },
   {
@@ -4806,7 +4846,7 @@
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2DateAdded",
-    "TabDisplayOrder": 29,
+    "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 6
   },
   {
@@ -4816,7 +4856,7 @@
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2SolName",
-    "TabDisplayOrder": 29,
+    "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 7
   },
   {
@@ -4826,7 +4866,7 @@
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2SolEmail",
-    "TabDisplayOrder": 29,
+    "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 8
   },
   {
@@ -4836,7 +4876,7 @@
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2SolPhone",
-    "TabDisplayOrder": 29,
+    "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 9
   },
   {
@@ -4846,7 +4886,7 @@
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2Organisation",
-    "TabDisplayOrder": 29,
+    "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 10
   },
   {
@@ -4856,7 +4896,7 @@
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3Name",
-    "TabDisplayOrder": 30,
+    "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 1
   },
   {
@@ -4865,7 +4905,7 @@
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3Address",
-    "TabDisplayOrder": 30,
+    "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 2
   },
   {
@@ -4874,7 +4914,7 @@
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3Email",
-    "TabDisplayOrder": 30,
+    "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 3
   },
   {
@@ -4883,7 +4923,7 @@
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3Phone",
-    "TabDisplayOrder": 30,
+    "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 4
   },
   {
@@ -4892,7 +4932,7 @@
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3Represented",
-    "TabDisplayOrder": 30,
+    "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 5
   },
   {
@@ -4901,7 +4941,7 @@
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3DateAdded",
-    "TabDisplayOrder": 30,
+    "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 6
   },
   {
@@ -4911,7 +4951,7 @@
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3SolName",
-    "TabDisplayOrder": 30,
+    "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 7
   },
   {
@@ -4921,7 +4961,7 @@
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3SolEmail",
-    "TabDisplayOrder": 30,
+    "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 8
   },
   {
@@ -4931,7 +4971,7 @@
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3SolPhone",
-    "TabDisplayOrder": 30,
+    "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 9
   },
   {
@@ -4941,7 +4981,7 @@
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3Organisation",
-    "TabDisplayOrder": 30,
+    "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 10
   },
   {
@@ -4951,7 +4991,7 @@
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4Name",
-    "TabDisplayOrder": 31,
+    "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 1
   },
   {
@@ -4960,7 +5000,7 @@
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4Address",
-    "TabDisplayOrder": 31,
+    "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 2
   },
   {
@@ -4969,7 +5009,7 @@
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4Email",
-    "TabDisplayOrder": 31,
+    "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 3
   },
   {
@@ -4978,7 +5018,7 @@
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4Phone",
-    "TabDisplayOrder": 31,
+    "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 4
   },
   {
@@ -4987,7 +5027,7 @@
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4Represented",
-    "TabDisplayOrder": 31,
+    "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 5
   },
   {
@@ -4996,7 +5036,7 @@
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4DateAdded",
-    "TabDisplayOrder": 31,
+    "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 6
   },
   {
@@ -5006,7 +5046,7 @@
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4SolName",
-    "TabDisplayOrder": 31,
+    "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 7
   },
   {
@@ -5016,7 +5056,7 @@
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4SolEmail",
-    "TabDisplayOrder": 31,
+    "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 8
   },
   {
@@ -5026,7 +5066,7 @@
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4SolPhone",
-    "TabDisplayOrder": 31,
+    "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 9
   },
   {
@@ -5036,7 +5076,7 @@
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4Organisation",
-    "TabDisplayOrder": 31,
+    "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 10
   }
 ]
