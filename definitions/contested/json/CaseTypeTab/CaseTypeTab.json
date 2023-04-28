@@ -4666,8 +4666,7 @@
     "TabLabel": "Case Flags",
     "TabDisplayOrder": 28,
     "CaseFieldID": "caseFlags",
-    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
-    "TabShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "FieldShowCondition": "flagLauncher=\"DUMMY_FIELD_TO_HIDE\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -4677,7 +4676,7 @@
     "TabLabel": "Case Flags",
     "TabDisplayOrder": 28,
     "CaseFieldID": "applicantFlags",
-    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "FieldShowCondition": "flagLauncher=\"DUMMY_FIELD_TO_HIDE\"",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -4687,7 +4686,7 @@
     "TabLabel": "Case Flags",
     "TabDisplayOrder": 28,
     "CaseFieldID": "respondentFlags",
-    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "FieldShowCondition": "flagLauncher=\"DUMMY_FIELD_TO_HIDE\"",
     "TabFieldDisplayOrder": 3
   },
   {
