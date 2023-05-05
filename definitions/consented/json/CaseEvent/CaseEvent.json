@@ -785,8 +785,8 @@
     "DisplayOrder": 45,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-email-start",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-email",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },

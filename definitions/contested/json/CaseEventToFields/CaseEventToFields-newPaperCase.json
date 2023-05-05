@@ -424,6 +424,18 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "01/04/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "applicantAddressConfidential",
+    "PageFieldDisplayOrder": 8,
+    "DisplayContext": "MANDATORY",
+    "PageID": 3,
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_newPaperCase",
@@ -685,6 +697,19 @@
     "CaseFieldID": "respondentEmail",
     "PageFieldDisplayOrder": 16,
     "DisplayContext": "OPTIONAL",
+    "PageID": 6,
+    "PageDisplayOrder": 6,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "respondentRepresented=\"No\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/04/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "respondentAddressConfidential",
+    "PageFieldDisplayOrder": 17,
+    "DisplayContext": "MANDATORY",
     "PageID": 6,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
@@ -2541,6 +2566,18 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "01/04/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "applicantAddressConfidential",
+    "PageFieldDisplayOrder": 8,
+    "DisplayContext": "MANDATORY",
+    "PageID": 4,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendPaperApplication",
@@ -2802,6 +2839,19 @@
     "CaseFieldID": "respondentEmail",
     "PageFieldDisplayOrder": 16,
     "DisplayContext": "OPTIONAL",
+    "PageID": 7,
+    "PageDisplayOrder": 7,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "respondentRepresented=\"No\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/04/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "respondentAddressConfidential",
+    "PageFieldDisplayOrder": 17,
+    "DisplayContext": "MANDATORY",
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
