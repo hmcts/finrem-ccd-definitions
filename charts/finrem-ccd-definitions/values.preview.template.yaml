@@ -70,10 +70,6 @@ finrem-cos:
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
       IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-      DOCUMENT_GENERATOR_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-dgcs
-      FINREM_NOTIFICATION_SERVICE_BASE_URL: http://${SERVICE_NAME}-finrem-ns
-      PAYMENT_SERVICE_API_BASEURL: http://${SERVICE_NAME}-finrem-ps
-      EVIDENCE_MANAGEMENT_SERVICE_BASEURL: http://${SERVICE_NAME}-finrem-emca
       ACA_SERVICE_API_BASEURL: http://${SERVICE_NAME}-aac-manage-case-assignment
       CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
       AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY}
@@ -82,6 +78,10 @@ finrem-cos:
       FINREM_SYSTEMUPDATE_PASSWORD: ${FINREM_SYSTEMUPDATE_PASSWORD}
       FINREM_IDAM_CLIENT_SECRET: ${FINREM_IDAM_CLIENT_SECRET}
       CTSC_OPENING_HOURS: from 8am to 6pm, Monday to Friday
+      PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
+      PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
+      SEND_LETTER_SERVICE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
+      DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
     keyVaults:
       finrem:
         secrets:
@@ -97,72 +97,10 @@ finrem-cos:
             alias: FINREM_SYSTEMUPDATE_PASSWORD
           - name: finrem-idam-client-secret
             alias: FINREM_IDAM_CLIENT_SECRET
-
-
-finrem-dgcs:
-  enabled: true
-  java:
-    imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/dgcs:latest
-    releaseNameOverride: ${SERVICE_NAME}-finrem-dgcs
-    ingressHost: dgcs-${SERVICE_FQDN}
-    environment:
-        EVIDENCE_MANAGEMENT_CLIENT_API_BASEURL: http://${SERVICE_NAME}-finrem-emca
-        SEND_LETTER_SERIVCE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
-        AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
-        IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_DOC_GEN_SERVICE_S2S_KEY}
-        PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
-    keyVaults:
-      finrem:
-        secrets:
-          - name: finrem-doc-s2s-auth-secret
-            alias: FINREM_DOC_GEN_SERVICE_S2S_KEY
-          - name: idam-secret
-            alias: IDAM_CLIENT_SECRET
           - name: docmosis-api-key
             alias: PDF_SERVICE_ACCESS_KEY
           - name: docmosis-endpoint
             alias: PDF_SERVICE_BASEURL
-          - name: AppInsightsInstrumentationKey
-            alias: APP_INSIGHTS_INSTRUMENTATION_KEY
-
-
-finrem-emca:
-  enabled: true
-  java:
-    imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/emca:latest
-    releaseNameOverride: ${SERVICE_NAME}-finrem-emca
-    ingressHost: emca-${SERVICE_FQDN}
-    environment:
-        IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
-        AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-        DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
-        AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_DOC_GEN_SERVICE_S2S_KEY}
-    keyVaults:
-      finrem:
-        secrets:
-          - name: finrem-doc-s2s-auth-secret
-            alias: idam.auth.secret
-          - name: AppInsightsInstrumentationKey
-            alias: APP_INSIGHTS_INSTRUMENTATION_KEY
-
-finrem-ns:
-  enabled: true
-  java:
-    imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/ns:latest
-    releaseNameOverride: ${SERVICE_NAME}-finrem-ns
-    ingressHost: ns-${SERVICE_FQDN}
-    environment:
-      UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
-    keyVaults:
-      finrem:
-        secrets:
-          - name: AppInsightsInstrumentationKey
-            alias: APP_INSIGHTS_INSTRUMENTATION_KEY
           - name: gov-uk-notification-key
             alias: UK_GOV_NOTIFY_API_KEY
 
@@ -270,6 +208,7 @@ ccd:
         DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin,aac_manage_case_assignment
         IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
         OIDC_ISSUER: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
+        WELSH_TRANSLATION_ENABLED: false
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
       ingressHost: ccd-definition-store-${SERVICE_FQDN}
@@ -347,6 +286,7 @@ ccd:
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
+    imageTag: "7.17.1"
     clusterName: "es"
     replicas: 1
     initResources:
@@ -378,25 +318,29 @@ ccd:
       requests:
         cpu: 1000m
         memory: 1024Mi
-    image:
-      repository: hmctspublic.azurecr.io/ccd/logstash
-      tag: ccd-divorce-logstash-latest
-      pullPolicy: Always
+    image: hmctspublic.azurecr.io/ccd/logstash
+    imageTag: "ccd-divorce-logstash-latest"
     logstashJavaOpts: -Xmx1g -Xms512M
+    extraEnvs:
+      - name: DB_URL
+        value: jdbc:postgresql://${SERVICE_NAME}-postgresql:5432/data-store?ssl=disable&stringtype=unspecified
+      - name: DB_USER
+        value: hmcts
+      - name: DB_PWD
+        value: hmcts
+      - name: ES_HOSTS
+        value: http://${SERVICE_NAME}-es-master:9200
+      - name: ES_DATA_NODES_URL
+        value: http://${SERVICE_NAME}-es-master:9200
+      - name: ELASTIC_SEARCH_DATA_NODES_HOSTS
+        value: http://${SERVICE_NAME}-es-master:9200
+      - name: ES_URL
+        value: http://${SERVICE_NAME}-es-master:9200
     persistence:
       enabled: false
     volumeMounts:
       - name: pipeline
         mountPath: /usr/share/logstash/files
-    elasticsearch:
-      host: ${SERVICE_NAME}-es-master
-      port: 9200
-    configTpl:
-      xpack.monitoring.enabled: "false"
-      db.url: jdbc:postgresql://${SERVICE_NAME}-postgresql:5432/data-store?ssl=disable&stringtype=unspecified
-      db.user: hmcts
-      db.pwd: hmcts
-      es.data.nodes.url: http://${SERVICE_NAME}-es-master:9200
     livenessProbe:
       initialDelaySeconds: 90
 
