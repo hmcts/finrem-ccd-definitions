@@ -1,0 +1,66 @@
+[
+  {
+    "LiveFrom": "05/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "ordersToShare",
+    "Label": "Select Order/Orders",
+    "FieldType": "DynamicMultiSelectList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "05/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "partiesInCase",
+    "Label": "Who should receive this order?",
+    "FieldType": "DynamicMultiSelectList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalDocument",
+    "Label": "Please upload any additional document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv1OrderCollection",
+    "Label": "Final Orders",
+    "HintText": "Final Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intvOrderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv2OrderCollection",
+    "Label": "Final Orders",
+    "HintText": "Final Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intvOrderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv3OrderCollection",
+    "Label": "Final Orders",
+    "HintText": "Final Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intvOrderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv4OrderCollection",
+    "Label": "Final Orders",
+    "HintText": "Final Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intvOrderCollection",
+    "SecurityClassification": "Public"
+  }
+]
