@@ -489,6 +489,18 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "01/04/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "applicantAddressConfidential",
+    "PageFieldDisplayOrder": 8,
+    "DisplayContext": "MANDATORY",
+    "PageID": 4,
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
@@ -750,6 +762,19 @@
     "CaseFieldID": "respondentEmail",
     "PageFieldDisplayOrder": 16,
     "DisplayContext": "OPTIONAL",
+    "PageID": 7,
+    "PageDisplayOrder": 7,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "respondentRepresented=\"No\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/04/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "respondentAddressConfidential",
+    "PageFieldDisplayOrder": 17,
+    "DisplayContext": "MANDATORY",
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
@@ -4096,6 +4121,18 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "01/04/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "applicantAddressConfidential",
+    "PageFieldDisplayOrder": 8,
+    "DisplayContext": "MANDATORY",
+    "PageID": 4,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendApplication",
@@ -4357,6 +4394,19 @@
     "CaseFieldID": "respondentEmail",
     "PageFieldDisplayOrder": 16,
     "DisplayContext": "OPTIONAL",
+    "PageID": 7,
+    "PageDisplayOrder": 7,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "respondentRepresented=\"No\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/04/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "respondentAddressConfidential",
+    "PageFieldDisplayOrder": 17,
+    "DisplayContext": "MANDATORY",
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
@@ -6457,7 +6507,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_generalEmail",
     "CaseFieldID": "generalEmailCreatedBy",
-    "PageFieldDisplayOrder": 1,
+    "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageLabel": "Create General Email",
@@ -6470,11 +6520,24 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_generalEmail",
     "CaseFieldID": "generalEmailBody",
-    "PageFieldDisplayOrder": 1,
+    "PageFieldDisplayOrder": 3,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageLabel": "Create General Email",
     "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalEmail",
+    "CaseFieldID": "generalEmailUploadedDocument",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageLabel": "Create General Email",
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -10643,7 +10706,6 @@
     "ShowSummaryChangeOption": "Y",
     "RetainHiddenValue": "Y"
   },
-
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -11220,5 +11282,107 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "intervener4Represented=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createFlags",
+    "CaseFieldID": "caseFlags",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createFlags",
+    "CaseFieldID": "applicantFlags",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createFlags",
+    "CaseFieldID": "respondentFlags",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createFlags",
+    "CaseFieldID": "flagLauncher",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "DisplayContextParameter": "#ARGUMENT(CREATE)"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageFlags",
+    "CaseFieldID": "caseFlags",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageFlags",
+    "CaseFieldID": "applicantFlags",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageFlags",
+    "CaseFieldID": "respondentFlags",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Yes"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "manageFlags",
+    "CaseFieldID": "flagLauncher",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "DisplayContextParameter": "#ARGUMENT(UPDATE)"
   }
 ]

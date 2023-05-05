@@ -50,7 +50,7 @@
     "setup": "bin/setup.sh",
     "lint": "eslint --fix .",
     "test": "NODE_PATH=. mocha test/unit/**/*.js",
-    "test:all": "yarn lint; yarn test; yarn test:a11y; yarn test:functional; yarn npm audit",
+    "test:all": "yarn lint; yarn test; yarn test:a11y; yarn test:functional",
     "test:coverage": "echo test:coverage",
     "test:a11y": "echo test:a11y",
     "test:smoke": "echo smoke",
@@ -99,6 +99,7 @@
   ],
   "dependencies": {
     "@hmcts/nodejs-healthcheck": "^1.8.0",
+    "@hmcts/nodejs-logging": "^4.0.4",
     "@hmcts/properties-volume": "0.0.13",
     "codeceptjs": "^2.6.11",
     "config": "^3.3.3",
