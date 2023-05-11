@@ -103,7 +103,7 @@ withPipeline("nodejs", product, component) {
   afterSuccess('test') {
     // enable yarn audit and send message on master branch only
     try {
-      yarnBuilder.yarn('audit')
+      yarnBuilder.yarn('npm audit')
     } catch (error) {
       onMaster {
         slackSend(channel: '#finrem-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
@@ -117,8 +117,8 @@ withPipeline("nodejs", product, component) {
     if('preview' == env.ENV) {
       env.RUNNING_ENV = "aat"
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
-      env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+      env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+      env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
       }
@@ -126,8 +126,8 @@ withPipeline("nodejs", product, component) {
         yarnBuilder.yarn("generate-excel-preview-contested")
       }
 
-      env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
-      env.CCD_WEB_URL = "https://xui-finrem-ccd-definitions-pr-${CHANGE_ID}.service.core-compute-preview.internal"
+      env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+      env.CCD_WEB_URL = "https://xui-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.CCD_CONSENTED_FILE_NAME = "ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
       env.CCD_CONTESTED_FILE_NAME = "ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
