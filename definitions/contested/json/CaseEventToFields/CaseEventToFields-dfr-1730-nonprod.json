@@ -4,25 +4,23 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "ordersToShare",
-    "PageFieldDisplayOrder": 2,
+    "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "sendOrderPostStateOption=\"orderSent\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/06/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_sendOrder",
-    "CaseFieldID": "partiesInCase",
+    "CaseFieldID": "partiesOnCase",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
+    "PageID": 3,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "PageShowCondition": "sendOrderPostStateOption=\"orderSent\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -30,12 +28,12 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "additionalDocument",
-    "PageFieldDisplayOrder": 2,
+    "PageFieldDisplayOrder": 1,
     "DisplayContext": "OPTIONAL",
-    "PageID": 3,
-    "PageDisplayOrder": 3,
+    "PageID": 4,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
-    "PageShowCondition": "sendOrderPostStateOption=\"orderSent\"",
+    "PageShowCondition": "sendOrderPostStateOption!=\"\"",
     "ShowSummaryChangeOption": "Y"
   }
 ]
