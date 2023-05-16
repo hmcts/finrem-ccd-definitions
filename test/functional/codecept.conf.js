@@ -6,7 +6,7 @@ exports.config = {
       url: 'https://manage-case.aat.platform.hmcts.net/',
         smartWait: 50000,
         waitForTimeout: 90000,
-      show: true,
+      show: false,
       windowSize: '1440x700',
       waitForNavigation: 'domcontentloaded',
         restart: true,
