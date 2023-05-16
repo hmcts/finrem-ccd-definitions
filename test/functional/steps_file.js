@@ -82,12 +82,12 @@ module.exports = () => {
       this.click('Submit');
     },
     signInIdam(username, password) {
-       this.amOnPage(`${process.env.CCD_WEB_URL}`);
+      this.amOnPage(`${process.env.CCD_WEB_URL}`);
       this.wait('5');
       if(crossBrowser=='true'){
         this.wait('10');
       }
-      this.waitForText('Email address',60);
+      this.waitForText('Sign in',60);
       this.fillField('username', username);
       this.fillField('password', password);
       this.click('Sign in');
@@ -96,7 +96,7 @@ module.exports = () => {
 
     signOut() {
       this.amOnPage(`${process.env.CCD_WEB_URL}`);
-      this.wait('5');
+      this.wait('20');
       this.click('Sign out');
     },
     signInXuiOrg(username, password) {

@@ -33,6 +33,7 @@ async function applicantTab(caseType, tabName) {
     I.see(verifyContestedTabText.applicantTab.applicantEmailCommunication);
     break;
   case 'contestedPaper':
+    I.wait("3");
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
     I.see(verifyContestedPaperTabText.applicantTab.applicantLastName);
     I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorName);
