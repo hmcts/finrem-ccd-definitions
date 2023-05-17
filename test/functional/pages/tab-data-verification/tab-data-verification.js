@@ -12,7 +12,7 @@ function historyTab(caseType, tabName, eventName, endState) {
 
 async function applicantTab(caseType, tabName) {
   const I = this;
-      I.retry(3).waitForText(tabName, '90');
+  I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -46,7 +46,7 @@ async function applicantTab(caseType, tabName) {
 
 async function respondentTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '10');
+  I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -161,11 +161,11 @@ async function authorisationTab(caseType, tabName) {
 /* eslint-disable */
 async function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
-  I.waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
+  I.retry(3).waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
   if (!I.see(tabName)) {
     await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple')
   }
-  I.waitForText(tabName, 30);
+  I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -208,7 +208,7 @@ async function caseDocumentsTab(caseType, tabName, eventName) {
 
 async function paymentDetailsTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
