@@ -11,29 +11,11 @@
   {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "intv1Documents",
-    "TabLabel": "Intervener 1 documents",
-    "TabDisplayOrder": 33,
-    "CaseFieldID": "intv1AdditionalOrderDocsColl",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/02/2021",
-    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "intv2Documents",
     "TabLabel": "Intervener 2 documents",
     "TabDisplayOrder": 34,
     "CaseFieldID": "intv2OrderCollection",
     "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/02/2021",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "intv2Documents",
-    "TabLabel": "Intervener 2 documents",
-    "TabDisplayOrder": 34,
-    "CaseFieldID": "intv2AdditionalOrderDocsColl",
-    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/02/2021",
@@ -47,15 +29,6 @@
   {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "intv3Documents",
-    "TabLabel": "Intervener 3 documents",
-    "TabDisplayOrder": 35,
-    "CaseFieldID": "intv3AdditionalOrderDocsColl",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/02/2021",
-    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "intv4Documents",
     "TabLabel": "Intervener 4 documents",
     "TabDisplayOrder": 36,
@@ -63,21 +36,21 @@
     "TabFieldDisplayOrder": 1
   },
   {
-    "LiveFrom": "01/02/2021",
+    "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "intv4Documents",
-    "TabLabel": "Intervener 4 documents",
-    "TabDisplayOrder": 36,
-    "CaseFieldID": "intv4AdditionalOrderDocsColl",
-    "TabFieldDisplayOrder": 4
+    "TabID": "Applicant Documents",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "appOrderCollection",
+    "TabFieldDisplayOrder": 16
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "Orders",
-    "TabLabel": "Orders",
-    "TabDisplayOrder": 14,
-    "CaseFieldID": "additionalOrderDocsCollection",
-    "TabFieldDisplayOrder": 7
+    "TabID": "Respondent Documents",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "respOrderCollection",
+    "TabFieldDisplayOrder": 16
   }
 ]

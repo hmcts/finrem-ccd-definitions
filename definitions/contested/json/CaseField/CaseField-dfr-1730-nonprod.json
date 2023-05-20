@@ -26,86 +26,62 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intv1OrderCollection",
-    "Label": "Final Orders",
-    "HintText": "Final Orders",
+    "ID": "appOrderCollection",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_intvOrderCollection",
+    "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public"
+  },
+
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respOrderCollection",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv1OrderCollection",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollection",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv2OrderCollection",
-    "Label": "Final Orders",
-    "HintText": "Final Orders",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_intvOrderCollection",
+    "FieldTypeParameter": "FR_orderCollection",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv3OrderCollection",
-    "Label": "Final Orders",
-    "HintText": "Final Orders",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_intvOrderCollection",
+    "FieldTypeParameter": "FR_orderCollection",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv4OrderCollection",
-    "Label": "Final Orders",
-    "HintText": "Final Orders",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_intvOrderCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intv1AdditionalOrderDocsColl",
-    "Label": "Additional documents with order",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_intvOrderCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intv2AdditionalOrderDocsColl",
-    "Label": "Additional documents with order",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_intvOrderCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intv3AdditionalOrderDocsColl",
-    "Label": "Additional documents with order",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_intvOrderCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intv4AdditionalOrderDocsColl",
-    "Label": "Additional documents with order",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_intvOrderCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "additionalOrderDocsCollection",
-    "Label": "Additional documents with order",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ct_directionOrderCollection",
+    "FieldTypeParameter": "FR_orderCollection",
     "SecurityClassification": "Public"
   }
 ]
