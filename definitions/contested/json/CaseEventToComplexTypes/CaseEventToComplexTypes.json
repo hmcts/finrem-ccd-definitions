@@ -985,7 +985,7 @@
     "CaseEventID": "FR_uploadCaseFiles",
     "CaseFieldID": "uploadCaseDocument",
     "ListElementCode": "caseDocumentParty",
-    "FieldShowCondition": "currentUserCaseRole=\"CASEWORKER\"",
+    "FieldShowCondition": "uploadCaseDocument=\"IMPOSSIBLAW\"",
     "DisplayContext": "MANDATORY"
   },
   {
