@@ -7407,6 +7407,82 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "firstIntervener",
+    "TabLabel": "Intervener 1",
+    "TabDisplayOrder": 29,
+    "CaseFieldID": "intvr1BarristerCollectionLabel",
+    "TabFieldDisplayOrder": 13,
+    "TabShowCondition": "intervener1Name !=\" \""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "firstIntervener",
+    "TabLabel": "Intervener 1",
+    "TabDisplayOrder": 29,
+    "CaseFieldID": "intvr1BarristerCollection",
+    "TabFieldDisplayOrder": 14
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "secondIntervener",
+    "TabLabel": "Intervener 2",
+    "TabDisplayOrder": 30,
+    "CaseFieldID": "intvr2BarristerCollectionLabel",
+    "TabFieldDisplayOrder": 13,
+    "TabShowCondition": "intervener2Name !=\" \""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "secondIntervener",
+    "TabLabel": "Intervener 2",
+    "TabDisplayOrder": 30,
+    "CaseFieldID": "intvr2BarristerCollection",
+    "TabFieldDisplayOrder": 14
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "thirdIntervener",
+    "TabLabel": "Intervener 3",
+    "TabDisplayOrder": 31,
+    "CaseFieldID": "intvr3BarristerCollectionLabel",
+    "TabFieldDisplayOrder": 13,
+    "TabShowCondition": "intervener3Name !=\" \""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "thirdIntervener",
+    "TabLabel": "Intervener 3",
+    "TabDisplayOrder": 31,
+    "CaseFieldID": "intvr3BarristerCollection",
+    "TabFieldDisplayOrder": 14
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "fourthIntervener",
+    "TabLabel": "Intervener 4",
+    "TabDisplayOrder": 32,
+    "CaseFieldID": "intvr4BarristerCollectionLabel",
+    "TabFieldDisplayOrder": 13,
+    "TabShowCondition": "intervener4Name !=\" \""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "fourthIntervener",
+    "TabLabel": "Intervener 4",
+    "TabDisplayOrder": 32,
+    "CaseFieldID": "intvr4BarristerCollection",
+    "TabFieldDisplayOrder": 14
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "Channel": "CaseWorker",
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
