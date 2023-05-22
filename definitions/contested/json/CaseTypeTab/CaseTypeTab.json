@@ -7380,7 +7380,7 @@
     "Channel": "CaseWorker",
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
-    "CaseFieldID": "intervener1SolEmail",
+    "CaseFieldID": "intervener1SolicitorReference",
     "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 8
   },
@@ -7390,7 +7390,7 @@
     "Channel": "CaseWorker",
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
-    "CaseFieldID": "intervener1SolPhone",
+    "CaseFieldID": "intervener1SolicitorFirm",
     "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 9
   },
@@ -7400,9 +7400,29 @@
     "Channel": "CaseWorker",
     "TabID": "firstIntervener",
     "TabLabel": "Intervener 1",
-    "CaseFieldID": "intervener1Organisation",
+    "CaseFieldID": "intervener1SolEmail",
     "TabDisplayOrder": 29,
     "TabFieldDisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "Channel": "CaseWorker",
+    "TabID": "firstIntervener",
+    "TabLabel": "Intervener 1",
+    "CaseFieldID": "intervener1SolPhone",
+    "TabDisplayOrder": 29,
+    "TabFieldDisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "Channel": "CaseWorker",
+    "TabID": "firstIntervener",
+    "TabLabel": "Intervener 1",
+    "CaseFieldID": "intervener1Organisation",
+    "TabDisplayOrder": 29,
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7475,7 +7495,7 @@
     "Channel": "CaseWorker",
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
-    "CaseFieldID": "intervener2SolEmail",
+    "CaseFieldID": "intervener2SolicitorReference",
     "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 8
   },
@@ -7485,7 +7505,7 @@
     "Channel": "CaseWorker",
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
-    "CaseFieldID": "intervener2SolPhone",
+    "CaseFieldID": "intervener2SolicitorFirm",
     "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 9
   },
@@ -7495,9 +7515,29 @@
     "Channel": "CaseWorker",
     "TabID": "secondIntervener",
     "TabLabel": "Intervener 2",
-    "CaseFieldID": "intervener2Organisation",
+    "CaseFieldID": "intervener2SolEmail",
     "TabDisplayOrder": 30,
     "TabFieldDisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "Channel": "CaseWorker",
+    "TabID": "secondIntervener",
+    "TabLabel": "Intervener 2",
+    "CaseFieldID": "intervener2SolPhone",
+    "TabDisplayOrder": 30,
+    "TabFieldDisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "Channel": "CaseWorker",
+    "TabID": "secondIntervener",
+    "TabLabel": "Intervener 2",
+    "CaseFieldID": "intervener2Organisation",
+    "TabDisplayOrder": 30,
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7570,7 +7610,7 @@
     "Channel": "CaseWorker",
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
-    "CaseFieldID": "intervener3SolEmail",
+    "CaseFieldID": "intervener3SolicitorReference",
     "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 8
   },
@@ -7580,7 +7620,7 @@
     "Channel": "CaseWorker",
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
-    "CaseFieldID": "intervener3SolPhone",
+    "CaseFieldID": "intervener3SolicitorFirm",
     "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 9
   },
@@ -7590,9 +7630,29 @@
     "Channel": "CaseWorker",
     "TabID": "thirdIntervener",
     "TabLabel": "Intervener 3",
-    "CaseFieldID": "intervener3Organisation",
+    "CaseFieldID": "intervener3SolEmail",
     "TabDisplayOrder": 31,
     "TabFieldDisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "Channel": "CaseWorker",
+    "TabID": "thirdIntervener",
+    "TabLabel": "Intervener 3",
+    "CaseFieldID": "intervener3SolPhone",
+    "TabDisplayOrder": 31,
+    "TabFieldDisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "Channel": "CaseWorker",
+    "TabID": "thirdIntervener",
+    "TabLabel": "Intervener 3",
+    "CaseFieldID": "intervener3Organisation",
+    "TabDisplayOrder": 31,
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7665,7 +7725,7 @@
     "Channel": "CaseWorker",
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
-    "CaseFieldID": "intervener4SolEmail",
+    "CaseFieldID": "intervener4SolicitorReference",
     "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 8
   },
@@ -7675,7 +7735,7 @@
     "Channel": "CaseWorker",
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
-    "CaseFieldID": "intervener4SolPhone",
+    "CaseFieldID": "intervener4SolicitorFirm",
     "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 9
   },
@@ -7685,8 +7745,28 @@
     "Channel": "CaseWorker",
     "TabID": "fourthIntervener",
     "TabLabel": "Intervener 4",
-    "CaseFieldID": "intervener4Organisation",
+    "CaseFieldID": "intervener4SolEmail",
     "TabDisplayOrder": 32,
     "TabFieldDisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "Channel": "CaseWorker",
+    "TabID": "fourthIntervener",
+    "TabLabel": "Intervener 4",
+    "CaseFieldID": "intervener4SolPhone",
+    "TabDisplayOrder": 32,
+    "TabFieldDisplayOrder": 11
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "Channel": "CaseWorker",
+    "TabID": "fourthIntervener",
+    "TabLabel": "Intervener 4",
+    "CaseFieldID": "intervener4Organisation",
+    "TabDisplayOrder": 32,
+    "TabFieldDisplayOrder": 12
   }
 ]
