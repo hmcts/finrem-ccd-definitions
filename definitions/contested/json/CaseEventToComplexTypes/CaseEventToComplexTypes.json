@@ -999,15 +999,6 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "CaseFieldID": "uploadCaseDocument",
-    "ListElementCode": "currentUserCaseRole",
-    "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "uploadCaseDocument=\"IMPOSSIBLAW\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
     "ID": "FR_UploadConfidentialDocument",
     "CaseEventID": "FR_uploadConfidentialDocument",
     "CaseFieldID": "confidentialDocumentsUploaded",

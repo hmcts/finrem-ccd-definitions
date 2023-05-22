@@ -1120,8 +1120,7 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "evidenceParty",
     "ElementLabel": "What type of document is this?",
-    "SecurityClassification": "Public",
-    "RetainHiddenValue": "Yes"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1129,14 +1128,6 @@
     "ListElementCode": "caseDocumentUploadDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Upload DateTime",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
-    "ListElementCode": "currentUserCaseRole",
-    "FieldType": "Text",
-    "ElementLabel": " ",
     "SecurityClassification": "Public"
   },
   {
