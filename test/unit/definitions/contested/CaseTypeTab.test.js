@@ -109,11 +109,7 @@ describe('CaseTypeTab', () => {
     firstIntervener: 29,
     secondIntervener: 30,
     thirdIntervener: 31,
-    fourthIntervener: 32,
-    intv1Documents: 33,
-    intv2Documents: 34,
-    intv3Documents: 35,
-    intv4Documents: 36
+    fourthIntervener: 32
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -191,11 +187,7 @@ describe('CaseTypeTab', () => {
       'firstIntervener',
       'secondIntervener',
       'thirdIntervener',
-      'fourthIntervener',
-      'intv1Documents',
-      'intv2Documents',
-      'intv3Documents',
-      'intv4Documents'
+      'fourthIntervener'
     ]);
   });
   it('should contain a valid case field IDs', () => {
