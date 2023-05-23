@@ -88,6 +88,8 @@ finrem-cos:
         secrets:
           - name: AppInsightsInstrumentationKey
             alias: azure.application-insights.instrumentation-key
+          - name: app-insights-connection-string
+            alias: app-insights-connection-string
           - name: finrem-case-orchestration-service-s2s-key
             alias: FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY
           - name: idam-secret
