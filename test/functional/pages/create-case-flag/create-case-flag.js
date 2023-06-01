@@ -30,8 +30,8 @@ async function validateCaseFlagAlertMessage(){
   I.see('There is 1 active flag on this case.');
   I.see('View case flags');
 
-  //click tab using case flag link
-  I.clickLink('View case flags');
+  //click tab
+  await I.clickTab('Case Flags');
   I.waitForText('Case flags');
 }
 
