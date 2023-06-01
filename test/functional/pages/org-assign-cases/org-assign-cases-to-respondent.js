@@ -25,7 +25,7 @@ function assignContestedCase(caseId, respondentEmail) {
   I.waitForText('Check and confirm your selection', '5');
   I.see(respondentEmail);
   I.click('Confirm');
-  I.waitForText('Your cases have been updated', '10');
+  I.waitForText('Your selected cases have been updated', '10');
   I.see('If you\'ve shared one or more cases, your colleagues will now be able to access them from their case list.');
 }
 
