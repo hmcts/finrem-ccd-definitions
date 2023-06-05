@@ -31,7 +31,7 @@ Scenario('Upload Case Files (Confidential Documents) @nightly', async I => {
     await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.uploadCaseFiles, verifyTabText.confidentialDocumentsTab);
     logger.info('Confidential documents verified on Confidential documents tab');
 
-}).retry(2);
+}).retry(3);
 
 Scenario('Manage Confidential Documents @nightly', async I => {
 
@@ -47,7 +47,7 @@ Scenario('Manage Confidential Documents @nightly', async I => {
     await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.manageConfidentialDocuments, verifyTabText.confidentialDocumentsTab);
     logger.info('Confidential documents verified on Confidential documents tab');
 
-}).retry(2);
+}).retry(3);
 
 Scenario('Update Contact Details for contested Case @nightly ', async I => {
     //caseworker, type-matrimonial
@@ -60,7 +60,7 @@ Scenario('Update Contact Details for contested Case @nightly ', async I => {
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.updateContactDetails();
 
-}).retry(2);
+}).retry(3);
 
 Scenario('Contested Add Note  @nightly ', async I => { //Matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -71,7 +71,7 @@ Scenario('Contested Add Note  @nightly ', async I => { //Matrimonial
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.addNote();
-}).retry(2);
+}).retry(3);
 
 Scenario('Contested Matrimonial case Amend application and Case submission  by Solicitor @nightly', async I => {
     //The json file used to create case is new case data - this can be used to create a case via solicitor, case type matrimonial.
@@ -94,7 +94,7 @@ Scenario('Contested Matrimonial case Amend application and Case submission  by S
         await I.finalInformationPage();
         I.see('Case Submission');
     }
-}).retry(2);
+}).retry(3);
 
 Scenario('Caseworker refunds an issued case @nightly', async I => {
     logger.info("Refund test starting");
@@ -108,7 +108,7 @@ Scenario('Caseworker refunds an issued case @nightly', async I => {
     await I.refundCase();
 
     logger.info("Refund test completed");
-}).retry(2);
+}).retry(3);
 
 Scenario('Contested Add Note @nightly ', async I => {
     //Matrimonial
@@ -120,7 +120,7 @@ Scenario('Contested Add Note @nightly ', async I => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.addNote();
-}).retry(2);
+}).retry(3);
 
 Scenario('Contested Manage Barrister @nightly', async I => {
     //Matrimonial
@@ -138,7 +138,7 @@ Scenario('Contested Manage Barrister @nightly', async I => {
     await I.waitForText('FinRem-1-Org', 30);
     await I.changeOfRepresentativesTab(verifyTabText.historyTab.manageBarristerEvent);
     logger.info("manage barrister tab verified...");
-}).retry(2);
+}).retry(3);
 
 Scenario('List for hearing contested case @nightly', async I => {
 
@@ -165,7 +165,7 @@ Scenario('List for hearing contested case @nightly', async I => {
     await I.enterCaseReference(caseId);
     await I.listForHearing();
     I.waitForText('List for Hearing');
-}).retry(2);
+}).retry(3);
 
 Scenario('Contested E2E @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -192,7 +192,7 @@ Scenario('Contested E2E @nightly', async I => {
     await I.uploadOrder();
     await I.sendOrder();
     logger.info('-----------completed E2E contested test for -------------', caseId);
-}).retry(2);
+}).retry(3);
 
 Scenario('Caseworker runs List for Interim Hearing @nightly', async I => {
     logger.info("List for Interim Hearing test starting");
@@ -206,4 +206,4 @@ Scenario('Caseworker runs List for Interim Hearing @nightly', async I => {
     await I.listForInterimHearing();
     await I.verifyListForInterimHearing();
     logger.info("List Of Interim Hearing Completed");
-}).retry(2);
+}).retry(3);

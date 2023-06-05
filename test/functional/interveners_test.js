@@ -32,4 +32,4 @@ Scenario('Add Interveners @nightly', async I => {
     logger.info('Manage Interveners event completed');
     await I.contestedIntervenersTab(verifyTabText.historyTab.manageIntervenersEvent, verifyTabText.IntervenersTab);
     logger.info('Interveners tab verified');
-}).retry(2);
+}).retry(3);

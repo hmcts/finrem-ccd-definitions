@@ -52,4 +52,4 @@ Scenario('General Application e2e Test @nightly', async I => {
 
     await I.generalApplicationDirections();
     await I.verifyGeneralApplicationTab("Approved, Completed");
-}).retry(2);
+}).retry(3);

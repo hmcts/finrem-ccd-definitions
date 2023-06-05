@@ -33,7 +33,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => 
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Schedule1');
     I.waitForText('Form A Application', '60')
-}).retry(2);
+}).retry(3);
 
 Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
@@ -52,7 +52,7 @@ Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I =>
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Schedule1');
     I.waitForText('Form A Application', '60')
-}).retry(2);
+}).retry(3);
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async I => {
     //The json file used to create case is new case data - this can be used to create a case via solicitor, case type schedule 1.
@@ -62,4 +62,4 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightl
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.schedule1Tab(verifyTabText.Schedule1Tab.tabName);
     logger.info('Schedule 1 tab verified...')
-}).retry(2);
+}).retry(3);

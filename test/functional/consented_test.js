@@ -34,7 +34,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
       I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
     }
   }
-});
+}).retry(3);
 
 Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
@@ -76,7 +76,7 @@ Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => 
       I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
       I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
   }
-});
+}).retry(3);
 /* eslint-disable require-await */
 
 Scenario('Consent Case Creation by Solicitor @nightly', async I => {

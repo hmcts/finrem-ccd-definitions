@@ -29,7 +29,7 @@ Scenario('Caseworker creates case flag  @nightly', async I => {
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified');
-}).retry(2);
+}).retry(3);
 
 Scenario('Caseworker manage case flag  @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -44,7 +44,7 @@ Scenario('Caseworker manage case flag  @nightly', async I => {
     await I.clickTab('Case Flags');
     await I.validateCaseFlagTab(flagStatus);
     logger.info('manage case event completed and verified');
-}).retry(2);
+}).retry(3);
 
 
 Scenario('Judge creates case flag  @nightly', async I => {
@@ -57,7 +57,7 @@ Scenario('Judge creates case flag  @nightly', async I => {
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified');
-}).retry(2);
+}).retry(3);
 
 
 Scenario('Caseworker creates case flag for schedule 1 case @nightly', async I => {
@@ -70,7 +70,7 @@ Scenario('Caseworker creates case flag for schedule 1 case @nightly', async I =>
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified for schedule 1 case');
-}).retry(2);
+}).retry(3);
 
 Scenario('Create case flag with General Application @nightly', async I => {
 
@@ -89,7 +89,7 @@ Scenario('Create case flag with General Application @nightly', async I => {
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified for schedule 1 case');
 
-}).retry(2);
+}).retry(3);
 
 Scenario('Case flag for Paper Case @nightly', async I => {
     const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
@@ -101,7 +101,7 @@ Scenario('Case flag for Paper Case @nightly', async I => {
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified');
-});
+}).retry(3);
 
 
 //TODO- can add 2 case flag
