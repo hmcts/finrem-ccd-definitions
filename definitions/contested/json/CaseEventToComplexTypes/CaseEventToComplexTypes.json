@@ -1110,7 +1110,74 @@
     "ListElementCode": "generalApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Case\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "applicantGeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Applicant\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "respondentGeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Respondent\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "intervener1GeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener1\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "intervener2GeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener2\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "intervener3GeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener3\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "intervener4GeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener4\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1122,6 +1189,17 @@
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationUserRole",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationUserRole=\"IMPOSSIBLE\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1537,7 +1615,74 @@
     "ListElementCode": "generalApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Case\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "applicantGeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Applicant\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "respondentGeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Respondent\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "intervener1GeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener1\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "intervener2GeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener2\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "intervener3GeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener3\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "intervener4GeneralApplicationReceivedFrom",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener4\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1549,6 +1694,17 @@
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_updateGeneralApplication",
+    "CaseEventID": "updateGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationUserRole",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "generalApplicationUserRole=\"IMPOSSIBLE\""
   },
   {
     "LiveFrom": "01/06/2022",

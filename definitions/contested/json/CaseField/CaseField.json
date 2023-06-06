@@ -3278,9 +3278,71 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantGeneralApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_ApplicantEvidenceParty",
+    "Label": "Application received from",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentGeneralApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_RespondentEvidenceParty",
+    "Label": "Application received from",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener1GeneralApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_Intervener1EvidenceParty",
+    "Label": "Application received from",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2GeneralApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_Intervener2EvidenceParty",
+    "Label": "Application received from",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3GeneralApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_Intervener3EvidenceParty",
+    "Label": "Application received from",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener4GeneralApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_Intervener4EvidenceParty",
+    "Label": "Application received from",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationCreatedBy",
     "FieldType": "Text",
     "Label": "Application created by",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationUserRole",
+    "FieldType": "Text",
+    "Label": " ",
     "SecurityClassification": "Public"
   },
   {
