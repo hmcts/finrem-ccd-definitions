@@ -2631,6 +2631,14 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalEmailUploadedDocument",
+    "Label": "Upload Document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalEmailCollection",
@@ -4862,6 +4870,74 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intvr1BarristerCollectionLabel",
+    "FieldType": "Label",
+    "Label": "## Intervener's Barristers",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intvr1BarristerCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_BarristerCollection",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intvr2BarristerCollectionLabel",
+    "FieldType": "Label",
+    "Label": "## Intervener's Barristers",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intvr2BarristerCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_BarristerCollection",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intvr3BarristerCollectionLabel",
+    "FieldType": "Label",
+    "Label": "## Intervener's Barristers",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intvr3BarristerCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_BarristerCollection",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intvr4BarristerCollectionLabel",
+    "FieldType": "Label",
+    "Label": "## Intervener's Barristers",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intvr4BarristerCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_BarristerCollection",
+    "Label": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "barristerParty",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "barristerPartyList",
@@ -5043,6 +5119,22 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener1SolicitorFirm",
+    "Label": "Representative Firm",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener1SolicitorReference",
+    "Label": "Your reference",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "intervener1Organisation",
     "Label": " ",
     "FieldType": "OrganisationPolicy",
@@ -5126,6 +5218,22 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intervener2SolPhone",
     "Label": "Representative's Phone number",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2SolicitorFirm",
+    "Label": "Representative Firm",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2SolicitorReference",
+    "Label": "Your reference",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
@@ -5220,6 +5328,22 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3SolicitorFirm",
+    "Label": "Representative Firm",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3SolicitorReference",
+    "Label": "Your reference",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "intervener3Organisation",
     "Label": " ",
     "FieldType": "OrganisationPolicy",
@@ -5303,6 +5427,22 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intervener4SolPhone",
     "Label": "Representative's Phone number",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener4SolicitorFirm",
+    "Label": "Representative Firm",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener4SolicitorReference",
+    "Label": "Your reference",
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
