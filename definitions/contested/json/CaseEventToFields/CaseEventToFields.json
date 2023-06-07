@@ -7706,7 +7706,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "generalApplicationUserRole=\"Case\""
+    "FieldShowCondition": "currentUserCaseRoleLabel=\"Case\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7720,7 +7720,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "generalApplicationUserRole=\"Applicant\""
+    "FieldShowCondition": "currentUserCaseRoleLabel=\"Applicant\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7885,6 +7885,20 @@
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_createGeneralApplication",
+    "CaseFieldID": "currentUserCaseRoleLabel",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "generalApplicationDraftOrder=\"IMPOSSIBLE\"",
+    "RetainHiddenValue": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -10621,6 +10635,20 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "generalApplications=\"IMPOSSIBLE\"",
     "ShowSummaryChangeOption": "Y",
+    "RetainHiddenValue": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "currentUserCaseRoleLabel",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "generalApplications=\"IMPOSSIBLE\"",
     "RetainHiddenValue": "Y"
   },
   {

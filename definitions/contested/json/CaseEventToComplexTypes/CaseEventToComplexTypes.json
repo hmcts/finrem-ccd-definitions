@@ -1111,7 +1111,7 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Case\""
+    "FieldShowCondition": "currentUserCaseRoleLabel=\"Case\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1122,7 +1122,7 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Applicant\""
+    "FieldShowCondition": "currentUserCaseRoleLabel=\"Applicant\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1133,7 +1133,7 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Respondent\""
+    "FieldShowCondition": "currentUserCaseRoleLabel=\"Respondent\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1144,7 +1144,7 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener1\""
+    "FieldShowCondition": "currentUserCaseRoleLabel=\"Intervener1\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1155,7 +1155,7 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener2\""
+    "FieldShowCondition": "currentUserCaseRoleLabel=\"Intervener2\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1166,7 +1166,7 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener3\""
+    "FieldShowCondition": "currentUserCaseRoleLabel=\"Intervener3\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1177,7 +1177,7 @@
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "generalApplications.generalApplicationUserRole=\"Intervener4\""
+    "FieldShowCondition": "currentUserCaseRoleLabel=\"Intervener4\""
   },
   {
     "LiveFrom": "01/06/2022",
