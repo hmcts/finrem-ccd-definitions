@@ -5279,18 +5279,6 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "createFlags",
-    "CaseFieldID": "flagLauncher",
-    "PageFieldDisplayOrder": 4,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "DisplayContextParameter": "#ARGUMENT(CREATE)"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "manageFlags",
     "CaseFieldID": "caseFlags",
     "PageFieldDisplayOrder": 1,
@@ -5326,17 +5314,5 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "RetainHiddenValue": "Yes"
-  },
-  {
-    "LiveFrom": "01/09/2022",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "manageFlags",
-    "CaseFieldID": "flagLauncher",
-    "PageFieldDisplayOrder": 4,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "DisplayContextParameter": "#ARGUMENT(UPDATE)"
   }
 ]
