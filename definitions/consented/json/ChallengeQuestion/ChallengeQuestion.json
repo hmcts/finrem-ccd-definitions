@@ -14,7 +14,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "NoCChallenge",
     "DisplayOrder": "2",
-    "QuestionText": "Your client's first name",
+    "QuestionText": "Your client's first name and any middle names",
     "AnswerFieldType": "Text",
     "Answer": "${applicantFMName}:[APPSOLICITOR],${appRespondentFMName}:[RESPSOLICITOR]",
     "QuestionId": "clientFirstName"
