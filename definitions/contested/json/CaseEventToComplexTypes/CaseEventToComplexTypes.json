@@ -1681,6 +1681,67 @@
     "ID": "manageInterveners",
     "CaseEventID": "manageInterveners",
     "CaseFieldID": "intervener1",
+    "ListElementCode": "intervenerAddress.AddressLine1",
+    "EventElementLabel": "Building and Street",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1",
+    "ListElementCode": "intervenerAddress.AddressLine2",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1",
+    "ListElementCode": "intervenerAddress.AddressLine3",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1",
+    "ListElementCode": "intervenerAddress.PostTown",
+    "EventElementLabel": "Town or City",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1",
+    "ListElementCode": "intervenerAddress.County",
+    "EventElementLabel": "County",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1",
+    "ListElementCode": "intervenerAddress.Country",
+    "EventElementLabel": "Country",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1",
+    "ListElementCode": "intervenerAddress.PostCode",
+    "EventElementLabel": "Postcode",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1",
     "ListElementCode": "intervenerEmail",
     "EventElementLabel": "Email address",
     "FieldDisplayOrder": "",
@@ -1782,7 +1843,7 @@
     "EventElementLabel": "Organisation Policy",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "intervener1.intervenerRepresented=\"IMPOSSIBLAW\""
+    "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1833,6 +1894,67 @@
     "EventElementLabel": "Email address",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2",
+    "ListElementCode": "intervenerAddress.AddressLine1",
+    "EventElementLabel": "Building and Street",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2",
+    "ListElementCode": "intervenerAddress.AddressLine2",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2",
+    "ListElementCode": "intervenerAddress.AddressLine3",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2",
+    "ListElementCode": "intervenerAddress.PostTown",
+    "EventElementLabel": "Town or City",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2",
+    "ListElementCode": "intervenerAddress.County",
+    "EventElementLabel": "County",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2",
+    "ListElementCode": "intervenerAddress.Country",
+    "EventElementLabel": "Country",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2",
+    "ListElementCode": "intervenerAddress.PostCode",
+    "EventElementLabel": "Postcode",
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1930,7 +2052,7 @@
     "EventElementLabel": "Organisation Policy",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "intervener2.intervenerRepresented=\"IMPOSSIBLAW\""
+    "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1970,6 +2092,67 @@
     "ListElementCode": "intervenerAddress",
     "EventElementLabel": " ",
     "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3",
+    "ListElementCode": "intervenerAddress.AddressLine1",
+    "EventElementLabel": "Building and Street",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3",
+    "ListElementCode": "intervenerAddress.AddressLine2",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3",
+    "ListElementCode": "intervenerAddress.AddressLine3",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3",
+    "ListElementCode": "intervenerAddress.PostTown",
+    "EventElementLabel": "Town or City",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3",
+    "ListElementCode": "intervenerAddress.County",
+    "EventElementLabel": "County",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3",
+    "ListElementCode": "intervenerAddress.Country",
+    "EventElementLabel": "Country",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3",
+    "ListElementCode": "intervenerAddress.PostCode",
+    "EventElementLabel": "Postcode",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -2078,7 +2261,7 @@
     "EventElementLabel": "Organisation Policy",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "intervener3.intervenerRepresented=\"IMPOSSIBLAW\""
+    "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2118,6 +2301,67 @@
     "ListElementCode": "intervenerAddress",
     "EventElementLabel": " ",
     "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4",
+    "ListElementCode": "intervenerAddress.AddressLine1",
+    "EventElementLabel": "Building and Street",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4",
+    "ListElementCode": "intervenerAddress.AddressLine2",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4",
+    "ListElementCode": "intervenerAddress.AddressLine3",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4",
+    "ListElementCode": "intervenerAddress.PostTown",
+    "EventElementLabel": "Town or City",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4",
+    "ListElementCode": "intervenerAddress.County",
+    "EventElementLabel": "County",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4",
+    "ListElementCode": "intervenerAddress.Country",
+    "EventElementLabel": "Country",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4",
+    "ListElementCode": "intervenerAddress.PostCode",
+    "EventElementLabel": "Postcode",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -2226,7 +2470,7 @@
     "EventElementLabel": "Organisation Policy",
     "FieldDisplayOrder": "",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "intervener4.intervenerRepresented=\"IMPOSSIBLAW\""
+    "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {
     "LiveFrom": "05/08/2020",
