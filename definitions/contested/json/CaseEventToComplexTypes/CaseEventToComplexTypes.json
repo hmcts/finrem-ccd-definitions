@@ -1776,7 +1776,7 @@
     "EventElementLabel": "Date added",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener1.intervenerRepresented=\"Both\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1787,7 +1787,7 @@
     "EventElementLabel": "Representative's Full Name",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener1.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1798,7 +1798,7 @@
     "EventElementLabel": "Representative's Email",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener1.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1820,7 +1820,7 @@
     "EventElementLabel": "Representative Firm",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener1.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1831,7 +1831,7 @@
     "EventElementLabel": "Your Reference",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener1.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1893,7 +1893,7 @@
     "ListElementCode": "intervenerEmail",
     "EventElementLabel": "Email address",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1985,7 +1985,7 @@
     "EventElementLabel": "Date added",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener2.intervenerRepresented=\"Both\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1996,7 +1996,7 @@
     "EventElementLabel": "Representative's Full Name",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener2.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2029,7 +2029,7 @@
     "EventElementLabel": "Representative Firm",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener2.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2040,7 +2040,7 @@
     "EventElementLabel": "Your Reference",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener2.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2194,7 +2194,7 @@
     "EventElementLabel": "Date added",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener3.intervenerRepresented=\"Both\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2205,7 +2205,7 @@
     "EventElementLabel": "Representative's Full Name",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener3.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2216,7 +2216,7 @@
     "EventElementLabel": "Representative's Email",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener3.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2238,7 +2238,7 @@
     "EventElementLabel": "Representative Firm",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener3.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2249,7 +2249,7 @@
     "EventElementLabel": "Your Reference",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener3.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2372,7 +2372,7 @@
     "ListElementCode": "intervenerEmail",
     "EventElementLabel": "Email address",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2403,7 +2403,7 @@
     "EventElementLabel": "Date added",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener4.intervenerRepresented=\"Both\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2414,7 +2414,7 @@
     "EventElementLabel": "Representative's Full Name",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener4.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2425,7 +2425,7 @@
     "EventElementLabel": "Representative's Email",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener4.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2447,7 +2447,7 @@
     "EventElementLabel": "Representative Firm",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener4.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2458,7 +2458,7 @@
     "EventElementLabel": "Your Reference",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener4.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
