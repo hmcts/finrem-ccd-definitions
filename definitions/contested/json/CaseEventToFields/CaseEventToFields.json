@@ -11541,6 +11541,18 @@
   {
     "LiveFrom": "01/09/2022",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "createFlags",
+    "CaseFieldID": "flagLauncher",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "DisplayContextParameter": "#ARGUMENT(CREATE)"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "manageFlags",
     "CaseFieldID": "caseFlags",
     "PageFieldDisplayOrder": 1,
