@@ -1120,7 +1120,8 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1258,7 +1259,8 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
     "LiveFrom": "01/06/2022",
@@ -1396,7 +1398,7 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
@@ -1535,7 +1537,7 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
@@ -1673,7 +1675,7 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
@@ -1812,7 +1814,7 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
@@ -1950,7 +1952,7 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
@@ -2089,7 +2091,7 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
@@ -2227,7 +2229,7 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
@@ -2366,7 +2368,7 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
@@ -2505,7 +2507,7 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "01/06/2022",
@@ -2643,7 +2645,7 @@
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
   {
@@ -2760,7 +2762,7 @@
     "ListElementCode": "generalApplicationDirectionsDocument",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
   },
   {
