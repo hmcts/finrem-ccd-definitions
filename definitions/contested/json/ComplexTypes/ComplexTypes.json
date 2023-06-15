@@ -2067,54 +2067,9 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "generalApplicationCollection",
-    "ListElementCode": "applicantGeneralApplicationReceivedFrom",
+    "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_ApplicantEvidenceParty",
-    "ElementLabel": "Application received from",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "generalApplicationCollection",
-    "ListElementCode": "respondentGeneralApplicationReceivedFrom",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_RespondentEvidenceParty",
-    "ElementLabel": "Application received from",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "generalApplicationCollection",
-    "ListElementCode": "intervener1GeneralApplicationReceivedFrom",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_Intervener1EvidenceParty",
-    "ElementLabel": "Application received from",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "generalApplicationCollection",
-    "ListElementCode": "intervener2GeneralApplicationReceivedFrom",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_Intervener2EvidenceParty",
-    "ElementLabel": "Application received from",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "generalApplicationCollection",
-    "ListElementCode": "intervener3GeneralApplicationReceivedFrom",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_Intervener3EvidenceParty",
-    "ElementLabel": "Application received from",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "generalApplicationCollection",
-    "ListElementCode": "intervener4GeneralApplicationReceivedFrom",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_Intervener4EvidenceParty",
+    "FieldTypeParameter": "FR_fl_ApplicantAndRespondentEvidenceParty",
     "ElementLabel": "Application received from",
     "SecurityClassification": "Public"
   },
@@ -2122,14 +2077,6 @@
     "LiveFrom": "01/01/2017",
     "ID": "generalApplicationCollection",
     "ListElementCode": "generalApplicationCreatedBy",
-    "FieldType": "Text",
-    "ElementLabel": "Application created by",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "generalApplicationCollection",
-    "ListElementCode": "generalApplicationUserRole",
     "FieldType": "Text",
     "ElementLabel": "Application created by",
     "SecurityClassification": "Public"
