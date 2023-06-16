@@ -1595,7 +1595,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadCaseDocument",
-    "Label": "                                                                                      ",
+    "Label": " ",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"
@@ -4683,6 +4683,15 @@
     "ID": "currentUserCaseRoleLabel",
     "Label": " ",
     "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationIntvrDocuments",
+    "Label": "Intervener hearing/no hearing documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_IntervenerDirectionsCollection",
     "SecurityClassification": "Public"
   },
   {
