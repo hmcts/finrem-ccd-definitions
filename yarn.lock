@@ -2353,7 +2353,6 @@ __metadata:
     prettier: ^1.17.0
     pretty-quick: ^1.10.0
     puppeteer: ^7.1.0
-    request: ^2.88.2
     request-promise-native: ^1.0.9
     sonar-scanner: ^3.1.0
     webdriverio: ^7.0.7
@@ -5076,7 +5075,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"request@npm:^2.83.0, request@npm:^2.88.2":
+"request@npm:^2.83.0":
   version: 2.88.2
   resolution: "request@npm:2.88.2"
   dependencies:
