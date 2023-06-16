@@ -4688,6 +4688,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "currentUserCaseRoleType",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationIntvrDocuments",
     "Label": "Intervener hearing/no hearing documents",
     "FieldType": "Collection",

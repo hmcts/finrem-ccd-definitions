@@ -7706,7 +7706,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "currentUserCaseRoleLabel=\"Case\"",
+    "FieldShowCondition": "currentUserCaseRoleType=\"Case\"",
     "RetainHiddenValue": "Y"
   },
   {
@@ -7721,7 +7721,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "currentUserCaseRoleLabel=\"Applicant\" OR currentUserCaseRoleLabel=\"Respondent\"",
+    "FieldShowCondition": "currentUserCaseRoleType=\"Applicant\" OR currentUserCaseRoleType=\"Respondent\"",
     "RetainHiddenValue": "Y"
   },
   {
@@ -7808,7 +7808,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_createGeneralApplication",
-    "CaseFieldID": "currentUserCaseRoleLabel",
+    "CaseFieldID": "currentUserCaseRoleType",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 1,
@@ -10540,7 +10540,7 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "RetainHiddenValue": "N",
-    "PageShowCondition": "currentUserCaseRoleLabel=\"Case\"",
+    "PageShowCondition": "currentUserCaseRoleType=\"Case\"",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
@@ -10555,7 +10555,7 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "RetainHiddenValue": "N",
-    "PageShowCondition": "currentUserCaseRoleLabel=\"Intervener1\"",
+    "PageShowCondition": "currentUserCaseRoleType=\"Intervener1\"",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
@@ -10570,7 +10570,7 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "RetainHiddenValue": "N",
-    "PageShowCondition": "currentUserCaseRoleLabel=\"Intervener2\"",
+    "PageShowCondition": "currentUserCaseRoleType=\"Intervener2\"",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
 
@@ -10586,7 +10586,7 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "RetainHiddenValue": "N",
-    "PageShowCondition": "currentUserCaseRoleLabel=\"Intervener3\"",
+    "PageShowCondition": "currentUserCaseRoleType=\"Intervener3\"",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
@@ -10601,7 +10601,7 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "RetainHiddenValue": "N",
-    "PageShowCondition": "currentUserCaseRoleLabel=\"Intervener4\"",
+    "PageShowCondition": "currentUserCaseRoleType=\"Intervener4\"",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
@@ -10616,7 +10616,7 @@
     "PageColumnNumber": 1,
     "RetainHiddenValue": "N",
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserCaseRoleLabel=\"Applicant\" OR currentUserCaseRoleLabel=\"Respondent\"",
+    "PageShowCondition": "currentUserCaseRoleType=\"Applicant\" OR currentUserCaseRoleType=\"Respondent\"",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
@@ -10637,7 +10637,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "createGeneralApplication",
-    "CaseFieldID": "currentUserCaseRoleLabel",
+    "CaseFieldID": "currentUserCaseRoleType",
     "PageFieldDisplayOrder": 3,
     "DisplayContext": "READONLY",
     "PageID": 1,
@@ -10925,13 +10925,13 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "currentUserCaseRoleLabel=\"Case\""
+    "FieldShowCondition": "currentUserCaseRoleType=\"Case\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "updateGeneralApplication",
-    "CaseFieldID": "currentUserCaseRoleLabel",
+    "CaseFieldID": "currentUserCaseRoleType",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "OPTIONAL",
     "PageID": 1,
@@ -10950,7 +10950,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "currentUserCaseRoleLabel=\"Intervener1\""
+    "FieldShowCondition": "currentUserCaseRoleType=\"Intervener1\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -10962,9 +10962,8 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "currentUserCaseRoleLabel=\"Intervener2\""
+    "FieldShowCondition": "currentUserCaseRoleType=\"Intervener2\""
   },
-
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -10975,9 +10974,8 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "currentUserCaseRoleLabel=\"Intervener3\""
+    "FieldShowCondition": "currentUserCaseRoleType=\"Intervener3\""
   },
-
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -10988,7 +10986,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "currentUserCaseRoleLabel=\"Intervener4\""
+    "FieldShowCondition": "currentUserCaseRoleType=\"Intervener4\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -11000,7 +10998,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "currentUserCaseRoleLabel=\"Applicant\" OR currentUserCaseRoleLabel=\"Respondent\""
+    "FieldShowCondition": "currentUserCaseRoleType=\"Applicant\" OR currentUserCaseRoleType=\"Respondent\""
   },
   {
     "LiveFrom": "01/01/2017",
