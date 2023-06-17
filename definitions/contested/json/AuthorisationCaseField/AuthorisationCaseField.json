@@ -7107,13 +7107,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalApplicationCollection",
-    "UserRole": "[INTVRSOLICITOR1]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationLabel",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
@@ -10161,6 +10154,13 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "currentUserCaseRoleType",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "10/07/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "currentUserCaseRoleType",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRU"
   },
   {
