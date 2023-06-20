@@ -215,7 +215,7 @@ describe('CaseTypeTab', () => {
       'intv1Documents',
       'intv2Documents',
       'intv3Documents',
-      'intv4Documents',
+      'intv4Documents'
     ]);
   });
   it('should contain a valid case field IDs', () => {
