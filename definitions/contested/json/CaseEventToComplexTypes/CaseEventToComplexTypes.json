@@ -985,6 +985,7 @@
     "CaseEventID": "FR_uploadCaseFiles",
     "CaseFieldID": "uploadCaseDocument",
     "ListElementCode": "caseDocumentParty",
+    "FieldShowCondition": "uploadCaseDocument=\"IMPOSSIBLAW\"",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -1010,6 +1011,14 @@
     "CaseEventID": "FR_uploadConfidentialDocument",
     "CaseFieldID": "confidentialDocumentsUploaded",
     "ListElementCode": "DocumentLink",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConfidentialDocument",
+    "CaseEventID": "FR_uploadConfidentialDocument",
+    "CaseFieldID": "confidentialDocumentsUploaded",
+    "ListElementCode": "caseDocumentParty",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3415,7 +3424,7 @@
     "EventElementLabel": "Representative's Email",
     "FieldDisplayOrder": "",
     "FieldShowCondition": "intervener2.intervenerRepresented=\"Yes\"",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -3780,7 +3789,7 @@
     "ListElementCode": "intervenerEmail",
     "EventElementLabel": "Email address",
     "FieldDisplayOrder": "",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
