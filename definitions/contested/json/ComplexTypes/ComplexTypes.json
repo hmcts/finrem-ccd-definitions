@@ -882,6 +882,14 @@
   },
   {
     "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralEmailDocument",
+    "ListElementCode": "generalEmailUploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Upload Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
     "ID": "FR_DocumentType",
     "ListElementCode": "typeOfDocument",
     "FieldType": "FixedList",
@@ -2254,6 +2262,110 @@
     "FieldType": "TextArea",
     "ElementLabel": "Please specify",
     "FieldShowCondition": "childRespondentRelation=\"Other\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerName",
+    "FieldType": "Text",
+    "ElementLabel": "Intervener's Full Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerAddress",
+    "FieldType": "AddressUK",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerEmail",
+    "FieldType": "Text",
+    "ElementLabel": "Email address",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerPhone",
+    "FieldType": "Text",
+    "ElementLabel": "Phone number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerRepresented",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is the Intervener represented ?",
+    "SecurityClassification": "Public"
+  },
+
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerDateAdded",
+    "ElementLabel": "Date added",
+    "FieldType": "Date",
+    "FieldShowCondition": "intervenerRepresented=\"Both\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerSolName",
+    "ElementLabel": "Representative's Full Name",
+    "FieldType": "Text",
+    "FieldShowCondition": "intervenerRepresented=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerSolEmail",
+    "ElementLabel": "Representative's Email address",
+    "FieldType": "Text",
+    "FieldShowCondition": "intervenerRepresented=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerSolPhone",
+    "ElementLabel": "Representative's Phone number",
+    "FieldType": "Text",
+    "FieldShowCondition": "intervenerRepresented=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerSolicitorFirm",
+    "ElementLabel": "Representative Firm",
+    "FieldType": "Text",
+    "FieldShowCondition": "intervenerRepresented=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerSolicitorReference",
+    "ElementLabel": "Your reference",
+    "FieldType": "Text",
+    "FieldShowCondition": "intervenerRepresented=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
+    "ListElementCode": "intervenerOrganisation",
+    "ElementLabel": " ",
+    "FieldType": "OrganisationPolicy",
+    "FieldShowCondition": "intervenerRepresented=\"Yes\"",
     "SecurityClassification": "Public"
   }
 ]
