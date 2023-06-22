@@ -88,6 +88,7 @@ Scenario('Contested Case Creation For Ready For Hearing @nightly @pipeline', asy
     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 }).retry(3);
+
 Scenario('Contested Case Approved and Send Order  @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   /* eslint-disable */

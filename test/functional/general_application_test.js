@@ -19,7 +19,7 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('General Application');
 
-Scenario('General Application e2e Test @nightly @nk', async I => {
+Scenario('General Application e2e Test @nightly', async I => {
     logger.info("General application test starting");
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
