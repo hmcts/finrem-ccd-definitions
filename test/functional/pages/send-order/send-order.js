@@ -7,9 +7,7 @@ async function sendOrder(){
   I.waitForText('What state should this case move to:', '30');
   I.selectOption('#sendOrderPostStateOption', 'Close');
 
-
-  I.waitForContinueButtonEnabled();
-  I.click('Continue');
+  I.click('Submit');
 
   I.waitForText('Event summary');
   I.click('Submit');

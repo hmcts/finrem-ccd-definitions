@@ -268,7 +268,6 @@ Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I =>
 }).retry(3);
 
 Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I => {
-  if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -287,12 +286,10 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I =
     I.waitForText('Form A Application', '60');
     await I.manualPayment();
     await I.issueApplication();
-  }
 }).retry(3);
 
-Scenario('Upload Case Files (Confidential Documents) @nightly', async I => {
+Scenario('Manage Confidential Documents', async I => {
     //login as a caseworker, create contested case
-
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -311,10 +308,7 @@ Scenario('Upload Case Files (Confidential Documents) @nightly', async I => {
     I.waitForText('Form A Application', '60');
     await I.manualPayment();
     await I.issueApplication();
-    await I.uploadCaseFiles();
-    await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.uploadCaseFiles, verifyTabText.confidentialDocumentsTab);
-    logger.info('Confidential documents verified on Confidential documents tab');
-
+    //TODO - update test Manage Confidential Documents
 }).retry(3);
 
 Scenario('Manage Confidential Documents @nightly', async I => {

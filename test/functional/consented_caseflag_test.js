@@ -26,7 +26,7 @@ Scenario('Caseworker creates case flag  @nightly', async I => {
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
-})//.retry(3);
+}).retry(3);
 
 Scenario('Caseworker manage case flag  @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
