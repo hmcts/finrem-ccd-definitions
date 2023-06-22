@@ -21,7 +21,7 @@ async function listForInterimHearing() {
   I.attachFile('input[type="file"]', '../data/dummy.pdf');
   I.wait('5');
   I.waitForContinueButtonEnabled();
-  I.click('Continue');
+  I.click('Submit');
   I.waitForText('List for Interim Hearing');
   I.click('Submit');
   I.clickTab("Scheduling and Listing for Interim Hearing");

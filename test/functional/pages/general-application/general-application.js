@@ -15,10 +15,10 @@ function solicitorCreateGeneralApplication() {
     I.attachFile('input[type="file"]', '../data/dummy.pdf');
     I.wait("5");
     I.waitForContinueButtonEnabled();
-    I.click("Continue");
+    I.click("Submit");
+    I.waitForText("Event summary");
     I.waitForText("Submit");
     I.click("Submit");
-    
     I.clickTab('General Applications');
     I.waitForText('General Applications');
 }

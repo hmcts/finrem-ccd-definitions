@@ -12,7 +12,7 @@ async function draftOrderApprove(){
   I.fillField('input[id="orderApprovedDate-month"]', '07');
   I.fillField('input[id="orderApprovedDate-year"]', '2023');
   I.waitForContinueButtonEnabled();
-  I.click('Continue');
+  I.click('Submit');
   I.waitForText('Event summary');
   I.click('Submit');
   I.waitForText('Draft Order Approved', '60');
