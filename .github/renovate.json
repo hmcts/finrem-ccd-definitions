@@ -1,12 +1,21 @@
 {
-  "enabledManagers": ["helm-requirements", "nvm"],
+  "enabledManagers": [
+    "helm-requirements",
+    "nvm"
+  ],
   "automerge": true,
-  "labels": ["dependencies"],
+  "labels": [
+    "dependencies"
+  ],
   "helm-requirements": {
-    "fileMatch": ["\\Chart.yaml$"],
+    "fileMatch": [
+      "\\Chart.yaml$"
+    ],
     "aliases": {
       "hmctspublic": "https://hmctspublic.azurecr.io/helm/v1/repo/"
     }
   },
-  "schedule": ["before 6am on Monday"]
+  "extends": [
+    "local>hmcts/.github:renovate-config"
+  ]
 }
