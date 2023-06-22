@@ -20,10 +20,10 @@ async function listForInterimHearing() {
   I.checkOption('input[id="interimHearings_0_interimPromptForAnyDocument_Yes"]');
   I.attachFile('input[type="file"]', '../data/dummy.pdf');
   I.wait('5');
-  I.waitForContinueButtonEnabled();
+  I.click('Submit');
+  I.waitForText('Event summary');
   I.click('Submit');
   I.waitForText('List for Interim Hearing');
-  I.click('Submit');
   I.clickTab("Scheduling and Listing for Interim Hearing");
 }
 

@@ -14,13 +14,13 @@ function solicitorCreateGeneralApplication() {
     I.fillField("Time estimate", "10");
     I.attachFile('input[type="file"]', '../data/dummy.pdf');
     I.wait("5");
-    I.waitForContinueButtonEnabled();
-    I.click("Submit");
+    I.click('Submit');
+    I.wait("5");
     I.waitForText("Event summary");
-    I.waitForText("Submit");
-    I.click("Submit");
-    I.clickTab('General Applications');
+    I.click('Submit');
     I.waitForText('General Applications');
+    I.clickTab('General Applications');
+
 }
 
 function caseWorkerReferGeneralApplication() {
