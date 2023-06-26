@@ -395,6 +395,13 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervenerSharedCollLabel",
+    "Label": "Shared documents with other parties",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
   }
-
 ]
