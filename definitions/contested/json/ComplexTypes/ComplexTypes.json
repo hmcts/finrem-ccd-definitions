@@ -2075,8 +2075,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "generalApplicationCollection",
     "ListElementCode": "generalApplicationReceivedFrom",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "FieldType": "DynamicRadioList",
     "ElementLabel": "Application received from",
     "SecurityClassification": "Public"
   },
