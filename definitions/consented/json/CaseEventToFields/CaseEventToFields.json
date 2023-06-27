@@ -3589,7 +3589,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/preview-general-letter",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -3637,6 +3637,18 @@
     "CaseFieldID": "generalLetterBody",
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_generalLetter",
+    "CaseFieldID": "generalLetterUploadedDocument",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "OPTIONAL",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
