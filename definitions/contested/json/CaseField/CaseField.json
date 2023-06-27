@@ -2971,6 +2971,14 @@
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterUploadedDocument",
+    "Label": "Upload Document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalLetterAddressTo",
     "Label": "Address to",
     "FieldType": "FixedRadioList",
