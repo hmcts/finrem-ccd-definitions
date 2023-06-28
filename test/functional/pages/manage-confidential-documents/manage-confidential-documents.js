@@ -13,7 +13,7 @@ async function manageConfidentialDocuments() {
   I.attachFile('input[type="file"]', '../data/manageConfidentialDoc.pdf');
   I.wait('5');
   I.waitForContinueButtonEnabled();
-  I.click('Continue');
+  I.click('Submit');
   I.waitForText('Event summary (optional)');
   I.click('Submit');
   I.waitForText('Manage confidential documents', '60');
