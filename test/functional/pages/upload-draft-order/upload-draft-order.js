@@ -5,7 +5,7 @@ async function uploadDraftOrder(){
   I.selectOption('select[id="next-step"]', 'Upload Draft Order');
   I.wait('2');
   I.click('Go');
-  I.waitForText('Upload Draft Direction Order', '30');
+  I.waitForText('Upload Draft Order', '30');
   I.click('Add new');
   I.selectOption('#draftDirectionOrderCollection_0_purposeOfDocument', 'Draft order');
   I.attachFile('input[type="file"]', '../data/dummy.pdf');
