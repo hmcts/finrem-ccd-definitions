@@ -7706,7 +7706,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "currentUserCaseRoleType=\"Case\"",
+    "FieldShowCondition": "currentUserCaseRoleType=\"case\"",
     "RetainHiddenValue": "Y"
   },
   {
@@ -10540,7 +10540,7 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "RetainHiddenValue": "N",
-    "PageShowCondition": "currentUserCaseRoleType=\"Case\"",
+    "PageShowCondition": "currentUserCaseRoleType=\"case\"",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
@@ -10925,7 +10925,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "currentUserCaseRoleType=\"Case\""
+    "FieldShowCondition": "currentUserCaseRoleType=\"case\""
   },
   {
     "LiveFrom": "01/01/2017",
