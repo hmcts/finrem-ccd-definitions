@@ -3,9 +3,9 @@
   "amountToPay": "27500",
   "propertyAdjutmentOrderDetail": [],
   "divorceUploadEvidence1": {
-    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/33482ce7-639b-48dd-bee4-61a849da50cc",
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8ac5bbf0-ff0d-4cb3-9b9f-373f07f70d08",
     "document_filename": "fileupload.txt",
-    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/33482ce7-639b-48dd-bee4-61a849da50cc/binary"
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8ac5bbf0-ff0d-4cb3-9b9f-373f07f70d08/binary"
   },
   "rSolicitorAddress": {
     "County": "Essex",
@@ -16,6 +16,8 @@
     "AddressLine2": "Flat2",
     "AddressLine3": "Ring Road"
   },
+  "applicantAddressConfidential": "No",
+  "respondentAddressConfidential": "No",
   "divorceUploadEvidence2": null,
   "divorcePetitionIssuedDate": "2020-08-14",
   "rSolicitorName": "ResSol",
@@ -83,9 +85,9 @@
     "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]"
   },
   "miniFormA": {
-    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/33482ce7-639b-48dd-bee4-61a849da50cc",
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8ac5bbf0-ff0d-4cb3-9b9f-373f07f70d08",
     "document_filename": "DraftOnlineForm.pdf",
-    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/33482ce7-639b-48dd-bee4-61a849da50cc/binary"
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8ac5bbf0-ff0d-4cb3-9b9f-373f07f70d08/binary"
   },
   "familyMediatorServiceName1": null,
   "cfcCourtList": "FR_s_CFCList_9",
@@ -95,7 +97,7 @@
   "ApplicantOrganisationPolicy": {
     "Organisation": {
       "OrganisationID": "A31PTVA",
-      "OrganisationName": "FRApplicantSolicitorFirm"
+      "OrganisationName": "FinRem-1-Org"
     },
     "OrgPolicyReference": "FRApplicant",
     "OrgPolicyCaseAssignedRole": "[APPSOLICITOR]"
@@ -142,5 +144,6 @@
   "londonFRCList": "cfc",
   "helpWithFeesQuestion": "Yes",
   "MIAMDomesticViolenceChecklist": null,
-  "addToComplexityListOfCourts": "falseNo"
+  "addToComplexityListOfCourts": "falseNo",
+  "applicantAddressConfidential": "No"
 }

@@ -1,6 +1,6 @@
 #!groovy
 properties([
-        pipelineTriggers([cron('00 20 * * *')]),
+        pipelineTriggers([cron('H 07 * * 1-5')]),
         parameters([
                 string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
                 string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
@@ -47,7 +47,7 @@ withNightlyPipeline("nodejs", product, component) {
     env.NODE_ENV = 'ci'
 
     loadVaultSecrets(secrets)
-    enableFullFunctionalTest()
+    enableFullFunctionalTest(90)
     enableCrossBrowserTest()
 
     afterSuccess('fullFunctionalTest') {

@@ -18,7 +18,7 @@ const { optionalDocuments, consentedOtherDocuments, contestedOtherDocuments } = 
 const { d81Question } = require('./pages/d81-question/d81-question');
 const { consentOrder } = require('./pages/consent-order/consent-order');
 const { orderForChildren, contestedOrderForChildren } = require('./pages/order-for-children/order-for-children');
-const { natureOfApplication, contestedNatureOfApplication } = require('./pages/nature-of-application/nature-of-application');
+const { natureOfApplication, contestedNatureOfApplication, contestedNatureOfApplicationForSchedule1 } = require('./pages/nature-of-application/nature-of-application');
 const { consentedRespondentDetails, contestedRespondentDetails } = require('./pages/respondent-details/respondent-details');
 const { applicantDetails, contestedApplicantDetails } = require('./pages/applicant-details/applicant-details');
 const { solicitorCreate, contestedSolicitorCreate } = require('./pages/solicitor-create/solicitor-create');
@@ -26,13 +26,37 @@ const { divorceDetails, contestedDivorceDetails } = require('./pages/divorce-det
 const { waitForContinueButtonEnabled } = require('./pages/common/common');
 const { waitForPage } = require('./pages/common/common');
 const { createCase } = require('./pages/create-case/create-case');
-const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab, contestedOrderTab, approvedOrderTab, gateKeepingAllocationsTab, schedulingAndListingTab, consentOrderProcessTab, verifyConsentedTabData, verifyContestedTabData, verifyContestedPaperTabData } = require('./pages/tab-data-verification/tab-data-verification');
+const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab, contestedOrderTab, approvedOrderTab, gateKeepingAllocationsTab, schedulingAndListingTab, consentOrderProcessTab, verifyConsentedTabData, verifyContestedTabData, verifyContestedPaperTabData, verifyContestedConfidentialTabData, contestedIntervenersTab, schedule1Tab, changeOfRepresentativesTab, verifyManageBarristerEvent, verifyListForInterimHearing, verifyCaseFlagEvent, verifyGeneralApplicationTab} = require('./pages/tab-data-verification/tab-data-verification');
 const { assignContestedCase } = require('./pages/org-assign-cases/org-assign-cases-to-respondent');
 const { assignContestedShareCase } = require('./pages/share-case-in-org/share-case-in-org');
+const {contestedCaseworkerCreate} = require('./pages/caseworker-create/caseworker-create');
+const {pbaPayment} = require('./pages/pba-payment/pba-payment');
+const {manualPayment} = require('./pages/manual-payment/manual-payment');
+const {issueApplication, getCaseRefFromScreen} = require('./pages/issue-application/issue-application');
+const {childrenDetails} = require('./pages/children-details/children-details');
+const {allocateJudge} = require('./pages/allocate-judge/allocate-judge');
+const {uploadCaseFiles} = require('./pages/upload-case-files/upload-case-files');
+const {manageConfidentialDocuments} = require('./pages/manage-confidential-documents/manage-confidential-documents');
+const {progressToListing} = require('./pages/progress-to-listing/progress-to-listing');
+const {listForHearing} = require('./pages/list-for-hearing/list-for-hearing');
+const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-reference');
+const {giveAllocationDirection} = require('./pages/give-allocation-direction/give-allocation-direction');
+const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
+const {manageInterveners} = require('./pages/manage-interveners/manage-interveners');
+const {addNote} = require('./pages/add-note/add-note');
+const {refundCase} = require('./pages/refund-case/refund-case');
+const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-order');
+const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-approve');
+const {uploadOrder} = require('./pages/upload-order/upload-order');
+const {sendOrder} = require('./pages/send-order/send-order');
+const {listForInterimHearing} = require('./pages/list-of-interim-hearing/list-of-interim-hearing');
+const {createCaseFlag, validateCaseFlagAlertMessage, validateCaseFlagTab} = require('./pages/create-case-flag/create-case-flag');
+const {manageBarristerApplicant, manageBarristerRespondent} = require('./pages/manage-barrister/manage-barrister');
+const {solicitorCreateGeneralApplication, caseWorkerReferGeneralApplication, judgeGeneralApplicationOutcome, generalApplicationDirections} = require('./pages/general-application/general-application');
+const {manageFlags} = require('./pages/manage-flags/manage-case-flags');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
-
 module.exports = () => {
   return actor({
 
@@ -63,11 +87,17 @@ module.exports = () => {
       if(crossBrowser=='true'){
         this.wait('10');
       }
-      this.waitForText('Email address',30);
+      this.waitForText('Sign in',60);
       this.fillField('username', username);
       this.fillField('password', password);
       this.click('Sign in');
       this.wait('15');
+    },
+
+    signOut() {
+      this.amOnPage(`${process.env.CCD_WEB_URL}`);
+      this.wait('20');
+      this.click('Sign out');
     },
     signInXuiOrg(username, password) {
       this.amOnPage(`${process.env.XUI_ORG_WEB_URL}`);
@@ -132,6 +162,47 @@ module.exports = () => {
     verifyContestedTabData,
     verifyContestedPaperTabData,
     assignContestedCase,
-    assignContestedShareCase
+    assignContestedShareCase,
+    contestedCaseworkerCreate,
+    pbaPayment,
+    manualPayment,
+    issueApplication,
+    childrenDetails,
+    contestedNatureOfApplicationForSchedule1,
+    allocateJudge,
+    uploadCaseFiles,
+    manageConfidentialDocuments,
+    verifyContestedConfidentialTabData,
+    progressToListing,
+    listForHearing,
+    getCaseRefFromScreen,
+    enterCaseReference,
+    giveAllocationDirection,
+    updateContactDetails,
+    manageInterveners,
+    contestedIntervenersTab,
+    refundCase,
+    addNote,
+    manageBarristerApplicant,
+    manageBarristerRespondent,
+    schedule1Tab,
+    changeOfRepresentativesTab,
+    verifyManageBarristerEvent,
+    uploadDraftOrder,
+    draftOrderApprove,
+    uploadOrder,
+    sendOrder,
+    listForInterimHearing,
+    verifyListForInterimHearing,
+    createCaseFlag,
+    validateCaseFlagAlertMessage,
+    validateCaseFlagTab,
+    verifyCaseFlagEvent,
+    solicitorCreateGeneralApplication,
+    verifyGeneralApplicationTab,
+    caseWorkerReferGeneralApplication,
+    judgeGeneralApplicationOutcome,
+    generalApplicationDirections,
+    manageFlags
   });
 };

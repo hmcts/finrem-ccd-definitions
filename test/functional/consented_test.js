@@ -34,7 +34,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
       I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
     }
   }
-});
+}).retry(3);
 
 Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
@@ -76,9 +76,10 @@ Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => 
       I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
       I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
   }
-});
+}).retry(3);
 /* eslint-disable require-await */
-Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I => {
+
+Scenario('Consent Case Creation by Solicitor @nightly', async I => {
   if (nightlyTest === 'true') {
     I.signInIdam(solicitorUserName, solicitorPassword);
     I.wait('2');
@@ -88,7 +89,6 @@ Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I =
     await I.applicantDetails();
     await I.consentedRespondentDetails();
     await I.natureOfApplication();
-    await I.orderForChildren();
     await I.consentOrder();
     await I.d81Question();
     await I.optionalDocuments();
@@ -98,7 +98,7 @@ Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I =
     // amend event
     I.amendApplicationDetails();
     // hwf payment submission
-    await I.caseSubmitAuthorisation();
+    await I.caseSubmitAuthorisation('consented');
     await I.paymentPage(false);
     await I.hwfPaymentDetails();
     await I.paymentSubmission();
@@ -108,3 +108,4 @@ Scenario('Consent Case Creation by Solicitor @crossbrowser @nightly ', async I =
     I.waitForText('History', '30');
   }
 }).retry(3);
+

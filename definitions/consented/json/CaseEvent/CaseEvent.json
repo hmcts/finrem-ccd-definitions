@@ -36,7 +36,7 @@
     "Name": "Add Note",
     "Description": "Add Note",
     "DisplayOrder": 103,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
+    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;newPaperCase;awaitingInfo",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -104,7 +104,7 @@
     "Name": "Upload document",
     "Description": "Upload document",
     "DisplayOrder": 108,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
+    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;readyForHearing;newPaperCase",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -144,7 +144,7 @@
     "Name": "Refund",
     "Description": "Refund",
     "DisplayOrder": 111,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
+    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;newPaperCase",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -180,7 +180,7 @@
     "Name": "Close Case",
     "Description": "Close Case",
     "DisplayOrder": 114,
-    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived",
+    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;newPaperCase",
     "PostConditionState": "close",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -294,7 +294,7 @@
     "Name": "Awaiting Payment Response",
     "Description": "Awaiting Payment Response",
     "DisplayOrder": 8,
-    "PreConditionState(s)": "awaitingPayment",
+    "PreConditionState(s)": "awaitingPayment;newPaperCase",
     "PostConditionState": "awaitingPaymentResponse",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -576,8 +576,8 @@
     "DisplayOrder": 28,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-letter-start",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/general-letter",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -699,7 +699,7 @@
     "Name": "Awaiting Information",
     "Description": "Awaiting Information",
     "DisplayOrder": 38,
-    "PreConditionState(s)": "applicationSubmitted;applicationIssued;responseReceived;orderMade;consentOrderApproved;infoReceived",
+    "PreConditionState(s)": "applicationSubmitted;applicationIssued;responseReceived;orderMade;consentOrderApproved;infoReceived;newPaperCase",
     "PostConditionState": "awaitingInfo",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
@@ -785,8 +785,8 @@
     "DisplayOrder": 45,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/general-email-start",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-email",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "Y"
   },
@@ -973,7 +973,7 @@
     "Name": "Update Contact Details",
     "Description": "Update solicitor contact details",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/get-user-roles",
-    "DisplayOrder": 57,
+    "DisplayOrder": 59,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
@@ -1008,5 +1008,61 @@
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_uploadApprovedOrder",
+    "Name": "Upload Approved Order",
+    "Description": "Upload Approved Order",
+    "DisplayOrder": 62,
+    "PreConditionState(s)": "referredToJudge",
+    "PostConditionState": "consentOrderApproved",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2023",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_readyForHearing",
+    "Name": "Ready for Hearing",
+    "Description": "Ready for Hearing",
+    "DisplayOrder": 62,
+    "PreConditionState(s)": "responseReceived;awaitingInfo;awaitingResponse",
+    "PostConditionState": "readyForHearing",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "createFlags",
+    "Name": "Create Flag",
+    "Description": "Create Case Flag",
+    "DisplayOrder": 62,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "manageFlags",
+    "Name": "Manage Flags",
+    "Description": "Manage Case Flags",
+    "DisplayOrder": 63,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
   }
 ]

@@ -7,11 +7,11 @@ exports.config = {
         smartWait: 50000,
         waitForTimeout: 90000,
       show: false,
+      windowSize: '1440x700',
       waitForNavigation: 'domcontentloaded',
         restart: true,
         keepCookies: false,
         keepBrowserState: false,
-      headless: true,
       ignoreHTTPSErrors: true,
       chrome: {
         ignoreHTTPSErrors: true,
@@ -24,7 +24,12 @@ exports.config = {
         ]
       }
     },
-    PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' }
+
+      //just adding helper class here
+    PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' },
+    'JSWait': {
+        require: '../helpers/JSWait.js'
+    }
   },
     plugins: {
         retryFailedStep: {

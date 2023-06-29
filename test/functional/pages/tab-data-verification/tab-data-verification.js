@@ -12,7 +12,7 @@ function historyTab(caseType, tabName, eventName, endState) {
 
 async function applicantTab(caseType, tabName) {
   const I = this;
-      I.retry(3).waitForText(tabName, '90');
+  I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -33,6 +33,7 @@ async function applicantTab(caseType, tabName) {
     I.see(verifyContestedTabText.applicantTab.applicantEmailCommunication);
     break;
   case 'contestedPaper':
+    I.wait("3");
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-1"]');
     I.see(verifyContestedPaperTabText.applicantTab.applicantLastName);
     I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorName);
@@ -45,7 +46,7 @@ async function applicantTab(caseType, tabName) {
 
 async function respondentTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '10');
+  I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -160,11 +161,11 @@ async function authorisationTab(caseType, tabName) {
 /* eslint-disable */
 async function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
-  I.waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
+  I.retry(3).waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
   if (!I.see(tabName)) {
     await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple')
   }
-  I.waitForText(tabName, 30);
+  I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -207,7 +208,7 @@ async function caseDocumentsTab(caseType, tabName, eventName) {
 
 async function paymentDetailsTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -402,6 +403,99 @@ function verifyContestedPaperTabData(caseType, eventName, stateName) {
   I.schedulingAndListingTab(caseType, verifyContestedPaperTabText.schedulingAndListingTab.tabName);
 }
 
+async function verifyContestedConfidentialTabData(eventName, tabName) {
+  const I = this;
+
+  //I.waitForText(tabName, '5');
+    switch (eventName) {
+    case 'Upload Case Files':
+      I.see(verifyContestedTabText.confidentialDocumentsTab.type);
+      I.see(verifyContestedTabText.confidentialDocumentsTab.documentUrl);
+      I.see(verifyContestedTabText.confidentialDocumentsTab.comment);
+      I.see(verifyContestedTabText.confidentialDocumentsTab.fileName);
+      break;
+    case 'Manage confidential documents':
+      I.see(verifyContestedTabText.confidentialDocumentsTab.type);
+      I.see(verifyContestedTabText.confidentialDocumentsTab.manageConfDocumentUrl);
+      break;
+    }
+
+}
+
+async function contestedIntervenersTab(event, tabName) {
+
+  const I = this;
+  I.see(verifyContestedTabText.IntervenersTab.name);
+  I.see(verifyContestedTabText.IntervenersTab.email);
+  I.see(verifyContestedTabText.IntervenersTab.organization);
+}
+
+async function schedule1Tab(tabName) {
+
+  const I = this;
+  await I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
+  I.see(verifyContestedTabText.Schedule1Tab.name);
+  I.see(verifyContestedTabText.Schedule1Tab.dob);
+}
+
+async function changeOfRepresentativesTab(tabName) {
+
+  const I = this;
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.tabName);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantHeader);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentHeader);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantParty);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentParty);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantClientName);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentClientName);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantUpdatedBy);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentUpdatedBy);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantUpdatedVia);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentUpdatedVia);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantOrganisation);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentOrganisation);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantName);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentName);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.applicantEmail);
+  I.see(verifyContestedTabText.ChangeOfRepresentativesTab.respondentEmail);
+}
+
+function verifyManageBarristerEvent(caseType, eventName, stateName) {
+  const I = this;
+  I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+}
+
+function verifyCaseFlagEvent(caseType, eventName, stateName) {
+  const I = this;
+  I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+}
+
+function verifyListForInterimHearing() {
+  const I = this;
+  I.see(verifyContestedTabText.listForInterimHearingTab.tabName);
+  I.see(verifyContestedTabText.listForInterimHearingTab.typeOfHearing);
+  I.see(verifyContestedTabText.listForInterimHearingTab.timeEstimate);
+  I.see(verifyContestedTabText.listForInterimHearingTab.hearingDate);
+  I.see(verifyContestedTabText.listForInterimHearingTab.hearingTime);
+  I.see(verifyContestedTabText.listForInterimHearingTab.region);
+  I.see(verifyContestedTabText.listForInterimHearingTab.FRC);
+  I.see(verifyContestedTabText.listForInterimHearingTab.closestCourt);
+  I.see(verifyContestedTabText.listForInterimHearingTab.addInfo);
+  I.see(verifyContestedTabText.listForInterimHearingTab.uploadDocument);
+  I.see(verifyContestedTabText.listForInterimHearingTab.documentName);
+}
+
+function verifyGeneralApplicationTab(status) {
+  const I = this;
+  I.see(verifyContestedTabText.GeneralApplicationsTab.tabName);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.tableHeader);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.applicationReceivedFrom);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.createdBy);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.hearingRequired);
+  I.see(verifyContestedTabText.GeneralApplicationsTab.timeEstimate);
+  I.see(status);
+}
+
 module.exports = {
   historyTab,
   applicantTab,
@@ -420,5 +514,13 @@ module.exports = {
   consentOrderProcessTab,
   verifyConsentedTabData,
   verifyContestedTabData,
-  verifyContestedPaperTabData
+  verifyContestedPaperTabData,
+  verifyContestedConfidentialTabData,
+  contestedIntervenersTab,
+  schedule1Tab,
+  changeOfRepresentativesTab,
+  verifyManageBarristerEvent,
+  verifyListForInterimHearing,
+  verifyCaseFlagEvent,
+  verifyGeneralApplicationTab
 };

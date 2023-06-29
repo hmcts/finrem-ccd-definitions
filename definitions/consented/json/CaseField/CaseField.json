@@ -784,6 +784,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalLetterUploadedDocument",
+    "Label": "Upload Document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "payment",
     "Label": "#### PAYMENT DETAILS",
     "FieldType": "Label",
@@ -920,7 +928,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "orderDirectionAbsolute",
-    "Label": "Subject to Decree Absolute?",
+    "Label": "Subject to Decree Absolute/Final Order?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
@@ -1792,6 +1800,14 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalEmailUploadedDocument",
+    "Label": "Upload Document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "generalEmailCollection",
@@ -1984,6 +2000,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "currentUserCaseRoleLabel",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "solicitorAddressLabel",
     "Label": "Solicitor Address Label",
     "FieldType": "Label",
@@ -2028,6 +2052,49 @@
     "Label": "List for hearings",
     "FieldType": "Collection",
     "FieldTypeParameter": "hearingCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "uploadApprovedConsentOrder",
+    "Label": "Upload Consent Order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseFlags",
+    "Label": "Case Flags",
+    "HintText": "Case Flags",
+    "FieldType": "Flags",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "applicantFlags",
+    "Label": "Flags for Applicant",
+    "HintText": "Flags for Applicant",
+    "FieldType": "Flags",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "respondentFlags",
+    "Label": "Flags for Respondent",
+    "HintText": "Flags for Respondent",
+    "FieldType": "Flags",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/09/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "flagLauncher",
+    "Label": "Launch the Flags screen",
+    "FieldType": "FlagLauncher",
     "SecurityClassification": "Public"
   }
 ]
