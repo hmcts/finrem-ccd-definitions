@@ -56,7 +56,7 @@ Scenario('Contested Add Note  @nightly ', async I => { //Matrimonial
     await I.addNote();
 }).retry(3);
 
-/*Scenario('Contested Matrimonial case Amend application and Case submission  by Solicitor @nightly @nk', async I => {
+/*Scenario('Contested Matrimonial case Amend application and Case submission  by Solicitor @nightly', async I => {
     //TODO- fix test
     //The json file used to create case is new case data - this can be used to create a case via solicitor, case type matrimonial.
     //Fix this json file - not working

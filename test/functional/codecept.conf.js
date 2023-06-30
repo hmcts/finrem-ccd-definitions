@@ -2,7 +2,7 @@ exports.config = {
   tests: './*_test.js',
   output: './functional-output/xui',
   helpers: {
-    Puppeteer: {
+    Playwright: {
       url: 'http://localhost:3000',
         smartWait: 50000,
         waitForTimeout: 90000,
