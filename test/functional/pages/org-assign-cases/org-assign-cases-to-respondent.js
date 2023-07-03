@@ -14,9 +14,10 @@ function assignContestedCase(caseId, respondentEmail) {
   I.waitForText('Selected cases', '10');
   I.wait('2');
   I.click({ css: '.govuk-input' });
-  I.fillField({ css: '.govuk-input' }, 'fr_');
-  I.waitForElement({ css: '#mat-option-1 > .mat-option-text' }, '30');
-  I.click({ css: '#mat-option-1 > .mat-option-text' });
+  I.wait('2');
+  I.fillField({ css: '.govuk-input' }, 'fr_respondent');
+  I.waitForElement({ css: '#mat-option-2 > .mat-option-text' }, '30');
+  I.click({ css: '#mat-option-2 > .mat-option-text' });
   I.wait('2');
   I.click('Add');
   I.wait('2');
@@ -24,7 +25,7 @@ function assignContestedCase(caseId, respondentEmail) {
   I.waitForText('Check and confirm your selection', '5');
   I.see(respondentEmail);
   I.click('Confirm');
-  I.waitForText('Your cases have been updated', '10');
+  I.waitForText('Your selected cases have been updated', '10');
   I.see('If you\'ve shared one or more cases, your colleagues will now be able to access them from their case list.');
 }
 

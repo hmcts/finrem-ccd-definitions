@@ -2169,6 +2169,12 @@
     "ListElement": "Other"
   },
   {
+    "LiveFrom": "01/06/2020",
+    "ID": "GeneralLetterAddressToType",
+    "ListElementCode": "applicant",
+    "ListElement": "Applicant"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Insufficient information provided – A",
@@ -2361,9 +2367,51 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_EvidenceParty",
+    "ListElementCode": "intervener1",
+    "ListElement": "Intervener1",
+    "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_EvidenceParty",
+    "ListElementCode": "intervener2",
+    "ListElement": "Intervener2",
+    "DisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_EvidenceParty",
+    "ListElementCode": "intervener3",
+    "ListElement": "Intervener3",
+    "DisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_EvidenceParty",
+    "ListElementCode": "intervener4",
+    "ListElement": "Intervener4",
+    "DisplayOrder": 6
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_EvidenceParty",
     "ListElementCode": "case",
     "ListElement": "Case",
-    "DisplayOrder": 3
+    "DisplayOrder": 7
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_ApplicantAndRespondentEvidenceParty",
+    "ListElementCode": "applicant",
+    "ListElement": "Applicant",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_fl_ApplicantAndRespondentEvidenceParty",
+    "ListElementCode": "respondent",
+    "ListElement": "Respondent",
+    "DisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2784,5 +2832,54 @@
     "ListElementCode": "deleteIntervener4",
     "ListElement": "Delete Intervener 4",
     "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "evidenceParty",
+    "ListElementCode": "applicant",
+    "ListElement": "Applicant",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "evidenceParty",
+    "ListElementCode": "respondent",
+    "ListElement": "Respondent",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "evidenceParty",
+    "ListElementCode": "case",
+    "ListElement": "Case",
+    "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "evidenceParty",
+    "ListElementCode": "intervener1",
+    "ListElement": "intervener1",
+    "DisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "evidenceParty",
+    "ListElementCode": "intervener2",
+    "ListElement": "intervener2",
+    "DisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "evidenceParty",
+    "ListElementCode": "intervener3",
+    "ListElement": "intervener3",
+    "DisplayOrder": 6
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "evidenceParty",
+    "ListElementCode": "intervener4",
+    "ListElement": "intervener4",
+    "DisplayOrder": 7
   }
 ]
