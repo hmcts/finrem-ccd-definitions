@@ -2383,5 +2383,21 @@
     "FieldType": "OrganisationPolicy",
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderCollection",
+    "ListElementCode": "approveConsentOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Approve orders",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderCollection",
+    "ListElementCode": "consentOrderReceivedAt",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order received at",
+    "SecurityClassification": "Public"
   }
 ]
