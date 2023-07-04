@@ -8724,7 +8724,7 @@
     "TabID": "generalApplicationsTab1",
     "TabLabel": "General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "caseworker-divorce-financialremedy-judiciary"
   },
@@ -8842,7 +8842,7 @@
     "TabID": "generalApplicationsTab2",
     "TabLabel": "General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "caseworker-divorce-financialremedy-courtadmin"
   },
@@ -8960,7 +8960,7 @@
     "TabID": "generalApplicationsTab3",
     "TabLabel": "General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[APPSOLICITOR]",
     "FieldShowCondition": "generalApplications=\"IMPOSSIBLE\""
@@ -9088,7 +9088,7 @@
     "TabID": "generalApplicationsTab4",
     "TabLabel": "General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[APPBARRISTER]",
     "FieldShowCondition": "generalApplications=\"IMPOSSIBLE\""
@@ -9216,7 +9216,7 @@
     "TabID": "generalApplicationsTab5",
     "TabLabel": "General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[RESPSOLICITOR]",
     "FieldShowCondition": "generalApplications=\"IMPOSSIBLE\""
@@ -9344,7 +9344,7 @@
     "TabID": "generalApplicationsTab6",
     "TabLabel": "General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[RESPBARRISTER]",
     "FieldShowCondition": "generalApplications=\"IMPOSSIBLE\""
@@ -9472,7 +9472,7 @@
     "TabID": "generalApplicationsTab7",
     "TabLabel": "Intervener 1 General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[INTVRSOLICITOR1]"
   },
@@ -9590,7 +9590,7 @@
     "TabID": "generalApplicationsTab8",
     "TabLabel": "Intervener 2 General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[INTVRSOLICITOR2]"
   },
@@ -9708,7 +9708,7 @@
     "TabID": "generalApplicationsTab9",
     "TabLabel": "Intervener 3 General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[INTVRSOLICITOR3]"
   },
@@ -9826,7 +9826,7 @@
     "TabID": "generalApplicationsTab10",
     "TabLabel": "Intervener 4 General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[INTVRSOLICITOR4]"
   },
@@ -9944,7 +9944,7 @@
     "TabID": "generalApplicationsTab11",
     "TabLabel": "Intervener 1 General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[INTVRBARRISTER1]"
   },
@@ -10062,7 +10062,7 @@
     "TabID": "generalApplicationsTab12",
     "TabLabel": "Intervener 2 General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[INTVRBARRISTER2]"
   },
@@ -10180,7 +10180,7 @@
     "TabID": "generalApplicationsTab13",
     "TabLabel": "Intervener 3 General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[INTVRBARRISTER3]"
   },
@@ -10298,7 +10298,7 @@
     "TabID": "generalApplicationsTab14",
     "TabLabel": "Intervener 4 General Applications",
     "TabDisplayOrder": 27,
-    "CaseFieldID": "generalApplicationReceivedFrom",
+    "CaseFieldID": "generalApplicationSender",
     "TabFieldDisplayOrder": 1,
     "UserRole": "[INTVRBARRISTER4]"
   },
