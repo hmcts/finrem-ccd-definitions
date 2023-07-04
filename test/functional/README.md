@@ -4,7 +4,7 @@
 ## How to run functional tests against AAT
 
 
-1) open intelliJ terminal and copy these evn variables 
+1) import these evn variables
 
         export CCD_ADMIN_USERNAME=ccd-importer@server.net
         
@@ -41,9 +41,12 @@
         export CCD_SUBMIT_S2S_SECRET=DWYML5ONMS7KG44R
 
 2) open `codecept.conf.js` file and update this parameter `show: true`
+
 3) place the tag `@mytest` in the scenario  (for ex. 'Consent Case Creation For Caseworker @nightly @pipeline @mytest')
+
 4) To run the test run this `yarn test:mytest` 
         the test include API calls requires VPN on.
+
 5) To run test against preview env requires these env variables
         
         export CCD_ADMIN_USERNAME=ccd-importer@server.net
