@@ -1096,14 +1096,6 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_IntervenerDirectionsCollection",
-    "ListElementCode": "generalApplicationIntvrDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Intervener Directions Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
     "ID": "FR_uploadCaseDocument",
     "ListElementCode": "hearingDetails",
     "FieldType": "TextArea",
@@ -2083,16 +2075,8 @@
     "LiveFrom": "01/01/2017",
     "ID": "generalApplicationCollection",
     "ListElementCode": "generalApplicationReceivedFrom",
-    "FieldType": "DynamicRadioList",
-    "ElementLabel": "Application received from",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "generalApplicationCollection",
-    "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_ApplicantAndRespondentEvidenceParty",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "Application received from",
     "SecurityClassification": "Public"
   },

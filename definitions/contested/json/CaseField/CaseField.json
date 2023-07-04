@@ -1595,7 +1595,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadCaseDocument",
-    "Label": " ",
+    "Label": "                                                                                      ",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public"
@@ -3179,42 +3179,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener1",
-    "Label": "Bulk Print Cover Sheet For Intervener1 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener2",
-    "Label": "Bulk Print Cover Sheet For Intervener2 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener3",
-    "Label": "Bulk Print Cover Sheet For Intervener3 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener4",
-    "Label": "Bulk Print Cover Sheet For Intervener4 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "bulkPrintLetterIdApp",
     "Label": "Bulk Print LetterId For Applicant / Solicitor",
     "FieldType": "Text",
@@ -3314,16 +3278,8 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationReceivedFrom",
-    "FieldType": "DynamicRadioList",
-    "Label": "Application received from",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "appRespGeneralApplicationReceivedFrom",
     "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_ApplicantAndRespondentEvidenceParty",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
     "Label": "Application received from",
     "SecurityClassification": "Public"
   },
@@ -4695,23 +4651,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "currentUserCaseRoleType",
-    "Label": " ",
-    "FieldType": "Text",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalApplicationIntvrDocuments",
-    "Label": "Intervener hearing/no hearing documents",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_IntervenerDirectionsCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "hearingUploadBundle",
     "Label": "Hearing Bundles ",
     "FieldType": "Collection",
@@ -4841,51 +4780,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplications",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "appRespGeneralApplications",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener1GeneralApplications",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener2GeneralApplications",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener3GeneralApplications",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener4GeneralApplications",
     "Label": "General Applications",
     "FieldType": "Collection",
     "FieldTypeParameter": "generalApplicationCollection",
