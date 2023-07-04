@@ -5,7 +5,8 @@
     "ListElementCode": "propertAddress",
     "FieldType": "TextArea",
     "ElementLabel": "Property address",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -13,7 +14,8 @@
     "ListElementCode": "nameForProperty",
     "FieldType": "TextArea",
     "ElementLabel": "Name(s) and address(es) of any mortgage(s) for property",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -21,7 +23,8 @@
     "ListElementCode": "additionalDocuments",
     "FieldType": "Document",
     "ElementLabel": "Please upload any additional documents related to you application",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -30,7 +33,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_documentType",
     "ElementLabel": "Document type",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -38,7 +42,8 @@
     "ListElementCode": "caseNoteAuthor",
     "FieldType": "Text",
     "ElementLabel": "Author",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -46,7 +51,8 @@
     "ListElementCode": "caseNoteDate",
     "FieldType": "Date",
     "ElementLabel": "Date",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -54,7 +60,8 @@
     "ListElementCode": "caseNote",
     "FieldType": "TextArea",
     "ElementLabel": "Note",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -63,7 +70,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_uploadGeneralDocument",
     "ElementLabel": "Type",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -71,7 +79,8 @@
     "ListElementCode": "DocumentEmailContent",
     "FieldType": "TextArea",
     "ElementLabel": "Email content",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -79,7 +88,8 @@
     "ListElementCode": "DocumentLink",
     "FieldType": "Document",
     "ElementLabel": "Document Url",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -87,7 +97,8 @@
     "ListElementCode": "DocumentDateAdded",
     "FieldType": "Date",
     "ElementLabel": "Date received",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -95,7 +106,8 @@
     "ListElementCode": "DocumentComment",
     "FieldType": "Text",
     "ElementLabel": "Comment",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -103,7 +115,8 @@
     "ListElementCode": "DocumentFileName",
     "FieldType": "Text",
     "ElementLabel": "File name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -111,7 +124,8 @@
     "ListElementCode": "generalDocumentUploadDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Upload DateTime",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -120,7 +134,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_consentOrderType",
     "ElementLabel": "Type",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -128,7 +143,8 @@
     "ListElementCode": "DocumentEmailContent",
     "FieldType": "TextArea",
     "ElementLabel": "Email content",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -136,7 +152,8 @@
     "ListElementCode": "DocumentLink",
     "FieldType": "Document",
     "ElementLabel": "Document Url",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -144,7 +161,8 @@
     "ListElementCode": "DocumentDateAdded",
     "FieldType": "Date",
     "ElementLabel": "Date received",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -152,7 +170,8 @@
     "ListElementCode": "DocumentComment",
     "FieldType": "Text",
     "ElementLabel": "Comment",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -160,7 +179,8 @@
     "ListElementCode": "DocumentFileName",
     "FieldType": "Text",
     "ElementLabel": "File name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -168,7 +188,8 @@
     "ListElementCode": "generalOrderText",
     "FieldType": "Text",
     "ElementLabel": "Please type the order in the box ",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -176,7 +197,8 @@
     "ListElementCode": "additionalDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -186,7 +208,8 @@
     "FieldTypeParameter": "FR_fl_Judge",
     "ElementLabel": "Select Judge",
     "HintText": "Please select the appropriate judge",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -195,7 +218,8 @@
     "FieldType": "Date",
     "ElementLabel": "Date of order",
     "HintText": "Date of order",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -204,7 +228,8 @@
     "FieldType": "Text",
     "ElementLabel": "Additional comments",
     "HintText": "Please add any additional comments for  court admin (this comments will not be accessible by applicant's solicitor)",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -213,7 +238,8 @@
     "FieldType": "Text",
     "ElementLabel": "Addressed to",
     "HintText": "Please add any additional comments for  court admin (this comments will not be accessible by applicant's solicitor)",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -221,7 +247,8 @@
     "ListElementCode": "andAfter",
     "FieldType": "Text",
     "ElementLabel": "AND AFTER",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -229,7 +256,8 @@
     "ListElementCode": "othersTextOrders",
     "FieldType": "Text",
     "ElementLabel": "others (Please specify)",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -239,7 +267,8 @@
     "FieldTypeParameter": "FR_ms_refusalReason",
     "ElementLabel": "Reason For Refusal",
     "HintText": "Please tick all boxes that apply",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -249,7 +278,8 @@
     "FieldTypeParameter": "FR_fl_Judge",
     "ElementLabel": "Select Judge",
     "HintText": "Please select the appropriate judge",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -258,7 +288,8 @@
     "FieldType": "Date",
     "ElementLabel": "Date of order",
     "HintText": "Date of order",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -267,7 +298,8 @@
     "FieldType": "Text",
     "ElementLabel": "Additional comments",
     "HintText": "Please add any additional comments for  court admin (this comments will not be accesible by applicant's solicitor)",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -275,7 +307,8 @@
     "ListElementCode": "# Record Meta data",
     "FieldType": "Label",
     "ElementLabel": "Scanned Records",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -284,7 +317,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "ScannedDocumentType",
     "ElementLabel": "Document Type",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -292,7 +326,8 @@
     "ListElementCode": "subtype",
     "FieldType": "Text",
     "ElementLabel": "Document Subtype",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -300,7 +335,8 @@
     "ListElementCode": "url",
     "FieldType": "Document",
     "ElementLabel": "Scanned document url",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -308,7 +344,8 @@
     "ListElementCode": "controlNumber",
     "FieldType": "Text",
     "ElementLabel": "Document Control Number",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -316,7 +353,8 @@
     "ListElementCode": "fileName",
     "FieldType": "Text",
     "ElementLabel": "File Name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -324,7 +362,8 @@
     "ListElementCode": "scannedDate",
     "FieldType": "DateTime",
     "ElementLabel": "Scanned Date",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -332,7 +371,8 @@
     "ListElementCode": "deliveryDate",
     "FieldType": "DateTime",
     "ElementLabel": "Delivery Date",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -340,7 +380,8 @@
     "ListElementCode": "exceptionRecordReference",
     "FieldType": "Text",
     "ElementLabel": "Exception record reference",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -348,7 +389,8 @@
     "ListElementCode": "localCourtLbl",
     "FieldType": "Label",
     "ElementLabel": "This would usually be the applicants local Court",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -357,7 +399,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_region_list",
     "ElementLabel": "Please choose the Region in which the Applicant resides",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -367,7 +410,8 @@
     "FieldTypeParameter": "FR_midlands_FRCList",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "region=\"midlands\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -377,7 +421,8 @@
     "FieldTypeParameter": "FR_london_FRCList",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "region=\"london\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -387,7 +432,8 @@
     "FieldTypeParameter": "FR_nw_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "region=\"northwest\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -397,7 +443,8 @@
     "FieldTypeParameter": "FR_ne_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": " region=\"northeast\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -407,7 +454,8 @@
     "FieldTypeParameter": "FR_se_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "region=\"southeast\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -417,7 +465,8 @@
     "FieldTypeParameter": "FR_sw_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "region=\"southwest\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -427,7 +476,8 @@
     "FieldTypeParameter": "FR_wales_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "region=\"wales\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -437,7 +487,8 @@
     "FieldTypeParameter": "FR_hc_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "region=\"highcourt\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -447,7 +498,8 @@
     "FieldTypeParameter": "FR_s_NottinghamList",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "region=\"midlands\" AND midlandsList=\"nottingham\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -457,7 +509,8 @@
     "FieldTypeParameter": "FR_s_CFCList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"london\" AND londonList=\"cfc\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -467,7 +520,8 @@
     "FieldTypeParameter": "FR_birmingham_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"midlands\" AND midlandsList=\"birmingham\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -477,7 +531,8 @@
     "FieldTypeParameter": "FR_liverpool_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"northwest\" AND northWestList=\"liverpool\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -487,7 +542,8 @@
     "FieldTypeParameter": "FR_manchester_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"northwest\" AND northWestList=\"manchester\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -497,7 +553,8 @@
     "FieldTypeParameter": "FR_lancashireList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"northwest\" AND northWestList=\"lancashire\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -507,7 +564,8 @@
     "FieldTypeParameter": "FR_cleveland_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"northeast\" AND northEastList=\"cleaveland\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -517,7 +575,8 @@
     "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"northeast\" AND northEastList=\"nwyorkshire\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -527,7 +586,8 @@
     "FieldTypeParameter": "FR_humber_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"northeast\" AND northEastList=\"hsyorkshire\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -537,7 +597,8 @@
     "FieldTypeParameter": "FR_kent_surrey_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"southeast\" AND southEastList=\"kentfrc\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -547,7 +608,8 @@
     "FieldTypeParameter": "FR_bedfordshireList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"southeast\" AND southEastList=\"bedfordshire\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -557,7 +619,8 @@
     "FieldTypeParameter": "FR_thamesvalleyList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"southeast\" AND southEastList=\"thamesvalley\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -567,7 +630,8 @@
     "FieldTypeParameter": "FR_devonList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"southwest\" AND southWestList=\"devon\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -577,7 +641,8 @@
     "FieldTypeParameter": "FR_dorsetList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"southwest\" AND southWestList=\"dorset\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -587,7 +652,8 @@
     "FieldTypeParameter": "FR_bristolList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"southwest\" AND southWestList=\"bristol\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -597,7 +663,8 @@
     "FieldTypeParameter": "FR_newport_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"wales\" AND walesList=\"newport\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -607,7 +674,8 @@
     "FieldTypeParameter": "FR_swansea_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"wales\" AND walesList=\"swansea\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -617,7 +685,8 @@
     "FieldTypeParameter": "FR_northwalesList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"wales\" AND walesList=\"northwales\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -627,7 +696,8 @@
     "FieldTypeParameter": "FR_highCourtList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "region=\"highcourt\" AND hcCourtList=\"highcourt\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -636,7 +706,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_paymentDocumentType",
     "ElementLabel": "Type of document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -644,7 +715,8 @@
     "ListElementCode": "uploadedDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -653,7 +725,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_purposeOfDocument",
     "ElementLabel": "Purpose of Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -661,7 +734,8 @@
     "ListElementCode": "uploadDraftDocument",
     "FieldType": "Document",
     "ElementLabel": "Upload Draft Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -670,7 +744,8 @@
     "FieldType": "Text",
     "ElementLabel": "Please specify why you are unable to approve the draft directions order",
     "HintText": "A Case Worker Will contact the Solicitor to ask for an amended draft",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -678,7 +753,8 @@
     "ListElementCode": "isThisFinalYN",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this the final order?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -686,7 +762,8 @@
     "ListElementCode": "isAnotherHearingYN",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is there another hearing to be listed ?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -696,7 +773,8 @@
     "FieldTypeParameter": "FR_fl_hearingTypeDirections",
     "ElementLabel": "Type of hearing values",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -706,7 +784,8 @@
     "FieldTypeParameter": "FR_fl_hearingTimeDirections",
     "ElementLabel": "Time Estimate",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -715,7 +794,8 @@
     "FieldType": "Text",
     "ElementLabel": "Additional Time",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND timeEstimate=\"additionalTimeReq\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -724,7 +804,8 @@
     "FieldType": "Label",
     "ElementLabel": "#### Hearing Court",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -733,7 +814,8 @@
     "FieldType": "FR_ct_courtList",
     "ElementLabel": "This would usually be the applicants local Court",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -743,7 +825,8 @@
     "FieldTypeParameter": "FR_s_NottinghamList",
     "ElementLabel": "Nottingham List",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"nottingham\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -753,7 +836,8 @@
     "FieldTypeParameter": "FR_s_CFCList",
     "ElementLabel": "CFC List",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"cfc\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -762,7 +846,8 @@
     "FieldType": "TextArea",
     "ElementLabel": "Any other listing instructions (Free Text)",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -771,7 +856,8 @@
     "FieldType": "Document",
     "ElementLabel": "Upload  Document",
     "HintText": "PLEASE NOTE: You must upload a PDF version of document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -779,7 +865,8 @@
     "ListElementCode": "isAnotherHearingYN",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is there another hearing to be listed ?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -788,7 +875,8 @@
     "FieldType": "Text",
     "ElementLabel": "Time Estimate",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -797,7 +885,8 @@
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -806,7 +895,8 @@
     "FieldType": "Text",
     "ElementLabel": "Hearing Time",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -815,7 +905,8 @@
     "FieldType": "Label",
     "ElementLabel": "#### Hearing Court",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -824,7 +915,8 @@
     "FieldType": "FR_ct_courtList",
     "ElementLabel": " ",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -834,7 +926,8 @@
     "FieldTypeParameter": "FR_s_NottinghamList",
     "ElementLabel": "Nottingham List",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"nottingham\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -844,7 +937,8 @@
     "FieldTypeParameter": "FR_s_CFCList",
     "ElementLabel": "CFC List",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"cfc\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -854,23 +948,26 @@
     "FieldTypeParameter": "FR_fl_hearingTypeDirections",
     "ElementLabel": "Type of hearing values",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
-  "LiveFrom": "01/01/2017",
-  "ID": "FR_GeneralEmailDocument",
-  "ListElementCode": "generalEmailRecipient",
-  "FieldType": "Email",
-  "ElementLabel": "Recipient's email",
-  "SecurityClassification": "Public"
-},
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralEmailDocument",
+    "ListElementCode": "generalEmailRecipient",
+    "FieldType": "Email",
+    "ElementLabel": "Recipient's email",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_GeneralEmailDocument",
     "ListElementCode": "generalEmailCreatedBy",
     "FieldType": "Text",
     "ElementLabel": "Email created by",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -878,7 +975,8 @@
     "ListElementCode": "generalEmailBody",
     "FieldType": "TextArea",
     "ElementLabel": "Body",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -886,7 +984,8 @@
     "ListElementCode": "generalEmailUploadedDocument",
     "FieldType": "Document",
     "ElementLabel": "Upload Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -895,7 +994,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_OtherDocument",
     "ElementLabel": "Type of document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -903,7 +1003,8 @@
     "ListElementCode": "uploadedDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -912,7 +1013,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_PensionDocument",
     "ElementLabel": "Type of document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -920,7 +1022,8 @@
     "ListElementCode": "uploadedDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -928,7 +1031,8 @@
     "ListElementCode": "generatedLetter",
     "FieldType": "Document",
     "ElementLabel": "Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -936,7 +1040,8 @@
     "ListElementCode": "generalLetterUploadedDocument",
     "FieldType": "Document",
     "ElementLabel": "Upload Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -945,7 +1050,8 @@
     "FieldType": "TextArea",
     "ElementLabel": "AND AFTER",
     "HintText": "The order will already contain the wording ‘AFTER reading the consent order signed by both parties’. Please complete the box below if you want to add an addition line, this will appear on the order as ‘AND AFTER [insert text here]’.",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -955,7 +1061,8 @@
     "FieldTypeParameter": "FR_ms_OrderRefusal",
     "ElementLabel": "Reason for Refusal",
     "HintText": "Please tick all boxes that apply",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -964,7 +1071,8 @@
     "FieldType": "TextArea",
     "ElementLabel": "Other (please specify)",
     "HintText": "If Other was ticked please provide details",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -973,7 +1081,8 @@
     "FieldType": "Document",
     "ElementLabel": "Upload additional documents",
     "HintText": "Please upload any additional documents",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -983,7 +1092,8 @@
     "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
     "ElementLabel": "Select Judge",
     "HintText": "Please select the appropriate Judge",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -992,7 +1102,8 @@
     "FieldType": "TextArea",
     "ElementLabel": "Name of Judge",
     "HintText": "Surname of judge",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1000,7 +1111,8 @@
     "ListElementCode": "orderRefusalDate",
     "FieldType": "Date",
     "ElementLabel": "Date of order",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1009,7 +1121,8 @@
     "FieldType": "TextArea",
     "ElementLabel": "Additional comments",
     "HintText": "Please add any additional comments for Court Admin (these comments will not be accessible by the Applicant’s solicitor)",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1017,7 +1130,8 @@
     "ListElementCode": "orderRefusalSpacing",
     "FieldType": "Label",
     "ElementLabel": "********************",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -1025,7 +1139,8 @@
     "ListElementCode": "consentOrder",
     "FieldType": "Document",
     "ElementLabel": "Consent Order Annexed and Stamped",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1033,7 +1148,8 @@
     "ListElementCode": "orderLetter",
     "FieldType": "Document",
     "ElementLabel": "Approved Order Letter",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1042,7 +1158,8 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_PensionType",
     "ElementLabel": "Pension Documents Stamped",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -1050,7 +1167,8 @@
     "ListElementCode": "refusalOrderAdditionalDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -1058,7 +1176,8 @@
     "ListElementCode": "generalApplicationDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1066,7 +1185,8 @@
     "ListElementCode": "caseDocuments",
     "FieldType": "Document",
     "ElementLabel": "Please upload any case documents ",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1075,7 +1195,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_caseDocumentType",
     "ElementLabel": "Document type",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1084,7 +1205,8 @@
     "FieldType": "Text",
     "ElementLabel": "Please specify document type",
     "FieldShowCondition": "caseDocumentType=\"other\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1092,7 +1214,8 @@
     "ListElementCode": "additionalHearingDocument",
     "FieldType": "Document",
     "ElementLabel": "Additional Hearing Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1100,7 +1223,8 @@
     "ListElementCode": "generalApplicationIntvrDocument",
     "FieldType": "Document",
     "ElementLabel": "Intervener Directions Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1108,7 +1232,8 @@
     "ListElementCode": "hearingDetails",
     "FieldType": "TextArea",
     "ElementLabel": "Provide the date of hearing and a description of the document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1117,7 +1242,8 @@
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the document confidential?",
     "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1127,7 +1253,8 @@
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
     "FieldShowCondition": "caseDocumentConfidential=\"No\"",
     "HintText": "Document will be placed in the FDR documents tab",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1136,7 +1263,8 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "evidenceParty",
     "ElementLabel": "What type of document is this?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1144,7 +1272,8 @@
     "ListElementCode": "caseDocumentUploadDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Upload DateTime",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1153,7 +1282,8 @@
     "FieldType": "Label",
     "ElementLabel": "#### Hearing Court",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1162,7 +1292,8 @@
     "FieldType": "FR_ct_courtList",
     "ElementLabel": " ",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1172,7 +1303,8 @@
     "FieldTypeParameter": "FR_s_NottinghamList",
     "ElementLabel": "Nottingham List",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"nottingham\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1182,7 +1314,8 @@
     "FieldTypeParameter": "FR_s_CFCList",
     "ElementLabel": "CFC List",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"cfc\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1192,7 +1325,8 @@
     "FieldTypeParameter": "FR_fl_interimHearingTypeDirections",
     "ElementLabel": "Type of hearing values",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1201,7 +1335,8 @@
     "FieldType": "Text",
     "ElementLabel": "Time Estimate",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1210,7 +1345,8 @@
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1219,7 +1355,8 @@
     "FieldType": "Text",
     "ElementLabel": "Interim Hearing Time",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1227,7 +1364,8 @@
     "ListElementCode": "name",
     "FieldType": "Text",
     "ElementLabel": "Name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1235,7 +1373,8 @@
     "ListElementCode": "email",
     "FieldType": "Email",
     "ElementLabel": "Email",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1243,7 +1382,8 @@
     "ListElementCode": "organisation",
     "FieldType": "Organisation",
     "ElementLabel": "Organisation",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1251,7 +1391,8 @@
     "ListElementCode": "party",
     "FieldType": "Text",
     "ElementLabel": "Party",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1259,7 +1400,8 @@
     "ListElementCode": "name",
     "FieldType": "Text",
     "ElementLabel": "Client Name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1267,7 +1409,8 @@
     "ListElementCode": "date",
     "FieldType": "DateTime",
     "ElementLabel": "Date",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1275,7 +1418,8 @@
     "ListElementCode": "by",
     "FieldType": "Text",
     "ElementLabel": "Updated by",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1283,7 +1427,8 @@
     "ListElementCode": "via",
     "FieldType": "Text",
     "ElementLabel": "Updated via",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1291,7 +1436,8 @@
     "ListElementCode": "added",
     "FieldType": "ChangedRepresentative",
     "ElementLabel": "Added representative",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1299,14 +1445,16 @@
     "ListElementCode": "removed",
     "FieldType": "ChangedRepresentative",
     "ElementLabel": "Removed representative",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "ID": "FR_ct_directionDetailCollectionInterim",
     "ListElementCode": "isAnotherHearingYN",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is there another hearing to be listed ?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1315,7 +1463,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_caseDocumentType",
     "ElementLabel": "Type",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1323,7 +1472,8 @@
     "ListElementCode": "DocumentLink",
     "FieldType": "Document",
     "ElementLabel": "Document Url",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1332,7 +1482,8 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "evidenceParty",
     "ElementLabel": "What type of document is this?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1340,7 +1491,8 @@
     "ListElementCode": "DocumentDateAdded",
     "FieldType": "Date",
     "ElementLabel": "Date received",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1348,7 +1500,8 @@
     "ListElementCode": "DocumentComment",
     "FieldType": "Text",
     "ElementLabel": "Comment",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1356,7 +1509,8 @@
     "ListElementCode": "DocumentFileName",
     "FieldType": "Text",
     "ElementLabel": "File name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1364,7 +1518,8 @@
     "ListElementCode": "confidentialDocumentUploadDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Upload DateTime",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1372,7 +1527,8 @@
     "ListElementCode": "bundleDocuments",
     "FieldType": "Document",
     "ElementLabel": "Bundle Name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1381,6 +1537,7 @@
     "FieldType": "DateTime",
     "ElementLabel": "Bundle Upload Date",
     "SecurityClassification": "Public",
+    "Searchable": "N",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -1389,7 +1546,8 @@
     "ListElementCode": "hearingBundleDate",
     "FieldType": "Date",
     "ElementLabel": "Hearing Bundle Date",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1397,7 +1555,8 @@
     "ListElementCode": "hearingBundleFdr",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a Financial dispute resolution(FDR) hearing?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1407,7 +1566,8 @@
     "FieldTypeParameter": "FR_hearingBundle",
     "ElementLabel": "Upload Hearing Bundle",
     "HintText": "Please note you should only update and amend your own firm's hearing bundle",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1415,7 +1575,8 @@
     "ListElementCode": "hearingBundleDescription",
     "FieldType": "Text",
     "ElementLabel": "Add a description",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1424,7 +1585,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "ScannedDocumentType",
     "ElementLabel": "Document Type",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1432,7 +1594,8 @@
     "ListElementCode": "url",
     "FieldType": "Document",
     "ElementLabel": "Scanned document url",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1440,7 +1603,8 @@
     "ListElementCode": "controlNumber",
     "FieldType": "Text",
     "ElementLabel": "Document Control Number",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1448,7 +1612,8 @@
     "ListElementCode": "fileName",
     "FieldType": "Text",
     "ElementLabel": "File Name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1456,7 +1621,8 @@
     "ListElementCode": "scannedDate",
     "FieldType": "DateTime",
     "ElementLabel": "Scanned Date",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1464,7 +1630,8 @@
     "ListElementCode": "deliveryDate",
     "FieldType": "DateTime",
     "ElementLabel": "Delivery Date",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1472,7 +1639,8 @@
     "ListElementCode": "exceptionRecordReference",
     "FieldType": "Text",
     "ElementLabel": "Exception record reference",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1481,7 +1649,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "ScannedDocumentType",
     "ElementLabel": "Document Type",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1489,7 +1658,8 @@
     "ListElementCode": "url",
     "FieldType": "Document",
     "ElementLabel": "Scanned document url",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1497,7 +1667,8 @@
     "ListElementCode": "controlNumber",
     "FieldType": "Text",
     "ElementLabel": "Document Control Number",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1505,7 +1676,8 @@
     "ListElementCode": "fileName",
     "FieldType": "Text",
     "ElementLabel": "File Name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1513,7 +1685,8 @@
     "ListElementCode": "scannedDate",
     "FieldType": "DateTime",
     "ElementLabel": "Scanned Date",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1521,7 +1694,8 @@
     "ListElementCode": "deliveryDate",
     "FieldType": "DateTime",
     "ElementLabel": "Delivery Date",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1529,7 +1703,8 @@
     "ListElementCode": "exceptionRecordReference",
     "FieldType": "Text",
     "ElementLabel": "Exception record reference",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1538,7 +1713,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_interimHearingTypeDirections",
     "ElementLabel": "Type of Hearing",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1546,7 +1722,8 @@
     "ListElementCode": "interimHearingTimeEstimate",
     "FieldType": "Text",
     "ElementLabel": "Time Estimate",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1554,7 +1731,8 @@
     "ListElementCode": "interimHearingDate",
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1562,7 +1740,8 @@
     "ListElementCode": "fastTrackWranMsg",
     "FieldType": "Label",
     "ElementLabel": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1570,7 +1749,8 @@
     "ListElementCode": "standardTrackWranMsg",
     "FieldType": "Label",
     "ElementLabel": "\r\nStandard Track: Date of the hearing must be between 12 and 16 weeks",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1578,7 +1758,8 @@
     "ListElementCode": "interimHearingTime",
     "FieldType": "Text",
     "ElementLabel": "Hearing Time",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1586,7 +1767,8 @@
     "ListElementCode": "chooseCourtLabelSL",
     "FieldType": "Label",
     "ElementLabel": "Hearing Court",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1595,7 +1777,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_region_list",
     "ElementLabel": "Please choose the Region in which the Applicant resides",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1605,7 +1788,8 @@
     "FieldTypeParameter": "FR_midlands_FRCList",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "interim_regionList=\"midlands\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1615,7 +1799,8 @@
     "FieldTypeParameter": "FR_london_FRCList",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "interim_regionList=\"london\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1625,7 +1810,8 @@
     "FieldTypeParameter": "FR_nw_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "interim_regionList=\"northwest\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1635,7 +1821,8 @@
     "FieldTypeParameter": "FR_ne_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": " interim_regionList=\"northeast\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1645,7 +1832,8 @@
     "FieldTypeParameter": "FR_se_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "interim_regionList=\"southeast\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1655,7 +1843,8 @@
     "FieldTypeParameter": "FR_sw_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "interim_regionList=\"southwest\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1665,7 +1854,8 @@
     "FieldTypeParameter": "FR_wales_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "interim_regionList=\"wales\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1675,7 +1865,8 @@
     "FieldTypeParameter": "FR_hc_frc_list",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "interim_regionList=\"highcourt\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1685,7 +1876,8 @@
     "FieldTypeParameter": "FR_s_NottinghamList",
     "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
     "FieldShowCondition": "interim_regionList=\"midlands\" AND interim_midlandsFRCList=\"nottingham\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1695,7 +1887,8 @@
     "FieldTypeParameter": "FR_s_CFCList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"london\" AND interim_londonFRCList=\"cfc\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1705,7 +1898,8 @@
     "FieldTypeParameter": "FR_birmingham_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"midlands\" AND interim_midlandsFRCList=\"birmingham\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1715,7 +1909,8 @@
     "FieldTypeParameter": "FR_liverpool_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"northwest\" AND interim_northWestFRCList=\"liverpool\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1725,7 +1920,8 @@
     "FieldTypeParameter": "FR_manchester_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"northwest\" AND interim_northWestFRCList=\"manchester\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1735,7 +1931,8 @@
     "FieldTypeParameter": "FR_lancashireList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"northwest\" AND interim_northWestFRCList=\"lancashire\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1745,7 +1942,8 @@
     "FieldTypeParameter": "FR_cleveland_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"northeast\" AND interim_northEastFRCList=\"cleaveland\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1755,7 +1953,8 @@
     "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"northeast\" AND interim_northEastFRCList=\"nwyorkshire\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1765,7 +1964,8 @@
     "FieldTypeParameter": "FR_humber_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"northeast\" AND interim_northEastFRCList=\"hsyorkshire\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1775,7 +1975,8 @@
     "FieldTypeParameter": "FR_kent_surrey_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"southeast\" AND interim_southEastFRCList=\"kentfrc\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1785,7 +1986,8 @@
     "FieldTypeParameter": "FR_bedfordshireList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"southeast\" AND interim_southEastFRCList=\"bedfordshire\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1795,7 +1997,8 @@
     "FieldTypeParameter": "FR_thamesvalleyList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"southeast\" AND interim_southEastFRCList=\"thamesvalley\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1805,7 +2008,8 @@
     "FieldTypeParameter": "FR_devonList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"southwest\" AND interim_southWestFRCList=\"devon\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1815,7 +2019,8 @@
     "FieldTypeParameter": "FR_dorsetList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"southwest\" AND interim_southWestFRCList=\"dorset\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1825,7 +2030,8 @@
     "FieldTypeParameter": "FR_bristolList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"southwest\" AND interim_southWestFRCList=\"bristol\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1835,7 +2041,8 @@
     "FieldTypeParameter": "FR_newport_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"wales\" AND interim_walesFRCList=\"newport\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1845,7 +2052,8 @@
     "FieldTypeParameter": "FR_swansea_hc_list",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"wales\" AND interim_walesFRCList=\"swansea\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1855,7 +2063,8 @@
     "FieldTypeParameter": "FR_northwalesList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"wales\" AND interim_walesFRCList=\"northwales\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1865,7 +2074,8 @@
     "FieldTypeParameter": "FR_highCourtList",
     "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldShowCondition": "interim_regionList=\"highcourt\" AND interim_highCourtFRCList=\"highcourt\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1873,7 +2083,8 @@
     "ListElementCode": "interimAdditionalInformationAboutHearing",
     "FieldType": "Text",
     "ElementLabel": "Additional information about the hearing",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1881,7 +2092,8 @@
     "ListElementCode": "interimPromptForAnyDocument",
     "FieldType": "YesOrNo",
     "ElementLabel": "Do you want to upload any other documents ?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1890,7 +2102,8 @@
     "FieldType": "Document",
     "ElementLabel": "Please upload any additional documents related to you application.",
     "FieldShowCondition": "interimPromptForAnyDocument=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1898,7 +2111,8 @@
     "ListElementCode": "bulkprintDocument",
     "FieldType": "Document",
     "ElementLabel": " ",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1906,7 +2120,8 @@
     "ListElementCode": "ihItemIds",
     "FieldType": "Text",
     "ElementLabel": " ",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1914,7 +2129,8 @@
     "ListElementCode": "isThisFinalYN",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this the final order?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1922,7 +2138,8 @@
     "ListElementCode": "isAnotherHearingYN",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is there another hearing to be listed ?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1931,7 +2148,8 @@
     "FieldType": "Text",
     "ElementLabel": "Time Estimate",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1940,7 +2158,8 @@
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1949,7 +2168,8 @@
     "FieldType": "Text",
     "ElementLabel": "Hearing Time",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1958,7 +2178,8 @@
     "FieldType": "Label",
     "ElementLabel": "#### Hearing Court",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1967,7 +2188,8 @@
     "FieldType": "FR_ct_courtList",
     "ElementLabel": " ",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1977,7 +2199,8 @@
     "FieldTypeParameter": "FR_s_NottinghamList",
     "ElementLabel": "Nottingham List",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"nottingham\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1987,7 +2210,8 @@
     "FieldTypeParameter": "FR_s_CFCList",
     "ElementLabel": "CFC List",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\" AND localCourt=\"cfc\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1997,7 +2221,8 @@
     "FieldTypeParameter": "FR_fl_hearingTypeDirections",
     "ElementLabel": "Type of hearing values",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2005,7 +2230,8 @@
     "ListElementCode": "caseDocuments",
     "FieldType": "Document",
     "ElementLabel": "Please upload any case documents ",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2014,7 +2240,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_caseDocumentType",
     "ElementLabel": "Document type",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2023,7 +2250,8 @@
     "FieldType": "Text",
     "ElementLabel": "Please specify document type",
     "FieldShowCondition": "caseDocumentType=\"other\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2031,7 +2259,8 @@
     "ListElementCode": "hearingDetails",
     "FieldType": "TextArea",
     "ElementLabel": "Provide the date of hearing and a description of the document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2040,7 +2269,8 @@
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
     "HintText": "Document will be placed in the FDR documents tab",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2050,7 +2280,8 @@
     "FieldTypeParameter": "FR_fl_EvidenceParty",
     "FieldShowCondition": "caseDocumentFdr=\"No\"",
     "ElementLabel": "What type of document is this?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2060,7 +2291,8 @@
     "ElementLabel": "Is the document confidential?",
     "FieldShowCondition": "caseDocumentType=\"nil\"",
     "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2068,7 +2300,8 @@
     "ListElementCode": "caseDocumentUploadDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Upload DateTime",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2077,7 +2310,8 @@
     "FieldType": "Document",
     "ElementLabel": "Supporting Document",
     "HintText": "Please upload a copy of the supporting document as a word or PDF document (word documents will be converted to PDF after submission)",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2085,7 +2319,8 @@
     "ListElementCode": "generalApplicationReceivedFrom",
     "FieldType": "DynamicRadioList",
     "ElementLabel": "Application received from",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2094,7 +2329,8 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_ApplicantAndRespondentEvidenceParty",
     "ElementLabel": "Application received from",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2102,7 +2338,8 @@
     "ListElementCode": "generalApplicationCreatedBy",
     "FieldType": "Text",
     "ElementLabel": "Application created by",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2110,7 +2347,8 @@
     "ListElementCode": "generalApplicationHearingRequired",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is a hearing required?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2118,7 +2356,8 @@
     "ListElementCode": "generalApplicationTimeEstimate",
     "FieldType": "Text",
     "ElementLabel": "Time estimate",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2126,7 +2365,8 @@
     "ListElementCode": "generalApplicationSpecialMeasures",
     "FieldType": "Text",
     "ElementLabel": "Special measures",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2135,7 +2375,8 @@
     "FieldType": "Document",
     "ElementLabel": "Upload General Application",
     "HintText": "Please upload a copy of the application as a word or PDF document (word documents will be converted to PDF after submission).",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2144,7 +2385,8 @@
     "FieldType": "Document",
     "ElementLabel": "Upload Draft Order",
     "HintText": "Please upload a copy of the draft order as a word or PDF document (word documents will be converted to PDF after submission)",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2153,7 +2395,8 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_supportDocument",
     "ElementLabel": "Upload Supporting Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2161,7 +2404,8 @@
     "ListElementCode": "generalApplicationCreatedDate",
     "FieldType": "Date",
     "ElementLabel": "Date Created",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2169,7 +2413,8 @@
     "ListElementCode": "generalApplicationStatus",
     "FieldType": "Text",
     "ElementLabel": "Status",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2177,7 +2422,8 @@
     "ListElementCode": "generalApplicationOutcomeOther",
     "FieldType": "Text",
     "ElementLabel": "Outcome details",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2185,7 +2431,8 @@
     "ListElementCode": "generalApplicationDirectionsDocument",
     "FieldType": "Document",
     "ElementLabel": "Hearing / no hearing document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2193,7 +2440,8 @@
     "ListElementCode": "barristerLabel",
     "FieldType": "Label",
     "ElementLabel": "Barrister Details",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2201,7 +2449,8 @@
     "ListElementCode": "name",
     "FieldType": "Text",
     "ElementLabel": "Full Name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2209,7 +2458,8 @@
     "ListElementCode": "email",
     "FieldType": "Text",
     "ElementLabel": "Email",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2217,7 +2467,8 @@
     "ListElementCode": "phoneNumber",
     "FieldType": "Text",
     "ElementLabel": "Phone Number",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2225,7 +2476,8 @@
     "ListElementCode": "Organisation",
     "FieldType": "Organisation",
     "ElementLabel": "Organisation Identifier",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2233,7 +2485,8 @@
     "ListElementCode": "childrenLivesInEnglandOrWales",
     "FieldType": "YesOrNo",
     "ElementLabel": "Does the child live in England or Wales?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2241,7 +2494,8 @@
     "ListElementCode": "childFullname",
     "FieldType": "Text",
     "ElementLabel": "Full Name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2249,7 +2503,8 @@
     "ListElementCode": "childDateOfBirth",
     "FieldType": "Date",
     "ElementLabel": "Date of birth",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2258,7 +2513,8 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_childGender",
     "ElementLabel": "Gender",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2267,7 +2523,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_childRelation",
     "ElementLabel": "Relationship of applicant to the child",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2276,7 +2533,8 @@
     "FieldType": "TextArea",
     "ElementLabel": "Please specify",
     "FieldShowCondition": "childApplicantRelation=\"Other\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2285,7 +2543,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_childRelation",
     "ElementLabel": "Relationship of respondent to the child",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2294,7 +2553,8 @@
     "FieldType": "TextArea",
     "ElementLabel": "Please specify",
     "FieldShowCondition": "childRespondentRelation=\"Other\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2302,7 +2562,8 @@
     "ListElementCode": "intervenerName",
     "FieldType": "Text",
     "ElementLabel": "Intervener's Full Name",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2310,7 +2571,8 @@
     "ListElementCode": "intervenerAddress",
     "FieldType": "AddressUK",
     "ElementLabel": " ",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2318,7 +2580,8 @@
     "ListElementCode": "intervenerEmail",
     "FieldType": "Text",
     "ElementLabel": "Email address",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2326,7 +2589,8 @@
     "ListElementCode": "intervenerPhone",
     "FieldType": "Text",
     "ElementLabel": "Phone number",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2334,9 +2598,9 @@
     "ListElementCode": "intervenerRepresented",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the Intervener represented ?",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
-
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_intervener",
@@ -2344,7 +2608,8 @@
     "ElementLabel": "Date added",
     "FieldType": "Date",
     "FieldShowCondition": "intervenerRepresented=\"Both\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2353,7 +2618,8 @@
     "ElementLabel": "Representative's Full Name",
     "FieldType": "Text",
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2362,7 +2628,8 @@
     "ElementLabel": "Representative's Email address",
     "FieldType": "Text",
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2371,7 +2638,8 @@
     "ElementLabel": "Representative's Phone number",
     "FieldType": "Text",
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2380,7 +2648,8 @@
     "ElementLabel": "Representative Firm",
     "FieldType": "Text",
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2389,7 +2658,8 @@
     "ElementLabel": "Your reference",
     "FieldType": "Text",
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2398,6 +2668,7 @@
     "ElementLabel": " ",
     "FieldType": "OrganisationPolicy",
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
