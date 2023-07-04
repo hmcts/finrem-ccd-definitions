@@ -343,7 +343,7 @@
     "Label": "Is this an urgent case ?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2587,8 +2587,7 @@
     "Label": "Please choose the Region in which the Applicant resides",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_region_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2598,8 +2597,7 @@
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_midlands_FRCList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2610,7 +2608,7 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_london_FRCList",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2621,7 +2619,7 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_nw_frc_list",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2631,8 +2629,7 @@
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_ne_frc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2642,8 +2639,7 @@
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_se_frc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2653,8 +2649,7 @@
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_sw_frc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2664,8 +2659,7 @@
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_wales_frc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2675,8 +2669,7 @@
     "HintText": "This should be the FRC local to the applicant",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_hc_frc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2686,8 +2679,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_NottinghamList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2697,8 +2689,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_CFCList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2708,8 +2699,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_birmingham_hc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2719,8 +2709,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_liverpool_hc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2730,8 +2719,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_manchester_hc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2741,8 +2729,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_lancashireList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2752,8 +2739,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_cleveland_hc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2763,8 +2749,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2774,8 +2759,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_humber_hc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2785,8 +2769,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_kent_surrey_hc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2796,8 +2779,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_bedfordshireList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2807,8 +2789,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_thamesvalleyList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2818,8 +2799,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_devonList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2829,8 +2809,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_dorsetList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2840,8 +2819,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_bristolList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2851,8 +2829,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_newport_hc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2862,8 +2839,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_swansea_hc_list",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2873,8 +2849,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_northwalesList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2884,8 +2859,7 @@
     "HintText": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_highCourtList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4286,7 +4260,7 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_AssignToJudge",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "Y"
   },
   {
     "LiveFrom": "01/09/2020",
