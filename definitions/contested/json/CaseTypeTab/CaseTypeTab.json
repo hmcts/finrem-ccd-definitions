@@ -8573,10 +8573,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "confidentialDocumentsTab",
-    "TabLabel": "Confidential documents",
+    "TabLabel": "Legacy confidential documents",
     "TabDisplayOrder": 22,
     "CaseFieldID": "confidentialDocumentsUploaded",
     "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "confidentialDocumentsTab",
+    "TabLabel": "Confidential documents",
+    "TabDisplayOrder": 22,
+    "CaseFieldID": "confidentialCaseDocumentCollection",
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
