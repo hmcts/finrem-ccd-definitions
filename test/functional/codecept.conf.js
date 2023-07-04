@@ -2,8 +2,8 @@ exports.config = {
   tests: './*_test.js',
   output: './functional-output/xui',
   helpers: {
-    Playwright: {
-      url: 'http://localhost:3000',
+    Puppeteer: {
+      url: 'https://manage-case.aat.platform.hmcts.net',
         smartWait: 50000,
         waitForTimeout: 90000,
       show: false,
