@@ -1128,6 +1128,7 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "evidenceParty",
     "ElementLabel": "What type of document is this?",
+    "FieldShowCondition": "caseDocumentFdr=\"No\"",
     "SecurityClassification": "Public"
   },
   {
@@ -1315,15 +1316,6 @@
     "ListElementCode": "DocumentLink",
     "FieldType": "Document",
     "ElementLabel": "Document Url",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_UploadConfidentialDocument",
-    "ListElementCode": "caseDocumentParty",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "evidenceParty",
-    "ElementLabel": "What type of document is this?",
     "SecurityClassification": "Public"
   },
   {
