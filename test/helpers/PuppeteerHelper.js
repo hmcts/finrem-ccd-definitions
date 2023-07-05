@@ -5,6 +5,7 @@ const Helper = codecept_helper;
 const helperName = 'Puppeteer';
 const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'true';
 const { getAccessibilityTestResult } = require('../accessibility/runner');
+const { generateAccessibilityReport } = require('../reporter/customReporter');
 
 const { runAccessibility } = require('../accessibility/runner');
 
