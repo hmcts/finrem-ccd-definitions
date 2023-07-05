@@ -3,14 +3,14 @@ const fs = require('fs');
 
 function generateAccessibilityReport(reportJson) {
   consoleReport(reportJson);
-  const result = `var replacejsoncontent = ${JSON.stringify(reportJson)}`;
-  const sourceReport = `${__dirname}/Report.html`;
-  const destReport = './test/functional/a11y.html';
-  const destJson = './test/functional/a11y_output.js';
-
-  fs.copyFileSync(sourceReport, destReport);
-  fs.writeFileSync(destJson, result);
-  copyResources();
+  // const result = `var replacejsoncontent = ${JSON.stringify(reportJson)}`;
+  // const sourceReport = `${__dirname}/Report.html`;
+  // const destReport = './test/functional/a11y.html';
+  // const destJson = './test/functional/a11y_output.js';
+  //
+  // fs.copyFileSync(sourceReport, destReport);
+  // fs.writeFileSync(destJson, result);
+  // copyResources();
 }
 
 function copyResources() {
