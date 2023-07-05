@@ -1789,7 +1789,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadCaseDocument",
-    "Label": " ",
+    "Label": "                                                                                      ",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public",
@@ -3687,7 +3687,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "appRespGeneralApplicationReceivedFrom",
     "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_ApplicantAndRespondentEvidenceParty",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
     "Label": "Application received from",
     "SecurityClassification": "Public",
     "Searchable": "N"
