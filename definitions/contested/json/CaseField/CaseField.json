@@ -5161,7 +5161,6 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "RepresentationUpdate",
     "SecurityClassification": "Public",
-    "Searchable": "N",
     "Searchable": "N"
   },
   {
@@ -5207,25 +5206,6 @@
     "ID": "currentUserCaseRoleLabel",
     "Label": " ",
     "FieldType": "Text",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "currentUserCaseRoleType",
-    "Label": " ",
-    "FieldType": "Text",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalApplicationIntvrDocuments",
-    "Label": "Intervener hearing/no hearing documents",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_IntervenerDirectionsCollection",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5375,56 +5355,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplications",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "appRespGeneralApplications",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener1GeneralApplications",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener2GeneralApplications",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener3GeneralApplications",
-    "Label": "General Applications",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intervener4GeneralApplications",
     "Label": "General Applications",
     "FieldType": "Collection",
     "FieldTypeParameter": "generalApplicationCollection",
