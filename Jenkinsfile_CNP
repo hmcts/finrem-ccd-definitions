@@ -73,7 +73,9 @@ def secrets = [
                 secret('finrem-system-update-username', 'FINREM_SYSTEMUPDATE_USERNAME'),
                 secret('finrem-system-update-password', 'FINREM_SYSTEMUPDATE_PASSWORD'),
                 secret('idam-mca-client-secret', 'IDAM_MCA_CLIENT_SECRET'),
-                secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET')
+                secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET'),
+                secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
+                secret('solicitor1-password', 'PASSWORD_SOLICITOR1')
 
         ]
 ]

@@ -26,7 +26,9 @@ def secrets = [
     secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
     secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
     secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
-    secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD')
+    secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
+    secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
+    secret('solicitor1-password', 'PASSWORD_SOLICITOR1')
   ]
 ]
 

@@ -118,6 +118,7 @@
   "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
   "rSolicitorDXnumber": "078890",
   "solicitorReference": "AUTO-assign-to-judge",
+  "uploadCaseDocument": [],
   "divorceStageReached": "Decree Nisi",
   "rSolicitorReference": "MahSol73",
   "applicantRepresented": "Yes",
@@ -161,6 +162,21 @@
   },
   "divorcePetitionIssuedDate": "2020-08-14",
   "familyMediatorServiceName": "mediator",
+  "fdrCaseDocumentCollection": [
+    {
+      "id": "33fcdd37-8153-452b-bd54-db6f8a01cb6f",
+      "value": {
+        "caseDocuments": {
+          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/4ba8dcd1-3bda-4563-a03d-112876d5bf87",
+          "document_filename": "general letter event.rtf",
+          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/4ba8dcd1-3bda-4563-a03d-112876d5bf87/binary"
+        },
+        "caseDocumentFdr": "Yes",
+        "caseDocumentType": "Chronology",
+        "caseDocumentUploadDateTime": "2023-07-07T14:17:55.525474349"
+      }
+    }
+  ],
   "specialAssistanceRequired": "Not required",
   "applicantSolicitorDXnumber": "776890",
   "mediatorRegistrationNumber": "765234",
