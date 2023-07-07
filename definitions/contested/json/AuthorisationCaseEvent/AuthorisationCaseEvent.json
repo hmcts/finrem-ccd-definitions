@@ -93,6 +93,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_uploadCaseFiles",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_assignToJudge",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
@@ -382,7 +389,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_uploadCaseFiles",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CR"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1902,89 +1909,5 @@
     "CaseEventID": "createFlags",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[RESPSOLICITOR]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[RESPBARRISTER]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[APPBARRISTER]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[INTVRSOLICITOR1]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[INTVRSOLICITOR2]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[INTVRSOLICITOR3]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[INTVRSOLICITOR4]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[INTVRBARRISTER1]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[INTVRBARRISTER2]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[INTVRBARRISTER3]",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "UserRole": "[INTVRBARRISTER4]",
-    "CRUD": "CR"
   }
 ]
