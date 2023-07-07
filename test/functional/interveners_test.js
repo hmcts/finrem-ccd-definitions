@@ -65,7 +65,7 @@ Scenario('Remove Interveners @nightly', async I => {
 
 
 
-Scenario('Remove access to case document tab for Intervener solicitor @nightly', async I => {
+Scenario('Case document tab not visible for Intervener solicitor @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -83,7 +83,7 @@ Scenario('Remove access to case document tab for Intervener solicitor @nightly',
     logger.info("Intervener tab validation completed");
 }).retry(3);
 
-Scenario('Remove access to FDR document tab for Intervener solicitor @nightly', async I => {
+Scenario('FDR document tab not visible for Intervener solicitor @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -99,4 +99,13 @@ Scenario('Remove access to FDR document tab for Intervener solicitor @nightly', 
     const context = await I.grabTextFrom({xpath:'/html/body/exui-root/exui-case-home/div/exui-case-details-home/exui-case-viewer-container/ccd-case-viewer/div/ccd-case-full-access-view/div[2]/div/mat-tab-group/mat-tab-header'});
     I.assertNotContain("FDR documents", context, "Intervener tab validation failed...");
     logger.info("Intervener tab validation completed");
+}).retry(3);
+
+Scenario('Order tab not visible for Intervener solicitor', async I => {
+}).retry(3);
+
+Scenario('Shared Document tab not visible for Intervener solicitor', async I => {
+}).retry(3);
+
+Scenario('Hearing tab not visible for Intervener solicitor', async I => {
 }).retry(3);
