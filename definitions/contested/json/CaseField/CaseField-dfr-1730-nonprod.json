@@ -5,7 +5,8 @@
     "ID": "ordersToShare",
     "Label": "Select Order/Orders",
     "FieldType": "DynamicMultiSelectList",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "05/10/2020",
@@ -13,7 +14,8 @@
     "ID": "partiesOnCase",
     "Label": "Who should receive this order?",
     "FieldType": "DynamicMultiSelectList",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -21,7 +23,8 @@
     "ID": "additionalDocument",
     "Label": "Please upload any additional document",
     "FieldType": "Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -31,7 +34,8 @@
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
 
   {
@@ -42,7 +46,8 @@
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -52,7 +57,8 @@
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -62,7 +68,8 @@
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -72,7 +79,8 @@
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -82,6 +90,16 @@
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "ordersSentToPartiesCollection",
+    "Label": "Orders shared with Parties",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
