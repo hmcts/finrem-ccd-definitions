@@ -98,7 +98,8 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "ordersSentToPartiesCollection",
     "Label": "Orders shared with Parties",
-    "FieldType": "Document",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "sendOrderDocuments",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
