@@ -3567,42 +3567,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener1",
-    "Label": "Bulk Print Cover Sheet For Intervener1 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener2",
-    "Label": "Bulk Print Cover Sheet For Intervener2 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener3",
-    "Label": "Bulk Print Cover Sheet For Intervener3 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener4",
-    "Label": "Bulk Print Cover Sheet For Intervener4 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "bulkPrintLetterIdApp",
     "Label": "Bulk Print LetterId For Applicant / Solicitor",
     "FieldType": "Text",
@@ -3733,15 +3697,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationSender",
     "FieldType": "DynamicRadioList",
-    "Label": "Application received from",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "appRespGeneralApplicationReceivedFrom",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_ApplicantAndRespondentEvidenceParty",
     "Label": "Application received from",
     "SecurityClassification": "Public"
   },
@@ -5438,7 +5393,8 @@
     "Label": "General Applications",
     "FieldType": "Collection",
     "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5447,7 +5403,8 @@
     "Label": "General Applications",
     "FieldType": "Collection",
     "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5456,7 +5413,8 @@
     "Label": "General Applications",
     "FieldType": "Collection",
     "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5465,7 +5423,8 @@
     "Label": "General Applications",
     "FieldType": "Collection",
     "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5474,7 +5433,8 @@
     "Label": "General Applications",
     "FieldType": "Collection",
     "FieldTypeParameter": "generalApplicationCollection",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
