@@ -115,23 +115,11 @@ describe('CaseTypeTab', () => {
     generalApplicationsTab4: 27,
     generalApplicationsTab5: 27,
     generalApplicationsTab6: 27,
-    generalApplicationsTab7: 27,
-    generalApplicationsTab8: 27,
-    generalApplicationsTab9: 27,
-    generalApplicationsTab10: 27,
-    generalApplicationsTab11: 27,
-    generalApplicationsTab12: 27,
-    generalApplicationsTab13: 27,
-    generalApplicationsTab14: 27,
     caseFlagsTab: 28,
     firstIntervener: 29,
     secondIntervener: 30,
     thirdIntervener: 31,
-    fourthIntervener: 32,
-    intv1Documents: 33,
-    intv2Documents: 34,
-    intv3Documents: 35,
-    intv4Documents: 36
+    fourthIntervener: 32
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
@@ -215,23 +203,11 @@ describe('CaseTypeTab', () => {
       'generalApplicationsTab4',
       'generalApplicationsTab5',
       'generalApplicationsTab6',
-      'generalApplicationsTab7',
-      'generalApplicationsTab8',
-      'generalApplicationsTab9',
-      'generalApplicationsTab10',
-      'generalApplicationsTab11',
-      'generalApplicationsTab12',
-      'generalApplicationsTab13',
-      'generalApplicationsTab14',
       'caseFlagsTab',
       'firstIntervener',
       'secondIntervener',
       'thirdIntervener',
-      'fourthIntervener',
-      'intv1Documents',
-      'intv2Documents',
-      'intv3Documents',
-      'intv4Documents'
+      'fourthIntervener'
     ]);
   });
   it('should contain a valid case field IDs', () => {
