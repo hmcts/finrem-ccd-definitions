@@ -39,6 +39,15 @@
         export IDAM_CLIENT_SECRET=thUphEveC2Ekuqedaneh4jEcRuba4t2t
         
         export CCD_SUBMIT_S2S_SECRET=DWYML5ONMS7KG44R
+         
+        export USERNAME_SOLICITOR1=fr_applicant_solicitor1@mailinator.com
+        
+        export PASSWORD_SOLICITOR1=Testing1234
+        
+        export USERNAME_BARRISTER1=fr_applicant_barrister1@mailinator.com
+   
+        export PASSWORD_BARRISTER1=Testing1234
+
 
 2) open `codecept.conf.js` file and update this parameter `show: true`
 
@@ -82,6 +91,14 @@
         export CCD_WEB_URL=https://xui-finrem-ccd-definitions-pr-1222.preview.platform.hmcts.net
 
         export XUI_ORG_WEB_URL=https://xui-mo-finrem-ccd-definitions-pr-1222.preview.platform.hmcts.net
+
+        export USERNAME_SOLICITOR1=fr_applicant_solicitor1@mailinator.com
+
+        export PASSWORD_SOLICITOR1=Testing1234
+
+        export USERNAME_BARRISTER1=fr_applicant_barrister1@mailinator.com
+
+        export PASSWORD_BARRISTER1=Testing1234
 
 6) To run the test against any env overwrite these env variable and replace it with relevant URL/s
         

@@ -12,6 +12,8 @@ const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
 const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
 const usernameSolicitor1 = process.env.USERNAME_SOLICITOR1;
 const passwordSolicitor1 = process.env.PASSWORD_SOLICITOR1;
+const usernameBarrister1 = process.env.USERNAME_BARRISTER1;
+const passwordBarrister1 = process.env.PASSWORD_BARRISTER1;
 const judgeUserName = process.env.USERNAME_JUDGE;
 const judgePassword = process.env.PASSWORD_JUDGE;
 const nightlyTest = process.env.NIGHTLY_TEST;
@@ -21,7 +23,7 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Manage Interveners');
 
-Scenario('Add Interveners (represented) @nightly', async I => {
+Scenario('Caseworker add Interveners (represented) @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -36,7 +38,7 @@ Scenario('Add Interveners (represented) @nightly', async I => {
     logger.info('Interveners tab verified');
 }).retry(3);
 
-Scenario('Add Interveners (not represented) @nightly', async I => {
+Scenario('Caseworker add Interveners (not represented) @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -49,7 +51,7 @@ Scenario('Add Interveners (not represented) @nightly', async I => {
     logger.info('Manage Interveners event completed');
 }).retry(3);
 
-Scenario('Remove Interveners @nightly', async I => {
+Scenario('Caseworker Remove Interveners @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -73,7 +75,7 @@ Scenario('Case document tab not visible for Intervener solicitor @nightly', asyn
     const addIntervenerRepresented = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId,'FinancialRemedyContested', 'manageInterveners', 'test/data/ccd-contested-add-represented-intervener.json');
 
     //Intervener login
-    await I.signInIdam(usernameSolicitor1, passwordSolicitor1);
+    await I.signInIdam(usernameBarrister1, passwordBarrister1);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('5');
 
@@ -92,7 +94,7 @@ Scenario('FDR document tab not visible for Intervener solicitor @nightly', async
     const uploadCaseFiles = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId,'FinancialRemedyContested', 'FR_uploadCaseFiles', 'test/data/ccd-contested-upload-case-files.json');
 
     //Intervener login
-    await I.signInIdam(usernameSolicitor1, passwordSolicitor1);
+    await I.signInIdam(usernameBarrister1, passwordBarrister1);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('5');
     //no FDR document tab
