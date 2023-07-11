@@ -26,10 +26,6 @@ exports.config = {
       }
     },
 
-      ChaiWrapper: {
-          "require": "codeceptjs-chai"
-      },
-
       //just adding helper class here
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' },
     'JSWait': {
