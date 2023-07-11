@@ -880,7 +880,8 @@
     "SecurityClassification": "Public",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "ShowEventNotes": "Y"
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
   },
   {
     "LiveFrom": "01/01/2017",
