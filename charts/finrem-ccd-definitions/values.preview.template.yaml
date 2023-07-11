@@ -56,7 +56,7 @@ finrem-cos:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/cos:latest
+    image: hmctspublic.azurecr.io/finrem/cos:pr-1199
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
     environment:
@@ -64,7 +64,6 @@ finrem-cos:
       FEATURE_CASEWORKER_NOC: true
       FEATURE_RESPONDENT_JOURNEY: true
       FEATURE_ASSIGN_CASE_ACCESS: true
-      FEATURE_USE_USER_TOKEN: true
       FEATURE_SOLICITOR_NOC: true
       FEATURE_SEND_LETTER_RECIPIENT_CHECK: false
       SECURE_DOC_ENABLED: false
