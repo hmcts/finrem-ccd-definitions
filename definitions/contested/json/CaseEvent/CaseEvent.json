@@ -477,7 +477,7 @@
     "Name": "Send Order",
     "Description": "Send Order",
     "DisplayOrder": 38,
-    "PreConditionState(s)": "orderDrawn",
+    "PreConditionState(s)": "applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;responseReceived;consentedOrderSubmitted;caseFileSubmitted",
     "PostConditionState": "orderSent",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",

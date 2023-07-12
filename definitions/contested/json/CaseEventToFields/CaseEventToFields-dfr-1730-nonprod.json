@@ -6,8 +6,8 @@
     "CaseFieldID": "ordersToShare",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
+    "PageID": 1,
+    "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -18,8 +18,8 @@
     "CaseFieldID": "partiesOnCase",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
-    "PageID": 3,
-    "PageDisplayOrder": 3,
+    "PageID": 2,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -30,10 +30,9 @@
     "CaseFieldID": "additionalDocument",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "OPTIONAL",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
+    "PageID": 3,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "PageShowCondition": "sendOrderPostStateOption!=\"\"",
     "ShowSummaryChangeOption": "Y"
   }
 ]
