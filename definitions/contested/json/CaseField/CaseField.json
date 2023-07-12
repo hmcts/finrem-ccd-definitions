@@ -6724,5 +6724,15 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrdersSentToPartiesCollection",
+    "Label": "Orders shared with Parties",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "sendOrderDocuments",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]

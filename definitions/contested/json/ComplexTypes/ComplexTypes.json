@@ -2659,5 +2659,14 @@
     "FieldType": "DateTime",
     "ElementLabel": "Order received at",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "sendConsentOrderDocuments",
+    "ListElementCode": "bulkPrintDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
