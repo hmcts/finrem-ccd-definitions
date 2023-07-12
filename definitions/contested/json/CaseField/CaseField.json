@@ -3695,15 +3695,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalApplicationSender",
-    "FieldType": "DynamicRadioList",
-    "Label": "Application received from",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationCreatedBy",
     "FieldType": "Text",
     "Label": "Application created by",
