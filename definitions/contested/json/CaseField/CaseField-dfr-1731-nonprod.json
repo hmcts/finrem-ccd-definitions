@@ -5,7 +5,8 @@
     "ID": "documentsLabel",
     "Label": "## Select the documents you wish to share",
     "FieldType": "Label",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "05/10/2020",
@@ -13,7 +14,8 @@
     "ID": "sourceDocumentList",
     "Label": "List of documents",
     "FieldType": "DynamicMultiSelectList",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/08/2020",
@@ -21,7 +23,8 @@
     "ID": "rolesLabel",
     "Label": "## Share documents with",
     "FieldType": "Label",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "05/10/2020",
@@ -29,7 +32,8 @@
     "ID": "solicitorRoleList",
     "Label": " ",
     "FieldType": "DynamicMultiSelectList",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
 
 
@@ -40,7 +44,8 @@
     "Label": "Hearing Bundles",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -49,7 +54,8 @@
     "Label": "Forms E & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -58,7 +64,8 @@
     "Label": "Chronologies and Statements of Issues",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -67,7 +74,8 @@
     "Label": "Questionnaires & Answers to Questionnaires & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -76,7 +84,8 @@
     "Label": "Statements & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -85,7 +94,8 @@
     "Label": "Case Summaries",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -94,7 +104,8 @@
     "Label": "Forms H",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -103,7 +114,8 @@
     "Label": "Expert Evidence",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -112,7 +124,8 @@
     "Label": "Correspondence",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -121,7 +134,8 @@
     "Label": "Other",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
 
   {
@@ -131,7 +145,8 @@
     "Label": "Hearing Bundles",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -140,7 +155,8 @@
     "Label": "Forms E & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -149,7 +165,8 @@
     "Label": "Chronologies and Statements of Issues",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -158,7 +175,8 @@
     "Label": "Questionnaires & Answers to Questionnaires & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -167,7 +185,8 @@
     "Label": "Statements & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -176,7 +195,8 @@
     "Label": "Case Summaries",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -185,7 +205,8 @@
     "Label": "Forms H",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -194,7 +215,8 @@
     "Label": "Expert Evidence",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -203,7 +225,8 @@
     "Label": "Correspondence",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -212,7 +235,8 @@
     "Label": "Other",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
 
   {
@@ -222,7 +246,8 @@
     "Label": "Hearing Bundles",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -231,7 +256,8 @@
     "Label": "Forms E & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -240,7 +266,8 @@
     "Label": "Chronologies and Statements of Issues",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -249,7 +276,8 @@
     "Label": "Questionnaires & Answers to Questionnaires & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -258,7 +286,8 @@
     "Label": "Statements & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -267,7 +296,8 @@
     "Label": "Case Summaries",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -276,7 +306,8 @@
     "Label": "Forms H",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -285,7 +316,8 @@
     "Label": "Expert Evidence",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -294,7 +326,8 @@
     "Label": "Correspondence",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -303,7 +336,8 @@
     "Label": "Other",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
 
   {
@@ -313,7 +347,8 @@
     "Label": "Hearing Bundles",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -322,7 +357,8 @@
     "Label": "Forms E & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -331,7 +367,8 @@
     "Label": "Chronologies and Statements of Issues",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -340,7 +377,8 @@
     "Label": "Questionnaires & Answers to Questionnaires & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -349,7 +387,8 @@
     "Label": "Statements & Exhibits",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -358,7 +397,8 @@
     "Label": "Case Summaries",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -367,7 +407,8 @@
     "Label": "Forms H",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -376,7 +417,8 @@
     "Label": "Expert Evidence",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -385,7 +427,8 @@
     "Label": "Correspondence",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -394,6 +437,7 @@
     "Label": "Other",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
