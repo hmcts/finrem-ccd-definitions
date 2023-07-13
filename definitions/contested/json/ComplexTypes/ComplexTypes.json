@@ -2643,30 +2643,5 @@
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_orderCollection",
-    "ListElementCode": "approveConsentOrder",
-    "FieldType": "Document",
-    "ElementLabel": "Approve orders",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_orderCollection",
-    "ListElementCode": "consentOrderReceivedAt",
-    "FieldType": "DateTime",
-    "ElementLabel": "Order received at",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "sendConsentOrderDocuments",
-    "ListElementCode": "bulkPrintDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
   }
 ]
