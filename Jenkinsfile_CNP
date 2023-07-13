@@ -128,6 +128,7 @@ withPipeline("nodejs", product, component) {
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.CCD_WEB_URL = "https://xui-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+      env.XUI_ORG_WEB_URL = "https://xui-mo-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.CCD_CONSENTED_FILE_NAME = "ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
       env.CCD_CONTESTED_FILE_NAME = "ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
