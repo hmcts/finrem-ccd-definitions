@@ -4,27 +4,33 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: 'http://localhost:3000',
-        smartWait: 50000,
         waitForTimeout: 90000,
-      show: false,
+        getPageTimeout: 90000,
+        setDefaultTimeout: 90000,
+        smartWait: 90000,
+        show: false,
         headless: true,
-      windowSize: '1440x700',
-      waitForNavigation: 'domcontentloaded',
+        waitForNavigation:  ['networkidle2'],
         restart: true,
         keepCookies: false,
         keepBrowserState: false,
-      ignoreHTTPSErrors: true,
-      chrome: {
-        ignoreHTTPSErrors: true,
-        args: [
-            '--no-sandbox',
-            '--smartwait',
-            '--window-size=1440,1400',
-            '--disable-gpu'
 
-        ]
-      }
-    },
+      chrome: {
+          ignoreHTTPSErrors: true,
+          'ignore-certificate-errors': true,
+          'defaultViewport': {
+              'width': 1280,
+              'height': 960
+          },
+          args: [
+              //  '--headless',
+              '--disable-gpu',
+              '--no-sandbox',
+              '--allow-running-insecure-content',
+              '--ignore-certificate-errors',
+              '--window-size=1440,1400'
+          ]}
+      },
 
       //just adding helper class here
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' },
