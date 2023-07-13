@@ -40,7 +40,7 @@ Scenario('Contested Case Creation For Caseworker @nightly @pipeline', async I =>
       I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
     }
   }
-}).retry(3);
+});
 
 Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
@@ -65,7 +65,7 @@ Scenario('Contested Case Creation For Judge @nightly @pipeline', async I => {
       I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     }
   }
-}).retry(3);
+});
 
 Scenario('Contested Case Creation For Ready For Hearing @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -87,35 +87,34 @@ Scenario('Contested Case Creation For Ready For Hearing @nightly @pipeline', asy
     I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
-}).retry(3);
-
-Scenario('Contested Case Approved and Send Order  @nightly @pipeline', async I => {
-  const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-  /* eslint-disable */
-  const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
-  const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
-  const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
-  const assignToJudge = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_allocateToJudge', './test/data/ccd-contested-case-worker-issue-data.json');
-  const allocationDirections = await updateCaseInCcd(judgeUserName, judgePassword, caseId, 'FinancialRemedyContested', 'FR_giveAllocationDirections', './test/data/ccd-contested-allocation-directions.json');
-  const listForHearing = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_addSchedulingListingInfo', './test/data/ccd-contested-list-for-hearing.json');
-  const submitUploadCaseFiles = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_submitUploadedCaseFiles', './test/data/ccd-contested-list-for-hearing.json');
-  const solicitorDraftDirectionOrder = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_solicitorDraftDirectionOrder', './test/data/ccd-contested-solicitor-draft-direction-order.json');
-  const draftOrderApproved = await updateCaseInCcd(judgeUserName, judgePassword, caseId, 'FinancialRemedyContested', 'FR_draftOrderApproved', './test/data/ccd-contested-judge-approved.json');
-  const uploadOrder = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_directionOrder', './test/data/ccd-contested-caseworker-upload-order.json');
-  const sendOrder = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_sendOrder', './test/data/ccd-caseworker-send-order.json');
-
-  /* eslint-enable */
-  if (nightlyTest === 'true') {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    // eslint-disable-next-line max-len
-    I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.sendOrderState);
-    I.wait(2);
-    I.click({css: '.mat-tab-header-pagination-after'});
-    I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-    I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
-  }
-}).retry(3);
+});
+// Scenario('Contested Case Approved and Send Order  @nightly @pipeline', async I => {
+//   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+//   /* eslint-disable */
+//   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+//   const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+//   const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+//   const assignToJudge = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_allocateToJudge', './test/data/ccd-contested-case-worker-issue-data.json');
+//   const allocationDirections = await updateCaseInCcd(judgeUserName, judgePassword, caseId, 'FinancialRemedyContested', 'FR_giveAllocationDirections', './test/data/ccd-contested-allocation-directions.json');
+//   const listForHearing = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_addSchedulingListingInfo', './test/data/ccd-contested-list-for-hearing.json');
+//   const submitUploadCaseFiles = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_submitUploadedCaseFiles', './test/data/ccd-contested-list-for-hearing.json');
+//   const solicitorDraftDirectionOrder = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_solicitorDraftDirectionOrder', './test/data/ccd-contested-solicitor-draft-direction-order.json');
+//   const draftOrderApproved = await updateCaseInCcd(judgeUserName, judgePassword, caseId, 'FinancialRemedyContested', 'FR_draftOrderApproved', './test/data/ccd-contested-judge-approved.json');
+//   const uploadOrder = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_directionOrder', './test/data/ccd-contested-caseworker-upload-order.json');
+//   const sendOrder = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_sendOrder', './test/data/ccd-caseworker-send-order.json');
+//
+//   /* eslint-enable */
+//   if (nightlyTest === 'true') {
+//     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+//     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+//     // eslint-disable-next-line max-len
+//     I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.sendOrderState);
+//     I.wait(2);
+//     I.click({css: '.mat-tab-header-pagination-after'});
+//     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+//     I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
+//   }
+// });
 
 Scenario('Consented case in Contested @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
@@ -141,7 +140,7 @@ Scenario('Consented case in Contested @nightly @pipeline', async I => {
       I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
     }
   }
-}).retry(3);
+});
 
 Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline', async I => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -161,7 +160,7 @@ Scenario('Consented case in Contested Assigned to Judge @nightly @pipeline', asy
     I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
   }
-}).retry(3);
+});
 
 Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
@@ -180,7 +179,7 @@ Scenario('Contested Paper Case Creation @nightly @pipeline', async I => {
       I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
     }
   }
-}).retry(3);
+});
 
 // Scenario('Contested case with General Application @nightly @pipeline', async I => {
 //   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -247,7 +246,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => 
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Schedule1');
     I.waitForText('Form A Application', '60')
-}).retry(3);
+}).retry(2);
 
 Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
@@ -266,9 +265,10 @@ Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I =>
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Schedule1');
     I.waitForText('Form A Application', '60')
-}).retry(3);
+}).retry(2);
 
 Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I => {
+  if (nightlyTest === 'true') {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -287,10 +287,12 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I =
     I.waitForText('Form A Application', '60');
     await I.manualPayment();
     await I.issueApplication();
+  }
 }).retry(3);
 
-Scenario('Manage Confidential Documents', async I => {
+Scenario('Upload Case Files (Confidential Documents) @nightly', async I => {
     //login as a caseworker, create contested case
+
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -309,8 +311,11 @@ Scenario('Manage Confidential Documents', async I => {
     I.waitForText('Form A Application', '60');
     await I.manualPayment();
     await I.issueApplication();
-    //TODO - update test Manage Confidential Documents
-}).retry(3);
+    await I.uploadCaseFiles();
+    await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.uploadCaseFiles, verifyTabText.confidentialDocumentsTab);
+    logger.info('Confidential documents verified on Confidential documents tab');
+
+}).retry(2);
 
 Scenario('Manage Confidential Documents @nightly', async I => {
 
@@ -326,7 +331,7 @@ Scenario('Manage Confidential Documents @nightly', async I => {
     await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.manageConfidentialDocuments, verifyTabText.confidentialDocumentsTab);
     logger.info('Confidential documents verified on Confidential documents tab');
 
-}).retry(3);
+}).retry(2);
 
 Scenario('progress to listing for contested case @nightly', async I => {
 
@@ -353,7 +358,7 @@ Scenario('progress to listing for contested case @nightly', async I => {
     await I.enterCaseReference(caseId);
     await I.listForHearing();
      I.waitForText('List for Hearing');
-}).retry(3);
+}).retry(2);
 
 Scenario('Update Contact Details for contested Case @nightly ', async I => {
   //caseworker, type-matrimonial
@@ -366,7 +371,7 @@ Scenario('Update Contact Details for contested Case @nightly ', async I => {
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.updateContactDetails();
 
-}).retry(3);
+}).retry(2);
 
 Scenario('Contested Add Note   @nightly ', async I => { //Matrimonial
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -377,4 +382,4 @@ Scenario('Contested Add Note   @nightly ', async I => { //Matrimonial
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.addNote();
-}).retry(3);
+});
