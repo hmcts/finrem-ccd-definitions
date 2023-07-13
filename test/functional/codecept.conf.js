@@ -2,35 +2,29 @@ exports.config = {
   tests: './*_test.js',
   output: './functional-output/xui',
   helpers: {
-    Puppeteer: {
-      url: 'http://localhost:3000',
-        waitForTimeout: 90000,
-        getPageTimeout: 90000,
-        setDefaultTimeout: 90000,
-        smartWait: 90000,
-        show: false,
-        headless: true,
-        waitForNavigation:  ['networkidle2'],
-        restart: true,
-        keepCookies: false,
-        keepBrowserState: false,
-
-      chrome: {
+      Puppeteer: {
+          url: 'http://localhost:3000',
+          smartWait: 50000,
+          waitForTimeout: 90000,
+          show: true,
+          windowSize: '1440x700',
+          waitForNavigation: 'domcontentloaded',
+          restart: true,
+          keepCookies: false,
+          keepBrowserState: false,
           ignoreHTTPSErrors: true,
-          'ignore-certificate-errors': true,
-          'defaultViewport': {
-              'width': 1280,
-              'height': 960
-          },
-          args: [
-              //  '--headless',
-              '--disable-gpu',
-              '--no-sandbox',
-              '--allow-running-insecure-content',
-              '--ignore-certificate-errors',
-              '--window-size=1440,1400'
-          ]}
+          chrome: {
+              ignoreHTTPSErrors: true,
+              args: [
+                  '--no-sandbox',
+                  '--smartwait',
+                  '--window-size=1440,1400',
+                  '--disable-gpu'
+
+              ]
+          }
       },
+
 
       //just adding helper class here
     PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' },
@@ -67,3 +61,6 @@ exports.config = {
   },
   name: 'finrem-ccd-definitions'
 };
+
+
+
