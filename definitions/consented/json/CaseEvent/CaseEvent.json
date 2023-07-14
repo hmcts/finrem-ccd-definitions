@@ -943,7 +943,7 @@
     "Name": "NoC Request",
     "Description": "Notice of Change Request",
     "DisplayOrder": 57,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;awaitingInfo;infoReceived;close",
+    "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;awaitingInfo;infoReceived;close;readyForHearing",
     "PostConditionState": "*",
     "CallBackURLSubmittedEvent": "${CCD_DEF_AAC_URL}/noc/check-noc-approval",
     "SecurityClassification": "Public",
