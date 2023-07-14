@@ -2643,5 +2643,23 @@
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderCollection",
+    "ListElementCode": "approveOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Approve orders",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderCollection",
+    "ListElementCode": "orderReceivedAt",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order received at",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
