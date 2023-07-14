@@ -544,7 +544,7 @@
     "Name": "Update contact details",
     "Description": "Update contact details",
     "DisplayOrder": 103,
-    "PreConditionState(s)": "applicationSubmitted;applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;responseReceived;consentedOrderSubmitted;caseFileSubmitted",
+    "PreConditionState(s)": "applicationSubmitted;applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;responseReceived;consentedOrderSubmitted;caseFileSubmitted;draftOrderNotApproved",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/set-update-defaults",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/remove-details",
