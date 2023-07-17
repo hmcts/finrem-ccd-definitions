@@ -192,3 +192,21 @@ Scenario('Caseworker runs List for Interim Hearing @nightly', async I => {
     await I.verifyListForInterimHearing();
     logger.info("List Of Interim Hearing Completed");
 }).retry(3);
+
+//TODO
+// Scenario('Send order to an applicant solicitor @nightly', async I => {
+//
+//     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+//     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+//     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+//     const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+//     const addIntervener = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId,'FinancialRemedyContested', 'manageInterveners', 'test/data/ccd-contested-add-represented-intervener.json');
+//     const createGeneralOrder = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId,'FinancialRemedyContested', 'FR_generalOrderCourtAdmin', 'test/data/ccd-contested-create-general-order.json');
+//
+//     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+//     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+//     await I.sendOrderNew();
+//     // validate Order tab
+//
+//
+// }).retry(3);

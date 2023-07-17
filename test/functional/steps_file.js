@@ -49,7 +49,7 @@ const {refundCase} = require('./pages/refund-case/refund-case');
 const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-order');
 const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-approve');
 const {uploadOrder} = require('./pages/upload-order/upload-order');
-const {sendOrder} = require('./pages/send-order/send-order');
+const {sendOrder,sendOrderNew} = require('./pages/send-order/send-order');
 const {listForInterimHearing} = require('./pages/list-of-interim-hearing/list-of-interim-hearing');
 const {createCaseFlag, validateCaseFlagAlertMessage, validateCaseFlagTab} = require('./pages/create-case-flag/create-case-flag');
 const {manageBarristerApplicant, manageBarristerRespondent} = require('./pages/manage-barrister/manage-barrister');
@@ -194,6 +194,7 @@ module.exports = () => {
     draftOrderApprove,
     uploadOrder,
     sendOrder,
+    sendOrderNew,
     listForInterimHearing,
     verifyListForInterimHearing,
     createCaseFlag,
