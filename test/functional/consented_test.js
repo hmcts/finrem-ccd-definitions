@@ -26,11 +26,11 @@ Scenario('Consent Case Creation For Caseworker @nightly @preview', async I => {
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
     /* eslint-disable */
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    // I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
-    // I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
-    // I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
+    await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+    await I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
   }
 }).retry(3);
 
