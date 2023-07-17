@@ -6,6 +6,7 @@
     "TabLabel": "Intervener 1 documents",
     "TabDisplayOrder": 33,
     "CaseFieldID": "intv1Summaries",
+    "TabShowCondition": "intv1Summaries!=\"\" OR intv1Chronologies!=\"\" OR intv1CorrespDocs!=\"\" OR intv1ExpertEvidence!=\"\" OR intv1FormEsExhibits!=\"\" OR intv1FormHs!=\"\" OR intv1HearingBundles!=\"\" OR intv1Other!=\"\" OR intv1StmtsExhibits!=\"\" OR intv1Qa!=\"\" OR intv1FdrCaseDocuments!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -105,6 +106,7 @@
     "TabLabel": "Intervener 2 documents",
     "TabDisplayOrder": 34,
     "CaseFieldID": "intv2Summaries",
+    "TabShowCondition": "intv2Summaries!=\"\" OR intv2Chronologies!=\"\" OR intv2CorrespDocs!=\"\" OR intv2ExpertEvidence!=\"\" OR intv2FormEsExhibits!=\"\" OR intv2FormHs!=\"\" OR intv2HearingBundles!=\"\" OR intv2Other!=\"\" OR intv2StmtsExhibits!=\"\" OR intv2Qa!=\"\" OR intv2FdrCaseDocuments!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -204,6 +206,7 @@
     "TabLabel": "Intervener 3 documents",
     "TabDisplayOrder": 35,
     "CaseFieldID": "intv3Summaries",
+    "TabShowCondition": "intv3Summaries!=\"\" OR intv3Chronologies!=\"\" OR intv3CorrespDocs!=\"\" OR intv3ExpertEvidence!=\"\" OR intv3FormEsExhibits!=\"\" OR intv3FormHs!=\"\" OR intv3HearingBundles!=\"\" OR intv3Other!=\"\" OR intv3StmtsExhibits!=\"\" OR intv3Qa!=\"\" OR intv3FdrCaseDocuments!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -303,6 +306,7 @@
     "TabLabel": "Intervener 4 documents",
     "TabDisplayOrder": 36,
     "CaseFieldID": "intv4Summaries",
+    "TabShowCondition": "intv4Summaries!=\"\" OR intv4Chronologies!=\"\" OR intv4CorrespDocs!=\"\" OR intv4ExpertEvidence!=\"\" OR intv4FormEsExhibits!=\"\" OR intv4FormHs!=\"\" OR intv4HearingBundles!=\"\" OR intv4Other!=\"\" OR intv4StmtsExhibits!=\"\" OR intv4Qa!=\"\" OR intv4FdrCaseDocuments!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
