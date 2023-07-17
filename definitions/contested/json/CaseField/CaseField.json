@@ -5147,7 +5147,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "confidentialDocumentsUploaded",
-    "Label": "Confidential documents uploaded",
+    "Label": "Legacy Confidential documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_UploadConfidentialDocument",
     "SecurityClassification": "Public",
@@ -6642,6 +6642,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "01/07/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "confidentialDocumentCollection",
+    "Label": "Confidential Case Document",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "05/10/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "consentInContestedOrdersToShare",
@@ -6671,72 +6681,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "appConsentOrderCollection",
-    "Label": "Approve Orders",
-    "HintText": "Approve Orders",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respConsentOrderCollection",
-    "Label": "Approve Orders",
-    "HintText": "Approve Orders",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intv1ConsentOrderCollection",
-    "Label": "Approve Orders",
-    "HintText": "Approve Orders",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intv2ConsentOrderCollection",
-    "Label": "Approve Orders",
-    "HintText": "Approve Orders",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intv3ConsentOrderCollection",
-    "Label": "Approve Orders",
-    "HintText": "Approve Orders",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "intv4ConsentOrderCollection",
-    "Label": "Approve Orders",
-    "HintText": "Approve Orders",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_orderCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "appOrderCollection",
     "Label": "Approve Orders",
     "HintText": "Approve Orders",
@@ -6744,7 +6688,16 @@
     "FieldTypeParameter": "FR_orderCollection",
     "SecurityClassification": "Public"
   },
-
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appRefusedOrderCollection",
+    "Label": "Refused Orders",
+    "HintText": "Refused Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_unapprovedOrderCollection",
+    "SecurityClassification": "Public"
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -6753,6 +6706,16 @@
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respRefusedOrderCollection",
+    "Label": "Refused Orders",
+    "HintText": "Refused Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_unapprovedOrderCollection",
     "SecurityClassification": "Public"
   },
   {
@@ -6768,11 +6731,31 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv1RefusedOrderCollection",
+    "Label": "Refused Orders",
+    "HintText": "Refused Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_unapprovedOrderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv2OrderCollection",
     "Label": "Approve Orders",
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv2RefusedOrderCollection",
+    "Label": "Refused Orders",
+    "HintText": "Refused Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_unapprovedOrderCollection",
     "SecurityClassification": "Public"
   },
   {
@@ -6788,11 +6771,31 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv3RefusedOrderCollection",
+    "Label": "Refused Orders",
+    "HintText": "Refused Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_unapprovedOrderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv4OrderCollection",
     "Label": "Approve Orders",
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv4RefusedOrderCollection",
+    "Label": "Refused Orders",
+    "HintText": "Refused Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_unapprovedOrderCollection",
     "SecurityClassification": "Public"
   }
 ]
