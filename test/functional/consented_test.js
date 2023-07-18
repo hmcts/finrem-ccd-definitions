@@ -1,20 +1,20 @@
-// const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
-// const verifyTabText = require('../data/verify-consented-tab-data.json');
-//
-// const ccdWebUrl = process.env.CCD_WEB_URL;
-// const solicitorUserName = process.env.USERNAME_SOLICITOR;
-// const solicitorPassword = process.env.PASSWORD_SOLICITOR;
-// const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
-// const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
-// const judgeUserName = process.env.USERNAME_JUDGE;
-// const judgePassword = process.env.PASSWORD_JUDGE;
-// const nightlyTest = process.env.NIGHTLY_TEST;
-// const runningEnv = process.env.RUNNING_ENV;
-// const solRef = `AUTO-${createSolicitorReference()}`;
-//
-//
-// Feature('create Consented case');
-//
+const { createCaseInCcd, updateCaseInCcd, createSolicitorReference } = require('../helpers/utils');
+const verifyTabText = require('../data/verify-consented-tab-data.json');
+
+const ccdWebUrl = process.env.CCD_WEB_URL;
+const solicitorUserName = process.env.USERNAME_SOLICITOR;
+const solicitorPassword = process.env.PASSWORD_SOLICITOR;
+const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
+const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
+const judgeUserName = process.env.USERNAME_JUDGE;
+const judgePassword = process.env.PASSWORD_JUDGE;
+const nightlyTest = process.env.NIGHTLY_TEST;
+const runningEnv = process.env.RUNNING_ENV;
+const solRef = `AUTO-${createSolicitorReference()}`;
+
+
+Feature('create Consented case');
+
 Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
@@ -34,7 +34,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
       await I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
     }
   }
-})//.retry(3);
+}).retry(3);
 //
 // Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
 //   if (runningEnv === 'demo') {
