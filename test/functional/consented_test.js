@@ -27,11 +27,11 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline', async I => {
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
     /* eslint-disable */
     if (nightlyTest === 'true') {
-      I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-      I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-      I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
-      I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
-      I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
+      await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+      await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+      await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
+      await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+      await I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
     }
   }
 })//.retry(3);
@@ -50,12 +50,12 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
     const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_issueApplication', './test/data/ccd-consented-case-worker-issue-data.json');
     /* eslint-enable */
     if (nightlyTest === 'true') {
-      I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-      I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+      await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+      await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
-      I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
-      I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
-      I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+      await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
+      await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+      await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     }
   }
 });
@@ -70,11 +70,11 @@ Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => 
 
   /* eslint-enable */
     if (nightlyTest === 'true') {
-      I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-      I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+      await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+      await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
-      I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
-      I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
+      await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
+      await I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
   }
 }).retry(3);
 /* eslint-disable require-await */
