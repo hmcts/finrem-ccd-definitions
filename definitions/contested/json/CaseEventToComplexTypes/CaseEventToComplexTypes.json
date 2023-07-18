@@ -978,7 +978,7 @@
     "CaseEventID": "FR_uploadCaseFiles",
     "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentFdr",
-    "FieldShowCondition": "caseDocumentConfidential=\"No\"",
+    "FieldShowCondition": "manageCaseDocumentCollection.caseDocumentConfidential=\"No\"",
     "DisplayContext": "MANDATORY"
   },
   {
