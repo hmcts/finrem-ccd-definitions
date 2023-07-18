@@ -2271,7 +2271,7 @@
     "ListElementCode": "caseDocumentConfidential",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the document confidential?",
-    "FieldShowCondition": "caseDocumentType=\"nil\"",
+    "FieldShowCondition": "caseDocumentType=\"DONOTSHOW\"",
     "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
     "SecurityClassification": "Public",
     "Searchable": "N"
