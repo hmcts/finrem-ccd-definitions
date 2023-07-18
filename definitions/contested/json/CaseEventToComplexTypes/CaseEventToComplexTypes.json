@@ -903,6 +903,15 @@
     "ID": "FR_manageCaseDocuments",
     "CaseEventID": "FR_manageCaseDocuments",
     "CaseFieldID": "manageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidential",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "manageCaseDocumentCollection=\"IMPOSSIBLAW\""
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
+    "CaseEventID": "FR_manageCaseDocuments",
+    "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentFdr",
     "DisplayContext": "MANDATORY"
   },
@@ -913,15 +922,6 @@
     "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentParty",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_manageCaseDocuments",
-    "CaseEventID": "FR_manageCaseDocuments",
-    "CaseFieldID": "manageCaseDocumentCollection",
-    "ListElementCode": "caseDocumentConfidential",
-    "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "manageCaseDocumentCollection=\"IMPOSSIBLAW\""
   },
   {
     "LiveFrom": "01/06/2022",
