@@ -55,7 +55,7 @@ withNightlyPipeline("nodejs", product, component) {
     enableCrossBrowserTest()
 
     afterSuccess('fullFunctionalTest') {
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**/*'
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
     }
     afterSuccess('crossBrowserTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**/*'
