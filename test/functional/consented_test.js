@@ -15,7 +15,7 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 
 Feature('create Consented case ');
 
-Scenario('Consent Case Creation For Caseworker @nightly @pipeline @preview', async I => {
+Scenario('Consent Case Creation For Caseworker @nightly @preview', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     /* eslint-disable */
@@ -34,7 +34,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @pipeline @preview', asy
   }
 }).retry(3);
 
-Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
+Scenario('Consent Case Creation For Judge @nightly', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     /* eslint-disable */
@@ -56,7 +56,7 @@ Scenario('Consent Case Creation For Judge @nightly @pipeline', async I => {
   }
 });
 
-Scenario('Consent Case approve and send order  @nightly @pipeline ', async I => {
+Scenario('Consent Case approve and send order @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
