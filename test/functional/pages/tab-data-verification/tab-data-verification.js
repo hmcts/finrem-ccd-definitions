@@ -12,7 +12,7 @@ function historyTab(caseType, tabName, eventName, endState) {
 
 async function applicantTab(caseType, tabName) {
   const I = this;
-  I.retry(3).waitForText(tabName, '90');
+  await I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -46,126 +46,126 @@ async function applicantTab(caseType, tabName) {
 
 async function respondentTab(caseType, tabName) {
   const I = this;
-  I.retry(3).waitForText(tabName, '90');
+  await I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
     await I.waitForNavigationToComplete('#mat-tab-label-0-2');
-    I.see(verifyTabText.respondentTab.respondentLastName);
-    I.see(verifyTabText.respondentTab.respondentSolicitorName);
-    I.see(verifyTabText.respondentTab.respondentSolicitorFirm);
-    I.see(verifyTabText.respondentTab.respondentEmail);
-    I.see(verifyTabText.respondentTab.respondentPostCode);
+    await I.see(verifyTabText.respondentTab.respondentLastName);
+    await I.see(verifyTabText.respondentTab.respondentSolicitorName);
+    await I.see(verifyTabText.respondentTab.respondentSolicitorFirm);
+    await I.see(verifyTabText.respondentTab.respondentEmail);
+    await I.see(verifyTabText.respondentTab.respondentPostCode);
     break;
   case 'contested':
     await I.waitForNavigationToComplete('#mat-tab-label-0-3');
-    I.see(verifyContestedTabText.respondentTab.respondentLastName);
-    I.see(verifyContestedTabText.respondentTab.respondentSolicitorName);
-    I.see(verifyContestedTabText.respondentTab.respondentSolicitorFirm);
-    I.see(verifyContestedTabText.respondentTab.respondentEmail);
-    I.see(verifyContestedTabText.respondentTab.respondentPostCode);
+    await I.see(verifyContestedTabText.respondentTab.respondentLastName);
+    await I.see(verifyContestedTabText.respondentTab.respondentSolicitorName);
+    await I.see(verifyContestedTabText.respondentTab.respondentSolicitorFirm);
+    await I.see(verifyContestedTabText.respondentTab.respondentEmail);
+    await I.see(verifyContestedTabText.respondentTab.respondentPostCode);
     break;
   case 'contestedPaper':
     await I.waitForNavigationToComplete('#mat-tab-label-0-3');
-    I.see(verifyContestedPaperTabText.respondentTab.respondentLastName);
-    I.see(verifyContestedPaperTabText.respondentTab.respondentRepresented);
-    I.see(verifyContestedPaperTabText.respondentTab.respondentBuildingName);
-    I.see(verifyContestedPaperTabText.respondentTab.respondentEmail);
-    I.see(verifyContestedPaperTabText.respondentTab.respondentPostCode);
+    await I.see(verifyContestedPaperTabText.respondentTab.respondentLastName);
+    await I.see(verifyContestedPaperTabText.respondentTab.respondentRepresented);
+    await I.see(verifyContestedPaperTabText.respondentTab.respondentBuildingName);
+    await I.see(verifyContestedPaperTabText.respondentTab.respondentEmail);
+    await I.see(verifyContestedPaperTabText.respondentTab.respondentPostCode);
     break;
   }
 }
 
 async function divorceTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  await I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
     await I.waitForNavigationToComplete('#mat-tab-label-0-3');
-    I.runAccessibilityTest();
-    I.see(verifyTabText.divorceTab.divorceCaseNumber);
-    I.see(verifyTabText.divorceTab.decreeNisiFileName);
+    await I.runAccessibilityTest();
+    await I.see(verifyTabText.divorceTab.divorceCaseNumber);
+    await I.see(verifyTabText.divorceTab.decreeNisiFileName);
     break;
   case 'contested':
     await I.waitForNavigationToComplete('#mat-tab-label-0-2');
-    I.see(verifyContestedTabText.divorceTab.divorceCaseNumber);
-    I.see(verifyContestedTabText.divorceTab.decreeNisiFileName);
-    I.see(verifyContestedTabText.divorceTab.applicantsLocalCourt);
+    await I.see(verifyContestedTabText.divorceTab.divorceCaseNumber);
+    await I.see(verifyContestedTabText.divorceTab.decreeNisiFileName);
+    await I.see(verifyContestedTabText.divorceTab.applicantsLocalCourt);
     break;
   case 'contestedPaper':
     await I.waitForNavigationToComplete('#mat-tab-label-0-2');
-    I.see(verifyContestedPaperTabText.divorceTab.divorceCaseNumber);
-    I.see(verifyContestedPaperTabText.divorceTab.decreeNisiFileName);
-    I.see(verifyContestedPaperTabText.divorceTab.applicantsLocalCourt);
+    await I.see(verifyContestedPaperTabText.divorceTab.divorceCaseNumber);
+    await I.see(verifyContestedPaperTabText.divorceTab.decreeNisiFileName);
+    await I.see(verifyContestedPaperTabText.divorceTab.applicantsLocalCourt);
     break;
   }
 }
 
 async function natureOfApplicationTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  await I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
     await I.waitForNavigationToComplete('#mat-tab-label-0-4');
-    I.see(verifyTabText.natureOfApplicationTab.applicationFor1);
-    I.see(verifyTabText.natureOfApplicationTab.applicationFor2);
-    I.see(verifyTabText.natureOfApplicationTab.addressDetails);
-    I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
-    I.see(verifyTabText.natureOfApplicationTab.orderForChildren);
+    await I.see(verifyTabText.natureOfApplicationTab.applicationFor1);
+    await I.see(verifyTabText.natureOfApplicationTab.applicationFor2);
+    await I.see(verifyTabText.natureOfApplicationTab.addressDetails);
+    await I.see(verifyTabText.natureOfApplicationTab.mortgageDetails);
+    await I.see(verifyTabText.natureOfApplicationTab.orderForChildren);
     break;
   case 'contested':
     await I.waitForNavigationToComplete('#mat-tab-label-0-4');
-    I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor1);
-    I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor2);
-    I.see(verifyContestedTabText.natureOfApplicationTab.addressDetails);
-    I.see(verifyContestedTabText.natureOfApplicationTab.mortgageDetails);
-    I.see(verifyContestedTabText.natureOfApplicationTab.orderForChildren);
+    await I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor1);
+    await I.see(verifyContestedTabText.natureOfApplicationTab.applicationFor2);
+    await I.see(verifyContestedTabText.natureOfApplicationTab.addressDetails);
+    await I.see(verifyContestedTabText.natureOfApplicationTab.mortgageDetails);
+    await I.see(verifyContestedTabText.natureOfApplicationTab.orderForChildren);
     break;
   case 'contestedPaper':
     await I.waitForNavigationToComplete('#mat-tab-label-0-4');
-    I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor1);
-      I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor2);
-    I.see(verifyContestedPaperTabText.natureOfApplicationTab.addressDetails);
-    I.see(verifyContestedPaperTabText.natureOfApplicationTab.mortgageDetails);
-    I.see(verifyContestedPaperTabText.natureOfApplicationTab.orderForChildren);
+    await I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor1);
+    await I.see(verifyContestedPaperTabText.natureOfApplicationTab.applicationFor2);
+    await I.see(verifyContestedPaperTabText.natureOfApplicationTab.addressDetails);
+    await I.see(verifyContestedPaperTabText.natureOfApplicationTab.mortgageDetails);
+    await I.see(verifyContestedPaperTabText.natureOfApplicationTab.orderForChildren);
     break;
   }
 }
 
 async function authorisationTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  await I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
     await I.waitForNavigationToComplete('#mat-tab-label-0-5');
-    I.see(verifyTabText.authorisationTab.solicitorName);
-    I.see(verifyTabText.authorisationTab.solicitorFirm);
-    I.see(verifyTabText.authorisationTab.signedDate);
+    await I.see(verifyTabText.authorisationTab.solicitorName);
+    await I.see(verifyTabText.authorisationTab.solicitorFirm);
+    await I.see(verifyTabText.authorisationTab.signedDate);
     break;
   case 'contested':
     await I.waitForNavigationToComplete('#mat-tab-label-0-5');
-    I.see(verifyContestedTabText.authorisationTab.solicitorName);
-    I.see(verifyContestedTabText.authorisationTab.solicitorFirm);
-    I.see(verifyContestedTabText.authorisationTab.signedDate);
+    await I.see(verifyContestedTabText.authorisationTab.solicitorName);
+    await I.see(verifyContestedTabText.authorisationTab.solicitorFirm);
+    await I.see(verifyContestedTabText.authorisationTab.signedDate);
     break;
   case 'contestedPaper':
-    I.see(verifyContestedPaperTabText.authorisationTab.solicitorName);
-    I.see(verifyContestedPaperTabText.authorisationTab.solicitorFirm);
-    I.see(verifyContestedPaperTabText.authorisationTab.signedDate);
+    await I.see(verifyContestedPaperTabText.authorisationTab.solicitorName);
+    await I.see(verifyContestedPaperTabText.authorisationTab.solicitorFirm);
+    await I.see(verifyContestedPaperTabText.authorisationTab.signedDate);
     break;
   }
 }
 /* eslint-disable */
 async function caseDocumentsTab(caseType, tabName, eventName) {
   const I = this;
-  I.retry(3).waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
+  await I.retry(3).waitForText(verifyContestedPaperTabText.historyTab.tabName, 30);
   // if (!I.see(tabName)) {
   //   await I.waitForNavigationToComplete('.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4.mat-ripple')
   // }
-  I.retry(3).waitForText(tabName, '90');
+  await I.retry(3).waitForText(tabName, '90');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
@@ -319,15 +319,15 @@ async function contestedOrderTab(caseType, tabName) {
 
 async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  await I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
     await I.waitForNavigationToComplete('#mat-tab-label-0-8');
-    I.see(verifyContestedTabText.gateKeepingAllocationsTab.localCourt);
+    await I.see(verifyContestedTabText.gateKeepingAllocationsTab.localCourt);
     if (eventName === verifyContestedTabText.historyTab.issueApplicationEvent) {
-      I.see(verifyContestedTabText.gateKeepingAllocationsTab.fastTrackProcedure);
-      I.see(verifyContestedTabText.gateKeepingAllocationsTab.dateOfMarriage);
+      await I.see(verifyContestedTabText.gateKeepingAllocationsTab.fastTrackProcedure);
+      await I.see(verifyContestedTabText.gateKeepingAllocationsTab.dateOfMarriage);
     }
     break;
   case 'contestedPaper':
@@ -341,18 +341,18 @@ async function gateKeepingAllocationsTab(caseType, tabName, eventName) {
 
 async function schedulingAndListingTab(caseType, tabName) {
   const I = this;
-  I.waitForText(tabName, '5');
+  await I.waitForText(tabName, '5');
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'contested':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-10"]');
-    I.see(verifyContestedTabText.schedulingAndListingTab.localCourt);
-    I.see(verifyContestedTabText.schedulingAndListingTab.courtFrc);
+    await I.see(verifyContestedTabText.schedulingAndListingTab.localCourt);
+    await I.see(verifyContestedTabText.schedulingAndListingTab.courtFrc);
     break;
   case 'contestedPaper':
     await I.waitForNavigationToComplete('div[id="mat-tab-label-0-8"]');
-    I.see(verifyContestedPaperTabText.schedulingAndListingTab.localCourt);
-    I.see(verifyContestedPaperTabText.schedulingAndListingTab.courtFrc);
+    await I.see(verifyContestedPaperTabText.schedulingAndListingTab.localCourt);
+    await I.see(verifyContestedPaperTabText.schedulingAndListingTab.courtFrc);
     break;
   }
 }
@@ -392,16 +392,16 @@ async function verifyContestedTabData(caseType, eventName, stateName) {
   //I.gateKeepingAllocationsTab(caseType, verifyContestedTabText.gateKeepingAllocationsTab.tabName, eventName);
 }
 
-function verifyContestedPaperTabData(caseType, eventName, stateName) {
+async function verifyContestedPaperTabData(caseType, eventName, stateName) {
   const I = this;
-  I.historyTab(caseType, verifyContestedPaperTabText.historyTab.tabName, eventName, stateName);
-  I.applicantTab(caseType, verifyContestedPaperTabText.applicantTab.tabName);
-  I.respondentTab(caseType, verifyContestedPaperTabText.respondentTab.tabName);
-  I.divorceTab(caseType, verifyContestedPaperTabText.divorceTab.tabName);
-  I.natureOfApplicationTab(caseType, verifyContestedPaperTabText.natureOfApplicationTab.tabName);
-  I.caseDocumentsTab(caseType, verifyContestedPaperTabText.caseDocumentsTab.tabName, eventName);
-  I.gateKeepingAllocationsTab(caseType, verifyContestedPaperTabText.gateKeepingAllocationsTab.tabName, eventName);
-  I.schedulingAndListingTab(caseType, verifyContestedPaperTabText.schedulingAndListingTab.tabName);
+  await I.historyTab(caseType, verifyContestedPaperTabText.historyTab.tabName, eventName, stateName);
+  await I.applicantTab(caseType, verifyContestedPaperTabText.applicantTab.tabName);
+  await I.respondentTab(caseType, verifyContestedPaperTabText.respondentTab.tabName);
+  await I.divorceTab(caseType, verifyContestedPaperTabText.divorceTab.tabName);
+  await I.natureOfApplicationTab(caseType, verifyContestedPaperTabText.natureOfApplicationTab.tabName);
+  await I.caseDocumentsTab(caseType, verifyContestedPaperTabText.caseDocumentsTab.tabName, eventName);
+  await I.gateKeepingAllocationsTab(caseType, verifyContestedPaperTabText.gateKeepingAllocationsTab.tabName, eventName);
+  await I.schedulingAndListingTab(caseType, verifyContestedPaperTabText.schedulingAndListingTab.tabName);
 }
 
 async function verifyContestedConfidentialTabData(eventName, tabName) {
