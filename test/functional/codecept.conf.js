@@ -6,7 +6,7 @@ exports.config = {
           url: 'http://localhost:3000',
           smartWait: 50000,
           waitForTimeout: 90000,
-          show: false,
+          show: true,
           windowSize: '1440x700',
           waitForNavigation: 'domcontentloaded',
           restart: true,
