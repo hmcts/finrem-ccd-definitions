@@ -53,7 +53,7 @@
     "test:all": "yarn lint; yarn test; yarn test:a11y; yarn test:functional",
     "test:coverage": "echo test:coverage",
     "test:a11y": "echo test:a11y",
-    "test:smoke": "echo smoke",
+    "test:smoke": "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs run --steps -c test/functional/codecept.conf.js --grep @smoke --reporter mochawesome",
     "test:functional": "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs run --steps -c test/functional/codecept.conf.js --grep @pipeline --reporter mochawesome",
     "test:fullfunctional": "NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run-multiple parallel --steps -c test/functional/codecept.conf.js --grep @nightly --reporter mochawesome",
     "test:debug": "NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run-multiple parallel --steps --verbose -c test/functional/codecept.conf.js --grep @debug --reporter mochawesome",
