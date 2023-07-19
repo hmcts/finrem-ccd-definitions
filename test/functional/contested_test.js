@@ -277,29 +277,6 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async I =
     await I.issueApplication();
 }).retry(3);
 
-Scenario('Manage Confidential Documents', async I => {
-    //login as a caseworker, create contested case
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    await I.wait('2');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
-    await I.contestedDivorceDetails();
-    await I.contestedApplicantDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplication();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestion();
-    await I.miamCertification();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers('Matrimonial');
-    await I.waitForText('Form A Application', '60');
-    await I.manualPayment();
-    await I.issueApplication();
-    //TODO - update test Manage Confidential Documents
-}).retry(3);
-
 Scenario('Manage Confidential Documents @nightly', async I => {
 
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
