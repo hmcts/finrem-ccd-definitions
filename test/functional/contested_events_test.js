@@ -135,7 +135,6 @@ Scenario('List for hearing contested case @nightly', async I => {
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     logger.info('---------------------case number------------------------', caseId);
-    logger.info('--------------case worker created case ' +caseId+ ' successfully-----------------');
     await I.allocateJudge();
     await I.see('Allocate to Judge');
     await I.signOut();
