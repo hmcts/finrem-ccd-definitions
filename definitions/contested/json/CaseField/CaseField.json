@@ -5147,11 +5147,10 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "confidentialDocumentsUploaded",
-    "Label": "Confidential documents",
+    "Label": "Confidential documents uploaded",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_UploadConfidentialDocument",
     "SecurityClassification": "Public",
-    "HintText": "Legacy confidential documents",
     "Searchable": "N"
   },
   {
@@ -6637,16 +6636,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv4OtherShared",
     "Label": "Other",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/07/2023",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "confidentialDocumentCollection",
-    "Label": "Confidential Case Document",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public",
