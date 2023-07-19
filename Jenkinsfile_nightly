@@ -54,6 +54,10 @@ withNightlyPipeline("nodejs", product, component) {
     enableFullFunctionalTest(120)
     enableCrossBrowserTest()
 
+    before('functionalTest') {
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+    }
+
     afterSuccess('fullFunctionalTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
     }
