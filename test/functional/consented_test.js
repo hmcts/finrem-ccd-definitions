@@ -99,7 +99,7 @@ Scenario('Consent Case Creation by Solicitor @nightly', async I => {
     await I.savingApplicationInformation('consented');
     await I.checkYourAnswers();
     // amend event
-    I.amendApplicationDetails();
+    await I.amendApplicationDetails();
     // hwf payment submission
     await I.caseSubmitAuthorisation('consented');
     await I.paymentPage(false);
