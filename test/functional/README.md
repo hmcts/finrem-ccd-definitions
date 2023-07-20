@@ -51,7 +51,7 @@
 
 2) open `codecept.conf.js` file and update this parameter `show: true`
 
-3) place the tag `@mytest` in the scenario  (for ex. 'Consent Case Creation For Caseworker @nightly @pipeline @mytest')
+3) place the tag `@mytest` in the scenario  (for ex. 'Consent Case Creation For Caseworker @nightly @preview @mytest')
 
 4) To run the test run this `yarn test:mytest` 
         the test include API calls requires VPN on.
