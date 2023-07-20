@@ -175,7 +175,7 @@ Scenario('Contested E2E @nightly @preview', async I => {
     await I.uploadOrder();
     await I.sendOrder();
     logger.info('-----------completed E2E contested test for -------------', caseId);
-}).retry(3);
+});
 
 Scenario('Caseworker runs List for Interim Hearing @nightly', async I => {
     logger.info("List for Interim Hearing test starting");
