@@ -12,7 +12,7 @@ async function uploadOrder(){
   I.click('Add new');
   I.checkOption('input[id="directionDetailsCollection_0_isAnotherHearingYN_No"]');
   I.waitForContinueButtonEnabled();
-  I.click('Continue');
+  I.click('Submit');
   I.waitForText('Event summary');
   I.click('Submit');
   I.waitForText('Upload Order', '60');
