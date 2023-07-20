@@ -35,7 +35,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => 
     await I.waitForText('Form A Application', '60')
 }).retry(3);
 
-Scenario('Contested Schedule 1 Case Creation by caseworker @nightly @mytest', async I => {
+Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I => {
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
