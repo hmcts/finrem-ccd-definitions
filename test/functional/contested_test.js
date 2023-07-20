@@ -117,7 +117,7 @@ Scenario('Contested Case Approved and Send Order  @nightly @pipeline', async I =
       //await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
       //await I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
   }
-})//.retry(3);
+}).retry(3);
 
 Scenario('Consented case in Contested @nightly @pipeline', async I => {
   if (runningEnv === 'demo') {
