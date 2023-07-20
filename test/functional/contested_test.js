@@ -219,8 +219,8 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I =>
 }).retry(3);
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
-    I.signInIdam(solicitorUserName, solicitorPassword);
-    I.wait('2');
+    await I.signInIdam(solicitorUserName, solicitorPassword);
+    await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
     await I.contestedSolicitorCreate(solRef, 'Schedule1');
     await I.contestedApplicantDetails();
