@@ -18,7 +18,7 @@ async function checkYourAnswers() {
 
 async function contestedCheckYourAnswers(applicationType) {
   const I = this;
-  I.waitForPage('.check-your-answers');
+  I.waitForText('Check your answers');
   if (testForAccessibility==='true') {
     await I.runAccessibilityTest();
   }
