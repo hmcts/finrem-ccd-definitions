@@ -59,10 +59,10 @@ withNightlyPipeline("nodejs", product, component) {
     }
 
     afterSuccess('fullFunctionalTest') {
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
     }
     afterSuccess('crossBrowserTest') {
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
       }
 }
 
