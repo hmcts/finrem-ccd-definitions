@@ -30,9 +30,8 @@ Scenario('Consent Case Creation For Caseworker @nightly @preview', async I => {
       await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
-      //TODO-fix
-      //await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
-      //await I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
+      await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+      await I.judgeDetailsTab(verifyTabText.caseType, verifyTabText.judgeDetailsTab.tabName, verifyTabText.historyTab.hwfPaymentAcceptedEvent);
     }
   }
 }).retry(3);
@@ -55,9 +54,8 @@ Scenario('Consent Case Creation For Judge @nightly', async I => {
       await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
       await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
-      //TODO-fix
-      //await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
-      //await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+      await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
+      await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
     }
   }
 }).retry(3);
@@ -75,11 +73,10 @@ Scenario('Consent Case approve and send order @nightly', async I => {
       await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
       await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
-      //TODO-fix
-      //await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
+      await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
       await I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
   }
-})//.retry(3);
+}).retry(3);
 /* eslint-disable require-await */
 
 Scenario('Consent Case Creation by Solicitor @nightly', async I => {

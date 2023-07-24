@@ -62,9 +62,8 @@ Scenario('Contested Case Creation For Judge @nightly', async I => {
      await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
      await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeEvent, verifyTabText.historyTab.assignToJudgeEndState);
-     //TODO-fix
-     //await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-    }
+     await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+   }
   }
 }).retry(3);
 
@@ -85,9 +84,8 @@ Scenario('Contested Case Creation For Ready For Hearing @nightly', async I => {
       await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
       await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.submitUploadCaseFilesEvent, verifyTabText.historyTab.submitUploadCaseFilesEndState);
-      //TODO-fix
-      //await I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
-      //await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+      await I.schedulingAndListingTab(verifyTabText.caseType, verifyTabText.schedulingAndListingTab.tabName);
+      await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
   }
 }).retry(3);
 
@@ -112,10 +110,8 @@ Scenario('Contested Case Approved and Send Order  @nightly', async I => {
       await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
       await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.sendOrderState);
-      //TODO-fix
-      //await I.click({css: '.mat-tab-header-pagination-after'});
-      //await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-      //await I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
+      await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+      await I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
   }
 }).retry(3);
 
@@ -139,9 +135,8 @@ Scenario('Consented case in Contested @nightly', async I => {
         await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
       // eslint-disable-next-line max-len
         await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.consentOrderEvent, verifyTabText.historyTab.consentOrderEndState);
-        //TODO-fix
-        //await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-        //await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
+        await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+        await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
     }
   }
 }).retry(3);
@@ -161,9 +156,8 @@ Scenario('Consented case in Contested Assigned to Judge @nightly', async I => {
       await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
       await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEndState);
-      //TODO-fix
-      //await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
-      //await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
+      await I.adminNotesTab(verifyTabText.caseType, verifyTabText.adminNotesTab.tabName);
+      await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
   }
 }).retry(3);
 
