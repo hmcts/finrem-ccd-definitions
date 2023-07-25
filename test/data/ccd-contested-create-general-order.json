@@ -1,15 +1,231 @@
 {
+  "isAdmin": "No",
+  "HWFNumber": "HWF22345",
+  "caseFlags": {
+    "details": [],
+    "partyName": "Case",
+    "roleOnCase": "Case"
+  },
+  "issueDate": "2020-11-01",
+  "miniFormA": {
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/69874c85-c219-413d-a18b-9cefb81940df",
+    "document_filename": "OnlineForm.pdf",
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/69874c85-c219-413d-a18b-9cefb81940df/binary"
+  },
+  "regionList": "london",
+  "amountToPay": "27500",
+  "intervener1": {
+    "intervenerName": "Lee Dickerson",
+    "intervenerEmail": "gotil@mailinator.com",
+    "intervenerPhone": "+1 (157) 116-8575",
+    "intervenerAddress": {
+      "County": "",
+      "Country": "United Kingdom",
+      "PostCode": "LU4 0HP",
+      "PostTown": "Luton",
+      "AddressLine1": "5 Downview",
+      "AddressLine2": "Dunstable Road",
+      "AddressLine3": ""
+    },
+    "intervenerSolName": "Wallace Patel",
+    "intervenerSolEmail": "fr_applicant_barrister1@mailinator.com",
+    "intervenerSolPhone": "+1 (146) 842-1233",
+    "intervenerDateAdded": "2023-07-11",
+    "intervenerRepresented": "Yes",
+    "intervenerOrganisation": {
+      "Organisation": {
+        "OrganisationID": "Y707HZM",
+        "OrganisationName": "FinRem-1-Org"
+      },
+      "OrgPolicyReference": "Rhodes and Ryan Associates",
+      "OrgPolicyCaseAssignedRole": "[INTVRSOLICITOR1]"
+    },
+    "intervenerSolicitorFirm": "intervener firm",
+    "intervenerSolicitorReference": "Neque sit quo perfer"
+  },
+  "cfcCourtList": "FR_s_CFCList_9",
   "generalOrders": [
     {
-      "id": "1d0256e8-ce42-4462-a023-e08a262cce21",
+      "id": "cc9abb52-3b9c-4d26-b0f8-f870b4138927",
       "value": {
         "additionalDocument": {
-          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/59680342-3217-45a9-9f6e-a6c4d8786314",
+          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/74bb71c6-9b37-4e93-a083-066ca25086cc",
           "document_filename": "generalOrder.pdf",
-          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/59680342-3217-45a9-9f6e-a6c4d8786314/binary"
+          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/74bb71c6-9b37-4e93-a083-066ca25086cc/binary"
         },
         "generalOrder_addressTo": ""
       }
     }
-  ]
+  ],
+  "londonFRCList": "cfc",
+  "solicitorFirm": "Abc Org",
+  "applicantFlags": {
+    "details": [],
+    "partyName": "Tik Tok",
+    "roleOnCase": "Applicant"
+  },
+  "applicantLName": "Tok",
+  "authorisation3": "2020-08-10",
+  "dateOfMarriage": "2000-02-01",
+  "mortgageDetail": "Halifax mortgage",
+  "rSolicitorFirm": "MahFirm",
+  "rSolicitorName": "ResSol",
+  "soleTraderName": "sole trading",
+  "applicantFMName": "Tik",
+  "authorisation2b": "Sol Org reb",
+  "dateOfSepration": "2010-03-02",
+  "intervenersList": {
+    "value": {
+      "code": "intervener1",
+      "label": "Intervener 1: not added to case yet."
+    },
+    "list_items": [
+      {
+        "code": "intervener1",
+        "label": "Intervener 1: not added to case yet."
+      },
+      {
+        "code": "intervener2",
+        "label": "Intervener 2: not added to case yet."
+      },
+      {
+        "code": "intervener3",
+        "label": "Intervener 3: not added to case yet."
+      },
+      {
+        "code": "intervener4",
+        "label": "Intervener 4: not added to case yet."
+      }
+    ]
+  },
+  "propertyAddress": "26 Riverside gardens, SW10XE",
+  "rSolicitorEmail": "vivcontestedupdatesol@mailinator.com",
+  "rSolicitorPhone": "07889009908",
+  "respondentEmail": "vivek.reddy@hmcts.net",
+  "respondentFlags": {
+    "details": [],
+    "partyName": "Qunatico Whisper",
+    "roleOnCase": "Respondent"
+  },
+  "respondentLName": "Whisper",
+  "applicantAddress": {
+    "Country": "United Kingdom",
+    "PostCode": "SW11 1PD",
+    "PostTown": "London",
+    "AddressLine1": "1 Rse Way"
+  },
+  "generalOrderDate": "1984-11-04",
+  "respondentFMName": "Qunatico",
+  "authorisationName": "Viasda",
+  "divorceCaseNumber": "EM18D33333",
+  "fastTrackDecision": "No",
+  "rSolicitorAddress": {
+    "County": "Essex",
+    "Country": "United Kingdom",
+    "PostCode": "TW3 1SS",
+    "PostTown": "Hounslow",
+    "AddressLine1": "75 Pears Road",
+    "AddressLine2": "Flat2",
+    "AddressLine3": "Ring Road"
+  },
+  "respondentAddress": {},
+  "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
+  "rSolicitorDXnumber": "078890",
+  "solicitorReference": "AUTO-assign-to-judge",
+  "divorceStageReached": "Decree Nisi",
+  "rSolicitorReference": "MahSol73",
+  "applicantRepresented": "Yes",
+  "generalOrderBodyText": "hello",
+  "generalOrderRecitals": "Id aut ipsa incidid",
+  "helpWithFeesQuestion": "Yes",
+  "intervenerOptionList": {
+    "value": {
+      "code": "addIntervener1",
+      "label": "Add Intervener 1"
+    },
+    "list_items": [
+      {
+        "code": "addIntervener1",
+        "label": "Add Intervener 1"
+      }
+    ]
+  },
+  "promptForAnyDocument": "No",
+  "applicantAttendedMIAM": "Yes",
+  "divorceDecreeNisiDate": "2020-08-15",
+  "generalOrderCreatedBy": "Possimus deserunt m",
+  "generalOrderJudgeName": "Mr Judge",
+  "generalOrderJudgeType": "Proper Officer of the Court",
+  "isApplicantsHomeCourt": "No",
+  "respondentRepresented": "Yes",
+  "applicantSolicitorFirm": "MSN Firm",
+  "applicantSolicitorName": "Parrot",
+  "divorceUploadEvidence1": {
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8ac5bbf0-ff0d-4cb3-9b9f-373f07f70d08",
+    "document_filename": "fileupload.txt",
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8ac5bbf0-ff0d-4cb3-9b9f-373f07f70d08/binary"
+  },
+  "applicantSolicitorEmail": "fr_applicant_sol@sharklasers.com",
+  "applicantSolicitorPhone": "07766121111",
+  "nameOfCourtDivorceCentre": "Brentford Court",
+  "uploadAdditionalDocument": [],
+  "applicantSolicitorAddress": {
+    "County": "Middlesex",
+    "Country": "United Kingdom",
+    "PostCode": "TW3 1SS",
+    "PostTown": "Hounslow",
+    "AddressLine1": "67 Pears Road",
+    "AddressLine2": "Near Roundabout",
+    "AddressLine3": "Opposite Tesco"
+  },
+  "divorcePetitionIssuedDate": "2020-08-14",
+  "familyMediatorServiceName": "mediator",
+  "specialAssistanceRequired": "Not required",
+  "applicantSolicitorDXnumber": "776890",
+  "generalOrderLatestDocument": {
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/74bb71c6-9b37-4e93-a083-066ca25086cc",
+    "document_filename": "generalOrder.pdf",
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/74bb71c6-9b37-4e93-a083-066ca25086cc/binary"
+  },
+  "mediatorRegistrationNumber": "765234",
+  "paymentForChildrenDecision": "No",
+  "ApplicantOrganisationPolicy": {
+    "Organisation": {
+      "OrganisationID": "A31PTVA",
+      "OrganisationName": "FinRem-1-Org"
+    },
+    "OrgPolicyReference": "FRApplicant",
+    "OrgPolicyCaseAssignedRole": "[APPSOLICITOR]"
+  },
+  "addToComplexityListOfCourts": "falseNo",
+  "generalOrderPreviewDocument": {
+    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/74bb71c6-9b37-4e93-a083-066ca25086cc",
+    "document_filename": "generalOrder.pdf",
+    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/74bb71c6-9b37-4e93-a083-066ca25086cc/binary"
+  },
+  "RespondentOrganisationPolicy": {
+    "Organisation": {
+      "OrganisationID": "OQYVO1C",
+      "OrganisationName": "frrespondentorgaat"
+    },
+    "OrgPolicyReference": "res-sox",
+    "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]"
+  },
+  "applicantAddressConfidential": "No",
+  "natureOfApplicationChecklist": [
+    "Maintenance Pending Suit",
+    "periodicalPaymentOrder",
+    "Lump Sum Order",
+    "Pension Sharing Order",
+    "Pension Attachment Order",
+    "Pension Compensation Sharing Order",
+    "Pension Compensation Attachment Order",
+    "propertyAdjustmentOrder"
+  ],
+  "propertyAdjutmentOrderDetail": [],
+  "specificArrangementsRequired": "Not required",
+  "respondentAddressConfidential": "No",
+  "additionalPropertyOrderDecision": "No",
+  "RespSolNotificationsEmailConsent": "No",
+  "applicantSolicitorConsentForEmails": "Yes"
 }

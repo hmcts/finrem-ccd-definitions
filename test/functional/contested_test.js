@@ -181,17 +181,16 @@ Scenario('Contested Paper Case Creation @nightly', async I => {
 }).retry(3);
 
 //TODO-fix
-/*Scenario('Contested share case @nightly @pipeline', async I => {
-  if (nightlyTest === 'true') {
-    /!* eslint-disable *!/
+Scenario('Contested share case @nightly @pipeline', async I => {
+    /* eslint-disable */
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
   const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json',solRef);
-  /!* eslint-enable *!/
+  /* eslint-enable */
       await I.signInIdam(solicitorUserName, solicitorPassword);
       await I.assignContestedShareCase(caseId, solRef);
-  }
-}).retry(3);*/
+
+}).retry(3);
 
 Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I => {
     await I.signInIdam(solicitorUserName, solicitorPassword);

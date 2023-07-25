@@ -105,13 +105,13 @@ function contestedAmendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  // I.waitForPage('#propertyAdjutmentOrderDetailLabel');
-  // I.waitForContinueButtonEnabled();
-  // I.click('Continue');
-  //
-  // I.waitForPage('#paymentForChildrenDecision input');
-  // I.waitForContinueButtonEnabled();
-  // I.click('Continue');
+  I.waitForPage('#propertyAdjutmentOrderDetailLabel');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+
+  I.waitForPage('#paymentForChildrenDecision input');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
 
   I.waitForPage('#fastTrackDecision');
   I.waitForContinueButtonEnabled();

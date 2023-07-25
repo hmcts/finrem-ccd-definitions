@@ -24,7 +24,7 @@ function assignContestedShareCase(caseId, solRef) {
   I.click('Continue');
   I.waitForText('fr_applicant_sol1@sharklasers.com', '15');
   I.click('Confirm');
-  I.waitForText('Your cases have been updated', '10');
+  I.waitForText('Your cases have been updated', 30);
   I.see('If you\'ve shared one or more cases,');
 }
 
