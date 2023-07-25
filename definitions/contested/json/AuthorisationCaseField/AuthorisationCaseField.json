@@ -1052,13 +1052,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "uploadCaseDocumentLabel",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadCaseDocument",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
@@ -3322,7 +3315,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadCaseDocument",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
