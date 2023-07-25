@@ -22,8 +22,8 @@ Feature('Contested Case flag');
 Scenario('Caseworker creates case flag  @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
 
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
     await I.validateCaseFlagAlertMessage();
@@ -38,8 +38,8 @@ Scenario('Caseworker manage case flag  @nightly', async I => {
     const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
     const caseFlag = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'createFlags', './test/data/ccd-consented-case-flag-data.json');
 
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     const flagStatus = await I.manageFlags();
     await I.clickTab('Case Flags');
     await I.validateCaseFlagTab(flagStatus);
@@ -50,8 +50,8 @@ Scenario('Caseworker manage case flag  @nightly', async I => {
 Scenario('Judge creates case flag  @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
 
-    I.signInIdam(judgeUserName, judgePassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.signInIdam(judgeUserName, judgePassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
     await I.validateCaseFlagAlertMessage();
@@ -63,8 +63,8 @@ Scenario('Judge creates case flag  @nightly', async I => {
 Scenario('Caseworker creates case flag for schedule 1 case @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
 
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
     await I.validateCaseFlagAlertMessage();
@@ -81,8 +81,8 @@ Scenario('Create case flag with General Application @nightly', async I => {
     const createGeneralApplication = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'createGeneralApplication', './test/data/ccd-contested-general-application-data.json');
     const referToJudgeApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_generalApplicationReferToJudge', './test/data/ccd-contested-general-application-refer-to-judge-data.json');
 
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.awaitingJudiciaryResponseEndState);
     await I.validateCaseFlagAlertMessage();
@@ -94,8 +94,8 @@ Scenario('Create case flag with General Application @nightly', async I => {
 Scenario('Case flag for Paper Case @nightly', async I => {
     const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
 
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
     await I.validateCaseFlagAlertMessage();
