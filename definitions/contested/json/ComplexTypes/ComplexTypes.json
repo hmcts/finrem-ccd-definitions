@@ -1242,6 +1242,7 @@
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
+    "FieldShowCondition": "caseDocumentConfidential=\"No\"",
     "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public",
     "Searchable": "N"
