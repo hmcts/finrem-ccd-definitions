@@ -477,14 +477,15 @@
     "Name": "Send Order",
     "Description": "Send Order",
     "DisplayOrder": 38,
-    "PreConditionState(s)": "orderDrawn",
+    "PreConditionState(s)": "applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;responseReceived;consentedOrderSubmitted;caseFileSubmitted",
     "PostConditionState": "orderSent",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
-    "ShowSummary": "N",
-    "ShowEventNotes": "Y"
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
   },
   {
     "LiveFrom": "01/01/2017",
