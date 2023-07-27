@@ -175,11 +175,11 @@ Scenario('Send order to an applicant solicitor', async I => {
     const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
     const addIntervener = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId,'FinancialRemedyContested', 'manageInterveners', './test/data/ccd-contested-add-represented-intervener.json');
 
-    //add orders
+    //TODO-add orders
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.sendOrderNew();
-    // validate Order tab
+    //TODO- validate Order tab
 
 }).retry(3);
