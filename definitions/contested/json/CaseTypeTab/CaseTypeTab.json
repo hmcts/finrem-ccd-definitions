@@ -6647,7 +6647,6 @@
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 18,
     "CaseFieldID": "appFormEExhibitsCollection",
-    "TabShowCondition": "appFormEExhibitsCollection!=\"\" OR appChronologiesCollection!=\"\" OR appQACollection!=\"\" OR appStatementsExhibitsCollection!=\"\" OR appCaseSummariesCollection!=\"\" OR appFormsHCollection!=\"\" OR appExpertEvidenceCollection!=\"\" OR appCorrespondenceDocsCollection!=\"\" OR appOtherCollection!=\"\"  OR appCorrespondenceCollection!=\"\"  OR appFRFormsCollection!=\"\"  OR appEvidenceCollection!=\"\"  OR appTrialBundleCollection!=\"\"  OR appConfidentialDocsCollection!=\"\"  OR applicantScanDocuments!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -6783,8 +6782,7 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 19,
     "CaseFieldID": "respCorrespondenceCollection",
-    "TabShowCondition": "respCorrespondenceCollection!=\"\" OR respFRFormsCollection!=\"\" OR respEvidenceCollection!=\"\" OR respTrialBundleCollection!=\"\" OR respConfidentialDocsCollection!=\"\" OR respondentScanDocuments!=\"\" OR respFormEExhibitsCollection!=\"\" OR respChronologiesCollection!=\"\" OR respQACollection!=\"\" OR respStatementsExhibitsCollection!=\"\" OR respCaseSummariesCollection!=\"\" OR respFormsHCollection!=\"\" OR respExpertEvidenceCollection!=\"\" OR respCorrespondenceDocsColl!=\"\" OR respOtherCollection!=\"\"",
-    "TabFieldDisplayOrder": 10
+   "TabFieldDisplayOrder": 10
   },
   {
     "LiveFrom": "01/06/2020",
@@ -6919,7 +6917,6 @@
     "TabLabel": "Trial Bundle",
     "TabDisplayOrder": 20,
     "CaseFieldID": "appHearingBundlesCollection",
-    "TabShowCondition": "appHearingBundlesCollection!=\"\" OR respHearingBundlesCollection!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -8589,7 +8586,6 @@
     "TabLabel": "Confidential Documents",
     "TabDisplayOrder": 22,
     "CaseFieldID": "confidentialDocumentCollection",
-    "TabShowCondition": "confidentialDocumentCollection!=\"\" OR confidentialDocumentsUploaded!=\"\"",
     "TabFieldDisplayOrder": 2
   },
   {
@@ -8680,7 +8676,6 @@
     "TabDisplayOrder": 26,
     "CaseFieldID": "fdrCaseDocumentCollection",
     "UserRole": "[APPSOLICITOR]",
-    "TabShowCondition": "fdrCaseDocumentCollection!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -8691,7 +8686,6 @@
     "TabDisplayOrder": 26,
     "CaseFieldID": "fdrCaseDocumentCollection",
     "UserRole": "[APPBARRISTER]",
-    "TabShowCondition": "fdrCaseDocumentCollection!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -8702,7 +8696,6 @@
     "TabDisplayOrder": 26,
     "CaseFieldID": "fdrCaseDocumentCollection",
     "UserRole": "[RESPSOLICITOR]",
-    "TabShowCondition": "fdrCaseDocumentCollection!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -8713,7 +8706,6 @@
     "TabDisplayOrder": 26,
     "CaseFieldID": "fdrCaseDocumentCollection",
     "UserRole": "[RESPBARRISTER]",
-    "TabShowCondition": "fdrCaseDocumentCollection!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -8724,7 +8716,6 @@
     "TabDisplayOrder": 26,
     "CaseFieldID": "fdrCaseDocumentCollection",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabShowCondition": "fdrCaseDocumentCollection!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -8735,7 +8726,6 @@
     "TabDisplayOrder": 26,
     "CaseFieldID": "fdrCaseDocumentCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "TabShowCondition": "fdrCaseDocumentCollection!=\"\"",
     "TabFieldDisplayOrder": 1
   },
   {
