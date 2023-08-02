@@ -1259,9 +1259,9 @@
     "ID": "FR_uploadCaseDocument",
     "ListElementCode": "caseDocumentParty",
     "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "evidenceParty",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "What type of document is this?",
-    "FieldShowCondition": "caseDocumentFdr=\"No\"",
+    "FieldShowCondition": "caseDocuments=\"IMPOSSIBLAW\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2277,7 +2277,7 @@
     "ListElementCode": "caseDocumentParty",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_EvidenceParty",
-    "FieldShowCondition": "caseDocumentFdr=\"No\"",
+    "FieldShowCondition": "caseDocuments=\"IMPOSSIBLAW\"",
     "ElementLabel": "What type of document is this?",
     "SecurityClassification": "Public",
     "Searchable": "N"
