@@ -32,7 +32,7 @@ function getBrowserConfig(browserGroup) {
 
 const setupConfig = {
   tests: './*_test.js',
-  output: './functional-output/crossbrowser/reports',
+  output: './output',
   helpers: {
     WebDriver: {
       url: process.env.CCD_WEB_URL,
@@ -50,7 +50,7 @@ const setupConfig = {
   mocha: {
     reporterOptions:
       {
-        reportDir: './functional-output/crossbrowser/reports',
+        reportDir: './test/functional/output',
         inlineAssets: true
       }
   },
