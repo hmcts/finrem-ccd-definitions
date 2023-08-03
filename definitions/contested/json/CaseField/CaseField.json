@@ -3314,6 +3314,15 @@
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterAddressee",
+    "Label": "Address to",
+    "FieldType": "DynamicRadioList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalLetterRecipient",
     "Label": "Recipient's name",
     "FieldType": "Text",
