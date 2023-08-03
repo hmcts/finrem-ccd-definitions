@@ -5,7 +5,7 @@ const ccdWebUrl = process.env.CCD_WEB_URL;
 
 Feature('Smoke Test');
 
-Scenario('Check env running @smoke', async I => {
+Scenario('Check env running @smoke @crossbrowser', async I => {
   await I.amOnPage(`${process.env.CCD_WEB_URL}`);
   await I.wait('5');
   await I.waitForText('Sign in',60);
