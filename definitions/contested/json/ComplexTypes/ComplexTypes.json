@@ -1239,6 +1239,17 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "caseDocumentConfidential",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is the document confidential?",
+    "HintText": "This field was added back due to compatibility with cases dating pre-2021 ans should not be used",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
