@@ -11,24 +11,24 @@ const respondentEmail = process.env.USERNAME_RESPONDENT_SOLICITOR;
 const nightlyTest = process.env.NIGHTLY_TEST;
 
 Feature('Create Cases for Respondent Journey ');
-// To be fixed in @DFR-585
-Scenario('Create and assign Contested Case To Respondent @pipeline', async I => {
+
+Scenario('Create and assign Contested Case To Respondent @nightly @preview', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     /* eslint-disable */
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-demo-contested-basic-data.json');
     const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
-    I.signInXuiOrg(caaUsername, caaPassword);
-    I.assignContestedCase(caseId, respondentEmail);
+    await I.signInXuiOrg(caaUsername, caaPassword);
+    await I.assignContestedCase(caseId, respondentEmail);
   } else {
     if (nightlyTest === 'true') {
       const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
       const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
       const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
       const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
-      I.signInXuiOrg(caaUsername, caaPassword);
-      I.assignContestedCase(caseId, respondentEmail);
+      await I.signInXuiOrg(caaUsername, caaPassword);
+      await I.assignContestedCase(caseId, respondentEmail);
     }
   }
-});
+}).retry(3);

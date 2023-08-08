@@ -1,9 +1,11 @@
-FROM hmctspublic.azurecr.io/base/node:12-alpine as base
+FROM hmctspublic.azurecr.io/base/node:18-alpine as base
+USER root
+RUN corepack enable
 USER hmcts
-COPY --chown=hmcts:hmcts package.json yarn.lock ./
+COPY --chown=hmcts:hmcts . .
 COPY /definitions/consented /
 ADD ./config "/config"
-RUN yarn install --production && yarn cache clean
+RUN yarn install && yarn cache clean
 COPY index.js ./
 ENV NODE_CONFIG_DIR="/config"
 CMD ["yarn", "start"]

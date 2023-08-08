@@ -73,7 +73,15 @@ def secrets = [
                 secret('finrem-system-update-username', 'FINREM_SYSTEMUPDATE_USERNAME'),
                 secret('finrem-system-update-password', 'FINREM_SYSTEMUPDATE_PASSWORD'),
                 secret('idam-mca-client-secret', 'IDAM_MCA_CLIENT_SECRET'),
-                secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET')
+                secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET'),
+                secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
+                secret('solicitor1-password', 'PASSWORD_SOLICITOR1'),
+                secret('barrister1-username', 'USERNAME_BARRISTER1'),
+                secret('barrister1-password', 'PASSWORD_BARRISTER1'),
+                secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET'),
+                secret('username-caa', 'USERNAME_CAA'),
+                secret('password-caa', 'PASSWORD_CAA'),
+                secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR')
 
         ]
 ]
@@ -103,7 +111,7 @@ withPipeline("nodejs", product, component) {
   afterSuccess('test') {
     // enable yarn audit and send message on master branch only
     try {
-      yarnBuilder.yarn('audit')
+      yarnBuilder.yarn('npm audit')
     } catch (error) {
       onMaster {
         slackSend(channel: '#finrem-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
@@ -128,6 +136,7 @@ withPipeline("nodejs", product, component) {
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.CCD_WEB_URL = "https://xui-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+      env.XUI_ORG_WEB_URL = "https://xui-mo-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.CCD_CONSENTED_FILE_NAME = "ccd-config-preview-consented-${GIT_COMMIT}.xlsx"
       env.CCD_CONTESTED_FILE_NAME = "ccd-config-preview-contested-${GIT_COMMIT}.xlsx"
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'

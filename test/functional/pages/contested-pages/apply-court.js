@@ -2,12 +2,9 @@
 
 function applyingToCourt() {
   const I = this;
-  I.waitForPage('#chooseCourtLabel');
+  I.waitForText('Which Financial Remedies Court are you applying to?');
   I.selectOption('#regionList', 'London');
-  I.waitForPage('#londonFRCList');
   I.selectOption('#londonFRCList', 'London FRC');
-  I.waitForPage('#cfcCourtList');
-
   I.selectOption('#cfcCourtList', 'CENTRAL FAMILY COURT');
 
   I.fillField('#specialAssistanceRequired', 'Not required');
