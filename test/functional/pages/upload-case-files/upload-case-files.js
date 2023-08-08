@@ -17,7 +17,7 @@ async function uploadCaseFiles() {
   I.click('Continue');
   I.waitForText('Check your answers');
   I.see('Is the document confidential?');
-  //TODO can add more validations to verify Upload case documents section- using json file
+  //TODO can add more validations to verify Upload case documents section - using json file
   I.click('Submit');
   I.waitForText('Upload Case Files', '60');
   await I.clickTab('Confidential documents');
