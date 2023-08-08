@@ -8,7 +8,7 @@ async function savingApplicationInformation(caseType) {
   }
 
   if (caseType === 'contested') {
-    I.waitForText('cfc.fru@justice.gov.uk', '60');
+    I.waitForText('BournemouthFRC.bournemouth.countycourt@justice.gov.uk', '60');
   }
 
   if (testForAccessibility === 'true') {

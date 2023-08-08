@@ -35,6 +35,8 @@ async function contestedApplicantDetails() {
   I.wait('5');
   I.selectOption('select[id="applicantAddress_applicantAddress_addressList"]', '27a, Church Street, Ilkley');
 
+  I.checkOption('input[id="applicantAddressConfidential_No"]');
+
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }

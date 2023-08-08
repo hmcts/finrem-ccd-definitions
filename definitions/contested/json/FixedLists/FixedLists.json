@@ -2169,6 +2169,12 @@
     "ListElement": "Other"
   },
   {
+    "LiveFrom": "01/06/2020",
+    "ID": "GeneralLetterAddressToType",
+    "ListElementCode": "applicant",
+    "ListElement": "Applicant"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_OrderRefusal",
     "ListElementCode": "Insufficient information provided – A",
@@ -2784,5 +2790,26 @@
     "ListElementCode": "deleteIntervener4",
     "ListElement": "Delete Intervener 4",
     "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "evidenceParty",
+    "ListElementCode": "applicant",
+    "ListElement": "Applicant",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "evidenceParty",
+    "ListElementCode": "respondent",
+    "ListElement": "Respondent",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "evidenceParty",
+    "ListElementCode": "case",
+    "ListElement": "Case",
+    "DisplayOrder": 3
   }
 ]

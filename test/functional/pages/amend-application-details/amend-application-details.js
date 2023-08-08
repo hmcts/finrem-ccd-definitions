@@ -78,14 +78,13 @@ function contestedAmendApplicationDetails() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  I.waitForPage('input[id="applicantSolicitorPhone"]');
-  I.fillField('input[id="applicantSolicitorPhone"]', '07766121111');
+  I.waitForText('Is the Applicant represented ?');
+  I.waitForText('FRApplicantSolicitorFirm');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
 
   I.waitForPage('input[id="divorceCaseNumber"]');
-  I.fillField('input[id="divorceCaseNumber"]', 'EM18D33333');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
@@ -98,21 +97,21 @@ function contestedAmendApplicationDetails() {
   I.click('Continue');
 
   I.waitForPage('#respondentRepresented_Yes');
-  I.fillField('input[id="rSolicitorEmail"]', 'vivcontestedupdatesol@mailinator.com');
-  I.waitForContinueButtonEnabled();
-  I.click('Continue');
-  I.wait(60);
-
+  I.fillField('input[id="rSolicitorPhone"]', '+1 (365) 362-99777');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  I.waitForPage('#propertyAdjutmentOrderDetailLabel');
+  I.waitForText('What is the nature of the application ?');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  I.waitForPage('#paymentForChildrenDecision input');
-  I.waitForContinueButtonEnabled();
-  I.click('Continue');
+  // I.waitForPage('#propertyAdjutmentOrderDetailLabel');
+  // I.waitForContinueButtonEnabled();
+  // I.click('Continue');
+  //
+  // I.waitForPage('#paymentForChildrenDecision input');
+  // I.waitForContinueButtonEnabled();
+  // I.click('Continue');
 
   I.waitForPage('#fastTrackDecision');
   I.waitForContinueButtonEnabled();
@@ -123,15 +122,14 @@ function contestedAmendApplicationDetails() {
   I.click('Continue');
 
   I.waitForPage('input[id="isApplicantsHomeCourt_No"]');
-  I.checkOption('input[id="isApplicantsHomeCourt_No"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  I.waitForPage('#applicantAttendedMIAMLabel');
+  I.waitForText('Has the applicant attended a Mediation information & Assessment Meeting (MIAM)?');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
-  I.waitForPage('#applicantAttendedMIAMLabel');
+  I.waitForText('Enter details of MIAM certification');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 
@@ -154,7 +152,7 @@ function contestedAmendApplicationDetails() {
 
   I.click('Submit');
   I.wait('5');
-  I.waitForText('History', '60');
+  I.waitForText('History', '30');
   I.see('Amend Application Details');
   I.wait('5');
 }
