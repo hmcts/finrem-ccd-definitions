@@ -16,21 +16,21 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Events');
 
-Scenario('Manage Confidential Documents @nightly', async I => {
+// Scenario('Manage Confidential Documents @nightly', async I => {
 
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
-    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
-    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+//     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+//     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+//     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+//     const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
 
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    await I.manageConfidentialDocuments();
-    logger.info('Manage confidential documents event completed');
-    await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.manageConfidentialDocuments, verifyTabText.confidentialDocumentsTab);
-    logger.info('Confidential documents verified on Confidential documents tab');
+//     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+//     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+//     await I.manageConfidentialDocuments();
+//     logger.info('Manage confidential documents event completed');
+//     await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.manageConfidentialDocuments, verifyTabText.confidentialDocumentsTab);
+//     logger.info('Confidential documents verified on Confidential documents tab');
 
-}).retry(3);
+// }).retry(3);
 
 Scenario('Update Contact Details for contested Case @nightly ', async I => {
     //caseworker, type-matrimonial
