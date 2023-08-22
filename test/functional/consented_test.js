@@ -66,12 +66,12 @@ Scenario('Consent Case approve and send order @nightly', async I => {
     const approveOrder = await updateCaseInCcd(judgeUserName, judgePassword, caseId, 'FinancialRemedyMVP2', 'FR_approveApplication', './test/data/ccd-consented-judge-approve-data.json');
     const sendOrder = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_sendOrderForApproved', './test/data/ccd-caseworker-send-order.json');
      /* eslint-enable */
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.retry(3).signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     // eslint-disable-next-line max-len
     //TODO-fix
     //await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
-    await I.approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
+    await I.retry(3).approvedOrderTab(verifyTabText.caseType, verifyTabText.approvedOrderTab.tabName);
 }).retry(3);
 /* eslint-disable require-await */
 

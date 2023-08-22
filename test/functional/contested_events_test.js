@@ -146,17 +146,17 @@ Scenario('Contested E2E @nightly @preview', async I => {
     const allocationDirections = await updateCaseInCcd(judgeUserName, judgePassword, caseId, 'FinancialRemedyContested', 'FR_giveAllocationDirections', './test/data/ccd-contested-allocation-directions.json');
     const listForHearing = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_addSchedulingListingInfo', './test/data/ccd-contested-list-for-hearing.json');
 
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.retry(3).signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.uploadDraftOrder();
     await I.signOut();
-    await I.signInIdam(judgeUserName, judgePassword);
+    await I.retry(3).signInIdam(judgeUserName, judgePassword);
     await I.waitForText('Judicial Case Manager');
     await I.enterCaseReference(caseId);
     await I.waitForText('Upload Draft Order');
     await I.draftOrderApprove();
     await I.signOut();
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.retry(3).signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.waitForText('Manage Cases');
     await I.enterCaseReference(caseId);
     await I.uploadOrder();
