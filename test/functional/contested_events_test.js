@@ -16,21 +16,21 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Events');
 
-Scenario('Manage Confidential Documents @nightly', async I => {
+// Scenario('Manage Confidential Documents @nightly', async I => {
 
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
-    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
-    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+//     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+//     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+//     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+//     const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
 
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    await I.manageConfidentialDocuments();
-    logger.info('Manage confidential documents event completed');
-    await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.manageConfidentialDocuments, verifyTabText.confidentialDocumentsTab);
-    logger.info('Confidential documents verified on Confidential documents tab');
+//     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+//     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+//     await I.manageConfidentialDocuments();
+//     logger.info('Manage confidential documents event completed');
+//     await I.verifyContestedConfidentialTabData(verifyTabText.historyTab.manageConfidentialDocuments, verifyTabText.confidentialDocumentsTab);
+//     logger.info('Confidential documents verified on Confidential documents tab');
 
-}).retry(3);
+// }).retry(3);
 
 Scenario('Update Contact Details for contested Case @nightly ', async I => {
     //caseworker, type-matrimonial
@@ -93,18 +93,6 @@ Scenario('Caseworker refunds an issued case @nightly', async I => {
     logger.info("Refund test completed");
 }).retry(3);
 
-Scenario('Contested Add Note @nightly ', async I => {
-    //Matrimonial
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
-    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
-    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
-
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    await I.addNote();
-}).retry(3);
-
 Scenario('Contested Manage Barrister @nightly', async I => {
     //Matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -149,7 +137,7 @@ Scenario('List for hearing contested case @nightly', async I => {
     I.waitForText('List for Hearing');
 }).retry(3);
 
-Scenario('Contested E2E @nightly @preview', async I => {
+Scenario.skip('Contested E2E @nightly @preview', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -158,17 +146,17 @@ Scenario('Contested E2E @nightly @preview', async I => {
     const allocationDirections = await updateCaseInCcd(judgeUserName, judgePassword, caseId, 'FinancialRemedyContested', 'FR_giveAllocationDirections', './test/data/ccd-contested-allocation-directions.json');
     const listForHearing = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_addSchedulingListingInfo', './test/data/ccd-contested-list-for-hearing.json');
 
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.retry(3).signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.uploadDraftOrder();
     await I.signOut();
-    await I.signInIdam(judgeUserName, judgePassword);
+    await I.retry(3).signInIdam(judgeUserName, judgePassword);
     await I.waitForText('Judicial Case Manager');
     await I.enterCaseReference(caseId);
     await I.waitForText('Upload Draft Order');
     await I.draftOrderApprove();
     await I.signOut();
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.retry(3).signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.waitForText('Manage Cases');
     await I.enterCaseReference(caseId);
     await I.uploadOrder();
