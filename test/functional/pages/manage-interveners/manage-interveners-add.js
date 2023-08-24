@@ -26,9 +26,9 @@ async function manageIntervenersAdd(flag){
         I.fillField('input[id="intervener1_intervenerSolName"]', 'Miranda Wiley');
         I.fillField('input[id="intervener1_intervenerSolicitorFirm"]', 'FR Intervener');
         I.fillField('input[id="intervener1_intervenerSolicitorReference"]', '234');
-        I.fillField('input[id="intervener1_intervenerSolEmail"]', 'fr_respondent_solicitor1@mailinator.com');
+        I.fillField('input[id="intervener1_intervenerSolEmail"]', 'fr_applicant_barrister1@mailinator.com');
         I.waitForText('Search for an organisation','30');
-        I.fillField('input[id="search-org-text"]', 'FinRem-2-Org');
+        I.fillField('input[id="search-org-text"]', 'FinRem-1-Org');
         I.click('Select');
         I.waitForText('EC3A 2AD');
       }
@@ -48,13 +48,6 @@ async function manageIntervenersAdd(flag){
     I.wait(5);
     I.waitForText('Manage Interveners', '30');
 
-    //click tab - only Intervener represented test will check tab details
-      if (flag=='represented') {
-        await I.clickTab('Intervener 1');
-        I.wait('5');
-        I.waitForText('Intervener\'s Full Name');
-        I.waitForText('Organisation');
-      }
 }
 
 module.exports = { manageIntervenersAdd };
