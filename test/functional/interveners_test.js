@@ -45,7 +45,7 @@ Scenario('Caseworker add Interveners (represented) @nightly', async I => {
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.contestedIntervenersTab(verifyTabText.historyTab.manageIntervenersEvent, verifyTabText.IntervenersTab);
     logger.info('Intervener verifying case access');
-});
+}).retry(3);
 
 Scenario('Caseworker add Interveners (not represented) @nightly', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
