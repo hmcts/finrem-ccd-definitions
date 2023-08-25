@@ -1263,7 +1263,7 @@
     "ID": "FR_uploadCaseDocument",
     "ListElementCode": "caseDocumentParty",
     "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "evidenceParty",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "What type of document is this?",
     "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\"",
     "SecurityClassification": "Public",
@@ -2319,6 +2319,25 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationSender",
+    "FieldType": "DynamicRadioList",
+    "ElementLabel": "Application received from",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "appRespGeneralApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_ApplicantAndRespondentEvidenceParty",
+    "ElementLabel": "Application received from",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
     "ListElementCode": "generalApplicationCreatedBy",
     "FieldType": "Text",
     "ElementLabel": "Application created by",
@@ -2656,4 +2675,3 @@
     "Searchable": "N"
   }
 ]
-
