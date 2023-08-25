@@ -202,6 +202,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async I =>
     await I.waitForText('Form A Application', '60')
 }).retry(3);
 
+/* // 2 Scenarios below Schedule1s are already present on contested_schedule1_test.js, should we keep in this file or there?
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
     await I.signInIdam(solicitorUserName, solicitorPassword);
     await I.wait('2');
@@ -238,7 +239,7 @@ Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I =>
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Schedule1');
     await I.waitForText('Form A Application', '60')
-}).retry(3);
+}).retry(3);*/
 
 Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @preview', async I => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
@@ -261,7 +262,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @preview', 
     await I.issueApplication();
 }).retry(3);
 
-Scenario('Manage Confidential Documents', async I => {
+/*Scenario('Manage Confidential Documents', async I => {
     //login as a caseworker, create contested case
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.wait('2');
@@ -282,7 +283,8 @@ Scenario('Manage Confidential Documents', async I => {
     await I.manualPayment();
     await I.issueApplication();
     //TODO - update test Manage Confidential Documents
-}).retry(3);
+    // Manage Confidential Documents event is removed, so no longer need this scenario
+}).retry(3);*/
 
 Scenario('progress to listing for contested case @nightly', async I => {
 

@@ -32,6 +32,7 @@ Feature('Contested Events');
 
 // }).retry(3);
 
+/* //'update contact details' & 'add note' already present.. should we keep in this file or contested_test.js?
 Scenario('Update Contact Details for contested Case @nightly ', async I => {
     //caseworker, type-matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -54,7 +55,7 @@ Scenario('Contested Add Note  @nightly ', async I => { //Matrimonial
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.addNote();
-}).retry(3);
+}).retry(3);*/
 
 /*Scenario('Contested Matrimonial case Amend application and Case submission  by Solicitor @nightly', async I => {
     //TODO- fix test
@@ -111,6 +112,7 @@ Scenario('Contested Manage Barrister @nightly', async I => {
     logger.info("manage barrister tab verified...");
 }).retry(3);
 
+/* //To be deleted, same as Scenario line 288 of contested_test
 Scenario('List for hearing contested case @nightly', async I => {
 
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -135,7 +137,7 @@ Scenario('List for hearing contested case @nightly', async I => {
     await I.enterCaseReference(caseId);
     await I.listForHearing();
     I.waitForText('List for Hearing');
-}).retry(3);
+}).retry(3);*/
 
 Scenario.skip('Contested E2E @nightly @preview', async I => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
