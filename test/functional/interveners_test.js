@@ -38,6 +38,13 @@ Scenario('Caseworker add Interveners (represented) @nightly', async I => {
     logger.info('Manage Interveners event completed');
     await I.contestedIntervenersTab(verifyTabText.historyTab.manageIntervenersEvent, verifyTabText.IntervenersTab);
     logger.info('Interveners tab verified');
+
+    await I.signOut();
+    logger.info('Logging out as caseworker and in as intervener');
+    await I.signInIdam(usernameBarrister1, passwordBarrister1);
+    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    await I.contestedIntervenersTab(verifyTabText.historyTab.manageIntervenersEvent, verifyTabText.IntervenersTab);
+    logger.info('Intervener verifying case access');
 }).retry(3);
 
 Scenario('Caseworker add Interveners (not represented) @nightly', async I => {
