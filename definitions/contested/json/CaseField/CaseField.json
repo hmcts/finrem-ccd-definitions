@@ -5225,16 +5225,18 @@
     "ID": "currentUserCaseRoleType",
     "Label": " ",
     "FieldType": "Text",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalApplicationIntvrDocuments",
-    "Label": "Intervener hearing/no hearing documents",
+    "ID": "generalApplicationIntvrOrders",
+    "Label": "Intervener General Applications",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_IntervenerDirectionsCollection",
-    "SecurityClassification": "Public"
+    "FieldTypeParameter": "generalApplicationCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6722,7 +6724,7 @@
     "LiveFrom": "01/07/2023",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "confidentialDocumentCollection",
-    "Label": "Confidential Case Document",
+    "Label": "Confidential documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public",

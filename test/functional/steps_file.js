@@ -88,11 +88,14 @@ module.exports = () => {
       if(crossBrowser=='true'){
         this.wait('10');
       }
+      this.refreshPage();
       this.waitForText('Sign in',60);
       this.fillField('username', username);
       this.fillField('password', password);
       this.click('Sign in');
-      this.wait('15');
+      this.wait('10');
+      this.refreshPage();
+      this.wait('5');
     },
 
     signOut() {
