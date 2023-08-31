@@ -920,6 +920,7 @@
     "CaseEventID": "FR_manageCaseDocuments",
     "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentParty",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\"",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -985,6 +986,7 @@
     "CaseEventID": "FR_uploadCaseFiles",
     "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentParty",
+    "FieldShowCondition": "manageCaseDocumentCollection=\"IMPOSSIBLAW\"",
     "DisplayContext": "MANDATORY"
   },
   {
