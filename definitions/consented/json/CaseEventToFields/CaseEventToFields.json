@@ -3582,7 +3582,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_generalLetter",
-    "CaseFieldID": "generalLetterAddressTo",
+    "CaseFieldID": "generalLetterAddressee",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
@@ -3602,7 +3602,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "generalLetterAddressTo=\"other\"",
+    "FieldShowCondition": "generalLetterAddressee=\"Other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -3615,7 +3615,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "generalLetterAddressTo=\"other\"",
+    "FieldShowCondition": "generalLetterAddressee=\"Other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {

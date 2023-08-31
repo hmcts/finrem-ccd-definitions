@@ -6358,6 +6358,13 @@
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalLetterAddressee",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalLetterRecipient",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
@@ -6625,6 +6632,13 @@
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalLetterAddressTo",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalLetterAddressee",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
   },
