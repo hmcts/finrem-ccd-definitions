@@ -6631,7 +6631,7 @@
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_generalLetter",
-    "CaseFieldID": "generalLetterAddressTo",
+    "CaseFieldID": "generalLetterAddressee",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
@@ -6651,7 +6651,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "generalLetterAddressTo=\"other\"",
+    "FieldShowCondition": "generalLetterAddressee=\"Other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -6664,7 +6664,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "generalLetterAddressTo=\"other\"",
+    "FieldShowCondition": "generalLetterAddressee=\"Other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -6708,7 +6708,7 @@
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_generalLetter_judge",
-    "CaseFieldID": "generalLetterAddressTo",
+    "CaseFieldID": "generalLetterAddressee",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
@@ -6728,7 +6728,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "generalLetterAddressTo=\"other\"",
+    "FieldShowCondition": "generalLetterAddressee=\"Other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -6741,7 +6741,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "generalLetterAddressTo=\"other\"",
+    "FieldShowCondition": "generalLetterAddressee=\"Other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -11275,6 +11275,42 @@
     "DisplayContext": "MANDATORY",
     "PageID": 2,
     "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_sendOrder",
+    "CaseFieldID": "ordersToShare",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_sendOrder",
+    "CaseFieldID": "partiesOnCase",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_sendOrder",
+    "CaseFieldID": "additionalDocument",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 3,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   }

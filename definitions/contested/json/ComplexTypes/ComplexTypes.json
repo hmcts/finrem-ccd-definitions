@@ -1265,7 +1265,6 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "What type of document is this?",
-    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2282,8 +2281,8 @@
     "ListElementCode": "caseDocumentParty",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_EvidenceParty",
-    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\"",
     "ElementLabel": "What type of document is this?",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2671,6 +2670,33 @@
     "ElementLabel": " ",
     "FieldType": "OrganisationPolicy",
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderCollection",
+    "ListElementCode": "approveOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Approve orders",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderCollection",
+    "ListElementCode": "orderReceivedAt",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order received at",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "sendOrderDocuments",
+    "ListElementCode": "bulkPrintDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
