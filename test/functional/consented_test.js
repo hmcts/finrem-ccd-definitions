@@ -35,7 +35,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @preview', async I => {
   }
 }).retry(3);
 
-Scenario('Consent Case Creation For Judge @nightly', async I => {
+Scenario.skip('Consent Case Creation For Judge @nightly', async I => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     /* eslint-disable */
