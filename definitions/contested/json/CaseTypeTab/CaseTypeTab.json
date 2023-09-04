@@ -10684,7 +10684,8 @@
     "TabLabel": "Intervener 1",
     "CaseFieldID": "intervener1",
     "TabDisplayOrder": 29,
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "intervener1.intervenerName!=\"\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -10703,7 +10704,8 @@
     "TabLabel": "Intervener 2",
     "CaseFieldID": "intervener2",
     "TabDisplayOrder": 30,
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "intervener2.intervenerName!=\"\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -10722,7 +10724,8 @@
     "TabLabel": "Intervener 3",
     "CaseFieldID": "intervener3",
     "TabDisplayOrder": 31,
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "intervener3.intervenerName!=\"\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -10741,7 +10744,8 @@
     "TabLabel": "Intervener 4",
     "CaseFieldID": "intervener4",
     "TabDisplayOrder": 32,
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "intervener4.intervenerName!=\"\""
   },
   {
     "LiveFrom": "01/01/2017",
