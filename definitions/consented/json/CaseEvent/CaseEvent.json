@@ -1016,7 +1016,7 @@
     "Name": "Upload Approved Order",
     "Description": "Upload Approved Order",
     "DisplayOrder": 62,
-    "PreConditionState(s)": "referredToJudge",
+    "PreConditionState(s)": "referredToJudge;readyForHearing",
     "PostConditionState": "consentOrderApproved",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
