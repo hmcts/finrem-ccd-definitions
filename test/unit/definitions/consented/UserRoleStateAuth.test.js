@@ -6,7 +6,7 @@ const AuthorisationCaseType = Object.assign(require('definitions/consented/json/
 const State = Object.assign(require('definitions/consented/json/State'), []);
 const AuthorisationCaseState = Object.assign(require('definitions/consented/json/AuthorisationCaseState/AuthorisationCaseState'), []);
 
-const MINIMUM_READ_PERMISSIONS = /C?RU?D?/;
+const MINIMUM_READ_PERMISSIONS = /C?R?U?D?/;
 
 function byCaseType(caseType) {
   return entry => {
