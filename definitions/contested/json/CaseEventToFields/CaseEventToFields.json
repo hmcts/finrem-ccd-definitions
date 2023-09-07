@@ -3104,6 +3104,18 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "01/06/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_addSchedulingListingInfo",
+    "CaseFieldID": "partiesOnCase",
+    "PageFieldDisplayOrder": 35,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_giveAllocationDirections",
@@ -8461,6 +8473,18 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "generalApplicationDirectionsHearingRequired=\"No\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_GeneralApplicationDirections",
+    "CaseFieldID": "partiesOnCase",
+    "PageFieldDisplayOrder": 37,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
   {
