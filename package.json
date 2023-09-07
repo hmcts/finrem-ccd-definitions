@@ -130,7 +130,7 @@
     "request-promise-native": "^1.0.9",
     "sonar-scanner": "^3.1.0",
     "webdriverio": "^7.0.7",
-    "semver": "^5.7.2"
+    "semver@npm": "^5.7.2"
   },
   "resolutions": {
     "bl": "4.0.3",
@@ -156,7 +156,8 @@
     "minimatch": "^3.0.5",
     "qs": ">=6.5.3",
     "json5": ">=2.2.2",
-    "flat": ">=5.0.1"
+    "flat": ">=5.0.1",
+    "semver@npm": "^5.7.2"
   },
   "packageManager": "yarn@3.3.1"
 }
