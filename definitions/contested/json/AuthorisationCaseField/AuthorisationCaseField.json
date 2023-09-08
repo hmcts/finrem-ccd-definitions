@@ -4034,6 +4034,34 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv1",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv2",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv3",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv4",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "bulkPrintLetterIdApp",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
@@ -10012,13 +10040,6 @@
   {
     "LiveFrom": "01/05/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "consentInContestedOrdersToShare",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/05/2022",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "partiesOnCase",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -10026,7 +10047,7 @@
   {
     "LiveFrom": "01/05/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "additionalConsentInContestedDocument",
+    "CaseFieldID": "additionalCicDocuments",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
@@ -10462,6 +10483,62 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "bulkPrintCoverSheetApp",
     "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv1",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv2",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv3",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv4",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv1",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv2",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv3",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "bulkPrintCoverSheetIntv4",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -14258,5 +14335,12 @@
     "CaseFieldID": "respRefusedOrderCollection",
     "UserRole": "[RESPBARRISTER]",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/05/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "ordersSentToPartiesCollection",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
   }
 ]

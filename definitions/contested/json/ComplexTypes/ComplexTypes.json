@@ -2649,7 +2649,7 @@
     "ID": "FR_orderCollection",
     "ListElementCode": "approveOrder",
     "FieldType": "Document",
-    "ElementLabel": "Approve orders",
+    "ElementLabel": "Approved Order Document",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2667,7 +2667,7 @@
     "ID": "FR_unapprovedOrderCollection",
     "ListElementCode": "unapproveOrder",
     "FieldType": "Document",
-    "ElementLabel": "Refused orders",
+    "ElementLabel": "Consent Order Annexed And Stamped",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2677,6 +2677,15 @@
     "ListElementCode": "orderReceivedAt",
     "FieldType": "DateTime",
     "ElementLabel": "Order received at",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "sendOrderDocuments",
+    "ListElementCode": "bulkPrintDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
