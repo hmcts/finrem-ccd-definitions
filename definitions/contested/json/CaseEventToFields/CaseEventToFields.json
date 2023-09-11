@@ -10363,7 +10363,9 @@
     "PageLabel": "Interim Hearings",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "N",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -10377,7 +10379,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "interimHearings=\"banana\"",
-    "ShowSummaryChangeOption": "Y",
+    "ShowSummaryChangeOption": "N",
     "RetainHiddenValue": "Yes"
   },
   {
@@ -10392,7 +10394,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "interimHearings=\"banana\"",
-    "ShowSummaryChangeOption": "Y",
+    "ShowSummaryChangeOption": "N",
     "RetainHiddenValue": "Y"
   },
   {
