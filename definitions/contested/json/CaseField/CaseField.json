@@ -5291,6 +5291,17 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingNoticesDocumentCollection",
+    "Label": "Hearing Notices Documents",
+    "HintText": "Hearing Notices Documents ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "hearingDirectionDetailsCollection",
     "Label": "Additional Hearing Details",
     "HintText": "Additional Hearing Details",
