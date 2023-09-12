@@ -2675,16 +2675,6 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_intervener",
-    "ListElementCode": "hearingNoticesDocumentCollection",
-    "ElementLabel": "Hearing Notices",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
     "ID": "FR_orderCollection",
     "ListElementCode": "approveOrder",
     "FieldType": "Document",
@@ -2707,6 +2697,24 @@
     "ListElementCode": "bulkPrintDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerHearingNoticeCollection",
+    "ListElementCode": "hearingNotice",
+    "FieldType": "Document",
+    "ElementLabel": "Hearing notices",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervenerHearingNoticeCollection",
+    "ListElementCode": "noticeReceivedAt",
+    "FieldType": "DateTime",
+    "ElementLabel": "Notice received at",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
