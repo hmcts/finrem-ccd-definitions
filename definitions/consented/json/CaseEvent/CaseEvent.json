@@ -352,6 +352,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -640,6 +641,7 @@
     "PreConditionState(s)": "caseAdded",
     "PostConditionState": "applicationSubmitted",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -1006,7 +1008,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
-    "ShowSummary": "N",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
