@@ -95,9 +95,6 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
   ]
 }
 
-def checkForNoCleanupLabel(branch_name) {
-  return new GithubAPI(this).getLabelsbyPattern(branch_name, "cleanup").contains("no_cleanup")
-}
 
 // Configure branches to sync with master branch
 def branchesToSync = ['demo', 'ithc', 'perftest']
