@@ -17,8 +17,8 @@ const runningEnv = process.env.RUNNING_ENV;
 Feature('Contested Schedule 1');
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
-    I.signInIdam(solicitorUserName, solicitorPassword);
-    I.wait('2');
+    await I.signInIdam(solicitorUserName, solicitorPassword);
+    await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
     await I.contestedSolicitorCreate(solRef, 'Schedule1');
     await I.contestedApplicantDetails();
@@ -32,12 +32,12 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => 
     await I.miamCertification();
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Schedule1');
-    I.waitForText('Form A Application', '60')
+    await I.waitForText('Form A Application', '60')
 }).retry(3);
 
 Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I => {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait('2');
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
     await I.contestedCaseworkerCreate(caRef, 'Schedule1', true);
     await I.contestedApplicantDetails();
@@ -51,7 +51,7 @@ Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I =>
     await I.miamCertification();
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Schedule1');
-    I.waitForText('Form A Application', '60')
+    await I.waitForText('Form A Application', '60')
 }).retry(3);
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async I => {

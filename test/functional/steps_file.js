@@ -42,13 +42,14 @@ const {listForHearing} = require('./pages/list-for-hearing/list-for-hearing');
 const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-reference');
 const {giveAllocationDirection} = require('./pages/give-allocation-direction/give-allocation-direction');
 const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
-const {manageInterveners} = require('./pages/manage-interveners/manage-interveners');
+const {manageIntervenersAdd} = require('./pages/manage-interveners/manage-interveners-add');
+const {manageIntervenersRemove} = require('./pages/manage-interveners/manage-interveners-remove');
 const {addNote} = require('./pages/add-note/add-note');
 const {refundCase} = require('./pages/refund-case/refund-case');
 const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-order');
 const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-approve');
 const {uploadOrder} = require('./pages/upload-order/upload-order');
-const {sendOrder} = require('./pages/send-order/send-order');
+const {sendOrder,sendOrderNew} = require('./pages/send-order/send-order');
 const {listForInterimHearing} = require('./pages/list-of-interim-hearing/list-of-interim-hearing');
 const {createCaseFlag, validateCaseFlagAlertMessage, validateCaseFlagTab} = require('./pages/create-case-flag/create-case-flag');
 const {manageBarristerApplicant, manageBarristerRespondent} = require('./pages/manage-barrister/manage-barrister');
@@ -87,11 +88,14 @@ module.exports = () => {
       if(crossBrowser=='true'){
         this.wait('10');
       }
+      this.refreshPage();
       this.waitForText('Sign in',60);
       this.fillField('username', username);
       this.fillField('password', password);
       this.click('Sign in');
-      this.wait('15');
+      this.wait('10');
+      this.refreshPage();
+      this.wait('5');
     },
 
     signOut() {
@@ -179,7 +183,8 @@ module.exports = () => {
     enterCaseReference,
     giveAllocationDirection,
     updateContactDetails,
-    manageInterveners,
+    manageIntervenersAdd,
+    manageIntervenersRemove,
     contestedIntervenersTab,
     refundCase,
     addNote,
@@ -192,6 +197,7 @@ module.exports = () => {
     draftOrderApprove,
     uploadOrder,
     sendOrder,
+    sendOrderNew,
     listForInterimHearing,
     verifyListForInterimHearing,
     createCaseFlag,

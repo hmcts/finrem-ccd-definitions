@@ -903,6 +903,14 @@
     "ID": "FR_manageCaseDocuments",
     "CaseEventID": "FR_manageCaseDocuments",
     "CaseFieldID": "manageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentiality",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
+    "CaseEventID": "FR_manageCaseDocuments",
+    "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentFdr",
     "DisplayContext": "MANDATORY"
   },
@@ -912,14 +920,6 @@
     "CaseEventID": "FR_manageCaseDocuments",
     "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentParty",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_manageCaseDocuments",
-    "CaseEventID": "FR_manageCaseDocuments",
-    "CaseFieldID": "manageCaseDocumentCollection",
-    "ListElementCode": "caseDocumentConfidential",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -932,118 +932,69 @@
     "FieldShowCondition": "manageCaseDocumentCollection=\"IMPOSSIBLAW\""
   },
   {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
     "CaseEventID": "FR_uploadCaseFiles",
-    "CaseFieldID": "uploadCaseDocument",
+    "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocuments",
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
     "CaseEventID": "FR_uploadCaseFiles",
-    "CaseFieldID": "uploadCaseDocument",
+    "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentType",
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
     "CaseEventID": "FR_uploadCaseFiles",
-    "CaseFieldID": "uploadCaseDocument",
+    "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentOther",
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
     "CaseEventID": "FR_uploadCaseFiles",
-    "CaseFieldID": "uploadCaseDocument",
+    "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "hearingDetails",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
+    "CaseEventID": "FR_uploadCaseFiles",
+    "CaseFieldID": "manageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentiality",
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
     "CaseEventID": "FR_uploadCaseFiles",
-    "CaseFieldID": "uploadCaseDocument",
-    "ListElementCode": "caseDocumentConfidential",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
-    "CaseEventID": "FR_uploadCaseFiles",
-    "CaseFieldID": "uploadCaseDocument",
+    "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentFdr",
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
     "CaseEventID": "FR_uploadCaseFiles",
-    "CaseFieldID": "uploadCaseDocument",
+    "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentParty",
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadCaseDocument",
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageCaseDocuments",
     "CaseEventID": "FR_uploadCaseFiles",
-    "CaseFieldID": "uploadCaseDocument",
+    "CaseFieldID": "manageCaseDocumentCollection",
     "ListElementCode": "caseDocumentUploadDateTime",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "uploadCaseDocument=\"IMPOSSIBLAW\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_UploadConfidentialDocument",
-    "CaseEventID": "FR_uploadConfidentialDocument",
-    "CaseFieldID": "confidentialDocumentsUploaded",
-    "ListElementCode": "DocumentType",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_UploadConfidentialDocument",
-    "CaseEventID": "FR_uploadConfidentialDocument",
-    "CaseFieldID": "confidentialDocumentsUploaded",
-    "ListElementCode": "DocumentLink",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_UploadConfidentialDocument",
-    "CaseEventID": "FR_uploadConfidentialDocument",
-    "CaseFieldID": "confidentialDocumentsUploaded",
-    "ListElementCode": "DocumentDateAdded",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_UploadConfidentialDocument",
-    "CaseEventID": "FR_uploadConfidentialDocument",
-    "CaseFieldID": "confidentialDocumentsUploaded",
-    "ListElementCode": "DocumentComment",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_UploadConfidentialDocument",
-    "CaseEventID": "FR_uploadConfidentialDocument",
-    "CaseFieldID": "confidentialDocumentsUploaded",
-    "ListElementCode": "DocumentFileName",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_UploadConfidentialDocument",
-    "CaseEventID": "FR_uploadConfidentialDocument",
-    "CaseFieldID": "confidentialDocumentsUploaded",
-    "ListElementCode": "confidentialDocumentUploadDateTime",
-    "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "confidentialDocumentsUploaded=\"IMPOSSIBLAW\""
+    "FieldShowCondition": "manageCaseDocumentCollection=\"IMPOSSIBLAW\""
   },
   {
     "LiveFrom": "01/01/2017",

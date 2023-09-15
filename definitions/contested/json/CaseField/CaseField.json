@@ -5247,10 +5247,11 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "confidentialDocumentsUploaded",
-    "Label": "Confidential documents uploaded",
+    "Label": "Confidential documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_UploadConfidentialDocument",
     "SecurityClassification": "Public",
+    "HintText": "Legacy confidential documents",
     "Searchable": "N"
   },
   {
@@ -6745,7 +6746,7 @@
     "LiveFrom": "01/07/2023",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "confidentialDocumentCollection",
-    "Label": "Confidential Case Document",
+    "Label": "Confidential documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public",

@@ -1276,7 +1276,7 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_uploadCaseDocument",
-    "ListElementCode": "caseDocumentConfidential",
+    "ListElementCode": "caseDocumentConfidentiality",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the document confidential?",
     "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
@@ -1286,10 +1286,21 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "caseDocumentConfidential",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is the document confidential?",
+    "HintText": "This field was added back due to compatibility with cases dating pre-2021 and should not be used",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
-    "FieldShowCondition": "caseDocumentConfidential=\"No\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\"",
     "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -1299,9 +1310,9 @@
     "ID": "FR_uploadCaseDocument",
     "ListElementCode": "caseDocumentParty",
     "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "evidenceParty",
+    "FieldTypeParameter": "FR_fl_DocumentParty",
     "ElementLabel": "What type of document is this?",
-    "FieldShowCondition": "caseDocumentFdr=\"No\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2294,8 +2305,19 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "caseDocumentConfidentiality",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is the document confidential?",
+    "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\"",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
     "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public",
@@ -2306,20 +2328,9 @@
     "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentParty",
     "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_EvidenceParty",
-    "FieldShowCondition": "caseDocumentFdr=\"No\"",
+    "FieldTypeParameter": "FR_fl_DocumentParty",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\"",
     "ElementLabel": "What type of document is this?",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_manageCaseDocuments",
-    "ListElementCode": "caseDocumentConfidential",
-    "FieldType": "YesOrNo",
-    "ElementLabel": "Is the document confidential?",
-    "FieldShowCondition": "caseDocumentType=\"nil\"",
-    "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2747,3 +2758,4 @@
     "Searchable": "N"
   }
 ]
+
