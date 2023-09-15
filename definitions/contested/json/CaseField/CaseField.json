@@ -3447,6 +3447,66 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appConsentApprovedOrders",
+    "Label": "Consent Order Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_roleConsentOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respConsentApprovedOrders",
+    "Label": "Consent Order Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_roleConsentOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv1ConsentApprovedOrders",
+    "Label": "Consent Order Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_roleConsentOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv2ConsentApprovedOrders",
+    "Label": "Consent Order Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_roleConsentOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv3ConsentApprovedOrders",
+    "Label": "Consent Order Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_roleConsentOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv4ConsentApprovedOrders",
+    "Label": "Consent Order Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_roleConsentOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "orderRefusalCollectionNew",
     "Label": "Application Not Approved",
     "HintText": "Please choose ‘Add New’. A blank template will then appear for you to complete.",
