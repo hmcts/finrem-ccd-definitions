@@ -6760,6 +6760,17 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appOrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "appOrderCollection",
     "Label": "Approve Orders",
     "HintText": "Approve Orders",
@@ -6768,7 +6779,17 @@
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
-
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respOrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -6777,6 +6798,17 @@
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv1OrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -6794,6 +6826,17 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv2OrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv2OrderCollection",
     "Label": "Approve Orders",
     "HintText": "Approve Orders",
@@ -6805,11 +6848,33 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv3OrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "intv3OrderCollection",
     "Label": "Approve Orders",
     "HintText": "Approve Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv4OrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
