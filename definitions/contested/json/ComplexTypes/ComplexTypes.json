@@ -2675,6 +2675,44 @@
   },
   {
     "LiveFrom": "01/01/2017",
+    "ID": "FR_orders",
+    "ListElementCode": "approveOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Order Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orders",
+    "ListElementCode": "orderReceivedAt",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order received at",
+    "FieldShowCondition": "approveOrder=\"DONOTSHOW\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderCollections",
+    "ListElementCode": "approveOrders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orders",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderCollections",
+    "ListElementCode": "orderReceivedAt",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order received at",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
     "ID": "FR_orderCollection",
     "ListElementCode": "approveOrder",
     "FieldType": "Document",
