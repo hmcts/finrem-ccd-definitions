@@ -97,17 +97,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hmcts/nodejs-logging@npm:^3.0.0":
-  version: 3.0.2
-  resolution: "@hmcts/nodejs-logging@npm:3.0.2"
-  dependencies:
-    moment: ^2.19.3
-    on-finished: ^2.3.0
-    winston: ^2.4.5
-  checksum: f8b6d095e13d1b6f2b6c8549d9790d4e89c1c917449030da7a19e4ce11a5542830d07ba22f13f24aff6b4883597713b9341ebe8a17bfd2a9b97ef04de4c50258
-  languageName: node
-  linkType: hard
-
 "@hmcts/nodejs-logging@npm:^4.0.4":
   version: 4.0.4
   resolution: "@hmcts/nodejs-logging@npm:4.0.4"
@@ -119,14 +108,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hmcts/properties-volume@npm:0.0.13":
-  version: 0.0.13
-  resolution: "@hmcts/properties-volume@npm:0.0.13"
+"@hmcts/properties-volume@npm:0.0.14":
+  version: 0.0.14
+  resolution: "@hmcts/properties-volume@npm:0.0.14"
   dependencies:
-    "@hmcts/nodejs-logging": ^3.0.0
+    "@hmcts/nodejs-logging": ^4.0.4
     lodash: ^4.17.11
     path: ^0.12.7
-  checksum: 7046728d3b3f3ba2290d933bc8c7cf3eec84cd03f8bf8b66d380caf328f436e32ea8774331c9910110e9318c3129c22ec8dc9c785169430462fd20cccfe742cd
+  checksum: 3859effd7c1579f151a050e85514ca73a341ae9a6be9246e8f3995cf86eafceecac8f64fba38281b3c20f518f1dae744428dbf5c3d6a33782d493dcb3995aeec
   languageName: node
   linkType: hard
 
@@ -2344,7 +2333,7 @@ __metadata:
     "@hmcts/eslint-config": ^1.4.0
     "@hmcts/nodejs-healthcheck": ^1.8.0
     "@hmcts/nodejs-logging": ^4.0.4
-    "@hmcts/properties-volume": 0.0.13
+    "@hmcts/properties-volume": 0.0.14
     "@shinnn/eslint-config-node": ^6.0.2
     chai: ^4.2.0
     codeceptjs: ^2.6.11
