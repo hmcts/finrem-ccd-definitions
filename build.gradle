@@ -13,7 +13,6 @@ sourceCompatibility = 11
 targetCompatibility = 11
 
 repositories {
-    mavenCentral()
     mavenLocal()
     mavenCentral()
     maven { url 'https://jitpack.io' }
@@ -43,8 +42,8 @@ jacoco {
 
 jacocoTestReport {
     reports {
-        xml.enabled = true
-        csv.enabled = false
+        xml.required = true
+        csv.required = false
     }
 }
 
