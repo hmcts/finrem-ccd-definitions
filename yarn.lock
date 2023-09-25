@@ -87,24 +87,13 @@ __metadata:
   linkType: hard
 
 "@hmcts/nodejs-healthcheck@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "@hmcts/nodejs-healthcheck@npm:1.8.0"
+  version: 1.8.3
+  resolution: "@hmcts/nodejs-healthcheck@npm:1.8.3"
   dependencies:
     "@hmcts/nodejs-logging": ^4.0.4
     js-yaml: ^3.8.4
     superagent: 7
-  checksum: 8412f6a36b2a16a6be25d98c9cb083650bc55ba8b490aa5bc438cca3d1f5e2d17a936cd5ae5f0aa577b1e7de41ac647d0b4866dd89d7ab68b37518a72eef97b9
-  languageName: node
-  linkType: hard
-
-"@hmcts/nodejs-logging@npm:^3.0.0":
-  version: 3.0.2
-  resolution: "@hmcts/nodejs-logging@npm:3.0.2"
-  dependencies:
-    moment: ^2.19.3
-    on-finished: ^2.3.0
-    winston: ^2.4.5
-  checksum: f8b6d095e13d1b6f2b6c8549d9790d4e89c1c917449030da7a19e4ce11a5542830d07ba22f13f24aff6b4883597713b9341ebe8a17bfd2a9b97ef04de4c50258
+  checksum: 76f87a5a6707e76ab407f041991ac10139390290c40267401349e4af4f95490f4b3f542cbe4f59eb392655e71e28a1ec782a0522189257327f39c1fbb5d965bc
   languageName: node
   linkType: hard
 
@@ -119,14 +108,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hmcts/properties-volume@npm:0.0.13":
-  version: 0.0.13
-  resolution: "@hmcts/properties-volume@npm:0.0.13"
+"@hmcts/properties-volume@npm:0.0.14":
+  version: 0.0.14
+  resolution: "@hmcts/properties-volume@npm:0.0.14"
   dependencies:
-    "@hmcts/nodejs-logging": ^3.0.0
+    "@hmcts/nodejs-logging": ^4.0.4
     lodash: ^4.17.11
     path: ^0.12.7
-  checksum: 7046728d3b3f3ba2290d933bc8c7cf3eec84cd03f8bf8b66d380caf328f436e32ea8774331c9910110e9318c3129c22ec8dc9c785169430462fd20cccfe742cd
+  checksum: 3859effd7c1579f151a050e85514ca73a341ae9a6be9246e8f3995cf86eafceecac8f64fba38281b3c20f518f1dae744428dbf5c3d6a33782d493dcb3995aeec
   languageName: node
   linkType: hard
 
@@ -668,9 +657,9 @@ __metadata:
   linkType: hard
 
 "async@npm:^3.2.2":
-  version: 3.2.3
-  resolution: "async@npm:3.2.3"
-  checksum: c4bee57ab2249af3dc83ca3ef9acfa8e822c0d5e5aa41bae3eaf7f673648343cd64ecd7d26091ffd357f3f044428b17b5f00098494b6cf8b6b3e9681f0636ca1
+  version: 3.2.4
+  resolution: "async@npm:3.2.4"
+  checksum: 43d07459a4e1d09b84a20772414aa684ff4de085cbcaec6eea3c7a8f8150e8c62aa6cd4e699fe8ee93c3a5b324e777d34642531875a0817a35697522c1b02e89
   languageName: node
   linkType: hard
 
@@ -1223,11 +1212,11 @@ __metadata:
   linkType: hard
 
 "config@npm:^3.3.3":
-  version: 3.3.3
-  resolution: "config@npm:3.3.3"
+  version: 3.3.9
+  resolution: "config@npm:3.3.9"
   dependencies:
-    json5: ^2.1.1
-  checksum: c79401b718577662c1b3b53e0fbb1e7dbf7ca66b1b8c129e96b6f97579f3fbf4b71fcd3c45b72672eb643cc676ef41add7e75a2771e94de2392113cfb54170a1
+    json5: ^2.2.3
+  checksum: 2c29e40be22274462769670a4b69fcbcad2d3049eb15030073e410d32c892ef29e0c879a3d68ef92ddd572c516e4f65a11bb6458f680a44ceb0f051bcd3d97ff
   languageName: node
   linkType: hard
 
@@ -2344,7 +2333,7 @@ __metadata:
     "@hmcts/eslint-config": ^1.4.0
     "@hmcts/nodejs-healthcheck": ^1.8.0
     "@hmcts/nodejs-logging": ^4.0.4
-    "@hmcts/properties-volume": 0.0.13
+    "@hmcts/properties-volume": 0.0.14
     "@shinnn/eslint-config-node": ^6.0.2
     chai: ^4.2.0
     codeceptjs: ^2.6.11
@@ -2750,8 +2739,8 @@ __metadata:
   linkType: hard
 
 "got@npm:^11.8.5":
-  version: 11.8.5
-  resolution: "got@npm:11.8.5"
+  version: 11.8.6
+  resolution: "got@npm:11.8.6"
   dependencies:
     "@sindresorhus/is": ^4.0.0
     "@szmarczak/http-timer": ^4.0.5
@@ -2764,7 +2753,7 @@ __metadata:
     lowercase-keys: ^2.0.0
     p-cancelable: ^2.0.0
     responselike: ^2.0.0
-  checksum: 2de8a1bbda4e9b6b2b72b2d2100bc055a59adc1740529e631f61feb44a8b9a1f9f8590941ed9da9df0090b6d6d0ed8ffee94cd9ac086ec3409b392b33440f7d2
+  checksum: bbc783578a8d5030c8164ef7f57ce41b5ad7db2ed13371e1944bef157eeca5a7475530e07c0aaa71610d7085474d0d96222c9f4268d41db333a17e39b463f45d
   languageName: node
   linkType: hard
 
