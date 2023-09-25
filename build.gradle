@@ -13,7 +13,6 @@ sourceCompatibility = 11
 targetCompatibility = 11
 
 repositories {
-    mavenCentral()
     mavenLocal()
     mavenCentral()
     maven { url 'https://jitpack.io' }
@@ -38,13 +37,13 @@ pmd {
 // region test coverage
 
 jacoco {
-    toolVersion = "0.8.5"
+    toolVersion = "0.8.10"
 }
 
 jacocoTestReport {
     reports {
-        xml.enabled = true
-        csv.enabled = false
+        xml.required = true
+        csv.required = false
     }
 }
 
@@ -80,6 +79,6 @@ dependencies {
     }
 
     testRuntimeOnly group: 'org.glassfish', name: 'jakarta.el', version: '3.0.4'
-    testImplementation group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
-    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+    testImplementation group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
 }
