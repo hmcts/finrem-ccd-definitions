@@ -79,6 +79,6 @@ dependencies {
     }
 
     testRuntimeOnly group: 'org.glassfish', name: 'jakarta.el', version: '3.0.4'
-    testImplementation group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
-    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+    testImplementation group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
 }
