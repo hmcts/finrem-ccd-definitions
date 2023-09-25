@@ -56,7 +56,7 @@ finrem-cos:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/cos:pr-1120
+    image: hmctspublic.azurecr.io/finrem/cos:latest
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
     environment:
@@ -288,6 +288,10 @@ ccd:
   postgresql:
     persistence:
       enabled: false
+    image:
+      registry: hmctspublic.azurecr.io
+      repository: imported/bitnami/postgresql
+      tag: '11.16.0'
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
