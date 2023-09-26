@@ -2847,7 +2847,8 @@
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
-    "PageColumnNumber": 1
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2896,7 +2897,8 @@
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
-    "PageColumnNumber": 1
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2907,7 +2909,8 @@
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
-    "PageColumnNumber": 1
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2918,7 +2921,8 @@
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
-    "PageColumnNumber": 1
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2929,7 +2933,8 @@
     "DisplayContext": "OPTIONAL",
     "PageID": 1,
     "PageDisplayOrder": 1,
-    "PageColumnNumber": 1
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2941,7 +2946,8 @@
     "PageID": "orderRefusalCollectionNew",
     "PageDisplayOrder": 1,
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/preview-consent-order-not-approved",
-    "RetriesTimeoutURLMidEvent": "3,4,5"
+    "RetriesTimeoutURLMidEvent": "3,4,5",
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3524,7 +3530,7 @@
     "PageID": "amendedConsentOrder",
     "PageLabel": "Amended Consent Order",
     "PageDisplayOrder": 1,
-    "ShowSummaryChangeOption": "Y",
+    "ShowSummaryChangeOption": "N",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/amendedConsentOrderCollection/file-upload-check",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
