@@ -406,7 +406,7 @@
     "PostConditionState": "reviewOrder",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
-    "ShowEventNotes": "N"
+    "ShowEventNotes": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -466,7 +466,7 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/store",
     "SecurityClassification": "Public",
-    "ShowSummary": "N",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
