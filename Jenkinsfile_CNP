@@ -213,6 +213,7 @@ withPipeline("nodejs", product, component) {
   onPR() {
     env.ENV='preview'
     env.COS_IMAGE_TAG = getCosImage()
+    sh "echo COS IMAGE ====================================================================== :" +  ${env.ENV}
   }
 
   onIthc() {
