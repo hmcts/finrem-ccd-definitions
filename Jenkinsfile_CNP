@@ -100,16 +100,6 @@ def branchesToSync = ['demo', 'ithc', 'perftest']
 properties([
     copyArtifactPermission('*'),
 ]);
-
-def getCosImage() {
-  String imageName = "latest"
-  def githubApi = new GithubAPI(this)
-  for (label in githubApi.getLabelsbyPattern(env.BRANCH_NAME, "use-cos")) {
-    return label.substring(7, label.length())
-  }
-  return imageName;
-}
-
 withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
@@ -212,7 +202,6 @@ withPipeline("nodejs", product, component) {
 
   onPR() {
     env.ENV='preview'
-    env.COS_IMAGE_TAG = getCosImage()
   }
 
   onIthc() {
