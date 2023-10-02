@@ -16196,5 +16196,20 @@
     "CaseFieldID": "intv4HearingNoticesCollection",
     "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/05/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "cautionMessage",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/05/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "cautionMessage",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "R"
   }
+
 ]
