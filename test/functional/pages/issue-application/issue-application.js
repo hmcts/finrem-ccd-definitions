@@ -10,7 +10,7 @@ module.exports = {
     I.selectOption('select[id="next-step"]', 'Issue Application');
     I.click('Go');
     I.waitForText('Issue Date');
-    I.click('Submit');
+    I.click('Continue');
     I.waitForText('Event summary (optional)');
     I.click('Submit');
     I.waitForText('Issue Application', '60');
