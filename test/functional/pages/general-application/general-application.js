@@ -14,7 +14,7 @@ function solicitorCreateGeneralApplication() {
     I.fillField("Time estimate", "10");
     I.attachFile('input[type="file"]', '../data/dummy.pdf');
     I.wait("5");
-    I.click('Submit');
+    I.click('Continue');
     I.wait("5");
     I.waitForText("Event summary");
     I.click('Submit');
