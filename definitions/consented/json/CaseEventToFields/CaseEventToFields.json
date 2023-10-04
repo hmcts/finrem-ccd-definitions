@@ -3536,7 +3536,7 @@
     "PageLabel": "Amended Consent Order",
     "PageDisplayOrder": 1,
     "ShowSummaryChangeOption": "N",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/amendedConsentOrderCollection/file-upload-check",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
