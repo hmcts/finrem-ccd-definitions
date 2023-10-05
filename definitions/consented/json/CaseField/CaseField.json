@@ -1335,6 +1335,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "generalLetterAddressee",
+    "Label": "Address to",
+    "FieldType": "DynamicRadioList",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "generalLetterRecipient",
     "Label": "Recipient's name",
     "FieldType": "Text",

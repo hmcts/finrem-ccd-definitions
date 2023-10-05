@@ -58,6 +58,62 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "gateKeepingAndAllocation",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
@@ -1557,13 +1613,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "generalApplication",
-    "UserRole": "[RESPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
     "UserRole": "[RESPSOLICITOR]",
     "CRUD": "CRU"
@@ -1788,13 +1837,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "generalApplication",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
     "UserRole": "[APPSOLICITOR]",
     "CRUD": "CRU"
@@ -2006,7 +2048,84 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplication",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -2070,6 +2189,62 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "gateKeepingAndAllocation",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },
   {
@@ -2467,13 +2642,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "generalApplication",
-    "UserRole": "[APPBARRISTER]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
     "UserRole": "[APPBARRISTER]",
     "CRUD": "CRU"
@@ -2698,13 +2866,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "generalApplication",
-    "UserRole": "[RESPBARRISTER]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
     "UserRole": "[RESPBARRISTER]",
     "CRUD": "CRU"
@@ -2714,6 +2875,1294 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "generalApplicationOutcome",
     "UserRole": "[RESPBARRISTER]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "[INTVRBARRISTER4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "[INTVRBARRISTER1]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "[INTVRSOLICITOR2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "[INTVRSOLICITOR3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   }
 ]

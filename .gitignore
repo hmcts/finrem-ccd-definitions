@@ -1,4 +1,5 @@
 .idea/
+.gradle/
 .vscode/
 node_modules/
 *.xls
@@ -11,7 +12,8 @@ test/functional/output
 package-lock.json
 definitions/consented/json/**/*-common*
 definitions/contested/json/**/*-common*
-
+dependencies-accessors.lock
+fileHashes.lock
 .pnp.*
 .yarn/*
 !.yarn/patches

@@ -39,6 +39,7 @@
     "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;newPaperCase;awaitingInfo",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -52,6 +53,7 @@
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -66,6 +68,7 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -95,6 +98,7 @@
     "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -107,6 +111,7 @@
     "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;readyForHearing;newPaperCase",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -135,6 +140,7 @@
     "PreConditionState(s)": "orderMade",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -147,6 +153,7 @@
     "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;newPaperCase",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -159,6 +166,7 @@
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -171,6 +179,7 @@
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -183,6 +192,7 @@
     "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;newPaperCase",
     "PostConditionState": "close",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -229,6 +239,7 @@
     "PreConditionState(s)": "caseAdded",
     "PostConditionState": "awaitingHWFDecision",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -241,6 +252,7 @@
     "PreConditionState(s)": "caseAdded",
     "PostConditionState": "awaitingPayment",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -255,6 +267,7 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/remove-case-data-state",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -271,6 +284,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/hwf-successful",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -285,6 +299,7 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/remove-case-data-state",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -297,6 +312,7 @@
     "PreConditionState(s)": "awaitingPayment;newPaperCase",
     "PostConditionState": "awaitingPaymentResponse",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -309,6 +325,7 @@
     "PreConditionState(s)": "awaitingPayment",
     "PostConditionState": "applicationSubmitted",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -323,6 +340,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/hwf-successful",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -335,6 +353,7 @@
     "PreConditionState(s)": "awaitingPaymentResponse",
     "PostConditionState": "applicationSubmitted",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -352,6 +371,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -366,6 +386,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -381,6 +402,7 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-general-order",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-order-raised",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -397,6 +419,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -414,6 +437,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -426,6 +450,7 @@
     "PreConditionState(s)": "orderMade",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -438,6 +463,7 @@
     "PreConditionState(s)": "consentOrderApproved",
     "PostConditionState": "consentOrderMade",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -452,6 +478,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -466,6 +493,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -480,6 +508,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -494,6 +523,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -508,6 +538,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -522,6 +553,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -536,6 +568,7 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -550,6 +583,7 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/bulk-print",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/consent-order-not-approved-sent",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -565,6 +599,7 @@
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/bulk-print",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/consent-order-available",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -579,6 +614,7 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -591,6 +627,7 @@
     "PreConditionState(s)": "responseReceived;awaitingResponse;referredToJudge",
     "PostConditionState": "orderMade",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -603,6 +640,7 @@
     "PreConditionState(s)": "consentOrderMade;referredToJudge",
     "PostConditionState": "consentOrderApproved",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -615,6 +653,7 @@
     "PreConditionState(s)": "consentOrderApproved",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -628,6 +667,7 @@
     "PostConditionState": "referredToJudge",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/assign-to-judge",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -640,6 +680,7 @@
     "PreConditionState(s)": "caseAdded",
     "PostConditionState": "applicationSubmitted",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -652,6 +693,7 @@
     "PostConditionState": "newPaperCase",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -690,6 +732,7 @@
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -702,6 +745,7 @@
     "PreConditionState(s)": "applicationSubmitted;applicationIssued;responseReceived;orderMade;consentOrderApproved;infoReceived;newPaperCase",
     "PostConditionState": "awaitingInfo",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -714,6 +758,7 @@
     "PreConditionState(s)": "awaitingInfo",
     "PostConditionState": "applicationSubmitted",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -726,6 +771,7 @@
     "PreConditionState(s)": "awaitingInfo",
     "PostConditionState": "applicationIssued",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -738,6 +784,7 @@
     "PreConditionState(s)": "awaitingInfo",
     "PostConditionState": "responseReceived",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -750,6 +797,7 @@
     "PreConditionState(s)": "awaitingInfo",
     "PostConditionState": "orderMade",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -762,6 +810,7 @@
     "PreConditionState(s)": "awaitingInfo",
     "PostConditionState": "orderMade",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -774,6 +823,7 @@
     "PreConditionState(s)": "awaitingInfo",
     "PostConditionState": "consentOrderApproved",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -788,6 +838,7 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -800,6 +851,7 @@
     "PreConditionState(s)": "awaitingInfo;awaitingResponse;readyForHearing",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -812,6 +864,7 @@
     "PreConditionState(s)": "applicationSubmitted;applicationIssued;awaitingInfo;awaitingResponse;infoReceived",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -824,6 +877,7 @@
     "PreConditionState(s)": "awaitingInfo;readyForHearing",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -836,6 +890,7 @@
     "PreConditionState(s)": "awaitingInfo",
     "PostConditionState": "infoReceived",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -848,6 +903,7 @@
     "PreConditionState(s)": "infoReceived",
     "PostConditionState": "applicationSubmitted",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -860,6 +916,7 @@
     "PreConditionState(s)": "infoReceived",
     "PostConditionState": "applicationIssued",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -872,6 +929,7 @@
     "PreConditionState(s)": "infoReceived",
     "PostConditionState": "responseReceived",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -884,6 +942,7 @@
     "PreConditionState(s)": "infoReceived",
     "PostConditionState": "orderMade",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -896,6 +955,7 @@
     "PreConditionState(s)": "infoReceived",
     "PostConditionState": "orderMade",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -908,6 +968,7 @@
     "PreConditionState(s)": "infoReceived",
     "PostConditionState": "consentOrderApproved",
     "SecurityClassification": "Public",
+    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {
@@ -934,6 +995,7 @@
     "PostConditionState": "*",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/transfer-to-local-court",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -977,6 +1039,7 @@
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -1006,7 +1069,7 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
-    "ShowSummary": "N",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
@@ -1016,12 +1079,12 @@
     "Name": "Upload Approved Order",
     "Description": "Upload Approved Order",
     "DisplayOrder": 62,
-    "PreConditionState(s)": "referredToJudge",
+    "PreConditionState(s)": "referredToJudge;readyForHearing",
     "PostConditionState": "consentOrderApproved",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
-    "ShowSummary": "N",
+    "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
   {
