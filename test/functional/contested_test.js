@@ -5,6 +5,7 @@ const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('helpers/utils.js');
 
 // eslint-disable max-len
+//temporary comment
 
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
