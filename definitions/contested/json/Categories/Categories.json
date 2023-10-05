@@ -118,5 +118,61 @@
     "CategoryLabel": "Judgment or Transcript",
     "DisplayOrder": "15",
     "ParentCategoryID": null
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "formA",
+    "CategoryLabel": "Form A/A1/B",
+    "DisplayOrder": "16",
+    "ParentCategoryID": "applications"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "generalApplications",
+    "CategoryLabel": "General Applications",
+    "DisplayOrder": "17",
+    "ParentCategoryID": "applications"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "consentApplications",
+    "CategoryLabel": "Consent Applications",
+    "DisplayOrder": "18",
+    "ParentCategoryID": "applications"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "applicantGA",
+    "CategoryLabel": "Applicant",
+    "DisplayOrder": "19",
+    "ParentCategoryID": "generalApplications"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "appFormG",
+    "CategoryLabel": "Form G",
+    "DisplayOrder": "20",
+    "ParentCategoryID": "applicantDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "appStatementOfIssues",
+    "CategoryLabel": "Statement Of Issues",
+    "DisplayOrder": "21",
+    "ParentCategoryID": "applicantDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "appWitnessStatement",
+    "CategoryLabel": "Witness Statement",
+    "DisplayOrder": "22",
+    "ParentCategoryID": "applicantDocuments"
   }
 ]
