@@ -1789,7 +1789,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadCaseDocument",
-    "Label": "                                                                                      ",
+    "Label": " ",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public",
@@ -3314,6 +3314,15 @@
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterAddressee",
+    "Label": "Address to",
+    "FieldType": "DynamicRadioList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalLetterRecipient",
     "Label": "Recipient's name",
     "FieldType": "Text",
@@ -3687,7 +3696,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "appRespGeneralApplicationReceivedFrom",
     "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "FieldTypeParameter": "FR_fl_ApplicantAndRespondentEvidenceParty",
     "Label": "Application received from",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -5213,6 +5222,25 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "currentUserCaseRoleType",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationIntvrOrders",
+    "Label": "Intervener General Applications",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "generalApplicationCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "hearingUploadBundle",
     "Label": "Hearing Bundles ",
     "FieldType": "Collection",
@@ -5356,6 +5384,56 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplications",
+    "Label": "General Applications",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "generalApplicationCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appRespGeneralApplications",
+    "Label": "General Applications",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "generalApplicationCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener1GeneralApplications",
+    "Label": "General Applications",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "generalApplicationCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener2GeneralApplications",
+    "Label": "General Applications",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "generalApplicationCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener3GeneralApplications",
+    "Label": "General Applications",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "generalApplicationCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intervener4GeneralApplications",
     "Label": "General Applications",
     "FieldType": "Collection",
     "FieldTypeParameter": "generalApplicationCollection",
@@ -6658,6 +6736,219 @@
     "ID": "newFieldNameAndrew",
     "Label": "New Field Andrew Made",
     "FieldType": "ComponentLauncher",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "05/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "ordersToShare",
+    "Label": "Select Order/Orders",
+    "FieldType": "DynamicMultiSelectList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "05/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "partiesOnCase",
+    "Label": "Who should receive this order?",
+    "FieldType": "DynamicMultiSelectList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalDocument",
+    "Label": "Please upload any additional document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appOrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appOrderCollection",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respOrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respOrderCollection",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv1OrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv1OrderCollection",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv2OrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv2OrderCollection",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv3OrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv3OrderCollection",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv4OrderCollections",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollections",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv4OrderCollection",
+    "Label": "Approve Orders",
+    "HintText": "Approve Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "ordersSentToPartiesCollection",
+    "Label": "Orders shared with Parties",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "sendOrderDocuments",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv1HearingNoticesCollection",
+    "Label": "Hearing Notices",
+    "HintText": "Hearing Notices",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerHearingNoticeCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv2HearingNoticesCollection",
+    "Label": "Hearing Notices",
+    "HintText": "Hearing Notices",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerHearingNoticeCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv3HearingNoticesCollection",
+    "Label": "Hearing Notices",
+    "HintText": "Hearing Notices",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerHearingNoticeCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "intv4HearingNoticesCollection",
+    "Label": "Hearing Notices",
+    "HintText": "Hearing Notices",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_intervenerHearingNoticeCollection",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
