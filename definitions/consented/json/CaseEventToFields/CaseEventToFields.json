@@ -1142,7 +1142,7 @@
     "PageDisplayOrder": 9,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/consentOrder/file-upload-check",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -1234,7 +1234,7 @@
     "PageColumnNumber": 1,
     "PageShowCondition": "natureOfApplication2 CONTAINS \"Pension Sharing Order\"  OR natureOfApplication2 CONTAINS \"Pension Attachment Order\"  OR natureOfApplication2 CONTAINS \"Pension Compensation Sharing Order\"  OR natureOfApplication2 CONTAINS \"Pension Compensation Attachment Order\"  ",
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/pensionCollection/file-upload-check",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -1272,7 +1272,9 @@
     "PageDisplayOrder": 12,
     "PageColumnNumber": 1,
     "FieldShowCondition": "consentVariationOrderLabelC !=\"Consent / Variation Order\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1285,7 +1287,9 @@
     "PageDisplayOrder": 12,
     "PageColumnNumber": 1,
     "FieldShowCondition": "consentVariationOrderLabelC =\"Consent / Variation Order\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2441,7 +2445,7 @@
     "PageDisplayOrder": 9,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/consentOrder/file-upload-check",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -2519,9 +2523,7 @@
     "PageID": 10,
     "PageDisplayOrder": 11,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/pensionCollection/file-upload-check",
-    "RetriesTimeoutURLMidEvent": "3,4,5"
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2533,9 +2535,9 @@
     "PageID": 10,
     "PageDisplayOrder": 11,
     "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
-    "RetriesTimeoutURLMidEvent": "3,4,5",
-    "ShowSummaryChangeOption": "Y"
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2560,7 +2562,9 @@
     "PageDisplayOrder": 12,
     "PageColumnNumber": 1,
     "FieldShowCondition": "consentVariationOrderLabelC !=\"Consent / Variation Order\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2573,7 +2577,9 @@
     "PageDisplayOrder": 12,
     "PageColumnNumber": 1,
     "FieldShowCondition": "consentVariationOrderLabelC =\"Consent / Variation Order\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3530,7 +3536,7 @@
     "PageLabel": "Amended Consent Order",
     "PageDisplayOrder": 1,
     "ShowSummaryChangeOption": "N",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/field/amendedConsentOrderCollection/file-upload-check",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -4169,7 +4175,9 @@
     "PageLabel": "Create General Email",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5142,7 +5150,9 @@
     "PageLabel": " ",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
