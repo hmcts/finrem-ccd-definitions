@@ -1232,7 +1232,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadAdditionalDocument",
-    "Label": "   ",
+    "Label": "Upload other documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadAdditionalDocument",
     "SecurityClassification": "Public",
@@ -5307,15 +5307,6 @@
     "HintText": "Additional Hearing Details",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_ct_hearingInformationCollection",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "uploadOtherDocumentLabelOptional",
-    "Label": "## Upload other documents (Optional)",
-    "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
