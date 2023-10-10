@@ -11,7 +11,7 @@ async function uploadOrder(){
   I.waitForText('Next Hearing Details', '30');
   I.click('Add new');
   I.checkOption('input[id="directionDetailsCollection_0_isAnotherHearingYN_No"]');
-  I.click('Submit');
+  I.click('Continue');
   I.waitForText('Event summary');
   I.click('Submit');
   I.waitForText('Upload Order', '60');
