@@ -17,6 +17,8 @@ function addNote() {
   I.fillField('input[id="caseNoteDate-year"]', '2023');
   I.wait('2');
   I.fillField('Note', 'Thank you');
+  I.click('Continue');
+  I.wait('2');
   I.click('Submit');
   I.see('Add Note');
 
