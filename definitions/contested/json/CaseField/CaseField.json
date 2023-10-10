@@ -253,7 +253,8 @@
     "Label": "Upload Decree Nisi / conditional order",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "divorceDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -271,7 +272,8 @@
     "Label": "Upload Decree Absolute",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "divorceDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -289,7 +291,9 @@
     "Label": "Upload Petition ",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID":  "divorceDocuments"
+
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1706,7 +1710,8 @@
     "HintText": "Online Form A",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "formA"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1716,7 +1721,8 @@
     "HintText": "Form C",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1736,7 +1742,8 @@
     "HintText": "Out Of Family Court Resolution",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": null
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1822,7 +1829,8 @@
     "Label": "Upload Consented Order",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2185,7 +2193,8 @@
     "Label": "Preview of Refusal Order",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2205,7 +2214,8 @@
     "Label": "Latest Refusal Order Document",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryId": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2214,7 +2224,8 @@
     "Label": "Refusal Order Document",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryId": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2922,7 +2933,8 @@
     "Label": "Upload Document",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "correspondence"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3060,7 +3072,8 @@
     "HintText": "Please upload a scanned copy of the draft consent order that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3089,7 +3102,8 @@
     "HintText": "Joint D81 form, signed by both parties",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3099,7 +3113,8 @@
     "HintText": "D81 form, signed by Applicant",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3109,7 +3124,8 @@
     "HintText": "D81 form, signed by Respondent",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3502,7 +3518,8 @@
     "HintText": "Online Form A",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3531,7 +3548,8 @@
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "caseDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3541,7 +3559,8 @@
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "caseDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3551,7 +3570,8 @@
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "caseDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3561,7 +3581,8 @@
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "caseDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3571,7 +3592,8 @@
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "caseDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3745,7 +3767,8 @@
     "Label": "Upload General Application",
     "HintText": "Please upload a copy of the application as a word or PDF document (word documents will be converted to PDF after submission).",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "generalApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3754,7 +3777,8 @@
     "FieldType": "Document",
     "Label": "General Application",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "generalApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3764,7 +3788,8 @@
     "Label": "Upload Draft Order",
     "HintText": "Please upload a copy of the draft order as a word or PDF document (word documents will be converted to PDF after submission)",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "generalApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5150,7 +5175,8 @@
     "FieldType": "Document",
     "Label": "Interim Hearing",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5643,7 +5669,8 @@
     "Label": "## Upload original order to be varied",
     "FieldType": "Label",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "variationOrderApplication"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5661,7 +5688,8 @@
     "Label": "Original order to be varied",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "variationOrderApplication"
   },
   {
     "LiveFrom": "01/01/2017",
