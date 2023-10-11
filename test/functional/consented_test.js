@@ -76,7 +76,7 @@ Scenario('Consent Case approve and send order', async I => {
 }).retry(3);
 /* eslint-disable require-await */
 
-Scenario('Consent Case Creation by Solicitor @nightly', async I => {
+Scenario('Consent Case Creation by Solicitor @nightly @debug', async I => {
   I.signInIdam(solicitorUserName, solicitorPassword);
   I.wait('2');
   await I.createCase('Financial Remedy Consented', 'Consent Order Application');
