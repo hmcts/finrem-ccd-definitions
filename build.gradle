@@ -25,7 +25,7 @@ repositories {
 // region static code analysis
 
 pmd {
-    toolVersion = "6.50.0"
+    toolVersion = "6.55.0"
     ignoreFailures = true
     sourceSets = [sourceSets.test]
     reportsDir = file("$project.buildDir/reports/pmd")
@@ -65,7 +65,7 @@ tasks.withType(Test) {
 }
 
 dependencies {
-    testImplementation(platform(group: 'org.junit', name: 'junit-bom', version: '5.9.1'))
+    testImplementation(platform(group: 'org.junit', name: 'junit-bom', version: '5.10.0'))
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter'
 
     testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.24.2'
