@@ -291,7 +291,7 @@ ccd:
 
   postgresql:
     enabled: true
-    flexibleserver: finrem-preview
+    flexibleserver: financial-remedy-preview
     setup:
       databases:
         - name: "pr-${CHANGE_ID}-data-store"
