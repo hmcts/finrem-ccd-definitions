@@ -285,7 +285,7 @@ ccd:
       userProfileDatabaseHost: ${SERVICE_NAME}-ccd-postgres
       userProfileDatabasePort: 5432
       userProfileDatabaseUser: hmcts
-      userProfileDatabasePassword: hmcts
+      userProfileDatabasePassword: postgres
       userProfileDatabaseName: user-profile
 
 
@@ -341,7 +341,7 @@ ccd:
       - name: DB_USER
         value: hmcts
       - name: DB_PWD
-        value: hmcts
+        value: postgres
       - name: ES_HOSTS
         value: http://${SERVICE_NAME}-es-master:9200
       - name: ES_DATA_NODES_URL
