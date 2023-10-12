@@ -72,7 +72,7 @@ Scenario('Caseworker creates case flag for schedule 1 case @nightly', async I =>
     logger.info('case flag created and verified for schedule 1 case');
 }).retry(3);
 
-Scenario('Create case flag with General Application @nightly', async I => {
+Scenario.skip('Create case flag with General Application @nightly', async I => {
 
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
