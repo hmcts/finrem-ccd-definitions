@@ -138,7 +138,7 @@ ccd:
     ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
     ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
     ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
-    postgresHostname: "finrem-preview.postgres.database.azure.com"
+    postgresHostname: "financial-remedy-preview.postgres.database.azure.com"
     postgresSecret: postgres
     databaseNamePrefix: "pr-${CHANGE_ID}-"
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
@@ -337,7 +337,7 @@ ccd:
     logstashJavaOpts: -Xmx1g -Xms512M
     extraEnvs:
       - name: DB_URL
-        value: "jdbc:postgresql://finrem-preview.postgres.database.azure.com:5432/{{ .Values.global.databaseNamePrefix }}data-store?sslmode=require&stringtype=unspecified"
+        value: "jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/{{ .Values.global.databaseNamePrefix }}data-store?sslmode=require&stringtype=unspecified"
       - name: DB_USER
         value: hmcts
       - name: DB_PWD
