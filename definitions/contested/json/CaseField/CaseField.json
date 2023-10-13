@@ -3256,7 +3256,8 @@
     "Label": "Preview of General Order",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "transitional"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3295,7 +3296,8 @@
     "Label": "Latest General Order",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "approvedOrders"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -3315,7 +3317,8 @@
     "Label": "Upload Document",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "correspondence"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -3487,7 +3490,8 @@
     "Label": "Preview of Draft Order",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "transitional"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3529,7 +3533,8 @@
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "caseDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3798,7 +3803,8 @@
     "FieldType": "Date",
     "Label": "General Application Date",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "generalApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4244,7 +4250,8 @@
     "FieldType": "Document",
     "Label": "Latest draft hearing order",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "approvedOrders"
   },
   {
     "LiveFrom": "01/01/2021",
@@ -5166,7 +5173,8 @@
     "HintText": "Please upload any additional documents related to you application.",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/09/2020",
@@ -5669,8 +5677,7 @@
     "Label": "## Upload original order to be varied",
     "FieldType": "Label",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "variationOrderApplication"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5688,8 +5695,7 @@
     "Label": "Original order to be varied",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "variationOrderApplication"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
