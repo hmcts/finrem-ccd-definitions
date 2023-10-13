@@ -95,10 +95,6 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
   ]
 }
 
-def checkForNoCleanupLabel(branch_name) {
-  return new GithubAPI(this).getLabelsbyPattern(branch_name, "cleanup").contains("no_cleanup")
-}
-
 // Configure branches to sync with master branch
 def branchesToSync = ['demo', 'ithc', 'perftest']
 properties([
@@ -232,12 +228,6 @@ withPipeline("nodejs", product, component) {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
     slackSend(channel: '#finrem-dev', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
     env.ENV='prod'
-  }
-
-  onPR {
-    if (!checkForNoCleanupLabel(env.BRANCH_NAME)) {
-      enableCleanupOfHelmReleaseOnSuccess()
-    }
   }
 }
 
