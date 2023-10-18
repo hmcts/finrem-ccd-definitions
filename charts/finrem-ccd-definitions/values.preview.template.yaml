@@ -138,9 +138,10 @@ ccd:
     ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
     ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
     ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
-    postgresUsername: hmcts
-    postgresPassword: hmcts
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+    postgresHostname: "financial-remedy-preview.postgres.database.azure.com"
+    postgresSecret: postgres
+    databaseNamePrefix: "pr-${CHANGE_ID}-"
 
   ccd-user-profile-api:
     java:
@@ -149,7 +150,7 @@ ccd:
         enabled: false
       imagePullPolicy: Always
       enviroment:
-        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
+        USER_PROFILE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
       environment:
         USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_definition,ccd_admin
       ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
@@ -166,7 +167,7 @@ ccd:
       devmemoryLimits: 2058Mi
       devcpuLimits: 2000m
       environment:
-        DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
+        DATA_STORE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
         DATA_STORE_S2S_AUTHORISED_SERVICES: ccd_gw,ccd_gateway,fpl_case_service,ccd_data,ccd_ps,aac_manage_case_assignment,xui_webapp,ccd_case_document_am_api,divorce_ccd_submission,divorce_frontend,finrem_case_orchestration
         CCD_S2S_AUTHORISED_SERVICES_CASE_USER_ROLES: aac_manage_case_assignment,fpl_case_service,finrem_case_orchestration,iac,divorce_frontend,civil_service
@@ -177,6 +178,7 @@ ccd:
         IDAM_DATA_STORE_SYSTEM_USER_PASSWORD: ${IDAM_DATA_STORE_SYSTEM_USER_PASSWORD}
         CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
         ROLE_ASSIGNMENT_URL: http://am-role-assignment-service-aat.service.core-compute-aat.internal
+        DATA_STORE_DB_OPTIONS: "?stringtype=unspecified&reWriteBatchedInserts=true&sslmode=require"
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOSTS: ${SERVICE_NAME}-es-master:9200
         ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
@@ -210,7 +212,7 @@ ccd:
       imagePullPolicy: Always
       image: hmctspublic.azurecr.io/ccd/definition-store-api:latest
       environment:
-        DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
+        DEFINITION_STORE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
         DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin,aac_manage_case_assignment
         IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
@@ -228,7 +230,7 @@ ccd:
       image: hmctspublic.azurecr.io/ccd/admin-web:latest
       ingressHost: admin-web-${SERVICE_FQDN}
       environment:
-        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
+        USER_PROFILE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
         IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
         IDAM_OAUTH2_AW_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
 
@@ -288,12 +290,14 @@ ccd:
       userProfileDatabaseName: user-profile
 
   postgresql:
-    persistence:
-      enabled: false
-    image:
-      registry: hmctspublic.azurecr.io
-      repository: imported/bitnami/postgresql
-      tag: '11.16.0'
+    enabled: true
+    flexibleserver: "financial-remedy-preview"
+    setup:
+      databases:
+        - name: "pr-${CHANGE_ID}-data-store"
+        - name: "pr-${CHANGE_ID}-draftstore"
+        - name: "pr-${CHANGE_ID}-role-assignment"
+        - name: "pr-${CHANGE_ID}-definition-store"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
@@ -333,11 +337,11 @@ ccd:
     imageTag: "ccd-divorce-logstash-latest"
     logstashJavaOpts: -Xmx1g -Xms512M
     extraEnvs:
-      - name: DB_URL
-        value: jdbc:postgresql://${SERVICE_NAME}-postgresql:5432/data-store?ssl=disable&stringtype=unspecified
-      - name: DB_USER
+      - name: DATA_STORE_PASS
         value: hmcts
-      - name: DB_PWD
+      - name: DATA_STORE_URL
+        value: "jdbc:postgresql://sscs-preview.postgres.database.azure.com:5432/{{ .Values.global.databaseNamePrefix }}data-store?sslmode=require&stringtype=unspecified"
+      - name: DATA_STORE_USER
         value: hmcts
       - name: ES_HOSTS
         value: http://${SERVICE_NAME}-es-master:9200
