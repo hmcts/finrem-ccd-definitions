@@ -40,9 +40,9 @@ function amendApplicationDetails() {
   I.waitForText('D81', '30');
   I.checkOption('input[id="d81Question_No"]');
   I.wait('2');
-  I.attachFile('input[id="d81Applicant"]', '../data/fileupload.txt');
+  I.attachFile('input[id="d81Applicant"]', '../data/dummy.pdf');
   I.wait('2');
-  I.attachFile('input[id="d81Respondent"]', '../data/fileupload.txt');
+  I.attachFile('input[id="d81Respondent"]', '../data/dummy.pdf');
   I.wait('10');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
