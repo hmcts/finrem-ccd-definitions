@@ -55,7 +55,7 @@ exports.config = {
     reporterOptions:
       {
         reportDir: './functional-output/xui',
-          reportName: 'FinRemTests',
+          reportFilename: 'FinRemTests',
         inlineAssets: true
       }
   },
