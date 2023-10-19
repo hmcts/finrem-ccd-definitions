@@ -337,8 +337,6 @@ ccd:
     imageTag: "ccd-divorce-logstash-latest"
     logstashJavaOpts: -Xmx1g -Xms512M
     extraEnvs:
-      - name: DATA_STORE_PASS
-        value: hmcts
       - name: DATA_STORE_URL
         value: "jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/{{ .Values.global.databaseNamePrefix }}data-store?sslmode=require&stringtype=unspecified"
       - name: DATA_STORE_USER
@@ -358,6 +356,11 @@ ccd:
         mountPath: /usr/share/logstash/files
     livenessProbe:
       initialDelaySeconds: 90
+    secrets:
+      DATA_STORE_PASS:
+        secretRef: "{{ .Values.global.postgresSecret }}"
+        key: PASSWORD
+        disabled: false
 
 aac-manage-case-assignment:
   enabled: true
