@@ -340,7 +340,7 @@ ccd:
       - name: DATA_STORE_PASS
         value: hmcts
       - name: DATA_STORE_URL
-        value: "jdbc:postgresql://sscs-preview.postgres.database.azure.com:5432/{{ .Values.global.databaseNamePrefix }}data-store?sslmode=require&stringtype=unspecified"
+        value: "jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/{{ .Values.global.databaseNamePrefix }}data-store?sslmode=require&stringtype=unspecified"
       - name: DATA_STORE_USER
         value: hmcts
       - name: ES_HOSTS
