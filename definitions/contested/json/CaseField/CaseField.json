@@ -249,16 +249,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "divorceUploadEvidence1",
-    "Label": "Upload Decree Nisi / conditional order",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "divorceDocuments"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceDecreeNisiDate",
     "Label": "Date order granted",
     "FieldType": "Date",
@@ -268,32 +258,11 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "divorceUploadEvidence2",
-    "Label": "Upload Decree Absolute",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "divorceDocuments"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "divorceDecreeAbsoluteDate",
     "Label": "Decree Absolute Date",
     "FieldType": "Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "divorceUploadPetition",
-    "Label": "Upload Petition ",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID":  "divorceDocuments"
-
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1705,45 +1674,12 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "miniFormA",
-    "Label": "Online Form A",
-    "HintText": "Online Form A",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "formA"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "formC",
-    "Label": "Form C",
-    "HintText": "Form C",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "hearingNotices"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "formG",
     "Label": "Form G",
     "HintText": "Form G",
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "outOfFamilyCourtResolution",
-    "Label": "Out Of Family Court Resolution",
-    "HintText": "Out Of Family Court Resolution",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": null
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1821,16 +1757,6 @@
     "FieldTypeParameter": "FR_ct_uploadOrder",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "uploadConsentedOrder",
-    "Label": "Upload Consented Order",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2185,16 +2111,6 @@
     "FieldType": "Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "refusalOrderPreviewDocument",
-    "Label": "Preview of Refusal Order",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2927,16 +2843,6 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalEmailUploadedDocument",
-    "Label": "Upload Document",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "correspondence"
-  },
-  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalEmailCollection",
@@ -3067,17 +2973,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentOrder",
-    "Label": "Draft Consent Order",
-    "HintText": "Please upload a scanned copy of the draft consent order that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "consentApplications"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "consentD81Label",
     "Label": "#### D81",
     "FieldType": "Label",
@@ -3093,39 +2988,6 @@
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentD81Joint",
-    "Label": "Form D81 Joint Document",
-    "HintText": "Joint D81 form, signed by both parties",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "consentApplications"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentD81Applicant",
-    "Label": "Form D81 Applicant Document",
-    "HintText": "D81 form, signed by Applicant",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "consentApplications"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentD81Respondent",
-    "Label": "Form D81 Respondent Document",
-    "HintText": "D81 form, signed by Respondent",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "consentApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3252,16 +3114,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalOrderPreviewDocument",
-    "Label": "Preview of General Order",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "transitional"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalOrderJudgeType",
     "Label": "Select Judge",
     "FieldType": "FixedList",
@@ -3290,16 +3142,6 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalOrderLatestDocument",
-    "Label": "Latest General Order",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "approvedOrders"
-  },
-  {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalLetterCollection",
@@ -3309,16 +3151,6 @@
     "FieldTypeParameter": "FR_GeneralLetterDocument",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalLetterUploadedDocument",
-    "Label": "Upload Document",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "correspondence"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -3486,16 +3318,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "orderRefusalPreviewDocument",
-    "Label": "Preview of Draft Order",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "transitional"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "orderRefusalCollection",
     "Label": "Application Not Approved",
     "HintText": "Warning: Previous orders will appear at the top of the page. To avoid overwriting a previous order, please ensure you scroll to the bottom of the page and choose ‘Add New’. A blank template will then appear for you to complete.",
@@ -3517,88 +3339,11 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentMiniFormA",
-    "Label": "Online Form A",
-    "HintText": "Online Form A",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "consentApplications"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetRes",
-    "Label": "Bulk Print Cover Sheet For Respondent / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "caseDocuments"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "bulkPrintLetterIdRes",
     "Label": "Bulk Print LetterId For Respondent / Solicitor",
     "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetApp",
-    "Label": "Bulk Print Cover Sheet For Applicant / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "caseDocuments"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener1",
-    "Label": "Bulk Print Cover Sheet For Intervener1 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "caseDocuments"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener2",
-    "Label": "Bulk Print Cover Sheet For Intervener2 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "caseDocuments"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener3",
-    "Label": "Bulk Print Cover Sheet For Intervener3 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "caseDocuments"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener4",
-    "Label": "Bulk Print Cover Sheet For Intervener4 / Solicitor",
-    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "caseDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3763,38 +3508,6 @@
     "Label": "Special measures",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalApplicationDocument",
-    "FieldType": "Document",
-    "Label": "Upload General Application",
-    "HintText": "Please upload a copy of the application as a word or PDF document (word documents will be converted to PDF after submission).",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "generalApplicationsCategory"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalApplicationLatestDocument",
-    "FieldType": "Document",
-    "Label": "General Application",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "generalApplicationsCategory"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalApplicationDraftOrder",
-    "FieldType": "Document",
-    "Label": "Upload Draft Order",
-    "HintText": "Please upload a copy of the draft order as a word or PDF document (word documents will be converted to PDF after submission)",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "generalApplicationsCategory"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4241,16 +3954,6 @@
     "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/09/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "latestDraftHearingOrder",
-    "FieldType": "Document",
-    "Label": "Latest draft hearing order",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "approvedOrders"
   },
   {
     "LiveFrom": "01/01/2021",
@@ -5163,27 +4866,6 @@
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "interimUploadAdditionalDocument",
-    "Label": " ",
-    "HintText": "Please upload any additional documents related to you application.",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "hearingNotices"
-  },
-  {
-    "LiveFrom": "01/09/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "interimHearingDirectionsDocument",
-    "FieldType": "Document",
-    "Label": "Interim Hearing",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
