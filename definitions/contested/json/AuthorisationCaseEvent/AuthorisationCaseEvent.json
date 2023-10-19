@@ -2077,5 +2077,19 @@
     "CaseEventID": "shareSelectedDocuments",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "clearApplicantPolicy",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "clearRespondentPolicy",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
   }
 ]
