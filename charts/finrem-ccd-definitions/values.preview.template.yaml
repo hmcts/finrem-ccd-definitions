@@ -298,6 +298,7 @@ ccd:
         - name: "pr-${CHANGE_ID}-draftstore"
         - name: "pr-${CHANGE_ID}-role-assignment"
         - name: "pr-${CHANGE_ID}-definition-store"
+        - name: "pr-${CHANGE_ID}-user-profile"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
