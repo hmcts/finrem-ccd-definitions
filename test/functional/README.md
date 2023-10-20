@@ -1,7 +1,7 @@
 # functional tests
 
 
-## How to run functional tests against AAT
+## How to run functional test against AAT
 
 
 1) import these evn variables
