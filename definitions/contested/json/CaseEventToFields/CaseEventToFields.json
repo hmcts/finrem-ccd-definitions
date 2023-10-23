@@ -523,7 +523,6 @@
     "PageID": 5,
     "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -4169,7 +4168,6 @@
     "PageID": 5,
     "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -11346,5 +11344,29 @@
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "clearApplicantPolicy",
+    "CaseFieldID": "cautionMessage",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "clearRespondentPolicy",
+    "CaseFieldID": "cautionMessage",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
   }
 ]
