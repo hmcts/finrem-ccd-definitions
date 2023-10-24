@@ -1232,7 +1232,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadAdditionalDocument",
-    "Label": "   ",
+    "Label": "Upload other documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadAdditionalDocument",
     "SecurityClassification": "Public",
@@ -5313,15 +5313,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "uploadOtherDocumentLabelOptional",
-    "Label": "## Upload other documents (Optional)",
-    "FieldType": "Label",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "fdrCaseDocumentCollection",
     "Label": "                                                                                      ",
     "FieldType": "Collection",
@@ -6940,6 +6931,15 @@
     "HintText": "Hearing Notices",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_intervenerHearingNoticeCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cautionMessage",
+    "Label": "## Warning: This event will clear any existing organisation and set the default role. Do you want to continue?",
+    "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }

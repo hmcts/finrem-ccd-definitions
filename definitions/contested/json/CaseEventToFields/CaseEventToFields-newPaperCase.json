@@ -120,7 +120,7 @@
     "CaseEventID": "FR_newPaperCase",
     "CaseFieldID": "applicantSolicitorPhone",
     "PageFieldDisplayOrder": 14,
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
@@ -458,7 +458,6 @@
     "PageID": 4,
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -618,7 +617,7 @@
     "CaseEventID": "FR_newPaperCase",
     "CaseFieldID": "rSolicitorPhone",
     "PageFieldDisplayOrder": 10,
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "PageID": 6,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
@@ -2262,7 +2261,7 @@
     "CaseEventID": "FR_amendPaperApplication",
     "CaseFieldID": "applicantSolicitorPhone",
     "PageFieldDisplayOrder": 14,
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
@@ -2600,7 +2599,6 @@
     "PageID": 5,
     "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2760,7 +2758,7 @@
     "CaseEventID": "FR_amendPaperApplication",
     "CaseFieldID": "rSolicitorPhone",
     "PageFieldDisplayOrder": 10,
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,

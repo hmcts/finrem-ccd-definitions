@@ -1312,7 +1312,7 @@
     "LiveFrom": "10/07/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_solCompleteUploadDocument",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPSOLICITOR]",
     "CRUD": "CR"
   },
   {
@@ -1460,7 +1460,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_uploadApprovedOrder",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/11/2022",
