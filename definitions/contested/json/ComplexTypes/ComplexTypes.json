@@ -20,15 +20,6 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_uploadAdditionalDocument",
-    "ListElementCode": "additionalDocuments",
-    "FieldType": "Document",
-    "ElementLabel": "Please upload any additional documents related to you application",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_uploadAdditionalDocument",
     "ListElementCode": "additionalDocumentType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_documentType",
@@ -986,7 +977,8 @@
     "FieldType": "Document",
     "ElementLabel": "Upload Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "Category": "correspondence"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1171,15 +1163,7 @@
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
-  {
-    "LiveFrom": "01/06/2020",
-    "ID": "FR_ct_generalApplicationCollection",
-    "ListElementCode": "generalApplicationDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
+
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_uploadCaseDocument",
@@ -2298,16 +2282,6 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_supportDocument",
-    "ListElementCode": "supportDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Supporting Document",
-    "HintText": "Please upload a copy of the supporting document as a word or PDF document (word documents will be converted to PDF after submission)",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
     "ID": "generalApplicationCollection",
     "ListElementCode": "generalApplicationReceivedFrom",
     "FieldType": "FixedRadioList",
@@ -2374,26 +2348,6 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "generalApplicationCollection",
-    "ListElementCode": "generalApplicationDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Upload General Application",
-    "HintText": "Please upload a copy of the application as a word or PDF document (word documents will be converted to PDF after submission).",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "generalApplicationCollection",
-    "ListElementCode": "generalApplicationDraftOrder",
-    "FieldType": "Document",
-    "ElementLabel": "Upload Draft Order",
-    "HintText": "Please upload a copy of the draft order as a word or PDF document (word documents will be converted to PDF after submission)",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "generalApplicationCollection",
     "ListElementCode": "gaSupportDocuments",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_supportDocument",
@@ -2425,15 +2379,6 @@
     "ListElementCode": "generalApplicationOutcomeOther",
     "FieldType": "Text",
     "ElementLabel": "Outcome details",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "generalApplicationCollection",
-    "ListElementCode": "generalApplicationDirectionsDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Hearing / no hearing document",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
