@@ -977,8 +977,7 @@
     "FieldType": "Document",
     "ElementLabel": "Upload Document",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "Category": "correspondence"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1568,16 +1567,6 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "applicantScanDocsCollection",
-    "ListElementCode": "url",
-    "FieldType": "Document",
-    "ElementLabel": "Scanned document url",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryId": "lipOrScannedDocuments"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "applicantScanDocsCollection",
     "ListElementCode": "controlNumber",
     "FieldType": "Text",
     "ElementLabel": "Document Control Number",
@@ -1627,25 +1616,6 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "ScannedDocumentType",
     "ElementLabel": "Document Type",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocsCollection",
-    "ListElementCode": "url",
-    "FieldType": "Document",
-    "ElementLabel": "Scanned document url",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryId": "lipOrScannedDocuments"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "respondentScanDocsCollection",
-    "ListElementCode": "controlNumber",
-    "FieldType": "Text",
-    "ElementLabel": "Document Control Number",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
