@@ -8990,6 +8990,13 @@
   {
     "LiveFrom": "01/10/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respondentRepresented",
     "UserRole": "caseworker-approver",
     "CRUD": "CRUD"
@@ -9062,6 +9069,13 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "RespondentOrganisationPolicy",
     "UserRole": "caseworker-approver",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/10/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRUD"
   },
   {
@@ -16427,5 +16441,13 @@
     "CaseFieldID": "intv4HearingNoticesCollection",
     "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/05/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "cautionMessage",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "R"
   }
+
 ]
