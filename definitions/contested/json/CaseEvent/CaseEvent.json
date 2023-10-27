@@ -844,10 +844,13 @@
     "DisplayOrder": 123,
     "PreConditionState(s)": "consentedOrderApproved;consentedOrderNotApproved",
     "PostConditionState": "*",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/consent-in-contested/send-order",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
-    "ShowSummary": "N"
+    "ShowSummary": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
