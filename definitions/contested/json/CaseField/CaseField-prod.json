@@ -172,12 +172,32 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDocument",
+    "FieldType": "Document",
+    "Label": "Upload General Application",
+    "HintText": "Please upload a copy of the application as a word or PDF document (word documents will be converted to PDF after submission).",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationLatestDocument",
+    "FieldType": "Document",
+    "Label": "General Application",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "bulkPrintCoverSheetRes",
     "Label": "Bulk Print Cover Sheet For Respondent / Solicitor",
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "caseDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -192,7 +212,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener1",
+    "ID": "bulkPrintCoverSheetIntv1",
     "Label": "Bulk Print Cover Sheet For Intervener1 / Solicitor",
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
@@ -202,7 +222,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener2",
+    "ID": "bulkPrintCoverSheetIntv2",
     "Label": "Bulk Print Cover Sheet For Intervener2 / Solicitor",
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
@@ -212,7 +232,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener3",
+    "ID": "bulkPrintCoverSheetIntv3",
     "Label": "Bulk Print Cover Sheet For Intervener3 / Solicitor",
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
@@ -222,29 +242,10 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "bulkPrintCoverSheetIntervener4",
+    "ID": "bulkPrintCoverSheetIntv4",
     "Label": "Bulk Print Cover Sheet For Intervener4 / Solicitor",
     "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
     "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalApplicationDocument",
-    "FieldType": "Document",
-    "Label": "Upload General Application",
-    "HintText": "Please upload a copy of the application as a word or PDF document (word documents will be converted to PDF after submission).",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalApplicationLatestDocument",
-    "FieldType": "Document",
-    "Label": "General Application",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
