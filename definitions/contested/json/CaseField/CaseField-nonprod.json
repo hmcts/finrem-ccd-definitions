@@ -88,7 +88,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "administrativeDocumentsTransitional"
   },
   {
     "LiveFrom": "13/12/2019",
@@ -162,7 +162,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "approvedOrders"
+    "CategoryID": "administrativeDocumentsTransitional"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -332,6 +332,16 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryId": "variationOrder"
+    "CategoryID": "applicationsVariationOrder"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "latestRefusalOrder",
+    "Label": "Latest Refusal Order Document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "administrativeDocumentsTransitional"
   }
 ]

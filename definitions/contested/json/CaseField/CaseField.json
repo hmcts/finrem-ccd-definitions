@@ -2126,16 +2126,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "latestRefusalOrder",
-    "Label": "Latest Refusal Order Document",
-    "FieldType": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "refusalOrderAdditionalDocument",
     "Label": "Refusal Order Document",
     "FieldType": "Document",
@@ -5358,7 +5348,8 @@
     "Label": "Original order to be varied",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID":  "applicationsVariationOrder"
   },
   {
     "LiveFrom": "01/01/2017",
