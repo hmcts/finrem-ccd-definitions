@@ -20,6 +20,16 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_uploadAdditionalDocument",
+    "ListElementCode": "additionalDocuments",
+    "FieldType": "Document",
+    "ElementLabel": "Please upload any additional documents related to you application",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsFormAOrA1OrB"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadAdditionalDocument",
     "ListElementCode": "additionalDocumentType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_documentType",
@@ -1604,6 +1614,16 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "applicantScanDocsCollection",
+    "ListElementCode": "url",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned document url",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "lipOrScannedDocuments"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "applicantScanDocsCollection",
     "ListElementCode": "scanDocType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "ScannedDocumentType",
@@ -1655,6 +1675,25 @@
     "ElementLabel": "Exception record reference",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocsCollection",
+    "ListElementCode": "controlNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Document Control Number",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "respondentScanDocsCollection",
+    "ListElementCode": "url",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned document url",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "lipOrScannedDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2298,6 +2337,161 @@
     "ElementLabel": "Upload DateTime",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "ID": "FR_ct_generalApplicationCollection",
+    "ListElementCode": "generalApplicationDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsGeneralApplications"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_supportDocument",
+    "ListElementCode": "supportDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Supporting Document",
+    "HintText": "Please upload a copy of the supporting document as a word or PDF document (word documents will be converted to PDF after submission)",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsGeneralApplications"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "ElementLabel": "Application received from",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationSender",
+    "FieldType": "DynamicRadioList",
+    "ElementLabel": "Application received from",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "appRespGeneralApplicationReceivedFrom",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_ApplicantAndRespondentEvidenceParty",
+    "ElementLabel": "Application received from",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationCreatedBy",
+    "FieldType": "Text",
+    "ElementLabel": "Application created by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationHearingRequired",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is a hearing required?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationTimeEstimate",
+    "FieldType": "Text",
+    "ElementLabel": "Time estimate",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationSpecialMeasures",
+    "FieldType": "Text",
+    "ElementLabel": "Special measures",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "gaSupportDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_supportDocument",
+    "ElementLabel": "Upload Supporting Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationCreatedDate",
+    "FieldType": "Date",
+    "ElementLabel": "Date Created",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationStatus",
+    "FieldType": "Text",
+    "ElementLabel": "Status",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationOutcomeOther",
+    "FieldType": "Text",
+    "ElementLabel": "Outcome details",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationDraftOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Upload Draft Order",
+    "HintText": "Please upload a copy of the draft order as a word or PDF document (word documents will be converted to PDF after submission)",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsGeneralApplications"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationDirectionsDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Hearing / no hearing document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsGeneralApplications"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "generalApplicationCollection",
+    "ListElementCode": "generalApplicationDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Upload General Application",
+    "HintText": "Please upload a copy of the application as a word or PDF document (word documents will be converted to PDF after submission).",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsGeneralApplications"
   },
   {
     "LiveFrom": "01/01/2017",
