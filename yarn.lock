@@ -2100,14 +2100,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-mocha@npm:^5.3.0":
-  version: 5.3.0
-  resolution: "eslint-plugin-mocha@npm:5.3.0"
+"eslint-plugin-mocha@npm:^10.0.0":
+  version: 10.2.0
+  resolution: "eslint-plugin-mocha@npm:10.2.0"
   dependencies:
-    ramda: ^0.26.1
+    eslint-utils: ^3.0.0
+    rambda: ^7.4.0
   peerDependencies:
-    eslint: ">= 4.0.0"
-  checksum: 6a806e86b731fec51ddea9afc0e671ee32dc9641a69d6d56e30ac465313758307b16ff4a0b795ad687b4cd3f4a463477227c87bf45fbd3c5e02989f3642a765e
+    eslint: ">=7.0.0"
+  checksum: d284812141ea18b9dcd1f173477e364bda2b86a621cd2a1c13636065255d32498df33b5d9a6fa1d64b187bd86819a7707ae8b0895228a9f545f12ed153fac1a2
   languageName: node
   linkType: hard
 
@@ -2554,7 +2555,7 @@ __metadata:
     config: ^3.3.3
     eslint: ^5.16.0
     eslint-plugin-codeceptjs: ^1.3.0
-    eslint-plugin-mocha: ^5.3.0
+    eslint-plugin-mocha: ^10.0.0
     express: ^4.17.3
     html_codesniffer: ^2.5.1
     husky: ^2.2.0
@@ -5048,10 +5049,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ramda@npm:^0.26.1":
-  version: 0.26.1
-  resolution: "ramda@npm:0.26.1"
-  checksum: 19c2730e44c129538151ae034c89be9b2c6a4ccc7c65cff57497418bc532ce09282f98cd927c39b0b03c6bc3f1d1a12d822b7b07f96a1634f4958a6c05b7b384
+"rambda@npm:^7.4.0":
+  version: 7.5.0
+  resolution: "rambda@npm:7.5.0"
+  checksum: ad608a9a4160d0b6b0921047cea1329276bf239ff58d439135288712dcdbbf0df47c76591843ad249d89e7c5a9109ce86fe099aa54aef0dc0aa92a9b4dd1b8eb
   languageName: node
   linkType: hard
 
