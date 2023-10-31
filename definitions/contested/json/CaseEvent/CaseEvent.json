@@ -549,6 +549,19 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_amendCaseCron",
+    "Name": "Amend Case",
+    "Description": "Amend Case for cron",
+    "DisplayOrder": 102,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_updateContactDetails",
     "Name": "Update contact details",
     "Description": "Update contact details",
