@@ -156,11 +156,50 @@ ccd:
 
   am-role-assignment-service:
     java:
-      disableKeyVaults: true
+      image: 'hmctspublic.azurecr.io/am/role-assignment-service:latest'
+      imagePullPolicy: Always
+      ingressHost: ""
+      releaseNameOverride: ${SERVICE_NAME}-am-role-assignment-service
+      readinessDelay: 240
+      livenessDelay: 240
+      environment:
+        ROLE_ASSIGNMENT_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
+        ROLE_ASSIGNMENT_DB_NAME: "{{ .Values.global.databaseNamePrefix }}role-assignment"
+        ROLE_ASSIGNMENT_DB_OPTIONS: "?stringtype=unspecified&reWriteBatchedInserts=true&sslmode=require"
+        AM_ROLE_ASSIGNMENT_SERVICE_SECRET: AAAAAAAAAAAAAAAA
+        IDAM_USER_URL: "https://idam-web-public.aat.platform.hmcts.net"
+        IDAM_S2S_URL: "http://rpe-service-auth-provider-aat.service.core-compute-aat.internal"
+        OPEN_ID_API_BASE_URI: "https://idam-web-public.{{ .Values.global.environment }}.platform.hmcts.net/o"
+        ROLE_ASSIGNMENT_IDAM_ADMIN_USERID: ras-validation-system@hmcts.net
+        SPRING_CLOUD_PROPERTIESVOLUME_PATHS: "/mnt/secrets/am,/mnt/secrets/finrem"
+        APPLICATION_LOGGING_LEVEL: INFO
+        BYPASS_ORG_DROOL_RULE: true
+        LAUNCH_DARKLY_ENV: pr
+        ENABLE_DB_MIGRATE: true
       keyVaults:
-        am:
+        finrem:
           secrets:
-            - role-assignment-service-LD-SDK-KEY
+            - name: preview-ccd-db-username
+              alias: ROLE_ASSIGNMENT_DB_USERNAME
+            - name: preview-ccd-db-password-2
+              alias: ROLE_ASSIGNMENT_DB_PASSWORD
+      secrets:
+        LD_SDK_KEY:
+          secretRef: role-assignment-service-LD-SDK-KEY
+          key: key
+          disabled: true
+        ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET:
+          secretRef: role-assignment-service-IDAM-CLIENT-SECRET
+          key: key
+          disabled: true
+        ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD:
+          secretRef: role-assignment-service-IDAM-ADMIN-SECRET
+          key: key
+          disabled: true
+  elasticsearch:
+    nameOverride: ${SERVICE_NAME}-es
+    clusterName: "es"
+    replicas: 1
 
   ccd-case-print-service:
     nodejs:
@@ -298,31 +337,6 @@ ccd:
         - name: "pr-${CHANGE_ID}-role-assignment"
         - name: "pr-${CHANGE_ID}-definition-store"
         - name: "pr-${CHANGE_ID}-user-profile"
-
-  elasticsearch:
-    nameOverride: ${SERVICE_NAME}-es
-    imageTag: "7.17.1"
-    clusterName: "es"
-    replicas: 1
-    initResources:
-      limits:
-        cpu: "1000m"
-        memory: "1024Mi"
-      requests:
-        cpu: "50m"
-        memory: "1024Mi"
-    minimumMasterNodes: 1
-    antiAffinity: "soft"
-    esJavaOpts: "-Xmx1g -Xms1g"
-    extraEnvs:
-      - name: discovery.type
-        value: single-node
-      - name: cluster.initial_master_nodes
-        value: ""
-      - name: action.auto_create_index
-        value: .security*,.watches,.triggered_watches,.watcher-history-*,.logstash_dead_letter,.ml*
-    persistence:
-      enabled: false
 
 logstash:
   image: hmctspublic.azurecr.io/imported/logstash/logstash
