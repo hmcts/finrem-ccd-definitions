@@ -946,7 +946,7 @@
     "Name": "Process Order",
     "Description": "Process Order",
     "DisplayOrder": 36,
-    "PreConditionState(s)": "*",
+    "PreConditionState(s)": "scheduleRaiseDirectionsOrder;generalApplication;generalApplicationOutcome",
     "PostConditionState": "orderDrawn",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
