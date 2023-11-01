@@ -70,7 +70,7 @@ dependencies {
 
     testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.24.2'
 
-    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.15.2'
+    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.15.3'
     testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.15.3'
     testImplementation group: 'commons-io', name: 'commons-io', version: '2.14.0'
     testImplementation group: 'com.github.hmcts', name: 'ccd-test-definitions', version: '7.19.12'
