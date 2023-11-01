@@ -2,36 +2,26 @@ exports.config = {
   tests: './*_test.js',
   output: './functional-output/xui',
   helpers: {
-      Puppeteer: {
-          url: 'http://localhost:3000',
-          smartWait: 50000,
-          waitForTimeout: 90000,
-          show: false,
-          windowSize: '1440x700',
-          waitForNavigation: 'domcontentloaded',
-          restart: true,
-          keepCookies: false,
-          keepBrowserState: false,
-          ignoreHTTPSErrors: true,
-          chrome: {
-              ignoreHTTPSErrors: true,
-              args: [
-                  '--no-sandbox',
-                  '--smartwait',
-                  '--window-size=1440,1400',
-                  '--disable-gpu'
-
-              ]
-          }
+    Playwright: {
+      url: "https://manage-case.aat.platform.hmcts.net/",
+      show: true,
+      browser: 'chromium',
+      waitForAction: 350,
+      retries: 5,
+      waitForNavigation: 'load',
+      ignoreHTTPSErrors: true,
+      bypassCSP: true,
+      restart: true,
+      keepCookies: false,
+      keepBrowserState: false,
       },
 
-
-      //just adding helper class here
-    PuppeteerHelper: { require: '../helpers/PuppeteerHelper.js' },
-    'JSWait': {
-        require: '../helpers/JSWait.js'
+    PlaywrightHelper: { require: '../helpers/PlaywrightHelper.js' },
+      'JSWait': {
+          require: '../helpers/JSWait.js'
     }
   },
+
     plugins: {
         retryFailedStep: {
             enabled: true
@@ -51,14 +41,14 @@ exports.config = {
             'chunks': 2
         }
     },
-  mocha: {
-    reporterOptions:
-      {
-        reportDir: './functional-output/xui',
-          reportFilename: 'FinRemTests',
-        inlineAssets: true
-      }
-  },
+  // mocha: {
+  //   reporterOptions:
+  //     {
+  //       reportDir: './functional-output/xui',
+  //         reportFilename: 'FinRemTests',
+  //       inlineAssets: true
+  //     }
+  // },
   name: 'finrem-ccd-definitions'
 };
 
