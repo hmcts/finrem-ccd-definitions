@@ -32,7 +32,7 @@ Feature('Contested Events');
 
 // }).retry(3);
 
-Scenario('Update Contact Details for contested Case @nightly ', async { I } => {
+Scenario('Update Contact Details for contested Case @nightly ', async ({ I }) => {
     //caseworker, type-matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -45,7 +45,7 @@ Scenario('Update Contact Details for contested Case @nightly ', async { I } => {
 
 }).retry(3);
 
-Scenario('Contested Add Note  @nightly ', async { I } => { //Matrimonial
+Scenario('Contested Add Note  @nightly ', async ({ I }) => { //Matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -79,7 +79,7 @@ Scenario('Contested Add Note  @nightly ', async { I } => { //Matrimonial
     I.see('Case Submission');
 }).retry(3);*/
 
-Scenario('Caseworker refunds an issued case @nightly', async { I } => {
+Scenario('Caseworker refunds an issued case @nightly', async ({ I }) => {
     logger.info("Refund test starting");
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -93,7 +93,7 @@ Scenario('Caseworker refunds an issued case @nightly', async { I } => {
     logger.info("Refund test completed");
 }).retry(3);
 
-Scenario('Contested Manage Barrister @nightly', async { I } => {
+Scenario('Contested Manage Barrister @nightly', async ({ I }) => {
     //Matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -111,7 +111,7 @@ Scenario('Contested Manage Barrister @nightly', async { I } => {
     logger.info("manage barrister tab verified...");
 }).retry(3);
 
-Scenario('List for hearing contested case @nightly', async { I } => {
+Scenario('List for hearing contested case @nightly', async ({ I }) => {
 
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -137,7 +137,7 @@ Scenario('List for hearing contested case @nightly', async { I } => {
     I.waitForText('List for Hearing');
 }).retry(3);
 
-Scenario.skip('Contested E2E @nightly @preview', async { I } => {
+Scenario.skip('Contested E2E @nightly @preview', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -164,7 +164,7 @@ Scenario.skip('Contested E2E @nightly @preview', async { I } => {
     logger.info('-----------completed E2E contested test for -------------', caseId);
 }).retry(3);
 
-Scenario.skip('Caseworker runs List for Interim Hearing @nightly', async { I } => {
+Scenario.skip('Caseworker runs List for Interim Hearing @nightly', async ({ I }) => {
     logger.info("List for Interim Hearing test starting");
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
