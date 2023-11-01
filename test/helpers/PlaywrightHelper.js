@@ -2,14 +2,14 @@
 'use strict';
 
 const Helper = codecept_helper;
-const helperName = 'Puppeteer';
+const helperName = 'Playwright';
 const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'true';
 const { getAccessibilityTestResult } = require('../accessibility/runner');
 const { generateAccessibilityReport } = require('../reporter/customReporter');
 
 const { runAccessibility } = require('../accessibility/runner');
 
-class PuppeteerHelper extends Helper {
+class PlaywrightHelper extends Helper {
   async runAccessibilityTest() {
     if (!testForAccessibility) {
       return;
@@ -49,4 +49,4 @@ class PuppeteerHelper extends Helper {
   }
 }
 
-module.exports = PuppeteerHelper;
+module.exports = PlaywrightHelper;
