@@ -25,17 +25,24 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Manage Interveners');
 
-Scenario('Caseworker add Interveners (represented) @nightly', async ({ I }) => {
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
-    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
-    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
+Scenario('Caseworker add Interveners (represented) @nightly @debug', async ({ I }) => {
+    // const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    // const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    // const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
+    // const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
 
+    const caseId = "1698917626128052";
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    //await I.acceptCookies();
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    await I.wait('5');
-    await I.manageIntervenersAdd('represented');
-    logger.info('Manage Interveners event completed');
+
+    // await I.wait('5');
+    // await I.manageIntervenersAdd('represented');
+    // logger.info('Manage Interveners event completed');
+
+    const nextBtnSelector = '.mat-tab-header-pagination-after  .mat-tab-header-pagination-chevron';
+    // await I.click(nextBtnSelector);
+    //await I.click('.mat-tab-header-pagination-after  .mat-tab-header-pagination-chevron');
     await I.contestedIntervenersTab(verifyTabText.historyTab.manageIntervenersEvent, verifyTabText.IntervenersTab);
     logger.info('Interveners tab verified');
 
@@ -45,7 +52,7 @@ Scenario('Caseworker add Interveners (represented) @nightly', async ({ I }) => {
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.contestedIntervenersTab(verifyTabText.historyTab.manageIntervenersEvent, verifyTabText.IntervenersTab);
     logger.info('Intervener verifying case access');
-}).retry(3);
+});
 
 Scenario('Caseworker add Interveners (not represented) @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');

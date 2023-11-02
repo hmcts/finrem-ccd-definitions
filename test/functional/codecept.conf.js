@@ -22,25 +22,28 @@ exports.config = {
     }
   },
 
-    plugins: {
-        retryFailedStep: {
-            enabled: true
-        },
-        autoDelay: {
-            enabled: true
-        },
-        screenshotOnFail: {
-            enabled: true,
-            fullPageScreenshots: 'true'
-        }
+  plugins: {
+    retryFailedStep: {
+      enabled: true
     },
+    tryTo: {
+      enabled: true
+    },
+    autoDelay: {
+      enabled: true
+    },
+    screenshotOnFail: {
+      enabled: true,
+      fullPageScreenshots: 'true'
+    }
+  },
   include: { I: './steps_file.js' },
   bootstrap: null,
-    multiple: {
-        'parallel': {
-            'chunks': 2
-        }
-    },
+  multiple: {
+    'parallel': {
+      'chunks': 2
+    }
+  },
   // mocha: {
   //   reporterOptions:
   //     {

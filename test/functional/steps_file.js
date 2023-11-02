@@ -110,6 +110,11 @@ module.exports = () => {
       this.fillField('password', password);
       this.click('Sign in');
       this.wait('10');
+      this.acceptCookies();
+    },
+    acceptCookies() {
+      tryTo(() => this.click('Accept analytics cookies'));
+      tryTo(() => this.click('Hide this message'));
     },
     createCase,
     waitForPage,
