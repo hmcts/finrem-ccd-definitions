@@ -1,11 +1,7 @@
-[31m[1mInternal Error[22m[39m: finrem-ccd-definitions@workspace:.: This package doesn't seem to be present in your lockfile; run "yarn install" to update the lockfile
-    at V0.getCandidates (/Users/johnnyvineall/Documents/GitHub/finrem-ccd-definitions/.yarn/releases/yarn-3.6.4.cjs:435:5145)
-    at kf.getCandidates (/Users/johnnyvineall/Documents/GitHub/finrem-ccd-definitions/.yarn/releases/yarn-3.6.4.cjs:391:1264)
-    at /Users/johnnyvineall/Documents/GitHub/finrem-ccd-definitions/.yarn/releases/yarn-3.6.4.cjs:439:8033
-    at df (/Users/johnnyvineall/Documents/GitHub/finrem-ccd-definitions/.yarn/releases/yarn-3.6.4.cjs:390:11070)
-    at ge (/Users/johnnyvineall/Documents/GitHub/finrem-ccd-definitions/.yarn/releases/yarn-3.6.4.cjs:439:8013)
-    at async Promise.allSettled (index 0)
-    at async io (/Users/johnnyvineall/Documents/GitHub/finrem-ccd-definitions/.yarn/releases/yarn-3.6.4.cjs:390:10398)
-    at async /Users/johnnyvineall/Documents/GitHub/finrem-ccd-definitions/.yarn/releases/yarn-3.6.4.cjs:439:8545
-    at async ti.startProgressPromise (/Users/johnnyvineall/Documents/GitHub/finrem-ccd-definitions/.yarn/releases/yarn-3.6.4.cjs:390:47651)
-    at async je.resolveEverything (/Users/johnnyvineall/Documents/GitHub/finrem-ccd-definitions/.yarn/releases/yarn-3.6.4.cjs:439:6573)
+➤ YN0035: Bad Request
+➤ YN0035:   Response Code: 400 (Bad Request)
+➤ YN0035:   Request Method: POST
+➤ YN0035:   Request URL: https://registry.yarnpkg.com/-/npm/v1/security/audits/quick
+
+➤ Errors happened when preparing the environment required to run this command.
+➤ This might be caused by packages being missing from the lockfile, in which case running "yarn install" might help.
