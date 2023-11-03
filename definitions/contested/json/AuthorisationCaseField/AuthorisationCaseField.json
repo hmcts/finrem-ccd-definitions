@@ -3341,6 +3341,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalOrders",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalOrdersConsent",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -3386,6 +3393,13 @@
     "CaseFieldID": "judgeNotApprovedReasons",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "judgeNotApprovedReasons",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4002,6 +4016,13 @@
     "CaseFieldID": "refusalOrderCollection",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "refusalOrderCollection",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5807,6 +5828,13 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "judgesAmendedOrderCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "judgesAmendedOrderCollection",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRUD"
   },
   {
