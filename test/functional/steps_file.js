@@ -85,6 +85,7 @@ module.exports = () => {
     signInIdam(username, password) {
       this.amOnPage(`${process.env.CCD_WEB_URL}`);
       this.wait('5');
+      this.acceptCookies();
       if(crossBrowser=='true'){
         this.wait('10');
       }
@@ -94,13 +95,14 @@ module.exports = () => {
       this.fillField('password', password);
       this.click('Sign in');
       this.wait('10');
+      this.acceptCookies();
       this.refreshPage();
       this.wait('5');
     },
 
     signOut() {
       this.amOnPage(`${process.env.CCD_WEB_URL}`);
-      this.wait('20');
+      this.wait('10');
       this.click('Sign out');
     },
     signInXuiOrg(username, password) {
@@ -110,9 +112,9 @@ module.exports = () => {
       this.fillField('password', password);
       this.click('Sign in');
       this.wait('10');
-      this.acceptCookies();
     },
     acceptCookies() {
+      tryTo(() => this.click('Accept additional cookies'));
       tryTo(() => this.click('Accept analytics cookies'));
       tryTo(() => this.click('Hide this message'));
     },
