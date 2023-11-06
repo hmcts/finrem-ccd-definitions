@@ -549,6 +549,19 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_amendCaseCron",
+    "Name": "Amend Case",
+    "Description": "Amend Case for cron",
+    "DisplayOrder": 102,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_updateContactDetails",
     "Name": "Update contact details",
     "Description": "Update contact details",
@@ -840,10 +853,13 @@
     "DisplayOrder": 123,
     "PreConditionState(s)": "consentedOrderApproved;consentedOrderNotApproved",
     "PostConditionState": "*",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/consent-in-contested/send-order",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
     "ShowEventNotes": "N",
-    "ShowSummary": "N"
+    "ShowSummary": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -940,8 +956,8 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_directionOrder",
-    "Name": "Upload Order",
-    "Description": "Upload Order",
+    "Name": "Process Order",
+    "Description": "Process Order",
     "DisplayOrder": 36,
     "PreConditionState(s)": "scheduleRaiseDirectionsOrder;generalApplication;generalApplicationOutcome",
     "PostConditionState": "orderDrawn",

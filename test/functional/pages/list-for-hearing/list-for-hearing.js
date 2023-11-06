@@ -11,9 +11,9 @@ async function listForHearing(){
   I.fillField('input[id="hearingDate-month"]', '02');
   I.fillField('input[id="hearingDate-year"]', '2023');
   I.fillField('input[id="hearingTime"]', '11:30');
-  I.selectOption('select[id="regionList"]', 'London');
-  I.selectOption('select[id="londonFRCList"]', 'London FRC');
-  I.selectOption('select[id="cfcCourtList"]', 'THE ROYAL COURT OF JUSTICE');
+  I.selectOption('select[id="hearing_regionList"]', 'London');
+  I.selectOption('select[id="hearing_londonFRCList"]', 'London FRC');
+  I.selectOption('select[id="hearing_cfcCourtList"]', 'THE ROYAL COURT OF JUSTICE');
   I.fillField('input[id="additionalInformationAboutHearing"]', 'This is an additional information');
   I.checkOption('input[id="additionalHearingDocumentsOption_No"]');
   I.waitForContinueButtonEnabled();
