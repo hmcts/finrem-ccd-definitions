@@ -11,7 +11,7 @@ To install the dependencies for both this project and the submodule (ccd-definit
 `yarn install && yarn reset-ccd-submodule`
 
 ## Setup for M1 chip Macs
-
+Test
 If running yarn install throws an error with this output:
 
 `The chromium binary is not available for arm64`
