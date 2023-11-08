@@ -410,7 +410,6 @@
     "DisplayOrder": 32,
     "PreConditionState(s)": "solicitorDraftOrder;caseFileSubmitted;prepareForHearing",
     "PostConditionState": "reviewOrder",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
