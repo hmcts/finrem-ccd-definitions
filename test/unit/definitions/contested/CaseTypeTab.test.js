@@ -3,25 +3,27 @@ const assert = require('chai').assert;
 const { uniq, uniqWith, map, filter } = require('lodash');
 
 const caseTypeTab = Object.assign(require('definitions/contested/json/CaseTypeTab/CaseTypeTab.json'), {});
+const caseTypeTabNonprod = Object.assign(require('definitions/contested/json/CaseTypeTab/CaseTypeTab-nonprod.json'), {});
+const caseTypeTabsConcat = caseTypeTab.concat(caseTypeTabNonprod);
 const caseField = Object.assign(require('definitions/contested/json/CaseField/CaseField'), {});
 const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField/CaseField-common'), []);
 const caseFieldProd = Object.assign(require('definitions/contested/json/CaseField/CaseField-prod'), []);
 const caseFieldAll = caseField.concat(caseFieldCommon, caseFieldProd);
-const tabIds = uniq(map(caseTypeTab, 'TabID'));
+const tabIds = uniq(map(caseTypeTabsConcat, 'TabID'));
 
 describe('CaseTypeTab', () => {
   it('should contain a unique case field ID per tab ID (no duplicate field in a tab)', () => {
     const uniqResult = uniqWith(
-      caseTypeTab,
+        caseTypeTabsConcat,
       (field1, field2) => {
         return field1.TabID === field2.TabID && field1.CaseFieldID === field2.CaseFieldID;
       }
     );
-    expect(uniqResult).to.eql(caseTypeTab);
+    expect(uniqResult).to.eql(caseTypeTabsConcat);
   });
   it('should contain a unique tab field display order ID field tab ID (no duplicate field order in a tab)', () => {
     tabIds.forEach(tabId => {
-      const allFieldsPerTab = filter(caseTypeTab, field => {
+      const allFieldsPerTab = filter(caseTypeTabsConcat, field => {
         return field.TabID === tabId;
       });
       const uniqResults = uniqWith(
@@ -35,7 +37,7 @@ describe('CaseTypeTab', () => {
   });
   it('should contain a proper sequence for TabFieldDisplayOrder with no gaps', () => {
     tabIds.forEach(tabId => {
-      const allFieldsPerTab = filter(caseTypeTab, field => {
+      const allFieldsPerTab = filter(caseTypeTabsConcat, field => {
         return field.TabID === tabId;
       });
       const allTabFieldDisplayOrderNumbers = map(allFieldsPerTab, field => {
@@ -94,11 +96,6 @@ describe('CaseTypeTab', () => {
     resDocuments: 19,
     'Trial Bundle': 20,
     'Shared Documents': 20,
-    sharedDocumentsAb: 20,
-    sharedDocumentsRs: 20,
-    sharedDocumentsRb: 20,
-    sharedDocumentsCa: 20,
-    sharedDocumentsCj: 20,
     interimSchedulingTab: 21,
     interimSchedulingTabAs: 21,
     interimSchedulingTabAb: 21,
@@ -148,7 +145,7 @@ describe('CaseTypeTab', () => {
   };
   tabIds.forEach(tabId => {
     it(`all ${tabId} fields should have the expected tab order ${expected[tabId]}`, () => {
-      const allTabFields = uniq(filter(caseTypeTab, field => {
+      const allTabFields = uniq(filter(caseTypeTabsConcat, field => {
         return field.TabID === tabId;
       }));
       const allTabOrders = uniq(map(allTabFields, 'TabDisplayOrder'));
@@ -205,12 +202,6 @@ describe('CaseTypeTab', () => {
       'appDocuments',
       'resDocuments',
       'Trial Bundle',
-      'Shared Documents',
-      'sharedDocumentsAb',
-      'sharedDocumentsRs',
-      'sharedDocumentsRb',
-      'sharedDocumentsCa',
-      'sharedDocumentsCj',
       'interimSchedulingTab',
       'interimSchedulingTabAs',
       'interimSchedulingTabAb',
@@ -255,13 +246,14 @@ describe('CaseTypeTab', () => {
       'intv2Documents',
       'intv3Documents',
       'intv4Documents',
-      'caseFileViewTab'
+      'caseFileViewTab',
+      'Shared Documents'
 
     ]);
   });
   it('should contain a valid case field IDs', () => {
     const validFields = uniq(map(caseFieldAll, 'ID'));
-    const objectsWithInvalidCaseId = filter(caseTypeTab, field => {
+    const objectsWithInvalidCaseId = filter(caseTypeTabsConcat, field => {
       return validFields.indexOf(field.CaseFieldID) === -1;
     });
     expect(objectsWithInvalidCaseId).to.eql([]);
