@@ -220,6 +220,7 @@ withPipeline("nodejs", product, component) {
     sh """
        yarn playwright install
     """
+    echo "Before smoke? Should have just run yarn playwright install"
   }
 
   before('functionalTest') {
