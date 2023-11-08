@@ -3,8 +3,8 @@ exports.config = {
   output: './functional-output/xui',
   helpers: {
     Playwright: {
-      url: "https://manage-case.aat.platform.hmcts.net/",
-      show: true,
+      url: "http://localhost:3000",
+      show: false,
       browser: 'chromium',
       waitForAction: 350,
       retries: 5,
