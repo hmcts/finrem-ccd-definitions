@@ -216,7 +216,7 @@ withPipeline("nodejs", product, component) {
     env.ENV='perftest'
   }
 
-  before('smoketest') {
+  before('smoketest:preview') {
     sh """
        yarn playwright install
     """
