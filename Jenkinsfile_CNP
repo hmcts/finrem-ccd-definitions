@@ -216,6 +216,12 @@ withPipeline("nodejs", product, component) {
     env.ENV='perftest'
   }
 
+  before('smoketest') {
+    sh """
+       yarn playwright install
+    """
+  }
+
   before('functionalTest') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
   }
