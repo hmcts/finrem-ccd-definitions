@@ -79,7 +79,7 @@ module.exports = () => {
     },
     uploadConfig(path) {
       this.click('Import Case Definition');
-      this.giveAllocationDirection('file').setInputFiles(path);
+      this.attachFile('file', path);
       this.click('Submit');
     },
     signInIdam(username, password) {
