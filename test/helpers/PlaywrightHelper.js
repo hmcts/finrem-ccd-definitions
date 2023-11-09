@@ -47,7 +47,6 @@ class PlaywrightHelper extends Helper {
       tryTo(() => page.click(tabXPath));
       //page.wait("1");
       await page.click('.mat-tab-header-pagination-after  .mat-tab-header-pagination-chevron');
-      console.log("Clicked arrow");
     }
 
     // const tabXPath = `//div[text()='${tabTitle}']`;
