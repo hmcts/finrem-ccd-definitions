@@ -217,10 +217,7 @@ withPipeline("nodejs", product, component) {
   }
 
   before('smoketest:preview') {
-    sh """
-       yarn playwright install
-    """
-    echo "Before smoke? Should have just run yarn playwright install"
+    sh 'yarn playwright install'
   }
 
   before('functionalTest') {
