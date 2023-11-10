@@ -44,14 +44,14 @@ exports.config = {
       'chunks': 2
     }
   },
-  // mocha: {
-  //   reporterOptions:
-  //     {
-  //       reportDir: './functional-output/xui',
-  //         reportFilename: 'FinRemTests',
-  //       inlineAssets: true
-  //     }
-  // },
+  mocha: {
+    reporterOptions:
+      {
+        reportDir: './functional-output/xui',
+          reportFilename: 'FinRemTests',
+        inlineAssets: true
+      }
+  },
   name: 'finrem-ccd-definitions'
 };
 
