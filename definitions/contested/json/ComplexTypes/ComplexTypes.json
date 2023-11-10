@@ -154,7 +154,8 @@
     "FieldType": "Document",
     "ElementLabel": "Document Url",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "approvedOrders"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -337,7 +338,8 @@
     "FieldType": "Document",
     "ElementLabel": "Scanned document url",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "lipOrScannedDocuments"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -988,7 +990,8 @@
     "FieldType": "Document",
     "ElementLabel": "Upload Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "correspondence"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1026,7 +1029,8 @@
     "FieldType": "Document",
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "approvedOrders"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -1218,7 +1222,8 @@
     "FieldType": "Document",
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID":  "applicationsConsentApplication"
   },
 
   {
@@ -2139,7 +2144,8 @@
     "ElementLabel": "Please upload any additional documents related to you application.",
     "FieldShowCondition": "interimPromptForAnyDocument=\"Yes\"",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2148,7 +2154,8 @@
     "FieldType": "Document",
     "ElementLabel": " ",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
