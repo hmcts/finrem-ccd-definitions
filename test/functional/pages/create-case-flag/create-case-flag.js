@@ -8,8 +8,8 @@ async function createCaseFlag(){
   I.waitForText('Create a case flag', '30');
   I.checkOption('input[id="flag-location-1"]');
   I.click('Next');
-  I.waitForElement('input[id="flag-type-2"]', 5);
-  I.checkOption('input[id="flag-type-2"]');
+  I.waitForElement('input[id="flag-type-3"]', 5);
+  I.checkOption('input[id="flag-type-3"]');
   I.click('Next');
 
   I.waitForText('Add comments for this flag');
