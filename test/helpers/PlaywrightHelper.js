@@ -45,16 +45,9 @@ class PlaywrightHelper extends Helper {
 
     for (let i = 1; i <loopMax; i++) {
       tryTo(() => page.click(tabXPath));
-      //page.wait("1");
       await page.click('.mat-tab-header-pagination-after  .mat-tab-header-pagination-chevron');
     }
 
-    // const tabXPath = `//div[text()='${tabTitle}']`;
-    // const tabExists = await page.waitForXPath(tabXPath, {timeout: 6000}) ? true : false;
-    // if (tabExists) {
-    //   const clickableTab = await page.$x(tabXPath);
-    //   await page.evaluate(el => {return el.click();}, clickableTab[0]);
-    // }
   }
 }
 

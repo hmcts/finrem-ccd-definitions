@@ -33,11 +33,9 @@ Scenario('Caseworker add Interveners (represented) @nightly', async ({ I }) => {
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-
     await I.wait('5');
     await I.manageIntervenersAdd('represented');
     logger.info('Manage Interveners event completed');
-
     await I.contestedIntervenersTab(verifyTabText.historyTab.manageIntervenersEvent, verifyTabText.IntervenersTab);
     logger.info('Interveners tab verified');
 
