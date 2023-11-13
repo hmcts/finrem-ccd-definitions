@@ -58,9 +58,14 @@ withNightlyPipeline("nodejs", product, component) {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     }
 
+    before('crossBrowserTest') {
+       sh 'yarn playwright install'
+    }
+
     afterSuccess('fullFunctionalTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
     }
+
     afterSuccess('crossBrowserTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
       }
