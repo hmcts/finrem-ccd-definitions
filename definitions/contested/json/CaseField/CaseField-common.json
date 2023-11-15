@@ -1,0 +1,72 @@
+[
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "generalLetterPreview",
+    "Label": "General letter preview",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "CategoryID": "administrativeDocumentsTransitional"
+  },
+  {
+    "LiveFrom": "11/03/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "paperApplication",
+    "Label": "Was the application made on paper?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "ApplicantOrganisationPolicy",
+    "Label": "Applicant Organisation Policy",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "RespondentOrganisationPolicy",
+    "Label": "Respondent Organisation Policy",
+    "FieldType": "OrganisationPolicy",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "confidentialCoverSheetLabel",
+    "Label": "## Confidential Coversheet",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "bulkPrintCoverSheetAppConfidential",
+    "Label": "Confidential Applicant Coversheet",
+    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "CategoryID": "administrativeDocumentsCoversheets"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "bulkPrintCoverSheetResConfidential",
+    "Label": "Confidential Respondent Coversheet",
+    "HintText": "Generated Bulk Print Cover Sheet from Docmosis",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "CategoryID": "administrativeDocumentsCoversheets"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "RespSolNotificationsEmailConsent",
+    "Label": "Future email communications",
+    "HintText": "I confirm I am willing to accept service of all correspondence and orders by email at the email address stated above",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  }
+]
