@@ -66,7 +66,6 @@
     "generate-excel-consented": "yarn run copy-common-components-consented && bash bin/consented/generate-excel-consented.sh",
     "generate-excel-local-consented": "bash bin/consented/generate-excel-local-consented.sh",
     "generate-excel-preview-consented": "bash bin/consented/generate-excel-preview-consented.sh",
-    "generate-excel-preview-contested-local": "FR_ENV=preview CCD_DEF_COS_URL=http://finrem-ccd-definitions-pr-1262-finrem-cos CCD_DEF_CCD_URL=http://finrem-ccd-definitions-pr-1262-ccd-data-store-api CCD_DEF_AAC_URL=http://finrem-ccd-definitions-pr-1262-aac-manage-case-assignment EXCLUDE='*-prod.json' yarn run generate-excel-contested",
     "generate-excel-aat-consented": "bash bin/consented/generate-excel-aat-consented.sh",
     "generate-excel-demo-consented": "bash bin/consented/generate-excel-demo-consented.sh",
     "generate-excel-demo-prod-like-consented": "bash bin/consented/generate-excel-demo-prod-like-consented.sh",
@@ -78,7 +77,6 @@
     "generate-excel-contested": "yarn run copy-common-components-contested && bash bin/contested/generate-excel-contested.sh",
     "generate-excel-local-contested": "bash bin/contested/generate-excel-local-contested.sh",
     "generate-excel-preview-contested": "bash bin/contested/generate-excel-preview-contested.sh",
-    "generate-excel-preview-consented-local": "FR_ENV=preview CCD_DEF_COS_URL=http://finrem-ccd-definitions-pr-1195-finrem-cos CCD_DEF_CCD_URL=http://finrem-ccd-definitions-pr-1195-ccd-data-store-api CCD_DEF_AAC_URL=http://finrem-ccd-definitions-pr-1195-aac-manage-case-assignment EXCLUDE='*-prod.json' yarn run generate-excel-consented",
     "generate-excel-aat-contested": "bash bin/contested/generate-excel-aat-contested.sh",
     "generate-excel-demo-contested": "bash bin/contested/generate-excel-demo-contested.sh",
     "generate-excel-demo-prod-like-contested": "bash bin/contested/generate-excel-demo-prod-like-contested.sh",
@@ -105,11 +103,12 @@
     "@hmcts/nodejs-healthcheck": "^1.8.0",
     "@hmcts/nodejs-logging": "^4.0.4",
     "@hmcts/properties-volume": "1.1.0",
-    "codeceptjs": "^2.6.11",
+    "codeceptjs": "^3.5.6",
     "config": "^3.3.3",
     "eslint-plugin-codeceptjs": "^1.3.0",
     "express": "^4.17.3",
-    "html_codesniffer": "^2.5.1"
+    "html_codesniffer": "^2.5.1",
+    "playwright": "^1.39.0"
   },
   "devDependencies": {
     "@hmcts/eslint-config": "^1.4.0",
@@ -119,13 +118,12 @@
     "eslint-plugin-mocha": "^5.3.0",
     "husky": "^2.2.0",
     "loadsh": "^0.0.4",
-    "mocha": "^6.1.4",
-    "mochawesome": "^6.2.1",
+    "mocha": "^8.3.0",
+    "mochawesome": "^7.1.3",
     "otp": "^0.1.3",
     "pre-commit": "^1.2.2",
     "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0",
-    "puppeteer": "^7.1.0",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
     "sonar-scanner": "^3.1.0",
@@ -154,8 +152,7 @@
     "file-type": "16.5.4",
     "minimatch": "^3.0.5",
     "qs": ">=6.5.3",
-    "json5": ">=2.2.2",
-    "flat": ">=5.0.1"
+    "json5": ">=2.2.2"
   },
   "packageManager": "yarn@3.6.4"
 }
