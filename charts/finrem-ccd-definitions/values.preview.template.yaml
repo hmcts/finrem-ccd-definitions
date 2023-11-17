@@ -280,7 +280,7 @@ ccd:
         - divorce_as_caseworker_la@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
         - divorce_as_caseworker_admin@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
         - divorce_respondent_solicitor@mailinator.com|DIVORCE|FinancialRemedyMVP2|Submitted
-      USER_PROFILE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
+      userProfileDatabaseHost: '{{ tpl .Values.global.postgresHostname $}}'
       userProfileDatabasePort: 5432
       userProfileDatabaseUser: hmcts
       userProfileDatabasePassword: hmcts
