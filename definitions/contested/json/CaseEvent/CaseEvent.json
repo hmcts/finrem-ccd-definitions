@@ -965,7 +965,8 @@
     "DisplayOrder": 36,
     "PreConditionState(s)": "scheduleRaiseDirectionsOrder;generalApplication;generalApplicationOutcome",
     "PostConditionState": "orderDrawn",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested-upload-direction-order",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
