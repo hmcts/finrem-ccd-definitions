@@ -866,6 +866,26 @@
   },
   {
     "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_directionOrderCollection",
+    "ListElementCode": "orderDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order created at",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_directionOrderCollection",
+    "ListElementCode": "isOrderStamped",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
     "ID": "FR_ct_directionDetailCollection",
     "ListElementCode": "isAnotherHearingYN",
     "FieldType": "YesOrNo",
@@ -2843,6 +2863,34 @@
     "FieldType": "DateTime",
     "ElementLabel": "Notice received at",
     "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "uploadDraftDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Upload  Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "orderDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order created at",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "isOrderStamped",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
   }
 ]
