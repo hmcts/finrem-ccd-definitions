@@ -20,7 +20,7 @@ async function listForHearing(){
   I.click('Continue');
   I.waitForText('Check your answers');
   I.click('Submit');
-  I.waitForText('Ignore Warning and Go', 5);
+  I.waitForText('Ignore Warning and Go');
   I.click('Ignore Warning and Go');
 }
 
