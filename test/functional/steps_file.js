@@ -63,6 +63,7 @@ module.exports = () => {
 
     // Define custom steps here, use 'this' to access default methods of I.
     // It is recommended to place a general 'login' function here.
+    
     loginToAdminConsole() {
       this.amOnPage(`${process.env.CCD_ADMIN_URL}`);
       this.see('Sign in');
@@ -71,46 +72,49 @@ module.exports = () => {
       this.click('Sign in');
       this.see('Welcome to CCD Admin Web');
     },
+
     createRole(role) {
       this.click('Manage User Roles');
       this.click('Create User Role');
       this.fillField('role', role);
       this.click('Create');
     },
+
     uploadConfig(path) {
       this.click('Import Case Definition');
       this.attachFile('file', path);
       this.click('Submit');
     },
+
     signInIdam(username, password) {
       this.amOnPage(`${process.env.CCD_WEB_URL}`);
-      this.wait('5');
-      if(crossBrowser=='true'){
-        this.wait('10');
-      }
+      this.acceptCookies();
       this.refreshPage();
-      this.waitForText('Sign in',60);
       this.fillField('username', username);
       this.fillField('password', password);
       this.click('Sign in');
-      this.wait('10');
+      this.acceptCookies();
       this.refreshPage();
-      this.wait('5');
     },
 
     signOut() {
       this.amOnPage(`${process.env.CCD_WEB_URL}`);
-      this.wait('20');
       this.click('Sign out');
     },
+
     signInXuiOrg(username, password) {
       this.amOnPage(`${process.env.XUI_ORG_WEB_URL}`);
-      this.waitForText('Email address', '30');
       this.fillField('username', username);
       this.fillField('password', password);
       this.click('Sign in');
-      this.wait('10');
     },
+
+    acceptCookies() {
+      tryTo(() => this.click('Accept additional cookies'));
+      tryTo(() => this.click('Accept analytics cookies'));
+      tryTo(() => this.click('Hide this message'));
+    },
+
     createCase,
     waitForPage,
     waitForContinueButtonEnabled,

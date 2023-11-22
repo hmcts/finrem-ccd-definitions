@@ -5,7 +5,8 @@ const { uniq, uniqWith, map, filter } = require('lodash');
 const caseTypeTab = Object.assign(require('definitions/contested/json/CaseTypeTab/CaseTypeTab.json'), {});
 const caseField = Object.assign(require('definitions/contested/json/CaseField/CaseField'), {});
 const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField/CaseField-common'), []);
-const caseFieldAll = caseField.concat(caseFieldCommon);
+const caseFieldProd = Object.assign(require('definitions/contested/json/CaseField/CaseField-prod'), []);
+const caseFieldAll = caseField.concat(caseFieldCommon, caseFieldProd);
 const tabIds = uniq(map(caseTypeTab, 'TabID'));
 
 describe('CaseTypeTab', () => {
@@ -141,7 +142,8 @@ describe('CaseTypeTab', () => {
     intv1Documents: 33,
     intv2Documents: 34,
     intv3Documents: 35,
-    intv4Documents: 36
+    intv4Documents: 36,
+    caseFileViewTab: 37
 
   };
   tabIds.forEach(tabId => {
@@ -252,7 +254,8 @@ describe('CaseTypeTab', () => {
       'intv1Documents',
       'intv2Documents',
       'intv3Documents',
-      'intv4Documents'
+      'intv4Documents',
+      'caseFileViewTab'
 
     ]);
   });
