@@ -80,7 +80,7 @@
     "CaseFieldID": "manageScannedDocumentCollection",
     "ListElementCode": "scannedDate",
     "FieldType": "DateTime",
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "READONLY",
     "SecurityClassification": "Public"
   },
   {
@@ -90,7 +90,7 @@
     "CaseFieldID": "manageScannedDocumentCollection",
     "ListElementCode": "exceptionRecordReference",
     "FieldType": "Text",
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "READONLY",
     "SecurityClassification": "Public"
   }
 ]
