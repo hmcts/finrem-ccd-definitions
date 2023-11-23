@@ -1,0 +1,96 @@
+[
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "caseDocuments",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "fileName",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "caseDocumentType",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "caseDocumentOther",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "hearingDetails",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentiality",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "caseDocumentFdr",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "caseDocumentParty",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "caseDocumentUploadDateTime",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "manageScannedDocumentCollection=\"IMPOSSIBLAW\""
+  },
+
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "DisplayContext": "MANDATORY",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageScannedDocs",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "manageScannedDocumentCollection",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "DisplayContext": "MANDATORY",
+    "SecurityClassification": "Public"
+  }
+]
