@@ -16,7 +16,7 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Schedule 1');
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
+Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async ({ I }) => {
     await I.signInIdam(solicitorUserName, solicitorPassword);
     await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -35,7 +35,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => 
     await I.waitForText('Form A Application', '60')
 }).retry(3);
 
-Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I => {
+Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async ({ I }) => {
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -54,7 +54,7 @@ Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I =>
     await I.waitForText('Form A Application', '60')
 }).retry(3);
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async I => {
+Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async ({ I }) => {
     //The json file used to create case is new case data - this can be used to create a case via solicitor, case type schedule 1.
    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     await I.signInIdam(solicitorUserName, solicitorPassword);
