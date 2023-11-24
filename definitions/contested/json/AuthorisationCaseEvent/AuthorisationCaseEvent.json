@@ -2098,5 +2098,19 @@
     "CaseEventID": "clearRespondentPolicy",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_deleteUploadedDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_deleteUploadedDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
   }
 ]
