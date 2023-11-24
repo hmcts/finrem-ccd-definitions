@@ -2067,7 +2067,7 @@
     "Label": "Final Orders",
     "HintText": "Final Orders",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ct_directionOrderCollection",
+    "FieldTypeParameter": "view_finalOrderCollection",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -6413,15 +6413,6 @@
     "Label": "Confidential documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "10/09/2023",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "caseFileViewComponentLauncher",
-    "Label": "Case File View",
-    "FieldType": "ComponentLauncher",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
