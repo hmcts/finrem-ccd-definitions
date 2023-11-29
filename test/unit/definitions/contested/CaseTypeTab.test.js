@@ -5,7 +5,8 @@ const { uniq, uniqWith, map, filter } = require('lodash');
 const caseTypeTab = Object.assign(require('definitions/contested/json/CaseTypeTab/CaseTypeTab.json'), {});
 const caseField = Object.assign(require('definitions/contested/json/CaseField/CaseField'), {});
 const caseFieldCommon = Object.assign(require('definitions/common/json/CaseField/CaseField-common'), []);
-const caseFieldAll = caseField.concat(caseFieldCommon);
+const caseFieldProd = Object.assign(require('definitions/contested/json/CaseField/CaseField-prod'), []);
+const caseFieldAll = caseField.concat(caseFieldCommon, caseFieldProd);
 const tabIds = uniq(map(caseTypeTab, 'TabID'));
 
 describe('CaseTypeTab', () => {
