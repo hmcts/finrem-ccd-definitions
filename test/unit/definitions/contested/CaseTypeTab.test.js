@@ -142,8 +142,7 @@ describe('CaseTypeTab', () => {
     intv1Documents: 33,
     intv2Documents: 34,
     intv3Documents: 35,
-    intv4Documents: 36,
-    caseFileViewTab: 37
+    intv4Documents: 36
 
   };
   tabIds.forEach(tabId => {
@@ -254,8 +253,7 @@ describe('CaseTypeTab', () => {
       'intv1Documents',
       'intv2Documents',
       'intv3Documents',
-      'intv4Documents',
-      'caseFileViewTab'
+      'intv4Documents'
 
     ]);
   });
