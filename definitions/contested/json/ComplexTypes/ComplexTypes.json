@@ -719,7 +719,8 @@
     "FieldType": "Document",
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "applicationsFormAOrA1OrB"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -861,6 +862,26 @@
     "ElementLabel": "Upload  Document",
     "HintText": "PLEASE NOTE: You must upload a PDF version of document",
     "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_directionOrderCollection",
+    "ListElementCode": "orderDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order created at",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_directionOrderCollection",
+    "ListElementCode": "isOrderStamped",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
   },
   {
@@ -1009,7 +1030,8 @@
     "FieldType": "Document",
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "applicationsConsentApplication"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2841,6 +2863,34 @@
     "FieldType": "DateTime",
     "ElementLabel": "Notice received at",
     "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "uploadDraftDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Upload  Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "orderDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order created at",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "isOrderStamped",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
   }
 ]
