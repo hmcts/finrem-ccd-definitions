@@ -2332,6 +2332,7 @@
     "ListElementCode": "caseDocumentConfidentiality",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the document confidential?",
+    "FieldShowCondition": "caseDocumentType!=\"Without Prejudice offers\"",
     "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -2341,7 +2342,7 @@
     "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
-    "FieldShowCondition": "caseDocumentConfidentiality=\"No\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\"",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
     "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public",
