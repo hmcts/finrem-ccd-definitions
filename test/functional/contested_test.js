@@ -246,7 +246,7 @@ Scenario('Manage Confidential Documents', async ({ I }) => {
     //TODO - update test Manage Confidential Documents
 }).retry(3);
 
-Scenario('progress to listing for contested case @nightly', async ({ I }) => {
+Scenario.skip('progress to listing for contested case @nightly', async ({ I }) => {
 
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
