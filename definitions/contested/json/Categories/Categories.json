@@ -2202,57 +2202,49 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "approvedOrdersSendOrders",
+    "CategoryID": "applicantDocumentsSendOrders",
     "CategoryLabel": "Send Orders",
     "DisplayOrder": "276",
-    "ParentCategoryID": "approvedOrders"
+    "ParentCategoryID": "applicantDocuments"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "approvedOrdersApplicant",
-    "CategoryLabel": "Applicant",
+    "CategoryID": "respondentDocumentsSendOrders",
+    "CategoryLabel": "Send Orders",
     "DisplayOrder": "277",
-    "ParentCategoryID": "approvedOrdersSendOrders"
+    "ParentCategoryID": "respondentDocuments"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "approvedOrdersApplicant",
-    "CategoryLabel": "Respondent",
+    "CategoryID": "intervenerDocumentsIntervener1SendOrders",
+    "CategoryLabel": "Send Orders",
     "DisplayOrder": "278",
-    "ParentCategoryID": "approvedOrdersSendOrders"
+    "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "approvedOrdersApplicant",
-    "CategoryLabel": "Intervener 1",
+    "CategoryID": "intervenerDocumentsIntervener2SendOrders",
+    "CategoryLabel": "Send Orders",
     "DisplayOrder": "279",
-    "ParentCategoryID": "approvedOrdersSendOrders"
+    "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "approvedOrdersApplicant",
-    "CategoryLabel": "Intervener 2",
+    "CategoryID": "intervenerDocumentsIntervener3SendOrders",
+    "CategoryLabel": "Send Orders",
     "DisplayOrder": "280",
-    "ParentCategoryID": "approvedOrdersSendOrders"
+    "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "approvedOrdersApplicant",
-    "CategoryLabel": "Intervener 3",
+    "CategoryID": "intervenerDocumentsIntervener4SendOrders",
+    "CategoryLabel": "Send Orders",
     "DisplayOrder": "281",
-    "ParentCategoryID": "approvedOrdersSendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "approvedOrdersApplicant",
-    "CategoryLabel": "Intervener 4",
-    "DisplayOrder": "282",
-    "ParentCategoryID": "approvedOrdersSendOrders"
+    "ParentCategoryID": "intervenerDocumentsIntervener4"
   }
 ]
