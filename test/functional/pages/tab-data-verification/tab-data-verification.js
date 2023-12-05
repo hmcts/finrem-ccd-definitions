@@ -438,7 +438,8 @@ async function contestedIntervenersTab(event, tabName) {
 async function schedule1Tab(tabName) {
 
   const I = this;
-  await I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
+  //await I.waitForNavigationToComplete('div[id="mat-tab-label-0-2"]');
+  //Removing navigation to schedule 1 tab as instead navigating directly to the url
   await I.see(verifyContestedTabText.Schedule1Tab.name);
   await I.see(verifyContestedTabText.Schedule1Tab.dob);
 }
