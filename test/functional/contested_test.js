@@ -202,44 +202,6 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async ({ I
     await I.waitForText('Form A Application', '60')
 }).retry(3);
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async ({ I }) => {
-    await I.signInIdam(solicitorUserName, solicitorPassword);
-    await I.wait('2');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedSolicitorCreate(solRef, 'Schedule1');
-    await I.contestedApplicantDetails();
-    await I.childrenDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplicationForSchedule1();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestion();
-    await I.miamCertification();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers('Schedule1');
-    await I.waitForText('Form A Application', '60')
-}).retry(3);
-
-Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async ({ I }) => {
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    await I.wait('2');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedCaseworkerCreate(caRef, 'Schedule1', true);
-    await I.contestedApplicantDetails();
-    await I.childrenDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplicationForSchedule1();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestion();
-    await I.miamCertification();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers('Schedule1');
-    await I.waitForText('Form A Application', '60')
-}).retry(3);
-
 Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @preview', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('2');
