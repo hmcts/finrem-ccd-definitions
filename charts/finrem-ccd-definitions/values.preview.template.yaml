@@ -189,6 +189,8 @@ ccd:
         am:
           secrets:
             - role-assignment-service-LD-SDK-KEY
+      environment:
+        CCD_DATA_STORE_URL: http://${SERVICE_NAME}-ccd-data-store-api
 
   ccd-case-print-service:
     nodejs:
