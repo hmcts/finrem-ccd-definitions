@@ -63,6 +63,7 @@ def secrets = [
                 secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
                 secret('docmosis-endpoint', 'PDF_SERVICE_BASEURL'),
                 secret('gov-uk-notification-key', 'UK_GOV_NOTIFY_API_KEY'),
+                secret('case-document-am-api-s2s-secret', 'CASE_DOCUMENT_AM_API_S2S_SECRET'),
                 secret('finrem-payment-service-s2s-key', 'FINREM_PAYMENTS_SERVICE_S2S_KEY'),
                 secret('idam-caa-username', 'IDAM_CAA_USERNAME'),
                 secret('idam-caa-password', 'IDAM_CAA_PASSWORD'),
