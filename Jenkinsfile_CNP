@@ -27,7 +27,6 @@ def secrets = [
                 secret('idam-data-store-system-user-username','IDAM_DATA_STORE_SYSTEM_USER_USERNAME'),
                 secret('idam-data-store-system-user-password','IDAM_DATA_STORE_SYSTEM_USER_PASSWORD'),
                 secret('AppInsightsInstrumentationKey', 'APP_INSIGHTS_INSTRUMENTATION_KEY'),
-                secret('ccd-case-document-am-api-s2s-secret', 'CASE_DOCUMENT_AM_API_S2S_SECRET')
         ],
         'finrem-${env}'      : [
                 secret('fixedlists-consented-judgedetails-1', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_1'),
