@@ -72,7 +72,7 @@ dependencies {
 
     testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.15.3'
     testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.15.3'
-    testImplementation group: 'commons-io', name: 'commons-io', version: '2.15.0'
+    testImplementation group: 'commons-io', name: 'commons-io', version: '2.15.1'
     testImplementation group: 'com.github.hmcts', name: 'ccd-test-definitions', version: '7.19.13'
     testImplementation group: 'com.github.hmcts', name: 'befta-fw', version: '8.7.11', {
         exclude group: 'junit', module: 'junit'
