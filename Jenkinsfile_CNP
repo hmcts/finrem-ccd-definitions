@@ -29,6 +29,7 @@ def secrets = [
                 secret('AppInsightsInstrumentationKey', 'APP_INSIGHTS_INSTRUMENTATION_KEY'),
         ],
         'finrem-${env}'      : [
+                secret('case-document-am-api-s2s-secret', 'CASE_DOCUMENT_AM_API_S2S_SECRET'),
                 secret('fixedlists-consented-judgedetails-1', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_1'),
                 secret('fixedlists-consented-judgedetails-2', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_2'),
                 secret('fixedlists-consented-judgedetails-3', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_3'),
