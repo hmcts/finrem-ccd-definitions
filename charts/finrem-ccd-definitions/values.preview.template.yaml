@@ -402,3 +402,4 @@ ccd-case-document-am-api:
       finrem:
         secrets:
           - name: case-document-am-api-s2s-secret
+            alias: CASE_DOCUMENT_AM_API_S2S_SECRET
