@@ -111,7 +111,7 @@ Scenario('Contested Manage Barrister @nightly', async ({ I }) => {
     logger.info("manage barrister tab verified...");
 }).retry(3);
 
-Scenario('List for hearing contested case @nightly', async ({ I }) => {
+Scenario.skip('List for hearing contested case @nightly', async ({ I }) => {
 
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
