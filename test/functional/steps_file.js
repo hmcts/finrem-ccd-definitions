@@ -55,6 +55,7 @@ const {createCaseFlag, validateCaseFlagAlertMessage, validateCaseFlagTab} = requ
 const {manageBarristerApplicant, manageBarristerRespondent} = require('./pages/manage-barrister/manage-barrister');
 const {solicitorCreateGeneralApplication, caseWorkerReferGeneralApplication, judgeGeneralApplicationOutcome, generalApplicationDirections} = require('./pages/general-application/general-application');
 const {manageFlags} = require('./pages/manage-flags/manage-case-flags');
+const pa11yHelper = require('../helpers/Pa11yHelper.js');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -90,6 +91,7 @@ module.exports = () => {
       this.amOnPage(`${process.env.CCD_WEB_URL}`);
       this.acceptCookies();
       this.refreshPage();
+      pa11yHelper.runPa11yCheck();
       this.fillField('username', username);
       this.fillField('password', password);
       this.click('Sign in');
