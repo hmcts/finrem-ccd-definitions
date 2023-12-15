@@ -98,14 +98,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicantDocumentsConciseStatementOfIssues",
-    "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "14",
-    "ParentCategoryID": "applicantDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicantDocumentsRepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
     "DisplayOrder": "15",
@@ -189,14 +181,6 @@
     "CategoryID": "respondentDocumentsFormG",
     "CategoryLabel": "Form G",
     "DisplayOrder": "25",
-    "ParentCategoryID": "respondentDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "respondentDocumentsConciseStatementOfIssues",
-    "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "26",
     "ParentCategoryID": "respondentDocuments"
   },
   {
@@ -1570,14 +1554,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConciseStatementOfIssues",
-    "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "198",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1RepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
     "DisplayOrder": "199",
@@ -1653,14 +1629,6 @@
     "CategoryID": "intervenerDocumentsIntervener2FormG",
     "CategoryLabel": "Form G",
     "DisplayOrder": "208",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConciseStatementOfIssues",
-    "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "209",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1746,14 +1714,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConciseStatementOfIssues",
-    "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "220",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3RepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
     "DisplayOrder": "221",
@@ -1829,14 +1789,6 @@
     "CategoryID": "intervenerDocumentsIntervener4FormG",
     "CategoryLabel": "Form G",
     "DisplayOrder": "230",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConciseStatementOfIssues",
-    "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "231",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -2162,9 +2114,17 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "correspondenceOther",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "272",
+    "ParentCategoryID": "correspondence"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1PensionPlan",
     "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "272",
+    "DisplayOrder": "273",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -2172,7 +2132,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2PensionPlan",
     "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "273",
+    "DisplayOrder": "274",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -2180,7 +2140,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3PensionPlan",
     "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "274",
+    "DisplayOrder": "275",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -2188,7 +2148,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4PensionPlan",
     "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "275",
+    "DisplayOrder": "276",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   }
 ]

@@ -1,7 +1,7 @@
 
 async function childrenDetails() {
   const I = this;
-  I.waitForText('Child(ren) details');
+  I.waitForText('Child(ren) details', 5);
   I.click('//*[@id="childrenCollection"]/div/button');
   I.waitForText('Does the child live in England or Wales');
  I.click('#childrenCollection_0_childrenLivesInEnglandOrWales_Yes');
