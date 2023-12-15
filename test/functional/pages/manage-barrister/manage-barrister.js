@@ -7,7 +7,7 @@ function  manageBarristerApplicant() {        //Matrimonial Case
   I.checkOption('input[id="barristerParty-applicant"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('Applicant\'s Barristers');
+  I.waitForText('Applicant');
   I.click('Add new');
   I.fillField('input[id="appBarristerCollection_0_name"]', 'FR App Barrister');
 
@@ -19,13 +19,13 @@ function  manageBarristerApplicant() {        //Matrimonial Case
   I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('Errors');
+  I.waitForText('Errors', 5);
   I.see('Email address for Barrister is not registered with myHMCTS. They can register at https://manage-org.platform.hmcts.net/register-org/register');
 
   I.fillField('input[id="appBarristerCollection_0_email"]', 'fr_applicant_barrister3@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('Check your answers');
+  I.waitForText('Check your answers', 5);
   I.click('Submit');
 }
 
@@ -38,7 +38,7 @@ function manageBarristerRespondent() {
   I.checkOption('input[id="barristerParty-respondent"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('Respondent\'s Barristers');
+  I.waitForText('Respondent');
   I.click('Add new');
   I.fillField('input[id="respBarristerCollection_0_name"]', 'FR Resp Barrister');
 
@@ -50,13 +50,13 @@ function manageBarristerRespondent() {
   I.click('Select');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('Errors');
+  I.waitForText('Errors', 5);
   I.see('Email address for Barrister is not registered with myHMCTS. They can register at https://manage-org.platform.hmcts.net/register-org/register');
 
   I.fillField('input[id="respBarristerCollection_0_email"]', 'fr_res_barrister1@mailinator.com');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('Respondent\'s Barristers');
+  I.waitForText('Check your answers', 5);
   I.click('Submit');
 }
 module.exports = { manageBarristerApplicant, manageBarristerRespondent };
