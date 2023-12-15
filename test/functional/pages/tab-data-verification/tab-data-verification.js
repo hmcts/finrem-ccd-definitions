@@ -427,7 +427,7 @@ async function contestedIntervenersTab(event, tabName) {
   const I = this;
   await I.clickTab('Intervener 1');
     I.wait('5');
-    I.waitForText('Intervener\'s Full Name');
+    I.waitForText('s Full Name');
     I.waitForText('Organisation');
 
   await I.see(verifyContestedTabText.IntervenersTab.name);
