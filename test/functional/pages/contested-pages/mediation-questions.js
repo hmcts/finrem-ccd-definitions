@@ -2,7 +2,7 @@
 
 function mediationQuestion() {
   const I = this;
-  I.waitForText('Has the applicant attended a Mediation information & Assessment Meeting (MIAM)?', 10);
+  I.waitForText('Has the applicant attended a Mediation information & Assessment Meeting (MIAM)?', 5);
   I.checkOption('input[id="applicantAttendedMIAM_Yes"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
