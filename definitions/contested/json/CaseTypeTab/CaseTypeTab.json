@@ -3845,18 +3845,18 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "chooseCourtLabelSL",
-    "FieldShowCondition" : "hearing_regionList!=\" \"",
+    "FieldShowCondition" : "regionList!=\" \" OR hearing_regionList!=\" \"",
     "TabFieldDisplayOrder" : 12
   },
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_regionList",
     "TabFieldDisplayOrder" : 13
@@ -3864,8 +3864,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_midlandsFRCList",
     "TabFieldDisplayOrder" : 14,
@@ -3874,8 +3874,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_nottinghamCourtList",
     "TabFieldDisplayOrder" : 15,
@@ -3884,8 +3884,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_cfcCourtList",
     "TabFieldDisplayOrder" : 16,
@@ -3894,8 +3894,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_londonFRCList",
     "TabFieldDisplayOrder" : 17,
@@ -3904,8 +3904,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_northWestFRCList",
     "TabFieldDisplayOrder" : 18,
@@ -3914,8 +3914,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_northEastFRCList",
     "TabFieldDisplayOrder" : 19,
@@ -3924,8 +3924,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_southEastFRCList",
     "TabFieldDisplayOrder" : 20,
@@ -3934,8 +3934,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_southWestFRCList",
     "TabFieldDisplayOrder" : 21,
@@ -3944,8 +3944,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_walesFRCList",
     "TabFieldDisplayOrder" : 22,
@@ -3954,8 +3954,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_highCourtFRCList",
     "TabFieldDisplayOrder" : 23,
@@ -3964,8 +3964,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_birminghamCourtList",
     "TabFieldDisplayOrder" : 24,
@@ -3974,8 +3974,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_liverpoolCourtList",
     "TabFieldDisplayOrder" : 25,
@@ -3984,8 +3984,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_manchesterCourtList",
     "TabFieldDisplayOrder" : 26,
@@ -3994,8 +3994,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_lancashireCourtList",
     "TabFieldDisplayOrder" : 27,
@@ -4004,8 +4004,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_cleavelandCourtList",
     "TabFieldDisplayOrder" : 28,
@@ -4014,8 +4014,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_nwyorkshireCourtList",
     "TabFieldDisplayOrder" : 29,
@@ -4024,8 +4024,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_humberCourtList",
     "TabFieldDisplayOrder" : 30,
@@ -4034,8 +4034,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_kentSurreyCourtList",
     "TabFieldDisplayOrder" : 31,
@@ -4044,8 +4044,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_bedfordshireCourtList",
     "TabFieldDisplayOrder" : 32,
@@ -4054,8 +4054,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_thamesvalleyCourtList",
     "TabFieldDisplayOrder" : 33,
@@ -4064,8 +4064,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_devonCourtList",
     "TabFieldDisplayOrder" : 34,
@@ -4074,8 +4074,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_dorsetCourtList",
     "TabFieldDisplayOrder" : 35,
@@ -4084,8 +4084,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_bristolCourtList",
     "TabFieldDisplayOrder" : 36,
@@ -4094,8 +4094,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_newportCourtList",
     "TabFieldDisplayOrder" : 37,
@@ -4104,8 +4104,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_swanseaCourtList",
     "TabFieldDisplayOrder" : 38,
@@ -4114,8 +4114,8 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_northWalesCourtList",
     "TabFieldDisplayOrder" : 39,
@@ -4124,12 +4124,292 @@
   {
     "LiveFrom" : "01/01/2017",
     "CaseTypeID" : "FinancialRemedyContested",
-    "TabID" : "schedulingTab",
-    "TabLabel" : "Scheduling and Listing",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder" : 15,
     "CaseFieldID" : "hearing_highCourtList",
     "TabFieldDisplayOrder" : 40,
     "FieldShowCondition" : "hearing_regionList=\"highcourt\" AND hearing_highCourtFRCList=\"highcourt\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "regionList",
+    "TabFieldDisplayOrder" : 41,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "midlandsFRCList",
+    "TabFieldDisplayOrder" : 42,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "nottinghamCourtList",
+    "TabFieldDisplayOrder" : 43,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "cfcCourtList",
+    "TabFieldDisplayOrder" : 44,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\" AND londonFRCList=\"cfc\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "londonFRCList",
+    "TabFieldDisplayOrder" : 45,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "northWestFRCList",
+    "TabFieldDisplayOrder" : 46,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "northEastFRCList",
+    "TabFieldDisplayOrder" : 47,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "southEastFRCList",
+    "TabFieldDisplayOrder" : 48,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "southWestFRCList",
+    "TabFieldDisplayOrder" : 49,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "walesFRCList",
+    "TabFieldDisplayOrder" : 50,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "highCourtFRCList",
+    "TabFieldDisplayOrder" : 51,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"highcourt\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "birminghamCourtList",
+    "TabFieldDisplayOrder" : 52,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "liverpoolCourtList",
+    "TabFieldDisplayOrder" : 53,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "manchesterCourtList",
+    "TabFieldDisplayOrder" : 54,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"manchester\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "lancashireCourtList",
+    "TabFieldDisplayOrder" : 55,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "cleavelandCourtList",
+    "TabFieldDisplayOrder" : 56,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "nwyorkshireCourtList",
+    "TabFieldDisplayOrder" : 57,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "humberCourtList",
+    "TabFieldDisplayOrder" : 58,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "kentSurreyCourtList",
+    "TabFieldDisplayOrder" : 59,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "bedfordshireCourtList",
+    "TabFieldDisplayOrder" : 60,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "thamesvalleyCourtList",
+    "TabFieldDisplayOrder" : 61,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "devonCourtList",
+    "TabFieldDisplayOrder" : 62,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"devon\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "dorsetCourtList",
+    "TabFieldDisplayOrder" : 63,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"dorset\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "bristolCourtList",
+    "TabFieldDisplayOrder" : 64,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"bristol\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "newportCourtList",
+    "TabFieldDisplayOrder" : 65,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"newport\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "swanseaCourtList",
+    "TabFieldDisplayOrder" : 66,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"swansea\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "northWalesCourtList",
+    "TabFieldDisplayOrder" : 67,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom" : "01/01/2017",
+    "CaseTypeID" : "FinancialRemedyContested",
+    "TabID": "schedulingTab",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder" : 15,
+    "CaseFieldID" : "highCourtList",
+    "TabFieldDisplayOrder" : 68,
+    "FieldShowCondition" : "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4138,7 +4418,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalInformationAboutHearingLabel",
-    "TabFieldDisplayOrder": 41
+    "TabFieldDisplayOrder": 69
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4147,7 +4427,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalInformationAboutHearing",
-    "TabFieldDisplayOrder": 42
+    "TabFieldDisplayOrder": 70
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4156,7 +4436,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalListOfHearingDocuments",
-    "TabFieldDisplayOrder": 43
+    "TabFieldDisplayOrder": 71
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4165,7 +4445,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 44
+    "TabFieldDisplayOrder": 72
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4174,7 +4454,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 45
+    "TabFieldDisplayOrder": 73
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4183,7 +4463,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 46
+    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4192,7 +4472,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 47
+    "TabFieldDisplayOrder": 75
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4201,7 +4481,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 48
+    "TabFieldDisplayOrder": 76
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4210,7 +4490,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "draftDirectionDetailsCollectionRO",
-    "TabFieldDisplayOrder": 49
+    "TabFieldDisplayOrder": 77
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4219,7 +4499,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "latestDraftHearingOrder",
-    "TabFieldDisplayOrder": 50
+    "TabFieldDisplayOrder": 78
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4228,7 +4508,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "directionDetailsCollection",
-    "TabFieldDisplayOrder": 51
+    "TabFieldDisplayOrder": 79
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4237,7 +4517,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingDirectionDetailsCollection",
-    "TabFieldDisplayOrder": 52
+    "TabFieldDisplayOrder": 80
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4246,7 +4526,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalHearingDocuments",
-    "TabFieldDisplayOrder": 53
+    "TabFieldDisplayOrder": 81
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4255,7 +4535,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingNoticesDocumentCollection",
-    "TabFieldDisplayOrder": 54
+    "TabFieldDisplayOrder": 82
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4373,7 +4653,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "regionList",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4383,7 +4664,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "midlandsFRCList",
     "TabFieldDisplayOrder": 14,
-    "FieldShowCondition": "regionList=\"midlands\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4393,7 +4674,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "nottinghamCourtList",
     "TabFieldDisplayOrder": 15,
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4403,7 +4684,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "cfcCourtList",
     "TabFieldDisplayOrder": 16,
-    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"cfc\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\" AND londonFRCList=\"cfc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4413,7 +4694,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "londonFRCList",
     "TabFieldDisplayOrder": 17,
-    "FieldShowCondition": "regionList=\"london\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4423,7 +4704,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWestFRCList",
     "TabFieldDisplayOrder": 18,
-    "FieldShowCondition": "regionList=\"northwest\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4433,7 +4714,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northEastFRCList",
     "TabFieldDisplayOrder": 19,
-    "FieldShowCondition": "regionList=\"northeast\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4443,7 +4724,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "southEastFRCList",
     "TabFieldDisplayOrder": 20,
-    "FieldShowCondition": "regionList=\"southeast\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4453,7 +4734,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "southWestFRCList",
     "TabFieldDisplayOrder": 21,
-    "FieldShowCondition": "regionList=\"southwest\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4463,7 +4744,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "walesFRCList",
     "TabFieldDisplayOrder": 22,
-    "FieldShowCondition": "regionList=\"wales\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4473,7 +4754,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "birminghamCourtList",
     "TabFieldDisplayOrder": 23,
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4483,7 +4764,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "liverpoolCourtList",
     "TabFieldDisplayOrder": 24,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4493,7 +4774,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "manchesterCourtList",
     "TabFieldDisplayOrder": 25,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4503,7 +4784,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "lancashireCourtList",
     "TabFieldDisplayOrder": 26,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4513,7 +4794,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "cleavelandCourtList",
     "TabFieldDisplayOrder": 27,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4523,7 +4804,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "nwyorkshireCourtList",
     "TabFieldDisplayOrder": 28,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4533,7 +4814,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "humberCourtList",
     "TabFieldDisplayOrder": 29,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4543,7 +4824,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "kentSurreyCourtList",
     "TabFieldDisplayOrder": 30,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4553,7 +4834,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "bedfordshireCourtList",
     "TabFieldDisplayOrder": 31,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4563,7 +4844,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "thamesvalleyCourtList",
     "TabFieldDisplayOrder": 32,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4573,7 +4854,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "devonCourtList",
     "TabFieldDisplayOrder": 33,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"devon\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4583,7 +4864,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "dorsetCourtList",
     "TabFieldDisplayOrder": 34,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"dorset\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4593,7 +4874,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "bristolCourtList",
     "TabFieldDisplayOrder": 35,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"bristol\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4603,7 +4884,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "newportCourtList",
     "TabFieldDisplayOrder": 36,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4613,7 +4894,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "swanseaCourtList",
     "TabFieldDisplayOrder": 37,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4623,7 +4904,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWalesCourtList",
     "TabFieldDisplayOrder": 38,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"northwales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4633,7 +4914,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "highCourtList",
     "TabFieldDisplayOrder": 39,
-    "FieldShowCondition": "regionList=\"highcourt\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4641,7 +4922,7 @@
     "TabID": "schedulingTabAb",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "CaseFieldID": "hearing_regionList",
     "TabFieldDisplayOrder": 40
   },
   {
@@ -4650,8 +4931,277 @@
     "TabID": "schedulingTabAb",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_midlandsFRCList",
+    "TabFieldDisplayOrder": 41,
+    "FieldShowCondition": "hearing_regionList=\"midlands\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_nottinghamCourtList",
+    "TabFieldDisplayOrder": 42,
+    "FieldShowCondition": "hearing_regionList=\"midlands\" AND hearing_midlandsFRCList=\"nottingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_cfcCourtList",
+    "TabFieldDisplayOrder": 43,
+    "FieldShowCondition": "hearing_regionList=\"london\" AND hearing_londonFRCList=\"cfc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_londonFRCList",
+    "TabFieldDisplayOrder": 44,
+    "FieldShowCondition": "hearing_regionList=\"london\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northWestFRCList",
+    "TabFieldDisplayOrder": 45,
+    "FieldShowCondition": "hearing_regionList=\"northwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northEastFRCList",
+    "TabFieldDisplayOrder": 46,
+    "FieldShowCondition": "hearing_regionList=\"northeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_southEastFRCList",
+    "TabFieldDisplayOrder": 47,
+    "FieldShowCondition": "hearing_regionList=\"southeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_southWestFRCList",
+    "TabFieldDisplayOrder": 48,
+    "FieldShowCondition": "hearing_regionList=\"southwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_walesFRCList",
+    "TabFieldDisplayOrder": 49,
+    "FieldShowCondition": "hearing_regionList=\"wales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_birminghamCourtList",
+    "TabFieldDisplayOrder": 50,
+    "FieldShowCondition": "hearing_regionList=\"midlands\" AND hearing_midlandsFRCList=\"birmingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_liverpoolCourtList",
+    "TabFieldDisplayOrder": 51,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"liverpool\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_manchesterCourtList",
+    "TabFieldDisplayOrder": 52,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"manchester\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_lancashireCourtList",
+    "TabFieldDisplayOrder": 53,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"lancashire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_cleavelandCourtList",
+    "TabFieldDisplayOrder": 54,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"cleaveland\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_nwyorkshireCourtList",
+    "TabFieldDisplayOrder": 55,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"nwyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_humberCourtList",
+    "TabFieldDisplayOrder": 56,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"hsyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_kentSurreyCourtList",
+    "TabFieldDisplayOrder": 57,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"kentfrc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_bedfordshireCourtList",
+    "TabFieldDisplayOrder": 58,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"bedfordshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_thamesvalleyCourtList",
+    "TabFieldDisplayOrder": 59,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"thamesvalley\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_devonCourtList",
+    "TabFieldDisplayOrder": 60,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"devon\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_dorsetCourtList",
+    "TabFieldDisplayOrder": 61,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"dorset\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_bristolCourtList",
+    "TabFieldDisplayOrder": 62,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"bristol\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_newportCourtList",
+    "TabFieldDisplayOrder": 63,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"newport\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_swanseaCourtList",
+    "TabFieldDisplayOrder": 64,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"swansea\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northWalesCourtList",
+    "TabFieldDisplayOrder": 65,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_highCourtList",
+    "TabFieldDisplayOrder": 66,
+    "FieldShowCondition": "hearing_regionList=\"highcourt\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "TabFieldDisplayOrder": 67
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
     "CaseFieldID": "additionalInformationAboutHearing",
-    "TabFieldDisplayOrder": 41
+    "TabFieldDisplayOrder": 68
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4660,7 +5210,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalListOfHearingDocuments",
-    "TabFieldDisplayOrder": 42
+    "TabFieldDisplayOrder": 69
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4669,7 +5219,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 43
+    "TabFieldDisplayOrder": 70
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4678,7 +5228,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 44
+    "TabFieldDisplayOrder": 71
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4687,7 +5237,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 45
+    "TabFieldDisplayOrder": 72
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4696,7 +5246,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
+    "TabFieldDisplayOrder": 73
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4705,7 +5255,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
+    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4714,7 +5264,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "draftDirectionDetailsCollectionRO",
-    "TabFieldDisplayOrder": 48
+    "TabFieldDisplayOrder": 75
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4723,7 +5273,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "latestDraftHearingOrder",
-    "TabFieldDisplayOrder": 49
+    "TabFieldDisplayOrder": 76
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4732,7 +5282,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "directionDetailsCollection",
-    "TabFieldDisplayOrder": 50
+    "TabFieldDisplayOrder": 77
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4741,7 +5291,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingDirectionDetailsCollection",
-    "TabFieldDisplayOrder": 51
+    "TabFieldDisplayOrder": 78
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4750,7 +5300,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalHearingDocuments",
-    "TabFieldDisplayOrder": 52
+    "TabFieldDisplayOrder": 79
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4759,7 +5309,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingNoticesDocumentCollection",
-    "TabFieldDisplayOrder": 53
+    "TabFieldDisplayOrder": 80
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4877,7 +5427,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "regionList",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4887,7 +5438,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "midlandsFRCList",
     "TabFieldDisplayOrder": 14,
-    "FieldShowCondition": "regionList=\"midlands\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4897,7 +5448,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "nottinghamCourtList",
     "TabFieldDisplayOrder": 15,
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4907,7 +5458,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "cfcCourtList",
     "TabFieldDisplayOrder": 16,
-    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"cfc\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\" AND londonFRCList=\"cfc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4917,7 +5468,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "londonFRCList",
     "TabFieldDisplayOrder": 17,
-    "FieldShowCondition": "regionList=\"london\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4927,7 +5478,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWestFRCList",
     "TabFieldDisplayOrder": 18,
-    "FieldShowCondition": "regionList=\"northwest\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4937,7 +5488,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northEastFRCList",
     "TabFieldDisplayOrder": 19,
-    "FieldShowCondition": "regionList=\"northeast\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4947,7 +5498,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "southEastFRCList",
     "TabFieldDisplayOrder": 20,
-    "FieldShowCondition": "regionList=\"southeast\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4957,7 +5508,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "southWestFRCList",
     "TabFieldDisplayOrder": 21,
-    "FieldShowCondition": "regionList=\"southwest\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4967,7 +5518,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "walesFRCList",
     "TabFieldDisplayOrder": 22,
-    "FieldShowCondition": "regionList=\"wales\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4977,7 +5528,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "birminghamCourtList",
     "TabFieldDisplayOrder": 23,
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4987,7 +5538,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "liverpoolCourtList",
     "TabFieldDisplayOrder": 24,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4997,7 +5548,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "manchesterCourtList",
     "TabFieldDisplayOrder": 25,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5007,7 +5558,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "lancashireCourtList",
     "TabFieldDisplayOrder": 26,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5017,7 +5568,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "cleavelandCourtList",
     "TabFieldDisplayOrder": 27,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5027,7 +5578,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "nwyorkshireCourtList",
     "TabFieldDisplayOrder": 28,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5037,7 +5588,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "humberCourtList",
     "TabFieldDisplayOrder": 29,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5047,7 +5598,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "kentSurreyCourtList",
     "TabFieldDisplayOrder": 30,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5057,7 +5608,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "bedfordshireCourtList",
     "TabFieldDisplayOrder": 31,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5067,7 +5618,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "thamesvalleyCourtList",
     "TabFieldDisplayOrder": 32,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5077,7 +5628,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "devonCourtList",
     "TabFieldDisplayOrder": 33,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"devon\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5087,7 +5638,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "dorsetCourtList",
     "TabFieldDisplayOrder": 34,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"dorset\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5097,7 +5648,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "bristolCourtList",
     "TabFieldDisplayOrder": 35,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"bristol\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5107,7 +5658,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "newportCourtList",
     "TabFieldDisplayOrder": 36,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5117,7 +5668,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "swanseaCourtList",
     "TabFieldDisplayOrder": 37,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5127,7 +5678,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWalesCourtList",
     "TabFieldDisplayOrder": 38,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"northwales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5137,7 +5688,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "highCourtList",
     "TabFieldDisplayOrder": 39,
-    "FieldShowCondition": "regionList=\"highcourt\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5145,7 +5696,7 @@
     "TabID": "schedulingTabAs",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "CaseFieldID": "hearing_regionList",
     "TabFieldDisplayOrder": 40
   },
   {
@@ -5154,8 +5705,277 @@
     "TabID": "schedulingTabAs",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_midlandsFRCList",
+    "TabFieldDisplayOrder": 41,
+    "FieldShowCondition": "hearing_regionList=\"midlands\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_nottinghamCourtList",
+    "TabFieldDisplayOrder": 42,
+    "FieldShowCondition": "hearing_regionList=\"midlands\" AND hearing_midlandsFRCList=\"nottingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_cfcCourtList",
+    "TabFieldDisplayOrder": 43,
+    "FieldShowCondition": "hearing_regionList=\"london\" AND hearing_londonFRCList=\"cfc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_londonFRCList",
+    "TabFieldDisplayOrder": 44,
+    "FieldShowCondition": "hearing_regionList=\"london\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northWestFRCList",
+    "TabFieldDisplayOrder": 45,
+    "FieldShowCondition": "hearing_regionList=\"northwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northEastFRCList",
+    "TabFieldDisplayOrder": 46,
+    "FieldShowCondition": "hearing_regionList=\"northeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_southEastFRCList",
+    "TabFieldDisplayOrder": 47,
+    "FieldShowCondition": "hearing_regionList=\"southeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_southWestFRCList",
+    "TabFieldDisplayOrder": 48,
+    "FieldShowCondition": "hearing_regionList=\"southwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_walesFRCList",
+    "TabFieldDisplayOrder": 49,
+    "FieldShowCondition": "hearing_regionList=\"wales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_birminghamCourtList",
+    "TabFieldDisplayOrder": 50,
+    "FieldShowCondition": "hearing_regionList=\"midlands\" AND hearing_midlandsFRCList=\"birmingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_liverpoolCourtList",
+    "TabFieldDisplayOrder": 51,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"liverpool\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_manchesterCourtList",
+    "TabFieldDisplayOrder": 52,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"manchester\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_lancashireCourtList",
+    "TabFieldDisplayOrder": 53,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"lancashire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_cleavelandCourtList",
+    "TabFieldDisplayOrder": 54,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"cleaveland\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_nwyorkshireCourtList",
+    "TabFieldDisplayOrder": 55,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"nwyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_humberCourtList",
+    "TabFieldDisplayOrder": 56,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"hsyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_kentSurreyCourtList",
+    "TabFieldDisplayOrder": 57,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"kentfrc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_bedfordshireCourtList",
+    "TabFieldDisplayOrder": 58,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"bedfordshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_thamesvalleyCourtList",
+    "TabFieldDisplayOrder": 59,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"thamesvalley\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_devonCourtList",
+    "TabFieldDisplayOrder": 60,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"devon\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_dorsetCourtList",
+    "TabFieldDisplayOrder": 61,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"dorset\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_bristolCourtList",
+    "TabFieldDisplayOrder": 62,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"bristol\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_newportCourtList",
+    "TabFieldDisplayOrder": 63,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"newport\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_swanseaCourtList",
+    "TabFieldDisplayOrder": 64,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"swansea\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northWalesCourtList",
+    "TabFieldDisplayOrder": 65,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_highCourtList",
+    "TabFieldDisplayOrder": 66,
+    "FieldShowCondition": "hearing_regionList=\"highcourt\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "TabFieldDisplayOrder": 67
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabAs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
     "CaseFieldID": "additionalInformationAboutHearing",
-    "TabFieldDisplayOrder": 41
+    "TabFieldDisplayOrder": 68
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5164,7 +5984,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalListOfHearingDocuments",
-    "TabFieldDisplayOrder": 42
+    "TabFieldDisplayOrder": 69
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5173,7 +5993,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 43
+    "TabFieldDisplayOrder": 70
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5182,7 +6002,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 44
+    "TabFieldDisplayOrder": 71
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5191,7 +6011,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 45
+    "TabFieldDisplayOrder": 72
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5200,7 +6020,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
+    "TabFieldDisplayOrder": 73
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5209,7 +6029,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
+    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5218,7 +6038,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "draftDirectionDetailsCollectionRO",
-    "TabFieldDisplayOrder": 48
+    "TabFieldDisplayOrder": 75
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5227,7 +6047,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "latestDraftHearingOrder",
-    "TabFieldDisplayOrder": 49
+    "TabFieldDisplayOrder": 76
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5236,7 +6056,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "directionDetailsCollection",
-    "TabFieldDisplayOrder": 50
+    "TabFieldDisplayOrder": 77
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5245,7 +6065,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingDirectionDetailsCollection",
-    "TabFieldDisplayOrder": 51
+    "TabFieldDisplayOrder": 78
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5254,7 +6074,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalHearingDocuments",
-    "TabFieldDisplayOrder": 52
+    "TabFieldDisplayOrder": 79
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5263,7 +6083,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingNoticesDocumentCollection",
-    "TabFieldDisplayOrder": 53
+    "TabFieldDisplayOrder": 80
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5381,7 +6201,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "regionList",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5391,7 +6212,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "midlandsFRCList",
     "TabFieldDisplayOrder": 14,
-    "FieldShowCondition": "regionList=\"midlands\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5401,7 +6222,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "nottinghamCourtList",
     "TabFieldDisplayOrder": 15,
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5411,7 +6232,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "cfcCourtList",
     "TabFieldDisplayOrder": 16,
-    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"cfc\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\" AND londonFRCList=\"cfc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5421,7 +6242,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "londonFRCList",
     "TabFieldDisplayOrder": 17,
-    "FieldShowCondition": "regionList=\"london\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5431,7 +6252,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWestFRCList",
     "TabFieldDisplayOrder": 18,
-    "FieldShowCondition": "regionList=\"northwest\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5441,7 +6262,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northEastFRCList",
     "TabFieldDisplayOrder": 19,
-    "FieldShowCondition": "regionList=\"northeast\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5451,7 +6272,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "southEastFRCList",
     "TabFieldDisplayOrder": 20,
-    "FieldShowCondition": "regionList=\"southeast\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5461,7 +6282,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "southWestFRCList",
     "TabFieldDisplayOrder": 21,
-    "FieldShowCondition": "regionList=\"southwest\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5471,7 +6292,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "walesFRCList",
     "TabFieldDisplayOrder": 22,
-    "FieldShowCondition": "regionList=\"wales\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5481,7 +6302,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "birminghamCourtList",
     "TabFieldDisplayOrder": 23,
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5491,7 +6312,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "liverpoolCourtList",
     "TabFieldDisplayOrder": 24,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5501,7 +6322,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "manchesterCourtList",
     "TabFieldDisplayOrder": 25,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5511,7 +6332,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "lancashireCourtList",
     "TabFieldDisplayOrder": 26,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5521,7 +6342,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "cleavelandCourtList",
     "TabFieldDisplayOrder": 27,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5531,7 +6352,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "nwyorkshireCourtList",
     "TabFieldDisplayOrder": 28,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5541,7 +6362,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "humberCourtList",
     "TabFieldDisplayOrder": 29,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5551,7 +6372,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "kentSurreyCourtList",
     "TabFieldDisplayOrder": 30,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5561,7 +6382,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "bedfordshireCourtList",
     "TabFieldDisplayOrder": 31,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5571,7 +6392,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "thamesvalleyCourtList",
     "TabFieldDisplayOrder": 32,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5581,7 +6402,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "devonCourtList",
     "TabFieldDisplayOrder": 33,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"devon\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5591,7 +6412,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "dorsetCourtList",
     "TabFieldDisplayOrder": 34,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"dorset\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5601,7 +6422,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "bristolCourtList",
     "TabFieldDisplayOrder": 35,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"bristol\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5611,7 +6432,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "newportCourtList",
     "TabFieldDisplayOrder": 36,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5621,7 +6442,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "swanseaCourtList",
     "TabFieldDisplayOrder": 37,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5631,7 +6452,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWalesCourtList",
     "TabFieldDisplayOrder": 38,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"northwales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5641,7 +6462,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "highCourtList",
     "TabFieldDisplayOrder": 39,
-    "FieldShowCondition": "regionList=\"highcourt\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5649,7 +6470,7 @@
     "TabID": "schedulingTabRs",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "CaseFieldID": "hearing_regionList",
     "TabFieldDisplayOrder": 40
   },
   {
@@ -5658,8 +6479,277 @@
     "TabID": "schedulingTabRs",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_midlandsFRCList",
+    "TabFieldDisplayOrder": 41,
+    "FieldShowCondition": "hearing_regionList=\"midlands\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_nottinghamCourtList",
+    "TabFieldDisplayOrder": 42,
+    "FieldShowCondition": "hearing_regionList=\"midlands\" AND hearing_midlandsFRCList=\"nottingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_cfcCourtList",
+    "TabFieldDisplayOrder": 43,
+    "FieldShowCondition": "hearing_regionList=\"london\" AND hearing_londonFRCList=\"cfc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_londonFRCList",
+    "TabFieldDisplayOrder": 44,
+    "FieldShowCondition": "hearing_regionList=\"london\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northWestFRCList",
+    "TabFieldDisplayOrder": 45,
+    "FieldShowCondition": "hearing_regionList=\"northwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northEastFRCList",
+    "TabFieldDisplayOrder": 46,
+    "FieldShowCondition": "hearing_regionList=\"northeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_southEastFRCList",
+    "TabFieldDisplayOrder": 47,
+    "FieldShowCondition": "hearing_regionList=\"southeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_southWestFRCList",
+    "TabFieldDisplayOrder": 48,
+    "FieldShowCondition": "hearing_regionList=\"southwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_walesFRCList",
+    "TabFieldDisplayOrder": 49,
+    "FieldShowCondition": "hearing_regionList=\"wales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_birminghamCourtList",
+    "TabFieldDisplayOrder": 50,
+    "FieldShowCondition": "hearing_regionList=\"midlands\" AND hearing_midlandsFRCList=\"birmingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_liverpoolCourtList",
+    "TabFieldDisplayOrder": 51,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"liverpool\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_manchesterCourtList",
+    "TabFieldDisplayOrder": 52,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"manchester\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_lancashireCourtList",
+    "TabFieldDisplayOrder": 53,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"lancashire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_cleavelandCourtList",
+    "TabFieldDisplayOrder": 54,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"cleaveland\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_nwyorkshireCourtList",
+    "TabFieldDisplayOrder": 55,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"nwyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_humberCourtList",
+    "TabFieldDisplayOrder": 56,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"hsyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_kentSurreyCourtList",
+    "TabFieldDisplayOrder": 57,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"kentfrc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_bedfordshireCourtList",
+    "TabFieldDisplayOrder": 58,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"bedfordshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_thamesvalleyCourtList",
+    "TabFieldDisplayOrder": 59,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"thamesvalley\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_devonCourtList",
+    "TabFieldDisplayOrder": 60,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"devon\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_dorsetCourtList",
+    "TabFieldDisplayOrder": 61,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"dorset\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_bristolCourtList",
+    "TabFieldDisplayOrder": 62,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"bristol\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_newportCourtList",
+    "TabFieldDisplayOrder": 63,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"newport\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_swanseaCourtList",
+    "TabFieldDisplayOrder": 64,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"swansea\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northWalesCourtList",
+    "TabFieldDisplayOrder": 65,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_highCourtList",
+    "TabFieldDisplayOrder": 66,
+    "FieldShowCondition": "hearing_regionList=\"highcourt\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "TabFieldDisplayOrder": 67
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRs",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
     "CaseFieldID": "additionalInformationAboutHearing",
-    "TabFieldDisplayOrder": 41
+    "TabFieldDisplayOrder": 68
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5668,7 +6758,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalListOfHearingDocuments",
-    "TabFieldDisplayOrder": 42
+    "TabFieldDisplayOrder": 69
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5677,7 +6767,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 43
+    "TabFieldDisplayOrder": 70
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5686,7 +6776,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 44
+    "TabFieldDisplayOrder": 71
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5695,7 +6785,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 45
+    "TabFieldDisplayOrder": 72
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5704,7 +6794,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
+    "TabFieldDisplayOrder": 73
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5713,7 +6803,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
+    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5722,7 +6812,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "draftDirectionDetailsCollectionRO",
-    "TabFieldDisplayOrder": 48
+    "TabFieldDisplayOrder": 75
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5731,7 +6821,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "latestDraftHearingOrder",
-    "TabFieldDisplayOrder": 49
+    "TabFieldDisplayOrder": 76
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5740,7 +6830,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "directionDetailsCollection",
-    "TabFieldDisplayOrder": 50
+    "TabFieldDisplayOrder": 77
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5749,7 +6839,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingDirectionDetailsCollection",
-    "TabFieldDisplayOrder": 51
+    "TabFieldDisplayOrder": 78
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5758,7 +6848,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalHearingDocuments",
-    "TabFieldDisplayOrder": 52
+    "TabFieldDisplayOrder": 79
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5767,7 +6857,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingNoticesDocumentCollection",
-    "TabFieldDisplayOrder": 53
+    "TabFieldDisplayOrder": 80
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5885,7 +6975,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "regionList",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5895,7 +6986,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "midlandsFRCList",
     "TabFieldDisplayOrder": 14,
-    "FieldShowCondition": "regionList=\"midlands\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5905,7 +6996,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "nottinghamCourtList",
     "TabFieldDisplayOrder": 15,
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5915,7 +7006,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "cfcCourtList",
     "TabFieldDisplayOrder": 16,
-    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"cfc\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\" AND londonFRCList=\"cfc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5925,7 +7016,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "londonFRCList",
     "TabFieldDisplayOrder": 17,
-    "FieldShowCondition": "regionList=\"london\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5935,7 +7026,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWestFRCList",
     "TabFieldDisplayOrder": 18,
-    "FieldShowCondition": "regionList=\"northwest\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5945,7 +7036,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northEastFRCList",
     "TabFieldDisplayOrder": 19,
-    "FieldShowCondition": "regionList=\"northeast\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5955,7 +7046,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "southEastFRCList",
     "TabFieldDisplayOrder": 20,
-    "FieldShowCondition": "regionList=\"southeast\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5965,7 +7056,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "southWestFRCList",
     "TabFieldDisplayOrder": 21,
-    "FieldShowCondition": "regionList=\"southwest\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5975,7 +7066,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "walesFRCList",
     "TabFieldDisplayOrder": 22,
-    "FieldShowCondition": "regionList=\"wales\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5985,7 +7076,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "birminghamCourtList",
     "TabFieldDisplayOrder": 23,
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5995,7 +7086,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "liverpoolCourtList",
     "TabFieldDisplayOrder": 24,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6005,7 +7096,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "manchesterCourtList",
     "TabFieldDisplayOrder": 25,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6015,7 +7106,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "lancashireCourtList",
     "TabFieldDisplayOrder": 26,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6025,7 +7116,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "cleavelandCourtList",
     "TabFieldDisplayOrder": 27,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6035,7 +7126,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "nwyorkshireCourtList",
     "TabFieldDisplayOrder": 28,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6045,7 +7136,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "humberCourtList",
     "TabFieldDisplayOrder": 29,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6055,7 +7146,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "kentSurreyCourtList",
     "TabFieldDisplayOrder": 30,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6065,7 +7156,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "bedfordshireCourtList",
     "TabFieldDisplayOrder": 31,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6075,7 +7166,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "thamesvalleyCourtList",
     "TabFieldDisplayOrder": 32,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6085,7 +7176,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "devonCourtList",
     "TabFieldDisplayOrder": 33,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"devon\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6095,7 +7186,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "dorsetCourtList",
     "TabFieldDisplayOrder": 34,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"dorset\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6105,7 +7196,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "bristolCourtList",
     "TabFieldDisplayOrder": 35,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"bristol\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6115,7 +7206,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "newportCourtList",
     "TabFieldDisplayOrder": 36,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6125,7 +7216,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "swanseaCourtList",
     "TabFieldDisplayOrder": 37,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6135,7 +7226,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWalesCourtList",
     "TabFieldDisplayOrder": 38,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"northwales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6145,7 +7236,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "highCourtList",
     "TabFieldDisplayOrder": 39,
-    "FieldShowCondition": "regionList=\"highcourt\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6153,7 +7244,7 @@
     "TabID": "schedulingTabRb",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "CaseFieldID": "hearing_regionList",
     "TabFieldDisplayOrder": 40
   },
   {
@@ -6162,8 +7253,277 @@
     "TabID": "schedulingTabRb",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_midlandsFRCList",
+    "TabFieldDisplayOrder": 41,
+    "FieldShowCondition": "hearing_regionList=\"midlands\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_nottinghamCourtList",
+    "TabFieldDisplayOrder": 42,
+    "FieldShowCondition": "hearing_regionList=\"midlands\" AND hearing_midlandsFRCList=\"nottingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_cfcCourtList",
+    "TabFieldDisplayOrder": 43,
+    "FieldShowCondition": "hearing_regionList=\"london\" AND hearing_londonFRCList=\"cfc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_londonFRCList",
+    "TabFieldDisplayOrder": 44,
+    "FieldShowCondition": "hearing_regionList=\"london\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northWestFRCList",
+    "TabFieldDisplayOrder": 45,
+    "FieldShowCondition": "hearing_regionList=\"northwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northEastFRCList",
+    "TabFieldDisplayOrder": 46,
+    "FieldShowCondition": "hearing_regionList=\"northeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_southEastFRCList",
+    "TabFieldDisplayOrder": 47,
+    "FieldShowCondition": "hearing_regionList=\"southeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_southWestFRCList",
+    "TabFieldDisplayOrder": 48,
+    "FieldShowCondition": "hearing_regionList=\"southwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_walesFRCList",
+    "TabFieldDisplayOrder": 49,
+    "FieldShowCondition": "hearing_regionList=\"wales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_birminghamCourtList",
+    "TabFieldDisplayOrder": 50,
+    "FieldShowCondition": "hearing_regionList=\"midlands\" AND hearing_midlandsFRCList=\"birmingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_liverpoolCourtList",
+    "TabFieldDisplayOrder": 51,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"liverpool\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_manchesterCourtList",
+    "TabFieldDisplayOrder": 52,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"manchester\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_lancashireCourtList",
+    "TabFieldDisplayOrder": 53,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"lancashire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_cleavelandCourtList",
+    "TabFieldDisplayOrder": 54,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"cleaveland\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_nwyorkshireCourtList",
+    "TabFieldDisplayOrder": 55,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"nwyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_humberCourtList",
+    "TabFieldDisplayOrder": 56,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"hsyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_kentSurreyCourtList",
+    "TabFieldDisplayOrder": 57,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"kentfrc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_bedfordshireCourtList",
+    "TabFieldDisplayOrder": 58,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"bedfordshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_thamesvalleyCourtList",
+    "TabFieldDisplayOrder": 59,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"thamesvalley\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_devonCourtList",
+    "TabFieldDisplayOrder": 60,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"devon\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_dorsetCourtList",
+    "TabFieldDisplayOrder": 61,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"dorset\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_bristolCourtList",
+    "TabFieldDisplayOrder": 62,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"bristol\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_newportCourtList",
+    "TabFieldDisplayOrder": 63,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"newport\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_swanseaCourtList",
+    "TabFieldDisplayOrder": 64,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"swansea\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northWalesCourtList",
+    "TabFieldDisplayOrder": 65,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_highCourtList",
+    "TabFieldDisplayOrder": 66,
+    "FieldShowCondition": "hearing_regionList=\"highcourt\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "TabFieldDisplayOrder": 67
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabRb",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
     "CaseFieldID": "additionalInformationAboutHearing",
-    "TabFieldDisplayOrder": 41
+    "TabFieldDisplayOrder": 68
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6172,7 +7532,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalListOfHearingDocuments",
-    "TabFieldDisplayOrder": 42
+    "TabFieldDisplayOrder": 69
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6181,7 +7541,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 43
+    "TabFieldDisplayOrder": 70
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6190,7 +7550,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 44
+    "TabFieldDisplayOrder": 71
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6199,7 +7559,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 45
+    "TabFieldDisplayOrder": 72
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6208,7 +7568,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
+    "TabFieldDisplayOrder": 73
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6217,7 +7577,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
+    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6226,7 +7586,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "draftDirectionDetailsCollectionRO",
-    "TabFieldDisplayOrder": 48
+    "TabFieldDisplayOrder": 75
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6235,7 +7595,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "latestDraftHearingOrder",
-    "TabFieldDisplayOrder": 49
+    "TabFieldDisplayOrder": 76
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6244,7 +7604,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "directionDetailsCollection",
-    "TabFieldDisplayOrder": 50
+    "TabFieldDisplayOrder": 77
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6253,7 +7613,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingDirectionDetailsCollection",
-    "TabFieldDisplayOrder": 51
+    "TabFieldDisplayOrder": 78
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6262,7 +7622,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalHearingDocuments",
-    "TabFieldDisplayOrder": 52
+    "TabFieldDisplayOrder": 79
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6271,7 +7631,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingNoticesDocumentCollection",
-    "TabFieldDisplayOrder": 53
+    "TabFieldDisplayOrder": 80
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6389,7 +7749,8 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "regionList",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6399,7 +7760,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "midlandsFRCList",
     "TabFieldDisplayOrder": 14,
-    "FieldShowCondition": "regionList=\"midlands\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6409,7 +7770,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "nottinghamCourtList",
     "TabFieldDisplayOrder": 15,
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6419,7 +7780,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "cfcCourtList",
     "TabFieldDisplayOrder": 16,
-    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"cfc\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\" AND londonFRCList=\"cfc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6429,7 +7790,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "londonFRCList",
     "TabFieldDisplayOrder": 17,
-    "FieldShowCondition": "regionList=\"london\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"london\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6439,7 +7800,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWestFRCList",
     "TabFieldDisplayOrder": 18,
-    "FieldShowCondition": "regionList=\"northwest\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6449,7 +7810,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northEastFRCList",
     "TabFieldDisplayOrder": 19,
-    "FieldShowCondition": "regionList=\"northeast\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6459,7 +7820,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "southEastFRCList",
     "TabFieldDisplayOrder": 20,
-    "FieldShowCondition": "regionList=\"southeast\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6469,7 +7830,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "southWestFRCList",
     "TabFieldDisplayOrder": 21,
-    "FieldShowCondition": "regionList=\"southwest\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6479,7 +7840,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "walesFRCList",
     "TabFieldDisplayOrder": 22,
-    "FieldShowCondition": "regionList=\"wales\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6489,7 +7850,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "birminghamCourtList",
     "TabFieldDisplayOrder": 23,
-    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6499,7 +7860,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "liverpoolCourtList",
     "TabFieldDisplayOrder": 24,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6509,7 +7870,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "manchesterCourtList",
     "TabFieldDisplayOrder": 25,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6519,7 +7880,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "lancashireCourtList",
     "TabFieldDisplayOrder": 26,
-    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6529,7 +7890,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "cleavelandCourtList",
     "TabFieldDisplayOrder": 27,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6539,7 +7900,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "nwyorkshireCourtList",
     "TabFieldDisplayOrder": 28,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6549,7 +7910,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "humberCourtList",
     "TabFieldDisplayOrder": 29,
-    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6559,7 +7920,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "kentSurreyCourtList",
     "TabFieldDisplayOrder": 30,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6569,7 +7930,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "bedfordshireCourtList",
     "TabFieldDisplayOrder": 31,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6579,7 +7940,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "thamesvalleyCourtList",
     "TabFieldDisplayOrder": 32,
-    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6589,7 +7950,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "devonCourtList",
     "TabFieldDisplayOrder": 33,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"devon\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6599,7 +7960,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "dorsetCourtList",
     "TabFieldDisplayOrder": 34,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"dorset\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6609,7 +7970,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "bristolCourtList",
     "TabFieldDisplayOrder": 35,
-    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"southwest\" AND southWestFRCList=\"bristol\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6619,7 +7980,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "newportCourtList",
     "TabFieldDisplayOrder": 36,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6629,7 +7990,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "swanseaCourtList",
     "TabFieldDisplayOrder": 37,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6639,7 +8000,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "northWalesCourtList",
     "TabFieldDisplayOrder": 38,
-    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"wales\" AND walesFRCList=\"northwales\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6649,7 +8010,7 @@
     "TabDisplayOrder": 15,
     "CaseFieldID": "highCourtList",
     "TabFieldDisplayOrder": 39,
-    "FieldShowCondition": "regionList=\"highcourt\""
+    "FieldShowCondition": "hearingDate !=\"\" AND hearing_regionList!=\"*\" AND regionList=\"highcourt\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6657,7 +8018,7 @@
     "TabID": "schedulingTabJudge",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
-    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "CaseFieldID": "hearing_regionList",
     "TabFieldDisplayOrder": 40
   },
   {
@@ -6666,8 +8027,277 @@
     "TabID": "schedulingTabJudge",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_midlandsFRCList",
+    "TabFieldDisplayOrder": 41,
+    "FieldShowCondition": "hearing_regionList=\"midlands\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_nottinghamCourtList",
+    "TabFieldDisplayOrder": 42,
+    "FieldShowCondition": "hearing_regionList=\"midlands\" AND hearing_midlandsFRCList=\"nottingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_cfcCourtList",
+    "TabFieldDisplayOrder": 43,
+    "FieldShowCondition": "hearing_regionList=\"london\" AND hearing_londonFRCList=\"cfc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_londonFRCList",
+    "TabFieldDisplayOrder": 44,
+    "FieldShowCondition": "hearing_regionList=\"london\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northWestFRCList",
+    "TabFieldDisplayOrder": 45,
+    "FieldShowCondition": "hearing_regionList=\"northwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northEastFRCList",
+    "TabFieldDisplayOrder": 46,
+    "FieldShowCondition": "hearing_regionList=\"northeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_southEastFRCList",
+    "TabFieldDisplayOrder": 47,
+    "FieldShowCondition": "hearing_regionList=\"southeast\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_southWestFRCList",
+    "TabFieldDisplayOrder": 48,
+    "FieldShowCondition": "hearing_regionList=\"southwest\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_walesFRCList",
+    "TabFieldDisplayOrder": 49,
+    "FieldShowCondition": "hearing_regionList=\"wales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_birminghamCourtList",
+    "TabFieldDisplayOrder": 50,
+    "FieldShowCondition": "hearing_regionList=\"midlands\" AND hearing_midlandsFRCList=\"birmingham\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_liverpoolCourtList",
+    "TabFieldDisplayOrder": 51,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"liverpool\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_manchesterCourtList",
+    "TabFieldDisplayOrder": 52,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"manchester\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_lancashireCourtList",
+    "TabFieldDisplayOrder": 53,
+    "FieldShowCondition": "hearing_regionList=\"northwest\" AND hearing_northWestFRCList=\"lancashire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_cleavelandCourtList",
+    "TabFieldDisplayOrder": 54,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"cleaveland\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_nwyorkshireCourtList",
+    "TabFieldDisplayOrder": 55,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"nwyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_humberCourtList",
+    "TabFieldDisplayOrder": 56,
+    "FieldShowCondition": "hearing_regionList=\"northeast\" AND hearing_northEastFRCList=\"hsyorkshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_kentSurreyCourtList",
+    "TabFieldDisplayOrder": 57,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"kentfrc\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_bedfordshireCourtList",
+    "TabFieldDisplayOrder": 58,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"bedfordshire\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_thamesvalleyCourtList",
+    "TabFieldDisplayOrder": 59,
+    "FieldShowCondition": "hearing_regionList=\"southeast\" AND hearing_southEastFRCList=\"thamesvalley\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_devonCourtList",
+    "TabFieldDisplayOrder": 60,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"devon\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_dorsetCourtList",
+    "TabFieldDisplayOrder": 61,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"dorset\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_bristolCourtList",
+    "TabFieldDisplayOrder": 62,
+    "FieldShowCondition": "hearing_regionList=\"southwest\" AND hearing_southWestFRCList=\"bristol\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_newportCourtList",
+    "TabFieldDisplayOrder": 63,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"newport\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_swanseaCourtList",
+    "TabFieldDisplayOrder": 64,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"swansea\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_northWalesCourtList",
+    "TabFieldDisplayOrder": 65,
+    "FieldShowCondition": "hearing_regionList=\"wales\" AND hearing_walesFRCList=\"northwales\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "hearing_highCourtList",
+    "TabFieldDisplayOrder": 66,
+    "FieldShowCondition": "hearing_regionList=\"highcourt\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "additionalInformationAboutHearingLabel",
+    "TabFieldDisplayOrder": 67
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "schedulingTabJudge",
+    "TabLabel": "Scheduling and Listing",
+    "TabDisplayOrder": 15,
     "CaseFieldID": "additionalInformationAboutHearing",
-    "TabFieldDisplayOrder": 41
+    "TabFieldDisplayOrder": 68
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6676,7 +8306,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalListOfHearingDocuments",
-    "TabFieldDisplayOrder": 42
+    "TabFieldDisplayOrder": 69
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6685,7 +8315,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 43
+    "TabFieldDisplayOrder": 70
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6694,7 +8324,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 44
+    "TabFieldDisplayOrder": 71
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6703,7 +8333,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 45
+    "TabFieldDisplayOrder": 72
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6712,7 +8342,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
+    "TabFieldDisplayOrder": 73
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6721,7 +8351,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
+    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6730,7 +8360,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "draftDirectionDetailsCollectionRO",
-    "TabFieldDisplayOrder": 48
+    "TabFieldDisplayOrder": 75
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6739,7 +8369,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "latestDraftHearingOrder",
-    "TabFieldDisplayOrder": 49
+    "TabFieldDisplayOrder": 76
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6748,7 +8378,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "directionDetailsCollection",
-    "TabFieldDisplayOrder": 50
+    "TabFieldDisplayOrder": 77
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6757,7 +8387,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingDirectionDetailsCollection",
-    "TabFieldDisplayOrder": 51
+    "TabFieldDisplayOrder": 78
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6766,7 +8396,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "additionalHearingDocuments",
-    "TabFieldDisplayOrder": 52
+    "TabFieldDisplayOrder": 79
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6775,7 +8405,7 @@
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 15,
     "CaseFieldID": "hearingNoticesDocumentCollection",
-    "TabFieldDisplayOrder": 53
+    "TabFieldDisplayOrder": 80
   },
   {
     "LiveFrom": "01/01/2017",
