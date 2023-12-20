@@ -2064,8 +2064,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "finalOrderCollection",
-    "Label": "Final Orders",
-    "HintText": "Final Orders",
+    "Label": "Finalised Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "view_finalOrderCollection",
     "SecurityClassification": "Public",
@@ -6417,15 +6416,6 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "10/09/2023",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "caseFileViewComponentLauncher",
-    "Label": "Case File View",
-    "FieldType": "ComponentLauncher",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
     "LiveFrom": "05/10/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "ordersToShare",
@@ -7234,7 +7224,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "administrativeDocumentsTransitional"
+    "CategoryID": "duplicatedGeneralOrders"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7244,7 +7234,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "administrativeDocumentsTransitional"
+    "CategoryID": "duplicatedGeneralOrders"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -7254,7 +7244,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "correspondence"
+    "CategoryID": "administrativeDocumentsTransitional"
   },
   {
     "LiveFrom": "01/01/2017",
