@@ -6486,5 +6486,19 @@
     "CaseFieldID":"bulkPrintCoverSheetResConfidential",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "auditSendOrders",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "auditSendOrders",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CURD"
   }
 ]

@@ -2104,5 +2104,14 @@
     "Label": "Launch the Flags screen",
     "FieldType": "FlagLauncher",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "auditSendOrders",
+    "Label": "Audit trail of send Order",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_auditSendOrders",
+    "SecurityClassification": "Public"
   }
 ]

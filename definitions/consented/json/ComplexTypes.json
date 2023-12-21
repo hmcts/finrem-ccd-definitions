@@ -1255,5 +1255,37 @@
     "FieldType": "Document",
     "ElementLabel": "Hearing notice",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_auditSendOrders",
+    "ListElementCode": "orderName",
+    "FieldType": "Text",
+    "ElementLabel": "Order name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_auditSendOrders",
+    "ListElementCode": "documentId",
+    "FieldType": "Text",
+    "ElementLabel": "Order name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_auditSendOrders",
+    "ListElementCode": "orderDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order sent at",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_auditSendOrders",
+    "ListElementCode": "party",
+    "FieldType": "Text",
+    "ElementLabel": "Order for",
+    "SecurityClassification": "Public"
   }
 ]
