@@ -4,10 +4,10 @@ async function giveAllocationDirection() {
   I.selectOption('select[id="next-step"]', 'Give Allocation Directions');
   I.wait('2');
   I.click('Go');
-  I.waitForText('The hearing centre for the case is:', '30');
+  I.waitForText('The hearing centre for the case is:', 30);
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('Should the application be dealt with as a ‘complex case’?');
+  I.waitForText('Should the application be dealt with as a', 5);
   I.checkOption('input[id="applicationAllocatedTo_No"]');
   I.checkOption('input[id="caseAllocatedTo_No"]');
   I.checkOption('input[value="FR_judgeAllocatedList_2"]');
