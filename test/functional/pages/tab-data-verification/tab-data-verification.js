@@ -296,7 +296,8 @@ async function approvedOrderTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
+    //await I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
+    await I.clickTab('Approved Order');
     await I.see(verifyTabText.approvedOrderTab.approvedLetter);
     await I.see(verifyTabText.approvedOrderTab.consentedAnnexedStamped);
     await I.see(verifyTabText.approvedOrderTab.typeOfPensionDocumentTypeStamped);
