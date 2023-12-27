@@ -10,7 +10,7 @@ const caaPassword = process.env.PASSWORD_CAA;
 const respondentEmail = process.env.USERNAME_RESPONDENT_SOLICITOR;
 const nightlyTest = process.env.NIGHTLY_TEST;
 
-Feature('Create Cases for Respondent Journey ');
+Feature('Contested Respondent Solicitor Tests');
 
 Scenario('Create and assign Contested Case To Respondent @nightly @preview', async ({ I }) => {
   if (runningEnv === 'demo') {
