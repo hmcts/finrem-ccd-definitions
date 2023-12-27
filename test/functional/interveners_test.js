@@ -23,7 +23,7 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 const caRef= `AUTO-${createCaseworkerReference()}`;
 const runningEnv = process.env.RUNNING_ENV;
 
-Feature('Manage Interveners');
+Feature('Intervener Tests');
 
 Scenario('Caseworker add Interveners (represented) @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
