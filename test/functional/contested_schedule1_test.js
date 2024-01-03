@@ -14,7 +14,7 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 const caRef= `AUTO-${createCaseworkerReference()}`;
 const runningEnv = process.env.RUNNING_ENV;
 
-Feature('Contested Schedule 1');
+Feature('Contested Schedule 1 Tests');
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async ({ I }) => {
     await I.signInIdam(solicitorUserName, solicitorPassword);
