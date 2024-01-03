@@ -2038,7 +2038,8 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3298,9 +3299,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "orderRefusalCollectionNew",
     "Label": "Application Not Approved",
-    "HintText": "Please choose ‘Add New’. A blank template will then appear for you to complete.",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_consentOrderNotApproved",
+    "FieldType": "FR_orderRefusalOrder",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5002,7 +5001,8 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5064,7 +5064,8 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID":  "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
