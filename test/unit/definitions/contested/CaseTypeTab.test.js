@@ -1,4 +1,5 @@
 const expect = require('chai').expect;
+const assert = require('chai').assert;
 const { uniq, uniqWith, map, filter } = require('lodash');
 
 const caseTypeTab = Object.assign(require('definitions/contested/json/CaseTypeTab/CaseTypeTab.json'), {});
@@ -32,23 +33,23 @@ describe('CaseTypeTab', () => {
       expect(uniqResults).to.eql(allFieldsPerTab);
     });
   });
-  // it('should contain a proper sequence for TabFieldDisplayOrder with no gaps', () => {
-  //   tabIds.forEach(tabId => {
-  //     const allFieldsPerTab = filter(caseTypeTab, field => {
-  //       return field.TabID === tabId;
-  //     });
-  //     const allTabFieldDisplayOrderNumbers = map(allFieldsPerTab, field => {
-  //       return field.TabFieldDisplayOrder;
-  //     }).sort((a, b) => {
-  //       return a - b;
-  //     });
-  //     for (let i = 1; i < allTabFieldDisplayOrderNumbers.length; i++) {
-  //       if (allTabFieldDisplayOrderNumbers[i] - allTabFieldDisplayOrderNumbers[i - 1] !== 1) {
-  //         assert.fail(`Missing/unordered TabFieldDisplayOrder sequence number in TabID ${tabId} - expected ${allTabFieldDisplayOrderNumbers[i - 1] + 1} but got ${allTabFieldDisplayOrderNumbers[i]}`);
-  //       }
-  //     }
-  //   });
-  // });
+  it('should contain a proper sequence for TabFieldDisplayOrder with no gaps', () => {
+    tabIds.forEach(tabId => {
+      const allFieldsPerTab = filter(caseTypeTab, field => {
+        return field.TabID === tabId;
+      });
+      const allTabFieldDisplayOrderNumbers = map(allFieldsPerTab, field => {
+        return field.TabFieldDisplayOrder;
+      }).sort((a, b) => {
+        return a - b;
+      });
+      for (let i = 1; i < allTabFieldDisplayOrderNumbers.length; i++) {
+        if (allTabFieldDisplayOrderNumbers[i] - allTabFieldDisplayOrderNumbers[i - 1] !== 1) {
+          assert.fail(`Missing/unordered TabFieldDisplayOrder sequence number in TabID ${tabId} - expected ${allTabFieldDisplayOrderNumbers[i - 1] + 1} but got ${allTabFieldDisplayOrderNumbers[i]}`);
+        }
+      }
+    });
+  });
 
   const expected = {
     state: 1,
