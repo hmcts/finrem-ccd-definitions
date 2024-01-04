@@ -3297,7 +3297,9 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "orderRefusalCollectionNew",
     "Label": "Application Not Approved",
-    "FieldType": "FR_orderRefusalOrder",
+    "HintText": "Please choose ‘Add New’. A blank template will then appear for you to complete.",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_consentOrderNotApproved",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },

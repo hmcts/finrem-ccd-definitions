@@ -2586,9 +2586,9 @@
     "CaseFieldID": "orderRefusalCollectionNew",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "COMPLEX",
-    "PageID": 1,
+    "PageID": "orderRefusalCollectionNew",
     "PageDisplayOrder": 1,
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/preview-consent-order-not-approved",
     "RetriesTimeoutURLMidEvent": "3,4,5",
     "ShowSummaryChangeOption": "Y"
   },
@@ -2600,6 +2600,7 @@
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": "orderRefusalPreviewDocument",
+    "PageLabel": "Consent Order Not Approved",
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"

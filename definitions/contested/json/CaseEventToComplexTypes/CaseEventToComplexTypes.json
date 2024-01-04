@@ -7,7 +7,7 @@
     "ListElementCode": "orderRefusalAfterText",
     "EventElementLabel": "AND AFTER",
     "FieldDisplayOrder": 1,
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -17,7 +17,7 @@
     "ListElementCode": "orderRefusal",
     "EventElementLabel": "Reason for Refusal",
     "FieldDisplayOrder": 2,
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -27,7 +27,7 @@
     "ListElementCode": "orderRefusalOther",
     "EventElementLabel": "Other (please specify)",
     "FieldDisplayOrder": 3,
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -57,7 +57,7 @@
     "ListElementCode": "orderRefusalDate",
     "EventElementLabel": "Date of order",
     "FieldDisplayOrder": 6,
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "01/01/2017",
