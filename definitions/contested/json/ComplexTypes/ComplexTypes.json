@@ -218,8 +218,8 @@
     "ID": "FR_ct_generalOrder",
     "ListElementCode": "dateOfOrder",
     "FieldType": "Date",
-    "ElementLabel": "Date of order",
-    "HintText": "Date of order",
+    "ElementLabel": "Court order date",
+    "HintText": "Court order date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2898,5 +2898,88 @@
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalAfterText",
+    "ElementLabel": "AND AFTER",
+    "FieldType": "TextArea",
+    "FieldDisplayOrder": 1,
+    "HintText": "The order will already contain the wording ‘AFTER reading the consent order signed by both parties’. Please complete the box below if you want to add an addition line, this will appear on the order as ‘AND AFTER [insert text here]’.",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusal",
+    "ElementLabel": "Reason for Refusal",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_OrderRefusal",
+    "FieldDisplayOrder": 2,
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalOther",
+    "FieldType": "TextArea",
+    "ElementLabel": "Other (please specify)",
+    "FieldDisplayOrder": 3,
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "orderRefusal=\"Other (please specify)\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalJudge",
+    "ElementLabel": "Select Judge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
+    "FieldDisplayOrder": 4,
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalJudgeName",
+    "ElementLabel": "Name of Judge",
+    "FieldType": "Text",
+    "FieldDisplayOrder": 5,
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalDate",
+    "FieldType": "Date",
+    "ElementLabel": "Date of order",
+    "FieldDisplayOrder": 6,
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalAddComments",
+    "ElementLabel": "Additional comments",
+    "FieldType": "TextArea",
+    "FieldDisplayOrder": 7,
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalSpacing",
+    "ElementLabel": "********************",
+    "FieldType": "Label",
+    "FieldDisplayOrder": 8,
+    "SecurityClassification": "Public"
   }
 ]

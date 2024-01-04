@@ -1008,9 +1008,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "orderRefusalCollectionNew",
     "Label": "Application Not Approved",
-    "HintText": "Please choose ‘Add New’. A blank template will then appear for you to complete.",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_orderRefusal",
+    "FieldType": "FR_orderRefusalOrder",
     "SecurityClassification": "Public"
   },
   {
