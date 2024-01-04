@@ -7164,9 +7164,8 @@
     "DisplayContext": "COMPLEX",
     "PageID": "orderRefusalCollectionNew",
     "PageDisplayOrder": 1,
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
-    "RetriesTimeoutURLMidEvent": "3,4,5",
-    "ShowSummaryChangeOption": "Y"
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/preview-consent-order-not-approved",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
