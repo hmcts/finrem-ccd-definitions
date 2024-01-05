@@ -17,9 +17,9 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 const caRef= `AUTO-${createCaseworkerReference()}`;
 const runningEnv = process.env.RUNNING_ENV;
 
-Feature('Contested Case flag');
+Feature('Contested Case Flag Tests');
 
-Scenario('Caseworker creates case flag  @nightly', async ({ I }) => {
+Scenario('Caseworker creates case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
@@ -31,7 +31,7 @@ Scenario('Caseworker creates case flag  @nightly', async ({ I }) => {
     logger.info('case flag created and verified');
 }).retry(3);
 
-Scenario('Caseworker manage case flag  @nightly', async ({ I }) => {
+Scenario('Caseworker manage case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -47,7 +47,7 @@ Scenario('Caseworker manage case flag  @nightly', async ({ I }) => {
 }).retry(3);
 
 
-Scenario('Judge creates case flag  @nightly', async ({ I }) => {
+Scenario('Judge creates case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
 
     await I.signInIdam(judgeUserName, judgePassword);
@@ -73,7 +73,7 @@ Scenario('Caseworker creates case flag for schedule 1 case @nightly', async ({ I
 }).retry(3);
 
 Scenario.skip('Create case flag with General Application @nightly', async ({ I }) => {
-
+    //Something is wrong with the below API calls
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -88,7 +88,6 @@ Scenario.skip('Create case flag with General Application @nightly', async ({ I }
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified for schedule 1 case');
-
 }).retry(3);
 
 Scenario('Case flag for Paper Case @nightly', async ({ I }) => {
