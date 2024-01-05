@@ -1260,9 +1260,8 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_orderRefusalOrder",
     "ListElementCode": "orderRefusalAfterText",
-    "ElementLabel": "AND AFTER",
     "FieldType": "TextArea",
-    "FieldDisplayOrder": 1,
+    "ElementLabel": "AND AFTER",
     "HintText": "The order will already contain the wording ‘AFTER reading the consent order signed by both parties’. Please complete the box below if you want to add an addition line, this will appear on the order as ‘AND AFTER [insert text here]’.",
     "SecurityClassification": "Public"
   },
@@ -1270,10 +1269,10 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_orderRefusalOrder",
     "ListElementCode": "orderRefusal",
-    "ElementLabel": "Reason for Refusal",
     "FieldType": "MultiSelectList",
     "FieldTypeParameter": "FR_ms_OrderRefusal",
-    "FieldDisplayOrder": 2,
+    "ElementLabel": "Reason for Refusal",
+    "HintText": "Please tick all boxes that apply",
     "SecurityClassification": "Public"
   },
   {
@@ -1282,27 +1281,34 @@
     "ListElementCode": "orderRefusalOther",
     "FieldType": "TextArea",
     "ElementLabel": "Other (please specify)",
-    "FieldDisplayOrder": 3,
-    "SecurityClassification": "Public",
-    "FieldShowCondition": "orderRefusal=\"Other (please specify)\""
+    "HintText": "If Other was ticked please provide details",
+    "FieldShowCondition": "orderRefusal=\"Other (please specify)\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalDocs",
+    "FieldType": "Document",
+    "ElementLabel": "Upload additional documents",
+    "HintText": "Please upload any additional documents",
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_orderRefusalOrder",
     "ListElementCode": "orderRefusalJudge",
-    "ElementLabel": "Select Judge",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
-    "FieldDisplayOrder": 4,
+    "ElementLabel": "Select Judge",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_orderRefusalOrder",
     "ListElementCode": "orderRefusalJudgeName",
+    "FieldType": "TextArea",
     "ElementLabel": "Name of Judge",
-    "FieldType": "Text",
-    "FieldDisplayOrder": 5,
     "SecurityClassification": "Public"
   },
   {
@@ -1311,25 +1317,15 @@
     "ListElementCode": "orderRefusalDate",
     "FieldType": "Date",
     "ElementLabel": "Date of order",
-    "FieldDisplayOrder": 6,
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_orderRefusalOrder",
     "ListElementCode": "orderRefusalAddComments",
-    "ElementLabel": "Additional comments",
     "FieldType": "TextArea",
-    "FieldDisplayOrder": 7,
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_orderRefusalOrder",
-    "ListElementCode": "orderRefusalSpacing",
-    "ElementLabel": "********************",
-    "FieldType": "Label",
-    "FieldDisplayOrder": 8,
+    "ElementLabel": "Additional comments",
+    "HintText": "Please add any additional comments for Court Admin (these comments will not be accessible by the Applicant’s solicitor)",
     "SecurityClassification": "Public"
   }
 ]

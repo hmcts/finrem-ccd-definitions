@@ -1008,7 +1008,9 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "orderRefusalCollectionNew",
     "Label": "Application Not Approved",
-    "FieldType": "FR_orderRefusalOrder",
+    "HintText": "Please choose ‘Add New’. A blank template will then appear for you to complete.",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_orderRefusal",
     "SecurityClassification": "Public"
   },
   {
@@ -2101,6 +2103,14 @@
     "ID": "flagLauncher",
     "Label": "Launch the Flags screen",
     "FieldType": "FlagLauncher",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "orderRefusalOnScreen",
+    "Label": "Application Not Approved",
+    "FieldType": "FR_orderRefusalOrder",
     "SecurityClassification": "Public"
   }
 ]
