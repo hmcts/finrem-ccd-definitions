@@ -59,6 +59,20 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_amendCaseCron",
+    "Name": "Amend Case for cron",
+    "Description": "Amend Case for cron",
+    "DisplayOrder": 104,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "EventEnablingCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_amendedConsentOrder",
     "Name": "Amended Consent Order",
     "Description": "Amended Consent Order",
@@ -731,6 +745,7 @@
     "DisplayOrder": 37,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"

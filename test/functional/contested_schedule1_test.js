@@ -14,9 +14,9 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 const caRef= `AUTO-${createCaseworkerReference()}`;
 const runningEnv = process.env.RUNNING_ENV;
 
-Feature('Contested Schedule 1');
+Feature('Contested Schedule 1 Tests');
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => {
+Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async ({ I }) => {
     await I.signInIdam(solicitorUserName, solicitorPassword);
     await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -35,7 +35,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async I => 
     await I.waitForText('Form A Application', '60')
 }).retry(3);
 
-Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I => {
+Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async ({ I }) => {
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -54,11 +54,12 @@ Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async I =>
     await I.waitForText('Form A Application', '60')
 }).retry(3);
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async I => {
+Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightly', async ({ I }) => {
     //The json file used to create case is new case data - this can be used to create a case via solicitor, case type schedule 1.
-   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-    await I.signInIdam(solicitorUserName, solicitorPassword);
-    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    await I.amOnPage(`${ccdWebUrl}/cases/case-details/${caseId}#Schedule%201/Child%20Details`);
+    //Navigating directly to schedule 1 tab
     await I.schedule1Tab(verifyTabText.Schedule1Tab.tabName);
     logger.info('Schedule 1 tab verified...')
 }).retry(3);

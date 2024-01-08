@@ -15,9 +15,9 @@ const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('helpers/utils.js');
 
 
-Feature('Consented case flag');
+Feature('Consented Case Flag Tests');
 
-Scenario('Caseworker creates case flag  @nightly', async I => {
+Scenario('Caseworker creates case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
 
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
@@ -28,7 +28,7 @@ Scenario('Caseworker creates case flag  @nightly', async I => {
     await I.validateCaseFlagTab('Active');
 }).retry(3);
 
-Scenario('Caseworker manage case flag  @nightly', async I => {
+Scenario('Caseworker manage case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
@@ -45,7 +45,7 @@ Scenario('Caseworker manage case flag  @nightly', async I => {
 }).retry(3);
 
 
-Scenario('Judge creates case flag  @nightly', async I => {
+Scenario('Judge creates case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
@@ -60,7 +60,7 @@ Scenario('Judge creates case flag  @nightly', async I => {
     logger.info('manage case event completed and verified');
 }).retry(3);
 
-Scenario('Judge manage case flag  @nightly', async I => {
+Scenario('Judge manage case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
