@@ -218,8 +218,8 @@
     "ID": "FR_ct_generalOrder",
     "ListElementCode": "dateOfOrder",
     "FieldType": "Date",
-    "ElementLabel": "Date of order",
-    "HintText": "Date of order",
+    "ElementLabel": "Court order date",
+    "HintText": "Court order date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -1012,8 +1012,7 @@
     "FieldType": "Document",
     "ElementLabel": "Upload Document",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "correspondence"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1286,7 +1285,8 @@
     "FieldType": "Document",
     "ElementLabel": "Additional Hearing Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2335,6 +2335,7 @@
     "ListElementCode": "caseDocumentConfidentiality",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the document confidential?",
+    "FieldShowCondition": "caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -2344,7 +2345,7 @@
     "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
-    "FieldShowCondition": "caseDocumentConfidentiality=\"No\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
     "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public",
@@ -2357,7 +2358,7 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "What type of document is this?",
-    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2857,7 +2858,8 @@
     "FieldType": "Document",
     "ElementLabel": "Hearing notices",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
