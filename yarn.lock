@@ -305,6 +305,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hmcts/eslint-config@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@hmcts/eslint-config@npm:1.4.0"
+  peerDependencies:
+    eslint: ">= 4.4"
+  checksum: 9409ff79ee8156b9b39774f4c5114d31041cff1f194825869c2487527abcbd6ec167a9e6eddb14b0e8c1ab2375c9a3c5616041b5861df859ec0716ac525a02f4
+  languageName: node
+  linkType: hard
+
 "@hmcts/nodejs-healthcheck@npm:^1.8.0":
   version: 1.8.3
   resolution: "@hmcts/nodejs-healthcheck@npm:1.8.3"
@@ -399,7 +408,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shinnn/eslint-config@npm:^6.0.0, @shinnn/eslint-config@npm:^6.10.4":
+"@shinnn/eslint-config@npm:^6.0.0":
   version: 6.10.4
   resolution: "@shinnn/eslint-config@npm:6.10.4"
   dependencies:
@@ -2744,10 +2753,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "finrem-ccd-definitions@workspace:."
   dependencies:
+    "@hmcts/eslint-config": ^1.4.0
     "@hmcts/nodejs-healthcheck": ^1.8.0
     "@hmcts/nodejs-logging": ^4.0.4
     "@hmcts/properties-volume": 1.1.0
-    "@shinnn/eslint-config": ^6.10.4
     "@shinnn/eslint-config-node": ^6.0.2
     chai: ^4.2.0
     codeceptjs: ^3.5.6
