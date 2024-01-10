@@ -113,6 +113,7 @@
     "playwright": "^1.39.0"
   },
   "devDependencies": {
+    "@cypress/request": "^3.0.0",
     "@hmcts/eslint-config": "^1.4.0",
     "@shinnn/eslint-config-node": "^6.0.2",
     "chai": "^4.2.0",
@@ -126,7 +127,6 @@
     "pre-commit": "^1.2.2",
     "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0",
-    "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
     "sonar-scanner": "^3.1.0",
     "webdriverio": "^7.0.7"
