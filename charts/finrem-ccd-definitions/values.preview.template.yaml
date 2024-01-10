@@ -256,6 +256,7 @@ ccd:
       autoscaling:
         enabled: false
       environment:
+        APP_INSIGHTS_INSTRUMENTATION_KEY: "97f6a0e1-6be6-44b0-97bf-d03852b7791f"
         IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
         IDAM_OAUTH2_CLIENT_SECRET: ${API_GATEWAY_IDAM_SECRET}
         PROXY_DOCUMENT_MANAGEMENT: http://dm-store-aat.service.core-compute-aat.internal
