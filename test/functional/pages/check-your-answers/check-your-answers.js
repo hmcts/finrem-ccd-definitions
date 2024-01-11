@@ -1,4 +1,4 @@
-/* eslint-disable no-invalid-this */
+/* eslint-disable no-invalid-this. */
 const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 
 async function checkYourAnswers() {
