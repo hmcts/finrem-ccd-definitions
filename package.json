@@ -79,6 +79,7 @@
     "generate-excel-contested": "yarn run copy-common-components-contested && bash bin/contested/generate-excel-contested.sh",
     "generate-excel-local-contested": "bash bin/contested/generate-excel-local-contested.sh",
     "generate-excel-preview-contested": "bash bin/contested/generate-excel-preview-contested.sh",
+    "generate-excel-preview-contested-local": "FR_ENV=preview CCD_DEF_COS_URL=http://finrem-ccd-definitions-pr-1471-finrem-cos CCD_DEF_CCD_URL=http://finrem-ccd-definitions-pr-1471-ccd-data-store-api CCD_DEF_AAC_URL=http://finrem-ccd-definitions-pr-1471-aac-manage-case-assignment EXCLUDE='*-prod.json' yarn run generate-excel-contested",
     "generate-excel-aat-contested": "bash bin/contested/generate-excel-aat-contested.sh",
     "generate-excel-demo-contested": "bash bin/contested/generate-excel-demo-contested.sh",
     "generate-excel-demo-prod-like-contested": "bash bin/contested/generate-excel-demo-prod-like-contested.sh",
