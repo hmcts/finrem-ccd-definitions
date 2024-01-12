@@ -5089,6 +5089,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageScannedDocumentCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageCaseDocuments",
+    "Label": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplications",
     "Label": "General Applications",
     "FieldType": "Collection",
