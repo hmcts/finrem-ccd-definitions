@@ -1059,7 +1059,7 @@
     "Name": "Revert to Prepare For Hearing",
     "Description": "Revert Case State to Prepare For Hearing",
     "DisplayOrder": 132,
-    "PreConditionState(s)": "consentProcess",
+    "PreConditionState(s)": "consentProcess;orderDrawn",
     "PostConditionState": "prepareForHearing",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
