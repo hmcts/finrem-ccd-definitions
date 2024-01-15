@@ -3,6 +3,7 @@ const assert = require('assert');
 async function createCaseFlag(){
   const I = this;
 
+  I.waitForPage('select[id="next-step"]');
   I.selectOption('select[id="next-step"]', 'Create Flag');
   I.click('Go');
   I.waitForText('Create a case flag', '60');
