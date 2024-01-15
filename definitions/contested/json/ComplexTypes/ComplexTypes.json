@@ -155,7 +155,7 @@
     "ElementLabel": "Document Url",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "approvedOrders"
+    "CategoryID": "administrativeDocumentsTransitional"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1010,8 +1010,7 @@
     "FieldType": "Document",
     "ElementLabel": "Upload Document",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "correspondence"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1344,6 +1343,42 @@
     "ListElementCode": "caseDocumentUploadDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Upload DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "scannedFileName",
+    "FieldType": "Text",
+    "ElementLabel": "Original scanned file name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2302,6 +2337,15 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File Name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_caseDocumentType",
@@ -2334,6 +2378,7 @@
     "ListElementCode": "caseDocumentConfidentiality",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the document confidential?",
+    "FieldShowCondition": "caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -2343,7 +2388,7 @@
     "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
-    "FieldShowCondition": "caseDocumentConfidentiality=\"No\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
     "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public",
@@ -2356,7 +2401,7 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "What type of document is this?",
-    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2366,6 +2411,33 @@
     "ListElementCode": "caseDocumentUploadDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Upload DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "scannedFileName",
+    "FieldType": "Text",
+    "ElementLabel": "Scanned filename",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
