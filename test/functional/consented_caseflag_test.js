@@ -17,7 +17,7 @@ const logger = Logger.getLogger('helpers/utils.js');
 
 Feature('Consented Case Flag Tests');
 
-Scenario.only('Caseworker creates case flag @nightly', async ({ I }) => {
+Scenario('Caseworker creates case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
 
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
