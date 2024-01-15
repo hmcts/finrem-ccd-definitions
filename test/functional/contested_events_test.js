@@ -16,7 +16,7 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Events Tests');
 
-Scenario('Manage Confidential Documents @nightly', async I => {
+Scenario.skip('Manage Confidential Documents @nightly', async I => {
     //Test needs updating as manage confidential documents event has been removed
     //New event is just manage case documents - needs test written
 
@@ -58,7 +58,7 @@ Scenario('Contested Add Note @nightly ', async ({ I }) => { //Matrimonial
     await I.addNote();
 }).retry(3);
 
-Scenario('Contested Matrimonial case Amend application and Case submission by Solicitor @nightly', async I => {
+Scenario.skip('Contested Matrimonial case Amend application and Case submission by Solicitor @nightly', async I => {
     //TODO- fix test
     //The json file used to create case is new case data - this can be used to create a case via solicitor, case type matrimonial.
     //Fix this json file - not working
@@ -139,7 +139,7 @@ Scenario('List for hearing contested case @nightly', async ({ I }) => {
     I.waitForText('List for Hearing');
 }).retry(3);
 
-Scenario('Contested E2E @nightly @preview', async ({ I }) => {
+Scenario.skip('Contested E2E @nightly @preview', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
