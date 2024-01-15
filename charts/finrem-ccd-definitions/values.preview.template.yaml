@@ -85,6 +85,7 @@ finrem-cos:
       SEND_LETTER_SERVICE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
       DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
       CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
+      CRON_CFV_CATEGORISATION_TASK_ENABLED: true
     keyVaults:
       finrem:
         secrets:
