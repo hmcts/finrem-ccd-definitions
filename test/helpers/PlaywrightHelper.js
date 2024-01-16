@@ -52,17 +52,6 @@ class PlaywrightHelper extends Helper {
     return typeof locator === 'string' ? this.adjustLocator(locator) : this.adjustLocator(locator.css);
   }
 
-  /*
-  async addATemporaryDummyTab() {
-      if (this.helpers[helperName].browser.newPage) {
-          // is Puppeteer. With Xui we have an issue where it gets stuck unless you open a new tab for some reason
-          const dummyTab = await this.helpers[helperName].browser.newPage();
-          await this.delay(0.2);
-          await dummyTab.close();
-      }
-  }
-  */
-
   async waitForNavigationToComplete(locator, delay = 0) {
     const page = this.helpers[helperName].page;
 
