@@ -24,6 +24,7 @@ Scenario('Caseworker creates case flag @nightly', async ({ I }) => {
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
     await I.validateCaseFlagAlertMessage();
@@ -40,6 +41,7 @@ Scenario('Caseworker manage case flag @nightly', async ({ I }) => {
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     const flagStatus = await I.manageFlags();
     await I.clickTab('Case Flags');
     await I.validateCaseFlagTab(flagStatus);
@@ -52,6 +54,7 @@ Scenario('Judge creates case flag @nightly', async ({ I }) => {
 
     await I.signInIdam(judgeUserName, judgePassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
     await I.validateCaseFlagAlertMessage();
@@ -65,6 +68,7 @@ Scenario('Caseworker creates case flag for schedule 1 case @nightly', async ({ I
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
     await I.validateCaseFlagAlertMessage();
@@ -83,6 +87,7 @@ Scenario('Create case flag with General Application @nightly', async ({ I }) => 
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.awaitingJudiciaryResponseEndState);
     await I.validateCaseFlagAlertMessage();
@@ -95,6 +100,7 @@ Scenario('Case flag for Paper Case @nightly', async ({ I }) => {
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     await I.createCaseFlag();
     await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
     await I.validateCaseFlagAlertMessage();
