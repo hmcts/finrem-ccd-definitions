@@ -1,6 +1,7 @@
 /* eslint-disable no-invalid-this */
 const verifyTabText = require('../../../data/verify-consented-tab-data.json');
 const verifyContestedTabText = require('../../../data/verify-contested-tab-data.json');
+const verifyConsentedTabText = require('../../../data/verify-consented-tab-data.json');
 const verifyContestedPaperTabText = require('../../../data/verify-contested-paper-case-tab-data.json');
 
 async function historyTab(caseType, tabName, eventName, endState) {
@@ -474,7 +475,14 @@ async function verifyManageBarristerEvent(caseType, eventName, stateName) {
 
 async function verifyCaseFlagEvent(caseType, eventName, stateName) {
   const I = this;
-  await I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+  switch (caseType) {
+    case 'consented':
+      await I.historyTab(caseType, verifyConsentedTabText.historyTab.tabName, eventName, stateName);
+      break;
+    case 'contested':
+      await I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+      break;
+  }
 }
 
 async function verifyListForInterimHearing() {
