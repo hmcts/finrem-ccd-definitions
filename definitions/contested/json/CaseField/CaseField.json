@@ -3980,7 +3980,8 @@
     "Label": "Order approved cover letter",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "administrativeDocumentsTransitional"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7396,7 +7397,7 @@
     "Label": "Latest draft hearing order",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "approvedOrders"
+    "CategoryID": "systemDuplicates"
   },
   {
     "LiveFrom": "01/01/2017",
