@@ -5028,6 +5028,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fdrHearingBundleCollections",
+    "Label": "FDR Hearing Bundle",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_hearingUploadBundle",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "interimHearings",
     "Label": "Interim Hearings",
     "FieldType": "Collection",
@@ -5071,6 +5081,16 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "manageCaseDocumentCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageCaseDocuments",
+    "Label": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageScannedDocumentCollection",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_manageCaseDocuments",
     "Label": " ",
