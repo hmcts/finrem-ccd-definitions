@@ -27,8 +27,8 @@ Scenario('Consent Case Creation For Caseworker @nightly @preview', async ({ I })
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
     /* eslint-disable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait('15');
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
     //TODO-fix
     //await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
