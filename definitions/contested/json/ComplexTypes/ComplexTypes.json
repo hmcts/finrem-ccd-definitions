@@ -741,7 +741,7 @@
     "RegularExpression": ".doc,.docx",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "administrativeDocumentsTransitional"
+    "CategoryID": "systemDuplicates"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1112,7 +1112,8 @@
     "ElementLabel": "Upload additional documents",
     "HintText": "Please upload any additional documents",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "administrativeDocumentsJudicialNotes"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1170,7 +1171,8 @@
     "FieldType": "Document",
     "ElementLabel": "Consent Order Annexed and Stamped",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID":  "approvedOrdersConsentApplication"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1246,7 +1248,7 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID":  "applicationsConsentApplication"
+    "CategoryID":  "approvedOrdersConsentApplication"
   },
 
   {
@@ -2450,7 +2452,8 @@
     "FieldType": "Document",
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "applicationsGeneralApplications"
   },
   {
     "LiveFrom": "01/01/2017",
