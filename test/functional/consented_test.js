@@ -28,6 +28,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @preview', async ({ I })
     /* eslint-disable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
     //TODO-fix
     //await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
@@ -50,6 +51,7 @@ Scenario('Consent Case Creation For Judge @nightly', async ({ I }) => {
     /* eslint-enable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     // eslint-disable-next-line max-len
     await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
     //TODO-fix
@@ -69,6 +71,7 @@ Scenario('Consent Case approve and send order @nightly', async ({ I }) => {
      /* eslint-enable */
     await I.retry(3).signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     // eslint-disable-next-line max-len
     //TODO-fix
     //await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
