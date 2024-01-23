@@ -14,7 +14,7 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 const caRef= `AUTO-${createCaseworkerReference()}`;
 const runningEnv = process.env.RUNNING_ENV;
 
-Feature('Contested Schedule 1');
+Feature('Contested Schedule 1 Tests');
 
 Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async ({ I }) => {
     await I.signInIdam(solicitorUserName, solicitorPassword);
@@ -59,6 +59,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor using API call @nightl
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/cases/case-details/${caseId}#Schedule%201/Child%20Details`);
+    I.wait('15');
     //Navigating directly to schedule 1 tab
     await I.schedule1Tab(verifyTabText.Schedule1Tab.tabName);
     logger.info('Schedule 1 tab verified...')

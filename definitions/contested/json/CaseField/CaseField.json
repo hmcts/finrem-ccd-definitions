@@ -2036,7 +2036,8 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2064,8 +2065,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "finalOrderCollection",
-    "Label": "Final Orders",
-    "HintText": "Final Orders",
+    "Label": "Finalised Orders",
     "FieldType": "Collection",
     "FieldTypeParameter": "view_finalOrderCollection",
     "SecurityClassification": "Public",
@@ -3980,7 +3980,8 @@
     "Label": "Order approved cover letter",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "administrativeDocumentsTransitional"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5000,7 +5001,8 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5020,6 +5022,16 @@
     "Label": "                                                                                      ",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fdrHearingBundleCollections",
+    "Label": "FDR Hearing Bundle",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_hearingUploadBundle",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5062,12 +5074,23 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID":  "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "manageCaseDocumentCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageCaseDocuments",
+    "Label": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageScannedDocumentCollection",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_manageCaseDocuments",
     "Label": " ",
@@ -6441,7 +6464,8 @@
     "Label": "Please upload any additional document",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "approvedOrders"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6451,7 +6475,8 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "approvedOrders"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7225,7 +7250,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "administrativeDocumentsTransitional"
+    "CategoryID": "duplicatedGeneralOrders"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7235,7 +7260,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "administrativeDocumentsTransitional"
+    "CategoryID": "duplicatedGeneralOrders"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -7245,7 +7270,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "correspondence"
+    "CategoryID": "administrativeDocumentsTransitional"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7374,7 +7399,7 @@
     "Label": "Latest draft hearing order",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "approvedOrders"
+    "CategoryID": "systemDuplicates"
   },
   {
     "LiveFrom": "01/01/2017",

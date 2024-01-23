@@ -155,7 +155,7 @@
     "ElementLabel": "Document Url",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "approvedOrders"
+    "CategoryID": "administrativeDocumentsTransitional"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -218,8 +218,8 @@
     "ID": "FR_ct_generalOrder",
     "ListElementCode": "dateOfOrder",
     "FieldType": "Date",
-    "ElementLabel": "Date of order",
-    "HintText": "Date of order",
+    "ElementLabel": "Court order date",
+    "HintText": "Court order date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -740,7 +740,8 @@
     "ElementLabel": "Upload Draft Document",
     "RegularExpression": ".doc,.docx",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "administrativeDocumentsTransitional"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -862,7 +863,8 @@
     "ElementLabel": "Upload  Document",
     "HintText": "PLEASE NOTE: You must upload a PDF version of document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1010,8 +1012,7 @@
     "FieldType": "Document",
     "ElementLabel": "Upload Document",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "correspondence"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1051,7 +1052,7 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "approvedOrders"
+    "CategoryID": "approvedOrdersConsentApplication"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -1069,7 +1070,8 @@
     "FieldType": "Document",
     "ElementLabel": "Upload Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "administrativeDocumentsTransitional"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1110,7 +1112,8 @@
     "ElementLabel": "Upload additional documents",
     "HintText": "Please upload any additional documents",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "administrativeDocumentsJudicialNotes"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1168,7 +1171,8 @@
     "FieldType": "Document",
     "ElementLabel": "Consent Order Annexed and Stamped",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID":  "approvedOrdersConsentApplication"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1244,7 +1248,7 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID":  "applicationsConsentApplication"
+    "CategoryID":  "approvedOrdersConsentApplication"
   },
 
   {
@@ -1283,7 +1287,8 @@
     "FieldType": "Document",
     "ElementLabel": "Additional Hearing Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1351,6 +1356,42 @@
     "ListElementCode": "caseDocumentUploadDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Upload DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "scannedFileName",
+    "FieldType": "Text",
+    "ElementLabel": "Original scanned file name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_uploadCaseDocument",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2309,6 +2350,15 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File Name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_caseDocumentType",
@@ -2341,6 +2391,7 @@
     "ListElementCode": "caseDocumentConfidentiality",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the document confidential?",
+    "FieldShowCondition": "caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -2350,7 +2401,7 @@
     "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
-    "FieldShowCondition": "caseDocumentConfidentiality=\"No\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
     "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public",
@@ -2363,7 +2414,7 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "What type of document is this?",
-    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2377,13 +2428,41 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "scannedFileName",
+    "FieldType": "Text",
+    "ElementLabel": "Scanned filename",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/06/2020",
     "ID": "FR_ct_generalApplicationCollection",
     "ListElementCode": "generalApplicationDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "applicationsGeneralApplications"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2863,7 +2942,8 @@
     "FieldType": "Document",
     "ElementLabel": "Hearing notices",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2881,7 +2961,8 @@
     "FieldType": "Document",
     "ElementLabel": "Upload  Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "approvedOrders"
   },
   {
     "LiveFrom": "01/01/2017",
