@@ -9502,15 +9502,14 @@
     "PageLabel": "Interim Hearings",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "RetriesTimeoutURLMidEvent": "3,4,5",
-    "RetainHiddenValue": "Yes"
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_listForInterimHearing",
     "CaseFieldID": "interimHearingsScreenField",
-    "PageFieldDisplayOrder": 1,
+    "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageLabel": "Interim Hearings",
@@ -9525,7 +9524,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_listForInterimHearing",
     "CaseFieldID": "partiesOnCase",
-    "PageFieldDisplayOrder": 4,
+    "PageFieldDisplayOrder": 3,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageLabel": "Interim Hearings",
