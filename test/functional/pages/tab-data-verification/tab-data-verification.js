@@ -1,6 +1,7 @@
 /* eslint-disable no-invalid-this */
 const verifyTabText = require('../../../data/verify-consented-tab-data.json');
 const verifyContestedTabText = require('../../../data/verify-contested-tab-data.json');
+const verifyConsentedTabText = require('../../../data/verify-consented-tab-data.json');
 const verifyContestedPaperTabText = require('../../../data/verify-contested-paper-case-tab-data.json');
 
 async function historyTab(caseType, tabName, eventName, endState) {
@@ -296,7 +297,8 @@ async function approvedOrderTab(caseType, tabName) {
   // eslint-disable-next-line default-case
   switch (caseType) {
   case 'consented':
-    await I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
+    //await I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
+    await I.clickTab('Approved Order');
     await I.see(verifyTabText.approvedOrderTab.approvedLetter);
     await I.see(verifyTabText.approvedOrderTab.consentedAnnexedStamped);
     await I.see(verifyTabText.approvedOrderTab.typeOfPensionDocumentTypeStamped);
@@ -427,7 +429,7 @@ async function contestedIntervenersTab(event, tabName) {
   const I = this;
   await I.clickTab('Intervener 1');
     I.wait('5');
-    I.waitForText('Intervener\'s Full Name');
+    I.waitForText('s Full Name');
     I.waitForText('Organisation');
 
   await I.see(verifyContestedTabText.IntervenersTab.name);
@@ -473,7 +475,14 @@ async function verifyManageBarristerEvent(caseType, eventName, stateName) {
 
 async function verifyCaseFlagEvent(caseType, eventName, stateName) {
   const I = this;
-  await I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+  switch (caseType) {
+    case 'consented':
+      await I.historyTab(caseType, verifyConsentedTabText.historyTab.tabName, eventName, stateName);
+      break;
+    case 'contested':
+      await I.historyTab(caseType, verifyContestedTabText.historyTab.tabName, eventName, stateName);
+      break;
+  }
 }
 
 async function verifyListForInterimHearing() {

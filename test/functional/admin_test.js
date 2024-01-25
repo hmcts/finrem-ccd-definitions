@@ -1,4 +1,4 @@
-Feature('Admin Web');
+Feature('Admin Web Tests');
 
 Scenario('add all the roles @preview', ({ I }) => {
   I.loginToAdminConsole();
