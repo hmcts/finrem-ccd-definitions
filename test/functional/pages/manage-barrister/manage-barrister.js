@@ -3,7 +3,7 @@ function  manageBarristerApplicant() {        //Matrimonial Case
   I.selectOption('select[id="next-step"]', 'Manage Barrister');
   I.wait('2');
   I.click('Go');
-  I.waitForText('Manage Barrister', '30');
+  I.waitForText('Select Party to which the barrister change applies:', '30');
   I.checkOption('input[id="barristerParty-applicant"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -34,7 +34,7 @@ function manageBarristerRespondent() {
   I.selectOption('select[id="next-step"]', 'Manage Barrister');
   I.wait('2');
   I.click('Go');
-  I.waitForText('Manage Barrister', '30');
+  I.waitForText('Select Party to which the barrister change applies:', '30');
   I.checkOption('input[id="barristerParty-respondent"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
