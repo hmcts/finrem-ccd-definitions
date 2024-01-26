@@ -25,7 +25,8 @@ async function validateCaseFlagAlertMessage(){
   I.see('View case flags');
 
   //click tab
-  await I.clickTab('Case Flags');
+  //await I.clickTab('Case Flags');
+  await I.click('View case flags')
   I.waitForText('Case flags');
 }
 
