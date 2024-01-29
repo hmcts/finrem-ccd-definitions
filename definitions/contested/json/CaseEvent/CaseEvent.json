@@ -949,6 +949,7 @@
     "DisplayOrder": 127,
     "PreConditionState(s)": "consentedOrderApproved",
     "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
