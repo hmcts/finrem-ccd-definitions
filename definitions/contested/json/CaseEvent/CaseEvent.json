@@ -1423,20 +1423,5 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_initiateCfvMigration",
-    "Name": "Initiate CFV Migration",
-    "Description": "Initiate CFV Migration",
-    "DisplayOrder": 154,
-    "PreConditionState(s)": "*",
-    "PostConditionState": "*",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
-    "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
   }
 ]
