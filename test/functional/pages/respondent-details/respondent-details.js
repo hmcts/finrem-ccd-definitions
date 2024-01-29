@@ -17,7 +17,8 @@ function respondentSolicitorDetailsDetails(I) {
   I.fillField('Enter a UK postcode', 'TW3 1SS');
   I.click('Find address');
   I.wait(5);
-  I.selectOption('Select an address', '75 Pears Road, Hounslow');
+  I.selectOption('select[id="rSolicitorAddress_rSolicitorAddress_addressList"]', { label: '75 Pears Road, Hounslow' });
+  I.wait(1);
   I.fillField('input[id="rSolicitorAddress__detailAddressLine2"]', 'Flat2');
   I.fillField('input[id="rSolicitorAddress__detailAddressLine3"]', 'Ring Road');
   I.fillField('input[id="rSolicitorAddress__detailCounty"]', 'Essex');
