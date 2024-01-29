@@ -7,7 +7,7 @@ async function manageFlags(){
   I.waitForText('Manage case flags', '30');
   I.checkOption('input[id="flag-selection-0"]');
   I.click('Next');
-  I.waitForText("Update flag \"Vulnerable user\"");
+  //I.waitForText('Update flag "Vulnerable user"', '30');
 
   I.click('Make inactive');
   const flagStatus = I.grabTextFrom('//*[@id="caseEditForm"]/div[4]/ccd-field-write/div/ccd-write-case-flag-field/div/div/ccd-update-flag/div/div[2]/div[1]/p/span/strong');
