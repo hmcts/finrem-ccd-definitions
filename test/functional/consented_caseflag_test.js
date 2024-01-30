@@ -73,6 +73,7 @@ Scenario('Judge manage case flag @nightly', async ({ I }) => {
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
     const flagStatus = await I.manageFlags();
+    I.wait('2')
     await I.clickTab('Case Flags');
     await I.validateCaseFlagTab(flagStatus);
     logger.info('manage case event completed and verified');

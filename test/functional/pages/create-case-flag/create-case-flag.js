@@ -5,11 +5,11 @@ async function createCaseFlag(){
 
   I.selectOption('select[id="next-step"]', 'Create Flag');
   I.click('Go');
-  I.waitForText('Create a case flag', '60');
-  I.checkOption('input[id="flag-location-1"]');
+  I.waitForText('Create flag', '60');
+  I.checkOption('#flag-location-1');
   I.click('Next');
-  I.waitForElement('input[id="flag-type-2"]', 30);
-  I.checkOption('input[id="flag-type-2"]');
+  I.waitForElement('#flag-type-2', 30);
+  I.checkOption('#flag-type-2');
   I.click('Next');
 
   I.waitForText('Add comments for this flag');
