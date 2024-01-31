@@ -31,6 +31,10 @@ dependencies:
     version: 0.2.30
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: finrem-cos.enabled
+  - name: postgresql
+    version: 1.0.2
+    repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
+    condition: postgresql.enabled
   - name: ccd-case-document-am-api
     version: 1.7.13
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
