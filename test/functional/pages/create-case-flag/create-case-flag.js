@@ -5,7 +5,7 @@ async function createCaseFlag(){
 
   I.selectOption('select[id="next-step"]', 'Create Flag');
   I.click('Go');
-  I.waitForPage('Create flag', '60');
+  I.waitForText('Create flag', '60');
   I.waitForElement('#flag-location-1', '30');
   I.checkOption('#flag-location-1');
   I.click('Next');
