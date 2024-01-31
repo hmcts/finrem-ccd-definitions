@@ -131,11 +131,14 @@ Scenario('List for hearing contested case @nightly', async ({ I }) => {
     I.wait('15');
     logger.info('---------------------case number------------------------', caseId);
     await I.allocateJudge();
+    I.wait('5');
     await I.see('Allocate to Judge');
     await I.signOut();
     await I.signInIdam(judgeUserName, judgePassword);
+    I.wait('15');
     await I.waitForText('Judicial Case Manager');
     await I.enterCaseReference(caseId);
+    I.wait('5');
     await I.see('Gate Keeping And Allocation');
     await I.giveAllocationDirection();
     await I.signOut();
