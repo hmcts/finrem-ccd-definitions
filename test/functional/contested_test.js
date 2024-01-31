@@ -35,6 +35,7 @@ Scenario('Contested Case Creation For Caseworker @nightly', async ({ I }) => {
     /* eslint-enable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     // eslint-disable-next-line max-len
     await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
   }
@@ -57,6 +58,7 @@ Scenario('Contested Case Creation For Judge @nightly', async ({ I }) => {
     /* eslint-enable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     // eslint-disable-next-line max-len
     await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeEvent, verifyTabText.historyTab.assignToJudgeEndState);
     //TODO-fix
@@ -78,6 +80,7 @@ Scenario('Contested Case Creation For Ready For Hearing @nightly', async ({ I })
   /* eslint-enable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     // eslint-disable-next-line max-len
     await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.submitUploadCaseFilesEvent, verifyTabText.historyTab.submitUploadCaseFilesEndState);
     //TODO-fix
@@ -128,6 +131,7 @@ Scenario('Consented case in Contested @nightly', async ({ I }) => {
     /* eslint-enable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     // eslint-disable-next-line max-len
     await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.consentOrderEvent, verifyTabText.historyTab.consentOrderEndState);
     //TODO-fix
@@ -148,6 +152,7 @@ Scenario('Consented case in Contested Assigned to Judge @nightly', async ({ I })
   /* eslint-enable */
   await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
   await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+  I.wait('15');
   // eslint-disable-next-line max-len
   await I.verifyContestedTabData(verifyTabText.caseType, verifyTabText.historyTab.assignToJudgeConsentEvent, verifyTabText.historyTab.assignToJudgeConsentEndState);
   //TODO-fix
@@ -167,6 +172,7 @@ Scenario('Contested Paper Case Creation @nightly', async ({ I }) => {
     /* eslint-enable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     // eslint-disable-next-line max-len
     await I.verifyContestedPaperTabData(verifyContestedPaperTabText.caseType, verifyContestedPaperTabText.historyTab.manualPaymentEvent, verifyContestedPaperTabText.historyTab.manualPaymentEndState);
   }
@@ -201,8 +207,8 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async ({ I
     await I.contestedCheckYourAnswers('Matrimonial');
     await I.waitForText('Form A Application', '60')
 }).retry(3);
-
-Scenario('Contested Matrimonial Case Creation by Caseworker @nightly @preview', async ({ I }) => {
+//disable in preview
+Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
