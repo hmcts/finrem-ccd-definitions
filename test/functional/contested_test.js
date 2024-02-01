@@ -210,7 +210,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async ({ I
 //disable in preview
 Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait('2');
+    I.wait('15');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
     await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
     await I.contestedDivorceDetails();
@@ -225,7 +225,9 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ 
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Matrimonial');
     await I.waitForText('Form A Application', '60');
+    I.wait('15');
     await I.manualPayment();
+    I.wait('5');
     await I.issueApplication();
 }).retry(3);
 
