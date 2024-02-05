@@ -2627,7 +2627,7 @@
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabEstimatedAssestsCheckList",
     "TabFieldDisplayOrder": 18,
-    "FieldShowCondition": "estimatedAssetsChecklist2!=\"*\""
+    "FieldShowCondition": "estimatedAssetsChecklistV2!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2637,7 +2637,7 @@
     "TabDisplayOrder": 11,
     "CaseFieldID": "tabEstimatedAssetsCheckList2",
     "TabFieldDisplayOrder": 18,
-    "FieldShowCondition": "estimatedAssetsChecklist2!=\"\""
+    "FieldShowCondition": "estimatedAssetsChecklistV2!=\"\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2645,7 +2645,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "estimatedAssetsChecklist2",
+    "CaseFieldID": "estimatedAssetsChecklistV2",
     "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "tabNetValueOfHome=\"DONOTSHOW\""
   },

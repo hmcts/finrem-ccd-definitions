@@ -763,7 +763,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "estimatedAssetsChecklist2",
+    "ID": "estimatedAssetsChecklistV2",
     "Label": "Select one",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_ms_estimatedAssetsChecklist2",
@@ -2384,7 +2384,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabEstimatedAssetsCheckList2",
-    "Label": "**The net assets in this case are currently estimated to be in the order of**  ${estimatedAssetsChecklist2}",
+    "Label": "**The net assets in this case are currently estimated to be in the order of**  ${estimatedAssetsChecklistV2}",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
