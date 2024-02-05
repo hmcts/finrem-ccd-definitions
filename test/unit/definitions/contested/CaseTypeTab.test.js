@@ -18,20 +18,20 @@ describe('CaseTypeTab', () => {
     );
     expect(uniqResult).to.eql(caseTypeTab);
   });
-//  it('should contain a unique tab field display order ID field tab ID (no duplicate field order in a tab)', () => {
-//    tabIds.forEach(tabId => {
-//      const allFieldsPerTab = filter(caseTypeTab, field => {
-//        return field.TabID === tabId;
-//      });
-//      const uniqResults = uniqWith(
-//        allFieldsPerTab,
-//        (field1, field2) => {
-//          return field1.TabFieldDisplayOrder === field2.TabFieldDisplayOrder;
-//        }
-//      );
-//      expect(uniqResults).to.eql(allFieldsPerTab);
-//    });
-//  });
+  //  it('should contain a unique tab field display order ID field tab ID (no duplicate field order in a tab)', () => {
+  //    tabIds.forEach(tabId => {
+  //      const allFieldsPerTab = filter(caseTypeTab, field => {
+  //        return field.TabID === tabId;
+  //      });
+  //      const uniqResults = uniqWith(
+  //        allFieldsPerTab,
+  //        (field1, field2) => {
+  //          return field1.TabFieldDisplayOrder === field2.TabFieldDisplayOrder;
+  //        }
+  //      );
+  //      expect(uniqResults).to.eql(allFieldsPerTab);
+  //    });
+  //  });
   // it('should contain a proper sequence for TabFieldDisplayOrder with no gaps', () => {
   //   tabIds.forEach(tabId => {
   //     const allFieldsPerTab = filter(caseTypeTab, field => {
