@@ -33,7 +33,7 @@ async function contestedApplicantDetails() {
   I.click('Find address');
   I.waitForElement('#selectAddress', '30');
   I.wait('5');
-  I.selectOption('select[id="applicantAddress_applicantAddress_addressList"]', '27a, Church Street, Ilkley');
+  I.selectOption('select[id="applicantAddress_applicantAddress_addressList"]', { label: '27a, Church Street, Ilkley' });
 
   I.checkOption('input[id="applicantAddressConfidential_No"]');
 

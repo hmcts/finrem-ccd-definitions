@@ -14,8 +14,6 @@ idam-pr:
       - https://xui-${SERVICE_FQDN}/oauth2/callback
     XUIMO:
       - https://xui-mo-${SERVICE_FQDN}/oauth2/callback
-    CCD:
-      - https://case-management-web-${SERVICE_FQDN}/oauth2redirect
     CCD Admin:
       - https://admin-web-${SERVICE_FQDN}/oauth2redirect
 
@@ -85,6 +83,7 @@ finrem-cos:
       SEND_LETTER_SERVICE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
       DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
       CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
+      CRON_CFV_CATEGORISATION_TASK_ENABLED: true
     keyVaults:
       finrem:
         secrets:
@@ -114,7 +113,7 @@ ccd:
     definitionImporter:
       enabled: false
     managementWeb:
-      enabled: true
+      enabled: false
     apiGatewayWeb:
       enabled: true
     s2s:
@@ -136,9 +135,10 @@ ccd:
     ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
     ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
     ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
-    postgresUsername: hmcts
-    postgresPassword: hmcts
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+    postgresHostname: "financial-remedy-preview.postgres.database.azure.com"
+    postgresSecret: postgres
+    databaseNamePrefix: "pr-${CHANGE_ID}-"
 
   ccd-user-profile-api:
     java:
@@ -147,7 +147,7 @@ ccd:
         enabled: false
       imagePullPolicy: Always
       enviroment:
-        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
+        USER_PROFILE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
       environment:
         USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_definition,ccd_admin
       ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
@@ -164,7 +164,7 @@ ccd:
       devmemoryLimits: 2058Mi
       devcpuLimits: 2000m
       environment:
-        DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
+        DATA_STORE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
         DATA_STORE_S2S_AUTHORISED_SERVICES: ccd_gw,ccd_gateway,fpl_case_service,ccd_data,ccd_ps,aac_manage_case_assignment,xui_webapp,ccd_case_document_am_api,divorce_ccd_submission,divorce_frontend,finrem_case_orchestration
         CCD_S2S_AUTHORISED_SERVICES_CASE_USER_ROLES: aac_manage_case_assignment,fpl_case_service,finrem_case_orchestration,iac,divorce_frontend,civil_service
@@ -208,7 +208,7 @@ ccd:
       imagePullPolicy: Always
       image: hmctspublic.azurecr.io/ccd/definition-store-api:latest
       environment:
-        DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
+        DEFINITION_STORE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
         DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin,aac_manage_case_assignment
         IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
@@ -226,31 +226,9 @@ ccd:
       image: hmctspublic.azurecr.io/ccd/admin-web:latest
       ingressHost: admin-web-${SERVICE_FQDN}
       environment:
-        USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
+        USER_PROFILE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
         IDAM_ADMIN_WEB_SERVICE_KEY: ${ADMIN_S2S_KEY}
         IDAM_OAUTH2_AW_CLIENT_SECRET: ${ADMIN_WEB_IDAM_SECRET}
-
-  ccd-case-management-web:
-    nodejs:
-      disableKeyVaults: true
-      devmemoryRequests: 512Mi
-      devcpuRequests: "1000m"
-      devmemoryLimits: 1024Mi
-      devcpuLimits: "2500m"
-      resources:
-        requests:
-          cpu: 1000m
-          memory: 512Mi
-      autoscaling:
-        enabled: false
-      environment:
-        CCD_ACTIVITY_URL: null
-        DM_URL: https://gateway-${SERVICE_FQDN}/documents
-        DM_URL_REMOTE: https?://(gateway-${SERVICE_FQDN}:443|dm-store-aat.service.core-compute-aat.internal)/documents
-        NODE_TLS_REJECT_UNAUTHORIZED: 0
-        APPINSIGHTS_ENABLED: false
-      ingressHost: case-management-web-${SERVICE_FQDN}
-      ingressIP: ${INGRESS_IP}
 
   ccd-api-gateway-web:
     nodejs:
@@ -287,12 +265,15 @@ ccd:
       userProfileDatabaseName: user-profile
 
   postgresql:
-    persistence:
-      enabled: false
-    image:
-      registry: hmctspublic.azurecr.io
-      repository: imported/bitnami/postgresql
-      tag: '11.16.0'
+    enabled: true
+    flexibleserver: "financial-remedy-preview"
+    setup:
+      databases:
+        - name: "pr-${CHANGE_ID}-data-store"
+        - name: "pr-${CHANGE_ID}-draftstore"
+        - name: "pr-${CHANGE_ID}-role-assignment"
+        - name: "pr-${CHANGE_ID}-definition-store"
+        - name: "pr-${CHANGE_ID}-user-profile"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
