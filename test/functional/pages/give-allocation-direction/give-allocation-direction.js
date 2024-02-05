@@ -1,6 +1,7 @@
 
 async function giveAllocationDirection() {
   const I = this;
+  I.waitForElement('select[id="next-step"]', '30');
   I.selectOption('select[id="next-step"]', 'Give Allocation Directions');
   I.wait('2');
   I.click('Go');

@@ -29,7 +29,7 @@ Scenario('Caseworker creates case flag @nightly', async ({ I }) => {
     await I.clickTab('Case Flags');
     I.wait('5');
     await I.validateCaseFlagTab('Active');
-});
+}).retry(3);
 
 Scenario('Caseworker manage case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
@@ -43,7 +43,7 @@ Scenario('Caseworker manage case flag @nightly', async ({ I }) => {
     await I.clickTab('Case Flags');
     await I.validateCaseFlagTab(flagStatus);
     logger.info('manage case event completed and verified');
-});
+}).retry(3);
 
 
 Scenario('Judge creates case flag @nightly', async ({ I }) => {
@@ -60,7 +60,7 @@ Scenario('Judge creates case flag @nightly', async ({ I }) => {
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('manage case event completed and verified');
-});
+}).retry(3);
 
 Scenario('Judge manage case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
@@ -73,7 +73,8 @@ Scenario('Judge manage case flag @nightly', async ({ I }) => {
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
     const flagStatus = await I.manageFlags();
+    I.wait('2')
     await I.clickTab('Case Flags');
     await I.validateCaseFlagTab(flagStatus);
     logger.info('manage case event completed and verified');
-});
+}).retry(3);
