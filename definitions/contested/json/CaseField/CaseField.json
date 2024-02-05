@@ -3548,7 +3548,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationOutcomeOther",
-    "FieldType": "Text",
+    "FieldType": "TextArea",
     "Label": "Please Specify",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -7448,6 +7448,15 @@
     "ID": "orderRefusalOnScreen",
     "Label": "Application Not Approved",
     "FieldType": "FR_orderRefusalOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isCfvCategoriesAppliedFlag",
+    "Label": " ",
+    "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
