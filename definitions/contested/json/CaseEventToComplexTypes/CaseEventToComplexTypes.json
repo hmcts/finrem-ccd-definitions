@@ -3166,6 +3166,16 @@
     "ID": "manageInterveners",
     "CaseEventID": "manageInterveners",
     "CaseFieldID": "intervener1",
+    "ListElementCode": "intervenerResideOutsideUK",
+    "EventElementLabel": "Is intervener reside outside of UK?",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1",
     "ListElementCode": "intervenerAddress",
     "EventElementLabel": "Intervener's Address",
     "FieldDisplayOrder": "",
@@ -3369,6 +3379,16 @@
     "EventElementLabel": "Intervener's Full Name",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2",
+    "ListElementCode": "intervenerResideOutsideUK",
+    "EventElementLabel": "Is intervener reside outside of UK?",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -3584,6 +3604,16 @@
     "ID": "manageInterveners",
     "CaseEventID": "manageInterveners",
     "CaseFieldID": "intervener3",
+    "ListElementCode": "intervenerResideOutsideUK",
+    "EventElementLabel": "Is intervener reside outside of UK?",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3",
     "ListElementCode": "intervenerAddress",
     "EventElementLabel": "Intervener's Address",
     "FieldDisplayOrder": "",
@@ -3787,6 +3817,16 @@
     "EventElementLabel": "Intervener's Full Name",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4",
+    "ListElementCode": "intervenerResideOutsideUK",
+    "EventElementLabel": "Does the intervener live outside of the UK?",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",

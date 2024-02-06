@@ -2104,5 +2104,25 @@
     "Label": "Launch the Flags screen",
     "FieldType": "FlagLauncher",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "applicantResideOutsideUK",
+    "Label": "Does the applicant live outside of the UK?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "HintText": "If Yes, please enter the address using link 'I can't enter a UK postcode', also please provide the country.",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "respondentResideOutsideUK",
+    "Label": "Does the respondent live outside of the UK?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "HintText": "If Yes, please enter the address using link 'I can't enter a UK postcode', also please provide the country.",
+    "Searchable": "N"
   }
 ]
