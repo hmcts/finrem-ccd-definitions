@@ -3,7 +3,7 @@
 
 Financial Remedy configuration definitions for CCD.
 
-This allows for the FR CCD Config to be easily edited and stored in Github as JSON rather than version controlled in Confluence as Xlsx files.
+This allows for the FR CCD Config to be easily edited and stored in GitHub as JSON rather than version controlled in Confluence as Xlsx files.
 
 ## Setup
 
@@ -40,7 +40,7 @@ For Contested Journey:
 yarn generate-excel-all-contested
 ```
 
-The generated excel files will be in `defintions/consented/xlsx` or `defintions/contested/xlsx` respectively.
+The generated Excel files will be in `defintions/consented/xlsx` or `defintions/contested/xlsx` respectively.
 
 ### Generate Excel Configs for a specific environment i.e. AAT/DEMO/DEMO-PROD-LIKE/ITHC/PERFTEST
 
@@ -126,22 +126,35 @@ Then follow the typical release process.
 Please read more here:
 https://tools.hmcts.net/confluence/display/FR/Feature+toggles+for+CCD+definition
 
-## How to access PR deployment
+## How to access a PR deployment
 
-GitHub will have the main URL for this deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
-However, this URL in itself is not very useful. There are two subdomains that are useful.
+A PR will create a full CCD/ExUI stack in the preview environment as defined in the [Helm chart](charts/finrem-ccd-definitions/values.preview.template.yaml).
 
-* Visit `https://gateway-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal` in separate tab and whitelist accept the SSL certificate.
+GitHub will have the main URL for a PR deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.preview.platform.hmcts.net/`
 
-- "case-management-web-" for the Case management UI: e.g. `https://case-management-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
+This can be found be clicking 'View Deployment' in the conversation tab of the PR. However, this URL in itself is not very useful.
 
-- XUI: `https://xui-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
+To access a PR deployment via the UI for testing it must be persisted once the Jenkins build pipeline has finished.
+
+This is achieved by adding the label `enable_keep_helm` to the PR before it builds.
+
+The following URLs will then be available. Replace `<number>` with the value of your PR.
+
+| Application         | URL                                                                                |
+|---------------------|------------------------------------------------------------------------------------|
+| Manage Cases        | `https://xui-finrem-ccd-definitions-pr-<number>.preview.platform.hmcts.net/`       |
+| Manage Organisation | `https://xui-mo-finrem-ccd-definitions-pr-<number>.preview.platform.hmcts.net/`    |
+| CCD Admin Web       | `https://admin-web-finrem-ccd-definitions-pr-<number>.preview.platform.hmcts.net/` |
 
 * Login with an authorised AAT user [listed here](https://github.com/hmcts/finrem-ccd-definitions/blob/master/definitions/consented/json/UserProfile/UserProfile-nonprod.json)
 
-- "admin-web-" for the Case management UI: e.g. `https://admin-web-finrem-ccd-definitions-pr-<number>.service.core-compute-preview.internal/`
+See also:
+* https://tools.hmcts.net/confluence/display/RSE/Divorce+Local+Environment+Set+up+using+Preview
+* https://tools.hmcts.net/confluence/display/RSE/Debugging+a+service+in+Preview+Cluster+via+Telepresence
 
-Config changes are now uploaded to AAT when a PR branch is merged to master. When we want to release config changes to DEMO/ITHC:
+## Deploying CCD Config Changes to Demo or ITHC
+
+Config changes are now uploaded to AAT when a PR branch is merged to master. When we want to release config changes to Demo/ITHC:
 
 1) Excel files for the Consented or Contested Journey can be found in the `Artifacts` tab of the Jenkins build on merge to master
 3) Login to the CCD Admin Web Portal for the relevant environment
@@ -157,17 +170,3 @@ NOTE: Jenkins will populate Judge details in the PROD configs that is not availa
 
 Follow this guide for releasing a new config file to Production:
 https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+Production
-
-## Preview deployment for PRs in testing
-The team leveraged the fact this service has set up charts with all services needed for running the full Financial Remedy solution to create
-deployments to Preview with the PRs so Developers and Testers can work on changes without the weight that a local environment has on machine resources.
-
-The deployment can be switched ON by commenting `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
-
-More details can be found [here](https://tools.hmcts.net/confluence/display/RSE/Divorce+Local+Environment+Set+up+using+Preview)
-
-## ATTENTION! 
-If you switch the Preview deployment ON, 
-remember to switch it back OFF by removing the comment on `enableCleanupOfHelmReleaseOnSuccess()` in the Jenkins_CNP file.
-
-
