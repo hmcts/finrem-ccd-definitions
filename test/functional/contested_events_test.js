@@ -141,10 +141,14 @@ Scenario('List for hearing contested case @nightly', async ({ I }) => {
     I.wait('5');
     await I.see('Gate Keeping And Allocation');
     await I.giveAllocationDirection();
+    I.wait('15');
     await I.signOut();
+    I.wait('5');
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.wait('15');
     await I.waitForText('Manage Cases');
     await I.enterCaseReference(caseId);
+    I.wait('5');
     await I.listForHearing();
     I.waitForText('List for Hearing');
 }).retry(3);
@@ -188,6 +192,7 @@ Scenario('Caseworker runs List for Interim Hearing @nightly', async ({ I }) => {
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
     await I.listForInterimHearing();
+    I.wait('10');
     await I.verifyListForInterimHearing();
     logger.info("List Of Interim Hearing Completed");
 }).retry(3);

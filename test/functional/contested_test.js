@@ -258,7 +258,8 @@ Scenario.skip('progress to listing for contested case @nightly', async ({ I }) =
     await I.waitForText('List for Hearing');
 }).retry(3);
 
-Scenario('Update Contact Details for contested Case @nightly ', async ({ I }) => {
+// Duplicate test its already present in contested_events_test.js file
+Scenario.skip('Update Contact Details for contested Case @nightly ', async ({ I }) => {
   //caseworker, type-matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
