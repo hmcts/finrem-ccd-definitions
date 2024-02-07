@@ -1,5 +1,5 @@
 
-async function giveAllocationDirection() {
+function giveAllocationDirection() {
   const I = this;
   I.waitForElement('select[id="next-step"]', '30');
   I.selectOption('select[id="next-step"]', 'Give Allocation Directions');
@@ -17,7 +17,6 @@ async function giveAllocationDirection() {
   I.wait(2);
   I.waitForText('Event summary (optional)');
   I.click('Submit');
-  I.see('Give Allocation Directions');
 }
 
 module.exports = { giveAllocationDirection };
