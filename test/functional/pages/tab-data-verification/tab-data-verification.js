@@ -488,7 +488,9 @@ async function verifyCaseFlagEvent(caseType, eventName, stateName) {
 
 async function verifyListForInterimHearing() {
   const I = this;
-  await I.waitForNavigationToComplete('#mat-tab-label-0-13');
+  await I.clickTab(verifyContestedTabText.listForInterimHearingTab.tabName);
+  I.wait('5');
+  I.waitForText(verifyContestedTabText.listForInterimHearingTab.typeOfHearing, '10')
   await I.see(verifyContestedTabText.listForInterimHearingTab.tabName);
   await I.see(verifyContestedTabText.listForInterimHearingTab.typeOfHearing);
   await I.see(verifyContestedTabText.listForInterimHearingTab.timeEstimate);
