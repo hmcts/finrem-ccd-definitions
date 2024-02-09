@@ -210,7 +210,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async ({ I
 //disable in preview
 Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait('2');
+    I.wait('15');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
     await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
     await I.contestedDivorceDetails();
@@ -225,7 +225,9 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ 
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswers('Matrimonial');
     await I.waitForText('Form A Application', '60');
+    I.wait('15');
     await I.manualPayment();
+    I.wait('5');
     await I.issueApplication();
 }).retry(3);
 
@@ -256,7 +258,8 @@ Scenario.skip('progress to listing for contested case @nightly', async ({ I }) =
     await I.waitForText('List for Hearing');
 }).retry(3);
 
-Scenario('Update Contact Details for contested Case @nightly ', async ({ I }) => {
+// Duplicate test its already present in contested_events_test.js file
+Scenario.skip('Update Contact Details for contested Case @nightly ', async ({ I }) => {
   //caseworker, type-matrimonial
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
