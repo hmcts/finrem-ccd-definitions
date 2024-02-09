@@ -4,6 +4,7 @@ async function listForInterimHearing() {
   I.selectOption('select[id="next-step"]', 'List for Interim Hearing');
   I.wait('2');
   I.click('Go');
+  I.wait('2');
   I.waitForText('List for Interim Hearing', '30');
   I.click('Add new');
   I.wait('2');
@@ -21,10 +22,9 @@ async function listForInterimHearing() {
   I.attachFile('input[type="file"]', '../data/dummy.pdf');
   I.wait('5');
   I.click('Continue');
-  I.waitForText('Event summary');
+  I.waitForText('Event summary', '5');
   I.click('Submit');
-  I.waitForText('List for Interim Hearing');
-  I.clickTab("Scheduling and Listing for Interim Hearing");
+  I.wait('15');
 }
 
 module.exports = { listForInterimHearing };
