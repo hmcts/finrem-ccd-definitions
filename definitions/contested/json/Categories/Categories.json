@@ -98,8 +98,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicantMortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
+    "CategoryID": "applicantMortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
     "DisplayOrder": "14",
     "ParentCategoryID": "applicantDocuments"
   },
@@ -133,14 +133,6 @@
     "CategoryID": "applicantDocumentsWitnessStatements",
     "CategoryLabel": "Witness Statements",
     "DisplayOrder": "18",
-    "ParentCategoryID": "applicantDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicantDocumentsHousingParticulars",
-    "CategoryLabel": "Housing Particulars",
-    "DisplayOrder": "19",
     "ParentCategoryID": "applicantDocuments"
   },
   {
@@ -194,8 +186,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "respondentMortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
+    "CategoryID": "respondentMortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
     "DisplayOrder": "26",
     "ParentCategoryID": "respondentDocuments"
   },
@@ -229,14 +221,6 @@
     "CategoryID": "respondentDocumentsWitnessStatements",
     "CategoryLabel": "Witness Statements",
     "DisplayOrder": "30",
-    "ParentCategoryID": "respondentDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "respondentDocumentsHousingParticulars",
-    "CategoryLabel": "Housing Particulars",
-    "DisplayOrder": "31",
     "ParentCategoryID": "respondentDocuments"
   },
   {
@@ -1522,8 +1506,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
+    "CategoryID": "intervenerDocumentsIntervener1MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
     "DisplayOrder": "198",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
@@ -1557,14 +1541,6 @@
     "CategoryID": "intervenerDocumentsIntervener1WitnessStatements",
     "CategoryLabel": "Witness Statements",
     "DisplayOrder": "202",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1HousingParticulars",
-    "CategoryLabel": "Housing Particulars",
-    "DisplayOrder": "203",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -1610,8 +1586,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
+    "CategoryID": "intervenerDocumentsIntervener2MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
     "DisplayOrder": "209",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
@@ -1645,14 +1621,6 @@
     "CategoryID": "intervenerDocumentsIntervener2WitnessStatements",
     "CategoryLabel": "Witness Statements",
     "DisplayOrder": "213",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2HousingParticulars",
-    "CategoryLabel": "Housing Particulars",
-    "DisplayOrder": "214",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1698,8 +1666,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
+    "CategoryID": "intervenerDocumentsIntervener3MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
     "DisplayOrder": "220",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
@@ -1733,14 +1701,6 @@
     "CategoryID": "intervenerDocumentsIntervener3WitnessStatements",
     "CategoryLabel": "Witness Statements",
     "DisplayOrder": "224",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3HousingParticulars",
-    "CategoryLabel": "Housing Particulars",
-    "DisplayOrder": "225",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -1786,8 +1746,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
+    "CategoryID": "intervenerDocumentsIntervener4MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
     "DisplayOrder": "231",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
@@ -1821,14 +1781,6 @@
     "CategoryID": "intervenerDocumentsIntervener4WitnessStatements",
     "CategoryLabel": "Witness Statements",
     "DisplayOrder": "235",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4HousingParticulars",
-    "CategoryLabel": "Housing Particulars",
-    "DisplayOrder": "236",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
