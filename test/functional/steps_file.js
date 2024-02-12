@@ -63,7 +63,7 @@ module.exports = () => {
 
     // Define custom steps here, use 'this' to access default methods of I.
     // It is recommended to place a general 'login' function here.
-    
+
     loginToAdminConsole() {
       this.amOnPage(`${process.env.CCD_ADMIN_URL}`);
       this.see('Sign in');
@@ -98,7 +98,6 @@ module.exports = () => {
     },
 
     signOut() {
-      this.amOnPage(`${process.env.CCD_WEB_URL}`);
       this.click('Sign out');
     },
 
