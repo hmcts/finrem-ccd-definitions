@@ -1275,14 +1275,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.6.6":
-  version: 1.6.6
-  resolution: "axios@npm:1.6.6"
+"axios@npm:1.6.7":
+  version: 1.6.7
+  resolution: "axios@npm:1.6.7"
   dependencies:
     follow-redirects: ^1.15.4
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: 0a299c22643992a4f00c8f143e5d41815ff3c2bd56b9b9cc9cd3b6dfe43e9beabdd305b6d0d6ef41748021498a389165d32963c556da4a48f4042b1ea95dd30e
+  checksum: 87d4d429927d09942771f3b3a6c13580c183e31d7be0ee12f09be6d5655304996bb033d85e54be81606f4e89684df43be7bf52d14becb73a12727bf33298a082
   languageName: node
   linkType: hard
 
@@ -2448,10 +2448,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devtools-protocol@npm:^0.0.1203626":
-  version: 0.0.1203626
-  resolution: "devtools-protocol@npm:0.0.1203626"
-  checksum: 7bbcb1e637cf9c957aeae11284d2c4cd5fb45c0324839c9074b046889982a53f5cfca190f404aa9468523113714909db126b70a04baf1ec59f9905945a4b5975
+"devtools-protocol@npm:^0.0.1237913":
+  version: 0.0.1237913
+  resolution: "devtools-protocol@npm:0.0.1237913"
+  checksum: bf6d5c32a841def4bf73c7ec1b8b03ef36215a157a6dfc00f5f10d361d42b6492b801618df53cb1f3be6adead221c5f634dd4ef18388325e3c56d483b3dd7c11
   languageName: node
   linkType: hard
 
@@ -7549,8 +7549,8 @@ __metadata:
   linkType: hard
 
 "webdriverio@npm:^7.0.7":
-  version: 7.33.0
-  resolution: "webdriverio@npm:7.33.0"
+  version: 7.34.0
+  resolution: "webdriverio@npm:7.34.0"
   dependencies:
     "@types/aria-query": ^5.0.0
     "@types/node": ^18.0.0
@@ -7565,7 +7565,7 @@ __metadata:
     css-shorthand-properties: ^1.1.1
     css-value: ^0.0.1
     devtools: 7.33.0
-    devtools-protocol: ^0.0.1203626
+    devtools-protocol: ^0.0.1237913
     fs-extra: ^11.1.1
     grapheme-splitter: ^1.0.2
     lodash.clonedeep: ^4.5.0
@@ -7579,7 +7579,7 @@ __metadata:
     rgb2hex: 0.2.5
     serialize-error: ^8.0.0
     webdriver: 7.33.0
-  checksum: 963a8cb661d69f156d33cd9ba22a6a671079f962829b0628db86c0e1aa397a9078b84641184a38cafeb026517ce961fcb08687f89c32288fe223efafa4a3408d
+  checksum: 11dc61fffc5743a4d48dbd3cc75d69463b575d8ac7ee875408980aa6d788102e7abc8c1107562db2856d2d9bd1957a9428c4862b9d14488ab5dfd25f971febce
   languageName: node
   linkType: hard
 
