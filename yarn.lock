@@ -523,7 +523,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hmcts/nodejs-healthcheck@npm:^1.8.3":
+"@hmcts/nodejs-healthcheck@npm:^1.8.0":
   version: 1.8.3
   resolution: "@hmcts/nodejs-healthcheck@npm:1.8.3"
   dependencies:
@@ -3668,7 +3668,7 @@ __metadata:
   resolution: "finrem-ccd-definitions@workspace:."
   dependencies:
     "@hmcts/eslint-config": ^1.4.0
-    "@hmcts/nodejs-healthcheck": ^1.8.3
+    "@hmcts/nodejs-healthcheck": ^1.8.0
     "@hmcts/nodejs-logging": ^4.0.4
     "@hmcts/properties-volume": 1.1.0
     "@shinnn/eslint-config-node": ^6.0.2
