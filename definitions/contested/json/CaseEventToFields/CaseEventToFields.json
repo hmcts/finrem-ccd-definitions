@@ -7172,13 +7172,14 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrderNotApproved",
-    "CaseFieldID": "orderRefusalCollectionNew",
+    "CaseFieldID": "orderRefusalOnScreen",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "COMPLEX",
-    "PageID": "orderRefusalCollectionNew",
+    "PageID": "1",
     "PageDisplayOrder": 1,
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/documents/preview-consent-order-not-approved",
-    "RetriesTimeoutURLMidEvent": "3,4,5"
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5",
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
