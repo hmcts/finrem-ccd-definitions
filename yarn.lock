@@ -192,7 +192,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@azure/msal-node@npm:^2.5.1, @azure/msal-node@npm:^2.6.3":
+"@azure/msal-node@npm:^2.5.1":
   version: 2.6.3
   resolution: "@azure/msal-node@npm:2.6.3"
   dependencies:
@@ -3676,7 +3676,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "finrem-ccd-definitions@workspace:."
   dependencies:
-    "@azure/msal-node": ^2.6.3
     "@hmcts/eslint-config": ^1.4.0
     "@hmcts/nodejs-healthcheck": ^1.8.3
     "@hmcts/nodejs-logging": ^4.0.4
