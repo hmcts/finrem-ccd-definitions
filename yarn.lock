@@ -2448,10 +2448,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devtools-protocol@npm:^0.0.1203626":
-  version: 0.0.1203626
-  resolution: "devtools-protocol@npm:0.0.1203626"
-  checksum: 7bbcb1e637cf9c957aeae11284d2c4cd5fb45c0324839c9074b046889982a53f5cfca190f404aa9468523113714909db126b70a04baf1ec59f9905945a4b5975
+"devtools-protocol@npm:^0.0.1237913":
+  version: 0.0.1237913
+  resolution: "devtools-protocol@npm:0.0.1237913"
+  checksum: bf6d5c32a841def4bf73c7ec1b8b03ef36215a157a6dfc00f5f10d361d42b6492b801618df53cb1f3be6adead221c5f634dd4ef18388325e3c56d483b3dd7c11
   languageName: node
   linkType: hard
 
@@ -5923,27 +5923,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.40.1":
-  version: 1.40.1
-  resolution: "playwright-core@npm:1.40.1"
+"playwright-core@npm:1.41.2":
+  version: 1.41.2
+  resolution: "playwright-core@npm:1.41.2"
   bin:
     playwright-core: cli.js
-  checksum: 84d92fb9b86e3c225b16b6886bf858eb5059b4e60fa1205ff23336e56a06dcb2eac62650992dede72f406c8e70a7b6a5303e511f9b4bc0b85022ede356a01ee0
+  checksum: b41ede0db3fd3e3f7e0b0efbdfb2dbc4db345e113cf9c4451af21d1d5b5d9ab5e969f5662852925e37b2198ae5daab92aa48108fe3d4eb81c849ba8752aaf8cc
   languageName: node
   linkType: hard
 
 "playwright@npm:^1.40.1":
-  version: 1.40.1
-  resolution: "playwright@npm:1.40.1"
+  version: 1.41.2
+  resolution: "playwright@npm:1.41.2"
   dependencies:
     fsevents: 2.3.2
-    playwright-core: 1.40.1
+    playwright-core: 1.41.2
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: 9e36791c1b4a649c104aa365fdd9d049924eeb518c5967c0e921aa38b9b00994aa6ee54784d6c2af194b3b494b6f69772673081ef53c6c4a4b2065af9955c4ba
+  checksum: acf166003ec42cd795f5fca096c5135880d78e84ec2d0a1911b2cab984cf75dc06e50d3aa24b56cbcbc5369ca8c61831e76c5f8674531a272fbd0f6e624fa387
   languageName: node
   linkType: hard
 
@@ -7549,8 +7549,8 @@ __metadata:
   linkType: hard
 
 "webdriverio@npm:^7.0.7":
-  version: 7.33.0
-  resolution: "webdriverio@npm:7.33.0"
+  version: 7.34.0
+  resolution: "webdriverio@npm:7.34.0"
   dependencies:
     "@types/aria-query": ^5.0.0
     "@types/node": ^18.0.0
@@ -7565,7 +7565,7 @@ __metadata:
     css-shorthand-properties: ^1.1.1
     css-value: ^0.0.1
     devtools: 7.33.0
-    devtools-protocol: ^0.0.1203626
+    devtools-protocol: ^0.0.1237913
     fs-extra: ^11.1.1
     grapheme-splitter: ^1.0.2
     lodash.clonedeep: ^4.5.0
@@ -7579,7 +7579,7 @@ __metadata:
     rgb2hex: 0.2.5
     serialize-error: ^8.0.0
     webdriver: 7.33.0
-  checksum: 963a8cb661d69f156d33cd9ba22a6a671079f962829b0628db86c0e1aa397a9078b84641184a38cafeb026517ce961fcb08687f89c32288fe223efafa4a3408d
+  checksum: 11dc61fffc5743a4d48dbd3cc75d69463b575d8ac7ee875408980aa6d788102e7abc8c1107562db2856d2d9bd1957a9428c4862b9d14488ab5dfd25f971febce
   languageName: node
   linkType: hard
 
