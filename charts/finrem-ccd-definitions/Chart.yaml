@@ -1,7 +1,7 @@
 apiVersion: v2
 description: Financial Remedy - CCD Definitions
 name: finrem-ccd-definitions
-version: 2.2.30
+version: 2.2.31
 dependencies:
   - name: nodejs
     version: 3.0.3
@@ -12,7 +12,7 @@ dependencies:
     tags:
       - finrem-ccd-stack
   - name: xui-webapp
-    version: ~1.0.12
+    version: ~1.0.0
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
     condition: xui-webapp.enabled
   - name: xui-mo-webapp
