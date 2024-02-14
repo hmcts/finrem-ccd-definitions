@@ -2108,6 +2108,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "orderRefusalOnScreen",
+    "Label": "Application Not Approved",
+    "FieldType": "FR_orderRefusalOrder",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "applicantResideOutsideUK",
     "Label": "Does the applicant live outside of the UK?",
     "FieldType": "YesOrNo",
