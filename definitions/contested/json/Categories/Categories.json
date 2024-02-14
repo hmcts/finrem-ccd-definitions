@@ -98,6 +98,14 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "applicantMortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "14",
+    "ParentCategoryID": "applicantDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicantDocumentsRepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
     "DisplayOrder": "15",
@@ -125,14 +133,6 @@
     "CategoryID": "applicantDocumentsWitnessStatements",
     "CategoryLabel": "Witness Statements",
     "DisplayOrder": "18",
-    "ParentCategoryID": "applicantDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicantDocumentsHousingParticulars",
-    "CategoryLabel": "Housing Particulars",
-    "DisplayOrder": "19",
     "ParentCategoryID": "applicantDocuments"
   },
   {
@@ -186,6 +186,14 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "respondentMortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "26",
+    "ParentCategoryID": "respondentDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "respondentDocumentsRepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
     "DisplayOrder": "27",
@@ -213,14 +221,6 @@
     "CategoryID": "respondentDocumentsWitnessStatements",
     "CategoryLabel": "Witness Statements",
     "DisplayOrder": "30",
-    "ParentCategoryID": "respondentDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "respondentDocumentsHousingParticulars",
-    "CategoryLabel": "Housing Particulars",
-    "DisplayOrder": "31",
     "ParentCategoryID": "respondentDocuments"
   },
   {
@@ -834,14 +834,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsApplicantMortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "114",
-    "ParentCategoryID": "hearingDocumentsApplicant"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsApplicantCostsEstimatesOrFormHOrFormH1",
     "CategoryLabel": "Costs Estimates/Form H/Form H1",
     "DisplayOrder": "115",
@@ -933,14 +925,6 @@
     "CategoryID": "hearingDocumentsRespondentFamilyHomeValuation",
     "CategoryLabel": "Family Home Valuation",
     "DisplayOrder": "127",
-    "ParentCategoryID": "hearingDocumentsRespondent"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsRespondentMortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "128",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1042,14 +1026,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "142",
-    "ParentCategoryID": "hearingDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1CostsEstimatesOrFormHOrFormH1",
     "CategoryLabel": "Costs Estimates/Form H/Form H1",
     "DisplayOrder": "143",
@@ -1141,14 +1117,6 @@
     "CategoryID": "hearingDocumentsIntervener2FamilyHomeValuation",
     "CategoryLabel": "Family Home Valuation",
     "DisplayOrder": "155",
-    "ParentCategoryID": "hearingDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "156",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1250,14 +1218,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "170",
-    "ParentCategoryID": "hearingDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3CostsEstimatesOrFormHOrFormH1",
     "CategoryLabel": "Costs Estimates/Form H/Form H1",
     "DisplayOrder": "171",
@@ -1349,14 +1309,6 @@
     "CategoryID": "hearingDocumentsIntervener4FamilyHomeValuation",
     "CategoryLabel": "Family Home Valuation",
     "DisplayOrder": "183",
-    "ParentCategoryID": "hearingDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "184",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1506,9 +1458,17 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener1MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "204",
+    "ParentCategoryID": "intervenerDocumentsIntervener1"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1RepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
-    "DisplayOrder": "204",
+    "DisplayOrder": "205",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -1516,7 +1476,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "205",
+    "DisplayOrder": "206",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -1524,7 +1484,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1S25Statement",
     "CategoryLabel": "S25 Statement",
-    "DisplayOrder": "206",
+    "DisplayOrder": "207",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -1532,14 +1492,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "207",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1HousingParticulars",
-    "CategoryLabel": "Housing Particulars",
     "DisplayOrder": "208",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
@@ -1586,9 +1538,17 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener2MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "214",
+    "ParentCategoryID": "intervenerDocumentsIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2RepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
-    "DisplayOrder": "214",
+    "DisplayOrder": "215",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1596,7 +1556,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "215",
+    "DisplayOrder": "216",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1604,7 +1564,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2S25Statement",
     "CategoryLabel": "S25 Statement",
-    "DisplayOrder": "216",
+    "DisplayOrder": "217",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1612,14 +1572,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "217",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2HousingParticulars",
-    "CategoryLabel": "Housing Particulars",
     "DisplayOrder": "218",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
@@ -1666,9 +1618,17 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener3MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "224",
+    "ParentCategoryID": "intervenerDocumentsIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3RepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
-    "DisplayOrder": "224",
+    "DisplayOrder": "225",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -1676,7 +1636,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "225",
+    "DisplayOrder": "226",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -1684,7 +1644,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3S25Statement",
     "CategoryLabel": "S25 Statement",
-    "DisplayOrder": "226",
+    "DisplayOrder": "227",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -1692,14 +1652,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "227",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3HousingParticulars",
-    "CategoryLabel": "Housing Particulars",
     "DisplayOrder": "228",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
@@ -1746,9 +1698,17 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener4MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "234",
+    "ParentCategoryID": "intervenerDocumentsIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4RepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
-    "DisplayOrder": "234",
+    "DisplayOrder": "235",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -1756,7 +1716,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "235",
+    "DisplayOrder": "236",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -1764,7 +1724,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4S25Statement",
     "CategoryLabel": "S25 Statement",
-    "DisplayOrder": "236",
+    "DisplayOrder": "237",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -1772,14 +1732,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "237",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4HousingParticulars",
-    "CategoryLabel": "Housing Particulars",
     "DisplayOrder": "238",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
