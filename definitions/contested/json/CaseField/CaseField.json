@@ -48,7 +48,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantRepresented",
-    "Label": "          ",
+    "Label": "Is the applicant represented?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -93,7 +93,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantAddressConfidential",
-    "Label": "Keep the Applicant's contact details private from the Respondent?",
+    "Label": "Keep the applicant's contact details private from the respondent?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -367,7 +367,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "respondentRepresented",
-    "Label": "          ",
+    "Label": "Is the respondent represented?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -493,7 +493,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "respondentAddressConfidential",
-    "Label": "Keep the Respondent's contact details private from the Applicant?",
+    "Label": "Keep the respondent's contact details private from the applicant?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "N"

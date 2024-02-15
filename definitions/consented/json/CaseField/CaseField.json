@@ -43,7 +43,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "applicantRepresented",
-    "Label": "          ",
+    "Label": "Is the applicant represented?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
@@ -83,7 +83,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "applicantAddressConfidential",
-    "Label": "Keep the Applicant's contact details private from the Respondent?",
+    "Label": "Keep the applicant's contact details private from the respondent?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
@@ -281,7 +281,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "appRespondentRep",
-    "Label": "Is the respondent represented ?",
+    "Label": "Is the respondent represented?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
@@ -385,7 +385,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "respondentAddressConfidential",
-    "Label": "Keep the Respondent's contact details private from the Applicant?",
+    "Label": "Keep the respondent's contact details private from the applicant?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
@@ -1717,7 +1717,7 @@
     "LiveFrom": "11/03/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "applicantRepresentedPaper",
-    "Label": "## Is the Applicant represented ? ##",
+    "Label": "## Is the Applicant represented ? ## ",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_ApplicantRepresentedPaper",
     "SecurityClassification": "Public"
