@@ -298,33 +298,9 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleApplicantFdrBundle",
-    "CategoryLabel": "FDR Bundle",
-    "DisplayOrder": "38",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleApplicant"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "fdrDocumentsAndFdrBundleApplicantPositionStatements",
     "CategoryLabel": "Position Statements / Skeleton Arguments",
     "DisplayOrder": "39",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleApplicant"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleApplicantEs1",
-    "CategoryLabel": "ES1",
-    "DisplayOrder": "40",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleApplicant"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleApplicantEs2",
-    "CategoryLabel": "ES2",
-    "DisplayOrder": "41",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleApplicant"
   },
   {
@@ -338,33 +314,17 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleApplicantChronology",
-    "CategoryLabel": "Chronology",
-    "DisplayOrder": "43",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleApplicant"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleApplicantQuestionnaires",
-    "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "44",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleApplicant"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleApplicantFamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
-    "DisplayOrder": "45",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleApplicant"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleApplicantPreHearingDraftOrder",
-    "CategoryLabel": "Pre Hearing Draft Order",
+    "CategoryID": "fdrDocumentsAndFdrBundleApplicantDraftOrder",
+    "CategoryLabel": "Draft Order",
     "DisplayOrder": "46",
+    "ParentCategoryID": "fdrDocumentsAndFdrBundleApplicant"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "fdrDocumentsAndFdrBundleApplicantOther",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "47",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleApplicant"
   },
   {
@@ -378,33 +338,9 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleRespondentFdrBundle",
-    "CategoryLabel": "FDR Bundle",
-    "DisplayOrder": "49",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleRespondent"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "fdrDocumentsAndFdrBundleRespondentPositionStatements",
     "CategoryLabel": "Position Statements / Skeleton Arguments",
     "DisplayOrder": "50",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleRespondent"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleRespondentEs1",
-    "CategoryLabel": "ES1",
-    "DisplayOrder": "51",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleRespondent"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleRespondentEs2",
-    "CategoryLabel": "ES2",
-    "DisplayOrder": "52",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleRespondent"
   },
   {
@@ -418,33 +354,17 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleRespondentChronology",
-    "CategoryLabel": "Chronology",
-    "DisplayOrder": "54",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleRespondent"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleRespondentQuestionnaires",
-    "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "55",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleRespondent"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleRespondentFamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
-    "DisplayOrder": "56",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleRespondent"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleRespondentPreHearingDraftOrder",
-    "CategoryLabel": "Pre Hearing Draft Order",
+    "CategoryID": "fdrDocumentsAndFdrBundleRespondentDraftOrder",
+    "CategoryLabel": "Draft Order",
     "DisplayOrder": "57",
+    "ParentCategoryID": "fdrDocumentsAndFdrBundleRespondent"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "fdrDocumentsAndFdrBundleRespondentOther",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "58",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleRespondent"
   },
   {
@@ -458,14 +378,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1FdrBundle",
-    "CategoryLabel": "FDR Bundle",
-    "DisplayOrder": "60",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "fdrDocumentsAndFdrBundleIntervener1PositionStatements",
     "CategoryLabel": "Position Statements / Skeleton Arguments",
     "DisplayOrder": "61",
@@ -474,57 +386,25 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1Es1",
-    "CategoryLabel": "ES1",
-    "DisplayOrder": "62",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1Es2",
-    "CategoryLabel": "ES2",
-    "DisplayOrder": "63",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1WithoutPrejudiceOffers",
-    "CategoryLabel": "Without Prejudice Offers",
-    "DisplayOrder": "64",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1Chronology",
-    "CategoryLabel": "Chronology",
-    "DisplayOrder": "65",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1Questionnaires",
-    "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "66",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1FamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1CostsStatement",
+    "CategoryLabel": "Costs Statement",
     "DisplayOrder": "67",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1PreHearingDraftOrder",
-    "CategoryLabel": "Pre Hearing Draft Order",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1DraftOrder",
+    "CategoryLabel": "Draft Order",
     "DisplayOrder": "68",
+    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener1"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener1Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "69",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener1"
   },
   {
@@ -538,14 +418,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2FdrBundle",
-    "CategoryLabel": "FDR Bundle",
-    "DisplayOrder": "71",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "fdrDocumentsAndFdrBundleIntervener2PositionStatements",
     "CategoryLabel": "Position Statements / Skeleton Arguments",
     "DisplayOrder": "72",
@@ -554,57 +426,25 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2Es1",
-    "CategoryLabel": "ES1",
-    "DisplayOrder": "73",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2Es2",
-    "CategoryLabel": "ES2",
-    "DisplayOrder": "74",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2WithoutPrejudiceOffers",
-    "CategoryLabel": "Without Prejudice Offers",
-    "DisplayOrder": "75",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2Chronology",
-    "CategoryLabel": "Chronology",
-    "DisplayOrder": "76",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2Questionnaires",
-    "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "77",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2FamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2CostsStatement",
+    "CategoryLabel": "Costs Statement",
     "DisplayOrder": "78",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener2"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2PreHearingDraftOrder",
-    "CategoryLabel": "Pre Hearing Draft Order",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2DraftOrder",
+    "CategoryLabel": "Draft Order",
     "DisplayOrder": "79",
+    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener2Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "80",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener2"
   },
   {
@@ -618,73 +458,33 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3FdrBundle",
-    "CategoryLabel": "FDR Bundle",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3PositionStatements",
+    "CategoryLabel": "Position Statements / Skeleton Arguments",
     "DisplayOrder": "82",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3PositionStatements",
-    "CategoryLabel": "Position Statements / Skeleton Arguments",
-    "DisplayOrder": "83",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3Es1",
-    "CategoryLabel": "ES1",
-    "DisplayOrder": "84",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3Es2",
-    "CategoryLabel": "ES2",
-    "DisplayOrder": "85",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3WithoutPrejudiceOffers",
-    "CategoryLabel": "Without Prejudice Offers",
-    "DisplayOrder": "86",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3Chronology",
-    "CategoryLabel": "Chronology",
-    "DisplayOrder": "87",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3Questionnaires",
-    "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "88",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3FamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3CostsStatement",
+    "CategoryLabel": "Costs Statement",
     "DisplayOrder": "89",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3PreHearingDraftOrder",
-    "CategoryLabel": "Pre Hearing Draft Order",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3DraftOrder",
+    "CategoryLabel": "Draft Order",
     "DisplayOrder": "90",
+    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener3Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "91",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener3"
   },
   {
@@ -698,14 +498,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4FdrBundle",
-    "CategoryLabel": "FDR Bundle",
-    "DisplayOrder": "93",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "fdrDocumentsAndFdrBundleIntervener4PositionStatements",
     "CategoryLabel": "Position Statements / Skeleton Arguments",
     "DisplayOrder": "94",
@@ -714,57 +506,25 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4Es1",
-    "CategoryLabel": "ES1",
-    "DisplayOrder": "95",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4Es2",
-    "CategoryLabel": "ES2",
-    "DisplayOrder": "96",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4WithoutPrejudiceOffers",
-    "CategoryLabel": "Without Prejudice Offers",
-    "DisplayOrder": "97",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4Chronology",
-    "CategoryLabel": "Chronology",
-    "DisplayOrder": "98",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4Questionnaires",
-    "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "99",
-    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4FamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4CostsStatement",
+    "CategoryLabel": "Costs Statement",
     "DisplayOrder": "100",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener4"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4PreHearingDraftOrder",
-    "CategoryLabel": "Pre Hearing Draft Order",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4DraftOrder",
+    "CategoryLabel": "Draft Order",
     "DisplayOrder": "101",
+    "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "fdrDocumentsAndFdrBundleIntervener4Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "102",
     "ParentCategoryID": "fdrDocumentsAndFdrBundleIntervener4"
   },
   {
@@ -962,81 +722,33 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1Joint",
-    "CategoryLabel": "Joint Documents",
+    "CategoryID": "hearingDocumentsIntervener1OpenOffers",
+    "CategoryLabel": "Open Offers",
     "DisplayOrder": "133",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1CaseSummary",
-    "CategoryLabel": "Case Summary",
+    "CategoryID": "hearingDocumentsIntervener1WitnessStatements",
+    "CategoryLabel": "Witness Statements",
     "DisplayOrder": "134",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1PositionStatement",
-    "CategoryLabel": "Position Statements / Skeleton Arguments",
+    "CategoryID": "hearingDocumentsIntervener1aCostsStatement",
+    "CategoryLabel": "Costs Statement",
     "DisplayOrder": "135",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1ConciseStatementOfIssues",
-    "CategoryLabel": "Concise Statement Of Issues",
+    "CategoryID": "hearingDocumentsIntervener1Other",
+    "CategoryLabel": "Other",
     "DisplayOrder": "136",
-    "ParentCategoryID": "hearingDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1Es1",
-    "CategoryLabel": "ES1",
-    "DisplayOrder": "137",
-    "ParentCategoryID": "hearingDocumentsIntervener1Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1Es2",
-    "CategoryLabel": "ES2",
-    "DisplayOrder": "138",
-    "ParentCategoryID": "hearingDocumentsIntervener1Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1Chronology",
-    "CategoryLabel": "Chronology",
-    "DisplayOrder": "139",
-    "ParentCategoryID": "hearingDocumentsIntervener1Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1Questionnaires",
-    "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "140",
-    "ParentCategoryID": "hearingDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1CostsEstimatesOrFormHOrFormH1",
-    "CategoryLabel": "Costs Form H/H1/N260",
-    "DisplayOrder": "143",
-    "ParentCategoryID": "hearingDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1PreHearingDraftOrder",
-    "CategoryLabel": "Pre Hearing Draft Order",
-    "DisplayOrder": "144",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1050,81 +762,33 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2Joint",
-    "CategoryLabel": "Joint Documents",
+    "CategoryID": "hearingDocumentsIntervener2OpenOffers",
+    "CategoryLabel": "Open Offers",
     "DisplayOrder": "147",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2CaseSummary",
-    "CategoryLabel": "Case Summary",
+    "CategoryID": "hearingDocumentsIntervener2WitnessStatements",
+    "CategoryLabel": "Witness Statements",
     "DisplayOrder": "148",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2PositionStatement",
-    "CategoryLabel": "Position Statements / Skeleton Arguments",
+    "CategoryID": "hearingDocumentsIntervener2aCostsStatement",
+    "CategoryLabel": "Costs Statement",
     "DisplayOrder": "149",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2ConciseStatementOfIssues",
-    "CategoryLabel": "Concise Statement Of Issues",
+    "CategoryID": "hearingDocumentsIntervener2Other",
+    "CategoryLabel": "Other",
     "DisplayOrder": "150",
-    "ParentCategoryID": "hearingDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2Es1",
-    "CategoryLabel": "ES1",
-    "DisplayOrder": "151",
-    "ParentCategoryID": "hearingDocumentsIntervener2Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2Es2",
-    "CategoryLabel": "ES2",
-    "DisplayOrder": "152",
-    "ParentCategoryID": "hearingDocumentsIntervener2Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2Chronology",
-    "CategoryLabel": "Chronology",
-    "DisplayOrder": "153",
-    "ParentCategoryID": "hearingDocumentsIntervener2Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2Questionnaires",
-    "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "154",
-    "ParentCategoryID": "hearingDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2CostsEstimatesOrFormHOrFormH1",
-    "CategoryLabel": "Costs Form H/H1/N260",
-    "DisplayOrder": "157",
-    "ParentCategoryID": "hearingDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2PreHearingDraftOrder",
-    "CategoryLabel": "Pre Hearing Draft Order",
-    "DisplayOrder": "158",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1138,81 +802,33 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3Joint",
-    "CategoryLabel": "Joint Documents",
+    "CategoryID": "hearingDocumentsIntervener3OpenOffers",
+    "CategoryLabel": "Open Offers",
     "DisplayOrder": "161",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3CaseSummary",
-    "CategoryLabel": "Case Summary",
+    "CategoryID": "hearingDocumentsIntervener3WitnessStatements",
+    "CategoryLabel": "Witness Statements",
     "DisplayOrder": "162",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3PositionStatement",
-    "CategoryLabel": "Position Statements / Skeleton Arguments",
+    "CategoryID": "hearingDocumentsIntervener3aCostsStatement",
+    "CategoryLabel": "Costs Statement",
     "DisplayOrder": "163",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3ConciseStatementOfIssues",
-    "CategoryLabel": "Concise Statement Of Issues",
+    "CategoryID": "hearingDocumentsIntervener3Other",
+    "CategoryLabel": "Other",
     "DisplayOrder": "164",
-    "ParentCategoryID": "hearingDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3Es1",
-    "CategoryLabel": "ES1",
-    "DisplayOrder": "165",
-    "ParentCategoryID": "hearingDocumentsIntervener3Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3Es2",
-    "CategoryLabel": "ES2",
-    "DisplayOrder": "166",
-    "ParentCategoryID": "hearingDocumentsIntervener3Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3Chronology",
-    "CategoryLabel": "Chronology",
-    "DisplayOrder": "167",
-    "ParentCategoryID": "hearingDocumentsIntervener3Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3Questionnaires",
-    "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "168",
-    "ParentCategoryID": "hearingDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3CostsEstimatesOrFormHOrFormH1",
-    "CategoryLabel": "Costs Form H/H1/N260",
-    "DisplayOrder": "171",
-    "ParentCategoryID": "hearingDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3PreHearingDraftOrder",
-    "CategoryLabel": "Pre Hearing Draft Order",
-    "DisplayOrder": "172",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1226,81 +842,33 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4Joint",
-    "CategoryLabel": "Joint Documents",
+    "CategoryID": "hearingDocumentsIntervener4OpenOffers",
+    "CategoryLabel": "Open Offers",
     "DisplayOrder": "175",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4CaseSummary",
-    "CategoryLabel": "Case Summary",
+    "CategoryID": "hearingDocumentsIntervener4WitnessStatements",
+    "CategoryLabel": "Witness Statements",
     "DisplayOrder": "176",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4PositionStatement",
-    "CategoryLabel": "Position Statements / Skeleton Arguments",
+    "CategoryID": "hearingDocumentsIntervener4aCostsStatement",
+    "CategoryLabel": "Costs Statement",
     "DisplayOrder": "177",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4ConciseStatementOfIssues",
-    "CategoryLabel": "Concise Statement Of Issues",
+    "CategoryID": "hearingDocumentsIntervener4Other",
+    "CategoryLabel": "Other",
     "DisplayOrder": "178",
-    "ParentCategoryID": "hearingDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4Es1",
-    "CategoryLabel": "ES1",
-    "DisplayOrder": "179",
-    "ParentCategoryID": "hearingDocumentsIntervener4Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4Es2",
-    "CategoryLabel": "ES2",
-    "DisplayOrder": "180",
-    "ParentCategoryID": "hearingDocumentsIntervener4Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4Chronology",
-    "CategoryLabel": "Chronology",
-    "DisplayOrder": "181",
-    "ParentCategoryID": "hearingDocumentsIntervener4Joint"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4Questionnaires",
-    "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "182",
-    "ParentCategoryID": "hearingDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4CostsEstimatesOrFormHOrFormH1",
-    "CategoryLabel": "Costs Form H/H1/N260",
-    "DisplayOrder": "185",
-    "ParentCategoryID": "hearingDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4PreHearingDraftOrder",
-    "CategoryLabel": "Pre Hearing Draft Order",
-    "DisplayOrder": "186",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1322,7 +890,7 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondence",
+    "CategoryID": "courtCorrespondence",
     "CategoryLabel": "Court Correspondence",
     "DisplayOrder": "192",
     "ParentCategoryID": null
@@ -1370,10 +938,74 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener1OpenOffers",
+    "CategoryLabel": "Open Offers",
+    "DisplayOrder": "520",
+    "ParentCategoryID": "confidentialDocumentsIntervener1"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener1WitnessStatements",
+    "CategoryLabel": "Witness Statements",
+    "DisplayOrder": "521",
+    "ParentCategoryID": "confidentialDocumentsIntervener1"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener1CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "522",
+    "ParentCategoryID": "confidentialDocumentsIntervener1"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener1Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "523",
+    "ParentCategoryID": "confidentialDocumentsIntervener1"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "confidentialDocumentsIntervener2",
     "CategoryLabel": "Intervener 2",
     "DisplayOrder": "197",
     "ParentCategoryID": "confidentialDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener2OpenOffers",
+    "CategoryLabel": "Open Offers",
+    "DisplayOrder": "524",
+    "ParentCategoryID": "confidentialDocumentsIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener2WitnessStatements",
+    "CategoryLabel": "Witness Statements",
+    "DisplayOrder": "525",
+    "ParentCategoryID": "confidentialDocumentsIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener2CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "526",
+    "ParentCategoryID": "confidentialDocumentsIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener2Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "527",
+    "ParentCategoryID": "confidentialDocumentsIntervener2"
   },
   {
     "LiveFrom": "01/09/23",
@@ -1386,10 +1018,74 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener3OpenOffers",
+    "CategoryLabel": "Open Offers",
+    "DisplayOrder": "528",
+    "ParentCategoryID": "confidentialDocumentsIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener3WitnessStatements",
+    "CategoryLabel": "Witness Statements",
+    "DisplayOrder": "529",
+    "ParentCategoryID": "confidentialDocumentsIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener3CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "530",
+    "ParentCategoryID": "confidentialDocumentsIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener3Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "531",
+    "ParentCategoryID": "confidentialDocumentsIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "confidentialDocumentsIntervener4",
     "CategoryLabel": "Intervener 4",
     "DisplayOrder": "199",
     "ParentCategoryID": "confidentialDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener4OpenOffers",
+    "CategoryLabel": "Open Offers",
+    "DisplayOrder": "532",
+    "ParentCategoryID": "confidentialDocumentsIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener4WitnessStatements",
+    "CategoryLabel": "Witness Statements",
+    "DisplayOrder": "533",
+    "ParentCategoryID": "confidentialDocumentsIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener4CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "534",
+    "ParentCategoryID": "confidentialDocumentsIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "confidentialDocumentsIntervener4Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "535",
+    "ParentCategoryID": "confidentialDocumentsIntervener4"
   },
   {
     "LiveFrom": "01/09/23",
@@ -1410,49 +1106,9 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1FormE",
-    "CategoryLabel": "Form E",
-    "DisplayOrder": "202",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1FormG",
-    "CategoryLabel": "Form G",
-    "DisplayOrder": "203",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1MortgageCapacitiesOrHousingParticulars",
-    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
-    "DisplayOrder": "204",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1RepliesToQuestionnaire",
-    "CategoryLabel": "Replies To Questionnaire",
-    "DisplayOrder": "205",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "206",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1S25Statement",
-    "CategoryLabel": "S25 Statement",
-    "DisplayOrder": "207",
+    "DisplayOrder": "202",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -1460,47 +1116,23 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "208",
+    "DisplayOrder": "203",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1PensionPlan",
-    "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "276",
+    "CategoryID": "intervenerDocumentsIntervener1CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "204",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders",
-    "CategoryLabel": "Send Orders",
-    "DisplayOrder": "304",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders",
-    "CategoryLabel": "Consent Orders (consent)",
-    "DisplayOrder": "376",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1CertificatesOfService",
-    "CategoryLabel": "Certificates Of Service",
-    "DisplayOrder": "209",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1MiscellaneousOrOther",
-    "CategoryLabel": "Miscellaneous/Other",
-    "DisplayOrder": "210",
+    "CategoryID": "intervenerDocumentsIntervener1Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "205",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -1514,49 +1146,9 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2FormE",
-    "CategoryLabel": "Form E",
-    "DisplayOrder": "212",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2FormG",
-    "CategoryLabel": "Form G",
-    "DisplayOrder": "213",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2MortgageCapacitiesOrHousingParticulars",
-    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
-    "DisplayOrder": "214",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2RepliesToQuestionnaire",
-    "CategoryLabel": "Replies To Questionnaire",
-    "DisplayOrder": "215",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "216",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2S25Statement",
-    "CategoryLabel": "S25 Statement",
-    "DisplayOrder": "217",
+    "DisplayOrder": "212",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1564,47 +1156,23 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "218",
+    "DisplayOrder": "213",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2PensionPlan",
-    "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "277",
+    "CategoryID": "intervenerDocumentsIntervener2CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "214",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders",
-    "CategoryLabel": "Send Orders",
-    "DisplayOrder": "316",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders",
-    "CategoryLabel": "Send Orders (consent)",
-    "DisplayOrder": "388",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2CertificatesOfService",
-    "CategoryLabel": "Certificates Of Service",
-    "DisplayOrder": "219",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2MiscellaneousOrOther",
-    "CategoryLabel": "Miscellaneous/Other",
-    "DisplayOrder": "220",
+    "CategoryID": "intervenerDocumentsIntervener2Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "215",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1618,49 +1186,9 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3FormE",
-    "CategoryLabel": "Form E",
-    "DisplayOrder": "222",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3FormG",
-    "CategoryLabel": "Form G",
-    "DisplayOrder": "223",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3MortgageCapacitiesOrHousingParticulars",
-    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
-    "DisplayOrder": "224",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3RepliesToQuestionnaire",
-    "CategoryLabel": "Replies To Questionnaire",
-    "DisplayOrder": "225",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "226",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3S25Statement",
-    "CategoryLabel": "S25 Statement",
-    "DisplayOrder": "227",
+    "DisplayOrder": "222",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -1668,47 +1196,23 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "228",
+    "DisplayOrder": "223",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3PensionPlan",
-    "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "278",
+    "CategoryID": "intervenerDocumentsIntervener3CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "224",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders",
-    "CategoryLabel": "Send Orders",
-    "DisplayOrder": "328",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders",
-    "CategoryLabel": "Send Orders (consent)",
-    "DisplayOrder": "400",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3CertificatesOfService",
-    "CategoryLabel": "Certificates Of Service",
-    "DisplayOrder": "229",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3MiscellaneousOrOther",
-    "CategoryLabel": "Miscellaneous/Other",
-    "DisplayOrder": "230",
+    "CategoryID": "intervenerDocumentsIntervener3Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "225",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -1722,49 +1226,9 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4FormE",
-    "CategoryLabel": "Form E",
-    "DisplayOrder": "232",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4FormG",
-    "CategoryLabel": "Form G",
-    "DisplayOrder": "233",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4MortgageCapacitiesOrHousingParticulars",
-    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
-    "DisplayOrder": "234",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4RepliesToQuestionnaire",
-    "CategoryLabel": "Replies To Questionnaire",
-    "DisplayOrder": "235",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "236",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4S25Statement",
-    "CategoryLabel": "S25 Statement",
-    "DisplayOrder": "237",
+    "DisplayOrder": "232",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -1772,47 +1236,23 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "238",
+    "DisplayOrder": "233",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4PensionPlan",
-    "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "279",
+    "CategoryID": "intervenerDocumentsIntervener4CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "234",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders",
-    "CategoryLabel": "Send Orders",
-    "DisplayOrder": "340",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders",
-    "CategoryLabel": "Send Orders (consent)",
-    "DisplayOrder": "412",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4CertificatesOfService",
-    "CategoryLabel": "Certificates Of Service",
-    "DisplayOrder": "239",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4MiscellaneousOrOther",
-    "CategoryLabel": "Miscellaneous/Other",
-    "DisplayOrder": "240",
+    "CategoryID": "intervenerDocumentsIntervener4Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "235",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -1925,7 +1365,7 @@
     "CategoryID": "applicationsVariationOrder",
     "CategoryLabel": "Variation Application",
     "DisplayOrder": "254",
-    "ParentCategoryID": "applications"
+    "ParentCategoryID": "applicationsFormAOrA1OrB"
   },
   {
     "LiveFrom": "01/09/23",
@@ -2034,10 +1474,10 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceApplicant",
+    "CategoryID": "courtCorrespondenceApplicant",
     "CategoryLabel": "Applicant",
     "DisplayOrder": "268",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
@@ -2050,50 +1490,178 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceRespondent",
+    "CategoryID": "courtCorrespondenceRespondent",
     "CategoryLabel": "Respondent",
     "DisplayOrder": "270",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceIntervener1",
+    "CategoryID": "courtCorrespondenceIntervener1",
     "CategoryLabel": "Intervener 1",
     "DisplayOrder": "271",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceIntervener2",
-    "CategoryLabel": "Intervener 2",
+    "CategoryID": "courtCorrespondenceIntervener1OpenOffers",
+    "CategoryLabel": "Open Offers",
     "DisplayOrder": "272",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondenceIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceIntervener3",
-    "CategoryLabel": "Intervener 3",
+    "CategoryID": "courtCorrespondenceIntervener1WitnessStatements",
+    "CategoryLabel": "Witness Statements",
     "DisplayOrder": "273",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondenceIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceIntervener4",
-    "CategoryLabel": "Intervener 4",
+    "CategoryID": "courtCorrespondenceIntervener1CostsStatement",
+    "CategoryLabel": "Costs Statement",
     "DisplayOrder": "274",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondenceIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceOther",
+    "CategoryID": "courtCorrespondenceIntervener1Other",
     "CategoryLabel": "Other",
     "DisplayOrder": "275",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondenceIntervener1"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener2",
+    "CategoryLabel": "Intervener 2",
+    "DisplayOrder": "276",
+    "ParentCategoryID": "courtCorrespondence"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener2OpenOffers",
+    "CategoryLabel": "Open Offers",
+    "DisplayOrder": "500",
+    "ParentCategoryID": "courtCorrespondenceIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener2WitnessStatements",
+    "CategoryLabel": "Witness Statements",
+    "DisplayOrder": "501",
+    "ParentCategoryID": "courtCorrespondenceIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener2CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "502",
+    "ParentCategoryID": "courtCorrespondenceIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener2Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "503",
+    "ParentCategoryID": "courtCorrespondenceIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener3",
+    "CategoryLabel": "Intervener 3",
+    "DisplayOrder": "273",
+    "ParentCategoryID": "courtCorrespondence"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener3OpenOffers",
+    "CategoryLabel": "Open Offers",
+    "DisplayOrder": "504",
+    "ParentCategoryID": "courtCorrespondenceIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener3WitnessStatements",
+    "CategoryLabel": "Witness Statements",
+    "DisplayOrder": "505",
+    "ParentCategoryID": "courtCorrespondenceIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener3CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "506",
+    "ParentCategoryID": "courtCorrespondenceIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener3Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "507",
+    "ParentCategoryID": "courtCorrespondenceIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener4",
+    "CategoryLabel": "Intervener 4",
+    "DisplayOrder": "274",
+    "ParentCategoryID": "courtCorrespondence"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener4OpenOffers",
+    "CategoryLabel": "Open Offers",
+    "DisplayOrder": "508",
+    "ParentCategoryID": "courtCorrespondenceIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener4WitnessStatements",
+    "CategoryLabel": "Witness Statements",
+    "DisplayOrder": "509",
+    "ParentCategoryID": "courtCorrespondenceIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener4CostsStatement",
+    "CategoryLabel": "Costs Statement",
+    "DisplayOrder": "510",
+    "ParentCategoryID": "courtCorrespondenceIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceIntervener4Other",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "511",
+    "ParentCategoryID": "courtCorrespondenceIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "courtCorrespondenceOther",
+    "CategoryLabel": "Other",
+    "DisplayOrder": "275",
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
@@ -2274,358 +1842,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders1",
-    "CategoryLabel": "Send Orders 1",
-    "DisplayOrder": "305",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders2",
-    "CategoryLabel": "Send Orders 2",
-    "DisplayOrder": "306",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders3",
-    "CategoryLabel": "Send Orders 3",
-    "DisplayOrder": "307",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders4",
-    "CategoryLabel": "Send Orders 4",
-    "DisplayOrder": "308",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders5",
-    "CategoryLabel": "Send Orders 5",
-    "DisplayOrder": "309",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders6",
-    "CategoryLabel": "Send Orders 6",
-    "DisplayOrder": "310",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders7",
-    "CategoryLabel": "Send Orders 7",
-    "DisplayOrder": "311",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders8",
-    "CategoryLabel": "Send Orders 8",
-    "DisplayOrder": "312",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders9",
-    "CategoryLabel": "Send Orders 9",
-    "DisplayOrder": "313",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders10",
-    "CategoryLabel": "Send Orders 10",
-    "DisplayOrder": "314",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrdersOverflow",
-    "CategoryLabel": "Send Orders Overflow",
-    "DisplayOrder": "315",
-    "ParentCategoryID": "intervenerDocumentsIntervener1SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders1",
-    "CategoryLabel": "Send Orders 1",
-    "DisplayOrder": "317",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders2",
-    "CategoryLabel": "Send Orders 2",
-    "DisplayOrder": "318",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders3",
-    "CategoryLabel": "Send Orders 3",
-    "DisplayOrder": "319",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders4",
-    "CategoryLabel": "Send Orders 4",
-    "DisplayOrder": "320",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders5",
-    "CategoryLabel": "Send Orders 5",
-    "DisplayOrder": "321",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders6",
-    "CategoryLabel": "Send Orders 6",
-    "DisplayOrder": "322",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders7",
-    "CategoryLabel": "Send Orders 7",
-    "DisplayOrder": "323",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders8",
-    "CategoryLabel": "Send Orders 8",
-    "DisplayOrder": "324",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders9",
-    "CategoryLabel": "Send Orders 9",
-    "DisplayOrder": "325",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders10",
-    "CategoryLabel": "Send Orders 10",
-    "DisplayOrder": "326",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrdersOverflow",
-    "CategoryLabel": "Send Orders Overflow",
-    "DisplayOrder": "327",
-    "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders1",
-    "CategoryLabel": "Send Orders 1",
-    "DisplayOrder": "329",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders2",
-    "CategoryLabel": "Send Orders 2",
-    "DisplayOrder": "330",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders3",
-    "CategoryLabel": "Send Orders 3",
-    "DisplayOrder": "331",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders4",
-    "CategoryLabel": "Send Orders 4",
-    "DisplayOrder": "332",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders5",
-    "CategoryLabel": "Send Orders 5",
-    "DisplayOrder": "333",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders6",
-    "CategoryLabel": "Send Orders 6",
-    "DisplayOrder": "334",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders7",
-    "CategoryLabel": "Send Orders 7",
-    "DisplayOrder": "335",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders8",
-    "CategoryLabel": "Send Orders 8",
-    "DisplayOrder": "336",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders9",
-    "CategoryLabel": "Send Orders 9",
-    "DisplayOrder": "337",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders10",
-    "CategoryLabel": "Send Orders 10",
-    "DisplayOrder": "338",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrdersOverflow",
-    "CategoryLabel": "Send Orders Overflow",
-    "DisplayOrder": "339",
-    "ParentCategoryID": "intervenerDocumentsIntervener3SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders1",
-    "CategoryLabel": "Send Orders 1",
-    "DisplayOrder": "341",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders2",
-    "CategoryLabel": "Send Orders 2",
-    "DisplayOrder": "342",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders3",
-    "CategoryLabel": "Send Orders 3",
-    "DisplayOrder": "343",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders4",
-    "CategoryLabel": "Send Orders 4",
-    "DisplayOrder": "344",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders5",
-    "CategoryLabel": "Send Orders 5",
-    "DisplayOrder": "345",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders6",
-    "CategoryLabel": "Send Orders 6",
-    "DisplayOrder": "346",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders7",
-    "CategoryLabel": "Send Orders 7",
-    "DisplayOrder": "347",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders8",
-    "CategoryLabel": "Send Orders 8",
-    "DisplayOrder": "348",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders9",
-    "CategoryLabel": "Send Orders 9",
-    "DisplayOrder": "349",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders10",
-    "CategoryLabel": "Send Orders 10",
-    "DisplayOrder": "350",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrdersOverflow",
-    "CategoryLabel": "Send Orders Overflow",
-    "DisplayOrder": "351",
-    "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicantDocumentsConsentOrders1",
     "CategoryLabel": "Consent Orders 1",
     "DisplayOrder": "353",
@@ -2798,357 +2014,5 @@
     "CategoryLabel": "Consent Orders Overflow",
     "DisplayOrder": "375",
     "ParentCategoryID": "respondentDocumentsConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders1",
-    "CategoryLabel": "Consent Orders 1",
-    "DisplayOrder": "377",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders2",
-    "CategoryLabel": "Consent Orders 2",
-    "DisplayOrder": "378",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders3",
-    "CategoryLabel": "Consent Orders 3",
-    "DisplayOrder": "379",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders4",
-    "CategoryLabel": "Consent Orders 4",
-    "DisplayOrder": "380",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders5",
-    "CategoryLabel": "Consent Orders 5",
-    "DisplayOrder": "381",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders6",
-    "CategoryLabel": "Consent Orders 6",
-    "DisplayOrder": "382",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders7",
-    "CategoryLabel": "Consent Orders 7",
-    "DisplayOrder": "383",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders8",
-    "CategoryLabel": "Consent Orders 8",
-    "DisplayOrder": "384",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders9",
-    "CategoryLabel": "Consent Orders 9",
-    "DisplayOrder": "385",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders10",
-    "CategoryLabel": "Consent Orders 10",
-    "DisplayOrder": "386",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrdersOverflow",
-    "CategoryLabel": "Consent Orders Overflow",
-    "DisplayOrder": "387",
-    "ParentCategoryID": "intervenerDocumentsIntervener1ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders1",
-    "CategoryLabel": "Consent Orders 1",
-    "DisplayOrder": "389",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders2",
-    "CategoryLabel": "Consent Orders 2",
-    "DisplayOrder": "390",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders3",
-    "CategoryLabel": "Consent Orders 3",
-    "DisplayOrder": "391",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders4",
-    "CategoryLabel": "Consent Orders 4",
-    "DisplayOrder": "392",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders5",
-    "CategoryLabel": "Consent Orders 5",
-    "DisplayOrder": "393",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders6",
-    "CategoryLabel": "Consent Orders 6",
-    "DisplayOrder": "394",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders7",
-    "CategoryLabel": "Consent Orders 7",
-    "DisplayOrder": "395",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders8",
-    "CategoryLabel": "Consent Orders 8",
-    "DisplayOrder": "396",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders9",
-    "CategoryLabel": "Consent Orders 9",
-    "DisplayOrder": "397",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders10",
-    "CategoryLabel": "Consent Orders 10",
-    "DisplayOrder": "398",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrdersOverflow",
-    "CategoryLabel": "Consent Orders Overflow",
-    "DisplayOrder": "399",
-    "ParentCategoryID": "intervenerDocumentsIntervener2ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders1",
-    "CategoryLabel": "Consent Orders 1",
-    "DisplayOrder": "401",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders2",
-    "CategoryLabel": "Consent Orders 2",
-    "DisplayOrder": "402",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders3",
-    "CategoryLabel": "Consent Orders 3",
-    "DisplayOrder": "403",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders4",
-    "CategoryLabel": "Consent Orders 4",
-    "DisplayOrder": "404",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders5",
-    "CategoryLabel": "Consent Orders 5",
-    "DisplayOrder": "405",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders6",
-    "CategoryLabel": "Consent Orders 6",
-    "DisplayOrder": "406",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders7",
-    "CategoryLabel": "Consent Orders 7",
-    "DisplayOrder": "407",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders8",
-    "CategoryLabel": "Consent Orders 8",
-    "DisplayOrder": "408",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders9",
-    "CategoryLabel": "Consent Orders 9",
-    "DisplayOrder": "409",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders10",
-    "CategoryLabel": "Consent Orders 10",
-    "DisplayOrder": "410",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrdersOverflow",
-    "CategoryLabel": "Consent Orders Overflow",
-    "DisplayOrder": "411",
-    "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders1",
-    "CategoryLabel": "Consent Orders 1",
-    "DisplayOrder": "413",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders2",
-    "CategoryLabel": "Consent Orders 2",
-    "DisplayOrder": "414",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders3",
-    "CategoryLabel": "Consent Orders 3",
-    "DisplayOrder": "415",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders4",
-    "CategoryLabel": "Consent Orders 4",
-    "DisplayOrder": "416",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders5",
-    "CategoryLabel": "Consent Orders 5",
-    "DisplayOrder": "417",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders6",
-    "CategoryLabel": "Consent Orders 6",
-    "DisplayOrder": "418",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders7",
-    "CategoryLabel": "Consent Orders 7",
-    "DisplayOrder": "419",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders8",
-    "CategoryLabel": "Consent Orders 8",
-    "DisplayOrder": "420",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders9",
-    "CategoryLabel": "Consent Orders 9",
-    "DisplayOrder": "421",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders10",
-    "CategoryLabel": "Consent Orders 10",
-    "DisplayOrder": "422",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrdersOverflow",
-    "CategoryLabel": "Consent Orders Overflow",
-    "DisplayOrder": "423",
-    "ParentCategoryID": "intervenerDocumentsIntervener4ConsentOrders"
   }
 ]
