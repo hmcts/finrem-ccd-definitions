@@ -10,16 +10,16 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsFormAOrA1OrB",
-    "CategoryLabel": "Form A/A1/B",
+    "CategoryID": "applicationsMainApplication",
+    "CategoryLabel": "Main Application",
     "DisplayOrder": "2",
     "ParentCategoryID": "applications"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplications",
-    "CategoryLabel": "General Applications",
+    "CategoryID": "applicationsOtherApplication",
+    "CategoryLabel": "Other Application",
     "DisplayOrder": "3",
     "ParentCategoryID": "applications"
   },
@@ -27,17 +27,9 @@
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsConsentApplication",
-    "CategoryLabel": "Consent Application",
+    "CategoryLabel": "Consent Order To Finalise Proceedings",
     "DisplayOrder": "4",
     "ParentCategoryID": "applications"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingNotices",
-    "CategoryLabel": "Hearing Notices",
-    "DisplayOrder": "5",
-    "ParentCategoryID": null
   },
   {
     "LiveFrom": "01/09/23",
@@ -58,8 +50,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "approvedOrdersGeneralApplications",
-    "CategoryLabel": "General Applications",
+    "CategoryID": "approvedOrdersOtherApplication",
+    "CategoryLabel": "Other Application",
     "DisplayOrder": "8",
     "ParentCategoryID": "approvedOrders"
   },
@@ -67,7 +59,7 @@
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "approvedOrdersConsentApplication",
-    "CategoryLabel": "Consent Application",
+    "CategoryLabel": "Consent Order To Finalise Proceedings",
     "DisplayOrder": "9",
     "ParentCategoryID": "approvedOrders"
   },
@@ -138,6 +130,30 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "applicantDocumentsPensionPlan",
+    "CategoryLabel": "Pension Plan",
+    "DisplayOrder": "20",
+    "ParentCategoryID": "applicantDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "applicantDocumentsSendOrders",
+    "CategoryLabel": "Send Orders",
+    "DisplayOrder": "248",
+    "ParentCategoryID": "applicantDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "applicantDocumentsConsentOrders",
+    "CategoryLabel": "Send Orders (consent)",
+    "DisplayOrder": "320",
+    "ParentCategoryID": "applicantDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicantDocumentsCertificatesOfService",
     "CategoryLabel": "Certificates Of Service",
     "DisplayOrder": "18",
@@ -149,14 +165,6 @@
     "CategoryID": "applicantDocumentsMiscellaneousOrOther",
     "CategoryLabel": "Miscellaneous/Other",
     "DisplayOrder": "19",
-    "ParentCategoryID": "applicantDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicantDocumentsPensionPlan",
-    "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "20",
     "ParentCategoryID": "applicantDocuments"
   },
   {
@@ -226,6 +234,30 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "respondentDocumentsPensionPlan",
+    "CategoryLabel": "Pension Plan",
+    "DisplayOrder": "31",
+    "ParentCategoryID": "respondentDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "respondentDocumentsSendOrders",
+    "CategoryLabel": "Send Orders",
+    "DisplayOrder": "260",
+    "ParentCategoryID": "respondentDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "respondentDocumentsConsentOrders",
+    "CategoryLabel": "Send Orders (consent)",
+    "DisplayOrder": "332",
+    "ParentCategoryID": "respondentDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "respondentDocumentsCertificatesOfService",
     "CategoryLabel": "Certificates Of Service",
     "DisplayOrder": "29",
@@ -237,14 +269,6 @@
     "CategoryID": "respondentDocumentsMiscellaneousOrOther",
     "CategoryLabel": "Miscellaneous/Other",
     "DisplayOrder": "30",
-    "ParentCategoryID": "respondentDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "respondentDocumentsPensionPlan",
-    "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "31",
     "ParentCategoryID": "respondentDocuments"
   },
   {
@@ -282,16 +306,16 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsJointDocumentsEs1",
-    "CategoryLabel": "Es1",
+    "CategoryID": "fdrDocumentsJointDocumentsES1",
+    "CategoryLabel": "ES1",
     "DisplayOrder": "36",
     "ParentCategoryID": "fdrDocumentsJointDocuments"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "fdrDocumentsJointDocumentsEs2",
-    "CategoryLabel": "Es2",
+    "CategoryID": "fdrDocumentsJointDocumentsES2",
+    "CategoryLabel": "ES2",
     "DisplayOrder": "37",
     "ParentCategoryID": "fdrDocumentsJointDocuments"
   },
@@ -650,16 +674,16 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsApplicantEs1",
-    "CategoryLabel": "Es1",
+    "CategoryID": "hearingDocumentsApplicantES1",
+    "CategoryLabel": "ES1",
     "DisplayOrder": "82",
     "ParentCategoryID": "hearingDocumentsApplicant"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsApplicantEs2",
-    "CategoryLabel": "Es2",
+    "CategoryID": "hearingDocumentsApplicantES2",
+    "CategoryLabel": "ES2",
     "DisplayOrder": "83",
     "ParentCategoryID": "hearingDocumentsApplicant"
   },
@@ -698,8 +722,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsApplicantCostsEstimatesOrFormHOrFormH1",
-    "CategoryLabel": "Costs Estimates/Form H/Form H1",
+    "CategoryID": "hearingDocumentsApplicantCostsFormH/H1/N260",
+    "CategoryLabel": "Costs Form H/H1/N260",
     "DisplayOrder": "88",
     "ParentCategoryID": "hearingDocumentsApplicant"
   },
@@ -754,16 +778,16 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsRespondentEs1",
-    "CategoryLabel": "Es1",
+    "CategoryID": "hearingDocumentsRespondentES1",
+    "CategoryLabel": "ES1",
     "DisplayOrder": "95",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsRespondentEs2",
-    "CategoryLabel": "Es2",
+    "CategoryID": "hearingDocumentsRespondentES2",
+    "CategoryLabel": "ES2",
     "DisplayOrder": "96",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
@@ -802,8 +826,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsRespondentCostsEstimatesOrFormHOrFormH1",
-    "CategoryLabel": "Costs Estimates/Form H/Form H1",
+    "CategoryID": "hearingDocumentsRespondentCostsFormH/H1/N2601",
+    "CategoryLabel": "Costs Form H/H1/N260",
     "DisplayOrder": "101",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
@@ -858,16 +882,16 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1Es1",
-    "CategoryLabel": "Es1",
+    "CategoryID": "hearingDocumentsIntervener1ES1",
+    "CategoryLabel": "ES1",
     "DisplayOrder": "108",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1Es2",
-    "CategoryLabel": "Es2",
+    "CategoryID": "hearingDocumentsIntervener1ES2",
+    "CategoryLabel": "ES2",
     "DisplayOrder": "109",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
@@ -906,8 +930,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1CostsEstimatesOrFormHOrFormH1",
-    "CategoryLabel": "Costs Estimates/Form H/Form H1",
+    "CategoryID": "hearingDocumentsIntervener1CostsFormH/H1/N260",
+    "CategoryLabel": "Costs Form H/H1/N260",
     "DisplayOrder": "114",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
@@ -962,16 +986,16 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2Es1",
-    "CategoryLabel": "Es1",
+    "CategoryID": "hearingDocumentsIntervener2ES1",
+    "CategoryLabel": "ES1",
     "DisplayOrder": "121",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2Es2",
-    "CategoryLabel": "Es2",
+    "CategoryID": "hearingDocumentsIntervener2ES2",
+    "CategoryLabel": "ES2",
     "DisplayOrder": "122",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
@@ -1010,8 +1034,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2CostsEstimatesOrFormHOrFormH1",
-    "CategoryLabel": "Costs Estimates/Form H/Form H1",
+    "CategoryID": "hearingDocumentsIntervener2CostsFormH/H1/N2601",
+    "CategoryLabel": "Costs Form H/H1/N260",
     "DisplayOrder": "127",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
@@ -1066,16 +1090,16 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3Es1",
-    "CategoryLabel": "Es1",
+    "CategoryID": "hearingDocumentsIntervener3ES1",
+    "CategoryLabel": "ES1",
     "DisplayOrder": "134",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3Es2",
-    "CategoryLabel": "Es2",
+    "CategoryID": "hearingDocumentsIntervener3ES2",
+    "CategoryLabel": "ES2",
     "DisplayOrder": "135",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
@@ -1114,8 +1138,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3CostsEstimatesOrFormHOrFormH1",
-    "CategoryLabel": "Costs Estimates/Form H/Form H1",
+    "CategoryID": "hearingDocumentsIntervener3CostsFormH/H1/N2601",
+    "CategoryLabel": "Costs Form H/H1/N260",
     "DisplayOrder": "140",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
@@ -1170,16 +1194,16 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4Es1",
-    "CategoryLabel": "Es1",
+    "CategoryID": "hearingDocumentsIntervener4ES1",
+    "CategoryLabel": "ES1",
     "DisplayOrder": "147",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4Es2",
-    "CategoryLabel": "Es2",
+    "CategoryID": "hearingDocumentsIntervener4ES2",
+    "CategoryLabel": "ES2",
     "DisplayOrder": "148",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
@@ -1218,8 +1242,8 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4CostsEstimatesOrFormHOrFormH1",
-    "CategoryLabel": "Costs Estimates/Form H/Form H1",
+    "CategoryID": "hearingDocumentsIntervener4CostsFormH/H1/N260",
+    "CategoryLabel": "Costs Form H/H1/N260",
     "DisplayOrder": "153",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
@@ -1274,9 +1298,17 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondence",
-    "CategoryLabel": "Correspondence",
+    "CategoryID": "courtCorrespondence",
+    "CategoryLabel": "Court Correspondence",
     "DisplayOrder": "160",
+    "ParentCategoryID": null
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "hearingNotices",
+    "CategoryLabel": "Hearing Notices",
+    "DisplayOrder": "5",
     "ParentCategoryID": null
   },
   {
@@ -1410,6 +1442,30 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener1PensionPlan",
+    "CategoryLabel": "Pension Plan",
+    "DisplayOrder": "243",
+    "ParentCategoryID": "intervenerDocumentsIntervener1"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener1SendOrders",
+    "CategoryLabel": "Send Orders",
+    "DisplayOrder": "272",
+    "ParentCategoryID": "intervenerDocumentsIntervener1"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders",
+    "CategoryLabel": "Consent Orders (consent)",
+    "DisplayOrder": "344",
+    "ParentCategoryID": "intervenerDocumentsIntervener1"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1CertificatesOfService",
     "CategoryLabel": "Certificates Of Service",
     "DisplayOrder": "177",
@@ -1485,6 +1541,30 @@
     "CategoryID": "intervenerDocumentsIntervener2HousingParticulars",
     "CategoryLabel": "Housing Particulars",
     "DisplayOrder": "186",
+    "ParentCategoryID": "intervenerDocumentsIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener2PensionPlan",
+    "CategoryLabel": "Pension Plan",
+    "DisplayOrder": "244",
+    "ParentCategoryID": "intervenerDocumentsIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener2SendOrders",
+    "CategoryLabel": "Send Orders",
+    "DisplayOrder": "284",
+    "ParentCategoryID": "intervenerDocumentsIntervener2"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders",
+    "CategoryLabel": "Send Orders (consent)",
+    "DisplayOrder": "356",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1570,6 +1650,30 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener3PensionPlan",
+    "CategoryLabel": "Pension Plan",
+    "DisplayOrder": "245",
+    "ParentCategoryID": "intervenerDocumentsIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener3SendOrders",
+    "CategoryLabel": "Send Orders",
+    "DisplayOrder": "296",
+    "ParentCategoryID": "intervenerDocumentsIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders",
+    "CategoryLabel": "Send Orders (consent)",
+    "DisplayOrder": "368",
+    "ParentCategoryID": "intervenerDocumentsIntervener3"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3CertificatesOfService",
     "CategoryLabel": "Certificates Of Service",
     "DisplayOrder": "197",
@@ -1645,6 +1749,30 @@
     "CategoryID": "intervenerDocumentsIntervener4HousingParticulars",
     "CategoryLabel": "Housing Particulars",
     "DisplayOrder": "206",
+    "ParentCategoryID": "intervenerDocumentsIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener4PensionPlan",
+    "CategoryLabel": "Pension Plan",
+    "DisplayOrder": "246",
+    "ParentCategoryID": "intervenerDocumentsIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener4SendOrders",
+    "CategoryLabel": "Send Orders",
+    "DisplayOrder": "308",
+    "ParentCategoryID": "intervenerDocumentsIntervener4"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders",
+    "CategoryLabel": "Send Orders (consent)",
+    "DisplayOrder": "380",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -1778,82 +1906,82 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplicationsapp1",
+    "CategoryID": "applicationsOtherApplicationsapp1",
     "CategoryLabel": "Application 1 (Most Recent)",
     "DisplayOrder": "223",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplicationsapp2",
+    "CategoryID": "applicationsOtherApplicationsapp2",
     "CategoryLabel": "Application 2",
     "DisplayOrder": "224",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplicationsapp3",
+    "CategoryID": "applicationsOtherApplicationsapp3",
     "CategoryLabel": "Application 3",
     "DisplayOrder": "225",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplicationsapp4",
+    "CategoryID": "applicationsOtherApplicationsapp4",
     "CategoryLabel": "Application 4",
     "DisplayOrder": "226",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplicationsapp5",
+    "CategoryID": "applicationsOtherApplicationsapp5",
     "CategoryLabel": "Application 5",
     "DisplayOrder": "227",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplicationsapp6",
+    "CategoryID": "applicationsOtherApplicationsapp6",
     "CategoryLabel": "Application 6",
     "DisplayOrder": "228",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplicationsapp7",
+    "CategoryID": "applicationsOtherApplicationsapp7",
     "CategoryLabel": "Application 7",
     "DisplayOrder": "229",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplicationsapp8",
+    "CategoryID": "applicationsOtherApplicationsapp8",
     "CategoryLabel": "Application 8",
     "DisplayOrder": "230",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplicationsapp9",
+    "CategoryID": "applicationsOtherApplicationsapp9",
     "CategoryLabel": "Application 9",
     "DisplayOrder": "231",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicationsGeneralApplicationsapp10",
+    "CategoryID": "applicationsOtherApplicationsapp10",
     "CategoryLabel": "Application 10 (Oldest)",
     "DisplayOrder": "232",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
@@ -1877,95 +2005,63 @@
     "CategoryID": "applicationsGeneralApplicationsOverflow",
     "CategoryLabel": "Application Overflow",
     "DisplayOrder": "235",
-    "ParentCategoryID": "applicationsGeneralApplications"
+    "ParentCategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceApplicant",
+    "CategoryID": "courtCorrespondenceApplicant",
     "CategoryLabel": "Applicant",
     "DisplayOrder": "236",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceRespondent",
+    "CategoryID": "courtCorrespondenceRespondent",
     "CategoryLabel": "Respondent",
     "DisplayOrder": "237",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceIntervener1",
+    "CategoryID": "courtCorrespondenceIntervener1",
     "CategoryLabel": "Intervener 1",
     "DisplayOrder": "238",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceIntervener2",
+    "CategoryID": "courtCorrespondenceIntervener2",
     "CategoryLabel": "Intervener 2",
     "DisplayOrder": "239",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceIntervener3",
+    "CategoryID": "courtCorrespondenceIntervener3",
     "CategoryLabel": "Intervener 3",
     "DisplayOrder": "240",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceIntervener4",
+    "CategoryID": "courtCorrespondenceIntervener4",
     "CategoryLabel": "Intervener 4",
     "DisplayOrder": "241",
-    "ParentCategoryID": "correspondence"
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "correspondenceOther",
+    "CategoryID": "courtCorrespondenceOther",
     "CategoryLabel": "Other",
     "DisplayOrder": "242",
-    "ParentCategoryID": "correspondence"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1PensionPlan",
-    "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "243",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2PensionPlan",
-    "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "244",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3PensionPlan",
-    "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "245",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4PensionPlan",
-    "CategoryLabel": "Pension Plan",
-    "DisplayOrder": "246",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
+    "ParentCategoryID": "courtCorrespondence"
   },
   {
     "LiveFrom": "01/09/23",
@@ -1974,14 +2070,6 @@
     "CategoryLabel": "Witness summons",
     "DisplayOrder": "247",
     "ParentCategoryID": "hearingDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicantDocumentsSendOrders",
-    "CategoryLabel": "Send Orders",
-    "DisplayOrder": "248",
-    "ParentCategoryID": "applicantDocuments"
   },
   {
     "LiveFrom": "01/09/23",
@@ -2074,14 +2162,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "respondentDocumentsSendOrders",
-    "CategoryLabel": "Send Orders",
-    "DisplayOrder": "260",
-    "ParentCategoryID": "respondentDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "respondentDocumentsSendOrders1",
     "CategoryLabel": "Send Orders 1",
     "DisplayOrder": "261",
@@ -2166,14 +2246,6 @@
     "CategoryLabel": "Send Orders Overflow",
     "DisplayOrder": "271",
     "ParentCategoryID": "respondentDocumentsSendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1SendOrders",
-    "CategoryLabel": "Send Orders",
-    "DisplayOrder": "272",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
@@ -2266,14 +2338,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2SendOrders",
-    "CategoryLabel": "Send Orders",
-    "DisplayOrder": "284",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2SendOrders1",
     "CategoryLabel": "Send Orders 1",
     "DisplayOrder": "285",
@@ -2358,14 +2422,6 @@
     "CategoryLabel": "Send Orders Overflow",
     "DisplayOrder": "295",
     "ParentCategoryID": "intervenerDocumentsIntervener2SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3SendOrders",
-    "CategoryLabel": "Send Orders",
-    "DisplayOrder": "296",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
@@ -2458,14 +2514,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4SendOrders",
-    "CategoryLabel": "Send Orders",
-    "DisplayOrder": "308",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4SendOrders1",
     "CategoryLabel": "Send Orders 1",
     "DisplayOrder": "309",
@@ -2550,14 +2598,6 @@
     "CategoryLabel": "Send Orders Overflow",
     "DisplayOrder": "319",
     "ParentCategoryID": "intervenerDocumentsIntervener4SendOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicantDocumentsConsentOrders",
-    "CategoryLabel": "Send Orders (consent)",
-    "DisplayOrder": "320",
-    "ParentCategoryID": "applicantDocuments"
   },
   {
     "LiveFrom": "01/09/23",
@@ -2650,14 +2690,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "respondentDocumentsConsentOrders",
-    "CategoryLabel": "Send Orders (consent)",
-    "DisplayOrder": "332",
-    "ParentCategoryID": "respondentDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "respondentDocumentsConsentOrders1",
     "CategoryLabel": "Consent Orders 1",
     "DisplayOrder": "333",
@@ -2742,14 +2774,6 @@
     "CategoryLabel": "Consent Orders Overflow",
     "DisplayOrder": "343",
     "ParentCategoryID": "respondentDocumentsConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener1ConsentOrders",
-    "CategoryLabel": "Consent Orders (consent)",
-    "DisplayOrder": "344",
-    "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
@@ -2842,14 +2866,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener2ConsentOrders",
-    "CategoryLabel": "Send Orders (consent)",
-    "DisplayOrder": "356",
-    "ParentCategoryID": "intervenerDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2ConsentOrders1",
     "CategoryLabel": "Consent Orders 1",
     "DisplayOrder": "357",
@@ -2938,14 +2954,6 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener3ConsentOrders",
-    "CategoryLabel": "Send Orders (consent)",
-    "DisplayOrder": "368",
-    "ParentCategoryID": "intervenerDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3ConsentOrders1",
     "CategoryLabel": "Consent Orders 1",
     "DisplayOrder": "369",
@@ -3030,14 +3038,6 @@
     "CategoryLabel": "Consent Orders Overflow",
     "DisplayOrder": "379",
     "ParentCategoryID": "intervenerDocumentsIntervener3ConsentOrders"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "intervenerDocumentsIntervener4ConsentOrders",
-    "CategoryLabel": "Send Orders (consent)",
-    "DisplayOrder": "380",
-    "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
     "LiveFrom": "01/09/23",
