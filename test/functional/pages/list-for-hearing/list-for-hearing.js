@@ -5,7 +5,8 @@ async function listForHearing(){
   I.wait('2');
   I.click('Go');
   I.waitForText('List for Hearing', '30');
-  I.selectOption('select[id="hearingType"]', 'Final Hearing (FH)');
+  I.waitForElement('select[id="hearingType"]', '15');
+  I.selectOption('select[id="hearingType"]', { label: 'Final Hearing (FH)' });
   I.fillField('input[id="timeEstimate"]', '1:30');
   I.fillField('input[id="hearingDate-day"]', '01');
   I.fillField('input[id="hearingDate-month"]', '02');

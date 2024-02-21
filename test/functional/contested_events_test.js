@@ -108,8 +108,9 @@ Scenario('Contested Manage Barrister @nightly', async ({ I }) => {
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    I.wait('15');
+    I.wait('20');
     await I.manageBarristerApplicant();
+    I.wait('5');
     await I.manageBarristerRespondent();
     await I.verifyManageBarristerEvent(verifyTabText.caseType, verifyTabText.historyTab.manageBarristerEvent, verifyTabText.historyTab.issueApplicationEndState);
     await I.clickTab('Change of representatives');
@@ -130,17 +131,24 @@ Scenario('List for hearing contested case @nightly', async ({ I }) => {
     I.wait('15');
     logger.info('---------------------case number------------------------', caseId);
     await I.allocateJudge();
+    I.wait('5');
     await I.see('Allocate to Judge');
     await I.signOut();
     await I.signInIdam(judgeUserName, judgePassword);
+    I.wait('15');
     await I.waitForText('Judicial Case Manager');
     await I.enterCaseReference(caseId);
+    I.wait('5');
     await I.see('Gate Keeping And Allocation');
     await I.giveAllocationDirection();
+    I.wait('15');
     await I.signOut();
+    I.wait('5');
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.wait('15');
     await I.waitForText('Manage Cases');
     await I.enterCaseReference(caseId);
+    I.wait('5');
     await I.listForHearing();
     I.waitForText('List for Hearing');
 }).retry(3);
@@ -184,6 +192,7 @@ Scenario('Caseworker runs List for Interim Hearing @nightly', async ({ I }) => {
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
     await I.listForInterimHearing();
+    I.wait('10');
     await I.verifyListForInterimHearing();
     logger.info("List Of Interim Hearing Completed");
 }).retry(3);

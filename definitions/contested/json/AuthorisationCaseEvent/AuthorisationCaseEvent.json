@@ -2084,5 +2084,19 @@
     "CaseEventID": "clearRespondentPolicy",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_hideCase",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_unhideCase",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
   }
 ]

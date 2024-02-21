@@ -3548,7 +3548,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationOutcomeOther",
-    "FieldType": "Text",
+    "FieldType": "TextArea",
     "Label": "Please Specify",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -7451,5 +7451,23 @@
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "administrativeDocumentsTransitional"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderRefusalOnScreen",
+    "Label": "Application Not Approved",
+    "FieldType": "FR_orderRefusalOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "previousState",
+    "Label": "  ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
