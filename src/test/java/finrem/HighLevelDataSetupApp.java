@@ -36,6 +36,7 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
                         System.out.println("definition file \"" + file + "\" is skipped on " + currentEnv));
             }
         } catch (Exception e) {
+            System.out.println("Error on uploading ccd definition file - " + e.getMessage());
             // exit the process to fail jenkin pipeline
             System.exit(1);
         }
