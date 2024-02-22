@@ -28,6 +28,7 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     @Override
     protected void doLoadTestData() {
         System.out.println("Testing---------------------------------failed scenario");
+        System.exit(1);
         List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
         CcdEnvironment currentEnv = (CcdEnvironment) getDataSetupEnvironment();
         try {
@@ -40,5 +41,6 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
         } catch(Exception e) {
             throw e;
         }
+        System.out.println("Testing finished---------------------------------failed scenario");
     }
 }
