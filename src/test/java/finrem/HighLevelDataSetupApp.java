@@ -2,7 +2,6 @@ package finrem;
 
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
-import uk.gov.hmcts.befta.exception.ImportException;
 
 import java.util.List;
 import java.util.Arrays;
@@ -27,8 +26,6 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
 
     @Override
     protected void doLoadTestData() {
-        System.out.println("Testing---------------------------------failed scenario");
-        System.exit(1);
         List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
         CcdEnvironment currentEnv = (CcdEnvironment) getDataSetupEnvironment();
         try {
@@ -38,9 +35,9 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
                 definitionFileResources.forEach(file ->
                         System.out.println("definition file \"" + file + "\" is skipped on " + currentEnv));
             }
-        } catch(Exception e) {
-            throw e;
+        } catch (Exception e) {
+            // exit the process to fail jenkin pipeline
+            System.exit(1);
         }
-        System.out.println("Testing finished---------------------------------failed scenario");
     }
 }
