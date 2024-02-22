@@ -2104,5 +2104,13 @@
     "Label": "Launch the Flags screen",
     "FieldType": "FlagLauncher",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "orderRefusalOnScreen",
+    "Label": "Application Not Approved",
+    "FieldType": "FR_orderRefusalOrder",
+    "SecurityClassification": "Public"
   }
 ]
