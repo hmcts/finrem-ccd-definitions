@@ -53,7 +53,7 @@
     "CaseFieldID": "manageScannedDocumentCollection",
     "ListElementCode": "caseDocumentOther",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "manageScannedDocumentCollection.selectForUpdate=\"Yes\"",
+    "FieldShowCondition": "manageScannedDocumentCollection.selectForUpdate=\"Yes\" AND manageScannedDocumentCollection.caseDocumentType=\"other\"",
     "RetainHiddenField": "Yes"
   },
   {
@@ -73,7 +73,7 @@
     "CaseFieldID": "manageScannedDocumentCollection",
     "ListElementCode": "caseDocumentConfidentiality",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "manageScannedDocumentCollection.selectForUpdate=\"Yes\"",
+    "FieldShowCondition": "manageScannedDocumentCollection.selectForUpdate=\"Yes\" AND manageScannedDocumentCollection.caseDocumentType!=\"Without Prejudice offers\" AND manageScannedDocumentCollection.caseDocumentType!=\"Attendance Sheets\" AND manageScannedDocumentCollection.caseDocumentType!=\"Judicial notes\" AND manageScannedDocumentCollection.caseDocumentType!=\"Judgment\" AND manageScannedDocumentCollection.caseDocumentType!=\"Witness Summons\" AND manageScannedDocumentCollection.caseDocumentType!=\"Transcript\"",
     "RetainHiddenField": "Yes"
   },
   {
@@ -83,7 +83,7 @@
     "CaseFieldID": "manageScannedDocumentCollection",
     "ListElementCode": "caseDocumentFdr",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "manageScannedDocumentCollection.selectForUpdate=\"Yes\" AND manageScannedDocumentCollection.caseDocumentConfidentiality=\"No\"",
+    "FieldShowCondition": "manageScannedDocumentCollection.selectForUpdate=\"Yes\" AND manageScannedDocumentCollection.caseDocumentConfidentiality=\"No\" AND manageScannedDocumentCollection.caseDocumentType!=\"Without Prejudice offers\" AND manageScannedDocumentCollection.caseDocumentType!=\"Attendance Sheets\" AND manageScannedDocumentCollection.caseDocumentType!=\"Judicial notes\" AND manageScannedDocumentCollection.caseDocumentType!=\"Judgment\" AND manageScannedDocumentCollection.caseDocumentType!=\"Witness Summons\" AND manageScannedDocumentCollection.caseDocumentType!=\"Transcript\"",
     "RetainHiddenField": "Yes"
   },
   {
@@ -93,7 +93,7 @@
     "CaseFieldID": "manageScannedDocumentCollection",
     "ListElementCode": "caseDocumentParty",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "manageScannedDocumentCollection.selectForUpdate=\"Yes\" AND manageScannedDocumentCollection.caseDocumentConfidentiality=\"No\" AND manageScannedDocumentCollection.caseDocumentFdr=\"No\" AND manageScannedDocumentCollection.caseDocumentType!=\"Without Prejudice offers\" AND manageScannedDocumentCollection.caseDocumentType!=\"Attendance Sheets\" AND manageScannedDocumentCollection.caseDocumentType!=\"Judicial notes\" AND manageScannedDocumentCollection.caseDocumentType!=\"Judgment\" AND manageScannedDocumentCollection.caseDocumentType!=\"Witness Summons\" AND manageScannedDocumentCollection.caseDocumentType!=\"Transcript\"",
+    "FieldShowCondition": "manageScannedDocumentCollection.selectForUpdate=\"Yes\" AND manageScannedDocumentCollection.caseDocumentType!=\"Attendance Sheets\" AND manageScannedDocumentCollection.caseDocumentType!=\"Judicial notes\" AND manageScannedDocumentCollection.caseDocumentType!=\"Judgment\" AND manageScannedDocumentCollection.caseDocumentType!=\"Witness Summons\" AND manageScannedDocumentCollection.caseDocumentType!=\"Transcript\"",
     "RetainHiddenField": "Yes"
   },
   {
