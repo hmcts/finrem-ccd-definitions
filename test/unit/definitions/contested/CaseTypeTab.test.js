@@ -256,7 +256,7 @@ describe('CaseTypeTab', () => {
 
     ]);
   });
-  it.skip('should contain a valid case field IDs', () => {
+  it('should contain a valid case field IDs', () => {
     const validFields = uniq(map(caseFieldAll, 'ID'));
     const objectsWithInvalidCaseId = filter(caseTypeTab, field => {
       return validFields.indexOf(field.CaseFieldID) === -1;
