@@ -312,15 +312,11 @@ ccd:
     image: hmctspublic.azurecr.io/ccd/logstash
     imageTag: "ccd-divorce-logstash-latest"
     logstashJavaOpts: -Xmx1g -Xms512M
-    environment:
-      PREVIEW-PR-DB-PASSWORD: ${PREVIEW-PR-DB-PASSWORD}
     extraEnvs:
       - name: DB_URL
-        value: jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store
+        value: jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store?sslmode=require&stringtype=unspecified
       - name: DB_USER
         value: hmcts
-      - name: DB_PWD
-        value: xchGF2dxKNrUpD3e
       - name: ES_HOSTS
         value: http://${SERVICE_NAME}-es-master:9200
       - name: ES_DATA_NODES_URL
@@ -334,6 +330,9 @@ ccd:
     volumeMounts:
       - name: pipeline
         mountPath: /usr/share/logstash/files
+      - name: database-secret-volume
+        mountPath: /etc/logstash/secrets
+        readOnly: true
     livenessProbe:
       initialDelaySeconds: 90
 
