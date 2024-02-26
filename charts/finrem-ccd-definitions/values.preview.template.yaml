@@ -327,11 +327,13 @@ ccd:
         value: http://${SERVICE_NAME}-es-master:9200
     persistence:
       enabled: false
-    extraVolumes: |    
+    volumes: |
+      - name: logstash-lib
+        emptyDir: {}
       - name: database-secret-volume
         secret:
           secretName: postgres
-    extraVolumeMounts:
+    volumeMounts:
       - name: pipeline
         mountPath: /usr/share/logstash/files
       - name: database-secret-volume
