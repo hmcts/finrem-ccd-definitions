@@ -317,6 +317,8 @@ ccd:
         value: jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store?sslmode=require&stringtype=unspecified
       - name: DB_USER
         value: hmcts
+      - name: DB_PWD
+        value: xchGF2dxKNrUpD3e
       - name: ES_HOSTS
         value: http://${SERVICE_NAME}-es-master:9200
       - name: ES_DATA_NODES_URL
@@ -327,7 +329,9 @@ ccd:
         value: http://${SERVICE_NAME}-es-master:9200
     persistence:
       enabled: false
-    volumes:
+    volumes: |
+      - name: logstash-lib
+        emptyDir: {}
       - name: database-secret-volume
         secret:
           secretName: postgres
