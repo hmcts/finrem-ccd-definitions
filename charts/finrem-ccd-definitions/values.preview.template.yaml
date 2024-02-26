@@ -316,7 +316,7 @@ ccd:
       PREVIEW-PR-DB-PASSWORD: ${PREVIEW-PR-DB-PASSWORD}
     extraEnvs:
       - name: DB_URL
-        value: jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store?ssl=disable&stringtype=unspecified
+        value: jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store
       - name: DB_USER
         value: hmcts
       - name: DB_PWD
