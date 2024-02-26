@@ -28,11 +28,17 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     protected void doLoadTestData() {
         List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
         CcdEnvironment currentEnv = (CcdEnvironment) getDataSetupEnvironment();
-        if (currentEnv != null && !SKIPPED_ENVS.contains(currentEnv)) {
-            importDefinitions();
-        } else {
-            definitionFileResources.forEach(file ->
-                    System.out.println("definition file \"" + file + "\" is skipped on " + currentEnv));
+        try {
+            if (currentEnv != null && !SKIPPED_ENVS.contains(currentEnv)) {
+                importDefinitions();
+            } else {
+                definitionFileResources.forEach(file ->
+                        System.out.println("definition file \"" + file + "\" is skipped on " + currentEnv));
+            }
+        } catch (Exception e) {
+            System.out.println("Error on uploading ccd definition file - " + e.getMessage());
+            // exit the process to fail jenkin pipeline
+            System.exit(1);
         }
     }
 }
