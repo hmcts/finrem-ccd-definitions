@@ -82,7 +82,8 @@ def secrets = [
                 secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET'),
                 secret('username-caa', 'USERNAME_CAA'),
                 secret('password-caa', 'PASSWORD_CAA'),
-                secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR')
+                secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
+                secret('preview-pr-db-password', 'PREVIEW-PR-DB-PASSWORD')
 
         ]
 ]
