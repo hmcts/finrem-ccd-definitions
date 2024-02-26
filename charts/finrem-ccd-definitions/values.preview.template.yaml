@@ -312,6 +312,8 @@ ccd:
     image: hmctspublic.azurecr.io/ccd/logstash
     imageTag: "ccd-divorce-logstash-latest"
     logstashJavaOpts: -Xmx1g -Xms512M
+    environment:
+      PREVIEW-PR-DB-PASSWORD: ${PREVIEW-PR-DB-PASSWORD}
     extraEnvs:
       - name: DB_URL
         value: jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store?ssl=disable&stringtype=unspecified
