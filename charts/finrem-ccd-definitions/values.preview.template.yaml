@@ -327,9 +327,7 @@ ccd:
         value: http://${SERVICE_NAME}-es-master:9200
     persistence:
       enabled: false
-    volumes: |
-      - name: logstash-lib
-        emptyDir: {}
+    volumes:
       - name: database-secret-volume
         secret:
           secretName: postgres
