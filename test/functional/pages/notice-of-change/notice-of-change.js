@@ -4,7 +4,6 @@ module.exports = {
     noticeOfChange: 'Notice of change',
     fields: {
         caseRefSearch: '#caseRef',
-        familyManReference: '#familyManReference',
         clientFirstName: '#clientFirstName',
         clientLastName: '#clientLastName',
         confirmNoC: '#affirmation'
@@ -17,8 +16,7 @@ module.exports = {
             await I.runAccessibilityTest();
         }
         I.fillField(this.fields.caseRefSearch, 'caseRef');
-        await I.retryUntilExists(() => I.click('Continue'), this.fields.familyManReference);
-        I.fillField(this.fields.familyManReference, 'EM18D54321');
+        await I.retryUntilExists(() => I.click('Continue'),
         I.fillField(this.fields.clientFirstName, 'John');
         I.fillField(this.fields.clientLastName, 'Smith');
 
