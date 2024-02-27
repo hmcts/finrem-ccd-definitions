@@ -3,16 +3,6 @@
     "LiveFrom": "01/01/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "NoCChallenge",
-    "DisplayOrder": "1",
-    "QuestionText": "Divorce / Dissolution Case Reference",
-    "AnswerFieldType": "Text",
-    "Answer": "${divorceCaseNumber}:[APPSOLICITOR],${divorceCaseNumber}:[RESPSOLICITOR]",
-    "QuestionId": "familyManReference"
-  },
-  {
-    "LiveFrom": "01/01/2021",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "NoCChallenge",
     "DisplayOrder": "2",
     "QuestionText": "Your client's first name and any middle names",
     "AnswerFieldType": "Text",
