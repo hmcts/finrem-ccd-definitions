@@ -317,6 +317,8 @@ ccd:
         value: jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store?sslmode=require&stringtype=unspecified
       - name: DB_USER
         value: hmcts
+      - name: DB_PWD
+        value: xchGF2dxKNrUpD3e
       - name: ES_HOSTS
         value: http://${SERVICE_NAME}-es-master:9200
       - name: ES_DATA_NODES_URL
@@ -341,35 +343,6 @@ ccd:
         readOnly: true
     livenessProbe:
       initialDelaySeconds: 90
-    logstashConfig:
-      logstash.yml: |
-        http.host: 0.0.0.0
-        xpack.monitoring.enabled: false
-        queue.type: persisted
-        dead_letter_queue.enable: true
-      pipelines.yml: |
-        - pipeline.id: main
-          path.config: "/usr/share/logstash/pipeline/{01_input,02_filter,03_output}.conf"
-          pipeline.workers: 4
-          pipeline.batch.size: 500
-          queue.type: persisted
-      logstashPipeline:
-        01_input.conf: |
-          input  {
-            jdbc {
-              jdbc_connection_string => "jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store?sslmode=require&stringtype=unspecified"
-              jdbc_user => "hmcts"
-              jdbc_password_filepath => "/etc/logstash/secrets/PASSWORD"
-              jdbc_validate_connection => true
-              jdbc_validation_timeout => "1"
-              jdbc_driver_library => "/usr/share/logstash/ccd/postgresql.jar"
-              jdbc_driver_class => "org.postgresql.Driver"
-              jdbc_default_timezone => "UTC"
-              statement => "UPDATE case_data SET marked_by_logstash = true WHERE marked_by_logstash = false RETURNING id, created_date, last_modified, jurisdiction, case_type_id, state, last_state_modified_date, data::TEXT as json_data, data_classification::TEXT as json_data_classification, reference, security_classification, supplementary_data::TEXT as json_supplementary_data"
-              clean_run => false
-              schedule => "* * * * * *"
-            }
-          }      
 
 aac-manage-case-assignment:
   enabled: true
