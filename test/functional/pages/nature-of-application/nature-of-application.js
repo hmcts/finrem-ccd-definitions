@@ -50,7 +50,7 @@ async function contestedNatureOfApplication() {
 async function contestedNatureOfApplicationForSchedule1(){
   const I = this;
 
-  await I.waitForText('What is the nature of the application ?');
+  await I.waitForText('What is the nature of the application ?', 5);
   I.checkOption('input[value="Interim child periodical payments"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');

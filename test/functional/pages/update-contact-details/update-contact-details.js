@@ -1,5 +1,6 @@
 async function updateContactDetails() {
   const I = this;
+  I.waitForElement('select[id="next-step"]', '15');
   I.selectOption('select[id="next-step"]', 'Update contact details');
   I.wait('2');
   I.click('Go');

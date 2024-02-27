@@ -1,5 +1,15 @@
 [
   {
+    "LiveFrom": "01/09/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFileViewTab",
+    "TabLabel": "Case File View",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "caseFileViewComponentLauncher",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#ARGUMENT(CaseFileView)"
+  },
+  {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "Shared Documents",

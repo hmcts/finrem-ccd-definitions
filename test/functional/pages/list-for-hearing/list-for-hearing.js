@@ -5,7 +5,8 @@ async function listForHearing(){
   I.wait('2');
   I.click('Go');
   I.waitForText('List for Hearing', '30');
-  I.selectOption('select[id="hearingType"]', 'Final Hearing (FH)');
+  I.waitForElement('select[id="hearingType"]', '15');
+  I.selectOption('select[id="hearingType"]', { label: 'Final Hearing (FH)' });
   I.fillField('input[id="timeEstimate"]', '1:30');
   I.fillField('input[id="hearingDate-day"]', '01');
   I.fillField('input[id="hearingDate-month"]', '02');
@@ -20,7 +21,7 @@ async function listForHearing(){
   I.click('Continue');
   I.waitForText('Check your answers');
   I.click('Submit');
-  I.waitForText('Ignore Warning and Go');
+  I.waitForText('Ignore Warning and Go', 15);
   I.click('Ignore Warning and Go');
 }
 

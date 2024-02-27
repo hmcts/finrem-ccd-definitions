@@ -14,7 +14,7 @@ const tabIds = uniq(map(caseTypeTabsConcat, 'TabID'));
 describe('CaseTypeTab', () => {
   it('should contain a unique case field ID per tab ID (no duplicate field in a tab)', () => {
     const uniqResult = uniqWith(
-        caseTypeTabsConcat,
+      caseTypeTabsConcat,
       (field1, field2) => {
         return field1.TabID === field2.TabID && field1.CaseFieldID === field2.CaseFieldID;
       }

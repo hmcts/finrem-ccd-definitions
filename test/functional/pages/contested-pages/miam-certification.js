@@ -2,7 +2,7 @@
 
 function miamCertification() {
   const I = this;
-  I.waitForText('Mediator Registration Number (URN)');
+  I.waitForText('Mediator Registration Number (URN)', 5);
   I.fillField('#mediatorRegistrationNumber', '765234');
   I.fillField('#familyMediatorServiceName', 'mediator');
   I.fillField('#soleTraderName', 'trading');

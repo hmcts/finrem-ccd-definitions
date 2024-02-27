@@ -2,7 +2,7 @@
 
 function applyingToCourt() {
   const I = this;
-  I.waitForText('Which Financial Remedies Court are you applying to?');
+  I.waitForText('Which Financial Remedies Court are you applying to?', 5);
   I.selectOption('#regionList', 'London');
   I.selectOption('#londonFRCList', 'London FRC');
   I.selectOption('#cfcCourtList', 'CENTRAL FAMILY COURT');

@@ -5,7 +5,7 @@ function solicitorCreateGeneralApplication() {
     I.selectOption('select[id="next-step"]', 'Create General Application');
     I.wait("2");
     I.click("Go");
-
+    //Broken below
     I.waitForText("General Applications");
     I.click("Add new");
     I.checkOption("Applicant");

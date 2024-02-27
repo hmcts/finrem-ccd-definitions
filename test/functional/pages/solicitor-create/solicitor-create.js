@@ -15,7 +15,7 @@ async function solicitorCreate(reference) {
   I.click('div[id="solicitorAddress_solicitorAddress_postcodeLookup"] button[type="button"]');
   I.waitForElement('#selectAddress', '30');
   I.wait('5');
-  I.selectOption('Select an address', '67 Pears Road, Hounslow');
+  I.selectOption('select[id="solicitorAddress_solicitorAddress_addressList"]', { label: '67 Pears Road, Hounslow' });
   I.fillField('input[id="solicitorAddress__detailAddressLine2"]', 'Near Roundabout');
   I.fillField('input[id="solicitorAddress__detailAddressLine3"]', 'Opposite Tesco');
   I.fillField('input[id="solicitorAddress__detailCounty"]', 'Middlesex');
@@ -48,7 +48,7 @@ async function contestedSolicitorCreate(reference, applicationType) {
   I.click('div[id="applicantSolicitorAddress_applicantSolicitorAddress_postcodeLookup"] button[type="button"]');
   I.waitForElement('#selectAddress', '30');
   I.wait('5');
-  I.selectOption('select[id="applicantSolicitorAddress_applicantSolicitorAddress_addressList"]', '67 Pears Road, Hounslow');
+  I.selectOption('select[id="applicantSolicitorAddress_applicantSolicitorAddress_addressList"]', { label: '67 Pears Road, Hounslow' });
   I.fillField('input[id="applicantSolicitorAddress__detailAddressLine2"]', 'Near Roundabout');
   I.fillField('input[id="applicantSolicitorAddress__detailAddressLine3"]', 'Opposite Tesco');
   I.fillField('input[id="applicantSolicitorAddress__detailCounty"]', 'Middlesex');

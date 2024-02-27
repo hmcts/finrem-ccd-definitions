@@ -534,6 +534,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageScannedDocs",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "handleEvidence",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CR"
@@ -2096,6 +2103,20 @@
     "LiveFrom": "22/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "clearRespondentPolicy",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_hideCase",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_unhideCase",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRU"
   }

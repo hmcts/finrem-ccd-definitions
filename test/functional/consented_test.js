@@ -13,9 +13,9 @@ const runningEnv = process.env.RUNNING_ENV;
 const solRef = `AUTO-${createSolicitorReference()}`;
 
 
-Feature('create Consented case');
+Feature('Consented Case Tests');
 
-Scenario('Consent Case Creation For Caseworker @nightly @preview', async I => {
+Scenario('Consent Case Creation For Caseworker @nightly @preview', async ({ I }) => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     /* eslint-disable */
@@ -28,6 +28,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @preview', async I => {
     /* eslint-disable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.hwfPaymentAcceptedEvent, verifyTabText.historyTab.hwfPaymentAcceptedEndState);
     //TODO-fix
     //await I.paymentDetailsTab(verifyTabText.caseType, verifyTabText.paymentDetailsTab.tabName);
@@ -35,7 +36,7 @@ Scenario('Consent Case Creation For Caseworker @nightly @preview', async I => {
   }
 }).retry(3);
 
-Scenario('Consent Case Creation For Judge @nightly', async I => {
+Scenario('Consent Case Creation For Judge @nightly', async ({ I }) => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     /* eslint-disable */
@@ -50,6 +51,7 @@ Scenario('Consent Case Creation For Judge @nightly', async I => {
     /* eslint-enable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     // eslint-disable-next-line max-len
     await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.issueApplicationEvent, verifyTabText.historyTab.issueApplicationEndState);
     //TODO-fix
@@ -59,7 +61,7 @@ Scenario('Consent Case Creation For Judge @nightly', async I => {
 }).retry(3);
 
 //Test disabled - needs fixing
-Scenario('Consent Case approve and send order', async I => {
+Scenario('Consent Case approve and send order @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
@@ -69,6 +71,7 @@ Scenario('Consent Case approve and send order', async I => {
      /* eslint-enable */
     await I.retry(3).signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
+    I.wait('15');
     // eslint-disable-next-line max-len
     //TODO-fix
     //await I.verifyConsentedTabData(verifyTabText.caseType, verifyTabText.historyTab.sendOrderEvent, verifyTabText.historyTab.approveSendOrderEndState);
@@ -76,7 +79,7 @@ Scenario('Consent Case approve and send order', async I => {
 }).retry(3);
 /* eslint-disable require-await */
 
-Scenario('Consent Case Creation by Solicitor @nightly', async I => {
+Scenario('Consent Case Creation by Solicitor @nightly', async ({ I }) => {
   I.signInIdam(solicitorUserName, solicitorPassword);
   I.wait('2');
   await I.createCase('Financial Remedy Consented', 'Consent Order Application');

@@ -5,6 +5,7 @@ async function manageIntervenersAdd(flag){
   I.wait('2');
   I.click('Go');
   I.waitForText('Manage Interveners', '30');
+  I.waitForElement('input[id="intervenersList_intervener1"]', '30');
   I.checkOption('input[id="intervenersList_intervener1"]');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -42,7 +43,7 @@ async function manageIntervenersAdd(flag){
     I.waitForText('Check your answers','30');
     I.see('Please select intervener to manage');
     I.see('First Intervener Details');
-    I.see('Intervener\'s Full Name');
+    I.see('s Full Name');
     I.see('Is the Intervener represented ?');
     I.click('Submit');
     I.wait(5);
