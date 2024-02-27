@@ -277,63 +277,84 @@ ccd:
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
-    imageTag: "7.17.1"
     clusterName: "es"
     replicas: 1
-    initResources:
-      limits:
-        cpu: "1000m"
-        memory: "1024Mi"
-      requests:
-        cpu: "50m"
-        memory: "1024Mi"
-    minimumMasterNodes: 1
-    antiAffinity: "soft"
-    esJavaOpts: "-Xmx1g -Xms1g"
-    extraEnvs:
-      - name: discovery.type
-        value: single-node
-      - name: cluster.initial_master_nodes
-        value: ""
-      - name: action.auto_create_index
-        value: .security*,.watches,.triggered_watches,.watcher-history-*,.logstash_dead_letter,.ml*
-    persistence:
-      enabled: false
 
   logstash:
-    devmemoryRequests: 512Mi
-    devcpuRequests: "1000m"
-    devmemoryLimits: 1024Mi
-    devcpuLimits: "2500m"
-    resources:
-      requests:
-        cpu: 1000m
-        memory: 1024Mi
-    image: hmctspublic.azurecr.io/ccd/logstash
-    imageTag: "ccd-divorce-logstash-latest"
+    image: hmctspublic.azurecr.io/imported/logstash/logstash
+    imageTag: "7.16.1"
+    imagePullPolicy: "IfNotPresent"
     logstashJavaOpts: -Xmx1g -Xms512M
-    extraEnvs:
-      - name: DB_URL
-        value: jdbc:postgresql://${SERVICE_NAME}-postgresql:5432/data-store?ssl=disable&stringtype=unspecified
-      - name: DB_USER
-        value: hmcts
-      - name: DB_PWD
-        value: hmcts
-      - name: ES_HOSTS
-        value: http://${SERVICE_NAME}-es-master:9200
-      - name: ES_DATA_NODES_URL
-        value: http://${SERVICE_NAME}-es-master:9200
-      - name: ELASTIC_SEARCH_DATA_NODES_HOSTS
-        value: http://${SERVICE_NAME}-es-master:9200
-      - name: ES_URL
-        value: http://${SERVICE_NAME}-es-master:9200
     persistence:
       enabled: false
-    volumeMounts:
-      - name: pipeline
-        mountPath: /usr/share/logstash/files
-    livenessProbe:
-      initialDelaySeconds: 90
+    extraEnvs:
+      - name: DATA_STORE_PASS
+        value: hmcts
+      - name: DATA_STORE_URL
+        value: "jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/{{ .Values.global.databaseNamePrefix }}data-store?sslmode=require&stringtype=unspecified"
+      - name: DATA_STORE_USER
+        value: hmcts
+      - name: ES_HOSTS
+        value: "${SERVICE_NAME}-es-master"
+    extraInitContainers: |
+      - name: download-postgres-jdbc
+        image: hmctspublic.azurecr.io/curl:7.70.0
+        command: ['curl', '-L', 'https://jdbc.postgresql.org/download/postgresql-42.3.3.jar', '-o', '/logstash-lib/postgresql.jar']
+        volumeMounts:
+        - name: logstash-lib
+          mountPath: /logstash-lib
+    extraVolumes: |
+      - name: logstash-lib
+        emptyDir: {}
+      - name: database-secret-volume
+        secret:
+          secretName: postgres
+    extraVolumeMounts: |
+      - name: logstash-lib
+        mountPath: /usr/share/logstash/ccd
+      - name: database-secret-volume
+        mountPath: /etc/logstash/secrets
+        readOnly: true
+    logstashConfig:
+      logstash.yml: |
+        http.host: 0.0.0.0
+        xpack.monitoring.enabled: false
+        queue.type: persisted
+        dead_letter_queue.enable: true
+      pipelines.yml: |
+        - pipeline.id: main
+          path.config: "/usr/share/logstash/pipeline/{01_input,02_filter,03_output}.conf"
+          pipeline.workers: 4
+          pipeline.batch.size: 500
+          queue.type: persisted
+    logstashPipeline:
+      01_input.conf: |
+        input  {
+          jdbc {
+            jdbc_connection_string => "jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store?sslmode=require&stringtype=unspecified"
+            jdbc_user => "hmcts"
+            jdbc_password_filepath => "/etc/logstash/secrets/PASSWORD"
+            jdbc_validate_connection => true
+            jdbc_validation_timeout => "1"
+            jdbc_driver_library => "/usr/share/logstash/ccd/postgresql.jar"
+            jdbc_driver_class => "org.postgresql.Driver"
+            jdbc_default_timezone => "UTC"
+            statement => "UPDATE case_data SET marked_by_logstash = true WHERE marked_by_logstash = false RETURNING id, created_date, last_modified, jurisdiction, case_type_id, state, last_state_modified_date, data::TEXT as json_data, data_classification::TEXT as json_data_classification, reference, security_classification, supplementary_data::TEXT as json_supplementary_data"
+            clean_run => false
+            schedule => "* * * * * *"
+          }
+        }
+      02_output.conf: |
+        output {
+            elasticsearch {
+                hosts => ["${SERVICE_NAME}-es-master"]
+                sniffing => false
+                index => "%{[index_id]}"
+                document_type => "_doc"
+                document_id => "%{id}"
+                timeout => 60
+            }
+        }
 
 aac-manage-case-assignment:
   enabled: true
