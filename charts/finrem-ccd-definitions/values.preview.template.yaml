@@ -329,7 +329,7 @@ ccd:
         value: http://${SERVICE_NAME}-es-master:9200
     persistence:
       enabled: false
-    volumes: |
+    volumes:
       - name: logstash-lib
         emptyDir: {}
       - name: database-secret-volume
