@@ -262,5 +262,13 @@
     "Name": "Application Drafted",
     "DisplayOrder": 33,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
+  },
+  {
+    "LiveFrom": "01/10/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseHidden",
+    "Name": "Case Hidden",
+    "DisplayOrder": 33,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   }
 ]

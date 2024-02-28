@@ -7425,7 +7425,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "interimUploadAdditionalDocument",
     "Label": " ",
-    "HintText": "Please upload any additional documents related to you application.",
+    "HintText": "Please upload any additional documents related to your application.",
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
@@ -7464,10 +7464,28 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "orderRefusalOnScreen",
+    "Label": "Application Not Approved",
+    "FieldType": "FR_orderRefusalOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "previousState",
+    "Label": "  ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "isCfvCategoriesAppliedFlag",
     "Label": " ",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "Y"
   }
 ]
