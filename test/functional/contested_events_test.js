@@ -204,7 +204,7 @@ Scenario.skip('Send order to an applicant solicitor @nightly', async I => {
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
     const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
     const addIntervener = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId,'FinancialRemedyContested', 'manageInterveners', 'test/data/ccd-contested-add-represented-intervener.json');
-    const createGeneralOrder = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId,'FinancialRemedyContested', 'FR_generalOrderCourtAdmin', 'test/data/ccd-contested-create-general-order.json');
+    const createGeneralOrder = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId,'FinancialRemedyContested', 'FR_generalOrder', 'test/data/ccd-contested-create-general-order.json');
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
