@@ -2414,7 +2414,7 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "What type of document is this?",
-    "FieldShowCondition": "caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
