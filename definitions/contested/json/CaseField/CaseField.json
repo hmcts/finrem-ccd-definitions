@@ -2131,7 +2131,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6009,6 +6009,15 @@
   {
     "LiveFrom": "01/08/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "shareDocumentsBothPartiesWarning",
+    "Label": "## Documents must be shared with either both applicant and respondent or neither",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "rolesLabel",
     "Label": "## Share documents with",
     "FieldType": "Label",
@@ -7144,7 +7153,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsFormAOrA1OrB"
+    "CategoryID": "applicationsMainApplication"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7176,7 +7185,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7207,7 +7216,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7218,7 +7227,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7229,7 +7238,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7240,7 +7249,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7291,7 +7300,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
