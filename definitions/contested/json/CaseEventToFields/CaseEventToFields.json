@@ -1763,39 +1763,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "familyMediatorMIAMLabel",
-    "PageFieldDisplayOrder": 5,
-    "DisplayContext": "READONLY",
-    "PageID": 16,
-    "PageDisplayOrder": 16,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "familyMediatorMIAM",
-    "PageFieldDisplayOrder": 6,
-    "DisplayContext": "MANDATORY",
-    "PageID": 16,
-    "PageDisplayOrder": 16,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "MIAMExemptionsLabel",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 17,
     "PageDisplayOrder": 17,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"No\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1832,7 +1806,7 @@
     "PageID": 18,
     "PageDisplayOrder": 18,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"domesticViolence\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"domesticViolence\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1869,7 +1843,7 @@
     "PageID": 19,
     "PageDisplayOrder": 19,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"urgency\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"urgency\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1906,7 +1880,7 @@
     "PageID": 20,
     "PageDisplayOrder": 20,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"previousMIAMattendance\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"previousMIAMattendance\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -1931,7 +1905,7 @@
     "PageID": 21,
     "PageDisplayOrder": 21,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"other\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -2017,7 +1991,7 @@
     "PageID": 23,
     "PageDisplayOrder": 23,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"Yes\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -5028,39 +5002,13 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "familyMediatorMIAMLabel",
-    "PageFieldDisplayOrder": 5,
-    "DisplayContext": "READONLY",
-    "PageID": 16,
-    "PageDisplayOrder": 16,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "familyMediatorMIAM",
-    "PageFieldDisplayOrder": 6,
-    "DisplayContext": "MANDATORY",
-    "PageID": 16,
-    "PageDisplayOrder": 16,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\"",
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_amendApplication",
     "CaseFieldID": "MIAMExemptionsLabel",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 17,
     "PageDisplayOrder": 17,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"No\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -5097,7 +5045,7 @@
     "PageID": 18,
     "PageDisplayOrder": 18,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"domesticViolence\" ",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"domesticViolence\" ",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -5134,7 +5082,7 @@
     "PageID": 19,
     "PageDisplayOrder": 19,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"urgency\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"urgency\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -5171,7 +5119,7 @@
     "PageID": 20,
     "PageDisplayOrder": 20,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"previousMIAMattendance\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"previousMIAMattendance\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -5196,7 +5144,7 @@
     "PageID": 21,
     "PageDisplayOrder": 21,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"other\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist  CONTAINS \"other\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -5282,7 +5230,7 @@
     "PageID": 23,
     "PageDisplayOrder": 23,
     "PageColumnNumber": 1,
-    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM=\"Yes\"",
+    "PageShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
