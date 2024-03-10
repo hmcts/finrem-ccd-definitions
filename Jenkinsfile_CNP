@@ -104,6 +104,7 @@ properties([
 withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
+  enableFullFunctionalTest(180)
   enableHighLevelDataSetup()
   syncBranchesWithMaster(branchesToSync)
   pipelineConf = config
