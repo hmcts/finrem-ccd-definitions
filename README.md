@@ -85,6 +85,8 @@ To run a single test, add `@mytest` to the Scenario title. For example,
 
 `Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @mytest'...`
 
+Connect to the VPN.
+
 Execute:
 ```bash
 yarn test:mytest
