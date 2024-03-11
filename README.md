@@ -64,6 +64,34 @@ If you prefer to make the changes directly to the Excel Configuration file, and 
 3) Once you're finished with your changes in the Excel file, convert back to JSON using `yarn generate-json-{consented/contested}`
 4) Review the JSON file changes to ensure all your changes are correct
 
+## Run E2E Tests Locally
+E2E tests can be run locally, although they still use AAT.
+
+### Setup
+```bash
+yarn playwright install
+```
+Import AAT environment variables. Ask a colleague for an `e2e-aat.env` file. This should not be stored in GitHub.
+```bash
+source ./e2e-aat.env
+```
+
+In `codecept.conf.js` set the `Playwright` options `show: true` and `headless: false`.
+
+Also consider setting `retries: 0`.
+
+### Run
+To run a single test, add `@mytest` to the Scenario title. For example,
+
+`Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @mytest'...`
+
+Connect to the VPN.
+
+Execute:
+```bash
+yarn test:mytest
+```
+
 ## Verification
 
 ### Eslint is included and will verify the config is properly formatted:
