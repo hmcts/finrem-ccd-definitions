@@ -410,7 +410,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_generalOrder",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CR"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1012,27 +1012,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_generalLetter_judge",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_generalOrderCourtAdmin",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_generalOrderCourtAdmin",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "13/12/2019",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_generalOrderCourtAdmin",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
   {
@@ -2103,6 +2082,20 @@
     "LiveFrom": "22/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "clearRespondentPolicy",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_hideCase",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "22/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_unhideCase",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRU"
   }

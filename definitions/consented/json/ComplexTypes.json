@@ -1244,7 +1244,7 @@
     "ID": "hearingCollection",
     "ListElementCode": "uploadAdditionalDocument",
     "FieldType": "Document",
-    "ElementLabel": "Please upload any additional documents related to you application.",
+    "ElementLabel": "Please upload any additional documents related to your application.",
     "FieldShowCondition": "promptForAnyDocument=\"Yes\"",
     "SecurityClassification": "Public"
   },
@@ -1282,7 +1282,6 @@
     "FieldType": "TextArea",
     "ElementLabel": "Other (please specify)",
     "HintText": "If Other was ticked please provide details",
-    "FieldShowCondition": "orderRefusal=\"Other (please specify)\"",
     "SecurityClassification": "Public"
   },
   {
