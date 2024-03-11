@@ -920,6 +920,24 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantAttendedMIAMYesLabel",
+    "Label": "Yes",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantAttendedMIAMNoLabel",
+    "Label": "No",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantAttendedMIAM",
     "Label": "        ",
     "FieldType": "YesOrNo",
@@ -931,6 +949,24 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "claimingExemptionMIAMLabel",
     "Label": "## Is the applicant claiming exemption from the requirement to attend a MIAM ?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "claimingExemptionMIAMYesLabel",
+    "Label": "Yes",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "claimingExemptionMIAMNoLabel",
+    "Label": "No",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
