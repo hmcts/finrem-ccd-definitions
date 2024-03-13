@@ -3242,17 +3242,18 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "tabJudgeAllocatedLabel",
-    "TabFieldDisplayOrder": "81"
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "additionalInfoMIAMTabLabel",
+    "TabFieldDisplayOrder": "81",
+    "FieldShowCondition": "additionalInfoOtherGroundsMIAM!=\"\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "judgeAllocated",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "additionalInfoOtherGroundsMIAM",
     "TabFieldDisplayOrder": "82"
   },
   {
@@ -3261,7 +3262,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "tabApplicationAllocatedToLabel",
+    "CaseFieldID": "tabJudgeAllocatedLabel",
     "TabFieldDisplayOrder": "83"
   },
   {
@@ -3270,7 +3271,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "applicationAllocatedTo",
+    "CaseFieldID": "judgeAllocated",
     "TabFieldDisplayOrder": "84"
   },
   {
@@ -3279,7 +3280,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "tabCaseAllocatedToLabel",
+    "CaseFieldID": "tabApplicationAllocatedToLabel",
     "TabFieldDisplayOrder": "85"
   },
   {
@@ -3288,7 +3289,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "caseAllocatedTo",
+    "CaseFieldID": "applicationAllocatedTo",
     "TabFieldDisplayOrder": "86"
   },
   {
@@ -3297,7 +3298,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "tabJudgeTimeEstimateLabel",
+    "CaseFieldID": "tabCaseAllocatedToLabel",
     "TabFieldDisplayOrder": "87"
   },
   {
@@ -3306,7 +3307,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "judgeTimeEstimate",
+    "CaseFieldID": "caseAllocatedTo",
     "TabFieldDisplayOrder": "88"
   },
   {
@@ -3315,7 +3316,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "judgeTimeEstimateTextArea",
+    "CaseFieldID": "tabJudgeTimeEstimateLabel",
     "TabFieldDisplayOrder": "89"
   },
   {
@@ -3324,8 +3325,26 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 11,
-    "CaseFieldID": "reasonForFRCLocation",
+    "CaseFieldID": "judgeTimeEstimate",
     "TabFieldDisplayOrder": "90"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "judgeTimeEstimateTextArea",
+    "TabFieldDisplayOrder": "91"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "reasonForFRCLocation",
+    "TabFieldDisplayOrder": "92"
   },
   {
     "LiveFrom": "01/01/2017",

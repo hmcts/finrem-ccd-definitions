@@ -992,6 +992,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalInfoMIAMTabLabel",
+    "Label": "## Additional requested information",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "evidenceUnavailableDomesticAbuseMIAMLabel",
     "Label": "If you are unable to provide the required evidence with your application, please use this text box to explain the reasons(s) why",
     "FieldType": "Label",
@@ -1064,6 +1073,24 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalInfoOtherGroundsMIAMLabel",
+    "Label": "Please provide any additional information requested in this text box",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalInfoOtherGroundsMIAM",
+    "Label": " ",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "familyMediatorMIAMLabel",
     "Label": "## Has a family mediator informed the applicant that a mediator’s exemption applies, and they do not need to attend a MIAM ?",
     "FieldType": "Label",
@@ -1083,7 +1110,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "MIAMExemptionsLabel",
-    "Label": "## MIAM Exemptions : what is the reason(s) for the applicant not attending a MIAM?",
+    "Label": "## MIAM Exemptions: what is the reason(s) for the applicant not attending a MIAM?",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -1186,7 +1213,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "MIAMOtherGroundsLabel",
-    "Label": "## MIAM Evidence : What other grounds of exemption apply?",
+    "Label": "## MIAM Evidence: what other grounds of exemption apply?",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
