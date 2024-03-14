@@ -6,7 +6,7 @@ function allocateJudge() {
   I.selectOption('select[id="next-step"]', 'Allocate to Judge');
   I.wait('2');
   I.click('Go');
-  I.waitForText('Event summary (optional)');
+  I.waitForText('Event summary (optional)', 5);
   I.click('Submit');
 }
 
