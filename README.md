@@ -64,13 +64,6 @@ If you prefer to make the changes directly to the Excel Configuration file, and 
 3) Once you're finished with your changes in the Excel file, convert back to JSON using `yarn generate-json-{consented/contested}`
 4) Review the JSON file changes to ensure all your changes are correct
 
-## Dependency Vulnerabilities Check
-Run this script to perform a security audit on Yarn dependencies.
-
-```bash
-./yarn-audit-with-suppressions.sh
-```
-
 ## Run E2E Tests Locally
 E2E tests can be run locally, although they still use AAT.
 
