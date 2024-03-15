@@ -5192,6 +5192,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimHearingsScreenField",
+    "Label": "New Interim Hearings",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "interimHearingsCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "interimHearingDocuments",
     "Label": "Interim Hearing Documents",
     "FieldType": "Collection",
