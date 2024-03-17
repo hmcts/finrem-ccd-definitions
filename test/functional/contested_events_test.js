@@ -194,7 +194,7 @@ Scenario('Caseworker runs List for Interim Hearing @nightly', async ({ I }) => {
     await I.listForInterimHearing();
     I.wait('10');
     await I.verifyListForInterimHearing();
-    logger.info("List Of Interim Hearing Completed");
+    logger.info("List for Interim Hearing Completed");
 }).retry(3);
 
 Scenario.skip('Send order to an applicant solicitor @nightly', async I => {
