@@ -7,7 +7,7 @@ import uk.gov.hmcts.contino.GithubAPI
 
 String product = "finrem"
 String component = "ccd-definitions"
-AppPipelineConfig pipelineConf;
+AppPipelineConfig pipelineConf
 
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
@@ -99,7 +99,7 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 def branchesToSync = ['demo', 'ithc', 'perftest']
 properties([
     copyArtifactPermission('*'),
-]);
+])
 withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
@@ -118,14 +118,14 @@ withPipeline("nodejs", product, component) {
   }
   before('highleveldatasetup') {
     echo "CCD definition upload for environment: ${env.ENV}"
-    env.RUNNING_ENV = env.ENV;
+    env.RUNNING_ENV = env.ENV
     yarnBuilder.yarn('setup')
     if('preview' == env.ENV) {
       env.RUNNING_ENV = "aat"
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
-      env.DEFINITION_STORE_URL_BASE = "http://ccd-definition-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+      env.DEFINITION_STORE_URL_BASE = "http://ccd-definition-store-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
       }
