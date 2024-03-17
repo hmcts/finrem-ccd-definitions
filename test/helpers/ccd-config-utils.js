@@ -5,7 +5,7 @@ const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('helpers/utils.js');
 const env = process.env.RUNNING_ENV || 'aat';
 // For local dev env testing use
-//const ccdDefinitionStoreBaseUrl = `http://localhost:4451`;
+// const ccdDefinitionStoreBaseUrl = `http://localhost:4451`;
 const ccdDefinitionStoreBaseUrl = `http://ccd-definition-store-api-${env}.service.core-compute-${env}.internal`;
 
 function getServiceToken() {
