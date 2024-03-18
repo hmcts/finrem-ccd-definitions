@@ -22,10 +22,10 @@
     "ID": "FR_uploadAdditionalDocument",
     "ListElementCode": "additionalDocuments",
     "FieldType": "Document",
-    "ElementLabel": "Please upload any additional documents related to you application",
+    "ElementLabel": "Please upload any additional documents related to your application",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsFormAOrA1OrB"
+    "CategoryID": "applicationsMainApplication"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -720,7 +720,7 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsFormAOrA1OrB"
+    "CategoryID": "applicationsMainApplication"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1032,7 +1032,7 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1052,7 +1052,7 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "approvedOrdersConsentApplication"
+    "CategoryID": "approvedOrdersConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -1172,7 +1172,7 @@
     "ElementLabel": "Consent Order Annexed and Stamped",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID":  "approvedOrdersConsentApplication"
+    "CategoryID":  "approvedOrdersConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1248,7 +1248,7 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID":  "approvedOrdersConsentApplication"
+    "CategoryID":  "approvedOrdersConsentOrderToFinaliseProceedings"
   },
 
   {
@@ -1843,24 +1843,7 @@
     "ListElementCode": "interimHearingDate",
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "interimHearingsCollection",
-    "ListElementCode": "fastTrackWranMsg",
-    "FieldType": "Label",
-    "ElementLabel": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "interimHearingsCollection",
-    "ListElementCode": "standardTrackWranMsg",
-    "FieldType": "Label",
-    "ElementLabel": "\r\nStandard Track: Date of the hearing must be between 12 and 16 weeks",
+    "HintText": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks.\r\nStandard Track: Date of the hearing must be between 12 and 16 weeks\r\n",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -1876,19 +1859,10 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "interimHearingsCollection",
-    "ListElementCode": "chooseCourtLabelSL",
-    "FieldType": "Label",
-    "ElementLabel": "Hearing Court",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "interimHearingsCollection",
     "ListElementCode": "interim_regionList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_region_list",
-    "ElementLabel": "Please choose the Region in which the Applicant resides",
+    "ElementLabel": "Hearing Court: \r\nPlease choose the Region in which the Applicant resides",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2212,7 +2186,7 @@
     "ID": "interimHearingsCollection",
     "ListElementCode": "interimUploadAdditionalDocument",
     "FieldType": "Document",
-    "ElementLabel": "Please upload any additional documents related to you application.",
+    "ElementLabel": "Please upload any additional documents related to your application.",
     "FieldShowCondition": "interimPromptForAnyDocument=\"Yes\"",
     "SecurityClassification": "Public",
     "Searchable": "N",
@@ -2414,7 +2388,7 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "What type of document is this?",
-    "FieldShowCondition": "caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
+    "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentFdr=\"No\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2462,7 +2436,7 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsGeneralApplications"
+    "CategoryID": "applicationsOtherApplication"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3019,8 +2993,8 @@
     "FieldType": "TextArea",
     "ElementLabel": "Other (please specify)",
     "HintText": "If Other was ticked please provide details",
-    "FieldShowCondition": "orderRefusal=\"Other (please specify)\"",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3029,7 +3003,8 @@
     "FieldType": "Document",
     "ElementLabel": "Upload additional documents",
     "HintText": "Please upload any additional documents",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3038,7 +3013,8 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_GeneralOrderJudgeType",
     "ElementLabel": "Select Judge",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3046,7 +3022,8 @@
     "ListElementCode": "orderRefusalJudgeName",
     "FieldType": "TextArea",
     "ElementLabel": "Name of Judge",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3054,7 +3031,8 @@
     "ListElementCode": "orderRefusalDate",
     "FieldType": "Date",
     "ElementLabel": "Date of order",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3063,6 +3041,7 @@
     "FieldType": "TextArea",
     "ElementLabel": "Additional comments",
     "HintText": "Please add any additional comments for Court Admin (these comments will not be accessible by the Applicant’s solicitor)",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
