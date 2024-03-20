@@ -19,21 +19,21 @@ function mediationQuestionNo() {
     I.checkOption(`#MIAMDomesticViolenceChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
   I.waitForText('If you are unable to provide the required evidence with your application, please use this text box to explain the reasons(s) why', 5);
-  I.fillField('input[id="evidenceUnavailableDomesticAbuseMIAMLabel"]', 'Test');
+  I.fillField('input[id="evidenceUnavailableDomesticAbuseMIAM"]', 'Test');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('MIAM Evidence: what reason does the applicant have for the application to be made urgently?', 30);
   for (let checkBoxCtr = '1'; checkBoxCtr <= '5'; checkBoxCtr++) {
     I.checkOption(`#MIAMUrgencyReasonChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
-  I.fillField('input[id="evidenceUnavailableUrgencyMIAMLabel"]', 'Test');
+  I.fillField('input[id="evidenceUnavailableUrgencyMIAM"]', 'Test');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('MIAM Evidence : Previous MIAM attendance or MIAM exemption', 30);
   for (let checkBoxCtr = '1'; checkBoxCtr <= '2'; checkBoxCtr++) {
     I.checkOption(`#MIAMPreviousAttendanceChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
-  I.fillField('input[id="evidenceUnavailablePreviousAttendanceMIAMLabel"]', 'Test');
+  I.fillField('input[id="evidenceUnavailablePreviousAttendanceMIAM"]', 'Test');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('MIAM Evidence: what other grounds of exemption apply?', 30);
@@ -41,9 +41,9 @@ function mediationQuestionNo() {
     I.checkOption(`#MIAMOtherGroundsChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
   I.waitForText('MIAM Evidence: what other grounds of exemption apply?', 5);
-  I.fillField('input[id="evidenceUnavailableOtherGroundsMIAMLabel"]', 'Test');
+  I.fillField('input[id="evidenceUnavailableOtherGroundsMIAM"]', 'Test');
   I.waitForText('Please provide any additional information requested in this text box', 5);
-  I.fillField('input[id="additionalInfoOtherGroundsMIAMLabel"]', 'Test');
+  I.fillField('input[id="additionalInfoOtherGroundsMIAM"]', 'Test');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('Form A Application', 5);
