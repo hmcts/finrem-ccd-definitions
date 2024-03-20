@@ -98,9 +98,17 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "applicantMortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "13",
+    "ParentCategoryID": "applicantDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicantDocumentsRepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
-    "DisplayOrder": "13",
+    "DisplayOrder": "14",
     "ParentCategoryID": "applicantDocuments"
   },
   {
@@ -108,7 +116,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicantDocumentsOpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "14",
+    "DisplayOrder": "15",
     "ParentCategoryID": "applicantDocuments"
   },
   {
@@ -116,7 +124,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicantDocumentsS25Statement",
     "CategoryLabel": "S25 Statement",
-    "DisplayOrder": "15",
+    "DisplayOrder": "16",
     "ParentCategoryID": "applicantDocuments"
   },
   {
@@ -124,14 +132,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicantDocumentsWitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "16",
-    "ParentCategoryID": "applicantDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "applicantDocumentsHousingParticulars",
-    "CategoryLabel": "Housing Particulars",
     "DisplayOrder": "17",
     "ParentCategoryID": "applicantDocuments"
   },
@@ -386,9 +386,17 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "respondentMortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "49",
+    "ParentCategoryID": "respondentDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "respondentDocumentsRepliesToQuestionnaire",
     "CategoryLabel": "Replies To Questionnaire",
-    "DisplayOrder": "49",
+    "DisplayOrder": "50",
     "ParentCategoryID": "respondentDocuments"
   },
   {
@@ -396,7 +404,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "respondentDocumentsOpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "50",
+    "DisplayOrder": "51",
     "ParentCategoryID": "respondentDocuments"
   },
   {
@@ -404,7 +412,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "respondentDocumentsS25Statement",
     "CategoryLabel": "S25 Statement",
-    "DisplayOrder": "51",
+    "DisplayOrder": "52",
     "ParentCategoryID": "respondentDocuments"
   },
   {
@@ -412,14 +420,6 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "respondentDocumentsWitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "52",
-    "ParentCategoryID": "respondentDocuments"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "respondentDocumentsHousingParticulars",
-    "CategoryLabel": "Housing Particulars",
     "DisplayOrder": "53",
     "ParentCategoryID": "respondentDocuments"
   },
@@ -1034,25 +1034,9 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsApplicantFamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
-    "DisplayOrder": "130",
-    "ParentCategoryID": "hearingDocumentsApplicant"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsApplicantMortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "131",
-    "ParentCategoryID": "hearingDocumentsApplicant"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsApplicantCostsFormH/H1/N260",
     "CategoryLabel": "Costs Form H/H1/N260",
-    "DisplayOrder": "132",
+    "DisplayOrder": "130",
     "ParentCategoryID": "hearingDocumentsApplicant"
   },
   {
@@ -1060,7 +1044,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsApplicantPreHearingDraftOrder",
     "CategoryLabel": "Pre Hearing Draft Order",
-    "DisplayOrder": "133",
+    "DisplayOrder": "131",
     "ParentCategoryID": "hearingDocumentsApplicant"
   },
   {
@@ -1068,7 +1052,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondent",
     "CategoryLabel": "Respondent",
-    "DisplayOrder": "134",
+    "DisplayOrder": "132",
     "ParentCategoryID": "hearingDocuments"
   },
   {
@@ -1076,7 +1060,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondentCaseSummary",
     "CategoryLabel": "Case Summary",
-    "DisplayOrder": "135",
+    "DisplayOrder": "133",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1084,7 +1068,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondentPositionStatement",
     "CategoryLabel": "Position Statement",
-    "DisplayOrder": "136",
+    "DisplayOrder": "134",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1092,7 +1076,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondentConciseStatementOfIssues",
     "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "137",
+    "DisplayOrder": "135",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1100,7 +1084,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondentEs1",
     "CategoryLabel": "ES1",
-    "DisplayOrder": "138",
+    "DisplayOrder": "136",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1108,7 +1092,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondentEs2",
     "CategoryLabel": "ES2",
-    "DisplayOrder": "139",
+    "DisplayOrder": "137",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1116,7 +1100,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondentFm5",
     "CategoryLabel": "FM5",
-    "DisplayOrder": "140",
+    "DisplayOrder": "138",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1124,7 +1108,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondentChronology",
     "CategoryLabel": "Chronology",
-    "DisplayOrder": "141",
+    "DisplayOrder": "139",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1132,23 +1116,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondentQuestionnaires",
     "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "142",
-    "ParentCategoryID": "hearingDocumentsRespondent"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsRespondentFamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
-    "DisplayOrder": "143",
-    "ParentCategoryID": "hearingDocumentsRespondent"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsRespondentMortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "144",
+    "DisplayOrder": "140",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1156,7 +1124,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondentCostsFormH/H1/N260",
     "CategoryLabel": "Costs Form H/H1/N260",
-    "DisplayOrder": "145",
+    "DisplayOrder": "141",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1164,7 +1132,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsRespondentPreHearingDraftOrder",
     "CategoryLabel": "Pre Hearing Draft Order",
-    "DisplayOrder": "146",
+    "DisplayOrder": "142",
     "ParentCategoryID": "hearingDocumentsRespondent"
   },
   {
@@ -1172,7 +1140,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1",
     "CategoryLabel": "Intervener 1",
-    "DisplayOrder": "147",
+    "DisplayOrder": "143",
     "ParentCategoryID": "hearingDocuments"
   },
   {
@@ -1180,7 +1148,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1CaseSummary",
     "CategoryLabel": "Case Summary",
-    "DisplayOrder": "148",
+    "DisplayOrder": "144",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1188,7 +1156,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1PositionStatement",
     "CategoryLabel": "Position Statement",
-    "DisplayOrder": "149",
+    "DisplayOrder": "145",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1196,7 +1164,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1ConciseStatementOfIssues",
     "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "150",
+    "DisplayOrder": "146",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1204,7 +1172,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1Es1",
     "CategoryLabel": "ES1",
-    "DisplayOrder": "151",
+    "DisplayOrder": "147",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1212,7 +1180,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1Es2",
     "CategoryLabel": "ES2",
-    "DisplayOrder": "152",
+    "DisplayOrder": "148",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1220,7 +1188,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1Fm5",
     "CategoryLabel": "FM5",
-    "DisplayOrder": "153",
+    "DisplayOrder": "149",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1228,7 +1196,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1Chronology",
     "CategoryLabel": "Chronology",
-    "DisplayOrder": "154",
+    "DisplayOrder": "150",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1236,23 +1204,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1Questionnaires",
     "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "155",
-    "ParentCategoryID": "hearingDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1FamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
-    "DisplayOrder": "156",
-    "ParentCategoryID": "hearingDocumentsIntervener1"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener1MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "157",
+    "DisplayOrder": "151",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1260,7 +1212,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1CostsFormH/H1/N260",
     "CategoryLabel": "Costs Form H/H1/N260",
-    "DisplayOrder": "158",
+    "DisplayOrder": "152",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1268,7 +1220,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener1PreHearingDraftOrder",
     "CategoryLabel": "Pre Hearing Draft Order",
-    "DisplayOrder": "159",
+    "DisplayOrder": "153",
     "ParentCategoryID": "hearingDocumentsIntervener1"
   },
   {
@@ -1276,7 +1228,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2",
     "CategoryLabel": "Intervener 2",
-    "DisplayOrder": "160",
+    "DisplayOrder": "154",
     "ParentCategoryID": "hearingDocuments"
   },
   {
@@ -1284,7 +1236,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2CaseSummary",
     "CategoryLabel": "Case Summary",
-    "DisplayOrder": "161",
+    "DisplayOrder": "155",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1292,7 +1244,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2PositionStatement",
     "CategoryLabel": "Position Statement",
-    "DisplayOrder": "162",
+    "DisplayOrder": "156",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1300,7 +1252,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2ConciseStatementOfIssues",
     "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "163",
+    "DisplayOrder": "157",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1308,7 +1260,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2Es1",
     "CategoryLabel": "ES1",
-    "DisplayOrder": "164",
+    "DisplayOrder": "158",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1316,7 +1268,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2Es2",
     "CategoryLabel": "ES2",
-    "DisplayOrder": "165",
+    "DisplayOrder": "159",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1324,7 +1276,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2Fm5",
     "CategoryLabel": "FM5",
-    "DisplayOrder": "166",
+    "DisplayOrder": "160",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1332,7 +1284,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2Chronology",
     "CategoryLabel": "Chronology",
-    "DisplayOrder": "167",
+    "DisplayOrder": "161",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1340,23 +1292,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2Questionnaires",
     "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "168",
-    "ParentCategoryID": "hearingDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2FamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
-    "DisplayOrder": "169",
-    "ParentCategoryID": "hearingDocumentsIntervener2"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener2MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "170",
+    "DisplayOrder": "162",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1364,7 +1300,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2CostsFormH/H1/N260",
     "CategoryLabel": "Costs Form H/H1/N260",
-    "DisplayOrder": "171",
+    "DisplayOrder": "163",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1372,7 +1308,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener2PreHearingDraftOrder",
     "CategoryLabel": "Pre Hearing Draft Order",
-    "DisplayOrder": "172",
+    "DisplayOrder": "164",
     "ParentCategoryID": "hearingDocumentsIntervener2"
   },
   {
@@ -1380,7 +1316,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3",
     "CategoryLabel": "Intervener 3",
-    "DisplayOrder": "173",
+    "DisplayOrder": "165",
     "ParentCategoryID": "hearingDocuments"
   },
   {
@@ -1388,7 +1324,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3CaseSummary",
     "CategoryLabel": "Case Summary",
-    "DisplayOrder": "174",
+    "DisplayOrder": "166",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1396,7 +1332,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3PositionStatement",
     "CategoryLabel": "Position Statement",
-    "DisplayOrder": "175",
+    "DisplayOrder": "167",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1404,7 +1340,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3ConciseStatementOfIssues",
     "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "176",
+    "DisplayOrder": "168",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1412,7 +1348,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3Es1",
     "CategoryLabel": "ES1",
-    "DisplayOrder": "177",
+    "DisplayOrder": "169",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1420,7 +1356,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3Es2",
     "CategoryLabel": "ES2",
-    "DisplayOrder": "178",
+    "DisplayOrder": "170",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1428,7 +1364,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3Fm5",
     "CategoryLabel": "FM5",
-    "DisplayOrder": "179",
+    "DisplayOrder": "171",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1436,7 +1372,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3Chronology",
     "CategoryLabel": "Chronology",
-    "DisplayOrder": "180",
+    "DisplayOrder": "172",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1444,23 +1380,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3Questionnaires",
     "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "181",
-    "ParentCategoryID": "hearingDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3FamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
-    "DisplayOrder": "182",
-    "ParentCategoryID": "hearingDocumentsIntervener3"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener3MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "183",
+    "DisplayOrder": "173",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1468,7 +1388,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3CostsFormH/H1/N260",
     "CategoryLabel": "Costs Form H/H1/N260",
-    "DisplayOrder": "184",
+    "DisplayOrder": "174",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1476,7 +1396,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener3PreHearingDraftOrder",
     "CategoryLabel": "Pre Hearing Draft Order",
-    "DisplayOrder": "185",
+    "DisplayOrder": "175",
     "ParentCategoryID": "hearingDocumentsIntervener3"
   },
   {
@@ -1484,7 +1404,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4",
     "CategoryLabel": "Intervener 4",
-    "DisplayOrder": "186",
+    "DisplayOrder": "176",
     "ParentCategoryID": "hearingDocuments"
   },
   {
@@ -1492,7 +1412,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4CaseSummary",
     "CategoryLabel": "Case Summary",
-    "DisplayOrder": "187",
+    "DisplayOrder": "177",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1500,7 +1420,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4PositionStatement",
     "CategoryLabel": "Position Statement",
-    "DisplayOrder": "188",
+    "DisplayOrder": "178",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1508,7 +1428,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4ConciseStatementOfIssues",
     "CategoryLabel": "Concise Statement Of Issues",
-    "DisplayOrder": "189",
+    "DisplayOrder": "179",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1516,7 +1436,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4Es1",
     "CategoryLabel": "ES1",
-    "DisplayOrder": "190",
+    "DisplayOrder": "180",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1524,7 +1444,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4Es2",
     "CategoryLabel": "ES2",
-    "DisplayOrder": "191",
+    "DisplayOrder": "181",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1532,7 +1452,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4Fm5",
     "CategoryLabel": "FM5",
-    "DisplayOrder": "192",
+    "DisplayOrder": "182",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1540,7 +1460,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4Chronology",
     "CategoryLabel": "Chronology",
-    "DisplayOrder": "193",
+    "DisplayOrder": "183",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1548,23 +1468,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4Questionnaires",
     "CategoryLabel": "Questionnaires",
-    "DisplayOrder": "194",
-    "ParentCategoryID": "hearingDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4FamilyHomeValuation",
-    "CategoryLabel": "Family Home Valuation",
-    "DisplayOrder": "195",
-    "ParentCategoryID": "hearingDocumentsIntervener4"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "hearingDocumentsIntervener4MortgageCapacities",
-    "CategoryLabel": "Mortgage Capacities",
-    "DisplayOrder": "196",
+    "DisplayOrder": "184",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1572,7 +1476,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4CostsFormH/H1/N260",
     "CategoryLabel": "Costs Form H/H1/N260",
-    "DisplayOrder": "197",
+    "DisplayOrder": "185",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1580,7 +1484,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsIntervener4PreHearingDraftOrder",
     "CategoryLabel": "Pre Hearing Draft Order",
-    "DisplayOrder": "198",
+    "DisplayOrder": "186",
     "ParentCategoryID": "hearingDocumentsIntervener4"
   },
   {
@@ -1588,39 +1492,23 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingBundle",
     "CategoryLabel": "Hearing Bundle",
-    "DisplayOrder": "199",
+    "DisplayOrder": "187",
     "ParentCategoryID": null
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "reports",
-    "CategoryLabel": "Reports",
-    "DisplayOrder": "200",
-    "ParentCategoryID": null
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "reportsExpertReports",
     "CategoryLabel": "Expert Reports",
-    "DisplayOrder": "201",
-    "ParentCategoryID": "reports"
-  },
-  {
-    "LiveFrom": "01/09/23",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CategoryID": "reportsPensionReports",
-    "CategoryLabel": "Pension Reports",
-    "DisplayOrder": "202",
-    "ParentCategoryID": "reports"
+    "DisplayOrder": "188",
+    "ParentCategoryID": null
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "courtCorrespondence",
     "CategoryLabel": "Court Correspondence",
-    "DisplayOrder": "203",
+    "DisplayOrder": "189",
     "ParentCategoryID": null
   },
   {
@@ -1628,7 +1516,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingNotices",
     "CategoryLabel": "Hearing Notices",
-    "DisplayOrder": "204",
+    "DisplayOrder": "190",
     "ParentCategoryID": null
   },
   {
@@ -1636,7 +1524,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "confidentialDocuments",
     "CategoryLabel": "Confidential Documents",
-    "DisplayOrder": "205",
+    "DisplayOrder": "191",
     "ParentCategoryID": null
   },
   {
@@ -1644,7 +1532,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "confidentialDocumentsApplicant",
     "CategoryLabel": "Applicant",
-    "DisplayOrder": "206",
+    "DisplayOrder": "192",
     "ParentCategoryID": "confidentialDocuments"
   },
   {
@@ -1652,7 +1540,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "confidentialDocumentsRespondent",
     "CategoryLabel": "Respondent",
-    "DisplayOrder": "207",
+    "DisplayOrder": "193",
     "ParentCategoryID": "confidentialDocuments"
   },
   {
@@ -1660,7 +1548,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "confidentialDocumentsIntervener1",
     "CategoryLabel": "Intervener 1",
-    "DisplayOrder": "208",
+    "DisplayOrder": "194",
     "ParentCategoryID": "confidentialDocuments"
   },
   {
@@ -1668,7 +1556,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "confidentialDocumentsIntervener2",
     "CategoryLabel": "Intervener 2",
-    "DisplayOrder": "209",
+    "DisplayOrder": "195",
     "ParentCategoryID": "confidentialDocuments"
   },
   {
@@ -1676,7 +1564,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "confidentialDocumentsIntervener3",
     "CategoryLabel": "Intervener 3",
-    "DisplayOrder": "210",
+    "DisplayOrder": "196",
     "ParentCategoryID": "confidentialDocuments"
   },
   {
@@ -1684,7 +1572,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "confidentialDocumentsIntervener4",
     "CategoryLabel": "Intervener 4",
-    "DisplayOrder": "211",
+    "DisplayOrder": "197",
     "ParentCategoryID": "confidentialDocuments"
   },
   {
@@ -1692,7 +1580,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocuments",
     "CategoryLabel": "Intervener Documents",
-    "DisplayOrder": "212",
+    "DisplayOrder": "198",
     "ParentCategoryID": null
   },
   {
@@ -1700,15 +1588,23 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1",
     "CategoryLabel": "Intervener 1",
-    "DisplayOrder": "213",
+    "DisplayOrder": "199",
     "ParentCategoryID": "intervenerDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener1MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "200",
+    "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "214",
+    "DisplayOrder": "201",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -1716,7 +1612,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "215",
+    "DisplayOrder": "202",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -1724,7 +1620,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1CostsStatement",
     "CategoryLabel": "Costs Statement",
-    "DisplayOrder": "216",
+    "DisplayOrder": "203",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -1732,7 +1628,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener1Other",
     "CategoryLabel": "Other",
-    "DisplayOrder": "217",
+    "DisplayOrder": "204",
     "ParentCategoryID": "intervenerDocumentsIntervener1"
   },
   {
@@ -1740,15 +1636,23 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2",
     "CategoryLabel": "Intervener 2",
-    "DisplayOrder": "218",
+    "DisplayOrder": "205",
     "ParentCategoryID": "intervenerDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener2MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "206",
+    "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "219",
+    "DisplayOrder": "207",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1756,7 +1660,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "220",
+    "DisplayOrder": "208",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1764,7 +1668,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2CostsStatement",
     "CategoryLabel": "Costs Statement",
-    "DisplayOrder": "221",
+    "DisplayOrder": "209",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1772,7 +1676,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener2Other",
     "CategoryLabel": "Other",
-    "DisplayOrder": "222",
+    "DisplayOrder": "210",
     "ParentCategoryID": "intervenerDocumentsIntervener2"
   },
   {
@@ -1780,15 +1684,23 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3",
     "CategoryLabel": "Intervener 3",
-    "DisplayOrder": "223",
+    "DisplayOrder": "211",
     "ParentCategoryID": "intervenerDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener3MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "212",
+    "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "224",
+    "DisplayOrder": "213",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -1796,7 +1708,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "225",
+    "DisplayOrder": "214",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -1804,7 +1716,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3CostsStatement",
     "CategoryLabel": "Costs Statement",
-    "DisplayOrder": "226",
+    "DisplayOrder": "215",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -1812,7 +1724,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener3Other",
     "CategoryLabel": "Other",
-    "DisplayOrder": "227",
+    "DisplayOrder": "216",
     "ParentCategoryID": "intervenerDocumentsIntervener3"
   },
   {
@@ -1820,15 +1732,23 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4",
     "CategoryLabel": "Intervener 4",
-    "DisplayOrder": "228",
+    "DisplayOrder": "217",
     "ParentCategoryID": "intervenerDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "intervenerDocumentsIntervener4MortgageCapacitiesOrHousingParticulars",
+    "CategoryLabel": "Mortgage Capacities/Housing Particulars",
+    "DisplayOrder": "218",
+    "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4OpenOffers",
     "CategoryLabel": "Open Offers",
-    "DisplayOrder": "229",
+    "DisplayOrder": "219",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -1836,7 +1756,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4WitnessStatements",
     "CategoryLabel": "Witness Statements",
-    "DisplayOrder": "230",
+    "DisplayOrder": "220",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -1844,7 +1764,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4CostsStatement",
     "CategoryLabel": "Costs Statement",
-    "DisplayOrder": "231",
+    "DisplayOrder": "221",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -1852,7 +1772,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "intervenerDocumentsIntervener4Other",
     "CategoryLabel": "Other",
-    "DisplayOrder": "232",
+    "DisplayOrder": "222",
     "ParentCategoryID": "intervenerDocumentsIntervener4"
   },
   {
@@ -1860,7 +1780,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "divorceDocuments",
     "CategoryLabel": "Divorce Documents",
-    "DisplayOrder": "233",
+    "DisplayOrder": "223",
     "ParentCategoryID": null
   },
   {
@@ -1868,7 +1788,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "divorceDocumentsApplicationOrPetition",
     "CategoryLabel": "Application/Petition",
-    "DisplayOrder": "234",
+    "DisplayOrder": "224",
     "ParentCategoryID": "divorceDocuments"
   },
   {
@@ -1876,7 +1796,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "divorceDocumentsConditionalOrderOrDecreeNisi",
     "CategoryLabel": "Conditional Order/Decree Nisi",
-    "DisplayOrder": "235",
+    "DisplayOrder": "225",
     "ParentCategoryID": "divorceDocuments"
   },
   {
@@ -1884,7 +1804,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "divorceDocumentsFinalOrderOrDecreeAbsolute",
     "CategoryLabel": "Final Order/Decree Absolute",
-    "DisplayOrder": "236",
+    "DisplayOrder": "226",
     "ParentCategoryID": "divorceDocuments"
   },
   {
@@ -1892,7 +1812,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "administrativeDocuments",
     "CategoryLabel": "Administrative Documents",
-    "DisplayOrder": "237",
+    "DisplayOrder": "227",
     "ParentCategoryID": null
   },
   {
@@ -1900,7 +1820,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "administrativeDocumentsCoversheets",
     "CategoryLabel": "Coversheets",
-    "DisplayOrder": "238",
+    "DisplayOrder": "228",
     "ParentCategoryID": "administrativeDocuments"
   },
   {
@@ -1908,7 +1828,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "administrativeDocumentsJudicialNotes",
     "CategoryLabel": "Judicial Notes",
-    "DisplayOrder": "239",
+    "DisplayOrder": "229",
     "ParentCategoryID": "administrativeDocuments"
   },
   {
@@ -1916,7 +1836,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "administrativeDocumentsAttendanceSheets",
     "CategoryLabel": "Attendance Sheets",
-    "DisplayOrder": "240",
+    "DisplayOrder": "230",
     "ParentCategoryID": "administrativeDocuments"
   },
   {
@@ -1924,7 +1844,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "administrativeDocumentsOther",
     "CategoryLabel": "Other",
-    "DisplayOrder": "241",
+    "DisplayOrder": "231",
     "ParentCategoryID": "administrativeDocuments"
   },
   {
@@ -1932,7 +1852,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "administrativeDocumentsTransitional",
     "CategoryLabel": "Transitional",
-    "DisplayOrder": "242",
+    "DisplayOrder": "232",
     "ParentCategoryID": "systemDuplicates"
   },
   {
@@ -1940,7 +1860,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "judgmentOrTranscript",
     "CategoryLabel": "Judgment/Transcript",
-    "DisplayOrder": "243",
+    "DisplayOrder": "233",
     "ParentCategoryID": null
   },
   {
@@ -1948,7 +1868,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "caseDocuments",
     "CategoryLabel": "Caseworker Uploaded Documents",
-    "DisplayOrder": "244",
+    "DisplayOrder": "234",
     "ParentCategoryID": null
   },
   {
@@ -1956,7 +1876,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "shared",
     "CategoryLabel": "Shared",
-    "DisplayOrder": "245",
+    "DisplayOrder": "235",
     "ParentCategoryID": null
   },
   {
@@ -1964,7 +1884,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsOtherApplicationsapp1",
     "CategoryLabel": "Application 1 (Most Recent)",
-    "DisplayOrder": "246",
+    "DisplayOrder": "236",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -1972,7 +1892,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsOtherApplicationsapp2",
     "CategoryLabel": "Application 2",
-    "DisplayOrder": "247",
+    "DisplayOrder": "237",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -1980,7 +1900,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsOtherApplicationsapp3",
     "CategoryLabel": "Application 3",
-    "DisplayOrder": "248",
+    "DisplayOrder": "238",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -1988,7 +1908,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsGeneralApplicationsapp4",
     "CategoryLabel": "Application 4",
-    "DisplayOrder": "249",
+    "DisplayOrder": "239",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -1996,7 +1916,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsOtherApplicationsapp5",
     "CategoryLabel": "Application 5",
-    "DisplayOrder": "250",
+    "DisplayOrder": "240",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -2004,7 +1924,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsOtherApplicationsapp6",
     "CategoryLabel": "Application 6",
-    "DisplayOrder": "251",
+    "DisplayOrder": "241",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -2012,7 +1932,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsOtherApplicationsapp7",
     "CategoryLabel": "Application 7",
-    "DisplayOrder": "252",
+    "DisplayOrder": "242",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -2020,7 +1940,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsOtherApplicationsapp8",
     "CategoryLabel": "Application 8",
-    "DisplayOrder": "253",
+    "DisplayOrder": "243",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -2028,7 +1948,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsOtherApplicationsapp9",
     "CategoryLabel": "Application 9",
-    "DisplayOrder": "254",
+    "DisplayOrder": "244",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -2036,7 +1956,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsOtherApplicationsapp10",
     "CategoryLabel": "Application 10 (Oldest)",
-    "DisplayOrder": "255",
+    "DisplayOrder": "245",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -2044,7 +1964,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "duplicatedGeneralOrders",
     "CategoryLabel": "Duplicated General Orders",
-    "DisplayOrder": "256",
+    "DisplayOrder": "246",
     "ParentCategoryID": "systemDuplicates"
   },
   {
@@ -2052,7 +1972,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "systemDuplicates",
     "CategoryLabel": "System Duplicates",
-    "DisplayOrder": "257",
+    "DisplayOrder": "247",
     "ParentCategoryID": null
   },
   {
@@ -2060,7 +1980,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicationsOtherApplicationsOverflow",
     "CategoryLabel": "Application Overflow",
-    "DisplayOrder": "258",
+    "DisplayOrder": "248",
     "ParentCategoryID": "applicationsOtherApplication"
   },
   {
@@ -2068,7 +1988,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "courtCorrespondenceApplicant",
     "CategoryLabel": "Applicant",
-    "DisplayOrder": "259",
+    "DisplayOrder": "249",
     "ParentCategoryID": "courtCorrespondence"
   },
   {
@@ -2076,7 +1996,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "courtCorrespondenceRespondent",
     "CategoryLabel": "Respondent",
-    "DisplayOrder": "260",
+    "DisplayOrder": "250",
     "ParentCategoryID": "courtCorrespondence"
   },
   {
@@ -2084,7 +2004,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "courtCorrespondenceIntervener1",
     "CategoryLabel": "Intervener 1",
-    "DisplayOrder": "261",
+    "DisplayOrder": "251",
     "ParentCategoryID": "courtCorrespondence"
   },
   {
@@ -2092,7 +2012,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "courtCorrespondenceIntervener2",
     "CategoryLabel": "Intervener 2",
-    "DisplayOrder": "262",
+    "DisplayOrder": "252",
     "ParentCategoryID": "courtCorrespondence"
   },
   {
@@ -2100,7 +2020,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "courtCorrespondenceIntervener3",
     "CategoryLabel": "Intervener 3",
-    "DisplayOrder": "263",
+    "DisplayOrder": "253",
     "ParentCategoryID": "courtCorrespondence"
   },
   {
@@ -2108,7 +2028,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "courtCorrespondenceIntervener4",
     "CategoryLabel": "Intervener 4",
-    "DisplayOrder": "264",
+    "DisplayOrder": "254",
     "ParentCategoryID": "courtCorrespondence"
   },
   {
@@ -2116,7 +2036,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "courtCorrespondenceOther",
     "CategoryLabel": "Other",
-    "DisplayOrder": "265",
+    "DisplayOrder": "255",
     "ParentCategoryID": "courtCorrespondence"
   },
   {
@@ -2124,7 +2044,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "hearingDocumentsWitnessSummons",
     "CategoryLabel": "Witness summons",
-    "DisplayOrder": "266",
+    "DisplayOrder": "256",
     "ParentCategoryID": "hearingDocuments"
   }
 ]
