@@ -7,15 +7,13 @@ exports.config = {
       headless: true,
       browser: 'chromium',
       waitForAction: 350,
-      retries: 0,
+      retries: 5,
       waitForNavigation: 'load',
       ignoreHTTPSErrors: true,
       bypassCSP: true,
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
-      show: true,
-      headless: false
       },
 
     PlaywrightHelper: { require: '../helpers/PlaywrightHelper.js' },
