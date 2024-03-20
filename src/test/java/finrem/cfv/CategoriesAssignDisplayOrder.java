@@ -11,7 +11,7 @@ import java.util.List;
 public class CategoriesAssignDisplayOrder {
 
     public void assignDisplayOrders() {
-        String filePath = "src/test/java/finrem/cfv/Categories.json";
+        String filePath = "src/test/java/finrem/cfv/CategoriesToReassign.json";
 
         try {
             // Load the JSON file
