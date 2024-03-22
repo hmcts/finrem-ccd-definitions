@@ -41,7 +41,7 @@ class CaseTypeTabJsonUpdater {
     }
 
     private List<Map<String, Object>> getInputData() throws IOException {
-        String filePath = "src/test/java/finrem/casetypetab/input.json";
+        String filePath = "definitions/contested/json/CaseTypeTab/CaseTypeTab.json";
         return objectMapper.readValue(new FileReader(filePath), new TypeReference<>() {
         });
     }
