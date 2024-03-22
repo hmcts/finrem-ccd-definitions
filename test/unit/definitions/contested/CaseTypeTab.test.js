@@ -54,6 +54,7 @@ describe('CaseTypeTab', () => {
     state: 1,
     historyTab: 1,
     applicantDetailsTab: 2,
+    caseFileViewTab: 2,
     schedule1ChildTab: 3,
     divorceDetailsTab: 4,
     respondentDetailsTab: 5,
