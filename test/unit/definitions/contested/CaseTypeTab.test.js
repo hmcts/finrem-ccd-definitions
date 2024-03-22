@@ -159,6 +159,7 @@ describe('CaseTypeTab', () => {
       'historyTab',
       'state',
       'applicantDetailsTab',
+      'caseFileViewTab',
       'schedule1ChildTab',
       'divorceDetailsTab',
       'respondentDetailsTab',
