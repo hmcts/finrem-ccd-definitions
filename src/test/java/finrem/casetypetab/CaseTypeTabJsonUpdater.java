@@ -9,6 +9,17 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Updates the TabDisplayOrder values in contested CaseTypeTab.json.
+ * definitions/contested/json/CaseTypeTab/CaseTypeTab.json
+ * To use, first set the required values in tab-display-order.
+ * The updated json is written to output.json.
+ * You will need to copy this manually to CaseTypeTab.json and ensure you reformat it.
+ * Use IntelliJ Code->Reformat Code.
+ * <br/>
+ * Any updates to the TabDisplayOrder will need to be replicated in CaseTypeTab.test.js
+ * This test runs as part of the CI build - yarn test
+ */
 class CaseTypeTabJsonUpdater {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
