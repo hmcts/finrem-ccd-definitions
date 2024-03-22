@@ -298,6 +298,16 @@
     "TabFieldDisplayOrder": 29
   },
   {
+    "LiveFrom": "01/09/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFileViewTab",
+    "TabLabel": "Case File View",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "caseFileViewComponentLauncher",
+    "TabFieldDisplayOrder": 1,
+    "DisplayContextParameter": "#ARGUMENT(CaseFileView)"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "schedule1ChildTab",

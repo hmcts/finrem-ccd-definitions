@@ -7487,5 +7487,14 @@
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "10/09/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseFileViewComponentLauncher",
+    "Label": "Case File View",
+    "FieldType": "ComponentLauncher",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
