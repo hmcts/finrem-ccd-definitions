@@ -82,7 +82,9 @@ module.exports = () => {
 
     uploadConfig(path) {
       this.click('Import Case Definition');
+      this.waitForText('Choose file containing case definitions', 30);
       this.attachFile('file', path);
+      this.wait('30');
       this.click('Submit');
     },
 
