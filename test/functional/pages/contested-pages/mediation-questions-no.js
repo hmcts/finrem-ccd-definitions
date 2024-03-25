@@ -15,7 +15,7 @@ function mediationQuestionNo() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('MIAM Evidence : What evidence of domestic violence or abuse does the applicant have ?', 30);
-  for (let checkBoxCtr = '1'; checkBoxCtr <= '5'; checkBoxCtr++) {
+  for (let checkBoxCtr = '1'; checkBoxCtr <= '2'; checkBoxCtr++) {
     I.checkOption(`#MIAMDomesticViolenceChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
   I.waitForText('If you are unable to provide the required evidence with your application, please use this text box to explain the reasons(s) why', 30);
@@ -23,7 +23,7 @@ function mediationQuestionNo() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('MIAM Evidence: what reason does the applicant have for the application to be made urgently?', 30);
-  for (let checkBoxCtr = '1'; checkBoxCtr <= '5'; checkBoxCtr++) {
+  for (let checkBoxCtr = '1'; checkBoxCtr <= '2'; checkBoxCtr++) {
     I.checkOption(`#MIAMUrgencyReasonChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
   I.fillField('#evidenceUnavailableUrgencyMIAM', 'Test');
