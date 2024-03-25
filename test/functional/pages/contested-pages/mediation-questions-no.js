@@ -46,11 +46,6 @@ function mediationQuestionNo() {
   I.fillField('#additionalInfoOtherGroundsMIAM', 'Test');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('Form A Application', 5);
-  I.fillField('input[id="familyMediatorServiceName1"]', 'Test');
-  I.fillField('input[id="soleTraderName1"]', 'Test');
-  I.waitForContinueButtonEnabled();
-  I.click('Continue');
 }
 
 module.exports = { mediationQuestionNo };
