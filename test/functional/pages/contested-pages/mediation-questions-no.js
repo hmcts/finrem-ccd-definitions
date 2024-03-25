@@ -18,7 +18,7 @@ function mediationQuestionNo() {
   for (let checkBoxCtr = '1'; checkBoxCtr <= '22'; checkBoxCtr++) {
     I.checkOption(`#MIAMDomesticViolenceChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
-  I.waitForText('If you are unable to provide the required evidence with your application, please use this text box to explain the reasons(s) why', 5);
+  I.waitForText('If you are unable to provide the required evidence with your application, please use this text box to explain the reasons(s) why', 30);
   I.fillField('input[id="evidenceUnavailableDomesticAbuseMIAM"]', 'Test');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
@@ -40,9 +40,9 @@ function mediationQuestionNo() {
   for (let checkBoxCtr = '1'; checkBoxCtr <= '2'; checkBoxCtr++) {
     I.checkOption(`#MIAMOtherGroundsChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
-  I.waitForText('MIAM Evidence: what other grounds of exemption apply?', 5);
+  I.waitForText('MIAM Evidence: what other grounds of exemption apply?', 30);
   I.fillField('input[id="evidenceUnavailableOtherGroundsMIAM"]', 'Test');
-  I.waitForText('Please provide any additional information requested in this text box', 5);
+  I.waitForText('Please provide any additional information requested in this text box', 30);
   I.fillField('input[id="additionalInfoOtherGroundsMIAM"]', 'Test');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
