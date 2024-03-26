@@ -27,7 +27,7 @@ async function consentedOtherDocuments() {
 
 async function contestedOtherDocuments() {
   const I = this;
-  I.waitForText('Do you want to upload any other documents ?', 5);
+  I.waitForText('Do you want to upload any other documents ?', 15);
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
