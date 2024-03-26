@@ -73,7 +73,7 @@ async function contestedCheckYourAnswersMIAMNotAttended(applicationType) {
   I.see('MIAM Exemptions: what is the reason(s) for the applicant not attending a MIAM?')
   I.see('MIAM Evidence : What evidence of domestic violence or abuse does the applicant have ?')
   I.see('MIAM Evidence: what reason does the applicant have for the application to be made urgently?')
-  i.see('MIAM Evidence : Previous MIAM attendance or MIAM exemption')
+  I.see('MIAM Evidence : Previous MIAM attendance or MIAM exemption')
   I.see('MIAM Evidence: what other grounds of exemption apply?')
   I.see('Do you want to upload any other documents ?');
   I.see('Urgent Case');

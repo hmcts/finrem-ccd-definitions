@@ -267,7 +267,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No @
     await I.complexityList();
     await I.applyingToCourt();
     await I.mediationQuestionNo();
-    await I.contestedOtherDocuments();
+    await I.contestedOtherDocumentsPaperCase();
     await I.contestedCheckYourAnswersMIAMNotAttended('Matrimonial');
     await I.waitForText('Form A Application', '60');
     I.wait('15');
