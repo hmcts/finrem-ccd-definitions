@@ -232,7 +232,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ 
 }).retry(3);
 
 //disable in preview
-Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exception @preview', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exemption @preview', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -244,7 +244,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exce
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
-    await I.mediationQuestionNoMIAMYesException();
+    await I.mediationQuestionNoMIAMYesExemption();
     await I.contestedOtherDocuments();
     await I.contestedCheckYourAnswersMIAMNotAttended('Matrimonial');
     await I.waitForText('Form A Application', '60');
@@ -254,7 +254,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exce
     await I.issueApplication();
 }).retry(3);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and No Exception @preview', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and No Exemption @preview', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -266,10 +266,10 @@ Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and No Excep
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
-    await I.mediationQuestionNoMIAMNoException();
+    await I.mediationQuestionNoMIAMNoExemption();
 }).retry(3);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and Yes Exception @preview', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and Yes Exemption @preview', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createPaperCase('FinancialRemedyContested', 'New Paper Case');
@@ -281,7 +281,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No a
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
-    await I.mediationQuestionNoMIAMYesException();
+    await I.mediationQuestionNoMIAMYesExemption();
     await I.contestedOtherDocumentsPaperCase();
     await I.contestedCheckYourAnswersMIAMNotAttended('Matrimonial');
     await I.waitForText('New Paper Case', '60');
@@ -291,7 +291,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No a
     await I.issueApplication();
 }).retry(3);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and No Exception @preview', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and No Exemption @preview', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createPaperCase('FinancialRemedyContested', 'New Paper Case');
@@ -303,7 +303,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No a
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
-    await I.mediationQuestionNoMIAMNoException();
+    await I.mediationQuestionNoMIAMNoExemption();
 }).retry(3);
 
 Scenario.skip('progress to listing for contested case @nightly', async ({ I }) => {

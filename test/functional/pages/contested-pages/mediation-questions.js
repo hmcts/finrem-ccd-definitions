@@ -8,7 +8,7 @@ function mediationQuestion() {
   I.click('Continue');
 }
 
-function mediationQuestionNoMIAMYesException() {
+function mediationQuestionNoMIAMYesExemption() {
   const I = this;
   I.waitForText('Has the applicant attended a Mediation information & Assessment Meeting (MIAM)?', 5);
   I.checkOption('input[id="applicantAttendedMIAM_No"]');
@@ -55,7 +55,7 @@ function mediationQuestionNoMIAMYesException() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
-function mediationQuestionNoMIAMNoException() {
+function mediationQuestionNoMIAMNoExemption() {
   const I = this;
   I.waitForText('Has the applicant attended a Mediation information & Assessment Meeting (MIAM)?', 5);
   I.checkOption('input[id="applicantAttendedMIAM_No"]');
@@ -66,4 +66,4 @@ function mediationQuestionNoMIAMNoException() {
   I.see("You cannot make this application to court unless the applicant has either attended, or is exempt from attending a MIAM. Please refer to https://www.familymediationcouncil.org.uk/family-mediation/assessment-meeting-miam/ for further information on what to do next and how to arrange a MIAM.")
 }
 
-module.exports = { mediationQuestion, mediationQuestionNoMIAMYesException, mediationQuestionNoMIAMNoException };
+module.exports = { mediationQuestion, mediationQuestionNoMIAMYesExemption, mediationQuestionNoMIAMNoExemption };
