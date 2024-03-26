@@ -258,7 +258,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No @
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createPaperCase('FinancialRemedyContested', 'New Paper Case');
-    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
+    await I.contestedCaseworkerCreatePaperCase(caRef, 'Matrimonial', true);
     await I.contestedDivorceDetails();
     await I.contestedApplicantDetails();
     await I.contestedRespondentDetails();

@@ -30,7 +30,7 @@ const { createCase, createPaperCase } = require('./pages/create-case/create-case
 const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab, contestedOrderTab, approvedOrderTab, gateKeepingAllocationsTab, schedulingAndListingTab, consentOrderProcessTab, verifyConsentedTabData, verifyContestedTabData, verifyContestedPaperTabData, verifyContestedConfidentialTabData, contestedIntervenersTab, schedule1Tab, changeOfRepresentativesTab, verifyManageBarristerEvent, verifyListForInterimHearing, verifyCaseFlagEvent, verifyGeneralApplicationTab} = require('./pages/tab-data-verification/tab-data-verification');
 const { assignContestedCase } = require('./pages/org-assign-cases/org-assign-cases-to-respondent');
 const { assignContestedShareCase } = require('./pages/share-case-in-org/share-case-in-org');
-const {contestedCaseworkerCreate} = require('./pages/caseworker-create/caseworker-create');
+const {contestedCaseworkerCreate, contestedCaseworkerCreatePaperCase} = require('./pages/caseworker-create/caseworker-create');
 const {pbaPayment} = require('./pages/pba-payment/pba-payment');
 const {manualPayment} = require('./pages/manual-payment/manual-payment');
 const {issueApplication, getCaseRefFromScreen} = require('./pages/issue-application/issue-application');
@@ -217,6 +217,7 @@ module.exports = () => {
     manageFlags,
     contestedCheckYourAnswersMIAMNotAttended,
     createPaperCase,
-    contestedOtherDocumentsPaperCase
+    contestedOtherDocumentsPaperCase,
+    contestedCaseworkerCreatePaperCase
   });
 };
