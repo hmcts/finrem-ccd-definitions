@@ -2,8 +2,7 @@
 // in this file you can append custom step methods to 'I' object
 
 const { miamCertification } = require('./pages/contested-pages/miam-certification');
-const { mediationQuestion } = require('./pages/contested-pages/mediation-questions');
-const { mediationQuestionNo } = require('./pages/contested-pages/mediation-questions-no');
+const { mediationQuestion,mediationQuestionNoMIAMYesException, mediationQuestionNoMIAMNoException } = require('./pages/contested-pages/mediation-questions');
 const { applyingToCourt } = require('./pages/contested-pages/apply-court');
 const { complexityList } = require('./pages/contested-pages/complexity-list');
 const { fastTrack } = require('./pages/contested-pages/fast-track');
@@ -134,7 +133,7 @@ module.exports = () => {
     complexityList,
     applyingToCourt,
     mediationQuestion,
-    mediationQuestionNo,
+    mediationQuestionNoMIAMYesException,
     miamCertification,
     consentOrder,
     d81Question,
@@ -218,6 +217,7 @@ module.exports = () => {
     contestedCheckYourAnswersMIAMNotAttended,
     createPaperCase,
     contestedOtherDocumentsPaperCase,
-    contestedCaseworkerCreatePaperCase
+    contestedCaseworkerCreatePaperCase,
+    mediationQuestionNoMIAMNoException
   });
 };
