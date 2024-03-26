@@ -26,7 +26,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "paperApplication",
     "TabFieldDisplayOrder": 1
   },
@@ -36,7 +36,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "applicantDetails",
     "TabFieldDisplayOrder": 2
   },
@@ -46,7 +46,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "applicantFMName",
     "TabFieldDisplayOrder": 3
   },
@@ -56,7 +56,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "applicantLName",
     "TabFieldDisplayOrder": 4
   },
@@ -66,7 +66,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "regionList",
     "TabFieldDisplayOrder": 5
   },
@@ -76,7 +76,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "midlandsFRCList",
     "TabFieldDisplayOrder": 6,
     "FieldShowCondition": "regionList=\"midlands\""
@@ -87,7 +87,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "londonFRCList",
     "TabFieldDisplayOrder": 7,
     "FieldShowCondition": "regionList=\"london\""
@@ -98,7 +98,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "northWestFRCList",
     "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "regionList=\"northwest\""
@@ -109,7 +109,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "northEastFRCList",
     "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "regionList=\"northeast\""
@@ -120,7 +120,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "southEastFRCList",
     "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "regionList=\"southeast\""
@@ -131,7 +131,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "southWestFRCList",
     "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "regionList=\"southwest\""
@@ -142,7 +142,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "walesFRCList",
     "TabFieldDisplayOrder": 12,
     "FieldShowCondition": "regionList=\"wales\""
@@ -153,7 +153,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "highCourtFRCList",
     "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "regionList=\"highcourt\""
@@ -164,7 +164,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "nottinghamCourtList",
     "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
@@ -175,7 +175,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "birminghamCourtList",
     "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
@@ -186,7 +186,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "londonCourtList",
     "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"london\""
@@ -197,7 +197,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "liverpoolCourtList",
     "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
@@ -208,7 +208,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "manchesterCourtList",
     "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
@@ -219,7 +219,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "lancashireCourtList",
     "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
@@ -230,7 +230,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "clevelandCourtList",
     "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleveland\""
@@ -241,7 +241,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "nwyorkshireCourtList",
     "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
@@ -252,7 +252,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "humberCourtList",
     "TabFieldDisplayOrder": 22,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
@@ -263,7 +263,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "kentSurreyCourtList",
     "TabFieldDisplayOrder": 23,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kent\""
@@ -274,7 +274,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "bedfordshireCourtList",
     "TabFieldDisplayOrder": 24,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
@@ -285,7 +285,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "thamesvalleyCourtList",
     "TabFieldDisplayOrder": 25,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
@@ -296,7 +296,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "devonCourtList",
     "TabFieldDisplayOrder": 26,
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\""
@@ -307,7 +307,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "dorsetCourtList",
     "TabFieldDisplayOrder": 27,
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\""
@@ -318,7 +318,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "bristolCourtList",
     "TabFieldDisplayOrder": 28,
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\""
@@ -329,7 +329,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "newportCourtList",
     "TabFieldDisplayOrder": 29,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
@@ -340,7 +340,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "swanseaCourtList",
     "TabFieldDisplayOrder": 30,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
@@ -351,7 +351,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "northWalesCourtList",
     "TabFieldDisplayOrder": 31,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
@@ -362,7 +362,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "highCourtList",
     "TabFieldDisplayOrder": 32,
     "FieldShowCondition": "regionList=\"highcourt\""
@@ -373,7 +373,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "divRoleOfFrApplicant",
     "TabFieldDisplayOrder": 33
   },
@@ -383,7 +383,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "applicantRepresentedLabel",
     "TabFieldDisplayOrder": 34
   },
@@ -393,7 +393,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "applicantRepresented",
     "TabFieldDisplayOrder": 35
   },
@@ -403,7 +403,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "applicantContactLabel",
     "TabFieldDisplayOrder": 36,
     "FieldShowCondition": "applicantRepresented=\"No\""
@@ -414,7 +414,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "applicantAddress",
     "TabFieldDisplayOrder": 37,
     "FieldShowCondition": "applicantRepresented=\"No\" AND applicantAddressConfidential!=\"Yes\""
@@ -425,7 +425,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "applicantPhone",
     "TabFieldDisplayOrder": 38,
     "FieldShowCondition": "applicantRepresented=\"No\" AND applicantAddressConfidential!=\"Yes\""
@@ -436,7 +436,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "applicantEmail",
     "TabFieldDisplayOrder": 39,
     "FieldShowCondition": "applicantRepresented=\"No\" AND applicantAddressConfidential!=\"Yes\""
@@ -447,7 +447,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "applicantAddressConfidential",
     "TabFieldDisplayOrder": 40,
     "FieldShowCondition": "applicantRepresented=\"No\""
@@ -458,7 +458,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "solicitorAbout_Para-1",
     "TabFieldDisplayOrder": 41,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
@@ -469,7 +469,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "solicitorName",
     "TabFieldDisplayOrder": 42,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
@@ -480,7 +480,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "solicitorFirm",
     "TabFieldDisplayOrder": 43,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
@@ -491,7 +491,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "solicitorReference",
     "TabFieldDisplayOrder": 44,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
@@ -502,7 +502,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "solicitorAddress",
     "TabFieldDisplayOrder": 45,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
@@ -513,7 +513,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "ApplicantOrganisationPolicy",
     "TabFieldDisplayOrder": 46,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
@@ -524,7 +524,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "solicitorPhone",
     "TabFieldDisplayOrder": 47,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
@@ -535,7 +535,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "solicitorEmail",
     "TabFieldDisplayOrder": 48,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
@@ -546,7 +546,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "solicitorDXnumber",
     "TabFieldDisplayOrder": 49,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
@@ -557,7 +557,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "solicitorAgreeToReceiveEmails",
     "TabFieldDisplayOrder": 50,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
@@ -568,7 +568,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicantDetails",
     "TabLabel": "Applicant",
-    "TabDisplayOrder": 2,
+    "TabDisplayOrder": 4,
     "CaseFieldID": "childrenInfo",
     "TabFieldDisplayOrder": 51
   },
@@ -578,7 +578,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rRespondentLabel",
     "TabFieldDisplayOrder": 1
   },
@@ -588,7 +588,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "appRespondentFMName",
     "TabFieldDisplayOrder": 2
   },
@@ -598,7 +598,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "appRespondentLName",
     "TabFieldDisplayOrder": 3
   },
@@ -608,7 +608,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "appRespondentRep",
     "TabFieldDisplayOrder": 4
   },
@@ -618,7 +618,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorLabel",
     "TabFieldDisplayOrder": 5,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
@@ -629,7 +629,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorName",
     "TabFieldDisplayOrder": 6,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
@@ -640,7 +640,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorFirm",
     "TabFieldDisplayOrder": 7,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
@@ -651,7 +651,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "RespondentOrganisationPolicy",
     "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
@@ -662,7 +662,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorReference",
     "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
@@ -673,7 +673,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorAddress",
     "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
@@ -684,7 +684,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorPhone",
     "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
@@ -695,7 +695,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorEmail",
     "TabFieldDisplayOrder": 12,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
@@ -706,7 +706,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rSolicitorDXnumber",
     "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
@@ -717,7 +717,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "RespSolNotificationsEmailConsent",
     "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
@@ -728,7 +728,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "rRespondentLabel2",
     "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "appRespondentRep=\"No\""
@@ -739,7 +739,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentAddress",
     "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
@@ -750,7 +750,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentPhone",
     "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
@@ -761,7 +761,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentEmail",
     "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
@@ -772,7 +772,7 @@
     "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
+    "TabDisplayOrder": 5,
     "CaseFieldID": "respondentAddressConfidential",
     "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "appRespondentRep=\"No\""
@@ -783,7 +783,7 @@
     "Channel": "CaseWorker",
     "TabID": "divorceDetails",
     "TabLabel": "Divorce Dissolution details",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "divorceAbout_H1",
     "TabFieldDisplayOrder": 1
   },
@@ -793,7 +793,7 @@
     "Channel": "CaseWorker",
     "TabID": "divorceDetails",
     "TabLabel": "Divorce / Dissolution Case Number",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "divorceCaseNumber",
     "TabFieldDisplayOrder": 2
   },
@@ -803,7 +803,7 @@
     "Channel": "CaseWorker",
     "TabID": "divorceDetails",
     "TabLabel": "Divorce / Dissolution Case Stage reached",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "divorceStageReached",
     "TabFieldDisplayOrder": 3
   },
@@ -813,7 +813,7 @@
     "Channel": "CaseWorker",
     "TabID": "divorceDetails",
     "TabLabel": "Divorce",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "divorceUploadEvidence1",
     "TabFieldDisplayOrder": 4
   },
@@ -823,7 +823,7 @@
     "Channel": "CaseWorker",
     "TabID": "divorceDetails",
     "TabLabel": "Divorce",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "divorceDecreeNisiDate",
     "TabFieldDisplayOrder": 5
   },
@@ -833,7 +833,7 @@
     "Channel": "CaseWorker",
     "TabID": "divorceDetails",
     "TabLabel": "Divorce",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "divorceUploadEvidence2",
     "TabFieldDisplayOrder": 6
   },
@@ -843,7 +843,7 @@
     "Channel": "CaseWorker",
     "TabID": "divorceDetails",
     "TabLabel": "Divorce",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "divorceDecreeAbsoluteDate",
     "TabFieldDisplayOrder": 7
   },
@@ -853,7 +853,7 @@
     "Channel": "CaseWorker",
     "TabID": "divorceDetails",
     "TabLabel": "Divorce",
-    "TabDisplayOrder": 4,
+    "TabDisplayOrder": 6,
     "CaseFieldID": "civilPartnership",
     "TabFieldDisplayOrder": 8
   },
@@ -863,7 +863,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "provisionMadeForLabel",
     "TabFieldDisplayOrder": 1
   },
@@ -873,7 +873,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "provisionMadeFor",
     "TabFieldDisplayOrder": 2
   },
@@ -883,7 +883,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "applicantIntendsToLabel",
     "TabFieldDisplayOrder": 3
   },
@@ -893,7 +893,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "applicantIntendsTo",
     "TabFieldDisplayOrder": 4
   },
@@ -903,7 +903,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "natureOfApplication1",
     "TabFieldDisplayOrder": 5
   },
@@ -913,7 +913,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "natureOfApplication2",
     "TabFieldDisplayOrder": 6
   },
@@ -923,7 +923,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "natureOfApplication3a",
     "TabFieldDisplayOrder": 7
   },
@@ -933,7 +933,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "natureOfApplication3b",
     "TabFieldDisplayOrder": 8
   },
@@ -943,7 +943,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "natureOfApplication4",
     "TabFieldDisplayOrder": 9
   },
@@ -953,7 +953,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "orderForChildrenQuestion1",
     "TabFieldDisplayOrder": 10
   },
@@ -963,7 +963,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "natureOfApplication5",
     "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\""
@@ -974,7 +974,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "natureOfApplication5b",
     "TabFieldDisplayOrder": 12,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\""
@@ -985,7 +985,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "ChildSupportAgencyCalculationMade",
     "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\""
@@ -996,7 +996,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "ChildSupportAgencyCalculationReason",
     "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\""
@@ -1007,7 +1007,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "natureOfApplication6",
     "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\""
@@ -1018,7 +1018,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "natureOfApplication7",
     "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\""
@@ -1029,7 +1029,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "dischargePeriodicalPaymentSubstituteForLabel",
     "TabFieldDisplayOrder": 17
   },
@@ -1039,7 +1039,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "dischargePeriodicalPaymentSubstituteFor",
     "TabFieldDisplayOrder": 18
   },
@@ -1049,7 +1049,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "applyingForConsentOrderLabel",
     "TabFieldDisplayOrder": 19
   },
@@ -1059,7 +1059,7 @@
     "Channel": "CaseWorker",
     "TabID": "applicationDetails",
     "TabLabel": "Nature of Application",
-    "TabDisplayOrder": 5,
+    "TabDisplayOrder": 7,
     "CaseFieldID": "applyingForConsentOrder",
     "TabFieldDisplayOrder": 20
   },
@@ -1069,7 +1069,7 @@
     "Channel": "CaseWorker",
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "authorisationLa",
     "TabFieldDisplayOrder": 1,
     "TabShowCondition": "amountToPay=\"5000\" OR amountToPay=\"5300\" OR paperApplication=\"Yes\""
@@ -1080,7 +1080,7 @@
     "Channel": "CaseWorker",
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "authorisation1",
     "TabFieldDisplayOrder": 2
   },
@@ -1090,7 +1090,7 @@
     "Channel": "CaseWorker",
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "authorisationName",
     "TabFieldDisplayOrder": 3
   },
@@ -1100,7 +1100,7 @@
     "Channel": "CaseWorker",
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "authorisationFirm",
     "TabFieldDisplayOrder": 4
   },
@@ -1110,7 +1110,7 @@
     "Channel": "CaseWorker",
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "authorisation2b",
     "TabFieldDisplayOrder": 5
   },
@@ -1120,7 +1120,7 @@
     "Channel": "CaseWorker",
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "authorisation3",
     "TabFieldDisplayOrder": 6
   },
@@ -1130,7 +1130,7 @@
     "Channel": "CaseWorker",
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "divorceAbout_F1",
     "TabFieldDisplayOrder": 7
   },
@@ -1140,7 +1140,7 @@
     "Channel": "CaseWorker",
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "authorisationSolicitorAddress",
     "TabFieldDisplayOrder": 8
   },
@@ -1150,7 +1150,7 @@
     "Channel": "CaseWorker",
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "authorisationSigned",
     "TabFieldDisplayOrder": 9
   },
@@ -1160,7 +1160,7 @@
     "Channel": "CaseWorker",
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
-    "TabDisplayOrder": 6,
+    "TabDisplayOrder": 8,
     "CaseFieldID": "authorisationSignedBy",
     "TabFieldDisplayOrder": 10
   },
@@ -1170,7 +1170,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "formA",
     "TabFieldDisplayOrder": 1
   },
@@ -1180,7 +1180,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "miniFormA",
     "TabFieldDisplayOrder": 2
   },
@@ -1190,7 +1190,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "consentOrder",
     "TabFieldDisplayOrder": 3
   },
@@ -1200,7 +1200,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "consentOrderText",
     "TabFieldDisplayOrder": 4
   },
@@ -1210,7 +1210,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "latestConsentOrder",
     "TabFieldDisplayOrder": 5
   },
@@ -1220,7 +1220,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "d81Joint",
     "TabFieldDisplayOrder": 6
   },
@@ -1230,7 +1230,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "d81Applicant",
     "TabFieldDisplayOrder": 7
   },
@@ -1240,7 +1240,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "d81Respondent",
     "TabFieldDisplayOrder": 8
   },
@@ -1250,7 +1250,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "scannedD81s",
     "TabFieldDisplayOrder": 9
   },
@@ -1260,7 +1260,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "pensionCollection",
     "TabFieldDisplayOrder": 10
   },
@@ -1270,7 +1270,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "otherCollection",
     "TabFieldDisplayOrder": 11
   },
@@ -1280,7 +1280,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "divorceUploadEvidence1",
     "TabFieldDisplayOrder": 12
   },
@@ -1290,7 +1290,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "divorceUploadEvidence2",
     "TabFieldDisplayOrder": 13
   },
@@ -1300,7 +1300,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "amendedConsentOrderCollection",
     "TabFieldDisplayOrder": 14
   },
@@ -1310,7 +1310,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "respondToOrderDocuments",
     "TabFieldDisplayOrder": 15
   },
@@ -1320,7 +1320,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "scannedDocuments",
     "TabFieldDisplayOrder": 16
   },
@@ -1330,7 +1330,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "generalLetterCollection",
     "TabFieldDisplayOrder": 17
   },
@@ -1340,7 +1340,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "bulkPrintCoverSheetRes",
     "TabFieldDisplayOrder": 18
   },
@@ -1350,7 +1350,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "bulkPrintLetterIdRes",
     "TabFieldDisplayOrder": 19
   },
@@ -1360,7 +1360,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "bulkPrintCoverSheetApp",
     "TabFieldDisplayOrder": 20
   },
@@ -1370,7 +1370,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "bulkPrintLetterIdApp",
     "TabFieldDisplayOrder": 21
   },
@@ -1380,7 +1380,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "uploadDocuments",
     "TabFieldDisplayOrder": 22
   },
@@ -1390,7 +1390,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "copyOfPaperFormA",
     "TabFieldDisplayOrder": 23
   },
@@ -1400,7 +1400,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "generalEmailCollection",
     "TabFieldDisplayOrder": 24
   },
@@ -1410,7 +1410,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "solUploadDocuments",
     "TabFieldDisplayOrder": 25
   },
@@ -1420,7 +1420,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "confidentialCoverSheetLabel",
     "TabFieldDisplayOrder": 26
   },
@@ -1430,7 +1430,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
     "TabFieldDisplayOrder": 27
   },
@@ -1440,7 +1440,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
     "TabFieldDisplayOrder": 28
   },
@@ -1450,7 +1450,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "transferLocalCourtEmailCollection",
     "TabFieldDisplayOrder": 29
   },
@@ -1460,7 +1460,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
-    "TabDisplayOrder": 7,
+    "TabDisplayOrder": 9,
     "CaseFieldID": "otherVariationCollection",
     "TabFieldDisplayOrder": 30
   },
@@ -1470,7 +1470,7 @@
     "Channel": "CaseWorker",
     "TabID": "Approved Order",
     "TabLabel": "Approved Order",
-    "TabDisplayOrder": 8,
+    "TabDisplayOrder": 10,
     "CaseFieldID": "approvedOrderCollection",
     "TabFieldDisplayOrder": 1
   },
@@ -1480,7 +1480,7 @@
     "Channel": "CaseWorker",
     "TabID": "PaymentDetails",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 9,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "payment",
     "TabFieldDisplayOrder": 1,
     "TabShowCondition": "amountToPay=\"5000\" OR amountToPay=\"5300\" OR paperApplication=\"Yes\""
@@ -1491,7 +1491,7 @@
     "Channel": "CaseWorker",
     "TabID": "PaymentDetails",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 9,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "helpWithFeesQuestion",
     "TabFieldDisplayOrder": 2
   },
@@ -1501,7 +1501,7 @@
     "Channel": "CaseWorker",
     "TabID": "PaymentDetails",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 9,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "HWFNumber",
     "TabFieldDisplayOrder": 3
   },
@@ -1511,7 +1511,7 @@
     "Channel": "CaseWorker",
     "TabID": "PaymentDetails",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 9,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "orderSummary",
     "TabFieldDisplayOrder": 4
   },
@@ -1521,7 +1521,7 @@
     "Channel": "CaseWorker",
     "TabID": "PaymentDetails",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 9,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "amountToPay",
     "TabFieldDisplayOrder": 5
   },
@@ -1531,7 +1531,7 @@
     "Channel": "CaseWorker",
     "TabID": "PaymentDetails",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 9,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "PBANumber",
     "TabFieldDisplayOrder": 6
   },
@@ -1541,7 +1541,7 @@
     "Channel": "CaseWorker",
     "TabID": "PaymentDetails",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 9,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "PBAreference",
     "TabFieldDisplayOrder": 7
   },
@@ -1551,7 +1551,7 @@
     "Channel": "CaseWorker",
     "TabID": "PaymentDetails",
     "TabLabel": "Payment details",
-    "TabDisplayOrder": 9,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "PBAPaymentReference",
     "TabFieldDisplayOrder": 8
   },
@@ -1561,7 +1561,7 @@
     "Channel": "CaseWorker",
     "TabID": "PaymentHistory",
     "TabLabel": "Payment history",
-    "TabDisplayOrder": 10,
+    "TabDisplayOrder": 12,
     "CaseFieldID": "paymentHistory",
     "TabFieldDisplayOrder": 1,
     "TabShowCondition": "paperApplication=\"Yes\""
@@ -1572,7 +1572,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "dueDate",
     "TabFieldDisplayOrder": 1
   },
@@ -1582,7 +1582,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "issueDate",
     "TabFieldDisplayOrder": 2
   },
@@ -1592,7 +1592,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "assignedToJudgeReason",
     "TabFieldDisplayOrder": 3
   },
@@ -1602,7 +1602,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "assignedToJudge",
     "TabFieldDisplayOrder": 4
   },
@@ -1612,7 +1612,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeDate",
     "TabFieldDisplayOrder": 5
   },
@@ -1622,7 +1622,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeText",
     "TabFieldDisplayOrder": 6
   },
@@ -1632,7 +1632,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeDateFromOrderMade",
     "TabFieldDisplayOrder": 7
   },
@@ -1642,7 +1642,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeTextFromOrderMade",
     "TabFieldDisplayOrder": 8
   },
@@ -1652,7 +1652,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeDateFromConsOrdApproved",
     "TabFieldDisplayOrder": 9
   },
@@ -1662,7 +1662,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeTextFromConsOrdApproved",
     "TabFieldDisplayOrder": 10
   },
@@ -1672,7 +1672,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeDateFromConsOrdMade",
     "TabFieldDisplayOrder": 11
   },
@@ -1682,7 +1682,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeTextFromConsOrdMade",
     "TabFieldDisplayOrder": 12
   },
@@ -1692,7 +1692,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeDateFromClose",
     "TabFieldDisplayOrder": 13
   },
@@ -1702,7 +1702,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeTextFromClose",
     "TabFieldDisplayOrder": 14
   },
@@ -1712,7 +1712,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeDateFromAwaitingResponse",
     "TabFieldDisplayOrder": 15
   },
@@ -1722,7 +1722,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeTextFromAwaitingResponse",
     "TabFieldDisplayOrder": 16
   },
@@ -1732,7 +1732,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeDateFromRespondToOrder",
     "TabFieldDisplayOrder": 17
   },
@@ -1742,7 +1742,7 @@
     "Channel": "CaseWorker",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
-    "TabDisplayOrder": 11,
+    "TabDisplayOrder": 13,
     "CaseFieldID": "referToJudgeTextFromRespondToOrder",
     "TabFieldDisplayOrder": 18
   },
@@ -1752,7 +1752,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "orderDirection",
     "TabFieldDisplayOrder": 1
   },
@@ -1762,7 +1762,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "orderDirectionOpt1",
     "TabFieldDisplayOrder": 2
   },
@@ -1772,7 +1772,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "orderDirectionOpt2",
     "TabFieldDisplayOrder": 3
   },
@@ -1782,7 +1782,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "orderDirectionAbsolute",
     "TabFieldDisplayOrder": 4
   },
@@ -1792,7 +1792,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "servePensionProvider",
     "TabFieldDisplayOrder": 5
   },
@@ -1802,7 +1802,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "servePensionProviderResponsibility",
     "TabFieldDisplayOrder": 6
   },
@@ -1812,7 +1812,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "servePensionProviderOther",
     "TabFieldDisplayOrder": 7
   },
@@ -1822,7 +1822,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "orderDirectionJudge",
     "TabFieldDisplayOrder": 8
   },
@@ -1832,7 +1832,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "orderDirectionJudgeName",
     "TabFieldDisplayOrder": 9
   },
@@ -1842,7 +1842,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "orderDirectionDate",
     "TabFieldDisplayOrder": 10
   },
@@ -1852,7 +1852,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "orderDirectionAddComments",
     "TabFieldDisplayOrder": 11
   },
@@ -1862,7 +1862,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "orderRefusalCollection",
     "TabFieldDisplayOrder": 12
   },
@@ -1872,7 +1872,7 @@
     "Channel": "CaseWorker",
     "TabID": "CaseOrder",
     "TabLabel": "Judiciary Outcome",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 14,
     "CaseFieldID": "generalOrderCollection",
     "TabFieldDisplayOrder": 13
   },
@@ -1882,7 +1882,7 @@
     "Channel": "CaseWorker",
     "TabID": "Orders",
     "TabLabel": "Orders",
-    "TabDisplayOrder": 13,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "uploadOrder",
     "TabFieldDisplayOrder": 1
   },
@@ -1892,7 +1892,7 @@
     "Channel": "CaseWorker",
     "TabID": "Orders",
     "TabLabel": "Orders",
-    "TabDisplayOrder": 13,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "uploadConsentOrderDocuments",
     "TabFieldDisplayOrder": 2
   },
@@ -1902,7 +1902,7 @@
     "Channel": "CaseWorker",
     "TabID": "Orders",
     "TabLabel": "Orders",
-    "TabDisplayOrder": 13,
+    "TabDisplayOrder": 15,
     "CaseFieldID": "generalOrderLatestDocument",
     "TabFieldDisplayOrder": 3
   },
@@ -1912,7 +1912,7 @@
     "Channel": "CaseWorker",
     "TabID": "Notes",
     "TabLabel": "Notes",
-    "TabDisplayOrder": 14,
+    "TabDisplayOrder": 16,
     "CaseFieldID": "caseNotesCollection",
     "TabFieldDisplayOrder": 1
   },
@@ -1922,7 +1922,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "applicantDetails",
     "TabFieldDisplayOrder": 1
   },
@@ -1932,7 +1932,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "applicantFMName",
     "TabFieldDisplayOrder": 2
   },
@@ -1942,7 +1942,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "applicantLName",
     "TabFieldDisplayOrder": 3
   },
@@ -1952,7 +1952,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "rRespondentLabel",
     "TabFieldDisplayOrder": 4
   },
@@ -1962,7 +1962,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "appRespondentFMName",
     "TabFieldDisplayOrder": 5
   },
@@ -1972,7 +1972,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "appRespondentLName",
     "TabFieldDisplayOrder": 6
   },
@@ -1982,7 +1982,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "appRespondentRep",
     "TabFieldDisplayOrder": 7
   },
@@ -1992,7 +1992,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "caseDetailsLa",
     "TabFieldDisplayOrder": 8
   },
@@ -2002,7 +2002,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "miniFormA",
     "TabFieldDisplayOrder": 9
   },
@@ -2012,7 +2012,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "divorceCaseNumber",
     "TabFieldDisplayOrder": 10
   },
@@ -2022,7 +2022,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "divorceDecreeNisiDate",
     "TabFieldDisplayOrder": 11
   },
@@ -2032,7 +2032,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "divorceDecreeAbsoluteDate",
     "TabFieldDisplayOrder": 12
   },
@@ -2042,7 +2042,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "divorceUploadEvidence1",
     "TabFieldDisplayOrder": 13
   },
@@ -2052,7 +2052,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "divorceUploadEvidence2",
     "TabFieldDisplayOrder": 14
   },
@@ -2062,7 +2062,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "assignedToJudge",
     "TabFieldDisplayOrder": 15
   },
@@ -2072,7 +2072,7 @@
     "Channel": "CaseWorker",
     "TabID": "Judge",
     "TabLabel": "Judge",
-    "TabDisplayOrder": 15,
+    "TabDisplayOrder": 17,
     "CaseFieldID": "generalLetterCollection",
     "TabFieldDisplayOrder": 16
   },
@@ -2086,7 +2086,8 @@
     "UserRole": "[APPSOLICITOR]",
     "TabFieldDisplayOrder": 1,
     "FieldShowCondition": "applicantAddressConfidential=\"Yes\"",
-    "TabShowCondition": "applicantAddressConfidential=\"Yes\""
+    "TabShowCondition": "applicantAddressConfidential=\"Yes\"",
+    "TabDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2096,7 +2097,8 @@
     "TabLabel": "Confidential Applicant",
     "CaseFieldID": "applicantPhone",
     "TabFieldDisplayOrder": 2,
-    "FieldShowCondition": "applicantAddressConfidential=\"Yes\""
+    "FieldShowCondition": "applicantAddressConfidential=\"Yes\"",
+    "TabDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2106,7 +2108,8 @@
     "TabLabel": "Confidential Applicant",
     "CaseFieldID": "applicantEmail",
     "TabFieldDisplayOrder": 3,
-    "FieldShowCondition": "applicantAddressConfidential=\"Yes\""
+    "FieldShowCondition": "applicantAddressConfidential=\"Yes\"",
+    "TabDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2182,7 +2185,8 @@
     "UserRole": "[RESPSOLICITOR]",
     "TabFieldDisplayOrder": 1,
     "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
-    "TabShowCondition": "respondentAddressConfidential=\"Yes\""
+    "TabShowCondition": "respondentAddressConfidential=\"Yes\"",
+    "TabDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2192,7 +2196,8 @@
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentPhone",
     "TabFieldDisplayOrder": 2,
-    "FieldShowCondition": "respondentAddressConfidential=\"Yes\""
+    "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
+    "TabDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2202,7 +2207,8 @@
     "TabLabel": "Confidential Respondent",
     "CaseFieldID": "respondentEmail",
     "TabFieldDisplayOrder": 3,
-    "FieldShowCondition": "respondentAddressConfidential=\"Yes\""
+    "FieldShowCondition": "respondentAddressConfidential=\"Yes\"",
+    "TabDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2274,7 +2280,7 @@
     "TabID": "ChangeOfRepresentativesTab-judiciary",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "TabLabel": "Change of representatives",
-    "TabDisplayOrder": 16,
+    "TabDisplayOrder": 18,
     "CaseFieldID": "RepresentationUpdateHistory",
     "TabFieldDisplayOrder": 1
   },
@@ -2284,7 +2290,7 @@
     "TabID": "ChangeOfRepresentativesTab-courtadmin",
     "TabLabel": "Change of representatives",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabDisplayOrder": 17,
+    "TabDisplayOrder": 19,
     "CaseFieldID": "RepresentationUpdateHistory",
     "TabFieldDisplayOrder": 1
   },
@@ -2294,7 +2300,7 @@
     "Channel": "CaseWorker",
     "TabID": "scheduleAndListingHearingTab",
     "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
+    "TabDisplayOrder": 20,
     "CaseFieldID": "listForHearings",
     "TabFieldDisplayOrder": 1
   },
@@ -2303,7 +2309,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "TabID": "caseFlagsTab",
     "TabLabel": "Case Flags",
-    "TabDisplayOrder": 19,
+    "TabDisplayOrder": 21,
     "CaseFieldID": "caseFlags",
     "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "TabFieldDisplayOrder": 2
@@ -2313,7 +2319,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "TabID": "caseFlagsTab",
     "TabLabel": "Case Flags",
-    "TabDisplayOrder": 19,
+    "TabDisplayOrder": 21,
     "CaseFieldID": "applicantFlags",
     "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "TabFieldDisplayOrder": 3
@@ -2323,7 +2329,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "TabID": "caseFlagsTab",
     "TabLabel": "Case Flags",
-    "TabDisplayOrder": 19,
+    "TabDisplayOrder": 21,
     "CaseFieldID": "respondentFlags",
     "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "TabFieldDisplayOrder": 4
@@ -2333,7 +2339,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "TabID": "caseFlagsTab",
     "TabLabel": "Case Flags",
-    "TabDisplayOrder": 19,
+    "TabDisplayOrder": 21,
     "CaseFieldID": "flagLauncher",
     "TabFieldDisplayOrder": 5,
     "DisplayContextParameter": "#ARGUMENT(READ)"
