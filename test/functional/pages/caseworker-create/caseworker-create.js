@@ -24,7 +24,6 @@ async function contestedCaseworkerCreate(reference, applicationType, applicantRe
   I.fillField('input[id="applicantSolicitorEmail"]', 'fr_applicant_sol@sharklasers.com');
   I.fillField('input[id="applicantSolicitorDXnumber"]', '776890');
   I.waitForText('Search for an organisation','30')
-  I.checkOption('input[id="applicantSolicitorConsentForEmails_Yes"]');
   I.fillField('input[id="search-org-text"]', 'FinRem-1-Org');
   I.wait('5');
   I.click('Select');

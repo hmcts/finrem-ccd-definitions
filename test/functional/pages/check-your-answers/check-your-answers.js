@@ -47,6 +47,42 @@ async function contestedCheckYourAnswers(applicationType) {
   I.wait('2');
   I.retry('2').click('Submit');
 }
+async function contestedCheckYourAnswersMIAMNotAttended(applicationType) {
+  const I = this;
+  I.waitForText('Check your answers', 5);
+  if (testForAccessibility==='true') {
+    await I.runAccessibilityTest();
+  }
+  I.see('Solicitor Details');
+  if (applicationType== 'Matrimonial'){
+    I.see('Divorce / Dissolution Details');
+  }
+  I.see('Applicant’s Details');
+  I.see('Respondent’s Details');
+  I.see('Is the respondent represented ?');
+  I.see('Respondent’s Solicitor’s Details');
+  I.see('What is the nature of the application ?');
+  I.see('Is the application suitable to be dealt with under the Fast Track Procedure?');
+  I.see('Should this application be allocated to the Complexity List of the Financial Remedies Court?');
+  I.see('Please state the current estimated assets in this case:');
+  I.see('Of the above value, what is the net value of the family home?');
+  I.see('Please tick any potential allegations/issues which may arise');
+  I.see('Which Financial Remedies Court are you applying to?');
+  I.see('Has the applicant attended a Mediation information & Assessment Meeting (MIAM)?');
+  I.see('Is the applicant claiming exemption from the requirement to attend a MIAM ?')
+  I.see('MIAM Exemptions: what is the reason(s) for the applicant not attending a MIAM?')
+  I.see('MIAM Evidence : What evidence of domestic violence or abuse does the applicant have ?')
+  I.see('MIAM Evidence: what reason does the applicant have for the application to be made urgently?')
+  i.see('MIAM Evidence : Previous MIAM attendance or MIAM exemption')
+  I.see('MIAM Evidence: what other grounds of exemption apply?')
+  I.see('Do you want to upload any other documents ?');
+  I.see('Urgent Case');
+  if (applicationType== 'Schedule1') {
+    I.see('Child(ren) details');
+  }
+  I.wait('2');
+  I.retry('2').click('Submit');
+}
 
 async function checkYourAnswersListForHearing() {
   const I = this;
@@ -62,4 +98,4 @@ async function checkYourAnswersListForHearing() {
   I.wait('30');
 }
 
-module.exports = { checkYourAnswers, contestedCheckYourAnswers, checkYourAnswersListForHearing };
+module.exports = { checkYourAnswers, contestedCheckYourAnswers, checkYourAnswersListForHearing, contestedCheckYourAnswersMIAMNotAttended };

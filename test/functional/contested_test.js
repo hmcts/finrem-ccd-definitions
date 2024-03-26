@@ -246,7 +246,29 @@ Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No @preview', a
     await I.applyingToCourt();
     await I.mediationQuestionNo();
     await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers('Matrimonial');
+    await I.contestedCheckYourAnswersMIAMNotAttended('Matrimonial');
+    await I.waitForText('Form A Application', '60');
+    I.wait('15');
+    await I.manualPayment();
+    I.wait('5');
+    await I.issueApplication();
+}).retry(3);
+
+Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No @preview', async ({ I }) => {
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.wait('15');
+    await I.createPaperCase('FinancialRemedyContested', 'New Paper Case');
+    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
+    await I.contestedDivorceDetails();
+    await I.contestedApplicantDetails();
+    await I.contestedRespondentDetails();
+    await I.contestedNatureOfApplication();
+    await I.fastTrack();
+    await I.complexityList();
+    await I.applyingToCourt();
+    await I.mediationQuestionNo();
+    await I.contestedOtherDocuments();
+    await I.contestedCheckYourAnswersMIAMNotAttended('Matrimonial');
     await I.waitForText('Form A Application', '60');
     I.wait('15');
     await I.manualPayment();
