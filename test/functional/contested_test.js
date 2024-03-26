@@ -303,7 +303,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No a
     await I.fastTrack();
     await I.complexityList();
     await I.applyingToCourt();
-    await I.contestedCheckYourAnswersMIAMNotAttended();
+    await I.mediationQuestionNoMIAMNoException();
 }).retry(3);
 
 Scenario.skip('progress to listing for contested case @nightly', async ({ I }) => {
