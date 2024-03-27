@@ -55,6 +55,7 @@ function mediationQuestionNoMIAMYesExemption() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
+
 function mediationQuestionNoMIAMNoExemption() {
   const I = this;
   I.waitForText('Has the applicant attended a Mediation information & Assessment Meeting (MIAM)?', 5);
