@@ -232,7 +232,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ 
 }).retry(3);
 
 //disable in preview
-Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exemption @preview', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exemption @nightly', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -254,7 +254,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exem
     await I.issueApplication();
 }).retry(3);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and No Exemption @preview', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and No Exemption @nightly', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -269,7 +269,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and No Exemp
     await I.mediationQuestionNoMIAMNoExemption();
 }).retry(3);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and Yes Exemption @preview', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and Yes Exemption @nightly', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createPaperCase('FinancialRemedyContested', 'New Paper Case');
@@ -291,7 +291,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No a
     await I.issueApplication();
 }).retry(3);
 
-Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and No Exemption @preview', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and No Exemption @nightly', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createPaperCase('FinancialRemedyContested', 'New Paper Case');
