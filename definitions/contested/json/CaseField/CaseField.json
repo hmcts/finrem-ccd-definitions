@@ -1258,6 +1258,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadMediatorDocument",
+    "Label": "Upload MIAM Document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsMainApplication"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "soleTraderName",
     "Label": "Sole Trader Name",
     "FieldType": "Text",
@@ -1267,8 +1277,17 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "MIAMCertificationPageMessage",
+    "ID": "MIAMCertificationPageMessagePaperCase",
     "Label": "**You should have a document signed by the mediator confirming this (which you should bring to your first hearing)**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMCertificationPageMessageFormA",
+    "Label": "**You should have a document signed by the mediator confirming this. Please upload the document here in readiness for the hearing or bring a copy to your first hearing.**",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
