@@ -2,7 +2,7 @@
 // in this file you can append custom step methods to 'I' object
 
 const { miamCertification } = require('./pages/contested-pages/miam-certification');
-const { mediationQuestion } = require('./pages/contested-pages/mediation-questions');
+const { mediationQuestion,mediationQuestionNoMIAMYesExemption, mediationQuestionNoMIAMNoExemption } = require('./pages/contested-pages/mediation-questions');
 const { applyingToCourt } = require('./pages/contested-pages/apply-court');
 const { complexityList } = require('./pages/contested-pages/complexity-list');
 const { fastTrack } = require('./pages/contested-pages/fast-track');
@@ -12,9 +12,9 @@ const { hwfPaymentDetails } = require('./pages/hwf-payment-details/hwf-payment-d
 const { paymentPage } = require('./pages/payment-page/payment-page');
 const { caseSubmitAuthorisation } = require('./pages/case-authorisation/case-authorisation');
 const { amendApplicationDetails, contestedAmendApplicationDetails } = require('./pages/amend-application-details/amend-application-details');
-const { checkYourAnswers, contestedCheckYourAnswers } = require('./pages/check-your-answers/check-your-answers');
+const { checkYourAnswers, contestedCheckYourAnswers, contestedCheckYourAnswersMIAMNotAttended } = require('./pages/check-your-answers/check-your-answers');
 const { savingApplicationInformation, finalInformationPage } = require('./pages/saving-application-information/saving-application-information');
-const { optionalDocuments, consentedOtherDocuments, contestedOtherDocuments } = require('./pages/optional-documents/optional-documents');
+const { optionalDocuments, consentedOtherDocuments, contestedOtherDocuments, contestedOtherDocumentsPaperCase } = require('./pages/optional-documents/optional-documents');
 const { d81Question } = require('./pages/d81-question/d81-question');
 const { consentOrder } = require('./pages/consent-order/consent-order');
 const { orderForChildren, contestedOrderForChildren } = require('./pages/order-for-children/order-for-children');
@@ -25,11 +25,11 @@ const { solicitorCreate, contestedSolicitorCreate } = require('./pages/solicitor
 const { divorceDetails, contestedDivorceDetails } = require('./pages/divorce-details/divorce-details');
 const { waitForContinueButtonEnabled } = require('./pages/common/common');
 const { waitForPage } = require('./pages/common/common');
-const { createCase } = require('./pages/create-case/create-case');
+const { createCase, createPaperCase } = require('./pages/create-case/create-case');
 const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab, contestedOrderTab, approvedOrderTab, gateKeepingAllocationsTab, schedulingAndListingTab, consentOrderProcessTab, verifyConsentedTabData, verifyContestedTabData, verifyContestedPaperTabData, verifyContestedConfidentialTabData, contestedIntervenersTab, schedule1Tab, changeOfRepresentativesTab, verifyManageBarristerEvent, verifyListForInterimHearing, verifyCaseFlagEvent, verifyGeneralApplicationTab} = require('./pages/tab-data-verification/tab-data-verification');
 const { assignContestedCase } = require('./pages/org-assign-cases/org-assign-cases-to-respondent');
 const { assignContestedShareCase } = require('./pages/share-case-in-org/share-case-in-org');
-const {contestedCaseworkerCreate} = require('./pages/caseworker-create/caseworker-create');
+const {contestedCaseworkerCreate, contestedCaseworkerCreatePaperCase} = require('./pages/caseworker-create/caseworker-create');
 const {pbaPayment} = require('./pages/pba-payment/pba-payment');
 const {manualPayment} = require('./pages/manual-payment/manual-payment');
 const {issueApplication, getCaseRefFromScreen} = require('./pages/issue-application/issue-application');
@@ -133,6 +133,7 @@ module.exports = () => {
     complexityList,
     applyingToCourt,
     mediationQuestion,
+    mediationQuestionNoMIAMYesExemption,
     miamCertification,
     consentOrder,
     d81Question,
@@ -212,6 +213,11 @@ module.exports = () => {
     caseWorkerReferGeneralApplication,
     judgeGeneralApplicationOutcome,
     generalApplicationDirections,
-    manageFlags
+    manageFlags,
+    contestedCheckYourAnswersMIAMNotAttended,
+    createPaperCase,
+    contestedOtherDocumentsPaperCase,
+    contestedCaseworkerCreatePaperCase,
+    mediationQuestionNoMIAMNoExemption
   });
 };
