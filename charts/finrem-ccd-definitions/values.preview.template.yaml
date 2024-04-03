@@ -55,7 +55,7 @@ finrem-cos:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/cos:pr-1631
+    image: hmctspublic.azurecr.io/finrem/cos:latest
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
     environment:
@@ -63,7 +63,6 @@ finrem-cos:
       FEATURE_CASEWORKER_NOC: true
       FEATURE_RESPONDENT_JOURNEY: true
       FEATURE_ASSIGN_CASE_ACCESS: true
-      UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: "FinancialRemedyContested"
       FEATURE_SOLICITOR_NOC: true
       FEATURE_SEND_LETTER_RECIPIENT_CHECK: false
       SECURE_DOC_ENABLED: false
@@ -139,7 +138,6 @@ ccd:
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
     postgresHostname: "financial-remedy-preview.postgres.database.azure.com"
     postgresSecret: postgres
-    UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: "FinancialRemedyContested"
     databaseNamePrefix: "pr-${CHANGE_ID}-"
 
   ccd-user-profile-api:
@@ -180,10 +178,10 @@ ccd:
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOSTS: ${SERVICE_NAME}-es-master:9200
         ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
-        UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: "FinancialRemedyContested"
         ENABLE_ATTRIBUTE_BASED_ACCESS_CONTROL: true
         ENABLE_PSEUDO_ROLE_ASSIGNMENTS_GENERATION: true
         ENABLE_PSEUDO_ACCESS_PROFILES_GENERATION: true
+        UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: "FinancialRemedyContested"
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
   am-role-assignment-service:
