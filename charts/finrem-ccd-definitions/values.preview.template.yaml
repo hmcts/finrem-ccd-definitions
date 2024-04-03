@@ -63,7 +63,7 @@ finrem-cos:
       FEATURE_CASEWORKER_NOC: true
       FEATURE_RESPONDENT_JOURNEY: true
       FEATURE_ASSIGN_CASE_ACCESS: true
-      UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: "FinancialRemedyContested, FinancialRemedyMVP2"
+      UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: "FinancialRemedyContested"
       FEATURE_SOLICITOR_NOC: true
       FEATURE_SEND_LETTER_RECIPIENT_CHECK: false
       SECURE_DOC_ENABLED: false
@@ -139,7 +139,7 @@ ccd:
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
     postgresHostname: "financial-remedy-preview.postgres.database.azure.com"
     postgresSecret: postgres
-    UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: "FinancialRemedyContested, FinancialRemedyMVP2"
+    UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: "FinancialRemedyContested"
     databaseNamePrefix: "pr-${CHANGE_ID}-"
 
   ccd-user-profile-api:
