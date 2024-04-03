@@ -139,6 +139,7 @@ ccd:
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
     postgresHostname: "financial-remedy-preview.postgres.database.azure.com"
     postgresSecret: postgres
+    UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: "FinancialRemedyContested, FinancialRemedyMVP2"
     databaseNamePrefix: "pr-${CHANGE_ID}-"
 
   ccd-user-profile-api:
