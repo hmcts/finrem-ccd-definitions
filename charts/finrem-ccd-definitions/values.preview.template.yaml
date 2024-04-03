@@ -49,7 +49,7 @@ xui-mo-webapp:
       MANAGE_ORG_LINK: https://xui-mo-${SERVICE_FQDN}
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_MCA_PROXY_API: http://${SERVICE_NAME}-aac-manage-case-assignment
-      CASE_TYPES: FinancialRemedyContested
+      CASE_TYPES: "FinancialRemedyMVP2,FinancialRemedyContested"
 
 finrem-cos:
   enabled: true
@@ -63,7 +63,7 @@ finrem-cos:
       FEATURE_CASEWORKER_NOC: true
       FEATURE_RESPONDENT_JOURNEY: true
       FEATURE_ASSIGN_CASE_ACCESS: true
-      UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: FinancialRemedyContested
+      UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: "FinancialRemedyContested"
       FEATURE_SOLICITOR_NOC: true
       FEATURE_SEND_LETTER_RECIPIENT_CHECK: false
       SECURE_DOC_ENABLED: false
