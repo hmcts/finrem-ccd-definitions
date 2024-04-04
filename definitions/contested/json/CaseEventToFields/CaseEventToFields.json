@@ -5844,6 +5844,19 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageScannedDocs",
+    "CaseFieldID": "evidenceHandled",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
+    "PageLabel": "Supplementary Evidence Handled",
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "handleEvidence",
     "CaseFieldID": "evidenceHandled",
     "PageFieldDisplayOrder": 1,
