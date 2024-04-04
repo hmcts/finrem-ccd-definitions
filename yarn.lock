@@ -3269,7 +3269,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"call-bind@npm:^1.0.6":
+"call-bind@npm:^1.0.7":
   version: 1.0.7
   resolution: "call-bind@npm:1.0.7"
   dependencies:
@@ -4531,10 +4531,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devtools-protocol@npm:^0.0.1258865":
-  version: 0.0.1258865
-  resolution: "devtools-protocol@npm:0.0.1258865"
-  checksum: 3771e0803280e4e2c215548e82a86d8868248ffd9d2053064210af5418e1550e6589c36df321cf017f0af81b0e477831b99f9f76dce6fc7e2ddd6ca49a0f8697
+"devtools-protocol@npm:^0.0.1260888":
+  version: 0.0.1260888
+  resolution: "devtools-protocol@npm:0.0.1260888"
+  checksum: 2db7fae775b74f94f5a93978304acf2f477fb15ef98b3367fd5af40259898c76272ebf20375ab9b234da1109c922bb713fbb89ae7b1a16b6391b357fc01a2504
   languageName: node
   linkType: hard
 
@@ -8319,7 +8319,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mocha@npm:10.3.0, mocha@npm:^10.2.0":
+"mocha@npm:10.3.0":
   version: 10.3.0
   resolution: "mocha@npm:10.3.0"
   dependencies:
@@ -8347,6 +8347,37 @@ __metadata:
     _mocha: bin/_mocha
     mocha: bin/mocha.js
   checksum: b5e95b9c270b2c33589e2f19d7ee37ac7577c0d471152d4e2692ebf4bc606a36040da4fbadc1e482b4cf5a0784daac7556bb962ad7b23143086b34a58e43e211
+  languageName: node
+  linkType: hard
+
+"mocha@npm:^10.2.0":
+  version: 10.4.0
+  resolution: "mocha@npm:10.4.0"
+  dependencies:
+    ansi-colors: 4.1.1
+    browser-stdout: 1.3.1
+    chokidar: 3.5.3
+    debug: 4.3.4
+    diff: 5.0.0
+    escape-string-regexp: 4.0.0
+    find-up: 5.0.0
+    glob: 8.1.0
+    he: 1.2.0
+    js-yaml: 4.1.0
+    log-symbols: 4.1.0
+    minimatch: 5.0.1
+    ms: 2.1.3
+    serialize-javascript: 6.0.0
+    strip-json-comments: 3.1.1
+    supports-color: 8.1.1
+    workerpool: 6.2.1
+    yargs: 16.2.0
+    yargs-parser: 20.2.4
+    yargs-unparser: 2.0.0
+  bin:
+    _mocha: bin/_mocha
+    mocha: bin/mocha.js
+  checksum: 090771d6d42a65a934c7ed448d524bcc663836351af9f0678578caa69943b01a9535a73192d24fd625b3fdb5979cce5834dfe65e3e1ee982444d65e19975b81c
   languageName: node
   linkType: hard
 
@@ -9652,11 +9683,11 @@ __metadata:
   linkType: hard
 
 "qs@npm:>=6.5.3":
-  version: 6.11.2
-  resolution: "qs@npm:6.11.2"
+  version: 6.12.0
+  resolution: "qs@npm:6.12.0"
   dependencies:
-    side-channel: ^1.0.4
-  checksum: e812f3c590b2262548647d62f1637b6989cc56656dc960b893fe2098d96e1bd633f36576f4cd7564dfbff9db42e17775884db96d846bebe4f37420d073ecdc0b
+    side-channel: ^1.0.6
+  checksum: ba007fb2488880b9c6c3df356fe6888b9c1f4c5127552edac214486cfe83a332de09a5c40d490d79bb27bef977ba1085a8497512ff52eaac72e26564f77ce908
   languageName: node
   linkType: hard
 
@@ -10465,15 +10496,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"side-channel@npm:^1.0.4":
-  version: 1.0.5
-  resolution: "side-channel@npm:1.0.5"
+"side-channel@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "side-channel@npm:1.0.6"
   dependencies:
-    call-bind: ^1.0.6
+    call-bind: ^1.0.7
     es-errors: ^1.3.0
     get-intrinsic: ^1.2.4
     object-inspect: ^1.13.1
-  checksum: 640446b4e5a9554116ed6f5bec17c6740fa8da2c1a19e4d69c1202191185d4cc24f21ba0dd3ccca140eb6a8ee978d0b5bc5132f09b7962db7f9c4bc7872494ac
+  checksum: bfc1afc1827d712271453e91b7cd3878ac0efd767495fd4e594c4c2afaa7963b7b510e249572bfd54b0527e66e4a12b61b80c061389e129755f34c493aad9b97
   languageName: node
   linkType: hard
 
@@ -11615,8 +11646,8 @@ __metadata:
   linkType: hard
 
 "webdriverio@npm:^7.0.7":
-  version: 7.35.0
-  resolution: "webdriverio@npm:7.35.0"
+  version: 7.36.0
+  resolution: "webdriverio@npm:7.36.0"
   dependencies:
     "@types/aria-query": ^5.0.0
     "@types/node": ^18.0.0
@@ -11631,7 +11662,7 @@ __metadata:
     css-shorthand-properties: ^1.1.1
     css-value: ^0.0.1
     devtools: 7.35.0
-    devtools-protocol: ^0.0.1258865
+    devtools-protocol: ^0.0.1260888
     fs-extra: ^11.1.1
     grapheme-splitter: ^1.0.2
     lodash.clonedeep: ^4.5.0
@@ -11645,7 +11676,7 @@ __metadata:
     rgb2hex: 0.2.5
     serialize-error: ^8.0.0
     webdriver: 7.33.0
-  checksum: 9a441960dc06888fbe73b18f6effbeb44b7e93217f68402ba82f255dddccff05e72952e4bde695772df5c6b54d05b302d0baebe5bd0986f65c08527cc2556526
+  checksum: c973d83f9160aa5294a21974f1f6fb536461770fb162c140ccbf11d1960b28c1928609dde36600c2040480f02512b089ea66f453a0451e15915999bbbce805ee
   languageName: node
   linkType: hard
 
