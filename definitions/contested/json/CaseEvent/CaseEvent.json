@@ -258,6 +258,19 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_generalOrderCourtAdmin",
+    "Name": "Create General Order",
+    "Description": "Create General Order",
+    "DisplayOrder": 19,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_applicationNotApproved",
     "Name": "Application Not Approved",
     "Description": "Application Not Approved",
@@ -1092,22 +1105,6 @@
     "RetriesTimeoutAboutToStartEvent": "120,120",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_addListForInterimHearingInfo",
-    "Name": "List for Interim Hearing",
-    "Description": "Above event is not in use",
-    "DisplayOrder": 133,
-    "PreConditionState(s)": "*",
-    "PostConditionState": "*",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/submit-for-interim-hearing",
-    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/prepare-for-interim-hearing",
-    "SecurityClassification": "Public",
-    "ShowSummary": "N",
     "ShowEventNotes": "Y"
   },
   {

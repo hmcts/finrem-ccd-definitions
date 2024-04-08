@@ -1052,7 +1052,7 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "approvedOrdersConsentOrderToFinaliseProceedings"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -1172,7 +1172,7 @@
     "ElementLabel": "Consent Order Annexed and Stamped",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID":  "approvedOrdersConsentOrderToFinaliseProceedings"
+    "CategoryID":  "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1248,7 +1248,7 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID":  "approvedOrdersConsentOrderToFinaliseProceedings"
+    "CategoryID":  "applicationsConsentOrderToFinaliseProceedings"
   },
 
   {
@@ -1843,24 +1843,7 @@
     "ListElementCode": "interimHearingDate",
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "interimHearingsCollection",
-    "ListElementCode": "fastTrackWranMsg",
-    "FieldType": "Label",
-    "ElementLabel": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "interimHearingsCollection",
-    "ListElementCode": "standardTrackWranMsg",
-    "FieldType": "Label",
-    "ElementLabel": "\r\nStandard Track: Date of the hearing must be between 12 and 16 weeks",
+    "HintText": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks.\r\nStandard Track: Date of the hearing must be between 12 and 16 weeks\r\n",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -1876,19 +1859,10 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "interimHearingsCollection",
-    "ListElementCode": "chooseCourtLabelSL",
-    "FieldType": "Label",
-    "ElementLabel": "Hearing Court",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "interimHearingsCollection",
     "ListElementCode": "interim_regionList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_region_list",
-    "ElementLabel": "Please choose the Region in which the Applicant resides",
+    "ElementLabel": "Hearing Court: \r\nPlease choose the Region in which the Applicant resides",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2341,9 +2315,27 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "selectForUpdate",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Update",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocuments",
     "FieldType": "Document",
-    "ElementLabel": "Please upload any case documents ",
+    "ElementLabel": "Scanned Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2433,15 +2425,6 @@
     "ListElementCode": "scannedFileName",
     "FieldType": "Text",
     "ElementLabel": "Scanned filename",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_manageCaseDocuments",
-    "ListElementCode": "scannedDate",
-    "FieldType": "DateTime",
-    "ElementLabel": "Scanned Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
