@@ -1513,7 +1513,8 @@
     "FieldType": "Document",
     "FieldShowCondition": "additionalHearingDocumentsOption=\"Yes\"",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1679,7 +1680,8 @@
     "HintText": "Form G",
     "FieldType": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2131,7 +2133,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5048,6 +5050,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "interimHearingsScreenField",
+    "Label": "New Interim Hearings",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "interimHearingsCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "interimHearingDocuments",
     "Label": "Interim Hearing Documents",
     "FieldType": "Collection",
@@ -6003,6 +6015,15 @@
     "ID": "sourceDocumentList",
     "Label": "List of documents",
     "FieldType": "DynamicMultiSelectList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/08/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "shareDocumentsBothPartiesWarning",
+    "Label": "## Documents must be shared with either both applicant and respondent or neither",
+    "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -7144,7 +7165,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsFormAOrA1OrB"
+    "CategoryID": "applicationsMainApplication"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7176,7 +7197,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7207,7 +7228,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7218,7 +7239,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7229,7 +7250,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7240,7 +7261,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7291,7 +7312,7 @@
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "applicationsConsentApplication"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7406,7 +7427,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "interimUploadAdditionalDocument",
     "Label": " ",
-    "HintText": "Please upload any additional documents related to you application.",
+    "HintText": "Please upload any additional documents related to your application.",
     "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
@@ -7457,6 +7478,24 @@
     "ID": "previousState",
     "Label": "  ",
     "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isCfvCategoriesAppliedFlag",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "10/09/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseFileViewComponentLauncher",
+    "Label": "Case File View",
+    "FieldType": "ComponentLauncher",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }

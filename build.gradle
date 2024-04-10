@@ -37,7 +37,7 @@ pmd {
 // region test coverage
 
 jacoco {
-    toolVersion = "0.8.11"
+    toolVersion = "0.8.12"
 }
 
 jacocoTestReport {
@@ -70,15 +70,15 @@ dependencies {
 
     testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.25.3'
 
-    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.16.1'
-    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.16.1'
-    testImplementation group: 'commons-io', name: 'commons-io', version: '2.15.1'
-    testImplementation group: 'com.github.hmcts', name: 'ccd-test-definitions', version: '7.21.7'
-    testImplementation group: 'com.github.hmcts', name: 'befta-fw', version: '8.9.0', {
+    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.17.0'
+    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.17.0'
+    testImplementation group: 'commons-io', name: 'commons-io', version: '2.16.1'
+    testImplementation group: 'com.github.hmcts', name: 'ccd-test-definitions', version: '7.21.21'
+    testImplementation group: 'com.github.hmcts', name: 'befta-fw', version: '8.10.1', {
         exclude group: 'junit', module: 'junit'
     }
 
     testRuntimeOnly group: 'org.glassfish', name: 'jakarta.el', version: '3.0.4'
-    testImplementation group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
-    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+    testImplementation group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
 }
