@@ -25,14 +25,14 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "caseFileViewComponentLauncher",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "caseFileViewComponentLauncher",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -40,5 +40,12 @@
     "CaseFieldID": "caseFileViewComponentLauncher",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "caseFileViewComponentLauncher",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
   }
 ]
