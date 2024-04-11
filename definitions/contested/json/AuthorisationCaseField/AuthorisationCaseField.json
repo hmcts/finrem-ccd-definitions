@@ -17876,5 +17876,19 @@
     "CaseFieldID": "isCfvCategoriesAppliedFlag",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isCfvCategoriesAppliedFlag",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "caseFileViewComponentLauncher",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
   }
 ]
