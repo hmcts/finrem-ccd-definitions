@@ -22,7 +22,7 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Case Tests');
 
-Scenario('Contested Case Creation For Caseworker @nightly', async ({ I }) => {
+Scenario('Contested Case Creation For Caseworker @nightly @preview', async ({ I }) => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     /* eslint-disable */
@@ -41,7 +41,7 @@ Scenario('Contested Case Creation For Caseworker @nightly', async ({ I }) => {
   }
 }).retry(3);
 
-Scenario('Contested Case Creation For Judge @nightly', async ({ I }) => {
+Scenario('Contested Case Creation For Judge @nightly @preview', async ({ I }) => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     /* eslint-disable */
