@@ -1268,6 +1268,16 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadMediatorDocumentPaperCase",
+    "Label": "Upload MIAM Document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsMainApplication"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "soleTraderName",
     "Label": "Sole Trader Name",
     "FieldType": "Text",

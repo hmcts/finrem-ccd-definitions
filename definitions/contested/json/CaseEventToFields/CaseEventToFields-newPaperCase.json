@@ -1777,7 +1777,8 @@
     "PageID": 17,
     "PageDisplayOrder": 17,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1838,7 +1839,8 @@
     "PageID": 18,
     "PageDisplayOrder": 18,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1887,7 +1889,8 @@
     "PageID": 19,
     "PageDisplayOrder": 19,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1936,7 +1939,8 @@
     "PageID": 20,
     "PageDisplayOrder": 20,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2018,6 +2022,18 @@
     "CaseFieldID": "MIAMCertificationPageMessagePaperCase",
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "READONLY",
+    "PageID": 21,
+    "PageDisplayOrder": 21,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "uploadMediatorDocumentPaperCase",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "OPTIONAL",
     "PageID": 21,
     "PageDisplayOrder": 21,
     "PageColumnNumber": 1,
@@ -3959,7 +3975,8 @@
     "PageID": 18,
     "PageDisplayOrder": 18,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check"
   },
   {
     "LiveFrom": "01/10/2022",
@@ -4020,7 +4037,8 @@
     "PageID": 19,
     "PageDisplayOrder": 19,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check"
   },
   {
     "LiveFrom": "01/10/2022",
@@ -4069,7 +4087,8 @@
     "PageID": 20,
     "PageDisplayOrder": 20,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check"
   },
   {
     "LiveFrom": "01/10/2022",
@@ -4118,7 +4137,8 @@
     "PageID": 21,
     "PageDisplayOrder": 21,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/miam-attend-exempt-check"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4200,6 +4220,18 @@
     "CaseFieldID": "MIAMCertificationPageMessagePaperCase",
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "READONLY",
+    "PageID": 22,
+    "PageDisplayOrder": 22,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "uploadMediatorDocumentPaperCase",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "OPTIONAL",
     "PageID": 22,
     "PageDisplayOrder": 22,
     "PageColumnNumber": 1,
