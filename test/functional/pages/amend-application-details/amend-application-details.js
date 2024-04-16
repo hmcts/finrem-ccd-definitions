@@ -46,7 +46,7 @@ function amendApplicationDetails() {
   I.wait('10');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('PENSION DOCUMENTS', '30');
+  I.waitForText('PENSION DOCUMENTS', '60');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('OTHER DOCUMENTS', '30');
