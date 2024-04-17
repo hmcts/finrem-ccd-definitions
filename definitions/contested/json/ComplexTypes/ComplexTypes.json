@@ -2326,9 +2326,27 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "selectForUpdate",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Update",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocuments",
     "FieldType": "Document",
-    "ElementLabel": "Please upload any case documents ",
+    "ElementLabel": "Please upload any case documents",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2418,15 +2436,6 @@
     "ListElementCode": "scannedFileName",
     "FieldType": "Text",
     "ElementLabel": "Scanned filename",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_manageCaseDocuments",
-    "ListElementCode": "scannedDate",
-    "FieldType": "DateTime",
-    "ElementLabel": "Scanned Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2928,7 +2937,7 @@
     "ElementLabel": "Hearing notices",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID": "hearingNotices"
+    "CategoryID": "systemDuplicates"
   },
   {
     "LiveFrom": "01/01/2017",
