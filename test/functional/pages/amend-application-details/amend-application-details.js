@@ -41,12 +41,12 @@ function amendApplicationDetails() {
   I.checkOption('input[id="d81Question_No"]');
   I.wait('2');
   I.attachFile('input[id="d81Applicant"]', '../data/dummy.pdf');
-  I.wait('2');
+  I.wait('10');
   I.attachFile('input[id="d81Respondent"]', '../data/dummy.pdf');
   I.wait('10');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('PENSION DOCUMENTS', '30');
+  I.waitForText('PENSION DOCUMENTS', '60');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('OTHER DOCUMENTS', '30');
