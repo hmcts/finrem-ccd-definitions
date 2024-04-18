@@ -24,7 +24,7 @@ async function natureOfApplication() {
 
 async function contestedNatureOfApplication() {
   const I = this;
-  I.waitForText('What is the nature of the application ?');
+  I.waitForText('What is the nature of the application ?', 5);
   if (testForAccessibility=='true') {
     await I.runAccessibilityTest();
   }
