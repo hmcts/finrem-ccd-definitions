@@ -24,10 +24,10 @@ describe('CaseTypeTab', () => {
         return field.TabID === tabId;
       });
       const uniqResults = uniqWith(
-          allFieldsPerTab,
-          (field1, field2) => {
-            return field1.TabFieldDisplayOrder === field2.TabFieldDisplayOrder;
-          }
+        allFieldsPerTab,
+        (field1, field2) => {
+          return field1.TabFieldDisplayOrder === field2.TabFieldDisplayOrder;
+        }
       );
       expect(uniqResults).to.eql(allFieldsPerTab);
     });
