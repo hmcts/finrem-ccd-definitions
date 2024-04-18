@@ -1082,7 +1082,7 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "2",
+    "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY",
     "FieldShowCondition": "appRespGeneralApplicationReceivedFrom=\"IMPOSSIBLE\""
   },
@@ -1104,7 +1104,7 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationHearingRequired",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -1114,7 +1114,7 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationTimeEstimate",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "FieldShowCondition": "generalApplications.generalApplicationHearingRequired=\"Yes\"",
     "DisplayContext": "MANDATORY"
   },
@@ -1125,8 +1125,18 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationSpecialMeasures",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "4",
     "FieldShowCondition": "generalApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationDraftOrder",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "5",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -1136,18 +1146,8 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "6",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "createGeneralApplications",
-    "CaseEventID": "createGeneralApplication",
-    "CaseFieldID": "generalApplications",
-    "ListElementCode": "generalApplicationDraftOrder",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1156,7 +1156,7 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "gaSupportDocuments.supportDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "7",
     "DisplayContext": "OPTIONAL"
   },
   {
