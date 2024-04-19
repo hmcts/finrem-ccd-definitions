@@ -1244,10 +1244,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@codeceptjs/helper@npm:2.0.1":
-  version: 2.0.1
-  resolution: "@codeceptjs/helper@npm:2.0.1"
-  checksum: f4dfc1a916943a708b19c172fb34bcb437734f15fa44b8804b794d31b919d3dad4de859c8b8aa1d1a2f40374044987fa6b6bc307258e0cebee2272bf755931ef
+"@codeceptjs/helper@npm:2.0.4":
+  version: 2.0.4
+  resolution: "@codeceptjs/helper@npm:2.0.4"
+  dependencies:
+    typescript: ^5.1.3
+  checksum: 004e229f156a172f37965eb93d7d0926c5cc0cb2eeb772cb81e46eb2a32092ac162e9ccca7b521f2b09a5a3ca6b58f6f7537831b9590c5927e0e37c699bf1093
   languageName: node
   linkType: hard
 
@@ -3752,12 +3754,12 @@ __metadata:
   linkType: hard
 
 "codeceptjs@npm:^3.5.12":
-  version: 3.6.0
-  resolution: "codeceptjs@npm:3.6.0"
+  version: 3.6.1
+  resolution: "codeceptjs@npm:3.6.1"
   dependencies:
     "@codeceptjs/configure": 1.0.1
     "@codeceptjs/detox-helper": 1.0.5
-    "@codeceptjs/helper": 2.0.1
+    "@codeceptjs/helper": 2.0.4
     "@cucumber/cucumber-expressions": 17
     "@cucumber/gherkin": 26
     "@cucumber/messages": 24.1.0
@@ -3807,7 +3809,7 @@ __metadata:
       optional: true
   bin:
     codeceptjs: bin/codecept.js
-  checksum: 8d74e509c6b8d6b350acf6956a229f531d2b8260c5a95a53b1edf59b5febd90d36db64921429511d29d81a64df14a99e99d49bd8bcd32c2dc48bc2e9d92c0cd8
+  checksum: 41922ac52386f68080b331c3355bc1af197530b67d15726578b7d82062797f6d9ca96f01576379095f048ef9811d7d4b0ff3fe0010af5554be7abd0455eea3fe
   languageName: node
   linkType: hard
 
@@ -9334,27 +9336,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.43.0":
-  version: 1.43.0
-  resolution: "playwright-core@npm:1.43.0"
+"playwright-core@npm:1.43.1":
+  version: 1.43.1
+  resolution: "playwright-core@npm:1.43.1"
   bin:
     playwright-core: cli.js
-  checksum: b35265d356d87eb4114997e6af985ee3cb5a473f15a465d6e02834288a55f0cae4233a18178658389ff443f92405e020815fc165274d2262c3ca1c2b5be948cf
+  checksum: 7c96b3a4a4bce2ee22c3cd680c9b0bb9e4bf07ee4b51d1e9a7f47a6489c7b0b960d4b550e530b8f41d1ffeadd26c7c6bb626ae8689dfd90dce1cb8e35ae78ff7
   languageName: node
   linkType: hard
 
 "playwright@npm:^1.41.2":
-  version: 1.43.0
-  resolution: "playwright@npm:1.43.0"
+  version: 1.43.1
+  resolution: "playwright@npm:1.43.1"
   dependencies:
     fsevents: 2.3.2
-    playwright-core: 1.43.0
+    playwright-core: 1.43.1
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: edd4ef9644398c197d20e957cf2a5e5a95d7e0144f3c971923e709247f5b48551bf6168c74b34909f263ab96fac6e49466b65a9cd1349ad400dabd4b8b364acf
+  checksum: de9db021f93018a18275bbb5af09ebf1804aa0534f47578b35b440064abc774509740205802824afc94a99fc84dd55ffe9e215718ad3ecc691b251ab3882b096
   languageName: node
   linkType: hard
 
@@ -9663,11 +9665,11 @@ __metadata:
   linkType: hard
 
 "qs@npm:>=6.5.3":
-  version: 6.12.0
-  resolution: "qs@npm:6.12.0"
+  version: 6.12.1
+  resolution: "qs@npm:6.12.1"
   dependencies:
     side-channel: ^1.0.6
-  checksum: ba007fb2488880b9c6c3df356fe6888b9c1f4c5127552edac214486cfe83a332de09a5c40d490d79bb27bef977ba1085a8497512ff52eaac72e26564f77ce908
+  checksum: aa761d99e65b6936ba2dd2187f2d9976afbcda38deb3ff1b3fe331d09b0c578ed79ca2abdde1271164b5be619c521ec7db9b34c23f49a074e5921372d16242d5
   languageName: node
   linkType: hard
 
@@ -11336,6 +11338,26 @@ __metadata:
   version: 0.0.6
   resolution: "typedarray@npm:0.0.6"
   checksum: 33b39f3d0e8463985eeaeeacc3cb2e28bc3dfaf2a5ed219628c0b629d5d7b810b0eb2165f9f607c34871d5daa92ba1dc69f49051cf7d578b4cbd26c340b9d1b1
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^5.1.3":
+  version: 5.4.5
+  resolution: "typescript@npm:5.4.5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 53c879c6fa1e3bcb194b274d4501ba1985894b2c2692fa079db03c5a5a7140587a1e04e1ba03184605d35f439b40192d9e138eb3279ca8eee313c081c8bcd9b0
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^5.1.3#~builtin<compat/typescript>":
+  version: 5.4.5
+  resolution: "typescript@patch:typescript@npm%3A5.4.5#~builtin<compat/typescript>::version=5.4.5&hash=5adc0c"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: d59e26e74f6b444517d0ba16e0ee16e75c652c2b49a59f2ebdbeb16647a855fd50c7fc786a58987e45f03bce0677092e2dd3333649fd53b11d0b0d271455837c
   languageName: node
   linkType: hard
 
