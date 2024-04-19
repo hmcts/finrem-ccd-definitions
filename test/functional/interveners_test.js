@@ -12,9 +12,8 @@ const solicitorUserName = process.env.USERNAME_SOLICITOR;
 const solicitorPassword = process.env.PASSWORD_SOLICITOR;
 const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
 const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
-const usernameSolicitor1 = process.env.USERNAME_SOLICITOR1;
-const passwordSolicitor1 = process.env.PASSWORD_SOLICITOR1;
-
+const usernameBarrister1 = process.env.USERNAME_BARRISTER1;
+const passwordBarrister1 = process.env.PASSWORD_BARRISTER1;
 const nightlyTest = process.env.NIGHTLY_TEST;
 const solRef = `AUTO-${createSolicitorReference()}`;
 const caRef= `AUTO-${createCaseworkerReference()}`;
@@ -38,7 +37,7 @@ Scenario('Caseworker add Interveners (represented) @nightly', async ({ I }) => {
 
     await I.signOut();
     logger.info('Logging out as caseworker and in as intervener');
-    await I.signInIdam(usernameSolicitor1, passwordSolicitor1);
+    await I.signInIdam(usernameBarrister1, passwordBarrister1);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     await I.wait('15');
     await I.contestedIntervenersTab(verifyTabText.historyTab.manageIntervenersEvent, verifyTabText.IntervenersTab);
