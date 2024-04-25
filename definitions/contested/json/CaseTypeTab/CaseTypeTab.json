@@ -309,12 +309,13 @@
   {
     "LiveFrom": "01/09/2023",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "caseFileViewTab",
+    "TabID": "caseFileViewTab-superuser",
     "TabLabel": "Case File View",
     "TabDisplayOrder": 3,
     "CaseFieldID": "caseFileViewComponentLauncher",
     "TabFieldDisplayOrder": 1,
-    "DisplayContextParameter": "#ARGUMENT(CaseFileView)"
+    "DisplayContextParameter": "#ARGUMENT(CaseFileView)",
+    "UserRole": "caseworker-divorce-financialremedy-superuser"
   },
   {
     "LiveFrom": "01/01/2017",
