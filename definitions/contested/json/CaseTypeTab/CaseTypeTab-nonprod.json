@@ -1,2 +1,24 @@
 [
+  {
+    "LiveFrom": "01/09/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFileViewTab-courtadmin",
+    "TabLabel": "Case File View",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "caseFileViewComponentLauncher",
+    "TabFieldDisplayOrder": 1,
+    "DisplayContextParameter": "#ARGUMENT(CaseFileView)",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin"
+  },
+  {
+    "LiveFrom": "01/09/2023",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "caseFileViewTab-judiciary",
+    "TabLabel": "Case File View",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "caseFileViewComponentLauncher",
+    "TabFieldDisplayOrder": 1,
+    "DisplayContextParameter": "#ARGUMENT(CaseFileView)",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary"
+  }
 ]
