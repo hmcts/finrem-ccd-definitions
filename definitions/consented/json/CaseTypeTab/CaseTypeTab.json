@@ -614,11 +614,10 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "appRespondentRep",
+    "CaseFieldID": "respondentResideOutsideUK",
     "TabFieldDisplayOrder": 4
   },
   {
@@ -628,9 +627,8 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "rSolicitorLabel",
-    "TabFieldDisplayOrder": 5,
-    "FieldShowCondition": "appRespondentRep=\"Yes\""
+    "CaseFieldID": "appRespondentRep",
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
@@ -639,7 +637,7 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "rSolicitorName",
+    "CaseFieldID": "rSolicitorLabel",
     "TabFieldDisplayOrder": 6,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
@@ -650,7 +648,7 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "rSolicitorFirm",
+    "CaseFieldID": "rSolicitorName",
     "TabFieldDisplayOrder": 7,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
@@ -661,7 +659,7 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "RespondentOrganisationPolicy",
+    "CaseFieldID": "rSolicitorFirm",
     "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
@@ -672,7 +670,7 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "rSolicitorReference",
+    "CaseFieldID": "RespondentOrganisationPolicy",
     "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
@@ -683,7 +681,7 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "rSolicitorAddress",
+    "CaseFieldID": "rSolicitorReference",
     "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
@@ -694,7 +692,7 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "rSolicitorPhone",
+    "CaseFieldID": "rSolicitorAddress",
     "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
@@ -705,7 +703,7 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "rSolicitorEmail",
+    "CaseFieldID": "rSolicitorPhone",
     "TabFieldDisplayOrder": 12,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
@@ -716,8 +714,19 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "rSolicitorDXnumber",
+    "CaseFieldID": "rSolicitorEmail",
     "TabFieldDisplayOrder": 13,
+    "FieldShowCondition": "appRespondentRep=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "respondentDetails",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "rSolicitorDXnumber",
+    "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
@@ -728,7 +737,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "RespSolNotificationsEmailConsent",
-    "TabFieldDisplayOrder": 14,
+    "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "appRespondentRep=\"Yes\""
   },
   {
@@ -739,7 +748,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "rRespondentLabel2",
-    "TabFieldDisplayOrder": 15,
+    "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "appRespondentRep=\"No\""
   },
   {
@@ -750,17 +759,6 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
     "CaseFieldID": "respondentAddress",
-    "TabFieldDisplayOrder": 16,
-    "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "respondentDetails",
-    "TabLabel": "Respondent",
-    "TabDisplayOrder": 3,
-    "CaseFieldID": "respondentPhone",
     "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
@@ -771,7 +769,7 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "respondentEmail",
+    "CaseFieldID": "respondentPhone",
     "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
@@ -782,8 +780,19 @@
     "TabID": "respondentDetails",
     "TabLabel": "Respondent",
     "TabDisplayOrder": 3,
-    "CaseFieldID": "respondentAddressConfidential",
+    "CaseFieldID": "respondentEmail",
     "TabFieldDisplayOrder": 19,
+    "FieldShowCondition": "appRespondentRep=\"No\" AND respondentAddressConfidential!=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "respondentDetails",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "respondentAddressConfidential",
+    "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "appRespondentRep=\"No\""
   },
   {
