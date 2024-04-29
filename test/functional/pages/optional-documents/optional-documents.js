@@ -38,5 +38,16 @@ async function contestedOtherDocuments() {
   I.waitForContinueButtonEnabled();
   I.click('Continue');
 }
+async function contestedOtherDocumentsPaperCase() {
+  const I = this;
+  I.waitForText('Do you want to upload any other documents ?', 5);
+  if (testForAccessibility=='true') {
+    await I.runAccessibilityTest();
+  }
+  I.checkOption('input[id="promptForAnyDocument_No"]');
+  I.checkOption('input[id="promptForUrgentCaseQuestion_No"]');
+  I.waitForContinueButtonEnabled();
+  I.click('Continue');
+}
 
-module.exports = { optionalDocuments, consentedOtherDocuments, contestedOtherDocuments };
+module.exports = { optionalDocuments, consentedOtherDocuments, contestedOtherDocuments, contestedOtherDocumentsPaperCase };
