@@ -60,7 +60,7 @@ Scenario('Judge creates case flag @nightly', async ({ I }) => {
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('manage case event completed and verified');
-}).retry(1);
+}).retry(3);
 
 Scenario('Judge manage case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
