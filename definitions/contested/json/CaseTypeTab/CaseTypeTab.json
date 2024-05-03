@@ -2775,7 +2775,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "tabNetValueOfHome",
-    "TabFieldDisplayOrder": 21
+    "TabFieldDisplayOrder": "21"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2784,7 +2784,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "tabPotentialAllegationChecklist",
-    "TabFieldDisplayOrder": 22
+    "TabFieldDisplayOrder": "22"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2793,7 +2793,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "tabDetailPotentialAllegation",
-    "TabFieldDisplayOrder": 23
+    "TabFieldDisplayOrder": "23"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2802,7 +2802,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "tabOtherReasonForComplexity",
-    "TabFieldDisplayOrder": 24,
+    "TabFieldDisplayOrder": "24",
     "FieldShowCondition": "otherReasonForComplexity=\"Yes\""
   },
   {
@@ -2812,7 +2812,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "tabJudgesListingDirectionsLabel",
-    "TabFieldDisplayOrder": 25
+    "TabFieldDisplayOrder": "25"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2821,7 +2821,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "tabAllocatedCourtListGA",
-    "TabFieldDisplayOrder": 26
+    "TabFieldDisplayOrder": "26"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2830,7 +2830,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "regionList",
-    "TabFieldDisplayOrder": 27
+    "TabFieldDisplayOrder": "27"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2839,7 +2839,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "midlandsFRCList",
-    "TabFieldDisplayOrder": 28,
+    "TabFieldDisplayOrder": "28",
     "FieldShowCondition": "regionList=\"midlands\""
   },
   {
@@ -2849,7 +2849,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "nottinghamCourtList",
-    "TabFieldDisplayOrder": 29,
+    "TabFieldDisplayOrder": "29",
     "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
@@ -2859,7 +2859,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "cfcCourtList",
-    "TabFieldDisplayOrder": 30,
+    "TabFieldDisplayOrder": "30",
     "FieldShowCondition": " regionList=\"london\" AND londonFRCList=\"cfc\""
   },
   {
@@ -2869,7 +2869,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "londonFRCList",
-    "TabFieldDisplayOrder": 31,
+    "TabFieldDisplayOrder": "31",
     "FieldShowCondition": "regionList=\"london\""
   },
   {
@@ -2879,7 +2879,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "northWestFRCList",
-    "TabFieldDisplayOrder": 32,
+    "TabFieldDisplayOrder": "32",
     "FieldShowCondition": "regionList=\"northwest\""
   },
   {
@@ -2889,7 +2889,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "northEastFRCList",
-    "TabFieldDisplayOrder": 33,
+    "TabFieldDisplayOrder": "33",
     "FieldShowCondition": "regionList=\"northeast\""
   },
   {
@@ -2899,7 +2899,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "southEastFRCList",
-    "TabFieldDisplayOrder": 34,
+    "TabFieldDisplayOrder": "34",
     "FieldShowCondition": "regionList=\"southeast\""
   },
   {
@@ -2909,7 +2909,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "southWestFRCList",
-    "TabFieldDisplayOrder": 35,
+    "TabFieldDisplayOrder": "35",
     "FieldShowCondition": "regionList=\"southwest\""
   },
   {
@@ -2919,7 +2919,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "walesFRCList",
-    "TabFieldDisplayOrder": 36,
+    "TabFieldDisplayOrder": "36",
     "FieldShowCondition": "regionList=\"wales\""
   },
   {
@@ -2929,7 +2929,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "birminghamCourtList",
-    "TabFieldDisplayOrder": 37,
+    "TabFieldDisplayOrder": "37",
     "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
@@ -2939,7 +2939,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "liverpoolCourtList",
-    "TabFieldDisplayOrder": 38,
+    "TabFieldDisplayOrder": "38",
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
@@ -2949,7 +2949,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "manchesterCourtList",
-    "TabFieldDisplayOrder": 39,
+    "TabFieldDisplayOrder": "39",
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
@@ -2959,7 +2959,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "lancashireCourtList",
-    "TabFieldDisplayOrder": 40,
+    "TabFieldDisplayOrder": "40",
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
   },
   {
@@ -2969,7 +2969,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "cleavelandCourtList",
-    "TabFieldDisplayOrder": 41,
+    "TabFieldDisplayOrder": "41",
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
   },
   {
@@ -2979,7 +2979,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "nwyorkshireCourtList",
-    "TabFieldDisplayOrder": 42,
+    "TabFieldDisplayOrder": "42",
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
@@ -2989,7 +2989,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "humberCourtList",
-    "TabFieldDisplayOrder": 43,
+    "TabFieldDisplayOrder": "43",
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
@@ -2999,7 +2999,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "kentSurreyCourtList",
-    "TabFieldDisplayOrder": 44,
+    "TabFieldDisplayOrder": "44",
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
   },
   {
@@ -3009,7 +3009,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "bedfordshireCourtList",
-    "TabFieldDisplayOrder": 45,
+    "TabFieldDisplayOrder": "45",
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
   },
   {
@@ -3019,7 +3019,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "thamesvalleyCourtList",
-    "TabFieldDisplayOrder": 46,
+    "TabFieldDisplayOrder": "46",
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
   },
   {
@@ -3029,7 +3029,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "devonCourtList",
-    "TabFieldDisplayOrder": 47,
+    "TabFieldDisplayOrder": "47",
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\""
   },
   {
@@ -3039,7 +3039,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "dorsetCourtList",
-    "TabFieldDisplayOrder": 48,
+    "TabFieldDisplayOrder": "48",
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\""
   },
   {
@@ -3049,7 +3049,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "bristolCourtList",
-    "TabFieldDisplayOrder": 49,
+    "TabFieldDisplayOrder": "49",
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\""
   },
   {
@@ -3059,7 +3059,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "newportCourtList",
-    "TabFieldDisplayOrder": 50,
+    "TabFieldDisplayOrder": "50",
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
@@ -3069,7 +3069,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "swanseaCourtList",
-    "TabFieldDisplayOrder": 51,
+    "TabFieldDisplayOrder": "51",
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
@@ -3079,7 +3079,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "northWalesCourtList",
-    "TabFieldDisplayOrder": 52,
+    "TabFieldDisplayOrder": "52",
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
   },
   {
@@ -3089,7 +3089,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
     "CaseFieldID": "highCourtList",
-    "TabFieldDisplayOrder": 53,
+    "TabFieldDisplayOrder": "53",
     "FieldShowCondition": "regionList=\"highcourt\""
   },
   {
