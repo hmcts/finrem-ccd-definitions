@@ -76,6 +76,7 @@ dependencies {
     testImplementation group: 'com.github.hmcts', name: 'befta-fw', version: '8.10.1', {
         exclude group: 'junit', module: 'junit'
     }
+    testImplementation group: 'com.github.hmcts', name: 'ccd-test-definitions', version: '7.21.21'
 
     testRuntimeOnly group: 'org.glassfish', name: 'jakarta.el', version: '4.0.2'
     testImplementation group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
