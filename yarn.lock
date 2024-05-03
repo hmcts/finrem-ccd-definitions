@@ -3765,8 +3765,8 @@ __metadata:
   linkType: hard
 
 "codeceptjs@npm:^3.5.12":
-  version: 3.6.1
-  resolution: "codeceptjs@npm:3.6.1"
+  version: 3.6.2
+  resolution: "codeceptjs@npm:3.6.2"
   dependencies:
     "@codeceptjs/configure": 1.0.1
     "@codeceptjs/detox-helper": 1.0.5
@@ -3799,16 +3799,16 @@ __metadata:
     glob: 6.0.1
     html-minifier-terser: 7.2.0
     inquirer: 6.5.2
-    joi: 17.12.2
+    joi: 17.13.0
     js-beautify: 1.15.1
     lodash.clonedeep: 4.5.0
     lodash.merge: 4.6.2
     mkdirp: 1.0.4
-    mocha: 10.3.0
+    mocha: 10.4.0
     monocart-coverage-reports: 2.7.4
     ms: 2.1.3
     ora-classic: 5.4.2
-    pactum: 3.6.6
+    pactum: 3.6.7
     parse-function: 5.6.10
     parse5: 7.1.2
     promise-retry: 1.1.1
@@ -3820,7 +3820,7 @@ __metadata:
       optional: true
   bin:
     codeceptjs: bin/codecept.js
-  checksum: 41922ac52386f68080b331c3355bc1af197530b67d15726578b7d82062797f6d9ca96f01576379095f048ef9811d7d4b0ff3fe0010af5554be7abd0455eea3fe
+  checksum: bd7fcbd7de73612d2de6439f86869a3fb1ae462f080bfd9f54230a9c9f6edc9a4778304edad3a027671948b4de637a942c950c8406b3f0f85fc1498839a0ab59
   languageName: node
   linkType: hard
 
@@ -6987,7 +6987,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:17.12.2, joi@npm:^17.2.1":
+"joi@npm:17.13.0":
+  version: 17.13.0
+  resolution: "joi@npm:17.13.0"
+  dependencies:
+    "@hapi/hoek": ^9.3.0
+    "@hapi/topo": ^5.1.0
+    "@sideway/address": ^4.1.5
+    "@sideway/formula": ^3.0.1
+    "@sideway/pinpoint": ^2.0.0
+  checksum: ecde54b0705f21929939a72e958d96ba7dd2a6578ba7bf711c060f54b765a081dc67d09f7f4761a76cc4d659f6d880dca72287200801dc51485a350795131f84
+  languageName: node
+  linkType: hard
+
+"joi@npm:^17.2.1":
   version: 17.12.2
   resolution: "joi@npm:17.12.2"
   dependencies:
@@ -8346,38 +8359,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mocha@npm:10.3.0":
-  version: 10.3.0
-  resolution: "mocha@npm:10.3.0"
-  dependencies:
-    ansi-colors: 4.1.1
-    browser-stdout: 1.3.1
-    chokidar: 3.5.3
-    debug: 4.3.4
-    diff: 5.0.0
-    escape-string-regexp: 4.0.0
-    find-up: 5.0.0
-    glob: 8.1.0
-    he: 1.2.0
-    js-yaml: 4.1.0
-    log-symbols: 4.1.0
-    minimatch: 5.0.1
-    ms: 2.1.3
-    serialize-javascript: 6.0.0
-    strip-json-comments: 3.1.1
-    supports-color: 8.1.1
-    workerpool: 6.2.1
-    yargs: 16.2.0
-    yargs-parser: 20.2.4
-    yargs-unparser: 2.0.0
-  bin:
-    _mocha: bin/_mocha
-    mocha: bin/mocha.js
-  checksum: b5e95b9c270b2c33589e2f19d7ee37ac7577c0d471152d4e2692ebf4bc606a36040da4fbadc1e482b4cf5a0784daac7556bb962ad7b23143086b34a58e43e211
-  languageName: node
-  linkType: hard
-
-"mocha@npm:^10.2.0":
+"mocha@npm:10.4.0, mocha@npm:^10.2.0":
   version: 10.4.0
   resolution: "mocha@npm:10.4.0"
   dependencies:
@@ -9131,9 +9113,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pactum@npm:3.6.6":
-  version: 3.6.6
-  resolution: "pactum@npm:3.6.6"
+"pactum@npm:3.6.7":
+  version: 3.6.7
+  resolution: "pactum@npm:3.6.7"
   dependencies:
     "@exodus/schemasafe": ^1.3.0
     deep-override: ^1.0.2
@@ -9146,7 +9128,7 @@ __metadata:
     parse-graphql: ^1.0.0
     phin: ^3.7.0
     polka: ^0.5.2
-  checksum: 43b37f9f38fbc70a358d565b13f747119e8badaebd74892f8fd0d16bd6f9c463e6ba6e3aa5d044c90cbdaad3d5e0d99f241c3e7339f8cb6a39c8c7368cbf1116
+  checksum: 89d2f3d744c36aef91cc0a7c64a0a00bfd4be8702954b37407da97989e885792f2220d59ff433ec2e255d24fe1efd3f736b10f7540ef9b49240097cd651d3ca6
   languageName: node
   linkType: hard
 
