@@ -407,6 +407,7 @@
     "DisplayOrder": 32,
     "PreConditionState(s)": "awaitingJudiciaryResponse, awaitingJudiciaryResponseConsent, caseFileSubmitted, caseHidden, caseWorkerReview, close, consentOrderApproved, consentOrderMade, consentOrderNotApproved, consentProcess, consentedOrderApproved, consentedOrderAssignJudge, consentedOrderNotApproved, consentedOrderSubmitted, draftOrderNotApproved, generalApplication, generalApplicationAwaitingJudiciaryResponse, generalApplicationOutcome, judgeDraftOrder, orderDrawn, orderSent, prepareForHearing, responseReceived, reviewOrder, scheduleRaiseDirectionsOrder, schedulingAndHearing, solicitorDraftOrder",
     "PostConditionState": "reviewOrder",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
