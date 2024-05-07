@@ -12,12 +12,8 @@ const solicitorUserName = process.env.USERNAME_SOLICITOR;
 const solicitorPassword = process.env.PASSWORD_SOLICITOR;
 const caseWorkerUserName = process.env.USERNAME_CASEWORKER;
 const caseWorkerPassword = process.env.PASSWORD_CASEWORKER;
-const usernameSolicitor1 = process.env.USERNAME_SOLICITOR1;
-const passwordSolicitor1 = process.env.PASSWORD_SOLICITOR1;
 const usernameBarrister1 = process.env.USERNAME_BARRISTER1;
 const passwordBarrister1 = process.env.PASSWORD_BARRISTER1;
-const judgeUserName = process.env.USERNAME_JUDGE;
-const judgePassword = process.env.PASSWORD_JUDGE;
 const nightlyTest = process.env.NIGHTLY_TEST;
 const solRef = `AUTO-${createSolicitorReference()}`;
 const caRef= `AUTO-${createCaseworkerReference()}`;
@@ -74,5 +70,4 @@ Scenario('Caseworker Remove Interveners @nightly', async ({ I }) => {
     await I.manageIntervenersRemove();
 
 }).retry(3);
-
 
