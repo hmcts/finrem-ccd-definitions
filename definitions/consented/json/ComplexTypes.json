@@ -667,6 +667,15 @@
   },
   {
     "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralLetterDocument",
+    "ListElementCode": "generalLetterUploadedDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Uploaded Document(s)",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
     "ID": "FR_approvedOrder",
     "ListElementCode": "orderLetter",
     "FieldType": "Document",
