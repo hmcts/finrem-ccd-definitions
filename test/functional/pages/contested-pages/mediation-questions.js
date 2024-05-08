@@ -22,7 +22,7 @@ function mediationQuestionNoMIAMYesExemption() {
   }
   I.waitForContinueButtonEnabled();
   I.click('Continue');
-  I.waitForText('MIAM Evidence : What evidence of domestic violence or abuse does the applicant have ?', 5);
+  I.waitForText('MIAM Evidence : What evidence of domestic abuse does the applicant have ?', 5);
   for (let checkBoxCtr = '1'; checkBoxCtr <= '2'; checkBoxCtr++) {
     I.checkOption(`#MIAMDomesticViolenceChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
