@@ -165,6 +165,9 @@ https://tools.hmcts.net/confluence/display/FR/Feature+toggles+for+CCD+definition
 
 A PR will create a full CCD/ExUI stack in the preview environment as defined in the [Helm chart](charts/finrem-ccd-definitions/values.preview.template.yaml).
 
+If you require a particular finrem-cos PR image rather than the latest production image then you should specify this
+using a GitHub label. Add a label `use-finrem-cos-pr-number` replacing `number` with the value required.
+
 GitHub will have the main URL for a PR deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.preview.platform.hmcts.net/`
 
 This can be found be clicking 'View Deployment' in the conversation tab of the PR. However, this URL in itself is not very useful.

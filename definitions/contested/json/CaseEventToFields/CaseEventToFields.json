@@ -6374,6 +6374,18 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "01/03/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalLetter",
+    "CaseFieldID": "generalLetterUploadedDocuments",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_generalLetter",
@@ -6445,6 +6457,18 @@
     "CaseFieldID": "generalLetterBody",
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/03/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalLetter_judge",
+    "CaseFieldID": "generalLetterUploadedDocuments",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "OPTIONAL",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,

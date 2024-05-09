@@ -96,6 +96,14 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
   ]
 }
 
+def getFinremCosImage() {
+  def githubApi = new GithubAPI(this)
+  for (label in githubApi.getLabelsbyPattern(env.BRANCH_NAME, "use-finrem-cos-pr-") ) {
+    return label.minus("use-finrem-cos-")
+  }
+  return "latest"
+}
+
 // Configure branches to sync with master branch
 def branchesToSync = ['demo', 'ithc', 'perftest']
 properties([
@@ -203,6 +211,7 @@ withPipeline("nodejs", product, component) {
 
   onPR() {
     env.ENV='preview'
+    env.FINREM_COS_IMAGE = getFinremCosImage()
   }
 
   onIthc() {
