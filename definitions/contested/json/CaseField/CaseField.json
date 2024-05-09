@@ -765,7 +765,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "estimatedAssetsLabel",
-    "Label": "## Please state the current estimated assets in this case:",
+    "Label": "## Please state the current estimated net assets in this case:",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -777,6 +777,16 @@
     "Label": "Select all that apply",
     "FieldType": "MultiSelectList",
     "FieldTypeParameter": "FR_ms_estimatedAssetsChecklist",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "estimatedAssetsChecklistV2",
+    "Label": "Select one",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_ms_estimatedAssetsChecklist2",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2561,6 +2571,15 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabEstimatedAssestsCheckList",
     "Label": "**The assets in this case are currently estimated to be in the order of**  ${estimatedAssetsChecklist}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabEstimatedAssetsCheckList2",
+    "Label": "**The net assets in this case are currently estimated to be in the order of**  ${estimatedAssetsChecklistV2}",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -7482,6 +7501,17 @@
     "ID": "generalLetterUploadedDocument",
     "Label": "Upload Document",
     "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "administrativeDocumentsTransitional"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterUploadedDocuments",
+    "Label": "Upload Document(s)",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "administrativeDocumentsTransitional"
