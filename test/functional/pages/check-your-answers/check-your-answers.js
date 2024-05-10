@@ -33,7 +33,7 @@ async function contestedCheckYourAnswers(applicationType) {
   I.see('What is the nature of the application ?');
   I.see('Is the application suitable to be dealt with under the Fast Track Procedure?');
   I.see('Should this application be allocated to the Complexity List of the Financial Remedies Court?');
-  I.see('Please state the current estimated assets in this case:');
+  I.see('Please state the current estimated net assets in this case:');
   I.see('Of the above value, what is the net value of the family home?');
   I.see('Please tick any potential allegations/issues which may arise');
   I.see('Which Financial Remedies Court are you applying to?');
@@ -64,7 +64,7 @@ async function contestedCheckYourAnswersMIAMNotAttended(applicationType) {
   I.see('What is the nature of the application ?');
   I.see('Is the application suitable to be dealt with under the Fast Track Procedure?');
   I.see('Should this application be allocated to the Complexity List of the Financial Remedies Court?');
-  I.see('Please state the current estimated assets in this case:');
+  I.see('Please state the current estimated net assets in this case:');
   I.see('Of the above value, what is the net value of the family home?');
   I.see('Please tick any potential allegations/issues which may arise');
   I.see('Which Financial Remedies Court are you applying to?');
