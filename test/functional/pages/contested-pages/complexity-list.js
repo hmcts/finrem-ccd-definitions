@@ -4,10 +4,6 @@ function complexityList() {
   const I = this;
   I.waitForPage('input[id="addToComplexityListOfCourts-falseNo"]');
   I.checkOption('input[id="addToComplexityListOfCourts-falseNo"]');
-
-  // for (let checkBoxCtr = '1'; checkBoxCtr <= '5'; checkBoxCtr++) {
-  //   I.checkOption(`#estimatedAssetsChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
-  // }
   I.checkOption('input[id="estimatedAssetsChecklistV2-underOneMillionPounds"]');
   I.wait('2');
   I.fillField('#netValueOfHome', '100000');

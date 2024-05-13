@@ -16,7 +16,7 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Schedule 1 Tests');
 
-Scenario('Contested Schedule 1 Case Creation by Solicitor @preview', async ({ I }) => {
+Scenario('Contested Schedule 1 Case Creation by Solicitor @nightly', async ({ I }) => {
     await I.signInIdam(solicitorUserName, solicitorPassword);
     await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -35,7 +35,7 @@ Scenario('Contested Schedule 1 Case Creation by Solicitor @preview', async ({ I 
     await I.waitForText('Form A Application', '60')
 }).retry(3);
 
-Scenario('Contested Schedule 1 Case Creation by caseworker @nightly @preview', async ({ I }) => {
+Scenario('Contested Schedule 1 Case Creation by caseworker @nightly', async ({ I }) => {
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
