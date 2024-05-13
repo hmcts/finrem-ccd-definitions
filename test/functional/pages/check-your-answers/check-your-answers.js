@@ -71,7 +71,7 @@ async function contestedCheckYourAnswersMIAMNotAttended(applicationType) {
   I.see('Has the applicant attended a Mediation information & Assessment Meeting (MIAM)?');
   I.see('Is the applicant claiming exemption from the requirement to attend a MIAM ?')
   I.see('MIAM Exemptions: what is the reason(s) for the applicant not attending a MIAM?')
-  I.see('MIAM Evidence : What evidence of domestic violence or abuse does the applicant have ?')
+  I.see('MIAM Evidence : What evidence of domestic abuse does the applicant have ?')
   I.see('MIAM Evidence: what reason does the applicant have for the application to be made urgently?')
   I.see('MIAM Evidence : Previous MIAM attendance or MIAM exemption')
   I.see('MIAM Evidence: what other grounds of exemption apply?')
