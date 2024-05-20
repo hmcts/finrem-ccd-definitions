@@ -33,7 +33,7 @@ async function contestedCheckYourAnswers(applicationType) {
   I.see('What is the nature of the application ?');
   I.see('Is the application suitable to be dealt with under the Fast Track Procedure?');
   I.see('Should this application be allocated to the Complexity List of the Financial Remedies Court?');
-  I.see('Please state the current estimated assets in this case:');
+  I.see('Please state the current estimated net assets in this case:');
   I.see('Of the above value, what is the net value of the family home?');
   I.see('Please tick any potential allegations/issues which may arise');
   I.see('Which Financial Remedies Court are you applying to?');
@@ -64,14 +64,14 @@ async function contestedCheckYourAnswersMIAMNotAttended(applicationType) {
   I.see('What is the nature of the application ?');
   I.see('Is the application suitable to be dealt with under the Fast Track Procedure?');
   I.see('Should this application be allocated to the Complexity List of the Financial Remedies Court?');
-  I.see('Please state the current estimated assets in this case:');
+  I.see('Please state the current estimated net assets in this case:');
   I.see('Of the above value, what is the net value of the family home?');
   I.see('Please tick any potential allegations/issues which may arise');
   I.see('Which Financial Remedies Court are you applying to?');
   I.see('Has the applicant attended a Mediation information & Assessment Meeting (MIAM)?');
   I.see('Is the applicant claiming exemption from the requirement to attend a MIAM ?')
   I.see('MIAM Exemptions: what is the reason(s) for the applicant not attending a MIAM?')
-  I.see('MIAM Evidence : What evidence of domestic violence or abuse does the applicant have ?')
+  I.see('MIAM Evidence : What evidence of domestic abuse does the applicant have ?')
   I.see('MIAM Evidence: what reason does the applicant have for the application to be made urgently?')
   I.see('MIAM Evidence : Previous MIAM attendance or MIAM exemption')
   I.see('MIAM Evidence: what other grounds of exemption apply?')
