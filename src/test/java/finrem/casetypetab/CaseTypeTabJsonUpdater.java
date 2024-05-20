@@ -44,7 +44,7 @@ class CaseTypeTabJsonUpdater {
         String output = "src/test/java/finrem/casetypetab/output.json";
         objectMapper.writeValue(new FileWriter(output), jsonData);
     }
-
+//
     private Map<String, Integer> getExpectedTabDisplayOrder() throws IOException {
         String filePath = "src/test/java/finrem/casetypetab/tab-display-order.json";
         return objectMapper.readValue(new FileReader(filePath), new TypeReference<>() {
