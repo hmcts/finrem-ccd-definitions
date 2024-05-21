@@ -3293,13 +3293,26 @@
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_generalLetter",
-    "CaseFieldID": "generalLetterUploadedDocument",
+    "CaseFieldID": "generalLetterUploadedDocuments",
     "PageFieldDisplayOrder": 6,
     "DisplayContext": "OPTIONAL",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_generalLetter",
+    "CaseFieldID": "generalLetterUploadedDocument",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition": "generalLetterUploadedDocuments=\"IMPOSSIBLE\""
   },
   {
     "LiveFrom": "01/06/2020",

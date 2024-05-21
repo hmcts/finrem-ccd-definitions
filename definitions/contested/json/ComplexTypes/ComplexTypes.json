@@ -740,8 +740,7 @@
     "ElementLabel": "Upload Draft Document",
     "RegularExpression": ".doc,.docx",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "administrativeDocumentsTransitional"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1069,6 +1068,17 @@
     "ListElementCode": "generalLetterUploadedDocument",
     "FieldType": "Document",
     "ElementLabel": "Upload Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "administrativeDocumentsTransitional"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralLetterDocument",
+    "ListElementCode": "generalLetterUploadedDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Uploaded Document(s)",
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "administrativeDocumentsTransitional"

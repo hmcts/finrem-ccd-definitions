@@ -2811,14 +2811,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.6.8":
-  version: 1.6.8
-  resolution: "axios@npm:1.6.8"
+"axios@npm:1.7.0":
+  version: 1.7.0
+  resolution: "axios@npm:1.7.0"
   dependencies:
     follow-redirects: ^1.15.6
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: bf007fa4b207d102459300698620b3b0873503c6d47bf5a8f6e43c0c64c90035a4f698b55027ca1958f61ab43723df2781c38a99711848d232cad7accbcdfcdd
+  checksum: f6caa42d52ac4e18acf3db2361c92c83efcfc81eac8647dcfaa8ef04ee4f91f3d3b2e8c09a497a10b7669384f398436e88554f76db12a67518d996c0cdc3c2a1
   languageName: node
   linkType: hard
 
@@ -3765,8 +3765,8 @@ __metadata:
   linkType: hard
 
 "codeceptjs@npm:^3.5.12":
-  version: 3.6.1
-  resolution: "codeceptjs@npm:3.6.1"
+  version: 3.6.2
+  resolution: "codeceptjs@npm:3.6.2"
   dependencies:
     "@codeceptjs/configure": 1.0.1
     "@codeceptjs/detox-helper": 1.0.5
@@ -3799,16 +3799,16 @@ __metadata:
     glob: 6.0.1
     html-minifier-terser: 7.2.0
     inquirer: 6.5.2
-    joi: 17.12.2
+    joi: 17.13.0
     js-beautify: 1.15.1
     lodash.clonedeep: 4.5.0
     lodash.merge: 4.6.2
     mkdirp: 1.0.4
-    mocha: 10.3.0
+    mocha: 10.4.0
     monocart-coverage-reports: 2.7.4
     ms: 2.1.3
     ora-classic: 5.4.2
-    pactum: 3.6.6
+    pactum: 3.6.7
     parse-function: 5.6.10
     parse5: 7.1.2
     promise-retry: 1.1.1
@@ -3820,7 +3820,7 @@ __metadata:
       optional: true
   bin:
     codeceptjs: bin/codecept.js
-  checksum: 41922ac52386f68080b331c3355bc1af197530b67d15726578b7d82062797f6d9ca96f01576379095f048ef9811d7d4b0ff3fe0010af5554be7abd0455eea3fe
+  checksum: bd7fcbd7de73612d2de6439f86869a3fb1ae462f080bfd9f54230a9c9f6edc9a4778304edad3a027671948b4de637a942c950c8406b3f0f85fc1498839a0ab59
   languageName: node
   linkType: hard
 
@@ -6987,7 +6987,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:17.12.2, joi@npm:^17.2.1":
+"joi@npm:17.13.0":
+  version: 17.13.0
+  resolution: "joi@npm:17.13.0"
+  dependencies:
+    "@hapi/hoek": ^9.3.0
+    "@hapi/topo": ^5.1.0
+    "@sideway/address": ^4.1.5
+    "@sideway/formula": ^3.0.1
+    "@sideway/pinpoint": ^2.0.0
+  checksum: ecde54b0705f21929939a72e958d96ba7dd2a6578ba7bf711c060f54b765a081dc67d09f7f4761a76cc4d659f6d880dca72287200801dc51485a350795131f84
+  languageName: node
+  linkType: hard
+
+"joi@npm:^17.2.1":
   version: 17.12.2
   resolution: "joi@npm:17.12.2"
   dependencies:
@@ -8269,17 +8282,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minipass@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "minipass@npm:5.0.0"
-  checksum: 425dab288738853fded43da3314a0b5c035844d6f3097a8e3b5b29b328da8f3c1af6fc70618b32c29ff906284cf6406b6841376f21caaadd0793c1d5a6a620ea
-  languageName: node
-  linkType: hard
-
 "minipass@npm:^5.0.0 || ^6.0.2 || ^7.0.0, minipass@npm:^7.0.2, minipass@npm:^7.0.3, minipass@npm:^7.0.4":
   version: 7.0.4
   resolution: "minipass@npm:7.0.4"
   checksum: 87585e258b9488caf2e7acea242fd7856bbe9a2c84a7807643513a338d66f368c7d518200ad7b70a508664d408aa000517647b2930c259a8b1f9f0984f344a21
+  languageName: node
+  linkType: hard
+
+"minipass@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "minipass@npm:7.1.0"
+  checksum: c057d4b1d7fdb35b8f4b9d8f627b1f6832c441cd7dff9304ee5efef68abb3b460309bf97b1b0ce5b960e259caa53c724f609d058e4dc12d547e2a074aaae2cd6
   languageName: node
   linkType: hard
 
@@ -8346,38 +8359,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mocha@npm:10.3.0":
-  version: 10.3.0
-  resolution: "mocha@npm:10.3.0"
-  dependencies:
-    ansi-colors: 4.1.1
-    browser-stdout: 1.3.1
-    chokidar: 3.5.3
-    debug: 4.3.4
-    diff: 5.0.0
-    escape-string-regexp: 4.0.0
-    find-up: 5.0.0
-    glob: 8.1.0
-    he: 1.2.0
-    js-yaml: 4.1.0
-    log-symbols: 4.1.0
-    minimatch: 5.0.1
-    ms: 2.1.3
-    serialize-javascript: 6.0.0
-    strip-json-comments: 3.1.1
-    supports-color: 8.1.1
-    workerpool: 6.2.1
-    yargs: 16.2.0
-    yargs-parser: 20.2.4
-    yargs-unparser: 2.0.0
-  bin:
-    _mocha: bin/_mocha
-    mocha: bin/mocha.js
-  checksum: b5e95b9c270b2c33589e2f19d7ee37ac7577c0d471152d4e2692ebf4bc606a36040da4fbadc1e482b4cf5a0784daac7556bb962ad7b23143086b34a58e43e211
-  languageName: node
-  linkType: hard
-
-"mocha@npm:^10.2.0":
+"mocha@npm:10.4.0, mocha@npm:^10.2.0":
   version: 10.4.0
   resolution: "mocha@npm:10.4.0"
   dependencies:
@@ -9131,9 +9113,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pactum@npm:3.6.6":
-  version: 3.6.6
-  resolution: "pactum@npm:3.6.6"
+"pactum@npm:3.6.7":
+  version: 3.6.7
+  resolution: "pactum@npm:3.6.7"
   dependencies:
     "@exodus/schemasafe": ^1.3.0
     deep-override: ^1.0.2
@@ -9146,7 +9128,7 @@ __metadata:
     parse-graphql: ^1.0.0
     phin: ^3.7.0
     polka: ^0.5.2
-  checksum: 43b37f9f38fbc70a358d565b13f747119e8badaebd74892f8fd0d16bd6f9c463e6ba6e3aa5d044c90cbdaad3d5e0d99f241c3e7339f8cb6a39c8c7368cbf1116
+  checksum: 89d2f3d744c36aef91cc0a7c64a0a00bfd4be8702954b37407da97989e885792f2220d59ff433ec2e255d24fe1efd3f736b10f7540ef9b49240097cd651d3ca6
   languageName: node
   linkType: hard
 
@@ -9381,27 +9363,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.43.1":
-  version: 1.43.1
-  resolution: "playwright-core@npm:1.43.1"
+"playwright-core@npm:1.44.0":
+  version: 1.44.0
+  resolution: "playwright-core@npm:1.44.0"
   bin:
     playwright-core: cli.js
-  checksum: 7c96b3a4a4bce2ee22c3cd680c9b0bb9e4bf07ee4b51d1e9a7f47a6489c7b0b960d4b550e530b8f41d1ffeadd26c7c6bb626ae8689dfd90dce1cb8e35ae78ff7
+  checksum: 7bee257c830153578753a6dfb34b8216f8c552d750e24a0be6d3ba10baff013fb1320a1c3d487fbb0df9d1ce5d1f027ccf6e990d4514989da63691f177141ba4
   languageName: node
   linkType: hard
 
 "playwright@npm:^1.41.2":
-  version: 1.43.1
-  resolution: "playwright@npm:1.43.1"
+  version: 1.44.0
+  resolution: "playwright@npm:1.44.0"
   dependencies:
     fsevents: 2.3.2
-    playwright-core: 1.43.1
+    playwright-core: 1.44.0
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: de9db021f93018a18275bbb5af09ebf1804aa0534f47578b35b440064abc774509740205802824afc94a99fc84dd55ffe9e215718ad3ecc691b251ab3882b096
+  checksum: 22653ded652f436c1a837842009a175e8acb91ab340bb3deee87dbdb7205b439bd174f5f20591eb67f0171728c9f8f4bdfa3668a517da6bc7b45a4a79eabdbd5
   languageName: node
   linkType: hard
 
@@ -11079,16 +11061,16 @@ __metadata:
   linkType: hard
 
 "tar@npm:^7.0.0":
-  version: 7.0.1
-  resolution: "tar@npm:7.0.1"
+  version: 7.1.0
+  resolution: "tar@npm:7.1.0"
   dependencies:
     "@isaacs/fs-minipass": ^4.0.0
     chownr: ^3.0.0
-    minipass: ^5.0.0
+    minipass: ^7.1.0
     minizlib: ^3.0.1
     mkdirp: ^3.0.1
     yallist: ^5.0.0
-  checksum: 9c6d9119e21d51803dfda3e0503740ade77cf1e252a7b28ea46e5765006dab0c0536d86cc260c65be495029b5f72ea5d8a2f7f528f94750f2a4b7a46be738cda
+  checksum: 1539c71e93b57b71d7816b3173948d3865aae3c22dd06ba73174734564a95b8d34e8a278c419f3ae1af725bc346e6e1921d92654d90c40ec4cce2de6c0a5637a
   languageName: node
   linkType: hard
 
@@ -11617,9 +11599,9 @@ __metadata:
   linkType: hard
 
 "validator@npm:^13.7.0":
-  version: 13.11.0
-  resolution: "validator@npm:13.11.0"
-  checksum: d1e0c27022681420756da25bc03eb08d5f0c66fb008f8ff02ebc95812b77c6be6e03d3bd05cf80ca702e23eeb73dadd66b4b3683173ea2a0bc7cc72820bee131
+  version: 13.12.0
+  resolution: "validator@npm:13.12.0"
+  checksum: fb8f070724770b1449ea1a968605823fdb112dbd10507b2802f8841cda3e7b5c376c40f18c84e6a7b59de320a06177e471554101a85f1fa8a70bac1a84e48adf
   languageName: node
   linkType: hard
 

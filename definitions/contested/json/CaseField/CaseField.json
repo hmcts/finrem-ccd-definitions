@@ -745,7 +745,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "estimatedAssetsLabel",
-    "Label": "## Please state the current estimated assets in this case:",
+    "Label": "## Please state the current estimated net assets in this case:",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -757,6 +757,16 @@
     "Label": "Select all that apply",
     "FieldType": "MultiSelectList",
     "FieldTypeParameter": "FR_ms_estimatedAssetsChecklist",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "estimatedAssetsChecklistV2",
+    "Label": "Select one",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_ms_estimatedAssetsChecklist2",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -920,6 +930,24 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantAttendedMIAMYesLabel",
+    "Label": "Yes",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantAttendedMIAMNoLabel",
+    "Label": "No",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantAttendedMIAM",
     "Label": "        ",
     "FieldType": "YesOrNo",
@@ -938,9 +966,135 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "claimingExemptionMIAMYesLabel",
+    "Label": "Yes",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "claimingExemptionMIAMNoLabel",
+    "Label": "No",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "claimingExemptionMIAM",
     "Label": "        ",
     "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "evidenceUnavailableMIAMTabLabel",
+    "Label": "## Reason(s) why the required evidence could not be provided:",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalInfoMIAMTabLabel",
+    "Label": "## Additional requested information",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "evidenceUnavailableDomesticAbuseMIAMLabel",
+    "Label": "If you are unable to provide the required evidence with your application, please use this text box to explain the reasons(s) why",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "evidenceUnavailableUrgencyMIAMLabel",
+    "Label": "If you are unable to provide the required evidence with your application, please use this text box to explain the reasons(s) why",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "evidenceUnavailablePreviousAttendanceMIAMLabel",
+    "Label": "If you are unable to provide the required evidence with your application, please use this text box to explain the reasons(s) why",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "evidenceUnavailableOtherGroundsMIAMLabel",
+    "Label": "If you are unable to provide the required evidence with your application, please use this text box to explain the reasons(s) why",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "evidenceUnavailableDomesticAbuseMIAM",
+    "Label": " ",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "evidenceUnavailableUrgencyMIAM",
+    "Label": " ",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "evidenceUnavailablePreviousAttendanceMIAM",
+    "Label": " ",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "evidenceUnavailableOtherGroundsMIAM",
+    "Label": " ",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalInfoOtherGroundsMIAMLabel",
+    "Label": "Please provide any additional information requested in this text box",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalInfoOtherGroundsMIAM",
+    "Label": " ",
+    "FieldType": "TextArea",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -966,7 +1120,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "MIAMExemptionsLabel",
-    "Label": "## MIAM Exemptions : what is the reason(s) for the applicant not attending a MIAM?",
+    "Label": "## MIAM Exemptions: what is the reason(s) for the applicant not attending a MIAM?",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -994,7 +1148,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "MIAMDomesticViolenceLabel",
-    "Label": "## MIAM Evidence : What evidence of domestic violence or abuse does the applicant have ?",
+    "Label": "## MIAM Evidence : What evidence of domestic abuse does the applicant have ?",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -1069,7 +1223,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "MIAMOtherGroundsLabel",
-    "Label": "## MIAM Evidence : What other grounds of exemption apply?",
+    "Label": "## MIAM Evidence: what other grounds of exemption apply?",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -1114,6 +1268,26 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadMediatorDocument",
+    "Label": "Upload MIAM Document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsMainApplication"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadMediatorDocumentPaperCase",
+    "Label": "Upload MIAM Document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsMainApplication"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "soleTraderName",
     "Label": "Sole Trader Name",
     "FieldType": "Text",
@@ -1123,8 +1297,17 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "MIAMCertificationPageMessage",
+    "ID": "MIAMCertificationPageMessagePaperCase",
     "Label": "**You should have a document signed by the mediator confirming this (which you should bring to your first hearing)**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "MIAMCertificationPageMessageFormA",
+    "Label": "**You should have a document signed by the mediator confirming this. Please upload the document here in readiness for the hearing or bring a copy to your first hearing.**",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -2368,6 +2551,15 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabEstimatedAssestsCheckList",
     "Label": "**The assets in this case are currently estimated to be in the order of**  ${estimatedAssetsChecklist}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabEstimatedAssetsCheckList2",
+    "Label": "**The net assets in this case are currently estimated to be in the order of**  ${estimatedAssetsChecklistV2}",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -7294,6 +7486,17 @@
     "CategoryID": "administrativeDocumentsTransitional"
   },
   {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalLetterUploadedDocuments",
+    "Label": "Upload Document(s)",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "administrativeDocumentsTransitional"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "orderRefusalPreviewDocument",
@@ -7487,6 +7690,24 @@
     "ID": "isCfvCategoriesAppliedFlag",
     "Label": " ",
     "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cfvMigrationVersion",
+    "Label": "CFV Migration Version",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cfvSearchableMigrationVersion",
+    "Label": "CFV Migration Version",
+    "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   },

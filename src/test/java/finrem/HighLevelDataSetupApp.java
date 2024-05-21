@@ -20,11 +20,6 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     }
 
     @Override
-    protected boolean shouldTolerateDataSetupFailure() {
-        return true;
-    }
-
-    @Override
     protected void doLoadTestData() {
         List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
         CcdEnvironment currentEnv = (CcdEnvironment) getDataSetupEnvironment();

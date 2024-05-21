@@ -97,7 +97,7 @@
     "ListElement": "Pension Compensation Attachment Order",
     "DisplayOrder": 9
   },
-    {
+  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_natureApplication",
     "ListElementCode": "A settlement or a transfer of property",
@@ -145,277 +145,391 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMExemptionsChecklist",
     "ListElementCode": "domesticViolence",
-    "ListElement": "Domestic violence "
+    "ListElement": "Domestic abuse",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMExemptionsChecklist",
     "ListElementCode": "urgency",
-    "ListElement": "Urgency"
+    "ListElement": "Urgency",
+    "DisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMExemptionsChecklist",
     "ListElementCode": "previousMIAMattendance",
-    "ListElement": "Previous MIAM attendance or previous MIAM exemption "
+    "ListElement": "Previous attendance of a MIAM or non-court dispute resolution",
+    "DisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMExemptionsChecklist",
     "ListElementCode": "other",
-    "ListElement": "Other"
+    "ListElement": "Other",
+    "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_1",
-    "ListElement": "Evidence that a prospective party has been arrested for a relevant domestic violence offence; "
+    "ListElement": "Evidence that a prospective party has been arrested for a relevant domestic abuse offence",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_2",
-    "ListElement": "Evidence of a relevant police caution for a domestic violence offence; "
+    "ListElement": "Evidence of a relevant police caution for a domestic abuse offence",
+    "DisplayOrder": 2
+
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_3",
-    "ListElement": "Evidence of relevant criminal proceedings for a domestic violence offence which have not concluded; "
+    "ListElement": "Evidence of relevant criminal proceedings for a domestic abuse offence which have not concluded",
+    "DisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_4",
-    "ListElement": "Evidence of a relevant conviction for a domestic violence offence; "
+    "ListElement": "Evidence of a relevant conviction for a domestic abuse offence",
+    "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_5",
-    "ListElement": "A court order binding a prospective party over in connection with a domestic violence offence; "
+    "ListElement": "A court order binding a prospective party over in connection with a domestic abuse offence",
+    "DisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_6",
-    "ListElement": "A domestic violence protection notice issued under section 24 of the Crime and Security Act 2010 against a prospective party; "
+    "ListElement": "A domestic abuse protection notice issued under section 24 of the Crime and Security Act 2010 against a prospective party",
+    "DisplayOrder": 6
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMDomesticViolenceChecklist",
+    "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_14",
+    "ListElement": "A domestic abuse protection notice given under section 22 of the Domestic Abuse Act 2021 against a prospective party",
+    "DisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_7",
-    "ListElement": "A relevant protective injunction; "
+    "ListElement": "A relevant protective injunction",
+    "DisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_8",
-    "ListElement": "An undertaking given in England and Wales under section 46 or 63E of the Family Law Act 1996 (or given in Scotland or Northern Ireland in place of a protective injunction) by a prospective party, provided that a cross- undertaking relating to domestic violence was not given by another prospective party; "
+    "ListElement": "An undertaking given in England and Wales under section 46 or 63E of the Family Law Act 1996 (or given in Scotland or Northern Ireland in place of a protective injunction) by a prospective party, provided that a cross-undertaking relating to domestic violence or abuse was not given by another prospective party",
+    "DisplayOrder": 9
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_9",
-    "ListElement": "A copy of a finding of fact, made in proceedings in the United Kingdom, that there has been domestic violence by a prospective party; "
+    "ListElement": "A copy of a finding of fact, made in proceedings in the United Kingdom, that there has been domestic abuse by a prospective party",
+    "DisplayOrder": 10
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_10",
-    "ListElement": "An expert report produced as evidence in proceedings in the United Kingdom for the benefit of a court or tribunal confirming that a person with whom a prospective party is or was in a family relationship, was assessed as being, or at risk of being, a victim of domestic violence by that prospective party; "
+    "ListElement": "An expert report produced as evidence in proceedings in the United Kingdom for the benefit of a court or tribunal confirming that a person with whom a prospective party is or was personally connected, was assessed as being, or at risk of being, a victim of domestic abuse by that prospective party",
+    "DisplayOrder": 11
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_11",
-    "ListElement": "A letter or report from an appropriate health professional confirming that- \r\n(i)  that professional,or another appropriate health professional, has examined a prospective party in person; and (ii)  in the reasonable professional judgment of the author or the examining appropriate health professional, that prospective party has, or has had, injuries or a condition consistent with being a victim of domestic violence; "
+    "ListElement": "A letter or report from an appropriate health professional confirming that- \r\n(i) that professional, or another appropriate health professional, has examined a prospective party in person by telephone or by video conferencing, and (ii) in the reasonable professional judgment of the author or the examining appropriate health professional, that prospective party has, or has had, injuries or a condition consistent with being a victim of domestic abuse",
+    "DisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_12",
-    "ListElement": "A letter or report from- \r\n(i) the appropriate health professional who made the referral described below; \r\n(ii) an appropriate health professional who has access to the medical records of the prospective party referred to below; or \r\n(iii) the person to whom the referral described below was made; \r\nconfirming that there was a referral by an appropriate health professional of a prospective party to a person who provides specialist support or assistance for victims of, or those at risk of, domestic violence; "
+    "ListElement": "A letter or report from- \r\n(i) the appropriate health professional who made the referral described below; \r\n(ii) an appropriate health professional who has access to the medical records of the prospective party referred to below; or \r\n(iii) the person to whom the referral described below was made; \r\nconfirming that there was a referral by an appropriate health professional of a prospective party to a person who provides specialist support or assistance for victims of, or those at risk of, domestic abuse",
+    "DisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_13",
-    "ListElement": "A letter from any person who is a member of a multi-agency risk assessment conference (or other suitable local safeguarding forum) confirming that a prospective party, or a person with whom that prospective party is in a family relationship, is or has been at risk of harm from domestic violence by another prospective party; "
+    "ListElement": "A letter from any person who is a member of a multi-agency risk assessment conference (or other suitable local safeguarding forum) confirming that a prospective party, or a person with whom that prospective party is personally connected, is or has been at risk of harm from domestic abuse by another prospective party",
+    "DisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_15",
-    "ListElement": "A letter from an independent domestic violence advisor confirming that they are providing support to a prospective party; "
+    "ListElement": "A letter from an independent domestic abuse advisor (IDVA) confirming that they are or have provided support to a prospective party",
+    "DisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_16",
-    "ListElement": "A letter from an independent sexual violence advisor confirming that they are providing support to a prospective party relating to sexual violence by another prospective party; "
+    "ListElement": "A letter from an independent sexual violence advisor (ISVA) confirming that they are providing or have provided support to a prospective party relating to sexual violence by another prospective party",
+    "DisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_17",
-    "ListElement": "A letter from an officer employed by a local authority or housing association (or their equivalent in Scotland or Northern Ireland) for the purpose of supporting tenants containing- \r\n(i)  a statement to the effect that, in their reasonable professional judgment, a person with whom a prospective party is or has been in a family relationship is, or is at risk of being, a victim of domestic violence by that prospective party; (ii)  a description of the specific matters relied upon to support that judgment; and (iii) a description of the support they provided to the victim of domestic violence or the person at risk of domestic violence by that prospective party; "
+    "ListElement": "A letter from an officer employed by a local authority or housing association (or their equivalent in Scotland or Northern Ireland) for the purpose of supporting tenants containing- \r\n(i) a statement to the effect that, in their reasonable professional judgment, a person with whom a prospective party is or has been personally connected to is, or is at risk of being, a victim of domestic violence by that prospective party; (ii) a description of the specific matters relied upon to support that judgment; and (iii) a description of the support they provided to the victim of domestic violence or the person at risk of domestic abuse by that prospective party",
+    "DisplayOrder": 17
+
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_18",
-    "ListElement": "A letter which- \r\n(i) is from an organisation providing domestic violence support services, or a registered charity, which letter confirms that it- \r\n(a) is situated in England and Wales, \r\n(b) has been operating for an uninterrupted period of six months or more; and \r\n(c) provided a prospective party with support in relation to that person’s needs as a victim, or a person at risk, of domestic violence; and \r\n(ii) contains- \r\n(a) a statement to the effect that, in the reasonable professional judgment of the author of the letter, the prospective party is, or is at risk of being, a victim of domestic violence; \r\n(b) a description of the specific matters relied upon to support that judgment; \r\n(c) a description of the support provided to the prospective party; and \r\n(d) a statement of the reasons why the prospective party needed that support; "
+    "ListElement": "A letter which- \r\n(i) is from an organisation providing domestic abuse support services, which letter confirms that it- \r\n(a) is situated in the United Kingdom, \r\n(b) has been operating for an uninterrupted period of six months or more; and \r\n(c) provided a prospective party with support in relation to that person’s needs as a victim, or a person at risk, of domestic abuse; and \r\n(ii) contains- \r\n(a) a statement to the effect that, in the reasonable professional judgment of the author of the letter, the prospective party is, or is at risk of being, a victim of domestic abuse; \r\n(b) a description of the specific matters relied upon to support that judgment; \r\n(c) a description of the support provided to the prospective party; and \r\n(d) a statement of the reasons why the prospective party needed that support",
+    "DisplayOrder": 18
+
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_19",
-    "ListElement": "A letter or report from an organisation providing domestic violence support services in the United Kingdom confirming- \r\n(i) that a person with whom a prospective party is or was in a family relationship was refused admission to a refuge; \r\n(ii) the date on which they were refused admission to the refuge; and \r\n(iii)they sought admission to the refuge because of allegations of domestic violence by the prospective party referred to in paragraph (i); "
+    "ListElement": "A letter or report from an organisation providing domestic abuse support services in the United Kingdom confirming- \r\n(i) that a person with whom a prospective party is or was personally connected was refused admission to a refuge; \r\n(ii) the date on which they were refused admission to the refuge; and \r\n(iii) they sought admission to the refuge because of allegations of domestic violence by the prospective party referred to in paragraph (i)",
+    "DisplayOrder": 19
+
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_20",
-    "ListElement": "A letter from a public authority confirming that a person with whom a prospective party is or was in a family relationship, was assessed as being, or at risk of being, a victim of domestic violence by that prospective party (or a copy of that assessment); "
+    "ListElement": "A letter from a public authority confirming that a person with whom a prospective party is or was personally connected, was assessed as being, or at risk of being, a victim of domestic abuse by that prospective party (or a copy of that assessment)",
+    "DisplayOrder": 20
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_21",
-    "ListElement": "A letter from the Secretary of State for the Home Department confirming that a prospective party has been granted leave to remain in the United Kingdom under paragraph 289B of the Rules made by the Home Secretary under section 3(2) of the Immigration Act 1971, which can be found at https://www. gov.uk/guidance/immigration-rules/immigration-rules-index; "
+    "ListElement": "A letter from the Secretary of State for the Home Department confirming that a prospective party has been granted leave to remain in the United Kingdom as a victim of domestic abuse",
+    "DisplayOrder": 21
+
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMDomesticViolenceChecklist",
     "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_22",
-    "ListElement": "Evidence which demonstrates that a prospective party has been, or is at risk of being, the victim of domestic violence by another prospective party in the form of abuse which relates to financial matters. "
+    "ListElement": "Evidence which demonstrates that a prospective party has been, or is at risk of being, the victim of domestic abuse by another prospective party in the form of abuse which relates to financial matters",
+    "DisplayOrder": 22
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMDomesticViolenceChecklist",
+    "ListElementCode": "FR_ms_MIAMDomesticViolenceChecklist_Value_23",
+    "ListElement": "I am unable to provide the required evidence with my application.",
+    "DisplayOrder": 23
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMUrgencyReasonChecklist",
     "ListElementCode": "FR_ms_MIAMUrgencyReasonChecklist_Value_1",
-    "ListElement": "There is risk to the life, liberty or physical safety of the prospective applicant or his or her family or his or her home; or"
+    "ListElement": "There is risk to the life, liberty or physical safety of the prospective applicant or his or her family or his or her home; or",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMUrgencyReasonChecklist",
     "ListElementCode": "FR_ms_MIAMUrgencyReasonChecklist_Value_2",
-    "ListElement": "Any delay caused by MIAM would cause significant risk of a miscarriage of justice"
+    "ListElement": "Any delay caused by attending a MIAM would cause a significant risk of a miscarriage of justice; or",
+    "DisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMUrgencyReasonChecklist",
     "ListElementCode": "FR_ms_MIAMUrgencyReasonChecklist_Value_3",
-    "ListElement": "Any delay caused by MIAM would cause unreasonable hardship to the prospective applicant"
+    "ListElement": "Any delay caused by attending a MIAM would cause significant financial hardship to the prospective applicant; or",
+    "DisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMUrgencyReasonChecklist",
     "ListElementCode": "FR_ms_MIAMUrgencyReasonChecklist_Value_4",
-    "ListElement": "Any delay caused by MIAM would cause irretrievable problems in dealing with the dispute (including the irretrievable loss of significant evidence)"
+    "ListElement": "Any delay caused by attending a MIAM would cause irretrievable problems in dealing with the dispute (including the irretrievable loss of significant evidence); or",
+    "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMUrgencyReasonChecklist",
     "ListElementCode": "FR_ms_MIAMUrgencyReasonChecklist_Value_5",
-    "ListElement": "There  is a significant risk that in the period necessary to schedule and attend a MIAM, proceedings relating to the dispute will be brought in another state in which a valid claim to jurisdiction may exist, such that a court in that other State would be seized of the dispute before a court in England and Wales."
+    "ListElement": "There is a significant risk that in the period necessary to schedule and attend a MIAM, proceedings relating to the dispute will be brought in another state in which a valid claim to jurisdiction may exist, such that a court in that other State would be seized of the dispute before a court in England and Wales.",
+    "DisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMUrgencyReasonChecklist",
+    "ListElementCode": "FR_ms_MIAMUrgencyReasonChecklist_Value_6",
+    "ListElement": "I am unable to provide the required evidence with my application.",
+    "DisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMPreviousAttendanceChecklist",
     "ListElementCode": "FR_ms_MIAMPreviousAttendanceChecklist_Value_1",
-    "ListElement": "In the 4 months prior to making the application, the person attended a MIAM or participated in another form of non-court dispute resolution relating to the same or substantially the same dispute"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_ms_MIAMPreviousAttendanceChecklist",
-    "ListElementCode": "FR_ms_MIAMPreviousAttendanceChecklist_Value_2",
-    "ListElement": "At the time of making the application, the person is participating in another form of non-court dispute resolution relating to the same or substantially the same dispute"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_ms_MIAMPreviousAttendanceChecklist",
-    "ListElementCode": "FR_ms_MIAMPreviousAttendanceChecklist_Value_3",
-    "ListElement": "In the 4 months prior to making the application, the person filed a relevant family application confirming that a MIAM exemption applied and that application related to the same or substantially the same dispute"
+    "ListElement": "In the 4 months prior to making the application, the person attended a MIAM or a non-court dispute resolution process relating to the same or substantially the same dispute; and where the applicant attended a non-court dispute resolution process, there is evidence of that attendance in the form of written confirmation from the dispute resolution provider. This evidence should be submitted alongside your application, and must include the signature of the provider; or",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMPreviousAttendanceChecklist",
     "ListElementCode": "FR_ms_MIAMPreviousAttendanceChecklist_Value_4",
-    "ListElement": "The application would be made in existing proceedings which are continuing and the prospective applicant attended a MIAM before initiating those proceedings"
+    "ListElement": "The application would be made in existing proceedings which are continuing and the prospective applicant attended a MIAM before initiating those proceedings.",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMPreviousAttendanceChecklist",
+    "ListElementCode": "FR_ms_MIAMPreviousAttendanceChecklist_Value_6",
+    "ListElement": "I am unable to provide the required evidence with my application.",
+    "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMPreviousAttendanceChecklist",
+    "ListElementCode": "FR_ms_MIAMPreviousAttendanceChecklist_Value_2",
+    "ListElement": "Do not use after 29/04/2024 - At the time of making the application, the person is participating in another form of non-court dispute resolution relating to the same or substantially the same dispute",
+    "DisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMPreviousAttendanceChecklist",
     "ListElementCode": "FR_ms_MIAMPreviousAttendanceChecklist_Value_5",
-    "ListElement": "The application would be made in existing proceedings which are continuing and a MIAM exemption applied to the application for those proceedings"
+    "ListElement": "Do not use after 29/04/2024 - The application would be made in existing proceedings which are continuing and a MIAM exemption applied to the application for those proceedings",
+    "DisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMPreviousAttendanceChecklist",
+    "ListElementCode": "FR_ms_MIAMPreviousAttendanceChecklist_Value_3",
+    "ListElement": "Do not use after 29/04/2024 - In the 4 months prior to making the application, the person filed a relevant family application confirming that a MIAM exemption applied and that application related to the same or substantially the same dispute",
+    "DisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMOtherGroundsChecklist",
     "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_1",
-    "ListElement": "The applicant is bankrupt evidenced by an application by the prospective applicant for a bankruptcy order;"
+    "ListElement": "Do not use after 29/04/2024 - The applicant is bankrupt evidenced by an application by the prospective applicant for a bankruptcy order;",
+    "DisplayOrder": 11
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMOtherGroundsChecklist",
     "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_2",
-    "ListElement": "The applicant is bankrupt evidenced by a petition by a creditor of the prospective applicant for a bankruptcy order"
+    "ListElement": "Do not use after 29/04/2024 - The applicant is bankrupt evidenced by a petition by a creditor of the prospective applicant for a bankruptcy order",
+    "DisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMOtherGroundsChecklist",
     "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_3",
-    "ListElement": "The applicant is bankrupt evidenced by a bankruptcy order in respect of the prospective applicant. "
+    "ListElement": "Do not use after 29/04/2024 - The applicant is bankrupt evidenced by a bankruptcy order in respect of the prospective applicant.",
+    "DisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMOtherGroundsChecklist",
     "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_4",
-    "ListElement": "The prospective applicant does not have sufficient contact details for any of the prospective respondents to enable a family mediator to contact any of the prospective respondents for the purpose of scheduling the MIAM. "
+    "ListElement": "Do not use after 29/04/2024 - The prospective applicant does not have sufficient contact details for any of the prospective respondents to enable a family mediator to contact any of the prospective respondents for the purpose of scheduling the MIAM.",
+    "DisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMOtherGroundsChecklist",
     "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_5",
-    "ListElement": "The application would be made without notice (Paragraph 5.1 of Practice Direction 18A sets out the circumstances in which applications may be made without notice.) "
+    "ListElement": "The application would be made without notice (Paragraph 5.1 of Practice Direction 18A sets out the circumstances in which applications may be made without notice.)",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMOtherGroundsChecklist",
     "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_6",
-    "ListElement": "(i) the prospective applicant is or all of the prospective respondents are subject to a disability or other inability that would prevent attendance at a MIAM unless appropriate facilities can be offered by an authorised mediator; (ii) the prospective applicant has contacted as many authorised family mediators as have an office within fifteen miles of his or her home (or three of them if there are three or more), and all have stated that they are unable to provide such facilities; and (iii)the names, postal addresses and telephone numbers or e-mail addresses for such authorised family mediators, and the dates of contact, can be provided to the court if requested."
+    "ListElement": "Do not use after 29/04/2024 - (i) the prospective applicant is or all of the prospective respondents are subject to a disability or other inability that would prevent attendance at a MIAM unless appropriate facilities can be offered by an authorised mediator; (ii) the prospective applicant has contacted as many authorised family mediators as have an office within fifteen miles of his or her home (or three of them if there are three or more), and all have stated that they are unable to provide such facilities; and (iii)the names, postal addresses and telephone numbers or e-mail addresses for such authorised family mediators, and the dates of contact, can be provided to the court if requested.",
+    "DisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMOtherGroundsChecklist",
     "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_7",
-    "ListElement": "the prospective applicant or all of the prospective respondents cannot attend a MIAM because he or she is, or they are, as the case may be (i) in prison or any other institution in which he or she is or they are required to be detained; (ii) subject to conditions of bail that prevent contact with the other person; or (iii) subject to a licence with a prohibited contact requirement in relation to the other person."
+    "ListElement": "Do not use after 29/04/2024 - the prospective applicant or all of the prospective respondents cannot attend a MIAM because he or she is, or they are, as the case may be (i) in prison or any other institution in which he or she is or they are required to be detained; (ii) subject to conditions of bail that prevent contact with the other person; or (iii) subject to a licence with a prohibited contact requirement in relation to the other person.",
+    "DisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMOtherGroundsChecklist",
     "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_8",
-    "ListElement": "The prospective applicant or all of the prospective respondents are not habitually resident in England and Wales. "
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_ms_MIAMOtherGroundsChecklist",
-    "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_9",
-    "ListElement": "A child is one of the prospective parties by virtue of Rule 12.3(1). "
+    "ListElement": "Do not use after 29/04/2024 - The prospective applicant or all of the prospective respondents are not habitually resident in England and Wales.",
+    "DisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMOtherGroundsChecklist",
     "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_10",
-    "ListElement": "(i) the prospective applicant has contacted as many authorised family mediators as have an office within fifteen miles of his or her home (or three of them if there are three or more), and all of them have stated that they are not available to conduct a MIAM within fifteen business days of the date\r\nof contact; and (ii) the names, postal addresses and telephone numbers\r\nor e-mail addresses for such authorised family mediators, and the dates of contact, can be provided to the court if requested."
+    "ListElement": "Do not use after 29/04/2024 - (i) the prospective applicant has contacted as many authorised family mediators as have an office within fifteen miles of his or her home (or three of them if there are three or more), and all of them have stated that they are not available to conduct a MIAM within fifteen business days of the date\nof contact; and (ii) the names, postal addresses and telephone numbers\nor e-mail addresses for such authorised family mediators, and the dates of contact, can be provided to the court if requested.",
+    "DisplayOrder": 9
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ms_MIAMOtherGroundsChecklist",
     "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_11",
-    "ListElement": "There is no authorised family mediator with an office within fifteen miles of the prospective applicant’s home. "
+    "ListElement": "Do not use after 29/04/2024 - There is no authorised family mediator with an office within fifteen miles of the prospective applicant’s home.",
+    "DisplayOrder": 10
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMOtherGroundsChecklist",
+    "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_9",
+    "ListElement": "A child is one of the prospective parties.",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMOtherGroundsChecklist",
+    "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_12",
+    "ListElement": "(i) the prospective applicant is not able to attend a MIAM online or by video-link and an explanation of why this is the case is provided to the court using the text field provided; and\n(ii) the prospective applicant has contacted as many authorised family mediators as have an office within fifteen miles of his or her home (or five of them if there are five or more), and all of them have stated that they are not available to conduct a MIAM within fifteen business days of the date of contact; and\n(iii) the names, postal addresses and telephone numbers or e-mail addresses for the authorised family mediators contacted by the prospective applicant, and the dates of contact, are provided to the court in the text field provided.",
+    "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMOtherGroundsChecklist",
+    "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_13",
+    "ListElement": "(i) the prospective applicant is not able to attend a MIAM online or by video-link and an explanation of why this is the case is provided to the court using the text field provided; and\n(ii) the prospective applicant is subject to a disability or other inability that would prevent attendance in person at a MIAM unless appropriate facilities can be offered by an authorised mediator; and\n(iii) the prospective applicant has contacted as many authorised family mediators as have an office within fifteen miles of his or her home (or five of them if there are five or more), and all have stated that they are unable to provide such facilities; and\n(iv) the names, postal addresses and telephone numbers or e-mail addresses for such authorised family mediators, and the dates of contact, are provided to the court using the text field provided.",
+    "DisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMOtherGroundsChecklist",
+    "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_14",
+    "ListElement": "(i) the prospective applicant is not able to attend a MIAM online or by video-link; and\n(ii) there is no authorised family mediator with an office within fifteen miles of the prospective applicant’s home; and\n(iii) an explanation of why this exemption applies is provided by the prospective applicant to the court using the text field provided.",
+    "DisplayOrder": 5
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMOtherGroundsChecklist",
+    "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_15",
+    "ListElement": "The prospective applicant cannot attend a MIAM because the prospective applicant is\n(i) in prison or any other institution in which the prospective applicant is required to be detained and facilities cannot be made available for them to attend a MIAM online or by video link; or\n(ii) subject to conditions of bail that prevent contact with the other person; or\n(iii) subject to a licence with a prohibited contact requirement in relation to the other person.",
+    "DisplayOrder": 6
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_MIAMOtherGroundsChecklist",
+    "ListElementCode": "FR_ms_MIAMOtherGroundsChecklist_Value_16",
+    "ListElement": "I am unable to provide the required evidence with my application.",
+    "DisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2084,11 +2198,11 @@
     "ListElement": "Form PPF2"
   },
   {
-  "LiveFrom": "01/01/2017",
-  "ID": "FR_go_Addressto",
-  "ListElementCode": "applicant",
-  "ListElement": "Applicant",
-  "DisplayOrder": 1
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_go_Addressto",
+    "ListElementCode": "applicant",
+    "ListElement": "Applicant",
+    "DisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2461,7 +2575,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_fl_interimHearingTypeDirections",
     "ListElementCode": "Maintenance Pending Suit (MPS)",
-      "ListElement": "Maintenance Pending Suit (MPS)",
+    "ListElement": "Maintenance Pending Suit (MPS)",
     "DisplayOrder": 1
   },
   {
@@ -3016,5 +3130,40 @@
     "ListElementCode": "Pension Plan",
     "ListElement": "NOT IN USE - Pension Plan",
     "DisplayOrder": 40
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_estimatedAssetsChecklist2",
+    "ListElementCode": "overFifteenMillionPounds",
+    "ListElement": "Over £15 million",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_estimatedAssetsChecklist2",
+    "ListElementCode": "betweenSevenPointFiveAndFifteenMillionPounds",
+    "ListElement": "£7.5 - £15 million",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_estimatedAssetsChecklist2",
+    "ListElementCode": "betweenOneAndSevenPointFiveMillionPounds",
+    "ListElement": "£1 - £7.5 million",
+    "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_estimatedAssetsChecklist2",
+    "ListElementCode": "underOneMillionPounds",
+    "ListElement": "Under £1 million",
+    "DisplayOrder": 4
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ms_estimatedAssetsChecklist2",
+    "ListElementCode": "unableToQuantify",
+    "ListElement": "Unable to quantify",
+    "DisplayOrder": 5
   }
 ]
