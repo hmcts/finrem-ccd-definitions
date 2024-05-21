@@ -53,32 +53,32 @@ describe('CaseTypeTab', () => {
   });
 
   const expected = {
-    "state": 1,
-    "CaseHistoryViewer": 1,
-    "ApplicantAddressConfidential-solicitor": 2,
-    "ApplicantAddressConfidential-courtadmin": 2,
-    "ApplicantAddressConfidential-judiciary": 2,
-    "RespondentAddressConfidential-solicitor": 3,
-    "RespondentAddressConfidential-courtadmin": 3,
-    "RespondentAddressConfidential-judiciary": 3,
-    "applicantDetails": 4,
-    "respondentDetails": 5,
-    "divorceDetails": 6,
-    "applicationDetails": 7,
-    "authorisation": 8,
-    "CaseDetails": 9,
-    "Approved Order": 10,
-    "PaymentDetails": 11,
-    "PaymentHistory": 12,
-    "AdminNotes": 13,
-    "CaseOrder": 14,
-    "Orders": 15,
-    "Notes": 16,
-    "Judge": 17,
-    "ChangeOfRepresentativesTab-judiciary": 18,
-    "ChangeOfRepresentativesTab-courtadmin": 19,
-    "scheduleAndListingHearingTab": 20,
-    "caseFlagsTab": 21
+    state: 1,
+    CaseHistoryViewer: 1,
+    'ApplicantAddressConfidential-solicitor': 2,
+    'ApplicantAddressConfidential-courtadmin': 2,
+    'ApplicantAddressConfidential-judiciary': 2,
+    'RespondentAddressConfidential-solicitor': 3,
+    'RespondentAddressConfidential-courtadmin': 3,
+    'RespondentAddressConfidential-judiciary': 3,
+    applicantDetails: 4,
+    respondentDetails: 5,
+    divorceDetails: 6,
+    applicationDetails: 7,
+    authorisation: 8,
+    CaseDetails: 9,
+    'Approved Order': 10,
+    PaymentDetails: 11,
+    PaymentHistory: 12,
+    AdminNotes: 13,
+    CaseOrder: 14,
+    Orders: 15,
+    Notes: 16,
+    Judge: 17,
+    'ChangeOfRepresentativesTab-judiciary': 18,
+    'ChangeOfRepresentativesTab-courtadmin': 19,
+    scheduleAndListingHearingTab: 20,
+    caseFlagsTab: 21
   };
 
   tabIds.forEach(tabId => {
@@ -120,7 +120,6 @@ describe('CaseTypeTab', () => {
       'scheduleAndListingHearingTab',
       'caseFlagsTab'
     ]);
-
   });
 
   it('should contain a valid case field IDs', () => {
