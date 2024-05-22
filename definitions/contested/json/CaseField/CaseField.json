@@ -1148,7 +1148,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "MIAMDomesticViolenceLabel",
-    "Label": "## MIAM Evidence : What evidence of domestic violence or abuse does the applicant have ?",
+    "Label": "## MIAM Evidence : What evidence of domestic abuse does the applicant have ?",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -7690,6 +7690,24 @@
     "ID": "isCfvCategoriesAppliedFlag",
     "Label": " ",
     "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cfvMigrationVersion",
+    "Label": "CFV Migration Version",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cfvSearchableMigrationVersion",
+    "Label": "CFV Migration Version",
+    "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   },
