@@ -3317,6 +3317,16 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 12,
+    "CaseFieldID": "MIAMPreviousAttendanceChecklistV2",
+    "TabFieldDisplayOrder": "75",
+    "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist CONTAINS \"previousMIAMattendance\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 12,
     "CaseFieldID": "MIAMOtherGroundsLabel",
     "TabFieldDisplayOrder": "76",
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"other\""
@@ -3330,6 +3340,16 @@
     "CaseFieldID": "MIAMOtherGroundsChecklist",
     "TabFieldDisplayOrder": "77",
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"other\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "MIAMOtherGroundsChecklistV2",
+    "TabFieldDisplayOrder": "77",
+    "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist CONTAINS \"other\""
   },
   {
     "LiveFrom": "01/01/2017",
