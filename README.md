@@ -64,6 +64,41 @@ If you prefer to make the changes directly to the Excel Configuration file, and 
 3) Once you're finished with your changes in the Excel file, convert back to JSON using `yarn generate-json-{consented/contested}`
 4) Review the JSON file changes to ensure all your changes are correct
 
+## Dependency Vulnerabilities Check
+Run this script to perform a security audit on Yarn dependencies.
+
+```bash
+./yarn-audit-with-suppressions.sh
+```
+
+## Run E2E Tests Locally
+E2E tests can be run locally, although they still use AAT.
+
+### Setup
+```bash
+yarn playwright install
+```
+Import AAT environment variables. Ask a colleague for an `e2e-aat.env` file. This should not be stored in GitHub.
+```bash
+source ./e2e-aat.env
+```
+
+In `codecept.conf.js` set the `Playwright` options `show: true` and `headless: false`.
+
+Also consider setting `retries: 0`.
+
+### Run
+To run a single test, add `@mytest` to the Scenario title. For example,
+
+`Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @mytest'...`
+
+Connect to the VPN.
+
+Execute:
+```bash
+yarn test:mytest
+```
+
 ## Verification
 
 ### Eslint is included and will verify the config is properly formatted:
@@ -129,6 +164,9 @@ https://tools.hmcts.net/confluence/display/FR/Feature+toggles+for+CCD+definition
 ## How to access a PR deployment
 
 A PR will create a full CCD/ExUI stack in the preview environment as defined in the [Helm chart](charts/finrem-ccd-definitions/values.preview.template.yaml).
+
+If you require a particular finrem-cos PR image rather than the latest production image then you should specify this
+using a GitHub label. Add a label `use-finrem-cos-pr-number` replacing `number` with the value required.
 
 GitHub will have the main URL for a PR deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.preview.platform.hmcts.net/`
 

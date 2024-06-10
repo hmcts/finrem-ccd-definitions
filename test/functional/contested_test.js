@@ -231,6 +231,85 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ 
     await I.issueApplication();
 }).retry(3);
 
+//disable in preview
+Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exemption @nightly', async ({ I }) => {
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.wait('15');
+    await I.createCase('FinancialRemedyContested', 'Form A Application');
+    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
+    await I.contestedDivorceDetails();
+    await I.contestedApplicantDetails();
+    await I.contestedRespondentDetails();
+    await I.contestedNatureOfApplication();
+    await I.fastTrack();
+    await I.complexityList();
+    await I.applyingToCourt();
+    await I.mediationQuestionNoMIAMYesExemption();
+    await I.contestedOtherDocuments();
+    await I.contestedCheckYourAnswersMIAMNotAttended('Matrimonial');
+    await I.waitForText('Form A Application', '60');
+    I.wait('15');
+    await I.manualPayment();
+    I.wait('5');
+    await I.issueApplication();
+}).retry(3);
+
+Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and No Exemption @nightly', async ({ I }) => {
+    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+    I.wait('15');
+    await I.createCase('FinancialRemedyContested', 'Form A Application');
+    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
+    await I.contestedDivorceDetails();
+    await I.contestedApplicantDetails();
+    await I.contestedRespondentDetails();
+    await I.contestedNatureOfApplication();
+    await I.fastTrack();
+    await I.complexityList();
+    await I.applyingToCourt();
+    await I.mediationQuestionNoMIAMNoExemption();
+}).retry(3);
+
+
+// DISABLED AS OF PAPER CASE BREAKING CHANGE DFR-1688
+// RE-ENABLE AS PART OF BUG FIX
+//
+// Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and Yes Exemption @nightly', async ({ I }) => {
+//     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+//     I.wait('15');
+//     await I.createPaperCase('FinancialRemedyContested', 'New Paper Case');
+//     await I.contestedCaseworkerCreatePaperCase(caRef, 'Matrimonial', true);
+//     await I.contestedDivorceDetails();
+//     await I.contestedApplicantDetails();
+//     await I.contestedRespondentDetails();
+//     await I.contestedNatureOfApplication();
+//     await I.fastTrack();
+//     await I.complexityList();
+//     await I.applyingToCourt();
+//     await I.mediationQuestionNoMIAMYesExemption();
+//     await I.contestedOtherDocumentsPaperCase();
+//     await I.contestedCheckYourAnswersMIAMNotAttended('Matrimonial');
+//     await I.waitForText('New Paper Case', '60');
+//     I.wait('15');
+//     await I.manualPayment();
+//     I.wait('5');
+//     await I.issueApplication();
+// }).retry(3);
+//
+// Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and No Exemption @nightly', async ({ I }) => {
+//     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
+//     I.wait('15');
+//     await I.createPaperCase('FinancialRemedyContested', 'New Paper Case');
+//     await I.contestedCaseworkerCreatePaperCase(caRef, 'Matrimonial', true);
+//     await I.contestedDivorceDetails();
+//     await I.contestedApplicantDetails();
+//     await I.contestedRespondentDetails();
+//     await I.contestedNatureOfApplication();
+//     await I.fastTrack();
+//     await I.complexityList();
+//     await I.applyingToCourt();
+//     await I.mediationQuestionNoMIAMNoExemption();
+// }).retry(3);
+
 Scenario.skip('progress to listing for contested case @nightly', async ({ I }) => {
 
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');

@@ -11,17 +11,19 @@ import java.util.List;
 public class CategoriesAssignDisplayOrder {
 
     public void assignDisplayOrders() {
-        String filePath = "src/test/java/finrem/cfv/Categories.json";
+        String filePath = "definitions/contested/json/CaseTypeTab/CaseTypeTab.json";
 
         try {
             // Load the JSON file
             ObjectMapper objectMapper = new ObjectMapper();
             List<LinkedHashMap> jsonData = objectMapper.readValue(new FileReader(filePath), List.class);
-
+            int j = 1;
             for (int i = 0; i < jsonData.size(); i++) {
                 LinkedHashMap entry = jsonData.get(i);
-                entry.put("DisplayOrder", (String.valueOf(i + 1)));
-
+                if ("applicationDocumentsTab5".equals(String.valueOf(entry.get("TabID")))) {
+                    entry.put("TabFieldDisplayOrder", (String.valueOf(j)));
+                    j += 1;
+                }
             }
             // Save the modified and ordered JSON back to the file
             objectMapper.writeValue(new FileWriter(filePath), jsonData);

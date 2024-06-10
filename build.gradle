@@ -37,7 +37,7 @@ pmd {
 // region test coverage
 
 jacoco {
-    toolVersion = "0.8.11"
+    toolVersion = "0.8.12"
 }
 
 jacocoTestReport {
@@ -68,17 +68,17 @@ dependencies {
     testImplementation(platform(group: 'org.junit', name: 'junit-bom', version: '5.10.2'))
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter'
 
-    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.25.3'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.26.0'
 
-    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.16.1'
-    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.16.1'
-    testImplementation group: 'commons-io', name: 'commons-io', version: '2.15.1'
-    testImplementation group: 'com.github.hmcts', name: 'ccd-test-definitions', version: '7.21.13'
-    testImplementation group: 'com.github.hmcts', name: 'befta-fw', version: '8.9.0', {
+    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.17.1'
+    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.17.1'
+    testImplementation group: 'commons-io', name: 'commons-io', version: '2.16.1'
+    testImplementation group: 'com.github.hmcts', name: 'befta-fw', version: '8.10.1', {
         exclude group: 'junit', module: 'junit'
     }
+    testImplementation group: 'com.github.hmcts', name: 'ccd-test-definitions', version: '7.21.22'
 
-    testRuntimeOnly group: 'org.glassfish', name: 'jakarta.el', version: '3.0.4'
-    testImplementation group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
-    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+    testRuntimeOnly group: 'org.glassfish', name: 'jakarta.el', version: '4.0.2'
+    testImplementation group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
 }

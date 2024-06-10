@@ -667,9 +667,121 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableDomesticAbuseMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableUrgencyMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailablePreviousAttendanceMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableOtherGroundsMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "additionalInfoOtherGroundsMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "additionalInfoOtherGroundsMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableDomesticAbuseMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableUrgencyMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailablePreviousAttendanceMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableOtherGroundsMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableMIAMTabLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "additionalInfoMIAMTabLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "applicantAttendedMIAMLabel",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantAttendedMIAMYesLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantAttendedMIAMNoLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "claimingExemptionMIAMYesLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "claimingExemptionMIAMNoLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -807,7 +919,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "MIAMCertificationPageMessage",
+    "CaseFieldID": "MIAMCertificationPageMessagePaperCase",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "MIAMCertificationPageMessageFormA",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
@@ -822,6 +941,20 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "familyMediatorServiceName",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "uploadMediatorDocument",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "uploadMediatorDocumentPaperCase",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
@@ -2417,6 +2550,34 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantAttendedMIAMYesLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantAttendedMIAMNoLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "claimingExemptionMIAMYesLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "claimingExemptionMIAMNoLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "applicantAttendedMIAMLabel",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -2425,6 +2586,90 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "applicantAttendedMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableMIAMTabLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "additionalInfoMIAMTabLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableDomesticAbuseMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableUrgencyMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailablePreviousAttendanceMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableOtherGroundsMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "additionalInfoOtherGroundsMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "additionalInfoOtherGroundsMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableDomesticAbuseMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableUrgencyMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailablePreviousAttendanceMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableOtherGroundsMIAM",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
@@ -2557,7 +2802,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "MIAMCertificationPageMessage",
+    "CaseFieldID": "MIAMCertificationPageMessagePaperCase",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "MIAMCertificationPageMessageFormA",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
@@ -2572,6 +2824,20 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "familyMediatorServiceName",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "uploadMediatorDocument",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "uploadMediatorDocumentPaperCase",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
@@ -3436,7 +3702,7 @@
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
   },
-    {
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "solicitorResponsibleForDraftingOrderLabel",
@@ -4533,7 +4799,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "divorceUploadEvidence1",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4547,7 +4813,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "divorceUploadEvidence2",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4561,7 +4827,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "divorceUploadPetition",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4700,6 +4966,118 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "orderForChildrenLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableMIAMTabLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "additionalInfoMIAMTabLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableDomesticAbuseMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableUrgencyMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailablePreviousAttendanceMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableOtherGroundsMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "additionalInfoOtherGroundsMIAMLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "additionalInfoOtherGroundsMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableDomesticAbuseMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableUrgencyMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailablePreviousAttendanceMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "evidenceUnavailableOtherGroundsMIAM",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantAttendedMIAMYesLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantAttendedMIAMNoLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "claimingExemptionMIAMYesLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "claimingExemptionMIAMNoLabel",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
@@ -4846,7 +5224,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "MIAMCertificationPageMessage",
+    "CaseFieldID": "MIAMCertificationPageMessagePaperCase",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "MIAMCertificationPageMessageFormA",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
@@ -4861,6 +5246,20 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "familyMediatorServiceName",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "uploadMediatorDocument",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "uploadMediatorDocumentPaperCase",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
@@ -4932,7 +5331,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadAdditionalDocument",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4953,7 +5352,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadConsentedOrder",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5394,7 +5793,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "consentMiniFormA",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5674,14 +6073,14 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadCaseDocument",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadGeneralDocuments",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5716,7 +6115,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadOrder",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5746,7 +6145,7 @@
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
   },
-   {
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "solicitorResponsibleForDraftingOrderLabel",
@@ -5996,21 +6395,21 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "uploadHearingOrder",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "directionDetailsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "directionDetailsCollectionInterim",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6031,7 +6430,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "finalOrderCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6059,7 +6458,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalEmailCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6491,6 +6890,13 @@
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalLetterUploadedDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalLetterPreview",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
@@ -6771,6 +7177,13 @@
   {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalLetterUploadedDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalLetterPreview",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -6820,6 +7233,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "consentedNotApprovedOrders",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appCorrespondenceCollection",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
@@ -6836,7 +7256,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appCorrespondenceCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6857,7 +7277,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appFRFormsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6878,7 +7298,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appEvidenceCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6899,7 +7319,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appTrialBundleCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6920,7 +7340,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respCorrespondenceCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6941,7 +7361,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respFRFormsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6962,7 +7382,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respEvidenceCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6983,7 +7403,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respTrialBundleCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7207,7 +7627,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7977,7 +8397,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appConfidentialDocsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7998,7 +8418,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respConfidentialDocsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8019,7 +8439,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appHearingBundlesCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8040,7 +8460,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appFormEExhibitsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8061,7 +8481,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appChronologiesCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8082,7 +8502,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appQACollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8103,7 +8523,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appStatementsExhibitsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8124,7 +8544,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appCaseSummariesCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8145,7 +8565,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appFormsHCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8166,7 +8586,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appExpertEvidenceCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8187,7 +8607,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appCorrespondenceDocsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8208,7 +8628,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "appOtherCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8229,7 +8649,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respHearingBundlesCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8250,7 +8670,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respFormEExhibitsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8271,7 +8691,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respChronologiesCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8292,7 +8712,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respQACollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8313,7 +8733,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respStatementsExhibitsCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8334,7 +8754,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respCaseSummariesCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8355,7 +8775,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respFormsHCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8376,7 +8796,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respExpertEvidenceCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8418,7 +8838,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respOtherCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -9902,7 +10322,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "interimUploadAdditionalDocument",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "09/11/2021",
@@ -10560,26 +10980,47 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "fdrCaseDocumentCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "interimHearings",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "interimHearings",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CRUD"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "09/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "interimHearings",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "interimHearingsScreenField",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "interimHearingsScreenField",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "interimHearingsScreenField",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
@@ -10658,7 +11099,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "manageCaseDocumentCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -10679,7 +11120,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "manageScannedDocumentCollection",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
+    "CRUD": "RU"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -11039,11 +11480,11 @@
     "CRUD": "CRUD"
   },
   {
-  "LiveFrom": "01/01/2017",
-  "CaseTypeID": "FinancialRemedyContested",
-  "CaseFieldID": "respBarristerCollection",
-  "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-  "CRUD": "CRUD"
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respBarristerCollection",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -11151,11 +11592,11 @@
     "CRUD": "CRUD"
   },
   {
-  "LiveFrom": "01/01/2017",
-  "CaseTypeID": "FinancialRemedyContested",
-  "CaseFieldID": "intvr3BarristerCollection",
-  "UserRole": "[INTVRSOLICITOR4]",
-  "CRUD": "R"
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "intvr3BarristerCollection",
+    "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -17477,5 +17918,69 @@
     "CaseFieldID": "isCfvCategoriesAppliedFlag",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isCfvCategoriesAppliedFlag",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "cfvMigrationVersion",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "cfvSearchableMigrationVersion",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "caseFileViewComponentLauncher",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "tabEstimatedAssetsCheckList2",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "tabEstimatedAssetsCheckList2",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsChecklistV2",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsChecklistV2",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsChecklistV2",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
   }
 ]
