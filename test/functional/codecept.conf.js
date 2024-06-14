@@ -4,10 +4,10 @@ exports.config = {
   helpers: {
     Playwright: {
       url: "http://localhost:3000",
-      headless: true,
+      headless: false,
       browser: 'chromium',
       waitForAction: 350,
-      retries: 5,
+      retries: 0,
       waitForNavigation: 'load',
       ignoreHTTPSErrors: true,
       bypassCSP: true,

@@ -13,6 +13,19 @@ async function waitForPage(header, headerText) {
   }
 }
 
+
+async function waitForInterpolatedHeader(header, headerText) {
+  const I = this;
+  let tryAttempt = 0;
+
+  try {
+    await I.waitForText(headerText, '10', header);
+  } catch (error) {
+    await I.refreshPage();
+    await I.waitForText(headerText, '10', header);
+  }
+}
+
 function waitForContinueButtonEnabled() {
   const I = this;
 
@@ -20,4 +33,4 @@ function waitForContinueButtonEnabled() {
   //I.scrollTo('button[type = "submit"]:not(:disabled)');
 }
 
-module.exports = { waitForPage, waitForContinueButtonEnabled };
+module.exports = { waitForPage, waitForContinueButtonEnabled, waitForInterpolatedHeader };
