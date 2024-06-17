@@ -4,17 +4,17 @@ exports.config = {
   helpers: {
     Playwright: {
       url: "http://localhost:3000",
-      headless: false,
+      headless: true,
       browser: 'chromium',
       waitForAction: 350,
-      retries: 0,
+      retries: 5,
       waitForNavigation: 'load',
       ignoreHTTPSErrors: true,
       bypassCSP: true,
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
-      },
+    },
 
     PlaywrightHelper: { require: '../helpers/PlaywrightHelper.js' },
       'JSWait': {
