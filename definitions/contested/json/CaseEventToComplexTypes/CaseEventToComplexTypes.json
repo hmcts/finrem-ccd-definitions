@@ -1072,7 +1072,7 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationSender",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "1",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -1104,7 +1104,7 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationHearingRequired",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -1114,7 +1114,7 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationTimeEstimate",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "FieldShowCondition": "generalApplications.generalApplicationHearingRequired=\"Yes\"",
     "DisplayContext": "MANDATORY"
   },
@@ -1125,8 +1125,18 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationSpecialMeasures",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "4",
     "FieldShowCondition": "generalApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "generalApplications",
+    "ListElementCode": "generalApplicationDraftOrder",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "5",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -1136,18 +1146,8 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "generalApplicationDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "6",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "createGeneralApplications",
-    "CaseEventID": "createGeneralApplication",
-    "CaseFieldID": "generalApplications",
-    "ListElementCode": "generalApplicationDraftOrder",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1156,7 +1156,7 @@
     "CaseFieldID": "generalApplications",
     "ListElementCode": "gaSupportDocuments.supportDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "7",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -1404,7 +1404,7 @@
     "CaseFieldID": "intervener1GeneralApplications",
     "ListElementCode": "generalApplicationHearingRequired",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "1",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -1414,7 +1414,7 @@
     "CaseFieldID": "intervener1GeneralApplications",
     "ListElementCode": "generalApplicationTimeEstimate",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "FieldShowCondition": "intervener1GeneralApplications.generalApplicationHearingRequired=\"Yes\"",
     "DisplayContext": "MANDATORY"
   },
@@ -1425,8 +1425,18 @@
     "CaseFieldID": "intervener1GeneralApplications",
     "ListElementCode": "generalApplicationSpecialMeasures",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "FieldShowCondition": "intervener1GeneralApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "intervener1GeneralApplications",
+    "ListElementCode": "generalApplicationDraftOrder",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "4",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -1436,18 +1446,8 @@
     "CaseFieldID": "intervener1GeneralApplications",
     "ListElementCode": "generalApplicationDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "5",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "createGeneralApplications",
-    "CaseEventID": "createGeneralApplication",
-    "CaseFieldID": "intervener1GeneralApplications",
-    "ListElementCode": "generalApplicationDraftOrder",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1456,7 +1456,7 @@
     "CaseFieldID": "intervener1GeneralApplications",
     "ListElementCode": "gaSupportDocuments.supportDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "6",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -1704,7 +1704,7 @@
     "CaseFieldID": "intervener2GeneralApplications",
     "ListElementCode": "generalApplicationHearingRequired",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "1",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -1714,7 +1714,7 @@
     "CaseFieldID": "intervener2GeneralApplications",
     "ListElementCode": "generalApplicationTimeEstimate",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "FieldShowCondition": "intervener2GeneralApplications.generalApplicationHearingRequired=\"Yes\"",
     "DisplayContext": "MANDATORY"
   },
@@ -1725,8 +1725,18 @@
     "CaseFieldID": "intervener2GeneralApplications",
     "ListElementCode": "generalApplicationSpecialMeasures",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "FieldShowCondition": "intervener2GeneralApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "intervener2GeneralApplications",
+    "ListElementCode": "generalApplicationDraftOrder",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "4",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -1736,18 +1746,8 @@
     "CaseFieldID": "intervener2GeneralApplications",
     "ListElementCode": "generalApplicationDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "5",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "createGeneralApplications",
-    "CaseEventID": "createGeneralApplication",
-    "CaseFieldID": "intervener2GeneralApplications",
-    "ListElementCode": "generalApplicationDraftOrder",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -1756,7 +1756,7 @@
     "CaseFieldID": "intervener2GeneralApplications",
     "ListElementCode": "gaSupportDocuments.supportDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "6",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -2004,7 +2004,7 @@
     "CaseFieldID": "intervener3GeneralApplications",
     "ListElementCode": "generalApplicationHearingRequired",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "1",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -2014,7 +2014,7 @@
     "CaseFieldID": "intervener3GeneralApplications",
     "ListElementCode": "generalApplicationTimeEstimate",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "FieldShowCondition": "intervener3GeneralApplications.generalApplicationHearingRequired=\"Yes\"",
     "DisplayContext": "MANDATORY"
   },
@@ -2025,8 +2025,18 @@
     "CaseFieldID": "intervener3GeneralApplications",
     "ListElementCode": "generalApplicationSpecialMeasures",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "FieldShowCondition": "intervener3GeneralApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "intervener3GeneralApplications",
+    "ListElementCode": "generalApplicationDraftOrder",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "4",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -2036,18 +2046,8 @@
     "CaseFieldID": "intervener3GeneralApplications",
     "ListElementCode": "generalApplicationDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "5",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "createGeneralApplications",
-    "CaseEventID": "createGeneralApplication",
-    "CaseFieldID": "intervener3GeneralApplications",
-    "ListElementCode": "generalApplicationDraftOrder",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2056,7 +2056,7 @@
     "CaseFieldID": "intervener3GeneralApplications",
     "ListElementCode": "gaSupportDocuments.supportDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "6",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -2304,7 +2304,7 @@
     "CaseFieldID": "intervener4GeneralApplications",
     "ListElementCode": "generalApplicationHearingRequired",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "1",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -2314,7 +2314,7 @@
     "CaseFieldID": "intervener4GeneralApplications",
     "ListElementCode": "generalApplicationTimeEstimate",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "FieldShowCondition": "intervener4GeneralApplications.generalApplicationHearingRequired=\"Yes\"",
     "DisplayContext": "MANDATORY"
   },
@@ -2325,8 +2325,18 @@
     "CaseFieldID": "intervener4GeneralApplications",
     "ListElementCode": "generalApplicationSpecialMeasures",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "FieldShowCondition": "intervener4GeneralApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "intervener4GeneralApplications",
+    "ListElementCode": "generalApplicationDraftOrder",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "4",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -2336,18 +2346,8 @@
     "CaseFieldID": "intervener4GeneralApplications",
     "ListElementCode": "generalApplicationDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "5",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "createGeneralApplications",
-    "CaseEventID": "createGeneralApplication",
-    "CaseFieldID": "intervener4GeneralApplications",
-    "ListElementCode": "generalApplicationDraftOrder",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2356,7 +2356,7 @@
     "CaseFieldID": "intervener4GeneralApplications",
     "ListElementCode": "gaSupportDocuments.supportDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "6",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -2560,7 +2560,7 @@
     "CaseFieldID": "appRespGeneralApplications",
     "ListElementCode": "generalApplicationReceivedFrom",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "1",
     "DisplayContext": "MANDATORY",
     "FieldShowCondition": "currentUserCaseRoleType=\"case\""
   },
@@ -2571,7 +2571,7 @@
     "CaseFieldID": "appRespGeneralApplications",
     "ListElementCode": "generalApplicationSender",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "DisplayContext": "MANDATORY",
     "FieldShowCondition": "currentUserCaseRoleType=\"case\""
   },
@@ -2582,7 +2582,7 @@
     "CaseFieldID": "appRespGeneralApplications",
     "ListElementCode": "appRespGeneralApplicationReceivedFrom",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -2592,7 +2592,7 @@
     "CaseFieldID": "appRespGeneralApplications",
     "ListElementCode": "generalApplicationCreatedBy",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "4",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "generalApplicationCreatedBy=\"IMPOSSIBLE\""
   },
@@ -2603,7 +2603,7 @@
     "CaseFieldID": "appRespGeneralApplications",
     "ListElementCode": "generalApplicationHearingRequired",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "5",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -2613,7 +2613,7 @@
     "CaseFieldID": "appRespGeneralApplications",
     "ListElementCode": "generalApplicationTimeEstimate",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "6",
     "FieldShowCondition": "appRespGeneralApplications.generalApplicationHearingRequired=\"Yes\"",
     "DisplayContext": "MANDATORY"
   },
@@ -2624,8 +2624,18 @@
     "CaseFieldID": "appRespGeneralApplications",
     "ListElementCode": "generalApplicationSpecialMeasures",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "7",
     "FieldShowCondition": "appRespGeneralApplications.generalApplicationHearingRequired=\"Yes\"",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "createGeneralApplications",
+    "CaseEventID": "createGeneralApplication",
+    "CaseFieldID": "appRespGeneralApplications",
+    "ListElementCode": "generalApplicationDraftOrder",
+    "EventElementLabel": "",
+    "FieldDisplayOrder": "8",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -2635,18 +2645,8 @@
     "CaseFieldID": "appRespGeneralApplications",
     "ListElementCode": "generalApplicationDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "9",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "createGeneralApplications",
-    "CaseEventID": "createGeneralApplication",
-    "CaseFieldID": "appRespGeneralApplications",
-    "ListElementCode": "generalApplicationDraftOrder",
-    "EventElementLabel": "",
-    "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -2655,7 +2655,7 @@
     "CaseFieldID": "appRespGeneralApplications",
     "ListElementCode": "gaSupportDocuments.supportDocument",
     "EventElementLabel": "",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "10",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3160,6 +3160,16 @@
     "EventElementLabel": "Intervener's Full Name",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1",
+    "ListElementCode": "intervenerResideOutsideUK",
+    "EventElementLabel": "Does the intervener live outside of the UK?",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -3375,6 +3385,16 @@
     "ID": "manageInterveners",
     "CaseEventID": "manageInterveners",
     "CaseFieldID": "intervener2",
+    "ListElementCode": "intervenerResideOutsideUK",
+    "EventElementLabel": "Does the intervener live outside of the UK?",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2",
     "ListElementCode": "intervenerAddress",
     "EventElementLabel": "Intervener's Address",
     "FieldDisplayOrder": "",
@@ -3584,6 +3604,16 @@
     "ID": "manageInterveners",
     "CaseEventID": "manageInterveners",
     "CaseFieldID": "intervener3",
+    "ListElementCode": "intervenerResideOutsideUK",
+    "EventElementLabel": "Does the intervener live outside of the UK?",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3",
     "ListElementCode": "intervenerAddress",
     "EventElementLabel": "Intervener's Address",
     "FieldDisplayOrder": "",
@@ -3787,6 +3817,16 @@
     "EventElementLabel": "Intervener's Full Name",
     "FieldDisplayOrder": "",
     "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4",
+    "ListElementCode": "intervenerResideOutsideUK",
+    "EventElementLabel": "Does the intervener live outside of the UK?",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "05/08/2020",
