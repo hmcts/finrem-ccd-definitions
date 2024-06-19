@@ -14,7 +14,7 @@ exports.config = {
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
-      },
+    },
 
     PlaywrightHelper: { require: '../helpers/PlaywrightHelper.js' },
       'JSWait': {
