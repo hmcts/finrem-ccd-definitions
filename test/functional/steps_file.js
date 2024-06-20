@@ -44,6 +44,7 @@ const {giveAllocationDirection} = require('./pages/give-allocation-direction/giv
 const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
 const {manageIntervenersAdd} = require('./pages/manage-interveners/manage-interveners-add');
 const {manageIntervenersRemove} = require('./pages/manage-interveners/manage-interveners-remove');
+const {manageIntervenersAmend} = require('./pages/manage-interveners/manage-interveners-amend');
 const {addNote} = require('./pages/add-note/add-note');
 const {refundCase} = require('./pages/refund-case/refund-case');
 const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-order');
@@ -189,6 +190,7 @@ module.exports = () => {
     updateContactDetails,
     manageIntervenersAdd,
     manageIntervenersRemove,
+    manageIntervenersAmend,
     contestedIntervenersTab,
     refundCase,
     addNote,
