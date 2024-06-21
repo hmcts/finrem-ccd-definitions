@@ -2425,7 +2425,7 @@
     "PageColumnNumber": 1,
     "PageShowCondition": "helpWithFeesQuestion=\"No\"",
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/pba-validate",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
