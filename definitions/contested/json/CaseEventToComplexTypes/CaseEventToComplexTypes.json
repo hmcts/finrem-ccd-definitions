@@ -421,6 +421,16 @@
   },
   {
     "LiveFrom": "05/08/2020",
+    "ID": "FR_updateContactDetails",
+    "CaseEventID": "FR_updateContactDetails",
+    "CaseFieldID": "applicantAddress",
+    "ListElementCode": "applicantAddress.PostCode",
+    "EventElementLabel": "Postcode/Zipcode",
+    "FieldDisplayOrder": "",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
     "ID": "FR_amendApplication",
     "CaseEventID": "FR_amendApplication",
     "CaseFieldID": "RespondentOrganisationPolicy",
