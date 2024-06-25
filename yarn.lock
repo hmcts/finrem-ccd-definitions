@@ -51,7 +51,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@azure/core-client@npm:^1.3.0, @azure/core-client@npm:^1.4.0, @azure/core-client@npm:^1.5.0":
+"@azure/core-client@npm:^1.3.0, @azure/core-client@npm:^1.5.0":
   version: 1.8.0
   resolution: "@azure/core-client@npm:1.8.0"
   dependencies:
@@ -63,6 +63,21 @@ __metadata:
     "@azure/logger": ^1.0.0
     tslib: ^2.2.0
   checksum: 0527f17cbae93f7f73c9f2176e583c9c90078c362170abef252438adea108c76862596570d9be175b8538377214771ca166bca8c72abeb1461257db91e02aad7
+  languageName: node
+  linkType: hard
+
+"@azure/core-client@npm:^1.9.2":
+  version: 1.9.2
+  resolution: "@azure/core-client@npm:1.9.2"
+  dependencies:
+    "@azure/abort-controller": ^2.0.0
+    "@azure/core-auth": ^1.4.0
+    "@azure/core-rest-pipeline": ^1.9.1
+    "@azure/core-tracing": ^1.0.0
+    "@azure/core-util": ^1.6.1
+    "@azure/logger": ^1.0.0
+    tslib: ^2.6.2
+  checksum: 961b829dfda4f734a763e9480a2ea622a7031ba2da4126d0add6e351a9f73ddc5782bf2b766735d976b61da3857014e0a90223d1f85d1c68468747a7a56851c3
   languageName: node
   linkType: hard
 
@@ -133,13 +148,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@azure/core-util@npm:^1.6.1":
+  version: 1.9.0
+  resolution: "@azure/core-util@npm:1.9.0"
+  dependencies:
+    "@azure/abort-controller": ^2.0.0
+    tslib: ^2.6.2
+  checksum: 9246dc5bd246e7b94883ea8130fce04e2f22abd1e94afcff7a3e92a4c2da5e9b382dbf89a606b21d70bc8b01c7c89c84e803ca9da27f78d87f72bdff91ec7380
+  languageName: node
+  linkType: hard
+
 "@azure/identity@npm:^4.2.1":
-  version: 4.2.1
-  resolution: "@azure/identity@npm:4.2.1"
+  version: 4.3.0
+  resolution: "@azure/identity@npm:4.3.0"
   dependencies:
     "@azure/abort-controller": ^1.0.0
     "@azure/core-auth": ^1.5.0
-    "@azure/core-client": ^1.4.0
+    "@azure/core-client": ^1.9.2
     "@azure/core-rest-pipeline": ^1.1.0
     "@azure/core-tracing": ^1.0.0
     "@azure/core-util": ^1.3.0
@@ -151,7 +176,7 @@ __metadata:
     open: ^8.0.0
     stoppable: ^1.1.0
     tslib: ^2.2.0
-  checksum: 2dbd7b0fa6b92904b7b8f828374d7316384cc4e00c71cdac3a2f2544b9e02c7287fe7ad58149bb8794c57913d77a927f5a7b5d1367e05abe82b0f2e1b162415c
+  checksum: 7f4256b39c4e27bf072c33f02dd63bd50dcf54ad578e3e483dcf89283546a6086b1640adfe4c93a537cbe483dd2e3a29f6d7b837e51f333229f7bbbc448966b3
   languageName: node
   linkType: hard
 
@@ -1271,15 +1296,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cucumber/messages@npm:24.1.0":
-  version: 24.1.0
-  resolution: "@cucumber/messages@npm:24.1.0"
+"@cucumber/messages@npm:25.0.1":
+  version: 25.0.1
+  resolution: "@cucumber/messages@npm:25.0.1"
   dependencies:
     "@types/uuid": 9.0.8
     class-transformer: 0.5.1
-    reflect-metadata: 0.2.1
+    reflect-metadata: 0.2.2
     uuid: 9.0.1
-  checksum: 9c82968394f7ff046a0d389dd4b90e5bef78b9b1045504de45abcdc9b53ca6143211c9bf92a86034ea63dccb1476cab892eebdfe6d4eecfc6731a82e2f7dea8d
+  checksum: c3a428d7e30f4e479b94cd90dbe2c89ab30d5517af49f71e9268939bafe67d7c22b1fddaa858e5ed33cc9f92dad9cec8b1f677fcb46d174d8caef9d20ed13c8a
   languageName: node
   linkType: hard
 
@@ -3411,14 +3436,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chai-exclude@npm:2.1.0":
-  version: 2.1.0
-  resolution: "chai-exclude@npm:2.1.0"
+"chai-exclude@npm:2.1.1":
+  version: 2.1.1
+  resolution: "chai-exclude@npm:2.1.1"
   dependencies:
     fclone: ^1.0.11
   peerDependencies:
     chai: ">= 4.0.0 < 5"
-  checksum: 29d964d9f667bd2c8e0e5e597c299550ff13e41b737450d6f91aa4a28064e24f034c1296c85a1d0ba5ebc2a01188f4147dc60bda0f46382f8fb851052f770bb3
+  checksum: b9445387d8bec33dfa354c50e291618741d9150b6fbe0efb2ea72ce17560f36a998d6299a5622a10f25928098906c89801424bbfdccd8946eca00de593693027
   languageName: node
   linkType: hard
 
@@ -3584,6 +3609,25 @@ __metadata:
     fsevents:
       optional: true
   checksum: b49fcde40176ba007ff361b198a2d35df60d9bb2a5aab228279eb810feae9294a6b4649ab15981304447afe1e6ffbf4788ad5db77235dc770ab777c6e771980c
+  languageName: node
+  linkType: hard
+
+"chokidar@npm:^3.5.3":
+  version: 3.6.0
+  resolution: "chokidar@npm:3.6.0"
+  dependencies:
+    anymatch: ~3.1.2
+    braces: ~3.0.2
+    fsevents: ~2.3.2
+    glob-parent: ~5.1.2
+    is-binary-path: ~2.1.0
+    is-glob: ~4.0.1
+    normalize-path: ~3.0.0
+    readdirp: ~3.6.0
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  checksum: d2f29f499705dcd4f6f3bbed79a9ce2388cf530460122eed3b9c48efeab7a4e28739c6551fd15bec9245c6b9eeca7a32baa64694d64d9b6faeb74ddb8c4a413d
   languageName: node
   linkType: hard
 
@@ -3784,22 +3828,22 @@ __metadata:
   linkType: hard
 
 "codeceptjs@npm:^3.5.12":
-  version: 3.6.3
-  resolution: "codeceptjs@npm:3.6.3"
+  version: 3.6.4
+  resolution: "codeceptjs@npm:3.6.4"
   dependencies:
     "@codeceptjs/configure": 1.0.1
     "@codeceptjs/detox-helper": 1.0.7
     "@codeceptjs/helper": 2.0.4
     "@cucumber/cucumber-expressions": 17
     "@cucumber/gherkin": 26
-    "@cucumber/messages": 24.1.0
+    "@cucumber/messages": 25.0.1
     "@xmldom/xmldom": 0.8.10
     acorn: 8.11.3
     arrify: 2.0.1
     axios: 1.7.2
     chai: 5.1.1
     chai-deep-match: 1.2.1
-    chai-exclude: 2.1.0
+    chai-exclude: 2.1.1
     chai-json-schema: 1.5.1
     chai-json-schema-ajv: 5.2.4
     chai-match-pattern: 1.3.0
@@ -3818,7 +3862,7 @@ __metadata:
     glob: 6.0.1
     html-minifier-terser: 7.2.0
     inquirer: 6.5.2
-    joi: 17.13.0
+    joi: 17.13.1
     js-beautify: 1.15.1
     lodash.clonedeep: 4.5.0
     lodash.merge: 4.6.2
@@ -3839,7 +3883,7 @@ __metadata:
       optional: true
   bin:
     codeceptjs: bin/codecept.js
-  checksum: 77d2463930e9f068aed6ea89aebc317ca286a44355506cf5835e90b323430e53e08a3380cdd90d882e687ce96ccfb72ad7ab118237075b601a0ae7fec14add78
+  checksum: 1d5f9f74fde27e88d4741094c30b73c1cec8b89ad931598512c9317a05c5bc89447f63b72abe6bdb49aba336e7c3bb93cbac267810d7c72d205b31da1beaf411
   languageName: node
   linkType: hard
 
@@ -7006,16 +7050,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:17.13.0":
-  version: 17.13.0
-  resolution: "joi@npm:17.13.0"
+"joi@npm:17.13.1":
+  version: 17.13.1
+  resolution: "joi@npm:17.13.1"
   dependencies:
     "@hapi/hoek": ^9.3.0
     "@hapi/topo": ^5.1.0
     "@sideway/address": ^4.1.5
     "@sideway/formula": ^3.0.1
     "@sideway/pinpoint": ^2.0.0
-  checksum: ecde54b0705f21929939a72e958d96ba7dd2a6578ba7bf711c060f54b765a081dc67d09f7f4761a76cc4d659f6d880dca72287200801dc51485a350795131f84
+  checksum: e755140446a0e0fb679c0f512d20dfe1625691de368abe8069507c9bccae5216b5bb56b5a83100a600808b1753ab44fdfdc9933026268417f84b6e0832a9604e
   languageName: node
   linkType: hard
 
@@ -8308,10 +8352,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minipass@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "minipass@npm:7.1.0"
-  checksum: c057d4b1d7fdb35b8f4b9d8f627b1f6832c441cd7dff9304ee5efef68abb3b460309bf97b1b0ce5b960e259caa53c724f609d058e4dc12d547e2a074aaae2cd6
+"minipass@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "minipass@npm:7.1.2"
+  checksum: 2bfd325b95c555f2b4d2814d49325691c7bee937d753814861b0b49d5edcda55cbbf22b6b6a60bb91eddac8668771f03c5ff647dcd9d0f798e9548b9cdc46ee3
   languageName: node
   linkType: hard
 
@@ -8378,7 +8422,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mocha@npm:10.4.0, mocha@npm:^10.2.0":
+"mocha@npm:10.4.0":
   version: 10.4.0
   resolution: "mocha@npm:10.4.0"
   dependencies:
@@ -8406,6 +8450,37 @@ __metadata:
     _mocha: bin/_mocha
     mocha: bin/mocha.js
   checksum: 090771d6d42a65a934c7ed448d524bcc663836351af9f0678578caa69943b01a9535a73192d24fd625b3fdb5979cce5834dfe65e3e1ee982444d65e19975b81c
+  languageName: node
+  linkType: hard
+
+"mocha@npm:^10.2.0":
+  version: 10.5.0
+  resolution: "mocha@npm:10.5.0"
+  dependencies:
+    ansi-colors: 4.1.1
+    browser-stdout: 1.3.1
+    chokidar: ^3.5.3
+    debug: 4.3.4
+    diff: 5.0.0
+    escape-string-regexp: 4.0.0
+    find-up: 5.0.0
+    glob: 8.1.0
+    he: 1.2.0
+    js-yaml: 4.1.0
+    log-symbols: 4.1.0
+    minimatch: 5.0.1
+    ms: 2.1.3
+    serialize-javascript: 6.0.0
+    strip-json-comments: 3.1.1
+    supports-color: 8.1.1
+    workerpool: 6.2.1
+    yargs: 16.2.0
+    yargs-parser: 20.2.4
+    yargs-unparser: 2.0.0
+  bin:
+    _mocha: bin/_mocha
+    mocha: bin/mocha.js
+  checksum: fb9dbd13566d408a000142adefdbef809bcafa0f0a3161d6d3cdaf1e57a930877b012d2146b709ca994c315a6b914526c6420779f01aafee2b515f57163fee44
   languageName: node
   linkType: hard
 
@@ -9390,27 +9465,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.44.1":
-  version: 1.44.1
-  resolution: "playwright-core@npm:1.44.1"
+"playwright-core@npm:1.45.0":
+  version: 1.45.0
+  resolution: "playwright-core@npm:1.45.0"
   bin:
     playwright-core: cli.js
-  checksum: ebc6fa0ff77792fe52648fda06cc4474d4e9746db6dc5750d262b7fe2caf9f9e2327a71f1fb365e862213403a9daf95361c5040a9b0fd462928d7eb4fdc760e1
+  checksum: e81a55eeefa997fcb559527127c9cefbbabe81f196de486224e6c2a3a66852dab883379ff28a05b8008fb0ad4992840ad53c2415cee27e2d1778836210d9248e
   languageName: node
   linkType: hard
 
 "playwright@npm:^1.41.2":
-  version: 1.44.1
-  resolution: "playwright@npm:1.44.1"
+  version: 1.45.0
+  resolution: "playwright@npm:1.45.0"
   dependencies:
     fsevents: 2.3.2
-    playwright-core: 1.44.1
+    playwright-core: 1.45.0
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: c2e8ff0a855e4a9e665ae5ffa0ff90423289546157be55e83f78916d17075c5910a7244773739c2a973da884a4ff0b3cf9b6e6b543de112e43b12169a9208e86
+  checksum: 2a5f827fdcc90f1ec0ea4d9e4f2021ae894df88d3c0577677a81f72a09d91fb15584346e63ec2f85bfc24f872976ff2a76cee6ca7d7f29a8cc3159ced4f25b50
   languageName: node
   linkType: hard
 
@@ -9962,10 +10037,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reflect-metadata@npm:0.2.1":
-  version: 0.2.1
-  resolution: "reflect-metadata@npm:0.2.1"
-  checksum: 772f552a544e04b999c1bf2c868225fef10032274e9d9e315bc3e7a687a504b8b115fa71966665b9619acfd323123a941f892b593250140da809330d41564181
+"reflect-metadata@npm:0.2.2":
+  version: 0.2.2
+  resolution: "reflect-metadata@npm:0.2.2"
+  checksum: a66c7b583e4efdd8f3c3124fbff33da2d0c86d8280617516308b32b2159af7a3698c961db3246387f56f6316b1d33a608f39bb2b49d813316dfc58f6d3bf3210
   languageName: node
   linkType: hard
 
@@ -11088,16 +11163,16 @@ __metadata:
   linkType: hard
 
 "tar@npm:^7.0.0":
-  version: 7.2.0
-  resolution: "tar@npm:7.2.0"
+  version: 7.4.0
+  resolution: "tar@npm:7.4.0"
   dependencies:
     "@isaacs/fs-minipass": ^4.0.0
     chownr: ^3.0.0
-    minipass: ^7.1.0
+    minipass: ^7.1.2
     minizlib: ^3.0.1
     mkdirp: ^3.0.1
     yallist: ^5.0.0
-  checksum: 5e0bf32a1309b1d0efa65a3017b1bc892518e7af563afd7cc3819a279e31db8cd9660ae5159c356934c9aa88f209dd3c760b07b87de21f38b47655aeae3ddf70
+  checksum: cdb3ad0b3aa4b39548e4f8896a20dbe424dad07c675e258b938651c1ad93def58562fad411ee453f462c966386fa770e78ef23e3c81f44a1a8f5bb9f01ebf6d5
   languageName: node
   linkType: hard
 
@@ -11319,6 +11394,13 @@ __metadata:
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.6.2":
+  version: 2.6.3
+  resolution: "tslib@npm:2.6.3"
+  checksum: 74fce0e100f1ebd95b8995fbbd0e6c91bdd8f4c35c00d4da62e285a3363aaa534de40a80db30ecfd388ed7c313c42d930ee0eaf108e8114214b180eec3dbe6f5
   languageName: node
   linkType: hard
 

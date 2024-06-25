@@ -4,10 +4,8 @@ const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'false';
 async function savingApplicationInformation(caseType) {
   const I = this;
   if (caseType === 'consented') {
-    I.waitForElement('//a[contains(@href,"mailto")]', '60');
-  }
-
-  if (caseType === 'contested') {
+    I.waitForText('Email: ContactFinancialRemedy@justice.gov.uk', '60');
+  } else if (caseType === 'contested') {
     I.waitForText('BournemouthFRC.bournemouth.countycourt@justice.gov.uk', '60');
   }
 
