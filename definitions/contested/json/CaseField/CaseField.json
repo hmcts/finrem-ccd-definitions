@@ -84,6 +84,15 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantAddressTemp",
+    "Label": "POSTCODE",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantPhone",
     "Label": "Phone Number",
     "FieldType": "Text",

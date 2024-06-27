@@ -9052,6 +9052,18 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateContactDetails",
+    "CaseFieldID": "applicantAddressTemp",
+    "PageFieldDisplayOrder": 10,
+    "DisplayContext": "MANDATORY",
+    "PageID": 3,
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_updateContactDetails",
     "CaseFieldID": "respondentRepresentedLabel",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
