@@ -71,7 +71,7 @@ Scenario('Caseworker Remove Interveners @nightly', async ({ I }) => {
 
 }).retry(3);
 
-Scenario('Caseworker Amend Interveners @nightly @mytest', async ({ I }) => {
+Scenario('Caseworker Amend Interveners', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -83,5 +83,5 @@ Scenario('Caseworker Amend Interveners @nightly @mytest', async ({ I }) => {
     await I.wait('5');
     await I.manageIntervenersAmend();
 
-}).retry(0);
+}).retry(3);
 
