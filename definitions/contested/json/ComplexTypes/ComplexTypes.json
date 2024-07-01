@@ -2732,6 +2732,16 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_intervener",
+    "ListElementCode": "intervenerResideOutsideUK",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Does the intervener live outside of the UK?",
+    "HintText": "If Yes, please enter the Country in the field below.",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_intervener",
     "ListElementCode": "intervenerAddress",
     "FieldType": "AddressUK",
     "ElementLabel": " ",
