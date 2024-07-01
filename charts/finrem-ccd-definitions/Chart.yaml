@@ -1,10 +1,10 @@
 apiVersion: v2
 description: Financial Remedy - CCD Definitions
 name: finrem-ccd-definitions
-version: 2.2.37
+version: 2.2.38
 dependencies:
   - name: nodejs
-    version: 3.1.0
+    version: 3.1.1
     repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
   - name: ccd
     version: 9.2.0
