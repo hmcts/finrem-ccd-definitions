@@ -1,5 +1,5 @@
 const { Logger } = require('@hmcts/nodejs-logging');
-const request = require('request-promise-native');
+const axios = require('axios');
 const date = require('moment');
 
 const fs = require('fs');
@@ -19,7 +19,7 @@ async function getUserToken(username, password) {
   var statusCode = 400;
   var codeResponse;
   do {
-      codeResponse = await request.post(
+      codeResponse = await axios.post(
           {
             uri: idamBaseUrl + idamCodePath,
             headers: {
@@ -45,7 +45,7 @@ async function getUserToken(username, password) {
   retryCount = 0;
   statusCode = 400;
   do {
-      authTokenResponse = await request.post({
+      authTokenResponse = await axios.post({
           uri: idamBaseUrl + idamAuthPath,
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
           },
@@ -72,7 +72,7 @@ async function getUserId(authToken) {
   const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 
   const idamDetailsPath = '/details';
-  const userDetails = await request.get({
+  const userDetails = await axios.get({
     uri: idamBaseUrl + idamDetailsPath,
     headers: { Authorization: `Bearer ${authToken}` }
   });
@@ -92,7 +92,7 @@ async function getServiceToken() {
   // eslint-disable-next-line global-require
   const oneTimePassword = require('otp')({ secret: serviceSecret }).totp();
 
-  const serviceToken = await request({
+  const serviceToken = await axios({
     method: 'POST',
     uri: s2sBaseUrl + s2sAuthPath,
     headers: { 'Content-Type': 'application/json' },
@@ -132,7 +132,7 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
     }
   };
 
-  const startCaseResponse = await request(startCaseOptions);
+  const startCaseResponse = await axios(startCaseOptions);
   const eventToken = JSON.parse(startCaseResponse).token;
   /* eslint id-blacklist: ["error", "undefined"] */
   const data = fs.readFileSync(dataLocation);
@@ -157,7 +157,7 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
     body: JSON.stringify(saveBody)
   };
 
-  const saveCaseResponse = await request(saveCaseOptions).catch(error => {
+  const saveCaseResponse = await axios(saveCaseOptions).catch(error => {
     console.log(error);
   });
 
@@ -192,7 +192,7 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
     }
   };
 
-  const startEventResponse = await request(startEventOptions);
+  const startEventResponse = await axios(startEventOptions);
 
   const eventToken = JSON.parse(startEventResponse).token;
 
@@ -220,7 +220,7 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
     body: JSON.stringify(saveBody)
   };
 
-  const saveEventResponse = await request(saveEventOptions);
+  const saveEventResponse = await axios(saveEventOptions);
 
   return saveEventResponse;
 }
