@@ -1,8 +1,11 @@
 const { Logger } = require('@hmcts/nodejs-logging');
-const axios = require('axios');
+const axios = require('axios')
+const axiosInstance = axios.create({});
+
 const date = require('moment');
 
 const fs = require('fs');
+const { response } = require('express');
 
 const logger = Logger.getLogger('helpers/utils.js');
 
@@ -15,55 +18,57 @@ async function getUserToken(username, password) {
   const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
 
-  var retryCount = 0;
-  var statusCode = 400;
-  var codeResponse;
+  let retryCount = 0
+  let statusCode = 400;
+  let code;
+  let res;
+
   do {
-      codeResponse = await axios.post(
+    res = await axiosInstance.post(idamBaseUrl + idamCodePath,null,
           {
-            uri: idamBaseUrl + idamCodePath,
             headers: {
               Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
               'Content-Type': 'application/x-www-form-urlencoded'
-            }
-          },
-          function (error, response, body) {
-                statusCode = response.statusCode;
-          }
-      ).catch(error => {
+            }}
+      ).then(response => {
+        statusCode = res.status
+        code = res.data.data
+      })
+        .catch(error => {
         console.log(error);
       });
-      if(retryCount > 1) {
-        logger.info("retrying idam code response " + retryCount);
-      }
-      retryCount++;
+
+    if(retryCount > 1) {
+      logger.info("retrying idam code response " + retryCount);
+    }
+
+    retryCount++;
   } while (retryCount <= 3 && statusCode > 300);
-  const code = JSON.parse(codeResponse).code;
+
 
   const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${code}`;
   var authTokenResponse;
   retryCount = 0;
   statusCode = 400;
   do {
-      authTokenResponse = await axios.post({
-          uri: idamBaseUrl + idamAuthPath,
+      authTokenResponse = await axiosInstance.post(idamBaseUrl + idamAuthPath, null, {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-          },
-         function (error, response, body) {
-               statusCode = response.statusCode;
-         }
-      ).catch(error => {
-               console.log(error);
-             });
+      }).then(res => {
+        return res
+      })
+        .catch(error => {
+        console.log(error);
+      });
+
       if(retryCount > 1) {
               logger.info("retrying idam token response " + retryCount);
       }
       retryCount++;
   } while (retryCount <= 3 && statusCode > 300);
 
-  logger.debug(JSON.parse(authTokenResponse).access_token);
+  logger.debug(authTokenResponse.data.access_token);
 
-  return JSON.parse(authTokenResponse).access_token;
+  return authTokenResponse.data.access_token;
 }
 
 async function getUserId(authToken) {
@@ -72,14 +77,13 @@ async function getUserId(authToken) {
   const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 
   const idamDetailsPath = '/details';
-  const userDetails = await axios.get({
-    uri: idamBaseUrl + idamDetailsPath,
+  const userDetails = await axiosInstance.get(idamBaseUrl + idamDetailsPath, {
     headers: { Authorization: `Bearer ${authToken}` }
   });
 
-  logger.debug(JSON.parse(userDetails).id);
+  logger.debug(userDetails).id;
 
-  return JSON.parse(userDetails).id;
+  return userDetails.id;
 }
 
 async function getServiceToken() {
@@ -92,7 +96,7 @@ async function getServiceToken() {
   // eslint-disable-next-line global-require
   const oneTimePassword = require('otp')({ secret: serviceSecret }).totp();
 
-  const serviceToken = await axios({
+  const serviceToken = await axiosInstance({
     method: 'POST',
     uri: s2sBaseUrl + s2sAuthPath,
     headers: { 'Content-Type': 'application/json' },
@@ -132,8 +136,8 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
     }
   };
 
-  const startCaseResponse = await axios(startCaseOptions);
-  const eventToken = JSON.parse(startCaseResponse).token;
+  const startCaseResponse = await axiosInstance(startCaseOptions);
+  const eventToken = startCaseResponse.token;
   /* eslint id-blacklist: ["error", "undefined"] */
   const data = fs.readFileSync(dataLocation);
   const saveBody = {
@@ -157,11 +161,11 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
     body: JSON.stringify(saveBody)
   };
 
-  const saveCaseResponse = await axios(saveCaseOptions).catch(error => {
+  const saveCaseResponse = await axiosInstance(saveCaseOptions).catch(error => {
     console.log(error);
   });
 
-  const caseId = JSON.parse(saveCaseResponse).id;
+  const caseId = saveCaseResponse.id;
 
   logger.info('Created case with id %s', caseId);
 
@@ -192,9 +196,9 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
     }
   };
 
-  const startEventResponse = await axios(startEventOptions);
+  const startEventResponse = await axiosInstance(startEventOptions);
 
-  const eventToken = JSON.parse(startEventResponse).token;
+  const eventToken = startEventResponse.token;
 
   const data = fs.readFileSync(dataLocation);
   let updatedData = JSON.stringify(JSON.parse(data));
@@ -220,7 +224,7 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
     body: JSON.stringify(saveBody)
   };
 
-  const saveEventResponse = await axios(saveEventOptions);
+  const saveEventResponse = await axiosInstance(saveEventOptions);
 
   return saveEventResponse;
 }
