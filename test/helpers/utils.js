@@ -11,6 +11,14 @@ const logger = Logger.getLogger('helpers/utils.js');
 
 const env = process.env.RUNNING_ENV || 'aat';
 
+async function axiosRequest(requestParams) {
+  return await axiosInstance(requestParams).then(response => {
+    return response;
+  }).catch(error => {
+    console.log(error);
+  });
+}
+
 async function getUserToken(username, password) {
   logger.info('Getting User Token');
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
@@ -18,55 +26,27 @@ async function getUserToken(username, password) {
   const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
 
-  let retryCount = 0
-  let statusCode = 400;
-  let code;
-  let res;
+  const idamCodeResponse = await axiosRequest({
+    method: 'post',
+    url: idamBaseUrl + idamCodePath,
+    headers: {
+      Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }});
 
-  do {
-    res = await axiosInstance.post(idamBaseUrl + idamCodePath,null,
-          {
-            headers: {
-              Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
-              'Content-Type': 'application/x-www-form-urlencoded'
-            }}
-      ).then(response => {
-        statusCode = res.status
-        code = res.data.data
-      })
-        .catch(error => {
-        console.log(error);
-      });
+  console.log("Successfully retired idam code")
 
-    if(retryCount > 1) {
-      logger.info("retrying idam code response " + retryCount);
+  const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse.data.code}`;
+
+  const authTokenResponse = await axiosRequest({
+    method: 'post',
+    url: idamBaseUrl + idamAuthPath,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
     }
+  });
 
-    retryCount++;
-  } while (retryCount <= 3 && statusCode > 300);
-
-
-  const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${code}`;
-  var authTokenResponse;
-  retryCount = 0;
-  statusCode = 400;
-  do {
-      authTokenResponse = await axiosInstance.post(idamBaseUrl + idamAuthPath, null, {
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-      }).then(res => {
-        return res
-      })
-        .catch(error => {
-        console.log(error);
-      });
-
-      if(retryCount > 1) {
-              logger.info("retrying idam token response " + retryCount);
-      }
-      retryCount++;
-  } while (retryCount <= 3 && statusCode > 300);
-
-  logger.debug(authTokenResponse.data.access_token);
+  console.log("Successfully retired user token")
 
   return authTokenResponse.data.access_token;
 }
