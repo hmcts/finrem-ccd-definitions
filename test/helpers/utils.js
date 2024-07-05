@@ -1,19 +1,16 @@
 const { Logger } = require('@hmcts/nodejs-logging');
 const axios = require('axios')
-const axiosInstance = axios.create({});
-
 const date = require('moment');
-
 const fs = require('fs');
-const { response } = require('express');
 
 const logger = Logger.getLogger('helpers/utils.js');
+const axiosClient = axios.create({});
 
 const env = process.env.RUNNING_ENV || 'aat';
 const ccdApiUrl = process.env.CCD_DATA_API_URL;
 
 async function axiosRequest(requestParams) {
-  return await axiosInstance(requestParams).then(response => {
+  return await axiosClient(requestParams).then(response => {
     return response;
   }).catch(error => {
     logger.error(error);
@@ -77,7 +74,7 @@ async function getServiceToken() {
   // eslint-disable-next-line global-require
   const oneTimePassword = require('otp')({ secret: serviceSecret }).totp();
 
-  const serviceTokenResponse = await axiosInstance({
+  const serviceTokenResponse = await axiosRequest({
     url: s2sBaseUrl + s2sAuthPath,
     method: 'post',
     data: {
@@ -89,7 +86,7 @@ async function getServiceToken() {
     }
   });
 
-  logger.info("Successfully retrieved service token: ", serviceTokenResponse.data);
+  logger.info("Successfully retrieved service token");
 
   return serviceTokenResponse.data;
 }
@@ -107,9 +104,23 @@ async function getStartEventToken(ccdStartCasePath, ccdSaveCasePath, authToken, 
     }
   });
 
-  logger.info("Successfully retrieved start event token: ", startCaseResponse.data.token);
+  logger.info("Successfully retrieved start event token");
 
   return startCaseResponse.data.token
+}
+
+async function saveCase(ccdSaveCasePath, authToken, serviceToken, payload) {
+  logger.info('Saving Case');
+  return await axiosRequest({
+    url: ccdApiUrl + ccdSaveCasePath,
+    method: 'post',
+    data: payload,
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      ServiceAuthorization: `Bearer ${serviceToken}`,
+      'Content-Type': 'application/json'
+    },
+  });
 }
 
 async function createCaseInCcd(userName, password, dataLocation, caseType, eventId) {
@@ -128,25 +139,17 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
   /* eslint id-blacklist: ["error", "undefined"] */
   const data = fs.readFileSync(dataLocation);
 
-  const saveCaseResponse = await axiosRequest({
-    url: ccdApiUrl + ccdSaveCasePath,
-    method: 'post',
-    data: {
-      data: JSON.parse(data),
-      event: {
-        id: `${frEventId}`,
-        summary: 'Creating Basic Case',
-        description: 'For CCD E2E Test'
-      },
-      event_token: eventToken
+  const payload = {
+    data: JSON.parse(data),
+    event: {
+      id: `${frEventId}`,
+      summary: 'Creating Basic Case',
+      description: 'For CCD E2E Test'
     },
-    headers: {
-      Authorization: `Bearer ${authToken}`,
-      ServiceAuthorization: `Bearer ${serviceToken}`,
-      'Content-Type': 'application/json'
-    },
-  });
+    event_token: eventToken
+  }
 
+  const saveCaseResponse = await saveCase(ccdSaveCasePath, authToken, serviceToken, payload)
   const caseId = saveCaseResponse.data.id;
   logger.info('Created case with id %s', caseId);
 
@@ -168,28 +171,20 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
 
   const data = fs.readFileSync(dataLocation);
   let updatedData = JSON.stringify(JSON.parse(data));
-
   updatedData = updatedData.replace("ReplaceForShareCase",shareCaseRef);
 
-  const saveCaseResponse = await axiosRequest({
-    url: ccdApiUrl + ccdSaveEventPath,
-    method: 'post',
-    data: {
-      data: JSON.parse(updatedData),
-      event: {
-        id: `${eventId}`,
-        summary: 'Updating Case',
-        description: 'For CCD E2E Test'
-      },
-      event_token: eventToken
+  const payload =  {
+    data: JSON.parse(updatedData),
+    event: {
+      id: `${eventId}`,
+      summary: 'Updating Case',
+      description: 'For CCD E2E Test'
     },
-    headers: {
-      Authorization: `Bearer ${authToken}`,
-      ServiceAuthorization: `Bearer ${serviceToken}`,
-      'Content-Type': 'application/json'
-    },
-  });
+    event_token: eventToken
+  }
 
+  const saveCaseResponse = await saveCase(ccdSaveEventPath, authToken, serviceToken, payload)
+  logger.info('Updated case with id %s and event %s', caseId, eventId);
   return saveCaseResponse.data;
 }
 
