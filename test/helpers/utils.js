@@ -10,6 +10,7 @@ const { response } = require('express');
 const logger = Logger.getLogger('helpers/utils.js');
 
 const env = process.env.RUNNING_ENV || 'aat';
+const ccdApiUrl = process.env.CCD_DATA_API_URL;
 
 async function axiosRequest(requestParams) {
   return await axiosInstance(requestParams).then(response => {
@@ -88,67 +89,65 @@ async function getServiceToken() {
     }
   });
 
-  logger.info("Successfully retrieved service token.");
+  logger.info("Successfully retrieved service token: ", serviceTokenResponse.data);
 
   return serviceTokenResponse.data;
 }
 
-async function createCaseInCcd(userName, password, dataLocation, caseType, eventId) {
-  const authToken = await getUserToken(userName, password);
+async function getStartEventToken(ccdStartCasePath, ccdSaveCasePath, authToken, serviceToken) {
+  logger.info("Retrieving start event token");
 
-  const userId = await getUserId(authToken);
-
-  const serviceToken = await getServiceToken();
-
-  logger.info('Creating Case');
-
-  const ccdApiUrl = process.env.CCD_DATA_API_URL;
-  const frCaseType = caseType;
-  const frEventId = eventId;
-  const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/event-triggers/${frEventId}/token`;
-  const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases`;
-
-  const startCaseOptions = {
-    method: 'GET',
-    uri: ccdApiUrl + ccdStartCasePath,
+  const startCaseResponse = await axiosRequest({
+    method: 'get',
+    url: ccdApiUrl + ccdStartCasePath,
     headers: {
       Authorization: `Bearer ${authToken}`,
       ServiceAuthorization: `Bearer ${serviceToken}`,
       'Content-Type': 'application/json'
     }
-  };
+  });
 
-  const startCaseResponse = await axiosInstance(startCaseOptions);
-  const eventToken = startCaseResponse.token;
+  logger.info("Successfully retrieved start event token: ", startCaseResponse.data.token);
+
+  return startCaseResponse.data.token
+}
+
+async function createCaseInCcd(userName, password, dataLocation, caseType, eventId) {
+  const authToken = await getUserToken(userName, password);
+  const userId = await getUserId(authToken);
+  const serviceToken = await getServiceToken();
+
+  logger.info('Creating Case');
+
+  const frCaseType = caseType;
+  const frEventId = eventId;
+  const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/event-triggers/${frEventId}/token`;
+  const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases`;
+
+  const eventToken = await getStartEventToken(ccdStartCasePath, ccdSaveCasePath, authToken, serviceToken);
   /* eslint id-blacklist: ["error", "undefined"] */
   const data = fs.readFileSync(dataLocation);
-  const saveBody = {
-    data: JSON.parse(data),
-    event: {
-      id: `${frEventId}`,
-      summary: 'Creating Basic Case',
-      description: 'For CCD E2E Test'
-    },
-    event_token: eventToken
-  };
 
-  const saveCaseOptions = {
-    method: 'POST',
-    uri: ccdApiUrl + ccdSaveCasePath,
+  const saveCaseResponse = await axiosRequest({
+    url: ccdApiUrl + ccdSaveCasePath,
+    method: 'post',
+    data: {
+      data: JSON.parse(data),
+      event: {
+        id: `${frEventId}`,
+        summary: 'Creating Basic Case',
+        description: 'For CCD E2E Test'
+      },
+      event_token: eventToken
+    },
     headers: {
       Authorization: `Bearer ${authToken}`,
       ServiceAuthorization: `Bearer ${serviceToken}`,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(saveBody)
-  };
-
-  const saveCaseResponse = await axiosInstance(saveCaseOptions).catch(error => {
-    console.log(error);
   });
 
-  const caseId = saveCaseResponse.id;
-
+  const caseId = saveCaseResponse.data.id;
   logger.info('Created case with id %s', caseId);
 
   return caseId;
@@ -156,59 +155,42 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
 
 async function updateCaseInCcd(userName, password, caseId, caseType, eventId, dataLocation,shareCaseRef) {
   const authToken = await getUserToken(userName, password);
-
   const userId = await getUserId(authToken);
-
   const serviceToken = await getServiceToken();
 
   logger.info('Updating case with id %s and event %s', caseId, eventId);
 
-  const ccdApiUrl = process.env.CCD_DATA_API_URL;
   const frCaseType = caseType;
   const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases/${caseId}/event-triggers/${eventId}/token`;
   const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases/${caseId}/events`;
 
-  const startEventOptions = {
-    method: 'GET',
-    uri: ccdApiUrl + ccdStartEventPath,
-    headers: {
-      Authorization: `Bearer ${authToken}`,
-      ServiceAuthorization: `Bearer ${serviceToken}`,
-      'Content-Type': 'application/json'
-    }
-  };
-
-  const startEventResponse = await axiosInstance(startEventOptions);
-
-  const eventToken = startEventResponse.token;
+  const eventToken = await getStartEventToken(ccdStartEventPath, ccdSaveEventPath, authToken, serviceToken);
 
   const data = fs.readFileSync(dataLocation);
   let updatedData = JSON.stringify(JSON.parse(data));
-  updatedData = updatedData.replace("ReplaceForShareCase",shareCaseRef);
-  const saveBody = {
-    data: JSON.parse(updatedData),
-    event: {
-      id: eventId,
-      summary: 'Updating Case',
-      description: 'For CCD E2E Test'
-    },
-    event_token: eventToken
-  };
 
-  const saveEventOptions = {
-    method: 'POST',
-    uri: ccdApiUrl + ccdSaveEventPath,
+  updatedData = updatedData.replace("ReplaceForShareCase",shareCaseRef);
+
+  const saveCaseResponse = await axiosRequest({
+    url: ccdApiUrl + ccdSaveEventPath,
+    method: 'post',
+    data: {
+      data: JSON.parse(updatedData),
+      event: {
+        id: `${eventId}`,
+        summary: 'Updating Case',
+        description: 'For CCD E2E Test'
+      },
+      event_token: eventToken
+    },
     headers: {
       Authorization: `Bearer ${authToken}`,
       ServiceAuthorization: `Bearer ${serviceToken}`,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(saveBody)
-  };
+  });
 
-  const saveEventResponse = await axiosInstance(saveEventOptions);
-
-  return saveEventResponse;
+  return saveCaseResponse.data;
 }
 
 function createSolicitorReference() {
