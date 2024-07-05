@@ -15,7 +15,7 @@ async function axiosRequest(requestParams) {
   return await axiosInstance(requestParams).then(response => {
     return response;
   }).catch(error => {
-    console.log(error);
+    logger.error(error);
   });
 }
 
@@ -32,9 +32,9 @@ async function getUserToken(username, password) {
     headers: {
       Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
       'Content-Type': 'application/x-www-form-urlencoded'
-    }});
+  }});
 
-  console.log("Successfully retired idam code")
+  logger.info("Successfully retired idam code")
 
   const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse.data.code}`;
 
@@ -46,7 +46,7 @@ async function getUserToken(username, password) {
     }
   });
 
-  console.log("Successfully retired user token")
+  logger.info("Successfully retired user token");
 
   return authTokenResponse.data.access_token;
 }
@@ -55,40 +55,42 @@ async function getUserId(authToken) {
   logger.info('Getting User Id');
 
   const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
-
   const idamDetailsPath = '/details';
-  const userDetails = await axiosInstance.get(idamBaseUrl + idamDetailsPath, {
+
+  const userDetailsResponse = await axiosRequest({
+    method: 'get',
+    url: idamBaseUrl + idamDetailsPath,
     headers: { Authorization: `Bearer ${authToken}` }
   });
 
-  logger.debug(userDetails).id;
-
-  return userDetails.id;
+  logger.info("Successfully retrieved User ID: ", userDetailsResponse.data.id);
+  return userDetailsResponse.data.id;
 }
 
 async function getServiceToken() {
   logger.info('Getting Service Token');
 
   const serviceSecret = process.env.CCD_SUBMIT_S2S_SECRET;
-
   const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
   const s2sAuthPath = '/lease';
   // eslint-disable-next-line global-require
   const oneTimePassword = require('otp')({ secret: serviceSecret }).totp();
 
-  const serviceToken = await axiosInstance({
-    method: 'POST',
-    uri: s2sBaseUrl + s2sAuthPath,
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
+  const serviceTokenResponse = await axiosInstance({
+    url: s2sBaseUrl + s2sAuthPath,
+    method: 'post',
+    data: {
       microservice: 'divorce_ccd_submission',
-      oneTimePassword
-    })
+      oneTimePassword: oneTimePassword
+    },
+    headers: {
+      'Content-Type': 'application/json'
+    }
   });
 
-  logger.debug(serviceToken);
+  logger.info("Successfully retrieved service token.");
 
-  return serviceToken;
+  return serviceTokenResponse.data;
 }
 
 async function createCaseInCcd(userName, password, dataLocation, caseType, eventId) {
