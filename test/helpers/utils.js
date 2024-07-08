@@ -8,20 +8,22 @@ const axiosClient = axios.create({});
 
 const env = process.env.RUNNING_ENV || 'aat';
 const ccdApiUrl = process.env.CCD_DATA_API_URL;
+const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
+
 
 async function axiosRequest(requestParams) {
   return await axiosClient(requestParams).then(response => {
     return response;
   }).catch(error => {
-    logger.error(error);
+    logger.error("Utils REST request error %s", error.message);
   });
 }
 
 async function getUserToken(username, password) {
   logger.info('Getting User Token');
-  const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
+
   const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
-  const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
+  const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
 
   const idamCodeResponse = await axiosRequest({
@@ -30,9 +32,9 @@ async function getUserToken(username, password) {
     headers: {
       Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
       'Content-Type': 'application/x-www-form-urlencoded'
-  }});
-
-  logger.info("Successfully retired idam code")
+  }}).then(
+    logger.info("Successfully retrieved iDAM code")
+  );
 
   const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse.data.code}`;
 
@@ -42,9 +44,9 @@ async function getUserToken(username, password) {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-  });
-
-  logger.info("Successfully retired user token");
+  }).then(
+    logger.info("Successfully retrieved user token")
+  );
 
   return authTokenResponse.data.access_token;
 }
@@ -52,16 +54,16 @@ async function getUserToken(username, password) {
 async function getUserId(authToken) {
   logger.info('Getting User Id');
 
-  const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
   const idamDetailsPath = '/details';
 
   const userDetailsResponse = await axiosRequest({
     method: 'get',
     url: idamBaseUrl + idamDetailsPath,
     headers: { Authorization: `Bearer ${authToken}` }
-  });
+  }).then(
+    logger.info("Successfully retrieved User ID")
+  );
 
-  logger.info("Successfully retrieved User ID: ", userDetailsResponse.data.id);
   return userDetailsResponse.data.id;
 }
 
@@ -84,9 +86,9 @@ async function getServiceToken() {
     headers: {
       'Content-Type': 'application/json'
     }
-  });
-
-  logger.info("Successfully retrieved service token");
+  }).then(
+    logger.info("Successfully retrieved service token")
+  );
 
   return serviceTokenResponse.data;
 }
@@ -102,9 +104,9 @@ async function getStartEventToken(ccdStartCasePath, ccdSaveCasePath, authToken, 
       ServiceAuthorization: `Bearer ${serviceToken}`,
       'Content-Type': 'application/json'
     }
-  });
-
-  logger.info("Successfully retrieved start event token");
+  }).then(
+    logger.info("Successfully retrieved start event token")
+  );
 
   return startCaseResponse.data.token
 }
@@ -120,7 +122,9 @@ async function saveCase(ccdSaveCasePath, authToken, serviceToken, payload) {
       ServiceAuthorization: `Bearer ${serviceToken}`,
       'Content-Type': 'application/json'
     },
-  });
+  }).then(
+    logger.info("Successfully saved case")
+  );
 }
 
 async function createCaseInCcd(userName, password, dataLocation, caseType, eventId) {
@@ -147,9 +151,9 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
       description: 'For CCD E2E Test'
     },
     event_token: eventToken
-  }
+  };
 
-  const saveCaseResponse = await saveCase(ccdSaveCasePath, authToken, serviceToken, payload)
+  const saveCaseResponse = await saveCase(ccdSaveCasePath, authToken, serviceToken, payload);
   const caseId = saveCaseResponse.data.id;
   logger.info('Created case with id %s', caseId);
 
@@ -181,9 +185,9 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
       description: 'For CCD E2E Test'
     },
     event_token: eventToken
-  }
+  };
 
-  const saveCaseResponse = await saveCase(ccdSaveEventPath, authToken, serviceToken, payload)
+  const saveCaseResponse = await saveCase(ccdSaveEventPath, authToken, serviceToken, payload);
   logger.info('Updated case with id %s and event %s', caseId, eventId);
   return saveCaseResponse.data;
 }
