@@ -33,7 +33,7 @@ async function getUserToken(username, password) {
       Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
       'Content-Type': 'application/x-www-form-urlencoded'
   }}).then(
-    logger.info("Successfully retrieved iDAM code")
+    logger.info("Successfully retrieved IdAM code")
   );
 
   const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse.data.code}`;
