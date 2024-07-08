@@ -16,7 +16,7 @@ module.exports = {
             await I.runAccessibilityTest();
         }
         I.fillField(this.fields.caseRefSearch, 'caseRef');
-        await I.retryUntilExists(() => I.click('Continue'),
+        await I.retryUntilExists(() => I.click('Continue'));
         I.fillField(this.fields.clientFirstName, 'John');
         I.fillField(this.fields.clientLastName, 'Smith');
 
