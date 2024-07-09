@@ -3887,7 +3887,9 @@
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/amend-application-app-sol",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4186,7 +4188,7 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/amend-application-app",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
@@ -4320,7 +4322,8 @@
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/amend-application-res-sol"
   },
   {
     "LiveFrom": "01/10/2020",
