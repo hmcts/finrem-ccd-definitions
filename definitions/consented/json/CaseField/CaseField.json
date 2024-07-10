@@ -2121,5 +2121,25 @@
     "Label": "Application Not Approved",
     "FieldType": "FR_orderRefusalOrder",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "applicantResideOutsideUK",
+    "Label": "Does the applicant live outside of the UK?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "HintText": "If Yes, please enter the Country in the field below.",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "respondentResideOutsideUK",
+    "Label": "Does the respondent live outside of the UK?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "HintText": "If Yes, please enter the Country in the field below.",
+    "Searchable": "N"
   }
 ]

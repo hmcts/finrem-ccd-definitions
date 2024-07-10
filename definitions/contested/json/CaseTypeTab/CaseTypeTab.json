@@ -229,7 +229,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantDetailsLabel",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": "1"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -238,7 +238,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantFMName",
-    "TabFieldDisplayOrder": 2
+    "TabFieldDisplayOrder": "2"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -247,7 +247,16 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantLName",
-    "TabFieldDisplayOrder": 3
+    "TabFieldDisplayOrder": "3"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 2,
+    "CaseFieldID": "applicantResideOutsideUK",
+    "TabFieldDisplayOrder": "4"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -256,7 +265,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "urgentCaseLabel",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": "5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -265,7 +274,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "promptForUrgentCaseQuestion",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": "6"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -275,7 +284,7 @@
     "TabDisplayOrder": 5,
     "CaseFieldID": "urgentCaseQuestionDetailsTextArea",
     "FieldShowCondition": "promptForUrgentCaseQuestion=\"Yes\"",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": "7"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -284,7 +293,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantContactLabel",
-    "TabFieldDisplayOrder": 7,
+    "TabFieldDisplayOrder": "8",
     "FieldShowCondition": "applicantAddress=\"*\" AND applicantAddress.AddressLine1=\"*\""
   },
   {
@@ -294,7 +303,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantAddress",
-    "TabFieldDisplayOrder": 8,
+    "TabFieldDisplayOrder": "9",
     "FieldShowCondition": "applicantAddressConfidential!=\"Yes\""
   },
   {
@@ -304,7 +313,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantPhone",
-    "TabFieldDisplayOrder": 9,
+    "TabFieldDisplayOrder": "10",
     "FieldShowCondition": "applicantAddressConfidential!=\"Yes\""
   },
   {
@@ -314,7 +323,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantEmail",
-    "TabFieldDisplayOrder": 10,
+    "TabFieldDisplayOrder": "11",
     "FieldShowCondition": "applicantAddressConfidential!=\"Yes\""
   },
   {
@@ -324,7 +333,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantRepresentedLabel",
-    "TabFieldDisplayOrder": 11
+    "TabFieldDisplayOrder": "12"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -333,7 +342,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantRepresented",
-    "TabFieldDisplayOrder": 12
+    "TabFieldDisplayOrder": "13"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -342,7 +351,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantAddressConfidential",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": "14"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -351,7 +360,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantSolicitorDetailLabel",
-    "TabFieldDisplayOrder": 14,
+    "TabFieldDisplayOrder": "15",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -361,7 +370,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "solicitorReference",
-    "TabFieldDisplayOrder": 15,
+    "TabFieldDisplayOrder": "16",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -371,7 +380,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantSolicitorName",
-    "TabFieldDisplayOrder": 16,
+    "TabFieldDisplayOrder": "17",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -381,7 +390,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantSolicitorFirm",
-    "TabFieldDisplayOrder": 17,
+    "TabFieldDisplayOrder": "18",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -391,7 +400,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "ApplicantOrganisationPolicy",
-    "TabFieldDisplayOrder": 18,
+    "TabFieldDisplayOrder": "19",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -401,7 +410,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantSolicitorAddressLabel",
-    "TabFieldDisplayOrder": 19,
+    "TabFieldDisplayOrder": "20",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -411,7 +420,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantSolicitorAddress",
-    "TabFieldDisplayOrder": 20,
+    "TabFieldDisplayOrder": "21",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -421,7 +430,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantSolicitorPhone",
-    "TabFieldDisplayOrder": 21,
+    "TabFieldDisplayOrder": "22",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -431,7 +440,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantSolicitorEmail",
-    "TabFieldDisplayOrder": 22,
+    "TabFieldDisplayOrder": "23",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -441,7 +450,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantSolicitorDXnumber",
-    "TabFieldDisplayOrder": 23,
+    "TabFieldDisplayOrder": "24",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -451,7 +460,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "applicantSolicitorConsentForEmails",
-    "TabFieldDisplayOrder": 24,
+    "TabFieldDisplayOrder": "25",
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -461,7 +470,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "appBarristerCollectionLabel",
-    "TabFieldDisplayOrder": 25
+    "TabFieldDisplayOrder": "26"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -470,7 +479,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "appBarristerCollection",
-    "TabFieldDisplayOrder": 26
+    "TabFieldDisplayOrder": "27"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -479,7 +488,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "paperApplication",
-    "TabFieldDisplayOrder": 27,
+    "TabFieldDisplayOrder": "28",
     "FieldShowCondition": "paperApplication=\"Yes\""
   },
   {
@@ -489,7 +498,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "typeOfApplicationLabel",
-    "TabFieldDisplayOrder": 28
+    "TabFieldDisplayOrder": "29"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -498,7 +507,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 5,
     "CaseFieldID": "typeOfApplication",
-    "TabFieldDisplayOrder": 29
+    "TabFieldDisplayOrder": "30"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -649,7 +658,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentDetailsLabel",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": "1"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -658,7 +667,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentFMName",
-    "TabFieldDisplayOrder": 2
+    "TabFieldDisplayOrder": "2"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -667,7 +676,16 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentLName",
-    "TabFieldDisplayOrder": 3
+    "TabFieldDisplayOrder": "3"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "respondentDetailsTab",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 6,
+    "CaseFieldID": "respondentResideOutsideUK",
+    "TabFieldDisplayOrder": "4"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -676,7 +694,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentRepresentedLabel",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": "5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -685,7 +703,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentRepresented",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": "6"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -694,7 +712,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorLabel",
-    "TabFieldDisplayOrder": 6,
+    "TabFieldDisplayOrder": "7",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -704,7 +722,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorName",
-    "TabFieldDisplayOrder": 7,
+    "TabFieldDisplayOrder": "8",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -714,7 +732,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorReference",
-    "TabFieldDisplayOrder": 8,
+    "TabFieldDisplayOrder": "9",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -724,7 +742,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorFirm",
-    "TabFieldDisplayOrder": 9,
+    "TabFieldDisplayOrder": "10",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -734,7 +752,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "RespondentOrganisationPolicy",
-    "TabFieldDisplayOrder": 10,
+    "TabFieldDisplayOrder": "11",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -744,7 +762,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorAddressLabel",
-    "TabFieldDisplayOrder": 11,
+    "TabFieldDisplayOrder": "12",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -754,7 +772,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorAddress",
-    "TabFieldDisplayOrder": 12,
+    "TabFieldDisplayOrder": "13",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -764,7 +782,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorPhone",
-    "TabFieldDisplayOrder": 13,
+    "TabFieldDisplayOrder": "14",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -774,7 +792,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorEmail",
-    "TabFieldDisplayOrder": 14,
+    "TabFieldDisplayOrder": "15",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -784,7 +802,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorDXnumber",
-    "TabFieldDisplayOrder": 15,
+    "TabFieldDisplayOrder": "16",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -794,7 +812,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "RespSolNotificationsEmailConsent",
-    "TabFieldDisplayOrder": 16,
+    "TabFieldDisplayOrder": "17",
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -804,7 +822,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rRespondentLabel2",
-    "TabFieldDisplayOrder": 17,
+    "TabFieldDisplayOrder": "18",
     "FieldShowCondition": "respondentRepresented=\"No\""
   },
   {
@@ -814,7 +832,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentAddress",
-    "TabFieldDisplayOrder": 18,
+    "TabFieldDisplayOrder": "19",
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
   {
@@ -824,7 +842,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentPhone",
-    "TabFieldDisplayOrder": 19,
+    "TabFieldDisplayOrder": "20",
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
   {
@@ -834,7 +852,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentEmail",
-    "TabFieldDisplayOrder": 20,
+    "TabFieldDisplayOrder": "21",
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
   {
@@ -844,7 +862,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respBarristerCollectionLabel",
-    "TabFieldDisplayOrder": 21
+    "TabFieldDisplayOrder": "22"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -853,7 +871,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respBarristerCollection",
-    "TabFieldDisplayOrder": 22
+    "TabFieldDisplayOrder": "23"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -862,7 +880,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentAddressConfidential",
-    "TabFieldDisplayOrder": 23,
+    "TabFieldDisplayOrder": "24",
     "FieldShowCondition": "respondentRepresented=\"No\""
   },
   {
