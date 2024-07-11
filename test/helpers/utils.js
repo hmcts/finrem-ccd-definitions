@@ -94,7 +94,8 @@ async function getServiceToken() {
 }
 
 async function getStartEventToken(ccdStartCasePath, ccdSaveCasePath, authToken, serviceToken) {
-  logger.info("Retrieving start event token");
+  const startEventUrl = ccdApiUrl + ccdStartCasePath;
+  logger.info("Retrieving start event token with url %s", startEventUrl);
 
   const startCaseResponse = await axiosRequest({
     method: 'get',
