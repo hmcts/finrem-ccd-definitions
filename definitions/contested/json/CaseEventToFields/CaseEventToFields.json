@@ -3888,7 +3888,7 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"Yes\"",
     "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/amend-application-app-sol",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/amend-application-validate-applicant-solicitor-address",
     "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
