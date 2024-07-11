@@ -8883,7 +8883,9 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -9162,8 +9164,9 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
-  },
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
