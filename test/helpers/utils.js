@@ -140,6 +140,9 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
   const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases`;
 
   const eventToken = await getStartEventToken(ccdStartCasePath, ccdSaveCasePath, authToken, serviceToken);
+
+  logger.info('Reading data from %s', dataLocation);
+
   /* eslint id-blacklist: ["error", "undefined"] */
   const data = fs.readFileSync(dataLocation);
 
@@ -152,6 +155,8 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
     },
     event_token: eventToken
   };
+
+  logger.info('Saving case');
 
   const saveCaseResponse = await saveCase(ccdSaveCasePath, authToken, serviceToken, payload);
   const caseId = saveCaseResponse.data.id;
