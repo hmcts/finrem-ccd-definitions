@@ -1,18 +1,38 @@
 package finrem;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
+import uk.gov.hmcts.befta.dse.ccd.CcdRoleConfig;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
 
 import java.util.List;
-import java.util.Arrays;
 
 public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
-    private static final String definitionsPath = "ccd_definition";
-    private static final List<CcdEnvironment> SKIPPED_ENVS = Arrays.asList(
-            CcdEnvironment.DEMO);
+
+    private static final Logger logger = LoggerFactory.getLogger(HighLevelDataSetupApp.class);
+
+    private static final List<CcdRoleConfig> CCD_ROLES = List.of(
+            new CcdRoleConfig("citizen", "PUBLIC"),
+            new CcdRoleConfig("caseworker", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-financialremedy-courtadmin", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-financialremedy-solicitor", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-financialremedy-judiciary", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-financialremedy-superuser", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-systemupdate", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-bulkscan", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-financialremedy", "PUBLIC"),
+            new CcdRoleConfig("caseworker-caa", "PUBLIC")
+    );
+
+    /**
+     * Directory where the import process can locate definition files. See bin/after-data-setuo-step.sh.
+     */
+    private static final String DEFINITIONS_PATH = "ccd_definition";
+    private static final List<CcdEnvironment> SKIPPED_ENVS = List.of(CcdEnvironment.DEMO);
 
     public HighLevelDataSetupApp(CcdEnvironment dataSetupEnvironment) {
-        super(dataSetupEnvironment, definitionsPath);
+        super(dataSetupEnvironment, DEFINITIONS_PATH);
     }
 
     public static void main(String[] args) throws Throwable {
@@ -20,20 +40,44 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     }
 
     @Override
-    protected void doLoadTestData() {
-        List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
-        CcdEnvironment currentEnv = (CcdEnvironment) getDataSetupEnvironment();
+    public void addCcdRoles() {
+        if (getDataSetupEnvironment() == CcdEnvironment.PREVIEW) {
+            logger.info("Adding CCD roles");
+            CCD_ROLES.forEach(this::addCcdRole);
+        }
+    }
+
+    @Override
+    public void importDefinitions() {
+        logger.info("Importing CCD definitions");
+
+        CcdEnvironment ccdEnvironment = (CcdEnvironment) getDataSetupEnvironment();
+        logger.info("CCD environment: {}", ccdEnvironment);
         try {
-            if (currentEnv != null && !SKIPPED_ENVS.contains(currentEnv)) {
-                importDefinitions();
+            if (ccdEnvironment != null && !SKIPPED_ENVS.contains(ccdEnvironment)) {
+                importDefinitionsAt(DEFINITIONS_PATH);
             } else {
-                definitionFileResources.forEach(file ->
-                        System.out.println("definition file \"" + file + "\" is skipped on " + currentEnv));
+                logger.info("CCD definitions import skipped for {} environment", ccdEnvironment);
             }
         } catch (Exception e) {
-            System.out.println("Error on uploading ccd definition file - " + e.getMessage());
-            // exit the process to fail jenkin pipeline
+            logger.error("Error when importing CCD definitions", e);
+            // Exit the process to fail Jenkins pipeline
             System.exit(1);
+        }
+    }
+
+    @Override
+    public void createRoleAssignments() {
+        // No implementation required
+    }
+
+    @Override
+    protected boolean shouldTolerateDataSetupFailure(Throwable e) {
+        if (getDataSetupEnvironment() == CcdEnvironment.PREVIEW) {
+            logger.error("Data Setup failure ignored: {}", e.getMessage());
+            return true;
+        } else {
+            return super.shouldTolerateDataSetupFailure(e);
         }
     }
 }
