@@ -1,3 +1,6 @@
+const { Logger } = require('@hmcts/nodejs-logging');
+const logger = Logger.getLogger('helpers/utils.js');
+
 Feature('Admin Web Tests');
 
 Scenario('add all the roles @preview', ({ I }) => {
@@ -29,8 +32,10 @@ Scenario('add all the roles @preview', ({ I }) => {
 
 if (process.env.IMPORT_PREVIEW) {
   Scenario('upload Consented preview config file @preview', ({ I }) => {
+    logger.info('Uploading consented file');
     I.loginToAdminConsole();
     I.uploadConfig(`../../definitions/consented/xlsx/ccd-config-preview-consented-${process.env.GIT_COMMIT}.xlsx`);
+    logger.info('Uploaded consented file');
   }).retry({retries: 3, minTimeout: 30000});
 
   Scenario('upload Contested preview config file @preview', ({ I }) => {

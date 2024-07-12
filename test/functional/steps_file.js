@@ -1,6 +1,9 @@
 
 // in this file you can append custom step methods to 'I' object
 
+const { Logger } = require('@hmcts/nodejs-logging');
+const logger = Logger.getLogger('helpers/utils.js');
+
 const { miamCertification } = require('./pages/contested-pages/miam-certification');
 const { mediationQuestion,mediationQuestionNoMIAMYesExemption, mediationQuestionNoMIAMNoExemption } = require('./pages/contested-pages/mediation-questions');
 const { applyingToCourt } = require('./pages/contested-pages/apply-court');
@@ -81,9 +84,12 @@ module.exports = () => {
     },
 
     uploadConfig(path) {
+      logger.info('Importing ' + path);
       this.click('Import Case Definition');
       this.attachFile('file', path);
+      logger.info('Submitting import upload');
       this.click('Submit');
+      logger.info('Submitted import upload');
     },
 
     signInIdam(username, password) {
