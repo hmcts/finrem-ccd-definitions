@@ -2,13 +2,10 @@ package finrem;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import uk.gov.hmcts.befta.BeftaMain;
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
 import uk.gov.hmcts.befta.dse.ccd.CcdRoleConfig;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
 
-import javax.crypto.AEADBadTagException;
-import javax.net.ssl.SSLException;
 import java.util.List;
 
 public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
@@ -25,16 +22,15 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
             new CcdRoleConfig("caseworker-divorce-systemupdate", "PUBLIC"),
             new CcdRoleConfig("caseworker-divorce-bulkscan", "PUBLIC"),
             new CcdRoleConfig("caseworker-divorce-financialremedy", "PUBLIC"),
-            new CcdRoleConfig("caseworker-caa", "PUBLIC"),
-            new CcdRoleConfig("caseworker-approver", "PUBLIC")
+            new CcdRoleConfig("caseworker-caa", "PUBLIC")
     );
 
+    /** Directory where the import process can locate definition files. See bin/after-data-setuo-step.sh. */
     private static final String definitionsPath = "ccd_definition";
     private static final List<CcdEnvironment> SKIPPED_ENVS = List.of(CcdEnvironment.DEMO);
 
     public HighLevelDataSetupApp(CcdEnvironment dataSetupEnvironment) {
         super(dataSetupEnvironment, definitionsPath);
-        logger.info("High level data setup for {} environment", dataSetupEnvironment);
     }
 
     public static void main(String[] args) throws Throwable {
@@ -53,21 +49,13 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     public void importDefinitions() {
         logger.info("Importing CCD definitions");
 
-        String definitionStoreApiUrl = BeftaMain.getConfig().getDefinitionStoreUrl();
-        logger.info("CCD Definition Store API: {}", definitionStoreApiUrl);
-
-        //logger.info("Definitions path: {}", definitionsPath);
-
-        //List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
-
-        CcdEnvironment currentEnv = (CcdEnvironment) getDataSetupEnvironment();
-        logger.info("Current environment: {}", currentEnv);
+        CcdEnvironment ccdEnvironment = (CcdEnvironment) getDataSetupEnvironment();
+        logger.info("Current environment: {}", ccdEnvironment);
         try {
-            if (currentEnv != null && !SKIPPED_ENVS.contains(currentEnv)) {
-                logger.info("Importing for {} environment", currentEnv);
+            if (ccdEnvironment != null && !SKIPPED_ENVS.contains(ccdEnvironment)) {
                 importDefinitionsAt(definitionsPath);
             } else {
-                logger.info("CCD definition file import skipped for {} environment", currentEnv);
+                logger.info("CCD definition file import skipped for {} environment", ccdEnvironment);
             }
         } catch (Exception e) {
             logger.error("Error when uploading CCD definition files", e);
