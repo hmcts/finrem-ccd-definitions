@@ -2,9 +2,11 @@ package finrem;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import uk.gov.hmcts.befta.BeftaMain;
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
 import uk.gov.hmcts.befta.dse.ccd.CcdRoleConfig;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
+import uk.gov.hmcts.befta.util.FileUtils;
 
 import java.util.List;
 
@@ -79,6 +81,34 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
             return true;
         } else {
             return super.shouldTolerateDataSetupFailure(e);
+        }
+    }
+
+    /**
+     * Workaround for <a href="https://tools.hmcts.net/jira/browse/CCD-5362">CCD-5362</a>.
+     * @param definitionsPath definitions path
+     */
+    @Override
+    protected void importDefinitionsAt(String definitionsPath) {
+        List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
+        logger.info("{} definition files will be uploaded to '{}' on {}.", definitionFileResources.size(),
+                BeftaMain.getConfig().getDefinitionStoreUrl(), getDataSetupEnvironment());
+        String message = "Couldn't import {} - Exception: {}.\n\n";
+        try {
+            for (String fileName : definitionFileResources) {
+                try {
+                    logger.info("\n\nImporting {}...", fileName);
+                    importDefinition(fileName);
+                    logger.info("\nImported {}.\n\n", fileName);
+                } catch (Exception e) {
+                    logger.error(message, fileName, e.getMessage());
+                    if (!shouldTolerateDataSetupFailure(e)) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        } finally {
+            FileUtils.deleteDirectory("definition_files");
         }
     }
 }
