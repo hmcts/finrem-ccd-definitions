@@ -83,10 +83,7 @@ module.exports = () => {
     uploadConfig(path) {
       this.click('Import Case Definition');
       this.attachFile('file', path);
-      this.executeScript(function() {
-        document.querySelectorAll('button[type=submit]')[0].click();
-      });
-
+      tryTo(() => this.click('Submit'));
     },
 
     signInIdam(username, password) {
