@@ -140,6 +140,7 @@ withPipeline("nodejs", product, component) {
       }
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-contested")
+        yarnBuilder.yarn("copy-preview-xlxs-to-resources")
       }
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
