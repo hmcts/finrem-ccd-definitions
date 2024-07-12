@@ -6,7 +6,10 @@ import uk.gov.hmcts.befta.BeftaMain;
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
 import uk.gov.hmcts.befta.dse.ccd.CcdRoleConfig;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
+import uk.gov.hmcts.befta.exception.ImportException;
 
+import javax.crypto.AEADBadTagException;
+import javax.net.ssl.SSLException;
 import java.util.List;
 import java.util.Arrays;
 
@@ -42,15 +45,17 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
 
     @Override
     public void addCcdRoles() {
-        logger.info("Adding CCD roles");
-        CCD_ROLES.forEach(this::addCcdRole);
+        if (getDataSetupEnvironment() == CcdEnvironment.PREVIEW) {
+            logger.info("Adding CCD roles");
+            CCD_ROLES.forEach(this::addCcdRole);
+        }
     }
 
     @Override
     public void importDefinitions() {
         logger.info("Importing CCD definitions");
 
-        String  definitionStoreApiUrl = BeftaMain.getConfig().getDefinitionStoreUrl();
+        String definitionStoreApiUrl = BeftaMain.getConfig().getDefinitionStoreUrl();
         logger.info("CCD Definition Store API: {}", definitionStoreApiUrl);
 
         //logger.info("Definitions path: {}", definitionsPath);
@@ -68,7 +73,7 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
             }
         } catch (Exception e) {
             logger.error("Error when uploading CCD definition files", e);
-            // exit the process to fail jenkins pipeline
+            // Exit the process to fail Jenkins pipeline
             System.exit(1);
         }
     }
@@ -76,5 +81,17 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     @Override
     public void createRoleAssignments() {
         // No implementation required
+    }
+
+    @Override
+    protected boolean shouldTolerateDataSetupFailure(Throwable e) {
+        if (getDataSetupEnvironment() == CcdEnvironment.PREVIEW) {
+            if (e instanceof AEADBadTagException) {
+                logger.error("Data Setup failure ignored", e);
+                return true;
+            }
+        }
+
+        return shouldTolerateDataSetupFailure();
     }
 }
