@@ -13,7 +13,7 @@ Scenario('Check env running @smoke @crossbrowser', async ({ I }) => {
 }).retry(3);
 
 if (process.env.IMPORT_PREVIEW) {
-  Scenario('add all the roles @smoke @preview', ({ I }) => {
+  Scenario('add all the roles @smoke', ({ I }) => {
     I.loginToAdminConsole();
     I.createRole('citizen');
     I.createRole('caseworker');
@@ -40,12 +40,12 @@ if (process.env.IMPORT_PREVIEW) {
     I.see('caseworker-approver');
   }).retry({ retries: 3, minTimeout: 30000 }); // eslint-disable-line no-magic-numbers
 
-  Scenario('upload Consented preview config file @smoke @preview', ({ I }) => {
+  Scenario('upload Consented preview config file @smoke', ({ I }) => {
     I.loginToAdminConsole();
     I.uploadConfig(`../../definitions/consented/xlsx/ccd-config-preview-consented-${process.env.GIT_COMMIT}.xlsx`);
   }).retry({retries: 3, minTimeout: 30000});
 
-  Scenario('upload Contested preview config file @smoke @preview', ({ I }) => {
+  Scenario('upload Contested preview config file @smoke', ({ I }) => {
     I.loginToAdminConsole();
     I.uploadConfig(`../../definitions/contested/xlsx/ccd-config-preview-contested-${process.env.GIT_COMMIT}.xlsx`);
   }).retry({retries: 3, minTimeout: 300000})
