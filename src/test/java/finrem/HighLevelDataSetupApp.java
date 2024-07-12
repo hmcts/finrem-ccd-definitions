@@ -86,8 +86,8 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     @Override
     protected boolean shouldTolerateDataSetupFailure(Throwable e) {
         if (getDataSetupEnvironment() == CcdEnvironment.PREVIEW) {
-            if (e instanceof AEADBadTagException) {
-                logger.error("Data Setup failure ignored", e);
+            if (e instanceof AEADBadTagException || e instanceof SSLException) {
+                logger.error("Data Setup failure ignored: {}", e.getMessage());
                 return true;
             }
         }
