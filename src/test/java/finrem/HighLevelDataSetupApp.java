@@ -6,12 +6,10 @@ import uk.gov.hmcts.befta.BeftaMain;
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
 import uk.gov.hmcts.befta.dse.ccd.CcdRoleConfig;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
-import uk.gov.hmcts.befta.exception.ImportException;
 
 import javax.crypto.AEADBadTagException;
 import javax.net.ssl.SSLException;
 import java.util.List;
-import java.util.Arrays;
 
 public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
 
@@ -86,12 +84,10 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     @Override
     protected boolean shouldTolerateDataSetupFailure(Throwable e) {
         if (getDataSetupEnvironment() == CcdEnvironment.PREVIEW) {
-            if (e instanceof AEADBadTagException || e instanceof SSLException) {
-                logger.error("Data Setup failure ignored: {}", e.getMessage());
-                return true;
-            }
+            logger.error("Data Setup failure ignored: {}", e.getMessage());
+            return true;
+        } else {
+            return super.shouldTolerateDataSetupFailure(e);
         }
-
-        return shouldTolerateDataSetupFailure();
     }
 }
