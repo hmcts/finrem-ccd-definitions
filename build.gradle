@@ -9,8 +9,11 @@ plugins {
 group 'com.github.hmcts'
 version 'DEV-SNAPSHOT'
 
-sourceCompatibility = 11
-targetCompatibility = 11
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
 
 repositories {
     mavenLocal()
