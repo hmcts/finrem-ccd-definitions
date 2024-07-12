@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import uk.gov.hmcts.befta.BeftaMain;
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
+import uk.gov.hmcts.befta.dse.ccd.CcdRoleConfig;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
 
 import java.util.List;
@@ -12,9 +13,23 @@ import java.util.Arrays;
 public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
 
     private static final Logger logger = LoggerFactory.getLogger(HighLevelDataSetupApp.class);
+
+    private static final List<CcdRoleConfig> CCD_ROLES = List.of(
+            new CcdRoleConfig("citizen", "PUBLIC"),
+            new CcdRoleConfig("caseworker", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-financialremedy-courtadmin", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-financialremedy-solicitor", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-financialremedy-judiciary", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-financialremedy-superuser", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-systemupdate", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-bulkscan", "PUBLIC"),
+            new CcdRoleConfig("caseworker-divorce-financialremedy", "PUBLIC"),
+            new CcdRoleConfig("caseworker-caa", "PUBLIC"),
+            new CcdRoleConfig("caseworker-approver", "PUBLIC")
+    );
+
     private static final String definitionsPath = "ccd_definition";
-    private static final List<CcdEnvironment> SKIPPED_ENVS = Arrays.asList(
-            CcdEnvironment.DEMO);
+    private static final List<CcdEnvironment> SKIPPED_ENVS = List.of(CcdEnvironment.DEMO);
 
     public HighLevelDataSetupApp(CcdEnvironment dataSetupEnvironment) {
         super(dataSetupEnvironment, definitionsPath);
@@ -27,36 +42,39 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
 
     @Override
     public void addCcdRoles() {
-        logger.info("addCcdRoles");
+        logger.info("Adding CCD roles");
+        CCD_ROLES.forEach(this::addCcdRole);
     }
 
     @Override
-    protected void doLoadTestData() {
-        logger.info("doLoadTestData");
+    public void importDefinitions() {
+        logger.info("Importing CCD definitions");
 
         String  definitionStoreApiUrl = BeftaMain.getConfig().getDefinitionStoreUrl();
         logger.info("CCD Definition Store API: {}", definitionStoreApiUrl);
 
-        logger.info("Definitions path: {}", definitionsPath);
+        //logger.info("Definitions path: {}", definitionsPath);
 
-        List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
+        //List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
 
         CcdEnvironment currentEnv = (CcdEnvironment) getDataSetupEnvironment();
         logger.info("Current environment: {}", currentEnv);
         try {
             if (currentEnv != null && !SKIPPED_ENVS.contains(currentEnv)) {
                 logger.info("Importing for {} environment", currentEnv);
-                importDefinitions();
+                importDefinitionsAt(definitionsPath);
             } else {
-                logger.info("Skipping importing for {} environment", currentEnv);
-                definitionFileResources.forEach(file ->
-                        System.out.println("definition file \"" + file + "\" is skipped on " + currentEnv));
+                logger.info("CCD definition file import skipped for {} environment", currentEnv);
             }
         } catch (Exception e) {
             logger.error("Error when uploading CCD definition files", e);
-            System.out.println("Error on uploading ccd definition file - " + e.getMessage());
-            // exit the process to fail jenkin pipeline
+            // exit the process to fail jenkins pipeline
             System.exit(1);
         }
+    }
+
+    @Override
+    public void createRoleAssignments() {
+        // No implementation required
     }
 }
