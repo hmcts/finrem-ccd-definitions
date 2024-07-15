@@ -93,22 +93,27 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
         List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
         logger.info("{} definition files will be uploaded to '{}' on {}.", definitionFileResources.size(),
                 BeftaMain.getConfig().getDefinitionStoreUrl(), getDataSetupEnvironment());
-        String message = "Couldn't import {} - Exception: {}.\n\n";
+
         try {
             for (String fileName : definitionFileResources) {
-                try {
-                    logger.info("\n\nImporting {}...", fileName);
-                    importDefinition(fileName);
-                    logger.info("\nImported {}.\n\n", fileName);
-                } catch (Exception e) {
-                    logger.error(message, fileName, e.getMessage());
-                    if (!shouldTolerateDataSetupFailure(e)) {
-                        throw new RuntimeException(e);
-                    }
-                }
+                importDefinitionFile(fileName);
             }
         } finally {
             FileUtils.deleteDirectory("definition_files");
+        }
+    }
+
+    private void importDefinitionFile(String fileName) {
+        try {
+            logger.info("\n\nImporting {}...", fileName);
+            importDefinition(fileName);
+            logger.info("\nImported {}.\n\n", fileName);
+        } catch (Exception e) {
+            String message = "Couldn't import {} - Exception: {}.\n\n";
+            logger.error(message, fileName, e.getMessage());
+            if (!shouldTolerateDataSetupFailure(e)) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
