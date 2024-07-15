@@ -77,7 +77,7 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     @Override
     protected boolean shouldTolerateDataSetupFailure(Throwable e) {
         if (getDataSetupEnvironment() == CcdEnvironment.PREVIEW) {
-            logger.error("Data Setup failure ignored: {}", e.getMessage());
+            logger.error("Data Setup failure ignored", e);
             return true;
         } else {
             return super.shouldTolerateDataSetupFailure(e);
