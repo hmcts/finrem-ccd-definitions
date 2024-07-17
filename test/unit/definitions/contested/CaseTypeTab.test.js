@@ -53,7 +53,6 @@ describe('CaseTypeTab', () => {
   const expected = {
     state: 1,
     historyTab: 1,
-    'caseFileViewTab-superuser': 2,
     'caseFileViewTab-courtadmin': 2,
     'caseFileViewTab-judiciary': 2,
     'ApplicantAddressConfidential-solicitor': 3,
@@ -166,7 +165,6 @@ describe('CaseTypeTab', () => {
     expect(tabIds).to.eql([
       'historyTab',
       'state',
-      'caseFileViewTab-superuser',
       'caseFileViewTab-courtadmin',
       'caseFileViewTab-judiciary',
       'ApplicantAddressConfidential-solicitor',
