@@ -124,7 +124,6 @@
     "DisplayOrder": 108,
     "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;readyForHearing;newPaperCase",
     "PostConditionState": "*",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
