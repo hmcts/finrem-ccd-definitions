@@ -160,7 +160,7 @@ Scenario('Consented case in Contested Assigned to Judge @nightly', async ({ I })
   //await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
 }).retry(3);
 
-Scenario('Contested Paper Case Creation @preview @nightly', async ({ I }) => {
+Scenario('Contested Paper Case Creation @nightly', async ({ I }) => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-demo-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
     /* eslint-disable */
