@@ -134,8 +134,8 @@ __metadata:
   linkType: hard
 
 "@azure/identity@npm:^4.2.1":
-  version: 4.3.0
-  resolution: "@azure/identity@npm:4.3.0"
+  version: 4.4.0
+  resolution: "@azure/identity@npm:4.4.0"
   dependencies:
     "@azure/abort-controller": ^1.0.0
     "@azure/core-auth": ^1.5.0
@@ -144,14 +144,14 @@ __metadata:
     "@azure/core-tracing": ^1.0.0
     "@azure/core-util": ^1.3.0
     "@azure/logger": ^1.0.0
-    "@azure/msal-browser": ^3.11.1
+    "@azure/msal-browser": ^3.14.0
     "@azure/msal-node": ^2.9.2
     events: ^3.0.0
     jws: ^4.0.0
     open: ^8.0.0
     stoppable: ^1.1.0
     tslib: ^2.2.0
-  checksum: 7f4256b39c4e27bf072c33f02dd63bd50dcf54ad578e3e483dcf89283546a6086b1640adfe4c93a537cbe483dd2e3a29f6d7b837e51f333229f7bbbc448966b3
+  checksum: d3aecb92e4e2a2f0fa9063eb605bc893ad2e80bd7f3426cf6027d7581cc4e29a38b6f8df1c688a1f01789975390d0d0c7caae01aa868fabc245a40ae6ba6da6c
   languageName: node
   linkType: hard
 
@@ -183,12 +183,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@azure/msal-browser@npm:^3.11.1":
-  version: 3.18.0
-  resolution: "@azure/msal-browser@npm:3.18.0"
+"@azure/msal-browser@npm:^3.14.0":
+  version: 3.19.1
+  resolution: "@azure/msal-browser@npm:3.19.1"
   dependencies:
-    "@azure/msal-common": 14.13.0
-  checksum: 9832790e35df64f1d79b69d9e73b9fd3aece9229bb6c1a306a0746d57179f0ae0b22e8328af0f5c1d2448b617303eb45109de5aafe6b4898874d733068504a44
+    "@azure/msal-common": 14.13.1
+  checksum: fe1116ed1269f017fb6f4b66b99e1a310b85b11a6133bbe22c0696471070aed35db9ef395d0af03117ac413e1ad31fa7640c7e825d33ce592c9246d6e9968bfc
   languageName: node
   linkType: hard
 
@@ -196,6 +196,13 @@ __metadata:
   version: 14.13.0
   resolution: "@azure/msal-common@npm:14.13.0"
   checksum: 5f48cdd9d013189b31813c6db78098af18414fa4d721a87ec0ee2525e1de79124b643c26fafb8be4d2b2a7ab26484dbe11665d43a4d1f7b4d3ff938999f21b54
+  languageName: node
+  linkType: hard
+
+"@azure/msal-common@npm:14.13.1":
+  version: 14.13.1
+  resolution: "@azure/msal-common@npm:14.13.1"
+  checksum: 43ba692c2bde781a76113b40ae5316568b4aece64fd2b77f336a17b1a5de73af5e809f04edd49ffea619eba398bb31cf3e2a2574167118a8b0d64144e59c621f
   languageName: node
   linkType: hard
 
@@ -6143,11 +6150,11 @@ __metadata:
   linkType: hard
 
 "husky@npm:^9.0.0":
-  version: 9.0.11
-  resolution: "husky@npm:9.0.11"
+  version: 9.1.1
+  resolution: "husky@npm:9.1.1"
   bin:
-    husky: bin.mjs
-  checksum: 1aebc3334dc7ac6288ff5e1fb72cfb447cfa474e72cf7ba692e8c5698c573ab725c28c6a5088c9f8e6aca5f47d40fa7261beffbc07a4d307ca21656dc4571f07
+    husky: bin.js
+  checksum: d907eee996353b0b6da8e40b6cf6c1274d57470cd984f028a8baf3e17b7bbab57d796345d552971c6629521685297a1ee093128e4bd45c8fc1867c0dbf38086b
   languageName: node
   linkType: hard
 
@@ -8065,8 +8072,8 @@ __metadata:
   linkType: hard
 
 "mocha@npm:^10.2.0":
-  version: 10.6.0
-  resolution: "mocha@npm:10.6.0"
+  version: 10.7.0
+  resolution: "mocha@npm:10.7.0"
   dependencies:
     ansi-colors: ^4.1.3
     browser-stdout: ^1.3.1
@@ -8091,7 +8098,7 @@ __metadata:
   bin:
     _mocha: bin/_mocha
     mocha: bin/mocha.js
-  checksum: 3cdb3b3bf2a8fe280222135cda13e62e513225a13730652f81b12b966c2fa6f12ecfc574a37f88daa579d81bd21498a7d78b6d040a821dabb046a764dc261357
+  checksum: e04c4ce7a61cacf0edd66a8e5ce04b14c1adaaac66c1c7765d5408f3c27b75583e104baa92709c40f207b7ff51bc80b85c4aa7b4e5ce25dbddd1e55d66aa774b
   languageName: node
   linkType: hard
 
@@ -9052,27 +9059,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.45.1":
-  version: 1.45.1
-  resolution: "playwright-core@npm:1.45.1"
+"playwright-core@npm:1.45.2":
+  version: 1.45.2
+  resolution: "playwright-core@npm:1.45.2"
   bin:
     playwright-core: cli.js
-  checksum: 1279cbf33d70a16f0451b590723a4b56bf3a96a9196f1d7bd76444fdd8c976bb7671698199ab4e0acaeb800c7aac48a62036e30f27fd37a74925b53b80f2e85f
+  checksum: 536423bfb320ad045b638498748df5681585dadda8bae1eff8995c70fcd6695761caf3c331c1e807e323e2af431bb15b0216142c5315d28f110b129f6e800b30
   languageName: node
   linkType: hard
 
 "playwright@npm:^1.41.2":
-  version: 1.45.1
-  resolution: "playwright@npm:1.45.1"
+  version: 1.45.2
+  resolution: "playwright@npm:1.45.2"
   dependencies:
     fsevents: 2.3.2
-    playwright-core: 1.45.1
+    playwright-core: 1.45.2
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: 34c589b3e7ef4d54782336167f8f3d1b456178b04b98eb8c944eaf21fd66cf5480e5f0c0ec8b846a69659b6fc31764283598aac5bb9307f7413f8fca81d40751
+  checksum: ff37a27f85220363fcc6876389f58ea43f95946a1c26a8153b5f831e3a6693772e4ff45290e32dc193b4f64bc5053dbae3305432eaf5bd4a7dc6782e9b7b8e4a
   languageName: node
   linkType: hard
 
@@ -9105,11 +9112,11 @@ __metadata:
   linkType: hard
 
 "prettier@npm:^3.0.0":
-  version: 3.3.2
-  resolution: "prettier@npm:3.3.2"
+  version: 3.3.3
+  resolution: "prettier@npm:3.3.3"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 5557d8caed0b182f68123c2e1e370ef105251d1dd75800fadaece3d061daf96b1389141634febf776050f9d732c7ae8fd444ff0b4a61b20535e7610552f32c69
+  checksum: bc8604354805acfdde6106852d14b045bb20827ad76a5ffc2455b71a8257f94de93f17f14e463fe844808d2ccc87248364a5691488a3304f1031326e62d9276e
   languageName: node
   linkType: hard
 
