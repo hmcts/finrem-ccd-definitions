@@ -26,7 +26,7 @@ async function applicantTab(caseType, tabName) {
     await I.see(verifyTabText.applicantTab.applicantEmailCommunication);
     break;
   case 'contested':
-    await I.waitForNavigationToComplete('#mat-tab-label-0-1');
+    await I.waitForNavigationToComplete('#mat-tab-label-0-2');
     await I.see(verifyContestedTabText.applicantTab.applicantLastName);
     await I.see(verifyContestedTabText.applicantTab.applicantSolicitorName);
     await I.see(verifyContestedTabText.applicantTab.applicantSolicitorFirm);
@@ -35,7 +35,7 @@ async function applicantTab(caseType, tabName) {
     break;
   case 'contestedPaper':
     await I.wait(3);
-    await I.waitForNavigationToComplete('#mat-tab-label-0-1');
+    await I.waitForNavigationToComplete('#mat-tab-label-0-2');
     await I.see(verifyContestedPaperTabText.applicantTab.applicantLastName);
     await I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorName);
     await I.see(verifyContestedPaperTabText.applicantTab.applicantSolicitorFirm);
