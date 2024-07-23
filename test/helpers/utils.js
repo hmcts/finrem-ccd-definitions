@@ -15,7 +15,7 @@ async function axiosRequest(requestParams) {
   return await axiosClient(requestParams).then(response => {
     return response;
   }).catch(error => {
-    logger.error("Utils REST request error %s", error.message);
+    logger.error("Utils %s request error %s", requestParams.url, error.message);
   });
 }
 
