@@ -1966,7 +1966,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "MIAMPreviousAttendanceChecklist",
+    "CaseFieldID": "MIAMPreviousAttendanceChecklistV2",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 20,
@@ -2016,7 +2016,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "MIAMOtherGroundsChecklist",
+    "CaseFieldID": "MIAMOtherGroundsChecklistV2",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 21,
@@ -3736,7 +3736,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "N"
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5312,7 +5312,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "MIAMPreviousAttendanceChecklist",
+    "CaseFieldID": "MIAMPreviousAttendanceChecklistV2",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 20,
@@ -5362,7 +5362,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "MIAMOtherGroundsChecklist",
+    "CaseFieldID": "MIAMOtherGroundsChecklistV2",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "MANDATORY",
     "PageID": 21,
@@ -8886,7 +8886,9 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -9165,8 +9167,9 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
-  },
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
