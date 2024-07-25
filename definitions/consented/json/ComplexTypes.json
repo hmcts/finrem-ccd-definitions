@@ -1335,5 +1335,70 @@
     "ElementLabel": "Additional comments",
     "HintText": "Please add any additional comments for Court Admin (these comments will not be accessible by the Applicant’s solicitor)",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "documentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "type",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "ScannedDocumentType",
+    "ElementLabel": "Document Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "subtype",
+    "FieldType": "Text",
+    "ElementLabel": "Document Subtype",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "controlNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Document Control Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "deliveryDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Delivery Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
+    "SecurityClassification": "Public"
   }
 ]
