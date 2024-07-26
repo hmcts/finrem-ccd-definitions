@@ -39,14 +39,14 @@ function mediationQuestionNoMIAMYesExemption() {
   I.click('Continue');
   I.waitForText('MIAM Evidence : Previous MIAM attendance or MIAM exemption', 5);
   for (let checkBoxCtr = '1'; checkBoxCtr <= '2'; checkBoxCtr++) {
-    I.checkOption(`#MIAMPreviousAttendanceChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
+    I.checkOption(`#MIAMPreviousAttendanceChecklistV2 .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
   I.fillField('#evidenceUnavailablePreviousAttendanceMIAM', 'Test');
   I.waitForContinueButtonEnabled();
   I.click('Continue');
   I.waitForText('MIAM Evidence: what other grounds of exemption apply?', 5);
   for (let checkBoxCtr = '1'; checkBoxCtr <= '2'; checkBoxCtr++) {
-    I.checkOption(`#MIAMOtherGroundsChecklist .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
+    I.checkOption(`#MIAMOtherGroundsChecklistV2 .multiple-choice:nth-of-type(${checkBoxCtr}) input`);
   }
   I.waitForText('MIAM Evidence: what other grounds of exemption apply?', 5);
   I.fillField('#evidenceUnavailableOtherGroundsMIAM', 'Test');
