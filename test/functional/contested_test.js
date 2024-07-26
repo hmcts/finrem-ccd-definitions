@@ -232,7 +232,7 @@ Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ 
 }).retry(3);
 
 //disable in preview
-Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exemption @preview @nightly', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exemption @nightly', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
