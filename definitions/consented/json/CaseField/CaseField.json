@@ -640,6 +640,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "miniFormASpacing",
+    "Label": " ***************",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "consentOrderL",
     "Label": "#### ${consentVariationOrderLabelC}",
     "FieldType": "Label",
@@ -652,6 +660,71 @@
     "Label": "Draft ${consentVariationOrderLabelC}",
     "HintText": "Please upload a scanned copy of the draft ${consentVariationOrderLabelL} that has been signed by both parties. PLEASE NOTE: Pension documents should be uploaded separately on the pension upload page or they will not be returned with a court seal upon approval of the application. Where possible, documents should be scanned in Black and White.",
     "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderType",
+    "Label": "Document Type",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "ScannedDocumentType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderSubtype",
+    "Label": "Document Subtype",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderControlNumber",
+    "Label": "Document Control Number",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderFileName",
+    "Label": "File Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderScannedDate",
+    "FieldType": "DateTime",
+    "Label": "Scanned Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderDeliveryDate",
+    "FieldType": "DateTime",
+    "Label": "Delivery Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderExceptionRecordReference",
+    "FieldType": "Text",
+    "Label": "Exception record reference",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderSpacing",
+    "Label": " ***************",
+    "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
@@ -669,6 +742,14 @@
     "ID": "latestConsentOrder",
     "Label": "Latest Consent Order",
     "FieldType": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "latestConsentOrderSpacing",
+    "Label": " ***************",
+    "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
@@ -1783,6 +1864,71 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "formAType",
+    "Label": "Document Type",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "ScannedDocumentType",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "formASubtype",
+    "Label": "Document Subtype",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "formAControlNumber",
+    "Label": "Document Control Number",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "formAFileName",
+    "Label": "File Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "formAScannedDate",
+    "FieldType": "DateTime",
+    "Label": "Scanned Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "formADeliveryDate",
+    "FieldType": "DateTime",
+    "Label": "Delivery Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "formAExceptionRecordReference",
+    "FieldType": "Text",
+    "Label": "Exception record reference",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "formASpacing",
+    "Label": " ***************",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "15/04/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "scannedD81s",
@@ -1790,6 +1936,16 @@
     "HintText": "Scanned D81s",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "15/04/2020",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "scannedD81Collection",
+    "Label": "Scanned D81s",
+    "HintText": "Scanned D81s",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ScannedD81Info",
     "SecurityClassification": "Public"
   },
   {
