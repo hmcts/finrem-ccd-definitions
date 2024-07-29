@@ -1659,17 +1659,18 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "scannedD81Collection",
+    "CaseFieldID": "scannedD81s",
+    "FieldShowCondition": "scannedD81Collection!=\"*\"",
     "TabFieldDisplayOrder": 27
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "15/04/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "pensionCollection",
+    "CaseFieldID": "scannedD81Collection",
     "TabFieldDisplayOrder": 28
   },
   {
@@ -1679,7 +1680,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "otherCollection",
+    "CaseFieldID": "pensionCollection",
     "TabFieldDisplayOrder": 29
   },
   {
@@ -1689,7 +1690,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "divorceUploadEvidence1",
+    "CaseFieldID": "otherCollection",
     "TabFieldDisplayOrder": 30
   },
   {
@@ -1699,7 +1700,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "divorceUploadEvidence2",
+    "CaseFieldID": "divorceUploadEvidence1",
     "TabFieldDisplayOrder": 31
   },
   {
@@ -1709,7 +1710,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "amendedConsentOrderCollection",
+    "CaseFieldID": "divorceUploadEvidence2",
     "TabFieldDisplayOrder": 32
   },
   {
@@ -1719,7 +1720,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "respondToOrderDocuments",
+    "CaseFieldID": "amendedConsentOrderCollection",
     "TabFieldDisplayOrder": 33
   },
   {
@@ -1729,7 +1730,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "scannedDocuments",
+    "CaseFieldID": "respondToOrderDocuments",
     "TabFieldDisplayOrder": 34
   },
   {
@@ -1739,7 +1740,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "generalLetterCollection",
+    "CaseFieldID": "scannedDocuments",
     "TabFieldDisplayOrder": 35
   },
   {
@@ -1749,7 +1750,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "bulkPrintCoverSheetRes",
+    "CaseFieldID": "generalLetterCollection",
     "TabFieldDisplayOrder": 36
   },
   {
@@ -1759,7 +1760,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "bulkPrintLetterIdRes",
+    "CaseFieldID": "bulkPrintCoverSheetRes",
     "TabFieldDisplayOrder": 37
   },
   {
@@ -1769,7 +1770,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "bulkPrintCoverSheetApp",
+    "CaseFieldID": "bulkPrintLetterIdRes",
     "TabFieldDisplayOrder": 38
   },
   {
@@ -1779,7 +1780,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "bulkPrintLetterIdApp",
+    "CaseFieldID": "bulkPrintCoverSheetApp",
     "TabFieldDisplayOrder": 39
   },
   {
@@ -1789,7 +1790,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "uploadDocuments",
+    "CaseFieldID": "bulkPrintLetterIdApp",
     "TabFieldDisplayOrder": 40
   },
   {
@@ -1799,7 +1800,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "copyOfPaperFormA",
+    "CaseFieldID": "uploadDocuments",
     "TabFieldDisplayOrder": 41
   },
   {
@@ -1809,7 +1810,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "generalEmailCollection",
+    "CaseFieldID": "copyOfPaperFormA",
     "TabFieldDisplayOrder": 42
   },
   {
@@ -1819,7 +1820,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "solUploadDocuments",
+    "CaseFieldID": "generalEmailCollection",
     "TabFieldDisplayOrder": 43
   },
   {
@@ -1829,7 +1830,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "confidentialCoverSheetLabel",
+    "CaseFieldID": "solUploadDocuments",
     "TabFieldDisplayOrder": 44
   },
   {
@@ -1839,7 +1840,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
+    "CaseFieldID": "confidentialCoverSheetLabel",
     "TabFieldDisplayOrder": 45
   },
   {
@@ -1849,7 +1850,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "bulkPrintCoverSheetResConfidential",
+    "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
     "TabFieldDisplayOrder": 46
   },
   {
@@ -1859,7 +1860,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "transferLocalCourtEmailCollection",
+    "CaseFieldID": "bulkPrintCoverSheetResConfidential",
     "TabFieldDisplayOrder": 47
   },
   {
@@ -1869,8 +1870,18 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "otherVariationCollection",
+    "CaseFieldID": "transferLocalCourtEmailCollection",
     "TabFieldDisplayOrder": 48
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "CaseDetails",
+    "TabLabel": "Case Documents",
+    "TabDisplayOrder": 9,
+    "CaseFieldID": "otherVariationCollection",
+    "TabFieldDisplayOrder": 49
   },
   {
     "LiveFrom": "01/01/2017",
