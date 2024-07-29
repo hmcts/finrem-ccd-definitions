@@ -1480,7 +1480,8 @@
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
     "CaseFieldID": "formASpacing",
-    "TabFieldDisplayOrder": 9
+    "TabFieldDisplayOrder": 9,
+    "FieldShowCondition": "scannedD81Collection!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1500,7 +1501,8 @@
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
     "CaseFieldID": "miniFormASpacing",
-    "TabFieldDisplayOrder": 11
+    "TabFieldDisplayOrder": 11,
+    "FieldShowCondition": "scannedD81Collection!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1590,7 +1592,8 @@
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
     "CaseFieldID": "consentOrderSpacing",
-    "TabFieldDisplayOrder": 20
+    "TabFieldDisplayOrder": 20,
+    "FieldShowCondition": "scannedD81Collection!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1620,7 +1623,8 @@
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
     "CaseFieldID": "latestConsentOrderSpacing",
-    "TabFieldDisplayOrder": 23
+    "TabFieldDisplayOrder": 23,
+    "FieldShowCondition": "scannedD81Collection!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
