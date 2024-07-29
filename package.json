@@ -11,8 +11,9 @@
   },
   "config": {
     "local": {
-      "cosUrl": "http://host.docker.internal:4012",
-      "ccdUrl": "http://localhost:4452"
+      "cosUrl": "http://localhost:9000",
+      "ccdUrl": "http://localhost:4452",
+      "aacUrl": "http://localhost:4454"
     },
     "demo": {
       "cosUrl": "http://finrem-cos-demo.service.core-compute-demo.internal",
@@ -105,7 +106,7 @@
     "@axe-core/playwright": "^4.9.1",
     "@hmcts/nodejs-healthcheck": "^1.8.0",
     "@hmcts/nodejs-logging": "^4.0.4",
-    "@hmcts/properties-volume": "1.1.0",
+    "@hmcts/properties-volume": "1.2.0",
     "axios": "^1.7.2",
     "codeceptjs": "^3.5.12",
     "config": "^3.3.3",

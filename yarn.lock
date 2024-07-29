@@ -1312,16 +1312,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hmcts/properties-volume@npm:1.1.0":
-  version: 1.1.0
-  resolution: "@hmcts/properties-volume@npm:1.1.0"
+"@hmcts/properties-volume@npm:1.2.0":
+  version: 1.2.0
+  resolution: "@hmcts/properties-volume@npm:1.2.0"
   dependencies:
-    "@azure/identity": ^4.0.0-beta.1
+    "@azure/identity": ^4.2.1
     "@azure/keyvault-secrets": ^4.7.0
     "@hmcts/nodejs-logging": ^4.0.4
     js-yaml: ^4.1.0
     lodash: ^4.17.21
-  checksum: 7091f3e85250bb68456aad742dd00b7eb74c4d41aa84f7efbb852188f5bfbfa8a53d56df3a2b50cf1e0eb1ef0897367c85fe6b9f0779f8823b2fb454c934b791
+  checksum: b64cc191d74b2d16ad31e1fae8e8edf1cf7d26b88f4b38601030073210bc975623f2c221c2c61668cf058629193b0f9b59137883d2aa7dd51f3d678d11e2a844
   languageName: node
   linkType: hard
 
@@ -5473,8 +5473,8 @@ __metadata:
     "@hmcts/eslint-config": ^1.4.0
     "@hmcts/nodejs-healthcheck": ^1.8.0
     "@hmcts/nodejs-logging": ^4.0.4
-    "@hmcts/properties-volume": 1.1.0
     "@playwright/test": ^1.45.1
+    "@hmcts/properties-volume": 1.2.0
     "@shinnn/eslint-config-node": ^6.0.2
     "@types/node": ^20.14.9
     axios: ^1.7.2
@@ -6199,11 +6199,11 @@ __metadata:
   linkType: hard
 
 "husky@npm:^9.0.0":
-  version: 9.1.1
-  resolution: "husky@npm:9.1.1"
+  version: 9.1.3
+  resolution: "husky@npm:9.1.3"
   bin:
     husky: bin.js
-  checksum: d907eee996353b0b6da8e40b6cf6c1274d57470cd984f028a8baf3e17b7bbab57d796345d552971c6629521685297a1ee093128e4bd45c8fc1867c0dbf38086b
+  checksum: 81103f34c8a796f5510c73c4d88af09671d9b559b0dd75975cc0891f24697d7076b6b57c8de03348f03c08da08246d254e6565f841f1c894cab91c23695c3ac6
   languageName: node
   linkType: hard
 
@@ -10722,8 +10722,8 @@ __metadata:
   linkType: hard
 
 "tar@npm:^7.0.0":
-  version: 7.4.1
-  resolution: "tar@npm:7.4.1"
+  version: 7.4.2
+  resolution: "tar@npm:7.4.2"
   dependencies:
     "@isaacs/fs-minipass": ^4.0.0
     chownr: ^3.0.0
@@ -10731,7 +10731,7 @@ __metadata:
     minizlib: ^3.0.1
     mkdirp: ^3.0.1
     yallist: ^5.0.0
-  checksum: b1dd3fb4e4387597d3bcfdca80f4f79c42a177983b8ba8e8587c04774329d11f56a489dc725955f94c0677c3f474df763daa8c6afd012e532ad01e944b56e550
+  checksum: 024bc57a5673d330352b3ab5314fce1a51cfd1476b3500a35d394a590f1cc0bf3659a98f459c1525c499108562d62a050003d5dfd4d17a982b34583991f11183
   languageName: node
   linkType: hard
 
