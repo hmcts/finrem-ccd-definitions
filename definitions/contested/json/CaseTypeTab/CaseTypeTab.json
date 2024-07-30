@@ -3318,6 +3318,25 @@
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "allocatedToBeHeardAtHighCourtJudgeLevel",
+    "TabFieldDisplayOrder": "53"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 15,
+    "CaseFieldID": "allocatedToBeHeardAtHighCourtJudgeLevelText",
+    "TabFieldDisplayOrder": "53",
+    "FieldShowCondition": "allocatedToBeHeardAtHighCourtJudgeLevel=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
     "CaseFieldID": "applicantAttendedMIAMLabel",
     "TabFieldDisplayOrder": "54"
