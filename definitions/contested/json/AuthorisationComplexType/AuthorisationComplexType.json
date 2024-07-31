@@ -1390,5 +1390,13 @@
     "ListElementCode": "intervenerOrganisation",
     "UserRole": "[INTVRSOLICITOR4]",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "FR_removeCaseDocument",
+    "ListElementCode": "documentToRemoveUrl",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
   }
 ]
