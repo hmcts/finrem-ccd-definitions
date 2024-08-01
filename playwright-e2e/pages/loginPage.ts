@@ -10,7 +10,7 @@ export class loginPage {
 
   public constructor(page: Page) {
     this.page = page;
-    this.url = config.frontEndBaseURL;
+    this.url = config.manageCaseBaseURL;
     this.emailInputLocator = page.getByLabel('Email address');
     this.passwordInputLocator = page.getByLabel('Password');
     this.signinButtonLocator = page.getByRole('button', { name: 'Sign in' });
