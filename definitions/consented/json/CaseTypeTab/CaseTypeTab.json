@@ -1480,7 +1480,8 @@
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
     "CaseFieldID": "formASpacing",
-    "TabFieldDisplayOrder": 9
+    "TabFieldDisplayOrder": 9,
+    "FieldShowCondition": "formAExceptionRecordReference=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1500,7 +1501,8 @@
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
     "CaseFieldID": "miniFormASpacing",
-    "TabFieldDisplayOrder": 11
+    "TabFieldDisplayOrder": 11,
+    "FieldShowCondition": "miniFormA=\"*\" AND formAExceptionRecordReference=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1590,7 +1592,8 @@
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
     "CaseFieldID": "consentOrderSpacing",
-    "TabFieldDisplayOrder": 20
+    "TabFieldDisplayOrder": 20,
+    "FieldShowCondition": "consentOrderExceptionRecordReference=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1619,7 +1622,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "latestConsentOrderSpacing",
+    "CaseFieldID": "d81Joint",
     "TabFieldDisplayOrder": 23
   },
   {
@@ -1629,7 +1632,7 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "d81Joint",
+    "CaseFieldID": "d81Applicant",
     "TabFieldDisplayOrder": 24
   },
   {
@@ -1639,17 +1642,18 @@
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "d81Applicant",
+    "CaseFieldID": "d81Respondent",
     "TabFieldDisplayOrder": 25
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "15/04/2020",
     "CaseTypeID": "FinancialRemedyMVP2",
     "Channel": "CaseWorker",
     "TabID": "CaseDetails",
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "d81Respondent",
+    "CaseFieldID": "scannedD81s",
+    "FieldShowCondition": "scannedD81Collection!=\"*\"",
     "TabFieldDisplayOrder": 26
   },
   {
