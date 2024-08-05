@@ -189,7 +189,7 @@ Scenario.skip('Contested share case @nightly @pipeline', async I => {
   await I.assignContestedShareCase(caseId, solRef);
 }).retry(3);
 
-Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Solicitor @preview @nightly', async ({ I }) => {
     await I.signInIdam(solicitorUserName, solicitorPassword);
     await I.wait('2');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
@@ -208,7 +208,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async ({ I
     await I.waitForText('Form A Application', '60')
 }).retry(3);
 //disable in preview
-Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker @preview @nightly', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createCase('FinancialRemedyContested', 'Form A Application');
