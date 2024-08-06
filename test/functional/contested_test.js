@@ -208,7 +208,7 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @preview @nightly', a
     await I.waitForText('Form A Application', '60')
 }).retry(3);
 //disable in preview
-Scenario('Contested Matrimonial Case Creation by Caseworker @preview @nightly', async ({ I }) => {
+Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ I }) => {
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.wait('15');
     await I.createCase('FinancialRemedyContested', 'Form A Application');

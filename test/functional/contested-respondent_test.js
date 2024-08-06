@@ -12,7 +12,7 @@ const nightlyTest = process.env.NIGHTLY_TEST;
 
 Feature('Contested Respondent Solicitor Tests');
 
-Scenario('Create and assign Contested Case To Respondent @preview @nightly ', async ({ I }) => {
+Scenario('Create and assign Contested Case To Respondent @nightly ', async ({ I }) => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     /* eslint-disable */
