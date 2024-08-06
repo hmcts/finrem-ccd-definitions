@@ -22,9 +22,15 @@ test(
     await formAApplicationPage.selectOrganisation(
       config.organisationNames.finRem1Org
     );
+    await formAApplicationPage.enterSolicitorName('test');
     await formAApplicationPage.enterPhoneNumber('12345678910');
     await formAApplicationPage.enterEmailAddress(config.caseWorker.email);
     await formAApplicationPage.emailConsent(true);
+    await formAApplicationPage.matriomnialApplication();
+    await formAApplicationPage.continueApplication();
+
+    // Enter Divorce / Dissolution Details
+    await formAApplicationPage.divorceDetails('LV12D12345', false )
 
     const accessibilityScanResults = await makeAxeBuilder().analyze();
 

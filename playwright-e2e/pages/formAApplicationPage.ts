@@ -27,6 +27,11 @@ export class formAApplicationPage {
   readonly dxNumberInput: Locator;
   readonly emailConsentRadio: Locator;
   readonly applicationTypeRadio: Locator;
+  readonly matrimonialRadio: Locator;
+  readonly divorceNumberInput: Locator;
+  readonly divorceDetailsHeader: Locator;
+  readonly civilPartnershipNoRadio: Locator;
+
 
   public constructor(page: Page) {
     this.page = page;
@@ -59,6 +64,11 @@ export class formAApplicationPage {
     this.emailConsentRadio = page.locator(
       '#applicantSolicitorConsentForEmails_radio'
     );
+    this.matrimonialRadio = page.getByLabel('In connection to matrimonial');
+    this.divorceDetailsHeader = page.getByRole('heading', { name: 'Divorce / Dissolution Details' });
+    this.divorceNumberInput = page.getByLabel('Divorce / Dissolution Case Number');
+    this.civilPartnershipNoRadio = page.getByLabel('No');
+    
   }
 
   async continueApplication() {
@@ -93,5 +103,14 @@ export class formAApplicationPage {
     const radioOption = consent ? 'Yes' : 'No';
     const optionToSelect = this.emailConsentRadio.getByLabel(radioOption);
     await optionToSelect.check();
+  }
+  async matriomnialApplication() {
+    await expect(this.matrimonialRadio).toBeVisible();
+    await this.matrimonialRadio.check();  
+  }
+  async divorceDetails (divorceNumber: string) {
+    await expect (this.divorceDetailsHeader).toBeVisible();
+    await this.divorceNumberInput.fill(divorceNumber);
+    await this.civilPartnershipNoRadio.check();
   }
 }
