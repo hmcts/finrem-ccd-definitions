@@ -30,7 +30,7 @@ test(
     await formAApplicationPage.continueApplication();
 
     // Enter Divorce / Dissolution Details
-    await formAApplicationPage.divorceDetails('LV12D12345', false )
+    await formAApplicationPage.divorceDetails('LV12D12345')
 
     const accessibilityScanResults = await makeAxeBuilder().analyze();
 
