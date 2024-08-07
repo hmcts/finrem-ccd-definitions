@@ -1437,20 +1437,5 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_removeCaseDocument",
-    "Name": "Remove Case Document",
-    "Description": "Remove case document",
-    "DisplayOrder": 155,
-    "PreConditionState(s)": "*",
-    "PostConditionState": "*",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
-    "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
   }
 ]
