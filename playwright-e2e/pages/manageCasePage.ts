@@ -17,11 +17,12 @@ export class manageCasePage {
     this.startCaseButton = page.getByRole('button', { name: 'Start' });
   }
 
-  async startCase(jurisdiction: string, caseType: string) {
+  async startCase(jurisdiction: string, caseType: string, event: string) {
     await expect(this.createCaseButton).toBeVisible();
     await this.createCaseButton.click();
     await this.jurisdictionDropdown.selectOption(jurisdiction);
     await this.caseTypeDropdown.selectOption(caseType);
+    await this.eventDropdown.selectOption(event);
     await this.startCaseButton.click();
   }
 }

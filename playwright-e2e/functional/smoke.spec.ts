@@ -9,12 +9,13 @@ test(
     testInfo
   ) => {
     // Sign in
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password);
+    await loginPage.login(config.solicitor.email, config.solicitor.password);
 
     // Manage/Create case
     await manageCasePage.startCase(
       config.jurisdiction.familyDivorce,
-      config.caseType.contested
+      config.caseType.contested,
+      config.eventType.formA
     );
 
     // Enter applicant details
@@ -24,13 +25,13 @@ test(
     );
     await formAApplicationPage.enterSolicitorName('test');
     await formAApplicationPage.enterPhoneNumber('12345678910');
-    await formAApplicationPage.enterEmailAddress(config.caseWorker.email);
+    await formAApplicationPage.enterEmailAddress(config.solicitor.email);
     await formAApplicationPage.emailConsent(true);
     await formAApplicationPage.matriomnialApplication();
     await formAApplicationPage.continueApplication();
 
     // Enter Divorce / Dissolution Details
-    await formAApplicationPage.divorceDetails('LV12D12345')
+    await formAApplicationPage.divorceDetails('LV12D12345', config.divorceStage.petitionIssued)
 
     const accessibilityScanResults = await makeAxeBuilder().analyze();
 

@@ -31,11 +31,22 @@ const configuration = {
     contested: 'Contested Financial Remedy',
     consented: 'Financial Remedy Consented',
   },
+  eventType: {
+    formA: 'Form A Application',
+    paperCase: 'New Paper Case',
+  },
 
   organisationNames: {
     finRem1Org: 'FinRem-1-Org',
     finRem2Org: 'FinRem-2-Org',
   },
+  
+  divorceStage:{
+  decreeNisi: '1: Decree Nisi',
+  decreeAbsolute: '2: Decree Absolute',
+  petitionIssued: '3: Petition Issued',
+}
+
 };
 
 type ConfigurationType = typeof configuration;
