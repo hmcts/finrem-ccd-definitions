@@ -2,7 +2,7 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_documentToRemove",
-    "ListElementCode": "document_id",
+    "ListElementCode": "documentId",
     "FieldType": "Text",
     "ElementLabel": "Document ID",
     "SecurityClassification": "Public",
@@ -11,18 +11,9 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_documentToRemove",
-    "ListElementCode": "document_filename",
-    "FieldType": "Text",
-    "ElementLabel": "Filename",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_documentToRemove",
-    "ListElementCode": "document_url",
-    "FieldType": "Text",
-    "ElementLabel": "URL",
+    "ListElementCode": "caseDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
