@@ -707,6 +707,7 @@
     "Description": "New Paper Case",
     "DisplayOrder": 34,
     "PostConditionState": "newPaperCase",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
