@@ -3015,6 +3015,25 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "allocatedToBeHeardAtHighCourtJudgeLevel",
+    "Label": "Do you consider that the case should be allocated to be heard at High Court Judge level?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "allocatedToBeHeardAtHighCourtJudgeLevelText",
+    "Label": "If yes, please set out your reasons for this, with particular reference to the factors set out in the ‘Statement on the Efficient Conduct of Financial Remedy Hearings Allocated to a High Court Judge' (published on 1 February 2016)",
+    "FieldShowCondition": "allocatedToBeHeardAtHighCourtJudgeLevel=\"Yes\"",
+    "FieldType": "TextArea",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabSpecialAssistanceRequired",
     "Label": "**Does anyone in this application need assistance or special facilities when attending court?**  : ${specialAssistanceRequired}",
     "FieldType": "Label",
