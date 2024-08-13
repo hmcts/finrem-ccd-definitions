@@ -7,6 +7,7 @@ function applyingToCourt() {
   I.selectOption('#londonFRCList', 'London FRC');
   I.selectOption('#cfcCourtList', 'CENTRAL FAMILY COURT');
 
+  I.click('#allocatedToBeHeardAtHighCourtJudgeLevel_No');
   I.fillField('#specialAssistanceRequired', 'Not required');
   I.fillField('#specificArrangementsRequired', 'Not required');
   I.click('#isApplicantsHomeCourt_No');

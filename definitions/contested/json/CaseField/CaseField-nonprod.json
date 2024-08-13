@@ -1,10 +1,12 @@
 [
   {
-    "LiveFrom": "01/06/2020",
+    "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "d11",
-    "Label": "D11 document",
-    "FieldType": "Document",
-    "SecurityClassification": "Public"
+    "ID": "documentToKeepCollection",
+    "Label": "Documents to remove",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_documentToRemove",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
