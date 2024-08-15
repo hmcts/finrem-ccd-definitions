@@ -2401,6 +2401,26 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "caseDocumentConfidentialityWarning0",
+    "FieldType": "Label",
+    "ElementLabel": "‘Confidential’ should only be selected for documents that you would never want to share with another party, for example a Form C8 for confidential address, or documents relating to a lock and key cases etc.\n\nDo not use the confidential option to upload a document that you later intend to share as once confidential you will not be able to share it.",
+    "FieldShowCondition": "caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
+    "ListElementCode": "caseDocumentConfidentialityWarning1",
+    "FieldType": "Label",
+    "ElementLabel": "\n\nDo not select confidential if you are only waiting to exchange documents. \n\nParties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.",
+    "FieldShowCondition": "caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
     "FieldShowCondition": "caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
