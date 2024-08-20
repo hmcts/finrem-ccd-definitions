@@ -23,13 +23,13 @@ __metadata:
   linkType: hard
 
 "@axe-core/playwright@npm:^4.9.1":
-  version: 4.9.1
-  resolution: "@axe-core/playwright@npm:4.9.1"
+  version: 4.10.0
+  resolution: "@axe-core/playwright@npm:4.10.0"
   dependencies:
-    axe-core: ~4.9.1
+    axe-core: ~4.10.0
   peerDependencies:
     playwright-core: ">= 1.0.0"
-  checksum: d0e3504ffc7fcf746456275b767940ceaa939cdf057a9bc4e8949dfc54e6c288b172b85ffe4a5dead64a1d11bfc05462f57e84a03ded7913b6ca94179900d052
+  checksum: cba9b7f625c8ed510e661d8d014f7e924fb85175b918b818cb808eec848c3e8a2cbbe2960ccf8dd4b9f84a4a4ea33eeeace48de2560a4a5777dd0ee6281d0c81
   languageName: node
   linkType: hard
 
@@ -1529,13 +1529,13 @@ __metadata:
   linkType: hard
 
 "@playwright/test@npm:^1.45.1":
-  version: 1.46.0
-  resolution: "@playwright/test@npm:1.46.0"
+  version: 1.46.1
+  resolution: "@playwright/test@npm:1.46.1"
   dependencies:
-    playwright: 1.46.0
+    playwright: 1.46.1
   bin:
     playwright: cli.js
-  checksum: 5e3747c63ca45a307c6a9c6314dfc8f8141c0e5e0e622bccee2afebe6450aa67cb1c151f5f187280b659d75bb7e1d5c84c6b441e54e963c654e0e19f6514f23d
+  checksum: 180d90c6421ee6a8c00a1ae65d91d5f69767e2de95c3f5582ac2bdf3a388e621fdd3ee00ecb7836db427bb0d4cee58111c14f133cb62150357d8e4f43e3e2295
   languageName: node
   linkType: hard
 
@@ -2129,29 +2129,29 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 22.2.0
-  resolution: "@types/node@npm:22.2.0"
+  version: 22.4.1
+  resolution: "@types/node@npm:22.4.1"
   dependencies:
-    undici-types: ~6.13.0
-  checksum: 63724799337bfb57719a1992690e738341d824e1744a2ac52c5278a008fbfadf99765519c19858feb80418cc7da0d5c8bdf7ea4d82973869b3882bd602c48ade
+    undici-types: ~6.19.2
+  checksum: 341eb54867a3ec8eee7853ff9a9fc92d9f66305b70c9bc5db78492d51f4da3cd81e50c077f5d98eef1835fcbca00c58bb2a229ef56b0e377e48a3284401bf3f6
   languageName: node
   linkType: hard
 
 "@types/node@npm:^18.0.0":
-  version: 18.19.44
-  resolution: "@types/node@npm:18.19.44"
+  version: 18.19.45
+  resolution: "@types/node@npm:18.19.45"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 008f89b04afc9fdb4cd5ea71072ca64a08ef0453cbfc012863991959aa3ce2cf99c1e73cbcb5e0e67b37a81f88673e97ac180f56eec396ce1b68d5881aac2ce4
+  checksum: b82006827911919b1f97d06f10a373c157988442337a0f35e355f351ec815fdcf5de4a68e33206c35379416a65aea7d0c34f435f42d55a0935f9aac3841f1cfe
   languageName: node
   linkType: hard
 
 "@types/node@npm:^20.1.0, @types/node@npm:^20.14.9":
-  version: 20.14.15
-  resolution: "@types/node@npm:20.14.15"
+  version: 20.16.1
+  resolution: "@types/node@npm:20.16.1"
   dependencies:
-    undici-types: ~5.26.4
-  checksum: 0407600c1a426efd3e97c94ef1c13edce453142a06ea4be7102bf7be3e907ea578872c7795988a72e981b8ffe942f8cfaafd98552ba82915cd6f963dd1fa9adc
+    undici-types: ~6.19.2
+  checksum: 2b8f30f416f5c1851ffa8a13ef6c464a5e355edfd763713c22813a7839f6419a64e27925f9e89c972513d78432263179332f0bffb273d16498233bfdf495d096
   languageName: node
   linkType: hard
 
@@ -2764,9 +2764,9 @@ __metadata:
   linkType: hard
 
 "async@npm:^3.2.2":
-  version: 3.2.5
-  resolution: "async@npm:3.2.5"
-  checksum: 5ec77f1312301dee02d62140a6b1f7ee0edd2a0f983b6fd2b0849b969f245225b990b47b8243e7b9ad16451a53e7f68e753700385b706198ced888beedba3af4
+  version: 3.2.6
+  resolution: "async@npm:3.2.6"
+  checksum: ee6eb8cd8a0ab1b58bd2a3ed6c415e93e773573a91d31df9d5ef559baafa9dab37d3b096fa7993e84585cac3697b2af6ddb9086f45d3ac8cae821bb2aab65682
   languageName: node
   linkType: hard
 
@@ -2777,10 +2777,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axe-core@npm:~4.9.1":
-  version: 4.9.1
-  resolution: "axe-core@npm:4.9.1"
-  checksum: 41d9227871781f96c2952e2a777fca73624959dd0e98864f6d82806a77602f82b4fc490852082a7e524d8cd864e50d8b4d9931819b4a150112981d8c932110c5
+"axe-core@npm:~4.10.0":
+  version: 4.10.0
+  resolution: "axe-core@npm:4.10.0"
+  checksum: 7eca827fd8d98d7e4b561df65437be608155c613d8f262ae9e4a6ade02c156c7362dcbc3f71b4b526edce686f7c686280236bcff1d6725e2ef8327def72a8c41
   languageName: node
   linkType: hard
 
@@ -9127,27 +9127,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.46.0":
-  version: 1.46.0
-  resolution: "playwright-core@npm:1.46.0"
+"playwright-core@npm:1.46.1":
+  version: 1.46.1
+  resolution: "playwright-core@npm:1.46.1"
   bin:
     playwright-core: cli.js
-  checksum: 0af0bf8afdd2182d377137c19da870d13e0f849b12b147dce7d5273db9f3d08a6ea35ef229eeb1816b3a9eca61504596fc1171e041e666e6ebb4118e71fe83ba
+  checksum: 99a03f97d76af02b0565aa09758eb03427e13497ef7e9e9044fd1184a5f050e7545a517dd7ad8988a68b3ea76e2ba0d411f81e410b1cb29f5ac9161c49689822
   languageName: node
   linkType: hard
 
-"playwright@npm:1.46.0, playwright@npm:^1.41.2":
-  version: 1.46.0
-  resolution: "playwright@npm:1.46.0"
+"playwright@npm:1.46.1, playwright@npm:^1.41.2":
+  version: 1.46.1
+  resolution: "playwright@npm:1.46.1"
   dependencies:
     fsevents: 2.3.2
-    playwright-core: 1.46.0
+    playwright-core: 1.46.1
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: 013d7cd81c4016556245f98bd0b407c95f7dbc6d11d174d33d2e6aeeac1a4c63f646909adf3a926df09e1f0638e408018af3799e2c8e437dd2362f78091182e4
+  checksum: 9e721cb27f919cd92ea8c7461f4a8e97e32eade9da036baa4747f483549e33a8d77585f51e228d6639a1e28a76b0c1d59ca0a05dbd07aa3cfe427be7aaeb9ec8
   languageName: node
   linkType: hard
 
@@ -11056,10 +11056,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.13.0":
-  version: 6.13.0
-  resolution: "undici-types@npm:6.13.0"
-  checksum: 9d0ef6bf58994bebbea6a4ab75f381c69a89a7ed151bfbae0d4ef95450d56502c9eccb323abf17b7d099c1d9c1cbae62e909e4dfeb8d204612d2f1fdada24707
+"undici-types@npm:~6.19.2":
+  version: 6.19.6
+  resolution: "undici-types@npm:6.19.6"
+  checksum: e66df2447b6d93a48b0605a54269d8c3f228edcd1e9563229f6de37e48ed53b3e49b4bc965733643ed9717e0e0fa1ee664c929db91d787c9f488fb3f9e17c533
   languageName: node
   linkType: hard
 
