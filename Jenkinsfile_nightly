@@ -63,10 +63,26 @@ withNightlyPipeline("nodejs", product, component) {
     }
 
     afterSuccess('fullFunctionalTest') {
+        publishHTML([
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'playwright-report',
+                reportFiles: 'index.html',
+                reportName: 'FunctionalTestReport'
+        ])
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
     }
 
     afterSuccess('crossBrowserTest') {
+        publishHTML([
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'playwright-report',
+                reportFiles: 'index.html',
+                reportName: 'CrossBrowserTestReport'
+        ])
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
       }
 }
