@@ -1,23 +1,16 @@
 [
   {
-    "LiveFrom": "01/06/2020",
+    "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "d11",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
+    "CaseFieldID": "documentToKeepCollection",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
   },
   {
-    "LiveFrom": "01/06/2020",
+    "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "d11",
+    "CaseFieldID": "caseFileViewComponentLauncher",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/06/2020",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "d11",
-    "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRU"
   }
 ]
