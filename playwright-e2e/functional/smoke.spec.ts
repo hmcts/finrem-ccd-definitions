@@ -32,6 +32,11 @@ test(
 
     // Enter Divorce / Dissolution Details
     await formAApplicationPage.divorceDetails('LV12D12345', config.divorceStage.petitionIssued)
+    await formAApplicationPage.continueApplication();
+
+    //applicant details
+    await formAApplicationPage.applicantDetails();
+    await formAApplicationPage.continueApplication();
 
     const accessibilityScanResults = await makeAxeBuilder().analyze();
 

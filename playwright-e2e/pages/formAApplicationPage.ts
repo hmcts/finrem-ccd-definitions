@@ -1,4 +1,5 @@
 import { type Page, expect, Locator } from '@playwright/test';
+import waitUntil from 'webdriverio/build/commands/browser/waitUntil';
 
 export class formAApplicationPage {
   readonly page: Page;
@@ -39,6 +40,12 @@ export class formAApplicationPage {
   readonly issueYear: Locator;
   readonly courtName: Locator;
   readonly divorceStage: Locator;
+  readonly uploadPetition: Locator;
+  readonly appFirstName: Locator;
+  readonly appLastName: Locator;
+  readonly cantEnterPostcode: Locator;
+  readonly applicantDetailsPrivateNo: Locator;
+
 
 
 
@@ -85,6 +92,22 @@ export class formAApplicationPage {
     this.issueYear = page.getByRole('group', { name: 'Application Issued Date' }).getByLabel('Year');
     this.courtName = page.getByLabel('Name of Court / Divorce');
     this.divorceStage = page.getByLabel('What stage has the divorce /');
+    this.uploadPetition = page.getByRole('textbox', { name: 'Upload Petition' });
+    this.appFirstName = page.getByLabel('Current First and Middle names');
+    this.appLastName = page.getByLabel('Current Last Name');
+    this.cantEnterPostcode = page.getByRole('link', { name: 'I can\'t enter a UK postcode' });
+    this.applicantDetailsPrivateNo = page.getByRole('group', { name: 'Keep the Applicant\'s contact' }).getByLabel('No');
+
+  }
+
+  async UKaddress() {
+    await this.cantEnterPostcode.click();
+    await this.buildingStreetInput.fill('test')
+    await this.addressLine2Input.fill('test')
+    await this.townCityInput.fill('test')
+    await this.countyInput.fill('test')
+    await this.postcodeZipcodeInput.fill('test')
+    await this.countryInput.fill('test');
   }
 
   async continueApplication() {
@@ -124,7 +147,7 @@ export class formAApplicationPage {
     await expect(this.matrimonialRadio).toBeVisible();
     await this.matrimonialRadio.check();  
   }
-  async divorceDetails (divorceNumber: string, divorceStage: string) {
+  async divorceDetails (divorceNumber: string, divorceStage: string , ) {
     await expect (this.divorceDetailsHeader).toBeVisible();
     await this.divorceNumberInput.fill(divorceNumber);
     await this.civilPartnershipNoRadio.check();
@@ -136,5 +159,14 @@ export class formAApplicationPage {
     await this.issueYear.fill('1999');
     await this.courtName.fill('test');
     await this.divorceStage.selectOption(divorceStage);
+    await this.uploadPetition.setInputFiles('./playwright-e2e/data/PETITION FORM A.docx');
+    await this.page.waitForTimeout(3000); 
+   }
+
+    async applicantDetails() {
+     await this.appFirstName.fill('app');
+     await this.appLastName.fill('app');
+     await this.UKaddress()
+     await this.applicantDetailsPrivateNo.check();
   }
 }
