@@ -114,6 +114,13 @@ withPipeline("nodejs", product, component) {
   loadVaultSecrets(secrets)
   enableHighLevelDataSetup()
   syncBranchesWithMaster(branchesToSync)
+
+  enableCrossBrowserTest()
+
+  before('crossBrowserTest') {
+    sh 'yarn playwright install'
+  }
+
   pipelineConf = config
   afterSuccess('test') {
     // enable yarn audit and send message on master branch only

@@ -1,5 +1,5 @@
 const LATEST_MAC = 'macOS 10.15';
-const LATEST_WINDOWS = 'Windows 10';
+const LATEST_WINDOWS = 'Windows 11';
 
 const supportedBrowsers = {
   microsoft: {
