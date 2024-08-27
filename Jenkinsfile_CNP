@@ -236,6 +236,7 @@ withPipeline("nodejs", product, component) {
 
   before('smoketest:preview') {
     sh 'yarn playwright install'
+    sh 'yarn test:crossbrowser'
   }
 
   before('smoketest:aat') {
