@@ -2119,5 +2119,12 @@
     "CaseEventID": "FR_assignDocumentCategories",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "01/09/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_removeUserCaseAccess",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
   }
 ]

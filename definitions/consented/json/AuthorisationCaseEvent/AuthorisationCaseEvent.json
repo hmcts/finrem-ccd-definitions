@@ -1531,5 +1531,13 @@
     "CaseEventID": "FR_amendCaseCron",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRU"
+  },
+
+  {
+    "LiveFrom": "01/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_removeUserCaseAccess",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRU"
   }
 ]
