@@ -9,7 +9,7 @@ test(
     testInfo
   ) => {
     // Sign in
-    await loginPage.login(config.solicitor.email, config.solicitor.password);
+    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
 
     // Manage/Create case
     await manageCasePage.startCase(
@@ -25,7 +25,7 @@ test(
     );
     await formAApplicationPage.enterSolicitorName('test');
     await formAApplicationPage.enterPhoneNumber('12345678910');
-    await formAApplicationPage.enterEmailAddress(config.solicitor.email);
+    await formAApplicationPage.enterEmailAddress(config.applicant_solicitor.email);
     await formAApplicationPage.emailConsent(true);
     await formAApplicationPage.matrimonialApplication();
     await formAApplicationPage.continueApplication();
@@ -42,7 +42,15 @@ test(
     await formAApplicationPage.respondentDetails();
     await formAApplicationPage.continueApplication();
 
-    // await formAApplicationPage.respondentRepresented(true)
+    await formAApplicationPage.respondentRepresented(true)
+    await formAApplicationPage.selectOrganisation(
+      config.organisationNames.finRem2Org
+    );
+    await formAApplicationPage.enterSolicitorName('Test Respondent');
+    await formAApplicationPage.enterPhoneNumber('12345678910');
+    await formAApplicationPage.enterEmailAddress(config.applicant_solicitor.email);
+    await formAApplicationPage.continueApplication();
+    
 
     const accessibilityScanResults = await makeAxeBuilder().analyze();
 

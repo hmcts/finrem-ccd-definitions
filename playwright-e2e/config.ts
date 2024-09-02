@@ -18,9 +18,13 @@ const configuration = {
     password: process.env.IDAM_CASEWORKER_PASSWORD || '',
   },
 
-  solicitor: {
+  applicant_solicitor: {
     email: process.env.IDAM_SOLICITOR_USERNAME || '',
     password: process.env.IDAM_SOLICITOR_PASSWORD || '',
+  },
+
+  respondent_solicitor: {
+    email: process.env.RESPONDENT_SOLICITOR_EMAIL || ''
   },
 
   jurisdiction: {

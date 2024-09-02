@@ -44,9 +44,7 @@ export class formAApplicationPage {
   readonly lastName: Locator;
   readonly cantEnterPostcode: Locator;
   readonly applicantDetailsPrivateNo: Locator;
-
-
-
+  readonly respondentRepresentedRadio: Locator;
 
   public constructor(page: Page) {
     this.page = page;
@@ -66,16 +64,16 @@ export class formAApplicationPage {
     this.refNumberInput = page.getByLabel('Your reference number');
     this.postcodeInput = page.getByLabel('Enter a UK postcode');
     this.findAddressButton = page.getByRole('button', { name: 'Find address' });
-    this.buildingStreetInput = page.getByLabel('Building and Street');
-    this.addressLine2Input = page.getByLabel('Address Line 2');
-    this.addressLine3Input = page.getByLabel('Address Line 3');
-    this.townCityInput = page.getByLabel('Town or City');
-    this.countyInput = page.getByLabel('County');
-    this.postcodeZipcodeInput = page.getByLabel('Postcode/Zipcode');
-    this.countryInput = page.getByLabel('Country');
-    this.phoneNumberInput = page.getByLabel('Phone Number');
-    this.emailInput = page.getByLabel('Email');
-    this.dxNumberInput = page.getByLabel('DX number (Optional)');
+    this.buildingStreetInput = page.getByRole('textbox', { name: 'Building and Street'});
+    this.addressLine2Input = page.getByRole('textbox', { name: 'Address Line 2'});
+    this.addressLine3Input = page.getByRole('textbox', { name: 'Address Line 3'}); 
+    this.townCityInput = page.getByRole('textbox', { name: 'Town or City'}); 
+    this.countyInput =  page.getByRole('textbox', { name: 'County'});  
+    this.postcodeZipcodeInput = page.getByRole('textbox', { name: 'Postcode/Zipcode'}); 
+    this.countryInput = page.getByRole('textbox', { name: 'Country'});
+    this.phoneNumberInput =  page.getByRole('textbox', { name: 'Phone Number'}); 
+    this.emailInput =  page.getByRole('textbox', { name: 'Email'}); 
+    this.dxNumberInput = page.getByRole('textbox', { name: 'DX number (Optional)'});  
     this.emailConsentRadio = page.locator(
       '#applicantSolicitorConsentForEmails_radio'
     );
@@ -96,7 +94,9 @@ export class formAApplicationPage {
     this.lastName = page.getByLabel('Current Last Name');
     this.cantEnterPostcode = page.getByRole('link', { name: 'I can\'t enter a UK postcode' });
     this.applicantDetailsPrivateNo = page.getByRole('group', { name: 'Keep the Applicant\'s contact' }).getByLabel('No');
-
+    this.respondentRepresentedRadio = page.locator(
+      '#respondentRepresented_radio'
+    );
   }
 
   async UKaddress() {
@@ -175,5 +175,15 @@ export class formAApplicationPage {
     await this.firstName.click();
     await this.firstName.fill('resp');
     await this.lastName.fill('resp');
+  }
+
+  async respondentRepresented(represented: boolean) {
+    const radioOption = represented ? 'Yes' : 'No'; 
+    const optionToSelect = this.respondentRepresentedRadio.getByLabel(radioOption);
+    if(represented) {
+      await optionToSelect.check();
+      await this.solicitorsFirmInput.fill('Test Firm');
+      await this.UKaddress()
+    }
   }
 }
