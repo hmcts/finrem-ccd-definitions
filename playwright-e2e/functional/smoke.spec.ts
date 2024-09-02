@@ -51,6 +51,8 @@ test(
     await formAApplicationPage.enterEmailAddress(config.applicant_solicitor.email);
     await formAApplicationPage.continueApplication();
     
+    await formAApplicationPage.selectNatureOfApplication();
+    await formAApplicationPage.continueApplication();
 
     const accessibilityScanResults = await makeAxeBuilder().analyze();
 
