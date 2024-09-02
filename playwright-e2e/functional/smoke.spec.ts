@@ -27,7 +27,7 @@ test(
     await formAApplicationPage.enterPhoneNumber('12345678910');
     await formAApplicationPage.enterEmailAddress(config.solicitor.email);
     await formAApplicationPage.emailConsent(true);
-    await formAApplicationPage.matriomnialApplication();
+    await formAApplicationPage.matrimonialApplication();
     await formAApplicationPage.continueApplication();
 
     // Enter Divorce / Dissolution Details
@@ -37,6 +37,12 @@ test(
     //applicant details
     await formAApplicationPage.applicantDetails();
     await formAApplicationPage.continueApplication();
+
+    //respondent details 
+    await formAApplicationPage.respondentDetails();
+    await formAApplicationPage.continueApplication();
+
+    // await formAApplicationPage.respondentRepresented(true)
 
     const accessibilityScanResults = await makeAxeBuilder().analyze();
 

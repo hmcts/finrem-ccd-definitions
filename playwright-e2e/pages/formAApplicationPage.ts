@@ -1,5 +1,4 @@
 import { type Page, expect, Locator } from '@playwright/test';
-import waitUntil from 'webdriverio/build/commands/browser/waitUntil';
 
 export class formAApplicationPage {
   readonly page: Page;
@@ -41,8 +40,8 @@ export class formAApplicationPage {
   readonly courtName: Locator;
   readonly divorceStage: Locator;
   readonly uploadPetition: Locator;
-  readonly appFirstName: Locator;
-  readonly appLastName: Locator;
+  readonly firstName: Locator;
+  readonly lastName: Locator;
   readonly cantEnterPostcode: Locator;
   readonly applicantDetailsPrivateNo: Locator;
 
@@ -93,8 +92,8 @@ export class formAApplicationPage {
     this.courtName = page.getByLabel('Name of Court / Divorce');
     this.divorceStage = page.getByLabel('What stage has the divorce /');
     this.uploadPetition = page.getByRole('textbox', { name: 'Upload Petition' });
-    this.appFirstName = page.getByLabel('Current First and Middle names');
-    this.appLastName = page.getByLabel('Current Last Name');
+    this.firstName = page.getByLabel('Current First and Middle names');
+    this.lastName = page.getByLabel('Current Last Name');
     this.cantEnterPostcode = page.getByRole('link', { name: 'I can\'t enter a UK postcode' });
     this.applicantDetailsPrivateNo = page.getByRole('group', { name: 'Keep the Applicant\'s contact' }).getByLabel('No');
 
@@ -143,10 +142,12 @@ export class formAApplicationPage {
     const optionToSelect = this.emailConsentRadio.getByLabel(radioOption);
     await optionToSelect.check();
   }
-  async matriomnialApplication() {
+
+  async matrimonialApplication() {
     await expect(this.matrimonialRadio).toBeVisible();
     await this.matrimonialRadio.check();  
   }
+
   async divorceDetails (divorceNumber: string, divorceStage: string , ) {
     await expect (this.divorceDetailsHeader).toBeVisible();
     await this.divorceNumberInput.fill(divorceNumber);
@@ -161,12 +162,18 @@ export class formAApplicationPage {
     await this.divorceStage.selectOption(divorceStage);
     await this.uploadPetition.setInputFiles('./playwright-e2e/data/PETITION FORM A.docx');
     await this.page.waitForTimeout(3000); 
-   }
+  }
 
-    async applicantDetails() {
-     await this.appFirstName.fill('app');
-     await this.appLastName.fill('app');
-     await this.UKaddress()
-     await this.applicantDetailsPrivateNo.check();
+  async applicantDetails() {
+    await this.firstName.fill('app');
+    await this.lastName.fill('app');
+    await this.UKaddress()
+    await this.applicantDetailsPrivateNo.check();
+  }
+
+  async respondentDetails() {
+    await this.firstName.click();
+    await this.firstName.fill('resp');
+    await this.lastName.fill('resp');
   }
 }
