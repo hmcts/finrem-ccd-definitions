@@ -5,7 +5,7 @@ test(
   'Smoke Test - e2e Contested Journey',
   { tag: ['@smoke-test', '@accessibility'] },
   async (
-    { loginPage, manageCasePage, formAApplicationPage, makeAxeBuilder },
+    { loginPage, manageCasePage, formAApplicationPage, commonComponents, makeAxeBuilder },
     testInfo
   ) => {
     // Sign in
@@ -18,8 +18,9 @@ test(
       config.eventType.formA
     );
 
+    await commonComponents.navigateContinue();
+
     // Enter applicant details
-    await formAApplicationPage.continueApplication();
     await formAApplicationPage.selectOrganisation(
       config.organisationNames.finRem1Org
     );
@@ -28,19 +29,19 @@ test(
     await formAApplicationPage.enterEmailAddress(config.applicant_solicitor.email);
     await formAApplicationPage.emailConsent(true);
     await formAApplicationPage.matrimonialApplication();
-    await formAApplicationPage.continueApplication();
+    await commonComponents.navigateContinue();
 
     // Enter Divorce / Dissolution Details
     await formAApplicationPage.divorceDetails('LV12D12345', config.divorceStage.petitionIssued)
-    await formAApplicationPage.continueApplication();
+    await commonComponents.navigateContinue();
 
     //applicant details
     await formAApplicationPage.applicantDetails();
-    await formAApplicationPage.continueApplication();
+    await commonComponents.navigateContinue();
 
     //respondent details 
     await formAApplicationPage.respondentDetails();
-    await formAApplicationPage.continueApplication();
+    await commonComponents.navigateContinue();
 
     await formAApplicationPage.respondentRepresented(true)
     await formAApplicationPage.selectOrganisation(
@@ -49,16 +50,16 @@ test(
     await formAApplicationPage.enterSolicitorName('Test Respondent');
     await formAApplicationPage.enterPhoneNumber('12345678910');
     await formAApplicationPage.enterEmailAddress(config.applicant_solicitor.email);
-    await formAApplicationPage.continueApplication();
+    await commonComponents.navigateContinue();
     
     // Nature of App
     await formAApplicationPage.selectNatureOfApplication();
-    await formAApplicationPage.continueApplication();
+    await commonComponents.navigateContinue();
 
     // Property Adjustment Order
     await formAApplicationPage.propertyAdjustmentOrder();
     await formAApplicationPage.addAdditionalPropertyAdjustment(true);
-    await formAApplicationPage.continueApplication();
+    await commonComponents.navigateContinue();
 
     // Accessability Testing
 

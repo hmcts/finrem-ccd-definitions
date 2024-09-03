@@ -1,7 +1,7 @@
 import { type Page, type Locator } from '@playwright/test';
 import config from '../config';
 
-export class loginPage {
+export class LoginPage {
   readonly page: Page;
   readonly url: string;
   readonly emailInputLocator: Locator;

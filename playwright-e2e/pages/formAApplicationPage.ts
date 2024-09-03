@@ -2,8 +2,6 @@ import { type Page, expect, Locator } from '@playwright/test';
 
 export class formAApplicationPage {
   readonly page: Page;
-  readonly continueButton: Locator;
-  readonly previousButton: Locator;
   readonly solicitorNameInput: Locator;
   readonly orgSearchInput: Locator;
   readonly orgResultTable: Locator;
@@ -64,8 +62,6 @@ export class formAApplicationPage {
 
   public constructor(page: Page) {
     this.page = page;
-    this.continueButton = page.getByRole('button', { name: 'Continue' });
-    this.previousButton = page.getByRole('button', { name: 'Previous' });
     this.solicitorNameInput = page.getByLabel('Solicitor’s name');
     this.orgSearchInput = page.getByLabel('You can only search for');
     this.orgResultTable = page.locator('table#organisation-table');
@@ -147,11 +143,6 @@ export class formAApplicationPage {
     await this.countyInput.fill('test')
     await this.postcodeZipcodeInput.fill('test')
     await this.countryInput.fill('test');
-  }
-
-  async continueApplication() {
-    await expect(this.continueButton).toBeVisible();
-    await this.continueButton.click();
   }
 
   async enterSolicitorName(solicitorName: string) {

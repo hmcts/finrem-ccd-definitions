@@ -1,6 +1,6 @@
 import { type Page, expect, Locator } from '@playwright/test';
 
-export class manageCasePage {
+export class ManageCasePage {
   readonly page: Page;
   readonly createCaseButton: Locator;
   readonly jurisdictionDropdown: Locator;
