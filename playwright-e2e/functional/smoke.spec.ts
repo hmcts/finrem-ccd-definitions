@@ -51,8 +51,16 @@ test(
     await formAApplicationPage.enterEmailAddress(config.applicant_solicitor.email);
     await formAApplicationPage.continueApplication();
     
+    // Nature of App
     await formAApplicationPage.selectNatureOfApplication();
     await formAApplicationPage.continueApplication();
+
+    // Property Adjustment Order
+    await formAApplicationPage.propertyAdjustmentOrder();
+    await formAApplicationPage.addAdditionalPropertyAdjustment(true);
+    await formAApplicationPage.continueApplication();
+
+    // Accessability Testing
 
     const accessibilityScanResults = await makeAxeBuilder().analyze();
 

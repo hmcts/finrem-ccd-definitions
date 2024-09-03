@@ -55,6 +55,12 @@ export class formAApplicationPage {
   readonly natureOfApplicationPensionAttachment: Locator;
   readonly natureOfApplicationPensionCompAttachment: Locator;
   readonly natureOfApplicationVariationOrder: Locator;
+  readonly propertyAdjustmentAddressTextBox: Locator;
+  readonly propertyAdjustmentMortgages: Locator; 
+  readonly propertyAdjustmentAddAdditionalRadio: Locator
+  readonly propAdjAdditionalAddNewBtn: Locator
+  readonly propAdjAdditionalAddressTxtBox: Locator;
+  readonly propAdjAdditionalMortgageTextBox: Locator; 
 
   public constructor(page: Page) {
     this.page = page;
@@ -107,6 +113,8 @@ export class formAApplicationPage {
     this.respondentRepresentedRadio = page.locator(
       '#respondentRepresented_radio'
     );
+
+    // Nature of Application checkboxes 
     this.natureOfApplicationMaintenance = page.getByRole('checkbox', { name: 'Maintenance Pending Suit' });
     this.natureOfApplicationLumpSum = page.getByRole('checkbox', { name: 'Lump Sum Order' });
     this.natureOfApplicationPropertyAdjustment = page.getByRole('checkbox', { name: 'Property Adjustment Order' });
@@ -117,6 +125,18 @@ export class formAApplicationPage {
     this.natureOfApplicationPensionAttachment = page.getByRole('checkbox', { name: 'Pension Attachment Order' });
     this.natureOfApplicationPensionCompAttachment = page.getByRole('checkbox', { name: 'Pension Compensation Attachment Order' });
     this.natureOfApplicationVariationOrder = page.getByRole('checkbox', { name: 'Variation Order' });
+  
+    // Property Adjustment Order
+    this.propertyAdjustmentAddressTextBox = page.getByRole('textbox', {name: 'property address'})
+    this.propertyAdjustmentMortgages = page.getByRole('textbox', {name: 'Name(s) and address(es) of any mortgage(s) for property'})
+    this.propertyAdjustmentAddAdditionalRadio = page.locator(
+      '#additionalPropertyOrderDecision_radio'
+    );
+
+    this.propAdjAdditionalAddNewBtn = page.getByRole('button', { name: 'Add new' }).first();
+    this.propAdjAdditionalAddressTxtBox = page.getByRole('textbox', {name: 'property address (Optional)'}); 
+    this.propAdjAdditionalMortgageTextBox = page.getByRole('textbox', {name: 'Name(s) and address(es) of any mortgage(s) for property (Optional)'}); 
+
   }
 
   async UKaddress() {
@@ -200,8 +220,8 @@ export class formAApplicationPage {
   async respondentRepresented(represented: boolean) {
     const radioOption = represented ? 'Yes' : 'No'; 
     const optionToSelect = this.respondentRepresentedRadio.getByLabel(radioOption);
+    await optionToSelect.check();
     if(represented) {
-      await optionToSelect.check();
       await this.solicitorsFirmInput.fill('Test Firm');
       await this.UKaddress()
     }
@@ -218,5 +238,22 @@ export class formAApplicationPage {
     await this.natureOfApplicationPensionAttachment.check();
     await this.natureOfApplicationPensionCompAttachment.check();
     await this.natureOfApplicationVariationOrder.check();
+  }
+
+  async propertyAdjustmentOrder() {
+    await this.propertyAdjustmentAddressTextBox.fill('Test Address');
+    await this.propertyAdjustmentMortgages.fill('Test Mortgage');
+  }
+
+  async addAdditionalPropertyAdjustment(add: boolean) {
+    const radioOption = add ? 'Yes' : 'No'; 
+    const optionToSelect = this.propertyAdjustmentAddAdditionalRadio.getByLabel(radioOption)
+    await optionToSelect.check();
+    if(add) {
+      // Add property
+      await this.propAdjAdditionalAddNewBtn.click()
+      await this.propAdjAdditionalAddressTxtBox.fill('Test Address 2') 
+      await this.propAdjAdditionalMortgageTextBox.fill('Test Mortgage 2')
+    }
   }
 }
