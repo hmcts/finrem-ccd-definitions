@@ -5,7 +5,8 @@ test(
   'Smoke Test - e2e Contested Journey',
   { tag: ['@smoke-test', '@accessibility'] },
   async (
-    { loginPage, manageCasePage, formAApplicationPage, commonComponents, makeAxeBuilder },
+    { loginPage, manageCasePage, commonComponents, solicitorDetailsPage, 
+      divorceDetailsPage, applicantDetailsPage, respondentRepresentedPage, natureOfApplicationPage, propertyAdjustmentPage, makeAxeBuilder },
     testInfo
   ) => {
     // Sign in
@@ -21,44 +22,47 @@ test(
     await commonComponents.navigateContinue();
 
     // Enter applicant details
-    await formAApplicationPage.selectOrganisation(
+    await solicitorDetailsPage.selectOrganisation(
       config.organisationNames.finRem1Org
     );
-    await formAApplicationPage.enterSolicitorName('test');
-    await formAApplicationPage.enterPhoneNumber('12345678910');
-    await formAApplicationPage.enterEmailAddress(config.applicant_solicitor.email);
-    await formAApplicationPage.emailConsent(true);
-    await formAApplicationPage.matrimonialApplication();
+    await solicitorDetailsPage.enterSolicitorName('test');
+    await commonComponents.enterPhoneNumber('12345678910');
+    await commonComponents.enterEmailAddress(config.applicant_solicitor.email);
+    await commonComponents.emailConsent(true);
     await commonComponents.navigateContinue();
 
     // Enter Divorce / Dissolution Details
-    await formAApplicationPage.divorceDetails('LV12D12345', config.divorceStage.petitionIssued)
+    await divorceDetailsPage.enterDivorceDetails('LV12D12345', config.divorceStage.petitionIssued)
     await commonComponents.navigateContinue();
 
     //applicant details
-    await formAApplicationPage.applicantDetails();
+    await commonComponents.enterNames('App First Name', 'App Last Name' );
+    await applicantDetailsPage.selectApplicantDetailsPrivate(true);
+    await commonComponents.enterUkAddress();
     await commonComponents.navigateContinue();
 
-    //respondent details 
-    await formAApplicationPage.respondentDetails();
+    // //respondent details 
+    await commonComponents.enterNames('Resp First Name', 'Resp Last Name' );
     await commonComponents.navigateContinue();
 
-    await formAApplicationPage.respondentRepresented(true)
-    await formAApplicationPage.selectOrganisation(
+    await respondentRepresentedPage.selectRespondentRepresented(true)
+    await solicitorDetailsPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
-    await formAApplicationPage.enterSolicitorName('Test Respondent');
-    await formAApplicationPage.enterPhoneNumber('12345678910');
-    await formAApplicationPage.enterEmailAddress(config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorName('Test Respondent');
+    await solicitorDetailsPage.enterSolicitorsFirm();
+    await commonComponents.enterUkAddress();
+    await commonComponents.enterPhoneNumber('12345678910');
+    await commonComponents.enterEmailAddress(config.respondent_solicitor.email);
     await commonComponents.navigateContinue();
     
     // Nature of App
-    await formAApplicationPage.selectNatureOfApplication();
+    await natureOfApplicationPage.selectNatureOfApplication();
     await commonComponents.navigateContinue();
 
-    // Property Adjustment Order
-    await formAApplicationPage.propertyAdjustmentOrder();
-    await formAApplicationPage.addAdditionalPropertyAdjustment(true);
+    // // Property Adjustment Order
+    await propertyAdjustmentPage.propertyAdjustmentOrder();
+    await propertyAdjustmentPage.addAdditionalPropertyAdjustment(true);
     await commonComponents.navigateContinue();
 
     // Accessability Testing
