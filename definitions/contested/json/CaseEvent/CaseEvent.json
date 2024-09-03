@@ -1444,7 +1444,7 @@
     "ID": "FR_removeCaseDocument",
     "Name": "Remove Case Document",
     "Description": "Remove case document",
-    "DisplayOrder": 1,
+    "DisplayOrder": 155,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
