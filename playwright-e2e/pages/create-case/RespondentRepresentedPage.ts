@@ -1,4 +1,4 @@
-import { type Page, expect, Locator } from '@playwright/test';
+import { type Page, Locator } from '@playwright/test';
 
 export class RespondentRepresentedPage {
     readonly page: Page;
@@ -15,5 +15,5 @@ export class RespondentRepresentedPage {
         const radioOption = represented ? 'Yes' : 'No'; 
         const optionToSelect = this.respondentRepresentedRadio.getByLabel(radioOption);
         await optionToSelect.check();
-      }
+    }
 }

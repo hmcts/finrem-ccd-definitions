@@ -5,8 +5,20 @@ test(
   'Smoke Test - e2e Contested Journey',
   { tag: ['@smoke-test', '@accessibility'] },
   async (
-    { loginPage, manageCasePage, commonComponents, solicitorDetailsPage, 
-      divorceDetailsPage, applicantDetailsPage, respondentRepresentedPage, natureOfApplicationPage, propertyAdjustmentPage, makeAxeBuilder },
+    { loginPage, 
+      manageCasePage, 
+      commonComponents, 
+      solicitorDetailsPage, 
+      divorceDetailsPage, 
+      applicantDetailsPage, 
+      respondentRepresentedPage, 
+      natureOfApplicationPage, 
+      propertyAdjustmentPage,
+      periodicalPaymentsRadio,
+      writtenAgreementPage,
+      fastTrackProcedurePage,
+      makeAxeBuilder 
+    },
     testInfo
   ) => {
     // Sign in
@@ -60,9 +72,24 @@ test(
     await natureOfApplicationPage.selectNatureOfApplication();
     await commonComponents.navigateContinue();
 
-    // // Property Adjustment Order
+    // Property Adjustment Order
     await propertyAdjustmentPage.propertyAdjustmentOrder();
     await propertyAdjustmentPage.addAdditionalPropertyAdjustment(true);
+    await commonComponents.navigateContinue();
+
+    // Periodical Payments
+
+    await periodicalPaymentsRadio.selectPeriodicalPayments(true);
+    await commonComponents.navigateContinue();
+
+    // Written Agreement
+
+    await writtenAgreementPage.selectWrittenAgreement(false);
+    await commonComponents.navigateContinue();
+
+    //Fast track procedure
+
+    await fastTrackProcedurePage.selectFastTrack(true);
     await commonComponents.navigateContinue();
 
     // Accessability Testing

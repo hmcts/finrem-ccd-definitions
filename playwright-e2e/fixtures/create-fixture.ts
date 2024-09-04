@@ -8,6 +8,9 @@ import { ApplicantDetailsPage } from '../pages/create-case/ApplicantDetailsPage'
 import { RespondentRepresentedPage } from '../pages/create-case/RespondentRepresentedPage';
 import { NatureOfApplicationPage } from '../pages/create-case/NatureOfApplicationPage';
 import { PropertyAdjustmentPage } from '../pages/create-case/PropertyAdjustmentPage';
+import { PeriodicalPaymentsPage } from '../pages/create-case/PeriodicalPaymentsPage';
+import { WrittenAgreementPage } from '../pages/create-case/WrittenAgreementPage';
+import { FastTrackProcedurePage } from '../pages/create-case/FastTrackProcedurePage';
 
 type CreateFixtures = {
   commonComponents: CommonComponents;
@@ -19,6 +22,9 @@ type CreateFixtures = {
   respondentRepresentedPage: RespondentRepresentedPage;
   natureOfApplicationPage: NatureOfApplicationPage;
   propertyAdjustmentPage: PropertyAdjustmentPage;
+  periodicalPaymentsRadio: PeriodicalPaymentsPage;
+  writtenAgreementPage: WrittenAgreementPage;
+  fastTrackProcedurePage: FastTrackProcedurePage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -48,5 +54,14 @@ export const test = base.extend<CreateFixtures>({
   },
   propertyAdjustmentPage: async ({ page }, use) => {
     await use(new PropertyAdjustmentPage(page));
+  },
+  periodicalPaymentsRadio: async ({ page }, use) => {
+    await use(new PeriodicalPaymentsPage(page));
+  },
+  writtenAgreementPage: async ({ page }, use) => {
+    await use(new WrittenAgreementPage(page));
+  },
+  fastTrackProcedurePage: async ({ page }, use) => {
+    await use(new FastTrackProcedurePage(page));
   }
 });
