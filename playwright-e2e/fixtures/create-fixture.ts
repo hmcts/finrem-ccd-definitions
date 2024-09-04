@@ -11,6 +11,8 @@ import { PropertyAdjustmentPage } from '../pages/create-case/PropertyAdjustmentP
 import { PeriodicalPaymentsPage } from '../pages/create-case/PeriodicalPaymentsPage';
 import { WrittenAgreementPage } from '../pages/create-case/WrittenAgreementPage';
 import { FastTrackProcedurePage } from '../pages/create-case/FastTrackProcedurePage';
+import { FinancialAssetsPage } from '../pages/create-case/FinancialAssetsPage';
+import { FinancialRemedyCourtPage } from '../pages/create-case/FinancialRemedyCourtPage';
 
 type CreateFixtures = {
   commonComponents: CommonComponents;
@@ -25,6 +27,8 @@ type CreateFixtures = {
   periodicalPaymentsRadio: PeriodicalPaymentsPage;
   writtenAgreementPage: WrittenAgreementPage;
   fastTrackProcedurePage: FastTrackProcedurePage;
+  financialAssetsPage: FinancialAssetsPage;
+  financialRemedyCourtPage: FinancialRemedyCourtPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -63,5 +67,11 @@ export const test = base.extend<CreateFixtures>({
   },
   fastTrackProcedurePage: async ({ page }, use) => {
     await use(new FastTrackProcedurePage(page));
+  }, 
+  financialAssetsPage: async ({ page }, use) => {
+    await use(new FinancialAssetsPage(page));
+  },
+  financialRemedyCourtPage: async ({ page }, use) => {
+    await use(new FinancialRemedyCourtPage(page));
   }
 });
