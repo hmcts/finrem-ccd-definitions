@@ -1304,6 +1304,13 @@
   {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrder",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_respondToConsentOrder",
     "UserRole": "[APPSOLICITOR]",
     "CRUD": "CR"
