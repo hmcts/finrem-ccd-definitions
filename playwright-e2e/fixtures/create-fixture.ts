@@ -13,6 +13,8 @@ import { WrittenAgreementPage } from '../pages/create-case/WrittenAgreementPage'
 import { FastTrackProcedurePage } from '../pages/create-case/FastTrackProcedurePage';
 import { FinancialAssetsPage } from '../pages/create-case/FinancialAssetsPage';
 import { FinancialRemedyCourtPage } from '../pages/create-case/FinancialRemedyCourtPage';
+import { MiamQuestionPage } from '../pages/create-case/MiamQuestionPage';
+import { MiamDetailsPage } from '../pages/create-case/MiamDetailsPage';
 
 type CreateFixtures = {
   commonComponents: CommonComponents;
@@ -29,6 +31,8 @@ type CreateFixtures = {
   fastTrackProcedurePage: FastTrackProcedurePage;
   financialAssetsPage: FinancialAssetsPage;
   financialRemedyCourtPage: FinancialRemedyCourtPage;
+  miamQuestionPage: MiamQuestionPage;
+  miamDetailsPage: MiamDetailsPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -73,5 +77,11 @@ export const test = base.extend<CreateFixtures>({
   },
   financialRemedyCourtPage: async ({ page }, use) => {
     await use(new FinancialRemedyCourtPage(page));
+  },
+  miamQuestionPage: async ({ page }, use) => {
+    await use(new MiamQuestionPage(page));
+  },
+  miamDetailsPage: async ({ page }, use) => {
+    await use(new MiamDetailsPage(page));
   }
 });

@@ -19,6 +19,8 @@ test(
       fastTrackProcedurePage,
       financialAssetsPage,
       financialRemedyCourtPage,
+      miamQuestionPage,
+      miamDetailsPage,
       makeAxeBuilder 
     },
     testInfo
@@ -111,7 +113,18 @@ test(
     await financialRemedyCourtPage.enterFrcReason();
     await commonComponents.navigateContinue();
 
+    // Has attended miam
 
+    await miamQuestionPage.selectHasAttenedMiam(true);
+    await commonComponents.navigateContinue()
+
+    // Miam details
+
+    await miamDetailsPage.enterMediatorRegistrationNumber();
+    await miamDetailsPage.enterFamilyMediatorServiceName();
+    await miamDetailsPage.enterSoleTraderName();
+    await miamDetailsPage.uploadMiamDoc();
+    await commonComponents.navigateContinue();
 
 
     // Accessability Testing Financial assets page produces accessibility issues
