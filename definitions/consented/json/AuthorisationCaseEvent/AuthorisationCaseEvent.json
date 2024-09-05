@@ -1532,7 +1532,13 @@
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRU"
   },
-
+  {
+    "LiveFrom": "03/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_removeCaseDocument",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
+  },
   {
     "LiveFrom": "01/09/2024",
     "CaseTypeID": "FinancialRemedyMVP2",

@@ -1147,6 +1147,21 @@
     "ShowEventNotes": "N"
   },
   {
+    "LiveFrom": "03/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_removeCaseDocument",
+    "Name": "Remove Case Document",
+    "Description": "Remove case document",
+    "DisplayOrder": 64,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
     "LiveFrom": "01/09/2024",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_removeUserCaseAccess",
