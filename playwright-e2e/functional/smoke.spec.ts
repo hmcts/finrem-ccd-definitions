@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/fixtures.ts';
 import config from '../config';
 
 test(
-  'Smoke Test - e2e Contested Journey',
+  'Smoke Test - Contested FormA Submission',
   { tag: ['@smoke-test', '@accessibility'] },
   async (
     { loginPage, 
@@ -22,6 +22,7 @@ test(
       miamQuestionPage,
       miamDetailsPage,
       uploadOrderDocumentsPage,
+      caseDetailsPage,
       makeAxeBuilder 
     },
     testInfo
@@ -135,6 +136,11 @@ test(
     await commonComponents.navigateContinue();
     
 
+    //Continue about to submit and check your answers
+    await commonComponents.navigateContinue();
+    await commonComponents.navigateSubmit();
+
+    await caseDetailsPage.checkHasBeenCreated();
 
 
 

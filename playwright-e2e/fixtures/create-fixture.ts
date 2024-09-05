@@ -16,6 +16,7 @@ import { FinancialRemedyCourtPage } from '../pages/create-case/FinancialRemedyCo
 import { MiamQuestionPage } from '../pages/create-case/MiamQuestionPage';
 import { MiamDetailsPage } from '../pages/create-case/MiamDetailsPage';
 import { UploadOrderDocumentsPage } from '../pages/create-case/UploadOrderDocumentPage';
+import { CaseDetailsPage } from '../pages/CaseDetailsPage';
 
 type CreateFixtures = {
   commonComponents: CommonComponents;
@@ -35,6 +36,7 @@ type CreateFixtures = {
   miamQuestionPage: MiamQuestionPage;
   miamDetailsPage: MiamDetailsPage;
   uploadOrderDocumentsPage: UploadOrderDocumentsPage;
+  caseDetailsPage: CaseDetailsPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -88,5 +90,8 @@ export const test = base.extend<CreateFixtures>({
   },
   uploadOrderDocumentsPage: async ({ page }, use) => {
     await use(new UploadOrderDocumentsPage(page));
+  },
+  caseDetailsPage: async ({ page }, use) => {
+    await use(new CaseDetailsPage(page));
   }
 });

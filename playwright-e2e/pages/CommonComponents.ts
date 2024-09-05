@@ -6,6 +6,7 @@ export class CommonComponents {
 
     readonly continueButton: Locator;
     readonly previousButton: Locator;
+    readonly submitButton: Locator
 
     readonly postcodeInput: Locator;
     readonly findAddressButton: Locator;
@@ -29,6 +30,7 @@ export class CommonComponents {
     public constructor(page: Page) {
         
         this.page = page;
+        this.submitButton = page.getByRole('button', { name: 'Submit' });
         this.continueButton = page.getByRole('button', { name: 'Continue' });
         this.previousButton = page.getByRole('button', { name: 'Previous' });
 
@@ -53,13 +55,18 @@ export class CommonComponents {
         );
     }
 
+    async navigateSubmit() {
+        await expect(this.submitButton).toBeVisible();
+        await this.submitButton.click();
+    }
+
     async navigateContinue() {
         await expect(this.continueButton).toBeVisible();
         await this.continueButton.click();
     }
 
     async navigatePrevious() {
-        await expect(this.continueButton).toBeVisible();
+        await expect(this.previousButton).toBeVisible();
         await this.continueButton.click();
     }
 
