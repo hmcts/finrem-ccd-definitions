@@ -707,6 +707,7 @@
     "Description": "New Paper Case",
     "DisplayOrder": 34,
     "PostConditionState": "newPaperCase",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
@@ -1144,5 +1145,36 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_removeCaseDocument",
+    "Name": "Remove Case Document",
+    "Description": "Remove case document",
+    "DisplayOrder": 64,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "01/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_removeUserCaseAccess",
+    "Name": "Remove user case access",
+    "Description": "Remove user case access",
+    "DisplayOrder": 64,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
   }
 ]

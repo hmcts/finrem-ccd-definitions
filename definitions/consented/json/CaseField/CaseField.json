@@ -2289,5 +2289,24 @@
     "SecurityClassification": "Public",
     "HintText": "If Yes, please enter the Country in the field below.",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "documentToKeepCollection",
+    "Label": "Documents to remove",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_documentToRemove",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "userCaseAccessList",
+    "Label": "Please select user case access to remove",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
