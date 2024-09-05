@@ -104,6 +104,13 @@ test(
 
     // Financial Remedies Court 
     await financialRemedyCourtPage.selectCourtZoneDropDown();
+    await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
+    await financialRemedyCourtPage.enterSpecialFacilities();
+    await financialRemedyCourtPage.enterSpecialArrangements();
+    await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
+    await financialRemedyCourtPage.enterFrcReason();
+    await commonComponents.navigateContinue();
+
 
 
 
