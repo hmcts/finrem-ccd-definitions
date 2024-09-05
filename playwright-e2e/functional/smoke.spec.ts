@@ -21,6 +21,7 @@ test(
       financialRemedyCourtPage,
       miamQuestionPage,
       miamDetailsPage,
+      uploadOrderDocumentsPage,
       makeAxeBuilder 
     },
     testInfo
@@ -125,6 +126,17 @@ test(
     await miamDetailsPage.enterSoleTraderName();
     await miamDetailsPage.uploadMiamDoc();
     await commonComponents.navigateContinue();
+
+    // Upload variation Order Document 
+
+    await uploadOrderDocumentsPage.uploadVariationOrderDoc();
+    await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
+    await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
+    await commonComponents.navigateContinue();
+    
+
+
+
 
 
     // Accessability Testing Financial assets page produces accessibility issues

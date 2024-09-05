@@ -31,5 +31,6 @@ export class MiamDetailsPage {
 
     async uploadMiamDoc(){
         await this.miamDocUpload.setInputFiles('./playwright-e2e/data/MIAM.pdf');
+        await this.page.waitForTimeout(3000); 
     }
 }
