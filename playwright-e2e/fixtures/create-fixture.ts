@@ -21,9 +21,11 @@ import { RespondentDetailsPage } from '../pages/create-case/RespondentDetailsPag
 import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
 
 import { CommonActionsHelper } from '../pages/helpers/CommonActionsHelper';
+import { SolicitorDetailsHelper } from '../pages/helpers/SolicitorDetailsHelper';
 
 
 const commonActionsHelper = new CommonActionsHelper();
+const solicitorDetailsHelper = new SolicitorDetailsHelper();
 
 type CreateFixtures = {
   loginPage: LoginPage;
@@ -59,7 +61,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new StartPage(page));
   },
   solicitorDetailsPage: async ({ page }, use) => {
-    await use(new SolicitorDetailsPage(page, commonActionsHelper));
+    await use(new SolicitorDetailsPage(page, commonActionsHelper, solicitorDetailsHelper));
   },
   divorceDetailsPage: async ({ page }, use) => {
     await use(new DivorceDetailsPage(page));
@@ -71,7 +73,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new RespondentDetailsPage(page, commonActionsHelper));
   },
   respondentRepresentedPage: async ({ page }, use) => {
-    await use(new RespondentRepresentedPage(page));
+    await use(new RespondentRepresentedPage(page, commonActionsHelper, solicitorDetailsHelper));
   },
   natureOfApplicationPage: async ({ page }, use) => {
     await use(new NatureOfApplicationPage(page));

@@ -64,12 +64,10 @@ test(
 
     //TODO: Abstract solicitor details entry to helper
     await respondentRepresentedPage.selectRespondentRepresented(true)
-    await solicitorDetailsPage.selectOrganisation(
+    await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
-    await solicitorDetailsPage.enterSolicitorDetails('Test Respondent', config.applicant_solicitor.email);
-    await solicitorDetailsPage.enterSolicitorsFirm();
-    await solicitorDetailsPage.enterSolicitorsAddress();
+    await respondentRepresentedPage.enterSolicitorsDetails('Test Respondent', config.applicant_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
     
     // Nature of App
