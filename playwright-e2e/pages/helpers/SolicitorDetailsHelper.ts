@@ -18,5 +18,4 @@ export class SolicitorDetailsHelper {
     async enterSolicitorName(page: Page, solicitorName: string){
         await page.getByLabel('Solicitor’s name').fill(solicitorName);
     }
-
 }
