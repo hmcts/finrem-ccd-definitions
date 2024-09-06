@@ -2,11 +2,12 @@ import { type Page, type Locator } from '@playwright/test';
 import config from '../config';
 
 export class LoginPage {
-  readonly page: Page;
-  readonly url: string;
-  readonly emailInputLocator: Locator;
-  readonly passwordInputLocator: Locator;
-  readonly signinButtonLocator: Locator;
+  
+  private readonly page: Page;
+  private readonly url: string;
+  private readonly emailInputLocator: Locator;
+  private readonly passwordInputLocator: Locator;
+  private readonly signinButtonLocator: Locator;
 
   public constructor(page: Page) {
     this.page = page;

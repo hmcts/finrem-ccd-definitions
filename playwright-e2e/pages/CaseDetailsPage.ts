@@ -1,7 +1,8 @@
 import { type Page, expect, Locator } from '@playwright/test';
 
 export class CaseDetailsPage {
-    readonly page: Page;
+
+    private readonly page: Page;
 
     readonly successfulCreationBanner: Locator;
 

@@ -1,8 +1,7 @@
 import { type Page, expect, Locator } from '@playwright/test';
-import { CommonActionsHelper } from './helpers/CommonActionsHelper';
 
 export abstract class BaseJourneyPage {
-    readonly page: Page;
+    protected readonly page: Page;
 
     private readonly continueButton: Locator;
     private readonly previousButton: Locator;
