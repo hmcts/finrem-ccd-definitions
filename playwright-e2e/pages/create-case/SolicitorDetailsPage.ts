@@ -1,20 +1,25 @@
 import { type Page, expect, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
+import { CommonActionsHelper } from '../helpers/CommonActionsHelper';
 
-export class SolicitorDetailsPage {
-    readonly page: Page;
-    readonly solicitorNameInput: Locator;
-    readonly orgSearchInput: Locator;
-    readonly orgResultTable: Locator;
-    readonly orgResultRow: Locator;
-    readonly selectOrgButton: (orgName: string) => Locator;
-    readonly orgResultName: Locator;
-    readonly referenceInput: Locator;
-    readonly solicitorsFirmInput: Locator;
-    readonly refNumberInput: Locator;
-    readonly dxNumberInput: Locator;
+export class SolicitorDetailsPage extends BaseJourneyPage {
+    
+    private readonly solicitorNameInput: Locator;
+    private readonly orgSearchInput: Locator;
+    private readonly orgResultTable: Locator;
+    private readonly orgResultRow: Locator;
+    private readonly selectOrgButton: (orgName: string) => Locator;
+    private readonly orgResultName: Locator;
+    private readonly referenceInput: Locator;
+    private readonly solicitorsFirmInput: Locator;
+    private readonly refNumberInput: Locator;
+    private readonly dxNumberInput: Locator;
 
-    public constructor(page: Page) {
-        this.page = page;
+    private commonActionsHelper: CommonActionsHelper
+
+    public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
+        super(page);
+        this.commonActionsHelper = commonActionsHelper;
 
         this.solicitorNameInput = page.getByLabel('Solicitor’s name');
         this.orgSearchInput = page.getByLabel('You can only search for');
@@ -32,12 +37,22 @@ export class SolicitorDetailsPage {
         this.dxNumberInput = page.getByRole('textbox', { name: 'DX number (Optional)'});  
     }
 
-    async enterSolicitorName(solicitorName: string) {
+    async enterSolicitorDetails(solicitorName: string, solicitorEmail: string) {
         await this.solicitorNameInput.fill(solicitorName);
+        await this.commonActionsHelper.enterPhoneNumber(this.page);
+        await this.commonActionsHelper.enterEmailAddress(this.page, solicitorEmail);
+    }
+
+    async setEmailConsent() {
+        await this.commonActionsHelper.emailConsent(this.page, true);
     }
 
     async searchForOrganisation(orgName: string) {
         await this.orgSearchInput.fill(orgName);
+    }
+
+    async enterSolicitorsAddress(){
+        await this.commonActionsHelper.enterUkAddress(this.page);
     }
 
     async selectOrganisation(orgName: string) {

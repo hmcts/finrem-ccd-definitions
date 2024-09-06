@@ -1,18 +1,17 @@
 import { type Page, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class FinancialAssetsPage {
-    readonly page: Page;
+export class FinancialAssetsPage extends BaseJourneyPage {
 
-    readonly complexityListMultiChoice: Locator;
-    readonly netAssetsMultiChoice: Locator;
-    readonly netFamilyHomeValueTxtBox: Locator;
+    private readonly complexityListMultiChoice: Locator;
+    private readonly netAssetsMultiChoice: Locator;
+    private readonly netFamilyHomeValueTxtBox: Locator;
 
     // Note: Have only check one of the checkbox options
-    readonly potentialIssuesNotApplicableCheckbox: Locator;
+    private readonly potentialIssuesNotApplicableCheckbox: Locator;
    
     public constructor(page: Page) {
-        this.page = page
-
+        super(page);
         this.complexityListMultiChoice = this.page.locator('#addToComplexityListOfCourts');
         this.netAssetsMultiChoice = this.page.locator('#estimatedAssetsChecklistV2');
         this.netFamilyHomeValueTxtBox = this.page.locator('#netValueOfHome');

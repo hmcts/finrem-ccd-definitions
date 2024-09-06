@@ -1,23 +1,24 @@
 import { type Page, Locator, expect } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
+import { CommonActionsHelper } from '../helpers/CommonActionsHelper';
 
-export class DivorceDetailsPage {
-    readonly page: Page;
+export class DivorceDetailsPage extends BaseJourneyPage {
 
-    readonly divorceNumberInput: Locator;
-    readonly divorceDetailsHeader: Locator;
-    readonly civilPartnershipNoRadio: Locator;
-    readonly marriageDay: Locator;
-    readonly marriageMonth: Locator;
-    readonly marriageYear: Locator;
-    readonly issueDay: Locator;
-    readonly issueMonth: Locator;
-    readonly issueYear: Locator;
-    readonly courtName: Locator;
-    readonly divorceStage: Locator;
-    readonly uploadPetition: Locator;
+    private readonly divorceNumberInput: Locator;
+    private readonly divorceDetailsHeader: Locator;
+    private readonly civilPartnershipNoRadio: Locator;
+    private readonly marriageDay: Locator;
+    private readonly marriageMonth: Locator;
+    private readonly marriageYear: Locator;
+    private readonly issueDay: Locator;
+    private readonly issueMonth: Locator;
+    private readonly issueYear: Locator;
+    private readonly courtName: Locator;
+    private readonly divorceStage: Locator;
+    private readonly uploadPetition: Locator;
 
     public constructor(page: Page) {
-        this.page = page;
+        super(page);
 
         this.divorceDetailsHeader = page.getByRole('heading', { name: 'Divorce / Dissolution Details' });
         this.divorceNumberInput = page.getByLabel('Divorce / Dissolution Case Number');

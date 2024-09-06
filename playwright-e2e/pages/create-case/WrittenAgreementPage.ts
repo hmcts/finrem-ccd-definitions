@@ -1,19 +1,18 @@
 import { type Page, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class WrittenAgreementPage {
-    readonly page: Page;
+export class WrittenAgreementPage extends BaseJourneyPage {
 
-    readonly writtenAgreementRadio: Locator;
-    readonly writtenAgreementStepChildCheckbox: Locator;
-    readonly writtenAgreementChildSupportAgencyCheckbox: Locator;
-    readonly writtenAgreementChildDisabilityCheckbox: Locator 
-    readonly writtenAgreementChildEducationCheckbox: Locator;
-    readonly writtenAgreementNonUkResidentCheckBox: Locator;
+    private readonly writtenAgreementRadio: Locator;
+    private readonly writtenAgreementStepChildCheckbox: Locator;
+    private readonly writtenAgreementChildSupportAgencyCheckbox: Locator;
+    private readonly writtenAgreementChildDisabilityCheckbox: Locator 
+    private readonly writtenAgreementChildEducationCheckbox: Locator;
+    private readonly writtenAgreementNonUkResidentCheckBox: Locator;
 
 
     public constructor(page: Page) {
-        this.page = page
-
+        super(page);
         this.writtenAgreementRadio = page.locator('#benefitForChildrenDecision_radio')
         this.writtenAgreementStepChildCheckbox = page.getByRole('checkbox', { name: 'For a stepchild or step children'});
         this.writtenAgreementChildSupportAgencyCheckbox = page.getByRole('checkbox', { name: 'In addition to child support or maintenance already paid under a Child Support Agency assessment'});

@@ -1,13 +1,12 @@
 import { type Page, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class PeriodicalPaymentsPage {
-    readonly page: Page;
+export class PeriodicalPaymentsPage extends BaseJourneyPage {
 
-    readonly periodicalPaymentsRadio: Locator;
+    private readonly periodicalPaymentsRadio: Locator;
 
     public constructor(page: Page) {
-        this.page = page
-
+        super(page);
         this.periodicalPaymentsRadio = page.locator('#paymentForChildrenDecision_radio')
     }
 

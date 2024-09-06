@@ -1,18 +1,17 @@
 import { type Page, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class PropertyAdjustmentPage {
-    readonly page: Page;
+export class PropertyAdjustmentPage extends BaseJourneyPage {
 
-    readonly propertyAdjustmentAddressTextBox: Locator;
-    readonly propertyAdjustmentMortgages: Locator; 
-    readonly propertyAdjustmentAddAdditionalRadio: Locator
-    readonly propAdjAdditionalAddNewBtn: Locator
-    readonly propAdjAdditionalAddressTxtBox: Locator;
-    readonly propAdjAdditionalMortgageTextBox: Locator; 
-
+    private readonly propertyAdjustmentAddressTextBox: Locator;
+    private readonly propertyAdjustmentMortgages: Locator; 
+    private readonly propertyAdjustmentAddAdditionalRadio: Locator
+    private readonly propAdjAdditionalAddNewBtn: Locator
+    private readonly propAdjAdditionalAddressTxtBox: Locator;
+    private readonly propAdjAdditionalMortgageTextBox: Locator; 
 
     public constructor(page: Page) {
-        this.page = page
+        super(page);
 
         this.propertyAdjustmentAddressTextBox = page.getByRole('textbox', {name: 'property address'})
         this.propertyAdjustmentMortgages = page.getByRole('textbox', {name: 'Name(s) and address(es) of any mortgage(s) for property'})
@@ -41,5 +40,4 @@ export class PropertyAdjustmentPage {
             await this.propAdjAdditionalMortgageTextBox.fill('Test Mortgage 2')
         }
     }
-
 }

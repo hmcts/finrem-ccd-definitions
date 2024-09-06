@@ -1,28 +1,26 @@
 import { type Page, expect, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class FinancialRemedyCourtPage {
-    readonly page: Page;
+export class FinancialRemedyCourtPage extends BaseJourneyPage {
+    
+    private frcDropDown: Locator; 
+    private courtListDropDown: Locator
+    private readonly courtZoneDropDown: Locator;
+    private readonly highJudgeRadio: Locator;
+    private readonly highCourtJudgeReasonTxtBox: Locator;
+    private readonly specialFacilitiesTxtBox: Locator;
+    private readonly specialArrangementsTxtBox: Locator; 
+    private readonly applicantHomeCourtRadio: Locator;
+    private readonly reasonForHomeCourtTxtBox: Locator;
+    private readonly frcReasonTxtBox: Locator;
 
-    readonly courtZoneDropDown: Locator;
-    frcDropDown: Locator; 
-    courtListDropDown: Locator
-    readonly highJudgeRadio: Locator;
-    readonly highCourtJudgeReasonTxtBox: Locator;
-    readonly specialFacilitiesTxtBox: Locator;
-    readonly specialArrangementsTxtBox: Locator; 
-    readonly applicantHomeCourtRadio: Locator;
-    readonly reasonForHomeCourtTxtBox: Locator;
-    readonly frcReasonTxtBox: Locator;
-   
-
-    readonly courtRegion: string = 'Midlands'
-    readonly courtFrc: string = 'Nottingham'
-    readonly localCourt: string = 'CHESTERFIELD COUNTY COURT'
+    private readonly courtRegion: string = 'Midlands'
+    private readonly courtFrc: string = 'Nottingham'
+    private readonly localCourt: string = 'CHESTERFIELD COUNTY COURT'
 
 
     public constructor(page: Page) {
-        this.page = page; 
-
+        super(page);
         this.courtZoneDropDown = page.locator('#regionList');
         this.highJudgeRadio = page.locator('#allocatedToBeHeardAtHighCourtJudgeLevel_radio');
         this.highCourtJudgeReasonTxtBox = page.locator('#allocatedToBeHeardAtHighCourtJudgeLevelText')
@@ -76,7 +74,4 @@ export class FinancialRemedyCourtPage {
     async enterFrcReason() {
         await this.frcReasonTxtBox.fill("FRC Reason")
     }
-
-
-
 }

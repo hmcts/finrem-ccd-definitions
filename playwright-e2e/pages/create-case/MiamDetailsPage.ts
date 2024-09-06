@@ -1,16 +1,15 @@
 import { type Page, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class MiamDetailsPage {
-    readonly page: Page;
+export class MiamDetailsPage extends BaseJourneyPage {
 
-    readonly mediatorRegistrationNumberTxtBox: Locator;
-    readonly familyMediatorServiceNameTxtBox: Locator; 
-    readonly soleTraderName: Locator;
-    readonly miamDocUpload: Locator
+    private readonly mediatorRegistrationNumberTxtBox: Locator;
+    private readonly familyMediatorServiceNameTxtBox: Locator; 
+    private readonly soleTraderName: Locator;
+    private readonly miamDocUpload: Locator
 
     public constructor(page: Page) {
-        this.page = page
-
+        super(page);
         this.mediatorRegistrationNumberTxtBox = page.locator('#mediatorRegistrationNumber');
         this.familyMediatorServiceNameTxtBox = page.locator('#familyMediatorServiceName'); 
         this.soleTraderName = page.locator('#soleTraderName');

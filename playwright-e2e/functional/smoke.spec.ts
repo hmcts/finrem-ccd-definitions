@@ -6,15 +6,16 @@ test(
   { tag: ['@smoke-test', '@accessibility'] },
   async (
     { loginPage, 
-      manageCasePage, 
-      commonComponents, 
+      createCasePage,
+      startPage, 
       solicitorDetailsPage, 
       divorceDetailsPage, 
       applicantDetailsPage, 
+      respondentDetailsPage,
       respondentRepresentedPage, 
       natureOfApplicationPage, 
       propertyAdjustmentPage,
-      periodicalPaymentsRadio,
+      periodicalPaymentsPage,
       writtenAgreementPage,
       fastTrackProcedurePage,
       financialAssetsPage,
@@ -23,6 +24,7 @@ test(
       miamDetailsPage,
       uploadOrderDocumentsPage,
       caseDetailsPage,
+      checkYourAnswersPage,
       makeAxeBuilder 
     },
     testInfo
@@ -31,72 +33,68 @@ test(
     await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
 
     // Manage/Create case
-    await manageCasePage.startCase(
+    await createCasePage.startCase(
       config.jurisdiction.familyDivorce,
       config.caseType.contested,
       config.eventType.formA
     );
 
-    await commonComponents.navigateContinue();
+    await startPage.navigateContinue();
 
     // Enter applicant details
     await solicitorDetailsPage.selectOrganisation(
       config.organisationNames.finRem1Org
     );
-    await solicitorDetailsPage.enterSolicitorName('test');
-    await commonComponents.enterPhoneNumber('12345678910');
-    await commonComponents.enterEmailAddress(config.applicant_solicitor.email);
-    await commonComponents.emailConsent(true);
-    await commonComponents.navigateContinue();
+    await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
+    await solicitorDetailsPage.setEmailConsent()
+    await solicitorDetailsPage.navigateContinue();
 
     // Enter Divorce / Dissolution Details
     await divorceDetailsPage.enterDivorceDetails('LV12D12345', config.divorceStage.petitionIssued)
-    await commonComponents.navigateContinue();
+    await divorceDetailsPage.navigateContinue();
 
     //applicant details
-    await commonComponents.enterNames('App First Name', 'App Last Name' );
-    await applicantDetailsPage.selectApplicantDetailsPrivate(true);
-    await commonComponents.enterUkAddress();
-    await commonComponents.navigateContinue();
+    await applicantDetailsPage.enterApplicantDetails('App First Name', 'App Last Name', true);
+    await applicantDetailsPage.navigateContinue();
 
     // //respondent details 
-    await commonComponents.enterNames('Resp First Name', 'Resp Last Name' );
-    await commonComponents.navigateContinue();
+    await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name' );
+    await respondentDetailsPage.navigateContinue();
 
+
+    //TODO: Abstract solicitor details entry to helper
     await respondentRepresentedPage.selectRespondentRepresented(true)
     await solicitorDetailsPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
-    await solicitorDetailsPage.enterSolicitorName('Test Respondent');
+    await solicitorDetailsPage.enterSolicitorDetails('Test Respondent', config.applicant_solicitor.email);
     await solicitorDetailsPage.enterSolicitorsFirm();
-    await commonComponents.enterUkAddress();
-    await commonComponents.enterPhoneNumber('12345678910');
-    await commonComponents.enterEmailAddress(config.respondent_solicitor.email);
-    await commonComponents.navigateContinue();
+    await solicitorDetailsPage.enterSolicitorsAddress();
+    await respondentRepresentedPage.navigateContinue();
     
     // Nature of App
     await natureOfApplicationPage.selectNatureOfApplication();
-    await commonComponents.navigateContinue();
+    await natureOfApplicationPage.navigateContinue();
 
     // Property Adjustment Order
     await propertyAdjustmentPage.propertyAdjustmentOrder();
     await propertyAdjustmentPage.addAdditionalPropertyAdjustment(true);
-    await commonComponents.navigateContinue();
+    await propertyAdjustmentPage.navigateContinue();
 
     // Periodical Payments
 
-    await periodicalPaymentsRadio.selectPeriodicalPayments(true);
-    await commonComponents.navigateContinue();
+    await periodicalPaymentsPage.selectPeriodicalPayments(true);
+    await periodicalPaymentsPage.navigateContinue();
 
     // Written Agreement
 
     await writtenAgreementPage.selectWrittenAgreement(false);
-    await commonComponents.navigateContinue();
+    await writtenAgreementPage.navigateContinue();
 
     //Fast track procedure
 
     await fastTrackProcedurePage.selectFastTrack(true);
-    await commonComponents.navigateContinue();
+    await fastTrackProcedurePage.navigateContinue();
 
     //Financial assets 
 
@@ -104,7 +102,7 @@ test(
     await financialAssetsPage.selectAssetsValue('Under £250,000');
     await financialAssetsPage.insertFamilyHomeValue('125,000');
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
-    await commonComponents.navigateContinue();
+    await financialAssetsPage.navigateContinue();
 
     // Financial Remedies Court 
     await financialRemedyCourtPage.selectCourtZoneDropDown();
@@ -113,12 +111,12 @@ test(
     await financialRemedyCourtPage.enterSpecialArrangements();
     await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
     await financialRemedyCourtPage.enterFrcReason();
-    await commonComponents.navigateContinue();
+    await financialRemedyCourtPage.navigateContinue();
 
     // Has attended miam
 
     await miamQuestionPage.selectHasAttenedMiam(true);
-    await commonComponents.navigateContinue()
+    await miamQuestionPage.navigateContinue()
 
     // Miam details
 
@@ -126,24 +124,20 @@ test(
     await miamDetailsPage.enterFamilyMediatorServiceName();
     await miamDetailsPage.enterSoleTraderName();
     await miamDetailsPage.uploadMiamDoc();
-    await commonComponents.navigateContinue();
+    await miamDetailsPage.navigateContinue();
 
     // Upload variation Order Document 
 
     await uploadOrderDocumentsPage.uploadVariationOrderDoc();
     await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
-    await commonComponents.navigateContinue();
+    await uploadOrderDocumentsPage.navigateContinue();
     
-
     //Continue about to submit and check your answers
-    await commonComponents.navigateContinue();
-    await commonComponents.navigateSubmit();
+    await checkYourAnswersPage.navigateContinue();
+    await checkYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
-
-
-
 
     // Accessability Testing Financial assets page produces accessibility issues
 

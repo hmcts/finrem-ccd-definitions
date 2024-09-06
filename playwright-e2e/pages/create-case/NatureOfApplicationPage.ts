@@ -1,21 +1,21 @@
 import { type Page, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class NatureOfApplicationPage {
-    readonly page: Page;
+export class NatureOfApplicationPage extends BaseJourneyPage {
 
-    readonly natureOfApplicationMaintenance: Locator;
-    readonly natureOfApplicationLumpSum: Locator;
-    readonly natureOfApplicationPropertyAdjustment: Locator;
-    readonly natureOfApplicationPropertySettlement: Locator;
-    readonly natureOfApplicationPeriodicalPayment: Locator;
-    readonly natureOfApplicationPensionSharing: Locator;
-    readonly natureOfApplicationPensionComp: Locator;
-    readonly natureOfApplicationPensionAttachment: Locator;
-    readonly natureOfApplicationPensionCompAttachment: Locator;
-    readonly natureOfApplicationVariationOrder: Locator;
+    private readonly natureOfApplicationMaintenance: Locator;
+    private readonly natureOfApplicationLumpSum: Locator;
+    private readonly natureOfApplicationPropertyAdjustment: Locator;
+    private readonly natureOfApplicationPropertySettlement: Locator;
+    private readonly natureOfApplicationPeriodicalPayment: Locator;
+    private readonly natureOfApplicationPensionSharing: Locator;
+    private readonly natureOfApplicationPensionComp: Locator;
+    private readonly natureOfApplicationPensionAttachment: Locator;
+    private readonly natureOfApplicationPensionCompAttachment: Locator;
+    private readonly natureOfApplicationVariationOrder: Locator;
 
     public constructor(page: Page) {
-        this.page = page
+        super(page);
 
         this.natureOfApplicationMaintenance = page.getByRole('checkbox', { name: 'Maintenance Pending Suit' });
         this.natureOfApplicationLumpSum = page.getByRole('checkbox', { name: 'Lump Sum Order' });

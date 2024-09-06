@@ -1,17 +1,16 @@
 import { type Page, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class FastTrackProcedurePage {
-    readonly page: Page;
+export class FastTrackProcedurePage extends BaseJourneyPage {
 
-    readonly fastTrackRadio: Locator;
-    readonly fastTrackVaryPeriodicalPaymentOrderCheckBox: Locator;
-    readonly fastTrackForeignMaintenanceCheckbox: Locator;
-    readonly fastTrackOnlyPeriodicalPaymentCheckbox: Locator 
-    readonly fastTrackFinancialProvisionCheckbox: Locator;
+    private readonly fastTrackRadio: Locator;
+    private readonly fastTrackVaryPeriodicalPaymentOrderCheckBox: Locator;
+    private readonly fastTrackForeignMaintenanceCheckbox: Locator;
+    private readonly fastTrackOnlyPeriodicalPaymentCheckbox: Locator 
+    private readonly fastTrackFinancialProvisionCheckbox: Locator;
 
     public constructor(page: Page) {
-        this.page = page
-
+        super(page);
         this.fastTrackRadio = page.locator('#fastTrackDecision_radio')
         this.fastTrackVaryPeriodicalPaymentOrderCheckBox = page.locator('#fastTrackDecisionReason-reason_1');
         this.fastTrackForeignMaintenanceCheckbox = page.locator('#fastTrackDecisionReason-reason_2');

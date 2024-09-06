@@ -1,13 +1,12 @@
 import { type Page, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class MiamQuestionPage {
-    readonly page: Page;
+export class MiamQuestionPage extends BaseJourneyPage {
 
-    readonly applicantAttendMiamRadio: Locator;
+    private readonly applicantAttendMiamRadio: Locator;
 
     public constructor(page: Page) {
-        this.page = page
-
+        super(page);
         this.applicantAttendMiamRadio = page.locator('#applicantAttendedMIAM_radio');
     }
 

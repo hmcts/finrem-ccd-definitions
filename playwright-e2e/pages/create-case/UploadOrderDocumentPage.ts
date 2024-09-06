@@ -1,15 +1,14 @@
 import { type Page, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class UploadOrderDocumentsPage {
-    readonly page: Page;
+export class UploadOrderDocumentsPage extends BaseJourneyPage {
 
-    readonly variationOrderDocUpload: Locator;
-    readonly promptForAnyDocumentRadio: Locator
-    readonly promptForUrgentCaseQuestionRadio: Locator
+    private readonly variationOrderDocUpload: Locator;
+    private readonly promptForAnyDocumentRadio: Locator
+    private readonly promptForUrgentCaseQuestionRadio: Locator
 
     public constructor(page: Page) {
-        this.page = page;
-
+        super(page);
         this.variationOrderDocUpload = page.locator('#variationOrderDocument')
         this.promptForAnyDocumentRadio = page.locator('#promptForAnyDocument_radio')
         this.promptForUrgentCaseQuestionRadio = page.locator('#promptForUrgentCaseQuestion_radio')

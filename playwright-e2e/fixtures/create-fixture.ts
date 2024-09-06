@@ -1,7 +1,7 @@
 import { test as base } from '@playwright/test';
-import { CommonComponents } from '../pages/CommonComponents';
 import { LoginPage } from '../pages/LoginPage';
-import { ManageCasePage } from '../pages/create-case/ManageCasePage';
+import { StartPage } from '../pages/create-case/StartPage';
+import { CreateCasePage } from '../pages/create-case/CreateCasePage';
 import { SolicitorDetailsPage } from '../pages/create-case/SolicitorDetailsPage';
 import { DivorceDetailsPage } from '../pages/create-case/DivorceDetailsPage';
 import { ApplicantDetailsPage } from '../pages/create-case/ApplicantDetailsPage';
@@ -17,18 +17,26 @@ import { MiamQuestionPage } from '../pages/create-case/MiamQuestionPage';
 import { MiamDetailsPage } from '../pages/create-case/MiamDetailsPage';
 import { UploadOrderDocumentsPage } from '../pages/create-case/UploadOrderDocumentPage';
 import { CaseDetailsPage } from '../pages/CaseDetailsPage';
+import { RespondentDetailsPage } from '../pages/create-case/RespondentDetailsPage';
+import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
+
+import { CommonActionsHelper } from '../pages/helpers/CommonActionsHelper';
+
+
+const commonActionsHelper = new CommonActionsHelper();
 
 type CreateFixtures = {
-  commonComponents: CommonComponents;
   loginPage: LoginPage;
-  manageCasePage: ManageCasePage;
+  createCasePage: CreateCasePage;
+  startPage: StartPage;
   solicitorDetailsPage: SolicitorDetailsPage;
   divorceDetailsPage: DivorceDetailsPage;
   applicantDetailsPage: ApplicantDetailsPage;
+  respondentDetailsPage: RespondentDetailsPage
   respondentRepresentedPage: RespondentRepresentedPage;
   natureOfApplicationPage: NatureOfApplicationPage;
   propertyAdjustmentPage: PropertyAdjustmentPage;
-  periodicalPaymentsRadio: PeriodicalPaymentsPage;
+  periodicalPaymentsPage: PeriodicalPaymentsPage;
   writtenAgreementPage: WrittenAgreementPage;
   fastTrackProcedurePage: FastTrackProcedurePage;
   financialAssetsPage: FinancialAssetsPage;
@@ -37,26 +45,30 @@ type CreateFixtures = {
   miamDetailsPage: MiamDetailsPage;
   uploadOrderDocumentsPage: UploadOrderDocumentsPage;
   caseDetailsPage: CaseDetailsPage;
+  checkYourAnswersPage: CheckYourAnswersPage;
 };
 
 export const test = base.extend<CreateFixtures>({
-  commonComponents: async ({ page }, use) => {
-    await use(new CommonComponents(page));
-  },
   loginPage: async ({ page }, use) => {
     await use(new LoginPage(page));
   },
-  manageCasePage: async ({ page }, use) => {
-    await use(new ManageCasePage(page));
+  createCasePage: async ({ page }, use) => {
+    await use(new CreateCasePage(page));
+  },
+  startPage: async ({ page }, use) => {
+    await use(new StartPage(page));
   },
   solicitorDetailsPage: async ({ page }, use) => {
-    await use(new SolicitorDetailsPage(page));
+    await use(new SolicitorDetailsPage(page, commonActionsHelper));
   },
   divorceDetailsPage: async ({ page }, use) => {
     await use(new DivorceDetailsPage(page));
   },
   applicantDetailsPage: async ({ page }, use) => {
-    await use(new ApplicantDetailsPage(page));
+    await use(new ApplicantDetailsPage(page, commonActionsHelper));
+  },
+  respondentDetailsPage: async ({ page }, use) => {
+    await use(new RespondentDetailsPage(page, commonActionsHelper));
   },
   respondentRepresentedPage: async ({ page }, use) => {
     await use(new RespondentRepresentedPage(page));
@@ -67,7 +79,7 @@ export const test = base.extend<CreateFixtures>({
   propertyAdjustmentPage: async ({ page }, use) => {
     await use(new PropertyAdjustmentPage(page));
   },
-  periodicalPaymentsRadio: async ({ page }, use) => {
+  periodicalPaymentsPage: async ({ page }, use) => {
     await use(new PeriodicalPaymentsPage(page));
   },
   writtenAgreementPage: async ({ page }, use) => {
@@ -93,5 +105,8 @@ export const test = base.extend<CreateFixtures>({
   },
   caseDetailsPage: async ({ page }, use) => {
     await use(new CaseDetailsPage(page));
+  },
+  checkYourAnswersPage: async ({ page }, use) => {
+    await use(new CheckYourAnswersPage(page));
   }
 });
