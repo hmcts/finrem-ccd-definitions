@@ -2,6 +2,7 @@ package finrem;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import uk.gov.hmcts.befta.BeftaMain;
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
 import uk.gov.hmcts.befta.dse.ccd.CcdRoleConfig;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
@@ -65,6 +66,11 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
             // Exit the process to fail Jenkins pipeline
             System.exit(1);
         }
+    }
+
+    @Override
+    protected boolean shouldTolerateDataSetupFailure(){
+        return BeftaMain.getConfig().getDefinitionStoreUrl().contains(".preview.");
     }
 
     @Override
