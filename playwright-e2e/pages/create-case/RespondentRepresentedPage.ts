@@ -25,7 +25,6 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
         await optionToSelect.check();
     }
 
-
     async enterSolicitorsDetails(solicitorName: string, solicitorEmail: string){
         await this.solicitorsFirmInput.fill('firm');
         await this.solicitorDetailsHelper.enterSolicitorName(this.page, solicitorName);

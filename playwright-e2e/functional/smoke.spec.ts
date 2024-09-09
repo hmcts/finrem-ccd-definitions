@@ -61,8 +61,6 @@ test(
     await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name' );
     await respondentDetailsPage.navigateContinue();
 
-
-    //TODO: Abstract solicitor details entry to helper
     await respondentRepresentedPage.selectRespondentRepresented(true)
     await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
@@ -80,22 +78,18 @@ test(
     await propertyAdjustmentPage.navigateContinue();
 
     // Periodical Payments
-
     await periodicalPaymentsPage.selectPeriodicalPayments(true);
     await periodicalPaymentsPage.navigateContinue();
 
     // Written Agreement
-
     await writtenAgreementPage.selectWrittenAgreement(false);
     await writtenAgreementPage.navigateContinue();
 
     //Fast track procedure
-
     await fastTrackProcedurePage.selectFastTrack(true);
     await fastTrackProcedurePage.navigateContinue();
 
     //Financial assets 
-
     await financialAssetsPage.selectComplexityList('Yes');
     await financialAssetsPage.selectAssetsValue('Under £250,000');
     await financialAssetsPage.insertFamilyHomeValue('125,000');
@@ -112,12 +106,10 @@ test(
     await financialRemedyCourtPage.navigateContinue();
 
     // Has attended miam
-
     await miamQuestionPage.selectHasAttenedMiam(true);
     await miamQuestionPage.navigateContinue()
 
     // Miam details
-
     await miamDetailsPage.enterMediatorRegistrationNumber();
     await miamDetailsPage.enterFamilyMediatorServiceName();
     await miamDetailsPage.enterSoleTraderName();
@@ -125,7 +117,6 @@ test(
     await miamDetailsPage.navigateContinue();
 
     // Upload variation Order Document 
-
     await uploadOrderDocumentsPage.uploadVariationOrderDoc();
     await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
@@ -137,10 +128,10 @@ test(
 
     await caseDetailsPage.checkHasBeenCreated();
 
-    // Accessability Testing Financial assets page produces accessibility issues
+    // Commented out for time being  Accessability Testing on 
+    // Financial Assets page produces accessibility issues
 
-    // Commented out for time being 
-
+    //TODO: Put accessability tests behind env file toggle. 
     // const accessibilityScanResults = await makeAxeBuilder().analyze();
 
     // await testInfo.attach('accessibility-scan-results', {

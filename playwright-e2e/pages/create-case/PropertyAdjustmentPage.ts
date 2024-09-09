@@ -22,7 +22,6 @@ export class PropertyAdjustmentPage extends BaseJourneyPage {
         this.propAdjAdditionalAddNewBtn = page.getByRole('button', { name: 'Add new' }).first();
         this.propAdjAdditionalAddressTxtBox = page.getByRole('textbox', {name: 'property address (Optional)'}); 
         this.propAdjAdditionalMortgageTextBox = page.getByRole('textbox', {name: 'Name(s) and address(es) of any mortgage(s) for property (Optional)'}); 
-    
     }
 
     async propertyAdjustmentOrder() {
