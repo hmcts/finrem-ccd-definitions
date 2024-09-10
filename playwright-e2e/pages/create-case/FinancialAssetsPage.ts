@@ -33,6 +33,4 @@ export class FinancialAssetsPage extends BaseJourneyPage {
     async checkPotentialIssueNotApplicableCheckbox(){
         await this.potentialIssuesNotApplicableCheckbox.check();
     }
-
-
 }

@@ -131,7 +131,7 @@ test(
     // Commented out for time being  Accessability Testing on 
     // Financial Assets page produces accessibility issues
 
-    //TODO: Put accessability tests behind env file toggle. 
+    // TODO: Put accessability tests behind env file toggle. 
     // const accessibilityScanResults = await makeAxeBuilder().analyze();
 
     // await testInfo.attach('accessibility-scan-results', {

@@ -3,7 +3,7 @@ import { expect } from "playwright/test";
 
 export class SolicitorDetailsHelper {
 
-    async selectOrgansiation(page: Page, orgName: string) {
+    async selectOrganisation(page: Page, orgName: string) {
         const selectOrgButton = (orgName: string) =>
             page.locator(
                 `table#organisation-table tr td.td-select a[title^="Select the organisation ${orgName}"]`

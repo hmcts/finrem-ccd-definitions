@@ -18,7 +18,6 @@ export class FinancialRemedyCourtPage extends BaseJourneyPage {
     private readonly courtFrc: string = 'Nottingham'
     private readonly localCourt: string = 'CHESTERFIELD COUNTY COURT'
 
-
     public constructor(page: Page) {
         super(page);
         this.courtZoneDropDown = page.locator('#regionList');

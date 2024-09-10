@@ -1,9 +1,11 @@
 /* eslint-disable */
 'use strict';
 
+import config from 'playwright-e2e/config.ts'
+
 const Helper = codecept_helper;
 const helperName = 'Playwright';
-const testForAccessibility = process.env.TESTS_FOR_ACCESSIBILITY || 'true';
+const testForAccessibility = config.run_accessibility;
 const { getAccessibilityTestResult } = require('../accessibility/runner');
 const { generateAccessibilityReport } = require('../reporter/customReporter');
 
@@ -58,7 +60,7 @@ class PlaywrightHelper extends Helper {
       if (Array.isArray(locator)) {
         for (let i = 0; i < locator.length; i++) {
           // eslint-disable-next-line no-await-in-loop
-          await page.waitForSelector(this.getEnabledCssLocator(locator[i]), { visible: true, timeout: 10000 });
+          await page.waitForSelector(this.getEnabledCssLocator(locator[i]), { visible: true, timeout: config.timeout });
           await page.click(locator[i]);
         }
       } else {

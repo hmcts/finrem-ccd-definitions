@@ -25,7 +25,7 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
     }
 
     async selectOrganisation(orgName: string) {
-       await this.solicitorDetailsHelper.selectOrgansiation(this.page, orgName)
+       await this.solicitorDetailsHelper.selectOrganisation(this.page, orgName)
     }
 
 }
