@@ -90,6 +90,7 @@
     "copy-common-components-consented": "cp -R definitions/common/json/* definitions/consented/json",
     "copy-common-components-contested": "cp -R definitions/common/json/* definitions/contested/json",
     "copy-local-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-local-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-local-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-consented-preview-xlxs-to-resources": "cp -R definitions/consented/xlsx/ccd-config-preview-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "copy-preview-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-preview-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-preview-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "copy-aat-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-aat-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-aat-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "copy-demo-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-demo-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-demo-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
