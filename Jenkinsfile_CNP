@@ -132,9 +132,9 @@ withPipeline("nodejs", product, component) {
     if('preview' == env.ENV) {
       env.RUNNING_ENV = "aat"
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
-      env.AAC_API_URL = "http://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
-      env.CCD_DATA_API_URL = "http://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
-      env.DEFINITION_STORE_URL_BASE = "http://ccd-definition-store-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+      env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+      env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+      env.DEFINITION_STORE_URL_BASE = "https://ccd-definition-store-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
       }
