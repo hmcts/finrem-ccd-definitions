@@ -153,7 +153,7 @@ Scenario('List for hearing contested case @nightly', async ({ I }) => {
     I.waitForText('List for Hearing');
 }).retry(3);
 
-Scenario.skip('Contested E2E @nightly @preview', async ({ I }) => {
+Scenario.skip('Contested E2E @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
