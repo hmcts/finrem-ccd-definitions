@@ -149,13 +149,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponse",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
@@ -374,13 +367,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "close",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
   },
@@ -534,14 +520,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "caseworker-divorce-bulkscan",
-    "CRUD": "R"
-  },
-
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponse",
     "UserRole": "caseworker-divorce-bulkscan",
     "CRUD": "R"
@@ -843,13 +821,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "caseworker-divorce-systemupdate",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponse",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRU"
@@ -1026,13 +997,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseFileSubmitted",
-    "UserRole": "caseworker-caa",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
     "UserRole": "caseworker-caa",
     "CRUD": "CRUD"
   },
@@ -1249,13 +1213,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "caseworker-approver",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponse",
     "UserRole": "caseworker-approver",
     "CRUD": "CRUD"
@@ -1460,13 +1417,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "close",
-    "UserRole": "[RESPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
     "UserRole": "[RESPSOLICITOR]",
     "CRUD": "CRU"
   },
@@ -1704,13 +1654,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponse",
     "UserRole": "[APPSOLICITOR]",
     "CRUD": "CRU"
@@ -1908,13 +1851,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "close",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRU"
   },
@@ -2278,13 +2214,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "caseworker-divorce-financialremedy-superuser",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponse",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRU"
@@ -2509,13 +2438,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "[APPBARRISTER]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "awaitingJudiciaryResponse",
     "UserRole": "[APPBARRISTER]",
     "CRUD": "CRU"
@@ -2713,13 +2635,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "close",
-    "UserRole": "[RESPBARRISTER]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
     "UserRole": "[RESPBARRISTER]",
     "CRUD": "CRU"
   },
@@ -2986,62 +2901,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "prepareForHearing",
-    "UserRole": "[INTVRBARRISTER4]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "[INTVRSOLICITOR1]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "[INTVRBARRISTER1]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "[INTVRSOLICITOR2]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "[INTVRBARRISTER2]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "[INTVRSOLICITOR3]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "[INTVRBARRISTER3]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
-    "UserRole": "[INTVRSOLICITOR4]",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "consentProcess",
     "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "CRU"
   },

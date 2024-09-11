@@ -82,14 +82,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentProcess",
-    "Name": "Consent Process",
-    "DisplayOrder": 11,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "awaitingJudiciaryResponse",
     "Name": "Awaiting Judiciary Response",
     "DisplayOrder": 12,
