@@ -15,7 +15,7 @@ const solRef = `AUTO-${createSolicitorReference()}`;
 
 Feature('Consented Case Tests');
 
-Scenario('Consent Case Creation For Caseworker @nightly @preview', async ({ I }) => {
+Scenario('Consent Case Creation For Caseworker @nightly', async ({ I }) => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     /* eslint-disable */
