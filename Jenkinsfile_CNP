@@ -137,6 +137,7 @@ withPipeline("nodejs", product, component) {
       env.DEFINITION_STORE_URL_BASE = "https://ccd-definition-store-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
+        yarnBuilder.yarn("copy-preview-xlxs-to-resources")
       }
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
