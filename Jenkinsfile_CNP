@@ -10,6 +10,7 @@ String component = "ccd-definitions"
 AppPipelineConfig pipelineConf;
 
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
+def gradleBuilder = new uk.gov.hmcts.contino.GradleBuilder(this, product)
 
 def secrets = [
         's2s-${env}'      : [
@@ -130,6 +131,7 @@ withPipeline("nodejs", product, component) {
     env.RUNNING_ENV = env.ENV;
     yarnBuilder.yarn('setup')
     if('preview' == env.ENV) {
+      gradleBuilder.setupToolVersion()
       env.RUNNING_ENV = "aat"
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
