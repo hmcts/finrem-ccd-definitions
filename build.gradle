@@ -1,9 +1,8 @@
 plugins {
     id 'java'
     id 'java-library'
-    id 'checkstyle'
-    id 'pmd'
     id 'jacoco'
+    id 'pmd'
 }
 
 group 'com.github.hmcts'
@@ -19,10 +18,6 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven { url 'https://jitpack.io' }
-
-    maven {
-        url 'https://repo.spring.io/libs-milestone'
-    }
 }
 
 configurations.all {
