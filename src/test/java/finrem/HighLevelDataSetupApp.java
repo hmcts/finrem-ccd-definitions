@@ -30,7 +30,7 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
      * Directory where the import process can locate definition files. See bin/after-data-setuo-step.sh.
      */
     private static final String DEFINITIONS_PATH = "ccd_definition";
-    private static final List<CcdEnvironment> SKIPPED_ENVS = List.of(CcdEnvironment.DEMO);
+    private static final List<CcdEnvironment> SKIPPED_ENVS = List.of(CcdEnvironment.DEMO, CcdEnvironment.PREVIEW);
 
     public HighLevelDataSetupApp(CcdEnvironment dataSetupEnvironment) {
         super(dataSetupEnvironment, DEFINITIONS_PATH);

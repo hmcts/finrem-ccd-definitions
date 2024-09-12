@@ -130,6 +130,7 @@ withPipeline("nodejs", product, component) {
     env.RUNNING_ENV = env.ENV;
     yarnBuilder.yarn('setup')
     if('preview' == env.ENV) {
+      env.IMPORT_PREVIEW = true
       env.RUNNING_ENV = "aat"
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
@@ -140,7 +141,6 @@ withPipeline("nodejs", product, component) {
       }
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-contested")
-        yarnBuilder.yarn("copy-preview-xlxs-to-resources")
       }
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
