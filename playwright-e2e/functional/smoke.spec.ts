@@ -106,7 +106,7 @@ test(
     await financialRemedyCourtPage.navigateContinue();
 
     // Has attended miam
-    await miamQuestionPage.selectHasAttenedMiam(true);
+    await miamQuestionPage.selectHasAttendedMiam(true);
     await miamQuestionPage.navigateContinue()
 
     // Miam details
@@ -127,18 +127,17 @@ test(
     await checkYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
+    
+    // Note: Financial Assets page produces accessibility issues
+    if(config.run_accessibility) {
+      const accessibilityScanResults = await makeAxeBuilder().analyze();
 
-    // Commented out for time being  Accessability Testing on 
-    // Financial Assets page produces accessibility issues
+      await testInfo.attach('accessibility-scan-results', {
+        body: JSON.stringify(accessibilityScanResults, null, 2),
+        contentType: 'application/json',
+      });
 
-    // TODO: Put accessability tests behind env file toggle. 
-    // const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-    // await testInfo.attach('accessibility-scan-results', {
-    //   body: JSON.stringify(accessibilityScanResults, null, 2),
-    //   contentType: 'application/json',
-    // });
-
-    // expect(accessibilityScanResults.violations).toEqual([]);
+      expect(accessibilityScanResults.violations).toEqual([]);
+    }
   }
 );

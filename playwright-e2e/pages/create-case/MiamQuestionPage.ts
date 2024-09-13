@@ -10,7 +10,7 @@ export class MiamQuestionPage extends BaseJourneyPage {
         this.applicantAttendMiamRadio = page.locator('#applicantAttendedMIAM_radio');
     }
 
-    async selectHasAttenedMiam(hasAttenedMaim: Boolean){
+    async selectHasAttendedMiam(hasAttenedMaim: Boolean){
         const radioOption = hasAttenedMaim ? 'Yes' : 'No'; 
         const optionToSelect = this.applicantAttendMiamRadio.getByLabel(radioOption);
         await optionToSelect.check();
