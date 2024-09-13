@@ -171,7 +171,7 @@ Scenario.skip('Contested E2E @nightly', async ({ I }) => {
     await I.waitForText('Judicial Case Manager');
     await I.enterCaseReference(caseId);
     await I.waitForText('Upload Draft Order');
-    await I.draftOrderApprove();v
+    await I.draftOrderApprove();
     await I.signOut();
     await I.retry(3).signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.waitForText('Manage Cases');
