@@ -1,15 +1,17 @@
 import { type Page, expect, Locator } from '@playwright/test';
+import { BaseJourneyPage } from '../BaseJourneyPage';
 
-export class manageCasePage {
-  readonly page: Page;
-  readonly createCaseButton: Locator;
-  readonly jurisdictionDropdown: Locator;
-  readonly caseTypeDropdown: Locator;
-  readonly eventDropdown: Locator;
-  readonly startCaseButton: Locator;
+
+export class CreateCasePage extends BaseJourneyPage {
+  
+  private readonly createCaseButton: Locator;
+  private readonly jurisdictionDropdown: Locator;
+  private readonly caseTypeDropdown: Locator;
+  private readonly eventDropdown: Locator;
+  private readonly startCaseButton: Locator;
 
   public constructor(page: Page) {
-    this.page = page;
+    super(page);
     this.createCaseButton = page.getByRole('link', { name: 'Create case' });
     this.jurisdictionDropdown = page.getByLabel('Jurisdiction');
     this.caseTypeDropdown = page.getByLabel('Case type');
@@ -17,11 +19,12 @@ export class manageCasePage {
     this.startCaseButton = page.getByRole('button', { name: 'Start' });
   }
 
-  async startCase(jurisdiction: string, caseType: string) {
+  async startCase(jurisdiction: string, caseType: string, event: string) {
     await expect(this.createCaseButton).toBeVisible();
     await this.createCaseButton.click();
     await this.jurisdictionDropdown.selectOption(jurisdiction);
     await this.caseTypeDropdown.selectOption(caseType);
+    await this.eventDropdown.selectOption(event);
     await this.startCaseButton.click();
   }
 }
