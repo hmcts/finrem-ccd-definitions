@@ -18149,5 +18149,19 @@
     "CaseFieldID": "userCaseAccessList",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "typeOfDraftOrderLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/09/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "typeOfDraftOrder",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
   }
 ]
