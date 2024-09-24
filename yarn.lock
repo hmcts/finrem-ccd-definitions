@@ -1991,20 +1991,20 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 22.5.4
-  resolution: "@types/node@npm:22.5.4"
+  version: 22.6.1
+  resolution: "@types/node@npm:22.6.1"
   dependencies:
     undici-types: ~6.19.2
-  checksum: 77ac225c38c428200036780036da0bc6764e2721cfa8f528c7e7da7cfefe01a32a5791e28a54efbeedbc977949058d7db902b2e00139298225d4686cee4ae6db
+  checksum: 177e026c83066bf21c3547313aeff45bfc3b77cd055c6dc539c657bbfd43e3f28f194568e5887daac67c9122a6906a2f06845b00ed33c05cf08351b3d2586a35
   languageName: node
   linkType: hard
 
 "@types/node@npm:^20.1.0, @types/node@npm:^20.11.30, @types/node@npm:^20.16.1":
-  version: 20.16.5
-  resolution: "@types/node@npm:20.16.5"
+  version: 20.16.6
+  resolution: "@types/node@npm:20.16.6"
   dependencies:
     undici-types: ~6.19.2
-  checksum: f38b7bd8c4993dcf38943afa2ffdd7dfd18fc94f8f3f28d0c1045a10d39871a6cc1b8f8d3bf0c7ed848457d0e1d283482f6ca125579c13fed1b7575d23e8e8f5
+  checksum: 453bbd5963d919ff7582574d0cabc3916fd23dc0cc688459e34ef4524df79d55cd5014f0d3948bf4512c04ded07de578613833c7a65a32e4e5fb5df6447d5681
   languageName: node
   linkType: hard
 
@@ -3554,8 +3554,8 @@ __metadata:
   linkType: hard
 
 "codeceptjs@npm:^3.6.5":
-  version: 3.6.6
-  resolution: "codeceptjs@npm:3.6.6"
+  version: 3.6.7
+  resolution: "codeceptjs@npm:3.6.7"
   dependencies:
     "@codeceptjs/configure": 1.0.1
     "@codeceptjs/detox-helper": 1.1.2
@@ -3580,7 +3580,7 @@ __metadata:
     css-to-xpath: 0.1.0
     csstoxpath: 1.6.0
     devtools: 8.40.2
-    envinfo: 7.11.1
+    envinfo: 7.14.0
     escape-string-regexp: 4.0.0
     figures: 3.2.0
     fn-args: 4.0.0
@@ -3609,7 +3609,7 @@ __metadata:
       optional: true
   bin:
     codeceptjs: bin/codecept.js
-  checksum: c50ea4d51ee9af397058f457af7c5666b0de66fbe0e1fd4ca1fbb38fec9370f6300e297cb39736267b129b0aeb6c7067066674d082b8a1c1aa631b133e82d2b2
+  checksum: 240f41542907e3b674a7c2f12681dc13f1811a0e09cde89580d2c07ab6e43b2f4092d7c4fe381eef9c07e6c623877ef2bbade9bb6eb982a907f9564316fc0b1e
   languageName: node
   linkType: hard
 
@@ -4645,12 +4645,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"envinfo@npm:7.11.1":
-  version: 7.11.1
-  resolution: "envinfo@npm:7.11.1"
+"envinfo@npm:7.14.0":
+  version: 7.14.0
+  resolution: "envinfo@npm:7.14.0"
   bin:
     envinfo: dist/cli.js
-  checksum: f3d38ab6bc62388466e86e2f5665f90f238ca349c81bb36b311d908cb5ca96650569b43b308c9dcb6725a222693f6c43a704794e74a68fb445ec5575a90ca05e
+  checksum: 137c1dd9a4d5781c4a6cdc6b695454ba3c4ba1829f73927198aa4122f11b35b59d7b2cb7e1ceea1364925a30278897548511d22f860c14253a33797d0bebd551
   languageName: node
   linkType: hard
 
