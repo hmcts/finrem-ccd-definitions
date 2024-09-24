@@ -82,49 +82,9 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentProcess",
-    "Name": "Consent Process",
-    "DisplayOrder": 11,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "awaitingJudiciaryResponse",
-    "Name": "Awaiting Judiciary Response",
-    "DisplayOrder": 12,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentOrderApproved",
-    "Name": "Consent Order Approved",
-    "DisplayOrder": 13,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentOrderNotApproved",
-    "Name": "Consent Order Not Approved",
-    "DisplayOrder": 14,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "consentOrderMade",
-    "Name": "Consent Order Made",
-    "DisplayOrder": 15,
-    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "caseWorkerReview",
     "Name": "Case Worker Review",
-    "DisplayOrder": 16,
+    "DisplayOrder": 11,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -132,7 +92,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "judgeDraftOrder",
     "Name": "Judge Draft Order",
-    "DisplayOrder": 17,
+    "DisplayOrder": 12,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -140,7 +100,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "solicitorDraftOrder",
     "Name": "Solicitor Draft Order",
-    "DisplayOrder": 18,
+    "DisplayOrder": 13,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -148,7 +108,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "reviewOrder",
     "Name": "Review Order",
-    "DisplayOrder": 19,
+    "DisplayOrder": 14,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -156,7 +116,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "draftOrderNotApproved",
     "Name": "Draft Order Not Approved",
-    "DisplayOrder": 20,
+    "DisplayOrder": 15,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -164,7 +124,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "scheduleRaiseDirectionsOrder",
     "Name": "Schedule & Raise Directions Order",
-    "DisplayOrder": 21,
+    "DisplayOrder": 16,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -172,7 +132,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "orderDrawn",
     "Name": "Order Drawn",
-    "DisplayOrder": 22,
+    "DisplayOrder": 17,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -180,7 +140,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "orderSent",
     "Name": "Order Sent",
-    "DisplayOrder": 23,
+    "DisplayOrder": 18,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -188,7 +148,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "consentedOrderSubmitted",
     "Name": "Consented Order Submitted",
-    "DisplayOrder": 24,
+    "DisplayOrder": 19,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -196,7 +156,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "awaitingJudiciaryResponseConsent",
     "Name": "Awaiting Judiciary Response (Consent)",
-    "DisplayOrder": 25,
+    "DisplayOrder": 20,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -204,7 +164,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "consentedOrderAssignJudge",
     "Name": "Consent Assigned to Judge",
-    "DisplayOrder": 26,
+    "DisplayOrder": 21,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -212,7 +172,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "consentedOrderApproved",
     "Name": "Consented Order Approved",
-    "DisplayOrder": 27,
+    "DisplayOrder": 22,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -220,7 +180,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "responseReceived",
     "Name": "Response Received",
-    "DisplayOrder": 28,
+    "DisplayOrder": 23,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -228,7 +188,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "consentedOrderNotApproved",
     "Name": "Consented Order Not Approved",
-    "DisplayOrder": 29,
+    "DisplayOrder": 24,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -236,7 +196,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplication",
     "Name": "General Application",
-    "DisplayOrder": 30,
+    "DisplayOrder": 25,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -244,7 +204,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationAwaitingJudiciaryResponse",
     "Name": "Awaiting Judiciary Response (Application)",
-    "DisplayOrder": 31,
+    "DisplayOrder": 26,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -252,7 +212,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalApplicationOutcome",
     "Name": "General Application Outcome",
-    "DisplayOrder": 32,
+    "DisplayOrder": 27,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -260,7 +220,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "paperCaseAdded",
     "Name": "Application Drafted",
-    "DisplayOrder": 33,
+    "DisplayOrder": 28,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   },
   {
@@ -268,7 +228,47 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "caseHidden",
     "Name": "Case Hidden",
+    "DisplayOrder": 29,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentProcess",
+    "Name": "[NOT IN USE] Consent Process",
+    "DisplayOrder": 30,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "awaitingJudiciaryResponse",
+    "Name": "[NOT IN USE] Awaiting Judiciary Response",
+    "DisplayOrder": 31,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderApproved",
+    "Name": "[NOT IN USE] Consent Order Approved",
+    "DisplayOrder": 32,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderNotApproved",
+    "Name": "[NOT IN USE] Consent Order Not Approved",
     "DisplayOrder": 33,
+    "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentOrderMade",
+    "Name": "[NOT IN USE] Consent Order Made",
+    "DisplayOrder": 34,
     "TitleDisplay": "**${[CASE_REFERENCE]}  ${applicantLName}  vs ${respondentLName}<br>Financial Remedy - Contested**"
   }
 ]
