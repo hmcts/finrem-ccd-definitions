@@ -2291,6 +2291,25 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "03/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "documentToKeepCollection",
+    "Label": "Documents to remove",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_documentToRemove",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "userCaseAccessList",
+    "Label": "Please select user case access to remove",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "cautionMessage",

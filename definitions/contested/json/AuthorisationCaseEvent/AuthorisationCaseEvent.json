@@ -403,7 +403,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_assignToJudge",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -452,21 +452,21 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_uploadConsentOrder",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_uploadOrder",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_returnTogateKeepingAndAllocation",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -795,14 +795,14 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_applicationNotApproved",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_approveApplication",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1299,6 +1299,13 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentOrder",
     "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "13/12/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_consentOrder",
+    "UserRole": "[RESPSOLICITOR]",
     "CRUD": "CR"
   },
   {
@@ -2118,6 +2125,20 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_assignDocumentCategories",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_removeCaseDocument",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/09/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_removeUserCaseAccess",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRU"
   }
 ]
