@@ -50,7 +50,7 @@ xui-mo-webapp:
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_MCA_PROXY_API: http://${SERVICE_NAME}-aac-manage-case-assignment
       CASE_TYPES: "FinancialRemedyMVP2,FinancialRemedyContested"
-#
+
 finrem-cos:
   enabled: true
   java:
