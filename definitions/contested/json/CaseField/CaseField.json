@@ -2201,6 +2201,18 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "confirmUploadedDocuments",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_confirmUploadedDocument",
+    "Label": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "draftDirectionOrderCollection",
     "Label": "Upload Draft Order",
     "HintText": "PLEASE NOTE: you must upload an editable version of the draft order (for example a 'word' document) - please do not upload a PDF",

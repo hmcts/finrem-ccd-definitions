@@ -6060,6 +6060,21 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "confirmUploadedDocuments",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "PageShowCondition": "typeOfDraftOrder=\"aSuggestedDraftOrderPriorToAListedHearing\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorDraftDirectionOrder",
     "CaseFieldID": "draftDirectionOrderCollection",
     "PageFieldDisplayOrder": 1,
