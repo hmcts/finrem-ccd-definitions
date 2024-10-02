@@ -6082,6 +6082,17 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "suggestedDraftOrderCollection",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "uploadOrdersOrPSAs=\"orders\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
