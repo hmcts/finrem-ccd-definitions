@@ -6092,7 +6092,20 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "uploadOrdersOrPSAs=\"orders\"",
+    "FieldShowCondition": "uploadOrdersOrPSAs CONTAINS \"orders\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "suggestedPSACollection",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "uploadOrdersOrPSAs CONTAINS \"pensionSharingAnnexes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
