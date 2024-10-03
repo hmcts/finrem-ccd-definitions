@@ -2209,6 +2209,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadRecipientList",
+    "Label": "Who are you uploading this on behalf of?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_uploadRecipientList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "02/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadOrdersOrPSAs",
