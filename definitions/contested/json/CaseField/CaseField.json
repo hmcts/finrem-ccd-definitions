@@ -2202,8 +2202,7 @@
     "LiveFrom": "02/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "confirmUploadedDocuments",
-    "FieldType": "MultiSelectList",
-    "FieldTypeParameter": "FR_confirmUploadedDocument",
+    "FieldType": "DynamicMultiSelectList",
     "Label": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
