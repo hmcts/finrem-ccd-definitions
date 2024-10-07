@@ -11,5 +11,32 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "generalApplicationGuidance",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageLabel": "Upload draft order(s)",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "[STATE]=\"applicationIssued\" OR [STATE]=\"schedulingAndHearing\" OR [STATE]=\"prepareForHearing\" OR [STATE]=\"solicitorDraftOrder\" OR [STATE]=\"judgeDraftOrder\" OR [STATE]=\"draftOrderNotApproved\" OR [STATE]=\"scheduleRaiseDirectionsOrder\" OR [STATE]=\"orderDrawn\" OR [STATE]=\"caseWorkerReview\" OR [STATE]=\"gateKeepingAndAllocation\" OR [STATE]=\"caseFileSubmitted\" OR [STATE]=\"reviewOrder\" OR [STATE]=\"awaitingJudiciaryResponse\" OR [STATE]=\"close\" OR [STATE]=\"orderSent\" OR [STATE]=\"generalApplication\" OR [STATE]=\"generalApplicationOutcome\""
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "consentApplicationGuidance",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageLabel": "Upload draft order(s)",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   }
 ]
