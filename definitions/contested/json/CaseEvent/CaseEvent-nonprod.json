@@ -1,2 +1,16 @@
 [
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_draftOrders",
+    "Name": "Upload draft orders",
+    "Description": "Upload draft orders",
+    "DisplayOrder": 32,
+    "PreConditionState(s)": "schedulingAndHearing;generalApplication;generalApplicationOutcome;orderDrawn;prepareForHearing;consentProcess;consentOrderNotApproved;consentOrderApproved;caseWorkerReview;caseFileSubmitted;judgeDraftOrder;reviewOrder;draftOrderNotApproved;solicitorDraftOrder;scheduleRaiseDirectionsOrder;awaitingJudiciaryResponse;awaitingJudiciaryResponseConsent;consentOrderMade;consentedOrderApproved;consentedOrderAssignJudge;consentedOrderNotApproved;consentedOrderSubmitted;generalApplicationAwaitingJudiciaryResponse;orderSent;responseReceived",
+    "PostConditionState": "reviewOrder",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  }
 ]

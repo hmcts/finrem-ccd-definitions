@@ -403,7 +403,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_solicitorDraftDirectionOrder",
-    "Name": "Upload Draft Order",
+    "Name": "Upload Draft Order(deprecated)",
     "Description": "Upload Draft Order",
     "DisplayOrder": 32,
     "PreConditionState(s)": "awaitingJudiciaryResponse;awaitingJudiciaryResponseConsent;caseFileSubmitted;caseWorkerReview;consentOrderApproved;consentOrderMade;consentOrderNotApproved;consentProcess;consentedOrderApproved;consentedOrderAssignJudge;consentedOrderNotApproved;consentedOrderSubmitted;draftOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;judgeDraftOrder;orderDrawn;orderSent;prepareForHearing;responseReceived;reviewOrder;scheduleRaiseDirectionsOrder;schedulingAndHearing;solicitorDraftOrder",
