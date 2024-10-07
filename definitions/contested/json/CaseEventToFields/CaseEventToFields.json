@@ -6105,7 +6105,8 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "uploadOrdersOrPSAs CONTAINS \"orders\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
     "LiveFrom": "01/01/2017",
