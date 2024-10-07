@@ -8,5 +8,21 @@
     "FieldTypeParameter": "FR_typeOfDraftOrderList",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationGuidance",
+    "Label": "Use the 'general application event' if you need to upload a draft order to:<ul><li>apply to adjourn a hearing</li><li>ask for an order within proceedings</li></ul>",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentApplicationGuidance",
+    "Label": "Use the 'consent application event' if you need to upload a consent order to finalise the contested proceedings.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
   }
 ]
