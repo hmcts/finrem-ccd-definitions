@@ -2189,65 +2189,6 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "01/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "typeOfDraftOrder",
-    "Label": "What kind of draft order do you need to upload?",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_typeOfDraftOrderList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "02/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "confirmUploadedDocuments",
-    "FieldType": "DynamicMultiSelectList",
-    "Label": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "uploadRecipientList",
-    "Label": "Who are you uploading this on behalf of?",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_uploadRecipientList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "02/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "uploadOrdersOrPSAs",
-    "FieldType": "MultiSelectList",
-    "FieldTypeParameter": "FR_UploadOrdersOrPSAs",
-    "Label": "What are you uploading?",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "02/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "suggestedDraftOrderCollection",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_SuggestedDraftOrders",
-    "Label": "Upload Suggested Draft orders prior to hearing",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "02/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "suggestedPSACollection",
-    "Label": "Pension Sharing Annexes",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_SuggestedPensionSharingAnnexes",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "draftDirectionOrderCollection",

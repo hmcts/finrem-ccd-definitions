@@ -1,2 +1,51 @@
 [
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadSuggestedDraftOrder",
+    "ListElementCode": "confirmUploadedDocuments",
+    "FieldType": "DynamicMultiSelectList",
+    "ElementLabel": "Hello",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadSuggestedDraftOrder",
+    "ListElementCode": "uploadPartyList",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_uploadRecipientList",
+    "ElementLabel": "Who are you uploading this on behalf of eh?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadSuggestedDraftOrder",
+    "ListElementCode": "uploadOrdersOrPSAs",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_UploadOrdersOrPSAs",
+    "ElementLabel": "What are you uploading?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadSuggestedDraftOrder",
+    "ListElementCode": "suggestedDraftOrderCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_SuggestedDraftOrders",
+    "ElementLabel": "Upload Suggested Draft orders prior to hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadSuggestedDraftOrder",
+    "ListElementCode": "suggestedPSACollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_SuggestedPensionSharingAnnexes",
+    "ElementLabel": "Pension Sharing Annexes",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }
 ]

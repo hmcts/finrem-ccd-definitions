@@ -8,6 +8,7 @@
     "DisplayOrder": 32,
     "PreConditionState(s)": "schedulingAndHearing;generalApplication;generalApplicationOutcome;orderDrawn;prepareForHearing;consentProcess;consentOrderNotApproved;consentOrderApproved;caseWorkerReview;caseFileSubmitted;judgeDraftOrder;reviewOrder;draftOrderNotApproved;solicitorDraftOrder;scheduleRaiseDirectionsOrder;awaitingJudiciaryResponse;awaitingJudiciaryResponseConsent;consentOrderMade;consentedOrderApproved;consentedOrderAssignJudge;consentedOrderNotApproved;consentedOrderSubmitted;generalApplicationAwaitingJudiciaryResponse;orderSent;responseReceived",
     "PostConditionState": "reviewOrder",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",

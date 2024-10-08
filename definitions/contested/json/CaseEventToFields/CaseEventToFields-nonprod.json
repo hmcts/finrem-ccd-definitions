@@ -11,5 +11,19 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
+    "PageLabel": "Upload draft order(s)",
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "typeOfDraftOrder=\"aSuggestedDraftOrderPriorToAListedHearing\"",
+    "ShowSummaryChangeOption": "Y"
   }
 ]
