@@ -25,5 +25,19 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "typeOfDraftOrder=\"aSuggestedDraftOrderPriorToAListedHearing\"",
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 3,
+    "PageLabel": "Upload draft order(s)",
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
+    "ShowSummaryChangeOption": "Y"
   }
 ]
