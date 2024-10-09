@@ -1,2 +1,18 @@
 [
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_SuggestedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
+    "ListElementCode": "suggestedDraftOrderCollection",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_SuggestedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
+    "ListElementCode": "additionalDocuments",
+    "DisplayContext": "OPTIONAL"
+  }
 ]

@@ -4242,21 +4242,5 @@
     "ListElementCode": "caseDocument",
     "FieldDisplayOrder": 2,
     "DisplayContext": "READONLY"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_SuggestedDraftOrders",
-    "CaseEventID": "FR_draftOrders",
-    "CaseFieldID": "suggestedDraftOrderCollection",
-    "ListElementCode": "suggestedDraftOrderDocument",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "05/08/2020",
-    "ID": "FR_SuggestedDraftOrders",
-    "CaseEventID": "FR_draftOrders",
-    "CaseFieldID": "suggestedDraftOrderCollection",
-    "ListElementCode": "additionalDocuments",
-    "DisplayContext": "OPTIONAL"
   }
 ]

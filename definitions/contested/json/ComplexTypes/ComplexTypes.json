@@ -3160,37 +3160,5 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "02/10/2024",
-    "ID": "FR_SuggestedDraftOrders",
-    "ListElementCode": "suggestedDraftOrderDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Document",
-    "RegularExpression": ".doc,.docx",
-    "HintText": "You must upload Microsoft Word documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example \"JonesFDA11Jul24\"",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "02/10/2024",
-    "ID": "FR_SuggestedDraftOrders",
-    "ListElementCode": "additionalDocuments",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
-    "ElementLabel": "Upload additional documents",
-    "HintText": "Please upload any additional documents",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "02/10/2024",
-    "ID": "FR_SuggestedPensionSharingAnnexes",
-    "ListElementCode": "suggestedPensionSharingAnnexes",
-    "FieldType": "Document",
-    "ElementLabel": "Document",
-    "HintText": "Document names should clearly reflect the party name, document type and the date",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
   }
 ]
