@@ -4,7 +4,7 @@
     "ID": "FR_SuggestedDraftOrders",
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadSuggestedDraftOrder",
-    "ListElementCode": "suggestedDraftOrderCollection",
+    "ListElementCode": "confirmUploadedDocuments",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -12,7 +12,57 @@
     "ID": "FR_SuggestedDraftOrders",
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadSuggestedDraftOrder",
-    "ListElementCode": "additionalDocuments",
+    "ListElementCode": "uploadPartyList",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_SuggestedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
+    "ListElementCode": "uploadOrdersOrPSAs",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_SuggestedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
+    "ListElementCode": "suggestedDraftOrderCollection",
+    "FieldShowCondition": "uploadSuggestedDraftOrder.uploadOrdersOrPSAs CONTAINS \"orders\"",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_SuggestedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
+    "ListElementCode": "suggestedDraftOrderCollection.suggestedDraftOrderDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_SuggestedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
+    "ListElementCode": "suggestedDraftOrderCollection.additionalDocuments",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_SuggestedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
+    "ListElementCode": "suggestedPSACollection",
+    "FieldShowCondition": "uploadSuggestedDraftOrder.uploadOrdersOrPSAs CONTAINS \"pensionSharingAnnexes\"",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_SuggestedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
+    "ListElementCode": "suggestedPSACollection.suggestedPensionSharingAnnexes",
+    "DisplayContext": "MANDATORY"
   }
 ]
