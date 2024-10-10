@@ -7,7 +7,7 @@
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
-    "PageLabel": "Upload draft order(s)",
+    "PageLabel": "Upload draft orders",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
@@ -23,7 +23,7 @@
     "PageLabel": "Upload draft order(s)",
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "typeOfDraftOrder=\"aSuggestedDraftOrderPriorToAListedHearing\"",
+    "PageShowCondition": "typeOfDraftOrder=\"aSuggestedDraftOrderPriorToAListedHearing\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
