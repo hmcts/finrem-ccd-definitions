@@ -407,5 +407,126 @@
     "ElementLabel": "Uploaded pension sharing annexes",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "orderStatus",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderOrderStatus",
+    "ElementLabel": "Document status",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "draftOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Draft order",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "pensionSharingAnnex",
+    "FieldType": "Document",
+    "ElementLabel": "Pension Sharing Annex",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "submittedBy",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "uploadedOnBehalfOf",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_uploadParty",
+    "ElementLabel": "Uploaded on behalf of",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "submittedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date submitted",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "resubmission",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a resubmission?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "attachments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Attachments",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_suggestedDraftOrder",
+    "ListElementCode": "draftOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Draft order",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_suggestedDraftOrder",
+    "ListElementCode": "pensionSharingAnnex",
+    "FieldType": "Document",
+    "ElementLabel": "Pension Sharing Annex",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_suggestedDraftOrder",
+    "ListElementCode": "submittedBy",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_suggestedDraftOrder",
+    "ListElementCode": "uploadedOnBehalfOf",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_uploadParty",
+    "ElementLabel": "Uploaded on behalf of",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_suggestedDraftOrder",
+    "ListElementCode": "submittedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date submitted",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
