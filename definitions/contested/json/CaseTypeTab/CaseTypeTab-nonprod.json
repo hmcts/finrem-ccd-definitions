@@ -1,2 +1,42 @@
 [
+  {
+    "LiveFrom": "10/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "DraftOrders-courtadmin",
+    "TabLabel": "Draft orders",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "draftOrdersApproveOrdersLink",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "DraftOrders-courtadmin",
+    "TabLabel": "Draft orders",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "draftOrdersReviewCollection",
+    "TabShowCondition": "draftOrdersReviewCollection!=\"\"",
+    "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "DraftOrders-judiciary",
+    "TabLabel": "Draft orders",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "draftOrdersApproveOrdersLink",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "DraftOrders-judiciary",
+    "TabLabel": "Draft orders",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "draftOrdersReviewCollection",
+    "TabShowCondition": "draftOrdersReviewCollection!=\"\"",
+    "TabFieldDisplayOrder": 2
+  }
 ]

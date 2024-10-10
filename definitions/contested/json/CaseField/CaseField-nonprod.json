@@ -26,5 +26,24 @@
     "FieldType": "FR_uploadSuggestedDraftOrder",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "draftOrdersApproveOrdersLink",
+    "Label": "<a href=\"/cases/case-details/${[CASE_REFERENCE]}/trigger/approveOrder/\">Approve orders</a>",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "draftOrdersReviewCollection",
+    "Label": "Draft Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_draftOrdersReview",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
