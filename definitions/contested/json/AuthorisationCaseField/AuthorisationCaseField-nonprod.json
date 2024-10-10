@@ -40,5 +40,33 @@
     "CaseFieldID": "uploadAgreedDraftOrder",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "draftOrdersApproveOrdersLink",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "draftOrdersApproveOrdersLink",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "draftOrdersReviewCollection",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "draftOrdersReviewCollection",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
   }
 ]

@@ -79,5 +79,333 @@
     "ElementLabel": "Pension Sharing Annexes",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "orderStatus",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderOrderStatus",
+    "ElementLabel": "Order status",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "approvalDate",
+    "FieldType": "Date",
+    "ElementLabel": "Approval date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "approvalJudge",
+    "FieldType": "Text",
+    "ElementLabel": "Judge name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "finalOrder",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a final order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "anotherHearingToBeListed",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is there another hearing to be listed?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "hearingType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_hearingTypeDirections",
+    "ElementLabel": "Type of hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "hearingTimeEstimate",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderHearingTimeEstimate",
+    "ElementLabel": "Time estimate",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "additionalTime",
+    "FieldType": "Text",
+    "ElementLabel": "Additional time",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "otherListingInstructions",
+    "FieldType": "Text",
+    "ElementLabel": "Any other listing instructions?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "submittedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date submitted",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "submittedBy",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "uploadedOnBehalfOf",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_uploadParty",
+    "ElementLabel": "Uploaded on behalf of",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "resubmission",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a resubmission?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "draftOrderDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Draft order",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "attachments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Attachments",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "orderStatus",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderOrderStatus",
+    "ElementLabel": "Order status",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "approvalDate",
+    "FieldType": "Date",
+    "ElementLabel": "Approval date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "approvalJudge",
+    "FieldType": "Text",
+    "ElementLabel": "Judge name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "finalOrder",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a final order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "anotherHearingToBeListed",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is there another hearing to be listed?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "hearingType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_hearingTypeDirections",
+    "ElementLabel": "Type of hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "hearingTimeEstimate",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderHearingTimeEstimate",
+    "ElementLabel": "Time estimate",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "additionalTime",
+    "FieldType": "Text",
+    "ElementLabel": "Additional time",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "otherListingInstructions",
+    "FieldType": "Text",
+    "ElementLabel": "Any other listing instructions?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "submittedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date submitted",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "submittedBy",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "uploadedOnBehalfOf",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_uploadParty",
+    "ElementLabel": "Uploaded on behalf of",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "resubmission",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a resubmission?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "psaDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Pension sharing annex",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrdersReview",
+    "ListElementCode": "hearingType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_hearingTypeDirections",
+    "ElementLabel": "Type of Hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrdersReview",
+    "ListElementCode": "hearingDate",
+    "FieldType": "Date",
+    "ElementLabel": "Hearing Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrdersReview",
+    "ListElementCode": "hearingTime",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing Time",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrdersReview",
+    "ListElementCode": "hearingJudge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_AssignToJudge",
+    "ElementLabel": "Hearing Judge",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrdersReview",
+    "ListElementCode": "draftOrderDocReviewCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_draftOrderDocumentReview",
+    "ElementLabel": "Uploaded draft orders",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrdersReview",
+    "ListElementCode": "psaDocReviewCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_psaDocumentReview",
+    "ElementLabel": "Uploaded pension sharing annexes",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
