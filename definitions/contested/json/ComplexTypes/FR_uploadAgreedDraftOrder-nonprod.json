@@ -16,5 +16,15 @@
     "FieldType": "DynamicList",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "judge",
+    "ElementLabel": "Who is the judge that heard this hearing?",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_AssignToJudge",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
