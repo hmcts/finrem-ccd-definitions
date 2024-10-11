@@ -53,9 +53,9 @@
   {
     "LiveFrom": "03/09/2024",
     "ID": "FR_uploadSuggestedDraftOrder",
-    "ListElementCode": "uploadOrdersOrPSAs",
+    "ListElementCode": "uploadOrdersOrPsas",
     "FieldType": "MultiSelectList",
-    "FieldTypeParameter": "FR_UploadOrdersOrPSAs",
+    "FieldTypeParameter": "FR_UploadOrdersOrPsas",
     "ElementLabel": "What are you uploading?",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -73,7 +73,7 @@
   {
     "LiveFrom": "03/09/2024",
     "ID": "FR_uploadSuggestedDraftOrder",
-    "ListElementCode": "suggestedPSACollection",
+    "ListElementCode": "suggestedPsaCollection",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_SuggestedPensionSharingAnnexes",
     "ElementLabel": "Pension Sharing Annexes",

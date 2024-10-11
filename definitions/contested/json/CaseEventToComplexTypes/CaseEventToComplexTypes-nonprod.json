@@ -20,7 +20,7 @@
     "ID": "FR_SuggestedDraftOrders",
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadSuggestedDraftOrder",
-    "ListElementCode": "uploadOrdersOrPSAs",
+    "ListElementCode": "uploadOrdersOrPsas",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -29,7 +29,7 @@
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadSuggestedDraftOrder",
     "ListElementCode": "suggestedDraftOrderCollection",
-    "FieldShowCondition": "uploadSuggestedDraftOrder.uploadOrdersOrPSAs CONTAINS \"orders\"",
+    "FieldShowCondition": "uploadSuggestedDraftOrder.uploadOrdersOrPsas CONTAINS \"orders\"",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -53,8 +53,8 @@
     "ID": "FR_SuggestedDraftOrders",
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadSuggestedDraftOrder",
-    "ListElementCode": "suggestedPSACollection",
-    "FieldShowCondition": "uploadSuggestedDraftOrder.uploadOrdersOrPSAs CONTAINS \"pensionSharingAnnexes\"",
+    "ListElementCode": "suggestedPsaCollection",
+    "FieldShowCondition": "uploadSuggestedDraftOrder.uploadOrdersOrPsas CONTAINS \"pensionSharingAnnexes\"",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -62,7 +62,7 @@
     "ID": "FR_SuggestedDraftOrders",
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadSuggestedDraftOrder",
-    "ListElementCode": "suggestedPSACollection.suggestedPensionSharingAnnexes",
+    "ListElementCode": "suggestedPsaCollection.suggestedPensionSharingAnnexes",
     "DisplayContext": "MANDATORY"
   }
 ]
