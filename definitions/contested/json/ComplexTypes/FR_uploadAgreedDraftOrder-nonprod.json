@@ -26,5 +26,14 @@
     "FieldTypeParameter": "FR_fl_AssignToJudge",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "uploadParty",
+    "FieldType": "DynamicRadioList",
+    "ElementLabel": "Who are you uploading this on behalf of?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
