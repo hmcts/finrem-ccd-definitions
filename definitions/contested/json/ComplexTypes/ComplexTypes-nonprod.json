@@ -44,8 +44,7 @@
     "LiveFrom": "03/09/2024",
     "ID": "FR_uploadSuggestedDraftOrder",
     "ListElementCode": "uploadParty",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_uploadParty",
+    "FieldType": "DynamicRadioList",
     "ElementLabel": "Who are you uploading this on behalf of?",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -498,6 +497,16 @@
     "ListElementCode": "pensionSharingAnnex",
     "FieldType": "Document",
     "ElementLabel": "Pension Sharing Annex",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2024",
+    "ID": "FR_suggestedDraftOrder",
+    "ListElementCode": "additionalDocs",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Additional documents",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
