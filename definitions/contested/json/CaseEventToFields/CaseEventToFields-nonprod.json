@@ -53,6 +53,7 @@
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "PageShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   }
 ]
