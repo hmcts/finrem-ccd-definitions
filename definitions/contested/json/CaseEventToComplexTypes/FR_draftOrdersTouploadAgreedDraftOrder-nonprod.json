@@ -45,6 +45,14 @@
     "ID": "FR_AgreedDraftOrders",
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "agreedDraftOrderCollection.resubmission",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
     "ListElementCode": "agreedDraftOrderCollection.additionalDocuments",
     "DisplayContext": "OPTIONAL"
   },

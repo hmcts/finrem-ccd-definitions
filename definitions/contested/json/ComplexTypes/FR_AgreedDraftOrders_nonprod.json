@@ -13,6 +13,16 @@
   {
     "LiveFrom": "02/10/2024",
     "ID": "FR_AgreedDraftOrders",
+    "ListElementCode": "resubmission",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_fl_AgreedDraftOrderResubmission",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2024",
+    "ID": "FR_AgreedDraftOrders",
     "ListElementCode": "additionalDocuments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
