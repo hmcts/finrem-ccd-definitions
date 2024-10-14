@@ -7,5 +7,63 @@
     "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "hearingDetails",
+    "ElementLabel": "Which hearing was this?",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "judge",
+    "ElementLabel": "Who is the judge that heard this hearing?",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_AssignToJudge",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "uploadParty",
+    "FieldType": "DynamicRadioList",
+    "ElementLabel": "Who are you uploading this on behalf of?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "uploadOrdersOrPsas",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_UploadOrdersOrPsas",
+    "ElementLabel": "What are you uploading?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "agreedDraftOrderCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_AgreedDraftOrders",
+    "ElementLabel": "Upload agreed draft orders following a hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "agreedPsaCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_AgreedPensionSharingAnnexes",
+    "ElementLabel": "Pension Sharing Annexes",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]

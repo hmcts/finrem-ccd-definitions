@@ -1,0 +1,76 @@
+[
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "confirmUploadedDocuments",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "uploadParty",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "uploadOrdersOrPsas",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "agreedDraftOrderCollection",
+    "FieldShowCondition": "uploadAgreedDraftOrder.uploadOrdersOrPsas CONTAINS \"orders\"",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "agreedDraftOrderCollection.agreedDraftOrderDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "agreedDraftOrderCollection.resubmission",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "agreedDraftOrderCollection.additionalDocuments",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "agreedPsaCollection",
+    "FieldShowCondition": "uploadAgreedDraftOrder.uploadOrdersOrPsas CONTAINS \"pensionSharingAnnexes\"",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "agreedPsaCollection.agreedPensionSharingAnnexes",
+    "DisplayContext": "MANDATORY"
+  }
+]
