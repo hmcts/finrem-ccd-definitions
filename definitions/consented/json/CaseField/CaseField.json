@@ -2308,5 +2308,14 @@
     "FieldType": "DynamicList",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "cautionMessage",
+    "Label": "## Warning: This event will clear any existing organisation and set the default role. Do you want to continue?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
