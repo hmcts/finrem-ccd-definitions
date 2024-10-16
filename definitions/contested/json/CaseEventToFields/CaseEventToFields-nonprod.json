@@ -39,7 +39,8 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "PageShowCondition": "typeOfDraftOrder=\"aSuggestedDraftOrderPriorToAListedHearing\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
     "LiveFrom": "01/10/2024",
