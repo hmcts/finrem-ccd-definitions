@@ -4138,7 +4138,8 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "updateIncludesRepresentativeChange=\"No\" OR nocParty=\"applicant\""
+    "PageShowCondition": "(updateIncludesRepresentativeChange=\"No\" AND applicantRepresented=\"Yes\") OR (updateIncludesRepresentativeChange=\"Yes\" AND nocParty=\"applicant\")",
+    "FieldShowCondition": "updateIncludesRepresentativeChange=\"Yes\" AND nocParty=\"applicant\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4150,7 +4151,8 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "updateIncludesRepresentativeChange=\"Yes\" AND nocParty=\"applicant\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4409,7 +4411,8 @@
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "updateIncludesRepresentativeChange=\"No\" OR nocParty=\"respondent\""
+    "PageShowCondition": "(updateIncludesRepresentativeChange=\"No\" AND appRespondentRep=\"Yes\") OR (updateIncludesRepresentativeChange=\"Yes\" AND nocParty=\"respondent\")",
+    "FieldShowCondition": "updateIncludesRepresentativeChange=\"Yes\" AND nocParty=\"respondent\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5127,5 +5130,29 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "clearApplicantPolicy",
+    "CaseFieldID": "cautionMessage",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "clearRespondentPolicy",
+    "CaseFieldID": "cautionMessage",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
   }
 ]
