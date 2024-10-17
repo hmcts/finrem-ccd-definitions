@@ -12,6 +12,22 @@
     "ID": "FR_AgreedDraftOrders",
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "hearingDetails",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "judge",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "05/08/2020",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
     "ListElementCode": "uploadParty",
     "DisplayContext": "MANDATORY"
   },
