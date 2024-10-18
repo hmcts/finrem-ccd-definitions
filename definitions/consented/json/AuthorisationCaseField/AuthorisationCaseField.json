@@ -709,13 +709,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "latestConsentOrderSpacing",
-    "UserRole": "caseworker-divorce-financialremedy",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "amendedConsentOrderCollection",
     "UserRole": "caseworker-divorce-financialremedy",
     "CRUD": "CR"
@@ -1683,13 +1676,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "latestConsentOrder",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "latestConsentOrderSpacing",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
@@ -2775,13 +2761,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "latestConsentOrder",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "latestConsentOrderSpacing",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
@@ -4175,13 +4154,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "latestConsentOrder",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "latestConsentOrderSpacing",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
   },
@@ -7123,5 +7095,19 @@
     "CaseFieldID": "respondentResideOutsideUK",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "documentToKeepCollection",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "userCaseAccessList",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
   }
 ]

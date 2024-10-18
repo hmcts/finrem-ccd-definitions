@@ -959,7 +959,7 @@
     "ListElementCode": "regionList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_region_list",
-    "ElementLabel": "Please choose the Region in which the Applicant resides",
+    "ElementLabel": "Please state in which Financial Remedies Court Zone the applicant resides",
     "SecurityClassification": "Public"
   },
   {
@@ -1400,5 +1400,23 @@
     "FieldType": "Text",
     "ElementLabel": "Exception record reference",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_documentToRemove",
+    "ListElementCode": "documentId",
+    "FieldType": "Text",
+    "ElementLabel": "Document ID",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_documentToRemove",
+    "ListElementCode": "caseDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]

@@ -19,7 +19,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "beforeYouStartPara2",
-    "Label": "Guidance on how to use the system can be found here:\r\n\r\nhttps://www.gov.uk/government/publications/myhmcts-how-to-use-online-financial-remedy-services",
+    "Label": "Guidance on how to use the system can be found here:\r\n\r\n<a href=\"https://www.gov.uk/government/publications/myhmcts-how-to-use-online-financial-remedy-services\">https://www.gov.uk/government/publications/myhmcts-how-to-use-online-financial-remedy-services</a>",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
@@ -742,14 +742,6 @@
     "ID": "latestConsentOrder",
     "Label": "Latest Consent Order",
     "FieldType": "Document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "latestConsentOrderSpacing",
-    "Label": " ***************",
-    "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
@@ -1519,7 +1511,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "regionList",
-    "Label": "Please choose the Region in which the Applicant resides",
+    "Label": "Please state in which Financial Remedies Court Zone the applicant resides",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_region_list",
     "SecurityClassification": "Public"
@@ -2296,6 +2288,34 @@
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "HintText": "If Yes, please enter the Country in the field below.",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "documentToKeepCollection",
+    "Label": "Documents to remove",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_documentToRemove",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "userCaseAccessList",
+    "Label": "Please select user case access to remove",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "cautionMessage",
+    "Label": "## Warning: This event will clear any existing organisation and set the default role. Do you want to continue?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
     "Searchable": "N"
   }
 ]
