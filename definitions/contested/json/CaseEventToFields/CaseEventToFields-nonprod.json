@@ -7,10 +7,25 @@
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
-    "PageLabel": "Upload draft orders",
+    "PageLabel": "Upload draft order(s)",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "14/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "showUploadPartyQuestion",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageLabel": "Upload draft order(s)",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "typeOfDraftOrder=\"never show\"",
+    "RetainHiddenValue": "Yes",
+    "ShowSummaryChangeOption": "N"
   },
   {
     "LiveFrom": "01/10/2024",
@@ -24,7 +39,8 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "PageShowCondition": "typeOfDraftOrder=\"aSuggestedDraftOrderPriorToAListedHearing\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
     "LiveFrom": "01/10/2024",
@@ -32,12 +48,38 @@
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "COMPLEX",
     "PageID": 3,
     "PageLabel": "Upload draft order(s)",
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "PageShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "generalApplicationGuidance",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageLabel": "Upload draft order(s)",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "[STATE]=\"applicationIssued\" OR [STATE]=\"schedulingAndHearing\" OR [STATE]=\"prepareForHearing\" OR [STATE]=\"solicitorDraftOrder\" OR [STATE]=\"judgeDraftOrder\" OR [STATE]=\"draftOrderNotApproved\" OR [STATE]=\"scheduleRaiseDirectionsOrder\" OR [STATE]=\"orderDrawn\" OR [STATE]=\"caseWorkerReview\" OR [STATE]=\"gateKeepingAndAllocation\" OR [STATE]=\"caseFileSubmitted\" OR [STATE]=\"reviewOrder\" OR [STATE]=\"awaitingJudiciaryResponse\" OR [STATE]=\"close\" OR [STATE]=\"orderSent\" OR [STATE]=\"generalApplication\" OR [STATE]=\"generalApplicationOutcome\""
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "consentApplicationGuidance",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageLabel": "Upload draft order(s)",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1
   }
 ]

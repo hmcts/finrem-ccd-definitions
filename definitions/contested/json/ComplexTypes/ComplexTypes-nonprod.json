@@ -16,8 +16,8 @@
     "ListElementCode": "additionalDocuments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
-    "ElementLabel": "Upload additional documents",
-    "HintText": "Please upload any additional documents",
+    "ElementLabel": "Upload additional attachments",
+    "HintText": "Please upload any additional attachments",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -36,7 +36,7 @@
     "ID": "FR_uploadSuggestedDraftOrder",
     "ListElementCode": "confirmUploadedDocuments",
     "FieldType": "DynamicMultiSelectList",
-    "ElementLabel": " ",
+    "ElementLabel": "Confirm the uploaded documents are for the case",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -65,7 +65,7 @@
     "ListElementCode": "suggestedDraftOrderCollection",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_SuggestedDraftOrders",
-    "ElementLabel": "Upload Suggested Draft orders prior to hearing",
+    "ElementLabel": "Upload draft order",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -501,12 +501,12 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "02/10/2024",
+    "LiveFrom": "10/10/2024",
     "ID": "FR_suggestedDraftOrder",
-    "ListElementCode": "additionalDocs",
+    "ListElementCode": "attachments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
-    "ElementLabel": "Additional documents",
+    "ElementLabel": "Attachments",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },

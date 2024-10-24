@@ -2159,10 +2159,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wdio/protocols@npm:9.0.8":
-  version: 9.0.8
-  resolution: "@wdio/protocols@npm:9.0.8"
-  checksum: 8019def62e6994abde8f538c928dd812ce12c641e027e3c11e0b592bc36269d3bd743e3b88b1247f51ff2d71225f5ad20187da16629bb74f50a8b804c9510f38
+"@wdio/protocols@npm:9.2.0":
+  version: 9.2.0
+  resolution: "@wdio/protocols@npm:9.2.0"
+  checksum: 81f383456846c75829d00e3593c1be46d9a90646a2949ba39c6e56ee67907d81c803d00e65f9bdba16573574fba1c69b922317a04c33097823a2bd0115cefbcb
   languageName: node
   linkType: hard
 
@@ -11054,32 +11054,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webdriver@npm:9.1.3":
-  version: 9.1.3
-  resolution: "webdriver@npm:9.1.3"
+"webdriver@npm:9.2.0":
+  version: 9.2.0
+  resolution: "webdriver@npm:9.2.0"
   dependencies:
     "@types/node": ^20.1.0
     "@types/ws": ^8.5.3
     "@wdio/config": 9.1.3
     "@wdio/logger": 9.1.3
-    "@wdio/protocols": 9.0.8
+    "@wdio/protocols": 9.2.0
     "@wdio/types": 9.1.3
     "@wdio/utils": 9.1.3
     deepmerge-ts: ^7.0.3
     ws: ^8.8.0
-  checksum: d4ba2adda788ab945a5cbff3502dda528e687a132d5cd0e462c88810065cddfadf56a0e0deaf6957f4a9b1f2108ac0f3a2c8451dd9ce02712eb95ad5afe6b65a
+  checksum: 4c32715b6770cdcc0df1d5285d99e7e0f3c023a61b43919010dabe93de77b4501fc17d00ee5b70c3c2b1c36a217d9bda315321d1f47ab7b934b4f4d0a5f03e15
   languageName: node
   linkType: hard
 
 "webdriverio@npm:^9.0.7":
-  version: 9.1.4
-  resolution: "webdriverio@npm:9.1.4"
+  version: 9.2.1
+  resolution: "webdriverio@npm:9.2.1"
   dependencies:
     "@types/node": ^20.11.30
     "@types/sinonjs__fake-timers": ^8.1.5
     "@wdio/config": 9.1.3
     "@wdio/logger": 9.1.3
-    "@wdio/protocols": 9.0.8
+    "@wdio/protocols": 9.2.0
     "@wdio/repl": 9.0.8
     "@wdio/types": 9.1.3
     "@wdio/utils": 9.1.3
@@ -11101,13 +11101,13 @@ __metadata:
     rgb2hex: 0.2.5
     serialize-error: ^11.0.3
     urlpattern-polyfill: ^10.0.0
-    webdriver: 9.1.3
+    webdriver: 9.2.0
   peerDependencies:
     puppeteer-core: ^22.3.0
   peerDependenciesMeta:
     puppeteer-core:
       optional: true
-  checksum: 72600a8bb11fda6f5b5ac8731c800eaf90a18ea433b6e786bd6af952a5ae080391fa295e352c036a06ece1c156a61b11ce3a3ff7b0aad268204ae915e5de1747
+  checksum: 26af2484c749df3ac64f188a10b4996cbb1dc97e4bbe297935ce604eabea8633234240f41fc088576c2fc47b42121be159839f02e3692e7b9c00fc132b9ca857
   languageName: node
   linkType: hard
 
