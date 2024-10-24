@@ -182,6 +182,9 @@ ccd:
         ENABLE_PSEUDO_ROLE_ASSIGNMENTS_GENERATION: true
         ENABLE_PSEUDO_ACCESS_PROFILES_GENERATION: true
         UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: FinancialRemedyContested, FinancialRemedyMVP2
+        CCD_MULTIPARTY_FIX_ENABLED: true
+        CCD_MULTIPARTY_CASE_TYPES: "*"
+        CCD_MULTIPARTY_EVENTS: "*"
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
   am-role-assignment-service:
