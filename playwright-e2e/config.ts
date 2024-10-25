@@ -46,6 +46,7 @@ const configuration = {
   eventType: {
     formA: 'Form A Application',
     paperCase: 'New Paper Case',
+    consentOrder: 'Consent Order Application'
   },
 
   organisationNames: {

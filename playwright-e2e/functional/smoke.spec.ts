@@ -5,15 +5,15 @@ test(
   'Smoke Test - Contested FormA Submission',
   { tag: ['@smoke-test', '@accessibility'] },
   async (
-    { loginPage, 
+    { loginPage,
       createCasePage,
-      startPage, 
-      solicitorDetailsPage, 
-      divorceDetailsPage, 
-      applicantDetailsPage, 
+      startPage,
+      solicitorDetailsPage,
+      divorceDetailsPage,
+      applicantDetailsPage,
       respondentDetailsPage,
-      respondentRepresentedPage, 
-      natureOfApplicationPage, 
+      respondentRepresentedPage,
+      natureOfApplicationPage,
       propertyAdjustmentPage,
       periodicalPaymentsPage,
       writtenAgreementPage,
@@ -25,7 +25,7 @@ test(
       uploadOrderDocumentsPage,
       caseDetailsPage,
       checkYourAnswersPage,
-      makeAxeBuilder 
+      makeAxeBuilder
     },
     testInfo
   ) => {
@@ -42,9 +42,7 @@ test(
     await startPage.navigateContinue();
 
     // Enter applicant details
-    await solicitorDetailsPage.selectOrganisation(
-      config.organisationNames.finRem1Org
-    );
+    await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
     await solicitorDetailsPage.setEmailConsent()
     await solicitorDetailsPage.navigateContinue();
@@ -58,7 +56,7 @@ test(
     await applicantDetailsPage.navigateContinue();
 
     // //respondent details 
-    await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name' );
+    await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name');
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresented(true)
@@ -67,7 +65,7 @@ test(
     );
     await respondentRepresentedPage.enterSolicitorsDetails('Test Respondent', config.applicant_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
-    
+
     // Nature of App
     await natureOfApplicationPage.selectNatureOfApplication();
     await natureOfApplicationPage.navigateContinue();
@@ -121,15 +119,15 @@ test(
     await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue();
-    
+
     //Continue about to submit and check your answers
     await checkYourAnswersPage.navigateContinue();
     await checkYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
-    
+
     // Note: Financial Assets page produces accessibility issues
-    if(config.run_accessibility) {
+    if (config.run_accessibility) {
       const accessibilityScanResults = await makeAxeBuilder().analyze();
 
       await testInfo.attach('accessibility-scan-results', {
@@ -141,3 +139,47 @@ test(
     }
   }
 );
+
+test(
+  'Smoke Test - Consented Journey Submission',
+  { tag: ['@smoke-test', '@accessibility'] },
+  async (
+    { loginPage,
+      createCasePage,
+      startPage,
+      solicitorDetailsPage,
+      makeAxeBuilder
+    },
+    testInfo
+  ) => {
+    // Sign in
+    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
+
+    // Start the consented case
+    await createCasePage.startCase(
+      config.jurisdiction.familyDivorce,
+      config.caseType.consented,
+      config.eventType.consentOrder
+    );
+
+    await startPage.navigateContinue();
+
+    // Enter applicant details
+    await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
+    await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
+    await solicitorDetailsPage.setEmailConsent()
+    await solicitorDetailsPage.navigateContinue();
+
+    if (config.run_accessibility) {
+      const accessibilityScanResults = await makeAxeBuilder().analyze();
+
+      await testInfo.attach('accessibility-scan-results', {
+        body: JSON.stringify(accessibilityScanResults, null, 2),
+        contentType: 'application/json',
+      });
+
+      expect(accessibilityScanResults.violations).toEqual([]);
+    }
+  }
+)
+
