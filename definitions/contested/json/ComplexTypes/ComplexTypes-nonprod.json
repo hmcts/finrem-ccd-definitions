@@ -165,6 +165,24 @@
   {
     "LiveFrom": "10/10/2024",
     "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "reviewedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Reviewed Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "notificationSentDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Notification Snt Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "submittedDate",
     "FieldType": "DateTime",
     "ElementLabel": "Date submitted",
@@ -298,6 +316,24 @@
     "ListElementCode": "otherListingInstructions",
     "FieldType": "Text",
     "ElementLabel": "Any other listing instructions?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "reviewedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Reviewed Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "notificationSentDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Notification Snt Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
