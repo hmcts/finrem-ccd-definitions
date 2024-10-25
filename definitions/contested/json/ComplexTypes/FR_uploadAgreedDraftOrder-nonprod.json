@@ -4,7 +4,7 @@
     "ID": "FR_uploadAgreedDraftOrder",
     "ListElementCode": "confirmUploadedDocuments",
     "FieldType": "DynamicMultiSelectList",
-    "ElementLabel": " ",
+    "ElementLabel": "Confirm the uploaded documents are for the case",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -52,7 +52,7 @@
     "ListElementCode": "agreedDraftOrderCollection",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_AgreedDraftOrders",
-    "ElementLabel": "Upload agreed draft orders following a hearing",
+    "ElementLabel": "Upload draft order",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },

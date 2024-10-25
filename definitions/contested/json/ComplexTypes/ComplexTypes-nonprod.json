@@ -410,20 +410,11 @@
   {
     "LiveFrom": "10/10/2024",
     "ID": "FR_agreedDraftOrder",
-    "ListElementCode": "orderStatus",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_fl_draftOrderOrderStatus",
-    "ElementLabel": "Document status",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "10/10/2024",
-    "ID": "FR_agreedDraftOrder",
     "ListElementCode": "draftOrder",
     "FieldType": "Document",
     "ElementLabel": "Draft order",
     "SecurityClassification": "Public",
+    "CategoryID": "postHearingDraftOrder",
     "Searchable": "N"
   },
   {
@@ -432,6 +423,17 @@
     "ListElementCode": "pensionSharingAnnex",
     "FieldType": "Document",
     "ElementLabel": "Pension Sharing Annex",
+    "SecurityClassification": "Public",
+    "CategoryID": "postHearingDraftOrder",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "orderStatus",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderOrderStatus",
+    "ElementLabel": "Document status",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -480,6 +482,7 @@
     "FieldTypeParameter": "Document",
     "ElementLabel": "Attachments",
     "SecurityClassification": "Public",
+    "CategoryID": "postHearingDraftOrder",
     "Searchable": "N"
   },
   {
