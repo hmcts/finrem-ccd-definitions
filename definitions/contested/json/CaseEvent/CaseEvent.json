@@ -402,20 +402,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_solicitorDraftDirectionOrder",
-    "Name": "Upload Draft Order(deprecated)",
-    "Description": "Upload Draft Order",
-    "DisplayOrder": 32,
-    "PreConditionState(s)": "awaitingJudiciaryResponse;awaitingJudiciaryResponseConsent;caseFileSubmitted;caseWorkerReview;consentOrderApproved;consentOrderMade;consentOrderNotApproved;consentProcess;consentedOrderApproved;consentedOrderAssignJudge;consentedOrderNotApproved;consentedOrderSubmitted;draftOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;judgeDraftOrder;orderDrawn;orderSent;prepareForHearing;responseReceived;reviewOrder;scheduleRaiseDirectionsOrder;schedulingAndHearing;solicitorDraftOrder",
-    "PostConditionState": "reviewOrder",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_draftOrderNotApproved",
     "Name": "Draft Order Not Approved",
     "Description": "Draft Order Not Approved",
@@ -455,21 +441,6 @@
     "PostConditionState": "scheduleRaiseDirectionsOrder",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/approval-start",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/approval-store",
-    "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_judgeDraftDirectionOrder",
-    "Name": "Upload Draft Order",
-    "Description": "Upload Draft Order",
-    "DisplayOrder": 37,
-    "PreConditionState(s)": "awaitingJudiciaryResponse;awaitingJudiciaryResponseConsent;caseFileSubmitted;caseWorkerReview;consentOrderApproved;consentOrderMade;consentOrderNotApproved;consentProcess;consentedOrderApproved;consentedOrderAssignJudge;consentedOrderNotApproved;consentedOrderSubmitted;draftOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;judgeDraftOrder;orderDrawn;orderSent;prepareForHearing;responseReceived;reviewOrder;scheduleRaiseDirectionsOrder;schedulingAndHearing;solicitorDraftOrder",
-    "PostConditionState": "scheduleRaiseDirectionsOrder",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/start",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/hearing-order/store",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
