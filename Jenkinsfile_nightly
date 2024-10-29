@@ -77,7 +77,7 @@ withNightlyPipeline('nodejs', product, component) {
                     reportFiles: 'index.html',
                     reportName: 'FunctionalTestReport'
                 ])
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
       }
       }
     }
