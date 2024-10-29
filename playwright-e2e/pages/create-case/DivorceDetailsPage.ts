@@ -63,6 +63,5 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         await this.caseNumberInput.fill(caseNumber);
         await this.civilPartnershipNoRadio.check();
         await this.caseStageDropDown.selectOption(divorceStage);
-
     }
 }

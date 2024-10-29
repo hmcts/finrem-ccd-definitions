@@ -23,8 +23,8 @@ test(
       miamQuestionPage,
       miamDetailsPage,
       uploadOrderDocumentsPage,
-      caseDetailsPage,
       checkYourAnswersPage,
+      caseDetailsPage,
       makeAxeBuilder
     },
     testInfo
@@ -76,7 +76,7 @@ test(
     await propertyAdjustmentPage.navigateContinue();
 
     // Periodical Payments
-    await periodicalPaymentsPage.selectPeriodicalPayments(true);
+    await periodicalPaymentsPage.selectPeriodicalPaymentsContested(true);
     await periodicalPaymentsPage.navigateContinue();
 
     // Written Agreement
@@ -153,6 +153,11 @@ test(
       financialRemedyCourtPage,
       respondentDetailsPage,
       respondentRepresentedPage,
+      natureOfApplicationPage,
+      periodicalPaymentsPage,
+      uploadOrderDocumentsPage,
+      checkYourAnswersPage,
+      caseDetailsPage,
       makeAxeBuilder
     },
     testInfo
@@ -186,8 +191,33 @@ test(
 
     //respondent details
     await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name');
+    await respondentRepresentedPage.selectRespondentRepresentedConsented(false);
+    await respondentDetailsPage.enterRespondentAddress();
     await respondentDetailsPage.navigateContinue();
-    await respondentRepresentedPage.selectRespondentRepresentedConsented(false)
+
+    // Nature of App
+    await natureOfApplicationPage.selectNatureOfApplication();
+    await natureOfApplicationPage.navigateContinue();
+
+    // Periodical Payments
+    await periodicalPaymentsPage.selectPeriodicalPaymentsConsented(false);
+    await periodicalPaymentsPage.navigateContinue();
+
+    // Upload variation Order Document
+    await uploadOrderDocumentsPage.uploadConsentOrder();
+    await uploadOrderDocumentsPage.navigateContinue();
+    await uploadOrderDocumentsPage.selectAndUploadJointD81();
+
+    // Continue through optional uploads
+    await uploadOrderDocumentsPage.navigateContinue();
+    await uploadOrderDocumentsPage.navigateContinue();
+    await uploadOrderDocumentsPage.navigateContinue();
+
+    //Continue about to submit and check your answers
+    await checkYourAnswersPage.navigateContinue();
+    await checkYourAnswersPage.navigateSubmit();
+
+    await caseDetailsPage.checkHasBeenCreated();
 
     if (config.run_accessibility) {
       const accessibilityScanResults = await makeAxeBuilder().analyze();

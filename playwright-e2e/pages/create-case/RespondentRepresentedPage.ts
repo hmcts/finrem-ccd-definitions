@@ -20,7 +20,7 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
         this.respondentRepresentedRadioContested = page.locator('#respondentRepresented_radio')
         this.solicitorsFirmInput = page.getByLabel('Solicitor’s firm');
 
-        this.respondentRepresentedRadioConsented = page.locator('#respondentRepresented_radio')
+        this.respondentRepresentedRadioConsented = page.locator('#appRespondentRep_radio')
     }
 
     async selectRespondentRepresentedContested(represented: boolean) {
@@ -35,7 +35,6 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
         await optionToSelect.check();
     }
     
-
     async enterSolicitorsDetails(solicitorName: string, solicitorEmail: string){
         await this.solicitorsFirmInput.fill('firm');
         await this.solicitorDetailsHelper.enterSolicitorName(this.page, solicitorName);
