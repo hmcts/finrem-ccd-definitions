@@ -55,7 +55,7 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         await this.courtName.fill('test');
         await this.divorceStage.selectOption(divorceStage);
         await this.uploadPetition.setInputFiles('./playwright-e2e/data/PETITION FORM A.docx');
-        await this.page.waitForTimeout(3000); 
+        await this.page.waitForTimeout(4000); 
     }
 
     async enterDivorceDetailsConsented(caseNumber: string, divorceStage: string) {
