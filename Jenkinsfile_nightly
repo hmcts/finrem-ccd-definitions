@@ -7,10 +7,10 @@ properties([
         ])
 ])
 
-@Library("Infrastructure")
+@Library('Infrastructure')
 
-String product = "finrem"
-String component = "ccd-definitions"
+String product = 'finrem'
+String component = 'ccd-definitions'
 
 def secrets = [
   'finrem-${env}': [
@@ -43,11 +43,11 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
   ]
 }
 
-withNightlyPipeline("nodejs", product, component) {
-    env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
-    env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
-    env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
-    env.NIGHTLY_TEST="true"
+withNightlyPipeline('nodejs', product, component) {
+    env.CCD_WEB_URL = 'https://manage-case.aat.platform.hmcts.net'
+    env.CCD_DATA_API_URL = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal'
+    env.XUI_ORG_WEB_URL = 'https://manage-org.aat.platform.hmcts.net'
+    env.NIGHTLY_TEST = 'true'
     env.NODE_ENV = 'ci'
 
     loadVaultSecrets(secrets)
@@ -59,19 +59,27 @@ withNightlyPipeline("nodejs", product, component) {
     }
 
     before('crossBrowserTest') {
-       sh 'yarn playwright install'
+    sh 'yarn playwright install'
     }
 
-    afterSuccess('fullFunctionalTest') {
+    afterAlways('fullFunctionalTest') {
+      stage('Full functional tests') {
+      try {
+        yarnBuilder.yarn('test:fullfunctional')
+            } catch (Error) {
+        unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+            } finally {
         publishHTML([
-                allowMissing: true,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'playwright-report',
-                reportFiles: 'index.html',
-                reportName: 'FunctionalTestReport'
-        ])
+                    allowMissing: true,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'playwright-report',
+                    reportFiles: 'index.html',
+                    reportName: 'FunctionalTestReport'
+                ])
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
+      }
+      }
     }
 
     afterSuccess('crossBrowserTest') {
@@ -84,7 +92,5 @@ withNightlyPipeline("nodejs", product, component) {
                 reportName: 'CrossBrowserTestReport'
         ])
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
-      }
-}
-
-
+    }
+    }
