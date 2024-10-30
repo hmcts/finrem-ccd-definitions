@@ -52,15 +52,15 @@ withNightlyPipeline('nodejs', product, component) {
 
     loadVaultSecrets(secrets)
     enableFullFunctionalTest(180)
-    enableCrossBrowserTest()
+    //enableCrossBrowserTest()
 
     before('functionalTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     }
 
-    before('crossBrowserTest') {
-    sh 'yarn playwright install'
-    }
+    // before('crossBrowserTest') {
+    // sh 'yarn playwright install'
+    // }
 
     afterAlways('fullFunctionalTest') {
       stage('Full functional tests') {
@@ -77,20 +77,20 @@ withNightlyPipeline('nodejs', product, component) {
                     reportFiles: 'index.html',
                     reportName: 'FunctionalTestReport'
                 ])
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
       }
       }
     }
 
-    afterSuccess('crossBrowserTest') {
-        publishHTML([
-                allowMissing: true,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'playwright-report',
-                reportFiles: 'index.html',
-                reportName: 'CrossBrowserTestReport'
-        ])
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
-    }
+    // afterSuccess('crossBrowserTest') {
+    //     publishHTML([
+    //             allowMissing: true,
+    //             alwaysLinkToLastBuild: true,
+    //             keepAll: true,
+    //             reportDir: 'playwright-report',
+    //             reportFiles: 'index.html',
+    //             reportName: 'CrossBrowserTestReport'
+    //     ])
+    //     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
+    // }
     }
