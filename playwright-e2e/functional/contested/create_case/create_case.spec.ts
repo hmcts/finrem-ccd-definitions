@@ -1,19 +1,19 @@
-import { test, expect } from '../fixtures/fixtures.ts';
-import config from '../config';
+import { test, expect } from '../../../fixtures/fixtures';
+import config from '../../../config';
 
 test(
   'Smoke Test - Contested FormA Submission',
   { tag: ['@smoke-test', '@accessibility'] },
   async (
-    { loginPage, 
+    { loginPage,
       createCasePage,
-      startPage, 
-      solicitorDetailsPage, 
-      divorceDetailsPage, 
-      applicantDetailsPage, 
+      startPage,
+      solicitorDetailsPage,
+      divorceDetailsPage,
+      applicantDetailsPage,
       respondentDetailsPage,
-      respondentRepresentedPage, 
-      natureOfApplicationPage, 
+      respondentRepresentedPage,
+      natureOfApplicationPage,
       propertyAdjustmentPage,
       periodicalPaymentsPage,
       writtenAgreementPage,
@@ -23,9 +23,9 @@ test(
       miamQuestionPage,
       miamDetailsPage,
       uploadOrderDocumentsPage,
-      caseDetailsPage,
       checkYourAnswersPage,
-      makeAxeBuilder 
+      caseDetailsPage,
+      makeAxeBuilder
     },
     testInfo
   ) => {
@@ -42,32 +42,30 @@ test(
     await startPage.navigateContinue();
 
     // Enter applicant details
-    await solicitorDetailsPage.selectOrganisation(
-      config.organisationNames.finRem1Org
-    );
+    await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
-    await solicitorDetailsPage.setEmailConsent()
+    await solicitorDetailsPage.setEmailConsent(config.caseType.contested)
     await solicitorDetailsPage.navigateContinue();
 
     // Enter Divorce / Dissolution Details
-    await divorceDetailsPage.enterDivorceDetails('LV12D12345', config.divorceStage.petitionIssued)
+    await divorceDetailsPage.enterDivorceDetailsContested('LV12D12345', config.divorceStage.petitionIssued)
     await divorceDetailsPage.navigateContinue();
 
     //applicant details
-    await applicantDetailsPage.enterApplicantDetails('App First Name', 'App Last Name', true);
+    await applicantDetailsPage.enterApplicantDetailsContested('App First Name', 'App Last Name', true);
     await applicantDetailsPage.navigateContinue();
 
-    // //respondent details 
-    await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name' );
+    //respondent details
+    await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name');
     await respondentDetailsPage.navigateContinue();
 
-    await respondentRepresentedPage.selectRespondentRepresented(true)
+    await respondentRepresentedPage.selectRespondentRepresentedContested(true)
     await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
     await respondentRepresentedPage.enterSolicitorsDetails('Test Respondent', config.applicant_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
-    
+
     // Nature of App
     await natureOfApplicationPage.selectNatureOfApplication();
     await natureOfApplicationPage.navigateContinue();
@@ -78,7 +76,7 @@ test(
     await propertyAdjustmentPage.navigateContinue();
 
     // Periodical Payments
-    await periodicalPaymentsPage.selectPeriodicalPayments(true);
+    await periodicalPaymentsPage.selectPeriodicalPaymentsContested(true);
     await periodicalPaymentsPage.navigateContinue();
 
     // Written Agreement
@@ -89,14 +87,14 @@ test(
     await fastTrackProcedurePage.selectFastTrack(true);
     await fastTrackProcedurePage.navigateContinue();
 
-    //Financial assets 
+    //Financial assets
     await financialAssetsPage.selectComplexityList('Yes');
     await financialAssetsPage.selectAssetsValue('Under £250,000');
     await financialAssetsPage.insertFamilyHomeValue('125,000');
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
 
-    // Financial Remedies Court 
+    // Financial Remedies Court
     await financialRemedyCourtPage.selectCourtZoneDropDown();
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
@@ -116,20 +114,20 @@ test(
     await miamDetailsPage.uploadMiamDoc();
     await miamDetailsPage.navigateContinue();
 
-    // Upload variation Order Document 
+    // Upload variation Order Document
     await uploadOrderDocumentsPage.uploadVariationOrderDoc();
     await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue();
-    
+
     //Continue about to submit and check your answers
     await checkYourAnswersPage.navigateContinue();
     await checkYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
-    
+
     // Note: Financial Assets page produces accessibility issues
-    if(config.run_accessibility) {
+    if (config.run_accessibility) {
       const accessibilityScanResults = await makeAxeBuilder().analyze();
 
       await testInfo.attach('accessibility-scan-results', {

@@ -4,7 +4,7 @@ import { BaseJourneyPage } from '../BaseJourneyPage';
 export class DivorceDetailsPage extends BaseJourneyPage {
 
     private readonly divorceNumberInput: Locator;
-    private readonly divorceDetailsHeader: Locator;
+    private readonly divorceDetailsHeaderContested: Locator;
     private readonly civilPartnershipNoRadio: Locator;
     private readonly marriageDay: Locator;
     private readonly marriageMonth: Locator;
@@ -16,10 +16,15 @@ export class DivorceDetailsPage extends BaseJourneyPage {
     private readonly divorceStage: Locator;
     private readonly uploadPetition: Locator;
 
+    private readonly divorceDetailsHeaderConsented: Locator;
+    private readonly caseNumberInput: Locator;
+    private readonly caseStageDropDown: Locator;
+
+
     public constructor(page: Page) {
         super(page);
 
-        this.divorceDetailsHeader = page.getByRole('heading', { name: 'Divorce / Dissolution Details' });
+        this.divorceDetailsHeaderContested = page.getByRole('heading', { name: 'Divorce / Dissolution Details' });
         this.divorceNumberInput = page.getByLabel('Divorce / Dissolution Case Number');
         this.civilPartnershipNoRadio = page.getByLabel('No');
         this.marriageDay = page.getByRole('group', { name: 'Date of marriage / civil' }).getByLabel('Day');
@@ -31,10 +36,14 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         this.courtName = page.getByLabel('Name of Court / Divorce');
         this.divorceStage = page.getByLabel('What stage has the divorce /');
         this.uploadPetition = page.getByRole('textbox', { name: 'Upload Petition' });
+
+        this.divorceDetailsHeaderConsented = page.getByRole('heading', { name: 'APPLICATION DETAILS' });
+        this.caseNumberInput = page.getByLabel('Case Number');
+        this.caseStageDropDown = page.getByLabel('What stage has the case');
     }
 
-    async enterDivorceDetails (divorceNumber: string, divorceStage: string , ) {
-        await expect (this.divorceDetailsHeader).toBeVisible();
+    async enterDivorceDetailsContested(divorceNumber: string, divorceStage: string) {
+        await expect(this.divorceDetailsHeaderContested).toBeVisible();
         await this.divorceNumberInput.fill(divorceNumber);
         await this.civilPartnershipNoRadio.check();
         await this.marriageDay.fill('1');
@@ -46,6 +55,13 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         await this.courtName.fill('test');
         await this.divorceStage.selectOption(divorceStage);
         await this.uploadPetition.setInputFiles('./playwright-e2e/data/PETITION FORM A.docx');
-        await this.page.waitForTimeout(3000); 
-      }
+        await this.page.waitForTimeout(4000); 
+    }
+
+    async enterDivorceDetailsConsented(caseNumber: string, divorceStage: string) {
+        await expect(this.divorceDetailsHeaderConsented).toBeVisible();
+        await this.caseNumberInput.fill(caseNumber);
+        await this.civilPartnershipNoRadio.check();
+        await this.caseStageDropDown.selectOption(divorceStage);
+    }
 }

@@ -20,8 +20,8 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
         await this.commonActionsHelper.enterEmailAddress(this.page, solicitorEmail);
     }
 
-    async setEmailConsent() {
-        await this.commonActionsHelper.emailConsent(this.page, true);
+    async setEmailConsent(caseType: string) {
+        await this.commonActionsHelper.emailConsent(this.page, caseType, true);
     }
 
     async selectOrganisation(orgName: string) {
