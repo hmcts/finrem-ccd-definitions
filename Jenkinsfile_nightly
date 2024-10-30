@@ -65,7 +65,7 @@ withNightlyPipeline('nodejs', product, component) {
     afterAlways('fullFunctionalTest') {
       stage('Full functional tests') {
       try {
-        yarnBuilder.yarn('test:fullfunctional')
+        yarnBuilder.yarn('test:functional-nightly')
             } catch (Error) {
         unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
             } finally {
@@ -82,15 +82,15 @@ withNightlyPipeline('nodejs', product, component) {
       }
     }
 
-    // afterSuccess('crossBrowserTest') {
-    //     publishHTML([
-    //             allowMissing: true,
-    //             alwaysLinkToLastBuild: true,
-    //             keepAll: true,
-    //             reportDir: 'playwright-report',
-    //             reportFiles: 'index.html',
-    //             reportName: 'CrossBrowserTestReport'
-    //     ])
-    //     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
-    // }
-    }
+// afterSuccess('crossBrowserTest') {
+//     publishHTML([
+//             allowMissing: true,
+//             alwaysLinkToLastBuild: true,
+//             keepAll: true,
+//             reportDir: 'playwright-report',
+//             reportFiles: 'index.html',
+//             reportName: 'CrossBrowserTestReport'
+//     ])
+//     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
+// }
+}

@@ -57,6 +57,7 @@
     "test:smoke": "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs run --steps -c test/functional/codecept.conf.js --grep @smoke --reporter mochawesome",
     "test:functional": "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs run --steps -c test/functional/codecept.conf.js --grep @preview --reporter mochawesome",
     "test:fullfunctional": "NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run --steps -c test/functional/codecept.conf.js --grep @nightly --reporter mochawesome",
+    "test:functional-nightly": "yarn playwright install chromium && yarn playwright install firefox && yarn playwright install webkit && yarn playwright test --project=chromium --project=webkit --project=firefox",
     "test:mytest": "NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run-multiple parallel --steps -c test/functional/codecept.conf.js --grep @mytest --reporter mochawesome",
     "test:debug": "NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run-multiple parallel --steps --verbose -c test/functional/codecept.conf.js --grep @debug --reporter mochawesome",
     "test-crossbrowser-e2e": "TESTS_FOR_CROSS_BROWSER='true' codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} --plugins retryFailedStep --steps -c test/functional/saucelabs.conf.js --grep @crossbrowser --reporter mochawesome",
