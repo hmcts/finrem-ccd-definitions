@@ -21,9 +21,13 @@ export class ApplicantDetailsPage extends BaseJourneyPage {
         await optionToSelect.check();
     }
 
-    async enterApplicantDetails(firstName: string, lastName: string, keepPrivate: boolean){
+    async enterApplicantDetailsContested(firstName: string, lastName: string, keepPrivate: boolean){
         await this.commonActionsHelper.enterNames(this.page, firstName, lastName);
         await this.selectApplicantDetailsPrivate(keepPrivate); 
         await this.commonActionsHelper.enterUkAddress(this.page);
+    }
+
+    async enterApplicantDetailsConsented(firstName: string, lastName: string){
+        await this.commonActionsHelper.enterNames(this.page, firstName, lastName); 
     }
 }
