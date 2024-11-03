@@ -1,0 +1,25 @@
+# This workflow creates hyperlinks to applications hosted in the preview environment that is created for a PR.
+# Hyperlinks are created for Manage Cases, Manage Organisations and CCD Admin Web.
+# The hyperlinks are added to the PR as a comment when the PR is opened.
+name: Create preview links
+
+on:
+  pull_request:
+    types: [opened]
+    branches-ignore:
+      - 'renovate/**'
+
+jobs:
+  add-comment:
+    permissions:
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add comment
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          comment="- Manage Cases: https://xui-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net/\r\n- Manage Orgs: https://xui-mo-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net/\r\n- CCD Admin Web: https://admin-web-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net/"
+          comment_url="https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/comments"
+
+          curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -X POST $comment_url -d "{\"body\":\"$comment\"}"
