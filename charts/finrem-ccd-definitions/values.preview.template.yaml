@@ -510,3 +510,60 @@ ccd-case-document-am-api:
       CCD_DATA_STORE_API_BASE_URL: http://${SERVICE_NAME}-ccd-data-store-api
       CASE_DOCUMENT_AM_API_S2S_SECRET: ${CASE_DOCUMENT_AM_API_S2S_SECRET}
     keyVaults: []
+
+finrem-cos-task:
+  enabled: false
+  java:
+    imagePullPolicy: Always
+    image: hmctspublic.azurecr.io/finrem/cos:${FINREM_COS_IMAGE}
+    releaseNameOverride: ${SERVICE_NAME}-finrem-cos
+    ingressHost: cos-${SERVICE_FQDN}
+    environment:
+      # TASK_NAME:
+      FEATURE_MANAGE_BUNDLE: true
+      FEATURE_CASEWORKER_NOC: true
+      FEATURE_RESPONDENT_JOURNEY: true
+      FEATURE_ASSIGN_CASE_ACCESS: true
+      FEATURE_SOLICITOR_NOC: true
+      FEATURE_SEND_LETTER_RECIPIENT_CHECK: false
+      SECURE_DOC_ENABLED: false
+      AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+      IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
+      PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
+      IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+      ACA_SERVICE_API_BASEURL: http://${SERVICE_NAME}-aac-manage-case-assignment
+      CCD_DATA_STORE_API_BASEURL: http://${SERVICE_NAME}-ccd-data-store-api
+      AUTH_PROVIDER_SERVICE_CLIENT_KEY: ${FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY}
+      UK_GOV_NOTIFY_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
+      FINREM_SYSTEMUPDATE_USERNAME: ${FINREM_SYSTEMUPDATE_USERNAME}
+      FINREM_SYSTEMUPDATE_PASSWORD: ${FINREM_SYSTEMUPDATE_PASSWORD}
+      FINREM_IDAM_CLIENT_SECRET: ${FINREM_IDAM_CLIENT_SECRET}
+      CTSC_OPENING_HOURS: from 8am to 6pm, Monday to Friday
+      PDF_SERVICE_ACCESS_KEY: ${PDF_SERVICE_ACCESS_KEY}
+      PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
+      SEND_LETTER_SERVICE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
+      DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
+      CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
+    keyVaults:
+      finrem:
+        secrets:
+          - name: AppInsightsInstrumentationKey
+            alias: azure.application-insights.instrumentation-key
+          - name: app-insights-connection-string
+            alias: app-insights-connection-string
+          - name: finrem-case-orchestration-service-s2s-key
+            alias: FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY
+          - name: idam-secret
+            alias: OAUTH2_CLIENT_FINREM
+          - name: finrem-system-update-username
+            alias: FINREM_SYSTEMUPDATE_USERNAME
+          - name: finrem-system-update-password
+            alias: FINREM_SYSTEMUPDATE_PASSWORD
+          - name: finrem-idam-client-secret
+            alias: FINREM_IDAM_CLIENT_SECRET
+          - name: docmosis-api-key
+            alias: PDF_SERVICE_ACCESS_KEY
+          - name: docmosis-endpoint
+            alias: PDF_SERVICE_BASEURL
+          - name: gov-uk-notification-key
+            alias: UK_GOV_NOTIFY_API_KEY
