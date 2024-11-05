@@ -512,14 +512,17 @@ ccd-case-document-am-api:
     keyVaults: []
 
 finrem-cos-task:
-  enabled: false
+  enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/finrem/cos:${FINREM_COS_IMAGE}
+    image: hmctspublic.azurecr.io/finrem/cos:latest
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
     environment:
-      # TASK_NAME:
+      TASK_NAME: BulkAddOrganisationPolicyTask
+      CRON_BULK_ADD_ORGANISATION_POLICY_ENABLED: true
+      CRON_BULK_ADD_ORGANISATION_POLICY_CASE_TYPE_ID: FinancialRemedyContested
+      CRON_BULK_ADD_ORGANISATION_POLICY_BATCH_SIZE: 100
       FEATURE_MANAGE_BUNDLE: true
       FEATURE_CASEWORKER_NOC: true
       FEATURE_RESPONDENT_JOURNEY: true
