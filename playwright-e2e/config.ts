@@ -46,6 +46,7 @@ const configuration = {
   eventType: {
     formA: 'Form A Application',
     paperCase: 'New Paper Case',
+    consentOrder: 'Consent Order Application'
   },
 
   organisationNames: {
@@ -54,10 +55,10 @@ const configuration = {
   },
   
   divorceStage:{
-  decreeNisi: '1: Decree Nisi',
-  decreeAbsolute: '2: Decree Absolute',
-  petitionIssued: '3: Petition Issued',
-}
+    decreeNisi: '1: Decree Nisi',
+    decreeAbsolute: '2: Decree Absolute',
+    petitionIssued: '3: Petition Issued',
+  }
 
 };
 

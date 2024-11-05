@@ -1,16 +1,77 @@
 [
   {
-    "LiveFrom": "01/10/2024",
+    "LiveFrom": "29/10/2024",
     "ID": "FR_typeOfDraftOrderList",
     "ListElementCode": "anAgreedOrderFollowingAHearing",
     "ListElement": "An agreed order following a hearing (agreed by the Judge and parties at the hearing)",
     "DisplayOrder": 1
   },
   {
-    "LiveFrom": "01/10/2024",
+    "LiveFrom": "29/10/2024",
     "ID": "FR_typeOfDraftOrderList",
     "ListElementCode": "aSuggestedDraftOrderPriorToAListedHearing",
     "ListElement": "A suggested draft order prior to a listed hearing",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_uploadParty",
+    "ListElementCode": "theApplicant",
+    "ListElement": "The applicant",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_uploadParty",
+    "ListElementCode": "theRespondent",
+    "ListElement": "The respondent",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_UploadOrdersOrPsas",
+    "ListElementCode": "orders",
+    "ListElement": "Orders"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_UploadOrdersOrPsas",
+    "ListElementCode": "pensionSharingAnnexes",
+    "ListElement": "Pension Sharing Annexes"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderOrderStatus",
+    "ListElementCode": "TO_BE_REVIEWED",
+    "ListElement": "To be reviewed",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderOrderStatus",
+    "ListElementCode": "APPROVED_BY_JUDGE",
+    "ListElement": "Approved by judge",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderOrderStatus",
+    "ListElementCode": "PROCESSED_BY_ADMIN",
+    "ListElement": "Processed by admin",
+    "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderHearingTimeEstimate",
+    "ListElementCode": "The application can be listed for the standard time",
+    "ListElement": "The application can be listed for the standard time",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderHearingTimeEstimate",
+    "ListElementCode": "Additional time is needed",
+    "ListElement": "Additional time is needed",
     "DisplayOrder": 2
   },
   {

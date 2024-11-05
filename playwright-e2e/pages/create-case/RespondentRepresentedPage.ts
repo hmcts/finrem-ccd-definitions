@@ -5,7 +5,9 @@ import { SolicitorDetailsHelper } from '../helpers/SolicitorDetailsHelper';
 
 export class RespondentRepresentedPage extends BaseJourneyPage{
 
-    private readonly respondentRepresentedRadio: Locator;
+    private readonly respondentRepresentedRadioContested: Locator;
+
+    private readonly respondentRepresentedRadioConsented: Locator;
     private readonly solicitorsFirmInput: Locator;
 
     private readonly commonActionsHelper: CommonActionsHelper;
@@ -15,16 +17,24 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
         super(page);
         this.commonActionsHelper = commonActionsHelper;
         this.solicitorDetailsHelper = solicitorDetailsHelper;
-        this.respondentRepresentedRadio = page.locator('#respondentRepresented_radio')
+        this.respondentRepresentedRadioContested = page.locator('#respondentRepresented_radio')
         this.solicitorsFirmInput = page.getByLabel('Solicitor’s firm');
+
+        this.respondentRepresentedRadioConsented = page.locator('#appRespondentRep_radio')
     }
 
-    async selectRespondentRepresented(represented: boolean) {
+    async selectRespondentRepresentedContested(represented: boolean) {
         const radioOption = represented ? 'Yes' : 'No'; 
-        const optionToSelect = this.respondentRepresentedRadio.getByLabel(radioOption);
+        const optionToSelect = this.respondentRepresentedRadioContested.getByLabel(radioOption);
         await optionToSelect.check();
     }
 
+    async selectRespondentRepresentedConsented(represented: boolean) {
+        const radioOption = represented ? 'Yes' : 'No'; 
+        const optionToSelect = this.respondentRepresentedRadioConsented.getByLabel(radioOption);
+        await optionToSelect.check();
+    }
+    
     async enterSolicitorsDetails(solicitorName: string, solicitorEmail: string){
         await this.solicitorsFirmInput.fill('firm');
         await this.solicitorDetailsHelper.enterSolicitorName(this.page, solicitorName);
