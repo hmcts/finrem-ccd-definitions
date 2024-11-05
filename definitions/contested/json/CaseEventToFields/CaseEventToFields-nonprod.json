@@ -81,5 +81,17 @@
     "PageLabel": "Upload draft order(s)",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "approveOrdersField",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageLabel": "Approve orders",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1
   }
 ]
