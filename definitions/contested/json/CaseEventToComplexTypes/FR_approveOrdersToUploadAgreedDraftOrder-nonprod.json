@@ -1,0 +1,52 @@
+[
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "EventElementLabel": "Draft orders",
+    "ListElementCode": "reviewableDraftOrderCollection.document",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewableDraftOrderCollection.attachments",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewableDraftOrderCollection.judgeDecision",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewableDraftOrderCollection.isFinalOrder",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "EventElementLabel": "Pension Sharing Annexes",
+    "ListElementCode": "reviewablePsaCollection.document",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewablePsaCollection.judgeDecision",
+    "DisplayContext": "MANDATORY"
+  }
+]

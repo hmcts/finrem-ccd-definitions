@@ -92,6 +92,20 @@
     "PageID": 1,
     "PageLabel": "Approve orders",
     "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 2,
+    "PageLabel": "Approve orders",
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1
   }
 ]
