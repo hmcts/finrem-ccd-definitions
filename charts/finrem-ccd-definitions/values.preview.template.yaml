@@ -518,6 +518,10 @@ finrem-cos-task:
     image: hmctspublic.azurecr.io/finrem/cos:latest
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
+    args:
+      [
+        "--server.port=2024"
+      ]
     environment:
       TASK_NAME: BulkAddOrganisationPolicyTask
       CRON_BULK_ADD_ORGANISATION_POLICY_ENABLED: true
