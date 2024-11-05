@@ -66,7 +66,7 @@ withNightlyPipeline('nodejs', product, component) {
     afterAlways('fullFunctionalTest') {
       stage('Full functional tests') {
       try {
-        yarnBuilder.yarn('test:functional-nightly')
+        yarnBuilder.yarn('test:fullfunctional')
             } catch (Error) {
         unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
             } finally {
