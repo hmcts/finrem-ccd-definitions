@@ -54,7 +54,9 @@ withNightlyPipeline('nodejs', product, component) {
     enableFullFunctionalTest(180)
     //enableCrossBrowserTest()
 
-    before('functionalTest') {
+    before('fullFunctionalTest') {
+        yarnBuilder.yarn('yarn-update')
+        yarnBuilder.yarn('install-dependencies')
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
         env.ENV = 'aat'
     }
