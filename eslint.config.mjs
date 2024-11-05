@@ -58,6 +58,7 @@ export default [
           ...globals.node,
           ...globals.jquery,
           ...globals.mocha,
+          AudioWorkletGlobalScope: "readonly"
       },
       ecmaVersion: 2019,
       sourceType: "module",
