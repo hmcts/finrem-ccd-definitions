@@ -18,7 +18,8 @@ const compat = new FlatCompat({
 export default [
   {
     ignores: [
-      "node_modules/*",
+      "**/config/*",
+      "**/node_modules/*",
       "coverage/*",
       "definitions/*",
       "ccd-definition-processor/*",
@@ -29,20 +30,7 @@ export default [
       "yarn.lock",
       ".yarn/**",
       "yarn-audit-known-issues",
-      "**/*.properties", 
-      "**/*.bat", 
-      "**/*.pdf", 
-      "**/*.json",
-      "**/*.txt",
-      "**/*.sh",
-      "**/*.java",
-      '**/*.min.js',
-      '**/*.{mjs,cjs}',
-      '**/*.env',
-      '**/*.yaml',
-      "**/gradle/**",
-      "**/gradlew",
-      "**/build/**",
+      "**/*.properties"
     ],
   },
   // ... other configurations (globals, rules)
