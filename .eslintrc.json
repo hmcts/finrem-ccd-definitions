@@ -1,18 +1,32 @@
 {
+    "ignorePatterns": [
+        "node_modules/*",
+        "coverage/*",
+        "definitions/*",
+        "ccd-definition-processor/*",
+        "test/helpers/utils.js",
+        "test/reporter/*",
+        "test/functional/*"
+    ],
     "env": {
         "browser": true,
         "es6": true,
         "node": true,
         "jquery": true,
         "mocha": true,
-        "codeceptjs/codeceptjs": true
+        "codeceptjs/codeceptjs": true,
+        "es2021": true
     },
-    "extends": "@hmcts",
+    "extends":[
+        "plugin:playwright/recommended",
+        "eslint:recommended"
+    ],
     "parserOptions": {
         "sourceType": "module",
+        "requireConfigFile": false,
         "ecmaVersion": 2019
     },
-    "plugins": ["mocha", "codeceptjs"],
+    "plugins": ["mocha", "codeceptjs", "playwright"],
     "rules": {
         "linebreak-style": [
             "error",
