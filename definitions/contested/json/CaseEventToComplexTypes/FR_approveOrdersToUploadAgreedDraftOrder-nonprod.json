@@ -30,7 +30,8 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval",
     "ListElementCode": "reviewableDraftOrderCollection.isFinalOrder",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrderCollection.judgeDecision=\"READY_TO_BE_SEALED\""
   },
   {
     "LiveFrom": "29/10/2024",
