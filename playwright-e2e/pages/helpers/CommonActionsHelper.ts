@@ -1,4 +1,5 @@
 import { Page } from "playwright";
+import config from "../../config";
 
 export class CommonActionsHelper {
 
@@ -20,12 +21,19 @@ export class CommonActionsHelper {
         await page.getByRole('textbox', { name: 'Email'}).fill(emailAddress);
     }
     
-    async emailConsent(page: Page, consent: boolean) {
+    async emailConsent(page: Page, caseType: String, consent: boolean) {
         const radioOption = consent ? 'Yes' : 'No';
-        const optionToSelect = page.locator(
-            '#applicantSolicitorConsentForEmails_radio'
-        ).getByLabel(radioOption);
-        await optionToSelect.check();
+        if (caseType == config.caseType.contested) {
+            const optionToSelect = page.locator(
+                '#applicantSolicitorConsentForEmails_radio'
+            ).getByLabel(radioOption);
+            await optionToSelect.check();
+        } else if (caseType == config.caseType.consented) {
+            const optionToSelect = page.locator(
+               '#solicitorAgreeToReceiveEmails_radio'
+            ).getByLabel(radioOption);
+            await optionToSelect.check();
+        }
     }
 
     async enterNames(page: Page, fistName: string, lastName: string) {

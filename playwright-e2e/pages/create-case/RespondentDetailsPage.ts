@@ -13,5 +13,9 @@ export class RespondentDetailsPage extends BaseJourneyPage {
     async enterRespondentNames(firstName: string, lastName :string) {
         await this.commonActionsHelper.enterNames(this.page, firstName, lastName);
     }
+
+    async enterRespondentAddress(){
+        await this.commonActionsHelper.enterUkAddress(this.page);
+    }
     
 }
