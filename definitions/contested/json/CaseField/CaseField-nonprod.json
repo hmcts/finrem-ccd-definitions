@@ -90,5 +90,14 @@
     "Label": "Use the 'consent order' event if you need to upload a consent order to finalise the contested proceedings.",
     "FieldType": "Label",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "05/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingsReadyForReview",
+    "Label": "Which hearing was this?",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
