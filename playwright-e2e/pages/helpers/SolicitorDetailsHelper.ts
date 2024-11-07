@@ -3,6 +3,7 @@ import { expect } from "playwright/test";
 
 export class SolicitorDetailsHelper {
 
+
     async selectOrganisation(page: Page, orgName: string) {
         const selectOrgButton = (orgName: string) =>
             page.locator(
@@ -15,7 +16,11 @@ export class SolicitorDetailsHelper {
         await selectButton.click();
     }
 
-    async enterSolicitorName(page: Page, solicitorName: string){
+    async enterSolicitorName(page: Page, solicitorName: string) {
         await page.getByLabel('Solicitor’s name').fill(solicitorName);
+    }
+
+    async enterFirmName(page: Page, firmName: string) {
+        await page.getByLabel('Name of your firm').fill(firmName);
     }
 }
