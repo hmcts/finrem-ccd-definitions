@@ -55,7 +55,7 @@
     "test:coverage": "echo test:coverage",
     "test:a11y": "echo test:a11y",
     "test:smoke": "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs run --steps -c test/functional/codecept.conf.js --grep @smoke --reporter mochawesome",
-    "test:functional":  "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs run --steps -c test/functional/codecept.conf.js --grep @preview --reporter mochawesome",
+    "test:functional": "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs run --steps -c test/functional/codecept.conf.js --grep @preview --reporter mochawesome",
     "test:fullfunctional": "NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run --steps -c test/functional/codecept.conf.js --grep @nightly --reporter mochawesome",
     "test:functional-chromium": "yarn playwright install chromium && yarn playwright install firefox && yarn playwright install webkit && yarn playwright test --project=chromium",
     "test:functional-firefox": "yarn playwright install chromium && yarn playwright install firefox && yarn playwright install webkit && yarn playwright test --project=firefox",
