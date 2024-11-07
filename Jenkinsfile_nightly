@@ -58,7 +58,6 @@ withNightlyPipeline(type, product, component) {
 
     loadVaultSecrets(secrets)
     enableFullFunctionalTest(180)
-    //enableCrossBrowserTest()
 
     before('fullFunctionalTest') {
         yarnBuilder.yarn('yarn-update')
@@ -67,14 +66,45 @@ withNightlyPipeline(type, product, component) {
         env.ENV = 'aat'
     }
 
-    // before('crossBrowserTest') {
-    // sh 'yarn playwright install'
-    // }
 
     afterAlways('fullFunctionalTest') {
-        stage('Playwright Tests') {
+        stage('Functional playwright tests - chromium') {
             try {
-                yarnBuilder.yarn('test:functional-nightly')
+                yarnBuilder.yarn('test:functional-chromium')
+            } catch (Error) {
+                unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+            } finally {
+                publishHTML([
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'playwright-report',
+                        reportFiles: 'index.html',
+                        reportName: 'FunctionalTestReport'
+                ])
+                steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+            }
+        }
+        stage('Functional playwright tests - firefox') {
+            try {
+                yarnBuilder.yarn('test:functional-firefox')
+            } catch (Error) {
+                unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+            } finally {
+                publishHTML([
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'playwright-report',
+                        reportFiles: 'index.html',
+                        reportName: 'FunctionalTestReport'
+                ])
+                steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+            }
+        }
+        stage('Functional playwright tests - webkit') {
+            try {
+                yarnBuilder.yarn('test:functional-firefox')
             } catch (Error) {
                 unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
             } finally {
@@ -90,16 +120,4 @@ withNightlyPipeline(type, product, component) {
             }
         }
     }
-
-// afterSuccess('crossBrowserTest') {
-//     publishHTML([
-//             allowMissing: true,
-//             alwaysLinkToLastBuild: true,
-//             keepAll: true,
-//             reportDir: 'playwright-report',
-//             reportFiles: 'index.html',
-//             reportName: 'CrossBrowserTestReport'
-//     ])
-//     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
-// }
 }
