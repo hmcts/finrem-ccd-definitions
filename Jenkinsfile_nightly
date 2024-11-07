@@ -103,7 +103,7 @@ withNightlyPipeline(type, product, component) {
         }
         stage('Functional playwright tests - webkit') {
             try {
-                yarnBuilder.yarn('test:functional-firefox')
+                yarnBuilder.yarn('test:functional-webkit')
             } catch (Error) {
                 unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
             } finally {
