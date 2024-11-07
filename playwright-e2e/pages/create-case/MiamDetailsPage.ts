@@ -1,5 +1,6 @@
 import { type Page, Locator } from '@playwright/test';
 import { BaseJourneyPage } from '../BaseJourneyPage';
+import { CommonActionsHelper } from '../helpers/CommonActionsHelper';
 
 export class MiamDetailsPage extends BaseJourneyPage {
 
@@ -8,8 +9,12 @@ export class MiamDetailsPage extends BaseJourneyPage {
     private readonly soleTraderName: Locator;
     private readonly miamDocUpload: Locator
 
-    public constructor(page: Page) {
+    private readonly commonActionsHelper: CommonActionsHelper;
+
+    public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
+        this.commonActionsHelper = commonActionsHelper;
+
         this.mediatorRegistrationNumberTxtBox = page.locator('#mediatorRegistrationNumber');
         this.familyMediatorServiceNameTxtBox = page.locator('#familyMediatorServiceName'); 
         this.soleTraderName = page.locator('#soleTraderName');
@@ -30,6 +35,7 @@ export class MiamDetailsPage extends BaseJourneyPage {
 
     async uploadMiamDoc(){
         await this.miamDocUpload.setInputFiles('./playwright-e2e/data/MIAM.pdf');
-        await this.page.waitForTimeout(4000); 
+        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+         
     }
 }

@@ -64,7 +64,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new SolicitorDetailsPage(page, commonActionsHelper, solicitorDetailsHelper));
   },
   divorceDetailsPage: async ({ page }, use) => {
-    await use(new DivorceDetailsPage(page));
+    await use(new DivorceDetailsPage(page, commonActionsHelper));
   },
   applicantDetailsPage: async ({ page }, use) => {
     await use(new ApplicantDetailsPage(page, commonActionsHelper));
@@ -100,10 +100,10 @@ export const test = base.extend<CreateFixtures>({
     await use(new MiamQuestionPage(page));
   },
   miamDetailsPage: async ({ page }, use) => {
-    await use(new MiamDetailsPage(page));
+    await use(new MiamDetailsPage(page, commonActionsHelper));
   },
   uploadOrderDocumentsPage: async ({ page }, use) => {
-    await use(new UploadOrderDocumentsPage(page));
+    await use(new UploadOrderDocumentsPage(page, commonActionsHelper));
   },
   caseDetailsPage: async ({ page }, use) => {
     await use(new CaseDetailsPage(page));
