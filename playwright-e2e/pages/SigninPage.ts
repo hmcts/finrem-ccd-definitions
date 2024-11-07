@@ -19,11 +19,15 @@ export class SigninPage {
 
   async login(email: string, password: string) {
     await this.page.goto(this.url);
+    console.log("URL: " + this.url)
+    console.log("email: " + email)
+    console.log("password: " + password)
     await expect(this.emailInputLocator).toBeVisible();
     await this.emailInputLocator.fill(email);
     await expect(this.passwordInputLocator).toBeVisible();
     await this.passwordInputLocator.fill(password);
     await this.signinButtonLocator.click();
+    console.log("Successful Login")
     await this.page.waitForLoadState();
   }
 }
