@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test';
-import { LoginPage } from '../pages/SigninPage';
+import { SigninPage } from '../pages/SigninPage';
 import { StartPage } from '../pages/create-case/StartPage';
 import { CreateCasePage } from '../pages/create-case/CreateCasePage';
 import { SolicitorDetailsPage } from '../pages/create-case/SolicitorDetailsPage';
@@ -28,7 +28,7 @@ const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
 
 type CreateFixtures = {
-  loginPage: LoginPage;
+  loginPage: SigninPage;
   createCasePage: CreateCasePage;
   startPage: StartPage;
   solicitorDetailsPage: SolicitorDetailsPage;
@@ -52,7 +52,7 @@ type CreateFixtures = {
 
 export const test = base.extend<CreateFixtures>({
   loginPage: async ({ page }, use) => {
-    await use(new LoginPage(page));
+    await use(new SigninPage(page));
   },
   createCasePage: async ({ page }, use) => {
     await use(new CreateCasePage(page));

@@ -1,7 +1,7 @@
 import { type Page, type Locator, expect } from '@playwright/test';
 import config from '../config';
 
-export class LoginPage {
+export class SigninPage {
   
   private readonly page: Page;
   private readonly url: string;
