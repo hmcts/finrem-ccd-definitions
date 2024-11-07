@@ -66,7 +66,6 @@ withNightlyPipeline(type, product, component) {
         env.ENV = 'aat'
     }
 
-
     afterAlways('fullFunctionalTest') {
         stage('Functional playwright tests - chromium') {
             try {
