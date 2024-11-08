@@ -14,19 +14,5 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_approveOrders",
-    "Name": "Approve orders",
-    "Description": "Approve orders",
-    "DisplayOrder": 35,
-    "PreConditionState(s)": "reviewOrder",
-    "PostConditionState": "scheduleRaiseDirectionsOrder",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
-    "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
   }
 ]
