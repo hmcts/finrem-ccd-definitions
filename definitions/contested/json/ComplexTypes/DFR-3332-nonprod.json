@@ -1,26 +1,6 @@
 [
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewableDraftOrderCollection",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ReviewableDraftOrder",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewablePsaCollection",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ReviewablePsa",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
     "ID": "FR_ReviewableDraftOrder",
     "ListElementCode": "document",
     "FieldType": "Document",
@@ -73,6 +53,26 @@
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_judgeDecision",
     "ElementLabel": "Is this Pension Sharing Annex ready to be sealed and issued?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "reviewableDraftOrderCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ReviewableDraftOrder",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "reviewablePsaCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ReviewablePsa",
+    "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
