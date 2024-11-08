@@ -102,7 +102,7 @@
     "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
     "highLevelDataSetup": "echo 'bash ./gradlew highLevelDataSetup --args=$1 && sh bin/after-data-setup-step.sh' > ./temp.sh && sh ./temp.sh",
     "yarn-update": "yarn set version 3.x",
-    "install-dependencies": "/usr/bin/yarn install --silent"
+    "install-dependencies": "yarn install --silent"
   },
   "pre-commit": [
     "lint"
