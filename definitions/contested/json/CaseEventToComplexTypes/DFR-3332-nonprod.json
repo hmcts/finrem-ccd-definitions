@@ -30,7 +30,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval",
     "ListElementCode": "reviewableDraftOrderCollection.isFinalOrder",
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "judgeApproval.reviewableDraftOrderCollection.judgeDecision=\"READY_TO_BE_SEALED\""
   },
   {
