@@ -2,9 +2,45 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_ReviewableDraftOrder",
+    "ListElementCode": "label",
+    "FieldType": "Label",
+    "ElementLabel": "##  Draft Order",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_ReviewableDraftOrder",
+    "ListElementCode": "hearingInfo",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_ReviewableDraftOrder",
     "ListElementCode": "document",
     "FieldType": "Document",
-    "ElementLabel": "Document",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_ReviewableDraftOrder",
+    "ListElementCode": "hasAttachment",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Has Attachment?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_ReviewableDraftOrder",
+    "ListElementCode": "attachmentsLabel",
+    "FieldType": "Label",
+    "ElementLabel": "*Attachments*",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -14,7 +50,7 @@
     "ListElementCode": "attachments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
-    "ElementLabel": "Attachments",
+    "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -40,9 +76,27 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_ReviewablePsa",
+    "ListElementCode": "label",
+    "FieldType": "Label",
+    "ElementLabel": "## Pension Sharing Annex",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_ReviewablePsa",
+    "ListElementCode": "hearingInfo",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_ReviewablePsa",
     "ListElementCode": "document",
     "FieldType": "Document",
-    "ElementLabel": "Document",
+    "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -59,9 +113,8 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewableDraftOrderCollection",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ReviewableDraftOrder",
+    "ListElementCode": "reviewableDraftOrder1",
+    "FieldType": "FR_ReviewableDraftOrder",
     "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -69,9 +122,80 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewablePsaCollection",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ReviewablePsa",
+    "ListElementCode": "reviewableDraftOrder2",
+    "FieldType": "FR_ReviewableDraftOrder",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "reviewableDraftOrder3",
+    "FieldType": "FR_ReviewableDraftOrder",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "reviewableDraftOrder4",
+    "FieldType": "FR_ReviewableDraftOrder",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "reviewableDraftOrder5",
+    "FieldType": "FR_ReviewableDraftOrder",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "reviewablePsa1",
+    "FieldType": "FR_ReviewablePsa",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "reviewablePsa2",
+    "FieldType": "FR_ReviewablePsa",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "reviewablePsa3",
+    "FieldType": "FR_ReviewablePsa",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "reviewablePsa4",
+    "FieldType": "FR_ReviewablePsa",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "reviewablePsa5",
+    "FieldType": "FR_ReviewablePsa",
     "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"

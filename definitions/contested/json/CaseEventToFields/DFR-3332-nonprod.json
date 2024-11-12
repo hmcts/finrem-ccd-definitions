@@ -11,7 +11,8 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "PageShowCondition": "hearingsReadyForReview=\"DO_NOT_SHOW\""
   },
   {
     "LiveFrom": "01/10/2024",

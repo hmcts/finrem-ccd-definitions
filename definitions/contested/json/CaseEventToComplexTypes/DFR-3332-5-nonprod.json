@@ -1,0 +1,108 @@
+[
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "EventElementLabel": "## Draft Order 5",
+    "ListElementCode": "reviewableDraftOrder5.label",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "EventElementLabel": "Hearing",
+    "ListElementCode": "reviewableDraftOrder5.hearingInfo",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "EventElementLabel": " ",
+    "ListElementCode": "reviewableDraftOrder5.document",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewableDraftOrder5.attachmentsLabel",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hasAttachment=\"Yes\" AND judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewableDraftOrder5.attachments",
+    "EventElementLabel": " ",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hasAttachment=\"Yes\" AND judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewableDraftOrder5.judgeDecision",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewableDraftOrder5.isFinalOrder",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.judgeDecision=\"READY_TO_BE_SEALED\" AND judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "EventElementLabel": "## Pension Sharing Annex 5",
+    "ListElementCode": "reviewablePsa5.label",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewablePsa5.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "EventElementLabel": "Hearing",
+    "ListElementCode": "reviewablePsa5.hearingInfo",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewablePsa5.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "EventElementLabel": " ",
+    "ListElementCode": "reviewablePsa5.document",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewablePsa5.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewablePsa5.judgeDecision",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "judgeApproval.reviewablePsa5.hearingInfo=\"*\""
+  }
+]
