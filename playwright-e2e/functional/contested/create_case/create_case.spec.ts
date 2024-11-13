@@ -44,11 +44,11 @@ test(
     // Enter applicant details
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
-    await solicitorDetailsPage.setEmailConsent(config.caseType.contested)
+    await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
     await solicitorDetailsPage.navigateContinue();
 
     // Enter Divorce / Dissolution Details
-    await divorceDetailsPage.enterDivorceDetailsContested('LV12D12345', config.divorceStage.petitionIssued)
+    await divorceDetailsPage.enterDivorceDetailsContested('LV12D12345', config.divorceStage.petitionIssued);
     await divorceDetailsPage.navigateContinue();
 
     //applicant details
@@ -59,7 +59,7 @@ test(
     await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name');
     await respondentDetailsPage.navigateContinue();
 
-    await respondentRepresentedPage.selectRespondentRepresentedContested(true)
+    await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
@@ -105,7 +105,7 @@ test(
 
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
-    await miamQuestionPage.navigateContinue()
+    await miamQuestionPage.navigateContinue();
 
     // Miam details
     await miamDetailsPage.enterMediatorRegistrationNumber();
@@ -132,7 +132,7 @@ test(
 
       await testInfo.attach('accessibility-scan-results', {
         body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json',
+        contentType: 'application/json'
       });
 
       expect(accessibilityScanResults.violations).toEqual([]);

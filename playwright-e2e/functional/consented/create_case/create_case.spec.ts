@@ -38,11 +38,11 @@ test(
     // Enter applicant details
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
-    await solicitorDetailsPage.setEmailConsent(config.caseType.consented)
+    await solicitorDetailsPage.setEmailConsent(config.caseType.consented);
     await solicitorDetailsPage.navigateContinue();
 
     // Enter Divorce / Dissolution Details
-    await divorceDetailsPage.enterDivorceDetailsConsented('LV12D12345', config.divorceStage.petitionIssued)
+    await divorceDetailsPage.enterDivorceDetailsConsented('LV12D12345', config.divorceStage.petitionIssued);
     await divorceDetailsPage.navigateContinue();
 
     //applicant details
@@ -85,11 +85,11 @@ test(
 
       await testInfo.attach('accessibility-scan-results', {
         body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json',
+        contentType: 'application/json'
       });
 
       expect(accessibilityScanResults.violations).toEqual([]);
     }
   }
-)
+);
 
