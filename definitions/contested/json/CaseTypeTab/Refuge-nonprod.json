@@ -1,0 +1,298 @@
+[
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantDetailsLabel",
+    "TabFieldDisplayOrder": "1"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantFMName",
+    "TabFieldDisplayOrder": "2"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantLName",
+    "TabFieldDisplayOrder": "3"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantResideOutsideUK",
+    "TabFieldDisplayOrder": "4"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "urgentCaseLabel",
+    "TabFieldDisplayOrder": "5"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "promptForUrgentCaseQuestion",
+    "TabFieldDisplayOrder": "6"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "urgentCaseQuestionDetailsTextArea",
+    "FieldShowCondition": "promptForUrgentCaseQuestion=\"Yes\"",
+    "TabFieldDisplayOrder": "7"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantContactLabel",
+    "TabFieldDisplayOrder": "8",
+    "FieldShowCondition": "applicantAddress=\"*\" AND applicantAddress.AddressLine1=\"*\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantAddress",
+    "TabFieldDisplayOrder": "9",
+    "FieldShowCondition": "applicantAddressConfidential!=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantPhone",
+    "TabFieldDisplayOrder": "10",
+    "FieldShowCondition": "applicantAddressConfidential!=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantEmail",
+    "TabFieldDisplayOrder": "11",
+    "FieldShowCondition": "applicantAddressConfidential!=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantRepresentedLabel",
+    "TabFieldDisplayOrder": "12"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantRepresented",
+    "TabFieldDisplayOrder": "13"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantAddressConfidential",
+    "TabFieldDisplayOrder": "14"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantInRefuge",
+    "TabFieldDisplayOrder": "15"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantSolicitorDetailLabel",
+    "TabFieldDisplayOrder": "16",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "solicitorReference",
+    "TabFieldDisplayOrder": "17",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantSolicitorName",
+    "TabFieldDisplayOrder": "18",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantSolicitorFirm",
+    "TabFieldDisplayOrder": "19",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "TabFieldDisplayOrder": "20",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantSolicitorAddressLabel",
+    "TabFieldDisplayOrder": "21",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantSolicitorAddress",
+    "TabFieldDisplayOrder": "22",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantSolicitorPhone",
+    "TabFieldDisplayOrder": "23",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantSolicitorEmail",
+    "TabFieldDisplayOrder": "24",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantSolicitorDXnumber",
+    "TabFieldDisplayOrder": "25",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "applicantSolicitorConsentForEmails",
+    "TabFieldDisplayOrder": "26",
+    "FieldShowCondition": "applicantRepresented=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "appBarristerCollectionLabel",
+    "TabFieldDisplayOrder": "27"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "appBarristerCollection",
+    "TabFieldDisplayOrder": "28"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "paperApplication",
+    "TabFieldDisplayOrder": "29",
+    "FieldShowCondition": "paperApplication=\"Yes\""
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "typeOfApplicationLabel",
+    "TabFieldDisplayOrder": "30"
+  },
+  {
+    "LiveFrom": "13/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 5,
+    "CaseFieldID": "typeOfApplication",
+    "TabFieldDisplayOrder": "31"
+  }
+]
