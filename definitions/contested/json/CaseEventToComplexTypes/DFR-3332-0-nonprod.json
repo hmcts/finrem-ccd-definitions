@@ -1,0 +1,12 @@
+[
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "EventElementLabel": "<div class='govuk-tag govuk-tag--red'>${judgeApproval.warningMessageToJudge}</div>",
+    "ListElementCode": "warningMessageToJudgeLabel",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.warningMessageToJudge=\"*\""
+  }
+]
