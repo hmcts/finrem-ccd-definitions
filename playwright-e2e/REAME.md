@@ -20,8 +20,8 @@ It is also recommend to utilise the [Playwright VSCode](https://marketplace.visu
 |-|- fixtures # With fixtures, you can group tests based on their meaning, instead of their common setup.
 |-|- pages # Where to keep page classes with respective locators and methods. We utilise POM (Page Object Modeling).
 |-|-|- <Folder of journey specific pages i.e. 'create-case'> # Pages are collected by the journey in which they are contained, this can be shared across Contested and Consented where appropriate. 
-|-|-|- herlpers # Common functionality between pages such as adding addresses is abstracted to helper classes, that can then be injected into page constructors at a fixture level. 
-|-|-|- BaseJourenyPage.ts # All pages inherit from the abstract BaseJourneyPage, which defines common behaviours across all pages. 
+|-|-|- helpers # Common functionality between pages such as adding addresses is abstracted to helper classes, that can then be injected into page constructors at a fixture level. 
+|-|-|- BaseJourneyPage.ts # All pages inherit from the abstract BaseJourneyPage, which defines common behaviours across all pages. 
 |-|- data #Store mock data to facilitate tests 
 |-|- Functional # Here is where you can do your test magic. 🧙‍♂️
 |-|- config.ts # essential settings for the framework, such as user credentials and URLs.
