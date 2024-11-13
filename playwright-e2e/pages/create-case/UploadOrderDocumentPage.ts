@@ -29,9 +29,8 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
 
     async uploadVariationOrderDoc() {
         // Wait for file upload rate limiter
-        await this.page.waitForTimeout(4000); 
         await this.variationOrderDocUpload.setInputFiles('./playwright-e2e/data/Variation order.pdf');
-        await this.page.waitForTimeout(4000); 
+        await this.page.waitForTimeout(6000); 
     }
 
     async selectUploadAdditionalDocs(uploadAdditionalDocs: Boolean){
@@ -48,9 +47,8 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
 
     async uploadConsentOrder(){
         // Wait for file upload rate limiter
-        await this.page.waitForTimeout(4000); 
         await this.consentOrderDocUpload.setInputFiles('./playwright-e2e/data/Variation order.pdf');
-        await this.page.waitForTimeout(4000); 
+        await this.page.waitForTimeout(6000); 
     }
 
     async selectAndUploadJointD81(uploadJointD81: Boolean){
@@ -58,15 +56,13 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
         const optionToSelect = this.jointD81Radio.getByLabel(radioOption);
         await optionToSelect.check();
         if(uploadJointD81) {
-            await this.page.waitForTimeout(4000); 
             await this.uploadJointD81.setInputFiles('./playwright-e2e/data/test.pdf');
-            await this.page.waitForTimeout(4000); 
+            await this.page.waitForTimeout(6000); 
         } else {
-            await this.page.waitForTimeout(4000); 
             await this.uploadD81Applicant.setInputFiles('./playwright-e2e/data/test.pdf');
-            await this.page.waitForTimeout(5000); 
+            await this.page.waitForTimeout(6000); 
             await this.uploadD81Respondent.setInputFiles('./playwright-e2e/data/test.pdf');
-            await this.page.waitForTimeout(4000); 
+            await this.page.waitForTimeout(6000); 
         }
     }
 }
