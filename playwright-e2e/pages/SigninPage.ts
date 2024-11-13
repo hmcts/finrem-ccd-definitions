@@ -1,7 +1,7 @@
-import { type Page, type Locator } from '@playwright/test';
+import { type Page, type Locator, expect } from '@playwright/test';
 import config from '../config';
 
-export class LoginPage {
+export class SigninPage {
   
   private readonly page: Page;
   private readonly url: string;
@@ -19,7 +19,9 @@ export class LoginPage {
 
   async login(email: string, password: string) {
     await this.page.goto(this.url);
+    await expect(this.emailInputLocator).toBeVisible();
     await this.emailInputLocator.fill(email);
+    await expect(this.passwordInputLocator).toBeVisible();
     await this.passwordInputLocator.fill(password);
     await this.signinButtonLocator.click();
     await this.page.waitForLoadState();

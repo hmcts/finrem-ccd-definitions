@@ -6,7 +6,7 @@ import { SolicitorDetailsHelper } from '../helpers/SolicitorDetailsHelper';
 export class SolicitorDetailsPage extends BaseJourneyPage {
 
     private readonly applicantRepresentedRadioContested: Locator;
-    private readonly commonActionsHelper: CommonActionsHelper
+    private readonly commonActionsHelper: CommonActionsHelper;
     private readonly solicitorDetailsHelper: SolicitorDetailsHelper;
 
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper, solicitorDetailsHelper: SolicitorDetailsHelper) {
