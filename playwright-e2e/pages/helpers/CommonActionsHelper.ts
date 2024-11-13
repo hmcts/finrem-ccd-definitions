@@ -1,5 +1,6 @@
 import { Page } from "playwright";
 import config from "../../config";
+import { expect } from "@playwright/test";
 
 export class CommonActionsHelper {
 
@@ -40,5 +41,13 @@ export class CommonActionsHelper {
         await page.getByLabel('Current First and Middle names').click();
         await page.getByLabel('Current First and Middle names').fill(fistName);
         await page.getByLabel('Current Last Name').fill(lastName);
+    }
+
+    async waitForAllUploadsToBeCompleted(page: Page) {
+        const cancelUploadLocators = await page.getByText('Cancel upload').all();
+        for (let i = 0; i < cancelUploadLocators.length; i++) {
+            await expect(cancelUploadLocators[i]).toBeDisabled();
+        }
+        await page.waitForTimeout(5000);
     }
 }

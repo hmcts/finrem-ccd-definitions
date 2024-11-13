@@ -1,4 +1,3 @@
-/* eslint-disable */
 const HTMLCS = require('html_codesniffer');
 const fs = require('fs');
 // const testConfig = require('src/test/config.js');

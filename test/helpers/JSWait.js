@@ -1,4 +1,3 @@
-/* eslint-disable */
 'use strict';
 const { getAccessibilityTestResult } = require('../accessibility/runner');
 const { generateAccessibilityReport } = require('../reporter/customReporter');
