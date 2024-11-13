@@ -6,7 +6,8 @@
     "CaseFieldID": "judgeApproval",
     "EventElementLabel": "## Draft Order 1",
     "ListElementCode": "reviewableDraftOrder1.label",
-    "DisplayContext": "READONLY"
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -15,7 +16,8 @@
     "CaseFieldID": "judgeApproval",
     "EventElementLabel": "Hearing",
     "ListElementCode": "reviewableDraftOrder1.hearingInfo",
-    "DisplayContext": "READONLY"
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -24,7 +26,8 @@
     "CaseFieldID": "judgeApproval",
     "EventElementLabel": " ",
     "ListElementCode": "reviewableDraftOrder1.document",
-    "DisplayContext": "READONLY"
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -33,7 +36,7 @@
     "CaseFieldID": "judgeApproval",
     "ListElementCode": "reviewableDraftOrder1.attachmentsLabel",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.hasAttachment=\"Yes\""
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.hasAttachment=\"Yes\" AND judgeApproval.reviewableDraftOrder1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -43,7 +46,7 @@
     "ListElementCode": "reviewableDraftOrder1.attachments",
     "EventElementLabel": " ",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.hasAttachment=\"Yes\""
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.hasAttachment=\"Yes\" AND judgeApproval.reviewableDraftOrder1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -51,7 +54,8 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval",
     "ListElementCode": "reviewableDraftOrder1.judgeDecision",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -60,7 +64,7 @@
     "CaseFieldID": "judgeApproval",
     "ListElementCode": "reviewableDraftOrder1.isFinalOrder",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.judgeDecision=\"READY_TO_BE_SEALED\""
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.judgeDecision=\"READY_TO_BE_SEALED\" AND judgeApproval.reviewableDraftOrder1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -69,7 +73,8 @@
     "CaseFieldID": "judgeApproval",
     "EventElementLabel": "## Pension Sharing Annex 1",
     "ListElementCode": "reviewablePsa1.label",
-    "DisplayContext": "READONLY"
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewablePsa1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -78,7 +83,8 @@
     "CaseFieldID": "judgeApproval",
     "EventElementLabel": "Hearing",
     "ListElementCode": "reviewablePsa1.hearingInfo",
-    "DisplayContext": "READONLY"
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewablePsa1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -87,7 +93,8 @@
     "CaseFieldID": "judgeApproval",
     "EventElementLabel": " ",
     "ListElementCode": "reviewablePsa1.document",
-    "DisplayContext": "READONLY"
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval.reviewablePsa1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -95,6 +102,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval",
     "ListElementCode": "reviewablePsa1.judgeDecision",
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "judgeApproval.reviewablePsa1.hearingInfo=\"*\""
   }
 ]
