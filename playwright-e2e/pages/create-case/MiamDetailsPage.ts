@@ -30,6 +30,6 @@ export class MiamDetailsPage extends BaseJourneyPage {
 
     async uploadMiamDoc(){
         await this.miamDocUpload.setInputFiles('./playwright-e2e/data/MIAM.pdf');
-        await this.page.waitForTimeout(4000); 
+        await this.page.waitForTimeout(6000); 
     }
 }

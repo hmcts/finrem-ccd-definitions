@@ -1,4 +1,3 @@
-/* eslint-disable */
 'use strict';
 
 const Helper = codecept_helper;
@@ -57,7 +56,7 @@ class PlaywrightHelper extends Helper {
     if (locator) {
       if (Array.isArray(locator)) {
         for (let i = 0; i < locator.length; i++) {
-          // eslint-disable-next-line no-await-in-loop
+           
           await page.waitForSelector(this.getEnabledCssLocator(locator[i]), { visible: true, timeout: 5000 });
           await page.click(locator[i]);
         }
@@ -79,7 +78,7 @@ class PlaywrightHelper extends Helper {
     // evaluate XPath expression of the target selector (it returns array of ElementHandle)
     const clickableTabs = await helper.page.$$(tabXPath);
 
-    /* eslint-disable no-await-in-loop */
+     
     for (let i = 0; i < clickableTabs.length; i++) {
       await helper.page.evaluate(el => {
         return el.click();
