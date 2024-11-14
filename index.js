@@ -21,6 +21,6 @@ app.get('/', (req, res) => {
   return res.send(payload);
 })
   .listen(port, () => {
-    // eslint-disable-next-line no-console
+     
     return console.log(`chart-nodeJs test app listening on http://0.0.0.0:${port}`);
   });

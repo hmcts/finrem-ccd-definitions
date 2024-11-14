@@ -22,17 +22,17 @@ const configuration = {
     process.env.MANAGE_CASE_URL || `https://manage-case.${env}.platform.hmcts.net`,
 
   caseWorker: {
-    email: process.env.IDAM_CASEWORKER_USERNAME || '',
-    password: process.env.IDAM_CASEWORKER_PASSWORD || '',
+    email: process.env.USERNAME_CASEWORKER || '',
+    password: process.env.PASSWORD_CASEWORKER || '',
   },
 
   applicant_solicitor: {
-    email: process.env.IDAM_SOLICITOR_USERNAME || '',
-    password: process.env.IDAM_SOLICITOR_PASSWORD || '',
+    email: process.env.USERNAME_SOLICITOR1 || '',
+    password: process.env.PASSWORD_SOLICITOR1 || '',
   },
 
   respondent_solicitor: {
-    email: process.env.RESPONDENT_SOLICITOR_EMAIL || ''
+    email: process.env.USERNAME_RESPONDENT_SOLICITOR || 'fr_respondent_solicitor1@mailinator.com'
   },
 
   jurisdiction: {

@@ -1,5 +1,6 @@
 import { type Page, Locator, expect } from '@playwright/test';
 import { BaseJourneyPage } from '../BaseJourneyPage';
+import { CommonActionsHelper } from '../helpers/CommonActionsHelper';
 
 export class DivorceDetailsPage extends BaseJourneyPage {
 
@@ -20,9 +21,11 @@ export class DivorceDetailsPage extends BaseJourneyPage {
     private readonly caseNumberInput: Locator;
     private readonly caseStageDropDown: Locator;
 
+    private readonly commonActionsHelper: CommonActionsHelper;
 
-    public constructor(page: Page) {
+    public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
+        this.commonActionsHelper = commonActionsHelper;
 
         this.divorceDetailsHeaderContested = page.getByRole('heading', { name: 'Divorce / Dissolution Details' });
         this.divorceNumberInput = page.getByLabel('Divorce / Dissolution Case Number');
@@ -55,7 +58,7 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         await this.courtName.fill('test');
         await this.divorceStage.selectOption(divorceStage);
         await this.uploadPetition.setInputFiles('./playwright-e2e/data/PETITION FORM A.docx');
-        await this.page.waitForTimeout(4000); 
+        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 
     async enterDivorceDetailsConsented(caseNumber: string, divorceStage: string) {

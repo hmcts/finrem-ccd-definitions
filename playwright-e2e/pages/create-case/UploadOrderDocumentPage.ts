@@ -1,5 +1,6 @@
 import { type Page, Locator } from '@playwright/test';
 import { BaseJourneyPage } from '../BaseJourneyPage';
+import { CommonActionsHelper } from '../helpers/CommonActionsHelper';
 
 export class UploadOrderDocumentsPage extends BaseJourneyPage {
 
@@ -13,8 +14,12 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
     private readonly uploadD81Applicant: Locator;
     private readonly uploadD81Respondent: Locator;
 
-    public constructor(page: Page) {
+    private readonly commonActionsHelper: CommonActionsHelper;
+
+    public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
+        this.commonActionsHelper = commonActionsHelper;
+        
         this.variationOrderDocUpload = page.locator('#variationOrderDocument')
         this.promptForAnyDocumentRadio = page.locator('#promptForAnyDocument_radio')
         this.promptForUrgentCaseQuestionRadio = page.locator('#promptForUrgentCaseQuestion_radio')
@@ -28,10 +33,8 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
     }
 
     async uploadVariationOrderDoc() {
-        // Wait for file upload rate limiter
-        await this.page.waitForTimeout(4000); 
         await this.variationOrderDocUpload.setInputFiles('./playwright-e2e/data/Variation order.pdf');
-        await this.page.waitForTimeout(4000); 
+        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 
     async selectUploadAdditionalDocs(uploadAdditionalDocs: Boolean){
@@ -48,9 +51,8 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
 
     async uploadConsentOrder(){
         // Wait for file upload rate limiter
-        await this.page.waitForTimeout(4000); 
         await this.consentOrderDocUpload.setInputFiles('./playwright-e2e/data/Variation order.pdf');
-        await this.page.waitForTimeout(4000); 
+        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 
     async selectAndUploadJointD81(uploadJointD81: Boolean){
@@ -58,15 +60,13 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
         const optionToSelect = this.jointD81Radio.getByLabel(radioOption);
         await optionToSelect.check();
         if(uploadJointD81) {
-            await this.page.waitForTimeout(4000); 
             await this.uploadJointD81.setInputFiles('./playwright-e2e/data/test.pdf');
-            await this.page.waitForTimeout(4000); 
+            await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
         } else {
-            await this.page.waitForTimeout(4000); 
             await this.uploadD81Applicant.setInputFiles('./playwright-e2e/data/test.pdf');
-            await this.page.waitForTimeout(5000); 
+            await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
             await this.uploadD81Respondent.setInputFiles('./playwright-e2e/data/test.pdf');
-            await this.page.waitForTimeout(4000); 
+            await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
         }
     }
 }
