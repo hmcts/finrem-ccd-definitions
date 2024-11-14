@@ -5,7 +5,8 @@ test(
   'Smoke Test - Contested FormA Submission',
   { tag: ['@smoke-test', "@preview", '@accessibility'] },
   async (
-    { loginPage,
+    { 
+      loginPage,
       createCasePage,
       startPage,
       solicitorDetailsPage,

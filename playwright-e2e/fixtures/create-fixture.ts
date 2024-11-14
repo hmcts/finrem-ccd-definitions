@@ -22,6 +22,7 @@ import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
 
 import { CommonActionsHelper } from '../pages/helpers/CommonActionsHelper';
 import { SolicitorDetailsHelper } from '../pages/helpers/SolicitorDetailsHelper';
+import { ManageCaseDashboardPage } from '../pages/ManageCaseDashboardPage';
 
 
 const commonActionsHelper = new CommonActionsHelper();
@@ -48,6 +49,7 @@ type CreateFixtures = {
   uploadOrderDocumentsPage: UploadOrderDocumentsPage;
   caseDetailsPage: CaseDetailsPage;
   checkYourAnswersPage: CheckYourAnswersPage;
+  manageCaseDashboardPage: ManageCaseDashboardPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -110,5 +112,8 @@ export const test = base.extend<CreateFixtures>({
   },
   checkYourAnswersPage: async ({ page }, use) => {
     await use(new CheckYourAnswersPage(page));
+  }, 
+  manageCaseDashboardPage: async ({ page }, use) => {
+    await use(new ManageCaseDashboardPage(page));
   }
 });
