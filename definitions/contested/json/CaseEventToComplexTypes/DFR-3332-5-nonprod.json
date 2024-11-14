@@ -63,7 +63,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval",
     "ListElementCode": "reviewableDraftOrder5.isFinalOrder",
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.judgeDecision=\"READY_TO_BE_SEALED\" AND judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
   },
   {
