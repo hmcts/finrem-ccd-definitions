@@ -1,0 +1,12 @@
+[
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "hearingInstruction",
+    "ListElementCode": "requireAnotherHearing",
+    "EventElementLabel": "Is there another hearing to be listed?",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "hearingInstruction.showForAnotherHearingQuestion=\"Yes\""
+  }
+]
