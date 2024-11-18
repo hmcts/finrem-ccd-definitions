@@ -12,6 +12,6 @@ export class ManageCaseDashboardPage {
   }
 
   async navigateToCase(caseId: string) {
-    await this.page.goto(`${this.url}/v2/${caseId}`);
+    await this.page.goto(`${this.url}/cases/case-details/${caseId}`);
   }
 }

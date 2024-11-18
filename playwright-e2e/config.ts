@@ -20,6 +20,11 @@ const configuration = {
 
   manageCaseBaseURL:
     process.env.MANAGE_CASE_URL || `https://manage-case.${env}.platform.hmcts.net`,
+  
+  judge: {
+    email: process.env.USERNAME_JUDGE || '',
+    password: process.env.PASSWORD_JUDGE || '',
+  },
 
   caseWorker: {
     email: process.env.USERNAME_CASEWORKER || '',
