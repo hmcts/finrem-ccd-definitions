@@ -28,6 +28,7 @@ test(
     // Send order
     await caseDetailsPage.selectNextStep("Send Order"); 
     await sendOrderPage.navigateSubmit();
+    await caseDetailsPage.checkHasBeenUpdated();
 
     // Assign to judge
 
