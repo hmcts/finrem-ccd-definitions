@@ -56,7 +56,10 @@
     "test:a11y": "echo test:a11y",
     "test:smoke": "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs run --steps -c test/functional/codecept.conf.js --grep @smoke --reporter mochawesome",
     "test:functional": "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs run --steps -c test/functional/codecept.conf.js --grep @preview --reporter mochawesome",
-    "test:fullfunctional": "NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run --steps -c test/functional/codecept.conf.js --grep @nightly --reporter mochawesome",
+    "test:fullfunctional": "yarn playwright install && NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run --steps -c test/functional/codecept.conf.js --grep @nightly --reporter mochawesome",
+    "test:functional-chromium": "yarn playwright install chromium && yarn playwright test --project=chromium",
+    "test:functional-firefox": "yarn playwright install firefox && yarn playwright test --project=firefox",
+    "test:functional-webkit": "yarn playwright install webkit && yarn playwright test  --project=webkit",
     "test:mytest": "NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run-multiple parallel --steps -c test/functional/codecept.conf.js --grep @mytest --reporter mochawesome",
     "test:debug": "NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run-multiple parallel --steps --verbose -c test/functional/codecept.conf.js --grep @debug --reporter mochawesome",
     "test-crossbrowser-e2e": "TESTS_FOR_CROSS_BROWSER='true' codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} --plugins retryFailedStep --steps -c test/functional/saucelabs.conf.js --grep @crossbrowser --reporter mochawesome",
@@ -97,7 +100,9 @@
     "copy-perftest-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-perftest-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-perftest-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "copy-prod-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-prod-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-prod-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
-    "highLevelDataSetup": "echo 'bash ./gradlew highLevelDataSetup --args=$1 && sh bin/after-data-setup-step.sh' > ./temp.sh && sh ./temp.sh"
+    "highLevelDataSetup": "echo 'bash ./gradlew highLevelDataSetup --args=$1 && sh bin/after-data-setup-step.sh' > ./temp.sh && sh ./temp.sh",
+    "yarn-update": "yarn set version 3.x",
+    "install-dependencies": "yarn install --silent"
   },
   "pre-commit": [
     "lint"

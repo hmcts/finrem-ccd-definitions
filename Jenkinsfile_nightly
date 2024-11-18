@@ -7,84 +7,116 @@ properties([
         ])
 ])
 
-@Library("Infrastructure")
+@Library('Infrastructure')
+import uk.gov.hmcts.contino.AppPipelineConfig
 
-String product = "finrem"
-String component = "ccd-definitions"
+String type = 'nodejs'
+String product = 'finrem'
+String component = 'ccd-definitions'
+def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
-def secrets = [
-  'finrem-${env}': [
-    secret('username-solicitor', 'USERNAME_SOLICITOR'),
-    secret('password-solicitor', 'PASSWORD_SOLICITOR'),
-    secret('username-caseworker', 'USERNAME_CASEWORKER'),
-    secret('password-caseworker', 'PASSWORD_CASEWORKER'),
-    secret('fr-judge-username', 'USERNAME_JUDGE'),
-    secret('fr-judge-password', 'PASSWORD_JUDGE'),
-    secret('username-caa', 'USERNAME_CAA'),
-    secret('password-caa', 'PASSWORD_CAA'),
-    secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
-    secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
-    secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
-    secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
-    secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
-    secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
-    secret('solicitor1-password', 'PASSWORD_SOLICITOR1'),
-    secret('barrister1-username', 'USERNAME_BARRISTER1'),
-    secret('barrister1-password', 'PASSWORD_BARRISTER1')
-  ]
-]
-
-static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
-  [ $class: 'AzureKeyVaultSecret',
-    secretType: 'Secret',
-    name: secretName,
-    version: '',
-    envVariable: envVar
-  ]
+static Map < String, Object > secret(String secretName, String envVariable) {
+    [$class: 'AzureKeyVaultSecret',
+     secretType: 'Secret',
+     name: secretName,
+     envVariable: envVariable
+    ]
 }
 
-withNightlyPipeline("nodejs", product, component) {
-    env.CCD_WEB_URL="https://manage-case.aat.platform.hmcts.net"
-    env.CCD_DATA_API_URL="http://ccd-data-store-api-aat.service.core-compute-aat.internal"
-    env.XUI_ORG_WEB_URL="https://manage-org.aat.platform.hmcts.net"
-    env.NIGHTLY_TEST="true"
+def secrets = [
+    'finrem-${env}': [
+        secret('username-solicitor', 'USERNAME_SOLICITOR'),
+        secret('password-solicitor', 'PASSWORD_SOLICITOR'),
+        secret('username-caseworker', 'USERNAME_CASEWORKER'),
+        secret('password-caseworker', 'PASSWORD_CASEWORKER'),
+        secret('fr-judge-username', 'USERNAME_JUDGE'),
+        secret('fr-judge-password', 'PASSWORD_JUDGE'),
+        secret('username-caa', 'USERNAME_CAA'),
+        secret('password-caa', 'PASSWORD_CAA'),
+        secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
+        secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
+        secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
+        secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
+        secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
+        secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
+        secret('solicitor1-password', 'PASSWORD_SOLICITOR1'),
+        secret('barrister1-username', 'USERNAME_BARRISTER1'),
+        secret('barrister1-password', 'PASSWORD_BARRISTER1')
+    ]
+]
+
+def pipelineConf = new AppPipelineConfig()
+pipelineConf.vaultSecrets = secrets
+
+
+withNightlyPipeline(type, product, component) {
+    env.CCD_WEB_URL = 'https://manage-case.aat.platform.hmcts.net'
+    env.CCD_DATA_API_URL = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal'
+    env.XUI_ORG_WEB_URL = 'https://manage-org.aat.platform.hmcts.net'
+    env.NIGHTLY_TEST = 'true'
     env.NODE_ENV = 'ci'
 
     loadVaultSecrets(secrets)
     enableFullFunctionalTest(180)
-    enableCrossBrowserTest()
 
-    before('functionalTest') {
+    before('fullFunctionalTest') {
+        yarnBuilder.yarn('yarn-update')
+        yarnBuilder.yarn('install-dependencies')
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+        env.ENV = 'aat'
     }
 
-    before('crossBrowserTest') {
-       sh 'yarn playwright install'
+    afterAlways('fullFunctionalTest') {
+        stage('Functional playwright tests - chromium') {
+            try {
+                yarnBuilder.yarn('test:functional-chromium')
+            } catch (Error) {
+                unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+            } finally {
+                publishHTML([
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'playwright-report',
+                        reportFiles: 'index.html',
+                        reportName: 'FunctionalTestReport'
+                ])
+                steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+            }
+        }
+        stage('Functional playwright tests - firefox') {
+            try {
+                yarnBuilder.yarn('test:functional-firefox')
+            } catch (Error) {
+                unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+            } finally {
+                publishHTML([
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'playwright-report',
+                        reportFiles: 'index.html',
+                        reportName: 'FunctionalTestReport'
+                ])
+                steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+            }
+        }
+        stage('Functional playwright tests - webkit') {
+            try {
+                yarnBuilder.yarn('test:functional-webkit')
+            } catch (Error) {
+                unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+            } finally {
+                publishHTML([
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'playwright-report',
+                        reportFiles: 'index.html',
+                        reportName: 'FunctionalTestReport'
+                ])
+                steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+            }
+        }
     }
-
-    afterSuccess('fullFunctionalTest') {
-        publishHTML([
-                allowMissing: true,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'playwright-report',
-                reportFiles: 'index.html',
-                reportName: 'FunctionalTestReport'
-        ])
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
-    }
-
-    afterSuccess('crossBrowserTest') {
-        publishHTML([
-                allowMissing: true,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'playwright-report',
-                reportFiles: 'index.html',
-                reportName: 'CrossBrowserTestReport'
-        ])
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional-output/*'
-      }
 }
-
-
