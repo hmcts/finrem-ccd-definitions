@@ -88,7 +88,7 @@ test(
 
 test(
   'Smoke Test - Consented Send Order Journey - Application Payment Submission',
-  { tag: ['@smoke-test', "@preview"] },
+  { tag: ["@preview"] },
   async (
     { 
       loginPage,
@@ -119,7 +119,7 @@ test(
 
 test(
   'Smoke Test - Consented Send Order Journey - HWF Application Accepted',
-  { tag: ['@smoke-test', "@preview", "@mytest"] },
+  { tag: ["@preview"] },
   async (
     { 
       loginPage,
@@ -144,7 +144,7 @@ test(
 
 test(
   'Smoke Test - Consented Send Order Journey - Issue Application',
-  { tag: ['@smoke-test', "@preview", "@mytest"] },
+  { tag: ["@preview"] },
   async (
     { 
       loginPage,
@@ -171,7 +171,7 @@ test(
 
 test(
   'Smoke Test - Consented Send Order Journey - Approve Application',
-  { tag: ['@smoke-test', "@preview", "@mytest"] },
+  { tag: ["@preview"] },
   async (
     { 
       loginPage,
@@ -202,7 +202,7 @@ test(
 
 test(
   'Smoke Test - Consented Send Order Journey - Send Order',
-  { tag: ['@smoke-test', "@preview", "@mytest"] },
+  { tag: ["@preview"] },
   async (
     { 
       loginPage,
