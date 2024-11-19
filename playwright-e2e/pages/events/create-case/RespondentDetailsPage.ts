@@ -1,6 +1,6 @@
 import { Page } from "playwright";
-import { BaseJourneyPage } from "../BaseJourneyPage";
-import { CommonActionsHelper } from "../helpers/CommonActionsHelper";
+import { BaseJourneyPage } from "../../BaseJourneyPage";
+import { CommonActionsHelper } from "../../helpers/CommonActionsHelper";
 
 export class RespondentDetailsPage extends BaseJourneyPage {
     private commonActionsHelper: CommonActionsHelper;

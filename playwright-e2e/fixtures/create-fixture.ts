@@ -1,30 +1,33 @@
 import { test as base } from '@playwright/test';
 import { SigninPage } from '../pages/SigninPage';
-import { StartPage } from '../pages/create-case/StartPage';
-import { CreateCasePage } from '../pages/create-case/CreateCasePage';
-import { SolicitorDetailsPage } from '../pages/create-case/SolicitorDetailsPage';
-import { DivorceDetailsPage } from '../pages/create-case/DivorceDetailsPage';
-import { ApplicantDetailsPage } from '../pages/create-case/ApplicantDetailsPage';
-import { RespondentRepresentedPage } from '../pages/create-case/RespondentRepresentedPage';
-import { NatureOfApplicationPage } from '../pages/create-case/NatureOfApplicationPage';
-import { PropertyAdjustmentPage } from '../pages/create-case/PropertyAdjustmentPage';
-import { PeriodicalPaymentsPage } from '../pages/create-case/PeriodicalPaymentsPage';
-import { WrittenAgreementPage } from '../pages/create-case/WrittenAgreementPage';
-import { FastTrackProcedurePage } from '../pages/create-case/FastTrackProcedurePage';
-import { FinancialAssetsPage } from '../pages/create-case/FinancialAssetsPage';
-import { FinancialRemedyCourtPage } from '../pages/create-case/FinancialRemedyCourtPage';
-import { MiamQuestionPage } from '../pages/create-case/MiamQuestionPage';
-import { MiamDetailsPage } from '../pages/create-case/MiamDetailsPage';
-import { UploadOrderDocumentsPage } from '../pages/create-case/UploadOrderDocumentPage';
-import { CaseDetailsPage } from '../pages/CaseDetailsPage';
-import { RespondentDetailsPage } from '../pages/create-case/RespondentDetailsPage';
-import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
-
 import { CommonActionsHelper } from '../pages/helpers/CommonActionsHelper';
 import { SolicitorDetailsHelper } from '../pages/helpers/SolicitorDetailsHelper';
-import { ManageCaseDashboardPage } from '../pages/ManageCaseDashboardPage';
-import { SendOrderPage } from '../pages/send-order/SendOrderPage';
 
+import { StartPage } from '../pages/events/create-case/StartPage';
+import { CreateCasePage } from '../pages/events/create-case/CreateCasePage';
+import { SolicitorDetailsPage } from '../pages/events/create-case/SolicitorDetailsPage';
+import { DivorceDetailsPage } from '../pages/events/create-case/DivorceDetailsPage';
+import { ApplicantDetailsPage } from '../pages/events/create-case/ApplicantDetailsPage';
+import { RespondentRepresentedPage } from '../pages/events/create-case/RespondentRepresentedPage';
+import { NatureOfApplicationPage } from '../pages/events/create-case/NatureOfApplicationPage';
+import { PropertyAdjustmentPage } from '../pages/events/create-case/PropertyAdjustmentPage';
+import { PeriodicalPaymentsPage } from '../pages/events/create-case/PeriodicalPaymentsPage';
+import { WrittenAgreementPage } from '../pages/events/create-case/WrittenAgreementPage';
+import { FastTrackProcedurePage } from '../pages/events/create-case/FastTrackProcedurePage';
+import { FinancialAssetsPage } from '../pages/events/create-case/FinancialAssetsPage';
+import { FinancialRemedyCourtPage } from '../pages/events/create-case/FinancialRemedyCourtPage';
+import { MiamQuestionPage } from '../pages/events/create-case/MiamQuestionPage';
+import { MiamDetailsPage } from '../pages/events/create-case/MiamDetailsPage';
+import { UploadOrderDocumentsPage } from '../pages/events/create-case/UploadOrderDocumentPage';
+import { CaseDetailsPage } from '../pages/CaseDetailsPage';
+import { RespondentDetailsPage } from '../pages/events/create-case/RespondentDetailsPage';
+import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
+import { ManageCaseDashboardPage } from '../pages/ManageCaseDashboardPage';
+import { HwfApplicationAcceptedPage } from '../pages/events/hwf-application-accepted/HwfApplicationAcceptedPage';
+import { SendOrderPage } from '../pages/events/send-order/SendOrderPage';
+import { IssueApplicationPage } from '../pages/events/issue-application/IssueApplicationPage';
+import { ApproveApplicationPage } from '../pages/events/approve-order/ApproveApplicationPage';
+import { CaseSubmissionPage } from '../pages/events/case-submission/CaseSubmissionPade';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -51,6 +54,10 @@ type CreateFixtures = {
   caseDetailsPage: CaseDetailsPage;
   checkYourAnswersPage: CheckYourAnswersPage;
   manageCaseDashboardPage: ManageCaseDashboardPage;
+  caseSubmissionPage: CaseSubmissionPage;
+  hwfApplicationAcceptedPage: HwfApplicationAcceptedPage;
+  issueApplicationPage: IssueApplicationPage;
+  approveApplicationPage: ApproveApplicationPage
   sendOrderPage: SendOrderPage;
 };
 
@@ -117,6 +124,18 @@ export const test = base.extend<CreateFixtures>({
   }, 
   manageCaseDashboardPage: async ({ page }, use) => {
     await use(new ManageCaseDashboardPage(page));
+  },
+  caseSubmissionPage: async ({ page }, use) => {
+    await use(new CaseSubmissionPage(page));
+  },
+  hwfApplicationAcceptedPage: async ({ page }, use) => {
+    await use(new HwfApplicationAcceptedPage(page));
+  },
+  issueApplicationPage: async ({ page }, use) => {
+    await use(new IssueApplicationPage(page));
+  },
+  approveApplicationPage: async ({ page }, use) => {
+    await use(new ApproveApplicationPage(page));
   },
   sendOrderPage: async ({ page }, use) => {
     await use(new SendOrderPage(page));

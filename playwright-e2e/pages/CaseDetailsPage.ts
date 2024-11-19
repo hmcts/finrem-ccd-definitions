@@ -7,14 +7,16 @@ export class CaseDetailsPage {
     readonly successfulCreationBanner: Locator;
     readonly successfulUpdateBanner: Locator;
     readonly selectNextStepDropDown: Locator
-    readonly goBtn: Locator;
+    readonly goButton: Locator;
+    readonly closeAndReturnButton: Locator; 
 
     public constructor(page: Page){
         this.page = page;
         this.successfulCreationBanner = page.getByText('has been created');
         this.successfulUpdateBanner = page.getByText('has been updated');
         this.selectNextStepDropDown = page.getByLabel('Next step');
-        this.goBtn = page.getByRole('button', { name: 'Go' })
+        this.goButton = page.getByRole('button', { name: 'Go' })
+        this.closeAndReturnButton = page.getByRole('button', { name: 'Close and Return to case' })
     }
 
     async checkHasBeenCreated() {
@@ -23,10 +25,11 @@ export class CaseDetailsPage {
 
     async selectNextStep(step: string) {
         await this.selectNextStepDropDown.selectOption(step)
-        await this.goBtn.click();
+        await this.goButton.click();
     }
 
     async checkHasBeenUpdated() {
         await expect(this.successfulUpdateBanner).toBeVisible();
     }
+
 }

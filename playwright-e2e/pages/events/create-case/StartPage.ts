@@ -1,5 +1,5 @@
 import { Page } from "playwright";
-import { BaseJourneyPage } from "../BaseJourneyPage";
+import { BaseJourneyPage } from "../../BaseJourneyPage";
 
 export class StartPage extends BaseJourneyPage{
 

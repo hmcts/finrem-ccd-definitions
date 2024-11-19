@@ -36,7 +36,6 @@ test(
     //Expect error validation for Organisation ID
     await solicitorDetailsPage.assertOrganisationIdRequired();
 
-
     if (config.run_accessibility) {
       const accessibilityScanResults = await makeAxeBuilder().analyze();
 

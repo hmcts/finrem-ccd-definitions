@@ -12,7 +12,7 @@ const configuration = {
     process.env.TIMEOUT || 10000,
 
   run_accessibility: 
-    process.env.TESTS_FOR_ACCESSIBILITY || 'false', 
+    process.env.TESTS_FOR_ACCESSIBILITY || false, 
 
   // URLs
   idamUrl:

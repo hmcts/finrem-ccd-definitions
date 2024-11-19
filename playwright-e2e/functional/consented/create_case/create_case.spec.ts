@@ -3,7 +3,7 @@ import config from '../../../config';
 
 test(
   'Smoke Test - Consented Journey Submission',
-  { tag: ['@smoke-test', "@preview", '@accessibility'] },
+  { tag: ['@smoke-test', '@accessibility'] },
   async (
     { loginPage,
       createCasePage,

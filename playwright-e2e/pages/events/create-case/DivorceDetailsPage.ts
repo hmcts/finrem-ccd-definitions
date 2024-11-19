@@ -1,6 +1,6 @@
 import { type Page, Locator, expect } from '@playwright/test';
-import { BaseJourneyPage } from '../BaseJourneyPage';
-import { CommonActionsHelper } from '../helpers/CommonActionsHelper';
+import { BaseJourneyPage } from '../../BaseJourneyPage';
+import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 
 export class DivorceDetailsPage extends BaseJourneyPage {
 

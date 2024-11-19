@@ -79,7 +79,6 @@ def secrets = [
                 secret('solicitor1-password', 'PASSWORD_SOLICITOR1'),
                 secret('barrister1-username', 'USERNAME_BARRISTER1'),
                 secret('barrister1-password', 'PASSWORD_BARRISTER1'),
-                secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET'),
                 secret('username-caa', 'USERNAME_CAA'),
                 secret('password-caa', 'PASSWORD_CAA'),
                 secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR')

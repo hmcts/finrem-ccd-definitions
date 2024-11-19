@@ -1,7 +1,7 @@
 import { type Page, Locator } from '@playwright/test';
-import { BaseJourneyPage } from '../BaseJourneyPage';
-import { CommonActionsHelper } from '../helpers/CommonActionsHelper';
-import { SolicitorDetailsHelper } from '../helpers/SolicitorDetailsHelper';
+import { BaseJourneyPage } from '../../BaseJourneyPage';
+import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
+import { SolicitorDetailsHelper } from '../../helpers/SolicitorDetailsHelper';
 
 export class RespondentRepresentedPage extends BaseJourneyPage{
 
