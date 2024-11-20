@@ -1,30 +1,52 @@
 [
   {
-    "LiveFrom": "15/11/2024",
+    "LiveFrom": "20/11/2024",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "respondentInRefuge",
+    "CaseFieldID": "respondentInRefugeTab",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
+    "CRUD": "R"
   },
   {
-    "LiveFrom": "15/11/2024",
+    "LiveFrom": "20/11/2024",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "respondentInRefuge",
+    "CaseFieldID": "respondentInRefugeTab",
     "UserRole": "[RESPSOLICITOR]",
-    "CRUD": "CRU"
+    "CRUD": "R"
   },
   {
-    "LiveFrom": "15/11/2024",
+    "LiveFrom": "20/11/2024",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "respondentInRefuge",
+    "CaseFieldID": "respondentInRefugeTab",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
   {
-    "LiveFrom": "15/11/2024",
+    "LiveFrom": "20/11/2024",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "respondentInRefuge",
+    "CaseFieldID": "respondentInRefugeTab",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "20/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentInRefugeQuestion",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "20/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentInRefugeQuestion",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "20/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentInRefugeQuestion",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRUD"
   }
 ]
+

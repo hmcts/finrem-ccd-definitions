@@ -1,8 +1,17 @@
 [
   {
-    "LiveFrom": "15/11/2024",
+    "LiveFrom": "20/11/2024",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "respondentInRefuge",
+    "ID": "respondentInRefugeTab",
+    "Label": "Is the Respondent currently a resident in a refuge?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "20/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentInRefugeQuestion",
     "Label": "Is the Respondent currently a resident in a refuge?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
