@@ -64,7 +64,7 @@
     "CaseFieldID": "judgeApproval",
     "ListElementCode": "reviewableDraftOrder2.isFinalOrder",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder2.judgeDecision=\"READY_TO_BE_SEALED\" AND judgeApproval.reviewableDraftOrder2.hearingInfo=\"*\""
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval.reviewableDraftOrder1.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\" AND judgeApproval.reviewableDraftOrder1.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
