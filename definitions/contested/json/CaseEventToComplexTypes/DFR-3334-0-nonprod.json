@@ -54,7 +54,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "hearingInstruction",
     "ListElementCode": "anotherHearingRequestCollection.additionalTime",
-    "EventElementLabel": "Time estimate",
+    "EventElementLabel": "Additional Time",
     "DisplayContext": "MANDATORY",
     "FieldShowCondition": "hearingInstruction.requireAnotherHearing=\"Yes\" AND hearingInstruction.anotherHearingRequestCollection.timeEstimate=\"additionalTimeReq\""
   },
