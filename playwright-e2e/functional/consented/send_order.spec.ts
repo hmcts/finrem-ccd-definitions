@@ -123,7 +123,7 @@ test(
 
 test(
   'Smoke Test - Consented Send Order Journey - HWF Application Accepted',
-  { tag: [""] },
+  { tag: [] },
   async (
     { 
       loginPage,
@@ -149,7 +149,7 @@ test(
 
 test(
   'Smoke Test - Consented Send Order Journey - Issue Application',
-  { tag: [""] },
+  { tag: [] },
   async (
     { 
       loginPage,
@@ -177,7 +177,7 @@ test(
 
 test(
   'Smoke Test - Consented Send Order Journey - Approve Application',
-  { tag: [""] },
+  { tag: [] },
   async (
     { 
       loginPage,
@@ -209,7 +209,7 @@ test(
 
 test(
   'Smoke Test - Consented Send Order Journey - Send Order',
-  { tag: [""] },
+  { tag: [] },
   async (
     { 
       loginPage,
