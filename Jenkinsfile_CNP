@@ -240,11 +240,11 @@ withPipeline("nodejs", product, component) {
   }
 
   before('functionalTest:preview') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**.png'
+     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/**.png'
   }
 
   afterAlways('functionalTest:preview') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**.png'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/**.png'
   }
 
   afterSuccess('functionalTest:aat') {
