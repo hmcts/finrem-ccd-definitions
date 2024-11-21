@@ -239,8 +239,12 @@ withPipeline("nodejs", product, component) {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
   }
 
+  before('functionalTest:preview') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**.png'
+  }
+
   afterAlways('functionalTest:preview') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**.*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**.png'
   }
 
   afterSuccess('functionalTest:aat') {
