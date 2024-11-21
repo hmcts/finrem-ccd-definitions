@@ -11,7 +11,8 @@
     "PageLabel": "Approve orders",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "judgeApproval1=\"never show\""
+    "FieldShowCondition": "judgeApproval1=\"never show\"",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
     "LiveFrom": "29/10/2024",
