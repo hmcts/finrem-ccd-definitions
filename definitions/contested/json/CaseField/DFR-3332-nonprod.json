@@ -2,7 +2,61 @@
   {
     "LiveFrom": "29/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "judgeApproval",
+    "ID": "showWarningMessageToJudge",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "warningMessageToJudgeLabel",
+    "Label": "<div class='govuk-warning-text'><span class='govuk-warning-text__icon' aria-hidden='true'>!</span><strong class='govuk-warning-text__text'>This page is limited to showing only 5 draft orders/pension sharing annexes requiring review. There are additional draft orders/pension sharing annexes requiring review that are not shown.</strong></div><br>",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApproval1",
+    "Label": " ",
+    "FieldType": "FR_judgeApproval",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApproval2",
+    "Label": " ",
+    "FieldType": "FR_judgeApproval",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApproval3",
+    "Label": " ",
+    "FieldType": "FR_judgeApproval",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApproval4",
+    "Label": " ",
+    "FieldType": "FR_judgeApproval",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApproval5",
     "Label": " ",
     "FieldType": "FR_judgeApproval",
     "SecurityClassification": "Public",

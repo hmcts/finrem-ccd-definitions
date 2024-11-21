@@ -1,14 +1,76 @@
 [
   {
-    "LiveFrom": "01/10/2024",
+    "LiveFrom": "29/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
+    "CaseFieldID": "showWarningMessageToJudge",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "COMPLEX",
+    "Label": " ",
+    "DisplayContext": "READONLY",
     "PageID": 1,
     "PageLabel": "Approve orders",
     "PageDisplayOrder": 1,
-    "PageColumnNumber": 1
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "judgeApproval1=\"never show\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "warningMessageToJudgeLabel",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "FieldShowCondition": "showWarningMessageToJudge=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval2",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval3",
+    "PageFieldDisplayOrder": 5,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval4",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval5",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "ShowSummaryChangeOption": "Y"
   }
 ]
