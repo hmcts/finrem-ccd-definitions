@@ -64,7 +64,25 @@
     "CaseFieldID": "judgeApproval",
     "ListElementCode": "reviewableDraftOrder2.isFinalOrder",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder1.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval.reviewableDraftOrder1.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\" AND judgeApproval.reviewableDraftOrder1.hearingInfo=\"*\""
+    "FieldShowCondition": "(judgeApproval.reviewableDraftOrder2.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval.reviewableDraftOrder2.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\") AND judgeApproval.reviewableDraftOrder1.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewableDraftOrder2.documentChange",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "judgeApproval.reviewableDraftOrder2.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\" AND judgeApproval.reviewableDraftOrder2.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "20/11/2024",
+    "ID": "FR_approveOrdersToJudgeApproval",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval",
+    "ListElementCode": "reviewablePsa2.documentChange",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "judgeApproval.reviewablePsa2.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\" AND judgeApproval.reviewablePsa2.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
