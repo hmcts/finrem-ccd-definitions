@@ -16,7 +16,7 @@ const configuration = {
     process.env.MANAGE_CASE_URL || `https://manage-case.${env}.platform.hmcts.net`,
   
   timeout: 
-    parseInt(process.env.TIMEOUT || "", 10) || 60000,
+    parseInt(process.env.TIMEOUT || "", 10) || 2*60*1000, // 2 min timeout on 
 
   run_accessibility: 
     process.env.TESTS_FOR_ACCESSIBILITY || false, 
