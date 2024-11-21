@@ -82,6 +82,6 @@ dependencies {
     testImplementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.16'
 
     testRuntimeOnly group: 'org.glassfish', name: 'jakarta.el', version: '4.0.2'
-    testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.34'
-    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.34'
+    testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.36'
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.36'
 }
