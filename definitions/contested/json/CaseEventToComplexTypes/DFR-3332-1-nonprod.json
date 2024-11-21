@@ -5,6 +5,16 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval1",
     "EventElementLabel": " ",
+    "ListElementCode": "docType",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval1.title=\"never show\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval1",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
+    "EventElementLabel": " ",
     "ListElementCode": "title",
     "DisplayContext": "READONLY",
     "FieldShowCondition": "judgeApproval1.title=\"never show\""
@@ -84,6 +94,6 @@
     "CaseFieldID": "judgeApproval1",
     "ListElementCode": "isFinalOrder",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "judgeApproval1.title=\"*\" AND (judgeApproval1.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval1.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
+    "FieldShowCondition": "judgeApproval1.title=\"*\" AND judgeApproval1.docType=\"DRAFT_ORDER\" AND (judgeApproval1.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval1.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
   }
 ]
