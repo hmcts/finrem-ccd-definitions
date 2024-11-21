@@ -19,7 +19,9 @@ export class CreateCasePage extends BaseJourneyPage {
   }
 
   async startCase(jurisdiction: string, caseType: string, event: string) {
+    await this.page.waitForLoadState();
     await expect(this.createCaseButton).toBeVisible();
+    await expect(this.createCaseButton).toBeEnabled();
     await this.createCaseButton.click();
     await this.jurisdictionDropdown.selectOption(jurisdiction);
     await this.caseTypeDropdown.selectOption(caseType);

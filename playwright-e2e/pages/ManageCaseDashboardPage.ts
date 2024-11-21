@@ -1,5 +1,5 @@
 import { type Page, type Locator, expect } from '@playwright/test';
-import config from '../config';
+import config from '../config/config';
 
 export class ManageCaseDashboardPage {
   
@@ -14,11 +14,16 @@ export class ManageCaseDashboardPage {
   }
 
   async navigateToCase(caseId: string) {
+    await this.page.waitForLoadState();
     await this.page.goto(`${this.url}/cases/case-details/${caseId}`);
   }
 
+  async visit(){
+    await this.page.goto(`${this.url}`);
+  }
+
   async signOut() {
-    await this.signOutButton.click();
     await this.page.waitForLoadState();
+    await this.signOutButton.click();
   }
 }

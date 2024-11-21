@@ -1,11 +1,12 @@
 import { test, expect } from '../../../fixtures/fixtures';
-import config from '../../../config';
+import config from '../../../config/config';
 
 test(
   'Smoke Test - Consented Journey Submission',
   { tag: ['@smoke-test', '@accessibility'] },
   async (
     { loginPage,
+      manageCaseDashboardPage,
       createCasePage,
       startPage,
       solicitorDetailsPage,
@@ -24,6 +25,7 @@ test(
     testInfo
   ) => {
     // Sign in
+    await manageCaseDashboardPage.visit();
     await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
 
     // Start the consented case

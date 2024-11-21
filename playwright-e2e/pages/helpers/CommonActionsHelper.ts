@@ -1,6 +1,6 @@
 import { Page } from "playwright";
-import config from "../../config";
 import { expect } from "@playwright/test";
+import config from "../../config/config";
 
 export class CommonActionsHelper {
 

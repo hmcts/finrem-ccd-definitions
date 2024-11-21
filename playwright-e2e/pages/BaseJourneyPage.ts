@@ -16,17 +16,23 @@ export abstract class BaseJourneyPage {
     }
 
     async navigateSubmit() {
+        await this.page.waitForLoadState();
         await expect(this.submitButton).toBeVisible();
+        await expect(this.submitButton).toBeEnabled();
         await this.submitButton.click();
     }
 
     async navigateContinue() {
+        await this.page.waitForLoadState();
         await expect(this.continueButton).toBeVisible();
+        await expect(this.continueButton).toBeEnabled();
         await this.continueButton.click();
     }
 
     async navigatePrevious() {
+        await this.page.waitForLoadState();
         await expect(this.previousButton).toBeVisible();
+        await expect(this.previousButton).toBeEnabled();
         await this.continueButton.click();
     }
 }

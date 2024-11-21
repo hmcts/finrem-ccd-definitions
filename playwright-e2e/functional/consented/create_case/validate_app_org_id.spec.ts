@@ -1,11 +1,12 @@
 import { test, expect } from '../../../fixtures/fixtures';
-import config from '../../../config';
+import config from '../../../config/config';
 
 test(
   'validate_app_org_id - Validating error when Organisation ID is empty for Applicant Solicitor consented',
   { tag: [ '@accessibility'] },
   async (
     { loginPage,
+      manageCaseDashboardPage,
       createCasePage,
       startPage,
       solicitorDetailsPage,
@@ -14,6 +15,7 @@ test(
     testInfo
   ) => {
     // Sign in
+    await manageCaseDashboardPage.visit();
     await loginPage.login(config.caseWorker.email, config.caseWorker.password);
 
     // Start the consented case

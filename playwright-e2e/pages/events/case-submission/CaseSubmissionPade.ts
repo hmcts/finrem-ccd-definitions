@@ -12,6 +12,7 @@ export class CaseSubmissionPage extends BaseJourneyPage {
     }
 
     async returnToCaseDetails() {
+        await this.page.waitForLoadState();
         await this.closeAndReturnButton.click()
     }
 }

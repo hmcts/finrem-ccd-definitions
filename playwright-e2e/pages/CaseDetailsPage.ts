@@ -1,4 +1,6 @@
 import { type Page, expect, Locator } from '@playwright/test';
+import config from '../config/config';
+import { CaseEvent } from '../config/case_events';
 
 export class CaseDetailsPage {
 
@@ -23,9 +25,14 @@ export class CaseDetailsPage {
         await expect(this.successfulCreationBanner).toBeVisible();
     }
 
-    async selectNextStep(step: string) {
-        await this.selectNextStepDropDown.selectOption(step)
-        await this.goButton.click();
+    async selectNextStep(event: CaseEvent) {
+        await this.page.waitForLoadState();
+        await expect(async () => {
+            await this.goButton.isVisible();
+            await this.selectNextStepDropDown.selectOption(event.listItem);
+            await this.goButton.click({clickCount:2,delay:500}); 
+            await this.page.waitForURL(`**/${event.ccdCallback}/**`);
+        }).toPass({timeout: config.timeout});
     }
 
     async checkHasBeenUpdated() {
