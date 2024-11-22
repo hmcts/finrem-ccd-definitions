@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-const env = process.env.ENVIRONMENT || 'aat';
+const env = process.env.ENV || 'aat';
 
 // Data which can be reused across multiple tests.
 // Called simply with "import config from '../config';" and then e.g. "config.caseworker.email" in a test.

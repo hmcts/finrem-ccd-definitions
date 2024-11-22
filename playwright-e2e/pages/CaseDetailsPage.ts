@@ -33,7 +33,6 @@ export class CaseDetailsPage {
             await this.selectNextStepDropDown.selectOption(event.listItem);
             await this.goButton.click({clickCount:2,delay:500}); 
             await this.page.waitForURL(`**/${event.ccdCallback}/**`);
-
         }).toPass();
     }
 

@@ -237,21 +237,18 @@ withPipeline("nodejs", product, component) {
   before('functionalTest') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-  }
-
-  before('functionalTest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*.png'
   }
 
- afterAlways('smoketest:preview') {
+  afterAlways('functionalTest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/smokeTest/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/smoke/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*.png'
-}
+  }
 
   afterSuccess('functionalTest:aat') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
