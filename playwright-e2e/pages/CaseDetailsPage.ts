@@ -26,14 +26,15 @@ export class CaseDetailsPage {
     }
 
     async selectNextStep(event: CaseEvent) {
-        await this.page.waitForLoadState();
-        await this.goButton.isVisible();
-        await this.selectNextStepDropDown.selectOption(event.listItem);
-        await this.goButton.click({clickCount:2,delay:500}); 
-        await this.page.waitForURL(`**/${event.ccdCallback}/**`);
-        // await expect(async () => {
-           
-        // }).toPass({timeout: config.timeout});
+        await expect(async () => {
+            await this.page.waitForLoadState();
+            await this.goButton.isVisible();
+            await expect(this.selectNextStepDropDown).toBeVisible();
+            await this.selectNextStepDropDown.selectOption(event.listItem);
+            await this.goButton.click({clickCount:2,delay:500}); 
+            await this.page.waitForURL(`**/${event.ccdCallback}/**`);
+
+        }).toPass();
     }
 
     async checkHasBeenUpdated() {

@@ -27,7 +27,7 @@ import { HwfApplicationAcceptedPage } from '../pages/events/hwf-application-acce
 import { SendOrderPage } from '../pages/events/send-order/SendOrderPage';
 import { IssueApplicationPage } from '../pages/events/issue-application/IssueApplicationPage';
 import { ApproveApplicationPage } from '../pages/events/approve-order/ApproveApplicationPage';
-import { CaseSubmissionPage } from '../pages/events/case-submission/CaseSubmissionPade';
+import { CaseSubmissionPage } from '../pages/events/case-submission/CaseSubmissionPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
