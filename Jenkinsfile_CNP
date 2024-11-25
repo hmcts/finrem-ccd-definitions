@@ -242,26 +242,30 @@ withPipeline("nodejs", product, component) {
   }
 
 
+  beforeAlways('smokeTest:preview') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/trace.zip'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/*.png'
+  }
+
   afterAlways('smokeTest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/trace.zip'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/*.png'
+  }
+
+  beforeAlways('functionalTest:preview') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/trace.zip'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/*.png'
   }
 
   afterAlways('functionalTest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*'
-  }
-
-  afterAlways('smokeTest:smoke') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*'
-  }
-
-  afterAlways('functionalTest:smoke') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/trace.zip'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/*.png'
   }
 
   afterSuccess('functionalTest:aat') {
