@@ -2,7 +2,7 @@ import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 
 test(
-  'Smoke Test - Contested FormA Submission',
+  'Create Case - Contested FormA Submission',
   { tag: ['@smoke-test', '@accessibility'] },
   async (
     { 

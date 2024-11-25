@@ -20,6 +20,7 @@ export class ManageCaseDashboardPage {
   }
 
   async visit(){
+    console.log(`Visiting: ${this.url}`)
     await this.page.goto(`${this.url}`);
   }
 

@@ -241,13 +241,27 @@ withPipeline("nodejs", product, component) {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*.png'
   }
 
+
+  afterAlways('smokeTest:preview') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*'
+  }
+
   afterAlways('functionalTest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/smokeTest/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/smoke/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*'
+  }
+
+  afterAlways('smokeTest:smoke') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*.png'
+  }
+
+  afterAlways('functionalTest:smoke') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/*/**/*'
   }
 
   afterSuccess('functionalTest:aat') {

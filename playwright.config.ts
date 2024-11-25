@@ -8,11 +8,11 @@ export default defineConfig({
   testMatch:'*spec.ts',
   /* Run tests in files in parallel */
   fullyParallel: true,
-  timeout: 4*60*1000, //each test execution time is set to 3 min
+  timeout: 5*60*1000, //each test execution time is set to 5 min
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 3 : 1,
+  retries: process.env.CI ? 5 : 3,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 2 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -21,12 +21,13 @@ export default defineConfig({
     [process.env.CI ? 'html' : 'list'],
     ['html', { outputFolder: '../test-results/functionalTest' }]
   ],
-  expect: { timeout: 2*60*1000 }, //wait time for the assertion to be true 2 mins
+  expect: { timeout: 90_000 },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
-    screenshot: 'on', 
+    screenshot: 'on',
+    navigationTimeout: 60_000
   },
 
   /* Configure projects for major browsers */

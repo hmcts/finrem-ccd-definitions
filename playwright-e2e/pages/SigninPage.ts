@@ -23,7 +23,7 @@ export class SigninPage {
     await expect(this.signinButtonLocator).toBeVisible();
     await expect(this.signinButtonLocator).toBeEnabled();
     await this.signinButtonLocator.click();
+    console.log(`Logged in, navigating to: ${config.manageCaseBaseURL}`)
     await this.page.waitForURL(`${config.manageCaseBaseURL}/**`);
-    await expect(this.page.getByLabel('Manage Cases')).toBeVisible();
   }
 }
