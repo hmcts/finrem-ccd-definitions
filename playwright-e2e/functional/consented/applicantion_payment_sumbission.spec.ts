@@ -6,7 +6,7 @@ import { consentedEvents } from '../../config/case_events';
 
 test(
     'Application Payment Submission',
-    { tag: ["@preview"] },
+    { tag: [] },
     async (
       { 
         loginPage,
@@ -35,4 +35,3 @@ test(
       await caseDetailsPage.checkHasBeenUpdated();
     }
 );
-  

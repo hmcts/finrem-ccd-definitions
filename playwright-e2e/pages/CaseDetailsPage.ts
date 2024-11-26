@@ -39,5 +39,4 @@ export class CaseDetailsPage {
     async checkHasBeenUpdated() {
         await expect(this.successfulUpdateBanner).toBeVisible();
     }
-
 }

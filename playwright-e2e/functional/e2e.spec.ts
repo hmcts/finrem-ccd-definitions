@@ -5,8 +5,8 @@ import * as utils from '../../test/helpers/utils';
 import { consentedEvents } from '../config/case_events';
 
 test(
-  'Consented Send order - Journey Test',
-  { tag: ['@nighty'] },
+  'Consented - Send Order Journey Test',
+  { tag: [] },
   async (
     { 
       loginPage,

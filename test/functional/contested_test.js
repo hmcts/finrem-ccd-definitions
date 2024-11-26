@@ -22,7 +22,7 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Case Tests');
 
-Scenario('Contested Case Creation For Caseworker @preview @mytest  @nightly', async ({ I }) => {
+Scenario('Contested Case Creation For Caseworker @preview @nightly', async ({ I }) => {
   if (runningEnv === 'demo') {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     /* eslint-disable */
