@@ -26,5 +26,33 @@
     "CaseFieldID": "applicantInRefuge",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "14/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentInRefuge",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "14/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentInRefuge",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "14/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentInRefuge",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "14/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentInRefuge",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
   }
 ]
