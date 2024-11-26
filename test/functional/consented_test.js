@@ -60,7 +60,6 @@ Scenario('Consent Case Creation For Judge @nightly', async ({ I }) => {
   }
 }).retry(3);
 
-// COPY this one over to playwright 
 //Test disabled - needs fixing
 Scenario('Consent Case approve and send order @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
