@@ -3,7 +3,7 @@ import config from '../../../config/config';
 
 test(
   'Create Case - Contested FormA Submission',
-  { tag: ['@smoke-test', '@accessibility'] },
+  { tag: ['@accessibility'] },
   async (
     { 
       loginPage,
