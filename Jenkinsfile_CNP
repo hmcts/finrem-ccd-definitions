@@ -247,7 +247,7 @@ withPipeline("nodejs", product, component) {
   }
 
   afterSuccess('functionalTest:preview') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'{
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
   }
 
   afterSuccess('functionalTest:aat') {
