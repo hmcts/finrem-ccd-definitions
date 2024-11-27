@@ -1,108 +1,79 @@
 [
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
+    "ID": "FR_approveOrdersToJudgeApproval5",
     "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
-    "EventElementLabel": "## Draft Order 5",
-    "ListElementCode": "reviewableDraftOrder5.label",
+    "CaseFieldID": "judgeApproval5",
+    "EventElementLabel": " ",
+    "ListElementCode": "title",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+    "FieldShowCondition": "judgeApproval5.title=\"never show\""
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
+    "ID": "FR_approveOrdersToJudgeApproval5",
     "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
+    "CaseFieldID": "judgeApproval5",
+    "EventElementLabel": "<h2>${judgeApproval5.title}</h2>",
+    "ListElementCode": "enhancedTitle",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval5.title=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval5",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval5",
     "EventElementLabel": "Hearing",
-    "ListElementCode": "reviewableDraftOrder5.hearingInfo",
+    "ListElementCode": "hearingInfo",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+    "FieldShowCondition": "judgeApproval5.title=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
+    "ID": "FR_approveOrdersToJudgeApproval5",
     "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
+    "CaseFieldID": "judgeApproval5",
     "EventElementLabel": " ",
-    "ListElementCode": "reviewableDraftOrder5.document",
+    "ListElementCode": "document",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+    "FieldShowCondition": "judgeApproval5.title=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
+    "ID": "FR_approveOrdersToJudgeApproval5",
     "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
-    "ListElementCode": "reviewableDraftOrder5.attachmentsLabel",
+    "CaseFieldID": "judgeApproval5",
+    "ListElementCode": "attachmentsLabel",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hasAttachment=\"Yes\" AND judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+    "FieldShowCondition": "judgeApproval5.title=\"*\" AND judgeApproval5.hasAttachment=\"Yes\""
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
+    "ID": "FR_approveOrdersToJudgeApproval5",
     "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
-    "ListElementCode": "reviewableDraftOrder5.attachments",
+    "CaseFieldID": "judgeApproval5",
+    "ListElementCode": "attachments",
     "EventElementLabel": " ",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hasAttachment=\"Yes\" AND judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+    "FieldShowCondition": "judgeApproval5.title=\"*\" AND judgeApproval5.hasAttachment=\"Yes\""
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
+    "ID": "FR_approveOrdersToJudgeApproval5",
     "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
-    "ListElementCode": "reviewableDraftOrder5.judgeDecision",
+    "CaseFieldID": "judgeApproval5",
+    "ListElementCode": "judgeDecision",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
+    "FieldShowCondition": "judgeApproval5.title=\"*\" AND judgeApproval5.hearingInfo=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
+    "ID": "FR_approveOrdersToJudgeApproval5",
     "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
-    "ListElementCode": "reviewableDraftOrder5.isFinalOrder",
-    "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "judgeApproval.reviewableDraftOrder5.judgeDecision=\"READY_TO_BE_SEALED\" AND judgeApproval.reviewableDraftOrder5.hearingInfo=\"*\""
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
-    "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
-    "EventElementLabel": "## Pension Sharing Annex 5",
-    "ListElementCode": "reviewablePsa5.label",
-    "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval.reviewablePsa5.hearingInfo=\"*\""
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
-    "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
-    "EventElementLabel": "Hearing",
-    "ListElementCode": "reviewablePsa5.hearingInfo",
-    "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval.reviewablePsa5.hearingInfo=\"*\""
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
-    "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
-    "EventElementLabel": " ",
-    "ListElementCode": "reviewablePsa5.document",
-    "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval.reviewablePsa5.hearingInfo=\"*\""
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_approveOrdersToJudgeApproval",
-    "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "judgeApproval",
-    "ListElementCode": "reviewablePsa5.judgeDecision",
+    "CaseFieldID": "judgeApproval5",
+    "ListElementCode": "isFinalOrder",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "judgeApproval.reviewablePsa5.hearingInfo=\"*\""
+    "FieldShowCondition": "judgeApproval5.title=\"*\" AND judgeApproval5.judgeDecision=\"READY_TO_BE_SEALED\""
   }
 ]

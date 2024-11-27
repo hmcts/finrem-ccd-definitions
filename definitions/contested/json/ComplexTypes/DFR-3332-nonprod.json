@@ -1,16 +1,25 @@
 [
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewableDraftOrder",
-    "ListElementCode": "label",
-    "FieldType": "Label",
-    "ElementLabel": "##  Draft Order",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "title",
+    "FieldType": "Text",
+    "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewableDraftOrder",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "enhancedTitle",
+    "FieldType": "Label",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
     "ListElementCode": "hearingInfo",
     "FieldType": "Text",
     "ElementLabel": " ",
@@ -19,7 +28,7 @@
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewableDraftOrder",
+    "ID": "FR_judgeApproval",
     "ListElementCode": "document",
     "FieldType": "Document",
     "ElementLabel": " ",
@@ -28,7 +37,16 @@
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewableDraftOrder",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "amendedDocument",
+    "FieldType": "Document",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
     "ListElementCode": "hasAttachment",
     "FieldType": "YesOrNo",
     "ElementLabel": "Has Attachment?",
@@ -37,7 +55,7 @@
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewableDraftOrder",
+    "ID": "FR_judgeApproval",
     "ListElementCode": "attachmentsLabel",
     "FieldType": "Label",
     "ElementLabel": "*Attachments*",
@@ -46,7 +64,7 @@
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewableDraftOrder",
+    "ID": "FR_judgeApproval",
     "ListElementCode": "attachments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
@@ -56,7 +74,7 @@
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewableDraftOrder",
+    "ID": "FR_judgeApproval",
     "ListElementCode": "judgeDecision",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_judgeDecision",
@@ -66,155 +84,10 @@
   },
   {
     "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewableDraftOrder",
+    "ID": "FR_judgeApproval",
     "ListElementCode": "isFinalOrder",
     "FieldType": "DynamicMultiSelectList",
     "ElementLabel": "Is this a final order?",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewablePsa",
-    "ListElementCode": "label",
-    "FieldType": "Label",
-    "ElementLabel": "## Pension Sharing Annex",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewablePsa",
-    "ListElementCode": "hearingInfo",
-    "FieldType": "Text",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewablePsa",
-    "ListElementCode": "document",
-    "FieldType": "Document",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_ReviewablePsa",
-    "ListElementCode": "judgeDecision",
-    "FieldType": "FixedRadioList",
-    "FieldTypeParameter": "FR_judgeDecision",
-    "ElementLabel": "Is this Pension Sharing Annex ready to be sealed and issued?",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "warningMessageToJudge",
-    "FieldType": "Text",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "warningMessageToJudgeLabel",
-    "FieldType": "Label",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewableDraftOrder1",
-    "FieldType": "FR_ReviewableDraftOrder",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewableDraftOrder2",
-    "FieldType": "FR_ReviewableDraftOrder",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewableDraftOrder3",
-    "FieldType": "FR_ReviewableDraftOrder",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewableDraftOrder4",
-    "FieldType": "FR_ReviewableDraftOrder",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewableDraftOrder5",
-    "FieldType": "FR_ReviewableDraftOrder",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewablePsa1",
-    "FieldType": "FR_ReviewablePsa",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewablePsa2",
-    "FieldType": "FR_ReviewablePsa",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewablePsa3",
-    "FieldType": "FR_ReviewablePsa",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewablePsa4",
-    "FieldType": "FR_ReviewablePsa",
-    "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "reviewablePsa5",
-    "FieldType": "FR_ReviewablePsa",
-    "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }

@@ -1,11 +1,13 @@
 import { test, expect } from '../../../fixtures/fixtures';
-import config from '../../../config';
+import config from '../../../config/config';
 
 test(
-  'Smoke Test - Contested FormA Submission',
-  { tag: ['@smoke-test', "@preview", '@accessibility'] },
+  'Create Case - Contested FormA Submission',
+  { tag: ['@accessibility'] },
   async (
-    { loginPage,
+    { 
+      loginPage,
+      manageCaseDashboardPage,
       createCasePage,
       startPage,
       solicitorDetailsPage,
@@ -30,6 +32,7 @@ test(
     testInfo
   ) => {
     // Sign in
+    await manageCaseDashboardPage.visit()
     await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
 
     // Manage/Create case
