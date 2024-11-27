@@ -73,7 +73,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval5",
     "ListElementCode": "isFinalOrder",
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "judgeApproval5.title=\"*\" AND judgeApproval5.judgeDecision=\"READY_TO_BE_SEALED\""
   }
 ]
