@@ -24,7 +24,6 @@ fileHashes.lock
 functional-output/xui
 test/functional/a11y_output.js
 test/functional/a11y.html
-*e2e-aat.env
 active_suppressions
 sorted-yarn-audit-issues
 sorted-yarn-audit-known-issues
@@ -36,4 +35,4 @@ build
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-.env
+*.env
