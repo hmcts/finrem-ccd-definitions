@@ -101,7 +101,7 @@ withNightlyPipeline(type, product, component) {
                 steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
             }
         }
-        
+    }
     // Webkit step removed until run stabilized 
 
     //     stage('Functional playwright tests - webkit') {
