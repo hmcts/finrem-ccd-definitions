@@ -74,6 +74,6 @@
     "CaseFieldID": "judgeApproval4",
     "ListElementCode": "isFinalOrder",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "judgeApproval4.title=\"*\" AND judgeApproval4.judgeDecision=\"READY_TO_BE_SEALED\""
+    "FieldShowCondition": "judgeApproval4.title=\"Draft Order\" AND judgeApproval4.judgeDecision=\"READY_TO_BE_SEALED\""
   }
 ]
