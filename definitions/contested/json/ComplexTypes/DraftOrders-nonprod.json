@@ -219,6 +219,24 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "31/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "reviewedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Reviewed Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "31/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "notificationSentDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Notification Sent Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_psaDocumentReview",
     "ListElementCode": "orderStatus",
@@ -344,6 +362,24 @@
     "ListElementCode": "psaDocument",
     "FieldType": "Document",
     "ElementLabel": "Pension sharing annex",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "31/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "reviewedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Reviewed Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "31/10/2024",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "notificationSentDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Notification Sent Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
