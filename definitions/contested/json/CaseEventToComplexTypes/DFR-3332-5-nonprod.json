@@ -24,6 +24,16 @@
     "ID": "FR_approveOrdersToJudgeApproval5",
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval5",
+    "EventElementLabel": " ",
+    "ListElementCode": "titleInJudgeDecisionMessage",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval5.title=\"never show\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval5",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval5",
     "EventElementLabel": "<h2>${judgeApproval5.title}</h2>",
     "ListElementCode": "enhancedTitle",
     "DisplayContext": "READONLY",
@@ -74,6 +84,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval5",
     "ListElementCode": "judgeDecision",
+    "EventElementLabel": "Is this ${judgeApproval5.titleInJudgeDecisionMessage} ready to be sealed and issued",
     "DisplayContext": "MANDATORY",
     "FieldShowCondition": "judgeApproval5.title=\"*\" AND judgeApproval5.hearingInfo=\"*\""
   },
