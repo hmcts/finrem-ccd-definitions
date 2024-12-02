@@ -92,6 +92,15 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "refusedDate",
+    "FieldType": "Date",
+    "ElementLabel": "Date refused",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "approvalDate",
     "FieldType": "Date",
     "ElementLabel": "Approval date",
