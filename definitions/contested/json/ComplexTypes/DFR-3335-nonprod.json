@@ -1,0 +1,66 @@
+[
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "draftOrderOrPsa",
+    "FieldType": "Document",
+    "ElementLabel": "Draft order/PSA",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "attachments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Attachments",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "refusalOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Refusal order",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "refusedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date refused",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "refusalJudge",
+    "FieldType": "Text",
+    "ElementLabel": "Judge name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "submittedBy",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "submittedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date submitted",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  }
+]
