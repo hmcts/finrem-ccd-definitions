@@ -6,7 +6,7 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 18,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "draftOrdersReviewCollection!=\"\" OR refusedOrdersCollection!=\"\"",
+    "TabShowCondition": "draftOrdersReviewCollection!=\"\"",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1
   },
@@ -27,7 +27,7 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 18,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "draftOrdersReviewCollection!=\"\" OR refusedOrdersCollection!=\"\"",
+    "TabShowCondition": "draftOrdersReviewCollection!=\"\"",
     "TabFieldDisplayOrder": 2
   },
   {
