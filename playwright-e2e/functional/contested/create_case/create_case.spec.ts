@@ -2,7 +2,7 @@ import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 
 test(
-  'Create Case - Contested FormA Submission',
+  'Contested - Create Case FormA Submission',
   { tag: ['@accessibility'] },
   async (
     { 

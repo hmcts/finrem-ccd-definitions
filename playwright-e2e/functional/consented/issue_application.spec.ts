@@ -5,7 +5,7 @@ import * as utils from '../../../test/helpers/utils';
 import { consentedEvents } from '../../config/case_events';
 
 test(
-    'Smoke Test - Consented Send Order Journey - Issue Application',
+    'Consented - Issue Application',
     { tag: [] },
     async (
       { 
