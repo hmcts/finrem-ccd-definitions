@@ -13,15 +13,6 @@
   {
     "LiveFrom": "29/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "DraftOrders-courtadmin",
-    "TabLabel": "Draft orders",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "refusedOrdersCollection",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "DraftOrders-judiciary",
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 18,
@@ -38,15 +29,6 @@
     "CaseFieldID": "draftOrdersReviewCollection",
     "TabShowCondition": "draftOrdersReviewCollection!=\"\" OR refusedOrdersCollection!=\"\"",
     "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "DraftOrders-judiciary",
-    "TabLabel": "Draft orders",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "refusedOrdersCollection",
-    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "29/10/2024",
