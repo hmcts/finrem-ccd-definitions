@@ -104,7 +104,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval4",
     "ListElementCode": "isFinalOrder",
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "judgeApproval4.docType=\"DRAFT_ORDER\" AND (judgeApproval4.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval4.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
   }
 ]
