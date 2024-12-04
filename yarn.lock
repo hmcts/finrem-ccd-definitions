@@ -2121,7 +2121,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^22.0.0":
   version: 22.10.1
   resolution: "@types/node@npm:22.10.1"
   dependencies:
@@ -2130,7 +2130,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.1.0, @types/node@npm:^20.11.30, @types/node@npm:^20.16.1":
+"@types/node@npm:^20.1.0, @types/node@npm:^20.11.30":
   version: 20.17.9
   resolution: "@types/node@npm:20.17.9"
   dependencies:
@@ -5582,7 +5582,7 @@ __metadata:
     "@hmcts/properties-volume": 1.2.0
     "@playwright/test": ^1.46.1
     "@shinnn/eslint-config-node": ^6.0.2
-    "@types/node": ^20.16.1
+    "@types/node": ^22.0.0
     "@typescript-eslint/eslint-plugin": ^8.13.0
     "@typescript-eslint/parser": ^8.13.0
     axios: ^1.7.4
