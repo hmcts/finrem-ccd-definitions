@@ -1615,9 +1615,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@puppeteer/browsers@npm:2.4.1, @puppeteer/browsers@npm:^2.2.0":
-  version: 2.4.1
-  resolution: "@puppeteer/browsers@npm:2.4.1"
+"@puppeteer/browsers@npm:2.5.0":
+  version: 2.5.0
+  resolution: "@puppeteer/browsers@npm:2.5.0"
   dependencies:
     debug: ^4.3.7
     extract-zip: ^2.0.1
@@ -1629,7 +1629,7 @@ __metadata:
     yargs: ^17.7.2
   bin:
     browsers: lib/cjs/main-cli.js
-  checksum: 1e8193ae4ad84cf5a4f1ad59abe92f77a8ba4a902670f8a54002b9b772bf4df081de9e2ccb47efc465c31a0c6a649cbf7b7be8318f9fd3a6af466836b6835327
+  checksum: 3974f11389638cf2b10748a12741ad572a1e8c9a7f3a6af8eb6b2356251a0a613595f8154e30b328eea65ec3b243b980f4d7cb43c643e413075edffc38478397
   languageName: node
   linkType: hard
 
@@ -1647,6 +1647,24 @@ __metadata:
   bin:
     browsers: lib/cjs/main-cli.js
   checksum: 1ea82e34af882dc6d7e8392a88ec4196e206a7f65743be39c196c7068d66b9bdfa370e28c6ab09946bd2baa2182adbcbf445e79cc9bcc5242f05878ae7045b27
+  languageName: node
+  linkType: hard
+
+"@puppeteer/browsers@npm:^2.2.0":
+  version: 2.4.1
+  resolution: "@puppeteer/browsers@npm:2.4.1"
+  dependencies:
+    debug: ^4.3.7
+    extract-zip: ^2.0.1
+    progress: ^2.0.3
+    proxy-agent: ^6.4.0
+    semver: ^7.6.3
+    tar-fs: ^3.0.6
+    unbzip2-stream: ^1.4.3
+    yargs: ^17.7.2
+  bin:
+    browsers: lib/cjs/main-cli.js
+  checksum: 1e8193ae4ad84cf5a4f1ad59abe92f77a8ba4a902670f8a54002b9b772bf4df081de9e2ccb47efc465c31a0c6a649cbf7b7be8318f9fd3a6af466836b6835327
   languageName: node
   linkType: hard
 
@@ -2121,7 +2139,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^22.0.0":
   version: 22.10.1
   resolution: "@types/node@npm:22.10.1"
   dependencies:
@@ -2130,7 +2148,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.1.0, @types/node@npm:^20.11.30, @types/node@npm:^20.16.1":
+"@types/node@npm:^20.1.0, @types/node@npm:^20.11.30":
   version: 20.17.9
   resolution: "@types/node@npm:20.17.9"
   dependencies:
@@ -2897,13 +2915,13 @@ __metadata:
   linkType: hard
 
 "axios@npm:^1.7.4":
-  version: 1.7.8
-  resolution: "axios@npm:1.7.8"
+  version: 1.7.9
+  resolution: "axios@npm:1.7.9"
   dependencies:
     follow-redirects: ^1.15.6
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: 3d21652faf8e29fb36c47517d2872bb5e2285127a24f5c53ce23082c4eac7f5a88de84dd49d4a1a83068e5301dcfd9067b41e5fbd00b0d20ab7b0a843559273d
+  checksum: cb8ce291818effda09240cb60f114d5625909b345e10f389a945320e06acf0bc949d0f8422d25720f5dd421362abee302c99f5e97edec4c156c8939814b23d19
   languageName: node
   linkType: hard
 
@@ -4628,9 +4646,9 @@ __metadata:
   linkType: hard
 
 "dotenv@npm:^16.4.5":
-  version: 16.4.6
-  resolution: "dotenv@npm:16.4.6"
-  checksum: d29510d8716a2ca906ebb2d21dd5ee2e2b0af9e66ccb85a0c989022e16b82b8816887e14930a940fb0107d4da4aa8aad9c32c587d3052b900046e267725a4946
+  version: 16.4.7
+  resolution: "dotenv@npm:16.4.7"
+  checksum: c27419b5875a44addcc56cc69b7dc5b0e6587826ca85d5b355da9303c6fc317fc9989f1f18366a16378c9fdd9532d14117a1abe6029cc719cdbbef6eaef2cea4
   languageName: node
   linkType: hard
 
@@ -5582,7 +5600,7 @@ __metadata:
     "@hmcts/properties-volume": 1.2.0
     "@playwright/test": ^1.46.1
     "@shinnn/eslint-config-node": ^6.0.2
-    "@types/node": ^20.16.1
+    "@types/node": ^22.0.0
     "@typescript-eslint/eslint-plugin": ^8.13.0
     "@typescript-eslint/parser": ^8.13.0
     axios: ^1.7.4
@@ -9277,11 +9295,11 @@ __metadata:
   linkType: hard
 
 "prettier@npm:^3.3.3":
-  version: 3.4.1
-  resolution: "prettier@npm:3.4.1"
+  version: 3.4.2
+  resolution: "prettier@npm:3.4.2"
   bin:
     prettier: bin/prettier.cjs
-  checksum: f83ae83e38ae38f42c0b174833f58f820ed6eb063abfc5aa6725e8f9c1d626b54b1cb9d595cace525f8d59de89e186285f6bbcb460dc644ea9d8a7823cc54aca
+  checksum: 061c84513db62d3944c8dc8df36584dad82883ce4e49efcdbedd8703dce5b173c33fd9d2a4e1725d642a3b713c932b55418342eaa347479bc4a9cca114a04cd0
   languageName: node
   linkType: hard
 
@@ -9503,16 +9521,16 @@ __metadata:
   linkType: hard
 
 "puppeteer-core@npm:^23.9.0":
-  version: 23.9.0
-  resolution: "puppeteer-core@npm:23.9.0"
+  version: 23.10.1
+  resolution: "puppeteer-core@npm:23.10.1"
   dependencies:
-    "@puppeteer/browsers": 2.4.1
+    "@puppeteer/browsers": 2.5.0
     chromium-bidi: 0.8.0
     debug: ^4.3.7
     devtools-protocol: 0.0.1367902
     typed-query-selector: ^2.12.0
     ws: ^8.18.0
-  checksum: 0195e3422eee84d0645e8b5f2bcd33a304cb54378bf6a5c9f2a020a59c1435e502987fdbe2766864b7cddb1732d8a27524023c75fbba83c8d2ed9b5209bb931b
+  checksum: 03630c94a91e3f35810a5eeafc18e44616e49e9d01ca298c60c51f7904ae2d44a44060507848734a2a2cd720b84c01c1b922537a224ac306ca39d6ca4704911b
   languageName: node
   linkType: hard
 
