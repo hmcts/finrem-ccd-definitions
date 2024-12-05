@@ -25,7 +25,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval5",
     "EventElementLabel": " ",
-    "ListElementCode": "titleInJudgeDecisionMessage",
+    "ListElementCode": "inlineDocType",
     "DisplayContext": "READONLY",
     "FieldShowCondition": "judgeApproval5.title=\"never show\""
   },
@@ -84,7 +84,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval5",
     "ListElementCode": "judgeDecision",
-    "EventElementLabel": "Is this ${judgeApproval5.titleInJudgeDecisionMessage} ready to be sealed and issued",
+    "EventElementLabel": "Is this ${judgeApproval5.inlineDocType} ready to be sealed and issued",
     "DisplayContext": "MANDATORY",
     "FieldShowCondition": "judgeApproval5.title=\"*\" AND judgeApproval5.hearingInfo=\"*\""
   },
