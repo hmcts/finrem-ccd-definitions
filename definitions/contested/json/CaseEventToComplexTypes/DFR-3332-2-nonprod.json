@@ -114,6 +114,6 @@
     "CaseFieldID": "judgeApproval2",
     "ListElementCode": "changesRequestedByJudge",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "judgeApproval2.judgeDecision=\"LEGAL_REP_NEEDS_TO_MAKE_CHANGE\" OR judgeApproval2.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\""
+    "FieldShowCondition": "judgeApproval2.judgeDecision=\"LEGAL_REP_NEEDS_TO_MAKE_CHANGE\""
   }
 ]
