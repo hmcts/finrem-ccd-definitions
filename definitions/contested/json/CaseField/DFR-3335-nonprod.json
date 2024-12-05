@@ -12,8 +12,8 @@
   {
     "LiveFrom": "29/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "refusalOrderReason",
-    "Label": "Refusal Order Reason for Document Generation",
+    "ID": "generatedOrderReason",
+    "Label": "Generated order reason",
     "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "Y"
@@ -21,9 +21,28 @@
   {
     "LiveFrom": "29/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "refusalOrderRefusedDate",
-    "Label": "Date refused for Document Generation",
+    "ID": "generatedOrderRefusedDate",
+    "Label": "Generated order Date refused",
     "FieldType": "DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generatedOrderJudgeName",
+    "Label": "Generated order judge name",
+    "FieldType": "DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generatedOrderJudgeType",
+    "Label": "Generated order judge type",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   }
