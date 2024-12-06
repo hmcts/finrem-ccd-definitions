@@ -220,18 +220,18 @@
   {
     "LiveFrom": "31/10/2024",
     "ID": "FR_draftOrderDocumentReview",
-    "ListElementCode": "reviewedDate",
+    "ListElementCode": "notificationSentDate",
     "FieldType": "DateTime",
-    "ElementLabel": "Reviewed Date",
+    "ElementLabel": "Notification Sent Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "31/10/2024",
     "ID": "FR_draftOrderDocumentReview",
-    "ListElementCode": "notificationSentDate",
+    "ListElementCode": "refusedDate",
     "FieldType": "DateTime",
-    "ElementLabel": "Notification Sent Date",
+    "ElementLabel": "Date refused",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -366,18 +366,18 @@
   {
     "LiveFrom": "31/10/2024",
     "ID": "FR_psaDocumentReview",
-    "ListElementCode": "reviewedDate",
+    "ListElementCode": "notificationSentDate",
     "FieldType": "DateTime",
-    "ElementLabel": "Reviewed Date",
+    "ElementLabel": "Notification Sent Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "31/10/2024",
     "ID": "FR_psaDocumentReview",
-    "ListElementCode": "notificationSentDate",
+    "ListElementCode": "refusedDate",
     "FieldType": "DateTime",
-    "ElementLabel": "Notification Sent Date",
+    "ElementLabel": "Date refused",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
