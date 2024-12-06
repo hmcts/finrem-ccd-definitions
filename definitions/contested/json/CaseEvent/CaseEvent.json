@@ -853,7 +853,7 @@
     "Description": "New Paper Case",
     "DisplayOrder": 122,
     "PostConditionState": "paperCaseAdded",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-paper-case-defaults",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-paper-case-org-policy",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
