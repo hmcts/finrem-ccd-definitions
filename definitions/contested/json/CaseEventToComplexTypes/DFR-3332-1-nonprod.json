@@ -1,0 +1,79 @@
+[
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval1",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
+    "EventElementLabel": " ",
+    "ListElementCode": "title",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval1.title=\"never show\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval1",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
+    "EventElementLabel": "<h2>${judgeApproval1.title}</h2>",
+    "ListElementCode": "enhancedTitle",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval1.title=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval1",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
+    "EventElementLabel": "Hearing",
+    "ListElementCode": "hearingInfo",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval1.title=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval1",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
+    "EventElementLabel": " ",
+    "ListElementCode": "document",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval1.title=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval1",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
+    "ListElementCode": "attachmentsLabel",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval1.title=\"*\" AND judgeApproval1.hasAttachment=\"Yes\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval1",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
+    "ListElementCode": "attachments",
+    "EventElementLabel": " ",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval1.title=\"*\" AND judgeApproval1.hasAttachment=\"Yes\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval1",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
+    "ListElementCode": "judgeDecision",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "judgeApproval1.title=\"*\" AND judgeApproval1.hearingInfo=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval1",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
+    "ListElementCode": "isFinalOrder",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "judgeApproval1.title=\"Draft Order\" AND judgeApproval1.judgeDecision=\"READY_TO_BE_SEALED\""
+  }
+]
