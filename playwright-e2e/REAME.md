@@ -27,32 +27,32 @@ It is also recommend to utilise the [Playwright VSCode](https://marketplace.visu
 |-|- config.ts # essential settings for the framework, such as user credentials and URLs.
 
  playwright.config.ts # This sits outside playwright-e2e folder, but is the config file for playwright only tests.
- .e2e-aat.env # This sits outside playwright-e2e folder, this is required to run your tests locally. See Setup Environment Variables below.
+ .env # This sits outside playwright-e2e folder, this is required to run your tests locally. See Setup Environment Variables below.
 ```
 
 ## 🔐 Setup Environment Variables
 
 This repository contains automation tests that can be run locally. To set up the environment variables for configuring URLs and passwords, follow the instructions below:
 
-1. Create a .e2e-aat.env  file in the root directory of this project if it doesn't already exist.
+1. Create a .env  file in the root directory of this project if it doesn't already exist.
 
-2. Add the following environment variables to the .e2e-aat.env file: (ask a team mate for details/values can be found in Azure Keyvault)
+2. Add the following environment variables to the .env file: (ask a team mate for details/values can be found in Azure Keyvault)
     - Can set ENVIRONMENT to use the default URLs for that environment (local/aat/demo/perftest/ithc)
 
 
 ```
 export CCD_WEB_URL=https://example.com
-export CCD_ADMIN_USER_NAME=examplet@mailinator.com
+export CCD_ADMIN_USER_NAME=example@mailinator.com
 export CCD_ADMIN_PASSWORD=example
-export USERNAME_SOLICITOR1=examplet@mailinator.com
+export USERNAME_SOLICITOR1=example@mailinator.com
 export PASSWORD_SOLICITOR1=example
-export USERNAME_SOLICITOR=examplet@mailinator.com
+export USERNAME_SOLICITOR=example@mailinator.com
 export PASSWORD_SOLICITOR=example
-export USERNAME_CASEWORKER=examplet@mailinator.com
+export USERNAME_CASEWORKER=example@mailinator.com
 export PASSWORD_CASEWORKER=example
-export USERNAME_JUDGE=examplet@mailinator.com
+export USERNAME_JUDGE=example@mailinator.com
 export PASSWORD_JUDGE=example
-export USERNAME_CAA=examplet@mailinator.com
+export USERNAME_CAA=example@mailinator.com
 export PASSWORD_CAA=example
 export CCD_DATA_API_URL=https://example.com
 export XUI_ORG_WEB_URL=https://example.com
@@ -61,22 +61,22 @@ export IDAM_CLIENT_SECRET=example
 export IDAM_API_URL=https://example.com
 export CCD_SUBMIT_S2S_SECRET=example
 export CCD_ADMIN_URL=https://example.com
-export USERNAME_RESPONDENT_SOLICITOR=examplet@mailinator.com
+export USERNAME_RESPONDENT_SOLICITOR=example@mailinator.com
 export FINREM_IDAM_CLIENT_SECRET=example
-export FINREM_SYSTEMUPDATE_USERNAME=examplet@mailinator.com
+export FINREM_SYSTEMUPDATE_USERNAME=example@mailinator.com
 export FINREM_SYSTEMUPDATE_PASSWORD=example
-export USERNAME_BARRISTER1=examplet@mailinator.com
+export USERNAME_BARRISTER1=example@mailinator.com
 export PASSWORD_BARRISTER1=example
 ```
 Replace the placeholder values with the actual values relevant to your environment.
 
 `CCD_WEB_URL=` Can be used to toggle between PR environment, AAT and local or other environments.
 
-3. Save the .e2e-aat.env file.
+3. Save the .env file.
 
 ## Install Dependencies
 
-Before running the automation tests, ensure that all necessary dependencies are installed and source your .e2e-aat.env file. You can do this by running:
+Before running the automation tests, ensure that all necessary dependencies are installed and source your .env file. You can do this by running:
 
 ```
 yarn install
