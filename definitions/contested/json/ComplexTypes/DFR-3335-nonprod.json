@@ -59,10 +59,37 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "submittedByEmail",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
     "ListElementCode": "submittedDate",
     "FieldType": "DateTime",
     "ElementLabel": "Date submitted",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "judgeFeedback",
+    "FieldType": "Text",
+    "ElementLabel": "Judge feedback",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "hearingDate",
+    "FieldType": "Date",
+    "ElementLabel": "Hearing Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
