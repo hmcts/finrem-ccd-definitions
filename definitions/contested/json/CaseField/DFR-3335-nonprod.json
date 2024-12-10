@@ -45,5 +45,15 @@
     "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "refusalOrderIdsToBeSent",
+    "Label": "Refusal order IDs to be sent",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]
