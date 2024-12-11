@@ -1615,9 +1615,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@puppeteer/browsers@npm:2.6.0":
-  version: 2.6.0
-  resolution: "@puppeteer/browsers@npm:2.6.0"
+"@puppeteer/browsers@npm:2.6.1":
+  version: 2.6.1
+  resolution: "@puppeteer/browsers@npm:2.6.1"
   dependencies:
     debug: ^4.4.0
     extract-zip: ^2.0.1
@@ -1629,7 +1629,7 @@ __metadata:
     yargs: ^17.7.2
   bin:
     browsers: lib/cjs/main-cli.js
-  checksum: 40b1b89e9fd7d01789da22a93b9b913681053662a65a72c8225b27e733b59f2de3fb225d55d59723e999b57c368d8a375a333576620a98ab2f0901fc07686dbe
+  checksum: e5952385a38f2595c29aa5bf4b67b506038ff5862f282aab1d82845bd814aba24b82029628bda5060d8f87f66e50c46a783d44bed2ba56eb819852652e7ab3ad
   languageName: node
   linkType: hard
 
@@ -9573,16 +9573,16 @@ __metadata:
   linkType: hard
 
 "puppeteer-core@npm:^23.9.0":
-  version: 23.10.2
-  resolution: "puppeteer-core@npm:23.10.2"
+  version: 23.10.3
+  resolution: "puppeteer-core@npm:23.10.3"
   dependencies:
-    "@puppeteer/browsers": 2.6.0
+    "@puppeteer/browsers": 2.6.1
     chromium-bidi: 0.8.0
     debug: ^4.4.0
     devtools-protocol: 0.0.1367902
     typed-query-selector: ^2.12.0
     ws: ^8.18.0
-  checksum: 6bda435c2929280d4dd1e5aaae2a3e7e3cea7b66c6db0ca83fb00f9417bd87e3d515e287dde83f7c06ce7a32c2c13989dab7c05243cb69ae4e2f3f8f18b5b785
+  checksum: ab7bc53a09f05f5b88b8fbf67f5c2b79230ee4f985eddff9da025f4adb0eceac10e9720a7edc95962c56080a76e727b8716fe4b437fd5e7ea83d2b0f56b42259
   languageName: node
   linkType: hard
 
