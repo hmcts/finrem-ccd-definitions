@@ -54,6 +54,16 @@
     "ID": "FR_approveOrdersToJudgeApproval1",
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval1",
+    "EventElementLabel": "Hearing judge",
+    "ListElementCode": "hearingJudge",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "judgeApproval1.title=\"*\""
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval1",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval1",
     "EventElementLabel": " ",
     "ListElementCode": "document",
     "DisplayContext": "READONLY",
