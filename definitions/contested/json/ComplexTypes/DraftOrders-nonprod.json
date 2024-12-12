@@ -182,6 +182,15 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "submittedByEmail",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by (Email address)",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "uploadedOnBehalfOf",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_uploadParty",
@@ -220,18 +229,18 @@
   {
     "LiveFrom": "31/10/2024",
     "ID": "FR_draftOrderDocumentReview",
-    "ListElementCode": "reviewedDate",
+    "ListElementCode": "notificationSentDate",
     "FieldType": "DateTime",
-    "ElementLabel": "Reviewed Date",
+    "ElementLabel": "Notification Sent Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "31/10/2024",
     "ID": "FR_draftOrderDocumentReview",
-    "ListElementCode": "notificationSentDate",
+    "ListElementCode": "refusedDate",
     "FieldType": "DateTime",
-    "ElementLabel": "Notification Sent Date",
+    "ElementLabel": "Date refused",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -338,6 +347,15 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_psaDocumentReview",
+    "ListElementCode": "submittedByEmail",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by (Email address)",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_psaDocumentReview",
     "ListElementCode": "uploadedOnBehalfOf",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_uploadParty",
@@ -366,18 +384,18 @@
   {
     "LiveFrom": "31/10/2024",
     "ID": "FR_psaDocumentReview",
-    "ListElementCode": "reviewedDate",
+    "ListElementCode": "notificationSentDate",
     "FieldType": "DateTime",
-    "ElementLabel": "Reviewed Date",
+    "ElementLabel": "Notification Sent Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "31/10/2024",
     "ID": "FR_psaDocumentReview",
-    "ListElementCode": "notificationSentDate",
+    "ListElementCode": "refusedDate",
     "FieldType": "DateTime",
-    "ElementLabel": "Notification Sent Date",
+    "ElementLabel": "Date refused",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -480,6 +498,15 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "submittedByEmail",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by (Email address)",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_agreedDraftOrder",
     "ListElementCode": "uploadedOnBehalfOf",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_uploadParty",
@@ -550,6 +577,15 @@
     "ListElementCode": "submittedBy",
     "FieldType": "Text",
     "ElementLabel": "Submitted by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_suggestedDraftOrder",
+    "ListElementCode": "submittedByEmail",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by (email address)",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
