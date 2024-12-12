@@ -84,7 +84,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval4",
     "ListElementCode": "judgeDecision",
-    "EventElementLabel": "Is this ready to be sealed and issued?",
+    "EventElementLabel": "Is this document ready to be sealed and issued?",
     "DisplayContext": "MANDATORY",
     "FieldShowCondition": "judgeApproval4.title=\"*\" AND judgeApproval4.hearingInfo=\"*\""
   },
