@@ -138,7 +138,8 @@
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "hearingTimeEstimate",
-    "FieldType": "Text",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_hearingTimeDirections",
     "ElementLabel": "Time estimate",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -294,7 +295,8 @@
     "LiveFrom": "29/10/2024",
     "ID": "FR_psaDocumentReview",
     "ListElementCode": "hearingTimeEstimate",
-    "FieldType": "Text",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_hearingTimeDirections",
     "ElementLabel": "Time estimate",
     "SecurityClassification": "Public",
     "Searchable": "N"
