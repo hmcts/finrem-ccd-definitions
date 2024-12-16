@@ -45,6 +45,20 @@
     "PageID": 7,
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "currentUserCaseRoleType=\"case\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "16/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "currentUserCaseRoleType",
+    "PageFieldDisplayOrder": 20,
+    "DisplayContext": "READONLY",
+    "PageID": 7,
+    "PageDisplayOrder": 6,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "respondentInRefugeQuestion=\"IMPOSSIBLE\"",
     "ShowSummaryChangeOption": "Y"
   }
 ]
