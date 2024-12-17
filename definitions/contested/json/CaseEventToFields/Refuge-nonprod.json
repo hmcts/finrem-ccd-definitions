@@ -22,5 +22,29 @@
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "12/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_updateContactDetails",
+    "CaseFieldID": "applicantInRefugeQuestion",
+    "PageFieldDisplayOrder": 10,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 3,
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "12/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_updateContactDetails",
+    "CaseFieldID": "respondentInRefugeQuestion",
+    "PageFieldDisplayOrder": 10,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 5,
+    "PageDisplayOrder": 5,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   }
 ]
