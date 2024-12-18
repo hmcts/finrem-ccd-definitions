@@ -57,42 +57,11 @@
     "Searchable": "Y"
   },
   {
-    "LiveFrom": "29/10/2024",
+    "LiveFrom": "18/12/2024",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "ordersApproved",
-    "Label": "Test",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Text",
-    "SecurityClassification": "Public",
-    "Searchable": "Y"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "ordersRepresentativeChanges",
-    "Label": "Test",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Text",
-    "SecurityClassification": "Public",
-    "Searchable": "Y"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "ordersChanged",
-    "Label": "Test",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Text",
-    "SecurityClassification": "Public",
-    "Searchable": "Y"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "ordersReviewLater",
-    "Label": "Test",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Text",
+    "ID": "approveOrdersConfirmationBody",
+    "Label": "The confirmation body for the approve orders event",
+    "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   }
