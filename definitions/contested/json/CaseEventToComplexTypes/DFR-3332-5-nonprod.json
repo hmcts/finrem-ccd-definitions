@@ -116,5 +116,14 @@
     "ListElementCode": "isFinalOrder",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "judgeApproval5.docType=\"DRAFT_ORDER\" AND (judgeApproval5.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval5.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_approveOrdersToJudgeApproval5",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "judgeApproval5",
+    "ListElementCode": "changesRequestedByJudge",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "judgeApproval5.judgeDecision=\"LEGAL_REP_NEEDS_TO_MAKE_CHANGE\""
   }
 ]
