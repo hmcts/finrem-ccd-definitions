@@ -1,0 +1,124 @@
+[
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "docType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_judgeApprovalDocType",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "title",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "inlineDocType",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "enhancedTitle",
+    "FieldType": "Label",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "hearingInfo",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "hearingJudge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_AssignToJudge",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "document",
+    "FieldType": "Document",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "hasAttachment",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Has Attachment?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "attachmentsLabel",
+    "FieldType": "Label",
+    "ElementLabel": "*Attachments*",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "attachments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "judgeDecision",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_judgeDecision",
+    "ElementLabel": "Is this order ready to be sealed and issued?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "amendedDocument",
+    "FieldType": "Document",
+    "RegularExpression": ".doc,.docx",
+    "ElementLabel": "You must upload Microsoft Word documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example “JonesFDA11Jul24”",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "isFinalOrder",
+    "FieldType": "DynamicMultiSelectList",
+    "ElementLabel": "Is this a final order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }
+]
