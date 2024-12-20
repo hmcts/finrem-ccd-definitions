@@ -1,5 +1,6 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
+import { Refuge } from '../../../pages/helpers/enums/Refuge';
 
 test(
   'Create Case - Contested FormA Submission',
@@ -55,7 +56,9 @@ test(
     await divorceDetailsPage.navigateContinue();
 
     //applicant details
-    await applicantDetailsPage.enterApplicantDetailsContested('App First Name', 'App Last Name', true);
+    const keepPrivate: boolean = true;
+    const applicantInRefuge: Refuge = Refuge.YES;
+    await applicantDetailsPage.enterApplicantDetailsContested('App First Name', 'App Last Name', keepPrivate, applicantInRefuge);
     await applicantDetailsPage.navigateContinue();
 
     //respondent details
@@ -125,6 +128,9 @@ test(
 
     //Continue about to submit and check your answers
     await checkYourAnswersPage.navigateContinue();
+
+    await checkYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
+
     await checkYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
