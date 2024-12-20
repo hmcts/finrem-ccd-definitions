@@ -7,7 +7,7 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_refusedOrderOrPsa",
     "SecurityClassification": "Public",
-    "Searchable": "Y"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -16,7 +16,7 @@
     "Label": "Generated order reason",
     "FieldType": "Text",
     "SecurityClassification": "Public",
-    "Searchable": "Y"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -25,7 +25,7 @@
     "Label": "Generated order date refused",
     "FieldType": "DateTime",
     "SecurityClassification": "Public",
-    "Searchable": "Y"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -34,7 +34,7 @@
     "Label": "Generated order judge name",
     "FieldType": "DateTime",
     "SecurityClassification": "Public",
-    "Searchable": "Y"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -44,7 +44,7 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
     "SecurityClassification": "Public",
-    "Searchable": "Y"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -54,7 +54,7 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Text",
     "SecurityClassification": "Public",
-    "Searchable": "Y"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "18/12/2024",
@@ -63,6 +63,6 @@
     "Label": "The confirmation body for the approve orders event",
     "FieldType": "Text",
     "SecurityClassification": "Public",
-    "Searchable": "Y"
+    "Searchable": "N"
   }
 ]
