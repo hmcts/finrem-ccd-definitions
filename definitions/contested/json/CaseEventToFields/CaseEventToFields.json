@@ -6133,14 +6133,28 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
-    "RetriesTimeoutURLMidEvent": "3,4,5"
+    "RetriesTimeoutURLMidEvent": "3,4,5",
+    "FieldShowCondition":  "showUploadHearingOrder=\"Yes\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_directionOrder",
+    "CaseFieldID": "showUploadHearingOrder",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition":  "uploadHearingOrder=\"DO_NOT_SHOW\""
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_directionOrder",
     "CaseFieldID": "unprocessedApprovedDocuments",
-    "PageFieldDisplayOrder": 2,
+    "PageFieldDisplayOrder": 3,
     "DisplayContext": "OPTIONAL",
     "PageID": 1,
     "PageDisplayOrder": 1,
