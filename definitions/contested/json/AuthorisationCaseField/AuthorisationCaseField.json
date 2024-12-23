@@ -3803,7 +3803,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "showUploadHearingOrder",
+    "CaseFieldID": "isLegacyApprovedOrderPresent",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isUnprocessedApprovedDocumentPresent",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
@@ -6505,7 +6512,14 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "showUploadHearingOrder",
+    "CaseFieldID": "isLegacyApprovedOrderPresent",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isUnprocessedApprovedDocumentPresent",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "RU"
   },
