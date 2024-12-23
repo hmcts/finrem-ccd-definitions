@@ -91,5 +91,15 @@
     "ElementLabel": "Hearing Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/12/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "judgeType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
+    "ElementLabel": "Judge Type",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
