@@ -2255,6 +2255,17 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "unprocessedApprovedDocuments",
+    "Label": "Upload Approved Order (new)",
+    "HintText": "Upload Approved Order ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_directionOrderCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "hearingOrderOtherDocuments",
     "Label": "Upload Other Documents ",
     "HintText": "Upload Other Documents ",
