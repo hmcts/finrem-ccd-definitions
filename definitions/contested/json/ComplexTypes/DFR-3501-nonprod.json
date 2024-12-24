@@ -6,7 +6,8 @@
     "FieldType": "YesOrNo",
     "ElementLabel": "Is from new draft order flow?",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\""
   },
   {
     "LiveFrom": "24/12/2024",
@@ -15,6 +16,7 @@
     "FieldType": "YesOrNo",
     "ElementLabel": "Is from new draft order flow?",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\""
   }
 ]
