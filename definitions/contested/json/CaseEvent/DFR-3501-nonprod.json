@@ -6,7 +6,7 @@
     "Name": "Process Order (New)",
     "Description": "Process Order",
     "DisplayOrder": 37,
-    "PreConditionState(s)": "scheduleRaiseDirectionsOrder",
+    "PreConditionState(s)": "*",
     "PostConditionState": "orderDrawn",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
