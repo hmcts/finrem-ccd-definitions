@@ -1,22 +1,22 @@
 [
   {
     "LiveFrom": "24/12/2024",
-    "ID": "FR_ct_directionOrderCollection",
-    "ListElementCode": "isFromNewDraftOrderFlow",
-    "FieldType": "YesOrNo",
-    "ElementLabel": "Is from new draft order flow?",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "originalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Original Document",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\""
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "24/12/2024",
-    "ID": "view_finalOrderCollection",
-    "ListElementCode": "isFromNewDraftOrderFlow",
-    "FieldType": "YesOrNo",
-    "ElementLabel": "Is from new draft order flow?",
+    "ID": "FR_ct_directionOrderCollection",
+    "ListElementCode": "originalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Original Document",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\""
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
   }
 ]
