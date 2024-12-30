@@ -33,5 +33,21 @@ test(
       await approveApplicationPage.navigateContinue();
       await approveApplicationPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated();
+
+      // Assert Tab Data
+      const tabData = {
+        tabName: 'Approved Order',
+        tabContent: [
+          'Approved Order Letter',
+          'ApprovedConsentOrderLetter.pdf',
+          'Consent Order / Variation Order Annexed and Stamped',
+          'Pension Documents Stamped',
+          'Pension Documents Stamped 1',
+          'Type of document',
+          'Form P1'
+        ],
+      };
+      
+      await caseDetailsPage.assertTabData(tabData);
     }
 );
