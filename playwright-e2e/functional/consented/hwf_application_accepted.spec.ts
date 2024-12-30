@@ -26,6 +26,6 @@ test(
       // HWF Payment
       await caseDetailsPage.selectNextStep(consentedEvents.HwfPaymentSubmission); 
       await hwfApplicationAcceptedPage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated();
+      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.HwfPaymentSubmission.listItem);
     }
 );

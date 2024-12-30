@@ -29,6 +29,6 @@ test(
     // Send order
     await caseDetailsPage.selectNextStep(consentedEvents.SendOrder); 
     await sendOrderPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated();
+    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.SendOrder.listItem);
   }
 );

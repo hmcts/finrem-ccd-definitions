@@ -36,8 +36,9 @@ export class CaseDetailsPage {
         }).toPass();
     }
 
-    async checkHasBeenUpdated() {
+    async checkHasBeenUpdated(event: string) {
         await expect(this.successfulUpdateBanner).toBeVisible();
+        await expect(this.successfulUpdateBanner).toContainText(event);
     }
 
     async assertTabData(tab: Tab) {

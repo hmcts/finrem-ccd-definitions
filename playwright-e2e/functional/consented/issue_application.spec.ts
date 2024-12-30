@@ -28,6 +28,6 @@ test(
       await caseDetailsPage.selectNextStep(consentedEvents.IssueApplication); 
       await issueApplicationPage.navigateContinue();
       await issueApplicationPage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated();
+      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.IssueApplication.listItem);
     }
 );

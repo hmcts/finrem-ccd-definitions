@@ -32,6 +32,6 @@ test(
         await caseSubmissionPage.navigateSubmit();
         await caseSubmissionPage.returnToCaseDetails();
 
-        await caseDetailsPage.checkHasBeenUpdated();
+        await caseDetailsPage.checkHasBeenUpdated(contestedEvents.ApplicationPaymentSubmission.listItem);
     }
 );

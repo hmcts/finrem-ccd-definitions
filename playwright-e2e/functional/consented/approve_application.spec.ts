@@ -32,7 +32,7 @@ test(
       await approveApplicationPage.selectJudge('District Judge')
       await approveApplicationPage.navigateContinue();
       await approveApplicationPage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated();
+      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApproveApplication.listItem);
 
       // Assert Tab Data
       const tabData = {
