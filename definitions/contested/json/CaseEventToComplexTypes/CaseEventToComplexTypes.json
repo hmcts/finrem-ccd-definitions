@@ -3286,7 +3286,7 @@
     "CaseFieldID": "intervener1",
     "ListElementCode": "intervenerName",
     "EventElementLabel": "Intervener's Full Name",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "1",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -3296,7 +3296,7 @@
     "CaseFieldID": "intervener1",
     "ListElementCode": "intervenerResideOutsideUK",
     "EventElementLabel": "Does the intervener live outside of the UK?",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3306,7 +3306,7 @@
     "CaseFieldID": "intervener1",
     "ListElementCode": "intervenerAddress",
     "EventElementLabel": "Intervener's Address",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -3377,7 +3377,7 @@
     "CaseFieldID": "intervener1",
     "ListElementCode": "intervenerEmail",
     "EventElementLabel": "Email address",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "4",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3387,7 +3387,17 @@
     "CaseFieldID": "intervener1",
     "ListElementCode": "intervenerPhone",
     "EventElementLabel": "Phone number",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "5",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "22/11/2024",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener1",
+    "ListElementCode": "intervenerAddressConfidential",
+    "EventElementLabel": "Keep the Intervener's contact details private from the Applicant & Respondent?",
+    "FieldDisplayOrder": "6",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3505,7 +3515,7 @@
     "CaseFieldID": "intervener2",
     "ListElementCode": "intervenerName",
     "EventElementLabel": "Intervener's Full Name",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "1",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -3515,7 +3525,7 @@
     "CaseFieldID": "intervener2",
     "ListElementCode": "intervenerResideOutsideUK",
     "EventElementLabel": "Does the intervener live outside of the UK?",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3525,7 +3535,7 @@
     "CaseFieldID": "intervener2",
     "ListElementCode": "intervenerAddress",
     "EventElementLabel": "Intervener's Address",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -3535,7 +3545,7 @@
     "CaseFieldID": "intervener2",
     "ListElementCode": "intervenerEmail",
     "EventElementLabel": "Email address",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "4",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3606,7 +3616,17 @@
     "CaseFieldID": "intervener2",
     "ListElementCode": "intervenerPhone",
     "EventElementLabel": "Phone number",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "5",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "22/11/2024",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener2",
+    "ListElementCode": "intervenerAddressConfidential",
+    "EventElementLabel": "Keep the Intervener's contact details private from the Applicant & Respondent?",
+    "FieldDisplayOrder": "6",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3724,7 +3744,7 @@
     "CaseFieldID": "intervener3",
     "ListElementCode": "intervenerName",
     "EventElementLabel": "Intervener's Full Name",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "1",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -3734,7 +3754,7 @@
     "CaseFieldID": "intervener3",
     "ListElementCode": "intervenerResideOutsideUK",
     "EventElementLabel": "Does the intervener live outside of the UK?",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3744,7 +3764,7 @@
     "CaseFieldID": "intervener3",
     "ListElementCode": "intervenerAddress",
     "EventElementLabel": "Intervener's Address",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -3815,7 +3835,7 @@
     "CaseFieldID": "intervener3",
     "ListElementCode": "intervenerEmail",
     "EventElementLabel": "Email address",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "4",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3825,7 +3845,17 @@
     "CaseFieldID": "intervener3",
     "ListElementCode": "intervenerPhone",
     "EventElementLabel": "Phone number",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "5",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "22/11/2024",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener3",
+    "ListElementCode": "intervenerAddressConfidential",
+    "EventElementLabel": "Keep the Intervener's contact details private from the Applicant & Respondent?",
+    "FieldDisplayOrder": "6",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3943,7 +3973,7 @@
     "CaseFieldID": "intervener4",
     "ListElementCode": "intervenerName",
     "EventElementLabel": "Intervener's Full Name",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "1",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -3953,7 +3983,7 @@
     "CaseFieldID": "intervener4",
     "ListElementCode": "intervenerResideOutsideUK",
     "EventElementLabel": "Does the intervener live outside of the UK?",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "2",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -3963,7 +3993,7 @@
     "CaseFieldID": "intervener4",
     "ListElementCode": "intervenerAddress",
     "EventElementLabel": "Intervener's Address",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "3",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -4034,7 +4064,7 @@
     "CaseFieldID": "intervener4",
     "ListElementCode": "intervenerEmail",
     "EventElementLabel": "Email address",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "4",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -4044,7 +4074,17 @@
     "CaseFieldID": "intervener4",
     "ListElementCode": "intervenerPhone",
     "EventElementLabel": "Phone number",
-    "FieldDisplayOrder": "",
+    "FieldDisplayOrder": "5",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "22/11/2024",
+    "ID": "manageInterveners",
+    "CaseEventID": "manageInterveners",
+    "CaseFieldID": "intervener4",
+    "ListElementCode": "intervenerAddressConfidential",
+    "EventElementLabel": "Keep the Intervener's contact details private from the Applicant & Respondent?",
+    "FieldDisplayOrder": "6",
     "DisplayContext": "OPTIONAL"
   },
   {

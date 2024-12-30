@@ -1,4 +1,3 @@
-/* eslint-disable */
 const Helper = codecept_helper;
 
 class SauceLabsBrowserHelper extends Helper {
