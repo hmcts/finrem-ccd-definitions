@@ -183,9 +183,9 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrderDocumentReview",
-    "ListElementCode": "submittedByEmail",
+    "ListElementCode": "orderParty",
     "FieldType": "Text",
-    "ElementLabel": "Submitted by (Email address)",
+    "ElementLabel": "Order filed by",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -349,9 +349,9 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_psaDocumentReview",
-    "ListElementCode": "submittedByEmail",
+    "ListElementCode": "orderParty",
     "FieldType": "Text",
-    "ElementLabel": "Submitted by (Email address)",
+    "ElementLabel": "Order filed by",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -500,15 +500,6 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_agreedDraftOrder",
-    "ListElementCode": "submittedByEmail",
-    "FieldType": "Text",
-    "ElementLabel": "Submitted by (Email address)",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_agreedDraftOrder",
     "ListElementCode": "uploadedOnBehalfOf",
     "FieldType": "FixedRadioList",
     "FieldTypeParameter": "FR_uploadParty",
@@ -579,15 +570,6 @@
     "ListElementCode": "submittedBy",
     "FieldType": "Text",
     "ElementLabel": "Submitted by",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_suggestedDraftOrder",
-    "ListElementCode": "submittedByEmail",
-    "FieldType": "Text",
-    "ElementLabel": "Submitted by (email address)",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
