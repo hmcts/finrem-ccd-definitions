@@ -36,7 +36,7 @@
     "FieldType": "DateTime",
     "ElementLabel": "Date refused",
     "SecurityClassification": "Public",
-    "Searchable": "Y"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -72,7 +72,7 @@
     "FieldType": "DateTime",
     "ElementLabel": "Date submitted",
     "SecurityClassification": "Public",
-    "Searchable": "Y"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -89,6 +89,16 @@
     "ListElementCode": "hearingDate",
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/12/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "judgeType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
+    "ElementLabel": "Judge Type",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
