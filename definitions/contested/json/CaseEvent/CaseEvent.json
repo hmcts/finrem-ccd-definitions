@@ -972,22 +972,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_directionOrder",
-    "Name": "Process Order",
-    "Description": "Process Order",
-    "DisplayOrder": 36,
-    "PreConditionState(s)": "scheduleRaiseDirectionsOrder",
-    "PostConditionState": "orderDrawn",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
-    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
-    "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_ReserveForJudge",
     "Name": "Reserve for Judge",
     "Description": "Reserve for Judge",
