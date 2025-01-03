@@ -497,7 +497,7 @@
     "ID": "FR_prepareForHearing",
     "Name": "Prepare For Hearing",
     "Description": "Prepare For Hearing",
-    "DisplayOrder": 40,
+    "DisplayOrder": 39,
     "PreConditionState(s)": "orderSent;close;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;consentedOrderNotApproved;consentedOrderApproved;consentedOrderAssignJudge;reviewOrder;orderDrawn",
     "PostConditionState": "prepareForHearing",
     "SecurityClassification": "Public",
