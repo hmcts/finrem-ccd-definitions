@@ -12,7 +12,7 @@
     "ShowSummaryChangeOption": "Y",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5",
-    "FieldShowCondition": "isLegacyApprovedOrderPresent=\"Yes\" AND [STATE]=\"scheduleRaiseDirectionsOrder\""
+    "FieldShowCondition": "isLegacyApprovedOrderPresent=\"Yes\""
   },
   {
     "LiveFrom": "24/12/2024",
