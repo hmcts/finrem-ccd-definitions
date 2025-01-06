@@ -78,7 +78,7 @@ dependencies {
     testImplementation group: 'com.github.hmcts', name: 'befta-fw', version: '9.1.0'
     testImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.18.2'
     testImplementation group: 'commons-io', name: 'commons-io', version: '2.18.0'
-    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.27.1'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.27.2'
     testImplementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.16'
 
     testRuntimeOnly group: 'org.glassfish', name: 'jakarta.el', version: '4.0.2'
