@@ -84,10 +84,19 @@
     "SecurityClassification": "Public"
   },
   {
+    "LiveFrom": "31/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentApplicationGuidanceText",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "consentApplicationGuidance",
-    "Label": "Use the '<a href=\"/cases/case-details/${[CASE_REFERENCE]}/trigger/FR_consentOrder/FR_consentOrder1\">consent order</a>' event if you need to upload a consent order to finalise the contested proceedings.",
+    "Label": "${consentApplicationGuidanceText}",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   }
