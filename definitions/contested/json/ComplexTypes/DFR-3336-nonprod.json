@@ -1,0 +1,58 @@
+[
+  {
+    "LiveFrom": "07/01/2025",
+    "ID": "FR_finalisedOrder",
+    "ListElementCode": "finalisedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Draft order",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "approvedOrders"
+  },
+  {
+    "LiveFrom": "07/01/2025",
+    "ID": "FR_finalisedOrder",
+    "ListElementCode": "attachments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Attachments",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "07/01/2025",
+    "ID": "FR_finalisedOrder",
+    "ListElementCode": "submittedBy",
+    "FieldType": "Text",
+    "ElementLabel": "Submitted by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "07/01/2025",
+    "ID": "FR_finalisedOrder",
+    "ListElementCode": "submittedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date submitted",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "07/01/2025",
+    "ID": "FR_finalisedOrder",
+    "ListElementCode": "approvalDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Approval date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "07/01/2025",
+    "ID": "FR_finalisedOrder",
+    "ListElementCode": "finalOrder",
+    "FieldType": "Text",
+    "ElementLabel": "Final order",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }
+]
