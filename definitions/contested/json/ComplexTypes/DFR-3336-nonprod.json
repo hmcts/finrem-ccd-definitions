@@ -49,8 +49,17 @@
   {
     "LiveFrom": "07/01/2025",
     "ID": "FR_finalisedOrder",
-    "ListElementCode": "finalOrder",
+    "ListElementCode": "approvalJudge",
     "FieldType": "Text",
+    "ElementLabel": "Judge name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "07/01/2025",
+    "ID": "FR_finalisedOrder",
+    "ListElementCode": "finalOrder",
+    "FieldType": "YesOrNo",
     "ElementLabel": "Final order",
     "SecurityClassification": "Public",
     "Searchable": "N"
