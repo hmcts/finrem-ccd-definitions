@@ -1,4 +1,4 @@
-export enum Refuge {
+export enum RadioEnum {
     YES = 'Yes',
     NO = 'No',
     BLANK = '',

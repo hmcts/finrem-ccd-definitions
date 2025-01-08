@@ -1,6 +1,6 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { Refuge } from '../../../pages/helpers/enums/Refuge';
+import { RadioEnum } from '../../../pages/helpers/enums/Refuge';
 
 test(
   'Create Case - Contested FormA Submission',
@@ -26,7 +26,7 @@ test(
       miamQuestionPage,
       miamDetailsPage,
       uploadOrderDocumentsPage,
-      checkYourAnswersPage,
+      createCaseCheckYourAnswersPage,
       caseDetailsPage,
       makeAxeBuilder
     },
@@ -57,7 +57,7 @@ test(
 
     //applicant details
     const keepPrivate: boolean = true;
-    const applicantInRefuge: Refuge = Refuge.YES;
+    const applicantInRefuge: RadioEnum = RadioEnum.YES;
     await applicantDetailsPage.enterApplicantDetailsContested('App First Name', 'App Last Name', keepPrivate, applicantInRefuge);
     await applicantDetailsPage.navigateContinue();
 
@@ -127,11 +127,11 @@ test(
     await uploadOrderDocumentsPage.navigateContinue();
 
     //Continue about to submit and check your answers
-    await checkYourAnswersPage.navigateContinue();
+    await createCaseCheckYourAnswersPage.navigateContinue();
 
-    await checkYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
+    await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
 
-    await checkYourAnswersPage.navigateSubmit();
+    await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
 
