@@ -33,11 +33,6 @@ const configuration = {
     password: process.env.PASSWORD_SOLICITOR || '',
   },
 
-  applicant_solicitor1: {
-    email: process.env.USERNAME_SOLICITOR1 || '',
-    password: process.env.PASSWORD_SOLICITOR1 || '',
-  },
-
   respondent_solicitor: {
     email: process.env.USERNAME_RESPONDENT_SOLICITOR || 'fr_respondent_solicitor1@mailinator.com'
   },
