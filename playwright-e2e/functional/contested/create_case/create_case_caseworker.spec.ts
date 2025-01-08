@@ -35,7 +35,6 @@ test(
     // Sign in
     await manageCaseDashboardPage.visit()
     await loginPage.login(config.caseWorker.email, config.caseWorker.password);
-    // await loginPage.login(config.caseWorker.email, config.caseWorker.password);
 
     // Manage/Create case
     await createCasePage.startCase(
