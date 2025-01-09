@@ -36,6 +36,10 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
         await this.solicitorDetailsHelper.enterFirmName(this.page, firmName);
     }
 
+    async enterSolicitorsFirm(firmName: string) {
+        await this.solicitorDetailsHelper.enterSolicitorsFirm(this.page, firmName);
+    }
+
     async setEmailConsent(caseType: string) {
         await this.commonActionsHelper.emailConsent(this.page, caseType, true);
     }
@@ -48,4 +52,8 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
         const errorMessage = this.page.getByText('Organisation ID is required');
         await expect(errorMessage).toHaveText('Organisation ID is required');
       }
+
+    async enterReferenceNumber(referenceNumber: string) {
+        await this.solicitorDetailsHelper.enterReferenceNumber(this.page, referenceNumber);
+    }
 }

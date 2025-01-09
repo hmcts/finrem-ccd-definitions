@@ -6,7 +6,7 @@ test(
   'Create Case - Contested FormA Submission',
   { tag: ['@accessibility'] },
   async (
-    { 
+    {
       loginPage,
       manageCaseDashboardPage,
       createCasePage,
@@ -34,7 +34,7 @@ test(
   ) => {
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
+    await loginPage.login(config.caseWorker.email, config.caseWorker.password);
 
     // Manage/Create case
     await createCasePage.startCase(
@@ -45,9 +45,13 @@ test(
 
     await startPage.navigateContinue();
 
-    // Enter applicant details
+    // Select whether the applicant is represented or not. Then enter applicant details
+    await solicitorDetailsPage.setApplicantRepresentation(true);
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorsFirm('Finrem-1-Org');
+    await solicitorDetailsPage.enterReferenceNumber('123456');
+    await solicitorDetailsPage.enterUKaddress();
     await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
     await solicitorDetailsPage.navigateContinue();
 
