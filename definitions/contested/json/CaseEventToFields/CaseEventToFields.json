@@ -9879,6 +9879,7 @@
     "PageColumnNumber": 1,
     "RetainHiddenValue": "N",
     "ShowSummaryChangeOption": "Y",
+    "PageShowCondition": "currentUserCaseRoleType=\"Applicant\" OR currentUserCaseRoleType=\"Respondent\" OR currentUserCaseRoleType=\"Applicant Barrister\" OR currentUserCaseRoleType=\"Respondent Barrister\"",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
