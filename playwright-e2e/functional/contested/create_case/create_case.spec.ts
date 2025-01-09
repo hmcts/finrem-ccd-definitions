@@ -1,12 +1,12 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { RadioEnum } from '../../../pages/helpers/enums/Refuge';
+import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
 
 test(
   'Create Case - Contested FormA Submission',
   { tag: ['@accessibility'] },
   async (
-    { 
+    {
       loginPage,
       manageCaseDashboardPage,
       createCasePage,
