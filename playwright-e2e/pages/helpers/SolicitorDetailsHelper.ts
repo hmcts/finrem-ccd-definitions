@@ -23,4 +23,14 @@ export class SolicitorDetailsHelper {
     async enterFirmName(page: Page, firmName: string) {
         await page.getByLabel('Name of your firm').fill(firmName);
     }
+
+    async enterSolicitorsFirm(page: Page, firmName: string) {
+        await page.getByLabel('Solicitor’s firm').fill(firmName);
+    }
+
+    async enterReferenceNumber(page: Page, referenceNumber: string) {
+        await page.getByLabel('Your reference number').fill(referenceNumber);
+    }
+
+
 }

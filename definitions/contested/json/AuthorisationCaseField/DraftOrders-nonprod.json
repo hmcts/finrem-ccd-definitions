@@ -133,17 +133,31 @@
     "CRUD": "R"
   },
   {
+    "LiveFrom": "31/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "consentApplicationGuidanceText",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "31/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "consentApplicationGuidanceText",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRU"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "consentApplicationGuidance",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
+    "CRUD": "CRU"
   },
   {
     "LiveFrom": "29/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "consentApplicationGuidance",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
+    "CRUD": "CRU"
   }
 ]
