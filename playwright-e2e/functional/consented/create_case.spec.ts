@@ -18,7 +18,7 @@ test(
       natureOfApplicationPage,
       periodicalPaymentsPage,
       uploadOrderDocumentsPage,
-      checkYourAnswersPage,
+      createCaseCheckYourAnswersPage,
       caseDetailsPage,
       makeAxeBuilder
     },
@@ -77,8 +77,8 @@ test(
     await uploadOrderDocumentsPage.navigateContinue();
 
     //Continue about to submit and check your answers
-    await checkYourAnswersPage.navigateContinue();
-    await checkYourAnswersPage.navigateSubmit();
+    await createCaseCheckYourAnswersPage.navigateContinue();
+    await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
 
