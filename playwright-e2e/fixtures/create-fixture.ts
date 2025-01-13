@@ -21,7 +21,7 @@ import { MiamDetailsPage } from '../pages/events/create-case/MiamDetailsPage';
 import { UploadOrderDocumentsPage } from '../pages/events/create-case/UploadOrderDocumentPage';
 import { CaseDetailsPage } from '../pages/CaseDetailsPage';
 import { RespondentDetailsPage } from '../pages/events/create-case/RespondentDetailsPage';
-import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
+import { CreateCaseCheckYourAnswersPage } from '../pages/events/create-case/CreateCaseCheckYourAnswersPage';
 import { ManageCaseDashboardPage } from '../pages/ManageCaseDashboardPage';
 import { HwfApplicationAcceptedPage } from '../pages/events/hwf-application-accepted/HwfApplicationAcceptedPage';
 import { SendOrderPage } from '../pages/events/send-order/SendOrderPage';
@@ -52,7 +52,7 @@ type CreateFixtures = {
   miamDetailsPage: MiamDetailsPage;
   uploadOrderDocumentsPage: UploadOrderDocumentsPage;
   caseDetailsPage: CaseDetailsPage;
-  checkYourAnswersPage: CheckYourAnswersPage;
+  createCaseCheckYourAnswersPage: CreateCaseCheckYourAnswersPage;
   manageCaseDashboardPage: ManageCaseDashboardPage;
   caseSubmissionPage: CaseSubmissionPage;
   hwfApplicationAcceptedPage: HwfApplicationAcceptedPage;
@@ -119,8 +119,8 @@ export const test = base.extend<CreateFixtures>({
   caseDetailsPage: async ({ page }, use) => {
     await use(new CaseDetailsPage(page));
   },
-  checkYourAnswersPage: async ({ page }, use) => {
-    await use(new CheckYourAnswersPage(page));
+  createCaseCheckYourAnswersPage: async ({ page }, use) => {
+    await use(new CreateCaseCheckYourAnswersPage(page));
   }, 
   manageCaseDashboardPage: async ({ page }, use) => {
     await use(new ManageCaseDashboardPage(page));
