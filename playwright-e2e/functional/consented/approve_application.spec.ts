@@ -5,7 +5,7 @@ import * as utils from '../../../test/helpers/utils';
 import { consentedEvents } from '../../config/case_events';
 
 test(
-    'Consented Approve Application',
+    'Consented - Approve Application',
     { tag: [] },
     async (
       { 
@@ -32,6 +32,22 @@ test(
       await approveApplicationPage.selectJudge('District Judge')
       await approveApplicationPage.navigateContinue();
       await approveApplicationPage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated();
+      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApproveApplication.listItem);
+
+      // Assert Tab Data
+      const tabData = {
+        tabName: 'Approved Order',
+        tabContent: [
+          'Approved Order Letter',
+          'ApprovedConsentOrderLetter.pdf',
+          'Consent Order / Variation Order Annexed and Stamped',
+          'Pension Documents Stamped',
+          'Pension Documents Stamped 1',
+          'Type of document',
+          'Form P1'
+        ],
+      };
+      
+      await caseDetailsPage.assertTabData(tabData);
     }
 );

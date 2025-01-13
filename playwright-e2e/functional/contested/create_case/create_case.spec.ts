@@ -3,7 +3,7 @@ import config from '../../../config/config';
 import { RadioEnum } from '../../../pages/helpers/enums/Refuge';
 
 test(
-  'Create Case - Contested FormA Submission',
+  'Contested - Create Case FormA Submission',
   { tag: ['@accessibility'] },
   async (
     { 

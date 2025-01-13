@@ -1,6 +1,6 @@
 import { type Page, expect, Locator } from '@playwright/test';
-import config from '../config/config';
 import { CaseEvent } from '../config/case_events';
+import { Tab } from './components/tab';
 
 export class CaseDetailsPage {
 
@@ -36,7 +36,27 @@ export class CaseDetailsPage {
         }).toPass();
     }
 
-    async checkHasBeenUpdated() {
+    async checkHasBeenUpdated(event: string) {
         await expect(this.successfulUpdateBanner).toBeVisible();
+        await expect(this.successfulUpdateBanner).toContainText(event);
+    }
+
+    async assertTabData(tab: Tab) {
+        const tabHeader = this.getTabHeader(tab.tabName);
+        await expect(tabHeader).toBeVisible();
+        await tabHeader.click();
+    
+        for (const content of tab.tabContent) {
+          const contentElement = this.getTabContent(content);
+          await expect(contentElement).toBeVisible();
+        }
+    }
+    
+    private getTabHeader(tabName: string): Locator {
+        return this.page.getByRole('tab', { name: tabName });
+    }
+    
+    private getTabContent(content: string): Locator {
+        return this.page.getByText(content, { exact: true });
     }
 }

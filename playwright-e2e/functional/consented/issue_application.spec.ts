@@ -5,7 +5,7 @@ import * as utils from '../../../test/helpers/utils';
 import { consentedEvents } from '../../config/case_events';
 
 test(
-    'Smoke Test - Consented Send Order Journey - Issue Application',
+    'Consented - Issue Application',
     { tag: [] },
     async (
       { 
@@ -28,6 +28,6 @@ test(
       await caseDetailsPage.selectNextStep(consentedEvents.IssueApplication); 
       await issueApplicationPage.navigateContinue();
       await issueApplicationPage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated();
+      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.IssueApplication.listItem);
     }
 );

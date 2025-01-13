@@ -36,7 +36,7 @@ test(
     await caseSubmissionPage.navigateSubmit();
     await caseSubmissionPage.returnToCaseDetails();
   
-    await caseDetailsPage.checkHasBeenUpdated();
+    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApplicationPaymentSubmission.listItem);
   
     // Logout
     await manageCaseDashboardPage.signOut();
@@ -48,13 +48,13 @@ test(
     // HWF Payment
     await caseDetailsPage.selectNextStep(consentedEvents.HwfPaymentSubmission); 
     await hwfApplicationAcceptedPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated();
+    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.HwfPaymentSubmission.listItem);
   
     // Issue Application
     await caseDetailsPage.selectNextStep(consentedEvents.IssueApplication); 
     await issueApplicationPage.navigateContinue();
     await issueApplicationPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated();
+    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.IssueApplication.listItem);
   
     // Logout
     await manageCaseDashboardPage.signOut();
@@ -70,7 +70,7 @@ test(
     await approveApplicationPage.selectJudge('District Judge');
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated();
+    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApproveApplication.listItem);
   
     // // Logout
     await manageCaseDashboardPage.signOut();
@@ -82,6 +82,6 @@ test(
     // // Send order
     await caseDetailsPage.selectNextStep(consentedEvents.SendOrder); 
     await sendOrderPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated();
+    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.SendOrder.listItem);
   }
 );

@@ -5,7 +5,7 @@ import * as utils from '../../../test/helpers/utils';
 import { consentedEvents } from '../../config/case_events';
 
 test(
-    'Application Payment Submission',
+    'Consented - Application Payment Submission',
     { tag: [] },
     async (
       { 
@@ -32,6 +32,6 @@ test(
       await caseSubmissionPage.navigateSubmit();
       await caseSubmissionPage.returnToCaseDetails();
   
-      await caseDetailsPage.checkHasBeenUpdated();
+      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApplicationPaymentSubmission.listItem);
     }
 );

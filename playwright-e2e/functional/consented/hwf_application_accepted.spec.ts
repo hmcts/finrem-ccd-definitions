@@ -5,7 +5,7 @@ import * as utils from '../../../test/helpers/utils';
 import { consentedEvents } from '../../config/case_events';
 
 test(
-    'HWF Application Accepted',
+    'Consented - HWF Application Accepted',
     { tag: [] },
     async (
       { 
@@ -26,6 +26,6 @@ test(
       // HWF Payment
       await caseDetailsPage.selectNextStep(consentedEvents.HwfPaymentSubmission); 
       await hwfApplicationAcceptedPage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated();
+      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.HwfPaymentSubmission.listItem);
     }
 );
