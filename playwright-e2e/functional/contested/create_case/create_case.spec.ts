@@ -63,6 +63,8 @@ test(
 
     //respondent details
     await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name');
+    await respondentDetailsPage.checkRefugeFieldNotPresent();
+
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
