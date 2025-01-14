@@ -4,7 +4,7 @@
 Financial Remedy configuration definitions for CCD.
 
 This allows for the FR CCD Config to be easily edited and stored in GitHub as JSON rather than version controlled in Confluence as Xlsx files.
-
+#
 ## Setup
 
 To install the dependencies for both this project and the submodule (ccd-definition-processor), run:
