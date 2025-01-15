@@ -1,10 +1,10 @@
 import { type Page, Locator } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
-import { RadioEnum } from '../../helpers/enums/Refuge';
+import { RadioEnum } from '../../helpers/enums/RadioEnum';
 
 export class ApplicantDetailsPage extends BaseJourneyPage {
-    
+
     private readonly applicantDetailsPrivateRadio: Locator;
     private readonly applicantInRefugeRadio: Locator;
 
@@ -19,7 +19,7 @@ export class ApplicantDetailsPage extends BaseJourneyPage {
     }
 
     private async selectApplicantDetailsPrivate(keepPrivate: boolean) {
-        const radioOption = keepPrivate ? 'Yes' : 'No'; 
+        const radioOption = keepPrivate ? 'Yes' : 'No';
         const optionToSelect = this.applicantDetailsPrivateRadio.getByLabel(radioOption)
         await optionToSelect.check();
     }
@@ -45,8 +45,8 @@ export class ApplicantDetailsPage extends BaseJourneyPage {
         await this.selectApplicantInRefuge(applicantInRefuge);
         await this.commonActionsHelper.enterUkAddress(this.page);
     }
-    
+
     async enterApplicantDetailsConsented(firstName: string, lastName: string){
-        await this.commonActionsHelper.enterNames(this.page, firstName, lastName); 
+        await this.commonActionsHelper.enterNames(this.page, firstName, lastName);
     }
 }
