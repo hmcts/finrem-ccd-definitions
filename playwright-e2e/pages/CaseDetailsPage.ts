@@ -41,22 +41,35 @@ export class CaseDetailsPage {
         await expect(this.successfulUpdateBanner).toContainText(event);
     }
 
-    async assertTabData(tab: Tab) {
-        const tabHeader = this.getTabHeader(tab.tabName);
-        await expect(tabHeader).toBeVisible();
-        await tabHeader.click();
-    
-        for (const content of tab.tabContent) {
-          const contentElement = this.getTabContent(content);
-          await expect(contentElement).toBeVisible();
+  async assertTabData(tabs: Tab[]) {
+    for (const tab of tabs) {
+      const tabHeader = this.getTabHeader(tab.tabName);
+      await expect(tabHeader).toBeVisible();
+      await tabHeader.click();
+
+      for (const content of tab.tabContent) {
+        if (typeof content === 'string') {
+          // Handle string content
+          const tabItem = this.getTabContent(content);
+          await expect(tabItem).toBeVisible();
+        } else {
+          // Handle TabContent object
+          const tabItem = this.getTabContent(content.tabItem);
+          await expect(tabItem).toBeVisible();
+
+          // Traverse to the sibling <td> and assert it contains value
+          const tabValue = tabItem.locator('xpath=../following-sibling::td');
+          await expect(tabValue).toHaveText(content.value);
         }
+      }
     }
-    
-    private getTabHeader(tabName: string): Locator {
-        return this.page.getByRole('tab', { name: tabName });
-    }
-    
-    private getTabContent(content: string): Locator {
-        return this.page.getByText(content, { exact: true });
-    }
+  }
+
+  private getTabHeader(tabName: string): Locator {
+    return this.page.getByRole('tab', { name: tabName, exact: true });
+  }
+
+  private getTabContent(content: string): Locator {
+    return this.page.getByText(content, { exact: true });
+  }
 }

@@ -27,16 +27,7 @@ export class ApplicantDetailsPage extends BaseJourneyPage {
     // When Refuge is neither YES or NO, then checkbox remains blank as question optional.
     // Assign required Refuge values to constants (they resolve as undefined when accessed directly)
     private async selectApplicantInRefuge(applicantInRefuge: RadioEnum) {
-        const cYes = RadioEnum.YES;
-        const cNO = RadioEnum.NO;
-        switch (applicantInRefuge) {
-            case cYes:
-                await this.applicantInRefugeRadio.getByLabel(cYes).check();
-                break;
-            case cNO:
-                await this.applicantInRefugeRadio.getByLabel(cNO).check();
-                break;
-        }
+        await this.applicantInRefugeRadio.getByLabel(applicantInRefuge).check();
     }
 
     async enterApplicantDetailsContested(firstName: string, lastName: string, keepPrivate: boolean, applicantInRefuge: RadioEnum){

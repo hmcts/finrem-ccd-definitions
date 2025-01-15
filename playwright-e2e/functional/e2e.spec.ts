@@ -12,14 +12,17 @@ test(
       loginPage,
       manageCaseDashboardPage,
       caseDetailsPage,
+      solicitorAuthPage,
+      helpWithFeesPage,
+      paymentPage,
+      orderSummaryPage,
       caseSubmissionPage,
-      hwfApplicationAcceptedPage,
       issueApplicationPage,
       approveApplicationPage,
-      sendOrderPage
     }
   ) => {
-    const caseId = await utils.createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+
+    const caseId = await utils.createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
     
     // Login as Solicitor
     await manageCaseDashboardPage.visit();
@@ -28,10 +31,13 @@ test(
   
     // Application Payment Submission 
     await caseDetailsPage.selectNextStep(consentedEvents.ApplicationPaymentSubmission); 
-    await caseSubmissionPage.navigateContinue();
-    await caseSubmissionPage.navigateContinue();
-    await caseSubmissionPage.navigateContinue();
-    await caseSubmissionPage.navigateContinue();
+    await solicitorAuthPage.enterSolicitorDetails("Bilbo Baggins", "Bag End", "Solicitor");
+    await solicitorAuthPage.navigateContinue();
+    await helpWithFeesPage.selectHelpWithFees(false);
+    await helpWithFeesPage.navigateContinue();
+    await paymentPage.enterPaymentDetails("PBA0000539", "Reference");
+    await paymentPage.navigateContinue();
+    await orderSummaryPage.navigateContinue();
     await caseSubmissionPage.navigateContinue();
     await caseSubmissionPage.navigateSubmit();
     await caseSubmissionPage.returnToCaseDetails();
@@ -44,11 +50,6 @@ test(
     // Login as caseworker
     await loginPage.login(config.caseWorker.email, config.caseWorker.password);
     await manageCaseDashboardPage.navigateToCase(caseId);
-  
-    // HWF Payment
-    await caseDetailsPage.selectNextStep(consentedEvents.HwfPaymentSubmission); 
-    await hwfApplicationAcceptedPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.HwfPaymentSubmission.listItem);
   
     // Issue Application
     await caseDetailsPage.selectNextStep(consentedEvents.IssueApplication); 
@@ -71,17 +72,5 @@ test(
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();
     await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApproveApplication.listItem);
-  
-    // // Logout
-    await manageCaseDashboardPage.signOut();
-  
-    // // Login as caseworker
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password);
-    await manageCaseDashboardPage.navigateToCase(caseId);
-      
-    // // Send order
-    await caseDetailsPage.selectNextStep(consentedEvents.SendOrder); 
-    await sendOrderPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.SendOrder.listItem);
   }
 );

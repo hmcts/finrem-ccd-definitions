@@ -3,6 +3,7 @@ import config from '../../config/config';
 // NOTE: When we remove codecept tests, bring utils and test data into the playwright directory
 import * as utils from '../../../test/helpers/utils';
 import { consentedEvents } from '../../config/case_events';
+import { approvedOrderTabData } from '../../data/tab_content/consented/approve_application_tabs';
 
 test(
     'Consented - Approve Application',
@@ -15,9 +16,9 @@ test(
         approveApplicationPage,
       },
     ) => {
-      const caseId = await utils.createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './test/data/ccd-consented-basic-data.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+      const caseId = await utils.createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
       const caseSubmission = await utils.updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
-      const hwfPaymentAccepted = await utils.updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './test/data/ccd-consented-basic-data.json');
+      const hwfPaymentAccepted = await utils.updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json');
       const issueApplication = await utils.updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyMVP2', 'FR_issueApplication', './test/data/ccd-consented-case-worker-issue-data.json');
   
       // Login in as judge
@@ -34,20 +35,7 @@ test(
       await approveApplicationPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApproveApplication.listItem);
 
-      // Assert Tab Data
-      const tabData = {
-        tabName: 'Approved Order',
-        tabContent: [
-          'Approved Order Letter',
-          'ApprovedConsentOrderLetter.pdf',
-          'Consent Order / Variation Order Annexed and Stamped',
-          'Pension Documents Stamped',
-          'Pension Documents Stamped 1',
-          'Type of document',
-          'Form P1'
-        ],
-      };
-      
-      await caseDetailsPage.assertTabData(tabData);
+      // Assert Tab Data      
+      await caseDetailsPage.assertTabData(approvedOrderTabData);
     }
 );

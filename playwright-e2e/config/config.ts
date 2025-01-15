@@ -29,8 +29,8 @@ const configuration = {
   },
 
   applicant_solicitor: {
-    email: process.env.USERNAME_SOLICITOR || '',
-    password: process.env.PASSWORD_SOLICITOR || '',
+    email: process.env.PLAYWRIGHT_SOLICITOR_USERNAME || '',
+    password: process.env.PLAYWRIGHT_SOLICITOR_PSWD || '',
   },
 
   respondent_solicitor: {

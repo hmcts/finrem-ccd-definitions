@@ -1,6 +1,7 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { RadioEnum } from '../../../pages/helpers/enums/Refuge';
+import { createCaseTabData } from '../../../data/tab_content/contested/create_case_tabs';
 
 test(
   'Contested - Create Case FormA Submission',
@@ -134,6 +135,9 @@ test(
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
+
+    // Asset tab data
+    await caseDetailsPage.assertTabData(createCaseTabData);
 
     // Note: Financial Assets page produces accessibility issues
     if (config.run_accessibility) {
