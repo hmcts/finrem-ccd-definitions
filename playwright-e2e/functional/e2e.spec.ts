@@ -18,7 +18,7 @@ test(
       orderSummaryPage,
       caseSubmissionPage,
       issueApplicationPage,
-      approveApplicationPage,
+      approveApplicationPage
     }
   ) => {
 
@@ -31,11 +31,11 @@ test(
   
     // Application Payment Submission 
     await caseDetailsPage.selectNextStep(consentedEvents.ApplicationPaymentSubmission); 
-    await solicitorAuthPage.enterSolicitorDetails("Bilbo Baggins", "Bag End", "Solicitor");
+    await solicitorAuthPage.enterSolicitorDetails('Bilbo Baggins', 'Bag End', 'Solicitor');
     await solicitorAuthPage.navigateContinue();
     await helpWithFeesPage.selectHelpWithFees(false);
     await helpWithFeesPage.navigateContinue();
-    await paymentPage.enterPaymentDetails("PBA0000539", "Reference");
+    await paymentPage.enterPaymentDetails('PBA0000539', 'Reference');
     await paymentPage.navigateContinue();
     await orderSummaryPage.navigateContinue();
     await caseSubmissionPage.navigateContinue();

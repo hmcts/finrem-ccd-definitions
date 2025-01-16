@@ -20,7 +20,7 @@ test(
     ) => {
         const caseId = await utils.createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
       
-        // Login as caseworker
+        // Login as solicitor
         await manageCaseDashboardPage.visit();
         await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
         await manageCaseDashboardPage.navigateToCase(caseId);

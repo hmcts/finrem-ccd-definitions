@@ -28,20 +28,21 @@
     "applicantSolicitorDXnumber": null,
     "applicantSolicitorConsentForEmails": "Yes",
     "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
-    "divorceCaseNumber": "ZZ21D47302",
+    "divorceCaseNumber": "LV12D12345",
     "civilPartnership": "No",
-    "dateOfMarriage": "2021-01-01",
+    "dateOfMarriage": "1999-01-01",
     "dateOfSepration": "2022-01-01",
     "divorcePetitionIssuedDate": "2023-01-01",
     "nameOfCourtDivorceCentre": "Shire Court",
-    "divorceStageReached": "Decree Nisi",
-    "divorceUploadEvidence1": {
-    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/acdfbdcc-421f-4061-84a4-ff37dec453af",
-    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/acdfbdcc-421f-4061-84a4-ff37dec453af/binary",
-    "document_filename": "test.pdf"
+    "divorceStageReached": "Petition Issued",
+    "divorceUploadPetition": {
+        "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6fc1ed85-2ef1-4740-b1b8-1e1c7dd4fbbf",
+        "document_filename": "PETITION FORM A.docx",
+        "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6fc1ed85-2ef1-4740-b1b8-1e1c7dd4fbbf/binary",
+        "upload_timestamp": "2025-01-16T09:46:21.592232195"
     },
     "divorceDecreeNisiDate": "2024-01-01",
-    "applicantFMName": "Frod",
+    "applicantFMName": "Frodo",
     "applicantLName": "Baggins",
     "applicantResideOutsideUK": "No",
     "applicantAddress": {
@@ -55,9 +56,9 @@
     },
     "applicantPhone": null,
     "applicantEmail": null,
-    "applicantAddressConfidential": "No",
+    "applicantAddressConfidential": "Yes",
     "applicantInRefugeQuestion": "Yes",
-    "respondentFMName": "Smeagle",
+    "respondentFMName": "Smeagol",
     "respondentLName": "Gollum",
     "respondentRepresented": "Yes",
     "RespondentOrganisationPolicy": {
