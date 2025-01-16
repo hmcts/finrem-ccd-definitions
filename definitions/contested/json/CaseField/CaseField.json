@@ -6714,15 +6714,6 @@
   {
     "LiveFrom": "05/10/2020",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "ordersToShare",
-    "Label": "Select Order/Orders",
-    "FieldType": "DynamicMultiSelectList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "05/10/2020",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "partiesOnCase",
     "Label": "Who should receive this order?",
     "FieldType": "DynamicMultiSelectList",
