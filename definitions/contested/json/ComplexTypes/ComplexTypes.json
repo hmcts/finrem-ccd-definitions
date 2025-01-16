@@ -886,6 +886,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "24/12/2024",
+    "ID": "FR_ct_directionOrderCollection",
+    "ListElementCode": "originalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Original Document",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_directionDetailCollection",
     "ListElementCode": "isAnotherHearingYN",
@@ -3080,6 +3090,16 @@
     "ListElementCode": "isOrderStamped",
     "FieldType": "YesOrNo",
     "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/12/2024",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "originalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Original Document",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
