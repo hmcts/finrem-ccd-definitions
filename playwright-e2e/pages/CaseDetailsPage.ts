@@ -1,6 +1,6 @@
 import { type Page, expect, Locator } from '@playwright/test';
 import { CaseEvent } from '../config/case_events';
-import { Tab } from './components/tab';
+import { Tab, TabContentItem } from './components/tab';
 
 export class CaseDetailsPage {
 
@@ -41,35 +41,49 @@ export class CaseDetailsPage {
         await expect(this.successfulUpdateBanner).toContainText(event);
     }
 
-  async assertTabData(tabs: Tab[]) {
-    for (const tab of tabs) {
-      const tabHeader = this.getTabHeader(tab.tabName);
+    async assertTabData(tabs: Tab[]) {
+      for (const tab of tabs) {
+        await this.assertTabHeader(tab.tabName);
+        await this.assertTabContent(tab.tabContent);
+        if (tab.excludedContent) {
+          await this.assertExcludedContent(tab.excludedContent);
+        }
+      }
+    }
+    
+    private async assertTabHeader(tabName: string): Promise<void> {
+      const tabHeader = this.getTabHeader(tabName);
       await expect(tabHeader).toBeVisible();
       await tabHeader.click();
-
-      for (const content of tab.tabContent) {
+    }
+    
+    private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
+      for (const content of tabContent) {
         if (typeof content === 'string') {
-          // Handle string content
           const tabItem = this.getTabContent(content);
           await expect(tabItem).toBeVisible();
         } else {
-          // Handle TabContent object
           const tabItem = this.getTabContent(content.tabItem);
           await expect(tabItem).toBeVisible();
-
-          // Traverse to the sibling <td> and assert it contains value
+    
           const tabValue = tabItem.locator('xpath=../following-sibling::td');
           await expect(tabValue).toHaveText(content.value);
         }
       }
     }
-  }
-
-  private getTabHeader(tabName: string): Locator {
-    return this.page.getByRole('tab', { name: tabName, exact: true });
-  }
-
-  private getTabContent(content: string): Locator {
-    return this.page.getByText(content, { exact: true });
-  }
+    
+    private async assertExcludedContent(excludedContent: string[]): Promise<void> {
+      for (const excluded of excludedContent) {
+        const tabItem = this.getTabContent(excluded);
+        await expect(tabItem).not.toBeVisible();
+      }
+    }
+    
+    private getTabHeader(tabName: string): Locator {
+      return this.page.getByRole('tab', { name: tabName, exact: true });
+    }
+    
+    private getTabContent(content: string): Locator {
+      return this.page.getByText(content, { exact: true });
+    }
 }

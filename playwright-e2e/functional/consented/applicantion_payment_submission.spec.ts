@@ -23,7 +23,7 @@ test(
       
       // Login as caseworker
       await manageCaseDashboardPage.visit();
-      await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
+      await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
   
       // Application Payment Submission 

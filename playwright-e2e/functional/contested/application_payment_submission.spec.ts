@@ -1,7 +1,7 @@
-import { test, expect } from '../../../fixtures/fixtures';
-import config from '../../../config/config';
-import * as utils from '../../../../test/helpers/utils';
-import { contestedEvents } from '../../../config/case_events';
+import { test } from '../../fixtures/fixtures';
+import config from '../../config/config';
+import * as utils from '../../../test/helpers/utils';
+import { contestedEvents } from '../../config/case_events';
 
 test(
     'Contested - Application Payment Submission',
@@ -22,7 +22,7 @@ test(
       
         // Login as solicitor
         await manageCaseDashboardPage.visit();
-        await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
+        await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
         await manageCaseDashboardPage.navigateToCase(caseId);
   
         // Application Payment Submission 

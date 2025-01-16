@@ -26,7 +26,7 @@ test(
     
     // Login as Solicitor
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
+    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
     await manageCaseDashboardPage.navigateToCase(caseId);
   
     // Application Payment Submission 
@@ -48,7 +48,7 @@ test(
     await manageCaseDashboardPage.signOut();
   
     // Login as caseworker
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password);
+    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
     await manageCaseDashboardPage.navigateToCase(caseId);
   
     // Issue Application

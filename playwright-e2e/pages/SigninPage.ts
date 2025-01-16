@@ -15,7 +15,7 @@ export class SigninPage {
     this.signinButtonLocator = page.getByRole('button', { name: 'Sign in' });
   }
 
-  async login(email: string, password: string) {   
+  async login(email: string, password: string, expectedUrl: string) {   
     await expect(this.emailInputLocator).toBeVisible();
     await this.emailInputLocator.fill(email);
     await expect(this.passwordInputLocator).toBeVisible();
@@ -23,6 +23,6 @@ export class SigninPage {
     await expect(this.signinButtonLocator).toBeVisible();
     await expect(this.signinButtonLocator).toBeEnabled();
     await this.signinButtonLocator.click();
-    await this.page.waitForURL(`${config.manageCaseBaseURL}**`);
+    await this.page.waitForURL(`${expectedUrl}**`);
   }
 }

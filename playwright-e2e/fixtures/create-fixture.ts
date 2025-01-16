@@ -32,6 +32,7 @@ import { SolicitorAuthPage } from '../pages/events/application-payment-submissio
 import { HelpWithFeesPage } from '../pages/events/application-payment-submission/HelpWithFeesPage';
 import { PaymentPage } from '../pages/events/application-payment-submission/PaymentPage';
 import { OrderSummaryPage } from '../pages/events/application-payment-submission/OrderSummaryPage';
+import { ManageOrgDashboardPage } from '../pages/ManageOrgDashboardPag';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -58,6 +59,7 @@ type CreateFixtures = {
   caseDetailsPage: CaseDetailsPage;
   createCaseCheckYourAnswersPage: CreateCaseCheckYourAnswersPage;
   manageCaseDashboardPage: ManageCaseDashboardPage;
+  manageOrgDashboardPage: ManageOrgDashboardPage;
   solicitorAuthPage: SolicitorAuthPage;
   helpWithFeesPage: HelpWithFeesPage;
   paymentPage: PaymentPage;
@@ -132,6 +134,9 @@ export const test = base.extend<CreateFixtures>({
   }, 
   manageCaseDashboardPage: async ({ page }, use) => {
     await use(new ManageCaseDashboardPage(page));
+  },
+  manageOrgDashboardPage: async ({ page }, use) => {
+    await use(new ManageOrgDashboardPage(page));
   },
   solicitorAuthPage: async ({ page }, use) => {
     await use(new SolicitorAuthPage(page));
