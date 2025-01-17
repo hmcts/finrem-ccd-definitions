@@ -81,7 +81,7 @@ def secrets = [
                 secret('barrister1-password', 'PASSWORD_BARRISTER1'),
                 secret('username-caa', 'USERNAME_CAA'),
                 secret('password-caa', 'PASSWORD_CAA'),
-                secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR')
+                secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
                 secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
                 secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
                 secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
