@@ -44,8 +44,9 @@ export class ManageOrgDashboardPage extends BaseJourneyPage {
     await matSelection.click();
     this.addBtn.click();
     this.navigateContinue();
-    await this.page.waitForTimeout(500); 
     this.navigateConfirm();
+    // Wait for case to available in the case list
+    await this.page.waitForTimeout(1000)
   }
 
   async visit(){

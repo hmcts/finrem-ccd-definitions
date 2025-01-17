@@ -23,7 +23,7 @@ test(
   
       // Login in as judge
       await manageCaseDashboardPage.visit();
-      await loginPage.login(config.judge.email, config.judge.password);
+      await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
   
       // Approve Application 

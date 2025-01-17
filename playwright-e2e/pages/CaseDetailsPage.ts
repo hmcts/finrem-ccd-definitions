@@ -65,7 +65,7 @@ export class CaseDetailsPage {
         } else {
           const tabItem = this.getTabContent(content.tabItem);
           await expect(tabItem).toBeVisible();
-    
+
           const tabValue = tabItem.locator('xpath=../following-sibling::td');
           await expect(tabValue).toHaveText(content.value);
         }
