@@ -16,7 +16,6 @@ export class ManageCaseDashboardPage {
   async navigateToCase(caseId: string) {
     await this.page.waitForLoadState();
     const url = `${this.url}/cases/case-details/${caseId}`;
-    console.log("navigating to: " + url);
     await this.page.goto(url);
     await expect(this.page.getByText(String(caseId).replace(/(\d{4})(?=\d)/g, '$1-'))).toBeVisible();
   }
