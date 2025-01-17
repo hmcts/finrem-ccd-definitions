@@ -1,9 +1,10 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import * as utils from '../../../test/helpers/utils';
+import { respondentAssignedCaseTabs } from '../../data/tab_content/contested/respondent_assigned_case_tabs';
 
 test(
-  'Contested - Caseworker view tabs post case creation',
+  'Contested - Respondent Assigned Case',
   { tag: [] },
   async (
     { 
@@ -29,22 +30,5 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Assert tab data
-    caseDetailsPage.assertTabData([
-      {
-        tabName: 'Applicant',
-        tabContent: [
-          "Applicant’s Details",
-          { tabItem: "Current First and Middle names", value: "Frodo" },
-          { tabItem: "Current Last Name", value: "Baggins" },
-          "Urgent Case",
-          { tabItem: "Is this an urgent case ?", value: "No" },
-          "Is the Applicant represented ?",
-          { tabItem: "Keep the Applicant's contact details private from the Respondent?", value: "Yes" },
-          "Solicitor Details",
-          { tabItem: "Your reference number", value: "AUTO-assign-to-judge" },
-          { tabItem: "Solicitor’s name", value: "Bilbo Bagins" },
-          { tabItem: "Solicitor’s firm", value: "FinRem-1-Org" },
-        ],
-        excludedContent: ["Is the Applicant currently a resident in a refuge?"]
-      }])
+    caseDetailsPage.assertTabData(respondentAssignedCaseTabs);
 });

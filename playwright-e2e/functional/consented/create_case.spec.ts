@@ -26,7 +26,7 @@ test(
   ) => {
     // Sign in
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
+    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
 
     // Start the consented case
     await createCasePage.startCase(
