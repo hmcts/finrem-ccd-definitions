@@ -2,10 +2,9 @@
   {
     "LiveFrom": "16/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "ordersToShareCollection",
+    "ID": "ordersToShare",
     "Label": "Which order would you like to send?",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "FR_orderToShare",
+    "FieldType": "DynamicMultiSelectList",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
