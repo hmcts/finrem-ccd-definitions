@@ -48,7 +48,7 @@ test(
     // Select whether the applicant is represented or not. Then enter applicant details
     await solicitorDetailsPage.setApplicantRepresentation(true);
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
-    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Bagins', config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.enterSolicitorsFirm('Finrem-1-Org');
     await solicitorDetailsPage.enterReferenceNumber('123456');
     await solicitorDetailsPage.enterUKaddress();

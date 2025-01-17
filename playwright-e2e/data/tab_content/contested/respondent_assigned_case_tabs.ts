@@ -10,7 +10,7 @@ export const respondentAssignedCaseTabs = [{
     { tabItem: "Keep the Applicant's contact details private from the Respondent?", value: "Yes" },
     "Solicitor Details",
     { tabItem: "Your reference number", value: "AUTO-assign-to-judge" },
-    { tabItem: "Solicitor’s name", value: "Bilbo Bagins" },
+    { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
     { tabItem: "Solicitor’s firm", value: "FinRem-1-Org" },
     ],
     excludedContent: ["Is the Applicant currently a resident in a refuge?"]

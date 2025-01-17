@@ -39,7 +39,7 @@ test(
 
     // Enter applicant details
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
-    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Bagins', config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.setEmailConsent(config.caseType.consented);
     await solicitorDetailsPage.navigateContinue();
 
@@ -126,7 +126,7 @@ test(
     await solicitorDetailsPage.setApplicantRepresentation(true);
     await solicitorDetailsPage.enterFirmName('Finrem-1-Org');
     await solicitorDetailsPage.enterUKaddress();
-    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Bagins', config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.setEmailConsent(config.caseType.consented)
     await solicitorDetailsPage.navigateContinue();
     

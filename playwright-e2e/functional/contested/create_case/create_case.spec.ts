@@ -49,7 +49,7 @@ test(
 
     // Enter applicant details
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
-    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Bagins', config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
     await solicitorDetailsPage.navigateContinue();
 

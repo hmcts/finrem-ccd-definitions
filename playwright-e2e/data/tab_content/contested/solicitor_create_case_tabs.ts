@@ -12,7 +12,7 @@ export const createCaseTabData = [
       { tabItem: "Is the Applicant currently a resident in a refuge?", value: "Yes" },
       "Solicitor Details",
       { tabItem: "Your reference number", value: "Y707HZM" },
-      { tabItem: "Solicitor’s name", value: "Bilbo Bagins" },
+      { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
       { tabItem: "Solicitor’s firm", value: "FinRem-1-Org" },
     ]
   }, 
