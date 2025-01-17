@@ -1,14 +1,14 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import * as utils from '../../../../test/helpers/utils';
 import config from '../../../config/config';
-import { RadioEnum } from '../../../pages/helpers/enums/Refuge';
+import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
 
 test(
   'Contested - Create Case FormA Submission',
   { tag: ['@accessibility'] },
   async (
-    { 
+    {
       loginPage,
       manageCaseDashboardPage,
       createCasePage,
@@ -65,6 +65,8 @@ test(
 
     //respondent details
     await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
+    await respondentDetailsPage.checkRefugeFieldNotPresent();
+
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
