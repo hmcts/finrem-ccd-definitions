@@ -1,0 +1,37 @@
+[
+  {
+    "LiveFrom": "27/01/2025",
+    "ID": "FR_sendOrderToOrdersToShareCollection",
+    "CaseEventID": "FR_sendOrder",
+    "CaseFieldID": "ordersToShareCollection",
+    "ListElementCode": "documentToShare",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "27/01/2025",
+    "ID": "FR_sendOrderToOrdersToShareCollection",
+    "CaseEventID": "FR_sendOrder",
+    "CaseFieldID": "ordersToShareCollection",
+    "ListElementCode": "hasSupportingDocuments",
+    "DisplayContext": "READONLY",
+    "FieldShowCondition": "ordersToShareCollection.documentToShare=\"DO_NOT_SHOW\""
+  },
+  {
+    "LiveFrom": "27/01/2025",
+    "ID": "FR_sendOrderToOrdersToShareCollection",
+    "CaseEventID": "FR_sendOrder",
+    "CaseFieldID": "ordersToShareCollection",
+    "ListElementCode": "includeSupportingDocument",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "ordersToShareCollection.hasSupportingDocuments=\"Yes\""
+  },
+  {
+    "LiveFrom": "27/01/2025",
+    "ID": "FR_sendOrderToOrdersToShareCollection",
+    "CaseEventID": "FR_sendOrder",
+    "CaseFieldID": "ordersToShareCollection",
+    "ListElementCode": "attachmentsToShare",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "ordersToShareCollection.includeSupportingDocument=\"Yes\""
+  }
+]

@@ -11,6 +11,24 @@
   {
     "LiveFrom": "17/01/2025",
     "ID": "FR_orderToShare",
+    "ListElementCode": "hasSupportingDocuments",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "<hidden field>",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_orderToShare",
+    "ListElementCode": "includeSupportingDocument",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Include supporting documents",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_orderToShare",
     "ListElementCode": "attachmentsToShare",
     "FieldType": "DynamicMultiSelectList",
     "ElementLabel": " ",
