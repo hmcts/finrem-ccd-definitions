@@ -32,7 +32,7 @@ export const consentedEvents: Record<string, CaseEvent> = {
 
 export const contestedEvents: Record<string, CaseEvent> = {
     CreateCase: {
-        listItem: "Consent Order Application",
+        listItem: "Form A Application",
         ccdCallback: "FR_solicitorCreate"
     },
     ApplicationPaymentSubmission: {
