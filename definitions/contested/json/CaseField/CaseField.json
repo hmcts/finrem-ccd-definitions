@@ -7441,6 +7441,28 @@
     "CategoryID": null
   },
   {
+    "LiveFrom": "12/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "pfdNcdrComplianceLetter",
+    "Label": "PFD NCDR Compliance Letter",
+    "HintText": "PFD NCDR Compliance Letter",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": null
+  },
+  {
+    "LiveFrom": "12/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "pfdNcdrCoverLetter",
+    "Label": "PFD NCDR Cover Letter",
+    "HintText": "PFD NCDR Cover Letter",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": null
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "uploadConsentedOrder",
@@ -7804,6 +7826,42 @@
     "ID": "userCaseAccessList",
     "Label": "Please select user case access to remove",
     "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "20/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantInRefugeTab",
+    "Label": "Is the Applicant currently a resident in a refuge?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "20/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantInRefugeQuestion",
+    "Label": "Is the Applicant currently a resident in a refuge?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentInRefugeTab",
+    "Label": "Is the Respondent currently a resident in a refuge?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/11/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentInRefugeQuestion",
+    "Label": "Is the Respondent currently a resident in a refuge?",
+    "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
