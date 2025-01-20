@@ -1,9 +1,38 @@
 [
   {
     "LiveFrom": "17/01/2025",
+    "ID": "FR_attachmentToShare",
+    "ListElementCode": "attachmentName",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_attachmentToShare",
+    "ListElementCode": "documentToShare",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_sendOrderSelected",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_orderToShare",
+    "ListElementCode": "documentName",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
     "ID": "FR_orderToShare",
     "ListElementCode": "documentToShare",
-    "FieldType": "DynamicMultiSelectList",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_sendOrderSelected",
     "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -30,7 +59,8 @@
     "LiveFrom": "17/01/2025",
     "ID": "FR_orderToShare",
     "ListElementCode": "attachmentsToShare",
-    "FieldType": "DynamicMultiSelectList",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_attachmentToShare",
     "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
