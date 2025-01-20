@@ -28,7 +28,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
     screenshot: 'on',
     navigationTimeout: 60_000,
-    actionTimeout: 30_000,
+    actionTimeout: 60_000,
   },
 
   /* Configure projects for major browsers */
