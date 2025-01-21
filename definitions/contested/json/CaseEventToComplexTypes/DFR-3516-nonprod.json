@@ -31,7 +31,7 @@
     "CaseFieldID": "ordersToShareCollection",
     "ListElementCode": "includeSupportingDocument",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "ordersToShareCollection.hasSupportingDocuments=\"Yes\""
+    "FieldShowCondition": "ordersToShareCollection.hasSupportingDocuments=\"Yes\" AND ordersToShareCollection.documentToShare CONTAINS \"YES\""
   },
   {
     "LiveFrom": "27/01/2025",
