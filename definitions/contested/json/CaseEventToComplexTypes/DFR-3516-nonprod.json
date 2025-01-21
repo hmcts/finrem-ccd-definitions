@@ -13,7 +13,7 @@
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "ordersToShareCollection",
     "ListElementCode": "documentToShare",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "ordersToShareCollection.documentName=\"*\""
   },
   {
@@ -31,8 +31,8 @@
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "ordersToShareCollection",
     "ListElementCode": "includeSupportingDocument",
-    "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "ordersToShareCollection.hasSupportingDocuments=\"Yes\" AND ordersToShareCollection.documentToShare CONTAINS \"YES\""
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "ordersToShareCollection.hasSupportingDocuments=\"Yes\" AND ordersToShareCollection.documentToShare=\"Yes\""
   },
   {
     "LiveFrom": "21/01/2025",
@@ -41,7 +41,7 @@
     "CaseFieldID": "ordersToShareCollection",
     "ListElementCode": "attachmentsToShare",
     "DisplayContext": "COMPLEX",
-    "FieldShowCondition": "ordersToShareCollection.includeSupportingDocument=\"Yes\""
+    "FieldShowCondition": "ordersToShareCollection.includeSupportingDocument CONTAINS \"YES\" AND ordersToShareCollection.documentToShare=\"Yes\""
   },
   {
     "LiveFrom": "21/01/2025",
@@ -57,7 +57,6 @@
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "ordersToShareCollection",
     "ListElementCode": "attachmentsToShare.documentToShare",
-    "EventElementLabel": " ",
     "DisplayContext": "OPTIONAL"
   }
 ]

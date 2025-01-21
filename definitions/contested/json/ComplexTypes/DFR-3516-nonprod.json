@@ -12,9 +12,8 @@
     "LiveFrom": "17/01/2025",
     "ID": "FR_attachmentToShare",
     "ListElementCode": "documentToShare",
-    "FieldType": "MultiSelectList",
-    "FieldTypeParameter": "FR_sendOrderSelected",
-    "ElementLabel": " ",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Send?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -31,9 +30,8 @@
     "LiveFrom": "17/01/2025",
     "ID": "FR_orderToShare",
     "ListElementCode": "documentToShare",
-    "FieldType": "MultiSelectList",
-    "FieldTypeParameter": "FR_sendOrderSelected",
-    "ElementLabel": " ",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Send?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -50,7 +48,8 @@
     "LiveFrom": "17/01/2025",
     "ID": "FR_orderToShare",
     "ListElementCode": "includeSupportingDocument",
-    "FieldType": "YesOrNo",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_yesOnly",
     "ElementLabel": "Include supporting documents",
     "SecurityClassification": "Public",
     "Searchable": "N"
