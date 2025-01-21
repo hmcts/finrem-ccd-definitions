@@ -3,14 +3,14 @@
     "LiveFrom": "29/10/2024",
     "ID": "FR_typeOfDraftOrderList",
     "ListElementCode": "anAgreedOrderFollowingAHearing",
-    "ListElement": "An agreed order following a hearing (agreed by the Judge and parties at the hearing)",
+    "ListElement": "An agreed order following a hearing (agreed by the parties at the hearing)",
     "DisplayOrder": 1
   },
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_typeOfDraftOrderList",
     "ListElementCode": "aSuggestedDraftOrderPriorToAListedHearing",
-    "ListElement": "A suggested draft order prior to a listed hearing",
+    "ListElement": "A suggested draft order prior to a listed hearing (this will just be placed on file for the hearing)",
     "DisplayOrder": 2
   },
   {
@@ -56,8 +56,8 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_fl_draftOrderOrderStatus",
-    "ListElementCode": "PROCESSED_BY_ADMIN",
-    "ListElement": "Processed by admin",
+    "ListElementCode": "PROCESSED",
+    "ListElement": "Processed",
     "DisplayOrder": 3
   },
   {
