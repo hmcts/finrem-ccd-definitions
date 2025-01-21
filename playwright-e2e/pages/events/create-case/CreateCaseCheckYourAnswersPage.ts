@@ -1,6 +1,6 @@
 import { Page, expect, Locator } from "playwright/test";
 import { BaseJourneyPage } from "../../BaseJourneyPage";
-import { RadioEnum } from "../../helpers/enums/Refuge";
+import { RadioEnum } from "../../helpers/enums/RadioEnum";
 
 export class CreateCaseCheckYourAnswersPage extends BaseJourneyPage{
 
