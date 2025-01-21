@@ -859,7 +859,7 @@
     "ID": "FR_ct_directionOrderCollection",
     "ListElementCode": "uploadDraftDocument",
     "FieldType": "Document",
-    "ElementLabel": "Upload  Document",
+    "ElementLabel": "Upload Document",
     "HintText": "PLEASE NOTE: You must upload a PDF version of document",
     "SecurityClassification": "Public",
     "Searchable": "N",
@@ -881,6 +881,16 @@
     "ListElementCode": "isOrderStamped",
     "FieldType": "YesOrNo",
     "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/12/2024",
+    "ID": "FR_ct_directionOrderCollection",
+    "ListElementCode": "originalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Original Document",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
@@ -3060,7 +3070,7 @@
     "ID": "view_finalOrderCollection",
     "ListElementCode": "uploadDraftDocument",
     "FieldType": "Document",
-    "ElementLabel": "Upload  Document",
+    "ElementLabel": "Upload Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "approvedOrders"
@@ -3080,6 +3090,16 @@
     "ListElementCode": "isOrderStamped",
     "FieldType": "YesOrNo",
     "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/12/2024",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "originalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Original Document",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
