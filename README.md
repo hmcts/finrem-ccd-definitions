@@ -208,4 +208,3 @@ NOTE: Jenkins will populate Judge details in the PROD configs that is not availa
 
 Follow this guide for releasing a new config file to Production:
 https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+Production
-
