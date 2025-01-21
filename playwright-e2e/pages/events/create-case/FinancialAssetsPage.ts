@@ -6,6 +6,8 @@ export class FinancialAssetsPage extends BaseJourneyPage {
     private readonly complexityListMultiChoice: Locator;
     private readonly netAssetsMultiChoice: Locator;
     private readonly netFamilyHomeValueTxtBox: Locator;
+    private readonly netAssetsMultiChoicePaperCase: Locator;
+
 
     // Note: Have only check one of the checkbox options
     private readonly potentialIssuesNotApplicableCheckbox: Locator;
@@ -14,6 +16,7 @@ export class FinancialAssetsPage extends BaseJourneyPage {
         super(page);
         this.complexityListMultiChoice = this.page.locator('#addToComplexityListOfCourts');
         this.netAssetsMultiChoice = this.page.locator('#estimatedAssetsChecklistV2');
+        this.netAssetsMultiChoicePaperCase = this.page.locator('#estimatedAssetsChecklist');
         this.netFamilyHomeValueTxtBox = this.page.locator('#netValueOfHome');
         this.potentialIssuesNotApplicableCheckbox = this.page.locator('#potentialAllegationChecklist-notApplicable');
     }
@@ -24,6 +27,11 @@ export class FinancialAssetsPage extends BaseJourneyPage {
 
     async selectAssetsValue(value: string){
         await this.netAssetsMultiChoice.getByLabel(value).check();
+    }
+
+    // Follow up bug on PaperCase form - Kate
+    async checkAssetsValue(value: string){
+        await this.netAssetsMultiChoicePaperCase.getByLabel(value).check();
     }
 
     async insertFamilyHomeValue(value: string) {

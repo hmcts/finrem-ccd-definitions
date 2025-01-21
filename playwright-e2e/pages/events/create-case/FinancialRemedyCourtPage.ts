@@ -73,4 +73,8 @@ export class FinancialRemedyCourtPage extends BaseJourneyPage {
     async enterFrcReason() {
         await this.frcReasonTxtBox.fill("FRC Reason")
     }
+
+    async enterHomeCourtReason() {
+        await this.reasonForHomeCourtTxtBox.fill("FRC Reason")
+    }
 }
