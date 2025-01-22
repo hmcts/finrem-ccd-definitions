@@ -9,6 +9,7 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
 
     private readonly respondentRepresentedRadioConsented: Locator;
     private readonly solicitorsFirmInput: Locator;
+    private readonly respondentInRefugeRadio: Locator;
 
     private readonly commonActionsHelper: CommonActionsHelper;
     private readonly solicitorDetailsHelper: SolicitorDetailsHelper;
@@ -21,20 +22,21 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
         this.solicitorsFirmInput = page.getByLabel('Solicitor’s firm');
 
         this.respondentRepresentedRadioConsented = page.locator('#appRespondentRep_radio')
+        this.respondentInRefugeRadio = page.locator('#respondentInRefugeQuestion_radio')
     }
 
     async selectRespondentRepresentedContested(represented: boolean) {
-        const radioOption = represented ? 'Yes' : 'No'; 
+        const radioOption = represented ? 'Yes' : 'No';
         const optionToSelect = this.respondentRepresentedRadioContested.getByLabel(radioOption);
         await optionToSelect.check();
     }
 
     async selectRespondentRepresentedConsented(represented: boolean) {
-        const radioOption = represented ? 'Yes' : 'No'; 
+        const radioOption = represented ? 'Yes' : 'No';
         const optionToSelect = this.respondentRepresentedRadioConsented.getByLabel(radioOption);
         await optionToSelect.check();
     }
-    
+
     async enterSolicitorsDetails(solicitorName: string, solicitorEmail: string){
         await this.solicitorsFirmInput.fill('firm');
         await this.solicitorDetailsHelper.enterSolicitorName(this.page, solicitorName);
@@ -46,4 +48,10 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
     async selectOrganisation(orgName: string) {
         await this.solicitorDetailsHelper.selectOrganisation(this.page, orgName)
      }
+
+    async selectRespondentInRefuge(respondentInRefuge: boolean) {
+        const radioOption = respondentInRefuge ? 'Yes' : 'No';
+        const optionToSelect = this.respondentInRefugeRadio.getByLabel(radioOption);
+        await optionToSelect.check();
+    }
 }
