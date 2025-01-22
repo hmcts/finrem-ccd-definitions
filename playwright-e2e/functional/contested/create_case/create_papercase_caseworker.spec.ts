@@ -100,7 +100,7 @@ test(
 
     //Financial assets
     await financialAssetsPage.selectComplexityList('Yes');
-    await financialAssetsPage.checkAssetsValue('Under £1 million');
+    await financialAssetsPage.selectAssetsValuePaperCase('Under £1 million');
     await financialAssetsPage.insertFamilyHomeValue('125,000');
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();

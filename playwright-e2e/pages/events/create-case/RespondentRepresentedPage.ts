@@ -2,7 +2,6 @@ import { type Page, Locator } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import { SolicitorDetailsHelper } from '../../helpers/SolicitorDetailsHelper';
-import {RadioEnum} from "../../helpers/enums/RadioEnum";
 
 export class RespondentRepresentedPage extends BaseJourneyPage{
 

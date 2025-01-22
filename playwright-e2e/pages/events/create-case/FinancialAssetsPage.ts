@@ -11,7 +11,7 @@ export class FinancialAssetsPage extends BaseJourneyPage {
 
     // Note: Have only check one of the checkbox options
     private readonly potentialIssuesNotApplicableCheckbox: Locator;
-   
+
     public constructor(page: Page) {
         super(page);
         this.complexityListMultiChoice = this.page.locator('#addToComplexityListOfCourts');
@@ -29,8 +29,7 @@ export class FinancialAssetsPage extends BaseJourneyPage {
         await this.netAssetsMultiChoice.getByLabel(value).check();
     }
 
-    // Follow up bug on PaperCase form - Kate
-    async checkAssetsValue(value: string){
+    async selectAssetsValuePaperCase(value: string){
         await this.netAssetsMultiChoicePaperCase.getByLabel(value).check();
     }
 
