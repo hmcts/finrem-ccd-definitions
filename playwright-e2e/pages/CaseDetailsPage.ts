@@ -1,6 +1,6 @@
 import { type Page, expect, Locator } from '@playwright/test';
-import config from '../config/config';
 import { CaseEvent } from '../config/case_events';
+import { Tab, TabContentItem } from './components/tab';
 
 export class CaseDetailsPage {
 
@@ -36,7 +36,54 @@ export class CaseDetailsPage {
         }).toPass();
     }
 
-    async checkHasBeenUpdated() {
+    async checkHasBeenUpdated(event: string) {
         await expect(this.successfulUpdateBanner).toBeVisible();
+        await expect(this.successfulUpdateBanner).toContainText(event);
+    }
+
+    async assertTabData(tabs: Tab[]) {
+      for (const tab of tabs) {
+        await this.assertTabHeader(tab.tabName);
+        await this.assertTabContent(tab.tabContent);
+        if (tab.excludedContent) {
+          await this.assertExcludedContent(tab.excludedContent);
+        }
+      }
+    }
+    
+    private async assertTabHeader(tabName: string): Promise<void> {
+      const tabHeader = this.getTabHeader(tabName);
+      await expect(tabHeader).toBeVisible();
+      await tabHeader.click();
+    }
+    
+    private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
+      for (const content of tabContent) {
+        if (typeof content === 'string') {
+          const tabItem = this.getTabContent(content);
+          await expect(tabItem).toBeVisible();
+        } else {
+          const tabItem = this.getTabContent(content.tabItem);
+          await expect(tabItem).toBeVisible();
+
+          const tabValue = tabItem.locator('xpath=../following-sibling::td');
+          await expect(tabValue).toHaveText(content.value);
+        }
+      }
+    }
+    
+    private async assertExcludedContent(excludedContent: string[]): Promise<void> {
+      for (const excluded of excludedContent) {
+        const tabItem = this.getTabContent(excluded);
+        await expect(tabItem).not.toBeVisible();
+      }
+    }
+    
+    private getTabHeader(tabName: string): Locator {
+      return this.page.getByRole('tab', { name: tabName, exact: true });
+    }
+    
+    private getTabContent(content: string): Locator {
+      return this.page.getByText(content, { exact: true });
     }
 }

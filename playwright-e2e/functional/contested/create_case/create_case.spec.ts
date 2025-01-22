@@ -1,12 +1,14 @@
 import { test, expect } from '../../../fixtures/fixtures';
+import { createCaseInCcd } from '../../../../test/helpers/utils';
 import config from '../../../config/config';
-import { RadioEnum } from '../../../pages/helpers/enums/Refuge';
+import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
+import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
 
 test(
-  'Create Case - Contested FormA Submission',
+  'Contested - Create Case FormA Submission',
   { tag: ['@accessibility'] },
   async (
-    { 
+    {
       loginPage,
       manageCaseDashboardPage,
       createCasePage,
@@ -34,7 +36,7 @@ test(
   ) => {
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
+    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
 
     // Manage/Create case
     await createCasePage.startCase(
@@ -47,7 +49,7 @@ test(
 
     // Enter applicant details
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
-    await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
     await solicitorDetailsPage.navigateContinue();
 
@@ -58,18 +60,20 @@ test(
     //applicant details
     const keepPrivate: boolean = true;
     const applicantInRefuge: RadioEnum = RadioEnum.YES;
-    await applicantDetailsPage.enterApplicantDetailsContested('App First Name', 'App Last Name', keepPrivate, applicantInRefuge);
+    await applicantDetailsPage.enterApplicantDetailsContested('Frodo', 'Baggins', keepPrivate, applicantInRefuge);
     await applicantDetailsPage.navigateContinue();
 
     //respondent details
-    await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name');
+    await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
+    await respondentDetailsPage.checkRefugeFieldNotPresent();
+
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
-    await respondentRepresentedPage.enterSolicitorsDetails('Test Respondent', config.applicant_solicitor.email);
+    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
@@ -135,6 +139,9 @@ test(
 
     await caseDetailsPage.checkHasBeenCreated();
 
+    // Assert tab data
+    await caseDetailsPage.assertTabData(createCaseTabData);
+
     // Note: Financial Assets page produces accessibility issues
     if (config.run_accessibility) {
       const accessibilityScanResults = await makeAxeBuilder().analyze();
@@ -148,3 +155,24 @@ test(
     }
   }
 );
+
+test(
+  'Contested - Caseworker view tabs post case creation',
+  { tag: [] },
+  async (
+    { 
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage
+    }
+  ) => {
+    const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+        
+    // Login as caseworker
+    await manageCaseDashboardPage.visit();
+    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+
+    // Assert tab data
+    await caseDetailsPage.assertTabData(createCaseTabData);
+});
