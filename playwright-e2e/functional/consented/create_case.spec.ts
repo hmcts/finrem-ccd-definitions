@@ -2,7 +2,7 @@ import { test, expect } from '../../fixtures/fixtures';
 import config from '../../config/config';
 
 test(
-  'Create Case - Consented Journey Submission',
+  'Consented - Create Case',
   { tag: ['@accessibility'] },
   async (
     { loginPage,
@@ -26,7 +26,7 @@ test(
   ) => {
     // Sign in
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password);
+    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
 
     // Start the consented case
     await createCasePage.startCase(
@@ -39,7 +39,7 @@ test(
 
     // Enter applicant details
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
-    await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.setEmailConsent(config.caseType.consented);
     await solicitorDetailsPage.navigateContinue();
 
@@ -48,12 +48,12 @@ test(
     await divorceDetailsPage.navigateContinue();
 
     //applicant details
-    await applicantDetailsPage.enterApplicantDetailsConsented('App First Name', 'App Last Name');
+    await applicantDetailsPage.enterApplicantDetailsConsented('Frodo', 'Baggins');
     await financialRemedyCourtPage.selectCourtZoneDropDown();
     await applicantDetailsPage.navigateContinue();
 
     //respondent details
-    await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name');
+    await respondentDetailsPage.enterRespondentNames('Gollum', 'Smeagol');
     await respondentRepresentedPage.selectRespondentRepresentedConsented(false);
     await respondentDetailsPage.enterRespondentAddress();
     await respondentDetailsPage.navigateContinue();
@@ -110,7 +110,7 @@ test(
   ) => {
     // Sign in
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password);
+    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
 
     // Start the consented case
     await createCasePage.startCase(
@@ -125,7 +125,7 @@ test(
     await solicitorDetailsPage.setApplicantRepresentation(true);
     await solicitorDetailsPage.enterFirmName('Finrem-1-Org');
     await solicitorDetailsPage.enterUKaddress();
-    await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.setEmailConsent(config.caseType.consented)
     await solicitorDetailsPage.navigateContinue();
     
