@@ -2,56 +2,64 @@
   {
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "ordersToShareCollection",
-    "ListElementCode": "documentName",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "21/01/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "ordersToShareCollection",
-    "ListElementCode": "documentToShare",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "21/01/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "ordersToShareCollection",
-    "ListElementCode": "hasSupportingDocuments",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "21/01/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "ordersToShareCollection",
-    "ListElementCode": "includeSupportingDocument",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRU"
-  },
-  {
-    "LiveFrom": "21/01/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "ordersToShareCollection",
-    "ListElementCode": "attachmentsToShare",
+    "CaseFieldID": "otsw",
+    "ListElementCode": "ordersToShareCollection.documentName",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   },
   {
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "ordersToShareCollection",
-    "ListElementCode": "attachmentsToShare.attachmentName",
+    "CaseFieldID": "otsw",
+    "ListElementCode": "ordersToShareCollection.documentToShare",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   },
   {
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "ordersToShareCollection",
-    "ListElementCode": "attachmentsToShare.documentToShare",
+    "CaseFieldID": "otsw",
+    "ListElementCode": "ordersToShareCollection.hasSupportingDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "21/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "otsw",
+    "ListElementCode": "ordersToShareCollection.includeSupportingDocument",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "21/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "otsw",
+    "ListElementCode": "ordersToShareCollection.attachmentsToShare",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "21/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "otsw",
+    "ListElementCode": "ordersToShareCollection.attachmentsToShare.attachmentName",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "21/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "otsw",
+    "ListElementCode": "ordersToShareCollection.attachmentsToShare.documentToShare",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "21/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "otsw",
+    "ListElementCode": "ordersToShareCollection",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   }

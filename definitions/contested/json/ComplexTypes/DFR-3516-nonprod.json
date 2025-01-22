@@ -1,7 +1,7 @@
 [
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_attachmentToShare",
+    "ID": "FR_attachmentsToShare",
     "ListElementCode": "attachmentName",
     "FieldType": "Text",
     "ElementLabel": " ",
@@ -10,7 +10,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_attachmentToShare",
+    "ID": "FR_attachmentsToShare",
     "ListElementCode": "documentToShare",
     "FieldType": "YesOrNo",
     "ElementLabel": "Send?",
@@ -19,7 +19,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_orderToShare",
+    "ID": "FR_ordersToShare",
     "ListElementCode": "documentName",
     "FieldType": "Text",
     "ElementLabel": " ",
@@ -28,7 +28,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_orderToShare",
+    "ID": "FR_ordersToShare",
     "ListElementCode": "documentToShare",
     "FieldType": "YesOrNo",
     "ElementLabel": "Send?",
@@ -37,7 +37,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_orderToShare",
+    "ID": "FR_ordersToShare",
     "ListElementCode": "hasSupportingDocuments",
     "FieldType": "YesOrNo",
     "ElementLabel": "<hidden field>",
@@ -46,7 +46,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_orderToShare",
+    "ID": "FR_ordersToShare",
     "ListElementCode": "includeSupportingDocument",
     "FieldType": "MultiSelectList",
     "FieldTypeParameter": "FR_yesOnly",
@@ -56,10 +56,20 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_orderToShare",
+    "ID": "FR_ordersToShare",
     "ListElementCode": "attachmentsToShare",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_attachmentToShare",
+    "FieldTypeParameter": "FR_attachmentsToShare",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_ordersToShareWrapper",
+    "ListElementCode": "ordersToShareCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ordersToShare",
     "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
