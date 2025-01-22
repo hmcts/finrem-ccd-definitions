@@ -95,6 +95,12 @@ Once the environment variables are configured and dependencies are installed, yo
 yarn playwright test <./playwright-e2e/functional/test_folder/test_file.ts>
 ```
 
+Running all the tests using the VS Code extension can be very resource intensive, instead run all test headless through the terminal using cmd. (Note: The intel macs can usually only handle 1 worker):
+```
+yarn playwright test playwright-e2e --project=chromium --workers=1   
+```
+
+
 ## 🎬 Debugging
 
 Playwright provides a couple of great debugging capabilities at all levels. The ones that you will probably find most useful are:

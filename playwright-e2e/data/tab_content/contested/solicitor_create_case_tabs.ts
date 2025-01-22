@@ -38,6 +38,7 @@ export const createCaseTabData = [
       "Respondent’s Solicitor’s Details",
       { tabItem: "Solicitor’s name", value: "Sauron" },
       { tabItem: "Solicitor’s firm", value: "Mnt Doom Sols" },
-    ]
+    ],
+    excludedContent: ["Is the Respondent currently a resident in a refuge?"]
   }
 ];

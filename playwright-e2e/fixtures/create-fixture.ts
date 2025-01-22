@@ -32,7 +32,7 @@ import { SolicitorAuthPage } from '../pages/events/application-payment-submissio
 import { HelpWithFeesPage } from '../pages/events/application-payment-submission/HelpWithFeesPage';
 import { PaymentPage } from '../pages/events/application-payment-submission/PaymentPage';
 import { OrderSummaryPage } from '../pages/events/application-payment-submission/OrderSummaryPage';
-import { ManageOrgDashboardPage } from '../pages/ManageOrgDashboardPag';
+import { ManageOrgDashboardPage } from '../pages/ManageOrgDashboardPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();

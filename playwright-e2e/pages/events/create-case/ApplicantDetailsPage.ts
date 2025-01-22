@@ -24,8 +24,6 @@ export class ApplicantDetailsPage extends BaseJourneyPage {
         await optionToSelect.check();
     }
 
-    // When Refuge is neither YES or NO, then checkbox remains blank as question optional.
-    // Assign required Refuge values to constants (they resolve as undefined when accessed directly)
     private async selectApplicantInRefuge(applicantInRefuge: RadioEnum) {
         await this.applicantInRefugeRadio.getByLabel(applicantInRefuge).check();
     }

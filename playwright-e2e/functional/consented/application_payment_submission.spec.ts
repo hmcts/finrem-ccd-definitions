@@ -1,7 +1,7 @@
 import { test } from '../../fixtures/fixtures'
 import config from '../../config/config';
 // NOTE: When we remove codecept tests, bring utils and test data into the playwright directory
-import * as utils from '../../../test/helpers/utils';
+import { createCaseInCcd } from '../../../test/helpers/utils';
 import { consentedEvents } from '../../config/case_events';
 
 test(
@@ -19,7 +19,7 @@ test(
         caseSubmissionPage
       },
     ) => {
-      const caseId = await utils.createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+      const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
       
       // Login as caseworker
       await manageCaseDashboardPage.visit();

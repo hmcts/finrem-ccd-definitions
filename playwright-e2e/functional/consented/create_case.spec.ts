@@ -68,7 +68,6 @@ test(
 
     // Upload variation Order Document
     await uploadOrderDocumentsPage.uploadConsentOrder();
-    await // new step 
     await uploadOrderDocumentsPage.navigateContinue();
     await uploadOrderDocumentsPage.selectAndUploadJointD81(false);
 

@@ -1,5 +1,5 @@
 import { test, expect } from '../../../fixtures/fixtures';
-import * as utils from '../../../../test/helpers/utils';
+import { createCaseInCcd } from '../../../../test/helpers/utils';
 import config from '../../../config/config';
 import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
@@ -139,7 +139,7 @@ test(
 
     await caseDetailsPage.checkHasBeenCreated();
 
-    // Asset tab data
+    // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
 
     // Note: Financial Assets page produces accessibility issues
@@ -166,13 +166,13 @@ test(
       caseDetailsPage
     }
   ) => {
-    const caseId = await utils.createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
         
     // Login as caseworker
     await manageCaseDashboardPage.visit();
     await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
-    // Asset tab data
+    // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
 });

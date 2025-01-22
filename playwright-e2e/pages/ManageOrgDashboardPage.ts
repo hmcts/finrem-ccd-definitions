@@ -39,7 +39,7 @@ export class ManageOrgDashboardPage extends BaseJourneyPage {
     await this.shareCaseBtn.click();
     this.emailAddressTxtBox.focus();
     await this.page.keyboard.type(assigneeEmail, { delay: 50 });
-    const matSelection = await this.page.getByText(`RESPONDENT RESPONDENT - ${assigneeEmail}`);
+    const matSelection = await this.page.getByText(`${assigneeEmail}`);
     await expect(matSelection).toBeVisible();
     await matSelection.click();
     this.addBtn.click();

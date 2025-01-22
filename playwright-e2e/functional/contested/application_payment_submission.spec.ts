@@ -1,10 +1,10 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import * as utils from '../../../test/helpers/utils';
+import { createCaseInCcd } from '../../../test/helpers/utils';
 import { contestedEvents } from '../../config/case_events';
 
 test(
-    'Contested - Application Payment Submission',
+    'Contested - Case Submission',
     { tag: [] },
     async (
       { 
@@ -18,14 +18,14 @@ test(
         caseSubmissionPage
       },
     ) => {
-        const caseId = await utils.createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+        const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
       
         // Login as solicitor
         await manageCaseDashboardPage.visit();
         await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
         await manageCaseDashboardPage.navigateToCase(caseId);
   
-        // Application Payment Submission 
+        // Case Submission 
         await caseDetailsPage.selectNextStep(contestedEvents.ApplicationPaymentSubmission); 
         await solicitorAuthPage.enterSolicitorDetails("Bilbo Baggins", "Bag End", "Solicitor");
         await solicitorAuthPage.navigateContinue();
