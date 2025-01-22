@@ -22,7 +22,12 @@ test(
     // Login to Mange org and assign case to respondent
     await manageOrgDashboardPage.visit();
     await loginPage.login(config.respondentCAA.email, config.respondentCAA.password, config.manageOrgBaseURL);
-    await manageOrgDashboardPage.assignToCase(caseId, config.respondent_solicitor.email);
+    await manageOrgDashboardPage.searchAndSelectCaseToAssign(caseId);
+    await manageOrgDashboardPage.assignCaseToRespondent(config.respondent_solicitor.email);
+    await manageOrgDashboardPage.navigateContinue();
+    await manageOrgDashboardPage.navigateConfirm();
+    // wait for case to be assignment to be processed. 
+    await manageOrgDashboardPage.wait(1000);
 
     // Login as respondent sol
     await manageCaseDashboardPage.visit();

@@ -28,14 +28,7 @@ export class ManageOrgDashboardPage extends BaseJourneyPage {
     this.addBtn = page.getByRole('button', { name: 'Add' });   
   }
 
-  async assignToCase(caseId: string, assigneeEmail: string) {
-    await this.page.waitForLoadState();
-    await this.unassignedCasesBtn.click();
-    await this.showUnassignedCaseFilterBtn.click();
-    await expect(this.caseNumberSearchTxtBox).toBeVisible();
-    await this.caseNumberSearchTxtBox.fill(`${caseId}`);
-    await this.applyFilterBtn.click();
-    this.page.locator(`#select-${caseId}`).click();;
+  async assignCaseToRespondent(assigneeEmail: string) {
     await this.shareCaseBtn.click();
     this.emailAddressTxtBox.focus();
     await this.page.keyboard.type(assigneeEmail, { delay: 50 });
@@ -43,10 +36,16 @@ export class ManageOrgDashboardPage extends BaseJourneyPage {
     await expect(matSelection).toBeVisible();
     await matSelection.click();
     this.addBtn.click();
-    this.navigateContinue();
-    this.navigateConfirm();
-    // Wait for case to available in the case list
-    await this.page.waitForTimeout(1000)
+  }
+
+  async searchAndSelectCaseToAssign(caseId: string) {
+    await this.page.waitForLoadState();
+    await this.unassignedCasesBtn.click();
+    await this.showUnassignedCaseFilterBtn.click();
+    await expect(this.caseNumberSearchTxtBox).toBeVisible();
+    await this.caseNumberSearchTxtBox.fill(`${caseId}`);
+    await this.applyFilterBtn.click();
+    this.page.locator(`#select-${caseId}`).click();
   }
 
   async visit(){

@@ -52,6 +52,10 @@ export abstract class BaseJourneyPage {
         await this.waitForSpinner();
     }
 
+    async wait(timeout: number) {
+      await this.page.waitForTimeout(timeout)
+    }
+
     private async waitForSpinner() {
       await expect
         .poll(
