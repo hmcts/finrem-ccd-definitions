@@ -41,6 +41,12 @@ This repository contains automation tests that can be run locally. To set up the
 
 
 ```
+export PLAYWRIGHT_SOLICITOR_USERNAME=example@mailinator.com
+export PLAYWRIGHT_SOLICITOR_PSWD=example
+export PLAYWRIGHT_RESPONDENT_SOL_USERNAME=example@mailinator.com
+export PLAYWRIGHT_RESPONDENT_SOL_PSWD=example
+export PLAYWRIGHT_RESP_CAA_USERNAME=example@mailinator.com
+export PLAYWRIGHT_RESP_CAA_PSWD=example
 export CCD_WEB_URL=https://example.com
 export CCD_ADMIN_USER_NAME=example@mailinator.com
 export CCD_ADMIN_PASSWORD=example
@@ -88,6 +94,12 @@ Once the environment variables are configured and dependencies are installed, yo
 ```
 yarn playwright test <./playwright-e2e/functional/test_folder/test_file.ts>
 ```
+
+Running all the tests using the VS Code extension can be very resource intensive, instead run all test headless through the terminal using cmd. (Note: The intel macs can usually only handle 1 worker):
+```
+yarn playwright test playwright-e2e --project=chromium --workers=1   
+```
+
 
 ## 🎬 Debugging
 

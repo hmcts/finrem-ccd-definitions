@@ -38,7 +38,7 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
     }
 
     async enterSolicitorsDetails(solicitorName: string, solicitorEmail: string){
-        await this.solicitorsFirmInput.fill('firm');
+        await this.solicitorsFirmInput.fill('Mnt Doom Sols');
         await this.solicitorDetailsHelper.enterSolicitorName(this.page, solicitorName);
         await this.commonActionsHelper.enterUkAddress(this.page);
         await this.commonActionsHelper.enterPhoneNumber(this.page);
