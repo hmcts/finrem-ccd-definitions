@@ -4,7 +4,7 @@
     "ID": "FR_sendOrderToOrdersToShareWrapper",
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.documentName",
+    "ListElementCode": "value.documentName",
     "DisplayContext": "READONLY"
   },
   {
@@ -12,43 +12,43 @@
     "ID": "FR_sendOrderToOrdersToShareWrapper",
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.documentToShare",
+    "ListElementCode": "value.documentToShare",
     "DisplayContext": "MANDATORY",
-    "FieldShowCondition": "otsw.ordersToShareCollection.documentName=\"*\""
+    "FieldShowCondition": "otsw.value.documentName=\"*\""
   },
   {
     "LiveFrom": "21/01/2025",
     "ID": "FR_sendOrderToOrdersToShareWrapper",
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.hasSupportingDocuments",
+    "ListElementCode": "value.hasSupportingDocuments",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "otsw.ordersToShareCollection.documentToShare=\"DO_NOT_SHOW\""
+    "FieldShowCondition": "otsw.value.documentToShare=\"DO_NOT_SHOW\""
   },
   {
     "LiveFrom": "21/01/2025",
     "ID": "FR_sendOrderToOrdersToShareWrapper",
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.includeSupportingDocument",
+    "ListElementCode": "value.includeSupportingDocument",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "otsw.ordersToShareCollection.hasSupportingDocuments=\"Yes\" AND otsw.ordersToShareCollection.documentToShare=\"Yes\""
+    "FieldShowCondition": "otsw.value.hasSupportingDocuments=\"Yes\" AND otsw.value.documentToShare=\"Yes\""
   },
   {
     "LiveFrom": "21/01/2025",
     "ID": "FR_sendOrderToOrdersToShareWrapper",
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.attachmentsToShare",
+    "ListElementCode": "value.attachmentsToShare",
     "DisplayContext": "COMPLEX",
-    "FieldShowCondition": "otsw.ordersToShareCollection.includeSupportingDocument CONTAINS \"YES\" AND otsw.ordersToShareCollection.documentToShare=\"Yes\""
+    "FieldShowCondition": "otsw.value.includeSupportingDocument CONTAINS \"YES\" AND otsw.value.documentToShare=\"Yes\""
   },
   {
     "LiveFrom": "21/01/2025",
     "ID": "FR_sendOrderToOrdersToShareWrapper",
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.attachmentsToShare.attachmentName",
+    "ListElementCode": "value.attachmentsToShare.attachmentName",
     "DisplayContext": "READONLY"
   },
   {
@@ -56,7 +56,7 @@
     "ID": "FR_sendOrderToOrdersToShareWrapper",
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.attachmentsToShare.documentToShare",
+    "ListElementCode": "value.attachmentsToShare.documentToShare",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -64,7 +64,7 @@
     "ID": "FR_sendOrderToOrdersToShareWrapper",
     "CaseEventID": "FR_sendOrder",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection",
+    "ListElementCode": "value",
     "DisplayContext": "COMPLEX"
   }
 ]

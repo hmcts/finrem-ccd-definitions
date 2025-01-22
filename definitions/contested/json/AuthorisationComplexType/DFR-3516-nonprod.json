@@ -3,7 +3,7 @@
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.documentName",
+    "ListElementCode": "value.documentName",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   },
@@ -11,7 +11,7 @@
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.documentToShare",
+    "ListElementCode": "value.documentToShare",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   },
@@ -19,7 +19,7 @@
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.hasSupportingDocuments",
+    "ListElementCode": "value.hasSupportingDocuments",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   },
@@ -27,7 +27,7 @@
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.includeSupportingDocument",
+    "ListElementCode": "value.includeSupportingDocument",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   },
@@ -35,7 +35,7 @@
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.attachmentsToShare",
+    "ListElementCode": "value.attachmentsToShare",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   },
@@ -43,7 +43,7 @@
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.attachmentsToShare.attachmentName",
+    "ListElementCode": "value.attachmentsToShare.attachmentName",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   },
@@ -51,7 +51,7 @@
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection.attachmentsToShare.documentToShare",
+    "ListElementCode": "value.attachmentsToShare.documentToShare",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   },
@@ -59,7 +59,7 @@
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "otsw",
-    "ListElementCode": "ordersToShareCollection",
+    "ListElementCode": "value",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   }
