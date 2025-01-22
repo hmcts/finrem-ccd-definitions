@@ -34,7 +34,7 @@ test(
   ) => {
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password);
+    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
 
     // Manage/Create case
     await createCasePage.startCase(
@@ -48,7 +48,7 @@ test(
     // Select whether the applicant is represented or not. Then enter applicant details
     await solicitorDetailsPage.setApplicantRepresentation(true);
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
-    await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.enterSolicitorsFirm('Finrem-1-Org');
     await solicitorDetailsPage.enterReferenceNumber('123456');
     await solicitorDetailsPage.enterUKaddress();
@@ -62,18 +62,18 @@ test(
     //applicant details
     const keepPrivate: boolean = true;
     const applicantInRefuge: RadioEnum = RadioEnum.YES;
-    await applicantDetailsPage.enterApplicantDetailsContested('App First Name', 'App Last Name', keepPrivate, applicantInRefuge);
+    await applicantDetailsPage.enterApplicantDetailsContested('Frodo', 'Baggins', keepPrivate, applicantInRefuge);
     await applicantDetailsPage.navigateContinue();
 
     //respondent details
-    await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name');
+    await respondentDetailsPage.enterRespondentNames('Gollum', 'Smeagol');
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
-    await respondentRepresentedPage.enterSolicitorsDetails('Test Respondent', config.applicant_solicitor.email);
+    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
