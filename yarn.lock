@@ -10917,9 +10917,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webdriver@npm:9.5.4":
-  version: 9.5.4
-  resolution: "webdriver@npm:9.5.4"
+"webdriver@npm:9.6.0":
+  version: 9.6.0
+  resolution: "webdriver@npm:9.6.0"
   dependencies:
     "@types/node": ^20.1.0
     "@types/ws": ^8.5.3
@@ -10931,13 +10931,13 @@ __metadata:
     deepmerge-ts: ^7.0.3
     undici: ^6.20.1
     ws: ^8.8.0
-  checksum: 7b2caff1a180008e5d6926f93d2b9fe207f10d5c3c9e2cd501d08f87522a3fed38d593fa3dfa89de35751c8146f3989c85537eba08db54117283cf8049207ee6
+  checksum: e6c3e5096c83a0310981f6bb72da1e7d05fa067a442e2e9794489e76a21678bbaefcc8038da29494f824a594cd0814e1ce3f9582649aa58f830bef1f8b89a675
   languageName: node
   linkType: hard
 
 "webdriverio@npm:^9.0.7":
-  version: 9.5.7
-  resolution: "webdriverio@npm:9.5.7"
+  version: 9.6.0
+  resolution: "webdriverio@npm:9.6.0"
   dependencies:
     "@types/node": ^20.11.30
     "@types/sinonjs__fake-timers": ^8.1.5
@@ -10965,13 +10965,13 @@ __metadata:
     rgb2hex: 0.2.5
     serialize-error: ^11.0.3
     urlpattern-polyfill: ^10.0.0
-    webdriver: 9.5.4
+    webdriver: 9.6.0
   peerDependencies:
     puppeteer-core: ^22.3.0
   peerDependenciesMeta:
     puppeteer-core:
       optional: true
-  checksum: 9cc7b4bf61a25e6de244f5ef8dc87d9c68b82a827f74309642eac7596c343554293dab35201420166f28863aad2d04bf9a7dc2ffd1c89263c5a85f1a540491cd
+  checksum: 252d46ee2fafca0b9a9197bc4e3a9818bfef239c8fb6c936656af206fee33360a1813f0ba55592978b5690e997078d30e710b5d9f257db50a0ba88747ebf160e
   languageName: node
   linkType: hard
 

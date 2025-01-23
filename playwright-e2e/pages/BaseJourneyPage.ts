@@ -5,8 +5,10 @@ export abstract class BaseJourneyPage {
 
     private readonly continueButton: Locator;
     private readonly previousButton: Locator;
+    private readonly confirmButton: Locator;
     private readonly submitButton: Locator
     private readonly spinner: Locator;
+
 
     public constructor(page: Page) {
         this.page = page;
@@ -14,6 +16,7 @@ export abstract class BaseJourneyPage {
         this.submitButton = page.getByRole('button', { name: 'Submit' });
         this.continueButton = page.getByRole('button', { name: 'Continue' });
         this.previousButton = page.getByRole('button', { name: 'Previous' });
+        this.confirmButton = page.getByRole('button', { name: 'Confirm' });
         this.spinner = this.page.locator("xuilib-loading-spinner");
     }
 
@@ -33,12 +36,24 @@ export abstract class BaseJourneyPage {
         await this.waitForSpinner();
     }
 
+    async navigateConfirm() {
+      await this.page.waitForLoadState();
+      await expect(this.confirmButton).toBeVisible();
+      await expect(this.confirmButton).toBeEnabled();
+      await this.confirmButton.click();
+      await this.waitForSpinner();
+    }
+
     async navigatePrevious() {
         await this.page.waitForLoadState();
         await expect(this.previousButton).toBeVisible();
         await expect(this.previousButton).toBeEnabled();
         await this.continueButton.click();
         await this.waitForSpinner();
+    }
+
+    async wait(timeout: number) {
+      await this.page.waitForTimeout(timeout)
     }
 
     private async waitForSpinner() {
