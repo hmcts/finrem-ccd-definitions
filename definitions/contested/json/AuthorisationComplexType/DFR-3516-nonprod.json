@@ -3,6 +3,14 @@
     "LiveFrom": "21/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "ordersToSend",
+    "ListElementCode": "value.documentId",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "21/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "ordersToSend",
     "ListElementCode": "value.documentName",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
@@ -36,6 +44,14 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "ordersToSend",
     "ListElementCode": "value.attachmentsToShare",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "21/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "ordersToSend",
+    "ListElementCode": "value.attachmentsToShare.documentId",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
   },
