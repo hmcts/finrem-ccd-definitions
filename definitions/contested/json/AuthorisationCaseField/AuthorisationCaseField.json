@@ -1305,7 +1305,28 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "draftDirectionOrderCollection",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "draftDirectionOrderCollection",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "draftDirectionOrderCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "draftDirectionOrderCollection",
+    "UserRole": "[RESPBARRISTER]",
     "CRUD": "CRUD"
   },
   {
@@ -6345,7 +6366,28 @@
     "LiveFrom": "01/01/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "judgesAmendedOrderCollection",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "judgesAmendedOrderCollection",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "judgesAmendedOrderCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "judgesAmendedOrderCollection",
+    "UserRole": "[RESPBARRISTER]",
     "CRUD": "R"
   },
   {
@@ -6380,7 +6422,28 @@
     "LiveFrom": "09/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "latestDraftHearingOrder",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "latestDraftHearingOrder",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "latestDraftHearingOrder",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "latestDraftHearingOrder",
+    "UserRole": "[RESPBARRISTER]",
     "CRUD": "R"
   },
   {
@@ -8228,7 +8291,28 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "finalOrderCollection",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "finalOrderCollection",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "finalOrderCollection",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "finalOrderCollection",
+    "UserRole": "[RESPBARRISTER]",
     "CRUD": "R"
   },
   {
