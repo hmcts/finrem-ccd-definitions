@@ -13,6 +13,6 @@ test(
       },
     ) => {
       await manageCaseDashboardPage.visit();
-      await loginPage.login(config.caseWorker.email, config.caseWorker.password);
+      await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
     }
 );
