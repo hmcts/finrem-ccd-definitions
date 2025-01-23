@@ -27,7 +27,12 @@ import { HwfApplicationAcceptedPage } from '../pages/events/hwf-application-acce
 import { SendOrderPage } from '../pages/events/send-order/SendOrderPage';
 import { IssueApplicationPage } from '../pages/events/issue-application/IssueApplicationPage';
 import { ApproveApplicationPage } from '../pages/events/approve-order/ApproveApplicationPage';
-import { CaseSubmissionPage } from '../pages/events/case-submission/CaseSubmissionPage';
+import { CaseSubmissionPage } from '../pages/events/application-payment-submission/CaseSubmissionPage';
+import { SolicitorAuthPage } from '../pages/events/application-payment-submission/SolicitorAuthPage';
+import { HelpWithFeesPage } from '../pages/events/application-payment-submission/HelpWithFeesPage';
+import { PaymentPage } from '../pages/events/application-payment-submission/PaymentPage';
+import { OrderSummaryPage } from '../pages/events/application-payment-submission/OrderSummaryPage';
+import { ManageOrgDashboardPage } from '../pages/ManageOrgDashboardPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -54,6 +59,11 @@ type CreateFixtures = {
   caseDetailsPage: CaseDetailsPage;
   createCaseCheckYourAnswersPage: CreateCaseCheckYourAnswersPage;
   manageCaseDashboardPage: ManageCaseDashboardPage;
+  manageOrgDashboardPage: ManageOrgDashboardPage;
+  solicitorAuthPage: SolicitorAuthPage;
+  helpWithFeesPage: HelpWithFeesPage;
+  paymentPage: PaymentPage;
+  orderSummaryPage: OrderSummaryPage;
   caseSubmissionPage: CaseSubmissionPage;
   hwfApplicationAcceptedPage: HwfApplicationAcceptedPage;
   issueApplicationPage: IssueApplicationPage;
@@ -124,6 +134,21 @@ export const test = base.extend<CreateFixtures>({
   }, 
   manageCaseDashboardPage: async ({ page }, use) => {
     await use(new ManageCaseDashboardPage(page));
+  },
+  manageOrgDashboardPage: async ({ page }, use) => {
+    await use(new ManageOrgDashboardPage(page));
+  },
+  solicitorAuthPage: async ({ page }, use) => {
+    await use(new SolicitorAuthPage(page));
+  },
+  helpWithFeesPage: async ({ page }, use) => {
+    await use(new HelpWithFeesPage(page));
+  },
+  paymentPage: async ({ page }, use) => {
+    await use(new PaymentPage(page));
+  },
+  orderSummaryPage: async ({ page }, use) => {
+    await use(new OrderSummaryPage(page));
   },
   caseSubmissionPage: async ({ page }, use) => {
     await use(new CaseSubmissionPage(page));
