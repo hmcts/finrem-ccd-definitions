@@ -15,7 +15,7 @@ export const createCaseTabData = [
       { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
       { tabItem: "Solicitor’s firm", value: "FinRem-1-Org" },
     ]
-  }, 
+  },
   {
     tabName: 'Divorce / Dissolution Details',
     tabContent: [
@@ -27,7 +27,7 @@ export const createCaseTabData = [
       { tabItem: "Upload Petition", value: "PETITION FORM A.docx" },
       { tabItem: "Does this FR case relate to a Dissolution of a Civil Partnership?", value: "No" }
     ]
-  }, 
+  },
   {
     tabName: 'Respondent',
     tabContent: [
