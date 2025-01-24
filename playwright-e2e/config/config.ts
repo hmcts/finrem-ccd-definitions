@@ -15,6 +15,9 @@ const configuration = {
   manageCaseBaseURL:
     process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`,
 
+  manageOrgBaseURL:
+    process.env.XUI_ORG_WEB_URL || `https://manage-org.${env}.platform.hmcts.net`,
+
   run_accessibility: 
     process.env.TESTS_FOR_ACCESSIBILITY || false, 
 
@@ -29,12 +32,18 @@ const configuration = {
   },
 
   applicant_solicitor: {
-    email: process.env.USERNAME_SOLICITOR || '',
-    password: process.env.PASSWORD_SOLICITOR || '',
+    email: process.env.PLAYWRIGHT_SOLICITOR_USERNAME || '',
+    password: process.env.PLAYWRIGHT_SOLICITOR_PSWD || '',
   },
 
   respondent_solicitor: {
-    email: process.env.USERNAME_RESPONDENT_SOLICITOR || 'fr_respondent_solicitor1@mailinator.com'
+    email: process.env.PLAYWRIGHT_RESPONDENT_SOL_USERNAME || 'fr_respondent_solicitor1@mailinator.com',
+    password: process.env.PLAYWRIGHT_RESPONDENT_SOL_PSWD || '',
+  },
+
+  respondentCAA: {
+    email: process.env.PLAYWRIGHT_RESP_CAA_USERNAME || '',
+    password: process.env.PLAYWRIGHT_RESP_CAA_PSWD || '',
   },
 
   jurisdiction: {

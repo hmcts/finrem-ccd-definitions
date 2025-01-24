@@ -54,8 +54,8 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         await this.marriageYear.fill('1999');
         await this.issueDay.fill('1');
         await this.issueMonth.fill('1');
-        await this.issueYear.fill('1999');
-        await this.courtName.fill('test');
+        await this.issueYear.fill('2023');
+        await this.courtName.fill('Shire Court');
         await this.divorceStage.selectOption(divorceStage);
         await this.uploadPetition.setInputFiles('./playwright-e2e/data/PETITION FORM A.docx');
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);

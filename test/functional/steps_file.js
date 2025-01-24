@@ -27,7 +27,6 @@ const { waitForContinueButtonEnabled } = require('./pages/common/common');
 const { waitForPage } = require('./pages/common/common');
 const { createCase, createPaperCase } = require('./pages/create-case/create-case');
 const { historyTab, applicantTab, respondentTab, divorceTab, natureOfApplicationTab, authorisationTab, caseDocumentsTab, paymentDetailsTab, judgeDetailsTab, adminNotesTab, contestedOrderTab, approvedOrderTab, gateKeepingAllocationsTab, schedulingAndListingTab, consentOrderProcessTab, verifyConsentedTabData, verifyContestedTabData, verifyContestedPaperTabData, verifyContestedConfidentialTabData, contestedIntervenersTab, schedule1Tab, changeOfRepresentativesTab, verifyManageBarristerEvent, verifyListForInterimHearing, verifyCaseFlagEvent, verifyGeneralApplicationTab} = require('./pages/tab-data-verification/tab-data-verification');
-const { assignContestedCase } = require('./pages/org-assign-cases/org-assign-cases-to-respondent');
 const { assignContestedShareCase } = require('./pages/share-case-in-org/share-case-in-org');
 const {contestedCaseworkerCreate, contestedCaseworkerCreatePaperCase} = require('./pages/caseworker-create/caseworker-create');
 const {pbaPayment} = require('./pages/pba-payment/pba-payment');
@@ -169,7 +168,6 @@ module.exports = () => {
     verifyConsentedTabData,
     verifyContestedTabData,
     verifyContestedPaperTabData,
-    assignContestedCase,
     assignContestedShareCase,
     contestedCaseworkerCreate,
     pbaPayment,

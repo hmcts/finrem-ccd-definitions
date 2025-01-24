@@ -8,6 +8,7 @@ export class MiamDetailsPage extends BaseJourneyPage {
     private readonly familyMediatorServiceNameTxtBox: Locator;
     private readonly soleTraderName: Locator;
     private readonly miamDocUpload: Locator
+    private readonly miamDocUploadPaperCase: Locator
 
     private readonly commonActionsHelper: CommonActionsHelper;
 
@@ -19,6 +20,7 @@ export class MiamDetailsPage extends BaseJourneyPage {
         this.familyMediatorServiceNameTxtBox = page.locator('#familyMediatorServiceName');
         this.soleTraderName = page.locator('#soleTraderName');
         this.miamDocUpload = page.locator('#uploadMediatorDocument')
+        this.miamDocUploadPaperCase = page.locator('#uploadMediatorDocumentPaperCase')
     }
 
     async enterMediatorRegistrationNumber(){
@@ -35,6 +37,11 @@ export class MiamDetailsPage extends BaseJourneyPage {
 
     async uploadMiamDoc(){
         await this.miamDocUpload.setInputFiles('./playwright-e2e/data/MIAM.pdf');
+        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+    }
+
+    async uploadMiamDocPaperCase(){
+        await this.miamDocUploadPaperCase.setInputFiles('./playwright-e2e/data/MIAM.pdf');
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 }
