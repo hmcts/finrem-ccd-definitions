@@ -2080,20 +2080,20 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^22.0.0":
-  version: 22.10.7
-  resolution: "@types/node@npm:22.10.7"
+  version: 22.10.9
+  resolution: "@types/node@npm:22.10.9"
   dependencies:
     undici-types: ~6.20.0
-  checksum: 2dce6c75c607c6269744f1ea2b5296e8685cd71d0dd5c599c3029626f9d2dc8b037912495cf68b30d6f39f44d3fa8b025e179662ef16dc363e0658425bedfde8
+  checksum: bd9a94fe5de516dcf13b4e9268696a99be3ba7146322c92b5ca3ea5368846cbb851843e2dda7030636653738405ea67e7bd972c630733420f84e199ad2c440ec
   languageName: node
   linkType: hard
 
 "@types/node@npm:^20.1.0, @types/node@npm:^20.11.30":
-  version: 20.17.14
-  resolution: "@types/node@npm:20.17.14"
+  version: 20.17.16
+  resolution: "@types/node@npm:20.17.16"
   dependencies:
     undici-types: ~6.19.2
-  checksum: a5a775f57271e5a73c9e1afc4f6ea0d24cb9b4856e3d7d1788ff9ba0cc3e3a90e7883383f183f193a36eed0c758809df626a9ad653458a06d4fc82644d89b6e0
+  checksum: dd19c04c592b602f20448187b4b6ab0293f22173a8bbe53aa3b559188f078b5261d748a107b84ee0580e2074cda760049b13d6e210f9850039bead01cb666a3f
   languageName: node
   linkType: hard
 
@@ -10936,8 +10936,8 @@ __metadata:
   linkType: hard
 
 "webdriverio@npm:^9.0.7":
-  version: 9.6.0
-  resolution: "webdriverio@npm:9.6.0"
+  version: 9.6.1
+  resolution: "webdriverio@npm:9.6.1"
   dependencies:
     "@types/node": ^20.11.30
     "@types/sinonjs__fake-timers": ^8.1.5
@@ -10971,7 +10971,7 @@ __metadata:
   peerDependenciesMeta:
     puppeteer-core:
       optional: true
-  checksum: 252d46ee2fafca0b9a9197bc4e3a9818bfef239c8fb6c936656af206fee33360a1813f0ba55592978b5690e997078d30e710b5d9f257db50a0ba88747ebf160e
+  checksum: efff18184a1f265649f71c85ec335e08c495f3bfead55bb50d0dcf5936c9f24779bc700453d29b242acbc516a373864ba365ba3b4ed77552599d30a02a5f00c3
   languageName: node
   linkType: hard
 
