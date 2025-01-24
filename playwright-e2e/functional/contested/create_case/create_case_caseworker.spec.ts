@@ -1,6 +1,7 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
+import { createCaseTabData } from '../../../data/tab_content/contested/caseworker_create_case_tabs';
 
 test(
   'Create Case - Contested FormA Submission',
@@ -49,8 +50,8 @@ test(
     await solicitorDetailsPage.setApplicantRepresentation(true);
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
-    await solicitorDetailsPage.enterSolicitorsFirm('Finrem-1-Org');
-    await solicitorDetailsPage.enterReferenceNumber('123456');
+    await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
+    await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
     await solicitorDetailsPage.enterUKaddress();
     await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
     await solicitorDetailsPage.navigateContinue();
@@ -66,7 +67,7 @@ test(
     await applicantDetailsPage.navigateContinue();
 
     //respondent details
-    await respondentDetailsPage.enterRespondentNames('Gollum', 'Smeagol');
+    await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
@@ -74,6 +75,7 @@ test(
       config.organisationNames.finRem2Org
     );
     await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
+    await respondentRepresentedPage.selectRespondentInRefuge(true);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
@@ -138,6 +140,9 @@ test(
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
+
+    // Assert tab data
+    await caseDetailsPage.assertTabData(createCaseTabData);
 
     // Note: Financial Assets page produces accessibility issues
     if (config.run_accessibility) {
