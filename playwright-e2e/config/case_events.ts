@@ -29,3 +29,14 @@ export const consentedEvents: Record<string, CaseEvent> = {
         ccdCallback: "FR_sendOrderForApproved"
     },
 };
+
+export const contestedEvents: Record<string, CaseEvent> = {
+    CreateCase: {
+        listItem: "Form A Application",
+        ccdCallback: "FR_solicitorCreate"
+    },
+    ApplicationPaymentSubmission: {
+        listItem: "Case Submission",
+        ccdCallback: "FR_applicationPaymentSubmission"
+    },
+}
