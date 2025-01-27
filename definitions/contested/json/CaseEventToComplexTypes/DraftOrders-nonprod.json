@@ -83,6 +83,14 @@
     "DisplayContext": "MANDATORY"
   },
   {
+    "LiveFrom": "09/01/2025",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "judgeNameGuidance",
+    "DisplayContext": "READONLY"
+  },
+  {
     "LiveFrom": "17/01/2025",
     "ID": "FR_AgreedDraftOrders",
     "CaseEventID": "FR_draftOrders",
