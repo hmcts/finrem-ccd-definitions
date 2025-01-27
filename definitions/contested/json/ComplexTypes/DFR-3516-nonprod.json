@@ -28,7 +28,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_ordersToShare",
+    "ID": "FR_orderToSend",
     "ListElementCode": "documentId",
     "FieldType": "Text",
     "ElementLabel": " ",
@@ -37,7 +37,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_ordersToShare",
+    "ID": "FR_orderToSend",
     "ListElementCode": "documentName",
     "FieldType": "Text",
     "ElementLabel": " ",
@@ -46,7 +46,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_ordersToShare",
+    "ID": "FR_orderToSend",
     "ListElementCode": "documentToShare",
     "FieldType": "YesOrNo",
     "ElementLabel": "Send?",
@@ -55,7 +55,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_ordersToShare",
+    "ID": "FR_orderToSend",
     "ListElementCode": "hasSupportingDocuments",
     "FieldType": "YesOrNo",
     "ElementLabel": "<hidden field>",
@@ -64,7 +64,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_ordersToShare",
+    "ID": "FR_orderToSend",
     "ListElementCode": "includeSupportingDocument",
     "FieldType": "MultiSelectList",
     "FieldTypeParameter": "FR_yesOnly",
@@ -74,7 +74,7 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_ordersToShare",
+    "ID": "FR_orderToSend",
     "ListElementCode": "attachmentsToShare",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_attachmentsToShare",
@@ -84,10 +84,10 @@
   },
   {
     "LiveFrom": "17/01/2025",
-    "ID": "FR_ordersToShareWrapper",
+    "ID": "FR_orderToSendWrapper",
     "ListElementCode": "value",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_ordersToShare",
+    "FieldTypeParameter": "FR_orderToSend",
     "ElementLabel": "Which order(s) would you like to send?",
     "SecurityClassification": "Public",
     "Searchable": "N"
