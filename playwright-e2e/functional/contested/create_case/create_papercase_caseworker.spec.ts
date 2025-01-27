@@ -2,11 +2,12 @@ import { test, expect } from '../../../fixtures/fixtures';
 import { createCaseInCcd } from '../../../../test/helpers/utils';
 import config from '../../../config/config';
 import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
-import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
+import {createCaseTabData} from "../../../data/tab_content/contested/caseworker_create_case_tabs";
 
+// Create a test case for the Contested Paper Case
 test(
-  'Contested - Create Case FormA Submission',
-  { tag: ['@accessibility'] },
+  'Create Case - Contested Paper Case',
+  { tag: ['@additionalTest'] },
   async (
     {
       loginPage,
@@ -36,21 +37,24 @@ test(
   ) => {
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
+    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
 
     // Manage/Create case
     await createCasePage.startCase(
       config.jurisdiction.familyDivorce,
       config.caseType.contested,
-      config.eventType.formA
+      config.eventType.paperCase
     );
 
     await startPage.navigateContinue();
 
-    // Enter applicant details
+    // Select whether the applicant is represented or not. Then enter applicant details
+    await solicitorDetailsPage.setApplicantRepresentation(true);
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
-    await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
+    await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
+    await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
+    await solicitorDetailsPage.enterUKaddress();
     await solicitorDetailsPage.navigateContinue();
 
     // Enter Divorce / Dissolution Details
@@ -65,8 +69,6 @@ test(
 
     //respondent details
     await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
-    await respondentDetailsPage.checkRefugeFieldNotPresent();
-
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
@@ -74,6 +76,7 @@ test(
       config.organisationNames.finRem2Org
     );
     await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
+    await respondentRepresentedPage.selectRespondentInRefuge(true);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
@@ -99,7 +102,7 @@ test(
 
     //Financial assets
     await financialAssetsPage.selectComplexityList('Yes');
-    await financialAssetsPage.selectAssetsValue('Under £250,000');
+    await financialAssetsPage.selectAssetsValuePaperCase('Under £1 million');
     await financialAssetsPage.insertFamilyHomeValue('125,000');
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
@@ -110,7 +113,7 @@ test(
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
     await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
-    await financialRemedyCourtPage.enterFrcReason();
+    await financialRemedyCourtPage.enterHomeCourtReason();
     await financialRemedyCourtPage.navigateContinue();
 
     // Has attended miam
@@ -121,7 +124,7 @@ test(
     await miamDetailsPage.enterMediatorRegistrationNumber();
     await miamDetailsPage.enterFamilyMediatorServiceName();
     await miamDetailsPage.enterSoleTraderName();
-    await miamDetailsPage.uploadMiamDoc();
+    await miamDetailsPage.uploadMiamDocPaperCase();
     await miamDetailsPage.navigateContinue();
 
     // Upload variation Order Document
@@ -131,8 +134,6 @@ test(
     await uploadOrderDocumentsPage.navigateContinue();
 
     //Continue about to submit and check your answers
-    await createCaseCheckYourAnswersPage.navigateContinue();
-
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
 
     await createCaseCheckYourAnswersPage.navigateSubmit();
@@ -155,24 +156,3 @@ test(
     }
   }
 );
-
-test(
-  'Contested - Caseworker view tabs post case creation',
-  { tag: [] },
-  async (
-    { 
-      loginPage,
-      manageCaseDashboardPage,
-      caseDetailsPage
-    }
-  ) => {
-    const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-        
-    // Login as caseworker
-    await manageCaseDashboardPage.visit();
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
-    await manageCaseDashboardPage.navigateToCase(caseId);
-
-    // Assert tab data
-    await caseDetailsPage.assertTabData(createCaseTabData);
-});
