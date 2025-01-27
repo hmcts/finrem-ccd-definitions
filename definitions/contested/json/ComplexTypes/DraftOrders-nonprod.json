@@ -17,7 +17,7 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "ElementLabel": "Upload additional attachments",
-    "HintText": "Please upload any additional attachments",
+    "HintText": "You must upload a PDF document.",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -638,7 +638,7 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "ElementLabel": "Upload additional attachments",
-    "HintText": "Please upload any additional attachments",
+    "HintText": "You must upload a PDF document.",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -667,6 +667,15 @@
     "ListElementCode": "hearingDetails",
     "ElementLabel": "Which hearing was this?",
     "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "09/01/2025",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "judgeNameGuidance",
+    "ElementLabel": "The hearing judge's name should be added to all uploaded draft orders.",
+    "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
