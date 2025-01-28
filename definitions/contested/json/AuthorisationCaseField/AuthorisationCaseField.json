@@ -15050,6 +15050,13 @@
     "CRUD": "R"
   },
   {
+    "LiveFrom": "17/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "ordersToSend",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
     "LiveFrom": "01/05/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "partiesOnCase",
@@ -18303,12 +18310,5 @@
     "CaseFieldID": "pfdNcdrCoverLetter",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "R"
-  },
-  {
-    "LiveFrom": "17/01/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "ordersToSend",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
   }
 ]
