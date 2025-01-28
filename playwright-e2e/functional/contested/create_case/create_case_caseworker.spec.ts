@@ -1,6 +1,7 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
+import { createCaseTabData } from '../../../data/tab_content/contested/caseworker_create_case_tabs';
 
 test(
   'Create Case - Contested FormA Submission',
@@ -34,7 +35,7 @@ test(
   ) => {
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password);
+    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
 
     // Manage/Create case
     await createCasePage.startCase(
@@ -48,9 +49,9 @@ test(
     // Select whether the applicant is represented or not. Then enter applicant details
     await solicitorDetailsPage.setApplicantRepresentation(true);
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
-    await solicitorDetailsPage.enterSolicitorDetails('Test App Sol', config.applicant_solicitor.email);
-    await solicitorDetailsPage.enterSolicitorsFirm('Finrem-1-Org');
-    await solicitorDetailsPage.enterReferenceNumber('123456');
+    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
+    await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
+    await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
     await solicitorDetailsPage.enterUKaddress();
     await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
     await solicitorDetailsPage.navigateContinue();
@@ -62,18 +63,19 @@ test(
     //applicant details
     const keepPrivate: boolean = true;
     const applicantInRefuge: RadioEnum = RadioEnum.YES;
-    await applicantDetailsPage.enterApplicantDetailsContested('App First Name', 'App Last Name', keepPrivate, applicantInRefuge);
+    await applicantDetailsPage.enterApplicantDetailsContested('Frodo', 'Baggins', keepPrivate, applicantInRefuge);
     await applicantDetailsPage.navigateContinue();
 
     //respondent details
-    await respondentDetailsPage.enterRespondentNames('Resp First Name', 'Resp Last Name');
+    await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
-    await respondentRepresentedPage.enterSolicitorsDetails('Test Respondent', config.applicant_solicitor.email);
+    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
+    await respondentRepresentedPage.selectRespondentInRefuge(true);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
@@ -138,6 +140,9 @@ test(
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
+
+    // Assert tab data
+    await caseDetailsPage.assertTabData(createCaseTabData);
 
     // Note: Financial Assets page produces accessibility issues
     if (config.run_accessibility) {

@@ -3,7 +3,6 @@ import { expect } from "playwright/test";
 
 export class SolicitorDetailsHelper {
 
-
     async selectOrganisation(page: Page, orgName: string) {
         const selectOrgButton = (orgName: string) =>
             page.locator(
