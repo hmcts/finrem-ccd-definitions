@@ -7,7 +7,16 @@
     "FieldTypeParameter": "Document",
     "ElementLabel": "Additional attachments",
     "SecurityClassification": "Public",
-    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/01/2025",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "additionalDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Additional attachments",
+    "SecurityClassification": "Public",
     "Searchable": "N"
   }
 ]
