@@ -9702,18 +9702,6 @@
   {
     "LiveFrom": "01/06/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_sendOrder",
-    "CaseFieldID": "sendOrderPostStateOption",
-    "PageFieldDisplayOrder": 2,
-    "DisplayContext": "MANDATORY",
-    "PageID": 4,
-    "PageDisplayOrder": 4,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_consentSendOrder",
     "CaseFieldID": "partiesOnCase",
     "PageFieldDisplayOrder": 1,
@@ -10616,6 +10604,19 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "17/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_sendOrder",
+    "CaseFieldID": "ordersToSend",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+  },
+  {
     "LiveFrom": "01/06/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_sendOrder",
@@ -10636,6 +10637,18 @@
     "DisplayContext": "OPTIONAL",
     "PageID": 3,
     "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_sendOrder",
+    "CaseFieldID": "sendOrderPostStateOption",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": 4,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
