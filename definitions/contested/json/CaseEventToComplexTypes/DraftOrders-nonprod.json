@@ -91,11 +91,29 @@
     "DisplayContext": "READONLY"
   },
   {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "judgeKnownAtHearing",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "judgeUnknownWarning",
+    "FieldShowCondition": "uploadAgreedDraftOrder.judgeKnownAtHearing=\"No\"",
+    "DisplayContext": "READONLY"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_AgreedDraftOrders",
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
     "ListElementCode": "judge",
+    "FieldShowCondition": "uploadAgreedDraftOrder.judgeKnownAtHearing=\"Yes\"",
     "DisplayContext": "MANDATORY"
   },
   {
