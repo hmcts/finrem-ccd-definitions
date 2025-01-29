@@ -698,6 +698,24 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "judgeKnownAtHearing",
+    "ElementLabel": "Do you know who was the judge at this hearing?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "judgeUnknownWarning",
+    "ElementLabel": "This may delay the judge approving your order",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_uploadAgreedDraftOrder",
     "ListElementCode": "judge",
