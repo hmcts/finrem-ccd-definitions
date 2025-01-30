@@ -1009,16 +1009,6 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "28/01/2025",
-    "ID": "view_finalOrderCollection",
-    "ListElementCode": "additionalDocuments",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
-    "ElementLabel": "Additional attachments",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_GeneralEmailDocument",
     "ListElementCode": "generalEmailRecipient",
@@ -3107,11 +3097,22 @@
     "CategoryID": "approvedOrders"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "24/12/2024",
     "ID": "view_finalOrderCollection",
-    "ListElementCode": "orderDateTime",
-    "FieldType": "DateTime",
-    "ElementLabel": "Order created at",
+    "ListElementCode": "originalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Original Document",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/01/2025",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "additionalDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Additional attachments",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3126,13 +3127,12 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "24/12/2024",
+    "LiveFrom": "01/01/2017",
     "ID": "view_finalOrderCollection",
-    "ListElementCode": "originalDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Original Document",
+    "ListElementCode": "orderDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order created at",
     "SecurityClassification": "Public",
-    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
   },
   {
