@@ -158,7 +158,7 @@ ccd:
       autoscaling:
         enabled: false
       imagePullPolicy: Always
-      image: hmctspublic.azurecr.io/ccd/data-store-api:latest
+      image: hmctspublic.azurecr.io/ccd/data-store-api:pr-2522
       devmemoryRequests: 1024Mi
       devcpuRequests: 2000m
       devmemoryLimits: 2058Mi
