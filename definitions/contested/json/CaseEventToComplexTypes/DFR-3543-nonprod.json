@@ -6,5 +6,13 @@
     "CaseFieldID": "draftDirectionOrderCollection",
     "ListElementCode": "additionalDocuments",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_directionOrder_to_uploadHearingOrder",
+    "CaseEventID": "FR_directionOrder",
+    "CaseFieldID": "uploadHearingOrder",
+    "ListElementCode": "additionalDocuments",
+    "DisplayContext": "OPTIONAL"
   }
 ]
