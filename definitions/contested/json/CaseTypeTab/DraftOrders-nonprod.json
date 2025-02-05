@@ -27,8 +27,17 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 18,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "draftOrdersReviewCollection!=\"\"",
+    "TabShowCondition": "isUnreviewedDocumentPresent=\"Yes\"",
     "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "DraftOrders-judiciary",
+    "TabLabel": "Draft orders",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "isUnreviewedDocumentPresent",
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "29/10/2024",
