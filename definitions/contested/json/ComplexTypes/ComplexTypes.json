@@ -743,6 +743,17 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "28/01/2025",
+    "ID": "FR_ct_draftDirectionOrder",
+    "ListElementCode": "additionalDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Upload additional attachments",
+    "HintText": "Please upload any additional attachments. You must upload Microsoft Word or PDF documents",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_c_judgeNotApprovedReasons",
     "ListElementCode": "judgeNotApprovedReasons",
@@ -984,6 +995,16 @@
     "FieldTypeParameter": "FR_fl_hearingTypeDirections",
     "ElementLabel": "Type of hearing values",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/01/2025",
+    "ID": "FR_ct_directionOrderCollection",
+    "ListElementCode": "additionalDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Additional attachments",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3076,11 +3097,22 @@
     "CategoryID": "approvedOrders"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "24/12/2024",
     "ID": "view_finalOrderCollection",
-    "ListElementCode": "orderDateTime",
-    "FieldType": "DateTime",
-    "ElementLabel": "Order created at",
+    "ListElementCode": "originalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Original Document",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/01/2025",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "additionalDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Additional attachments",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3095,13 +3127,12 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "24/12/2024",
+    "LiveFrom": "01/01/2017",
     "ID": "view_finalOrderCollection",
-    "ListElementCode": "originalDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Original Document",
+    "ListElementCode": "orderDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order created at",
     "SecurityClassification": "Public",
-    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
   },
   {
