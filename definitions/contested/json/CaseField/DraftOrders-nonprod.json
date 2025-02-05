@@ -107,5 +107,14 @@
     "Label": "${consentApplicationGuidanceText}",
     "FieldType": "Label",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "04/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isUnreviewedDocumentPresent",
+    "Label": "isUnreviewedDocumentPresent",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
