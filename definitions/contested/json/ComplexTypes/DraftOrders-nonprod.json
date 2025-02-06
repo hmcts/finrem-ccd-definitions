@@ -172,6 +172,15 @@
     "Searchable": "Y"
   },
   {
+    "LiveFrom": "16/01/2025",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "orderFiledBy",
+    "FieldType": "Text",
+    "ElementLabel": "Order filed by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "submittedBy",
@@ -336,6 +345,15 @@
     "ElementLabel": "Date submitted",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "16/01/2025",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "orderFiledBy",
+    "FieldType": "Text",
+    "ElementLabel": "Order filed by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -675,6 +693,24 @@
     "ID": "FR_uploadAgreedDraftOrder",
     "ListElementCode": "judgeNameGuidance",
     "ElementLabel": "The hearing judge's name should be added to all uploaded draft orders.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "judgeKnownAtHearing",
+    "ElementLabel": "Do you know who was the judge at this hearing?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_uploadAgreedDraftOrder",
+    "ListElementCode": "judgeUnknownWarning",
+    "ElementLabel": "This may delay the judge approving your order",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
