@@ -4341,6 +4341,31 @@
   },
   {
     "LiveFrom": "29/01/2025",
+    "ID": "FR_solicitorDraftDirectionOrder_to_draftDirectionOrderCollection",
+    "CaseEventID": "FR_solicitorDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionOrderCollection",
+    "ListElementCode": "purposeOfDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_solicitorDraftDirectionOrder_to_draftDirectionOrderCollection",
+    "CaseEventID": "FR_solicitorDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionOrderCollection",
+    "ListElementCode": "uploadDraftDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_solicitorDraftDirectionOrder_to_draftDirectionOrderCollection",
+    "CaseEventID": "FR_solicitorDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionOrderCollection",
+    "ListElementCode": "additionalDocuments",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\""
+  },
+  {
+    "LiveFrom": "29/01/2025",
     "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionOrderCollection",
     "CaseEventID": "FR_judgeDraftDirectionOrder",
     "CaseFieldID": "draftDirectionOrderCollection",
