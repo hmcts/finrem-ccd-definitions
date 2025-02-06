@@ -6,7 +6,7 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 18,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "draftOrdersReviewCollection!=\"\"",
+    "TabShowCondition": "isUnreviewedDocumentPresent=\"Yes\"",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1
   },
