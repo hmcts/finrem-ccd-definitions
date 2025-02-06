@@ -16,5 +16,14 @@
     "ListElementCode": "additionalDocuments",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\""
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_draftOrderApproved_to_latestDraftDirectionOrder",
+    "CaseEventID": "FR_draftOrderApproved",
+    "CaseFieldID": "latestDraftDirectionOrder",
+    "ListElementCode": "additionalDocuments",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\""
   }
 ]

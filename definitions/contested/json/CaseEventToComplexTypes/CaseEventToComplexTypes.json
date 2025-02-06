@@ -867,6 +867,22 @@
     "DisplayContext": "MANDATORY"
   },
   {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_draftOrderApproved_to_latestDraftDirectionOrder",
+    "CaseEventID": "FR_draftOrderApproved",
+    "CaseFieldID": "latestDraftDirectionOrder",
+    "ListElementCode": "purposeOfDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_draftOrderApproved_to_latestDraftDirectionOrder",
+    "CaseEventID": "FR_draftOrderApproved",
+    "CaseFieldID": "latestDraftDirectionOrder",
+    "ListElementCode": "uploadDraftDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
     "LiveFrom": "01/06/2022",
     "ID": "FR_manageCaseDocuments",
     "CaseEventID": "FR_manageCaseDocuments",
@@ -4322,6 +4338,31 @@
     "ListElementCode": "caseDocument",
     "FieldDisplayOrder": 2,
     "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_solicitorDraftDirectionOrder_to_draftDirectionOrderCollection",
+    "CaseEventID": "FR_solicitorDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionOrderCollection",
+    "ListElementCode": "purposeOfDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_solicitorDraftDirectionOrder_to_draftDirectionOrderCollection",
+    "CaseEventID": "FR_solicitorDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionOrderCollection",
+    "ListElementCode": "uploadDraftDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_solicitorDraftDirectionOrder_to_draftDirectionOrderCollection",
+    "CaseEventID": "FR_solicitorDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionOrderCollection",
+    "ListElementCode": "additionalDocuments",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\""
   },
   {
     "LiveFrom": "29/01/2025",
