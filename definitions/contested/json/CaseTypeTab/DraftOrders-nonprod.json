@@ -37,6 +37,7 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 18,
     "CaseFieldID": "isUnreviewedDocumentPresent",
+    "FieldShowCondition": "draftOrdersReviewCollection=\"DONOTSHOW\"",
     "TabFieldDisplayOrder": 3
   },
   {
