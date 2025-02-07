@@ -10,6 +10,16 @@
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1
   },
+   {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "DraftOrders-courtadmin",
+    "TabLabel": "Draft orders",
+    "TabDisplayOrder": 18,
+    "CaseFieldID": "isUnreviewedDocumentPresent",
+    "FieldShowCondition": "draftOrdersReviewCollection=\"DONOTSHOW\"",
+    "TabFieldDisplayOrder": 2
+  },
   {
     "LiveFrom": "29/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
