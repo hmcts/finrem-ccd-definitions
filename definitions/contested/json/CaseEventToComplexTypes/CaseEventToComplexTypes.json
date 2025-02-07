@@ -4503,7 +4503,8 @@
     "CaseEventID": "FR_directionOrder",
     "CaseFieldID": "uploadHearingOrder",
     "ListElementCode": "additionalDocuments",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\""
   },
   {
     "LiveFrom": "29/10/2024",
