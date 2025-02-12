@@ -23,6 +23,6 @@ export class SigninPage {
     await expect(this.signinButtonLocator).toBeVisible();
     await expect(this.signinButtonLocator).toBeEnabled();
     await this.signinButtonLocator.click();
-    await this.page.waitForURL(`${expectedUrl}**`);
+    await this.page.waitForURL(`${expectedUrl}/*`);
   }
 }

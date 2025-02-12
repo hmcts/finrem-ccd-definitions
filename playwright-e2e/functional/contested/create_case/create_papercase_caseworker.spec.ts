@@ -102,7 +102,14 @@ test(
 
     //Financial assets
     await financialAssetsPage.selectComplexityList('Yes');
-    await financialAssetsPage.selectAssetsValuePaperCase('Under £1 million');
+    // start, check all the asset radio options are present
+    await financialAssetsPage.selectAssetsValue('Over £15 million');
+    await financialAssetsPage.selectAssetsValue('£7.5 - £15 million');
+    await financialAssetsPage.selectAssetsValue('£1 - £7.5 million');
+    await financialAssetsPage.selectAssetsValue('Under £1 million');
+    await financialAssetsPage.selectAssetsValue('Under £250,000');
+    await financialAssetsPage.selectAssetsValue('Unable to quantify');
+    // end, checked all the asset radio options are present
     await financialAssetsPage.insertFamilyHomeValue('125,000');
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
