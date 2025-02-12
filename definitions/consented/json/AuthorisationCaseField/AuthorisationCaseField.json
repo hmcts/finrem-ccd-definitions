@@ -7142,6 +7142,13 @@
     "LiveFrom": "03/02/2025",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "applicantInRefugeTab",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "03/02/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "applicantInRefugeTab",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
@@ -7171,6 +7178,13 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "respondentInRefugeTab",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "03/03/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "respondentInRefugeTab",
+    "UserRole": "[RESPSOLICITOR]",
     "CRUD": "R"
   },
   {
