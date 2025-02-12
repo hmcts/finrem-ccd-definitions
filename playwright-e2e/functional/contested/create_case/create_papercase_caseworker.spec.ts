@@ -142,6 +142,7 @@ test(
 
     //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
+    await createCaseCheckYourAnswersPage.checkNetAssetsQuestion('Unable to quantify');
 
     await createCaseCheckYourAnswersPage.navigateSubmit();
 

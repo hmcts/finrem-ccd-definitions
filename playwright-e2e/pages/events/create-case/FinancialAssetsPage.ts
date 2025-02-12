@@ -29,10 +29,6 @@ export class FinancialAssetsPage extends BaseJourneyPage {
         await this.netAssetsMultiChoice.getByLabel(value).check();
     }
 
-    async selectAssetsValuePaperCase(value: string){
-        await this.netAssetsMultiChoicePaperCase.getByLabel(value).check();
-    }
-
     async insertFamilyHomeValue(value: string) {
         await this.netFamilyHomeValueTxtBox.fill(value);
     }
