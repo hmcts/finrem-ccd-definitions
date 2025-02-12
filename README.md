@@ -204,7 +204,7 @@ Jenkins now generates the config ready to release to PROD, this can be found in 
 
 NOTE: Jenkins will populate Judge details in the PROD configs that is not available locally, so PROD configs should never be used when generated locally and instead should always be taken from Jenkins.
 
-## Latest number of judges: 910
+## Judiciary Data in Fixed Lists
 
-Follow this guide for releasing a new config file to Production:
-https://tools.hmcts.net/confluence/display/FR/Get+a+new+CCD+config+uploaded+to+Production
+Follow this guide updating FixedList judge data in Production:
+https://tools.hmcts.net/confluence/display/FR/Adding+new+FR+Judges
