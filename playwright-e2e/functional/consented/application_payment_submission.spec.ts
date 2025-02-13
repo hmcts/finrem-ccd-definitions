@@ -3,6 +3,7 @@ import config from '../../config/config';
 // NOTE: When we remove codecept tests, bring utils and test data into the playwright directory
 import { createCaseInCcd } from '../../../test/helpers/utils';
 import { consentedEvents } from '../../config/case_events';
+import { paymentDetailsTabData } from '../../data/tab_content/consented/payment_details_tabs';
 
 test(
     'Consented - Application Payment Submission',
@@ -20,6 +21,8 @@ test(
       },
     ) => {
       const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+      const pbaNumber = "PBA0000539";
+      const reference = "Reference";
       
       // Login as caseworker
       await manageCaseDashboardPage.visit();
@@ -32,12 +35,15 @@ test(
       await solicitorAuthPage.navigateContinue();
       await helpWithFeesPage.selectHelpWithFees(false);
       await helpWithFeesPage.navigateContinue();
-      await paymentPage.enterPaymentDetails("PBA0000539", "Reference");
+      await paymentPage.enterPaymentDetails(pbaNumber, reference);
       await paymentPage.navigateContinue();
       await orderSummaryPage.navigateContinue();
       await caseSubmissionPage.navigateContinue();
       await caseSubmissionPage.navigateSubmit();
       await caseSubmissionPage.returnToCaseDetails();
       await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApplicationPaymentSubmission.listItem);
+      
+      // Assert Tab Data      
+      await caseDetailsPage.assertTabData(paymentDetailsTabData(pbaNumber, reference));
     }
 );
