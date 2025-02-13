@@ -55,8 +55,10 @@ test(
     await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
     await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
     await solicitorDetailsPage.enterUKaddress();
+    // Check both application types are present.
     await solicitorDetailsPage.selectApplicationType(RadioEnum.CHILDRENS_ACT);
-    // await solicitorDetailsPage.navigateContinue();
+    await solicitorDetailsPage.selectApplicationType(RadioEnum.MARRIAGE_CIVIL);
+    await solicitorDetailsPage.navigateContinue();
 
     // Enter Divorce / Dissolution Details
     await divorceDetailsPage.enterDivorceDetailsContested('LV12D12345', config.divorceStage.petitionIssued);

@@ -16,7 +16,7 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
         this.commonActionsHelper = commonActionsHelper;
         this.solicitorDetailsHelper = solicitorDetailsHelper;
         this.applicantRepresentedRadioContested = page.locator('#applicantRepresented_radio')
-        this.applicationTypeAnswer = page.getByRole('row', { name: 'What type of application is this' }).locator('span').nth(1);
+        this.applicationTypeAnswer = page.locator('#typeOfApplication')
     }
 
     async setApplicantRepresentation(represented: boolean) {
@@ -60,8 +60,8 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
         await this.solicitorDetailsHelper.enterReferenceNumber(this.page, referenceNumber);
     }
 
-    async selectApplicationType(selectedType: RadioEnum) {
-        const optionToSelect = this.applicationTypeAnswer.getByLabel(selectedType);
+    async selectApplicationType(radioOption: RadioEnum) {
+        const optionToSelect = this.applicationTypeAnswer.getByLabel(radioOption);
         await optionToSelect.check();
     }
 }
