@@ -3990,7 +3990,8 @@
     "ListElementCode": "agreedPensionSharingAnnexes",
     "FieldType": "Document",
     "ElementLabel": "Document",
-    "HintText": "Document names should clearly reflect the party name, document type and the date",
+    "RegularExpression": ".doc,.docx,.pdf",
+    "HintText": "You must upload Microsoft Word or PDF documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example \"JonesFDA11Jul24\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
