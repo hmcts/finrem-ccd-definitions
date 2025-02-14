@@ -1,6 +1,6 @@
 import { Page, expect, Locator } from "playwright/test";
 import { BaseJourneyPage } from "../../BaseJourneyPage";
-import { RadioEnum } from "../../helpers/enums/RadioEnum";
+import { YesNoRadioEnum } from "../../helpers/enums/RadioEnums";
 
 export class CreateCaseCheckYourAnswersPage extends BaseJourneyPage{
 
@@ -13,7 +13,7 @@ export class CreateCaseCheckYourAnswersPage extends BaseJourneyPage{
         this.netAssetsAnswer = page.getByRole('row', { name: 'Select one' }).locator('span').nth(1);
     }
 
-    async checkApplicantInRefugeQuestion(answer: RadioEnum) {
+    async checkApplicantInRefugeQuestion(answer: YesNoRadioEnum) {
         await expect(this.applicantInRefugeAnswer).toHaveText(answer);
     }
 
