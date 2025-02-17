@@ -2189,11 +2189,11 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "04/02/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "draftDirectionOrderCollection",
-    "Label": "Upload Draft Order",
-    "HintText": "PLEASE NOTE: you must upload an editable version of the draft order (for example a 'word' document) - please do not upload a PDF",
+    "Label": "Upload approved order",
+    "HintText": "You must upload Microsoft Word documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example “JonesFDA11Jul24”",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_ct_draftDirectionOrder",
     "SecurityClassification": "Public",
@@ -6712,11 +6712,11 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "05/10/2020",
+    "LiveFrom": "16/01/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "ordersToShare",
-    "Label": "Select Order/Orders",
-    "FieldType": "DynamicMultiSelectList",
+    "ID": "ordersToSend",
+    "Label": " ",
+    "FieldType": "FR_ordersToSend",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -7862,6 +7862,300 @@
     "ID": "respondentInRefugeQuestion",
     "Label": "Is the Respondent currently a resident in a refuge?",
     "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "typeOfDraftOrder",
+    "Label": "What kind of draft order do you need to upload?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_typeOfDraftOrderList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "showUploadPartyQuestion",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadSuggestedDraftOrder",
+    "Label": "Upload draft orders",
+    "FieldType": "FR_uploadSuggestedDraftOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadAgreedDraftOrder",
+    "Label": "Upload agreed draft orders",
+    "FieldType": "FR_uploadAgreedDraftOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "draftOrdersApproveOrdersLink",
+    "Label": "<a href=\"/cases/case-details/${[CASE_REFERENCE]}/trigger/FR_approveOrders/\">Approve orders</a>",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "draftOrdersReviewCollection",
+    "Label": "Draft Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_draftOrdersReview",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "agreedDraftOrderCollection",
+    "Label": "Agreed draft orders following a hearing",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_agreedDraftOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "suggestedDraftOrderCollection",
+    "Label": "Suggested draft orders prior to a hearing",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_suggestedDraftOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "09/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "uploadDraftOrdersDisputesGuidance",
+    "Label": "If the order is not agreed following the hearing, the parties should refer any disputes to the judge by email or as otherwise agreed.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationGuidance",
+    "Label": "Use the '<a href=\"/cases/case-details/${[CASE_REFERENCE]}/trigger/createGeneralApplication/createGeneralApplication1\">create general application</a>' event if you need to upload a draft order to:<ul><li>apply to adjourn a hearing</li><li>ask for an order within proceedings</li></ul>",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "31/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentApplicationGuidanceText",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "consentApplicationGuidance",
+    "Label": "${consentApplicationGuidanceText}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "showWarningMessageToJudge",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "warningMessageToJudgeLabel",
+    "Label": "<div class='govuk-warning-text'><span class='govuk-warning-text__icon' aria-hidden='true'>!</span><strong class='govuk-warning-text__text'>This page is limited to showing only 5 draft orders/pension sharing annexes requiring review. There are additional draft orders/pension sharing annexes requiring review that are not shown.</strong></div><br>",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApproval1",
+    "Label": " ",
+    "FieldType": "FR_judgeApproval",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApproval2",
+    "Label": " ",
+    "FieldType": "FR_judgeApproval",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApproval3",
+    "Label": " ",
+    "FieldType": "FR_judgeApproval",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApproval4",
+    "Label": " ",
+    "FieldType": "FR_judgeApproval",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApproval5",
+    "Label": " ",
+    "FieldType": "FR_judgeApproval",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingInstruction",
+    "Label": " ",
+    "FieldType": "FR_hearingInstruction",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "refusedOrdersCollection",
+    "Label": "Refused Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_refusedOrderOrPsa",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generatedOrderReason",
+    "Label": "Generated order reason",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generatedOrderRefusedDate",
+    "Label": "Generated order date refused",
+    "FieldType": "DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generatedOrderJudgeName",
+    "Label": "Generated order judge name",
+    "FieldType": "DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generatedOrderJudgeType",
+    "Label": "Generated order judge type",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "refusalOrderIdsToBeSent",
+    "Label": "Refusal order IDs to be sent",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "18/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "approveOrdersConfirmationBody",
+    "Label": "The confirmation body for the approve orders event",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "07/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "finalisedOrdersCollection",
+    "Label": "Finalised Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_finalisedOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraReportFieldsInput",
+    "Label": " ",
+    "FieldType": "FR_extraReportFieldsInput",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isLegacyApprovedOrderPresent",
+    "Label": "isLegacyApprovedOrderPresent",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isUnprocessedApprovedDocumentPresent",
+    "Label": "isUnprocessedApprovedDocumentPresent",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/12/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "unprocessedApprovedDocuments",
+    "Label": "Unprocessed Approved Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_directionOrderCollection",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
