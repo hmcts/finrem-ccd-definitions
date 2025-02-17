@@ -1,16 +1,16 @@
-const xlsx = require('xlsx');
+const XLSX = require('sheetjs-style');
 const fs = require('fs');
 
 const inputFile = 'build/ccd-config.xlsx';
 const outputFile = 'build/extracted.json';
 
 // Read the spreadsheet
-const workbook = xlsx.readFile(inputFile);
+const workbook = XLSX.readFile(inputFile);
 const sheetName = 'FixedLists';
 const worksheet = workbook.Sheets[sheetName];
 
 // Convert the sheet to JSON
-const jsonData = xlsx.utils.sheet_to_json(worksheet, { header: 1 });
+const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
 // Function to convert Excel date to string format dd/MM/yyyy
 function excelDateToJSDate(excelDate) {
