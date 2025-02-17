@@ -1,41 +1,36 @@
-const XLSX = require('sheetjs-style');
 const fs = require('fs');
+const path = require('path');
 
-const inputFile = 'build/ccd-config.xlsx';
-const outputFile = 'build/extracted.json';
+const backupDir = path.join(__dirname, 'build', 'backup');
+const combinedFile = path.join(__dirname, 'build', 'current-prod.json');
+const extractedFile = path.join(__dirname, 'build', 'extracted.json');
 
-// Read the spreadsheet
-const workbook = XLSX.readFile(inputFile);
-const sheetName = 'FixedLists';
-const worksheet = workbook.Sheets[sheetName];
-
-// Convert the sheet to JSON
-const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-
-// Function to convert Excel date to string format dd/MM/yyyy
-function excelDateToJSDate(excelDate) {
-    const date = new Date((excelDate - (25567 + 2)) * 86400 * 1000);
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-}
-
-// Filter and process the data
-const filteredData = jsonData
-    .filter(row => row[2] === 'FR_fl_AssignToJudge')
-    .map(row => ({
-        LiveFrom: excelDateToJSDate(row[0]),
-        ID: row[2],
-        ListElementCode: row[3],
-        ListElement: row[4]
-    }));
-
-// Write the data to a JSON file
-fs.writeFile(outputFile, JSON.stringify(filteredData, null, 2), 'utf8', (err) => {
+fs.readdir(backupDir, (err, files) => {
     if (err) {
-        console.error('Error writing the output file:', err);
+        console.error('Error reading directory:', err);
         return;
     }
-    console.log('Data has been written to', outputFile);
+
+    const jsonArray = [];
+
+    files.forEach(file => {
+        const filePath = path.join(backupDir, file);
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        const jsonContent = JSON.parse(fileContent);
+        jsonArray.push(...jsonContent);
+    });
+
+    fs.writeFileSync(combinedFile, JSON.stringify(jsonArray, null, 2), 'utf8');
+
+    const combinedContent = fs.readFileSync(combinedFile, 'utf8');
+    const jsonContent = JSON.parse(combinedContent);
+
+    const extractedArray = [];
+    jsonContent.forEach(item => {
+        const { DisplayOrder, ...filteredItem } = item;
+        extractedArray.push(filteredItem);
+    });
+
+    fs.writeFileSync(extractedFile, JSON.stringify(extractedArray, null, 2), 'utf8');
+    console.log('JSON data extracted. Now you should update build/extracted.json');
 });
