@@ -3109,7 +3109,7 @@
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "OPTIONAL",
     "PageID": 1,
-    "PageDisplayOrder": 1,
+    "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -3121,7 +3121,7 @@
     "PageFieldDisplayOrder": 3,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5",
@@ -3135,7 +3135,7 @@
     "PageFieldDisplayOrder": 4,
     "DisplayContext": "READONLY",
     "PageID": 1,
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
   },
@@ -3147,7 +3147,7 @@
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
     "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment Order\"",
     "ShowSummaryChangeOption": "Y"
@@ -3160,7 +3160,7 @@
     "PageFieldDisplayOrder": 6,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
     "FieldShowCondition": "natureOfApplication2 CONTAINS \"Property Adjustment Order\"",
     "ShowSummaryChangeOption": "Y"
@@ -3173,7 +3173,7 @@
     "PageFieldDisplayOrder": 7,
     "DisplayContext": "OPTIONAL",
     "PageID": 1,
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "FieldShowCondition": "natureOfApplication2 CONTAINS \"IMPOSSIBLE\"",
@@ -3187,7 +3187,7 @@
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "OPTIONAL",
     "PageID": 1,
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 8,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "FieldShowCondition": "natureOfApplication2 CONTAINS \"IMPOSSIBLE\"",
@@ -3201,7 +3201,7 @@
     "PageFieldDisplayOrder": 9,
     "DisplayContext": "READONLY",
     "PageID": 2,
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "PageShowCondition": "natureOfApplication2 CONTAINS \"Periodical Payment Order\"",
     "ShowSummaryChangeOption": "Y"
@@ -3226,7 +3226,7 @@
     "PageFieldDisplayOrder":11,
     "DisplayContext": "OPTIONAL",
     "PageID": 2,
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
@@ -3239,7 +3239,7 @@
     "PageFieldDisplayOrder": 12,
     "DisplayContext": "OPTIONAL",
     "PageID": 2,
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\"",
     "ShowSummaryChangeOption": "Y"
@@ -3252,7 +3252,7 @@
     "PageFieldDisplayOrder": 13,
     "DisplayContext": "OPTIONAL",
     "PageID": 2,
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 5,
     "PageColumnNumber": 1,
     "FieldShowCondition": "orderForChildrenQuestion1=\"Yes\" AND natureOfApplication5=\"No\"",
     "ShowSummaryChangeOption": "Y"
