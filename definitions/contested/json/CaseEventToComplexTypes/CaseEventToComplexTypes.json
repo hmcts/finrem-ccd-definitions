@@ -4554,6 +4554,14 @@
     "ID": "FR_SuggestedDraftOrders",
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadSuggestedDraftOrder",
+    "ListElementCode": "suggestedDraftOrderCollection.additionalDocuments.draftDocument",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_SuggestedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
     "ListElementCode": "suggestedPsaCollection",
     "FieldShowCondition": "uploadSuggestedDraftOrder.uploadOrdersOrPsas CONTAINS \"pensionSharingAnnexes\"",
     "DisplayContext": "MANDATORY"
