@@ -2,7 +2,7 @@
   {
     "LiveFrom": "18/02/2025",
     "ID": "FR_UploadDraftOrderAdditionalDocument",
-    "ListElementCode": "draftDocument",
+    "ListElementCode": "orderAttachments",
     "FieldType": "Document",
     "ElementLabel": "Document",
     "RegularExpression": ".doc,.docx,.pdf",
@@ -3351,7 +3351,7 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_UploadDraftOrderAdditionalDocument",
     "ElementLabel": "Upload additional attachments",
-    "HintText": "You must upload Microsoft Word or PDF documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example \"JonesFDA11Jul24\"",
+    "HintText": "You must upload Microsoft Word or PDF documents",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
