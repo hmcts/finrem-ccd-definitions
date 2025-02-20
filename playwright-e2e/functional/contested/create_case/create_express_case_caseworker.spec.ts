@@ -115,6 +115,10 @@ test(
     await financialRemedyCourtPage.enterFrcReason();
     // await financialRemedyCourtPage.navigateContinue();
 
+    // Express Case page
+    // TODO Check that the express page text is shown.
+    // AND update other tests that need to check that either the page is missing or has non Express Case content.
+
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
     await miamQuestionPage.navigateContinue();
