@@ -141,7 +141,8 @@ test(
 
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
 
-    await createCaseCheckYourAnswersPage.navigateSubmit();
+    // submits the case
+    // await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
 

@@ -3,12 +3,26 @@
     "LiveFrom": "20/02/2024",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "enrolledOnExpressPilotLabel",
+    "CaseFieldID": "suitableForExpressCaseLabel",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 16,
     "PageDisplayOrder": 16,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "fastTrackDecision=\"No\"",
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "20/02/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "unsuitableForExpressCaseLabel",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 16,
+    "PageDisplayOrder": 16,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "fastTrackDecision=\"Yes\"",
     "ShowSummaryChangeOption": "N"
   }
 ]

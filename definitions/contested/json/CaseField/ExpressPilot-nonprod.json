@@ -2,8 +2,17 @@
   {
     "LiveFrom": "17/02/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "enrolledOnExpressPilotLabel",
+    "ID": "suitableForExpressCaseLabel",
     "Label": "Placeholder for some text to say that this case has been enrolled on the Express Pilot ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "unsuitableForExpressCaseLabel",
+    "Label": "Placeholder for some text to say that this case does NOT qualify the Express Pilot ",
     "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "N"
