@@ -4741,7 +4741,7 @@
     "EventElementLabel": "Hearing judge",
     "ListElementCode": "hearingJudge",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval1.title=\"*\""
+    "FieldShowCondition": "judgeApproval1.title=\"*\" AND judgeApproval1.hearingJudge=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -4868,7 +4868,7 @@
     "EventElementLabel": "Hearing judge",
     "ListElementCode": "hearingJudge",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval2.title=\"*\""
+    "FieldShowCondition": "judgeApproval2.title=\"*\" AND judgeApproval2.hearingJudge=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -5005,7 +5005,7 @@
     "EventElementLabel": "Hearing judge",
     "ListElementCode": "hearingJudge",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval3.title=\"*\""
+    "FieldShowCondition": "judgeApproval3.title=\"*\" AND judgeApproval3.hearingJudge=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -5122,7 +5122,7 @@
     "EventElementLabel": "Hearing judge",
     "ListElementCode": "hearingJudge",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval4.title=\"*\""
+    "FieldShowCondition": "judgeApproval4.title=\"*\" AND judgeApproval4.hearingJudge=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -5249,7 +5249,7 @@
     "EventElementLabel": "Hearing judge",
     "ListElementCode": "hearingJudge",
     "DisplayContext": "READONLY",
-    "FieldShowCondition": "judgeApproval5.title=\"*\""
+    "FieldShowCondition": "judgeApproval5.title=\"*\" AND judgeApproval5.hearingJudge=\"*\""
   },
   {
     "LiveFrom": "29/10/2024",
