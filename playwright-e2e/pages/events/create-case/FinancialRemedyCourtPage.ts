@@ -16,7 +16,6 @@ export class FinancialRemedyCourtPage extends BaseJourneyPage {
 
     private readonly courtRegion: string = 'Midlands'
     private readonly courtFrc: string = 'Nottingham'
-    private readonly localCourt: string = 'CHESTERFIELD COUNTY COURT'
 
     public constructor(page: Page) {
         super(page);
@@ -30,7 +29,7 @@ export class FinancialRemedyCourtPage extends BaseJourneyPage {
         this.reasonForHomeCourtTxtBox = page.locator('#reasonForLocalCourt');
     }
 
-    async selectCourtZoneDropDown() {
+    async selectCourtZoneDropDown(localCourt: string) {
         await this.courtZoneDropDown.selectOption(this.courtRegion);
 
         this.frcDropDown = this.page.locator(`#${this.courtRegion.toLowerCase()}FRCList`);
@@ -39,7 +38,7 @@ export class FinancialRemedyCourtPage extends BaseJourneyPage {
 
         this.courtListDropDown = this.page.locator(`#${this.courtFrc.toLowerCase()}CourtList`);
         await expect(this.courtListDropDown).toBeVisible();
-        await this.courtListDropDown.selectOption(this.localCourt);
+        await this.courtListDropDown.selectOption(localCourt);
     }
 
     async selectHighCourtJudgeLevel(isHighCourtJudgeLevel: boolean) {

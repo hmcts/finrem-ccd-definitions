@@ -4,7 +4,7 @@ import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
 import { createCaseTabData } from '../../../data/tab_content/contested/caseworker_create_case_tabs';
 
 test(
-  'Create Case - Contested FormA Submission',
+  'Create Express Case - Contested FormA Submission, suitable for Express case processing',
   { tag: ['@accessibility'] },
   async (
     {
@@ -96,7 +96,7 @@ test(
     await writtenAgreementPage.navigateContinue();
 
     //Fast track procedure
-    await fastTrackProcedurePage.selectFastTrack(true);
+    await fastTrackProcedurePage.selectFastTrack(false);
     await fastTrackProcedurePage.navigateContinue();
 
     //Financial assets
@@ -106,14 +106,17 @@ test(
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
 
-    // Financial Remedies Court, a court is selected that isn't currently processing Express Case applications.
-    await financialRemedyCourtPage.selectCourtZoneDropDown('DERBY COMBINED COURT CENTRE');
+    // Financial Remedies Court, a court is selected that is processing Express Case applications.
+    await financialRemedyCourtPage.selectCourtZoneDropDown('CHESTERFIELD COUNTY COURT');
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
     await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
     await financialRemedyCourtPage.enterFrcReason();
     await financialRemedyCourtPage.navigateContinue();
+
+    // Express Case page
+    // When available, check that the express page text is shown and the text is correct.
 
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
@@ -137,6 +140,7 @@ test(
 
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
 
+    // submits the case
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();

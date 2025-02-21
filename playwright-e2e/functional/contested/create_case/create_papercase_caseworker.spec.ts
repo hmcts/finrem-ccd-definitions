@@ -108,7 +108,7 @@ test(
     await financialAssetsPage.navigateContinue();
 
     // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown();
+    await financialRemedyCourtPage.selectCourtZoneDropDown('CHESTERFIELD COUNTY COURT');
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
