@@ -55,8 +55,7 @@ test(
     await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
     await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
     await solicitorDetailsPage.enterUKaddress();
-    await solicitorDetailsPage.selectApplicationType(RadioEnum.CHILDRENS_ACT);
-    // await solicitorDetailsPage.navigateContinue();
+    await solicitorDetailsPage.navigateContinue();
 
     // Enter Divorce / Dissolution Details
     await divorceDetailsPage.enterDivorceDetailsContested('LV12D12345', config.divorceStage.petitionIssued);
@@ -109,7 +108,7 @@ test(
     await financialAssetsPage.navigateContinue();
 
     // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown();
+    await financialRemedyCourtPage.selectCourtZoneDropDown('CHESTERFIELD COUNTY COURT');
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();

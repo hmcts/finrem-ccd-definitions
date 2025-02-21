@@ -2,12 +2,10 @@ import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import { SolicitorDetailsHelper } from '../../helpers/SolicitorDetailsHelper';
-import { RadioEnum } from '../../helpers/enums/RadioEnum';
 
 export class SolicitorDetailsPage extends BaseJourneyPage {
 
     private readonly applicantRepresentedRadioContested: Locator;
-    private readonly applicationTypeAnswer: Locator;
     private readonly commonActionsHelper: CommonActionsHelper;
     private readonly solicitorDetailsHelper: SolicitorDetailsHelper;
 
@@ -16,7 +14,6 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
         this.commonActionsHelper = commonActionsHelper;
         this.solicitorDetailsHelper = solicitorDetailsHelper;
         this.applicantRepresentedRadioContested = page.locator('#applicantRepresented_radio')
-        this.applicationTypeAnswer = page.getByRole('row', { name: 'What type of application is this' }).locator('span').nth(1);
     }
 
     async setApplicantRepresentation(represented: boolean) {
@@ -58,10 +55,5 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
 
     async enterReferenceNumber(referenceNumber: string) {
         await this.solicitorDetailsHelper.enterReferenceNumber(this.page, referenceNumber);
-    }
-
-    async selectApplicationType(selectedType: RadioEnum) {
-        const optionToSelect = this.applicationTypeAnswer.getByLabel(selectedType);
-        await optionToSelect.check();
     }
 }
