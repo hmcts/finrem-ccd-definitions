@@ -106,8 +106,8 @@ test(
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
 
-    // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown();
+    // Financial Remedies Court, a court is selected that isn't currently processing Express Case applications.
+    await financialRemedyCourtPage.selectCourtZoneDropDown('DERBY COMBINED COURT CENTRE');
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();

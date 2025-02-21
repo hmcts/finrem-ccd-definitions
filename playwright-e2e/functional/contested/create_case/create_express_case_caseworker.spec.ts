@@ -4,7 +4,7 @@ import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
 import { createCaseTabData } from '../../../data/tab_content/contested/caseworker_create_case_tabs';
 
 test(
-  'Create Case - Contested FormA Submission',
+  'Create Express Case - Contested FormA Submission, suitable for Express case processing',
   { tag: ['@accessibility'] },
   async (
     {
@@ -106,18 +106,17 @@ test(
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
 
-    // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown();
+    // Financial Remedies Court, a court is selected that is processing Express Case applications.
+    await financialRemedyCourtPage.selectCourtZoneDropDown('CHESTERFIELD COUNTY COURT');
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
     await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
     await financialRemedyCourtPage.enterFrcReason();
-    // await financialRemedyCourtPage.navigateContinue();
+    await financialRemedyCourtPage.navigateContinue();
 
     // Express Case page
-    // TODO Check that the express page text is shown.
-    // AND update other tests that need to check that either the page is missing or has non Express Case content.
+    // When available, check that the express page text is shown and the text is correct.
 
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
@@ -142,7 +141,7 @@ test(
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
 
     // submits the case
-    // await createCaseCheckYourAnswersPage.navigateSubmit();
+    await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
 
