@@ -206,5 +206,4 @@ NOTE: Jenkins will populate Judge details in the PROD configs that is not availa
 
 ## Judge Data in FixedLists
 
-To update judge data in `FixedLists` for Production, follow this guide:
-https://tools.hmcts.net/confluence/display/FR/Adding+new+FR+Judges
+To update judge data in `FixedLists` for Production, see [here](docs/fixedlists-judges.md).
