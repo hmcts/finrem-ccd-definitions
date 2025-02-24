@@ -7,4 +7,3 @@ export const adminNotesTabData = (date: string) => [{
       { tabItem: "Assign to a Judge Text", value: "consent for approval" }
     ],
   }];
-  
