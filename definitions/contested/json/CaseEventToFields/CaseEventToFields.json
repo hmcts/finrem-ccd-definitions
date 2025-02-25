@@ -10894,8 +10894,9 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "hearingInstruction.showRequireAnotherHearingQuestion=\"Yes\"",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5",
+    "PageShowCondition": "hearingInstruction.showRequireAnotherHearingQuestion=\"Yes\""
   },
   {
     "LiveFrom": "17/12/2024",
