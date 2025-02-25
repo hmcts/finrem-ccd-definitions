@@ -1,7 +1,7 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import { createCaseInCcd } from '../../../../test/helpers/utils';
 import config from '../../../config/config';
-import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
+import { YesNoRadioEnum, ApplicationtypeEnum } from '../../../pages/helpers/enums/RadioEnums';
 import {createCaseTabData} from "../../../data/tab_content/contested/caseworker_create_case_tabs";
 
 // Create a test case for the Contested Paper Case
@@ -55,6 +55,9 @@ test(
     await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
     await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
     await solicitorDetailsPage.enterUKaddress();
+    // Check both application types are present.
+    await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT);
+    await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.MARRIAGE_CIVIL);
     await solicitorDetailsPage.navigateContinue();
 
     // Enter Divorce / Dissolution Details
@@ -63,7 +66,7 @@ test(
 
     //applicant details
     const keepPrivate: boolean = true;
-    const applicantInRefuge: RadioEnum = RadioEnum.YES;
+    const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
     await applicantDetailsPage.enterApplicantDetailsContested('Frodo', 'Baggins', keepPrivate, applicantInRefuge);
     await applicantDetailsPage.navigateContinue();
 
@@ -102,7 +105,14 @@ test(
 
     //Financial assets
     await financialAssetsPage.selectComplexityList('Yes');
-    await financialAssetsPage.selectAssetsValuePaperCase('Under £1 million');
+    // start, check all the asset radio options are present
+    await financialAssetsPage.selectAssetsValue('Over £15 million');
+    await financialAssetsPage.selectAssetsValue('£7.5 - £15 million');
+    await financialAssetsPage.selectAssetsValue('£1 - £7.5 million');
+    await financialAssetsPage.selectAssetsValue('Under £1 million');
+    await financialAssetsPage.selectAssetsValue('Under £250,000');
+    await financialAssetsPage.selectAssetsValue('Unable to quantify');
+    // end, checked all the asset radio options are present
     await financialAssetsPage.insertFamilyHomeValue('125,000');
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
@@ -135,6 +145,7 @@ test(
 
     //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
+    await createCaseCheckYourAnswersPage.checkNetAssetsQuestion('Unable to quantify');
 
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
