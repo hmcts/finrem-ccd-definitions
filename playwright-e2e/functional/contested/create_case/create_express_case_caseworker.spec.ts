@@ -1,6 +1,6 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { RadioEnum } from '../../../pages/helpers/enums/RadioEnum';
+import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../data/tab_content/contested/caseworker_create_case_tabs';
 
 test(
@@ -62,7 +62,7 @@ test(
 
     //applicant details
     const keepPrivate: boolean = true;
-    const applicantInRefuge: RadioEnum = RadioEnum.YES;
+    const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
     await applicantDetailsPage.enterApplicantDetailsContested('Frodo', 'Baggins', keepPrivate, applicantInRefuge);
     await applicantDetailsPage.navigateContinue();
 
