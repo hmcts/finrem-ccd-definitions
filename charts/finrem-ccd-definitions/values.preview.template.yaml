@@ -66,6 +66,7 @@ finrem-cos:
       FEATURE_SOLICITOR_NOC: true
       FEATURE_SEND_LETTER_RECIPIENT_CHECK: false
       SECURE_DOC_ENABLED: false
+      EXPRESS_PILOT_ENABLED: true
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
