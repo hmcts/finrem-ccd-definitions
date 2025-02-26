@@ -66,6 +66,7 @@ finrem-cos:
       FEATURE_SOLICITOR_NOC: true
       FEATURE_SEND_LETTER_RECIPIENT_CHECK: false
       SECURE_DOC_ENABLED: false
+      EXPRESS_PILOT_ENABLED: true
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
@@ -491,7 +492,6 @@ aac-manage-case-assignment:
       IDAM_NOC_APPROVER_USERNAME: ${IDAM_NOC_APPROVER_USERNAME}
       IDAM_NOC_APPROVER_PASSWORD: ${IDAM_NOC_APPROVER_PASSWORD}
       NOTIFY_MCA_API_KEY: ${UK_GOV_NOTIFY_API_KEY}
-      NOTIFY_EMAIL_TEMPLATE_ID: 85f22924-7b45-4fc6-9954-c08a8833f6a0
     autoscaling:
       enabled: false
 
