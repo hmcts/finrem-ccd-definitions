@@ -4554,6 +4554,14 @@
     "ID": "FR_SuggestedDraftOrders",
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadSuggestedDraftOrder",
+    "ListElementCode": "suggestedDraftOrderCollection.additionalDocuments.orderAttachment",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_SuggestedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadSuggestedDraftOrder",
     "ListElementCode": "suggestedPsaCollection",
     "FieldShowCondition": "uploadSuggestedDraftOrder.uploadOrdersOrPsas CONTAINS \"pensionSharingAnnexes\"",
     "DisplayContext": "MANDATORY"
@@ -4664,6 +4672,14 @@
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
     "ListElementCode": "agreedDraftOrderCollection.additionalDocuments",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_AgreedDraftOrders",
+    "CaseEventID": "FR_draftOrders",
+    "CaseFieldID": "uploadAgreedDraftOrder",
+    "ListElementCode": "agreedDraftOrderCollection.additionalDocuments.orderAttachment",
     "DisplayContext": "OPTIONAL"
   },
   {
