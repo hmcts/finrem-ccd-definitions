@@ -1,5 +1,15 @@
 [
   {
+    "LiveFrom": "18/02/2025",
+    "ID": "FR_UploadDraftOrderAdditionalDocument",
+    "ListElementCode": "orderAttachment",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "RegularExpression": ".doc,.docx,.pdf",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_PropertyAdjustmentOrder",
     "ListElementCode": "propertAddress",
@@ -3339,9 +3349,9 @@
     "ID": "FR_SuggestedDraftOrders",
     "ListElementCode": "additionalDocuments",
     "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
+    "FieldTypeParameter": "FR_UploadDraftOrderAdditionalDocument",
     "ElementLabel": "Upload additional attachments",
-    "HintText": "You must upload a PDF document.",
+    "HintText": "You must upload Microsoft Word or PDF documents",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3978,9 +3988,9 @@
     "ID": "FR_AgreedDraftOrders",
     "ListElementCode": "additionalDocuments",
     "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
+    "FieldTypeParameter": "FR_UploadDraftOrderAdditionalDocument",
     "ElementLabel": "Upload additional attachments",
-    "HintText": "You must upload a PDF document.",
+    "HintText": "You must upload Microsoft Word or PDF documents",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
