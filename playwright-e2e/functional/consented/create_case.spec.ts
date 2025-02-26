@@ -1,5 +1,6 @@
 import { test, expect } from '../../fixtures/fixtures';
 import config from '../../config/config';
+import { createCaseTabData } from '../../data/tab_content/consented/create_case_tabs';
 
 test(
   'Consented - Create Case',
@@ -49,7 +50,7 @@ test(
 
     //applicant details
     await applicantDetailsPage.enterApplicantDetailsConsented('Frodo', 'Baggins');
-    await financialRemedyCourtPage.selectCourtZoneDropDown();
+    await financialRemedyCourtPage.selectCourtZoneDropDown('DERBY COMBINED COURT CENTRE');
     await applicantDetailsPage.navigateContinue();
 
     //respondent details
@@ -81,6 +82,9 @@ test(
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
+    
+    // Assert tab data
+    await caseDetailsPage.assertTabData(createCaseTabData);
 
     if (config.run_accessibility) {
       const accessibilityScanResults = await makeAxeBuilder().analyze();
@@ -131,7 +135,7 @@ test(
     
     //Expect error validation for Organisation ID
     await solicitorDetailsPage.assertOrganisationIdRequired();
-
+    
     if (config.run_accessibility) {
       const accessibilityScanResults = await makeAxeBuilder().analyze();
 
