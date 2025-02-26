@@ -50,7 +50,7 @@ test(
 
     //applicant details
     await applicantDetailsPage.enterApplicantDetailsConsented('Frodo', 'Baggins');
-    await financialRemedyCourtPage.selectCourtZoneDropDown();
+    await financialRemedyCourtPage.selectCourtZoneDropDown('DERBY COMBINED COURT CENTRE');
     await applicantDetailsPage.navigateContinue();
 
     //respondent details
