@@ -1,13 +1,11 @@
 import { test, expect } from '../../../fixtures/fixtures';
-import { createCaseInCcd } from '../../../../test/helpers/utils';
 import config from '../../../config/config';
-import { YesNoRadioEnum, ApplicationtypeEnum } from '../../../pages/helpers/enums/RadioEnums';
-import {createCaseTabData} from "../../../data/tab_content/contested/caseworker_create_case_tabs";
+import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
+import { createCaseTabData } from '../../../data/tab_content/contested/caseworker_create_case_tabs';
 
-// Create a test case for the Contested Paper Case
 test(
-  'Create Case - Contested Paper Case',
-  { tag: ['@additionalTest'] },
+  'Create Express Case - Contested FormA Submission, suitable for Express case processing',
+  { tag: ['@accessibility'] },
   async (
     {
       loginPage,
@@ -43,7 +41,7 @@ test(
     await createCasePage.startCase(
       config.jurisdiction.familyDivorce,
       config.caseType.contested,
-      config.eventType.paperCase
+      config.eventType.formA
     );
 
     await startPage.navigateContinue();
@@ -55,9 +53,7 @@ test(
     await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
     await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
     await solicitorDetailsPage.enterUKaddress();
-    // Check both application types are present.
-    await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT);
-    await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.MARRIAGE_CIVIL);
+    await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
     await solicitorDetailsPage.navigateContinue();
 
     // Enter Divorce / Dissolution Details
@@ -100,31 +96,27 @@ test(
     await writtenAgreementPage.navigateContinue();
 
     //Fast track procedure
-    await fastTrackProcedurePage.selectFastTrack(true);
+    await fastTrackProcedurePage.selectFastTrack(false);
     await fastTrackProcedurePage.navigateContinue();
 
     //Financial assets
     await financialAssetsPage.selectComplexityList('Yes');
-    // start, check all the asset radio options are present
-    await financialAssetsPage.selectAssetsValue('Over £15 million');
-    await financialAssetsPage.selectAssetsValue('£7.5 - £15 million');
-    await financialAssetsPage.selectAssetsValue('£1 - £7.5 million');
-    await financialAssetsPage.selectAssetsValue('Under £1 million');
     await financialAssetsPage.selectAssetsValue('Under £250,000');
-    await financialAssetsPage.selectAssetsValue('Unable to quantify');
-    // end, checked all the asset radio options are present
     await financialAssetsPage.insertFamilyHomeValue('125,000');
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
 
-    // Financial Remedies Court
+    // Financial Remedies Court, a court is selected that is processing Express Case applications.
     await financialRemedyCourtPage.selectCourtZoneDropDown('CHESTERFIELD COUNTY COURT');
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
     await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
-    await financialRemedyCourtPage.enterHomeCourtReason();
+    await financialRemedyCourtPage.enterFrcReason();
     await financialRemedyCourtPage.navigateContinue();
+
+    // Express Case page
+    // When available, check that the express page text is shown and the text is correct.
 
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
@@ -134,7 +126,7 @@ test(
     await miamDetailsPage.enterMediatorRegistrationNumber();
     await miamDetailsPage.enterFamilyMediatorServiceName();
     await miamDetailsPage.enterSoleTraderName();
-    await miamDetailsPage.uploadMiamDocPaperCase();
+    await miamDetailsPage.uploadMiamDoc();
     await miamDetailsPage.navigateContinue();
 
     // Upload variation Order Document
@@ -144,9 +136,11 @@ test(
     await uploadOrderDocumentsPage.navigateContinue();
 
     //Continue about to submit and check your answers
-    await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
-    await createCaseCheckYourAnswersPage.checkNetAssetsQuestion('Unable to quantify');
+    await createCaseCheckYourAnswersPage.navigateContinue();
 
+    await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
+
+    // submits the case
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
