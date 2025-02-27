@@ -7653,19 +7653,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_generalApplicationReferToJudge",
-    "CaseFieldID": "generalApplicationReferToJudgeEmail",
-    "PageFieldDisplayOrder": 2,
-    "DisplayContext": "MANDATORY",
-    "PageID": "generalApplicationReferToJudge",
-    "PageLabel": "Refer to Judge (Application)",
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_GeneralApplicationOutcome",
     "CaseFieldID": "generalApplicationOutcomeList",
     "PageFieldDisplayOrder": 1,
@@ -9977,6 +9964,19 @@
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": "generalApplicationReferToJudge",
+    "PageLabel": "Refer to Judge (Application)",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalApplicationReferToJudge",
+    "CaseFieldID": "generalApplicationReferToJudgeEmail",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "OPTIONAL",
+    "PageID": "generalApplicationReferToJudge",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
@@ -9993,6 +9993,19 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "generalApplicationReferToJudgeEmail=\"IMPOSSIBLE\"",
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "17/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_generalApplicationReferToJudge",
+    "CaseFieldID": "generalApplicationReferToJudgeEmailWarning",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "READONLY",
+    "PageID": "generalApplicationReferToJudge",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition": "generalApplicationReferToJudgeEmail=\"\""
   },
   {
     "LiveFrom": "01/01/2017",
