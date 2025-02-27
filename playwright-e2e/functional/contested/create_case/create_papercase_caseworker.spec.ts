@@ -1,5 +1,4 @@
 import { test, expect } from '../../../fixtures/fixtures';
-import { createCaseInCcd } from '../../../../test/helpers/utils';
 import config from '../../../config/config';
 import { YesNoRadioEnum, ApplicationtypeEnum } from '../../../pages/helpers/enums/RadioEnums';
 import {createCaseTabData} from "../../../data/tab_content/contested/caseworker_create_case_tabs";
