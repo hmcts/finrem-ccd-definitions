@@ -18667,5 +18667,19 @@
     "CaseFieldID": "unprocessedApprovedDocuments",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isUnreviewedDocumentPresent",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isUnreviewedDocumentPresent",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
   }
 ]
