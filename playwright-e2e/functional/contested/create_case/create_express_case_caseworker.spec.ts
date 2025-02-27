@@ -79,7 +79,7 @@ test(
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
-    await natureOfApplicationPage.selectNatureOfApplication();
+    await natureOfApplicationPage.expressPilotSuitableNatureOfApplications();
     await natureOfApplicationPage.navigateContinue();
 
     // Property Adjustment Order

@@ -41,4 +41,16 @@ export class NatureOfApplicationPage extends BaseJourneyPage {
         await this.natureOfApplicationPensionCompAttachment.check();
         await this.natureOfApplicationVariationOrder.check();
     }
+
+    async expressPilotSuitableNatureOfApplications() {
+        await this.natureOfApplicationMaintenance.check();
+        await this.natureOfApplicationLumpSum.check();
+        await this.natureOfApplicationPropertyAdjustment.check();
+        await this.natureOfApplicationPropertySettlement.check();
+        await this.natureOfApplicationPeriodicalPayment.check();
+        await this.natureOfApplicationPensionSharing.check();
+        await this.natureOfApplicationPensionComp.check();
+        await this.natureOfApplicationPensionAttachment.check();
+        await this.natureOfApplicationPensionCompAttachment.check();
+    }
 }
