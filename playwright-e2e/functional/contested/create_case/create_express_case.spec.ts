@@ -52,14 +52,6 @@ test(
     await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
     await solicitorDetailsPage.navigateContinue();
 
-
-    // await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
-    // await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
-    // await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
-    // await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
-    // await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
-    // await solicitorDetailsPage.navigateContinue();
-
     // Enter Divorce / Dissolution Details
     await divorceDetailsPage.enterDivorceDetailsContested('LV12D12345', config.divorceStage.petitionIssued);
     await divorceDetailsPage.navigateContinue();
