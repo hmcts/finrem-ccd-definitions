@@ -1493,7 +1493,7 @@
     "ID": "FR_removeUserCaseAccess",
     "Name": "Remove user case access",
     "Description": "Remove user case access",
-    "DisplayOrder": 155,
+    "DisplayOrder": 156,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
@@ -1502,5 +1502,20 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "28/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_amendExpressCase",
+    "Name": "TO FOLLOW (EP withdraw)",
+    "Description": "TO FOLLOW (EP withdraw)",
+    "DisplayOrder": 157,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "N"
   }
 ]
