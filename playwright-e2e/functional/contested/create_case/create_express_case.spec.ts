@@ -73,7 +73,6 @@ test(
       config.organisationNames.finRem2Org
     );
     await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
-    // await respondentRepresentedPage.selectRespondentInRefuge(true);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
