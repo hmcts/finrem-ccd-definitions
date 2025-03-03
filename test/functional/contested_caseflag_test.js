@@ -2,6 +2,7 @@ const { createCaseInCcd, updateCaseInCcd, createSolicitorReference, createCasewo
 const verifyTabText = require('../data/verify-contested-tab-data.json');
 const verifyContestedPaperTabText = require('../data/verify-contested-paper-case-tab-data.json');
 const { Logger } = require('@hmcts/nodejs-logging');
+const { log } = require('node:console');
 const logger = Logger.getLogger('helpers/utils.js');
 
 
@@ -21,7 +22,7 @@ Feature('Contested Case Flag Tests');
 
 Scenario('Caseworker creates case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
@@ -51,6 +52,7 @@ Scenario('Caseworker manage case flag @nightly', async ({ I }) => {
 
 Scenario('Judge creates case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
 
     await I.signInIdam(judgeUserName, judgePassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
@@ -63,9 +65,9 @@ Scenario('Judge creates case flag @nightly', async ({ I }) => {
 }).retry(3);
 
 
-Scenario('Caseworker creates case flag for schedule 1 case @nightly', async ({ I }) => {
+Scenario('Caseworker creates case flag for schedule 1 case @nightly @mytest', { timeout: 60000 }, async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
@@ -97,7 +99,6 @@ Scenario.skip('Create case flag with General Application @nightly', async ({ I }
 
 Scenario('Case flag for Paper Case @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
-    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
