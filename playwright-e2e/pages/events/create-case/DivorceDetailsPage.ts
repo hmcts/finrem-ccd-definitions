@@ -38,7 +38,7 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         this.issueYear = page.getByRole('group', { name: 'Application Issued Date' }).getByLabel('Year');
         this.courtName = page.getByLabel('Name of Court / Divorce');
         this.divorceStage = page.getByLabel('What stage has the divorce /');
-        this.uploadPetition = page.getByRole('textbox', { name: 'Upload Petition' });
+        this.uploadPetition = page.locator('#divorceUploadPetition');
 
         this.divorceDetailsHeaderConsented = page.getByRole('heading', { name: 'APPLICATION DETAILS' });
         this.caseNumberInput = page.getByLabel('Case Number');
