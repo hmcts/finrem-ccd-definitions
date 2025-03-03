@@ -96,7 +96,8 @@ Scenario.skip('Create case flag with General Application @nightly', async ({ I }
 }).retry(3);
 
 Scenario('Case flag for Paper Case @nightly', async ({ I }) => {
-    const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
@@ -107,6 +108,3 @@ Scenario('Case flag for Paper Case @nightly', async ({ I }) => {
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified');
 }).retry(3);
-
-
-//TODO- can add 2 case flag

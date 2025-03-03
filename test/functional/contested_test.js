@@ -162,12 +162,12 @@ Scenario('Consented case in Contested Assigned to Judge @nightly', async ({ I })
 
 Scenario('Contested Paper Case Creation @nightly', async ({ I }) => {
   if (runningEnv === 'demo') {
-    const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-demo-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-demo-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
     /* eslint-disable */
     const manualPayment = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_manualPayment', './test/data/ccd-demo-contested-paper-case-basic-data.json');
 
   } else {
-    const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
+    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
     const manualPayment = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_manualPayment', './test/data/ccd-contested-paper-case-basic-data.json');
     /* eslint-enable */
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
@@ -207,68 +207,6 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async ({ I
     await I.contestedCheckYourAnswers('Matrimonial');
     await I.waitForText('Form A Application', '60')
 }).retry(3);
-//disable in preview
-Scenario('Contested Matrimonial Case Creation by Caseworker @nightly', async ({ I }) => {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait('15');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
-    await I.contestedDivorceDetails();
-    await I.contestedApplicantDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplication();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestion();
-    await I.miamCertification();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers('Matrimonial');
-    await I.waitForText('Form A Application', '60');
-    I.wait('15');
-    await I.manualPayment();
-    I.wait('5');
-    await I.issueApplication();
-}).retry(3);
-
-//disable in preview
-Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and Yes Exemption @nightly', async ({ I }) => {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait('15');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
-    await I.contestedDivorceDetails();
-    await I.contestedApplicantDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplication();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestionNoMIAMYesExemption();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswersMIAMNotAttended('Matrimonial');
-    await I.waitForText('Form A Application', '60');
-    I.wait('15');
-    await I.manualPayment();
-    I.wait('5');
-    await I.issueApplication();
-}).retry(3);
-
-Scenario('Contested Matrimonial Case Creation by Caseworker MIAM No and No Exemption @nightly', async ({ I }) => {
-    I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    I.wait('15');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedCaseworkerCreate(caRef, 'Matrimonial', true);
-    await I.contestedDivorceDetails();
-    await I.contestedApplicantDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplication();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestionNoMIAMNoExemption();
-}).retry(3);
-
 
 // DISABLED AS OF PAPER CASE BREAKING CHANGE DFR-1688
 // RE-ENABLE AS PART OF BUG FIX
