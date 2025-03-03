@@ -1,7 +1,7 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { createCaseTabData } from '../../../data/tab_content/contested/caseworker_create_case_tabs';
+import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
 
 test(
   'Create Express Case - Contested FormA Submission, suitable for Express case processing',
@@ -35,7 +35,7 @@ test(
   ) => {
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
 
     // Manage/Create case
     await createCasePage.startCase(
@@ -46,13 +46,9 @@ test(
 
     await startPage.navigateContinue();
 
-    // Select whether the applicant is represented or not. Then enter applicant details
-    await solicitorDetailsPage.setApplicantRepresentation(true);
+    // Enter applicant details
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
-    await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
-    await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
-    await solicitorDetailsPage.enterUKaddress();
     await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
     await solicitorDetailsPage.navigateContinue();
 
@@ -68,18 +64,19 @@ test(
 
     //respondent details
     await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
+    await respondentDetailsPage.checkRefugeFieldNotPresent();
+
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
-    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
-    await respondentRepresentedPage.selectRespondentInRefuge(true);
+    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
-    await natureOfApplicationPage.selectNatureOfApplication();
+    await natureOfApplicationPage.expressPilotSuitableNatureOfApplications();
     await natureOfApplicationPage.navigateContinue();
 
     // Property Adjustment Order
@@ -115,9 +112,6 @@ test(
     await financialRemedyCourtPage.enterFrcReason();
     await financialRemedyCourtPage.navigateContinue();
 
-    // Express Case page
-    // When available, check that the express page text is shown and the text is correct.
-
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
     await miamQuestionPage.navigateContinue();
@@ -147,6 +141,9 @@ test(
 
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
+
+    // Express Case page
+    // When available, check that the express page text is shown and the text is correct.
 
     // Note: Financial Assets page produces accessibility issues
     if (config.run_accessibility) {
