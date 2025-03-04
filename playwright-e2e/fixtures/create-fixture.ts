@@ -33,6 +33,7 @@ import { HelpWithFeesPage } from '../pages/events/application-payment-submission
 import { PaymentPage } from '../pages/events/application-payment-submission/PaymentPage';
 import { OrderSummaryPage } from '../pages/events/application-payment-submission/OrderSummaryPage';
 import { ManageOrgDashboardPage } from '../pages/ManageOrgDashboardPage';
+import { UpdateContactDetailsPage } from '../pages/events/update-contact-details/UpdateContactDetailsPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -69,6 +70,7 @@ type CreateFixtures = {
   issueApplicationPage: IssueApplicationPage;
   approveApplicationPage: ApproveApplicationPage
   sendOrderPage: SendOrderPage;
+  updateContactDetailsPage: UpdateContactDetailsPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -164,5 +166,8 @@ export const test = base.extend<CreateFixtures>({
   },
   sendOrderPage: async ({ page }, use) => {
     await use(new SendOrderPage(page));
-  }
+  },
+  updateContactDetailsPage: async ({ page }, use) => {
+    await use(new UpdateContactDetailsPage(page));
+  },
 });
