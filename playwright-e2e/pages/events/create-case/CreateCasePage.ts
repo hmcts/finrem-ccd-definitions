@@ -29,3 +29,4 @@ export class CreateCasePage extends BaseJourneyPage {
     await this.startCaseButton.click();
   }
 }
+                              
