@@ -27,7 +27,7 @@ Scenario('Caseworker creates case flag @nightly', async ({ I }) => {
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
     await I.createCaseFlag();
-    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
+    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.caseSubmissionEvent);
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified');
@@ -58,21 +58,21 @@ Scenario('Judge creates case flag @nightly', async ({ I }) => {
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
     await I.createCaseFlag();
-    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
+    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.caseSubmissionEvent);
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified');
 }).retry(3);
 
 
-Scenario('Caseworker creates case flag for schedule 1 case @nightly @mytest', { timeout: 60000 }, async ({ I }) => {
+Scenario('Caseworker creates case flag for schedule 1 case @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
     await I.createCaseFlag();
-    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
+    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.caseSubmissionEvent);
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified for schedule 1 case');
@@ -97,14 +97,16 @@ Scenario.skip('Create case flag with General Application @nightly', async ({ I }
     logger.info('case flag created and verified for schedule 1 case');
 }).retry(3);
 
+// Should work after fix is merged https://github.com/hmcts/finrem-ccd-definitions/pull/2374
 Scenario('Case flag for Paper Case @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
-
+    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
     await I.createCaseFlag();
-    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.applicationDraftedEndState);
+    await I.verifyCaseFlagEvent(verifyTabText.caseType, verifyTabText.historyTab.createCaseFlagEvent, verifyTabText.historyTab.caseSubmissionEvent);
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified');

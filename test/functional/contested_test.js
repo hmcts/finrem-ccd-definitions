@@ -114,6 +114,7 @@ Scenario.skip('Contested Case Approved and Send Order  @nightly', async I => {
     //await I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
 }).retry(3);
 
+// Fails with 502, may be indicative of issue.
 Scenario('Consented case in Contested @nightly', async ({ I }) => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -131,6 +132,7 @@ Scenario('Consented case in Contested @nightly', async ({ I }) => {
   //await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
 }).retry(3);
 
+// Fails with 502, may be indicative of issue.
 Scenario('Consented case in Contested Assigned to Judge @nightly', async ({ I }) => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   /* eslint-disable */
@@ -151,6 +153,7 @@ Scenario('Consented case in Contested Assigned to Judge @nightly', async ({ I })
   //await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
 }).retry(3);
 
+// Should work after fix is merged https://github.com/hmcts/finrem-ccd-definitions/pull/2374
 Scenario('Contested Paper Case Creation @nightly', async ({ I }) => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -192,46 +195,6 @@ Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async ({ I
     await I.contestedCheckYourAnswers('Matrimonial');
     await I.waitForText('Form A Application', '60')
 }).retry(3);
-
-// DISABLED AS OF PAPER CASE BREAKING CHANGE DFR-1688
-// RE-ENABLE AS PART OF BUG FIX
-//
-// Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and Yes Exemption @nightly', async ({ I }) => {
-//     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-//     I.wait('15');
-//     await I.createPaperCase('FinancialRemedyContested', 'New Paper Case');
-//     await I.contestedCaseworkerCreatePaperCase(caRef, 'Matrimonial', true);
-//     await I.contestedDivorceDetails();
-//     await I.contestedApplicantDetails();
-//     await I.contestedRespondentDetails();
-//     await I.contestedNatureOfApplication();
-//     await I.fastTrack();
-//     await I.complexityList();
-//     await I.applyingToCourt();
-//     await I.mediationQuestionNoMIAMYesExemption();
-//     await I.contestedOtherDocumentsPaperCase();
-//     await I.contestedCheckYourAnswersMIAMNotAttended('Matrimonial');
-//     await I.waitForText('New Paper Case', '60');
-//     I.wait('15');
-//     await I.manualPayment();
-//     I.wait('5');
-//     await I.issueApplication();
-// }).retry(3);
-//
-// Scenario('Contested Matrimonial Case Creation by Caseworker Paper Case MIAM No and No Exemption @nightly', async ({ I }) => {
-//     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-//     I.wait('15');
-//     await I.createPaperCase('FinancialRemedyContested', 'New Paper Case');
-//     await I.contestedCaseworkerCreatePaperCase(caRef, 'Matrimonial', true);
-//     await I.contestedDivorceDetails();
-//     await I.contestedApplicantDetails();
-//     await I.contestedRespondentDetails();
-//     await I.contestedNatureOfApplication();
-//     await I.fastTrack();
-//     await I.complexityList();
-//     await I.applyingToCourt();
-//     await I.mediationQuestionNoMIAMNoExemption();
-// }).retry(3);
 
 Scenario.skip('progress to listing for contested case @nightly', async ({ I }) => {
 
