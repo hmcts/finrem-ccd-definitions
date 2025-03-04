@@ -18,7 +18,6 @@ test(
       },
     ) => {
       const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
-      const caseSubmission = await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
       const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
       const respondentInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
 

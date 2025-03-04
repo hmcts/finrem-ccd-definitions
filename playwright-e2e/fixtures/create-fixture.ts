@@ -169,5 +169,5 @@ export const test = base.extend<CreateFixtures>({
   },
   updateContactDetailsPage: async ({ page }, use) => {
     await use(new UpdateContactDetailsPage(page));
-  },
+  }
 });
