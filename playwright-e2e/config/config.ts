@@ -36,6 +36,11 @@ const configuration = {
     password: process.env.PLAYWRIGHT_SOLICITOR_PSWD || '',
   },
 
+  applicantCAA: {
+    email: process.env.PLAYWRIGHT_APPL_CAA_USERNAME || '',
+    password: process.env.PLAYWRIGHT_APPL_CAA_PSWD || '',
+  },
+
   respondent_solicitor: {
     email: process.env.PLAYWRIGHT_RESPONDENT_SOL_USERNAME || 'fr_respondent_solicitor1@mailinator.com',
     password: process.env.PLAYWRIGHT_RESPONDENT_SOL_PSWD || '',

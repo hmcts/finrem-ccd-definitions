@@ -28,7 +28,8 @@ export class ManageOrgDashboardPage extends BaseJourneyPage {
     this.addBtn = page.getByRole('button', { name: 'Add' });   
   }
 
-  async assignCaseToRespondent(assigneeEmail: string) {
+  // renamed from assignCaseToRespondent
+  async assignCaseToEmail(assigneeEmail: string) {
     await this.shareCaseBtn.click();
     this.emailAddressTxtBox.focus();
     await this.page.keyboard.type(assigneeEmail, { delay: 50 });
