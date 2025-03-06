@@ -106,7 +106,7 @@ Scenario('Case flag for Paper Case @preview @nightly', async ({ I }) => {
     await I.validateCaseFlagAlertMessage();
     await I.validateCaseFlagTab('Active');
     logger.info('case flag created and verified');
-}).retry(3);
+}).retry(0);
 
 
 //TODO- can add 2 case flag
