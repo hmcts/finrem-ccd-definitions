@@ -10,7 +10,6 @@ const env = process.env.RUNNING_ENV || 'aat';
 const ccdApiUrl = process.env.CCD_DATA_API_URL;
 const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 
-
 async function axiosRequest(requestParams) {
   return await axiosClient(requestParams).then(response => {
     return response;
@@ -192,6 +191,15 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
   return saveCaseResponse.data;
 }
 
+async function assignCaseToApplicant(config, manageOrgDashboardPage, loginPage, caseId) {
+    await manageOrgDashboardPage.visit();
+    await loginPage.login(config.applicantCAA.email, config.applicantCAA.password, config.manageOrgBaseURL);
+    await manageOrgDashboardPage.searchAndSelectCaseToAssign(caseId);
+    await manageOrgDashboardPage.assignCaseToEmail(config.applicant_solicitor.email);
+    await manageOrgDashboardPage.navigateContinue();
+    await manageOrgDashboardPage.navigateConfirm();
+}
+
 function createSolicitorReference() {
   return date().valueOf();
 }
@@ -200,4 +208,4 @@ function createCaseworkerReference() {
   return 'CA' + date().valueOf();
 }
 
-module.exports = { createCaseInCcd, updateCaseInCcd, createSolicitorReference, createCaseworkerReference };
+module.exports = { createCaseInCcd, updateCaseInCcd, createSolicitorReference, createCaseworkerReference, assignCaseToApplicant };
