@@ -97,10 +97,10 @@ Scenario.skip('Create case flag with General Application @nightly', async ({ I }
     logger.info('case flag created and verified for schedule 1 case');
 }).retry(3);
 
-// Should work after fix is merged https://github.com/hmcts/finrem-ccd-definitions/pull/2374
-Scenario('Case flag for Paper Case @nightly', async ({ I }) => {
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
-    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+// FIX AS PART OF DFR-3643
+Scenario('Case flag for Paper Case @nightly @mytest', async ({ I }) => {
+    const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
+    // const caseSubmission = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);

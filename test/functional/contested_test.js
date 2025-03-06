@@ -114,7 +114,7 @@ Scenario.skip('Contested Case Approved and Send Order  @nightly', async I => {
     //await I.contestedOrderTab(verifyTabText.caseType, verifyTabText.OrdersTab.tabName);
 }).retry(3);
 
-// Fails with 502, may be indicative of issue.
+// // FIX AS PART OF DFR-3643 Fails with 502, may be indicative of issue.
 Scenario('Consented case in Contested @nightly', async ({ I }) => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
@@ -132,7 +132,7 @@ Scenario('Consented case in Contested @nightly', async ({ I }) => {
   //await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
 }).retry(3);
 
-// Fails with 502, may be indicative of issue.
+// // FIX AS PART OF DFR-3643 Fails with 502, may be indicative of issue.
 Scenario('Consented case in Contested Assigned to Judge @nightly', async ({ I }) => {
   const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   /* eslint-disable */
@@ -153,10 +153,10 @@ Scenario('Consented case in Contested Assigned to Judge @nightly', async ({ I })
   //await I.consentOrderProcessTab(verifyTabText.caseType, verifyTabText.consentOrderProcessTab.tabName);
 }).retry(3);
 
-// Should work after fix is merged https://github.com/hmcts/finrem-ccd-definitions/pull/2374
+// FIX AS PART OF DFR-3643
 Scenario('Contested Paper Case Creation @nightly', async ({ I }) => {
-  const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
-  const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+  const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
+  const caseSubmission = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
   const manualPayment = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_manualPayment', './test/data/ccd-contested-paper-case-basic-data.json');
   /* eslint-enable */
   await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
