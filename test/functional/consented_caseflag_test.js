@@ -37,7 +37,6 @@ Scenario('Caseworker manage case flag @nightly', async ({ I }) => {
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
     const caseFlag = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyMVP2', 'createFlags', './test/data/ccd-consented-case-flag-data.json');
 
-
     I.signInIdam(caseWorkerUserName, caseWorkerPassword);
     I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
     I.wait('15');
