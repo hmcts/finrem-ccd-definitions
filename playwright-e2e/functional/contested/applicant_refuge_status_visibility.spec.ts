@@ -16,9 +16,7 @@ test(
     }
   ) => {
     const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, './playwright-e2e/data/payload/contested/paper_case/ccd-contested-refuge-applicant.json', 'FinancialRemedyContested', 'FR_newPaperCase');
-    //const manualPayment = 
     await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_manualPayment', './playwright-e2e/data/payload/contested/manual-payment.json');
-    //const issueApplication = 
     await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './playwright-e2e/data/payload/contested/issue-application.json');
 
     // Login to Manage org and assign case to applicant
