@@ -24,10 +24,6 @@ export class ManageCaseDashboardPage {
     await this.page.goto(`${this.url}`);
   }
 
-  async wait(timeout: number) {
-    await this.page.waitForTimeout(timeout)
-  }
-
   async signOut() {
     await this.page.waitForLoadState();
     await this.signOutButton.click();
