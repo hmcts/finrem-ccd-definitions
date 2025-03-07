@@ -21,7 +21,7 @@ export default defineConfig({
     [process.env.CI ? 'html' : 'list'],
     ['html', { outputFolder: '../test-results/functionalTest' }]
   ],
-  expect: { timeout: 180_00 },
+  expect: { timeout: 180_00 }, // 3 minutes
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
