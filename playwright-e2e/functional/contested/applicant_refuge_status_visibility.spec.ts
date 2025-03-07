@@ -1,11 +1,11 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../test/helpers/utils';
-import { assignCaseToApplicant } from '../../../test/helpers/CommonActionsHelper';
-import { respondentAssignedCaseTabs } from '../../data/tab_content/contested/respondent_assigned_case_tabs';
+import { assignCaseToApplicant, assignCaseToRespondent } from '../../../test/helpers/CommonActionsHelper';
+import { applicantRefugeStatusVisibility } from '../../data/tab_content/contested/applicant_refuge_status_visibility_tabs';
 
 test(
-  'Contested - Paper Case: Refuge Status Visilbity',
+  'Contested - Paper Case: Applicant Refuge Status Visilbity',
   { tag: [] },
   async (
     { 
@@ -23,14 +23,15 @@ test(
 
     // Login to Manage org and assign case to applicant
     await assignCaseToApplicant(config, manageOrgDashboardPage, loginPage, caseId);
-    // wait for case to be assignment to be processed. 
-    await manageOrgDashboardPage.wait(1000);
+
+    // Login to Manage org and assign case to respondent
+    await assignCaseToRespondent(config, manageOrgDashboardPage, loginPage, caseId);
 
     // Login as applicant sol
     await manageCaseDashboardPage.visit();
     await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
     await manageCaseDashboardPage.navigateToCase(caseId);
+    await manageCaseDashboardPage.wait(1000);
 
-    // Assert tab data
-    //caseDetailsPage.assertTabData(respondentAssignedCaseTabs);
+    caseDetailsPage.assertTabData(applicantRefugeStatusVisibility);
 });

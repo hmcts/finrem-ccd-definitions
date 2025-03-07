@@ -52,4 +52,8 @@ export class ManageOrgDashboardPage extends BaseJourneyPage {
   async visit(){
     await this.page.goto(`${this.url}`);
   }
+
+  async signOut(){
+    await this.signOutButton.click();
+  }
 }
