@@ -29,7 +29,15 @@ test(
     await manageCaseDashboardPage.visit();
     await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
     await manageCaseDashboardPage.navigateToCase(caseId);
-    await manageCaseDashboardPage.wait(1000);
-
+    await manageCaseDashboardPage.wait(100);
     caseDetailsPage.assertTabData(applicantRefugeStatusVisibility);
+    await manageCaseDashboardPage.signOut();
+
+    // Login as caseworker
+    await manageCaseDashboardPage.visit();
+    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+    // await manageCaseDashboardPage.wait(100);
+    // caseDetailsPage.assertTabData(applicantRefugeStatusVisibility);
+    // await manageCaseDashboardPage.signOut();
 });
