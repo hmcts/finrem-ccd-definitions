@@ -51,5 +51,6 @@ test(
     await loginPage.login(config.respondent_solicitor.email, config.respondent_solicitor.password, config.manageCaseBaseURL);
     await manageCaseDashboardPage.navigateToCase(caseId);
     await caseDetailsPage.assertTabData(rsExpectedApplicantRefugeStatus);
+    await manageCaseDashboardPage.signOut();
 
 });
