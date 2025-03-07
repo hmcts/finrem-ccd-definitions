@@ -54,6 +54,8 @@ export class CaseDetailsPage {
     private async assertTabHeader(tabName: string): Promise<void> {
       const tabHeader = this.getTabHeader(tabName);
       await expect(tabHeader).toBeVisible();
+      await expect(tabHeader).toBeEnabled();
+      await this.page.waitForTimeout(200);
       await tabHeader.click();
     }
     
@@ -63,11 +65,18 @@ export class CaseDetailsPage {
           const tabItem = this.getTabContent(content);
           await expect(tabItem).toBeVisible();
         } else {
-          const tabItem = this.getTabContent(content.tabItem);
-          await expect(tabItem).toBeVisible();
+          const label = content.tabItem;
+          const expectedValue = content.value;
 
-          const tabValue = tabItem.locator('xpath=../following-sibling::td');
-          await expect(tabValue).toHaveText(content.value);
+          // Locate the table row using the label text
+          const row = this.page.locator(`tr:has(th:has-text("${label}"))`);
+          await row.waitFor();  // Ensures the row is present before proceeding
+
+          // Find the value inside the corresponding column
+          const valueLocator = row.locator('td ccd-field-read-label');
+
+          // Assert that the extracted text matches the expected value
+          await expect(valueLocator).toHaveText(expectedValue);
         }
       }
     }
