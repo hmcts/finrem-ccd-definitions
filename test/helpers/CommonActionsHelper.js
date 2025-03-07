@@ -5,7 +5,6 @@ async function assignCaseToApplicant(config, manageOrgDashboardPage, loginPage, 
     await manageOrgDashboardPage.assignCaseToEmail(config.applicant_solicitor.email);
     await manageOrgDashboardPage.navigateContinue();
     await manageOrgDashboardPage.navigateConfirm();
-    //await manageOrgDashboardPage.wait(1000);
     await manageOrgDashboardPage.signOut();
 }
 
@@ -16,7 +15,6 @@ async function assignCaseToRespondent(config, manageOrgDashboardPage, loginPage,
     await manageOrgDashboardPage.assignCaseToEmail(config.respondent_solicitor.email);
     await manageOrgDashboardPage.navigateContinue();
     await manageOrgDashboardPage.navigateConfirm();
-    //await manageOrgDashboardPage.wait(1000);
     await manageOrgDashboardPage.signOut();
 }
 
