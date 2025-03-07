@@ -73,7 +73,7 @@ export class CaseDetailsPage {
           await row.waitFor();  // Ensures the row is present before proceeding
 
           // Find the value inside the corresponding column
-          const valueLocator = row.locator('td ccd-field-read-label');
+          const valueLocator = row.locator('td');
 
           // Assert that the extracted text matches the expected value
           await expect(valueLocator).toHaveText(expectedValue);
