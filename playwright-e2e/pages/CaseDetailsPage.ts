@@ -55,6 +55,7 @@ export class CaseDetailsPage {
       const tabHeader = this.getTabHeader(tabName);
       await expect(tabHeader).toBeVisible();
       await expect(tabHeader).toBeEnabled();
+      await this.page.waitForTimeout(200);
       await tabHeader.click();
     }
     
