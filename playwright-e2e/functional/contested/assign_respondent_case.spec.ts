@@ -23,7 +23,7 @@ test(
     await manageOrgDashboardPage.visit();
     await loginPage.login(config.respondentCAA.email, config.respondentCAA.password, config.manageOrgBaseURL);
     await manageOrgDashboardPage.searchAndSelectCaseToAssign(caseId);
-    await manageOrgDashboardPage.assignCaseToRespondent(config.respondent_solicitor.email);
+    await manageOrgDashboardPage.assignCaseToEmail(config.respondent_solicitor.email);
     await manageOrgDashboardPage.navigateContinue();
     await manageOrgDashboardPage.navigateConfirm();
     // wait for case to be assignment to be processed. 
