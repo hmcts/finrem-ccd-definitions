@@ -29,6 +29,7 @@ test(
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       caseDetailsPage,
+      expressCaseEnrolledPage,
       makeAxeBuilder
     },
     testInfo
@@ -93,7 +94,8 @@ test(
     await writtenAgreementPage.navigateContinue();
 
     //Fast track procedure
-    await fastTrackProcedurePage.selectFastTrack(false);
+    // REVERT FASTRACK TO FALSE
+    await fastTrackProcedurePage.selectFastTrack(true);
     await fastTrackProcedurePage.navigateContinue();
 
     //Financial assets
@@ -112,9 +114,14 @@ test(
     await financialRemedyCourtPage.enterFrcReason();
     await financialRemedyCourtPage.navigateContinue();
 
+    // Page shows to tell User that case is an Express Pilot
+    await expressCaseEnrolledPage.checkLinkResolves();
+    await expressCaseEnrolledPage.navigateContinue();
+
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
-    await miamQuestionPage.navigateContinue();
+    // REVERT TO ALLOW CASE TO CONTINUE
+    // await miamQuestionPage.navigateContinue();
 
     // Miam details
     await miamDetailsPage.enterMediatorRegistrationNumber();

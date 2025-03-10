@@ -33,6 +33,7 @@ import { HelpWithFeesPage } from '../pages/events/application-payment-submission
 import { PaymentPage } from '../pages/events/application-payment-submission/PaymentPage';
 import { OrderSummaryPage } from '../pages/events/application-payment-submission/OrderSummaryPage';
 import { ManageOrgDashboardPage } from '../pages/ManageOrgDashboardPage';
+import { ExpressCaseEnrolledPage } from '../pages/events/create-case/ExpressCaseEnrolledPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -67,8 +68,9 @@ type CreateFixtures = {
   caseSubmissionPage: CaseSubmissionPage;
   hwfApplicationAcceptedPage: HwfApplicationAcceptedPage;
   issueApplicationPage: IssueApplicationPage;
-  approveApplicationPage: ApproveApplicationPage
+  approveApplicationPage: ApproveApplicationPage;
   sendOrderPage: SendOrderPage;
+  expressCaseEnrolledPage: ExpressCaseEnrolledPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -164,5 +166,8 @@ export const test = base.extend<CreateFixtures>({
   },
   sendOrderPage: async ({ page }, use) => {
     await use(new SendOrderPage(page));
-  }
+  },
+  expressCaseEnrolledPage: async ({ page }, use) => {
+    await use(new ExpressCaseEnrolledPage(page));
+  },
 });
