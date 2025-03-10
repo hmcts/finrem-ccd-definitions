@@ -11,7 +11,7 @@ test(
       loginPage,
       manageCaseDashboardPage,
       manageOrgDashboardPage,
-      caseDetailsPage
+      caseDetailsPage,
     }
   ) => {
     const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
@@ -34,6 +34,5 @@ test(
     await loginPage.login(config.respondent_solicitor.email, config.respondent_solicitor.password, config.manageCaseBaseURL);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
-    // Assert tab data
     caseDetailsPage.assertTabData(respondentAssignedCaseTabs);
 });
