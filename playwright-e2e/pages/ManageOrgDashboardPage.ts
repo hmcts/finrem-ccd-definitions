@@ -35,6 +35,8 @@ export class ManageOrgDashboardPage extends BaseJourneyPage {
     const matSelection = await this.page.getByText(`${assigneeEmail}`);
     await expect(matSelection).toBeVisible();
     await matSelection.click();
+
+    await this.addBtn.isVisible();
     this.addBtn.click();
   }
 
