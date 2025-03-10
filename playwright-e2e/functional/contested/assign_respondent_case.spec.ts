@@ -1,6 +1,7 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../test/helpers/utils';
+import { assignCaseToRespondent } from '../../pages/helpers/CaseAssigmentHelper';
 import { respondentAssignedCaseTabs } from '../../data/tab_content/contested/respondent_assigned_case_tabs';
 
 test(
@@ -20,14 +21,7 @@ test(
     const issueApplication = await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
         
     // Login to Mange org and assign case to respondent
-    await manageOrgDashboardPage.visit();
-    await loginPage.login(config.respondentCAA.email, config.respondentCAA.password, config.manageOrgBaseURL);
-    await manageOrgDashboardPage.searchAndSelectCaseToAssign(caseId);
-    await manageOrgDashboardPage.assignCaseToEmail(config.respondent_solicitor.email);
-    await manageOrgDashboardPage.navigateContinue();
-    await manageOrgDashboardPage.navigateConfirm();
-    // wait for case to be assignment to be processed. 
-    await manageOrgDashboardPage.wait(1000);
+    await assignCaseToRespondent(loginPage, manageOrgDashboardPage, caseId);
 
     // Login as respondent sol
     await manageCaseDashboardPage.visit();
