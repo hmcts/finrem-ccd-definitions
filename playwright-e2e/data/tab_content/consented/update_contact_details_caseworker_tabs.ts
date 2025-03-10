@@ -1,4 +1,4 @@
-export const createCaseTabData = [
+export const updateContactDetailsTabData = [
   {
     tabName: 'Applicant',
     tabContent: [
