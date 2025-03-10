@@ -1,7 +1,7 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../test/helpers/utils';
-import { assignCaseToApplicant, assignCaseToRespondent } from '../../../test/helpers/CommonActionsHelper';
+import { assignCaseToApplicant, assignCaseToRespondent } from '../../pages/helpers/CaseAssigmentHelper';
 import { cwExpectedApplicantRefugeStatus, asExpectedApplicantRefugeStatus, rsExpectedApplicantRefugeStatus, jExpectedApplicantRefugeStatus } from '../../data/tab_content/contested/applicant_refuge_status_visibility_tabs';
 
 test(
@@ -20,10 +20,10 @@ test(
     await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './playwright-e2e/data/payload/contested/issue-application.json');
 
     // Login to Manage org and assign case to applicant
-    await assignCaseToApplicant(config, manageOrgDashboardPage, loginPage, caseId);
+    await assignCaseToApplicant(loginPage, manageOrgDashboardPage, caseId);
 
     // Login to Manage org and assign case to respondent
-    await assignCaseToRespondent(config, manageOrgDashboardPage, loginPage, caseId);
+    await assignCaseToRespondent(loginPage, manageOrgDashboardPage, caseId);
 
     // Login as applicant sol
     await manageCaseDashboardPage.visit();

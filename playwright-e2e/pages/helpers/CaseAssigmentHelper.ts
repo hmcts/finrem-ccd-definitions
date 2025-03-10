@@ -1,4 +1,12 @@
-async function assignCaseToApplicant(config, manageOrgDashboardPage, loginPage, caseId) {
+import { ManageOrgDashboardPage } from '../../pages/ManageOrgDashboardPage';
+import { SigninPage } from "../../pages/SigninPage";
+import config from "../../config/config";
+
+export async function assignCaseToApplicant(
+    loginPage: SigninPage,
+    manageOrgDashboardPage: ManageOrgDashboardPage,
+    caseId: string
+): Promise<void> {
     await manageOrgDashboardPage.visit();
     await loginPage.login(config.applicantCAA.email, config.applicantCAA.password, config.manageOrgBaseURL);
     await manageOrgDashboardPage.searchAndSelectCaseToAssign(caseId);
@@ -8,7 +16,11 @@ async function assignCaseToApplicant(config, manageOrgDashboardPage, loginPage, 
     await manageOrgDashboardPage.signOut();
 }
 
-async function assignCaseToRespondent(config, manageOrgDashboardPage, loginPage, caseId) {
+export async function assignCaseToRespondent(
+    loginPage: SigninPage,
+    manageOrgDashboardPage: ManageOrgDashboardPage,
+    caseId: string
+): Promise<void> {
     await manageOrgDashboardPage.visit();
     await loginPage.login(config.respondentCAA.email, config.respondentCAA.password, config.manageOrgBaseURL);
     await manageOrgDashboardPage.searchAndSelectCaseToAssign(caseId);
@@ -17,5 +29,3 @@ async function assignCaseToRespondent(config, manageOrgDashboardPage, loginPage,
     await manageOrgDashboardPage.navigateConfirm();
     await manageOrgDashboardPage.signOut();
 }
-
-module.exports = { assignCaseToApplicant, assignCaseToRespondent };
