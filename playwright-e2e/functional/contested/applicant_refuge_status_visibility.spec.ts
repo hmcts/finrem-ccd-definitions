@@ -1,7 +1,7 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../test/helpers/utils';
-import { assignCaseToApplicant, assignCaseToRespondent } from '../../pages/helpers/CaseAssigmentHelper';
+import { assignCaseToApplicant, assignCaseToRespondent } from '../helpers/CaseAssigmentHelper';
 import { cwExpectedApplicantRefugeStatus, asExpectedApplicantRefugeStatus, rsExpectedApplicantRefugeStatus, jExpectedApplicantRefugeStatus } from '../../data/tab_content/contested/applicant_refuge_status_visibility_tabs';
 
 test(

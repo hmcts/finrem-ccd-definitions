@@ -1,7 +1,7 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../test/helpers/utils';
-import { assignCaseToRespondent } from '../../pages/helpers/CaseAssigmentHelper';
+import { assignCaseToRespondent } from '../helpers/CaseAssigmentHelper';
 import { respondentAssignedCaseTabs } from '../../data/tab_content/contested/respondent_assigned_case_tabs';
 
 test(
