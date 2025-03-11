@@ -169,5 +169,5 @@ export const test = base.extend<CreateFixtures>({
   },
   createCaseSavingYourAnswersPage: async ({ page }, use) => {
     await use(new CreateCaseSavingYourAnswersPage(page));
-  },
+  }
 });
