@@ -54,6 +54,7 @@ export class CaseDetailsPage {
     private async assertTabHeader(tabName: string): Promise<void> {
       const tabHeader = this.getTabHeader(tabName);
       await expect(tabHeader).toBeVisible();
+      await expect(tabHeader).toBeEnabled();
       await tabHeader.click();
     }
     
@@ -64,6 +65,7 @@ export class CaseDetailsPage {
           await expect(tabItem).toBeVisible();
         } else {
           const tabItem = this.getTabContent(content.tabItem);
+          await tabItem.waitFor();
           await expect(tabItem).toBeVisible();
 
           const tabValue = tabItem.locator('xpath=../following-sibling::td');
