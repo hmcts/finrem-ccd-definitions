@@ -9,7 +9,7 @@ test(
     'Consented - Update contact details',
     { tag: [] },
     async (
-      { 
+      {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
@@ -27,7 +27,7 @@ test(
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
-  
+
       // Update contact details
       await caseDetailsPage.selectNextStep(consentedEvents.UpdateContactDetails);
       await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(false);
@@ -43,8 +43,6 @@ test(
       await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
       await createCaseCheckYourAnswersPage.checkRespondentInRefugeQuestion(respondentInRefuge);
       await createCaseCheckYourAnswersPage.navigateSubmit();
-
-      // await updateContactDetailsPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated(consentedEvents.UpdateContactDetails.listItem);
 
       // Assert tab data
