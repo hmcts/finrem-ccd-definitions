@@ -64,18 +64,12 @@ export class CaseDetailsPage {
           const tabItem = this.getTabContent(content);
           await expect(tabItem).toBeVisible();
         } else {
-          const label = content.tabItem;
-          const expectedValue = content.value;
+          const tabItem = this.getTabContent(content.tabItem);
+          await tabItem.waitFor();
+          await expect(tabItem).toBeVisible();
 
-          // Locate the table row using the label text
-          const row = this.page.locator(`tr:has(th:has-text("${label}"))`);
-          await row.waitFor();  // Ensures the row is present before proceeding
-
-          // Find the value inside the corresponding column
-          const valueLocator = row.locator('td');
-
-          // Assert that the extracted text matches the expected value
-          await expect(valueLocator).toHaveText(expectedValue);
+          const tabValue = tabItem.locator('xpath=../following-sibling::td');
+          await expect(tabValue).toHaveText(content.value);
         }
       }
     }
