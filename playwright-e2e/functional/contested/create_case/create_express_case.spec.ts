@@ -2,6 +2,7 @@ import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
+import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tab';
 
 test(
   'Create Express Case - Contested FormA Submission, suitable for Express case processing',
@@ -152,8 +153,11 @@ test(
 
     await caseDetailsPage.checkHasBeenCreated();
 
-    // Assert tab data
+    // Assert case creation tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
+
+    // Assert express label set in tab data
+    await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
 
     // Express Case page
     // When available, check that the express page text is shown and the text is correct.
