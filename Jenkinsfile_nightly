@@ -27,6 +27,8 @@ def secrets = [
     'finrem-${env}': [
         secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
         secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
+        secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
+        secret('playwright-appl-caa-password', 'PLAYWRIGHT_APPL_CAA_PSWD'),
         secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
         secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
         secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
