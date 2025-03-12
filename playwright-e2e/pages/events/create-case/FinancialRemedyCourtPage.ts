@@ -15,7 +15,7 @@ export class FinancialRemedyCourtPage extends BaseJourneyPage {
     private readonly frcReasonTxtBox: Locator;
 
     private readonly courtRegion: string = 'Midlands'
-    private readonly courtFrc: string = 'Nottingham'
+    private readonly courtFrc: string = 'Birmingham'
 
     public constructor(page: Page) {
         super(page);
