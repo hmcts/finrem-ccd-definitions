@@ -10907,6 +10907,8 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5",
     "PageShowCondition": "hearingInstruction.showRequireAnotherHearingQuestion=\"Yes\""
   },
   {
