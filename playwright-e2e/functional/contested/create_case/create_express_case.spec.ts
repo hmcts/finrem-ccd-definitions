@@ -94,8 +94,7 @@ test(
     await writtenAgreementPage.navigateContinue();
 
     //Fast track procedure
-    // REVERT FASTRACK TO FALSE
-    await fastTrackProcedurePage.selectFastTrack(true);
+    await fastTrackProcedurePage.selectFastTrack(false);
     await fastTrackProcedurePage.navigateContinue();
 
     //Financial assets
@@ -120,7 +119,6 @@ test(
 
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
-    // REVERT TO ALLOW CASE TO CONTINUE
     // await miamQuestionPage.navigateContinue();
 
     // Miam details
