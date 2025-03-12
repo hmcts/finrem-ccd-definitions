@@ -29,5 +29,5 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Assert tab data
-    caseDetailsPage.assertTabData(respondentAssignedCaseTabs);
+    await caseDetailsPage.assertTabData(respondentAssignedCaseTabs);
 });
