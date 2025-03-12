@@ -169,5 +169,5 @@ export const test = base.extend<CreateFixtures>({
   },
   expressCaseEnrolledPage: async ({ page }, use) => {
     await use(new ExpressCaseEnrolledPage(page));
-  },
+  }
 });
