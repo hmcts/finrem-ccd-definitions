@@ -16,5 +16,14 @@
     "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabExpressCaseParticipation",
+    "Label": "**Express Pilot Participation**: ${expressCaseParticipation}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
