@@ -9,7 +9,34 @@
     "PageID": 16,
     "PageDisplayOrder": 16,
     "PageColumnNumber": 1,
+    "PageShowCondition": "expressCaseParticipation=\"Enrolled\"",
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "21/02/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "suitableForExpressCaseAmendmentLabel",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 16,
+    "PageDisplayOrder": 16,
+    "PageColumnNumber": 1,
     "PageShowCondition": "fastTrackDecision=\"ExpressCaseParticipation is Enrolled\"",
     "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "12/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "expressCaseParticipation",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 16,
+    "PageDisplayOrder": 16,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "suitableForExpressCaseLabel=\"IMPOSSIBLE\"",
+    "ShowSummaryChangeOption": "N",
+    "RetainHiddenValue": "Y"
   }
 ]

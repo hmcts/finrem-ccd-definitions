@@ -1,9 +1,9 @@
 [
   {
-    "LiveFrom": "21/02/2025",
+    "LiveFrom": "07/03/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "suitableForExpressCaseLabel",
-    "Label": "Placeholder for some text to say that this case HAS been enrolled on the Express Pilot ",
+    "Label": "You have been automatically entered into the 'express financial remedy procedure' pilot. This is because you have noted that you and the respondent's estimated total combined net assets are £250,000 or less, and your case has been allocated to one of the participating courts.\r\n\r\nYou can find out more information on the pilot procedure here:\r\n<a href=\"https://www.gov.uk/guidance/what-to-expect-if-you-are-in-the-express-financial-remedy-pilot\"target=\"_blank\">https://www.gov.uk/guidance/what-to-expect-if-you-are-in-the-express-financial-remedy-pilot/</a>.",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -16,5 +16,14 @@
     "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "13/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "suitableForExpressCaseAmendmentLabel",
+    "Label": "The pilot aims to reduce the time taken to resolve contested financial remedy cases where the parties' estimated total combined net assets are £250,000 or less.\r\n\r\nThis application has automatically entered into the pilot because you have noted the parties' estimated total combined net assets are £250,000 or less; and the case has been allocated to one of the participating courts.\r\n\r\nThe term estimated 'total combined net assets' refers to the combined value of the applicant's and the respondent's assets (excluding pension rights or Pension Protection Fund compensation entitlement) after the deduction of liabilities and mortgages.\r\n\r\nYou can find out more information on the pilot which includes changes to filing and listing times here:\r\n<a href=\"https://www.gov.uk/guidance/what-to-expect-if-you-are-in-the-express-financial-remedy-pilot\" target=\"_blank\">https://www.gov.uk/guidance/what-to-expect-if-you-are-in-the-express-financial-remedy-pilot/</a>.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
