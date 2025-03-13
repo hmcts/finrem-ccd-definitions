@@ -43,7 +43,7 @@
     "ShowEventNotes": "Y"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "17/02/2025",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_amendCase",
     "Name": "Amend Case",
@@ -52,6 +52,7 @@
     "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;readyForHearing",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
@@ -137,7 +138,7 @@
     "Description": "Amend Application Details",
     "DisplayOrder": 109,
     "PreConditionState(s)": "caseAdded;newPaperCase",
-    "PostConditionState": "caseAdded",
+    "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",

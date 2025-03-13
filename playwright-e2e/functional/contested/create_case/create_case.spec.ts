@@ -30,10 +30,17 @@ test(
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       caseDetailsPage,
+      createCaseSavingYourAnswersPage,
       makeAxeBuilder
     },
     testInfo
   ) => {
+    // Set up court information.
+    const courtName: string = "DERBY COMBINED COURT CENTRE";
+    const courtAddress: string = "Morledge, Derby DE1 2XE";
+    const courtEmail: string = "FRCNottingham@justice.gov.uk";
+    const courtPhone: string = "0115 910 3504";
+
     // Sign in
     await manageCaseDashboardPage.visit()
     await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
@@ -104,8 +111,8 @@ test(
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
 
-    // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown();
+    // Financial Remedies Court, a court is selected that isn't currently processing Express Case applications.
+    await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
@@ -130,9 +137,14 @@ test(
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue();
 
-    //Continue about to submit and check your answers
-    await createCaseCheckYourAnswersPage.navigateContinue();
+    // Saving your application. What happens next. If you need help.
+    await createCaseSavingYourAnswersPage.checkSelectedCourtAddress(courtAddress);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
+    await createCaseSavingYourAnswersPage.navigateContinue();
 
+    //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
 
     await createCaseCheckYourAnswersPage.navigateSubmit();
