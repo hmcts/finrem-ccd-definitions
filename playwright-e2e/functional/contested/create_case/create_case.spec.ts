@@ -36,10 +36,10 @@ test(
     testInfo
   ) => {
     // Set up court information.
-    const courtName: string = "DERBY COMBINED COURT CENTRE";
-    const courtAddress: string = "Morledge, Derby DE1 2XE";
-    const courtEmail: string = "FRCNottingham@justice.gov.uk";
-    const courtPhone: string = "0115 910 3504";
+    const courtName: string = "COVENTRY COMBINED COURT CENTRE";
+    const courtAddress: string = "140 Much Park Street, Coventry, CV1 2SN";
+    const courtEmail: string = "FRCBirmingham@justice.gov.uk";
+    const courtPhone: string = "0300 123 5577";
 
     // Sign in
     await manageCaseDashboardPage.visit()

@@ -33,6 +33,7 @@ import { HelpWithFeesPage } from '../pages/events/application-payment-submission
 import { PaymentPage } from '../pages/events/application-payment-submission/PaymentPage';
 import { OrderSummaryPage } from '../pages/events/application-payment-submission/OrderSummaryPage';
 import { ManageOrgDashboardPage } from '../pages/ManageOrgDashboardPage';
+import { ExpressCaseEnrolledPage } from '../pages/events/create-case/ExpressCaseEnrolledPage';
 import { UpdateContactDetailsPage } from '../pages/events/update-contact-details/UpdateContactDetailsPage';
 import { CreateCaseSavingYourAnswersPage } from '../pages/events/create-case/CreateCaseSavingYourAnswersPage';
 
@@ -69,8 +70,9 @@ type CreateFixtures = {
   caseSubmissionPage: CaseSubmissionPage;
   hwfApplicationAcceptedPage: HwfApplicationAcceptedPage;
   issueApplicationPage: IssueApplicationPage;
-  approveApplicationPage: ApproveApplicationPage
+  approveApplicationPage: ApproveApplicationPage;
   sendOrderPage: SendOrderPage;
+  expressCaseEnrolledPage: ExpressCaseEnrolledPage;
   updateContactDetailsPage: UpdateContactDetailsPage;
   createCaseSavingYourAnswersPage: CreateCaseSavingYourAnswersPage;
 };
@@ -168,6 +170,9 @@ export const test = base.extend<CreateFixtures>({
   },
   sendOrderPage: async ({ page }, use) => {
     await use(new SendOrderPage(page));
+  },
+  expressCaseEnrolledPage: async ({ page }, use) => {
+    await use(new ExpressCaseEnrolledPage(page));
   },
   updateContactDetailsPage: async ({ page }, use) => {
     await use(new UpdateContactDetailsPage(page));
