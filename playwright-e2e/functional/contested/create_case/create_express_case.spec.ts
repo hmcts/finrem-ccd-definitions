@@ -30,6 +30,7 @@ test(
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       caseDetailsPage,
+      expressCaseEnrolledPage,
       createCaseSavingYourAnswersPage,
       makeAxeBuilder
     },
@@ -37,10 +38,10 @@ test(
   ) => {
 
     // Set up court information.
-    const courtName: string = "CHESTERFIELD COUNTY COURT";
-    const courtAddress: string = "Tapton Lane, Chesterfield S41 7TW";
-    const courtEmail: string = "FRCNottingham@justice.gov.uk";
-    const courtPhone: string = "0115 910 3504";
+    const courtName: string = "BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE";
+    const courtAddress: string = "Priory Courts, 33 Bull Street, Birmingham, B4 6DS";
+    const courtEmail: string = "FRCBirmingham@justice.gov.uk";
+    const courtPhone: string = "0300 123 5577";
 
     // Sign in
     await manageCaseDashboardPage.visit()
@@ -120,6 +121,10 @@ test(
     await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
     await financialRemedyCourtPage.enterFrcReason();
     await financialRemedyCourtPage.navigateContinue();
+
+    // Page shows to tell User that case is an Express Pilot
+    await expressCaseEnrolledPage.checkLinkResolves();
+    await expressCaseEnrolledPage.navigateContinue();
 
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
