@@ -36,7 +36,21 @@
     "PageID": 16,
     "PageDisplayOrder": 16,
     "PageColumnNumber": 1,
-    "PageShowCondition": "expressCaseParticipation=\"Enrolled\"",
+    "PageShowCondition": "expressCaseParticipation = \"Enrolled\" OR expressCaseParticipation = \"Does not qualify\"",
+    "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "14/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "unsuitableForExpressCaseAmendmentLabel",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "READONLY",
+    "PageID": 16,
+    "PageDisplayOrder": 16,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "amendedExpressCaseCriteriaNotMet=\"Yes\"",
     "ShowSummaryChangeOption": "N"
   },
   {
@@ -44,7 +58,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendApplication",
     "CaseFieldID": "expressCaseParticipation",
-    "PageFieldDisplayOrder": 2,
+    "PageFieldDisplayOrder": 3,
     "DisplayContext": "OPTIONAL",
     "PageID": 16,
     "PageDisplayOrder": 16,
@@ -52,5 +66,19 @@
     "FieldShowCondition": "suitableForExpressCaseAmendmentLabel=\"IMPOSSIBLE\"",
     "ShowSummaryChangeOption": "N",
     "RetainHiddenValue": "Y"
+  },
+  {
+    "LiveFrom": "14/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "amendedExpressCaseCriteriaNotMet",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 16,
+    "PageDisplayOrder": 16,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "suitableForExpressCaseAmendmentLabel=\"IMPOSSIBLE\"",
+    "ShowSummaryChangeOption": "N",
+    "RetainHiddenValue": "N"
   }
 ]
