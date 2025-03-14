@@ -1048,9 +1048,19 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "benefitPaymentChecklistLabel",
+    "CaseFieldID": "benefitForChildrenDecisionSchedule",
     "TabFieldDisplayOrder": 13,
-    "FieldShowCondition": "benefitForChildrenDecision=\"No\""
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "natureOfApplicationTab",
+    "TabLabel": "Nature of Application",
+    "TabDisplayOrder": 9,
+    "CaseFieldID": "benefitPaymentChecklistLabel",
+    "TabFieldDisplayOrder": 14,
+    "FieldShowCondition": "benefitForChildrenDecision=\"No\" OR benefitForChildrenDecisionSchedule=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1059,7 +1069,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 9,
     "CaseFieldID": "benefitPaymentChecklist",
-    "TabFieldDisplayOrder": 14,
+    "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "benefitForChildrenDecision=\"No\""
   },
   {
@@ -1068,8 +1078,18 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 9,
+    "CaseFieldID": "benefitPaymentChecklistSchedule",
+    "TabFieldDisplayOrder": 16,
+    "FieldShowCondition": "benefitForChildrenDecisionSchedule=\"No\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "natureOfApplicationTab",
+    "TabLabel": "Nature of Application",
+    "TabDisplayOrder": 9,
     "CaseFieldID": "issueDate",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4189,9 +4209,19 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "draftOrdersReviewCollection!=\"\"",
+    "TabShowCondition": "isUnreviewedDocumentPresent=\"Yes\"",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "11/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "DraftOrders-courtadmin",
+    "TabLabel": "Draft orders",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "isUnreviewedDocumentPresent",
+    "FieldShowCondition": "draftOrdersReviewCollection=\"DONOTSHOW\"",
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "29/10/2024",
@@ -4210,8 +4240,18 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "draftOrdersReviewCollection!=\"\"",
+    "TabShowCondition": "isUnreviewedDocumentPresent=\"Yes\"",
     "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "14/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "DraftOrders-judiciary",
+    "TabLabel": "Draft orders",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "isUnreviewedDocumentPresent",
+    "FieldShowCondition": "draftOrdersReviewCollection=\"DONOTSHOW\"",
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",

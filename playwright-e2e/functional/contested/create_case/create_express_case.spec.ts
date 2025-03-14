@@ -1,7 +1,8 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { createCaseTabData } from '../../../data/tab_content/contested/caseworker_create_case_tabs';
+import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
+import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tab';
 
 test(
   'Create Express Case - Contested FormA Submission, suitable for Express case processing',
@@ -29,13 +30,22 @@ test(
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       caseDetailsPage,
+      expressCaseEnrolledPage,
+      createCaseSavingYourAnswersPage,
       makeAxeBuilder
     },
     testInfo
   ) => {
+
+    // Set up court information.
+    const courtName: string = "BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE";
+    const courtAddress: string = "Priory Courts, 33 Bull Street, Birmingham, B4 6DS";
+    const courtEmail: string = "FRCBirmingham@justice.gov.uk";
+    const courtPhone: string = "0300 123 5577";
+
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
 
     // Manage/Create case
     await createCasePage.startCase(
@@ -46,13 +56,9 @@ test(
 
     await startPage.navigateContinue();
 
-    // Select whether the applicant is represented or not. Then enter applicant details
-    await solicitorDetailsPage.setApplicantRepresentation(true);
+    // Enter applicant details
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
-    await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
-    await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
-    await solicitorDetailsPage.enterUKaddress();
     await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
     await solicitorDetailsPage.navigateContinue();
 
@@ -68,18 +74,19 @@ test(
 
     //respondent details
     await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
+    await respondentDetailsPage.checkRefugeFieldNotPresent();
+
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
-    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
-    await respondentRepresentedPage.selectRespondentInRefuge(true);
+    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
-    await natureOfApplicationPage.selectNatureOfApplication();
+    await natureOfApplicationPage.expressPilotSuitableNatureOfApplications();
     await natureOfApplicationPage.navigateContinue();
 
     // Property Adjustment Order
@@ -107,7 +114,7 @@ test(
     await financialAssetsPage.navigateContinue();
 
     // Financial Remedies Court, a court is selected that is processing Express Case applications.
-    await financialRemedyCourtPage.selectCourtZoneDropDown('CHESTERFIELD COUNTY COURT');
+    await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
@@ -115,8 +122,9 @@ test(
     await financialRemedyCourtPage.enterFrcReason();
     await financialRemedyCourtPage.navigateContinue();
 
-    // Express Case page
-    // When available, check that the express page text is shown and the text is correct.
+    // Page shows to tell User that case is an Express Pilot
+    await expressCaseEnrolledPage.checkLinkResolves();
+    await expressCaseEnrolledPage.navigateContinue();
 
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
@@ -135,9 +143,14 @@ test(
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue();
 
-    //Continue about to submit and check your answers
-    await createCaseCheckYourAnswersPage.navigateContinue();
+    // Saving your application. What happens next. If you need help.
+    await createCaseSavingYourAnswersPage.checkSelectedCourtAddress(courtAddress);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
+    await createCaseSavingYourAnswersPage.navigateContinue();
 
+    //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
 
     // submits the case
@@ -145,8 +158,14 @@ test(
 
     await caseDetailsPage.checkHasBeenCreated();
 
-    // Assert tab data
+    // Assert case creation tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
+
+    // Assert express label set in tab data
+    await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
+
+    // Express Case page
+    // When available, check that the express page text is shown and the text is correct.
 
     // Note: Financial Assets page produces accessibility issues
     if (config.run_accessibility) {

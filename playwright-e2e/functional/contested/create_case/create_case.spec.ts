@@ -30,10 +30,17 @@ test(
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       caseDetailsPage,
+      createCaseSavingYourAnswersPage,
       makeAxeBuilder
     },
     testInfo
   ) => {
+    // Set up court information.
+    const courtName: string = "COVENTRY COMBINED COURT CENTRE";
+    const courtAddress: string = "140 Much Park Street, Coventry, CV1 2SN";
+    const courtEmail: string = "FRCBirmingham@justice.gov.uk";
+    const courtPhone: string = "0300 123 5577";
+
     // Sign in
     await manageCaseDashboardPage.visit()
     await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
@@ -105,7 +112,7 @@ test(
     await financialAssetsPage.navigateContinue();
 
     // Financial Remedies Court, a court is selected that isn't currently processing Express Case applications.
-    await financialRemedyCourtPage.selectCourtZoneDropDown('DERBY COMBINED COURT CENTRE');
+    await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
@@ -130,9 +137,14 @@ test(
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue();
 
-    //Continue about to submit and check your answers
-    await createCaseCheckYourAnswersPage.navigateContinue();
+    // Saving your application. What happens next. If you need help.
+    await createCaseSavingYourAnswersPage.checkSelectedCourtAddress(courtAddress);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
+    await createCaseSavingYourAnswersPage.navigateContinue();
 
+    //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
 
     await createCaseCheckYourAnswersPage.navigateSubmit();

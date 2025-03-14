@@ -28,6 +28,10 @@ export const consentedEvents: Record<string, CaseEvent> = {
         listItem: "Send Order",
         ccdCallback: "FR_sendOrderForApproved"
     },
+    UpdateContactDetails: {
+        listItem: "Update contact details", 
+        ccdCallback: "FR_updateContactDetails"
+    }
 };
 
 export const contestedEvents: Record<string, CaseEvent> = {
