@@ -2,6 +2,7 @@ import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
+import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tab';
 
 test(
   'Create Express Case - Contested FormA Submission, suitable for Express case processing',
@@ -29,10 +30,19 @@ test(
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       caseDetailsPage,
+      expressCaseEnrolledPage,
+      createCaseSavingYourAnswersPage,
       makeAxeBuilder
     },
     testInfo
   ) => {
+
+    // Set up court information.
+    const courtName: string = "BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE";
+    const courtAddress: string = "Priory Courts, 33 Bull Street, Birmingham, B4 6DS";
+    const courtEmail: string = "FRCBirmingham@justice.gov.uk";
+    const courtPhone: string = "0300 123 5577";
+
     // Sign in
     await manageCaseDashboardPage.visit()
     await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
@@ -104,13 +114,17 @@ test(
     await financialAssetsPage.navigateContinue();
 
     // Financial Remedies Court, a court is selected that is processing Express Case applications.
-    await financialRemedyCourtPage.selectCourtZoneDropDown('CHESTERFIELD COUNTY COURT');
+    await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
     await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
     await financialRemedyCourtPage.enterFrcReason();
     await financialRemedyCourtPage.navigateContinue();
+
+    // Page shows to tell User that case is an Express Pilot
+    await expressCaseEnrolledPage.checkLinkResolves();
+    await expressCaseEnrolledPage.navigateContinue();
 
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
@@ -129,9 +143,14 @@ test(
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue();
 
-    //Continue about to submit and check your answers
-    await createCaseCheckYourAnswersPage.navigateContinue();
+    // Saving your application. What happens next. If you need help.
+    await createCaseSavingYourAnswersPage.checkSelectedCourtAddress(courtAddress);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
+    await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
+    await createCaseSavingYourAnswersPage.navigateContinue();
 
+    //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
 
     // submits the case
@@ -139,8 +158,11 @@ test(
 
     await caseDetailsPage.checkHasBeenCreated();
 
-    // Assert tab data
+    // Assert case creation tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
+
+    // Assert express label set in tab data
+    await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
 
     // Express Case page
     // When available, check that the express page text is shown and the text is correct.

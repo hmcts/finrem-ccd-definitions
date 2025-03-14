@@ -7784,6 +7784,13 @@
     "CRUD": "CRUD"
   },
   {
+    "LiveFrom": "17/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalApplicationReferToJudgeEmailWarning",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationOutcome",
@@ -18667,5 +18674,19 @@
     "CaseFieldID": "unprocessedApprovedDocuments",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isUnreviewedDocumentPresent",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isUnreviewedDocumentPresent",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
   }
 ]
