@@ -117,7 +117,7 @@ test(
     await financialAssetsPage.navigateContinue();
 
     // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown('CHESTERFIELD COUNTY COURT');
+    await financialRemedyCourtPage.selectCourtZoneDropDown("COVENTRY COMBINED COURT CENTRE");
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
