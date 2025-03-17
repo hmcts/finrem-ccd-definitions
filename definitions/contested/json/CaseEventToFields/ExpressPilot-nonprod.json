@@ -36,8 +36,7 @@
     "PageID": 16,
     "PageDisplayOrder": 16,
     "PageColumnNumber": 1,
-    "PageShowCondition": "expressCaseParticipation = \"Enrolled\" OR expressCaseParticipation = \"Does not qualify\"",
-    "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
+    "FieldShowCondition": "amendedExpressCaseCriteriaNotMet=\"No\"",
     "ShowSummaryChangeOption": "N"
   },
   {
