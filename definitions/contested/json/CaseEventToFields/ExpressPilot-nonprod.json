@@ -36,7 +36,8 @@
     "PageID": 16,
     "PageDisplayOrder": 16,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "amendedExpressCaseCriteriaNotMet=\"No\"",
+    "FieldShowCondition": "labelForExpressCaseAmendment=\"suitableForExpressCaseAmendmentLabel\"",
+    "PageShowCondition": "labelForExpressCaseAmendment=\"suitableForExpressCaseAmendmentLabel\" OR labelForExpressCaseAmendment=\"unsuitableForExpressCaseAmendmentLabel\"",
     "ShowSummaryChangeOption": "N"
   },
   {
@@ -49,7 +50,7 @@
     "PageID": 16,
     "PageDisplayOrder": 16,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "amendedExpressCaseCriteriaNotMet=\"Yes\"",
+    "FieldShowCondition": "labelForExpressCaseAmendment=\"unsuitableForExpressCaseAmendmentLabel\"",
     "ShowSummaryChangeOption": "N"
   },
   {
@@ -70,7 +71,7 @@
     "LiveFrom": "14/03/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendApplication",
-    "CaseFieldID": "amendedExpressCaseCriteriaNotMet",
+    "CaseFieldID": "labelForExpressCaseAmendment",
     "PageFieldDisplayOrder": 4,
     "DisplayContext": "OPTIONAL",
     "PageID": 16,
