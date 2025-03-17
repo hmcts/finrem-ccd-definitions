@@ -413,9 +413,7 @@
     "PageID": 3,
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
-    "RetriesTimeoutURLMidEvent": "3,4,5"
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -639,9 +637,7 @@
     "PageDisplayOrder": 6,
     "PageColumnNumber": 1,
     "FieldShowCondition": "respondentRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
-    "RetriesTimeoutURLMidEvent": "3,4,5"
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
