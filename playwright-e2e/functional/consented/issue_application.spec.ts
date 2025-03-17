@@ -20,7 +20,7 @@ test(
       const caseSubmission = await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
       const hwfPaymentAccepted = await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json');
       const dateToday = new Date().toLocaleDateString('en-GB', {
-        day: '2-digit',
+        day: 'numeric',
         month: 'short',
         year: 'numeric',
       }).replace(",", "");
