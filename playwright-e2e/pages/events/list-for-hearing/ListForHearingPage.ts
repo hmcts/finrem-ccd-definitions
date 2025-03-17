@@ -103,7 +103,7 @@ export class ListForHearingPage extends BaseJourneyPage {
         // Correctly format the FRC dropdown locator
         this.frcDropDown = this.page.locator(`#hearing_${this.courtRegion.toLowerCase()}FRCList`);
         await expect(this.frcDropDown).toBeVisible();
-        await this.frcDropDown.selectOption(`{this.courtFrc}FRC`);
+        await this.frcDropDown.selectOption(`${this.courtFrc} FRC`);
 
         // Correctly format the court list dropdown locator
         this.courtListDropDown = this.page.locator(`#hearing_${this.courtFrc.toLowerCase()}CourtList`);
