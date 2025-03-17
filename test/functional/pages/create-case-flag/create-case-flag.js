@@ -8,14 +8,14 @@ async function createCaseFlag(){
   I.waitForText('Create flag', '60');
   I.waitForElement('#flag-location-1', '30');
   I.checkOption('#flag-location-1');
-  I.click('Next');
+  I.click('Continue');
   I.waitForElement('#flag-type-2', 30);
   I.checkOption('#flag-type-2');
-  I.click('Next');
+  I.click('Continue');
 
   I.waitForText('Add comments for this flag');
   I.fillField('Add comments for this flag', 'this is comment');
-  I.click('Next');
+  I.click('Continue');
   I.waitForText('Submit');
   I.click('Submit');
 }
