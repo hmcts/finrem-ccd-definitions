@@ -11003,12 +11003,25 @@
     "LiveFrom": "28/02/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageExpressCase",
-    "CaseFieldID": "amendExpressCaseLabel",
+    "CaseFieldID": "expressPilotQuestion",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "READONLY",
+    "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "28/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageExpressCase",
+    "CaseFieldID": "removeFromExpressPilotWarning",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition": "expressPilotQuestion=\"No\""
   }
 ]
