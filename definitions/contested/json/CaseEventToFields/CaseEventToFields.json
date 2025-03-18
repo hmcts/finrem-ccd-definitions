@@ -11000,7 +11000,7 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
-    "LiveFrom": "28/02/2025",
+    "LiveFrom": "17/03/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageExpressCase",
     "CaseFieldID": "expressPilotQuestion",
@@ -11012,12 +11012,25 @@
     "ShowSummaryChangeOption": "N"
   },
   {
-    "LiveFrom": "28/02/2025",
+    "LiveFrom": "17/03/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageExpressCase",
     "CaseFieldID": "removeFromExpressPilotWarning",
     "PageFieldDisplayOrder": 2,
     "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition": "expressPilotQuestion=\"No\""
+  },
+  {
+    "LiveFrom": "17/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageExpressCase",
+    "CaseFieldID": "confirmRemoveCaseFromExpressPilot",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,

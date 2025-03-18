@@ -8194,5 +8194,15 @@
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "confirmRemoveCaseFromExpressPilot",
+    "Label": " ",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_confirmRemoveFromExpressPilot",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
