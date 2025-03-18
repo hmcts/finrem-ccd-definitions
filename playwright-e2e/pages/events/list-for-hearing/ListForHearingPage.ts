@@ -2,7 +2,6 @@ import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 
 export class ListForHearingPage extends BaseJourneyPage {
-
     private readonly listForHearingTitle: Locator;
     private readonly typeOfHearing: Locator;
     private readonly timeEstimate: Locator;
@@ -27,11 +26,9 @@ export class ListForHearingPage extends BaseJourneyPage {
     private frcDropDown: Locator;
     private courtListDropDown: Locator
 
-
     private readonly courtRegion: string = 'Midlands'
     private readonly courtFrc: string = 'Nottingham'
-
-
+    
     public constructor(page: Page) {
         super(page);
         this.listForHearingTitle = page.getByRole('heading', { name: 'List for Hearing' });
@@ -55,10 +52,8 @@ export class ListForHearingPage extends BaseJourneyPage {
         this.fastTrackWarning = page.getByText('Date of the Fast Track hearing must be between 6 and 10 weeks.');
         this.hearingCourtHeading = page.getByRole('heading', { name: 'Hearing Court' });
         this.courtZoneDropDown = page.locator('#hearing_regionList');
-        
-
-
     }
+    
     async selectTypeOfHearingDropDown(typeOfHearing: string) {
         expect(this.listForHearingTitle).toBeVisible();
         expect(this.typeOfHearingHeader).toBeVisible();
@@ -82,18 +77,15 @@ export class ListForHearingPage extends BaseJourneyPage {
         await this.hearingMonth.fill(month);
         await this.hearingYear.fill(year);
 
-
     } async verifyHearingDateGuidanceMessages() {
         await expect(this.fastTrackDate).toBeVisible();
         await expect(this.expressPilotDate).toBeVisible();
         await expect(this.standardTrackDate).toBeVisible();
-
     }
 
     async enterHearingTime(Time: string) {
         expect(this.hearingTime).toBeVisible();
         await this.hearingTime.fill(Time);
-
     }
 
     async selectCourtForHearing(localCourt: string) {
