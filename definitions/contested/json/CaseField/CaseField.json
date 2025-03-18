@@ -8176,32 +8176,5 @@
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/02/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "expressPilotQuestion",
-    "Label": "Express Pilot?",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/02/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "removeFromExpressPilotWarning",
-    "Label": "Warning: Once you remove a case from the Express Financial Remedy Pilot, it cannot be re-added so this will be a permanent change.",
-    "FieldType": "Label",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/02/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "confirmRemoveCaseFromExpressPilot",
-    "Label": " ",
-    "FieldType": "DynamicMultiSelectList",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
   }
 ]
