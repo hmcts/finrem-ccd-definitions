@@ -8200,8 +8200,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "confirmRemoveCaseFromExpressPilot",
     "Label": " ",
-    "FieldType": "MultiSelectList",
-    "FieldTypeParameter": "FR_confirmRemoveFromExpressPilot",
+    "FieldType": "DynamicMultiSelectList",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
