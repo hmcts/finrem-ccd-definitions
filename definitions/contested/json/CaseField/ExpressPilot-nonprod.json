@@ -1,14 +1,5 @@
 [
   {
-    "LiveFrom": "17/02/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "expressCaseParticipation",
-    "Label": " ",
-    "FieldType": "Text",
-    "SecurityClassification": "Public",
-    "Searchable": "Y"
-  },
-  {
     "LiveFrom": "07/03/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "suitableForExpressCaseLabel",
@@ -16,6 +7,15 @@
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "expressCaseParticipation",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   },
   {
     "LiveFrom": "17/02/2025",
