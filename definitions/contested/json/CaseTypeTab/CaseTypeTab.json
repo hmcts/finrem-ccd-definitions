@@ -4209,7 +4209,7 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "isUnreviewedDocumentPresent=\"Yes\"",
+    "TabShowCondition": "isUnreviewedDocumentPresent!=\"No\"",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1
   },
@@ -4240,7 +4240,7 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "isUnreviewedDocumentPresent=\"Yes\"",
+    "TabShowCondition": "isUnreviewedDocumentPresent!=\"No\"",
     "TabFieldDisplayOrder": 2
   },
   {
