@@ -65,7 +65,7 @@ export class ListForHearingPage extends BaseJourneyPage {
         await this.timeEstimate.fill(timeEstimate);
     }
 
-    async enterHearingDate() {
+    async setHearingDateToCurrentDate() {
         expect(this.hearingDateHeader).toBeVisible();
         const currentDate = new Date();
 
