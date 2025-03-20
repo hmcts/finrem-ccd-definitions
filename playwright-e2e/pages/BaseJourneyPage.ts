@@ -24,6 +24,7 @@ export abstract class BaseJourneyPage {
         await this.page.waitForLoadState();
         await expect(this.submitButton).toBeVisible();
         await expect(this.submitButton).toBeEnabled();
+        await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
         await this.submitButton.click();
         await this.waitForSpinner();
     }
@@ -33,6 +34,7 @@ export abstract class BaseJourneyPage {
         await expect(this.continueButton).toBeVisible();
         await expect(this.continueButton).toBeEnabled();
         await this.continueButton.click();
+        await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
         await this.waitForSpinner();
     }
 
@@ -53,7 +55,7 @@ export abstract class BaseJourneyPage {
     }
 
     async wait(timeout: number) {
-      await this.page.waitForTimeout(timeout)
+      await this.page.waitForTimeout(timeout);
     }
 
     private async waitForSpinner() {
