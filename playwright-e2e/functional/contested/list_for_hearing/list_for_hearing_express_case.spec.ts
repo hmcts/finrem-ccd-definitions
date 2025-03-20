@@ -9,7 +9,7 @@ async function updateCaseWorkerSteps(caseId: string, steps: { event: string, pay
   }
 }
 
-async function createAndProcessCase(): Promise<string> {
+async function createAndProcessFormACase(): Promise<string> {
   const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-express-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
 
@@ -87,7 +87,7 @@ test.describe('Contested - List for Hearing express case', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessCase();
+      const caseId = await createAndProcessFormACase();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
     }
   );
