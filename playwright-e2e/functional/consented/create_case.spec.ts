@@ -1,6 +1,7 @@
 import { test, expect } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { createCaseTabData } from '../../data/tab_content/consented/create_case_tabs';
+import { createCaseTabData, createCaseTabDataPreview, createCaseTabDataDemo } from '../../data/tab_content/consented/create_case_tabs';
+import { createCaseInCcd, updateCaseInCcd } from '../../../test/helpers/utils';
 
 test(
   'Consented - Create Case',
@@ -98,3 +99,27 @@ test(
     }
   }
 );
+
+test(
+  'Consented - Caseworker view tabs post case creation',
+  { tag: ['@preview'] },
+  async (
+    { 
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage
+    }
+  ) => {
+    const isDemoEnv = process.env.RUNNING_ENV === 'demo';
+    const caseDataFile = isDemoEnv ? './test/data/ccd-demo-consented-basic-data.json' : './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json';
+    const expectedTabData = isDemoEnv ? createCaseTabDataDemo : createCaseTabDataPreview;
+    const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseDataFile, 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', caseDataFile);
+    // Login as caseworker
+    await manageCaseDashboardPage.visit();
+    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+    // Assert tab data
+    await caseDetailsPage.assertTabData(expectedTabData);
+    });

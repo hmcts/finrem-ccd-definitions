@@ -1,5 +1,5 @@
 import { test, expect } from '../../../fixtures/fixtures';
-import { createCaseInCcd } from '../../../../test/helpers/utils';
+import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
 import config from '../../../config/config';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
@@ -170,7 +170,7 @@ test(
 
 test(
   'Contested - Caseworker view tabs post case creation',
-  { tag: [] },
+  { tag: ['@preview'] },
   async (
     { 
       loginPage,
@@ -178,13 +178,15 @@ test(
       caseDetailsPage
     }
   ) => {
-    const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-        
+    const isDemoEnv = process.env.RUNNING_ENV === 'demo';
+    const caseDataFile = isDemoEnv ? './test/data/ccd-demo-contested-basic-data.json' : './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json';
+    const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseDataFile, 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseSubmission = await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
+    const hwfPaymentAccepted = await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', caseDataFile);
     // Login as caseworker
     await manageCaseDashboardPage.visit();
     await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
     await manageCaseDashboardPage.navigateToCase(caseId);
-
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
-});
+  });
