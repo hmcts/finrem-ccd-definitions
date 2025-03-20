@@ -21,13 +21,11 @@ test(
     const hearingType: string = "Final Hearing (FH)";
     const courtName: string = "CHESTERFIELD COUNTY COURT";
 
-
-    const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-express-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-express-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
     await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json');
     await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './playwright-e2e/data/payload/contested/caseworker/issue-application.json');
     await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_progressToSchedulingAndListing', './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json');
-    console.log('caseId:', caseId);
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
@@ -38,7 +36,7 @@ test(
     await caseDetailsPage.selectNextStep(contestedEvents.listForHearing);
     await listForHearingPage.selectTypeOfHearingDropDown(hearingType);
     await listForHearingPage.enterTimeEstimate('1 hour');
-    await listForHearingPage.enterHearingDate();
+    await listForHearingPage.setHearingDateToCurrentDate();
     await listForHearingPage.verifyHearingDateGuidanceMessages() // This checks the hearing date guidance messages for fast track, express and standard 
     await listForHearingPage.enterHearingTime('10:00');
     await listForHearingPage.selectCourtForHearing(courtName);
