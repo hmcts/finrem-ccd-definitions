@@ -12,7 +12,7 @@ async function createAndProcessCase(): Promise<string> {
   return caseId;
 }
 
-async function createPaperCaseAndProcessCase(): Promise<string> {
+async function createAndProcessPaperCase(): Promise<string> {
   const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, './playwright-e2e/data/payload/contested/paper_case/ccd-contested-express-case-creation.json', 'FinancialRemedyContested', 'FR_newPaperCase');      
   await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_manualPayment', './playwright-e2e/data/payload/contested/caseworker/manual-payment.json');
   await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './playwright-e2e/data/payload/contested/caseworker/issue-application.json');
@@ -93,7 +93,7 @@ test.describe('Contested - List for Hearing express case', () => {
       },
       testInfo
     ) => {
-      const caseId = await createPaperCaseAndProcessCase();
+      const caseId = await createAndProcessPaperCase();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
     }
   );
