@@ -3,9 +3,9 @@ import config from '../../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
 
-async function updateCaseSteps(caseId: string, steps: { event: string, payload: string }[], userEmail: string, userPassword: string) {
+async function updateCaseWorkerSteps(caseId: string, steps: { event: string, payload: string }[]) {
   for (const step of steps) {
-    await updateCaseInCcd(userEmail, userPassword, caseId, 'FinancialRemedyContested', step.event, step.payload);
+    await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', step.event, step.payload);
   }
 }
 
@@ -13,22 +13,22 @@ async function createAndProcessCase(): Promise<string> {
   const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-express-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
 
-  await updateCaseSteps(caseId, [
+  await updateCaseWorkerSteps(caseId, [
     { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
     { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' },
     { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
-  ], config.caseWorker.email, config.caseWorker.password);
+  ]);
   return caseId;
 }
 
 async function createAndProcessPaperCase(): Promise<string> {
   const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, './playwright-e2e/data/payload/contested/paper_case/ccd-contested-express-case-creation.json', 'FinancialRemedyContested', 'FR_newPaperCase');
 
-  await updateCaseSteps(caseId, [
+  await updateCaseWorkerSteps(caseId, [
     { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },
     { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' },
     { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
-  ], config.caseWorker.email, config.caseWorker.password);
+  ]);
   return caseId;
 }
 
