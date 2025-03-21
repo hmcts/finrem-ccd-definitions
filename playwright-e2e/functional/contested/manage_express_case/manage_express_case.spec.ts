@@ -82,7 +82,7 @@ test.describe('Contested - Manage Express Case', () => {
   );
 
   test(
-    'Contested - Not qualified case - Show not qualified message',
+    'Contested - Not qualified case - Show not enrolled message',
     { tag: [] },
     async (
       {
