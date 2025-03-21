@@ -51,4 +51,8 @@ export const contestedEvents: Record<string, CaseEvent> = {
         listItem: "List for Hearing",
         ccdCallback: "FR_addSchedulingListingInfo"
     },
+    manageExpressCase: {
+       listItem: "Manage Express Case",
+       ccdCallback: "FR_manageExpressCase"
+   }
 }
