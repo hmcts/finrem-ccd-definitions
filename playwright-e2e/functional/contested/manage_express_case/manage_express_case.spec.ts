@@ -59,22 +59,4 @@ test.describe('Contested - Manage Express Case', () => {
       await caseDetailsPage.checkHasBeenUpdated('Manage Express Case');
     }
   );
-
-  // test(
-  //   'Contested - List for Hearing express case (Paper Case)',
-  //   { tag: [] },
-  //   async (
-  //     {
-  //       loginPage,
-  //       manageCaseDashboardPage,
-  //       caseDetailsPage,
-  //       listForHearingPage,
-  //       makeAxeBuilder,
-  //     },
-  //     testInfo
-  //   ) => {
-  //     const caseId = await createAndProcessPaperCase();
-  //     await performManageExpressCaseFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-  //   }
-  // );
 });
