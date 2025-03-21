@@ -48,7 +48,7 @@ async function processExpressCase(caseId: string, manageCaseDashboardPage: any, 
 
 test.describe('Contested - Manage Express Case', () => {
   test(
-    'Contested - Enrolled express case (Form A Case) - Remove case from express pilot',
+    'Contested - Enrolled case (Form A Case) - Remove case from express pilot',
     { tag: [] },
     async (
       {
@@ -65,7 +65,7 @@ test.describe('Contested - Manage Express Case', () => {
   );
 
   test(
-    'Contested - Enrolled express case (Paper Case) - Remove case from express pilot',
+    'Contested - Enrolled case (Paper Case) - Remove case from express pilot',
     { tag: [] },
     async (
       {
@@ -82,7 +82,7 @@ test.describe('Contested - Manage Express Case', () => {
   );
 
   test(
-    'Contested - Disqualified cases - Show Disaqualified message',
+    'Contested - Not qualified cases - Show not qualified message',
     { tag: [] },
     async (
       {
