@@ -30,6 +30,21 @@ async function createAndProcessPaperCase(): Promise<string> {
   return caseId;
 }
 
+async function processExpressCase(caseId: string, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage) {
+  await manageCaseDashboardPage.visit();
+  await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+  await manageCaseDashboardPage.navigateToCase(caseId);
+
+  await caseDetailsPage.selectNextStep(contestedEvents.manageExpressCase);
+  await manageExpressCasePage.selectExpressPilotQuestionNo();
+  await manageExpressCasePage.uncheckConfirmRemoveCaseFromExpressPilot();
+  await manageExpressCasePage.navigateSubmit();
+  await manageExpressCasePage.verifyFieldIsRequiredMessageShown();
+  await manageExpressCasePage.checkConfirmRemoveCaseFromExpressPilot();
+  await manageExpressCasePage.navigateSubmit();
+  await caseDetailsPage.checkHasBeenUpdated('Manage Express Case');
+}
+
 test.describe('Contested - Manage Express Case', () => {
   test(
     'Contested - Enrolled express case (Form A Case) - Remove case from express pilot',
@@ -44,19 +59,24 @@ test.describe('Contested - Manage Express Case', () => {
       testInfo
     ) => {
       const caseId = await createAndProcessFormACase();
-      
-      await manageCaseDashboardPage.visit();
-      await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
-      await manageCaseDashboardPage.navigateToCase(caseId);
-    
-      await caseDetailsPage.selectNextStep(contestedEvents.manageExpressCase);
-      await manageExpressCasePage.selectExpressPilotQuestionNo();
-      await manageExpressCasePage.uncheckConfirmRemoveCaseFromExpressPilot();
-      await manageExpressCasePage.navigateSubmit();
-      await manageExpressCasePage.verifyFieldIsRequiredMessageShown();
-      await manageExpressCasePage.checkConfirmRemoveCaseFromExpressPilot();
-      await manageExpressCasePage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated('Manage Express Case');
+      await processExpressCase(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
+    }
+  );
+
+  test(
+    'Contested - Enrolled express case (Paper Case) - Remove case from express pilot',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        manageExpressCasePage,
+      },
+      testInfo
+    ) => {
+      const caseId = await createAndProcessPaperCase();
+      await processExpressCase(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
     }
   );
 });
