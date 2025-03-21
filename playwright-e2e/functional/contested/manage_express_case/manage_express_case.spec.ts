@@ -32,7 +32,7 @@ async function createAndProcessPaperCase(): Promise<string> {
 
 test.describe('Contested - Manage Express Case', () => {
   test(
-    'Contested - Enrolled express case (Form A Case) - Manage Express Case flow',
+    'Contested - Enrolled express case (Form A Case) - Remove case from express pilot',
     { tag: [] },
     async (
       {
