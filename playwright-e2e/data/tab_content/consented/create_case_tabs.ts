@@ -71,38 +71,4 @@ export const createCaseTabDataPreview = [
       ]
     }
   ];
-
-export const createCaseTabDataDemo = [
-    {
-      tabName: 'Applicant',
-      tabContent: [
-        "APPLICANT DETAILS",
-        { tabItem: "Current First and Middle names", value: "" },
-        { tabItem: "Current Last Name", value: "Mcdowell" },
-        "SOLICITOR DETAILS",
-        { tabItem: "Your reference", value: "9UK4VOC" },
-        { tabItem: "Solicitor’s name", value: "Rudyard Waller" },
-        { tabItem: "Name of your firm", value: "financialremedyrespdemo" },
-      ]
-    },
-    {
-      tabName: 'Divorce Dissolution details',
-      tabContent: [
-        { tabItem: "Case Number", value: "AW12D44562" },
-        { tabItem: "What stage has the case reached?", value: "Petition Issued" }
-      ]
-    },
-    {
-      tabName: 'Respondent',
-      tabContent: [
-        "RESPONDENT DETAILS",
-        { tabItem: "Current First and Middle names", value: "Elijah" },
-        { tabItem: "Current Last Name", value: "Baker" },
-        { tabItem: "Is the respondent represented ?", value: "Yes" },
-        "RESPONDENT SOLICITOR’S DETAILS",
-        { tabItem: "Respondent Solicitor’s name", value: "Rudyard Waller" },
-        { tabItem: "Respondent solicitor’s firm", value: "Expedita non invento" },
-      ]
-    }
-  ];
   
