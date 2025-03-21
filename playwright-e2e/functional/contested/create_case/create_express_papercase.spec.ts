@@ -1,12 +1,13 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
+import { YesNoRadioEnum, ApplicationtypeEnum } from '../../../pages/helpers/enums/RadioEnums';
+import {createCaseTabData} from '../../../data/tab_content/contested/caseworker_create_case_tabs';
 import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tab';
 
+// Create a test case for the Contested Paper Case
 test(
-  'Create Express Case - Contested FormA Submission, suitable for Express case processing',
-  { tag: ['@accessibility'] },
+  'Create Case - Contested Paper Case',
+  { tag: ['@additionalTest'] },
   async (
     {
       loginPage,
@@ -25,18 +26,17 @@ test(
       fastTrackProcedurePage,
       financialAssetsPage,
       financialRemedyCourtPage,
+      expressCaseEnrolledPage,
       miamQuestionPage,
       miamDetailsPage,
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       caseDetailsPage,
-      expressCaseEnrolledPage,
-      createCaseSavingYourAnswersPage,
       makeAxeBuilder
     },
     testInfo
   ) => {
-
+    
     // Set up court information.
     const courtName: string = "BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE";
     const courtAddress: string = "Priory Courts, 33 Bull Street, Birmingham, B4 6DS";
@@ -45,21 +45,27 @@ test(
 
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
+    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
 
     // Manage/Create case
     await createCasePage.startCase(
       config.jurisdiction.familyDivorce,
       config.caseType.contested,
-      config.eventType.formA
+      config.eventType.paperCase
     );
 
     await startPage.navigateContinue();
 
-    // Enter applicant details
+    // Select whether the applicant is represented or not. Then enter applicant details
+    await solicitorDetailsPage.setApplicantRepresentation(true);
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
-    await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
+    await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
+    await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
+    await solicitorDetailsPage.enterUKaddress();
+    // Check both application types are present.
+    await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT);
+    await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.MARRIAGE_CIVIL);
     await solicitorDetailsPage.navigateContinue();
 
     // Enter Divorce / Dissolution Details
@@ -74,15 +80,14 @@ test(
 
     //respondent details
     await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
-    await respondentDetailsPage.checkRefugeFieldNotPresent();
-
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
-    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
+    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
+    await respondentRepresentedPage.selectRespondentInRefuge(true);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
@@ -119,7 +124,6 @@ test(
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
     await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
-    await financialRemedyCourtPage.enterFrcReason();
     await financialRemedyCourtPage.navigateContinue();
 
     // Page shows to tell User that case is an Express Pilot
@@ -134,32 +138,25 @@ test(
     await miamDetailsPage.enterMediatorRegistrationNumber();
     await miamDetailsPage.enterFamilyMediatorServiceName();
     await miamDetailsPage.enterSoleTraderName();
-    await miamDetailsPage.uploadMiamDoc();
+    await miamDetailsPage.uploadMiamDocPaperCase();
     await miamDetailsPage.navigateContinue();
 
-    // Additional documents
+    // Upload variation Order Document
+    await uploadOrderDocumentsPage.uploadVariationOrderDoc();
     await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue();
 
-    // Saving your application. What happens next. If you need help.
-    await createCaseSavingYourAnswersPage.checkSelectedCourtAddress(courtAddress);
-    await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
-    await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
-    await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
-    await createCaseSavingYourAnswersPage.navigateContinue();
-
     //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
+    await createCaseCheckYourAnswersPage.checkNetAssetsQuestion('Under £250,000 (this should be total of combined net assets, but excluding pensions)');
 
-    // submits the case
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();
 
-    // Assert case creation tab data
+    // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
-
     // Assert express label set in tab data
     await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
 
