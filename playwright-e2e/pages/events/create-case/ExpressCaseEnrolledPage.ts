@@ -14,6 +14,7 @@ export class ExpressCaseEnrolledPage extends BaseJourneyPage {
     }
 
     /**
+    * Checks the correct GOV.UK Express Case guidance URL is visible on the page.
     * Click the link, which opens in a new tab.
     * Checks that the expected content is showing on the new tab.
     * Closes the tab when done.
@@ -28,6 +29,7 @@ export class ExpressCaseEnrolledPage extends BaseJourneyPage {
         const [newPage] = await Promise.all([
             this.page.context().waitForEvent('page'),
             this.guidanceLink.click()
+
         ]);
 
         // Wait for the HTML on the new tab to completely load
@@ -37,4 +39,5 @@ export class ExpressCaseEnrolledPage extends BaseJourneyPage {
 
         await newPage.close();
     }
+
 }
