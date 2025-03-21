@@ -30,7 +30,7 @@ async function createAndProcessPaperCase(): Promise<string> {
   return caseId;
 }
 
-async function processExpressCase(caseId: string, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage) {
+async function processExpressCase(caseId: string, manageCaseDashboardPage: any, loginPage: any, caseDetailsPage: any, manageExpressCasePage: any) {
   await manageCaseDashboardPage.visit();
   await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
   await manageCaseDashboardPage.navigateToCase(caseId);
