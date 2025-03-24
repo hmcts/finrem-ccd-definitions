@@ -17,20 +17,16 @@ async function updateCaseWorkerSteps(caseId: string, steps: { event: string, pay
 
 async function createAndProcessFormACase(type: string | null = null): Promise<string> {
   let replacement: ReplacementAction[] = [];
-  switch (type) {
-    case 'not-qualified':
-      // replacing the payload data to make the case not qualified for express pilot
-      replacement = [
-        { action: 'delete', key: 'regionList' },
-        { action: 'insert', key: 'regionList', value: 'midlands' },
-        { action: 'delete', key: 'northWestFRCList' },
-        { action: 'insert', key: 'midlandsFRCList', value: 'birmingham' },
-        { action: 'delete', key: 'lancashireCourtList' },
-        { action: 'insert', key: 'birminghamCourtList', value: 'FR_birmingham_hc_list_2' }
-      ];
-      break;
-    default:
-      replacement = [];
+  if (type === 'not-qualified') {
+    // replacing the payload data to make the case not qualified for express pilot
+    replacement = [
+      { action: 'delete', key: 'regionList' },
+      { action: 'insert', key: 'regionList', value: 'midlands' },
+      { action: 'delete', key: 'northWestFRCList' },
+      { action: 'insert', key: 'midlandsFRCList', value: 'birmingham' },
+      { action: 'delete', key: 'lancashireCourtList' },
+      { action: 'insert', key: 'birminghamCourtList', value: 'FR_birmingham_hc_list_2' }
+    ];
   }
   const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-qualify-express-pilot.json', 'FinancialRemedyContested', 'FR_solicitorCreate', replacement);
   await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
