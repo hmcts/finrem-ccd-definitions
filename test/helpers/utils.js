@@ -127,7 +127,7 @@ async function saveCase(ccdSaveCasePath, authToken, serviceToken, payload) {
   );
 }
 
-async function createCaseInCcd(userName, password, dataLocation, caseType, eventId) {
+async function createCaseInCcd(userName, password, dataLocation, caseType, eventId, dataModifications = []) {
   const authToken = await getUserToken(userName, password);
   const userId = await getUserId(authToken);
   const serviceToken = await getServiceToken();
@@ -141,10 +141,20 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
 
   const eventToken = await getStartEventToken(ccdStartCasePath, ccdSaveCasePath, authToken, serviceToken);
   /* eslint id-blacklist: ["error", "undefined"] */
-  const data = fs.readFileSync(dataLocation);
+  const data = JSON.parse(fs.readFileSync(dataLocation));
+
+  if (Array.isArray(dataModifications)) {
+    dataModifications.forEach(modification => {
+      if (modification.action === 'delete' && modification.key) {
+        delete data[modification.key];
+      } else if (modification.action === 'insert' && modification.key && modification.value) {
+        data[modification.key] = modification.value;
+      }
+    });
+  }
 
   const payload = {
-    data: JSON.parse(data),
+    data: data,
     event: {
       id: `${frEventId}`,
       summary: 'Creating Basic Case',

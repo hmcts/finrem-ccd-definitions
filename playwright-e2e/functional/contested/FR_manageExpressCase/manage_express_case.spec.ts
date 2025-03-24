@@ -3,6 +3,12 @@ import config from '../../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
 
+interface ReplacementAction {
+  action: 'delete' | 'insert';
+  key: string;
+  value?: string;
+}
+
 async function updateCaseWorkerSteps(caseId: string, steps: { event: string, payload: string }[]) {
   for (const step of steps) {
     await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', step.event, step.payload);
@@ -20,8 +26,23 @@ async function createAndProcessFormACase(): Promise<string> {
   return caseId;
 }
 
-async function createAndProcessPaperCase(type: string): Promise<string> {
-  const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, `./playwright-e2e/data/payload/contested/paper_case/express_pilot/ccd-contested${type == '' ? '' : ('-' + type)}-express-case-creation.json`, 'FinancialRemedyContested', 'FR_newPaperCase');
+async function createAndProcessPaperCase(type: string | null = null): Promise<string> {
+  let replacement: ReplacementAction[] = [];
+  switch (type) {
+    case 'not-qualified':
+      replacement = [
+        { action: 'delete', key: 'regionList' },
+        { action: 'insert', key: 'regionList', value: 'midlands' },
+        { action: 'delete', key: 'northWestFRCList' },
+        { action: 'insert', key: 'midlandsFRCList', value: 'birmingham' },
+        { action: 'delete', key: 'lancashireCourtList' },
+        { action: 'insert', key: 'birminghamCourtList', value: 'FR_birmingham_hc_list_2' }
+      ];
+      break;
+    default:
+      replacement = [];
+  }
+  const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, `./playwright-e2e/data/payload/contested/paper_case/express_pilot/ccd-contested-express-case-creation.json`, 'FinancialRemedyContested', 'FR_newPaperCase', replacement);
 
   await updateCaseWorkerSteps(caseId, [
     { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },
@@ -76,7 +97,7 @@ test.describe('Contested - Manage Express Case', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessPaperCase('');
+      const caseId = await createAndProcessPaperCase();
       await processExpressCase(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
     }
   );
