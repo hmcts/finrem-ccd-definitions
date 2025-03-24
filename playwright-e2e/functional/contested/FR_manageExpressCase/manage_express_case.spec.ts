@@ -29,7 +29,7 @@ async function createAndProcessFormACase(type: string | null = null): Promise<st
   if (type === 'not-qualified') {
     replacement = NOT_QUALIFIED_REPLACEMENT;
   }
-  const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-qualify-express-pilot.json', 'FinancialRemedyContested', 'FR_solicitorCreate', replacement);
+  const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-qualified-express-pilot.json', 'FinancialRemedyContested', 'FR_solicitorCreate', replacement);
   await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
 
   await updateCaseWorkerSteps(caseId, [
@@ -44,7 +44,7 @@ async function createAndProcessPaperCase(type: string | null = null): Promise<st
   if (type === 'not-qualified') {
     replacement = NOT_QUALIFIED_REPLACEMENT;
   }
-  const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, `./playwright-e2e/data/payload/contested/paper_case/ccd-contested-qualify-express-pilot.json`, 'FinancialRemedyContested', 'FR_newPaperCase', replacement);
+  const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, `./playwright-e2e/data/payload/contested/paper_case/ccd-contested-qualified-express-pilot.json`, 'FinancialRemedyContested', 'FR_newPaperCase', replacement);
 
   await updateCaseWorkerSteps(caseId, [
     { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },
