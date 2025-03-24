@@ -1,6 +1,6 @@
 [
   {
-    "LiveFrom": "21/02/2024",
+    "LiveFrom": "21/02/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "suitableForExpressCaseLabel",
@@ -21,6 +21,33 @@
     "DisplayContext": "OPTIONAL",
     "PageID": 16,
     "PageDisplayOrder": 16,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "suitableForExpressCaseLabel=\"IMPOSSIBLE\"",
+    "ShowSummaryChangeOption": "N",
+    "RetainHiddenValue": "Y"
+  },
+  {
+    "LiveFrom": "21/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "suitableForExpressCaseLabel",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 15,
+    "PageDisplayOrder": 15,
+    "PageColumnNumber": 1,
+    "PageShowCondition": "expressCaseParticipation=\"Enrolled\"",
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "12/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "expressCaseParticipation",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 15,
+    "PageDisplayOrder": 15,
     "PageColumnNumber": 1,
     "FieldShowCondition": "suitableForExpressCaseLabel=\"IMPOSSIBLE\"",
     "ShowSummaryChangeOption": "N",
