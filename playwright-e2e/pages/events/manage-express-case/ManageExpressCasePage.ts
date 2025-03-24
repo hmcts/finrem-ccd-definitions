@@ -9,18 +9,10 @@ export class ManageExpressCasePage extends BaseJourneyPage {
 
     private readonly removeFromExpressPilotWarning: Locator;
     private readonly confirmRemoveCaseFromExpressPilot: Locator;
-    private readonly thereIsAProblemHeader: Locator;
-
-    // messages
-    private readonly fieldIsRequiredErrorMessage: Locator;
 
     public constructor(page: Page) {
         super(page);
-        this.thereIsAProblemHeader = page.getByRole('heading', { name: 'There is a problem' });
         this.manageExpressCaesTitle = page.getByRole('heading', { name: 'Manage Express Case' });
-
-        // error messages
-        this.fieldIsRequiredErrorMessage = page.getByText('Field is required');
 
         this.expressPilotQuestionHeader = page.getByText('Express Pilot?')
         this.expressPilotQuestion = page.getByLabel('Express Pilot?');
@@ -61,10 +53,5 @@ export class ManageExpressCasePage extends BaseJourneyPage {
     async uncheckConfirmRemoveCaseFromExpressPilot() {
         expect(this.confirmRemoveCaseFromExpressPilot).toBeVisible();
         await this.confirmRemoveCaseFromExpressPilot.uncheck();
-    }
-
-    async verifyFieldIsRequiredMessageShown() {
-        await expect(this.thereIsAProblemHeader).toBeVisible();
-        await expect(this.fieldIsRequiredErrorMessage).toBeVisible();
     }
 }
