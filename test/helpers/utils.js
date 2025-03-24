@@ -160,7 +160,7 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
   return caseId;
 }
 
-async function updateCaseInCcd(userName, password, caseId, caseType, eventId, dataLocation,shareCaseRef) {
+async function updateCaseInCcd(userName, password, caseId, caseType, eventId, dataLocation, shareCaseRef) {
   const authToken = await getUserToken(userName, password);
   const userId = await getUserId(authToken);
   const serviceToken = await getServiceToken();
@@ -175,7 +175,7 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
 
   const data = fs.readFileSync(dataLocation);
   let updatedData = JSON.stringify(JSON.parse(data));
-  updatedData = updatedData.replace('ReplaceForShareCase',shareCaseRef);
+  updatedData = updatedData.replace('ReplaceForShareCase', shareCaseRef);
 
   const payload =  {
     data: JSON.parse(updatedData),
