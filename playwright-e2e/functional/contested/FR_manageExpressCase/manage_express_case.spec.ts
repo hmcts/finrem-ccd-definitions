@@ -16,7 +16,7 @@ async function updateCaseWorkerSteps(caseId: string, steps: { event: string, pay
 }
 
 async function createAndProcessFormACase(): Promise<string> {
-  const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/express_pilot/ccd-contested-express-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-qualify-express-pilot.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
 
   await updateCaseWorkerSteps(caseId, [
@@ -42,7 +42,7 @@ async function createAndProcessPaperCase(type: string | null = null): Promise<st
     default:
       replacement = [];
   }
-  const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, `./playwright-e2e/data/payload/contested/paper_case/express_pilot/ccd-contested-express-case-creation.json`, 'FinancialRemedyContested', 'FR_newPaperCase', replacement);
+  const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, `./playwright-e2e/data/payload/contested/paper_case/ccd-contested-qualify-express-pilot.json`, 'FinancialRemedyContested', 'FR_newPaperCase', replacement);
 
   await updateCaseWorkerSteps(caseId, [
     { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },
@@ -51,7 +51,7 @@ async function createAndProcessPaperCase(type: string | null = null): Promise<st
   return caseId;
 }
 
-async function processExpressCase(caseId: string, manageCaseDashboardPage: any, loginPage: any, caseDetailsPage: any, manageExpressCasePage: any) {
+async function processExpressCaseHappyPath(caseId: string, manageCaseDashboardPage: any, loginPage: any, caseDetailsPage: any, manageExpressCasePage: any) {
   await manageCaseDashboardPage.visit();
   await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
   await manageCaseDashboardPage.navigateToCase(caseId);
@@ -67,23 +67,33 @@ async function processExpressCase(caseId: string, manageCaseDashboardPage: any, 
   // TODO - Go to Gatekeeping and allocation tab to verify "Express Pilot Participation: Withdrawn" exists
 }
 
+async function processExpressCaseShowNotEnrolledMessage(caseId: string, manageCaseDashboardPage: any, loginPage: any, caseDetailsPage: any, manageExpressCasePage: any) {
+  await manageCaseDashboardPage.visit();
+  await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+  await manageCaseDashboardPage.navigateToCase(caseId);
+
+  await caseDetailsPage.selectNextStep(contestedEvents.manageExpressCase);
+  await manageExpressCasePage.verifyExpressPilotNotEnrolled();
+}
+
 test.describe('Contested - Manage Express Case', () => {
-  test(
-    'Contested - Enrolled case (Form A Case) - Remove case from express pilot',
-    { tag: [] },
-    async (
-      {
-        loginPage,
-        manageCaseDashboardPage,
-        caseDetailsPage,
-        manageExpressCasePage,
-      },
-      testInfo
-    ) => {
-      const caseId = await createAndProcessFormACase();
-      await processExpressCase(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
-    }
-  );
+  // TODO watiing DFR-3680 release
+  // test(
+  //   'Contested - Enrolled case (Form A Case) - Remove case from express pilot',
+  //   { tag: [] },
+  //   async (
+  //     {
+  //       loginPage,
+  //       manageCaseDashboardPage,
+  //       caseDetailsPage,
+  //       manageExpressCasePage,
+  //     },
+  //     testInfo
+  //   ) => {
+  //     const caseId = await createAndProcessFormACase();
+  //     await processExpressCaseHappyPathHappyPath(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
+  //   }
+  // );
 
   test(
     'Contested - Enrolled case (Paper Case) - Remove case from express pilot',
@@ -98,7 +108,7 @@ test.describe('Contested - Manage Express Case', () => {
       testInfo
     ) => {
       const caseId = await createAndProcessPaperCase();
-      await processExpressCase(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
+      await processExpressCaseHappyPath(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
     }
   );
 
@@ -115,7 +125,7 @@ test.describe('Contested - Manage Express Case', () => {
       testInfo
     ) => {
       const caseId = await createAndProcessPaperCase('not-qualified');
-      //await processExpressCase(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
+      await processExpressCaseShowNotEnrolledMessage(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
     }
   );
 });
