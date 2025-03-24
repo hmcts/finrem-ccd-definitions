@@ -51,11 +51,17 @@ async function createAndProcessPaperCase(type: string | null = null): Promise<st
   return caseId;
 }
 
-async function processExpressCaseHappyPath(caseId: string, manageCaseDashboardPage: any, loginPage: any, caseDetailsPage: any, manageExpressCasePage: any) {
+async function processSuccessfulExpressCase(caseId: string, manageCaseDashboardPage: any, loginPage: any, caseDetailsPage: any, manageExpressCasePage: any) {
   await manageCaseDashboardPage.visit();
   await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
+  await caseDetailsPage.assertTabData([{
+    tabName: 'Gatekeeping and allocation',
+    tabContent: [
+      'Express Pilot Participation: Enrolled'
+    ]
+  }]);
   await caseDetailsPage.selectNextStep(contestedEvents.manageExpressCase);
   await manageExpressCasePage.selectExpressPilotQuestionNo();
   await manageExpressCasePage.uncheckConfirmRemoveCaseFromExpressPilot();
@@ -64,7 +70,21 @@ async function processExpressCaseHappyPath(caseId: string, manageCaseDashboardPa
   await manageExpressCasePage.checkConfirmRemoveCaseFromExpressPilot();
   await manageExpressCasePage.navigateSubmit();
   await caseDetailsPage.checkHasBeenUpdated('Manage Express Case');
-  // TODO - Go to Gatekeeping and allocation tab to verify "Express Pilot Participation: Withdrawn" exists
+  await caseDetailsPage.assertTabData([{
+    tabName: 'Gatekeeping and allocation',
+    tabContent: [
+      'Express Pilot Participation: Withdrawn'
+    ]
+  }]);
+  await caseDetailsPage.selectNextStep(contestedEvents.manageExpressCase);
+  await manageExpressCasePage.verifyExpressPilotWasWithdrawn();
+  await manageExpressCasePage.navigateSubmit();
+  await caseDetailsPage.assertTabData([{
+    tabName: 'Gatekeeping and allocation',
+    tabContent: [
+      'Express Pilot Participation: Withdrawn'
+    ]
+  }]);
 }
 
 async function processExpressCaseShowNotEnrolledMessage(caseId: string, manageCaseDashboardPage: any, loginPage: any, caseDetailsPage: any, manageExpressCasePage: any) {
@@ -72,8 +92,21 @@ async function processExpressCaseShowNotEnrolledMessage(caseId: string, manageCa
   await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
+  await caseDetailsPage.assertTabData([{
+    tabName: 'Gatekeeping and allocation',
+    tabContent: [
+      'Express Pilot Participation: Does not qualify'
+    ]
+  }]);
   await caseDetailsPage.selectNextStep(contestedEvents.manageExpressCase);
   await manageExpressCasePage.verifyExpressPilotNotEnrolled();
+  await manageExpressCasePage.navigateSubmit();
+  await caseDetailsPage.assertTabData([{
+    tabName: 'Gatekeeping and allocation',
+    tabContent: [
+      'Express Pilot Participation: Does not qualify'
+    ]
+  }]);
 }
 
 test.describe('Contested - Manage Express Case', () => {
@@ -91,7 +124,7 @@ test.describe('Contested - Manage Express Case', () => {
   //     testInfo
   //   ) => {
   //     const caseId = await createAndProcessFormACase();
-  //     await processExpressCaseHappyPathHappyPath(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
+  //     await processSuccessfulExpressCase(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
   //   }
   // );
 
@@ -108,7 +141,7 @@ test.describe('Contested - Manage Express Case', () => {
       testInfo
     ) => {
       const caseId = await createAndProcessPaperCase();
-      await processExpressCaseHappyPath(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
+      await processSuccessfulExpressCase(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
     }
   );
 
