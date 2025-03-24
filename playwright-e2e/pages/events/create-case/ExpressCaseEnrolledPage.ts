@@ -27,8 +27,9 @@ export class ExpressCaseEnrolledPage extends BaseJourneyPage {
 
         // Click the link and capture the new tab that opens
         const [newPage] = await Promise.all([
-            this.page.context().waitForEvent('page'), // Wait for the new page
-            this.guidanceLink.click() // Click the link to open the new tab
+            this.page.context().waitForEvent('page'),
+            this.guidanceLink.click()
+
         ]);
 
         // Wait for the HTML on the new tab to completely load
