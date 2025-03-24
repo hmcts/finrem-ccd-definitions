@@ -2,12 +2,7 @@ import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
-
-interface ReplacementAction {
-  action: 'delete' | 'insert';
-  key: string;
-  value?: string;
-}
+import { ReplacementAction } from '../../../types/replacement-action';
 
 const NOT_QUALIFIED_REPLACEMENT: ReplacementAction[] = [
   { action: 'delete', key: 'regionList' },

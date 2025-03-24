@@ -127,7 +127,14 @@ async function saveCase(ccdSaveCasePath, authToken, serviceToken, payload) {
   );
 }
 
-async function createCaseInCcd(userName, password, dataLocation, caseType, eventId, dataModifications = []) {
+/**
+ * @typedef {Object} ReplacementAction
+ * @property {'delete' | 'insert'} action - The action to perform.
+ * @property {string} key - The key to modify in the data.
+ * @property {any} [value] - The value to insert (required for 'insert' action).
+ */
+
+async function createCaseInCcd(userName, password, dataLocation, caseType, eventId, dataModifications = /** @type {ReplacementAction[]} */ []) {
   const authToken = await getUserToken(userName, password);
   const userId = await getUserId(authToken);
   const serviceToken = await getServiceToken();
@@ -144,7 +151,7 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
   const data = JSON.parse(fs.readFileSync(dataLocation));
 
   if (Array.isArray(dataModifications)) {
-    dataModifications.forEach(modification => {
+    dataModifications.forEach((modification) => {
       if (modification.action === 'delete' && modification.key) {
         delete data[modification.key];
       } else if (modification.action === 'insert' && modification.key && modification.value) {
