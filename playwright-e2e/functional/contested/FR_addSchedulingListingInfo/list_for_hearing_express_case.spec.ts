@@ -74,24 +74,23 @@ async function performListForHearingFlow(
 }
 
 test.describe('Contested - List for Hearing express case', () => {
-  // TODO watiing DFR-3680 release
-  // test(
-  //   'Contested - List for Hearing express case (Form A)',
-  //   { tag: [] },
-  //   async (
-  //     {
-  //       loginPage,
-  //       manageCaseDashboardPage,
-  //       caseDetailsPage,
-  //       listForHearingPage,
-  //       makeAxeBuilder,
-  //     },
-  //     testInfo
-  //   ) => {
-  //     const caseId = await createAndProcessFormACase();
-  //     await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-  //   }
-  // );
+  test(
+    'Contested - List for Hearing express case (Form A)',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        listForHearingPage,
+        makeAxeBuilder,
+      },
+      testInfo
+    ) => {
+      const caseId = await createAndProcessFormACase();
+      await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+    }
+  );
 
   test(
     'Contested - List for Hearing express case (Paper Case)',
