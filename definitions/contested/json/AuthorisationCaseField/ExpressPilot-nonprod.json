@@ -56,6 +56,27 @@
     "CRUD": "R"
   },
   {
+    "LiveFrom": "13/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "suitableForExpressCaseAmendmentLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "13/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "unsuitableForExpressCaseAmendmentLabel",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "17/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "labelForExpressCaseAmendment",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
     "LiveFrom": "17/03/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "expressPilotQuestion",
@@ -75,5 +96,19 @@
     "CaseFieldID": "confirmRemoveCaseFromExpressPilot",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRU"
-  }
+  },
+  {
+    "LiveFrom": "17/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "expressPilotNotEnrolledLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "expressPilotWasWithdrawnLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  }  
 ]
