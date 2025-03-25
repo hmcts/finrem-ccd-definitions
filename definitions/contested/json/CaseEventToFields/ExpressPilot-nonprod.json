@@ -239,5 +239,17 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
     "FieldShowCondition": "expressCaseParticipation=\"Enrolled\" AND expressPilotQuestion=\"No\""
+  },
+  {
+    "LiveFrom": "25/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_giveAllocationDirections",
+    "CaseFieldID": "alteringCourtImpactExpressPilotCaseWarning",
+    "PageFieldDisplayOrder": 0,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   }
 ]
