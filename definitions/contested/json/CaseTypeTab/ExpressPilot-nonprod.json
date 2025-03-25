@@ -18,5 +18,23 @@
         "CaseFieldID": "expressCaseParticipation",
         "TabFieldDisplayOrder": 33,
         "FieldShowCondition": "expressCaseParticipation!=\"\""
-    }
+    },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "tabJudgeAgreesCaseIsExpressLabel",
+    "TabFieldDisplayOrder": "97"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "judgeAgreesCaseIsExpress",
+    "TabFieldDisplayOrder": "98"
+  }
 ]

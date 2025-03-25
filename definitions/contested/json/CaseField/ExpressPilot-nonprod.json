@@ -97,5 +97,32 @@
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeAgreesCaseIsExpressLabel",
+    "Label": "## This case was automatically entered into the Express Pilot, should this case remain in the Express Pilot?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabJudgeAgreesCaseIsExpressLabel",
+    "Label": "**This case was automatically entered into the Express Pilot, should this case remain in the Express Pilot?**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeAgreesCaseIsExpress",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]
