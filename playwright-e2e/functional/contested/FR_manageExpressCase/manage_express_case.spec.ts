@@ -3,6 +3,7 @@ import config from '../../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
 import { ReplacementAction } from '../../../types/replacement-action';
+import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
 
 const NOT_QUALIFIED_REPLACEMENT: ReplacementAction[] = [
   { action: 'delete', key: 'regionList' },
@@ -12,12 +13,6 @@ const NOT_QUALIFIED_REPLACEMENT: ReplacementAction[] = [
   { action: 'delete', key: 'lancashireCourtList' },
   { action: 'insert', key: 'birminghamCourtList', value: 'FR_birmingham_hc_list_2' }
 ];
-
-async function updateCaseWorkerSteps(caseId: string, steps: { event: string, payload: string }[]) {
-  for (const step of steps) {
-    await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', step.event, step.payload);
-  }
-}
 
 async function createAndProcessFormACase(type: string | null = null): Promise<string> {
   let replacement: ReplacementAction[] = [];

@@ -1,3 +1,5 @@
+import { giveAllocationDirection } from "../../test/functional/pages/give-allocation-direction/give-allocation-direction";
+
 export interface CaseEvent {
     listItem: string;
     ccdCallback: string;
@@ -54,5 +56,9 @@ export const contestedEvents: Record<string, CaseEvent> = {
     manageExpressCase: {
        listItem: "Manage Express Case",
        ccdCallback: "FR_manageExpressCase"
-   }
+   },
+   giveAllocationDirection: {
+      listItem: "Give Allocation Directions",
+      ccdCallback: "FR_giveAllocationDirections"
+  }
 }
