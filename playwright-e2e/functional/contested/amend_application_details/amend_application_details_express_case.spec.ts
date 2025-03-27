@@ -10,6 +10,35 @@ async function createAndProcessFormAExpressCase(): Promise<string> {
   return caseId;
 }
 
+async function createAndProcessFormAsCase(): Promise<string> {
+  const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  return caseId;
+}
+
+async function performAmendApplicationDetailsFlowToJoinExpressPilot(
+  caseId: string,
+  loginPage: any,
+  manageCaseDashboardPage: any,
+  caseDetailsPage: any,
+  startPage: any,
+  natureOfApplicationPage: any,
+  propertyAdjustmentPage: any,
+  periodicalPaymentsPage: any,
+  writtenAgreementPage: any,
+  uploadOrderDocumentsPage: any,
+  createCaseCheckYourAnswersPage: any,
+  testInfo: any,
+  makeAxeBuilder: any
+): Promise<void> {
+  await manageCaseDashboardPage.visit();
+  await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
+  await manageCaseDashboardPage.navigateToCase(caseId);
+
+  await caseDetailsPage.selectNextStep(contestedEvents.amendApplicationDetails);
+  await startPage.navigateContinue();
+  }
+
+
 async function performAmendApplicationDetailsFlowToExitExpressPilot(
   caseId: string,
   loginPage: any,
@@ -118,6 +147,33 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        const caseId = await createAndProcessFormAExpressCase();
        await performAmendApplicationDetailsFlowToExitExpressPilot(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage, 
         natureOfApplicationPage, propertyAdjustmentPage, periodicalPaymentsPage, writtenAgreementPage, expressCaseExitPage, uploadOrderDocumentsPage, 
+        createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
+     }
+   );
+
+   test(
+    'Contested - Amend Application Details join Express Pilot (Form A)',
+     { tag: [] },
+     async (
+       {
+         loginPage,
+         manageCaseDashboardPage,
+         caseDetailsPage,
+         startPage,
+         natureOfApplicationPage,
+         propertyAdjustmentPage,
+         periodicalPaymentsPage,
+         writtenAgreementPage,
+         expressCaseExitPage,
+         uploadOrderDocumentsPage,
+         createCaseCheckYourAnswersPage,
+         makeAxeBuilder,
+       },
+       testInfo
+     ) => {
+       const caseId = await createAndProcessFormAsCase();
+       await performAmendApplicationDetailsFlowToJoinExpressPilot(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage, 
+        natureOfApplicationPage, propertyAdjustmentPage, periodicalPaymentsPage, writtenAgreementPage, uploadOrderDocumentsPage, 
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
    );
