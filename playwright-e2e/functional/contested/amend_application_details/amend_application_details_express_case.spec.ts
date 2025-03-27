@@ -10,11 +10,6 @@ async function createAndProcessFormAExpressCase(): Promise<string> {
   return caseId;
 }
 
-async function createAndProcessFormACase(): Promise<string> {
-  const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-express-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-  return caseId;
-}
-
 async function performAmendApplicationDetailsFlowToJoinExpressPilot(
   caseId: string,
   loginPage: any,
@@ -99,7 +94,7 @@ async function performAmendApplicationDetailsFlowToJoinExpressPilot(
   }
 }
 
-test.describe('Contested - Amend Application Details express Form A', () => {
+test.describe('Contested - Amend Application Details join/exit express case Form A', () => {
    test(
     'Contested - Amend Application Details exit Express Pilot through Variation Order (Form A)',
      { tag: [] },
