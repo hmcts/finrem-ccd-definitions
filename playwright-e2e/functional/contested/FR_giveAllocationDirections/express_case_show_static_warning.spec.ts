@@ -21,26 +21,14 @@ async function performGiveAllocationDirectionsFlow(
   loginPage: any,
   manageCaseDashboardPage: any,
   caseDetailsPage: any,
-  listForHearingPage: any,
-  testInfo: any,
-  makeAxeBuilder: any
+  giveAllocationDirectionsPage: any
 ): Promise<void> {
   await manageCaseDashboardPage.visit();
   await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
   await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
-  // await listForHearingPage.selectTypeOfHearingDropDown(hearingType);
-  // await listForHearingPage.enterTimeEstimate('1 hour');
-  // await listForHearingPage.setHearingDateToCurrentDate();
-  // await listForHearingPage.verifyHearingDateGuidanceMessages();
-  // await listForHearingPage.enterHearingTime('10:00');
-  // await listForHearingPage.selectCourtForHearing(courtName);
-  // await listForHearingPage.navigateContinue();
-  // await listForHearingPage.navigateSubmit();
-  // await listForHearingPage.verifyHearingDateWarningMessage('expressPilot');
-
-  // await caseDetailsPage.checkHasBeenUpdated('List for Hearing');
+  await giveAllocationDirectionsPage.verifyExistenceOfExpressPilotWarningMessage();
 }
 
 test.describe('Contested - Give Allocation Directions - Static warning on express pilot cases', () => {
@@ -52,13 +40,12 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        listForHearingPage,
-        makeAxeBuilder,
+        giveAllocationDirectionsPage
       },
       testInfo
     ) => {
       const caseId = await createAndProcessFormACase();
-      //await performGiveAllocationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      await performGiveAllocationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, giveAllocationDirectionsPage);
     }
   );
 });
