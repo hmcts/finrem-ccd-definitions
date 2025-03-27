@@ -265,19 +265,5 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
     "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "26/03/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_giveAllocationDirections",
-    "CaseFieldID": "expressCaseParticipation",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "N",
-    "RetainHiddenValue": "Y",
-    "FieldShowCondition": "judgeAgreesCaseIsExpress=\"IMPOSSIBLE\""
   }
 ]
