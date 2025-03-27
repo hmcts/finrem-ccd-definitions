@@ -9648,6 +9648,16 @@
     "TabFieldDisplayOrder": 32
   },
   {
+    "LiveFrom": "17/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hiddenTab",
+    "TabLabel": "Hidden Tab",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "expressCaseParticipation",
+    "TabFieldDisplayOrder": 33,
+    "FieldShowCondition": "expressCaseParticipation!=\"\""
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "consentOrderProcessTab1",
