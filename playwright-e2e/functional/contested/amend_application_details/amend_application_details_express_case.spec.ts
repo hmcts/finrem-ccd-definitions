@@ -10,7 +10,7 @@ async function createAndProcessFormAExpressCase(): Promise<string> {
   return caseId;
 }
 
-async function performAmendApplicationDetailsFlowToJoinExpressPilot(
+async function performAmendApplicationDetailsFlowToExitExpressPilot(
   caseId: string,
   loginPage: any,
   manageCaseDashboardPage: any,
@@ -116,7 +116,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        testInfo
      ) => {
        const caseId = await createAndProcessFormAExpressCase();
-       await performAmendApplicationDetailsFlowToJoinExpressPilot(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage, 
+       await performAmendApplicationDetailsFlowToExitExpressPilot(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage, 
         natureOfApplicationPage, propertyAdjustmentPage, periodicalPaymentsPage, writtenAgreementPage, expressCaseExitPage, uploadOrderDocumentsPage, 
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
