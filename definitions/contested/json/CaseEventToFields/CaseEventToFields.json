@@ -3677,6 +3677,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "expressCaseParticipation!=\"Enrolled\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -3688,7 +3689,8 @@
     "DisplayContext": "READONLY",
     "PageID": 2,
     "PageDisplayOrder": 2,
-    "PageColumnNumber": 1
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "expressCaseParticipation!=\"Enrolled\""
   },
   {
     "LiveFrom": "03/01/2017",
@@ -3700,6 +3702,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
+    "FieldShowCondition": "expressCaseParticipation!=\"Enrolled\"",
     "ShowSummaryChangeOption": "Y"
   },
   {

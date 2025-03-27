@@ -3983,6 +3983,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
     "CaseFieldID": "tabCaseAllocatedToLabel",
+    "FieldShowCondition": "expressCaseParticipation!=\"Enrolled\"",
     "TabFieldDisplayOrder": "95"
   },
   {
@@ -3992,6 +3993,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
     "CaseFieldID": "caseAllocatedTo",
+    "FieldShowCondition": "expressCaseParticipation!=\"Enrolled\"",
     "TabFieldDisplayOrder": "96"
   },
   {

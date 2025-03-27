@@ -26,6 +26,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
     "CaseFieldID": "tabJudgeAgreesCaseIsExpressLabel",
+    "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
     "TabFieldDisplayOrder": "97"
   },
   {
@@ -35,6 +36,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
     "CaseFieldID": "judgeAgreesCaseIsExpress",
+    "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
     "TabFieldDisplayOrder": "98"
   }
 ]
