@@ -31,6 +31,7 @@ export async function createCaseWithEstimateAssetUnder1M(
 ): Promise<string> {
   return await createCaseInCcd(email, password, payloadPath, caseType, event, [
     { action: 'delete', key: 'netValueOfHome' },
+    { action: 'insert', key: 'netValueOfHome', value: 1000001 },
     { action: 'delete', key: 'estimatedAssetsChecklistV2' },
     { action: 'insert', key: 'estimatedAssetsChecklistV2', value: 'underOneMillionPounds' }
   ]);
