@@ -61,5 +61,4 @@ export const contestedEvents: Record<string, CaseEvent> = {
        listItem: "Give Allocation Directions",
        ccdCallback: "FR_giveAllocationDirections"
     }
-  }
-}
+};
