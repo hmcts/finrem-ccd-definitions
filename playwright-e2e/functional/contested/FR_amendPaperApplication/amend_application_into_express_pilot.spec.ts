@@ -16,7 +16,7 @@ async function createAndProcessPaperCase(): Promise<string> {
 
 test.describe('Contested - Paper Case - Amend application into Express Pilot', () => {
   test(
-    'Should inform that the case will be enrolled into the Express Pilot',
+    'Should inform that the case will be enrolled into the Express Pilot when changing total value of assets',
     { tag: [] },
     async (
       {
