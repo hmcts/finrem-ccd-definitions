@@ -4,55 +4,44 @@ import { createCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
 import { expressDoesNotQualifyCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_not_qualify_gatekeeping_tab';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
+import { ExpressCasePage } from '../../../pages/events/amend-application-details/ExpressCasePage';
+import { ManageCaseDashboardPage } from '../../../pages/ManageCaseDashboardPage';
+import { CaseDetailsPage } from '../../../pages/CaseDetailsPage';
+import { StartPage } from '../../../pages/events/create-case/StartPage';
+import { NatureOfApplicationPage } from '../../../pages/events/create-case/NatureOfApplicationPage';
+import { PropertyAdjustmentPage } from '../../../pages/events/create-case/PropertyAdjustmentPage';
+import { PeriodicalPaymentsPage } from '../../../pages/events/create-case/PeriodicalPaymentsPage';
+import { WrittenAgreementPage } from '../../../pages/events/create-case/WrittenAgreementPage';
+import { UploadOrderDocumentsPage } from '../../../pages/events/create-case/UploadOrderDocumentPage';
+import { CreateCaseCheckYourAnswersPage } from '../../../pages/events/create-case/CreateCaseCheckYourAnswersPage';
+import { TestInfo } from 'playwright/test';
 
 async function createAndProcessFormAExpressCase(): Promise<string> {
   const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-express-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   return caseId;
 }
 
+// Todo: use New playwright-e2e/functional/helpers/PayloadHelper.ts when merged.
 async function createAndProcessFormACase(): Promise<string> {
-  const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+  const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   return caseId;
 }
 
-async function performAmendApplicationDetailsFlowToJoinExpressPilot(
-  caseId: string,
-  loginPage: any,
-  manageCaseDashboardPage: any,
-  caseDetailsPage: any,
-  startPage: any,
-  natureOfApplicationPage: any,
-  propertyAdjustmentPage: any,
-  periodicalPaymentsPage: any,
-  writtenAgreementPage: any,
-  uploadOrderDocumentsPage: any,
-  createCaseCheckYourAnswersPage: any,
-  testInfo: any,
-  makeAxeBuilder: any
-): Promise<void> {
-  await manageCaseDashboardPage.visit();
-  await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
-  await manageCaseDashboardPage.navigateToCase(caseId);
-
-  await caseDetailsPage.selectNextStep(contestedEvents.amendApplicationDetails);
-  await startPage.navigateContinue();
-  }
-
-
 async function performAmendApplicationDetailsFlowToExitExpressPilot(
   caseId: string,
+  testingForEnteringPilot: boolean,
   loginPage: any,
-  manageCaseDashboardPage: any,
-  caseDetailsPage: any,
-  startPage: any,
-  natureOfApplicationPage: any,
-  propertyAdjustmentPage: any,
-  periodicalPaymentsPage: any,
-  writtenAgreementPage: any,
-  expressCaseExitPage: any,
-  uploadOrderDocumentsPage: any,
-  createCaseCheckYourAnswersPage: any,
-  testInfo: any,
+  manageCaseDashboardPage: ManageCaseDashboardPage,
+  caseDetailsPage: CaseDetailsPage,
+  startPage: StartPage,
+  natureOfApplicationPage: NatureOfApplicationPage,
+  propertyAdjustmentPage: PropertyAdjustmentPage,
+  periodicalPaymentsPage: PeriodicalPaymentsPage,
+  writtenAgreementPage: WrittenAgreementPage,
+  expressCasePage: ExpressCasePage,
+  uploadOrderDocumentsPage: UploadOrderDocumentsPage,
+  createCaseCheckYourAnswersPage: CreateCaseCheckYourAnswersPage,
+  testInfo: TestInfo,
   makeAxeBuilder: any
 ): Promise<void> {
   await manageCaseDashboardPage.visit();
@@ -105,8 +94,12 @@ async function performAmendApplicationDetailsFlowToExitExpressPilot(
   await startPage.navigateContinue();
 
   // Express Pilot exit page
-  await expressCaseExitPage.checkContent();
-  await expressCaseExitPage.navigateContinue();
+  if (testingForEnteringPilot) {
+    // todo
+  } else {
+    await expressCasePage.checkExitContent();
+    await expressCasePage.navigateContinue();
+  }
 
   // Complete MIAM Yes/No
   await startPage.navigateContinue();
@@ -155,7 +148,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
          propertyAdjustmentPage,
          periodicalPaymentsPage,
          writtenAgreementPage,
-         expressCaseExitPage,
+         expressCasePage,
          uploadOrderDocumentsPage,
          createCaseCheckYourAnswersPage,
          makeAxeBuilder,
@@ -163,8 +156,9 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        testInfo
      ) => {
        const caseId = await createAndProcessFormACase();
-       await performAmendApplicationDetailsFlowToExitExpressPilot(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage, 
-        natureOfApplicationPage, propertyAdjustmentPage, periodicalPaymentsPage, writtenAgreementPage, expressCaseExitPage, uploadOrderDocumentsPage, 
+       const testingForEnteringPilot = false;
+       await performAmendApplicationDetailsFlowToExitExpressPilot(caseId, testingForEnteringPilot, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage, 
+        natureOfApplicationPage, propertyAdjustmentPage, periodicalPaymentsPage, writtenAgreementPage, expressCasePage, uploadOrderDocumentsPage, 
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
    );
@@ -182,7 +176,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
          propertyAdjustmentPage,
          periodicalPaymentsPage,
          writtenAgreementPage,
-         expressCaseExitPage,
+         expressCasePage,
          uploadOrderDocumentsPage,
          createCaseCheckYourAnswersPage,
          makeAxeBuilder,
@@ -190,8 +184,9 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        testInfo
      ) => {
        const caseId = await createAndProcessFormACase();
-       await performAmendApplicationDetailsFlowToJoinExpressPilot(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage, 
-        natureOfApplicationPage, propertyAdjustmentPage, periodicalPaymentsPage, writtenAgreementPage, uploadOrderDocumentsPage, 
+       const testingForEnteringPilot = true;
+       await performAmendApplicationDetailsFlowToExitExpressPilot(caseId, testingForEnteringPilot, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage, 
+        natureOfApplicationPage, propertyAdjustmentPage, periodicalPaymentsPage, writtenAgreementPage, expressCasePage, uploadOrderDocumentsPage, 
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
    );
