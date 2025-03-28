@@ -41,8 +41,7 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
         manageCaseDashboardPage,
         caseDetailsPage,
         giveAllocationDirectionsPage
-      },
-      testInfo
+      }
     ) => {
       const caseId = await createAndProcessFormACase(true); // Pass true for express pilot case
       await manageCaseDashboardPage.visit();

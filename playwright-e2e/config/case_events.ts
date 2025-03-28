@@ -1,5 +1,3 @@
-import { giveAllocationDirection } from "../../test/functional/pages/give-allocation-direction/give-allocation-direction";
-
 export interface CaseEvent {
     listItem: string;
     ccdCallback: string;
