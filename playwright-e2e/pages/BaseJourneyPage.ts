@@ -7,8 +7,11 @@ export abstract class BaseJourneyPage {
     private readonly previousButton: Locator;
     private readonly confirmButton: Locator;
     private readonly submitButton: Locator
+    private readonly cancelHyperlink: Locator;
     private readonly spinner: Locator;
 
+    private readonly thereIsAProblemHeader: Locator;
+    private readonly fieldIsRequiredErrorMessage: Locator;
 
     public constructor(page: Page) {
         this.page = page;
@@ -17,13 +20,19 @@ export abstract class BaseJourneyPage {
         this.continueButton = page.getByRole('button', { name: 'Continue' });
         this.previousButton = page.getByRole('button', { name: 'Previous' });
         this.confirmButton = page.getByRole('button', { name: 'Confirm' });
+        this.cancelHyperlink = page.getByRole('link', { name: 'Cancel' });
         this.spinner = this.page.locator("xuilib-loading-spinner");
+
+        this.thereIsAProblemHeader = page.getByRole('heading', { name: 'There is a problem' });
+        // error messages
+        this.fieldIsRequiredErrorMessage = page.getByText('Field is required');
     }
 
     async navigateSubmit() {
         await this.page.waitForLoadState();
         await expect(this.submitButton).toBeVisible();
         await expect(this.submitButton).toBeEnabled();
+        await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
         await this.submitButton.click();
         await this.waitForSpinner();
     }
@@ -33,6 +42,7 @@ export abstract class BaseJourneyPage {
         await expect(this.continueButton).toBeVisible();
         await expect(this.continueButton).toBeEnabled();
         await this.continueButton.click();
+        await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
         await this.waitForSpinner();
     }
 
@@ -52,8 +62,15 @@ export abstract class BaseJourneyPage {
         await this.waitForSpinner();
     }
 
+    async navigateCancel() {
+        await this.page.waitForLoadState();
+        await expect(this.cancelHyperlink).toBeVisible();
+        await this.cancelHyperlink.click();
+        await this.waitForSpinner();
+    }
+
     async wait(timeout: number) {
-      await this.page.waitForTimeout(timeout)
+      await this.page.waitForTimeout(timeout);
     }
 
     private async waitForSpinner() {
@@ -64,5 +81,10 @@ export abstract class BaseJourneyPage {
             return spinnerCount;
           })
         .toBe(0);
+    }
+
+    async verifyFieldIsRequiredMessageShown() {
+        await expect(this.thereIsAProblemHeader).toBeVisible();
+        await expect(this.fieldIsRequiredErrorMessage).toBeVisible();
     }
 }
