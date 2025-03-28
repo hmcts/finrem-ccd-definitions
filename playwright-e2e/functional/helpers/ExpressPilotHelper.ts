@@ -16,7 +16,7 @@ export async function createCaseWithExpressPilot(
   payloadPath: string,
   caseType: string,
   event: string,
-  isExpressPilot: boolean
+  isExpressPilot: boolean = true
 ): Promise<string> {
   const replacement: ReplacementAction[] = isExpressPilot ? QUALIFIED_REPLACEMENT : [];
   return await createCaseInCcd(email, password, payloadPath, caseType, event, replacement);
