@@ -10,7 +10,7 @@ async function createAndProcessFormAExpressCase(): Promise<string> {
   return caseId;
 }
 
-async function createAndProcessFormAsCase(): Promise<string> {
+async function createAndProcessFormACase(): Promise<string> {
   const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
   return caseId;
 }
@@ -60,12 +60,22 @@ async function performAmendApplicationDetailsFlowToExitExpressPilot(
   await manageCaseDashboardPage.navigateToCase(caseId);
 
   await caseDetailsPage.selectNextStep(contestedEvents.amendApplicationDetails);
-  await startPage.navigateContinue();
 
   await startPage.navigateContinue();
+
+  // Applicant representation
   await startPage.navigateContinue();
+
+  // Divorce / Dissolution details
   await startPage.navigateContinue();
+
+  // Enter Applicant's name and address
   await startPage.navigateContinue();
+
+  // Enter respondent names
+  await startPage.navigateContinue();
+
+  // Respondent's representation details
   await startPage.navigateContinue();
 
   // Nature of App - Select Variation order to exit Express Pilot
@@ -85,15 +95,23 @@ async function performAmendApplicationDetailsFlowToExitExpressPilot(
   await writtenAgreementPage.selectWrittenAgreement(false);
   await writtenAgreementPage.navigateContinue();
   
+  // Select Fast Track No
   await startPage.navigateContinue();
+
+  // Complete complexity list and assets details
   await startPage.navigateContinue();
+
+  // Complete court details
   await startPage.navigateContinue();
 
   // Express Pilot exit page
   await expressCaseExitPage.checkContent();
   await expressCaseExitPage.navigateContinue();
 
+  // Complete MIAM Yes/No
   await startPage.navigateContinue();
+
+  // Complete MIAM certification details
   await startPage.navigateContinue();
 
   // Upload variation Order Document
@@ -144,7 +162,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        },
        testInfo
      ) => {
-       const caseId = await createAndProcessFormAExpressCase();
+       const caseId = await createAndProcessFormACase();
        await performAmendApplicationDetailsFlowToExitExpressPilot(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage, 
         natureOfApplicationPage, propertyAdjustmentPage, periodicalPaymentsPage, writtenAgreementPage, expressCaseExitPage, uploadOrderDocumentsPage, 
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
@@ -171,7 +189,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        },
        testInfo
      ) => {
-       const caseId = await createAndProcessFormAsCase();
+       const caseId = await createAndProcessFormACase();
        await performAmendApplicationDetailsFlowToJoinExpressPilot(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage, 
         natureOfApplicationPage, propertyAdjustmentPage, periodicalPaymentsPage, writtenAgreementPage, uploadOrderDocumentsPage, 
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
