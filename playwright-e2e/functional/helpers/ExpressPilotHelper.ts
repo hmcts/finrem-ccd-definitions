@@ -21,3 +21,17 @@ export async function createCaseWithExpressPilot(
   const replacement: ReplacementAction[] = isExpressPilot ? QUALIFIED_REPLACEMENT : [];
   return await createCaseInCcd(email, password, payloadPath, caseType, event, replacement);
 }
+
+export async function createCaseWithEstimateAssetUnder1M(
+  email: string,
+  password: string,
+  payloadPath: string,
+  caseType: string,
+  event: string
+): Promise<string> {
+  return await createCaseInCcd(email, password, payloadPath, caseType, event, [
+    { action: 'delete', key: 'netValueOfHome' },
+    { action: 'delete', key: 'estimatedAssetsChecklistV2' },
+    { action: 'insert', key: 'estimatedAssetsChecklistV2', value: 'underOneMillionPounds' }
+  ]);
+}
