@@ -1,7 +1,7 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { createCaseWithExpressPilot } from '../../helpers/ExpressPilotHelper';
-import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
+import { updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
 
 async function updateCaseWorkerSteps(caseId: string, steps: { event: string, payload: string }[]) {
