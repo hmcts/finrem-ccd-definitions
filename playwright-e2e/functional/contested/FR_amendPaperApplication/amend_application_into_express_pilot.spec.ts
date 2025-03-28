@@ -2,7 +2,6 @@ import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { createCaseWithEstimateAssetUnder1M } from '../../helpers/ExpressPilotHelper';
 import { contestedEvents } from '../../../config/case_events';
-import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
 
 async function createAndProcessPaperCase(): Promise<string> {
   const caseId = await createCaseWithEstimateAssetUnder1M(
@@ -42,6 +41,10 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await amendApplicationDetailsPage.navigateContinue();
       await amendApplicationDetailsPage.navigateContinue();
       await amendApplicationDetailsPage.verifyEstimatedAssetsLabelIsVisible();
+      await amendApplicationDetailsPage.selectUnder250k();
+      await amendApplicationDetailsPage.enterEstimatedAssets('6894');
+      await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.verifyDynamicEnrollmentMessageIsVisible();
     }
   );
 });
