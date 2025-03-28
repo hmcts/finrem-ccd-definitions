@@ -2,7 +2,7 @@ import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 
 export class ManageExpressCasePage extends BaseJourneyPage {
-    private readonly manageExpressCaesTitle: Locator;
+    private readonly manageExpressCaseTitle: Locator;
 
     private readonly expressPilotQuestionHeader: Locator;
     private readonly expressPilotQuestion: Locator;
@@ -15,7 +15,7 @@ export class ManageExpressCasePage extends BaseJourneyPage {
 
     public constructor(page: Page) {
         super(page);
-        this.manageExpressCaesTitle = page.getByRole('heading', { name: 'Manage Express Case' });
+        this.manageExpressCaseTitle = page.getByRole('heading', { name: 'Manage Express Case' });
 
         this.expressPilotQuestionHeader = page.getByText('Express Pilot?')
         this.expressPilotQuestion = page.getByLabel('Express Pilot?');
@@ -27,7 +27,7 @@ export class ManageExpressCasePage extends BaseJourneyPage {
     }
 
     async selectExpressPilotQuestion(yesOrNo: string) {
-        expect(this.manageExpressCaesTitle).toBeVisible();
+        expect(this.manageExpressCaseTitle).toBeVisible();
         expect(this.expressPilotQuestionHeader).toBeVisible();
         const option = this.page.locator(`input[type="radio"][name="expressPilotQuestion"][id="expressPilotQuestion_${yesOrNo}"]`);
         await option.check();
