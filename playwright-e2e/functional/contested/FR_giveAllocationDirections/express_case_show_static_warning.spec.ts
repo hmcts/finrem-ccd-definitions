@@ -1,31 +1,18 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
+import { createCaseWithExpressPilot } from '../../helpers/ExpressPilotHelper';
+import { updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
-import { ReplacementAction } from '../../../types/replacement-action';
 import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
 
-const NOT_QUALIFIED_REPLACEMENT: ReplacementAction[] = [
-  { action: 'delete', key: 'regionList' },
-  { action: 'insert', key: 'regionList', value: 'midlands' },
-  { action: 'delete', key: 'northWestFRCList' },
-  { action: 'insert', key: 'midlandsFRCList', value: 'birmingham' },
-  { action: 'delete', key: 'lancashireCourtList' },
-  { action: 'insert', key: 'birminghamCourtList', value: 'FR_birmingham_hc_list_2' }
-];
-
 async function createAndProcessFormACase(isExpressPilot: boolean): Promise<string> {
-  let replacement: ReplacementAction[] = [];
-  if (!isExpressPilot) {
-    replacement = NOT_QUALIFIED_REPLACEMENT;
-  }
-  const caseId = await createCaseInCcd(
+  const caseId = await createCaseWithExpressPilot(
     config.applicant_solicitor.email,
     config.applicant_solicitor.password,
-    './playwright-e2e/data/payload/contested/forma/ccd-contested-qualified-express-pilot.json',
+    './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
     'FinancialRemedyContested',
     'FR_solicitorCreate',
-    replacement
+    isExpressPilot
   );
   await updateCaseInCcd(
     config.applicant_solicitor.email,
