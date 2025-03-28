@@ -12,6 +12,7 @@ export class GiveAllocationDirectionsPage extends BaseJourneyPage {
     async verifyExistenceOfExpressPilotWarningMessage() {
         await expect(this.alteringCourtImpactExpressPilotCaseWarning).toBeVisible();
     }
+    
     async verifyAbsenseOfExpressPilotWarningMessage() {
         await expect(this.alteringCourtImpactExpressPilotCaseWarning).not.toBeVisible();
     }
