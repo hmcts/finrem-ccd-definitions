@@ -38,3 +38,13 @@ export async function createCaseWithEstimateAssetUnder1M(
   ];
   return await createCaseInCcd(email, password, payloadPath, caseType, event, replacement);
 }
+
+export async function createCaseWithNonParticipatingFrcCourt(
+  email: string,
+  password: string,
+  payloadPath: string,
+  caseType: string,
+  event: string
+): Promise<string> {
+  return await createCaseInCcd(email, password, payloadPath, caseType, event);
+}
