@@ -1,9 +1,6 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { 
-  createCaseWithEstimateAssetUnder1M,
-  createCaseWithNonParticipatingFrcCourt, 
-  createCaseWithExpressPilot } from '../../helpers/ExpressPilotHelper';
+import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
 import { contestedEvents } from '../../../config/case_events';
 
 test.describe('Contested - Paper Case - Amend application into Express Pilot', () => {
@@ -18,7 +15,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendApplicationDetailsPage
       }
     ) => {
-      const caseId = await createCaseWithEstimateAssetUnder1M(
+      const caseId = await ExpressPilotHelper.createCaseWithEstimateAssetUnder1M(
         config.caseWorker.email,
         config.caseWorker.password,
         './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
@@ -58,7 +55,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendApplicationDetailsPage
       }
     ) => {
-      const caseId = await createCaseWithNonParticipatingFrcCourt(
+      const caseId = await ExpressPilotHelper.createCaseWithNonParticipatingFrcCourt(
         config.caseWorker.email,
         config.caseWorker.password,
         './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
@@ -96,7 +93,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendApplicationDetailsPage
       }
     ) => {
-      const caseId = await createCaseWithExpressPilot(
+      const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
         config.caseWorker.email,
         config.caseWorker.password,
         './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
@@ -136,7 +133,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendApplicationDetailsPage
       }
     ) => {
-      const caseId = await createCaseWithExpressPilot(
+      const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
         config.caseWorker.email,
         config.caseWorker.password,
         './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
