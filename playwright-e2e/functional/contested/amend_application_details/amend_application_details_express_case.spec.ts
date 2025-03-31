@@ -27,9 +27,15 @@ async function createAndProcessFormACase(isExpressPilot: boolean = false): Promi
   return caseId;
 }
 
+const enum ExpressTestType {
+  TestingForExpressExit = "Testing for content to say that the case is no longer express",
+  TestingForExpressEntry = "Testing for content to say that the case is express",
+  TestForNoExpressContent = "Testing that no content related to express is shown",
+}
+
 async function performAmendApplicationDetailsFlowForExpressPilot(
   caseId: string,
-  testingForExitingPilot: boolean,
+  expressTestType: ExpressTestType,
   loginPage: any,
   manageCaseDashboardPage: ManageCaseDashboardPage,
   caseDetailsPage: CaseDetailsPage,
@@ -66,7 +72,7 @@ async function performAmendApplicationDetailsFlowForExpressPilot(
   await startPage.navigateContinue();
 
   // Nature of App - Select Variation order if testing that we exit Express Pilot
-  if (testingForExitingPilot) {
+  if (ExpressTestType.TestingForExpressExit == expressTestType) {
     await natureOfApplicationPage.selectVariationOrderOnly();
   }
   await natureOfApplicationPage.navigateContinue();
@@ -80,13 +86,19 @@ async function performAmendApplicationDetailsFlowForExpressPilot(
   // Complete court details
   await startPage.navigateContinue();
 
-  // If testing for Exit page, look for the Express Pilot exit page
-  if (testingForExitingPilot) {
-    await expressCasePage.checkExitContent();
-    await expressCasePage.navigateContinue();
-  } else {
-    await expressCaseEnrolledPage.checkLinkResolves();
-    await expressCaseEnrolledPage.navigateContinue();
+  // Check the express page, depending on what you are testing
+  switch (expressTestType) {
+    case ExpressTestType.TestingForExpressExit:
+      await expressCasePage.checkExitContent();
+      await expressCasePage.navigateContinue();
+      break;
+    case ExpressTestType.TestingForExpressEntry:
+      await expressCaseEnrolledPage.checkLinkResolves();
+      await expressCasePage.navigateContinue();
+      break;
+    case ExpressTestType.TestForNoExpressContent:
+      // no express page shown, test resumes from next page in journey.
+      break;
   }
 
   // Complete MIAM Yes/No
@@ -107,11 +119,17 @@ async function performAmendApplicationDetailsFlowForExpressPilot(
   // Assert case creation tab data
   await caseDetailsPage.assertTabData(createCaseTabData);
 
-  // Assert tab data
-  if (testingForExitingPilot) {
-    await caseDetailsPage.assertTabData(expressDoesNotQualifyCaseGateKeepingTabData);
-  } else {
-    await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
+  // Check the express part of the gatekeeping and allocation tab, depending on what you are testing
+  switch (expressTestType) {
+    case ExpressTestType.TestingForExpressExit:
+      await caseDetailsPage.assertTabData(expressDoesNotQualifyCaseGateKeepingTabData);
+      break;
+    case ExpressTestType.TestingForExpressEntry:
+      await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
+      break;
+    case ExpressTestType.TestForNoExpressContent:
+      await caseDetailsPage.assertTabData(expressDoesNotQualifyCaseGateKeepingTabData);
+      break;
   }
 
   if (config.run_accessibility) {
@@ -128,7 +146,7 @@ async function performAmendApplicationDetailsFlowForExpressPilot(
 
 test.describe('Contested - Amend Application Details join/exit express case Form A', () => {
    test(
-    'Contested - Amend Application Details exit Express Pilot through Variation Order (Form A)',
+    'Contested Form A - Amend Application Details. Exit Express Pilot content shown.  Amendment added a Variation Order, so criteria not met.',
      { tag: [] },
      async (
        {
@@ -148,14 +166,14 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        const isAnExpressCase = true;
        const caseId = await createAndProcessFormACase(isAnExpressCase);
        const testingForExitingPilot = true;
-       await performAmendApplicationDetailsFlowForExpressPilot(caseId, testingForExitingPilot, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
+       await performAmendApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressExit, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
         natureOfApplicationPage, expressCasePage, expressCaseEnrolledPage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
    );
 
    test(
-    'Contested - Amend Application Details join Express Pilot (Form A)',
+    'Contested Form A - Amend Application Details. Entering the Express Pilot content shown. The case still qualifies.',
      { tag: [] },
      async (
        {
@@ -175,7 +193,34 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        const isAnExpressCase = true;
        const caseId = await createAndProcessFormACase(isAnExpressCase);
        const testingForExitingPilot = false;
-       await performAmendApplicationDetailsFlowForExpressPilot(caseId, testingForExitingPilot, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
+       await performAmendApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressEntry, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
+        natureOfApplicationPage, expressCasePage, expressCaseEnrolledPage, uploadOrderDocumentsPage,
+        createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
+     }
+   );
+
+   test(
+    'Contested Form A - Amend Application Details. No Express Pilot content should be shown.  The case did not qualify before and still does not.',
+     { tag: [] },
+     async (
+       {
+         loginPage,
+         manageCaseDashboardPage,
+         caseDetailsPage,
+         startPage,
+         natureOfApplicationPage,
+         expressCasePage,
+         expressCaseEnrolledPage,
+         uploadOrderDocumentsPage,
+         createCaseCheckYourAnswersPage,
+         makeAxeBuilder,
+       },
+       testInfo
+     ) => {
+       const isAnExpressCase = true;
+       const caseId = await createAndProcessFormACase(false);
+       const testingForExitingPilot = false;
+       await performAmendApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestForNoExpressContent, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
         natureOfApplicationPage, expressCasePage, expressCaseEnrolledPage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
