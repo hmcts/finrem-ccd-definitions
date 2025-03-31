@@ -9,6 +9,8 @@ export class AmendApplicationDetailsPage extends BaseJourneyPage {
     private regionList: Locator;
     private northWestFRCList: Locator;
     private lancashireCourtList: Locator;
+    private midlandsFRCList: Locator;
+    private birminghamCourtList : Locator;
 
     public constructor(page: Page) {
         super(page);
@@ -19,6 +21,8 @@ export class AmendApplicationDetailsPage extends BaseJourneyPage {
         this.regionList = this.page.getByLabel('Please state in which Financial Remedies Court Zone the applicant resides');
         this.northWestFRCList = this.page.locator('select[id="northWestFRCList"]');
         this.lancashireCourtList = this.page.locator('select[id="lancashireCourtList"]');
+        this.midlandsFRCList = this.page.locator('select[id="midlandsFRCList"]');
+        this.birminghamCourtList = this.page.locator('select[id="birminghamCourtList"]');
     }
 
     async verifyEstimatedAssetsLabelIsVisible() {
@@ -54,6 +58,12 @@ export class AmendApplicationDetailsPage extends BaseJourneyPage {
         await this.regionList.selectOption('North West');
         await this.northWestFRCList.selectOption('Lancashire and Cumbria FRC');
         await this.lancashireCourtList.selectOption('PRESTON DESIGNATED FAMILY COURT');
+    }
+
+    async selectNonParticipatingCourt() {  
+        await this.regionList.selectOption('Midlands');
+        await this.midlandsFRCList.selectOption('Birmingham FRC');
+        await this.birminghamCourtList.selectOption('COVENTRY COMBINED COURT CENTRE');
     }
 
 }

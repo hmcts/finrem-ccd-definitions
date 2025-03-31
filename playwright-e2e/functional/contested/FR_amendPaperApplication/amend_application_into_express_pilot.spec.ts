@@ -125,4 +125,42 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await amendApplicationDetailsPage.verifyDynamicExistingExpressPilotMessageIsVisible();
     }
   );
+  test(
+    'Exiting express pilot message dynamic page should be inserted when participating court is changed',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        amendApplicationDetailsPage
+      }
+    ) => {
+      const caseId = await createCaseWithExpressPilot(
+        config.caseWorker.email,
+        config.caseWorker.password,
+        './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
+        'FinancialRemedyContested',
+        'FR_newPaperCase'
+      );
+      await manageCaseDashboardPage.visit();
+      await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['The net assets in this case are currently estimated to be in the order of Under £250,000 (this should be total of combined net assets, but excluding pensions)'] }]);
+    
+      await caseDetailsPage.selectNextStep(contestedEvents.amendApplicationDetails);
+      await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.selectNonParticipatingCourt();
+      await amendApplicationDetailsPage.navigateContinue(); 
+      await amendApplicationDetailsPage.verifyDynamicExistingExpressPilotMessageIsVisible();
+    }
+  );
 });
