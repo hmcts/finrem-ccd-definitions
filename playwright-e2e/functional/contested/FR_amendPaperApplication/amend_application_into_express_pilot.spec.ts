@@ -15,13 +15,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendApplicationDetailsPage
       }
     ) => {
-      const caseId = await ExpressPilotHelper.createCaseWithEstimateAssetUnder1M(
-        config.caseWorker.email,
-        config.caseWorker.password,
-        './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
-        'FinancialRemedyContested',
-        'FR_newPaperCase'
-      );
+      const caseId = await ExpressPilotHelper.createContestedPaperCaseWithEstimatedAssetUnder1M();
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);

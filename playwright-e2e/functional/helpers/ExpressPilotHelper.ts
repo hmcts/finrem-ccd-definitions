@@ -1,4 +1,5 @@
 import { createCaseInCcd } from '../../../test/helpers/utils';
+import config from '../../config/config';
 import { ReplacementAction } from '../../types/replacement-action';
 
 const PARTICIPATING_COURT_REPLACEMENT: ReplacementAction[] = [
@@ -48,5 +49,13 @@ export class ExpressPilotHelper {
     event: string
   ): Promise<string> {
     return await createCaseInCcd(email, password, payloadPath, caseType, event);
+  }
+
+  static async createContestedPaperCaseWithEstimatedAssetUnder1M(): Promise<string> {
+    return await this.createCaseWithEstimateAssetUnder1M(      
+      config.caseWorker.email,
+      config.caseWorker.password,
+      './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
+      'FinancialRemedyContested', 'FR_newPaperCase');
   }
 }
