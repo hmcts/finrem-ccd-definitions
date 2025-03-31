@@ -190,7 +190,7 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
 
   const eventToken = await getStartEventToken(ccdStartEventPath, ccdSaveEventPath, authToken, serviceToken);
 
-  const data = fs.readFileSync(dataLocation);
+  const data = dataLocation ? fs.readFileSync(dataLocation) : '{}';
   let updatedData = JSON.stringify(JSON.parse(data));
   updatedData = updatedData.replace('ReplaceForShareCase', shareCaseRef);
 
