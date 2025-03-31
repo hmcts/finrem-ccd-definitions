@@ -39,6 +39,8 @@ import { CreateCaseSavingYourAnswersPage } from '../pages/events/create-case/Cre
 import { ListForHearingPage } from '../pages/events/list-for-hearing/ListForHearingPage';
 import { AmendApplicationDetailsPage } from '../pages/events/amend-application-details/AmendApplicationDetailsPage';
 import { ExpressCasePage } from '../pages/events/amend-application-details/ExpressCasePage';
+import { ManageExpressCasePage } from '../pages/events/manage-express-case/ManageExpressCasePage';
+import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionsPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -81,7 +83,8 @@ type CreateFixtures = {
   listForHearingPage: ListForHearingPage;
   amendApplicationDetailsPage: AmendApplicationDetailsPage;
   expressCasePage: ExpressCasePage;
-
+  manageExpressCasePage: ManageExpressCasePage;
+  giveAllocationDirectionsPage: GiveAllocationDirectionsPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -195,5 +198,11 @@ export const test = base.extend<CreateFixtures>({
   },
   expressCasePage: async ({ page }, use) => {
     await use(new ExpressCasePage(page));
+  },
+  manageExpressCasePage: async ({ page }, use) => {
+    await use(new ManageExpressCasePage(page));
+  },
+  giveAllocationDirectionsPage: async ({ page }, use) => {
+    await use(new GiveAllocationDirectionsPage(page));
   }
 });
