@@ -22,14 +22,9 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['The net assets in this case are currently estimated to be in the order of Under £1 million'] }]);
     
       await caseDetailsPage.selectNextStep(contestedEvents.amendApplicationDetails);
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
+      for (let i = 0; i < 8; i++) {
+        await amendApplicationDetailsPage.navigateContinue();
+      }
       await amendApplicationDetailsPage.verifyEstimatedAssetsLabelIsVisible();
       await amendApplicationDetailsPage.selectUnder250k();
       await amendApplicationDetailsPage.enterEstimatedAssets('6894');
@@ -56,15 +51,9 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['The net assets in this case are currently estimated to be in the order of Under £250,000 (this should be total of combined net assets, but excluding pensions)'] }]);
     
       await caseDetailsPage.selectNextStep(contestedEvents.amendApplicationDetails);
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
+      for (let i = 0; i < 9; i++) {
+        await amendApplicationDetailsPage.navigateContinue();
+      }
       await amendApplicationDetailsPage.selectParticipatingCourt();
       await amendApplicationDetailsPage.navigateContinue(); 
       await amendApplicationDetailsPage.verifyDynamicEnrollmentMessageIsVisible();
@@ -88,14 +77,9 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['The net assets in this case are currently estimated to be in the order of Under £250,000 (this should be total of combined net assets, but excluding pensions)'] }]);
     
       await caseDetailsPage.selectNextStep(contestedEvents.amendApplicationDetails);
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
+      for (let i = 0; i < 8; i++) {
+        await amendApplicationDetailsPage.navigateContinue();
+      }
       await amendApplicationDetailsPage.verifyEstimatedAssetsLabelIsVisible();
       await amendApplicationDetailsPage.selectUnder1M();
       await amendApplicationDetailsPage.enterEstimatedAssets('999999');
@@ -122,15 +106,9 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['The net assets in this case are currently estimated to be in the order of Under £250,000 (this should be total of combined net assets, but excluding pensions)'] }]);
     
       await caseDetailsPage.selectNextStep(contestedEvents.amendApplicationDetails);
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
-      await amendApplicationDetailsPage.navigateContinue();
+      for (let i = 0; i < 9; i++) {
+        await amendApplicationDetailsPage.navigateContinue();
+      }
       await amendApplicationDetailsPage.selectNonParticipatingCourt();
       await amendApplicationDetailsPage.navigateContinue(); 
       await amendApplicationDetailsPage.verifyDynamicExistingExpressPilotMessageIsVisible();
