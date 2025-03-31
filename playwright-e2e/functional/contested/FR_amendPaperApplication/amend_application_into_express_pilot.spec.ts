@@ -5,7 +5,7 @@ import { contestedEvents } from '../../../config/case_events';
 
 test.describe('Contested - Paper Case - Amend application into Express Pilot', () => {
   test(
-    'Dynamic page should be inserted when changing total value of assets',
+    'Enrollment message dynamic page should be inserted when changing total value of assets',
     { tag: [] },
     async (
       {
@@ -45,7 +45,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
     }
   );
   test(
-    'Dynamic page should be inserted when participating court is changed',
+    'Enrollment message dynamic page should be inserted when participating court is changed',
     { tag: [] },
     async (
       {
