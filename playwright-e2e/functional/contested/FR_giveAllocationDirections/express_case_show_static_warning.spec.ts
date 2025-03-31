@@ -40,7 +40,7 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        giveAllocationDirectionsPage
+        allocationDirectionsCourtSelectionPage
       }
     ) => {
       const caseId = await createAndProcessFormACase(true); // Pass true for express pilot case
@@ -49,9 +49,10 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
       await manageCaseDashboardPage.navigateToCase(caseId);
     
       await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
-      await giveAllocationDirectionsPage.verifyExistenceOfExpressPilotWarningMessage();
+      await allocationDirectionsCourtSelectionPage.verifyExistenceOfExpressPilotWarningMessage();
     }
   );
+
   test(
     'Should NOT display a warning message if it is not an express pilot case.',
     { tag: [] },
@@ -60,9 +61,8 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        giveAllocationDirectionsPage
+        allocationDirectionsCourtSelectionPage
       },
-      testInfo
     ) => {
       const caseId = await createAndProcessFormACase(false); // Pass false for non-express pilot case
       await manageCaseDashboardPage.visit();
@@ -70,7 +70,7 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
       await manageCaseDashboardPage.navigateToCase(caseId);
     
       await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
-      await giveAllocationDirectionsPage.verifyAbsenseOfExpressPilotWarningMessage();
+      await allocationDirectionsCourtSelectionPage.verifyAbsenceOfExpressPilotWarningMessage();
     }
   );
 });
