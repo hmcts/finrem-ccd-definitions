@@ -51,11 +51,29 @@ export class ExpressPilotHelper {
     return await createCaseInCcd(email, password, payloadPath, caseType, event);
   }
 
+  static async createContestedPaperCaseWithNonParticipatingCourt(): Promise<string> {
+    const caseId = await this.createCaseWithNonParticipatingFrcCourt(
+      config.caseWorker.email,
+      config.caseWorker.password,
+      './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
+      'FinancialRemedyContested', 'FR_newPaperCase'
+    );
+    return caseId;
+  }
+
   static async createContestedPaperCaseWithEstimatedAssetUnder1M(): Promise<string> {
     return await this.createCaseWithEstimateAssetUnder1M(      
       config.caseWorker.email,
       config.caseWorker.password,
       './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
       'FinancialRemedyContested', 'FR_newPaperCase');
+  }
+
+  static async createContestedPaperCaseWithExpressPilotEnrolled(): Promise<string> {
+    return await this.createCaseWithExpressPilot(      
+      config.caseWorker.email,
+      config.caseWorker.password,
+      './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
+      'FinancialRemedyContested', 'FR_newPaperCase', true);
   }
 }
