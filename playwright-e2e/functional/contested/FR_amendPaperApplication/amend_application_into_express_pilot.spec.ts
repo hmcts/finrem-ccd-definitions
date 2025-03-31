@@ -44,6 +44,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await amendApplicationDetailsPage.selectUnder250k();
       await amendApplicationDetailsPage.enterEstimatedAssets('6894');
       await amendApplicationDetailsPage.navigateContinue();
+      await amendApplicationDetailsPage.navigateContinue();
       await amendApplicationDetailsPage.verifyDynamicEnrollmentMessageIsVisible();
     }
   );

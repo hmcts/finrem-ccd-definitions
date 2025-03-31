@@ -1,7 +1,7 @@
 import { createCaseInCcd } from '../../../test/helpers/utils';
 import { ReplacementAction } from '../../types/replacement-action';
 
-const QUALIFIED_REPLACEMENT: ReplacementAction[] = [
+const PARTICIPATING_COURT_REPLACEMENT: ReplacementAction[] = [
   { action: 'delete', key: 'regionList' },
   { action: 'insert', key: 'regionList', value: 'northwest' },
   { action: 'delete', key: 'midlandsFRCList' },
@@ -18,7 +18,7 @@ export async function createCaseWithExpressPilot(
   event: string,
   isExpressPilot: boolean = true
 ): Promise<string> {
-  const replacement: ReplacementAction[] = isExpressPilot ? QUALIFIED_REPLACEMENT : [];
+  const replacement: ReplacementAction[] = isExpressPilot ? PARTICIPATING_COURT_REPLACEMENT : [];
   return await createCaseInCcd(email, password, payloadPath, caseType, event, replacement);
 }
 
@@ -29,10 +29,12 @@ export async function createCaseWithEstimateAssetUnder1M(
   caseType: string,
   event: string
 ): Promise<string> {
-  return await createCaseInCcd(email, password, payloadPath, caseType, event, [
+  const replacement = [
+    ...PARTICIPATING_COURT_REPLACEMENT,
     { action: 'delete', key: 'netValueOfHome' },
     { action: 'insert', key: 'netValueOfHome', value: '999999' },
     { action: 'delete', key: 'estimatedAssetsChecklistV2' },
     { action: 'insert', key: 'estimatedAssetsChecklistV2', value: 'underOneMillionPounds' }
-  ]);
+  ];
+  return await createCaseInCcd(email, password, payloadPath, caseType, event, replacement);
 }
