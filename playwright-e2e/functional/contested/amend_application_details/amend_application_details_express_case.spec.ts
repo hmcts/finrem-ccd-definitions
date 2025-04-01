@@ -5,7 +5,6 @@ import { expressDoesNotQualifyCaseGateKeepingTabData } from '../../../data/tab_c
 import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tab';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
 import { ExpressCasePage } from '../../../pages/events/amend-application-details/ExpressCasePage';
-import { ExpressCaseEnrolledPage } from '../../../pages/events/create-case/ExpressCaseEnrolledPage';
 import { ManageCaseDashboardPage } from '../../../pages/ManageCaseDashboardPage';
 import { CaseDetailsPage } from '../../../pages/CaseDetailsPage';
 import { StartPage } from '../../../pages/events/create-case/StartPage';
@@ -42,7 +41,6 @@ async function performAmendApplicationDetailsFlowForExpressPilot(
   startPage: StartPage,
   natureOfApplicationPage: NatureOfApplicationPage,
   expressCasePage: ExpressCasePage,
-  expressCaseEnrolledPage: ExpressCaseEnrolledPage,
   uploadOrderDocumentsPage: UploadOrderDocumentsPage,
   createCaseCheckYourAnswersPage: CreateCaseCheckYourAnswersPage,
   testInfo: TestInfo,
@@ -93,7 +91,8 @@ async function performAmendApplicationDetailsFlowForExpressPilot(
       await expressCasePage.navigateContinue();
       break;
     case ExpressTestType.TestingForExpressEntry:
-      await expressCaseEnrolledPage.checkLinkResolves();
+      await expressCasePage.checkEnterContent();
+      await expressCasePage.checkLinkResolves();
       await expressCasePage.navigateContinue();
       break;
     case ExpressTestType.TestForNoExpressContent:
@@ -142,6 +141,9 @@ async function performAmendApplicationDetailsFlowForExpressPilot(
 
     expect(accessibilityScanResults.violations).toEqual([]);
   }
+
+  // Logout
+  await manageCaseDashboardPage.signOut();
 }
 
 test.describe('Contested - Amend Application Details join/exit express case Form A', () => {
@@ -156,7 +158,6 @@ test.describe('Contested - Amend Application Details join/exit express case Form
          startPage,
          natureOfApplicationPage,
          expressCasePage,
-         expressCaseEnrolledPage,
          uploadOrderDocumentsPage,
          createCaseCheckYourAnswersPage,
          makeAxeBuilder,
@@ -167,7 +168,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        const caseId = await createAndProcessFormACase(isAnExpressCase);
        const testingForExitingPilot = true;
        await performAmendApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressExit, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
-        natureOfApplicationPage, expressCasePage, expressCaseEnrolledPage, uploadOrderDocumentsPage,
+        natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
    );
@@ -183,7 +184,6 @@ test.describe('Contested - Amend Application Details join/exit express case Form
          startPage,
          natureOfApplicationPage,
          expressCasePage,
-         expressCaseEnrolledPage,
          uploadOrderDocumentsPage,
          createCaseCheckYourAnswersPage,
          makeAxeBuilder,
@@ -194,7 +194,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        const caseId = await createAndProcessFormACase(isAnExpressCase);
        const testingForExitingPilot = false;
        await performAmendApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressEntry, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
-        natureOfApplicationPage, expressCasePage, expressCaseEnrolledPage, uploadOrderDocumentsPage,
+        natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
    );
@@ -210,7 +210,6 @@ test.describe('Contested - Amend Application Details join/exit express case Form
          startPage,
          natureOfApplicationPage,
          expressCasePage,
-         expressCaseEnrolledPage,
          uploadOrderDocumentsPage,
          createCaseCheckYourAnswersPage,
          makeAxeBuilder,
@@ -221,7 +220,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        const caseId = await createAndProcessFormACase(false);
        const testingForExitingPilot = false;
        await performAmendApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestForNoExpressContent, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
-        natureOfApplicationPage, expressCasePage, expressCaseEnrolledPage, uploadOrderDocumentsPage,
+        natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
    );
