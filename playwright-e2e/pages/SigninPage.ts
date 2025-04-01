@@ -1,4 +1,4 @@
-import { type Page, type Locator, expect } from '@playwright/test'
+import { type Page, type Locator, expect } from '@playwright/test';
 import config from '../config/config';
 
 export class SigninPage {
@@ -15,7 +15,7 @@ export class SigninPage {
     this.signinButtonLocator = page.getByRole('button', { name: 'Sign in' });
   }
 
-  async login(email: string, password: string, expectedUrl: string) {
+  async login(email: string, password: string, expectedUrl: string) {   
     await expect(this.emailInputLocator).toBeVisible();
     await this.emailInputLocator.fill(email);
     await expect(this.passwordInputLocator).toBeVisible();
