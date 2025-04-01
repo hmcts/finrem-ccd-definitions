@@ -2,31 +2,19 @@ import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
-import { ReplacementAction } from '../../../types/replacement-action';
+import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
+import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
 
-const NOT_QUALIFIED_REPLACEMENT: ReplacementAction[] = [
-  { action: 'delete', key: 'regionList' },
-  { action: 'insert', key: 'regionList', value: 'midlands' },
-  { action: 'delete', key: 'northWestFRCList' },
-  { action: 'insert', key: 'midlandsFRCList', value: 'birmingham' },
-  { action: 'delete', key: 'lancashireCourtList' },
-  { action: 'insert', key: 'birminghamCourtList', value: 'FR_birmingham_hc_list_2' }
-];
-
-async function updateCaseWorkerSteps(caseId: string, steps: { event: string, payload: string }[]) {
-  for (const step of steps) {
-    await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', step.event, step.payload);
-  }
-}
-
-async function createAndProcessFormACase(type: string | null = null): Promise<string> {
-  let replacement: ReplacementAction[] = [];
-  if (type === 'not-qualified') {
-    replacement = NOT_QUALIFIED_REPLACEMENT;
-  }
-  const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/payload/contested/forma/ccd-contested-qualified-express-pilot.json', 'FinancialRemedyContested', 'FR_solicitorCreate', replacement);
+async function createAndProcessFormACase(isExpressPilot: boolean = false): Promise<string> {
+  const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
+    config.applicant_solicitor.email,
+    config.applicant_solicitor.password,
+    './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
+    'FinancialRemedyContested',
+    'FR_solicitorCreate',
+    isExpressPilot
+  );
   await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
-
   await updateCaseWorkerSteps(caseId, [
     { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
     { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' }
@@ -34,12 +22,15 @@ async function createAndProcessFormACase(type: string | null = null): Promise<st
   return caseId;
 }
 
-async function createAndProcessPaperCase(type: string | null = null): Promise<string> {
-  let replacement: ReplacementAction[] = [];
-  if (type === 'not-qualified') {
-    replacement = NOT_QUALIFIED_REPLACEMENT;
-  }
-  const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, `./playwright-e2e/data/payload/contested/paper_case/ccd-contested-qualified-express-pilot.json`, 'FinancialRemedyContested', 'FR_newPaperCase', replacement);
+async function createAndProcessPaperCase(isExpressPilot: boolean = false): Promise<string> {
+  const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
+    config.caseWorker.email,
+    config.caseWorker.password,
+    './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
+    'FinancialRemedyContested',
+    'FR_newPaperCase',
+    isExpressPilot
+  );
 
   await updateCaseWorkerSteps(caseId, [
     { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },
@@ -86,12 +77,12 @@ async function processExpressCaseShowNotEnrolledMessage(caseId: string, manageCa
 
 function runTest(
   description: string,
-  caseCreationFn: (type?: string) => Promise<string>,
+  caseCreationFn: (isExpressPilot?: boolean) => Promise<string>,
   processFn: (caseId: string, manageCaseDashboardPage: any, loginPage: any, caseDetailsPage: any, manageExpressCasePage: any) => Promise<void>,
-  type?: string
+  isExpressPilot?: boolean
 ) {
   test(description, { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage }) => {
-    const caseId = await caseCreationFn(type);
+    const caseId = await caseCreationFn(isExpressPilot);
     await processFn(caseId, manageCaseDashboardPage, loginPage, caseDetailsPage, manageExpressCasePage);
   });
 }
@@ -100,26 +91,28 @@ test.describe('Contested - Manage Express Case', () => {
   runTest(
     'Contested - Enrolled case (Form A Case) - Remove case from express pilot',
     createAndProcessFormACase,
-    processSuccessfulExpressCase
+    processSuccessfulExpressCase,
+    true
   );
 
   runTest(
     'Contested - Enrolled case (Paper Case) - Remove case from express pilot',
     createAndProcessPaperCase,
-    processSuccessfulExpressCase
+    processSuccessfulExpressCase,
+    true
   );
 
   runTest(
     'Contested - Not qualified case (Form A Case) - Show not enrolled message',
     createAndProcessFormACase,
     processExpressCaseShowNotEnrolledMessage,
-    'not-qualified'
+    false
   );
 
   runTest(
     'Contested - Not qualified case (Paper Case) - Show not enrolled message',
     createAndProcessPaperCase,
     processExpressCaseShowNotEnrolledMessage,
-    'not-qualified'
+    false
   );
 });
