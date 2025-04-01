@@ -62,5 +62,9 @@ export const contestedEvents: Record<string, CaseEvent> = {
     giveAllocationDirection: {
        listItem: "Give Allocation Directions",
        ccdCallback: "FR_giveAllocationDirections"
+    },
+    amendApplicationDetails: {
+       listItem: "Amend Application Details",
+       ccdCallback: "FR_amendPaperApplication"
     }
 };

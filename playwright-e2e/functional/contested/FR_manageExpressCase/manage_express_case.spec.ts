@@ -3,10 +3,10 @@ import config from '../../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
 import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
-import { createCaseWithExpressPilot } from '../../helpers/ExpressPilotHelper';
+import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
 
 async function createAndProcessFormACase(isExpressPilot: boolean = false): Promise<string> {
-  const caseId = await createCaseWithExpressPilot(
+  const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
     config.applicant_solicitor.email,
     config.applicant_solicitor.password,
     './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
@@ -23,7 +23,7 @@ async function createAndProcessFormACase(isExpressPilot: boolean = false): Promi
 }
 
 async function createAndProcessPaperCase(isExpressPilot: boolean = false): Promise<string> {
-  const caseId = await createCaseWithExpressPilot(
+  const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
     config.caseWorker.email,
     config.caseWorker.password,
     './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
