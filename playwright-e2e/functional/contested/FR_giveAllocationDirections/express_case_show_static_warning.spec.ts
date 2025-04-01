@@ -1,12 +1,12 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { createCaseWithExpressPilot } from '../../helpers/ExpressPilotHelper';
+import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
 import { updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
 import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
 
 async function createAndProcessFormACase(isExpressPilot: boolean): Promise<string> {
-  const caseId = await createCaseWithExpressPilot(
+  const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
     config.applicant_solicitor.email,
     config.applicant_solicitor.password,
     './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
