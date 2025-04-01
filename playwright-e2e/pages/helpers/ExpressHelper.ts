@@ -1,15 +1,14 @@
 import { type Page, expect, Locator } from '@playwright/test';
-import { BaseJourneyPage } from '../../BaseJourneyPage';
-import { ExpressHelper } from '../../helpers/ExpressHelper';
 
-export class ExpressCaseEnrolledPage extends BaseJourneyPage {
+export class ExpressHelper {
 
     private readonly guidanceLink: Locator;
+    private readonly page: Page;
     private readonly guidanceLinkUrl: string = "https://www.gov.uk/guidance/what-to-expect-if-you-are-in-the-express-financial-remedy-pilot";
     private readonly guidancePageContent: string = "Page not found";
 
     public constructor(page: Page) {
-        super(page);
+        this.page = page;
         this.guidanceLink = page.locator(`a[href="${this.guidanceLinkUrl}"]`);
     }
 
@@ -21,7 +20,7 @@ export class ExpressCaseEnrolledPage extends BaseJourneyPage {
     *
     * NOTE: Page not on GOV.UK yet, so looking for "Page not found".
     */
-    async oldCheckLinkResolves() {
+    async checkLinkResolves() {
 
         await expect(this.guidanceLink).toBeVisible();
 
@@ -38,11 +37,6 @@ export class ExpressCaseEnrolledPage extends BaseJourneyPage {
         await expect(newPage.locator(`text=${this.guidancePageContent}`)).toBeVisible();
 
         await newPage.close();
-    }
-
-    async checkLinkResolves() {
-        const helper = new ExpressHelper(this.page);
-        await helper.checkLinkResolves();
     }
 
 }
