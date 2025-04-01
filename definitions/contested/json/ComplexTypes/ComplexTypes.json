@@ -3898,6 +3898,15 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "resubmissionHyperlink",
+    "FieldType": "Label",
+    "ElementLabel": "CASE_REFERENCE:${[CASE_REFERENCE]} topLevelField:${applicantLName} [I'm an inline-style link ${[CASE_REFERENCE]}](https://www.google.com/?${[CASE_REFERENCE]})",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_agreedDraftOrder",
     "ListElementCode": "attachments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",

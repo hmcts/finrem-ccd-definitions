@@ -7952,6 +7952,15 @@
   {
     "LiveFrom": "29/10/2024",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "agreedDraftOrderCollectionTest",
+    "Label": "${[CASE_REFERENCE]} | ${applicantLName}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "suggestedDraftOrderCollection",
     "Label": "Suggested draft orders prior to a hearing",
     "FieldType": "Collection",
