@@ -206,4 +206,4 @@ NOTE: Jenkins will populate Judge details in the PROD configs that is not availa
 
 ## Judge Data in FixedLists
 
-To update judge data in `FixedLists` for Production, see [here](docs/fixedlists-judges.md).
+To the update judge data in `FixedLists` for Production, see [here](docs/fixedlists-judges.md).
