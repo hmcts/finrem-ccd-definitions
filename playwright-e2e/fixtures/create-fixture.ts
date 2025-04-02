@@ -38,9 +38,9 @@ import { UpdateContactDetailsPage } from '../pages/events/update-contact-details
 import { CreateCaseSavingYourAnswersPage } from '../pages/events/create-case/CreateCaseSavingYourAnswersPage';
 import { ListForHearingPage } from '../pages/events/list-for-hearing/ListForHearingPage';
 import { ManageExpressCasePage } from '../pages/events/manage-express-case/ManageExpressCasePage';
-import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
 import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionPage';
 import { AmendApplicationDetailsPage } from '../pages/events/amend_application_details/AmendApplicationDetailsPage';
+import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();

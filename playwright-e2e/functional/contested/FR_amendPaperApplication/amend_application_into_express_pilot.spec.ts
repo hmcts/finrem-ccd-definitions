@@ -33,6 +33,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await amendApplicationDetailsPage.verifyDynamicEnrollmentMessageIsVisible();
     }
   );
+
   test(
     'Enrollment message dynamic page should be inserted when participating court is changed',
     { tag: [] },
@@ -59,6 +60,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await amendApplicationDetailsPage.verifyDynamicEnrollmentMessageIsVisible();
     }
   );
+
   test(
     'Exiting express pilot message dynamic page should be inserted when changing total value of assets',
     { tag: [] },
@@ -88,6 +90,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await amendApplicationDetailsPage.verifyDynamicExistingExpressPilotMessageIsVisible();
     }
   );
+  
   test(
     'Exiting express pilot message dynamic page should be inserted when participating court is changed',
     { tag: [] },

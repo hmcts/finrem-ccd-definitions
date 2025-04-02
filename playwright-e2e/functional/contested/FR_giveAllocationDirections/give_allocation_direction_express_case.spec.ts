@@ -1,13 +1,14 @@
-import { expect, test } from '../../../fixtures/fixtures';
+import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { createCaseWithExpressPilot } from '../../helpers/ExpressPilotHelper';
 import { updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
 import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
+import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
+import { expressCaseGateKeepingTabDataJudgeAllocation } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 
 async function createAndProcessFormACase(isExpressPilot: boolean): Promise<string> {
-  const caseId = await createCaseWithExpressPilot(
+  const caseId = await  ExpressPilotHelper.createCaseWithExpressPilot(
     config.applicant_solicitor.email,
     config.applicant_solicitor.password,
     './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
@@ -53,10 +54,16 @@ test.describe("Contested - Give Allocation Directions - 'should this case remain
           await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
           await allocationDirectionsCourtSelectionPage.navigateContinue();
 
-          // TODO
           await giveAllocationDirectionsPage.verifyFastTrackQuestionAbsence();
+          await giveAllocationDirectionsPage.selectComplexCase(YesNoRadioEnum.NO)
           await giveAllocationDirectionsPage.verifyExpressPilotQuestionPresence();
-          await giveAllocationDirectionsPage.selectExpressPilotParticipation(true)
+          await giveAllocationDirectionsPage.selectExpressPilotParticipation(YesNoRadioEnum.YES)
+          await giveAllocationDirectionsPage.selectJudgeAllocated();
+          await giveAllocationDirectionsPage.selectTimeEstimate();
+          await giveAllocationDirectionsPage.navigateContinue();
+          await giveAllocationDirectionsPage.navigateSubmit();
+
+          await caseDetailsPage.assertTabData(expressCaseGateKeepingTabDataJudgeAllocation);
         }
     );
 
@@ -84,5 +91,49 @@ test.describe("Contested - Give Allocation Directions - 'should this case remain
         await giveAllocationDirectionsPage.verifyExpressPilotQuestionAbsence();
         await giveAllocationDirectionsPage.selectFastTrackParticipation(YesNoRadioEnum.YES)
       }
+  );
+});
+
+test.describe('Contested - Give Allocation Directions - Static warning on express pilot cases', () => {
+  test(
+    'Should display a static warning message if it is an express pilot case',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        allocationDirectionsCourtSelectionPage
+      }
+    ) => {
+      const caseId = await createAndProcessFormACase(true); // Pass true for express pilot case
+      await manageCaseDashboardPage.visit();
+      await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+      await manageCaseDashboardPage.navigateToCase(caseId);
+    
+      await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
+      await allocationDirectionsCourtSelectionPage.verifyExistenceOfExpressPilotWarningMessage();
+    }
+  );
+
+  test(
+    'Should NOT display a warning message if it is not an express pilot case.',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        allocationDirectionsCourtSelectionPage
+      },
+    ) => {
+      const caseId = await createAndProcessFormACase(false); // Pass false for non-express pilot case
+      await manageCaseDashboardPage.visit();
+      await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+      await manageCaseDashboardPage.navigateToCase(caseId);
+    
+      await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
+      await allocationDirectionsCourtSelectionPage.verifyAbsenceOfExpressPilotWarningMessage();
+    }
   );
 });
