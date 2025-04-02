@@ -55,5 +55,4 @@ export class GiveAllocationDirectionsPage extends BaseJourneyPage {
     async selectTimeEstimate() {
       await this.timeEstimateRadio.getByText('The application can be listed for the standard time').check();
     }
-
 }
