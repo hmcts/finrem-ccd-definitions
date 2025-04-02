@@ -1,5 +1,4 @@
 import { type Page, type Locator, expect } from '@playwright/test';
-import config from '../config/config';
 
 export class SigninPage {
   
@@ -27,8 +26,9 @@ export class SigninPage {
     await this.page.waitForURL(`${expectedUrl}/*`);
   }
 
-  // Resilient login.  Does require the path that you expect a User to land on.
+  // Resilient login.  Requires the path that you expect a User to land on.
   // For instance, Solictors and Caseworker land on pages with different paths.
+  // Faster timeout works for local running, but remains as safer Playwright default for AAT.
   async loginWaitForPath(email: string, password: string, expectedUrl: string, requiredPath: string) {
     const maxRetries = 10;
 
@@ -44,8 +44,12 @@ export class SigninPage {
         await expect(this.signinButtonLocator).toBeEnabled();
         await this.signinButtonLocator.click();
         
-        // If manage cases is running slowly, increase this timeout.  Smaller timeout better for local running.
-        await this.page.waitForURL(`${expectedUrl}/${requiredPath}`, { timeout: 2000 });
+        let timeoutAmount = 30000;
+        if ( expectedUrl === 'http://localhost:3000') {
+          timeoutAmount = 2000;
+        }
+
+        await this.page.waitForURL(`${expectedUrl}/${requiredPath}`, { timeout: timeoutAmount });
         return;
       } catch (err) {
         if (attempt === maxRetries) throw err;

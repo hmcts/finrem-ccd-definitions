@@ -21,6 +21,10 @@ const enum ExpressTestType {
   TestForNoExpressContent = "Testing that no content related to express is shown",
 }
 
+const gatekeepingTabName = 'Gatekeeping and allocation';
+const gatekeepingTabNotEnrolled = 'Express Pilot Participation: Does not qualify';
+const gatekeepingTabEnrolled = 'Express Pilot Participation: Enrolled';
+
 async function performAmendFormAApplicationDetailsFlowForExpressPilot(
   caseId: string,
   expressTestType: ExpressTestType,
@@ -39,16 +43,16 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
   await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL,config.loginPaths.cases);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
-  // Check tab data, really used to ensure the caseDetails page is in the right place following login.
+  // Check tab data, Also ensures a page is showing with the event dropdown available.
   switch (expressTestType) {
     case ExpressTestType.TestingForExpressExit:
-      await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Enrolled'] }]);
+      await caseDetailsPage.assertTabData([{ tabName: gatekeepingTabName, tabContent: [gatekeepingTabEnrolled] }]);
       break;
     case ExpressTestType.TestingForExpressEntry:
-      await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Enrolled'] }]);
+      await caseDetailsPage.assertTabData([{ tabName: gatekeepingTabName, tabContent: [gatekeepingTabEnrolled] }]);
       break;
     case ExpressTestType.TestForNoExpressContent:
-      await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }]);
+      await caseDetailsPage.assertTabData([{ tabName: gatekeepingTabName, tabContent: [gatekeepingTabNotEnrolled] }]);
       break;
   }
   
