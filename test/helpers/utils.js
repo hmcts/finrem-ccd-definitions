@@ -127,7 +127,14 @@ async function saveCase(ccdSaveCasePath, authToken, serviceToken, payload) {
   );
 }
 
-async function createCaseInCcd(userName, password, dataLocation, caseType, eventId) {
+/**
+ * @typedef {Object} ReplacementAction
+ * @property {'delete' | 'insert'} action - The action to perform.
+ * @property {string} key - The key to modify in the data.
+ * @property {any} [value] - The value to insert (required for 'insert' action).
+ */
+
+async function createCaseInCcd(userName, password, dataLocation, caseType, eventId, dataModifications = /** @type {ReplacementAction[]} */ []) {
   const authToken = await getUserToken(userName, password);
   const userId = await getUserId(authToken);
   const serviceToken = await getServiceToken();
@@ -141,10 +148,20 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
 
   const eventToken = await getStartEventToken(ccdStartCasePath, ccdSaveCasePath, authToken, serviceToken);
   /* eslint id-blacklist: ["error", "undefined"] */
-  const data = fs.readFileSync(dataLocation);
+  const data = JSON.parse(fs.readFileSync(dataLocation));
+
+  if (Array.isArray(dataModifications)) {
+    dataModifications.forEach((modification) => {
+      if (modification.action === 'delete' && modification.key) {
+        delete data[modification.key];
+      } else if (modification.action === 'insert' && modification.key && modification.value) {
+        data[modification.key] = modification.value;
+      }
+    });
+  }
 
   const payload = {
-    data: JSON.parse(data),
+    data: data,
     event: {
       id: `${frEventId}`,
       summary: 'Creating Basic Case',
@@ -160,7 +177,7 @@ async function createCaseInCcd(userName, password, dataLocation, caseType, event
   return caseId;
 }
 
-async function updateCaseInCcd(userName, password, caseId, caseType, eventId, dataLocation,shareCaseRef) {
+async function updateCaseInCcd(userName, password, caseId, caseType, eventId, dataLocation, shareCaseRef) {
   const authToken = await getUserToken(userName, password);
   const userId = await getUserId(authToken);
   const serviceToken = await getServiceToken();
@@ -173,9 +190,9 @@ async function updateCaseInCcd(userName, password, caseId, caseType, eventId, da
 
   const eventToken = await getStartEventToken(ccdStartEventPath, ccdSaveEventPath, authToken, serviceToken);
 
-  const data = fs.readFileSync(dataLocation);
+  const data = dataLocation ? fs.readFileSync(dataLocation) : '{}';
   let updatedData = JSON.stringify(JSON.parse(data));
-  updatedData = updatedData.replace('ReplaceForShareCase',shareCaseRef);
+  updatedData = updatedData.replace('ReplaceForShareCase', shareCaseRef);
 
   const payload =  {
     data: JSON.parse(updatedData),

@@ -30,13 +30,6 @@
   {
     "LiveFrom": "17/02/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "expressCaseParticipation",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "17/02/2025",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "tabExpressCaseParticipation",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
@@ -131,5 +124,54 @@
     "CaseFieldID": "expressPilotWasWithdrawnLabel",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
-  }  
+  },
+  {
+    "LiveFrom": "17/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "alteringCourtImpactExpressPilotCaseWarning",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "17/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "alteringCourtImpactExpressPilotCaseWarning",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "judgeAgreesCaseIsExpressLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "tabJudgeAgreesCaseIsExpressLabel",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "tabJudgeAgreesCaseIsExpressLabel",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "judgeAgreesCaseIsExpress",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "judgeAgreesCaseIsExpress",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
+  }
 ]
