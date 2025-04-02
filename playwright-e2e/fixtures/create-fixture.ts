@@ -37,7 +37,7 @@ import { ExpressCaseEnrolledPage } from '../pages/events/create-case/ExpressCase
 import { UpdateContactDetailsPage } from '../pages/events/update-contact-details/UpdateContactDetailsPage';
 import { CreateCaseSavingYourAnswersPage } from '../pages/events/create-case/CreateCaseSavingYourAnswersPage';
 import { ListForHearingPage } from '../pages/events/list-for-hearing/ListForHearingPage';
-import { AmendApplicationDetailsPage } from '../pages/events/amend-application-details/AmendApplicationDetailsPage';
+import { AmendFormAApplicationDetailsPage } from '../pages/events/amend-application-details/AmendFormAApplicationDetailsPage';
 import { ExpressCasePage } from '../pages/events/amend-application-details/ExpressCasePage';
 import { ManageExpressCasePage } from '../pages/events/manage-express-case/ManageExpressCasePage';
 import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionsPage';
@@ -82,7 +82,7 @@ type CreateFixtures = {
   updateContactDetailsPage: UpdateContactDetailsPage;
   createCaseSavingYourAnswersPage: CreateCaseSavingYourAnswersPage;
   listForHearingPage: ListForHearingPage;
-  amendApplicationDetailsPage: AmendApplicationDetailsPage;
+  amendFormAApplicationDetailsPage: AmendFormAApplicationDetailsPage;
   expressCasePage: ExpressCasePage;
   manageExpressCasePage: ManageExpressCasePage;
   giveAllocationDirectionsPage: GiveAllocationDirectionsPage;
@@ -195,8 +195,8 @@ export const test = base.extend<CreateFixtures>({
   listForHearingPage: async ({ page }, use) => {
     await use(new ListForHearingPage(page));
   },
-  amendApplicationDetailsPage: async ({ page }, use) => {
-    await use(new AmendApplicationDetailsPage(page));
+  amendFormAApplicationDetailsPage: async ({ page }, use) => {
+    await use(new AmendFormAApplicationDetailsPage(page));
   },
   expressCasePage: async ({ page }, use) => {
     await use(new ExpressCasePage(page));
