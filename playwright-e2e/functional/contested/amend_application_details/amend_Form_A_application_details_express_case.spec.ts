@@ -20,10 +20,6 @@ const enum ExpressTestType {
   TestForNoExpressContent = "Testing that no content related to express is shown",
 }
 
-const gatekeepingTabName = 'Gatekeeping and allocation';
-const gatekeepingTabNotEnrolled = 'Express Pilot Participation: Does not qualify';
-const gatekeepingTabEnrolled = 'Express Pilot Participation: Enrolled';
-
 async function performAmendFormAApplicationDetailsFlowForExpressPilot(
   caseId: string,
   expressTestType: ExpressTestType,

@@ -17,15 +17,7 @@ export class ManageCaseDashboardPage {
     await this.page.waitForLoadState();
     const url = `${this.url}/cases/case-details/${caseId}`;
     await this.page.goto(url);
-    await this.page.waitForLoadState();
     await expect(this.page.getByText(String(caseId).replace(/(\d{4})(?=\d)/g, '$1-'))).toBeVisible();
-  }
-
-  async checkForCasesPath(caseId: string) {
-    await this.page.waitForLoadState();
-    const url = `${this.url}/cases/case-details/${caseId}`;
-    await this.page.goto(url);
-    await this.page.waitForLoadState();
   }
 
   async visit(){
