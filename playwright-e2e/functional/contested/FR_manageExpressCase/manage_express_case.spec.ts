@@ -3,17 +3,12 @@ import config from '../../../config/config';
 import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
 import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
-import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
+import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 
 async function createAndProcessFormACase(isExpressPilot: boolean = false): Promise<string> {
-  const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
-    config.applicant_solicitor.email,
-    config.applicant_solicitor.password,
-    './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
-    'FinancialRemedyContested',
-    'FR_solicitorCreate',
-    isExpressPilot
-  );
+  const caseId = isExpressPilot ? await CaseDataHelper.createContestedFromAWithExpressPilotEnrolled() :
+   await CaseDataHelper.createBaseContestedFromA();
+
   await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
   await updateCaseWorkerSteps(caseId, [
     { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
@@ -23,14 +18,8 @@ async function createAndProcessFormACase(isExpressPilot: boolean = false): Promi
 }
 
 async function createAndProcessPaperCase(isExpressPilot: boolean = false): Promise<string> {
-  const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
-    config.caseWorker.email,
-    config.caseWorker.password,
-    './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
-    'FinancialRemedyContested',
-    'FR_newPaperCase',
-    isExpressPilot
-  );
+  const caseId = isExpressPilot ? await CaseDataHelper.createContestedPaperCaseWithExpressPilotEnrolled() :
+   await CaseDataHelper.createBaseContestedPaperCase();
 
   await updateCaseWorkerSteps(caseId, [
     { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },

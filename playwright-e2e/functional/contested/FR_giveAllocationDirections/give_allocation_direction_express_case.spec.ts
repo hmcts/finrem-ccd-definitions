@@ -4,18 +4,13 @@ import { updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
 import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
+import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 import { expressCaseGateKeepingTabDataJudgeAllocation } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 
 async function createAndProcessFormACase(isExpressPilot: boolean): Promise<string> {
-  const caseId = await  ExpressPilotHelper.createCaseWithExpressPilot(
-    config.applicant_solicitor.email,
-    config.applicant_solicitor.password,
-    './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
-    'FinancialRemedyContested',
-    'FR_solicitorCreate',
-    isExpressPilot
-  );
+  const caseId = isExpressPilot ? await CaseDataHelper.createContestedFromAWithExpressPilotEnrolled() :
+   await CaseDataHelper.createBaseContestedFromA();
+
   await updateCaseInCcd(
     config.applicant_solicitor.email,
     config.applicant_solicitor.password,

@@ -11,14 +11,15 @@ const PARTICIPATING_COURT_REPLACEMENT: ReplacementAction[] = [
   { action: 'insert', key: 'lancashireCourtList', value: 'FR_lancashireList_1' }
 ];
 
-export class ExpressPilotHelper {
-  static async createCaseWithExpressPilot(
+export class CaseDataHelper {
+
+  private static async createCase(
     email: string,
     password: string,
     payloadPath: string,
     caseType: string,
     event: string,
-    isExpressPilot: boolean = true
+    isExpressPilot: boolean = false
   ): Promise<string> {
     const replacement: ReplacementAction[] = isExpressPilot ? PARTICIPATING_COURT_REPLACEMENT : [];
     return await createCaseInCcd(email, password, payloadPath, caseType, event, replacement);
@@ -70,10 +71,42 @@ export class ExpressPilotHelper {
   }
 
   static async createContestedPaperCaseWithExpressPilotEnrolled(): Promise<string> {
-    return await this.createCaseWithExpressPilot(      
+    return await this.createCase (      
       config.caseWorker.email,
       config.caseWorker.password,
       './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
-      'FinancialRemedyContested', 'FR_newPaperCase', true);
+      'FinancialRemedyContested', 
+      'FR_newPaperCase', 
+      true);
+  }
+
+  static async createContestedFromAWithExpressPilotEnrolled(): Promise<string> {
+    return await this.createCase(      
+      config.applicant_solicitor.email,
+      config.applicant_solicitor.password,
+      './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
+      'FinancialRemedyContested',
+      'FR_solicitorCreate',
+      true);
+  }
+
+  static async createBaseContestedFromA(): Promise<string> {
+    return await this.createCase(      
+      config.applicant_solicitor.email,
+      config.applicant_solicitor.password,
+      './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
+      'FinancialRemedyContested',
+      'FR_solicitorCreate'
+    );
+  }
+
+  static async createBaseContestedPaperCase(): Promise<string> {
+    return await this.createCase(      
+      config.caseWorker.email,
+      config.caseWorker.password,
+      './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
+      'FinancialRemedyContested', 
+      'FR_newPaperCase'
+    );
   }
 }
