@@ -14,20 +14,20 @@ async function createAndProcessFormACase(isExpressPilot: boolean): Promise<strin
     'FR_solicitorCreate',
     isExpressPilot
   );
-  // await updateCaseInCcd(
-  //   config.applicant_solicitor.email,
-  //   config.applicant_solicitor.password,
-  //   caseId,
-  //   'FinancialRemedyContested',
-  //   'FR_applicationPaymentSubmission',
-  //   './playwright-e2e/data/payload/contested/solicitor/case-submission.json'
-  // );
+  await updateCaseInCcd(
+    config.applicant_solicitor.email,
+    config.applicant_solicitor.password,
+    caseId,
+    'FinancialRemedyContested',
+    'FR_applicationPaymentSubmission',
+    './playwright-e2e/data/payload/contested/solicitor/case-submission.json'
+  );
 
-  // await updateCaseWorkerSteps(caseId, [
-  //   { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
-  //   { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' },
-  //   { event: 'FR_allocateToJudge' }
-  // ]);
+  await updateCaseWorkerSteps(caseId, [
+    { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
+    { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' },
+    { event: 'FR_allocateToJudge' }
+  ]);
   return caseId;
 }
 
@@ -44,12 +44,12 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
       }
     ) => {
       const caseId = await createAndProcessFormACase(true); // Pass true for express pilot case
-      // await manageCaseDashboardPage.visit();
-      // await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
-      // await manageCaseDashboardPage.navigateToCase(caseId);
+      await manageCaseDashboardPage.visit();
+      await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+      await manageCaseDashboardPage.navigateToCase(caseId);
     
-      // await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
-      // await giveAllocationDirectionsPage.verifyExistenceOfExpressPilotWarningMessage();
+      await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
+      await giveAllocationDirectionsPage.verifyExistenceOfExpressPilotWarningMessage();
     }
   );
   test(
