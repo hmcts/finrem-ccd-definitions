@@ -7,10 +7,10 @@ export const expressCaseGateKeepingEnrolledTabData = [{
 ]
 
 export const expressCaseGateKeepingNotEnrolledTabData = [{
-  tabName: 'Gatekeeping and allocation',
-  tabContent: [
+    tabName: 'Gatekeeping and allocation',
+    tabContent: [
     "Express Pilot Participation: Does not qualify",
-  ]
-}
+    ]
+  }
 ]
 
