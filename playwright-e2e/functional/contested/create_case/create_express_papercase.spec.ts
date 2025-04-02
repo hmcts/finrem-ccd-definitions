@@ -2,7 +2,7 @@ import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { YesNoRadioEnum, ApplicationtypeEnum } from '../../../pages/helpers/enums/RadioEnums';
 import {createCaseTabData} from '../../../data/tab_content/contested/caseworker_create_case_tabs';
-import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tab';
+import { expressCaseGateKeepingEnrolledTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tabs';
 
 // Create a test case for the Contested Paper Case
 test(
@@ -158,7 +158,7 @@ test(
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
     // Assert express label set in tab data
-    await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
+    await caseDetailsPage.assertTabData(expressCaseGateKeepingEnrolledTabData);
 
     // Note: Financial Assets page produces accessibility issues
     if (config.run_accessibility) {

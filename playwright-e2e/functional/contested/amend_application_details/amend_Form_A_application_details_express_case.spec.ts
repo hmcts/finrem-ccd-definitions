@@ -1,8 +1,7 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { contestedEvents } from '../../../config/case_events';
-import { expressDoesNotQualifyCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_not_qualify_gatekeeping_tab';
-import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tab';
+import { expressCaseGateKeepingEnrolledTabData, expressCaseGateKeepingNotEnrolledTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tabs';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
 import { ExpressCasePage } from '../../../pages/events/amend-application-details/ExpressCasePage';
 import { ManageCaseDashboardPage } from '../../../pages/ManageCaseDashboardPage';
@@ -43,16 +42,16 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
   await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL,config.loginPaths.cases);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
-  // Check tab data, Also ensures a page is showing with the event dropdown available.
+  // Prior to testing, check tab data, mostly to ensure a page is showing with the event dropdown available.
   switch (expressTestType) {
     case ExpressTestType.TestingForExpressExit:
-      await caseDetailsPage.assertTabData([{ tabName: gatekeepingTabName, tabContent: [gatekeepingTabEnrolled] }]);
+      await caseDetailsPage.assertTabData(expressCaseGateKeepingEnrolledTabData);
       break;
     case ExpressTestType.TestingForExpressEntry:
-      await caseDetailsPage.assertTabData([{ tabName: gatekeepingTabName, tabContent: [gatekeepingTabEnrolled] }]);
+      await caseDetailsPage.assertTabData(expressCaseGateKeepingEnrolledTabData);
       break;
     case ExpressTestType.TestForNoExpressContent:
-      await caseDetailsPage.assertTabData([{ tabName: gatekeepingTabName, tabContent: [gatekeepingTabNotEnrolled] }]);
+      await caseDetailsPage.assertTabData(expressCaseGateKeepingNotEnrolledTabData);
       break;
   }
   
@@ -127,13 +126,13 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
   // Check the express part of the gatekeeping and allocation tab, depending on what you are testing
   switch (expressTestType) {
     case ExpressTestType.TestingForExpressExit:
-      await caseDetailsPage.assertTabData(expressDoesNotQualifyCaseGateKeepingTabData);
+      await caseDetailsPage.assertTabData(expressCaseGateKeepingNotEnrolledTabData);
       break;
     case ExpressTestType.TestingForExpressEntry:
-      await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
+      await caseDetailsPage.assertTabData(expressCaseGateKeepingEnrolledTabData);
       break;
     case ExpressTestType.TestForNoExpressContent:
-      await caseDetailsPage.assertTabData(expressDoesNotQualifyCaseGateKeepingTabData);
+      await caseDetailsPage.assertTabData(expressCaseGateKeepingNotEnrolledTabData);
       break;
   }
 
