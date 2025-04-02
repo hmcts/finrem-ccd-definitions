@@ -11,20 +11,9 @@ import { StartPage } from '../../../pages/events/create-case/StartPage';
 import { NatureOfApplicationPage } from '../../../pages/events/create-case/NatureOfApplicationPage';
 import { UploadOrderDocumentsPage } from '../../../pages/events/create-case/UploadOrderDocumentPage';
 import { CreateCaseCheckYourAnswersPage } from '../../../pages/events/create-case/CreateCaseCheckYourAnswersPage';
-import { createCaseWithExpressPilot } from '../../helpers/ExpressPilotHelper';
 import { TestInfo } from 'playwright/test';
-
-async function createAndProcessFormACase(isExpressPilot: boolean = false): Promise<string> {
-  const caseId = await createCaseWithExpressPilot(
-    config.applicant_solicitor.email,
-    config.applicant_solicitor.password,
-    './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
-    'FinancialRemedyContested',
-    'FR_solicitorCreate',
-    isExpressPilot
-  );
-  return caseId;
-}
+import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
+import { SigninPage } from '../../../pages/SigninPage';
 
 const enum ExpressTestType {
   TestingForExpressExit = "Testing for content to say that the case is no longer express",
@@ -32,10 +21,10 @@ const enum ExpressTestType {
   TestForNoExpressContent = "Testing that no content related to express is shown",
 }
 
-async function performAmendApplicationDetailsFlowForExpressPilot(
+async function performAmendFormAApplicationDetailsFlowForExpressPilot(
   caseId: string,
   expressTestType: ExpressTestType,
-  loginPage: any,
+  loginPage: SigninPage,
   manageCaseDashboardPage: ManageCaseDashboardPage,
   caseDetailsPage: CaseDetailsPage,
   startPage: StartPage,
@@ -47,10 +36,23 @@ async function performAmendApplicationDetailsFlowForExpressPilot(
   makeAxeBuilder: any
 ): Promise<void> {
   await manageCaseDashboardPage.visit();
-  await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
+  await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL,config.loginPaths.cases);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
-  await caseDetailsPage.selectNextStep(contestedEvents.amendApplicationDetails);
+  // Check tab data, really used to ensure the caseDetails page is in the right place following login.
+  switch (expressTestType) {
+    case ExpressTestType.TestingForExpressExit:
+      await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Enrolled'] }]);
+      break;
+    case ExpressTestType.TestingForExpressEntry:
+      await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Enrolled'] }]);
+      break;
+    case ExpressTestType.TestForNoExpressContent:
+      await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }]);
+      break;
+  }
+  
+  await caseDetailsPage.selectNextStep(contestedEvents.amendFormAApplicationDetails);
 
   await startPage.navigateContinue();
 
@@ -141,9 +143,6 @@ async function performAmendApplicationDetailsFlowForExpressPilot(
 
     expect(accessibilityScanResults.violations).toEqual([]);
   }
-
-  // Logout
-  await manageCaseDashboardPage.signOut();
 }
 
 test.describe('Contested - Amend Application Details join/exit express case Form A', () => {
@@ -164,10 +163,8 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        },
        testInfo
      ) => {
-       const isAnExpressCase = true;
-       const caseId = await createAndProcessFormACase(isAnExpressCase);
-       const testingForExitingPilot = true;
-       await performAmendApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressExit, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
+       const caseId = await ExpressPilotHelper.createFormACaseWithExpressPilotEnrolled();
+       await performAmendFormAApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressExit, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
         natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
@@ -190,10 +187,8 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        },
        testInfo
      ) => {
-       const isAnExpressCase = true;
-       const caseId = await createAndProcessFormACase(isAnExpressCase);
-       const testingForExitingPilot = false;
-       await performAmendApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressEntry, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
+       const caseId = await ExpressPilotHelper.createFormACaseWithExpressPilotEnrolled();
+       await performAmendFormAApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressEntry, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
         natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }
@@ -216,10 +211,8 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        },
        testInfo
      ) => {
-       const isAnExpressCase = true;
-       const caseId = await createAndProcessFormACase(false);
-       const testingForExitingPilot = false;
-       await performAmendApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestForNoExpressContent, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
+       const caseId = await ExpressPilotHelper.createFormACaseThatDoesNotQualifyForExpressPilot();
+       await performAmendFormAApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestForNoExpressContent, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
         natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
      }

@@ -27,9 +27,10 @@ export class SigninPage {
     await this.page.waitForURL(`${expectedUrl}/*`);
   }
 
+  // Resilient login.  Does require the path that you expect a User to land on.
+  // For instance, Solictors and Caseworker land on pages with different paths.
   async loginWaitForPath(email: string, password: string, expectedUrl: string, requiredPath: string) {
     const maxRetries = 10;
-    const retryDelayMs = 500;
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
@@ -42,12 +43,13 @@ export class SigninPage {
         await expect(this.signinButtonLocator).toBeVisible();
         await expect(this.signinButtonLocator).toBeEnabled();
         await this.signinButtonLocator.click();
-
+        
+        // If manage cases is running slowly, increase this timeout.  Smaller timeout better for local running.
         await this.page.waitForURL(`${expectedUrl}/${requiredPath}`, { timeout: 2000 });
         return;
       } catch (err) {
         if (attempt === maxRetries) throw err;
-        await this.page.waitForTimeout(20);
+        await this.page.waitForTimeout(200);
       }
     }
   }

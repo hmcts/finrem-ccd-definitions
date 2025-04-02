@@ -76,4 +76,21 @@ export class ExpressPilotHelper {
       './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
       'FinancialRemedyContested', 'FR_newPaperCase', true);
   }
+
+  static async createFormACaseWithExpressPilotEnrolled(): Promise<string> {
+    return await this.createCaseWithExpressPilot(      
+      config.applicant_solicitor.email,
+      config.applicant_solicitor.password,
+      './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
+      'FinancialRemedyContested', 'FR_solicitorCreate', true);
+  }
+
+  static async createFormACaseThatDoesNotQualifyForExpressPilot(): Promise<string> {
+    return await this.createCaseWithNonParticipatingFrcCourt(
+      config.applicant_solicitor.email,
+      config.applicant_solicitor.password,
+      './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
+      'FinancialRemedyContested', 'FR_solicitorCreate'
+    );
+  }
 }
