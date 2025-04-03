@@ -5,7 +5,7 @@ import { PayloadHelper } from '../../helpers/PayloadHelper';
 import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 
 async function createAndProcessFormACase(isExpressPilot: boolean = false): Promise<string> {
-  const caseId = isExpressPilot ? await CaseDataHelper.createContestedFromAWithExpressPilotEnrolled() :
+  const caseId = isExpressPilot ? await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled() :
    await CaseDataHelper.createBaseContestedFromA();
 
   await PayloadHelper.solicitorSubmitFromACase(caseId);
@@ -23,7 +23,7 @@ async function createAndProcessPaperCase(isExpressPilot: boolean = false): Promi
 
 async function navigateToCaseAndAssertTabData(caseId: string, manageCaseDashboardPage: any, loginPage: any, caseDetailsPage: any, tabName: string, tabContent: string[]) {
   await manageCaseDashboardPage.visit();
-  await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+  await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   await manageCaseDashboardPage.navigateToCase(caseId);
   await caseDetailsPage.assertTabData([{ tabName, tabContent }]);
 }
