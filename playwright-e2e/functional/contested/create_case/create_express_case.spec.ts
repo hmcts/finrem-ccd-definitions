@@ -45,7 +45,7 @@ test(
 
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
 
     // Manage/Create case
     await createCasePage.startCase(
