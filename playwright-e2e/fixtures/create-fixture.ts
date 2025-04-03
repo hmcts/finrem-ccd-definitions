@@ -36,6 +36,11 @@ import { ManageOrgDashboardPage } from '../pages/ManageOrgDashboardPage';
 import { ExpressCaseEnrolledPage } from '../pages/events/create-case/ExpressCaseEnrolledPage';
 import { UpdateContactDetailsPage } from '../pages/events/update-contact-details/UpdateContactDetailsPage';
 import { CreateCaseSavingYourAnswersPage } from '../pages/events/create-case/CreateCaseSavingYourAnswersPage';
+import { ListForHearingPage } from '../pages/events/list-for-hearing/ListForHearingPage';
+import { ManageExpressCasePage } from '../pages/events/manage-express-case/ManageExpressCasePage';
+import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionPage';
+import { AmendApplicationDetailsPage } from '../pages/events/amend_application_details/AmendApplicationDetailsPage';
+import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -75,6 +80,11 @@ type CreateFixtures = {
   expressCaseEnrolledPage: ExpressCaseEnrolledPage;
   updateContactDetailsPage: UpdateContactDetailsPage;
   createCaseSavingYourAnswersPage: CreateCaseSavingYourAnswersPage;
+  listForHearingPage: ListForHearingPage;
+  manageExpressCasePage: ManageExpressCasePage;
+  allocationDirectionsCourtSelectionPage: AllocationDirectionsCourtSelectionPage;
+  giveAllocationDirectionsPage: GiveAllocationDirectionsPage;
+  amendApplicationDetailsPage: AmendApplicationDetailsPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -179,5 +189,20 @@ export const test = base.extend<CreateFixtures>({
   },
   createCaseSavingYourAnswersPage: async ({ page }, use) => {
     await use(new CreateCaseSavingYourAnswersPage(page));
+  },
+  listForHearingPage: async ({ page }, use) => {
+    await use(new ListForHearingPage(page));
+  },
+  manageExpressCasePage: async ({ page }, use) => {
+    await use(new ManageExpressCasePage(page));
+  },
+  allocationDirectionsCourtSelectionPage: async ({ page }, use) => {
+    await use(new AllocationDirectionsCourtSelectionPage(page));
+  }, 
+  giveAllocationDirectionsPage: async ({ page }, use) => {
+    await use(new GiveAllocationDirectionsPage(page));
+  },
+  amendApplicationDetailsPage: async ({ page }, use) => {
+    await use(new AmendApplicationDetailsPage(page));
   }
 });
