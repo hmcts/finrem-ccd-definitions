@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
+import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 import { contestedEvents } from '../../../config/case_events';
 
 test.describe('Contested - Paper Case - Amend application into Express Pilot', () => {
@@ -15,7 +15,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendApplicationDetailsPage
       }
     ) => {
-      const caseId = await ExpressPilotHelper.createContestedPaperCaseWithEstimatedAssetUnder1M();
+      const caseId = await CaseDataHelper.createContestedPaperCaseWithEstimatedAssetUnder1M();
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -33,6 +33,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await amendApplicationDetailsPage.verifyDynamicEnrollmentMessageIsVisible();
     }
   );
+
   test(
     'Enrollment message dynamic page should be inserted when participating court is changed',
     { tag: [] },
@@ -44,7 +45,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendApplicationDetailsPage
       }
     ) => {
-      const caseId = await ExpressPilotHelper.createContestedPaperCaseWithNonParticipatingCourt();
+      const caseId = await CaseDataHelper.createContestedPaperCaseWithNonParticipatingCourt();
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -59,6 +60,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await amendApplicationDetailsPage.verifyDynamicEnrollmentMessageIsVisible();
     }
   );
+
   test(
     'Exiting express pilot message dynamic page should be inserted when changing total value of assets',
     { tag: [] },
@@ -70,7 +72,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendApplicationDetailsPage
       }
     ) => {
-      const caseId = await ExpressPilotHelper.createContestedPaperCaseWithExpressPilotEnrolled();
+      const caseId = await CaseDataHelper.createContestedPaperCaseWithExpressPilotEnrolled();
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -88,6 +90,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await amendApplicationDetailsPage.verifyDynamicExistingExpressPilotMessageIsVisible();
     }
   );
+
   test(
     'Exiting express pilot message dynamic page should be inserted when participating court is changed',
     { tag: [] },
@@ -99,7 +102,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendApplicationDetailsPage
       }
     ) => {
-      const caseId = await ExpressPilotHelper.createContestedPaperCaseWithExpressPilotEnrolled();
+      const caseId = await CaseDataHelper.createContestedPaperCaseWithExpressPilotEnrolled();
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);

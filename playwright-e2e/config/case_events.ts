@@ -39,6 +39,10 @@ export const contestedEvents: Record<string, CaseEvent> = {
         listItem: "Form A Application",
         ccdCallback: "FR_solicitorCreate"
     },
+    CreatePaperCase: {
+        listItem: "Paper Case",
+        ccdCallback: "FR_newPaperCase"
+    },
     ApplicationPaymentSubmission: {
         listItem: "Case Submission",
         ccdCallback: "FR_applicationPaymentSubmission"
