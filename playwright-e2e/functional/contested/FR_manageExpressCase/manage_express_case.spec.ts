@@ -1,19 +1,15 @@
-import { expect, test } from '../../../fixtures/fixtures';
+import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
-import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
+import { PayloadHelper } from '../../helpers/PayloadHelper';
 import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 
 async function createAndProcessFormACase(isExpressPilot: boolean = false): Promise<string> {
   const caseId = isExpressPilot ? await CaseDataHelper.createContestedFromAWithExpressPilotEnrolled() :
    await CaseDataHelper.createBaseContestedFromA();
 
-  await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
-  await updateCaseWorkerSteps(caseId, [
-    { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
-    { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' }
-  ]);
+  await PayloadHelper.solicitorSubmitFromACase(caseId);
+  await PayloadHelper.caseWorkerIssueApplication(caseId);
   return caseId;
 }
 
@@ -21,10 +17,7 @@ async function createAndProcessPaperCase(isExpressPilot: boolean = false): Promi
   const caseId = isExpressPilot ? await CaseDataHelper.createContestedPaperCaseWithExpressPilotEnrolled() :
    await CaseDataHelper.createBaseContestedPaperCase();
 
-  await updateCaseWorkerSteps(caseId, [
-    { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },
-    { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' }
-  ]);
+  await PayloadHelper.caseWorkerSubmitPaperCase(caseId);
   return caseId;
 }
 

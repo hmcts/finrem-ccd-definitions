@@ -28,7 +28,7 @@ export class ApplicantDetailsPage extends BaseJourneyPage {
         await this.applicantInRefugeRadio.getByLabel(applicantInRefuge).check();
     }
 
-    async enterApplicantDetailsContested(firstName: string, lastName: string, keepPrivate: boolean, applicantInRefuge: YesNoRadioEnum){
+    async enterApplicantDetailsContested(firstName: string, lastName: string, keepPrivate: boolean, applicantInRefuge: YesNoRadioEnum) {
         await this.commonActionsHelper.enterNames(this.page, firstName, lastName);
         await this.selectApplicantDetailsPrivate(keepPrivate);
         await this.selectApplicantInRefuge(applicantInRefuge);

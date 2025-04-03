@@ -3,6 +3,7 @@ import config from '../../../config/config';
 import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 import { updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
+import { PayloadHelper } from '../../helpers/PayloadHelper';
 
 async function updateCaseWorkerSteps(caseId: string, steps: { event: string, payload: string }[]) {
   for (const step of steps) {
@@ -14,11 +15,7 @@ async function createAndProcessFormACase(): Promise<string> {
   const caseId = await CaseDataHelper.createContestedFromAWithExpressPilotEnrolled();
   await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
 
-  await updateCaseWorkerSteps(caseId, [
-    { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
-    { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' },
-    { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
-  ]);
+  await PayloadHelper.caseWorkerProgressToListing(caseId);
   return caseId;
 }
 

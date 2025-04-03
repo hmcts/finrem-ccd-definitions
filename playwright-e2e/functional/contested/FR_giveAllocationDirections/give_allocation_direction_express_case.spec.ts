@@ -1,8 +1,7 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { updateCaseInCcd } from '../../../../test/helpers/utils';
 import { contestedEvents } from '../../../config/case_events';
-import { updateCaseWorkerSteps } from '../../helpers/PayloadHelper';
+import { PayloadHelper } from '../../helpers/PayloadHelper';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 import { expressCaseGateKeepingTabDataJudgeAllocation } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
@@ -11,20 +10,8 @@ async function createAndProcessFormACase(isExpressPilot: boolean): Promise<strin
   const caseId = isExpressPilot ? await CaseDataHelper.createContestedFromAWithExpressPilotEnrolled() :
    await CaseDataHelper.createBaseContestedFromA();
 
-  await updateCaseInCcd(
-    config.applicant_solicitor.email,
-    config.applicant_solicitor.password,
-    caseId,
-    'FinancialRemedyContested',
-    'FR_applicationPaymentSubmission',
-    './playwright-e2e/data/payload/contested/solicitor/case-submission.json'
-  );
-
-  await updateCaseWorkerSteps(caseId, [
-    { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
-    { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' },
-    { event: 'FR_allocateToJudge' }
-  ]);
+   await PayloadHelper.solicitorSubmitFromACase(caseId);
+   await PayloadHelper.caseworkerAllocateToJudge(caseId);
   return caseId;
 }
 
