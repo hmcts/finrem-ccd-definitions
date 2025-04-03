@@ -12,7 +12,7 @@ async function updateCaseWorkerSteps(caseId: string, steps: { event: string, pay
 }
 
 async function createAndProcessFormACase(): Promise<string> {
-  const caseId = await CaseDataHelper.createContestedFromAWithExpressPilotEnrolled();
+  const caseId = await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled();
   await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
 
   await PayloadHelper.caseWorkerProgressToListing(caseId);
@@ -43,7 +43,7 @@ async function performListForHearingFlow(
   const courtName = "CHESTERFIELD COUNTY COURT";
 
   await manageCaseDashboardPage.visit();
-  await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+  await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
   await caseDetailsPage.selectNextStep(contestedEvents.listForHearing);
