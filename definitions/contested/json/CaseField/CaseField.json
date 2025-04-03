@@ -1749,6 +1749,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "10/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "expressPilotWarnMsg",
+    "Label": "\r\nExpress pilot: Date of the express pilot hearing should be between 16 and 20 weeks",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "standardTrackWranMsg",
@@ -8176,5 +8185,14 @@
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "expressCaseParticipation",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]

@@ -2,7 +2,7 @@ import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
-import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tab';
+import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 
 test(
   'Create Express Case - Contested FormA Submission, suitable for Express case processing',
@@ -137,8 +137,7 @@ test(
     await miamDetailsPage.uploadMiamDoc();
     await miamDetailsPage.navigateContinue();
 
-    // Upload variation Order Document
-    await uploadOrderDocumentsPage.uploadVariationOrderDoc();
+    // Additional documents
     await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue();
@@ -163,9 +162,6 @@ test(
 
     // Assert express label set in tab data
     await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
-
-    // Express Case page
-    // When available, check that the express page text is shown and the text is correct.
 
     // Note: Financial Assets page produces accessibility issues
     if (config.run_accessibility) {
