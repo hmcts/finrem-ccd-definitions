@@ -63,7 +63,7 @@ test.describe("Contested - Give Allocation Directions - 'should this case remain
       ) => {
         const caseId = await createAndProcessFormACase(false);
         await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL,config.loginPaths.cases);
+        await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
         await manageCaseDashboardPage.navigateToCase(caseId);
     
         await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);

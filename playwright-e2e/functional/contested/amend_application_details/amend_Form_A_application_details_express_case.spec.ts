@@ -1,7 +1,7 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { contestedEvents } from '../../../config/case_events';
-import { expressCaseGateKeepingEnrolledTabData, expressCaseGateKeepingNotEnrolledTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tabs';
+import { expressCaseGateKeepingTabData, expressCaseGateKeepingNotEnrolledTabData } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
 import { ExpressCasePage } from '../../../pages/events/amend-application-details/ExpressCasePage';
 import { ManageCaseDashboardPage } from '../../../pages/ManageCaseDashboardPage';
@@ -35,16 +35,16 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
   makeAxeBuilder: any
 ): Promise<void> {
   await manageCaseDashboardPage.visit();
-  await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL,config.loginPaths.cases);
+  await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
   // Prior to testing, check tab data, mostly to ensure a page is showing with the event dropdown available.
   switch (expressTestType) {
     case ExpressTestType.TestingForExpressExit:
-      await caseDetailsPage.assertTabData(expressCaseGateKeepingEnrolledTabData);
+      await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
       break;
     case ExpressTestType.TestingForExpressEntry:
-      await caseDetailsPage.assertTabData(expressCaseGateKeepingEnrolledTabData);
+      await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
       break;
     case ExpressTestType.TestForNoExpressContent:
       await caseDetailsPage.assertTabData(expressCaseGateKeepingNotEnrolledTabData);
@@ -125,7 +125,7 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
       await caseDetailsPage.assertTabData(expressCaseGateKeepingNotEnrolledTabData);
       break;
     case ExpressTestType.TestingForExpressEntry:
-      await caseDetailsPage.assertTabData(expressCaseGateKeepingEnrolledTabData);
+      await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
       break;
     case ExpressTestType.TestForNoExpressContent:
       await caseDetailsPage.assertTabData(expressCaseGateKeepingNotEnrolledTabData);
