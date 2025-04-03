@@ -87,7 +87,7 @@ export class CaseDataHelper {
       true);
   }
 
-  static async createContestedFromAWithExpressPilotEnrolled(): Promise<string> {
+  static async createContestedFormAWithExpressPilotEnrolled(): Promise<string> {
     return await this.createCase(      
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
