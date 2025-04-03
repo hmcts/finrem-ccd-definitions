@@ -39,6 +39,10 @@ export const contestedEvents: Record<string, CaseEvent> = {
         listItem: "Form A Application",
         ccdCallback: "FR_solicitorCreate"
     },
+    CreatePaperCase: {
+        listItem: "Paper Case",
+        ccdCallback: "FR_newPaperCase"
+    },
     ApplicationPaymentSubmission: {
         listItem: "Case Submission",
         ccdCallback: "FR_applicationPaymentSubmission"
@@ -47,8 +51,24 @@ export const contestedEvents: Record<string, CaseEvent> = {
         listItem: "Progress to Listing",
         ccdCallback: "FR_progressToSchedulingAndListing"
     },
-     listForHearing: {
+    listForHearing: {
         listItem: "List for Hearing",
         ccdCallback: "FR_addSchedulingListingInfo"
     },
-}
+    amendFormAApplicationDetails: {
+        listItem: "Amend Application Details",
+        ccdCallback: "FR_amendApplication"
+    },
+    manageExpressCase: {
+       listItem: "Manage Express Case",
+       ccdCallback: "FR_manageExpressCase"
+    },
+    giveAllocationDirection: {
+       listItem: "Give Allocation Directions",
+       ccdCallback: "FR_giveAllocationDirections"
+    },
+    amendPaperApplicationDetails: {
+       listItem: "Amend Application Details",
+       ccdCallback: "FR_amendPaperApplication"
+    }
+};

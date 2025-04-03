@@ -9,15 +9,6 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "17/02/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "expressCaseParticipation",
-    "Label": " ",
-    "FieldType": "Text",
-    "SecurityClassification": "Public",
-    "Searchable": "Y"
-  },
-  {
     "LiveFrom": "13/03/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "suitableForExpressCaseAmendmentLabel",
@@ -94,6 +85,42 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "expressPilotNotEnrolledLabel",
     "Label": "This case is not enrolled in the Express Financial Remedy Pilot.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeAgreesCaseIsExpressLabel",
+    "Label": "## This case was automatically entered into the Express Pilot, should this case remain in the Express Pilot?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabJudgeAgreesCaseIsExpressLabel",
+    "Label": "**This case was automatically entered into the Express Pilot, should this case remain in the Express Pilot?**",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeAgreesCaseIsExpress",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "25/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "alteringCourtImpactExpressPilotCaseWarning",
+    "Label": "<br /><div class='govuk-warning-text'><span class='govuk-warning-text__icon' aria-hidden='true'>!</span><strong class='govuk-warning-text__text'>Altering the court may impact this case proceeding in the Express Pilot</strong></div><br>",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"

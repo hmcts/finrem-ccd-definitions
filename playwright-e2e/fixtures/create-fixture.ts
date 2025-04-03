@@ -37,6 +37,12 @@ import { ExpressCaseEnrolledPage } from '../pages/events/create-case/ExpressCase
 import { UpdateContactDetailsPage } from '../pages/events/update-contact-details/UpdateContactDetailsPage';
 import { CreateCaseSavingYourAnswersPage } from '../pages/events/create-case/CreateCaseSavingYourAnswersPage';
 import { ListForHearingPage } from '../pages/events/list-for-hearing/ListForHearingPage';
+import { AmendFormAApplicationDetailsPage } from '../pages/events/amend-application-details/AmendFormAApplicationDetailsPage';
+import { ExpressCasePage } from '../pages/events/amend-application-details/ExpressCasePage';
+import { ManageExpressCasePage } from '../pages/events/manage-express-case/ManageExpressCasePage';
+import { AmendPaperApplicationDetailsPage } from '../pages/events/amend-application-details/AmendPaperApplicationDetailsPage';
+import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionPage';
+import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -77,6 +83,12 @@ type CreateFixtures = {
   updateContactDetailsPage: UpdateContactDetailsPage;
   createCaseSavingYourAnswersPage: CreateCaseSavingYourAnswersPage;
   listForHearingPage: ListForHearingPage;
+  amendFormAApplicationDetailsPage: AmendFormAApplicationDetailsPage;
+  expressCasePage: ExpressCasePage;
+  manageExpressCasePage: ManageExpressCasePage;
+  allocationDirectionsCourtSelectionPage: AllocationDirectionsCourtSelectionPage;
+  giveAllocationDirectionsPage: GiveAllocationDirectionsPage;
+  amendPaperApplicationDetailsPage: AmendPaperApplicationDetailsPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -184,5 +196,23 @@ export const test = base.extend<CreateFixtures>({
   },
   listForHearingPage: async ({ page }, use) => {
     await use(new ListForHearingPage(page));
+  },
+  amendFormAApplicationDetailsPage: async ({ page }, use) => {
+    await use(new AmendFormAApplicationDetailsPage(page));
+  },
+  expressCasePage: async ({ page }, use) => {
+    await use(new ExpressCasePage(page));
+  },
+  manageExpressCasePage: async ({ page }, use) => {
+    await use(new ManageExpressCasePage(page));
+  },
+  allocationDirectionsCourtSelectionPage: async ({ page }, use) => {
+    await use(new AllocationDirectionsCourtSelectionPage(page));
+  }, 
+  giveAllocationDirectionsPage: async ({ page }, use) => {
+    await use(new GiveAllocationDirectionsPage(page));
+  },
+  amendPaperApplicationDetailsPage: async ({ page }, use) => {
+    await use(new AmendPaperApplicationDetailsPage(page));
   }
 });
