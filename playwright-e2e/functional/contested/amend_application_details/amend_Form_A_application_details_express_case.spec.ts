@@ -11,7 +11,7 @@ import { NatureOfApplicationPage } from '../../../pages/events/create-case/Natur
 import { UploadOrderDocumentsPage } from '../../../pages/events/create-case/UploadOrderDocumentPage';
 import { CreateCaseCheckYourAnswersPage } from '../../../pages/events/create-case/CreateCaseCheckYourAnswersPage';
 import { TestInfo } from 'playwright/test';
-import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
+import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 import { SigninPage } from '../../../pages/SigninPage';
 
 const enum ExpressTestType {
@@ -162,7 +162,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        },
        testInfo
      ) => {
-       const caseId = await ExpressPilotHelper.createFormACaseWithExpressPilotEnrolled();
+       const caseId = await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled();
        await performAmendFormAApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressExit, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
         natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
@@ -186,7 +186,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        },
        testInfo
      ) => {
-       const caseId = await ExpressPilotHelper.createFormACaseWithExpressPilotEnrolled();
+       const caseId = await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled();
        await performAmendFormAApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressEntry, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
         natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
@@ -210,7 +210,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        },
        testInfo
      ) => {
-       const caseId = await ExpressPilotHelper.createFormACaseThatDoesNotQualifyForExpressPilot();
+       const caseId = await CaseDataHelper.createBaseContestedFromA();
        await performAmendFormAApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestForNoExpressContent, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
         natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);

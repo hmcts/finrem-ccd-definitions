@@ -1,8 +1,9 @@
 import { createCaseInCcd } from '../../../test/helpers/utils';
+import { contestedEvents } from '../../config/case_events';
 import config from '../../config/config';
 import { ReplacementAction } from '../../types/replacement-action';
 
-const PARTICIPATING_COURT_REPLACEMENT: ReplacementAction[] = [
+const EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT: ReplacementAction[] = [
   { action: 'delete', key: 'regionList' },
   { action: 'insert', key: 'regionList', value: 'northwest' },
   { action: 'delete', key: 'midlandsFRCList' },
@@ -11,16 +12,21 @@ const PARTICIPATING_COURT_REPLACEMENT: ReplacementAction[] = [
   { action: 'insert', key: 'lancashireCourtList', value: 'FR_lancashireList_1' }
 ];
 
-export class ExpressPilotHelper {
-  static async createCaseWithExpressPilot(
+const CONTESTED_FORM_A_BASE_PAYLOAD = './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json';
+const CONTESTED_PAPER_BASE_PAYLOAD = './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json';
+const CONTESTED_APPLICATION_TYPE = 'FinancialRemedyContested';
+
+export class CaseDataHelper {
+
+  private static async createCase(
     email: string,
     password: string,
     payloadPath: string,
     caseType: string,
     event: string,
-    isExpressPilot: boolean = true
+    isExpressPilot: boolean = false
   ): Promise<string> {
-    const replacement: ReplacementAction[] = isExpressPilot ? PARTICIPATING_COURT_REPLACEMENT : [];
+    const replacement: ReplacementAction[] = isExpressPilot ? EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT : [];
     return await createCaseInCcd(email, password, payloadPath, caseType, event, replacement);
   }
 
@@ -32,7 +38,7 @@ export class ExpressPilotHelper {
     event: string
   ): Promise<string> {
     const replacement = [
-      ...PARTICIPATING_COURT_REPLACEMENT,
+      ...EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
       { action: 'delete', key: 'netValueOfHome' },
       { action: 'insert', key: 'netValueOfHome', value: '999999' },
       { action: 'delete', key: 'estimatedAssetsChecklistV2' },
@@ -55,8 +61,9 @@ export class ExpressPilotHelper {
     const caseId = await this.createCaseWithNonParticipatingFrcCourt(
       config.caseWorker.email,
       config.caseWorker.password,
-      './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
-      'FinancialRemedyContested', 'FR_newPaperCase'
+      CONTESTED_PAPER_BASE_PAYLOAD,
+      CONTESTED_APPLICATION_TYPE, 
+      contestedEvents.CreatePaperCase.ccdCallback
     );
     return caseId;
   }
@@ -65,32 +72,48 @@ export class ExpressPilotHelper {
     return await this.createCaseWithEstimateAssetUnder1M(      
       config.caseWorker.email,
       config.caseWorker.password,
-      './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
-      'FinancialRemedyContested', 'FR_newPaperCase');
+      CONTESTED_PAPER_BASE_PAYLOAD,
+      CONTESTED_APPLICATION_TYPE, 
+      contestedEvents.CreatePaperCase.ccdCallback);
   }
 
   static async createContestedPaperCaseWithExpressPilotEnrolled(): Promise<string> {
-    return await this.createCaseWithExpressPilot(      
+    return await this.createCase (      
       config.caseWorker.email,
       config.caseWorker.password,
-      './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
-      'FinancialRemedyContested', 'FR_newPaperCase', true);
+      CONTESTED_PAPER_BASE_PAYLOAD,
+      CONTESTED_APPLICATION_TYPE, 
+      contestedEvents.CreatePaperCase.ccdCallback, 
+      true);
   }
 
-  static async createFormACaseWithExpressPilotEnrolled(): Promise<string> {
-    return await this.createCaseWithExpressPilot(      
+  static async createContestedFormAWithExpressPilotEnrolled(): Promise<string> {
+    return await this.createCase(      
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
-      './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
-      'FinancialRemedyContested', 'FR_solicitorCreate', true);
+      CONTESTED_FORM_A_BASE_PAYLOAD,
+      CONTESTED_APPLICATION_TYPE,
+      contestedEvents.CreateCase.ccdCallback,
+      true);
   }
 
-  static async createFormACaseThatDoesNotQualifyForExpressPilot(): Promise<string> {
-    return await this.createCaseWithNonParticipatingFrcCourt(
+  static async createBaseContestedFromA(): Promise<string> {
+    return await this.createCase(      
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
-      './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
-      'FinancialRemedyContested', 'FR_solicitorCreate'
+      CONTESTED_FORM_A_BASE_PAYLOAD,
+      CONTESTED_APPLICATION_TYPE,
+      contestedEvents.CreateCase.ccdCallback
+    );
+  }
+
+  static async createBaseContestedPaperCase(): Promise<string> {
+    return await this.createCase(      
+      config.caseWorker.email,
+      config.caseWorker.password,
+      CONTESTED_PAPER_BASE_PAYLOAD,
+      CONTESTED_APPLICATION_TYPE, 
+      contestedEvents.CreatePaperCase.ccdCallback
     );
   }
 }

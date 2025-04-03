@@ -40,8 +40,9 @@ import { ListForHearingPage } from '../pages/events/list-for-hearing/ListForHear
 import { AmendFormAApplicationDetailsPage } from '../pages/events/amend-application-details/AmendFormAApplicationDetailsPage';
 import { ExpressCasePage } from '../pages/events/amend-application-details/ExpressCasePage';
 import { ManageExpressCasePage } from '../pages/events/manage-express-case/ManageExpressCasePage';
-import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionsPage';
 import { AmendPaperApplicationDetailsPage } from '../pages/events/amend-application-details/AmendPaperApplicationDetailsPage';
+import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionPage';
+import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -85,6 +86,7 @@ type CreateFixtures = {
   amendFormAApplicationDetailsPage: AmendFormAApplicationDetailsPage;
   expressCasePage: ExpressCasePage;
   manageExpressCasePage: ManageExpressCasePage;
+  allocationDirectionsCourtSelectionPage: AllocationDirectionsCourtSelectionPage;
   giveAllocationDirectionsPage: GiveAllocationDirectionsPage;
   amendPaperApplicationDetailsPage: AmendPaperApplicationDetailsPage;
 };
@@ -204,6 +206,9 @@ export const test = base.extend<CreateFixtures>({
   manageExpressCasePage: async ({ page }, use) => {
     await use(new ManageExpressCasePage(page));
   },
+  allocationDirectionsCourtSelectionPage: async ({ page }, use) => {
+    await use(new AllocationDirectionsCourtSelectionPage(page));
+  }, 
   giveAllocationDirectionsPage: async ({ page }, use) => {
     await use(new GiveAllocationDirectionsPage(page));
   },
