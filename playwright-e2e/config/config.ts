@@ -74,6 +74,11 @@ const configuration = {
     decreeNisi: '1: Decree Nisi',
     decreeAbsolute: '2: Decree Absolute',
     petitionIssued: '3: Petition Issued',
+  },
+
+  loginPaths: {
+    cases: 'cases',
+    worklist: 'work/my-work/list'
   }
 
 };
