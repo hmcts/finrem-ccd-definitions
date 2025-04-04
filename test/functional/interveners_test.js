@@ -21,7 +21,7 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Intervener Tests');
 
-Scenario('Caseworker add Interveners (represented) @nightly', async ({ I }) => {
+Scenario.skip('Caseworker add Interveners (represented) @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -44,7 +44,7 @@ Scenario('Caseworker add Interveners (represented) @nightly', async ({ I }) => {
     logger.info('Intervener verifying case access');
 }).retry(3);
 
-Scenario.skip('Caseworker add Interveners (not represented) @nightly', async ({ I }) => {
+Scenario('Caseworker add Interveners (not represented) @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
