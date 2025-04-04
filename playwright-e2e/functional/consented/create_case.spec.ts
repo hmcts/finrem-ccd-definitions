@@ -61,6 +61,7 @@ test(
 
     // Nature of App
     await natureOfApplicationPage.selectNatureOfApplication();
+    await natureOfApplicationPage.addConsentedPropertyAdjustmentDetails();
     await natureOfApplicationPage.navigateContinue();
 
     // Periodical Payments
