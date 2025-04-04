@@ -21,3 +21,11 @@ export const expressCaseGateKeepingNotEnrolledTabData = [{
     ]
   }
 ]
+
+export const expressCaseGateKeeping250TabData = [{
+    tabName: 'Gatekeeping and allocation',
+    tabContent: [
+    "The net assets in this case are currently estimated to be in the order of Under £250,000 (this should be total of combined net assets, but excluding pensions)",
+    ]
+  }
+]
