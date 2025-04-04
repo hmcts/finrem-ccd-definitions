@@ -2,6 +2,7 @@ import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { YesNoRadioEnum, ApplicationtypeEnum } from '../../../pages/helpers/enums/RadioEnums';
 import {createCaseTabData} from '../../../data/tab_content/contested/caseworker_create_case_tabs';
+import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 
 // Create a test case for the Contested Paper Case
 test(
@@ -25,6 +26,7 @@ test(
       fastTrackProcedurePage,
       financialAssetsPage,
       financialRemedyCourtPage,
+      expressCaseEnrolledPage,
       miamQuestionPage,
       miamDetailsPage,
       uploadOrderDocumentsPage,
@@ -34,9 +36,16 @@ test(
     },
     testInfo
   ) => {
+    
+    // Set up court information.
+    const courtName: string = "BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE";
+    const courtAddress: string = "Priory Courts, 33 Bull Street, Birmingham, B4 6DS";
+    const courtEmail: string = "FRCBirmingham@justice.gov.uk";
+    const courtPhone: string = "0300 123 5577";
+
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
 
     // Manage/Create case
     await createCasePage.startCase(
@@ -82,7 +91,7 @@ test(
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
-    await natureOfApplicationPage.selectNatureOfApplication();
+    await natureOfApplicationPage.expressPilotSuitableNatureOfApplications();
     await natureOfApplicationPage.navigateContinue();
 
     // Property Adjustment Order
@@ -99,31 +108,27 @@ test(
     await writtenAgreementPage.navigateContinue();
 
     //Fast track procedure
-    await fastTrackProcedurePage.selectFastTrack(true);
+    await fastTrackProcedurePage.selectFastTrack(false);
     await fastTrackProcedurePage.navigateContinue();
 
     //Financial assets
     await financialAssetsPage.selectComplexityList('Yes');
-    // start, check all the asset radio options are present
-    await financialAssetsPage.selectAssetsValue('Over £15 million');
-    await financialAssetsPage.selectAssetsValue('£7.5 - £15 million');
-    await financialAssetsPage.selectAssetsValue('£1 - £7.5 million');
-    await financialAssetsPage.selectAssetsValue('Under £1 million');
     await financialAssetsPage.selectAssetsValue('Under £250,000');
-    await financialAssetsPage.selectAssetsValue('Unable to quantify');
-    // end, checked all the asset radio options are present
     await financialAssetsPage.insertFamilyHomeValue('125,000');
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
 
-    // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown("COVENTRY COMBINED COURT CENTRE");
+    // Financial Remedies Court, a court is selected that is processing Express Case applications.
+    await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
     await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
-    await financialRemedyCourtPage.enterHomeCourtReason();
     await financialRemedyCourtPage.navigateContinue();
+
+    // Page shows to tell User that case is an Express Pilot
+    await expressCaseEnrolledPage.checkLinkResolves();
+    await expressCaseEnrolledPage.navigateContinue();
 
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
@@ -144,7 +149,7 @@ test(
 
     //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
-    await createCaseCheckYourAnswersPage.checkNetAssetsQuestion('Unable to quantify');
+    await createCaseCheckYourAnswersPage.checkNetAssetsQuestion('Under £250,000 (this should be total of combined net assets, but excluding pensions)');
 
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
@@ -152,6 +157,8 @@ test(
 
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
+    // Assert express label set in tab data
+    await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
 
     // Note: Financial Assets page produces accessibility issues
     if (config.run_accessibility) {
