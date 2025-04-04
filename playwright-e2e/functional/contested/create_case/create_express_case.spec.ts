@@ -2,7 +2,7 @@ import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
-import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/express_case_gatekeeping_tab';
+import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 
 test(
   'Create Express Case - Contested FormA Submission, suitable for Express case processing',
@@ -45,7 +45,7 @@ test(
 
     // Sign in
     await manageCaseDashboardPage.visit()
-    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
 
     // Manage/Create case
     await createCasePage.startCase(
