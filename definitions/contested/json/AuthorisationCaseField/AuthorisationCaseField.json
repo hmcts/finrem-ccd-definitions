@@ -8312,7 +8312,28 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "finalOrderCollection",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "finalOrderCollection",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "finalOrderCollection",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "finalOrderCollection",
+    "UserRole": "[RESPSOLICITOR]",
     "CRUD": "R"
   },
   {
