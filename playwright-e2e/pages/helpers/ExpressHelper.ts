@@ -17,8 +17,6 @@ export class ExpressHelper {
     * Click the link, which opens in a new tab.
     * Checks that the expected content is showing on the new tab.
     * Closes the tab when done.
-    *
-    * NOTE: Page not on GOV.UK yet, so looking for "Page not found".
     */
     async checkLinkResolves() {
 
