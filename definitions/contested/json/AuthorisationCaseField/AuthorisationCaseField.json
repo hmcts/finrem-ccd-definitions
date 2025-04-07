@@ -6436,7 +6436,28 @@
     "LiveFrom": "09/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "latestDraftHearingOrder",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "latestDraftHearingOrder",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "latestDraftHearingOrder",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/11/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "latestDraftHearingOrder",
+    "UserRole": "[RESPSOLICITOR]",
     "CRUD": "R"
   },
   {
