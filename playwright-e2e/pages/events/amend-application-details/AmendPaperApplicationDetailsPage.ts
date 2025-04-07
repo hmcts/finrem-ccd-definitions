@@ -1,7 +1,7 @@
 import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 
-export class AmendApplicationDetailsPage extends BaseJourneyPage {
+export class AmendPaperApplicationDetailsPage extends BaseJourneyPage {
     private estimatedAssetsLabel: Locator;
     private estimatedAssetsUnder250k: Locator;
     private estimatedAssertsUnder1M: Locator;
