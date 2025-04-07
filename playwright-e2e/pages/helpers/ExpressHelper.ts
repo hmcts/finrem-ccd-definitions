@@ -5,7 +5,7 @@ export class ExpressHelper {
     private readonly guidanceLink: Locator;
     private readonly page: Page;
     private readonly guidanceLinkUrl: string = "https://www.gov.uk/guidance/what-to-expect-if-you-are-in-the-express-financial-remedy-pilot";
-    private readonly guidancePageContent: string = "Page not found";
+    private readonly guidancePageContent: string = "What to expect if you are in the express financial remedy pilot";
 
     public constructor(page: Page) {
         this.page = page;
