@@ -65,4 +65,8 @@ export class NatureOfApplicationPage extends BaseJourneyPage {
         await this.natureOfApplicationPensionAttachment.check();
         await this.natureOfApplicationPensionCompAttachment.check();
     }
+
+    async selectVariationOrderOnly() {
+        await this.natureOfApplicationVariationOrder.check();
+    }
 }

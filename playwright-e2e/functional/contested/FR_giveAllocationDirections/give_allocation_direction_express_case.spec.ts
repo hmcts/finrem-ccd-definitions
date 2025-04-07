@@ -7,7 +7,7 @@ import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 import { expressCaseGateKeepingTabDataJudgeAllocation } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 
 async function createAndProcessFormACase(isExpressPilot: boolean): Promise<string> {
-  const caseId = isExpressPilot ? await CaseDataHelper.createContestedFromAWithExpressPilotEnrolled() :
+  const caseId = isExpressPilot ? await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled() :
    await CaseDataHelper.createBaseContestedFromA();
 
    await PayloadHelper.solicitorSubmitFromACase(caseId);
@@ -63,7 +63,7 @@ test.describe("Contested - Give Allocation Directions - 'should this case remain
       ) => {
         const caseId = await createAndProcessFormACase(false);
         await manageCaseDashboardPage.visit();
-        await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+        await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
         await manageCaseDashboardPage.navigateToCase(caseId);
     
         await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
