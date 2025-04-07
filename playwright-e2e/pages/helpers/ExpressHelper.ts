@@ -5,7 +5,7 @@ export class ExpressHelper {
     private readonly guidanceLink: Locator;
     private readonly page: Page;
     private readonly guidanceLinkUrl: string = "https://www.gov.uk/guidance/what-to-expect-if-you-are-in-the-express-financial-remedy-pilot";
-    private readonly guidancePageContent: string = "Page not found";
+    private readonly guidancePageContent: string = "What to expect if you are in the express financial remedy pilot";
 
     public constructor(page: Page) {
         this.page = page;
@@ -17,8 +17,6 @@ export class ExpressHelper {
     * Click the link, which opens in a new tab.
     * Checks that the expected content is showing on the new tab.
     * Closes the tab when done.
-    *
-    * NOTE: Page not on GOV.UK yet, so looking for "Page not found".
     */
     async checkLinkResolves() {
 
