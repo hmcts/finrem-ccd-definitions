@@ -28,7 +28,7 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
         this.yearOfBirthTextBox = page.getByRole('textbox', { name: 'Year' })
         this.relationshipOfApplicantToChildRadio = page.getByLabel('Relationship of applicant to')
         this.relationshipOfRespondentToChildRadio = page.getByLabel('Relationship of respondent to')
-        this.maleGenderOption = page.getByRole('radio', { name: 'Female', exact: true })
+        this.maleGenderOption = page.locator('#childrenCollection_0_childGender-Male')
 
 
     }

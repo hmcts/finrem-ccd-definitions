@@ -281,13 +281,8 @@ test(
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
-    await natureOfApplicationPage.selectNatureOfApplication();
+    await natureOfApplicationPage.selectNatureOfApplicationChildrens();
     await natureOfApplicationPage.navigateContinue();
-
-    // Property Adjustment Order
-    await propertyAdjustmentPage.propertyAdjustmentOrder();
-    await propertyAdjustmentPage.addAdditionalPropertyAdjustment(true);
-    await propertyAdjustmentPage.navigateContinue();
 
     // Periodical Payments
     await periodicalPaymentsPage.selectPeriodicalPaymentsContested(true);
