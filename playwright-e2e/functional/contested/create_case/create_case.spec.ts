@@ -5,7 +5,7 @@ import { ApplicationtypeEnum, MaleOrFemaleEnum, YesNoRadioEnum } from '../../../
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
 
 test(
-  'Contested - Create Case FormA Submission',
+  'Contested - Create Case FormA Matrimonial Submission',
   { tag: ['@accessibility'] },
   async (
     {
@@ -190,7 +190,7 @@ test(
   });
 
 test(
-  'Contested - Create Case Childrens Act Submission',
+  'Contested - Create Case Form A Childrens Act Submission',
   { tag: ['@accessibility'] },
   async (
     {
@@ -262,7 +262,7 @@ test(
     await childrensDetailsPage.childLiveInEnglandOrWales(YesNoRadioEnum.YES);
     await childrensDetailsPage.enterChildFullName('Child A');
     await childrensDetailsPage.enterChildDateOfBirth('01', '01', '2010');
-    await childrensDetailsPage.genderOfChild(MaleOrFemaleEnum.MALE);
+    await childrensDetailsPage.genderOfChild();
     await childrensDetailsPage.relationshipOfApplicantToChild('Mother');
     await childrensDetailsPage.relationshipOfRespondentToChild('Father');
     await childrensDetailsPage.navigateContinue();

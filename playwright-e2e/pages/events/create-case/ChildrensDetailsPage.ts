@@ -15,6 +15,7 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
     private readonly yearOfBirthTextBox: Locator;
     private readonly relationshipOfApplicantToChildRadio: Locator;
     private readonly relationshipOfRespondentToChildRadio: Locator;
+    private readonly maleGenderOption: Locator;
 
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
@@ -27,6 +28,7 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
         this.yearOfBirthTextBox = page.getByRole('textbox', { name: 'Year' })
         this.relationshipOfApplicantToChildRadio = page.getByLabel('Relationship of applicant to')
         this.relationshipOfRespondentToChildRadio = page.getByLabel('Relationship of respondent to')
+        this.maleGenderOption = page.getByRole('radio', { name: 'Female', exact: true })
 
 
     }
@@ -36,8 +38,8 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
     }
 
     async childLiveInEnglandOrWales(radioOption: YesNoRadioEnum) {
-        const radioButton = this.page.getByLabel(radioOption); 
-    await radioButton.check(); // Check the specific radio button
+        const radioButton = this.page.getByLabel(radioOption);
+        await radioButton.check(); // Check the specific radio button
     }
     async enterChildFullName(fullName: string) {
         await this.fullNameTextBox.fill(fullName)
@@ -47,14 +49,13 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
         await this.monthOfBirthTextBox.fill(month)
         await this.yearOfBirthTextBox.fill(year)
     }
-    async genderOfChild(radioOption: MaleOrFemaleEnum) {
-        const radioButton = this.page.getByLabel(radioOption); 
-        await radioButton.click();
+    async genderOfChild() {
+        await this.maleGenderOption.click();
     }
     async relationshipOfApplicantToChild(dropdownOption: string) {
         await this.relationshipOfApplicantToChildRadio.selectOption(dropdownOption);
     }
     async relationshipOfRespondentToChild(dropdownOption: string) {
-        await this.relationshipOfApplicantToChildRadio.selectOption(dropdownOption); 
+        await this.relationshipOfRespondentToChildRadio.selectOption(dropdownOption);
     }
 }
