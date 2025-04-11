@@ -262,7 +262,7 @@ test(
     await childrensDetailsPage.childLiveInEnglandOrWales(YesNoRadioEnum.YES);
     await childrensDetailsPage.enterChildFullName('Child A');
     await childrensDetailsPage.enterChildDateOfBirth('01', '01', '2010');
-    await childrensDetailsPage.genderOfChild();
+    await childrensDetailsPage.genderOfChild(MaleOrFemaleEnum.FEMALE);
     await childrensDetailsPage.relationshipOfApplicantToChild('Mother');
     await childrensDetailsPage.relationshipOfRespondentToChild('Father');
     await childrensDetailsPage.navigateContinue();

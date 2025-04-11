@@ -3,7 +3,6 @@ import { expect, Locator } from "@playwright/test";
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 import { CommonActionsHelper } from "../../helpers/CommonActionsHelper";
 import { YesNoRadioEnum, MaleOrFemaleEnum } from "../../helpers/enums/RadioEnums";
-import { M } from "../../../../playwright-report/trace/assets/defaultSettingsView-DTenqiGw";
 
 export class ChildrensDetailsPage extends BaseJourneyPage {
 
@@ -15,7 +14,7 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
     private readonly yearOfBirthTextBox: Locator;
     private readonly relationshipOfApplicantToChildRadio: Locator;
     private readonly relationshipOfRespondentToChildRadio: Locator;
-    private readonly maleGenderOption: Locator;
+    private readonly genderRadio: Locator;
 
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
@@ -28,7 +27,7 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
         this.yearOfBirthTextBox = page.getByRole('textbox', { name: 'Year' })
         this.relationshipOfApplicantToChildRadio = page.getByLabel('Relationship of applicant to')
         this.relationshipOfRespondentToChildRadio = page.getByLabel('Relationship of respondent to')
-        this.maleGenderOption = page.locator('#childrenCollection_0_childGender-Male')
+        this.genderRadio = page.locator('#childrenCollection_0_childGender')
 
 
     }
@@ -41,20 +40,26 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
         const radioButton = this.page.getByLabel(radioOption);
         await radioButton.check(); // Check the specific radio button
     }
+    
     async enterChildFullName(fullName: string) {
         await this.fullNameTextBox.fill(fullName)
     }
+
     async enterChildDateOfBirth(day: string, month: string, year: string) {
         await this.dayOfBirthTextBox.fill(day)
         await this.monthOfBirthTextBox.fill(month)
         await this.yearOfBirthTextBox.fill(year)
     }
-    async genderOfChild() {
-        await this.maleGenderOption.click();
+
+    async genderOfChild(genderOfChild: MaleOrFemaleEnum) {
+        const genderOption = this.genderRadio.locator(`input[type="radio"][id$="${genderOfChild}"]`);
+        await genderOption.evaluate((el: HTMLInputElement) => el.click());
     }
+
     async relationshipOfApplicantToChild(dropdownOption: string) {
         await this.relationshipOfApplicantToChildRadio.selectOption(dropdownOption);
     }
+
     async relationshipOfRespondentToChild(dropdownOption: string) {
         await this.relationshipOfRespondentToChildRadio.selectOption(dropdownOption);
     }
