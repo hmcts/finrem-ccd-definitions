@@ -13,6 +13,7 @@ import { NatureOfApplicationPage } from '../pages/events/create-case/NatureOfApp
 import { PropertyAdjustmentPage } from '../pages/events/create-case/PropertyAdjustmentPage';
 import { PeriodicalPaymentsPage } from '../pages/events/create-case/PeriodicalPaymentsPage';
 import { WrittenAgreementPage } from '../pages/events/create-case/WrittenAgreementPage';
+import { ChildWrittenAgreementPage } from '../pages/events/create-case/ChildWrittenAgreementPage';
 import { FastTrackProcedurePage } from '../pages/events/create-case/FastTrackProcedurePage';
 import { FinancialAssetsPage } from '../pages/events/create-case/FinancialAssetsPage';
 import { FinancialRemedyCourtPage } from '../pages/events/create-case/FinancialRemedyCourtPage';
@@ -62,6 +63,7 @@ type CreateFixtures = {
   propertyAdjustmentPage: PropertyAdjustmentPage;
   periodicalPaymentsPage: PeriodicalPaymentsPage;
   writtenAgreementPage: WrittenAgreementPage;
+  childWrittenAgreementPage: ChildWrittenAgreementPage;
   fastTrackProcedurePage: FastTrackProcedurePage;
   financialAssetsPage: FinancialAssetsPage;
   financialRemedyCourtPage: FinancialRemedyCourtPage;
@@ -132,6 +134,9 @@ export const test = base.extend<CreateFixtures>({
   },
   writtenAgreementPage: async ({ page }, use) => {
     await use(new WrittenAgreementPage(page));
+  },
+  childWrittenAgreementPage: async ({ page }, use) => {
+    await use(new ChildWrittenAgreementPage(page));
   },
   fastTrackProcedurePage: async ({ page }, use) => {
     await use(new FastTrackProcedurePage(page));

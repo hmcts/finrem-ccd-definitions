@@ -57,6 +57,7 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
     }
 
     async relationshipOfApplicantToChild(dropdownOption: string) {
+        
         await this.relationshipOfApplicantToChildRadio.selectOption(dropdownOption);
     }
 

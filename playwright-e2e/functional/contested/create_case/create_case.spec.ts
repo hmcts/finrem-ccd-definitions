@@ -3,6 +3,7 @@ import { createCaseInCcd } from '../../../../test/helpers/utils';
 import config from '../../../config/config';
 import { ApplicationtypeEnum, MaleOrFemaleEnum, YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
+import { createCaseTabDataChildrensAct } from '../../../data/tab_content/consented/create_case_tabs';
 
 test(
   'Contested - Create Case FormA Matrimonial Submission',
@@ -199,15 +200,13 @@ test(
       createCasePage,
       startPage,
       solicitorDetailsPage,
-      // divorceDetailsPage,
       applicantDetailsPage,
       childrensDetailsPage,
       respondentDetailsPage,
       respondentRepresentedPage,
       natureOfApplicationPage,
-      propertyAdjustmentPage,
       periodicalPaymentsPage,
-      writtenAgreementPage,
+      childWrittenAgreementPage,
       fastTrackProcedurePage,
       financialAssetsPage,
       financialRemedyCourtPage,
@@ -247,10 +246,6 @@ test(
     await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT); //Childrens Act case type
     await solicitorDetailsPage.navigateContinue();
 
-    // Enter Divorce / Dissolution Details
-    // await divorceDetailsPage.enterDivorceDetailsContested('LV12D12345', config.divorceStage.petitionIssued);
-    // await divorceDetailsPage.navigateContinue();
-
     //applicant details
     const keepPrivate: boolean = true;
     const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
@@ -289,8 +284,8 @@ test(
     await periodicalPaymentsPage.navigateContinue();
 
     // Written Agreement
-    await writtenAgreementPage.selectWrittenAgreement(false);
-    await writtenAgreementPage.navigateContinue();
+    await childWrittenAgreementPage.selectWrittenAgreement(YesNoRadioEnum.NO);
+    await childWrittenAgreementPage.navigateContinue();
 
     //Fast track procedure
     await fastTrackProcedurePage.selectFastTrack(true);
@@ -344,7 +339,7 @@ test(
     await caseDetailsPage.checkHasBeenCreated();
 
     // Assert tab data
-    await caseDetailsPage.assertTabData(createCaseTabData);
+    await caseDetailsPage.assertTabData(createCaseTabDataChildrensAct);
 
     // Note: Financial Assets page produces accessibility issues
     if (config.run_accessibility) {
