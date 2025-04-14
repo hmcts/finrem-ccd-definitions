@@ -3,7 +3,6 @@ import { expect, Locator } from "@playwright/test";
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 import { CommonActionsHelper } from "../../helpers/CommonActionsHelper";
 import { YesNoRadioEnum, MaleOrFemaleEnum } from "../../helpers/enums/RadioEnums";
-
 export class ChildrensDetailsPage extends BaseJourneyPage {
 
     private readonly commonActionsHelper: CommonActionsHelper;
@@ -28,19 +27,15 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
         this.relationshipOfApplicantToChildRadio = page.getByLabel('Relationship of applicant to')
         this.relationshipOfRespondentToChildRadio = page.getByLabel('Relationship of respondent to')
         this.genderRadio = page.locator('#childrenCollection_0_childGender')
-
-
     }
-
+    
     async addNewChild() {
         await this.addNewChildBtn.click()
     }
-
     async childLiveInEnglandOrWales(radioOption: YesNoRadioEnum) {
         const radioButton = this.page.getByLabel(radioOption);
         await radioButton.check(); // Check the specific radio button
     }
-    
     async enterChildFullName(fullName: string) {
         await this.fullNameTextBox.fill(fullName)
     }
@@ -58,7 +53,6 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
     }
 
     async relationshipOfApplicantToChild(dropdownOption: string) {
-
         await this.relationshipOfApplicantToChildRadio.selectOption(dropdownOption);
     }
 

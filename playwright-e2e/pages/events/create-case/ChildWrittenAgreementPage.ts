@@ -1,7 +1,6 @@
 import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { YesNoRadioEnum } from '../../helpers/enums/RadioEnums';
-
 export class ChildWrittenAgreementPage extends BaseJourneyPage {
 
     private readonly writtenAgreementHeading: Locator;
@@ -11,8 +10,6 @@ export class ChildWrittenAgreementPage extends BaseJourneyPage {
     private readonly writtenAgreementChildDisabilityCheckbox: Locator
     private readonly writtenAgreementChildEducationCheckbox: Locator;
     private readonly writtenAgreementNonUkResidentCheckBox: Locator;
-
-
 
     public constructor(page: Page) {
         super(page);

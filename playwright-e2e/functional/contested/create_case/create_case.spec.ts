@@ -265,13 +265,11 @@ test(
     //respondent details
     await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
     await respondentDetailsPage.checkRefugeFieldNotPresent();
-
     await respondentDetailsPage.navigateContinue();
 
+    // Respondent solicitor details
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
-    await respondentRepresentedPage.selectOrganisation(
-      config.organisationNames.finRem2Org
-    );
+    await respondentRepresentedPage.selectOrganisation(config.organisationNames.finRem2Org);
     await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
 
@@ -298,7 +296,7 @@ test(
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
     await financialAssetsPage.navigateContinue();
 
-    // Financial Remedies Court, a court is selected that isn't currently processing Express Case applications.
+    // Financial Remedies Court
     await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
@@ -333,9 +331,7 @@ test(
 
     //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
-
     await createCaseCheckYourAnswersPage.navigateSubmit();
-
     await caseDetailsPage.checkHasBeenCreated();
 
     // Assert tab data
