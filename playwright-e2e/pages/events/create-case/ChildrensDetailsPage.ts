@@ -54,10 +54,11 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
     async genderOfChild(genderOfChild: MaleOrFemaleEnum) {
         const genderOption = this.genderRadio.locator(`input[type="radio"][id$="${genderOfChild}"]`);
         await genderOption.evaluate((el: HTMLInputElement) => el.click());
+        await expect(genderOption).toBeChecked();
     }
 
     async relationshipOfApplicantToChild(dropdownOption: string) {
-        
+
         await this.relationshipOfApplicantToChildRadio.selectOption(dropdownOption);
     }
 
