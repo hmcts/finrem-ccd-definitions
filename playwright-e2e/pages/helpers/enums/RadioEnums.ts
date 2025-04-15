@@ -13,5 +13,3 @@ export enum MaleOrFemaleEnum {
   MALE = 'Male',
   FEMALE = 'Female'
 }
-
-
