@@ -18884,5 +18884,19 @@
     "CaseFieldID": "judgeAgreesCaseIsExpress",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
+  }, 
+  {
+    "LiveFrom": "16/03/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "16/03/2020",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "bulkPrintCoverSheetResConfidential",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
   }
 ]
