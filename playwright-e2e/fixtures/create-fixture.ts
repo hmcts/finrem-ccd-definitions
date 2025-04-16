@@ -13,6 +13,7 @@ import { NatureOfApplicationPage } from '../pages/events/create-case/NatureOfApp
 import { PropertyAdjustmentPage } from '../pages/events/create-case/PropertyAdjustmentPage';
 import { PeriodicalPaymentsPage } from '../pages/events/create-case/PeriodicalPaymentsPage';
 import { WrittenAgreementPage } from '../pages/events/create-case/WrittenAgreementPage';
+import { ChildWrittenAgreementPage } from '../pages/events/create-case/ChildWrittenAgreementPage';
 import { FastTrackProcedurePage } from '../pages/events/create-case/FastTrackProcedurePage';
 import { FinancialAssetsPage } from '../pages/events/create-case/FinancialAssetsPage';
 import { FinancialRemedyCourtPage } from '../pages/events/create-case/FinancialRemedyCourtPage';
@@ -43,6 +44,7 @@ import { ManageExpressCasePage } from '../pages/events/manage-express-case/Manag
 import { AmendPaperApplicationDetailsPage } from '../pages/events/amend-application-details/AmendPaperApplicationDetailsPage';
 import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionPage';
 import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
+import { ChildrensDetailsPage } from '../pages/events/create-case/ChildrensDetailsPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -54,12 +56,14 @@ type CreateFixtures = {
   solicitorDetailsPage: SolicitorDetailsPage;
   divorceDetailsPage: DivorceDetailsPage;
   applicantDetailsPage: ApplicantDetailsPage;
+  childrensDetailsPage: ChildrensDetailsPage;
   respondentDetailsPage: RespondentDetailsPage
   respondentRepresentedPage: RespondentRepresentedPage;
   natureOfApplicationPage: NatureOfApplicationPage;
   propertyAdjustmentPage: PropertyAdjustmentPage;
   periodicalPaymentsPage: PeriodicalPaymentsPage;
   writtenAgreementPage: WrittenAgreementPage;
+  childWrittenAgreementPage: ChildWrittenAgreementPage;
   fastTrackProcedurePage: FastTrackProcedurePage;
   financialAssetsPage: FinancialAssetsPage;
   financialRemedyCourtPage: FinancialRemedyCourtPage;
@@ -110,6 +114,9 @@ export const test = base.extend<CreateFixtures>({
   applicantDetailsPage: async ({ page }, use) => {
     await use(new ApplicantDetailsPage(page, commonActionsHelper));
   },
+  childrensDetailsPage: async ({ page }, use) => {
+    await use(new ChildrensDetailsPage(page, commonActionsHelper));
+  },
   respondentDetailsPage: async ({ page }, use) => {
     await use(new RespondentDetailsPage(page, commonActionsHelper));
   },
@@ -127,6 +134,9 @@ export const test = base.extend<CreateFixtures>({
   },
   writtenAgreementPage: async ({ page }, use) => {
     await use(new WrittenAgreementPage(page));
+  },
+  childWrittenAgreementPage: async ({ page }, use) => {
+    await use(new ChildWrittenAgreementPage(page));
   },
   fastTrackProcedurePage: async ({ page }, use) => {
     await use(new FastTrackProcedurePage(page));
