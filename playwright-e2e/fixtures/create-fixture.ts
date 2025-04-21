@@ -13,6 +13,7 @@ import { NatureOfApplicationPage } from '../pages/events/create-case/NatureOfApp
 import { PropertyAdjustmentPage } from '../pages/events/create-case/PropertyAdjustmentPage';
 import { PeriodicalPaymentsPage } from '../pages/events/create-case/PeriodicalPaymentsPage';
 import { WrittenAgreementPage } from '../pages/events/create-case/WrittenAgreementPage';
+import { ChildWrittenAgreementPage } from '../pages/events/create-case/ChildWrittenAgreementPage';
 import { FastTrackProcedurePage } from '../pages/events/create-case/FastTrackProcedurePage';
 import { FinancialAssetsPage } from '../pages/events/create-case/FinancialAssetsPage';
 import { FinancialRemedyCourtPage } from '../pages/events/create-case/FinancialRemedyCourtPage';
@@ -37,9 +38,13 @@ import { ExpressCaseEnrolledPage } from '../pages/events/create-case/ExpressCase
 import { UpdateContactDetailsPage } from '../pages/events/update-contact-details/UpdateContactDetailsPage';
 import { CreateCaseSavingYourAnswersPage } from '../pages/events/create-case/CreateCaseSavingYourAnswersPage';
 import { ListForHearingPage } from '../pages/events/list-for-hearing/ListForHearingPage';
+import { AmendFormAApplicationDetailsPage } from '../pages/events/amend-application-details/AmendFormAApplicationDetailsPage';
+import { ExpressCasePage } from '../pages/events/amend-application-details/ExpressCasePage';
 import { ManageExpressCasePage } from '../pages/events/manage-express-case/ManageExpressCasePage';
-import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionsPage';
-import { AmendApplicationDetailsPage } from '../pages/events/amend_application_details/AmendApplicationDetailsPage';
+import { AmendPaperApplicationDetailsPage } from '../pages/events/amend-application-details/AmendPaperApplicationDetailsPage';
+import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionPage';
+import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
+import { ChildrensDetailsPage } from '../pages/events/create-case/ChildrensDetailsPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -51,12 +56,14 @@ type CreateFixtures = {
   solicitorDetailsPage: SolicitorDetailsPage;
   divorceDetailsPage: DivorceDetailsPage;
   applicantDetailsPage: ApplicantDetailsPage;
+  childrensDetailsPage: ChildrensDetailsPage;
   respondentDetailsPage: RespondentDetailsPage
   respondentRepresentedPage: RespondentRepresentedPage;
   natureOfApplicationPage: NatureOfApplicationPage;
   propertyAdjustmentPage: PropertyAdjustmentPage;
   periodicalPaymentsPage: PeriodicalPaymentsPage;
   writtenAgreementPage: WrittenAgreementPage;
+  childWrittenAgreementPage: ChildWrittenAgreementPage;
   fastTrackProcedurePage: FastTrackProcedurePage;
   financialAssetsPage: FinancialAssetsPage;
   financialRemedyCourtPage: FinancialRemedyCourtPage;
@@ -80,9 +87,12 @@ type CreateFixtures = {
   updateContactDetailsPage: UpdateContactDetailsPage;
   createCaseSavingYourAnswersPage: CreateCaseSavingYourAnswersPage;
   listForHearingPage: ListForHearingPage;
+  amendFormAApplicationDetailsPage: AmendFormAApplicationDetailsPage;
+  expressCasePage: ExpressCasePage;
   manageExpressCasePage: ManageExpressCasePage;
+  allocationDirectionsCourtSelectionPage: AllocationDirectionsCourtSelectionPage;
   giveAllocationDirectionsPage: GiveAllocationDirectionsPage;
-  amendApplicationDetailsPage: AmendApplicationDetailsPage;
+  amendPaperApplicationDetailsPage: AmendPaperApplicationDetailsPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -104,6 +114,9 @@ export const test = base.extend<CreateFixtures>({
   applicantDetailsPage: async ({ page }, use) => {
     await use(new ApplicantDetailsPage(page, commonActionsHelper));
   },
+  childrensDetailsPage: async ({ page }, use) => {
+    await use(new ChildrensDetailsPage(page, commonActionsHelper));
+  },
   respondentDetailsPage: async ({ page }, use) => {
     await use(new RespondentDetailsPage(page, commonActionsHelper));
   },
@@ -121,6 +134,9 @@ export const test = base.extend<CreateFixtures>({
   },
   writtenAgreementPage: async ({ page }, use) => {
     await use(new WrittenAgreementPage(page));
+  },
+  childWrittenAgreementPage: async ({ page }, use) => {
+    await use(new ChildWrittenAgreementPage(page));
   },
   fastTrackProcedurePage: async ({ page }, use) => {
     await use(new FastTrackProcedurePage(page));
@@ -191,13 +207,22 @@ export const test = base.extend<CreateFixtures>({
   listForHearingPage: async ({ page }, use) => {
     await use(new ListForHearingPage(page));
   },
+  amendFormAApplicationDetailsPage: async ({ page }, use) => {
+    await use(new AmendFormAApplicationDetailsPage(page));
+  },
+  expressCasePage: async ({ page }, use) => {
+    await use(new ExpressCasePage(page));
+  },
   manageExpressCasePage: async ({ page }, use) => {
     await use(new ManageExpressCasePage(page));
   },
+  allocationDirectionsCourtSelectionPage: async ({ page }, use) => {
+    await use(new AllocationDirectionsCourtSelectionPage(page));
+  }, 
   giveAllocationDirectionsPage: async ({ page }, use) => {
     await use(new GiveAllocationDirectionsPage(page));
   },
-  amendApplicationDetailsPage: async ({ page }, use) => {
-    await use(new AmendApplicationDetailsPage(page));
+  amendPaperApplicationDetailsPage: async ({ page }, use) => {
+    await use(new AmendPaperApplicationDetailsPage(page));
   }
 });
