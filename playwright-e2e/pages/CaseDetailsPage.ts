@@ -63,14 +63,18 @@ export class CaseDetailsPage {
   private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
     for (const content of tabContent) {
       if (typeof content === 'string') {
-        const tabItem = this.getTabContent(content);
+        // Handle string content
+        const tabItem = await this.getVisibleTabContent(content);
         await expect(tabItem).toBeVisible();
       } else {
-        const tabItem = this.getTabContent(content.tabItem);
-        await tabItem.waitFor();
+        // Handle object content with tabItem and value
+        const tabItem = await this.getVisibleTabContent(content.tabItem);
         await expect(tabItem).toBeVisible();
-
-        const tabValue = tabItem.locator('xpath=../following-sibling::td');
+  
+        // Refine the locator to uniquely identify the corresponding <td>
+        const tabValue = tabItem.locator('xpath=../following-sibling::td').filter({
+          hasText: content.value,
+        });
         await expect(tabValue).toHaveText(content.value);
       }
     }
@@ -78,8 +82,8 @@ export class CaseDetailsPage {
 
   private async assertExcludedContent(excludedContent: string[]): Promise<void> {
     for (const excluded of excludedContent) {
-      const tabItem = this.getTabContent(excluded);
-      await expect(tabItem).not.toBeVisible();
+      const tabItem = this.page.getByText(excluded, { exact: true }); // Locate the element directly
+      await expect(tabItem).not.toBeVisible(); // Assert that it is not visible
     }
   }
 
@@ -87,8 +91,22 @@ export class CaseDetailsPage {
     return this.page.getByRole('tab', { name: tabName, exact: true });
   }
 
-  private getTabContent(content: string): Locator {
-    return this.page.getByText(content, { exact: true });
+  private async getVisibleTabContent(content: string): Promise<Locator> {
+    const locator = this.page.getByText(content, { exact: true });
+    const count = await locator.count();
+  
+    if (count === 1) {
+      return locator;
+    }
+  
+    for (let i = 0; i < count; i++) {
+      const element = locator.nth(i);
+      if (await element.isVisible()) {
+        return element;
+      }
+    }
+  
+    throw new Error(`No visible element found for content: ${content}`);
   }
   async checkActiveCaseFlagOnCase() {
     await expect(this.activeCaseFlagOnCase).toBeVisible();

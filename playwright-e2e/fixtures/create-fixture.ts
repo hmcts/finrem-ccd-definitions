@@ -229,5 +229,5 @@ export const test = base.extend<CreateFixtures>({
   },
   createFlagPage: async ({ page }, use) => {
     await use(new CreateFlagPage(page));
-  },
+  }
 });
