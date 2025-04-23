@@ -1,5 +1,5 @@
 import { test, expect } from '../../../fixtures/fixtures';
-import { createCaseInCcd } from '../../../../test/helpers/utils';
+import { createCaseInCcd, updateCaseInCcd } from '../../../../test/helpers/utils';
 import config from '../../../config/config';
 import { ApplicationtypeEnum, MaleOrFemaleEnum, YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
@@ -180,6 +180,7 @@ test(
     }
   ) => {
     const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
