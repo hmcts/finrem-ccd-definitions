@@ -28,8 +28,8 @@ dependencies:
     repository: 'oci://hmctspublic.azurecr.io/helm'
     condition: idam-pr.enabled
   - name: finrem-cos
-    version: 0.2.35
-    repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'
+    version: ~0.2.35
+    repository: 'oci://hmctspublic.azurecr.io/helm'
     condition: finrem-cos.enabled
   - name: postgresql
     version: 1.0.2
