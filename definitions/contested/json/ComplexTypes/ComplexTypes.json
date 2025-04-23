@@ -2583,6 +2583,7 @@
     "ID": "FR_supportDocument",
     "ListElementCode": "supportDocument",
     "FieldType": "Document",
+    "RegularExpression": ".doc,.docx,.pdf",
     "ElementLabel": "Supporting Document",
     "HintText": "Please upload a copy of the supporting document as a word or PDF document (word documents will be converted to PDF after submission)",
     "SecurityClassification": "Public",
