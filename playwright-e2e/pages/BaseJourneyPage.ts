@@ -42,7 +42,7 @@ export abstract class BaseJourneyPage {
         await expect(this.continueButton).toBeVisible();
         await expect(this.continueButton).toBeEnabled();
         await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
-        await this.continueButton.click();
+        await this.continueButton.click({ force: true });
         await this.waitForSpinner();
     }
 
