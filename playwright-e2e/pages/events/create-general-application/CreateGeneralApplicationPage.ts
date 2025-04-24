@@ -21,9 +21,9 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
         this.firstSupportingDocumentUploadField = page.locator('#generalApplications_0_gaSupportDocuments_0_supportDocument');
         this.addNewSupportingDocumentButton = page.locator('#generalApplications_0_gaSupportDocuments').getByRole('button', { name: 'Add new' });
 
-        this.draftOrderErrorMessageLocator = page.locator('#generalApplications_0_generalApplicationDraftOrder').locator('xpath=ancestor::div[contains(@class, "form-group-error")]//span[@class="error-message" and contains(text(), "Document format is not supported")]');
-        this.generalApplicationErrorMessageLocator = page.locator('#generalApplications_0_generalApplicationDocument').locator('xpath=ancestor::div[contains(@class, "form-group-error")]//span[@class="error-message" and contains(text(), "Document format is not supported")]');
-        this.firstSupportingDocumentErrorMessageLocator = page.locator('#generalApplications_0_gaSupportDocuments_0_supportDocument').locator('xpath=ancestor::div[contains(@class, "form-group-error")]//span[@class="error-message" and contains(text(), "Document format is not supported")]');
+        this.draftOrderErrorMessageLocator = page.locator('label:has-text("Upload Draft Order (Optional)")').locator('xpath=following-sibling::*[contains(text(), "Document format is not supported")]');      
+        this.generalApplicationErrorMessageLocator = page.locator('label:has-text("Upload General Application")').locator('xpath=following-sibling::*[contains(text(), "Document format is not supported")]');
+        this.firstSupportingDocumentErrorMessageLocator = page.locator('label:has-text("Supporting Document (Optional)")').locator('xpath=following-sibling::*[contains(text(), "Document format is not supported")]');
     }
 
     private async uploadFile(locator: Locator, errorLocator: Locator, uploadFilePath: string, success: boolean): Promise<void> {
