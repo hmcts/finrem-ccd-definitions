@@ -6,11 +6,11 @@ export abstract class BaseJourneyPage {
     private readonly continueButton: Locator;
     private readonly previousButton: Locator;
     private readonly confirmButton: Locator;
-    private readonly submitButton: Locator
+    private readonly submitButton: Locator;
     private readonly cancelHyperlink: Locator;
     private readonly spinner: Locator;
 
-    private readonly thereIsAProblemHeader: Locator;
+    readonly thereIsAProblemHeader: Locator;
     private readonly fieldIsRequiredErrorMessage: Locator;
 
     public constructor(page: Page) {
@@ -47,11 +47,11 @@ export abstract class BaseJourneyPage {
     }
 
     async navigateConfirm() {
-      await this.page.waitForLoadState();
-      await expect(this.confirmButton).toBeVisible();
-      await expect(this.confirmButton).toBeEnabled();
-      await this.confirmButton.click();
-      await this.waitForSpinner();
+        await this.page.waitForLoadState();
+        await expect(this.confirmButton).toBeVisible();
+        await expect(this.confirmButton).toBeEnabled();
+        await this.confirmButton.click();
+        await this.waitForSpinner();
     }
 
     async navigatePrevious() {
@@ -70,17 +70,17 @@ export abstract class BaseJourneyPage {
     }
 
     async wait(timeout: number) {
-      await this.page.waitForTimeout(timeout);
+        await this.page.waitForTimeout(timeout);
     }
 
     private async waitForSpinner() {
-      await expect
-        .poll(
-          async () => {
-            const spinnerCount = await this.spinner.count();
-            return spinnerCount;
-          })
-        .toBe(0);
+        await expect
+            .poll(
+                async () => {
+                    const spinnerCount = await this.spinner.count();
+                    return spinnerCount;
+                })
+            .toBe(0);
     }
 
     async verifyFieldIsRequiredMessageShown() {

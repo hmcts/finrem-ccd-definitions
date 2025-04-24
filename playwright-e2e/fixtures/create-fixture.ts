@@ -44,6 +44,7 @@ import { ManageExpressCasePage } from '../pages/events/manage-express-case/Manag
 import { AmendPaperApplicationDetailsPage } from '../pages/events/amend-application-details/AmendPaperApplicationDetailsPage';
 import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionPage';
 import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
+import { CreateFlagPage } from  '../pages/events/create-flag/CreateFlagPage';
 import { ChildrensDetailsPage } from '../pages/events/create-case/ChildrensDetailsPage';
 import { CreateGeneralApplicationPage } from '../pages/events/create-general-application/CreateGeneralApplicationPage';
 
@@ -94,6 +95,7 @@ type CreateFixtures = {
   allocationDirectionsCourtSelectionPage: AllocationDirectionsCourtSelectionPage;
   giveAllocationDirectionsPage: GiveAllocationDirectionsPage;
   amendPaperApplicationDetailsPage: AmendPaperApplicationDetailsPage;
+  createFlagPage: CreateFlagPage;
   createGeneralApplicationPage: CreateGeneralApplicationPage;
 };
 
@@ -226,6 +228,9 @@ export const test = base.extend<CreateFixtures>({
   },
   amendPaperApplicationDetailsPage: async ({ page }, use) => {
     await use(new AmendPaperApplicationDetailsPage(page));
+  },
+  createFlagPage: async ({ page }, use) => {
+    await use(new CreateFlagPage(page));
   },
   createGeneralApplicationPage: async ({ page }, use) => {
     await use(new CreateGeneralApplicationPage(page, commonActionsHelper));
