@@ -21,8 +21,8 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
         this.firstSupportingDocumentUploadField = page.locator('#generalApplications_0_gaSupportDocuments_0_supportDocument');
     }
 
-    async uploadDraftOrder(uploadFilePath: string = './playwright-e2e/data/test.doc', success : boolean = true): Promise<void> {
-        await this.draftOrderUploadField.setInputFiles(uploadFilePath);
+    private async uploadFile(locator: Locator, uploadFilePath: string, success: boolean): Promise<void> {
+        await locator.setInputFiles(uploadFilePath);
         if (success) {
             await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
         } else {
@@ -30,22 +30,16 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
         }
     }
 
-    async uploadGeneralApplication(uploadFilePath: string = './playwright-e2e/data/test.doc', success : boolean = true): Promise<void> {
-        await this.generalApplicationUploadField.setInputFiles(uploadFilePath);
-        if (success) {
-            await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
-        } else {
-            await this.errorMessageLocator.waitFor({ state: 'visible' });
-        }
+    async uploadDraftOrder(uploadFilePath: string = './playwright-e2e/data/test.doc', success: boolean = true): Promise<void> {
+        await this.uploadFile(this.draftOrderUploadField, uploadFilePath, success);
     }
 
-    async uploadFirstSupportingDocument(uploadFilePath: string = './playwright-e2e/data/test.doc', success : boolean = true): Promise<void> {
-        await this.firstSupportingDocumentUploadField.setInputFiles(uploadFilePath);
-        if (success) {
-            await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
-        } else {
-            await this.errorMessageLocator.waitFor({ state: 'visible' });
-        }
+    async uploadGeneralApplication(uploadFilePath: string = './playwright-e2e/data/test.doc', success: boolean = true): Promise<void> {
+        await this.uploadFile(this.generalApplicationUploadField, uploadFilePath, success);
+    }
+
+    async uploadFirstSupportingDocument(uploadFilePath: string = './playwright-e2e/data/test.doc', success: boolean = true): Promise<void> {
+        await this.uploadFile(this.firstSupportingDocumentUploadField, uploadFilePath, success);
     }
 
     async addNewSupportingDocument(): Promise<void> {
