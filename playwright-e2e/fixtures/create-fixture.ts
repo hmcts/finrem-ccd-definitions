@@ -45,6 +45,7 @@ import { AmendPaperApplicationDetailsPage } from '../pages/events/amend-applicat
 import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionPage';
 import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
 import { ChildrensDetailsPage } from '../pages/events/create-case/ChildrensDetailsPage';
+import { CreateGeneralApplicationPage } from '../pages/events/create-general-application/CreateGeneralApplicationPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -93,6 +94,7 @@ type CreateFixtures = {
   allocationDirectionsCourtSelectionPage: AllocationDirectionsCourtSelectionPage;
   giveAllocationDirectionsPage: GiveAllocationDirectionsPage;
   amendPaperApplicationDetailsPage: AmendPaperApplicationDetailsPage;
+  createGeneralApplicationPage: CreateGeneralApplicationPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -224,5 +226,8 @@ export const test = base.extend<CreateFixtures>({
   },
   amendPaperApplicationDetailsPage: async ({ page }, use) => {
     await use(new AmendPaperApplicationDetailsPage(page));
+  },
+  createGeneralApplicationPage: async ({ page }, use) => {
+    await use(new CreateGeneralApplicationPage(page, commonActionsHelper));
   }
 });
