@@ -11,7 +11,7 @@ async function createAndProcessPaperCase(): Promise<string> {
 }
 
 const FILE_PATHS = {
-  invalid: './playwright-e2e/data/test.png',
+  png: './playwright-e2e/data/test.png',
   doc: './playwright-e2e/data/test.doc',
   docx: './playwright-e2e/data/test.docx',
   pdf: './playwright-e2e/data/test.pdf',
@@ -38,14 +38,14 @@ test.describe('Contested - File Type Restrictions on uploading documents', () =>
 
       await caseDetailsPage.selectNextStep(contestedEvents.createGeneralApplication);
 
-      await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.invalid, false);
+      await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.png, false);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.doc);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.docx);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.pdf);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.xlsx);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.xls);
 
-      await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.invalid, false);
+      await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.png, false);
       await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.doc);
       await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.docx);
       await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.pdf);
@@ -53,7 +53,7 @@ test.describe('Contested - File Type Restrictions on uploading documents', () =>
       await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.xls);
 
       await createGeneralApplicationPage.addNewSupportingDocument();
-      await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.invalid, false);
+      await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.png, false);
       await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.doc);
       await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.docx);
       await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.pdf);
