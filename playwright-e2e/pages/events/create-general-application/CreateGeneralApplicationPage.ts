@@ -12,6 +12,8 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
     private readonly firstSupportingDocumentErrorMessageLocator: Locator;
     private readonly commonActionsHelper: CommonActionsHelper;
     private readonly addNewSupportingDocumentButton: Locator;
+
+    private static readonly DOCUMENT_FORMAT_ERROR_MESSAGE = "Document format is not supported";
     
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
@@ -21,9 +23,9 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
         this.firstSupportingDocumentUploadField = page.locator('#generalApplications_0_gaSupportDocuments_0_supportDocument');
         this.addNewSupportingDocumentButton = page.locator('#generalApplications_0_gaSupportDocuments').getByRole('button', { name: 'Add new' });
 
-        this.draftOrderErrorMessageLocator = page.locator('label:has-text("Upload Draft Order (Optional)")').locator('xpath=following-sibling::*[contains(text(), "Document format is not supported")]');      
-        this.generalApplicationErrorMessageLocator = page.locator('label:has-text("Upload General Application")').locator('xpath=following-sibling::*[contains(text(), "Document format is not supported")]');
-        this.firstSupportingDocumentErrorMessageLocator = page.locator('label:has-text("Supporting Document (Optional)")').locator('xpath=following-sibling::*[contains(text(), "Document format is not supported")]');
+        this.draftOrderErrorMessageLocator = page.locator('label:has-text("Upload Draft Order (Optional)")').locator(`xpath=following-sibling::*[contains(text(), "${CreateGeneralApplicationPage.DOCUMENT_FORMAT_ERROR_MESSAGE}")]`);      
+        this.generalApplicationErrorMessageLocator = page.locator('label:has-text("Upload General Application")').locator(`xpath=following-sibling::*[contains(text(), "${CreateGeneralApplicationPage.DOCUMENT_FORMAT_ERROR_MESSAGE}")]`);
+        this.firstSupportingDocumentErrorMessageLocator = page.locator('label:has-text("Supporting Document (Optional)")').locator(`xpath=following-sibling::*[contains(text(), "${CreateGeneralApplicationPage.DOCUMENT_FORMAT_ERROR_MESSAGE}")]`);
     }
 
     private async uploadFile(locator: Locator, errorLocator: Locator, uploadFilePath: string, success: boolean): Promise<void> {
