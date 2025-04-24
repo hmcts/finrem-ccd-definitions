@@ -12,7 +12,7 @@ async function createAndProcessPaperCase(): Promise<string> {
 
 test.describe('Contested - File Type Restrictions on uploading documents', () => {
   test(
-    'Contested - Create Gneral Application - Allow only word and pdf documents to be uploaded',
+    'Contested - Create Gneral Application - Allow only word, excel and pdf documents to be uploaded',
     { tag: [] },
     async (
       {
