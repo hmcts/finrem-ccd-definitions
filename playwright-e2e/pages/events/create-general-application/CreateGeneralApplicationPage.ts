@@ -7,7 +7,9 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
     private readonly firstSupportingDocumentUploadField: Locator;
     private readonly draftOrderUploadField: Locator;
     private readonly generalApplicationUploadField: Locator;
-    private readonly errorMessageLocator: Locator;
+    private readonly draftOrderErrorMessageLocator: Locator;
+    private readonly generalApplicationErrorMessageLocator: Locator;
+    private readonly firstSupportingDocumentErrorMessageLocator: Locator;
     private readonly commonActionsHelper: CommonActionsHelper;
     private readonly addNewSupportingDocumentButton: Locator;
     
@@ -16,30 +18,33 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
         this.commonActionsHelper = commonActionsHelper;
         this.draftOrderUploadField = page.locator('#generalApplications_0_generalApplicationDraftOrder');
         this.generalApplicationUploadField = page.locator('#generalApplications_0_generalApplicationDocument');
-        this.errorMessageLocator = page.locator('text=Document format is not supported');
-        this.addNewSupportingDocumentButton = page.locator('#generalApplications_0_gaSupportDocuments').getByRole('button', { name: 'Add new' });
         this.firstSupportingDocumentUploadField = page.locator('#generalApplications_0_gaSupportDocuments_0_supportDocument');
+        this.addNewSupportingDocumentButton = page.locator('#generalApplications_0_gaSupportDocuments').getByRole('button', { name: 'Add new' });
+
+        this.draftOrderErrorMessageLocator = page.locator('#generalApplications_0_generalApplicationDraftOrder').locator('xpath=ancestor::div[contains(@class, "form-group-error")]//span[@class="error-message" and contains(text(), "Document format is not supported")]');
+        this.generalApplicationErrorMessageLocator = page.locator('#generalApplications_0_generalApplicationDocument').locator('xpath=ancestor::div[contains(@class, "form-group-error")]//span[@class="error-message" and contains(text(), "Document format is not supported")]');
+        this.firstSupportingDocumentErrorMessageLocator = page.locator('#generalApplications_0_gaSupportDocuments_0_supportDocument').locator('xpath=ancestor::div[contains(@class, "form-group-error")]//span[@class="error-message" and contains(text(), "Document format is not supported")]');
     }
 
-    private async uploadFile(locator: Locator, uploadFilePath: string, success: boolean): Promise<void> {
+    private async uploadFile(locator: Locator, errorLocator: Locator, uploadFilePath: string, success: boolean): Promise<void> {
         await locator.setInputFiles(uploadFilePath);
         if (success) {
             await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
         } else {
-            await this.errorMessageLocator.waitFor({ state: 'visible' });
+            await errorLocator.waitFor({ state: 'visible' });
         }
     }
 
     async uploadDraftOrder(uploadFilePath: string = './playwright-e2e/data/test.doc', success: boolean = true): Promise<void> {
-        await this.uploadFile(this.draftOrderUploadField, uploadFilePath, success);
+        await this.uploadFile(this.draftOrderUploadField, this.draftOrderErrorMessageLocator, uploadFilePath, success);
     }
 
     async uploadGeneralApplication(uploadFilePath: string = './playwright-e2e/data/test.doc', success: boolean = true): Promise<void> {
-        await this.uploadFile(this.generalApplicationUploadField, uploadFilePath, success);
+        await this.uploadFile(this.generalApplicationUploadField, this.generalApplicationErrorMessageLocator, uploadFilePath, success);
     }
 
     async uploadFirstSupportingDocument(uploadFilePath: string = './playwright-e2e/data/test.doc', success: boolean = true): Promise<void> {
-        await this.uploadFile(this.firstSupportingDocumentUploadField, uploadFilePath, success);
+        await this.uploadFile(this.firstSupportingDocumentUploadField, this.firstSupportingDocumentErrorMessageLocator, uploadFilePath, success);
     }
 
     async addNewSupportingDocument(): Promise<void> {
