@@ -12,26 +12,38 @@ async function createAndProcessPaperCase(): Promise<string> {
 
 test.describe('Contested - File Type Restrictions on uploading documents', () => {
   test(
-    'Contested - Create Gneral Application - Allow only word documents and pdf documents to be uploaded',
+    'Contested - Create Gneral Application - Allow only word and pdf documents to be uploaded',
     { tag: [] },
     async (
       {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        createGeneralApplicationPage,
-        makeAxeBuilder,
-      },
-      testInfo
+        createGeneralApplicationPage
+      }
     ) => {
       const caseId = await createAndProcessPaperCase();
       await manageCaseDashboardPage.visit();
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
+
       await caseDetailsPage.selectNextStep(contestedEvents.createGeneralApplication);
+
       await createGeneralApplicationPage.uploadDraftOrder('./playwright-e2e/data/test.png', false);
       await createGeneralApplicationPage.uploadDraftOrder('./playwright-e2e/data/test.doc');
       await createGeneralApplicationPage.uploadDraftOrder('./playwright-e2e/data/test.docx');
+      await createGeneralApplicationPage.uploadDraftOrder('./playwright-e2e/data/test.pdf');
+
+      await createGeneralApplicationPage.uploadGeneralApplication('./playwright-e2e/data/test.png', false);
+      await createGeneralApplicationPage.uploadGeneralApplication('./playwright-e2e/data/test.doc');
+      await createGeneralApplicationPage.uploadGeneralApplication('./playwright-e2e/data/test.docx');
+      await createGeneralApplicationPage.uploadGeneralApplication('./playwright-e2e/data/test.pdf');
+
+      await createGeneralApplicationPage.addNewSupportingDocument();
+      await createGeneralApplicationPage.uploadFirstSupportingDocument('./playwright-e2e/data/test.png', false);
+      await createGeneralApplicationPage.uploadFirstSupportingDocument('./playwright-e2e/data/test.doc');
+      await createGeneralApplicationPage.uploadFirstSupportingDocument('./playwright-e2e/data/test.docx');
+      await createGeneralApplicationPage.uploadFirstSupportingDocument('./playwright-e2e/data/test.pdf');
     }
   );
 });
