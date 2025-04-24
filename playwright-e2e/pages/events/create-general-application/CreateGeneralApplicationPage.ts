@@ -33,7 +33,7 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
         if (success) {
             await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
         } else {
-            await errorLocator.waitFor({ state: 'visible' });
+            await expect(errorLocator).toBeVisible(); // Explicit assertion for visibility
         }
     }
 
