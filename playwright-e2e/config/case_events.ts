@@ -70,5 +70,9 @@ export const contestedEvents: Record<string, CaseEvent> = {
     amendPaperApplicationDetails: {
        listItem: "Amend Application Details",
        ccdCallback: "FR_amendPaperApplication"
+    },
+    createGeneralApplication: {
+       listItem: "Create General Application",
+       ccdCallback: "createGeneralApplication"
     }
 };
