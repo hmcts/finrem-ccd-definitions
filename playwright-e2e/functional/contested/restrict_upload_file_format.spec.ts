@@ -33,17 +33,23 @@ test.describe('Contested - File Type Restrictions on uploading documents', () =>
       await createGeneralApplicationPage.uploadDraftOrder('./playwright-e2e/data/test.doc');
       await createGeneralApplicationPage.uploadDraftOrder('./playwright-e2e/data/test.docx');
       await createGeneralApplicationPage.uploadDraftOrder('./playwright-e2e/data/test.pdf');
+      await createGeneralApplicationPage.uploadDraftOrder('./playwright-e2e/data/test.xlsx');
+      await createGeneralApplicationPage.uploadDraftOrder('./playwright-e2e/data/test.xls');
 
       await createGeneralApplicationPage.uploadGeneralApplication('./playwright-e2e/data/test.png', false);
       await createGeneralApplicationPage.uploadGeneralApplication('./playwright-e2e/data/test.doc');
       await createGeneralApplicationPage.uploadGeneralApplication('./playwright-e2e/data/test.docx');
       await createGeneralApplicationPage.uploadGeneralApplication('./playwright-e2e/data/test.pdf');
+      await createGeneralApplicationPage.uploadGeneralApplication('./playwright-e2e/data/test.xlsx');
+      await createGeneralApplicationPage.uploadGeneralApplication('./playwright-e2e/data/test.xls');
 
       await createGeneralApplicationPage.addNewSupportingDocument();
       await createGeneralApplicationPage.uploadFirstSupportingDocument('./playwright-e2e/data/test.png', false);
       await createGeneralApplicationPage.uploadFirstSupportingDocument('./playwright-e2e/data/test.doc');
       await createGeneralApplicationPage.uploadFirstSupportingDocument('./playwright-e2e/data/test.docx');
       await createGeneralApplicationPage.uploadFirstSupportingDocument('./playwright-e2e/data/test.pdf');
+      await createGeneralApplicationPage.uploadFirstSupportingDocument('./playwright-e2e/data/test.xlsx');
+      await createGeneralApplicationPage.uploadFirstSupportingDocument('./playwright-e2e/data/test.xls');
     }
   );
 });
