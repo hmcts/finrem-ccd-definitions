@@ -31,6 +31,10 @@ export const consentedEvents: Record<string, CaseEvent> = {
     UpdateContactDetails: {
         listItem: "Update contact details",
         ccdCallback: "FR_updateContactDetails"
+    },
+    CreateFlag: {
+        listItem: "Create Flag",
+        ccdCallback: "createFlags"
     }
 };
 
