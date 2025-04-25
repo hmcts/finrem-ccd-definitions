@@ -8,5 +8,24 @@
     "FieldTypeParameter": "FR_ManageHearingAction",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  }, 
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingToAdd",
+    "Label": "Hearings",
+    "FieldType": "manageHearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageHearings",
+    "Label": "Hearings",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "manageHearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
