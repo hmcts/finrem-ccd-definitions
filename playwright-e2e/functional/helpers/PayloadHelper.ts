@@ -16,7 +16,7 @@ export class PayloadHelper {
     }
   }
 
-  static async solicitorSubmitFromACase(caseId : string) {
+  static async solicitorSubmitFormACase(caseId : string) {
     await updateCaseInCcd(
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
@@ -61,5 +61,4 @@ export class PayloadHelper {
       { event: 'FR_allocateToJudge' }
     ]);
   }
-
 }
