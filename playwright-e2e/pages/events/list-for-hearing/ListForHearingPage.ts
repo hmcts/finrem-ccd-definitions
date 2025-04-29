@@ -131,11 +131,11 @@ export class ListForHearingPage extends BaseJourneyPage {
 
     async enterAdditionalInformationAboutHearing(){
         await expect(this.additionalInformationAboutHearing).toBeVisible();
-        await this.page.locator('#additionalInformationAboutHearing').fill('Some additional information');
+        await this.additionalInformationAboutHearing.fill('Some additional information');
     }
 
-    async whetherToUploadOtherDocuments(pickedradio: YesNoRadioEnum){
-        const optionToSelect = this.additionalHearingDocumentsRadio.getByLabel(pickedradio);
+    async whetherToUploadOtherDocuments(yesOrNo: YesNoRadioEnum){
+        const optionToSelect = this.additionalHearingDocumentsRadio.getByLabel(yesOrNo);
         await optionToSelect.check();
     }
 

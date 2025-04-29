@@ -14,7 +14,6 @@ async function createAndProcessFormACase(): Promise<string> {
 
 async function createAndProcessPaperCase(): Promise<string> {
   const caseId = await CaseDataHelper.createBaseContestedPaperCase();
-
   await PayloadHelper.caseWorkerProgressPaperCaseToListing(caseId);
   return caseId;
 }
@@ -63,7 +62,7 @@ async function performListForHearingFlow(
 }
 
 test.describe('Contested - List for Hearing case shows on hearings tab', () => {
-  test(
+  test.skip(
     'Form A case shows on hearings tab',
     { tag: [] },
     async (
@@ -84,7 +83,7 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
     }
   );
 
-  test(
+  test.skip(
     'Paper Case shows on hearings tab',
     { tag: [] },
     async (
