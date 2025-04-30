@@ -77,7 +77,8 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
     ) => {
       const caseId = await createAndProcessFormACase();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      // Next: 
+      // Next:
+      // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
       // Run method that converts this old hearing type to new hearing type format
       // Run tab test to confirm that all the correct hearing information shows on the new hearing tab
     }
@@ -99,6 +100,7 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
       const caseId = await createAndProcessPaperCase();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
       // Next: 
+      // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
       // Run method that converts this old hearing type to new hearing type format
       // Run tab test to confirm that all the correct hearing information shows on the new hearing tab
     }
