@@ -2,6 +2,7 @@ import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import { YesNoRadioEnum } from "../../helpers/enums/RadioEnums";
+import { PayloadHelper } from '../../../functional/helpers/PayloadHelper';
 
 export class ListForInterimHearingPage extends BaseJourneyPage {
     private readonly courtRegion: string = 'Midlands'
@@ -15,7 +16,7 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
     private readonly hearingTime: Locator;
     private readonly courtForHearing: Locator;
     private readonly additionalInformation: Locator;
-    private readonly chooseOtherDocuments: Locator;
+    private readonly uploadOtherDocumentFiles: Locator;
     private readonly uploadOtherDocumentsQuestion: Locator;
     private readonly commonActionsHelper: CommonActionsHelper;
     
@@ -31,7 +32,7 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
         this.hearingTime = page.locator('#interimHearingsScreenField_0_interimHearingTime');
         this.courtForHearing = page.locator('Court for hearing');
         this.additionalInformation = page.locator('#interimHearingsScreenField_0_interimAdditionalInformationAboutHearing');
-        this.chooseOtherDocuments = page.locator('#interimHearingsScreenField_0_interimUploadAdditionalDocument');
+        this.uploadOtherDocumentFiles = page.locator('#interimHearingsScreenField_0_interimUploadAdditionalDocument');
         this.uploadOtherDocumentsQuestion = page.locator('#interimHearingsScreenField_0_interimPromptForAnyDocument');
     }
     
@@ -78,5 +79,12 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
         expect(this.uploadOtherDocumentsQuestion).toBeVisible();
         const optionToSelect = this.uploadOtherDocumentsQuestion.getByLabel(yesOrNo);
         await optionToSelect.check();
+    }
+
+    async uploadOtherDocuments(docFilename: string) {
+        await expect(this.uploadOtherDocumentFiles).toBeVisible();
+        const filePayload = await PayloadHelper.createAliasPDFPayload('./playwright-e2e/data/test.pdf', docFilename);
+        await this.uploadOtherDocumentFiles.setInputFiles(filePayload);
+        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 }

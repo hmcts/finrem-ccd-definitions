@@ -34,7 +34,7 @@ async function performListForInterimHearingsFlow(
   const MPSYear = "2025";
   const MPSTime = "10:00";
   const MPSCourt = "CHESTERFIELD COUNTY COURT";
-
+  const MSPFile = "MPSfile.pdf";
   const FirstDirectionsAppointment = "First Directions Appointment (FDA)";
   const FinancialDisputeResolution = "Financial Dispute Resolution Hearing (FDR)";
   const FinalHearing = "Final Hearing (FH)";
@@ -53,6 +53,7 @@ async function performListForInterimHearingsFlow(
   // await listForInterimHearings.selectCourtForHearing(MPSCourt);
   await listForInterimHearings.enterAdditionalInformationAboutHearing();
   await listForInterimHearings.whetherToUploadOtherDocuments(YesNoRadioEnum.YES);
+  await listForInterimHearings.uploadOtherDocuments(MSPFile);
 
   if (config.run_accessibility) {
     const accessibilityScanResults = await makeAxeBuilder().analyze();

@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { updateCaseInCcd } from '../../../test/helpers/utils';
 import config from '../../config/config';
 
@@ -60,6 +61,23 @@ export class PayloadHelper {
     await this.updateCaseWorkerSteps(caseId, [
       { event: 'FR_allocateToJudge' }
     ]);
+  }
+
+  /**
+   * Creates a payload object for a PDF file with a new alias name.
+   * Can be passed to the setInputFiles method of a locator.
+   *
+   * @param filePath - The path to the original PDF file.
+   * @param newFilename - The new name to assign to the PDF file in the payload.
+   * @returns An object containing the new filename, pdf MIME type, and file buffer.
+   */
+  static async createAliasPDFPayload(filePath: string, newFilename: string) {
+    const fileBuffer = fs.readFileSync(filePath);
+    return {
+      name: newFilename,
+      mimeType: 'application/pdf',
+      buffer: fileBuffer
+    };
   }
 
 }
