@@ -1,7 +1,7 @@
 [
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "manageHearingType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_interimHearingTypeDirections",
@@ -11,7 +11,7 @@
   },  
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "manageHearingTimeEstimate",
     "FieldType": "Text",
     "ElementLabel": "Hearing Time Estimate",
@@ -20,7 +20,7 @@
   },
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "manageHearingDate",
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
@@ -30,7 +30,7 @@
   },
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "manageHearingTime",
     "FieldType": "Text",
     "ElementLabel": "Hearing Time",
@@ -39,7 +39,7 @@
   },
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "manageHearingCourtSelection",
     "FieldType": "FR_ct_courtList",
     "ElementLabel": " ",
@@ -48,7 +48,7 @@
   },  
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "manageHearingMode",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_ManageHearingMode",
@@ -58,7 +58,7 @@
   },  
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "manageHearingAdditionalInformation",
     "FieldType": "Text",
     "ElementLabel": "Additional information about the hearing",
@@ -67,7 +67,7 @@
   },
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "manageHearingNoticePrompt",
     "FieldType": "YesOrNo",
     "ElementLabel": "Do you want to send a notice of hearing?",
@@ -76,7 +76,7 @@
   },
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "manageHearingAdditionalDocPrompt",
     "FieldType": "YesOrNo",
     "ElementLabel": "Do you want to upload any other documents?",
@@ -85,7 +85,7 @@
   },
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "manageHearingUploadAdditionalDoc",
     "FieldType": "Document",
     "ElementLabel": "Please upload any additional documents related to your application.",
@@ -96,7 +96,7 @@
   }, 
   {
     "LiveFrom": "28/04/2025",
-    "ID": "manageHearing",
+    "ID": "FR_manageHearing",
     "ListElementCode": "partiesOnCaseMultiSelectList",
     "FieldType": "DynamicMultiSelectList",
     "ElementLabel": "Who should receive this order?",

@@ -13,8 +13,8 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "hearingToAdd",
-    "Label": "Hearings",
-    "FieldType": "manageHearing",
+    "Label": "Hearing to add",
+    "FieldType": "FR_manageHearing",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -24,7 +24,7 @@
     "ID": "manageHearings",
     "Label": "Hearings",
     "FieldType": "Collection",
-    "FieldTypeParameter": "manageHearing",
+    "FieldTypeParameter": "FR_manageHearing",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
