@@ -8,35 +8,19 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
     private readonly courtRegion: string = 'Midlands'
     private readonly courtFrc: string = 'Nottingham'
     private readonly addNew: Locator;
-    private readonly typeOfHearing: Locator;
-    private readonly hearingTimeEstimate: Locator;
-    private readonly hearingDateDay: Locator;
-    private readonly hearingDateMonth: Locator;
-    private readonly hearingDateYear: Locator;
-    private readonly hearingTime: Locator;
-    private readonly additionalInformation: Locator;
-    private readonly uploadOtherDocumentFiles: Locator;
-    private readonly uploadOtherDocumentsQuestion: Locator;
-    private readonly regionListDropDown: Locator;
-    private frcDropDown: Locator;
-    private courtListDropDown: Locator
     private readonly commonActionsHelper: CommonActionsHelper;
     
+    /**
+     * Constructor for ListForInterimHearingPage
+     * Differs from other pages as locators are initiased in each method.
+     * This is because the locators are dynamic and change based on the number of interim hearings added.
+     * @param {Page} page - The Playwright page object
+     * @param {CommonActionsHelper} commonActionsHelper - Common actions helper instance
+     */
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
         this.commonActionsHelper = commonActionsHelper;
-        this.addNew = page.getByRole('button', { name: 'Add new' });
-        this.typeOfHearing = page.locator('#interimHearingsScreenField_0_interimHearingType');
-        this.hearingTimeEstimate = page.locator('#interimHearingsScreenField_0_interimHearingTimeEstimate');
-        this.hearingDateDay = page.locator('#interimHearingDate-day').nth(0);
-        this.hearingDateMonth = page.locator('#interimHearingDate-month').nth(0);
-        this.hearingDateYear = page.locator('#interimHearingDate-year').nth(0);
-        this.hearingTime = page.locator('#interimHearingsScreenField_0_interimHearingTime');
-        this.additionalInformation = page.locator('#interimHearingsScreenField_0_interimAdditionalInformationAboutHearing');
-        this.uploadOtherDocumentFiles = page.locator('#interimHearingsScreenField_0_interimUploadAdditionalDocument');
-        this.uploadOtherDocumentsQuestion = page.locator('#interimHearingsScreenField_0_interimPromptForAnyDocument');
-        this.regionListDropDown = page.locator('#interimHearingsScreenField_0_interim_regionList');
-        this.courtZoneDropDown = page.locator('#hearing_regionList');
+        this.addNew = page.getByRole('button', { name: 'Add new' }).nth(0);
     }
     
     async clickAddNew() {
@@ -44,59 +28,70 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
         await this.addNew.click();
     }
 
-    async selectTypeOfHearing(typeOfHearing: string) {
-        expect(this.typeOfHearing).toBeVisible();
-        await this.typeOfHearing.selectOption({ label: typeOfHearing });
+    async selectTypeOfHearing(hearing_position: number, typeOfHearing: string) {
+        const typeOfHearingLocator = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interimHearingType`);
+        expect(typeOfHearingLocator).toBeVisible();
+        await typeOfHearingLocator.selectOption({ label: typeOfHearing });
     }
 
-    async enterTimeEstimate(duration: string) {
-        expect(this.hearingTimeEstimate).toBeVisible();
-        await this.hearingTimeEstimate.fill(duration);
+    async enterTimeEstimate(hearing_position: number, duration: string) {
+        const hearingTimeEstimate = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interimHearingTimeEstimate`);
+        expect(hearingTimeEstimate).toBeVisible();
+        await hearingTimeEstimate.fill(duration);
     }
 
-    async enterHearingDate(day: string, month: string, year: string) {
-        expect(this.hearingDateDay).toBeVisible();
-        expect(this.hearingDateMonth).toBeVisible();
-        expect(this.hearingDateYear).toBeVisible();
-        await this.hearingDateDay.fill(day);
-        await this.hearingDateMonth.fill(month);
-        await this.hearingDateYear.fill(year);
+    async enterHearingDate(hearing_position: number, day: string, month: string, year: string) {
+        const hearingDateDay = this.page.locator(`#interimHearingDate-day`).nth(hearing_position);
+        const hearingDateMonth = this.page.locator(`#interimHearingDate-month`).nth(hearing_position);
+        const hearingDateYear = this.page.locator(`#interimHearingDate-year`).nth(hearing_position);
+
+        expect(hearingDateDay).toBeVisible();
+        expect(hearingDateMonth).toBeVisible();
+        expect(hearingDateYear).toBeVisible();
+
+        await hearingDateDay.fill(day);
+        await hearingDateMonth.fill(month);
+        await hearingDateYear.fill(year);
     }
 
-    async enterHearingTime(time: string) {
-        expect(this.hearingTime).toBeVisible();
-        await this.hearingTime.fill(time);
+    async enterHearingTime(hearing_position: number, time: string) {
+        const hearingTime = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interimHearingTime`);
+        expect(hearingTime).toBeVisible();
+        await hearingTime.fill(time);
     }
 
-    async selectCourtForHearing(localCourt: string) {
-        await expect(this.regionListDropDown).toBeVisible();
-        await this.regionListDropDown.selectOption(this.courtRegion);
+    async selectCourtForHearing(hearing_position: number, localCourt: string) {
+        const regionListDropDown = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interim_regionList`);
+        await expect(regionListDropDown).toBeVisible();
+        await regionListDropDown.selectOption(this.courtRegion);
 
-        this.frcDropDown = this.page.locator(`#interimHearingsScreenField_0_interim_${this.courtRegion.toLowerCase()}FRCList`);
-        await expect(this.frcDropDown).toBeVisible();
-        await this.frcDropDown.selectOption(`${this.courtFrc} FRC`);
+        const frcDropDown = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interim_${this.courtRegion.toLowerCase()}FRCList`);
+        await expect(frcDropDown).toBeVisible();
+        await frcDropDown.selectOption(`${this.courtFrc} FRC`);
 
-        this.courtListDropDown = this.page.locator(`#interimHearingsScreenField_0_interim_${this.courtFrc.toLowerCase()}CourtList`);
-        await expect(this.courtListDropDown).toBeVisible();
-        await this.courtListDropDown.selectOption(localCourt);
+        const courtListDropDown = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interim_${this.courtFrc.toLowerCase()}CourtList`);
+        await expect(courtListDropDown).toBeVisible();
+        await courtListDropDown.selectOption(localCourt);
     }
 
-
-    async enterAdditionalInformationAboutHearing() {    
-        expect(this.additionalInformation).toBeVisible();
-        await this.additionalInformation.fill('Additional information about the hearing');
+    async enterAdditionalInformationAboutHearing(hearing_position: number, information: string) {
+        const additionalInformation = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interimAdditionalInformationAboutHearing`);
+        expect(additionalInformation).toBeVisible();
+        await additionalInformation.fill(information);
     }
 
-    async whetherToUploadOtherDocuments(yesOrNo: YesNoRadioEnum) {     
-        expect(this.uploadOtherDocumentsQuestion).toBeVisible();
-        const optionToSelect = this.uploadOtherDocumentsQuestion.getByLabel(yesOrNo);
+    async whetherToUploadOtherDocuments(hearing_position: number, yesOrNo: YesNoRadioEnum) {
+        const uploadOtherDocumentsQuestion = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interimPromptForAnyDocument`);
+        expect(uploadOtherDocumentsQuestion).toBeVisible();
+        const optionToSelect = uploadOtherDocumentsQuestion.getByLabel(yesOrNo);
         await optionToSelect.check();
     }
 
-    async uploadOtherDocuments(docFilename: string) {
-        await expect(this.uploadOtherDocumentFiles).toBeVisible();
+    async uploadOtherDocuments(hearing_position: number, docFilename: string) {
+        const uploadOtherDocumentFiles = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interimUploadAdditionalDocument`);
+        await expect(uploadOtherDocumentFiles).toBeVisible();
         const filePayload = await PayloadHelper.createAliasPDFPayload('./playwright-e2e/data/test.pdf', docFilename);
-        await this.uploadOtherDocumentFiles.setInputFiles(filePayload);
+        await uploadOtherDocumentFiles.setInputFiles(filePayload);
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 }
