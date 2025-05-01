@@ -209,7 +209,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new CreateCaseSavingYourAnswersPage(page));
   },
   listForHearingPage: async ({ page }, use) => {
-    await use(new ListForHearingPage(page));
+    await use(new ListForHearingPage(page, commonActionsHelper));
   },
   amendFormAApplicationDetailsPage: async ({ page }, use) => {
     await use(new AmendFormAApplicationDetailsPage(page));

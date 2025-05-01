@@ -104,8 +104,8 @@ test.describe('Contested - List for Interim Hearings', () => {
   );
 
   async function createAndProcessFormACase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedFromA();
-    await PayloadHelper.solicitorSubmitFromACase(caseId);
+    const caseId = await CaseDataHelper.createBaseContestedFormA();
+    await PayloadHelper.solicitorSubmitFormACase(caseId);
     return caseId;
   }
 
