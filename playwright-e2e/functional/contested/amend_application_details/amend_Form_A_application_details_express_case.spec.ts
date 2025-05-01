@@ -210,7 +210,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
        },
        testInfo
      ) => {
-       const caseId = await CaseDataHelper.createBaseContestedFromA();
+       const caseId = await CaseDataHelper.createBaseContestedFormA();
        await performAmendFormAApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestForNoExpressContent, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
         natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
