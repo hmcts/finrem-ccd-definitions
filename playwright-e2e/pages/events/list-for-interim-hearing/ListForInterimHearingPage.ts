@@ -14,10 +14,12 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
     private readonly hearingDateMonth: Locator;
     private readonly hearingDateYear: Locator;
     private readonly hearingTime: Locator;
-    private readonly courtForHearing: Locator;
     private readonly additionalInformation: Locator;
     private readonly uploadOtherDocumentFiles: Locator;
     private readonly uploadOtherDocumentsQuestion: Locator;
+    private readonly regionListDropDown: Locator;
+    private frcDropDown: Locator;
+    private courtListDropDown: Locator
     private readonly commonActionsHelper: CommonActionsHelper;
     
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
@@ -30,10 +32,11 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
         this.hearingDateMonth = page.locator('#interimHearingDate-month').nth(0);
         this.hearingDateYear = page.locator('#interimHearingDate-year').nth(0);
         this.hearingTime = page.locator('#interimHearingsScreenField_0_interimHearingTime');
-        this.courtForHearing = page.locator('Court for hearing');
         this.additionalInformation = page.locator('#interimHearingsScreenField_0_interimAdditionalInformationAboutHearing');
         this.uploadOtherDocumentFiles = page.locator('#interimHearingsScreenField_0_interimUploadAdditionalDocument');
         this.uploadOtherDocumentsQuestion = page.locator('#interimHearingsScreenField_0_interimPromptForAnyDocument');
+        this.regionListDropDown = page.locator('#interimHearingsScreenField_0_interim_regionList');
+        this.courtZoneDropDown = page.locator('#hearing_regionList');
     }
     
     async clickAddNew() {
@@ -65,10 +68,19 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
         await this.hearingTime.fill(time);
     }
 
-    async selectCourtForHearing(court: string) {
-        expect(this.courtForHearing).toBeVisible();
-        await this.courtForHearing.selectOption({ label: court });
+    async selectCourtForHearing(localCourt: string) {
+        await expect(this.regionListDropDown).toBeVisible();
+        await this.regionListDropDown.selectOption(this.courtRegion);
+
+        this.frcDropDown = this.page.locator(`#interimHearingsScreenField_0_interim_${this.courtRegion.toLowerCase()}FRCList`);
+        await expect(this.frcDropDown).toBeVisible();
+        await this.frcDropDown.selectOption(`${this.courtFrc} FRC`);
+
+        this.courtListDropDown = this.page.locator(`#interimHearingsScreenField_0_interim_${this.courtFrc.toLowerCase()}CourtList`);
+        await expect(this.courtListDropDown).toBeVisible();
+        await this.courtListDropDown.selectOption(localCourt);
     }
+
 
     async enterAdditionalInformationAboutHearing() {    
         expect(this.additionalInformation).toBeVisible();

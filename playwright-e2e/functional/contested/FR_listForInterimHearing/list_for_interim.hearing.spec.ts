@@ -50,7 +50,7 @@ async function performListForInterimHearingsFlow(
   await listForInterimHearings.enterTimeEstimate(MPSDuration);
   await listForInterimHearings.enterHearingDate(MPSDay, MPSMonth, MPSYear);
   await listForInterimHearings.enterHearingTime(MPSTime);
-  // await listForInterimHearings.selectCourtForHearing(MPSCourt);
+  await listForInterimHearings.selectCourtForHearing(MPSCourt);
   await listForInterimHearings.enterAdditionalInformationAboutHearing();
   await listForInterimHearings.whetherToUploadOtherDocuments(YesNoRadioEnum.YES);
   await listForInterimHearings.uploadOtherDocuments(MSPFile);
