@@ -7,6 +7,7 @@ export abstract class BaseJourneyPage {
     private readonly previousButton: Locator;
     private readonly confirmButton: Locator;
     private readonly submitButton: Locator;
+    private readonly ignoreWarningAndGoButton: Locator;
     private readonly cancelHyperlink: Locator;
     private readonly spinner: Locator;
 
@@ -20,6 +21,7 @@ export abstract class BaseJourneyPage {
         this.continueButton = page.getByRole('button', { name: 'Continue' });
         this.previousButton = page.getByRole('button', { name: 'Previous' });
         this.confirmButton = page.getByRole('button', { name: 'Confirm' });
+        this.ignoreWarningAndGoButton = page.getByRole('button', { name: 'Ignore Warning and Go' });
         this.cancelHyperlink = page.getByRole('link', { name: 'Cancel' });
         this.spinner = this.page.locator("xuilib-loading-spinner");
 
@@ -58,7 +60,15 @@ export abstract class BaseJourneyPage {
         await this.page.waitForLoadState();
         await expect(this.previousButton).toBeVisible();
         await expect(this.previousButton).toBeEnabled();
-        await this.continueButton.click();
+        await this.previousButton.click();
+        await this.waitForSpinner();
+    }
+
+    async navigateIgnoreWarningAndGo() {
+        await this.page.waitForLoadState();
+        await expect(this.ignoreWarningAndGoButton).toBeVisible();
+        await expect(this.ignoreWarningAndGoButton).toBeEnabled();
+        await this.ignoreWarningAndGoButton.click();
         await this.waitForSpinner();
     }
 

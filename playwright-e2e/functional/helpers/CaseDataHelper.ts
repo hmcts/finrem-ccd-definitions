@@ -97,7 +97,7 @@ export class CaseDataHelper {
       true);
   }
 
-  static async createBaseContestedFromA(): Promise<string> {
+  static async createBaseContestedFormA(): Promise<string> {
     return await this.createCase(      
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
