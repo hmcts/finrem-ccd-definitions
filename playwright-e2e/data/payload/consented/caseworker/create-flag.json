@@ -1,0 +1,100 @@
+{
+    "caseFlags": {
+      "roleOnCase": "Case",
+      "partyName": "Case",
+      "groupId": null,
+      "visibility": null,
+      "details": [
+        {
+          "id": "0e908fb0-ad97-4c36-b5e0-7308c7839ef0",
+          "value": {
+            "name": "Complex Case",
+            "path": [
+              {
+                "id": "5209e0c8-9d2b-4c31-80b2-81a50c38191b",
+                "value": "Case"
+              }
+            ],
+            "status": "Active",
+            "name_cy": "Achos Cymhleth",
+            "flagCode": "CF0002",
+            "subTypeKey": null,
+            "flagComment": "Test case",
+            "subTypeValue": null,
+            "flagComment_cy": null,
+            "dateTimeCreated": "2025-05-02T12:11:58.185Z",
+            "hearingRelevant": "Yes",
+            "subTypeValue_cy": null,
+            "otherDescription": null,
+            "availableExternally": "No",
+            "otherDescription_cy": null
+          }
+        }
+      ]
+    },
+    "applicantFlags": {
+      "roleOnCase": "Applicant",
+      "partyName": "Frodo Baggins",
+      "groupId": null,
+      "visibility": null,
+      "details": [
+        {
+          "id": "0560e7f9-fd9f-4843-b9d2-b567073248d1",
+          "value": {
+            "name": "Vulnerable user",
+            "path": [
+              {
+                "id": "d28df8f8-e104-4217-8d1c-b9c1b3114060",
+                "value": "Party"
+              }
+            ],
+            "status": "Active",
+            "name_cy": "Defnyddiwr bregus",
+            "flagCode": "PF0002",
+            "subTypeKey": null,
+            "flagComment": "Test applicant",
+            "subTypeValue": null,
+            "flagComment_cy": null,
+            "dateTimeCreated": "2025-05-02T12:12:01.461Z",
+            "hearingRelevant": "Yes",
+            "subTypeValue_cy": null,
+            "otherDescription": null,
+            "availableExternally": "No",
+            "otherDescription_cy": null
+          }
+        }
+      ]
+    },
+    "respondentFlags": {
+      "roleOnCase": "Respondent",
+      "partyName": "Smeagol Gollum",
+      "groupId": null,
+      "visibility": null,
+      "details": [
+        {
+          "value": {
+            "name": "Other",
+            "name_cy": "Arall",
+            "subTypeValue": null,
+            "subTypeValue_cy": null,
+            "subTypeKey": null,
+            "otherDescription": "Other Flag Type",
+            "otherDescription_cy": null,
+            "flagComment": "Test respondent",
+            "flagComment_cy": null,
+            "dateTimeCreated": "2025-05-02T12:12:05.227Z",
+            "path": [
+              {
+                "id": null,
+                "value": "Party"
+              }
+            ],
+            "hearingRelevant": "Yes",
+            "flagCode": "OT0001",
+            "status": "Active",
+            "availableExternally": "Yes"
+          }
+        }
+      ]
+    }
+  }
