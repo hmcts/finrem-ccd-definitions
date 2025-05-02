@@ -78,5 +78,9 @@ export const contestedEvents: Record<string, CaseEvent> = {
     createGeneralApplication: {
         listItem: "Create General Application",
         ccdCallback: "createGeneralApplication"
+    },
+    listForInterimHearing: {
+        listItem: "List for Interim Hearing",
+        ccdCallback: "FR_listForInterimHearing"
     }
 };
