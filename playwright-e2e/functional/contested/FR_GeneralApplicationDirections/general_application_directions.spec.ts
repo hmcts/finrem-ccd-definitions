@@ -8,7 +8,7 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 async function createAndProcessFormACase(): Promise<string> {
   const caseId = await CaseDataHelper.createBaseContestedFormA();
   await PayloadHelper.solicitorSubmitFormACase(caseId);
-  await PayloadHelper.caseWorkerIssueApplication(caseId);
+  await PayloadHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
   return caseId;
 }
 
@@ -18,7 +18,7 @@ async function createAndProcessPaperCase(): Promise<string> {
   return caseId;
 }
 
-async function performGeneralApplicationFlow(
+async function performGeneralApplicationDirectionsFlow(
   caseId: string,
   loginPage: any,
   manageCaseDashboardPage: any,
@@ -77,7 +77,7 @@ test.describe('Contested - Create General application', () => {
       testInfo
     ) => {
       const caseId = await createAndProcessFormACase();
-      await performGeneralApplicationFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
       // Next:
       // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
       // Run method that converts this old hearing type to new hearing type format
@@ -99,7 +99,7 @@ test.describe('Contested - Create General application', () => {
       testInfo
     ) => {
       const caseId = await createAndProcessPaperCase();
-      await performGeneralApplicationFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
       // Next: 
       // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
       // Run method that converts this old hearing type to new hearing type format

@@ -1,0 +1,46 @@
+{
+    "generalApplications": [
+        {
+            "value": {
+                "generalApplicationSender": {
+                    "value": {
+                        "code": "Applicant",
+                        "label": "Applicant"
+                    },
+                    "list_items": [
+                        {
+                            "code": "Applicant",
+                            "label": "Applicant"
+                        },
+                        {
+                            "code": "Respondent",
+                            "label": "Respondent"
+                        },
+                        {
+                            "code": "Case",
+                            "label": "Case"
+                        }
+                    ]
+                },
+                "generalApplicationHearingRequired": "No",
+                "generalApplicationTimeEstimate": null,
+                "generalApplicationSpecialMeasures": null,
+                "generalApplicationReceivedFrom": null,
+                "appRespGeneralApplicationReceivedFrom": null,
+                "generalApplicationCreatedBy": null,
+                "generalApplicationCreatedDate": null,
+                "generalApplicationStatus": null,
+                "generalApplicationOutcomeOther": null,
+                "generalApplicationDocument": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/e3ee973a-5d6c-41d1-ade6-e142f24a3126",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/e3ee973a-5d6c-41d1-ade6-e142f24a3126/binary",
+                    "document_filename": "3.pdf"
+                },
+                "gaSupportDocuments": []
+            },
+            "id": "fd388fb0-c0cf-4ece-9bf5-df00c636bf4f"
+        }
+    ],
+    "generalApplicationTracking": null,
+    "currentUserCaseRoleType": "case"
+}

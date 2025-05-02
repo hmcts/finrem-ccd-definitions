@@ -1,6 +1,8 @@
 import fs from 'fs';
+import path from 'path';
 import { updateCaseInCcd } from '../../../test/helpers/utils';
 import config from '../../config/config';
+import { CaseDataHelper } from './CaseDataHelper';
 
 export class PayloadHelper {
 
@@ -61,6 +63,37 @@ export class PayloadHelper {
     await this.updateCaseWorkerSteps(caseId, [
       { event: 'FR_allocateToJudge' }
     ]);
+  }
+
+  static async caseWorkerProgressToCreateGeneralApplication(caseId: string) {
+    await this.caseWorkerIssueApplication(caseId);
+    await this.updateCaseWorkerSteps(caseId, [
+      { event: 'createGeneralApplication', payload: './playwright-e2e/data/payload/contested/caseworker/create-general-application/applicant-no-hearing-no-optional.json' }
+    ]);
+  }
+
+  static async caseWorkerProgressToGeneralApplicationOutcome(caseId: string) {
+    await this.caseWorkerIssueApplication(caseId);
+    const response = await updateCaseInCcd(
+      config.applicant_solicitor.email,
+      config.applicant_solicitor.password,
+      caseId,
+      'FinancialRemedyContested',
+      'createGeneralApplication',
+      './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/1.create-general-application.json'
+    );
+
+    const generalApplicationId = response.case_data.appRespGeneralApplications[0].id;
+
+    // Todo: Make an JSON object, looks like your file, with the dynamic id.  then pass to new updateCaseInCcdFromJSON file.
+
+    // await this.updateCaseWorkerSteps(caseId, [
+    //   { event: 'FR_generalApplicationReferToJudge', payload: replacement }
+    // ]);
+    // await this.caseWorkerProgressToReferToJudge(caseId);
+    // await this.updateCaseWorkerSteps(caseId, [
+    //   { event: 'FR_GeneralApplicationOutcome', payload: './playwright-e2e/data/payload/contested/caseworker/general-application-outcome.json' }
+    // ]);
   }
 
   /**
