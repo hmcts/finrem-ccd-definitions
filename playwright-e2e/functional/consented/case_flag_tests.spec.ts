@@ -62,7 +62,7 @@ test.describe('Consented Case Flag Tests', () => {
   test(
     'Consented - Caseworker manage case flag',
     { tag: [] },
-    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage }) => {
+    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageFlagPage }) => {
       // Create and setup case
       const caseId = await CaseDataHelper.createBaseContestedFormA();
       await PayloadHelper.solicitorSubmitFormACase(caseId);
@@ -72,6 +72,14 @@ test.describe('Consented Case Flag Tests', () => {
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
+
+      // Helper function to manage a flag
+      async function manageFlag(flagType: 'case' | 'applicant' | 'respondent', flagSelection: () => Promise<void>, comments: string) {
+        await caseDetailsPage.selectNextStep(consentedEvents.ManageFlag);
+        await manageFlagPage.selectFlagType(flagType);
+        await manageFlagPage.navigateContinue();
+        
+      }
 
       
     }

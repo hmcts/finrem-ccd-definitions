@@ -1,3 +1,5 @@
+import { manageFlags } from "../../test/functional/pages/manage-flags/manage-case-flags";
+
 export interface CaseEvent {
     listItem: string;
     ccdCallback: string;
@@ -35,6 +37,10 @@ export const consentedEvents: Record<string, CaseEvent> = {
     CreateFlag: {
         listItem: "Create Flag",
         ccdCallback: "createFlags"
+    },
+    manageFlags: {
+        listItem: "Manage Flags",
+        ccdCallback: "manageFlags"
     }
 };
 
