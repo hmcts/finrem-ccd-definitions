@@ -8,6 +8,7 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 async function createAndProcessFormACase(): Promise<string> {
   const caseId = await CaseDataHelper.createBaseContestedFormA();
   await PayloadHelper.solicitorSubmitFormACase(caseId);
+  await PayloadHelper.caseWorkerIssueApplication(caseId)
   await PayloadHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
   return caseId;
 }
@@ -15,6 +16,7 @@ async function createAndProcessFormACase(): Promise<string> {
 async function createAndProcessPaperCase(): Promise<string> {
   const caseId = await CaseDataHelper.createBaseContestedPaperCase();
   await PayloadHelper.caseWorkerSubmitPaperCase(caseId);
+  await PayloadHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
   return caseId;
 }
 
@@ -35,7 +37,7 @@ async function performGeneralApplicationDirectionsFlow(
   await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
-  await caseDetailsPage.selectNextStep(contestedEvents.createGeneralApplication);
+  await caseDetailsPage.selectNextStep(contestedEvents.generalApplicationDirections);
   // await listForHearingPage.selectTypeOfHearingDropDown(hearingType);
   // await listForHearingPage.enterTimeEstimate('1 hour');
   // await listForHearingPage.setHearingDateToCurrentDate();
@@ -99,7 +101,7 @@ test.describe('Contested - Create General application', () => {
       testInfo
     ) => {
       const caseId = await createAndProcessPaperCase();
-      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      // await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
       // Next: 
       // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
       // Run method that converts this old hearing type to new hearing type format

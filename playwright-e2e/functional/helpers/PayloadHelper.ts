@@ -1,8 +1,6 @@
 import fs from 'fs';
-import path from 'path';
 import { updateCaseInCcd } from '../../../test/helpers/utils';
 import config from '../../config/config';
-import { CaseDataHelper } from './CaseDataHelper';
 import { updateCaseInCcdFromJSON, makeModifications } from '../../../test/helpers/utils';
 
 export class PayloadHelper {
@@ -77,7 +75,6 @@ export class PayloadHelper {
    */
   static caseWorkerProgressToCreateGeneralApplication(caseId: string): Promise<string> {
     return (async () => {
-      await this.caseWorkerIssueApplication(caseId);
       const response = await updateCaseInCcd(
         config.applicant_solicitor.email,
         config.applicant_solicitor.password,
@@ -144,7 +141,7 @@ export class PayloadHelper {
 
     // Load the JSON file and modify it to consider the new general application ID
     const generalOutcomeJsonObject = await this.createUpdatedJsonObjectFromFile(
-      './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/3.general-application-outcome.json',
+      './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/outcome-is-other.json',
       outcomeListDataModifications
     );
 
