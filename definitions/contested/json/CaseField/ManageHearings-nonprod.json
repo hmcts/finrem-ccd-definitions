@@ -1,0 +1,31 @@
+[
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageHearingsActionSelection",
+    "Label": "What would you like to do?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_ManageHearingAction",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }, 
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingToAdd",
+    "Label": "Hearing to add",
+    "FieldType": "FR_manageHearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageHearings",
+    "Label": "Hearings",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageHearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }
+]
