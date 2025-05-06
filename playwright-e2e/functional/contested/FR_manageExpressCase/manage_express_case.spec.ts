@@ -6,9 +6,9 @@ import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 
 async function createAndProcessFormACase(isExpressPilot: boolean = false): Promise<string> {
   const caseId = isExpressPilot ? await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled() :
-   await CaseDataHelper.createBaseContestedFromA();
+   await CaseDataHelper.createBaseContestedFormA();
 
-  await PayloadHelper.solicitorSubmitFromACase(caseId);
+  await PayloadHelper.solicitorSubmitFormACase(caseId);
   await PayloadHelper.caseWorkerIssueApplication(caseId);
   return caseId;
 }

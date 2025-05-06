@@ -18,8 +18,8 @@ test(
     giveAllocationDirectionsPage
   }
   ) => {
-    const caseId = await CaseDataHelper.createBaseContestedFromA();
-    await PayloadHelper.solicitorSubmitFromACase(caseId);
+    const caseId = await CaseDataHelper.createBaseContestedFormA();
+    await PayloadHelper.solicitorSubmitFormACase(caseId);
     await PayloadHelper.caseworkerAllocateToJudge(caseId);
 
     await manageCaseDashboardPage.visit();
