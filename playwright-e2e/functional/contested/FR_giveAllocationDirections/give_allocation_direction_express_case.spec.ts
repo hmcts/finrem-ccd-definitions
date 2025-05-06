@@ -8,9 +8,9 @@ import { expressCaseGateKeepingTabDataJudgeAllocation } from '../../../data/tab_
 
 async function createAndProcessFormACase(isExpressPilot: boolean): Promise<string> {
   const caseId = isExpressPilot ? await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled() :
-   await CaseDataHelper.createBaseContestedFromA();
+   await CaseDataHelper.createBaseContestedFormA();
 
-   await PayloadHelper.solicitorSubmitFromACase(caseId);
+   await PayloadHelper.solicitorSubmitFormACase(caseId);
    await PayloadHelper.caseworkerAllocateToJudge(caseId);
   return caseId;
 }

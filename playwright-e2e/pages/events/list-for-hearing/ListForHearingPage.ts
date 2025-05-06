@@ -1,5 +1,7 @@
 import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
+import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
+import { YesNoRadioEnum } from "../../helpers/enums/RadioEnums";
 
 export class ListForHearingPage extends BaseJourneyPage {
     private readonly listForHearingTitle: Locator;
@@ -25,12 +27,18 @@ export class ListForHearingPage extends BaseJourneyPage {
     private readonly courtZoneDropDown: Locator;
     private frcDropDown: Locator;
     private courtListDropDown: Locator
-
     private readonly courtRegion: string = 'Midlands'
     private readonly courtFrc: string = 'Nottingham'
+    private readonly additionalInformationAboutHearing: Locator;
+    private readonly hearingDocUpload: Locator;
+    private readonly additionalHearingDocumentsRadio: Locator;
+    private readonly commonActionsHelper: CommonActionsHelper;
     
-    public constructor(page: Page) {
+    public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
+        this.commonActionsHelper = commonActionsHelper;
+
+        this.listForHearingTitle = page.getByRole('heading', { name: 'List for Hearing' });
         this.listForHearingTitle = page.getByRole('heading', { name: 'List for Hearing' });
         this.typeOfHearingHeader = page.getByText('Type of Hearing')
         this.typeOfHearing = page.getByLabel('Type of Hearing');
@@ -52,6 +60,9 @@ export class ListForHearingPage extends BaseJourneyPage {
         this.fastTrackWarning = page.getByText('Date of the Fast Track hearing must be between 6 and 10 weeks.');
         this.hearingCourtHeading = page.getByRole('heading', { name: 'Hearing Court' });
         this.courtZoneDropDown = page.locator('#hearing_regionList');
+        this.additionalInformationAboutHearing = page.locator('#additionalInformationAboutHearing');
+        this.hearingDocUpload = page.locator('input#additionalListOfHearingDocuments');
+        this.additionalHearingDocumentsRadio = page.locator('#additionalHearingDocumentsOption');
     }
     
     async selectTypeOfHearingDropDown(typeOfHearing: string) {
@@ -117,4 +128,21 @@ export class ListForHearingPage extends BaseJourneyPage {
         await expect(this.ignoreWarningAndGo).toBeVisible();
         await this.ignoreWarningAndGo.click();
     }
+
+    async enterAdditionalInformationAboutHearing(){
+        await expect(this.additionalInformationAboutHearing).toBeVisible();
+        await this.additionalInformationAboutHearing.fill('Some additional information');
+    }
+
+    async whetherToUploadOtherDocuments(yesOrNo: YesNoRadioEnum){
+        const optionToSelect = this.additionalHearingDocumentsRadio.getByLabel(yesOrNo);
+        await optionToSelect.check();
+    }
+
+    async uploadOtherDocuments(){
+        await expect(this.hearingDocUpload).toBeVisible();
+        await this.hearingDocUpload.setInputFiles('./playwright-e2e/data/test.pdf');
+        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+    }
 }
+
