@@ -187,35 +187,9 @@ async function makeModifications(dataModifications, data) {
 }
 
 async function updateCaseInCcd(userName, password, caseId, caseType, eventId, dataLocation, shareCaseRef) {
-  const authToken = await getUserToken(userName, password);
-  const userId = await getUserId(authToken);
-  const serviceToken = await getServiceToken();
-
-  logger.info('Updating case with id %s and event %s', caseId, eventId);
-
-  const frCaseType = caseType;
-  const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases/${caseId}/event-triggers/${eventId}/token`;
-  const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${frCaseType}/cases/${caseId}/events`;
-
-  const eventToken = await getStartEventToken(ccdStartEventPath, ccdSaveEventPath, authToken, serviceToken);
-
-  const data = dataLocation ? fs.readFileSync(dataLocation) : '{}';
-  let updatedData = JSON.stringify(JSON.parse(data));
-  updatedData = updatedData.replace('ReplaceForShareCase', shareCaseRef);
-
-  const payload =  {
-    data: JSON.parse(updatedData),
-    event: {
-      id: `${eventId}`,
-      summary: 'Updating Case',
-      description: 'For CCD E2E Test'
-    },
-    event_token: eventToken
-  };
-
-  const saveCaseResponse = await saveCase(ccdSaveEventPath, authToken, serviceToken, payload);
-  logger.info('Updated case with id %s and event %s', caseId, eventId);
-  return saveCaseResponse.data;
+  const data = dataLocation ? fs.readFileSync(dataLocation, 'utf8') : '{}';
+  const parsed = JSON.parse(data);
+  return await updateCaseInCcdFromJSONObject(userName, password, caseId, caseType, eventId, parsed, shareCaseRef);
 }
 
 async function updateCaseInCcdFromJSONObject(userName, password, caseId, caseType, eventId, jsonObject, shareCaseRef) {
@@ -232,9 +206,7 @@ async function updateCaseInCcdFromJSONObject(userName, password, caseId, caseTyp
   const eventToken = await getStartEventToken(ccdStartEventPath, ccdSaveEventPath, authToken, serviceToken);
 
   let updatedData = JSON.stringify(jsonObject);
-  if (shareCaseRef) {
-    updatedData = updatedData.replace('ReplaceForShareCase', shareCaseRef);
-  }
+  updatedData = updatedData.replace('ReplaceForShareCase', shareCaseRef);
 
   const payload = {
     data: JSON.parse(updatedData),
