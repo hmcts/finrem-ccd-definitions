@@ -66,48 +66,75 @@ export class PayloadHelper {
     ]);
   }
 
-  static async caseWorkerProgressToCreateGeneralApplication(caseId: string) {
-    await this.caseWorkerIssueApplication(caseId);
-    await this.updateCaseWorkerSteps(caseId, [
-      { event: 'createGeneralApplication', payload: './playwright-e2e/data/payload/contested/caseworker/create-general-application/applicant-no-hearing-no-optional.json' }
-    ]);
+  /**
+   * Progresses a case to the Create General Application state.
+   *
+   * CCD generates a General Application ID during this process,
+   * which is extracted from the response and returned as a Promise.
+   *
+   * @param caseId - The CCD case ID to update
+   * @returns A Promise that resolves to the generated General Application ID (string)
+   */
+  static caseWorkerProgressToCreateGeneralApplication(caseId: string): Promise<string> {
+    return (async () => {
+      await this.caseWorkerIssueApplication(caseId);
+      const response = await updateCaseInCcd(
+        config.applicant_solicitor.email,
+        config.applicant_solicitor.password,
+        caseId,
+        'FinancialRemedyContested',
+        'createGeneralApplication',
+        './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/1.create-general-application.json'
+      );
+
+      return response.case_data.appRespGeneralApplications[0].id;
+    })();
   }
 
+  /**
+   * Progresses a case to the "Refer to Judge (Application)" state for a general application.
+   * Modifies a JSON payload with the dynamically generated general application ID
+   * and submits it via CCD API.
+   *
+   * @param caseId - The CCD case ID to update
+   * @returns A Promise that resolves to the general application ID (string)
+   */
+  static caseworkerProgressToGeneralApplicationReferToJudge(caseId: string): Promise<string> {
+    return (async () => {
+      const generalApplicationId = await this.caseWorkerProgressToCreateGeneralApplication(caseId);
+
+      const referListDataModifications = [
+        { action: 'insert', key: 'generalApplicationReferList.value.code', value: generalApplicationId },
+        { action: 'insert', key: 'generalApplicationReferList.list_items[0].code', value: generalApplicationId }
+      ];
+
+      const referToJudgeJsonObject = await this.createUpdatedJsonObjectFromFile(
+        './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/2.refer-to-judge.json',
+        referListDataModifications
+      );
+
+      await updateCaseInCcdFromJSON(
+        config.caseWorker.email,
+        config.caseWorker.password,
+        caseId,
+        'FinancialRemedyContested',
+        'FR_generalApplicationReferToJudge',
+        referToJudgeJsonObject
+      );
+
+      return generalApplicationId;
+    })();
+  }
+
+  /**
+   * Progresses a case to the "General Application Outcome" state.
+   * Modifies a JSON payload with the dynamically generated general application ID
+   * and submits it via CCD API.
+   *
+   * @param caseId - The CCD case ID to update
+   */
   static async caseWorkerProgressToGeneralApplicationOutcome(caseId: string) {
-    await this.caseWorkerIssueApplication(caseId);
-    const response = await updateCaseInCcd(
-      config.applicant_solicitor.email,
-      config.applicant_solicitor.password,
-      caseId,
-      'FinancialRemedyContested',
-      'createGeneralApplication',
-      './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/1.create-general-application.json'
-    );
-
-    // CCD generates an ID for the general application. We need to use this ID in the next step.
-    const generalApplicationId = response.case_data.appRespGeneralApplications[0].id;
-
-    // Create a modification object to update the JSON file with the new general application ID
-    const referListDataModifications = [
-      { action: 'insert', key: 'generalApplicationReferList.value.code', value: generalApplicationId },
-      { action: 'insert', key: 'generalApplicationReferList.list_items[0].code', value: generalApplicationId }
-    ];
-
-    // Load the JSON file and modify it to consider the new general application ID
-    const referToJudgeJsonObject = await this.createUpdatedJsonObjectFromFile(
-      './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/2.refer-to-judge.json',
-      referListDataModifications
-    );
-
-    // Run the FR_generalApplicationReferToJudge with the modified JSON object using the new general application ID
-    await updateCaseInCcdFromJSON(
-      config.caseWorker.email,
-      config.caseWorker.password,
-      caseId,
-      'FinancialRemedyContested',
-      'FR_generalApplicationReferToJudge',
-      referToJudgeJsonObject
-    );
+    const generalApplicationId = await this.caseworkerProgressToGeneralApplicationReferToJudge(caseId);
 
     // Create a modification object to update the JSON file with the new general application ID
     const outcomeListDataModifications = [
@@ -118,7 +145,7 @@ export class PayloadHelper {
     // Load the JSON file and modify it to consider the new general application ID
     const generalOutcomeJsonObject = await this.createUpdatedJsonObjectFromFile(
       './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/3.general-application-outcome.json',
-      referListDataModifications
+      outcomeListDataModifications
     );
 
     // Run the FR_generalApplicationReferToJudge with the modified JSON object using the new general application ID
