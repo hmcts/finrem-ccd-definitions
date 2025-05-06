@@ -3,6 +3,7 @@ import path from 'path';
 import { updateCaseInCcd } from '../../../test/helpers/utils';
 import config from '../../config/config';
 import { CaseDataHelper } from './CaseDataHelper';
+import { updateCaseInCcdFromJSON, makeModifications } from '../../../test/helpers/utils';
 
 export class PayloadHelper {
 
@@ -83,17 +84,52 @@ export class PayloadHelper {
       './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/1.create-general-application.json'
     );
 
+    // CCD generates an ID for the general application. We need to use this ID in the next step.
     const generalApplicationId = response.case_data.appRespGeneralApplications[0].id;
 
-    // Todo: Make an JSON object, looks like your file, with the dynamic id.  then pass to new updateCaseInCcdFromJSON file.
+    // Create a modification object to update the JSON file with the new general application ID
+    const referListDataModifications = [
+      { action: 'insert', key: 'generalApplicationReferList.value.code', value: generalApplicationId },
+      { action: 'insert', key: 'generalApplicationReferList.list_items[0].code', value: generalApplicationId }
+    ];
 
-    // await this.updateCaseWorkerSteps(caseId, [
-    //   { event: 'FR_generalApplicationReferToJudge', payload: replacement }
-    // ]);
-    // await this.caseWorkerProgressToReferToJudge(caseId);
-    // await this.updateCaseWorkerSteps(caseId, [
-    //   { event: 'FR_GeneralApplicationOutcome', payload: './playwright-e2e/data/payload/contested/caseworker/general-application-outcome.json' }
-    // ]);
+    // Load the JSON file and modify it to consider the new general application ID
+    const referToJudgeJsonObject = await this.createUpdatedJsonObjectFromFile(
+      './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/2.refer-to-judge.json',
+      referListDataModifications
+    );
+
+    // Run the FR_generalApplicationReferToJudge with the modified JSON object using the new general application ID
+    await updateCaseInCcdFromJSON(
+      config.caseWorker.email,
+      config.caseWorker.password,
+      caseId,
+      'FinancialRemedyContested',
+      'FR_generalApplicationReferToJudge',
+      referToJudgeJsonObject
+    );
+
+    // Create a modification object to update the JSON file with the new general application ID
+    const outcomeListDataModifications = [
+      { action: 'insert', key: 'generalApplicationOutcomeList.value.code', value: generalApplicationId },
+      { action: 'insert', key: 'generalApplicationOutcomeList.list_items[0].code', value: generalApplicationId }
+    ];
+
+    // Load the JSON file and modify it to consider the new general application ID
+    const generalOutcomeJsonObject = await this.createUpdatedJsonObjectFromFile(
+      './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/3.general-application-outcome.json',
+      referListDataModifications
+    );
+
+    // Run the FR_generalApplicationReferToJudge with the modified JSON object using the new general application ID
+    await updateCaseInCcdFromJSON(
+      config.caseWorker.email,
+      config.caseWorker.password,
+      caseId,
+      'FinancialRemedyContested',
+      'FR_GeneralApplicationOutcome',
+      generalOutcomeJsonObject
+    );
   }
 
   /**
@@ -111,5 +147,19 @@ export class PayloadHelper {
       mimeType: 'application/pdf',
       buffer: fileBuffer
     };
+  }
+
+  /**
+    * Loads a JSON file, applies the given modifications, and returns an updated JSON object.
+   *
+    * @param filePath - Path to the JSON file
+    * @param dataModifications - How the JSON needs changing
+    * @returns Updated json as an object
+    */
+  static async createUpdatedJsonObjectFromFile(filePath: string, dataModifications: { action: string, key: string, value: string }[]): Promise<string> {
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const json = JSON.parse(fileContent);
+    await makeModifications(dataModifications, json);
+    return json;
   }
 }
