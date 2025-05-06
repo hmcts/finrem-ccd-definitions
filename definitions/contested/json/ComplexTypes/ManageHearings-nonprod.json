@@ -102,5 +102,23 @@
     "ElementLabel": "Who should receive this order?",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_manageHearingDocument",
+    "ListElementCode": "manageHearingId",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_manageHearingDocument",
+    "ListElementCode": "manageHearingDocument",
+    "FieldType": "Document",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
