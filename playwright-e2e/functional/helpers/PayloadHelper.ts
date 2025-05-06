@@ -76,12 +76,12 @@ export class PayloadHelper {
   static caseWorkerProgressToCreateGeneralApplication(caseId: string): Promise<string> {
     return (async () => {
       const response = await updateCaseInCcd(
-        config.applicant_solicitor.email,
-        config.applicant_solicitor.password,
+        config.caseWorker.email,
+        config.caseWorker.password,
         caseId,
         'FinancialRemedyContested',
         'createGeneralApplication',
-        './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/1.create-general-application.json'
+        './playwright-e2e/data/payload/contested/caseworker/create-general-application/sender-is-applicant.json'
       );
 
       return response.case_data.appRespGeneralApplications[0].id;
@@ -106,7 +106,7 @@ export class PayloadHelper {
       ];
 
       const referToJudgeJsonObject = await this.createUpdatedJsonObjectFromFile(
-        './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/2.refer-to-judge.json',
+        './playwright-e2e/data/payload/contested/caseworker/refer-to-judge/judge-email-is-null.json',
         referListDataModifications
       );
 

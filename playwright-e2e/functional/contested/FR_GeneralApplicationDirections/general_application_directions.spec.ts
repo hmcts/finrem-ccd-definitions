@@ -25,7 +25,7 @@ async function performGeneralApplicationDirectionsFlow(
   loginPage: any,
   manageCaseDashboardPage: any,
   caseDetailsPage: any,
-  listForHearingPage: any,
+  generalApplicationDirectionsPage: any,
   testInfo: any,
   makeAxeBuilder: any
 ): Promise<void> {
@@ -33,24 +33,11 @@ async function performGeneralApplicationDirectionsFlow(
   const courtName = "CHESTERFIELD COUNTY COURT";
 
   await manageCaseDashboardPage.visit();
-  // General applications can be created as Caseworker or Solicitor.  Caseworker has 1 extra option to say 'Application received from "Case"'.
   await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
   await caseDetailsPage.selectNextStep(contestedEvents.generalApplicationDirections);
-  // await listForHearingPage.selectTypeOfHearingDropDown(hearingType);
-  // await listForHearingPage.enterTimeEstimate('1 hour');
-  // await listForHearingPage.setHearingDateToCurrentDate();
-  // await listForHearingPage.verifyHearingDateGuidanceMessages();
-  // await listForHearingPage.enterHearingTime('10:00');
-  // await listForHearingPage.selectCourtForHearing(courtName);
-  // await listForHearingPage.enterAdditionalInformationAboutHearing();
-  // await listForHearingPage.whetherToUploadOtherDocuments(YesNoRadioEnum.YES);
-  // await listForHearingPage.uploadOtherDocuments();
-  // await listForHearingPage.navigateContinue();
-  // await listForHearingPage.navigateSubmit();
-  // await listForHearingPage.navigateIgnoreWarningAndGo();
-  // await caseDetailsPage.checkHasBeenUpdated('List for Hearing');
+  await generalApplicationDirectionsPage.chooseWhetherAHearingIsRequired(YesNoRadioEnum.YES);
 
   if (config.run_accessibility) {
     const accessibilityScanResults = await makeAxeBuilder().analyze();
@@ -66,46 +53,46 @@ async function performGeneralApplicationDirectionsFlow(
 
 test.describe('Contested - Create General application', () => {
   test(
-    'Form A case creating general application',
+    'Form A case creating a hearing from general application directions',
     { tag: [] },
     async (
       {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        listForHearingPage,
+        generalApplicationDirectionsPage,
         makeAxeBuilder,
       },
       testInfo
     ) => {
       const caseId = await createAndProcessFormACase();
-      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
-      // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
-      // Run method that converts this old hearing type to new hearing type format
-      // Run tab test to confirm that all the correct hearing information shows on the new hearing tab
+      // When add hearing complete, then use that page structure to build and test from this point
     }
   );
 
   test(
-    'Paper Case creating general application',
+    'Paper Case creating a hearing from general application directions',
     { tag: [] },
     async (
       {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        listForHearingPage,
+        generalApplicationDirectionsPage,
         makeAxeBuilder,
       },
       testInfo
     ) => {
       const caseId = await createAndProcessPaperCase();
-      // await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      // Next: 
-      // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
-      // Run method that converts this old hearing type to new hearing type format
-      // Run tab test to confirm that all the correct hearing information shows on the new hearing tab
+      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
+      // Next:
+      // When add hearing complete, then use that page structure to build and test from this point
     }
+
+
+    // Todo.  From a regression testing perpsective, I will create old style hearings via the API to test migration.
+
   );
 });
