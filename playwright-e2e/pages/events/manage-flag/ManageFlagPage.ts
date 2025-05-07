@@ -1,4 +1,4 @@
-import { expect, Locator, Page } from '@playwright/test';
+import { type Page, expect, Locator } from '@playwright/test';
 import { CreateFlagPage } from '../create-flag/CreateFlagPage';
 
 interface FlagDetails {
@@ -9,11 +9,13 @@ interface FlagDetails {
 export class ManageFlagPage extends CreateFlagPage {
     private readonly manageFlagsHeading: Locator;
     private readonly manageCaseFlagsSubHeading: Locator;
+    private readonly makeInactiveButton: Locator;
 
     public constructor(page: Page) {
         super(page);
         this.manageFlagsHeading = page.getByRole('heading', { name: 'Manage Flags' });
         this.manageCaseFlagsSubHeading = page.getByRole('heading', { name: 'Manage case flags' });
+        this.makeInactiveButton = page.getByRole('button', { name: 'Make inactive' });
     }
 
     // Dynamic locator methods
@@ -36,5 +38,14 @@ export class ManageFlagPage extends CreateFlagPage {
 
     async selectPartyFlag(partyName: string, partyType: 'Applicant' | 'Respondent', flagType: string, comment: string): Promise<void> {
         await this.getPartyFlagRadio(partyName, partyType, { type: flagType, comment: comment }).click();
+    }
+
+    async updateFlagComment(flagName: string, comment: string): Promise<void> {
+        const flagCommentLocator = this.page.getByRole('textbox', { name: `Update flag "${flagName}"` });
+        await flagCommentLocator.fill(comment);
+    }
+    async makeFlagInactive(): Promise<void> {
+        await expect(this.makeInactiveButton).toBeVisible();
+        await this.makeInactiveButton.click();
     }
 }
