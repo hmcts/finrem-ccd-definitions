@@ -49,3 +49,4 @@ export class ManageFlagPage extends CreateFlagPage {
         await this.makeInactiveButton.click();
     }
 }
+
