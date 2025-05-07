@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { updateCaseInCcd } from '../../../test/helpers/utils';
 import config from '../../config/config';
-import { updateCaseInCcdFromJSON, makeModifications } from '../../../test/helpers/utils';
+import { updateCaseInCcdFromJSONObject, makeModifications } from '../../../test/helpers/utils';
 
 export class PayloadHelper {
 
@@ -107,7 +107,7 @@ export class PayloadHelper {
       referListDataModifications
     );
 
-    await updateCaseInCcdFromJSON(
+    await updateCaseInCcdFromJSONObject(
       config.caseWorker.email,
       config.caseWorker.password,
       caseId,
@@ -142,7 +142,7 @@ export class PayloadHelper {
     );
 
     // Run the FR_generalApplicationReferToJudge with the modified JSON object using the new general application ID
-    await updateCaseInCcdFromJSON(
+    await updateCaseInCcdFromJSONObject(
       config.caseWorker.email,
       config.caseWorker.password,
       caseId,
@@ -180,7 +180,7 @@ export class PayloadHelper {
     );
 
     // Run the FR_generalApplicationReferToJudge with the modified JSON object using the new general application ID
-    await updateCaseInCcdFromJSON(
+    await updateCaseInCcdFromJSONObject(
       config.caseWorker.email,
       config.caseWorker.password,
       caseId,

@@ -231,4 +231,4 @@ function createCaseworkerReference() {
   return 'CA' + date().valueOf();
 }
 
-module.exports = { createCaseInCcd, updateCaseInCcd, createSolicitorReference, createCaseworkerReference, updateCaseInCcdFromJSON: updateCaseInCcdFromJSONObject, makeModifications };
+module.exports = { createCaseInCcd, updateCaseInCcd, createSolicitorReference, createCaseworkerReference,updateCaseInCcdFromJSONObject, makeModifications };

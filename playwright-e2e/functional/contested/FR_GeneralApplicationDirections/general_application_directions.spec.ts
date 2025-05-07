@@ -5,7 +5,7 @@ import { contestedEvents } from '../../../config/case_events';
 import { PayloadHelper } from '../../helpers/PayloadHelper';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 
-test.describe('Contested - Create General application', () => {
+test.describe('Contested - General Application Directions', () => {
   test(
     'Form A case creating a hearing from general application directions',
     { tag: [] },
@@ -46,23 +46,25 @@ test.describe('Contested - Create General application', () => {
     }
   );
 
-  test(
+  test.skip(
     'Form A case shows old style hearings on the new hearing tab',
     { tag: [] },
     async () => {
       const caseId = await createOldApplicationDirectionsHearingForFormACase();
       // Next:
       // Check the hearing tab to check that the old hearing data is correctly showing there.
+      // Remove the skip when the test is ready.
     }
   );
 
-  test(
+  test.skip(
     'Paper case shows old style hearings on the new hearing tab',
     { tag: [] },
     async () => {
       const caseId = await createOldApplicationDirectionsHearingForPaperCase();
       // Next:
       // Check the hearing tab to check that the old hearing data is correctly showing there.
+      // Remove the skip when the test is ready.
     }
   );
 
