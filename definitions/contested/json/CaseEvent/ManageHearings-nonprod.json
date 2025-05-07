@@ -1,0 +1,18 @@
+[
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_manageHearings",
+    "Name": "Manage Hearings",
+    "Description": "Manage case hearings",
+    "DisplayOrder": 158,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "N"
+  }
+]
