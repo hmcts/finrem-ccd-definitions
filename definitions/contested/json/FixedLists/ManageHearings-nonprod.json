@@ -17,16 +17,23 @@
     "LiveFrom": "24/04/2025",
     "ID": "FR_ManageHearingMode",
     "ListElementCode": "Video_Call",
-    "ListElement": "Remote - video Call",
+    "ListElement": "Remote - video call",
     "DisplayOrder": 2
   }, 
   {
     "LiveFrom": "24/04/2025",
     "ID": "FR_ManageHearingMode",
     "ListElementCode": "Phone_Call",
-    "ListElement": "Remove - phone Call",
+    "ListElement": "Remote - phone call",
     "DisplayOrder": 3
-  }, 
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "ID": "FR_ManageHearingMode",
+    "ListElementCode": "Hybrid",
+    "ListElement": "Hybrid - in person and remote",
+    "DisplayOrder": 4
+  },
   {
     "LiveFrom": "24/04/2025",
     "ID": "FR_ManageHearingType",
@@ -74,20 +81,20 @@
     "ID": "FR_ManageHearingType",
     "ListElementCode": "Application Hearing",
     "ListElement": "Application Hearing",
-    "DisplayOrder": 6
+    "DisplayOrder": 7
   }, 
   {
     "LiveFrom": "24/04/2025",
     "ID": "FR_ManageHearingType",
     "ListElementCode": "Retrial Hearing",
     "ListElement": "Retrial Hearing",
-    "DisplayOrder": 6
+    "DisplayOrder": 8
   }, 
   {
     "LiveFrom": "24/04/2025",
     "ID": "FR_ManageHearingType",
     "ListElementCode": "Pre-Trial Review",
     "ListElement": "Pre-Trial Review",
-    "DisplayOrder": 6
+    "DisplayOrder": 9
   }
 ]
