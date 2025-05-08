@@ -12,26 +12,26 @@
   {
     "LiveFrom": "24/04/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "workingManageHearing",
+    "ID": "workingHearing",
     "Label": "Hearing to add",
-    "FieldType": "FR_manageHearing",
+    "FieldType": "FR_hearing",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "24/04/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "manageHearings",
+    "ID": "hearings",
     "Label": "Hearings",
     "FieldType": "Collection",
-    "FieldTypeParameter": "FR_manageHearing",
+    "FieldTypeParameter": "FR_hearing",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }, 
   {
     "LiveFrom": "24/04/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "manageHearingDocumentsCollection",
+    "ID": "hearingDocumentsCollection",
     "Label": " ",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_manageHearingDocument",
@@ -41,7 +41,7 @@
   {
     "LiveFrom": "24/04/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "workingManageHearingId",
+    "ID": "workingHearingId",
     "Label": " ",
     "FieldType": "Text",
     "SecurityClassification": "Public",
