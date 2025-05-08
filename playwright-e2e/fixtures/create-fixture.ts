@@ -241,7 +241,7 @@ export const test = base.extend<CreateFixtures>({
   },
   manageFlagPage: async ({ page }, use) => {
     await use(new ManageFlagPage(page));
-  }
+  },
   generalApplicationDirectionsPage: async ({ page }, use) => {
     await use(new GeneralApplicationDirectionsPage(page));
   }
