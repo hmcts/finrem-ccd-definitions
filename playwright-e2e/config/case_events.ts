@@ -1,5 +1,3 @@
-import { manageFlags } from "../../test/functional/pages/manage-flags/manage-case-flags";
-
 export interface CaseEvent {
     listItem: string;
     ccdCallback: string;
