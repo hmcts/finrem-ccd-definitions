@@ -29,22 +29,62 @@ export class PayloadHelper {
     );
   }
 
-  static async caseWorkerSubmitPaperCase(caseId : string) {
+  static async caseWorkerSubmitPaperCase(caseId : string, issueDate? : string) {
     await this.updateCaseWorkerSteps(caseId, [
-      { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },
-      { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' }
+      { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' }
+    ]);
+    await this.caseWorkerIssueApplication(caseId, issueDate);
+  }
+
+  /**
+   * Issues an application as a caseworker.
+   * 1. Makes the HWF decision as a caseworker.
+   * 2. If an `issueDate` is provided:
+   *    - Modifies the issue application payload the `issueDate`, runs the `FR_issueApplication` event.
+   * 3. If no `issueDate` is provided:
+   *    - Runs the `FR_issueApplication` event with a static payload.
+   *
+   * @param caseId - The unique identifier for the case.
+   * @param issueDate - Optional ISO date string (`YYYY-MM-DD`) for the issue application payload.
+   */
+  static async caseWorkerIssueApplication(caseId: string, issueDate?: string) {
+
+    await this.caseWorkerHWFDecisionMade(caseId);
+
+    if (issueDate) {
+      const issueApplicationDataModifications = [
+        { action: 'insert', key: 'issueDate', value: issueDate }
+      ];
+
+      const issueApplicationJsonObject = await this.createUpdatedJsonObjectFromFile(
+        './playwright-e2e/data/payload/contested/caseworker/issue-application.json',
+        issueApplicationDataModifications
+      );
+
+      await updateCaseInCcdFromJSONObject(
+        config.caseWorker.email,
+        config.caseWorker.password,
+        caseId,
+        'FinancialRemedyContested',
+        'FR_issueApplication',
+        issueApplicationJsonObject
+      );
+
+      } else {
+      await this.updateCaseWorkerSteps(caseId, [
+        { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' }
+      ]);
+    }
+  }
+
+  static async caseWorkerHWFDecisionMade(caseId: string) {
+    await this.updateCaseWorkerSteps(caseId, [
+      { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' }
     ]);
   }
 
-  static async caseWorkerIssueApplication(caseId: string) {
-    await this.updateCaseWorkerSteps(caseId, [
-      { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
-      { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' }
-    ]);
-  }
-
-  static async caseWorkerProgressToListing(caseId: string) {
-    await this.caseWorkerIssueApplication(caseId);
+  static async caseWorkerProgressToListing(caseId: string, issueDate?: string) {
+    await this.caseWorkerIssueApplication(caseId, issueDate);
     await this.updateCaseWorkerSteps(caseId, [
       { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
     ]);
@@ -219,5 +259,35 @@ export class PayloadHelper {
     const json = JSON.parse(fileContent);
     await makeModifications(dataModifications, json);
     return json;
+  }
+
+  /**
+   * Lists a case for hearing.
+   * For fast track cases, set between 6 and 10 weeks after issueDate.
+   * For express cases, set between 16 and 20 weeks after issueDate.
+   * For other cases, set between 12 and 16 weeks after the issueDate.
+   * Callback will fail if hearingDate validation returns an error.
+   * @param caseId - The CCD case ID to update
+   * @param hearingDate - The date of the hearing in YYYY-MM-DD format.
+   */
+  static async caseworkerListForHearing(caseId: string, hearingDate : string) {
+
+    const listForHearingDataModifications = [
+      { action: 'insert', key: 'hearingDate', value: hearingDate }
+    ];
+
+    const listForHearingJsonObject = await this.createUpdatedJsonObjectFromFile(
+      './playwright-e2e/data/payload/contested/caseworker/list-for-hearing/fda-example-one.json',
+      listForHearingDataModifications
+    );
+
+    await updateCaseInCcdFromJSONObject(
+      config.caseWorker.email,
+      config.caseWorker.password,
+      caseId,
+      'FinancialRemedyContested',
+      'FR_addSchedulingListingInfo',
+      listForHearingJsonObject
+    );
   }
 }
