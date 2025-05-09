@@ -35,6 +35,10 @@ export const consentedEvents: Record<string, CaseEvent> = {
     CreateFlag: {
         listItem: "Create Flag",
         ccdCallback: "createFlags"
+    },
+    manageFlags: {
+        listItem: "Manage Flags",
+        ccdCallback: "manageFlags"
     }
 };
 
