@@ -75,7 +75,7 @@ test.describe('Contested - Process Order', () => {
     await PayloadHelper.solicitorSubmitFormACase(caseId);
     await PayloadHelper.caseWorkerProgressToListing(caseId, await DateHelper.getCurrentDate());
     await PayloadHelper.caseworkerListForHearing(caseId, await DateHelper.getHearingDateUsingCurrentDate());
-    // upload draft order
+    await PayloadHelper.caseworkerUploadDraftOrder(caseId);
     return caseId;
   }
 

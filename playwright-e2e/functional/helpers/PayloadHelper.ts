@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { DocumentHelper } from './DocumentHelper';
 import { updateCaseInCcd } from '../../../test/helpers/utils';
 import config from '../../config/config';
 import { updateCaseInCcdFromJSONObject, makeModifications } from '../../../test/helpers/utils';
@@ -290,4 +291,9 @@ export class PayloadHelper {
       listForHearingJsonObject
     );
   }
+
+  static async caseworkerUploadDraftOrder(caseId: string) {
+    DocumentHelper.updateDraftOrderDocument(caseId);
+  }
+
 }
