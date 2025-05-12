@@ -1,7 +1,7 @@
 import fs from 'fs';
-import { DocumentHelper } from './DocumentHelper';
 import { updateCaseInCcd } from '../../../test/helpers/utils';
 import config from '../../config/config';
+import { DateHelper } from './DateHelper';
 import { updateCaseInCcdFromJSONObject, makeModifications } from '../../../test/helpers/utils';
 
 export class PayloadHelper {
@@ -273,6 +273,8 @@ export class PayloadHelper {
    */
   static async caseworkerListForHearing(caseId: string, hearingDate : string) {
 
+    await PayloadHelper.caseWorkerProgressToListing(caseId, await DateHelper.getCurrentDate());
+
     const listForHearingDataModifications = [
       { action: 'insert', key: 'hearingDate', value: hearingDate }
     ];
@@ -291,9 +293,4 @@ export class PayloadHelper {
       listForHearingJsonObject
     );
   }
-
-  static async caseworkerUploadDraftOrder(caseId: string) {
-    DocumentHelper.updateDraftOrderDocument(caseId);
-  }
-
 }

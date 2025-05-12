@@ -82,5 +82,9 @@ export const contestedEvents: Record<string, CaseEvent> = {
     listForInterimHearing: {
         listItem: "List for Interim Hearing",
         ccdCallback: "FR_listForInterimHearing"
+    },
+    uploadDraftOrders: {
+        listItem: "Upload draft orders",
+        ccdCallback: "FR_draftOrders"
     }
 };

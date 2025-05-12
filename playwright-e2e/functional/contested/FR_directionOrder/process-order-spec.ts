@@ -3,6 +3,7 @@ import config from '../../../config/config';
 import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 import { contestedEvents } from '../../../config/case_events';
 import { PayloadHelper } from '../../helpers/PayloadHelper';
+import { DocumentHelper } from '../../helpers/DocumentHelper';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { DateHelper } from '../../helpers/DateHelper';
 
@@ -15,12 +16,13 @@ test.describe('Contested - Process Order', () => {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        generalApplicationDirectionsPage,
+        uploadDraftOrdersPage,
         makeAxeBuilder,
       },
       testInfo
     ) => {
-      const caseId = await progressToProcessOrderForFormACase();
+      const caseId = await progressToUploadDraftOrderForFormACase();
+      await performUploadDraftOrderFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
       // todo, get to the hearing bit.
       // await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
@@ -36,13 +38,13 @@ test.describe('Contested - Process Order', () => {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        generalApplicationDirectionsPage,
+        uploadDraftOrdersPage,
         makeAxeBuilder,
       },
       testInfo
     ) => {
       const caseId = await progressToProcessOrderForPaperCase();
-      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
+      await performUploadDraftOrderFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
     }
@@ -70,12 +72,11 @@ test.describe('Contested - Process Order', () => {
     }
   );
 
-  async function progressToProcessOrderForFormACase(): Promise<string> {
+  async function progressToUploadDraftOrderForFormACase(): Promise<string> {
     const caseId = await CaseDataHelper.createBaseContestedFormA();
     await PayloadHelper.solicitorSubmitFormACase(caseId);
-    await PayloadHelper.caseWorkerProgressToListing(caseId, await DateHelper.getCurrentDate());
     await PayloadHelper.caseworkerListForHearing(caseId, await DateHelper.getHearingDateUsingCurrentDate());
-    await PayloadHelper.caseworkerUploadDraftOrder(caseId);
+    await DocumentHelper.updateDraftOrderDocument(caseId);
     return caseId;
   }
 
@@ -102,12 +103,12 @@ test.describe('Contested - Process Order', () => {
     return caseId;
   }
 
-  async function performGeneralApplicationDirectionsFlow(
+  async function performUploadDraftOrderFlow(
     caseId: string,
     loginPage: any,
     manageCaseDashboardPage: any,
     caseDetailsPage: any,
-    generalApplicationDirectionsPage: any,
+    uploadDraftOrdersPage: any,
     testInfo: any,
     makeAxeBuilder: any
   ): Promise<void> {
@@ -118,8 +119,16 @@ test.describe('Contested - Process Order', () => {
     await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
-    await caseDetailsPage.selectNextStep(contestedEvents.generalApplicationDirections);
-    await generalApplicationDirectionsPage.chooseWhetherAHearingIsRequired(YesNoRadioEnum.YES);
+    await caseDetailsPage.selectNextStep(contestedEvents.uploadDraftOrders);
+    await uploadDraftOrdersPage.chooseAnAgreedOrderFollowingAHearing();
+    await uploadDraftOrdersPage.navigateContinue();
+    await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
+    await uploadDraftOrdersPage.selectFirstAvailableHearing();
+    await uploadDraftOrdersPage.chooseWhetherJudgeForHearingIsKnown(YesNoRadioEnum.NO);
+    await uploadDraftOrdersPage.chooseUploadOnBehalfOfApplicant();
+    await uploadDraftOrdersPage.checkThatYouAreUploadingOrders();
+    await uploadDraftOrdersPage.navigateAddNew();
+    // Next upload the draft order document
 
     //Next, continue tests to drive through new hearing creation
 
