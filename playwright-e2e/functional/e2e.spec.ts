@@ -1,8 +1,7 @@
 import { test } from '../fixtures/fixtures';
 import config from '../config/config';
-// NOTE: When we remove codecept tests, bring utils and test data into the playwright directory
-import { createCaseInCcd } from '../../test/helpers/utils';
 import { consentedEvents } from '../config/case_events';
+import { ConsentedCaseHelper } from './helpers/Consented/ConsentedCaseHelper';
 
 test(
   'Consented - Send Order Journey Test',
@@ -22,7 +21,7 @@ test(
     }
   ) => {
 
-    const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+    const caseId = await ConsentedCaseHelper.createConsentedCase();
     
     // Login as Solicitor
     await manageCaseDashboardPage.visit();
@@ -30,7 +29,7 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
   
     // Application Payment Submission 
-    await caseDetailsPage.selectNextStep(consentedEvents.ApplicationPaymentSubmission); 
+    await caseDetailsPage.selectNextStep(consentedEvents.applicationPaymentSubmission); 
     await solicitorAuthPage.enterSolicitorDetails('Bilbo Baggins', 'Bag End', 'Solicitor');
     await solicitorAuthPage.navigateContinue();
     await helpWithFeesPage.selectHelpWithFees(false);
@@ -42,7 +41,7 @@ test(
     await caseSubmissionPage.navigateSubmit();
     await caseSubmissionPage.returnToCaseDetails();
   
-    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApplicationPaymentSubmission.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.applicationPaymentSubmission.listItem);
   
     // Logout
     await manageCaseDashboardPage.signOut();
@@ -52,10 +51,10 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
   
     // Issue Application
-    await caseDetailsPage.selectNextStep(consentedEvents.IssueApplication); 
+    await caseDetailsPage.selectNextStep(consentedEvents.issueApplication); 
     await issueApplicationPage.navigateContinue();
     await issueApplicationPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.IssueApplication.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.issueApplication.listItem);
   
     // Logout
     await manageCaseDashboardPage.signOut();
@@ -65,12 +64,12 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
   
     // Approve Application 
-    await caseDetailsPage.selectNextStep(consentedEvents.ApproveApplication); 
+    await caseDetailsPage.selectNextStep(consentedEvents.approveApplication); 
     await approveApplicationPage.selectIsSubjectTo(true);
     await approveApplicationPage.selectIsPensionProvider(false);
     await approveApplicationPage.selectJudge('District Judge');
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApproveApplication.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.approveApplication.listItem);
   }
 );
