@@ -22,7 +22,8 @@ test.describe('Contested - Process Order', () => {
       testInfo
     ) => {
       const caseId = await progressToUploadDraftOrderForFormACase();
-      await performUploadDraftOrderFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
+      await performSimpleUploadDraftOrderFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
+      await progressToProcessOrderForFormACase(caseId);
       // todo, get to the hearing bit.
       // await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
@@ -44,7 +45,7 @@ test.describe('Contested - Process Order', () => {
       testInfo
     ) => {
       const caseId = await progressToProcessOrderForPaperCase();
-      await performUploadDraftOrderFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
+      await performSimpleUploadDraftOrderFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
     }
@@ -76,7 +77,6 @@ test.describe('Contested - Process Order', () => {
     const caseId = await CaseDataHelper.createBaseContestedFormA();
     await PayloadHelper.solicitorSubmitFormACase(caseId);
     await PayloadHelper.caseworkerListForHearing(caseId, await DateHelper.getHearingDateUsingCurrentDate());
-    await DocumentHelper.updateDraftOrderDocument(caseId);
     return caseId;
   }
 
@@ -103,7 +103,12 @@ test.describe('Contested - Process Order', () => {
     return caseId;
   }
 
-  async function performUploadDraftOrderFlow(
+  /**
+   * Perform the upload draft order flow as a step to the Process Order event
+   * This could be done via API call, after work done so Playwright can directly upload files
+   * to Document Management API.  The current service token authenticates, but isn't authorised.
+   */
+  async function performSimpleUploadDraftOrderFlow(
     caseId: string,
     loginPage: any,
     manageCaseDashboardPage: any,
@@ -112,8 +117,6 @@ test.describe('Contested - Process Order', () => {
     testInfo: any,
     makeAxeBuilder: any
   ): Promise<void> {
-    const hearingType = "Final Hearing (FH)";
-    const courtName = "CHESTERFIELD COUNTY COURT";
 
     await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
@@ -126,11 +129,11 @@ test.describe('Contested - Process Order', () => {
     await uploadDraftOrdersPage.selectFirstAvailableHearing();
     await uploadDraftOrdersPage.chooseWhetherJudgeForHearingIsKnown(YesNoRadioEnum.NO);
     await uploadDraftOrdersPage.chooseUploadOnBehalfOfApplicant();
-    await uploadDraftOrdersPage.checkThatYouAreUploadingOrders();
+    await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
     await uploadDraftOrdersPage.navigateAddNew();
-    // Next upload the draft order document
-
-    //Next, continue tests to drive through new hearing creation
+    await uploadDraftOrdersPage.uploadDraftOrder(caseId);
+    await uploadDraftOrdersPage.navigateContinue();
+    await uploadDraftOrdersPage.navigateSubmit();
 
     if (config.run_accessibility) {
       const accessibilityScanResults = await makeAxeBuilder().analyze();
@@ -143,4 +146,9 @@ test.describe('Contested - Process Order', () => {
       expect(accessibilityScanResults.violations).toEqual([]);
     }
   }
+
+  async function progressToProcessOrderForFormACase(caseId: string) {
+    await PayloadHelper.judgeApproveOrders(caseId);
+  }
+  
 });

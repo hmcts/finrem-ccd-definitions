@@ -293,4 +293,12 @@ export class PayloadHelper {
       listForHearingJsonObject
     );
   }
+
+  static async judgeApproveOrders(caseId: string) {
+    // do this
+    // await this.updateCaseWorkerSteps(caseId, [
+    //   { event: 'FR_approveOrders', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' }
+    // ]);
+  }
+
 }

@@ -21,4 +21,3 @@ export class DateHelper {
       return hearingDate.toISOString().split('T')[0];
     }
   }
-  

@@ -243,6 +243,6 @@ export const test = base.extend<CreateFixtures>({
     await use(new GeneralApplicationDirectionsPage(page));
   },
   uploadDraftOrdersPage: async ({ page }, use) => {
-    await use(new UploadDraftOrdersPage(page));
-  },
+    await use(new UploadDraftOrdersPage(page, commonActionsHelper));
+  }
 });
