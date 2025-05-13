@@ -2583,8 +2583,9 @@
     "ID": "FR_supportDocument",
     "ListElementCode": "supportDocument",
     "FieldType": "Document",
+    "RegularExpression": ".doc,.docx,.pdf,.xls,.xlsx",
     "ElementLabel": "Supporting Document",
-    "HintText": "Please upload a copy of the supporting document as a word or PDF document (word documents will be converted to PDF after submission)",
+    "HintText": "Please upload a copy of the supporting document as a Word, PDF, or Excel document (Word/Excel documents will be converted to PDF after submission)",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2695,8 +2696,9 @@
     "ID": "generalApplicationCollection",
     "ListElementCode": "generalApplicationDraftOrder",
     "FieldType": "Document",
+    "RegularExpression": ".doc,.docx,.pdf,.xls,.xlsx",
     "ElementLabel": "Upload Draft Order",
-    "HintText": "Please upload a copy of the draft order as a word or PDF document (word documents will be converted to PDF after submission)",
+    "HintText": "Please upload a copy of the draft order as a Word, PDF, or Excel document (Word/Excel documents will be converted to PDF after submission)",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2714,8 +2716,9 @@
     "ID": "generalApplicationCollection",
     "ListElementCode": "generalApplicationDocument",
     "FieldType": "Document",
+    "RegularExpression": ".doc,.docx,.pdf,.xls,.xlsx",
     "ElementLabel": "Upload General Application",
-    "HintText": "Please upload a copy of the application as a word or PDF document (word documents will be converted to PDF after submission).",
+    "HintText": "Please upload a copy of the application as a Word, PDF, or Excel document (Word/Excel documents will be converted to PDF after submission).",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },

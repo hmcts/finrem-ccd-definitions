@@ -36,7 +36,15 @@ export const consentedEvents: Record<string, CaseEvent> = {
     listItem: "Update contact details",
     ccdCallback: "FR_updateContactDetails",
   },
-  // Common events that are used in both consented and contested cases
+  createFlag: {
+    listItem: "Create Flag",
+    ccdCallback: "createFlags",
+  },
+  manageFlags: {
+    listItem: "Manage Flags",
+    ccdCallback: "manageFlags",
+  },
+  // Common events
   applicationPaymentSubmission: commonEvents.applicationPaymentSubmission,
   hwfDecisionMade: commonEvents.hwfDecisionMade,
   issueApplication: commonEvents.issueApplication,
@@ -76,14 +84,26 @@ export const contestedEvents: Record<string, CaseEvent> = {
     ccdCallback: "FR_amendPaperApplication",
   },
   manualPayment: {
-    listItem: "", // Not sure where to find this
+    listItem: "Manual Payment",
     ccdCallback: "FR_manualPayment",
   },
   allocateToJudge: {
-    listItem: "", // Not sure where to find this
+    listItem: "Allocate to Judge",
     ccdCallback: "FR_allocateToJudge",
   },
-  // Common events that are used in both consented and contested cases
+  generalApplicationDirections: {
+    listItem: "General Application Directions",
+    ccdCallback: "FR_GeneralApplicationDirections",
+  },
+  listForInterimHearing: {
+    listItem: "List for Interim Hearing",
+    ccdCallback: "FR_listForInterimHearing",
+  },
+  createGeneralApplication: {
+    listItem: "Create General Application",
+    ccdCallback: "createGeneralApplication",
+  },
+  // Common events
   applicationPaymentSubmission: commonEvents.applicationPaymentSubmission,
   hwfDecisionMade: commonEvents.hwfDecisionMade,
   issueApplication: commonEvents.issueApplication,
