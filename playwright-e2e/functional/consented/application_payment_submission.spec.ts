@@ -1,9 +1,8 @@
 import { test } from '../../fixtures/fixtures'
 import config from '../../config/config';
-// NOTE: When we remove codecept tests, bring utils and test data into the playwright directory
-import { createCaseInCcd } from '../../../test/helpers/utils';
 import { consentedEvents } from '../../config/case_events';
 import { paymentDetailsTabData } from '../../data/tab_content/payment_details_tabs';
+import { ConsentedCaseHelper } from '../helpers/Consented/ConsentedCaseHelper';
 
 test(
     'Consented - Application Payment Submission',
@@ -20,7 +19,10 @@ test(
         caseSubmissionPage
       },
     ) => {
-      const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
+      // Create case
+      const caseId = await ConsentedCaseHelper.createConsentedCase();
+
+      // Define common test data
       const pbaNumber = "PBA0000539";
       const reference = "Reference";
       const hasHelpWithFees = false;
@@ -31,7 +33,7 @@ test(
       await manageCaseDashboardPage.navigateToCase(caseId);
   
       // Application Payment Submission 
-      await caseDetailsPage.selectNextStep(consentedEvents.ApplicationPaymentSubmission); 
+      await caseDetailsPage.selectNextStep(consentedEvents.applicationPaymentSubmission); 
       await solicitorAuthPage.enterSolicitorDetails("Bilbo Baggins", "Bag End", "Solicitor");
       await solicitorAuthPage.navigateContinue();
       await helpWithFeesPage.selectHelpWithFees(hasHelpWithFees);
@@ -42,7 +44,7 @@ test(
       await caseSubmissionPage.navigateContinue();
       await caseSubmissionPage.navigateSubmit();
       await caseSubmissionPage.returnToCaseDetails();
-      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApplicationPaymentSubmission.listItem);
+      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.applicationPaymentSubmission.listItem);
       
       // Assert Tab Data      
       await caseDetailsPage.assertTabData(paymentDetailsTabData(hasHelpWithFees, pbaNumber, reference));

@@ -1,9 +1,9 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { createCaseInCcd, updateCaseInCcd } from '../../../test/helpers/utils';
 import { consentedEvents } from '../../config/case_events';
 import { YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums';
 import { updateContactDetailsTabData } from '../../data/tab_content/consented/update_contact_details_caseworker_tabs';
+import { ConsentedCaseHelper } from '../helpers/Consented/ConsentedCaseHelper';
 
 test(
     'Consented - Update contact details',
@@ -17,9 +17,9 @@ test(
         createCaseCheckYourAnswersPage
       },
     ) => {
-      const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
-      const caseSubmission = await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyMVP2', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-consented-payment.json');
-      const hwfPaymentAccepted = await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyMVP2', 'FR_HWFDecisionMade', './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json');
+      // Create case and progress to HWF decision made
+      const caseId = await ConsentedCaseHelper.createConsentedCaseUpToHWFDecision();
+
       const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
       const respondentInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
 
@@ -29,7 +29,7 @@ test(
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Update contact details
-      await caseDetailsPage.selectNextStep(consentedEvents.UpdateContactDetails);
+      await caseDetailsPage.selectNextStep(consentedEvents.updateContactDetails);
       await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(false);
       await updateContactDetailsPage.navigateContinue();
       await updateContactDetailsPage.navigateContinue();
@@ -43,7 +43,7 @@ test(
       await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
       await createCaseCheckYourAnswersPage.checkRespondentInRefugeQuestion(respondentInRefuge);
       await createCaseCheckYourAnswersPage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.UpdateContactDetails.listItem);
+      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.updateContactDetails.listItem);
 
       // Assert tab data
       await caseDetailsPage.assertTabData(updateContactDetailsTabData);
