@@ -31,6 +31,14 @@ export const consentedEvents: Record<string, CaseEvent> = {
     UpdateContactDetails: {
         listItem: "Update contact details",
         ccdCallback: "FR_updateContactDetails"
+    },
+    CreateFlag: {
+        listItem: "Create Flag",
+        ccdCallback: "createFlags"
+    },
+    manageFlags: {
+        listItem: "Manage Flags",
+        ccdCallback: "manageFlags"
     }
 };
 
@@ -38,6 +46,10 @@ export const contestedEvents: Record<string, CaseEvent> = {
     CreateCase: {
         listItem: "Form A Application",
         ccdCallback: "FR_solicitorCreate"
+    },
+    CreatePaperCase: {
+        listItem: "Paper Case",
+        ccdCallback: "FR_newPaperCase"
     },
     ApplicationPaymentSubmission: {
         listItem: "Case Submission",
@@ -51,6 +63,10 @@ export const contestedEvents: Record<string, CaseEvent> = {
         listItem: "List for Hearing",
         ccdCallback: "FR_addSchedulingListingInfo"
     },
+    amendFormAApplicationDetails: {
+        listItem: "Amend Application Details",
+        ccdCallback: "FR_amendApplication"
+    },
     manageExpressCase: {
        listItem: "Manage Express Case",
        ccdCallback: "FR_manageExpressCase"
@@ -59,8 +75,20 @@ export const contestedEvents: Record<string, CaseEvent> = {
        listItem: "Give Allocation Directions",
        ccdCallback: "FR_giveAllocationDirections"
     },
-    amendApplicationDetails: {
+    amendPaperApplicationDetails: {
        listItem: "Amend Application Details",
        ccdCallback: "FR_amendPaperApplication"
+    },
+    generalApplicationDirections: {
+        listItem: "General Application Directions",
+        ccdCallback: "FR_GeneralApplicationDirections"
+    },
+    listForInterimHearing: {
+        listItem: "List for Interim Hearing",
+        ccdCallback: "FR_listForInterimHearing"
+    },
+    createGeneralApplication: {
+       listItem: "Create General Application",
+       ccdCallback: "createGeneralApplication"
     }
 };
