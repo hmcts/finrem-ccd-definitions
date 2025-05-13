@@ -46,6 +46,7 @@ import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-di
 import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
 import { CreateFlagPage } from  '../pages/events/create-flag/CreateFlagPage';
 import { ChildrensDetailsPage } from '../pages/events/create-case/ChildrensDetailsPage';
+import { CreateGeneralApplicationPage } from '../pages/events/create-general-application/CreateGeneralApplicationPage';
 import { ListForInterimHearingPage } from '../pages/events/list-for-interim-hearing/ListForInterimHearingPage';
 import { ManageFlagPage } from '../pages/events/manage-flag/ManageFlagPage';
 import { GeneralApplicationDirectionsPage } from '../pages/events/general-application-directions/GeneralApplicationDirectionsPage';
@@ -99,6 +100,7 @@ type CreateFixtures = {
   amendPaperApplicationDetailsPage: AmendPaperApplicationDetailsPage;
   createFlagPage: CreateFlagPage;
   listForInterimHearingPage: ListForInterimHearingPage;
+  createGeneralApplicationPage: CreateGeneralApplicationPage;
   manageFlagPage: ManageFlagPage;
   generalApplicationDirectionsPage: GeneralApplicationDirectionsPage;
 };
@@ -235,6 +237,9 @@ export const test = base.extend<CreateFixtures>({
   },
   createFlagPage: async ({ page }, use) => {
     await use(new CreateFlagPage(page));
+  },
+  createGeneralApplicationPage: async ({ page }, use) => {
+    await use(new CreateGeneralApplicationPage(page, commonActionsHelper));
   },
   listForInterimHearingPage: async ({ page }, use) => {
     await use(new ListForInterimHearingPage(page, commonActionsHelper));
