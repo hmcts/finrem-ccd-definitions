@@ -1,8 +1,8 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { createCaseInCcd, updateCaseInCcd } from '../../../test/helpers/utils';
 import { assignCaseToApplicant, assignCaseToRespondent } from '../helpers/CaseAssigmentHelper';
 import { cwExpectedApplicantRefugeStatus, asExpectedApplicantRefugeStatus, rsExpectedApplicantRefugeStatus, jExpectedApplicantRefugeStatus } from '../../data/tab_content/contested/applicant_refuge_status_visibility_tabs';
+import { ContestedCaseHelper } from '../helpers/Contested/ContestedCaseHelper';
 
 test(
   'Contested - Paper Case: Applicant Refuge Status Visilbity',
@@ -15,9 +15,8 @@ test(
       caseDetailsPage
     }
   ) => {
-    const caseId = await createCaseInCcd(config.caseWorker.email, config.caseWorker.password, './playwright-e2e/data/payload/contested/paper_case/ccd-contested-refuge-applicant.json', 'FinancialRemedyContested', 'FR_newPaperCase');
-    await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_manualPayment', './playwright-e2e/data/payload/contested/caseworker/manual-payment.json');
-    await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './playwright-e2e/data/payload/contested/caseworker/issue-application.json');
+    // Create and process a paper case
+    const caseId = await ContestedCaseHelper.createAndSubmitPaperCase();
 
     // Login to Manage org and assign case to applicant
     await assignCaseToApplicant(loginPage, manageOrgDashboardPage, caseId);
@@ -52,5 +51,5 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
     await caseDetailsPage.assertTabData(rsExpectedApplicantRefugeStatus);
     await manageCaseDashboardPage.signOut();
-
-});
+  }
+);

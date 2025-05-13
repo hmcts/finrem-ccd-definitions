@@ -11,7 +11,7 @@ import { NatureOfApplicationPage } from '../../../pages/events/create-case/Natur
 import { UploadOrderDocumentsPage } from '../../../pages/events/create-case/UploadOrderDocumentPage';
 import { CreateCaseCheckYourAnswersPage } from '../../../pages/events/create-case/CreateCaseCheckYourAnswersPage';
 import { TestInfo } from 'playwright/test';
-import { CaseDataHelper } from '../../helpers/CaseDataHelper';
+import { ContestedCaseHelper } from '../../helpers/Contested/ContestedCaseHelper';
 import { SigninPage } from '../../../pages/SigninPage';
 
 const enum ExpressTestType {
@@ -35,9 +35,13 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
   makeAxeBuilder: any
 ): Promise<void> {
   await manageCaseDashboardPage.visit();
-  await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
+  await loginPage.loginWaitForPath(
+    config.applicant_solicitor.email,
+    config.applicant_solicitor.password,
+    config.manageCaseBaseURL,
+    config.loginPaths.cases
+  );
   await manageCaseDashboardPage.navigateToCase(caseId);
-
   // Prior to testing, check tab data, mostly to ensure a page is showing with the event dropdown available.
   switch (expressTestType) {
     case ExpressTestType.TestingForExpressExit:
@@ -50,41 +54,21 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
       await caseDetailsPage.assertTabData(expressCaseGateKeepingNotEnrolledTabData);
       break;
   }
-  
   await caseDetailsPage.selectNextStep(contestedEvents.amendFormAApplicationDetails);
-
   await startPage.navigateContinue();
-
-  // Applicant representation
-  await startPage.navigateContinue();
-
-  // Divorce / Dissolution details
-  await startPage.navigateContinue();
-
-  // Enter Applicant's name and address
-  await startPage.navigateContinue();
-
-  // Enter respondent names
-  await startPage.navigateContinue();
-
-  // Respondent's representation details
-  await startPage.navigateContinue();
-
+  await startPage.navigateContinue(); // Applicant representation
+  await startPage.navigateContinue(); // Divorce / Dissolution details
+  await startPage.navigateContinue(); // Enter Applicant's name and address
+  await startPage.navigateContinue(); // Enter respondent names
+  await startPage.navigateContinue(); // Respondent's representation details
   // Nature of App - Select Variation order if testing that we exit Express Pilot
   if (ExpressTestType.TestingForExpressExit == expressTestType) {
     await natureOfApplicationPage.selectVariationOrderOnly();
   }
   await natureOfApplicationPage.navigateContinue();
-  
-  // Select Fast Track No
-  await startPage.navigateContinue();
-
-  // Complete complexity list and assets details
-  await startPage.navigateContinue();
-
-  // Complete court details
-  await startPage.navigateContinue();
-
+  await startPage.navigateContinue(); // Select Fast Track No
+  await startPage.navigateContinue(); // Complete complexity list and assets details
+  await startPage.navigateContinue(); // Complete court details
   // Check the express page, depending on what you are testing
   switch (expressTestType) {
     case ExpressTestType.TestingForExpressExit:
@@ -100,25 +84,14 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
       // no express page shown, test resumes from next page in journey.
       break;
   }
-
-  // Complete MIAM Yes/No
-  await startPage.navigateContinue();
-
-  // Complete MIAM certification details
-  await startPage.navigateContinue();
-
-  // Upload variation Order Document
-  await uploadOrderDocumentsPage.uploadVariationOrderDoc();
+  await startPage.navigateContinue(); // Complete MIAM Yes/No
+  await startPage.navigateContinue(); // Complete MIAM certification details
+  await uploadOrderDocumentsPage.uploadVariationOrderDoc(); // Upload variation Order Document
   await uploadOrderDocumentsPage.navigateContinue();
-  
   await uploadOrderDocumentsPage.navigateContinue();
   await createCaseCheckYourAnswersPage.navigateSubmit();
-
   await caseDetailsPage.checkHasBeenUpdated('Amend Application Details');
-
-  // Assert case creation tab data
-  await caseDetailsPage.assertTabData(createCaseTabData);
-
+  await caseDetailsPage.assertTabData(createCaseTabData); // Assert case creation tab data
   // Check the express part of the gatekeeping and allocation tab, depending on what you are testing
   switch (expressTestType) {
     case ExpressTestType.TestingForExpressExit:
@@ -145,75 +118,110 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
 }
 
 test.describe('Contested - Amend Application Details join/exit express case Form A', () => {
-   test(
+  test(
     'Contested Form A - Amend Application Details. Exit Express Pilot content shown.  Amendment added a Variation Order, so criteria not met.',
-     { tag: [] },
-     async (
-       {
-         loginPage,
-         manageCaseDashboardPage,
-         caseDetailsPage,
-         startPage,
-         natureOfApplicationPage,
-         expressCasePage,
-         uploadOrderDocumentsPage,
-         createCaseCheckYourAnswersPage,
-         makeAxeBuilder,
-       },
-       testInfo
-     ) => {
-       const caseId = await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled();
-       await performAmendFormAApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressExit, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
-        natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
-     }
-   );
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        startPage,
+        natureOfApplicationPage,
+        expressCasePage,
+        uploadOrderDocumentsPage,
+        createCaseCheckYourAnswersPage,
+        makeAxeBuilder,
+      },
+      testInfo
+    ) => {
+      const caseId =
+        await ContestedCaseHelper.createContestedFormACaseWithExpressPilotEnrolled();
+      await performAmendFormAApplicationDetailsFlowForExpressPilot(
+        caseId,
+        ExpressTestType.TestingForExpressExit,
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        startPage,
+        natureOfApplicationPage,
+        expressCasePage,
+        uploadOrderDocumentsPage,
+        createCaseCheckYourAnswersPage,
+        testInfo,
+        makeAxeBuilder
+      );
+    }
+  );
 
-   test(
+  test(
     'Contested Form A - Amend Application Details. Entering the Express Pilot content shown. The case still qualifies.',
-     { tag: [] },
-     async (
-       {
-         loginPage,
-         manageCaseDashboardPage,
-         caseDetailsPage,
-         startPage,
-         natureOfApplicationPage,
-         expressCasePage,
-         uploadOrderDocumentsPage,
-         createCaseCheckYourAnswersPage,
-         makeAxeBuilder,
-       },
-       testInfo
-     ) => {
-       const caseId = await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled();
-       await performAmendFormAApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestingForExpressEntry, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
-        natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
-     }
-   );
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        startPage,
+        natureOfApplicationPage,
+        expressCasePage,
+        uploadOrderDocumentsPage,
+        createCaseCheckYourAnswersPage,
+        makeAxeBuilder,
+      },
+      testInfo
+    ) => {
+      const caseId =
+        await ContestedCaseHelper.createContestedFormACaseWithExpressPilotEnrolled();
+      await performAmendFormAApplicationDetailsFlowForExpressPilot(
+        caseId,
+        ExpressTestType.TestingForExpressEntry,
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        startPage,
+        natureOfApplicationPage,
+        expressCasePage,
+        uploadOrderDocumentsPage,
+        createCaseCheckYourAnswersPage,
+        testInfo,
+        makeAxeBuilder
+      );
+    }
+  );
 
-   test(
+  test(
     'Contested Form A - Amend Application Details. No Express Pilot content should be shown.  The case did not qualify before and still does not.',
-     { tag: [] },
-     async (
-       {
-         loginPage,
-         manageCaseDashboardPage,
-         caseDetailsPage,
-         startPage,
-         natureOfApplicationPage,
-         expressCasePage,
-         uploadOrderDocumentsPage,
-         createCaseCheckYourAnswersPage,
-         makeAxeBuilder,
-       },
-       testInfo
-     ) => {
-       const caseId = await CaseDataHelper.createBaseContestedFromA();
-       await performAmendFormAApplicationDetailsFlowForExpressPilot(caseId, ExpressTestType.TestForNoExpressContent, loginPage, manageCaseDashboardPage, caseDetailsPage, startPage,
-        natureOfApplicationPage, expressCasePage, uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage, testInfo, makeAxeBuilder);
-     }
-   );
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        startPage,
+        natureOfApplicationPage,
+        expressCasePage,
+        uploadOrderDocumentsPage,
+        createCaseCheckYourAnswersPage,
+        makeAxeBuilder,
+      },
+      testInfo
+    ) => {
+      const caseId = await ContestedCaseHelper.createBaseContestedFormA();
+      await performAmendFormAApplicationDetailsFlowForExpressPilot(
+        caseId,
+        ExpressTestType.TestForNoExpressContent,
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        startPage,
+        natureOfApplicationPage,
+        expressCasePage,
+        uploadOrderDocumentsPage,
+        createCaseCheckYourAnswersPage,
+        testInfo,
+        makeAxeBuilder
+      );
+    }
+  );
 });

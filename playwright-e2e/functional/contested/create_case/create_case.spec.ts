@@ -1,9 +1,9 @@
 import { test, expect } from '../../../fixtures/fixtures';
-import { createCaseInCcd } from '../../../../test/helpers/utils';
 import config from '../../../config/config';
 import { ApplicationtypeEnum, MaleOrFemaleEnum, YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
 import { createCaseTabDataChildrensAct } from '../../../data/tab_content/consented/create_case_tabs';
+import { ContestedCaseHelper } from '../../helpers/Contested/ContestedCaseHelper';
 
 test(
   'Contested - Create Case FormA Matrimonial Submission',
@@ -78,9 +78,7 @@ test(
     await respondentDetailsPage.navigateContinue();
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
-    await respondentRepresentedPage.selectOrganisation(
-      config.organisationNames.finRem2Org
-    );
+    await respondentRepresentedPage.selectOrganisation(config.organisationNames.finRem2Org);
     await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
 
@@ -169,6 +167,7 @@ test(
   }
 );
 
+// Doesn't seem to work with caseworker. Works if logged in as solicitor
 test(
   'Contested - Caseworker view tabs post case creation',
   { tag: [] },
@@ -179,7 +178,8 @@ test(
       caseDetailsPage
     }
   ) => {
-    const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
+    // Create form A case
+    const caseId = await ContestedCaseHelper.createBaseContestedFormA();
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
@@ -188,7 +188,8 @@ test(
 
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
-  });
+  }
+);
 
 test(
   'Contested - Create Case Form A Childrens Act Submission',
@@ -350,4 +351,3 @@ test(
     }
   }
 );
-

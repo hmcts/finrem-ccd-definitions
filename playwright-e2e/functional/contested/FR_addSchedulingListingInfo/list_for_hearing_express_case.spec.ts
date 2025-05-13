@@ -1,34 +1,7 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { CaseDataHelper } from '../../helpers/CaseDataHelper';
-import { updateCaseInCcd } from '../../../../test/helpers/utils';
+import { ContestedCaseHelper } from '../../helpers/Contested/ContestedCaseHelper';
 import { contestedEvents } from '../../../config/case_events';
-import { PayloadHelper } from '../../helpers/PayloadHelper';
-
-async function updateCaseWorkerSteps(caseId: string, steps: { event: string, payload: string }[]) {
-  for (const step of steps) {
-    await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', step.event, step.payload);
-  }
-}
-
-async function createAndProcessFormACase(): Promise<string> {
-  const caseId = await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled();
-  await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
-
-  await PayloadHelper.caseWorkerProgressToListing(caseId);
-  return caseId;
-}
-
-async function createAndProcessPaperCase(): Promise<string> {
-  const caseId = await CaseDataHelper.createContestedPaperCaseWithExpressPilotEnrolled();
-
-  await updateCaseWorkerSteps(caseId, [
-    { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },
-    { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' },
-    { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
-  ]);
-  return caseId;
-}
 
 async function performListForHearingFlow(
   caseId: string,
@@ -85,7 +58,7 @@ test.describe('Contested - List for Hearing express case', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessFormACase();
+      const caseId = await ContestedCaseHelper.createAndProcessFormACaseUpToProgressToListing(true);
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
     }
   );
@@ -103,7 +76,7 @@ test.describe('Contested - List for Hearing express case', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessPaperCase();
+      const caseId = await ContestedCaseHelper.createAndSubmitPaperCaseUpToProgressToListing(true);
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
     }
   );
