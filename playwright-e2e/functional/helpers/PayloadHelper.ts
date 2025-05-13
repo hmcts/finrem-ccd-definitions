@@ -105,6 +105,13 @@ export class PayloadHelper {
     ]);
   }
 
+  static async caseworkerCreateFlag(caseId: string) {
+    await this.caseWorkerIssueApplication(caseId);
+    await this.updateCaseWorkerSteps(caseId, [
+      { event: 'createFlags' , payload: './playwright-e2e/data/payload/consented/caseworker/create-flag.json' }
+    ]);
+  }
+
   /**
    * Progresses a case to the Create General Application state.
    *

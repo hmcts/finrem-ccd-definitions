@@ -111,5 +111,8 @@ export class CaseDetailsPage {
     async checkActiveCaseFlagOnCase() {
         await expect(this.activeCaseFlagOnCase).toBeVisible();
     }
+    async checkNoActiveCaseFlagOnCase() {
+        await expect(this.activeCaseFlagOnCase).not.toBeVisible();
+    }
 }
 
