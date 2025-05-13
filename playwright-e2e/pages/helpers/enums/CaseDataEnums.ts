@@ -11,6 +11,7 @@ export enum UserType {
 export const PayloadPath = {
   Consented: {
     base: "./playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json",
+    createFlag: "./playwright-e2e/data/payload/consented/caseworker/create-flag.json",
   },
   Contested: {
     base: "./playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json",

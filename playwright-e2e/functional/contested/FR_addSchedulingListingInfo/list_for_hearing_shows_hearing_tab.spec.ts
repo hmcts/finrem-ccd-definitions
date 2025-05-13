@@ -1,19 +1,19 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { CaseDataHelper } from '../../helpers/CaseDataHelper';
+import { ContestedCaseHelper } from '../../helpers/Contested/ContestedCaseHelper';
 import { contestedEvents } from '../../../config/case_events';
-import { PayloadHelper } from '../../helpers/PayloadHelper';
+import { PayloadHelper } from '../../helpers/Contested/ContestedPayloadHelper';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 
 async function createAndProcessFormACase(): Promise<string> {
-  const caseId = await CaseDataHelper.createBaseContestedFormA();
+  const caseId = await ContestedCaseHelper.createBaseContestedFormA();
   await PayloadHelper.solicitorSubmitFormACase(caseId);
   await PayloadHelper.caseWorkerProgressToListing(caseId);
   return caseId;
 }
 
 async function createAndProcessPaperCase(): Promise<string> {
-  const caseId = await CaseDataHelper.createBaseContestedPaperCase();
+  const caseId = await ContestedCaseHelper.createBaseContestedPaperCase();
   await PayloadHelper.caseWorkerProgressPaperCaseToListing(caseId);
   return caseId;
 }

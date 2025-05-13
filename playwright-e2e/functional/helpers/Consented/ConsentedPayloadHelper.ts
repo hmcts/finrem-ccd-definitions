@@ -43,4 +43,11 @@ export class PayloadHelper {
       { event: consentedEvents.issueApplication.ccdCallback, payload: PayloadPath.Consented.base },
     ]);
   }
+
+  static async caseworkerCreateFlag(caseId: string) {
+    await this.caseWorkerIssueApplication(caseId);
+    await this.updateCaseWorkerSteps(caseId, [
+      { event: consentedEvents.createFlag.ccdCallback , payload: PayloadPath.Consented.createFlag }
+    ]);
+  }
 }

@@ -1,7 +1,7 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { CaseDataHelper } from '../helpers/CaseDataHelper';
-import { PayloadHelper } from '../helpers/PayloadHelper';
+import { ConsentedCaseHelper } from '../helpers/Consented/ConsentedCaseHelper';
+import { PayloadHelper } from '../helpers/Consented/ConsentedPayloadHelper';
 import { consentedEvents } from '../../config/case_events';
 import { caseFlagTabData } from '../../data/tab_content/consented/case_flag_tabs';
 import { caseFlagTabDataUpdated } from '../../data/tab_content/consented/case_flag_tabs_updated';
@@ -12,7 +12,7 @@ test.describe('Consented Case Flag Tests', () => {
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage }) => {
       // Create and setup case
-      const caseId = await CaseDataHelper.createBaseContestedFormA();
+      const caseId = await ConsentedCaseHelper.createConsentedCase();
       await PayloadHelper.solicitorSubmitFormACase(caseId);
       await PayloadHelper.caseWorkerIssueApplication(caseId);
 
@@ -65,7 +65,7 @@ test.describe('Consented Case Flag Tests', () => {
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageFlagPage }) => {
       // Create and setup case
-      const caseId = await CaseDataHelper.createBaseContestedFormA();
+      const caseId = await ConsentedCaseHelper.createConsentedCase();
       await PayloadHelper.solicitorSubmitFormACase(caseId);
       await PayloadHelper.caseworkerCreateFlag(caseId);
 

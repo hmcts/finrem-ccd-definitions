@@ -1,8 +1,8 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { CaseDataHelper } from '../../helpers/CaseDataHelper';
+import { ContestedCaseHelper } from '../../helpers/Contested/ContestedCaseHelper';
 import { contestedEvents } from '../../../config/case_events';
-import { PayloadHelper } from '../../helpers/PayloadHelper';
+import { PayloadHelper } from '../../helpers/Contested/ContestedPayloadHelper';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 
 test.describe('Contested - General Application Directions', () => {
@@ -69,7 +69,7 @@ test.describe('Contested - General Application Directions', () => {
   );
 
   async function progressToGeneralApplicationDirectionsForFormACase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedFormA();
+    const caseId = await ContestedCaseHelper.createBaseContestedFormA();
     await PayloadHelper.solicitorSubmitFormACase(caseId);
     await PayloadHelper.caseWorkerIssueApplication(caseId)
     await PayloadHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
@@ -77,14 +77,14 @@ test.describe('Contested - General Application Directions', () => {
   }
 
   async function progressToGeneralApplicationDirectionsForPaperCase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedPaperCase();
+    const caseId = await ContestedCaseHelper.createBaseContestedPaperCase();
     await PayloadHelper.caseWorkerSubmitPaperCase(caseId);
     await PayloadHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
     return caseId;
   }
 
   async function createOldApplicationDirectionsHearingForFormACase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedFormA();
+    const caseId = await ContestedCaseHelper.createBaseContestedFormA();
     await PayloadHelper.solicitorSubmitFormACase(caseId);
     await PayloadHelper.caseWorkerIssueApplication(caseId)
     await PayloadHelper.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
@@ -92,7 +92,7 @@ test.describe('Contested - General Application Directions', () => {
   }
 
   async function createOldApplicationDirectionsHearingForPaperCase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedPaperCase();
+    const caseId = await ContestedCaseHelper.createBaseContestedPaperCase();
     await PayloadHelper.caseWorkerSubmitPaperCase(caseId);
     await PayloadHelper.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
     return caseId;
