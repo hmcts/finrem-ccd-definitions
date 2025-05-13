@@ -14,11 +14,13 @@ export abstract class BaseJourneyPage {
 
     readonly thereIsAProblemHeader: Locator;
     private readonly fieldIsRequiredErrorMessage: Locator;
+    private readonly submitAndReturnEventButton: Locator;
 
     public constructor(page: Page) {
         this.page = page;
 
         this.submitButton = page.getByRole('button', { name: 'Submit' });
+        this.submitAndReturnEventButton = page.getByRole('button', { name: 'Submit' });
         this.continueButton = page.getByRole('button', { name: 'Continue' });
         this.previousButton = page.getByRole('button', { name: 'Previous' });
         this.confirmButton = page.getByRole('button', { name: 'Confirm' });
@@ -39,6 +41,23 @@ export abstract class BaseJourneyPage {
         await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
         await this.submitButton.click();
         await this.waitForSpinner();
+    }
+
+    async navigateSubmitAndReturnEvent(): Promise<any> {
+        const waitForPost = this.waitForPostRequest(this.page, '/events');
+
+        await expect(this.submitButton).toBeVisible();
+        await expect(this.submitButton).toBeEnabled();
+
+        await this.wait(100);
+        await this.submitButton.click();
+        await this.waitForSpinner();
+
+        const rawBody = await waitForPost;
+        if (!rawBody) throw new Error('No POST body received');
+
+        const body = JSON.parse(rawBody);
+        return body;
     }
 
     async navigateContinue() {
@@ -106,5 +125,13 @@ export abstract class BaseJourneyPage {
     async verifyFieldIsRequiredMessageShown() {
         await expect(this.thereIsAProblemHeader).toBeVisible();
         await expect(this.fieldIsRequiredErrorMessage).toBeVisible();
+    }
+
+
+    async waitForPostRequest(page: Page, urlPart: string): Promise<string | null> {
+        const request = await page.waitForRequest(request =>
+          request.method() === 'POST' && request.url().includes(urlPart)
+        );
+        return request.postData();
     }
 }

@@ -59,7 +59,7 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
 
     async uploadDraftOrder(caseId: string) {
         await expect(this.firstDraftOrderDocUpload).toBeVisible();
-        DocumentHelper.createDraftOrderDocument(caseId);
+        await DocumentHelper.createDraftOrderDocument(caseId);
         await this.firstDraftOrderDocUpload.setInputFiles('./playwright-e2e/data/files_built_by_tests/upload-draft-order/agreed-draft-order-document.docx');
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
