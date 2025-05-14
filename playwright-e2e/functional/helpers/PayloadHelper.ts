@@ -270,17 +270,15 @@ export class PayloadHelper {
   }
 
   /**
-   * Lists a case for hearing.
-   * For fast track cases, set between 6 and 10 weeks after issueDate.
-   * For express cases, set between 16 and 20 weeks after issueDate.
-   * For other cases, set between 12 and 16 weeks after the issueDate.
+   * Lists a case for hearing between 12 and 16 weeks after the issueDate.
+   * (Not suitable for fast track or express cases.)
    * Callback will fail if hearingDate validation returns an error.
    * @param caseId - The CCD case ID to update
-   * @param hearingDate - The date of the hearing in YYYY-MM-DD format.
    */
-  static async caseworkerListForHearing(caseId: string, hearingDate : string) {
+  static async caseworkerListForHearing12To16WeeksFromNow(caseId: string) {
 
     await PayloadHelper.caseWorkerProgressToListing(caseId, await DateHelper.getCurrentDate());
+    const hearingDate = await DateHelper.getHearingDateUsingCurrentDate()
 
     const listForHearingDataModifications = [
       { action: 'insert', key: 'hearingDate', value: hearingDate }
@@ -301,9 +299,40 @@ export class PayloadHelper {
     );
   }
 
-  static async judgeApproveOrders(caseId: string) {
-    await this.updateCaseWorkerSteps(caseId, [
-      { event: 'FR_approveOrders', payload: './playwright-e2e/data/payload/contested/caseworker/get-this.json' }
-    ]);
+  static async judgeApproveOrders(caseId: string,
+    dynamicDraftOrderInfo: {
+    documentUrl: string;
+    documentBinaryUrl: string;
+    uploadTimestamp: string;
+    hearingDate: string;
+    }) {
+
+    const hearingDateLabel = DateHelper.formatToDayMonthYear(dynamicDraftOrderInfo.hearingDate);
+
+    const approveOrdersDataModifications = [
+      {
+        action: 'insert',
+        key: 'judgeApproval1.hearingInfo',
+        value: `First Directions Appointment (FDA) on ${hearingDateLabel} 10:00`
+      },
+      { action: 'insert', key: 'judgeApproval1.hearingDate', value: dynamicDraftOrderInfo.hearingDate },
+      { action: 'insert', key: 'judgeApproval1.document.document_url', value: dynamicDraftOrderInfo.documentUrl },
+      { action: 'insert', key: 'judgeApproval1.document.document_binary_url', value: dynamicDraftOrderInfo.documentBinaryUrl },
+      { action: 'insert', key: 'judgeApproval1.document.upload_timestamp', value: dynamicDraftOrderInfo.uploadTimestamp }
+    ];
+
+    const approveOrdersJsonObject = await this.createUpdatedJsonObjectFromFile(
+      './playwright-e2e/data/payload/contested/judiciary/most-basic-approve-orders.json',
+      approveOrdersDataModifications
+    );
+
+    await updateCaseInCcdFromJSONObject(
+      config.judge.email,
+      config.judge.password,
+      caseId,
+      'FinancialRemedyContested',
+      'FR_approveOrders',
+      approveOrdersJsonObject
+    );
   }
 }

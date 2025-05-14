@@ -20,4 +20,20 @@ export class DateHelper {
       hearingDate.setDate(hearingDate.getDate() + 12 * 7);
       return hearingDate.toISOString().split('T')[0];
     }
+
+    /**
+     * Converts a date string (ISO format) into a formatted date string
+     * in the format "dd Month yyyy" (e.g. "06 August 2025").
+     *
+     * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
+     * @returns A promise that resolves with the formatted date string.
+     */
+    static formatToDayMonthYear(dateStr: string): string {
+      const date = new Date(dateStr);
+      return new Intl.DateTimeFormat('en-GB', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+      }).format(date);
+    }
   }

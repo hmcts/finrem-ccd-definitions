@@ -43,7 +43,14 @@ export abstract class BaseJourneyPage {
         await this.waitForSpinner();
     }
 
-    async navigateSubmitAndReturnEvent(): Promise<any> {
+    /**
+     * Same as the usual navigateSubmit, also returns what was sent with the POST.
+     * Useful to refer to generated values in follow up test steps.
+     *
+     * @returns A promise that resolves with the parsed JSON POST body of the `/events` request.
+     * @throws body of the `/events` request.
+     */
+    async navigateSubmitAndReturnEventRequest(): Promise<any> {
         const waitForPost = this.waitForPostRequest(this.page, '/events');
 
         await expect(this.submitButton).toBeVisible();
@@ -58,6 +65,26 @@ export abstract class BaseJourneyPage {
 
         const body = JSON.parse(rawBody);
         return body;
+    }
+
+    /**
+     * Same as the usual navigateSubmit, also returns what was returned from the POST.
+     * Useful to refer to generated values in follow up test steps.
+     *
+     * @returns body of the `/events` response.
+     */
+    async navigateSubmitAndReturnEventResponse(): Promise<any> {
+        const waitForResponse = this.waitForPostResponse(this.page, '/events');
+
+        await expect(this.submitButton).toBeVisible();
+        await expect(this.submitButton).toBeEnabled();
+
+        await this.wait(100);
+        await this.submitButton.click();
+        await this.waitForSpinner();
+
+        const responseBody = await waitForResponse;
+        return responseBody;
     }
 
     async navigateContinue() {
@@ -127,11 +154,33 @@ export abstract class BaseJourneyPage {
         await expect(this.fieldIsRequiredErrorMessage).toBeVisible();
     }
 
-
-    async waitForPostRequest(page: Page, urlPart: string): Promise<string | null> {
+    /**
+     * Waits for a network POST request whose URL includes the specified substring,
+     * then returns the request's POST data as a string.
+     *
+     * @param page - The Playwright Page instance to monitor.
+     * @param urlPart - A substring to match against the request URL.
+     * @returns A promise that resolves with the POST data string, or null if unavailable.
+     */
+    private async waitForPostRequest(page: Page, urlPart: string): Promise<string | null> {
         const request = await page.waitForRequest(request =>
           request.method() === 'POST' && request.url().includes(urlPart)
         );
         return request.postData();
+    }
+
+    /**
+     * Waits for a network POST response whose URL includes the specified substring,
+     * then returns the parsed JSON response body.
+     *
+     * @param page - The Playwright Page instance to monitor.
+     * @param urlPart - A substring to match against the response URL.
+     * @returns A promise that resolves with the parsed JSON of the matching POST response.
+     */
+    private async waitForPostResponse(page: Page, urlPart: string): Promise<any> {
+        const response = await page.waitForResponse(res =>
+          res.request().method() === 'POST' && res.url().includes(urlPart)
+        );
+        return await response.json();
     }
 }

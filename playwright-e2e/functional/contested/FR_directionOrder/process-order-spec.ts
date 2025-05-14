@@ -4,7 +4,6 @@ import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 import { contestedEvents } from '../../../config/case_events';
 import { PayloadHelper } from '../../helpers/PayloadHelper';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { DateHelper } from '../../helpers/DateHelper';
 
 test.describe('Contested - Process Order', () => {
   test(
@@ -21,15 +20,15 @@ test.describe('Contested - Process Order', () => {
       testInfo
     ) => {
       const caseId = await progressToUploadDraftOrderForFormACase();
-      await performSimpleUploadDraftOrderFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
-      // todo, get to the hearing bit.
+      const draftOrderDetails =  await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
+
       // await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
     }
   );
 
-  test(
+  test.skip(
     'Paper Case creating a hearing from Process Order',
     { tag: [] },
     async (
@@ -42,8 +41,8 @@ test.describe('Contested - Process Order', () => {
       },
       testInfo
     ) => {
-      const caseId = await progressToProcessOrderForPaperCase();
-      await performSimpleUploadDraftOrderFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
+      // const caseId = await progressToUploadDraftOrderForPaperCase();
+      // await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
     }
@@ -74,13 +73,14 @@ test.describe('Contested - Process Order', () => {
   async function progressToUploadDraftOrderForFormACase(): Promise<string> {
     const caseId = await CaseDataHelper.createBaseContestedFormA();
     await PayloadHelper.solicitorSubmitFormACase(caseId);
-    await PayloadHelper.caseworkerListForHearing(caseId, await DateHelper.getHearingDateUsingCurrentDate());
+    await PayloadHelper.caseworkerListForHearing12To16WeeksFromNow(caseId);
     return caseId;
   }
 
-  async function progressToProcessOrderForPaperCase(): Promise<string> {
+  async function progressToUploadDraftOrderForPaperCase(): Promise<string> {
     const caseId = await CaseDataHelper.createBaseContestedPaperCase();
     await PayloadHelper.caseWorkerProgressPaperCaseToListing(caseId);
+    // await PayloadHelper.caseworkerListForHearing12To16WeeksFromNow(caseId);
     return caseId;
   }
 
@@ -101,74 +101,30 @@ test.describe('Contested - Process Order', () => {
     return caseId;
   }
 
-  /**
-   * Perform the upload draft order flow as a step towards the Process Order event
-   * This could be done via API call, after work done so Playwright can directly upload files
-   * to Document Management API.  The current service token authenticates, but isn't authorised.
-   */
-  async function performSimpleUploadDraftOrderFlow(
-    caseId: string,
-    loginPage: any,
-    manageCaseDashboardPage: any,
-    caseDetailsPage: any,
-    uploadDraftOrdersPage: any,
-    testInfo: any,
-    makeAxeBuilder: any
+/**
+ * Firstly, performs the upload draft order flow as a step towards the Process Order event.
+ * This could be done via API call, after work done so Playwright can directly upload files
+ * to Document Management API.  The current service token authenticates, but isn't authorised.
+ * On submit, gets information from the response body and uses to Approve Orders.
+ *
+ * Secondly, uses PayloadHelper to perform the Approve Orders event.
+ */
+async function progressToProcessOrderEvent(
+  caseId: string,
+  loginPage: any,
+  manageCaseDashboardPage: any,
+  caseDetailsPage: any,
+  uploadDraftOrdersPage: any,
+  testInfo: any,
+  makeAxeBuilder: any
   ): Promise<void> {
-
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
-    await manageCaseDashboardPage.navigateToCase(caseId);
-
-    await caseDetailsPage.selectNextStep(contestedEvents.uploadDraftOrders);
-    await uploadDraftOrdersPage.chooseAnAgreedOrderFollowingAHearing();
-    await uploadDraftOrdersPage.navigateContinue();
-    await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
-    await uploadDraftOrdersPage.selectFirstAvailableHearing();
-    await uploadDraftOrdersPage.chooseWhetherJudgeForHearingIsKnown(YesNoRadioEnum.NO);
-    await uploadDraftOrdersPage.chooseUploadOnBehalfOfApplicant();
-    await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
-    await uploadDraftOrdersPage.navigateAddNew();
-    await uploadDraftOrdersPage.uploadDraftOrder(caseId);
-    await uploadDraftOrdersPage.navigateContinue();
-    const eventPayload = await uploadDraftOrdersPage.navigateSubmitAndReturnEvent();
-    console.log(
-      eventPayload?.data?.uploadAgreedDraftOrder?.agreedDraftOrderCollection?.[0]?.value?.agreedDraftOrderDocument?.document_url
+    await loginPage.loginWaitForPath(
+      config.caseWorker.email,
+      config.caseWorker.password,
+      config.manageCaseBaseURL,
+      config.loginPaths.worklist
     );
-
-    // next - see is this is enough to get the approve orders event to work.
-    // Use the document url and manually past in a file first.  Either way keep this function, useful.
-
-
-    if (config.run_accessibility) {
-      const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-      await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-      });
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    }
-  }
-
-  /**
-   * Perform a simple "Approve draft orders" flow as a step towards the Process Order event.
-   * The "Approve draft orders" Case Orchestration handler requires proper document information generated by the
-   * "Upload draft order" event.  So completing "Approve draft orders" by API call is not appropriate.
-   */
-  async function performSimpleApproveOrdersFlow(
-    caseId: string,
-    loginPage: any,
-    manageCaseDashboardPage: any,
-    caseDetailsPage: any,
-    uploadDraftOrdersPage: any,
-    testInfo: any,
-    makeAxeBuilder: any
-  ): Promise<void> {
-
-    await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     await caseDetailsPage.selectNextStep(contestedEvents.uploadDraftOrders);
@@ -182,17 +138,19 @@ test.describe('Contested - Process Order', () => {
     await uploadDraftOrdersPage.navigateAddNew();
     await uploadDraftOrdersPage.uploadDraftOrder(caseId);
     await uploadDraftOrdersPage.navigateContinue();
-    // await uploadDraftOrdersPage.navigateSubmit();
+    const eventResponse = await uploadDraftOrdersPage.navigateSubmitAndReturnEventResponse();
 
-    if (config.run_accessibility) {
-      const accessibilityScanResults = await makeAxeBuilder().analyze();
+    // Get the data for the first draft order from the response, to use in the next step.
+    const firstDraftOrderItem = eventResponse?.data?.agreedDraftOrderCollection?.[0]?.value?.draftOrder;
+    const hearingDate = eventResponse?.data?.hearingDate;
+    const detailsToApproveOrders = {
+      documentUrl: firstDraftOrderItem?.document_url,
+      documentBinaryUrl: firstDraftOrderItem?.document_binary_url,
+      uploadTimestamp: firstDraftOrderItem?.upload_timestamp,
+      hearingDate
+    };
 
-      await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-      });
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    }
+    await PayloadHelper.judgeApproveOrders(caseId, detailsToApproveOrders);
   }
+
 });

@@ -1,0 +1,102 @@
+{
+    "showWarningMessageToJudge": "No",
+    "judgeApproval1": {
+      "docType": "DRAFT_ORDER",
+      "title": "Draft Order",
+      "inlineDocType": "draft order",
+      "hearingInfo": "First Directions Appointment (FDA) on **replace-hearing-info-date** 10:00",
+      "hearingDate": "**replace-hearing-date**",
+      "hearingJudge": null,
+      "document": {
+        "document_url": "**replace-doc-url**",
+        "document_filename": "agreed-draft-order-document.docx",
+        "document_binary_url": "**replace-doc-binary-url**",
+        "upload_timestamp": "**replace-upload-timestamp**"
+      },
+      "hasAttachment": "No",
+      "attachments": null,
+      "judgeDecision": "READY_TO_BE_SEALED",
+      "isFinalOrder": {
+        "value": [],
+        "list_items": [
+          {
+            "code": "Yes",
+            "label": "This is a final order"
+          }
+        ]
+      },
+      "changesRequestedByJudge": null
+    },
+    "judgeApproval2": {
+      "docType": null,
+      "title": null,
+      "inlineDocType": null,
+      "hearingInfo": null,
+      "hearingDate": null,
+      "hearingJudge": null,
+      "hasAttachment": "No",
+      "attachments": null,
+      "judgeDecision": null,
+      "isFinalOrder": {
+        "value": [],
+        "list_items": []
+      },
+      "changesRequestedByJudge": null
+    },
+    "judgeApproval3": {
+      "docType": null,
+      "title": null,
+      "inlineDocType": null,
+      "hearingInfo": null,
+      "hearingDate": null,
+      "hearingJudge": null,
+      "hasAttachment": "No",
+      "attachments": null,
+      "judgeDecision": null,
+      "isFinalOrder": {
+        "value": [],
+        "list_items": []
+      },
+      "changesRequestedByJudge": null
+    },
+    "judgeApproval4": {
+      "docType": null,
+      "title": null,
+      "inlineDocType": null,
+      "hearingInfo": null,
+      "hearingDate": null,
+      "hearingJudge": null,
+      "hasAttachment": "No",
+      "attachments": null,
+      "judgeDecision": null,
+      "isFinalOrder": {
+        "value": [],
+        "list_items": []
+      },
+      "changesRequestedByJudge": null
+    },
+    "judgeApproval5": {
+      "docType": null,
+      "title": null,
+      "inlineDocType": null,
+      "hearingInfo": null,
+      "hearingDate": null,
+      "hearingJudge": null,
+      "hasAttachment": "No",
+      "attachments": null,
+      "judgeDecision": null,
+      "isFinalOrder": {
+        "value": [],
+        "list_items": []
+      },
+      "changesRequestedByJudge": null
+    },
+    "hearingInstruction": {
+      "showRequireAnotherHearingQuestion": "Yes",
+      "requireAnotherHearing": "No"
+    },
+    "extraReportFieldsInput": {
+      "showRequireExtraReportFieldsInputQuestion": "Yes",
+      "judgeType": "District Judge"
+    }
+  }
