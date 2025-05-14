@@ -34,7 +34,7 @@ export class PayloadHelper {
     await this.updateCaseWorkerSteps(caseId, [
       { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' }
     ]);
-    await this.caseWorkerIssueApplication(caseId, issueDate);
+    await this.caseWorkerIssueApplication(caseId, issueDate, false);
   }
 
   /**
@@ -47,10 +47,13 @@ export class PayloadHelper {
    *
    * @param caseId - The unique identifier for the case.
    * @param issueDate - Optional ISO date string (`YYYY-MM-DD`) for the issue application payload.
+   * @param isFormACase - Default is true.  Required for Form A cases. Skip for Paper by passing false.
    */
-  static async caseWorkerIssueApplication(caseId: string, issueDate?: string) {
+  static async caseWorkerIssueApplication(caseId: string, issueDate?: string, isFormACase : boolean = true) {
 
-    await this.caseWorkerHWFDecisionMade(caseId);
+    if (isFormACase) {
+      await this.caseWorkerHWFDecisionMade(caseId);
+    }
 
     if (issueDate) {
       const issueApplicationDataModifications = [
@@ -84,15 +87,15 @@ export class PayloadHelper {
     ]);
   }
 
-  static async caseWorkerProgressToListing(caseId: string, issueDate?: string) {
+  static async caseWorkerProgressFormACaseToListing(caseId: string, issueDate?: string) {
     await this.caseWorkerIssueApplication(caseId, issueDate);
     await this.updateCaseWorkerSteps(caseId, [
       { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
     ]);
   }
 
-  static async caseWorkerProgressPaperCaseToListing(caseId: string) {
-    await this.caseWorkerSubmitPaperCase(caseId);
+  static async caseWorkerProgressPaperCaseToListing(caseId: string, issueDate?: string) {
+    await this.caseWorkerSubmitPaperCase(caseId, issueDate);
     await this.updateCaseWorkerSteps(caseId, [
       { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
     ]);
@@ -274,11 +277,16 @@ export class PayloadHelper {
    * (Not suitable for fast track or express cases.)
    * Callback will fail if hearingDate validation returns an error.
    * @param caseId - The CCD case ID to update
+   * @param [isFormACase=true] - Whether the case is Form A or not.
    */
-  static async caseworkerListForHearing12To16WeeksFromNow(caseId: string) {
+  static async caseworkerListForHearing12To16WeeksFromNow(caseId: string, isFormACase: boolean = true) {
 
-    await PayloadHelper.caseWorkerProgressToListing(caseId, await DateHelper.getCurrentDate());
+    const currentDate = await DateHelper.getCurrentDate();
     const hearingDate = await DateHelper.getHearingDateUsingCurrentDate()
+
+    isFormACase
+      ? await PayloadHelper.caseWorkerProgressFormACaseToListing(caseId, currentDate)
+      : await PayloadHelper.caseWorkerProgressPaperCaseToListing(caseId, currentDate);
 
     const listForHearingDataModifications = [
       { action: 'insert', key: 'hearingDate', value: hearingDate }

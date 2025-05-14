@@ -14,13 +14,12 @@ test.describe('Contested - Process Order', () => {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        uploadDraftOrdersPage,
-        makeAxeBuilder,
+        uploadDraftOrdersPage
       },
       testInfo
     ) => {
       const caseId = await progressToUploadDraftOrderForFormACase();
-      const draftOrderDetails =  await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       // await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
@@ -28,7 +27,7 @@ test.describe('Contested - Process Order', () => {
     }
   );
 
-  test.skip(
+  test(
     'Paper Case creating a hearing from Process Order',
     { tag: [] },
     async (
@@ -36,12 +35,12 @@ test.describe('Contested - Process Order', () => {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        uploadDraftOrdersPage,
-        makeAxeBuilder,
+        uploadDraftOrdersPage
       },
       testInfo
     ) => {
-      // const caseId = await progressToUploadDraftOrderForPaperCase();
+      const caseId = await progressToUploadDraftOrderForPaperCase();
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
       // await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
@@ -72,15 +71,16 @@ test.describe('Contested - Process Order', () => {
 
   async function progressToUploadDraftOrderForFormACase(): Promise<string> {
     const caseId = await CaseDataHelper.createBaseContestedFormA();
+    const processAsFormACase = true;
     await PayloadHelper.solicitorSubmitFormACase(caseId);
-    await PayloadHelper.caseworkerListForHearing12To16WeeksFromNow(caseId);
+    await PayloadHelper.caseworkerListForHearing12To16WeeksFromNow(caseId, processAsFormACase);
     return caseId;
   }
 
   async function progressToUploadDraftOrderForPaperCase(): Promise<string> {
     const caseId = await CaseDataHelper.createBaseContestedPaperCase();
-    await PayloadHelper.caseWorkerProgressPaperCaseToListing(caseId);
-    // await PayloadHelper.caseworkerListForHearing12To16WeeksFromNow(caseId);
+    const processAsFormACase = false;
+    await PayloadHelper.caseworkerListForHearing12To16WeeksFromNow(caseId, processAsFormACase);
     return caseId;
   }
 
@@ -115,8 +115,6 @@ async function progressToProcessOrderEvent(
   manageCaseDashboardPage: any,
   caseDetailsPage: any,
   uploadDraftOrdersPage: any,
-  testInfo: any,
-  makeAxeBuilder: any
   ): Promise<void> {
     await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(
