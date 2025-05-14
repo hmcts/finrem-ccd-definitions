@@ -6461,6 +6461,13 @@
     "CRUD": "R"
   },
   {
+    "LiveFrom": "12/05/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "latestDraftHearingOrder",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
+  },
+  {
     "LiveFrom": "09/11/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "tabSpecialAssistanceRequired",
@@ -8398,6 +8405,13 @@
     "CaseFieldID": "orderApprovedCoverLetter",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "13/05/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "orderApprovedCoverLetter",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2021",
@@ -19045,7 +19059,7 @@
     "CaseFieldID": "judgeAgreesCaseIsExpress",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRU"
-  }, 
+  },
   {
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "FinancialRemedyContested",

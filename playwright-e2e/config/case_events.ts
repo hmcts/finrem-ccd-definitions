@@ -35,6 +35,10 @@ export const consentedEvents: Record<string, CaseEvent> = {
     CreateFlag: {
         listItem: "Create Flag",
         ccdCallback: "createFlags"
+    },
+    manageFlags: {
+        listItem: "Manage Flags",
+        ccdCallback: "manageFlags"
     }
 };
 
@@ -82,5 +86,9 @@ export const contestedEvents: Record<string, CaseEvent> = {
     listForInterimHearing: {
         listItem: "List for Interim Hearing",
         ccdCallback: "FR_listForInterimHearing"
+    },
+    createGeneralApplication: {
+       listItem: "Create General Application",
+       ccdCallback: "createGeneralApplication"
     }
 };
