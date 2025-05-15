@@ -1,7 +1,7 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
-import { contestedEvents } from '../../../config/case_events';
+import { ContestedEvents } from '../../../config/case-data';
 
 test.describe('Contested - Paper Case - Amend application into Express Pilot', () => {
   test(
@@ -21,7 +21,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['The net assets in this case are currently estimated to be in the order of Under £1 million'] }]);
     
-      await caseDetailsPage.selectNextStep(contestedEvents.amendPaperApplicationDetails);
+      await caseDetailsPage.selectNextStep(ContestedEvents.amendPaperApplicationDetails);
 
       for (let i = 0; i < 8; i++) {
         await amendPaperApplicationDetailsPage.navigateContinue();
@@ -51,7 +51,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['The net assets in this case are currently estimated to be in the order of Under £250,000 (this should be total of combined net assets, but excluding pensions)'] }]);
-      await caseDetailsPage.selectNextStep(contestedEvents.amendPaperApplicationDetails);
+      await caseDetailsPage.selectNextStep(ContestedEvents.amendPaperApplicationDetails);
       for (let i = 0; i < 9; i++) {
         await amendPaperApplicationDetailsPage.navigateContinue();
       }
@@ -78,7 +78,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['The net assets in this case are currently estimated to be in the order of Under £250,000 (this should be total of combined net assets, but excluding pensions)'] }]);
     
-      await caseDetailsPage.selectNextStep(contestedEvents.amendPaperApplicationDetails);
+      await caseDetailsPage.selectNextStep(ContestedEvents.amendPaperApplicationDetails);
       for (let i = 0; i < 8; i++) {
         await amendPaperApplicationDetailsPage.navigateContinue();
       }
@@ -108,7 +108,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['The net assets in this case are currently estimated to be in the order of Under £250,000 (this should be total of combined net assets, but excluding pensions)'] }]);
     
-      await caseDetailsPage.selectNextStep(contestedEvents.amendPaperApplicationDetails);
+      await caseDetailsPage.selectNextStep(ContestedEvents.amendPaperApplicationDetails);
       for (let i = 0; i < 9; i++) {
         await amendPaperApplicationDetailsPage.navigateContinue();
       }

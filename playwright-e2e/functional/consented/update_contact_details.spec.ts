@@ -1,6 +1,6 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { consentedEvents } from '../../config/case_events';
+import { ConsentedEvents } from '../../config/case-data';
 import { YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums';
 import { updateContactDetailsTabData } from '../../data/tab_content/consented/update_contact_details_caseworker_tabs';
 import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
@@ -29,7 +29,7 @@ test(
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Update contact details
-      await caseDetailsPage.selectNextStep(consentedEvents.updateContactDetails);
+      await caseDetailsPage.selectNextStep(ConsentedEvents.updateContactDetails);
       await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(false);
       await updateContactDetailsPage.navigateContinue();
       await updateContactDetailsPage.navigateContinue();
@@ -43,7 +43,7 @@ test(
       await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
       await createCaseCheckYourAnswersPage.checkRespondentInRefugeQuestion(respondentInRefuge);
       await createCaseCheckYourAnswersPage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.updateContactDetails.listItem);
+      await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.updateContactDetails.listItem);
 
       // Assert tab data
       await caseDetailsPage.assertTabData(updateContactDetailsTabData);

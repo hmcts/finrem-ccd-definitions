@@ -1,7 +1,7 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
-import { contestedEvents } from '../../../config/case_events';
+import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 
 // Hearing types
@@ -78,7 +78,7 @@ async function performListForInterimHearingsFlow(
   await manageCaseDashboardPage.visit();
   await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   await manageCaseDashboardPage.navigateToCase(caseId);
-  await caseDetailsPage.selectNextStep(contestedEvents.listForInterimHearing);
+  await caseDetailsPage.selectNextStep(ContestedEvents.listForInterimHearing);
   // Add 6 distinct interim hearings.  Only the last has no file selected.
   await addHearingDetails(0, MaintenancePendingSuit, listForInterimHearings);
   await addHearingDetails(1, FirstDirectionsAppointment, listForInterimHearings);

@@ -1,6 +1,6 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { contestedEvents } from '../../config/case_events';
+import { ContestedEvents } from '../../config/case-data';
 import { paymentDetailsTabData } from '../../data/tab_content/payment_details_tabs';
 import { ContestedCaseDataHelper } from '../helpers/Contested/ContestedCaseDataHelper';
 
@@ -31,7 +31,7 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Case Submission
-    await caseDetailsPage.selectNextStep(contestedEvents.applicationPaymentSubmission);
+    await caseDetailsPage.selectNextStep(ContestedEvents.applicationPaymentSubmission);
     await solicitorAuthPage.enterSolicitorDetails(
       "Bilbo Baggins",
       "Bag End",
@@ -47,7 +47,7 @@ test(
     await caseSubmissionPage.navigateSubmit();
     await caseSubmissionPage.returnToCaseDetails();
 
-    await caseDetailsPage.checkHasBeenUpdated(contestedEvents.applicationPaymentSubmission.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.applicationPaymentSubmission.listItem);
 
     // Assert Tab Data
     await caseDetailsPage.assertTabData(paymentDetailsTabData(hasHelpWithFees, pbaNumber, reference));

@@ -2,6 +2,7 @@ import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import * as fs from "fs";
 import path from "path";
 import * as otp from "otplib";
+import { set, unset } from "lodash";
 
 const axiosClient = axios.create({});
 
@@ -264,11 +265,87 @@ export class CcdApiHelper {
     return saveCaseResponse?.data;
   }
 
-  createSolicitorReference(): string {
-    return Date.now().toString();
+  /**
+   * Updates a case in CCD using a JSON object.
+   *
+   * @param userName - The username for authentication.
+   * @param password - The password for authentication.
+   * @param caseId - The CCD case ID to update.
+   * @param caseType - The case type (e.g., "FinancialRemedyContested").
+   * @param eventId - The event ID to trigger the update.
+   * @param jsonObject - The JSON object containing the updated data.
+   * @param shareCaseRef - Optional reference for shared cases.
+   * @returns The response data from the CCD API.
+   */
+  async updateCaseInCcdFromJSONObject(
+    userName: string,
+    password: string,
+    caseId: string,
+    caseType: string,
+    eventId: string,
+    jsonObject: any,
+    shareCaseRef?: string
+  ): Promise<any> {
+    const authToken = await this.getUserToken(userName, password);
+    const userId = await this.getUserId(authToken);
+    const serviceToken = await this.getServiceToken();
+
+    console.info("Updating case with id %s and event %s", caseId, eventId);
+
+    const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
+    const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/events`;
+
+    const eventToken = await this.getStartEventToken(
+      ccdStartEventPath,
+      ccdSaveEventPath,
+      authToken,
+      serviceToken
+    );
+
+    let updatedData = JSON.stringify(jsonObject);
+    if (shareCaseRef) {
+      updatedData = updatedData.replace("ReplaceForShareCase", shareCaseRef);
+    }
+
+    const payload = {
+      data: JSON.parse(updatedData),
+      event: {
+        id: `${eventId}`,
+        summary: "Updating Case",
+        description: "For CCD E2E Test",
+      },
+      event_token: eventToken,
+    };
+
+    const saveCaseResponse = await this.saveCase(
+      ccdSaveEventPath,
+      authToken,
+      serviceToken,
+      payload
+    );
+
+    console.info("Updated case with id %s and event %s", caseId, eventId);
+    return saveCaseResponse?.data;
   }
 
-  createCaseworkerReference(): string {
-    return `CA${Date.now()}`;
+  /**
+   * Applies modifications to a JSON object based on the provided actions.
+   *
+   * @param dataModifications - An array of actions to modify the JSON object.
+   * @param data - The JSON object to modify.
+   */
+  makeModifications(dataModifications: { action: string, key: string, value?: any }[], data: any): void {
+    if (Array.isArray(dataModifications)) {
+      dataModifications.forEach((modification) => {
+        const { action, key, value } = modification;
+        if (!key) return;
+
+        if (action === "delete") {
+          unset(data, key);
+        } else if (action === "insert") {
+          set(data, key, value);
+        }
+      });
+    }
   }
 }

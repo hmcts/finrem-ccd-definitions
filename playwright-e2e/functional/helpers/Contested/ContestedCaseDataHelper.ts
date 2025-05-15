@@ -1,6 +1,5 @@
 import { CaseDataBuilder } from "../CaseDataBuilder";
-import { CaseType, PayloadPath } from "../../../pages/helpers/enums/CaseDataEnums";
-import { contestedEvents } from "../../../config/case_events";
+import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
 import { EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT, ESTIMATED_ASSETS_UNDER_1M } from "../PayloadMutator";
 import { PayloadHelper } from "./ContestedPayloadHelper";
 
@@ -15,8 +14,8 @@ export class ContestedCaseDataHelper {
   }): Promise<string> {
     // Determine the event and payload path based on whether it's a paper case or not
     const event = isPaper
-      ? contestedEvents.createPaperCase.ccdCallback
-      : contestedEvents.createCase.ccdCallback;
+      ? ContestedEvents.createPaperCase.ccdCallback
+      : ContestedEvents.createCase.ccdCallback;
 
     const payloadPath = isPaper
       ? PayloadPath.Contested.paper

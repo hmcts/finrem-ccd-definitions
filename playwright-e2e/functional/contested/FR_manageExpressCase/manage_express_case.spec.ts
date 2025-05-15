@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { contestedEvents } from '../../../config/case_events';
+import { ContestedEvents } from '../../../config/case-data';
 import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
 
 test.describe('Contested - Manage Express Case', () => {
@@ -17,7 +17,7 @@ test.describe('Contested - Manage Express Case', () => {
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Enrolled'] }]);
 
       // Remove case from express pilot
-      await caseDetailsPage.selectNextStep(contestedEvents.manageExpressCase);
+      await caseDetailsPage.selectNextStep(ContestedEvents.manageExpressCase);
       await manageExpressCasePage.selectExpressPilotQuestionNo();
       await manageExpressCasePage.uncheckConfirmRemoveCaseFromExpressPilot();
       await manageExpressCasePage.navigateSubmit();
@@ -42,7 +42,7 @@ test.describe('Contested - Manage Express Case', () => {
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Enrolled'] }]);
 
       // Remove case from express pilot
-      await caseDetailsPage.selectNextStep(contestedEvents.manageExpressCase);
+      await caseDetailsPage.selectNextStep(ContestedEvents.manageExpressCase);
       await manageExpressCasePage.selectExpressPilotQuestionNo();
       await manageExpressCasePage.uncheckConfirmRemoveCaseFromExpressPilot();
       await manageExpressCasePage.navigateSubmit();
@@ -67,7 +67,7 @@ test.describe('Contested - Manage Express Case', () => {
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }]);
 
       // Verify not enrolled message
-      await caseDetailsPage.selectNextStep(contestedEvents.manageExpressCase);
+      await caseDetailsPage.selectNextStep(ContestedEvents.manageExpressCase);
       await manageExpressCasePage.verifyExpressPilotNotEnrolled();
       await manageExpressCasePage.navigateSubmit();
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }]);
@@ -87,7 +87,7 @@ test.describe('Contested - Manage Express Case', () => {
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }]);
 
       // Verify not enrolled message
-      await caseDetailsPage.selectNextStep(contestedEvents.manageExpressCase);
+      await caseDetailsPage.selectNextStep(ContestedEvents.manageExpressCase);
       await manageExpressCasePage.verifyExpressPilotNotEnrolled();
       await manageExpressCasePage.navigateSubmit();
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }]);

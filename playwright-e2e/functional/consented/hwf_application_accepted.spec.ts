@@ -1,6 +1,6 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { consentedEvents } from '../../config/case_events';
+import { ConsentedEvents } from '../../config/case-data';
 import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
 
 test(
@@ -21,8 +21,8 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // HWF Payment
-    await caseDetailsPage.selectNextStep(consentedEvents.hwfDecisionMade);
+    await caseDetailsPage.selectNextStep(ConsentedEvents.hwfDecisionMade);
     await hwfApplicationAcceptedPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.hwfDecisionMade.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.hwfDecisionMade.listItem);
   }
 );

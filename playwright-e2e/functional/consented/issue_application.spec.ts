@@ -1,6 +1,6 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { consentedEvents } from '../../config/case_events';
+import { ConsentedEvents } from '../../config/case-data';
 import { adminNotesTabData } from '../../data/tab_content/consented/admin_notes_tabs';
 import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
 
@@ -28,10 +28,10 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Issue Application
-    await caseDetailsPage.selectNextStep(consentedEvents.issueApplication);
+    await caseDetailsPage.selectNextStep(ConsentedEvents.issueApplication);
     await issueApplicationPage.navigateContinue();
     await issueApplicationPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(consentedEvents.issueApplication.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.issueApplication.listItem);
 
     // Assert Tab Data
     await caseDetailsPage.assertTabData(adminNotesTabData(dateToday));

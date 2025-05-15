@@ -1,7 +1,7 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { ContestedCaseDataHelper } from '../helpers/Contested/ContestedCaseDataHelper';
-import { contestedEvents } from '../../config/case_events';
+import { ContestedEvents } from '../../config/case-data';
 import { PayloadHelper } from '../helpers/Contested/ContestedPayloadHelper';
 
 async function createAndProcessPaperCase(): Promise<string> {
@@ -36,7 +36,7 @@ test.describe('Contested - File Type Restrictions on uploading documents', () =>
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
-      await caseDetailsPage.selectNextStep(contestedEvents.createGeneralApplication);
+      await caseDetailsPage.selectNextStep(ContestedEvents.createGeneralApplication);
 
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.png, false);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.doc);

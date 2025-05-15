@@ -1,7 +1,6 @@
 import { CaseDataBuilder } from "../CaseDataBuilder";
-import { consentedEvents } from "../../../config/case_events";
+import { ConsentedEvents, CaseType, PayloadPath } from "../../../config/case-data";
 import { PayloadHelper } from "./ConsentedPayloadHelper";
-import { CaseType, PayloadPath } from "../../../pages/helpers/enums/CaseDataEnums";
 
 export class ConsentedCaseDataHelper {
 
@@ -10,7 +9,7 @@ export class ConsentedCaseDataHelper {
   ): Promise<string> {
     const caseId = await new CaseDataBuilder(
       CaseType.Consented,
-      consentedEvents.createCase.ccdCallback
+      ConsentedEvents.createCase.ccdCallback
     )
       .withSolicitorUser()
       .withPayload(PayloadPath.Consented.base)

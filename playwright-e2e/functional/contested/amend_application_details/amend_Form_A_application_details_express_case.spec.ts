@@ -1,6 +1,6 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { contestedEvents } from '../../../config/case_events';
+import { ContestedEvents } from '../../../config/case-data';
 import { expressCaseGateKeepingTabData, expressCaseGateKeepingNotEnrolledTabData } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
 import { ExpressCasePage } from '../../../pages/events/amend-application-details/ExpressCasePage';
@@ -54,7 +54,7 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
       await caseDetailsPage.assertTabData(expressCaseGateKeepingNotEnrolledTabData);
       break;
   }
-  await caseDetailsPage.selectNextStep(contestedEvents.amendFormAApplicationDetails);
+  await caseDetailsPage.selectNextStep(ContestedEvents.amendFormAApplicationDetails);
   await startPage.navigateContinue();
   await startPage.navigateContinue(); // Applicant representation
   await startPage.navigateContinue(); // Divorce / Dissolution details

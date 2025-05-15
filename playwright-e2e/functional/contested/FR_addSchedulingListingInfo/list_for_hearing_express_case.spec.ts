@@ -1,7 +1,7 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
-import { contestedEvents } from '../../../config/case_events';
+import { ContestedEvents } from '../../../config/case-data';
 
 async function performListForHearingFlow(
   caseId: string,
@@ -19,7 +19,7 @@ async function performListForHearingFlow(
   await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
-  await caseDetailsPage.selectNextStep(contestedEvents.listForHearing);
+  await caseDetailsPage.selectNextStep(ContestedEvents.listForHearing);
   await listForHearingPage.selectTypeOfHearingDropDown(hearingType);
   await listForHearingPage.enterTimeEstimate('1 hour');
   await listForHearingPage.setHearingDateToCurrentDate();

@@ -1,6 +1,6 @@
 import { test } from '../../fixtures/fixtures'
 import config from '../../config/config';
-import { consentedEvents } from '../../config/case_events';
+import { ConsentedEvents } from '../../config/case-data';
 import { paymentDetailsTabData } from '../../data/tab_content/payment_details_tabs';
 import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
 
@@ -33,7 +33,7 @@ test(
       await manageCaseDashboardPage.navigateToCase(caseId);
   
       // Application Payment Submission 
-      await caseDetailsPage.selectNextStep(consentedEvents.applicationPaymentSubmission); 
+      await caseDetailsPage.selectNextStep(ConsentedEvents.applicationPaymentSubmission); 
       await solicitorAuthPage.enterSolicitorDetails("Bilbo Baggins", "Bag End", "Solicitor");
       await solicitorAuthPage.navigateContinue();
       await helpWithFeesPage.selectHelpWithFees(hasHelpWithFees);
@@ -44,7 +44,7 @@ test(
       await caseSubmissionPage.navigateContinue();
       await caseSubmissionPage.navigateSubmit();
       await caseSubmissionPage.returnToCaseDetails();
-      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.applicationPaymentSubmission.listItem);
+      await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.applicationPaymentSubmission.listItem);
       
       // Assert Tab Data      
       await caseDetailsPage.assertTabData(paymentDetailsTabData(hasHelpWithFees, pbaNumber, reference));

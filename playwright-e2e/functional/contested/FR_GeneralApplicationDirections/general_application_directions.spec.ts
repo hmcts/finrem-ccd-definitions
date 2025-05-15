@@ -1,7 +1,7 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
-import { contestedEvents } from '../../../config/case_events';
+import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 
 async function performGeneralApplicationDirectionsFlow(
@@ -20,7 +20,7 @@ async function performGeneralApplicationDirectionsFlow(
   await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
-  await caseDetailsPage.selectNextStep(contestedEvents.generalApplicationDirections);
+  await caseDetailsPage.selectNextStep(ContestedEvents.generalApplicationDirections);
   await generalApplicationDirectionsPage.chooseWhetherAHearingIsRequired(YesNoRadioEnum.YES);
 
   //Next, continue tests to drive through new hearing creation
