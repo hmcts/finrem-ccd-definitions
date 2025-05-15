@@ -1,7 +1,6 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { ConsentedCaseHelper } from '../helpers/Consented/ConsentedCaseHelper';
-import { PayloadHelper } from '../helpers/Consented/ConsentedPayloadHelper';
+import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
 import { consentedEvents } from '../../config/case_events';
 import { caseFlagTabData } from '../../data/tab_content/consented/case_flag_tabs';
 import { caseFlagTabDataUpdated } from '../../data/tab_content/consented/case_flag_tabs_updated';
@@ -12,9 +11,7 @@ test.describe('Consented Case Flag Tests', () => {
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage }) => {
       // Create and setup case
-      const caseId = await ConsentedCaseHelper.createConsentedCase();
-      await PayloadHelper.solicitorSubmitFormACase(caseId);
-      await PayloadHelper.caseWorkerIssueApplication(caseId);
+      const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToIssueApplication();
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
@@ -23,7 +20,7 @@ test.describe('Consented Case Flag Tests', () => {
 
       // Helper function to create a flag
       async function createFlag(flagType: 'case' | 'applicant' | 'respondent', flagSelection: () => Promise<void>, comments: string) {
-        await caseDetailsPage.selectNextStep(consentedEvents.CreateFlag);
+        await caseDetailsPage.selectNextStep(consentedEvents.createFlag);
         await createFlagPage.selectFlagType(flagType);
         await createFlagPage.navigateContinue();
         await createFlagPage.navigateContinue();
@@ -33,7 +30,7 @@ test.describe('Consented Case Flag Tests', () => {
         await createFlagPage.addCommentsToThisFlag(comments);
         await createFlagPage.navigateContinue();
         await createFlagPage.navigateSubmit();
-        await caseDetailsPage.checkHasBeenUpdated(consentedEvents.CreateFlag.listItem);
+        await caseDetailsPage.checkHasBeenUpdated(consentedEvents.createFlag.listItem);
         await caseDetailsPage.checkActiveCaseFlagOnCase();
       }
 
@@ -65,9 +62,7 @@ test.describe('Consented Case Flag Tests', () => {
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageFlagPage }) => {
       // Create and setup case
-      const caseId = await ConsentedCaseHelper.createConsentedCase();
-      await PayloadHelper.solicitorSubmitFormACase(caseId);
-      await PayloadHelper.caseworkerCreateFlag(caseId);
+      const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToCreateFlag();
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();

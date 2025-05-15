@@ -2,7 +2,7 @@ import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { consentedEvents } from '../../config/case_events';
 import { approvedOrderTabData } from '../../data/tab_content/consented/approve_application_tabs';
-import { ConsentedCaseHelper } from '../helpers/Consented/ConsentedCaseHelper';
+import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
 
 test(
   'Consented - Approve Application',
@@ -16,7 +16,7 @@ test(
     },
   ) => {
     // Create case and progress to Issue Application
-    const caseId = await ConsentedCaseHelper.createConsentedCaseUpToIssueApplication();
+    const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToIssueApplication();
 
     // Login in as judge
     await manageCaseDashboardPage.visit();

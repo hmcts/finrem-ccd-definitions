@@ -1,9 +1,9 @@
 import { CaseDataBuilder } from "../CaseDataBuilder";
 import { consentedEvents } from "../../../config/case_events";
-import { PayloadHelper } from "../Consented/ConsentedPayloadHelper";
+import { PayloadHelper } from "./ConsentedPayloadHelper";
 import { CaseType, PayloadPath } from "../../../pages/helpers/enums/CaseDataEnums";
 
-export class ConsentedCaseHelper {
+export class ConsentedCaseDataHelper {
 
   private static async buildConsentedCaseWithSteps(
     steps: ((caseId: string) => Promise<void>)[]
@@ -42,6 +42,13 @@ export class ConsentedCaseHelper {
     return this.buildConsentedCaseWithSteps([
       (id) => PayloadHelper.solicitorSubmitFormACase(id),
       (id) => PayloadHelper.caseWorkerIssueApplication(id),
+    ]);
+  }
+
+  static async createConsentedCaseUpToCreateFlag(): Promise<string> {
+    return this.buildConsentedCaseWithSteps([
+      (id) => PayloadHelper.solicitorSubmitFormACase(id),
+      (id) => PayloadHelper.caseworkerCreateFlag(id),
     ]);
   }
 }

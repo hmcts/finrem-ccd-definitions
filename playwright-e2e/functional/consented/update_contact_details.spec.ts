@@ -3,7 +3,7 @@ import config from '../../config/config';
 import { consentedEvents } from '../../config/case_events';
 import { YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums';
 import { updateContactDetailsTabData } from '../../data/tab_content/consented/update_contact_details_caseworker_tabs';
-import { ConsentedCaseHelper } from '../helpers/Consented/ConsentedCaseHelper';
+import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
 
 test(
     'Consented - Update contact details',
@@ -18,7 +18,7 @@ test(
       },
     ) => {
       // Create case and progress to HWF decision made
-      const caseId = await ConsentedCaseHelper.createConsentedCaseUpToHWFDecision();
+      const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToHWFDecision();
 
       const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
       const respondentInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
