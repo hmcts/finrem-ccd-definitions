@@ -16,9 +16,7 @@ export class DateHelper {
      * @returns Current datetime string in ISO format as a promise resolving to a string.
      */
     static async getCurrentTimestamp(): Promise<string> {
-      const dateString =  new Date().toISOString();
-      // return dateString.replace('Z', '000'); // Pads to 6-digits
-      return dateString;
+      return new Date().toISOString();
     }
 
     /**
