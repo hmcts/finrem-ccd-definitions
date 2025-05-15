@@ -101,23 +101,6 @@ test.describe('Contested - Process Order', () => {
     return caseId;
   }
 
-  async function createOldProcessOrderHearingForFormACase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedFormA();
-    await PayloadHelper.solicitorSubmitFormACase(caseId);
-    await PayloadHelper.caseWorkerIssueApplication(caseId)
-    // todo await PayloadHelper.caseWorkerCreateOldProcessOrderHearing(caseId);
-    // was await PayloadHelper.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
-    return caseId;
-  }
-
-  async function createOldProcessOrderHearingForPaperCase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedPaperCase();
-    await PayloadHelper.caseWorkerSubmitPaperCase(caseId);
-    // todo await PayloadHelper.caseWorkerCreateOldProcessOrderHearing(caseId);
-    // was await PayloadHelper.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
-    return caseId;
-  }
-
   /**
    * Firstly, performs the upload draft order flow as a step towards the Process Order event.
    *

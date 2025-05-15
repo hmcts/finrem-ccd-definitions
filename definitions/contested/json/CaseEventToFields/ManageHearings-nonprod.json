@@ -10,5 +10,21 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N"
+  }, 
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingHearing",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
+    "PageLabel": "Add a new hearing",
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "PageShowCondition": "manageHearingsActionSelection=\"Add_Hearing\"",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   }
 ]

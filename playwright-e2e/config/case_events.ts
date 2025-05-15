@@ -90,5 +90,9 @@ export const contestedEvents: Record<string, CaseEvent> = {
     uploadDraftOrders: {
         listItem: "Upload draft orders",
         ccdCallback: "FR_draftOrders"
+    },
+    createGeneralApplication: {
+       listItem: "Create General Application",
+       ccdCallback: "createGeneralApplication"
     }
 };
