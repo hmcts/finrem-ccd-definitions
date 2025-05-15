@@ -19,7 +19,7 @@ export class PayloadHelper {
     }
   }
 
-  static async solicitorSubmitFormACase(caseId : string) {
+  static async solicitorSubmitFormACase(caseId: string) {
     await updateCaseInCcd(
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
@@ -30,7 +30,7 @@ export class PayloadHelper {
     );
   }
 
-  static async caseWorkerSubmitPaperCase(caseId : string, issueDate? : string) {
+  static async caseWorkerSubmitPaperCase(caseId: string, issueDate?: string) {
     await this.updateCaseWorkerSteps(caseId, [
       { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' }
     ]);
@@ -49,7 +49,7 @@ export class PayloadHelper {
    * @param issueDate - Optional ISO date string (`YYYY-MM-DD`) for the issue application payload.
    * @param isFormACase - Default is true.  Required for Form A cases. Skip for Paper by passing false.
    */
-  static async caseWorkerIssueApplication(caseId: string, issueDate?: string, isFormACase : boolean = true) {
+  static async caseWorkerIssueApplication(caseId: string, issueDate?: string, isFormACase: boolean = true) {
 
     if (isFormACase) {
       await this.caseWorkerHWFDecisionMade(caseId);
@@ -74,7 +74,7 @@ export class PayloadHelper {
         issueApplicationJsonObject
       );
 
-      } else {
+    } else {
       await this.updateCaseWorkerSteps(caseId, [
         { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' }
       ]);
@@ -111,7 +111,7 @@ export class PayloadHelper {
   static async caseworkerCreateFlag(caseId: string) {
     await this.caseWorkerIssueApplication(caseId);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: 'createFlags' , payload: './playwright-e2e/data/payload/consented/caseworker/create-flag.json' }
+      { event: 'createFlags', payload: './playwright-e2e/data/payload/consented/caseworker/create-flag.json' }
     ]);
   }
 
@@ -177,7 +177,7 @@ export class PayloadHelper {
    *
    * @param caseId - The CCD case ID to update
    */
-  static async caseWorkerProgressToGeneralApplicationOutcome(caseId: string): Promise<string>{
+  static async caseWorkerProgressToGeneralApplicationOutcome(caseId: string): Promise<string> {
     const generalApplicationId = await this.caseworkerProgressToGeneralApplicationReferToJudge(caseId);
 
     // Create a modification object to update the JSON file with the new general application ID
@@ -307,14 +307,23 @@ export class PayloadHelper {
     );
   }
 
+  /**
+   * Runs event "Approve Orders" as judiciary.
+   *
+   * @param caseId - The case identifier for which the order is being approved.
+   * @param dynamicDraftOrderInfo - An object containing runtime values for the order document:
+   *  - `documentUrl`: The URL of the uploaded draft order document.
+   *  - `documentBinaryUrl`: The binary download URL of the document.
+   *  - `uploadTimestamp`: The timestamp of when the document was uploaded.
+   *  - `hearingDate`: The ISO string date of the hearing (e.g., '2025-08-06').
+   */
   static async judgeApproveOrders(caseId: string,
     dynamicDraftOrderInfo: {
-    documentUrl: string;
-    documentBinaryUrl: string;
-    uploadTimestamp: string;
-    hearingDate: string;
+      documentUrl: string;
+      documentBinaryUrl: string;
+      uploadTimestamp: string;
+      hearingDate: string;
     }) {
-
     const hearingDateLabel = DateHelper.formatToDayMonthYear(dynamicDraftOrderInfo.hearingDate);
 
     const approveOrdersDataModifications = [
@@ -343,4 +352,51 @@ export class PayloadHelper {
       approveOrdersJsonObject
     );
   }
+
+  /**
+   * Runs event "Process Order" as Caseworker.
+   *
+   * @param caseId - The case identifier for which the order is being approved.
+   * @param dynamicDraftOrderInfo - An object containing runtime values for the order document:
+   *  - `documentUrl`: The URL of the uploaded draft order document.
+   *  - `documentBinaryUrl`: The binary download URL of the document.
+   *  - `uploadTimestamp`: The timestamp of when the document was uploaded.
+   *  - `hearingDate`: Not needed for this method.
+   */
+  static async caseWorkerProcessOrder(caseId: string,
+    dynamicDraftOrderInfo: {
+      documentUrl: string;
+      documentBinaryUrl: string;
+      uploadTimestamp: string;
+      hearingDate: string;
+    }
+  ) {
+
+    const orderDateTime = await DateHelper.getCurrentTimestamp();
+
+    const processOrderDataModifications = [
+      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.orderDateTime', value: orderDateTime },
+      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.uploadDraftDocument.document_url', value: dynamicDraftOrderInfo.documentUrl },
+      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.uploadDraftDocument.document_binary_url', value: dynamicDraftOrderInfo.documentBinaryUrl },
+      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.uploadDraftDocument.upload_timestamp', value: dynamicDraftOrderInfo.uploadTimestamp },
+      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.originalDocument.document_url', value: dynamicDraftOrderInfo.documentUrl },
+      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.originalDocument.document_binary_url', value: dynamicDraftOrderInfo.documentBinaryUrl },
+      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.originalDocument.upload_timestamp', value: dynamicDraftOrderInfo.uploadTimestamp }
+    ];
+
+    const processOrderJsonObject = await this.createUpdatedJsonObjectFromFile(
+      './playwright-e2e/data/payload/contested/caseworker/process-order/basic-two-hearing.json',
+      processOrderDataModifications
+    );
+
+    await updateCaseInCcdFromJSONObject(
+      config.caseWorker.email,
+      config.caseWorker.password,
+      caseId,
+      'FinancialRemedyContested',
+      'FR_directionOrder',
+      processOrderJsonObject
+    );
+  }
+
 }

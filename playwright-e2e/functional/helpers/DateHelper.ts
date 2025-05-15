@@ -10,6 +10,18 @@ export class DateHelper {
     }
 
     /**
+     * Returns a timestamp.  It's UTC.
+     * Formated as: "2023-10-06T12:34:56.789Z".  Postgres stores as "2023-10-06T12:34:56.789000" (localtime).
+     *
+     * @returns Current datetime string in ISO format as a promise resolving to a string.
+     */
+    static async getCurrentTimestamp(): Promise<string> {
+      const dateString =  new Date().toISOString();
+      // return dateString.replace('Z', '000'); // Pads to 6-digits
+      return dateString;
+    }
+
+    /**
      * This is for cases that aren't "fast track" or "express".
      * Returns a hearing date, 12 weeks later than current date, as a string in "YYYY-MM-DD" format.
      *
