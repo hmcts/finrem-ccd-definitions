@@ -2,7 +2,7 @@ import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { assignCaseToRespondent } from '../helpers/CaseAssigmentHelper';
 import { respondentAssignedCaseTabs } from '../../data/tab_content/contested/respondent_assigned_case_tabs';
-import { ContestedCaseHelper } from '../helpers/Contested/ContestedCaseHelper';
+import { ContestedCaseDataHelper } from '../helpers/Contested/ContestedCaseDataHelper';
 
 test(
   'Contested - Respondent Assigned Case',
@@ -14,7 +14,7 @@ test(
     caseDetailsPage,
   }) => {
     // Create and process a form A case up to issue application
-    const caseId = await ContestedCaseHelper.createAndProcessFormACaseUpToIssueApplication();
+    const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
 
     // Login to Mange org and assign case to respondent
     await assignCaseToRespondent(loginPage, manageOrgDashboardPage, caseId);

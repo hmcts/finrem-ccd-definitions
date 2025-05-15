@@ -2,7 +2,7 @@ import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { contestedEvents } from '../../config/case_events';
 import { paymentDetailsTabData } from '../../data/tab_content/payment_details_tabs';
-import { ContestedCaseHelper } from '../helpers/Contested/ContestedCaseHelper';
+import { ContestedCaseDataHelper } from '../helpers/Contested/ContestedCaseDataHelper';
 
 test(
   'Contested - Case Submission',
@@ -18,7 +18,7 @@ test(
     caseSubmissionPage,
   }) => {
     // Create form A case
-    const caseId = await ContestedCaseHelper.createBaseContestedFormA();
+    const caseId = await ContestedCaseDataHelper.createBaseContestedFormA();
 
     // Define common test data
     const pbaNumber = "PBA0000539";

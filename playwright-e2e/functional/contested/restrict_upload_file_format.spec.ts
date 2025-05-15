@@ -1,11 +1,11 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { ContestedCaseHelper } from '../helpers/Contested/ContestedCaseHelper';
+import { ContestedCaseDataHelper } from '../helpers/Contested/ContestedCaseDataHelper';
 import { contestedEvents } from '../../config/case_events';
 import { PayloadHelper } from '../helpers/Contested/ContestedPayloadHelper';
 
 async function createAndProcessPaperCase(): Promise<string> {
-  const caseId = await ContestedCaseHelper.createBaseContestedPaperCase();
+  const caseId = await ContestedCaseDataHelper.createBaseContestedPaperCase();
   await PayloadHelper.caseWorkerSubmitPaperCase(caseId);
   return caseId;
 }

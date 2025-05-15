@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseHelper } from '../../helpers/Contested/ContestedCaseHelper';
+import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
 import { contestedEvents } from '../../../config/case_events';
 
 test.describe('Contested - Paper Case - Amend application into Express Pilot', () => {
@@ -15,7 +15,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendPaperApplicationDetailsPage
       }
     ) => {
-      const caseId = await ContestedCaseHelper.createContestedPaperCaseWithEstimatedAssetUnder1M();
+      const caseId = await ContestedCaseDataHelper.createContestedPaperCaseWithEstimatedAssetUnder1M();
       await manageCaseDashboardPage.visit();
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -46,7 +46,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendPaperApplicationDetailsPage
       }
     ) => {
-      const caseId = await ContestedCaseHelper.createBaseContestedPaperCase();
+      const caseId = await ContestedCaseDataHelper.createBaseContestedPaperCase();
       await manageCaseDashboardPage.visit();
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -72,7 +72,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendPaperApplicationDetailsPage
       }
     ) => {
-      const caseId = await ContestedCaseHelper.createContestedPaperCaseWithExpressPilotEnrolled();
+      const caseId = await ContestedCaseDataHelper.createContestedPaperCaseWithExpressPilotEnrolled();
       await manageCaseDashboardPage.visit();
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -102,7 +102,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         amendPaperApplicationDetailsPage
       }
     ) => {
-      const caseId = await ContestedCaseHelper.createContestedPaperCaseWithExpressPilotEnrolled();
+      const caseId = await ContestedCaseDataHelper.createContestedPaperCaseWithExpressPilotEnrolled();
       await manageCaseDashboardPage.visit();
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);

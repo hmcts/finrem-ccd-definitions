@@ -1,22 +1,8 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseHelper } from '../../helpers/Contested/ContestedCaseHelper';
+import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
 import { contestedEvents } from '../../../config/case_events';
-import { PayloadHelper } from '../../helpers/Contested/ContestedPayloadHelper';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-
-async function createAndProcessFormACase(): Promise<string> {
-  const caseId = await ContestedCaseHelper.createBaseContestedFormA();
-  await PayloadHelper.solicitorSubmitFormACase(caseId);
-  await PayloadHelper.caseWorkerProgressToListing(caseId);
-  return caseId;
-}
-
-async function createAndProcessPaperCase(): Promise<string> {
-  const caseId = await ContestedCaseHelper.createBaseContestedPaperCase();
-  await PayloadHelper.caseWorkerProgressPaperCaseToListing(caseId);
-  return caseId;
-}
 
 async function performListForHearingFlow(
   caseId: string,
@@ -75,7 +61,7 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessFormACase();
+      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToProgressToListing();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
       // Next:
       // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
@@ -97,7 +83,7 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessPaperCase();
+      const caseId = await ContestedCaseDataHelper.createAndProcessPaperCaseUpToProgressToListing();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
       // Next: 
       // Run test muliple times, so that the correct notices and documents can be checked as appropriate.

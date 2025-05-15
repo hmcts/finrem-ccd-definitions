@@ -4,7 +4,7 @@ import { contestedEvents } from "../../../config/case_events";
 import { EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT, ESTIMATED_ASSETS_UNDER_1M } from "../PayloadMutator";
 import { PayloadHelper } from "./ContestedPayloadHelper";
 
-export class ContestedCaseHelper {
+export class ContestedCaseDataHelper {
 
   private static buildContestedCase({
     isPaper,
@@ -69,6 +69,12 @@ export class ContestedCaseHelper {
   }
 
   // Workflow helpers
+  static async createAndProcessFormACase(): Promise<string> {
+    const caseId = await this.createBaseContestedFormA();
+    await PayloadHelper.solicitorSubmitFormACase(caseId);
+    return caseId;
+  }
+
   static async createAndProcessFormACaseUpToProgressToListing(
     isExpressPilot = false
   ): Promise<string> {
@@ -81,7 +87,7 @@ export class ContestedCaseHelper {
     return caseId;
   }
 
-  static async createAndSubmitPaperCaseUpToProgressToListing(
+  static async createAndProcessPaperCaseUpToProgressToListing(
     isExpressPilot = false
   ): Promise<string> {
     const caseId = isExpressPilot
@@ -124,6 +130,37 @@ export class ContestedCaseHelper {
 
     await PayloadHelper.solicitorSubmitFormACase(caseId);
     await PayloadHelper.caseworkerAllocateToJudge(caseId);
+    return caseId;
+  }
+
+  // General Application Directions
+  static async progressToGeneralApplicationDirectionsForFormACase(): Promise<string> {
+    const caseId = await this.createBaseContestedFormA();
+    await PayloadHelper.solicitorSubmitFormACase(caseId);
+    await PayloadHelper.caseWorkerIssueApplication(caseId)
+    await PayloadHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+    return caseId;
+  }
+
+  static async progressToGeneralApplicationDirectionsForPaperCase(): Promise<string> {
+    const caseId = await this.createBaseContestedPaperCase();
+    await PayloadHelper.caseWorkerSubmitPaperCase(caseId);
+    await PayloadHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+    return caseId;
+  }
+
+  static async createOldApplicationDirectionsHearingForFormACase(): Promise<string> {
+    const caseId = await this.createBaseContestedFormA();
+    await PayloadHelper.solicitorSubmitFormACase(caseId);
+    await PayloadHelper.caseWorkerIssueApplication(caseId)
+    await PayloadHelper.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
+    return caseId;
+  }
+
+  static async createOldApplicationDirectionsHearingForPaperCase(): Promise<string> {
+    const caseId = await this.createBaseContestedPaperCase();
+    await PayloadHelper.caseWorkerSubmitPaperCase(caseId);
+    await PayloadHelper.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
     return caseId;
   }
 }

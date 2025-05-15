@@ -1,7 +1,7 @@
 import { test } from '../fixtures/fixtures';
 import config from '../config/config';
 import { ConsentedCaseDataHelper } from '../functional/helpers/Consented/ConsentedCaseDataHelper';
-import { ContestedCaseHelper } from '../functional/helpers/Contested/ContestedCaseHelper';
+import { ContestedCaseDataHelper } from '../functional/helpers/Contested/ContestedCaseDataHelper';
 import { createCaseTabData } from '../data/tab_content/contested/solicitor_create_case_tabs';
 import { createCaseTabDataPreview } from '../data/tab_content/consented/create_case_tabs';
 
@@ -35,7 +35,7 @@ test(
     caseDetailsPage 
   }
 ) => {
-    const caseId = await ContestedCaseHelper.createAndProcessFormACaseUpToIssueApplication();
+    const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
     await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
