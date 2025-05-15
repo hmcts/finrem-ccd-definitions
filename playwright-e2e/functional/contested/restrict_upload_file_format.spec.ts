@@ -1,11 +1,11 @@
-import { expect, test } from '../../fixtures/fixtures';
+import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { CaseDataHelper } from '../helpers/CaseDataHelper';
-import { contestedEvents } from '../../config/case_events';
-import { PayloadHelper } from '../helpers/PayloadHelper';
+import { ContestedCaseDataHelper } from '../helpers/Contested/ContestedCaseDataHelper';
+import { ContestedEvents } from '../../config/case-data';
+import { PayloadHelper } from '../helpers/Contested/ContestedPayloadHelper';
 
 async function createAndProcessPaperCase(): Promise<string> {
-  const caseId = await CaseDataHelper.createBaseContestedPaperCase();
+  const caseId = await ContestedCaseDataHelper.createBaseContestedPaperCase();
   await PayloadHelper.caseWorkerSubmitPaperCase(caseId);
   return caseId;
 }
@@ -36,7 +36,7 @@ test.describe('Contested - File Type Restrictions on uploading documents', () =>
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
-      await caseDetailsPage.selectNextStep(contestedEvents.createGeneralApplication);
+      await caseDetailsPage.selectNextStep(ContestedEvents.createGeneralApplication);
 
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.png, false);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.doc);

@@ -1,73 +1,78 @@
 import fs from 'fs';
-import { updateCaseInCcd } from '../../../test/helpers/utils';
-import config from '../../config/config';
-import { updateCaseInCcdFromJSONObject, makeModifications } from '../../../test/helpers/utils';
+import { apiHelper } from '../../../fixtures/fixtures';
+import config from '../../../config/config';
+import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
 
 export class PayloadHelper {
 
   private static async updateCaseWorkerSteps(caseId: string, steps: { event: string, payload?: string }[]): Promise<void> {
     for (const step of steps) {
-      await updateCaseInCcd(
+      await apiHelper.updateCaseInCcd(
         config.caseWorker.email,
         config.caseWorker.password,
         caseId,
-        'FinancialRemedyContested',
+        CaseType.Contested,
         step.event,
-        step.payload || '' // Provide a default empty string if payload is undefined
+        step.payload || ''
       );
     }
   }
 
   static async solicitorSubmitFormACase(caseId : string) {
-    await updateCaseInCcd(
+    await apiHelper.updateCaseInCcd(
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
       caseId,
-      'FinancialRemedyContested',
-      'FR_applicationPaymentSubmission',
-      './playwright-e2e/data/payload/contested/solicitor/case-submission.json'
+      CaseType.Contested,
+      ContestedEvents.applicationPaymentSubmission.ccdCallback,
+      PayloadPath.Contested.formASubmit
     );
   }
 
-  static async caseWorkerSubmitPaperCase(caseId : string) {
+  static async caseWorkerHwfDecisionMade(caseId : string) {
     await this.updateCaseWorkerSteps(caseId, [
-      { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },
-      { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' }
+      { event: ContestedEvents.hwfDecisionMade.ccdCallback, payload: PayloadPath.Contested.hwfDecisionMade },
+    ]);
+  }
+
+  static async caseWorkerManualPayment(caseId : string) {
+    await this.updateCaseWorkerSteps(caseId, [
+      { event: ContestedEvents.manualPayment.ccdCallback, payload: PayloadPath.Contested.manualPayment },
+    ]);
+  }
+
+  static async caseWorkerSubmitPaperCase(caseId : string) {
+    await this.caseWorkerManualPayment(caseId);
+    await this.updateCaseWorkerSteps(caseId, [
+      { event: ContestedEvents.issueApplication.ccdCallback, payload: PayloadPath.Contested.issueApplication },
     ]);
   }
 
   static async caseWorkerIssueApplication(caseId: string) {
+    await this.caseWorkerHwfDecisionMade(caseId);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
-      { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' }
+      { event: ContestedEvents.issueApplication.ccdCallback, payload: PayloadPath.Contested.issueApplication }
     ]);
   }
 
   static async caseWorkerProgressToListing(caseId: string) {
     await this.caseWorkerIssueApplication(caseId);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
+      { event: ContestedEvents.progressToListing.ccdCallback, payload: PayloadPath.Contested.progressToListing }
     ]);
   }
 
   static async caseWorkerProgressPaperCaseToListing(caseId: string) {
     await this.caseWorkerSubmitPaperCase(caseId);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
+      { event: ContestedEvents.progressToListing.ccdCallback, payload: PayloadPath.Contested.progressToListing }
     ]);
   }
 
   static async caseworkerAllocateToJudge(caseId: string) {
     await this.caseWorkerIssueApplication(caseId);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: 'FR_allocateToJudge' }
-    ]);
-  }
-
-  static async caseworkerCreateFlag(caseId: string) {
-    await this.caseWorkerIssueApplication(caseId);
-    await this.updateCaseWorkerSteps(caseId, [
-      { event: 'createFlags' , payload: './playwright-e2e/data/payload/consented/caseworker/create-flag.json' }
+      { event: ContestedEvents.allocateToJudge.ccdCallback }
     ]);
   }
 
@@ -81,13 +86,13 @@ export class PayloadHelper {
    * @returns A Promise that resolves to the generated General Application ID (string)
    */
   static async caseWorkerProgressToCreateGeneralApplication(caseId: string): Promise<string> {
-    const response = await updateCaseInCcd(
+    const response = await apiHelper.updateCaseInCcd(
       config.caseWorker.email,
       config.caseWorker.password,
       caseId,
-      'FinancialRemedyContested',
-      'createGeneralApplication',
-      './playwright-e2e/data/payload/contested/caseworker/create-general-application/sender-is-applicant.json'
+      CaseType.Contested,
+      ContestedEvents.createGeneralApplication.ccdCallback,
+      PayloadPath.Contested.generalApplicationCreate
     );
 
     return response.case_data.appRespGeneralApplications[0].id;
@@ -110,16 +115,16 @@ export class PayloadHelper {
     ];
 
     const referToJudgeJsonObject = await this.createUpdatedJsonObjectFromFile(
-      './playwright-e2e/data/payload/contested/caseworker/refer-to-judge/judge-email-is-null.json',
+      PayloadPath.Contested.referToJudgeEmailIsNull,
       referListDataModifications
     );
 
-    await updateCaseInCcdFromJSONObject(
+    await apiHelper.updateCaseInCcdFromJSONObject(
       config.caseWorker.email,
       config.caseWorker.password,
       caseId,
-      'FinancialRemedyContested',
-      'FR_generalApplicationReferToJudge',
+      CaseType.Contested,
+      ContestedEvents.generalApplicationReferToJudge.ccdCallback,
       referToJudgeJsonObject
     );
 
@@ -144,17 +149,17 @@ export class PayloadHelper {
 
     // Load the JSON file and modify it to consider the new general application ID
     const generalOutcomeJsonObject = await this.createUpdatedJsonObjectFromFile(
-      './playwright-e2e/data/payload/contested/caseworker/general-application-outcome/outcome-is-other.json',
+      PayloadPath.Contested.generalApplicationOutcomeOther,
       outcomeListDataModifications
     );
 
     // Run the FR_generalApplicationReferToJudge with the modified JSON object using the new general application ID
-    await updateCaseInCcdFromJSONObject(
+    await apiHelper.updateCaseInCcdFromJSONObject(
       config.caseWorker.email,
       config.caseWorker.password,
       caseId,
-      'FinancialRemedyContested',
-      'FR_GeneralApplicationOutcome',
+      CaseType.Contested,
+      ContestedEvents.generalApplicationOutcome.ccdCallback,
       generalOutcomeJsonObject
     );
 
@@ -182,17 +187,17 @@ export class PayloadHelper {
 
     // Load the JSON file and modify it to consider the new general application ID
     const generalApplicationDirectionsJsonObject = await this.createUpdatedJsonObjectFromFile(
-      './playwright-e2e/data/payload/contested/caseworker/general-application-directions/old-style-hearing-required-yes.json',
+      PayloadPath.Contested.generalApplicationOldHearingRequiredYes,
       directionsListDataModifications
     );
 
     // Run the FR_generalApplicationReferToJudge with the modified JSON object using the new general application ID
-    await updateCaseInCcdFromJSONObject(
+    await apiHelper.updateCaseInCcdFromJSONObject(
       config.caseWorker.email,
       config.caseWorker.password,
       caseId,
-      'FinancialRemedyContested',
-      'FR_GeneralApplicationDirections',
+      CaseType.Contested,
+      ContestedEvents.generalApplicationDirections.ccdCallback,
       generalApplicationDirectionsJsonObject
     );
   }
@@ -224,7 +229,7 @@ export class PayloadHelper {
   static async createUpdatedJsonObjectFromFile(filePath: string, dataModifications: { action: string, key: string, value: string }[]): Promise<string> {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const json = JSON.parse(fileContent);
-    await makeModifications(dataModifications, json);
+    await apiHelper.makeModifications(dataModifications, json);
     return json;
   }
 }
