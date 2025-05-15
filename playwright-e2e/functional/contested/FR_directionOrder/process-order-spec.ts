@@ -1,4 +1,4 @@
-import { expect, test } from '../../../fixtures/fixtures';
+import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { CaseDataHelper } from '../../helpers/CaseDataHelper';
 import { contestedEvents } from '../../../config/case_events';
@@ -20,8 +20,9 @@ test.describe('Contested - Process Order', () => {
       const caseId = await progressToUploadDraftOrderForFormACase();
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
+      // Next
       // Actually test the process order event, when new hearings are introduced to the flow.
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (change from Approved by Judge).
+      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
       // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
     }
   );
@@ -40,8 +41,9 @@ test.describe('Contested - Process Order', () => {
       const caseId = await progressToUploadDraftOrderForPaperCase();
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
+      // Next
       // Actually test the process order event, when new hearings are introduced to the flow.
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (change from Approved by Judge).
+      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
       // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
     }
   );
@@ -61,7 +63,8 @@ test.describe('Contested - Process Order', () => {
       const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
       await PayloadHelper.caseWorkerProcessOrder(caseId, orderDetails);
 
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (change from Approved by Judge).
+      // Next
+      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
       // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
     }
   );
@@ -81,6 +84,7 @@ test.describe('Contested - Process Order', () => {
       const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
       await PayloadHelper.caseWorkerProcessOrder(caseId, orderDetails);
 
+      // Next
       // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (change from Approved by Judge).
       // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
     }
