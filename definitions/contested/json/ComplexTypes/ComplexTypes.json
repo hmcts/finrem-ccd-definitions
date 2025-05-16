@@ -2876,7 +2876,7 @@
     "LiveFrom": "01/01/2017",
     "ID": "FR_intervener",
     "ListElementCode": "intervenerEmail",
-    "FieldType": "Text",
+    "FieldType": "Email",
     "ElementLabel": "Email address",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -2924,7 +2924,7 @@
     "ID": "FR_intervener",
     "ListElementCode": "intervenerSolEmail",
     "ElementLabel": "Representative's Email address",
-    "FieldType": "Text",
+    "FieldType": "Email",
     "FieldShowCondition": "intervenerRepresented=\"Yes\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
