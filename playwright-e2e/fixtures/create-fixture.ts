@@ -50,6 +50,7 @@ import { CreateGeneralApplicationPage } from '../pages/events/create-general-app
 import { ListForInterimHearingPage } from '../pages/events/list-for-interim-hearing/ListForInterimHearingPage';
 import { ManageFlagPage } from '../pages/events/manage-flag/ManageFlagPage';
 import { GeneralApplicationDirectionsPage } from '../pages/events/general-application-directions/GeneralApplicationDirectionsPage';
+import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/UploadDraftOrdersPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -103,6 +104,7 @@ type CreateFixtures = {
   createGeneralApplicationPage: CreateGeneralApplicationPage;
   manageFlagPage: ManageFlagPage;
   generalApplicationDirectionsPage: GeneralApplicationDirectionsPage;
+  uploadDraftOrdersPage: UploadDraftOrdersPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -249,5 +251,8 @@ export const test = base.extend<CreateFixtures>({
   },
   generalApplicationDirectionsPage: async ({ page }, use) => {
     await use(new GeneralApplicationDirectionsPage(page));
+  },
+  uploadDraftOrdersPage: async ({ page }, use) => {
+    await use(new UploadDraftOrdersPage(page, commonActionsHelper));
   }
 });
