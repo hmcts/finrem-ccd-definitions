@@ -47,7 +47,7 @@ test.describe('Contested - General Application Directions', () => {
   );
 
   test.skip(
-    'Form A case shows old style hearings on the new hearing tab',
+    'Form A case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
     async () => {
       const caseId = await createOldApplicationDirectionsHearingForFormACase();
@@ -58,7 +58,7 @@ test.describe('Contested - General Application Directions', () => {
   );
 
   test.skip(
-    'Paper case shows old style hearings on the new hearing tab',
+    'Paper case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
     async () => {
       const caseId = await createOldApplicationDirectionsHearingForPaperCase();
