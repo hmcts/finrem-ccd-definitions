@@ -15,7 +15,7 @@ async function createAndProcessFormACase(): Promise<string> {
   const caseId = await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled();
   await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
 
-  await PayloadHelper.caseWorkerProgressToListing(caseId);
+  await PayloadHelper.caseWorkerProgressFormACaseToListing(caseId);
   return caseId;
 }
 
