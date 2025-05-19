@@ -1164,7 +1164,7 @@
     "Name": "Manage Hearing Bundles",
     "Description": "Manage Hearing Bundles",
     "DisplayOrder": 134,
-    "PreConditionState(s)": "prepareForHearing;caseFileSubmitted;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;generalApplicationAwaitingJudiciaryResponse;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;generalApplication;generalApplicationOutcome",
+    "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
