@@ -119,7 +119,7 @@ async function addHearingDetails(
   },
   listForInterimHearings: any
 ): Promise<void> {
-  await listForInterimHearings.clickAddNew();
+  await listForInterimHearings.navigateAddNew();
   await listForInterimHearings.selectTypeOfHearing(hearing_position, hearingDetails.type);
   await listForInterimHearings.enterTimeEstimate(hearing_position, hearingDetails.duration);
   await listForInterimHearings.enterHearingDate(hearing_position, hearingDetails.date.day, hearingDetails.date.month, hearingDetails.date.year);

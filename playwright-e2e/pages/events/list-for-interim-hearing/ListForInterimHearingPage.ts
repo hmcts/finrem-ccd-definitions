@@ -7,7 +7,6 @@ import { PayloadHelper } from '../../../functional/helpers/Contested/ContestedPa
 export class ListForInterimHearingPage extends BaseJourneyPage {
     private readonly courtRegion: string = 'Midlands'
     private readonly courtFrc: string = 'Nottingham'
-    private readonly addNew: Locator;
     private readonly commonActionsHelper: CommonActionsHelper;
     
     /**
@@ -20,12 +19,6 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
         this.commonActionsHelper = commonActionsHelper;
-        this.addNew = page.getByRole('button', { name: 'Add new' }).nth(0);
-    }
-    
-    async clickAddNew() {
-        expect(this.addNew).toBeVisible();
-        await this.addNew.click();
     }
 
     async selectTypeOfHearing(hearing_position: number, typeOfHearing: string) {
