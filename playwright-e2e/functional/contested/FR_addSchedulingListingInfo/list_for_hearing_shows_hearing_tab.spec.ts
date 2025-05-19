@@ -8,7 +8,7 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 async function createAndProcessFormACase(): Promise<string> {
   const caseId = await CaseDataHelper.createBaseContestedFormA();
   await PayloadHelper.solicitorSubmitFormACase(caseId);
-  await PayloadHelper.caseWorkerProgressToListing(caseId);
+  await PayloadHelper.caseWorkerProgressFormACaseToListing(caseId);
   return caseId;
 }
 
