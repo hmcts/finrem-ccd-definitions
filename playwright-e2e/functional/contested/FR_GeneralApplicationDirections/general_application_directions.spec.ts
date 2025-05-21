@@ -51,7 +51,8 @@ test.describe('Contested - General Application Directions', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.progressToGeneralApplicationDirectionsForFormACase();
+      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
+      await ContestedCaseDataHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
       await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
@@ -71,7 +72,8 @@ test.describe('Contested - General Application Directions', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.progressToGeneralApplicationDirectionsForPaperCase();
+      const caseId = await ContestedCaseDataHelper.createAndSubmitPaperCase();
+      await ContestedCaseDataHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
       await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
@@ -82,7 +84,8 @@ test.describe('Contested - General Application Directions', () => {
     'Form A case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
     async () => {
-      const caseId = await ContestedCaseDataHelper.createOldApplicationDirectionsHearingForFormACase();
+      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
+      await ContestedCaseDataHelper.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
       // Next:
       // Check the hearing tab to check that the old hearing data is correctly showing there.
       // Remove the skip when the test is ready.
@@ -93,7 +96,8 @@ test.describe('Contested - General Application Directions', () => {
     'Paper case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
     async () => {
-      const caseId = await ContestedCaseDataHelper.createOldApplicationDirectionsHearingForPaperCase();
+      const caseId = await ContestedCaseDataHelper.createAndSubmitPaperCase();
+      await ContestedCaseDataHelper.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
       // Next:
       // Check the hearing tab to check that the old hearing data is correctly showing there.
       // Remove the skip when the test is ready.

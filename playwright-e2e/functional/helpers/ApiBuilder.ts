@@ -11,7 +11,7 @@ const ccdApiUrl = process.env.CCD_DATA_API_URL;
 const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 
 interface ReplacementAction {
-  action: "delete" | "insert";
+  action: string;
   key: string;
   value?: any;
 }

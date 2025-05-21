@@ -1,25 +1,131 @@
-import fs from 'fs';
-import { apiHelper } from '../../../fixtures/fixtures';
-import config from '../../../config/config';
+import fs from "fs";
+import { apiHelper } from "../../../fixtures/fixtures";
+import config from "../../../config/config";
 import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
-import { DateHelper } from '../DateHelper';
+import * as PayloadMutator from "../../helpers/PayloadMutator";
+import { ReplacementAction } from "../../../types/replacement-action";
+import { DateHelper } from "../DateHelper";
 
 export class PayloadHelper {
-
-  private static async updateCaseWorkerSteps(caseId: string, steps: { event: string, payload?: string }[]): Promise<void> {
+  private static async updateCaseWorkerSteps(
+    caseId: string,
+    steps: { event: string; payload?: string }[]
+  ): Promise<any> {
+    let response;
     for (const step of steps) {
-      await apiHelper.updateCaseInCcd(
+      response = await apiHelper.updateCaseInCcd(
         config.caseWorker.email,
         config.caseWorker.password,
         caseId,
         CaseType.Contested,
         step.event,
-        step.payload || ''
+        step.payload || ""
+      );
+    }
+    return response;
+  }
+
+  static async updateStepsFromJson(
+    caseId: string,
+    asCaseWorker: boolean,
+    steps: { event: string; jsonObject?: string }[],
+    // jsonObject?: string
+  ): Promise<any> {
+    const { email, password } = asCaseWorker ? config.caseWorker : config.judge;
+    for (const step of steps) {
+      await apiHelper.updateCaseInCcdFromJSONObject(
+        email,
+        password,
+        caseId,
+        CaseType.Contested,
+        step.event,
+        step.jsonObject || ""
       );
     }
   }
 
-  static async solicitorSubmitFormACase(caseId : string) {
+  static async updateCaseWithJson(
+    caseId: string,
+    event: string,
+    jsonObject: string,
+    asCaseWorker: boolean
+  ): Promise<void> {
+    await this.updateStepsFromJson(caseId, asCaseWorker, [
+      {
+        event,
+        jsonObject,
+      },
+    ]);
+  }
+
+  private static async progressCaseToState(
+    caseId: string,
+    event: string,
+    payloadPath: string,
+    modifications: any[] = [],
+    asCaseWorker: boolean = true
+  ): Promise<void> {
+    const jsonObject = await PayloadHelper.createUpdatedJsonObjectFromFile(
+      payloadPath,
+      modifications
+    );
+    await this.updateCaseWithJson(caseId, event, jsonObject, asCaseWorker);
+  }
+
+  static async buildProcessOrderPayload(dynamicDraftOrderInfo: {
+    documentUrl: string;
+    documentBinaryUrl: string;
+    uploadTimestamp: string;
+  }): Promise<string> {
+    const orderDateTime = await DateHelper.getCurrentTimestamp();
+    const modifications = PayloadMutator.PROCESS_ORDER_DATA(
+      orderDateTime,
+      dynamicDraftOrderInfo.documentUrl,
+      dynamicDraftOrderInfo.documentBinaryUrl,
+      dynamicDraftOrderInfo.uploadTimestamp
+    );
+
+    return PayloadHelper.createUpdatedJsonObjectFromFile(
+      PayloadPath.Contested.processOrderBasicTwoHearing,
+      modifications
+    );
+  }
+
+  /**
+   * Loads a JSON file, applies the given modifications, and returns an updated JSON object.
+   *
+   * @param filePath - Path to the JSON file
+   * @param dataModifications - How the JSON needs changing
+   * @returns Updated json as an object
+   */
+  static async createUpdatedJsonObjectFromFile(
+    filePath: string,
+    dataModifications: ReplacementAction[]
+  ): Promise<string> {
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    const json = JSON.parse(fileContent);
+    apiHelper.makeModifications(dataModifications, json);
+    return json;
+  }
+  
+  /**
+   * Creates a payload object for a PDF file with a new alias name.
+   * Can be passed to the setInputFiles method of a locator.
+   *
+   * @param filePath - The path to the original PDF file.
+   * @param newFilename - The new name to assign to the PDF file in the payload.
+   * @returns An object containing the new filename, pdf MIME type, and file buffer.
+   */
+  static async createAliasPDFPayload(filePath: string, newFilename: string) {
+    const fileBuffer = fs.readFileSync(filePath);
+    return {
+      name: newFilename,
+      mimeType: "application/pdf",
+      buffer: fileBuffer,
+    };
+  }
+
+  static async solicitorSubmitFormACase(caseId: string) {
     await apiHelper.updateCaseInCcd(
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
@@ -30,42 +136,23 @@ export class PayloadHelper {
     );
   }
 
-  static async caseWorkerHwfDecisionMade(caseId : string) {
+  static async caseWorkerHwfDecisionMade(caseId: string) {
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ContestedEvents.hwfDecisionMade.ccdCallback, payload: PayloadPath.Contested.hwfDecisionMade },
+      {
+        event: ContestedEvents.hwfDecisionMade.ccdCallback,
+        payload: PayloadPath.Contested.hwfDecisionMade,
+      },
     ]);
   }
 
-  static async caseWorkerManualPayment(caseId : string) {
+  static async caseWorkerManualPayment(caseId: string) {
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ContestedEvents.manualPayment.ccdCallback, payload: PayloadPath.Contested.manualPayment },
+      {
+        event: ContestedEvents.manualPayment.ccdCallback,
+        payload: PayloadPath.Contested.manualPayment,
+      },
     ]);
   }
-
-  static async caseWorkerSubmitPaperCase(caseId : string, issueDate?: string) {
-    await this.caseWorkerManualPayment(caseId);
-    await this.updateCaseWorkerSteps(caseId, [
-      { event: ContestedEvents.issueApplication.ccdCallback, payload: PayloadPath.Contested.issueApplication },
-    ]);
-  }
-
-  // static async caseWorkerIssueApplication(caseId: string) {
-  //   await this.caseWorkerHwfDecisionMade(caseId);
-  //   await this.updateCaseWorkerSteps(caseId, [
-  //     { event: ContestedEvents.issueApplication.ccdCallback, payload: PayloadPath.Contested.issueApplication }
-  //   ]);
-  // }
-
-  static async caseWorkerProgressToListing(caseId: string, issueDate?: string) {
-    await this.caseWorkerIssueApplication(caseId);
-  }
-
-  // static async caseWorkerSubmitPaperCase(caseId: string, issueDate?: string) {
-  //   await this.updateCaseWorkerSteps(caseId, [
-  //     { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' }
-  //   ]);
-  //   await this.caseWorkerIssueApplication(caseId, issueDate, false);
-  // }
 
   /**
    * Issues an application as a caseworker.
@@ -79,354 +166,165 @@ export class PayloadHelper {
    * @param issueDate - Optional ISO date string (`YYYY-MM-DD`) for the issue application payload.
    * @param isFormACase - Default is true.  Required for Form A cases. Skip for Paper by passing false.
    */
-  static async caseWorkerIssueApplication(caseId: string, issueDate?: string, isFormACase: boolean = true) {
-
+  static async caseWorkerIssueApplication(
+    caseId: string,
+    isFormACase: boolean = true,
+    issueDate?: string
+  ) {
     if (isFormACase) {
       await this.caseWorkerHWFDecisionMade(caseId);
+    } else {
+      await this.caseWorkerManualPayment(caseId);
     }
 
     if (issueDate) {
-      const issueApplicationDataModifications = [
-        { action: 'insert', key: 'issueDate', value: issueDate }
-      ];
+      const issueApplicationJsonObject =
+        await this.createUpdatedJsonObjectFromFile(
+          PayloadPath.Contested.issueApplication,
+          PayloadMutator.ISSUE_APPLICATION(issueDate)
+        );
 
-      const issueApplicationJsonObject = await this.createUpdatedJsonObjectFromFile(
-        './playwright-e2e/data/payload/contested/caseworker/issue-application.json',
-        issueApplicationDataModifications
-      );
-
-      await apiHelper.updateCaseInCcdFromJSONObject(
-        config.caseWorker.email,
-        config.caseWorker.password,
-        caseId,
-        'FinancialRemedyContested',
-        'FR_issueApplication',
-        issueApplicationJsonObject
-      );
-
+      await this.updateStepsFromJson(caseId, true, [
+        {
+          event: ContestedEvents.issueApplication.ccdCallback,
+          jsonObject: issueApplicationJsonObject,
+        },
+      ]);
     } else {
       await this.updateCaseWorkerSteps(caseId, [
-        { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' }
+        {
+          event: ContestedEvents.issueApplication.ccdCallback,
+          payload: PayloadPath.Contested.issueApplication,
+        },
       ]);
     }
   }
 
   static async caseWorkerHWFDecisionMade(caseId: string) {
     await this.updateCaseWorkerSteps(caseId, [
-      { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' }
+      {
+        event: ContestedEvents.hwfDecisionMade.ccdCallback,
+        payload: PayloadPath.Contested.hwfDecisionMade,
+      },
     ]);
   }
 
-  static async caseWorkerProgressFormACaseToListing(caseId: string, issueDate?: string) {
-    await this.caseWorkerIssueApplication(caseId, issueDate);
+  static async caseWorkerProgressFormACaseToListing(
+    caseId: string,
+    issueDate?: string
+  ) {
+    await this.caseWorkerIssueApplication(caseId, true, issueDate);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ContestedEvents.progressToListing.ccdCallback, payload: PayloadPath.Contested.progressToListing }
+      {
+        event: ContestedEvents.progressToListing.ccdCallback,
+        payload: PayloadPath.Contested.progressToListing,
+      },
     ]);
   }
 
-  static async caseWorkerProgressPaperCaseToListing(caseId: string, issueDate?: string) {
-    await this.caseWorkerSubmitPaperCase(caseId, issueDate);
+  static async caseWorkerProgressPaperCaseToListing(
+    caseId: string,
+    issueDate?: string
+  ) {
+    await this.caseWorkerIssueApplication(caseId, false, issueDate);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ContestedEvents.progressToListing.ccdCallback, payload: PayloadPath.Contested.progressToListing }
+      {
+        event: ContestedEvents.progressToListing.ccdCallback,
+        payload: PayloadPath.Contested.progressToListing,
+      },
     ]);
   }
 
   static async caseworkerAllocateToJudge(caseId: string) {
     await this.caseWorkerIssueApplication(caseId);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ContestedEvents.allocateToJudge.ccdCallback }
+      { event: ContestedEvents.allocateToJudge.ccdCallback },
     ]);
   }
 
-  static async caseworkerCreateFlag(caseId: string) {
-    await this.caseWorkerIssueApplication(caseId);
-    await this.updateCaseWorkerSteps(caseId, [
-      { event: 'createFlags', payload: './playwright-e2e/data/payload/consented/caseworker/create-flag.json' }
+  static async caseWorkerProgressToCreateGeneralApplication(
+    caseId: string
+  ): Promise<string> {
+    const response = await this.updateCaseWorkerSteps(caseId, [
+      {
+        event: ContestedEvents.createGeneralApplication.ccdCallback,
+        payload: PayloadPath.Contested.generalApplicationCreate,
+      },
     ]);
-  }
-
-  /**
-   * Progresses a case to the Create General Application state.
-   *
-   * CCD generates a General Application ID during this process,
-   * which is extracted from the response and returned as a Promise.
-   *
-   * @param caseId - The CCD case ID to update
-   * @returns A Promise that resolves to the generated General Application ID (string)
-   */
-  static async caseWorkerProgressToCreateGeneralApplication(caseId: string): Promise<string> {
-    const response = await apiHelper.updateCaseInCcd(
-      config.caseWorker.email,
-      config.caseWorker.password,
-      caseId,
-      CaseType.Contested,
-      ContestedEvents.createGeneralApplication.ccdCallback,
-      PayloadPath.Contested.generalApplicationCreate
-    );
-
     return response.case_data.appRespGeneralApplications[0].id;
   }
 
-  /**
-   * Progresses a case to the "Refer to Judge (Application)" state for a general application.
-   * Modifies a JSON payload with the dynamically generated general application ID
-   * and submits it via CCD API.
-   *
-   * @param caseId - The CCD case ID to update
-   * @returns A Promise that resolves to the general application ID (string)
-   */
-  static async caseworkerProgressToGeneralApplicationReferToJudge(caseId: string): Promise<string> {
-    const generalApplicationId = await this.caseWorkerProgressToCreateGeneralApplication(caseId);
-
-    const referListDataModifications = [
-      { action: 'insert', key: 'generalApplicationReferList.value.code', value: generalApplicationId },
-      { action: 'insert', key: 'generalApplicationReferList.list_items[0].code', value: generalApplicationId }
-    ];
-
-    const referToJudgeJsonObject = await this.createUpdatedJsonObjectFromFile(
-      PayloadPath.Contested.referToJudgeEmailIsNull,
-      referListDataModifications
-    );
-
-    await apiHelper.updateCaseInCcdFromJSONObject(
-      config.caseWorker.email,
-      config.caseWorker.password,
+  static async generalApplicationReferToJudge(
+    caseId: string,
+    jsonObject: any[] = []
+  ): Promise<void> {
+    await this.progressCaseToState(
       caseId,
-      CaseType.Contested,
       ContestedEvents.generalApplicationReferToJudge.ccdCallback,
-      referToJudgeJsonObject
+      PayloadPath.Contested.referToJudgeEmailIsNull,
+      jsonObject
     );
-
-    return generalApplicationId;
   }
 
-  /**
-   * Progresses a case to the "General Application Outcome" state.
-   * Modifies a JSON payload with the dynamically generated general application ID
-   * and submits it via CCD API.
-   *
-   * @param caseId - The CCD case ID to update
-   */
-  static async caseWorkerProgressToGeneralApplicationOutcome(caseId: string): Promise<string> {
-    const generalApplicationId = await this.caseworkerProgressToGeneralApplicationReferToJudge(caseId);
-
-    // Create a modification object to update the JSON file with the new general application ID
-    const outcomeListDataModifications = [
-      { action: 'insert', key: 'generalApplicationOutcomeList.value.code', value: generalApplicationId },
-      { action: 'insert', key: 'generalApplicationOutcomeList.list_items[0].code', value: generalApplicationId }
-    ];
-
-    // Load the JSON file and modify it to consider the new general application ID
-    const generalOutcomeJsonObject = await this.createUpdatedJsonObjectFromFile(
-      PayloadPath.Contested.generalApplicationOutcomeOther,
-      outcomeListDataModifications
-    );
-
-    // Run the FR_generalApplicationReferToJudge with the modified JSON object using the new general application ID
-    await apiHelper.updateCaseInCcdFromJSONObject(
-      config.caseWorker.email,
-      config.caseWorker.password,
+  static async generalApplicationOutcome(
+    caseId: string,
+    jsonObject: any[] = []
+  ): Promise<void> {
+    await this.progressCaseToState(
       caseId,
-      CaseType.Contested,
       ContestedEvents.generalApplicationOutcome.ccdCallback,
-      generalOutcomeJsonObject
+      PayloadPath.Contested.generalApplicationOutcomeOther,
+      jsonObject
     );
-
-    // #Other is hardcoded.  #Approved and #Not Approved are other options, if a dynamic test is needed.
-    const codeForGeneralApplicationDirectionsEvent = generalApplicationId + "#Other";
-    return codeForGeneralApplicationDirectionsEvent;
   }
 
-  /**
-   * Creates an old-style General Application Directions hearing for a case.
-   * Progresses a case to the "General Application Directions" state.
-   * Modifies a JSON payload with the dynamically generated general application ID
-   * and submits it via CCD API.
-   *
-   * @param caseId - The CCD case ID to update
-   */
-  static async caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId: string) {
-    const codeForGeneralApplicationDirectionsEvent = await this.caseWorkerProgressToGeneralApplicationOutcome(caseId);
-
-    // Create a modification object to update the JSON file with the new general application ID
-    const directionsListDataModifications = [
-      { action: 'insert', key: 'generalApplicationDirectionsList.value.code', value: codeForGeneralApplicationDirectionsEvent },
-      { action: 'insert', key: 'generalApplicationDirectionsList.list_items[0].code', value: codeForGeneralApplicationDirectionsEvent }
-    ];
-
-    // Load the JSON file and modify it to consider the new general application ID
-    const generalApplicationDirectionsJsonObject = await this.createUpdatedJsonObjectFromFile(
-      PayloadPath.Contested.generalApplicationOldHearingRequiredYes,
-      directionsListDataModifications
-    );
-
-    // Run the FR_generalApplicationReferToJudge with the modified JSON object using the new general application ID
-    await apiHelper.updateCaseInCcdFromJSONObject(
-      config.caseWorker.email,
-      config.caseWorker.password,
+  static async generalApplicationDirections(
+    caseId: string,
+    jsonObject: any[] = []
+  ): Promise<void> {
+    await this.progressCaseToState(
       caseId,
-      CaseType.Contested,
       ContestedEvents.generalApplicationDirections.ccdCallback,
-      generalApplicationDirectionsJsonObject
+      PayloadPath.Contested.generalApplicationOldHearingRequiredYes,
+      jsonObject
     );
   }
 
-  /**
-   * Creates a payload object for a PDF file with a new alias name.
-   * Can be passed to the setInputFiles method of a locator.
-   *
-   * @param filePath - The path to the original PDF file.
-   * @param newFilename - The new name to assign to the PDF file in the payload.
-   * @returns An object containing the new filename, pdf MIME type, and file buffer.
-   */
-  static async createAliasPDFPayload(filePath: string, newFilename: string) {
-    const fileBuffer = fs.readFileSync(filePath);
-    return {
-      name: newFilename,
-      mimeType: 'application/pdf',
-      buffer: fileBuffer
-    };
-  }
-
-  /**
-    * Loads a JSON file, applies the given modifications, and returns an updated JSON object.
-   *
-    * @param filePath - Path to the JSON file
-    * @param dataModifications - How the JSON needs changing
-    * @returns Updated json as an object
-    */
-  static async createUpdatedJsonObjectFromFile(filePath: string, dataModifications: { action: string, key: string, value: string }[]): Promise<string> {
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const json = JSON.parse(fileContent);
-    await apiHelper.makeModifications(dataModifications, json);
-    return json;
-  }
-
-  /**
-   * Lists a case for hearing between 12 and 16 weeks after the issueDate.
-   * (Not suitable for fast track or express cases.)
-   * Callback will fail if hearingDate validation returns an error.
-   * @param caseId - The CCD case ID to update
-   * @param [isFormACase=true] - Whether the case is Form A or not.
-   */
-  static async caseworkerListForHearing12To16WeeksFromNow(caseId: string, isFormACase: boolean = true) {
-
-    const currentDate = await DateHelper.getCurrentDate();
-    const hearingDate = await DateHelper.getHearingDateUsingCurrentDate()
-
-    isFormACase
-      ? await PayloadHelper.caseWorkerProgressFormACaseToListing(caseId, currentDate)
-      : await PayloadHelper.caseWorkerProgressPaperCaseToListing(caseId, currentDate);
-
-    const listForHearingDataModifications = [
-      { action: 'insert', key: 'hearingDate', value: hearingDate }
-    ];
-
-    const listForHearingJsonObject = await this.createUpdatedJsonObjectFromFile(
-      './playwright-e2e/data/payload/contested/caseworker/list-for-hearing/fda-example-one.json',
-      listForHearingDataModifications
-    );
-
-    await apiHelper.updateCaseInCcdFromJSONObject(
-      config.caseWorker.email,
-      config.caseWorker.password,
+  static async listCaseForHearing(
+    caseId: string,
+    jsonObject: any[] =[]
+  ): Promise<void> {
+    await this.progressCaseToState(
       caseId,
-      'FinancialRemedyContested',
-      'FR_addSchedulingListingInfo',
-      listForHearingJsonObject
+      ContestedEvents.listForHearing.ccdCallback,
+      PayloadPath.Contested.listForHearingFdaEgOne,
+      jsonObject,
+      true
     );
   }
 
-  /**
-   * Runs event "Approve Orders" as judiciary.
-   *
-   * @param caseId - The case identifier for which the order is being approved.
-   * @param dynamicDraftOrderInfo - An object containing runtime values for the order document:
-   *  - `documentUrl`: The URL of the uploaded draft order document.
-   *  - `documentBinaryUrl`: The binary download URL of the document.
-   *  - `uploadTimestamp`: The timestamp of when the document was uploaded.
-   *  - `hearingDate`: The ISO string date of the hearing (e.g., '2025-08-06').
-   */
-  static async judgeApproveOrders(caseId: string,
-    dynamicDraftOrderInfo: {
-      documentUrl: string;
-      documentBinaryUrl: string;
-      uploadTimestamp: string;
-      hearingDate: string;
-    }) {
-    const hearingDateLabel = DateHelper.formatToDayMonthYear(dynamicDraftOrderInfo.hearingDate);
-
-    const approveOrdersDataModifications = [
-      {
-        action: 'insert',
-        key: 'judgeApproval1.hearingInfo',
-        value: `First Directions Appointment (FDA) on ${hearingDateLabel} 10:00`
-      },
-      { action: 'insert', key: 'judgeApproval1.hearingDate', value: dynamicDraftOrderInfo.hearingDate },
-      { action: 'insert', key: 'judgeApproval1.document.document_url', value: dynamicDraftOrderInfo.documentUrl },
-      { action: 'insert', key: 'judgeApproval1.document.document_binary_url', value: dynamicDraftOrderInfo.documentBinaryUrl },
-      { action: 'insert', key: 'judgeApproval1.document.upload_timestamp', value: dynamicDraftOrderInfo.uploadTimestamp }
-    ];
-
-    const approveOrdersJsonObject = await this.createUpdatedJsonObjectFromFile(
-      './playwright-e2e/data/payload/contested/judiciary/most-basic-approve-orders.json',
-      approveOrdersDataModifications
-    );
-
-    await apiHelper.updateCaseInCcdFromJSONObject(
-      config.judge.email,
-      config.judge.password,
+  static async approveOrders(
+    caseId: string,
+    jsonObject: any[] = []
+  ): Promise<void> {
+    await this.progressCaseToState(
       caseId,
-      'FinancialRemedyContested',
-      'FR_approveOrders',
-      approveOrdersJsonObject
+      ContestedEvents.approveOrders.ccdCallback,
+      PayloadPath.Contested.judiciaryBasicApproveOrders,
+      jsonObject,
+      false
     );
   }
 
-  /**
-   * Runs event "Process Order" as Caseworker.
-   *
-   * @param caseId - The case identifier for which the order is being approved.
-   * @param dynamicDraftOrderInfo - An object containing runtime values for the order document:
-   *  - `documentUrl`: The URL of the uploaded draft order document.
-   *  - `documentBinaryUrl`: The binary download URL of the document.
-   *  - `uploadTimestamp`: The timestamp of when the document was uploaded.
-   *  - `hearingDate`: Not needed for this method.
-   */
-  static async caseWorkerProcessOrder(caseId: string,
-    dynamicDraftOrderInfo: {
-      documentUrl: string;
-      documentBinaryUrl: string;
-      uploadTimestamp: string;
-      hearingDate: string;
-    }
-  ) {
-
-    const orderDateTime = await DateHelper.getCurrentTimestamp();
-
-    const processOrderDataModifications = [
-      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.orderDateTime', value: orderDateTime },
-      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.uploadDraftDocument.document_url', value: dynamicDraftOrderInfo.documentUrl },
-      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.uploadDraftDocument.document_binary_url', value: dynamicDraftOrderInfo.documentBinaryUrl },
-      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.uploadDraftDocument.upload_timestamp', value: dynamicDraftOrderInfo.uploadTimestamp },
-      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.originalDocument.document_url', value: dynamicDraftOrderInfo.documentUrl },
-      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.originalDocument.document_binary_url', value: dynamicDraftOrderInfo.documentBinaryUrl },
-      { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.originalDocument.upload_timestamp', value: dynamicDraftOrderInfo.uploadTimestamp }
-    ];
-
-    const processOrderJsonObject = await this.createUpdatedJsonObjectFromFile(
-      './playwright-e2e/data/payload/contested/caseworker/process-order/basic-two-hearing.json',
-      processOrderDataModifications
-    );
-
-    await apiHelper.updateCaseInCcdFromJSONObject(
-      config.caseWorker.email,
-      config.caseWorker.password,
+  static async processOrder(
+    caseId: string, 
+    jsonObject: any[] = []
+  ): Promise<void> {
+    await this.progressCaseToState(
       caseId,
-      'FinancialRemedyContested',
-      'FR_directionOrder',
-      processOrderJsonObject
+      ContestedEvents.directionOrder.ccdCallback,
+      PayloadPath.Contested.processOrderBasicTwoHearing,
+      jsonObject
     );
   }
-
 }

@@ -109,6 +109,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "List for Interim Hearing",
     ccdCallback: "FR_listForInterimHearing",
   },
+  uploadDraftOrders: {
+      listItem: "Upload draft orders",
+      ccdCallback: "FR_draftOrders"
+  },
   generalApplicationDirections: {
     listItem: "General Application Directions",
     ccdCallback: "FR_GeneralApplicationDirections",
@@ -124,6 +128,14 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   generalApplicationOutcome: {
     listItem: "General Application Outcome",
     ccdCallback: "FR_GeneralApplicationOutcome",
+  },
+  approveOrders: {
+    listItem: "Approve Orders",
+    ccdCallback: "FR_approveOrders",
+  },
+  directionOrder: {
+    listItem: "Direction Order",
+    ccdCallback: "FR_directionOrder",
   },
   // Common events
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
@@ -152,5 +164,8 @@ export const PayloadPath = {
     referToJudgeEmailIsNull: "./playwright-e2e/data/payload/contested/caseworker/refer-to-judge/judge-email-is-null.json",
     generalApplicationOutcomeOther: "./playwright-e2e/data/payload/contested/caseworker/general-application-outcome/outcome-is-other.json",
     generalApplicationOldHearingRequiredYes: "./playwright-e2e/data/payload/contested/caseworker/general-application-directions/old-style-hearing-required-yes.json",
+    listForHearingFdaEgOne: "./playwright-e2e/data/payload/contested/caseworker/list-for-hearing/fda-example-one.json",
+    judiciaryBasicApproveOrders: "./playwright-e2e/data/payload/contested/judiciary/most-basic-approve-orders.json",
+    processOrderBasicTwoHearing: "./playwright-e2e/data/payload/contested/caseworker/process-order/basic-two-hearing.json"
   },
 } as const;

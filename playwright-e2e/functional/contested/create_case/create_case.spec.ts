@@ -167,7 +167,6 @@ test(
   }
 );
 
-// Doesn't seem to work with caseworker. Works if logged in as solicitor
 test(
   'Contested - Caseworker view tabs post case creation',
   { tag: [] },
@@ -179,7 +178,7 @@ test(
     }
   ) => {
     // Create form A case
-    const caseId = await ContestedCaseDataHelper.createBaseContestedFormA();
+    const caseId = await ContestedCaseDataHelper.createAndProcessFormACase();
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();

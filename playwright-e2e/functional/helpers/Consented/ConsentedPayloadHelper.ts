@@ -37,8 +37,8 @@ export class PayloadHelper {
   }
 
   static async caseWorkerIssueApplication(caseId: string) {
+    await this.caseWorkerHWFDecisionMade(caseId);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ConsentedEvents.hwfDecisionMade.ccdCallback, payload: PayloadPath.Consented.base },
       { event: ConsentedEvents.issueApplication.ccdCallback, payload: PayloadPath.Consented.base },
     ]);
   }
