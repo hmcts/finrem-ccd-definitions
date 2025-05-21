@@ -26,27 +26,27 @@ export class ConsentedCaseDataHelper {
 
   static async createConsentedCaseUpToApplicationPaymentSubmission(): Promise<string> {
     return this.buildConsentedCaseWithSteps([
-      (id) => PayloadHelper.solicitorSubmitFormACase(id),
+      (id) => PayloadHelper.solicitorSubmitCase(id),
     ]);
   }
 
   static async createConsentedCaseUpToHWFDecision(): Promise<string> {
     return this.buildConsentedCaseWithSteps([
-      (id) => PayloadHelper.solicitorSubmitFormACase(id),
+      (id) => PayloadHelper.solicitorSubmitCase(id),
       (id) => PayloadHelper.caseWorkerHWFDecisionMade(id),
     ]);
   }
 
   static async createConsentedCaseUpToIssueApplication(): Promise<string> {
     return this.buildConsentedCaseWithSteps([
-      (id) => PayloadHelper.solicitorSubmitFormACase(id),
+      (id) => PayloadHelper.solicitorSubmitCase(id),
       (id) => PayloadHelper.caseWorkerIssueApplication(id),
     ]);
   }
 
   static async createConsentedCaseUpToCreateFlag(): Promise<string> {
     return this.buildConsentedCaseWithSteps([
-      (id) => PayloadHelper.solicitorSubmitFormACase(id),
+      (id) => PayloadHelper.solicitorSubmitCase(id),
       (id) => PayloadHelper.caseworkerCreateFlag(id),
     ]);
   }

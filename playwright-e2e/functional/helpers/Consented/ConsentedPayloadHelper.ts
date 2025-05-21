@@ -19,7 +19,7 @@ export class PayloadHelper {
     }
   }
 
-  static async solicitorSubmitFormACase(caseId: string) {
+  static async solicitorSubmitCase(caseId: string) {
     await apiHelper.updateCaseInCcd(
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
