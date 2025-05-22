@@ -2,9 +2,8 @@ import fs from "fs";
 import { apiHelper } from "../../../fixtures/fixtures";
 import config from "../../../config/config";
 import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
-import * as PayloadMutator from "../../helpers/PayloadMutator";
+import { ISSUE_APPLICATION } from "../../helpers/PayloadMutator";
 import { ReplacementAction } from "../../../types/replacement-action";
-import { DateHelper } from "../DateHelper";
 
 export class PayloadHelper {
   private static async updateCaseWorkerSteps(
@@ -70,25 +69,6 @@ export class PayloadHelper {
       modifications
     );
     await this.updateCaseWithJson(caseId, event, jsonObject, asCaseWorker);
-  }
-
-  static async buildProcessOrderPayload(dynamicDraftOrderInfo: {
-    documentUrl: string;
-    documentBinaryUrl: string;
-    uploadTimestamp: string;
-  }): Promise<string> {
-    const orderDateTime = await DateHelper.getCurrentTimestamp();
-    const modifications = PayloadMutator.PROCESS_ORDER_DATA(
-      orderDateTime,
-      dynamicDraftOrderInfo.documentUrl,
-      dynamicDraftOrderInfo.documentBinaryUrl,
-      dynamicDraftOrderInfo.uploadTimestamp
-    );
-
-    return PayloadHelper.createUpdatedJsonObjectFromFile(
-      PayloadPath.Contested.processOrderBasicTwoHearing,
-      modifications
-    );
   }
 
   /**
@@ -181,7 +161,7 @@ export class PayloadHelper {
       const issueApplicationJsonObject =
         await this.createUpdatedJsonObjectFromFile(
           PayloadPath.Contested.issueApplication,
-          PayloadMutator.ISSUE_APPLICATION(issueDate)
+          ISSUE_APPLICATION(issueDate)
         );
 
       await this.updateStepsFromJson(caseId, true, [
