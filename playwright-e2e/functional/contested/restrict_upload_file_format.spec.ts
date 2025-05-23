@@ -1,14 +1,7 @@
-import { expect, test } from '../../fixtures/fixtures';
+import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { CaseDataHelper } from '../helpers/CaseDataHelper';
-import { contestedEvents } from '../../config/case_events';
-import { PayloadHelper } from '../helpers/PayloadHelper';
-
-async function createAndProcessPaperCase(): Promise<string> {
-  const caseId = await CaseDataHelper.createBaseContestedPaperCase();
-  await PayloadHelper.caseWorkerSubmitPaperCase(caseId);
-  return caseId;
-}
+import { ContestedCaseDataHelper } from '../helpers/Contested/ContestedCaseDataHelper';
+import { ContestedEvents } from '../../config/case-data';
 
 const FILE_PATHS = {
   png: './playwright-e2e/data/test.png',
@@ -31,12 +24,12 @@ test.describe('Contested - File Type Restrictions on uploading documents', () =>
         createGeneralApplicationPage
       }
     ) => {
-      const caseId = await createAndProcessPaperCase();
+      const caseId = await ContestedCaseDataHelper.createAndSubmitPaperCase();
       await manageCaseDashboardPage.visit();
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
-      await caseDetailsPage.selectNextStep(contestedEvents.createGeneralApplication);
+      await caseDetailsPage.selectNextStep(ContestedEvents.createGeneralApplication);
 
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.png, false);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.doc);
