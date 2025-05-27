@@ -2,7 +2,7 @@ import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import { YesNoRadioEnum } from "../../helpers/enums/RadioEnums";
-import { PayloadHelper } from '../../../functional/helpers/PayloadHelper';
+import { PayloadHelper } from '../../../functional/helpers/Contested/ContestedPayloadHelper';
 
 export class ListForInterimHearingPage extends BaseJourneyPage {
     private readonly courtRegion: string = 'Midlands'

@@ -9,7 +9,7 @@ export const respondentAssignedCaseTabs = [{
     "Is the Applicant represented ?",
     { tabItem: "Keep the Applicant's contact details private from the Respondent?", value: "Yes" },
     "Solicitor Details",
-    { tabItem: "Your reference number", value: "AUTO-assign-to-judge" },
+    { tabItem: "Your reference number", value: "Y707HZM" },
     { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
     { tabItem: "Solicitor’s firm", value: "FinRem-1-Org" },
     ],

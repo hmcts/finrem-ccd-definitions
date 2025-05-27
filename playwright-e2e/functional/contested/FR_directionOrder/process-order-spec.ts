@@ -1,109 +1,8 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { CaseDataHelper } from '../../helpers/CaseDataHelper';
-import { contestedEvents } from '../../../config/case_events';
-import { PayloadHelper } from '../../helpers/PayloadHelper';
+import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
+import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-
-test.describe('Contested - Process Order', () => {
-  test(
-    'Form A case creating a hearing from Process Order',
-    { tag: [] },
-    async (
-      {
-        loginPage,
-        manageCaseDashboardPage,
-        caseDetailsPage,
-        uploadDraftOrdersPage
-      }
-    ) => {
-      const caseId = await progressToUploadDraftOrderForFormACase();
-      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-
-      // Next
-      // Actually test the process order event, when new hearings are introduced to the flow.
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
-      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
-    }
-  );
-
-  test(
-    'Paper Case creating a hearing from Process Order',
-    { tag: [] },
-    async (
-      {
-        loginPage,
-        manageCaseDashboardPage,
-        caseDetailsPage,
-        uploadDraftOrdersPage
-      }
-    ) => {
-      const caseId = await progressToUploadDraftOrderForPaperCase();
-      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-
-      // Next
-      // Actually test the process order event, when new hearings are introduced to the flow.
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
-      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
-    }
-  );
-
-  test(
-    'Form A case shows old-style Process Order hearings on the new hearing tab',
-    { tag: [] },
-    async (
-      {
-        loginPage,
-        manageCaseDashboardPage,
-        caseDetailsPage,
-        uploadDraftOrdersPage
-      }
-    ) => {
-      const caseId = await progressToUploadDraftOrderForFormACase();
-      const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-      await PayloadHelper.caseWorkerProcessOrder(caseId, orderDetails);
-
-      // Next
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
-      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
-    }
-  );
-
-  test(
-    'Paper case shows old-style Process Order hearings on the new hearing tab',
-    { tag: [] },
-    async (
-      {
-        loginPage,
-        manageCaseDashboardPage,
-        caseDetailsPage,
-        uploadDraftOrdersPage
-      }
-    ) => {
-      const caseId = await progressToUploadDraftOrderForPaperCase();
-      const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-      await PayloadHelper.caseWorkerProcessOrder(caseId, orderDetails);
-
-      // Next
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (change from Approved by Judge).
-      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
-    }
-  );
-
-  async function progressToUploadDraftOrderForFormACase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedFormA();
-    const processAsFormACase = true;
-    await PayloadHelper.solicitorSubmitFormACase(caseId);
-    await PayloadHelper.caseworkerListForHearing12To16WeeksFromNow(caseId, processAsFormACase);
-    return caseId;
-  }
-
-  async function progressToUploadDraftOrderForPaperCase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedPaperCase();
-    const processAsFormACase = false;
-    await PayloadHelper.caseworkerListForHearing12To16WeeksFromNow(caseId, processAsFormACase);
-    return caseId;
-  }
 
   /**
    * Firstly, performs the upload draft order flow as a step towards the Process Order event.
@@ -142,7 +41,7 @@ test.describe('Contested - Process Order', () => {
     );
     await manageCaseDashboardPage.navigateToCase(caseId);
 
-    await caseDetailsPage.selectNextStep(contestedEvents.uploadDraftOrders);
+    await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
     await uploadDraftOrdersPage.chooseAnAgreedOrderFollowingAHearing();
     await uploadDraftOrdersPage.navigateContinue();
     await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
@@ -159,13 +58,98 @@ test.describe('Contested - Process Order', () => {
     const hearingDate = eventResponse?.data?.hearingDate;
 
     const documentDetailsForFutureTestSteps = {
+      hearingDate,
       documentUrl: firstDraftOrderItem?.document_url,
       documentBinaryUrl: firstDraftOrderItem?.document_binary_url,
-      uploadTimestamp: firstDraftOrderItem?.upload_timestamp,
-      hearingDate
+      uploadTimestamp: firstDraftOrderItem?.upload_timestamp
     };
 
-    await PayloadHelper.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
+    await ContestedCaseDataHelper.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
     return documentDetailsForFutureTestSteps
   }
+
+test.describe('Contested - Process Order', () => {
+  test(
+    'Form A case creating a hearing from Process Order',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        uploadDraftOrdersPage
+      }
+    ) => {
+      const caseId = await ContestedCaseDataHelper.progressToUploadDraftOrder({ isFormA: true });
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+
+      // Next
+      // Actually test the process order event, when new hearings are introduced to the flow.
+      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
+      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
+    }
+  );
+
+  test(
+    'Paper Case creating a hearing from Process Order',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        uploadDraftOrdersPage
+      }
+    ) => {
+      const caseId = await ContestedCaseDataHelper.progressToUploadDraftOrder({ isFormA: false });
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+
+      // Next
+      // Actually test the process order event, when new hearings are introduced to the flow.
+      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
+      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
+    }
+  );
+
+  test(
+    'Form A case shows old-style Process Order hearings on the new hearing tab',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        uploadDraftOrdersPage
+      }
+    ) => {
+      const caseId = await ContestedCaseDataHelper.progressToUploadDraftOrder({ isFormA: true });
+      const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+      await ContestedCaseDataHelper.caseWorkerProcessOrder(caseId, orderDetails);
+
+      // Next
+      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
+      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
+    }
+  );
+
+  test(
+    'Paper case shows old-style Process Order hearings on the new hearing tab',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        uploadDraftOrdersPage
+      }
+    ) => {
+      const caseId = await ContestedCaseDataHelper.progressToUploadDraftOrder({ isFormA: false });
+      const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+      await ContestedCaseDataHelper.caseWorkerProcessOrder(caseId, orderDetails);
+
+      // Next
+      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (change from Approved by Judge).
+      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
+    }
+  )
 });
