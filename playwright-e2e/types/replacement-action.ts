@@ -1,5 +1,5 @@
 export interface ReplacementAction {
-  action: 'delete' | 'insert';
+  action: string;
   key: string;
   value?: string;
 }

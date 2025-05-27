@@ -1,22 +1,8 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { CaseDataHelper } from '../../helpers/CaseDataHelper';
-import { contestedEvents } from '../../../config/case_events';
-import { PayloadHelper } from '../../helpers/PayloadHelper';
+import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
+import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-
-async function createAndProcessFormACase(): Promise<string> {
-  const caseId = await CaseDataHelper.createBaseContestedFormA();
-  await PayloadHelper.solicitorSubmitFormACase(caseId);
-  await PayloadHelper.caseWorkerProgressFormACaseToListing(caseId);
-  return caseId;
-}
-
-async function createAndProcessPaperCase(): Promise<string> {
-  const caseId = await CaseDataHelper.createBaseContestedPaperCase();
-  await PayloadHelper.caseWorkerProgressPaperCaseToListing(caseId);
-  return caseId;
-}
 
 async function performListForHearingFlow(
   caseId: string,
@@ -34,7 +20,7 @@ async function performListForHearingFlow(
   await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
-  await caseDetailsPage.selectNextStep(contestedEvents.listForHearing);
+  await caseDetailsPage.selectNextStep(ContestedEvents.listForHearing);
   await listForHearingPage.selectTypeOfHearingDropDown(hearingType);
   await listForHearingPage.enterTimeEstimate('1 hour');
   await listForHearingPage.setHearingDateToCurrentDate();
@@ -75,7 +61,7 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessFormACase();
+      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToProgressToListing();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
       // Next:
       // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
@@ -97,7 +83,7 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessPaperCase();
+      const caseId = await ContestedCaseDataHelper.createAndProcessPaperCaseUpToProgressToListing();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
       // Next: 
       // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
