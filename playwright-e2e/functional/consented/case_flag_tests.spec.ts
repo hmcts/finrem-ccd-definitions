@@ -115,7 +115,6 @@ test.describe('Consented Case Flag Tests as a caseworker', () => {
   );
 });
 
-
 test.describe('Consented Case Flag Tests as a judge @test', () => {
   test(
     'Consented - judge creates case flag',
@@ -125,12 +124,10 @@ test.describe('Consented Case Flag Tests as a judge @test', () => {
       const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToIssueApplication();
 
       // Login as judge and navigate to case
-
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
       
-
       // Helper function to create a flag
       async function createFlag(flagType: 'case' | 'applicant' | 'respondent', flagSelection: () => Promise<void>, comments: string) {
         await caseDetailsPage.selectNextStep(ConsentedEvents.createFlag);
