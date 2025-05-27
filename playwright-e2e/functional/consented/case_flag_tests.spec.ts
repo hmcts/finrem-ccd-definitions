@@ -5,7 +5,7 @@ import { ConsentedEvents } from '../../config/case-data';
 import { caseFlagTabData } from '../../data/tab_content/consented/case_flag_tabs';
 import { caseFlagTabDataUpdated } from '../../data/tab_content/consented/case_flag_tabs_updated';
 
-test.describe('Consented Case Flag Tests', () => {
+test.describe('Consented Case Flag Tests as a caseworker', () => {
   test(
     'Consented - Caseworker creates case flag',
     { tag: [] },
@@ -111,6 +111,62 @@ test.describe('Consented Case Flag Tests', () => {
 
       // Assert Tab Data after all flags are managed
       await caseDetailsPage.assertTabData(caseFlagTabDataUpdated);
+    }
+  );
+});
+
+
+test.describe('Consented Case Flag Tests as a judge @test', () => {
+  test(
+    'Consented - judge creates case flag',
+    { tag: [] },
+    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage }) => {
+      // Create and setup case
+      const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToIssueApplication();
+
+      // Login as judge and navigate to case
+
+      await manageCaseDashboardPage.visit();
+      await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      
+
+      // Helper function to create a flag
+      async function createFlag(flagType: 'case' | 'applicant' | 'respondent', flagSelection: () => Promise<void>, comments: string) {
+        await caseDetailsPage.selectNextStep(ConsentedEvents.createFlag);
+        await createFlagPage.selectFlagType(flagType);
+        await createFlagPage.navigateContinue();
+        await createFlagPage.navigateContinue();
+        await createFlagPage.problemIfCaseFlagNotSelected();
+        await flagSelection();
+        await createFlagPage.navigateContinue();
+        await createFlagPage.addCommentsToThisFlag(comments);
+        await createFlagPage.navigateContinue();
+        await createFlagPage.navigateSubmit();
+        await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.createFlag.listItem);
+        await caseDetailsPage.checkActiveCaseFlagOnCase();
+      }
+
+      // Create case flag
+      await createFlag('case', 
+        () => createFlagPage.selectComplexCase(),
+        "Test case"
+      );
+
+      // Create applicant flag
+      await createFlag('applicant',
+        () => createFlagPage.selectVulnerableUser(),
+        "Test applicant"
+      );
+
+      // Create respondent flag
+      await createFlag('respondent',
+        () => createFlagPage.selectOther("Other Flag Type"),
+        "Test respondent"
+      );
+
+      // Assert Tab Data      
+      await caseDetailsPage.assertTabData(caseFlagTabData);
     }
   );
 });
