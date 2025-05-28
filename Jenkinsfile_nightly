@@ -44,6 +44,7 @@ def secrets = [
         secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
         secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
         secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
+        secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY')
         secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
         secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
         secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
