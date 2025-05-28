@@ -170,6 +170,7 @@ export const PayloadPath = {
     generalApplicationOldHearingRequiredYes: "./playwright-e2e/data/payload/contested/caseworker/general-application-directions/old-style-hearing-required-yes.json",
     listForHearingFdaEgOne: "./playwright-e2e/data/payload/contested/caseworker/list-for-hearing/fda-example-one.json",
     judiciaryBasicApproveOrders: "./playwright-e2e/data/payload/contested/judiciary/most-basic-approve-orders.json",
-    processOrderBasicTwoHearing: "./playwright-e2e/data/payload/contested/caseworker/process-order/basic-two-hearing.json"
+    processOrderBasicTwoHearing: "./playwright-e2e/data/payload/contested/caseworker/process-order/basic-two-hearing.json",
+    createFlag: "./playwright-e2e/data/payload/consented/caseworker/create-flag.json"
   }
 } as const;

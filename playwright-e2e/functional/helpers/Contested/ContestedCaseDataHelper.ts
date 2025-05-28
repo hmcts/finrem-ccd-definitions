@@ -126,6 +126,14 @@ export class ContestedCaseDataHelper {
     return caseId;
   }
 
+  static async createAndProcessFormACaseUpToCreateFlag(
+    isExpressPilot = false
+  ): Promise<string> {
+    const caseId = await this.createAndProcessFormACaseUpToIssueApplication(isExpressPilot);
+    await PayloadHelper.caseworkerCreateFlag(caseId);
+    return caseId;
+  }
+
   static async createAndSubmitPaperCase(
     isExpressPilot = false
   ): Promise<string> {

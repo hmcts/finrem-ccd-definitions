@@ -19,7 +19,7 @@ const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Case Flag Tests');
 
-Scenario('Caseworker creates case flag @nightly', async ({ I }) => {
+Scenario.skip('Caseworker creates case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
 
@@ -33,7 +33,7 @@ Scenario('Caseworker creates case flag @nightly', async ({ I }) => {
     logger.info('case flag created and verified');
 }).retry(3);
 
-Scenario('Caseworker manage case flag @nightly', async ({ I }) => {
+Scenario.skip('Caseworker manage case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
     const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
@@ -50,7 +50,7 @@ Scenario('Caseworker manage case flag @nightly', async ({ I }) => {
 }).retry(3);
 
 
-Scenario('Judge creates case flag @nightly', async ({ I }) => {
+Scenario.skip('Judge creates case flag @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
 
@@ -98,7 +98,7 @@ Scenario.skip('Create case flag with General Application @nightly', async ({ I }
     logger.info('case flag created and verified for schedule 1 case');
 }).retry(3);
 
-Scenario('Case flag for Paper Case @nightly', async ({ I }) => {
+Scenario.skip('Case flag for Paper Case @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(caseWorkerUserName, caseWorkerPassword, './test/data/ccd-contested-paper-case-basic-data.json', 'FinancialRemedyContested', 'FR_newPaperCase');
 
     await I.signInIdam(caseWorkerUserName, caseWorkerPassword);

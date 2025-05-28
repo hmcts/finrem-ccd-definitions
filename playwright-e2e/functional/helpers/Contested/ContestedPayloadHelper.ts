@@ -307,4 +307,14 @@ export class PayloadHelper {
       jsonObject
     );
   }
+
+  static async caseworkerCreateFlag(caseId: string) {
+    
+    await this.updateCaseWorkerSteps(caseId, [
+      {
+        event: ContestedEvents.createFlag.ccdCallback,
+        payload: PayloadPath.Contested.createFlag,
+      },
+    ]);
+  }
 }
