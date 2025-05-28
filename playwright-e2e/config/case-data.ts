@@ -29,6 +29,14 @@ const CommonEvents: Record<string, CaseEvent> = {
     listItem: "Issue Application",
     ccdCallback: "FR_issueApplication"
   },
+  createFlag: {
+    listItem: "Create Flag",
+    ccdCallback: "createFlags"
+  },
+  manageFlags: {
+    listItem: "Manage Flags",
+    ccdCallback: "manageFlags"
+  },
 };
 
 // Consented Events
@@ -49,15 +57,9 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Update contact details",
     ccdCallback: "FR_updateContactDetails"
   },
-  createFlag: {
-    listItem: "Create Flag",
-    ccdCallback: "createFlags"
-  },
-  manageFlags: {
-    listItem: "Manage Flags",
-    ccdCallback: "manageFlags"
-  },
   // Common events
+  createFlag: CommonEvents.createFlag,
+  manageFlags: CommonEvents.manageFlags,
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
   hwfDecisionMade: CommonEvents.hwfDecisionMade,
   issueApplication: CommonEvents.issueApplication
@@ -138,6 +140,8 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     ccdCallback: "FR_directionOrder"
   },
   // Common events
+  createFlag: CommonEvents.createFlag,
+  manageFlags: CommonEvents.manageFlags,
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
   hwfDecisionMade: CommonEvents.hwfDecisionMade,
   issueApplication: CommonEvents.issueApplication

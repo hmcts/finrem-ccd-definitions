@@ -113,6 +113,64 @@ test.describe('Consented Case Flag Tests as a caseworker', () => {
       await caseDetailsPage.assertTabData(caseFlagTabDataUpdated);
     }
   );
+
+  
+  test(
+    'Consented - Judge manage case flag',
+    { tag: [] },
+    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageFlagPage }) => {
+      // Create and setup case
+      const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToCreateFlag();
+
+      // Login as Judge and navigate to case
+      await manageCaseDashboardPage.visit();
+      await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+      await manageCaseDashboardPage.navigateToCase(caseId);
+
+      // Helper function to manage a flag
+      async function manageFlagOnce(
+        flagType: 'case' | 'applicant' | 'respondent',
+        flagName: string,
+        comment: string,
+        checkActive: boolean = true // default to true
+      ) {
+        // Select the Manage Flags event
+        await caseDetailsPage.selectNextStep(ConsentedEvents.manageFlags);
+
+        // Select the flag type and navigate to the next step
+        if (flagType === 'case') {
+          await manageFlagPage.selectCaseFlag(flagName, comment);
+        } else if (flagType === 'applicant') {
+          await manageFlagPage.selectPartyFlag('Frodo Baggins', 'Applicant', flagName, comment);
+        } else if (flagType === 'respondent') {
+          await manageFlagPage.selectPartyFlag('Smeagol Gollum', 'Respondent', flagName, comment);
+        }
+        await manageFlagPage.navigateContinue();
+
+        // Update the flag comment and make it inactive
+        await manageFlagPage.updateFlagComment(flagName, `Updated ${comment}`);
+        await manageFlagPage.makeFlagInactive();
+        await manageFlagPage.navigateContinue();
+        await manageFlagPage.navigateSubmit();
+
+        // Check the success message and if there are active flags on the case
+        await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.manageFlags.listItem);
+        if (checkActive) {
+          await caseDetailsPage.checkActiveCaseFlagOnCase();
+        } else {
+          await caseDetailsPage.checkNoActiveCaseFlagOnCase();
+        }
+      }
+
+      // Manage each flag individually as Judge
+      await manageFlagOnce('case', 'Complex Case', 'Test case');
+      await manageFlagOnce('applicant', 'Vulnerable user', 'Test applicant');
+      await manageFlagOnce('respondent', 'Other, Other Flag Type', 'Test respondent', false);
+
+      // Assert Tab Data after all flags are managed
+      await caseDetailsPage.assertTabData(caseFlagTabDataUpdated);
+    }
+  );
 });
 
 test.describe('Consented Case Flag Tests as a judge @test', () => {
