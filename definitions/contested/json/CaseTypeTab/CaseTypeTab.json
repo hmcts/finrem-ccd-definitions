@@ -4272,7 +4272,7 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "isUnreviewedDocumentPresent!=\"No\"",
+    "TabShowCondition": "isUnreviewedDocumentPresent=\"Yes\"",
     "TabFieldDisplayOrder": 2
   },
   {

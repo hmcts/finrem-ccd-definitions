@@ -1,8 +1,17 @@
 import { CaseDataBuilder } from "../CaseDataBuilder";
 import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
 import { PayloadHelper } from "./ContestedPayloadHelper";
-import * as PayloadMutator from "../../helpers/PayloadMutator";
+import { 
+  APPROVE_ORDERS_DATA, 
+  EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT, 
+  ESTIMATED_ASSETS_UNDER_1M, 
+  LIST_FOR_HEARING, 
+  PROCESS_ORDER_DATA, 
+  REFER_LIST_DATA, 
+  OUTCOME_LIST_DATA, 
+  DIRECTIONS_LIST_DATA } from "../../helpers/PayloadMutator";
 import { DateHelper } from "../DateHelper";
+import { json } from "stream/consumers";
 
 export class ContestedCaseDataHelper {
   private static buildContestedCase({
@@ -48,7 +57,7 @@ export class ContestedCaseDataHelper {
     return this.buildContestedCase({
       isPaper: false,
       replacements:
-        PayloadMutator.EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
+        EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
     });
   }
 
@@ -56,7 +65,7 @@ export class ContestedCaseDataHelper {
     return this.buildContestedCase({
       isPaper: true,
       replacements:
-        PayloadMutator.EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
+        EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
     });
   }
 
@@ -64,8 +73,8 @@ export class ContestedCaseDataHelper {
     return this.buildContestedCase({
       isPaper: true,
       replacements: [
-        ...PayloadMutator.EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
-        ...PayloadMutator.ESTIMATED_ASSETS_UNDER_1M,
+        ...EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
+        ...ESTIMATED_ASSETS_UNDER_1M,
       ],
     });
   }
@@ -153,7 +162,7 @@ export class ContestedCaseDataHelper {
       );
     }
 
-    const listForHearingDataModifications = PayloadMutator.LIST_FOR_HEARING(hearingDate);
+    const listForHearingDataModifications = LIST_FOR_HEARING(hearingDate);
 
     // Update the case in CCD
     await PayloadHelper.listCaseForHearing(caseId, listForHearingDataModifications);
@@ -189,7 +198,7 @@ export class ContestedCaseDataHelper {
     const hearingDateLabel = DateHelper.formatToDayMonthYear(
       dynamicDraftOrderInfo.hearingDate
     );
-    const modifications = PayloadMutator.APPROVE_ORDERS_DATA(
+    const modifications = APPROVE_ORDERS_DATA(
       hearingDateLabel,
       dynamicDraftOrderInfo.hearingDate,
       dynamicDraftOrderInfo.documentUrl,
@@ -214,7 +223,7 @@ export class ContestedCaseDataHelper {
   ): Promise<string> {
     // Generate the JSON object for the process order payload
     const orderDateTime = await DateHelper.getCurrentTimestamp();
-    const modifications = PayloadMutator.PROCESS_ORDER_DATA(
+    const modifications = PROCESS_ORDER_DATA(
       orderDateTime,
       dynamicDraftOrderInfo.documentUrl,
       dynamicDraftOrderInfo.documentBinaryUrl,
@@ -232,7 +241,7 @@ export class ContestedCaseDataHelper {
     caseId: string
   ): Promise<string> {
     const generalApplicationId = await PayloadHelper.caseWorkerProgressToCreateGeneralApplication(caseId);
-    const modifications = PayloadMutator.REFER_LIST_DATA(generalApplicationId);
+    const modifications = REFER_LIST_DATA(generalApplicationId);
     await PayloadHelper.generalApplicationReferToJudge(caseId, modifications)
     return generalApplicationId;
   }
@@ -241,7 +250,7 @@ export class ContestedCaseDataHelper {
     caseId: string
   ): Promise<string> {
     const generalApplicationId = await this.caseworkerProgressToGeneralApplicationReferToJudge(caseId);
-    const modifications = PayloadMutator.OUTCOME_LIST_DATA(generalApplicationId);
+    const modifications = OUTCOME_LIST_DATA(generalApplicationId);
     await PayloadHelper.generalApplicationOutcome(caseId, modifications)
     return caseId;
   }
@@ -250,7 +259,7 @@ export class ContestedCaseDataHelper {
     caseId: string
   ): Promise<string> {
     const codeForDirections = await this.caseWorkerProgressToGeneralApplicationOutcome(caseId);
-    const modifications = PayloadMutator.DIRECTIONS_LIST_DATA(codeForDirections);
+    const modifications = DIRECTIONS_LIST_DATA(codeForDirections);
     await PayloadHelper.generalApplicationDirections(caseId, modifications);
     return caseId
   }

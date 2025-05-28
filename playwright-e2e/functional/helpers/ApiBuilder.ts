@@ -1,20 +1,15 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import * as fs from "fs";
+import { readFileSync } from "fs";
 import path from "path";
-import * as otp from "otplib";
+import { authenticator } from "otplib";
 import { set, unset } from "lodash";
+import { ReplacementAction } from "../../types/replacement-action";
 
 const axiosClient = axios.create({});
 
 const env = process.env.RUNNING_ENV || "aat";
 const ccdApiUrl = process.env.CCD_DATA_API_URL;
 const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
-
-interface ReplacementAction {
-  action: string;
-  key: string;
-  value?: any;
-}
 
 export class CcdApiHelper {
   async axiosRequest<T = any>(
@@ -81,17 +76,17 @@ export class CcdApiHelper {
   async getServiceToken(): Promise<string> {
     console.info("Getting Service Token");
 
-    const serviceSecret = process.env.CCD_SUBMIT_S2S_SECRET || "";
+    const serviceSecret = process.env.FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY || "";
     const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
     const s2sAuthPath = "/lease";
 
-    const oneTimePassword = otp.authenticator.generate(serviceSecret);
+    const oneTimePassword = authenticator.generate(serviceSecret);
 
     const serviceTokenResponse = await this.axiosRequest({
       url: s2sBaseUrl + s2sAuthPath,
       method: "post",
       data: {
-        microservice: "divorce_ccd_submission",
+        microservice: "finrem_case_orchestration",
         oneTimePassword,
       },
       headers: {
@@ -172,7 +167,7 @@ export class CcdApiHelper {
       serviceToken
     );
 
-    const rawData = fs.readFileSync(path.resolve(dataLocation), "utf-8");
+    const rawData = readFileSync(path.resolve(dataLocation), "utf-8");
     const data = JSON.parse(rawData);
 
     dataModifications.forEach((mod) => {
@@ -231,7 +226,7 @@ export class CcdApiHelper {
     );
 
     const rawData = dataLocation
-      ? fs.readFileSync(path.resolve(dataLocation), "utf-8")
+      ? readFileSync(path.resolve(dataLocation), "utf-8")
       : "{}";
 
     let updatedDataObj = JSON.parse(rawData);
