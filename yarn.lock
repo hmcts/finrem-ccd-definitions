@@ -6103,9 +6103,9 @@ __metadata:
   linkType: hard
 
 "globals@npm:^16.0.0":
-  version: 16.1.0
-  resolution: "globals@npm:16.1.0"
-  checksum: b6ed722b61a6c37c057a71d9433c08196ad57cd1e86ed160a82f5a488310b2d85cc593f17414bad00bf88f1e6f4f8387d2014f9ac859a16ccf2a0df77a1aac45
+  version: 16.2.0
+  resolution: "globals@npm:16.2.0"
+  checksum: 3128d8b09643164a095b67e581e2b9d59f344b839bcea3be16bc67ce19c2bafe5c95cc6b8c6a8f7e1a584c4fbd288ddd685f8dfbd3e451eaa07ff0e0b5a7c2ca
   languageName: node
   linkType: hard
 
@@ -8068,7 +8068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^9.0.4":
+"minimatch@npm:^9.0.4, minimatch@npm:^9.0.5":
   version: 9.0.5
   resolution: "minimatch@npm:9.0.5"
   dependencies:
@@ -8220,8 +8220,8 @@ __metadata:
   linkType: hard
 
 "mocha@npm:^11.0.0":
-  version: 11.4.0
-  resolution: "mocha@npm:11.4.0"
+  version: 11.5.0
+  resolution: "mocha@npm:11.5.0"
   dependencies:
     browser-stdout: ^1.3.1
     chokidar: ^4.0.1
@@ -8233,7 +8233,7 @@ __metadata:
     he: ^1.2.0
     js-yaml: ^4.1.0
     log-symbols: ^4.1.0
-    minimatch: ^5.1.6
+    minimatch: ^9.0.5
     ms: ^2.1.3
     picocolors: ^1.1.1
     serialize-javascript: ^6.0.2
@@ -8246,7 +8246,7 @@ __metadata:
   bin:
     _mocha: bin/_mocha
     mocha: bin/mocha.js
-  checksum: 927646f6f0647c6ff8b34eba502c2e92f33295756986eb7abeded2a7a33c0ff27bc7e25fd3e9094812b5e28ccf227a5266dcc5eb9ec5a1d2dd808067f144cef1
+  checksum: 171a001fd3285c23ccc91cd04ec5d0bc6da9219ae0493fb918e8fa05f83437a8f19e29a17d3f89c68597d7ce15096ee17968b65055cc2a0fca281fc784158ae2
   languageName: node
   linkType: hard
 
