@@ -173,7 +173,7 @@ test.describe('Consented Case Flag Tests as a caseworker', () => {
   );
 });
 
-test.describe('Consented Case Flag Tests as a judge @test', () => {
+test.describe('Consented Case Flag Tests as a judge', () => {
   test(
     'Consented - judge creates case flag',
     { tag: [] },
