@@ -30,7 +30,9 @@ export class CaseDetailsPage {
     async selectNextStep(event: CaseEvent) {
         await expect(async () => {
             await this.page.waitForLoadState();
+            const go=this.goButton.isVisible();
             await this.goButton.isVisible();
+            console.log(go);
             await expect(this.selectNextStepDropDown).toBeVisible();
             await this.selectNextStepDropDown.selectOption(event.listItem);
             await this.goButton.click({ clickCount: 2, delay: 500 });
