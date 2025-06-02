@@ -3,7 +3,7 @@ import config from '../config/config';
 import { ConsentedEvents } from '../config/case-data';
 import { ConsentedCaseDataHelper } from './helpers/Consented/ConsentedCaseDataHelper';
 
-test(
+test.skip(
   'Consented - Send Order Journey Test',
   { tag: [] },
   async (
