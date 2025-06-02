@@ -158,6 +158,7 @@ export const PayloadPath = {
     formA: "./playwright-e2e/data/payload/contested/forma/ccd-contested-base.json",
     formASubmit: "./playwright-e2e/data/payload/contested/solicitor/case-submission.json",
     paper: "./playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json",
+    schedule1: "./playwright-e2e/data/payload/contested/solicitor/schedule1-create-case.json",
     hwfPayment: "./playwright-e2e/data/payload/contested/caseworker/HWF-payment.json",
     hwfDecisionMade: "./playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json",
     manualPayment: "./playwright-e2e/data/payload/contested/caseworker/manual-payment.json",
