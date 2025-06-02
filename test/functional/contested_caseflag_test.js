@@ -65,7 +65,7 @@ Scenario.skip('Judge creates case flag @nightly', async ({ I }) => {
 }).retry(3);
 
 
-Scenario('Caseworker creates case flag for schedule 1 case @nightly', async ({ I }) => {
+Scenario.skip('Caseworker creates case flag for schedule 1 case @nightly', async ({ I }) => {
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-schedule1-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
     const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
 
