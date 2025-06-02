@@ -16,7 +16,7 @@ export interface CaseEvent {
 }
 
 // Common Events (shared between Consented and Contested cases)
-const CommonEvents: Record<string, CaseEvent> = {
+export const CommonEvents: Record<string, CaseEvent> = {
   applicationPaymentSubmission: {
     listItem: "Case Submission",
     ccdCallback: "FR_applicationPaymentSubmission"
