@@ -1,5 +1,6 @@
 import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
+import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 
 export class ManageCaseDocumentsPage extends BaseJourneyPage {
   private readonly manageCaseDocumentHeading: Locator;
@@ -31,9 +32,12 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
   private readonly summaryDescriptionValue: Locator;
   private readonly summaryConfidentialityValue: Locator; 
 
+  private readonly commonActionsHelper: CommonActionsHelper;
 
-  public constructor(page: Page) {
+  public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page);
+    this.commonActionsHelper = commonActionsHelper;
+
     this.manageCaseDocumentHeading = page.getByRole('heading', { name: 'Manage case documents' });  
     this.uploadInput = page.locator('input[type="file"]'); 
     this.textArea = page.locator('#manageCaseDocumentCollection_0_hearingDetails'); 
@@ -68,8 +72,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
   async uploadDocument(filePath: string) {
     await expect(this.uploadLabel).toBeVisible(); 
     await this.uploadInput.setInputFiles(filePath);
-    await this.page.waitForTimeout(2000);
-    await expect(this.uploadError).toBeHidden();
+    await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
   }
 
   // Select document type

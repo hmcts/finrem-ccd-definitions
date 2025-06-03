@@ -258,6 +258,6 @@ export const test = base.extend<CreateFixtures>({
     await use(new UploadDraftOrdersPage(page, commonActionsHelper));
   },
   manageCaseDocumentsPage: async ({ page }, use) => {
-    await use(new ManageCaseDocumentsPage(page));
+    await use(new ManageCaseDocumentsPage(page, commonActionsHelper));
   }
 });

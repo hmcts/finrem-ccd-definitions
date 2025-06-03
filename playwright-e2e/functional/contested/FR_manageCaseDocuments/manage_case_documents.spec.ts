@@ -3,7 +3,7 @@ import config from '../../../config/config';
 import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
 import { ContestedEvents } from '../../../config/case-data';
 
-test.describe('Contested Manage Case Documents @test', () => {
+test.describe('Contested Manage Case Documents', () => {
     test(
         'Contested - Caseworker Manage Case Documents',
         { tag: [] },
