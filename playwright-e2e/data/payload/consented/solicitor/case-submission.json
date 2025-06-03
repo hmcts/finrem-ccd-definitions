@@ -1,0 +1,24 @@
+{
+    "authorisationName": "test",
+    "authorisationFirm": "test",
+    "authorisation2b": "test",
+    "authorisation3": "2025-06-03",
+    "helpWithFeesQuestion": "No",
+    "PBANumber": "PBA0089162",
+    "amountToPay": "6000",
+    "PBAreference": "test",
+    "orderSummary": {
+      "PaymentReference": "null",
+      "PaymentTotal": "6000",
+      "Fees": [
+        {
+          "value": {
+            "FeeCode": "FEE0228",
+            "FeeAmount": "6000",
+            "FeeDescription": "Application (without notice)",
+            "FeeVersion": "5"
+          }
+        }
+      ]
+    }
+  }
