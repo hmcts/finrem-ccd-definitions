@@ -1,19 +1,9 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { contestedEvents } from '../../../config/case_events';
-import { PayloadHelper } from '../../helpers/PayloadHelper';
+import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { CaseDataHelper } from '../../helpers/CaseDataHelper';
+import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
 import { expressCaseGateKeepingTabDataJudgeAllocation } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
-
-async function createAndProcessFormACase(isExpressPilot: boolean): Promise<string> {
-  const caseId = isExpressPilot ? await CaseDataHelper.createContestedFormAWithExpressPilotEnrolled() :
-   await CaseDataHelper.createBaseContestedFormA();
-
-   await PayloadHelper.solicitorSubmitFormACase(caseId);
-   await PayloadHelper.caseworkerAllocateToJudge(caseId);
-  return caseId;
-}
 
 test.describe("Contested - Give Allocation Directions - 'should this case remain in the Express Pilot?' on express pilot cases", () => {
     test(
@@ -28,12 +18,12 @@ test.describe("Contested - Give Allocation Directions - 'should this case remain
           giveAllocationDirectionsPage
         }
         ) => {
-          const caseId = await createAndProcessFormACase(true); // Pass true for express pilot case
+          const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToAllocateJudge(true); // Pass true for express pilot case
           await manageCaseDashboardPage.visit();
           await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
           await manageCaseDashboardPage.navigateToCase(caseId);
       
-          await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
+          await caseDetailsPage.selectNextStep(ContestedEvents.giveAllocationDirection);
           await allocationDirectionsCourtSelectionPage.navigateContinue();
 
           await giveAllocationDirectionsPage.verifyFastTrackQuestionAbsence();
@@ -61,12 +51,12 @@ test.describe("Contested - Give Allocation Directions - 'should this case remain
         giveAllocationDirectionsPage
       }
       ) => {
-        const caseId = await createAndProcessFormACase(false);
+        const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToAllocateJudge(false); // Pass false or leave blank for non-express pilot case
         await manageCaseDashboardPage.visit();
         await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
         await manageCaseDashboardPage.navigateToCase(caseId);
     
-        await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
+        await caseDetailsPage.selectNextStep(ContestedEvents.giveAllocationDirection);
         await allocationDirectionsCourtSelectionPage.navigateContinue();
 
         await giveAllocationDirectionsPage.verifyFastTrackQuestionPresence();
@@ -88,12 +78,12 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
         allocationDirectionsCourtSelectionPage
       }
     ) => {
-      const caseId = await createAndProcessFormACase(true); // Pass true for express pilot case
+      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToAllocateJudge(true); // Pass true for express pilot case
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
     
-      await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
+      await caseDetailsPage.selectNextStep(ContestedEvents.giveAllocationDirection);
       await allocationDirectionsCourtSelectionPage.verifyExistenceOfExpressPilotWarningMessage();
     }
   );
@@ -109,12 +99,12 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
         allocationDirectionsCourtSelectionPage
       },
     ) => {
-      const caseId = await createAndProcessFormACase(false); // Pass false for non-express pilot case
+      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToAllocateJudge(false); // Pass false or leave blank for non-express pilot case
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
     
-      await caseDetailsPage.selectNextStep(contestedEvents.giveAllocationDirection);
+      await caseDetailsPage.selectNextStep(ContestedEvents.giveAllocationDirection);
       await allocationDirectionsCourtSelectionPage.verifyAbsenceOfExpressPilotWarningMessage();
     }
   );

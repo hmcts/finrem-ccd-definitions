@@ -1,8 +1,7 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { CaseDataHelper } from '../../helpers/CaseDataHelper';
-import { contestedEvents } from '../../../config/case_events';
-import { PayloadHelper } from '../../helpers/PayloadHelper';
+import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
+import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 
 // Hearing types
@@ -66,6 +65,75 @@ const NoFile = {
   file: undefined
 };
 
+async function performListForInterimHearingsFlow(
+  caseId: string,
+  loginPage: any,
+  manageCaseDashboardPage: any,
+  caseDetailsPage: any,
+  listForInterimHearings: any,
+  testInfo: any,
+  makeAxeBuilder: any
+): Promise<void> {
+
+  await manageCaseDashboardPage.visit();
+  await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+  await manageCaseDashboardPage.navigateToCase(caseId);
+  await caseDetailsPage.selectNextStep(ContestedEvents.listForInterimHearing);
+  // Add 6 distinct interim hearings.  Only the last has no file selected.
+  await addHearingDetails(0, MaintenancePendingSuit, listForInterimHearings);
+  await addHearingDetails(1, FirstDirectionsAppointment, listForInterimHearings);
+  await addHearingDetails(2, FinancialDisputeResolution, listForInterimHearings);
+  await addHearingDetails(3, FinalHearing, listForInterimHearings);
+  await addHearingDetails(4, Directions, listForInterimHearings);
+  await addHearingDetails(5, NoFile, listForInterimHearings);
+  // Confirm and submit once interim hearings added.
+  await listForInterimHearings.navigateContinue();
+  await listForInterimHearings.navigateSubmit();
+
+  // Next:
+  // Run method that converts this old hearing type to new hearing type format
+  // Run tab test to confirm that all the correct hearing information shows on the new hearing tab
+
+  if (config.run_accessibility) {
+    const accessibilityScanResults = await makeAxeBuilder().analyze();
+
+    await testInfo.attach('accessibility-scan-results', {
+      body: JSON.stringify(accessibilityScanResults, null, 2),
+      contentType: 'application/json'
+    });
+
+    expect(accessibilityScanResults.violations).toEqual([]);
+  }
+}
+
+async function addHearingDetails(
+  hearing_position: number,
+  hearingDetails: {
+    type: string;
+    duration: string;
+    date: { day: string; month: string; year: string };
+    time: string;
+    information: string;
+    court: string;
+    file: string | undefined;
+  },
+  listForInterimHearings: any
+): Promise<void> {
+  await listForInterimHearings.navigateAddNew();
+  await listForInterimHearings.selectTypeOfHearing(hearing_position, hearingDetails.type);
+  await listForInterimHearings.enterTimeEstimate(hearing_position, hearingDetails.duration);
+  await listForInterimHearings.enterHearingDate(hearing_position, hearingDetails.date.day, hearingDetails.date.month, hearingDetails.date.year);
+  await listForInterimHearings.enterHearingTime(hearing_position, hearingDetails.time);
+  await listForInterimHearings.selectCourtForHearing(hearing_position, hearingDetails.court);
+  await listForInterimHearings.enterAdditionalInformationAboutHearing(hearing_position, hearingDetails.information);
+  if (hearingDetails.file) {
+    await listForInterimHearings.whetherToUploadOtherDocuments(hearing_position, YesNoRadioEnum.YES);
+    await listForInterimHearings.uploadOtherDocuments(hearing_position, hearingDetails.file);
+  } else {
+    await listForInterimHearings.whetherToUploadOtherDocuments(hearing_position, YesNoRadioEnum.NO);
+  }
+}
+
 test.describe('Contested - List for Interim Hearings', () => {
   test(
     'Contested - List for Interim Hearings (Form A)',
@@ -80,7 +148,7 @@ test.describe('Contested - List for Interim Hearings', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessFormACase();
+      const caseId = await ContestedCaseDataHelper.createAndProcessFormACase();
       await performListForInterimHearingsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForInterimHearingPage, testInfo, makeAxeBuilder)
     }
   );
@@ -98,88 +166,8 @@ test.describe('Contested - List for Interim Hearings', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessPaperCase();
+      const caseId = await ContestedCaseDataHelper.createBaseContestedPaperCase();
       await performListForInterimHearingsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForInterimHearingPage, testInfo, makeAxeBuilder);
     }
   );
-
-  async function createAndProcessFormACase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedFormA();
-    await PayloadHelper.solicitorSubmitFormACase(caseId);
-    return caseId;
-  }
-
-  async function createAndProcessPaperCase(): Promise<string> {
-    const caseId = await CaseDataHelper.createBaseContestedPaperCase();
-    return caseId;
-  }
-
-  async function performListForInterimHearingsFlow(
-    caseId: string,
-    loginPage: any,
-    manageCaseDashboardPage: any,
-    caseDetailsPage: any,
-    listForInterimHearings: any,
-    testInfo: any,
-    makeAxeBuilder: any
-  ): Promise<void> {
-
-    await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
-    await manageCaseDashboardPage.navigateToCase(caseId);
-    await caseDetailsPage.selectNextStep(contestedEvents.listForInterimHearing);
-    // Add 6 distinct interim hearings.  Only the last has no file selected.
-    await addHearingDetails(0, MaintenancePendingSuit, listForInterimHearings);
-    await addHearingDetails(1, FirstDirectionsAppointment, listForInterimHearings);
-    await addHearingDetails(2, FinancialDisputeResolution, listForInterimHearings);
-    await addHearingDetails(3, FinalHearing, listForInterimHearings);
-    await addHearingDetails(4, Directions, listForInterimHearings);
-    await addHearingDetails(5, NoFile, listForInterimHearings);
-    // Confirm and submit once interim hearings added.
-    await listForInterimHearings.navigateContinue();
-    await listForInterimHearings.navigateSubmit();
-
-    // Next:
-    // Run method that converts this old hearing type to new hearing type format
-    // Run tab test to confirm that all the correct hearing information shows on the new hearing tab
-
-    if (config.run_accessibility) {
-      const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-      await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-      });
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    }
-  }
-
-  async function addHearingDetails(
-    hearing_position: number,
-    hearingDetails: {
-      type: string;
-      duration: string;
-      date: { day: string; month: string; year: string };
-      time: string;
-      information: string;
-      court: string;
-      file: string | undefined;
-    },
-    listForInterimHearings: any
-  ): Promise<void> {
-    await listForInterimHearings.navigateAddNew();
-    await listForInterimHearings.selectTypeOfHearing(hearing_position, hearingDetails.type);
-    await listForInterimHearings.enterTimeEstimate(hearing_position, hearingDetails.duration);
-    await listForInterimHearings.enterHearingDate(hearing_position, hearingDetails.date.day, hearingDetails.date.month, hearingDetails.date.year);
-    await listForInterimHearings.enterHearingTime(hearing_position, hearingDetails.time);
-    await listForInterimHearings.selectCourtForHearing(hearing_position, hearingDetails.court);
-    await listForInterimHearings.enterAdditionalInformationAboutHearing(hearing_position, hearingDetails.information);
-    if (hearingDetails.file) {
-      await listForInterimHearings.whetherToUploadOtherDocuments(hearing_position, YesNoRadioEnum.YES);
-      await listForInterimHearings.uploadOtherDocuments(hearing_position, hearingDetails.file);
-    } else {
-      await listForInterimHearings.whetherToUploadOtherDocuments(hearing_position, YesNoRadioEnum.NO);
-    }
-  }
 });

@@ -46,4 +46,10 @@ export class DateHelper {
         year: 'numeric',
       }).format(date);
     }
+
+    static async getFormattedHearingDate(): Promise<{ currentDate: string; hearingDate: string }> {
+      const currentDate = await this.getCurrentDate();
+      const hearingDate = await this.getHearingDateUsingCurrentDate();
+      return { currentDate, hearingDate };
+    }
   }
