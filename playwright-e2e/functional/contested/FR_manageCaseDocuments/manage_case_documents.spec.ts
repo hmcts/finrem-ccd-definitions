@@ -1,9 +1,7 @@
-import { test } from '../../fixtures/fixtures';
-import config from '../../config/config';
-import { ContestedCaseDataHelper } from '../helpers/Contested/ContestedCaseDataHelper';
-import { ContestedEvents } from '../../config/case-data';
-import { BaseJourneyPage } from '../../pages/BaseJourneyPage';
-import { ManageCaseDocumentsPage } from '../../pages/events/manage-case-documents/ManageCaseDocumentsPage';
+import { test } from '../../../fixtures/fixtures';
+import config from '../../../config/config';
+import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
+import { ContestedEvents } from '../../../config/case-data';
 
 test.describe('Contested Manage Case Documents @test', () => {
     test(
@@ -19,14 +17,18 @@ test.describe('Contested Manage Case Documents @test', () => {
             await manageCaseDashboardPage.navigateToCase(caseId);
             
             // Manage case documents
-            await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsPage);
+            await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
             await manageCaseDocumentsPage.navigateAddNew(); 
-            await manageCaseDocumentsPage.uploadDocument('playwright-e2e/data/test.docx'); 
-            await manageCaseDocumentsPage.selectDocumentType('Attendance Sheets'); // see if there is a base journey method
-            await manageCaseDocumentsPage.fillDescription('test case'); // see if there is a base journey method
-            await manageCaseDocumentsPage.setConfidentiality(true); //change to basejouney method
+            await manageCaseDocumentsPage.uploadDocument('playwright-e2e/data/test.docx');
+            await manageCaseDocumentsPage.selectDocumentType('Other'); 
+            await manageCaseDocumentsPage.specifyDocumentType('test');
+            await manageCaseDocumentsPage.fillDescription('test case'); 
+            await manageCaseDocumentsPage.checkConfidentiality();
+            await manageCaseDocumentsPage.setConfidentiality(true); 
 
             //Continue about to submit and check your answers
+            await manageCaseDocumentsPage.navigateContinue();
+            await manageCaseDocumentsPage.checkAnswersPage();
             await manageCaseDocumentsPage.navigateSubmit();
         }
     );
