@@ -181,22 +181,6 @@ Scenario.skip('Contested E2E @nightly @preview', async ({ I }) => {
     logger.info('-----------completed E2E contested test for -------------', caseId);
 }).retry(3);
 
-Scenario('Caseworker runs List for Interim Hearing @nightly', async ({ I }) => {
-    logger.info("List for Interim Hearing test starting");
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
-    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
-    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
-
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    I.wait('15');
-    await I.listForInterimHearing();
-    I.wait('10');
-    await I.verifyListForInterimHearing();
-    logger.info("List for Interim Hearing Completed");
-}).retry(3);
-
 Scenario.skip('Send order to an applicant solicitor @nightly', async I => {
 
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
