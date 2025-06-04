@@ -1,3 +1,5 @@
+import { ManageCaseDocumentsPage } from "../pages/events/manage-case-documents/ManageCaseDocumentsPage";
+
 // Enums for Case Types and User Types
 export enum CaseType {
   Consented = "FinancialRemedyMVP2",
@@ -16,7 +18,7 @@ export interface CaseEvent {
 }
 
 // Common Events (shared between Consented and Contested cases)
-const CommonEvents: Record<string, CaseEvent> = {
+export const CommonEvents: Record<string, CaseEvent> = {
   applicationPaymentSubmission: {
     listItem: "Case Submission",
     ccdCallback: "FR_applicationPaymentSubmission"
@@ -139,6 +141,11 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Direction Order",
     ccdCallback: "FR_directionOrder"
   },
+  manageCaseDocuments: {
+    listItem: "Manage case documents",
+    ccdCallback: "FR_manageCaseDocuments"
+  },
+
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
@@ -158,6 +165,7 @@ export const PayloadPath = {
     formA: "./playwright-e2e/data/payload/contested/forma/ccd-contested-base.json",
     formASubmit: "./playwright-e2e/data/payload/contested/solicitor/case-submission.json",
     paper: "./playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json",
+    schedule1: "./playwright-e2e/data/payload/contested/solicitor/schedule1-create-case.json",
     hwfPayment: "./playwright-e2e/data/payload/contested/caseworker/HWF-payment.json",
     hwfDecisionMade: "./playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json",
     manualPayment: "./playwright-e2e/data/payload/contested/caseworker/manual-payment.json",
@@ -170,6 +178,7 @@ export const PayloadPath = {
     generalApplicationOldHearingRequiredYes: "./playwright-e2e/data/payload/contested/caseworker/general-application-directions/old-style-hearing-required-yes.json",
     listForHearingFdaEgOne: "./playwright-e2e/data/payload/contested/caseworker/list-for-hearing/fda-example-one.json",
     judiciaryBasicApproveOrders: "./playwright-e2e/data/payload/contested/judiciary/most-basic-approve-orders.json",
-    processOrderBasicTwoHearing: "./playwright-e2e/data/payload/contested/caseworker/process-order/basic-two-hearing.json"
+    processOrderBasicTwoHearing: "./playwright-e2e/data/payload/contested/caseworker/process-order/basic-two-hearing.json",
+    createFlag: "./playwright-e2e/data/payload/consented/caseworker/create-flag.json"
   }
 } as const;

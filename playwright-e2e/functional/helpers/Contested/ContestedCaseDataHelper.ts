@@ -52,6 +52,13 @@ export class ContestedCaseDataHelper {
     return this.buildContestedCase({ isPaper: true });
   }
 
+  static createSchedule1Case(): Promise<string> {
+    return this.buildContestedCase({
+      isPaper: false,
+      payloadPath: PayloadPath.Contested.schedule1,
+    }
+  )  }
+
   // Specialised variants
   static createContestedFormACaseWithExpressPilotEnrolled(): Promise<string> {
     return this.buildContestedCase({
@@ -126,11 +133,28 @@ export class ContestedCaseDataHelper {
     return caseId;
   }
 
+  static async createAndProcessFormACaseUpToCreateFlag(
+    isExpressPilot = false
+  ): Promise<string> {
+    const caseId = await this.createAndProcessFormACaseUpToIssueApplication(isExpressPilot);
+    await PayloadHelper.caseworkerCreateFlag(caseId);
+    return caseId;
+  }
+
   static async createAndSubmitPaperCase(
     isExpressPilot = false
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, true);
     await PayloadHelper.caseWorkerIssueApplication(caseId, false);
+    return caseId;
+  }
+
+  static async createAndProcessSchedule1CaseUpToIssueApplication(
+    isExpressPilot = false
+  ): Promise<string> {
+    const caseId = await this.createSchedule1Case();
+    await PayloadHelper.solicitorSubmitFormACase(caseId);
+    await PayloadHelper.caseWorkerIssueApplication(caseId);
     return caseId;
   }
 
