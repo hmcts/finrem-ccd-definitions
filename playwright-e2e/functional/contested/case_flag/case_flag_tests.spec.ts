@@ -1,4 +1,4 @@
-import { test, expect } from '../../../fixtures/fixtures';
+import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
 import { caseFlagTabData } from '../../../data/tab_content/common-tabs/case_flag_tabs';

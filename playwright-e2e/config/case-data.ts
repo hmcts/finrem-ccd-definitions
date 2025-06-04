@@ -139,6 +139,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Direction Order",
     ccdCallback: "FR_directionOrder"
   },
+  manageHearing: {
+    listItem: "Manage Hearings",
+    ccdCallback: "FR_manageHearings"
+  },
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
