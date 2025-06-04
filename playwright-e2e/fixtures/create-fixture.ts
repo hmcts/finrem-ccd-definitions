@@ -52,6 +52,7 @@ import { ManageFlagPage } from '../pages/events/manage-flag/ManageFlagPage';
 import { GeneralApplicationDirectionsPage } from '../pages/events/general-application-directions/GeneralApplicationDirectionsPage';
 import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/UploadDraftOrdersPage';
 import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
+import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -106,7 +107,6 @@ type CreateFixtures = {
   manageFlagPage: ManageFlagPage;
   generalApplicationDirectionsPage: GeneralApplicationDirectionsPage;
   uploadDraftOrdersPage: UploadDraftOrdersPage;
-  manageHearingPage: ManageHearingPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -256,6 +256,9 @@ export const test = base.extend<CreateFixtures>({
   },
   uploadDraftOrdersPage: async ({ page }, use) => {
     await use(new UploadDraftOrdersPage(page, commonActionsHelper));
+  },
+  manageCaseDocumentsPage: async ({ page }, use) => {
+    await use(new ManageCaseDocumentsPage(page, commonActionsHelper));
   },
   manageHearingPage: async ({ page }, use) => {
     await use(new ManageHearingPage(page, commonActionsHelper));
