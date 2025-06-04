@@ -126,7 +126,7 @@
   }, 
   {
     "LiveFrom": "28/04/2025",
-    "ID": "FR_hearingTabItem",
+    "ID": "FR_manageHearingTabItem",
     "ListElementCode": "hearingType",
     "FieldType": "Text",
     "ElementLabel": "Type of Hearing: ",
@@ -135,7 +135,7 @@
   }, 
   {
     "LiveFrom": "28/04/2025",
-    "ID": "FR_hearingTabItem",
+    "ID": "FR_manageHearingTabItem",
     "ListElementCode": "courtSelection",
     "FieldType": "Text",
     "ElementLabel": "Court: ",
@@ -144,7 +144,7 @@
   },
   {
     "LiveFrom": "28/04/2025",
-    "ID": "FR_hearingTabItem",
+    "ID": "FR_manageHearingTabItem",
     "ListElementCode": "hearingAttendance",
     "FieldType": "Text",
     "ElementLabel": "Hearing attendance: ",
@@ -153,8 +153,8 @@
   }, 
   {
     "LiveFrom": "28/04/2025",
-    "ID": "FR_hearingTabItem",
-    "ListElementCode": "dateTime",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "hearingDateTime",
     "FieldType": "Text",
     "ElementLabel": "Hearing date: ",
     "SecurityClassification": "Public",
@@ -162,7 +162,7 @@
   }, 
   {
     "LiveFrom": "28/04/2025",
-    "ID": "FR_hearingTabItem",
+    "ID": "FR_manageHearingTabItem",
     "ListElementCode": "timeEstimate",
     "FieldType": "Text",
     "ElementLabel": "Hearing date: ",
@@ -171,7 +171,7 @@
   }, 
   {
     "LiveFrom": "28/04/2025",
-    "ID": "FR_hearingTabItem",
+    "ID": "FR_manageHearingTabItem",
     "ListElementCode": "hearingConfidentialParties",
     "FieldType": "Text",
     "ElementLabel": "Who has received this notice: ",
@@ -180,7 +180,7 @@
   },
   {
     "LiveFrom": "28/04/2025",
-    "ID": "FR_hearingTabItem",
+    "ID": "FR_manageHearingTabItem",
     "ListElementCode": "additionalHearingInformation",
     "FieldType": "Text",
     "ElementLabel": "Additional information about the hearing: ",
@@ -189,11 +189,11 @@
   },
   {
     "LiveFrom": "28/04/2025",
-    "ID": "FR_hearingTabItem",
-    "ListElementCode": "hearingNotice",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "hearingDocuments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
-    "ElementLabel": "Hearing Notice: ",
+    "ElementLabel": "Hearing documents: ",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
