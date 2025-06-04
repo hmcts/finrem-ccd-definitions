@@ -46,5 +46,15 @@
     "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  }, 
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingTabItems",
+    "Label": " ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageHearingTabItem",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]

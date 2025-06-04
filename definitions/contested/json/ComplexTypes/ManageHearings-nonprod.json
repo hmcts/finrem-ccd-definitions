@@ -123,5 +123,78 @@
     "SecurityClassification": "Public",
     "CategoryID": "hearingNotices",
     "Searchable": "N"
+  }, 
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_hearingTabItem",
+    "ListElementCode": "hearingType",
+    "FieldType": "Text",
+    "ElementLabel": "Type of Hearing: ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }, 
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_hearingTabItem",
+    "ListElementCode": "courtSelection",
+    "FieldType": "Text",
+    "ElementLabel": "Court: ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_hearingTabItem",
+    "ListElementCode": "hearingAttendance",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing attendance: ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }, 
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_hearingTabItem",
+    "ListElementCode": "dateTime",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing date: ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }, 
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_hearingTabItem",
+    "ListElementCode": "timeEstimate",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing date: ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }, 
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_hearingTabItem",
+    "ListElementCode": "hearingConfidentialParties",
+    "FieldType": "Text",
+    "ElementLabel": "Who has received this notice: ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_hearingTabItem",
+    "ListElementCode": "additionalHearingInformation",
+    "FieldType": "Text",
+    "ElementLabel": "Additional information about the hearing: ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_hearingTabItem",
+    "ListElementCode": "hearingNotice",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Hearing Notice: ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
