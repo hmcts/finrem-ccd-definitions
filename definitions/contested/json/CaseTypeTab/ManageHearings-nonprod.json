@@ -6,37 +6,7 @@
     "TabLabel": "Hearings",
     "TabDisplayOrder": 4,
     "CaseFieldID": "hearingTabItems",
-    "UserRole": "{hearing.whoHasAccess}",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "02/06/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageHearings-applicant",
-    "TabLabel": "Hearings",
-    "TabDisplayOrder": 4,
-    "CaseFieldID": "ApplicantHearingTabItems",
-    "UserRole": "caseworker-divorce-financialremedy-admin",
-    "TabFieldDisplayOrder": 1
-  },  
-  {
-    "LiveFrom": "02/06/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageHearings-respondent",
-    "TabLabel": "Hearings",
-    "TabDisplayOrder": 4,
-    "CaseFieldID": "RespondenthearingTabItems",
-    "UserRole": "caseworker-divorce-financialremedy-admin",
-    "TabFieldDisplayOrder": 1
-  }, 
-  {
-    "LiveFrom": "02/06/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageHearings-int1",
-    "TabLabel": "Hearings",
-    "TabDisplayOrder": 4,
-    "CaseFieldID": "hearingTabItems",
-    "UserRole": "caseworker-divorce-financialremedy-admin",
-    "TabFieldDisplayOrder": 1
-  } 
+  }
 ]

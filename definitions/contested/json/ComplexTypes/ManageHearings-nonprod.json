@@ -127,7 +127,7 @@
   {
     "LiveFrom": "28/04/2025",
     "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "hearingType",
+    "ListElementCode": "tabHearingType",
     "FieldType": "Text",
     "ElementLabel": "Type of Hearing: ",
     "SecurityClassification": "Public",
@@ -136,7 +136,7 @@
   {
     "LiveFrom": "28/04/2025",
     "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "courtSelection",
+    "ListElementCode": "tabCourtSelection",
     "FieldType": "Text",
     "ElementLabel": "Court: ",
     "SecurityClassification": "Public",
@@ -145,7 +145,7 @@
   {
     "LiveFrom": "28/04/2025",
     "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "hearingAttendance",
+    "ListElementCode": "tabAttendance",
     "FieldType": "Text",
     "ElementLabel": "Hearing attendance: ",
     "SecurityClassification": "Public",
@@ -154,7 +154,7 @@
   {
     "LiveFrom": "28/04/2025",
     "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "hearingDateTime",
+    "ListElementCode": "tabDateTime",
     "FieldType": "Text",
     "ElementLabel": "Hearing date: ",
     "SecurityClassification": "Public",
@@ -163,16 +163,16 @@
   {
     "LiveFrom": "28/04/2025",
     "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "timeEstimate",
+    "ListElementCode": "tabTimeEstimate",
     "FieldType": "Text",
-    "ElementLabel": "Hearing date: ",
+    "ElementLabel": "Hearing time estimate: ",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }, 
   {
     "LiveFrom": "28/04/2025",
     "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "hearingConfidentialParties",
+    "ListElementCode": "tabConfidentialParties",
     "FieldType": "Text",
     "ElementLabel": "Who has received this notice: ",
     "SecurityClassification": "Public",
@@ -181,7 +181,7 @@
   {
     "LiveFrom": "28/04/2025",
     "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "additionalHearingInformation",
+    "ListElementCode": "tabAdditionalInformation",
     "FieldType": "Text",
     "ElementLabel": "Additional information about the hearing: ",
     "SecurityClassification": "Public",
@@ -190,7 +190,7 @@
   {
     "LiveFrom": "28/04/2025",
     "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "hearingDocuments",
+    "ListElementCode": "tabHearingDocuments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "ElementLabel": "Hearing documents: ",
