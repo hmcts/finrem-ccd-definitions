@@ -53,7 +53,7 @@ import { GeneralApplicationDirectionsPage } from '../pages/events/general-applic
 import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/UploadDraftOrdersPage';
 import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
 import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
-import { CheckYourAnswersPage } from "../pages/helpers/CheckYourAnswersPage";
+import { CheckYourAnswersPage } from '../pages/helpers/CheckYourAnswersPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
