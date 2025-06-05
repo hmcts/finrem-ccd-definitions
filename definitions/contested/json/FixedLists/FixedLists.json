@@ -2958,92 +2958,92 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
-    "ListElementCode": "Conditional order",
-    "ListElement": "Conditional order",
+    "ListElementCode": "Chronology",
+    "ListElement": "Chronology",
     "DisplayOrder": 5
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_s_caseDocumentType",
-    "ListElementCode": "Letter from Applicant",
-    "ListElement": "Correspondence",
-    "DisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
     "ListElementCode": "Statement of Issues",
     "ListElement": "Concise Statement of Issues",
+    "DisplayOrder": 6
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_s_caseDocumentType",
+    "ListElementCode": "Conditional order",
+    "ListElement": "Conditional order",
     "DisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
-    "ListElementCode": "Chronology",
-    "ListElement": "Chronology",
+    "ListElementCode": "Letter from Applicant",
+    "ListElement": "Correspondence",
     "DisplayOrder": 8
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_s_caseDocumentType",
+    "ListElementCode": "Form H",
+    "ListElement": "Costs Form H/H1/N260",
+    "DisplayOrder": 9
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
     "ListElementCode": "ES1",
     "ListElement": "ES1",
-    "DisplayOrder": 9
+    "DisplayOrder": 10
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
     "ListElementCode": "ES2",
     "ListElement": "ES2",
-    "DisplayOrder": 10
+    "DisplayOrder": 11
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
     "ListElementCode": "Expert Evidence",
     "ListElement": "Expert report",
-    "DisplayOrder": 11
+    "DisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
     "ListElementCode": "Valuation Report",
     "ListElement": "Family home valuation",
-    "DisplayOrder": 12
+    "DisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
     "ListElementCode": "Final order",
     "ListElement": "Final order",
-    "DisplayOrder": 13
+    "DisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
     "ListElementCode": "FM5",
     "ListElement": "FM5",
-    "DisplayOrder": 14
+    "DisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
     "ListElementCode": "Applicant - Form E",
     "ListElement": "Form E & Exhibits",
-    "DisplayOrder": 15
+    "DisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_s_caseDocumentType",
     "ListElementCode": "Form G",
     "ListElement": "Form G",
-    "DisplayOrder": 16
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_s_caseDocumentType",
-    "ListElementCode": "Form H",
-    "ListElement": "Form H (Costs Estimate)",
     "DisplayOrder": 17
   },
   {
@@ -3248,5 +3248,136 @@
     "ListElementCode": "unableToQuantify",
     "ListElement": "Unable to quantify",
     "DisplayOrder": 6
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_yesOnly",
+    "ListElementCode": "YES",
+    "ListElement": "Yes",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_typeOfDraftOrderList",
+    "ListElementCode": "anAgreedOrderFollowingAHearing",
+    "ListElement": "An agreed order following a hearing (agreed by the parties at the hearing)",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_typeOfDraftOrderList",
+    "ListElementCode": "aSuggestedDraftOrderPriorToAListedHearing",
+    "ListElement": "A suggested draft order prior to a listed hearing (this will just be placed on file for the hearing)",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_uploadParty",
+    "ListElementCode": "theApplicant",
+    "ListElement": "The applicant",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_uploadParty",
+    "ListElementCode": "theRespondent",
+    "ListElement": "The respondent",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_UploadOrdersOrPsas",
+    "ListElementCode": "orders",
+    "ListElement": "Orders"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_UploadOrdersOrPsas",
+    "ListElementCode": "pensionSharingAnnexes",
+    "ListElement": "Pension Sharing Annexes"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderOrderStatus",
+    "ListElementCode": "TO_BE_REVIEWED",
+    "ListElement": "To be reviewed",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderOrderStatus",
+    "ListElementCode": "APPROVED_BY_JUDGE",
+    "ListElement": "Approved by judge",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderOrderStatus",
+    "ListElementCode": "PROCESSED",
+    "ListElement": "Processed",
+    "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderOrderStatus",
+    "ListElementCode": "REFUSED",
+    "ListElement": "Refused by judge",
+    "DisplayOrder": 4
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderHearingTimeEstimate",
+    "ListElementCode": "The application can be listed for the standard time",
+    "ListElement": "The application can be listed for the standard time",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_draftOrderHearingTimeEstimate",
+    "ListElementCode": "Additional time is needed",
+    "ListElement": "Additional time is needed",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_fl_AgreedDraftOrderResubmission",
+    "ListElementCode": "Yes",
+    "ListElement": "This is a resubmission of a previously rejected order"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeDecision",
+    "ListElementCode": "READY_TO_BE_SEALED",
+    "ListElement": "Yes"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeDecision",
+    "ListElementCode": "LEGAL_REP_NEEDS_TO_MAKE_CHANGE",
+    "ListElement": "No, the legal representative needs to make changes"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeDecision",
+    "ListElementCode": "JUDGE_NEEDS_TO_MAKE_CHANGES",
+    "ListElement": "No, I need to make changes"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeDecision",
+    "ListElementCode": "REVIEW_LATER",
+    "ListElement": "Review later"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApprovalDocType",
+    "ListElementCode": "DRAFT_ORDER",
+    "ListElement": "Draft Order"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_judgeApprovalDocType",
+    "ListElementCode": "PSA",
+    "ListElement": "Pension Sharing Annex"
   }
 ]

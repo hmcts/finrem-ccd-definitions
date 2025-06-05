@@ -19,7 +19,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "beforeYouStartPara2",
-    "Label": "Guidance on how to use the system can be found here:\r\n\r\nhttps://www.gov.uk/government/publications/myhmcts-how-to-use-online-financial-remedy-services",
+    "Label": "Guidance on how to use the system can be found here:\r\n\r\n<a href=\"https://www.gov.uk/government/publications/myhmcts-how-to-use-online-financial-remedy-services\">https://www.gov.uk/government/publications/myhmcts-how-to-use-online-financial-remedy-services</a>",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
@@ -473,6 +473,14 @@
     "HintText": "The applicant is applying for an order by consent in terms of written agreement (a consent order). Within the draft consent order, the Applicant is applying to Court for;",
     "FieldType": "MultiSelectList",
     "FieldTypeParameter": "FR_ms_natureApplication",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/01/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "natureOfApplicationVariationOrderWarning",
+    "Label": "Are you sure this is a variation order?",
+    "FieldType": "Label",
     "SecurityClassification": "Public"
   },
   {
@@ -1969,6 +1977,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "generalEmailUploadedDocument",
     "Label": "Upload Document",
+    "HintText": "File size must not exceed 2MB.",
     "FieldType": "Document",
     "SecurityClassification": "Public"
   },
@@ -2288,6 +2297,79 @@
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "HintText": "If Yes, please enter the Country in the field below.",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "documentToKeepCollection",
+    "Label": "Documents to remove",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_documentToRemove",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/09/2024",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "userCaseAccessList",
+    "Label": "Please select user case access to remove",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "cautionMessage",
+    "Label": "## Warning: This event will clear any existing organisation and set the default role. Do you want to continue?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "isNocFixAppliedFlag",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "03/02/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "applicantInRefugeTab",
+    "Label": "Is the Applicant currently a resident in a refuge?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/02/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "applicantInRefugeQuestion",
+    "Label": "Is the Applicant currently a resident in a refuge?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/02/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "respondentInRefugeTab",
+    "Label": "Is the Respondent currently a resident in a refuge?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/02/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "respondentInRefugeQuestion",
+    "Label": "Is the Respondent currently a resident in a refuge?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
     "Searchable": "N"
   }
 ]

@@ -2,9 +2,11 @@ package finrem;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import uk.gov.hmcts.befta.BeftaMain;
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
 import uk.gov.hmcts.befta.dse.ccd.CcdRoleConfig;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
+import uk.gov.hmcts.befta.util.FileUtils;
 
 import java.util.List;
 
@@ -23,7 +25,8 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
             new CcdRoleConfig("caseworker-divorce-bulkscan", "PUBLIC"),
             new CcdRoleConfig("caseworker-divorce-financialremedy", "PUBLIC"),
             new CcdRoleConfig("caseworker-caa", "PUBLIC"),
-            new CcdRoleConfig("caseworker-approver", "PUBLIC")
+            new CcdRoleConfig("caseworker-approver", "PUBLIC"),
+            new CcdRoleConfig("caseworker-financialremedy-rparobot", "PUBLIC")
     );
 
     /**
@@ -70,5 +73,48 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     @Override
     public void createRoleAssignments() {
         // No implementation required
+    }
+
+    @Override
+    protected boolean shouldTolerateDataSetupFailure(Throwable e) {
+        if (getDataSetupEnvironment() == CcdEnvironment.PREVIEW) {
+            logger.error("Data Setup failure ignored", e);
+            return true;
+        } else {
+            return super.shouldTolerateDataSetupFailure(e);
+        }
+    }
+
+    /**
+     * Workaround for <a href="https://tools.hmcts.net/jira/browse/CCD-5362">CCD-5362</a>.
+     * @param definitionsPath definitions path
+     */
+    @Override
+    protected void importDefinitionsAt(String definitionsPath) {
+        List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
+        logger.info("{} definition files will be uploaded to '{}' on {}.", definitionFileResources.size(),
+                BeftaMain.getConfig().getDefinitionStoreUrl(), getDataSetupEnvironment());
+
+        try {
+            for (String fileName : definitionFileResources) {
+                importDefinitionFile(fileName);
+            }
+        } finally {
+            FileUtils.deleteDirectory("definition_files");
+        }
+    }
+
+    private void importDefinitionFile(String fileName) {
+        try {
+            logger.info("\n\nImporting {}...", fileName);
+            importDefinition(fileName);
+            logger.info("\nImported {}.\n\n", fileName);
+        } catch (Exception e) {
+            String message = "Couldn't import {} - Exception: {}.\n\n";
+            logger.error(message, fileName, e.getMessage());
+            if (!shouldTolerateDataSetupFailure(e)) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

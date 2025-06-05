@@ -39,6 +39,7 @@ def secrets = [
                 secret('fixedlists-consented-judgedetails-7', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_7'),
                 secret('fixedlists-consented-judgedetails-8', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_8'),
                 secret('fixedlists-consented-judgedetails-9', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_9'),
+                secret('fixedlists-consented-judgedetails-10', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_10'),
                 secret('userprofile-consented-judgedetails-1', 'USERPROFILE_CONSENTED_JUDGEDETAILS_1'),
                 secret('userprofile-consented-judgedetails-2', 'USERPROFILE_CONSENTED_JUDGEDETAILS_2'),
                 secret('userprofile-consented-judgedetails-3', 'USERPROFILE_CONSENTED_JUDGEDETAILS_3'),
@@ -79,11 +80,17 @@ def secrets = [
                 secret('solicitor1-password', 'PASSWORD_SOLICITOR1'),
                 secret('barrister1-username', 'USERNAME_BARRISTER1'),
                 secret('barrister1-password', 'PASSWORD_BARRISTER1'),
-                secret('finrem-idam-client-secret', 'FINREM_IDAM_CLIENT_SECRET'),
                 secret('username-caa', 'USERNAME_CAA'),
                 secret('password-caa', 'PASSWORD_CAA'),
-                secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR')
-
+                secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
+                secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
+                secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
+                secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
+                secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
+                secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
+                secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
+                secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
+                secret('playwright-appl-caa-password', 'PLAYWRIGHT_APPL_CAA_PSWD'),
         ]
 ]
 
@@ -173,6 +180,7 @@ withPipeline("nodejs", product, component) {
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_9} > FixedLists-judgeDetails9-prod.json'
+              sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_10} > FixedLists-judgeDetails10-prod.json'
             }
 
             yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
@@ -189,6 +197,7 @@ withPipeline("nodejs", product, component) {
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_7} > FixedLists-judgeDetails7-prod.json'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_9} > FixedLists-judgeDetails9-prod.json'
+              sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_10} > FixedLists-judgeDetails10-prod.json'
             }
             yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
             yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
@@ -237,6 +246,13 @@ withPipeline("nodejs", product, component) {
 
   before('functionalTest') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+  }
+
+  afterAlways('smokeTest:preview') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/trace.zip'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/*.png'
   }
 
   afterSuccess('functionalTest:preview') {

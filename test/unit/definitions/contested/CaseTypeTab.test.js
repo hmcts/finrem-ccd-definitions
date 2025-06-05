@@ -11,10 +11,10 @@ const tabIds = uniq(map(caseTypeTab, 'TabID'));
 describe('CaseTypeTab', () => {
   it('should contain a unique case field ID per tab ID (no duplicate field in a tab)', () => {
     const uniqResult = uniqWith(
-      caseTypeTab,
-      (field1, field2) => {
-        return field1.TabID === field2.TabID && field1.CaseFieldID === field2.CaseFieldID;
-      }
+        caseTypeTab,
+        (field1, field2) => {
+          return field1.TabID === field2.TabID && field1.CaseFieldID === field2.CaseFieldID;
+        }
     );
     expect(uniqResult).to.eql(caseTypeTab);
   });
@@ -24,10 +24,10 @@ describe('CaseTypeTab', () => {
         return field.TabID === tabId;
       });
       const uniqResults = uniqWith(
-        allFieldsPerTab,
-        (field1, field2) => {
-          return field1.TabFieldDisplayOrder === field2.TabFieldDisplayOrder;
-        }
+          allFieldsPerTab,
+          (field1, field2) => {
+            return field1.TabFieldDisplayOrder === field2.TabFieldDisplayOrder;
+          }
       );
       expect(uniqResults).to.eql(allFieldsPerTab);
     });
@@ -55,6 +55,7 @@ describe('CaseTypeTab', () => {
     historyTab: 1,
     'caseFileViewTab-courtadmin': 2,
     'caseFileViewTab-judiciary': 2,
+    'caseFileViewTab-solicitor': 2,
     'ApplicantAddressConfidential-solicitor': 3,
     'ApplicantAddressConfidential-courtadmin': 3,
     'ApplicantAddressConfidential-judiciary': 3,
@@ -78,6 +79,8 @@ describe('CaseTypeTab', () => {
     gatekeepingTab: 14,
     AdminNotes: 15,
     judiciaryOutcomeTab: 16,
+    'DraftOrders-courtadmin': 17,
+    'DraftOrders-judiciary': 17,
     Orders: 17,
     abOrders: 17,
     rsOrders: 17,
@@ -167,6 +170,7 @@ describe('CaseTypeTab', () => {
       'state',
       'caseFileViewTab-courtadmin',
       'caseFileViewTab-judiciary',
+      'caseFileViewTab-solicitor',
       'ApplicantAddressConfidential-solicitor',
       'ApplicantAddressConfidential-courtadmin',
       'ApplicantAddressConfidential-judiciary',
@@ -190,6 +194,8 @@ describe('CaseTypeTab', () => {
       'gatekeepingTab',
       'AdminNotes',
       'judiciaryOutcomeTab',
+      'DraftOrders-courtadmin',
+      'DraftOrders-judiciary',
       'Orders',
       'abOrders',
       'rsOrders',

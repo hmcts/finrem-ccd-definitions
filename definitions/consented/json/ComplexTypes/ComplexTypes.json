@@ -1,0 +1,1422 @@
+[
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_DocumentType",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_OtherDocument",
+    "ElementLabel": "Type of document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_DocumentType",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_PensionType",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_PensionDocument",
+    "ElementLabel": "Type of document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_PensionType",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_D81Type",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_D81_D81rDocument",
+    "ElementLabel": "Type of document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_D81Type",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderLabel",
+    "FieldType": "Label",
+    "ElementLabel": "Order Outcome",
+    "HintText": "Order Outcome, see direction(s) below",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderText",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_OrderAccept",
+    "ElementLabel": "Order Direction",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderParties",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_Party",
+    "ElementLabel": "Action required by ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderDate&Times",
+    "FieldType": "Date",
+    "ElementLabel": "Action by ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned, annotated Document",
+    "HintText": "See notes on scanned document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderAcceptType",
+    "ListElementCode": "orderTextArea",
+    "FieldType": "TextArea",
+    "ElementLabel": "Explanation",
+    "HintText": "Optionally, give explanation, as appropriate",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderLabel",
+    "FieldType": "Label",
+    "ElementLabel": "Order Outcome",
+    "HintText": "Order Outcome, see direction(s) below",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderText",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_OrderReject",
+    "ElementLabel": "Order Direction",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderParties",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_Party",
+    "ElementLabel": "Action required by ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderDate&Times",
+    "FieldType": "Date",
+    "ElementLabel": "Action by ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned, annotated Document",
+    "HintText": "See notes on scanned document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_OrderRejectType",
+    "ListElementCode": "orderTextArea",
+    "FieldType": "TextArea",
+    "ElementLabel": "Explanation",
+    "HintText": "Optionally, give explanation, as appropriate",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_uploadConsentOrderDocument",
+    "ElementLabel": "Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentEmailContent",
+    "FieldType": "TextArea",
+    "ElementLabel": "Email content",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date received",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadConsentOrder",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_uploadOrder",
+    "ElementLabel": "Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentEmailContent",
+    "FieldType": "TextArea",
+    "ElementLabel": "Email content",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date received",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadOrder",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_uploadDocument",
+    "ElementLabel": "Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentEmailContent",
+    "FieldType": "TextArea",
+    "ElementLabel": "Email content",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date received",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_UploadDocument",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_solUploadDocument",
+    "ElementLabel": "Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentEmailContent",
+    "FieldType": "TextArea",
+    "ElementLabel": "Email content",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date received",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_SolUploadDocument",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_addressTo",
+    "FieldType": "Text",
+    "ElementLabel": "Addressed to",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_order",
+    "FieldType": "TextArea",
+    "ElementLabel": "Please type the order in the box",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_documentUpload",
+    "FieldType": "Document",
+    "ElementLabel": "Upload additional documents",
+    "HintText": "Please upload any additional documents",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_judgeList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
+    "ElementLabel": "Select Judge",
+    "HintText": "Please select the appropriate Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_judgeName",
+    "FieldType": "TextArea",
+    "ElementLabel": "Name of Judge",
+    "HintText": "Surname of judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_dateOfOrder",
+    "FieldType": "Date",
+    "ElementLabel": "Date of order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_comments",
+    "FieldType": "TextArea",
+    "ElementLabel": "Additional comments",
+    "HintText": "Please add any additional comments for Court Admin (these comments will not be accessible by the Applicant’s solicitor)",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_generalOrder",
+    "ListElementCode": "generalOrder_spacing",
+    "FieldType": "Label",
+    "ElementLabel": "********************",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalAfterText",
+    "FieldType": "TextArea",
+    "ElementLabel": "AND AFTER",
+    "HintText": "The order will already contain the wording ‘AFTER reading the consent order signed by both parties’. Please complete the box below if you want to add an addition line, this will appear on the order as ‘AND AFTER [insert text here]’.",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusal",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_OrderRefusal",
+    "ElementLabel": "Reason for Refusal",
+    "HintText": "Please tick all boxes that apply",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalOther",
+    "FieldType": "TextArea",
+    "ElementLabel": "Other (please specify)",
+    "HintText": "If Other was ticked please provide details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalDocs",
+    "FieldType": "Document",
+    "ElementLabel": "Upload additional documents",
+    "HintText": "Please upload any additional documents",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalJudge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
+    "ElementLabel": "Select Judge",
+    "HintText": "Please select the appropriate Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalJudgeName",
+    "FieldType": "TextArea",
+    "ElementLabel": "Name of Judge",
+    "HintText": "Surname of judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalDate",
+    "FieldType": "Date",
+    "ElementLabel": "Date of order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalAddComments",
+    "FieldType": "TextArea",
+    "ElementLabel": "Additional comments",
+    "HintText": "Please add any additional comments for Court Admin (these comments will not be accessible by the Applicant’s solicitor)",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusal",
+    "ListElementCode": "orderRefusalSpacing",
+    "FieldType": "Label",
+    "ElementLabel": "********************",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_RespondToOrderDocuments",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_respondToOrderDocuments",
+    "ElementLabel": "Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_RespondToOrderDocuments",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_RespondToOrderDocuments",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date Of Response",
+    "HintText": "Todays Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_RespondToOrderDocuments",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_amendedConsentOrderCollection",
+    "ListElementCode": "amendedConsentOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Amended Consent Order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_amendedConsentOrderCollection",
+    "ListElementCode": "amendedConsentOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Amended Consent Order Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_caseNotes",
+    "ListElementCode": "caseNoteAuthor",
+    "FieldType": "Text",
+    "ElementLabel": "Author",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_caseNotes",
+    "ListElementCode": "caseNoteDate",
+    "FieldType": "Date",
+    "ElementLabel": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_caseNotes",
+    "ListElementCode": "caseNote",
+    "FieldType": "TextArea",
+    "ElementLabel": "Note",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "# Record Meta data",
+    "FieldType": "Label",
+    "ElementLabel": "Scanned Records",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "type",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "ScannedDocumentType",
+    "ElementLabel": "Document Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "subtype",
+    "FieldType": "Text",
+    "ElementLabel": "Document Subtype",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "url",
+    "FieldType": "Document",
+    "ElementLabel": "Scanned document url",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "controlNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Document Control Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "deliveryDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Delivery Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ScannedDocument",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralLetterDocument",
+    "ListElementCode": "generatedLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralLetterDocument",
+    "ListElementCode": "generalLetterUploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Upload Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralLetterDocument",
+    "ListElementCode": "generalLetterUploadedDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Uploaded Document(s)",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_approvedOrder",
+    "ListElementCode": "orderLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Approved Order Letter",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_approvedOrder",
+    "ListElementCode": "consentOrder",
+    "FieldType": "Document",
+    "ElementLabel": "Consent Order / Variation Order Annexed and Stamped",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_approvedOrder",
+    "ListElementCode": "pensionDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_PensionType",
+    "ElementLabel": "Pension Documents Stamped",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_PaymentDocument",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_paymentDocumentType",
+    "ElementLabel": "Type of document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_PaymentDocument",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "name",
+    "FieldType": "Text",
+    "ElementLabel": "Name of child",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "dateOfBirth",
+    "FieldType": "Date",
+    "ElementLabel": "Date of birth",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "gender",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_Gender",
+    "ElementLabel": "Gender",
+    "FieldShowCondition": "gender=\"Male\" OR gender=\"Female\" OR gender=\"male\" OR gender=\"female\" ",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "relationshipToApplicant",
+    "FieldType": "Text",
+    "ElementLabel": "Relationship to applicant",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "relationshipToRespondent",
+    "FieldType": "Text",
+    "ElementLabel": "Relationship to respondent",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "18/03/2020",
+    "ID": "FR_ChildInfo",
+    "ListElementCode": "countryOfResidence",
+    "FieldType": "Text",
+    "ElementLabel": "Country of residence",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralEmailDocument",
+    "ListElementCode": "generalEmailRecipient",
+    "FieldType": "Email",
+    "ElementLabel": "Recipient's email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralEmailDocument",
+    "ListElementCode": "generalEmailCreatedBy",
+    "FieldType": "Text",
+    "ElementLabel": "Email created by",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralEmailDocument",
+    "ListElementCode": "generalEmailBody",
+    "FieldType": "Text",
+    "ElementLabel": "Body",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_GeneralEmailDocument",
+    "ListElementCode": "generalEmailUploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Upload Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_TransferCourtEmail",
+    "ListElementCode": "transferLocalCourtEmail",
+    "FieldType": "Email",
+    "ElementLabel": "Court Email Address",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_TransferCourtEmail",
+    "ListElementCode": "transferLocalCourtName",
+    "FieldType": "Text",
+    "ElementLabel": "Court Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_TransferCourtEmail",
+    "ListElementCode": "transferLocalCourtInstructions",
+    "FieldType": "Text",
+    "ElementLabel": "Additional Comments",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangedRepresentative",
+    "ListElementCode": "name",
+    "FieldType": "Text",
+    "ElementLabel": "Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangedRepresentative",
+    "ListElementCode": "email",
+    "FieldType": "Email",
+    "ElementLabel": "Email",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "ChangedRepresentative",
+    "ListElementCode": "organisation",
+    "FieldType": "Organisation",
+    "ElementLabel": "Organisation",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "party",
+    "FieldType": "Text",
+    "ElementLabel": "Party",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "name",
+    "FieldType": "Text",
+    "ElementLabel": "Client Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "date",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "by",
+    "FieldType": "Text",
+    "ElementLabel": "Updated by",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "via",
+    "FieldType": "Text",
+    "ElementLabel": "Updated via",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "added",
+    "FieldType": "ChangedRepresentative",
+    "ElementLabel": "Added representative",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "RepresentationUpdate",
+    "ListElementCode": "removed",
+    "FieldType": "ChangedRepresentative",
+    "ElementLabel": "Removed representative",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_VariationDocumentType",
+    "ListElementCode": "typeOfDocument",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_VariationOtherDocument",
+    "ElementLabel": "Type of document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_VariationDocumentType",
+    "ListElementCode": "uploadedDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "hearingType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_hearingTypeDirections",
+    "ElementLabel": "Type of hearing",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "hearingTimeEstimate",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing time estimate",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "hearingDate",
+    "FieldType": "Date",
+    "ElementLabel": "Hearing date",
+    "HintText": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks.\nStandard Track: Date of the hearing must be between 12 and 16 weeks\r\n",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "hearingTime",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing time",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "regionList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_region_list",
+    "ElementLabel": "Please state in which Financial Remedies Court Zone the applicant resides",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "midlandsFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_midlands_FRCList",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"midlands\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "londonFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_london_FRCList",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"london\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "northWestFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_nw_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"northwest\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "northEastFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_ne_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"northeast\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "southEastFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_se_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"southeast\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "southWestFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_sw_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"southwest\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "walesFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_wales_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"wales\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "highCourtFRCList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_hc_frc_list",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"highcourt\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "nottinghamCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_NottinghamList",
+    "ElementLabel": "Please choose the FRC which covers the area within which the Applicant resides - if the applicant does not reside within one of these areas, please choose 'other'",
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "cfcCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_CFCList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"london\" AND londonFRCList=\"cfc\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "birminghamCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_birmingham_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "liverpoolCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_liverpool_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "manchesterCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_manchester_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "lancashireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_lancashireList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "cleavelandCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_cleveland_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleveland\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "nwyorkshireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "humberCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_humber_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "kentSurreyCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_kent_surrey_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kent\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "bedfordshireCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bedfordshireList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "thamesvalleyCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_thamesvalleyList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "devonCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_devonList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "dorsetCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_dorsetList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "bristolCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_bristolList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "newportCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_newport_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "swanseaCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_swansea_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "northWalesCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_northwalesList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "highCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_highCourtList",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "regionList=\"highcourt\" AND highCourtFRCList=\"highcourt\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "additionalInformationAboutHearing",
+    "FieldType": "Text",
+    "ElementLabel": "Additional information about the hearing",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "promptForAnyDocument",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Do you want to upload any other documents ?",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "uploadAdditionalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Please upload any additional documents related to your application.",
+    "FieldShowCondition": "promptForAnyDocument=\"Yes\"",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "hearingCollection",
+    "ListElementCode": "hearingNotice",
+    "FieldType": "Document",
+    "ElementLabel": "Hearing notice",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalAfterText",
+    "FieldType": "TextArea",
+    "ElementLabel": "AND AFTER",
+    "HintText": "The order will already contain the wording ‘AFTER reading the consent order signed by both parties’. Please complete the box below if you want to add an addition line, this will appear on the order as ‘AND AFTER [insert text here]’.",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusal",
+    "FieldType": "MultiSelectList",
+    "FieldTypeParameter": "FR_ms_OrderRefusal",
+    "ElementLabel": "Reason for Refusal",
+    "HintText": "Please tick all boxes that apply",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalOther",
+    "FieldType": "TextArea",
+    "ElementLabel": "Other (please specify)",
+    "HintText": "If Other was ticked please provide details",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalDocs",
+    "FieldType": "Document",
+    "ElementLabel": "Upload additional documents",
+    "HintText": "Please upload any additional documents",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalJudge",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_OrderDirectionJudge",
+    "ElementLabel": "Select Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalJudgeName",
+    "FieldType": "TextArea",
+    "ElementLabel": "Name of Judge",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalDate",
+    "FieldType": "Date",
+    "ElementLabel": "Date of order",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_orderRefusalOrder",
+    "ListElementCode": "orderRefusalAddComments",
+    "FieldType": "TextArea",
+    "ElementLabel": "Additional comments",
+    "HintText": "Please add any additional comments for Court Admin (these comments will not be accessible by the Applicant’s solicitor)",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "documentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "type",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "ScannedDocumentType",
+    "ElementLabel": "Document Type",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "subtype",
+    "FieldType": "Text",
+    "ElementLabel": "Document Subtype",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "controlNumber",
+    "FieldType": "Text",
+    "ElementLabel": "Document Control Number",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "File Name",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Scanned Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "deliveryDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Delivery Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/06/2024",
+    "ID": "FR_ScannedD81Info",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_documentToRemove",
+    "ListElementCode": "documentId",
+    "FieldType": "Text",
+    "ElementLabel": "Document ID",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_documentToRemove",
+    "ListElementCode": "caseDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }
+]
