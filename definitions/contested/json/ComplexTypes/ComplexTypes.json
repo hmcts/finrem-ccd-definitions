@@ -3793,6 +3793,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "28/05/2025",
+    "ID": "FR_draftOrdersReview",
+    "ListElementCode": "orderApprovedDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrdersReview",
     "ListElementCode": "hearingJudge",
@@ -4239,6 +4248,15 @@
     "ListElementCode": "isFinalOrder",
     "FieldType": "DynamicMultiSelectList",
     "ElementLabel": "Is this a final order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/05/2025",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "orderApprovedDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
