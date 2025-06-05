@@ -1,16 +1,18 @@
-import { expect, Locator, Page } from "@playwright/test";
-import { BaseJourneyPage } from "../../BaseJourneyPage";
+import {expect, Locator, Page} from "@playwright/test";
+import {BaseJourneyPage} from "../../BaseJourneyPage";
 import {YesNoRadioEnum} from "../../helpers/enums/RadioEnums.ts";
 import {PayloadHelper} from "../../../functional/helpers/Contested/ContestedPayloadHelper.ts";
 import {CommonActionsHelper} from "../../helpers/CommonActionsHelper.ts";
+import {camelCase} from "lodash";
 
 export class ManageHearingPage extends BaseJourneyPage {
 
     private readonly commonActionsHelper: CommonActionsHelper;
     private readonly manageHearingTitle: Locator;
     private readonly addANewHearingRadio: Locator;
-    private readonly AddANewHearingTitle: Locator;
+    private readonly addANewHearingTitle: Locator;
     private readonly typeOfHearingDropDown: Locator;
+    private readonly hearingTimeEstimate: Locator;
 
 
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
@@ -18,17 +20,19 @@ export class ManageHearingPage extends BaseJourneyPage {
         this.commonActionsHelper = commonActionsHelper;
         this.manageHearingTitle = page.getByRole('heading', { name: "Manage Hearings" })
         this.addANewHearingRadio = page.getByRole('radio', { name: "Add a new hearing" })
-        this.AddANewHearingTitle = page.getByRole('heading', { name: "Add a new hearing" })
+        this.addANewHearingTitle = page.getByRole('heading', { name: "Add a new hearing" })
         this.typeOfHearingDropDown = page.locator('#workingHearing_hearingType');
+        this.hearingTimeEstimate = this.page.locator(`#workingHearing_hearingTimeEstimate`);
     }
 
     async selectAddANewHearing() {
+        await expect(this.manageHearingTitle).toBeVisible();
+        await expect(this.addANewHearingRadio).toBeVisible();
         await this.addANewHearingRadio.check();
     }
 
     async assertWhatWouldYouLikeToDoRequired() {
-        const errorMessage = this.page.getByText('What would you like to do? is required');
-        await expect(errorMessage).toBeVisible();
+        await this.assertErrorMessage('What would you like to do? is required')
     }
 
     async selectTypeOfHearing(typeOfHearing: string) {
@@ -37,9 +41,8 @@ export class ManageHearingPage extends BaseJourneyPage {
     }
 
     async enterTimeEstimate(duration: string) {
-        const hearingTimeEstimate = this.page.locator(`#workingHearing_hearingTimeEstimate`);
-        await expect(hearingTimeEstimate).toBeVisible();
-        await hearingTimeEstimate.fill(duration);
+        await expect(this.hearingTimeEstimate).toBeVisible();
+        await this.hearingTimeEstimate.fill(duration);
     }
 
     async enterHearingDate(day: string, month: string, year: string) {
@@ -56,23 +59,36 @@ export class ManageHearingPage extends BaseJourneyPage {
         await hearingDateYear.fill(year);
     }
 
+    async enterHearingDateAutomatically() {
+        const hearingDate = new Date();
+        hearingDate.setDate(hearingDate.getDate() + 12 * 7 +1); // 12 weeks from now + 1 day
+        const date = hearingDate.toISOString().split('T')[0];
+        const [year, month, day] = date.split('-');
+        await this.enterHearingDate(day, month, year);
+    }
+
+    async assertHearingDateFormatError() {
+        await this.assertErrorMessage('The data entered is not valid for Hearing Date');
+    }
+
     async enterHearingTime(time: string) {
         const hearingTime = this.page.locator(`#workingHearing_hearingTime`);
         await expect(hearingTime).toBeVisible();
         await hearingTime.fill(time);
     }
 
-    async selectCourtForHearing(courtRegion: string = "London", courtFrc: string = "London",
+    async selectCourtForHearing(courtRegion: string = "London", courtFrc: string = "London FRC",
                                 localCourt: string = "BROMLEY COUNTY COURT AND FAMILY COURT") {
         const regionListDropDown = this.page.locator(`#workingHearing_hearingCourtSelection_region`);
         await expect(regionListDropDown).toBeVisible();
         await regionListDropDown.selectOption(courtRegion);
 
-        const frcDropDown = this.page.locator(`workingHearing_hearingCourtSelection_${courtRegion.toLowerCase()}List`);
+        const frcDropDown = this.page.locator(`#workingHearing_hearingCourtSelection_${camelCase(courtRegion)}List`);
         await expect(frcDropDown).toBeVisible();
         await frcDropDown.selectOption(`${courtFrc} FRC`);
 
-        const courtListDropDown = this.page.locator(`workingHearing_hearingCourtSelection_${courtFrc.toLowerCase()}CourtList`);
+        const courtListDropDown = this.page
+            .locator(`select[id^="workingHearing_hearingCourtSelection_"][id$="CourtList"]:not([disabled])`);
         await expect(courtListDropDown).toBeVisible();
         await courtListDropDown.selectOption(localCourt);
     }
@@ -90,7 +106,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     }
 
     async whetherToUploadOtherDocuments(yesOrNo: YesNoRadioEnum) {
-        const uploadOtherDocumentsQuestion = this.page.locator(`#workingHearing_additionalHearingDocPrompt_radio`);
+        const uploadOtherDocumentsQuestion = this.page.locator(`#workingHearing_additionalHearingDocPrompt`);
         await expect(uploadOtherDocumentsQuestion).toBeVisible();
         const optionToSelect = uploadOtherDocumentsQuestion.getByLabel(yesOrNo);
         await optionToSelect.check();
@@ -99,6 +115,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     async uploadOtherDocuments(docFilename: string, position: number = 0) {
         const addNewDocumentButton = this.page.getByRole("button", { name: "Add new" }).nth(0);
         await expect(addNewDocumentButton).toBeVisible();
+        await addNewDocumentButton.click();
 
         const uploadOtherDocumentFiles = this.page.locator(`#workingHearing_additionalHearingDocs_value`).nth(position);
         await expect(uploadOtherDocumentFiles).toBeVisible();
@@ -119,6 +136,13 @@ export class ManageHearingPage extends BaseJourneyPage {
         await removeDocumentConfirmButton.click();
     }
 
+    private async selectSendNoticeOfHearing(yesOrNo: YesNoRadioEnum) {
+        const sendNoticeOfHearing = this.page.locator(`#workingHearing_hearingNoticePrompt`);
+        await expect(sendNoticeOfHearing).toBeVisible();
+        const optionToSelect = sendNoticeOfHearing.getByLabel(yesOrNo);
+        await optionToSelect.check();
+    }
+
     async assertErrorMessagesForAllMandatoryFields() {
         const errorMessages = [
             "Type of Hearing is required",
@@ -135,11 +159,9 @@ export class ManageHearingPage extends BaseJourneyPage {
         await this.navigateContinue();
 
         for (const errorMessage of errorMessages) {
-            const errorLocator = this.page.getByText(errorMessage);
-            await expect(errorLocator).toBeVisible();
+            await this.assertErrorMessage(errorMessage);
         }
 
-        await this.navigateContinue();
         await this.whetherToUploadOtherDocuments(YesNoRadioEnum.YES)
 
         const docRequired = this.page.getByText(
@@ -148,5 +170,58 @@ export class ManageHearingPage extends BaseJourneyPage {
         await expect(docRequired).toBeVisible();
     }
 
+    private async assertErrorMessage(errorMessage: string) {
+        const errorLocators = this.page.getByText(errorMessage);
+        const count = await errorLocators.count();
+        for (let i = 0; i < count; i++) {
+            const errorLocator = errorLocators.nth(i);
+            await expect(errorLocator).toBeVisible();
+        }
+    }
 
+    async addHearing(param: {
+        type: string;
+        duration: string;
+        date: {};
+        time: string;
+        court: { zone: string; frc: string; courtName: string };
+        attendance: string;
+        additionalInformation: string;
+        uploadAnySupportingDocuments: boolean;
+        uploadFiles: string[];
+        sendANoticeOfHearing: boolean
+    }) {
+        console.info("Adding hearing with parameters:", param);
+
+        await expect(this.addANewHearingTitle).toBeVisible();
+
+        await this.selectTypeOfHearing(param.type);
+        await this.enterTimeEstimate(param.duration);
+        await this.enterHearingDateAutomatically();
+        await this.enterHearingTime(param.time);
+        await this.selectCourtForHearing(param.court.zone, param.court.frc, param.court.courtName);
+        await this.selectHearingAttendees(param.attendance);
+        await this.enterAdditionalInformationAboutHearing(param.additionalInformation);
+
+        if (param.uploadAnySupportingDocuments) {
+            await this.whetherToUploadOtherDocuments(YesNoRadioEnum.YES);
+            for (let i=0; i< param.uploadFiles.length;i++) {
+                await this.uploadOtherDocuments(param.uploadFiles[i], i);
+            }
+        } else {
+            await this.whetherToUploadOtherDocuments(YesNoRadioEnum.NO);
+        }
+        if (param.sendANoticeOfHearing) {
+            await this.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
+        } else {
+            await this.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
+        }
+    }
+
+    async navigateIgnoreWarningAndContinue() {
+        const ignoreWarningButton = this.page.getByRole('button', { name: 'Ignore warning and continue' });
+        if (await ignoreWarningButton.isVisible().catch(() => false)) {
+            await ignoreWarningButton.click();
+        }
+    }
 }

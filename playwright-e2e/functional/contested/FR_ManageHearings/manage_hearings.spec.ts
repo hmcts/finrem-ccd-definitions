@@ -1,39 +1,129 @@
-import { test, expect } from '../../../fixtures/fixtures';
+import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import {ContestedCaseDataHelper} from "../../helpers/Contested/ContestedCaseDataHelper.ts";
-import {ContestedEvents} from "../../../config/case-data.ts";
+import {ContestedEvents} from "../../../config/case-data";
+import {getManageHearingTableData} from "../../../data/check_your_answer_content/manage_hearings/manage_hearing_tabs.ts";
+import {ContestedCaseDataHelper} from "../../helpers/Contested/ContestedCaseDataHelper";
+import {DateHelper} from "../../helpers/DateHelper.ts";
+
+const typeOfHearingData = [
+    "Maintenance Pending Suit (MPS)",
+    "First Directions Appointment (FDA)",
+    "Financial Dispute Resolution (FDR)",
+    "Final Hearing (FH)",
+    "Directions (DIR)",
+    "Mention",
+    "Permission to Appeal",
+    "Appeal Hearing (Financial Remedy)",
+    "Application Hearing",
+    "Retrial Hearing"
+];
 
 test.describe('Contested - Manage Hearings', () => {
+
     test(
-        'Contested - Caseworker manages hearings for Form A case',
-        { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage }) => {
-            // Create and setup case
-            const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
+        'Contested - Assert validations - Manage Hearings - Pre-Trial Review (PTR)', {
+        tag: []},
+        async (
+            {loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
+        // Create and setup case
+            const date = await DateHelper.getCurrentDate();
+            const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication(false, date);
 
-            // Login as caseworker and navigate to case
-            await manageCaseDashboardPage.visit();
-            await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
-            await manageCaseDashboardPage.navigateToCase(caseId);
+        // Login as caseworker and navigate to case
+        await manageCaseDashboardPage.visit();
+        await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+        await manageCaseDashboardPage.navigateToCase(caseId);
+        console.info(`Navigated to case with ID: ${caseId}`);
 
-            // Manage hearings
-            await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
-            await manageHearingPage.selectAddANewHearing();
-            await manageHearingPage.navigateContinue();
+        // Manage hearings
+        await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
+        await manageHearingPage.navigateContinue();
+        await manageHearingPage.assertWhatWouldYouLikeToDoRequired();
 
-            /*await manageHearingPage.addHearing({
-                type: 'Final Hearing',
-                duration: '2 hours',
-                date: { day: '15', month: '10', year: '2023' },
-                time: '10:00',
-                information: 'Hearing details here',
-                court: 'Court Name',
-                file: undefined
-            });
-            await manageHearingPage.submitHearing();*/
-            await caseDetailsPage.checkHasBeenUpdated('Manage Hearings');
-        }
-    )
+        await manageHearingPage.selectAddANewHearing();
+        await manageHearingPage.navigateContinue();
+
+        await manageHearingPage.assertErrorMessagesForAllMandatoryFields();
+
+        await manageHearingPage.uploadOtherDocuments("removeFile.pdf");
+        await manageHearingPage.removeUploadedDocument();
+
+        await manageHearingPage.enterHearingDate('asdf', 'asdf', 'asdf');
+        await manageHearingPage.assertHearingDateFormatError()
+
+        await manageHearingPage.addHearing({
+            type: "Pre-Trial Review (PTR)",
+            duration: '2 hours',
+            date: {},
+            time: '10:00 AM',
+            court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
+            attendance: 'Remote - video call',
+            additionalInformation: 'Hearing details here',
+            uploadAnySupportingDocuments: true,
+            uploadFiles: ["final_hearing_file1.pdf", "final_hearing_file2.pdf"],
+            sendANoticeOfHearing: true
+        });
+
+        await manageHearingPage.navigateContinue();
+        await manageHearingPage.navigateIgnoreWarningAndContinue();
+
+        const expectedTable = getManageHearingTableData({
+            typeOfHearing: "Pre-Trial Review (PTR)"
+        });
+        await checkYourAnswersPage.assertCheckYourAnswersPage(expectedTable);
+
+        await manageHearingPage.navigateSubmit();
+
+        await caseDetailsPage.checkHasBeenUpdated('Manage Hearings');
+
+    });
+
+    for(const data of typeOfHearingData) {
+        test(
+            'Contested - Caseworker manages hearings for Form A case - ' + data,
+            {tag: []},
+            async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
+                // Create and setup case
+                const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
+
+                // Login as caseworker and navigate to case
+                await manageCaseDashboardPage.visit();
+                await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+                await manageCaseDashboardPage.navigateToCase(caseId);
+                console.info(`Navigated to case with ID: ${caseId}`);
+
+                // Manage hearings
+                await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
+                await manageHearingPage.selectAddANewHearing();
+                await manageHearingPage.navigateContinue();
+
+                await manageHearingPage.addHearing({
+                    type: data,
+                    duration: '2 hours',
+                    date: {},
+                    time: '10:00 AM',
+                    court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
+                    attendance: 'Remote - video call',
+                    additionalInformation: 'Hearing details here',
+                    uploadAnySupportingDocuments: true,
+                    uploadFiles: ["final_hearing_file1.pdf", "final_hearing_file2.pdf"],
+                    sendANoticeOfHearing: true
+                });
+
+                await manageHearingPage.navigateContinue();
+                await manageHearingPage.navigateIgnoreWarningAndContinue();
+
+                const expectedTable = getManageHearingTableData({
+                    typeOfHearing: data
+                });
+                await checkYourAnswersPage.assertCheckYourAnswersPage(expectedTable);
+
+                await manageHearingPage.navigateSubmit();
+
+                await caseDetailsPage.checkHasBeenUpdated('Manage Hearings');
+            }
+        )
+    }
 
 }
 );

@@ -139,7 +139,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Direction Order",
     ccdCallback: "FR_directionOrder"
   },
-  manageHearing: {
+  manageHearings: {
     listItem: "Manage Hearings",
     ccdCallback: "FR_manageHearings"
   },
@@ -147,7 +147,6 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage case documents",
     ccdCallback: "FR_manageCaseDocuments"
   },
-
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
