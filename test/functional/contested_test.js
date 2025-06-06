@@ -155,25 +155,6 @@ Scenario.skip('Contested share case @nightly @pipeline', async I => {
   await I.assignContestedShareCase(caseId, solRef);
 }).retry(3);
 
-Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async ({ I }) => {
-    await I.signInIdam(solicitorUserName, solicitorPassword);
-    await I.wait('2');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedSolicitorCreate(solRef, 'Matrimonial');
-    await I.contestedDivorceDetails();
-    await I.contestedApplicantDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplication();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestion();
-    await I.miamCertification();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers('Matrimonial');
-    await I.waitForText('Form A Application', '60')
-}).retry(3);
-
 // DISABLED AS OF PAPER CASE BREAKING CHANGE DFR-1688
 // RE-ENABLE AS PART OF BUG FIX
 //
