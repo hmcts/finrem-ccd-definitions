@@ -20,7 +20,7 @@ const caseFlagTestData = [
     }
 ];
 
-test.describe('Consented Case Flag Tests as a caseworker', () => {
+test.describe('Consented Case Flag Tests', () => {
     for(const data of caseFlagTestData) {
         test(
             'Consented - ' + data.createTitle,

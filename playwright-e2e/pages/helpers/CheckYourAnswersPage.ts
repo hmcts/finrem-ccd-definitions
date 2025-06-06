@@ -44,7 +44,8 @@ export class CheckYourAnswersPage {
             if (typeof expected === 'string') {
                 // For string rows, check if any cell in col1 or col2 matches exactly
                 const expectedNorm = normalize(expected);
-                const found = actualRows.some(([col1, col2]) => col1 === expectedNorm || col2 === expectedNorm);
+                const found = actualRows
+                    .some(([cellItem, cellValue]) => cellItem === expectedNorm || cellValue === expectedNorm);
                 if (!found) {
                     errors.push(`Row with value "${expected}" not found in any column`);
                 }
@@ -53,7 +54,7 @@ export class CheckYourAnswersPage {
                 const cellItemNorm = normalize(expected.cellItem);
                 const valueNorm = normalize(expected.value);
                 const found = actualRows.some(
-                    ([col1, col2]) => col1 === cellItemNorm && col2 === valueNorm
+                    ([cellItem, cellValue]) => cellItem === cellItemNorm && cellValue === valueNorm
                 );
                 if (!found) {
                     errors.push(`Row with "${expected.cellItem}" and "${expected.value}" not found`);

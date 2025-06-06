@@ -59,7 +59,7 @@ export class ManageHearingPage extends BaseJourneyPage {
         await hearingDateYear.fill(year);
     }
 
-    async enterHearingDateAutomatically() {
+    async enterDefaultHearingDate() {
         const hearingDate = new Date();
         hearingDate.setDate(hearingDate.getDate() + 12 * 7 +1); // 12 weeks from now + 1 day
         const date = hearingDate.toISOString().split('T')[0];
@@ -83,10 +83,12 @@ export class ManageHearingPage extends BaseJourneyPage {
         await expect(regionListDropDown).toBeVisible();
         await regionListDropDown.selectOption(courtRegion);
 
-        const frcDropDown = this.page.locator(`#workingHearing_hearingCourtSelection_${camelCase(courtRegion)}List`);
+        const frcDropDown = this.page
+            .locator(`#workingHearing_hearingCourtSelection_${camelCase(courtRegion)}List`);
         await expect(frcDropDown).toBeVisible();
         await frcDropDown.selectOption(`${courtFrc} FRC`);
 
+        // Select the local court from the visible dropdown
         const courtListDropDown = this.page
             .locator(`select[id^="workingHearing_hearingCourtSelection_"][id$="CourtList"]:not([disabled])`);
         await expect(courtListDropDown).toBeVisible();
@@ -100,13 +102,15 @@ export class ManageHearingPage extends BaseJourneyPage {
     }
 
     async enterAdditionalInformationAboutHearing(information: string) {
-        const additionalInformation = this.page.locator(`#workingHearing_additionalHearingInformation`);
+        const additionalInformation = this.page
+            .locator(`#workingHearing_additionalHearingInformation`);
         await expect(additionalInformation).toBeVisible();
         await additionalInformation.fill(information);
     }
 
     async whetherToUploadOtherDocuments(yesOrNo: YesNoRadioEnum) {
-        const uploadOtherDocumentsQuestion = this.page.locator(`#workingHearing_additionalHearingDocPrompt`);
+        const uploadOtherDocumentsQuestion = this.page
+            .locator(`#workingHearing_additionalHearingDocPrompt`);
         await expect(uploadOtherDocumentsQuestion).toBeVisible();
         const optionToSelect = uploadOtherDocumentsQuestion.getByLabel(yesOrNo);
         await optionToSelect.check();
@@ -117,10 +121,12 @@ export class ManageHearingPage extends BaseJourneyPage {
         await expect(addNewDocumentButton).toBeVisible();
         await addNewDocumentButton.click();
 
-        const uploadOtherDocumentFiles = this.page.locator(`#workingHearing_additionalHearingDocs_value`).nth(position);
+        const uploadOtherDocumentFiles = this.page
+            .locator(`#workingHearing_additionalHearingDocs_value`).nth(position);
         await expect(uploadOtherDocumentFiles).toBeVisible();
 
-        const filePayload = await PayloadHelper.createAliasPDFPayload('./playwright-e2e/data/test.pdf', docFilename);
+        const filePayload = await PayloadHelper
+            .createAliasPDFPayload('./playwright-e2e/data/test.pdf', docFilename);
         await uploadOtherDocumentFiles.setInputFiles(filePayload);
 
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
@@ -197,7 +203,7 @@ export class ManageHearingPage extends BaseJourneyPage {
 
         await this.selectTypeOfHearing(param.type);
         await this.enterTimeEstimate(param.duration);
-        await this.enterHearingDateAutomatically();
+        await this.enterDefaultHearingDate();
         await this.enterHearingTime(param.time);
         await this.selectCourtForHearing(param.court.zone, param.court.frc, param.court.courtName);
         await this.selectHearingAttendees(param.attendance);
