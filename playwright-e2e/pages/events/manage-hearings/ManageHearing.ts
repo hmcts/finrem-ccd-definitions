@@ -14,7 +14,6 @@ export class ManageHearingPage extends BaseJourneyPage {
     private readonly typeOfHearingDropDown: Locator;
     private readonly hearingTimeEstimate: Locator;
 
-
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
         this.commonActionsHelper = commonActionsHelper;
@@ -32,7 +31,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     }
 
     async assertWhatWouldYouLikeToDoRequired() {
-        await this.assertErrorMessage('What would you like to do? is required')
+        await this.assertErrorMessage(['What would you like to do? is required'])
     }
 
     async selectTypeOfHearing(typeOfHearing: string) {
@@ -68,7 +67,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     }
 
     async assertHearingDateFormatError() {
-        await this.assertErrorMessage('The data entered is not valid for Hearing Date');
+        await this.assertErrorMessage(['The data entered is not valid for Hearing Date']);
     }
 
     async enterHearingTime(time: string) {
@@ -164,25 +163,13 @@ export class ManageHearingPage extends BaseJourneyPage {
 
         await this.navigateContinue();
 
-        for (const errorMessage of errorMessages) {
-            await this.assertErrorMessage(errorMessage);
-        }
+        await this.assertErrorMessage(errorMessages);
 
         await this.whetherToUploadOtherDocuments(YesNoRadioEnum.YES)
 
-        const docRequired = this.page.getByText(
-            "Please upload any additional documents related to your application. is required"
+        await this.assertErrorMessage(
+            ["Please upload any additional documents related to your application. is required"]
         );
-        await expect(docRequired).toBeVisible();
-    }
-
-    private async assertErrorMessage(errorMessage: string) {
-        const errorLocators = this.page.getByText(errorMessage);
-        const count = await errorLocators.count();
-        for (let i = 0; i < count; i++) {
-            const errorLocator = errorLocators.nth(i);
-            await expect(errorLocator).toBeVisible();
-        }
     }
 
     async addHearing(param: {
@@ -221,13 +208,6 @@ export class ManageHearingPage extends BaseJourneyPage {
             await this.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
         } else {
             await this.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
-        }
-    }
-
-    async navigateIgnoreWarningAndContinue() {
-        const ignoreWarningButton = this.page.getByRole('button', { name: 'Ignore warning and continue' });
-        if (await ignoreWarningButton.isVisible().catch(() => false)) {
-            await ignoreWarningButton.click();
         }
     }
 }

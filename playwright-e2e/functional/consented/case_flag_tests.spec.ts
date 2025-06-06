@@ -21,7 +21,7 @@ const caseFlagTestData = [
 ];
 
 test.describe('Consented Case Flag Tests', () => {
-    for(const data of caseFlagTestData) {
+    for (const data of caseFlagTestData) {
         test(
             'Consented - ' + data.createTitle,
             {tag: []},

@@ -78,7 +78,7 @@ test.describe('Contested - Manage Hearings', () => {
 
     });
 
-    for(const data of typeOfHearingData) {
+    for (const data of typeOfHearingData) {
         test(
             'Contested - Caseworker manages hearings for Form A case - ' + data,
             {tag: []},

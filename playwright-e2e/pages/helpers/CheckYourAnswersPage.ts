@@ -1,7 +1,6 @@
 import {expect, Locator, Page} from "@playwright/test";
 import {Table, TableRowItem} from "../components/table.ts";
 
-
 export class CheckYourAnswersPage {
     private readonly page: Page;
     private readonly checkYourAnswersTitle: Locator;
@@ -13,6 +12,18 @@ export class CheckYourAnswersPage {
         this.checkYourAnswersTable = page.locator("table[aria-describedby='check your answers table']");
     }
 
+    /**
+     * Asserts that the "Check Your Answers" page displays the expected table data.
+     *
+     * This method waits for the page and table to be visible, then compares the actual
+     * table rows against the provided expected data. The expected data can contain
+     * either strings (to match any cell in a row) or objects with `cellItem` and `value`
+     * properties (to match both columns in a row). All cell values are normalized by
+     * trimming whitespace and removing newlines/tabs before comparison.
+     *
+     * @param table the expected table data, structured as an array of rows (strings or objects)
+     * @throws Error if any expected row is not found in the actual table
+     */
     async assertCheckYourAnswersPage(table: Table) {
         await this.page.waitForLoadState('load');
         await expect(this.checkYourAnswersTitle).toBeVisible();

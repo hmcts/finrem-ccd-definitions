@@ -1,9 +1,9 @@
 import {Table} from "../../../pages/components/table";
 
-const getFormattedDate = (): string => {
-    const today = new Date();
-    today.setDate(today.getDate() + 12 * 7 + 1);
-    return today.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+const getFormattedDateTwelveWeeksAndOneDayLater = (): string => {
+    const twelveWeeksAndOneDayLater = new Date();
+    twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7 + 1);
+    return twelveWeeksAndOneDayLater.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
 };
 
 export function getManageHearingTableData(params?: {
@@ -24,7 +24,7 @@ export function getManageHearingTableData(params?: {
         rows: [
             {cellItem: "Type of Hearing", value: params?.typeOfHearing ?? "Final Hearing (FH)"},
             {cellItem: "Hearing Time Estimate", value: params?.duration ?? "2 hours"},
-            {cellItem: "Hearing Date", value: params?.hearingDate ?? getFormattedDate()},
+            {cellItem: "Hearing Date", value: params?.hearingDate ?? getFormattedDateTwelveWeeksAndOneDayLater()},
             {cellItem: "Hearing Time", value: params?.hearingTime ?? "10:00 AM"},
             "This would usually be the applicants local Court",
             {cellItem: "Please state in which Financial Remedies Court Zone the applicant resides", value: params?.courtZone ?? "London"},
