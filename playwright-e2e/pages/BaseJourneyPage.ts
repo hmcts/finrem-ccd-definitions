@@ -135,6 +135,13 @@ export abstract class BaseJourneyPage {
         await this.waitForSpinner();
     }
 
+    async navigateIgnoreWarningAndContinue() {
+        const ignoreWarningButton = this.page.getByRole('button', { name: 'Ignore warning and continue' });
+        if (await ignoreWarningButton.isVisible().catch(() => false)) {
+            await ignoreWarningButton.click();
+        }
+    }
+
     async wait(timeout: number) {
         await this.page.waitForTimeout(timeout);
     }
@@ -182,5 +189,22 @@ export abstract class BaseJourneyPage {
           res.request().method() === 'POST' && res.url().includes(urlPart)
         );
         return await response.json();
+    }
+
+    /**
+     * Asserts that each error message in the provided array is visible on the page.
+     *
+     * @param errorMessages - An array of error message strings to check for visibility.
+     * Each message is expected to be present and visible on the current page.
+     */
+    async assertErrorMessage(errorMessages: string[]) {
+        for (const errorMessage of errorMessages) {
+            const errorLocators = this.page.getByText(errorMessage);
+            const count = await errorLocators.count();
+            for (let i = 0; i < count; i++) {
+                const errorLocator = errorLocators.nth(i);
+                await expect(errorLocator).toBeVisible();
+            }
+        }
     }
 }
