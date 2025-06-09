@@ -4,6 +4,9 @@ import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { contestedUpdateContactDetailsTabData } from '../../../data/tab_content/contested/contested_update_contact_details_caseworker_tabs';
 import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
+import {
+    contestedUpdateContactDetailsTableData
+} from "../../../data/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts";
 
 test(
     'Contested - Update Contact Details as a caseworker',
@@ -14,7 +17,8 @@ test(
         manageCaseDashboardPage,
         caseDetailsPage,
         updateContactDetailsPage,
-        createCaseCheckYourAnswersPage
+        createCaseCheckYourAnswersPage,
+        checkYourAnswersPage
       },
     ) => {
       // Create case and progress to HWF decision made
@@ -42,6 +46,8 @@ test(
       //Continue about to submit and check your answers
         await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
         await createCaseCheckYourAnswersPage.checkRespondentInRefugeQuestion(respondentInRefuge);
+        await checkYourAnswersPage.assertCheckYourAnswersPage(contestedUpdateContactDetailsTableData);
+
         await createCaseCheckYourAnswersPage.navigateSubmit();
         await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
 
