@@ -1,7 +1,4 @@
-const getTodayFormattedDate = (): string => {
-  const today = new Date();
-  return today.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-};
+import {DateHelper} from "../../../functional/helpers/DateHelper.ts";
 
 export const createCaseTabData = [
   {
@@ -26,7 +23,7 @@ export const createCaseTabData = [
     tabContent: [
       { tabItem: "Divorce / Dissolution Case Number", value: "LV12D12345" },
       { tabItem: "Date of marriage / civil partnership", value: "1 Jan 1999" },
-      { tabItem: "Application Issued Date", value:getTodayFormattedDate() },
+      { tabItem: "Application Issued Date", value:DateHelper.getTodayFormattedDate() },
       { tabItem: "Name of Court / Divorce Centre where petition issued", value: "Shire Court" },
       { tabItem: "What stage has the divorce / dissolution case reached ?", value: "Petition / Application Issued" },
       { tabItem: "Upload Petition", value: "PETITION FORM A.docx" },

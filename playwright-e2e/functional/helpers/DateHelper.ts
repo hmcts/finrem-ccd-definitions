@@ -52,4 +52,15 @@ export class DateHelper {
       const hearingDate = await this.getHearingDateUsingCurrentDate();
       return { currentDate, hearingDate };
     }
-  }
+
+    /**
+     * Returns today's date formatted as "d MMM yyyy" (e.g. "6 Aug 2025").
+     *
+     * @returns Formatted current date string.
+     */
+    static getTodayFormattedDate(): string {
+        const today = new Date();
+        return today.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    };
+
+}
