@@ -1,5 +1,3 @@
-import { ManageCaseDocumentsPage } from "../pages/events/manage-case-documents/ManageCaseDocumentsPage";
-
 // Enums for Case Types and User Types
 export enum CaseType {
   Consented = "FinancialRemedyMVP2",
@@ -140,6 +138,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   directionOrder: {
     listItem: "Direction Order",
     ccdCallback: "FR_directionOrder"
+  },
+  manageHearings: {
+    listItem: "Manage Hearings",
+    ccdCallback: "FR_manageHearings"
   },
   manageCaseDocuments: {
     listItem: "Manage case documents",
