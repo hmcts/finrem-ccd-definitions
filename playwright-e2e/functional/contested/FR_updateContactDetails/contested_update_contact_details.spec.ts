@@ -1,9 +1,9 @@
-import { test } from '../../fixtures/fixtures';
-import config from '../../config/config';
-import { ContestedEvents } from '../../config/case-data';
-import { YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums';
-import { contestedUpdateContactDetailsTabData } from '../../data/tab_content/contested/contested_update_contact_details_caseworker_tabs';
-import { ContestedCaseDataHelper } from '../helpers/Contested/ContestedCaseDataHelper';
+import { test } from '../../../fixtures/fixtures';
+import config from '../../../config/config';
+import { ContestedEvents } from '../../../config/case-data';
+import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
+import { contestedUpdateContactDetailsTabData } from '../../../data/tab_content/contested/contested_update_contact_details_caseworker_tabs';
+import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
 
 test(
     'Contested - Update Contact Details as a caseworker',
