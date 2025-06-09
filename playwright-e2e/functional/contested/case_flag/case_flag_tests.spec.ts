@@ -37,7 +37,7 @@ test.describe('Contested Case Flag Tests', () => {
                 // Create and setup case
                 const caseId = await data.setupCase();
 
-                // Login as caseworker and navigate to case
+                // Login and navigate to case
                 await manageCaseDashboardPage.visit();
                 await loginPage.login(data.user.email, data.user.password, config.manageCaseBaseURL);
                 await manageCaseDashboardPage.navigateToCase(caseId);
