@@ -5413,11 +5413,19 @@
     "FieldShowCondition": "hearingInstruction.requireAnotherHearing=\"Yes\""
   },
   {
-    "LiveFrom": "28/05/2025",
+    "LiveFrom": "17/12/2024",
     "ID": "FR_approveOrdersToExtraReportFieldsInput",
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "extraReportFieldsInput",
     "ListElementCode": "judgeType",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "17/12/2024",
+    "ID": "FR_approveOrdersToExtraReportFieldsInput",
+    "CaseEventID": "FR_approveOrders",
+    "CaseFieldID": "extraReportFieldsInput",
+    "ListElementCode": "orderApprovedDate",
     "DisplayContext": "MANDATORY"
   },
   {
