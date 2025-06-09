@@ -2504,7 +2504,7 @@
     "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentConfidentialityWarning6",
     "FieldType": "Label",
-    "ElementLabel": "###### Parties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.,",
+    "ElementLabel": "###### Parties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.",
     "FieldShowCondition": "caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
