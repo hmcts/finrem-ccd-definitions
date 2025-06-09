@@ -1,45 +1,70 @@
-import { test, expect } from '../../../fixtures/fixtures';
+import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
 import { caseFlagTabData } from '../../../data/tab_content/common-tabs/case_flag_tabs';
 import { caseFlagTabDataUpdated } from '../../../data/tab_content/common-tabs/case_flag_tabs_updated';
 import { createFlag, manageFlagOnce } from '../../helpers/CommonHelpers/CaseFlagHelper';
 
-test.describe('Contested Case Flag Tests for Form A', () => {
-    test(
-        'Contested - Caseworker creates case flag',
-        { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage }) => {
-            // Create and setup case
-            const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
+const caseFlagTestData = [
+    {
+        title: 'Caseworker creates case flag for Form A',
+        setupCase: () => ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication(),
+        user: config.caseWorker,
+    },
+    {
+        title: 'Judge creates case flag for Form A',
+        setupCase: () => ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication(),
+        user: config.judge,
+    },
+    {
+        title: 'Caseworker creates case flag for Paper Case',
+        setupCase: () => ContestedCaseDataHelper.createAndSubmitPaperCase(),
+        user: config.caseWorker,
+    },
+    {
+        title: 'Caseworker creates case flag for Schedule1 Case',
+        setupCase: () => ContestedCaseDataHelper.createAndProcessSchedule1CaseUpToIssueApplication(),
+        user: config.caseWorker,
+    },
+];
 
-            // Login as caseworker and navigate to case
-            await manageCaseDashboardPage.visit();
-            await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
-            await manageCaseDashboardPage.navigateToCase(caseId);
+test.describe('Contested Case Flag Tests', () => {
+    for (const data of caseFlagTestData) {
+        test(
+            data.title,
+            {tag: []},
+            async ({loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage}) => {
+                // Create and setup case
+                const caseId = await data.setupCase();
 
-            // Create case flag
-            await createFlag(caseDetailsPage, createFlagPage, 'case',
-                () => createFlagPage.selectComplexCase(),
-                "Test case"
-            );
+                // Login and navigate to case
+                await manageCaseDashboardPage.visit();
+                await loginPage.login(data.user.email, data.user.password, config.manageCaseBaseURL);
+                await manageCaseDashboardPage.navigateToCase(caseId);
 
-            // Create applicant flag
-            await createFlag(caseDetailsPage, createFlagPage, 'applicant',
-                () => createFlagPage.selectVulnerableUser(),
-                "Test applicant"
-            );
+                // Create case flag
+                await createFlag(caseDetailsPage, createFlagPage, 'case',
+                    () => createFlagPage.selectComplexCase(),
+                    "Test case"
+                );
 
-            // Create respondent flag
-            await createFlag(caseDetailsPage, createFlagPage, 'respondent',
-                () => createFlagPage.selectOther("Other Flag Type"),
-                "Test respondent"
-            );
+                // Create applicant flag
+                await createFlag(caseDetailsPage, createFlagPage, 'applicant',
+                    () => createFlagPage.selectVulnerableUser(),
+                    "Test applicant"
+                );
 
-            await caseDetailsPage.assertTabData(caseFlagTabData);
+                // Create respondent flag
+                await createFlag(caseDetailsPage, createFlagPage, 'respondent',
+                    () => createFlagPage.selectOther("Other Flag Type"),
+                    "Test respondent"
+                );
 
-        }
-    );
+                await caseDetailsPage.assertTabData(caseFlagTabData);
+
+            }
+        );
+    }
 
     test(
     'Contested - Caseworker manage case flag',
@@ -62,116 +87,4 @@ test.describe('Contested Case Flag Tests for Form A', () => {
       await caseDetailsPage.assertTabData(caseFlagTabDataUpdated);
     }
     );
-    
-    test(
-        'Contested - Judge creates case flag',
-        { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage }) => {
-            // Create and setup case
-            const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
-
-            // Login as caseworker and navigate to case
-            await manageCaseDashboardPage.visit();
-            await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
-            await manageCaseDashboardPage.navigateToCase(caseId);
-
-            // Create case flag
-            await createFlag(caseDetailsPage, createFlagPage, 'case',
-                () => createFlagPage.selectComplexCase(),
-                "Test case"
-            );
-
-            // Create applicant flag
-            await createFlag(caseDetailsPage, createFlagPage, 'applicant',
-                () => createFlagPage.selectVulnerableUser(),
-                "Test applicant"
-            );
-
-            // Create respondent flag
-            await createFlag(caseDetailsPage, createFlagPage, 'respondent',
-                () => createFlagPage.selectOther("Other Flag Type"),
-                "Test respondent"
-            );
-
-            await caseDetailsPage.assertTabData(caseFlagTabData);
-
-        }
-    );
-}
-);
-
-test.describe('Contested Case Flag Tests for Paper Case', () => {
-    test(
-        'Contested - Caseworker creates case flag for Paper Case',
-        { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage }) => {
-            // Create and setup case
-            const caseId = await ContestedCaseDataHelper.createAndSubmitPaperCase();
-
-            // Login as caseworker and navigate to case
-            await manageCaseDashboardPage.visit();
-            await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
-            await manageCaseDashboardPage.navigateToCase(caseId);
-
-            // Create case flag
-            await createFlag(caseDetailsPage, createFlagPage, 'case',
-                () => createFlagPage.selectComplexCase(),
-                "Test case"
-            );
-
-            // Create applicant flag
-            await createFlag(caseDetailsPage, createFlagPage, 'applicant',
-                () => createFlagPage.selectVulnerableUser(),
-                "Test applicant"
-            );
-
-            // Create respondent flag
-            await createFlag(caseDetailsPage, createFlagPage, 'respondent',
-                () => createFlagPage.selectOther("Other Flag Type"),
-                "Test respondent"
-            );
-
-            await caseDetailsPage.assertTabData(caseFlagTabData);
-
-        }
-    );
-    }
-);
-
-test.describe('Contested Case Flag Tests for Schedule1 Case', () => {
-    test(
-        'Contested - Caseworker creates case flag for Schedule1 Case',
-        { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage }) => {
-            // Create and setup case
-            const caseId = await ContestedCaseDataHelper.createAndProcessSchedule1CaseUpToIssueApplication();
-
-            // Login as caseworker and navigate to case
-            await manageCaseDashboardPage.visit();
-            await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
-            await manageCaseDashboardPage.navigateToCase(caseId);   
-
-            // Create case flag
-            await createFlag(caseDetailsPage, createFlagPage, 'case',
-                () => createFlagPage.selectComplexCase(),
-                "Test case"
-            );
-
-            // Create applicant flag
-            await createFlag(caseDetailsPage, createFlagPage, 'applicant',
-                () => createFlagPage.selectVulnerableUser(),
-                "Test applicant"
-            );
-
-            // Create respondent flag
-            await createFlag(caseDetailsPage, createFlagPage, 'respondent',
-                () => createFlagPage.selectOther("Other Flag Type"),
-                "Test respondent"
-            );
-
-            await caseDetailsPage.assertTabData(caseFlagTabData);
-
-        }
-    );
-}
-);
+});
