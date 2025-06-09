@@ -19,8 +19,8 @@ test(
         updateContactDetailsPage,
         createCaseCheckYourAnswersPage,
         checkYourAnswersPage
-      },
-    ) => {
+      }) => {
+        
       // Create case and progress to HWF decision made
         const caseId = await ContestedCaseDataHelper.createContestedCaseUpToHWFDecision();
 
