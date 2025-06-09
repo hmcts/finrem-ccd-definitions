@@ -3793,15 +3793,6 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "28/05/2025",
-    "ID": "FR_draftOrdersReview",
-    "ListElementCode": "orderApprovedDate",
-    "FieldType": "Date",
-    "ElementLabel": "Court order date",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrdersReview",
     "ListElementCode": "hearingJudge",
@@ -4252,15 +4243,6 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "28/05/2025",
-    "ID": "FR_judgeApproval",
-    "ListElementCode": "orderApprovedDate",
-    "FieldType": "Date",
-    "ElementLabel": "Court order date",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_judgeApproval",
     "ListElementCode": "changesRequestedByJudge",
@@ -4538,6 +4520,15 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
     "ElementLabel": "Which judge title will be shown in the cover letter or refusal order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/05/2025",
+    "ID": "FR_extraReportFieldsInput",
+    "ListElementCode": "orderApprovedDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
