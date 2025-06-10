@@ -130,6 +130,13 @@ export class ContestedCaseDataHelper {
     return caseId;
   }
 
+  static async createContestedCaseUpToHWFDecision(): Promise<string> {
+      const caseId = await this.createBaseContestedFormA();
+      await PayloadHelper.solicitorSubmitFormACase(caseId);
+      await PayloadHelper.caseWorkerHWFDecisionMade(caseId);
+      return caseId;
+  }
+
   static async createAndProcessFormACaseUpToIssueApplication(
     isExpressPilot = false,
     issueDate?: string
