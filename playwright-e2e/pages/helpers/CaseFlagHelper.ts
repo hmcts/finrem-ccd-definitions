@@ -1,7 +1,7 @@
-import { CommonEvents } from '../../../config/case-data';
-import { CaseDetailsPage } from '../../../pages/CaseDetailsPage';
-import { CreateFlagPage } from '../../../pages/events/create-flag/CreateFlagPage';
-import { ManageFlagPage } from '../../../pages/events/manage-flag/ManageFlagPage';
+import { CommonEvents } from '../../config/case-data';
+import { CaseDetailsPage } from '../CaseDetailsPage';
+import { CreateFlagPage } from '../events/create-flag/CreateFlagPage';
+import { ManageFlagPage } from '../events/manage-flag/ManageFlagPage';
 
 export async function createFlag(
     caseDetailsPage: CaseDetailsPage,

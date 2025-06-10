@@ -11,7 +11,7 @@ import { NatureOfApplicationPage } from '../../../pages/events/create-case/Natur
 import { UploadOrderDocumentsPage } from '../../../pages/events/create-case/UploadOrderDocumentPage';
 import { CreateCaseCheckYourAnswersPage } from '../../../pages/events/create-case/CreateCaseCheckYourAnswersPage';
 import { TestInfo } from 'playwright/test';
-import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
+import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper';
 import { SigninPage } from '../../../pages/SigninPage';
 
 const enum ExpressTestType {

@@ -2,7 +2,7 @@ import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { approvedOrderTabData } from '../../data/tab_content/consented/approve_application_tabs';
-import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
+import { ConsentedCaseDataHelper } from '../data-utils/consented/ConsentedCaseDataHelper';
 
 test(
   'Consented - Approve Application',

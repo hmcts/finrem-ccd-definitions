@@ -1,7 +1,6 @@
 import {expect, Locator, Page} from "@playwright/test";
 import {BaseJourneyPage} from "../../BaseJourneyPage";
 import {YesNoRadioEnum} from "../../helpers/enums/RadioEnums.ts";
-import {PayloadHelper} from "../../../functional/helpers/Contested/ContestedPayloadHelper.ts";
 import {CommonActionsHelper} from "../../helpers/CommonActionsHelper.ts";
 import {camelCase} from "lodash";
 
@@ -124,7 +123,7 @@ export class ManageHearingPage extends BaseJourneyPage {
             .locator(`#workingHearing_additionalHearingDocs_value`).nth(position);
         await expect(uploadOtherDocumentFiles).toBeVisible();
 
-        const filePayload = await PayloadHelper
+        const filePayload = await this.commonActionsHelper
             .createAliasPDFPayload('./playwright-e2e/data/test.pdf', docFilename);
         await uploadOtherDocumentFiles.setInputFiles(filePayload);
 

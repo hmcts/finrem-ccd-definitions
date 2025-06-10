@@ -1,11 +1,10 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
-import { ConsentedEvents } from '../../config/case-data';
 import { caseFlagTabData } from '../../data/tab_content/common-tabs/case_flag_tabs';
 import { caseFlagTabDataUpdated } from '../../data/tab_content/common-tabs/case_flag_tabs_updated';
-import { createFlag, manageFlagOnce } from '../helpers/CommonHelpers/CaseFlagHelper';
-import {ContestedCaseDataHelper} from "../helpers/Contested/ContestedCaseDataHelper.ts";
+import { createFlag, manageFlagOnce } from '../../pages/helpers/CaseFlagHelper.ts';
+import { ConsentedCaseDataHelper } from '../data-utils/consented/ConsentedCaseDataHelper.ts';
+
 
 const caseFlagTestData = [
     {

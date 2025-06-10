@@ -1,9 +1,9 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
+import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper';
 import { caseFlagTabData } from '../../../data/tab_content/common-tabs/case_flag_tabs';
 import { caseFlagTabDataUpdated } from '../../../data/tab_content/common-tabs/case_flag_tabs_updated';
-import { createFlag, manageFlagOnce } from '../../helpers/CommonHelpers/CaseFlagHelper';
+import { createFlag, manageFlagOnce } from '../../../pages/helpers/CaseFlagHelper';
 
 const caseFlagTestData = [
     {

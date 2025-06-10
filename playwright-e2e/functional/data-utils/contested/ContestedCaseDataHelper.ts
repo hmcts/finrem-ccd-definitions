@@ -9,9 +9,8 @@ import {
   PROCESS_ORDER_DATA, 
   REFER_LIST_DATA, 
   OUTCOME_LIST_DATA, 
-  DIRECTIONS_LIST_DATA } from "../../helpers/PayloadMutator";
+  DIRECTIONS_LIST_DATA } from "../PayloadMutator";
 import { DateHelper } from "../DateHelper";
-import { json } from "stream/consumers";
 
 export class ContestedCaseDataHelper {
   private static buildContestedCase({

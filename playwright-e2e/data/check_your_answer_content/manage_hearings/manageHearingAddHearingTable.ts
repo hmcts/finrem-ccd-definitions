@@ -1,5 +1,5 @@
+import { DateHelper } from "../../../functional/data-utils/DateHelper";
 import {Table} from "../../../pages/components/table";
-import {DateHelper} from "../../../functional/helpers/DateHelper.ts";
 
 export function getManageHearingTableData(params?: {
     typeOfHearing?: string,

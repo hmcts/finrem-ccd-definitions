@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
+import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper';
 import { ContestedEvents } from '../../../config/case-data';
 
 test.describe('Contested - Paper Case - Amend application into Express Pilot', () => {

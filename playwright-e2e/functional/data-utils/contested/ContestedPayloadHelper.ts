@@ -2,8 +2,8 @@ import fs from "fs";
 import { apiHelper } from "../../../fixtures/fixtures";
 import config from "../../../config/config";
 import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
-import { ISSUE_APPLICATION } from "../../helpers/PayloadMutator";
 import { ReplacementAction } from "../../../types/replacement-action";
+import { ISSUE_APPLICATION } from "../PayloadMutator";
 
 export class PayloadHelper {
   private static async updateCaseWorkerSteps(
@@ -86,23 +86,6 @@ export class PayloadHelper {
     const json = JSON.parse(fileContent);
     apiHelper.makeModifications(dataModifications, json);
     return json;
-  }
-  
-  /**
-   * Creates a payload object for a PDF file with a new alias name.
-   * Can be passed to the setInputFiles method of a locator.
-   *
-   * @param filePath - The path to the original PDF file.
-   * @param newFilename - The new name to assign to the PDF file in the payload.
-   * @returns An object containing the new filename, pdf MIME type, and file buffer.
-   */
-  static async createAliasPDFPayload(filePath: string, newFilename: string) {
-    const fileBuffer = fs.readFileSync(filePath);
-    return {
-      name: newFilename,
-      mimeType: "application/pdf",
-      buffer: fileBuffer,
-    };
   }
 
   static async solicitorSubmitFormACase(caseId: string) {

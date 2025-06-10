@@ -1,8 +1,8 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { assignCaseToRespondent } from '../helpers/CaseAssigmentHelper';
 import { respondentAssignedCaseTabs } from '../../data/tab_content/contested/respondent_assigned_case_tabs';
-import { ContestedCaseDataHelper } from '../helpers/Contested/ContestedCaseDataHelper';
+import { assignCaseToRespondent } from '../data-utils/CaseAssignmentHelper';
+import { ContestedCaseDataHelper } from '../data-utils/contested/ContestedCaseDataHelper';
 
 test(
   'Contested - Respondent Assigned Case',

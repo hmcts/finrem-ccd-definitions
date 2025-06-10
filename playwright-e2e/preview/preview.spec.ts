@@ -1,9 +1,9 @@
 import { test } from '../fixtures/fixtures';
 import config from '../config/config';
-import { ConsentedCaseDataHelper } from '../functional/helpers/Consented/ConsentedCaseDataHelper';
-import { ContestedCaseDataHelper } from '../functional/helpers/Contested/ContestedCaseDataHelper';
 import { createCaseTabData } from '../data/tab_content/contested/solicitor_create_case_tabs';
 import { createCaseTabDataPreview } from '../data/tab_content/consented/create_case_tabs';
+import { ConsentedCaseDataHelper } from '../functional/data-utils/consented/ConsentedCaseDataHelper';
+import { ContestedCaseDataHelper } from '../functional/data-utils/contested/ContestedCaseDataHelper';
 
 test(
   'Consented Tab Verification',
