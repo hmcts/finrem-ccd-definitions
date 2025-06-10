@@ -19,18 +19,18 @@ test(
         checkYourAnswersPage
       }) => {
         
-      // Create case and progress to HWF decision made
+        // Create case and progress to HWF decision made
         const caseId = await ContestedCaseDataHelper.createContestedCaseUpToHWFDecision();
 
         const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
         const respondentInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
 
-      // Login as caseworker and create case
+        // Login as caseworker and create case
         await manageCaseDashboardPage.visit();
         await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
         await manageCaseDashboardPage.navigateToCase(caseId);
 
-      // Update contact details
+        // Update contact details
         await caseDetailsPage.selectNextStep(ContestedEvents.updateContactDetails);
         await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(false);
         await updateContactDetailsPage.navigateContinue();
@@ -41,7 +41,7 @@ test(
         await updateContactDetailsPage.selectRespondentInRefuge(true);
         await updateContactDetailsPage.navigateContinue();
 
-      //Continue about to submit and check your answers
+        //Continue about to submit and check your answers
         await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
         await createCaseCheckYourAnswersPage.checkRespondentInRefugeQuestion(respondentInRefuge);
         await checkYourAnswersPage.assertCheckYourAnswersPage(contestedUpdateContactDetailsTableData);
@@ -49,7 +49,7 @@ test(
         await createCaseCheckYourAnswersPage.navigateSubmit();
         await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
 
-      // Assert tab data
+        // Assert tab data
         await caseDetailsPage.assertTabData(contestedUpdateContactDetailsTabData);
     }
 );
