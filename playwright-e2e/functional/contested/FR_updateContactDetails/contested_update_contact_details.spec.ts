@@ -4,9 +4,7 @@ import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { contestedUpdateContactDetailsTabData } from '../../../data/tab_content/contested/contested_update_contact_details_caseworker_tabs';
 import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
-import {
-    contestedUpdateContactDetailsTableData
-} from "../../../data/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts";
+import { contestedUpdateContactDetailsTableData } from "../../../data/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts";
 
 test(
     'Contested - Update Contact Details as a caseworker',
