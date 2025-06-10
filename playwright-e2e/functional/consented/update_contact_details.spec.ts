@@ -6,7 +6,7 @@ import { updateContactDetailsTabData } from '../../data/tab_content/consented/up
 import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
 
 test(
-    'Consented - Update contact details @test',
+    'Consented - Update contact details',
     { tag: [] },
     async (
       {
