@@ -71,7 +71,10 @@ export class DateHelper {
     static getFormattedDateTwelveWeeksAndOneDayLater(): string {
         const twelveWeeksAndOneDayLater = new Date();
         twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7 + 1);
-        return twelveWeeksAndOneDayLater.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+
+        return twelveWeeksAndOneDayLater
+            .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+            .replace(/\b([A-Za-z]{4,})\b/g, m => m.slice(0, 3));
     };
 
 }

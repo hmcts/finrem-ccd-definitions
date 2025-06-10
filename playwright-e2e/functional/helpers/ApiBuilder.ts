@@ -13,21 +13,22 @@ const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 
 export class CcdApiHelper {
   async axiosRequest<T = any>(
-    requestParams: AxiosRequestConfig
-  ): Promise<AxiosResponse<T> | undefined> {
+      requestParams: AxiosRequestConfig
+  ): Promise<AxiosResponse<T>> {
     try {
-      return await axiosClient(requestParams);
+      const response = await axiosClient(requestParams);
+      if (![200, 201].includes(response.status)) {
+        throw new Error(`Request to ${requestParams.url} failed with status ${response.status}`);
+      }
+      return response;
     } catch (error: any) {
-      console.error(
-        "Utils %s request error %s",
-        requestParams.url,
-        error.message
+      throw new Error(
+          `Request to ${requestParams.url} failed: ${error.message}`
       );
     }
   }
 
   async getUserToken(username: string, password: string): Promise<string> {
-    console.info("Getting User Token");
 
     const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
     const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
@@ -42,9 +43,7 @@ export class CcdApiHelper {
       },
     });
 
-    console.info("Successfully retrieved IdAM code");
-
-    const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse?.data.code}`;
+    const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse.data.code}`;
 
     const authTokenResponse = await this.axiosRequest({
       method: "post",
@@ -54,13 +53,10 @@ export class CcdApiHelper {
       },
     });
 
-    console.info("Successfully retrieved user token");
-    return authTokenResponse?.data.access_token;
+    return authTokenResponse.data.access_token;
   }
 
   async getUserId(authToken: string): Promise<string> {
-    console.info("Getting User Id");
-
     const idamDetailsPath = "/details";
 
     const userDetailsResponse = await this.axiosRequest({
@@ -69,13 +65,10 @@ export class CcdApiHelper {
       headers: { Authorization: `Bearer ${authToken}` },
     });
 
-    console.info("Successfully retrieved User ID");
-    return userDetailsResponse?.data.id;
+    return userDetailsResponse.data.id;
   }
 
   async getServiceToken(): Promise<string> {
-    console.info("Getting Service Token");
-
     const serviceSecret = process.env.FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY || "";
     const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
     const s2sAuthPath = "/lease";
@@ -94,18 +87,15 @@ export class CcdApiHelper {
       },
     });
 
-    console.info("Successfully retrieved service token");
-    return serviceTokenResponse?.data;
+    return serviceTokenResponse.data;
   }
 
   async getStartEventToken(
-    ccdStartCasePath: string,
-    ccdSaveCasePath: string,
-    authToken: string,
-    serviceToken: string
+      ccdStartCasePath: string,
+      ccdSaveCasePath: string,
+      authToken: string,
+      serviceToken: string
   ): Promise<string> {
-    console.info("Retrieving start event token");
-
     const startCaseResponse = await this.axiosRequest({
       method: "get",
       url: ccdApiUrl + ccdStartCasePath,
@@ -116,19 +106,17 @@ export class CcdApiHelper {
       },
     });
 
-    console.info("Successfully retrieved start event token");
-    return startCaseResponse?.data.token;
+    return startCaseResponse.data.token;
   }
 
   async saveCase(
-    ccdSaveCasePath: string,
-    authToken: string,
-    serviceToken: string,
-    payload: any
-  ): Promise<AxiosResponse | undefined> {
-    console.info("Saving Case");
+      ccdSaveCasePath: string,
+      authToken: string,
+      serviceToken: string,
+      payload: any
+  ): Promise<AxiosResponse> {
 
-    const response = await this.axiosRequest({
+    return await this.axiosRequest({
       url: ccdApiUrl + ccdSaveCasePath,
       method: "post",
       data: payload,
@@ -138,33 +126,29 @@ export class CcdApiHelper {
         "Content-Type": "application/json",
       },
     });
-
-    console.info("Successfully saved case");
-    return response;
   }
 
   async createCaseInCcd(
-    userName: string,
-    password: string,
-    dataLocation: string,
-    caseType: string,
-    eventId: string,
-    dataModifications: ReplacementAction[] = []
+      userName: string,
+      password: string,
+      dataLocation: string,
+      caseType: string,
+      eventId: string,
+      dataModifications: ReplacementAction[] = []
   ): Promise<string> {
+    console.info("Creating CCD case with event %s...", eventId);
     const authToken = await this.getUserToken(userName, password);
     const userId = await this.getUserId(authToken);
     const serviceToken = await this.getServiceToken();
-
-    console.info("Creating Case");
 
     const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/event-triggers/${eventId}/token`;
     const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases`;
 
     const eventToken = await this.getStartEventToken(
-      ccdStartCasePath,
-      ccdSaveCasePath,
-      authToken,
-      serviceToken
+        ccdStartCasePath,
+        ccdSaveCasePath,
+        authToken,
+        serviceToken
     );
 
     const rawData = readFileSync(path.resolve(dataLocation), "utf-8");
@@ -189,45 +173,45 @@ export class CcdApiHelper {
     };
 
     const saveCaseResponse = await this.saveCase(
-      ccdSaveCasePath,
-      authToken,
-      serviceToken,
-      payload
+        ccdSaveCasePath,
+        authToken,
+        serviceToken,
+        payload
     );
-    const caseId = saveCaseResponse?.data.id;
+    const caseId = saveCaseResponse.data.id;
     console.info("Created case with id %s", caseId);
 
     return caseId;
   }
 
   async updateCaseInCcd(
-    userName: string,
-    password: string,
-    caseId: string,
-    caseType: string,
-    eventId: string,
-    dataLocation: string,
-    replacements: ReplacementAction[] = []
+      userName: string,
+      password: string,
+      caseId: string,
+      caseType: string,
+      eventId: string,
+      dataLocation: string,
+      replacements: ReplacementAction[] = []
   ): Promise<any> {
+    console.info("Updating CCD case id %s with event %s...", caseId, eventId);
+
     const authToken = await this.getUserToken(userName, password);
     const userId = await this.getUserId(authToken);
     const serviceToken = await this.getServiceToken();
-
-    console.info("Updating case with id %s and event %s", caseId, eventId);
 
     const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
     const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/events`;
 
     const eventToken = await this.getStartEventToken(
-      ccdStartEventPath,
-      ccdSaveEventPath,
-      authToken,
-      serviceToken
+        ccdStartEventPath,
+        ccdSaveEventPath,
+        authToken,
+        serviceToken
     );
 
     const rawData = dataLocation
-      ? readFileSync(path.resolve(dataLocation), "utf-8")
-      : "{}";
+        ? readFileSync(path.resolve(dataLocation), "utf-8")
+        : "{}";
 
     let updatedDataObj = JSON.parse(rawData);
 
@@ -251,13 +235,13 @@ export class CcdApiHelper {
     };
 
     const saveCaseResponse = await this.saveCase(
-      ccdSaveEventPath,
-      authToken,
-      serviceToken,
-      payload
+        ccdSaveEventPath,
+        authToken,
+        serviceToken,
+        payload
     );
     console.info("Updated case with id %s and event %s", caseId, eventId);
-    return saveCaseResponse?.data;
+    return saveCaseResponse.data;
   }
 
   /**
@@ -273,28 +257,28 @@ export class CcdApiHelper {
    * @returns The response data from the CCD API.
    */
   async updateCaseInCcdFromJSONObject(
-    userName: string,
-    password: string,
-    caseId: string,
-    caseType: string,
-    eventId: string,
-    jsonObject: any,
-    shareCaseRef?: string
+      userName: string,
+      password: string,
+      caseId: string,
+      caseType: string,
+      eventId: string,
+      jsonObject: any,
+      shareCaseRef?: string
   ): Promise<any> {
+    console.info("Updating CCD case id %s with event %s (from JSON object)...", caseId, eventId);
+
     const authToken = await this.getUserToken(userName, password);
     const userId = await this.getUserId(authToken);
     const serviceToken = await this.getServiceToken();
-
-    console.info("Updating case with id %s and event %s", caseId, eventId);
 
     const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
     const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/events`;
 
     const eventToken = await this.getStartEventToken(
-      ccdStartEventPath,
-      ccdSaveEventPath,
-      authToken,
-      serviceToken
+        ccdStartEventPath,
+        ccdSaveEventPath,
+        authToken,
+        serviceToken
     );
 
     let updatedData = JSON.stringify(jsonObject);
@@ -313,14 +297,14 @@ export class CcdApiHelper {
     };
 
     const saveCaseResponse = await this.saveCase(
-      ccdSaveEventPath,
-      authToken,
-      serviceToken,
-      payload
+        ccdSaveEventPath,
+        authToken,
+        serviceToken,
+        payload
     );
 
     console.info("Updated case with id %s and event %s", caseId, eventId);
-    return saveCaseResponse?.data;
+    return saveCaseResponse.data;
   }
 
   /**
