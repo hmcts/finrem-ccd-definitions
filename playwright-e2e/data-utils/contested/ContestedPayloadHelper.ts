@@ -1,8 +1,8 @@
 import fs from "fs";
-import { apiHelper } from "../../../fixtures/fixtures";
-import config from "../../../config/config";
-import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
-import { ReplacementAction } from "../../../types/replacement-action";
+import { apiHelper } from "../../fixtures/fixtures";
+import config from "../../config/config";
+import { ContestedEvents, CaseType, PayloadPath } from "../../config/case-data";
+import { ReplacementAction } from "../../types/replacement-action";
 import { ISSUE_APPLICATION } from "../PayloadMutator";
 
 export class PayloadHelper {

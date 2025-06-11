@@ -3,7 +3,7 @@ import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums';
 import { updateContactDetailsTabData } from '../../resources/tab_content/consented/update_contact_details_caseworker_tabs';
-import { ConsentedCaseDataHelper } from '../data-utils/consented/ConsentedCaseDataHelper';
+import { ConsentedCaseDataHelper } from '../../data-utils/consented/ConsentedCaseDataHelper';
 
 
 test(

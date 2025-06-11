@@ -1,7 +1,7 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
-import { ConsentedCaseDataHelper } from '../data-utils/consented/ConsentedCaseDataHelper';
+import { ConsentedCaseDataHelper } from '../../data-utils/consented/ConsentedCaseDataHelper';
 
 
 test(

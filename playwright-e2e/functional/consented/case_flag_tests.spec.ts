@@ -3,7 +3,7 @@ import config from '../../config/config.ts';
 import { caseFlagTabData } from '../../resources/tab_content/common-tabs/case_flag_tabs.ts';
 import { caseFlagTabDataUpdated } from '../../resources/tab_content/common-tabs/case_flag_tabs_updated.ts';
 import { createFlag, manageFlagOnce } from '../../pages/helpers/CaseFlagHelper.ts';
-import { ConsentedCaseDataHelper } from '../data-utils/consented/ConsentedCaseDataHelper.ts';
+import { ConsentedCaseDataHelper } from '../../data-utils/consented/ConsentedCaseDataHelper.ts';
 
 
 const caseFlagTestData = [

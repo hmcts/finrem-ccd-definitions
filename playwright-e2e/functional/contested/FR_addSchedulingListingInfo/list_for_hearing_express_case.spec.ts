@@ -1,6 +1,6 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
 import { ContestedEvents } from '../../../config/case-data';
 
 async function performListForHearingFlow(

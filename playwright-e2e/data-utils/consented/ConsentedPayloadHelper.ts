@@ -1,6 +1,6 @@
-import { apiHelper } from "../../../fixtures/fixtures";
-import config from "../../../config/config";
-import { ConsentedEvents, CaseType, PayloadPath } from "../../../config/case-data";
+import { apiHelper } from "../../fixtures/fixtures";
+import config from "../../config/config";
+import { ConsentedEvents, CaseType, PayloadPath } from "../../config/case-data";
 
 export class PayloadHelper {
   private static async updateCaseWorkerSteps(

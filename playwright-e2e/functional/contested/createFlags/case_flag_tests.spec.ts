@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
 import { caseFlagTabData } from '../../../resources/tab_content/common-tabs/case_flag_tabs';
 import { caseFlagTabDataUpdated } from '../../../resources/tab_content/common-tabs/case_flag_tabs_updated';
 import { createFlag, manageFlagOnce } from '../../../pages/helpers/CaseFlagHelper';

@@ -1,7 +1,7 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { ContestedEvents } from '../../config/case-data';
-import { ContestedCaseDataHelper } from '../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper';
 
 const FILE_PATHS = {
   png: './playwright-e2e/resources/file/test.png',

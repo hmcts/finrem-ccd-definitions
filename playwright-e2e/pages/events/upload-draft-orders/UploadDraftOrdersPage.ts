@@ -2,7 +2,7 @@ import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import { YesNoRadioEnum } from '../../helpers/enums/RadioEnums';
-import { DocumentHelper } from '../../../functional/data-utils/DocumentHelper';
+import { DocumentHelper } from '../../../data-utils/DocumentHelper';
 
 export class UploadDraftOrdersPage extends BaseJourneyPage {
     private readonly kindOfDraftOrderToUploadRadio: Locator;

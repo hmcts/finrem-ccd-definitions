@@ -1,6 +1,6 @@
-import { ManageOrgDashboardPage } from '../../pages/ManageOrgDashboardPage';
-import { SigninPage } from "../../pages/SigninPage";
-import config from "../../config/config";
+import { ManageOrgDashboardPage } from '../pages/ManageOrgDashboardPage';
+import { SigninPage } from "../pages/SigninPage";
+import config from "../config/config";
 
 export async function assignCaseToApplicant(
     loginPage: SigninPage,

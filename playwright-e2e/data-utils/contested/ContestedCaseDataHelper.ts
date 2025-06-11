@@ -1,5 +1,5 @@
 import { CaseDataBuilder } from "../CaseDataBuilder";
-import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
+import { ContestedEvents, CaseType, PayloadPath } from "../../config/case-data";
 import { PayloadHelper } from "./ContestedPayloadHelper";
 import { 
   APPROVE_ORDERS_DATA, 

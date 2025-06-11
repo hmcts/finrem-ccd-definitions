@@ -1,8 +1,8 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { assignCaseToApplicant, assignCaseToRespondent } from '../data-utils/CaseAssignmentHelper';
+import { assignCaseToApplicant, assignCaseToRespondent } from '../../data-utils/CaseAssignmentHelper';
 import { cwExpectedApplicantRefugeStatus, asExpectedApplicantRefugeStatus, rsExpectedApplicantRefugeStatus, jExpectedApplicantRefugeStatus } from '../../resources/tab_content/contested/applicant_refuge_status_visibility_tabs';
-import { ContestedCaseDataHelper } from '../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper';
 
 
 test(

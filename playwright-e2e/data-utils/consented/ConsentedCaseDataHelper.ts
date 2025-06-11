@@ -1,5 +1,5 @@
 import { CaseDataBuilder } from "../CaseDataBuilder";
-import { ConsentedEvents, CaseType, PayloadPath } from "../../../config/case-data";
+import { ConsentedEvents, CaseType, PayloadPath } from "../../config/case-data";
 import { PayloadHelper } from "./ConsentedPayloadHelper";
 
 export class ConsentedCaseDataHelper {

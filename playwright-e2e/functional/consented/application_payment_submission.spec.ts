@@ -2,7 +2,7 @@ import { test } from '../../fixtures/fixtures'
 import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { paymentDetailsTabData } from '../../resources/tab_content/payment_details_tabs';
-import { ConsentedCaseDataHelper } from '../data-utils/consented/ConsentedCaseDataHelper';
+import { ConsentedCaseDataHelper } from '../../data-utils/consented/ConsentedCaseDataHelper';
 
 test(
     'Consented - Application Payment Submission',

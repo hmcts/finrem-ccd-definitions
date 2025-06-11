@@ -2,7 +2,7 @@ import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
 
 // Hearing types
 const MaintenancePendingSuit = {

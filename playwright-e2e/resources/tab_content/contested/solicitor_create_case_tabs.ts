@@ -1,4 +1,4 @@
-import { DateHelper } from "../../../functional/data-utils/DateHelper";
+import { DateHelper } from "../../../data-utils/DateHelper";
 
 export const createCaseTabData = [
   {
