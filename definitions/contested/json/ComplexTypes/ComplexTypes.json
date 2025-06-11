@@ -2464,7 +2464,7 @@
     "ID": "FR_manageCaseDocuments",
     "ListElementCode": "caseDocumentConfidentialityWarning2",
     "FieldType": "Label",
-    "ElementLabel": "###### Do not use the confidential option to upload a document that you later intend to share as once confidential you will not be able to share it.,",
+    "ElementLabel": "###### Do not use the confidential option to upload a document that you later intend to share as once confidential you will not be able to share it.",
     "FieldShowCondition": "caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
