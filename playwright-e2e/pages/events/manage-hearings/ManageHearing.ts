@@ -124,7 +124,7 @@ export class ManageHearingPage extends BaseJourneyPage {
         await expect(uploadOtherDocumentFiles).toBeVisible();
 
         const filePayload = await this.commonActionsHelper
-            .createAliasPDFPayload('./playwright-e2e/data/test.pdf', docFilename);
+            .createAliasPDFPayload('./playwright-e2e/resources/test.pdf', docFilename);
         await uploadOtherDocumentFiles.setInputFiles(filePayload);
 
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);

@@ -37,15 +37,15 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
         }
     }
 
-    async uploadDraftOrder(uploadFilePath: string = './playwright-e2e/data/test.doc', success: boolean = true): Promise<void> {
+    async uploadDraftOrder(uploadFilePath: string = './playwright-e2e/resources/test.doc', success: boolean = true): Promise<void> {
         await this.uploadFile(this.draftOrderUploadField, this.draftOrderErrorMessageLocator, uploadFilePath, success);
     }
 
-    async uploadGeneralApplication(uploadFilePath: string = './playwright-e2e/data/test.doc', success: boolean = true): Promise<void> {
+    async uploadGeneralApplication(uploadFilePath: string = './playwright-e2e/resources/test.doc', success: boolean = true): Promise<void> {
         await this.uploadFile(this.generalApplicationUploadField, this.generalApplicationErrorMessageLocator, uploadFilePath, success);
     }
 
-    async uploadFirstSupportingDocument(uploadFilePath: string = './playwright-e2e/data/test.doc', success: boolean = true): Promise<void> {
+    async uploadFirstSupportingDocument(uploadFilePath: string = './playwright-e2e/resources/test.doc', success: boolean = true): Promise<void> {
         await this.uploadFile(this.firstSupportingDocumentUploadField, this.firstSupportingDocumentErrorMessageLocator, uploadFilePath, success);
     }
 

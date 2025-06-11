@@ -1,8 +1,8 @@
 import { test, expect } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { createCaseTabData } from '../../../data/tab_content/contested/solicitor_create_case_tabs';
-import { expressCaseGateKeepingTabData } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
+import { createCaseTabData } from '../../../resources/tab_content/contested/solicitor_create_case_tabs';
+import { expressCaseGateKeepingTabData } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 
 test(
   'Create Express Case - Contested FormA Submission, suitable for Express case processing',

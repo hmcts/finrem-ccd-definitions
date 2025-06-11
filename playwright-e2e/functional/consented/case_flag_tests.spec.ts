@@ -1,7 +1,7 @@
-import { test } from '../../fixtures/fixtures';
-import config from '../../config/config';
-import { caseFlagTabData } from '../../data/tab_content/common-tabs/case_flag_tabs';
-import { caseFlagTabDataUpdated } from '../../data/tab_content/common-tabs/case_flag_tabs_updated';
+import { test } from '../../fixtures/fixtures.ts';
+import config from '../../config/config.ts';
+import { caseFlagTabData } from '../../resources/tab_content/common-tabs/case_flag_tabs.ts';
+import { caseFlagTabDataUpdated } from '../../resources/tab_content/common-tabs/case_flag_tabs_updated.ts';
 import { createFlag, manageFlagOnce } from '../../pages/helpers/CaseFlagHelper.ts';
 import { ConsentedCaseDataHelper } from '../data-utils/consented/ConsentedCaseDataHelper.ts';
 

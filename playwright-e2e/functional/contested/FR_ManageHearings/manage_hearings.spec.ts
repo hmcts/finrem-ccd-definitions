@@ -1,7 +1,7 @@
-import { test } from '../../../fixtures/fixtures';
-import config from '../../../config/config';
-import {ContestedEvents} from "../../../config/case-data";
-import {getManageHearingTableData} from "../../../data/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
+import { test } from '../../../fixtures/fixtures.ts';
+import config from '../../../config/config.ts';
+import {ContestedEvents} from "../../../config/case-data.ts";
+import {getManageHearingTableData} from "../../../resources/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
 import { DateHelper } from '../../data-utils/DateHelper.ts';
 import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper.ts';
 

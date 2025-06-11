@@ -141,7 +141,7 @@ export class ListForHearingPage extends BaseJourneyPage {
 
     async uploadOtherDocuments(){
         await expect(this.hearingDocUpload).toBeVisible();
-        await this.hearingDocUpload.setInputFiles('./playwright-e2e/data/test.pdf');
+        await this.hearingDocUpload.setInputFiles('./playwright-e2e/resources/test.pdf');
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 }

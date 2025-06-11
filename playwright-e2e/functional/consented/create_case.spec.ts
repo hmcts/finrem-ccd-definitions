@@ -1,6 +1,6 @@
 import { test, expect } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { createCaseTabData } from '../../data/tab_content/consented/create_case_tabs';
+import { createCaseTabData } from '../../resources/tab_content/consented/create_case_tabs';
 
 test(
   'Consented - Create Case',

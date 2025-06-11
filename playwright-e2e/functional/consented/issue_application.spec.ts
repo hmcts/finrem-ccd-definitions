@@ -1,7 +1,7 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
-import { adminNotesTabData } from '../../data/tab_content/consented/admin_notes_tabs';
+import { adminNotesTabData } from '../../resources/tab_content/consented/admin_notes_tabs';
 import { ConsentedCaseDataHelper } from '../data-utils/consented/ConsentedCaseDataHelper';
 
 test(

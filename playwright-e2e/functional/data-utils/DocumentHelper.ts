@@ -10,7 +10,7 @@ export class DocumentHelper {
    */
   static async createDraftOrderDocument(caseReference: string): Promise<void> {
     const filePath = resolve(
-      './playwright-e2e/data/files_built_by_tests/upload-draft-order/agreed-draft-order-document.docx'
+      './playwright-e2e/resources/files_built_by_tests/upload-draft-order/agreed-draft-order-document.docx'
     );
 
     await mkdir(dirname(filePath), { recursive: true });

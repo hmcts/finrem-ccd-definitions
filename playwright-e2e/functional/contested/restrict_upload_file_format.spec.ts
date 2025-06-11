@@ -4,12 +4,12 @@ import { ContestedEvents } from '../../config/case-data';
 import { ContestedCaseDataHelper } from '../data-utils/contested/ContestedCaseDataHelper';
 
 const FILE_PATHS = {
-  png: './playwright-e2e/data/test.png',
-  doc: './playwright-e2e/data/test.doc',
-  docx: './playwright-e2e/data/test.docx',
-  pdf: './playwright-e2e/data/test.pdf',
-  xlsx: './playwright-e2e/data/test.xlsx',
-  xls: './playwright-e2e/data/test.xls'
+  png: './playwright-e2e/resources/file/test.png',
+  doc: './playwright-e2e/resources/file/test.doc',
+  docx: './playwright-e2e/resources/file/test.docx',
+  pdf: './playwright-e2e/resources/file/test.pdf',
+  xlsx: './playwright-e2e/resources/file/test.xlsx',
+  xls: './playwright-e2e/resources/file/test.xls'
 };
 
 test.describe('Contested - File Type Restrictions on uploading documents', () => {

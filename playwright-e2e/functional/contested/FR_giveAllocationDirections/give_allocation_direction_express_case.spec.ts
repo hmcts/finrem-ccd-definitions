@@ -3,7 +3,7 @@ import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper';
-import { expressCaseGateKeepingTabDataJudgeAllocation } from '../../../data/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
+import { expressCaseGateKeepingTabDataJudgeAllocation } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 
 test.describe("Contested - Give Allocation Directions - 'should this case remain in the Express Pilot?' on express pilot cases", () => {
     test(
