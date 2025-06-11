@@ -35,7 +35,6 @@ const {issueApplication, getCaseRefFromScreen} = require('./pages/issue-applicat
 const {childrenDetails} = require('./pages/children-details/children-details');
 const {allocateJudge} = require('./pages/allocate-judge/allocate-judge');
 const {uploadCaseFiles} = require('./pages/upload-case-files/upload-case-files');
-const {manageConfidentialDocuments} = require('./pages/manage-confidential-documents/manage-confidential-documents');
 const {progressToListing} = require('./pages/progress-to-listing/progress-to-listing');
 const {listForHearing} = require('./pages/list-for-hearing/list-for-hearing');
 const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-reference');
@@ -177,7 +176,6 @@ module.exports = () => {
     contestedNatureOfApplicationForSchedule1,
     allocateJudge,
     uploadCaseFiles,
-    manageConfidentialDocuments,
     verifyContestedConfidentialTabData,
     progressToListing,
     listForHearing,
