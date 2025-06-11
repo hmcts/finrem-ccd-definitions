@@ -44,8 +44,14 @@ export class ContestedCaseDataHelper {
   }
 
   // Base builders
-  static createBaseContestedFormA(): Promise<string> {
-    return this.buildContestedCase({ isPaper: false });
+  static async createBaseContestedFormA(): Promise<string> {
+    return this.buildContestedCase({
+      isPaper: false,
+      replacements: [
+        { action: 'delete', key: 'divorcePetitionIssuedDate' },
+        { action: 'insert', key: 'divorcePetitionIssuedDate', value: await DateHelper.getCurrentDate() },
+      ]
+    });
   }
 
   static createBaseContestedPaperCase(): Promise<string> {
@@ -124,12 +130,20 @@ export class ContestedCaseDataHelper {
     return caseId;
   }
 
+  static async createContestedCaseUpToHWFDecision(): Promise<string> {
+      const caseId = await this.createBaseContestedFormA();
+      await PayloadHelper.solicitorSubmitFormACase(caseId);
+      await PayloadHelper.caseWorkerHWFDecisionMade(caseId);
+      return caseId;
+  }
+
   static async createAndProcessFormACaseUpToIssueApplication(
-    isExpressPilot = false
+    isExpressPilot = false,
+    issueDate?: string
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, false);
     await PayloadHelper.solicitorSubmitFormACase(caseId);
-    await PayloadHelper.caseWorkerIssueApplication(caseId);
+    await PayloadHelper.caseWorkerIssueApplication(caseId, true, issueDate);
     return caseId;
   }
 
