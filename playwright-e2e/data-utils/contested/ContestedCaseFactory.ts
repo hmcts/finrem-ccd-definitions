@@ -1,6 +1,6 @@
 import { CaseDataBuilder } from "../CaseDataBuilder";
 import { ContestedEvents, CaseType, PayloadPath } from "../../config/case-data";
-import { PayloadHelper } from "./ContestedPayloadHelper";
+import { ContestedEventApi } from "./ContestedEventApi";
 import { 
   APPROVE_ORDERS_DATA, 
   EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT, 
@@ -108,7 +108,7 @@ export class ContestedCaseFactory {
   // Workflow helpers
   static async createAndProcessFormACase(): Promise<string> {
     const caseId = await this.createBaseContestedFormA();
-    await PayloadHelper.solicitorSubmitFormACase(caseId);
+    await ContestedEventApi.solicitorSubmitFormACase(caseId);
     return caseId;
   }
 
@@ -116,8 +116,8 @@ export class ContestedCaseFactory {
     isExpressPilot = false
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, false);
-    await PayloadHelper.solicitorSubmitFormACase(caseId);
-    await PayloadHelper.caseWorkerProgressFormACaseToListing(caseId);
+    await ContestedEventApi.solicitorSubmitFormACase(caseId);
+    await ContestedEventApi.caseWorkerProgressFormACaseToListing(caseId);
     return caseId;
   }
 
@@ -125,7 +125,7 @@ export class ContestedCaseFactory {
     isExpressPilot = false
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, true);
-    await PayloadHelper.caseWorkerProgressPaperCaseToListing(caseId);
+    await ContestedEventApi.caseWorkerProgressPaperCaseToListing(caseId);
     return caseId;
   }
 
@@ -134,8 +134,8 @@ export class ContestedCaseFactory {
     issueDate?: string
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, false);
-    await PayloadHelper.solicitorSubmitFormACase(caseId);
-    await PayloadHelper.caseWorkerIssueApplication(caseId, true, issueDate);
+    await ContestedEventApi.solicitorSubmitFormACase(caseId);
+    await ContestedEventApi.caseWorkerIssueApplication(caseId, true, issueDate);
     return caseId;
   }
 
@@ -143,7 +143,7 @@ export class ContestedCaseFactory {
     isExpressPilot = false
   ): Promise<string> {
     const caseId = await this.createAndProcessFormACaseUpToIssueApplication(isExpressPilot);
-    await PayloadHelper.caseworkerCreateFlag(caseId);
+    await ContestedEventApi.caseworkerCreateFlag(caseId);
     return caseId;
   }
 
@@ -151,7 +151,7 @@ export class ContestedCaseFactory {
     isExpressPilot = false
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, true);
-    await PayloadHelper.caseWorkerIssueApplication(caseId, false);
+    await ContestedEventApi.caseWorkerIssueApplication(caseId, false);
     return caseId;
   }
 
@@ -159,8 +159,8 @@ export class ContestedCaseFactory {
     isExpressPilot = false
   ): Promise<string> {
     const caseId = await this.createSchedule1Case();
-    await PayloadHelper.solicitorSubmitFormACase(caseId);
-    await PayloadHelper.caseWorkerIssueApplication(caseId);
+    await ContestedEventApi.solicitorSubmitFormACase(caseId);
+    await ContestedEventApi.caseWorkerIssueApplication(caseId);
     return caseId;
   }
 
@@ -168,8 +168,8 @@ export class ContestedCaseFactory {
     isExpressPilot = false
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, false);
-    await PayloadHelper.solicitorSubmitFormACase(caseId);
-    await PayloadHelper.caseworkerAllocateToJudge(caseId);
+    await ContestedEventApi.solicitorSubmitFormACase(caseId);
+    await ContestedEventApi.caseworkerAllocateToJudge(caseId);
     return caseId;
   }
 
@@ -178,7 +178,7 @@ export class ContestedCaseFactory {
   ): Promise<string> {
     const generalApplicationId = await this.caseworkerProgressToGeneralApplicationReferToJudge(caseId);
     const modifications = OUTCOME_LIST_DATA(generalApplicationId);
-    await PayloadHelper.generalApplicationOutcome(caseId, modifications)
+    await ContestedEventApi.generalApplicationOutcome(caseId, modifications)
     return caseId;
   }
 
@@ -187,7 +187,7 @@ export class ContestedCaseFactory {
   ): Promise<string> {
     const codeForDirections = await this.caseWorkerProgressToGeneralApplicationOutcome(caseId);
     const modifications = DIRECTIONS_LIST_DATA(codeForDirections);
-    await PayloadHelper.generalApplicationDirections(caseId, modifications);
+    await ContestedEventApi.generalApplicationDirections(caseId, modifications);
     return caseId
   }
 
@@ -201,7 +201,7 @@ export class ContestedCaseFactory {
       : await this.createBaseContestedPaperCase();
 
     if (isFormA) {
-      await PayloadHelper.solicitorSubmitFormACase(caseId);
+      await ContestedEventApi.solicitorSubmitFormACase(caseId);
     }
 
     await this.caseworkerListForHearing12To16WeeksFromNow(caseId, isFormA);
@@ -213,9 +213,9 @@ export class ContestedCaseFactory {
   private static async caseworkerProgressToGeneralApplicationReferToJudge(
     caseId: string
   ): Promise<string> {
-    const generalApplicationId = await PayloadHelper.caseWorkerProgressToCreateGeneralApplication(caseId);
+    const generalApplicationId = await ContestedEventApi.caseWorkerProgressToCreateGeneralApplication(caseId);
     const modifications = REFER_LIST_DATA(generalApplicationId);
-    await PayloadHelper.generalApplicationReferToJudge(caseId, modifications)
+    await ContestedEventApi.generalApplicationReferToJudge(caseId, modifications)
     return generalApplicationId;
   }
 
@@ -227,12 +227,12 @@ export class ContestedCaseFactory {
       await DateHelper.getFormattedHearingDate();
 
     if (isFormACase) {
-      await PayloadHelper.caseWorkerProgressFormACaseToListing(
+      await ContestedEventApi.caseWorkerProgressFormACaseToListing(
         caseId,
         currentDate
       );
     } else {
-      await PayloadHelper.caseWorkerProgressPaperCaseToListing(
+      await ContestedEventApi.caseWorkerProgressPaperCaseToListing(
         caseId,
         currentDate
       );
@@ -240,7 +240,7 @@ export class ContestedCaseFactory {
 
     const listForHearingDataModifications = LIST_FOR_HEARING(hearingDate);
 
-    await PayloadHelper.listCaseForHearing(caseId, listForHearingDataModifications);
+    await ContestedEventApi.listCaseForHearing(caseId, listForHearingDataModifications);
   }
 
    ////------------------------////
@@ -264,7 +264,7 @@ export class ContestedCaseFactory {
       dynamicDraftOrderInfo.uploadTimestamp
     );
 
-    await PayloadHelper.processOrder(caseId, modifications);
+    await ContestedEventApi.processOrder(caseId, modifications);
 
     // Return the JSON object
     return caseId;
@@ -291,7 +291,7 @@ export class ContestedCaseFactory {
     );
 
     // Update the case in CCD
-    await PayloadHelper.approveOrders(caseId, modifications)
+    await ContestedEventApi.approveOrders(caseId, modifications)
 
     // Return the JSON object
     return caseId;

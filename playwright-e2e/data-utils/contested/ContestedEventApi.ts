@@ -5,7 +5,7 @@ import { ContestedEvents, CaseType, PayloadPath } from "../../config/case-data";
 import { ReplacementAction } from "../../types/replacement-action";
 import { ISSUE_APPLICATION } from "../PayloadMutator";
 
-export class PayloadHelper {
+export class ContestedEventApi {
   private static async updateCaseWorkerSteps(
     caseId: string,
     steps: { event: string; payload?: string }[]
@@ -64,7 +64,7 @@ export class PayloadHelper {
     modifications: any[] = [],
     asCaseWorker: boolean = true
   ): Promise<void> {
-    const jsonObject = await PayloadHelper.createUpdatedJsonObjectFromFile(
+    const jsonObject = await ContestedEventApi.createUpdatedJsonObjectFromFile(
       payloadPath,
       modifications
     );

@@ -2,7 +2,7 @@ import { ccdApi } from "../../fixtures/fixtures";
 import config from "../../config/config";
 import { ConsentedEvents, CaseType, PayloadPath } from "../../config/case-data";
 
-export class PayloadHelper {
+export class ConsentedEventApi {
   private static async updateCaseWorkerSteps(
     caseId: string,
     steps: { event: string; payload?: string }[]
