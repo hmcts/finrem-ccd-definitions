@@ -11,7 +11,7 @@ import { NatureOfApplicationPage } from '../../../pages/events/create-case/Natur
 import { UploadOrderDocumentsPage } from '../../../pages/events/create-case/UploadOrderDocumentPage';
 import { CreateCaseCheckYourAnswersPage } from '../../../pages/events/create-case/CreateCaseCheckYourAnswersPage';
 import { TestInfo } from 'playwright/test';
-import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
 import { SigninPage } from '../../../pages/SigninPage';
 
 const enum ExpressTestType {
@@ -136,7 +136,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
       testInfo
     ) => {
       const caseId =
-        await ContestedCaseDataHelper.createContestedFormACaseWithExpressPilotEnrolled();
+        await ContestedCaseFactory.createContestedFormACaseWithExpressPilotEnrolled();
       await performAmendFormAApplicationDetailsFlowForExpressPilot(
         caseId,
         ExpressTestType.TestingForExpressExit,
@@ -172,7 +172,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
       testInfo
     ) => {
       const caseId =
-        await ContestedCaseDataHelper.createContestedFormACaseWithExpressPilotEnrolled();
+        await ContestedCaseFactory.createContestedFormACaseWithExpressPilotEnrolled();
       await performAmendFormAApplicationDetailsFlowForExpressPilot(
         caseId,
         ExpressTestType.TestingForExpressEntry,
@@ -207,7 +207,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.createBaseContestedFormA();
+      const caseId = await ContestedCaseFactory.createBaseContestedFormA();
       await performAmendFormAApplicationDetailsFlowForExpressPilot(
         caseId,
         ExpressTestType.TestForNoExpressContent,

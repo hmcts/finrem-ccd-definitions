@@ -2,7 +2,7 @@ import { test } from '../../fixtures/fixtures'
 import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { paymentDetailsTabData } from '../../resources/tab_content/payment_details_tabs';
-import { ConsentedCaseDataHelper } from '../../data-utils/consented/ConsentedCaseDataHelper';
+import { ConsentedCaseFactory } from '../../data-utils/consented/ConsentedCaseFactory';
 
 test(
     'Consented - Application Payment Submission',
@@ -20,7 +20,7 @@ test(
       },
     ) => {
       // Create case
-      const caseId = await ConsentedCaseDataHelper.createConsentedCase();
+      const caseId = await ConsentedCaseFactory.createConsentedCase();
 
       // Define common test data
       const pbaNumber = "PBA0000539";

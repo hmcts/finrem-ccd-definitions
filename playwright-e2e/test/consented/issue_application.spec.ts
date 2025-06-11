@@ -2,7 +2,7 @@ import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { adminNotesTabData } from '../../resources/tab_content/consented/admin_notes_tabs';
-import { ConsentedCaseDataHelper } from '../../data-utils/consented/ConsentedCaseDataHelper';
+import { ConsentedCaseFactory } from '../../data-utils/consented/ConsentedCaseFactory';
 
 test(
   'Consented - Issue Application',
@@ -14,7 +14,7 @@ test(
     issueApplicationPage,
   }) => {
     // Create case and progress to HWF decision made
-    const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToHWFDecision();
+    const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
     const dateToday = new Date()
       .toLocaleDateString('en-GB', {
         day: 'numeric',

@@ -3,7 +3,7 @@ import config from '../../../config/config';
 import { ApplicationtypeEnum, MaleOrFemaleEnum, YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../resources/tab_content/contested/solicitor_create_case_tabs';
 import { createCaseTabDataChildrensAct } from '../../../resources/tab_content/consented/create_case_tabs';
-import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
 
 
 test(
@@ -179,7 +179,7 @@ test(
     }
   ) => {
     // Create form A case
-    const caseId = await ContestedCaseDataHelper.createAndProcessFormACase();
+    const caseId = await ContestedCaseFactory.createAndProcessFormACase();
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();

@@ -1,5 +1,5 @@
 import { ReplacementAction } from "../types/replacement-action";
-import { apiHelper } from "../fixtures/fixtures";
+import { ccdApi } from "../fixtures/fixtures";
 import config from "../config/config";
 
 export class CaseDataBuilder {
@@ -40,7 +40,7 @@ export class CaseDataBuilder {
   }
 
   async create(): Promise<string> {
-    return await apiHelper.createCaseInCcd(
+    return await ccdApi.createCaseInCcd(
       this.email,
       this.password,
       this.payloadPath,

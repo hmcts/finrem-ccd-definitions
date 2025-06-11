@@ -2,7 +2,7 @@ import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { assignCaseToApplicant, assignCaseToRespondent } from '../../data-utils/CaseAssignmentHelper';
 import { cwExpectedApplicantRefugeStatus, asExpectedApplicantRefugeStatus, rsExpectedApplicantRefugeStatus, jExpectedApplicantRefugeStatus } from '../../resources/tab_content/contested/applicant_refuge_status_visibility_tabs';
-import { ContestedCaseDataHelper } from '../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseFactory } from '../../data-utils/contested/ContestedCaseFactory';
 
 
 test(
@@ -17,7 +17,7 @@ test(
     }
   ) => {
     // Create and process a paper case
-    const caseId = await ContestedCaseDataHelper.createAndSubmitPaperCase();
+    const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
 
     // Login to Manage org and assign case to applicant
     await assignCaseToApplicant(loginPage, manageOrgDashboardPage, caseId);

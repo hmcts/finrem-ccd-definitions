@@ -1,5 +1,5 @@
 import fs from "fs";
-import { apiHelper } from "../../fixtures/fixtures";
+import { ccdApi } from "../../fixtures/fixtures";
 import config from "../../config/config";
 import { ContestedEvents, CaseType, PayloadPath } from "../../config/case-data";
 import { ReplacementAction } from "../../types/replacement-action";
@@ -12,7 +12,7 @@ export class PayloadHelper {
   ): Promise<any> {
     let response;
     for (const step of steps) {
-      response = await apiHelper.updateCaseInCcd(
+      response = await ccdApi.updateCaseInCcd(
         config.caseWorker.email,
         config.caseWorker.password,
         caseId,
@@ -32,7 +32,7 @@ export class PayloadHelper {
   ): Promise<any> {
     const { email, password } = asCaseWorker ? config.caseWorker : config.judge;
     for (const step of steps) {
-      await apiHelper.updateCaseInCcdFromJSONObject(
+      await ccdApi.updateCaseInCcdFromJSONObject(
         email,
         password,
         caseId,
@@ -84,12 +84,12 @@ export class PayloadHelper {
   ): Promise<string> {
     const fileContent = fs.readFileSync(filePath, "utf8");
     const json = JSON.parse(fileContent);
-    apiHelper.makeModifications(dataModifications, json);
+    ccdApi.makeModifications(dataModifications, json);
     return json;
   }
 
   static async solicitorSubmitFormACase(caseId: string) {
-    await apiHelper.updateCaseInCcd(
+    await ccdApi.updateCaseInCcd(
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
       caseId,

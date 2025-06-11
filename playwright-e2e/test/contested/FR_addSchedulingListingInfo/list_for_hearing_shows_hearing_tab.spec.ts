@@ -1,6 +1,6 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 
@@ -61,7 +61,7 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToProgressToListing();
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
       // Next:
       // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
@@ -83,7 +83,7 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.createAndProcessPaperCaseUpToProgressToListing();
+      const caseId = await ContestedCaseFactory.createAndProcessPaperCaseUpToProgressToListing();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
       // Next: 
       // Run test muliple times, so that the correct notices and documents can be checked as appropriate.

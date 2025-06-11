@@ -12,7 +12,7 @@ import {
   DIRECTIONS_LIST_DATA } from "../PayloadMutator";
 import { DateHelper } from "../DateHelper";
 
-export class ContestedCaseDataHelper {
+export class ContestedCaseFactory {
   private static buildContestedCase({
     isPaper,
     replacements = [],
@@ -173,7 +173,53 @@ export class ContestedCaseDataHelper {
     return caseId;
   }
 
-  static async caseworkerListForHearing12To16WeeksFromNow(
+  static async caseWorkerProgressToGeneralApplicationOutcome(
+    caseId: string
+  ): Promise<string> {
+    const generalApplicationId = await this.caseworkerProgressToGeneralApplicationReferToJudge(caseId);
+    const modifications = OUTCOME_LIST_DATA(generalApplicationId);
+    await PayloadHelper.generalApplicationOutcome(caseId, modifications)
+    return caseId;
+  }
+
+  static async caseWorkerCreateOldGeneralApplicationDirectionsHearing(
+    caseId: string
+  ): Promise<string> {
+    const codeForDirections = await this.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+    const modifications = DIRECTIONS_LIST_DATA(codeForDirections);
+    await PayloadHelper.generalApplicationDirections(caseId, modifications);
+    return caseId
+  }
+
+  static async progressToUploadDraftOrder({
+    isFormA,
+  }: {
+    isFormA: boolean;
+  }): Promise<string> {
+    const caseId = isFormA
+      ? await this.createBaseContestedFormA()
+      : await this.createBaseContestedPaperCase();
+
+    if (isFormA) {
+      await PayloadHelper.solicitorSubmitFormACase(caseId);
+    }
+
+    await this.caseworkerListForHearing12To16WeeksFromNow(caseId, isFormA);
+
+    return caseId;
+  }
+
+  // General Application Directions
+  private static async caseworkerProgressToGeneralApplicationReferToJudge(
+    caseId: string
+  ): Promise<string> {
+    const generalApplicationId = await PayloadHelper.caseWorkerProgressToCreateGeneralApplication(caseId);
+    const modifications = REFER_LIST_DATA(generalApplicationId);
+    await PayloadHelper.generalApplicationReferToJudge(caseId, modifications)
+    return generalApplicationId;
+  }
+
+  private static async caseworkerListForHearing12To16WeeksFromNow(
     caseId: string,
     isFormACase: boolean = true
   ): Promise<void> {
@@ -194,25 +240,33 @@ export class ContestedCaseDataHelper {
 
     const listForHearingDataModifications = LIST_FOR_HEARING(hearingDate);
 
-    // Update the case in CCD
     await PayloadHelper.listCaseForHearing(caseId, listForHearingDataModifications);
   }
 
-  static async progressToUploadDraftOrder({
-    isFormA,
-  }: {
-    isFormA: boolean;
-  }): Promise<string> {
-    const caseId = isFormA
-      ? await this.createBaseContestedFormA()
-      : await this.createBaseContestedPaperCase();
+   ////------------------------////
+   // Move to payload helper vv //
+   ////------------------------////
 
-    if (isFormA) {
-      await PayloadHelper.solicitorSubmitFormACase(caseId);
+   static async caseWorkerProcessOrder(
+    caseId: string,
+    dynamicDraftOrderInfo: {
+      documentUrl: string;
+      documentBinaryUrl: string;
+      uploadTimestamp: string;
     }
+  ): Promise<string> {
+    // Generate the JSON object for the process order payload
+    const orderDateTime = await DateHelper.getCurrentTimestamp();
+    const modifications = PROCESS_ORDER_DATA(
+      orderDateTime,
+      dynamicDraftOrderInfo.documentUrl,
+      dynamicDraftOrderInfo.documentBinaryUrl,
+      dynamicDraftOrderInfo.uploadTimestamp
+    );
 
-    await this.caseworkerListForHearing12To16WeeksFromNow(caseId, isFormA);
+    await PayloadHelper.processOrder(caseId, modifications);
 
+    // Return the JSON object
     return caseId;
   }
 
@@ -243,54 +297,4 @@ export class ContestedCaseDataHelper {
     return caseId;
   }
 
-  static async caseWorkerProcessOrder(
-    caseId: string,
-    dynamicDraftOrderInfo: {
-      documentUrl: string;
-      documentBinaryUrl: string;
-      uploadTimestamp: string;
-    }
-  ): Promise<string> {
-    // Generate the JSON object for the process order payload
-    const orderDateTime = await DateHelper.getCurrentTimestamp();
-    const modifications = PROCESS_ORDER_DATA(
-      orderDateTime,
-      dynamicDraftOrderInfo.documentUrl,
-      dynamicDraftOrderInfo.documentBinaryUrl,
-      dynamicDraftOrderInfo.uploadTimestamp
-    );
-
-    await PayloadHelper.processOrder(caseId, modifications);
-
-    // Return the JSON object
-    return caseId;
-  }
-
-  // General Application Directions
-  static async caseworkerProgressToGeneralApplicationReferToJudge(
-    caseId: string
-  ): Promise<string> {
-    const generalApplicationId = await PayloadHelper.caseWorkerProgressToCreateGeneralApplication(caseId);
-    const modifications = REFER_LIST_DATA(generalApplicationId);
-    await PayloadHelper.generalApplicationReferToJudge(caseId, modifications)
-    return generalApplicationId;
-  }
-
-  static async caseWorkerProgressToGeneralApplicationOutcome(
-    caseId: string
-  ): Promise<string> {
-    const generalApplicationId = await this.caseworkerProgressToGeneralApplicationReferToJudge(caseId);
-    const modifications = OUTCOME_LIST_DATA(generalApplicationId);
-    await PayloadHelper.generalApplicationOutcome(caseId, modifications)
-    return caseId;
-  }
-
-  static async caseWorkerCreateOldGeneralApplicationDirectionsHearing(
-    caseId: string
-  ): Promise<string> {
-    const codeForDirections = await this.caseWorkerProgressToGeneralApplicationOutcome(caseId);
-    const modifications = DIRECTIONS_LIST_DATA(codeForDirections);
-    await PayloadHelper.generalApplicationDirections(caseId, modifications);
-    return caseId
-  }
 }

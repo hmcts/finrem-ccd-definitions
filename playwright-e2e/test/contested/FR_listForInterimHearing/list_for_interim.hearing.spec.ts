@@ -2,7 +2,7 @@ import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
 
 // Hearing types
 const MaintenancePendingSuit = {
@@ -148,7 +148,7 @@ test.describe('Contested - List for Interim Hearings', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.createAndProcessFormACase();
+      const caseId = await ContestedCaseFactory.createAndProcessFormACase();
       await performListForInterimHearingsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForInterimHearingPage, testInfo, makeAxeBuilder)
     }
   );
@@ -166,7 +166,7 @@ test.describe('Contested - List for Interim Hearings', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.createBaseContestedPaperCase();
+      const caseId = await ContestedCaseFactory.createBaseContestedPaperCase();
       await performListForInterimHearingsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForInterimHearingPage, testInfo, makeAxeBuilder);
     }
   );

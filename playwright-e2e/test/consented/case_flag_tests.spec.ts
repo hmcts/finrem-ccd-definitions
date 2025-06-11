@@ -3,7 +3,7 @@ import config from '../../config/config.ts';
 import { caseFlagTabData } from '../../resources/tab_content/common-tabs/case_flag_tabs.ts';
 import { caseFlagTabDataUpdated } from '../../resources/tab_content/common-tabs/case_flag_tabs_updated.ts';
 import { createFlag, manageFlagOnce } from '../../pages/helpers/CaseFlagHelper.ts';
-import { ConsentedCaseDataHelper } from '../../data-utils/consented/ConsentedCaseDataHelper.ts';
+import { ConsentedCaseFactory } from '../../data-utils/consented/ConsentedCaseFactory.ts';
 
 
 const caseFlagTestData = [
@@ -26,7 +26,7 @@ test.describe('Consented Case Flag Tests', () => {
             {tag: []},
             async ({loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage}) => {
                 // Create and setup case
-                const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToIssueApplication();
+                const caseId = await ConsentedCaseFactory.createConsentedCaseUpToIssueApplication();
 
                 // Login and navigate to case
                 await manageCaseDashboardPage.visit();
@@ -61,7 +61,7 @@ test.describe('Consented Case Flag Tests', () => {
             {tag: []},
             async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageFlagPage}) => {
                 // Create and setup case
-                const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToCreateFlag();
+                const caseId = await ConsentedCaseFactory.createConsentedCaseUpToCreateFlag();
 
                 // Login and navigate to case
                 await manageCaseDashboardPage.visit();

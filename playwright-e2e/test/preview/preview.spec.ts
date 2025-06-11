@@ -1,8 +1,8 @@
 import config from "../../config/config";
 import { test } from "../../fixtures/fixtures";
 import { createCaseTabData, createCaseTabDataPreview } from "../../resources/tab_content/consented/create_case_tabs";
-import { ConsentedCaseDataHelper } from "../../data-utils/consented/ConsentedCaseDataHelper";
-import { ContestedCaseDataHelper } from "../../data-utils/contested/ContestedCaseDataHelper";
+import { ConsentedCaseFactory } from "../../data-utils/consented/ConsentedCaseFactory";
+import { ContestedCaseFactory } from "../../data-utils/contested/ContestedCaseFactory";
 
 
 test(
@@ -15,7 +15,7 @@ test(
     caseDetailsPage 
   }
 ) => {
-    const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToHWFDecision();
+    const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
     await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
@@ -35,7 +35,7 @@ test(
     caseDetailsPage 
   }
 ) => {
-    const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
+    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
     await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);

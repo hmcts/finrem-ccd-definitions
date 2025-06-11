@@ -1,7 +1,7 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
-import { ConsentedCaseDataHelper } from '../../data-utils/consented/ConsentedCaseDataHelper';
+import { ConsentedCaseFactory } from '../../data-utils/consented/ConsentedCaseFactory';
 
 
 test(
@@ -14,7 +14,7 @@ test(
     hwfApplicationAcceptedPage,
   }) => {
     // Create case and progress to Application Payment Submission
-    const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToApplicationPaymentSubmission();
+    const caseId = await ConsentedCaseFactory.createConsentedCaseUpToApplicationPaymentSubmission();
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();

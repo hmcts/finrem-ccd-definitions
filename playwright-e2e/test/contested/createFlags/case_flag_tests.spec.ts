@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
 import { caseFlagTabData } from '../../../resources/tab_content/common-tabs/case_flag_tabs';
 import { caseFlagTabDataUpdated } from '../../../resources/tab_content/common-tabs/case_flag_tabs_updated';
 import { createFlag, manageFlagOnce } from '../../../pages/helpers/CaseFlagHelper';
@@ -8,22 +8,22 @@ import { createFlag, manageFlagOnce } from '../../../pages/helpers/CaseFlagHelpe
 const caseFlagTestData = [
     {
         title: 'Caseworker creates case flag for Form A',
-        setupCase: () => ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication(),
+        setupCase: () => ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(),
         user: config.caseWorker,
     },
     {
         title: 'Judge creates case flag for Form A',
-        setupCase: () => ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication(),
+        setupCase: () => ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(),
         user: config.judge,
     },
     {
         title: 'Caseworker creates case flag for Paper Case',
-        setupCase: () => ContestedCaseDataHelper.createAndSubmitPaperCase(),
+        setupCase: () => ContestedCaseFactory.createAndSubmitPaperCase(),
         user: config.caseWorker,
     },
     {
         title: 'Caseworker creates case flag for Schedule1 Case',
-        setupCase: () => ContestedCaseDataHelper.createAndProcessSchedule1CaseUpToIssueApplication(),
+        setupCase: () => ContestedCaseFactory.createAndProcessSchedule1CaseUpToIssueApplication(),
         user: config.caseWorker,
     },
 ];
@@ -71,7 +71,7 @@ test.describe('Contested Case Flag Tests', () => {
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageFlagPage }) => {
       // Create and setup case
-        const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToCreateFlag();
+        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToCreateFlag();
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();

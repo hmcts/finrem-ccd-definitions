@@ -1,14 +1,14 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
-import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
 
 test.describe('Contested - Manage Express Case', () => {
   test(
     'Contested - Enrolled case (Form A Case) - Remove case from express pilot',
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage }) => {
-      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication(true);
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(true);
 
       // Navigate to case and assert initial tab data
       await manageCaseDashboardPage.visit();
@@ -33,7 +33,7 @@ test.describe('Contested - Manage Express Case', () => {
     'Contested - Enrolled case (Paper Case) - Remove case from express pilot',
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage }) => {
-      const caseId = await ContestedCaseDataHelper.createAndSubmitPaperCase(true);
+      const caseId = await ContestedCaseFactory.createAndSubmitPaperCase(true);
 
       // Navigate to case and assert initial tab data
       await manageCaseDashboardPage.visit();
@@ -58,7 +58,7 @@ test.describe('Contested - Manage Express Case', () => {
     'Contested - Not qualified case (Form A Case) - Show not enrolled message',
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage }) => {
-      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication(false);
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false);
 
       // Navigate to case and assert initial tab data
       await manageCaseDashboardPage.visit();
@@ -78,7 +78,7 @@ test.describe('Contested - Manage Express Case', () => {
     'Contested - Not qualified case (Paper Case) - Show not enrolled message',
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage }) => {
-      const caseId = await ContestedCaseDataHelper.createAndSubmitPaperCase(false);
+      const caseId = await ContestedCaseFactory.createAndSubmitPaperCase(false);
 
       // Navigate to case and assert initial tab data
       await manageCaseDashboardPage.visit();

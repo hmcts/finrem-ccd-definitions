@@ -11,7 +11,7 @@ const env = process.env.RUNNING_ENV || "aat";
 const ccdApiUrl = process.env.CCD_DATA_API_URL;
 const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 
-export class CcdApiHelper {
+export class CcdApi {
   async axiosRequest<T = any>(
     requestParams: AxiosRequestConfig
   ): Promise<AxiosResponse<T> | undefined> {

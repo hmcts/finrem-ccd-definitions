@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 
@@ -64,7 +64,7 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
       uploadTimestamp: firstDraftOrderItem?.upload_timestamp
     };
 
-    await ContestedCaseDataHelper.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
+    await ContestedCaseFactory.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
     return documentDetailsForFutureTestSteps
   }
 
@@ -80,7 +80,7 @@ test.describe('Contested - Process Order', () => {
         uploadDraftOrdersPage
       }
     ) => {
-      const caseId = await ContestedCaseDataHelper.progressToUploadDraftOrder({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       // Next
@@ -101,7 +101,7 @@ test.describe('Contested - Process Order', () => {
         uploadDraftOrdersPage
       }
     ) => {
-      const caseId = await ContestedCaseDataHelper.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       // Next
@@ -122,9 +122,9 @@ test.describe('Contested - Process Order', () => {
         uploadDraftOrdersPage
       }
     ) => {
-      const caseId = await ContestedCaseDataHelper.progressToUploadDraftOrder({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-      await ContestedCaseDataHelper.caseWorkerProcessOrder(caseId, orderDetails);
+      await ContestedCaseFactory.caseWorkerProcessOrder(caseId, orderDetails);
 
       // Next
       // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
@@ -143,9 +143,9 @@ test.describe('Contested - Process Order', () => {
         uploadDraftOrdersPage
       }
     ) => {
-      const caseId = await ContestedCaseDataHelper.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
       const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-      await ContestedCaseDataHelper.caseWorkerProcessOrder(caseId, orderDetails);
+      await ContestedCaseFactory.caseWorkerProcessOrder(caseId, orderDetails);
 
       // Next
       // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (change from Approved by Judge).

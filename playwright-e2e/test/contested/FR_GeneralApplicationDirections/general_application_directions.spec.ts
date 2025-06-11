@@ -1,6 +1,6 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 
@@ -51,8 +51,8 @@ test.describe('Contested - General Application Directions', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
-      await ContestedCaseDataHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
       await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
@@ -72,8 +72,8 @@ test.describe('Contested - General Application Directions', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.createAndSubmitPaperCase();
-      await ContestedCaseDataHelper.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+      const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
+      await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
       await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
@@ -84,8 +84,8 @@ test.describe('Contested - General Application Directions', () => {
     'Form A case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
     async () => {
-      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
-      await ContestedCaseDataHelper.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      await ContestedCaseFactory.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
       // Next:
       // Check the hearing tab to check that the old hearing data is correctly showing there.
       // Remove the skip when the test is ready.
@@ -96,8 +96,8 @@ test.describe('Contested - General Application Directions', () => {
     'Paper case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
     async () => {
-      const caseId = await ContestedCaseDataHelper.createAndSubmitPaperCase();
-      await ContestedCaseDataHelper.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
+      const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
+      await ContestedCaseFactory.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
       // Next:
       // Check the hearing tab to check that the old hearing data is correctly showing there.
       // Remove the skip when the test is ready.

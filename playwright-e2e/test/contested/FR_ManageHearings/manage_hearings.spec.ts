@@ -3,7 +3,7 @@ import config from '../../../config/config.ts';
 import {ContestedEvents} from "../../../config/case-data.ts";
 import {getManageHearingTableData} from "../../../resources/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
 import { DateHelper } from '../../../data-utils/DateHelper.ts';
-import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper.ts';
+import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory.ts';
 
 const typeOfHearingData = [
     "Maintenance Pending Suit (MPS)",
@@ -27,7 +27,7 @@ test.describe('Contested - Manage Hearings', () => {
 
             // Create and setup case
             const date = await DateHelper.getCurrentDate();
-            const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication(false, date);
+            const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false, date);
 
             // Login as caseworker and navigate to case
             await manageCaseDashboardPage.visit();
@@ -84,7 +84,7 @@ test.describe('Contested - Manage Hearings', () => {
             {tag: []},
             async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
                 // Create and setup case
-                const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
+                const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
                 // Login as caseworker and navigate to case
                 await manageCaseDashboardPage.visit();

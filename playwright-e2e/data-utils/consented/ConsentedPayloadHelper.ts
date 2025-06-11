@@ -1,4 +1,4 @@
-import { apiHelper } from "../../fixtures/fixtures";
+import { ccdApi } from "../../fixtures/fixtures";
 import config from "../../config/config";
 import { ConsentedEvents, CaseType, PayloadPath } from "../../config/case-data";
 
@@ -8,7 +8,7 @@ export class PayloadHelper {
     steps: { event: string; payload?: string }[]
   ): Promise<void> {
     for (const step of steps) {
-      await apiHelper.updateCaseInCcd(
+      await ccdApi.updateCaseInCcd(
         config.caseWorker.email,
         config.caseWorker.password,
         caseId,
@@ -20,7 +20,7 @@ export class PayloadHelper {
   }
 
   static async solicitorSubmitCase(caseId: string) {
-    await apiHelper.updateCaseInCcd(
+    await ccdApi.updateCaseInCcd(
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,
       caseId,

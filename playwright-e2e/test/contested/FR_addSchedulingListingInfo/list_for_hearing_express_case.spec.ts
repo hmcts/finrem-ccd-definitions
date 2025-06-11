@@ -1,6 +1,6 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseDataHelper } from '../../../data-utils/contested/ContestedCaseDataHelper';
+import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 
 async function performListForHearingFlow(
@@ -58,7 +58,7 @@ test.describe('Contested - List for Hearing express case', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToProgressToListing(true);
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing(true);
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
     }
   );
@@ -76,7 +76,7 @@ test.describe('Contested - List for Hearing express case', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseDataHelper.createAndProcessPaperCaseUpToProgressToListing(true);
+      const caseId = await ContestedCaseFactory.createAndProcessPaperCaseUpToProgressToListing(true);
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
     }
   );
