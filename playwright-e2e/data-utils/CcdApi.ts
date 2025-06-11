@@ -27,8 +27,6 @@ export class CcdApi {
   }
 
   async getUserToken(username: string, password: string): Promise<string> {
-    console.info("Getting User Token");
-
     const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
     const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
     const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
@@ -42,8 +40,6 @@ export class CcdApi {
       },
     });
 
-    console.info("Successfully retrieved IdAM code");
-
     const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse?.data.code}`;
 
     const authTokenResponse = await this.axiosRequest({
@@ -54,13 +50,10 @@ export class CcdApi {
       },
     });
 
-    console.info("Successfully retrieved user token");
     return authTokenResponse?.data.access_token;
   }
 
   async getUserId(authToken: string): Promise<string> {
-    console.info("Getting User Id");
-
     const idamDetailsPath = "/details";
 
     const userDetailsResponse = await this.axiosRequest({
@@ -69,13 +62,10 @@ export class CcdApi {
       headers: { Authorization: `Bearer ${authToken}` },
     });
 
-    console.info("Successfully retrieved User ID");
     return userDetailsResponse?.data.id;
   }
 
   async getServiceToken(): Promise<string> {
-    console.info("Getting Service Token");
-
     const serviceSecret = process.env.FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY || "";
     const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
     const s2sAuthPath = "/lease";
@@ -94,7 +84,6 @@ export class CcdApi {
       },
     });
 
-    console.info("Successfully retrieved service token");
     return serviceTokenResponse?.data;
   }
 
@@ -104,8 +93,6 @@ export class CcdApi {
     authToken: string,
     serviceToken: string
   ): Promise<string> {
-    console.info("Retrieving start event token");
-
     const startCaseResponse = await this.axiosRequest({
       method: "get",
       url: ccdApiUrl + ccdStartCasePath,
@@ -116,7 +103,6 @@ export class CcdApi {
       },
     });
 
-    console.info("Successfully retrieved start event token");
     return startCaseResponse?.data.token;
   }
 
@@ -126,8 +112,6 @@ export class CcdApi {
     serviceToken: string,
     payload: any
   ): Promise<AxiosResponse | undefined> {
-    console.info("Saving Case");
-
     const response = await this.axiosRequest({
       url: ccdApiUrl + ccdSaveCasePath,
       method: "post",
@@ -138,8 +122,7 @@ export class CcdApi {
         "Content-Type": "application/json",
       },
     });
-
-    console.info("Successfully saved case");
+    
     return response;
   }
 
@@ -154,9 +137,6 @@ export class CcdApi {
     const authToken = await this.getUserToken(userName, password);
     const userId = await this.getUserId(authToken);
     const serviceToken = await this.getServiceToken();
-
-    console.info("Creating Case");
-
     const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/event-triggers/${eventId}/token`;
     const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases`;
 
@@ -212,9 +192,6 @@ export class CcdApi {
     const authToken = await this.getUserToken(userName, password);
     const userId = await this.getUserId(authToken);
     const serviceToken = await this.getServiceToken();
-
-    console.info("Updating case with id %s and event %s", caseId, eventId);
-
     const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
     const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/events`;
 
@@ -284,9 +261,6 @@ export class CcdApi {
     const authToken = await this.getUserToken(userName, password);
     const userId = await this.getUserId(authToken);
     const serviceToken = await this.getServiceToken();
-
-    console.info("Updating case with id %s and event %s", caseId, eventId);
-
     const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
     const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/events`;
 
