@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import {ContestedEvents} from "../../../config/case-data";
+import {ConsentedEvents, ContestedEvents} from "../../../config/case-data";
 import {getManageHearingTableData} from "../../../data/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
 import {ContestedCaseDataHelper} from "../../helpers/Contested/ContestedCaseDataHelper";
 import {DateHelper} from "../../helpers/DateHelper.ts";
@@ -46,7 +46,7 @@ test.describe('Contested - Manage Hearings', () => {
             await manageHearingPage.assertErrorMessagesForAllMandatoryFields();
 
             await manageHearingPage.uploadOtherDocuments("removeFile.pdf");
-            await manageHearingPage.removeUploadedDocument();
+            await manageHearingPage.removeContent();
 
             await manageHearingPage.enterHearingDate('asdf', 'asdf', 'asdf');
             await manageHearingPage.assertHearingDateFormatError()
@@ -74,7 +74,7 @@ test.describe('Contested - Manage Hearings', () => {
 
             await manageHearingPage.navigateSubmit();
 
-            await caseDetailsPage.checkHasBeenUpdated('Manage Hearings');
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageHearings.listItem);
 
     });
 
@@ -120,7 +120,7 @@ test.describe('Contested - Manage Hearings', () => {
 
                 await manageHearingPage.navigateSubmit();
 
-                await caseDetailsPage.checkHasBeenUpdated('Manage Hearings');
+                await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageHearings.listItem);
             }
         )
     }

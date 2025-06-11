@@ -18,12 +18,15 @@ export class CcdApiHelper {
     try {
       const response = await axiosClient(requestParams);
       if (![200, 201].includes(response.status)) {
-        throw new Error(`Request to ${requestParams.url} failed with status ${response.status}`);
+        throw new Error(`Request to ${requestParams.url} failed with status ${response.status}. Response data: ${JSON.stringify(response.data)}`);
       }
       return response;
     } catch (error: any) {
+      const serverMessage = error.response?.data
+          ? ` \nServer response: ${JSON.stringify(error.response.data)}`
+          : "";
       throw new Error(
-          `Request to ${requestParams.url} failed: ${error.message}`
+          `Request to ${requestParams.url} failed: ${error.message}${serverMessage}`
       );
     }
   }
