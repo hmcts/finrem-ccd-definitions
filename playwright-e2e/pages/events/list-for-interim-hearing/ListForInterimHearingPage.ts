@@ -82,7 +82,7 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
     async uploadOtherDocuments(hearing_position: number, docFilename: string) {
         const uploadOtherDocumentFiles = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interimUploadAdditionalDocument`);
         await expect(uploadOtherDocumentFiles).toBeVisible();
-        const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/test.pdf', docFilename);
+        const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', docFilename);
         await uploadOtherDocumentFiles.setInputFiles(filePayload);
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }

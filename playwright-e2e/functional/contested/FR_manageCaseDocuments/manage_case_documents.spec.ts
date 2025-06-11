@@ -19,7 +19,7 @@ test.describe('Contested Manage Case Documents', () => {
             // Manage case documents
             await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
             await manageCaseDocumentsPage.navigateAddNew(); 
-            await manageCaseDocumentsPage.uploadDocument('playwright-e2e/data/test.docx');
+            await manageCaseDocumentsPage.uploadDocument('./playwright-e2e/resources/file/test.docx');
             await manageCaseDocumentsPage.selectDocumentType('Other'); 
             await manageCaseDocumentsPage.specifyDocumentType('test');
             await manageCaseDocumentsPage.fillDescription('test case'); 

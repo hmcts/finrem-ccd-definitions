@@ -155,24 +155,28 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   issueApplication: CommonEvents.issueApplication
 };
 
-// Payload Paths
+
 export const PayloadPath = {
   Consented: {
+    // Base case data
     base: "./playwright-e2e/resources/case_data/consented/ccd-consented-case-creation.json",
+    
+    // Payload submissions
     createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json"
   },
   Contested: {
-    base: "./playwright-e2e/resources/case_data/contested/ccd-contested-case-creation.json",
-    // Move this into case_data
-    formA: "./playwright-e2e/resources/payload/contested/forma/ccd-contested-base.json",
+    // Base case data
+    formA: "./playwright-e2e/resources/case_data/contested/forma/ccd-contested-base.json",
+    paper: "./playwright-e2e/resources/case_data/contested/paper_case/ccd-contested-base.json",
+    refugePaperCase: "./playwright-e2e/resources/case_data/contested/paper_case/ccd-contested-refuge-applicant.json",
+
+    // Payload submissions
     formASubmit: "./playwright-e2e/resources/payload/contested/solicitor/case-submission.json",
-    paper: "./playwright-e2e/resources/payload/contested/paper_case/ccd-contested-base.json",
     schedule1: "./playwright-e2e/resources/payload/contested/solicitor/schedule1-create-case.json",
     hwfPayment: "./playwright-e2e/resources/payload/contested/caseworker/HWF-payment.json",
     hwfDecisionMade: "./playwright-e2e/resources/payload/contested/caseworker/HWF-application-accepted.json",
     manualPayment: "./playwright-e2e/resources/payload/contested/caseworker/manual-payment.json",
     issueApplication: "./playwright-e2e/resources/payload/contested/caseworker/issue-application.json",
-    refugePaperCase: "./playwright-e2e/resources/payload/contested/paper_case/ccd-contested-refuge-applicant.json",
     progressToListing: "./playwright-e2e/resources/payload/contested/caseworker/progress-to-listing.json",
     generalApplicationCreate: "./playwright-e2e/resources/payload/contested/caseworker/create-general-application/sender-is-applicant.json",
     referToJudgeEmailIsNull: "./playwright-e2e/resources/payload/contested/caseworker/refer-to-judge/judge-email-is-null.json",
