@@ -3,7 +3,8 @@ import { ccdApi } from "../../../fixtures/fixtures";
 import config from "../../../config/config";
 import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
 import { ReplacementAction } from "../../../types/replacement-action";
-import { ISSUE_APPLICATION } from "../../PayloadMutator";
+import { APPROVE_ORDERS_DATA, ISSUE_APPLICATION, PROCESS_ORDER_DATA } from "../../PayloadMutator";
+import { DateHelper } from "../../DateHelper";
 
 export class ContestedEventApi {
   private static async updateCaseWorkerSteps(
@@ -300,4 +301,55 @@ export class ContestedEventApi {
       },
     ]);
   }
+
+  static async caseWorkerProcessOrder(
+    caseId: string,
+    dynamicDraftOrderInfo: {
+      documentUrl: string;
+      documentBinaryUrl: string;
+      uploadTimestamp: string;
+    }
+  ): Promise<string> {
+    // Generate the JSON object for the process order payload
+    const orderDateTime = await DateHelper.getCurrentTimestamp();
+    const modifications = PROCESS_ORDER_DATA(
+      orderDateTime,
+      dynamicDraftOrderInfo.documentUrl,
+      dynamicDraftOrderInfo.documentBinaryUrl,
+      dynamicDraftOrderInfo.uploadTimestamp
+    );
+
+    await ContestedEventApi.processOrder(caseId, modifications);
+
+    // Return the JSON object
+    return caseId;
+  }
+
+  static async judgeApproveOrders(
+    caseId: string,
+    dynamicDraftOrderInfo: {
+      documentUrl: string;
+      documentBinaryUrl: string;
+      uploadTimestamp: string;
+      hearingDate: string;
+    }
+  ): Promise<string> {
+    const hearingDateLabel = DateHelper.formatToDayMonthYear(
+      dynamicDraftOrderInfo.hearingDate
+    );
+    const modifications = APPROVE_ORDERS_DATA(
+      hearingDateLabel,
+      dynamicDraftOrderInfo.hearingDate,
+      dynamicDraftOrderInfo.documentUrl,
+      dynamicDraftOrderInfo.documentBinaryUrl,
+      dynamicDraftOrderInfo.uploadTimestamp
+    );
+
+    // Update the case in CCD
+    await ContestedEventApi.approveOrders(caseId, modifications)
+
+    // Return the JSON object
+    return caseId;
+  }
+
 }

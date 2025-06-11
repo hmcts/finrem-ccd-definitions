@@ -2,11 +2,9 @@ import { CaseDataBuilder } from "../CaseDataBuilder";
 import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
 import { ContestedEventApi } from "../../api/contested/ContestedEventApi";
 import { 
-  APPROVE_ORDERS_DATA, 
   EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT, 
   ESTIMATED_ASSETS_UNDER_1M, 
   LIST_FOR_HEARING, 
-  PROCESS_ORDER_DATA, 
   REFER_LIST_DATA, 
   OUTCOME_LIST_DATA, 
   DIRECTIONS_LIST_DATA } from "../../PayloadMutator";
@@ -242,59 +240,4 @@ export class ContestedCaseFactory {
 
     await ContestedEventApi.listCaseForHearing(caseId, listForHearingDataModifications);
   }
-
-   ////------------------------////
-   // Move to payload helper vv //
-   ////------------------------////
-
-   static async caseWorkerProcessOrder(
-    caseId: string,
-    dynamicDraftOrderInfo: {
-      documentUrl: string;
-      documentBinaryUrl: string;
-      uploadTimestamp: string;
-    }
-  ): Promise<string> {
-    // Generate the JSON object for the process order payload
-    const orderDateTime = await DateHelper.getCurrentTimestamp();
-    const modifications = PROCESS_ORDER_DATA(
-      orderDateTime,
-      dynamicDraftOrderInfo.documentUrl,
-      dynamicDraftOrderInfo.documentBinaryUrl,
-      dynamicDraftOrderInfo.uploadTimestamp
-    );
-
-    await ContestedEventApi.processOrder(caseId, modifications);
-
-    // Return the JSON object
-    return caseId;
-  }
-
-  static async judgeApproveOrders(
-    caseId: string,
-    dynamicDraftOrderInfo: {
-      documentUrl: string;
-      documentBinaryUrl: string;
-      uploadTimestamp: string;
-      hearingDate: string;
-    }
-  ): Promise<string> {
-    const hearingDateLabel = DateHelper.formatToDayMonthYear(
-      dynamicDraftOrderInfo.hearingDate
-    );
-    const modifications = APPROVE_ORDERS_DATA(
-      hearingDateLabel,
-      dynamicDraftOrderInfo.hearingDate,
-      dynamicDraftOrderInfo.documentUrl,
-      dynamicDraftOrderInfo.documentBinaryUrl,
-      dynamicDraftOrderInfo.uploadTimestamp
-    );
-
-    // Update the case in CCD
-    await ContestedEventApi.approveOrders(caseId, modifications)
-
-    // Return the JSON object
-    return caseId;
-  }
-
 }

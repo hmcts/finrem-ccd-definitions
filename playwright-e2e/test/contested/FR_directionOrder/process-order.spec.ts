@@ -3,6 +3,8 @@ import config from '../../../config/config';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
+import { ConsentedEventApi } from '../../../data-utils/api/consented/ConsentedEventApi';
+import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 
   /**
    * Firstly, performs the upload draft order flow as a step towards the Process Order event.
@@ -64,7 +66,7 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
       uploadTimestamp: firstDraftOrderItem?.upload_timestamp
     };
 
-    await ContestedCaseFactory.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
+    await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
     return documentDetailsForFutureTestSteps
   }
 
@@ -124,7 +126,7 @@ test.describe('Contested - Process Order', () => {
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-      await ContestedCaseFactory.caseWorkerProcessOrder(caseId, orderDetails);
+      await ContestedEventApi.caseWorkerProcessOrder(caseId, orderDetails);
 
       // Next
       // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
@@ -145,7 +147,7 @@ test.describe('Contested - Process Order', () => {
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
       const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-      await ContestedCaseFactory.caseWorkerProcessOrder(caseId, orderDetails);
+      await ContestedEventApi.caseWorkerProcessOrder(caseId, orderDetails);
 
       // Next
       // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (change from Approved by Judge).
