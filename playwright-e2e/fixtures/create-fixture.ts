@@ -54,7 +54,7 @@ import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/Uploa
 import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
 import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
 import { CheckYourAnswersPage } from '../pages/helpers/CheckYourAnswersPage';
-import {AddNotePage} from "../pages/events/add-note/AddNotePage.ts";
+import {AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
