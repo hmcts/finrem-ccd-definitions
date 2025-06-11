@@ -1,5 +1,3 @@
-import { ManageCaseDocumentsPage } from "../pages/events/manage-case-documents/ManageCaseDocumentsPage";
-
 // Enums for Case Types and User Types
 export enum CaseType {
   Consented = "FinancialRemedyMVP2",
@@ -141,9 +139,17 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Direction Order",
     ccdCallback: "FR_directionOrder"
   },
+  manageHearings: {
+    listItem: "Manage Hearings",
+    ccdCallback: "FR_manageHearings"
+  },
   manageCaseDocuments: {
     listItem: "Manage case documents",
     ccdCallback: "FR_manageCaseDocuments"
+  },
+  updateContactDetails: {
+    listItem: "Update contact details",
+    ccdCallback: "FR_updateContactDetails"
   },
 
   // Common events
