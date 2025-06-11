@@ -3,7 +3,7 @@ import config from '../../../config/config.ts';
 import {ContestedEvents} from "../../../config/case-data.ts";
 import {getManageHearingTableData} from "../../../resources/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
 import { DateHelper } from '../../../data-utils/DateHelper.ts';
-import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory.ts';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 
 const typeOfHearingData = [
     "Maintenance Pending Suit (MPS)",

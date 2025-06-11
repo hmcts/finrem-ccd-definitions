@@ -2,7 +2,7 @@ import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { ContestedEvents } from '../../config/case-data';
 import { paymentDetailsTabData } from '../../resources/tab_content/payment_details_tabs';
-import { ContestedCaseFactory } from '../../data-utils/contested/ContestedCaseFactory';
+import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
 
 
 test(

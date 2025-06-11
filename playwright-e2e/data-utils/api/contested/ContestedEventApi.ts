@@ -1,9 +1,9 @@
 import fs from "fs";
-import { ccdApi } from "../../fixtures/fixtures";
-import config from "../../config/config";
-import { ContestedEvents, CaseType, PayloadPath } from "../../config/case-data";
-import { ReplacementAction } from "../../types/replacement-action";
-import { ISSUE_APPLICATION } from "../PayloadMutator";
+import { ccdApi } from "../../../fixtures/fixtures";
+import config from "../../../config/config";
+import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
+import { ReplacementAction } from "../../../types/replacement-action";
+import { ISSUE_APPLICATION } from "../../PayloadMutator";
 
 export class ContestedEventApi {
   private static async updateCaseWorkerSteps(

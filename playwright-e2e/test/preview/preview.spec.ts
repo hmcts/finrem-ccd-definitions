@@ -1,8 +1,8 @@
 import config from "../../config/config";
 import { test } from "../../fixtures/fixtures";
 import { createCaseTabData, createCaseTabDataPreview } from "../../resources/tab_content/consented/create_case_tabs";
-import { ConsentedCaseFactory } from "../../data-utils/consented/ConsentedCaseFactory";
-import { ContestedCaseFactory } from "../../data-utils/contested/ContestedCaseFactory";
+import { ConsentedCaseFactory } from "../../data-utils/factory/consented/ConsentedCaseFactory";
+import { ContestedCaseFactory } from "../../data-utils/factory/contested/ContestedCaseFactory";
 
 
 test(

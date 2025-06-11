@@ -1,6 +1,6 @@
 import { CaseDataBuilder } from "../CaseDataBuilder";
-import { ConsentedEvents, CaseType, PayloadPath } from "../../config/case-data";
-import { ConsentedEventApi } from "./ConsentedEventApi";
+import { ConsentedEvents, CaseType, PayloadPath } from "../../../config/case-data";
+import { ConsentedEventApi } from "../../api/consented/ConsentedEventApi";
 
 export class ConsentedCaseFactory {
 

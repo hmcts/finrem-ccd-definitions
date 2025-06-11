@@ -3,7 +3,7 @@ import config from '../../../config/config';
 import { ApplicationtypeEnum, MaleOrFemaleEnum, YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../resources/tab_content/contested/solicitor_create_case_tabs';
 import { createCaseTabDataChildrensAct } from '../../../resources/tab_content/consented/create_case_tabs';
-import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 
 
 test(

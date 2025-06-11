@@ -1,6 +1,6 @@
-import { ReplacementAction } from "../types/replacement-action";
-import { ccdApi } from "../fixtures/fixtures";
-import config from "../config/config";
+import { ReplacementAction } from "../../types/replacement-action";
+import { ccdApi } from "../../fixtures/fixtures";
+import config from "../../config/config";
 
 export class CaseDataBuilder {
   private email: string;

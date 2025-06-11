@@ -2,7 +2,7 @@ import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { approvedOrderTabData } from '../../resources/tab_content/consented/approve_application_tabs';
-import { ConsentedCaseFactory } from '../../data-utils/consented/ConsentedCaseFactory';
+import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
 
 test(
   'Consented - Approve Application',

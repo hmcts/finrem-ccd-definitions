@@ -2,7 +2,7 @@ import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { ContestedCaseFactory } from '../../../data-utils/contested/ContestedCaseFactory';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { giveAllocationGateKeepingTabData } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/gatekeeping_and_allocation_tab';
 
 test(

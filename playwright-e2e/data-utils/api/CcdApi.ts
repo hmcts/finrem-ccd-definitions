@@ -3,7 +3,7 @@ import { readFileSync } from "fs";
 import path from "path";
 import { authenticator } from "otplib";
 import { set, unset } from "lodash";
-import { ReplacementAction } from "../types/replacement-action";
+import { ReplacementAction } from "../../types/replacement-action";
 
 const axiosClient = axios.create({});
 

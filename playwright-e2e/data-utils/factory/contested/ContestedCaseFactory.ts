@@ -1,6 +1,6 @@
 import { CaseDataBuilder } from "../CaseDataBuilder";
-import { ContestedEvents, CaseType, PayloadPath } from "../../config/case-data";
-import { ContestedEventApi } from "./ContestedEventApi";
+import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
+import { ContestedEventApi } from "../../api/contested/ContestedEventApi";
 import { 
   APPROVE_ORDERS_DATA, 
   EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT, 
@@ -9,8 +9,8 @@ import {
   PROCESS_ORDER_DATA, 
   REFER_LIST_DATA, 
   OUTCOME_LIST_DATA, 
-  DIRECTIONS_LIST_DATA } from "../PayloadMutator";
-import { DateHelper } from "../DateHelper";
+  DIRECTIONS_LIST_DATA } from "../../PayloadMutator";
+import { DateHelper } from "../../DateHelper";
 
 export class ContestedCaseFactory {
   private static buildContestedCase({
