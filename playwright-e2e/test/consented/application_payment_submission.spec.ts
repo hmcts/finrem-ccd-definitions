@@ -8,7 +8,7 @@ test(
     'Consented - Application Payment Submission',
     { tag: [] },
     async (
-      { 
+      {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
@@ -23,17 +23,17 @@ test(
       const caseId = await ConsentedCaseFactory.createConsentedCase();
 
       // Define common test data
-      const pbaNumber = "PBA0000539";
+      const pbaNumber = "PBA0089162";
       const reference = "Reference";
       const hasHelpWithFees = false;
-      
+
       // Login as caseworker
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
-  
-      // Application Payment Submission 
-      await caseDetailsPage.selectNextStep(ConsentedEvents.applicationPaymentSubmission); 
+
+      // Application Payment Submission
+      await caseDetailsPage.selectNextStep(ConsentedEvents.applicationPaymentSubmission);
       await solicitorAuthPage.enterSolicitorDetails("Bilbo Baggins", "Bag End", "Solicitor");
       await solicitorAuthPage.navigateContinue();
       await helpWithFeesPage.selectHelpWithFees(hasHelpWithFees);
@@ -45,8 +45,8 @@ test(
       await caseSubmissionPage.navigateSubmit();
       await caseSubmissionPage.returnToCaseDetails();
       await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.applicationPaymentSubmission.listItem);
-      
-      // Assert Tab Data      
+
+      // Assert Tab Data
       await caseDetailsPage.assertTabData(paymentDetailsTabData(hasHelpWithFees, pbaNumber, reference));
     }
 );

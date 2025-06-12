@@ -37,6 +37,10 @@ export const CommonEvents: Record<string, CaseEvent> = {
     listItem: "Manage Flags",
     ccdCallback: "manageFlags"
   },
+  addNotes: {
+    listItem: "Add Note",
+    ccdCallback: "FR_caseNotes"
+  }
 };
 
 // Consented Events
@@ -62,7 +66,8 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
   manageFlags: CommonEvents.manageFlags,
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
   hwfDecisionMade: CommonEvents.hwfDecisionMade,
-  issueApplication: CommonEvents.issueApplication
+  issueApplication: CommonEvents.issueApplication,
+  addNotes: CommonEvents.addNotes
 };
 
 // Contested Events
@@ -147,21 +152,28 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage case documents",
     ccdCallback: "FR_manageCaseDocuments"
   },
+  updateContactDetails: {
+    listItem: "Update contact details",
+    ccdCallback: "FR_updateContactDetails"
+  },
+
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
   hwfDecisionMade: CommonEvents.hwfDecisionMade,
-  issueApplication: CommonEvents.issueApplication
+  issueApplication: CommonEvents.issueApplication,
+  addNotes: CommonEvents.addNotes
 };
-
 
 export const PayloadPath = {
   Consented: {
-    // Base case data
+    // base case data
     base: "./playwright-e2e/resources/case_data/consented/ccd-consented-case-creation.json",
-    
-    // Payload submissions
+
+    // Payload Submissions
+    applicationPaymentSubmission: "./playwright-e2e/resources/payload/consented/solicitor/case-submission.json",
+    issueApplication: "./playwright-e2e/resources/payload/consented/caseworker/issue-application.json",
     createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json"
   },
   Contested: {

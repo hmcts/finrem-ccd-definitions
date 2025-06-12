@@ -237,7 +237,7 @@
     "PreConditionState(s)": "caseAdded",
     "PostConditionState": "applicationSubmitted",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/assign-applicant-solicitor",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/pba-payment",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "0",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/payment-confirmation",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",

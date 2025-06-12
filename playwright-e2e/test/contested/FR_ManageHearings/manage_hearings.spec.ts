@@ -46,7 +46,7 @@ test.describe('Contested - Manage Hearings', () => {
             await manageHearingPage.assertErrorMessagesForAllMandatoryFields();
 
             await manageHearingPage.uploadOtherDocuments("removeFile.pdf");
-            await manageHearingPage.removeUploadedDocument();
+            await manageHearingPage.removeContent();
 
             await manageHearingPage.enterHearingDate('asdf', 'asdf', 'asdf');
             await manageHearingPage.assertHearingDateFormatError()
@@ -74,7 +74,7 @@ test.describe('Contested - Manage Hearings', () => {
 
             await manageHearingPage.navigateSubmit();
 
-            await caseDetailsPage.checkHasBeenUpdated('Manage Hearings');
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageHearings.listItem);
 
     });
 
@@ -120,7 +120,7 @@ test.describe('Contested - Manage Hearings', () => {
 
                 await manageHearingPage.navigateSubmit();
 
-                await caseDetailsPage.checkHasBeenUpdated('Manage Hearings');
+                await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageHearings.listItem);
             }
         )
     }

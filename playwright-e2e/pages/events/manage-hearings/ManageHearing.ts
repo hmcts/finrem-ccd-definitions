@@ -130,16 +130,6 @@ export class ManageHearingPage extends BaseJourneyPage {
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 
-    async removeUploadedDocument(position: number = 0) {
-        const removeDocumentButton = this.page.getByRole("button", { name: "Remove" }).nth(position);
-        await expect(removeDocumentButton).toBeVisible();
-        await removeDocumentButton.click();
-
-        const removeDocumentConfirmButton = this.page.getByRole("button", { name: "Remove" })
-        await expect(removeDocumentConfirmButton).toBeVisible();
-        await removeDocumentConfirmButton.click();
-    }
-
     private async selectSendNoticeOfHearing(yesOrNo: YesNoRadioEnum) {
         const sendNoticeOfHearing = this.page.locator(`#workingHearing_hearingNoticePrompt`);
         await expect(sendNoticeOfHearing).toBeVisible();

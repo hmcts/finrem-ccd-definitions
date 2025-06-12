@@ -22,7 +22,7 @@ test(
     const caseId = await ContestedCaseFactory.createBaseContestedFormA();
 
     // Define common test data
-    const pbaNumber = "PBA0000539";
+    const pbaNumber = "PBA0089162";
     const reference = "Reference";
     const hasHelpWithFees = false;
 
