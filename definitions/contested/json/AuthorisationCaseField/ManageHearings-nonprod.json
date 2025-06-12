@@ -19,5 +19,19 @@
     "CaseFieldID": "hearingDocumentsCollection",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "10/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearings",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  }, 
+  {
+    "LiveFrom": "10/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingTabItems",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
   }
 ]

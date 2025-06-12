@@ -207,4 +207,21 @@ export abstract class BaseJourneyPage {
             }
         }
     }
+
+    /**
+     * Removes content at the specified position by clicking the "Remove" button and confirming the action.
+     *
+     * @param position - The index of the "Remove" button to click. Defaults to 0 (the first button).
+     */
+    async removeContent(position: number = 0) {
+        const removeDocumentButton = this.page.getByRole("button", { name: "Remove" }).nth(position);
+        await expect(removeDocumentButton).toBeVisible();
+        await expect(removeDocumentButton).toBeEnabled();
+        await removeDocumentButton.click();
+
+        const removeDocumentConfirmButton = this.page.getByRole("button", { name: "Remove" })
+        await expect(removeDocumentConfirmButton).toBeVisible();
+        await expect(removeDocumentConfirmButton).toBeEnabled();
+        await removeDocumentConfirmButton.click();
+    }
 }
