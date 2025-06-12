@@ -26,20 +26,20 @@ export class PayloadHelper {
       caseId,
       CaseType.Consented,
       ConsentedEvents.applicationPaymentSubmission.ccdCallback,
-      PayloadPath.Consented.base
+      PayloadPath.Consented.applicationPaymentSubmission
     );
   }
 
   static async caseWorkerHWFDecisionMade(caseId: string) {
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ConsentedEvents.hwfDecisionMade.ccdCallback, payload: PayloadPath.Consented.base },
+      { event: ConsentedEvents.hwfDecisionMade.ccdCallback},
     ]);
   }
 
   static async caseWorkerIssueApplication(caseId: string) {
     await this.caseWorkerHWFDecisionMade(caseId);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ConsentedEvents.issueApplication.ccdCallback, payload: PayloadPath.Consented.base },
+      { event: ConsentedEvents.issueApplication.ccdCallback, payload: PayloadPath.Consented.issueApplication },
     ]);
   }
 
