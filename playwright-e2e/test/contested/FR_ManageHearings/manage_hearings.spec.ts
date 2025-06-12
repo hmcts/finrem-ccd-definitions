@@ -51,6 +51,22 @@ test.describe('Contested - Manage Hearings', () => {
             await manageHearingPage.enterHearingDate('asdf', 'asdf', 'asdf');
             await manageHearingPage.assertHearingDateFormatError()
 
+            const hearingList = [
+                "Maintenance Pending Suit (MPS)",
+                "First Directions Appointment (FDA)",
+                "Financial Dispute Resolution (FDR)",
+                "Final Hearing (FH)",
+                "Directions (DIR)",
+                "Mention",
+                "Permission to Appeal",
+                "Appeal Hearing (Financial Remedy)",
+                "Application Hearing",
+                "Retrial Hearing",
+                "Pre-Trial Review (PTR)"
+            ];
+
+            await manageHearingPage.assertHearingTypeDropDownOptionsAreVisible(hearingList);
+
             await manageHearingPage.addHearing({
                 type: "Pre-Trial Review (PTR)",
                 duration: '2 hours',

@@ -33,6 +33,10 @@ export class ManageHearingPage extends BaseJourneyPage {
         await this.assertErrorMessage(['What would you like to do? is required'])
     }
 
+    async assertHearingTypeDropDownOptionsAreVisible(options: string[]) {
+       await this.assertDropDownOptionsAreVisible(options, this.typeOfHearingDropDown);
+    }
+
     async selectTypeOfHearing(typeOfHearing: string) {
         await expect(this.typeOfHearingDropDown).toBeVisible();
         await this.typeOfHearingDropDown.selectOption({label : typeOfHearing });

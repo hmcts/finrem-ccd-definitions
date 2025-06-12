@@ -37,7 +37,6 @@ export const createCaseTabData = [
       { tabItem: "Current First and Middle names", value: "Smeagol" },
       { tabItem: "Current Last Name", value: "Gollum" },
       { tabItem: "Is the Respondent currently a resident in a refuge?", value: "Yes" },
-      "Respondent’s Solicitor’s Details",
       "Is the respondent represented ?",
       "Respondent’s Solicitor’s Details",
       { tabItem: "Solicitor’s name", value: "Sauron" },
