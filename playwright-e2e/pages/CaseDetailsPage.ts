@@ -60,15 +60,39 @@ export class CaseDetailsPage {
         await tabHeader.click();
     }
 
+    /**
+     * Asserts that each item in the provided tab content array is visible and, if applicable, contains the expected value.
+     *
+     * The function supports both string and object tab content items. For string items, it checks visibility.
+     * For object items, it checks both visibility and that the corresponding value cell contains the expected text.
+     *
+     * The `tabItemCount` record is used to track the number of times each unique tab item key has been processed.
+     * This allows the function to correctly select the nth visible instance of a tab item when the same label appears multiple times,
+     * ensuring assertions are made against the correct DOM element.
+     * Tab array items should be in right order, as they are displayed in the UI.
+     */
     private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
+        const tabItemCount: Record<string,number> = {};
         for (const content of tabContent) {
+            let tabKey: string;
+            let position: number;
+
+            if (typeof content === 'string') {
+                tabKey = content;
+            } else {
+                tabKey = content.tabItem;
+            }
+
+            position = tabItemCount[tabKey] ?? 0;
+            tabItemCount[tabKey] = position + 1;
+
             if (typeof content === 'string') {
                 // Handle string content
-                const tabItem = await this.getVisibleTabContent(content);
+                const tabItem = await this.getVisibleTabContent(content, position);
                 await expect(tabItem).toBeVisible();
             } else {
                 // Handle object content with tabItem and value
-                const tabItem = await this.getVisibleTabContent(content.tabItem);
+                const tabItem = await this.getVisibleTabContent(content.tabItem, position);
                 await expect(tabItem).toBeVisible();
 
                 // Refine the locator to uniquely identify the corresponding <td>
@@ -91,21 +115,21 @@ export class CaseDetailsPage {
         return this.page.getByRole('tab', { name: tabName, exact: true });
     }
 
-    private async getVisibleTabContent(content: string): Promise<Locator> {
+    private async getVisibleTabContent(content: string, position: number = 0): Promise<Locator> {
         const locator = this.page.getByText(content, { exact: true });
         const count = await locator.count();
 
-        if (count === 1) {
+        if (count === 1 && position === 0) {
             return locator;
         }
 
         for (let i = 0; i < count; i++) {
             const element = locator.nth(i);
-            if (await element.isVisible()) {
+            if (await element.isVisible() && i === position) {
                 return element;
             }
         }
-        throw new Error(`No visible element found for content: ${content}`);
+        throw new Error(`No visible element found for content: ${content} at position: ${position}`);
     }
 
     async checkActiveCaseFlagOnCase() {

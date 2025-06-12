@@ -60,7 +60,9 @@ export class DateHelper {
      */
     static getTodayFormattedDate(): string {
         const today = new Date();
-        return today.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+        return today
+            .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+            .replace(/\b([A-Za-z]{4,})\b/g, m => m.slice(0, 3));
     };
 
     /**
@@ -76,5 +78,15 @@ export class DateHelper {
             .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
             .replace(/\b([A-Za-z]{4,})\b/g, m => m.slice(0, 3));
     };
+
+    /**
+     * Returns today's date formatted as an array of strings [year, month, day].
+     *
+     * @returns An array containing the year, month, and day as strings.
+     */
+    static async getCurrentDateFormatted(): Promise<string[]> {
+        const today = await this.getCurrentDate();
+        return today.split('-')
+    }
 
 }
