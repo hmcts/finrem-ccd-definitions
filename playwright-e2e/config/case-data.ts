@@ -37,6 +37,10 @@ export const CommonEvents: Record<string, CaseEvent> = {
     listItem: "Manage Flags",
     ccdCallback: "manageFlags"
   },
+  addNotes: {
+    listItem: "Add Note",
+    ccdCallback: "FR_caseNotes"
+  }
 };
 
 // Consented Events
@@ -62,7 +66,8 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
   manageFlags: CommonEvents.manageFlags,
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
   hwfDecisionMade: CommonEvents.hwfDecisionMade,
-  issueApplication: CommonEvents.issueApplication
+  issueApplication: CommonEvents.issueApplication,
+  addNotes: CommonEvents.addNotes
 };
 
 // Contested Events
@@ -157,7 +162,8 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   manageFlags: CommonEvents.manageFlags,
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
   hwfDecisionMade: CommonEvents.hwfDecisionMade,
-  issueApplication: CommonEvents.issueApplication
+  issueApplication: CommonEvents.issueApplication,
+  addNotes: CommonEvents.addNotes
 };
 
 // Payload Paths

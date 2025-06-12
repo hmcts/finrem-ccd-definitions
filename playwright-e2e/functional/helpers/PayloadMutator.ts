@@ -65,3 +65,10 @@ export const ESTIMATED_ASSETS_UNDER_1M = [
     { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.originalDocument.document_binary_url', value: documentBinaryUrl },
     { action: 'insert', key: 'unprocessedApprovedDocuments[0].value.originalDocument.upload_timestamp', value: uploadTimestamp },
   ];
+
+  export const APPLICATION_ISSUE_DATE = (
+      date: string
+  )=> [
+          { action: 'delete', key: 'divorcePetitionIssuedDate' },
+          { action: 'insert', key: 'divorcePetitionIssuedDate', value: date },
+  ];

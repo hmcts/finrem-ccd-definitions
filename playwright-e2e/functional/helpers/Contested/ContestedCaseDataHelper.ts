@@ -1,17 +1,18 @@
 import { CaseDataBuilder } from "../CaseDataBuilder";
 import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
 import { PayloadHelper } from "./ContestedPayloadHelper";
-import { 
-  APPROVE_ORDERS_DATA, 
-  EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT, 
-  ESTIMATED_ASSETS_UNDER_1M, 
-  LIST_FOR_HEARING, 
-  PROCESS_ORDER_DATA, 
-  REFER_LIST_DATA, 
-  OUTCOME_LIST_DATA, 
-  DIRECTIONS_LIST_DATA } from "../../helpers/PayloadMutator";
-import { DateHelper } from "../DateHelper";
-import { json } from "stream/consumers";
+import {
+  APPROVE_ORDERS_DATA,
+  EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
+  ESTIMATED_ASSETS_UNDER_1M,
+  LIST_FOR_HEARING,
+  PROCESS_ORDER_DATA,
+  REFER_LIST_DATA,
+  OUTCOME_LIST_DATA,
+  DIRECTIONS_LIST_DATA,
+  APPLICATION_ISSUE_DATE
+} from "../PayloadMutator";
+import { DateHelper } from "../DateHelper";import { json } from "stream/consumers";
 
 export class ContestedCaseDataHelper {
   private static buildContestedCase({
@@ -47,10 +48,8 @@ export class ContestedCaseDataHelper {
   static async createBaseContestedFormA(): Promise<string> {
     return this.buildContestedCase({
       isPaper: false,
-      replacements: [
-        { action: 'delete', key: 'divorcePetitionIssuedDate' },
-        { action: 'insert', key: 'divorcePetitionIssuedDate', value: await DateHelper.getCurrentDate() },
-      ]
+      replacements:
+        APPLICATION_ISSUE_DATE(await DateHelper.getCurrentDate()),
     });
   }
 
@@ -66,11 +65,13 @@ export class ContestedCaseDataHelper {
   )  }
 
   // Specialised variants
-  static createContestedFormACaseWithExpressPilotEnrolled(): Promise<string> {
+  static async createContestedFormACaseWithExpressPilotEnrolled(): Promise<string> {
     return this.buildContestedCase({
       isPaper: false,
-      replacements:
-        EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
+      replacements: [
+          ...EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
+          ...APPLICATION_ISSUE_DATE(await DateHelper.getCurrentDate())
+      ],
     });
   }
 
