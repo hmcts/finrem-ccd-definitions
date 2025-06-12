@@ -112,7 +112,9 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "FieldShowCondition": "applicantRepresented=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -814,7 +816,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_newPaperCase",
-    "CaseFieldID": "propertyAdjutmentOrderDetailLabel",
+    "CaseFieldID": "propertyAdjustmentOrderDetailLabel",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 8,
@@ -1707,6 +1709,33 @@
     "FieldShowCondition": "isApplicantsHomeCourt=\"Yes\"",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "21/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "suitableForExpressCaseLabel",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 15,
+    "PageDisplayOrder": 15,
+    "PageColumnNumber": 1,
+    "PageShowCondition": "expressCaseParticipation=\"Enrolled\"",
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "12/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "expressCaseParticipation",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 15,
+    "PageDisplayOrder": 15,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "suitableForExpressCaseLabel=\"IMPOSSIBLE\"",
+    "ShowSummaryChangeOption": "N",
+    "RetainHiddenValue": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3079,7 +3108,7 @@
     "LiveFrom": "01/10/2022",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendPaperApplication",
-    "CaseFieldID": "propertyAdjutmentOrderDetailLabel",
+    "CaseFieldID": "propertyAdjustmentOrderDetailLabel",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "READONLY",
     "PageID": 9,
@@ -3984,6 +4013,60 @@
     "PageDisplayOrder": 15,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "13/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "suitableForExpressCaseAmendmentLabel",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 16,
+    "PageDisplayOrder": 16,
+    "PageColumnNumber": 1,
+    "PageShowCondition": "labelForExpressCaseAmendment=\"suitableForExpressCaseAmendmentLabel\"",
+    "ShowSummaryChangeOption": "N"
+  },
+  {
+    "LiveFrom": "13/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "expressCaseParticipation",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 16,
+    "PageDisplayOrder": 16,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "suitableForExpressCaseAmendmentLabel=\"IMPOSSIBLE\"",
+    "ShowSummaryChangeOption": "N",
+    "RetainHiddenValue": "Y"
+  },
+  {
+    "LiveFrom": "14/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "labelForExpressCaseAmendment",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 16,
+    "PageDisplayOrder": 16,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "suitableForExpressCaseAmendmentLabel=\"IMPOSSIBLE\"",
+    "ShowSummaryChangeOption": "N",
+    "RetainHiddenValue": "N"
+  },
+  {
+    "LiveFrom": "14/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "unsuitableForExpressCaseAmendmentLabel",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 17,
+    "PageDisplayOrder": 17,
+    "PageColumnNumber": 1,
+    "PageShowCondition": "labelForExpressCaseAmendment=\"unsuitableForExpressCaseAmendmentLabel\"",
+    "ShowSummaryChangeOption": "N"
   },
   {
     "LiveFrom": "01/10/2022",

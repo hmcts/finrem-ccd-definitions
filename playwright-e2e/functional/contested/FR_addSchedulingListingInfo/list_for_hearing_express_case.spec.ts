@@ -1,49 +1,7 @@
 import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ExpressPilotHelper } from '../../helpers/ExpressPilotHelper';
-import { updateCaseInCcd } from '../../../../test/helpers/utils';
-import { contestedEvents } from '../../../config/case_events';
-
-async function updateCaseWorkerSteps(caseId: string, steps: { event: string, payload: string }[]) {
-  for (const step of steps) {
-    await updateCaseInCcd(config.caseWorker.email, config.caseWorker.password, caseId, 'FinancialRemedyContested', step.event, step.payload);
-  }
-}
-
-async function createAndProcessFormACase(): Promise<string> {
-  const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
-    config.applicant_solicitor.email,
-    config.applicant_solicitor.password,
-    './playwright-e2e/data/payload/contested/forma/ccd-contested-base.json',
-    'FinancialRemedyContested',
-    'FR_solicitorCreate'
-  );
-  await updateCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './playwright-e2e/data/payload/contested/solicitor/case-submission.json');
-
-  await updateCaseWorkerSteps(caseId, [
-    { event: 'FR_HWFDecisionMade', payload: './playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json' },
-    { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' },
-    { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
-  ]);
-  return caseId;
-}
-
-async function createAndProcessPaperCase(): Promise<string> {
-  const caseId = await ExpressPilotHelper.createCaseWithExpressPilot(
-    config.caseWorker.email,
-    config.caseWorker.password,
-    './playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json',
-    'FinancialRemedyContested',
-    'FR_newPaperCase'
-  );
-
-  await updateCaseWorkerSteps(caseId, [
-    { event: 'FR_manualPayment', payload: './playwright-e2e/data/payload/contested/caseworker/manual-payment.json' },
-    { event: 'FR_issueApplication', payload: './playwright-e2e/data/payload/contested/caseworker/issue-application.json' },
-    { event: 'FR_progressToSchedulingAndListing', payload: './playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json' }
-  ]);
-  return caseId;
-}
+import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
+import { ContestedEvents } from '../../../config/case-data';
 
 async function performListForHearingFlow(
   caseId: string,
@@ -58,10 +16,10 @@ async function performListForHearingFlow(
   const courtName = "CHESTERFIELD COUNTY COURT";
 
   await manageCaseDashboardPage.visit();
-  await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+  await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   await manageCaseDashboardPage.navigateToCase(caseId);
 
-  await caseDetailsPage.selectNextStep(contestedEvents.listForHearing);
+  await caseDetailsPage.selectNextStep(ContestedEvents.listForHearing);
   await listForHearingPage.selectTypeOfHearingDropDown(hearingType);
   await listForHearingPage.enterTimeEstimate('1 hour');
   await listForHearingPage.setHearingDateToCurrentDate();
@@ -100,7 +58,7 @@ test.describe('Contested - List for Hearing express case', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessFormACase();
+      const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToProgressToListing(true);
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
     }
   );
@@ -118,7 +76,7 @@ test.describe('Contested - List for Hearing express case', () => {
       },
       testInfo
     ) => {
-      const caseId = await createAndProcessPaperCase();
+      const caseId = await ContestedCaseDataHelper.createAndProcessPaperCaseUpToProgressToListing(true);
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
     }
   );

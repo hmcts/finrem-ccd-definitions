@@ -25,7 +25,7 @@
     "PreConditionState(s)": "caseAdded;paperCaseAdded",
     "PostConditionState": "applicationSubmitted",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/assign-applicant-solicitor",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/pba-payment",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "0",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/payment-confirmation",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
@@ -397,7 +397,8 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/draft-order",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
+    "ShowEventNotes": "Y",
+    "FinancialRemedyReadOnlyEvent": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -953,7 +954,8 @@
     "SecurityClassification": "Public",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/general-application-refer-to-judge",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
   },
@@ -1163,7 +1165,7 @@
     "Name": "Manage Hearing Bundles",
     "Description": "Manage Hearing Bundles",
     "DisplayOrder": 134,
-    "PreConditionState(s)": "prepareForHearing;caseFileSubmitted;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;generalApplicationAwaitingJudiciaryResponse;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;generalApplication;generalApplicationOutcome",
+    "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
@@ -1502,5 +1504,21 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "28/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_manageExpressCase",
+    "Name": "Manage Express Case",
+    "Description": "Remove a case from the Express Pilot",
+    "DisplayOrder": 157,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "N"
   }
 ]

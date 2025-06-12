@@ -958,7 +958,7 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "propertyAdjutmentOrderDetailLabel",
+    "CaseFieldID": "propertyAdjustmentOrderDetailLabel",
     "TabFieldDisplayOrder": 4,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
@@ -3060,6 +3060,16 @@
     "TabFieldDisplayOrder": 1
   },
   {
+    "LiveFrom": "12/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "tabExpressCaseParticipation",
+    "TabFieldDisplayOrder": "0",
+    "FieldShowCondition": "expressCaseParticipation!=\"\""
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "gatekeepingTab",
@@ -3997,6 +4007,26 @@
     "TabFieldDisplayOrder": "96"
   },
   {
+    "LiveFrom": "03/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "tabJudgeAgreesCaseIsExpressLabel",
+    "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
+    "TabFieldDisplayOrder": "97"
+  },
+  {
+    "LiveFrom": "03/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "judgeAgreesCaseIsExpress",
+    "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
+    "TabFieldDisplayOrder": "98"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "gatekeepingTab",
@@ -4242,7 +4272,7 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "isUnreviewedDocumentPresent!=\"No\"",
+    "TabShowCondition": "isUnreviewedDocumentPresent=\"Yes\"",
     "TabFieldDisplayOrder": 2
   },
   {

@@ -1,15 +1,14 @@
 import { test } from '../../fixtures/fixtures'
 import config from '../../config/config';
-// NOTE: When we remove codecept tests, bring utils and test data into the playwright directory
-import { createCaseInCcd } from '../../../test/helpers/utils';
-import { consentedEvents } from '../../config/case_events';
+import { ConsentedEvents } from '../../config/case-data';
 import { paymentDetailsTabData } from '../../data/tab_content/payment_details_tabs';
+import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
 
 test(
     'Consented - Application Payment Submission',
     { tag: [] },
     async (
-      { 
+      {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
@@ -20,18 +19,21 @@ test(
         caseSubmissionPage
       },
     ) => {
-      const caseId = await createCaseInCcd(config.applicant_solicitor.email, config.applicant_solicitor.password, './playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json', 'FinancialRemedyMVP2', 'FR_solicitorCreate');
-      const pbaNumber = "PBA0000539";
+      // Create case
+      const caseId = await ConsentedCaseDataHelper.createConsentedCase();
+
+      // Define common test data
+      const pbaNumber = "PBA0089162";
       const reference = "Reference";
       const hasHelpWithFees = false;
-      
+
       // Login as caseworker
       await manageCaseDashboardPage.visit();
       await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
       await manageCaseDashboardPage.navigateToCase(caseId);
-  
-      // Application Payment Submission 
-      await caseDetailsPage.selectNextStep(consentedEvents.ApplicationPaymentSubmission); 
+
+      // Application Payment Submission
+      await caseDetailsPage.selectNextStep(ConsentedEvents.applicationPaymentSubmission);
       await solicitorAuthPage.enterSolicitorDetails("Bilbo Baggins", "Bag End", "Solicitor");
       await solicitorAuthPage.navigateContinue();
       await helpWithFeesPage.selectHelpWithFees(hasHelpWithFees);
@@ -42,9 +44,9 @@ test(
       await caseSubmissionPage.navigateContinue();
       await caseSubmissionPage.navigateSubmit();
       await caseSubmissionPage.returnToCaseDetails();
-      await caseDetailsPage.checkHasBeenUpdated(consentedEvents.ApplicationPaymentSubmission.listItem);
-      
-      // Assert Tab Data      
+      await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.applicationPaymentSubmission.listItem);
+
+      // Assert Tab Data
       await caseDetailsPage.assertTabData(paymentDetailsTabData(hasHelpWithFees, pbaNumber, reference));
     }
 );

@@ -35,15 +35,12 @@ const {issueApplication, getCaseRefFromScreen} = require('./pages/issue-applicat
 const {childrenDetails} = require('./pages/children-details/children-details');
 const {allocateJudge} = require('./pages/allocate-judge/allocate-judge');
 const {uploadCaseFiles} = require('./pages/upload-case-files/upload-case-files');
-const {manageConfidentialDocuments} = require('./pages/manage-confidential-documents/manage-confidential-documents');
 const {progressToListing} = require('./pages/progress-to-listing/progress-to-listing');
 const {listForHearing} = require('./pages/list-for-hearing/list-for-hearing');
 const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-reference');
 const {giveAllocationDirection} = require('./pages/give-allocation-direction/give-allocation-direction');
-const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
 const {manageIntervenersAdd} = require('./pages/manage-interveners/manage-interveners-add');
 const {manageIntervenersRemove} = require('./pages/manage-interveners/manage-interveners-remove');
-const {addNote} = require('./pages/add-note/add-note');
 const {refundCase} = require('./pages/refund-case/refund-case');
 const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-order');
 const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-approve');
@@ -177,19 +174,16 @@ module.exports = () => {
     contestedNatureOfApplicationForSchedule1,
     allocateJudge,
     uploadCaseFiles,
-    manageConfidentialDocuments,
     verifyContestedConfidentialTabData,
     progressToListing,
     listForHearing,
     getCaseRefFromScreen,
     enterCaseReference,
     giveAllocationDirection,
-    updateContactDetails,
     manageIntervenersAdd,
     manageIntervenersRemove,
     contestedIntervenersTab,
     refundCase,
-    addNote,
     manageBarristerApplicant,
     manageBarristerRespondent,
     schedule1Tab,
