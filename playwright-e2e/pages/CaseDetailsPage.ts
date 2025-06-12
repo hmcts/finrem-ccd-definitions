@@ -115,6 +115,21 @@ export class CaseDetailsPage {
         return this.page.getByRole('tab', { name: tabName, exact: true });
     }
 
+    /**
+     * Returns the `Locator` for the nth visible element matching the given text content.
+     *
+     * @param content - The exact text to match in the DOM.
+     * @param position - The zero-based index of the visible element to return (default is 0).
+     * @returns A Playwright `Locator` for the requested visible element.
+     * @throws Error if no visible element is found at the specified position.
+     *
+     * Logic:
+     * 1. Finds all elements matching the exact text.
+     * 2. If only one match and position is 0, returns it directly.
+     * 3. Otherwise, iterates through all matches, counting only those that are visible.
+     * 4. Returns the element at the requested visible position.
+     * 5. Throws an error if the requested visible position does not exist.
+     */
     private async getVisibleTabContent(content: string, position: number = 0): Promise<Locator> {
         const locator = this.page.getByText(content, { exact: true });
         const count = await locator.count();
@@ -123,10 +138,14 @@ export class CaseDetailsPage {
             return locator;
         }
 
+        let visibleIndex = 0;
         for (let i = 0; i < count; i++) {
             const element = locator.nth(i);
-            if (await element.isVisible() && i === position) {
-                return element;
+            if (await element.isVisible()) {
+                if (visibleIndex === position) {
+                    return element;
+                }
+                visibleIndex++;
             }
         }
         throw new Error(`No visible element found for content: ${content} at position: ${position}`);
