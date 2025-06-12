@@ -1,0 +1,23 @@
+{
+    "authorisationName": "test",
+    "authorisationFirm": "test",
+    "authorisation2b": "test",
+    "authorisation3": "2025-06-03",
+    "helpWithFeesQuestion": "Yes",
+    "HWFNumber": "HWF1234",
+    "amountToPay": "6000",
+    "orderSummary": {
+      "PaymentReference": "null",
+      "PaymentTotal": "6000",
+      "Fees": [
+        {
+          "value": {
+            "FeeCode": "FEE0228",
+            "FeeAmount": "6000",
+            "FeeDescription": "Application (without notice)",
+            "FeeVersion": "5"
+          }
+        }
+      ]
+    }
+  }
