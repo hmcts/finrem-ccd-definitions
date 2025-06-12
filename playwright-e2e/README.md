@@ -17,25 +17,27 @@ It is also recommend to utilise the [Playwright VSCode](https://marketplace.visu
 
 ```sh
 |- playwright-e2e
+|-|- config # Essential settings and constants for the framework, such as user credentials and URLs.
+
+|-|- data-utils #Contains all the tests data construction utilities 
+|-|-|- factory # Contains case data factories for constructing test case data (Spit between Consented and Contested, the factories call CaseDataBuilder and iteratively make calls to respective EventApi to progress a case to the desired state). A factory method should always create a case and return the case_id of the constructed case.
+|-|-|- api # Contains API interaction classes ConsentedEventApi, and ContestedEventApi which leverage the CcdApi to construct and send payloads to trigger case events.
+
 |-|- fixtures # With fixtures, you can group tests based on their meaning, instead of their common setup.
+
 |-|- pages # Where to keep page classes with respective locators and methods. We utilise POM (Page Object Modeling).
-|-|-|- <Folder of journey specific pages i.e. 'FR_amend_application'> # Pages are collected by the journey in which they are contained, this can be shared across Contested and Consented where appropriate. 
+|-|-|- <Folder of journey specific pages i.e. 'FR_amend_application'> # Pages are collected by the journey in which they are contained, this can be shared across Contested and Consented where appropriate.
+|-|-|- BaseJourneyPage.ts # All journey pages inherit from the abstract BaseJourneyPage, which defines common behaviours across pages. 
 |-|-|- helpers # Common functionality between pages such as adding addresses is abstracted to helper classes, that can then be injected into page constructors at a fixture level. 
-|-|-|- BaseJourneyPage.ts # All pages inherit from the abstract BaseJourneyPage, which defines common behaviours across all pages. 
-|-|- data #Mock data to facilitate tests 
 
-|-|- Functional # Here is where you can do your test magic. 🧙‍♂️
-|-|- config.ts # essential settings for the framework, such as user credentials and URLs.
+|-|- resources # Contains static resources such as JSON files, test documents, static content assertion templates, or other assets used in tests.
 
- playwright.config.ts # This sits outside playwright-e2e folder, but is the config file for playwright only tests.
- .env # This sits outside playwright-e2e folder, this is required to run your tests locally. See Setup Environment Variables below.
-```
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+|-|- test # Contains all test files organized by case type and functionality.
+|-|-|- contested i.e. 'FR_amend_application' # Contains tests for contested cases, collected by event.
+|-|-|- consented # Contains tests for consented cases.
+
+ playwright.config.ts # This sits outside the playwright-e2e folder, but is the config file for Playwright-only tests.
+ .env # This sits outside the playwright-e2e folder, and is required to run your tests locally. See Setup Environment Variables below.
 ```
 
 ## 🔐 Setup Environment Variables
