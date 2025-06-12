@@ -52,9 +52,9 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     this.checkConfidentialityLabel = page.getByText("Is the document confidential?");
     this.checkConfidentialDocumentTabLabel = page.getByText("Document will be placed in the confidential documents tab visible to caseworkers and judges only");
     this.checkConfidentialOneLabel = page.getByText("‘Confidential’ should only be selected for documents that you would never want to share with another party, for example a Form C8 for confidential address, or documents relating to a lock and key cases etc.");
-    this.checkConfidentialTwoLabel = page.getByText("Do not use the confidential option to upload a document that you later intend to share as once confidential you will not be able to share it.,");
+    this.checkConfidentialTwoLabel = page.getByText("Do not use the confidential option to upload a document that you later intend to share as once confidential you will not be able to share it.");
     this.checkConfidentialThreeLabel = page.getByText("Do not select confidential if you are only waiting to exchange documents.");
-    this.checkConfidentialFourLabel = page.getByText("Parties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.,");
+    this.checkConfidentialFourLabel = page.getByText("Parties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.");
     this.uploadError = page.getByText('Select or fill the required', { exact: false });
     this.summaryUploadLabel = page.getByText('Please upload any case documents');
     this.summaryUploadedFileLink = page.getByRole('link', { name: 'test.docx' }); 
