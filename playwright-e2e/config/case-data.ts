@@ -164,6 +164,8 @@ export const ContestedEvents: Record<string, CaseEvent> = {
 export const PayloadPath = {
   Consented: {
     base: "./playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json",
+    applicationPaymentSubmission: "./playwright-e2e/data/payload/consented/solicitor/case-submission.json",
+    issueApplication: "./playwright-e2e/data/payload/consented/caseworker/issue-application.json",
     createFlag: "./playwright-e2e/data/payload/consented/caseworker/create-flag.json"
   },
   Contested: {
