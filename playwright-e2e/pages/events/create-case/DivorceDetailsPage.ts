@@ -1,7 +1,7 @@
 import { type Page, Locator, expect } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
-import {DateHelper} from "../../../functional/helpers/DateHelper.ts";
+import { DateHelper } from "../../../data-utils/DateHelper.ts";
 
 export class DivorceDetailsPage extends BaseJourneyPage {
 

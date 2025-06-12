@@ -1,10 +1,12 @@
-import { test } from '../../../fixtures/fixtures';
-import config from '../../../config/config';
-import { ContestedEvents } from '../../../config/case-data';
-import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { contestedUpdateContactDetailsTabData } from '../../../data/tab_content/contested/contested_update_contact_details_caseworker_tabs';
-import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDataHelper';
-import { contestedUpdateContactDetailsTableData } from "../../../data/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts";
+import { test } from '../../../fixtures/fixtures.ts';
+import config from '../../../config/config.ts';
+import { ContestedEvents } from '../../../config/case-data.ts';
+import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
+import { contestedUpdateContactDetailsTableData } from "../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts";
+import {ContestedCaseFactory} from "../../../data-utils/factory/contested/ContestedCaseFactory.ts";
+import {
+    contestedUpdateContactDetailsTabData
+} from "../../../resources/tab_content/contested/contested_update_contact_details_caseworker_tabs.ts";
 
 test(
     'Contested - Update Contact Details as a caseworker',
@@ -20,7 +22,7 @@ test(
       }) => {
         
         // Create case and progress to HWF decision made
-        const caseId = await ContestedCaseDataHelper.createContestedCaseUpToHWFDecision();
+        const caseId = await ContestedCaseFactory.createContestedCaseUpToHWFDecision();
 
         const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
         const respondentInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;

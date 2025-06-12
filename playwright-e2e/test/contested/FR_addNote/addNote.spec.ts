@@ -1,9 +1,9 @@
-import {test} from "../../../fixtures/fixtures.ts";
+import { test } from "../../../fixtures/fixtures.ts";
 import config from "../../../config/config.ts";
-import {ContestedCaseDataHelper} from "../../helpers/Contested/ContestedCaseDataHelper.ts";
-import {ContestedEvents} from "../../../config/case-data.ts";
-import {notesTabData} from "../../../data/tab_content/common-tabs/notes_tabs.ts";
-import {DateHelper} from "../../helpers/DateHelper.ts";
+import { ContestedEvents } from "../../../config/case-data.ts";
+import { ContestedCaseFactory } from "../../../data-utils/factory/contested/ContestedCaseFactory.ts";
+import { notesTabData } from "../../../resources/tab_content/common-tabs/notes_tabs.ts";
+import { DateHelper } from "../../../data-utils/DateHelper.ts";
 
 test(
     'Contested - Add Note - Assert validations',
@@ -14,7 +14,7 @@ test(
         await manageCaseDashboardPage.visit();
         await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
 
-        const caseId = await ContestedCaseDataHelper.createAndProcessFormACaseUpToIssueApplication();
+        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
         // Navigate to case
         await manageCaseDashboardPage.navigateToCase(caseId);
@@ -45,5 +45,4 @@ test(
         await addNotePage.navigateSubmit();
         await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.addNotes.listItem);
         await caseDetailsPage.assertTabData(notesTabData(DateHelper.getTodayFormattedDate()))
-
 })

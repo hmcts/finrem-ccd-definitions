@@ -128,9 +128,6 @@ export class CcdApi {
         "Content-Type": "application/json",
       },
     });
-
-    console.info("Successfully saved case");
-    return response;
   }
 
   async createCaseInCcd(
