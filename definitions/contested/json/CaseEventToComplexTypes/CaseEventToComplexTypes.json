@@ -5412,14 +5412,6 @@
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "28/05/2025",
-    "ID": "FR_approveOrdersToExtraReportFieldsInput",
-    "CaseEventID": "FR_approveOrders",
-    "CaseFieldID": "extraReportFieldsInput",
-    "ListElementCode": "orderApprovedDate",
-    "DisplayContext": "MANDATORY"
-  },
-  {
     "LiveFrom": "27/12/2024",
     "ID": "FR_directionOrderToUnprocessedApprovedDocuments",
     "CaseEventID": "FR_directionOrder",
