@@ -7,7 +7,7 @@ import { ContestedCaseDataHelper } from '../../helpers/Contested/ContestedCaseDa
 import { contestedUpdateContactDetailsTableData } from "../../../data/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts";
 
 test(
-    'Contested - Update Contact Details as a caseworker',
+    'Contested - Update Contact Details as a caseworker @test',
     { tag: [] },
     async (
       {
