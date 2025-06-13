@@ -2,7 +2,6 @@ import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import { YesNoRadioEnum } from "../../helpers/enums/RadioEnums";
-import { PayloadHelper } from '../../../functional/helpers/Contested/ContestedPayloadHelper';
 
 export class ListForInterimHearingPage extends BaseJourneyPage {
     private readonly courtRegion: string = 'Midlands'
@@ -83,7 +82,7 @@ export class ListForInterimHearingPage extends BaseJourneyPage {
     async uploadOtherDocuments(hearing_position: number, docFilename: string) {
         const uploadOtherDocumentFiles = this.page.locator(`#interimHearingsScreenField_${hearing_position}_interimUploadAdditionalDocument`);
         await expect(uploadOtherDocumentFiles).toBeVisible();
-        const filePayload = await PayloadHelper.createAliasPDFPayload('./playwright-e2e/data/test.pdf', docFilename);
+        const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', docFilename);
         await uploadOtherDocumentFiles.setInputFiles(filePayload);
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }

@@ -1,8 +1,8 @@
 import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
-import { DocumentHelper } from '../../../functional/helpers/DocumentHelper';
 import { YesNoRadioEnum } from '../../helpers/enums/RadioEnums';
+import { DocumentHelper } from '../../../data-utils/DocumentHelper';
 
 export class UploadDraftOrdersPage extends BaseJourneyPage {
     private readonly kindOfDraftOrderToUploadRadio: Locator;
@@ -60,7 +60,7 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
     async uploadDraftOrder(caseId: string) {
         await expect(this.firstDraftOrderDocUpload).toBeVisible();
         await DocumentHelper.createDraftOrderDocument(caseId);
-        await this.firstDraftOrderDocUpload.setInputFiles('./playwright-e2e/data/files_built_by_tests/upload-draft-order/agreed-draft-order-document.docx');
+        await this.firstDraftOrderDocUpload.setInputFiles('./playwright-e2e/resources/files_built_by_tests/upload-draft-order/agreed-draft-order-document.docx');
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 }

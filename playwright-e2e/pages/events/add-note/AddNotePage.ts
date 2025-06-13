@@ -1,6 +1,6 @@
-import {BaseJourneyPage} from "../../BaseJourneyPage.ts";
-import {expect, Locator, Page} from "@playwright/test";
-import {DateHelper} from "../../../functional/helpers/DateHelper.ts";
+import { BaseJourneyPage } from "../../BaseJourneyPage.ts";
+import { expect, Locator, Page } from "@playwright/test";
+import { DateHelper } from "../../../data-utils/DateHelper.ts";
 
 export class AddNotePage extends BaseJourneyPage {
     private readonly addNoteTitle: Locator;

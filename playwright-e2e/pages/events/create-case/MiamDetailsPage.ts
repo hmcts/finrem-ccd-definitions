@@ -36,12 +36,12 @@ export class MiamDetailsPage extends BaseJourneyPage {
     }
 
     async uploadMiamDoc(){
-        await this.miamDocUpload.setInputFiles('./playwright-e2e/data/MIAM.pdf');
+        await this.miamDocUpload.setInputFiles('./playwright-e2e/resources/file/MIAM.pdf');
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 
     async uploadMiamDocPaperCase(){
-        await this.miamDocUploadPaperCase.setInputFiles('./playwright-e2e/data/MIAM.pdf');
+        await this.miamDocUploadPaperCase.setInputFiles('./playwright-e2e/resources/file/MIAM.pdf');
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 }
