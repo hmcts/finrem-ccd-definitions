@@ -16,31 +16,24 @@ export default defineConfig({
   projects: [
     {
       ...ProjectsConfig.chrome,
-      dependencies: ["setup"],
     },
     {
       ...ProjectsConfig.chromium,
-      dependencies: ["setup"],
     },
     {
       ...ProjectsConfig.edge,
-      dependencies: ["setup"],
     },
     {
       ...ProjectsConfig.firefox,
-      dependencies: ["setup"],
     },
     {
       ...ProjectsConfig.webkit,
-      dependencies: ["setup"],
     },
     {
       ...ProjectsConfig.tabletChrome,
-      dependencies: ["setup"],
     },
     {
       ...ProjectsConfig.tabletWebkit,
-      dependencies: ["setup"],
     },
   ],
 });
