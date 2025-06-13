@@ -15,8 +15,8 @@
     "TabID": "manageHearings-applicant",
     "TabLabel": "Hearings",
     "TabDisplayOrder": 4,
-    "CaseFieldID": "hearingTabItems",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CaseFieldID": "applicantHearingTabItems",
+    "UserRole": "[APPSOLICITOR]",
     "TabFieldDisplayOrder": 1
   }, 
   {
@@ -25,8 +25,8 @@
     "TabID": "manageHearings-respondent",
     "TabLabel": "Hearings",
     "TabDisplayOrder": 4,
-    "CaseFieldID": "hearingTabItems",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CaseFieldID": "respondentHearingTabItems",
+    "UserRole": "[RESPSOLICITOR]",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -35,8 +35,8 @@
     "TabID": "manageHearings-int1",
     "TabLabel": "Hearings",
     "TabDisplayOrder": 4,
-    "CaseFieldID": "hearingTabItems",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CaseFieldID": "int1HearingTabItems",
+    "UserRole": "[INTVRSOLICITOR1]",
     "TabFieldDisplayOrder": 1
   }, 
   {
@@ -45,8 +45,8 @@
     "TabID": "manageHearings-int2",
     "TabLabel": "Hearings",
     "TabDisplayOrder": 4,
-    "CaseFieldID": "hearingTabItems",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CaseFieldID": "int2HearingTabItems",
+    "UserRole": "[INTVRSOLICITOR2]",
     "TabFieldDisplayOrder": 1
   }, 
   {
@@ -55,8 +55,8 @@
     "TabID": "manageHearings-int3",
     "TabLabel": "Hearings",
     "TabDisplayOrder": 4,
-    "CaseFieldID": "hearingTabItems",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CaseFieldID": "int3HearingTabItems",
+    "UserRole": "[INTVRSOLICITOR3]",
     "TabFieldDisplayOrder": 1
   }, 
   {
@@ -65,8 +65,8 @@
     "TabID": "manageHearings-int4",
     "TabLabel": "Hearings",
     "TabDisplayOrder": 4,
-    "CaseFieldID": "hearingTabItems",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CaseFieldID": "int4HearingTabItems",
+    "UserRole": "[INTVRSOLICITOR4]",
     "TabFieldDisplayOrder": 1
   }
 ]
