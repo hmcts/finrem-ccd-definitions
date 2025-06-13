@@ -138,7 +138,9 @@ export class CcdApi {
       eventId: string,
       dataModifications: ReplacementAction[] = []
   ): Promise<string> {
-    console.info("Creating CCD case with event %s...", eventId);
+    if (!process.env.CI) {
+      console.info("Creating CCD case with event %s...", eventId);
+    }
     const authToken = await this.getUserToken(userName, password);
     const userId = await this.getUserId(authToken);
     const serviceToken = await this.getServiceToken();
@@ -181,7 +183,7 @@ export class CcdApi {
         payload
     );
     const caseId = saveCaseResponse.data.id;
-    console.info("Created case with id %s", caseId);
+    console.info("Created case with id %s for event %s", caseId, eventId);
 
     return caseId;
   }
@@ -195,7 +197,9 @@ export class CcdApi {
       dataLocation: string,
       replacements: ReplacementAction[] = []
   ): Promise<any> {
-    console.info("Updating CCD case id %s with event %s...", caseId, eventId);
+    if (!process.env.CI) {
+      console.info("Updating CCD case id %s with event %s...", caseId, eventId);
+    }
 
     const authToken = await this.getUserToken(userName, password);
     const userId = await this.getUserId(authToken);
@@ -242,7 +246,9 @@ export class CcdApi {
         serviceToken,
         payload
     );
-    console.info("Updated case with id %s and event %s", caseId, eventId);
+    if (!process.env.CI) {
+      console.info("Updated case with id %s and event %s", caseId, eventId);
+    }
     return saveCaseResponse?.data;
   }
 
@@ -267,7 +273,9 @@ export class CcdApi {
       jsonObject: any,
       shareCaseRef?: string
   ): Promise<any> {
-    console.info("Updating CCD case id %s with event %s (from JSON object)...", caseId, eventId);
+    if (!process.env.CI) {
+      console.info("Updating CCD case id %s with event %s (from JSON object)...", caseId, eventId);
+    }
 
     const authToken = await this.getUserToken(userName, password);
     const userId = await this.getUserId(authToken);
@@ -304,8 +312,9 @@ export class CcdApi {
         serviceToken,
         payload
     );
-
-    console.info("Updated case with id %s and event %s", caseId, eventId);
+    if (!process.env.CI) {
+      console.info("Updated case with id %s and event %s", caseId, eventId);
+    }
     return saveCaseResponse.data;
   }
 
