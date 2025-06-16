@@ -166,33 +166,37 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   addNotes: CommonEvents.addNotes
 };
 
-// Payload Paths
 export const PayloadPath = {
   Consented: {
-    base: "./playwright-e2e/data/case_data/consented/ccd-consented-case-creation.json",
-    applicationPaymentSubmission: "./playwright-e2e/data/payload/consented/solicitor/case-submission.json",
-    issueApplication: "./playwright-e2e/data/payload/consented/caseworker/issue-application.json",
-    createFlag: "./playwright-e2e/data/payload/consented/caseworker/create-flag.json"
+    // base case data
+    base: "./playwright-e2e/resources/case_data/consented/ccd-consented-case-creation.json",
+
+    // Payload Submissions
+    applicationPaymentSubmission: "./playwright-e2e/resources/payload/consented/solicitor/case-submission.json",
+    issueApplication: "./playwright-e2e/resources/payload/consented/caseworker/issue-application.json",
+    createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json"
   },
   Contested: {
-    base: "./playwright-e2e/data/case_data/contested/ccd-contested-case-creation.json",
-    formA: "./playwright-e2e/data/payload/contested/forma/ccd-contested-base.json",
-    formASubmit: "./playwright-e2e/data/payload/contested/solicitor/case-submission.json",
-    paper: "./playwright-e2e/data/payload/contested/paper_case/ccd-contested-base.json",
-    schedule1: "./playwright-e2e/data/payload/contested/solicitor/schedule1-create-case.json",
-    hwfPayment: "./playwright-e2e/data/payload/contested/caseworker/HWF-payment.json",
-    hwfDecisionMade: "./playwright-e2e/data/payload/contested/caseworker/HWF-application-accepted.json",
-    manualPayment: "./playwright-e2e/data/payload/contested/caseworker/manual-payment.json",
-    issueApplication: "./playwright-e2e/data/payload/contested/caseworker/issue-application.json",
-    refugePaperCase: "./playwright-e2e/data/payload/contested/paper_case/ccd-contested-refuge-applicant.json",
-    progressToListing: "./playwright-e2e/data/payload/contested/caseworker/progress-to-listing.json",
-    generalApplicationCreate: "./playwright-e2e/data/payload/contested/caseworker/create-general-application/sender-is-applicant.json",
-    referToJudgeEmailIsNull: "./playwright-e2e/data/payload/contested/caseworker/refer-to-judge/judge-email-is-null.json",
-    generalApplicationOutcomeOther: "./playwright-e2e/data/payload/contested/caseworker/general-application-outcome/outcome-is-other.json",
-    generalApplicationOldHearingRequiredYes: "./playwright-e2e/data/payload/contested/caseworker/general-application-directions/old-style-hearing-required-yes.json",
-    listForHearingFdaEgOne: "./playwright-e2e/data/payload/contested/caseworker/list-for-hearing/fda-example-one.json",
-    judiciaryBasicApproveOrders: "./playwright-e2e/data/payload/contested/judiciary/most-basic-approve-orders.json",
-    processOrderBasicTwoHearing: "./playwright-e2e/data/payload/contested/caseworker/process-order/basic-two-hearing.json",
-    createFlag: "./playwright-e2e/data/payload/consented/caseworker/create-flag.json"
+    // Base case data
+    formA: "./playwright-e2e/resources/case_data/contested/forma/ccd-contested-base.json",
+    paper: "./playwright-e2e/resources/case_data/contested/paper_case/ccd-contested-base.json",
+    refugePaperCase: "./playwright-e2e/resources/case_data/contested/paper_case/ccd-contested-refuge-applicant.json",
+
+    // Payload submissions
+    formASubmit: "./playwright-e2e/resources/payload/contested/solicitor/case-submission.json",
+    schedule1: "./playwright-e2e/resources/payload/contested/solicitor/schedule1-create-case.json",
+    hwfPayment: "./playwright-e2e/resources/payload/contested/caseworker/HWF-payment.json",
+    hwfDecisionMade: "./playwright-e2e/resources/payload/contested/caseworker/HWF-application-accepted.json",
+    manualPayment: "./playwright-e2e/resources/payload/contested/caseworker/manual-payment.json",
+    issueApplication: "./playwright-e2e/resources/payload/contested/caseworker/issue-application.json",
+    progressToListing: "./playwright-e2e/resources/payload/contested/caseworker/progress-to-listing.json",
+    generalApplicationCreate: "./playwright-e2e/resources/payload/contested/caseworker/create-general-application/sender-is-applicant.json",
+    referToJudgeEmailIsNull: "./playwright-e2e/resources/payload/contested/caseworker/refer-to-judge/judge-email-is-null.json",
+    generalApplicationOutcomeOther: "./playwright-e2e/resources/payload/contested/caseworker/general-application-outcome/outcome-is-other.json",
+    generalApplicationOldHearingRequiredYes: "./playwright-e2e/resources/payload/contested/caseworker/general-application-directions/old-style-hearing-required-yes.json",
+    listForHearingFdaEgOne: "./playwright-e2e/resources/payload/contested/caseworker/list-for-hearing/fda-example-one.json",
+    judiciaryBasicApproveOrders: "./playwright-e2e/resources/payload/contested/judiciary/most-basic-approve-orders.json",
+    processOrderBasicTwoHearing: "./playwright-e2e/resources/payload/contested/caseworker/process-order/basic-two-hearing.json",
+    createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json"
   }
 } as const;
