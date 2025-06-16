@@ -5,6 +5,7 @@ import { YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums';
 import { updateContactDetailsTabData } from '../../data/tab_content/consented/update_contact_details_caseworker_tabs';
 import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
 import { consentedUpdateContactDetailsTableData } from '../../data/check_your_answer_content/update_contact_details/consentedUpdateContactDetailsTable';
+import { updateRepresentedContactDetailsTabData } from '../../data/tab_content/consented/update_contact_details_represented';
 
 test(
     'Consented - Update contact details',
@@ -60,7 +61,6 @@ test(
         manageCaseDashboardPage,
         caseDetailsPage,
         updateContactDetailsPage,
-        createCaseCheckYourAnswersPage,
         checkYourAnswersPage
       }) => {
       // Create case and progress to HWF decision made
@@ -84,8 +84,10 @@ test(
       //Continue about to submit and check your answers
       await checkYourAnswersPage.assertCheckYourAnswersPage(consentedUpdateContactDetailsTableData);
       await updateContactDetailsPage.navigateSubmit();
-      //check applicant tab info is correct
-      // check solicitor tab info is correct
+      await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.updateContactDetails.listItem);
+
+      // Assert tab data
+      await caseDetailsPage.assertTabData(updateRepresentedContactDetailsTabData);
       }
 );
 
