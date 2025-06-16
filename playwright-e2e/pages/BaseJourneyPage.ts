@@ -224,4 +224,17 @@ export abstract class BaseJourneyPage {
         await expect(removeDocumentConfirmButton).toBeEnabled();
         await removeDocumentConfirmButton.click();
     }
+
+    /**
+     * Asserts that the dropdown contains the expected options.
+     *
+     * @param options - The expected list of option strings.
+     * @param dropDownLocator - The Playwright Locator for the dropdown element.
+     */
+    async assertDropDownOptionsAreVisible(options: string[], dropDownLocator: Locator) {
+        await expect(dropDownLocator).toBeVisible();
+        const optionsInDropDown = (await dropDownLocator.locator('option').allTextContents())
+            .filter(opt => opt.trim() !== '--Select a value--');
+        expect(optionsInDropDown.sort()).toEqual(options.sort());
+    }
 }
