@@ -61,10 +61,14 @@ test(
         manageCaseDashboardPage,
         caseDetailsPage,
         updateContactDetailsPage,
+        createCaseCheckYourAnswersPage,
         checkYourAnswersPage
       }) => {
       // Create case and progress to HWF decision made
       const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToHWFDecision();
+
+      const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
+      const respondentInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
 
       // Login as caseworker
       await manageCaseDashboardPage.visit();
@@ -88,6 +92,26 @@ test(
 
       // Assert tab data
       await caseDetailsPage.assertTabData(updateRepresentedContactDetailsTabData);
+      
+      // Update contact details and make applicant not represented
+      await caseDetailsPage.selectNextStep(ConsentedEvents.updateContactDetails);
+      await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(false);
+      await updateContactDetailsPage.navigateContinue();
+      await updateContactDetailsPage.navigateContinue();
+      await updateContactDetailsPage.selectApplicantInRefuge(true);
+      await updateContactDetailsPage.navigateContinue();
+      await updateContactDetailsPage.navigateContinue();
+      await updateContactDetailsPage.selectRespondentInRefuge(true);
+      await updateContactDetailsPage.navigateContinue();
+
+      //Continue about to submit and check your answers
+      await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
+      await createCaseCheckYourAnswersPage.checkRespondentInRefugeQuestion(respondentInRefuge);
+      await createCaseCheckYourAnswersPage.navigateSubmit();
+      await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.updateContactDetails.listItem);
+
+      // Assert tab data
+      await caseDetailsPage.assertTabData(updateContactDetailsTabData);
       }
 );
 
