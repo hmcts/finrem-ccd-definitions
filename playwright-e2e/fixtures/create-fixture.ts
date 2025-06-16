@@ -54,6 +54,7 @@ import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/Uploa
 import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
 import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
 import { CheckYourAnswersPage } from '../pages/helpers/CheckYourAnswersPage';
+import {AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -111,6 +112,7 @@ type CreateFixtures = {
   manageCaseDocumentsPage: ManageCaseDocumentsPage;
   manageHearingPage: ManageHearingPage;
   checkYourAnswersPage: CheckYourAnswersPage;
+  addNotePage: AddNotePage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -269,5 +271,8 @@ export const test = base.extend<CreateFixtures>({
   },
   checkYourAnswersPage: async ({ page }, use) => {
     await use(new CheckYourAnswersPage(page));
+  },
+  addNotePage: async ({ page }, use) => {
+    await use(new AddNotePage(page));
   }
 });
