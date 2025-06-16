@@ -5,13 +5,13 @@ import { defineConfig } from "@playwright/test";
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  ...CommonConfig.recommended,
   testDir: './playwright-e2e',
+  testMatch:'*spec.ts',
   snapshotDir: "./playwright-e2e/snapshots",
   retries: process.env.CI ? 3 : 3,
   expect: { timeout: 180_000 }, // 3 minutes
   timeout: 5*60*1000, //each test execution time is set to 5 min
-  workers: process.env.CI ? 2 : undefined,
-  ...CommonConfig.recommended,
 
   projects: [
     {
