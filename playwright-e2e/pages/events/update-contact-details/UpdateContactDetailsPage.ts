@@ -15,6 +15,12 @@ export class UpdateContactDetailsPage extends BaseJourneyPage {
     private readonly solicitorNameDetails: Locator;
     private readonly applicantFirstNameDetails: Locator;
     private readonly checkApplicantFirstNameLabel: Locator;
+    private readonly yesRadio: Locator;
+    private readonly noRadio: Locator;
+    private readonly addressPostcode: Locator;
+    private readonly checkAddressLabel: Locator;
+    private readonly findAddressButton: Locator;
+    private readonly addressDropdown: Locator;
 
     public constructor(page: Page) {
         super(page);
@@ -31,6 +37,14 @@ export class UpdateContactDetailsPage extends BaseJourneyPage {
         this.solicitorNameDetails = page.locator('#solicitorName');
         this.checkApplicantFirstNameLabel = page.getByText('Current First and Middle names');
         this.applicantFirstNameDetails = page.locator('#applicantFMName');
+
+        this.yesRadio = page.getByRole('radio', { name: 'Yes' });
+        this.noRadio = page.getByRole('radio', { name: 'No' });
+
+        this.checkAddressLabel = page.getByLabel('Enter a UK postcode');
+        this.addressPostcode = page.locator('#respondentAddress_respondentAddress_postcodeInput');
+        this.findAddressButton = page.locator('button.button.button-30');
+        this.addressDropdown = page.locator('#respondentAddress_respondentAddress_addressList');
     }
 
     async selectUpdateIncludesRepresentativeChange(isUpdateIncludesRepresentativeChange: Boolean){
@@ -59,14 +73,30 @@ export class UpdateContactDetailsPage extends BaseJourneyPage {
         await optionToSelect.check();
     }
     async checkApplicantRepresented(isConfidential: boolean) {
-    await (isConfidential ? this.applicantRadio : this.respondentRadio).check(); 
-  }
+        await (isConfidential ? this.applicantRadio : this.respondentRadio).check(); 
+    }
     async specifySolicitorName(text: string) {
-    await expect(this.checkSolicitorNameLabel).toBeVisible();
-    await this.solicitorNameDetails.fill(text);
-  }
+        await expect(this.checkSolicitorNameLabel).toBeVisible();
+        await this.solicitorNameDetails.fill(text);
+    }
     async specifyApplicantFirstName(text: string) {
-    await expect(this.checkApplicantFirstNameLabel).toBeVisible();
-    await this.applicantFirstNameDetails.fill(text);
-  }
+        await expect(this.checkApplicantFirstNameLabel).toBeVisible();
+        await this.applicantFirstNameDetails.fill(text);
+    }
+    async checkRespondentRepresented(isConfidential: boolean) {
+        await (isConfidential ? this.applicantRadio : this.respondentRadio).check(); 
+    }
+       async checkRepresentation(isConfidential: boolean) {
+        await (isConfidential ? this.yesRadio : this.noRadio).check(); 
+    }
+        async enterAddress(text: string) {
+        await expect(this.checkAddressLabel).toBeVisible();
+        await this.addressPostcode.fill(text);
+    }
+    async clickFindAddressButton(): Promise<void> {
+       await this.findAddressButton.click();
+    }
+    async selectAddress(address: string): Promise<void> {
+        await this.addressDropdown.selectOption({ label: address });
+    }
 }

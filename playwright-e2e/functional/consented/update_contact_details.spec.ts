@@ -6,6 +6,8 @@ import { updateContactDetailsTabData } from '../../data/tab_content/consented/up
 import { ConsentedCaseDataHelper } from '../helpers/Consented/ConsentedCaseDataHelper';
 import { consentedUpdateContactDetailsTableData } from '../../data/check_your_answer_content/update_contact_details/consentedUpdateContactDetailsTable';
 import { updateRepresentedContactDetailsTabData } from '../../data/tab_content/consented/update_contact_details_represented';
+import { updateContactDetailsNotRepresentedTable } from '../../data/check_your_answer_content/update_contact_details/updateContactDetailsNotRepresentedTable';
+import { updateNonRepresentedContactDetailsTabData } from '../../data/tab_content/consented/update_contact_details_not_represented';
 
 test(
     'Consented - Update contact details',
@@ -95,23 +97,24 @@ test(
       
       // Update contact details and make applicant not represented
       await caseDetailsPage.selectNextStep(ConsentedEvents.updateContactDetails);
-      await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(false);
+      await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(true);
+      await updateContactDetailsPage.checkRespondentRepresented(false);
       await updateContactDetailsPage.navigateContinue();
+      await updateContactDetailsPage.checkRepresentation(false);
       await updateContactDetailsPage.navigateContinue();
-      await updateContactDetailsPage.selectApplicantInRefuge(true);
-      await updateContactDetailsPage.navigateContinue();
-      await updateContactDetailsPage.navigateContinue();
+      await updateContactDetailsPage.enterAddress('NW2 7NE');
+      await updateContactDetailsPage.clickFindAddressButton();
+      await updateContactDetailsPage.selectAddress('10 Selsdon Road, London');
       await updateContactDetailsPage.selectRespondentInRefuge(true);
       await updateContactDetailsPage.navigateContinue();
 
       //Continue about to submit and check your answers
-      await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
-      await createCaseCheckYourAnswersPage.checkRespondentInRefugeQuestion(respondentInRefuge);
-      await createCaseCheckYourAnswersPage.navigateSubmit();
+      await checkYourAnswersPage.assertCheckYourAnswersPage(updateContactDetailsNotRepresentedTable);
+      await updateContactDetailsPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.updateContactDetails.listItem);
 
       // Assert tab data
-      await caseDetailsPage.assertTabData(updateContactDetailsTabData);
+      await caseDetailsPage.assertTabData(updateNonRepresentedContactDetailsTabData);
       }
 );
 
