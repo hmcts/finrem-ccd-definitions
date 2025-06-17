@@ -20,7 +20,7 @@ export const updateNonRepresentedContactDetailsTabData = [
       "RESPONDENT DETAILS",
       { tabItem: "Current First and Middle names", value: "Smeagol" },
       { tabItem: "Current Last Name", value: "Gollum" },
-      { tabItem: "Is the Respondent currently a resident in a refuge ?", value: "Yes" },
+      { tabItem: "Is the Respondent currently a resident in a refuge?", value: "Yes" },
       { tabItem: "Is the respondent represented ?", value: "No" },
       "RESPONDENT SERVICE ADDRESS DETAILS",
       { tabItem: "Building and Street", value: "10 Selsdon Road" },

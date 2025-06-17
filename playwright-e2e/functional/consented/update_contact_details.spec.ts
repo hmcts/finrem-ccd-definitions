@@ -55,7 +55,7 @@ test(
 );
 
 test(
-    'Consented - Update contact details - change in representation @test',
+    'Consented - Update contact details - change in representation',
     { tag: [] },
     async (
       {
@@ -63,14 +63,10 @@ test(
         manageCaseDashboardPage,
         caseDetailsPage,
         updateContactDetailsPage,
-        createCaseCheckYourAnswersPage,
         checkYourAnswersPage
       }) => {
       // Create case and progress to HWF decision made
       const caseId = await ConsentedCaseDataHelper.createConsentedCaseUpToHWFDecision();
-
-      const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
-      const respondentInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
 
       // Login as caseworker
       await manageCaseDashboardPage.visit();
@@ -95,7 +91,7 @@ test(
       // Assert tab data
       await caseDetailsPage.assertTabData(updateRepresentedContactDetailsTabData);
       
-      // Update contact details and make applicant not represented
+      // Update contact details and make respondent not represented
       await caseDetailsPage.selectNextStep(ConsentedEvents.updateContactDetails);
       await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(true);
       await updateContactDetailsPage.checkRespondentRepresented(false);
@@ -115,6 +111,6 @@ test(
 
       // Assert tab data
       await caseDetailsPage.assertTabData(updateNonRepresentedContactDetailsTabData);
-      }
+    }
 );
 
