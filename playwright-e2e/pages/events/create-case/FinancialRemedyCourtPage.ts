@@ -3,8 +3,6 @@ import { BaseJourneyPage } from '../../BaseJourneyPage';
 
 export class FinancialRemedyCourtPage extends BaseJourneyPage {
     
-    private frcDropDown: Locator; 
-    private courtListDropDown: Locator
     private readonly courtZoneDropDown: Locator;
     private readonly highJudgeRadio: Locator;
     private readonly highCourtJudgeReasonTxtBox: Locator;
@@ -32,13 +30,13 @@ export class FinancialRemedyCourtPage extends BaseJourneyPage {
     async selectCourtZoneDropDown(localCourt: string) {
         await this.courtZoneDropDown.selectOption(this.courtRegion);
 
-        this.frcDropDown = this.page.locator(`#${this.courtRegion.toLowerCase()}FRCList`);
-        await expect(this.frcDropDown).toBeVisible();
-        await this.frcDropDown.selectOption(`${this.courtFrc} FRC`);
+        const frcDropDown = this.page.locator(`#${this.courtRegion.toLowerCase()}FRCList`);
+        await expect(frcDropDown).toBeVisible();
+        await frcDropDown.selectOption(`${this.courtFrc} FRC`);
 
-        this.courtListDropDown = this.page.locator(`#${this.courtFrc.toLowerCase()}CourtList`);
-        await expect(this.courtListDropDown).toBeVisible();
-        await this.courtListDropDown.selectOption(localCourt);
+        const courtListDropDown = this.page.locator(`#${this.courtFrc.toLowerCase()}CourtList`);
+        await expect(courtListDropDown).toBeVisible();
+        await courtListDropDown.selectOption(localCourt);
     }
 
     async selectHighCourtJudgeLevel(isHighCourtJudgeLevel: boolean) {

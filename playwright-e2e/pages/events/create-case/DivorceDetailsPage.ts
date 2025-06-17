@@ -1,7 +1,7 @@
 import { type Page, Locator, expect } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
-import {DateHelper} from "../../../functional/helpers/DateHelper.ts";
+import { DateHelper } from "../../../data-utils/DateHelper.ts";
 
 export class DivorceDetailsPage extends BaseJourneyPage {
 
@@ -59,7 +59,7 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         await this.issueYear.fill(year);
         await this.courtName.fill('Shire Court');
         await this.divorceStage.selectOption(divorceStage);
-        await this.uploadPetition.setInputFiles('./playwright-e2e/data/PETITION FORM A.docx');
+        await this.uploadPetition.setInputFiles('./playwright-e2e/resources/file/PETITION FORM A.docx');
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 
