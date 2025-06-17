@@ -9,7 +9,7 @@ import {
 } from "../../../resources/tab_content/contested/contested_update_contact_details_caseworker_tabs.ts";
 
 test(
-    'Contested - Update Contact Details as a caseworker @test',
+    'Contested - Update Contact Details as a caseworker',
     { tag: [] },
     async (
       {
