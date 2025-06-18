@@ -22,7 +22,7 @@ export const   contestedUpdateContactDetailsTableData = {
     ]
 }
 
-export const   updateContactDetailsNotRepresentedTable = {
+export const   updateContactDetailsRespondentNotRepresentedTable = {
     tableName: 'Check your answers',
     rows: [
         { cellItem: "Does this update include a change in representation for either party?", value: "Yes"},
@@ -39,7 +39,7 @@ export const   updateContactDetailsNotRepresentedTable = {
     ]
 }
 
-export const   consentedUpdateContactDetailsTableData = {
+export const   consentedApplicantUpdateContactDetailsTableData = {
     tableName: 'Update Contact Details',
     rows: [
         { cellItem: "Does this update include a change in representation for either party?", value: "Yes"},

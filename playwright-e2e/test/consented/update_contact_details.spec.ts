@@ -4,10 +4,10 @@ import { ConsentedEvents } from '../../config/case-data';
 import { YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums';
 import { updateContactDetailsTabData } from '../../resources/tab_content/consented/update_contact_details_caseworker_tabs';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
-import { consentedUpdateContactDetailsTableData } from '../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable';
-import { updateRepresentedContactDetailsTabData } from '../../resources/tab_content/consented/update_contact_details_represented';
-import { updateContactDetailsNotRepresentedTable } from '../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable';
-import { updateNonRepresentedContactDetailsTabData  } from '../../resources/tab_content/consented/update_contact_details_not_represented';
+import { consentedApplicantUpdateContactDetailsTableData } from '../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable';
+import { updateApplicantRepresentedContactDetailsTabData } from '../../resources/tab_content/consented/update_contact_details_represented';
+import { updateContactDetailsRespondentNotRepresentedTable } from '../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable';
+import { updateRespondentNonRepresentedContactDetailsTabData  } from '../../resources/tab_content/consented/update_contact_details_not_represented';
 
 
 test(
@@ -84,12 +84,12 @@ test(
       await updateContactDetailsPage.navigateContinue();
 
       //Continue about to submit and check your answers
-      await checkYourAnswersPage.assertCheckYourAnswersPage(consentedUpdateContactDetailsTableData);
+      await checkYourAnswersPage.assertCheckYourAnswersPage(consentedApplicantUpdateContactDetailsTableData);
       await updateContactDetailsPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.updateContactDetails.listItem);
 
       // Assert tab data
-      await caseDetailsPage.assertTabData(updateRepresentedContactDetailsTabData);
+      await caseDetailsPage.assertTabData(updateApplicantRepresentedContactDetailsTabData);
 
       // Update contact details and make respondent not represented
       await caseDetailsPage.selectNextStep(ConsentedEvents.updateContactDetails);
@@ -105,11 +105,11 @@ test(
       await updateContactDetailsPage.navigateContinue();
 
       //Continue about to submit and check your answers
-      await checkYourAnswersPage.assertCheckYourAnswersPage(updateContactDetailsNotRepresentedTable);
+      await checkYourAnswersPage.assertCheckYourAnswersPage(updateContactDetailsRespondentNotRepresentedTable);
       await updateContactDetailsPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.updateContactDetails.listItem);
 
       // Assert tab data
-      await caseDetailsPage.assertTabData(updateNonRepresentedContactDetailsTabData);
+      await caseDetailsPage.assertTabData(updateRespondentNonRepresentedContactDetailsTabData);
     }
 );

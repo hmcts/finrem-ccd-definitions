@@ -1,4 +1,4 @@
-export const updateNonRepresentedContactDetailsTabData = [
+export const updateRespondentNonRepresentedContactDetailsTabData = [
   {
     tabName: 'Applicant',
     tabContent: [
