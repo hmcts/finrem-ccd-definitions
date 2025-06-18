@@ -45,6 +45,13 @@
     "LiveFrom": "10/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "applicantHearingTabItems",
+    "UserRole": "[APPBARRISTER]",
+    "CRUD": "R"
+  }, 
+  {
+    "LiveFrom": "10/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantHearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "C"
   }, 
@@ -59,6 +66,13 @@
     "LiveFrom": "10/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respondentHearingTabItems",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "R"
+  }, 
+  {
+    "LiveFrom": "10/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentHearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "C"
   }, 
@@ -67,6 +81,13 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "int1HearingTabItems",
     "UserRole": "[INTVRSOLICITOR1]",
+    "CRUD": "R"
+  },  
+  {
+    "LiveFrom": "10/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "int1HearingTabItems",
+    "UserRole": "[INTVRBARRISTER1]",
     "CRUD": "R"
   }, 
   {
@@ -87,6 +108,13 @@
     "LiveFrom": "10/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "int2HearingTabItems",
+    "UserRole": "[INTVRBARRISTER2]",
+    "CRUD": "R"
+  }, 
+  {
+    "LiveFrom": "10/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "int2HearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "C"
   }, 
@@ -101,6 +129,13 @@
     "LiveFrom": "10/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "int3HearingTabItems",
+    "UserRole": "[INTVRBARRISTER3]",
+    "CRUD": "R"
+  }, 
+  {
+    "LiveFrom": "10/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "int3HearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "C"
   }, 
@@ -109,6 +144,13 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "int4HearingTabItems",
     "UserRole": "[INTVRSOLICITOR4]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "10/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "int4HearingTabItems",
+    "UserRole": "[INTVRBARRISTER4]",
     "CRUD": "R"
   },
   {
