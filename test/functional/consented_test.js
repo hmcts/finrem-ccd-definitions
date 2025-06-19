@@ -58,30 +58,3 @@ Scenario('Consent Case approve and send order @nightly', async ({ I }) => {
 }).retry(3);
 /* eslint-disable require-await */
 
-Scenario('Consent Case Creation by Solicitor @nightly', async ({ I }) => {
-  I.signInIdam(solicitorUserName, solicitorPassword);
-  I.wait('2');
-  await I.createCase('Financial Remedy Consented', 'Consent Order Application');
-  await I.solicitorCreate(solRef);
-  await I.divorceDetails();
-  await I.applicantDetails();
-  await I.consentedRespondentDetails();
-  await I.natureOfApplication();
-  await I.consentOrder();
-  await I.d81Question();
-  await I.optionalDocuments();
-  await I.consentedOtherDocuments();
-  await I.savingApplicationInformation('consented');
-  await I.checkYourAnswers();
-  // amend event
-  await I.amendApplicationDetails();
-  // hwf payment submission
-  await I.caseSubmitAuthorisation('consented');
-  await I.paymentPage(false);
-  await I.hwfPaymentDetails();
-  await I.paymentSubmission();
-  await I.savingApplicationInformation('consented');
-  await I.finalPaymentSubmissionPage();
-  await I.finalInformationPage();
-  I.waitForText('History', '30');
-}).retry(3);

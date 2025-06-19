@@ -51,6 +51,10 @@ import { ListForInterimHearingPage } from '../pages/events/list-for-interim-hear
 import { ManageFlagPage } from '../pages/events/manage-flag/ManageFlagPage';
 import { GeneralApplicationDirectionsPage } from '../pages/events/general-application-directions/GeneralApplicationDirectionsPage';
 import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/UploadDraftOrdersPage';
+import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
+import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
+import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
+import {AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -105,6 +109,10 @@ type CreateFixtures = {
   manageFlagPage: ManageFlagPage;
   generalApplicationDirectionsPage: GeneralApplicationDirectionsPage;
   uploadDraftOrdersPage: UploadDraftOrdersPage;
+  manageCaseDocumentsPage: ManageCaseDocumentsPage;
+  manageHearingPage: ManageHearingPage;
+  checkYourAnswersPage: CheckYourAnswersPage;
+  addNotePage: AddNotePage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -254,5 +262,17 @@ export const test = base.extend<CreateFixtures>({
   },
   uploadDraftOrdersPage: async ({ page }, use) => {
     await use(new UploadDraftOrdersPage(page, commonActionsHelper));
+  },
+  manageCaseDocumentsPage: async ({ page }, use) => {
+    await use(new ManageCaseDocumentsPage(page, commonActionsHelper));
+  },
+  manageHearingPage: async ({ page }, use) => {
+    await use(new ManageHearingPage(page, commonActionsHelper));
+  },
+  checkYourAnswersPage: async ({ page }, use) => {
+    await use(new CheckYourAnswersPage(page));
+  },
+  addNotePage: async ({ page }, use) => {
+    await use(new AddNotePage(page));
   }
 });

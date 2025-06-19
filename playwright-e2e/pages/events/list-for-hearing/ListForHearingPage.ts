@@ -25,8 +25,6 @@ export class ListForHearingPage extends BaseJourneyPage {
     private readonly fastTrackWarning: Locator;
     private readonly hearingCourtHeading: Locator;
     private readonly courtZoneDropDown: Locator;
-    private frcDropDown: Locator;
-    private courtListDropDown: Locator
     private readonly courtRegion: string = 'Midlands'
     private readonly courtFrc: string = 'Nottingham'
     private readonly additionalInformationAboutHearing: Locator;
@@ -103,13 +101,13 @@ export class ListForHearingPage extends BaseJourneyPage {
         await expect(this.hearingCourtHeading).toBeVisible();
         await this.courtZoneDropDown.selectOption(this.courtRegion);
 
-        this.frcDropDown = this.page.locator(`#hearing_${this.courtRegion.toLowerCase()}FRCList`);
-        await expect(this.frcDropDown).toBeVisible();
-        await this.frcDropDown.selectOption(`${this.courtFrc} FRC`);
+        const frcDropDown = this.page.locator(`#hearing_${this.courtRegion.toLowerCase()}FRCList`);
+        await expect(frcDropDown).toBeVisible();
+        await frcDropDown.selectOption(`${this.courtFrc} FRC`);
 
-        this.courtListDropDown = this.page.locator(`#hearing_${this.courtFrc.toLowerCase()}CourtList`);
-        await expect(this.courtListDropDown).toBeVisible();
-        await this.courtListDropDown.selectOption(localCourt);
+        const courtListDropDown =  this.page.locator(`#hearing_${this.courtFrc.toLowerCase()}CourtList`);
+        await expect(courtListDropDown).toBeVisible();
+        await courtListDropDown.selectOption(localCourt);
     }
 
     async verifyHearingDateWarningMessage(typeOfCase: string) {
@@ -141,7 +139,7 @@ export class ListForHearingPage extends BaseJourneyPage {
 
     async uploadOtherDocuments(){
         await expect(this.hearingDocUpload).toBeVisible();
-        await this.hearingDocUpload.setInputFiles('./playwright-e2e/data/test.pdf');
+        await this.hearingDocUpload.setInputFiles('./playwright-e2e/resources/file/test.pdf');
         await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
     }
 }

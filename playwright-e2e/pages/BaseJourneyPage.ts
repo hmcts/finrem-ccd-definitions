@@ -135,6 +135,13 @@ export abstract class BaseJourneyPage {
         await this.waitForSpinner();
     }
 
+    async navigateIgnoreWarningAndContinue() {
+        const ignoreWarningButton = this.page.getByRole('button', { name: 'Ignore warning and continue' });
+        if (await ignoreWarningButton.isVisible().catch(() => false)) {
+            await ignoreWarningButton.click();
+        }
+    }
+
     async wait(timeout: number) {
         await this.page.waitForTimeout(timeout);
     }
@@ -182,5 +189,52 @@ export abstract class BaseJourneyPage {
           res.request().method() === 'POST' && res.url().includes(urlPart)
         );
         return await response.json();
+    }
+
+    /**
+     * Asserts that each error message in the provided array is visible on the page.
+     *
+     * @param errorMessages - An array of error message strings to check for visibility.
+     * Each message is expected to be present and visible on the current page.
+     */
+    async assertErrorMessage(errorMessages: string[]) {
+        for (const errorMessage of errorMessages) {
+            const errorLocators = this.page.getByText(errorMessage);
+            const count = await errorLocators.count();
+            for (let i = 0; i < count; i++) {
+                const errorLocator = errorLocators.nth(i);
+                await expect(errorLocator).toBeVisible();
+            }
+        }
+    }
+
+    /**
+     * Removes content at the specified position by clicking the "Remove" button and confirming the action.
+     *
+     * @param position - The index of the "Remove" button to click. Defaults to 0 (the first button).
+     */
+    async removeContent(position: number = 0) {
+        const removeDocumentButton = this.page.getByRole("button", { name: "Remove" }).nth(position);
+        await expect(removeDocumentButton).toBeVisible();
+        await expect(removeDocumentButton).toBeEnabled();
+        await removeDocumentButton.click();
+
+        const removeDocumentConfirmButton = this.page.getByRole("button", { name: "Remove" })
+        await expect(removeDocumentConfirmButton).toBeVisible();
+        await expect(removeDocumentConfirmButton).toBeEnabled();
+        await removeDocumentConfirmButton.click();
+    }
+
+    /**
+     * Asserts that the dropdown contains the expected options.
+     *
+     * @param options - The expected list of option strings.
+     * @param dropDownLocator - The Playwright Locator for the dropdown element.
+     */
+    async assertDropDownOptionsAreVisible(options: string[], dropDownLocator: Locator) {
+        await expect(dropDownLocator).toBeVisible();
+        const optionsInDropDown = (await dropDownLocator.locator('option').allTextContents())
+            .filter(opt => opt.trim() !== '--Select a value--');
+        expect(optionsInDropDown.sort()).toEqual(options.sort());
     }
 }

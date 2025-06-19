@@ -129,6 +129,7 @@
   },
   "devDependencies": {
     "@hmcts/eslint-config": "^1.4.0",
+    "@hmcts/playwright-common": "^1.0.25",
     "@playwright/test": "^1.46.1",
     "@shinnn/eslint-config-node": "^6.0.2",
     "@types/lodash": "^4.17.16",
@@ -154,7 +155,8 @@
     "cross-spawn": "^7.0.6",
     "puppeteer-core": "^24.0.0",
     "ws": "^8.18.0",
-    "axios": "^1.8.2"
+    "axios": "^1.8.2",
+    "brace-expansion": "^4.0.1"
   },
   "packageManager": "yarn@3.8.7"
 }
