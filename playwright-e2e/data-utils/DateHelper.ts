@@ -5,7 +5,7 @@ export class DateHelper {
      *
      * @returns Current date string in ISO format (date only) as a promise resolving to a string.
      */
-    static async getCurrentDate(): Promise<string> {
+    static getCurrentDate(): string {
       return new Date().toISOString().split('T')[0];
     }
 
@@ -84,9 +84,9 @@ export class DateHelper {
      *
      * @returns An array containing the year, month, and day as strings.
      */
-    static async getCurrentDateFormatted(): Promise<string[]> {
-        const today = await this.getCurrentDate();
+    static getCurrentDateFormatted(): string {
+        const today = this.getCurrentDate();
         return today.split('-')
-    }
+    };
 
 }
