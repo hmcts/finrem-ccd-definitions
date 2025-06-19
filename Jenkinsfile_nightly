@@ -4,6 +4,11 @@ properties([
         parameters([
                 string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
                 string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
+                string(
+                        name: 'FUNCTIONAL_TESTS_WORKERS',
+                        defaultValue: '2',
+                        description: 'Number of workers running functional tests'
+                )
         ])
 ])
 
@@ -64,6 +69,7 @@ withNightlyPipeline(type, product, component) {
     env.XUI_ORG_WEB_URL = 'https://manage-org.aat.platform.hmcts.net'
     env.NIGHTLY_TEST = 'true'
     env.NODE_ENV = 'ci'
+    env.FUNCTIONAL_TESTS_WORKERS = params.FUNCTIONAL_TESTS_WORKERS
 
     loadVaultSecrets(secrets)
     enableFullFunctionalTest(180)
