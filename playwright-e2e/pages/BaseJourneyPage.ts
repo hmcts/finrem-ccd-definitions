@@ -1,4 +1,5 @@
 import { type Page, expect, Locator } from '@playwright/test';
+import {FieldDescriptor} from "./components/field_descriptor.ts";
 
 export abstract class BaseJourneyPage {
     protected readonly page: Page;
@@ -236,5 +237,96 @@ export abstract class BaseJourneyPage {
         const optionsInDropDown = (await dropDownLocator.locator('option').allTextContents())
             .filter(opt => opt.trim() !== '--Select a value--');
         expect(optionsInDropDown.sort()).toEqual(options.sort());
+    }
+
+
+    /**
+     * Validates a list of form fields on the page according to their descriptors.
+     *
+     * This method iterates over each `FieldDescriptor` in the provided `fields` array and performs validation
+     * based on the field's type, label, CSS selector, expected value, and position. It supports input, select,
+     * radio, and checkbox field types. If a field fails validation, an error message is collected. After all
+     * fields are processed, if any errors were found, an aggregated error is thrown.
+     *
+     * **Logic:**
+     * - For each field:
+     *   - Determine the locator using either the field's label or CSS selector.
+     *   - If a position is specified, select the nth occurrence of the locator.
+     *   - Validate the field based on its type:
+     *     - `'input'` or `'select'`: Check that the value matches `expectedValue`.
+     *     - `'radio'`: Check that the radio button is checked.
+     *     - `'checkbox'`: Check that the checkbox is checked or not, depending on `expectedValue`.
+     *     - Any other type: Throw an error for unsupported field type.
+     *   - If validation fails, catch the error and add a descriptive message to the errors array.
+     * - After all fields are validated, throw an aggregated error if any validations failed.
+     *
+     * @param fields An array of `FieldDescriptor` objects, each describing a field to validate. Each descriptor may include:
+     *   - `label` (string, optional): The accessible label of the field.
+     *   - `locator` (string, optional): The locator or selector for the field.
+     *   - `position` (number, optional): The index of the field if multiple elements match.
+     *   - `type` (string): The type of the field (`'input'`, `'select'`, `'radio'`, `'checkbox'`).
+     *   - `expectedValue` (any, optional): The expected value or checked state for the field.
+     * @throws Error Aggregated error containing all validation failures, if any.
+     */
+    async validateFields(fields: FieldDescriptor[]) {
+        const errors: string[] = [];
+        for (const field of fields) {
+            try {
+                let locator: Locator;
+                if (field.locator) {
+                    locator = this.page.locator(field.locator);
+                } else if (field.label) {
+                    locator = this.page.getByLabel(field.label);
+                } else {
+                    throw new Error('Field must have either label or css selector');
+                }
+                if (field.position !== undefined) {
+                    locator = locator.nth(field.position);
+                }
+
+                switch (field.type) {
+                    case 'input':
+                        await expect(locator).toHaveValue(field.expectedValue as string);
+                        break;
+                    case 'select':
+                        const selectedOption = locator.locator('option:checked');
+                        await expect(selectedOption).toHaveText(field.expectedValue);
+                        break;
+                    case 'radio':
+                        const radioLocator = locator.getByLabel(field.expectedValue as string, { exact: true });
+                        await expect(radioLocator).toBeChecked();
+                        break;
+                    case 'checkbox':
+                        locator = this.page.getByRole('checkbox', { name: field.label });
+                        if (field.position !== undefined) {
+                            locator = locator.nth(field.position);
+                        }
+                        if (field.expectedValue) {
+                            await expect(locator).toBeChecked();
+                        } else {
+                            await expect(locator).not.toBeChecked();
+                        }
+                        break;
+                    case 'date':
+                        const [year, month, day] = (field.expectedValue as string).split('-');
+                        await expect(locator.getByLabel('Day')).toHaveValue(day);
+                        await expect(locator.getByLabel('Month')).toHaveValue(month);
+                        await expect(locator.getByLabel('Year')).toHaveValue(year);
+                        break;
+                    case "file":
+                        await expect(locator.locator('a')).toHaveText(field.expectedValue as string);
+                        break;
+                    default:
+                        throw new Error(`Unsupported field type: ${field.type}`);
+                }
+            } catch (error) {
+                errors.push(
+                    `Validation failed for field ${field.label || field.locator} of type "${field.type}": ${error instanceof Error ? error.message : error}`
+                );
+            }
+        }
+        if (errors.length > 0) {
+            throw new Error(errors.join('\n'));
+        }
     }
 }
