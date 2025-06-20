@@ -1,5 +1,6 @@
+import {FieldDescriptor} from "../../../pages/components/field_descriptor.ts";
 
-export const miamDetails: FieldDescriptor = [
+export const miamDetails: FieldDescriptor[] = [
     {
         label: "Mediator Registration Number (URN)",
         locator: "#mediatorRegistrationNumber",

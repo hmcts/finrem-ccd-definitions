@@ -1,6 +1,6 @@
 import {FieldDescriptor} from "../../../pages/components/field_descriptor.ts";
 
-export const propertyAdjustmentDetails: FieldDescriptor = [
+export const propertyAdjustmentDetails: FieldDescriptor[] = [
     {
         label: "Property address",
         type: "input",

@@ -1,6 +1,6 @@
 import {FieldDescriptor} from "../../../pages/components/field_descriptor.ts";
 
-export const natureOfApplicationDetails: FieldDescriptor = [
+export const natureOfApplicationDetails: FieldDescriptor[] = [
     {
         label: "Maintenance Pending Suit",
         locator: "input[id='natureOfApplicationChecklist-Maintenance Pending Suit']",
