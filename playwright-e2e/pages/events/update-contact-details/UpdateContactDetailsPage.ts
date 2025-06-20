@@ -21,6 +21,7 @@ export class UpdateContactDetailsPage extends BaseJourneyPage {
     private readonly checkAddressLabel: Locator;
     private readonly findAddressButton: Locator;
     private readonly addressDropdown: Locator;
+    private readonly contestedSolicitorNameDetails: Locator;
 
     public constructor(page: Page) {
         super(page);
@@ -46,6 +47,8 @@ export class UpdateContactDetailsPage extends BaseJourneyPage {
         this.addressPostcode = page.locator('#respondentAddress_respondentAddress_postcodeInput');
         this.findAddressButton = page.locator('button.button.button-30');
         this.addressDropdown = page.locator('#respondentAddress_respondentAddress_addressList');
+
+        this.contestedSolicitorNameDetails = page.locator('#applicantSolicitorName');
     }
 
     async selectUpdateIncludesRepresentativeChange(isUpdateIncludesRepresentativeChange: Boolean){
@@ -99,5 +102,9 @@ export class UpdateContactDetailsPage extends BaseJourneyPage {
     }
     async selectAddress(address: string): Promise<void> {
         await this.addressDropdown.selectOption({ label: address });
+    }
+    async specifyContestedSolicitorName(text: string) {
+        await expect(this.checkSolicitorNameLabel).toBeVisible();
+        await this.contestedSolicitorNameDetails.fill(text);
     }
 }

@@ -22,6 +22,26 @@ export const   contestedUpdateContactDetailsTableData = {
     ]
 }
 
+export const   contestedsApplicantUpdateContactDetailsTableData = {
+    tableName: 'Check your answers',
+    rows: [
+        { cellItem: "Does this update include a change in representation for either party?", value: "Yes"},
+        "Solicitor Details",
+        { cellItem: "Solicitor’s name", value: "Test Baggins" },
+        { cellItem:"Building and Street", value: "3rd Floor, 65-68 Leadenhall St"},
+        { cellItem: "Town or City", value: "London"},
+        { cellItem: "County", value: "Greater London"},
+        { cellItem: "Postcode/Zipcode", value: " EC3A 2AD" },
+        { cellItem: "Solicitor’s firm", value: "FinRem-1-Org"},
+        { cellItem: "Your reference number", value: "Y707HZM"},
+        "Applicant’s Details",
+        { cellItem: "Current First and Middle names", value: "Tester case" },
+        { cellItem: "Current Last Name", value: "Baggins" },
+        { cellItem: "Keep the Applicant's contact details private from the Respondent?", value: "Yes" },
+        { cellItem: "Is the Applicant currently a resident in a refuge?", value: "Yes" },
+    ]
+}
+
 export const   updateContactDetailsRespondentNotRepresentedTable = {
     tableName: 'Check your answers',
     rows: [
