@@ -1,6 +1,6 @@
 import {FieldDescriptor} from "../../../pages/components/field_descriptor.ts";
 
-export const writtenAgreementDetails: FieldDescriptor = [
+export const writtenAgreementDetails: FieldDescriptor[] = [
     {
         label: "Has a written agreement been made about maintenance for the benefit of children?",
         locator: '#benefitForChildrenDecision_radio',

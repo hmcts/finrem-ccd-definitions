@@ -1,6 +1,6 @@
 import {FieldDescriptor} from "../../../pages/components/field_descriptor.ts";
 
-export const financialAssetsPageDetails: FieldDescriptor = [
+export const financialAssetsPageDetails: FieldDescriptor[] = [
     {
         label: "Should this application be allocated to the Complexity List of the Financial Remedies Court?",
         locator: "#addToComplexityListOfCourts",

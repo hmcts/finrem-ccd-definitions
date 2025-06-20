@@ -48,5 +48,4 @@ export const divorceDissolutionDetails: FieldDescriptor[] = [
         type: 'file',
         expectedValue: 'PETITION FORM A.docx'
     }
-
 ];

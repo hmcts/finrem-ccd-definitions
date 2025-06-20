@@ -27,6 +27,9 @@ import {miamDetails} from "../../../resources/edited_page_content/contested/miam
 import {
     uploadDocumentPageDetails
 } from "../../../resources/edited_page_content/contested/upload-document-page-details.ts";
+import {
+    contestedFormAAmendApplicationDetailsTable
+} from "../../../resources/check_your_answer_content/amend_application_details/amendApplicationDetailsTable.ts";
 
 
 test.describe('Contested - Form A - Amend application in Standard case', () => {
@@ -183,7 +186,7 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
 
             //assert check your answers page
             await amendFormAApplicationDetailsPage.assertPageHeading('Amend Application Details');
-            await checkYourAnswersPage.assertCheckYourAnswersPage();
+            await checkYourAnswersPage.assertCheckYourAnswersPage(contestedFormAAmendApplicationDetailsTable);
 
         }
     )
