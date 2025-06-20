@@ -35,6 +35,11 @@ export abstract class BaseJourneyPage {
         this.fieldIsRequiredErrorMessage = page.getByText('Field is required');
     }
 
+    async assertPageHeading(heading: string) {
+        const pageHeading = this.page.getByRole('heading', { name: heading });
+        await expect(pageHeading).toBeVisible();
+    }
+
     async navigateSubmit() {
         await this.page.waitForLoadState();
         await expect(this.submitButton).toBeVisible();
@@ -239,6 +244,25 @@ export abstract class BaseJourneyPage {
         expect(optionsInDropDown.sort()).toEqual(options.sort());
     }
 
+    /**
+     * Selects (checks) one or more checkboxes on the page by their accessible labels.
+     *
+     * This method iterates over the provided array of label strings, finds the checkbox
+     * corresponding to each label using Playwright's `getByRole` with `name` and `exact: true`,
+     * ensures the checkbox is visible and enabled, and then checks it.
+     *
+     * @param labels - An array of strings, each representing the accessible label of a checkbox to select.
+     *                 Each label must match exactly the `name` of the checkbox as rendered in the UI.
+     * @throws If a checkbox with the given label is not visible or not enabled, Playwright's expect will throw.
+     */
+    async selectCheckboxByLabel(labels: string[]) {
+        for (const item of labels) {
+            const checkbox = this.page.getByRole('checkbox', { name: item, exact: true });
+            await expect(checkbox).toBeVisible();
+            await expect(checkbox).toBeEnabled();
+            await checkbox.check();
+        }
+    }
 
     /**
      * Validates a list of form fields on the page according to their descriptors.
@@ -289,7 +313,7 @@ export abstract class BaseJourneyPage {
                         await expect(locator).toHaveValue(field.expectedValue as string);
                         break;
                     case 'select':
-                        const selectedOption = locator.locator('option:checked');
+                        const selectedOption = locator.locator('option:checked');-
                         await expect(selectedOption).toHaveText(field.expectedValue);
                         break;
                     case 'radio':

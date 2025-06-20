@@ -24,6 +24,9 @@ import {
     financialAssetsPageDetails
 } from "../../../resources/edited_page_content/contested/financial-assets-page-details.ts";
 import {miamDetails} from "../../../resources/edited_page_content/contested/miam-details.ts";
+import {
+    uploadDocumentPageDetails
+} from "../../../resources/edited_page_content/contested/upload-document-page-details.ts";
 
 
 test.describe('Contested - Form A - Amend application in Standard case', () => {
@@ -49,7 +52,10 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
                 financialAssetsPage,
                 financialRemedyCourtPage,
                 miamQuestionPage,
-                miamDetailsPage
+                miamDetailsPage,
+                uploadOrderDocumentsPage,
+                createCaseSavingYourAnswersPage,
+                checkYourAnswersPage
             }
         ) => {
             const caseId = await ContestedCaseFactory.createBaseContestedFormA();
@@ -119,6 +125,9 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
             ]);
             await fastTrackProcedurePage.navigateContinue();
             // financial assets
+            await financialAssetsPage.selectCheckboxByLabel(
+                ['Complex asset or income structures','Non-disclosure of assets']
+            );
             await financialAssetsPage.validateFields(financialAssetsPageDetails);
             await financialAssetsPage.navigateContinue();
             // financial remedy court
@@ -149,17 +158,32 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
                 }
             ]);
             await financialRemedyCourtPage.navigateContinue();
-
+            // miam question
             await miamQuestionPage.validateFields([{
                 label: "Has the applicant attended a MIAM?",
                 locator: '#applicantAttendedMIAM_radio',
                 type: "radio",
                 expectedValue: "Yes"
             }]);
-            await miamDetailsPage.navigateContinue();
-
+            await miamQuestionPage.navigateContinue();
+            // MIAM details
             await miamDetailsPage.validateFields(miamDetails);
             await miamDetailsPage.navigateContinue();
+            // upload order documents
+            await uploadOrderDocumentsPage.uploadVariationOrderDoc();
+            await uploadOrderDocumentsPage.selectUploadAdditionalDocs(true);
+            await uploadOrderDocumentsPage.uploadOtherDocuments("NoticeOfActing.pdf", "Notice of acting", 0);
+            await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(true);
+            await uploadOrderDocumentsPage.enterUrgentCaseDetails("Urgent case details");
+            await uploadOrderDocumentsPage.validateFields(uploadDocumentPageDetails);
+            await uploadOrderDocumentsPage.navigateContinue();
+            // saving your application page
+            await createCaseSavingYourAnswersPage.assertPageHeading("Saving your application");
+            await createCaseSavingYourAnswersPage.navigateContinue();
+
+            //assert check your answers page
+            await amendFormAApplicationDetailsPage.assertPageHeading('Amend Application Details');
+            await checkYourAnswersPage.assertCheckYourAnswersPage();
 
         }
     )

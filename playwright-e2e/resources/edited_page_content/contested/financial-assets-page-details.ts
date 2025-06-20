@@ -25,6 +25,16 @@ export const financialAssetsPageDetails: FieldDescriptor = [
         expectedValue: "Pre- or post-nuptial agreements"
     },
     {
+        label: "Complex asset or income structures",
+        type: "checkbox",
+        expectedValue: "Complex asset or income structures"
+    },
+    {
+        label: "Non-disclosure of assets",
+        type: "checkbox",
+        expectedValue: "Non-disclosure of assets"
+    },
+    {
         label: "Please give brief details of the potential allegation/issue:",
         locator: '#detailPotentialAllegation',
         type: "input",

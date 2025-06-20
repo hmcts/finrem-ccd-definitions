@@ -1,4 +1,4 @@
-import { type Page, Locator } from '@playwright/test';
+import {type Page, Locator, expect} from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 
@@ -7,6 +7,7 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
     private readonly variationOrderDocUpload: Locator;
     private readonly promptForAnyDocumentRadio: Locator
     private readonly promptForUrgentCaseQuestionRadio: Locator
+    private readonly urgentCaseDetailsTextBox: Locator;
 
     private readonly consentOrderDocUpload: Locator;
     private readonly jointD81Radio: Locator;
@@ -23,6 +24,7 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
         this.variationOrderDocUpload = page.locator('#variationOrderDocument')
         this.promptForAnyDocumentRadio = page.locator('#promptForAnyDocument_radio')
         this.promptForUrgentCaseQuestionRadio = page.locator('#promptForUrgentCaseQuestion_radio')
+        this.urgentCaseDetailsTextBox = page.locator('#urgentCaseQuestionDetailsTextArea');
 
         this.consentOrderDocUpload = page.locator('#consentOrder')
         this.jointD81Radio = page.locator('#d81Question')
@@ -43,10 +45,32 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
         await optionToSelect.check();
     }
 
+    async uploadOtherDocuments(docFilename: string, docType: string, position: number = 0) {
+        await this.navigateAddNew();
+
+        const uploadOtherDocumentFiles = this.page
+            .locator(`#uploadAdditionalDocument_${position}_additionalDocuments`);
+        await expect(uploadOtherDocumentFiles).toBeVisible();
+
+        const filePayload = await this.commonActionsHelper
+            .createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', docFilename);
+        await uploadOtherDocumentFiles.setInputFiles(filePayload);
+
+        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+
+        const docTypeDropdown = this.page.locator(`#uploadAdditionalDocument_${position}_additionalDocumentType`);
+        await expect(docTypeDropdown).toBeVisible();
+        await docTypeDropdown.selectOption(docType);
+    }
+
     async selectUrgentCaseQuestionRadio(isUrgent: Boolean){
         const radioOption = isUrgent ? 'Yes' : 'No'; 
         const optionToSelect = this.promptForUrgentCaseQuestionRadio.getByLabel(radioOption);
         await optionToSelect.check();
+    }
+
+    async enterUrgentCaseDetails(urgentCaseDetails: string){
+        await this.urgentCaseDetailsTextBox.fill(urgentCaseDetails);
     }
 
     async uploadConsentOrder(){
