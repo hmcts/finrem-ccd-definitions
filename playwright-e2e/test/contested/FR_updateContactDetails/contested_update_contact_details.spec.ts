@@ -6,8 +6,8 @@ import { contestedUpdateContactDetailsTableData } from "../../../resources/check
 import {ContestedCaseFactory} from "../../../data-utils/factory/contested/ContestedCaseFactory.ts";
 import { updateContestedApplicantRepresentedContactDetailsTabData } from "../../../resources/tab_content/contested/contested_update_contact_details_represented.ts";
 import { contestedUpdateContactDetailsTabData } from "../../../resources/tab_content/contested/contested_update_contact_details_caseworker_tabs.ts";
-import { contestedsApplicantUpdateContactDetailsTableData } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
-import { updateContactDetailsRespondentNotRepresentedTable } from "../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable";
+import { contestedApplicantUpdateContactDetailsTableData } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
+import { contestedUpdateContactDetailsRespondentNotRepresentedTable } from "../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable";
 import { updateContestedRespondentNonRepresentedContactDetailsTabData  } from "../../../resources/tab_content/contested/update_contact_details_not_represented.ts";
 
 test(
@@ -88,7 +88,7 @@ test(
       await updateContactDetailsPage.navigateContinue();
 
       //Continue about to submit and check your answers
-      await checkYourAnswersPage.assertCheckYourAnswersPage(contestedsApplicantUpdateContactDetailsTableData);
+      await checkYourAnswersPage.assertCheckYourAnswersPage(contestedApplicantUpdateContactDetailsTableData);
       await updateContactDetailsPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
 
@@ -109,7 +109,7 @@ test(
       await updateContactDetailsPage.navigateContinue();
 
       //Continue about to submit and check your answers
-      await checkYourAnswersPage.assertCheckYourAnswersPage(updateContactDetailsRespondentNotRepresentedTable);
+      await checkYourAnswersPage.assertCheckYourAnswersPage(contestedUpdateContactDetailsRespondentNotRepresentedTable); 
       await updateContactDetailsPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
 
