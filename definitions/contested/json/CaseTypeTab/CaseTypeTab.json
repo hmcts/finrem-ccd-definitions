@@ -958,7 +958,7 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "propertyAdjutmentOrderDetailLabel",
+    "CaseFieldID": "propertyAdjustmentOrderDetailLabel",
     "TabFieldDisplayOrder": 4,
     "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"propertyAdjustmentOrder\""
   },
@@ -1048,9 +1048,19 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 9,
-    "CaseFieldID": "benefitPaymentChecklistLabel",
+    "CaseFieldID": "benefitForChildrenDecisionSchedule",
     "TabFieldDisplayOrder": 13,
-    "FieldShowCondition": "benefitForChildrenDecision=\"No\""
+    "FieldShowCondition": "natureOfApplicationChecklist CONTAINS \"periodicalPaymentOrder\" OR natureOfApplicationChecklistSchedule CONTAINS \"periodicalPaymentOrder\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "natureOfApplicationTab",
+    "TabLabel": "Nature of Application",
+    "TabDisplayOrder": 9,
+    "CaseFieldID": "benefitPaymentChecklistLabel",
+    "TabFieldDisplayOrder": 14,
+    "FieldShowCondition": "benefitForChildrenDecision=\"No\" OR benefitForChildrenDecisionSchedule=\"No\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1059,7 +1069,7 @@
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 9,
     "CaseFieldID": "benefitPaymentChecklist",
-    "TabFieldDisplayOrder": 14,
+    "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "benefitForChildrenDecision=\"No\""
   },
   {
@@ -1068,8 +1078,18 @@
     "TabID": "natureOfApplicationTab",
     "TabLabel": "Nature of Application",
     "TabDisplayOrder": 9,
+    "CaseFieldID": "benefitPaymentChecklistSchedule",
+    "TabFieldDisplayOrder": 16,
+    "FieldShowCondition": "benefitForChildrenDecisionSchedule=\"No\""
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "natureOfApplicationTab",
+    "TabLabel": "Nature of Application",
+    "TabDisplayOrder": 9,
     "CaseFieldID": "issueDate",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3040,6 +3060,16 @@
     "TabFieldDisplayOrder": 1
   },
   {
+    "LiveFrom": "12/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "tabExpressCaseParticipation",
+    "TabFieldDisplayOrder": "0",
+    "FieldShowCondition": "expressCaseParticipation!=\"\""
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "gatekeepingTab",
@@ -3963,6 +3993,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
     "CaseFieldID": "tabCaseAllocatedToLabel",
+    "FieldShowCondition": "expressCaseParticipation!=\"Enrolled\"",
     "TabFieldDisplayOrder": "95"
   },
   {
@@ -3972,24 +4003,27 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
     "CaseFieldID": "caseAllocatedTo",
+    "FieldShowCondition": "expressCaseParticipation!=\"Enrolled\"",
     "TabFieldDisplayOrder": "96"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "03/04/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
-    "CaseFieldID": "tabJudgeTimeEstimateLabel",
+    "CaseFieldID": "tabJudgeAgreesCaseIsExpressLabel",
+    "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
     "TabFieldDisplayOrder": "97"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "03/04/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
-    "CaseFieldID": "judgeTimeEstimate",
+    "CaseFieldID": "judgeAgreesCaseIsExpress",
+    "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
     "TabFieldDisplayOrder": "98"
   },
   {
@@ -3998,7 +4032,7 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
-    "CaseFieldID": "judgeTimeEstimateTextArea",
+    "CaseFieldID": "tabJudgeTimeEstimateLabel",
     "TabFieldDisplayOrder": "99"
   },
   {
@@ -4007,8 +4041,26 @@
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
-    "CaseFieldID": "reasonForFRCLocation",
+    "CaseFieldID": "judgeTimeEstimate",
     "TabFieldDisplayOrder": "100"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "judgeTimeEstimateTextArea",
+    "TabFieldDisplayOrder": "101"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "reasonForFRCLocation",
+    "TabFieldDisplayOrder": "102"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4189,9 +4241,19 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "draftOrdersReviewCollection!=\"\"",
+    "TabShowCondition": "isUnreviewedDocumentPresent!=\"No\"",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "11/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "DraftOrders-courtadmin",
+    "TabLabel": "Draft orders",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "isUnreviewedDocumentPresent",
+    "FieldShowCondition": "draftOrdersReviewCollection=\"DONOTSHOW\"",
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "29/10/2024",
@@ -4210,8 +4272,18 @@
     "TabLabel": "Draft orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "draftOrdersReviewCollection",
-    "TabShowCondition": "draftOrdersReviewCollection!=\"\"",
+    "TabShowCondition": "isUnreviewedDocumentPresent=\"Yes\"",
     "TabFieldDisplayOrder": 2
+  },
+  {
+    "LiveFrom": "14/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "DraftOrders-judiciary",
+    "TabLabel": "Draft orders",
+    "TabDisplayOrder": 17,
+    "CaseFieldID": "isUnreviewedDocumentPresent",
+    "FieldShowCondition": "draftOrdersReviewCollection=\"DONOTSHOW\"",
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -9604,6 +9676,16 @@
     "TabDisplayOrder": 19,
     "CaseFieldID": "consentD81Question",
     "TabFieldDisplayOrder": 32
+  },
+  {
+    "LiveFrom": "17/02/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hiddenTab",
+    "TabLabel": "Hidden Tab",
+    "TabDisplayOrder": 19,
+    "CaseFieldID": "expressCaseParticipation",
+    "TabFieldDisplayOrder": 33,
+    "FieldShowCondition": "expressCaseParticipation!=\"\""
   },
   {
     "LiveFrom": "01/01/2017",

@@ -2,7 +2,7 @@ import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import { SolicitorDetailsHelper } from '../../helpers/SolicitorDetailsHelper';
-import { RadioEnum } from '../../helpers/enums/RadioEnums';
+import { ApplicationtypeEnum } from '../../helpers/enums/RadioEnums';
 
 export class SolicitorDetailsPage extends BaseJourneyPage {
 
@@ -60,7 +60,7 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
         await this.solicitorDetailsHelper.enterReferenceNumber(this.page, referenceNumber);
     }
 
-    async selectApplicationType(radioOption: RadioEnum) {
+    async selectApplicationType(radioOption: ApplicationtypeEnum) {
         const optionToSelect = this.applicationTypeAnswer.getByLabel(radioOption);
         await optionToSelect.check();
     }
