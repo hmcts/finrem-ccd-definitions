@@ -33,6 +33,9 @@ import {
 import {
     financialRemedyCourtDetails
 } from "../../../resources/edited_page_content/contested/financial-remedy-court-details.ts";
+import {applicationCaseSubmission} from "../../../pages/helpers/PaymentSubmissionHelper.ts";
+import {YesNoRadioEnum} from "../../../pages/helpers/enums/RadioEnums.ts";
+import {solicitor_amend_case_tabs} from "../../../resources/tab_content/contested/solicitor_amend_case_tabs.ts";
 
 
 test.describe('Contested - Form A - Amend application in Standard case', () => {
@@ -61,7 +64,12 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
                 miamDetailsPage,
                 uploadOrderDocumentsPage,
                 createCaseSavingYourAnswersPage,
-                checkYourAnswersPage
+                checkYourAnswersPage,
+                solicitorAuthPage,
+                helpWithFeesPage,
+                paymentPage,
+                orderSummaryPage,
+                caseSubmissionPage,
             }
         ) => {
             const caseId = await ContestedCaseFactory.createBaseContestedFormA();
@@ -168,7 +176,28 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
 
             await amendFormAApplicationDetailsPage.navigateSubmit();
 
+            const pbaNumber = "PBA0089162";
+            const reference = "Reference";
+            const hasHelpWithFees = YesNoRadioEnum.NO;
 
+            await applicationCaseSubmission(
+                caseDetailsPage,
+                solicitorAuthPage,
+                helpWithFeesPage,
+                paymentPage,
+                orderSummaryPage,
+                caseSubmissionPage,
+                checkYourAnswersPage,
+                {
+                    caseEvent: ContestedEvents.applicationPaymentSubmission,
+                    hasHelpWithFees: hasHelpWithFees,
+                    pbaNumber: pbaNumber,
+                    reference: reference,
+                    amount: "£313.00"
+                }
+            );
+
+            await caseDetailsPage.assertTabData(solicitor_amend_case_tabs);
         }
     )
 }

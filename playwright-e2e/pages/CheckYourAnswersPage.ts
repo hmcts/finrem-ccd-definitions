@@ -48,7 +48,6 @@ export class CheckYourAnswersPage {
 
         // Validate each expected row
         for (const expected of table.rows) {
-            console.log(`**Processing expected row:`, expected);
             if (typeof expected === 'string') {
                 // For string rows, check if any cell in col1 or col2 matches exactly
                 const expectedNorm = normalize(expected);
