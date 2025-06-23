@@ -55,7 +55,7 @@ import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing
 import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
 import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
 import {AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
-import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/Allocate-to-judge.ts';
+import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateToJudgePage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
