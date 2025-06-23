@@ -30,6 +30,9 @@ import {
 import {
     contestedFormAAmendApplicationDetailsTable
 } from "../../../resources/check_your_answer_content/amend_application_details/amendApplicationDetailsTable.ts";
+import {
+    financialRemedyCourtDetails
+} from "../../../resources/edited_page_content/contested/financial-remedy-court-details.ts";
 
 
 test.describe('Contested - Form A - Amend application in Standard case', () => {
@@ -134,32 +137,7 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
             await financialAssetsPage.validateFields(financialAssetsPageDetails);
             await financialAssetsPage.navigateContinue();
             // financial remedy court
-            await financialRemedyCourtPage.validateFields([
-                {
-                    label: "Do you consider that the case should be allocated to be heard at High Court Judge level?",
-                    locator: '#allocatedToBeHeardAtHighCourtJudgeLevel_radio',
-                    type: "radio",
-                    expectedValue: "No"
-                },
-                {
-                    label: "Does anyone in this application need assistance or special facilities when attending court?",
-                    locator: '#specialAssistanceRequired',
-                    type: "input",
-                    expectedValue: "N/A"
-                },
-                {
-                    label: "Does anyone in this application need specific arrangements when attending court?",
-                    locator: '#specificArrangementsRequired',
-                    type: "input",
-                    expectedValue: "N/A"
-                },
-                {
-                    label: "Are there any reasons why the case should not proceed in the applicant’s Local Court? If yes, please set out what they are.",
-                    locator: '#isApplicantsHomeCourt_radio',
-                    type: "radio",
-                    expectedValue: "No"
-                }
-            ]);
+            await financialRemedyCourtPage.validateFields(financialRemedyCourtDetails);
             await financialRemedyCourtPage.navigateContinue();
             // miam question
             await miamQuestionPage.validateFields([{
@@ -187,6 +165,9 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
             //assert check your answers page
             await amendFormAApplicationDetailsPage.assertPageHeading('Amend Application Details');
             await checkYourAnswersPage.assertCheckYourAnswersPage(contestedFormAAmendApplicationDetailsTable);
+
+            await amendFormAApplicationDetailsPage.navigateSubmit();
+
 
         }
     )

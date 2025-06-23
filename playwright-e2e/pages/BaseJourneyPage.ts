@@ -269,17 +269,20 @@ export abstract class BaseJourneyPage {
      *
      * This method iterates over each `FieldDescriptor` in the provided `fields` array and performs validation
      * based on the field's type, label, CSS selector, expected value, and position. It supports input, select,
-     * radio, and checkbox field types. If a field fails validation, an error message is collected. After all
-     * fields are processed, if any errors were found, an aggregated error is thrown.
+     * radio, checkbox, date, and file field types. If a field fails validation, an error message is collected.
+     * After all fields are processed, if any errors were found, an aggregated error is thrown.
      *
      * **Logic:**
      * - For each field:
      *   - Determine the locator using either the field's label or CSS selector.
      *   - If a position is specified, select the nth occurrence of the locator.
      *   - Validate the field based on its type:
-     *     - `'input'` or `'select'`: Check that the value matches `expectedValue`.
-     *     - `'radio'`: Check that the radio button is checked.
+     *     - `'input'`: Check that the value matches `expectedValue`.
+     *     - `'select'`: Check that the selected option text matches `expectedValue`.
+     *     - `'radio'`: Check that the radio button with the expected label is checked.
      *     - `'checkbox'`: Check that the checkbox is checked or not, depending on `expectedValue`.
+     *     - `'date'`: Check that the day, month, and year fields match the expected value.
+     *     - `'file'`: Check that the file link text matches `expectedValue`.
      *     - Any other type: Throw an error for unsupported field type.
      *   - If validation fails, catch the error and add a descriptive message to the errors array.
      * - After all fields are validated, throw an aggregated error if any validations failed.
@@ -288,7 +291,7 @@ export abstract class BaseJourneyPage {
      *   - `label` (string, optional): The accessible label of the field.
      *   - `locator` (string, optional): The locator or selector for the field.
      *   - `position` (number, optional): The index of the field if multiple elements match.
-     *   - `type` (string): The type of the field (`'input'`, `'select'`, `'radio'`, `'checkbox'`).
+     *   - `type` (string): The type of the field (`'input'`, `'select'`, `'radio'`, `'checkbox'`, `'date'`, `'file'`).
      *   - `expectedValue` (any, optional): The expected value or checked state for the field.
      * @throws Error Aggregated error containing all validation failures, if any.
      */
@@ -314,7 +317,7 @@ export abstract class BaseJourneyPage {
                         break;
                     case 'select':
                         const selectedOption = locator.locator('option:checked');-
-                        await expect(selectedOption).toHaveText(field.expectedValue);
+                        await expect(selectedOption).toHaveText(field.expectedValue as string);
                         break;
                     case 'radio':
                         const radioLocator = locator.getByLabel(field.expectedValue as string, { exact: true });

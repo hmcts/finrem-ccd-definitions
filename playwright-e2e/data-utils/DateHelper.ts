@@ -84,9 +84,9 @@ export class DateHelper {
      *
      * @returns An array containing the year, month, and day as strings.
      */
-    static getCurrentDateFormatted(): string {
+    static getCurrentDateFormatted(): string[] {
         const today = this.getCurrentDate();
-        return today.split('-')
+        return today.split('-');
     };
 
 }

@@ -13,16 +13,17 @@ export class CheckYourAnswersPage {
     }
 
     /**
-     * Asserts that the "Check Your Answers" page displays the expected table data.
+     * Validates that the "Check Your Answers" page displays the expected table data.
      *
      * This method waits for the page and table to be visible, then compares the actual
-     * table rows against the provided expected data. The expected data can contain
-     * either strings (to match any cell in a row) or objects with `cellItem` and `value`
-     * properties (to match both columns in a row). All cell values are normalized by
-     * trimming whitespace and removing newlines/tabs before comparison.
+     * table rows against the provided expected data. The expected data can include:
+     * - Strings: to match any cell in a row.
+     * - Objects with `cellItem` and `value` properties: to match both columns in a row.
+     * - Objects with `rowType: 'label-value-adjacent'`: to match a label row immediately followed by a value row.
+     * All cell values are normalized by trimming whitespace and removing newlines/tabs before comparison.
      *
-     * @param table the expected table data, structured as an array of rows (strings or objects)
-     * @throws Error if any expected row is not found in the actual table
+     * @param table The expected table data, structured as an array of rows (strings or objects).
+     * @throws Error If any expected row is not found in the actual table.
      */
     async assertCheckYourAnswersPage(table: Table) {
         await this.page.waitForLoadState('load');
@@ -41,18 +42,6 @@ export class CheckYourAnswersPage {
             if (!await row.isVisible()) continue;
             const cells = await row.locator('th, td').allTextContents();
             actualRows.push(cells.map(cell => normalize(cell)));
-
-            if (cells.length === 1) {
-                console.log(`'${cells[0]}'`)
-            } else if( cells.length === 2) {
-                if(cells[0].length === 0) {
-                    console.log(`'${cells[1]}'`);
-                    return
-                }
-                console.log(`{ cellItem: '${cells[0]}', value: '${cells[1]}'},`);
-            } else {
-                console.log(`{ cellItem: '${cells[0]}', value: '${cells.slice(1).join(' ')}'}`);
-            }
         }
         // Collect all assertion failures
         const errors: string[] = [];
@@ -67,7 +56,7 @@ export class CheckYourAnswersPage {
                     .some(([cellItem, cellValue]) => cellItem === expectedNorm || cellValue === expectedNorm);
                 if (!found) {
                     errors.push(`Row with value "${expected}" not found in any column`);
-                } else console.log(`[PASS] Row with value "${expected}" validated`);
+                }
             } else if (expected.rowType === 'label-value-adjacent') {
                 let found = false;
                 for (let i = 0; i < actualRows.length - 1; i++) {
@@ -78,7 +67,6 @@ export class CheckYourAnswersPage {
                         valueRow.includes(normalize(expected.value as string))
                     ) {
                         found = true;
-                        console.log(`[PASS] Adjacent rows with label "${expected.cellItem}" and value "${expected.value}" validated`);
                         break;
                     }
                 }
@@ -94,7 +82,7 @@ export class CheckYourAnswersPage {
                 );
                 if (!found) {
                     errors.push(`Row with "${expected.cellItem}" and "${expected.value}" not found`);
-                } else console.log(`[PASS] Row with label "${expected.cellItem}" and value "${expected.value}" validated`);
+                }
             }
         }
 
