@@ -18,7 +18,7 @@
     "CaseFieldID": "applicantHearingTabItems",
     "UserRole": "[APPSOLICITOR]",
     "TabFieldDisplayOrder": 1
-  }, 
+  },
   {
     "LiveFrom": "02/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
@@ -28,7 +28,7 @@
     "CaseFieldID": "applicantHearingTabItems",
     "UserRole": "[APPBARRISTER]",
     "TabFieldDisplayOrder": 1
-  }, 
+  },
   {
     "LiveFrom": "02/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
@@ -37,16 +37,6 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "respondentHearingTabItems",
     "UserRole": "[RESPSOLICITOR]",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "02/06/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageHearings-respondent-barrister",
-    "TabLabel": "Hearings",
-    "TabDisplayOrder": 4,
-    "CaseFieldID": "respondentHearingTabItems",
-    "UserRole": "[RESPBARRISTER]",
     "TabFieldDisplayOrder": 1
   },
   {
@@ -62,31 +52,11 @@
   {
     "LiveFrom": "02/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageHearings-bar1",
-    "TabLabel": "Hearings",
-    "TabDisplayOrder": 4,
-    "CaseFieldID": "int1HearingTabItems",
-    "UserRole": "[INTVRBARRISTER1]",
-    "TabFieldDisplayOrder": 1
-  }, 
-  {
-    "LiveFrom": "02/06/2025",
-    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "manageHearings-int2",
     "TabLabel": "Hearings",
     "TabDisplayOrder": 4,
     "CaseFieldID": "int2HearingTabItems",
     "UserRole": "[INTVRSOLICITOR2]",
-    "TabFieldDisplayOrder": 1
-  }, 
-  {
-    "LiveFrom": "02/06/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageHearings-bar2",
-    "TabLabel": "Hearings",
-    "TabDisplayOrder": 4,
-    "CaseFieldID": "int2HearingTabItems",
-    "UserRole": "[INTVRBARRISTER2]",
     "TabFieldDisplayOrder": 1
   }, 
   {
@@ -102,31 +72,11 @@
   {
     "LiveFrom": "02/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageHearings-bar3",
-    "TabLabel": "Hearings",
-    "TabDisplayOrder": 4,
-    "CaseFieldID": "int3HearingTabItems",
-    "UserRole": "[INTVRBARRISTER3]",
-    "TabFieldDisplayOrder": 1
-  }, 
-  {
-    "LiveFrom": "02/06/2025",
-    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "manageHearings-int4",
     "TabLabel": "Hearings",
     "TabDisplayOrder": 4,
     "CaseFieldID": "int4HearingTabItems",
     "UserRole": "[INTVRSOLICITOR4]",
-    "TabFieldDisplayOrder": 1
-  }, 
-  {
-    "LiveFrom": "02/06/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageHearings-bar4",
-    "TabLabel": "Hearings",
-    "TabDisplayOrder": 4,
-    "CaseFieldID": "int4HearingTabItems",
-    "UserRole": "[INTVRBARRISTER4]",
     "TabFieldDisplayOrder": 1
   }
 ]
