@@ -55,6 +55,7 @@ import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing
 import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
 import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
 import {AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
+import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateToJudgePage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -113,6 +114,7 @@ type CreateFixtures = {
   manageHearingPage: ManageHearingPage;
   checkYourAnswersPage: CheckYourAnswersPage;
   addNotePage: AddNotePage;
+  allocateToJudgePage: AllocateToJudgePage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -274,5 +276,8 @@ export const test = base.extend<CreateFixtures>({
   },
   addNotePage: async ({ page }, use) => {
     await use(new AddNotePage(page));
+  },
+  allocateToJudgePage: async ({ page }, use) => {
+    await use(new AllocateToJudgePage(page));
   }
 });
