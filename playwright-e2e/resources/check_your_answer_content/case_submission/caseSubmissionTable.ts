@@ -16,9 +16,9 @@ export function caseSubmissionTable(amount: string): Table {
             {cellItem: "Enter your account number", value: "PBA0089162"},
             {cellItem: "Amount to pay", value: amount},
             {cellItem: "Enter your reference", value: "Reference"},
-            'Payment Method: Fee Account',
-            'Your fee reference: Reference',
-            'Fee account number: PBA0089162'
+            // 'Payment Method: Fee Account',
+            // 'Your fee reference: Reference',
+            // 'Fee account number: PBA0089162'
         ]
     }
 }
