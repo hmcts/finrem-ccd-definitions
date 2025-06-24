@@ -58,7 +58,17 @@
     "CaseFieldID": "int1HearingTabItems",
     "UserRole": "[INTVRSOLICITOR1]",
     "TabFieldDisplayOrder": 1
-  }, 
+  },
+  {
+    "LiveFrom": "02/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int1-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "int1HearingTabItems",
+    "UserRole": "[INTVRBARRISTER1]",
+    "TabFieldDisplayOrder": 1
+  },
   {
     "LiveFrom": "02/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
@@ -68,7 +78,17 @@
     "CaseFieldID": "int2HearingTabItems",
     "UserRole": "[INTVRSOLICITOR2]",
     "TabFieldDisplayOrder": 1
-  }, 
+  },
+  {
+    "LiveFrom": "02/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int2-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "int2HearingTabItems",
+    "UserRole": "[INTVRBARRISTER2]",
+    "TabFieldDisplayOrder": 1
+  },
   {
     "LiveFrom": "02/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
@@ -78,7 +98,17 @@
     "CaseFieldID": "int3HearingTabItems",
     "UserRole": "[INTVRSOLICITOR3]",
     "TabFieldDisplayOrder": 1
-  }, 
+  },
+  {
+    "LiveFrom": "02/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int3-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "int3HearingTabItems",
+    "UserRole": "[INTVRBARRISTER3]",
+    "TabFieldDisplayOrder": 1
+  },
   {
     "LiveFrom": "02/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
@@ -87,6 +117,16 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "int4HearingTabItems",
     "UserRole": "[INTVRSOLICITOR4]",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "02/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int4-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "int4HearingTabItems",
+    "UserRole": "[INTVRBARRISTER4]",
     "TabFieldDisplayOrder": 1
   }
 ]
