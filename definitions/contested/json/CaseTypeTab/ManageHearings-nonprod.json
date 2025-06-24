@@ -42,6 +42,16 @@
   {
     "LiveFrom": "02/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-respondent-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "respondentHearingTabItems",
+    "UserRole": "[RESPBARRISTER]",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "02/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "manageHearings-int1",
     "TabLabel": "Hearings",
     "TabDisplayOrder": 4,

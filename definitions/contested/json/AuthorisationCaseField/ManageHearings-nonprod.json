@@ -54,14 +54,21 @@
     "CaseFieldID": "applicantHearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "C"
-  }, 
+  },
   {
     "LiveFrom": "10/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "respondentHearingTabItems",
     "UserRole": "[RESPSOLICITOR]",
     "CRUD": "R"
-  }, 
+  },
+  {
+    "LiveFrom": "10/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentHearingTabItems",
+    "UserRole": "[RESPBARRISTER]",
+    "CRUD": "R"
+  },
   {
     "LiveFrom": "10/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
