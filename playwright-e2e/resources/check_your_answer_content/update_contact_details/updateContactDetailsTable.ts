@@ -26,6 +26,8 @@ export const   contestedApplicantUpdateContactDetailsTableData = {
     tableName: 'Check your answers',
     rows: [
         { cellItem: "Does this update include a change in representation for either party?", value: "Yes"},
+        { cellItem: "Select Party to which the change in representation applies:", value: "Applicant" },
+        { cellItem: "Respondent represented", value: "Yes", rowType: "label-value-adjacent" },
         "Solicitor Details",
         { cellItem: "Solicitor’s name", value: "Test Baggins" },
         { cellItem:"Building and Street", value: "3rd Floor, 65-68 Leadenhall St"},
@@ -43,12 +45,12 @@ export const   contestedApplicantUpdateContactDetailsTableData = {
 }
 
 export const   contestedUpdateContactDetailsRespondentNotRepresentedTable = {
-    tableName: 'Check your answers',
+    tableName: 'Update Contact Details',
     rows: [
         { cellItem: "Does this update include a change in representation for either party?", value: "Yes"},
         { cellItem: "Select Party to which the change in representation applies:", value: "Respondent" },
-        { cellItem: "Is the respondent represented ?", value: "No" },
-        "Respondent’s Details",
+        { cellItem: "Is the respondent represented ?", value: "No", rowType: "label-value-adjacent" },
+       "Respondent’s Details",
         { cellItem: "Current First and Middle names", value: "Smeagol" },
         { cellItem: "Current Last Name", value: "Gollum" },
         { cellItem: "Building and Street", value: "10 Selsdon Road" },
@@ -57,7 +59,7 @@ export const   contestedUpdateContactDetailsRespondentNotRepresentedTable = {
         { cellItem: "Postcode/Zipcode", value: "NW2 7NE" },
         { cellItem: "Is the Respondent currently a resident in a refuge?", value: "Yes" },
     ]
-}
+} 
 
 export const   updateContactDetailsRespondentNotRepresentedTable = {
     tableName: 'Check your answers',

@@ -2,31 +2,36 @@ export const updateContestedRespondentNonRepresentedContactDetailsTabData = [
   {
     tabName: 'Applicant',
     tabContent: [
-      "APPLICANT DETAILS",
+      "Applicant’s Details",
       { tabItem: "Current First and Middle names", value: "Tester case" },
       { tabItem: "Current Last Name", value: "Baggins" },
-      { tabItem: "Please state in which Financial Remedies Court Zone the applicant resides", value: "Midlands"},
-      { tabItem: "This should be the FRC local to the applicant", value: "Nottingham FRC" },
-      { tabItem: "Where is the Applicant’s Local Court?", value: "LEICESTER COUNTY COURT AND FAMILY COURT" },
-    "SOLICITOR DETAILS",
+      { tabItem: "Does the applicant live outside of the UK?", value: "No" },
+      "Urgent Case",
+      { tabItem: "Is this an urgent case?", value: "No", rowType: "label-value-adjacent" },
+      "Applicant’s Contact details",
+      { tabItem: "Is the Applicant represented", value: "Yes", rowType: "label-value-adjacent" },
+      { tabItem: "Keep the Applicant's contact details private from the respondent?", value: "Yes" },
+      { tabItem: "Is the Applicant currently a resident in a refuge?", value: "Yes" },
+    "Solicitor Details",
+      { tabItem: "Your reference number", value: "Y707HZM" },
       { tabItem: "Solicitor’s name", value: "Test Baggins" },
-      { tabItem: "Name of your firm", value: "FinRem-1-Org" },
-      { tabItem: "Your reference", value: "Y707HZM" },
+      { tabItem: "Solicitor’s firm", value: "FinRem-1-Org" },
     ]
   },
   {
     tabName: 'Respondent',
     tabContent: [
-      "RESPONDENT DETAILS",
+      "Respondent’s Details",
       { tabItem: "Current First and Middle names", value: "Smeagol" },
       { tabItem: "Current Last Name", value: "Gollum" },
       { tabItem: "Is the Respondent currently a resident in a refuge?", value: "Yes" },
-      { tabItem: "Is the respondent represented ?", value: "No" },
-      "RESPONDENT SERVICE ADDRESS DETAILS",
+      { tabItem: "Is the respondent represented ?", value: "No", rowType: "label-value-adjacent" },
+
+      "Respondent’s Contact details",
       { tabItem: "Building and Street", value: "10 Selsdon Road" },
       { tabItem: "Town or City", value: "London" },
-      { tabItem: "Country", value: "United Kingdom" },
       { tabItem: "Postcode/Zipcode", value: "NW2 7NE" },
+      { tabItem: "Country", value: "United Kingdom" },
     ]
   }
 ];

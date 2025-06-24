@@ -7,7 +7,7 @@ import {ContestedCaseFactory} from "../../../data-utils/factory/contested/Contes
 import { updateContestedApplicantRepresentedContactDetailsTabData } from "../../../resources/tab_content/contested/contested_update_contact_details_represented.ts";
 import { contestedUpdateContactDetailsTabData } from "../../../resources/tab_content/contested/contested_update_contact_details_caseworker_tabs.ts";
 import { contestedApplicantUpdateContactDetailsTableData } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
-import { contestedUpdateContactDetailsRespondentNotRepresentedTable } from "../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable";
+import { contestedUpdateContactDetailsRespondentNotRepresentedTable } from "../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts";
 import { updateContestedRespondentNonRepresentedContactDetailsTabData  } from "../../../resources/tab_content/contested/update_contact_details_not_represented.ts";
 
 test(
