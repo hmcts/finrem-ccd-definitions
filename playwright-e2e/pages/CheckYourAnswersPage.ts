@@ -27,6 +27,8 @@ export class CheckYourAnswersPage {
      */
     async assertCheckYourAnswersPage(table: Table) {
         await this.page.waitForLoadState('load');
+        await this.checkYourAnswersTitle.waitFor({ state: 'visible' });
+
         await expect(this.checkYourAnswersTitle).toBeVisible();
         await expect(this.checkYourAnswersTable).toBeVisible();
 

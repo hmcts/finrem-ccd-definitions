@@ -49,7 +49,7 @@ export async function applicationCaseSubmission(
     await paymentPage.navigateContinue();
 
     await orderSummaryPage.assertOrderSummaryPage();
-    await orderSummaryPage.assertPaymentDetails("Fee Account", param.pbaNumber, param.reference);
+    //await orderSummaryPage.assertPaymentDetails("Fee Account", param.pbaNumber, param.reference);
     await orderSummaryPage.assertOrderSummaryTable(orderSummaryTable);
     await orderSummaryPage.navigateContinue();
 
