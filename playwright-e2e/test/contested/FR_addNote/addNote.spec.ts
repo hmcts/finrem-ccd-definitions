@@ -8,7 +8,7 @@ import { DateHelper } from "../../../data-utils/DateHelper.ts";
 test(
     'Contested - Add Note - Assert validations',
     {tag: [] },
-    async ({loginPage, manageCaseDashboardPage, caseDetailsPage, addNotePage}) => {
+    async ({loginPage, manageCaseDashboardPage, caseDetailsPage, addNotePage, eventSummaryPage}) => {
 
         // Create and setup case
         await manageCaseDashboardPage.visit();
@@ -40,7 +40,7 @@ test(
 
         await addNotePage.navigateContinue();
 
-        await addNotePage.enterEventSummaryAndDescription("Test Event Summary", "Test Event Description");
+        await eventSummaryPage.enterEventSummaryAndDescription("Test Event Summary", "Test Event Description");
 
         await addNotePage.navigateSubmit();
         await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.addNotes.listItem);
