@@ -1414,12 +1414,11 @@ __metadata:
   linkType: hard
 
 "@hmcts/playwright-common@npm:^1.0.25":
-  version: 1.0.26
-  resolution: "@hmcts/playwright-common@npm:1.0.26"
+  version: 1.0.27
+  resolution: "@hmcts/playwright-common@npm:1.0.27"
   dependencies:
     "@axe-core/playwright": ^4.10.0
     "@eslint/js": ^9.11.1
-    "@playwright/test": ^1.48.2
     "@types/node": ^22.6.1
     "@typescript-eslint/eslint-plugin": ^8.8.0
     eslint: ^9.11.1
@@ -1427,12 +1426,12 @@ __metadata:
     get-port: ^7.1.0
     globals: ^15.10.0
     lighthouse: ^12.2.1
-    playwright: ^1.48.2
-    playwright-core: ^1.48.2
     playwright-lighthouse: ^4.0.0
     typescript: ^5.6.2
     typescript-eslint: ^8.8.0
-  checksum: b9a3acaa42e90553c7be640657d7cfdb47bec1023b50eee24cefeccb52c1b8655e8ec54648fbd35eddd13a66323974c4ff7f149544564dd134876a135a6a5f1a
+  peerDependencies:
+    "@playwright/test": ^1.49.0
+  checksum: 38e6edd0e43797e3c3ae9fe4908cedcfeb2585e929467d1ee2367b5dc8c3407e9a5cbe27208d4ddc01e22534e0aa8d8f7062ce1ebc828ea4620e97183ff278fc
   languageName: node
   linkType: hard
 
@@ -1768,7 +1767,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.46.1, @playwright/test@npm:^1.48.2":
+"@playwright/test@npm:^1.46.1":
   version: 1.53.1
   resolution: "@playwright/test@npm:1.53.1"
   dependencies:
@@ -9709,15 +9708,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:^1.48.2":
-  version: 1.53.0
-  resolution: "playwright-core@npm:1.53.0"
-  bin:
-    playwright-core: cli.js
-  checksum: 00d6c8f566608681e1ab529ecb86a4e8c818f77605438e38e1b7ebf04b41b4df115217fe89cfe535d0a0a9f08807ab0b66d4f9da61c5609060cc68859c7c4354
-  languageName: node
-  linkType: hard
-
 "playwright-lighthouse@npm:^4.0.0":
   version: 4.0.0
   resolution: "playwright-lighthouse@npm:4.0.0"
@@ -9734,7 +9724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:1.53.1, playwright@npm:^1.46.1, playwright@npm:^1.48.2":
+"playwright@npm:1.53.1, playwright@npm:^1.46.1":
   version: 1.53.1
   resolution: "playwright@npm:1.53.1"
   dependencies:
