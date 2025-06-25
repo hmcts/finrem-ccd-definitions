@@ -4,6 +4,7 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 import { caseFlagTabData } from '../../../resources/tab_content/common-tabs/case_flag_tabs';
 import { caseFlagTabDataUpdated } from '../../../resources/tab_content/common-tabs/case_flag_tabs_updated';
 import { createFlag, manageFlagOnce } from '../../../pages/helpers/CaseFlagHelper';
+import {ContestedEvents} from "../../../config/case-data.ts";
 
 const caseFlagTestData = [
     {
@@ -67,9 +68,9 @@ test.describe('Contested Case Flag Tests', () => {
     }
 
     test(
-    'Contested - Caseworker manage case flag',
+    'Contested - Caseworker manage case flag And Refund for Form A',
     { tag: [] },
-    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageFlagPage }) => {
+    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageFlagPage, refundPage, eventSummaryPage }) => {
       // Create and setup case
         const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToCreateFlag();
 
@@ -85,6 +86,13 @@ test.describe('Contested Case Flag Tests', () => {
 
       // Assert Tab Data after all flags are managed
       await caseDetailsPage.assertTabData(caseFlagTabDataUpdated);
+
+      await caseDetailsPage.selectNextStep(ContestedEvents.refund);
+      await refundPage.verifyRefundPageDisplayed();
+      await eventSummaryPage.enterEventSummaryAndDescription("Refund for Form A case", "Refund details for form A case");
+      await refundPage.navigateSubmit();
+
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.refund.listItem);
     }
     );
 });

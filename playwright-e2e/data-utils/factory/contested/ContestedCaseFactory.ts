@@ -47,7 +47,7 @@ export class ContestedCaseFactory {
     return this.buildContestedCase({
       isPaper: false,
       replacements:
-        APPLICATION_ISSUE_DATE(await DateHelper.getCurrentDate()),
+        APPLICATION_ISSUE_DATE(DateHelper.getCurrentDate()),
     });
   }
 
@@ -68,7 +68,7 @@ export class ContestedCaseFactory {
       isPaper: false,
       replacements: [
           ...EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
-          ...APPLICATION_ISSUE_DATE(await DateHelper.getCurrentDate())
+          ...APPLICATION_ISSUE_DATE(DateHelper.getCurrentDate())
       ],
     });
   }
