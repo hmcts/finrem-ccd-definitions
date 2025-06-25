@@ -1,7 +1,6 @@
 import {BaseJourneyPage} from "../BaseJourneyPage.ts";
 import {expect, Locator, Page} from "@playwright/test";
 
-
 export class EventSummaryPage extends BaseJourneyPage {
     private readonly eventSummary: Locator;
     private readonly eventDescription: Locator;
