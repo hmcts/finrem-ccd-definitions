@@ -37,7 +37,6 @@ import {applicationCaseSubmission} from "../../../pages/helpers/PaymentSubmissio
 import {YesNoRadioEnum} from "../../../pages/helpers/enums/RadioEnums.ts";
 import {solicitor_amend_case_tabs} from "../../../resources/tab_content/contested/solicitor_amend_case_tabs.ts";
 
-
 test.describe('Contested - Form A - Amend application in Standard case', () => {
     test(
         "Amend Application Details in Standard case - Amend Form A application details",

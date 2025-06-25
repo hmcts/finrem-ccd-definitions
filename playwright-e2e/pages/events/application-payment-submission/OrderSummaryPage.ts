@@ -1,6 +1,5 @@
-import { Page } from 'playwright';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
-import {expect, Locator} from "@playwright/test";
+import {expect, Locator, Page} from "@playwright/test";
 
 export class OrderSummaryPage extends BaseJourneyPage {
     private readonly orderSummaryTitle: Locator;
