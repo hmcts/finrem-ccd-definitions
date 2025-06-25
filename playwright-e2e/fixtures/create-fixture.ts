@@ -56,8 +56,8 @@ import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/M
 import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
 import {AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
 import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateToJudgePage';
-import {EventSummaryPage} from "../pages/events/EventSummaryPage.ts";
-import {RefundPage} from "../pages/events/refund/RefundPage.ts";
+import {EventSummaryPage} from '../pages/events/EventSummaryPage.ts';
+import {RefundPage} from '../pages/events/refund/RefundPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -287,7 +287,7 @@ export const test = base.extend<CreateFixtures>({
   eventSummaryPage: async ({ page }, use) => {
     await use(new EventSummaryPage(page));
   },
-    refundPage: async ({ page }, use) => {
-        await use(new RefundPage(page));
-    }
+  refundPage: async ({ page }, use) => {
+    await use(new RefundPage(page));
+  }
 });
