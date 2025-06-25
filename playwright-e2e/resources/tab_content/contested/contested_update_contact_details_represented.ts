@@ -19,7 +19,7 @@ export const updateContestedApplicantRepresentedContactDetailsTabData = [
       "Respondent’s Details",
       { tabItem: "Current First and Middle names", value: "Smeagol" },
       { tabItem: "Current Last Name", value: "Gollum" },
-      //{ tabItem: "Is the respondent represented ?", value: "Yes" },
+      { tabItem: "Is the respondent represented ?", value: "Yes", rowType: "label-value-adjacent" },
       "Respondent’s Solicitor’s Details",
       { tabItem: "Solicitor’s name", value: "Sauron" },
       { tabItem: "Solicitor’s firm", value: "Mnt Doom Sols" }
