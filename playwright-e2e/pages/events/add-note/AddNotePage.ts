@@ -48,7 +48,7 @@ export class AddNotePage extends BaseJourneyPage {
     }
 
     async enterTodayDate(position: number = 0) {
-        const [year, month, day] = await DateHelper.getCurrentDateFormatted();
+        const [year, month, day] = DateHelper.getCurrentDateFormatted();
         await this.enterDate(day, month, year, position);
     }
 

@@ -3,7 +3,6 @@ const verifyTabText = require('../data/verify-contested-tab-data.json');
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('helpers/utils.js');
 
-
 const ccdWebUrl = process.env.CCD_WEB_URL;
 const solicitorUserName = process.env.USERNAME_SOLICITOR;
 const solicitorPassword = process.env.PASSWORD_SOLICITOR;
@@ -15,29 +14,6 @@ const nightlyTest = process.env.NIGHTLY_TEST;
 const runningEnv = process.env.RUNNING_ENV;
 
 Feature('Contested Events Tests');
-
-Scenario.skip('Contested Matrimonial case Amend application and Case submission by Solicitor @nightly', async I => {
-    //TODO- fix test
-    //The json file used to create case is new case data - this can be used to create a case via solicitor, case type matrimonial.
-    //Fix this json file - not working
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-solicitor-create-case.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-
-    await I.signInIdam(solicitorUserName, solicitorPassword);
-    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-
-    //amend application
-    I.contestedAmendApplicationDetails();
-
-    //case submission
-    await I.caseSubmitAuthorisation('contested');
-    await I.paymentPage(false);
-    await I.hwfPaymentDetails();
-    await I.paymentSubmission();
-    await I.savingApplicationInformation('contested');
-    await I.finalPaymentSubmissionPage();
-    await I.finalInformationPage();
-    I.see('Case Submission');
-}).retry(3);
 
 Scenario('Caseworker refunds an issued case @nightly', async ({ I }) => {
     logger.info("Refund test starting");
