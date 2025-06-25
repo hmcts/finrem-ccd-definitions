@@ -6,7 +6,6 @@ export const updateContestedApplicantRepresentedContactDetailsTabData = [
       { tabItem: "Current First and Middle names", value: "Tester case" },
       { tabItem: "Current Last Name", value: "Baggins" },
       { tabItem: "Does the applicant live outside of the UK?", value: "No" },
-    
     "Solicitor Details",
       { tabItem: "Your reference number", value: "Y707HZM" },
       { tabItem: "Solicitor’s name", value: "Test Baggins" },
@@ -19,7 +18,6 @@ export const updateContestedApplicantRepresentedContactDetailsTabData = [
       "Respondent’s Details",
       { tabItem: "Current First and Middle names", value: "Smeagol" },
       { tabItem: "Current Last Name", value: "Gollum" },
-      { tabItem: "Is the respondent represented ?", value: "Yes", rowType: "label-value-adjacent" },
       "Respondent’s Solicitor’s Details",
       { tabItem: "Solicitor’s name", value: "Sauron" },
       { tabItem: "Solicitor’s firm", value: "Mnt Doom Sols" }
