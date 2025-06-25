@@ -8,8 +8,7 @@ export class AddNotePage extends BaseJourneyPage {
     private readonly dayText: Locator;
     private readonly monthText: Locator;
     private readonly yearText: Locator;
-    private readonly eventSummary: Locator;
-    private readonly eventDescription: Locator;
+
 
     public constructor(page: Page) {
         super(page);
@@ -18,8 +17,6 @@ export class AddNotePage extends BaseJourneyPage {
         this.dayText = page.locator('#caseNoteDate-day');
         this.monthText = page.locator('#caseNoteDate-month');
         this.yearText = page.locator('#caseNoteDate-year');
-        this.eventSummary = page.locator('#field-trigger-summary');
-        this.eventDescription = page.locator('#field-trigger-description');
     }
 
     async assertAddNotePage() {
@@ -51,7 +48,7 @@ export class AddNotePage extends BaseJourneyPage {
     }
 
     async enterTodayDate(position: number = 0) {
-        const [year, month, day] = await DateHelper.getCurrentDateFormatted();
+        const [year, month, day] = DateHelper.getCurrentDateFormatted();
         await this.enterDate(day, month, year, position);
     }
 
@@ -71,14 +68,6 @@ export class AddNotePage extends BaseJourneyPage {
         await this.navigateContinue();
 
         await this.assertErrorMessage(errorMessages);
-    }
-
-    async enterEventSummaryAndDescription(summary: string, description: string) {
-        await expect(this.eventSummary).toBeVisible();
-        await expect(this.eventDescription).toBeVisible();
-
-        await this.eventSummary.fill(summary);
-        await this.eventDescription.fill(description);
     }
 
 }

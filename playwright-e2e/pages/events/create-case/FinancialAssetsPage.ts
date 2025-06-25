@@ -1,4 +1,4 @@
-import { type Page, Locator } from '@playwright/test';
+import {type Page, Locator, expect} from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 
 export class FinancialAssetsPage extends BaseJourneyPage {
