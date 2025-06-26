@@ -13,7 +13,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     private readonly typeOfHearingDropDown: Locator;
     private readonly hearingTimeEstimate: Locator;
 
-    public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
+    public constructor(page: Page, commonActionsHelper: CommonActionsHelper, applicantName: string) {
         super(page);
         this.commonActionsHelper = commonActionsHelper;
         this.manageHearingTitle = page.getByRole('heading', { name: "Manage Hearings" })
@@ -141,6 +141,18 @@ export class ManageHearingPage extends BaseJourneyPage {
         await optionToSelect.check();
     }
 
+    async selectWhoShouldSeeThisOrder(partyType: string, partyName: string) {
+        const checkbox = this.page.getByRole('checkbox', { name: `${partyType} - ${partyName}` });
+        await expect(checkbox).toBeVisible();
+        await checkbox.check();
+    }
+
+    async selectAllWhoShouldSeeThisOrder(parties: { partyType: string, partyName: string }[]) {
+        for (const { partyType, partyName } of parties) {
+            await this.selectWhoShouldSeeThisOrder(partyType, partyName);
+        }
+    }
+
     async assertErrorMessagesForAllMandatoryFields() {
         const errorMessages = [
             "Type of Hearing is required",
@@ -202,5 +214,11 @@ export class ManageHearingPage extends BaseJourneyPage {
         } else {
             await this.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
         }
+    }
+
+    async removeContent() {
+        const removeButton = this.page.getByRole('button', { name: 'Remove' });
+        await expect(removeButton).toBeVisible();
+        await removeButton.click();
     }
 }

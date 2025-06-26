@@ -4,6 +4,7 @@ import {ContestedEvents} from "../../../config/case-data.ts";
 import {getManageHearingTableData} from "../../../resources/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
 import { DateHelper } from '../../../data-utils/DateHelper.ts';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
+import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi.ts';
 
 const typeOfHearingData = [
     "Maintenance Pending Suit (MPS)",
@@ -141,5 +142,52 @@ test.describe('Contested - Manage Hearings', () => {
         )
     }
 
-}
-);
+
+    //Users data
+    test(
+        'Contested - Manage Hearings - Add Hearing and verify access to CFV', {tag: []},
+        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => { 
+
+            // Create and setup case
+            const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+            await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
+
+            // Login as caseworker and navigate to case
+            await manageCaseDashboardPage.visit();
+            await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+            await manageCaseDashboardPage.navigateToCase(caseId);
+            console.info(`Navigated to case with ID: ${caseId}`);
+
+            // Manage hearings
+            await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
+            await manageHearingPage.selectAddANewHearing();
+            await manageHearingPage.navigateContinue(); 
+            await manageHearingPage.addHearing({
+                type: "Final Dispute Resolution (FDR)",
+                duration: '2 hours',
+                date: {},
+                time: '10:00 AM',
+                court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
+                attendance: 'In person',
+                additionalInformation: 'Hearing details here',
+                uploadAnySupportingDocuments: true,
+                uploadFiles: ["final_hearing_file1.pdf", "final_hearing_file2.pdf"],
+                sendANoticeOfHearing: true                
+            });
+            
+            //Who should see this order - all parties
+             await manageHearingPage.selectAllWhoShouldSeeThisOrder([
+                { partyType: 'Applicant', partyName: 'Frodo Baggins' },
+                { partyType: 'Respondent', partyName: 'Smeagol Gollum' },
+                { partyType: 'Intervener1', partyName: 'Int1' },
+                { partyType: 'Intervener2', partyName: 'Int2' }
+            ]);
+
+
+            await manageHearingPage.navigateContinue();
+            await manageHearingPage.navigateIgnoreWarningAndContinue();
+
+
+        }
+    );
+});

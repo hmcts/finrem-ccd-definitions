@@ -173,6 +173,17 @@ export class ContestedEventApi {
     ]);
   }
 
+  static async caseworkerAddsApplicantIntervener(
+    caseId: string,
+  ): Promise<void> {
+    await this.updateCaseWithJson(
+      caseId,
+      ContestedEvents.manageIntervenersAddApplicantInt.ccdCallback,
+      PayloadPath.Contested.manageIntervenersAddApplicantInt,
+      true
+    );
+  }
+
   static async caseWorkerProgressFormACaseToListing(
     caseId: string,
     issueDate?: string
