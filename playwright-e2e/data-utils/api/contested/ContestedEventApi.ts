@@ -178,7 +178,7 @@ export class ContestedEventApi {
   ): Promise<void> {
     await this.updateCaseWithJson(
       caseId,
-      ContestedEvents.manageIntervenersAddApplicantInt.ccdCallback,
+      ContestedEvents.manageInterveners.ccdCallback,
       PayloadPath.Contested.manageIntervenersAddApplicantInt,
       true
     );

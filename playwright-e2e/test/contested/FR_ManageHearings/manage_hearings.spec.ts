@@ -142,8 +142,6 @@ test.describe('Contested - Manage Hearings', () => {
         )
     }
 
-
-    //Users data
     test(
         'Contested - Manage Hearings - Add Hearing and verify access to CFV', {tag: []},
         async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => { 
