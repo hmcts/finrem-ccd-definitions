@@ -76,33 +76,42 @@ export class UpdateContactDetailsPage extends BaseJourneyPage {
         const optionToSelect = this.respondentInRefugeRadio.getByLabel(radioOption);
         await optionToSelect.check();
     }
+
         async checkApplicantRepresented(isConfidential: boolean) {
         await (isConfidential ? this.applicantRadio : this.respondentRadio).check(); 
     }
+
     async specifySolicitorName(text: string) {
         await expect(this.checkSolicitorNameLabel).toBeVisible();
         await this.solicitorNameDetails.fill(text);
     }
+
     async specifyApplicantFirstName(text: string) {
         await expect(this.checkApplicantFirstNameLabel).toBeVisible();
         await this.applicantFirstNameDetails.fill(text);
     }
+
     async checkRespondentRepresented(isConfidential: boolean) {
         await (isConfidential ? this.applicantRadio : this.respondentRadio).check(); 
     }
+
        async checkRepresentation(isConfidential: boolean) {
         await (isConfidential ? this.yesRadio : this.noRadio).check(); 
     }
+
         async enterAddress(text: string) {
         await expect(this.checkAddressLabel).toBeVisible();
         await this.addressPostcode.fill(text);
     }
+
     async clickFindAddressButton(): Promise<void> {
        await this.findAddressButton.click();
     }
+
     async selectAddress(address: string): Promise<void> {
         await this.addressDropdown.selectOption({ label: address });
     }
+    
     async specifyContestedSolicitorName(text: string) {
         await expect(this.checkSolicitorNameLabel).toBeVisible();
         await this.contestedSolicitorNameDetails.fill(text);

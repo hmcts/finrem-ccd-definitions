@@ -24,7 +24,7 @@ export const   contestedUpdateContactDetailsTableData = {
     ]
 }
 
-export const   contestedApplicantUpdateContactDetailsTableData: Table = {
+export const contestedApplicantUpdateContactDetailsTableData: Table = {
     tableName: 'Check your answers',
     rows: [
         { cellItem: "Does this update include a change in representation for either party?", value: "Yes"},
