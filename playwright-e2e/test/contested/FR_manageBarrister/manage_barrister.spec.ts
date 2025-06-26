@@ -35,5 +35,7 @@ test(
             await manageBarristerPage.specifyBarristerFirstName('Tester Gollum');
             await manageBarristerPage.specifyBarristerEmail('fr_applicant_barrister1@mailinator.com');
             await manageBarristerPage.specifyBarristerOrganisation('Finrem-1-Org');
+            await manageBarristerPage.clickSelectButton();
+            await manageBarristerPage.navigateContinue();
     }
 );
