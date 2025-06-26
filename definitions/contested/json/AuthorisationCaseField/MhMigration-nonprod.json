@@ -37,7 +37,14 @@
   {
     "LiveFrom": "25/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "manageHearingsMigrated",
+    "CaseFieldID": "isListForHearingsMigrated",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "mhMigrationVersion",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRUD"
   }
