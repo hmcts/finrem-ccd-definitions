@@ -3,6 +3,7 @@ import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
+import { manageBarristerApplicantTableData } from '../../../resources/check_your_answer_content/manage_barrister/manageBarristerTable.ts';
 
 test(
     'Contested - Manage Barrister @test',
@@ -23,19 +24,25 @@ test(
         const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
         const respondentInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
 
-            // Login as caseworker and navigate to case
-            await manageCaseDashboardPage.visit();
-            await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
-            await manageCaseDashboardPage.navigateToCase(caseId);
+        // Login as caseworker and navigate to case
+        await manageCaseDashboardPage.visit();
+        await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+        await manageCaseDashboardPage.navigateToCase(caseId);
+
         // Update contact details
-            await caseDetailsPage.selectNextStep(ContestedEvents.manageBarrister);
-            await manageBarristerPage.checkApplicantRepresented(true);
-            await manageBarristerPage.navigateContinue();
-            await manageBarristerPage.clickAddNew();
-            await manageBarristerPage.specifyBarristerFirstName('Tester Gollum');
-            await manageBarristerPage.specifyBarristerEmail('fr_applicant_barrister1@mailinator.com');
-            await manageBarristerPage.specifyBarristerOrganisation('Finrem-1-Org');
-            await manageBarristerPage.clickSelectButton();
-            await manageBarristerPage.navigateContinue();
+        await caseDetailsPage.selectNextStep(ContestedEvents.manageBarrister);
+        await manageBarristerPage.checkApplicantRepresented(true);
+        await manageBarristerPage.navigateContinue();
+        await manageBarristerPage.clickAddNew();
+        await manageBarristerPage.specifyBarristerFirstName('Tester Gollum');
+        await manageBarristerPage.specifyBarristerEmail('fr_applicant_barrister1@mailinator.com');
+        await manageBarristerPage.specifyBarristerOrganisation('Finrem-1-Org');
+        await manageBarristerPage.clickSelectButton();
+        await manageBarristerPage.navigateContinue();
+        
+        //Continue about to submit and check your answers
+        await checkYourAnswersPage.assertCheckYourAnswersPage(manageBarristerApplicantTableData);
+        await manageBarristerPage.navigateSubmit();
+        await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageBarrister.listItem);
     }
 );
