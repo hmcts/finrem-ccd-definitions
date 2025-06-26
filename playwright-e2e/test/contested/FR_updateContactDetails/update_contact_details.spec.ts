@@ -59,7 +59,7 @@ test(
 );
 
 test(
-    'Contested - Update contact details - change in representation @test',
+    'Contested - Update contact details - change in representation',
     { tag: [] },
     async (
       {
