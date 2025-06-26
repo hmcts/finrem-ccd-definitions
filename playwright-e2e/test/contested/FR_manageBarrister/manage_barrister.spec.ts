@@ -31,5 +31,9 @@ test(
             await caseDetailsPage.selectNextStep(ContestedEvents.manageBarrister);
             await manageBarristerPage.checkApplicantRepresented(true);
             await manageBarristerPage.navigateContinue();
+            await manageBarristerPage.clickAddNew();
+            await manageBarristerPage.specifyBarristerFirstName('Tester Gollum');
+            await manageBarristerPage.specifyBarristerEmail('fr_applicant_barrister1@mailinator.com');
+            await manageBarristerPage.specifyBarristerOrganisation('Finrem-1-Org');
     }
 );
