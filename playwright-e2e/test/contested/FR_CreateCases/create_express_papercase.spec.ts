@@ -62,7 +62,13 @@ test(
     await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
     await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
-    await solicitorDetailsPage.enterUKaddress();
+      await solicitorDetailsPage.enterUKAddress({
+          buildingAndStreet: "3rd Floor, 65-68 Leadenhall St",
+          addressLine2: "Water Unite",
+          townOrCity: "London",
+          county: "Greater London",
+          postcodeOrZipcode: "EC3A 2AD",
+      });
     // Check both application types are present.
     await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT);
     await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.MARRIAGE_CIVIL);
@@ -86,7 +92,7 @@ test(
     await respondentRepresentedPage.selectOrganisation(
       config.organisationNames.finRem2Org
     );
-    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
+    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
     await respondentRepresentedPage.selectRespondentInRefuge(true);
     await respondentRepresentedPage.navigateContinue();
 
