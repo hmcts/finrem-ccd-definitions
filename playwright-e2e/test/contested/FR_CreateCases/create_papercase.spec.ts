@@ -7,7 +7,7 @@ import {
 } from '../../../resources/tab_content/contested/caseworker_create_case_tabs';
 import {createCaseTabDataChildrensAct} from "../../../resources/tab_content/consented/create_case_tabs.ts";
 import {
-    contestedCreatePaperChildrenCaseDetailsTable
+    contestedCreatePaperChildrenCaseDetailsTable, contestedCreatePaperMatrimonyCaseDetailsTable
 } from "../../../resources/check_your_answer_content/create_case/createCaseTable.ts";
 import {ContestedEvents} from "../../../config/case-data.ts";
 
@@ -46,7 +46,7 @@ test(
     // Sign in
     await manageCaseDashboardPage.visit()
     await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
-
+    const expectedURL: string = ContestedEvents.createPaperCase.ccdCallback;
     // Manage/Create case
     await createCasePage.startCase(
       config.jurisdiction.familyDivorce,
@@ -54,7 +54,7 @@ test(
       config.eventType.paperCase
     );
 
-    await startPage.navigateContinue();
+    await startPage.navigateContinue(expectedURL,1);
 
     // Select whether the applicant is represented or not. Then enter applicant details
     await solicitorDetailsPage.setApplicantRepresentation(true);
@@ -72,21 +72,21 @@ test(
     // Check both application types are present.
     await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT);
     await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.MARRIAGE_CIVIL);
-    await solicitorDetailsPage.navigateContinue();
+    await solicitorDetailsPage.navigateContinue(expectedURL,2);
 
     // Enter Divorce / Dissolution Details
     await divorceDetailsPage.enterDivorceDetailsContested('LV12D12345', config.divorceStage.petitionIssued);
-    await divorceDetailsPage.navigateContinue();
+    await divorceDetailsPage.navigateContinue(expectedURL,3);
 
     //applicant details
     const keepPrivate: boolean = true;
     const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
     await applicantDetailsPage.enterApplicantDetailsContested('Frodo', 'Baggins', keepPrivate, applicantInRefuge);
-    await applicantDetailsPage.navigateContinue();
+    await applicantDetailsPage.navigateContinue(expectedURL,5);
 
     //respondent details
     await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
-    await respondentDetailsPage.navigateContinue();
+    await respondentDetailsPage.navigateContinue(expectedURL,6);
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(
@@ -94,28 +94,28 @@ test(
     );
     await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
     await respondentRepresentedPage.selectRespondentInRefuge(true);
-    await respondentRepresentedPage.navigateContinue();
+    await respondentRepresentedPage.navigateContinue(expectedURL,7);
 
     // Nature of App
     await natureOfApplicationPage.selectNatureOfApplication();
-    await natureOfApplicationPage.navigateContinue();
+    await natureOfApplicationPage.navigateContinue(expectedURL,8);
 
     // Property Adjustment Order
     await propertyAdjustmentPage.propertyAdjustmentOrder();
     await propertyAdjustmentPage.addAdditionalPropertyAdjustment(true);
-    await propertyAdjustmentPage.navigateContinue();
+    await propertyAdjustmentPage.navigateContinue(expectedURL,9);
 
     // Periodical Payments
     await periodicalPaymentsPage.selectPeriodicalPaymentsContested(true);
-    await periodicalPaymentsPage.navigateContinue();
+    await periodicalPaymentsPage.navigateContinue(expectedURL,10);
 
     // Written Agreement
     await writtenAgreementPage.selectWrittenAgreement(false);
-    await writtenAgreementPage.navigateContinue();
+    await writtenAgreementPage.navigateContinue(expectedURL,12);
 
     //Fast track procedure
     await fastTrackProcedurePage.selectFastTrack(true);
-    await fastTrackProcedurePage.navigateContinue();
+    await fastTrackProcedurePage.navigateContinue(expectedURL,13);
 
     //Financial assets
     await financialAssetsPage.selectComplexityList('Yes');
@@ -129,7 +129,7 @@ test(
     // end, checked all the asset radio options are present
     await financialAssetsPage.insertFamilyHomeValue('125,000');
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
-    await financialAssetsPage.navigateContinue();
+    await financialAssetsPage.navigateContinue(expectedURL,14);
 
     // Financial Remedies Court
     await financialRemedyCourtPage.selectCourtZoneDropDown("COVENTRY COMBINED COURT CENTRE");
@@ -138,29 +138,29 @@ test(
     await financialRemedyCourtPage.enterSpecialArrangements();
     await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
     await financialRemedyCourtPage.enterHomeCourtReason();
-    await financialRemedyCourtPage.navigateContinue();
+    await financialRemedyCourtPage.navigateContinue(expectedURL,16);
 
     // Has attended miam
     await miamQuestionPage.selectHasAttendedMiam(true);
-    await miamQuestionPage.navigateContinue();
+    await miamQuestionPage.navigateContinue(expectedURL,22);
 
     // Miam details
     await miamDetailsPage.enterMediatorRegistrationNumber();
     await miamDetailsPage.enterFamilyMediatorServiceName();
     await miamDetailsPage.enterSoleTraderName();
     await miamDetailsPage.uploadMiamDocPaperCase();
-    await miamDetailsPage.navigateContinue();
+    await miamDetailsPage.navigateContinue(expectedURL,23);
 
     // Upload variation Order Document
     await uploadOrderDocumentsPage.uploadVariationOrderDoc();
     await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
-    await uploadOrderDocumentsPage.navigateContinue();
+    await uploadOrderDocumentsPage.navigateContinue(expectedURL + '/submit');
 
     //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
     await createCaseCheckYourAnswersPage.checkNetAssetsQuestion('Unable to quantify');
-    await checkYourAnswersPage.assertCheckYourAnswersPage(contestedCreatePaperChildrenCaseDetailsTable)
+    await checkYourAnswersPage.assertCheckYourAnswersPage(contestedCreatePaperMatrimonyCaseDetailsTable)
 
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
