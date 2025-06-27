@@ -27,28 +27,28 @@ test(
 
     // Login as applicant sol
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases)
     await manageCaseDashboardPage.navigateToCase(caseId);
     await caseDetailsPage.assertTabData(asExpectedApplicantRefugeStatus);
     await manageCaseDashboardPage.signOut();
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist)
     await manageCaseDashboardPage.navigateToCase(caseId);
     await caseDetailsPage.assertTabData(cwExpectedApplicantRefugeStatus);
     await manageCaseDashboardPage.signOut();
 
     // Login as judge
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases)
     await manageCaseDashboardPage.navigateToCase(caseId);
     await caseDetailsPage.assertTabData(jExpectedApplicantRefugeStatus);
     await manageCaseDashboardPage.signOut();
 
     // Login as respondent sol
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.respondent_solicitor.email, config.respondent_solicitor.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.respondent_solicitor.email, config.respondent_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases)
     await manageCaseDashboardPage.navigateToCase(caseId);
     await caseDetailsPage.assertTabData(rsExpectedApplicantRefugeStatus);
     await manageCaseDashboardPage.signOut();
