@@ -5,14 +5,24 @@ import config from "../../config/config";
 
 export class CommonActionsHelper {
 
-    async enterUkAddress(page: Page) {
+    async enterUkAddress(
+        page: Page,
+        address?: {
+            buildingAndStreet?: string;
+            addressLine2?: string;
+            townOrCity?: string;
+            county?: string;
+            postcodeOrZipcode?: string;
+            country?: string;
+        }
+    ) {
         await page.getByRole('link', { name: 'I can\'t enter a UK postcode' }).click();
-        await page.getByRole('textbox', { name: 'Building and Street'}).fill('test');
-        await page.getByRole('textbox', { name: 'Address Line 2'}).fill('test');
-        await page.getByRole('textbox', { name: 'Town or City'}).fill('test');
-        await page.getByRole('textbox', { name: 'County'}).fill('test');
-        await page.getByRole('textbox', { name: 'Postcode/Zipcode'}).fill('test');
-        await page.getByRole('textbox', { name: 'Country'}).fill('test');
+        await page.getByRole('textbox', { name: 'Building and Street'}).fill(address?.buildingAndStreet ?? 'test');
+        await page.getByRole('textbox', { name: 'Address Line 2'}).fill(address?.addressLine2 ?? 'test');
+        await page.getByRole('textbox', { name: 'Town or City'}).fill(address?.townOrCity ?? 'test');
+        await page.getByRole('textbox', { name: 'County'}).fill(address?.county ?? 'test');
+        await page.getByRole('textbox', { name: 'Postcode/Zipcode'}).fill(address?.postcodeOrZipcode ?? 'test');
+        await page.getByRole('textbox', { name: 'Country'}).fill(address?.country ?? 'test');
     }
 
     async enterPhoneNumber(page: Page) {
@@ -47,9 +57,10 @@ export class CommonActionsHelper {
     async waitForAllUploadsToBeCompleted(page: Page) {
         const cancelUploadLocators = await page.getByText('Cancel upload').all();
         for (let i = 0; i < cancelUploadLocators.length; i++) {
-            await expect(cancelUploadLocators[i]).toBeDisabled();
+            await expect(cancelUploadLocators[i]).toBeDisabled({ timeout: 10000 });
         }
-        await page.waitForTimeout(5000);
+        const uploadingSpan = page.locator('span', { hasText: 'Uploading...' });
+        await expect(uploadingSpan).toBeHidden();
     }
 
     /** 
