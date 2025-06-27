@@ -15,6 +15,7 @@ export class ManageBarristerPage extends BaseJourneyPage {
     private readonly checkBarristerOrganisationLabel: Locator;
     private readonly barristerOrganisationDetails: Locator;
     private readonly manageBarristerSelectButton: Locator;
+    private readonly checkApplicantBarristerFullName: Locator;
 
     public constructor(page: Page) {
         super(page);
@@ -31,6 +32,8 @@ export class ManageBarristerPage extends BaseJourneyPage {
         this.checkBarristerOrganisationLabel = page.getByText('Search for an organisation');
         this.barristerOrganisationDetails = page.locator('#search-org-text');
         this.manageBarristerSelectButton = page.locator('a:has-text("Select")');  
+
+        this.checkApplicantBarristerFullName = page.getByText('Tester Gollum');
     }
 
     async selectPartyBarristerChange(isSelectPartyBarristerChange: Boolean){
@@ -68,5 +71,8 @@ export class ManageBarristerPage extends BaseJourneyPage {
 
     async clickSelectButton(): Promise<void> {
        await this.manageBarristerSelectButton.click();
+    }
+    async assertBarristerTabData() {
+        await expect(this.checkApplicantBarristerFullName).toBeVisible();
     }
 }

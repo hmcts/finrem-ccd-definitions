@@ -4,6 +4,7 @@ import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { manageBarristerApplicantTableData } from '../../../resources/check_your_answer_content/manage_barrister/manageBarristerTable.ts';
+import { manageBarristerApplicantTabData } from '../../../resources/tab_content/contested/manage_barrister_applicant';
 
 test(
     'Contested - Manage Barrister @test',
@@ -44,5 +45,9 @@ test(
         await checkYourAnswersPage.assertCheckYourAnswersPage(manageBarristerApplicantTableData);
         await manageBarristerPage.navigateSubmit();
         await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageBarrister.listItem);
+
+        // Assert tab data
+        await caseDetailsPage.assertTabData(manageBarristerApplicantTabData);
+        await manageBarristerPage.assertBarristerTabData();
     }
 );

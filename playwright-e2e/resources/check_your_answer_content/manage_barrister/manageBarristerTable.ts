@@ -5,8 +5,9 @@ export const manageBarristerApplicantTableData: Table = {
     rows: [
         { cellItem: "Select Party to which the barrister change applies:", value: "Applicant", rowType: 'label-value-adjacent'},
         "Applicant's Barristers",
-        { cellItem: "Full name", value: "Tester Gollum" },
-        { cellItem: "Email", value: "fr_applicant_barrister1@mailinator.com" },
-        { cellItem:"Name:", value: "FinRem-1-Org"},
+        "Barrister Details",
+        { cellItem: "Full Name", value: "Tester Gollum", rowType: 'label-value-adjacent'},
+        { cellItem: "Email", value: "fr_applicant_barrister1@mailinator.com", rowType: 'label-value-adjacent'},
+        { cellItem:"Name:", value: "FinRem-1-Org", rowType: 'label-value-adjacent'},
     ]
 }
