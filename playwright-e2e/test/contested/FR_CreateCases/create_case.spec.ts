@@ -80,7 +80,7 @@ test(
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(config.organisationNames.finRem2Org);
-    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
+    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
