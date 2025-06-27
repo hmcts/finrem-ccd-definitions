@@ -78,7 +78,8 @@ const configuration = {
 
   loginPaths: {
     cases: 'cases',
-    worklist: 'work/my-work/list'
+    worklist: 'work/my-work/list',
+    organisation: 'organisation',
   }
 
 };

@@ -7,7 +7,7 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 
 
 test(
-  'Contested - Create Case FormA Matrimonial Submission',
+  'Contested - Create Case FormA Matrimonial Submission by Solicitor',
   { tag: ['@accessibility'] },
   async (
     {
@@ -80,7 +80,7 @@ test(
 
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(config.organisationNames.finRem2Org);
-    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
+    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App
@@ -183,7 +183,7 @@ test(
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Assert tab data
@@ -192,7 +192,7 @@ test(
 );
 
 test(
-  'Contested - Create Case Form A Childrens Act Submission',
+  'Contested - Create Case Form A Childrens Act Submission by Solicitor',
   { tag: ['@accessibility'] },
   async (
     {
@@ -271,7 +271,7 @@ test(
     // Respondent solicitor details
     await respondentRepresentedPage.selectRespondentRepresentedContested(true);
     await respondentRepresentedPage.selectOrganisation(config.organisationNames.finRem2Org);
-    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.applicant_solicitor.email);
+    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
     await respondentRepresentedPage.navigateContinue();
 
     // Nature of App

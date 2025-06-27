@@ -34,7 +34,6 @@ const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-re
 const {giveAllocationDirection} = require('./pages/give-allocation-direction/give-allocation-direction');
 const {manageIntervenersAdd} = require('./pages/manage-interveners/manage-interveners-add');
 const {manageIntervenersRemove} = require('./pages/manage-interveners/manage-interveners-remove');
-const {refundCase} = require('./pages/refund-case/refund-case');
 const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-order');
 const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-approve');
 const {uploadOrder} = require('./pages/upload-order/upload-order');
@@ -167,7 +166,6 @@ module.exports = () => {
     manageIntervenersAdd,
     manageIntervenersRemove,
     contestedIntervenersTab,
-    refundCase,
     manageBarristerApplicant,
     manageBarristerRespondent,
     schedule1Tab,

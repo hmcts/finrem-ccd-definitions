@@ -27,12 +27,14 @@ export const createCaseTabData = [
         { tabItem: "Current Last Name", value: "Smeagol" },
         { tabItem: "Is the respondent represented ?", value: "No" },
         "RESPONDENT SERVICE ADDRESS DETAILS",
-        { tabItem: "Building and Street", value: "test" },
-        { tabItem: "Address Line 2", value: "test" },
-        { tabItem: "Town or City", value: "test" },
-        { tabItem: "County/State", value: "test" },
-        { tabItem: "Country", value: "test" },
-        { tabItem: "Postcode/Zipcode", value: "test" },
+        { tabItem: "Building and Street", value: "Coral, 65-68" },
+        { tabItem: "Address Line 2", value: "Leadenhall 2nd Street" },
+        { tabItem: "Town or City", value: "Manchester" },
+        { tabItem: "County", value: "test" },
+        { tabItem: "Postcode/Zipcode", value: "EC3A 2AF" },
+        { tabItem: "Country", value: "United Kingdom" },
+        { tabItem: "Phone Number", value: "07111111111" },
+        { tabItem: "Email", value: "fr_respondent_solicitor1@mailinator.com" }
       ]
     }
   ];
@@ -79,10 +81,14 @@ export const createCaseTabDataPreview = [
         "Applicant’s Details",
         { tabItem: "Current First and Middle names", value: "Frodo" },
         { tabItem: "Current Last Name", value: "Baggins" },
+        { tabItem: "Is this an urgent case ?", value: "No" },
+        { tabItem: "Keep the Applicant's contact details private from the Respondent?", value: "Yes" },
+        { tabItem: "Is the Applicant currently a resident in a refuge?", value: "Yes" },
         "Solicitor Details",
         { tabItem: "Your reference number", value: "Y707HZM" },
         { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
         { tabItem: "Solicitor’s firm", value: "FinRem-1-Org" },
+        "Under paragraph 1 or 2 of schedule 1 children act 1989"
       ]
     },
     {
@@ -93,7 +99,7 @@ export const createCaseTabDataPreview = [
         { tabItem: "Date of birth", value: "1 Jan 2010" },
         { tabItem: "Gender", value: "Female" },
         { tabItem: "Relationship of applicant to the child", value: "Mother" },
-        { tabItem: "Relationship of respondent to the child", value: "Father" },
+        { tabItem: "Relationship of respondent to the child", value: "Father" }
       ]
     },
     {
@@ -107,12 +113,14 @@ export const createCaseTabDataPreview = [
         { tabItem: "Respondent solicitor’s reference", value: "MNT12345" },
         { tabItem: "Solicitor’s firm", value: "Mnt Doom Sols" },
         "Respondent’s Solicitor’s Contact Details",
-        { tabItem: "Building and Street", value: "test" },
-        { tabItem: "Address Line 2", value: "test" },
-        { tabItem: "Town or City", value: "test" },
+        { tabItem: "Building and Street", value: "Coral, 65-68" },
+        { tabItem: "Address Line 2", value: "Leadenhall 2nd Street" },
+        { tabItem: "Town or City", value: "Manchester" },
         { tabItem: "County", value: "test" },
-        { tabItem: "Postcode/Zipcode", value: "test" },
-        { tabItem: "Country", value: "test" },
+        { tabItem: "Postcode/Zipcode", value: "EC3A 2AF" },
+        { tabItem: "Country", value: "United Kingdom" },
+        { tabItem: "Phone Number", value: "07111111111" },
+        { tabItem: "Email", value: "fr_respondent_solicitor1@mailinator.com" }
       ]
     }
   ];

@@ -39,15 +39,7 @@ export class NatureOfApplicationPage extends BaseJourneyPage {
     async selectNatureOfApplication() {
         // CONTESTED is using natureOfApplicationChecklist
         // CONSENTED is using natureOfApplication2
-        await this.natureOfApplicationMaintenance.check();
-        await this.natureOfApplicationLumpSum.check();
-        await this.natureOfApplicationPropertyAdjustment.check();
-        await this.natureOfApplicationPropertySettlement.check();
-        await this.natureOfApplicationPeriodicalPayment.check();
-        await this.natureOfApplicationPensionSharing.check();
-        await this.natureOfApplicationPensionComp.check();
-        await this.natureOfApplicationPensionAttachment.check();
-        await this.natureOfApplicationPensionCompAttachment.check();
+        await this.expressPilotSuitableNatureOfApplications();
         await this.natureOfApplicationVariationOrder.check();
     }
     async selectNatureOfApplicationChildrens() {

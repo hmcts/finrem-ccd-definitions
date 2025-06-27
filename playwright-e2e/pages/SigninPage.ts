@@ -14,8 +14,7 @@ export class SigninPage {
     this.signinButtonLocator = page.getByRole('button', { name: 'Sign in' });
   }
 
-  // Generic login for any user.  No retries, less reliable.
-  async login(email: string, password: string, expectedUrl: string) {   
+  private async login(email: string, password: string) {
     await expect(this.emailInputLocator).toBeVisible();
     await this.emailInputLocator.fill(email);
     await expect(this.passwordInputLocator).toBeVisible();
@@ -23,26 +22,23 @@ export class SigninPage {
     await expect(this.signinButtonLocator).toBeVisible();
     await expect(this.signinButtonLocator).toBeEnabled();
     await this.signinButtonLocator.click();
-    await this.page.waitForURL(`${expectedUrl}/*`);
   }
 
-  // Resilient login.  Requires the path that you expect a User to land on.
-  // For instance, Solictors and Caseworker land on pages with different paths.
-  // Faster timeout works for local running, but remains as safer Playwright default for AAT.
+  /**
+   *  Resilient login.  Requires the path that you expect a User to land on.
+   *  For instance, Solicitors and Caseworker land on pages with different paths.
+   *   Faster timeout works for local running, but remains as safer Playwright default for AAT.
+   * @param email
+   * @param password
+   * @param expectedUrl
+   * @param requiredPath
+   */
   async loginWaitForPath(email: string, password: string, expectedUrl: string, requiredPath: string) {
     const maxRetries = 10;
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
-        await expect(this.emailInputLocator).toBeVisible();
-        await this.emailInputLocator.fill(email);
-
-        await expect(this.passwordInputLocator).toBeVisible();
-        await this.passwordInputLocator.fill(password);
-
-        await expect(this.signinButtonLocator).toBeVisible();
-        await expect(this.signinButtonLocator).toBeEnabled();
-        await this.signinButtonLocator.click();
+        await this.login(email, password);
         
         let timeoutAmount = 30000;
         if ( expectedUrl === 'http://localhost:3000') {

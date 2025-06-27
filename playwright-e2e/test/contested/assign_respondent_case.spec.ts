@@ -21,7 +21,7 @@ test(
 
     // Login as respondent sol
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.respondent_solicitor.email, config.respondent_solicitor.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.respondent_solicitor.email, config.respondent_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases)
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Assert tab data

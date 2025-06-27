@@ -10,11 +10,13 @@ const caseFlagTestData = [
         createTitle: 'Caseworker creates case flag',
         manageTitle: 'Caseworker manages case flag',
         user: config.caseWorker,
+        path: config.loginPaths.worklist,
     },
     {
         createTitle: 'Judge creates case flag',
         manageTitle: 'Judge manages case flag',
         user: config.judge,
+        path: config.loginPaths.cases,
     }
 ];
 
@@ -29,7 +31,7 @@ test.describe('Consented Case Flag Tests', () => {
 
                 // Login and navigate to case
                 await manageCaseDashboardPage.visit();
-                await loginPage.login(data.user.email, data.user.password, config.manageCaseBaseURL);
+                await loginPage.loginWaitForPath(data.user.email, data.user.password, config.manageCaseBaseURL, data.path);
                 await manageCaseDashboardPage.navigateToCase(caseId);
 
                 // Create case flag
@@ -64,7 +66,7 @@ test.describe('Consented Case Flag Tests', () => {
 
                 // Login and navigate to case
                 await manageCaseDashboardPage.visit();
-                await loginPage.login(data.user.email, data.user.password, config.manageCaseBaseURL);
+                await loginPage.loginWaitForPath(data.user.email, data.user.password, config.manageCaseBaseURL, data.path);
                 await manageCaseDashboardPage.navigateToCase(caseId);
 
                 // Manage each flag individually

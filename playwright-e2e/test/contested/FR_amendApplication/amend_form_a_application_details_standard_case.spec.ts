@@ -72,30 +72,31 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
             }
         ) => {
             const caseId = await ContestedCaseFactory.createBaseContestedFormA();
+            const url = ContestedEvents.amendFormAApplicationDetails.ccdCallback;
 
             await manageCaseDashboardPage.visit();
-            await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
+            await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases)
             await manageCaseDashboardPage.navigateToCase(caseId);
 
             await caseDetailsPage.selectNextStep(ContestedEvents.amendFormAApplicationDetails)
             // amend application details
             await amendFormAApplicationDetailsPage.assertTitleIsVisible();
-            await amendFormAApplicationDetailsPage.navigateContinue();
+            await amendFormAApplicationDetailsPage.navigateContinue(url, 2);
             // solicitor details
             await solicitorDetailsPage.validateFields(solicitorDetailsContent)
-            await solicitorDetailsPage.navigateContinue();
+            await solicitorDetailsPage.navigateContinue(url, 3);
             // divorce details
             await divorceDetailsPage.validateFields(divorceDissolutionDetails);
-            await divorceDetailsPage.navigateContinue();
+            await divorceDetailsPage.navigateContinue(url, 4);
             // applicant details
             await applicantDetailsPage.validateFields(applicantDetails)
-            await applicantDetailsPage.navigateContinue();
+            await applicantDetailsPage.navigateContinue(url, 6);
             // respondent details
             await respondentDetailsPage.validateFields(respondentDetailsContent)
-            await respondentDetailsPage.navigateContinue();
+            await respondentDetailsPage.navigateContinue(url, 7);
             // respondent solicitor details
             await respondentRepresentedPage.validateFields(respondentSolicitorDetailsContent)
-            await respondentRepresentedPage.navigateContinue();
+            await respondentRepresentedPage.navigateContinue(url, 8);
             // nature of application
             await natureOfApplicationPage.validateFields([ {
                 label: "Maintenance Pending Suit",
@@ -105,12 +106,12 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
             }]);
             await natureOfApplicationPage.selectNatureOfApplication();
             await natureOfApplicationPage.validateFields(natureOfApplicationDetails);
-            await natureOfApplicationPage.navigateContinue();
+            await natureOfApplicationPage.navigateContinue(url, 9);
             // property adjustment
             await propertyAdjustmentPage.propertyAdjustmentOrder();
             await propertyAdjustmentPage.addAdditionalPropertyAdjustment(true);
             await propertyAdjustmentPage.validateFields(propertyAdjustmentDetails);
-            await propertyAdjustmentPage.navigateContinue();
+            await propertyAdjustmentPage.navigateContinue(url, 10);
             // periodical payments
             await periodicalPaymentsPage.selectPeriodicalPaymentsContested(true);
             await periodicalPaymentsPage.validateFields([
@@ -121,11 +122,11 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
                     expectedValue: "Yes"
                 }
             ]);
-            await periodicalPaymentsPage.navigateContinue();
+            await periodicalPaymentsPage.navigateContinue(url, 11);
             // written agreement
             await writtenAgreementPage.selectWrittenAgreement(false);
             await writtenAgreementPage.validateFields(writtenAgreementDetails);
-            await writtenAgreementPage.navigateContinue();
+            await writtenAgreementPage.navigateContinue(url, 13);
             // fast track procedure
             await  fastTrackProcedurePage.selectFastTrack(false);
             await fastTrackProcedurePage.validateFields([
@@ -136,16 +137,16 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
                     expectedValue: "No"
                 }
             ]);
-            await fastTrackProcedurePage.navigateContinue();
+            await fastTrackProcedurePage.navigateContinue(url, 14);
             // financial assets
             await financialAssetsPage.selectCheckboxByLabel(
                 ['Complex asset or income structures','Non-disclosure of assets']
             );
             await financialAssetsPage.validateFields(financialAssetsPageDetails);
-            await financialAssetsPage.navigateContinue();
+            await financialAssetsPage.navigateContinue(url, 15);
             // financial remedy court
             await financialRemedyCourtPage.validateFields(financialRemedyCourtDetails);
-            await financialRemedyCourtPage.navigateContinue();
+            await financialRemedyCourtPage.navigateContinue(url, 18);
             // miam question
             await miamQuestionPage.validateFields([{
                 label: "Has the applicant attended a MIAM?",
@@ -153,10 +154,10 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
                 type: "radio",
                 expectedValue: "Yes"
             }]);
-            await miamQuestionPage.navigateContinue();
+            await miamQuestionPage.navigateContinue(url, 24);
             // MIAM details
             await miamDetailsPage.validateFields(miamDetails);
-            await miamDetailsPage.navigateContinue();
+            await miamDetailsPage.navigateContinue(url, 25);
             // upload order documents
             await uploadOrderDocumentsPage.uploadVariationOrderDoc();
             await uploadOrderDocumentsPage.selectUploadAdditionalDocs(true);
@@ -164,10 +165,10 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
             await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(true);
             await uploadOrderDocumentsPage.enterUrgentCaseDetails("Urgent case details");
             await uploadOrderDocumentsPage.validateFields(uploadDocumentPageDetails);
-            await uploadOrderDocumentsPage.navigateContinue();
+            await uploadOrderDocumentsPage.navigateContinue(url, 26);
             // saving your application page
             await createCaseSavingYourAnswersPage.assertPageHeading("Saving your application");
-            await createCaseSavingYourAnswersPage.navigateContinue();
+            await createCaseSavingYourAnswersPage.navigateContinue(url +'/submit');
 
             //assert check your answers page
             await amendFormAApplicationDetailsPage.assertPageHeading('Amend Application Details');

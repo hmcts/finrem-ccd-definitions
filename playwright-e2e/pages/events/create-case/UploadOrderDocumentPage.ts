@@ -35,8 +35,24 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
     }
 
     async uploadVariationOrderDoc() {
-        await this.variationOrderDocUpload.setInputFiles('./playwright-e2e/resources/file/Variation order.pdf');
-        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+        let attempts = 0;
+        while (attempts < 4) {
+            await this.variationOrderDocUpload.setInputFiles('./playwright-e2e/resources/file/Variation order.pdf');
+            await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+            await this.navigateContinue();
+            const variationDocErrorMessage = this.page.getByText('Your request was rate limited. Please wait a few seconds before retrying your document upload');
+            const isRateLimited = await variationDocErrorMessage.isVisible();
+            if (!isRateLimited) {
+                break;
+            }
+            await this.page.waitForTimeout(2500);
+            await this.navigatePrevious();
+            await this.navigateContinue();
+            attempts++;
+        }
+        if (!(await this.variationOrderDocUpload.isVisible())) {
+            await this.navigatePrevious();
+        }
     }
 
     async selectUploadAdditionalDocs(uploadAdditionalDocs: Boolean){

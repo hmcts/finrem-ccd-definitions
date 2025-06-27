@@ -11,21 +11,25 @@ const caseFlagTestData = [
         title: 'Caseworker creates case flag for Form A',
         setupCase: () => ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(),
         user: config.caseWorker,
+        path: config.loginPaths.worklist,
     },
     {
         title: 'Judge creates case flag for Form A',
         setupCase: () => ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(),
         user: config.judge,
+        path: config.loginPaths.cases,
     },
     {
         title: 'Caseworker creates case flag for Paper Case',
         setupCase: () => ContestedCaseFactory.createAndSubmitPaperCase(),
         user: config.caseWorker,
+        path: config.loginPaths.worklist,
     },
     {
         title: 'Caseworker creates case flag for Schedule1 Case',
         setupCase: () => ContestedCaseFactory.createAndProcessSchedule1CaseUpToIssueApplication(),
         user: config.caseWorker,
+        path: config.loginPaths.worklist,
     },
 ];
 
@@ -40,7 +44,7 @@ test.describe('Contested Case Flag Tests', () => {
 
                 // Login and navigate to case
                 await manageCaseDashboardPage.visit();
-                await loginPage.login(data.user.email, data.user.password, config.manageCaseBaseURL);
+                await loginPage.loginWaitForPath(data.user.email, data.user.password, config.manageCaseBaseURL, data.path);
                 await manageCaseDashboardPage.navigateToCase(caseId);
 
                 // Create case flag
@@ -76,8 +80,8 @@ test.describe('Contested Case Flag Tests', () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
-        await manageCaseDashboardPage.navigateToCase(caseId);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await manageCaseDashboardPage.navigateToCase(caseId);
         
       // Manage each flag individually
       await manageFlagOnce(caseDetailsPage, manageFlagPage, 'case', 'Complex Case', 'Test case');

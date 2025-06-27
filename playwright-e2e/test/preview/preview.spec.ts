@@ -19,7 +19,7 @@ test(
     const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     await manageCaseDashboardPage.navigateToCase(caseId);
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabDataPreview);
@@ -39,7 +39,7 @@ test(
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     await manageCaseDashboardPage.navigateToCase(caseId);
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);

@@ -32,7 +32,13 @@ export class ApplicantDetailsPage extends BaseJourneyPage {
         await this.commonActionsHelper.enterNames(this.page, firstName, lastName);
         await this.selectApplicantDetailsPrivate(keepPrivate);
         await this.selectApplicantInRefuge(applicantInRefuge);
-        await this.commonActionsHelper.enterUkAddress(this.page);
+        await this.commonActionsHelper.enterUkAddress(this.page, {
+            buildingAndStreet: 'Water Unite, 65-68',
+            addressLine2: 'Leadenhall Street',
+            townOrCity: 'Liverpool',
+            postcodeOrZipcode: 'EC3A 2AE',
+            country: 'United Kingdom'
+        });
     }
 
     async enterApplicantDetailsConsented(firstName: string, lastName: string){
