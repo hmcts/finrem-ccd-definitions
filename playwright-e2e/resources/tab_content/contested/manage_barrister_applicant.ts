@@ -12,4 +12,18 @@ export const manageBarristerApplicantTabData = [
   }
 ]   
 
+export const manageBarristeRespondentTabData = [ 
+  {
+    tabName: 'Respondent',
+    tabContent: [
+  "Respondent’s Details",
+    { tabItem: "Current First and Middle names", value: "Smeagol" },
+    { tabItem: "Current Last Name", value: "Gollum" },
+  "Respondent's Barristers",
+  "Barrister Details",
+    { tabItem: "Full Name", value: "Frodo Test Baggins"},
+    ]
+  }
+]  
+
 

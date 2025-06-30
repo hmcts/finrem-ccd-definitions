@@ -16,6 +16,10 @@ export class ManageBarristerPage extends BaseJourneyPage {
     private readonly barristerOrganisationDetails: Locator;
     private readonly manageBarristerSelectButton: Locator;
     private readonly checkApplicantBarristerFullName: Locator;
+    private readonly checkRespondentBarristerFirstNameLabel: Locator;
+    private readonly respondentBarristerFirstNameDetails: Locator;
+    private readonly checkRespondentbarristerEmailLabel: Locator;
+    private readonly respondentBarristerEmailDetails: Locator;
 
     public constructor(page: Page) {
         super(page);
@@ -34,6 +38,12 @@ export class ManageBarristerPage extends BaseJourneyPage {
         this.manageBarristerSelectButton = page.locator('a:has-text("Select")');  
 
         this.checkApplicantBarristerFullName = page.getByText('Tester Gollum');
+
+        this.checkRespondentBarristerFirstNameLabel = page.getByText('Full name');
+        this.respondentBarristerFirstNameDetails = page.locator('#respBarristerCollection_0_name');
+        this.checkRespondentbarristerEmailLabel = page.getByText('Email');
+        this.respondentBarristerEmailDetails = page.locator('#respBarristerCollection_0_email');
+        
     }
 
     async selectPartyBarristerChange(isSelectPartyBarristerChange: Boolean){
@@ -54,12 +64,12 @@ export class ManageBarristerPage extends BaseJourneyPage {
        await this.manageBarristerAddNewButton.click();
     }
 
-    async specifyBarristerFirstName(text: string) {
+    async specifyApplicantBarristerFirstName(text: string) {
         await expect(this.checkBarristerFirstNameLabel).toBeVisible();
         await this.barristerFirstNameDetails.fill(text);
     }
 
-    async specifyBarristerEmail(text: string) {
+    async specifyApplicantBarristerEmail(text: string) {
         await expect(this.checkBarristerEmailLabel).toBeVisible();
         await this.barristerEmailDetails.fill(text);
     }
@@ -70,9 +80,21 @@ export class ManageBarristerPage extends BaseJourneyPage {
     }
 
     async clickSelectButton(): Promise<void> {
-       await this.manageBarristerSelectButton.click();
+        await this.manageBarristerSelectButton.click();
     }
+
     async assertBarristerTabData() {
         await expect(this.checkApplicantBarristerFullName).toBeVisible();
     }
+
+    async specifyRespondentBarristerFirstName(text: string) {
+        await expect(this.checkRespondentBarristerFirstNameLabel).toBeVisible();
+        await this.respondentBarristerFirstNameDetails.fill(text);
+    }
+
+    async specifyRespondentBarristerEmail(text: string) {
+        await expect(this.checkRespondentbarristerEmailLabel).toBeVisible();
+        await this.respondentBarristerEmailDetails.fill(text);
+    }
 }
+
