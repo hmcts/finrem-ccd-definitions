@@ -3,6 +3,8 @@ import config from '../../../config/config';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
+import { migratedListForHearingsTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import { DateHelper } from "../../../data-utils/DateHelper.ts";
 
 async function performListForHearingFlow(
   caseId: string,
@@ -34,6 +36,32 @@ async function performListForHearingFlow(
   await listForHearingPage.navigateSubmit();
   await listForHearingPage.navigateIgnoreWarningAndGo();
   await caseDetailsPage.checkHasBeenUpdated('List for Hearing');
+
+  if (config.run_accessibility) {
+    const accessibilityScanResults = await makeAxeBuilder().analyze();
+
+    await testInfo.attach('accessibility-scan-results', {
+      body: JSON.stringify(accessibilityScanResults, null, 2),
+      contentType: 'application/json'
+    });
+
+    expect(accessibilityScanResults.violations).toEqual([]);
+  }
+}
+
+async function performManageHearingsMigration(
+  caseId: string,
+  loginPage: any,
+  manageCaseDashboardPage: any,
+  caseDetailsPage: any,
+  listForHearingPage: any,
+  testInfo: any,
+  makeAxeBuilder: any
+): Promise<void> {
+
+  await caseDetailsPage.selectNextStep(ContestedEvents.manageHearingsMigration);
+  await listForHearingPage.navigateSubmit();
+  await caseDetailsPage.checkHasBeenUpdated('Manage Hearings Migration');
 
   if (config.run_accessibility) {
     const accessibilityScanResults = await makeAxeBuilder().analyze();
@@ -89,6 +117,28 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
       // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
       // Run method that converts this old hearing type to new hearing type format
       // Run tab test to confirm that all the correct hearing information shows on the new hearing tab
+    }
+  );
+
+  test(
+    'Manage Hearing Migration: Form A case shows on hearings tab',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        listForHearingPage,
+        makeAxeBuilder,
+      },
+      testInfo
+    ) => {
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
+      await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      await performManageHearingsMigration(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+
+      const [year, month, day] = DateHelper.getCurrentDateFormatted();
+      await caseDetailsPage.assertTabData(migratedListForHearingsTabData);
     }
   );
 });
