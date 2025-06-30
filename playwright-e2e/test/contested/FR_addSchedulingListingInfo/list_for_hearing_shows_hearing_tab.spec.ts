@@ -50,9 +50,6 @@ async function performListForHearingFlow(
 }
 
 async function performManageHearingsMigration(
-  caseId: string,
-  loginPage: any,
-  manageCaseDashboardPage: any,
   caseDetailsPage: any,
   listForHearingPage: any,
   testInfo: any,
@@ -135,7 +132,7 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
       await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      await performManageHearingsMigration(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      await performManageHearingsMigration(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
 
       const [year, month, day] = DateHelper.getCurrentDateFormatted();
       await caseDetailsPage.assertTabData(migratedListForHearingsTabData);
