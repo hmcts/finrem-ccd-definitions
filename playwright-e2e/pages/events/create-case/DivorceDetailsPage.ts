@@ -53,7 +53,7 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         await this.marriageDay.fill('1');
         await this.marriageMonth.fill('1');
         await this.marriageYear.fill('1999');
-        const [year, month, day] = await DateHelper.getCurrentDateFormatted();
+        const [year, month, day] = DateHelper.getCurrentDateFormatted();
         await this.issueDay.fill(day);
         await this.issueMonth.fill(month);
         await this.issueYear.fill(year);
