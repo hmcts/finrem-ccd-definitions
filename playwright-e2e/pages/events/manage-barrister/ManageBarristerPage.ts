@@ -24,11 +24,9 @@ export class ManageBarristerPage extends BaseJourneyPage {
     public constructor(page: Page) {
         super(page);
         this.updatePartyBarristerChangeRadio = page.locator('#updateIncludesRepresentativeChange_radio');
-
         this.applicantRadio = page.getByRole('radio', { name: 'Applicant' });
         this.respondentRadio = page.getByLabel('Respondent');
         this.manageBarristerAddNewButton = page.locator('button.button.write-collection-add-item__top');
-
         this.checkBarristerFirstNameLabel = page.getByText('Full name');
         this.barristerFirstNameDetails = page.locator('#appBarristerCollection_0_name');
         this.checkBarristerEmailLabel = page.getByText('Email');
@@ -36,14 +34,11 @@ export class ManageBarristerPage extends BaseJourneyPage {
         this.checkBarristerOrganisationLabel = page.getByText('Search for an organisation');
         this.barristerOrganisationDetails = page.locator('#search-org-text');
         this.manageBarristerSelectButton = page.locator('a:has-text("Select")');  
-
         this.checkApplicantBarristerFullName = page.getByText('Tester Gollum');
-
         this.checkRespondentBarristerFirstNameLabel = page.getByText('Full name');
         this.respondentBarristerFirstNameDetails = page.locator('#respBarristerCollection_0_name');
         this.checkRespondentbarristerEmailLabel = page.getByText('Email');
         this.respondentBarristerEmailDetails = page.locator('#respBarristerCollection_0_email');
-        
     }
 
     async selectPartyBarristerChange(isSelectPartyBarristerChange: Boolean){
@@ -97,4 +92,3 @@ export class ManageBarristerPage extends BaseJourneyPage {
         await this.respondentBarristerEmailDetails.fill(text);
     }
 }
-
