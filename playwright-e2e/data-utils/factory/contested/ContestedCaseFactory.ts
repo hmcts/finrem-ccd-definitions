@@ -113,19 +113,19 @@ export class ContestedCaseFactory {
   }
 
   static async createAndProcessFormACaseUpToProgressToListing(
-    isExpressPilot = false
+    isExpressPilot = false, issueDate?: string
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, false);
     await ContestedEventApi.solicitorSubmitFormACase(caseId);
-    await ContestedEventApi.caseWorkerProgressFormACaseToListing(caseId);
+    await ContestedEventApi.caseWorkerProgressFormACaseToListing(caseId, issueDate);
     return caseId;
   }
 
   static async createAndProcessPaperCaseUpToProgressToListing(
-    isExpressPilot = false
+    isExpressPilot = false, issueDate?: string
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, true);
-    await ContestedEventApi.caseWorkerProgressPaperCaseToListing(caseId);
+    await ContestedEventApi.caseWorkerProgressPaperCaseToListing(caseId, issueDate);
     return caseId;
   }
 
