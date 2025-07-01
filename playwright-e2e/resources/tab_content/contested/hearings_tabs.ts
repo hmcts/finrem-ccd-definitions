@@ -19,6 +19,8 @@ export const migratedListForHearingsTabDataOnHearing1 = [
 ];
 
 export const migratedListForHearingsTabDataOnHearing2 = [
+    // Hearing 1 is the hearing made by Manage Hearings event.
+    // Hearing 2 is the migrated List for Hearing
     {
     tabName: 'Hearings',
     tabContent: [
