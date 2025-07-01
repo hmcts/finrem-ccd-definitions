@@ -8,7 +8,7 @@ export async function assignCaseToApplicant(
     caseId: string
 ): Promise<void> {
     await manageOrgDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.applicantCAA.email, config.applicantCAA.password, config.manageOrgBaseURL, config.loginPaths.organisation)
+    await loginPage.loginWaitForPath(config.applicantCAA.email, config.applicantCAA.password, config.manageOrgBaseURL, config.loginPaths.organisation);
     await manageOrgDashboardPage.searchAndSelectCaseToAssign(caseId);
     await manageOrgDashboardPage.assignCaseToEmail(config.applicant_solicitor.email);
     await manageOrgDashboardPage.navigateContinue();
@@ -22,7 +22,7 @@ export async function assignCaseToRespondent(
     caseId: string
 ): Promise<void> {
     await manageOrgDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.respondentCAA.email, config.respondentCAA.password, config.manageOrgBaseURL, config.loginPaths.organisation)
+    await loginPage.loginWaitForPath(config.respondentCAA.email, config.respondentCAA.password, config.manageOrgBaseURL, config.loginPaths.organisation);
     await manageOrgDashboardPage.searchAndSelectCaseToAssign(caseId);
     await manageOrgDashboardPage.assignCaseToEmail(config.respondent_solicitor.email);
     await manageOrgDashboardPage.navigateContinue();

@@ -16,12 +16,12 @@ test(
     // Create and process a form A case up to issue application
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-    // Login to Mange org and assign case to respondent
+    // Login to Manage org and assign case to respondent
     await assignCaseToRespondent(loginPage, manageOrgDashboardPage, caseId);
 
     // Login as respondent sol
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.respondent_solicitor.email, config.respondent_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases)
+    await loginPage.loginWaitForPath(config.respondent_solicitor.email, config.respondent_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Assert tab data

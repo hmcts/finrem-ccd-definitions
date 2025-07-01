@@ -75,7 +75,7 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
             const url = ContestedEvents.amendFormAApplicationDetails.ccdCallback;
 
             await manageCaseDashboardPage.visit();
-            await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases)
+            await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
             await manageCaseDashboardPage.navigateToCase(caseId);
 
             await caseDetailsPage.selectNextStep(ContestedEvents.amendFormAApplicationDetails)
