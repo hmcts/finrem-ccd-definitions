@@ -2356,36 +2356,36 @@ __metadata:
   linkType: hard
 
 "@types/lodash@npm:^4.17.16":
-  version: 4.17.18
-  resolution: "@types/lodash@npm:4.17.18"
-  checksum: 539b2a01a83062888c36e53450b03ff2fbb4631a8226df38e1d77888c954c931b0b1abcbb26bb4f19ffc37da5b0be4db8b3002560d2acc036e8d28ebad132c47
+  version: 4.17.19
+  resolution: "@types/lodash@npm:4.17.19"
+  checksum: a75452bd0ed21c9dba98c0d395ef0f9de3220a8410dc07dfb041f84c7f1733b88648f1ba8e62b14f70ff9e935797b618f7060fba40abdf754cdbfb27a99ec27e
   languageName: node
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^24.0.1":
-  version: 24.0.4
-  resolution: "@types/node@npm:24.0.4"
+  version: 24.0.7
+  resolution: "@types/node@npm:24.0.7"
   dependencies:
     undici-types: ~7.8.0
-  checksum: db036e3f1fea5a92fd6cd76064cf07d517b245ace73d6f46bcd8e35f38ff856f86f3311aabc7c7406de2bdae9f8308070541dacfce20fec2510d42b3cd00bb9e
+  checksum: e3986e0683cf5cf816297200deb0627e62b60d81952391ed03e292cd13463acaa0601adbce2402ecf560eac7a80bbc77f58417173cb01755a79fbed0b2165c92
   languageName: node
   linkType: hard
 
 "@types/node@npm:^20.1.0, @types/node@npm:^20.11.30":
-  version: 20.19.1
-  resolution: "@types/node@npm:20.19.1"
+  version: 20.19.2
+  resolution: "@types/node@npm:20.19.2"
   dependencies:
     undici-types: ~6.21.0
-  checksum: f2883d8e2325af18424c625cc01ba2276c933ae8fc7aba93042fb757da075eabef0d2e22775e5706a74b67687d3cb06d6d42248d966c1e6bf8a2755457e537c7
+  checksum: bbff606094c24c96cb3ed9a72d0d18473cf59864db70a4fc85189a9c41072fe9eeeff29601ce086c62255f335e0b6a7c8d8095c75dfe0da0c2daef37486543b5
   languageName: node
   linkType: hard
 
 "@types/node@npm:^22.0.0, @types/node@npm:^22.6.1":
-  version: 22.15.33
-  resolution: "@types/node@npm:22.15.33"
+  version: 22.15.34
+  resolution: "@types/node@npm:22.15.34"
   dependencies:
     undici-types: ~6.21.0
-  checksum: 5af5451a508f82b1812948b906d349c319bf8887d709ed9f60a7f265272289e7b5b60705a8750f100b33f0528a86163bc71a6651764de918103d27567cc924c5
+  checksum: bc0846b6130975afca65bfe6d43d732e621b583aaa500a90569799926e0317b63044a32226ab49cd07d966887ac44ed6789bf8e16e2af0f9442ebd6784e1f290
   languageName: node
   linkType: hard
 
@@ -4928,9 +4928,9 @@ __metadata:
   linkType: hard
 
 "dotenv@npm:^16.4.5":
-  version: 16.5.0
-  resolution: "dotenv@npm:16.5.0"
-  checksum: 6543fe87b5ddf2d60dd42df6616eec99148a5fc150cb4530fef5bda655db5204a3afa0e6f25f7cd64b20657ace4d79c0ef974bec32fdb462cad18754191e7a90
+  version: 16.6.1
+  resolution: "dotenv@npm:16.6.1"
+  checksum: e8bd63c9a37f57934f7938a9cf35de698097fadf980cb6edb61d33b3e424ceccfe4d10f37130b904a973b9038627c2646a3365a904b4406514ea94d7f1816b69
   languageName: node
   linkType: hard
 
@@ -8725,8 +8725,8 @@ __metadata:
   linkType: hard
 
 "mocha@npm:^11.0.0":
-  version: 11.7.0
-  resolution: "mocha@npm:11.7.0"
+  version: 11.7.1
+  resolution: "mocha@npm:11.7.1"
   dependencies:
     browser-stdout: ^1.3.1
     chokidar: ^4.0.1
@@ -8751,7 +8751,7 @@ __metadata:
   bin:
     _mocha: bin/_mocha
     mocha: bin/mocha.js
-  checksum: 9d5902522f2e31529380966f5186eb522ea6396edd0d7b36b16bcf062b6168df38f6429d11fbce1a2a3911e3d422d857bdcce64283e90aa3ea8e4f4660921352
+  checksum: 8779acc0a00083078de4c53dd4be25a8655053ae05107983470f67f560ca17711f9039c13fced6cd0bd0211939ab8dd1d29ec4b6ec3e2dd18f986c8b9955d440
   languageName: node
   linkType: hard
 
@@ -9758,11 +9758,11 @@ __metadata:
   linkType: hard
 
 "prettier@npm:^3.3.3":
-  version: 3.6.0
-  resolution: "prettier@npm:3.6.0"
+  version: 3.6.2
+  resolution: "prettier@npm:3.6.2"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 4ff40e82092565b05165c527b5ba3e9f6de6b785c81297e79665e881d9409a922ddf43b222440a90678a840133b498ed3e9af5c7c2106119c9552bda0f79dfeb
+  checksum: 0206f5f437892e8858f298af8850bf9d0ef1c22e21107a213ba56bfb9c2387a2020bfda244a20161d8e3dad40c6b04101609a55d370dece53d0a31893b64f861
   languageName: node
   linkType: hard
 
@@ -12254,8 +12254,8 @@ __metadata:
   linkType: hard
 
 "ws@npm:^8.18.0":
-  version: 8.18.2
-  resolution: "ws@npm:8.18.2"
+  version: 8.18.3
+  resolution: "ws@npm:8.18.3"
   peerDependencies:
     bufferutil: ^4.0.1
     utf-8-validate: ">=5.0.2"
@@ -12264,7 +12264,7 @@ __metadata:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: e38beae19ba4d68577ec24eb34fbfab376333fedd10f99b07511a8e842e22dbc102de39adac333a18e4c58868d0703cd5f239b04b345e22402d0ed8c34ea0aa0
+  checksum: d64ef1631227bd0c5fe21b3eb3646c9c91229402fb963d12d87b49af0a1ef757277083af23a5f85742bae1e520feddfb434cb882ea59249b15673c16dc3f36e0
   languageName: node
   linkType: hard
 
