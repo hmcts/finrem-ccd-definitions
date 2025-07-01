@@ -16,6 +16,13 @@
   {
     "LiveFrom": "25/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isListForInterimHearingsMigrated",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "mhMigrationVersion",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRUD"
@@ -24,6 +31,13 @@
     "LiveFrom": "25/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "isListForHearingsMigrated",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isListForInterimHearingsMigrated",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
