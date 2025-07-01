@@ -40,7 +40,6 @@ const {uploadOrder} = require('./pages/upload-order/upload-order');
 const {sendOrder,sendOrderNew} = require('./pages/send-order/send-order');
 const {listForInterimHearing} = require('./pages/list-of-interim-hearing/list-of-interim-hearing');
 const {createCaseFlag, validateCaseFlagAlertMessage, validateCaseFlagTab} = require('./pages/create-case-flag/create-case-flag');
-const {manageBarristerApplicant, manageBarristerRespondent} = require('./pages/manage-barrister/manage-barrister');
 const {solicitorCreateGeneralApplication, caseWorkerReferGeneralApplication, judgeGeneralApplicationOutcome, generalApplicationDirections} = require('./pages/general-application/general-application');
 const {manageFlags} = require('./pages/manage-flags/manage-case-flags');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
@@ -166,8 +165,6 @@ module.exports = () => {
     manageIntervenersAdd,
     manageIntervenersRemove,
     contestedIntervenersTab,
-    manageBarristerApplicant,
-    manageBarristerRespondent,
     schedule1Tab,
     changeOfRepresentativesTab,
     verifyManageBarristerEvent,
