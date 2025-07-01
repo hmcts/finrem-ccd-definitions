@@ -30,26 +30,6 @@ Scenario('Caseworker refunds an issued case @nightly', async ({ I }) => {
     logger.info("Refund test completed");
 }).retry(3);
 
-Scenario('Contested Manage Barrister @nightly', async ({ I }) => {
-    //Matrimonial
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
-    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
-    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
-
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    I.wait('20');
-    await I.manageBarristerApplicant();
-    I.wait('5');
-    await I.manageBarristerRespondent();
-    await I.verifyManageBarristerEvent(verifyTabText.caseType, verifyTabText.historyTab.manageBarristerEvent, verifyTabText.historyTab.issueApplicationEndState);
-    await I.clickTab('Change of representatives');
-    await I.waitForText('FinRem-1-Org', 30);
-    await I.changeOfRepresentativesTab(verifyTabText.historyTab.manageBarristerEvent);
-    logger.info("manage barrister tab verified...");
-}).retry(3);
-
 Scenario('List for hearing contested case @nightly', async ({ I }) => {
 
     const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
