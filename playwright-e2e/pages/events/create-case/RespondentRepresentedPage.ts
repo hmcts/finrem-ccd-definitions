@@ -43,7 +43,13 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
         await this.respondentSolicitorReference.fill('MNT12345');
         await this.solicitorsFirmInput.fill('Mnt Doom Sols');
         await this.solicitorDetailsHelper.enterSolicitorName(this.page, solicitorName);
-        await this.commonActionsHelper.enterUkAddress(this.page);
+        await this.commonActionsHelper.enterUkAddress(this.page, {
+            buildingAndStreet: "Coral, 65-68",
+            addressLine2: "Leadenhall 2nd Street",
+            townOrCity: "Manchester",
+            postcodeOrZipcode: "EC3A 2AF",
+            country: "United Kingdom"
+        });
         await this.commonActionsHelper.enterPhoneNumber(this.page);
         await this.commonActionsHelper.enterEmailAddress(this.page, solicitorEmail);
     }
