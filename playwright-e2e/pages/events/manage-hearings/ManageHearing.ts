@@ -127,9 +127,8 @@ export class ManageHearingPage extends BaseJourneyPage {
 
         const filePayload = await this.commonActionsHelper
             .createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', docFilename);
-        await uploadOtherDocumentFiles.setInputFiles(filePayload);
 
-        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadOtherDocumentFiles, filePayload);
     }
 
     private async selectSendNoticeOfHearing(yesOrNo: YesNoRadioEnum) {
