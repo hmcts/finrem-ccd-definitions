@@ -119,9 +119,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     }
 
     async uploadOtherDocuments(docFilename: string, position: number = 0) {
-        const addNewDocumentButton = this.page.getByRole("button", { name: "Add new" }).nth(0);
-        await expect(addNewDocumentButton).toBeVisible();
-        await addNewDocumentButton.click();
+        await this.navigateAddNew();
 
         const uploadOtherDocumentFiles = this.page
             .locator(`#workingHearing_additionalHearingDocs_value`).nth(position);
