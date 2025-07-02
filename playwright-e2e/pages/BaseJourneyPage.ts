@@ -1,4 +1,4 @@
-import { type Page, expect, Locator } from '@playwright/test';
+import {expect, Locator, type Page} from '@playwright/test';
 import {FieldDescriptor} from "./components/field_descriptor.ts";
 
 export abstract class BaseJourneyPage {
@@ -42,6 +42,7 @@ export abstract class BaseJourneyPage {
 
     async navigateSubmit() {
         await this.page.waitForLoadState();
+        await this.submitButton.scrollIntoViewIfNeeded();
         await expect(this.submitButton).toBeVisible();
         await expect(this.submitButton).toBeEnabled();
         await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
@@ -81,7 +82,7 @@ export abstract class BaseJourneyPage {
      */
     async navigateSubmitAndReturnEventResponse(): Promise<any> {
         const waitForResponse = this.waitForPostResponse(this.page, '/events');
-
+        await this.submitButton.scrollIntoViewIfNeeded();
         await expect(this.submitButton).toBeVisible();
         await expect(this.submitButton).toBeEnabled();
 
@@ -93,17 +94,36 @@ export abstract class BaseJourneyPage {
         return responseBody;
     }
 
-    async navigateContinue() {
+    async navigateContinue(expectedUrl?: string, pageNumber?: number) {
         await this.page.waitForLoadState();
+        await this.continueButton.scrollIntoViewIfNeeded();
         await expect(this.continueButton).toBeVisible();
         await expect(this.continueButton).toBeEnabled();
-        await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
-        await this.continueButton.click({ force: true });
-        await this.waitForSpinner();
+        await this.wait(100); // if wait is not added, validation message (such as "the field is required") is not displayed
+
+        if (expectedUrl) {
+            expectedUrl = `${expectedUrl}${pageNumber ? pageNumber : ''}`;
+            const maxRetries = 5;
+            for (let attempt = 1; attempt <= maxRetries; attempt++) {
+                await this.continueButton.click({ force: true });
+                await this.waitForSpinner();
+                try {
+                    await this.page.waitForURL(new RegExp(expectedUrl), { timeout: 2000 });
+                    return;
+                } catch (err) {
+                    if (attempt === maxRetries) throw err
+                    await this.wait(200);
+                }
+            }
+        } else {
+            await this.continueButton.click({ force: true });
+            await this.waitForSpinner();
+        }
     }
 
     async navigateConfirm() {
         await this.page.waitForLoadState();
+        await this.confirmButton.scrollIntoViewIfNeeded();
         await expect(this.confirmButton).toBeVisible();
         await expect(this.confirmButton).toBeEnabled();
         await this.confirmButton.click();
@@ -112,6 +132,7 @@ export abstract class BaseJourneyPage {
 
     async navigatePrevious() {
         await this.page.waitForLoadState();
+        await this.previousButton.scrollIntoViewIfNeeded();
         await expect(this.previousButton).toBeVisible();
         await expect(this.previousButton).toBeEnabled();
         await this.previousButton.click();
@@ -120,6 +141,7 @@ export abstract class BaseJourneyPage {
 
     async navigateIgnoreWarningAndGo() {
         await this.page.waitForLoadState();
+        await this.ignoreWarningAndGoButton.scrollIntoViewIfNeeded();
         await expect(this.ignoreWarningAndGoButton).toBeVisible();
         await expect(this.ignoreWarningAndGoButton).toBeEnabled();
         await this.ignoreWarningAndGoButton.click();
@@ -128,6 +150,7 @@ export abstract class BaseJourneyPage {
 
     async navigateCancel() {
         await this.page.waitForLoadState();
+        await this.cancelHyperlink.scrollIntoViewIfNeeded();
         await expect(this.cancelHyperlink).toBeVisible();
         await this.cancelHyperlink.click();
         await this.waitForSpinner();
@@ -135,6 +158,7 @@ export abstract class BaseJourneyPage {
 
     async navigateAddNew() {
         await this.page.waitForLoadState();
+        await this.addNewButton.scrollIntoViewIfNeeded();
         await expect(this.addNewButton).toBeVisible();
         await expect(this.addNewButton).toBeEnabled();
         await this.addNewButton.click();
@@ -156,8 +180,7 @@ export abstract class BaseJourneyPage {
         await expect
             .poll(
                 async () => {
-                    const spinnerCount = await this.spinner.count();
-                    return spinnerCount;
+                    return await this.spinner.count();
                 })
             .toBe(0);
     }
