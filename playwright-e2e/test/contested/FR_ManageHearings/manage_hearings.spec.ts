@@ -26,12 +26,12 @@ test.describe('Contested - Manage Hearings', () => {
         async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
 
             // Create and setup case
-            const date = await DateHelper.getCurrentDate();
+            const date = DateHelper.getCurrentDate();
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false, date);
 
             // Login as caseworker and navigate to case
             await manageCaseDashboardPage.visit();
-            await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+            await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
             await manageCaseDashboardPage.navigateToCase(caseId);
             console.info(`Navigated to case with ID: ${caseId}`);
 
@@ -104,7 +104,7 @@ test.describe('Contested - Manage Hearings', () => {
 
                 // Login as caseworker and navigate to case
                 await manageCaseDashboardPage.visit();
-                await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+                await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
                 await manageCaseDashboardPage.navigateToCase(caseId);
                 console.info(`Navigated to case with ID: ${caseId}`);
 

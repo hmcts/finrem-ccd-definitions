@@ -20,7 +20,7 @@ test(
 
     // Login in as judge
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Approve Application 
