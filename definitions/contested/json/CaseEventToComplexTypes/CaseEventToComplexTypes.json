@@ -4822,7 +4822,7 @@
     "ID": "FR_approveOrdersToJudgeApproval1",
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval1",
-    "ListElementCode": "orderApprovedDate",
+    "ListElementCode": "courtOrderDate",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "judgeApproval1.docType=\"DRAFT_ORDER\" AND (judgeApproval1.judgeDecision=\"READY_TO_BE_SEALED\")"
   },
@@ -4958,7 +4958,7 @@
     "ID": "FR_approveOrdersToJudgeApproval2",
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval2",
-    "ListElementCode": "orderApprovedDate",
+    "ListElementCode": "courtOrderDate",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "judgeApproval2.docType=\"DRAFT_ORDER\" AND (judgeApproval2.judgeDecision=\"READY_TO_BE_SEALED\")"
   },
@@ -5094,7 +5094,7 @@
     "ID": "FR_approveOrdersToJudgeApproval2",
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval3",
-    "ListElementCode": "orderApprovedDate",
+    "ListElementCode": "courtOrderDate",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "judgeApproval3.docType=\"DRAFT_ORDER\" AND (judgeApproval3.judgeDecision=\"READY_TO_BE_SEALED\")"
   },
@@ -5230,7 +5230,7 @@
     "ID": "FR_approveOrdersToJudgeApproval4",
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval4",
-    "ListElementCode": "orderApprovedDate",
+    "ListElementCode": "courtOrderDate",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "judgeApproval4.docType=\"DRAFT_ORDER\" AND (judgeApproval4.judgeDecision=\"READY_TO_BE_SEALED\")"
   },
@@ -5366,7 +5366,7 @@
     "ID": "FR_approveOrdersToJudgeApproval5",
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval5",
-    "ListElementCode": "orderApprovedDate",
+    "ListElementCode": "courtOrderDate",
     "DisplayContext": "OPTIONAL",
     "FieldShowCondition": "judgeApproval5.docType=\"DRAFT_ORDER\" AND (judgeApproval5.judgeDecision=\"READY_TO_BE_SEALED\")"
   },
