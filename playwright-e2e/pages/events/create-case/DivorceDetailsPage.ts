@@ -68,8 +68,9 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         await this.separationYear.fill('2022');
         await this.courtName.fill('Shire Court');
         await this.divorceStage.selectOption(divorceStage);
-        await this.uploadPetition.setInputFiles('./playwright-e2e/resources/file/PETITION FORM A.docx');
-        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(
+            this.page, this.uploadPetition, './playwright-e2e/resources/file/PETITION FORM A.docx'
+        );
     }
 
     async enterDivorceDetailsConsented(caseNumber: string, divorceStage: string) {
