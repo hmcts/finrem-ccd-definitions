@@ -31,7 +31,7 @@ checkYourAnswersPage
 
         // Login as caseworker
         await manageCaseDashboardPage.visit();
-        await loginPage.login(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL);
+        await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
         await manageCaseDashboardPage.navigateToCase(caseId);
         await applicationCaseSubmission(
             caseDetailsPage,
