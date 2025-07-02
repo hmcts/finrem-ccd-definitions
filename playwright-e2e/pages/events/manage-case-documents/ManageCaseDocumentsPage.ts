@@ -70,9 +70,8 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
 
   // Upload a document
   async uploadDocument(filePath: string) {
-    await expect(this.uploadLabel).toBeVisible(); 
-    await this.uploadInput.setInputFiles(filePath);
-    await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+    await expect(this.uploadLabel).toBeVisible();
+    await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadInput, filePath);
   }
 
   // Select document type
