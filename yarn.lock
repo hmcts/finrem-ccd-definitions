@@ -4782,10 +4782,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devtools-protocol@npm:0.0.1452169":
-  version: 0.0.1452169
-  resolution: "devtools-protocol@npm:0.0.1452169"
-  checksum: f9d3eb8b5d88ae0a0da3bb2699e038f8310ac70160aaf714e726b06025593fbca7b261a838606bd6ecf46a20b8b36f10fa96323bfd7cfa34480e6f572d802e6a
+"devtools-protocol@npm:0.0.1464554":
+  version: 0.0.1464554
+  resolution: "devtools-protocol@npm:0.0.1464554"
+  checksum: 7c0fb668561b415631ecb8421d562b0d4e4daa5da7820b906b9694ba5a7a4f0b8cceabae9499b05664fdaca56cb403447cd2b73f3f23b5aecef49d7343bd8042
   languageName: node
   linkType: hard
 
@@ -9993,16 +9993,16 @@ __metadata:
   linkType: hard
 
 "puppeteer-core@npm:^24.0.0":
-  version: 24.10.2
-  resolution: "puppeteer-core@npm:24.10.2"
+  version: 24.11.2
+  resolution: "puppeteer-core@npm:24.11.2"
   dependencies:
     "@puppeteer/browsers": 2.10.5
     chromium-bidi: 5.1.0
     debug: ^4.4.1
-    devtools-protocol: 0.0.1452169
+    devtools-protocol: 0.0.1464554
     typed-query-selector: ^2.12.0
-    ws: ^8.18.2
-  checksum: 72f52c449609a89749aaef1eacdbfbdf089cdafd7b5301dab39d26fd7e328782a56da0b4fa182ae19bb73c470fdf5effed468a0e9d80192515b6eb0b1981b94a
+    ws: ^8.18.3
+  checksum: 2b807605429c99c80188fcb7c3c3c6b4368bcd57f69591f3d4ea5eafdc674fd77c23be681526965c63e3742bd50f672a454364463dc6d101c89d003cb2679939
   languageName: node
   linkType: hard
 
