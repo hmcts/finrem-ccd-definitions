@@ -293,6 +293,6 @@ export const test = base.extend<CreateFixtures>({
     await use(new RefundPage(page));
   },
   manageBarristerPage: async ({ page }, use) => {
-    await use(new ManageBarristerPage(page, commonActionsHelper));
+    await use(new ManageBarristerPage(page));
   }
 });

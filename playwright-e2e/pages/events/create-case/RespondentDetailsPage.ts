@@ -16,7 +16,13 @@ export class RespondentDetailsPage extends BaseJourneyPage {
     }
 
     async enterRespondentAddress(){
-        await this.commonActionsHelper.enterUkAddress(this.page);
+        await this.commonActionsHelper.enterUkAddress(this.page, {
+            buildingAndStreet: "Coral, 65-68",
+            addressLine2: "Leadenhall 2nd Street",
+            townOrCity: "Manchester",
+            postcodeOrZipcode: "EC3A 2AF",
+            country: "United Kingdom"
+        });
     }
 
     async checkRefugeFieldNotPresent() {
