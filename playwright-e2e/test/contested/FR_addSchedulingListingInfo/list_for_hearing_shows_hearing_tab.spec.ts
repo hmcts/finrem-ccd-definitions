@@ -84,7 +84,7 @@ async function performManageHearings(
     await manageHearingPage.addHearing({
         type: "Pre-Trial Review (PTR)",
         duration: '2 hours',
-        date: {},
+        date: { day: "03", month: "03", year: "2024" },
         time: '10:00 AM',
         court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
         attendance: 'Remote - video call',
