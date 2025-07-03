@@ -63,7 +63,7 @@ export class ManageHearingPage extends BaseJourneyPage {
 
     async enterDefaultHearingDate() {
         const hearingDate = new Date();
-        hearingDate.setDate(hearingDate.getDate() + 12 * 7 +1); // 12 weeks from now + 1 day
+        hearingDate.setDate(hearingDate.getDate() + 12 * 7); // 12 weeks from now
         const date = hearingDate.toISOString().split('T')[0];
         const [year, month, day] = date.split('-');
         await this.enterHearingDate(day, month, year);

@@ -149,6 +149,7 @@ test.describe('Contested - Manage Hearings', () => {
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
             await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
+            await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
 
             // Login as caseworker and navigate to case
             await manageCaseDashboardPage.visit();
@@ -177,12 +178,46 @@ test.describe('Contested - Manage Hearings', () => {
              await manageHearingPage.selectAllWhoShouldSeeThisOrder([
                 { partyType: 'Applicant', partyName: 'Frodo Baggins' },
                 { partyType: 'Respondent', partyName: 'Smeagol Gollum' },
-                { partyType: 'Intervener1', partyName: 'Int1' },
-                { partyType: 'Intervener2', partyName: 'Int2' }
+                { partyType: 'Intervener1', partyName: 'IntApp1' },
+                { partyType: 'Intervener2', partyName: 'IntResp1' }
             ]);
 
             await manageHearingPage.navigateContinue();
             await manageHearingPage.navigateIgnoreWarningAndContinue();
+            const expectedTable = getManageHearingTableData({
+                typeOfHearing: "Financial Dispute Resolution (FDR)",
+                attendance: 'In person',
+                whoShouldSeeOrder: 'Applicant - Frodo Baggins\nRespondent - Smeagol Gollum\nIntervener1 - intApp1\nIntervener2 - intResp1'
+            });
+            await checkYourAnswersPage.assertCheckYourAnswersPage(expectedTable);
+            await manageHearingPage.navigateSubmit();
+
+            await caseDetailsPage.validateFileTree([
+                {
+                    type: 'folder',
+                    label: 'Hearing Notices',
+                    children: [
+                        {
+                            type: 'file',
+                            label: 'HearingNotice.pdf',
+                            contentSnippets: [
+                                'Notice of Hearing',
+                                `Case number: ${caseId}`,
+                                'of Frodo Baggins and Smeagol Gollum',
+                                'The case is listed for a FDR hearing:',
+                                'with hearing attendance: In Person',
+                                'at 10:00 AM',
+                                'the probable length of hearing is 2 hours',
+                                DateHelper.formatToDayMonthYear(await DateHelper.getHearingDateUsingCurrentDate()),
+                                `Dated: ${DateHelper.formatToDayMonthYear(DateHelper.getCurrentDate())}`,
+                            ]
+                        }
+                    ]
+                }
+            ]);
+
+            
+
         }
     );
 });

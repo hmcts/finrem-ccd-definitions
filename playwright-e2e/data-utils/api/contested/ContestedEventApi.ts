@@ -184,6 +184,17 @@ export class ContestedEventApi {
     ])
   }
 
+  static async caseworkerAddsRespondentIntervener(
+    caseId: string,
+    ): Promise<void> {
+        await this.updateCaseWorkerSteps( caseId, [
+        {
+            event: ContestedEvents.manageInterveners.ccdCallback,
+            payload: PayloadPath.Contested.manageIntervenersAddRespondentInt,
+        }
+        ])
+    }
+
   static async caseWorkerProgressFormACaseToListing(
     caseId: string,
     issueDate?: string

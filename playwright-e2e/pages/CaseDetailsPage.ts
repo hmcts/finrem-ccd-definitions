@@ -1,6 +1,7 @@
 import { type Page, expect, Locator } from '@playwright/test';
 import { CaseEvent } from '../config/case-data';
 import { Tab, TabContentItem } from './components/tab';
+import {FileTree} from "./components/case_file_view_tree.ts";
 
 export class CaseDetailsPage {
 
@@ -157,5 +158,61 @@ export class CaseDetailsPage {
     async checkNoActiveCaseFlagOnCase() {
         await expect(this.activeCaseFlagOnCase).not.toBeVisible();
     }
-}
 
+    async validateFileTree(
+        tree: FileTree,
+        parentPath: string[] = [],
+        parentLocator: Locator | null = null,
+        errors: string[] = []
+    ) {
+        await this.assertTabHeader('Case File View');
+        for (const node of tree) {
+            const currentPath = [...parentPath, node.label];
+            if (node.type === 'folder') {
+                try {
+                    const folderLocator = (parentLocator ?? this.page).locator('.node__name--folder', { hasText: node.label });
+                    await folderLocator.click();
+                    const folderNode = folderLocator.locator('xpath=ancestor::cdk-nested-tree-node[1]');
+                    if (node.children && node.children.length > 0) {
+                        await this.validateFileTree(node.children, currentPath, folderNode, errors);
+                    }
+                } catch (e) {
+                    errors.push(`Folder not found or not clickable: ${currentPath.join(' / ')}\n${e}`);
+                }
+            } else if (node.type === 'file') {
+                try {
+                    const fileLocator = (parentLocator ?? this.page).locator('.node-name-document', { hasText: node.label });
+                    await expect(fileLocator).toBeVisible();
+                    await fileLocator.click();
+                    if (node.contentSnippets) {
+                        for (const snippet of node.contentSnippets) {
+                            try {
+                                const pdfContainer = this.page.locator('#viewerContainer');
+                                const pdfTextLocator = pdfContainer.locator('span[role="presentation"]', { hasText: snippet });
+                                const containerHandle = await pdfContainer.elementHandle();
+                                const snippetHandle = await pdfTextLocator.elementHandle();
+                                if (containerHandle && snippetHandle) {
+                                    await this.page.evaluate(
+                                        ([container, element]) => {
+                                            (element as HTMLElement).scrollIntoView({ block: 'center' });
+                                        },
+                                        [containerHandle, snippetHandle]
+                                    );
+                                }
+                                await expect(pdfTextLocator).toBeVisible();
+                            } catch (e) {
+                                errors.push(`Snippet not found in file "${node.label}" in folder "${parentPath.join(' / ')}": ${snippet}\n${e}`);
+                            }
+                        }
+                    }
+                } catch (e) {
+                    errors.push(`File not found or not visible: ${currentPath.join(' / ')}\n${e}`);
+                }
+            }
+        }
+        if (parentPath.length === 0 && errors.length > 0) {
+            throw new Error('File tree validation errors:\n' + errors.join('\n\n'));
+        }
+    }
+
+}
