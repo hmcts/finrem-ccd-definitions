@@ -166,7 +166,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     async addHearing(param: {
         type: string;
         duration: string;
-        date: undefined | { day: string; month: string; year: string };
+        date: { day: string; month: string; year: string } | {};
         time: string;
         court: { zone: string; frc: string; courtName: string };
         attendance: string;
@@ -181,10 +181,11 @@ export class ManageHearingPage extends BaseJourneyPage {
 
         await this.selectTypeOfHearing(param.type);
         await this.enterTimeEstimate(param.duration);
-        if (param.date == undefined) {
-            await this.enterDefaultHearingDate();
+        const date = param.date as any;
+        if (date.day && date.month && date.year) {
+            await this.enterHearingDate(date.day, date.month, date.year);
         } else {
-            await this.enterHearingDate(param.date.day, param.date.month, param.date.year);
+            await this.enterDefaultHearingDate();
         }
         await this.enterHearingTime(param.time);
         await this.selectCourtForHearing(param.court.zone, param.court.frc, param.court.courtName);
