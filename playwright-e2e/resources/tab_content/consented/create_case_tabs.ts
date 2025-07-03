@@ -30,11 +30,9 @@ export const createCaseTabData = [
         { tabItem: "Building and Street", value: "Coral, 65-68" },
         { tabItem: "Address Line 2", value: "Leadenhall 2nd Street" },
         { tabItem: "Town or City", value: "Manchester" },
-        { tabItem: "County", value: "test" },
+        { tabItem: "County/State", value: "test" },
         { tabItem: "Postcode/Zipcode", value: "EC3A 2AF" },
-        { tabItem: "Country", value: "United Kingdom" },
-        { tabItem: "Phone Number", value: "07111111111" },
-        { tabItem: "Email", value: "fr_respondent_solicitor1@mailinator.com" }
+        { tabItem: "Country", value: "United Kingdom" }
       ]
     }
   ];
