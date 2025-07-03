@@ -3445,6 +3445,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "28/05/2025",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "courtOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date-1",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "approvalJudge",
@@ -4501,6 +4510,15 @@
     "ListElementCode": "approvalDate",
     "FieldType": "DateTime",
     "ElementLabel": "Approval date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/06/2025",
+    "ID": "FR_finalisedOrder",
+    "ListElementCode": "courtOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court Order date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
