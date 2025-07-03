@@ -152,7 +152,7 @@ test.describe('Contested - Manage Hearings', () => {
 
             // Login as caseworker and navigate to case
             await manageCaseDashboardPage.visit();
-            await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+            await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
             await manageCaseDashboardPage.navigateToCase(caseId);
             console.info(`Navigated to case with ID: ${caseId}`);
 
@@ -161,7 +161,7 @@ test.describe('Contested - Manage Hearings', () => {
             await manageHearingPage.selectAddANewHearing();
             await manageHearingPage.navigateContinue(); 
             await manageHearingPage.addHearing({
-                type: "Final Dispute Resolution (FDR)",
+                type: "Financial Dispute Resolution (FDR)",
                 duration: '2 hours',
                 date: {},
                 time: '10:00 AM',
@@ -181,11 +181,8 @@ test.describe('Contested - Manage Hearings', () => {
                 { partyType: 'Intervener2', partyName: 'Int2' }
             ]);
 
-
             await manageHearingPage.navigateContinue();
             await manageHearingPage.navigateIgnoreWarningAndContinue();
-
-
         }
     );
 });

@@ -176,12 +176,12 @@ export class ContestedEventApi {
   static async caseworkerAddsApplicantIntervener(
     caseId: string,
   ): Promise<void> {
-    await this.updateCaseWithJson(
-      caseId,
-      ContestedEvents.manageInterveners.ccdCallback,
-      PayloadPath.Contested.manageIntervenersAddApplicantInt,
-      true
-    );
+    await this.updateCaseWorkerSteps( caseId, [
+      {
+        event: ContestedEvents.manageInterveners.ccdCallback,
+        payload: PayloadPath.Contested.manageIntervenersAddApplicantInt,
+      }
+    ])
   }
 
   static async caseWorkerProgressFormACaseToListing(
