@@ -3,6 +3,7 @@ import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
+import {ListForInterimHearingPage} from "../../../pages/events/list-for-interim-hearing/ListForInterimHearingPage.ts";
 
 // Hearing types
 const MaintenancePendingSuit = {
@@ -70,7 +71,7 @@ async function performListForInterimHearingsFlow(
   loginPage: any,
   manageCaseDashboardPage: any,
   caseDetailsPage: any,
-  listForInterimHearings: any,
+  listForInterimHearings: ListForInterimHearingPage,
   testInfo: any,
   makeAxeBuilder: any
 ): Promise<void> {
@@ -117,7 +118,7 @@ async function addHearingDetails(
     court: string;
     file: string | undefined;
   },
-  listForInterimHearings: any
+  listForInterimHearings: ListForInterimHearingPage
 ): Promise<void> {
   await listForInterimHearings.navigateAddNew();
   await listForInterimHearings.selectTypeOfHearing(hearing_position, hearingDetails.type);

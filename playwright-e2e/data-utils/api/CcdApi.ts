@@ -1,96 +1,14 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { readFileSync } from "fs";
 import path from "path";
-import { authenticator } from "otplib";
 import { set, unset } from "lodash";
 import { ReplacementAction } from "../../types/replacement-action";
+import {axiosRequest} from "./ApiHelper.ts";
+import {getServiceToken, getUserId, getUserToken} from "./TokenHelperApi.ts";
+import {AxiosResponse} from "axios";
 
-const axiosClient = axios.create({});
-
-const env = process.env.RUNNING_ENV || "aat";
 const ccdApiUrl = process.env.CCD_DATA_API_URL;
-const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 
 export class CcdApi {
-  async axiosRequest<T = any>(
-      requestParams: AxiosRequestConfig
-  ): Promise<AxiosResponse<T>> {
-    try {
-      const response = await axiosClient(requestParams);
-      if (![200, 201].includes(response.status)) {
-        throw new Error(`Request to ${requestParams.url} failed with status ${response.status}. Response data: ${JSON.stringify(response.data)}`);
-      }
-      return response;
-    } catch (error: any) {
-      const serverMessage = error.response?.data
-          ? ` \nServer response: ${JSON.stringify(error.response.data)}`
-          : "";
-      throw new Error(
-          `Request to ${requestParams.url} failed: ${error.message}${serverMessage}`
-      );
-    }
-  }
-
-  async getUserToken(username: string, password: string): Promise<string> {
-    const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
-    const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
-    const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
-
-    const idamCodeResponse = await this.axiosRequest({
-      method: "post",
-      url: idamBaseUrl + idamCodePath,
-      headers: {
-        Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString("base64")}`,
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    });
-
-    const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse.data.code}`;
-
-    const authTokenResponse = await this.axiosRequest({
-      method: "post",
-      url: idamBaseUrl + idamAuthPath,
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    });
-
-    return authTokenResponse.data.access_token;
-  }
-
-  async getUserId(authToken: string): Promise<string> {
-    const idamDetailsPath = "/details";
-
-    const userDetailsResponse = await this.axiosRequest({
-      method: "get",
-      url: idamBaseUrl + idamDetailsPath,
-      headers: { Authorization: `Bearer ${authToken}` },
-    });
-
-    return userDetailsResponse.data.id;
-  }
-
-  async getServiceToken(): Promise<string> {
-    const serviceSecret = process.env.FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY || "";
-    const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
-    const s2sAuthPath = "/lease";
-
-    const oneTimePassword = authenticator.generate(serviceSecret);
-
-    const serviceTokenResponse = await this.axiosRequest({
-      url: s2sBaseUrl + s2sAuthPath,
-      method: "post",
-      data: {
-        microservice: "finrem_case_orchestration",
-        oneTimePassword,
-      },
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    return serviceTokenResponse.data;
-  }
 
   async getStartEventToken(
       ccdStartCasePath: string,
@@ -98,7 +16,7 @@ export class CcdApi {
       authToken: string,
       serviceToken: string
   ): Promise<string> {
-    const startCaseResponse = await this.axiosRequest({
+    const startCaseResponse = await axiosRequest({
       method: "get",
       url: ccdApiUrl + ccdStartCasePath,
       headers: {
@@ -118,7 +36,7 @@ export class CcdApi {
       payload: any
   ): Promise<AxiosResponse> {
 
-    return await this.axiosRequest({
+    return await axiosRequest({
       url: ccdApiUrl + ccdSaveCasePath,
       method: "post",
       data: payload,
@@ -141,9 +59,9 @@ export class CcdApi {
     if (!process.env.CI) {
       console.info("Creating CCD case with event %s...", eventId);
     }
-    const authToken = await this.getUserToken(userName, password);
-    const userId = await this.getUserId(authToken);
-    const serviceToken = await this.getServiceToken();
+    const authToken = await getUserToken(userName, password);
+    const userId = await getUserId(authToken);
+    const serviceToken = await getServiceToken();
 
     const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/event-triggers/${eventId}/token`;
     const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases`;
@@ -201,9 +119,9 @@ export class CcdApi {
       console.info("Updating CCD case id %s with event %s...", caseId, eventId);
     }
 
-    const authToken = await this.getUserToken(userName, password);
-    const userId = await this.getUserId(authToken);
-    const serviceToken = await this.getServiceToken();
+    const authToken = await getUserToken(userName, password);
+    const userId = await getUserId(authToken);
+    const serviceToken = await getServiceToken();
 
     const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
     const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/events`;
@@ -277,9 +195,9 @@ export class CcdApi {
       console.info("Updating CCD case id %s with event %s (from JSON object)...", caseId, eventId);
     }
 
-    const authToken = await this.getUserToken(userName, password);
-    const userId = await this.getUserId(authToken);
-    const serviceToken = await this.getServiceToken();
+    const authToken = await getUserToken(userName, password);
+    const userId = await getUserId(authToken);
+    const serviceToken = await getServiceToken();
 
     const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
     const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/events`;
