@@ -3472,6 +3472,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "03/07/2025",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "coverLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Cover letter",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "anotherHearingToBeListed",
@@ -3649,9 +3658,9 @@
   {
     "LiveFrom": "03/07/2025",
     "ID": "FR_psaDocumentReview",
-    "ListElementCode": "courtOrderDate",
-    "FieldType": "Date",
-    "ElementLabel": "Court order date",
+    "ListElementCode": "coverLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Cover letter",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
