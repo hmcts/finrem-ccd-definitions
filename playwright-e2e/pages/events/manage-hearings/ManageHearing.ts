@@ -91,8 +91,9 @@ export class ManageHearingPage extends BaseJourneyPage {
         await frcDropDown.selectOption(`${courtFrc} FRC`);
 
         // Select the local court from the visible dropdown
-        const courtListDropDown = this.page
-            .locator(`select[id^="workingHearing_hearingCourtSelection_"][id$="CourtList"]:not([disabled])`);
+        const courtListDropDown = this.page.locator(
+            `xpath=//select[starts-with(@id, "workingHearing_hearingCourtSelection_") and contains(@id, "CourtList") and not(ancestor::div[@hidden])]`
+        );
         await expect(courtListDropDown).toBeVisible();
         await courtListDropDown.selectOption(localCourt);
     }
