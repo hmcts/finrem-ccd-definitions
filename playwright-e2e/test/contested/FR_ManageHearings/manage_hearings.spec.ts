@@ -1,10 +1,16 @@
-import { test } from '../../../fixtures/fixtures.ts';
+import {caseAssignmentApi, test} from '../../../fixtures/fixtures.ts';
 import config from '../../../config/config.ts';
 import {ContestedEvents} from "../../../config/case-data.ts";
-import {getManageHearingTableData} from "../../../resources/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
-import { DateHelper } from '../../../data-utils/DateHelper.ts';
-import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
-import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi.ts';
+import {
+    getManageHearingTableData
+} from "../../../resources/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
+import {DateHelper} from '../../../data-utils/DateHelper.ts';
+import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
+import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEventApi.ts';
+import {CaseTypeEnum} from "../../../pages/helpers/enums/RadioEnums.ts";
+import {SigninPage} from "../../../pages/SigninPage.ts";
+import {ManageCaseDashboardPage} from "../../../pages/ManageCaseDashboardPage.ts";
+import {CaseDetailsPage} from "../../../pages/CaseDetailsPage.ts";
 
 const typeOfHearingData = [
     "Maintenance Pending Suit (MPS)",
@@ -18,6 +24,48 @@ const typeOfHearingData = [
     "Application Hearing",
     "Retrial Hearing"
 ];
+
+async function verifyDifferentActorsForCFV(
+        manageCaseDashboardPage: ManageCaseDashboardPage,
+        loginPage: SigninPage,
+        caseId: string,
+        caseDetailsPage: CaseDetailsPage,
+        userCred: { email: string, password: string } = config.applicant_solicitor
+    ) {
+    if (!process.env.CI) {
+        console.log(`Verifying CFV access for user: ${userCred.email}`);
+    }
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(userCred.email, userCred.password, config.manageCaseBaseURL, config.loginPaths.cases);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+    await caseDetailsPage.validateFileTree([
+        {
+            type: 'folder',
+            label: 'Hearing Notices',
+            children: [
+                {
+                    type: 'file',
+                    label: 'HearingNotice.pdf',
+                    contentSnippets: [
+                        'Notice of Hearing',
+                        `Case number: ${caseId}`,
+                        'of Frodo Baggins and Smeagol Gollum',
+                        'The case is listed for a FDR hearing:',
+                        'with hearing attendance: In Person',
+                        'at 10:00 AM',
+                        'the probable length of hearing is 2 hours',
+                        DateHelper.formatToDayMonthYear(await DateHelper.getHearingDateUsingCurrentDate()),
+                        `Dated: ${DateHelper.formatToDayMonthYear(DateHelper.getCurrentDate())}`,
+                    ]
+                }
+            ]
+        }
+    ]);
+    await manageCaseDashboardPage.signOut();
+    if (!process.env.CI) {
+        console.log(`VERIFIED CFV access for user: ${userCred.email}`);
+    }
+}
 
 test.describe('Contested - Manage Hearings', () => {
 
@@ -150,6 +198,7 @@ test.describe('Contested - Manage Hearings', () => {
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
             await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
             await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
+            await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
 
             // Login as caseworker and navigate to case
             await manageCaseDashboardPage.visit();
@@ -216,7 +265,12 @@ test.describe('Contested - Manage Hearings', () => {
                 }
             ]);
 
-            
+            await manageCaseDashboardPage.signOut();
+
+            await verifyDifferentActorsForCFV(manageCaseDashboardPage, loginPage, caseId, caseDetailsPage, config.applicant_solicitor);
+            await verifyDifferentActorsForCFV(manageCaseDashboardPage, loginPage, caseId, caseDetailsPage, config.applicant_intervener);
+            await verifyDifferentActorsForCFV(manageCaseDashboardPage, loginPage, caseId, caseDetailsPage, config.respondent_solicitor);
+            await verifyDifferentActorsForCFV(manageCaseDashboardPage, loginPage, caseId, caseDetailsPage, config.respondent_intervener);
 
         }
     );

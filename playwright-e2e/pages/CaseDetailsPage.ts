@@ -165,7 +165,12 @@ export class CaseDetailsPage {
         parentLocator: Locator | null = null,
         errors: string[] = []
     ) {
-        await this.assertTabHeader('Case File View');
+        const heading = this.page.getByRole('heading', { name: 'Case file', level: 2 });
+        if (!(await heading.isVisible())) {
+            const caseFileViewButton = this.page.getByRole('tab', { name: 'Case File View', exact: false });
+            await caseFileViewButton.click();
+            await expect(heading).toBeVisible();
+        }
         for (const node of tree) {
             const currentPath = [...parentPath, node.label];
             if (node.type === 'folder') {
@@ -173,6 +178,7 @@ export class CaseDetailsPage {
                     const folderLocator = (parentLocator ?? this.page).locator('.node__name--folder', { hasText: node.label });
                     await folderLocator.click();
                     const folderNode = folderLocator.locator('xpath=ancestor::cdk-nested-tree-node[1]');
+                    await expect(folderNode).toHaveAttribute('aria-expanded', 'true');
                     if (node.children && node.children.length > 0) {
                         await this.validateFileTree(node.children, currentPath, folderNode, errors);
                     }
