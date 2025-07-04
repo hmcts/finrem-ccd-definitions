@@ -47,8 +47,8 @@ const configuration = {
   },
 
   applicant_barrister: {
-    email: process.env.PLAYWRIGHT_APPL_BARRISTER_USERNAME || '',
-    password: process.env.PLAYWRIGHT_APPL_BARRISTER_PSWD || '',
+    email: process.env.USERNAME_BARRISTER1 || '',
+    password: process.env.PASSWORD_BARRISTER1 || '',
   },
 
   respondent_solicitor: {
