@@ -167,7 +167,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
 
   // Migration events
   manageHearingsMigration: {
-    listItem: "Manage Hearings Migration",
+    listItem: "(Migration) Manage Hearings",
     ccdCallback: "FR_manageHearingsMigration"
   },
 
