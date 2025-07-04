@@ -3449,7 +3449,7 @@
     "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "courtOrderDate",
     "FieldType": "Date",
-    "ElementLabel": "Court order date",
+    "ElementLabel": "Court order date-1-FR_draftOrderDocumentReview",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3577,7 +3577,7 @@
     "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "draftOrderDocument",
     "FieldType": "Document",
-    "ElementLabel": "Draft order",
+    "ElementLabel": "Draft order-1-FR_draftOrderDocumentReview",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3588,6 +3588,15 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "ElementLabel": "Attachments",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/06/2025",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "coverLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Cover Letter-1-FR_draftOrderDocumentReview",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3806,7 +3815,7 @@
     "ID": "FR_draftOrdersReview",
     "ListElementCode": "courtOrderDate",
     "FieldType": "Date",
-    "ElementLabel": "Court order date",
+    "ElementLabel": "Court order date-2-FR_draftOrdersReview",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -4265,7 +4274,7 @@
     "ID": "FR_judgeApproval",
     "ListElementCode": "courtOrderDate",
     "FieldType": "Date",
-    "ElementLabel": "Court order date",
+    "ElementLabel": "Court order date-3-FR_judgeApproval",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -4518,7 +4527,7 @@
     "ID": "FR_finalisedOrder",
     "ListElementCode": "courtOrderDate",
     "FieldType": "Date",
-    "ElementLabel": "Court Order date",
+    "ElementLabel": "Court Order date-4-FR_finalisedOrder",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
