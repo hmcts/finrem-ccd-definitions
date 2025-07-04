@@ -165,6 +165,12 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     ccdCallback: "FR_manageBarrister"
   },
 
+  // Migration events
+  manageHearingsMigration: {
+    listItem: "(Migration) Manage Hearings",
+    ccdCallback: "FR_manageHearingsMigration"
+  },
+
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
