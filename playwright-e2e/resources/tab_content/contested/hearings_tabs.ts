@@ -13,7 +13,8 @@ export const migratedListForHearingsTabDataOnHearing1 = [
       { tabItem: "Hearing date", value: getFormattedDate() + ' 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
       { tabItem: "Who has received this notice", value: 'Unknown' },
-      { tabItem: "Additional information about the hearing", value: 'Some additional information' }
+      { tabItem: "Additional information about the hearing", value: 'Some additional information' },
+      { tabItem: "Hearing documents", value: 'test.pdf' }
     ]
   }
 ];
@@ -39,7 +40,8 @@ export const migratedListForHearingsTabDataOnHearing2 = [
       { tabItem: "Hearing date", value: getFormattedDate() + ' 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
       { tabItem: "Who has received this notice", value: 'Unknown' },
-      { tabItem: "Additional information about the hearing", value: 'Some additional information' }
+      { tabItem: "Additional information about the hearing", value: 'Some additional information' },
+      { tabItem: "Hearing documents", value: 'test.pdf' }
     ]
   }
 ];
