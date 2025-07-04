@@ -28,7 +28,7 @@ export const migratedListForHearingsTabDataOnHearing2 = [
       { tabItem: "Type of Hearing", value: "Pre-Trial Review (PTR)" },
       { tabItem: "Court", value: "Central Family Court" },
       { tabItem: "Hearing attendance", value: "Remote - Video call" },
-      { tabItem: "Hearing date", value: '23 Sept 2025 10:00 AM' },
+      { tabItem: "Hearing date", value: '03 Mar 2024 10:00 AM' },
       { tabItem: "Hearing time estimate", value: '2 hours' },
       { tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum' },
       { tabItem: "Additional information about the hearing", value: 'Hearing details here' },
