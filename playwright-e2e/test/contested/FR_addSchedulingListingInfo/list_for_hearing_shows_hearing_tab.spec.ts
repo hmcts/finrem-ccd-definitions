@@ -6,7 +6,7 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { migratedListForHearingsTabDataOnHearing1 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 import { migratedListForHearingsTabDataOnHearing2 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 
-async function loginAsCaseWorker(manageCaseDashboardPage: any, loginPage: any, caseId: string): Promise<void> {
+async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
     await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     await manageCaseDashboardPage.navigateToCase(caseId);
@@ -50,13 +50,13 @@ async function performListForHearingFlow(
 
 async function performManageHearingsMigration(
   caseDetailsPage: any,
-  listForHearingPage: any,
+  blankPage: any,
   testInfo: any,
   makeAxeBuilder: any
 ): Promise<void> {
 
   await caseDetailsPage.selectNextStep(ContestedEvents.manageHearingsMigration);
-  await listForHearingPage.navigateSubmit();
+  await blankPage.navigateSubmit();
   await caseDetailsPage.checkHasBeenUpdated('(Migration) Manage Hearings');
 
   if (config.run_accessibility) {
@@ -98,9 +98,9 @@ async function performManageHearings(
     await manageHearingPage.navigateSubmit();
 }
 
-test.describe('Contested - List for Hearing case shows on hearings tab', () => {
-  test.skip(
-    'Form A case shows on hearings tab',
+test.describe('Contested - List for Hearing case shows on hearings tab after migration', () => {
+  test(
+    'Form A case - List for hearing information shows on new hearings tab.',
     { tag: [] },
     async (
       {
@@ -108,22 +108,45 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
         manageCaseDashboardPage,
         caseDetailsPage,
         listForHearingPage,
+        blankPage,
         makeAxeBuilder,
       },
       testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
-      await loginAsCaseWorker(manageCaseDashboardPage, loginPage, caseId);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performListForHearingFlow(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      // Next:
-      // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
-      // Run method that converts this old hearing type to new hearing type format
-      // Run tab test to confirm that all the correct hearing information shows on the new hearing tab
+      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing1);
+    }
+  );
+  
+  test(
+    'Form A case - List for hearing information shows on new hearings tab after any manage hearings event.',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        listForHearingPage,
+        manageHearingPage,
+        blankPage,
+        makeAxeBuilder,
+      },
+      testInfo
+    ) => {
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performManageHearings(caseDetailsPage, manageHearingPage);
+      await performListForHearingFlow(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing2);
     }
   );
 
-  test.skip(
-    'Paper Case shows on hearings tab',
+  test(
+    'Paper Case - List for hearing information shows on new hearings tab.',
     { tag: [] },
     async (
       {
@@ -136,19 +159,15 @@ test.describe('Contested - List for Hearing case shows on hearings tab', () => {
       testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessPaperCaseUpToProgressToListing();
-      await loginAsCaseWorker(manageCaseDashboardPage, loginPage, caseId);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performListForHearingFlow(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      // Next: 
-      // Run test muliple times, so that the correct notices and documents can be checked as appropriate.
-      // Run method that converts this old hearing type to new hearing type format
-      // Run tab test to confirm that all the correct hearing information shows on the new hearing tab
+      await performManageHearingsMigration(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing1);
     }
   );
-});
 
-test.describe('Contested - List for Hearing Migration', () => {
   test(
-    'Form A case shows on hearings tab after manage hearings event',
+    'Paper Case - List for hearing information shows on new hearings tab after any manage hearings event.',
     { tag: [] },
     async (
       {
@@ -157,40 +176,17 @@ test.describe('Contested - List for Hearing Migration', () => {
         caseDetailsPage,
         listForHearingPage,
         manageHearingPage,
+        blankPage,
         makeAxeBuilder,
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
-
-      await loginAsCaseWorker(manageCaseDashboardPage, loginPage, caseId);
+      const caseId = await ContestedCaseFactory.createAndProcessPaperCaseUpToProgressToListing();
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performManageHearings(caseDetailsPage, manageHearingPage);
       await performListForHearingFlow(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      await performManageHearingsMigration(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-
+      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
       await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing2);
-    }
-  );
-  test(
-    'Form A case shows on hearings tab',
-    { tag: [] },
-    async (
-      {
-        loginPage,
-        manageCaseDashboardPage,
-        caseDetailsPage,
-        listForHearingPage,
-        makeAxeBuilder,
-      },
-      testInfo
-    ) => {
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
-
-      await loginAsCaseWorker(manageCaseDashboardPage, loginPage, caseId);
-      await performListForHearingFlow(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      await performManageHearingsMigration(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-
-      await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing1);
     }
   );
 });
