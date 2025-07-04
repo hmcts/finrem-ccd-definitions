@@ -8331,5 +8331,23 @@
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "courtOrderDate",
+    "FieldType": "Date",
+    "Label": "Court order date-c1",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "coverLetter",
+    "FieldType": "Document",
+    "Label": "Cover letter-c1",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]

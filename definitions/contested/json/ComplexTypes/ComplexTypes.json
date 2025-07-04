@@ -3445,6 +3445,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "28/05/2025",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "courtOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date-1-FR_draftOrderDocumentReview",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "approvalJudge",
@@ -3568,7 +3577,7 @@
     "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "draftOrderDocument",
     "FieldType": "Document",
-    "ElementLabel": "Draft order",
+    "ElementLabel": "Draft order-1-FR_draftOrderDocumentReview",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3579,6 +3588,15 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
     "ElementLabel": "Attachments",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/06/2025",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "coverLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Cover Letter-1-FR_draftOrderDocumentReview",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3789,6 +3807,15 @@
     "ListElementCode": "hearingTime",
     "FieldType": "Text",
     "ElementLabel": "Hearing Time",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/05/2025",
+    "ID": "FR_draftOrdersReview",
+    "ListElementCode": "courtOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date-2-FR_draftOrdersReview",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -4243,6 +4270,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "28/05/2025",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "courtOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date-3-FR_judgeApproval",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_judgeApproval",
     "ListElementCode": "changesRequestedByJudge",
@@ -4483,6 +4519,15 @@
     "ListElementCode": "approvalDate",
     "FieldType": "DateTime",
     "ElementLabel": "Approval date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/06/2025",
+    "ID": "FR_finalisedOrder",
+    "ListElementCode": "courtOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court Order date-4-FR_finalisedOrder",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
