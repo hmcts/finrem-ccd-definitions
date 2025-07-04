@@ -11,18 +11,49 @@ import {CaseTypeEnum} from "../../../pages/helpers/enums/RadioEnums.ts";
 import {SigninPage} from "../../../pages/SigninPage.ts";
 import {ManageCaseDashboardPage} from "../../../pages/ManageCaseDashboardPage.ts";
 import {CaseDetailsPage} from "../../../pages/CaseDetailsPage.ts";
+import {getManageHearingTabData} from "../../../resources/tab_content/contested/manage-hearing_tabs.ts";
 
 const typeOfHearingData = [
-    "Maintenance Pending Suit (MPS)",
-    "First Directions Appointment (FDA)",
-    "Financial Dispute Resolution (FDR)",
-    "Final Hearing (FH)",
-    "Directions (DIR)",
-    "Mention",
-    "Permission to Appeal",
-    "Appeal Hearing (Financial Remedy)",
-    "Application Hearing",
-    "Retrial Hearing"
+    {
+        typeOfHearing: "Maintenance Pending Suit (MPS)",
+        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+    },
+    {
+        typeOfHearing: "First Directions Appointment (FDA)",
+        hearingDocuments: ["HearingNotice.pdf", "Form-G.pdf", "PfdNcdrComplianceLetter.pdf", "PfdNcdrCoverLetter.pdf", "OutOfFamilyCourtResolution.pdf", "Form-C.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+    },
+    {
+        typeOfHearing: "Financial Dispute Resolution (FDR)",
+        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+    },
+    {
+        typeOfHearing: "Final Hearing (FH)",
+        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+    },
+    {
+        typeOfHearing: "Directions (DIR)",
+        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+    },
+    {
+        typeOfHearing: "Mention",
+        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+    },
+    {
+        typeOfHearing: "Permission to Appeal",
+        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+    },
+    {
+        typeOfHearing: "Appeal Hearing (Financial Remedy)",
+        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+    },
+    {
+        typeOfHearing: "Application Hearing",
+        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+    },
+    {
+        typeOfHearing: "Retrial Hearing",
+        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+    }
 ];
 
 async function verifyDifferentActorsForCFV(
@@ -38,6 +69,7 @@ async function verifyDifferentActorsForCFV(
     await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(userCred.email, userCred.password, config.manageCaseBaseURL, config.loginPaths.cases);
     await manageCaseDashboardPage.navigateToCase(caseId);
+    await caseDetailsPage.assertTabData([getManageHearingTabData()]);
     await caseDetailsPage.validateFileTree([
         {
             type: 'folder',
@@ -140,12 +172,22 @@ test.describe('Contested - Manage Hearings', () => {
             await manageHearingPage.navigateSubmit();
 
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageHearings.listItem);
+            await caseDetailsPage.assertTabData([getManageHearingTabData({
+                typeOfHearing: "Pre-Trial Review (PTR)",
+                court: "Central Family Court",
+                attendance: "Remote - Video call",
+                hearingTime: "10:00 AM",
+                duration: "2 hours",
+                whoShouldSeeOrder: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+                additionalInformation: "Hearing details here",
+                uploadFiles: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
+            })]);
 
     });
 
     for (const data of typeOfHearingData) {
         test(
-            'Contested - Caseworker manages hearings for Form A case - ' + data,
+            'Contested - Caseworker manages hearings for Form A case - ' + data.typeOfHearing,
             {tag: []},
             async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
                 // Create and setup case
@@ -163,7 +205,7 @@ test.describe('Contested - Manage Hearings', () => {
                 await manageHearingPage.navigateContinue();
 
                 await manageHearingPage.addHearing({
-                    type: data,
+                    type: data.typeOfHearing,
                     duration: '2 hours',
                     date: {},
                     time: '10:00 AM',
@@ -179,13 +221,23 @@ test.describe('Contested - Manage Hearings', () => {
                 await manageHearingPage.navigateIgnoreWarningAndContinue();
 
                 const expectedTable = getManageHearingTableData({
-                    typeOfHearing: data
+                    typeOfHearing: data.typeOfHearing
                 });
                 await checkYourAnswersPage.assertCheckYourAnswersPage(expectedTable);
 
                 await manageHearingPage.navigateSubmit();
 
                 await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageHearings.listItem);
+                await caseDetailsPage.assertTabData([getManageHearingTabData({
+                    typeOfHearing: data.typeOfHearing,
+                    court: "Central Family Court",
+                    attendance: "Remote - Video call",
+                    hearingTime: "10:00 AM",
+                    duration: "2 hours",
+                    whoShouldSeeOrder: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+                    additionalInformation: "Hearing details here",
+                    uploadFiles: data.hearingDocuments
+                })]);
             }
         )
     }
@@ -198,6 +250,8 @@ test.describe('Contested - Manage Hearings', () => {
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
             await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
             await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
+            await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
+            await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
             await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
 
             // Login as caseworker and navigate to case
@@ -240,7 +294,8 @@ test.describe('Contested - Manage Hearings', () => {
             });
             await checkYourAnswersPage.assertCheckYourAnswersPage(expectedTable);
             await manageHearingPage.navigateSubmit();
-
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageHearings.listItem);
+            await caseDetailsPage.assertTabData([getManageHearingTabData()]);
             await caseDetailsPage.validateFileTree([
                 {
                     type: 'folder',
@@ -271,6 +326,8 @@ test.describe('Contested - Manage Hearings', () => {
             await verifyDifferentActorsForCFV(manageCaseDashboardPage, loginPage, caseId, caseDetailsPage, config.applicant_intervener);
             await verifyDifferentActorsForCFV(manageCaseDashboardPage, loginPage, caseId, caseDetailsPage, config.respondent_solicitor);
             await verifyDifferentActorsForCFV(manageCaseDashboardPage, loginPage, caseId, caseDetailsPage, config.respondent_intervener);
+            await verifyDifferentActorsForCFV(manageCaseDashboardPage, loginPage, caseId, caseDetailsPage, config.applicant_barrister);
+            await verifyDifferentActorsForCFV(manageCaseDashboardPage, loginPage, caseId, caseDetailsPage, config.respondent_barrister);
 
         }
     );

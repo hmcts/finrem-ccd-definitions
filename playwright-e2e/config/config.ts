@@ -46,6 +46,11 @@ const configuration = {
     password: process.env.PLAYWRIGHT_APPL_INTERVENER_PSWD || '',
   },
 
+  applicant_barrister: {
+    email: process.env.PLAYWRIGHT_APPL_BARRISTER_USERNAME || '',
+    password: process.env.PLAYWRIGHT_APPL_BARRISTER_PSWD || '',
+  },
+
   respondent_solicitor: {
     email: process.env.PLAYWRIGHT_RESPONDENT_SOL_USERNAME || 'fr_respondent_solicitor1@mailinator.com',
     password: process.env.PLAYWRIGHT_RESPONDENT_SOL_PSWD || '',
@@ -59,6 +64,11 @@ const configuration = {
   respondent_intervener: {
       email: process.env.PLAYWRIGHT_RESP_INTERVENER_USERNAME || '',
       password: process.env.PLAYWRIGHT_RESP_INTERVENER_PSWD || '',
+  },
+
+  respondent_barrister: {
+    email: process.env.PLAYWRIGHT_RESP_BARRISTER_USERNAME || '',
+    password: process.env.PLAYWRIGHT_RESP_BARRISTER_PSWD || '',
   },
 
   jurisdiction: {

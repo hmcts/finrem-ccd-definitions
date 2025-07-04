@@ -193,7 +193,7 @@ export class CaseDetailsPage {
                     if (node.contentSnippets) {
                         for (const snippet of node.contentSnippets) {
                             try {
-                                const pdfContainer = this.page.locator('#viewerContainer');
+                                const pdfContainer = this.page.locator(`.pdfViewer`);
                                 const pdfTextLocator = pdfContainer.locator('span[role="presentation"]', { hasText: snippet });
                                 const containerHandle = await pdfContainer.elementHandle();
                                 const snippetHandle = await pdfTextLocator.elementHandle();

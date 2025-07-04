@@ -212,5 +212,7 @@ export const PayloadPath = {
     createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json",
     manageIntervenersAddApplicantInt: "./playwright-e2e/resources/payload/contested/caseworker/manage-interveners/add-applicant-intervener.json",
     manageIntervenersAddRespondentInt: "./playwright-e2e/resources/payload/contested/caseworker/manage-interveners/add-respondent-intervener.json",
+    manageBarristerAddApplicantBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-applicant-barrister.json",
+    manageBarristerAddRespondentBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-respondent-barrister.json",
   }
 } as const;

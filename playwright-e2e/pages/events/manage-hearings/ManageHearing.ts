@@ -186,8 +186,6 @@ export class ManageHearingPage extends BaseJourneyPage {
         uploadFiles: string[];
         sendANoticeOfHearing: boolean
     }) {
-        console.info("Adding hearing with parameters:", param);
-
         await expect(this.addANewHearingTitle).toBeVisible();
 
         await this.selectTypeOfHearing(param.type);
@@ -216,6 +214,6 @@ export class ManageHearingPage extends BaseJourneyPage {
     async removeContent() {
         const removeButton = this.page.getByRole('button', { name: 'Remove' });
         await expect(removeButton).toBeVisible();
-        await removeButton.click();
+        await removeButton.click({ force: true });
     }
 }
