@@ -3,7 +3,8 @@ import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import {ListForInterimHearingPage} from "../../../pages/events/list-for-interim-hearing/ListForInterimHearingPage.ts";
+import { ListForInterimHearingPage } from "../../../pages/events/list-for-interim-hearing/ListForInterimHearingPage.ts";
+import { migratedListForInterimHearingsTabDataOnHearing } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 
 // Hearing types
 const MaintenancePendingSuit = {
@@ -66,19 +67,18 @@ const NoFile = {
   file: undefined
 };
 
+async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+}
+
 async function performListForInterimHearingsFlow(
-  caseId: string,
-  loginPage: any,
-  manageCaseDashboardPage: any,
   caseDetailsPage: any,
   listForInterimHearings: ListForInterimHearingPage,
   testInfo: any,
   makeAxeBuilder: any
 ): Promise<void> {
-
-  await manageCaseDashboardPage.visit();
-  await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
-  await manageCaseDashboardPage.navigateToCase(caseId);
   await caseDetailsPage.selectNextStep(ContestedEvents.listForInterimHearing);
   // Add 6 distinct interim hearings.  Only the last has no file selected.
   await addHearingDetails(0, MaintenancePendingSuit, listForInterimHearings);
@@ -90,10 +90,7 @@ async function performListForInterimHearingsFlow(
   // Confirm and submit once interim hearings added.
   await listForInterimHearings.navigateContinue();
   await listForInterimHearings.navigateSubmit();
-
-  // Next:
-  // Run method that converts this old hearing type to new hearing type format
-  // Run tab test to confirm that all the correct hearing information shows on the new hearing tab
+  await caseDetailsPage.checkHasBeenUpdated('List for Interim Hearing');
 
   if (config.run_accessibility) {
     const accessibilityScanResults = await makeAxeBuilder().analyze();
@@ -135,9 +132,32 @@ async function addHearingDetails(
   }
 }
 
+async function performManageHearingsMigration(
+  caseDetailsPage: any,
+  blankPage: any,
+  testInfo: any,
+  makeAxeBuilder: any
+): Promise<void> {
+
+  await caseDetailsPage.selectNextStep(ContestedEvents.manageHearingsMigration);
+  await blankPage.navigateSubmit();
+  await caseDetailsPage.checkHasBeenUpdated('(Migration) Manage Hearings');
+
+  if (config.run_accessibility) {
+    const accessibilityScanResults = await makeAxeBuilder().analyze();
+
+    await testInfo.attach('accessibility-scan-results', {
+      body: JSON.stringify(accessibilityScanResults, null, 2),
+      contentType: 'application/json'
+    });
+
+    expect(accessibilityScanResults.violations).toEqual([]);
+  }
+}
+
 test.describe('Contested - List for Interim Hearings', () => {
   test(
-    'Contested - List for Interim Hearings (Form A)',
+    'Form A case',
     { tag: [] },
     async (
       {
@@ -150,12 +170,35 @@ test.describe('Contested - List for Interim Hearings', () => {
       testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACase();
-      await performListForInterimHearingsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForInterimHearingPage, testInfo, makeAxeBuilder)
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performListForInterimHearingsFlow(caseDetailsPage, listForInterimHearingPage, testInfo, makeAxeBuilder)
     }
   );
 
   test(
-    'Contested - List for Interim Hearings (Paper Case)',
+    'Form A case with Manage Hearings Migration',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        listForInterimHearingPage,
+        blankPage,
+        makeAxeBuilder,
+      },
+      testInfo
+    ) => {
+      const caseId = await ContestedCaseFactory.createAndProcessFormACase();
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performListForInterimHearingsFlow(caseDetailsPage, listForInterimHearingPage, testInfo, makeAxeBuilder)
+      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await caseDetailsPage.assertTabData(migratedListForInterimHearingsTabDataOnHearing);
+    }
+  );
+
+  test(
+    'Paper Case',
     { tag: [] },
     async (
       {
@@ -168,7 +211,8 @@ test.describe('Contested - List for Interim Hearings', () => {
       testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createBaseContestedPaperCase();
-      await performListForInterimHearingsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForInterimHearingPage, testInfo, makeAxeBuilder);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performListForInterimHearingsFlow(caseDetailsPage, listForInterimHearingPage, testInfo, makeAxeBuilder);
     }
   );
 });

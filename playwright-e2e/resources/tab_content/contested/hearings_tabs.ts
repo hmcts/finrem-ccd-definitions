@@ -45,3 +45,19 @@ export const migratedListForHearingsTabDataOnHearing2 = [
     ]
   }
 ];
+
+export const migratedListForInterimHearingsTabDataOnHearing = [
+  {
+    tabName: 'Hearings',
+    tabContent: [
+      "Hearing 1",
+      { tabItem: "Type of Hearing", value: "Maintenance Pending Suit (MPS)" },
+      { tabItem: "Court", value: "Chesterfield County Court" },
+      { tabItem: "Hearing date", value: '01 Jan 2026 10:00' },
+      { tabItem: "Hearing time estimate", value: '1 hour' },
+      { tabItem: "Who has received this notice", value: 'Unknown' },
+      { tabItem: "Additional information about the hearing", value: 'MPS: Additional information about the hearing' },
+      { tabItem: "Hearing documents", value: 'MPSfile.pdf' }
+    ]
+  }
+];
