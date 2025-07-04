@@ -57,7 +57,7 @@ async function performManageHearingsMigration(
 
   await caseDetailsPage.selectNextStep(ContestedEvents.manageHearingsMigration);
   await listForHearingPage.navigateSubmit();
-  await caseDetailsPage.checkHasBeenUpdated('Manage Hearings Migration');
+  await caseDetailsPage.checkHasBeenUpdated('(Migration) Manage Hearings');
 
   if (config.run_accessibility) {
     const accessibilityScanResults = await makeAxeBuilder().analyze();
