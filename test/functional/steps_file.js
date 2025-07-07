@@ -6,14 +6,7 @@ const { mediationQuestion,mediationQuestionNoMIAMYesExemption, mediationQuestion
 const { applyingToCourt } = require('./pages/contested-pages/apply-court');
 const { complexityList } = require('./pages/contested-pages/complexity-list');
 const { fastTrack } = require('./pages/contested-pages/fast-track');
-const { finalPaymentSubmissionPage } = require('./pages/final-payment-submission-page/final-payment-submission-page');
-const { paymentSubmission } = require('./pages/payment-submission/payment-submisison');
-const { hwfPaymentDetails } = require('./pages/hwf-payment-details/hwf-payment-detail');
-const { paymentPage } = require('./pages/payment-page/payment-page');
-const { caseSubmitAuthorisation } = require('./pages/case-authorisation/case-authorisation');
-const { amendApplicationDetails, contestedAmendApplicationDetails } = require('./pages/amend-application-details/amend-application-details');
 const { checkYourAnswers, contestedCheckYourAnswers, contestedCheckYourAnswersMIAMNotAttended } = require('./pages/check-your-answers/check-your-answers');
-const { savingApplicationInformation, finalInformationPage } = require('./pages/saving-application-information/saving-application-information');
 const { optionalDocuments, consentedOtherDocuments, contestedOtherDocuments, contestedOtherDocumentsPaperCase } = require('./pages/optional-documents/optional-documents');
 const { d81Question } = require('./pages/d81-question/d81-question');
 const { consentOrder } = require('./pages/consent-order/consent-order');
@@ -35,23 +28,18 @@ const {issueApplication, getCaseRefFromScreen} = require('./pages/issue-applicat
 const {childrenDetails} = require('./pages/children-details/children-details');
 const {allocateJudge} = require('./pages/allocate-judge/allocate-judge');
 const {uploadCaseFiles} = require('./pages/upload-case-files/upload-case-files');
-const {manageConfidentialDocuments} = require('./pages/manage-confidential-documents/manage-confidential-documents');
 const {progressToListing} = require('./pages/progress-to-listing/progress-to-listing');
 const {listForHearing} = require('./pages/list-for-hearing/list-for-hearing');
 const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-reference');
 const {giveAllocationDirection} = require('./pages/give-allocation-direction/give-allocation-direction');
-const {updateContactDetails} = require('./pages/update-contact-details/update-contact-details');
 const {manageIntervenersAdd} = require('./pages/manage-interveners/manage-interveners-add');
 const {manageIntervenersRemove} = require('./pages/manage-interveners/manage-interveners-remove');
-const {addNote} = require('./pages/add-note/add-note');
-const {refundCase} = require('./pages/refund-case/refund-case');
 const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-order');
 const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-approve');
 const {uploadOrder} = require('./pages/upload-order/upload-order');
 const {sendOrder,sendOrderNew} = require('./pages/send-order/send-order');
 const {listForInterimHearing} = require('./pages/list-of-interim-hearing/list-of-interim-hearing');
 const {createCaseFlag, validateCaseFlagAlertMessage, validateCaseFlagTab} = require('./pages/create-case-flag/create-case-flag');
-const {manageBarristerApplicant, manageBarristerRespondent} = require('./pages/manage-barrister/manage-barrister');
 const {solicitorCreateGeneralApplication, caseWorkerReferGeneralApplication, judgeGeneralApplicationOutcome, generalApplicationDirections} = require('./pages/general-application/general-application');
 const {manageFlags} = require('./pages/manage-flags/manage-case-flags');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
@@ -139,17 +127,8 @@ module.exports = () => {
     optionalDocuments,
     consentedOtherDocuments,
     contestedOtherDocuments,
-    savingApplicationInformation,
-    finalInformationPage,
     checkYourAnswers,
     contestedCheckYourAnswers,
-    amendApplicationDetails,
-    contestedAmendApplicationDetails,
-    caseSubmitAuthorisation,
-    paymentPage,
-    hwfPaymentDetails,
-    paymentSubmission,
-    finalPaymentSubmissionPage,
     historyTab,
     applicantTab,
     respondentTab,
@@ -177,21 +156,15 @@ module.exports = () => {
     contestedNatureOfApplicationForSchedule1,
     allocateJudge,
     uploadCaseFiles,
-    manageConfidentialDocuments,
     verifyContestedConfidentialTabData,
     progressToListing,
     listForHearing,
     getCaseRefFromScreen,
     enterCaseReference,
     giveAllocationDirection,
-    updateContactDetails,
     manageIntervenersAdd,
     manageIntervenersRemove,
     contestedIntervenersTab,
-    refundCase,
-    addNote,
-    manageBarristerApplicant,
-    manageBarristerRespondent,
     schedule1Tab,
     changeOfRepresentativesTab,
     verifyManageBarristerEvent,

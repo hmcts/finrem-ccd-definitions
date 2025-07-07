@@ -155,25 +155,6 @@ Scenario.skip('Contested share case @nightly @pipeline', async I => {
   await I.assignContestedShareCase(caseId, solRef);
 }).retry(3);
 
-Scenario('Contested Matrimonial Case Creation by Solicitor @nightly', async ({ I }) => {
-    await I.signInIdam(solicitorUserName, solicitorPassword);
-    await I.wait('2');
-    await I.createCase('FinancialRemedyContested', 'Form A Application');
-    await I.contestedSolicitorCreate(solRef, 'Matrimonial');
-    await I.contestedDivorceDetails();
-    await I.contestedApplicantDetails();
-    await I.contestedRespondentDetails();
-    await I.contestedNatureOfApplication();
-    await I.fastTrack();
-    await I.complexityList();
-    await I.applyingToCourt();
-    await I.mediationQuestion();
-    await I.miamCertification();
-    await I.contestedOtherDocuments();
-    await I.contestedCheckYourAnswers('Matrimonial');
-    await I.waitForText('Form A Application', '60')
-}).retry(3);
-
 // DISABLED AS OF PAPER CASE BREAKING CHANGE DFR-1688
 // RE-ENABLE AS PART OF BUG FIX
 //
@@ -241,17 +222,4 @@ Scenario.skip('progress to listing for contested case @nightly', async ({ I }) =
     await I.waitForText('List for Hearing');
 }).retry(3);
 
-// Duplicate test its already present in contested_events_test.js file
-Scenario.skip('Update Contact Details for contested Case @nightly ', async ({ I }) => {
-  //caseworker, type-matrimonial
-    const caseId = await createCaseInCcd(solicitorUserName, solicitorPassword, './test/data/ccd-contested-basic-data.json', 'FinancialRemedyContested', 'FR_solicitorCreate');
-    const caseSubmission = await updateCaseInCcd(solicitorUserName, solicitorPassword, caseId, 'FinancialRemedyContested', 'FR_applicationPaymentSubmission', './test/data/ccd-hwf-contested-payment.json');
-    const hwfPaymentAccepted = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_HWFDecisionMade', './test/data/ccd-contested-basic-data.json');
-    const issueApplication = await updateCaseInCcd(caseWorkerUserName, caseWorkerPassword, caseId, 'FinancialRemedyContested', 'FR_issueApplication', './test/data/ccd-contested-case-worker-issue-data.json');
-
-    await I.signInIdam(caseWorkerUserName, caseWorkerPassword);
-    await I.amOnPage(`${ccdWebUrl}/v2/case/${caseId}`);
-    await I.updateContactDetails();
-
-}).retry(3);
 

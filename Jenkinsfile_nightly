@@ -1,9 +1,14 @@
 #!groovy
 properties([
-        pipelineTriggers([cron('45 17 * * 1-5')]),
+        pipelineTriggers([cron('00 17 * * 1-5')]),
         parameters([
                 string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
                 string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
+                string(
+                        name: 'FUNCTIONAL_TESTS_WORKERS',
+                        defaultValue: '2',
+                        description: 'Number of workers running functional tests'
+                )
         ])
 ])
 
@@ -44,6 +49,7 @@ def secrets = [
         secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
         secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
         secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
+        secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
         secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
         secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
         secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
@@ -61,8 +67,10 @@ withNightlyPipeline(type, product, component) {
     env.CCD_WEB_URL = 'https://manage-case.aat.platform.hmcts.net'
     env.CCD_DATA_API_URL = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal'
     env.XUI_ORG_WEB_URL = 'https://manage-org.aat.platform.hmcts.net'
+    env.MANAGE_ORG_API_BASE_URL='http://aac-manage-case-assignment-aat.service.core-compute-aat.internal'
     env.NIGHTLY_TEST = 'true'
     env.NODE_ENV = 'ci'
+    env.FUNCTIONAL_TESTS_WORKERS = params.FUNCTIONAL_TESTS_WORKERS
 
     loadVaultSecrets(secrets)
     enableFullFunctionalTest(180)
