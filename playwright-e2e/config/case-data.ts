@@ -164,6 +164,14 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage Barrister",
     ccdCallback: "FR_manageBarrister"
   },
+    prepareForHearing: {
+    listItem: "Prepare For Hearing",
+    ccdCallback: "FR_prepareForHearing"
+  },
+    createGeneralOrder: {
+    listItem: "Create General Order",
+    ccdCallback: "FR_generalOrder"
+  },
 
   // Common events
   createFlag: CommonEvents.createFlag,
