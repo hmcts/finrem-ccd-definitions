@@ -88,7 +88,7 @@ export class ManageHearingPage extends BaseJourneyPage {
         const frcDropDown = this.page
             .locator(`#workingHearing_hearingCourtSelection_${camelCase(courtRegion)}List`);
         await expect(frcDropDown).toBeVisible();
-        await frcDropDown.selectOption(`${courtFrc} FRC`);
+        await frcDropDown.selectOption(`${courtFrc}`);
 
         // Select the local court from the visible dropdown
         const courtListDropDown = this.page.locator(

@@ -22,6 +22,10 @@ async function performGeneralApplicationDirectionsFlow(
 
   await caseDetailsPage.selectNextStep(ContestedEvents.generalApplicationDirections);
   await generalApplicationDirectionsPage.chooseWhetherAHearingIsRequired(YesNoRadioEnum.YES);
+  await generalApplicationDirectionsPage.enterHearingDate('01', '01', '2025');
+  await generalApplicationDirectionsPage.enterHearingTime('10:00');
+  await generalApplicationDirectionsPage.enterTimeEstimate('3 hours');
+  await generalApplicationDirectionsPage.selectCourtForHearing();
 
   //Next, continue tests to drive through new hearing creation
 
