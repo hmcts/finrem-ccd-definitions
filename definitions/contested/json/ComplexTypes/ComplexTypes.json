@@ -3281,6 +3281,33 @@
   },
   {
     "LiveFrom": "17/01/2025",
+    "ID": "FR_coverLetterToShare",
+    "ListElementCode": "documentId",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_coverLetterToShare",
+    "ListElementCode": "coverLetterName",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_coverLetterToShare",
+    "ListElementCode": "coverLetterDocument",
+    "FieldType": "Document",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
     "ID": "FR_orderToShare",
     "ListElementCode": "documentId",
     "FieldType": "Text",
@@ -3331,6 +3358,15 @@
     "ListElementCode": "attachmentsToShare",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_attachmentsToShare",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "07/07/2025",
+    "ID": "FR_orderToShare",
+    "ListElementCode": "coverLetterToShare",
+    "FieldType": "FR_coverLetterToShare",
     "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -3865,6 +3901,16 @@
     "ListElementCode": "pensionSharingAnnex",
     "FieldType": "Document",
     "ElementLabel": "Pension Sharing Annex",
+    "SecurityClassification": "Public",
+    "CategoryID": "postHearingDraftOrder",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "coverLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Cover Letter",
     "SecurityClassification": "Public",
     "CategoryID": "postHearingDraftOrder",
     "Searchable": "N"
