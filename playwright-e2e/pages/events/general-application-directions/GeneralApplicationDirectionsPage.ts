@@ -7,12 +7,14 @@ export class GeneralApplicationDirectionsPage extends BaseJourneyPage {
     private readonly isAHearingRequired: Locator;
     private readonly hearingTime: Locator;
     private readonly hearingTimeEstimate: Locator;
+    private readonly additionalInformation: Locator;
     
     public constructor(page: Page) {
         super(page);
         this.isAHearingRequired = page.locator('#generalApplicationDirectionsHearingRequired');
         this.hearingTime = this.page.locator(`#generalApplicationDirectionsHearingTime`);
         this.hearingTimeEstimate = this.page.locator(`#generalApplicationDirectionsHearingTimeEstimate`);
+        this.additionalInformation = this.page.locator(`#generalApplicationDirectionsAdditionalInformation`);
     }
 
     async chooseWhetherAHearingIsRequired(whetherAHearingIsRequired: YesNoRadioEnum) {
@@ -60,5 +62,10 @@ export class GeneralApplicationDirectionsPage extends BaseJourneyPage {
         );
         await expect(courtListDropDown).toBeVisible();
         await courtListDropDown.selectOption(localCourt);
+    }
+
+    async enterAdditionalInformationAboutHearing(information: string = "Whatever information is required for the hearing") {
+        await expect(this.additionalInformation).toBeVisible();
+        await this.additionalInformation.fill(information);
     }
 }

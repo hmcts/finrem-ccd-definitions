@@ -26,6 +26,7 @@ async function performGeneralApplicationDirectionsFlow(
   await generalApplicationDirectionsPage.enterHearingTime('10:00');
   await generalApplicationDirectionsPage.enterTimeEstimate('3 hours');
   await generalApplicationDirectionsPage.selectCourtForHearing();
+  await generalApplicationDirectionsPage.enterAdditionalInformationAboutHearing();
 
   //Next, continue tests to drive through new hearing creation
 
