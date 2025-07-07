@@ -19,7 +19,7 @@ const MaintenancePendingSuit = {
 
 const FirstDirectionsAppointment = {
   type: "First Directions Appointment (FDA)",
-  duration: "2 hour",
+  duration: "2 hours",
   date: { day: "02", month: "02", year: "2026" },
   time: "11:00",
   information: "FDA: Additional information about the hearing",
