@@ -34,14 +34,12 @@ const {enterCaseReference} = require('./pages/enter-case-reference/enter-case-re
 const {giveAllocationDirection} = require('./pages/give-allocation-direction/give-allocation-direction');
 const {manageIntervenersAdd} = require('./pages/manage-interveners/manage-interveners-add');
 const {manageIntervenersRemove} = require('./pages/manage-interveners/manage-interveners-remove');
-const {refundCase} = require('./pages/refund-case/refund-case');
 const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-order');
 const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-approve');
 const {uploadOrder} = require('./pages/upload-order/upload-order');
 const {sendOrder,sendOrderNew} = require('./pages/send-order/send-order');
 const {listForInterimHearing} = require('./pages/list-of-interim-hearing/list-of-interim-hearing');
 const {createCaseFlag, validateCaseFlagAlertMessage, validateCaseFlagTab} = require('./pages/create-case-flag/create-case-flag');
-const {manageBarristerApplicant, manageBarristerRespondent} = require('./pages/manage-barrister/manage-barrister');
 const {solicitorCreateGeneralApplication, caseWorkerReferGeneralApplication, judgeGeneralApplicationOutcome, generalApplicationDirections} = require('./pages/general-application/general-application');
 const {manageFlags} = require('./pages/manage-flags/manage-case-flags');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
@@ -167,9 +165,6 @@ module.exports = () => {
     manageIntervenersAdd,
     manageIntervenersRemove,
     contestedIntervenersTab,
-    refundCase,
-    manageBarristerApplicant,
-    manageBarristerRespondent,
     schedule1Tab,
     changeOfRepresentativesTab,
     verifyManageBarristerEvent,

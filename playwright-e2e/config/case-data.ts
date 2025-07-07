@@ -160,6 +160,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Refund",
     ccdCallback: "FR_refund"
   },
+  manageBarrister: {
+    listItem: "Manage Barrister",
+    ccdCallback: "FR_manageBarrister"
+  },
 
   // Common events
   createFlag: CommonEvents.createFlag,

@@ -58,6 +58,7 @@ import {AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
 import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateToJudgePage';
 import {EventSummaryPage} from '../pages/events/EventSummaryPage.ts';
 import {RefundPage} from '../pages/events/refund/RefundPage.ts';
+import { ManageBarristerPage } from '../pages/events/manage-barrister/ManageBarristerPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -119,6 +120,7 @@ type CreateFixtures = {
   allocateToJudgePage: AllocateToJudgePage;
   eventSummaryPage: EventSummaryPage;
   refundPage: RefundPage;
+  manageBarristerPage: ManageBarristerPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -289,5 +291,8 @@ export const test = base.extend<CreateFixtures>({
   },
   refundPage: async ({ page }, use) => {
     await use(new RefundPage(page));
+  },
+  manageBarristerPage: async ({ page }, use) => {
+    await use(new ManageBarristerPage(page));
   }
 });
