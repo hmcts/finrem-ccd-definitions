@@ -60,8 +60,8 @@ def secrets = [
         secret('solicitor1-password', 'PASSWORD_SOLICITOR1'),
         secret('barrister1-username', 'USERNAME_BARRISTER1'),
         secret('barrister1-password', 'PASSWORD_BARRISTER1'),
-        secret("barrister2-respondent-username","PLAYWRIGHT_RESP_BARRISTER_USERNAME"),
-        secret("barrister2-respondent-password","PLAYWRIGHT_RESP_BARRISTER_PSWD")
+        secret("playwright-barrister2-respondent-username","PLAYWRIGHT_RESP_BARRISTER_USERNAME"),
+        secret("playwright-barrister2-respondent-testing-password","PLAYWRIGHT_RESP_BARRISTER_PSWD")
     ]
 ]
 
