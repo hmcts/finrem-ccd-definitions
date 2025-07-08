@@ -100,3 +100,18 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
     ]
   }
 ];
+
+export const migratedGeneralApplicationDirectionsTabDataOnHearing1 = [
+  {
+    tabName: 'Hearings',
+    tabContent: [
+      "Hearing 1",
+      { tabItem: "Type of Hearing", value: "Application Hearing" },
+      { tabItem: "Court", value: "Bromley County Court And Family Court" },
+      { tabItem: "Hearing date", value: '01 Jan 2025 10:00' },
+      { tabItem: "Hearing time estimate", value: '3 hours' },
+      { tabItem: "Who has received this notice", value: 'Unknown' },
+      { tabItem: "Additional information about the hearing", value: 'Whatever information is required for the hearing' }
+    ]
+  }
+];
