@@ -1414,12 +1414,11 @@ __metadata:
   linkType: hard
 
 "@hmcts/playwright-common@npm:^1.0.25":
-  version: 1.0.27
-  resolution: "@hmcts/playwright-common@npm:1.0.27"
+  version: 1.0.29
+  resolution: "@hmcts/playwright-common@npm:1.0.29"
   dependencies:
     "@axe-core/playwright": ^4.10.0
     "@eslint/js": ^9.11.1
-    "@types/node": ^22.6.1
     "@typescript-eslint/eslint-plugin": ^8.8.0
     eslint: ^9.11.1
     eslint-plugin-playwright: ^1.6.2
@@ -1430,8 +1429,8 @@ __metadata:
     typescript: ^5.6.2
     typescript-eslint: ^8.8.0
   peerDependencies:
-    "@playwright/test": ^1.49.0
-  checksum: 38e6edd0e43797e3c3ae9fe4908cedcfeb2585e929467d1ee2367b5dc8c3407e9a5cbe27208d4ddc01e22534e0aa8d8f7062ce1ebc828ea4620e97183ff278fc
+    "@playwright/test": ^1.53.0
+  checksum: 6cb59630fc6c90a4fde89b1ee86e40f9db23538c0391b85d31331f40198bc89c43421eac66802e6e51eff79b0c29784606f2a0f38c2369e6c3baea4b9303a614
   languageName: node
   linkType: hard
 
@@ -2356,36 +2355,36 @@ __metadata:
   linkType: hard
 
 "@types/lodash@npm:^4.17.16":
-  version: 4.17.19
-  resolution: "@types/lodash@npm:4.17.19"
-  checksum: a75452bd0ed21c9dba98c0d395ef0f9de3220a8410dc07dfb041f84c7f1733b88648f1ba8e62b14f70ff9e935797b618f7060fba40abdf754cdbfb27a99ec27e
+  version: 4.17.20
+  resolution: "@types/lodash@npm:4.17.20"
+  checksum: dc7bb4653514dd91117a4c4cec2c37e2b5a163d7643445e4757d76a360fabe064422ec7a42dde7450c5e7e0e7e678d5e6eae6d2a919abcddf581d81e63e63839
   languageName: node
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^24.0.1":
-  version: 24.0.7
-  resolution: "@types/node@npm:24.0.7"
+  version: 24.0.10
+  resolution: "@types/node@npm:24.0.10"
   dependencies:
     undici-types: ~7.8.0
-  checksum: e3986e0683cf5cf816297200deb0627e62b60d81952391ed03e292cd13463acaa0601adbce2402ecf560eac7a80bbc77f58417173cb01755a79fbed0b2165c92
+  checksum: 04e4d11a711a683d6ed71f8db86b35035771ee9c1f110cb904ca67454d3478f19c71f1f0ccd0ba5350e5ce63bea70d08c569f798f6f5a5d2a1d05c038f1f729f
   languageName: node
   linkType: hard
 
 "@types/node@npm:^20.1.0, @types/node@npm:^20.11.30":
-  version: 20.19.2
-  resolution: "@types/node@npm:20.19.2"
+  version: 20.19.4
+  resolution: "@types/node@npm:20.19.4"
   dependencies:
     undici-types: ~6.21.0
-  checksum: bbff606094c24c96cb3ed9a72d0d18473cf59864db70a4fc85189a9c41072fe9eeeff29601ce086c62255f335e0b6a7c8d8095c75dfe0da0c2daef37486543b5
+  checksum: affe7c1d01d3067c2e1ef923a7970ed047124c6b50573e6d1191d8cd824992b460514b4d90a389a87632e1ea64a99d8998946343d0d8ecb38b302cacf172f0d8
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.0.0, @types/node@npm:^22.6.1":
-  version: 22.15.34
-  resolution: "@types/node@npm:22.15.34"
+"@types/node@npm:^22.0.0":
+  version: 22.16.0
+  resolution: "@types/node@npm:22.16.0"
   dependencies:
     undici-types: ~6.21.0
-  checksum: bc0846b6130975afca65bfe6d43d732e621b583aaa500a90569799926e0317b63044a32226ab49cd07d966887ac44ed6789bf8e16e2af0f9442ebd6784e1f290
+  checksum: fccc24b9cfa95e165fb6a22871c812c9b021b0c686ced9b1572e1bd79ac3f8c78b36c04edfb2c96e10a8a1247c026d1dcad91c0c3e62dccf414057a37bac729d
   languageName: node
   linkType: hard
 

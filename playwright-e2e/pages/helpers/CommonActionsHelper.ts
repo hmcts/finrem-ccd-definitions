@@ -1,6 +1,6 @@
 import fs from "fs";
 import { Page } from "playwright";
-import { expect } from "@playwright/test";
+import {expect, Locator} from "@playwright/test";
 import config from "../../config/config";
 
 export class CommonActionsHelper {
@@ -59,8 +59,10 @@ export class CommonActionsHelper {
         for (let i = 0; i < cancelUploadLocators.length; i++) {
             await expect(cancelUploadLocators[i]).toBeDisabled({ timeout: 10000 });
         }
-        const uploadingSpan = page.locator('span', { hasText: 'Uploading...' });
-        await expect(uploadingSpan).toBeHidden();
+        const uploadingSpan = await page.locator('span', { hasText: 'Uploading...' }).all();
+        for (let i = 0; i < uploadingSpan.length; i++) {
+            await expect(uploadingSpan[i]).toBeHidden({ timeout: 2000 });
+        }
     }
 
     /** 
@@ -78,5 +80,34 @@ export class CommonActionsHelper {
             mimeType: "application/pdf",
             buffer: fileBuffer,
         };
+    }
+
+    async uploadWithRateLimitRetry(
+        page: Page,
+        uploadField: Locator,
+        fileToUpload: { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> } | string,
+        maxRetries: number = 3,
+        waitMs: number = 3000
+    ) {
+        for (let attempt = 0; attempt < maxRetries; attempt++) {
+            await uploadField.setInputFiles(fileToUpload);
+
+            await this.waitForAllUploadsToBeCompleted(page);
+
+            // Check for rate limit error in a preceding span sibling
+            const errorLocator = uploadField.locator(
+                'xpath=../preceding-sibling::span[contains(text(), "Your request was rate limited. Please wait a few seconds before retrying your document upload")]'
+            );
+            const isErrorVisible = await errorLocator.isVisible({ timeout: 2000 });
+
+            if (!isErrorVisible) {
+                return; // Success
+            }
+            if (attempt < maxRetries - 1) {
+                await page.waitForTimeout(waitMs);
+            } else {
+                throw new Error('Rate limit error persists after retries');
+            }
+        }
     }
 }

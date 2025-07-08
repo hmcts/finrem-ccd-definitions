@@ -14,3 +14,8 @@ export enum MaleOrFemaleEnum {
   FEMALE = 'Female'
 }
 
+export enum CaseTypeEnum {
+  CONSENTED = "FinancialRemedyMVP2",
+  CONTESTED = "FinancialRemedyContested",
+}
+

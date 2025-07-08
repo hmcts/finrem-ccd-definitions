@@ -7,7 +7,7 @@ import { DocumentHelper } from '../../../data-utils/DocumentHelper';
 export class UploadDraftOrdersPage extends BaseJourneyPage {
     private readonly kindOfDraftOrderToUploadRadio: Locator;
     private readonly confirmTheUploadedDocsAreForTheCaseCheckbox: Locator;
-    private readonly hearingListdropdown: Locator;
+    private readonly hearingListDropdown: Locator;
     private readonly judgeForHearingKnownRadio: Locator;
     private readonly uploadOnBehalfOfApplicantRadio: Locator;
     private readonly uploadingOrdersCheckbox: Locator;
@@ -19,7 +19,7 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
         this.commonActionsHelper = commonActionsHelper;
         this.kindOfDraftOrderToUploadRadio = page.getByRole('radio', { name: 'An agreed order following a hearing (agreed by the parties at the hearing)' });
         this.confirmTheUploadedDocsAreForTheCaseCheckbox = page.getByRole('checkbox', { name: 'I confirm the uploaded documents are for the' });
-        this.hearingListdropdown =  page.locator('select#uploadAgreedDraftOrder_hearingDetails')
+        this.hearingListDropdown =  page.locator('select#uploadAgreedDraftOrder_hearingDetails')
         this.judgeForHearingKnownRadio = page.locator('#uploadAgreedDraftOrder_judgeKnownAtHearing')
         this.uploadOnBehalfOfApplicantRadio = page.locator('input#uploadAgreedDraftOrder_uploadParty_theApplicant')
         this.uploadingOrdersCheckbox = page.getByRole('checkbox', { name: 'Orders' });
@@ -37,8 +37,8 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
     }
     
     async selectFirstAvailableHearing() {
-        await expect(this.hearingListdropdown).toBeVisible();
-        await this.hearingListdropdown.selectOption({ index: 1 });
+        await expect(this.hearingListDropdown).toBeVisible();
+        await this.hearingListDropdown.selectOption({ index: 1 });
     }
 
     async chooseWhetherJudgeForHearingIsKnown(yesOrNo : YesNoRadioEnum) {
@@ -60,8 +60,11 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
     async uploadDraftOrder(caseId: string) {
         await expect(this.firstDraftOrderDocUpload).toBeVisible();
         await DocumentHelper.createDraftOrderDocument(caseId);
-        await this.firstDraftOrderDocUpload.setInputFiles('./playwright-e2e/resources/files_built_by_tests/upload-draft-order/agreed-draft-order-document.docx');
-        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(
+            this.page,
+            this.firstDraftOrderDocUpload,
+            './playwright-e2e/resources/files_built_by_tests/upload-draft-order/agreed-draft-order-document.docx'
+        );
     }
 }
 
