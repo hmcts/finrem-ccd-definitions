@@ -8,7 +8,7 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
     test(
         'Contested - Send Order to an applicant solicitor @test',
         { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, checkYourAnswersPage, prepareForHearingPage, }) => {
+        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, checkYourAnswersPage, prepareForHearingPage, createGeneralOrderPage, contestedSendOrderPage }) => {
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
@@ -35,10 +35,17 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
 
             // Create general order
             await caseDetailsPage.selectNextStep(ContestedEvents.createGeneralOrder);
-            // await 
+            await createGeneralOrderPage.clickJudgeButton();
+            await createGeneralOrderPage.selectJudge('District Judge');
+            await createGeneralOrderPage.fillDescription('test case');
+            await createGeneralOrderPage.navigateContinue();
+            // could add assertion in here
+            await createGeneralOrderPage.navigateContinue();
+            // could add check your answers here
+            await createGeneralOrderPage.navigateSubmit();
 
             // Send order
-
+            await caseDetailsPage.selectNextStep(ContestedEvents.contestedSendOrder);
         }
     );
 });

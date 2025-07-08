@@ -60,6 +60,8 @@ import {EventSummaryPage} from '../pages/events/EventSummaryPage.ts';
 import {RefundPage} from '../pages/events/refund/RefundPage.ts';
 import { ManageBarristerPage } from '../pages/events/manage-barrister/ManageBarristerPage';
 import { PrepareForHearingPage } from '../pages/events/prepare-for-hearing/PrepareForHearingPage.ts';
+import { CreateGeneralOrderPage } from '../pages/events/create-general-order/CreateGeneralOrderPage.ts';
+import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -123,6 +125,8 @@ type CreateFixtures = {
   refundPage: RefundPage;
   manageBarristerPage: ManageBarristerPage;
   prepareForHearingPage: PrepareForHearingPage;
+  createGeneralOrderPage: CreateGeneralOrderPage;
+  contestedSendOrderPage: ContestedSendOrderPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -299,5 +303,11 @@ export const test = base.extend<CreateFixtures>({
   },
   prepareForHearingPage: async ({ page }, use) => {
     await use(new PrepareForHearingPage(page));
+  },
+  createGeneralOrderPage: async ({ page }, use) => {
+    await use(new CreateGeneralOrderPage(page));
+  },
+  contestedSendOrderPage: async ({ page }, use) => {
+    await use(new ContestedSendOrderPage(page));
   }
 });
