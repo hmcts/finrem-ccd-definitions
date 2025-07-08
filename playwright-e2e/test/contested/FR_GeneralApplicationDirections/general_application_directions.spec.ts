@@ -13,9 +13,6 @@ async function performGeneralApplicationDirectionsFlow(
   testInfo: any,
   makeAxeBuilder: any
 ): Promise<void> {
-  const hearingType = "Final Hearing (FH)";
-  const courtName = "CHESTERFIELD COUNTY COURT";
-
   await manageCaseDashboardPage.visit();
   await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   await manageCaseDashboardPage.navigateToCase(caseId);
@@ -27,6 +24,8 @@ async function performGeneralApplicationDirectionsFlow(
   await generalApplicationDirectionsPage.enterTimeEstimate('3 hours');
   await generalApplicationDirectionsPage.selectCourtForHearing();
   await generalApplicationDirectionsPage.enterAdditionalInformationAboutHearing();
+  await generalApplicationDirectionsPage.navigateContinue();
+  await generalApplicationDirectionsPage.navigateSubmit();
 
   //Next, continue tests to drive through new hearing creation
 
