@@ -58,7 +58,7 @@ export class GeneralApplicationDirectionsPage extends BaseJourneyPage {
 
         // Select the local court from the visible dropdown
         const courtListDropDown = this.page.locator(
-            `xpath=//select[starts-with(@id, "generalApplicationDirections_") and contains(@id, "CourtList") and not(ancestor::div[@hidden])]`
+            'select[id^="generalApplicationDirections_"][id*="CourtList"]:not(:where(div[hidden] *))'
         );
         await expect(courtListDropDown).toBeVisible();
         await courtListDropDown.selectOption(localCourt);
