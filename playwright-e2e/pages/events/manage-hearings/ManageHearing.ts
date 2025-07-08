@@ -79,7 +79,7 @@ export class ManageHearingPage extends BaseJourneyPage {
         await hearingTime.fill(time);
     }
 
-    async selectCourtForHearing(courtRegion: string = "London", courtFrc: string = "London FRC",
+    async selectCourtForHearing(courtRegion: string = "London", courtFrc: string = "London",
                                 localCourt: string = "BROMLEY COUNTY COURT AND FAMILY COURT") {
         const regionListDropDown = this.page.locator(`#workingHearing_hearingCourtSelection_region`);
         await expect(regionListDropDown).toBeVisible();
@@ -88,7 +88,7 @@ export class ManageHearingPage extends BaseJourneyPage {
         const frcDropDown = this.page
             .locator(`#workingHearing_hearingCourtSelection_${camelCase(courtRegion)}List`);
         await expect(frcDropDown).toBeVisible();
-        await frcDropDown.selectOption(`${courtFrc}`);
+        await frcDropDown.selectOption(`${courtFrc} FRC`);
 
         // Select the local court from the visible dropdown
         const courtListDropDown = this.page.locator(
