@@ -3694,6 +3694,15 @@
   {
     "LiveFrom": "03/07/2025",
     "ID": "FR_psaDocumentReview",
+    "ListElementCode": "courtOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/07/2025",
+    "ID": "FR_psaDocumentReview",
     "ListElementCode": "coverLetter",
     "FieldType": "Document",
     "ElementLabel": "Cover letter",
