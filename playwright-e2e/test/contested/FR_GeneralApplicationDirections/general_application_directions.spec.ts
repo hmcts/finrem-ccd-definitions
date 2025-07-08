@@ -89,7 +89,7 @@ test.describe('Contested - General Application Directions', () => {
   );
 
   test(
-    'Paper Case creating a hearing from general application directions',
+    'Paper Case - creating a hearing from general application directions shows on hearings tab.',
     { tag: [] },
     async (
       {
@@ -97,6 +97,7 @@ test.describe('Contested - General Application Directions', () => {
         manageCaseDashboardPage,
         caseDetailsPage,
         generalApplicationDirectionsPage,
+        blankPage,
         makeAxeBuilder,
       },
       testInfo
@@ -105,8 +106,8 @@ test.describe('Contested - General Application Directions', () => {
       await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
-      // Next:
-      // When add hearing complete, then use that page structure to build and test from this point
+      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await caseDetailsPage.assertTabData(migratedGeneralApplicationDirectionsTabDataOnHearing1);
     }
   );
 
