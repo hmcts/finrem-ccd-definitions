@@ -121,12 +121,32 @@ test.describe('Contested - Process Order', () => {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        uploadDraftOrdersPage
+        uploadDraftOrdersPage,
+        processOrderPage
       }
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-      await ContestedEventApi.caseWorkerProcessOrder(caseId, orderDetails);
+      // TODO what is it? await ContestedEventApi.caseWorkerProcessOrder(caseId, orderDetails);
+
+      const courtName = "CHESTERFIELD COUNTY COURT";
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
+      
+      // Skip the unprocessed approved orders page
+      await processOrderPage.navigateContinue();
+
+      const firstHearing = 0;
+      await processOrderPage.selectIsAnotherHearingToBeListed(firstHearing, true);
+      await processOrderPage.enterTimeEstimate(firstHearing, '1 hour');
+      await processOrderPage.enterHearingDate(firstHearing, '01', '01', '2024');
+      await processOrderPage.enterHearingTime(firstHearing, '10:00');
+      await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
+      await processOrderPage.selectCourtForHearing(firstHearing, courtName);
+
+      await processOrderPage.navigateContinue();
+      await processOrderPage.navigateSubmit();
+      await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
       // Next
       // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
