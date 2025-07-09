@@ -173,6 +173,50 @@ export class ContestedEventApi {
     ]);
   }
 
+  static async caseworkerAddsApplicantIntervener(
+    caseId: string,
+  ): Promise<void> {
+    await this.updateCaseWorkerSteps( caseId, [
+      {
+        event: ContestedEvents.manageInterveners.ccdCallback,
+        payload: PayloadPath.Contested.manageIntervenersAddApplicantInt,
+      }
+    ])
+  }
+
+  static async caseworkerAddsRespondentIntervener(
+    caseId: string,
+    ): Promise<void> {
+        await this.updateCaseWorkerSteps( caseId, [
+        {
+            event: ContestedEvents.manageInterveners.ccdCallback,
+            payload: PayloadPath.Contested.manageIntervenersAddRespondentInt,
+        }
+        ])
+    }
+
+    static async caseworkerAddsApplicantBarrister(
+    caseId: string,
+    ): Promise<void> {
+        await this.updateCaseWorkerSteps( caseId, [
+        {
+            event: ContestedEvents.manageBarrister.ccdCallback,
+            payload: PayloadPath.Contested.manageBarristerAddApplicantBarrister,
+        }
+        ])
+    }
+
+    static async caseworkerAddsRespondentBarrister(
+    caseId: string,
+    ): Promise<void> {
+        await this.updateCaseWorkerSteps( caseId, [
+        {
+            event: ContestedEvents.manageBarrister.ccdCallback,
+            payload: PayloadPath.Contested.manageBarristerAddRespondentBarrister,
+        }
+        ])
+    }
+
   static async caseWorkerProgressFormACaseToListing(
     caseId: string,
     issueDate?: string
