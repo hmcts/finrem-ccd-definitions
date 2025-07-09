@@ -80,7 +80,8 @@ test.describe('Contested - General Application Directions', () => {
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
       await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
-      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
     }
@@ -101,7 +102,8 @@ test.describe('Contested - General Application Directions', () => {
     ) => {
       const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
       await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
-      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
     }
