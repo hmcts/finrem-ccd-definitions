@@ -425,19 +425,6 @@ async function verifyContestedConfidentialTabData(eventName, tabName) {
 
 }
 
-async function contestedIntervenersTab(event, tabName) {
-
-  const I = this;
-  await I.clickTab('Intervener 1');
-    I.wait('5');
-    I.waitForText('s Full Name');
-    I.waitForText('Organisation');
-
-  await I.see(verifyContestedTabText.IntervenersTab.name);
-  await I.see(verifyContestedTabText.IntervenersTab.email);
-  await I.see(verifyContestedTabText.IntervenersTab.organization);
-}
-
 async function schedule1Tab(tabName) {
 
   const I = this;
@@ -535,7 +522,6 @@ module.exports = {
   verifyContestedTabData,
   verifyContestedPaperTabData,
   verifyContestedConfidentialTabData,
-  contestedIntervenersTab,
   schedule1Tab,
   changeOfRepresentativesTab,
   verifyManageBarristerEvent,
