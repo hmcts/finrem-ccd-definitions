@@ -299,6 +299,6 @@ export const test = base.extend<CreateFixtures>({
   },
 
   manageIntervenersPage: async ({ page }, use) => {
-    await use(new ManageIntervenerPage(page, commonActionsHelper, solicitorDetailsHelper));
+    await use(new ManageIntervenerPage(page, solicitorDetailsHelper));
   }
 });

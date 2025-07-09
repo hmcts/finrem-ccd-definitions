@@ -15,12 +15,10 @@ export class ManageIntervenerPage extends BaseJourneyPage {
     private readonly representativeFirmText: Locator;
     private readonly yourReferenceText: Locator;
 
-    private readonly commonActionsHelper: CommonActionsHelper
     private readonly solicitorDetailsHelper: SolicitorDetailsHelper;
 
-    public constructor(page: Page,  commonActionsHelper: CommonActionsHelper, solicitorDetailsHelper: SolicitorDetailsHelper) {
+    public constructor(page: Page, solicitorDetailsHelper: SolicitorDetailsHelper) {
         super(page);
-        this.commonActionsHelper = commonActionsHelper;
         this.solicitorDetailsHelper = solicitorDetailsHelper;
 
         this.manageIntervenerTitle = page.getByRole('heading', { name: 'Manage Interveners' });
@@ -28,30 +26,53 @@ export class ManageIntervenerPage extends BaseJourneyPage {
         this.representativeFullNameText = page.getByLabel(`Representative's Full Name`);
         this.representativeEmailText = page.getByLabel(`Representative's Email`);
         this.representativePhoneNumberText = page.getByLabel(`Representative's Phone Number (Optional)`);
-        this.representativeFirmText = page.getByLabel(`Representative's Firm`);
+        this.representativeFirmText = page.getByLabel(`Representative Firm`);
         this.yourReferenceText = page.getByLabel(`Your Reference`);
 
     }
 
     async selectIntervenerRadio(intervenerNumber: number) {
-        const radio = this.page
-            .locator('#intervenersList input[type="radio"]')
-            .filter({ hasText: new RegExp(`^Intervener ${intervenerNumber}`) });
+        const radio = this.page.getByRole('radio',
+            { name: new RegExp(`^Intervener ${intervenerNumber}`)});
         await radio.first().check();
     }
 
     async selectIntervenerActionRadio(action: string, intervenerNumber: number) {
-        const actionRadio = this.page
-            .locator('#intervenerOptionList input[type="radio"]')
-            .filter({ hasText: `${action} Intervener ${intervenerNumber}` });
+        const actionRadio = this.page.getByRole('radio',
+            { name: `${action} Intervener ${intervenerNumber}`});
         await actionRadio.first().check();
     }
 
     async doesIntervenerLiveOutsideUK(liveOutside : boolean,intervenerNumber: number){
-        const liveOutsideRadio = this.page.locator(`intervener${intervenerNumber}_intervenerResideOutsideUK`);
+        const liveOutsideRadio = this.page.locator(`#intervener${intervenerNumber}_intervenerResideOutsideUK`);
         const optionToSelect = liveOutside ? 'Yes' : 'No';
         const radioOption = liveOutsideRadio.getByLabel(optionToSelect);
         await radioOption.check();
+    }
+
+    async enterUkAddress(address?: {
+        buildingAndStreet?: string;
+        addressLine2?: string;
+        townOrCity?: string;
+        county?: string;
+        postcodeOrZipcode?: string;
+        country?: string;
+    }) {
+        await this.page.getByRole('link', { name: 'I can\'t enter a UK postcode' }).click();
+        await this.page.getByRole('textbox', { name: 'Building and Street'}).fill(address?.buildingAndStreet ?? 'test street');
+        await this.page.getByRole('textbox', { name: 'Address Line 2 (Optional)'}).fill(address?.addressLine2 ?? 'test address line 2');
+        await this.page.getByRole('textbox', { name: 'Town or City (Optional)'}).fill(address?.townOrCity ?? 'test town');
+        await this.page.getByRole('textbox', { name: 'County (Optional)'}).fill(address?.county ?? 'test county');
+        await this.page.getByRole('textbox', { name: 'Postcode', exact: true }).fill(address?.postcodeOrZipcode ?? 'test postcode');
+        await this.page.getByRole('textbox', { name: 'Country'}).fill(address?.country ?? 'test country');
+    }
+
+    async enterEmailAddress(emailAddress: string) {
+        await this.page.getByRole('textbox', { name: 'Email address (Optional)'}).fill(emailAddress);
+    }
+
+    async enterPhoneNumber() {
+        await this.page.getByRole('textbox', { name: 'Phone number (Optional)', exact: true }).fill('07111111111');
     }
 
     async keepIntervenerDetailsPrivate(intervenerNumber: number, keepPrivate: boolean) {
@@ -93,23 +114,29 @@ export class ManageIntervenerPage extends BaseJourneyPage {
 
     }
 
-    async enterIntervernersDetails(intervenerNumber: number, name: string, email: string, intervenerDetails:{
-        representativeFullName?: string,
-        representativeEmail?: string,
-        representativePhoneNumber?: string,
-        representativeFirm?: string,
-        yourReference?: string,
-        orgName?: string
-    } ) {
+    async enterIntervenersDetails(
+        intervenerNumber: number,
+        name: string,
+        email: string,
+        keepIntervenerDetailsPrivate: boolean,
+        isRepresented: boolean,
+        intervenerDetails:{
+            representativeFullName?: string,
+            representativeEmail?: string,
+            representativePhoneNumber?: string,
+            representativeFirm?: string,
+            yourReference?: string,
+            orgName?: string
+        } ) {
         await this.page.waitForLoadState('load');
         await this.intervenerFullNameText.fill(name);
         await this.doesIntervenerLiveOutsideUK(false, intervenerNumber);
-        await this.commonActionsHelper.enterUkAddress(this.page);
-        await this.commonActionsHelper.enterEmailAddress(this.page, email);
-        await this.commonActionsHelper.enterPhoneNumber(this.page);
-        await this.keepIntervenerDetailsPrivate(intervenerNumber, false);
+        await this.enterUkAddress();
+        await this.enterEmailAddress(email);
+        await this.enterPhoneNumber();
+        await this.keepIntervenerDetailsPrivate(intervenerNumber, keepIntervenerDetailsPrivate);
         await this.isIntervenerResidentInRefuge(intervenerNumber, false);
-        await this.selectIsRepresentedRadio(intervenerNumber, true);
+        await this.selectIsRepresentedRadio(intervenerNumber, isRepresented);
         await this.enterIntervenerRepresentedDetails(intervenerDetails);
     }
 
@@ -129,17 +156,11 @@ export class ManageIntervenerPage extends BaseJourneyPage {
         ];
         await this.navigateContinue();
 
-        for (const message of errorMessages) {
-            const errorLocator = this.page.getByText(message);
-            await expect(errorLocator).toBeVisible();
-        }
+        await this.assertErrorMessage(errorMessages);
 
         await this.selectIsRepresentedRadio(intervenerNumber, true);
         await this.navigateContinue();
 
-        for (const message of errorMessagesForRepresentative) {
-            const errorLocator = this.page.getByText(message);
-            await expect(errorLocator).toBeVisible();
-        }
+        await this.assertErrorMessage(errorMessagesForRepresentative);
     }
 }
