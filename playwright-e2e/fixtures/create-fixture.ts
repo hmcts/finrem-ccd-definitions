@@ -297,7 +297,6 @@ export const test = base.extend<CreateFixtures>({
   manageBarristerPage: async ({ page }, use) => {
     await use(new ManageBarristerPage(page));
   },
-
   manageIntervenersPage: async ({ page }, use) => {
     await use(new ManageIntervenerPage(page, solicitorDetailsHelper));
   }
