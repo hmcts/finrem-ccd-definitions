@@ -32,6 +32,7 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
             // Prepare for hearing
             await caseDetailsPage.selectNextStep(ContestedEvents.prepareForHearing);
             await prepareForHearingPage.navigateSubmit();
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.prepareForHearing.listItem);
 
             // Create general order
             await caseDetailsPage.selectNextStep(ContestedEvents.createGeneralOrder);
@@ -39,13 +40,24 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
             await createGeneralOrderPage.selectJudge('District Judge');
             await createGeneralOrderPage.fillDescription('test case');
             await createGeneralOrderPage.navigateContinue();
-            // could add assertion in here
+            // add assertion in here
             await createGeneralOrderPage.navigateContinue();
-            // could add check your answers here
+            // add check your answers here
             await createGeneralOrderPage.navigateSubmit();
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.createGeneralOrder.listItem);
 
             // Send order
             await caseDetailsPage.selectNextStep(ContestedEvents.contestedSendOrder);
+            await contestedSendOrderPage.checkSendOrder(true);
+            await contestedSendOrderPage.navigateContinue();
+            await contestedSendOrderPage.navigateContinue();
+            await contestedSendOrderPage.navigateContinue();
+            await contestedSendOrderPage.clickCaseState();
+            await contestedSendOrderPage.selectOrder('Order Sent');
+            await contestedSendOrderPage.navigateContinue();
+            // add cya assertion in here
+            await contestedSendOrderPage.navigateSubmit();
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.contestedSendOrder.listItem);
         }
     );
 });
