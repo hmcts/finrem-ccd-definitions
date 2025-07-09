@@ -66,10 +66,51 @@ async function performManageHearingsMigration(
 
 test.describe('Contested - General Application Directions', () => {
   test(
-    'Form A case - creating a hearing from general application directions shows on hearings tab.',
+    'Form A case creating a hearing from general application directions',
     { tag: [] },
     async (
       {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        generalApplicationDirectionsPage,
+        makeAxeBuilder,
+      },
+      testInfo
+    ) => {
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
+      // Next:
+      // When add hearing complete, then use that page structure to build and test from this point
+    }
+  );
+
+  test(
+    'Paper Case creating a hearing from general application directions',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        generalApplicationDirectionsPage,
+        makeAxeBuilder,
+      },
+      testInfo
+    ) => {
+      const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
+      await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
+      // Next:
+      // When add hearing complete, then use that page structure to build and test from this point
+    }
+  );
+
+  test(
+    'Form A case shows old-style General Application Direction hearings on the new hearing tab',
+    { tag: [] },
+    async ({
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
@@ -89,10 +130,9 @@ test.describe('Contested - General Application Directions', () => {
   );
 
   test(
-    'Paper Case - creating a hearing from general application directions shows on hearings tab.',
+    'Paper case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
-    async (
-      {
+    async ({
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
@@ -100,38 +140,13 @@ test.describe('Contested - General Application Directions', () => {
         blankPage,
         makeAxeBuilder,
       },
-      testInfo
-    ) => {
+      testInfo) => {
       const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
       await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
       await caseDetailsPage.assertTabData(migratedGeneralApplicationDirectionsTabDataOnHearing1);
-    }
-  );
-
-  test.skip(
-    'Form A case shows old-style General Application Direction hearings on the new hearing tab',
-    { tag: [] },
-    async () => {
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-      await ContestedCaseFactory.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
-      // Next:
-      // Check the hearing tab to check that the old hearing data is correctly showing there.
-      // Remove the skip when the test is ready.
-    }
-  );
-
-  test.skip(
-    'Paper case shows old-style General Application Direction hearings on the new hearing tab',
-    { tag: [] },
-    async () => {
-      const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
-      await ContestedCaseFactory.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
-      // Next:
-      // Check the hearing tab to check that the old hearing data is correctly showing there.
-      // Remove the skip when the test is ready.
     }
   );
 });
