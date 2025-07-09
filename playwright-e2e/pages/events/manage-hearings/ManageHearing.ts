@@ -13,7 +13,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     private readonly typeOfHearingDropDown: Locator;
     private readonly hearingTimeEstimate: Locator;
 
-    public constructor(page: Page, commonActionsHelper: CommonActionsHelper, applicantName: string) {
+    public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
         this.commonActionsHelper = commonActionsHelper;
         this.manageHearingTitle = page.getByRole('heading', { name: "Manage Hearings" })

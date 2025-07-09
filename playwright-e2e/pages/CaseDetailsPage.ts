@@ -159,6 +159,11 @@ export class CaseDetailsPage {
         await expect(this.activeCaseFlagOnCase).not.toBeVisible();
     }
 
+    async assertTabNotPresent(tabName: string): Promise<void> {
+        const tabHeader = this.getTabHeader(tabName);
+        await expect(tabHeader).not.toBeVisible();
+    }
+
     async validateFileTree(
         tree: FileTree,
         parentPath: string[] = [],
