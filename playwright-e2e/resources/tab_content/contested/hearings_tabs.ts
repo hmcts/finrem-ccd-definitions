@@ -90,7 +90,7 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
       { tabItem: "Who has received this notice", value: 'Unknown' },
       { tabItem: "Additional information about the hearing", value: 'DIR: Additional information about the hearing' },
       { tabItem: "Hearing documents", value: 'DIRfile.pdf' },
-      "Hearing 5",
+      "Hearing 6",
       { tabItem: "Type of Hearing", value: "Directions (DIR)" },
       { tabItem: "Court", value: "Lincoln County Court And Family Court" },
       { tabItem: "Hearing date", value: '06 Jun 2026 15:00' },
