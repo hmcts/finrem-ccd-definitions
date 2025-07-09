@@ -19,7 +19,7 @@ export function getManageHearingTableData(params?: {
         rows: [
             {cellItem: "Type of Hearing", value: params?.typeOfHearing ?? "Final Hearing (FH)"},
             {cellItem: "Hearing Time Estimate", value: params?.duration ?? "2 hours"},
-            {cellItem: "Hearing Date", value: params?.hearingDate ?? DateHelper.getFormattedDateTwelveWeeksAndOneDayLater()},
+            {cellItem: "Hearing Date", value: params?.hearingDate ?? DateHelper.getFormattedDateTwelveWeeksLater()},
             {cellItem: "Hearing Time", value: params?.hearingTime ?? "10:00 AM"},
             "This would usually be the applicants local Court",
             {cellItem: "Please state in which Financial Remedies Court Zone the applicant resides", value: params?.courtZone ?? "London"},
