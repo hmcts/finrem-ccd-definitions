@@ -102,8 +102,8 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
         if(uploadJointD81) {
             await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadJointD81, './playwright-e2e/resources/file/test.pdf');
         } else {
-            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadD81Applicant, './playwright-e2e/resources/file/test.pdf');
-            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadD81Respondent, './playwright-e2e/resources/file/test.pdf');
+            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadD81Applicant, './playwright-e2e/resources/file/test.pdf', 5, 5000);
+            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadD81Respondent, './playwright-e2e/resources/file/test.pdf',5, 5000);
         }
     }
 }

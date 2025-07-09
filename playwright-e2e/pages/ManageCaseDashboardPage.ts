@@ -22,10 +22,19 @@ export class ManageCaseDashboardPage {
 
   async visit(){
     await this.page.goto(`${this.url}`);
+    await this.clearCookies();
   }
 
   async signOut() {
     await this.page.waitForLoadState();
     await this.signOutButton.click();
+  }
+
+  async clearCookies() {
+    await this.page.context().clearCookies();
+    await this.page.evaluate(() => {
+      window.localStorage.clear();
+      window.sessionStorage.clear();
+    });
   }
 }
