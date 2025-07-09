@@ -1,0 +1,73 @@
+{
+  "intervenersList": {
+    "value": {
+      "code": "intervener2",
+      "label": "Intervener 2: not added to case yet."
+    },
+    "list_items": [
+      {
+        "code": "intervener1",
+        "label": "Intervener 1: intApp1"
+      },
+      {
+        "code": "intervener2",
+        "label": "Intervener 2: not added to case yet."
+      },
+      {
+        "code": "intervener3",
+        "label": "Intervener 3: not added to case yet."
+      },
+      {
+        "code": "intervener4",
+        "label": "Intervener 4: not added to case yet."
+      }
+    ]
+  },
+  "intervenerOptionList": {
+    "value": {
+      "code": "addIntervener2",
+      "label": "Add Intervener 2"
+    },
+    "list_items": [
+      {
+        "code": "addIntervener2",
+        "label": "Add Intervener 2"
+      }
+    ]
+  },
+  "intervener2": {
+    "intervenerName": "intResp1",
+    "intervenerResideOutsideUK": null,
+    "intervenerEmail": null,
+    "intervenerPhone": null,
+    "intervenerAddressConfidential": null,
+    "intervenerInRefuge": null,
+    "intervenerRepresented": "Yes",
+    "intervenerDateAdded": null,
+    "intervenerSolName": "intRespSol",
+    "intervenerSolEmail": "fr_intervener2_solicitor@mailinator.com",
+    "intervenerSolPhone": null,
+    "intervenerSolicitorFirm": "test firm",
+    "intervenerSolicitorReference": "test firm",
+    "intervenerAddress": {
+      "AddressLine1": "20 Selsdon Road",
+      "AddressLine2": "",
+      "AddressLine3": "",
+      "PostTown": "London",
+      "County": "",
+      "PostCode": "NW2 7NE",
+      "Country": "United Kingdom"
+    },
+    "intervenerOrganisation": {
+      "OrgPolicyCaseAssignedRole": "[INTVRSOLICITOR2]",
+      "OrgPolicyReference": null,
+      "PrepopulateToUsersOrganisation": null,
+      "LastNoCRequestedBy": null,
+      "Organisation": {
+        "OrganisationID": "95V5X7X",
+        "OrganisationName": "FinRem-2-Org"
+      },
+      "PreviousOrganisations": []
+    }
+  }
+}
