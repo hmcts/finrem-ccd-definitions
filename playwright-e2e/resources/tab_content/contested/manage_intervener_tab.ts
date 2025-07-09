@@ -1,4 +1,5 @@
 import {Tab} from "../../../pages/components/tab.ts";
+import config from "../../../config/config.ts";
 
 export const manageIntervenerCSTabData: Tab[] =
     [
@@ -13,9 +14,9 @@ export const manageIntervenerCSTabData: Tab[] =
             { tabItem: "County", value: "test county" },
             { tabItem: "Postcode/Zipcode", value: "test postcode" },
             { tabItem: "Country", value: "test country" },
-            { tabItem: "Email address", value: "fr_intervener1_solicitor@mailinator.com"},
+            { tabItem: "Email address", value: config.applicant_intervener.email},
             { tabItem: "Representative's Full Name", value: "Test Representative" },
-            { tabItem: "Representative's Email address", value: "fr_intervener1_solicitor@mailinator.com" }
+            { tabItem: "Representative's Email address", value: config.applicant_intervener.email }
         ]
     }
 ]
@@ -27,7 +28,7 @@ export const manageIntervenerTabData: Tab[] = [
             { tabItem: "Intervener's Full Name", value: "Test Intervener" },
             { tabItem: "Is the Intervener represented ?", value: "Yes" },
             { tabItem: "Representative's Full Name", value: "Test Representative" },
-            { tabItem: "Representative's Email address", value: "fr_intervener1_solicitor@mailinator.com" },
+            { tabItem: "Representative's Email address", value: config.applicant_intervener.email },
             { tabItem: "Representative's Phone number", value: "01234567890" },
             { tabItem: "Representative Firm", value: "Test Firm" },
             { tabItem: "Your reference", value: "Test Reference" },

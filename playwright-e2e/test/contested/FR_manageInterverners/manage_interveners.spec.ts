@@ -24,7 +24,6 @@ async function verifyIntervenerAsDifferentUser(
     await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(userCredentials.email, userCredentials.password, config.manageCaseBaseURL, worklistUrl);
     await manageCaseDashboardPage.navigateToCase(caseId);
-    console.info(`Navigated to case with ID: ${caseId}`);
     await caseDetailsPage.assertTabData(manageIntervenerTabData);
     await manageCaseDashboardPage.signOut();
 }
@@ -38,15 +37,15 @@ test.describe('Contested - Manage Interveners', () => {
 
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false);
-            //const caseId = '1751979889472423';
             const expectedUrl = ContestedEvents.manageInterveners.ccdCallback;
+
             // Login as caseworker and navigate to case
             await manageCaseDashboardPage.visit();
             await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
             await manageCaseDashboardPage.navigateToCase(caseId);
             console.info(`Navigated to case with ID: ${caseId}`);
 
-            // Manage hearings
+            // Manage Interveners
             await caseDetailsPage.selectNextStep(ContestedEvents.manageInterveners);
 
             await manageIntervenersPage.selectIntervenerRadio(1);
@@ -58,12 +57,12 @@ test.describe('Contested - Manage Interveners', () => {
             await manageIntervenersPage.enterIntervenersDetails(
                 1,
                 'Test Intervener',
-                "fr_intervener1_solicitor@mailinator.com",
-                false,
+                config.applicant_intervener.email,
+                true,
                 true,
                 {
                     representativeFullName: 'Test Representative',
-                    representativeEmail: 'fr_intervener1_solicitor@mailinator.com',
+                    representativeEmail: config.applicant_intervener.email,
                     representativePhoneNumber: '01234567890',
                     representativeFirm: 'Test Firm',
                     yourReference: 'Test Reference',
@@ -78,9 +77,9 @@ test.describe('Contested - Manage Interveners', () => {
             await caseDetailsPage.assertTabData(manageIntervenerCSTabData);
             await manageCaseDashboardPage.signOut();
 
-            // login as Intervener and verify
+            // login as Intervener & applicant sol and verify
             await verifyIntervenerAsDifferentUser(manageCaseDashboardPage, loginPage, caseDetailsPage, config.applicant_solicitor, config.loginPaths.cases, caseId);
-            //await verifyIntervenerAsDifferentUser(manageCaseDashboardPage, loginPage, caseDetailsPage, config.respondent_solicitor, config.loginPaths.cases, caseId);
+            await verifyIntervenerAsDifferentUser(manageCaseDashboardPage, loginPage, caseDetailsPage, config.applicant_intervener, config.loginPaths.cases, caseId);
 
             // login as caseworker and Remove Intervener
             await manageCaseDashboardPage.visit();
@@ -96,7 +95,7 @@ test.describe('Contested - Manage Interveners', () => {
 
             await manageIntervenersPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageInterveners.listItem);
-            await caseDetailsPage.assertTabNotPresent('Intervener 1')
+            await caseDetailsPage.assertTabNotPresent('Intervener 1');
     });
-}
-);
+
+});
