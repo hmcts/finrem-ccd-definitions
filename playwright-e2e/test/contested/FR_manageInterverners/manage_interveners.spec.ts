@@ -3,7 +3,8 @@ import config from '../../../config/config.ts';
 import {ContestedEvents} from "../../../config/case-data.ts";
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import {
-        manageAddIntervenerTableData, removeIntervenerTableData
+    manageAddIntervenerNotRepresentedTableData,
+    manageAddIntervenerRepresentedTableData, removeIntervenerTableData
 } from "../../../resources/check_your_answer_content/manage_interveners/manageIntervenerTable.ts";
 import {
     manageIntervenerCSTabData, manageIntervenerTabData,
@@ -11,7 +12,6 @@ import {
 import {ManageCaseDashboardPage} from "../../../pages/ManageCaseDashboardPage.ts";
 import {SigninPage} from "../../../pages/SigninPage.ts";
 import {CaseDetailsPage} from "../../../pages/CaseDetailsPage.ts";
-
 
 async function verifyIntervenerAsDifferentUser(
     manageCaseDashboardPage: ManageCaseDashboardPage,
@@ -34,7 +34,6 @@ test.describe('Contested - Manage Interveners', () => {
     'Contested - Add & Remove Interveners, login as Intervener and verify.', {
         tag: []},
         async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageIntervenersPage, checkYourAnswersPage}) => {
-
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false);
             const expectedUrl = ContestedEvents.manageInterveners.ccdCallback;
@@ -45,9 +44,8 @@ test.describe('Contested - Manage Interveners', () => {
             await manageCaseDashboardPage.navigateToCase(caseId);
             console.info(`Navigated to case with ID: ${caseId}`);
 
-            // Manage Interveners
+            // Manage Interveners - Add Intervener 1 Represented
             await caseDetailsPage.selectNextStep(ContestedEvents.manageInterveners);
-
             await manageIntervenersPage.selectIntervenerRadio(1);
             await manageIntervenersPage.navigateContinue(expectedUrl, 2);
             await manageIntervenersPage.selectIntervenerActionRadio('Add', 1);
@@ -70,10 +68,31 @@ test.describe('Contested - Manage Interveners', () => {
                 }
             )
             await manageIntervenersPage.navigateContinue(expectedUrl +"/submit");
-            await checkYourAnswersPage.assertCheckYourAnswersPage(manageAddIntervenerTableData);
+            await checkYourAnswersPage.assertCheckYourAnswersPage(manageAddIntervenerRepresentedTableData);
             await manageIntervenersPage.navigateSubmit();
-
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageInterveners.listItem);
+
+            // Manage Interveners - Add Intervener 2 details - Not Represented
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageInterveners.listItem);
+            await caseDetailsPage.selectNextStep(ContestedEvents.manageInterveners);
+            await manageIntervenersPage.selectIntervenerRadio(2);
+            await manageIntervenersPage.navigateContinue(expectedUrl, 2);
+            await manageIntervenersPage.selectIntervenerActionRadio('Add', 2);
+            await manageIntervenersPage.navigateContinue(expectedUrl, 5);
+
+            await manageIntervenersPage.enterIntervenersDetails(
+                2,
+                'Test Intervener 2',
+                config.applicant_intervener.email,
+                true,
+                false,
+                {}
+            )
+            await manageIntervenersPage.navigateContinue(expectedUrl +"/submit");
+            await checkYourAnswersPage.assertCheckYourAnswersPage(manageAddIntervenerNotRepresentedTableData);
+            await manageIntervenersPage.navigateSubmit();
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageInterveners.listItem);
+
             await caseDetailsPage.assertTabData(manageIntervenerCSTabData);
             await manageCaseDashboardPage.signOut();
 
@@ -97,5 +116,4 @@ test.describe('Contested - Manage Interveners', () => {
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageInterveners.listItem);
             await caseDetailsPage.assertTabNotPresent('Intervener 1');
     });
-
 });

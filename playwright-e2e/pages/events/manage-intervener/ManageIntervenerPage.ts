@@ -4,7 +4,6 @@ import {CommonActionsHelper} from "../../helpers/CommonActionsHelper.ts";
 import {SolicitorDetailsHelper} from "../../helpers/SolicitorDetailsHelper.ts";
 import config from "../../../config/config.ts";
 
-
 export class ManageIntervenerPage extends BaseJourneyPage {
 
     private readonly manageIntervenerTitle: Locator;
@@ -137,7 +136,9 @@ export class ManageIntervenerPage extends BaseJourneyPage {
         await this.keepIntervenerDetailsPrivate(intervenerNumber, keepIntervenerDetailsPrivate);
         await this.isIntervenerResidentInRefuge(intervenerNumber, false);
         await this.selectIsRepresentedRadio(intervenerNumber, isRepresented);
-        await this.enterIntervenerRepresentedDetails(intervenerDetails);
+        if (isRepresented) {
+            await this.enterIntervenerRepresentedDetails(intervenerDetails);
+        }
     }
 
     async assertMandatoryFields(intervenerNumber: number = 1) {

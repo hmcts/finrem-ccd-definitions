@@ -164,7 +164,6 @@ export class CaseDetailsPage {
         await expect(tabHeader).not.toBeVisible();
     }
 
-
     async validateFileTree(
         tree: FileTree,
         parentPath: string[] = [],
