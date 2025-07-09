@@ -157,5 +157,10 @@ export class CaseDetailsPage {
     async checkNoActiveCaseFlagOnCase() {
         await expect(this.activeCaseFlagOnCase).not.toBeVisible();
     }
+
+    async assertTabNotPresent(tabName: string): Promise<void> {
+        const tabHeader = this.getTabHeader(tabName);
+        await expect(tabHeader).not.toBeVisible();
+    }
 }
 
