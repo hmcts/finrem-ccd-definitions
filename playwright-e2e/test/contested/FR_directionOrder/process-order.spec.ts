@@ -152,7 +152,6 @@ test.describe('Contested - Process Order', () => {
       testInfo
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
-      //const orderDetails = 
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -186,16 +185,36 @@ test.describe('Contested - Process Order', () => {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        uploadDraftOrdersPage
-      }
+        uploadDraftOrdersPage,
+        processOrderPage,
+        blankPage,
+        makeAxeBuilder
+      },
+      testInfo
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
-      const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-      await ContestedEventApi.caseWorkerProcessOrder(caseId, orderDetails);
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
-      // Next
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (change from Approved by Judge).
-      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
+      
+      // Skip the unprocessed approved orders page
+      await processOrderPage.navigateContinue();
+
+      const firstHearing = 0;
+      await processOrderPage.selectIsAnotherHearingToBeListed(firstHearing, true);
+      await processOrderPage.enterTimeEstimate(firstHearing, '1 hour');
+      await processOrderPage.enterHearingDate(firstHearing, '01', '01', '2024');
+      await processOrderPage.enterHearingTime(firstHearing, '10:00');
+      await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
+      await processOrderPage.selectCourtForHearing();
+
+      await processOrderPage.navigateContinue();
+      await processOrderPage.navigateSubmit();
+      await caseDetailsPage.checkHasBeenUpdated('Process Order');
+
+      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabDataOnHearing1);
     }
   )
 });
