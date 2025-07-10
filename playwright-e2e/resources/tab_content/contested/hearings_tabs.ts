@@ -116,7 +116,33 @@ export const migratedGeneralApplicationDirectionsTabDataOnHearing1 = [
   }
 ];
 
-export const migratedHearingsCreatedFromProcessOrderTabDataOnHearing1 = [
+export const migratedHearingsCreatedFromProcessOrderTabDataOnHearing2 = [
+  {
+    tabName: 'Hearings',
+    tabContent: [
+      // Hearing 1 is the hearing made by List for Hearing event.
+      "Hearing 1",
+      { tabItem: "Type of Hearing", value: "Directions (DIR)" },
+      { tabItem: "Court", value: "Chester Civil And Family Justice Centre" },
+      { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
+      { tabItem: "Hearing date", value: '01 Jan 2024 10:00' },
+      { tabItem: "Hearing time estimate", value: '1 hour' },
+      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Additional information about the hearing", value: '' },
+      "Hearing 2",
+      { tabItem: "Type of Hearing", value: "First Directions Appointment (FDA)" },
+      { tabItem: "Court", value: "Nottingham County Court And Family Court" },
+      { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
+      { tabItem: "Hearing date", value: '02 Oct 2025 10:00' },
+      { tabItem: "Hearing time estimate", value: '1 hour' },
+      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Additional information about the hearing", value: 'This is additional information about the hearing' },
+      { tabItem: "Hearing documents", value: '1.pdf' },
+    ]
+  }
+];
+
+export const migratedMultipleHearingsCreatedFromProcessOrderTabDataStartingFromHearing2 = [
   {
     tabName: 'Hearings',
     tabContent: [
@@ -134,6 +160,12 @@ export const migratedHearingsCreatedFromProcessOrderTabDataOnHearing1 = [
       { tabItem: "Court", value: "Chester Civil And Family Justice Centre" },
       { tabItem: "Hearing date", value: '01 Jan 2024 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
+      { tabItem: "Who has received this notice", value: 'Unknown' },
+      "Hearing 3",
+      { tabItem: "Type of Hearing", value: "Directions (DIR)" },
+      { tabItem: "Court", value: "Chester Civil And Family Justice Centre" },
+      { tabItem: "Hearing date", value: '02 Jan 2024 10:00' },
+      { tabItem: "Hearing time estimate", value: '2 hours' },
       { tabItem: "Who has received this notice", value: 'Unknown' }
     ]
   }

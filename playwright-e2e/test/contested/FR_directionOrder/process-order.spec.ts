@@ -4,7 +4,8 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
-import { migratedHearingsCreatedFromProcessOrderTabDataOnHearing1 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import { migratedHearingsCreatedFromProcessOrderTabDataOnHearing2 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import { migratedMultipleHearingsCreatedFromProcessOrderTabDataStartingFromHearing2 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 
 /**
  * Firstly, performs the upload draft order flow as a step towards the Process Order event.
@@ -173,7 +174,7 @@ test.describe('Contested - Process Order', () => {
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
-      await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabDataOnHearing1);
+      await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabDataOnHearing2);
     }
   );
 
@@ -207,14 +208,34 @@ test.describe('Contested - Process Order', () => {
       await processOrderPage.enterHearingDate(firstHearing, '01', '01', '2024');
       await processOrderPage.enterHearingTime(firstHearing, '10:00');
       await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
-      await processOrderPage.selectCourtForHearing();
+      await processOrderPage.selectCourtForHearing({
+        hearing_position: firstHearing,
+        courtRegion: "North West",
+        courtFrc: "Liverpool",
+        localCourt: "CHESTER CIVIL AND FAMILY JUSTICE CENTRE"
+      });
+
+      await processOrderPage.addNewNextHearingDetails();
+
+      const secondHearing = 1;
+      await processOrderPage.selectIsAnotherHearingToBeListed(secondHearing, true);
+      await processOrderPage.enterTimeEstimate(secondHearing, '2 hours');
+      await processOrderPage.enterHearingDate(secondHearing, '02', '01', '2024');
+      await processOrderPage.enterHearingTime(secondHearing, '11:00');
+      await processOrderPage.selectTypeOfHearing(secondHearing, 'Directions (DIR)');
+      await processOrderPage.selectCourtForHearing({
+        hearing_position: secondHearing,
+        courtRegion: "North West",
+        courtFrc: "Liverpool",
+        localCourt: "CHESTER CIVIL AND FAMILY JUSTICE CENTRE"
+      });
 
       await processOrderPage.navigateContinue();
       await processOrderPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
-      await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabDataOnHearing1);
+      await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderTabDataStartingFromHearing2);
     }
   )
 });

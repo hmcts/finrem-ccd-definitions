@@ -59,9 +59,7 @@ export class ProcessOrderPage extends BaseJourneyPage {
     }: {
         hearing_position?: number,
         courtRegion?: string,
-        courtRegionCode?: string,
         courtFrc?: string,
-        courtFrcCode?: string,
         localCourt?: string
     } = {}) {
         const regionListDropDown = this.page.locator(`#directionDetailsCollection_${hearing_position}_localCourt_region`);
