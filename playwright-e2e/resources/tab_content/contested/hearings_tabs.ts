@@ -115,3 +115,17 @@ export const migratedGeneralApplicationDirectionsTabDataOnHearing1 = [
     ]
   }
 ];
+
+export const migratedHearingsCreatedFromProcessOrderTabDataOnHearing1 = [
+  {
+    tabName: 'Hearings',
+    tabContent: [
+      "Hearing 2",
+      { tabItem: "Type of Hearing", value: "Directions (DIR)" },
+      { tabItem: "Court", value: "Chester Civil and Family Justice Centre" },
+      { tabItem: "Hearing date", value: getFormattedDate() + ' 10:00' },
+      { tabItem: "Hearing time estimate", value: '1 hour' },
+      { tabItem: "Who has received this notice", value: 'Unknown' }
+    ]
+  }
+];

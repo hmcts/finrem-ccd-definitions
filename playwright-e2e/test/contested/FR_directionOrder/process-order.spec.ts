@@ -1,73 +1,97 @@
-import { test } from '../../../fixtures/fixtures';
+import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
+import { migratedHearingsCreatedFromProcessOrderTabDataOnHearing1 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 
-  /**
-   * Firstly, performs the upload draft order flow as a step towards the Process Order event.
-   *
-   * This could be done via API call, when work done for Playwright to directly upload files
-   * to Document Management API.  The current service token authenticates, but isn't authorised.
-   *
-   * Secondly, uses PayloadHelper to approve the order as a judge.
-   *
-   * Finally, returns an object with information needed to process an order with an API call.
-   *
-   * @returns A Promise resolving to an object containing:
-   *  - `documentUrl`: URL of the uploaded draft order document
-   *  - `documentBinaryUrl`: Binary URL for downloading the document
-   *  - `uploadTimestamp`: ISO timestamp when the document was uploaded
-   *  - `hearingDate`: ISO hearing date as a string
-   */
-  async function progressToProcessOrderEvent(
-    caseId: string,
-    loginPage: any,
-    manageCaseDashboardPage: any,
-    caseDetailsPage: any,
-    uploadDraftOrdersPage: any
-  ): Promise<{
-    documentUrl: string;
-    documentBinaryUrl: string;
-    uploadTimestamp: string;
-    hearingDate: string;
-  }> {
-    await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(
-      config.caseWorker.email,
-      config.caseWorker.password,
-      config.manageCaseBaseURL,
-      config.loginPaths.worklist
-    );
-    await manageCaseDashboardPage.navigateToCase(caseId);
+/**
+ * Firstly, performs the upload draft order flow as a step towards the Process Order event.
+ *
+ * This could be done via API call, when work done for Playwright to directly upload files
+ * to Document Management API.  The current service token authenticates, but isn't authorised.
+ *
+ * Secondly, uses PayloadHelper to approve the order as a judge.
+ *
+ * Finally, returns an object with information needed to process an order with an API call.
+ *
+ * @returns A Promise resolving to an object containing:
+ *  - `documentUrl`: URL of the uploaded draft order document
+ *  - `documentBinaryUrl`: Binary URL for downloading the document
+ *  - `uploadTimestamp`: ISO timestamp when the document was uploaded
+ *  - `hearingDate`: ISO hearing date as a string
+ */
+async function progressToProcessOrderEvent(
+  caseId: string,
+  loginPage: any,
+  manageCaseDashboardPage: any,
+  caseDetailsPage: any,
+  uploadDraftOrdersPage: any
+): Promise<{
+  documentUrl: string;
+  documentBinaryUrl: string;
+  uploadTimestamp: string;
+  hearingDate: string;
+}> {
+  await manageCaseDashboardPage.visit();
+  await loginPage.loginWaitForPath(
+    config.caseWorker.email,
+    config.caseWorker.password,
+    config.manageCaseBaseURL,
+    config.loginPaths.worklist
+  );
+  await manageCaseDashboardPage.navigateToCase(caseId);
 
-    await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
-    await uploadDraftOrdersPage.chooseAnAgreedOrderFollowingAHearing();
-    await uploadDraftOrdersPage.navigateContinue();
-    await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
-    await uploadDraftOrdersPage.selectFirstAvailableHearing();
-    await uploadDraftOrdersPage.chooseWhetherJudgeForHearingIsKnown(YesNoRadioEnum.NO);
-    await uploadDraftOrdersPage.chooseUploadOnBehalfOfApplicant();
-    await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
-    await uploadDraftOrdersPage.navigateAddNew();
-    await uploadDraftOrdersPage.uploadDraftOrder(caseId);
-    await uploadDraftOrdersPage.navigateContinue();
-    const eventResponse = await uploadDraftOrdersPage.navigateSubmitAndReturnEventResponse();
+  await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
+  await uploadDraftOrdersPage.chooseAnAgreedOrderFollowingAHearing();
+  await uploadDraftOrdersPage.navigateContinue();
+  await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
+  await uploadDraftOrdersPage.selectFirstAvailableHearing();
+  await uploadDraftOrdersPage.chooseWhetherJudgeForHearingIsKnown(YesNoRadioEnum.NO);
+  await uploadDraftOrdersPage.chooseUploadOnBehalfOfApplicant();
+  await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
+  await uploadDraftOrdersPage.navigateAddNew();
+  await uploadDraftOrdersPage.uploadDraftOrder(caseId);
+  await uploadDraftOrdersPage.navigateContinue();
+  const eventResponse = await uploadDraftOrdersPage.navigateSubmitAndReturnEventResponse();
 
-    const firstDraftOrderItem = eventResponse?.data?.agreedDraftOrderCollection?.[0]?.value?.draftOrder;
-    const hearingDate = eventResponse?.data?.hearingDate;
+  const firstDraftOrderItem = eventResponse?.data?.agreedDraftOrderCollection?.[0]?.value?.draftOrder;
+  const hearingDate = eventResponse?.data?.hearingDate;
 
-    const documentDetailsForFutureTestSteps = {
-      hearingDate,
-      documentUrl: firstDraftOrderItem?.document_url,
-      documentBinaryUrl: firstDraftOrderItem?.document_binary_url,
-      uploadTimestamp: firstDraftOrderItem?.upload_timestamp
-    };
+  const documentDetailsForFutureTestSteps = {
+    hearingDate,
+    documentUrl: firstDraftOrderItem?.document_url,
+    documentBinaryUrl: firstDraftOrderItem?.document_binary_url,
+    uploadTimestamp: firstDraftOrderItem?.upload_timestamp
+  };
 
-    await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
-    return documentDetailsForFutureTestSteps
+  await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
+  return documentDetailsForFutureTestSteps
+}
+
+async function performManageHearingsMigration(
+  caseDetailsPage: any,
+  blankPage: any,
+  testInfo: any,
+  makeAxeBuilder: any
+): Promise<void> {
+
+  await caseDetailsPage.selectNextStep(ContestedEvents.manageHearingsMigration);
+  await blankPage.navigateSubmit();
+  await caseDetailsPage.checkHasBeenUpdated('(Migration) Manage Hearings');
+
+  if (config.run_accessibility) {
+    const accessibilityScanResults = await makeAxeBuilder().analyze();
+
+    await testInfo.attach('accessibility-scan-results', {
+      body: JSON.stringify(accessibilityScanResults, null, 2),
+      contentType: 'application/json'
+    });
+
+    expect(accessibilityScanResults.violations).toEqual([]);
   }
+}
 
 test.describe('Contested - Process Order', () => {
   test(
@@ -121,14 +145,16 @@ test.describe('Contested - Process Order', () => {
         manageCaseDashboardPage,
         caseDetailsPage,
         uploadDraftOrdersPage,
-        processOrderPage
-      }
+        processOrderPage,
+        blankPage,
+        makeAxeBuilder
+      },
+      testInfo
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
-      const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
-      // TODO what is it? await ContestedEventApi.caseWorkerProcessOrder(caseId, orderDetails);
+      //const orderDetails = 
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
-      //const courtName = "CHESTER CIVIL AND FAMILY JUSTICE CENTRE";
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
       
@@ -146,6 +172,9 @@ test.describe('Contested - Process Order', () => {
       await processOrderPage.navigateContinue();
       await processOrderPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
+
+      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabDataOnHearing1);
 
       // Next
       // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
