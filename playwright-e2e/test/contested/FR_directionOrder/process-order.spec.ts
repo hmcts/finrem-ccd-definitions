@@ -4,8 +4,9 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
-import { migratedHearingsCreatedFromProcessOrderTabDataOnHearing2 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
-import { migratedMultipleHearingsCreatedFromProcessOrderTabDataStartingFromHearing2 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import { migratedHearingsCreatedFromProcessOrderTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import { migratedMultipleHearingsCreatedFromProcessOrderTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import { migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearingsEventTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 
 /**
  * Firstly, performs the upload draft order flow as a step towards the Process Order event.
@@ -94,6 +95,33 @@ async function performManageHearingsMigration(
   }
 }
 
+async function performManageHearings(
+    caseDetailsPage: any,
+    manageHearingPage: any
+): Promise<void> {
+
+    await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
+    await manageHearingPage.assertWhatWouldYouLikeToDoRequired();
+
+    await manageHearingPage.selectAddANewHearing();
+    await manageHearingPage.navigateContinue();
+    await manageHearingPage.addHearing({
+        type: "Pre-Trial Review (PTR)",
+        duration: '2 hours',
+        date: { day: "03", month: "03", year: "2026" },
+        time: '10:00 AM',
+        court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
+        attendance: 'Remote - video call',
+        additionalInformation: 'by Manage Hearings event.',
+        uploadAnySupportingDocuments: false,
+        sendANoticeOfHearing: true
+    });
+
+    await manageHearingPage.navigateContinue();
+    await manageHearingPage.navigateIgnoreWarningAndContinue();
+    await manageHearingPage.navigateSubmit();
+}
+
 test.describe('Contested - Process Order', () => {
   test(
     'Form A case creating a hearing from Process Order',
@@ -174,7 +202,7 @@ test.describe('Contested - Process Order', () => {
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
-      await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabDataOnHearing2);
+      await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabData);
     }
   );
 
@@ -236,7 +264,71 @@ test.describe('Contested - Process Order', () => {
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
-      await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderTabDataStartingFromHearing2);
+      await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderTabData);
+    }
+  )
+
+  test(
+    'Paper case shows old-style Process Order hearings on the new hearing tab after any manage hearings event.',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        uploadDraftOrdersPage,
+        processOrderPage,
+        blankPage,
+        manageHearingPage,
+        makeAxeBuilder
+      },
+      testInfo
+    ) => {
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
+      
+      // Skip the unprocessed approved orders page
+      await processOrderPage.navigateContinue();
+
+      const firstHearing = 0;
+      await processOrderPage.selectIsAnotherHearingToBeListed(firstHearing, true);
+      await processOrderPage.enterTimeEstimate(firstHearing, '1 hour');
+      await processOrderPage.enterHearingDate(firstHearing, '01', '01', '2024');
+      await processOrderPage.enterHearingTime(firstHearing, '10:00');
+      await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
+      await processOrderPage.selectCourtForHearing({
+        hearing_position: firstHearing,
+        courtRegion: "North West",
+        courtFrc: "Liverpool",
+        localCourt: "CHESTER CIVIL AND FAMILY JUSTICE CENTRE"
+      });
+
+      await processOrderPage.addNewNextHearingDetails();
+
+      const secondHearing = 1;
+      await processOrderPage.selectIsAnotherHearingToBeListed(secondHearing, true);
+      await processOrderPage.enterTimeEstimate(secondHearing, '2 hours');
+      await processOrderPage.enterHearingDate(secondHearing, '02', '01', '2024');
+      await processOrderPage.enterHearingTime(secondHearing, '11:00');
+      await processOrderPage.selectTypeOfHearing(secondHearing, 'Directions (DIR)');
+      await processOrderPage.selectCourtForHearing({
+        hearing_position: secondHearing,
+        courtRegion: "London",
+        courtFrc: "London",
+        courtFrcCode: "cfc",
+        localCourt: "BROMLEY COUNTY COURT AND FAMILY COURT"
+      });
+
+      await processOrderPage.navigateContinue();
+      await processOrderPage.navigateSubmit();
+      await caseDetailsPage.checkHasBeenUpdated('Process Order');
+      await performManageHearings(caseDetailsPage, manageHearingPage);
+
+      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearingsEventTabData);
     }
   )
 });
