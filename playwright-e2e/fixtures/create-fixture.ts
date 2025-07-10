@@ -302,7 +302,7 @@ export const test = base.extend<CreateFixtures>({
   manageIntervenersPage: async ({ page }, use) => {
     await use(new ManageIntervenerPage(page, solicitorDetailsHelper));
   },
-    caseListPage: async ({ page }, use) => {
-        await use(new CaseListPage(page));
-    }
+  caseListPage: async ({ page }, use) => {
+    await use(new CaseListPage(page));
+  }
 });

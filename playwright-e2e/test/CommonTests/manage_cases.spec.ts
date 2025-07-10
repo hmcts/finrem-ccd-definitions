@@ -8,7 +8,7 @@ test.describe('Confidentiality of cases', () => {
         'Draft cases should not be visible to other users', {tag: []},
         async ({loginPage, manageCaseDashboardPage}) => {
 
-            // Create a draft case
+            // Create a draft case by applicant solicitor and caseworker
             const solCaseId = await ContestedCaseFactory.createBaseContestedFormA();
             const caseworkerCaseId = await ContestedCaseFactory.createBaseContestedPaperCase();
 
@@ -29,7 +29,7 @@ test.describe('Confidentiality of cases', () => {
 });
 
 test(
-    'Validate Case List Page', {tag: []},
+    'Validate Case List Page filter fields', {tag: []},
     async ({loginPage, manageCaseDashboardPage, caseListPage}) => {
         await manageCaseDashboardPage.visit();
         await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
