@@ -164,7 +164,7 @@ export const migratedMultipleHearingsCreatedFromProcessOrderTabDataStartingFromH
       { tabItem: "Additional information about the hearing", value: "" },
       "Hearing 2",
       { tabItem: "Type of Hearing", value: "Directions (DIR)" },
-      { tabItem: "Court", value: "Chester Civil And Family Justice Centre" },
+      { tabItem: "Court", value: "Bromley County Court And Family Court" },
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '02 Jan 2024 11:00' },
       { tabItem: "Hearing time estimate", value: '2 hours' },

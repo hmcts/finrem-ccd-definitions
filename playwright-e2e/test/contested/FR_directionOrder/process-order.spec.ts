@@ -225,9 +225,10 @@ test.describe('Contested - Process Order', () => {
       await processOrderPage.selectTypeOfHearing(secondHearing, 'Directions (DIR)');
       await processOrderPage.selectCourtForHearing({
         hearing_position: secondHearing,
-        courtRegion: "North West",
-        courtFrc: "Liverpool",
-        localCourt: "CHESTER CIVIL AND FAMILY JUSTICE CENTRE"
+        courtRegion: "London",
+        courtFrc: "London",
+        courtFrcCode: "cfc",
+        localCourt: "BROMLEY COUNTY COURT AND FAMILY COURT"
       });
 
       await processOrderPage.navigateContinue();

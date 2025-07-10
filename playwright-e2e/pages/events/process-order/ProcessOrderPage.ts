@@ -55,11 +55,13 @@ export class ProcessOrderPage extends BaseJourneyPage {
         hearing_position = 0,
         courtRegion = "North West",
         courtFrc = "Liverpool",
+        courtFrcCode = "liverpool",
         localCourt = "CHESTER CIVIL AND FAMILY JUSTICE CENTRE"
     }: {
         hearing_position?: number,
         courtRegion?: string,
         courtFrc?: string,
+        courtFrcCode?: string,
         localCourt?: string
     } = {}) {
         const regionListDropDown = this.page.locator(`#directionDetailsCollection_${hearing_position}_localCourt_region`);
@@ -70,7 +72,7 @@ export class ProcessOrderPage extends BaseJourneyPage {
         await expect(frcDropDown).toBeVisible();
         await frcDropDown.selectOption(`${courtFrc} FRC`);
 
-        const courtListDropDown = this.page.locator(`#directionDetailsCollection_${hearing_position}_localCourt_${camelCase(courtFrc)}CourtList`);
+        const courtListDropDown = this.page.locator(`#directionDetailsCollection_${hearing_position}_localCourt_${camelCase(courtFrcCode)}CourtList`);
         await expect(courtListDropDown).toBeVisible();
         await courtListDropDown.selectOption(localCourt);
     }
