@@ -2,7 +2,7 @@ import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import { createGeneralApplicationTableData } from '../../../resources/check_your_answer_content/create_general_application/createGeneralApplication';
+import { sendOrderTableData } from '../../../resources/check_your_answer_content/send_order/sendOrderTable';
 
 test.describe('Contested Create Send Order to an applicant solicitor', () => {
     test(
@@ -23,9 +23,6 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
             await createGeneralApplicationPage.fillTimeEstimate('5');
             await createGeneralApplicationPage.uploadGeneralDocument('./playwright-e2e/resources/file/test.docx');
             await createGeneralApplicationPage.navigateContinue();
-
-            // Check you answers - general application
-            //await checkYourAnswersPage.assertCheckYourAnswersPage(createGeneralApplicationTableData);
             await createGeneralApplicationPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.createGeneralApplication.listItem);
 
@@ -40,9 +37,7 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
             await createGeneralOrderPage.selectJudge('District Judge');
             await createGeneralOrderPage.fillDescription('test case');
             await createGeneralOrderPage.navigateContinue();
-            // add assertion in here
             await createGeneralOrderPage.navigateContinue();
-            // add check your answers here
             await createGeneralOrderPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.createGeneralOrder.listItem);
 
@@ -55,7 +50,7 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
             await contestedSendOrderPage.clickCaseState();
             await contestedSendOrderPage.selectOrder('Order Sent');
             await contestedSendOrderPage.navigateContinue();
-            // add cya assertion in here
+            await checkYourAnswersPage.assertCheckYourAnswersPage(sendOrderTableData);
             await contestedSendOrderPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.contestedSendOrder.listItem);
         }
