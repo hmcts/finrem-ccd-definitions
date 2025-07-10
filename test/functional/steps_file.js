@@ -37,7 +37,6 @@ const {manageIntervenersRemove} = require('./pages/manage-interveners/manage-int
 const {uploadDraftOrder} = require('./pages/upload-draft-order/upload-draft-order');
 const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-approve');
 const {uploadOrder} = require('./pages/upload-order/upload-order');
-const {sendOrder,sendOrderNew} = require('./pages/send-order/send-order');
 const {listForInterimHearing} = require('./pages/list-of-interim-hearing/list-of-interim-hearing');
 const {createCaseFlag, validateCaseFlagAlertMessage, validateCaseFlagTab} = require('./pages/create-case-flag/create-case-flag');
 const {solicitorCreateGeneralApplication, caseWorkerReferGeneralApplication, judgeGeneralApplicationOutcome, generalApplicationDirections} = require('./pages/general-application/general-application');
@@ -171,8 +170,6 @@ module.exports = () => {
     uploadDraftOrder,
     draftOrderApprove,
     uploadOrder,
-    sendOrder,
-    sendOrderNew,
     listForInterimHearing,
     verifyListForInterimHearing,
     createCaseFlag,
