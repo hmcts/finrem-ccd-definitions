@@ -4818,7 +4818,7 @@
     "FieldShowCondition": "judgeApproval1.docType=\"DRAFT_ORDER\" AND (judgeApproval1.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval1.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
   },
   {
-    "LiveFrom": "3/07/2025",
+    "LiveFrom": "03/07/2025",
     "ID": "FR_approveOrdersToJudgeApproval1",
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval1",
