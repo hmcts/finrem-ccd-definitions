@@ -41,5 +41,4 @@ export class ManageCaseDashboardPage {
       window.sessionStorage.clear();
     });
   }
-  //No results found
 }
