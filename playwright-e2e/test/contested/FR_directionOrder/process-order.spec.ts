@@ -3,7 +3,6 @@ import config from '../../../config/config';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { ConsentedEventApi } from '../../../data-utils/api/consented/ConsentedEventApi';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 
   /**
@@ -129,7 +128,7 @@ test.describe('Contested - Process Order', () => {
       const orderDetails = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
       // TODO what is it? await ContestedEventApi.caseWorkerProcessOrder(caseId, orderDetails);
 
-      const courtName = "CHESTERFIELD COUNTY COURT";
+      //const courtName = "CHESTER CIVIL AND FAMILY JUSTICE CENTRE";
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
       
@@ -142,7 +141,7 @@ test.describe('Contested - Process Order', () => {
       await processOrderPage.enterHearingDate(firstHearing, '01', '01', '2024');
       await processOrderPage.enterHearingTime(firstHearing, '10:00');
       await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
-      await processOrderPage.selectCourtForHearing(firstHearing, courtName);
+      await processOrderPage.selectCourtForHearing();
 
       await processOrderPage.navigateContinue();
       await processOrderPage.navigateSubmit();

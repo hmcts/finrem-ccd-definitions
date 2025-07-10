@@ -1,10 +1,9 @@
 import {BaseJourneyPage} from "../../BaseJourneyPage.ts";
 import {expect, Locator, Page} from "@playwright/test";
 import {CommonActionsHelper} from "../../helpers/CommonActionsHelper.ts";
+import { camelCase } from "lodash";
 
 export class ProcessOrderPage extends BaseJourneyPage {
-    private readonly courtRegion: string = 'Midlands'
-    private readonly courtFrc: string = 'Nottingham'
     private readonly commonActionsHelper: CommonActionsHelper;
     private readonly addNewChildBtn: Locator;
 
@@ -52,16 +51,28 @@ export class ProcessOrderPage extends BaseJourneyPage {
         await typeOfHearingLocator.selectOption({ label: typeOfHearing });
     }
 
-    async selectCourtForHearing(hearing_position: number, localCourt: string) {
+    async selectCourtForHearing({
+        hearing_position = 0,
+        courtRegion = "North West",
+        courtFrc = "Liverpool",
+        localCourt = "CHESTER CIVIL AND FAMILY JUSTICE CENTRE"
+    }: {
+        hearing_position?: number,
+        courtRegion?: string,
+        courtRegionCode?: string,
+        courtFrc?: string,
+        courtFrcCode?: string,
+        localCourt?: string
+    } = {}) {
         const regionListDropDown = this.page.locator(`#directionDetailsCollection_${hearing_position}_localCourt_region`);
         await expect(regionListDropDown).toBeVisible();
-        await regionListDropDown.selectOption(this.courtRegion);
+        await regionListDropDown.selectOption(courtRegion);
 
-        const frcDropDown = this.page.locator(`#directionDetailsCollection_${hearing_position}_localCourt_${this.courtRegion.toLowerCase()}List`);
+        const frcDropDown = this.page.locator(`#directionDetailsCollection_${hearing_position}_localCourt_${camelCase(courtRegion)}List`);
         await expect(frcDropDown).toBeVisible();
-        await frcDropDown.selectOption(`${this.courtFrc} FRC`);
+        await frcDropDown.selectOption(`${courtFrc} FRC`);
 
-        const courtListDropDown = this.page.locator(`#directionDetailsCollection_${hearing_position}_localCourt_${this.courtFrc.toLowerCase()}CourtList`);
+        const courtListDropDown = this.page.locator(`#directionDetailsCollection_${hearing_position}_localCourt_${camelCase(courtFrc)}CourtList`);
         await expect(courtListDropDown).toBeVisible();
         await courtListDropDown.selectOption(localCourt);
     }
