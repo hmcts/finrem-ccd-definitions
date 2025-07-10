@@ -218,9 +218,9 @@
   {
     "LiveFrom": "25/06/2025",
     "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "tabHearingMigratedDate",
-    "FieldType": "DateTime",
-    "ElementLabel": "Migrated date",
+    "ListElementCode": "tabWasMigrated",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Was Migrated?",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   }
