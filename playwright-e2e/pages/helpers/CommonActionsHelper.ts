@@ -1,18 +1,28 @@
 import fs from "fs";
 import { Page } from "playwright";
-import { expect } from "@playwright/test";
+import {expect, Locator} from "@playwright/test";
 import config from "../../config/config";
 
 export class CommonActionsHelper {
 
-    async enterUkAddress(page: Page) {
+    async enterUkAddress(
+        page: Page,
+        address?: {
+            buildingAndStreet?: string;
+            addressLine2?: string;
+            townOrCity?: string;
+            county?: string;
+            postcodeOrZipcode?: string;
+            country?: string;
+        }
+    ) {
         await page.getByRole('link', { name: 'I can\'t enter a UK postcode' }).click();
-        await page.getByRole('textbox', { name: 'Building and Street'}).fill('test');
-        await page.getByRole('textbox', { name: 'Address Line 2'}).fill('test');
-        await page.getByRole('textbox', { name: 'Town or City'}).fill('test');
-        await page.getByRole('textbox', { name: 'County'}).fill('test');
-        await page.getByRole('textbox', { name: 'Postcode/Zipcode'}).fill('test');
-        await page.getByRole('textbox', { name: 'Country'}).fill('test');
+        await page.getByRole('textbox', { name: 'Building and Street'}).fill(address?.buildingAndStreet ?? 'test');
+        await page.getByRole('textbox', { name: 'Address Line 2'}).fill(address?.addressLine2 ?? 'test');
+        await page.getByRole('textbox', { name: 'Town or City'}).fill(address?.townOrCity ?? 'test');
+        await page.getByRole('textbox', { name: 'County'}).fill(address?.county ?? 'test');
+        await page.getByRole('textbox', { name: 'Postcode/Zipcode'}).fill(address?.postcodeOrZipcode ?? 'test');
+        await page.getByRole('textbox', { name: 'Country'}).fill(address?.country ?? 'test');
     }
 
     async enterPhoneNumber(page: Page) {
@@ -47,9 +57,12 @@ export class CommonActionsHelper {
     async waitForAllUploadsToBeCompleted(page: Page) {
         const cancelUploadLocators = await page.getByText('Cancel upload').all();
         for (let i = 0; i < cancelUploadLocators.length; i++) {
-            await expect(cancelUploadLocators[i]).toBeDisabled();
+            await expect(cancelUploadLocators[i]).toBeDisabled({ timeout: 15000 });
         }
-        await page.waitForTimeout(5000);
+        const uploadingSpan = await page.locator('span', { hasText: 'Uploading...' }).all();
+        for (let i = 0; i < uploadingSpan.length; i++) {
+            await expect(uploadingSpan[i]).toBeHidden({ timeout: 10000 });
+        }
     }
 
     /** 
@@ -67,5 +80,34 @@ export class CommonActionsHelper {
             mimeType: "application/pdf",
             buffer: fileBuffer,
         };
+    }
+
+    async uploadWithRateLimitRetry(
+        page: Page,
+        uploadField: Locator,
+        fileToUpload: { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> } | string,
+        maxRetries: number = 3,
+        waitMs: number = 3000
+    ) {
+        for (let attempt = 0; attempt < maxRetries; attempt++) {
+            await uploadField.setInputFiles(fileToUpload);
+
+            await this.waitForAllUploadsToBeCompleted(page);
+
+            // Check for rate limit error in a preceding span sibling
+            const errorLocator = uploadField.locator(
+                'xpath=../preceding-sibling::span[contains(text(), "Your request was rate limited. Please wait a few seconds before retrying your document upload")]'
+            );
+            const isErrorVisible = await errorLocator.isVisible({ timeout: 2000 });
+
+            if (!isErrorVisible) {
+                return; // Success
+            }
+            if (attempt < maxRetries - 1) {
+                await page.waitForTimeout(waitMs);
+            } else {
+                throw new Error('Rate limit error persists after retries');
+            }
+        }
     }
 }

@@ -5,7 +5,7 @@ export class DateHelper {
      *
      * @returns Current date string in ISO format (date only) as a promise resolving to a string.
      */
-    static async getCurrentDate(): Promise<string> {
+    static getCurrentDate(): string {
       return new Date().toISOString().split('T')[0];
     }
 
@@ -68,11 +68,11 @@ export class DateHelper {
     /**
      * Returns a date 12 weeks and 1 day later than today, formatted as "d MMM yyyy" (e.g. "6 Aug 2025").
      *
-     * @returns Formatted date string for 12 weeks and 1 day later.
+     * @returns Formatted date string for 12 weeks
      */
-    static getFormattedDateTwelveWeeksAndOneDayLater(): string {
+    static getFormattedDateTwelveWeeksLater(): string {
         const twelveWeeksAndOneDayLater = new Date();
-        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7 + 1);
+        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7);
 
         return twelveWeeksAndOneDayLater
             .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
@@ -80,13 +80,26 @@ export class DateHelper {
     };
 
     /**
+     * Returns a date 12 weeks and 1 day later than today, formatted as "d MMM yyyy" (e.g. "6 Aug 2025").
+     *
+     * @returns Formatted date string for 12 weeks
+     */
+    static getUnFormattedDateTwelveWeeksLater(): string {
+        const twelveWeeksAndOneDayLater = new Date();
+        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7);
+
+        return twelveWeeksAndOneDayLater
+            .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    };
+
+    /**
      * Returns today's date formatted as an array of strings [year, month, day].
      *
      * @returns An array containing the year, month, and day as strings.
      */
-    static async getCurrentDateFormatted(): Promise<string[]> {
-        const today = await this.getCurrentDate();
-        return today.split('-')
-    }
+    static getCurrentDateFormatted(): string[] {
+        const today = this.getCurrentDate();
+        return today.split('-');
+    };
 
 }

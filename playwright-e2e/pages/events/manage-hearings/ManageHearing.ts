@@ -63,7 +63,7 @@ export class ManageHearingPage extends BaseJourneyPage {
 
     async enterDefaultHearingDate() {
         const hearingDate = new Date();
-        hearingDate.setDate(hearingDate.getDate() + 12 * 7 +1); // 12 weeks from now + 1 day
+        hearingDate.setDate(hearingDate.getDate() + 12 * 7); // 12 weeks from now
         const date = hearingDate.toISOString().split('T')[0];
         const [year, month, day] = date.split('-');
         await this.enterHearingDate(day, month, year);
@@ -119,9 +119,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     }
 
     async uploadOtherDocuments(docFilename: string, position: number = 0) {
-        const addNewDocumentButton = this.page.getByRole("button", { name: "Add new" }).nth(0);
-        await expect(addNewDocumentButton).toBeVisible();
-        await addNewDocumentButton.click();
+        await this.navigateAddNew();
 
         const uploadOtherDocumentFiles = this.page
             .locator(`#workingHearing_additionalHearingDocs_value`).nth(position);
@@ -129,9 +127,8 @@ export class ManageHearingPage extends BaseJourneyPage {
 
         const filePayload = await this.commonActionsHelper
             .createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', docFilename);
-        await uploadOtherDocumentFiles.setInputFiles(filePayload);
 
-        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadOtherDocumentFiles, filePayload);
     }
 
     private async selectSendNoticeOfHearing(yesOrNo: YesNoRadioEnum) {
@@ -139,6 +136,18 @@ export class ManageHearingPage extends BaseJourneyPage {
         await expect(sendNoticeOfHearing).toBeVisible();
         const optionToSelect = sendNoticeOfHearing.getByLabel(yesOrNo);
         await optionToSelect.check();
+    }
+
+    async selectWhoShouldSeeThisOrder(partyType: string, partyName: string) {
+        const checkbox = this.page.getByRole('checkbox', { name: `${partyType} - ${partyName}` });
+        await expect(checkbox).toBeVisible();
+        await checkbox.check();
+    }
+
+    async selectAllWhoShouldSeeThisOrder(parties: { partyType: string, partyName: string }[]) {
+        for (const { partyType, partyName } of parties) {
+            await this.selectWhoShouldSeeThisOrder(partyType, partyName);
+        }
     }
 
     async assertErrorMessagesForAllMandatoryFields() {
@@ -177,8 +186,6 @@ export class ManageHearingPage extends BaseJourneyPage {
         uploadFiles: string[];
         sendANoticeOfHearing: boolean
     }) {
-        console.info("Adding hearing with parameters:", param);
-
         await expect(this.addANewHearingTitle).toBeVisible();
 
         await this.selectTypeOfHearing(param.type);
@@ -202,5 +209,11 @@ export class ManageHearingPage extends BaseJourneyPage {
         } else {
             await this.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
         }
+    }
+
+    async removeContent() {
+        const removeButton = this.page.getByRole('button', { name: 'Remove' });
+        await expect(removeButton).toBeVisible();
+        await removeButton.click({ force: true });
     }
 }

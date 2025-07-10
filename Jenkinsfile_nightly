@@ -38,6 +38,10 @@ def secrets = [
         secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
         secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
         secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
+        secret('playwright-applicant-intervener-username', 'PLAYWRIGHT_APPL_INTERVENER_USERNAME'),
+        secret('playwright-applicant-intervener-password', 'PLAYWRIGHT_APPL_INTERVENER_PSWD'),
+        secret('playwright-respondent-intervener-username', 'PLAYWRIGHT_RESP_INTERVENER_USERNAME'),
+        secret('playwright-respondent-intervener-password', 'PLAYWRIGHT_RESP_INTERVENER_PSWD'),
         secret('username-solicitor', 'USERNAME_SOLICITOR'),
         secret('password-solicitor', 'PASSWORD_SOLICITOR'),
         secret('username-caseworker', 'USERNAME_CASEWORKER'),
@@ -55,7 +59,9 @@ def secrets = [
         secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
         secret('solicitor1-password', 'PASSWORD_SOLICITOR1'),
         secret('barrister1-username', 'USERNAME_BARRISTER1'),
-        secret('barrister1-password', 'PASSWORD_BARRISTER1')
+        secret('barrister1-password', 'PASSWORD_BARRISTER1'),
+        secret("playwright-barrister2-respondent-username","PLAYWRIGHT_RESP_BARRISTER_USERNAME"),
+        secret("playwright-barrister2-respondent-testing-password","PLAYWRIGHT_RESP_BARRISTER_PSWD")
     ]
 ]
 
@@ -67,6 +73,7 @@ withNightlyPipeline(type, product, component) {
     env.CCD_WEB_URL = 'https://manage-case.aat.platform.hmcts.net'
     env.CCD_DATA_API_URL = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal'
     env.XUI_ORG_WEB_URL = 'https://manage-org.aat.platform.hmcts.net'
+    env.MANAGE_ORG_API_BASE_URL='http://aac-manage-case-assignment-aat.service.core-compute-aat.internal'
     env.NIGHTLY_TEST = 'true'
     env.NODE_ENV = 'ci'
     env.FUNCTIONAL_TESTS_WORKERS = params.FUNCTIONAL_TESTS_WORKERS

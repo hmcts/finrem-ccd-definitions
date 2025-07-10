@@ -24,7 +24,7 @@ test(
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Issue Application

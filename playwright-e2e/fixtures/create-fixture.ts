@@ -54,7 +54,12 @@ import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/Uploa
 import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
 import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
 import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
-import {AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
+import { AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
+import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateToJudgePage';
+import { EventSummaryPage } from '../pages/events/EventSummaryPage.ts';
+import { RefundPage } from '../pages/events/refund/RefundPage.ts';
+import { ManageBarristerPage } from '../pages/events/manage-barrister/ManageBarristerPage';
+import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -113,6 +118,11 @@ type CreateFixtures = {
   manageHearingPage: ManageHearingPage;
   checkYourAnswersPage: CheckYourAnswersPage;
   addNotePage: AddNotePage;
+  allocateToJudgePage: AllocateToJudgePage;
+  eventSummaryPage: EventSummaryPage;
+  refundPage: RefundPage;
+  manageBarristerPage: ManageBarristerPage;
+  manageIntervenersPage: ManageIntervenerPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -274,5 +284,20 @@ export const test = base.extend<CreateFixtures>({
   },
   addNotePage: async ({ page }, use) => {
     await use(new AddNotePage(page));
+  },
+  allocateToJudgePage: async ({ page }, use) => {
+    await use(new AllocateToJudgePage(page));
+  },
+  eventSummaryPage: async ({ page }, use) => {
+    await use(new EventSummaryPage(page));
+  },
+  refundPage: async ({ page }, use) => {
+    await use(new RefundPage(page));
+  },
+  manageBarristerPage: async ({ page }, use) => {
+    await use(new ManageBarristerPage(page));
+  },
+  manageIntervenersPage: async ({ page }, use) => {
+    await use(new ManageIntervenerPage(page, solicitorDetailsHelper));
   }
 });
