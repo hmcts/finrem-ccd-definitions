@@ -120,10 +120,19 @@ export const migratedHearingsCreatedFromProcessOrderTabDataOnHearing1 = [
   {
     tabName: 'Hearings',
     tabContent: [
+      // Hearing 1 is the hearing made by List for Hearing event.
+      "Hearing 1",
+      { tabItem: "Type of Hearing", value: "First Directions Appointment (FDA)" },
+      { tabItem: "Court", value: "Nottingham County Court And Family Court" },
+      { tabItem: "Hearing date", value: '02 Oct 2025 10:00' },
+      { tabItem: "Hearing time estimate", value: '1 hour' },
+      { tabItem: "Who has received this notice", value: 'Unknown' },
+      { tabItem: "Additional information about the hearing", value: 'This is additional information about the hearing' },
+      { tabItem: "Hearing documents", value: '1.pdf' },
       "Hearing 2",
       { tabItem: "Type of Hearing", value: "Directions (DIR)" },
-      { tabItem: "Court", value: "Chester Civil and Family Justice Centre" },
-      { tabItem: "Hearing date", value: getFormattedDate() + ' 10:00' },
+      { tabItem: "Court", value: "Chester Civil And Family Justice Centre" },
+      { tabItem: "Hearing date", value: '01 Jan 2024 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
       { tabItem: "Who has received this notice", value: 'Unknown' }
     ]

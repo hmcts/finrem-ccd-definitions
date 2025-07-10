@@ -175,10 +175,6 @@ test.describe('Contested - Process Order', () => {
 
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
       await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabDataOnHearing1);
-
-      // Next
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
-      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
     }
   );
 
