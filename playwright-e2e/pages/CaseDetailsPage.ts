@@ -225,5 +225,4 @@ export class CaseDetailsPage {
             throw new Error('File tree validation errors:\n' + errors.join('\n\n'));
         }
     }
-
 }
