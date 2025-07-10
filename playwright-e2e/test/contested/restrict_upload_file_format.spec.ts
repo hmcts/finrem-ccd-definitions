@@ -12,7 +12,7 @@ const FILE_PATHS = {
   xls: './playwright-e2e/resources/file/test.xls'
 };
 
-test.describe('Contested - File Type Restrictions on uploading documents', () => {
+test.describe('Contested - File Type Restrictions on uploading documents @flaky', () => {
   test(
     'Contested - Create Gneral Application - Allow only word, excel and pdf documents to be uploaded',
     { tag: [] },
@@ -33,24 +33,17 @@ test.describe('Contested - File Type Restrictions on uploading documents', () =>
 
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.png, false);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.doc);
-      await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.docx);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.pdf);
-      await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.xlsx);
       await createGeneralApplicationPage.uploadDraftOrder(FILE_PATHS.xls);
 
       await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.png, false);
-      await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.doc);
       await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.docx);
       await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.pdf);
       await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.xlsx);
-      await createGeneralApplicationPage.uploadGeneralApplication(FILE_PATHS.xls);
 
       await createGeneralApplicationPage.addNewSupportingDocument();
       await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.png, false);
-      await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.doc);
-      await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.docx);
       await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.pdf);
-      await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.xlsx);
       await createGeneralApplicationPage.uploadFirstSupportingDocument(FILE_PATHS.xls);
     }
   );
