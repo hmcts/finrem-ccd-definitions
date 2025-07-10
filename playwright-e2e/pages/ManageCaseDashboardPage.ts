@@ -22,7 +22,7 @@ export class ManageCaseDashboardPage {
 
   async visit(){
     await this.page.goto(`${this.url}`);
-    await this.clearCookies();
+    // await this.clearCookies(); Causing flaky tests, commenting out for now
   }
 
   async signOut() {
