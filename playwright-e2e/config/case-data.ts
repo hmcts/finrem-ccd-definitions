@@ -164,6 +164,18 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage Barrister",
     ccdCallback: "FR_manageBarrister"
   },
+    prepareForHearing: {
+    listItem: "Prepare For Hearing",
+    ccdCallback: "FR_prepareForHearing"
+  },
+    createGeneralOrder: {
+    listItem: "Create General Order",
+    ccdCallback: "FR_generalOrder"
+  },
+    contestedSendOrder: {
+    listItem: "Send Order",
+    ccdCallback: "FR_sendOrder"
+  },
   manageInterveners: {
     listItem: "Manage Interveners",
     ccdCallback: "manageInterveners"
