@@ -25,34 +25,6 @@ const typeOfHearingData = [
     {
         typeOfHearing: "Financial Dispute Resolution (FDR)",
         hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
-    },
-    {
-        typeOfHearing: "Final Hearing (FH)",
-        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
-    },
-    {
-        typeOfHearing: "Directions (DIR)",
-        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
-    },
-    {
-        typeOfHearing: "Mention",
-        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
-    },
-    {
-        typeOfHearing: "Permission to Appeal",
-        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
-    },
-    {
-        typeOfHearing: "Appeal Hearing (Financial Remedy)",
-        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
-    },
-    {
-        typeOfHearing: "Application Hearing",
-        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
-    },
-    {
-        typeOfHearing: "Retrial Hearing",
-        hearingDocuments: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
     }
 ];
 
@@ -187,7 +159,7 @@ test.describe('Contested - Manage Hearings', () => {
 
     for (const data of typeOfHearingData) {
         test(
-            'Contested - Caseworker manages hearings for Form A case - ' + data.typeOfHearing,
+            'Contested - Caseworker adds hearings for Form A case - ' + data.typeOfHearing,
             {tag: []},
             async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
                 // Create and setup case
