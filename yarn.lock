@@ -1240,21 +1240,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/config-array@npm:^0.20.1":
-  version: 0.20.1
-  resolution: "@eslint/config-array@npm:0.20.1"
+"@eslint/config-array@npm:^0.21.0":
+  version: 0.21.0
+  resolution: "@eslint/config-array@npm:0.21.0"
   dependencies:
     "@eslint/object-schema": ^2.1.6
     debug: ^4.3.1
     minimatch: ^3.1.2
-  checksum: fe5b518be9eb474a0050bb3d0427ae00967f56e6c204492d8fc0bc3086cf93a0174b7eafd657b2bfddb904b9785943435345985df28853e9354bfbf492b84226
+  checksum: 84d3ae7cb755af94dc158a74389f4c560757b13f2bb908f598f927b87b70a38e8152015ea2e9557c1b4afc5130ee1356f6cad682050d67aae0468bbef98bc3a8
   languageName: node
   linkType: hard
 
-"@eslint/config-helpers@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "@eslint/config-helpers@npm:0.2.1"
-  checksum: b463805bc319608436a8b19c94fd533d8196b326c03361db54c0f3ec59d7bd6337c9764bc945ef15df94f50443973241dc265f661b07aceed4938f7d1cf2e822
+"@eslint/config-helpers@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@eslint/config-helpers@npm:0.3.0"
+  checksum: d4fe8242ef580806ddaa88309f4bb2d3e6be5524cc6d6197675106c6d048f766a3f9cdc2e8e33bbc97a123065792cac8314fc85ac2b3cf72610e8df59301d63a
   languageName: node
   linkType: hard
 
@@ -1264,6 +1264,15 @@ __metadata:
   dependencies:
     "@types/json-schema": ^7.0.15
   checksum: d68b8282b6f38c5145234f812f18f491d12d716240875591bd54bf5ac32858d979bdf6d38e521997a6e01f2c4223a3e66049714151da7278d0a95ff15b5d46c8
+  languageName: node
+  linkType: hard
+
+"@eslint/core@npm:^0.15.0":
+  version: 0.15.1
+  resolution: "@eslint/core@npm:0.15.1"
+  dependencies:
+    "@types/json-schema": ^7.0.15
+  checksum: 9215f00466d60764453466604443a491b0ea8263c148836fef723354d6ef1d550991e931d3df2780c99cee2cab14c4f41f97d5341ab12a8443236c961bb6f664
   languageName: node
   linkType: hard
 
@@ -1284,7 +1293,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.29.0, @eslint/js@npm:^9.11.1":
+"@eslint/js@npm:9.31.0":
+  version: 9.31.0
+  resolution: "@eslint/js@npm:9.31.0"
+  checksum: 0160e59702bdbee82f5234a1663255300e8747581641f657e5da12496c4dd46d75dd789866c0fe112a5f898a2450359333151e607775165da6a8efbd689be57c
+  languageName: node
+  linkType: hard
+
+"@eslint/js@npm:^9.11.1":
   version: 9.29.0
   resolution: "@eslint/js@npm:9.29.0"
   checksum: 9688a729664af9cc8898f61cbfbeb46d383a67c6fa4cbb1f8f2aa080aa5c34cfd5a3e19da6dde4d56f33e44873cedf064d612bd0fdc0ac003f9b9f741bd4953e
@@ -5404,16 +5420,16 @@ __metadata:
   linkType: hard
 
 "eslint@npm:^9.11.1, eslint@npm:^9.15.0":
-  version: 9.29.0
-  resolution: "eslint@npm:9.29.0"
+  version: 9.31.0
+  resolution: "eslint@npm:9.31.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.2.0
     "@eslint-community/regexpp": ^4.12.1
-    "@eslint/config-array": ^0.20.1
-    "@eslint/config-helpers": ^0.2.1
-    "@eslint/core": ^0.14.0
+    "@eslint/config-array": ^0.21.0
+    "@eslint/config-helpers": ^0.3.0
+    "@eslint/core": ^0.15.0
     "@eslint/eslintrc": ^3.3.1
-    "@eslint/js": 9.29.0
+    "@eslint/js": 9.31.0
     "@eslint/plugin-kit": ^0.3.1
     "@humanfs/node": ^0.16.6
     "@humanwhocodes/module-importer": ^1.0.1
@@ -5449,7 +5465,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: fa4381d9d7db444912defcec93c54e6d470e24a73d5bae5b04b34b0fb03aad8a6cbedd79fe3f4e6120d5590785d02d633ce9f854a540283a62493f11d8ff9408
+  checksum: 7273c0b04d648f1e2e660f93c6b10a1e94020b056380cf2c756dbf07b0bce29ca10fb658f5124e90b16a2e9627b2d591063d5e4b02f3f939f782b880b4fd3cec
   languageName: node
   linkType: hard
 
