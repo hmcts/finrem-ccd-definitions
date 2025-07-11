@@ -84,7 +84,7 @@ def buildPlaywrightCommand(tags, browser) {
     }
     def tagList = tags.split(',').collect { it.trim() }
 
-    def command = 'yarn playwright test '
+    def command = 'playwright test '
     tagList.each { tag ->
         if (!tag.isEmpty()) {
             command += " --grep ${tag}"
@@ -93,7 +93,7 @@ def buildPlaywrightCommand(tags, browser) {
 
     if (browser) {
         command += " --project=${browser}"
-        commant = "playwright install ${browser} && ${command}"
+        command = "playwright install ${browser} && ${command}"
     }
 
     return command
