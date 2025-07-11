@@ -313,6 +313,7 @@ export const test = base.extend<CreateFixtures>({
   },
   contestedSendOrderPage: async ({ page }, use) => {
     await use(new ContestedSendOrderPage(page));
+  },
   manageIntervenersPage: async ({ page }, use) => {
     await use(new ManageIntervenerPage(page, solicitorDetailsHelper));
   },
