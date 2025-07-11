@@ -89,8 +89,8 @@ export class DateHelper {
         twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7);
 
         return twelveWeeksAndOneDayLater
-            .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-    };
+          .toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  };
 
     /**
      * Returns today's date formatted as an array of strings [year, month, day].
