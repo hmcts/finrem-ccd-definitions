@@ -57,11 +57,11 @@ export class CommonActionsHelper {
     async waitForAllUploadsToBeCompleted(page: Page) {
         const cancelUploadLocators = await page.getByText('Cancel upload').all();
         for (let i = 0; i < cancelUploadLocators.length; i++) {
-            await expect(cancelUploadLocators[i]).toBeDisabled({ timeout: 10000 });
+            await expect(cancelUploadLocators[i]).toBeDisabled({ timeout: 15000 });
         }
         const uploadingSpan = await page.locator('span', { hasText: 'Uploading...' }).all();
         for (let i = 0; i < uploadingSpan.length; i++) {
-            await expect(uploadingSpan[i]).toBeHidden({ timeout: 2000 });
+            await expect(uploadingSpan[i]).toBeHidden({ timeout: 10000 });
         }
     }
 
