@@ -13,11 +13,15 @@ export class ManageCaseDashboardPage {
     this.signOutButton = page.getByText('Sign Out');
   }
 
-  async navigateToCase(caseId: string) {
+  async navigateToCase(caseId: string, canView: boolean = true) {
     await this.page.waitForLoadState();
     const url = `${this.url}/cases/case-details/${caseId}`;
     await this.page.goto(url);
-    await expect(this.page.getByText(String(caseId).replace(/(\d{4})(?=\d)/g, '$1-'))).toBeVisible();
+    if (canView) {
+      await expect(this.page.getByText(String(caseId).replace(/(\d{4})(?=\d)/g, '$1-'))).toBeVisible();
+    } else {
+      await expect(this.page.getByText(String(caseId).replace(/(\d{4})(?=\d)/g, '$1-'))).not.toBeVisible();
+    }
   }
 
   async visit(){
