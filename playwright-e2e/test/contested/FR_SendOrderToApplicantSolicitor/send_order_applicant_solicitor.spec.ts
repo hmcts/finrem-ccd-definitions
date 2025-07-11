@@ -6,7 +6,7 @@ import { sendOrderTableData } from '../../../resources/check_your_answer_content
 
 test.describe('Contested Create Send Order to an applicant solicitor', () => {
     test(
-        'Contested - Send Order to an applicant solicitor @test',
+        'Contested - Send Order to an applicant solicitor',
         { tag: [] },
         async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, checkYourAnswersPage, prepareForHearingPage, createGeneralOrderPage, contestedSendOrderPage }) => {
             // Create and setup case
