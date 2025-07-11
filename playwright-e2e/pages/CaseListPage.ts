@@ -1,7 +1,7 @@
 import {BaseJourneyPage} from "./BaseJourneyPage.ts";
 import config from "../config/config.ts";
 import {ApplicationtypeEnum, YesNoRadioEnum} from "./helpers/enums/RadioEnums.ts";
-import {Page, expect} from "@playwright/test";
+import {Page, expect, Locator} from "@playwright/test";
 
 export class CaseListPage extends BaseJourneyPage {
 
@@ -43,19 +43,14 @@ export class CaseListPage extends BaseJourneyPage {
         return await this.page.getByRole('heading', { name: 'Case list' }).isVisible();
     }
 
-    async validateJurisdictionSelectOptions() {
+    async selectJurisdiction() {
         await expect(this.jurisdictionSelect).toBeVisible();
-        await this.assertDropDownOptionsAreVisible(['Family Divorce'], this.jurisdictionSelect);
+        await this.jurisdictionSelect.selectOption({ label: 'Family Divorce' });
     }
 
     async selectCaseType(caseType: string) {
         await expect(this.caseTypeSelect).toBeVisible();
         await this.caseTypeSelect.selectOption({ label: caseType });
-    }
-
-    async validateCaseTypeSelectOptions() {
-        await expect(this.caseTypeSelect).toBeVisible();
-        await this.assertDropDownOptionsAreVisible(['Contested Financial Remedy', 'Financial Remedy Consented'], this.caseTypeSelect);
     }
 
     async selectState(state: string) {
@@ -91,11 +86,6 @@ export class CaseListPage extends BaseJourneyPage {
         await this.judgeNameSelect.selectOption({ label: judgeName });
     }
 
-    async selectRegion(region: Locator) {
-        await expect(this.regionSelect).toBeVisible();
-        await this.regionSelect.selectOption({ label: region });
-    }
-
     async validateRegionSelectOptions() {
         await expect(this.regionSelect).toBeVisible();
         await this.assertDropDownOptionsAreVisible(
@@ -123,8 +113,7 @@ export class CaseListPage extends BaseJourneyPage {
 
     async verifyCaseListPageForConsentedCase(states: string[], isCaseWorker: boolean = true) {
         await this.isPageLoaded();
-        await this.validateJurisdictionSelectOptions();
-        await this.validateCaseTypeSelectOptions();
+        await this.selectJurisdiction();
         await this.selectCaseType('Financial Remedy Consented');
         await this.validateStateSelectOptions(states);
         await this.enterSolicitorReference('Y707HZM')
@@ -138,8 +127,7 @@ export class CaseListPage extends BaseJourneyPage {
 
     async verifyCaseListPageForContestedCase(states: string[], isCaseWorker: boolean = true) {
         await this.isPageLoaded();
-        await this.validateJurisdictionSelectOptions();
-        await this.validateCaseTypeSelectOptions();
+        await this.selectJurisdiction();
         await this.selectCaseType('Contested Financial Remedy');
         await this.validateStateSelectOptions(states);
         await this.enterSolicitorReference('Y707HZM');
