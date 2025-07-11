@@ -330,7 +330,7 @@ export class ContestedEventApi {
   ): Promise<void> {
     await this.progressCaseToState(
       caseId,
-      ContestedEvents.directionOrder.ccdCallback,
+      ContestedEvents.processOrder.ccdCallback,
       PayloadPath.Contested.processOrderBasicTwoHearing,
       jsonObject
     );

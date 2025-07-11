@@ -140,8 +140,8 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Approve Orders",
     ccdCallback: "FR_approveOrders"
   },
-  directionOrder: {
-    listItem: "Direction Order",
+  processOrder: {
+    listItem: "Process Order",
     ccdCallback: "FR_directionOrder"
   },
   manageHearings: {
@@ -179,6 +179,12 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   manageInterveners: {
     listItem: "Manage Interveners",
     ccdCallback: "manageInterveners"
+  },
+
+  // Migration events
+  manageHearingsMigration: {
+    listItem: "(Migration) Manage Hearings",
+    ccdCallback: "FR_manageHearingsMigration"
   },
 
   // Common events
