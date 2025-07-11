@@ -4824,8 +4824,7 @@
     "CaseFieldID": "judgeApproval1",
     "ListElementCode": "courtOrderDate",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "judgeApproval1.docType=\"DRAFT_ORDER\" AND (judgeApproval1.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval1.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
-  },
+    "FieldShowCondition": "(judgeApproval1.docType=\"DRAFT_ORDER\" OR judgeApproval1.docType=\"PSA\") AND (judgeApproval1.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval1.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"  },
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_approveOrdersToJudgeApproval1",
@@ -4960,8 +4959,7 @@
     "CaseFieldID": "judgeApproval2",
     "ListElementCode": "courtOrderDate",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "judgeApproval2.docType=\"DRAFT_ORDER\" AND (judgeApproval2.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval2.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
-  },
+    "FieldShowCondition": "(judgeApproval2.docType=\"DRAFT_ORDER\" OR judgeApproval2.docType=\"PSA\") AND (judgeApproval2.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval2.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"  },
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_approveOrdersToJudgeApproval2",
@@ -5096,8 +5094,7 @@
     "CaseFieldID": "judgeApproval3",
     "ListElementCode": "courtOrderDate",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "judgeApproval3.docType=\"DRAFT_ORDER\" AND (judgeApproval3.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval3.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
-  },
+    "FieldShowCondition": "(judgeApproval3.docType=\"DRAFT_ORDER\" OR judgeApproval3.docType=\"PSA\") AND (judgeApproval3.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval3.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"  },
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_approveOrdersToJudgeApproval3",
@@ -5232,8 +5229,7 @@
     "CaseFieldID": "judgeApproval4",
     "ListElementCode": "courtOrderDate",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "judgeApproval4.docType=\"DRAFT_ORDER\" AND (judgeApproval4.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval4.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
-  },
+    "FieldShowCondition": "(judgeApproval4.docType=\"DRAFT_ORDER\" OR judgeApproval4.docType=\"PSA\") AND (judgeApproval4.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval4.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"  },
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_approveOrdersToJudgeApproval4",
@@ -5368,8 +5364,7 @@
     "CaseFieldID": "judgeApproval5",
     "ListElementCode": "courtOrderDate",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "judgeApproval5.docType=\"DRAFT_ORDER\" AND (judgeApproval5.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval5.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
-  },
+    "FieldShowCondition": "(judgeApproval5.docType=\"DRAFT_ORDER\" OR judgeApproval5.docType=\"PSA\") AND (judgeApproval5.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval5.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"  },
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_approveOrdersToJudgeApproval5",
