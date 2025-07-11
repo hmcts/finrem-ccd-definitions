@@ -8,4 +8,3 @@ export const sendOrderTableData: Table = {
     { cellItem: 'What state should this case move to:', value: 'Order Sent' }
   ]
 };
-
