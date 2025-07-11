@@ -86,8 +86,8 @@ export class CommonActionsHelper {
         page: Page,
         uploadField: Locator,
         fileToUpload: { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> } | string,
-        maxRetries: number = 3,
-        waitMs: number = 3000
+        maxRetries: number = 5,
+        waitMs: number = 5000
     ) {
         for (let attempt = 0; attempt < maxRetries; attempt++) {
             await uploadField.setInputFiles(fileToUpload);

@@ -220,5 +220,7 @@ export class ManageHearingPage extends BaseJourneyPage {
         const removeButton = this.page.getByRole('button', { name: 'Remove' });
         await expect(removeButton).toBeVisible();
         await removeButton.click({ force: true });
+        await expect(removeButton).toBeVisible();
+        await removeButton.click({ force: true });
     }
 }
