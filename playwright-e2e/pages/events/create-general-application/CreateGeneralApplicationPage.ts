@@ -45,7 +45,7 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
     }
 
     private async uploadFile(locator: Locator, errorLocator: Locator, uploadFilePath: string, success: boolean): Promise<void> {
-        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, locator, uploadFilePath);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, locator, uploadFilePath, 5, 5000);
         if (success) {
             await expect(errorLocator).toBeHidden();
         } else {

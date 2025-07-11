@@ -176,7 +176,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Send Order",
     ccdCallback: "FR_sendOrder"
   },
-  
+  manageInterveners: {
+    listItem: "Manage Interveners",
+    ccdCallback: "manageInterveners"
+  },
 
   // Common events
   createFlag: CommonEvents.createFlag,
@@ -218,6 +221,10 @@ export const PayloadPath = {
     listForHearingFdaEgOne: "./playwright-e2e/resources/payload/contested/caseworker/list-for-hearing/fda-example-one.json",
     judiciaryBasicApproveOrders: "./playwright-e2e/resources/payload/contested/judiciary/most-basic-approve-orders.json",
     processOrderBasicTwoHearing: "./playwright-e2e/resources/payload/contested/caseworker/process-order/basic-two-hearing.json",
-    createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json"
+    createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json",
+    manageIntervenersAddApplicantInt: "./playwright-e2e/resources/payload/contested/caseworker/manage-interveners/add-applicant-intervener.json",
+    manageIntervenersAddRespondentInt: "./playwright-e2e/resources/payload/contested/caseworker/manage-interveners/add-respondent-intervener.json",
+    manageBarristerAddApplicantBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-applicant-barrister.json",
+    manageBarristerAddRespondentBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-respondent-barrister.json",
   }
 } as const;
