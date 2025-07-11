@@ -6,8 +6,18 @@ properties([
                 string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
                 string(
                         name: 'FUNCTIONAL_TESTS_WORKERS',
-                        defaultValue: '2',
+                        defaultValue: '4',
                         description: 'Number of workers running functional tests'
+                ),
+                string(
+                        name: 'TAGS_TO_RUN',
+                        defaultValue: '',
+                        description: 'Optionally, run a single or multiple tags (comma separated e.g. @cui, @exui)'
+                ),
+                choice(
+                        name: 'BROWSER_TO_RUN',
+                        choices: ['chromium'],
+                        description: 'Choose what browsers will be run (only when a tag is specified)'
                 )
         ])
 ])
@@ -68,6 +78,26 @@ def secrets = [
 def pipelineConf = new AppPipelineConfig()
 pipelineConf.vaultSecrets = secrets
 
+def buildPlaywrightCommand(tags, browser) {
+    if (tags == null || tags.trim().isEmpty()) {
+        return;
+    }
+    def tagList = tags.split(',').collect { it.trim() }
+
+    def command = 'yarn playwright test '
+    tagList.each { tag ->
+        if (!tag.isEmpty()) {
+            command += " --grep ${tag}"
+        }
+    }
+
+    if (browser) {
+        command += " --project=${browser}"
+        commant = "playwright install ${browser} && ${command}"
+    }
+
+    return command
+}
 
 withNightlyPipeline(type, product, component) {
     env.CCD_WEB_URL = 'https://manage-case.aat.platform.hmcts.net'
@@ -89,21 +119,42 @@ withNightlyPipeline(type, product, component) {
     }
 
     afterAlways('fullFunctionalTest') {
-        stage('Functional playwright tests - chromium') {
-            try {
-                yarnBuilder.yarn('test:functional-chromium')
-            } catch (Error) {
-                unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-            } finally {
-                publishHTML([
-                        allowMissing: true,
-                        alwaysLinkToLastBuild: true,
-                        keepAll: true,
-                        reportDir: 'playwright-report',
-                        reportFiles: 'index.html',
-                        reportName: 'FunctionalTestReport'
-                ])
-                steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+        if (!params.TAGS_TO_RUN.isEmpty()) {
+            stage("${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}") {
+                try {
+                    currentBuild.displayName = "${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
+                    yarnBuilder.yarn(buildPlaywrightCommand(params.TAGS_TO_RUN, params.BROWSER_TO_RUN))
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing: true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: "playwright-report",
+                            reportFiles: 'index.html',
+                            reportName: "${TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+        } else {
+            stage('Functional playwright tests - chromium') {
+                try {
+                    yarnBuilder.yarn('test:functional-chromium')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing         : true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll              : true,
+                            reportDir            : 'playwright-report',
+                            reportFiles          : 'index.html',
+                            reportName           : 'FunctionalTestReport'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
             }
         }
 
