@@ -13,7 +13,7 @@ export const migratedListForHearingsTabDataOnHearing1 = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: getFormattedDate() + ' 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'Some additional information' },
       { tabItem: "Hearing documents", value: 'test.pdf' }
     ]
@@ -41,7 +41,7 @@ export const migratedListForHearingsTabDataOnHearing2 = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: getFormattedDate() + ' 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'Some additional information' },
       { tabItem: "Hearing documents", value: 'test.pdf' }
     ]
@@ -58,7 +58,7 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '01 Jan 2026 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'MPS: Additional information about the hearing' },
       { tabItem: "Hearing documents", value: 'MPSfile.pdf' },
       "Hearing 2",
@@ -67,7 +67,7 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '02 Feb 2026 11:00' },
       { tabItem: "Hearing time estimate", value: '2 hours' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'FDA: Additional information about the hearing' },
       { tabItem: "Hearing documents", value: 'FDAfile.pdf' },
       "Hearing 3",
@@ -76,7 +76,7 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '03 Mar 2026 12:00' },
       { tabItem: "Hearing time estimate", value: '3 hours' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'FDR: Additional information about the hearing' },
       { tabItem: "Hearing documents", value: 'FDRfile.pdf' },
       "Hearing 4",
@@ -85,7 +85,7 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '04 Apr 2026 13:00' },
       { tabItem: "Hearing time estimate", value: '4 hours' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'FH: Additional information about the hearing' },
       { tabItem: "Hearing documents", value: 'FHfile.pdf' },
       "Hearing 5",
@@ -93,7 +93,7 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
       { tabItem: "Court", value: "Boston County Court And Family Court" },
       { tabItem: "Hearing date", value: '05 May 2026 14:00' },
       { tabItem: "Hearing time estimate", value: '30 minutes' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'DIR: Additional information about the hearing' },
       { tabItem: "Hearing documents", value: 'DIRfile.pdf' },
       "Hearing 6",
@@ -102,7 +102,7 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '06 Jun 2026 15:00' },
       { tabItem: "Hearing time estimate", value: '40 minutes' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'No File: Additional information about the hearing' }
     ]
   }
@@ -118,7 +118,7 @@ export const migratedGeneralApplicationDirectionsTabDataOnHearing1 = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '01 Jan 2025 10:00' },
       { tabItem: "Hearing time estimate", value: '3 hours' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'Whatever information is required for the hearing' }
     ]
   }
@@ -135,7 +135,7 @@ export const migratedHearingsCreatedFromProcessOrderTabData = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '01 Jan 2024 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: '' },
       "Hearing 2",
       { tabItem: "Type of Hearing", value: "First Directions Appointment (FDA)" },
@@ -143,7 +143,7 @@ export const migratedHearingsCreatedFromProcessOrderTabData = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '02 Oct 2025 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'This is additional information about the hearing' },
       { tabItem: "Hearing documents", value: '1.pdf' },
     ]
@@ -160,7 +160,7 @@ export const migratedMultipleHearingsCreatedFromProcessOrderTabData = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '01 Jan 2024 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: "" },
       "Hearing 2",
       { tabItem: "Type of Hearing", value: "Directions (DIR)" },
@@ -168,7 +168,7 @@ export const migratedMultipleHearingsCreatedFromProcessOrderTabData = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '02 Jan 2024 11:00' },
       { tabItem: "Hearing time estimate", value: '2 hours' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: "" },
       "Hearing 3",
       { tabItem: "Type of Hearing", value: "First Directions Appointment (FDA)" },
@@ -176,7 +176,7 @@ export const migratedMultipleHearingsCreatedFromProcessOrderTabData = [
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '02 Oct 2025 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'This is additional information about the hearing' },
       { tabItem: "Hearing documents", value: '1.pdf' }
     ]
@@ -193,7 +193,7 @@ export const migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearing
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '01 Jan 2024 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: "" },
       "Hearing 2",
       { tabItem: "Type of Hearing", value: "Directions (DIR)" },
@@ -201,7 +201,7 @@ export const migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearing
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '02 Jan 2024 11:00' },
       { tabItem: "Hearing time estimate", value: '2 hours' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: "" },
       "Hearing 3",
       { tabItem: "Type of Hearing", value: "First Directions Appointment (FDA)" },
@@ -209,7 +209,7 @@ export const migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearing
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
       { tabItem: "Hearing date", value: '02 Oct 2025 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
-      { tabItem: "Who has received this notice", value: 'Confidential parties not specified' },
+      { tabItem: "Who has received this notice", value: 'Parties not specified' },
       { tabItem: "Additional information about the hearing", value: 'This is additional information about the hearing' },
       { tabItem: "Hearing documents", value: '1.pdf' },
       "Hearing 4",
