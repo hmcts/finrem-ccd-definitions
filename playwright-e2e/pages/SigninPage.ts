@@ -10,7 +10,7 @@ export class SigninPage {
   public constructor(page: Page) {
     this.page = page;
     this.emailInputLocator = page.getByLabel('Email address');
-    this.passwordInputLocator = page.getByLabel('Password');
+    this.passwordInputLocator = page.getByRole('textbox', { name: 'Password' })
     this.signinButtonLocator = page.getByRole('button', { name: 'Sign in' });
   }
 

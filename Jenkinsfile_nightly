@@ -6,8 +6,18 @@ properties([
                 string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
                 string(
                         name: 'FUNCTIONAL_TESTS_WORKERS',
-                        defaultValue: '2',
+                        defaultValue: '4',
                         description: 'Number of workers running functional tests'
+                ),
+                string(
+                        name: 'TAGS_TO_RUN',
+                        defaultValue: '',
+                        description: 'Optionally, run a single or multiple tags (comma separated e.g. @cui, @exui)'
+                ),
+                choice(
+                        name: 'BROWSER_TO_RUN',
+                        choices: ['chromium'],
+                        description: 'Choose what browsers will be run (only when a tag is specified)'
                 )
         ])
 ])
@@ -38,6 +48,10 @@ def secrets = [
         secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
         secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
         secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
+        secret('playwright-applicant-intervener-username', 'PLAYWRIGHT_APPL_INTERVENER_USERNAME'),
+        secret('playwright-applicant-intervener-password', 'PLAYWRIGHT_APPL_INTERVENER_PSWD'),
+        secret('playwright-respondent-intervener-username', 'PLAYWRIGHT_RESP_INTERVENER_USERNAME'),
+        secret('playwright-respondent-intervener-password', 'PLAYWRIGHT_RESP_INTERVENER_PSWD'),
         secret('username-solicitor', 'USERNAME_SOLICITOR'),
         secret('password-solicitor', 'PASSWORD_SOLICITOR'),
         secret('username-caseworker', 'USERNAME_CASEWORKER'),
@@ -55,13 +69,35 @@ def secrets = [
         secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
         secret('solicitor1-password', 'PASSWORD_SOLICITOR1'),
         secret('barrister1-username', 'USERNAME_BARRISTER1'),
-        secret('barrister1-password', 'PASSWORD_BARRISTER1')
+        secret('barrister1-password', 'PASSWORD_BARRISTER1'),
+        secret("playwright-barrister2-respondent-username","PLAYWRIGHT_RESP_BARRISTER_USERNAME"),
+        secret("playwright-barrister2-respondent-testing-password","PLAYWRIGHT_RESP_BARRISTER_PSWD")
     ]
 ]
 
 def pipelineConf = new AppPipelineConfig()
 pipelineConf.vaultSecrets = secrets
 
+def buildPlaywrightCommand(tags, browser) {
+    if (tags == null || tags.trim().isEmpty()) {
+        return;
+    }
+    def tagList = tags.split(',').collect { it.trim() }
+
+    def command = 'yarn playwright test '
+    tagList.each { tag ->
+        if (!tag.isEmpty()) {
+            command += " --grep ${tag}"
+        }
+    }
+
+    if (browser) {
+        command += " --project=${browser}"
+        command = "playwright install ${browser} && ${command}"
+    }
+
+    return command
+}
 
 withNightlyPipeline(type, product, component) {
     env.CCD_WEB_URL = 'https://manage-case.aat.platform.hmcts.net'
@@ -83,21 +119,42 @@ withNightlyPipeline(type, product, component) {
     }
 
     afterAlways('fullFunctionalTest') {
-        stage('Functional playwright tests - chromium') {
-            try {
-                yarnBuilder.yarn('test:functional-chromium')
-            } catch (Error) {
-                unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-            } finally {
-                publishHTML([
-                        allowMissing: true,
-                        alwaysLinkToLastBuild: true,
-                        keepAll: true,
-                        reportDir: 'playwright-report',
-                        reportFiles: 'index.html',
-                        reportName: 'FunctionalTestReport'
-                ])
-                steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+        if (!params.TAGS_TO_RUN.isEmpty()) {
+            stage("${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}") {
+                try {
+                    currentBuild.displayName = "${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
+                    yarnBuilder.yarn(buildPlaywrightCommand(params.TAGS_TO_RUN, params.BROWSER_TO_RUN))
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing: true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: "playwright-report",
+                            reportFiles: 'index.html',
+                            reportName: "${TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+        } else {
+            stage('Functional playwright tests - chromium') {
+                try {
+                    yarnBuilder.yarn('test:functional-chromium')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing         : true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll              : true,
+                            reportDir            : 'playwright-report',
+                            reportFiles          : 'index.html',
+                            reportName           : 'FunctionalTestReport'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
             }
         }
 
