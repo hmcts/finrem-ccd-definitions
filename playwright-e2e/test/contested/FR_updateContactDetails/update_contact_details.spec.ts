@@ -31,7 +31,7 @@ test(
 
         // Login as caseworker and create case
         await manageCaseDashboardPage.visit();
-        await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+        await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
         await manageCaseDashboardPage.navigateToCase(caseId);
 
         // Update contact details
@@ -59,7 +59,7 @@ test(
 );
 
 test(
-    'Contested - Update contact details - change in representation @test',
+    'Contested - Update contact details - change in representation',
     { tag: [] },
     async (
       {
@@ -74,7 +74,7 @@ test(
 
       // Login as caseworker
       await manageCaseDashboardPage.visit();
-      await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Update contact details

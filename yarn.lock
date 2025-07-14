@@ -1414,12 +1414,11 @@ __metadata:
   linkType: hard
 
 "@hmcts/playwright-common@npm:^1.0.25":
-  version: 1.0.27
-  resolution: "@hmcts/playwright-common@npm:1.0.27"
+  version: 1.0.29
+  resolution: "@hmcts/playwright-common@npm:1.0.29"
   dependencies:
     "@axe-core/playwright": ^4.10.0
     "@eslint/js": ^9.11.1
-    "@types/node": ^22.6.1
     "@typescript-eslint/eslint-plugin": ^8.8.0
     eslint: ^9.11.1
     eslint-plugin-playwright: ^1.6.2
@@ -1430,8 +1429,8 @@ __metadata:
     typescript: ^5.6.2
     typescript-eslint: ^8.8.0
   peerDependencies:
-    "@playwright/test": ^1.49.0
-  checksum: 38e6edd0e43797e3c3ae9fe4908cedcfeb2585e929467d1ee2367b5dc8c3407e9a5cbe27208d4ddc01e22534e0aa8d8f7062ce1ebc828ea4620e97183ff278fc
+    "@playwright/test": ^1.53.0
+  checksum: 6cb59630fc6c90a4fde89b1ee86e40f9db23538c0391b85d31331f40198bc89c43421eac66802e6e51eff79b0c29784606f2a0f38c2369e6c3baea4b9303a614
   languageName: node
   linkType: hard
 
@@ -1768,13 +1767,13 @@ __metadata:
   linkType: hard
 
 "@playwright/test@npm:^1.46.1":
-  version: 1.53.1
-  resolution: "@playwright/test@npm:1.53.1"
+  version: 1.53.2
+  resolution: "@playwright/test@npm:1.53.2"
   dependencies:
-    playwright: 1.53.1
+    playwright: 1.53.2
   bin:
     playwright: cli.js
-  checksum: 9d7c09d27c6e24740e1be6aa1ed98cc0257a5a1d9b2d44f94f7f12c5f9804a58ac2855b7a0e8330551527c94b9d4d46bb122c4bb362d1bc6cd72c75beb5e6a84
+  checksum: b13cb56e60132ad1b0cfa245a89b203623c43287251e359e164380e6fd3a439435133ece52c6242bc925c96cc7afd15b52e596fd2e20f7c87b95d574a157da15
   languageName: node
   linkType: hard
 
@@ -2356,36 +2355,36 @@ __metadata:
   linkType: hard
 
 "@types/lodash@npm:^4.17.16":
-  version: 4.17.19
-  resolution: "@types/lodash@npm:4.17.19"
-  checksum: a75452bd0ed21c9dba98c0d395ef0f9de3220a8410dc07dfb041f84c7f1733b88648f1ba8e62b14f70ff9e935797b618f7060fba40abdf754cdbfb27a99ec27e
+  version: 4.17.20
+  resolution: "@types/lodash@npm:4.17.20"
+  checksum: dc7bb4653514dd91117a4c4cec2c37e2b5a163d7643445e4757d76a360fabe064422ec7a42dde7450c5e7e0e7e678d5e6eae6d2a919abcddf581d81e63e63839
   languageName: node
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^24.0.1":
-  version: 24.0.7
-  resolution: "@types/node@npm:24.0.7"
+  version: 24.0.10
+  resolution: "@types/node@npm:24.0.10"
   dependencies:
     undici-types: ~7.8.0
-  checksum: e3986e0683cf5cf816297200deb0627e62b60d81952391ed03e292cd13463acaa0601adbce2402ecf560eac7a80bbc77f58417173cb01755a79fbed0b2165c92
+  checksum: 04e4d11a711a683d6ed71f8db86b35035771ee9c1f110cb904ca67454d3478f19c71f1f0ccd0ba5350e5ce63bea70d08c569f798f6f5a5d2a1d05c038f1f729f
   languageName: node
   linkType: hard
 
 "@types/node@npm:^20.1.0, @types/node@npm:^20.11.30":
-  version: 20.19.2
-  resolution: "@types/node@npm:20.19.2"
+  version: 20.19.4
+  resolution: "@types/node@npm:20.19.4"
   dependencies:
     undici-types: ~6.21.0
-  checksum: bbff606094c24c96cb3ed9a72d0d18473cf59864db70a4fc85189a9c41072fe9eeeff29601ce086c62255f335e0b6a7c8d8095c75dfe0da0c2daef37486543b5
+  checksum: affe7c1d01d3067c2e1ef923a7970ed047124c6b50573e6d1191d8cd824992b460514b4d90a389a87632e1ea64a99d8998946343d0d8ecb38b302cacf172f0d8
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.0.0, @types/node@npm:^22.6.1":
-  version: 22.15.34
-  resolution: "@types/node@npm:22.15.34"
+"@types/node@npm:^22.0.0":
+  version: 22.16.0
+  resolution: "@types/node@npm:22.16.0"
   dependencies:
     undici-types: ~6.21.0
-  checksum: bc0846b6130975afca65bfe6d43d732e621b583aaa500a90569799926e0317b63044a32226ab49cd07d966887ac44ed6789bf8e16e2af0f9442ebd6784e1f290
+  checksum: fccc24b9cfa95e165fb6a22871c812c9b021b0c686ced9b1572e1bd79ac3f8c78b36c04edfb2c96e10a8a1247c026d1dcad91c0c3e62dccf414057a37bac729d
   languageName: node
   linkType: hard
 
@@ -4782,10 +4781,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devtools-protocol@npm:0.0.1452169":
-  version: 0.0.1452169
-  resolution: "devtools-protocol@npm:0.0.1452169"
-  checksum: f9d3eb8b5d88ae0a0da3bb2699e038f8310ac70160aaf714e726b06025593fbca7b261a838606bd6ecf46a20b8b36f10fa96323bfd7cfa34480e6f572d802e6a
+"devtools-protocol@npm:0.0.1464554":
+  version: 0.0.1464554
+  resolution: "devtools-protocol@npm:0.0.1464554"
+  checksum: 7c0fb668561b415631ecb8421d562b0d4e4daa5da7820b906b9694ba5a7a4f0b8cceabae9499b05664fdaca56cb403447cd2b73f3f23b5aecef49d7343bd8042
   languageName: node
   linkType: hard
 
@@ -9699,12 +9698,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.53.1":
-  version: 1.53.1
-  resolution: "playwright-core@npm:1.53.1"
+"playwright-core@npm:1.53.2":
+  version: 1.53.2
+  resolution: "playwright-core@npm:1.53.2"
   bin:
     playwright-core: cli.js
-  checksum: 19600abe104c7f1793212ad12d8c66c6b42c534a2b760aab55ee9c198c058f0027c8f3ba469bb4f2e268e20e8f84272ea32aeb9ea840b184b58f58f71d29549d
+  checksum: 01530abe93a094482e5cc171e195001bd351c1b75430fb8820e17a2cfc6d67e34e0e59871dd738e1754cd2720fb0c797acb10295bcdc092a268cd297ae4bb3bd
   languageName: node
   linkType: hard
 
@@ -9724,18 +9723,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:1.53.1, playwright@npm:^1.46.1":
-  version: 1.53.1
-  resolution: "playwright@npm:1.53.1"
+"playwright@npm:1.53.2, playwright@npm:^1.46.1":
+  version: 1.53.2
+  resolution: "playwright@npm:1.53.2"
   dependencies:
     fsevents: 2.3.2
-    playwright-core: 1.53.1
+    playwright-core: 1.53.2
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: 6d9b0ae3f4abe794528b213bb0b492be0d93ee611efca3122aca81a8127b0a13206a91c97f5b22449b1b97d5d65979dd70e1286b015c93c45143e722293d3b95
+  checksum: f5a1cb319eb8f1c30d4f934bbc0c48a3cb0c796286bbb008c82cb2b0666a318c6f910ed5db6cf44f68bac64e6d42485e834306b8bed08f6385ff348337b23c61
   languageName: node
   linkType: hard
 
@@ -9993,16 +9992,16 @@ __metadata:
   linkType: hard
 
 "puppeteer-core@npm:^24.0.0":
-  version: 24.10.2
-  resolution: "puppeteer-core@npm:24.10.2"
+  version: 24.11.2
+  resolution: "puppeteer-core@npm:24.11.2"
   dependencies:
     "@puppeteer/browsers": 2.10.5
     chromium-bidi: 5.1.0
     debug: ^4.4.1
-    devtools-protocol: 0.0.1452169
+    devtools-protocol: 0.0.1464554
     typed-query-selector: ^2.12.0
-    ws: ^8.18.2
-  checksum: 72f52c449609a89749aaef1eacdbfbdf089cdafd7b5301dab39d26fd7e328782a56da0b4fa182ae19bb73c470fdf5effed468a0e9d80192515b6eb0b1981b94a
+    ws: ^8.18.3
+  checksum: 2b807605429c99c80188fcb7c3c3c6b4368bcd57f69591f3d4ea5eafdc674fd77c23be681526965c63e3742bd50f672a454364463dc6d101c89d003cb2679939
   languageName: node
   linkType: hard
 

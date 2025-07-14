@@ -54,10 +54,16 @@ import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/Uploa
 import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
 import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
 import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
-import {AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
+import { AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
 import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateToJudgePage';
-import {EventSummaryPage} from '../pages/events/EventSummaryPage.ts';
-import {RefundPage} from '../pages/events/refund/RefundPage.ts';
+import { EventSummaryPage } from '../pages/events/EventSummaryPage.ts';
+import { RefundPage } from '../pages/events/refund/RefundPage.ts';
+import { ManageBarristerPage } from '../pages/events/manage-barrister/ManageBarristerPage';
+import { PrepareForHearingPage } from '../pages/events/prepare-for-hearing/PrepareForHearingPage.ts';
+import { CreateGeneralOrderPage } from '../pages/events/create-general-order/CreateGeneralOrderPage.ts';
+import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage.ts';
+import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage.ts';
+import {CaseListPage} from '../pages/CaseListPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -119,6 +125,12 @@ type CreateFixtures = {
   allocateToJudgePage: AllocateToJudgePage;
   eventSummaryPage: EventSummaryPage;
   refundPage: RefundPage;
+  manageBarristerPage: ManageBarristerPage;
+  prepareForHearingPage: PrepareForHearingPage;
+  createGeneralOrderPage: CreateGeneralOrderPage;
+  contestedSendOrderPage: ContestedSendOrderPage;
+  manageIntervenersPage: ManageIntervenerPage;
+  caseListPage: CaseListPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -289,5 +301,23 @@ export const test = base.extend<CreateFixtures>({
   },
   refundPage: async ({ page }, use) => {
     await use(new RefundPage(page));
+  },
+  manageBarristerPage: async ({ page }, use) => {
+    await use(new ManageBarristerPage(page));
+  },
+  prepareForHearingPage: async ({ page }, use) => {
+    await use(new PrepareForHearingPage(page));
+  },
+  createGeneralOrderPage: async ({ page }, use) => {
+    await use(new CreateGeneralOrderPage(page));
+  },
+  contestedSendOrderPage: async ({ page }, use) => {
+    await use(new ContestedSendOrderPage(page));
+  },
+  manageIntervenersPage: async ({ page }, use) => {
+    await use(new ManageIntervenerPage(page, solicitorDetailsHelper));
+  },
+  caseListPage: async ({ page }, use) => {
+    await use(new CaseListPage(page));
   }
 });
