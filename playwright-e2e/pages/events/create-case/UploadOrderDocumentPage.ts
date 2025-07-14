@@ -99,11 +99,12 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
         const radioOption = uploadJointD81 ? 'Yes' : 'No'; 
         const optionToSelect = this.jointD81Radio.getByLabel(radioOption);
         await optionToSelect.check();
+        await this.page.waitForTimeout(3000); //flaky rate limiting issue with D81 upload
         if(uploadJointD81) {
             await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadJointD81, './playwright-e2e/resources/file/test.pdf');
         } else {
-            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadD81Applicant, './playwright-e2e/resources/file/test.pdf');
-            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadD81Respondent, './playwright-e2e/resources/file/test.pdf');
+            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadD81Applicant, './playwright-e2e/resources/file/test.pdf', 5, 5000);
+            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadD81Respondent, './playwright-e2e/resources/file/test.pdf',5, 5000);
         }
     }
 }

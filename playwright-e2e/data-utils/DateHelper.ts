@@ -68,16 +68,29 @@ export class DateHelper {
     /**
      * Returns a date 12 weeks and 1 day later than today, formatted as "d MMM yyyy" (e.g. "6 Aug 2025").
      *
-     * @returns Formatted date string for 12 weeks and 1 day later.
+     * @returns Formatted date string for 12 weeks
      */
-    static getFormattedDateTwelveWeeksAndOneDayLater(): string {
+    static getFormattedDateTwelveWeeksLater(): string {
         const twelveWeeksAndOneDayLater = new Date();
-        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7 + 1);
+        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7);
 
         return twelveWeeksAndOneDayLater
             .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
             .replace(/\b([A-Za-z]{4,})\b/g, m => m.slice(0, 3));
     };
+
+    /**
+     * Returns a date 12 weeks and 1 day later than today, formatted as "d MMM yyyy" (e.g. "6 Aug 2025").
+     *
+     * @returns Formatted date string for 12 weeks
+     */
+    static getUnFormattedDateTwelveWeeksLater(): string {
+        const twelveWeeksAndOneDayLater = new Date();
+        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7);
+
+        return twelveWeeksAndOneDayLater
+          .toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  };
 
     /**
      * Returns today's date formatted as an array of strings [year, month, day].
