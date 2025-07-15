@@ -180,6 +180,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage Interveners",
     ccdCallback: "manageInterveners"
   },
+  referToJudgeApplication: {
+    listItem: "Refer to Judge (Application)",
+    ccdCallback: "FR_generalApplicationReferToJudge"
+  },
 
   // Common events
   createFlag: CommonEvents.createFlag,
