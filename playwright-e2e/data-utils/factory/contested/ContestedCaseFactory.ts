@@ -199,9 +199,10 @@ export class ContestedCaseFactory {
   }
 
   static async progressToUploadDraftOrder({
-    isFormA,
+    isFormA, hearingDate
   }: {
     isFormA: boolean;
+    hearingDate?: string;
   }): Promise<string> {
     const caseId = isFormA
       ? await this.createBaseContestedFormA()
@@ -211,7 +212,11 @@ export class ContestedCaseFactory {
       await ContestedEventApi.solicitorSubmitFormACase(caseId);
     }
 
-    await this.caseworkerListForHearing12To16WeeksFromNow(caseId, isFormA);
+    if (hearingDate) {
+      await this.caseworkerListForHearing(caseId, isFormA, hearingDate);
+    } else {
+      await this.caseworkerListForHearing12To16WeeksFromNow(caseId, isFormA);
+    }
 
     return caseId;
   }
@@ -231,6 +236,31 @@ export class ContestedCaseFactory {
     isFormACase: boolean = true
   ): Promise<void> {
     const { currentDate, hearingDate } =
+      await DateHelper.getFormattedHearingDate();
+
+    if (isFormACase) {
+      await ContestedEventApi.caseWorkerProgressFormACaseToListing(
+        caseId,
+        currentDate
+      );
+    } else {
+      await ContestedEventApi.caseWorkerProgressPaperCaseToListing(
+        caseId,
+        currentDate
+      );
+    }
+
+    const listForHearingDataModifications = LIST_FOR_HEARING(hearingDate);
+
+    await ContestedEventApi.listCaseForHearing(caseId, listForHearingDataModifications);
+  }
+
+  private static async caseworkerListForHearing(
+    caseId: string,
+    isFormACase: boolean = true,
+    hearingDate: string
+  ): Promise<void> {
+    const { currentDate } =
       await DateHelper.getFormattedHearingDate();
 
     if (isFormACase) {

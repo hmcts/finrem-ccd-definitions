@@ -180,7 +180,7 @@ test.describe('Contested - Process Order', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true, hearingDate: '2025-10-07' });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -221,7 +221,7 @@ test.describe('Contested - Process Order', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false, hearingDate: '2025-10-07' });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -284,7 +284,7 @@ test.describe('Contested - Process Order', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false, hearingDate: '2025-10-07' });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
