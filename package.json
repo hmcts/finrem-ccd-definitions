@@ -64,6 +64,8 @@
     "test:debug": "NODE_TLS_REJECT_UNAUTHORIZED=0 TESTS_FOR_ACCESSIBILITY='false' codeceptjs run-multiple parallel --steps --verbose -c test/functional/codecept.conf.js --grep @debug --reporter mochawesome",
     "test-crossbrowser-e2e": "TESTS_FOR_CROSS_BROWSER='true' codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} --plugins retryFailedStep --steps -c test/functional/saucelabs.conf.js --grep @crossbrowser --reporter mochawesome",
     "test:crossbrowser": "./bin/run-crossbrowser-tests.sh",
+    "create-contested": "yarn playwright test --grep=\"Contested Tab Verification\" --project=chromium",
+    "create-consented": "yarn playwright test --grep=\"Consented Tab Verification\" --project=chromium",
     "start": "node index.js",
     "sonar-scan": "node_modules/sonar-scanner/bin/sonar-scanner",
     "generate-excel-preview-contested-local": "FR_ENV=preview CCD_DEF_COS_URL=http://finrem-ccd-definitions-pr-1471-finrem-cos CCD_DEF_CCD_URL=http://finrem-ccd-definitions-pr-1471-ccd-data-store-api CCD_DEF_AAC_URL=http://finrem-ccd-definitions-pr-1471-aac-manage-case-assignment EXCLUDE='*-prod.json' yarn run generate-excel-contested",
