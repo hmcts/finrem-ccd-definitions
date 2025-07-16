@@ -1,0 +1,179 @@
+--- scratch_3.json	2025-07-16 17:21:23
++++ scratch_1.json	2025-07-16 17:20:40
+@@ -81,7 +81,7 @@
+   "orderSummary": {
+     "Fees": [
+       {
+-        "id": "1ee09b38-d6f0-4674-b153-ae240bc3054e",
++        "id": "6cfa2b04-6298-4e63-9c08-4a0008478b95",
+         "value": {
+           "FeeCode": "FEE0229",
+           "FeeAmount": "31300",
+@@ -129,26 +129,12 @@
+   "rSolicitorFirm": "Mnt Doom Sols",
+   "rSolicitorName": "Sauron",
+   "soleTraderName": "Wizard Divorce",
+-  "workingHearing": {
+-    "hearingDate": null,
+-    "hearingMode": null,
+-    "hearingTime": null,
+-    "hearingType": null,
+-    "wasMigrated": null,
+-    "hearingNoticePrompt": null,
+-    "hearingTimeEstimate": null,
+-    "additionalHearingDocs": [],
+-    "hearingCourtSelection": {},
+-    "additionalHearingDocPrompt": null,
+-    "additionalHearingInformation": null,
+-    "partiesOnCaseMultiSelectList": null
+-  },
+   "applicantFMName": "Frodo",
+   "authorisation2b": "Boss",
+   "dateOfSepration": "2022-01-01",
+   "hearingTabItems": [
+     {
+-      "id": "150158b5-06f1-4107-9c28-ccd9ee2f835f",
++      "id": "a2b156a0-8f14-4467-9958-3f8fa40e76bb",
+       "value": {
+         "tabDateTime": "05 May 2029 13:00",
+         "tabAttendance": "In Person",
+@@ -157,7 +143,7 @@
+         "tabCourtSelection": "Coventry Combined Court Centre",
+         "tabHearingDocuments": [
+           {
+-            "id": "e1ce2bd6-ad68-4602-b03a-9c3506297d36",
++            "id": "1c042bb6-0de8-47c5-9785-af71f0f78b57",
+             "value": {
+               "category_id": "hearingNotices",
+               "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/e6da9925-f96d-4ac9-acd4-a6541bcaf33a",
+@@ -250,7 +236,6 @@
+   },
+   "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
+   "hearing_regionList": "midlands",
+-  "mhMigrationVersion": null,
+   "pfdNcdrCoverLetter": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/b85a3d9b-9194-42c1-94f5-7c12960422d1",
+     "upload_timestamp": "2025-07-16T16:10:32.396681",
+@@ -261,10 +246,6 @@
+   "birminghamCourtList": "FR_birmingham_hc_list_2",
+   "consentOrderFRCName": "Chesterfield County Court",
+   "divorceStageReached": "Petition Issued",
+-  "int1HearingTabItems": [],
+-  "int2HearingTabItems": [],
+-  "int3HearingTabItems": [],
+-  "int4HearingTabItems": [],
+   "applicantInRefugeTab": "Yes",
+   "applicantRepresented": "Yes",
+   "consentOrderFRCEmail": "FRCNottingham@justice.gov.uk",
+@@ -285,7 +266,7 @@
+   "applicantSolicitorName": "Bilbo Baggins",
+   "bulkPrintCoverSheetRes": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8365f28b-95f9-4dcf-9c2d-68c0af68f733",
+-    "upload_timestamp": "2025-07-16T16:19:20.660486",
++    "upload_timestamp": "2025-07-16T16:19:20.660486000",
+     "document_filename": "BulkPrintCoverSheet.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8365f28b-95f9-4dcf-9c2d-68c0af68f733/binary"
+   },
+@@ -305,7 +286,7 @@
+       "value": {
+         "bulkprintDocument": {
+           "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d4db4d9a-7aef-4f1f-a5b0-9f491c02036c",
+-          "upload_timestamp": "2025-07-16T16:19:20.660486",
++          "upload_timestamp": "2025-07-16T16:19:20.660486000",
+           "document_filename": "InterimHearingNotice.pdf",
+           "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d4db4d9a-7aef-4f1f-a5b0-9f491c02036c/binary"
+         }
+@@ -322,7 +303,7 @@
+   "showUploadPartyQuestion": "Yes",
+   "applicantHearingTabItems": [
+     {
+-      "id": "118f34e4-a12c-4ec2-9b81-c556ca80ff84",
++      "id": "8e0fb936-65a6-46b1-8b44-9bd914aa4ee5",
+       "value": {
+         "tabDateTime": "05 May 2029 13:00",
+         "tabAttendance": "In Person",
+@@ -331,7 +312,7 @@
+         "tabCourtSelection": "Coventry Combined Court Centre",
+         "tabHearingDocuments": [
+           {
+-            "id": "8dfb0e14-6d3b-42c6-ba29-cb8f9a1b5737",
++            "id": "e1e73653-ac55-4c46-9cc1-641e1325a47c",
+             "value": {
+               "category_id": "hearingNotices",
+               "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/e6da9925-f96d-4ac9-acd4-a6541bcaf33a",
+@@ -365,10 +346,9 @@
+   "detailPotentialAllegation": "Stealing ring",
+   "divorcePetitionIssuedDate": "2025-07-16",
+   "familyMediatorServiceName": "Gandalf the Great Div",
+-  "isListForHearingsMigrated": null,
+   "respondentHearingTabItems": [
+     {
+-      "id": "b9166c66-200a-4563-acd8-296a2017c36d",
++      "id": "649e9830-3393-4e47-ad68-e6fdada039ce",
+       "value": {
+         "tabDateTime": "05 May 2029 13:00",
+         "tabAttendance": "In Person",
+@@ -377,7 +357,7 @@
+         "tabCourtSelection": "Coventry Combined Court Centre",
+         "tabHearingDocuments": [
+           {
+-            "id": "8a9d1f6c-7c42-4fa0-ad8a-b60696da5a93",
++            "id": "51bb7d55-97c4-4bd2-b8c1-638cf393a42c",
+             "value": {
+               "category_id": "hearingNotices",
+               "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/e6da9925-f96d-4ac9-acd4-a6541bcaf33a",
+@@ -395,7 +375,7 @@
+   "specialAssistanceRequired": "N/A",
+   "additionalHearingDocuments": [
+     {
+-      "id": "9083578d-b4d8-42b8-8e30-6ded9d2c0913",
++      "id": "d7ccb888-8f17-4109-8c03-0aa88d10b076",
+       "value": {
+         "additionalHearingDocument": {
+           "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/53264fda-8f01-452e-90c2-2d60319effa4",
+@@ -409,7 +389,7 @@
+   ],
+   "agreedDraftOrderCollection": [
+     {
+-      "id": "64ac5afa-7326-45f0-a237-3e52b6f65d75",
++      "id": "17f3e89b-644d-48ae-82fa-3cdf4cdfe5d1",
+       "value": {
+         "draftOrder": {
+           "category_id": "approvedOrders",
+@@ -522,7 +502,7 @@
+   "addToComplexityListOfCourts": "falseNo",
+   "draftOrdersReviewCollection": [
+     {
+-      "id": "1ceedc50-e611-444d-a291-5ba265363e6a",
++      "id": "d0c322de-9f06-4dc5-931f-32a7a459c485",
+       "value": {
+         "hearingDate": "2025-10-08",
+         "hearingTime": "10:00",
+@@ -531,7 +511,7 @@
+         "psaDocReviewCollection": [],
+         "draftOrderDocReviewCollection": [
+           {
+-            "id": "13f880ae-3cb1-4baa-9491-8bd0ef81c0fb",
++            "id": "d281d37f-ffc5-4d17-b67f-4145a73b7ee7",
+             "value": {
+               "finalOrder": "No",
+               "attachments": [],
+@@ -575,7 +555,6 @@
+     "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]"
+   },
+   "applicantAddressConfidential": "Yes",
+-  "isGeneralApplicationMigrated": null,
+   "natureOfApplicationChecklist": [
+     "Maintenance Pending Suit"
+   ],
+@@ -592,9 +571,7 @@
+     "document_filename": "1.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c633c6b-5c02-4ba2-90b4-009f1cae6566/binary"
+   },
+-  "isListForInterimHearingsMigrated": null,
+   "additionalInformationAboutHearing": "This is additional information about the hearing",
+   "applicantSolicitorConsentForEmails": "Yes",
+-  "isDirectionDetailsCollectionMigrated": null,
+   "allocatedToBeHeardAtHighCourtJudgeLevel": "No"
+ }
+\ No newline at end of file

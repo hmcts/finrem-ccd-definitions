@@ -1,0 +1,462 @@
+--- scratch_2.json	2025-07-16 17:21:04
++++ scratch_3.json	2025-07-16 17:21:23
+@@ -54,143 +54,6 @@
+           ]
+         }
+       }
+-    },
+-    {
+-      "id": "db0e9fa3-f710-438c-b737-e587e1a0e30e",
+-      "value": {
+-        "hearingDate": "2025-10-08",
+-        "hearingMode": null,
+-        "hearingTime": "10:00",
+-        "hearingType": "First Directions Appointment (FDA)",
+-        "wasMigrated": "Yes",
+-        "hearingNoticePrompt": null,
+-        "hearingTimeEstimate": "1 hour",
+-        "additionalHearingDocs": [
+-          {
+-            "id": "8b28af62-0796-4dd7-a8a5-9521282e188d",
+-            "value": {
+-              "category_id": "systemDuplicates",
+-              "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c633c6b-5c02-4ba2-90b4-009f1cae6566",
+-              "upload_timestamp": "2025-07-16T16:10:32.396681",
+-              "document_filename": "1.pdf",
+-              "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c633c6b-5c02-4ba2-90b4-009f1cae6566/binary"
+-            }
+-          }
+-        ],
+-        "hearingCourtSelection": {
+-          "region": "midlands",
+-          "midlandsList": "nottingham",
+-          "nottinghamCourtList": "FR_s_NottinghamList_1"
+-        },
+-        "additionalHearingDocPrompt": null,
+-        "additionalHearingInformation": "This is additional information about the hearing",
+-        "partiesOnCaseMultiSelectList": {
+-          "value": [
+-            {
+-              "code": "[APPSOLICITOR]",
+-              "label": "Applicant - Frodo Baggins"
+-            },
+-            {
+-              "code": "[RESPSOLICITOR]",
+-              "label": "Respondent - Smeagol Gollum"
+-            }
+-          ],
+-          "list_items": [
+-            {
+-              "code": "[APPSOLICITOR]",
+-              "label": "Applicant - Frodo Baggins"
+-            },
+-            {
+-              "code": "[RESPSOLICITOR]",
+-              "label": "Respondent - Smeagol Gollum"
+-            }
+-          ]
+-        }
+-      }
+-    },
+-    {
+-      "id": "2bf24f20-b0cf-4d0f-8b4c-4a6492bf6bc6",
+-      "value": {
+-        "hearingDate": "2029-09-09",
+-        "hearingMode": null,
+-        "hearingTime": "13:00",
+-        "hearingType": "Financial Dispute Resolution (FDR)",
+-        "wasMigrated": "Yes",
+-        "hearingNoticePrompt": null,
+-        "hearingTimeEstimate": "13 hours",
+-        "additionalHearingDocs": [],
+-        "hearingCourtSelection": {
+-          "region": "midlands",
+-          "midlandsList": "birmingham",
+-          "birminghamCourtList": "FR_birmingham_hc_list_1"
+-        },
+-        "additionalHearingDocPrompt": null,
+-        "additionalHearingInformation": "asdasdasdsa",
+-        "partiesOnCaseMultiSelectList": {
+-          "value": [
+-            {
+-              "code": "[APPSOLICITOR]",
+-              "label": "Applicant - Frodo Baggins"
+-            },
+-            {
+-              "code": "[RESPSOLICITOR]",
+-              "label": "Respondent - Smeagol Gollum"
+-            }
+-          ],
+-          "list_items": [
+-            {
+-              "code": "[APPSOLICITOR]",
+-              "label": "Applicant - Frodo Baggins"
+-            },
+-            {
+-              "code": "[RESPSOLICITOR]",
+-              "label": "Respondent - Smeagol Gollum"
+-            }
+-          ]
+-        }
+-      }
+-    },
+-    {
+-      "id": "ee650391-bfd1-4606-aeba-4ddff1eb156b",
+-      "value": {
+-        "hearingDate": "2024-01-01",
+-        "hearingMode": null,
+-        "hearingTime": "10:00",
+-        "hearingType": "Directions (DIR)",
+-        "wasMigrated": "Yes",
+-        "hearingNoticePrompt": null,
+-        "hearingTimeEstimate": "1 hour",
+-        "additionalHearingDocs": [],
+-        "hearingCourtSelection": {
+-          "region": "northwest",
+-          "northWestList": "liverpool",
+-          "liverpoolCourtList": "FR_liverpool_hc_list_2"
+-        },
+-        "additionalHearingDocPrompt": null,
+-        "additionalHearingInformation": null,
+-        "partiesOnCaseMultiSelectList": {
+-          "value": [
+-            {
+-              "code": "[APPSOLICITOR]",
+-              "label": "Applicant - Frodo Baggins"
+-            },
+-            {
+-              "code": "[RESPSOLICITOR]",
+-              "label": "Respondent - Smeagol Gollum"
+-            }
+-          ],
+-          "list_items": [
+-            {
+-              "code": "[APPSOLICITOR]",
+-              "label": "Applicant - Frodo Baggins"
+-            },
+-            {
+-              "code": "[RESPSOLICITOR]",
+-              "label": "Respondent - Smeagol Gollum"
+-            }
+-          ]
+-        }
+-      }
+     }
+   ],
+   "HWFNumber": "HWF1234",
+@@ -218,7 +81,7 @@
+   "orderSummary": {
+     "Fees": [
+       {
+-        "id": "776d99ee-7a28-4a01-8b0c-ad363fa79ed5",
++        "id": "1ee09b38-d6f0-4674-b153-ae240bc3054e",
+         "value": {
+           "FeeCode": "FEE0229",
+           "FeeAmount": "31300",
+@@ -266,51 +129,27 @@
+   "rSolicitorFirm": "Mnt Doom Sols",
+   "rSolicitorName": "Sauron",
+   "soleTraderName": "Wizard Divorce",
+-  "workingHearing": {},
++  "workingHearing": {
++    "hearingDate": null,
++    "hearingMode": null,
++    "hearingTime": null,
++    "hearingType": null,
++    "wasMigrated": null,
++    "hearingNoticePrompt": null,
++    "hearingTimeEstimate": null,
++    "additionalHearingDocs": [],
++    "hearingCourtSelection": {},
++    "additionalHearingDocPrompt": null,
++    "additionalHearingInformation": null,
++    "partiesOnCaseMultiSelectList": null
++  },
+   "applicantFMName": "Frodo",
+   "authorisation2b": "Boss",
+   "dateOfSepration": "2022-01-01",
+   "hearingTabItems": [
+     {
+-      "id": "6d046eed-4a55-483d-bcd4-ee104330bd2c",
+-      "value": {
+-        "tabDateTime": "01 Jan 2024 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "Directions (DIR)",
+-        "tabTimeEstimate": "1 hour",
+-        "tabCourtSelection": "Chester Civil And Family Justice Centre",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": " "
+-      }
+-    },
+-    {
+-      "id": "113acc06-bedc-48cd-a38e-899c28cb5203",
++      "id": "150158b5-06f1-4107-9c28-ccd9ee2f835f",
+       "value": {
+-        "tabDateTime": "08 Oct 2025 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "First Directions Appointment (FDA)",
+-        "tabTimeEstimate": "1 hour",
+-        "tabCourtSelection": "Nottingham County Court And Family Court",
+-        "tabHearingDocuments": [
+-          {
+-            "id": "cf425810-32bf-4ec7-99da-1e3b110d4ccf",
+-            "value": {
+-              "category_id": "hearingNotices",
+-              "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c633c6b-5c02-4ba2-90b4-009f1cae6566",
+-              "upload_timestamp": "2025-07-16T16:10:32.396681",
+-              "document_filename": "1.pdf",
+-              "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c633c6b-5c02-4ba2-90b4-009f1cae6566/binary"
+-            }
+-          }
+-        ],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "This is additional information about the hearing"
+-      }
+-    },
+-    {
+-      "id": "1e9e03e6-d05a-4c26-9f58-a30f465debd3",
+-      "value": {
+         "tabDateTime": "05 May 2029 13:00",
+         "tabAttendance": "In Person",
+         "tabHearingType": "Maintenance Pending Suit (MPS)",
+@@ -318,7 +157,7 @@
+         "tabCourtSelection": "Coventry Combined Court Centre",
+         "tabHearingDocuments": [
+           {
+-            "id": "73b15406-0c36-4147-8351-c7a5d715bab6",
++            "id": "e1ce2bd6-ad68-4602-b03a-9c3506297d36",
+             "value": {
+               "category_id": "hearingNotices",
+               "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/e6da9925-f96d-4ac9-acd4-a6541bcaf33a",
+@@ -331,19 +170,6 @@
+         "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+         "tabAdditionalInformation": " "
+       }
+-    },
+-    {
+-      "id": "ecb087d0-63dc-4b0a-9ed3-0f87b7f5b022",
+-      "value": {
+-        "tabDateTime": "09 Sept 2029 13:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "Financial Dispute Resolution (FDR)",
+-        "tabTimeEstimate": "13 hours",
+-        "tabCourtSelection": "Birmingham Civil And Family Justice Centre",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "asdasdasdsa"
+-      }
+     }
+   ],
+   "interimHearings": [
+@@ -424,7 +250,7 @@
+   },
+   "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
+   "hearing_regionList": "midlands",
+-  "mhMigrationVersion": "1",
++  "mhMigrationVersion": null,
+   "pfdNcdrCoverLetter": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/b85a3d9b-9194-42c1-94f5-7c12960422d1",
+     "upload_timestamp": "2025-07-16T16:10:32.396681",
+@@ -496,45 +322,8 @@
+   "showUploadPartyQuestion": "Yes",
+   "applicantHearingTabItems": [
+     {
+-      "id": "7044f971-a9af-447f-9951-6cb08b699406",
++      "id": "118f34e4-a12c-4ec2-9b81-c556ca80ff84",
+       "value": {
+-        "tabDateTime": "01 Jan 2024 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "Directions (DIR)",
+-        "tabTimeEstimate": "1 hour",
+-        "tabCourtSelection": "Chester Civil And Family Justice Centre",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": " "
+-      }
+-    },
+-    {
+-      "id": "7f9ea60e-8e40-43eb-9fca-246ee0ba8f84",
+-      "value": {
+-        "tabDateTime": "08 Oct 2025 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "First Directions Appointment (FDA)",
+-        "tabTimeEstimate": "1 hour",
+-        "tabCourtSelection": "Nottingham County Court And Family Court",
+-        "tabHearingDocuments": [
+-          {
+-            "id": "37d17c3f-43fe-45b8-954b-2d8267050657",
+-            "value": {
+-              "category_id": "hearingNotices",
+-              "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c633c6b-5c02-4ba2-90b4-009f1cae6566",
+-              "upload_timestamp": "2025-07-16T16:10:32.396681",
+-              "document_filename": "1.pdf",
+-              "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c633c6b-5c02-4ba2-90b4-009f1cae6566/binary"
+-            }
+-          }
+-        ],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "This is additional information about the hearing"
+-      }
+-    },
+-    {
+-      "id": "b7b80a42-96f5-42e1-912f-bd7fc9cafb20",
+-      "value": {
+         "tabDateTime": "05 May 2029 13:00",
+         "tabAttendance": "In Person",
+         "tabHearingType": "Maintenance Pending Suit (MPS)",
+@@ -542,7 +331,7 @@
+         "tabCourtSelection": "Coventry Combined Court Centre",
+         "tabHearingDocuments": [
+           {
+-            "id": "c6374789-8c02-4e36-94d9-a3d8aa21a9de",
++            "id": "8dfb0e14-6d3b-42c6-ba29-cb8f9a1b5737",
+             "value": {
+               "category_id": "hearingNotices",
+               "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/e6da9925-f96d-4ac9-acd4-a6541bcaf33a",
+@@ -555,19 +344,6 @@
+         "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+         "tabAdditionalInformation": " "
+       }
+-    },
+-    {
+-      "id": "2a35f22c-8bbe-4a27-a7a8-02ea0a5f9538",
+-      "value": {
+-        "tabDateTime": "09 Sept 2029 13:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "Financial Dispute Resolution (FDR)",
+-        "tabTimeEstimate": "13 hours",
+-        "tabCourtSelection": "Birmingham Civil And Family Justice Centre",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "asdasdasdsa"
+-      }
+     }
+   ],
+   "applicantResideOutsideUK": "No",
+@@ -589,47 +365,10 @@
+   "detailPotentialAllegation": "Stealing ring",
+   "divorcePetitionIssuedDate": "2025-07-16",
+   "familyMediatorServiceName": "Gandalf the Great Div",
+-  "isListForHearingsMigrated": "Yes",
++  "isListForHearingsMigrated": null,
+   "respondentHearingTabItems": [
+     {
+-      "id": "44613adc-4e17-4687-aef7-a44e2bf70597",
+-      "value": {
+-        "tabDateTime": "01 Jan 2024 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "Directions (DIR)",
+-        "tabTimeEstimate": "1 hour",
+-        "tabCourtSelection": "Chester Civil And Family Justice Centre",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": " "
+-      }
+-    },
+-    {
+-      "id": "b2f18a95-0b6d-43f4-b331-49fa4287e660",
+-      "value": {
+-        "tabDateTime": "08 Oct 2025 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "First Directions Appointment (FDA)",
+-        "tabTimeEstimate": "1 hour",
+-        "tabCourtSelection": "Nottingham County Court And Family Court",
+-        "tabHearingDocuments": [
+-          {
+-            "id": "93a425c4-8bbb-44e9-89d4-2149e4013d58",
+-            "value": {
+-              "category_id": "hearingNotices",
+-              "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c633c6b-5c02-4ba2-90b4-009f1cae6566",
+-              "upload_timestamp": "2025-07-16T16:10:32.396681",
+-              "document_filename": "1.pdf",
+-              "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c633c6b-5c02-4ba2-90b4-009f1cae6566/binary"
+-            }
+-          }
+-        ],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "This is additional information about the hearing"
+-      }
+-    },
+-    {
+-      "id": "c6ed8554-c101-4b0e-b0f2-5428c4752c28",
++      "id": "b9166c66-200a-4563-acd8-296a2017c36d",
+       "value": {
+         "tabDateTime": "05 May 2029 13:00",
+         "tabAttendance": "In Person",
+@@ -638,7 +377,7 @@
+         "tabCourtSelection": "Coventry Combined Court Centre",
+         "tabHearingDocuments": [
+           {
+-            "id": "fdffd3aa-587a-4bcf-b644-4b8af46706e7",
++            "id": "8a9d1f6c-7c42-4fa0-ad8a-b60696da5a93",
+             "value": {
+               "category_id": "hearingNotices",
+               "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/e6da9925-f96d-4ac9-acd4-a6541bcaf33a",
+@@ -651,25 +390,12 @@
+         "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+         "tabAdditionalInformation": " "
+       }
+-    },
+-    {
+-      "id": "d95ed470-b6c9-458a-85da-618d1bc45117",
+-      "value": {
+-        "tabDateTime": "09 Sept 2029 13:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "Financial Dispute Resolution (FDR)",
+-        "tabTimeEstimate": "13 hours",
+-        "tabCourtSelection": "Birmingham Civil And Family Justice Centre",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "asdasdasdsa"
+-      }
+     }
+   ],
+   "specialAssistanceRequired": "N/A",
+   "additionalHearingDocuments": [
+     {
+-      "id": "ba1f6e91-2534-4f07-a213-006ccd70c375",
++      "id": "9083578d-b4d8-42b8-8e30-6ded9d2c0913",
+       "value": {
+         "additionalHearingDocument": {
+           "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/53264fda-8f01-452e-90c2-2d60319effa4",
+@@ -683,7 +409,7 @@
+   ],
+   "agreedDraftOrderCollection": [
+     {
+-      "id": "3ebc5be2-65af-46ac-b510-41cb585ba9ec",
++      "id": "64ac5afa-7326-45f0-a237-3e52b6f65d75",
+       "value": {
+         "draftOrder": {
+           "category_id": "approvedOrders",
+@@ -796,7 +522,7 @@
+   "addToComplexityListOfCourts": "falseNo",
+   "draftOrdersReviewCollection": [
+     {
+-      "id": "458d9275-ea31-4a3b-ab56-a39233c6a469",
++      "id": "1ceedc50-e611-444d-a291-5ba265363e6a",
+       "value": {
+         "hearingDate": "2025-10-08",
+         "hearingTime": "10:00",
+@@ -805,7 +531,7 @@
+         "psaDocReviewCollection": [],
+         "draftOrderDocReviewCollection": [
+           {
+-            "id": "c3cb7d3a-c636-4514-872d-90f2cb5a7181",
++            "id": "13f880ae-3cb1-4baa-9491-8bd0ef81c0fb",
+             "value": {
+               "finalOrder": "No",
+               "attachments": [],
+@@ -866,9 +592,9 @@
+     "document_filename": "1.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c633c6b-5c02-4ba2-90b4-009f1cae6566/binary"
+   },
+-  "isListForInterimHearingsMigrated": "Yes",
++  "isListForInterimHearingsMigrated": null,
+   "additionalInformationAboutHearing": "This is additional information about the hearing",
+   "applicantSolicitorConsentForEmails": "Yes",
+-  "isDirectionDetailsCollectionMigrated": "Yes",
++  "isDirectionDetailsCollectionMigrated": null,
+   "allocatedToBeHeardAtHighCourtJudgeLevel": "No"
+ }
+\ No newline at end of file
