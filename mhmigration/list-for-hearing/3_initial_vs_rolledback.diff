@@ -1,0 +1,151 @@
+--- scratch_3.json	2025-07-16 12:29:31
++++ scratch_1.json	2025-07-16 12:27:54
+@@ -1,18 +1,17 @@
+ {
+   "formC": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/62d3a9d6-d725-413c-ab84-7891554f3e52",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674",
++    "upload_timestamp": "2025-07-16T11:27:01.754674000",
+     "document_filename": "Form-C.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/62d3a9d6-d725-413c-ab84-7891554f3e52/binary"
+   },
+   "formG": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ce1cab1d-8851-4942-8285-c0099c403db6",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674",
++    "upload_timestamp": "2025-07-16T11:27:01.754674000",
+     "document_filename": "Form-G.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ce1cab1d-8851-4942-8285-c0099c403db6/binary"
+   },
+   "isAdmin": "Yes",
+-  "hearings": [],
+   "caseFlags": {
+     "details": [],
+     "partyName": "Case",
+@@ -67,22 +66,7 @@
+   "netValueOfHome": "249999",
+   "rSolicitorFirm": "FinRem-2-Org",
+   "rSolicitorName": "Respondent Solicitor Name",
+-  "workingHearing": {
+-    "hearingDate": null,
+-    "hearingMode": null,
+-    "hearingTime": null,
+-    "hearingType": null,
+-    "wasMigrated": null,
+-    "hearingNoticePrompt": null,
+-    "hearingTimeEstimate": null,
+-    "additionalHearingDocs": [],
+-    "hearingCourtSelection": {},
+-    "additionalHearingDocPrompt": null,
+-    "additionalHearingInformation": null,
+-    "partiesOnCaseMultiSelectList": null
+-  },
+   "applicantFMName": "Frodo",
+-  "hearingTabItems": [],
+   "midlandsFRCList": "birmingham",
+   "rSolicitorEmail": "fr_respondent_solicitor1@mailinator.com",
+   "rSolicitorPhone": "789012345",
+@@ -102,7 +86,7 @@
+   "civilPartnership": "No",
+   "copyOfPaperFormA": [
+     {
+-      "id": "be04cded-d3ce-45ba-a801-5cad028c73d3",
++      "id": "2362b7c9-8ea5-4da2-b238-418cc0b8004f",
+       "value": {
+         "typeOfDocument": "Copy of paper form A",
+         "uploadedDocument": {
+@@ -116,7 +100,6 @@
+   ],
+   "paperApplication": "Yes",
+   "respondentFMName": "Smeagol",
+-  "workingHearingId": null,
+   "divorceCaseNumber": "LV18D81234",
+   "fastTrackDecision": "No",
+   "rSolicitorAddress": {
+@@ -130,10 +113,9 @@
+   },
+   "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
+   "hearing_regionList": "midlands",
+-  "mhMigrationVersion": null,
+   "pfdNcdrCoverLetter": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8f9b33b3-8251-4799-bb66-b5571320e587",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674",
++    "upload_timestamp": "2025-07-16T11:27:01.754674000",
+     "document_filename": "PfdNcdrCoverLetter.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8f9b33b3-8251-4799-bb66-b5571320e587/binary"
+   },
+@@ -141,10 +123,6 @@
+   "birminghamCourtList": "FR_birmingham_hc_list_2",
+   "consentOrderFRCName": "Coventry Combined Court Centre",
+   "divorceStageReached": "Decree Nisi",
+-  "int1HearingTabItems": [],
+-  "int2HearingTabItems": [],
+-  "int3HearingTabItems": [],
+-  "int4HearingTabItems": [],
+   "applicantInRefugeTab": "Yes",
+   "applicantRepresented": "Yes",
+   "consentOrderFRCEmail": "FRCBirmingham@justice.gov.uk",
+@@ -160,13 +138,13 @@
+   "applicantSolicitorName": "FinRem-1-Org",
+   "bulkPrintCoverSheetApp": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/cb5e86af-efe9-4e92-9210-692aefcbcecb",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674",
++    "upload_timestamp": "2025-07-16T11:27:01.754674000",
+     "document_filename": "BulkPrintCoverSheet.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/cb5e86af-efe9-4e92-9210-692aefcbcecb/binary"
+   },
+   "bulkPrintCoverSheetRes": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6e6e94e7-0465-4d8b-b9f4-111c8bc6b1d6",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674",
++    "upload_timestamp": "2025-07-16T11:27:01.754674000",
+     "document_filename": "BulkPrintCoverSheet.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6e6e94e7-0465-4d8b-b9f4-111c8bc6b1d6/binary"
+   },
+@@ -185,11 +163,10 @@
+   "hearing_midlandsFRCList": "nottingham",
+   "pfdNcdrComplianceLetter": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ba942378-72a8-4e02-bbba-c89b86b9368c",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674",
++    "upload_timestamp": "2025-07-16T11:27:01.754674000",
+     "document_filename": "PfdNcdrComplianceLetter.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ba942378-72a8-4e02-bbba-c89b86b9368c/binary"
+   },
+-  "applicantHearingTabItems": [],
+   "applicantResideOutsideUK": "No",
+   "expressCaseParticipation": "Does not qualify",
+   "nameOfCourtDivorceCentre": "Paper Case Court",
+@@ -202,13 +179,10 @@
+     "AddressLine2": "",
+     "AddressLine3": ""
+   },
+-  "isListForHearingsMigrated": null,
+-  "respondentHearingTabItems": [],
+   "estimatedAssetsChecklistV2": "underTwoHundredAndFiftyThousandPounds",
+-  "hearingDocumentsCollection": [],
+   "outOfFamilyCourtResolution": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bfb108bb-31a5-453e-9cb1-ca50d5d96967",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674",
++    "upload_timestamp": "2025-07-16T11:27:01.754674000",
+     "document_filename": "OutOfFamilyCourtResolution.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bfb108bb-31a5-453e-9cb1-ca50d5d96967/binary"
+   },
+@@ -231,7 +205,6 @@
+     "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]"
+   },
+   "applicantAddressConfidential": "No",
+-  "isGeneralApplicationMigrated": null,
+   "natureOfApplicationChecklist": [
+     "Maintenance Pending Suit"
+   ],
+@@ -241,11 +214,8 @@
+   "MIAMDomesticViolenceChecklist": [
+     "FR_ms_MIAMDomesticViolenceChecklist_Value_1"
+   ],
+-  "manageHearingsActionSelection": null,
+   "additionalHearingDocumentsOption": "No",
+-  "isListForInterimHearingsMigrated": null,
+   "additionalInformationAboutHearing": "d",
+   "applicantSolicitorConsentForEmails": "Yes",
+-  "isDirectionDetailsCollectionMigrated": null,
+   "allocatedToBeHeardAtHighCourtJudgeLevel": "No"
+ }
+\ No newline at end of file

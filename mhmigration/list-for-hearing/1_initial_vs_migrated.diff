@@ -1,0 +1,223 @@
+--- scratch_1.json	2025-07-16 12:27:54
++++ scratch_2.json	2025-07-16 12:28:52
+@@ -1,17 +1,61 @@
+ {
+   "formC": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/62d3a9d6-d725-413c-ab84-7891554f3e52",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674000",
++    "upload_timestamp": "2025-07-16T11:27:01.754674",
+     "document_filename": "Form-C.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/62d3a9d6-d725-413c-ab84-7891554f3e52/binary"
+   },
+   "formG": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ce1cab1d-8851-4942-8285-c0099c403db6",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674000",
++    "upload_timestamp": "2025-07-16T11:27:01.754674",
+     "document_filename": "Form-G.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ce1cab1d-8851-4942-8285-c0099c403db6/binary"
+   },
+   "isAdmin": "Yes",
++  "hearings": [
++    {
++      "id": "abd47c2f-f254-4a8e-af51-7d2e36ad63ba",
++      "value": {
++        "hearingDate": "2025-05-05",
++        "hearingMode": null,
++        "hearingTime": "10:00",
++        "hearingType": "First Directions Appointment (FDA)",
++        "wasMigrated": "Yes",
++        "hearingNoticePrompt": null,
++        "hearingTimeEstimate": "9 hours",
++        "additionalHearingDocs": [],
++        "hearingCourtSelection": {
++          "region": "midlands",
++          "midlandsList": "nottingham",
++          "nottinghamCourtList": "FR_s_NottinghamList_1"
++        },
++        "additionalHearingDocPrompt": null,
++        "additionalHearingInformation": "d",
++        "partiesOnCaseMultiSelectList": {
++          "value": [
++            {
++              "code": "[APPSOLICITOR]",
++              "label": "Applicant - Frodo Baggins"
++            },
++            {
++              "code": "[RESPSOLICITOR]",
++              "label": "Respondent - Smeagol Gollum"
++            }
++          ],
++          "list_items": [
++            {
++              "code": "[APPSOLICITOR]",
++              "label": "Applicant - Frodo Baggins"
++            },
++            {
++              "code": "[RESPSOLICITOR]",
++              "label": "Respondent - Smeagol Gollum"
++            }
++          ]
++        }
++      }
++    }
++  ],
+   "caseFlags": {
+     "details": [],
+     "partyName": "Case",
+@@ -66,7 +110,23 @@
+   "netValueOfHome": "249999",
+   "rSolicitorFirm": "FinRem-2-Org",
+   "rSolicitorName": "Respondent Solicitor Name",
++  "workingHearing": {},
+   "applicantFMName": "Frodo",
++  "hearingTabItems": [
++    {
++      "id": "5939c69c-57bf-436c-924f-34868b913661",
++      "value": {
++        "tabDateTime": "05 May 2025 10:00",
++        "tabAttendance": "Hearing mode not specified",
++        "tabHearingType": "First Directions Appointment (FDA)",
++        "tabTimeEstimate": "9 hours",
++        "tabCourtSelection": "Nottingham County Court And Family Court",
++        "tabHearingDocuments": [],
++        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
++        "tabAdditionalInformation": "d"
++      }
++    }
++  ],
+   "midlandsFRCList": "birmingham",
+   "rSolicitorEmail": "fr_respondent_solicitor1@mailinator.com",
+   "rSolicitorPhone": "789012345",
+@@ -86,7 +146,7 @@
+   "civilPartnership": "No",
+   "copyOfPaperFormA": [
+     {
+-      "id": "2362b7c9-8ea5-4da2-b238-418cc0b8004f",
++      "id": "20427e7f-8eba-455b-bac5-3de6ee54e9b4",
+       "value": {
+         "typeOfDocument": "Copy of paper form A",
+         "uploadedDocument": {
+@@ -100,6 +160,7 @@
+   ],
+   "paperApplication": "Yes",
+   "respondentFMName": "Smeagol",
++  "workingHearingId": null,
+   "divorceCaseNumber": "LV18D81234",
+   "fastTrackDecision": "No",
+   "rSolicitorAddress": {
+@@ -113,9 +174,10 @@
+   },
+   "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
+   "hearing_regionList": "midlands",
++  "mhMigrationVersion": "1",
+   "pfdNcdrCoverLetter": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8f9b33b3-8251-4799-bb66-b5571320e587",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674000",
++    "upload_timestamp": "2025-07-16T11:27:01.754674",
+     "document_filename": "PfdNcdrCoverLetter.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8f9b33b3-8251-4799-bb66-b5571320e587/binary"
+   },
+@@ -123,6 +185,10 @@
+   "birminghamCourtList": "FR_birmingham_hc_list_2",
+   "consentOrderFRCName": "Coventry Combined Court Centre",
+   "divorceStageReached": "Decree Nisi",
++  "int1HearingTabItems": [],
++  "int2HearingTabItems": [],
++  "int3HearingTabItems": [],
++  "int4HearingTabItems": [],
+   "applicantInRefugeTab": "Yes",
+   "applicantRepresented": "Yes",
+   "consentOrderFRCEmail": "FRCBirmingham@justice.gov.uk",
+@@ -138,13 +204,13 @@
+   "applicantSolicitorName": "FinRem-1-Org",
+   "bulkPrintCoverSheetApp": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/cb5e86af-efe9-4e92-9210-692aefcbcecb",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674000",
++    "upload_timestamp": "2025-07-16T11:27:01.754674",
+     "document_filename": "BulkPrintCoverSheet.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/cb5e86af-efe9-4e92-9210-692aefcbcecb/binary"
+   },
+   "bulkPrintCoverSheetRes": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6e6e94e7-0465-4d8b-b9f4-111c8bc6b1d6",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674000",
++    "upload_timestamp": "2025-07-16T11:27:01.754674",
+     "document_filename": "BulkPrintCoverSheet.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6e6e94e7-0465-4d8b-b9f4-111c8bc6b1d6/binary"
+   },
+@@ -163,10 +229,25 @@
+   "hearing_midlandsFRCList": "nottingham",
+   "pfdNcdrComplianceLetter": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ba942378-72a8-4e02-bbba-c89b86b9368c",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674000",
++    "upload_timestamp": "2025-07-16T11:27:01.754674",
+     "document_filename": "PfdNcdrComplianceLetter.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ba942378-72a8-4e02-bbba-c89b86b9368c/binary"
+   },
++  "applicantHearingTabItems": [
++    {
++      "id": "a4bf8082-ad7e-4ee6-8bd8-83636884100c",
++      "value": {
++        "tabDateTime": "05 May 2025 10:00",
++        "tabAttendance": "Hearing mode not specified",
++        "tabHearingType": "First Directions Appointment (FDA)",
++        "tabTimeEstimate": "9 hours",
++        "tabCourtSelection": "Nottingham County Court And Family Court",
++        "tabHearingDocuments": [],
++        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
++        "tabAdditionalInformation": "d"
++      }
++    }
++  ],
+   "applicantResideOutsideUK": "No",
+   "expressCaseParticipation": "Does not qualify",
+   "nameOfCourtDivorceCentre": "Paper Case Court",
+@@ -179,10 +260,27 @@
+     "AddressLine2": "",
+     "AddressLine3": ""
+   },
++  "isListForHearingsMigrated": "Yes",
++  "respondentHearingTabItems": [
++    {
++      "id": "f3b5646b-8edf-43be-a8b7-b785e80c69eb",
++      "value": {
++        "tabDateTime": "05 May 2025 10:00",
++        "tabAttendance": "Hearing mode not specified",
++        "tabHearingType": "First Directions Appointment (FDA)",
++        "tabTimeEstimate": "9 hours",
++        "tabCourtSelection": "Nottingham County Court And Family Court",
++        "tabHearingDocuments": [],
++        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
++        "tabAdditionalInformation": "d"
++      }
++    }
++  ],
+   "estimatedAssetsChecklistV2": "underTwoHundredAndFiftyThousandPounds",
++  "hearingDocumentsCollection": [],
+   "outOfFamilyCourtResolution": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bfb108bb-31a5-453e-9cb1-ca50d5d96967",
+-    "upload_timestamp": "2025-07-16T11:27:01.754674000",
++    "upload_timestamp": "2025-07-16T11:27:01.754674",
+     "document_filename": "OutOfFamilyCourtResolution.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bfb108bb-31a5-453e-9cb1-ca50d5d96967/binary"
+   },
+@@ -205,6 +303,7 @@
+     "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]"
+   },
+   "applicantAddressConfidential": "No",
++  "isGeneralApplicationMigrated": null,
+   "natureOfApplicationChecklist": [
+     "Maintenance Pending Suit"
+   ],
+@@ -214,8 +313,11 @@
+   "MIAMDomesticViolenceChecklist": [
+     "FR_ms_MIAMDomesticViolenceChecklist_Value_1"
+   ],
++  "manageHearingsActionSelection": null,
+   "additionalHearingDocumentsOption": "No",
++  "isListForInterimHearingsMigrated": null,
+   "additionalInformationAboutHearing": "d",
+   "applicantSolicitorConsentForEmails": "Yes",
++  "isDirectionDetailsCollectionMigrated": "Yes",
+   "allocatedToBeHeardAtHighCourtJudgeLevel": "No"
+ }
+\ No newline at end of file

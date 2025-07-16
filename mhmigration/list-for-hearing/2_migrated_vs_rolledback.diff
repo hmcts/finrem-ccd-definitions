@@ -1,0 +1,168 @@
+--- scratch_2.json	2025-07-16 12:28:52
++++ scratch_3.json	2025-07-16 12:29:31
+@@ -12,50 +12,7 @@
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ce1cab1d-8851-4942-8285-c0099c403db6/binary"
+   },
+   "isAdmin": "Yes",
+-  "hearings": [
+-    {
+-      "id": "abd47c2f-f254-4a8e-af51-7d2e36ad63ba",
+-      "value": {
+-        "hearingDate": "2025-05-05",
+-        "hearingMode": null,
+-        "hearingTime": "10:00",
+-        "hearingType": "First Directions Appointment (FDA)",
+-        "wasMigrated": "Yes",
+-        "hearingNoticePrompt": null,
+-        "hearingTimeEstimate": "9 hours",
+-        "additionalHearingDocs": [],
+-        "hearingCourtSelection": {
+-          "region": "midlands",
+-          "midlandsList": "nottingham",
+-          "nottinghamCourtList": "FR_s_NottinghamList_1"
+-        },
+-        "additionalHearingDocPrompt": null,
+-        "additionalHearingInformation": "d",
+-        "partiesOnCaseMultiSelectList": {
+-          "value": [
+-            {
+-              "code": "[APPSOLICITOR]",
+-              "label": "Applicant - Frodo Baggins"
+-            },
+-            {
+-              "code": "[RESPSOLICITOR]",
+-              "label": "Respondent - Smeagol Gollum"
+-            }
+-          ],
+-          "list_items": [
+-            {
+-              "code": "[APPSOLICITOR]",
+-              "label": "Applicant - Frodo Baggins"
+-            },
+-            {
+-              "code": "[RESPSOLICITOR]",
+-              "label": "Respondent - Smeagol Gollum"
+-            }
+-          ]
+-        }
+-      }
+-    }
+-  ],
++  "hearings": [],
+   "caseFlags": {
+     "details": [],
+     "partyName": "Case",
+@@ -110,23 +67,22 @@
+   "netValueOfHome": "249999",
+   "rSolicitorFirm": "FinRem-2-Org",
+   "rSolicitorName": "Respondent Solicitor Name",
+-  "workingHearing": {},
++  "workingHearing": {
++    "hearingDate": null,
++    "hearingMode": null,
++    "hearingTime": null,
++    "hearingType": null,
++    "wasMigrated": null,
++    "hearingNoticePrompt": null,
++    "hearingTimeEstimate": null,
++    "additionalHearingDocs": [],
++    "hearingCourtSelection": {},
++    "additionalHearingDocPrompt": null,
++    "additionalHearingInformation": null,
++    "partiesOnCaseMultiSelectList": null
++  },
+   "applicantFMName": "Frodo",
+-  "hearingTabItems": [
+-    {
+-      "id": "5939c69c-57bf-436c-924f-34868b913661",
+-      "value": {
+-        "tabDateTime": "05 May 2025 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "First Directions Appointment (FDA)",
+-        "tabTimeEstimate": "9 hours",
+-        "tabCourtSelection": "Nottingham County Court And Family Court",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "d"
+-      }
+-    }
+-  ],
++  "hearingTabItems": [],
+   "midlandsFRCList": "birmingham",
+   "rSolicitorEmail": "fr_respondent_solicitor1@mailinator.com",
+   "rSolicitorPhone": "789012345",
+@@ -146,7 +102,7 @@
+   "civilPartnership": "No",
+   "copyOfPaperFormA": [
+     {
+-      "id": "20427e7f-8eba-455b-bac5-3de6ee54e9b4",
++      "id": "be04cded-d3ce-45ba-a801-5cad028c73d3",
+       "value": {
+         "typeOfDocument": "Copy of paper form A",
+         "uploadedDocument": {
+@@ -174,7 +130,7 @@
+   },
+   "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
+   "hearing_regionList": "midlands",
+-  "mhMigrationVersion": "1",
++  "mhMigrationVersion": null,
+   "pfdNcdrCoverLetter": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/8f9b33b3-8251-4799-bb66-b5571320e587",
+     "upload_timestamp": "2025-07-16T11:27:01.754674",
+@@ -233,21 +189,7 @@
+     "document_filename": "PfdNcdrComplianceLetter.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ba942378-72a8-4e02-bbba-c89b86b9368c/binary"
+   },
+-  "applicantHearingTabItems": [
+-    {
+-      "id": "a4bf8082-ad7e-4ee6-8bd8-83636884100c",
+-      "value": {
+-        "tabDateTime": "05 May 2025 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "First Directions Appointment (FDA)",
+-        "tabTimeEstimate": "9 hours",
+-        "tabCourtSelection": "Nottingham County Court And Family Court",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "d"
+-      }
+-    }
+-  ],
++  "applicantHearingTabItems": [],
+   "applicantResideOutsideUK": "No",
+   "expressCaseParticipation": "Does not qualify",
+   "nameOfCourtDivorceCentre": "Paper Case Court",
+@@ -260,22 +202,8 @@
+     "AddressLine2": "",
+     "AddressLine3": ""
+   },
+-  "isListForHearingsMigrated": "Yes",
+-  "respondentHearingTabItems": [
+-    {
+-      "id": "f3b5646b-8edf-43be-a8b7-b785e80c69eb",
+-      "value": {
+-        "tabDateTime": "05 May 2025 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "First Directions Appointment (FDA)",
+-        "tabTimeEstimate": "9 hours",
+-        "tabCourtSelection": "Nottingham County Court And Family Court",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "d"
+-      }
+-    }
+-  ],
++  "isListForHearingsMigrated": null,
++  "respondentHearingTabItems": [],
+   "estimatedAssetsChecklistV2": "underTwoHundredAndFiftyThousandPounds",
+   "hearingDocumentsCollection": [],
+   "outOfFamilyCourtResolution": {
+@@ -318,6 +246,6 @@
+   "isListForInterimHearingsMigrated": null,
+   "additionalInformationAboutHearing": "d",
+   "applicantSolicitorConsentForEmails": "Yes",
+-  "isDirectionDetailsCollectionMigrated": "Yes",
++  "isDirectionDetailsCollectionMigrated": null,
+   "allocatedToBeHeardAtHighCourtJudgeLevel": "No"
+ }
+\ No newline at end of file
