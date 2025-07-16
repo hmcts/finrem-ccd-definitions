@@ -7,7 +7,7 @@ test.describe('Contested General Application e2e', () => {
     test(
         'Contested - General Application e2e @test',
         { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage }) => {
+        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, referToJudgeApplicationPage, generalApplicationOutcomePage }) => {
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
@@ -25,8 +25,16 @@ test.describe('Contested General Application e2e', () => {
             await createGeneralApplicationPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.createGeneralApplication.listItem);
 
-            // refer general application
-            await caseDetailsPage.selectNextStep(ContestedEvents.referToJudgeApplication);
+            // Refer general application
+            await caseDetailsPage.selectNextStep(ContestedEvents.generalApplicationReferToJudge);
+            await referToJudgeApplicationPage.navigateContinue();
+            await referToJudgeApplicationPage.navigateSubmit();
+
+            // General application outcome
+            await caseDetailsPage.selectNextStep(ContestedEvents.generalApplicationOutcome);
+            await generalApplicationOutcomePage.selectGeneralApplicationOutcome();
+            await generalApplicationOutcomePage.navigateContinue();
+            await generalApplicationOutcomePage.navigateSubmit();
         }
     );
 });
