@@ -75,7 +75,7 @@ test.describe('Contested - Manage Hearings', () => {
 
     test(
         'Contested - Assert validations - Manage Hearings - Pre-Trial Review (PTR)', {
-        tag: []},
+        tag: ['@nightly-dev']},
         async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
 
             // Create and setup case
