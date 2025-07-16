@@ -2378,36 +2378,38 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^24.0.1":
-  version: 24.0.10
-  resolution: "@types/node@npm:24.0.10"
+  version: 24.0.14
+  resolution: "@types/node@npm:24.0.14"
   dependencies:
     undici-types: ~7.8.0
-  checksum: 04e4d11a711a683d6ed71f8db86b35035771ee9c1f110cb904ca67454d3478f19c71f1f0ccd0ba5350e5ce63bea70d08c569f798f6f5a5d2a1d05c038f1f729f
+  checksum: 3f52217f2daeddfff88d9998e4bf3896cfe8c55514cb877a4309028c200a31a41c812275b529e4d1a2c6b62c17196c02f91b7d61267c16fb8e1f940b14d04316
   languageName: node
   linkType: hard
 
 "@types/node@npm:^20.1.0, @types/node@npm:^20.11.30":
-  version: 20.19.4
-  resolution: "@types/node@npm:20.19.4"
+  version: 20.19.8
+  resolution: "@types/node@npm:20.19.8"
   dependencies:
     undici-types: ~6.21.0
-  checksum: affe7c1d01d3067c2e1ef923a7970ed047124c6b50573e6d1191d8cd824992b460514b4d90a389a87632e1ea64a99d8998946343d0d8ecb38b302cacf172f0d8
+  checksum: 862caed3586551aa8705d83802d3bf7137b849e945509af19d18f9b88ead44a2e05b42fa11da1ce7029d86f4a6047fc2e53d3179c71e8d1a45707f30933a7f7e
   languageName: node
   linkType: hard
 
 "@types/node@npm:^22.0.0":
-  version: 22.16.0
-  resolution: "@types/node@npm:22.16.0"
+  version: 22.16.4
+  resolution: "@types/node@npm:22.16.4"
   dependencies:
     undici-types: ~6.21.0
-  checksum: fccc24b9cfa95e165fb6a22871c812c9b021b0c686ced9b1572e1bd79ac3f8c78b36c04edfb2c96e10a8a1247c026d1dcad91c0c3e62dccf414057a37bac729d
+  checksum: 8a8cb8468187845c77403a41e98fe0fdd148741456382eb01bfaee6431303111eae5f2716ce9069b884518862ab96bcc04adf1c90a10ff35e88db19732b383c0
   languageName: node
   linkType: hard
 
-"@types/otplib@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "@types/otplib@npm:7.0.0"
-  checksum: 1fc4f3ac094a765e3e90c439739f01cc041eacfbc54c275097df60c2074e4fc9a749247b9910522d82099d5df283f591812d7535584cf60bb2466cdce4f397e8
+"@types/otplib@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "@types/otplib@npm:10.0.0"
+  dependencies:
+    otplib: "*"
+  checksum: aa081f0a55c93374063f535be860774e0a442337fa39a5acc002d92bf3841d56ac5ddeed33f4f8428b3e9a1868c0079f9d3ce4b192ec75b91e77c2f18ead2745
   languageName: node
   linkType: hard
 
@@ -5945,7 +5947,7 @@ __metadata:
     "@shinnn/eslint-config-node": ^6.0.2
     "@types/lodash": ^4.17.16
     "@types/node": ^22.0.0
-    "@types/otplib": ^7.0.0
+    "@types/otplib": ^10.0.0
     "@typescript-eslint/eslint-plugin": ^8.13.0
     "@typescript-eslint/parser": ^8.13.0
     axios: ^1.8.2
@@ -9346,7 +9348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"otplib@npm:^12.0.1":
+"otplib@npm:*, otplib@npm:^12.0.1":
   version: 12.0.1
   resolution: "otplib@npm:12.0.1"
   dependencies:
