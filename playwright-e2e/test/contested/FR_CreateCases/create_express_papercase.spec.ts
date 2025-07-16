@@ -11,7 +11,7 @@ import {ContestedEvents} from "../../../config/case-data.ts";
 // Create a test case for the Contested Paper Case
 test(
   'Create Case - Contested Paper Case',
-  { tag: ['@additionalTest', '@nightly-dev'] },
+  { tag: ['@additionalTest'] },
   async (
     {
       loginPage,
