@@ -1,0 +1,174 @@
+--- scratch_2.json	2025-07-16 16:43:54
++++ scratch_3.json	2025-07-16 16:44:17
+@@ -1,49 +1,6 @@
+ {
+   "isAdmin": "Yes",
+-  "hearings": [
+-    {
+-      "id": "8a23f04c-c3ce-499d-9e83-4ea2bd101ef5",
+-      "value": {
+-        "hearingDate": "2025-01-01",
+-        "hearingMode": null,
+-        "hearingTime": "10:00",
+-        "hearingType": "Application Hearing",
+-        "wasMigrated": "Yes",
+-        "hearingNoticePrompt": null,
+-        "hearingTimeEstimate": "3 hours",
+-        "additionalHearingDocs": [],
+-        "hearingCourtSelection": {
+-          "region": "london",
+-          "londonList": "cfc",
+-          "cfcCourtList": "FR_s_CFCList_1"
+-        },
+-        "additionalHearingDocPrompt": null,
+-        "additionalHearingInformation": "Whatever information is required for the hearing",
+-        "partiesOnCaseMultiSelectList": {
+-          "value": [
+-            {
+-              "code": "[APPSOLICITOR]",
+-              "label": "Applicant - Frodo Baggins"
+-            },
+-            {
+-              "code": "[RESPSOLICITOR]",
+-              "label": "Respondent - Smeagol Gollum"
+-            }
+-          ],
+-          "list_items": [
+-            {
+-              "code": "[APPSOLICITOR]",
+-              "label": "Applicant - Frodo Baggins"
+-            },
+-            {
+-              "code": "[RESPSOLICITOR]",
+-              "label": "Respondent - Smeagol Gollum"
+-            }
+-          ]
+-        }
+-      }
+-    }
+-  ],
++  "hearings": [],
+   "caseFlags": {
+     "details": [],
+     "partyName": "Case",
+@@ -68,23 +25,22 @@
+   "netValueOfHome": "249999",
+   "rSolicitorFirm": "FinRem-2-Org",
+   "rSolicitorName": "Respondent Solicitor Name",
+-  "workingHearing": {},
++  "workingHearing": {
++    "hearingDate": null,
++    "hearingMode": null,
++    "hearingTime": null,
++    "hearingType": null,
++    "wasMigrated": null,
++    "hearingNoticePrompt": null,
++    "hearingTimeEstimate": null,
++    "additionalHearingDocs": [],
++    "hearingCourtSelection": {},
++    "additionalHearingDocPrompt": null,
++    "additionalHearingInformation": null,
++    "partiesOnCaseMultiSelectList": null
++  },
+   "applicantFMName": "Frodo",
+-  "hearingTabItems": [
+-    {
+-      "id": "8b827e62-2cbe-467f-a71f-a4812ba4094e",
+-      "value": {
+-        "tabDateTime": "01 Jan 2025 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "Application Hearing",
+-        "tabTimeEstimate": "3 hours",
+-        "tabCourtSelection": "Bromley County Court And Family Court",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "Whatever information is required for the hearing"
+-      }
+-    }
+-  ],
++  "hearingTabItems": [],
+   "midlandsFRCList": "birmingham",
+   "rSolicitorEmail": "fr_respondent_solicitor1@mailinator.com",
+   "rSolicitorPhone": "789012345",
+@@ -104,7 +60,7 @@
+   "civilPartnership": "No",
+   "copyOfPaperFormA": [
+     {
+-      "id": "f134f859-3173-48c3-ae99-b6c5031bc5b8",
++      "id": "f8bb3a76-6d9d-49da-9f75-e3671a33c5e6",
+       "value": {
+         "typeOfDocument": "Copy of paper form A",
+         "uploadedDocument": {
+@@ -131,7 +87,7 @@
+     "AddressLine3": ""
+   },
+   "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
+-  "mhMigrationVersion": "1",
++  "mhMigrationVersion": null,
+   "solicitorReference": "Finrem1OrgReference",
+   "birminghamCourtList": "FR_birmingham_hc_list_2",
+   "consentOrderFRCName": "Coventry Combined Court Centre",
+@@ -225,21 +181,7 @@
+   "applicantSolicitorEmail": "fr_applicant_solicitor1@mailinator.com",
+   "applicantSolicitorPhone": "123456789",
+   "currentUserCaseRoleType": "case",
+-  "applicantHearingTabItems": [
+-    {
+-      "id": "f1d1cbf0-e4b5-42af-8a26-53c10c527ddf",
+-      "value": {
+-        "tabDateTime": "01 Jan 2025 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "Application Hearing",
+-        "tabTimeEstimate": "3 hours",
+-        "tabCourtSelection": "Bromley County Court And Family Court",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "Whatever information is required for the hearing"
+-      }
+-    }
+-  ],
++  "applicantHearingTabItems": [],
+   "applicantResideOutsideUK": "No",
+   "expressCaseParticipation": "Does not qualify",
+   "nameOfCourtDivorceCentre": "Paper Case Court",
+@@ -253,21 +195,7 @@
+     "AddressLine3": ""
+   },
+   "isListForHearingsMigrated": null,
+-  "respondentHearingTabItems": [
+-    {
+-      "id": "eb716777-1073-4444-b8a2-921b684da71c",
+-      "value": {
+-        "tabDateTime": "01 Jan 2025 10:00",
+-        "tabAttendance": "Hearing mode not specified",
+-        "tabHearingType": "Application Hearing",
+-        "tabTimeEstimate": "3 hours",
+-        "tabCourtSelection": "Bromley County Court And Family Court",
+-        "tabHearingDocuments": [],
+-        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+-        "tabAdditionalInformation": "Whatever information is required for the hearing"
+-      }
+-    }
+-  ],
++  "respondentHearingTabItems": [],
+   "appRespGeneralApplications": [
+     {
+       "id": "3a17aade-2320-48b0-a26d-944001ad9f6d",
+@@ -329,7 +257,7 @@
+     "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]"
+   },
+   "applicantAddressConfidential": "No",
+-  "isGeneralApplicationMigrated": "Yes",
++  "isGeneralApplicationMigrated": null,
+   "natureOfApplicationChecklist": [
+     "Maintenance Pending Suit"
+   ],
+@@ -343,7 +271,7 @@
+   "manageHearingsActionSelection": null,
+   "isListForInterimHearingsMigrated": null,
+   "applicantSolicitorConsentForEmails": "Yes",
+-  "isDirectionDetailsCollectionMigrated": "Yes",
++  "isDirectionDetailsCollectionMigrated": null,
+   "allocatedToBeHeardAtHighCourtJudgeLevel": "No",
+   "generalApplicationDirectionsHearingDate": "2025-01-01",
+   "generalApplicationDirectionsHearingTime": "10:00",

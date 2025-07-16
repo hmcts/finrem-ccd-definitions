@@ -1,0 +1,217 @@
+--- scratch_1.json	2025-07-16 16:42:52
++++ scratch_2.json	2025-07-16 16:43:54
+@@ -1,5 +1,49 @@
+ {
+   "isAdmin": "Yes",
++  "hearings": [
++    {
++      "id": "8a23f04c-c3ce-499d-9e83-4ea2bd101ef5",
++      "value": {
++        "hearingDate": "2025-01-01",
++        "hearingMode": null,
++        "hearingTime": "10:00",
++        "hearingType": "Application Hearing",
++        "wasMigrated": "Yes",
++        "hearingNoticePrompt": null,
++        "hearingTimeEstimate": "3 hours",
++        "additionalHearingDocs": [],
++        "hearingCourtSelection": {
++          "region": "london",
++          "londonList": "cfc",
++          "cfcCourtList": "FR_s_CFCList_1"
++        },
++        "additionalHearingDocPrompt": null,
++        "additionalHearingInformation": "Whatever information is required for the hearing",
++        "partiesOnCaseMultiSelectList": {
++          "value": [
++            {
++              "code": "[APPSOLICITOR]",
++              "label": "Applicant - Frodo Baggins"
++            },
++            {
++              "code": "[RESPSOLICITOR]",
++              "label": "Respondent - Smeagol Gollum"
++            }
++          ],
++          "list_items": [
++            {
++              "code": "[APPSOLICITOR]",
++              "label": "Applicant - Frodo Baggins"
++            },
++            {
++              "code": "[RESPSOLICITOR]",
++              "label": "Respondent - Smeagol Gollum"
++            }
++          ]
++        }
++      }
++    }
++  ],
+   "caseFlags": {
+     "details": [],
+     "partyName": "Case",
+@@ -24,7 +68,23 @@
+   "netValueOfHome": "249999",
+   "rSolicitorFirm": "FinRem-2-Org",
+   "rSolicitorName": "Respondent Solicitor Name",
++  "workingHearing": {},
+   "applicantFMName": "Frodo",
++  "hearingTabItems": [
++    {
++      "id": "8b827e62-2cbe-467f-a71f-a4812ba4094e",
++      "value": {
++        "tabDateTime": "01 Jan 2025 10:00",
++        "tabAttendance": "Hearing mode not specified",
++        "tabHearingType": "Application Hearing",
++        "tabTimeEstimate": "3 hours",
++        "tabCourtSelection": "Bromley County Court And Family Court",
++        "tabHearingDocuments": [],
++        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
++        "tabAdditionalInformation": "Whatever information is required for the hearing"
++      }
++    }
++  ],
+   "midlandsFRCList": "birmingham",
+   "rSolicitorEmail": "fr_respondent_solicitor1@mailinator.com",
+   "rSolicitorPhone": "789012345",
+@@ -44,7 +104,7 @@
+   "civilPartnership": "No",
+   "copyOfPaperFormA": [
+     {
+-      "id": "1a5c62d5-88c9-4ec4-9a9d-94bae53f5bf6",
++      "id": "f134f859-3173-48c3-ae99-b6c5031bc5b8",
+       "value": {
+         "typeOfDocument": "Copy of paper form A",
+         "uploadedDocument": {
+@@ -58,6 +118,7 @@
+   ],
+   "paperApplication": "Yes",
+   "respondentFMName": "Smeagol",
++  "workingHearingId": null,
+   "divorceCaseNumber": "LV18D81234",
+   "fastTrackDecision": "No",
+   "rSolicitorAddress": {
+@@ -70,6 +131,7 @@
+     "AddressLine3": ""
+   },
+   "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
++  "mhMigrationVersion": "1",
+   "solicitorReference": "Finrem1OrgReference",
+   "birminghamCourtList": "FR_birmingham_hc_list_2",
+   "consentOrderFRCName": "Coventry Combined Court Centre",
+@@ -114,13 +176,17 @@
+         "generalApplicationDirectionsDocument": {
+           "category_id": "approvedOrders",
+           "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/130c5b28-dbc0-49db-b515-2cb757bb7e7c",
+-          "upload_timestamp": "2025-07-16T15:39:29.014415000",
++          "upload_timestamp": "2025-07-16T15:39:29.014415",
+           "document_filename": "generalApplicationHearingNotice.pdf",
+           "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/130c5b28-dbc0-49db-b515-2cb757bb7e7c/binary"
+         }
+       }
+     }
+   ],
++  "int1HearingTabItems": [],
++  "int2HearingTabItems": [],
++  "int3HearingTabItems": [],
++  "int4HearingTabItems": [],
+   "applicantInRefugeTab": "Yes",
+   "applicantRepresented": "Yes",
+   "consentOrderFRCEmail": "FRCBirmingham@justice.gov.uk",
+@@ -136,13 +202,13 @@
+   "applicantSolicitorName": "FinRem-1-Org",
+   "bulkPrintCoverSheetApp": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6954bf49-0175-4b4e-9798-5e9a7a87c88b",
+-    "upload_timestamp": "2025-07-16T15:39:29.014415000",
++    "upload_timestamp": "2025-07-16T15:39:29.014415",
+     "document_filename": "BulkPrintCoverSheet.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6954bf49-0175-4b4e-9798-5e9a7a87c88b/binary"
+   },
+   "bulkPrintCoverSheetRes": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/586b7925-006e-4bca-b762-2a5d3ea134dc",
+-    "upload_timestamp": "2025-07-16T15:39:29.014415000",
++    "upload_timestamp": "2025-07-16T15:39:29.014415",
+     "document_filename": "BulkPrintCoverSheet.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/586b7925-006e-4bca-b762-2a5d3ea134dc/binary"
+   },
+@@ -159,6 +225,21 @@
+   "applicantSolicitorEmail": "fr_applicant_solicitor1@mailinator.com",
+   "applicantSolicitorPhone": "123456789",
+   "currentUserCaseRoleType": "case",
++  "applicantHearingTabItems": [
++    {
++      "id": "f1d1cbf0-e4b5-42af-8a26-53c10c527ddf",
++      "value": {
++        "tabDateTime": "01 Jan 2025 10:00",
++        "tabAttendance": "Hearing mode not specified",
++        "tabHearingType": "Application Hearing",
++        "tabTimeEstimate": "3 hours",
++        "tabCourtSelection": "Bromley County Court And Family Court",
++        "tabHearingDocuments": [],
++        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
++        "tabAdditionalInformation": "Whatever information is required for the hearing"
++      }
++    }
++  ],
+   "applicantResideOutsideUK": "No",
+   "expressCaseParticipation": "Does not qualify",
+   "nameOfCourtDivorceCentre": "Paper Case Court",
+@@ -171,6 +252,22 @@
+     "AddressLine2": "",
+     "AddressLine3": ""
+   },
++  "isListForHearingsMigrated": null,
++  "respondentHearingTabItems": [
++    {
++      "id": "eb716777-1073-4444-b8a2-921b684da71c",
++      "value": {
++        "tabDateTime": "01 Jan 2025 10:00",
++        "tabAttendance": "Hearing mode not specified",
++        "tabHearingType": "Application Hearing",
++        "tabTimeEstimate": "3 hours",
++        "tabCourtSelection": "Bromley County Court And Family Court",
++        "tabHearingDocuments": [],
++        "tabConfidentialParties": "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
++        "tabAdditionalInformation": "Whatever information is required for the hearing"
++      }
++    }
++  ],
+   "appRespGeneralApplications": [
+     {
+       "id": "3a17aade-2320-48b0-a26d-944001ad9f6d",
+@@ -191,7 +288,7 @@
+         "generalApplicationDirectionsDocument": {
+           "category_id": "systemDuplicates",
+           "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/130c5b28-dbc0-49db-b515-2cb757bb7e7c",
+-          "upload_timestamp": "2025-07-16T15:39:29.014415000",
++          "upload_timestamp": "2025-07-16T15:39:29.014415",
+           "document_filename": "generalApplicationHearingNotice.pdf",
+           "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/130c5b28-dbc0-49db-b515-2cb757bb7e7c/binary"
+         },
+@@ -201,6 +298,7 @@
+   ],
+   "estimatedAssetsChecklistV2": "underTwoHundredAndFiftyThousandPounds",
+   "generalApplicationPreState": "applicationIssued",
++  "hearingDocumentsCollection": [],
+   "ApplicantOrganisationPolicy": {
+     "Organisation": {
+       "OrganisationID": "Y707HZM",
+@@ -231,6 +329,7 @@
+     "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]"
+   },
+   "applicantAddressConfidential": "No",
++  "isGeneralApplicationMigrated": "Yes",
+   "natureOfApplicationChecklist": [
+     "Maintenance Pending Suit"
+   ],
+@@ -241,7 +340,10 @@
+     "FR_ms_MIAMDomesticViolenceChecklist_Value_1"
+   ],
+   "generalApplicationReferDetail": "Label created by test call to API",
++  "manageHearingsActionSelection": null,
++  "isListForInterimHearingsMigrated": null,
+   "applicantSolicitorConsentForEmails": "Yes",
++  "isDirectionDetailsCollectionMigrated": "Yes",
+   "allocatedToBeHeardAtHighCourtJudgeLevel": "No",
+   "generalApplicationDirectionsHearingDate": "2025-01-01",
+   "generalApplicationDirectionsHearingTime": "10:00",
