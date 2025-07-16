@@ -1,0 +1,175 @@
+--- scratch_3.json	2025-07-16 17:07:40
++++ scratch_1.json	2025-07-16 17:06:16
+@@ -12,7 +12,6 @@
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6b1cb384-80e2-48df-a3cb-5d138c5e4424/binary"
+   },
+   "isAdmin": "No",
+-  "hearings": [],
+   "HWFNumber": "HWF1234",
+   "caseFlags": {
+     "details": [],
+@@ -38,7 +37,7 @@
+   "orderSummary": {
+     "Fees": [
+       {
+-        "id": "f009dd86-a834-4944-a8d6-c8aa9b6f1be6",
++        "id": "36fa241f-4667-46bb-bd51-44001fc31320",
+         "value": {
+           "FeeCode": "FEE0229",
+           "FeeAmount": "31300",
+@@ -86,24 +85,9 @@
+   "rSolicitorFirm": "Mnt Doom Sols",
+   "rSolicitorName": "Sauron",
+   "soleTraderName": "Wizard Divorce",
+-  "workingHearing": {
+-    "hearingDate": null,
+-    "hearingMode": null,
+-    "hearingTime": null,
+-    "hearingType": null,
+-    "wasMigrated": null,
+-    "hearingNoticePrompt": null,
+-    "hearingTimeEstimate": null,
+-    "additionalHearingDocs": [],
+-    "hearingCourtSelection": {},
+-    "additionalHearingDocPrompt": null,
+-    "additionalHearingInformation": null,
+-    "partiesOnCaseMultiSelectList": null
+-  },
+   "applicantFMName": "Frodo",
+   "authorisation2b": "Boss",
+   "dateOfSepration": "2022-01-01",
+-  "hearingTabItems": [],
+   "midlandsFRCList": "birmingham",
+   "rSolicitorEmail": "fr_respondent_solicitor1@mailinator.com",
+   "rSolicitorPhone": "07821 639001",
+@@ -125,7 +109,6 @@
+   "civilPartnership": "No",
+   "respondentFMName": "Smeagol",
+   "typeOfDraftOrder": "anAgreedOrderFollowingAHearing",
+-  "workingHearingId": null,
+   "authorisationName": "Sauron",
+   "divorceCaseNumber": "LV12D12345",
+   "fastTrackDecision": "No",
+@@ -140,7 +123,6 @@
+   },
+   "typeOfApplication": "In connection to matrimonial and civil partnership proceedings",
+   "hearing_regionList": "midlands",
+-  "mhMigrationVersion": null,
+   "pfdNcdrCoverLetter": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/13da5fb1-dcbe-45b1-935d-04ba16a2bd1e",
+     "upload_timestamp": "2025-07-16T16:05:03.272206",
+@@ -151,10 +133,6 @@
+   "birminghamCourtList": "FR_birmingham_hc_list_2",
+   "consentOrderFRCName": "Chesterfield County Court",
+   "divorceStageReached": "Petition Issued",
+-  "int1HearingTabItems": [],
+-  "int2HearingTabItems": [],
+-  "int3HearingTabItems": [],
+-  "int4HearingTabItems": [],
+   "applicantInRefugeTab": "Yes",
+   "applicantRepresented": "Yes",
+   "consentOrderFRCEmail": "FRCNottingham@justice.gov.uk",
+@@ -197,7 +175,6 @@
+   },
+   "refusalOrderIdsToBeSent": [],
+   "showUploadPartyQuestion": "Yes",
+-  "applicantHearingTabItems": [],
+   "applicantResideOutsideUK": "No",
+   "expressCaseParticipation": "Does not qualify",
+   "nameOfCourtDivorceCentre": "Shire Court",
+@@ -217,16 +194,14 @@
+   "detailPotentialAllegation": "Stealing ring",
+   "divorcePetitionIssuedDate": "2025-07-16",
+   "familyMediatorServiceName": "Gandalf the Great Div",
+-  "isListForHearingsMigrated": null,
+-  "respondentHearingTabItems": [],
+   "specialAssistanceRequired": "N/A",
+   "additionalHearingDocuments": [
+     {
+-      "id": "4c80a235-fd70-4113-b1ee-96c9e31551b1",
++      "id": "ddbb3c81-2200-4ae2-ad74-bbe6587ccb3f",
+       "value": {
+         "additionalHearingDocument": {
+           "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/45f0487b-c752-4cbb-83af-74c310d7095f",
+-          "upload_timestamp": "2025-07-16T16:05:23.792955",
++          "upload_timestamp": "2025-07-16T16:05:23.792955000",
+           "document_filename": "AdditionalHearingDocument.pdf",
+           "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/45f0487b-c752-4cbb-83af-74c310d7095f/binary"
+         },
+@@ -236,12 +211,12 @@
+   ],
+   "agreedDraftOrderCollection": [
+     {
+-      "id": "e79e77fd-f342-425d-bc8f-4010a1f02a13",
++      "id": "0c0d8151-dd81-4428-9fd6-a2e482de84cd",
+       "value": {
+         "draftOrder": {
+           "category_id": "approvedOrders",
+           "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/3219e695-1b9e-4ef0-a3a6-6f6c0d561e34",
+-          "upload_timestamp": "2025-07-16T16:05:23.792955",
++          "upload_timestamp": "2025-07-16T16:05:23.792955000",
+           "document_filename": "agreed-draft-order-document.pdf",
+           "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/3219e695-1b9e-4ef0-a3a6-6f6c0d561e34/binary"
+         },
+@@ -274,7 +249,6 @@
+     }
+   ],
+   "estimatedAssetsChecklistV2": "underTwoHundredAndFiftyThousandPounds",
+-  "hearingDocumentsCollection": [],
+   "mediatorRegistrationNumber": "MIAM12345",
+   "outOfFamilyCourtResolution": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/5edabbe1-880a-41ea-b905-a819ec6083c5",
+@@ -292,7 +266,7 @@
+   "addToComplexityListOfCourts": "falseNo",
+   "draftOrdersReviewCollection": [
+     {
+-      "id": "04b68806-4b62-4348-830b-db1f5faef023",
++      "id": "3897e70d-8a04-4050-ac86-383998b91d4f",
+       "value": {
+         "hearingDate": "2025-10-08",
+         "hearingTime": "10:00",
+@@ -301,7 +275,7 @@
+         "psaDocReviewCollection": [],
+         "draftOrderDocReviewCollection": [
+           {
+-            "id": "df411345-ad81-47e4-979c-afc160a8ef41",
++            "id": "ba787add-dc30-4964-b94e-1b21a8cf1986",
+             "value": {
+               "finalOrder": "No",
+               "attachments": [],
+@@ -319,7 +293,7 @@
+               "draftOrderDocument": {
+                 "category_id": "approvedOrders",
+                 "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/3219e695-1b9e-4ef0-a3a6-6f6c0d561e34",
+-                "upload_timestamp": "2025-07-16T16:05:23.792955",
++                "upload_timestamp": "2025-07-16T16:05:23.792955000",
+                 "document_filename": "agreed-draft-order-document.pdf",
+                 "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/3219e695-1b9e-4ef0-a3a6-6f6c0d561e34/binary"
+               },
+@@ -345,7 +319,6 @@
+     "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]"
+   },
+   "applicantAddressConfidential": "Yes",
+-  "isGeneralApplicationMigrated": null,
+   "natureOfApplicationChecklist": [
+     "Maintenance Pending Suit"
+   ],
+@@ -354,7 +327,6 @@
+   ],
+   "specificArrangementsRequired": "N/A",
+   "approveOrdersConfirmationBody": "<br>The draft orders (agreed-draft-order-document.docx) for the case have been approved. They are now ready for caseworker review.\n\n",
+-  "manageHearingsActionSelection": null,
+   "additionalHearingDocumentsOption": "Yes",
+   "additionalListOfHearingDocuments": {
+     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f18adfdb-3d40-47c9-ae87-888d5569baa6",
+@@ -362,9 +334,7 @@
+     "document_filename": "1.pdf",
+     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f18adfdb-3d40-47c9-ae87-888d5569baa6/binary"
+   },
+-  "isListForInterimHearingsMigrated": null,
+   "additionalInformationAboutHearing": "This is additional information about the hearing",
+   "applicantSolicitorConsentForEmails": "Yes",
+-  "isDirectionDetailsCollectionMigrated": null,
+   "allocatedToBeHeardAtHighCourtJudgeLevel": "No"
+ }
+\ No newline at end of file
