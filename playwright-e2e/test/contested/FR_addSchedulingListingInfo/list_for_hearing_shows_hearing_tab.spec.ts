@@ -99,7 +99,8 @@ async function performManageHearings(
 }
 
 test.describe('Contested - List for Hearing case shows on hearings tab after migration', () => {
-  test(
+  // non-prod only
+  test.skip(
     'Form A case - List for hearing information shows on new hearings tab.',
     { tag: [] },
     async (
@@ -120,8 +121,9 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
       await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing1);
     }
   );
-  
-  test(
+
+  // non-prod only
+  test.skip(
     'Form A case - List for hearing information shows on new hearings tab after any manage hearings event.',
     { tag: [] },
     async (
@@ -145,7 +147,8 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
     }
   );
 
-  test(
+  // non-prod only
+  test.skip(
     'Paper Case - List for hearing information shows on new hearings tab.',
     { tag: [] },
     async (
@@ -166,7 +169,8 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
     }
   );
 
-  test(
+  // non-prod only
+  test.skip(
     'Paper Case - List for hearing information shows on new hearings tab after any manage hearings event.',
     { tag: [] },
     async (
