@@ -6,6 +6,7 @@ import { DocumentHelper } from '../../../data-utils/DocumentHelper';
 
 export class UploadDraftOrdersPage extends BaseJourneyPage {
     private readonly kindOfDraftOrderToUploadRadio: Locator;
+    private readonly suggestedDraftOrderRadio: Locator;
     private readonly confirmTheUploadedDocsAreForTheCaseCheckbox: Locator;
     private readonly hearingListDropdown: Locator;
     private readonly judgeForHearingKnownRadio: Locator;
@@ -18,6 +19,7 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
         super(page);
         this.commonActionsHelper = commonActionsHelper;
         this.kindOfDraftOrderToUploadRadio = page.getByRole('radio', { name: 'An agreed order following a hearing (agreed by the parties at the hearing)' });
+        this.suggestedDraftOrderRadio = page.getByRole('radio', { name: 'A suggested draft order prior to a listed hearing (this will just be placed on file for the hearing)' });
         this.confirmTheUploadedDocsAreForTheCaseCheckbox = page.getByRole('checkbox', { name: 'I confirm the uploaded documents are for the' });
         this.hearingListDropdown =  page.locator('select#uploadAgreedDraftOrder_hearingDetails')
         this.judgeForHearingKnownRadio = page.locator('#uploadAgreedDraftOrder_judgeKnownAtHearing')
