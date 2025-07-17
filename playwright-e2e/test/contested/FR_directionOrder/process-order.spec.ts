@@ -108,7 +108,7 @@ async function performManageHearings(
     await manageHearingPage.addHearing({
         type: "Pre-Trial Review (PTR)",
         duration: '2 hours',
-        date: { day: "03", month: "03", year: "2026" },
+        date: { day: "03", month: "03", year: "2023" },
         time: '10:00 AM',
         court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
         attendance: 'Remote - video call',
@@ -181,7 +181,7 @@ test.describe('Contested - Process Order', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true, hearingDate: '2025-10-07' });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -203,7 +203,7 @@ test.describe('Contested - Process Order', () => {
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
-      await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabData);
+      await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabData());
     }
   );
 
@@ -223,7 +223,7 @@ test.describe('Contested - Process Order', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false, hearingDate: '2025-10-07' });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -266,7 +266,7 @@ test.describe('Contested - Process Order', () => {
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
-      await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderTabData);
+      await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderTabData());
     }
   )
 
@@ -287,7 +287,7 @@ test.describe('Contested - Process Order', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false, hearingDate: '2025-10-07' });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -331,7 +331,7 @@ test.describe('Contested - Process Order', () => {
       await performManageHearings(caseDetailsPage, manageHearingPage);
 
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
-      await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearingsEventTabData);
+      await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearingsEventTabData());
     }
   )
 });
