@@ -7,7 +7,7 @@ test.describe('Contested General Application e2e', () => {
     test(
         'Contested - General Application e2e @test',
         { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, referToJudgeApplicationPage, generalApplicationOutcomePage }) => {
+        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, referToJudgeApplicationPage, generalApplicationOutcomePage, generalApplicationDirectionsPage }) => {
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
@@ -29,12 +29,21 @@ test.describe('Contested General Application e2e', () => {
             await caseDetailsPage.selectNextStep(ContestedEvents.generalApplicationReferToJudge);
             await referToJudgeApplicationPage.navigateContinue();
             await referToJudgeApplicationPage.navigateSubmit();
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.generalApplicationReferToJudge.listItem);
 
             // General application outcome
             await caseDetailsPage.selectNextStep(ContestedEvents.generalApplicationOutcome);
             await generalApplicationOutcomePage.selectGeneralApplicationOutcome();
             await generalApplicationOutcomePage.navigateContinue();
             await generalApplicationOutcomePage.navigateSubmit();
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.generalApplicationOutcome.listItem);
+
+            // General Application Directions
+            await caseDetailsPage.selectNextStep(ContestedEvents.generalApplicationDirections);
+            await generalApplicationDirectionsPage.selectGeneralApplicationDirectionsHearing();
+            await generalApplicationDirectionsPage.enterRecitals('Test');
+            await generalApplicationDirectionsPage.selectJudge('District Judge');
+            await generalApplicationDirectionsPage.enterJudgeName('Tester Baggins');
         }
     );
 });
