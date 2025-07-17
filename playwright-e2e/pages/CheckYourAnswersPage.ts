@@ -32,6 +32,16 @@ export class CheckYourAnswersPage {
         await expect(this.checkYourAnswersTitle).toBeVisible();
         await expect(this.checkYourAnswersTable).toBeVisible();
 
+        // Scroll the table into view and to the bottom to trigger rendering of all rows
+        await this.checkYourAnswersTable.scrollIntoViewIfNeeded();
+        await this.page.evaluate((tableSelector) => {
+            const table = document.querySelector(tableSelector);
+            if (table) table.scrollIntoView({ behavior: 'auto', block: 'end' });
+        }, "table[aria-describedby='check your answers table']");
+
+        // wait for a short time to allow lazy-loaded rows to render
+        await this.page.waitForTimeout(500);
+
         // Helper to normalize cell values
         const normalize = (val: string) => val.replace(/[\n\t]/g, '').trim();
 
