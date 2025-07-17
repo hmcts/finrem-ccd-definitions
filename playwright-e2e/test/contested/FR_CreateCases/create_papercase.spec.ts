@@ -153,7 +153,8 @@ test(
 
     // Upload variation Order Document
     await uploadOrderDocumentsPage.uploadVariationOrderDoc();
-    await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
+    await uploadOrderDocumentsPage.selectUploadAdditionalDocs(true);
+    await uploadOrderDocumentsPage.uploadOtherDocuments("test1.pdf", "Other");
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue(expectedURL + '/submit');
 
@@ -317,7 +318,8 @@ test(
         await miamDetailsPage.navigateContinue(expectedURL, 23);
 
         // Upload variation Order Document
-        await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
+        await uploadOrderDocumentsPage.selectUploadAdditionalDocs(true);
+        await uploadOrderDocumentsPage.uploadOtherDocuments("test1.pdf", "Other");
         await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
         await uploadOrderDocumentsPage.uploadVariationOrderDoc();
         await uploadOrderDocumentsPage.navigateContinue();
