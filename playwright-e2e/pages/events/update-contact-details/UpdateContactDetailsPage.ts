@@ -77,7 +77,7 @@ export class UpdateContactDetailsPage extends BaseJourneyPage {
         await optionToSelect.check();
     }
 
-        async checkApplicantRepresented(isConfidential: boolean) {
+    async checkApplicantRepresented(isConfidential: boolean) {
         await (isConfidential ? this.applicantRadio : this.respondentRadio).check(); 
     }
 
@@ -95,11 +95,11 @@ export class UpdateContactDetailsPage extends BaseJourneyPage {
         await (isConfidential ? this.applicantRadio : this.respondentRadio).check(); 
     }
 
-       async checkRepresentation(isConfidential: boolean) {
+    async checkRepresentation(isConfidential: boolean) {
         await (isConfidential ? this.yesRadio : this.noRadio).check(); 
     }
 
-        async enterAddress(text: string) {
+    async enterAddress(text: string) {
         await expect(this.checkAddressLabel).toBeVisible();
         await this.addressPostcode.fill(text);
     }

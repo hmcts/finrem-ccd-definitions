@@ -17,7 +17,7 @@ If a judge's email and display name have changed then you should leave the exist
 The following steps should be used to update judge data stored in the secrets:
 
 1. Open a terminal windows and run `cd bin/judges`
-2. Back up the current secrets by running `./backup.sh`. This will write the secrets to `bin/judges/build/backup`
+2. Back up the current secrets by running `./backup.sh`. This will write the secrets to `bin/judges/build/backup`. The number of existing secrets can be determined by looking in Azure Key vault `finrem-aat` for secrets beginning with `fixedlists-consented-judgedetails-`
 3. Extract the existing judge JSON data into a single file by running `node extract.js`. This will write the JSON to `bin/judges/build/extracted.json`
 4. Update `extracted.json` with the new judge data. New entries can be appended to the end of the file
 5. Run `node validate.js` to produce a report of the changes introduced

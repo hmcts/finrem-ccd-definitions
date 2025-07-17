@@ -70,9 +70,8 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
 
         const filePayload = await this.commonActionsHelper
             .createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', docFilename);
-        await uploadOtherDocumentFiles.setInputFiles(filePayload);
 
-        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadOtherDocumentFiles, filePayload);
 
         const docTypeDropdown = this.page.locator(`#uploadAdditionalDocument_${position}_additionalDocumentType`);
         await expect(docTypeDropdown).toBeVisible();
@@ -91,22 +90,21 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
 
     async uploadConsentOrder(){
         // Wait for file upload rate limiter
-        await this.consentOrderDocUpload.setInputFiles('./playwright-e2e/resources/file/Variation order.pdf');
-        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(
+            this.page, this.consentOrderDocUpload, './playwright-e2e/resources/file/Variation order.pdf'
+        );
     }
 
     async selectAndUploadJointD81(uploadJointD81: Boolean){
         const radioOption = uploadJointD81 ? 'Yes' : 'No'; 
         const optionToSelect = this.jointD81Radio.getByLabel(radioOption);
         await optionToSelect.check();
+        await this.page.waitForTimeout(3000); //flaky rate limiting issue with D81 upload
         if(uploadJointD81) {
-            await this.uploadJointD81.setInputFiles('./playwright-e2e/resources/file/test.pdf');
-            await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadJointD81, './playwright-e2e/resources/file/test.pdf');
         } else {
-            await this.uploadD81Applicant.setInputFiles('./playwright-e2e/resources/file/test.pdf');
-            await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
-            await this.uploadD81Respondent.setInputFiles('./playwright-e2e/resources/file/test.pdf');
-            await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadD81Applicant, './playwright-e2e/resources/file/test.pdf', 5, 5000);
+            await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadD81Respondent, './playwright-e2e/resources/file/test.pdf',5, 5000);
         }
     }
 }
