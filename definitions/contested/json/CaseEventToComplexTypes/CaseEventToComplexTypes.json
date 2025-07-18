@@ -4443,18 +4443,18 @@
   },
   {
     "LiveFrom": "29/01/2025",
-    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionOrderCollection",
+    "ID": "FR_judgeDraftDirectionOrder_to_judgeApprovedOrderCollection",
     "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionOrderCollection",
+    "CaseFieldID": "judgeApprovedOrderCollection",
     "ListElementCode": "uploadDraftDocument",
     "EventElementLabel": "Upload Approved Document",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "29/01/2025",
-    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionOrderCollection",
+    "ID": "FR_judgeDraftDirectionOrder_to_judgeApprovedOrderCollection",
     "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionOrderCollection",
+    "CaseFieldID": "judgeApprovedOrderCollection",
     "ListElementCode": "additionalDocuments",
     "DisplayContext": "OPTIONAL"
   },
