@@ -30,20 +30,20 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
     }
     
     async addNewChild() {
-        await this.addNewChildBtn.click()
+        await this.addNewChildBtn.click();
     }
     async childLiveInEnglandOrWales(radioOption: YesNoRadioEnum) {
         const radioButton = this.page.getByLabel(radioOption);
         await radioButton.check(); // Check the specific radio button
     }
     async enterChildFullName(fullName: string) {
-        await this.fullNameTextBox.fill(fullName)
+        await this.fullNameTextBox.fill(fullName);
     }
 
     async enterChildDateOfBirth(day: string, month: string, year: string) {
-        await this.dayOfBirthTextBox.fill(day)
-        await this.monthOfBirthTextBox.fill(month)
-        await this.yearOfBirthTextBox.fill(year)
+        await this.dayOfBirthTextBox.fill(day);
+        await this.monthOfBirthTextBox.fill(month);
+        await this.yearOfBirthTextBox.fill(year);
     }
 
     async genderOfChild(genderOfChild: MaleOrFemaleEnum) {

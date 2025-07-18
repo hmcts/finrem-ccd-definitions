@@ -1,5 +1,6 @@
 import { test as base } from '@playwright/test';
 import { SigninPage } from '../pages/SigninPage';
+import { BlankPage } from '../pages/BlankPage.ts';
 import { CommonActionsHelper } from '../pages/helpers/CommonActionsHelper';
 import { SolicitorDetailsHelper } from '../pages/helpers/SolicitorDetailsHelper';
 
@@ -64,11 +65,13 @@ import { CreateGeneralOrderPage } from '../pages/events/create-general-order/Cre
 import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage.ts';
 import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage.ts';
 import {CaseListPage} from '../pages/CaseListPage.ts';
+import { ProcessOrderPage } from '../pages/events/process-order/ProcessOrderPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
 
 type CreateFixtures = {
+  blankPage: BlankPage;
   loginPage: SigninPage;
   createCasePage: CreateCasePage;
   startPage: StartPage;
@@ -131,11 +134,15 @@ type CreateFixtures = {
   contestedSendOrderPage: ContestedSendOrderPage;
   manageIntervenersPage: ManageIntervenerPage;
   caseListPage: CaseListPage;
+  processOrderPage: ProcessOrderPage;
 };
 
 export const test = base.extend<CreateFixtures>({
   loginPage: async ({ page }, use) => {
     await use(new SigninPage(page));
+  },
+  blankPage: async ({ page }, use) => {
+    await use(new BlankPage(page));
   },
   createCasePage: async ({ page }, use) => {
     await use(new CreateCasePage(page));
@@ -319,5 +326,8 @@ export const test = base.extend<CreateFixtures>({
   },
   caseListPage: async ({ page }, use) => {
     await use(new CaseListPage(page));
+  },
+  processOrderPage: async ({ page }, use) => {
+    await use(new ProcessOrderPage(page, commonActionsHelper));
   }
 });

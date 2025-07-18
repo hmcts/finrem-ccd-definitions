@@ -7,7 +7,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "hearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "hearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -17,7 +18,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "applicantHearingTabItems",
     "UserRole": "[APPSOLICITOR]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "applicantHearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -27,7 +29,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "applicantHearingTabItems",
     "UserRole": "[APPBARRISTER]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "applicantHearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -37,7 +40,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "respondentHearingTabItems",
     "UserRole": "[RESPSOLICITOR]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "respondentHearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -47,7 +51,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "respondentHearingTabItems",
     "UserRole": "[RESPBARRISTER]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "respondentHearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -57,7 +62,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "int1HearingTabItems",
     "UserRole": "[INTVRSOLICITOR1]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "int1HearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -67,7 +73,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "int1HearingTabItems",
     "UserRole": "[INTVRBARRISTER1]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "int1HearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -77,7 +84,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "int2HearingTabItems",
     "UserRole": "[INTVRSOLICITOR2]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "int2HearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -87,7 +95,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "int2HearingTabItems",
     "UserRole": "[INTVRBARRISTER2]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "int2HearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -97,7 +106,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "int3HearingTabItems",
     "UserRole": "[INTVRSOLICITOR3]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "int3HearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -107,7 +117,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "int3HearingTabItems",
     "UserRole": "[INTVRBARRISTER3]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "int3HearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -117,7 +128,8 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "int4HearingTabItems",
     "UserRole": "[INTVRSOLICITOR4]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "int4HearingTabItems !=\"\""
   },
   {
     "LiveFrom": "02/06/2025",
@@ -127,6 +139,7 @@
     "TabDisplayOrder": 4,
     "CaseFieldID": "int4HearingTabItems",
     "UserRole": "[INTVRBARRISTER4]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "int4HearingTabItems !=\"\""
   }
 ]
