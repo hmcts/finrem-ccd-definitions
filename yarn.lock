@@ -1802,20 +1802,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@puppeteer/browsers@npm:2.10.5":
-  version: 2.10.5
-  resolution: "@puppeteer/browsers@npm:2.10.5"
+"@puppeteer/browsers@npm:2.10.6":
+  version: 2.10.6
+  resolution: "@puppeteer/browsers@npm:2.10.6"
   dependencies:
     debug: ^4.4.1
     extract-zip: ^2.0.1
     progress: ^2.0.3
     proxy-agent: ^6.5.0
     semver: ^7.7.2
-    tar-fs: ^3.0.8
+    tar-fs: ^3.1.0
     yargs: ^17.7.2
   bin:
     browsers: lib/cjs/main-cli.js
-  checksum: d294a30ed91f58ad3317ccc18054a1785542e21284d3ab455364bf734bb8a1bfa93d4434dba530ff4225491908f427ca71e5b042e77d1c8fa23e57416c185aef
+  checksum: c3ea191ebc733cbc367328f537974300a05b8d11a8bc5aa58498ab6ee5a6b3b321b0821178298aa13f28264f1937b4fdae732dd903f99d6d8b89b9d6b4071a03
   languageName: node
   linkType: hard
 
@@ -3913,15 +3913,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromium-bidi@npm:7.1.0":
-  version: 7.1.0
-  resolution: "chromium-bidi@npm:7.1.0"
+"chromium-bidi@npm:7.1.1":
+  version: 7.1.1
+  resolution: "chromium-bidi@npm:7.1.1"
   dependencies:
     mitt: ^3.0.1
     zod: ^3.24.1
   peerDependencies:
     devtools-protocol: "*"
-  checksum: bf32ccd2efd4be818a3c4b4a96c9c9768d37a6e2a3c4d875f9cde2d0c187165a675cde67a4a193df08097eb167ee69475e3ff8be4fdcb83a1b3ad9e9921518b3
+  checksum: 1dc9f367dbf31d090fa8974265edd7c02acbb344d880bcd2d9bd1c5af3ebdaea3c2ca3a9ac98efb71706d565db095d3f272323853055a89184e60e0bfacfdbe7
   languageName: node
   linkType: hard
 
@@ -9204,10 +9204,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"on-headers@npm:~1.0.2":
-  version: 1.0.2
-  resolution: "on-headers@npm:1.0.2"
-  checksum: 2bf13467215d1e540a62a75021e8b318a6cfc5d4fc53af8e8f84ad98dbcea02d506c6d24180cd62e1d769c44721ba542f3154effc1f7579a8288c9f7873ed8e5
+"on-headers@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "on-headers@npm:1.1.0"
+  checksum: 98aa64629f986fb8cc4517dd8bede73c980e31208cba97f4442c330959f60ced3dc6214b83420491f5111fc7c4f4343abe2ea62c85f505cf041d67850f238776
   languageName: node
   linkType: hard
 
@@ -10010,16 +10010,16 @@ __metadata:
   linkType: hard
 
 "puppeteer-core@npm:^24.0.0":
-  version: 24.13.0
-  resolution: "puppeteer-core@npm:24.13.0"
+  version: 24.14.0
+  resolution: "puppeteer-core@npm:24.14.0"
   dependencies:
-    "@puppeteer/browsers": 2.10.5
-    chromium-bidi: 7.1.0
+    "@puppeteer/browsers": 2.10.6
+    chromium-bidi: 7.1.1
     debug: ^4.4.1
     devtools-protocol: 0.0.1464554
     typed-query-selector: ^2.12.0
     ws: ^8.18.3
-  checksum: f0a02c1f3173707b927d52e100c7cc00d123f7c704c89cf98c6d760a7f603960c8a82dbc8e604438ce7d160bf632f2e48dc0f177212bd46e4552e78e0cbae2b2
+  checksum: 12be856ab3b86bba0f00e6ae0c96d8900b8cc32c7e6b90e7540095e0e9c06eee3e37f201b6baa4febe5cb9b1fe52464ecf43897a0171a936a1c4e9129d3b97c6
   languageName: node
   linkType: hard
 
@@ -11321,9 +11321,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tar-fs@npm:^3.0.8":
-  version: 3.0.10
-  resolution: "tar-fs@npm:3.0.10"
+"tar-fs@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "tar-fs@npm:3.1.0"
   dependencies:
     bare-fs: ^4.0.1
     bare-path: ^3.0.0
@@ -11334,7 +11334,7 @@ __metadata:
       optional: true
     bare-path:
       optional: true
-  checksum: 3b91597bdb447f35bf09b9df02e14806e1e14d71a1bdc09a684c7afb70179f8621b3b3fe03508df3fe1bfe424cac98219a3258d787c0f7b2fa660a8b932252d1
+  checksum: 279c6c4ee1c53593bad4e5ae044ff14b2210d68f559097ac48bf0638698f740f4b894ab22fa1860f5f9f0be8c4003bf16c3614759aeebf50ee3593c49213c357
   languageName: node
   linkType: hard
 
