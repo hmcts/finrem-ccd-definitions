@@ -3,16 +3,17 @@ import { BaseJourneyPage } from "../../BaseJourneyPage";
 
 export class ReferToJudgeApplicationPage extends BaseJourneyPage {
 
-    private readonly updateIncludesRepresentativeChangeRadio: Locator;
+    private readonly checkEventSummaryLabel: Locator;
+    private readonly eventSummaryDetails: Locator;
 
     public constructor(page: Page) {
         super(page);
-        this.updateIncludesRepresentativeChangeRadio = page.locator('#updateIncludesRepresentativeChange_radio');
+        this.checkEventSummaryLabel = page.getByText('Event summary (optional)');
+        this.eventSummaryDetails = page.locator('#field-trigger-summary');
     }
 
-    async selectUpdateIncludesRepresentativeChange(isUpdateIncludesRepresentativeChange: Boolean){
-        const radioOption = isUpdateIncludesRepresentativeChange ? 'Yes' : 'No'; 
-        const optionToSelect = this.updateIncludesRepresentativeChangeRadio.getByLabel(radioOption);
-        await optionToSelect.check();
+    async enterEventSummary(text: string) {
+        await expect(this.checkEventSummaryLabel).toBeVisible();
+        await this.eventSummaryDetails.fill(text);
     }
 }
