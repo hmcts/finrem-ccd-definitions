@@ -1,0 +1,52 @@
+[
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_processOrder_to_uploadHearingOrder",
+    "CaseEventID": "FR_processOrder",
+    "CaseFieldID": "uploadHearingOrder",
+    "ListElementCode": "uploadDraftDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_processOrder_to_uploadHearingOrder",
+    "CaseEventID": "FR_processOrder",
+    "CaseFieldID": "uploadHearingOrder",
+    "ListElementCode": "orderDateTime",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_processOrder_to_uploadHearingOrder",
+    "CaseEventID": "FR_processOrder",
+    "CaseFieldID": "uploadHearingOrder",
+    "ListElementCode": "isOrderStamped",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_processOrder_to_uploadHearingOrder",
+    "CaseEventID": "FR_processOrder",
+    "CaseFieldID": "uploadHearingOrder",
+    "ListElementCode": "originalDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "29/01/2025",
+    "ID": "FR_processOrder_to_uploadHearingOrder",
+    "CaseEventID": "FR_processOrder",
+    "CaseFieldID": "uploadHearingOrder",
+    "ListElementCode": "additionalDocuments",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\""
+  }, 
+  {
+    "LiveFrom": "27/12/2024",
+    "ID": "FR_processOrderToUnprocessedApprovedDocuments",
+    "CaseEventID": "FR_processOrder",
+    "CaseFieldID": "unprocessedApprovedDocuments",
+    "ListElementCode": "uploadDraftDocument",
+    "DisplayContext": "MANDATORY",
+    "EventHintText": "PLEASE NOTE: You must upload a Word document or PDF version of document."
+  }
+]
