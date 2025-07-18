@@ -26,18 +26,5 @@
     "PageShowCondition": "manageHearingsActionSelection=\"Add_Hearing\"",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5"
-  },
-  {
-    "LiveFrom": "15/07/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_GeneralApplicationDirections",
-    "CaseFieldID": "workingHearing",
-    "PageFieldDisplayOrder": 3,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "generalApplicationDirectionsHearingRequired=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
   }
 ]
