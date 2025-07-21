@@ -129,7 +129,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     ccdCallback: "createGeneralApplication"
   },
   generalApplicationReferToJudge: {
-    listItem: "General Application Refer to Judge",
+    listItem: "Refer to Judge (Application)",
     ccdCallback: "FR_generalApplicationReferToJudge"
   },
   generalApplicationOutcome: {
@@ -137,7 +137,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     ccdCallback: "FR_GeneralApplicationOutcome"
   },
   approveOrders: {
-    listItem: "Approve Orders",
+    listItem: "Approve orders",
     ccdCallback: "FR_approveOrders"
   },
   processOrder: {
