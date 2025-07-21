@@ -7,7 +7,7 @@ import { contestedGeneralApplicationTabData } from '../../../resources/tab_conte
 
 test.describe('Contested General Application e2e', () => {
     test(
-        'Contested - General Application e2e @test',
+        'Contested - General Application e2e',
         { tag: [] },
         async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, referToJudgeApplicationPage, generalApplicationOutcomePage, generalApplicationDirectionsPage, checkYourAnswersPage }) => {
             // Create and setup case
