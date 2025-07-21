@@ -63,6 +63,7 @@ async function progressToProcessOrderEvent(
 
   const documentDetailsForFutureTestSteps = {
     hearingDate,
+    courtOrderDate: hearingDate,
     documentUrl: firstDraftOrderItem?.document_url,
     documentBinaryUrl: firstDraftOrderItem?.document_binary_url,
     uploadTimestamp: firstDraftOrderItem?.upload_timestamp
@@ -186,7 +187,7 @@ test.describe('Contested - Process Order', () => {
 
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
-      
+
       // Skip the unprocessed approved orders page
       await processOrderPage.navigateContinue();
 
@@ -228,7 +229,7 @@ test.describe('Contested - Process Order', () => {
 
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
-      
+
       // Skip the unprocessed approved orders page
       await processOrderPage.navigateContinue();
 
@@ -292,7 +293,7 @@ test.describe('Contested - Process Order', () => {
 
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
-      
+
       // Skip the unprocessed approved orders page
       await processOrderPage.navigateContinue();
 
