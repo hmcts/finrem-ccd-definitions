@@ -129,7 +129,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     ccdCallback: "createGeneralApplication"
   },
   generalApplicationReferToJudge: {
-    listItem: "General Application Refer to Judge",
+    listItem: "Refer to Judge (Application)",
     ccdCallback: "FR_generalApplicationReferToJudge"
   },
   generalApplicationOutcome: {
