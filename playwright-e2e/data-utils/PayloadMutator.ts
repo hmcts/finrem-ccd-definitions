@@ -40,12 +40,14 @@ export const ESTIMATED_ASSETS_UNDER_1M = [
   export const APPROVE_ORDERS_DATA = (
     hearingDateLabel: string,
     hearingDate: string,
+    courtOrderDate: string,
     documentUrl: string,
     documentBinaryUrl: string,
     uploadTimestamp: string,
   ) => [
     { action: 'insert', key: 'judgeApproval1.hearingInfo', value: `First Directions Appointment (FDA) on ${hearingDateLabel} 10:00` },
     { action: 'insert', key: 'judgeApproval1.hearingDate', value: hearingDate },
+    {action : 'insert', key: 'judgeApproval1.courtOrderDate', value: courtOrderDate },
     { action: 'insert', key: 'judgeApproval1.document.document_url', value: documentUrl },
     { action: 'insert', key: 'judgeApproval1.document.document_binary_url', value: documentBinaryUrl },
     { action: 'insert', key: 'judgeApproval1.document.upload_timestamp', value: uploadTimestamp },
