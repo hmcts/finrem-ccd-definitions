@@ -24,8 +24,8 @@ test.describe('Contested - Upload Draft Order', () => {
         manageCaseDashboardPage,
         caseDetailsPage,
         uploadDraftOrdersPage,
-          checkYourAnswersPage,
-          approvedOrderPage
+        checkYourAnswersPage,
+        approvedOrderPage
       }
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
@@ -128,79 +128,75 @@ test.describe('Contested - Upload Draft Order', () => {
     }
   );
 
-        test(
-            'Form A case uploading a Suggested draft order',
-            { tag: [] },
-            async (
-                {
-                    loginPage,
-                    manageCaseDashboardPage,
-                    caseDetailsPage,
-                    uploadDraftOrdersPage,
-                    checkYourAnswersPage,
-                    approvedOrderPage
-                }
-            ) => {
-                const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
-                let expectedUrl = ContestedEvents.uploadDraftOrders.ccdCallback;
-                await manageCaseDashboardPage.visit();
-                await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
-                await manageCaseDashboardPage.navigateToCase(caseId);
-
-                await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
-
-                await uploadDraftOrdersPage.chooseASuggestedDraftOrderPriorToAListedHearing();
-                await uploadDraftOrdersPage.navigateContinue(expectedUrl, 2);
-                await uploadDraftOrdersPage.assertMandatoryFields(false);
-
-                await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
-                await uploadDraftOrdersPage.chooseUploadOnBehalfOfApplicant();
-                await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
-                await uploadDraftOrdersPage.chooseThatYouAreUploadingPensionSharingAnnexes();
-                await uploadDraftOrdersPage.uploadDraftOrder(caseId);
-                await uploadDraftOrdersPage.uploadPensionSharingAnnexes();
-                await uploadDraftOrdersPage.navigateContinue('submit');
-
-                await checkYourAnswersPage.assertCheckYourAnswersPage(uploadSuggestedDraftOrderTable);
-                await uploadDraftOrdersPage.navigateSubmit();
-                await uploadDraftOrdersPage.closeAndReturnToCaseDetails();
-                await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.uploadDraftOrders.listItem);
-                await caseDetailsPage.assertTabData(suggested_draft_order_case_document_tabs);
-                await caseDetailsPage.validateFileTree([
-                    {
-                        type: 'folder',
-                        label: 'Hearing Documents',
-                        children : [
-                            {
-                                type: 'folder',
-                                label: 'Applicant',
-                                children: [
-                                    {
-                                        type: 'folder',
-                                        label: 'Pre Hearing Draft Order',
-                                        children: [
-                                            {
-                                                type: 'file',
-                                                label: 'agreed-draft-order-document.docx',
-                                                contentSnippets: [
-                                                    `Case Reference: ${caseId}`,
-                                                ]
-                                            },
-                                            {
-                                                type: 'file',
-                                                label: 'BagginsFDA.pdf'
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ])
-
-                await manageCaseDashboardPage.signOut();
+    test(
+        'Form A case uploading a Suggested draft order',
+        { tag: [] },
+        async (
+            {
+                loginPage,
+                manageCaseDashboardPage,
+                caseDetailsPage,
+                uploadDraftOrdersPage,
+                checkYourAnswersPage
             }
-        );
-}
+        ) => {
+            const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+            let expectedUrl = ContestedEvents.uploadDraftOrders.ccdCallback;
+            await manageCaseDashboardPage.visit();
+            await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+            await manageCaseDashboardPage.navigateToCase(caseId);
 
-);
+            await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
+
+            await uploadDraftOrdersPage.chooseASuggestedDraftOrderPriorToAListedHearing();
+            await uploadDraftOrdersPage.navigateContinue(expectedUrl, 2);
+            await uploadDraftOrdersPage.assertMandatoryFields(false);
+
+            await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
+            await uploadDraftOrdersPage.chooseUploadOnBehalfOfApplicant();
+            await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
+            await uploadDraftOrdersPage.chooseThatYouAreUploadingPensionSharingAnnexes();
+            await uploadDraftOrdersPage.uploadDraftOrder(caseId);
+            await uploadDraftOrdersPage.uploadPensionSharingAnnexes();
+            await uploadDraftOrdersPage.navigateContinue('submit');
+
+            await checkYourAnswersPage.assertCheckYourAnswersPage(uploadSuggestedDraftOrderTable);
+            await uploadDraftOrdersPage.navigateSubmit();
+            await uploadDraftOrdersPage.closeAndReturnToCaseDetails();
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.uploadDraftOrders.listItem);
+            await caseDetailsPage.assertTabData(suggested_draft_order_case_document_tabs);
+            await caseDetailsPage.validateFileTree([
+                {
+                    type: 'folder',
+                    label: 'Hearing Documents',
+                    children : [
+                        {
+                            type: 'folder',
+                            label: 'Applicant',
+                            children: [
+                                {
+                                    type: 'folder',
+                                    label: 'Pre Hearing Draft Order',
+                                    children: [
+                                        {
+                                            type: 'file',
+                                            label: 'agreed-draft-order-document.docx',
+                                            contentSnippets: [
+                                                `Case Reference: ${caseId}`,
+                                            ]
+                                        },
+                                        {
+                                            type: 'file',
+                                            label: 'BagginsFDA.pdf'
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]);
+            await manageCaseDashboardPage.signOut();
+        }
+    );
+});

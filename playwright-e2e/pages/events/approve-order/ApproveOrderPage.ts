@@ -63,7 +63,6 @@ export class ApproveOrderPage extends BaseJourneyPage {
         await this.assertDropDownOptionsAreVisible(titleOptions, this.judgeTitle);
     }
 
-
     async selectJudgeTitle(judgeTitle: string) {
         await this.judgeTitle.selectOption({ label: judgeTitle });
     }

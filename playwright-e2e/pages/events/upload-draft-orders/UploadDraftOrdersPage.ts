@@ -39,12 +39,12 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
     async chooseAnAgreedOrderFollowingAHearing() {
         await expect(this.kindOfDraftOrderToUploadRadio).toBeVisible();
         await this.kindOfDraftOrderToUploadRadio.check();
-      }
+    }
 
-      async chooseASuggestedDraftOrderPriorToAListedHearing() {
+    async chooseASuggestedDraftOrderPriorToAListedHearing() {
         await expect(this.suggestedDraftOrderRadio).toBeVisible();
         await this.suggestedDraftOrderRadio.check();
-      }
+    }
 
     async confirmTheUploadedDocsAreForTheCase() {
         await expect(this.confirmTheUploadedDocsAreForTheCaseCheckbox).toBeVisible();

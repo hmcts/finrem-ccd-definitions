@@ -173,7 +173,7 @@ export class CaseDetailsPage {
         const heading = this.page.getByRole('heading', { name: 'Case file', level: 2 });
         if (!(await heading.isVisible())) {
             const paginationBeforeButton = this.page.locator(`button.mat-tab-header-pagination-before[aria-hidden="true"]:not([disabled])`);
-            if( await paginationBeforeButton.count() > 0 ) {
+            if (await paginationBeforeButton.count() > 0) {
                 await paginationBeforeButton.click();
             }
             const caseFileViewButton = this.page.getByRole('tab', { name: 'Case File View', exact: false });
