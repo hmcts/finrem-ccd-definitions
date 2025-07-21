@@ -376,14 +376,18 @@ export class ContestedEventApi {
       documentBinaryUrl: string;
       uploadTimestamp: string;
       hearingDate: string;
+      courtOrderDate: string;
     }
   ): Promise<string> {
+    
     const hearingDateLabel = DateHelper.formatToDayMonthYear(
       dynamicDraftOrderInfo.hearingDate
     );
+  
     const modifications = APPROVE_ORDERS_DATA(
       hearingDateLabel,
       dynamicDraftOrderInfo.hearingDate,
+      dynamicDraftOrderInfo.courtOrderDate,
       dynamicDraftOrderInfo.documentUrl,
       dynamicDraftOrderInfo.documentBinaryUrl,
       dynamicDraftOrderInfo.uploadTimestamp
