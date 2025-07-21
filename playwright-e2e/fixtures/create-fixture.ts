@@ -64,6 +64,7 @@ import { CreateGeneralOrderPage } from '../pages/events/create-general-order/Cre
 import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage.ts';
 import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage.ts';
 import {CaseListPage} from '../pages/CaseListPage.ts';
+import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -131,6 +132,7 @@ type CreateFixtures = {
   contestedSendOrderPage: ContestedSendOrderPage;
   manageIntervenersPage: ManageIntervenerPage;
   caseListPage: CaseListPage;
+  approvedOrderPage: ApproveOrderPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -319,5 +321,8 @@ export const test = base.extend<CreateFixtures>({
   },
   caseListPage: async ({ page }, use) => {
     await use(new CaseListPage(page));
+  },
+  approvedOrderPage: async ({ page }, use) => {
+    await use(new ApproveOrderPage(page));
   }
 });
