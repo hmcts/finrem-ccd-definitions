@@ -61,6 +61,7 @@ import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEv
 
     const documentDetailsForFutureTestSteps = {
       hearingDate,
+      courtOrderDate: hearingDate,
       documentUrl: firstDraftOrderItem?.document_url,
       documentBinaryUrl: firstDraftOrderItem?.document_binary_url,
       uploadTimestamp: firstDraftOrderItem?.upload_timestamp
