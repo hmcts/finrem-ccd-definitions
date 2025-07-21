@@ -64,6 +64,9 @@ import { CreateGeneralOrderPage } from '../pages/events/create-general-order/Cre
 import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage.ts';
 import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage.ts';
 import {CaseListPage} from '../pages/CaseListPage.ts';
+import { ReferToJudgeApplicationPage } from '../pages/events/refer-to-judge-application/ReferToJudgeApplicationPage.ts';
+import { GeneralApplicationOutcomePage } from '../pages/events/general-application-outcome/GeneralApplicationOutcomePage.ts';
+import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -131,6 +134,9 @@ type CreateFixtures = {
   contestedSendOrderPage: ContestedSendOrderPage;
   manageIntervenersPage: ManageIntervenerPage;
   caseListPage: CaseListPage;
+  referToJudgeApplicationPage: ReferToJudgeApplicationPage;
+  generalApplicationOutcomePage: GeneralApplicationOutcomePage;
+  approvedOrderPage: ApproveOrderPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -319,5 +325,14 @@ export const test = base.extend<CreateFixtures>({
   },
   caseListPage: async ({ page }, use) => {
     await use(new CaseListPage(page));
+  },
+  referToJudgeApplicationPage: async ({ page }, use) => {
+    await use(new ReferToJudgeApplicationPage(page));
+  },
+  generalApplicationOutcomePage: async ({ page }, use) => {
+    await use(new GeneralApplicationOutcomePage(page));
+  },
+  approvedOrderPage: async ({ page }, use) => {
+    await use(new ApproveOrderPage(page));
   }
 });
