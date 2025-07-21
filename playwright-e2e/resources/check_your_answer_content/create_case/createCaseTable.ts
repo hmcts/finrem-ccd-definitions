@@ -125,7 +125,7 @@ export const miamDetails: TableRowItem[] = [
 export const variationOrderDetails: TableRowItem[] = [
     'Upload original order to be varied',
     { cellItem: 'Original order to be varied', value: ' Variation order.pdf' },
-    { cellItem: 'Do you want to upload any other documents ?', value: 'No', rowType: 'label-value-adjacent' },
+    { cellItem: 'Do you want to upload any other documents ?', value: 'Yes', rowType: 'label-value-adjacent' },
 ]
 
 export const urgentCase: TableRowItem[] = [
@@ -218,7 +218,7 @@ export const  contestedCreateExpressPaperMatrimonyCaseDetailsTable: Table = {
         { cellItem: 'Of the above value, what is the net value of the family home?', value: '125,000', rowType: 'label-value-adjacent' },
         'Please tick any potential allegations/issues which may arise',
         { cellItem: 'Select all that apply', value: 'Not applicable'},
-        { cellItem: 'Do you want to upload any other documents ?', value: 'No', rowType: 'label-value-adjacent' },
+        { cellItem: 'Do you want to upload any other documents ?', value: 'Yes', rowType: 'label-value-adjacent' },
         ...getCourtDetails("BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE"),
         ...miamDetails,
         'You should have a document signed by the mediator confirming this (which you should bring to your first hearing)',
