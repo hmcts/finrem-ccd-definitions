@@ -131,5 +131,3 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
         await this.page.waitForURL(/case-details/);
     }
 }
-
-
