@@ -66,6 +66,7 @@ import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIn
 import {CaseListPage} from '../pages/CaseListPage.ts';
 import { ReferToJudgeApplicationPage } from '../pages/events/refer-to-judge-application/ReferToJudgeApplicationPage.ts';
 import { GeneralApplicationOutcomePage } from '../pages/events/general-application-outcome/GeneralApplicationOutcomePage.ts';
+import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -135,6 +136,7 @@ type CreateFixtures = {
   caseListPage: CaseListPage;
   referToJudgeApplicationPage: ReferToJudgeApplicationPage;
   generalApplicationOutcomePage: GeneralApplicationOutcomePage;
+  approvedOrderPage: ApproveOrderPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -329,5 +331,8 @@ export const test = base.extend<CreateFixtures>({
   },
   generalApplicationOutcomePage: async ({ page }, use) => {
     await use(new GeneralApplicationOutcomePage(page));
+  },
+  approvedOrderPage: async ({ page }, use) => {
+    await use(new ApproveOrderPage(page));
   }
 });
