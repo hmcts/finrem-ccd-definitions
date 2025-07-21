@@ -27,8 +27,21 @@ export const upload_draft_order_tabs: Tab[] = [
             { tabItem: "Uploaded on behalf of", value: "The applicant"},
             { tabItem: "Pension sharing annex", value: "BagginsFDA.pdf"},
         ]
+    },
+    {
+        tabName: "Case documents",
+        tabContent: [
+            "Agreed draft orders following a hearing",
+            "Agreed draft orders following a hearing 1",
+            { tabItem: 'Draft order', value: 'agreed-draft-order-document.docx' },
+            { tabItem: "Uploaded on behalf of", value: "The applicant"},
+            { tabItem: "Is this a resubmission?", value: "No"},
+            "Agreed draft orders following a hearing 2",
+            { tabItem: 'Pension Sharing Annex', value: 'BagginsFDA.pdf'},
+            { tabItem: "Uploaded on behalf of", value: "The applicant"},
+        ]
     }
-]
+];
 
 export const approved_upload_draft_order_tabs: Tab[] = [
     {
@@ -59,4 +72,19 @@ export const approved_upload_draft_order_tabs: Tab[] = [
             { tabItem: "Pension sharing annex", value: "BagginsFDA.pdf"},
         ]
     }
-]
+];
+
+export const suggested_draft_order_case_document_tabs: Tab[] = [
+    {
+        tabName: "Case documents",
+        tabContent: [
+            "Suggested draft orders prior to a hearing",
+            "Suggested draft orders prior to a hearing 1",
+            { tabItem: 'Draft order', value: 'agreed-draft-order-document.docx' },
+            { tabItem: "Uploaded on behalf of", value: "The applicant"},
+            "Suggested draft orders prior to a hearing 2",
+            { tabItem: 'Pension Sharing Annex', value: 'BagginsFDA.pdf'},
+            { tabItem: "Uploaded on behalf of", value: "The applicant"},
+        ]
+    }
+];

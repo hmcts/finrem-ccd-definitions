@@ -25,20 +25,25 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
         this.kindOfDraftOrderToUploadRadio = page.getByRole('radio', { name: 'An agreed order following a hearing (agreed by the parties at the hearing)' });
         this.suggestedDraftOrderRadio = page.getByRole('radio', { name: 'A suggested draft order prior to a listed hearing (this will just be placed on file for the hearing)' });
         this.confirmTheUploadedDocsAreForTheCaseCheckbox = page.getByRole('checkbox', { name: 'I confirm the uploaded documents are for the' });
-        this.hearingListDropdown =  page.locator('select#uploadAgreedDraftOrder_hearingDetails')
-        this.judgeForHearingKnownRadio = page.locator('#uploadAgreedDraftOrder_judgeKnownAtHearing')
-        this.uploadOnBehalfOfApplicantRadio = page.locator('input#uploadAgreedDraftOrder_uploadParty_theApplicant')
-        this.uploadOnBehalfOfRespondentRadio = page.locator('input#uploadAgreedDraftOrder_uploadParty_theRespondent');
+        this.hearingListDropdown =  page.locator('select#uploadAgreedDraftOrder_hearingDetails');
+        this.judgeForHearingKnownRadio = page.locator('#uploadAgreedDraftOrder_judgeKnownAtHearing');
+        this.uploadOnBehalfOfApplicantRadio = page.locator(`input[id$='_uploadParty_theApplicant']`);
+        this.uploadOnBehalfOfRespondentRadio = page.locator(`input[id$='_uploadParty_theRespondent']`);
         this.uploadingOrdersCheckbox = page.getByRole('checkbox', { name: 'Orders' });
         this.uploadingPensionSharingAnnexesCheckbox = page.getByRole('checkbox', { name: 'Pension Sharing Annexes' });
-        this.uploadDraftOrderGroup = page.locator('div#uploadAgreedDraftOrder_agreedDraftOrderCollection')
-        this.uploadPensionSharingAnnexesGroup = page.locator('div#uploadAgreedDraftOrder_agreedPsaCollection');
+        this.uploadDraftOrderGroup = page.locator(`div[id$='DraftOrderCollection']`)
+        this.uploadPensionSharingAnnexesGroup = page.locator(`div[id$='PsaCollection']`);
         this.draftOrdersUploaded = page.getByText('Draft orders uploaded');
     }
 
     async chooseAnAgreedOrderFollowingAHearing() {
         await expect(this.kindOfDraftOrderToUploadRadio).toBeVisible();
         await this.kindOfDraftOrderToUploadRadio.check();
+      }
+
+      async chooseASuggestedDraftOrderPriorToAListedHearing() {
+        await expect(this.suggestedDraftOrderRadio).toBeVisible();
+        await this.suggestedDraftOrderRadio.check();
       }
 
     async confirmTheUploadedDocsAreForTheCase() {
@@ -81,7 +86,7 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
         const addNewButton = this.uploadDraftOrderGroup.getByRole('button', { name: 'Add new' });
         await addNewButton.click();
 
-        const draftOrderDocUpload = this.page.locator(`input#uploadAgreedDraftOrder_agreedDraftOrderCollection_${position}_agreedDraftOrderDocument`);
+        const draftOrderDocUpload = this.page.locator(`input[id*='DraftOrderCollection_${position}'][id$='DraftOrderDocument']`);
         await expect(draftOrderDocUpload).toBeVisible();
         await DocumentHelper.createDraftOrderDocument(caseId);
         await this.commonActionsHelper.uploadWithRateLimitRetry(
@@ -91,20 +96,23 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
         );
     }
 
-    async assertMandatoryFields() {
+    async assertMandatoryFields(isAgreed: boolean = true) {
         const mandatoryFieldsErrors = ['Confirm the uploaded documents are for the case is required',
-        'Which hearing was this? is required',
-        'Do you know who was the judge at this hearing? is required',
         'Who are you uploading this on behalf of? is required',
         'What are you uploading? is required', 'Field is required'];
+
+        if (isAgreed) {
+            mandatoryFieldsErrors.push( 'Which hearing was this? is required',
+                'Do you know who was the judge at this hearing? is required');
+        }
         await this.navigateContinue();
         await this.assertErrorMessage(mandatoryFieldsErrors);
     }
 
-    async uploadPensionSharingAnnexes(caseId: string, position : number = 0) {
+    async uploadPensionSharingAnnexes(position : number = 0) {
         const addNewButton = this.uploadPensionSharingAnnexesGroup.getByRole('button', { name: 'Add new' });
         await addNewButton.click();
-        const pensionSharingAnnexesDocUpload = this.page.locator(`input#uploadAgreedDraftOrder_agreedPsaCollection_${position}_agreedPensionSharingAnnexes`);
+        const pensionSharingAnnexesDocUpload = this.page.locator(`input[id*='PsaCollection_${position}'][id$='PensionSharingAnnexes']`);
         await expect(pensionSharingAnnexesDocUpload).toBeVisible();
         const filePayload = await this.commonActionsHelper
             .createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', "BagginsFDA.pdf");
