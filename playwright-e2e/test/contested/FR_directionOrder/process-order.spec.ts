@@ -53,7 +53,6 @@ async function progressToProcessOrderEvent(
   await uploadDraftOrdersPage.chooseWhetherJudgeForHearingIsKnown(YesNoRadioEnum.NO);
   await uploadDraftOrdersPage.chooseUploadOnBehalfOfApplicant();
   await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
-  await uploadDraftOrdersPage.navigateAddNew();
   await uploadDraftOrdersPage.uploadDraftOrder(caseId);
   await uploadDraftOrdersPage.navigateContinue();
   const eventResponse = await uploadDraftOrdersPage.navigateSubmitAndReturnEventResponse();
@@ -126,7 +125,7 @@ async function performManageHearings(
 test.describe('Contested - Process Order', () => {
   test(
     'Form A case creating a hearing from Process Order',
-    { tag: [] },
+    { tag: ['@process-order'] },
     async (
       {
         loginPage,
@@ -147,7 +146,7 @@ test.describe('Contested - Process Order', () => {
 
   test(
     'Paper Case creating a hearing from Process Order',
-    { tag: [] },
+    { tag: ['@process-order'] },
     async (
       {
         loginPage,
@@ -169,7 +168,7 @@ test.describe('Contested - Process Order', () => {
   // non-prod only
   test.skip(
     'Form A case shows old-style Process Order hearings on the new hearing tab',
-    { tag: [] },
+    { tag: ['@process-order'] },
     async (
       {
         loginPage,
@@ -211,7 +210,7 @@ test.describe('Contested - Process Order', () => {
   // non-prod only
   test.skip(
     'Paper case shows old-style Process Order hearings on the new hearing tab',
-    { tag: [] },
+    { tag: ['@process-order'] },
     async (
       {
         loginPage,
