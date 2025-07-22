@@ -249,6 +249,42 @@
     "ID": "FR_manageHearingsToWorkingHearing",
     "CaseEventID": "FR_manageHearings",
     "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.dorsetCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"southwest\" AND workingHearing.hearingCourtSelection.southWestList=\"dorset\""
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "ID": "FR_manageHearingsToWorkingHearing",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.bristolCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"southwest\" AND workingHearing.hearingCourtSelection.southWestList=\"bristol\""
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "ID": "FR_manageHearingsToWorkingHearing",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.newportCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"wales\" AND workingHearing.hearingCourtSelection.walesList=\"newport\""
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "ID": "FR_manageHearingsToWorkingHearing",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.swanseaCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"wales\" AND workingHearing.hearingCourtSelection.walesList=\"swansea\""
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "ID": "FR_manageHearingsToWorkingHearing",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingHearing",
     "ListElementCode": "hearingCourtSelection.northWalesCourtList",
     "DisplayContext": "MANDATORY",
     "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"wales\" AND workingHearing.hearingCourtSelection.walesList=\"northwales\""
