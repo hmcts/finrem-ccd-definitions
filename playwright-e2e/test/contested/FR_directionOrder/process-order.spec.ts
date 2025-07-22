@@ -127,16 +127,35 @@ test.describe('Contested - Process Order', () => {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        uploadDraftOrdersPage
+        uploadDraftOrdersPage, 
+        unprocessedApprovedOrdersPage, 
+        nextHearingDetailsPage,
+        checkYourAnswersPage
       }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
-      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
-      // Next
-      // Actually test the process order event, when new hearings are introduced to the flow.
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
-      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectNextStep(ContestedEvents.directionOrder);
+
+      // Check unapproved draft order tab
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders(orderDoc.fileName);
+      await unprocessedApprovedOrdersPage.navigateContinue();
+
+      // Add Hearing 
+      await nextHearingDetailsPage.addHearing(); 
+      await nextHearingDetailsPage.navigateContinue(); 
+
+      // Check your answers
+      await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithHearingTable);
+      await nextHearingDetailsPage.navigateSubmit();
+
+      // Assert case details content
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.directionOrder.listItem);
+
+      await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
+      await caseDetailsPage.assertTabData(draftOrdersApprovedWithHearingTabData); 
     }
   );
 
