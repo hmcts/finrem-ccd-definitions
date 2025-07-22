@@ -51,7 +51,6 @@ import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEv
     await uploadDraftOrdersPage.chooseWhetherJudgeForHearingIsKnown(YesNoRadioEnum.NO);
     await uploadDraftOrdersPage.chooseUploadOnBehalfOfApplicant();
     await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
-    await uploadDraftOrdersPage.navigateAddNew();
     await uploadDraftOrdersPage.uploadDraftOrder(caseId);
     await uploadDraftOrdersPage.navigateContinue();
     const eventResponse = await uploadDraftOrdersPage.navigateSubmitAndReturnEventResponse();
@@ -61,6 +60,7 @@ import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEv
 
     const documentDetailsForFutureTestSteps = {
       hearingDate,
+      courtOrderDate: hearingDate,
       documentUrl: firstDraftOrderItem?.document_url,
       documentBinaryUrl: firstDraftOrderItem?.document_binary_url,
       uploadTimestamp: firstDraftOrderItem?.upload_timestamp
@@ -73,7 +73,7 @@ import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEv
 test.describe('Contested - Process Order', () => {
   test(
     'Form A case creating a hearing from Process Order',
-    { tag: [] },
+    { tag: ['@process-order'] },
     async (
       {
         loginPage,
@@ -94,7 +94,7 @@ test.describe('Contested - Process Order', () => {
 
   test(
     'Paper Case creating a hearing from Process Order',
-    { tag: [] },
+    { tag: ['@process-order'] },
     async (
       {
         loginPage,
@@ -115,7 +115,7 @@ test.describe('Contested - Process Order', () => {
 
   test(
     'Form A case shows old-style Process Order hearings on the new hearing tab',
-    { tag: [] },
+    { tag: ['@process-order'] },
     async (
       {
         loginPage,
@@ -136,7 +136,7 @@ test.describe('Contested - Process Order', () => {
 
   test(
     'Paper case shows old-style Process Order hearings on the new hearing tab',
-    { tag: [] },
+    { tag: ['@process-order'] },
     async (
       {
         loginPage,
