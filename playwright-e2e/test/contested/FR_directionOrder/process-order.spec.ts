@@ -3,8 +3,12 @@ import config from '../../../config/config';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { ConsentedEventApi } from '../../../data-utils/api/consented/ConsentedEventApi';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
+import { unprocessedApprovedOrdersWithHearingTable } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable';
+import { processOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs';
+import { DateHelper } from '../../../data-utils/DateHelper';
+import { draftOrderApprove } from '../../../../test/functional/pages/draft-order-approve/draft-order-approve';
+import { draftOrdersApprovedWithHearingTabData } from '../../../resources/tab_content/contested/draft_orders_tabs';
 
   /**
    * Firstly, performs the upload draft order flow as a step towards the Process Order event.
@@ -33,6 +37,7 @@ import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEv
     documentBinaryUrl: string;
     uploadTimestamp: string;
     hearingDate: string;
+    fileName: string;
   }> {
     await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(
@@ -64,7 +69,8 @@ import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEv
       courtOrderDate: hearingDate,
       documentUrl: firstDraftOrderItem?.document_url,
       documentBinaryUrl: firstDraftOrderItem?.document_binary_url,
-      uploadTimestamp: firstDraftOrderItem?.upload_timestamp
+      uploadTimestamp: firstDraftOrderItem?.upload_timestamp,
+      fileName: "agreed-draft-order-document.docx"
     };
 
     await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
@@ -80,16 +86,36 @@ test.describe('Contested - Process Order', () => {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        uploadDraftOrdersPage
+        uploadDraftOrdersPage, 
+        unprocessedApprovedOrdersPage, 
+        nextHearingDetailsPage,
+        checkYourAnswersPage
       }
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
-      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+      const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
-      // Next
-      // Actually test the process order event, when new hearings are introduced to the flow.
-      // Check that the draft order tab is correct; Uploaded draft orders 1 should have an "Order status" of "Processed" (has changed from Approved by Judge).
-      // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectNextStep(ContestedEvents.directionOrder);
+
+      // Check unapproved draft order tab
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders(orderDoc.fileName);
+      await unprocessedApprovedOrdersPage.navigateContinue();
+
+      // Add Hearing 
+      await nextHearingDetailsPage.addHearing(); 
+      await nextHearingDetailsPage.navigateContinue(); 
+
+      // Check your answers
+      await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithHearingTable);
+      await nextHearingDetailsPage.navigateSubmit();
+
+      // Assert case details content
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.directionOrder.listItem);
+
+      await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
+      await caseDetailsPage.assertTabData(draftOrdersApprovedWithHearingTabData); 
+
     }
   );
 

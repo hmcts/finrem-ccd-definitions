@@ -47,6 +47,22 @@ export class DateHelper {
       }).format(date);
     }
 
+    /**
+     * Converts a date string (ISO format) into a formatted date string
+     * in the short month format "dd Month yyyy" (e.g. "06 Aug 2025").
+     *
+     * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
+     * @returns A promise that resolves with the formatted date string.
+     */
+    static formatToDayMonthYearShort(dateStr: string): string {
+      const date = new Date(dateStr);
+      return new Intl.DateTimeFormat('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      }).format(date);
+    }
+
     static async getFormattedHearingDate(): Promise<{ currentDate: string; hearingDate: string }> {
       const currentDate = await this.getCurrentDate();
       const hearingDate = await this.getHearingDateUsingCurrentDate();
@@ -90,7 +106,7 @@ export class DateHelper {
 
         return twelveWeeksAndOneDayLater
           .toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
-  };
+    };
 
     /**
      * Returns today's date formatted as an array of strings [year, month, day].

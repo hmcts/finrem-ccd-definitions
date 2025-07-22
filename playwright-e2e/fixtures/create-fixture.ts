@@ -54,16 +54,18 @@ import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/Uploa
 import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
 import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
 import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
-import { AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
+import { AddNotePage} from '../pages/events/add-note/AddNotePage';
 import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateToJudgePage';
-import { EventSummaryPage } from '../pages/events/EventSummaryPage.ts';
-import { RefundPage } from '../pages/events/refund/RefundPage.ts';
+import { EventSummaryPage } from '../pages/events/EventSummaryPage';
+import { RefundPage } from '../pages/events/refund/RefundPage';
 import { ManageBarristerPage } from '../pages/events/manage-barrister/ManageBarristerPage';
-import { PrepareForHearingPage } from '../pages/events/prepare-for-hearing/PrepareForHearingPage.ts';
-import { CreateGeneralOrderPage } from '../pages/events/create-general-order/CreateGeneralOrderPage.ts';
-import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage.ts';
-import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage.ts';
-import {CaseListPage} from '../pages/CaseListPage.ts';
+import { PrepareForHearingPage } from '../pages/events/prepare-for-hearing/PrepareForHearingPage';
+import { CreateGeneralOrderPage } from '../pages/events/create-general-order/CreateGeneralOrderPage';
+import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage';
+import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage';
+import {CaseListPage} from '../pages/CaseListPage';
+import { UnprocessedApprovedOrdersPage } from '../pages/events/direction-upload-order/UnprocessedApprovedOrdersPage';
+import { NextHearingDetailsPage } from '../pages/events/direction-upload-order/NextHearingDetailsPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -118,6 +120,8 @@ type CreateFixtures = {
   manageFlagPage: ManageFlagPage;
   generalApplicationDirectionsPage: GeneralApplicationDirectionsPage;
   uploadDraftOrdersPage: UploadDraftOrdersPage;
+  unprocessedApprovedOrdersPage: UnprocessedApprovedOrdersPage;
+  nextHearingDetailsPage: NextHearingDetailsPage;
   manageCaseDocumentsPage: ManageCaseDocumentsPage;
   manageHearingPage: ManageHearingPage;
   checkYourAnswersPage: CheckYourAnswersPage;
@@ -280,6 +284,12 @@ export const test = base.extend<CreateFixtures>({
   },
   uploadDraftOrdersPage: async ({ page }, use) => {
     await use(new UploadDraftOrdersPage(page, commonActionsHelper));
+  },
+  unprocessedApprovedOrdersPage: async ({ page }, use) => {
+    await use(new UnprocessedApprovedOrdersPage(page));
+  },
+  nextHearingDetailsPage: async ({ page }, use) => {
+    await use(new NextHearingDetailsPage(page));
   },
   manageCaseDocumentsPage: async ({ page }, use) => {
     await use(new ManageCaseDocumentsPage(page, commonActionsHelper));
