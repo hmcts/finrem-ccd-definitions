@@ -127,9 +127,6 @@ async function performManageHearings(
     await manageHearingPage.navigateSubmit();
 }
 
-
-// Old Style Process Order hearings
-
 test.describe('Contested - Process Order (Old Style)', () => {
   test(
     'Form A case creating a hearing from Process Order',
@@ -141,34 +138,37 @@ test.describe('Contested - Process Order (Old Style)', () => {
         caseDetailsPage,
         uploadDraftOrdersPage, 
         unprocessedApprovedOrdersPage, 
-        nextHearingDetailsPage,
+        processOrderPage,
         checkYourAnswersPage
       }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.directionOrder);
 
-      // Check unapproved draft order tab
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders(orderDoc.fileName);
       await unprocessedApprovedOrdersPage.navigateContinue();
 
-      // Add Hearing 
-      await nextHearingDetailsPage.addOldHearing(); 
-      await nextHearingDetailsPage.navigateContinue(); 
+      const firstHearing = 0;
+      await processOrderPage.selectIsAnotherHearingToBeListed(firstHearing, true);
+      await processOrderPage.enterTimeEstimate(firstHearing, '1 hour');
+      await processOrderPage.enterHearingDate(firstHearing, '01', '01', '2024');
+      await processOrderPage.enterHearingTime(firstHearing, '10:00');
+      await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
+      await processOrderPage.selectCourtForHearing();
+      await processOrderPage.navigateContinue();
 
       // Check your answers
-      await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithOldHearingTable);
-      await nextHearingDetailsPage.navigateSubmit();
+      await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithOldHearingTable("Yes", "1 hour", "01/01/2024", "10:00", "North West", "Directions (DIR)"));
+      await processOrderPage.navigateSubmit();
 
       // Assert case details content
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.directionOrder.listItem);
 
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
       await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate)); 
-    
     }
   );
 
@@ -180,9 +180,9 @@ test.describe('Contested - Process Order (Old Style)', () => {
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        uploadDraftOrdersPage, 
+        uploadDraftOrdersPage,
         unprocessedApprovedOrdersPage, 
-        nextHearingDetailsPage,
+        processOrderPage, 
         checkYourAnswersPage
       }
     ) => {
@@ -192,17 +192,21 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.directionOrder);
 
-      // Check unapproved draft order tab
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders(orderDoc.fileName);
       await unprocessedApprovedOrdersPage.navigateContinue();
 
-      // Add Hearing 
-      await nextHearingDetailsPage.addOldHearing(); 
-      await nextHearingDetailsPage.navigateContinue(); 
+      const firstHearing = 0;
+      await processOrderPage.selectIsAnotherHearingToBeListed(firstHearing, true);
+      await processOrderPage.enterTimeEstimate(firstHearing, '1 hour');
+      await processOrderPage.enterHearingDate(firstHearing, '01', '01', '2024');
+      await processOrderPage.enterHearingTime(firstHearing, '10:00');
+      await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
+      await processOrderPage.selectCourtForHearing();
+      await processOrderPage.navigateContinue();
 
       // Check your answers
-      await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithOldHearingTable);
-      await nextHearingDetailsPage.navigateSubmit();
+      await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithOldHearingTable("Yes", "1 hour", "01/01/2024", "10:00", "North West", "Directions (DIR)"));
+      await processOrderPage.navigateSubmit();
 
       // Assert case details content
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.directionOrder.listItem);
@@ -419,7 +423,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await nextHearingDetailsPage.navigateSubmit();
 
       // // Assert case details content
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.directionOrder.listItem);
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrder.listItem);
 
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
       await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate)); 
@@ -461,7 +465,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await nextHearingDetailsPage.navigateSubmit();
 
       // // Assert case details content
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.directionOrder.listItem);
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrder.listItem);
 
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
       await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));

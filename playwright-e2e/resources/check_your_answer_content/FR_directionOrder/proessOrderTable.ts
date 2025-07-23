@@ -6,18 +6,28 @@ export const unprocessedApprovedOrders: TableRowItem[] = [
   { cellItem: "Upload Document", value: "agreed-draft-order-document.docx" },
 ]
 
-export const unprocessedApprovedOrdersWithOldHearingTable: Table = {
-  tableName: "Check Your Answers", 
-  rows: [
-    ...unprocessedApprovedOrders,
-    "Next Hearing Details",
-    { cellItem: "Is there another hearing to be listed ?", value: "Yes" },
-    { cellItem: "Time Estimate", value: "30" },
-    { cellItem: "Hearing Date", value: DateHelper.formatToDayMonthYearShort("2024-01-01") },
-    { cellItem: "Hearing Time", value: "10:00" },
-    { cellItem: "Please state in which Financial Remedies Court Zone the applicant resides", value: "Midlands" },
-    { cellItem: "Type of hearing values", value: "First Directions Appointment (FDA)" }
-  ]
+export const unprocessedApprovedOrdersWithOldHearingTable = (
+  isAnotherHearingListed: string,
+  timeEstimate: string, 
+  hearingDate: string,
+  hearingTime: string,
+  courtRegion: string,
+  hearingType: string
+
+): Table => {
+  return {
+    tableName: "Check Your Answers", 
+    rows: [
+      ...unprocessedApprovedOrders,
+      "Next Hearing Details",
+      { cellItem: "Is there another hearing to be listed ?", value: isAnotherHearingListed },
+      { cellItem: "Time Estimate", value: timeEstimate },
+      { cellItem: "Hearing Date", value: DateHelper.formatToDayMonthYearShort(hearingDate) },
+      { cellItem: "Hearing Time", value: hearingTime },
+      { cellItem: "Please state in which Financial Remedies Court Zone the applicant resides", value: courtRegion },
+      { cellItem: "Type of hearing values", value: hearingType }
+    ]
+  };
 };
 
 export const unprocessedApprovedOrdersWithNewHearingTable: Table = {
