@@ -101,7 +101,7 @@ export class CheckYourAnswersPage {
         }
     }
 
-    private async waitForStableRows(tableLocator: Locator, stableForMs = 1500, maxWaitMs = 5000) {
+    private async waitForStableRows(tableLocator: Locator, stableForMs = 2500, maxWaitMs = 6000) {
         let lastCount = 0;
         let stableStart = Date.now();
         let start = Date.now();
