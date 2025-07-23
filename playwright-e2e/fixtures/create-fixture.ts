@@ -1,5 +1,6 @@
 import { test as base } from '@playwright/test';
 import { SigninPage } from '../pages/SigninPage';
+import { BlankPage } from '../pages/BlankPage.ts';
 import { CommonActionsHelper } from '../pages/helpers/CommonActionsHelper';
 import { SolicitorDetailsHelper } from '../pages/helpers/SolicitorDetailsHelper';
 
@@ -59,18 +60,23 @@ import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateT
 import { EventSummaryPage } from '../pages/events/EventSummaryPage';
 import { RefundPage } from '../pages/events/refund/RefundPage';
 import { ManageBarristerPage } from '../pages/events/manage-barrister/ManageBarristerPage';
-import { PrepareForHearingPage } from '../pages/events/prepare-for-hearing/PrepareForHearingPage';
-import { CreateGeneralOrderPage } from '../pages/events/create-general-order/CreateGeneralOrderPage';
-import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage';
-import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage';
-import {CaseListPage} from '../pages/CaseListPage';
-import { UnprocessedApprovedOrdersPage } from '../pages/events/process-order/UnprocessedApprovedOrdersPage';
-import { NextHearingDetailsPage } from '../pages/events/process-order/NextHearingDetailsPage';
+import { PrepareForHearingPage } from '../pages/events/prepare-for-hearing/PrepareForHearingPage.ts';
+import { CreateGeneralOrderPage } from '../pages/events/create-general-order/CreateGeneralOrderPage.ts';
+import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage.ts';
+import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage.ts';
+import {CaseListPage} from '../pages/CaseListPage.ts';
+import { ReferToJudgeApplicationPage } from '../pages/events/refer-to-judge-application/ReferToJudgeApplicationPage.ts';
+import { GeneralApplicationOutcomePage } from '../pages/events/general-application-outcome/GeneralApplicationOutcomePage.ts';
+import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
+import { ProcessOrderPage } from '../pages/events/process-order/ProcessOrderPage.ts';
+import { UnprocessedApprovedOrdersPage } from '../pages/events/process-order/UnprocessedApprovedOrdersPage.ts';
+import { NextHearingDetailsPage } from '../pages/events/process-order/NextHearingDetailsPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
 
 type CreateFixtures = {
+  blankPage: BlankPage;
   loginPage: SigninPage;
   createCasePage: CreateCasePage;
   startPage: StartPage;
@@ -135,11 +141,18 @@ type CreateFixtures = {
   contestedSendOrderPage: ContestedSendOrderPage;
   manageIntervenersPage: ManageIntervenerPage;
   caseListPage: CaseListPage;
+  referToJudgeApplicationPage: ReferToJudgeApplicationPage;
+  generalApplicationOutcomePage: GeneralApplicationOutcomePage;
+  approvedOrderPage: ApproveOrderPage;
+  processOrderPage: ProcessOrderPage;
 };
 
 export const test = base.extend<CreateFixtures>({
   loginPage: async ({ page }, use) => {
     await use(new SigninPage(page));
+  },
+  blankPage: async ({ page }, use) => {
+    await use(new BlankPage(page));
   },
   createCasePage: async ({ page }, use) => {
     await use(new CreateCasePage(page));
@@ -329,5 +342,17 @@ export const test = base.extend<CreateFixtures>({
   },
   caseListPage: async ({ page }, use) => {
     await use(new CaseListPage(page));
+  },
+  referToJudgeApplicationPage: async ({ page }, use) => {
+    await use(new ReferToJudgeApplicationPage(page));
+  },
+  generalApplicationOutcomePage: async ({ page }, use) => {
+    await use(new GeneralApplicationOutcomePage(page));
+  },
+  approvedOrderPage: async ({ page }, use) => {
+    await use(new ApproveOrderPage(page));
+  },
+  processOrderPage: async ({ page }, use) => {
+    await use(new ProcessOrderPage(page, commonActionsHelper));
   }
 });

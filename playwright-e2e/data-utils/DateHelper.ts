@@ -118,4 +118,18 @@ export class DateHelper {
         return today.split('-');
     };
 
+    /**
+     * Returns a date 12 weeks and 1 day later than today, formatted as "dd Month yyyy" (e.g. "6 August 2025").
+     *
+     * @returns Formatted date string for 12 weeks
+     */
+    static getFullDateTwelveWeeksLater(): string {
+        const twelveWeeksAndOneDayLater = new Date();
+        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7);
+
+        return twelveWeeksAndOneDayLater
+            .toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+    };
+
+
 }
