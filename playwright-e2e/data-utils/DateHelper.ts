@@ -63,6 +63,11 @@ export class DateHelper {
       }).format(date);
     }
 
+    static getNumericShortFormattedDateToday = (): string => {
+      const today = new Date();
+      return today.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    };
+
     static async getFormattedHearingDate(): Promise<{ currentDate: string; hearingDate: string }> {
       const currentDate = await this.getCurrentDate();
       const hearingDate = await this.getHearingDateUsingCurrentDate();
