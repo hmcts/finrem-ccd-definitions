@@ -6,7 +6,8 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 import { unprocessedApprovedOrdersWithNewHearingTable, unprocessedApprovedOrdersWithOldHearingTable } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable';
 import { processOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs';
-import { createDraftOrdersApprovedWithHearingTabData, draftOrdersApprovedWithHearingTabData } from '../../../resources/tab_content/contested/draft_orders_tabs';
+import { createDraftOrdersApprovedWithHearingTabData } from '../../../resources/tab_content/contested/draft_orders_tabs';
+import { processOrderHearingTabData } from '../../../resources/tab_content/contested/hearings_tabs';
 
   /**
    * Firstly, performs the upload draft order flow as a step towards the Process Order event.
@@ -243,6 +244,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
 
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
       await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate)); 
+      await caseDetailsPage.assertTabData(processOrderHearingTabData);
 
     }
   );
@@ -283,7 +285,8 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.directionOrder.listItem);
 
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
-      await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate)); 
+      await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));
+      await caseDetailsPage.assertTabData(processOrderHearingTabData);
     }
   );
 
