@@ -1,14 +1,118 @@
 [
   {
     "LiveFrom": "28/04/2025",
-    "ID": "FR_hearing",
-    "ListElementCode": "hearingType",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_ManageHearingType",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "hearingTypeDynamicList",
+    "FieldType": "DynamicList",
     "ElementLabel": "Type of Hearing",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },  
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "hearingTimeEstimate",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing Time Estimate",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "hearingDate",
+    "FieldType": "Date",
+    "ElementLabel": "Hearing Date",
+    "HintText": "Fast Track: Date of the Fast Track hearing must be between 6 and 10 weeks.\r\nExpress pilot: Date of the express pilot hearing should be between 16 and 20 weeks.\r\nStandard Track: Date of the hearing must be between 12 and 16 weeks\r\n",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "hearingTime",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing Time",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "hearingCourtSelection",
+    "FieldType": "FR_ct_courtList",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "hearingMode",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_ManageHearingMode",
+    "ElementLabel": "Hearing attendance",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "additionalHearingInformation",
+    "FieldType": "Text",
+    "ElementLabel": "Additional information about the hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "additionalHearingDocPrompt",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Do you want to upload any other documents?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "additionalHearingDocs",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Please upload any additional documents related to your application.",
+    "FieldShowCondition": "additionalHearingDocPrompt=\"Yes\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "hearingNoticePrompt",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Do you want to send a notice of hearing?",
+    "HintText": "Hint text yet to be confirmed",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_workingHearing",
+    "ListElementCode": "partiesOnCaseMultiSelectList",
+    "FieldType": "DynamicMultiSelectList",
+    "ElementLabel": "Who should see this order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_hearing",
+    "ListElementCode": "hearingType",
+    "FieldType": "Text",
+    "ElementLabel": "Type of Hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
   {
     "LiveFrom": "28/04/2025",
     "ID": "FR_hearing",

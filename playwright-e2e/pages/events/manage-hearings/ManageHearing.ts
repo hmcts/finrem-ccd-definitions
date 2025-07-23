@@ -19,7 +19,7 @@ export class ManageHearingPage extends BaseJourneyPage {
         this.manageHearingTitle = page.getByRole('heading', { name: "Manage Hearings" })
         this.addANewHearingRadio = page.getByRole('radio', { name: "Add a new hearing" })
         this.addANewHearingTitle = page.getByRole('heading', { name: "Add a new hearing" })
-        this.typeOfHearingDropDown = page.locator('#workingHearing_hearingType');
+        this.typeOfHearingDropDown = page.getByLabel('Type of Hearing');
         this.hearingTimeEstimate = this.page.locator(`#workingHearing_hearingTimeEstimate`);
     }
 
