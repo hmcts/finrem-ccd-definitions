@@ -336,6 +336,16 @@ export class ContestedEventApi {
     );
   }
 
+  static async agreedDraftOrderApplicant(
+    caseId: string,
+  ): Promise<void> {
+    await this.updateCaseWorkerSteps( caseId, [
+  {
+    event: ContestedEvents.uploadDraftOrders.ccdCallback,
+    payload: PayloadPath.Contested.agreedDraftOrderApplicant,
+  }])
+}
+
   static async caseworkerCreateFlag(caseId: string) {
     
     await this.updateCaseWorkerSteps(caseId, [
