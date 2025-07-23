@@ -404,6 +404,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
         checkYourAnswersPage
       }
     ) => {
+
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
@@ -415,20 +416,27 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // // Add Hearing 
-      await nextHearingDetailsPage.addNewHearing(); 
+      await nextHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
+      await nextHearingDetailsPage.selectTypeOfHearing("First Directions Appointment (FDA)");
+      await nextHearingDetailsPage.enterTimeEstimate("30");
+      await nextHearingDetailsPage.enterHearingDate("01", "01", "2024");
+      await nextHearingDetailsPage.enterHearingTime("10:00")
+      await nextHearingDetailsPage.selectCourtForHearing();
+      await nextHearingDetailsPage.selectHearingAttendance("In person");
+      await nextHearingDetailsPage.enterAdditionalHearingInformation("This is a test hearing");
+      await nextHearingDetailsPage.selectAdditionalHearingDocument(false);
+      await nextHearingDetailsPage.selectSendNoticeOfHearing(true);
       await nextHearingDetailsPage.navigateContinue(); 
 
       // // Check your answers
       await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithNewHearingTable);
       await nextHearingDetailsPage.navigateSubmit();
 
-      // // Assert case details content
+      // Assert case details content
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrder.listItem);
-
-      await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
-      await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate)); 
       await caseDetailsPage.assertTabData(processOrderHearingTabData);
-
+      await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
+      await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));
     }
   );
 
@@ -457,20 +465,27 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // // Add Hearing 
-      await nextHearingDetailsPage.addNewHearing(); 
+      await nextHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
+      await nextHearingDetailsPage.selectTypeOfHearing("First Directions Appointment (FDA)");
+      await nextHearingDetailsPage.enterTimeEstimate("30");
+      await nextHearingDetailsPage.enterHearingDate("01", "01", "2024");
+      await nextHearingDetailsPage.enterHearingTime("10:00")
+      await nextHearingDetailsPage.selectCourtForHearing();
+      await nextHearingDetailsPage.selectHearingAttendance("In person");
+      await nextHearingDetailsPage.enterAdditionalHearingInformation("This is a test hearing");
+      await nextHearingDetailsPage.selectAdditionalHearingDocument(false);
+      await nextHearingDetailsPage.selectSendNoticeOfHearing(true);
       await nextHearingDetailsPage.navigateContinue(); 
 
       // // Check your answers
       await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithNewHearingTable);
       await nextHearingDetailsPage.navigateSubmit();
 
-      // // Assert case details content
+      // Assert case details content
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrder.listItem);
-
+      await caseDetailsPage.assertTabData(processOrderHearingTabData);
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
       await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));
-      await caseDetailsPage.assertTabData(processOrderHearingTabData);
     }
   );
-
 });
