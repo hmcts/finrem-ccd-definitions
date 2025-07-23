@@ -210,6 +210,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "25/06/2025",
+    "ID": "FR_hearing",
+    "ListElementCode": "wasMigrated",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Was migrated?",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
     "LiveFrom": "28/04/2025",
     "ID": "FR_manageHearingDocument",
     "ListElementCode": "hearingId",
@@ -309,5 +318,14 @@
     "ElementLabel": "Hearing documents",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "tabWasMigrated",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Was Migrated?",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]
