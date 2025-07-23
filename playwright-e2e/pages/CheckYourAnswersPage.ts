@@ -39,8 +39,7 @@ export class CheckYourAnswersPage {
             if (table) table.scrollIntoView({ behavior: 'auto', block: 'end' });
         }, "table[aria-describedby='check your answers table']");
 
-        // wait for a short time to allow lazy-loaded rows to render
-        await this.page.waitForTimeout(500);
+        await this.waitForStableRows(this.checkYourAnswersTable);
 
         // Helper to normalize cell values
         const normalize = (val: string) => val.replace(/[\n\t]/g, '').trim();
@@ -99,6 +98,24 @@ export class CheckYourAnswersPage {
 
         if (errors.length > 0) {
             throw new Error('Check your answers table validation failed:\n' + errors.join('\n'));
+        }
+    }
+
+    private async waitForStableRows(tableLocator: Locator, stableForMs = 2500, maxWaitMs = 6000) {
+        let lastCount = 0;
+        let stableStart = Date.now();
+        let start = Date.now();
+
+        while (Date.now() - start < maxWaitMs) {
+            const rows = await tableLocator.locator('tr').all();
+            const count = rows.length;
+            if (count === lastCount) {
+                if (Date.now() - stableStart >= stableForMs) break;
+            } else {
+                lastCount = count;
+                stableStart = Date.now();
+            }
+            await new Promise(r => setTimeout(r, 100));
         }
     }
 }
