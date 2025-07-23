@@ -1,11 +1,12 @@
+import { DateHelper } from "../../../data-utils/DateHelper";
 import { Tab } from "../../../pages/components/tab";
 
-export const draftOrdersApprovedWithHearingTabData: Tab[] = [{
+export const createDraftOrdersApprovedWithHearingTabData = (hearingDate: string): Tab[] => [{
   tabName: "Draft orders",
   tabContent: [
     "Draft Orders 1",
     { tabItem: "Type of Hearing", value: "First Directions Appointment (FDA)" }, 
-    { tabItem: "Hearing Date", value: "14 Oct 2025" },
+    { tabItem: "Hearing Date", value: DateHelper.formatToDayMonthYearShort(hearingDate) },
     { tabItem: "Hearing Time", value: "10:00" },
     { tabItem: "Order status", value: "Processed" },
     { tabItem: "Judge name", value: "Peter Chapman"},
