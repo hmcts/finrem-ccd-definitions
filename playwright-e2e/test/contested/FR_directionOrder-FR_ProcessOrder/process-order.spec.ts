@@ -6,8 +6,6 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 import { unprocessedApprovedOrdersWithHearingTable } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable';
 import { processOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs';
-import { DateHelper } from '../../../data-utils/DateHelper';
-import { draftOrderApprove } from '../../../../test/functional/pages/draft-order-approve/draft-order-approve';
 import { draftOrdersApprovedWithHearingTabData } from '../../../resources/tab_content/contested/draft_orders_tabs';
 
   /**
@@ -77,7 +75,7 @@ import { draftOrdersApprovedWithHearingTabData } from '../../../resources/tab_co
     return documentDetailsForFutureTestSteps
   }
 
-test.describe('Contested - Process Order', () => {
+test.describe('Contested - Process Order (Old Style)', () => {
   test(
     'Form A case creating a hearing from Process Order',
     { tag: [] },
@@ -103,7 +101,7 @@ test.describe('Contested - Process Order', () => {
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Add Hearing 
-      await nextHearingDetailsPage.addHearing(); 
+      await nextHearingDetailsPage.addOldHearing(); 
       await nextHearingDetailsPage.navigateContinue(); 
 
       // Check your answers
@@ -144,7 +142,7 @@ test.describe('Contested - Process Order', () => {
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Add Hearing 
-      await nextHearingDetailsPage.addHearing(); 
+      await nextHearingDetailsPage.addOldHearing(); 
       await nextHearingDetailsPage.navigateContinue(); 
 
       // Check your answers
@@ -200,4 +198,88 @@ test.describe('Contested - Process Order', () => {
       // Case Documents tab should the agreed draft order to have "Document status" of "Processed".
     }
   )
+});
+
+test.describe('Contested - Process Order (Mange Hearings)', () => {
+  test(
+    'Form A case creating a hearing from Process Order (MH)',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        uploadDraftOrdersPage, 
+        unprocessedApprovedOrdersPage, 
+        nextHearingDetailsPage,
+        checkYourAnswersPage
+      }
+    ) => {
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
+
+      // Check unapproved draft order tab
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders(orderDoc.fileName);
+      await unprocessedApprovedOrdersPage.navigateContinue();
+
+      // // Add Hearing 
+      // await nextHearingDetailsPage.addOldHearing(); 
+      // await nextHearingDetailsPage.navigateContinue(); 
+
+      // // Check your answers
+      // await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithHearingTable);
+      // await nextHearingDetailsPage.navigateSubmit();
+
+      // // Assert case details content
+      // await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.directionOrder.listItem);
+
+      // await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
+      // await caseDetailsPage.assertTabData(draftOrdersApprovedWithHearingTabData); 
+
+    }
+  );
+
+  test(
+    'Paper Case creating a hearing from Process Order (MH)',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        uploadDraftOrdersPage, 
+        unprocessedApprovedOrdersPage, 
+        nextHearingDetailsPage,
+        checkYourAnswersPage
+      }
+    ) => {
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectNextStep(ContestedEvents.directionOrder);
+
+      // Check unapproved draft order tab
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders(orderDoc.fileName);
+      await unprocessedApprovedOrdersPage.navigateContinue();
+
+      // Add Hearing 
+      await nextHearingDetailsPage.addOldHearing(); 
+      await nextHearingDetailsPage.navigateContinue(); 
+
+      // Check your answers
+      await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithHearingTable);
+      await nextHearingDetailsPage.navigateSubmit();
+
+      // Assert case details content
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.directionOrder.listItem);
+
+      await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
+      await caseDetailsPage.assertTabData(draftOrdersApprovedWithHearingTabData); 
+    }
+  );
+
 });

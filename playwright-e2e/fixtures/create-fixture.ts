@@ -64,8 +64,8 @@ import { CreateGeneralOrderPage } from '../pages/events/create-general-order/Cre
 import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage';
 import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage';
 import {CaseListPage} from '../pages/CaseListPage';
-import { UnprocessedApprovedOrdersPage } from '../pages/events/direction-upload-order/UnprocessedApprovedOrdersPage';
-import { NextHearingDetailsPage } from '../pages/events/direction-upload-order/NextHearingDetailsPage';
+import { UnprocessedApprovedOrdersPage } from '../pages/events/process-order/UnprocessedApprovedOrdersPage';
+import { NextHearingDetailsPage } from '../pages/events/process-order/NextHearingDetailsPage';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();

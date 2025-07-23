@@ -26,15 +26,21 @@ export class NextHearingDetailsPage extends BaseJourneyPage {
     this.firstHearingFrcListDropDown = page.locator('#directionDetailsCollection_0_localCourt_midlandsList');
     this.firstHearingCourtListDropDown = page.locator('#directionDetailsCollection_0_localCourt_birminghamCourtList');
     this.firstHearingTypeDropdown = page.locator('#directionDetailsCollection_0_typeOfHearing');
+
+    
   }
 
-  async addHearing() {
+  async addOldHearing() {
     await this.firstHearingListedRadio.getByRole('radio', { name: 'Yes' }).click();
     await this.firstHearingTimeEstimateTxtBox.fill('30');
     await this.enterHearingDate();
     await this.firstHearingTimeTxtBox.fill('10:00');
     await this.selectCourt();
     await this.selectHearingType();
+  }
+
+  async addNewHearing() {
+
   }
 
   private async enterHearingDate() {

@@ -144,6 +144,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Process Order",
     ccdCallback: "FR_directionOrder"
   },
+  processOrder: {
+    listItem: "Process Order",
+    ccdCallback: "FR_processOrder"
+  },
   manageHearings: {
     listItem: "Manage Hearings",
     ccdCallback: "FR_manageHearings"
