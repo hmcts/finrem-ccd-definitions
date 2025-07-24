@@ -2,6 +2,7 @@ import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
+import { sendOrderTableData } from '../../../resources/check_your_answer_content/send_order/sendOrderTable';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 import { DateHelper } from '../../../data-utils/DateHelper';
@@ -42,8 +43,6 @@ import { DateHelper } from '../../../data-utils/DateHelper';
     const firstDraftOrderItem = eventResponse?.data?.agreedDraftOrderCollection?.[0]?.value?.draftOrder;
     const hearingDate = eventResponse?.data?.hearingDate;
 
-    // 
-
     const documentDetailsForFutureTestSteps = {
       hearingDate,
       courtOrderDate: hearingDate,
@@ -64,6 +63,9 @@ test.describe('Contested - Process and Send Order', () => {
       {
         loginPage,
         manageCaseDashboardPage,
+        caseDetailsPage,
+        sendOrderPage,
+        checkYourAnswersPage,
       }
     ) => {
         
@@ -79,7 +81,21 @@ test.describe('Contested - Process and Send Order', () => {
 
     await manageCaseDashboardPage.navigateToCase(caseId);
 
-      // send order through UI
+    // Send Order
+    await caseDetailsPage.selectNextStep(ContestedEvents.contestedSendOrder);
+    await sendOrderPage.selectSendApprovedOrder();
+    await sendOrderPage.navigateContinue();
+    await sendOrderPage.navigateContinue();
+    await sendOrderPage.uploadDocument('./playwright-e2e/resources/file/test.docx');
+    await sendOrderPage.navigateContinue();
+    await sendOrderPage.clickCaseStateButton();
+    await sendOrderPage.selectCaseState('Order Sent');
+    await sendOrderPage.navigateContinue();
+
+    //Continue about to submit and check your answers
+    await checkYourAnswersPage.assertCheckYourAnswersPage(sendOrderTableData); 
+    await sendOrderPage.navigateSubmit();
+    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.contestedSendOrder.listItem);
         }
     );
 });
