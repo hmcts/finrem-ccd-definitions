@@ -4,7 +4,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_processOrder",
     "Name": "Process Order (MH)",
-    "Description": "Manage case hearings",
+    "Description": "Process Order Manage Hearing",
     "DisplayOrder": 36,
     "PreConditionState(s)": "orderDrawn;generalApplication;scheduleRaiseDirectionsOrder",
     "PostConditionState": "orderDrawn",

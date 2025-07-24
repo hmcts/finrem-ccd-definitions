@@ -400,7 +400,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
         caseDetailsPage,
         uploadDraftOrdersPage, 
         unprocessedApprovedOrdersPage, 
-        nextHearingDetailsPage,
+        processOrderHearingDetailsPage,
         checkYourAnswersPage
       }
     ) => {
@@ -416,21 +416,21 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Add Hearing 
-      await nextHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
-      await nextHearingDetailsPage.selectTypeOfHearing("First Directions Appointment (FDA)");
-      await nextHearingDetailsPage.enterTimeEstimate("30");
-      await nextHearingDetailsPage.enterHearingDate("01", "01", "2024");
-      await nextHearingDetailsPage.enterHearingTime("10:00")
-      await nextHearingDetailsPage.selectCourtForHearing();
-      await nextHearingDetailsPage.selectHearingAttendance("In person");
-      await nextHearingDetailsPage.enterAdditionalHearingInformation("This is a test hearing");
-      await nextHearingDetailsPage.selectAdditionalHearingDocument(false);
-      await nextHearingDetailsPage.selectSendNoticeOfHearing(true);
-      await nextHearingDetailsPage.navigateContinue(); 
+      await processOrderHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
+      await processOrderHearingDetailsPage.selectTypeOfHearing("First Directions Appointment (FDA)");
+      await processOrderHearingDetailsPage.enterTimeEstimate("30");
+      await processOrderHearingDetailsPage.enterHearingDate("01", "01", "2024");
+      await processOrderHearingDetailsPage.enterHearingTime("10:00")
+      await processOrderHearingDetailsPage.selectCourtForHearing();
+      await processOrderHearingDetailsPage.selectHearingAttendance("In person");
+      await processOrderHearingDetailsPage.enterAdditionalHearingInformation("This is a test hearing");
+      await processOrderHearingDetailsPage.selectAdditionalHearingDocument(false);
+      await processOrderHearingDetailsPage.selectSendNoticeOfHearing(true);
+      await processOrderHearingDetailsPage.navigateContinue(); 
 
       // Check your answers
       await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithNewHearingTable);
-      await nextHearingDetailsPage.navigateSubmit();
+      await processOrderHearingDetailsPage.navigateSubmit();
 
       // Assert case details content
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrder.listItem);
@@ -450,7 +450,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
         caseDetailsPage,
         uploadDraftOrdersPage, 
         unprocessedApprovedOrdersPage, 
-        nextHearingDetailsPage,
+        processOrderHearingDetailsPage,
         checkYourAnswersPage
       }
     ) => {
@@ -465,21 +465,21 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Add Hearing 
-      await nextHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
-      await nextHearingDetailsPage.selectTypeOfHearing("First Directions Appointment (FDA)");
-      await nextHearingDetailsPage.enterTimeEstimate("30");
-      await nextHearingDetailsPage.enterHearingDate("01", "01", "2024");
-      await nextHearingDetailsPage.enterHearingTime("10:00")
-      await nextHearingDetailsPage.selectCourtForHearing();
-      await nextHearingDetailsPage.selectHearingAttendance("In person");
-      await nextHearingDetailsPage.enterAdditionalHearingInformation("This is a test hearing");
-      await nextHearingDetailsPage.selectAdditionalHearingDocument(false);
-      await nextHearingDetailsPage.selectSendNoticeOfHearing(true);
-      await nextHearingDetailsPage.navigateContinue(); 
+      await processOrderHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
+      await processOrderHearingDetailsPage.selectTypeOfHearing("First Directions Appointment (FDA)");
+      await processOrderHearingDetailsPage.enterTimeEstimate("30");
+      await processOrderHearingDetailsPage.enterHearingDate("01", "01", "2024");
+      await processOrderHearingDetailsPage.enterHearingTime("10:00")
+      await processOrderHearingDetailsPage.selectCourtForHearing();
+      await processOrderHearingDetailsPage.selectHearingAttendance("In person");
+      await processOrderHearingDetailsPage.enterAdditionalHearingInformation("This is a test hearing");
+      await processOrderHearingDetailsPage.selectAdditionalHearingDocument(false);
+      await processOrderHearingDetailsPage.selectSendNoticeOfHearing(true);
+      await processOrderHearingDetailsPage.navigateContinue(); 
 
       // Check your answers
       await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithNewHearingTable);
-      await nextHearingDetailsPage.navigateSubmit();
+      await processOrderHearingDetailsPage.navigateSubmit();
 
       // Assert case details content
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrder.listItem);

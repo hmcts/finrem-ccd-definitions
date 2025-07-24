@@ -1,7 +1,7 @@
 import { expect, Locator, Page } from "@playwright/test";
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 
-export class ManageHearingDetailsPage extends BaseJourneyPage {
+export class ProcessOrderHearingDetailsPage extends BaseJourneyPage {
 
   private readonly newHearingAddRadio : Locator
   private readonly newHearingTypeDropDown : Locator

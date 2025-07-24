@@ -70,7 +70,7 @@ import { GeneralApplicationOutcomePage } from '../pages/events/general-applicati
 import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
 import { ProcessOrderPage } from '../pages/events/process-order/ProcessOrderPage.ts';
 import { UnprocessedApprovedOrdersPage } from '../pages/events/process-order/UnprocessedApprovedOrdersPage.ts';
-import { ManageHearingDetailsPage } from '../pages/events/process-order/ManageHearingDetailsPage.ts';
+import { ProcessOrderHearingDetailsPage } from '../pages/events/process-order/ProcessOrderHearingDetailsPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -127,7 +127,7 @@ type CreateFixtures = {
   generalApplicationDirectionsPage: GeneralApplicationDirectionsPage;
   uploadDraftOrdersPage: UploadDraftOrdersPage;
   unprocessedApprovedOrdersPage: UnprocessedApprovedOrdersPage;
-  nextHearingDetailsPage: ManageHearingDetailsPage;
+  processOrderHearingDetailsPage: ProcessOrderHearingDetailsPage;
   manageCaseDocumentsPage: ManageCaseDocumentsPage;
   manageHearingPage: ManageHearingPage;
   checkYourAnswersPage: CheckYourAnswersPage;
@@ -301,8 +301,8 @@ export const test = base.extend<CreateFixtures>({
   unprocessedApprovedOrdersPage: async ({ page }, use) => {
     await use(new UnprocessedApprovedOrdersPage(page));
   },
-  nextHearingDetailsPage: async ({ page }, use) => {
-    await use(new ManageHearingDetailsPage(page));
+  processOrderHearingDetailsPage: async ({ page }, use) => {
+    await use(new ProcessOrderHearingDetailsPage(page));
   },
   manageCaseDocumentsPage: async ({ page }, use) => {
     await use(new ManageCaseDocumentsPage(page, commonActionsHelper));
