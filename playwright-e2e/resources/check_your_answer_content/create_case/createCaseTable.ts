@@ -73,8 +73,8 @@ export const respondentDetails: TableRowItem[] = [
 
 export const propertyAdjustmentDetails: TableRowItem[] = [
     "Property adjustment order details",
-    {cellItem: 'Property address', value: 'Test Address'},
-    {cellItem: 'Name(s) and address(es) of any mortgage(s) for property', value: 'Test Mortgage'},
+    { cellItem: 'Property address', value: 'Test Address'},
+    { cellItem: 'Name(s) and address(es) of any mortgage(s) for property', value: 'Test Mortgage'},
     { cellItem: 'Do you want to add additional property ?', value: 'Yes', rowType: 'label-value-adjacent' },
     { cellItem: 'Property address', value: 'Test Address 2'},
     { cellItem: 'Name(s) and address(es) of any mortgage(s) for property', value: 'Test Mortgage 2'},
@@ -133,7 +133,7 @@ export const urgentCase: TableRowItem[] = [
     { cellItem: 'Is this an urgent case ?', value: 'No' }
 ];
 
-export const  contestedCreatePaperChildrenCaseDetailsTable: Table = {
+export const contestedCreatePaperChildrenCaseDetailsTable: Table = {
     tableName: 'Check your answers',
     rows: [
         { cellItem: 'Is the Applicant represented ?', value: 'Yes', rowType: 'label-value-adjacent' },
@@ -163,7 +163,7 @@ export const  contestedCreatePaperChildrenCaseDetailsTable: Table = {
     ]
 }
 
-export const  contestedCreatePaperMatrimonyCaseDetailsTable: Table = {
+export const contestedCreatePaperMatrimonyCaseDetailsTable: Table = {
     tableName: 'Check your answers',
     rows: [
         { cellItem: 'Is the Applicant represented ?', value: 'Yes', rowType: 'label-value-adjacent' },
@@ -195,7 +195,7 @@ export const  contestedCreatePaperMatrimonyCaseDetailsTable: Table = {
     ]
 }
 
-export const  contestedCreateExpressPaperMatrimonyCaseDetailsTable: Table = {
+export const contestedCreateExpressPaperMatrimonyCaseDetailsTable: Table = {
     tableName: 'Check your answers',
     rows: [
         { cellItem: 'Is the Applicant represented ?', value: 'Yes', rowType: 'label-value-adjacent' },
@@ -226,7 +226,7 @@ export const  contestedCreateExpressPaperMatrimonyCaseDetailsTable: Table = {
     ]
 }
 
-export const  contestedCreateExpressFormAMatrimonyCaseDetailsTable: Table = {
+export const contestedCreateExpressFormAMatrimonyCaseDetailsTable: Table = {
     tableName: 'Check your answers',
     rows: [
         ...solicitorDetails,
