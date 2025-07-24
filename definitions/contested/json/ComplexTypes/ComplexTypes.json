@@ -3281,6 +3281,33 @@
   },
   {
     "LiveFrom": "17/01/2025",
+    "ID": "FR_coverLetterToShare",
+    "ListElementCode": "documentId",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_coverLetterToShare",
+    "ListElementCode": "coverLetterName",
+    "FieldType": "Text",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
+    "ID": "FR_coverLetterToShare",
+    "ListElementCode": "coverLetterDocument",
+    "FieldType": "Document",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/01/2025",
     "ID": "FR_orderToShare",
     "ListElementCode": "documentId",
     "FieldType": "Text",
@@ -3331,6 +3358,15 @@
     "ListElementCode": "attachmentsToShare",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_attachmentsToShare",
+    "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "07/07/2025",
+    "ID": "FR_orderToShare",
+    "ListElementCode": "coverLetterToShare",
+    "FieldType": "FR_coverLetterToShare",
     "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -3459,6 +3495,24 @@
     "ListElementCode": "finalOrder",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a final order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/07/2025",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "courtOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/07/2025",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "coverLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Cover letter",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3634,6 +3688,24 @@
     "ListElementCode": "finalOrder",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a final order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/07/2025",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "courtOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/07/2025",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "coverLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Cover letter",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3838,6 +3910,16 @@
     "ListElementCode": "pensionSharingAnnex",
     "FieldType": "Document",
     "ElementLabel": "Pension Sharing Annex",
+    "SecurityClassification": "Public",
+    "CategoryID": "postHearingDraftOrder",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "coverLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Cover Letter",
     "SecurityClassification": "Public",
     "CategoryID": "postHearingDraftOrder",
     "Searchable": "N"
@@ -4252,6 +4334,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "3/07/2025",
+    "ID": "FR_judgeApproval",
+    "ListElementCode": "courtOrderDate",
+    "FieldType": "Date",
+    "ElementLabel": "Court order date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_judgeApproval",
     "ListElementCode": "changesRequestedByJudge",
@@ -4510,6 +4601,15 @@
     "ListElementCode": "finalOrder",
     "FieldType": "YesOrNo",
     "ElementLabel": "Final order",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "07/01/2025",
+    "ID": "FR_finalisedOrder",
+    "ListElementCode": "coverLetter",
+    "FieldType": "Document",
+    "ElementLabel": "Cover Letter",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },

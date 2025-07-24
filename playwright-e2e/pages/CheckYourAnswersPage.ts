@@ -32,6 +32,15 @@ export class CheckYourAnswersPage {
         await expect(this.checkYourAnswersTitle).toBeVisible();
         await expect(this.checkYourAnswersTable).toBeVisible();
 
+        // Scroll the table into view and to the bottom to trigger rendering of all rows
+        await this.checkYourAnswersTable.scrollIntoViewIfNeeded();
+        await this.page.evaluate((tableSelector) => {
+            const table = document.querySelector(tableSelector);
+            if (table) table.scrollIntoView({ behavior: 'auto', block: 'end' });
+        }, "table[aria-describedby='check your answers table']");
+
+        await this.waitForStableRows(this.checkYourAnswersTable);
+
         // Helper to normalize cell values
         const normalize = (val: string) => val.replace(/[\n\t]/g, '').trim();
 
@@ -89,6 +98,24 @@ export class CheckYourAnswersPage {
 
         if (errors.length > 0) {
             throw new Error('Check your answers table validation failed:\n' + errors.join('\n'));
+        }
+    }
+
+    private async waitForStableRows(tableLocator: Locator, stableForMs = 2500, maxWaitMs = 6000) {
+        let lastCount = 0;
+        let stableStart = Date.now();
+        let start = Date.now();
+
+        while (Date.now() - start < maxWaitMs) {
+            const rows = await tableLocator.locator('tr').all();
+            const count = rows.length;
+            if (count === lastCount) {
+                if (Date.now() - stableStart >= stableForMs) break;
+            } else {
+                lastCount = count;
+                stableStart = Date.now();
+            }
+            await new Promise(r => setTimeout(r, 100));
         }
     }
 }
