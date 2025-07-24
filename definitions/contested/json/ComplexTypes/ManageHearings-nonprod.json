@@ -105,6 +105,24 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "22/07/2025",
+    "ID": "FR_partyOnCase",
+    "ListElementCode": "role",
+    "FieldType": "Text",
+    "ElementLabel": "Role",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "22/07/2025",
+    "ID": "FR_partyOnCase",
+    "ListElementCode": "label",
+    "FieldType": "Text",
+    "ElementLabel": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "28/04/2025",
     "ID": "FR_hearing",
     "ListElementCode": "hearingType",
@@ -197,24 +215,6 @@
     "FieldType": "YesOrNo",
     "ElementLabel": "Do you want to send a notice of hearing?",
     "HintText": "Hint text yet to be confirmed",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "22/07/2025",
-    "ID": "FR_partyOnCase",
-    "ListElementCode": "role",
-    "FieldType": "Text",
-    "ElementLabel": "Role",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "22/07/2025",
-    "ID": "FR_partyOnCase",
-    "ListElementCode": "label",
-    "FieldType": "Text",
-    "ElementLabel": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
