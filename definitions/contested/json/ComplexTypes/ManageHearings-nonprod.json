@@ -105,6 +105,24 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "22/07/2025",
+    "ID": "FR_partyOnCase",
+    "ListElementCode": "role",
+    "FieldType": "Text",
+    "ElementLabel": "Role",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "22/07/2025",
+    "ID": "FR_partyOnCase",
+    "ListElementCode": "label",
+    "FieldType": "Text",
+    "ElementLabel": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "28/04/2025",
     "ID": "FR_hearing",
     "ListElementCode": "hearingType",
@@ -203,8 +221,9 @@
   {
     "LiveFrom": "28/04/2025",
     "ID": "FR_hearing",
-    "ListElementCode": "partiesOnCaseMultiSelectList",
-    "FieldType": "DynamicMultiSelectList",
+    "ListElementCode": "partiesOnCase",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_partyOnCase",
     "ElementLabel": "Who should see this order?",
     "SecurityClassification": "Public",
     "Searchable": "N"
