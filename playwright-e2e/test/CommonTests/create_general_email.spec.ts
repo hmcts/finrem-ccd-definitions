@@ -27,14 +27,13 @@ test.describe('Create General Email', () => {
             // await createGeneralEmailPage.enterInvalidEmailAddressAndSubmit(); add this for DFR-3942
             await createGeneralEmailPage.enterReceipientEmail(recipientEmail); 
             await createGeneralEmailPage.enterBodyOfEmail('This is a test');
-            await createGeneralEmailPage.uploadDocument('playwright-e2e/data-utils/files/contested/contested-application.pdf');
+            await createGeneralEmailPage.uploadDocument('playwright-e2e/resources/file/test.pdf');
             await createGeneralEmailPage.navigateContinue();
-            await createGeneralEmailPage.navigateSubmit();
 
             // Assert check your answers page
             await checkYourAnswersPage.assertCheckYourAnswersPage(createGeneralEmailTableData);
             await createGeneralEmailPage.navigateSubmit();
-            await caseDetailsPage.checkHasBeenCreated();
+            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.createGeneralEmail.listItem);
 
             //assert case documents tab data
         }
