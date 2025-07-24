@@ -40,6 +40,10 @@ export const CommonEvents: Record<string, CaseEvent> = {
   addNotes: {
     listItem: "Add Note",
     ccdCallback: "FR_caseNotes"
+  },
+  closeCase: {
+    listItem: "Close Case",
+    ccdCallback: "FR_close"
   }
 };
 
@@ -189,6 +193,26 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "(Migration) Manage Hearings",
     ccdCallback: "FR_manageHearingsMigration"
   },
+  createGeneralOrderConsent: {
+    listItem: "Create General Order (consent)",
+    ccdCallback: "FR_generalOrderConsent"
+  },
+  respondToConsentOrder: {
+    listItem: "Respond to Consent Order",
+    ccdCallback: "FR_respondToConsentOrder"
+  },
+  assignToJudgeConsent: {
+    listItem: "Assign to Judge (consent)",
+    ccdCallback: "FR_assignToJudgeConsent"
+  },
+  consentApplicationApproved: {
+    listItem: "Consent Application Approved",
+    ccdCallback: "FR_consentOrderApproved"
+  },
+  sendConsentOrder: {
+    listItem: "Send Order (consent)",
+    ccdCallback: "FR_consentSendOrder"
+  },
 
   // Common events
   createFlag: CommonEvents.createFlag,
@@ -196,7 +220,8 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
   hwfDecisionMade: CommonEvents.hwfDecisionMade,
   issueApplication: CommonEvents.issueApplication,
-  addNotes: CommonEvents.addNotes
+  addNotes: CommonEvents.addNotes,
+  closeCase: CommonEvents.closeCase
 };
 
 export const PayloadPath = {
