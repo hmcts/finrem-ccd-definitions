@@ -415,7 +415,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
       await unprocessedApprovedOrdersPage.navigateContinue();
 
-      // // Add Hearing 
+      // Add Hearing 
       await nextHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
       await nextHearingDetailsPage.selectTypeOfHearing("First Directions Appointment (FDA)");
       await nextHearingDetailsPage.enterTimeEstimate("30");
@@ -428,7 +428,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await nextHearingDetailsPage.selectSendNoticeOfHearing(true);
       await nextHearingDetailsPage.navigateContinue(); 
 
-      // // Check your answers
+      // Check your answers
       await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithNewHearingTable);
       await nextHearingDetailsPage.navigateSubmit();
 
@@ -464,7 +464,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
       await unprocessedApprovedOrdersPage.navigateContinue();
 
-      // // Add Hearing 
+      // Add Hearing 
       await nextHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
       await nextHearingDetailsPage.selectTypeOfHearing("First Directions Appointment (FDA)");
       await nextHearingDetailsPage.enterTimeEstimate("30");
@@ -477,7 +477,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await nextHearingDetailsPage.selectSendNoticeOfHearing(true);
       await nextHearingDetailsPage.navigateContinue(); 
 
-      // // Check your answers
+      // Check your answers
       await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersWithNewHearingTable);
       await nextHearingDetailsPage.navigateSubmit();
 
