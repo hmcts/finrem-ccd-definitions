@@ -6,6 +6,7 @@ import { sendOrderTableData } from '../../../resources/check_your_answer_content
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 import { DateHelper } from '../../../data-utils/DateHelper';
+import { contestedSendOrderTabData } from '../../../resources/tab_content/contested/send_order_tab';
 
   async function progressToProcessOrderEvent(
     caseId: string,
@@ -92,11 +93,13 @@ test.describe('Contested - Process and Send Order', () => {
     await sendOrderPage.selectCaseState('Order Sent');
     await sendOrderPage.navigateContinue();
 
-    //Continue about to submit and check your answers
+    // Continue about to submit and check your answers
     await checkYourAnswersPage.assertCheckYourAnswersPage(sendOrderTableData); 
     await sendOrderPage.navigateSubmit();
     await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.contestedSendOrder.listItem);
-        }
-    );
-});
 
+    // Assert Order tab data
+    await caseDetailsPage.assertTabData(contestedSendOrderTabData);
+    }
+  );
+});
