@@ -69,7 +69,8 @@ import { ReferToJudgeApplicationPage } from '../pages/events/refer-to-judge-appl
 import { GeneralApplicationOutcomePage } from '../pages/events/general-application-outcome/GeneralApplicationOutcomePage.ts';
 import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
 import { ProcessOrderPage } from '../pages/events/process-order/ProcessOrderPage.ts';
-import {ConsentApplicationApprovedPage} from "../pages/events/consent-application/ConsentApplicationApprovedPage.ts";
+import {ConsentApplicationApprovedPage} from '../pages/events/consent-application/ConsentApplicationApprovedPage.ts';
+import {ConsentOrderNotApprovedPage} from "../pages/events/consent-application/ConsentOrderNotApprovedPage.ts";
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -143,6 +144,7 @@ type CreateFixtures = {
   approvedOrderPage: ApproveOrderPage;
   processOrderPage: ProcessOrderPage;
   consentApplicationApprovePage: ConsentApplicationApprovedPage;
+  consentOrderNotApprovedPage: ConsentOrderNotApprovedPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -348,6 +350,9 @@ export const test = base.extend<CreateFixtures>({
     await use(new ProcessOrderPage(page, commonActionsHelper));
   },
   consentApplicationApprovePage: async ({ page }, use) => {
-      await use(new ConsentApplicationApprovedPage(page, commonActionsHelper));
-  }
+    await use(new ConsentApplicationApprovedPage(page, commonActionsHelper));
+  },
+    consentOrderNotApprovedPage: async ({ page }, use) => {
+        await use(new ConsentOrderNotApprovedPage(page));
+    }
 });

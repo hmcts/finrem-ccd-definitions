@@ -209,6 +209,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Consent Application Approved",
     ccdCallback: "FR_consentOrderApproved"
   },
+  consentOrderNotApproved: {
+    listItem: "Consent Order Not Approved",
+    ccdCallback: "FR_consentOrderNotApproved"
+  },
   sendConsentOrder: {
     listItem: "Send Order (consent)",
     ccdCallback: "FR_consentSendOrder"
