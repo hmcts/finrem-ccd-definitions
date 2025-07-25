@@ -70,7 +70,7 @@ import { GeneralApplicationOutcomePage } from '../pages/events/general-applicati
 import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
 import { ProcessOrderPage } from '../pages/events/process-order/ProcessOrderPage.ts';
 import {ConsentApplicationApprovedPage} from '../pages/events/consent-application/ConsentApplicationApprovedPage.ts';
-import {ConsentOrderNotApprovedPage} from "../pages/events/consent-application/ConsentOrderNotApprovedPage.ts";
+import {ConsentOrderNotApprovedPage} from '../pages/events/consent-application/ConsentOrderNotApprovedPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -352,7 +352,7 @@ export const test = base.extend<CreateFixtures>({
   consentApplicationApprovePage: async ({ page }, use) => {
     await use(new ConsentApplicationApprovedPage(page, commonActionsHelper));
   },
-    consentOrderNotApprovedPage: async ({ page }, use) => {
-        await use(new ConsentOrderNotApprovedPage(page));
-    }
+  consentOrderNotApprovedPage: async ({ page }, use) => {
+    await use(new ConsentOrderNotApprovedPage(page));
+  }
 });

@@ -89,6 +89,4 @@ export class ConsentOrderNotApprovedPage extends BaseJourneyPage {
         await expect(this.selectJudgeDropdown).toBeVisible();
         await this.selectJudgeDropdown.selectOption({ label: judgeName });
     }
-
-
 }
