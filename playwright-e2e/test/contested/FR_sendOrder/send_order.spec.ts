@@ -58,7 +58,7 @@ import { contestedSendOrderTabData } from '../../../resources/tab_content/contes
 
 test.describe('Contested - Process and Send Order', () => {
   test(
-    'Form A case creating a hearing from Process Order @test',
+    'Form A case creating a hearing from Process Order',
     { tag: ['@process-order'] },
     async (
       {
