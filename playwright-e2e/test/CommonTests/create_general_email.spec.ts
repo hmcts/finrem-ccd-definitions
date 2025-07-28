@@ -4,7 +4,7 @@ import { ContestedEvents } from '../../config/case-data';
 import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
 import { CreateGeneralEmailPage } from '../../pages/events/create-general-email/CreateGeneralEmailPage';
 import { createGeneralEmailTableData } from '../../resources/check_your_answer_content/create_general_email/createGeneralEmailTable';
-
+import { createGeneralEmailTabData } from '../../resources/tab_content/common-tabs/case_documents_tab';
 
 test.describe('Create General Email', () => {
     test(
@@ -36,6 +36,7 @@ test.describe('Create General Email', () => {
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.createGeneralEmail.listItem);
 
             //assert case documents tab data
+            await caseDetailsPage.assertTabData(createGeneralEmailTabData)
         }
     )
 });
