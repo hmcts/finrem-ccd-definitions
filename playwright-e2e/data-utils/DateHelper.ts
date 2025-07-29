@@ -125,7 +125,4 @@ export class DateHelper {
         return today
             .toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
     };
-
-
-
 }

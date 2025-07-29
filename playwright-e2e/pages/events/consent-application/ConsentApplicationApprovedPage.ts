@@ -65,5 +65,4 @@ export class ConsentApplicationApprovedPage extends BaseJourneyPage {
             await this.commonActionsHelper.enterDate(this.dateOfOrderGroup, { year, month, day });
         }
     }
-
 }

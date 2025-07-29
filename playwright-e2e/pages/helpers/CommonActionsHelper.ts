@@ -124,6 +124,4 @@ export class CommonActionsHelper {
         await month.fill(date.month);
         await year.fill(date.year);
     }
-
-
 }
