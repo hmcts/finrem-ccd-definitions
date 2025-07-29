@@ -142,7 +142,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
         checkYourAnswersPage
       }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
