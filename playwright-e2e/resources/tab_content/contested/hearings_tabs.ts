@@ -1,7 +1,19 @@
-const getFormattedDate = (): string => {
-  const today = new Date();
-  return today.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
-};
+import { DateHelper } from "../../../data-utils/DateHelper";
+import { Tab } from "../../../pages/components/tab";
+
+export const processOrderHearingTabData =[{ 
+  tabName: "Hearings",
+  tabContent: [
+    "Hearings",
+    { tabItem: "Type of Hearing", value: "First Directions Appointment (FDA)" },
+    { tabItem: "Court", value: "Coventry Combined Court Centre" },
+    { tabItem: "Hearing attendance", value: "In Person" },
+    { tabItem: "Hearing date", value: "01 Jan 2024 10:00" },
+    { tabItem: "Hearing time estimate", value: "30" }, 
+    { tabItem: "Who has received this notice", value: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum" },
+    { tabItem: "Additional information about the hearing", value: "This is a test hearing" },
+  ]
+}];
 
 export const migratedListForHearingsTabDataOnHearing1 = [
   {
@@ -11,7 +23,7 @@ export const migratedListForHearingsTabDataOnHearing1 = [
       { tabItem: "Type of Hearing", value: "Final Hearing (FH)" },
       { tabItem: "Court", value: "Chesterfield County Court" },
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
-      { tabItem: "Hearing date", value: getFormattedDate() + ' 10:00' },
+      { tabItem: "Hearing date", value: DateHelper.getNumericShortFormattedDateToday() + ' 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
       { tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum' },
       { tabItem: "Additional information about the hearing", value: 'Some additional information' },
@@ -39,7 +51,7 @@ export const migratedListForHearingsTabDataOnHearing2 = [
       { tabItem: "Type of Hearing", value: "Final Hearing (FH)" },
       { tabItem: "Court", value: "Chesterfield County Court" },
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
-      { tabItem: "Hearing date", value: getFormattedDate() + ' 10:00' },
+      { tabItem: "Hearing date", value: DateHelper.getNumericShortFormattedDateToday() + ' 10:00' },
       { tabItem: "Hearing time estimate", value: '1 hour' },
       { tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum' },
       { tabItem: "Additional information about the hearing", value: 'Some additional information' },
@@ -53,15 +65,6 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
     tabName: 'Hearings',
     tabContent: [
       "Hearing 1",
-      { tabItem: "Type of Hearing", value: "Financial Dispute Resolution (FDR)" },
-      { tabItem: "Court", value: "Nottingham County Court And Family Court" },
-      { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
-      { tabItem: "Hearing date", value: '03 Mar 2023 12:00' },
-      { tabItem: "Hearing time estimate", value: '3 hours' },
-      { tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum' },
-      { tabItem: "Additional information about the hearing", value: 'FDR: Additional information about the hearing' },
-      { tabItem: "Hearing documents", value: 'FDRfile.pdf' },
-      "Hearing 2",
       { tabItem: "Type of Hearing", value: "Maintenance Pending Suit (MPS)" },
       { tabItem: "Court", value: "Chesterfield County Court" },
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
@@ -70,7 +73,7 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
       { tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum' },
       { tabItem: "Additional information about the hearing", value: 'MPS: Additional information about the hearing' },
       { tabItem: "Hearing documents", value: 'MPSfile.pdf' },
-      "Hearing 3",
+      "Hearing 2",
       { tabItem: "Type of Hearing", value: "First Directions Appointment (FDA)" },
       { tabItem: "Court", value: "Derby Combined Court Centre" },
       { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
@@ -79,6 +82,15 @@ export const migratedListForInterimHearingsTabDataOnHearing = [
       { tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum' },
       { tabItem: "Additional information about the hearing", value: 'FDA: Additional information about the hearing' },
       { tabItem: "Hearing documents", value: 'FDAfile.pdf' },
+      "Hearing 3",
+      { tabItem: "Type of Hearing", value: "Financial Dispute Resolution (FDR)" },
+      { tabItem: "Court", value: "Nottingham County Court And Family Court" },
+      { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
+      { tabItem: "Hearing date", value: '03 Mar 2026 12:00' },
+      { tabItem: "Hearing time estimate", value: '3 hours' },
+      { tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum' },
+      { tabItem: "Additional information about the hearing", value: 'FDR: Additional information about the hearing' },
+      { tabItem: "Hearing documents", value: 'FDRfile.pdf' },
       "Hearing 4",
       { tabItem: "Type of Hearing", value: "Final Hearing (FH)" },
       { tabItem: "Court", value: "Leicester County Court And Family Court" },

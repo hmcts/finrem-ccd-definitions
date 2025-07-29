@@ -9,7 +9,6 @@ const { fastTrack } = require('./pages/contested-pages/fast-track');
 const { checkYourAnswers, contestedCheckYourAnswers, contestedCheckYourAnswersMIAMNotAttended } = require('./pages/check-your-answers/check-your-answers');
 const { optionalDocuments, consentedOtherDocuments, contestedOtherDocuments, contestedOtherDocumentsPaperCase } = require('./pages/optional-documents/optional-documents');
 const { d81Question } = require('./pages/d81-question/d81-question');
-const { consentOrder } = require('./pages/consent-order/consent-order');
 const { orderForChildren, contestedOrderForChildren } = require('./pages/order-for-children/order-for-children');
 const { natureOfApplication, contestedNatureOfApplication, contestedNatureOfApplicationForSchedule1 } = require('./pages/nature-of-application/nature-of-application');
 const { consentedRespondentDetails, contestedRespondentDetails } = require('./pages/respondent-details/respondent-details');
@@ -37,7 +36,6 @@ const {draftOrderApprove} = require('./pages/draft-order-approve/draft-order-app
 const {uploadOrder} = require('./pages/upload-order/upload-order');
 const {listForInterimHearing} = require('./pages/list-of-interim-hearing/list-of-interim-hearing');
 const {createCaseFlag, validateCaseFlagAlertMessage, validateCaseFlagTab} = require('./pages/create-case-flag/create-case-flag');
-const {manageFlags} = require('./pages/manage-flags/manage-case-flags');
 const crossBrowser = process.env.TESTS_FOR_CROSS_BROWSER || 'false';
 const adminUserName = process.env.CCD_ADMIN_USER_NAME
 const adminPassword = process.env.CCD_ADMIN_PASSWORD
@@ -118,7 +116,6 @@ module.exports = () => {
     mediationQuestion,
     mediationQuestionNoMIAMYesExemption,
     miamCertification,
-    consentOrder,
     d81Question,
     optionalDocuments,
     consentedOtherDocuments,
@@ -171,7 +168,6 @@ module.exports = () => {
     validateCaseFlagTab,
     verifyCaseFlagEvent,
     verifyGeneralApplicationTab,
-    manageFlags,
     contestedCheckYourAnswersMIAMNotAttended,
     createPaperCase,
     contestedOtherDocumentsPaperCase,

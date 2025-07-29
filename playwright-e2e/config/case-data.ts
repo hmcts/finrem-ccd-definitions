@@ -40,6 +40,10 @@ export const CommonEvents: Record<string, CaseEvent> = {
   addNotes: {
     listItem: "Add Note",
     ccdCallback: "FR_caseNotes"
+  },
+  closeCase: {
+    listItem: "Close Case",
+    ccdCallback: "FR_close"
   }
 };
 
@@ -140,9 +144,13 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Approve orders",
     ccdCallback: "FR_approveOrders"
   },
-  processOrder: {
+  directionOrder: {
     listItem: "Process Order",
     ccdCallback: "FR_directionOrder"
+  },
+  processOrder: {
+    listItem: "Process Order (MH)",
+    ccdCallback: "FR_processOrder"
   },
   manageHearings: {
     listItem: "Manage Hearings",
@@ -164,15 +172,15 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage Barrister",
     ccdCallback: "FR_manageBarrister"
   },
-    prepareForHearing: {
+  prepareForHearing: {
     listItem: "Prepare For Hearing",
     ccdCallback: "FR_prepareForHearing"
   },
-    createGeneralOrder: {
+  createGeneralOrder: {
     listItem: "Create General Order",
     ccdCallback: "FR_generalOrder"
   },
-    contestedSendOrder: {
+  contestedSendOrder: {
     listItem: "Send Order",
     ccdCallback: "FR_sendOrder"
   },
@@ -180,10 +188,38 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage Interveners",
     ccdCallback: "manageInterveners"
   },
+  consentOrder: {
+    listItem: "Consent Order",
+    ccdCallback: "FR_consentOrder"
+  },
   // (non-prod) Migration events
   manageHearingsMigration: {
     listItem: "(Migration) Manage Hearings",
     ccdCallback: "FR_manageHearingsMigration"
+  },
+  createGeneralOrderConsent: {
+    listItem: "Create General Order (consent)",
+    ccdCallback: "FR_generalOrderConsent"
+  },
+  respondToConsentOrder: {
+    listItem: "Respond to Consent Order",
+    ccdCallback: "FR_respondToConsentOrder"
+  },
+  assignToJudgeConsent: {
+    listItem: "Assign to Judge (consent)",
+    ccdCallback: "FR_assignToJudgeConsent"
+  },
+  consentApplicationApproved: {
+    listItem: "Consent Application Approved",
+    ccdCallback: "FR_consentOrderApproved"
+  },
+  consentOrderNotApproved: {
+    listItem: "Consent Order Not Approved",
+    ccdCallback: "FR_consentOrderNotApproved"
+  },
+  sendConsentOrder: {
+    listItem: "Send Order (consent)",
+    ccdCallback: "FR_consentSendOrder"
   },
 
   // Common events
@@ -192,7 +228,8 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
   hwfDecisionMade: CommonEvents.hwfDecisionMade,
   issueApplication: CommonEvents.issueApplication,
-  addNotes: CommonEvents.addNotes
+  addNotes: CommonEvents.addNotes,
+  closeCase: CommonEvents.closeCase
 };
 
 export const PayloadPath = {
@@ -231,5 +268,6 @@ export const PayloadPath = {
     manageIntervenersAddRespondentInt: "./playwright-e2e/resources/payload/contested/caseworker/manage-interveners/add-respondent-intervener.json",
     manageBarristerAddApplicantBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-applicant-barrister.json",
     manageBarristerAddRespondentBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-respondent-barrister.json",
+    agreedDraftOrderApplicant: "./playwright-e2e/resources/payload/contested/caseworker/upload-draft-orders/agreed-draft-orders-applicant.json",
   }
 } as const;
