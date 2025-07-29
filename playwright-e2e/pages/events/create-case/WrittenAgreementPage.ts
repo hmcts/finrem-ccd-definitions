@@ -39,7 +39,7 @@ export class WrittenAgreementPage extends BaseJourneyPage {
         const optionToSelect = this.writtenAgreementRadio.getByLabel(radioOption);
         await optionToSelect.check();
         if (!hasWrittenAgreement) {
-            await this.writtenAgreementNonUkResidentCheckBox.check();
+            await this.selectWrittenAgreementCheckbox();
         }
     }
 
@@ -52,7 +52,7 @@ export class WrittenAgreementPage extends BaseJourneyPage {
         optionToSelect = this.writtenAgreementConsentOrderRadio.getByLabel(radioOption);
         await optionToSelect.check();
         if (!hasWrittenAgreement) {
-            await this.writtenAgreementNonUkResidentCheckBox.check();
+            await this.selectWrittenAgreementCheckbox();
         }
 
     }

@@ -12,7 +12,7 @@ export const consent_order_process_tab: Tab[] = [
             "ORDER FOR CHILDREN",
             { tabItem: "Does the application contain any application for periodical payments, or secured periodical payments for children?", value: "Yes" },
             { tabItem: "Is there a written agreement?", value: "No" },
-            { tabItem: "Select what the payments are for:", value: "When either the child or the person with care of the child or the absent parent of the child is not habitually resident in the United Kingdom"},
+            { tabItem: "Select what the payments are for:", value: "For a stepchild or step childrenIn addition to child support or maintenance already paid under a Child Support Agency assessmentTo meet expenses arising from a child’s disabilityTo meet expenses incurred by a child in relation to being educated or training for workWhen either the child or the person with care of the child or the absent parent of the child is not habitually resident in the United Kingdom"},
             { tabItem: "Original order to be varied", value: "Variation order.pdf"},
             { tabItem: "Draft Consent Order", value: "Variation order.pdf" },
             { tabItem: "Form D81 Joint Document", value: "test.pdf" },
