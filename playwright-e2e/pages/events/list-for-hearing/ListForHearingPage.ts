@@ -2,6 +2,7 @@ import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from "../../BaseJourneyPage";
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import { YesNoRadioEnum } from "../../helpers/enums/RadioEnums";
+import {DateHelper} from "../../../data-utils/DateHelper.ts";
 
 export class ListForHearingPage extends BaseJourneyPage {
     private readonly listForHearingTitle: Locator;
@@ -76,11 +77,7 @@ export class ListForHearingPage extends BaseJourneyPage {
 
     async setHearingDateToCurrentDate() {
         expect(this.hearingDateHeader).toBeVisible();
-        const currentDate = new Date();
-
-        const day = currentDate.getDate().toString().padStart(2, '0'); // Ensure 2-digit format
-        const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based
-        const year = currentDate.getFullYear().toString();
+        const [year, month, day] = DateHelper.getCurrentDateFormatted();
 
         await this.hearingDay.fill(day);
         await this.hearingMonth.fill(month);

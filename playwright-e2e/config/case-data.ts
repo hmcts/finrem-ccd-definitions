@@ -140,8 +140,8 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Approve orders",
     ccdCallback: "FR_approveOrders"
   },
-  directionOrder: {
-    listItem: "Direction Order",
+  processOrder: {
+    listItem: "Process Order",
     ccdCallback: "FR_directionOrder"
   },
   manageHearings: {
@@ -164,21 +164,26 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage Barrister",
     ccdCallback: "FR_manageBarrister"
   },
-    prepareForHearing: {
+  prepareForHearing: {
     listItem: "Prepare For Hearing",
     ccdCallback: "FR_prepareForHearing"
   },
-    createGeneralOrder: {
+  createGeneralOrder: {
     listItem: "Create General Order",
     ccdCallback: "FR_generalOrder"
   },
-    contestedSendOrder: {
+  contestedSendOrder: {
     listItem: "Send Order",
     ccdCallback: "FR_sendOrder"
   },
   manageInterveners: {
     listItem: "Manage Interveners",
     ccdCallback: "manageInterveners"
+  },
+  // (non-prod) Migration events
+  manageHearingsMigration: {
+    listItem: "(Migration) Manage Hearings",
+    ccdCallback: "FR_manageHearingsMigration"
   },
 
   // Common events
@@ -226,5 +231,6 @@ export const PayloadPath = {
     manageIntervenersAddRespondentInt: "./playwright-e2e/resources/payload/contested/caseworker/manage-interveners/add-respondent-intervener.json",
     manageBarristerAddApplicantBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-applicant-barrister.json",
     manageBarristerAddRespondentBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-respondent-barrister.json",
+    agreedDraftOrderApplicant: "./playwright-e2e/resources/payload/contested/caseworker/upload-draft-orders/agreed-draft-orders-applicant.json",
   }
 } as const;

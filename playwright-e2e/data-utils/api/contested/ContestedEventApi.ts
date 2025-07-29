@@ -330,11 +330,21 @@ export class ContestedEventApi {
   ): Promise<void> {
     await this.progressCaseToState(
       caseId,
-      ContestedEvents.directionOrder.ccdCallback,
+      ContestedEvents.processOrder.ccdCallback,
       PayloadPath.Contested.processOrderBasicTwoHearing,
       jsonObject
     );
   }
+
+  static async agreedDraftOrderApplicant(
+    caseId: string,
+  ): Promise<void> {
+    await this.updateCaseWorkerSteps( caseId, [
+  {
+    event: ContestedEvents.uploadDraftOrders.ccdCallback,
+    payload: PayloadPath.Contested.agreedDraftOrderApplicant,
+  }])
+}
 
   static async caseworkerCreateFlag(caseId: string) {
     
