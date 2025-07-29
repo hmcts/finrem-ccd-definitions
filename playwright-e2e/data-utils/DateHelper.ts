@@ -115,5 +115,10 @@ export class DateHelper {
             .toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
     };
 
+    static getIsoDateTwelveWeeksLater(): string {
+      const twelveWeeksLater = new Date();
+      twelveWeeksLater.setDate(twelveWeeksLater.getDate() + 12 * 7);
+    return twelveWeeksLater.toISOString().split('T')[0];
+};
 
 }

@@ -216,6 +216,33 @@ export class ContestedCaseFactory {
     return caseId;
   }
 
+  // Process order
+  static async createAndProcessFormACaseUpToProcessOrder(
+    isFormA = true,
+    isExpressPilot = false
+  ): Promise<string> {
+      const caseId = await this.progressToUploadDraftOrder({ isFormA: isFormA });
+      await ContestedEventApi.agreedDraftOrderApplicant(caseId);
+      const hearingDate = DateHelper.getIsoDateTwelveWeeksLater();
+      const documentDetailsForFutureTestSteps = {
+      hearingDate,
+      courtOrderDate: hearingDate,
+      documentUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038",
+      documentBinaryUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038/binary",
+      uploadTimestamp: await DateHelper.getCurrentTimestamp(),
+    };
+
+    await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
+    await ContestedEventApi.caseWorkerProcessOrder(caseId, {
+      documentUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038",
+      documentBinaryUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038/binary",
+      uploadTimestamp: await DateHelper.getCurrentTimestamp(),
+    });
+    return caseId;
+  }
+
+  
+
   // General Application Directions
   private static async caseworkerProgressToGeneralApplicationReferToJudge(
     caseId: string
