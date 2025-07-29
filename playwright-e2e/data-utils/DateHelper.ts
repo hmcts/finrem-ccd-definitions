@@ -142,4 +142,14 @@ export class DateHelper {
     return twelveWeeksLater.toISOString().split('T')[0];
 };
 
+    /**
+     * Returns today's date formatted as "d Month yyyy" (e.g. "6 August 2025").
+     *
+     * @returns Formatted current date string.
+     */
+    static getTodayFullFormattedDate(): string {
+        const today = new Date();
+        return today
+            .toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+    };
 }

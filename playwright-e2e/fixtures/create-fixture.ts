@@ -71,6 +71,8 @@ import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.t
 import { ProcessOrderPage } from '../pages/events/process-order/ProcessOrderPage.ts';
 import { UnprocessedApprovedOrdersPage } from '../pages/events/process-order/UnprocessedApprovedOrdersPage.ts';
 import { ProcessOrderHearingDetailsPage } from '../pages/events/process-order/ProcessOrderHearingDetailsPage.ts';
+import {ConsentApplicationApprovedPage} from '../pages/events/consent-application/ConsentApplicationApprovedPage.ts';
+import {ConsentOrderNotApprovedPage} from '../pages/events/consent-application/ConsentOrderNotApprovedPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -145,6 +147,8 @@ type CreateFixtures = {
   generalApplicationOutcomePage: GeneralApplicationOutcomePage;
   approvedOrderPage: ApproveOrderPage;
   processOrderPage: ProcessOrderPage;
+  consentApplicationApprovePage: ConsentApplicationApprovedPage;
+  consentOrderNotApprovedPage: ConsentOrderNotApprovedPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -332,7 +336,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new PrepareForHearingPage(page));
   },
   createGeneralOrderPage: async ({ page }, use) => {
-    await use(new CreateGeneralOrderPage(page));
+    await use(new CreateGeneralOrderPage(page, commonActionsHelper));
   },
   contestedSendOrderPage: async ({ page }, use) => {
     await use(new ContestedSendOrderPage(page));
@@ -354,5 +358,11 @@ export const test = base.extend<CreateFixtures>({
   },
   processOrderPage: async ({ page }, use) => {
     await use(new ProcessOrderPage(page, commonActionsHelper));
+  },
+  consentApplicationApprovePage: async ({ page }, use) => {
+    await use(new ConsentApplicationApprovedPage(page, commonActionsHelper));
+  },
+  consentOrderNotApprovedPage: async ({ page }, use) => {
+    await use(new ConsentOrderNotApprovedPage(page));
   }
 });
