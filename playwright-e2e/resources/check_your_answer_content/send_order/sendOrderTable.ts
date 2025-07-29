@@ -7,4 +7,4 @@ export const sendOrderTableData: Table = {
     { cellItem: 'Who should receive this order?', value: 'Applicant - Frodo Baggins\nRespondent - Smeagol Gollum' },
     { cellItem: 'What state should this case move to:', value: 'Order Sent' }
   ]
-};
+}
