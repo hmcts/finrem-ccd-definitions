@@ -176,7 +176,7 @@ test.describe('Contested - List for Interim Hearings', () => {
   );
 
   // non-prod only
-  test.skip(
+  test(
     'Form A case with Manage Hearings Migration',
     { tag: [] },
     async (

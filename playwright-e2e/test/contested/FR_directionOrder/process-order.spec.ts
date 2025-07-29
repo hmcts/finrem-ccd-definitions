@@ -217,7 +217,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
   );
 
   // non-prod only
-  test.skip(
+  test(
     'Form A case shows old-style Process Order hearings on the new hearing tab',
     { tag: ['@process-order'] },
     async (
@@ -259,7 +259,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
   );
 
   // non-prod only
-  test.skip(
+  test(
     'Paper case shows old-style Process Order hearings on the new hearing tab',
     { tag: ['@process-order'] },
     async (
@@ -322,7 +322,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
   )
 
   // non-prod only
-  test.skip(
+  test(
     'Paper case shows old-style Process Order hearings on the new hearing tab after any manage hearings event.',
     { tag: [] },
     async (
