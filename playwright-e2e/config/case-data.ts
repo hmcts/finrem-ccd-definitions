@@ -235,5 +235,6 @@ export const PayloadPath = {
     manageIntervenersAddRespondentInt: "./playwright-e2e/resources/payload/contested/caseworker/manage-interveners/add-respondent-intervener.json",
     manageBarristerAddApplicantBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-applicant-barrister.json",
     manageBarristerAddRespondentBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-respondent-barrister.json",
+    agreedDraftOrderApplicant: "./playwright-e2e/resources/payload/contested/caseworker/upload-draft-orders/agreed-draft-orders-applicant.json",
   }
 } as const;
