@@ -58,7 +58,7 @@ import { contestedSendOrderTabData } from '../../../resources/tab_content/contes
 
 test.describe('Contested - Approved and Send Order', () => {
   test(
-    'Form A case up to process order @test',
+    'Form A case up to process order @testing',
     { tag: ['@process-order'] },
     async (
       {
