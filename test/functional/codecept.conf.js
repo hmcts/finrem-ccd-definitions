@@ -54,6 +54,3 @@ exports.config = {
   },
   name: 'finrem-ccd-definitions'
 };
-
-
-
