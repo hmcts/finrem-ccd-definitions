@@ -133,7 +133,7 @@ test.describe('Contested - Manage Hearings', () => {
 
             await manageHearingPage.navigateContinue();
             await manageHearingPage.navigateIgnoreWarningAndContinue();
-        
+    
             const expectedTable = getManageHearingTableData({
                 typeOfHearing: "Pre-Trial Review (PTR)"
             });
@@ -244,7 +244,7 @@ test.describe('Contested - Manage Hearings', () => {
                 additionalInformation: 'Hearing details here',
                 uploadAnySupportingDocuments: true,
                 uploadFiles: ["final_hearing_file1.pdf", "final_hearing_file2.pdf"],
-                sendANoticeOfHearing: true
+                sendANoticeOfHearing: true                
             });
 
             //Who should see this order - all parties
