@@ -246,7 +246,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new ApproveApplicationPage(page));
   },
   sendOrderPage: async ({ page }, use) => {
-    await use(new SendOrderPage(page));
+    await use(new SendOrderPage(page, commonActionsHelper));
   },
   expressCaseEnrolledPage: async ({ page }, use) => {
     await use(new ExpressCaseEnrolledPage(page));

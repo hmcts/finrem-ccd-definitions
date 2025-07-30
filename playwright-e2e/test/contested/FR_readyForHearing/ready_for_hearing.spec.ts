@@ -57,7 +57,7 @@ import { updateSchedulingAndListingTabData } from '../../../resources/tab_conten
 
 test.describe('Contested - Ready For Hearing', () => {
   test(
-    'Form A case up to List for Hearing @test',
+    'Form A case up to List for Hearing',
     { tag: ['@process-order'] },
     async (
       {
