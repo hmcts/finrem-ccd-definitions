@@ -65,6 +65,14 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Update contact details",
     ccdCallback: "FR_updateContactDetails"
   },
+  assignToJudgeConsentMade: {
+    listItem: "Assign To Judge",
+    ccdCallback: "FR_referToJudgeFromConsOrdMade"
+  },
+  uploadApprovedOrder: {
+    listItem: "Upload Approved Order",
+    ccdCallback: "FR_uploadApprovedOrder"
+  },
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
@@ -144,11 +152,11 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Approve orders",
     ccdCallback: "FR_approveOrders"
   },
-  directionOrder: {
+  processOrder: {
     listItem: "Process Order",
     ccdCallback: "FR_directionOrder"
   },
-  processOrder: {
+  processOrderMH: {
     listItem: "Process Order (MH)",
     ccdCallback: "FR_processOrder"
   },

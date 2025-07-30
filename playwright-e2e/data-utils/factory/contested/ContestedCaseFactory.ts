@@ -217,7 +217,7 @@ export class ContestedCaseFactory {
   }
 
   // Process order
-  static async createAndProcessFormACaseUpToProcessOrder(
+  static async createAndProcessFormACaseUpToProcessOrderLegacy(
     isFormA = true,
     isExpressPilot = false
   ): Promise<string> {
@@ -233,7 +233,7 @@ export class ContestedCaseFactory {
     };
 
     await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
-    await ContestedEventApi.caseWorkerProcessOrder(caseId, {
+    await ContestedEventApi.caseWorkerProcessOrderLegacy(caseId, {
       documentUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038",
       documentBinaryUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038/binary",
       uploadTimestamp: await DateHelper.getCurrentTimestamp(),

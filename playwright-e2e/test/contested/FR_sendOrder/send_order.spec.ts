@@ -58,7 +58,7 @@ import { contestedSendOrderTabData } from '../../../resources/tab_content/contes
 
 test.describe('Contested - Approved and Send Order', () => {
   test(
-    'Form A case up to process order @testing',
+    'Form A case up to process order and send order',
     { tag: ['@process-order'] },
     async (
       {
@@ -70,7 +70,7 @@ test.describe('Contested - Approved and Send Order', () => {
       }
     ) => {
         
-    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProcessOrder();
+    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProcessOrderLegacy();
     
     await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(
