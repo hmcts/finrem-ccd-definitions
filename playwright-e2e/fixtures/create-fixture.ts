@@ -349,5 +349,5 @@ export const test = base.extend<CreateFixtures>({
   },
   submitUploadedCaseFilesPage: async ({ page }, use) => {
     await use(new SubmitUploadedCaseFilesPage(page));
-  },
+  }
 });
