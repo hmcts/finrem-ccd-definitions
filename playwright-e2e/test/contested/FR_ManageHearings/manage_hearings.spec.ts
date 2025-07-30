@@ -1,17 +1,15 @@
-import { caseAssignmentApi, test } from '../../../fixtures/fixtures.ts';
+import {caseAssignmentApi, test} from '../../../fixtures/fixtures.ts';
 import config from '../../../config/config.ts';
-import { ContestedEvents } from "../../../config/case-data.ts";
-import {
-    getManageHearingTableData
-} from "../../../resources/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
-import { DateHelper } from '../../../data-utils/DateHelper.ts';
-import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
-import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi.ts';
-import { CaseTypeEnum } from "../../../pages/helpers/enums/RadioEnums.ts";
-import { SigninPage } from "../../../pages/SigninPage.ts";
-import { ManageCaseDashboardPage } from "../../../pages/ManageCaseDashboardPage.ts";
-import { CaseDetailsPage } from "../../../pages/CaseDetailsPage.ts";
-import { getManageHearingTabData } from "../../../resources/tab_content/contested/manage-hearing_tabs.ts";
+import {ContestedEvents} from "../../../config/case-data.ts";
+import {getManageHearingTableData} from "../../../resources/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
+import {DateHelper} from '../../../data-utils/DateHelper.ts';
+import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
+import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEventApi.ts';
+import {CaseTypeEnum} from "../../../pages/helpers/enums/RadioEnums.ts";
+import {SigninPage} from "../../../pages/SigninPage.ts";
+import {ManageCaseDashboardPage} from "../../../pages/ManageCaseDashboardPage.ts";
+import {CaseDetailsPage} from "../../../pages/CaseDetailsPage.ts";
+import {getManageHearingTabData} from "../../../resources/tab_content/contested/manage-hearing_tabs.ts";
 
 const typeOfHearingData = [
     {
@@ -29,11 +27,11 @@ const typeOfHearingData = [
 ];
 
 async function verifyDifferentActorsForCFV(
-    manageCaseDashboardPage: ManageCaseDashboardPage,
-    loginPage: SigninPage,
-    caseId: string,
-    caseDetailsPage: CaseDetailsPage,
-    userCred: { email: string, password: string } = config.applicant_solicitor
+        manageCaseDashboardPage: ManageCaseDashboardPage,
+        loginPage: SigninPage,
+        caseId: string,
+        caseDetailsPage: CaseDetailsPage,
+        userCred: { email: string, password: string } = config.applicant_solicitor
 ) {
     if (!process.env.CI) {
         console.log(`Verifying CFV access for user: ${userCred.email}`);
@@ -75,9 +73,8 @@ test.describe('Contested - Manage Hearings', () => {
 
     test(
         'Contested - Assert validations - Manage Hearings - Pre-Trial Review (PTR)', {
-        tag: []
-    },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage }) => {
+        tag: []},
+        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
 
             // Create and setup case
             const date = DateHelper.getCurrentDate();
@@ -126,7 +123,7 @@ test.describe('Contested - Manage Hearings', () => {
                 duration: '2 hours',
                 date: {},
                 time: '10:00 AM',
-                court: { zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT' },
+                court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
                 attendance: 'Remote - video call',
                 additionalInformation: 'Hearing details here',
                 uploadAnySupportingDocuments: true,
@@ -161,8 +158,8 @@ test.describe('Contested - Manage Hearings', () => {
     for (const data of typeOfHearingData) {
         test(
             'Contested - Caseworker adds hearings for Form A case - ' + data.typeOfHearing,
-            { tag: [] },
-            async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage }) => {
+            {tag: []},
+            async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
                 // Create and setup case
                 const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
@@ -182,7 +179,7 @@ test.describe('Contested - Manage Hearings', () => {
                     duration: '2 hours',
                     date: {},
                     time: '10:00 AM',
-                    court: { zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT' },
+                    court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
                     attendance: 'Remote - video call',
                     additionalInformation: 'Hearing details here',
                     uploadAnySupportingDocuments: true,
@@ -216,8 +213,8 @@ test.describe('Contested - Manage Hearings', () => {
     }
 
     test(
-        'Contested - Manage Hearings - Add Hearing and verify access to CFV', { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage }) => {
+        'Contested - Manage Hearings - Add Hearing and verify access to CFV', {tag: []},
+        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
 
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
@@ -242,7 +239,7 @@ test.describe('Contested - Manage Hearings', () => {
                 duration: '2 hours',
                 date: {},
                 time: '10:00 AM',
-                court: { zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT' },
+                court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
                 attendance: 'In person',
                 additionalInformation: 'Hearing details here',
                 uploadAnySupportingDocuments: true,
@@ -251,7 +248,7 @@ test.describe('Contested - Manage Hearings', () => {
             });
 
             //Who should see this order - all parties
-            await manageHearingPage.selectAllWhoShouldSeeThisOrder([
+             await manageHearingPage.selectAllWhoShouldSeeThisOrder([
                 { partyType: 'Applicant', partyName: 'Frodo Baggins' },
                 { partyType: 'Respondent', partyName: 'Smeagol Gollum' },
                 { partyType: 'Intervener1', partyName: 'IntApp1' },
