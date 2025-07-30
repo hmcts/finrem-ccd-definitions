@@ -144,11 +144,11 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Approve orders",
     ccdCallback: "FR_approveOrders"
   },
-  directionOrder: {
+  processOrder: {
     listItem: "Process Order",
     ccdCallback: "FR_directionOrder"
   },
-  processOrder: {
+  processOrderMH: {
     listItem: "Process Order (MH)",
     ccdCallback: "FR_processOrder"
   },
