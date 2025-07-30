@@ -32,7 +32,7 @@ async function verifyDifferentActorsForCFV(
         caseId: string,
         caseDetailsPage: CaseDetailsPage,
         userCred: { email: string, password: string } = config.applicant_solicitor
-) {
+    ) {
     if (!process.env.CI) {
         console.log(`Verifying CFV access for user: ${userCred.email}`);
     }
@@ -133,7 +133,7 @@ test.describe('Contested - Manage Hearings', () => {
 
             await manageHearingPage.navigateContinue();
             await manageHearingPage.navigateIgnoreWarningAndContinue();
-
+        
             const expectedTable = getManageHearingTableData({
                 typeOfHearing: "Pre-Trial Review (PTR)"
             });
@@ -153,7 +153,7 @@ test.describe('Contested - Manage Hearings', () => {
                 uploadFiles: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
             })]);
 
-        });
+    });
 
     for (const data of typeOfHearingData) {
         test(
@@ -214,7 +214,7 @@ test.describe('Contested - Manage Hearings', () => {
 
     test(
         'Contested - Manage Hearings - Add Hearing and verify access to CFV', {tag: []},
-        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
+        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => { 
 
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
@@ -233,7 +233,7 @@ test.describe('Contested - Manage Hearings', () => {
             // Manage hearings
             await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
             await manageHearingPage.selectAddANewHearing();
-            await manageHearingPage.navigateContinue();
+            await manageHearingPage.navigateContinue(); 
             await manageHearingPage.addHearing({
                 type: "Financial Dispute Resolution (FDR)",
                 duration: '2 hours',
