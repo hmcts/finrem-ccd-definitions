@@ -113,7 +113,7 @@ withNightlyPipeline(type, product, component) {
     stage('Set up playwright') {
         yarnBuilder.yarn('yarn-update')
         yarnBuilder.yarn('install-dependencies')
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+        //steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
         env.ENV = 'aat'
     }
 
