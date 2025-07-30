@@ -109,16 +109,12 @@ withNightlyPipeline(type, product, component) {
     env.FUNCTIONAL_TESTS_WORKERS = params.FUNCTIONAL_TESTS_WORKERS
 
     loadVaultSecrets(secrets)
-    enableFullFunctionalTest(180)
 
-    before('fullFunctionalTest') {
+    afterAlways('DependencyCheckNightly') {
         yarnBuilder.yarn('yarn-update')
         yarnBuilder.yarn('install-dependencies')
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
         env.ENV = 'aat'
-    }
-
-    afterAlways('fullFunctionalTest') {
         if (!params.TAGS_TO_RUN.isEmpty()) {
             stage("${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}") {
                 try {
