@@ -5,7 +5,7 @@ import { approvedOrderTabData } from '../../resources/tab_content/consented/appr
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
 
 test(
-  'Consented - Approve Application',
+  'Consented - Approve Application - Assign to Judge - Upload Approved Order - Send Order',
   { tag: [] },
   async (
     { 
@@ -13,6 +13,8 @@ test(
       manageCaseDashboardPage,
       caseDetailsPage,
       approveApplicationPage,
+      allocateToJudgePage,
+      sendOrderPage
     },
   ) => {
     // Create case and progress to Issue Application
@@ -24,7 +26,7 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Approve Application 
-    await caseDetailsPage.selectNextStep(ConsentedEvents.approveApplication); 
+    await caseDetailsPage.selectNextStep(ConsentedEvents.approveApplication);
     await approveApplicationPage.selectIsSubjectTo(true)
     await approveApplicationPage.selectIsPensionProvider(false);
     await approveApplicationPage.selectJudge('District Judge')
@@ -34,5 +36,47 @@ test(
 
     // Assert Tab Data      
     await caseDetailsPage.assertTabData(approvedOrderTabData);
+    await manageCaseDashboardPage.signOut();
+
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+
+    await caseDetailsPage.selectNextStep(ConsentedEvents.assignToJudgeConsentMade);
+    await allocateToJudgePage.verifyAssignToJudgeHeader();
+    await allocateToJudgePage.selectAssignToJudgeReason('Draft consent/variation order');
+    await allocateToJudgePage.selectAssignToJudgeList('New Application');
+    await allocateToJudgePage.enterAssignToJudgeDate();
+    await allocateToJudgePage.enterAssignToJudgeText("This is a test text for the judge assignment.");
+    await allocateToJudgePage.navigateContinue();
+    await allocateToJudgePage.navigateSubmit();
+    await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.assignToJudgeConsentMade.listItem);
+
+    await manageCaseDashboardPage.signOut();
+
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+
+    await caseDetailsPage.selectNextStep(ConsentedEvents.uploadApprovedOrder);
+    await approveApplicationPage.selectIsSubjectTo(true)
+    await approveApplicationPage.selectIsPensionProvider(false);
+    await approveApplicationPage.selectJudge('District Judge')
+    await approveApplicationPage.uploadConsentOrderFile('./playwright-e2e/resources/file/test.pdf');
+    await approveApplicationPage.navigateContinue();
+    await approveApplicationPage.navigateSubmit();
+    await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.uploadApprovedOrder.listItem);
+
+    await manageCaseDashboardPage.signOut();
+
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+
+    await caseDetailsPage.selectNextStep(ConsentedEvents.sendOrder);
+    await sendOrderPage.navigateSubmit();
+    await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.sendOrder.listItem);
+
+    await manageCaseDashboardPage.signOut();
   }
 );
