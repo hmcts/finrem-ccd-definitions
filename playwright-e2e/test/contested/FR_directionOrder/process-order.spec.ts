@@ -127,7 +127,7 @@ async function performManageHearings(
     await manageHearingPage.navigateSubmit();
 }
 
-test.describe('Contested - Process Order (Old Style) @tag', () => {
+test.describe('Contested - Process Order (Old Style)', () => {
   test(
     'Form A case creating a hearing from Process Order',
     { tag: ['@process-order'] },
@@ -323,7 +323,7 @@ test.describe('Contested - Process Order (Old Style) @tag', () => {
 
   // non-prod only
   test(
-    'Paper case shows old-style Process Order hearings on the new hearing tab after any manage hearings event.',
+    'Paper case shows old-style Process Order hearings on the new hearing tab after any manage hearings event',
     { tag: [] },
     async (
       {
@@ -389,7 +389,7 @@ test.describe('Contested - Process Order (Old Style) @tag', () => {
 
 
 // New Style Process Order hearings
-test.describe('Contested - Process Order (Mange Hearings) @tag', () => {
+test.describe('Contested - Process Order (Mange Hearings)', () => {
   test(
     'Form A case creating a hearing from Process Order (MH)',
     { tag: [] },
