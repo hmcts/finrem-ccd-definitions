@@ -180,6 +180,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage Interveners",
     ccdCallback: "manageInterveners"
   },
+  submitUploadedCaseFiles: {
+    listItem: "Submit Uploaded Case Files",
+    ccdCallback: "FR_submitUploadedCaseFiles"
+  },
   // (non-prod) Migration events
   manageHearingsMigration: {
     listItem: "(Migration) Manage Hearings",
