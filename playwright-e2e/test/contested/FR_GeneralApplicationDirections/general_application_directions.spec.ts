@@ -110,7 +110,7 @@ test.describe('Contested - General Application Directions', () => {
   );
 
   // non-prod only
-  test.skip(
+  test(
     'Form A case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
     async ({
@@ -133,7 +133,7 @@ test.describe('Contested - General Application Directions', () => {
   );
 
   // non-prod only
-  test.skip(
+  test(
     'Paper case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
     async ({
