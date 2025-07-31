@@ -11,6 +11,17 @@
     "TabShowCondition": "hearingTabItems !=\"\""
   },
   {
+    "LiveFrom": "24/07/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-judiciary",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "hearingTabItems",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "hearingTabItems !=\"\""
+  },
+  {
     "LiveFrom": "02/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "manageHearings-applicant",
