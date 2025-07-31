@@ -1421,23 +1421,23 @@ __metadata:
   linkType: hard
 
 "@hmcts/playwright-common@npm:^1.0.25":
-  version: 1.0.32
-  resolution: "@hmcts/playwright-common@npm:1.0.32"
+  version: 1.0.33
+  resolution: "@hmcts/playwright-common@npm:1.0.33"
   dependencies:
     "@axe-core/playwright": ^4.10.0
     "@eslint/js": ^9.11.1
     "@typescript-eslint/eslint-plugin": ^8.8.0
     eslint: ^9.11.1
-    eslint-plugin-playwright: ^1.6.2
+    eslint-plugin-playwright: ^2.0.0
     get-port: ^7.1.0
-    globals: ^15.10.0
+    globals: ^16.0.0
     lighthouse: ^12.2.1
     playwright-lighthouse: ^4.0.0
     typescript: ^5.6.2
     typescript-eslint: ^8.8.0
   peerDependencies:
     "@playwright/test": ^1.53.0
-  checksum: cca6c936f2ac2f6db6a3ac56d83fa910cca704b16bd3c83dda237a85c603e5897b1dc10612f9d13ce46a3dcb755df5fa48455b2accabc20a55382ddb279fef95
+  checksum: 3a4b96cb6c4c23456822e73af30165023edb4b7b1189e3e51b9c9ba81b3f9b85565fa889c085bc99a3a428c6c60c1582b81f3aa5d4432662c7e5fe55d541706f
   languageName: node
   linkType: hard
 
@@ -5381,21 +5381,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-playwright@npm:^1.6.2":
-  version: 1.8.3
-  resolution: "eslint-plugin-playwright@npm:1.8.3"
-  dependencies:
-    globals: ^13.23.0
-  peerDependencies:
-    eslint: ">=8.40.0"
-    eslint-plugin-jest: ">=25"
-  peerDependenciesMeta:
-    eslint-plugin-jest:
-      optional: true
-  checksum: a169eed9ecde2ca2d4fe9f61c081b80b937bf67097ccc58e2fdcc319cd702b29bf7306935cafdedc2708431a70cbd592fee4a6f4f184a588515b39ff9c5c0408
-  languageName: node
-  linkType: hard
-
 "eslint-plugin-playwright@npm:^2.0.0":
   version: 2.2.0
   resolution: "eslint-plugin-playwright@npm:2.2.0"
@@ -6504,7 +6489,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^15.10.0, globals@npm:^15.14.0":
+"globals@npm:^15.14.0":
   version: 15.15.0
   resolution: "globals@npm:15.15.0"
   checksum: a2a92199a112db00562a2f85eeef2a7e3943e171f7f7d9b17dfa9231e35fd612588f3c199d1509ab1757273467e413b08c80424cf6e399e96acdaf93deb3ee88
