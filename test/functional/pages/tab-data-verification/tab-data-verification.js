@@ -291,20 +291,6 @@ async function adminNotesTab(caseType, tabName) {
   }
 }
 
-async function approvedOrderTab(caseType, tabName) {
-  const I = this;
-  await I.waitForText(tabName, '5');
-  // eslint-disable-next-line default-case
-  switch (caseType) {
-  case 'consented':
-    //await I.waitForNavigationToComplete('div[id="mat-tab-label-0-7"]');
-    await I.clickTab('Approved Order');
-    await I.see(verifyTabText.approvedOrderTab.approvedLetter);
-    await I.see(verifyTabText.approvedOrderTab.consentedAnnexedStamped);
-    await I.see(verifyTabText.approvedOrderTab.typeOfPensionDocumentTypeStamped);
-    break;
-  }
-}
 async function contestedOrderTab(caseType, tabName) {
   const I = this;
   await I.waitForText(tabName, '5');
@@ -514,7 +500,6 @@ module.exports = {
   judgeDetailsTab,
   adminNotesTab,
   contestedOrderTab,
-  approvedOrderTab,
   gateKeepingAllocationsTab,
   schedulingAndListingTab,
   consentOrderProcessTab,

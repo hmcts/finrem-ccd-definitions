@@ -251,7 +251,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new IssueApplicationPage(page));
   },
   approveApplicationPage: async ({ page }, use) => {
-    await use(new ApproveApplicationPage(page));
+    await use(new ApproveApplicationPage(page, commonActionsHelper));
   },
   sendOrderPage: async ({ page }, use) => {
     await use(new SendOrderPage(page, commonActionsHelper));
@@ -323,7 +323,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new AddNotePage(page));
   },
   allocateToJudgePage: async ({ page }, use) => {
-    await use(new AllocateToJudgePage(page));
+    await use(new AllocateToJudgePage(page, commonActionsHelper));
   },
   eventSummaryPage: async ({ page }, use) => {
     await use(new EventSummaryPage(page));
