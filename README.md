@@ -83,22 +83,6 @@ Import AAT environment variables. Ask a colleague for an `e2e-aat.env` file. Thi
 source ./e2e-aat.env
 ```
 
-In `codecept.conf.js` set the `Playwright` options `show: true` and `headless: false`.
-
-Also consider setting `retries: 0`.
-
-### Run
-To run a single test, add `@mytest` to the Scenario title. For example,
-
-`Scenario('Contested Matrimonial Case Creation by Solicitor @nightly @mytest'...`
-
-Connect to the VPN.
-
-Execute:
-```bash
-yarn test:mytest
-```
-
 ## Verification
 
 ### Eslint is included and will verify the config is properly formatted:
@@ -116,8 +100,7 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 1) Configure defined env variables from [Jenkinsfile_nightly](https://github.com/hmcts/finrem-ccd-definitions/blob/master/Jenkinsfile_nightly) pipeline .
 2) Values for env variables can be found in Azure finrem aat key vault.
 3) `yarn test:functional` will create cases via API (runs on PR and master AAT).
-4) `yarn test:fullfunctional` will create both API, UI screen tests and verifies data in tabs (runs on nightly pipeline on AAT).
-5) To create cases on demo, point CCD_DATA_API_URL to ccd demo API url and RUNNING_ENV=demo, run the scenario tests.
+4) To create cases on demo, point CCD_DATA_API_URL to ccd demo API url and RUNNING_ENV=demo, run the scenario tests.
 
 ### Running additional tests in the Jenkins PR Pipeline
 1. Add one or more appropriate labels to your PR in GitHub. Valid labels are:

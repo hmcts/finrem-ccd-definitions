@@ -410,4 +410,13 @@ export class ContestedEventApi {
     return caseId;
   }
 
+  static async caseWorkerPerformsAddAHearing(caseId: string) {
+    await this.updateCaseWorkerSteps(caseId, [
+      {
+        event: ContestedEvents.manageHearings.ccdCallback,
+        payload: PayloadPath.Contested.manageHearingAddHearing,
+      },
+    ]);
+  }
+
 }

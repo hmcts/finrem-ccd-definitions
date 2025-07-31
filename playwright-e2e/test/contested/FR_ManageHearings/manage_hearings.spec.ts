@@ -1,9 +1,7 @@
 import {caseAssignmentApi, test} from '../../../fixtures/fixtures.ts';
 import config from '../../../config/config.ts';
 import {ContestedEvents} from "../../../config/case-data.ts";
-import {
-    getManageHearingTableData
-} from "../../../resources/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
+import {getManageHearingTableData} from "../../../resources/check_your_answer_content/manage_hearings/manageHearingAddHearingTable.ts";
 import {DateHelper} from '../../../data-utils/DateHelper.ts';
 import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEventApi.ts';
@@ -248,7 +246,7 @@ test.describe('Contested - Manage Hearings', () => {
                 uploadFiles: ["final_hearing_file1.pdf", "final_hearing_file2.pdf"],
                 sendANoticeOfHearing: true                
             });
-            
+
             //Who should see this order - all parties
              await manageHearingPage.selectAllWhoShouldSeeThisOrder([
                 { partyType: 'Applicant', partyName: 'Frodo Baggins' },
@@ -303,4 +301,30 @@ test.describe('Contested - Manage Hearings', () => {
 
         }
     );
+
+    test('Contested - Add a hearing with case factory and assert tab date as a Judge',
+        { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage }) => {
+            //create and setup case
+            const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false, DateHelper.getCurrentDate());
+            await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId);
+
+            //Login as judge and navigate to case
+            await manageCaseDashboardPage.visit();
+            await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
+            await manageCaseDashboardPage.navigateToCase(caseId);
+
+            //assert hearings tab data 
+            await caseDetailsPage.assertTabData([getManageHearingTabData({
+                typeOfHearing: "First Directions Appointment (FDA)",
+                court: "Manchester County And Family Court",
+                attendance: "In Person",
+                hearingDate: "01 Dec 2025",
+                hearingTime: "test",
+                duration: "test",
+                whoShouldSeeOrder: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+                additionalInformation: "test",
+                uploadFiles: ["HearingNotice.pdf", "Form-G.pdf", "PfdNcdrComplianceLetter.pdf", "PfdNcdrCoverLetter.pdf", "OutOfFamilyCourtResolution.pdf", "Form-C.pdf", "Dummy QA copy.doc"]
+            })]);
+        })
+    
 });

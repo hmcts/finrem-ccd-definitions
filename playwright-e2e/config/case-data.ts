@@ -196,6 +196,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage Interveners",
     ccdCallback: "manageInterveners"
   },
+  submitUploadedCaseFiles: {
+    listItem: "Submit Uploaded Case Files",
+    ccdCallback: "FR_submitUploadedCaseFiles"
+  },
   consentOrder: {
     listItem: "Consent Order",
     ccdCallback: "FR_consentOrder"
@@ -277,5 +281,6 @@ export const PayloadPath = {
     manageBarristerAddApplicantBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-applicant-barrister.json",
     manageBarristerAddRespondentBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-respondent-barrister.json",
     agreedDraftOrderApplicant: "./playwright-e2e/resources/payload/contested/caseworker/upload-draft-orders/agreed-draft-orders-applicant.json",
+    manageHearingAddHearing: "./playwright-e2e/resources/payload/contested/caseworker/manage-hearing/add-a-hearing/add-a-hearing.json",
   }
 } as const;
