@@ -109,16 +109,15 @@ withNightlyPipeline(type, product, component) {
     env.FUNCTIONAL_TESTS_WORKERS = params.FUNCTIONAL_TESTS_WORKERS
 
     loadVaultSecrets(secrets)
-    enableFullFunctionalTest(180)
 
-    before('fullFunctionalTest') {
-        yarnBuilder.yarn('yarn-update')
-        yarnBuilder.yarn('install-dependencies')
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-        env.ENV = 'aat'
-    }
+    afterAlways('DependencyCheckNightly') {
+        stage('Set up playwright') {
+            yarnBuilder.yarn('yarn-update')
+            yarnBuilder.yarn('install-dependencies')
+            steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+            env.ENV = 'aat'
+        }
 
-    afterAlways('fullFunctionalTest') {
         if (!params.TAGS_TO_RUN.isEmpty()) {
             stage("${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}") {
                 try {
@@ -158,7 +157,7 @@ withNightlyPipeline(type, product, component) {
             }
         }
 
-        // Firefox stage removed until run stabilized 
+        // Firefox stage removed until run stabilized
 
         // stage('Functional playwright tests - firefox') {
         //     try {
@@ -177,8 +176,8 @@ withNightlyPipeline(type, product, component) {
         //         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
         //     }
         // }
-    
-        // Webkit stage removed until run stabilized 
+
+        // Webkit stage removed until run stabilized
 
         // stage('Functional playwright tests - webkit') {
         //     try {
