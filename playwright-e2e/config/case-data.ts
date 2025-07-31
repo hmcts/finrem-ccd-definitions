@@ -65,6 +65,14 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Update contact details",
     ccdCallback: "FR_updateContactDetails"
   },
+  assignToJudgeConsentMade: {
+    listItem: "Assign To Judge",
+    ccdCallback: "FR_referToJudgeFromConsOrdMade"
+  },
+  uploadApprovedOrder: {
+    listItem: "Upload Approved Order",
+    ccdCallback: "FR_uploadApprovedOrder"
+  },
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
@@ -144,11 +152,11 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Approve orders",
     ccdCallback: "FR_approveOrders"
   },
-  directionOrder: {
+  processOrder: {
     listItem: "Process Order",
     ccdCallback: "FR_directionOrder"
   },
-  processOrder: {
+  processOrderMH: {
     listItem: "Process Order (MH)",
     ccdCallback: "FR_processOrder"
   },
@@ -187,6 +195,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   manageInterveners: {
     listItem: "Manage Interveners",
     ccdCallback: "manageInterveners"
+  },
+  submitUploadedCaseFiles: {
+    listItem: "Submit Uploaded Case Files",
+    ccdCallback: "FR_submitUploadedCaseFiles"
   },
   consentOrder: {
     listItem: "Consent Order",
@@ -269,5 +281,6 @@ export const PayloadPath = {
     manageBarristerAddApplicantBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-applicant-barrister.json",
     manageBarristerAddRespondentBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-respondent-barrister.json",
     agreedDraftOrderApplicant: "./playwright-e2e/resources/payload/contested/caseworker/upload-draft-orders/agreed-draft-orders-applicant.json",
+    manageHearingAddHearing: "./playwright-e2e/resources/payload/contested/caseworker/manage-hearing/add-a-hearing/add-a-hearing.json",
   }
 } as const;

@@ -324,7 +324,7 @@ export class ContestedEventApi {
     );
   }
 
-  static async processOrder(
+  static async processOrderLegacy(
     caseId: string, 
     jsonObject: any[] = []
   ): Promise<void> {
@@ -356,7 +356,7 @@ export class ContestedEventApi {
     ]);
   }
 
-  static async caseWorkerProcessOrder(
+  static async caseWorkerProcessOrderLegacy(
     caseId: string,
     dynamicDraftOrderInfo: {
       documentUrl: string;
@@ -373,7 +373,7 @@ export class ContestedEventApi {
       dynamicDraftOrderInfo.uploadTimestamp
     );
 
-    await ContestedEventApi.processOrder(caseId, modifications);
+    await ContestedEventApi.processOrderLegacy(caseId, modifications);
 
     // Return the JSON object
     return caseId;
@@ -408,6 +408,15 @@ export class ContestedEventApi {
 
     // Return the JSON object
     return caseId;
+  }
+
+  static async caseWorkerPerformsAddAHearing(caseId: string) {
+    await this.updateCaseWorkerSteps(caseId, [
+      {
+        event: ContestedEvents.manageHearings.ccdCallback,
+        payload: PayloadPath.Contested.manageHearingAddHearing,
+      },
+    ]);
   }
 
 }
