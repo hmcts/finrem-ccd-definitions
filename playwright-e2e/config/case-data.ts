@@ -196,6 +196,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage Interveners",
     ccdCallback: "manageInterveners"
   },
+  submitUploadedCaseFiles: {
+    listItem: "Submit Uploaded Case Files",
+    ccdCallback: "FR_submitUploadedCaseFiles"
+  },
   consentOrder: {
     listItem: "Consent Order",
     ccdCallback: "FR_consentOrder"
