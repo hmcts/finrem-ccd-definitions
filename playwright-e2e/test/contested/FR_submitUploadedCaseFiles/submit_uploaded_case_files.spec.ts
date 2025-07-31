@@ -6,7 +6,7 @@ import { updateSchedulingAndListingTabData } from '../../../resources/tab_conten
 
 test.describe('Contested - Ready For Hearing', () => {
   test(
-    'Form A case up to List for Hearing and Submit Uploaded Case Files @test',
+    'Form A case up to List for Hearing and Submit Uploaded Case Files',
     async (
       {
         loginPage,
