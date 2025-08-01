@@ -8449,5 +8449,50 @@
     "FieldTypeParameter": "FR_manageHearingTabItem",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isListForHearingsMigrated",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isListForInterimHearingsMigrated",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isGeneralApplicationMigrated",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isDirectionDetailsCollectionMigrated",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "mhMigrationVersion",
+    "Label": "MH Migration Version",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]
