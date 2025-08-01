@@ -16,7 +16,7 @@ properties([
                 ),
                 choice(
                         name: 'BROWSER_TO_RUN',
-                        choices: ['chromium'],
+                        choices: ['chromium', 'chrome', 'firefox', 'webkit', 'edge'],
                         description: 'Choose what browsers will be run (only when a tag is specified)'
                 )
         ])
@@ -150,51 +150,84 @@ withNightlyPipeline(type, product, component) {
                             keepAll              : true,
                             reportDir            : 'playwright-report',
                             reportFiles          : 'index.html',
-                            reportName           : 'FunctionalTestReport'
+                            reportName           : 'FunctionalTestReport-chromium'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+
+            stage('Functional playwright tests - chrome') {
+                try {
+                    yarnBuilder.yarn('test:functional-chrome')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing: true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: 'playwright-report',
+                            reportFiles: 'index.html',
+                            reportName: 'FunctionalTestReport-chrome'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+
+            stage('Functional playwright tests - edge') {
+                try {
+                    yarnBuilder.yarn('test:functional-edge')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing: true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: 'playwright-report',
+                            reportFiles: 'index.html',
+                            reportName: 'FunctionalTestReport-edge'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+
+
+            stage('Functional playwright tests - firefox') {
+                try {
+                    yarnBuilder.yarn('test:functional-firefox')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing         : true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll              : true,
+                            reportDir            : 'playwright-report',
+                            reportFiles          : 'index.html',
+                            reportName           : 'FunctionalTestReport-firefox'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+
+            stage('Functional playwright tests - webkit') {
+                try {
+                    yarnBuilder.yarn('test:functional-webkit')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing         : true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll              : true,
+                            reportDir            : 'playwright-report',
+                            reportFiles          : 'index.html',
+                            reportName           : 'FunctionalTestReport-webkit'
                     ])
                     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
                 }
             }
         }
-
-        // Firefox stage removed until run stabilized
-
-        // stage('Functional playwright tests - firefox') {
-        //     try {
-        //         yarnBuilder.yarn('test:functional-firefox')
-        //     } catch (Error) {
-        //         unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-        //     } finally {
-        //         publishHTML([
-        //                 allowMissing: true,
-        //                 alwaysLinkToLastBuild: true,
-        //                 keepAll: true,
-        //                 reportDir: 'playwright-report',
-        //                 reportFiles: 'index.html',
-        //                 reportName: 'FunctionalTestReport'
-        //         ])
-        //         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-        //     }
-        // }
-
-        // Webkit stage removed until run stabilized
-
-        // stage('Functional playwright tests - webkit') {
-        //     try {
-        //         yarnBuilder.yarn('test:functional-webkit')
-        //     } catch (Error) {
-        //         unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-        //     } finally {
-        //         publishHTML([
-        //                 allowMissing: true,
-        //                 alwaysLinkToLastBuild: true,
-        //                 keepAll: true,
-        //                 reportDir: 'playwright-report',
-        //                 reportFiles: 'index.html',
-        //                 reportName: 'FunctionalTestReport'
-        //         ])
-        //         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-        //     }
-        // }
     }
 }

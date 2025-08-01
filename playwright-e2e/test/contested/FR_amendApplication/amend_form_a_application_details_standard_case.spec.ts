@@ -40,7 +40,7 @@ import {solicitor_amend_case_tabs} from "../../../resources/tab_content/conteste
 test.describe('Contested - Form A - Amend application in Standard case', () => {
     test(
         "Amend Application Details in Standard case - Amend Form A application details",
-        { tag: [] },
+        { tag: ['@chrome','@edge','@firefox','@webkit'] },
         async (
             {
                 loginPage,
