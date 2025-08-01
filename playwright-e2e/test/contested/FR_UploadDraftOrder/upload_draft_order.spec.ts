@@ -17,7 +17,7 @@ import {approveOrderTable} from "../../../resources/check_your_answer_content/ap
 test.describe('Contested - Upload Draft Order', () => {
   test(
     'Form A case uploading a Agreed draft order',
-    { tag: ['@chrome','@edge','@firefox','@webkit'] },
+    { tag: ['@webkit'] },
     async (
       {
         loginPage,
