@@ -55,10 +55,10 @@ import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/Uploa
 import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
 import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
 import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
-import { AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
+import { AddNotePage} from '../pages/events/add-note/AddNotePage';
 import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateToJudgePage';
-import { EventSummaryPage } from '../pages/events/EventSummaryPage.ts';
-import { RefundPage } from '../pages/events/refund/RefundPage.ts';
+import { EventSummaryPage } from '../pages/events/EventSummaryPage';
+import { RefundPage } from '../pages/events/refund/RefundPage';
 import { ManageBarristerPage } from '../pages/events/manage-barrister/ManageBarristerPage';
 import { PrepareForHearingPage } from '../pages/events/prepare-for-hearing/PrepareForHearingPage.ts';
 import { CreateGeneralOrderPage } from '../pages/events/create-general-order/CreateGeneralOrderPage.ts';
@@ -69,6 +69,11 @@ import { ReferToJudgeApplicationPage } from '../pages/events/refer-to-judge-appl
 import { GeneralApplicationOutcomePage } from '../pages/events/general-application-outcome/GeneralApplicationOutcomePage.ts';
 import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
 import { ProcessOrderPage } from '../pages/events/process-order/ProcessOrderPage.ts';
+import { SubmitUploadedCaseFilesPage } from '../pages/events/submit-uploaded-case-files/SubmitUploadedCaseFilesPage.ts';
+import { UnprocessedApprovedOrdersPage } from '../pages/events/process-order/UnprocessedApprovedOrdersPage.ts';
+import { ProcessOrderHearingDetailsPage } from '../pages/events/process-order/ProcessOrderHearingDetailsPage.ts';
+import {ConsentApplicationApprovedPage} from '../pages/events/consent-application/ConsentApplicationApprovedPage.ts';
+import {ConsentOrderNotApprovedPage} from '../pages/events/consent-application/ConsentOrderNotApprovedPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -124,6 +129,8 @@ type CreateFixtures = {
   manageFlagPage: ManageFlagPage;
   generalApplicationDirectionsPage: GeneralApplicationDirectionsPage;
   uploadDraftOrdersPage: UploadDraftOrdersPage;
+  unprocessedApprovedOrdersPage: UnprocessedApprovedOrdersPage;
+  processOrderHearingDetailsPage: ProcessOrderHearingDetailsPage;
   manageCaseDocumentsPage: ManageCaseDocumentsPage;
   manageHearingPage: ManageHearingPage;
   checkYourAnswersPage: CheckYourAnswersPage;
@@ -141,6 +148,9 @@ type CreateFixtures = {
   generalApplicationOutcomePage: GeneralApplicationOutcomePage;
   approvedOrderPage: ApproveOrderPage;
   processOrderPage: ProcessOrderPage;
+  submitUploadedCaseFilesPage : SubmitUploadedCaseFilesPage;
+  consentApplicationApprovePage: ConsentApplicationApprovedPage;
+  consentOrderNotApprovedPage: ConsentOrderNotApprovedPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -241,10 +251,10 @@ export const test = base.extend<CreateFixtures>({
     await use(new IssueApplicationPage(page));
   },
   approveApplicationPage: async ({ page }, use) => {
-    await use(new ApproveApplicationPage(page));
+    await use(new ApproveApplicationPage(page, commonActionsHelper));
   },
   sendOrderPage: async ({ page }, use) => {
-    await use(new SendOrderPage(page));
+    await use(new SendOrderPage(page, commonActionsHelper));
   },
   expressCaseEnrolledPage: async ({ page }, use) => {
     await use(new ExpressCaseEnrolledPage(page));
@@ -294,6 +304,12 @@ export const test = base.extend<CreateFixtures>({
   uploadDraftOrdersPage: async ({ page }, use) => {
     await use(new UploadDraftOrdersPage(page, commonActionsHelper));
   },
+  unprocessedApprovedOrdersPage: async ({ page }, use) => {
+    await use(new UnprocessedApprovedOrdersPage(page));
+  },
+  processOrderHearingDetailsPage: async ({ page }, use) => {
+    await use(new ProcessOrderHearingDetailsPage(page));
+  },
   manageCaseDocumentsPage: async ({ page }, use) => {
     await use(new ManageCaseDocumentsPage(page, commonActionsHelper));
   },
@@ -307,7 +323,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new AddNotePage(page));
   },
   allocateToJudgePage: async ({ page }, use) => {
-    await use(new AllocateToJudgePage(page));
+    await use(new AllocateToJudgePage(page, commonActionsHelper));
   },
   eventSummaryPage: async ({ page }, use) => {
     await use(new EventSummaryPage(page));
@@ -322,7 +338,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new PrepareForHearingPage(page));
   },
   createGeneralOrderPage: async ({ page }, use) => {
-    await use(new CreateGeneralOrderPage(page));
+    await use(new CreateGeneralOrderPage(page, commonActionsHelper));
   },
   contestedSendOrderPage: async ({ page }, use) => {
     await use(new ContestedSendOrderPage(page));
@@ -344,5 +360,14 @@ export const test = base.extend<CreateFixtures>({
   },
   processOrderPage: async ({ page }, use) => {
     await use(new ProcessOrderPage(page, commonActionsHelper));
+  },
+  submitUploadedCaseFilesPage: async ({ page }, use) => {
+    await use(new SubmitUploadedCaseFilesPage(page));
+  },
+  consentApplicationApprovePage: async ({ page }, use) => {
+    await use(new ConsentApplicationApprovedPage(page, commonActionsHelper));
+  },
+  consentOrderNotApprovedPage: async ({ page }, use) => {
+    await use(new ConsentOrderNotApprovedPage(page));
   }
 });
