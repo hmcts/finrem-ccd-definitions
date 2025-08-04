@@ -110,4 +110,18 @@ export class CommonActionsHelper {
             }
         }
     }
+
+    async enterDate(element: Locator, date: {year: string, month: string, day: string}) {
+        const day = element.locator(`input[id*='-day']`);
+        const month = element.locator(`input[id*='-month']`);
+        const year = element.locator(`input[id*='-year']`);
+
+        await expect(day).toBeVisible();
+        await expect(month).toBeVisible();
+        await expect(year).toBeVisible();
+
+        await day.fill(date.day);
+        await month.fill(date.month);
+        await year.fill(date.year);
+    }
 }
