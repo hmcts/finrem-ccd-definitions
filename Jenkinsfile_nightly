@@ -140,6 +140,7 @@ withNightlyPipeline(type, product, component) {
         } else {
             stage('Functional playwright tests - chromium') {
                 try {
+                    env.TESTS_FOR_ACCESSIBILITY = 'true'
                     yarnBuilder.yarn('test:functional-chromium')
                 } catch (Error) {
                     unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
