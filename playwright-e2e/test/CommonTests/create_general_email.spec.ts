@@ -5,6 +5,7 @@ import { ContestedCaseFactory } from '../../data-utils/factory/contested/Contest
 import { CreateGeneralEmailPage } from '../../pages/events/create-general-email/CreateGeneralEmailPage';
 import { createGeneralEmailTableData } from '../../resources/check_your_answer_content/create_general_email/createGeneralEmailTable';
 import { createGeneralEmailTabData } from '../../resources/tab_content/common-tabs/case_documents_tab';
+import { DateHelper } from '../../data-utils/DateHelper';
 
 test.describe('Create General Email', () => {
     test(
@@ -24,7 +25,7 @@ test.describe('Create General Email', () => {
 
             // Crete General Email
             await caseDetailsPage.selectNextStep(ContestedEvents.createGeneralEmail)
-            // await createGeneralEmailPage.enterInvalidEmailAddressAndSubmit(); add this for DFR-3942
+            // await createGeneralEmailPage.enterInvalidEmailAddressAndSubmit(); enable this for DFR-3942
             await createGeneralEmailPage.enterReceipientEmail(recipientEmail); 
             await createGeneralEmailPage.enterBodyOfEmail('This is a test');
             await createGeneralEmailPage.uploadDocument('playwright-e2e/resources/file/test.pdf');
@@ -33,10 +34,13 @@ test.describe('Create General Email', () => {
             // Assert check your answers page
             await checkYourAnswersPage.assertCheckYourAnswersPage(createGeneralEmailTableData);
             await createGeneralEmailPage.navigateSubmit();
+
+            const date= DateHelper.getUtcDateTimeFormatted();
+
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.createGeneralEmail.listItem);
 
             //assert case documents tab data
-            await caseDetailsPage.assertTabData(createGeneralEmailTabData)
+            await caseDetailsPage.assertTabData(createGeneralEmailTabData(date))
         }
     )
 });
