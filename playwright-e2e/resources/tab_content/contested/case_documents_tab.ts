@@ -1,7 +1,7 @@
 import { DateHelper } from "../../../data-utils/DateHelper";
 import { Tab } from "../../../pages/components/tab";
 
-export function createGeneralEmailTabData(date?: string) :Tab[] { 
+export function createGeneralEmailTabDataContested(date?: string) :Tab[] { 
     return [
     {
     tabName: 'Case documents',

@@ -44,7 +44,11 @@ export const CommonEvents: Record<string, CaseEvent> = {
   closeCase: {
     listItem: "Close Case",
     ccdCallback: "FR_close"
-  }
+  },
+  createGeneralEmail: {
+    listItem: "Create General Email",
+    ccdCallback: "FR_generalEmail"
+  },
 };
 
 // Consented Events
@@ -195,10 +199,6 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   manageInterveners: {
     listItem: "Manage Interveners",
     ccdCallback: "manageInterveners"
-  },
-  createGeneralEmail: {
-    listItem: "Create General Email",
-    ccdCallback: "FR_generalEmail"
   },
   submitUploadedCaseFiles: {
     listItem: "Submit Uploaded Case Files",
