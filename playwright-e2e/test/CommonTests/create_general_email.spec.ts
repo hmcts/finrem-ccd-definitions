@@ -34,7 +34,7 @@ test.describe('Create General Email', () => {
             // Assert check your answers page
             await checkYourAnswersPage.assertCheckYourAnswersPage(createGeneralEmailTableData);
             await createGeneralEmailPage.navigateSubmit();
-
+            // get the current date and time for assertion in tab
             const date= DateHelper.getUtcDateTimeFormatted();
 
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.createGeneralEmail.listItem);
