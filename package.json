@@ -56,7 +56,7 @@
     "test:a11y": "echo test:a11y",
     "test:smoke": "yarn playwright install chromium && yarn playwright test --grep=@smoke-test --project=chromium",
     "test:functional": "yarn playwright install chromium && yarn playwright test --grep=@preview --project=chromium",
-    "test:functional-chromium": "yarn playwright install chromium && yarn playwright test --grep=@preview --project=chromium",
+    "test:functional-chromium": "yarn playwright install chromium && yarn playwright test --project=chromium",
     "test:functional-chrome": "yarn playwright install chrome && yarn playwright test --grep=@preview --grep=@chrome --project=chrome",
     "test:functional-edge": "yarn playwright install msedge && yarn playwright test --grep=@preview --grep=@edge --project=edge",
     "test:functional-firefox": "yarn playwright install firefox && yarn playwright test --grep=@preview --grep=@firefox --project=firefox",
