@@ -9,6 +9,8 @@ import {PaymentPage} from "../events/application-payment-submission/PaymentPage.
 import {OrderSummaryPage} from "../events/application-payment-submission/OrderSummaryPage.ts";
 import {CaseSubmissionPage} from "../events/application-payment-submission/CaseSubmissionPage.ts";
 import {CheckYourAnswersPage} from "../CheckYourAnswersPage.ts";
+import {AxeUtils} from "../../fixtures/utils/axe-utils.ts";
+import {TestInfo} from "playwright/test";
 
 export async function applicationCaseSubmission(
     caseDetailsPage: CaseDetailsPage,
@@ -28,7 +30,11 @@ export async function applicationCaseSubmission(
     orderSummaryTable: string[][] = [
         ['FEE0229', 'Application for a financial order', '£313.00'],
         ['', 'Total', '£313.00']
-    ]
+    ],
+    accessibility?: {
+        axeUtils: AxeUtils,
+        testInfo: TestInfo,
+    }
 ) {
     // Application Payment Submission
     await caseDetailsPage.selectNextStep(param.caseEvent);
@@ -36,21 +42,25 @@ export async function applicationCaseSubmission(
     await solicitorAuthPage.assertAuthorisationPage();
     await solicitorAuthPage.assertErrorMessageForMandatoryFields();
     await solicitorAuthPage.enterSolicitorDetails("Bilbo Baggins", "Bag End", "Solicitor");
+    accessibility?.axeUtils.audit(accessibility.testInfo);
     await solicitorAuthPage.navigateContinue();
 
     await helpWithFeesPage.assertPaymentDetailsPage();
     await helpWithFeesPage.assertErrorMessageForHelpWithFees();
     await helpWithFeesPage.selectHelpWithFees(param.hasHelpWithFees?? YesNoRadioEnum.NO);
+    accessibility?.axeUtils.audit(accessibility.testInfo);
     await helpWithFeesPage.navigateContinue();
 
     await paymentPage.assertErrorMessageMandatoryFields();
     await paymentPage.assertAmountToPay(param.amount);
     await paymentPage.enterPaymentDetails(param.pbaNumber, param.reference);
+    accessibility?.axeUtils.audit(accessibility.testInfo);
     await paymentPage.navigateContinue();
 
     await orderSummaryPage.assertOrderSummaryPage();
     //await orderSummaryPage.assertPaymentDetails("Fee Account", param.pbaNumber, param.reference);
     await orderSummaryPage.assertOrderSummaryTable(orderSummaryTable);
+    accessibility?.axeUtils.audit(accessibility.testInfo);
     await orderSummaryPage.navigateContinue();
 
     await caseSubmissionPage.navigateContinue();

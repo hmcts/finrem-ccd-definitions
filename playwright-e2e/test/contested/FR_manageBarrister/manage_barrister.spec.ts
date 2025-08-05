@@ -16,8 +16,9 @@ test(
         manageCaseDashboardPage,
         caseDetailsPage,
         manageBarristerPage,
-        checkYourAnswersPage
-      }) => {
+        checkYourAnswersPage,
+        axeUtils,
+      },testInfo) => {
 
         // Create case and progress to HWF decision made
         const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
@@ -30,12 +31,14 @@ test(
         // Navigate to manage barrister and update applicant barrister
         await caseDetailsPage.selectNextStep(ContestedEvents.manageBarrister);
         await manageBarristerPage.checkApplicantRepresented(true);
+        await axeUtils.audit(testInfo);
         await manageBarristerPage.navigateContinue();
         await manageBarristerPage.clickAddNew();
         await manageBarristerPage.specifyApplicantBarristerFirstName('Tester Gollum');
         await manageBarristerPage.specifyApplicantBarristerEmail('fr_applicant_barrister1@mailinator.com');
         await manageBarristerPage.specifyBarristerOrganisation('Finrem-1-Org');
         await manageBarristerPage.clickSelectButton();
+        await axeUtils.audit(testInfo);
         await manageBarristerPage.navigateContinue();
         
         //Continue about to submit and check your answers

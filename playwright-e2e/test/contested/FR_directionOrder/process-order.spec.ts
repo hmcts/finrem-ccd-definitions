@@ -79,25 +79,13 @@ async function progressToProcessOrderEvent(
 
 async function performManageHearingsMigration(
   caseDetailsPage: any,
-  blankPage: any,
-  testInfo: any,
-  makeAxeBuilder: any
+  blankPage: any
 ): Promise<void> {
 
   await caseDetailsPage.selectNextStep(ContestedEvents.manageHearingsMigration);
   await blankPage.navigateSubmit();
   await caseDetailsPage.checkHasBeenUpdated('(Migration) Manage Hearings');
 
-  if (config.run_accessibility) {
-    const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-    await testInfo.attach('accessibility-scan-results', {
-      body: JSON.stringify(accessibilityScanResults, null, 2),
-      contentType: 'application/json'
-    });
-
-    expect(accessibilityScanResults.violations).toEqual([]);
-  }
 }
 
 async function performManageHearings(
@@ -139,8 +127,9 @@ test.describe('Contested - Process Order (Old Style)', () => {
         uploadDraftOrdersPage, 
         unprocessedApprovedOrdersPage, 
         processOrderPage,
-        checkYourAnswersPage
-      }
+        checkYourAnswersPage,
+        axeUtils
+      }, testInfo
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
@@ -158,6 +147,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await processOrderPage.enterHearingTime(firstHearing, '10:00');
       await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
       await processOrderPage.selectCourtForHearing();
+      await axeUtils.audit(testInfo);
       await processOrderPage.navigateContinue();
 
       // Check your answers
@@ -183,8 +173,9 @@ test.describe('Contested - Process Order (Old Style)', () => {
         uploadDraftOrdersPage,
         unprocessedApprovedOrdersPage, 
         processOrderPage, 
-        checkYourAnswersPage
-      }
+        checkYourAnswersPage,
+        axeUtils
+      }, testInfo
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
@@ -202,6 +193,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await processOrderPage.enterHearingTime(firstHearing, '10:00');
       await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
       await processOrderPage.selectCourtForHearing();
+      await axeUtils.audit(testInfo);
       await processOrderPage.navigateContinue();
 
       // Check your answers
@@ -227,8 +219,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
         caseDetailsPage,
         uploadDraftOrdersPage,
         processOrderPage,
-        blankPage,
-        makeAxeBuilder
+        blankPage
       },
       testInfo
     ) => {
@@ -253,7 +244,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await processOrderPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
-      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await performManageHearingsMigration(caseDetailsPage, blankPage);
       await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabData());
     }
   );
@@ -269,10 +260,8 @@ test.describe('Contested - Process Order (Old Style)', () => {
         caseDetailsPage,
         uploadDraftOrdersPage,
         processOrderPage,
-        blankPage,
-        makeAxeBuilder
-      },
-      testInfo
+        blankPage
+      }
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
@@ -316,7 +305,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await processOrderPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
-      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await performManageHearingsMigration(caseDetailsPage, blankPage);
       await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderTabData());
     }
   )
@@ -333,10 +322,8 @@ test.describe('Contested - Process Order (Old Style)', () => {
         uploadDraftOrdersPage,
         processOrderPage,
         blankPage,
-        manageHearingPage,
-        makeAxeBuilder
-      },
-      testInfo
+        manageHearingPage
+      }
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
@@ -381,7 +368,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
       await performManageHearings(caseDetailsPage, manageHearingPage);
 
-      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await performManageHearingsMigration(caseDetailsPage, blankPage);
       await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearingsEventTabData());
     }
   )
@@ -401,8 +388,9 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
         uploadDraftOrdersPage, 
         unprocessedApprovedOrdersPage, 
         processOrderHearingDetailsPage,
-        checkYourAnswersPage
-      }
+        checkYourAnswersPage,
+        axeUtils
+      }, testInfo
     ) => {
 
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
@@ -413,6 +401,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
 
       // Check unapproved draft order tab
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
+      await axeUtils.audit(testInfo);
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Add Hearing 
@@ -426,6 +415,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await processOrderHearingDetailsPage.enterAdditionalHearingInformation("This is a test hearing");
       await processOrderHearingDetailsPage.selectAdditionalHearingDocument(false);
       await processOrderHearingDetailsPage.selectSendNoticeOfHearing(true);
+      await axeUtils.audit(testInfo);
       await processOrderHearingDetailsPage.navigateContinue(); 
 
       // Check your answers

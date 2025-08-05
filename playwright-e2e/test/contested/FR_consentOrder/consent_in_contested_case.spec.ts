@@ -25,7 +25,7 @@ test.describe("Consent order in contested case", () => {
             consentApplicationApprovePage,
             sendOrderPage,
             eventSummaryPage,
-            makeAxeBuilder
+            axeUtils
         }, testInfo) => {
             // Set up court information.
             const courtName = "Coventry Combined Court Centre";
@@ -51,6 +51,7 @@ test.describe("Consent order in contested case", () => {
             // Nature of App
             await natureOfApplicationPage.selectNatureOfApplication();
             await natureOfApplicationPage.addConsentedPropertyAdjustmentDetails();
+            await axeUtils.audit(testInfo);
             await natureOfApplicationPage.navigateContinue(url, 2);
 
             await writtenAgreementPage.selectConsentOrder(true, false);
@@ -60,9 +61,11 @@ test.describe("Consent order in contested case", () => {
             await uploadOrderDocumentsPage.navigateContinue(url, 4);
 
             await uploadOrderDocumentsPage.selectAndUploadJointD81(true);
+            await axeUtils.audit(testInfo);
             await uploadOrderDocumentsPage.navigateContinue(url, 5);
 
             await uploadOrderDocumentsPage.uploadPensionDocument('Form P1');
+            await axeUtils.audit(testInfo);
             await uploadOrderDocumentsPage.navigateContinue(url, 6);
 
             await uploadOrderDocumentsPage.uploadVariationOrderDoc();
@@ -72,6 +75,7 @@ test.describe("Consent order in contested case", () => {
             await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
             await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
             await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
+            await axeUtils.audit(testInfo);
             await createCaseSavingYourAnswersPage.navigateContinue(url+ "/submit");
 
             await checkYourAnswersPage.assertCheckYourAnswersPage(consentOrderTable);
@@ -119,6 +123,7 @@ test.describe("Consent order in contested case", () => {
             await createGeneralOrderPage.enterCourtDate();
             await createGeneralOrderPage.navigateContinue(url, 2);
             await createGeneralOrderPage.assertPreviewOfGeneralOrder();
+            await axeUtils.audit(testInfo);
             await createGeneralOrderPage.navigateContinue(url + '/submit');
             await createGeneralOrderPage.navigateSubmit();
 
@@ -183,6 +188,7 @@ test.describe("Consent order in contested case", () => {
             await consentApplicationApprovePage.selectCopyOfOrderToPensionProvider(true, "The Court");
             await consentApplicationApprovePage.selectJudge('District Judge');
             await consentApplicationApprovePage.enterCourtDate();
+            await axeUtils.audit(testInfo);
             await consentApplicationApprovePage.navigateContinue(url + '/submit');
 
             await checkYourAnswersPage.assertCheckYourAnswersPage({
@@ -238,17 +244,6 @@ test.describe("Consent order in contested case", () => {
             await eventSummaryPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.closeCase.listItem);
             await manageCaseDashboardPage.signOut();
-
-            if (config.run_accessibility) {
-                const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-                await testInfo.attach('accessibility-scan-results', {
-                    body: JSON.stringify(accessibilityScanResults, null, 2),
-                    contentType: 'application/json'
-                });
-
-                expect(accessibilityScanResults.violations).toEqual([]);
-            }
         });
 
     test(
@@ -267,7 +262,7 @@ test.describe("Consent order in contested case", () => {
                    consentApplicationApprovePage,
                    sendOrderPage,
                    eventSummaryPage,
-                   makeAxeBuilder
+                   axeUtils
                }, testInfo) => {
             // Set up court information.
             const courtName = "Coventry Combined Court Centre";
@@ -375,6 +370,7 @@ test.describe("Consent order in contested case", () => {
             await consentOrderNotApprovedPage.verifyReasonsForRefusal();
             await consentOrderNotApprovedPage.selectAllReasonsForRefusal();
             await consentOrderNotApprovedPage.selectJudge("His Honour Judge")
+            await axeUtils.audit(testInfo);
             await consentOrderNotApprovedPage.navigateContinue();
             await consentOrderNotApprovedPage.navigateContinue(url + '/submit');
             const reasons = [
@@ -517,16 +513,5 @@ test.describe("Consent order in contested case", () => {
             await eventSummaryPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.closeCase.listItem);
             await manageCaseDashboardPage.signOut();
-
-            if (config.run_accessibility) {
-                const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-                await testInfo.attach('accessibility-scan-results', {
-                    body: JSON.stringify(accessibilityScanResults, null, 2),
-                    contentType: 'application/json'
-                });
-
-                expect(accessibilityScanResults.violations).toEqual([]);
-            }
         });
 });

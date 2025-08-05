@@ -1,6 +1,6 @@
 import { test as base } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import {AxeUtils} from "./utils/axe-utils.ts";
+import {AxeUtils} from './utils/axe-utils.ts';
 
 type AxeFixture = {
   makeAxeBuilder: () => AxeBuilder;

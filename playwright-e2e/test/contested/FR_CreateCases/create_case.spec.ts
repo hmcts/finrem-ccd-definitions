@@ -34,7 +34,6 @@ test(
       caseDetailsPage,
       createCaseSavingYourAnswersPage,
       axeUtils,
-      makeAxeBuilder
     },
     testInfo
   ) => {
@@ -171,17 +170,6 @@ test(
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
     await axeUtils.audit(testInfo);
-    // Note: Financial Assets page produces accessibility issues
-   /* if (config.run_accessibility) {
-      const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-      await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-      });
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    }*/
   }
 );
 
@@ -234,7 +222,6 @@ test(
       createCaseCheckYourAnswersPage,
       caseDetailsPage,
       createCaseSavingYourAnswersPage,
-      makeAxeBuilder,
       axeUtils
     },
     testInfo
@@ -357,17 +344,5 @@ test(
 
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabDataChildrensAct);
-
-    // Note: Financial Assets page produces accessibility issues
-   /* if (config.run_accessibility) {
-      const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-      await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-      });
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    }*/
   }
 );

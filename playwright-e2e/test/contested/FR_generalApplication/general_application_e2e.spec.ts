@@ -10,7 +10,7 @@ test.describe('Contested General Application e2e', () => {
     test(
         'Contested - General Application e2e',
         { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, referToJudgeApplicationPage, generalApplicationOutcomePage, generalApplicationDirectionsPage, checkYourAnswersPage }) => {
+        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, referToJudgeApplicationPage, generalApplicationOutcomePage, generalApplicationDirectionsPage, checkYourAnswersPage, axeUtils }, testInfo) => {
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
@@ -24,6 +24,7 @@ test.describe('Contested General Application e2e', () => {
             await createGeneralApplicationPage.selectHearing(true);
             await createGeneralApplicationPage.fillTimeEstimate('5');
             await createGeneralApplicationPage.uploadGeneralDocument('./playwright-e2e/resources/file/test.docx');
+            await axeUtils.audit(testInfo);
             await createGeneralApplicationPage.navigateContinue();
             await checkYourAnswersPage.assertCheckYourAnswersPage(generalApplicationTableData);
             await createGeneralApplicationPage.navigateSubmit();
@@ -33,6 +34,7 @@ test.describe('Contested General Application e2e', () => {
             await caseDetailsPage.selectNextStep(ContestedEvents.generalApplicationReferToJudge);
             await referToJudgeApplicationPage.navigateContinue();
             await referToJudgeApplicationPage.enterEventSummary('Test');
+            await axeUtils.audit(testInfo);
             await referToJudgeApplicationPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.generalApplicationReferToJudge.listItem);
             await caseDetailsPage.assertTabData(contestedGeneralApplicationReferToJudgeTabData);
@@ -48,6 +50,7 @@ test.describe('Contested General Application e2e', () => {
             await generalApplicationOutcomePage.selectGeneralApplicationOutcome();
             await generalApplicationOutcomePage.navigateContinue();
             await generalApplicationOutcomePage.enterEventSummary('Test');
+            await axeUtils.audit(testInfo);
             await generalApplicationOutcomePage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.generalApplicationOutcome.listItem);
             await caseDetailsPage.assertTabData(contestedGeneralApplicationJudgeTabData);
@@ -66,6 +69,7 @@ test.describe('Contested General Application e2e', () => {
             await generalApplicationDirectionsPage.enterJudgeName('Tester Baggins');
             await generalApplicationDirectionsPage.enterCourtOrderDate('01', '07', '2025');
             await generalApplicationDirectionsPage.enterDirectionFromJudge('Test case');
+            await axeUtils.audit(testInfo);
             await generalApplicationDirectionsPage.navigateContinue();
 
             // General Application Directions - Check your answers page

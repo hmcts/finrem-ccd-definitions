@@ -14,8 +14,9 @@ test(
       caseDetailsPage,
       approveApplicationPage,
       allocateToJudgePage,
-      sendOrderPage
-    },
+      sendOrderPage,
+      axeUtils
+    }, testInfo
   ) => {
     // Create case and progress to Issue Application
     const caseId = await ConsentedCaseFactory.createConsentedCaseUpToIssueApplication();
@@ -30,6 +31,7 @@ test(
     await approveApplicationPage.selectIsSubjectTo(true)
     await approveApplicationPage.selectIsPensionProvider(false);
     await approveApplicationPage.selectJudge('District Judge')
+    await axeUtils.audit(testInfo);
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.approveApplication.listItem);
@@ -48,6 +50,7 @@ test(
     await allocateToJudgePage.selectAssignToJudgeList('New Application');
     await allocateToJudgePage.enterAssignToJudgeDate();
     await allocateToJudgePage.enterAssignToJudgeText("This is a test text for the judge assignment.");
+    await axeUtils.audit(testInfo);
     await allocateToJudgePage.navigateContinue();
     await allocateToJudgePage.navigateSubmit();
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.assignToJudgeConsentMade.listItem);

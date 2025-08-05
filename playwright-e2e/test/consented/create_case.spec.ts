@@ -22,7 +22,7 @@ test(
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       caseDetailsPage,
-      makeAxeBuilder
+      axeUtils
     },
     testInfo
   ) => {
@@ -44,36 +44,43 @@ test(
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.setEmailConsent(config.caseType.consented);
+    await axeUtils.audit(testInfo);
     await solicitorDetailsPage.navigateContinue(url, 3);
 
     // Enter Divorce / Dissolution Details
     await divorceDetailsPage.enterDivorceDetailsConsented('LV12D12345', config.divorceStage.petitionIssued);
+    await axeUtils.audit(testInfo);
     await divorceDetailsPage.navigateContinue(url, 4);
 
     //applicant details
     await applicantDetailsPage.enterApplicantDetailsConsented('Frodo', 'Baggins');
     await financialRemedyCourtPage.selectCourtZoneDropDown('COVENTRY COMBINED COURT CENTRE');
+    await axeUtils.audit(testInfo);
     await applicantDetailsPage.navigateContinue(url, 5);
 
     //respondent details
     await respondentDetailsPage.enterRespondentNames('Gollum', 'Smeagol');
     await respondentRepresentedPage.selectRespondentRepresentedConsented(false);
     await respondentDetailsPage.enterRespondentAddress();
+    await axeUtils.audit(testInfo);
     await respondentDetailsPage.navigateContinue(url, 6);
 
     // Nature of App
     await natureOfApplicationPage.selectNatureOfApplication();
     await natureOfApplicationPage.addConsentedPropertyAdjustmentDetails();
+    await axeUtils.audit(testInfo);
     await natureOfApplicationPage.navigateContinue(url, 7);
 
     // Periodical Payments
     await periodicalPaymentsPage.selectPeriodicalPaymentsConsented(false);
+    await axeUtils.audit(testInfo);
     await periodicalPaymentsPage.navigateContinue(url, 8);
 
     // Upload variation Order Document
     await uploadOrderDocumentsPage.uploadConsentOrder();
     await uploadOrderDocumentsPage.navigateContinue();
     await uploadOrderDocumentsPage.selectAndUploadJointD81(true);
+    await axeUtils.audit(testInfo);
 
     // Continue through optional uploads
     await uploadOrderDocumentsPage.navigateContinue(url, 10);
@@ -88,16 +95,6 @@ test(
     
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
-
-    if (config.run_accessibility) {
-      const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-      await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-      });
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    }
+    await axeUtils.audit(testInfo);
   }
 );

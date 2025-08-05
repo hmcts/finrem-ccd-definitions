@@ -25,8 +25,9 @@ test.describe('Contested - Upload Draft Order', () => {
         caseDetailsPage,
         uploadDraftOrdersPage,
         checkYourAnswersPage,
-        approvedOrderPage
-      }
+        approvedOrderPage,
+        axeUtils,
+      }, testInfo
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       let expectedUrl = ContestedEvents.uploadDraftOrders.ccdCallback;
@@ -48,6 +49,7 @@ test.describe('Contested - Upload Draft Order', () => {
       await uploadDraftOrdersPage.chooseThatYouAreUploadingPensionSharingAnnexes();
       await uploadDraftOrdersPage.uploadDraftOrder(caseId);
       await uploadDraftOrdersPage.uploadPensionSharingAnnexes();
+      await axeUtils.audit(testInfo);
       await uploadDraftOrdersPage.navigateContinue('submit');
 
       await checkYourAnswersPage.assertCheckYourAnswersPage(uploadDraftOrderTable);
@@ -75,7 +77,7 @@ test.describe('Contested - Upload Draft Order', () => {
                 ]
             }
         ])
-
+      await axeUtils.audit(testInfo);
       await manageCaseDashboardPage.signOut();
 
       // log in as judge to approve the orders
@@ -106,11 +108,13 @@ test.describe('Contested - Upload Draft Order', () => {
       await approvedOrderPage.selectIsThisDocumentReadyToBeSealedAndIssued("Yes", 'agreed-draft-order-document.docx');
       await approvedOrderPage.selectIsThisDocumentReadyToBeSealedAndIssued("Yes", 'BagginsFDA.pdf');
       expectedUrl = ContestedEvents.approveOrders.ccdCallback;
+      await axeUtils.audit(testInfo);
       await approvedOrderPage.navigateContinue(expectedUrl, 2);
       await approvedOrderPage.selectIsAnotherHearingListed(false);
       await approvedOrderPage.navigateContinue(expectedUrl, 3);
       await approvedOrderPage.verifyJudgeTitleListOptions();
       await approvedOrderPage.selectJudgeTitle('District Judge');
+      await axeUtils.audit(testInfo);
       await approvedOrderPage.navigateContinue('submit');
 
       await checkYourAnswersPage.assertCheckYourAnswersPage(approveOrderTable);

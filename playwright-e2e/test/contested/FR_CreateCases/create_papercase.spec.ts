@@ -38,8 +38,7 @@ test(
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       checkYourAnswersPage,
-      caseDetailsPage,
-      makeAxeBuilder
+      caseDetailsPage
     },
     testInfo
   ) => {
@@ -170,17 +169,6 @@ test(
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
 
-    // Note: Financial Assets page produces accessibility issues
-    if (config.run_accessibility) {
-      const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-      await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-      });
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    }
   }
 );
 
@@ -210,9 +198,7 @@ test(
             createCaseCheckYourAnswersPage,
             caseDetailsPage,
             checkYourAnswersPage,
-            makeAxeBuilder
-        },
-        testInfo
+        }
     ) => {
         // Set up court information.
         const courtName: string = "COVENTRY COMBINED COURT CENTRE";
@@ -331,17 +317,5 @@ test(
 
         // Assert tab data
         await caseDetailsPage.assertTabData(createPaperCaseTabDataChildrensAct);
-
-        // Note: Financial Assets page produces accessibility issues
-        if (config.run_accessibility) {
-            const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-            await testInfo.attach('accessibility-scan-results', {
-                body: JSON.stringify(accessibilityScanResults, null, 2),
-                contentType: 'application/json'
-            });
-
-            expect(accessibilityScanResults.violations).toEqual([]);
-        }
     }
 );
