@@ -193,7 +193,6 @@ withNightlyPipeline(type, product, component) {
                 }
             }
 
-
             stage('Functional playwright tests - firefox') {
                 try {
                     yarnBuilder.yarn('test:functional-firefox')

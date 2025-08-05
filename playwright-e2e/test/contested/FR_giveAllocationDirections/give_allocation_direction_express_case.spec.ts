@@ -106,8 +106,9 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
       await manageCaseDashboardPage.navigateToCase(caseId);
     
       await caseDetailsPage.selectNextStep(ContestedEvents.giveAllocationDirection);
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await allocationDirectionsCourtSelectionPage.verifyAbsenceOfExpressPilotWarningMessage();
+      await axeUtils.finalizeReport(testInfo);
     }
   );
 });

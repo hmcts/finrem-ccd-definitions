@@ -42,25 +42,25 @@ export async function applicationCaseSubmission(
     await solicitorAuthPage.assertAuthorisationPage();
     await solicitorAuthPage.assertErrorMessageForMandatoryFields();
     await solicitorAuthPage.enterSolicitorDetails("Bilbo Baggins", "Bag End", "Solicitor");
-    accessibility?.axeUtils.audit(accessibility.testInfo);
+    accessibility?.axeUtils.audit();
     await solicitorAuthPage.navigateContinue();
 
     await helpWithFeesPage.assertPaymentDetailsPage();
     await helpWithFeesPage.assertErrorMessageForHelpWithFees();
     await helpWithFeesPage.selectHelpWithFees(param.hasHelpWithFees?? YesNoRadioEnum.NO);
-    accessibility?.axeUtils.audit(accessibility.testInfo);
+    accessibility?.axeUtils.audit();
     await helpWithFeesPage.navigateContinue();
 
     await paymentPage.assertErrorMessageMandatoryFields();
     await paymentPage.assertAmountToPay(param.amount);
     await paymentPage.enterPaymentDetails(param.pbaNumber, param.reference);
-    accessibility?.axeUtils.audit(accessibility.testInfo);
+    accessibility?.axeUtils.audit();
     await paymentPage.navigateContinue();
 
     await orderSummaryPage.assertOrderSummaryPage();
     //await orderSummaryPage.assertPaymentDetails("Fee Account", param.pbaNumber, param.reference);
     await orderSummaryPage.assertOrderSummaryTable(orderSummaryTable);
-    accessibility?.axeUtils.audit(accessibility.testInfo);
+    accessibility?.axeUtils.audit();
     await orderSummaryPage.navigateContinue();
 
     await caseSubmissionPage.navigateContinue();

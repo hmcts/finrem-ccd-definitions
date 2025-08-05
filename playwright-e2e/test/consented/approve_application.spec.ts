@@ -31,7 +31,7 @@ test(
     await approveApplicationPage.selectIsSubjectTo(true)
     await approveApplicationPage.selectIsPensionProvider(false);
     await approveApplicationPage.selectJudge('District Judge')
-    await axeUtils.audit(testInfo);
+    await axeUtils.audit();
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.approveApplication.listItem);
@@ -50,7 +50,7 @@ test(
     await allocateToJudgePage.selectAssignToJudgeList('New Application');
     await allocateToJudgePage.enterAssignToJudgeDate();
     await allocateToJudgePage.enterAssignToJudgeText("This is a test text for the judge assignment.");
-    await axeUtils.audit(testInfo);
+    await axeUtils.audit();
     await allocateToJudgePage.navigateContinue();
     await allocateToJudgePage.navigateSubmit();
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.assignToJudgeConsentMade.listItem);
@@ -81,5 +81,6 @@ test(
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.sendOrder.listItem);
 
     await manageCaseDashboardPage.signOut();
+    await axeUtils.finalizeReport(testInfo);
   }
 );

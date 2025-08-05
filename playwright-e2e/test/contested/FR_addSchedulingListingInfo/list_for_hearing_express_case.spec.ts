@@ -3,6 +3,7 @@ import config from '../../../config/config';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
+import {AxeUtils} from "../../../fixtures/utils/axe-utils.ts";
 
 async function performListForHearingFlow(
   caseId: string,
@@ -11,7 +12,7 @@ async function performListForHearingFlow(
   caseDetailsPage: any,
   listForHearingPage: any,
   testInfo: any,
-  axeUtils: any
+  axeUtils: AxeUtils
 ): Promise<void> {
   const hearingType = "Final Hearing (FH)";
   const courtName = "CHESTERFIELD COUNTY COURT";
@@ -27,13 +28,14 @@ async function performListForHearingFlow(
   await listForHearingPage.verifyHearingDateGuidanceMessages();
   await listForHearingPage.enterHearingTime('10:00');
   await listForHearingPage.selectCourtForHearing(courtName);
-  await axeUtils.audit(testInfo);
+  await axeUtils.audit();
   await listForHearingPage.navigateContinue();
   await listForHearingPage.navigateSubmit();
   await listForHearingPage.verifyHearingDateWarningMessage('expressPilot');
-  await axeUtils.audit(testInfo);
+  await axeUtils.audit();
 
   await caseDetailsPage.checkHasBeenUpdated('List for Hearing');
+  await axeUtils.finalizeReport(testInfo);
 
 }
 

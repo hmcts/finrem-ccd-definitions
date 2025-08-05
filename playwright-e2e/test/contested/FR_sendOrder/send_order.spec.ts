@@ -38,16 +38,16 @@ test.describe('Contested - Approved and Send Order', () => {
     // Send Order
     await caseDetailsPage.selectNextStep(ContestedEvents.contestedSendOrder);
     await sendOrderPage.selectSendApprovedOrder();
-    await axeUtils.audit(testInfo);
+    await axeUtils.audit();
     await sendOrderPage.navigateContinue();
-    await axeUtils.audit(testInfo);
+    await axeUtils.audit();
     await sendOrderPage.navigateContinue();
     await sendOrderPage.uploadDocument('./playwright-e2e/resources/file/test.docx');
-    await axeUtils.audit(testInfo);
+    await axeUtils.audit();
     await sendOrderPage.navigateContinue();
     await sendOrderPage.clickCaseStateButton();
     await sendOrderPage.selectCaseState('Order Sent');
-    await axeUtils.audit(testInfo);
+    await axeUtils.audit();
     await sendOrderPage.navigateContinue();
 
     // Continue about to submit and check your answers
@@ -57,6 +57,7 @@ test.describe('Contested - Approved and Send Order', () => {
 
     // Assert Order tab data
     await caseDetailsPage.assertTabData(contestedSendOrderTabData);
+    await axeUtils.finalizeReport(testInfo);
     }
   );
 });

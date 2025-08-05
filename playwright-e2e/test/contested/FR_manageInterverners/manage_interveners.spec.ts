@@ -47,10 +47,10 @@ test.describe('Contested - Manage Interveners', () => {
             // Manage Interveners - Add Intervener 1 Represented
             await caseDetailsPage.selectNextStep(ContestedEvents.manageInterveners);
             await manageIntervenersPage.selectIntervenerRadio(1);
-            await axeUtils.audit(testInfo);
+            await axeUtils.audit();
             await manageIntervenersPage.navigateContinue(expectedUrl, 2);
             await manageIntervenersPage.selectIntervenerActionRadio('Add', 1);
-            await axeUtils.audit(testInfo);
+            await axeUtils.audit();
             await manageIntervenersPage.navigateContinue(expectedUrl, 3);
             await manageIntervenersPage.assertMandatoryFields();
 
@@ -69,7 +69,7 @@ test.describe('Contested - Manage Interveners', () => {
                     orgName: 'FinRem-1-Org'
                 }
             )
-            await axeUtils.audit(testInfo);
+            await axeUtils.audit();
             await manageIntervenersPage.navigateContinue(expectedUrl +"/submit");
             await checkYourAnswersPage.assertCheckYourAnswersPage(manageAddIntervenerRepresentedTableData);
             await manageIntervenersPage.navigateSubmit();
@@ -79,10 +79,10 @@ test.describe('Contested - Manage Interveners', () => {
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageInterveners.listItem);
             await caseDetailsPage.selectNextStep(ContestedEvents.manageInterveners);
             await manageIntervenersPage.selectIntervenerRadio(2);
-            await axeUtils.audit(testInfo);
+            await axeUtils.audit();
             await manageIntervenersPage.navigateContinue(expectedUrl, 2);
             await manageIntervenersPage.selectIntervenerActionRadio('Add', 2);
-            await axeUtils.audit(testInfo);
+            await axeUtils.audit();
             await manageIntervenersPage.navigateContinue(expectedUrl, 5);
 
             await manageIntervenersPage.enterIntervenersDetails(
@@ -94,7 +94,7 @@ test.describe('Contested - Manage Interveners', () => {
                 {}
             )
             await manageIntervenersPage.navigateContinue(expectedUrl +"/submit");
-            await axeUtils.audit(testInfo);
+            await axeUtils.audit();
             await checkYourAnswersPage.assertCheckYourAnswersPage(manageAddIntervenerNotRepresentedTableData);
             await manageIntervenersPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageInterveners.listItem);
@@ -115,12 +115,13 @@ test.describe('Contested - Manage Interveners', () => {
             await manageIntervenersPage.selectIntervenerRadio(1);
             await manageIntervenersPage.navigateContinue(expectedUrl, 2);
             await manageIntervenersPage.selectIntervenerActionRadio('Remove', 1);
-            await axeUtils.audit(testInfo);
+            await axeUtils.audit();
             await manageIntervenersPage.navigateContinue(expectedUrl +"/submit");
             await checkYourAnswersPage.assertCheckYourAnswersPage(removeIntervenerTableData);
 
             await manageIntervenersPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageInterveners.listItem);
             await caseDetailsPage.assertTabNotPresent('Intervener 1');
+            await axeUtils.finalizeReport(testInfo);
     });
 });

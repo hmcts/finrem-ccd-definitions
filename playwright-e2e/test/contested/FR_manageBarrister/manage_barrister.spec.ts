@@ -31,14 +31,14 @@ test(
         // Navigate to manage barrister and update applicant barrister
         await caseDetailsPage.selectNextStep(ContestedEvents.manageBarrister);
         await manageBarristerPage.checkApplicantRepresented(true);
-        await axeUtils.audit(testInfo);
+        await axeUtils.audit();
         await manageBarristerPage.navigateContinue();
         await manageBarristerPage.clickAddNew();
         await manageBarristerPage.specifyApplicantBarristerFirstName('Tester Gollum');
         await manageBarristerPage.specifyApplicantBarristerEmail('fr_applicant_barrister1@mailinator.com');
         await manageBarristerPage.specifyBarristerOrganisation('Finrem-1-Org');
         await manageBarristerPage.clickSelectButton();
-        await axeUtils.audit(testInfo);
+        await axeUtils.audit();
         await manageBarristerPage.navigateContinue();
         
         //Continue about to submit and check your answers
@@ -68,5 +68,6 @@ test(
 
         // Assert tab data
         await caseDetailsPage.assertTabData(manageBarristeRespondentTabData);
+        await axeUtils.finalizeReport(testInfo);
     }
 );

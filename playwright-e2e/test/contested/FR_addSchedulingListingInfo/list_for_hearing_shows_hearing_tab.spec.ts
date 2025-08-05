@@ -107,7 +107,6 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
         listForHearingPage,
         manageHearingPage,
         blankPage
-
       },
       testInfo
     ) => {
@@ -129,8 +128,7 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        listForHearingPage,
-        makeAxeBuilder,
+        listForHearingPage
       },
       testInfo
     ) => {
@@ -154,7 +152,6 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
         listForHearingPage,
         manageHearingPage,
         blankPage,
-        makeAxeBuilder,
       },
       testInfo
     ) => {

@@ -25,12 +25,13 @@ test.describe('Contested Manage Case Documents', () => {
             await manageCaseDocumentsPage.fillDescription('test case'); 
             await manageCaseDocumentsPage.checkConfidentiality();
             await manageCaseDocumentsPage.setConfidentiality(true);
-            await axeUtils.audit(testInfo);
+            await axeUtils.audit();
 
             //Continue about to submit and check your answers
             await manageCaseDocumentsPage.navigateContinue();
             await manageCaseDocumentsPage.checkAnswersPage();
             await manageCaseDocumentsPage.navigateSubmit();
+            await axeUtils.finalizeReport(testInfo);
         }
     );
 });

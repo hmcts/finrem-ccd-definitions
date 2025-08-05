@@ -207,6 +207,7 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
             );
 
             await caseDetailsPage.assertTabData(solicitor_amend_case_tabs);
+            await axeUtils.finalizeReport(testInfo);
         }
     )
 }

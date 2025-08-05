@@ -20,14 +20,15 @@ test.describe('Contested - Manage Express Case', () => {
       await caseDetailsPage.selectNextStep(ContestedEvents.manageExpressCase);
       await manageExpressCasePage.selectExpressPilotQuestionNo();
       await manageExpressCasePage.uncheckConfirmRemoveCaseFromExpressPilot();
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await manageExpressCasePage.navigateSubmit();
       await manageExpressCasePage.verifyFieldIsRequiredMessageShown();
       await manageExpressCasePage.checkConfirmRemoveCaseFromExpressPilot();
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await manageExpressCasePage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated('Manage Express Case');
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Withdrawn'] }]);
+      await axeUtils.finalizeReport(testInfo);
     }
   );
 

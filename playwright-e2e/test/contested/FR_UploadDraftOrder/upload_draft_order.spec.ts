@@ -49,7 +49,7 @@ test.describe('Contested - Upload Draft Order', () => {
       await uploadDraftOrdersPage.chooseThatYouAreUploadingPensionSharingAnnexes();
       await uploadDraftOrdersPage.uploadDraftOrder(caseId);
       await uploadDraftOrdersPage.uploadPensionSharingAnnexes();
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await uploadDraftOrdersPage.navigateContinue('submit');
 
       await checkYourAnswersPage.assertCheckYourAnswersPage(uploadDraftOrderTable);
@@ -77,7 +77,7 @@ test.describe('Contested - Upload Draft Order', () => {
                 ]
             }
         ])
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await manageCaseDashboardPage.signOut();
 
       // log in as judge to approve the orders
@@ -108,13 +108,13 @@ test.describe('Contested - Upload Draft Order', () => {
       await approvedOrderPage.selectIsThisDocumentReadyToBeSealedAndIssued("Yes", 'agreed-draft-order-document.docx');
       await approvedOrderPage.selectIsThisDocumentReadyToBeSealedAndIssued("Yes", 'BagginsFDA.pdf');
       expectedUrl = ContestedEvents.approveOrders.ccdCallback;
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await approvedOrderPage.navigateContinue(expectedUrl, 2);
       await approvedOrderPage.selectIsAnotherHearingListed(false);
       await approvedOrderPage.navigateContinue(expectedUrl, 3);
       await approvedOrderPage.verifyJudgeTitleListOptions();
       await approvedOrderPage.selectJudgeTitle('District Judge');
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await approvedOrderPage.navigateContinue('submit');
 
       await checkYourAnswersPage.assertCheckYourAnswersPage(approveOrderTable);
@@ -128,7 +128,7 @@ test.describe('Contested - Upload Draft Order', () => {
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.assertTabData(approved_upload_draft_order_tabs);
-
+      await axeUtils.finalizeReport(testInfo);
     }
   );
 

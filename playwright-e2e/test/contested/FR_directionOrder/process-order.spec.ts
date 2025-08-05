@@ -147,7 +147,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await processOrderPage.enterHearingTime(firstHearing, '10:00');
       await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
       await processOrderPage.selectCourtForHearing();
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await processOrderPage.navigateContinue();
 
       // Check your answers
@@ -158,7 +158,8 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrder.listItem);
 
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
-      await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate)); 
+      await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));
+      await axeUtils.finalizeReport(testInfo);
     }
   );
 
@@ -193,7 +194,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await processOrderPage.enterHearingTime(firstHearing, '10:00');
       await processOrderPage.selectTypeOfHearing(firstHearing, 'Directions (DIR)');
       await processOrderPage.selectCourtForHearing();
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await processOrderPage.navigateContinue();
 
       // Check your answers
@@ -204,7 +205,8 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrder.listItem);
 
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
-      await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate)); 
+      await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));
+      await axeUtils.finalizeReport(testInfo);
     }
   );
 
@@ -401,7 +403,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
 
       // Check unapproved draft order tab
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Add Hearing 
@@ -415,7 +417,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await processOrderHearingDetailsPage.enterAdditionalHearingInformation("This is a test hearing");
       await processOrderHearingDetailsPage.selectAdditionalHearingDocument(false);
       await processOrderHearingDetailsPage.selectSendNoticeOfHearing(true);
-      await axeUtils.audit(testInfo);
+      await axeUtils.audit();
       await processOrderHearingDetailsPage.navigateContinue(); 
 
       // Check your answers
@@ -427,6 +429,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await caseDetailsPage.assertTabData(processOrderHearingTabData);
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
       await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));
+      await axeUtils.finalizeReport(testInfo);
     }
   );
 

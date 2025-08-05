@@ -130,7 +130,7 @@ test(
 
     // Page shows to tell User that case is an Express Pilot
     await expressCaseEnrolledPage.checkLinkResolves();
-    await axeUtils.audit(testInfo);
+    await axeUtils.audit();
     await expressCaseEnrolledPage.navigateContinue(expectedURL, 17);
 
     // Has attended miam
@@ -170,5 +170,6 @@ test(
 
     // Assert express label set in tab data
     await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
+    await axeUtils.finalizeReport(testInfo);
   }
 );

@@ -43,10 +43,11 @@ test(
     await giveAllocationDirectionsPage.selectFastTrackParticipation(YesNoRadioEnum.YES)
     await giveAllocationDirectionsPage.selectJudgeAllocated();
     await giveAllocationDirectionsPage.selectTimeEstimate();
-    await axeUtils.audit(testInfo);
+    await axeUtils.audit();
     await giveAllocationDirectionsPage.navigateContinue();
     await giveAllocationDirectionsPage.navigateSubmit();
 
     await caseDetailsPage.assertTabData(giveAllocationGateKeepingTabData);
+    await axeUtils.finalizeReport(testInfo);
   }
 );
