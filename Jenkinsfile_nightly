@@ -16,7 +16,7 @@ properties([
                 ),
                 choice(
                         name: 'BROWSER_TO_RUN',
-                        choices: ['chromium', 'chrome', 'firefox', 'webkit', 'edge'],
+                        choices: ['chromium', 'chrome', 'firefox', 'webkit', 'msedge'],
                         description: 'Choose what browsers will be run (only when a tag is specified)'
                 )
         ])
