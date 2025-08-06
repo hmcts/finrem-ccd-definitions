@@ -136,10 +136,39 @@ export class DateHelper {
             .toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
     };
 
+    /**
+     * Returns the current date and time formatted as "d MMM yyyy, HH:mm" (e.g. "6 Aug 2025, 11:02").
+     *
+     * @returns Formatted current date and time string.
+     */
+    static getUtcDateTimeFormatted(): string {
+      const now = new Date();
+      return now.toLocaleString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true,
+        timeZone: 'UTC'
+      })
+      .replace(/\b( am| pm)\b/i, '');
+
+    }
     static getIsoDateTwelveWeeksLater(): string {
       const twelveWeeksLater = new Date();
       twelveWeeksLater.setDate(twelveWeeksLater.getDate() + 12 * 7);
     return twelveWeeksLater.toISOString().split('T')[0];
 };
 
+    /**
+     * Returns today's date formatted as "d Month yyyy" (e.g. "6 August 2025").
+     *
+     * @returns Formatted current date string.
+     */
+    static getTodayFullFormattedDate(): string {
+        const today = new Date();
+        return today
+            .toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+    };
 }
