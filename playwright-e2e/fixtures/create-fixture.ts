@@ -69,6 +69,7 @@ import { ReferToJudgeApplicationPage } from '../pages/events/refer-to-judge-appl
 import { GeneralApplicationOutcomePage } from '../pages/events/general-application-outcome/GeneralApplicationOutcomePage.ts';
 import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
 import { ProcessOrderPage } from '../pages/events/process-order/ProcessOrderPage.ts';
+import { CreateGeneralEmailPage } from '../pages/events/create-general-email/CreateGeneralEmailPage.ts';
 import { SubmitUploadedCaseFilesPage } from '../pages/events/submit-uploaded-case-files/SubmitUploadedCaseFilesPage.ts';
 import { UnprocessedApprovedOrdersPage } from '../pages/events/process-order/UnprocessedApprovedOrdersPage.ts';
 import { ProcessOrderHearingDetailsPage } from '../pages/events/process-order/ProcessOrderHearingDetailsPage.ts';
@@ -148,6 +149,7 @@ type CreateFixtures = {
   generalApplicationOutcomePage: GeneralApplicationOutcomePage;
   approvedOrderPage: ApproveOrderPage;
   processOrderPage: ProcessOrderPage;
+  createGeneralEmailPage: CreateGeneralEmailPage;
   submitUploadedCaseFilesPage : SubmitUploadedCaseFilesPage;
   consentApplicationApprovePage: ConsentApplicationApprovedPage;
   consentOrderNotApprovedPage: ConsentOrderNotApprovedPage;
@@ -360,6 +362,9 @@ export const test = base.extend<CreateFixtures>({
   },
   processOrderPage: async ({ page }, use) => {
     await use(new ProcessOrderPage(page, commonActionsHelper));
+  },
+  createGeneralEmailPage: async ({ page }, use) => {
+    await use(new CreateGeneralEmailPage(page, commonActionsHelper));
   },
   submitUploadedCaseFilesPage: async ({ page }, use) => {
     await use(new SubmitUploadedCaseFilesPage(page));
