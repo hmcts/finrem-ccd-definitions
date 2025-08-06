@@ -101,7 +101,7 @@
     "copy-prod-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-prod-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-prod-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
     "highLevelDataSetup": "echo 'bash ./gradlew highLevelDataSetup --args=$1 && sh bin/after-data-setup-step.sh' > ./temp.sh && sh ./temp.sh",
-    "yarn-update": "yarn set version 3.x",
+    "yarn-update": "yarn set version stable",
     "install-dependencies": "yarn install --silent"
   },
   "pre-commit": [
