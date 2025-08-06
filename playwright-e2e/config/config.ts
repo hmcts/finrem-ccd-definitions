@@ -72,7 +72,9 @@ const configuration = {
   },
 
   jurisdiction: {
-    familyDivorce: 'Family Divorce',
+    familyDivorce: (process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`) === 'https://manage-case.demo.platform.hmcts.net'
+    ? 'Family Divorce - v104-26.1'
+    : 'Family Divorce'
   },
 
   caseType: {
