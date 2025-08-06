@@ -1,6 +1,7 @@
 export interface TabContent {
     tabItem: string;
     value: string;
+    exact?: boolean; // Optional property for matching content
 }
   
 export type TabContentItem = TabContent | string;
