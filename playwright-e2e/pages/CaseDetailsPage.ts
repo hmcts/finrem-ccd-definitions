@@ -97,8 +97,7 @@ export class CaseDetailsPage {
                 await expect(tabItem).toBeVisible();
 
                 // Refine the locator to uniquely identify the corresponding <td>
-                const tabValue = tabItem.locator('xpath=../following-sibling::td');/*filter({
-                    hasText: content.value,});*/
+                const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
                 if (!content.exact) {
                     await expect(tabValue).toContainText(content.value);
                 } else {
