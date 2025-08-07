@@ -19,8 +19,9 @@ test(
         manageCaseDashboardPage,
         caseDetailsPage,
         updateContactDetailsPage,
-        createCaseCheckYourAnswersPage
-      },
+        createCaseCheckYourAnswersPage,
+
+      }
     ) => {
       // Create case and progress to HWF decision made
       const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
@@ -63,8 +64,9 @@ test(
         manageCaseDashboardPage,
         caseDetailsPage,
         updateContactDetailsPage,
-        checkYourAnswersPage
-      }) => {
+        checkYourAnswersPage,
+        axeUtils
+      }, testInfo) => {
       // Create case and progress to HWF decision made
       const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
 
@@ -77,6 +79,7 @@ test(
       await caseDetailsPage.selectNextStep(ConsentedEvents.updateContactDetails);
       await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(true);
       await updateContactDetailsPage.checkApplicantRepresented(true);
+      await axeUtils.audit();
       await updateContactDetailsPage.navigateContinue();
       await updateContactDetailsPage.specifySolicitorName('Test Baggins'); 
       await updateContactDetailsPage.navigateContinue();
@@ -102,6 +105,7 @@ test(
       await updateContactDetailsPage.clickFindAddressButton();
       await updateContactDetailsPage.selectAddress('10 Selsdon Road, London');
       await updateContactDetailsPage.selectRespondentInRefuge(true);
+      await axeUtils.audit();
       await updateContactDetailsPage.navigateContinue();
 
       //Continue about to submit and check your answers
@@ -111,5 +115,6 @@ test(
 
       // Assert tab data
       await caseDetailsPage.assertTabData(updateRespondentNonRepresentedContactDetailsTabData);
+      await axeUtils.finalizeReport(testInfo);
     }
 );

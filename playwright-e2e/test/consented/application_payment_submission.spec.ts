@@ -18,8 +18,8 @@ test(
             paymentPage,
             orderSummaryPage,
             caseSubmissionPage,
-checkYourAnswersPage
-          },
+            checkYourAnswersPage,
+          }
         ) => {
         // Create case
         const caseId = await ConsentedCaseFactory.createConsentedCase();

@@ -96,8 +96,9 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        allocationDirectionsCourtSelectionPage
-      },
+        allocationDirectionsCourtSelectionPage,
+        axeUtils
+      },testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToAllocateJudge(false); // Pass false or leave blank for non-express pilot case
       await manageCaseDashboardPage.visit();
@@ -105,7 +106,9 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
       await manageCaseDashboardPage.navigateToCase(caseId);
     
       await caseDetailsPage.selectNextStep(ContestedEvents.giveAllocationDirection);
+      await axeUtils.audit();
       await allocationDirectionsCourtSelectionPage.verifyAbsenceOfExpressPilotWarningMessage();
+      await axeUtils.finalizeReport(testInfo);
     }
   );
 });
