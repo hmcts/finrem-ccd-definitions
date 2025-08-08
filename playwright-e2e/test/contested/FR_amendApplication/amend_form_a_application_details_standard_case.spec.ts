@@ -40,7 +40,7 @@ import {solicitor_amend_case_tabs} from "../../../resources/tab_content/conteste
 test.describe('Contested - Form A - Amend application in Standard case', () => {
     test(
         "Amend Application Details in Standard case - Amend Form A application details",
-        { tag: [] },
+        { tag: ['@accessibility','@firefox'] },
         async (
             {
                 loginPage,
@@ -69,7 +69,8 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
                 paymentPage,
                 orderSummaryPage,
                 caseSubmissionPage,
-            }
+                axeUtils
+            },testInfo
         ) => {
             const caseId = await ContestedCaseFactory.createBaseContestedFormA();
             const url = ContestedEvents.amendFormAApplicationDetails.ccdCallback;
@@ -194,10 +195,19 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
                     pbaNumber: pbaNumber,
                     reference: reference,
                     amount: "£313.00"
-                }
+                },
+              [
+                ['FEE0229', 'Application for a financial order', '£313.00'],
+                ['', 'Total', '£313.00']
+              ],
+              {
+                axeUtils,
+                testInfo,
+              }
             );
 
             await caseDetailsPage.assertTabData(solicitor_amend_case_tabs);
+            await axeUtils.finalizeReport(testInfo);
         }
     )
 }

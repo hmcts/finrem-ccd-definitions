@@ -19,7 +19,7 @@ const configuration = {
     process.env.XUI_ORG_WEB_URL || `https://manage-org.${env}.platform.hmcts.net`,
 
   run_accessibility: 
-    process.env.TESTS_FOR_ACCESSIBILITY || false, 
+    process.env.TESTS_FOR_ACCESSIBILITY || false,
 
   judge: {
     email: process.env.USERNAME_JUDGE || '',
@@ -72,7 +72,9 @@ const configuration = {
   },
 
   jurisdiction: {
-    familyDivorce: 'Family Divorce',
+    familyDivorce: (process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`) === 'https://manage-case.demo.platform.hmcts.net'
+    ? 'Family Divorce - v104-26.1'
+    : 'Family Divorce'
   },
 
   caseType: {
