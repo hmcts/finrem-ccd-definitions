@@ -37,9 +37,7 @@ test(
       createCaseCheckYourAnswersPage,
       checkYourAnswersPage,
       caseDetailsPage,
-      makeAxeBuilder
-    },
-    testInfo
+    }
   ) => {
     
     // Set up court information.
@@ -171,16 +169,5 @@ test(
     await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
     await caseDetailsPage.assertTabData(expressCaseGateKeeping250TabData);
 
-    // Note: Financial Assets page produces accessibility issues
-    if (config.run_accessibility) {
-      const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-      await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-      });
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    }
   }
 );

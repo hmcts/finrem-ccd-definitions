@@ -37,7 +37,7 @@ test(
       expressCaseEnrolledPage,
       createCaseSavingYourAnswersPage,
       checkYourAnswersPage,
-      makeAxeBuilder
+      axeUtils
     },
     testInfo
   ) => {
@@ -130,6 +130,7 @@ test(
 
     // Page shows to tell User that case is an Express Pilot
     await expressCaseEnrolledPage.checkLinkResolves();
+    await axeUtils.audit();
     await expressCaseEnrolledPage.navigateContinue(expectedURL, 17);
 
     // Has attended miam
@@ -169,17 +170,6 @@ test(
 
     // Assert express label set in tab data
     await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
-
-    // Note: Financial Assets page produces accessibility issues
-    if (config.run_accessibility) {
-      const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-      await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-      });
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    }
+    await axeUtils.finalizeReport(testInfo);
   }
 );

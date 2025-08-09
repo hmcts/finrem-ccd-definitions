@@ -7,7 +7,7 @@ test.describe('Contested Manage Case Documents', () => {
     test(
         'Contested - Caseworker Manage Case Documents',
         { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage }) => {
+        async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage, axeUtils }, testInfo) => {
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
@@ -24,12 +24,14 @@ test.describe('Contested Manage Case Documents', () => {
             await manageCaseDocumentsPage.specifyDocumentType('test');
             await manageCaseDocumentsPage.fillDescription('test case'); 
             await manageCaseDocumentsPage.checkConfidentiality();
-            await manageCaseDocumentsPage.setConfidentiality(true); 
+            await manageCaseDocumentsPage.setConfidentiality(true);
+            await axeUtils.audit();
 
             //Continue about to submit and check your answers
             await manageCaseDocumentsPage.navigateContinue();
             await manageCaseDocumentsPage.checkAnswersPage();
             await manageCaseDocumentsPage.navigateSubmit();
+            await axeUtils.finalizeReport(testInfo);
         }
     );
 });
