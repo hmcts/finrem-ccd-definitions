@@ -159,7 +159,6 @@ test.describe('Contested - Process Order (Old Style)', () => {
 
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
       await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));
-      await axeUtils.finalizeReport(testInfo);
     }
   );
 
@@ -206,7 +205,6 @@ test.describe('Contested - Process Order (Old Style)', () => {
 
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
       await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));
-      await axeUtils.finalizeReport(testInfo);
     }
   );
 
@@ -429,7 +427,6 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await caseDetailsPage.assertTabData(processOrderHearingTabData);
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
       await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));
-      await axeUtils.finalizeReport(testInfo);
     }
   );
 
