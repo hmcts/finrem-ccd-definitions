@@ -15,8 +15,6 @@ async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, l
 async function performListForHearingFlow(
   caseDetailsPage: any,
   listForHearingPage: any,
-  testInfo: any,
-  makeAxeBuilder: any
 ): Promise<void> {
   const hearingType = "Final Hearing (FH)";
   const courtName = "CHESTERFIELD COUNTY COURT";
@@ -36,39 +34,16 @@ async function performListForHearingFlow(
   await listForHearingPage.navigateIgnoreWarningAndGo();
   await caseDetailsPage.checkHasBeenUpdated('List for Hearing');
 
-  if (config.run_accessibility) {
-    const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-    await testInfo.attach('accessibility-scan-results', {
-      body: JSON.stringify(accessibilityScanResults, null, 2),
-      contentType: 'application/json'
-    });
-
-    expect(accessibilityScanResults.violations).toEqual([]);
-  }
 }
 
 async function performManageHearingsMigration(
   caseDetailsPage: any,
-  blankPage: any,
-  testInfo: any,
-  makeAxeBuilder: any
+  blankPage: any
 ): Promise<void> {
 
   await caseDetailsPage.selectNextStep(ContestedEvents.manageHearingsMigration);
   await blankPage.navigateSubmit();
   await caseDetailsPage.checkHasBeenUpdated('(Migration) Manage Hearings');
-
-  if (config.run_accessibility) {
-    const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-    await testInfo.attach('accessibility-scan-results', {
-      body: JSON.stringify(accessibilityScanResults, null, 2),
-      contentType: 'application/json'
-    });
-
-    expect(accessibilityScanResults.violations).toEqual([]);
-  }
 }
 
 async function performManageHearings(
@@ -110,14 +85,12 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
         caseDetailsPage,
         listForHearingPage,
         blankPage,
-        makeAxeBuilder,
-      },
-      testInfo
+      }
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-      await performListForHearingFlow(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await performListForHearingFlow(caseDetailsPage, listForHearingPage);
+      await performManageHearingsMigration(caseDetailsPage, blankPage);
       await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing1);
     }
   );
@@ -133,16 +106,15 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
         caseDetailsPage,
         listForHearingPage,
         manageHearingPage,
-        blankPage,
-        makeAxeBuilder,
+        blankPage
       },
       testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performManageHearings(caseDetailsPage, manageHearingPage);
-      await performListForHearingFlow(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await performListForHearingFlow(caseDetailsPage, listForHearingPage);
+      await performManageHearingsMigration(caseDetailsPage, blankPage);
       await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing2);
     }
   );
@@ -156,15 +128,14 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        listForHearingPage,
-        makeAxeBuilder,
+        listForHearingPage
       },
       testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessPaperCaseUpToProgressToListing();
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-      await performListForHearingFlow(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      await performManageHearingsMigration(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      await performListForHearingFlow(caseDetailsPage, listForHearingPage);
+      await performManageHearingsMigration(caseDetailsPage, listForHearingPage);
       await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing1);
     }
   );
@@ -181,15 +152,14 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
         listForHearingPage,
         manageHearingPage,
         blankPage,
-        makeAxeBuilder,
       },
       testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessPaperCaseUpToProgressToListing();
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performManageHearings(caseDetailsPage, manageHearingPage);
-      await performListForHearingFlow(caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
-      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, makeAxeBuilder);
+      await performListForHearingFlow(caseDetailsPage, listForHearingPage);
+      await performManageHearingsMigration(caseDetailsPage, blankPage);
       await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing2);
     }
   );

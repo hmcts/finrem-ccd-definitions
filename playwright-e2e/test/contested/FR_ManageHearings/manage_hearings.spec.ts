@@ -74,7 +74,7 @@ test.describe('Contested - Manage Hearings', () => {
     test(
         'Contested - Assert validations - Manage Hearings - Pre-Trial Review (PTR)', {
         tag: []},
-        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
+        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage, axeUtils}, testInfo) => {
 
             // Create and setup case
             const date = DateHelper.getCurrentDate();
@@ -92,6 +92,7 @@ test.describe('Contested - Manage Hearings', () => {
             await manageHearingPage.assertWhatWouldYouLikeToDoRequired();
 
             await manageHearingPage.selectAddANewHearing();
+            await axeUtils.audit();
             await manageHearingPage.navigateContinue();
 
             await manageHearingPage.assertErrorMessagesForAllMandatoryFields();
@@ -130,7 +131,7 @@ test.describe('Contested - Manage Hearings', () => {
                 uploadFiles: ["final_hearing_file1.pdf", "final_hearing_file2.pdf"],
                 sendANoticeOfHearing: true
             });
-
+            await axeUtils.audit();
             await manageHearingPage.navigateContinue();
             await manageHearingPage.navigateIgnoreWarningAndContinue();
     
@@ -152,6 +153,7 @@ test.describe('Contested - Manage Hearings', () => {
                 additionalInformation: "Hearing details here",
                 uploadFiles: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
             })]);
+          await axeUtils.finalizeReport(testInfo);
 
     });
 

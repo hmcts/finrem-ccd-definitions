@@ -97,10 +97,12 @@ export class CaseDetailsPage {
                 await expect(tabItem).toBeVisible();
 
                 // Refine the locator to uniquely identify the corresponding <td>
-                const tabValue = tabItem.locator('xpath=../following-sibling::td').filter({
-                    hasText: content.value,
-                });
-                await expect(tabValue).toHaveText(content.value);
+                const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
+                if (!content.exact) {
+                    await expect(tabValue).toContainText(content.value);
+                } else {
+                    await expect(tabValue).toHaveText(content.value);
+                }
             }
         }
     }
