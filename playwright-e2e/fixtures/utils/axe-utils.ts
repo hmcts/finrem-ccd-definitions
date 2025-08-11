@@ -73,7 +73,7 @@ export class AxeUtils {
     //expect.soft(results.violations, `Accessibility violations found on ${this.page.url()}`).toEqual([]);
   }
 
-  public async finalizeReport(testInfo: TestInfo) {
+  public async generateReport(testInfo: TestInfo) {
     if (!config.run_accessibility || this.resultsList.length === 0) return;
 
     // Combine all results into one HTML report

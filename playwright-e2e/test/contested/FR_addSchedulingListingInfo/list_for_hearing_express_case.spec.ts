@@ -35,8 +35,6 @@ async function performListForHearingFlow(
   await axeUtils.audit();
 
   await caseDetailsPage.checkHasBeenUpdated('List for Hearing');
-  await axeUtils.finalizeReport(testInfo);
-
 }
 
 test.describe('Contested - List for Hearing express case', () => {

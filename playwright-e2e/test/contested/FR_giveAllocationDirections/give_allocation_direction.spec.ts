@@ -48,6 +48,5 @@ test(
     await giveAllocationDirectionsPage.navigateSubmit();
 
     await caseDetailsPage.assertTabData(giveAllocationGateKeepingTabData);
-    await axeUtils.finalizeReport(testInfo);
   }
 );

@@ -244,7 +244,6 @@ test.describe("Consent order in contested case", () => {
             await eventSummaryPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.closeCase.listItem);
             await manageCaseDashboardPage.signOut();
-            await axeUtils.finalizeReport(testInfo);
         });
 
     test(
@@ -514,6 +513,5 @@ test.describe("Consent order in contested case", () => {
             await eventSummaryPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.closeCase.listItem);
             await manageCaseDashboardPage.signOut();
-            await axeUtils.finalizeReport(testInfo);
         });
 });
