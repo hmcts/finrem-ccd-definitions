@@ -115,6 +115,5 @@ test(
 
       // Assert tab data
       await caseDetailsPage.assertTabData(updateRespondentNonRepresentedContactDetailsTabData);
-      await axeUtils.finalizeReport(testInfo);
     }
 );

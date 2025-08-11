@@ -153,7 +153,6 @@ test.describe('Contested - Manage Hearings', () => {
                 additionalInformation: "Hearing details here",
                 uploadFiles: ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]
             })]);
-          await axeUtils.finalizeReport(testInfo);
 
     });
 
