@@ -68,6 +68,5 @@ test(
 
         // Assert tab data
         await caseDetailsPage.assertTabData(manageBarristeRespondentTabData);
-        await axeUtils.finalizeReport(testInfo);
     }
 );

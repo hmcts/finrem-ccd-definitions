@@ -170,6 +170,5 @@ test(
 
     // Assert express label set in tab data
     await caseDetailsPage.assertTabData(expressCaseGateKeepingTabData);
-    await axeUtils.finalizeReport(testInfo);
   }
 );

@@ -170,7 +170,6 @@ test(
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
     await axeUtils.audit();
-    await axeUtils.finalizeReport(testInfo);
   }
 );
 
@@ -345,6 +344,5 @@ test(
 
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabDataChildrensAct);
-    await axeUtils.finalizeReport(testInfo);
   }
 );
