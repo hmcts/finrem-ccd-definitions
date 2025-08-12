@@ -79,13 +79,17 @@ export class AxeUtils {
     // Combine all results into one HTML report
     const htmlSections = this.resultsList.map(({ url, results }, idx) => {
       const urlEndpoint = url.split('/').slice(-3).join('/');
-      const htmlReport = createHtmlReport({
+      const unique = `_${idx}`;
+      let htmlReport = createHtmlReport({
         results,
         options: {
           projectKey: `${urlEndpoint}`,
           doNotCreateReportFile: true,
         },
       });
+
+      htmlReport = this.getUpdatedHtmlReport(htmlReport, unique);
+
       const reportFileName = (results.violations.length > 0 ? "FAILED " : "") + urlEndpoint;
       return `
       <details>
@@ -116,6 +120,38 @@ export class AxeUtils {
       contentType: 'text/html',
     });
 
-    this.resultsList = []; // reset for next test
+    this.resultsList = [];
+  }
+
+  private getUpdatedHtmlReport(htmlReport: string, unique: string) {
+    return htmlReport
+      .replace(/id="accordionPasses"/g, `id="accordionPasses${unique}"`)
+      .replace(/id="headingOne"/g, `id="headingOne${unique}"`)
+      .replace(/data-target="#passes"/g, `data-target="#passes${unique}"`)
+      .replace(/aria-controls="passes"/g, `aria-controls="passes${unique}"`)
+      .replace(/id="passes"/g, `id="passes${unique}"`)
+      .replace(/aria-labelledby="headingOne"/g, `aria-labelledby="headingOne${unique}"`)
+      .replace(/id="accordionIncomplete"/g, `id="accordionIncomplete${unique}"`)
+      .replace(/id="headingTwo"/g, `id="headingTwo${unique}"`)
+      .replace(/data-target="#incomplete"/g, `data-target="#incomplete${unique}"`)
+      .replace(/aria-controls="incomplete"/g, `aria-controls="incomplete${unique}"`)
+      .replace(/id="incomplete"/g, `id="incomplete${unique}"`)
+      .replace(/aria-labelledby="headingTwo"/g, `aria-labelledby="headingTwo${unique}"`)
+      .replace(/id="accordionInapplicable"/g, `id="accordionInapplicable${unique}"`)
+      .replace(/id="headingThree"/g, `id="headingThree${unique}"`)
+      .replace(/data-target="#inapplicable"/g, `data-target="#inapplicable${unique}"`)
+      .replace(/aria-controls="inapplicable"/g, `aria-controls="inapplicable${unique}"`)
+      .replace(/id="inapplicable"/g, `id="inapplicable${unique}"`)
+      .replace(/aria-labelledby="headingThree"/g, `aria-labelledby="headingThree${unique}"`)
+      .replace(/id="rulesSection"/g, `id="rulesSection${unique}"`)
+      .replace(/id="ruleSection"/g, `id="ruleSection${unique}"`)
+      .replace(/data-target="#rules"/g, `data-target="#rules${unique}"`)
+      .replace(/aria-controls="rules"/g, `aria-controls="rules${unique}"`)
+      .replace(/id="rules"/g, `id="rules${unique}"`)
+      .replace(/aria-labelledby="ruleSection"/g, `aria-labelledby="ruleSection${unique}"`)
+      .replace(/data-parent="#accordionPasses"/g, `data-parent="#accordionPasses${unique}"`)
+      .replace(/data-parent="#accordionIncomplete"/g, `data-parent="#accordionIncomplete${unique}"`)
+      .replace(/data-parent="#accordionInapplicable"/g, `data-parent="#accordionInapplicable${unique}"`)
+      .replace(/data-parent="#rules"/g, `data-parent="#rules${unique}"`);
   }
 }
