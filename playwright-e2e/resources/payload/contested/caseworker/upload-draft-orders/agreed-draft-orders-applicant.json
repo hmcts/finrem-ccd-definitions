@@ -1,0 +1,61 @@
+{
+    "typeOfDraftOrder": "anAgreedOrderFollowingAHearing",
+    "showUploadPartyQuestion": "Yes",
+    "uploadAgreedDraftOrder": {
+      "confirmUploadedDocuments": {
+        "value": [
+          {
+            "code": "1",
+            "label": "I confirm the uploaded documents are for the Baggins v Gollum case"
+          }
+        ],
+        "list_items": [
+          {
+            "code": "1",
+            "label": "I confirm the uploaded documents are for the Baggins v Gollum case"
+          }
+        ]
+      },
+      "hearingDetails": {
+        "value": {
+          "code": "00000000-0000-0000-0000-000000000000",
+          "label": "15 Oct 2025 10:00 - First Directions Appointment (FDA)"
+        },
+        "list_items": [
+          {
+            "code": "00000000-0000-0000-0000-000000000000",
+            "label": "15 Oct 2025 10:00 - First Directions Appointment (FDA)"
+          }
+        ]
+      },
+      "judgeKnownAtHearing": "No",
+      "judge": null,
+      "uploadParty": {
+        "value": {
+          "code": "theApplicant",
+          "label": "The applicant, Frodo Baggins"
+        },
+        "list_items": [
+          { "code": "theApplicant", "label": "The applicant, Frodo Baggins" },
+          { "code": "theRespondent", "label": "The respondent, Smeagol Gollum" }
+        ]
+      },
+      "uploadOrdersOrPsas": ["orders"],
+      "agreedDraftOrderCollection": [
+        {
+          "value": {
+            "agreedDraftOrderDocument": {
+              "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038",
+              "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038/binary",
+              "document_filename": "agreed-draft-order-document.docx"
+            },
+            "resubmission": [],
+            "additionalDocuments": []
+          },
+          "id": null
+        }
+      ],
+      "agreedPsaCollection": []
+    }
+  }
+  

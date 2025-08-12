@@ -40,7 +40,15 @@ export const CommonEvents: Record<string, CaseEvent> = {
   addNotes: {
     listItem: "Add Note",
     ccdCallback: "FR_caseNotes"
-  }
+  },
+  closeCase: {
+    listItem: "Close Case",
+    ccdCallback: "FR_close"
+  },
+  createGeneralEmail: {
+    listItem: "Create General Email",
+    ccdCallback: "FR_generalEmail"
+  },
 };
 
 // Consented Events
@@ -60,6 +68,14 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
   updateContactDetails: {
     listItem: "Update contact details",
     ccdCallback: "FR_updateContactDetails"
+  },
+  assignToJudgeConsentMade: {
+    listItem: "Assign To Judge",
+    ccdCallback: "FR_referToJudgeFromConsOrdMade"
+  },
+  uploadApprovedOrder: {
+    listItem: "Upload Approved Order",
+    ccdCallback: "FR_uploadApprovedOrder"
   },
   // Common events
   createFlag: CommonEvents.createFlag,
@@ -129,7 +145,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     ccdCallback: "createGeneralApplication"
   },
   generalApplicationReferToJudge: {
-    listItem: "General Application Refer to Judge",
+    listItem: "Refer to Judge (Application)",
     ccdCallback: "FR_generalApplicationReferToJudge"
   },
   generalApplicationOutcome: {
@@ -137,12 +153,16 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     ccdCallback: "FR_GeneralApplicationOutcome"
   },
   approveOrders: {
-    listItem: "Approve Orders",
+    listItem: "Approve orders",
     ccdCallback: "FR_approveOrders"
   },
-  directionOrder: {
-    listItem: "Direction Order",
+  processOrder: {
+    listItem: "Process Order",
     ccdCallback: "FR_directionOrder"
+  },
+  processOrderMH: {
+    listItem: "Process Order (MH)",
+    ccdCallback: "FR_processOrder"
   },
   manageHearings: {
     listItem: "Manage Hearings",
@@ -156,6 +176,67 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Update contact details",
     ccdCallback: "FR_updateContactDetails"
   },
+  refund: {
+    listItem: "Refund",
+    ccdCallback: "FR_refund"
+  },
+  manageBarrister: {
+    listItem: "Manage Barrister",
+    ccdCallback: "FR_manageBarrister"
+  },
+  prepareForHearing: {
+    listItem: "Prepare For Hearing",
+    ccdCallback: "FR_prepareForHearing"
+  },
+  createGeneralOrder: {
+    listItem: "Create General Order",
+    ccdCallback: "FR_generalOrder"
+  },
+  contestedSendOrder: {
+    listItem: "Send Order",
+    ccdCallback: "FR_sendOrder"
+  },
+  manageInterveners: {
+    listItem: "Manage Interveners",
+    ccdCallback: "manageInterveners"
+  },
+  submitUploadedCaseFiles: {
+    listItem: "Submit Uploaded Case Files",
+    ccdCallback: "FR_submitUploadedCaseFiles"
+  },
+  consentOrder: {
+    listItem: "Consent Order",
+    ccdCallback: "FR_consentOrder"
+  },
+  // (non-prod) Migration events
+  manageHearingsMigration: {
+    listItem: "(Migration) Manage Hearings",
+    ccdCallback: "FR_manageHearingsMigration"
+  },
+  createGeneralOrderConsent: {
+    listItem: "Create General Order (consent)",
+    ccdCallback: "FR_generalOrderConsent"
+  },
+  respondToConsentOrder: {
+    listItem: "Respond to Consent Order",
+    ccdCallback: "FR_respondToConsentOrder"
+  },
+  assignToJudgeConsent: {
+    listItem: "Assign to Judge (consent)",
+    ccdCallback: "FR_assignToJudgeConsent"
+  },
+  consentApplicationApproved: {
+    listItem: "Consent Application Approved",
+    ccdCallback: "FR_consentOrderApproved"
+  },
+  consentOrderNotApproved: {
+    listItem: "Consent Order Not Approved",
+    ccdCallback: "FR_consentOrderNotApproved"
+  },
+  sendConsentOrder: {
+    listItem: "Send Order (consent)",
+    ccdCallback: "FR_consentSendOrder"
+  },
 
   // Common events
   createFlag: CommonEvents.createFlag,
@@ -163,7 +244,8 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
   hwfDecisionMade: CommonEvents.hwfDecisionMade,
   issueApplication: CommonEvents.issueApplication,
-  addNotes: CommonEvents.addNotes
+  addNotes: CommonEvents.addNotes,
+  closeCase: CommonEvents.closeCase
 };
 
 export const PayloadPath = {
@@ -197,6 +279,12 @@ export const PayloadPath = {
     listForHearingFdaEgOne: "./playwright-e2e/resources/payload/contested/caseworker/list-for-hearing/fda-example-one.json",
     judiciaryBasicApproveOrders: "./playwright-e2e/resources/payload/contested/judiciary/most-basic-approve-orders.json",
     processOrderBasicTwoHearing: "./playwright-e2e/resources/payload/contested/caseworker/process-order/basic-two-hearing.json",
-    createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json"
+    createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json",
+    manageIntervenersAddApplicantInt: "./playwright-e2e/resources/payload/contested/caseworker/manage-interveners/add-applicant-intervener.json",
+    manageIntervenersAddRespondentInt: "./playwright-e2e/resources/payload/contested/caseworker/manage-interveners/add-respondent-intervener.json",
+    manageBarristerAddApplicantBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-applicant-barrister.json",
+    manageBarristerAddRespondentBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-respondent-barrister.json",
+    agreedDraftOrderApplicant: "./playwright-e2e/resources/payload/contested/caseworker/upload-draft-orders/agreed-draft-orders-applicant.json",
+    manageHearingAddHearing: "./playwright-e2e/resources/payload/contested/caseworker/manage-hearing/add-a-hearing/add-a-hearing.json",
   }
 } as const;

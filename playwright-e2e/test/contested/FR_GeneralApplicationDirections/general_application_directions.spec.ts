@@ -3,38 +3,48 @@ import config from '../../../config/config';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
+import { migratedGeneralApplicationDirectionsTabDataOnHearing1 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import {AxeUtils} from "../../../fixtures/utils/axe-utils.ts";
+
+async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+}
 
 async function performGeneralApplicationDirectionsFlow(
-  caseId: string,
-  loginPage: any,
-  manageCaseDashboardPage: any,
   caseDetailsPage: any,
   generalApplicationDirectionsPage: any,
   testInfo: any,
-  makeAxeBuilder: any
+  axeUtils: AxeUtils
 ): Promise<void> {
-  const hearingType = "Final Hearing (FH)";
-  const courtName = "CHESTERFIELD COUNTY COURT";
-
-  await manageCaseDashboardPage.visit();
-  await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
-  await manageCaseDashboardPage.navigateToCase(caseId);
-
   await caseDetailsPage.selectNextStep(ContestedEvents.generalApplicationDirections);
   await generalApplicationDirectionsPage.chooseWhetherAHearingIsRequired(YesNoRadioEnum.YES);
+  await generalApplicationDirectionsPage.enterHearingDate('01', '01', '2025');
+  await generalApplicationDirectionsPage.enterHearingTime('10:00');
+  await generalApplicationDirectionsPage.enterTimeEstimate('3 hours');
+  await generalApplicationDirectionsPage.selectCourtForHearing();
+  await generalApplicationDirectionsPage.enterAdditionalInformationAboutHearing();
+  await axeUtils.audit();
+  await generalApplicationDirectionsPage.navigateContinue();
+  await generalApplicationDirectionsPage.navigateSubmit();
 
   //Next, continue tests to drive through new hearing creation
 
-  if (config.run_accessibility) {
-    const accessibilityScanResults = await makeAxeBuilder().analyze();
+}
 
-    await testInfo.attach('accessibility-scan-results', {
-      body: JSON.stringify(accessibilityScanResults, null, 2),
-      contentType: 'application/json'
-    });
+async function performManageHearingsMigration(
+  caseDetailsPage: any,
+  blankPage: any,
+  testInfo: any,
+  axeUtils: any
+): Promise<void> {
 
-    expect(accessibilityScanResults.violations).toEqual([]);
-  }
+  await caseDetailsPage.selectNextStep(ContestedEvents.manageHearingsMigration);
+  await axeUtils.audit();
+  await blankPage.navigateSubmit();
+  await caseDetailsPage.checkHasBeenUpdated('(Migration) Manage Hearings');
+
 }
 
 test.describe('Contested - General Application Directions', () => {
@@ -47,13 +57,14 @@ test.describe('Contested - General Application Directions', () => {
         manageCaseDashboardPage,
         caseDetailsPage,
         generalApplicationDirectionsPage,
-        makeAxeBuilder,
+        axeUtils,
       },
       testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
       await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
-      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, axeUtils);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
     }
@@ -68,39 +79,61 @@ test.describe('Contested - General Application Directions', () => {
         manageCaseDashboardPage,
         caseDetailsPage,
         generalApplicationDirectionsPage,
-        makeAxeBuilder,
+        axeUtils,
       },
       testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
       await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
-      await performGeneralApplicationDirectionsFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, generalApplicationDirectionsPage, testInfo, makeAxeBuilder);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, axeUtils);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
     }
   );
 
-  test.skip(
+  // non-prod only
+  test(
     'Form A case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
-    async () => {
+    async ({
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        generalApplicationDirectionsPage,
+        blankPage,
+        axeUtils,
+      },
+      testInfo
+    ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-      await ContestedCaseFactory.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
-      // Next:
-      // Check the hearing tab to check that the old hearing data is correctly showing there.
-      // Remove the skip when the test is ready.
+      await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, axeUtils);
+      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, axeUtils);
+      await caseDetailsPage.assertTabData(migratedGeneralApplicationDirectionsTabDataOnHearing1);
     }
   );
 
-  test.skip(
+  // non-prod only
+  test(
     'Paper case shows old-style General Application Direction hearings on the new hearing tab',
     { tag: [] },
-    async () => {
+    async ({
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        generalApplicationDirectionsPage,
+        blankPage,
+        axeUtils,
+      },
+      testInfo) => {
       const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
-      await ContestedCaseFactory.caseWorkerCreateOldGeneralApplicationDirectionsHearing(caseId);
-      // Next:
-      // Check the hearing tab to check that the old hearing data is correctly showing there.
-      // Remove the skip when the test is ready.
+      await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, axeUtils);
+      await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, axeUtils);
+      await caseDetailsPage.assertTabData(migratedGeneralApplicationDirectionsTabDataOnHearing1);
     }
   );
 });

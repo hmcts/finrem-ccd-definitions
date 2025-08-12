@@ -20,7 +20,7 @@ test.describe("Contested - Give Allocation Directions - 'should this case remain
         ) => {
           const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToAllocateJudge(true); // Pass true for express pilot case
           await manageCaseDashboardPage.visit();
-          await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+          await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
           await manageCaseDashboardPage.navigateToCase(caseId);
       
           await caseDetailsPage.selectNextStep(ContestedEvents.giveAllocationDirection);
@@ -80,7 +80,7 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToAllocateJudge(true); // Pass true for express pilot case
       await manageCaseDashboardPage.visit();
-      await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+      await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
     
       await caseDetailsPage.selectNextStep(ContestedEvents.giveAllocationDirection);
@@ -96,15 +96,17 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
         loginPage,
         manageCaseDashboardPage,
         caseDetailsPage,
-        allocationDirectionsCourtSelectionPage
-      },
+        allocationDirectionsCourtSelectionPage,
+        axeUtils
+      },testInfo
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToAllocateJudge(false); // Pass false or leave blank for non-express pilot case
       await manageCaseDashboardPage.visit();
-      await loginPage.login(config.judge.email, config.judge.password, config.manageCaseBaseURL);
+      await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
     
       await caseDetailsPage.selectNextStep(ContestedEvents.giveAllocationDirection);
+      await axeUtils.audit();
       await allocationDirectionsCourtSelectionPage.verifyAbsenceOfExpressPilotWarningMessage();
     }
   );

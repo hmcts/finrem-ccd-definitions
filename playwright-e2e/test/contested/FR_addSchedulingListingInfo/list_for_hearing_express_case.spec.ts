@@ -2,6 +2,8 @@ import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
+import {DateHelper} from "../../../data-utils/DateHelper.ts";
+import {AxeUtils} from "../../../fixtures/utils/axe-utils.ts";
 
 async function performListForHearingFlow(
   caseId: string,
@@ -10,7 +12,7 @@ async function performListForHearingFlow(
   caseDetailsPage: any,
   listForHearingPage: any,
   testInfo: any,
-  makeAxeBuilder: any
+  axeUtils: AxeUtils
 ): Promise<void> {
   const hearingType = "Final Hearing (FH)";
   const courtName = "CHESTERFIELD COUNTY COURT";
@@ -26,22 +28,13 @@ async function performListForHearingFlow(
   await listForHearingPage.verifyHearingDateGuidanceMessages();
   await listForHearingPage.enterHearingTime('10:00');
   await listForHearingPage.selectCourtForHearing(courtName);
+  await axeUtils.audit();
   await listForHearingPage.navigateContinue();
   await listForHearingPage.navigateSubmit();
   await listForHearingPage.verifyHearingDateWarningMessage('expressPilot');
+  await axeUtils.audit();
 
   await caseDetailsPage.checkHasBeenUpdated('List for Hearing');
-
-  if (config.run_accessibility) {
-    const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-    await testInfo.attach('accessibility-scan-results', {
-      body: JSON.stringify(accessibilityScanResults, null, 2),
-      contentType: 'application/json'
-    });
-
-    expect(accessibilityScanResults.violations).toEqual([]);
-  }
 }
 
 test.describe('Contested - List for Hearing express case', () => {
@@ -54,12 +47,12 @@ test.describe('Contested - List for Hearing express case', () => {
         manageCaseDashboardPage,
         caseDetailsPage,
         listForHearingPage,
-        makeAxeBuilder,
+        axeUtils,
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing(true);
-      await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing(true, DateHelper.getCurrentDate());
+      await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, axeUtils);
     }
   );
 
@@ -72,12 +65,12 @@ test.describe('Contested - List for Hearing express case', () => {
         manageCaseDashboardPage,
         caseDetailsPage,
         listForHearingPage,
-        makeAxeBuilder,
+        axeUtils,
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.createAndProcessPaperCaseUpToProgressToListing(true);
-      await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, makeAxeBuilder);
+      const caseId = await ContestedCaseFactory.createAndProcessPaperCaseUpToProgressToListing(true, DateHelper.getCurrentDate());
+      await performListForHearingFlow(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, listForHearingPage, testInfo, axeUtils);
     }
   );
 });

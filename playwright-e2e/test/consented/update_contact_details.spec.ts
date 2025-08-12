@@ -19,8 +19,9 @@ test(
         manageCaseDashboardPage,
         caseDetailsPage,
         updateContactDetailsPage,
-        createCaseCheckYourAnswersPage
-      },
+        createCaseCheckYourAnswersPage,
+
+      }
     ) => {
       // Create case and progress to HWF decision made
       const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
@@ -30,7 +31,7 @@ test(
 
       // Login as caseworker
       await manageCaseDashboardPage.visit();
-      await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Update contact details
@@ -63,20 +64,22 @@ test(
         manageCaseDashboardPage,
         caseDetailsPage,
         updateContactDetailsPage,
-        checkYourAnswersPage
-      }) => {
+        checkYourAnswersPage,
+        axeUtils
+      }, testInfo) => {
       // Create case and progress to HWF decision made
       const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
 
       // Login as caseworker
       await manageCaseDashboardPage.visit();
-      await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Update contact details
       await caseDetailsPage.selectNextStep(ConsentedEvents.updateContactDetails);
       await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(true);
       await updateContactDetailsPage.checkApplicantRepresented(true);
+      await axeUtils.audit();
       await updateContactDetailsPage.navigateContinue();
       await updateContactDetailsPage.specifySolicitorName('Test Baggins'); 
       await updateContactDetailsPage.navigateContinue();
@@ -102,6 +105,7 @@ test(
       await updateContactDetailsPage.clickFindAddressButton();
       await updateContactDetailsPage.selectAddress('10 Selsdon Road, London');
       await updateContactDetailsPage.selectRespondentInRefuge(true);
+      await axeUtils.audit();
       await updateContactDetailsPage.navigateContinue();
 
       //Continue about to submit and check your answers
