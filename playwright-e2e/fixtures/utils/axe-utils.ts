@@ -120,7 +120,7 @@ export class AxeUtils {
       contentType: 'text/html',
     });
 
-    this.resultsList = []; // reset for next test
+    this.resultsList = [];
   }
 
   private getUpdatedHtmlReport(htmlReport: string, unique: string) {
@@ -131,7 +131,6 @@ export class AxeUtils {
       .replace(/aria-controls="passes"/g, `aria-controls="passes${unique}"`)
       .replace(/id="passes"/g, `id="passes${unique}"`)
       .replace(/aria-labelledby="headingOne"/g, `aria-labelledby="headingOne${unique}"`)
-      // Repeat for incomplete, inapplicable, rules sections...
       .replace(/id="accordionIncomplete"/g, `id="accordionIncomplete${unique}"`)
       .replace(/id="headingTwo"/g, `id="headingTwo${unique}"`)
       .replace(/data-target="#incomplete"/g, `data-target="#incomplete${unique}"`)
