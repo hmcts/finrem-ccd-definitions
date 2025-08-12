@@ -155,7 +155,6 @@ test.describe('Contested - List for Interim Hearings', () => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACase();
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performListForInterimHearingsFlow(caseDetailsPage, listForInterimHearingPage, testInfo, axeUtils)
-      await axeUtils.finalizeReport(testInfo);
     }
   );
 
@@ -179,7 +178,6 @@ test.describe('Contested - List for Interim Hearings', () => {
       await performListForInterimHearingsFlow(caseDetailsPage, listForInterimHearingPage, testInfo, axeUtils)
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, axeUtils);
       await caseDetailsPage.assertTabData(migratedListForInterimHearingsTabDataOnHearing);
-      await axeUtils.finalizeReport(testInfo);
     }
   );
 
@@ -199,7 +197,6 @@ test.describe('Contested - List for Interim Hearings', () => {
       const caseId = await ContestedCaseFactory.createBaseContestedPaperCase();
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performListForInterimHearingsFlow(caseDetailsPage, listForInterimHearingPage, testInfo, axeUtils);
-      await axeUtils.finalizeReport(testInfo);
     }
   );
 });

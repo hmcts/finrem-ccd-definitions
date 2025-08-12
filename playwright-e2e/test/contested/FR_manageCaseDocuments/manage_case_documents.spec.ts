@@ -31,7 +31,6 @@ test.describe('Contested Manage Case Documents', () => {
             await manageCaseDocumentsPage.navigateContinue();
             await manageCaseDocumentsPage.checkAnswersPage();
             await manageCaseDocumentsPage.navigateSubmit();
-            await axeUtils.finalizeReport(testInfo);
         }
     );
 });

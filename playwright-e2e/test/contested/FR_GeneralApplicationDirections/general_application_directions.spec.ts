@@ -65,7 +65,6 @@ test.describe('Contested - General Application Directions', () => {
       await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, axeUtils);
-      await axeUtils.finalizeReport(testInfo);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
     }
@@ -88,7 +87,6 @@ test.describe('Contested - General Application Directions', () => {
       await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
       await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, axeUtils);
-      await axeUtils.finalizeReport(testInfo);
       // Next:
       // When add hearing complete, then use that page structure to build and test from this point
     }
@@ -114,7 +112,6 @@ test.describe('Contested - General Application Directions', () => {
       await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, axeUtils);
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, axeUtils);
       await caseDetailsPage.assertTabData(migratedGeneralApplicationDirectionsTabDataOnHearing1);
-      await axeUtils.finalizeReport(testInfo);
     }
   );
 
@@ -137,7 +134,6 @@ test.describe('Contested - General Application Directions', () => {
       await performGeneralApplicationDirectionsFlow(caseDetailsPage, generalApplicationDirectionsPage, testInfo, axeUtils);
       await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, axeUtils);
       await caseDetailsPage.assertTabData(migratedGeneralApplicationDirectionsTabDataOnHearing1);
-      await axeUtils.finalizeReport(testInfo);
     }
   );
 });

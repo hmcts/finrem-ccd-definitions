@@ -57,7 +57,6 @@ test.describe('Contested - Approved and Send Order', () => {
 
     // Assert Order tab data
     await caseDetailsPage.assertTabData(contestedSendOrderTabData);
-    await axeUtils.finalizeReport(testInfo);
     }
   );
 });
