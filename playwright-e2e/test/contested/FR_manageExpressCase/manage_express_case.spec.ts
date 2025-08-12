@@ -28,7 +28,6 @@ test.describe('Contested - Manage Express Case', () => {
       await manageExpressCasePage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated('Manage Express Case');
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Withdrawn'] }]);
-      await axeUtils.finalizeReport(testInfo);
     }
   );
 

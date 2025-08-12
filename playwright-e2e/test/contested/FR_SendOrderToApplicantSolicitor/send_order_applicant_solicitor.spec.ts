@@ -56,7 +56,6 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
             await checkYourAnswersPage.assertCheckYourAnswersPage(sendOrderTableData);
             await contestedSendOrderPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.contestedSendOrder.listItem);
-            await axeUtils.finalizeReport(testInfo);
         }
     );
 });

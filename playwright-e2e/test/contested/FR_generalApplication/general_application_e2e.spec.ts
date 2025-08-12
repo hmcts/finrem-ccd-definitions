@@ -79,7 +79,6 @@ test.describe('Contested General Application e2e', () => {
 
             // Assert tab data - General Applications
             await caseDetailsPage.assertTabData(contestedGeneralApplicationTabData);
-                await axeUtils.finalizeReport(testInfo);
         }
     );
 });

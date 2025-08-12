@@ -128,7 +128,6 @@ test.describe('Contested - Upload Draft Order', () => {
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.assertTabData(approved_upload_draft_order_tabs);
-      await axeUtils.finalizeReport(testInfo);
     }
   );
 

@@ -122,6 +122,5 @@ test.describe('Contested - Manage Interveners', () => {
             await manageIntervenersPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageInterveners.listItem);
             await caseDetailsPage.assertTabNotPresent('Intervener 1');
-            await axeUtils.finalizeReport(testInfo);
     });
 });
