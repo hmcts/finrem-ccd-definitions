@@ -7,8 +7,10 @@ type AxeFixture = {
 };
 
 export const test = base.extend<AxeFixture>({
-  axeUtils: async ({ page }, use) => {
-    await use(new AxeUtils(page));
+  axeUtils: async ({ page }, use, testInfo) => {
+    const axeUtils = new AxeUtils(page);
+    await use(axeUtils);
+    await axeUtils.generateReport(testInfo);
   }
 });
 export { expect } from '@playwright/test';

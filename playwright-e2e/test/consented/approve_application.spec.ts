@@ -81,6 +81,5 @@ test(
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.sendOrder.listItem);
 
     await manageCaseDashboardPage.signOut();
-    await axeUtils.finalizeReport(testInfo);
   }
 );
