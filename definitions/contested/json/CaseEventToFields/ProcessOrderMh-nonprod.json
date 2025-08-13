@@ -70,7 +70,7 @@
     "LiveFrom": "24/07/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_processOrder",
-    "CaseFieldID": "processOrderAddHearing",
+    "CaseFieldID": "isAddHearingChosen",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": 2,
@@ -88,7 +88,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "processOrderAddHearing=\"Yes\"",
+    "FieldShowCondition": "isAddHearingChosen=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   }
 ]
