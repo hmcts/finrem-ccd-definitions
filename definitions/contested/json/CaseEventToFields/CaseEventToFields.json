@@ -84,7 +84,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -97,7 +97,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -110,7 +110,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -123,7 +123,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -136,7 +136,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -149,7 +149,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -162,7 +162,7 @@
     "PageID": 2,
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
     "RetriesTimeoutURLMidEvent": "3,4,5"
@@ -177,7 +177,7 @@
     "PageID": 2,
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -190,7 +190,7 @@
     "PageID": 2,
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -203,7 +203,7 @@
     "PageID": 2,
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -216,7 +216,7 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "applicantRepresented=\"Yes\" OR  isAdmin=\"No\"",
+    "FieldShowCondition": "applicantRepresented=\"Yes\" OR isAdmin=\"No\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -3941,7 +3941,9 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4284,7 +4286,9 @@
     "PageID": 4,
     "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4467,7 +4471,9 @@
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4479,8 +4485,7 @@
     "PageID": 7,
     "PageDisplayOrder": 7,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/amend-application-validate-respondent-solicitor"
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "01/10/2020",
@@ -9578,7 +9583,9 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "PageShowCondition": "currentUserCaseRoleLabel=\"APPSOLICITOR\""
+    "PageShowCondition": "currentUserCaseRoleLabel=\"APPSOLICITOR\"",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
