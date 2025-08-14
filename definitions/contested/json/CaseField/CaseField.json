@@ -8501,6 +8501,13 @@
     "ID": "processOrderAddHearing",
     "Label": "Do you want to add a hearing?",
     "FieldType": "YesOrNo",
+    "LiveFrom": "18/07/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApprovedOrderCollection",
+    "Label": "Upload approved order",
+    "HintText": "You must upload Microsoft Word documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example “JonesFDA11Jul24”",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_draftDirectionOrder",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }

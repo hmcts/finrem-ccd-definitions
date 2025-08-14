@@ -709,86 +709,6 @@
   {
     "LiveFrom": "01/06/2022",
     "ID": "FR_ct_draftDirectionDetailsCollection",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "listingInstructor",
-    "DisplayContext": "OPTIONAL"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_ct_draftDirectionDetailsCollection",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "isThisFinalYN",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_ct_draftDirectionDetailsCollection",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "isAnotherHearingYN",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_ct_draftDirectionDetailsCollection",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "typeOfHearing",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_ct_draftDirectionDetailsCollection",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "timeEstimate",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_ct_draftDirectionDetailsCollection",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "additionalTime",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_ct_draftDirectionDetailsCollection",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "localCourt",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_ct_draftDirectionDetailsCollection",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "nottinghamList",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_ct_draftDirectionDetailsCollection",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "cfcList",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_ct_draftDirectionDetailsCollection",
-    "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "nottinghamList",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "ID": "FR_ct_draftDirectionDetailsCollection",
     "CaseEventID": "FR_draftOrderApproved",
     "CaseFieldID": "draftDirectionDetailsCollection",
     "ListElementCode": "listingInstructor",
@@ -4443,20 +4363,100 @@
   },
   {
     "LiveFrom": "29/01/2025",
-    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionOrderCollection",
+    "ID": "FR_judgeDraftDirectionOrder_to_judgeApprovedOrderCollection",
     "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionOrderCollection",
+    "CaseFieldID": "judgeApprovedOrderCollection",
     "ListElementCode": "uploadDraftDocument",
     "EventElementLabel": "Upload Approved Document",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "29/01/2025",
-    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionOrderCollection",
+    "ID": "FR_judgeDraftDirectionOrder_to_judgeApprovedOrderCollection",
     "CaseEventID": "FR_judgeDraftDirectionOrder",
-    "CaseFieldID": "draftDirectionOrderCollection",
+    "CaseFieldID": "judgeApprovedOrderCollection",
     "ListElementCode": "additionalDocuments",
     "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionDetailsCollection",
+    "ListElementCode": "listingInstructor",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionDetailsCollection",
+    "ListElementCode": "isThisFinalYN",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionDetailsCollection",
+    "ListElementCode": "isAnotherHearingYN",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionDetailsCollection",
+    "ListElementCode": "typeOfHearing",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionDetailsCollection",
+    "ListElementCode": "timeEstimate",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionDetailsCollection",
+    "ListElementCode": "additionalTime",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionDetailsCollection",
+    "ListElementCode": "localCourt",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionDetailsCollection",
+    "ListElementCode": "nottinghamList",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionDetailsCollection",
+    "ListElementCode": "cfcList",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "draftDirectionDetailsCollection",
+    "ListElementCode": "nottinghamList",
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "29/01/2025",
