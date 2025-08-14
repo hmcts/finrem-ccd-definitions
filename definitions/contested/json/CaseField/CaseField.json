@@ -8501,6 +8501,10 @@
     "ID": "processOrderAddHearing",
     "Label": "Do you want to add a hearing?",
     "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "18/07/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "judgeApprovedOrderCollection",
