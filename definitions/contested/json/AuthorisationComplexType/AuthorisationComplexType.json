@@ -1502,5 +1502,21 @@
     "ListElementCode": "value",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "21/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingDocumentsCollection",
+    "ListElementCode": "hearingDocument",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "17/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingDocumentsCollection",
+    "ListElementCode": "hearingCaseDocumentType",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "RU"
   }
 ]
