@@ -64,7 +64,7 @@ test(
     await caseDetailsPage.selectNextStep(ConsentedEvents.uploadApprovedOrder);
     await approveApplicationPage.selectIsSubjectTo(true)
     await approveApplicationPage.selectIsPensionProvider(false);
-    await approveApplicationPage.selectJudge('District Judge')
+    await approveApplicationPage.selectJudge('District Judge');
     await approveApplicationPage.uploadConsentOrderFile('./playwright-e2e/resources/file/test.pdf');
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();

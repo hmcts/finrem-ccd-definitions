@@ -1,0 +1,76 @@
+import { expect, test } from '../../../fixtures/fixtures.ts';
+import config from '../../../config/config.ts';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
+import { CommonEvents, ContestedEvents } from '../../../config/case-data.ts';
+import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
+import { migratedGeneralApplicationDirectionsTabDataOnHearing1 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import {AxeUtils} from "../../../fixtures/utils/axe-utils.ts";
+
+async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+}
+
+async function performUploadApprovedOrderFlow(
+  caseDetailsPage: any,
+  uploadApprovedOrderPage: any,
+  testInfo: any,
+  axeUtils: AxeUtils
+): Promise<void> {
+  await caseDetailsPage.selectNextStep(CommonEvents.uploadApprovedOrder);
+  await uploadApprovedOrderPage.uploadFirstUploadApprovedOrder();
+  await uploadApprovedOrderPage.navigateContinue();
+  await uploadApprovedOrderPage.selectJudge('District Judge');
+  await uploadApprovedOrderPage.enterJudgeName('District Judge Smith');
+  await uploadApprovedOrderPage.enterCourtOrderDate('01', '01', '2022');
+  await uploadApprovedOrderPage.navigateContinue();
+  await uploadApprovedOrderPage.navigateContinue(); // not sure why this is needed second time
+  await uploadApprovedOrderPage.addNewAdditionalHearingDetails();
+  await uploadApprovedOrderPage.selectFirstFinalOrder(YesNoRadioEnum.YES);
+  await uploadApprovedOrderPage.selectFirstIsAnotherHearing(YesNoRadioEnum.YES);
+  await uploadApprovedOrderPage.enterFirstTimeEstimate('30 minutes');
+  await uploadApprovedOrderPage.enterFirstHearingTime('10:00');
+  await uploadApprovedOrderPage.enterHearingDate('01', '01', '2022');
+  await uploadApprovedOrderPage.navigateContinue();
+
+  //Next, continue tests to drive through new hearing creation
+
+}
+
+async function performManageHearingsMigration(
+  caseDetailsPage: any,
+  blankPage: any,
+  testInfo: any,
+  axeUtils: any
+): Promise<void> {
+
+  await caseDetailsPage.selectNextStep(ContestedEvents.manageHearingsMigration);
+  await axeUtils.audit();
+  await blankPage.navigateSubmit();
+  await caseDetailsPage.checkHasBeenUpdated('(Migration) Manage Hearings');
+}
+
+test.describe('Contested - Upload Approved Order (caseworker)', () => {
+  test(
+    'Form A case shows old-style hearings created by upload approved order event on the new hearing tab',
+    { tag: [] },
+    async ({
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        uploadApprovedOrderPage,
+        blankPage,
+        axeUtils,
+      },
+      testInfo
+    ) => {
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performUploadApprovedOrderFlow(caseDetailsPage, uploadApprovedOrderPage, testInfo, axeUtils);
+      //await performManageHearingsMigration(caseDetailsPage, blankPage, testInfo, axeUtils);
+      //await caseDetailsPage.assertTabData(migratedGeneralApplicationDirectionsTabDataOnHearing1);
+    }
+  );
+});
