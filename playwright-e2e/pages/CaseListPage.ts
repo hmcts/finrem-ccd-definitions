@@ -45,7 +45,7 @@ export class CaseListPage extends BaseJourneyPage {
 
     async selectJurisdiction() {
         await expect(this.jurisdictionSelect).toBeVisible();
-        await this.jurisdictionSelect.selectOption({ label: 'Family Divorce' });
+        await this.jurisdictionSelect.selectOption({ label: config.jurisdiction.familyDivorce });
     }
 
     async selectCaseType(caseType: string) {
