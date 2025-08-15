@@ -18,6 +18,9 @@ const configuration = {
   manageOrgBaseURL:
     process.env.XUI_ORG_WEB_URL || `https://manage-org.${env}.platform.hmcts.net`,
 
+  manageOrgAPIBaseURL:
+    process.env.MANAGE_ORG_API_BASE_URL || `http://aac-manage-case-assignment-${env}.service.core-compute-${env}.internal`,
+
   run_accessibility: 
     process.env.TESTS_FOR_ACCESSIBILITY || false,
 

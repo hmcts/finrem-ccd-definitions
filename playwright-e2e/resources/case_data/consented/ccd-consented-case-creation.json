@@ -7,13 +7,13 @@
       "PrepopulateToUsersOrganisation": null,
       "LastNoCRequestedBy": null,
       "Organisation": {
-        "OrganisationID": "Y707HZM",
+        "OrganisationID": "ORG_ID_1",
         "OrganisationName": "FinRem-1-Org"
       },
       "PreviousOrganisations": []
     },
     "solicitorFirm": "FinRem-1-Org",
-    "solicitorReference": "Y707HZM",
+    "solicitorReference": "ORG_ID_1",
     "solicitorAddress": {
       "AddressLine1": "3rd Floor, 65-68 Leadenhall St",
       "AddressLine2": null,
@@ -31,8 +31,8 @@
     "civilPartnership": "No",
     "divorceStageReached": "Decree Nisi",
     "divorceUploadEvidence1": {
-      "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/1011d179-4d65-420b-85d7-2c6387016a31",
-      "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/1011d179-4d65-420b-85d7-2c6387016a31/binary",
+      "document_url": "DOCUMENT_URL",
+      "document_binary_url": "DOCUMENT_BINARY_URL",
       "document_filename": "test.pdf"
     },
     "divorceDecreeNisiDate": "2024-01-01",
@@ -77,14 +77,14 @@
     "consentVariationOrderLabelC": "Consent Order",
     "otherDocLabel": "Upload other order documentation related to your application",
     "consentOrder": {
-      "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f122aad2-918b-49c3-b892-482d8f97c485",
-      "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f122aad2-918b-49c3-b892-482d8f97c485/binary",
+      "document_url": "DOCUMENT_URL",
+      "document_binary_url": "DOCUMENT_BINARY_URL",
       "document_filename": "test.pdf"
     },
     "d81Question": "Yes",
     "d81Joint": {
-      "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/2e9c5509-c2bc-41aa-a158-1d20cf4674d5",
-      "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/2e9c5509-c2bc-41aa-a158-1d20cf4674d5/binary",
+      "document_url": "DOCUMENT_URL",
+      "document_binary_url": "DOCUMENT_BINARY_URL",
       "document_filename": "test.pdf"
     },
     "otherCollection": []

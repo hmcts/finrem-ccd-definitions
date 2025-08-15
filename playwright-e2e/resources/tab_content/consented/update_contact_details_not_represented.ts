@@ -1,3 +1,5 @@
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
+
 export const updateRespondentNonRepresentedContactDetailsTabData = [
   {
     tabName: 'Applicant',
@@ -11,7 +13,7 @@ export const updateRespondentNonRepresentedContactDetailsTabData = [
     "SOLICITOR DETAILS",
       { tabItem: "Solicitor’s name", value: "Test Baggins" },
       { tabItem: "Name of your firm", value: "FinRem-1-Org" },
-      { tabItem: "Your reference", value: "Y707HZM" },
+      { tabItem: "Your reference", value: envTestData.ORG_ID_1 },
     ]
   },
   {
