@@ -13,7 +13,7 @@ export class CaseAssignmentApi {
         caseType: CaseTypeEnum
         ): Promise<void> {
 
-        const caseAssignmentUrl = `${process.env.MANAGE_ORG_API_BASE_URL}/case-assignments`;
+        const caseAssignmentUrl = `${config.manageOrgAPIBaseURL}/case-assignments`;
         const orgAuthToken = await getUserToken(orgCredential.email, orgCredential.password);
         const userAuthToken = await getUserToken(userToAssign.email, userToAssign.password);
 

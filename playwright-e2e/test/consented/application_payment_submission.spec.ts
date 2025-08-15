@@ -4,6 +4,7 @@ import { ConsentedEvents } from '../../config/case-data';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
 import {YesNoRadioEnum} from "../../pages/helpers/enums/RadioEnums.ts";
 import {applicationCaseSubmission} from "../../pages/helpers/PaymentSubmissionHelper.ts";
+import {envTestData} from "../../data-utils/test_data/EnvTestDataConfig.ts";
 
 test(
     'Consented - Application Payment Submission',
@@ -25,7 +26,7 @@ test(
         const caseId = await ConsentedCaseFactory.createConsentedCase();
 
         // Define common test data
-        const pbaNumber = "PBA0089162";
+        const pbaNumber = envTestData.PBA_NUMBER;
         const reference = "Reference";
         const hasHelpWithFees = YesNoRadioEnum.NO;
 

@@ -1,3 +1,5 @@
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
+
 export const createCaseTabData = [
     {
       tabName: 'Applicant',
@@ -6,7 +8,7 @@ export const createCaseTabData = [
         { tabItem: "Current First and Middle names", value: "Frodo" },
         { tabItem: "Current Last Name", value: "Baggins" },
         "SOLICITOR DETAILS",
-        { tabItem: "Your reference", value: "Y707HZM" },
+        { tabItem: "Your reference", value: envTestData.ORG_ID_1 },
         { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
         { tabItem: "Name of your firm", value: "FinRem-1-Org" },
       ]
@@ -45,7 +47,7 @@ export const createCaseTabDataPreview = [
         { tabItem: "Current First and Middle names", value: "Frodo" },
         { tabItem: "Current Last Name", value: "Baggins" },
         "SOLICITOR DETAILS",
-        { tabItem: "Your reference", value: "Y707HZM" },
+        { tabItem: "Your reference", value: envTestData.ORG_ID_1 },
         { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
         { tabItem: "Name of your firm", value: "FinRem-1-Org" },
       ]
@@ -83,7 +85,7 @@ export const createCaseTabDataPreview = [
         { tabItem: "Keep the Applicant's contact details private from the Respondent?", value: "Yes" },
         { tabItem: "Is the Applicant currently a resident in a refuge?", value: "Yes" },
         "Solicitor Details",
-        { tabItem: "Your reference number", value: "Y707HZM" },
+        { tabItem: "Your reference number", value: envTestData.ORG_ID_1 },
         { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
         { tabItem: "Solicitor’s firm", value: "FinRem-1-Org" },
         "Under paragraph 1 or 2 of schedule 1 children act 1989"
