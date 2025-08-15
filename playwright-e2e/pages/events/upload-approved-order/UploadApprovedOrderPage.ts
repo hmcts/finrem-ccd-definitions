@@ -91,6 +91,7 @@ export class UploadApprovedOrderPage extends BaseJourneyPage {
         await this.courtDayDetails.fill(day);
         await this.courtMonthDetails.fill(month);
         await this.courtYearDetails.fill(year);
+        await this.blurCourtOrderDateInput();
     }
 
     async selectFirstFinalOrder(yesOrNo: YesNoRadioEnum) {
@@ -109,6 +110,12 @@ export class UploadApprovedOrderPage extends BaseJourneyPage {
 
     async enterFirstHearingTime(hearingTime: string) {
         await this.firstHearingTimeField.fill(hearingTime);
+    }
+
+    async blurCourtOrderDateInput() {
+        await this.courtDayDetails.blur();
+        await this.courtMonthDetails.blur();
+        await this.courtYearDetails.blur();
     }
 
     async enterHearingDate(day: string, month: string, year: string) {

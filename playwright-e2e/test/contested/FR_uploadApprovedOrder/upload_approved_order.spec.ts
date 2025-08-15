@@ -25,7 +25,6 @@ async function performUploadApprovedOrderFlow(
   await uploadApprovedOrderPage.enterJudgeName('District Judge Smith');
   await uploadApprovedOrderPage.enterCourtOrderDate('01', '01', '2022');
   await uploadApprovedOrderPage.navigateContinue();
-  await uploadApprovedOrderPage.navigateContinue(); // not sure why this is needed second time
   await uploadApprovedOrderPage.addNewAdditionalHearingDetails();
   await uploadApprovedOrderPage.selectFirstFinalOrder(YesNoRadioEnum.YES);
   await uploadApprovedOrderPage.selectFirstIsAnotherHearing(YesNoRadioEnum.YES);
