@@ -26,6 +26,8 @@ export class UploadApprovedOrderPage extends BaseJourneyPage {
     private readonly firstHearingDateFieldDay: Locator;
     private readonly firstHearingDateFieldMonth: Locator;
     private readonly firstHearingDateFieldYear: Locator;
+    private readonly firstHearingCourtZoneDropDown: Locator;
+    private readonly firstHearingTypeDropDown: Locator;
 
     private static readonly DOCUMENT_FORMAT_ERROR_MESSAGE = "Document format is not supported";
     
@@ -51,6 +53,8 @@ export class UploadApprovedOrderPage extends BaseJourneyPage {
         this.firstHearingDateFieldDay = page.locator('#dateOfHearing-day');
         this.firstHearingDateFieldMonth = page.locator('#dateOfHearing-month');
         this.firstHearingDateFieldYear = page.locator('#dateOfHearing-year');
+        this.firstHearingCourtZoneDropDown = page.locator('#hearingDirectionDetailsCollection_0_localCourt_region');
+        this.firstHearingTypeDropDown = page.locator('#hearingDirectionDetailsCollection_0_typeOfHearing');
     }
 
     private async uploadFile(locator: Locator, errorLocator: Locator, uploadFilePath: string, success: boolean): Promise<void> {
@@ -111,5 +115,22 @@ export class UploadApprovedOrderPage extends BaseJourneyPage {
         await this.firstHearingDateFieldDay.fill(day);
         await this.firstHearingDateFieldMonth.fill(month);
         await this.firstHearingDateFieldYear.fill(year);
+    }
+
+    private readonly courtRegion: string = 'Midlands'
+    private readonly courtFrc: string = 'Birmingham'
+
+    async selectCourtZoneDropDown(localCourt: string) {
+        await this.firstHearingCourtZoneDropDown.selectOption(this.courtRegion);
+        const frcDropDown = this.page.locator(`#hearingDirectionDetailsCollection_0_localCourt_${this.courtRegion.toLowerCase()}List`);
+        await expect(frcDropDown).toBeVisible();
+        await frcDropDown.selectOption(`${this.courtFrc} FRC`);
+        const courtListDropDown = this.page.locator(`#hearingDirectionDetailsCollection_0_localCourt_${this.courtFrc.toLowerCase()}CourtList`);
+        await expect(courtListDropDown).toBeVisible();
+        await courtListDropDown.selectOption(localCourt);
+    }
+
+    async selectFirstHearingType(hearingType: string) {
+        await this.firstHearingTypeDropDown.selectOption(hearingType);
     }
 }
