@@ -1,4 +1,5 @@
 import { DateHelper } from "../../../data-utils/DateHelper";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 export const createCaseTabData = [
   {
@@ -13,7 +14,7 @@ export const createCaseTabData = [
       { tabItem: "Keep the Applicant's contact details private from the Respondent?", value: "Yes" },
       { tabItem: "Is the Applicant currently a resident in a refuge?", value: "Yes" },
       "Solicitor Details",
-      { tabItem: "Your reference number", value: "Y707HZM" },
+      { tabItem: "Your reference number", value: envTestData.ORG_ID_1 },
       { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
       { tabItem: "Solicitor’s firm", value: "FinRem-1-Org" },
     ]
