@@ -38,7 +38,7 @@ export const contestedApplicantUpdateContactDetailsTableData: Table = {
         { cellItem: "County", value: "Greater London"},
         { cellItem: "Postcode/Zipcode", value: " EC3A 2AD" },
         { cellItem: "Solicitor’s firm", value: "FinRem-1-Org"},
-        { cellItem: "Your reference number", value: "Y707HZM"},
+        { cellItem: "Your reference number", value: envTestData.ORG_ID_1 },
         "Applicant’s Details",
         { cellItem: "Current First and Middle names", value: "Tester case" },
         { cellItem: "Current Last Name", value: "Baggins" },

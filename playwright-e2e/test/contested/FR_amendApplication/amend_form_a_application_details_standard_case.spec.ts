@@ -36,6 +36,7 @@ import {
 import {applicationCaseSubmission} from "../../../pages/helpers/PaymentSubmissionHelper.ts";
 import {YesNoRadioEnum} from "../../../pages/helpers/enums/RadioEnums.ts";
 import {solicitor_amend_case_tabs} from "../../../resources/tab_content/contested/solicitor_amend_case_tabs.ts";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 test.describe('Contested - Form A - Amend application in Standard case', () => {
     test(
@@ -177,7 +178,7 @@ test.describe('Contested - Form A - Amend application in Standard case', () => {
 
             await amendFormAApplicationDetailsPage.navigateSubmit();
 
-            const pbaNumber = "PBA0089162";
+            const pbaNumber = envTestData.PBA_NUMBER;
             const reference = "Reference";
             const hasHelpWithFees = YesNoRadioEnum.NO;
 
