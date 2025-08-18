@@ -100,10 +100,10 @@ def buildPlaywrightCommand(tags, browser) {
 }
 
 withNightlyPipeline(type, product, component) {
-    env.CCD_WEB_URL = 'https://manage-case.aat.platform.hmcts.net'
-    env.CCD_DATA_API_URL = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal'
-    env.XUI_ORG_WEB_URL = 'https://manage-org.aat.platform.hmcts.net'
-    env.MANAGE_ORG_API_BASE_URL='http://aac-manage-case-assignment-aat.service.core-compute-aat.internal'
+//    env.CCD_WEB_URL = 'https://manage-case.aat.platform.hmcts.net'
+//    env.CCD_DATA_API_URL = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal'
+//    env.XUI_ORG_WEB_URL = 'https://manage-org.aat.platform.hmcts.net'
+//    env.MANAGE_ORG_API_BASE_URL='http://aac-manage-case-assignment-aat.service.core-compute-aat.internal'
     env.NIGHTLY_TEST = 'true'
     env.NODE_ENV = 'ci'
     env.FUNCTIONAL_TESTS_WORKERS = params.FUNCTIONAL_TESTS_WORKERS
