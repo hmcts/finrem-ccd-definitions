@@ -42,7 +42,7 @@ static Map < String, Object > secret(String secretName, String envVariable) {
 }
 
 def secrets = [
-    'finrem-${params.RUNNING_ENV}': [
+    "finrem-${params.RUNNING_ENV}": [
         secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
         secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
         secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
