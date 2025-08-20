@@ -44,6 +44,7 @@ test(
     await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
+    // Assign to Judge
     await caseDetailsPage.selectNextStep(ConsentedEvents.assignToJudgeConsentMade);
     await allocateToJudgePage.verifyAssignToJudgeHeader();
     await allocateToJudgePage.selectAssignToJudgeReason('Draft consent/variation order');
@@ -60,18 +61,20 @@ test(
     await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
     await manageCaseDashboardPage.navigateToCase(caseId);
-
+    
+    // Upload Approved Order as Judge
     await caseDetailsPage.selectNextStep(ConsentedEvents.uploadApprovedOrder);
     await approveApplicationPage.selectIsSubjectTo(true)
     await approveApplicationPage.selectIsPensionProvider(false);
     await approveApplicationPage.selectJudge('District Judge')
-    await approveApplicationPage.uploadConsentOrderFile('./playwright-e2e/resources/file/test.pdf');
+    await approveApplicationPage.uploadConsentOrderFile('consentOrder.pdf');
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.uploadApprovedOrder.listItem);
 
     await manageCaseDashboardPage.signOut();
-
+    
+    // Send Order
     await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     await manageCaseDashboardPage.navigateToCase(caseId);

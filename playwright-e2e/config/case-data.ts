@@ -140,6 +140,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "General Application Directions",
     ccdCallback: "FR_GeneralApplicationDirections"
   },
+  generalAppDirectionsMH: {
+    listItem: "General App Directions (MH)",
+    ccdCallback: "FR_GeneralApplicationDirectionsMH"
+  },
   createGeneralApplication: {
     listItem: "Create General Application",
     ccdCallback: "createGeneralApplication"
