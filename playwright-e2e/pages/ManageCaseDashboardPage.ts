@@ -25,6 +25,8 @@ export class ManageCaseDashboardPage {
   }
 
   async visit(){
+    console.log(process.env.RUNNING_ENV)
+    console.log(this.url)
     await this.page.goto(`${this.url}`);
     // await this.clearCookies(); Causing flaky tests, commenting out for now
   }
