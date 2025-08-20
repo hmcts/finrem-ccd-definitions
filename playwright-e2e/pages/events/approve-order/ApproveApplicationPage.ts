@@ -36,8 +36,9 @@ export class ApproveApplicationPage extends BaseJourneyPage {
         await this.judgeDropDown.selectOption(judge); 
     }
 
-    async uploadConsentOrderFile(filePath: string) {
-        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadConsentOrderFileUpload, filePath);
+    async uploadConsentOrderFile(documentName: string) {
+        const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadConsentOrderFileUpload, filePayload);
     }
 
 }
