@@ -1,5 +1,6 @@
 import { test as base } from '@playwright/test';
 import { SigninPage } from '../pages/SigninPage';
+import { BlankPage } from '../pages/BlankPage.ts';
 import { CommonActionsHelper } from '../pages/helpers/CommonActionsHelper';
 import { SolicitorDetailsHelper } from '../pages/helpers/SolicitorDetailsHelper';
 
@@ -54,12 +55,33 @@ import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/Uploa
 import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
 import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
 import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
-import {AddNotePage} from '../pages/events/add-note/AddNotePage.ts';
+import { AddNotePage} from '../pages/events/add-note/AddNotePage';
+import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateToJudgePage';
+import { EventSummaryPage } from '../pages/events/EventSummaryPage';
+import { RefundPage } from '../pages/events/refund/RefundPage';
+import { ManageBarristerPage } from '../pages/events/manage-barrister/ManageBarristerPage';
+import { PrepareForHearingPage } from '../pages/events/prepare-for-hearing/PrepareForHearingPage.ts';
+import { CreateGeneralOrderPage } from '../pages/events/create-general-order/CreateGeneralOrderPage.ts';
+import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage.ts';
+import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage.ts';
+import {CaseListPage} from '../pages/CaseListPage.ts';
+import { ReferToJudgeApplicationPage } from '../pages/events/refer-to-judge-application/ReferToJudgeApplicationPage.ts';
+import { GeneralApplicationOutcomePage } from '../pages/events/general-application-outcome/GeneralApplicationOutcomePage.ts';
+import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
+import { ProcessOrderPage } from '../pages/events/process-order/ProcessOrderPage.ts';
+import { CreateGeneralEmailPage } from '../pages/events/create-general-email/CreateGeneralEmailPage.ts';
+import { SubmitUploadedCaseFilesPage } from '../pages/events/submit-uploaded-case-files/SubmitUploadedCaseFilesPage.ts';
+import { UnprocessedApprovedOrdersPage } from '../pages/events/process-order/UnprocessedApprovedOrdersPage.ts';
+import { ProcessOrderHearingDetailsPage } from '../pages/events/process-order/ProcessOrderHearingDetailsPage.ts';
+import {ConsentApplicationApprovedPage} from '../pages/events/consent-application/ConsentApplicationApprovedPage.ts';
+import {ConsentOrderNotApprovedPage} from '../pages/events/consent-application/ConsentOrderNotApprovedPage.ts';
+import { GeneralApplicationDirectionsMHPage } from '../pages/events/general-application-directions/GeneralApplicationDirectionsMHPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
 
 type CreateFixtures = {
+  blankPage: BlankPage;
   loginPage: SigninPage;
   createCasePage: CreateCasePage;
   startPage: StartPage;
@@ -109,15 +131,38 @@ type CreateFixtures = {
   manageFlagPage: ManageFlagPage;
   generalApplicationDirectionsPage: GeneralApplicationDirectionsPage;
   uploadDraftOrdersPage: UploadDraftOrdersPage;
+  unprocessedApprovedOrdersPage: UnprocessedApprovedOrdersPage;
+  processOrderHearingDetailsPage: ProcessOrderHearingDetailsPage;
   manageCaseDocumentsPage: ManageCaseDocumentsPage;
   manageHearingPage: ManageHearingPage;
   checkYourAnswersPage: CheckYourAnswersPage;
   addNotePage: AddNotePage;
+  allocateToJudgePage: AllocateToJudgePage;
+  eventSummaryPage: EventSummaryPage;
+  refundPage: RefundPage;
+  manageBarristerPage: ManageBarristerPage;
+  prepareForHearingPage: PrepareForHearingPage;
+  createGeneralOrderPage: CreateGeneralOrderPage;
+  contestedSendOrderPage: ContestedSendOrderPage;
+  manageIntervenersPage: ManageIntervenerPage;
+  caseListPage: CaseListPage;
+  referToJudgeApplicationPage: ReferToJudgeApplicationPage;
+  generalApplicationOutcomePage: GeneralApplicationOutcomePage;
+  approvedOrderPage: ApproveOrderPage;
+  processOrderPage: ProcessOrderPage;
+  createGeneralEmailPage: CreateGeneralEmailPage;
+  submitUploadedCaseFilesPage : SubmitUploadedCaseFilesPage;
+  consentApplicationApprovePage: ConsentApplicationApprovedPage;
+  consentOrderNotApprovedPage: ConsentOrderNotApprovedPage;
+  generalApplicationDirectionsMHPage: GeneralApplicationDirectionsMHPage;
 };
 
 export const test = base.extend<CreateFixtures>({
   loginPage: async ({ page }, use) => {
     await use(new SigninPage(page));
+  },
+  blankPage: async ({ page }, use) => {
+    await use(new BlankPage(page));
   },
   createCasePage: async ({ page }, use) => {
     await use(new CreateCasePage(page));
@@ -210,10 +255,10 @@ export const test = base.extend<CreateFixtures>({
     await use(new IssueApplicationPage(page));
   },
   approveApplicationPage: async ({ page }, use) => {
-    await use(new ApproveApplicationPage(page));
+    await use(new ApproveApplicationPage(page, commonActionsHelper));
   },
   sendOrderPage: async ({ page }, use) => {
-    await use(new SendOrderPage(page));
+    await use(new SendOrderPage(page, commonActionsHelper));
   },
   expressCaseEnrolledPage: async ({ page }, use) => {
     await use(new ExpressCaseEnrolledPage(page));
@@ -263,6 +308,12 @@ export const test = base.extend<CreateFixtures>({
   uploadDraftOrdersPage: async ({ page }, use) => {
     await use(new UploadDraftOrdersPage(page, commonActionsHelper));
   },
+  unprocessedApprovedOrdersPage: async ({ page }, use) => {
+    await use(new UnprocessedApprovedOrdersPage(page));
+  },
+  processOrderHearingDetailsPage: async ({ page }, use) => {
+    await use(new ProcessOrderHearingDetailsPage(page));
+  },
   manageCaseDocumentsPage: async ({ page }, use) => {
     await use(new ManageCaseDocumentsPage(page, commonActionsHelper));
   },
@@ -274,5 +325,59 @@ export const test = base.extend<CreateFixtures>({
   },
   addNotePage: async ({ page }, use) => {
     await use(new AddNotePage(page));
+  },
+  allocateToJudgePage: async ({ page }, use) => {
+    await use(new AllocateToJudgePage(page, commonActionsHelper));
+  },
+  eventSummaryPage: async ({ page }, use) => {
+    await use(new EventSummaryPage(page));
+  },
+  refundPage: async ({ page }, use) => {
+    await use(new RefundPage(page));
+  },
+  manageBarristerPage: async ({ page }, use) => {
+    await use(new ManageBarristerPage(page));
+  },
+  prepareForHearingPage: async ({ page }, use) => {
+    await use(new PrepareForHearingPage(page));
+  },
+  createGeneralOrderPage: async ({ page }, use) => {
+    await use(new CreateGeneralOrderPage(page, commonActionsHelper));
+  },
+  contestedSendOrderPage: async ({ page }, use) => {
+    await use(new ContestedSendOrderPage(page));
+  },
+  manageIntervenersPage: async ({ page }, use) => {
+    await use(new ManageIntervenerPage(page, solicitorDetailsHelper));
+  },
+  caseListPage: async ({ page }, use) => {
+    await use(new CaseListPage(page));
+  },
+  referToJudgeApplicationPage: async ({ page }, use) => {
+    await use(new ReferToJudgeApplicationPage(page));
+  },
+  generalApplicationOutcomePage: async ({ page }, use) => {
+    await use(new GeneralApplicationOutcomePage(page));
+  },
+  approvedOrderPage: async ({ page }, use) => {
+    await use(new ApproveOrderPage(page));
+  },
+  processOrderPage: async ({ page }, use) => {
+    await use(new ProcessOrderPage(page, commonActionsHelper));
+  },
+  createGeneralEmailPage: async ({ page }, use) => {
+    await use(new CreateGeneralEmailPage(page, commonActionsHelper));
+  },
+  submitUploadedCaseFilesPage: async ({ page }, use) => {
+    await use(new SubmitUploadedCaseFilesPage(page));
+  },
+  consentApplicationApprovePage: async ({ page }, use) => {
+    await use(new ConsentApplicationApprovedPage(page, commonActionsHelper));
+  },
+  consentOrderNotApprovedPage: async ({ page }, use) => {
+    await use(new ConsentOrderNotApprovedPage(page));
+  },
+  generalApplicationDirectionsMHPage: async ({ page }, use) => {
+    await use(new GeneralApplicationDirectionsMHPage(page, commonActionsHelper));
   }
 });

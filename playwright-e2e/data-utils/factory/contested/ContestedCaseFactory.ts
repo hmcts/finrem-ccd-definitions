@@ -47,7 +47,7 @@ export class ContestedCaseFactory {
     return this.buildContestedCase({
       isPaper: false,
       replacements:
-        APPLICATION_ISSUE_DATE(await DateHelper.getCurrentDate()),
+        APPLICATION_ISSUE_DATE(DateHelper.getCurrentDate()),
     });
   }
 
@@ -68,7 +68,7 @@ export class ContestedCaseFactory {
       isPaper: false,
       replacements: [
           ...EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
-          ...APPLICATION_ISSUE_DATE(await DateHelper.getCurrentDate())
+          ...APPLICATION_ISSUE_DATE(DateHelper.getCurrentDate())
       ],
     });
   }
@@ -113,19 +113,19 @@ export class ContestedCaseFactory {
   }
 
   static async createAndProcessFormACaseUpToProgressToListing(
-    isExpressPilot = false
+    isExpressPilot = false, issueDate?: string
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, false);
     await ContestedEventApi.solicitorSubmitFormACase(caseId);
-    await ContestedEventApi.caseWorkerProgressFormACaseToListing(caseId);
+    await ContestedEventApi.caseWorkerProgressFormACaseToListing(caseId, issueDate);
     return caseId;
   }
 
   static async createAndProcessPaperCaseUpToProgressToListing(
-    isExpressPilot = false
+    isExpressPilot = false, issueDate?: string
   ): Promise<string> {
     const caseId = await this.createCase(isExpressPilot, true);
-    await ContestedEventApi.caseWorkerProgressPaperCaseToListing(caseId);
+    await ContestedEventApi.caseWorkerProgressPaperCaseToListing(caseId, issueDate);
     return caseId;
   }
 
@@ -215,6 +215,33 @@ export class ContestedCaseFactory {
 
     return caseId;
   }
+
+  // Process order
+  static async createAndProcessFormACaseUpToProcessOrderLegacy(
+    isFormA = true,
+    isExpressPilot = false
+  ): Promise<string> {
+      const caseId = await this.progressToUploadDraftOrder({ isFormA: isFormA });
+      await ContestedEventApi.agreedDraftOrderApplicant(caseId);
+      const hearingDate = DateHelper.getIsoDateTwelveWeeksLater();
+      const documentDetailsForFutureTestSteps = {
+      hearingDate,
+      courtOrderDate: hearingDate,
+      documentUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038",
+      documentBinaryUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038/binary",
+      uploadTimestamp: await DateHelper.getCurrentTimestamp(),
+    };
+
+    await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
+    await ContestedEventApi.caseWorkerProcessOrderLegacy(caseId, {
+      documentUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038",
+      documentBinaryUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038/binary",
+      uploadTimestamp: await DateHelper.getCurrentTimestamp(),
+    });
+    return caseId;
+  }
+
+  
 
   // General Application Directions
   private static async caseworkerProgressToGeneralApplicationReferToJudge(

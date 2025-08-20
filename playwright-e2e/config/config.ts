@@ -19,7 +19,7 @@ const configuration = {
     process.env.XUI_ORG_WEB_URL || `https://manage-org.${env}.platform.hmcts.net`,
 
   run_accessibility: 
-    process.env.TESTS_FOR_ACCESSIBILITY || false, 
+    process.env.TESTS_FOR_ACCESSIBILITY || false,
 
   judge: {
     email: process.env.USERNAME_JUDGE || '',
@@ -41,6 +41,16 @@ const configuration = {
     password: process.env.PLAYWRIGHT_APPL_CAA_PSWD || '',
   },
 
+  applicant_intervener: {
+    email: process.env.PLAYWRIGHT_APPL_INTERVENER_USERNAME || '',
+    password: process.env.PLAYWRIGHT_APPL_INTERVENER_PSWD || '',
+  },
+
+  applicant_barrister: {
+    email: process.env.USERNAME_BARRISTER1 || '',
+    password: process.env.PASSWORD_BARRISTER1 || '',
+  },
+
   respondent_solicitor: {
     email: process.env.PLAYWRIGHT_RESPONDENT_SOL_USERNAME || 'fr_respondent_solicitor1@mailinator.com',
     password: process.env.PLAYWRIGHT_RESPONDENT_SOL_PSWD || '',
@@ -51,8 +61,20 @@ const configuration = {
     password: process.env.PLAYWRIGHT_RESP_CAA_PSWD || '',
   },
 
+  respondent_intervener: {
+      email: process.env.PLAYWRIGHT_RESP_INTERVENER_USERNAME || '',
+      password: process.env.PLAYWRIGHT_RESP_INTERVENER_PSWD || '',
+  },
+
+  respondent_barrister: {
+    email: process.env.PLAYWRIGHT_RESP_BARRISTER_USERNAME || '',
+    password: process.env.PLAYWRIGHT_RESP_BARRISTER_PSWD || '',
+  },
+
   jurisdiction: {
-    familyDivorce: 'Family Divorce',
+    familyDivorce: (process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`) === 'https://manage-case.demo.platform.hmcts.net'
+    ? 'Family Divorce - v104-26.1'
+    : 'Family Divorce'
   },
 
   caseType: {
@@ -78,7 +100,8 @@ const configuration = {
 
   loginPaths: {
     cases: 'cases',
-    worklist: 'work/my-work/list'
+    worklist: 'work/my-work/list',
+    organisation: 'organisation',
   }
 
 };

@@ -7,7 +7,7 @@ test.describe('Contested - Manage Express Case', () => {
   test(
     'Contested - Enrolled case (Form A Case) - Remove case from express pilot',
     { tag: [] },
-    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage }) => {
+    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage, axeUtils }, testInfo) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(true);
 
       // Navigate to case and assert initial tab data
@@ -20,9 +20,11 @@ test.describe('Contested - Manage Express Case', () => {
       await caseDetailsPage.selectNextStep(ContestedEvents.manageExpressCase);
       await manageExpressCasePage.selectExpressPilotQuestionNo();
       await manageExpressCasePage.uncheckConfirmRemoveCaseFromExpressPilot();
+      await axeUtils.audit();
       await manageExpressCasePage.navigateSubmit();
       await manageExpressCasePage.verifyFieldIsRequiredMessageShown();
       await manageExpressCasePage.checkConfirmRemoveCaseFromExpressPilot();
+      await axeUtils.audit();
       await manageExpressCasePage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated('Manage Express Case');
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Withdrawn'] }]);

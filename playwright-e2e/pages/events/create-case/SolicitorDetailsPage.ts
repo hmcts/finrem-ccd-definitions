@@ -31,8 +31,15 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
         await this.commonActionsHelper.enterEmailAddress(this.page, solicitorEmail);
     }
 
-    async enterUKaddress() {
-        await this.commonActionsHelper.enterUkAddress(this.page);
+    async enterUKAddress(address?: {
+        buildingAndStreet?: string;
+        addressLine2?: string;
+        townOrCity?: string;
+        county?: string;
+        postcodeOrZipcode?: string;
+        country?: string;
+    }) {
+        await this.commonActionsHelper.enterUkAddress(this.page, address);
     }
 
     async enterFirmName(firmName: string) {

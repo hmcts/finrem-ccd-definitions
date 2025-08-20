@@ -19,7 +19,7 @@ export class ManageHearingPage extends BaseJourneyPage {
         this.manageHearingTitle = page.getByRole('heading', { name: "Manage Hearings" })
         this.addANewHearingRadio = page.getByRole('radio', { name: "Add a new hearing" })
         this.addANewHearingTitle = page.getByRole('heading', { name: "Add a new hearing" })
-        this.typeOfHearingDropDown = page.locator('#workingHearing_hearingType');
+        this.typeOfHearingDropDown = page.getByLabel('Type of Hearing');
         this.hearingTimeEstimate = this.page.locator(`#workingHearing_hearingTimeEstimate`);
     }
 
@@ -63,7 +63,7 @@ export class ManageHearingPage extends BaseJourneyPage {
 
     async enterDefaultHearingDate() {
         const hearingDate = new Date();
-        hearingDate.setDate(hearingDate.getDate() + 12 * 7 +1); // 12 weeks from now + 1 day
+        hearingDate.setDate(hearingDate.getDate() + 12 * 7); // 12 weeks from now
         const date = hearingDate.toISOString().split('T')[0];
         const [year, month, day] = date.split('-');
         await this.enterHearingDate(day, month, year);
@@ -79,7 +79,7 @@ export class ManageHearingPage extends BaseJourneyPage {
         await hearingTime.fill(time);
     }
 
-    async selectCourtForHearing(courtRegion: string = "London", courtFrc: string = "London FRC",
+    async selectCourtForHearing(courtRegion: string = "London", courtFrc: string = "London",
                                 localCourt: string = "BROMLEY COUNTY COURT AND FAMILY COURT") {
         const regionListDropDown = this.page.locator(`#workingHearing_hearingCourtSelection_region`);
         await expect(regionListDropDown).toBeVisible();
@@ -91,8 +91,8 @@ export class ManageHearingPage extends BaseJourneyPage {
         await frcDropDown.selectOption(`${courtFrc} FRC`);
 
         // Select the local court from the visible dropdown
-        const courtListDropDown = this.page
-            .locator(`select[id^="workingHearing_hearingCourtSelection_"][id$="CourtList"]:not([disabled])`);
+        const courtListDropDown = this.page.locator('select[id^="workingHearing_hearingCourtSelection_"][id*="CourtList"]:not(:where(div[hidden] *))');
+        
         await expect(courtListDropDown).toBeVisible();
         await courtListDropDown.selectOption(localCourt);
     }
@@ -119,9 +119,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     }
 
     async uploadOtherDocuments(docFilename: string, position: number = 0) {
-        const addNewDocumentButton = this.page.getByRole("button", { name: "Add new" }).nth(0);
-        await expect(addNewDocumentButton).toBeVisible();
-        await addNewDocumentButton.click();
+        await this.navigateAddNew();
 
         const uploadOtherDocumentFiles = this.page
             .locator(`#workingHearing_additionalHearingDocs_value`).nth(position);
@@ -129,16 +127,27 @@ export class ManageHearingPage extends BaseJourneyPage {
 
         const filePayload = await this.commonActionsHelper
             .createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', docFilename);
-        await uploadOtherDocumentFiles.setInputFiles(filePayload);
 
-        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadOtherDocumentFiles, filePayload);
     }
 
-    private async selectSendNoticeOfHearing(yesOrNo: YesNoRadioEnum) {
+    async selectSendNoticeOfHearing(yesOrNo: YesNoRadioEnum) {
         const sendNoticeOfHearing = this.page.locator(`#workingHearing_hearingNoticePrompt`);
         await expect(sendNoticeOfHearing).toBeVisible();
         const optionToSelect = sendNoticeOfHearing.getByLabel(yesOrNo);
         await optionToSelect.check();
+    }
+
+    async selectWhoShouldSeeThisOrder(partyType: string, partyName: string) {
+        const checkbox = this.page.getByRole('checkbox', { name: `${partyType} - ${partyName}` });
+        await expect(checkbox).toBeVisible();
+        await checkbox.check();
+    }
+
+    async selectAllWhoShouldSeeThisOrder(parties: { partyType: string, partyName: string }[]) {
+        for (const { partyType, partyName } of parties) {
+            await this.selectWhoShouldSeeThisOrder(partyType, partyName);
+        }
     }
 
     async assertErrorMessagesForAllMandatoryFields() {
@@ -168,7 +177,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     async addHearing(param: {
         type: string;
         duration: string;
-        date: {};
+        date: { day: string; month: string; year: string } | {};
         time: string;
         court: { zone: string; frc: string; courtName: string };
         attendance: string;
@@ -177,13 +186,16 @@ export class ManageHearingPage extends BaseJourneyPage {
         uploadFiles: string[];
         sendANoticeOfHearing: boolean
     }) {
-        console.info("Adding hearing with parameters:", param);
-
         await expect(this.addANewHearingTitle).toBeVisible();
 
         await this.selectTypeOfHearing(param.type);
         await this.enterTimeEstimate(param.duration);
-        await this.enterDefaultHearingDate();
+        const date = param.date as any;
+        if (date.day && date.month && date.year) {
+            await this.enterHearingDate(date.day, date.month, date.year);
+        } else {
+            await this.enterDefaultHearingDate();
+        }
         await this.enterHearingTime(param.time);
         await this.selectCourtForHearing(param.court.zone, param.court.frc, param.court.courtName);
         await this.selectHearingAttendees(param.attendance);
@@ -202,5 +214,13 @@ export class ManageHearingPage extends BaseJourneyPage {
         } else {
             await this.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
         }
+    }
+
+    async removeContent() {
+        const removeButton = this.page.getByRole('button', { name: 'Remove' });
+        await expect(removeButton).toBeVisible();
+        await removeButton.click({ force: true });
+        await expect(removeButton).toBeVisible();
+        await removeButton.click({ force: true });
     }
 }

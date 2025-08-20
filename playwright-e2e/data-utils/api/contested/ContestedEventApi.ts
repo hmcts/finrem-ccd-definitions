@@ -173,6 +173,50 @@ export class ContestedEventApi {
     ]);
   }
 
+  static async caseworkerAddsApplicantIntervener(
+    caseId: string,
+  ): Promise<void> {
+    await this.updateCaseWorkerSteps( caseId, [
+      {
+        event: ContestedEvents.manageInterveners.ccdCallback,
+        payload: PayloadPath.Contested.manageIntervenersAddApplicantInt,
+      }
+    ])
+  }
+
+  static async caseworkerAddsRespondentIntervener(
+    caseId: string,
+    ): Promise<void> {
+        await this.updateCaseWorkerSteps( caseId, [
+        {
+            event: ContestedEvents.manageInterveners.ccdCallback,
+            payload: PayloadPath.Contested.manageIntervenersAddRespondentInt,
+        }
+        ])
+    }
+
+    static async caseworkerAddsApplicantBarrister(
+    caseId: string,
+    ): Promise<void> {
+        await this.updateCaseWorkerSteps( caseId, [
+        {
+            event: ContestedEvents.manageBarrister.ccdCallback,
+            payload: PayloadPath.Contested.manageBarristerAddApplicantBarrister,
+        }
+        ])
+    }
+
+    static async caseworkerAddsRespondentBarrister(
+    caseId: string,
+    ): Promise<void> {
+        await this.updateCaseWorkerSteps( caseId, [
+        {
+            event: ContestedEvents.manageBarrister.ccdCallback,
+            payload: PayloadPath.Contested.manageBarristerAddRespondentBarrister,
+        }
+        ])
+    }
+
   static async caseWorkerProgressFormACaseToListing(
     caseId: string,
     issueDate?: string
@@ -280,17 +324,27 @@ export class ContestedEventApi {
     );
   }
 
-  static async processOrder(
+  static async processOrderLegacy(
     caseId: string, 
     jsonObject: any[] = []
   ): Promise<void> {
     await this.progressCaseToState(
       caseId,
-      ContestedEvents.directionOrder.ccdCallback,
+      ContestedEvents.processOrder.ccdCallback,
       PayloadPath.Contested.processOrderBasicTwoHearing,
       jsonObject
     );
   }
+
+  static async agreedDraftOrderApplicant(
+    caseId: string,
+  ): Promise<void> {
+    await this.updateCaseWorkerSteps( caseId, [
+  {
+    event: ContestedEvents.uploadDraftOrders.ccdCallback,
+    payload: PayloadPath.Contested.agreedDraftOrderApplicant,
+  }])
+}
 
   static async caseworkerCreateFlag(caseId: string) {
     
@@ -302,7 +356,7 @@ export class ContestedEventApi {
     ]);
   }
 
-  static async caseWorkerProcessOrder(
+  static async caseWorkerProcessOrderLegacy(
     caseId: string,
     dynamicDraftOrderInfo: {
       documentUrl: string;
@@ -319,7 +373,7 @@ export class ContestedEventApi {
       dynamicDraftOrderInfo.uploadTimestamp
     );
 
-    await ContestedEventApi.processOrder(caseId, modifications);
+    await ContestedEventApi.processOrderLegacy(caseId, modifications);
 
     // Return the JSON object
     return caseId;
@@ -332,14 +386,18 @@ export class ContestedEventApi {
       documentBinaryUrl: string;
       uploadTimestamp: string;
       hearingDate: string;
+      courtOrderDate: string;
     }
   ): Promise<string> {
+    
     const hearingDateLabel = DateHelper.formatToDayMonthYear(
       dynamicDraftOrderInfo.hearingDate
     );
+  
     const modifications = APPROVE_ORDERS_DATA(
       hearingDateLabel,
       dynamicDraftOrderInfo.hearingDate,
+      dynamicDraftOrderInfo.courtOrderDate,
       dynamicDraftOrderInfo.documentUrl,
       dynamicDraftOrderInfo.documentBinaryUrl,
       dynamicDraftOrderInfo.uploadTimestamp
@@ -350,6 +408,15 @@ export class ContestedEventApi {
 
     // Return the JSON object
     return caseId;
+  }
+
+  static async caseWorkerPerformsAddAHearing(caseId: string) {
+    await this.updateCaseWorkerSteps(caseId, [
+      {
+        event: ContestedEvents.manageHearings.ccdCallback,
+        payload: PayloadPath.Contested.manageHearingAddHearing,
+      },
+    ]);
   }
 
 }
