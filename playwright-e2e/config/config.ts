@@ -24,6 +24,9 @@ const configuration = {
   manageOrgAPIBaseURL:
     process.env.MANAGE_ORG_API_BASE_URL || `http://aac-manage-case-assignment-${env}.service.core-compute-${env}.internal`,
 
+  ccdDataStoreApi:
+    process.env.CCD_DATA_API_URL || `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`,
+
   run_accessibility: 
     process.env.TESTS_FOR_ACCESSIBILITY || false,
 

@@ -6,8 +6,9 @@ import {axiosRequest} from "./ApiHelper.ts";
 import {getServiceToken, getUserId, getUserToken} from "./TokenHelperApi.ts";
 import {AxiosResponse} from "axios";
 import {updateJsonFileWithEnvValues} from "../test_data/JsonEnvValReplacer.ts";
+import config from "../../config/config.ts";
 
-const ccdApiUrl = process.env.CCD_DATA_API_URL;
+const ccdApiUrl = config.ccdDataStoreApi;
 
 export class CcdApi {
 
