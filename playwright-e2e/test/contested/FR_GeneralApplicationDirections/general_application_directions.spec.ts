@@ -30,9 +30,7 @@ async function performGeneralApplicationDirectionsFlow(
   await axeUtils.audit();
   await generalApplicationDirectionsPage.navigateContinue();
   await generalApplicationDirectionsPage.navigateSubmit();
-
-  //Next, continue tests to drive through new hearing creation
-
+    
 }
 
 async function performNewGeneralApplicationDirectionsFlow(
@@ -64,8 +62,6 @@ async function performNewGeneralApplicationDirectionsFlow(
   await generalApplicationDirectionsMHPage.navigateContinue();
   await checkYourAnswersPage.assertCheckYourAnswersPage(contestedGeneralApplicationDirectionsMHTableData);
   await generalApplicationDirectionsMHPage.navigateSubmit();
-
-  //Next, continue tests to drive through new hearing creation
 
 }
 
