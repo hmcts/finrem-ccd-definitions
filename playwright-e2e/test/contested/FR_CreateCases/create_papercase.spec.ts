@@ -63,11 +63,11 @@ test(
     await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
     await solicitorDetailsPage.enterReferenceNumber(envTestData.ORG_ID_1);
       await solicitorDetailsPage.enterUKAddress({
-          buildingAndStreet: "3rd Floor, 65-68 Leadenhall St",
-          addressLine2: "Water Unite",
-          townOrCity: "London",
-          county: "Greater London",
-          postcodeOrZipcode: "EC3A 2AD",
+        buildingAndStreet: envTestData.APP_SOL_BUILDING_STREET,
+        addressLine2: "Water Unite",
+        townOrCity: envTestData.APP_SOL_TOWN_CITY,
+        county: envTestData.APP_SOL_COUNTY,
+        postcodeOrZipcode: envTestData.APP_SOL_POSTCODE,
       });
     // Check both application types are present.
     await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT);
@@ -225,11 +225,11 @@ test(
         await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
         await solicitorDetailsPage.enterReferenceNumber(envTestData.ORG_ID_1);
         await solicitorDetailsPage.enterUKAddress({
-            buildingAndStreet: "3rd Floor, 65-68 Leadenhall St",
-            addressLine2: "Water Unite",
-            townOrCity: "London",
-            county: "Greater London",
-            postcodeOrZipcode: "EC3A 2AD",
+          buildingAndStreet: envTestData.APP_SOL_BUILDING_STREET,
+          addressLine2: "Water Unite",
+          townOrCity: envTestData.APP_SOL_TOWN_CITY,
+          county: envTestData.APP_SOL_COUNTY,
+          postcodeOrZipcode: envTestData.APP_SOL_POSTCODE,
         });
         await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT); //Childrens Act case type
         await solicitorDetailsPage.navigateContinue(expectedURL,3);
