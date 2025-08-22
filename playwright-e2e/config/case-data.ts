@@ -241,6 +241,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Send Order (consent)",
     ccdCallback: "FR_consentSendOrder"
   },
+  uploadApprovedOrderMH:{
+    listItem: "Upload Approved Order (MH)",
+    ccdCallback: "FR_uploadApprovedOrderMh"
+  },
 
   // Common events
   createFlag: CommonEvents.createFlag,

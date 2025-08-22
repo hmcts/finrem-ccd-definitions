@@ -41,6 +41,40 @@ async function performUploadApprovedOrderFlow(
   await uploadApprovedOrderPage.navigateSubmit();
 }
 
+async function performUploadApprovedOrderFlowMH(
+  caseDetailsPage: any,
+  uploadApprovedOrderPage: any,
+  uploadApprovedOrderMHPage: any,
+  testInfo: any,
+  axeUtils: AxeUtils
+): Promise<void> {
+  await caseDetailsPage.selectNextStep(ContestedEvents.uploadApprovedOrderMH);
+  await uploadApprovedOrderPage.uploadFirstUploadApprovedOrder();
+  await uploadApprovedOrderMHPage.navigateContinue();
+  await uploadApprovedOrderPage.selectJudge('District Judge');
+  await uploadApprovedOrderPage.enterJudgeName('District Judge Smith');
+  await uploadApprovedOrderPage.enterCourtOrderDate('01', '01', '2022');
+  await uploadApprovedOrderMHPage.navigateContinue();
+  await uploadApprovedOrderMHPage.selectIsThisFinalOrder(YesNoRadioEnum.YES);
+  await uploadApprovedOrderMHPage.selectDoYouWantToAddHearing(YesNoRadioEnum.YES);
+  await uploadApprovedOrderMHPage.selectTypeOfHearing('Application Hearing');
+  await uploadApprovedOrderMHPage.enterTimeEstimate('3 hours');
+  await uploadApprovedOrderMHPage.enterHearingDate('01', '01', '2025');
+  await uploadApprovedOrderMHPage.enterHearingTime('10:00');
+  await uploadApprovedOrderMHPage.selectCourtForHearing();
+  await uploadApprovedOrderMHPage.selectHearingAttendees('Remote - video call');
+  await uploadApprovedOrderMHPage.enterAdditionalInformationAboutHearing('This is a test hearing');
+  await uploadApprovedOrderMHPage.whetherToUploadOtherDocuments(YesNoRadioEnum.YES);
+  await uploadApprovedOrderMHPage.uploadOtherDocuments('OtherDoc.doc');
+  await uploadApprovedOrderMHPage.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
+
+  await uploadApprovedOrderMHPage.navigateContinue();
+  // CYA page
+  await uploadApprovedOrderMHPage.navigateSubmit();
+  await uploadApprovedOrderMHPage.navigateIgnoreWarningAndGo();
+}
+
+
 async function performManageHearingsMigration(
   caseDetailsPage: any,
   blankPage: any,
@@ -76,4 +110,20 @@ test.describe('Contested - Upload Approved Order (caseworker)', () => {
       await caseDetailsPage.assertTabData(migratedUploadApprovedOrderTabDataOnHearing1);
     }
   );
+  test('New Upload Approved Order (MH) event with hearing', { tag: [] }, async ({
+    loginPage,
+    manageCaseDashboardPage,
+    caseDetailsPage,
+    uploadApprovedOrderPage,
+    uploadApprovedOrderMHPage,
+    axeUtils,
+  },
+  testInfo
+) => {
+  const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+  await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+  await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+  await performUploadApprovedOrderFlowMH(caseDetailsPage, uploadApprovedOrderPage, uploadApprovedOrderMHPage, testInfo, axeUtils);
+  await caseDetailsPage.assertTabData(migratedUploadApprovedOrderTabDataOnHearing1);
+});
 });
