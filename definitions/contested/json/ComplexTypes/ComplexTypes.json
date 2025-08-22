@@ -2599,6 +2599,88 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "tabHearingType",
+    "FieldType": "Text",
+    "ElementLabel": "Type of Hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "tabCourtSelection",
+    "FieldType": "Text",
+    "ElementLabel": "Court",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "tabAttendance",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing attendance",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "tabDateTime",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "tabTimeEstimate",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing time estimate",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "tabConfidentialParties",
+    "FieldType": "Text",
+    "ElementLabel": "Who has received this notice",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "tabAdditionalInformation",
+    "FieldType": "Text",
+    "ElementLabel": "Additional information about the hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "tabHearingDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Hearing documents",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "ID": "FR_manageHearingTabItem",
+    "ListElementCode": "tabWasMigrated",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Was Migrated?",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "generalApplicationCollection",
     "ListElementCode": "generalApplicationReceivedFrom",
@@ -4906,87 +4988,5 @@
     "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/04/2025",
-    "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "tabHearingType",
-    "FieldType": "Text",
-    "ElementLabel": "Type of Hearing",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/04/2025",
-    "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "tabCourtSelection",
-    "FieldType": "Text",
-    "ElementLabel": "Court",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/04/2025",
-    "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "tabAttendance",
-    "FieldType": "Text",
-    "ElementLabel": "Hearing attendance",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/04/2025",
-    "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "tabDateTime",
-    "FieldType": "Text",
-    "ElementLabel": "Hearing date",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/04/2025",
-    "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "tabTimeEstimate",
-    "FieldType": "Text",
-    "ElementLabel": "Hearing time estimate",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/04/2025",
-    "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "tabConfidentialParties",
-    "FieldType": "Text",
-    "ElementLabel": "Who has received this notice",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/04/2025",
-    "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "tabAdditionalInformation",
-    "FieldType": "Text",
-    "ElementLabel": "Additional information about the hearing",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/04/2025",
-    "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "tabHearingDocuments",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
-    "ElementLabel": "Hearing documents",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "25/06/2025",
-    "ID": "FR_manageHearingTabItem",
-    "ListElementCode": "tabWasMigrated",
-    "FieldType": "YesOrNo",
-    "ElementLabel": "Was Migrated?",
-    "SecurityClassification": "Public",
-    "Searchable": "Y"
   }
 ]
