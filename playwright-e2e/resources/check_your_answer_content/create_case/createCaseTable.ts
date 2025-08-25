@@ -1,17 +1,18 @@
 import {Table, TableRowItem} from "../../../pages/components/table.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 export const solicitorDetails: TableRowItem[] = [
     "Solicitor Details",
     { cellItem: 'Solicitor’s name', value: 'Bilbo Baggins' },
     { cellItem: "Solicitor’s firm", value: "FinRem-1-Org" },
-    { cellItem: "Your reference number", value: "Y707HZM" },
+    { cellItem: "Your reference number", value: envTestData.ORG_ID_1 },
     "Solicitor’s Contact Details",
     { cellItem: "Is the respondent represented ?", value: "Yes", rowType: 'label-value-adjacent' },
-    { cellItem: 'Building and Street', value: '3rd Floor, 65-68 Leadenhall St'},
-    { cellItem: 'Town or City', value: 'London'},
-    { cellItem: 'County', value: 'Greater London'},
-    { cellItem: 'Postcode/Zipcode', value: 'EC3A 2AD'},
+    { cellItem: 'Building and Street', value: envTestData.APP_SOL_BUILDING_STREET },
+    { cellItem: 'Town or City', value: envTestData.APP_SOL_TOWN_CITY },
+    { cellItem: 'County', value: envTestData.APP_SOL_COUNTY },
+    { cellItem: 'Postcode/Zipcode', value: envTestData.APP_SOL_POSTCODE },
     { cellItem: 'Phone Number', value: '07111111111'},
     { cellItem: 'Email', value: 'fr_applicant_solicitor1@mailinator.com'},
 ]

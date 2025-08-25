@@ -2,6 +2,7 @@ import {BaseJourneyPage} from "./BaseJourneyPage.ts";
 import config from "../config/config.ts";
 import {ApplicationtypeEnum, YesNoRadioEnum} from "./helpers/enums/RadioEnums.ts";
 import {Page, expect, Locator} from "@playwright/test";
+import {envTestData} from "../data-utils/test_data/EnvTestDataConfig.ts";
 
 export class CaseListPage extends BaseJourneyPage {
 
@@ -45,7 +46,7 @@ export class CaseListPage extends BaseJourneyPage {
 
     async selectJurisdiction() {
         await expect(this.jurisdictionSelect).toBeVisible();
-        await this.jurisdictionSelect.selectOption({ label: 'Family Divorce' });
+        await this.jurisdictionSelect.selectOption({ label: config.jurisdiction.familyDivorce });
     }
 
     async selectCaseType(caseType: string) {
@@ -116,7 +117,7 @@ export class CaseListPage extends BaseJourneyPage {
         await this.selectJurisdiction();
         await this.selectCaseType('Financial Remedy Consented');
         await this.validateStateSelectOptions(states);
-        await this.enterSolicitorReference('Y707HZM')
+        await this.enterSolicitorReference(envTestData.ORG_ID_1)
         if( isCaseWorker) {
             await this.selectSupplementaryEvidenceHandled(false);
             await this.selectSupplementaryEvidenceHandled(true);
@@ -130,7 +131,7 @@ export class CaseListPage extends BaseJourneyPage {
         await this.selectJurisdiction();
         await this.selectCaseType('Contested Financial Remedy');
         await this.validateStateSelectOptions(states);
-        await this.enterSolicitorReference('Y707HZM');
+        await this.enterSolicitorReference(envTestData.ORG_ID_1);
         if (isCaseWorker) {
             await this.selectSupplementaryEvidenceHandled(false);
             await this.selectSupplementaryEvidenceHandled(true);

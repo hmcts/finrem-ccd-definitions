@@ -1,5 +1,6 @@
 import { DateHelper } from "../../../data-utils/DateHelper";
 import {Tab} from "../../../pages/components/tab.ts";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 export const solicitor_amend_case_tabs:Tab[] = [
     {
@@ -26,7 +27,7 @@ export const solicitor_amend_case_tabs:Tab[] = [
             { tabItem: "Keep the Applicant's contact details private from the Respondent?", value: "Yes" },
             { tabItem: "Is the Applicant currently a resident in a refuge?", value: "Yes" },
             "Solicitor Details",
-            { tabItem: "Your reference number", value: "Y707HZM" },
+            { tabItem: "Your reference number", value: envTestData.ORG_ID_1 },
             { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
             { tabItem: "Solicitor’s firm", value: "FinRem-1-Org" },
             "Solicitor’s Contact Details",

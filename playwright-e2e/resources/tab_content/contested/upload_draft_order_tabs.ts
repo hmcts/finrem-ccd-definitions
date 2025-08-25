@@ -1,5 +1,6 @@
 import {Tab} from "../../../pages/components/tab.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 export const upload_draft_order_tabs: Tab[] = [
     {
@@ -55,7 +56,7 @@ export const approved_upload_draft_order_tabs: Tab[] = [
             'Uploaded draft orders 1',
             { tabItem: "Order status", value: "Approved by judge"},
             { tabItem: "Type of hearing", value: "First Directions Appointment (FDA)" },
-            { tabItem: "Judge name", value: "Peter Chapman"},
+            { tabItem: "Judge name", value: envTestData.JUDGE_NAME},
             { tabItem:"Order filed by", value: " The applicant"},
             { tabItem: "Submitted by", value: "Claire Mumford"},
             { tabItem:"Uploaded on behalf of", value: "The applicant"},
@@ -65,7 +66,7 @@ export const approved_upload_draft_order_tabs: Tab[] = [
             'Uploaded pension sharing annexes 1',
             { tabItem: "Order status", value: "Approved by judge"},
             { tabItem: "Type of hearing", value: "First Directions Appointment (FDA)" },
-            { tabItem: "Judge name", value: "Peter Chapman"},
+            { tabItem: "Judge name", value: envTestData.JUDGE_NAME},
             { tabItem: "Order filed by", value: " The applicant"},
             { tabItem: "Submitted by", value: "Claire Mumford"},
             { tabItem: "Uploaded on behalf of", value: "The applicant"},

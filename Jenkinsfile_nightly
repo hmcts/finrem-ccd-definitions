@@ -2,8 +2,11 @@
 properties([
         pipelineTriggers([cron('00 17 * * 1-5')]),
         parameters([
-                string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
-                string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
+                string(
+                        name: 'RUNNING_ENV',
+                        defaultValue: 'aat',
+                        description: 'Environment to test against. Options: aat, demo, pr-xxxx'
+                ),
                 string(
                         name: 'FUNCTIONAL_TESTS_WORKERS',
                         defaultValue: '4',
@@ -39,7 +42,7 @@ static Map < String, Object > secret(String secretName, String envVariable) {
 }
 
 def secrets = [
-    'finrem-${env}': [
+    "finrem-${params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV}": [
         secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
         secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
         secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
@@ -52,22 +55,12 @@ def secrets = [
         secret('playwright-applicant-intervener-password', 'PLAYWRIGHT_APPL_INTERVENER_PSWD'),
         secret('playwright-respondent-intervener-username', 'PLAYWRIGHT_RESP_INTERVENER_USERNAME'),
         secret('playwright-respondent-intervener-password', 'PLAYWRIGHT_RESP_INTERVENER_PSWD'),
-        secret('username-solicitor', 'USERNAME_SOLICITOR'),
-        secret('password-solicitor', 'PASSWORD_SOLICITOR'),
         secret('username-caseworker', 'USERNAME_CASEWORKER'),
         secret('password-caseworker', 'PASSWORD_CASEWORKER'),
         secret('fr-judge-username', 'USERNAME_JUDGE'),
         secret('fr-judge-password', 'PASSWORD_JUDGE'),
-        secret('username-caa', 'USERNAME_CAA'),
-        secret('password-caa', 'PASSWORD_CAA'),
-        secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
         secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
-        secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
         secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
-        secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
-        secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
-        secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
-        secret('solicitor1-password', 'PASSWORD_SOLICITOR1'),
         secret('barrister1-username', 'USERNAME_BARRISTER1'),
         secret('barrister1-password', 'PASSWORD_BARRISTER1'),
         secret("playwright-barrister2-respondent-username","PLAYWRIGHT_RESP_BARRISTER_USERNAME"),
@@ -100,13 +93,10 @@ def buildPlaywrightCommand(tags, browser) {
 }
 
 withNightlyPipeline(type, product, component) {
-    env.CCD_WEB_URL = 'https://manage-case.aat.platform.hmcts.net'
-    env.CCD_DATA_API_URL = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal'
-    env.XUI_ORG_WEB_URL = 'https://manage-org.aat.platform.hmcts.net'
-    env.MANAGE_ORG_API_BASE_URL='http://aac-manage-case-assignment-aat.service.core-compute-aat.internal'
     env.NIGHTLY_TEST = 'true'
     env.NODE_ENV = 'ci'
     env.FUNCTIONAL_TESTS_WORKERS = params.FUNCTIONAL_TESTS_WORKERS
+    env.RUNNING_ENV = params.RUNNING_ENV
 
     loadVaultSecrets(secrets)
 

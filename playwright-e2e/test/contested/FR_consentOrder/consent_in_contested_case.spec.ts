@@ -7,6 +7,7 @@ import {
     consent_order_process_tab
 } from "../../../resources/tab_content/contested/consent_order_process_tab.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 test.describe("Consent order in contested case", () => {
     test(
@@ -198,7 +199,7 @@ test.describe("Consent order in contested case", () => {
                     { cellItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                     { cellItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                     { cellItem: 'Select Judge', value: 'District Judge' },
-                    { cellItem: "Name of Judge", value: "Peter Chapman" },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             })
@@ -212,7 +213,7 @@ test.describe("Consent order in contested case", () => {
                         { tabItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                         { tabItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                         { tabItem: 'Select Judge', value: 'District Judge' },
-                        { tabItem: "Name of Judge", value: "Peter Chapman" },
+                        { tabItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                         { tabItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                     ]
                 }
@@ -396,7 +397,7 @@ test.describe("Consent order in contested case", () => {
                     'Reason for Refusal',
                     ...reasons,
                     { cellItem: 'Select Judge', value: 'His Honour Judge' },
-                    { cellItem: "Name of Judge", value: "Peter Chapman" },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             });
@@ -467,7 +468,7 @@ test.describe("Consent order in contested case", () => {
                     { cellItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                     { cellItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                     { cellItem: 'Select Judge', value: 'District Judge' },
-                    { cellItem: "Name of Judge", value: "Peter Chapman" },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             })
@@ -481,7 +482,7 @@ test.describe("Consent order in contested case", () => {
                         { tabItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                         { tabItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                         { tabItem: 'Select Judge', value: 'District Judge' },
-                        { tabItem: "Name of Judge", value: "Peter Chapman" },
+                        { tabItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                         { tabItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                     ]
                 }
