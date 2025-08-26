@@ -1,5 +1,6 @@
 import {Table} from "../../../pages/components/table.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 export function caseSubmissionTable(amount: string): Table {
     return {
@@ -13,12 +14,12 @@ export function caseSubmissionTable(amount: string): Table {
             {cellItem: "Date", value: DateHelper.getTodayFormattedDate()},
             'PAYMENT DETAILS',
             {cellItem: "Has the applicant applied for help with fees online?", value: "No"},
-            {cellItem: "Enter your account number", value: "PBA0089162"},
+            {cellItem: "Enter your account number", value: envTestData.PBA_NUMBER},
             {cellItem: "Amount to pay", value: amount},
             {cellItem: "Enter your reference", value: "Reference"},
             // 'Payment Method: Fee Account',
             // 'Your fee reference: Reference',
-            // 'Fee account number: PBA0089162'
+            // 'Fee account number: envTestData.PBA_NUMBER'
         ]
     }
 }
