@@ -3,7 +3,7 @@ import config from '../../../config/config.ts';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import { CommonEvents, ContestedEvents } from '../../../config/case-data.ts';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
-import { migratedUploadApprovedOrderTabDataOnHearing1 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import { migratedUploadApprovedOrderTabDataOnHearing1, newUploadApprovedOrderMHTabDataOnHearing1 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 import {AxeUtils} from "../../../fixtures/utils/axe-utils.ts";
 
 async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
@@ -49,7 +49,7 @@ async function performUploadApprovedOrderFlowMH(
   axeUtils: AxeUtils
 ): Promise<void> {
   await caseDetailsPage.selectNextStep(ContestedEvents.uploadApprovedOrderMH);
-  await uploadApprovedOrderPage.uploadFirstUploadApprovedOrder();
+  await uploadApprovedOrderPage.uploadFirstUploadApprovedOrder('approvedOrder.pdf');
   await uploadApprovedOrderMHPage.navigateContinue();
   await uploadApprovedOrderPage.selectJudge('District Judge');
   await uploadApprovedOrderPage.enterJudgeName('District Judge Smith');
@@ -57,7 +57,7 @@ async function performUploadApprovedOrderFlowMH(
   await uploadApprovedOrderMHPage.navigateContinue();
   await uploadApprovedOrderMHPage.selectIsThisFinalOrder(YesNoRadioEnum.YES);
   await uploadApprovedOrderMHPage.selectDoYouWantToAddHearing(YesNoRadioEnum.YES);
-  await uploadApprovedOrderMHPage.selectTypeOfHearing('Application Hearing');
+  await uploadApprovedOrderMHPage.selectTypeOfHearing('First Directions Appointment (FDA)');
   await uploadApprovedOrderMHPage.enterTimeEstimate('3 hours');
   await uploadApprovedOrderMHPage.enterHearingDate('01', '01', '2025');
   await uploadApprovedOrderMHPage.enterHearingTime('10:00');
@@ -71,7 +71,6 @@ async function performUploadApprovedOrderFlowMH(
   await uploadApprovedOrderMHPage.navigateContinue();
   // CYA page
   await uploadApprovedOrderMHPage.navigateSubmit();
-  await uploadApprovedOrderMHPage.navigateIgnoreWarningAndGo();
 }
 
 
@@ -124,6 +123,6 @@ test.describe('Contested - Upload Approved Order (caseworker)', () => {
   await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
   await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
   await performUploadApprovedOrderFlowMH(caseDetailsPage, uploadApprovedOrderPage, uploadApprovedOrderMHPage, testInfo, axeUtils);
-  await caseDetailsPage.assertTabData(migratedUploadApprovedOrderTabDataOnHearing1);
+  await caseDetailsPage.assertTabData(newUploadApprovedOrderMHTabDataOnHearing1);
 });
 });
