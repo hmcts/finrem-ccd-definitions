@@ -57,20 +57,12 @@ export class UploadApprovedOrderPage extends BaseJourneyPage {
         this.firstHearingTypeDropDown = page.locator('#hearingDirectionDetailsCollection_0_typeOfHearing');
     }
 
-    private async uploadFile(locator: Locator, errorLocator: Locator, uploadFilePath: string, success: boolean): Promise<void> {
+    async uploadFirstUploadApprovedOrder(documentName: string) {
         const addNewButton = this.uploadApprovedOrderGroup.getByRole('button', { name: 'Add new' });
         await addNewButton.click();
 
-        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, locator, uploadFilePath, 5, 5000);
-        if (success) {
-            await expect(errorLocator).toBeHidden();
-        } else {
-            await expect(errorLocator).toBeVisible();
-        }
-    }
-
-    async uploadFirstUploadApprovedOrder(uploadFilePath: string = './playwright-e2e/resources/file/test.pdf', success: boolean = true): Promise<void> {
-        await this.uploadFile(this.firstUploadApprovedOrderField, this.firstUploadApprovedOrderFieldErrorMessageLocator, uploadFilePath, success);
+        const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.firstUploadApprovedOrderField, filePayload);
     }
 
     async selectJudge(judge: string) {
