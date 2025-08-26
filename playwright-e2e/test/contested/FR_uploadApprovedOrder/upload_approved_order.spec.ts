@@ -19,7 +19,7 @@ async function performUploadApprovedOrderFlow(
   axeUtils: AxeUtils
 ): Promise<void> {
   await caseDetailsPage.selectNextStep(CommonEvents.uploadApprovedOrder);
-  await uploadApprovedOrderPage.uploadFirstUploadApprovedOrder();
+  await uploadApprovedOrderPage.uploadFirstUploadApprovedOrder('approvedOrder.pdf');
   await uploadApprovedOrderPage.navigateContinue();
   await uploadApprovedOrderPage.selectJudge('District Judge');
   await uploadApprovedOrderPage.enterJudgeName('District Judge Smith');
