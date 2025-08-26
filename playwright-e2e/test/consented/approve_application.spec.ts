@@ -1,6 +1,6 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { ConsentedEvents } from '../../config/case-data';
+import { CommonEvents, ConsentedEvents } from '../../config/case-data';
 import { approvedOrderTabData } from '../../resources/tab_content/consented/approve_application_tabs';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
 
@@ -63,14 +63,14 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
     
     // Upload Approved Order as Judge
-    await caseDetailsPage.selectNextStep(ConsentedEvents.uploadApprovedOrder);
+    await caseDetailsPage.selectNextStep(CommonEvents.uploadApprovedOrder);
     await approveApplicationPage.selectIsSubjectTo(true)
     await approveApplicationPage.selectIsPensionProvider(false);
     await approveApplicationPage.selectJudge('District Judge')
     await approveApplicationPage.uploadConsentOrderFile('consentOrder.pdf');
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.uploadApprovedOrder.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(CommonEvents.uploadApprovedOrder.listItem);
 
     await manageCaseDashboardPage.signOut();
     

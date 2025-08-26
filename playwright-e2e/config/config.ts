@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-const env = process.env.ENV || 'aat';
+const env = process.env.RUNNING_ENV || 'aat';
 
 // Data which can be reused across multiple tests.
 // Called simply with "import config from '../config';" and then e.g. "config.caseworker.email" in a test.
@@ -10,13 +10,22 @@ const configuration = {
 
   // URLs
   idamUrl:
-    process.env.IDAM_API_URL || `https://idam-api.${env}.platform.hmcts.net`,
+    process.env.IDAM_API_URL
+    || (env.startsWith('pr')
+      ? 'https://idam-api.aat.platform.hmcts.net'
+      : `https://idam-api.${env}.platform.hmcts.net`),
 
   manageCaseBaseURL:
     process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`,
 
   manageOrgBaseURL:
     process.env.XUI_ORG_WEB_URL || `https://manage-org.${env}.platform.hmcts.net`,
+
+  manageOrgAPIBaseURL:
+    process.env.MANAGE_ORG_API_BASE_URL || `http://aac-manage-case-assignment-${env}.service.core-compute-${env}.internal`,
+
+  ccdDataStoreApi:
+    process.env.CCD_DATA_API_URL || `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`,
 
   run_accessibility: 
     process.env.TESTS_FOR_ACCESSIBILITY || false,

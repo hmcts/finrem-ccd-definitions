@@ -5,8 +5,10 @@ import { ReplacementAction } from "../../types/replacement-action";
 import {axiosRequest} from "./ApiHelper.ts";
 import {getServiceToken, getUserId, getUserToken} from "./TokenHelperApi.ts";
 import {AxiosResponse} from "axios";
+import {updateJsonFileWithEnvValues} from "../test_data/JsonEnvValReplacer.ts";
+import config from "../../config/config.ts";
 
-const ccdApiUrl = process.env.CCD_DATA_API_URL;
+const ccdApiUrl = config.ccdDataStoreApi;
 
 export class CcdApi {
 
@@ -74,7 +76,7 @@ export class CcdApi {
     );
 
     const rawData = readFileSync(path.resolve(dataLocation), "utf-8");
-    const data = JSON.parse(rawData);
+    const data = updateJsonFileWithEnvValues(rawData);
 
     dataModifications.forEach((mod) => {
       if (mod.action === "delete") {
@@ -137,7 +139,7 @@ export class CcdApi {
         ? readFileSync(path.resolve(dataLocation), "utf-8")
         : "{}";
 
-    let updatedDataObj = JSON.parse(rawData);
+    let updatedDataObj = updateJsonFileWithEnvValues(rawData);
 
     // Apply the key-based mutations
     for (const action of replacements) {
@@ -210,6 +212,8 @@ export class CcdApi {
     );
 
     let updatedData = JSON.stringify(jsonObject);
+    updatedData = JSON.stringify(updateJsonFileWithEnvValues(updatedData));
+
     if (shareCaseRef) {
       updatedData = updatedData.replace("ReplaceForShareCase", shareCaseRef);
     }
