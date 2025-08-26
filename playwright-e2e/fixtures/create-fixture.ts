@@ -389,5 +389,5 @@ export const test = base.extend<CreateFixtures>({
   },
   uploadApprovedOrderMHPage: async ({ page }, use) => {
     await use(new UploadApprovedOrderMHPage(page, commonActionsHelper));
-  },
+  }
 });
