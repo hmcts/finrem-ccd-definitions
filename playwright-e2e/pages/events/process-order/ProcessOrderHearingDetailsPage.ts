@@ -21,7 +21,7 @@ export class ProcessOrderHearingDetailsPage extends BaseJourneyPage {
   public constructor(page: Page) {
     super(page);
 
-    this.newHearingAddRadio = page.locator('#processOrderAddHearing');
+    this.newHearingAddRadio = page.locator('#isAddHearingChosen');
     this.newHearingTypeDropDown = page.locator('#workingHearing_hearingTypeDynamicList');
     this.newHearingTimeEstimateTxtBox = page.locator('#workingHearing_hearingTimeEstimate');
     this.newHearingDateDay = page.locator('#hearingDate-day');
