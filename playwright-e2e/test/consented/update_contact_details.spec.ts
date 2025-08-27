@@ -55,6 +55,7 @@ test(
       await caseDetailsPage.assertTabData(updateContactDetailsTabData);
     }
 );
+
 test(
     'Consented - Update contact details - change in representation',
     { tag: [] },

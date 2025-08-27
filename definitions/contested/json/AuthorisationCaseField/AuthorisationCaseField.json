@@ -5906,6 +5906,13 @@
     "CaseFieldID": "consentMiniFormA",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "RU"
+  },  
+  {
+    "LiveFrom": "19/08/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "consentMiniFormA",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -19364,6 +19371,13 @@
   {
     "LiveFrom": "25/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isHearingDirectionDetailsCollectionMigrated",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "mhMigrationVersion",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CRUD"
@@ -19399,6 +19413,13 @@
   {
     "LiveFrom": "25/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "isHearingDirectionDetailsCollectionMigrated",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "mhMigrationVersion",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
@@ -19406,7 +19427,7 @@
   {
     "LiveFrom": "24/07/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "processOrderAddHearing",
+    "CaseFieldID": "isAddHearingChosen",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   }
