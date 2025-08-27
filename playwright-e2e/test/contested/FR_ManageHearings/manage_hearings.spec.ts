@@ -327,20 +327,20 @@ test.describe('Contested - Manage Hearings', () => {
                 uploadFiles: ["HearingNotice.pdf", "Form-G.pdf", "PfdNcdrComplianceLetter.pdf", "PfdNcdrCoverLetter.pdf", "OutOfFamilyCourtResolution.pdf", "Form-C.pdf", "Dummy QA copy.doc"]
             })]);
         })
-    test('Contested - Check state is Prepare For Hearing after Add a Hearing event', 
+    test('Contested - Check state is Prepare For Hearing after Add a Hearing event',
         { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage }) => {
-    // Create and setup case up to issue application
-    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+            // Create and setup case up to issue application
+            const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-    // Add a hearing to the case
-    await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId);
+            // Add a hearing to the case
+            await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId);
 
-    // Login as caseworker and navigate to case
-    await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
-    await manageCaseDashboardPage.navigateToCase(caseId);
+            // Login as caseworker and navigate to case
+            await manageCaseDashboardPage.visit();
+            await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+            await manageCaseDashboardPage.navigateToCase(caseId);
 
-    // Assert state is now Prepare For Hearing
-    await caseDetailsPage.validateCaseState('Prepare For Hearing');
-});
+            // Assert state is now Prepare For Hearing
+            await caseDetailsPage.validateCaseState('Prepare For Hearing');
+        });
 });
