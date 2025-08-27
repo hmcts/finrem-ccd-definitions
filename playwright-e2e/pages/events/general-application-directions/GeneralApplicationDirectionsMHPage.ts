@@ -6,7 +6,7 @@ import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 
 export class GeneralApplicationDirectionsMHPage extends ManageHearingPage {
 
-    private readonly isAHearingRequired: Locator;
+    readonly isAHearingRequired: Locator;
 
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page, commonActionsHelper);

@@ -1,3 +1,5 @@
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
+
 export const updateContactDetailsTabData = [
   {
     tabName: 'Applicant',
@@ -7,7 +9,7 @@ export const updateContactDetailsTabData = [
       { tabItem: "Current Last Name", value: "Baggins" },
       { tabItem: "Is the Applicant currently a resident in a refuge?", value: "Yes" },
       "SOLICITOR DETAILS",
-      { tabItem: "Your reference", value: "Y707HZM" },
+      { tabItem: "Your reference", value: envTestData.ORG_ID_1 },
       { tabItem: "Solicitor’s name", value: "Bilbo Baggins" },
       { tabItem: "Name of your firm", value: "FinRem-1-Org" },
     ]
