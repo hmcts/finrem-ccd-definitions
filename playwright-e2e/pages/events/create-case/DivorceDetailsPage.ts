@@ -1,6 +1,7 @@
 import { type Page, Locator, expect } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
+import { DateHelper } from "../../../data-utils/DateHelper.ts";
 
 export class DivorceDetailsPage extends BaseJourneyPage {
 
@@ -13,6 +14,9 @@ export class DivorceDetailsPage extends BaseJourneyPage {
     private readonly issueDay: Locator;
     private readonly issueMonth: Locator;
     private readonly issueYear: Locator;
+    private readonly separationDay: Locator;
+    private readonly separationMonth: Locator;
+    private readonly separationYear: Locator;
     private readonly courtName: Locator;
     private readonly divorceStage: Locator;
     private readonly uploadPetition: Locator;
@@ -36,9 +40,12 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         this.issueDay = page.getByRole('group', { name: 'Application Issued Date' }).getByLabel('Day');
         this.issueMonth = page.getByRole('group', { name: 'Application Issued Date' }).getByLabel('Month');
         this.issueYear = page.getByRole('group', { name: 'Application Issued Date' }).getByLabel('Year');
+        this.separationDay = page.getByRole('group', { name: 'Date of separation' }).getByLabel('Day');
+        this.separationMonth = page.getByRole('group', { name: 'Date of separation' }).getByLabel('Month');
+        this.separationYear = page.getByRole('group', { name: 'Date of separation' }).getByLabel('Year');
         this.courtName = page.getByLabel('Name of Court / Divorce');
         this.divorceStage = page.getByLabel('What stage has the divorce /');
-        this.uploadPetition = page.getByRole('textbox', { name: 'Upload Petition' });
+        this.uploadPetition = page.locator('#divorceUploadPetition');
 
         this.divorceDetailsHeaderConsented = page.getByRole('heading', { name: 'APPLICATION DETAILS' });
         this.caseNumberInput = page.getByLabel('Case Number');
@@ -52,13 +59,18 @@ export class DivorceDetailsPage extends BaseJourneyPage {
         await this.marriageDay.fill('1');
         await this.marriageMonth.fill('1');
         await this.marriageYear.fill('1999');
-        await this.issueDay.fill('1');
-        await this.issueMonth.fill('1');
-        await this.issueYear.fill('2023');
+        const [year, month, day] = DateHelper.getCurrentDateFormatted();
+        await this.issueDay.fill(day);
+        await this.issueMonth.fill(month);
+        await this.issueYear.fill(year);
+        await this.separationDay.fill('1');
+        await this.separationMonth.fill('1');
+        await this.separationYear.fill('2022');
         await this.courtName.fill('Shire Court');
         await this.divorceStage.selectOption(divorceStage);
-        await this.uploadPetition.setInputFiles('./playwright-e2e/data/PETITION FORM A.docx');
-        await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(
+            this.page, this.uploadPetition, './playwright-e2e/resources/file/PETITION FORM A.docx'
+        );
     }
 
     async enterDivorceDetailsConsented(caseNumber: string, divorceStage: string) {

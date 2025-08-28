@@ -8,6 +8,7 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
     private readonly respondentRepresentedRadioContested: Locator;
 
     private readonly respondentRepresentedRadioConsented: Locator;
+    private readonly respondentSolicitorReference: Locator;
     private readonly solicitorsFirmInput: Locator;
     private readonly respondentInRefugeRadio: Locator;
 
@@ -18,7 +19,8 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
         super(page);
         this.commonActionsHelper = commonActionsHelper;
         this.solicitorDetailsHelper = solicitorDetailsHelper;
-        this.respondentRepresentedRadioContested = page.locator('#respondentRepresented_radio')
+        this.respondentRepresentedRadioContested = page.locator('#respondentRepresented_radio');
+        this.respondentSolicitorReference = page.getByLabel('Respondent solicitor’s reference');
         this.solicitorsFirmInput = page.getByLabel('Solicitor’s firm');
 
         this.respondentRepresentedRadioConsented = page.locator('#appRespondentRep_radio')
@@ -38,9 +40,16 @@ export class RespondentRepresentedPage extends BaseJourneyPage{
     }
 
     async enterSolicitorsDetails(solicitorName: string, solicitorEmail: string){
+        await this.respondentSolicitorReference.fill('MNT12345');
         await this.solicitorsFirmInput.fill('Mnt Doom Sols');
         await this.solicitorDetailsHelper.enterSolicitorName(this.page, solicitorName);
-        await this.commonActionsHelper.enterUkAddress(this.page);
+        await this.commonActionsHelper.enterUkAddress(this.page, {
+            buildingAndStreet: "Coral, 65-68",
+            addressLine2: "Leadenhall 2nd Street",
+            townOrCity: "Manchester",
+            postcodeOrZipcode: "EC3A 2AF",
+            country: "United Kingdom"
+        });
         await this.commonActionsHelper.enterPhoneNumber(this.page);
         await this.commonActionsHelper.enterEmailAddress(this.page, solicitorEmail);
     }

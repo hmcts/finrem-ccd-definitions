@@ -1,0 +1,126 @@
+{
+    "manageHearingsActionSelection": "Add_Hearing",
+    "workingHearing": {
+      "hearingTypeDynamicList": {
+        "value": {
+          "code": "FDA",
+          "label": "First Directions Appointment (FDA)"
+        },
+        "list_items": [
+          {
+            "code": "MPS",
+            "label": "Maintenance Pending Suit (MPS)"
+          },
+          {
+            "code": "FDA",
+            "label": "First Directions Appointment (FDA)"
+          },
+          {
+            "code": "FDR",
+            "label": "Financial Dispute Resolution (FDR)"
+          },
+          {
+            "code": "FH",
+            "label": "Final Hearing (FH)"
+          },
+          {
+            "code": "DIR",
+            "label": "Directions (DIR)"
+          },
+          {
+            "code": "MENTION",
+            "label": "Mention"
+          },
+          {
+            "code": "PERMISSION_TO_APPEAL",
+            "label": "Permission to Appeal"
+          },
+          {
+            "code": "APPEAL_HEARING",
+            "label": "Appeal Hearing (Financial Remedy)"
+          },
+          {
+            "code": "APPLICATION_HEARING",
+            "label": "Application Hearing"
+          },
+          {
+            "code": "RETRIAL_HEARING",
+            "label": "Retrial Hearing"
+          },
+          {
+            "code": "PTR",
+            "label": "Pre-Trial Review (PTR)"
+          }
+        ]
+      },
+      "hearingTimeEstimate": "test",
+      "hearingDate": "2025-12-01",
+      "hearingTime": "test",
+      "hearingMode": "In_Person",
+      "additionalHearingInformation": "test",
+      "additionalHearingDocPrompt": "Yes",
+      "hearingNoticePrompt": "Yes",
+      "partiesOnCaseMultiSelectList": {
+        "value": [
+          {
+            "code": "[APPSOLICITOR]",
+            "label": "Applicant - Frodo Baggins"
+          },
+          {
+            "code": "[RESPSOLICITOR]",
+            "label": "Respondent - Smeagol Gollum"
+          }
+        ],
+        "list_items": [
+          {
+            "code": "[APPSOLICITOR]",
+            "label": "Applicant - Frodo Baggins"
+          },
+          {
+            "code": "[RESPSOLICITOR]",
+            "label": "Respondent - Smeagol Gollum"
+          }
+        ]
+      },
+      "hearingCourtSelection": {
+        "region": "northwest",
+        "midlandsList": null,
+        "londonList": null,
+        "northWestList": "manchester",
+        "northEastList": null,
+        "southEastList": null,
+        "southWestList": null,
+        "walesList": null,
+        "hcCourtList": null,
+        "nottinghamCourtList": null,
+        "cfcCourtList": null,
+        "birminghamCourtList": null,
+        "liverpoolCourtList": null,
+        "manchesterCourtList": "FR_manchester_hc_list_1",
+        "lancashireCourtList": null,
+        "cleavelandCourtList": null,
+        "nwyorkshireCourtList": null,
+        "humberCourtList": null,
+        "kentSurreyCourtList": null,
+        "bedfordshireCourtList": null,
+        "thamesvalleyCourtList": null,
+        "devonCourtList": null,
+        "dorsetCourtList": null,
+        "bristolCourtList": null,
+        "newportCourtList": null,
+        "swanseaCourtList": null,
+        "northWalesCourtList": null,
+        "highCourtList": null
+      },
+      "additionalHearingDocs": [
+        {
+          "id": "e65793e5-d36e-4fbd-a848-8fcf507ae7b0",
+          "value": {
+            "document_url": "DOCUMENT_URL",
+            "document_binary_url": "DOCUMENT_BINARY_URL",
+            "document_filename": "Dummy QA copy.doc"
+          }
+        }
+      ]
+    }
+  }

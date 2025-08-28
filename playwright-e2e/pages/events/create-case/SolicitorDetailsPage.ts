@@ -2,7 +2,7 @@ import { type Page, expect, Locator } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import { SolicitorDetailsHelper } from '../../helpers/SolicitorDetailsHelper';
-import { RadioEnum } from '../../helpers/enums/RadioEnums';
+import { ApplicationtypeEnum } from '../../helpers/enums/RadioEnums';
 
 export class SolicitorDetailsPage extends BaseJourneyPage {
 
@@ -31,8 +31,15 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
         await this.commonActionsHelper.enterEmailAddress(this.page, solicitorEmail);
     }
 
-    async enterUKaddress() {
-        await this.commonActionsHelper.enterUkAddress(this.page);
+    async enterUKAddress(address?: {
+        buildingAndStreet?: string;
+        addressLine2?: string;
+        townOrCity?: string;
+        county?: string;
+        postcodeOrZipcode?: string;
+        country?: string;
+    }) {
+        await this.commonActionsHelper.enterUkAddress(this.page, address);
     }
 
     async enterFirmName(firmName: string) {
@@ -60,7 +67,7 @@ export class SolicitorDetailsPage extends BaseJourneyPage {
         await this.solicitorDetailsHelper.enterReferenceNumber(this.page, referenceNumber);
     }
 
-    async selectApplicationType(radioOption: RadioEnum) {
+    async selectApplicationType(radioOption: ApplicationtypeEnum) {
         const optionToSelect = this.applicationTypeAnswer.getByLabel(radioOption);
         await optionToSelect.check();
     }

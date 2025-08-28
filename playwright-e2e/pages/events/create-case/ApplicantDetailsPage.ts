@@ -1,7 +1,7 @@
 import { type Page, Locator } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
-import { RadioEnum } from '../../helpers/enums/RadioEnums';
+import { YesNoRadioEnum } from '../../helpers/enums/RadioEnums';
 
 export class ApplicantDetailsPage extends BaseJourneyPage {
 
@@ -24,15 +24,21 @@ export class ApplicantDetailsPage extends BaseJourneyPage {
         await optionToSelect.check();
     }
 
-    private async selectApplicantInRefuge(applicantInRefuge: RadioEnum) {
+    private async selectApplicantInRefuge(applicantInRefuge: YesNoRadioEnum) {
         await this.applicantInRefugeRadio.getByLabel(applicantInRefuge).check();
     }
 
-    async enterApplicantDetailsContested(firstName: string, lastName: string, keepPrivate: boolean, applicantInRefuge: RadioEnum){
+    async enterApplicantDetailsContested(firstName: string, lastName: string, keepPrivate: boolean, applicantInRefuge: YesNoRadioEnum) {
         await this.commonActionsHelper.enterNames(this.page, firstName, lastName);
         await this.selectApplicantDetailsPrivate(keepPrivate);
         await this.selectApplicantInRefuge(applicantInRefuge);
-        await this.commonActionsHelper.enterUkAddress(this.page);
+        await this.commonActionsHelper.enterUkAddress(this.page, {
+            buildingAndStreet: 'Water Unite, 65-68',
+            addressLine2: 'Leadenhall Street',
+            townOrCity: 'Liverpool',
+            postcodeOrZipcode: 'EC3A 2AE',
+            country: 'United Kingdom'
+        });
     }
 
     async enterApplicantDetailsConsented(firstName: string, lastName: string){

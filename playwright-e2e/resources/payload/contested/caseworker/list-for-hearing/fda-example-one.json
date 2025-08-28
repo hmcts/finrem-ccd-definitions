@@ -1,0 +1,39 @@
+{
+  "hearingType": "First Directions Appointment (FDA)",
+  "timeEstimate": "1 hour",
+  "hearingDate": "2025-05-29",
+  "hearingTime": "10:00",
+  "hearing_regionList": "midlands",
+  "hearing_midlandsFRCList": "nottingham",
+  "hearing_nottinghamCourtList": "FR_s_NottinghamList_1",
+  "additionalInformationAboutHearing": "This is additional information about the hearing",
+  "additionalHearingDocumentsOption": "Yes",
+  "partiesOnCase": {
+      "value": [
+          {
+              "code": "[APPSOLICITOR]",
+              "label": "Applicant - Frodo Baggins"
+          },
+          {
+              "code": "[RESPSOLICITOR]",
+              "label": "Respondent - Smeagol Gollum"
+          }
+      ],
+      "list_items": [
+          {
+              "code": "[APPSOLICITOR]",
+              "label": "Applicant - Frodo Baggins"
+          },
+          {
+              "code": "[RESPSOLICITOR]",
+              "label": "Respondent - Smeagol Gollum"
+          }
+      ]
+  },
+  "additionalListOfHearingDocuments": {
+      "document_url": "DOCUMENT_URL",
+      "document_binary_url": "DOCUMENT_BINARY_URL",
+      "document_filename": "1.docx",
+      "document_hash": null
+  }
+}

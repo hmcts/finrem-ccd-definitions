@@ -1,0 +1,91 @@
+{
+    "isAdmin": "No",
+    "solicitorName": "Bilbo Baggins",
+    "ApplicantOrganisationPolicy": {
+      "OrgPolicyCaseAssignedRole": "[APPSOLICITOR]",
+      "OrgPolicyReference": null,
+      "PrepopulateToUsersOrganisation": null,
+      "LastNoCRequestedBy": null,
+      "Organisation": {
+        "OrganisationID": "ORG_ID_1",
+        "OrganisationName": "FinRem-1-Org"
+      },
+      "PreviousOrganisations": []
+    },
+    "solicitorFirm": "FinRem-1-Org",
+    "solicitorReference": "ORG_ID_1",
+    "solicitorAddress": {
+      "AddressLine1": "3rd Floor, 65-68 Leadenhall St",
+      "AddressLine2": null,
+      "AddressLine3": null,
+      "PostTown": "London",
+      "County": "Greater London",
+      "PostCode": "EC3A 2AD",
+      "Country": null
+    },
+    "solicitorPhone": "01626 777514",
+    "solicitorEmail": "fr_applicant_solicitor1@mailinator.com",
+    "solicitorDXnumber": null,
+    "solicitorAgreeToReceiveEmails": "Yes",
+    "divorceCaseNumber": "ZZ21D47302",
+    "civilPartnership": "No",
+    "divorceStageReached": "Decree Nisi",
+    "divorceUploadEvidence1": {
+      "document_url": "DOCUMENT_URL",
+      "document_binary_url": "DOCUMENT_BINARY_URL",
+      "document_filename": "test.pdf"
+    },
+    "divorceDecreeNisiDate": "2024-01-01",
+    "applicantFMName": "Frodo",
+    "applicantLName": "Baggins",
+    "regionList": "midlands",
+    "midlandsFRCList": "nottingham",
+    "nottinghamCourtList": "FR_nottinghamList_3",
+    "appRespondentFMName": "Smeagol",
+    "appRespondentLName": "Gollum",
+    "appRespondentRep": "Yes",
+    "rSolicitorName": "Sauron",
+    "RespondentOrganisationPolicy": {
+      "OrgPolicyCaseAssignedRole": "[RESPSOLICITOR]",
+      "OrgPolicyReference": null,
+      "PrepopulateToUsersOrganisation": null,
+      "LastNoCRequestedBy": null,
+      "Organisation": {
+        "OrganisationID": "ORG_ID_2",
+        "OrganisationName": "FinRem-2-Org"
+      },
+      "PreviousOrganisations": []
+    },
+    "rSolicitorFirm": "Finrem Org 2",
+    "rSolicitorReference": null,
+    "rSolicitorAddress": {
+      "AddressLine1": "Water Unite, 65-68",
+      "AddressLine2": "Leadenhall Street",
+      "AddressLine3": "",
+      "PostTown": "London",
+      "County": "",
+      "PostCode": "EC3A 2AD",
+      "Country": "United Kingdom"
+    },
+    "rSolicitorPhone": "07821 639001",
+    "rSolicitorEmail": "fr_respondent_solicitor1@mailinator.com",
+    "rSolicitorDXnumber": null,
+    "natureOfApplication2": [
+      "Maintenance Pending Suit"
+    ],
+    "consentVariationOrderLabelL": "consent order",
+    "consentVariationOrderLabelC": "Consent Order",
+    "otherDocLabel": "Upload other order documentation related to your application",
+    "consentOrder": {
+      "document_url": "DOCUMENT_URL",
+      "document_binary_url": "DOCUMENT_BINARY_URL",
+      "document_filename": "test.pdf"
+    },
+    "d81Question": "Yes",
+    "d81Joint": {
+      "document_url": "DOCUMENT_URL",
+      "document_binary_url": "DOCUMENT_BINARY_URL",
+      "document_filename": "test.pdf"
+    },
+    "otherCollection": []
+}
