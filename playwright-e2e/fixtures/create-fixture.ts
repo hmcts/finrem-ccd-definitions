@@ -78,7 +78,7 @@ import {ConsentOrderNotApprovedPage} from '../pages/events/consent-application/C
 import { GeneralApplicationDirectionsMHPage } from '../pages/events/general-application-directions/GeneralApplicationDirectionsMHPage.ts';
 import { UploadApprovedOrderPage } from '../pages/events/upload-approved-order/UploadApprovedOrderPage';
 import { UploadApprovedOrderMHPage } from '../pages/events/upload-approved-order/UploadApprovedOrderMHPage.ts';
-import {NoticeOfChangePage} from "../pages/NoticeOfChangePage.ts";
+import {NoticeOfChangePage} from '../pages/NoticeOfChangePage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -394,5 +394,5 @@ export const test = base.extend<CreateFixtures>({
   },
   noticeOfChangePage: async ({ page }, use) => {
     await use(new NoticeOfChangePage(page));
-  },
+  }
 });
