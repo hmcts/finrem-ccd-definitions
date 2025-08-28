@@ -50,7 +50,7 @@ test.describe('Notice of Change', () => {
 
           // Create a contested case by applicant solicitor
           const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false, DateHelper.getCurrentDate());
-
+          const date = DateHelper.getUtcDateTimeFormatted();
           await manageCaseDashboardPage.visit();
           await loginPage.loginWaitForPath(config.applicant_solicitor2.email, config.applicant_solicitor2.password, config.manageCaseBaseURL, config.loginPaths.cases);
 
@@ -82,7 +82,7 @@ test.describe('Notice of Change', () => {
                 { tabItem: "Solicitor’s firm", value: "FinRem-3-Org"},
                 { tabItem: "Last NoC Requested By", value: config.applicant_solicitor2.email },
                 "Previous Organisations 1",
-                { tabItem: 'From Timestamp', value: DateHelper.getUtcDateTimeFormatted(), exact: false },
+                { tabItem: 'From Timestamp', value: date, exact: false },
                 { tabItem: "Organisation Name", value: "FinRem-1-Org" },
                 { tabItem: "Email", value: config.applicant_solicitor2.email },
               ]
