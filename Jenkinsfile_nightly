@@ -64,7 +64,15 @@ def secrets = [
         secret('barrister1-username', 'USERNAME_BARRISTER1'),
         secret('barrister1-password', 'PASSWORD_BARRISTER1'),
         secret("playwright-barrister2-respondent-username","PLAYWRIGHT_RESP_BARRISTER_USERNAME"),
-        secret("playwright-barrister2-respondent-testing-password","PLAYWRIGHT_RESP_BARRISTER_PSWD")
+        secret("playwright-barrister2-respondent-testing-password","PLAYWRIGHT_RESP_BARRISTER_PSWD"),
+        secret("playwright-appl-caa2-username","PLAYWRIGHT_APPL_CAA2_USERNAME"),
+        secret("playwright-appl-caa2-password","PLAYWRIGHT_APPL_CAA2_PSWD"),
+        secret("playwright-respondent-caa2-username","PLAYWRIGHT_RESP_CAA2_USERNAME"),
+        secret("playwright-respondent-caa2-password","PLAYWRIGHT_RESP_CAA2_PSWD"),
+        secret("playwright-solicitor2-username","PLAYWRIGHT_SOLICITOR2_USERNAME"),
+        secret("playwright-solicitor2-password","PLAYWRIGHT_SOLICITOR2_PSWD"),
+        secret("playwright-respondent-sol2-username","PLAYWRIGHT_RESPONDENT_SOL2_USERNAME"),
+        secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD")
     ]
 ]
 
