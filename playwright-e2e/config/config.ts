@@ -80,6 +80,26 @@ const configuration = {
     password: process.env.PLAYWRIGHT_RESP_BARRISTER_PSWD || '',
   },
 
+  applicant_CAA2: {
+    email: process.env.PLAYWRIGHT_APPL_CAA2_USERNAME || '',
+    password: process.env.PLAYWRIGHT_APPL_CAA2_PSWD || '',
+  },
+
+  applicant_solicitor2: {
+    email: process.env.PLAYWRIGHT_SOLICITOR2_USERNAME || '',
+    password: process.env.PLAYWRIGHT_SOLICITOR2_PSWD || '',
+  },
+
+  respondentCAA2: {
+    email: process.env.PLAYWRIGHT_RESP_CAA2_USERNAME || '',
+    password: process.env.PLAYWRIGHT_RESP_CAA2_PSWD || '',
+  },
+
+  respondent_solicitor2: {
+    email: process.env.PLAYWRIGHT_RESPONDENT_SOL2_USERNAME || '',
+    password: process.env.PLAYWRIGHT_RESPONDENT_SOL2_PSWD || '',
+  },
+
   jurisdiction: {
     familyDivorce: (process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`) === 'https://manage-case.demo.platform.hmcts.net'
     ? 'Family Divorce - v104-26.1'
