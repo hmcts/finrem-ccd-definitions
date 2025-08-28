@@ -87,6 +87,4 @@ export class NoticeOfChangePage extends BaseJourneyPage {
     await expect(this.page.getByText(String(caseId).replace(/(\d{4})(?=\d)/g, '$1-'))).toBeVisible();
 
   }
-
-
 }
