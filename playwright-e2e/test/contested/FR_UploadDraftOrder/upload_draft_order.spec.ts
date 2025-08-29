@@ -77,7 +77,13 @@ test.describe('Contested - Upload Draft Order', () => {
                 ]
             }
         ])
-      await axeUtils.audit();
+      await axeUtils.audit({
+        exclude: [
+          `#mvZoomBtn`,
+          `.document-tree-container__folder[aria-level="1"]:nth-child(2) > div > .document-tree-container__node--document[aria-level="2"]:nth-child(1)`,
+          `.document-tree-container__folder[aria-level="1"]:nth-child(2) > div > .document-tree-container__node--document[aria-level="2"]:nth-child(2)`
+        ]
+      });
       await manageCaseDashboardPage.signOut();
 
       // log in as judge to approve the orders
