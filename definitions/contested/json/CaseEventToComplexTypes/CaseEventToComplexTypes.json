@@ -4823,7 +4823,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval1",
     "ListElementCode": "courtOrderDate",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "(judgeApproval1.docType=\"DRAFT_ORDER\" OR judgeApproval1.docType=\"PSA\") AND (judgeApproval1.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval1.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
   },
   {
