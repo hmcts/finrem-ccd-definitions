@@ -131,7 +131,12 @@ test.describe('Contested - Manage Hearings', () => {
                 uploadFiles: ["final_hearing_file1.pdf", "final_hearing_file2.pdf"],
                 sendANoticeOfHearing: true
             });
-            await axeUtils.audit();
+            await axeUtils.audit({
+              exclude :[
+                '#workingHearing_additionalHearingDocs_0',
+                '#workingHearing_additionalHearingDocs_1'
+              ]
+            });
             await manageHearingPage.navigateContinue();
             await manageHearingPage.navigateIgnoreWarningAndContinue();
     

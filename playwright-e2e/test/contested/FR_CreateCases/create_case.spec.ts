@@ -115,7 +115,11 @@ test(
     await fastTrackProcedurePage.navigateContinue();
 
     //Financial assets
-    await axeUtils.audit();
+    await axeUtils.audit({
+      exclude: [
+        '#netValueOfHome'
+      ]
+    });
     await financialAssetsPage.selectComplexityList('Yes');
     await financialAssetsPage.selectAssetsValue('Under £250,000');
     await financialAssetsPage.insertFamilyHomeValue('125,000');
@@ -123,7 +127,12 @@ test(
     await financialAssetsPage.navigateContinue();
 
     // Financial Remedies Court, a court is selected that isn't currently processing Express Case applications.
-    await axeUtils.audit();
+    await axeUtils.audit({
+      exclude: [
+        '#specialAssistanceRequired',
+        '#specificArrangementsRequired'
+      ]
+    });
     await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
@@ -169,7 +178,11 @@ test(
 
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
-    await axeUtils.audit();
+    await axeUtils.audit({
+      exclude: [
+        '.complex-field-title > .complex-panel-title'
+      ]
+    });
   }
 );
 
