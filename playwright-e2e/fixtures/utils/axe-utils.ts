@@ -3,6 +3,7 @@ import { Page } from "@playwright/test";
 import {TestInfo} from "playwright/test";
 import config from "../../config/config.ts";
 import {createHtmlReport} from "axe-html-reporter";
+import {expect} from "../axe-fixture.ts";
 
 interface AuditOptions {
   exclude?: string | string[];
@@ -47,6 +48,18 @@ export class AxeUtils {
     const builder = new AxeBuilder({ page: this.page }).withTags(
       this.DEFAULT_TAGS
     );
+    // added bannerText to exclude cookie banner from axe checks
+    // added .caseLocked to exclude the locked case banner from axe checks as this can happen any place
+    if (options?.exclude) {
+      if (Array.isArray(options.exclude)) {
+        options.exclude.push('.caseLocked');
+      } else if (options.exclude.trim() !== '') {
+        options.exclude = [options.exclude, '.caseLocked'];
+      }
+    } else {
+      options && (options.exclude = ['.caseLocked']);
+    }
+
     this.applySelectors(builder, "exclude", options?.exclude);
     this.applySelectors(builder, "include", options?.include);
 
@@ -69,8 +82,7 @@ export class AxeUtils {
       }
     }
 
-    // commented out the expect.soft line to avoid failing the test
-    //expect.soft(results.violations, `Accessibility violations found on ${this.page.url()}`).toEqual([]);
+    expect.soft(results.violations, `Accessibility violations found on ${this.page.url()}`).toEqual([]);
   }
 
   public async generateReport(testInfo: TestInfo) {

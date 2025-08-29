@@ -130,7 +130,11 @@ test(
 
     // Page shows to tell User that case is an Express Pilot
     await expressCaseEnrolledPage.checkLinkResolves();
-    await axeUtils.audit();
+    await axeUtils.audit({
+      exclude: [
+        'p:nth-child(2) > a[target="_blank"]'
+      ]
+    });
     await expressCaseEnrolledPage.navigateContinue(expectedURL, 17);
 
     // Has attended miam

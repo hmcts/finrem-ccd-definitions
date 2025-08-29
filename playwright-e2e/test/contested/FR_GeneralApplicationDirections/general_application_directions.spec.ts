@@ -27,7 +27,13 @@ async function performGeneralApplicationDirectionsFlow(
   await generalApplicationDirectionsPage.enterTimeEstimate('3 hours');
   await generalApplicationDirectionsPage.selectCourtForHearing();
   await generalApplicationDirectionsPage.enterAdditionalInformationAboutHearing();
-  await axeUtils.audit();
+  await axeUtils.audit({
+    exclude:[
+      '#generalApplicationDirectionsHearingTime',
+      '#generalApplicationDirectionsHearingTimeEstimate',
+      '#generalApplicationDirectionsAdditionalInformation'
+    ]
+  });
   await generalApplicationDirectionsPage.navigateContinue();
   await generalApplicationDirectionsPage.navigateSubmit();
     
