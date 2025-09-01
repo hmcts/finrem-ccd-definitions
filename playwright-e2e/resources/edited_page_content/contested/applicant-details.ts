@@ -1,4 +1,5 @@
 import {FieldDescriptor} from "../../../pages/components/field_descriptor.ts";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 export const applicantDetails: FieldDescriptor[] = [
     {
@@ -91,7 +92,7 @@ export const solicitorDetailsContent: FieldDescriptor[] = [
     {
         label: "Your reference number",
         type: "input",
-        expectedValue: "Y707HZM"
+        expectedValue: envTestData.ORG_ID_1
     },
     {
         label: "Building and Street",

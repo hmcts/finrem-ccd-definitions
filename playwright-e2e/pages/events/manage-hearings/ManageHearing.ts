@@ -131,7 +131,7 @@ export class ManageHearingPage extends BaseJourneyPage {
         await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadOtherDocumentFiles, filePayload);
     }
 
-    private async selectSendNoticeOfHearing(yesOrNo: YesNoRadioEnum) {
+    async selectSendNoticeOfHearing(yesOrNo: YesNoRadioEnum) {
         const sendNoticeOfHearing = this.page.locator(`#workingHearing_hearingNoticePrompt`);
         await expect(sendNoticeOfHearing).toBeVisible();
         const optionToSelect = sendNoticeOfHearing.getByLabel(yesOrNo);

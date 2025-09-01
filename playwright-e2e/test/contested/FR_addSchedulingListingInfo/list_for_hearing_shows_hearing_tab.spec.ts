@@ -112,8 +112,8 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-      await performManageHearings(caseDetailsPage, manageHearingPage);
       await performListForHearingFlow(caseDetailsPage, listForHearingPage);
+      await performManageHearings(caseDetailsPage, manageHearingPage);
       await performManageHearingsMigration(caseDetailsPage, blankPage);
       await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing2);
     }
@@ -157,8 +157,8 @@ test.describe('Contested - List for Hearing case shows on hearings tab after mig
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessPaperCaseUpToProgressToListing();
       await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-      await performManageHearings(caseDetailsPage, manageHearingPage);
       await performListForHearingFlow(caseDetailsPage, listForHearingPage);
+      await performManageHearings(caseDetailsPage, manageHearingPage);
       await performManageHearingsMigration(caseDetailsPage, blankPage);
       await caseDetailsPage.assertTabData(migratedListForHearingsTabDataOnHearing2);
     }

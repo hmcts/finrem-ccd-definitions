@@ -136,6 +136,41 @@ export const migratedGeneralApplicationDirectionsTabDataOnHearing1 = [
   }
 ];
 
+export const migratedUploadApprovedOrderTabDataOnHearing1 = [
+  {
+    tabName: 'Hearings',
+    tabContent: [
+      "Hearing 1",
+      { tabItem: "Type of Hearing", value: "Final Hearing (FH)" },
+      { tabItem: "Court", value: "Birmingham Civil And Family Justice Centre" },
+      { tabItem: "Hearing attendance", value: "Hearing mode not specified" },
+      { tabItem: "Hearing date", value: '01 Jan 2022 10:00' },
+      { tabItem: "Hearing time estimate", value: '30 minutes' },
+      { tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum' },
+      { tabItem: "Additional information about the hearing", value: '' }
+    ]
+  }
+];
+
+export const newUploadApprovedOrderMHTabDataOnHearing1 = [
+  {
+    tabName: 'Hearings',
+    tabContent: [
+      "Hearing 1",
+      { tabItem: "Type of Hearing", value: "First Directions Appointment (FDA)" },
+      { tabItem: "Court", value: "Bromley County Court And Family Court" },
+      { tabItem: "Hearing attendance", value: "Remote - Video call" },
+      { tabItem: "Hearing date", value: '01 Jan 2025 10:00' },
+      { tabItem: "Hearing time estimate", value: '3 hours' },
+      { tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum' },
+      { tabItem: "Additional information about the hearing", value: 'This is a test hearing' },
+      { tabItem: "Hearing documents", value: 
+        'HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nPfdNcdrCoverLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nOtherDoc.doc' 
+      }
+    ]
+  }
+];
+
 export function migratedHearingsCreatedFromProcessOrderTabData() {
   const daysOffset = 84; // e.g. 84 days after today
   const baseDate = new Date();

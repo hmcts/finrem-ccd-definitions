@@ -232,4 +232,9 @@ export class CaseDetailsPage {
             throw new Error('File tree validation errors:\n' + errors.join('\n\n'));
         }
     }
+
+    async validateCaseState(expectedState: string): Promise<void> {
+        const stateLabel = this.page.getByText(expectedState, { exact: true });
+        await expect(stateLabel).toBeVisible();
+    }
 }

@@ -1,4 +1,5 @@
 import { Table } from "../../../pages/components/table"
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 export const   contestedUpdateContactDetailsTableData = {
     tableName: 'Update Contact Details',
@@ -37,7 +38,7 @@ export const contestedApplicantUpdateContactDetailsTableData: Table = {
         { cellItem: "County", value: "Greater London"},
         { cellItem: "Postcode/Zipcode", value: " EC3A 2AD" },
         { cellItem: "Solicitor’s firm", value: "FinRem-1-Org"},
-        { cellItem: "Your reference number", value: "Y707HZM"},
+        { cellItem: "Your reference number", value: envTestData.ORG_ID_1 },
         "Applicant’s Details",
         { cellItem: "Current First and Middle names", value: "Tester case" },
         { cellItem: "Current Last Name", value: "Baggins" },
@@ -87,7 +88,7 @@ export const   consentedApplicantUpdateContactDetailsTableData = {
         "SOLICITOR DETAILS",
         { cellItem: "Solicitor’s name", value: "Test Baggins" },
         { cellItem: "Name of your firm", value: "FinRem-1-Org"},
-        { cellItem: "Your reference", value: "Y707HZM"},
+        { cellItem: "Your reference", value: envTestData.ORG_ID_1},
         { cellItem:"Building and Street", value: "3rd Floor, 65-68 Leadenhall St"},
         { cellItem: "Town or City", value: "London"},
         { cellItem: "County", value: "Greater London"},

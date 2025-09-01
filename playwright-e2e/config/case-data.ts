@@ -49,6 +49,10 @@ export const CommonEvents: Record<string, CaseEvent> = {
     listItem: "Create General Email",
     ccdCallback: "FR_generalEmail"
   },
+  uploadApprovedOrder: {
+    listItem: "Upload Approved Order",
+    ccdCallback: "FR_uploadApprovedOrder"
+  }
 };
 
 // Consented Events
@@ -72,10 +76,6 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
   assignToJudgeConsentMade: {
     listItem: "Assign To Judge",
     ccdCallback: "FR_referToJudgeFromConsOrdMade"
-  },
-  uploadApprovedOrder: {
-    listItem: "Upload Approved Order",
-    ccdCallback: "FR_uploadApprovedOrder"
   },
   // Common events
   createFlag: CommonEvents.createFlag,
@@ -139,6 +139,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   generalApplicationDirections: {
     listItem: "General Application Directions",
     ccdCallback: "FR_GeneralApplicationDirections"
+  },
+  generalAppDirectionsMH: {
+    listItem: "General App Directions (MH)",
+    ccdCallback: "FR_GeneralApplicationDirectionsMH"
   },
   createGeneralApplication: {
     listItem: "Create General Application",
@@ -236,6 +240,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   sendConsentOrder: {
     listItem: "Send Order (consent)",
     ccdCallback: "FR_consentSendOrder"
+  },
+  uploadApprovedOrderMH:{
+    listItem: "Upload Approved Order (MH)",
+    ccdCallback: "FR_uploadApprovedOrderMh"
   },
 
   // Common events

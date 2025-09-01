@@ -1,5 +1,6 @@
 import { DateHelper } from "../../../data-utils/DateHelper";
 import { Tab } from "../../../pages/components/tab";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 export const createDraftOrdersApprovedWithHearingTabData = (hearingDate: string): Tab[] => [{
   tabName: "Draft orders",
@@ -9,7 +10,7 @@ export const createDraftOrdersApprovedWithHearingTabData = (hearingDate: string)
     { tabItem: "Hearing Date", value: DateHelper.formatToDayMonthYearShort(hearingDate) },
     { tabItem: "Hearing Time", value: "10:00" },
     { tabItem: "Order status", value: "Processed" },
-    { tabItem: "Judge name", value: "Peter Chapman"},
+    { tabItem: "Judge name", value: envTestData.JUDGE_NAME},
     { tabItem: "Cover letter", value: "agreed-draft-order-document - cover letter.pdf"},
     { tabItem: "Submitted by", value: "Claire Mumford" },
     { tabItem: "Uploaded on behalf of", value: "The applicant" },

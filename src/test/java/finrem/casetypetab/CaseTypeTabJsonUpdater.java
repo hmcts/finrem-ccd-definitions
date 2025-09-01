@@ -12,7 +12,8 @@ import java.util.Map;
 /**
  * Updates the TabDisplayOrder values in contested CaseTypeTab.json.
  * definitions/contested/json/CaseTypeTab/CaseTypeTab.json
- * To use, first set the required values in tab-display-order.
+ * To use, first set the required values in tab-display-order in the unit test resources.
+ * folder `test/unit/resources/tab-display-order.json`
  * The updated json is written to output.json.
  * You will need to copy this manually to CaseTypeTab.json and ensure you reformat it.
  * Use IntelliJ Code->Reformat Code.
@@ -46,7 +47,7 @@ class CaseTypeTabJsonUpdater {
     }
 
     private Map<String, Integer> getExpectedTabDisplayOrder() throws IOException {
-        String filePath = "src/test/java/finrem/casetypetab/tab-display-order.json";
+        String filePath = "test/unit/resources/tab-display-order.json";
         return objectMapper.readValue(new FileReader(filePath), new TypeReference<>() {
         });
     }

@@ -11,6 +11,7 @@ import {
   APPLICATION_ISSUE_DATE
 } from "../../PayloadMutator";
 import { DateHelper } from "../../DateHelper";
+import {envTestData} from "../../test_data/EnvTestDataConfig.ts";
 
 export class ContestedCaseFactory {
   private static buildContestedCase({
@@ -227,15 +228,15 @@ export class ContestedCaseFactory {
       const documentDetailsForFutureTestSteps = {
       hearingDate,
       courtOrderDate: hearingDate,
-      documentUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038",
-      documentBinaryUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038/binary",
+      documentUrl: envTestData.DOCUMENT_URL,
+      documentBinaryUrl: envTestData.DOCUMENT_BINARY_URL,
       uploadTimestamp: await DateHelper.getCurrentTimestamp(),
     };
 
     await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
     await ContestedEventApi.caseWorkerProcessOrderLegacy(caseId, {
-      documentUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038",
-      documentBinaryUrl: "http://dm-store-aat.service.core-compute-aat.internal/documents/5de07805-5a19-4188-8a36-15c85b496038/binary",
+      documentUrl: envTestData.DOCUMENT_URL,
+      documentBinaryUrl: envTestData.DOCUMENT_BINARY_URL,
       uploadTimestamp: await DateHelper.getCurrentTimestamp(),
     });
     return caseId;
