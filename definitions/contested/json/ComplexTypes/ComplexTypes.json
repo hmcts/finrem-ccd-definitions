@@ -2621,7 +2621,7 @@
     "ID": "FR_manageHearingTabItem",
     "ListElementCode": "tabAttendance",
     "FieldType": "Text",
-    "ElementLabel": "Hearing attendance",
+    "ElementLabel": "Hearing Attendance",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2630,7 +2630,7 @@
     "ID": "FR_manageHearingTabItem",
     "ListElementCode": "tabDateTime",
     "FieldType": "Text",
-    "ElementLabel": "Hearing date",
+    "ElementLabel": "Hearing Date",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2639,7 +2639,7 @@
     "ID": "FR_manageHearingTabItem",
     "ListElementCode": "tabTimeEstimate",
     "FieldType": "Text",
-    "ElementLabel": "Hearing time estimate",
+    "ElementLabel": "Hearing Time Estimate",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2667,7 +2667,7 @@
     "ListElementCode": "tabHearingDocuments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
-    "ElementLabel": "Hearing documents",
+    "ElementLabel": "Hearing Documents",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -4775,7 +4775,7 @@
     "ListElementCode": "hearingMode",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_ManageHearingMode",
-    "ElementLabel": "Hearing attendance",
+    "ElementLabel": "Hearing Attendance",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -4898,7 +4898,7 @@
     "ListElementCode": "hearingMode",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_ManageHearingMode",
-    "ElementLabel": "Hearing attendance",
+    "ElementLabel": "Hearing Attendance",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -4957,7 +4957,7 @@
     "ID": "FR_hearing",
     "ListElementCode": "wasMigrated",
     "FieldType": "YesOrNo",
-    "ElementLabel": "Was migrated?",
+    "ElementLabel": "Was Migrated?",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   },
