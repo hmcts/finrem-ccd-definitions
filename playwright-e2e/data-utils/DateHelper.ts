@@ -65,7 +65,8 @@ export class DateHelper {
 
     static getNumericShortFormattedDateToday = (): string => {
       const today = new Date();
-      return today.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+      return today.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
+        .replace(/\bSep\b/, 'Sept');
     };
 
     static async getFormattedHearingDate(): Promise<{ currentDate: string; hearingDate: string }> {
@@ -152,8 +153,8 @@ export class DateHelper {
         hour12: true,
         timeZone: 'UTC'
       })
-      .replace(/\b( am| pm)\b/i, '');
-
+      .replace(/\b( am| pm)\b/i, '')
+      .replace(/\bSep\b/, 'Sept');
     }
     static getIsoDateTwelveWeeksLater(): string {
       const twelveWeeksLater = new Date();

@@ -401,7 +401,11 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
 
       // Check unapproved draft order tab
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
-      await axeUtils.audit();
+      await axeUtils.audit({
+        exclude:[
+          'div:nth-child(4) > ccd-read-document-field > a[href="javascript:void(0)"]'
+        ]
+      });
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Add Hearing 

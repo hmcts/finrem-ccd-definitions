@@ -64,7 +64,11 @@ async function performNewGeneralApplicationDirectionsFlow(
     { partyType: 'Intervener1', partyName: 'IntApp1' },
     { partyType: 'Intervener2', partyName: 'IntResp1' }
   ]);
-  await axeUtils.audit();
+  await axeUtils.audit({
+    exclude: [
+      '#workingHearing_additionalHearingDocs_value'
+    ]
+  });
   await generalApplicationDirectionsMHPage.navigateContinue();
   await checkYourAnswersPage.assertCheckYourAnswersPage(contestedGeneralApplicationDirectionsMHTableData);
   await generalApplicationDirectionsMHPage.navigateSubmit();

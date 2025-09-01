@@ -20,7 +20,7 @@ test(
         day: 'numeric',
         month: 'short',
         year: 'numeric',
-      }).replace(",", "");
+      }).replace(",", "").replace(/\bSep\b/, 'Sept');
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
