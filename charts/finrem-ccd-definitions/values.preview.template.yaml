@@ -22,7 +22,7 @@ xui-webapp:
   nodejs:
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-xui-webapp
-    image: hmctspublic.azurecr.io/xui/webapp:latest
+    image: hmctspublic.azurecr.io/xui/webapp:pr-4608-ce32d18-20250829114016
     ingressHost: xui-${SERVICE_FQDN}
     devmemoryRequests: 1024Mi
     devmemoryLimits: 2048Mi
@@ -238,6 +238,7 @@ ccd:
       disableKeyVaults: true
       autoscaling:
         enabled: false
+      image: hmctspublic.azurecr.io/ccd/api-gateway-web:latest
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: ${APP_INSIGHTS_INSTRUMENTATION_KEY}
         IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
