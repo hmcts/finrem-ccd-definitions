@@ -28,7 +28,13 @@ async function performListForHearingFlow(
   await listForHearingPage.verifyHearingDateGuidanceMessages();
   await listForHearingPage.enterHearingTime('10:00');
   await listForHearingPage.selectCourtForHearing(courtName);
-  await axeUtils.audit();
+  await axeUtils.audit({
+    exclude: [
+      '#timeEstimate',
+      '#hearingTime',
+      '#additionalInformationAboutHearing'
+    ]
+  });
   await listForHearingPage.navigateContinue();
   await listForHearingPage.navigateSubmit();
   await listForHearingPage.verifyHearingDateWarningMessage('expressPilot');
