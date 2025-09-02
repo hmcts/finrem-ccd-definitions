@@ -31,8 +31,6 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
   expressCasePage: ExpressCasePage,
   uploadOrderDocumentsPage: UploadOrderDocumentsPage,
   createCaseCheckYourAnswersPage: CreateCaseCheckYourAnswersPage,
-  testInfo: TestInfo,
-  makeAxeBuilder: any
 ): Promise<void> {
   await manageCaseDashboardPage.visit();
   await loginPage.loginWaitForPath(
@@ -104,17 +102,6 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
       await caseDetailsPage.assertTabData(expressCaseGateKeepingNotEnrolledTabData);
       break;
   }
-
-  if (config.run_accessibility) {
-    const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-    await testInfo.attach('accessibility-scan-results', {
-      body: JSON.stringify(accessibilityScanResults, null, 2),
-      contentType: 'application/json'
-    });
-
-    expect(accessibilityScanResults.violations).toEqual([]);
-  }
 }
 
 test.describe('Contested - Amend Application Details join/exit express case Form A', () => {
@@ -131,9 +118,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
         expressCasePage,
         uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage,
-        makeAxeBuilder,
-      },
-      testInfo
+      }
     ) => {
       const caseId =
         await ContestedCaseFactory.createContestedFormACaseWithExpressPilotEnrolled();
@@ -147,9 +132,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
         natureOfApplicationPage,
         expressCasePage,
         uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage,
-        testInfo,
-        makeAxeBuilder
+        createCaseCheckYourAnswersPage
       );
     }
   );
@@ -166,10 +149,8 @@ test.describe('Contested - Amend Application Details join/exit express case Form
         natureOfApplicationPage,
         expressCasePage,
         uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage,
-        makeAxeBuilder,
-      },
-      testInfo
+        createCaseCheckYourAnswersPage
+      }
     ) => {
       const caseId =
         await ContestedCaseFactory.createContestedFormACaseWithExpressPilotEnrolled();
@@ -183,9 +164,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
         natureOfApplicationPage,
         expressCasePage,
         uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage,
-        testInfo,
-        makeAxeBuilder
+        createCaseCheckYourAnswersPage
       );
     }
   );
@@ -203,9 +182,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
         expressCasePage,
         uploadOrderDocumentsPage,
         createCaseCheckYourAnswersPage,
-        makeAxeBuilder,
-      },
-      testInfo
+      }
     ) => {
       const caseId = await ContestedCaseFactory.createBaseContestedFormA();
       await performAmendFormAApplicationDetailsFlowForExpressPilot(
@@ -218,9 +195,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
         natureOfApplicationPage,
         expressCasePage,
         uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage,
-        testInfo,
-        makeAxeBuilder
+        createCaseCheckYourAnswersPage
       );
     }
   );

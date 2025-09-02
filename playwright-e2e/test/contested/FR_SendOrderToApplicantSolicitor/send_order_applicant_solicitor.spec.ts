@@ -8,7 +8,7 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
     test(
         'Contested - Send Order to an applicant solicitor',
         { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, checkYourAnswersPage, prepareForHearingPage, createGeneralOrderPage, contestedSendOrderPage }) => {
+        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, createGeneralApplicationPage, checkYourAnswersPage, prepareForHearingPage, createGeneralOrderPage, contestedSendOrderPage, axeUtils }, testInfo) => {
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
@@ -22,6 +22,7 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
             await createGeneralApplicationPage.selectHearing(true);
             await createGeneralApplicationPage.fillTimeEstimate('5');
             await createGeneralApplicationPage.uploadGeneralDocument('./playwright-e2e/resources/file/test.docx');
+            await axeUtils.audit();
             await createGeneralApplicationPage.navigateContinue();
             await createGeneralApplicationPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.createGeneralApplication.listItem);
@@ -36,6 +37,7 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
             await createGeneralOrderPage.clickJudgeButton();
             await createGeneralOrderPage.selectJudge('District Judge');
             await createGeneralOrderPage.fillDescription('test case');
+            await axeUtils.audit();
             await createGeneralOrderPage.navigateContinue();
             await createGeneralOrderPage.navigateContinue();
             await createGeneralOrderPage.navigateSubmit();
@@ -49,6 +51,7 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
             await contestedSendOrderPage.navigateContinue();
             await contestedSendOrderPage.clickCaseState();
             await contestedSendOrderPage.selectOrder('Order Sent');
+            await axeUtils.audit();
             await contestedSendOrderPage.navigateContinue();
             await checkYourAnswersPage.assertCheckYourAnswersPage(sendOrderTableData);
             await contestedSendOrderPage.navigateSubmit();

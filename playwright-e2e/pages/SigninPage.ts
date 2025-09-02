@@ -1,4 +1,5 @@
 import { type Page, type Locator, expect } from '@playwright/test';
+import config from "../config/config.ts";
 
 export class SigninPage {
   
@@ -35,6 +36,7 @@ export class SigninPage {
    */
   async loginWaitForPath(email: string, password: string, expectedUrl: string, requiredPath: string) {
     const maxRetries = 10;
+    if (process.env.RUNNING_ENV === 'demo' && requiredPath.endsWith('list')) { requiredPath = config.loginPaths.cases }
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {

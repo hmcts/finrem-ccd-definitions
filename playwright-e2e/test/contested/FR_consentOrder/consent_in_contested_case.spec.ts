@@ -7,6 +7,7 @@ import {
     consent_order_process_tab
 } from "../../../resources/tab_content/contested/consent_order_process_tab.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 test.describe("Consent order in contested case", () => {
     test(
@@ -25,7 +26,7 @@ test.describe("Consent order in contested case", () => {
             consentApplicationApprovePage,
             sendOrderPage,
             eventSummaryPage,
-            makeAxeBuilder
+            axeUtils
         }, testInfo) => {
             // Set up court information.
             const courtName = "Coventry Combined Court Centre";
@@ -51,6 +52,7 @@ test.describe("Consent order in contested case", () => {
             // Nature of App
             await natureOfApplicationPage.selectNatureOfApplication();
             await natureOfApplicationPage.addConsentedPropertyAdjustmentDetails();
+            await axeUtils.audit();
             await natureOfApplicationPage.navigateContinue(url, 2);
 
             await writtenAgreementPage.selectConsentOrder(true, false);
@@ -60,9 +62,11 @@ test.describe("Consent order in contested case", () => {
             await uploadOrderDocumentsPage.navigateContinue(url, 4);
 
             await uploadOrderDocumentsPage.selectAndUploadJointD81(true);
+            await axeUtils.audit();
             await uploadOrderDocumentsPage.navigateContinue(url, 5);
 
             await uploadOrderDocumentsPage.uploadPensionDocument('Form P1');
+            await axeUtils.audit();
             await uploadOrderDocumentsPage.navigateContinue(url, 6);
 
             await uploadOrderDocumentsPage.uploadVariationOrderDoc();
@@ -72,6 +76,7 @@ test.describe("Consent order in contested case", () => {
             await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
             await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
             await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
+            await axeUtils.audit();
             await createCaseSavingYourAnswersPage.navigateContinue(url+ "/submit");
 
             await checkYourAnswersPage.assertCheckYourAnswersPage(consentOrderTable);
@@ -119,6 +124,7 @@ test.describe("Consent order in contested case", () => {
             await createGeneralOrderPage.enterCourtDate();
             await createGeneralOrderPage.navigateContinue(url, 2);
             await createGeneralOrderPage.assertPreviewOfGeneralOrder();
+            await axeUtils.audit();
             await createGeneralOrderPage.navigateContinue(url + '/submit');
             await createGeneralOrderPage.navigateSubmit();
 
@@ -183,6 +189,7 @@ test.describe("Consent order in contested case", () => {
             await consentApplicationApprovePage.selectCopyOfOrderToPensionProvider(true, "The Court");
             await consentApplicationApprovePage.selectJudge('District Judge');
             await consentApplicationApprovePage.enterCourtDate();
+            await axeUtils.audit();
             await consentApplicationApprovePage.navigateContinue(url + '/submit');
 
             await checkYourAnswersPage.assertCheckYourAnswersPage({
@@ -192,7 +199,7 @@ test.describe("Consent order in contested case", () => {
                     { cellItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                     { cellItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                     { cellItem: 'Select Judge', value: 'District Judge' },
-                    { cellItem: "Name of Judge", value: "Peter Chapman" },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             })
@@ -206,7 +213,7 @@ test.describe("Consent order in contested case", () => {
                         { tabItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                         { tabItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                         { tabItem: 'Select Judge', value: 'District Judge' },
-                        { tabItem: "Name of Judge", value: "Peter Chapman" },
+                        { tabItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                         { tabItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                     ]
                 }
@@ -238,17 +245,6 @@ test.describe("Consent order in contested case", () => {
             await eventSummaryPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.closeCase.listItem);
             await manageCaseDashboardPage.signOut();
-
-            if (config.run_accessibility) {
-                const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-                await testInfo.attach('accessibility-scan-results', {
-                    body: JSON.stringify(accessibilityScanResults, null, 2),
-                    contentType: 'application/json'
-                });
-
-                expect(accessibilityScanResults.violations).toEqual([]);
-            }
         });
 
     test(
@@ -267,7 +263,7 @@ test.describe("Consent order in contested case", () => {
                    consentApplicationApprovePage,
                    sendOrderPage,
                    eventSummaryPage,
-                   makeAxeBuilder
+                   axeUtils
                }, testInfo) => {
             // Set up court information.
             const courtName = "Coventry Combined Court Centre";
@@ -375,6 +371,7 @@ test.describe("Consent order in contested case", () => {
             await consentOrderNotApprovedPage.verifyReasonsForRefusal();
             await consentOrderNotApprovedPage.selectAllReasonsForRefusal();
             await consentOrderNotApprovedPage.selectJudge("His Honour Judge")
+            await axeUtils.audit();
             await consentOrderNotApprovedPage.navigateContinue();
             await consentOrderNotApprovedPage.navigateContinue(url + '/submit');
             const reasons = [
@@ -400,7 +397,7 @@ test.describe("Consent order in contested case", () => {
                     'Reason for Refusal',
                     ...reasons,
                     { cellItem: 'Select Judge', value: 'His Honour Judge' },
-                    { cellItem: "Name of Judge", value: "Peter Chapman" },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             });
@@ -471,7 +468,7 @@ test.describe("Consent order in contested case", () => {
                     { cellItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                     { cellItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                     { cellItem: 'Select Judge', value: 'District Judge' },
-                    { cellItem: "Name of Judge", value: "Peter Chapman" },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             })
@@ -485,7 +482,7 @@ test.describe("Consent order in contested case", () => {
                         { tabItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                         { tabItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                         { tabItem: 'Select Judge', value: 'District Judge' },
-                        { tabItem: "Name of Judge", value: "Peter Chapman" },
+                        { tabItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                         { tabItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                     ]
                 }
@@ -517,16 +514,5 @@ test.describe("Consent order in contested case", () => {
             await eventSummaryPage.navigateSubmit();
             await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.closeCase.listItem);
             await manageCaseDashboardPage.signOut();
-
-            if (config.run_accessibility) {
-                const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-                await testInfo.attach('accessibility-scan-results', {
-                    body: JSON.stringify(accessibilityScanResults, null, 2),
-                    contentType: 'application/json'
-                });
-
-                expect(accessibilityScanResults.violations).toEqual([]);
-            }
         });
 });

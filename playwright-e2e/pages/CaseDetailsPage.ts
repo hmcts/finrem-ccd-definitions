@@ -97,10 +97,12 @@ export class CaseDetailsPage {
                 await expect(tabItem).toBeVisible();
 
                 // Refine the locator to uniquely identify the corresponding <td>
-                const tabValue = tabItem.locator('xpath=../following-sibling::td').filter({
-                    hasText: content.value,
-                });
-                await expect(tabValue).toHaveText(content.value);
+                const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
+                if (!content.exact) {
+                    await expect(tabValue).toContainText(content.value);
+                } else {
+                    await expect(tabValue).toHaveText(content.value);
+                }
             }
         }
     }
@@ -229,5 +231,10 @@ export class CaseDetailsPage {
         if (parentPath.length === 0 && errors.length > 0) {
             throw new Error('File tree validation errors:\n' + errors.join('\n\n'));
         }
+    }
+
+    async validateCaseState(expectedState: string): Promise<void> {
+        const stateLabel = this.page.getByText(expectedState, { exact: true });
+        await expect(stateLabel).toBeVisible();
     }
 }

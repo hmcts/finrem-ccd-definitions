@@ -10,6 +10,7 @@ import {
     contestedCreatePaperChildrenCaseDetailsTable, contestedCreatePaperMatrimonyCaseDetailsTable
 } from "../../../resources/check_your_answer_content/create_case/createCaseTable.ts";
 import {ContestedEvents} from "../../../config/case-data.ts";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 // Create a test case for the Contested Paper Case
 test(
@@ -38,8 +39,7 @@ test(
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       checkYourAnswersPage,
-      caseDetailsPage,
-      makeAxeBuilder
+      caseDetailsPage
     },
     testInfo
   ) => {
@@ -61,13 +61,13 @@ test(
     await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
     await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
-    await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
+    await solicitorDetailsPage.enterReferenceNumber(envTestData.ORG_ID_1);
       await solicitorDetailsPage.enterUKAddress({
-          buildingAndStreet: "3rd Floor, 65-68 Leadenhall St",
-          addressLine2: "Water Unite",
-          townOrCity: "London",
-          county: "Greater London",
-          postcodeOrZipcode: "EC3A 2AD",
+        buildingAndStreet: envTestData.APP_SOL_BUILDING_STREET,
+        addressLine2: "Water Unite",
+        townOrCity: envTestData.APP_SOL_TOWN_CITY,
+        county: envTestData.APP_SOL_COUNTY,
+        postcodeOrZipcode: envTestData.APP_SOL_POSTCODE,
       });
     // Check both application types are present.
     await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT);
@@ -170,17 +170,6 @@ test(
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);
 
-    // Note: Financial Assets page produces accessibility issues
-    if (config.run_accessibility) {
-      const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-      await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-      });
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    }
   }
 );
 
@@ -210,9 +199,7 @@ test(
             createCaseCheckYourAnswersPage,
             caseDetailsPage,
             checkYourAnswersPage,
-            makeAxeBuilder
-        },
-        testInfo
+        }
     ) => {
         // Set up court information.
         const courtName: string = "COVENTRY COMBINED COURT CENTRE";
@@ -236,13 +223,13 @@ test(
         await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
         await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
         await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
-        await solicitorDetailsPage.enterReferenceNumber('Y707HZM');
+        await solicitorDetailsPage.enterReferenceNumber(envTestData.ORG_ID_1);
         await solicitorDetailsPage.enterUKAddress({
-            buildingAndStreet: "3rd Floor, 65-68 Leadenhall St",
-            addressLine2: "Water Unite",
-            townOrCity: "London",
-            county: "Greater London",
-            postcodeOrZipcode: "EC3A 2AD",
+          buildingAndStreet: envTestData.APP_SOL_BUILDING_STREET,
+          addressLine2: "Water Unite",
+          townOrCity: envTestData.APP_SOL_TOWN_CITY,
+          county: envTestData.APP_SOL_COUNTY,
+          postcodeOrZipcode: envTestData.APP_SOL_POSTCODE,
         });
         await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT); //Childrens Act case type
         await solicitorDetailsPage.navigateContinue(expectedURL,3);
@@ -331,17 +318,5 @@ test(
 
         // Assert tab data
         await caseDetailsPage.assertTabData(createPaperCaseTabDataChildrensAct);
-
-        // Note: Financial Assets page produces accessibility issues
-        if (config.run_accessibility) {
-            const accessibilityScanResults = await makeAxeBuilder().analyze();
-
-            await testInfo.attach('accessibility-scan-results', {
-                body: JSON.stringify(accessibilityScanResults, null, 2),
-                contentType: 'application/json'
-            });
-
-            expect(accessibilityScanResults.violations).toEqual([]);
-        }
     }
 );

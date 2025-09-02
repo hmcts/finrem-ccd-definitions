@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-const env = process.env.ENV || 'aat';
+const env = process.env.RUNNING_ENV || 'aat';
 
 // Data which can be reused across multiple tests.
 // Called simply with "import config from '../config';" and then e.g. "config.caseworker.email" in a test.
@@ -10,16 +10,45 @@ const configuration = {
 
   // URLs
   idamUrl:
-    process.env.IDAM_API_URL || `https://idam-api.${env}.platform.hmcts.net`,
+    process.env.IDAM_API_URL
+    || (env.startsWith('pr-')
+      ? 'https://idam-api.aat.platform.hmcts.net'
+      : `https://idam-api.${env}.platform.hmcts.net`),
 
   manageCaseBaseURL:
-    process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`,
+    process.env.CCD_WEB_URL
+    || (
+      env.startsWith('pr-')
+        ? `https://xui-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
+        : `https://manage-case.${env}.platform.hmcts.net`
+    ),
 
   manageOrgBaseURL:
-    process.env.XUI_ORG_WEB_URL || `https://manage-org.${env}.platform.hmcts.net`,
+    process.env.XUI_ORG_WEB_URL
+    || (
+      env.startsWith('pr-')
+        ? `https://xui-mo-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
+        : `https://manage-org.${env}.platform.hmcts.net`
+    ),
+
+  manageOrgAPIBaseURL:
+    process.env.MANAGE_ORG_API_BASE_URL
+    || (
+      env.startsWith('pr-')
+        ? `https://aac-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
+        : `http://aac-manage-case-assignment-${env}.service.core-compute-${env}.internal`
+    ),
+
+  ccdDataStoreApi:
+    process.env.CCD_DATA_API_URL
+    || (
+      env.startsWith('pr-')
+        ? `https://ccd-data-store-api-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
+        : `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`
+    ),
 
   run_accessibility: 
-    process.env.TESTS_FOR_ACCESSIBILITY || false, 
+    process.env.TESTS_FOR_ACCESSIBILITY || false,
 
   judge: {
     email: process.env.USERNAME_JUDGE || '',
@@ -71,8 +100,30 @@ const configuration = {
     password: process.env.PLAYWRIGHT_RESP_BARRISTER_PSWD || '',
   },
 
+  applicant_CAA2: {
+    email: process.env.PLAYWRIGHT_APPL_CAA2_USERNAME || '',
+    password: process.env.PLAYWRIGHT_APPL_CAA2_PSWD || '',
+  },
+
+  applicant_solicitor2: {
+    email: process.env.PLAYWRIGHT_SOLICITOR2_USERNAME || '',
+    password: process.env.PLAYWRIGHT_SOLICITOR2_PSWD || '',
+  },
+
+  respondentCAA2: {
+    email: process.env.PLAYWRIGHT_RESP_CAA2_USERNAME || '',
+    password: process.env.PLAYWRIGHT_RESP_CAA2_PSWD || '',
+  },
+
+  respondent_solicitor2: {
+    email: process.env.PLAYWRIGHT_RESPONDENT_SOL2_USERNAME || '',
+    password: process.env.PLAYWRIGHT_RESPONDENT_SOL2_PSWD || '',
+  },
+
   jurisdiction: {
-    familyDivorce: 'Family Divorce',
+    familyDivorce: (process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`) === 'https://manage-case.demo.platform.hmcts.net'
+    ? 'Family Divorce - v104-26.1'
+    : 'Family Divorce'
   },
 
   caseType: {
