@@ -238,6 +238,7 @@ ccd:
       disableKeyVaults: true
       autoscaling:
         enabled: false
+      image: hmctspublic.azurecr.io/ccd/api-gateway-web:latest
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: ${APP_INSIGHTS_INSTRUMENTATION_KEY}
         IDAM_SERVICE_KEY: ${API_GATEWAY_S2S_KEY}
