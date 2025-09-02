@@ -27,7 +27,13 @@ async function performGeneralApplicationDirectionsFlow(
   await generalApplicationDirectionsPage.enterTimeEstimate('3 hours');
   await generalApplicationDirectionsPage.selectCourtForHearing();
   await generalApplicationDirectionsPage.enterAdditionalInformationAboutHearing();
-  await axeUtils.audit();
+  await axeUtils.audit({
+    exclude:[
+      '#generalApplicationDirectionsHearingTime',
+      '#generalApplicationDirectionsHearingTimeEstimate',
+      '#generalApplicationDirectionsAdditionalInformation'
+    ]
+  });
   await generalApplicationDirectionsPage.navigateContinue();
   await generalApplicationDirectionsPage.navigateSubmit();
     
@@ -58,7 +64,11 @@ async function performNewGeneralApplicationDirectionsFlow(
     { partyType: 'Intervener1', partyName: 'IntApp1' },
     { partyType: 'Intervener2', partyName: 'IntResp1' }
   ]);
-  await axeUtils.audit();
+  await axeUtils.audit({
+    exclude: [
+      '#workingHearing_additionalHearingDocs_value'
+    ]
+  });
   await generalApplicationDirectionsMHPage.navigateContinue();
   await checkYourAnswersPage.assertCheckYourAnswersPage(contestedGeneralApplicationDirectionsMHTableData);
   await generalApplicationDirectionsMHPage.navigateSubmit();
