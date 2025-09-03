@@ -16,26 +16,29 @@ test(
         manageCaseDashboardPage,
         caseDetailsPage,
         manageBarristerPage,
-        checkYourAnswersPage
-      }) => {
+        checkYourAnswersPage,
+        axeUtils,
+      },testInfo) => {
 
         // Create case and progress to HWF decision made
         const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
         // Login as caseworker and navigate to case
         await manageCaseDashboardPage.visit();
-        await loginPage.login(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL);
+        await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
         await manageCaseDashboardPage.navigateToCase(caseId);
 
         // Navigate to manage barrister and update applicant barrister
         await caseDetailsPage.selectNextStep(ContestedEvents.manageBarrister);
         await manageBarristerPage.checkApplicantRepresented(true);
+        await axeUtils.audit();
         await manageBarristerPage.navigateContinue();
         await manageBarristerPage.clickAddNew();
         await manageBarristerPage.specifyApplicantBarristerFirstName('Tester Gollum');
         await manageBarristerPage.specifyApplicantBarristerEmail('fr_applicant_barrister1@mailinator.com');
         await manageBarristerPage.specifyBarristerOrganisation('Finrem-1-Org');
         await manageBarristerPage.clickSelectButton();
+        await axeUtils.audit();
         await manageBarristerPage.navigateContinue();
         
         //Continue about to submit and check your answers

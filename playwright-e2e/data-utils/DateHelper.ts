@@ -47,6 +47,28 @@ export class DateHelper {
       }).format(date);
     }
 
+    /**
+     * Converts a date string (ISO format) into a formatted date string
+     * in the short month format "dd Month yyyy" (e.g. "06 Aug 2025").
+     *
+     * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
+     * @returns A promise that resolves with the formatted date string.
+     */
+    static formatToDayMonthYearShort(dateStr: string): string {
+      const date = new Date(dateStr);
+      return new Intl.DateTimeFormat('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      }).format(date);
+    }
+
+    static getNumericShortFormattedDateToday = (): string => {
+      const today = new Date();
+      return today.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
+        .replace(/\bSept\b/, 'Sep');
+    };
+
     static async getFormattedHearingDate(): Promise<{ currentDate: string; hearingDate: string }> {
       const currentDate = await this.getCurrentDate();
       const hearingDate = await this.getHearingDateUsingCurrentDate();
@@ -68,15 +90,28 @@ export class DateHelper {
     /**
      * Returns a date 12 weeks and 1 day later than today, formatted as "d MMM yyyy" (e.g. "6 Aug 2025").
      *
-     * @returns Formatted date string for 12 weeks and 1 day later.
+     * @returns Formatted date string for 12 weeks
      */
-    static getFormattedDateTwelveWeeksAndOneDayLater(): string {
+    static getFormattedDateTwelveWeeksLater(): string {
         const twelveWeeksAndOneDayLater = new Date();
-        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7 + 1);
+        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7);
 
         return twelveWeeksAndOneDayLater
             .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
             .replace(/\b([A-Za-z]{4,})\b/g, m => m.slice(0, 3));
+    };
+
+    /**
+     * Returns a date 12 weeks and 1 day later than today, formatted as "d MMM yyyy" (e.g. "6 Aug 2025").
+     *
+     * @returns Formatted date string for 12 weeks
+     */
+    static getUnFormattedDateTwelveWeeksLater(): string {
+        const twelveWeeksAndOneDayLater = new Date();
+        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7);
+
+        return twelveWeeksAndOneDayLater
+          .toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
     };
 
     /**
@@ -89,4 +124,52 @@ export class DateHelper {
         return today.split('-');
     };
 
+    /**
+     * Returns a date 12 weeks and 1 day later than today, formatted as "dd Month yyyy" (e.g. "6 August 2025").
+     *
+     * @returns Formatted date string for 12 weeks
+     */
+    static getFullDateTwelveWeeksLater(): string {
+        const twelveWeeksAndOneDayLater = new Date();
+        twelveWeeksAndOneDayLater.setDate(twelveWeeksAndOneDayLater.getDate() + 12 * 7);
+
+        return twelveWeeksAndOneDayLater
+            .toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+    };
+
+    /**
+     * Returns the current date and time formatted as "d MMM yyyy, HH:mm" (e.g. "6 Aug 2025, 11:02").
+     *
+     * @returns Formatted current date and time string.
+     */
+    static getUtcDateTimeFormatted(): string {
+      const now = new Date();
+      return now.toLocaleString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true,
+        timeZone: 'UTC'
+      })
+      .replace(/\b( am| pm)\b/i, '')
+      .replace(/\bSept\b/, 'Sep');
+    }
+    static getIsoDateTwelveWeeksLater(): string {
+      const twelveWeeksLater = new Date();
+      twelveWeeksLater.setDate(twelveWeeksLater.getDate() + 12 * 7);
+    return twelveWeeksLater.toISOString().split('T')[0];
+};
+
+    /**
+     * Returns today's date formatted as "d Month yyyy" (e.g. "6 August 2025").
+     *
+     * @returns Formatted current date string.
+     */
+    static getTodayFullFormattedDate(): string {
+        const today = new Date();
+        return today
+            .toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+    };
 }

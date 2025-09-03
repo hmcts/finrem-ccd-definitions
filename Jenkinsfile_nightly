@@ -2,12 +2,25 @@
 properties([
         pipelineTriggers([cron('00 17 * * 1-5')]),
         parameters([
-                string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
-                string(name: 'CCD_WEB_URL', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
+                string(
+                        name: 'RUNNING_ENV',
+                        defaultValue: 'aat',
+                        description: 'Environment to test against. Options: aat, demo, pr-xxxx'
+                ),
                 string(
                         name: 'FUNCTIONAL_TESTS_WORKERS',
-                        defaultValue: '2',
+                        defaultValue: '4',
                         description: 'Number of workers running functional tests'
+                ),
+                string(
+                        name: 'TAGS_TO_RUN',
+                        defaultValue: '',
+                        description: 'Optionally, run a single or multiple tags (comma separated e.g. @cui, @exui)'
+                ),
+                choice(
+                        name: 'BROWSER_TO_RUN',
+                        choices: ['chromium', 'chrome', 'firefox', 'webkit', 'msedge'],
+                        description: 'Choose what browsers will be run (only when a tag is specified)'
                 )
         ])
 ])
@@ -29,7 +42,7 @@ static Map < String, Object > secret(String secretName, String envVariable) {
 }
 
 def secrets = [
-    'finrem-${env}': [
+    "finrem-${params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV}": [
         secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
         secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
         secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
@@ -38,107 +51,181 @@ def secrets = [
         secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
         secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
         secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
-        secret('username-solicitor', 'USERNAME_SOLICITOR'),
-        secret('password-solicitor', 'PASSWORD_SOLICITOR'),
+        secret('playwright-applicant-intervener-username', 'PLAYWRIGHT_APPL_INTERVENER_USERNAME'),
+        secret('playwright-applicant-intervener-password', 'PLAYWRIGHT_APPL_INTERVENER_PSWD'),
+        secret('playwright-respondent-intervener-username', 'PLAYWRIGHT_RESP_INTERVENER_USERNAME'),
+        secret('playwright-respondent-intervener-password', 'PLAYWRIGHT_RESP_INTERVENER_PSWD'),
         secret('username-caseworker', 'USERNAME_CASEWORKER'),
         secret('password-caseworker', 'PASSWORD_CASEWORKER'),
         secret('fr-judge-username', 'USERNAME_JUDGE'),
         secret('fr-judge-password', 'PASSWORD_JUDGE'),
-        secret('username-caa', 'USERNAME_CAA'),
-        secret('password-caa', 'PASSWORD_CAA'),
-        secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
         secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
-        secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
         secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
-        secret('ccd-admin-username', 'CCD_ADMIN_USER_NAME'),
-        secret('ccd-admin-password', 'CCD_ADMIN_PASSWORD'),
-        secret('solicitor1-username', 'USERNAME_SOLICITOR1'),
-        secret('solicitor1-password', 'PASSWORD_SOLICITOR1'),
         secret('barrister1-username', 'USERNAME_BARRISTER1'),
-        secret('barrister1-password', 'PASSWORD_BARRISTER1')
+        secret('barrister1-password', 'PASSWORD_BARRISTER1'),
+        secret("playwright-barrister2-respondent-username","PLAYWRIGHT_RESP_BARRISTER_USERNAME"),
+        secret("playwright-barrister2-respondent-testing-password","PLAYWRIGHT_RESP_BARRISTER_PSWD"),
+        secret("playwright-appl-caa2-username","PLAYWRIGHT_APPL_CAA2_USERNAME"),
+        secret("playwright-appl-caa2-password","PLAYWRIGHT_APPL_CAA2_PSWD"),
+        secret("playwright-respondent-caa2-username","PLAYWRIGHT_RESP_CAA2_USERNAME"),
+        secret("playwright-respondent-caa2-password","PLAYWRIGHT_RESP_CAA2_PSWD"),
+        secret("playwright-solicitor2-username","PLAYWRIGHT_SOLICITOR2_USERNAME"),
+        secret("playwright-solicitor2-password","PLAYWRIGHT_SOLICITOR2_PSWD"),
+        secret("playwright-respondent-sol2-username","PLAYWRIGHT_RESPONDENT_SOL2_USERNAME"),
+        secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD")
     ]
 ]
 
 def pipelineConf = new AppPipelineConfig()
 pipelineConf.vaultSecrets = secrets
 
+def buildPlaywrightCommand(tags, browser) {
+    if (tags == null || tags.trim().isEmpty()) {
+        return;
+    }
+    def tagList = tags.split(',').collect { it.trim() }
+
+    def command = 'yarn playwright test '
+    tagList.each { tag ->
+        if (!tag.isEmpty()) {
+            command += " --grep ${tag}"
+        }
+    }
+
+    if (browser) {
+        command += " --project=${browser}"
+        command = "playwright install ${browser} && ${command}"
+    }
+
+    return command
+}
 
 withNightlyPipeline(type, product, component) {
-    env.CCD_WEB_URL = 'https://manage-case.aat.platform.hmcts.net'
-    env.CCD_DATA_API_URL = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal'
-    env.XUI_ORG_WEB_URL = 'https://manage-org.aat.platform.hmcts.net'
-    env.MANAGE_ORG_API_BASE_URL='http://aac-manage-case-assignment-aat.service.core-compute-aat.internal'
     env.NIGHTLY_TEST = 'true'
     env.NODE_ENV = 'ci'
     env.FUNCTIONAL_TESTS_WORKERS = params.FUNCTIONAL_TESTS_WORKERS
+    env.RUNNING_ENV = params.RUNNING_ENV
 
     loadVaultSecrets(secrets)
-    enableFullFunctionalTest(180)
 
-    before('fullFunctionalTest') {
-        yarnBuilder.yarn('yarn-update')
-        yarnBuilder.yarn('install-dependencies')
-        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-        env.ENV = 'aat'
-    }
-
-    afterAlways('fullFunctionalTest') {
-        stage('Functional playwright tests - chromium') {
-            try {
-                yarnBuilder.yarn('test:functional-chromium')
-            } catch (Error) {
-                unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-            } finally {
-                publishHTML([
-                        allowMissing: true,
-                        alwaysLinkToLastBuild: true,
-                        keepAll: true,
-                        reportDir: 'playwright-report',
-                        reportFiles: 'index.html',
-                        reportName: 'FunctionalTestReport'
-                ])
-                steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-            }
+    afterAlways('DependencyCheckNightly') {
+        stage('Set up playwright') {
+            yarnBuilder.yarn('yarn-update')
+            yarnBuilder.yarn('install-dependencies')
+            steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+            env.ENV = 'aat'
         }
 
-        // Firefox stage removed until run stabilized 
+        if (!params.TAGS_TO_RUN.isEmpty()) {
+            stage("${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}") {
+                try {
+                    currentBuild.displayName = "${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
+                    yarnBuilder.yarn(buildPlaywrightCommand(params.TAGS_TO_RUN, params.BROWSER_TO_RUN))
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing: true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: "playwright-report",
+                            reportFiles: 'index.html',
+                            reportName: "${TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+        } else {
+            stage('Functional playwright tests - chromium') {
+                try {
+                    env.TESTS_FOR_ACCESSIBILITY = 'true'
+                    yarnBuilder.yarn('test:functional-chromium')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing         : true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll              : true,
+                            reportDir            : 'playwright-report',
+                            reportFiles          : 'index.html',
+                            reportName           : 'FunctionalTestReport-chromium'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
 
-        // stage('Functional playwright tests - firefox') {
-        //     try {
-        //         yarnBuilder.yarn('test:functional-firefox')
-        //     } catch (Error) {
-        //         unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-        //     } finally {
-        //         publishHTML([
-        //                 allowMissing: true,
-        //                 alwaysLinkToLastBuild: true,
-        //                 keepAll: true,
-        //                 reportDir: 'playwright-report',
-        //                 reportFiles: 'index.html',
-        //                 reportName: 'FunctionalTestReport'
-        //         ])
-        //         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-        //     }
-        // }
-    
-        // Webkit stage removed until run stabilized 
+            stage('Functional playwright tests - chrome') {
+                try {
+                    yarnBuilder.yarn('test:functional-chrome')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing: true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: 'playwright-report',
+                            reportFiles: 'index.html',
+                            reportName: 'FunctionalTestReport-chrome'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
 
-        // stage('Functional playwright tests - webkit') {
-        //     try {
-        //         yarnBuilder.yarn('test:functional-webkit')
-        //     } catch (Error) {
-        //         unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-        //     } finally {
-        //         publishHTML([
-        //                 allowMissing: true,
-        //                 alwaysLinkToLastBuild: true,
-        //                 keepAll: true,
-        //                 reportDir: 'playwright-report',
-        //                 reportFiles: 'index.html',
-        //                 reportName: 'FunctionalTestReport'
-        //         ])
-        //         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-        //     }
-        // }
+            stage('Functional playwright tests - edge') {
+                try {
+                    yarnBuilder.yarn('test:functional-edge')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing: true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: 'playwright-report',
+                            reportFiles: 'index.html',
+                            reportName: 'FunctionalTestReport-edge'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+
+            stage('Functional playwright tests - firefox') {
+                try {
+                    yarnBuilder.yarn('test:functional-firefox')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing         : true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll              : true,
+                            reportDir            : 'playwright-report',
+                            reportFiles          : 'index.html',
+                            reportName           : 'FunctionalTestReport-firefox'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+
+            stage('Functional playwright tests - webkit') {
+                try {
+                    yarnBuilder.yarn('test:functional-webkit')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing         : true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll              : true,
+                            reportDir            : 'playwright-report',
+                            reportFiles          : 'index.html',
+                            reportName           : 'FunctionalTestReport-webkit'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+        }
     }
 }

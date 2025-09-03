@@ -57,11 +57,11 @@ export class CommonActionsHelper {
     async waitForAllUploadsToBeCompleted(page: Page) {
         const cancelUploadLocators = await page.getByText('Cancel upload').all();
         for (let i = 0; i < cancelUploadLocators.length; i++) {
-            await expect(cancelUploadLocators[i]).toBeDisabled({ timeout: 10000 });
+            await expect(cancelUploadLocators[i]).toBeDisabled({ timeout: 15000 });
         }
         const uploadingSpan = await page.locator('span', { hasText: 'Uploading...' }).all();
         for (let i = 0; i < uploadingSpan.length; i++) {
-            await expect(uploadingSpan[i]).toBeHidden({ timeout: 2000 });
+            await expect(uploadingSpan[i]).toBeHidden({ timeout: 10000 });
         }
     }
 
@@ -86,8 +86,8 @@ export class CommonActionsHelper {
         page: Page,
         uploadField: Locator,
         fileToUpload: { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> } | string,
-        maxRetries: number = 3,
-        waitMs: number = 3000
+        maxRetries: number = 5,
+        waitMs: number = 5000
     ) {
         for (let attempt = 0; attempt < maxRetries; attempt++) {
             await uploadField.setInputFiles(fileToUpload);
@@ -109,5 +109,19 @@ export class CommonActionsHelper {
                 throw new Error('Rate limit error persists after retries');
             }
         }
+    }
+
+    async enterDate(element: Locator, date: {year: string, month: string, day: string}) {
+        const day = element.locator(`input[id*='-day']`);
+        const month = element.locator(`input[id*='-month']`);
+        const year = element.locator(`input[id*='-year']`);
+
+        await expect(day).toBeVisible();
+        await expect(month).toBeVisible();
+        await expect(year).toBeVisible();
+
+        await day.fill(date.day);
+        await month.fill(date.month);
+        await year.fill(date.year);
     }
 }

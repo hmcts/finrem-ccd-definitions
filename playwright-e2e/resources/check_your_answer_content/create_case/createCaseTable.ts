@@ -1,17 +1,18 @@
 import {Table, TableRowItem} from "../../../pages/components/table.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
+import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
 export const solicitorDetails: TableRowItem[] = [
     "Solicitor Details",
     { cellItem: 'Solicitor’s name', value: 'Bilbo Baggins' },
     { cellItem: "Solicitor’s firm", value: "FinRem-1-Org" },
-    { cellItem: "Your reference number", value: "Y707HZM" },
+    { cellItem: "Your reference number", value: envTestData.ORG_ID_1 },
     "Solicitor’s Contact Details",
     { cellItem: "Is the respondent represented ?", value: "Yes", rowType: 'label-value-adjacent' },
-    { cellItem: 'Building and Street', value: '3rd Floor, 65-68 Leadenhall St'},
-    { cellItem: 'Town or City', value: 'London'},
-    { cellItem: 'County', value: 'Greater London'},
-    { cellItem: 'Postcode/Zipcode', value: 'EC3A 2AD'},
+    { cellItem: 'Building and Street', value: envTestData.APP_SOL_BUILDING_STREET },
+    { cellItem: 'Town or City', value: envTestData.APP_SOL_TOWN_CITY },
+    { cellItem: 'County', value: envTestData.APP_SOL_COUNTY },
+    { cellItem: 'Postcode/Zipcode', value: envTestData.APP_SOL_POSTCODE },
     { cellItem: 'Phone Number', value: '07111111111'},
     { cellItem: 'Email', value: 'fr_applicant_solicitor1@mailinator.com'},
 ]
@@ -73,8 +74,8 @@ export const respondentDetails: TableRowItem[] = [
 
 export const propertyAdjustmentDetails: TableRowItem[] = [
     "Property adjustment order details",
-    {cellItem: 'Property address', value: 'Test Address'},
-    {cellItem: 'Name(s) and address(es) of any mortgage(s) for property', value: 'Test Mortgage'},
+    { cellItem: 'Property address', value: 'Test Address'},
+    { cellItem: 'Name(s) and address(es) of any mortgage(s) for property', value: 'Test Mortgage'},
     { cellItem: 'Do you want to add additional property ?', value: 'Yes', rowType: 'label-value-adjacent' },
     { cellItem: 'Property address', value: 'Test Address 2'},
     { cellItem: 'Name(s) and address(es) of any mortgage(s) for property', value: 'Test Mortgage 2'},
@@ -125,7 +126,7 @@ export const miamDetails: TableRowItem[] = [
 export const variationOrderDetails: TableRowItem[] = [
     'Upload original order to be varied',
     { cellItem: 'Original order to be varied', value: ' Variation order.pdf' },
-    { cellItem: 'Do you want to upload any other documents ?', value: 'No', rowType: 'label-value-adjacent' },
+    { cellItem: 'Do you want to upload any other documents ?', value: 'Yes', rowType: 'label-value-adjacent' },
 ]
 
 export const urgentCase: TableRowItem[] = [
@@ -133,7 +134,7 @@ export const urgentCase: TableRowItem[] = [
     { cellItem: 'Is this an urgent case ?', value: 'No' }
 ];
 
-export const  contestedCreatePaperChildrenCaseDetailsTable: Table = {
+export const contestedCreatePaperChildrenCaseDetailsTable: Table = {
     tableName: 'Check your answers',
     rows: [
         { cellItem: 'Is the Applicant represented ?', value: 'Yes', rowType: 'label-value-adjacent' },
@@ -163,7 +164,7 @@ export const  contestedCreatePaperChildrenCaseDetailsTable: Table = {
     ]
 }
 
-export const  contestedCreatePaperMatrimonyCaseDetailsTable: Table = {
+export const contestedCreatePaperMatrimonyCaseDetailsTable: Table = {
     tableName: 'Check your answers',
     rows: [
         { cellItem: 'Is the Applicant represented ?', value: 'Yes', rowType: 'label-value-adjacent' },
@@ -195,7 +196,7 @@ export const  contestedCreatePaperMatrimonyCaseDetailsTable: Table = {
     ]
 }
 
-export const  contestedCreateExpressPaperMatrimonyCaseDetailsTable: Table = {
+export const contestedCreateExpressPaperMatrimonyCaseDetailsTable: Table = {
     tableName: 'Check your answers',
     rows: [
         { cellItem: 'Is the Applicant represented ?', value: 'Yes', rowType: 'label-value-adjacent' },
@@ -218,7 +219,7 @@ export const  contestedCreateExpressPaperMatrimonyCaseDetailsTable: Table = {
         { cellItem: 'Of the above value, what is the net value of the family home?', value: '125,000', rowType: 'label-value-adjacent' },
         'Please tick any potential allegations/issues which may arise',
         { cellItem: 'Select all that apply', value: 'Not applicable'},
-        { cellItem: 'Do you want to upload any other documents ?', value: 'No', rowType: 'label-value-adjacent' },
+        { cellItem: 'Do you want to upload any other documents ?', value: 'Yes', rowType: 'label-value-adjacent' },
         ...getCourtDetails("BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE"),
         ...miamDetails,
         'You should have a document signed by the mediator confirming this (which you should bring to your first hearing)',
@@ -226,7 +227,7 @@ export const  contestedCreateExpressPaperMatrimonyCaseDetailsTable: Table = {
     ]
 }
 
-export const  contestedCreateExpressFormAMatrimonyCaseDetailsTable: Table = {
+export const contestedCreateExpressFormAMatrimonyCaseDetailsTable: Table = {
     tableName: 'Check your answers',
     rows: [
         ...solicitorDetails,

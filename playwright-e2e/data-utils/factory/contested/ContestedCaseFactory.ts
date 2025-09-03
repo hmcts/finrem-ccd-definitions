@@ -11,6 +11,7 @@ import {
   APPLICATION_ISSUE_DATE
 } from "../../PayloadMutator";
 import { DateHelper } from "../../DateHelper";
+import {envTestData} from "../../test_data/EnvTestDataConfig.ts";
 
 export class ContestedCaseFactory {
   private static buildContestedCase({
@@ -215,6 +216,33 @@ export class ContestedCaseFactory {
 
     return caseId;
   }
+
+  // Process order
+  static async createAndProcessFormACaseUpToProcessOrderLegacy(
+    isFormA = true,
+    isExpressPilot = false
+  ): Promise<string> {
+      const caseId = await this.progressToUploadDraftOrder({ isFormA: isFormA });
+      await ContestedEventApi.agreedDraftOrderApplicant(caseId);
+      const hearingDate = DateHelper.getIsoDateTwelveWeeksLater();
+      const documentDetailsForFutureTestSteps = {
+      hearingDate,
+      courtOrderDate: hearingDate,
+      documentUrl: envTestData.DOCUMENT_URL,
+      documentBinaryUrl: envTestData.DOCUMENT_BINARY_URL,
+      uploadTimestamp: await DateHelper.getCurrentTimestamp(),
+    };
+
+    await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
+    await ContestedEventApi.caseWorkerProcessOrderLegacy(caseId, {
+      documentUrl: envTestData.DOCUMENT_URL,
+      documentBinaryUrl: envTestData.DOCUMENT_BINARY_URL,
+      uploadTimestamp: await DateHelper.getCurrentTimestamp(),
+    });
+    return caseId;
+  }
+
+  
 
   // General Application Directions
   private static async caseworkerProgressToGeneralApplicationReferToJudge(

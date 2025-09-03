@@ -8331,5 +8331,197 @@
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageHearingsActionSelection",
+    "Label": "What would you like to do?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_ManageHearingAction",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "workingHearing",
+    "Label": "Hearing",
+    "FieldType": "FR_workingHearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearings",
+    "Label": "Hearings",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingDocumentsCollection",
+    "Label": " ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageHearingDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "workingHearingId",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingTabItems",
+    "Label": "Hearing",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageHearingTabItem",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantHearingTabItems",
+    "Label": "Hearing",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageHearingTabItem",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentHearingTabItems",
+    "Label": "Hearing",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageHearingTabItem",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "int1HearingTabItems",
+    "Label": "Hearing",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageHearingTabItem",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "int2HearingTabItems",
+    "Label": "Hearing",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageHearingTabItem",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "int3HearingTabItems",
+    "Label": "Hearing",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageHearingTabItem",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "int4HearingTabItems",
+    "Label": "Hearing",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageHearingTabItem",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isListForHearingsMigrated",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isListForInterimHearingsMigrated",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isGeneralApplicationMigrated",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isDirectionDetailsCollectionMigrated",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isHearingDirectionDetailsCollectionMigrated",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "mhMigrationVersion",
+    "Label": "MH Migration Version",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "24/07/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "isAddHearingChosen",
+    "Label": "Do you want to add a hearing?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "18/07/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judgeApprovedOrderCollection",
+    "Label": "Upload approved order",
+    "HintText": "You must upload Microsoft Word documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example “JonesFDA11Jul24”",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_draftDirectionOrder",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
