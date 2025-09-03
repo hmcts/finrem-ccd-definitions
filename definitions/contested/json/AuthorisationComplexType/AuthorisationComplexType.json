@@ -1504,7 +1504,15 @@
     "CRUD": "RU"
   },
   {
-    "LiveFrom": "21/01/2025",
+    "LiveFrom": "01/09/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingDocumentsCollection",
+    "ListElementCode": "hearingId",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/09/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "hearingDocumentsCollection",
     "ListElementCode": "hearingDocument",
