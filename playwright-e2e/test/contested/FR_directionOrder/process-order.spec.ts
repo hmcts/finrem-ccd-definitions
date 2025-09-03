@@ -10,6 +10,7 @@ import { migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearingsEve
 import { unprocessedApprovedOrdersWithNewHearingTable, unprocessedApprovedOrdersWithOldHearingTable } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable.ts';
 import { processOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs.ts';
 import { createDraftOrdersApprovedWithHearingTabData } from '../../../resources/tab_content/contested/draft_orders_tabs.ts';
+import { DateHelper } from '../../../data-utils/DateHelper.ts';
 
 /**
  * Firstly, performs the upload draft order flow as a step towards the Process Order event.
@@ -32,7 +33,8 @@ async function progressToProcessOrderEvent(
   loginPage: any,
   manageCaseDashboardPage: any,
   caseDetailsPage: any,
-  uploadDraftOrdersPage: any
+  uploadDraftOrdersPage: any,
+  hearingDate?: string
 ): Promise<{
   documentUrl: string;
   documentBinaryUrl: string;
@@ -62,7 +64,9 @@ async function progressToProcessOrderEvent(
   const eventResponse = await uploadDraftOrdersPage.navigateSubmitAndReturnEventResponse();
 
   const firstDraftOrderItem = eventResponse?.data?.agreedDraftOrderCollection?.[0]?.value?.draftOrder;
-  const hearingDate = eventResponse?.data?.hearingDate;
+  hearingDate = eventResponse?.data?.hearingDate || hearingDate; 
+  hearingDate = hearingDate ?? await DateHelper.getHearingDateUsingCurrentDate();
+  console.log(eventResponse.data)
 
     const documentDetailsForFutureTestSteps = {
       hearingDate,
@@ -72,7 +76,7 @@ async function progressToProcessOrderEvent(
       uploadTimestamp: firstDraftOrderItem?.upload_timestamp,
       fileName: "agreed-draft-order-document.docx"
     };
-
+    console.log(hearingDate)
   await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
   return documentDetailsForFutureTestSteps
 }
@@ -131,7 +135,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
         axeUtils
       }, testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: true });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -177,7 +181,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
         axeUtils
       }, testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: false });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -223,8 +227,10 @@ test.describe('Contested - Process Order (Old Style)', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
-      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+     const hearingDate = await DateHelper.getHearingDateUsingCurrentDate();
+      await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate);
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, hearingDate);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
@@ -263,7 +269,9 @@ test.describe('Contested - Process Order (Old Style)', () => {
         blankPage
       }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      const hearingDate = await DateHelper.getHearingDateUsingCurrentDate();
+      await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate);
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -325,7 +333,9 @@ test.describe('Contested - Process Order (Old Style)', () => {
         manageHearingPage
       }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      const hearingDate = await DateHelper.getHearingDateUsingCurrentDate();
+      await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate);
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -393,7 +403,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       }, testInfo
     ) => {
 
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: true });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -452,7 +462,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
         checkYourAnswersPage
       }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: false });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);

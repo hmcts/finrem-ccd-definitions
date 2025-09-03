@@ -159,7 +159,7 @@ export class CcdApi {
       },
       event_token: eventToken,
     };
-
+     console.log(payload);
     const saveCaseResponse = await this.saveCase(
         ccdSaveEventPath,
         authToken,
