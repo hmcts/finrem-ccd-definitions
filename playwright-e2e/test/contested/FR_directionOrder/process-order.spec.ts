@@ -72,7 +72,6 @@ async function progressToProcessOrderEvent(
       uploadTimestamp: firstDraftOrderItem?.upload_timestamp,
       fileName: "agreed-draft-order-document.docx"
     };
-  
   await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
   return documentDetailsForFutureTestSteps
 }
