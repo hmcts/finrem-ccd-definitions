@@ -78,13 +78,7 @@ export class CcdApi {
     const rawData = readFileSync(path.resolve(dataLocation), "utf-8");
     const data = updateJsonFileWithEnvValues(rawData);
 
-    dataModifications.forEach((mod) => {
-      if (mod.action === "delete") {
-        delete data[mod.key];
-      } else if (mod.action === "insert") {
-        data[mod.key] = mod.value;
-      }
-    });
+    this.makeModifications(dataModifications, data);
 
     const payload = {
       data,
@@ -142,13 +136,7 @@ export class CcdApi {
     let updatedDataObj = updateJsonFileWithEnvValues(rawData);
 
     // Apply the key-based mutations
-    for (const action of replacements) {
-      if (action.action === "insert") {
-        updatedDataObj[action.key] = action.value;
-      } else if (action.action === "delete") {
-        delete updatedDataObj[action.key];
-      }
-    }
+    this.makeModifications(replacements, updatedDataObj);
 
     const payload = {
       data: updatedDataObj,
@@ -159,7 +147,7 @@ export class CcdApi {
       },
       event_token: eventToken,
     };
-     console.log(payload);
+    
     const saveCaseResponse = await this.saveCase(
         ccdSaveEventPath,
         authToken,

@@ -324,11 +324,11 @@ test.describe('Contested - Manage Hearings', () => {
                 typeOfHearing: "First Directions Appointment (FDA)",
                 court: "Manchester County And Family Court",
                 attendance: "In Person",
-                hearingDate: "01 Dec 2025",
-                hearingTime: "test",
-                duration: "test",
+                hearingDate: DateHelper.getFormattedDateTwelveWeeksLater(),
+                hearingTime: "10:00am",
+                duration: "1hr 20mins",
                 whoShouldSeeOrder: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
-                additionalInformation: "test",
+                additionalInformation: "This is additional information about the hearing",
                 uploadFiles: ["HearingNotice.pdf", "Form-G.pdf", "PfdNcdrComplianceLetter.pdf", "PfdNcdrCoverLetter.pdf", "OutOfFamilyCourtResolution.pdf", "Form-C.pdf", "Dummy QA copy.doc"]
             })]);
         })

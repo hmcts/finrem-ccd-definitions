@@ -411,12 +411,13 @@ export class ContestedEventApi {
     return caseId;
   }
 
-  static async caseWorkerPerformsAddAHearing(caseId: string, date: string) {
+  static async caseWorkerPerformsAddAHearing(caseId: string, date?: string) {
+    const hearingDate = date ? date : await DateHelper.getHearingDateUsingCurrentDate();
     await this.updateCaseWorkerSteps(caseId, [
       {
         event: ContestedEvents.manageHearings.ccdCallback,
         payload: PayloadPath.Contested.manageHearingAddHearing,
-        replacements: ADD_A_HEARING(date)
+        replacements: ADD_A_HEARING(hearingDate)
       },
     ]);
   }
