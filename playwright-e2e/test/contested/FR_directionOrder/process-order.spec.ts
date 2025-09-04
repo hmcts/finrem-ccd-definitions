@@ -72,7 +72,7 @@ async function progressToProcessOrderEvent(
       uploadTimestamp: firstDraftOrderItem?.upload_timestamp,
       fileName: "agreed-draft-order-document.docx"
     };
-    console.log(hearingDate)
+  
   await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
   return documentDetailsForFutureTestSteps
 }
