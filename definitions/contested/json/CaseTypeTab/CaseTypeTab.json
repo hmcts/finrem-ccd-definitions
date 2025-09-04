@@ -4219,6 +4219,78 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "specialMeasuresApplicationLbl",
+    "TabFieldDisplayOrder": 103
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "tabSpecialAssistanceRequired",
+    "TabFieldDisplayOrder": 104
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "tabSpecificArrangementsRequired",
+    "TabFieldDisplayOrder": 105
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "specialMeasuresPostHearingLbl",
+    "TabFieldDisplayOrder": 106
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "attendingCourtWithAssistanceLabel",
+    "TabFieldDisplayOrder": 107
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "attendingCourtWithAssistance",
+    "TabFieldDisplayOrder": 108
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "attendingCourtWithArrangementLabel",
+    "TabFieldDisplayOrder": 109
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "attendingCourtWithArrangement",
+    "TabFieldDisplayOrder": 110
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "AdminNotes",
     "TabLabel": "Admin Notes",
     "TabDisplayOrder": 15,
@@ -4876,34 +4948,6 @@
     "TabDisplayOrder": 17,
     "CaseFieldID": "refusedOrdersCollection",
     "TabFieldDisplayOrder": 8
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTab",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTab",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTab",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5579,51 +5623,6 @@
     "TabID": "schedulingTab",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 18,
-    "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 72
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTab",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 73
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTab",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 74
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTab",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 75
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTab",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 76
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTab",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
     "CaseFieldID": "draftDirectionDetailsCollectionRO",
     "TabFieldDisplayOrder": 77
   },
@@ -5678,34 +5677,6 @@
     "TabID": "schedulingTabAb",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 18,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "[APPBARRISTER]",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabAb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabAb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabAb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
     "CaseFieldID": "firsttHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -6373,24 +6344,6 @@
     "TabDisplayOrder": 18,
     "CaseFieldID": "attendingCourtWithAssistance",
     "TabFieldDisplayOrder": 72
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabAb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 73
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabAb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6452,34 +6405,6 @@
     "TabID": "schedulingTabAs",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 18,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "[APPSOLICITOR]",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabAs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabAs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabAs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
     "CaseFieldID": "firsttHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -7147,24 +7072,6 @@
     "TabDisplayOrder": 18,
     "CaseFieldID": "attendingCourtWithAssistance",
     "TabFieldDisplayOrder": 72
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabAs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 73
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabAs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7226,34 +7133,6 @@
     "TabID": "schedulingTabRs",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 18,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "[RESPSOLICITOR]",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
     "CaseFieldID": "firsttHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -7903,42 +7782,6 @@
     "TabDisplayOrder": 18,
     "CaseFieldID": "specialMeasuresPostHearingLbl",
     "TabFieldDisplayOrder": 70
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 71
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 72
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 73
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRs",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8000,34 +7843,6 @@
     "TabID": "schedulingTabRb",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 18,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "[RESPBARRISTER]",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
     "CaseFieldID": "firsttHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -8677,42 +8492,6 @@
     "TabDisplayOrder": 18,
     "CaseFieldID": "specialMeasuresPostHearingLbl",
     "TabFieldDisplayOrder": 70
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 71
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 72
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 73
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabRb",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -8774,34 +8553,6 @@
     "TabID": "schedulingTabJudge",
     "TabLabel": "Scheduling and Listing",
     "TabDisplayOrder": 18,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabJudge",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabJudge",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabJudge",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
     "CaseFieldID": "firsttHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -9442,51 +9193,6 @@
     "TabDisplayOrder": 18,
     "CaseFieldID": "additionalListOfHearingDocuments",
     "TabFieldDisplayOrder": 69
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabJudge",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 70
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabJudge",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 71
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabJudge",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 72
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabJudge",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 73
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "schedulingTabJudge",
-    "TabLabel": "Scheduling and Listing",
-    "TabDisplayOrder": 18,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 74
   },
   {
     "LiveFrom": "01/01/2017",
@@ -13189,34 +12895,6 @@
     "TabID": "interimSchedulingTab",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 24,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
     "CaseFieldID": "interimHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -13593,51 +13271,6 @@
     "TabDisplayOrder": 24,
     "CaseFieldID": "interimAdditionalInformationAboutHearing",
     "TabFieldDisplayOrder": 42
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 43
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 44
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 45
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTab",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
   },
   {
     "LiveFrom": "01/01/2017",
@@ -13746,34 +13379,6 @@
     "TabID": "interimSchedulingTabAs",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 24,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "[APPSOLICITOR]",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
     "CaseFieldID": "interimHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -14150,51 +13755,6 @@
     "TabDisplayOrder": 24,
     "CaseFieldID": "interimAdditionalInformationAboutHearing",
     "TabFieldDisplayOrder": 42
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 43
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 44
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 45
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
   },
   {
     "LiveFrom": "01/01/2017",
@@ -14303,34 +13863,6 @@
     "TabID": "interimSchedulingTabAb",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 24,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "[APPBARRISTER]",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
     "CaseFieldID": "interimHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -14707,51 +14239,6 @@
     "TabDisplayOrder": 24,
     "CaseFieldID": "interimAdditionalInformationAboutHearing",
     "TabFieldDisplayOrder": 42
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 43
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 44
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 45
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabAb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
   },
   {
     "LiveFrom": "01/01/2017",
@@ -14860,34 +14347,6 @@
     "TabID": "interimSchedulingTabRs",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 24,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "[RESPSOLICITOR]",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
     "CaseFieldID": "interimHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -15273,42 +14732,6 @@
     "TabDisplayOrder": 24,
     "CaseFieldID": "specialMeasuresPostHearingLbl",
     "TabFieldDisplayOrder": 43
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 44
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 45
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRs",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
   },
   {
     "LiveFrom": "01/01/2017",
@@ -15417,34 +14840,6 @@
     "TabID": "interimSchedulingTabRb",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 24,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "[RESPBARRISTER]",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
     "CaseFieldID": "interimHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -15821,51 +15216,6 @@
     "TabDisplayOrder": 24,
     "CaseFieldID": "interimAdditionalInformationAboutHearing",
     "TabFieldDisplayOrder": 42
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "specialMeasuresPostHearingLbl",
-    "TabFieldDisplayOrder": 43
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithAssistanceLabel",
-    "TabFieldDisplayOrder": 44
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithAssistance",
-    "TabFieldDisplayOrder": 45
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabRb",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
   },
   {
     "LiveFrom": "01/01/2017",
@@ -15974,34 +15324,6 @@
     "TabID": "interimSchedulingTabJudge",
     "TabLabel": "Scheduling and Listing for Interim Hearing",
     "TabDisplayOrder": 24,
-    "CaseFieldID": "specialMeasuresApplicationLbl",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "TabFieldDisplayOrder": 1
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabJudge",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecialAssistanceRequired",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabJudge",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "tabSpecificArrangementsRequired",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabJudge",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
     "CaseFieldID": "interimHearingLbl",
     "TabFieldDisplayOrder": 4
   },
@@ -16405,24 +15727,6 @@
     "TabDisplayOrder": 24,
     "CaseFieldID": "attendingCourtWithAssistance",
     "TabFieldDisplayOrder": 45
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabJudge",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangementLabel",
-    "TabFieldDisplayOrder": 46
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "interimSchedulingTabJudge",
-    "TabLabel": "Scheduling and Listing for Interim Hearing",
-    "TabDisplayOrder": 24,
-    "CaseFieldID": "attendingCourtWithArrangement",
-    "TabFieldDisplayOrder": 47
   },
   {
     "LiveFrom": "01/01/2017",
