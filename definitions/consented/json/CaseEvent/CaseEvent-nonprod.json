@@ -1,3 +1,50 @@
 [
+  {
+    "LiveFrom": "05/09/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_exuiSandbox",
+    "Name": "(DEBUG) EXUI Sandbox Zero",
+    "Description": "Sandbox for XUI",
+    "DisplayOrder": 997,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "05/09/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_exuiSandboxOne",
+    "Name": "(DEBUG) EXUI Sandbox One",
+    "Description": "Sandbox for XUI",
+    "DisplayOrder": 998,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "05/09/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_exuiSandboxTwo",
+    "Name": "(DEBUG) EXUI Sandbox Two",
+    "Description": "Sandbox for XUI",
+    "DisplayOrder": 999,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  }
 ]
-

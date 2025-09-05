@@ -1,2 +1,103 @@
 [
+  {
+    "_comment": "↓ FR_exuiSandbox"
+  },
+  {
+    "LiveFrom": "05/09/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_exuiSandbox",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 2,
+    "PageLabel": "ApplicantOrganisationPolicy On Page 1 and RespondentOrganisationPolicy On Page 2",
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+  },
+  {
+    "LiveFrom": "05/09/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_exuiSandbox",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 3,
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+  },
+  {
+    "_comment": "↑ FR_exuiSandbox"
+  },
+  {
+    "_comment": "↓ FR_exuiSandboxOne"
+  },
+  {
+    "LiveFrom": "05/09/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_exuiSandboxOne",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "PageLabel": "ApplicantOrganisationPolicy On Page 1 Only",
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+  },
+  {
+    "_comment": "↑ FR_exuiSandboxOne"
+  },
+  {
+    "_comment": "↓ FR_exuiSandboxTwo"
+  },
+  {
+    "LiveFrom": "05/09/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_exuiSandboxTwo",
+    "CaseFieldID": "nocParty",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+  },
+  {
+    "LiveFrom": "05/09/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_exuiSandboxTwo",
+    "CaseFieldID": "ApplicantOrganisationPolicy",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 2,
+    "PageLabel": "ApplicantOrganisationPolicy/RespondentOrganisationPolicy On Page 2 Depending on Party Selected",
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "PageShowCondition": "nocParty=\"applicant\""
+  },
+  {
+    "LiveFrom": "05/09/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_exuiSandboxTwo",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 3,
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "PageShowCondition": "nocParty=\"respondent\""
+  },
+  {
+    "_comment": "↑ FR_exuiSandboxTwo"
+  }
 ]
