@@ -85,6 +85,7 @@ finrem-cos:
       CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
       CRON_CFV_CATEGORISATION_TASK_ENABLED: true
       MANAGE_CASE_UI_BASE_URL: https://xui-${SERVICE_FQDN}
+      MANAGE_HEARING_ENABLED: true
     keyVaults:
       finrem:
         secrets:
