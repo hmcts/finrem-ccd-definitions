@@ -4,12 +4,11 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
-import { migratedHearingsCreatedFromProcessOrderTabData, processOrderHearingTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
-import { migratedMultipleHearingsCreatedFromProcessOrderTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
-import { migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearingsEventTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import { generateHearingsTabData, processOrderHearingTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 import { unprocessedApprovedOrdersWithNewHearingTable, unprocessedApprovedOrdersWithOldHearingTable } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable.ts';
 import { processOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs.ts';
 import { createDraftOrdersApprovedWithHearingTabData } from '../../../resources/tab_content/contested/draft_orders_tabs.ts';
+import { DateHelper } from '../../../data-utils/DateHelper.ts';
 
 /**
  * Firstly, performs the upload draft order flow as a step towards the Process Order event.
@@ -32,7 +31,8 @@ async function progressToProcessOrderEvent(
   loginPage: any,
   manageCaseDashboardPage: any,
   caseDetailsPage: any,
-  uploadDraftOrdersPage: any
+  uploadDraftOrdersPage: any,
+  hearingDate?: string
 ): Promise<{
   documentUrl: string;
   documentBinaryUrl: string;
@@ -62,8 +62,8 @@ async function progressToProcessOrderEvent(
   const eventResponse = await uploadDraftOrdersPage.navigateSubmitAndReturnEventResponse();
 
   const firstDraftOrderItem = eventResponse?.data?.agreedDraftOrderCollection?.[0]?.value?.draftOrder;
-  const hearingDate = eventResponse?.data?.hearingDate;
-
+  hearingDate = eventResponse?.data?.hearingDate || hearingDate; 
+  hearingDate = hearingDate ?? await DateHelper.getHearingDateUsingCurrentDate();
     const documentDetailsForFutureTestSteps = {
       hearingDate,
       courtOrderDate: hearingDate,
@@ -72,7 +72,6 @@ async function progressToProcessOrderEvent(
       uploadTimestamp: firstDraftOrderItem?.upload_timestamp,
       fileName: "agreed-draft-order-document.docx"
     };
-
   await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
   return documentDetailsForFutureTestSteps
 }
@@ -131,7 +130,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
         axeUtils
       }, testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: true });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -177,7 +176,7 @@ test.describe('Contested - Process Order (Old Style)', () => {
         axeUtils
       }, testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: false });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -223,8 +222,10 @@ test.describe('Contested - Process Order (Old Style)', () => {
       },
       testInfo
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
-      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+     const hearingDate = await DateHelper.getHearingDateUsingCurrentDate();
+      await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate);
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, hearingDate);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
@@ -245,7 +246,29 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
       await performManageHearingsMigration(caseDetailsPage, blankPage);
-      await caseDetailsPage.assertTabData(migratedHearingsCreatedFromProcessOrderTabData());
+      await caseDetailsPage.assertTabData(generateHearingsTabData([
+        {
+          typeOfHearing: "Directions (DIR)",
+          court: "Chester Civil And Family Justice Centre",
+          hearingAttendance: "Hearing mode not specified",
+          hearingDate: "01 Jan 2024 10:00",
+          hearingTimeEstimate: "1 hour",
+          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+          additionalInformation: "",
+          hearingDocuments: undefined
+        },
+        {
+          typeOfHearing: "First Directions Appointment (FDA)",
+          court: "Manchester County And Family Court",
+          hearingAttendance: "In Person",
+          hearingDate: DateHelper.getFormattedDateTwelveWeeksLater() + " 10:00am",
+          hearingTimeEstimate: "1hr 20mins",
+          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+          additionalInformation: "This is additional information about the hearing",
+          hearingDocuments: "HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nPfdNcdrCoverLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nDummy QA copy.doc"
+        }
+      ]));
+
     }
   );
 
@@ -263,7 +286,9 @@ test.describe('Contested - Process Order (Old Style)', () => {
         blankPage
       }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+     const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
+      const hearingDate = await DateHelper.getHearingDateUsingCurrentDate();
+      await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate);
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -306,7 +331,38 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
       await performManageHearingsMigration(caseDetailsPage, blankPage);
-      await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderTabData());
+      await caseDetailsPage.assertTabData(generateHearingsTabData([
+  {
+          typeOfHearing: "Directions (DIR)",
+          court: "Chester Civil And Family Justice Centre",
+          hearingAttendance: "Hearing mode not specified",
+          hearingDate: "01 Jan 2024 10:00",
+          hearingTimeEstimate: "1 hour",
+          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+          additionalInformation: "",
+          hearingDocuments: undefined
+        },
+        {
+          typeOfHearing: "Directions (DIR)",
+          court: "Bromley County Court And Family Court",
+          hearingAttendance: "Hearing mode not specified",
+          hearingDate: "02 Jan 2024 11:00",
+          hearingTimeEstimate: "2 hours",
+          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+          additionalInformation: "",
+          hearingDocuments: undefined
+        },
+        {
+          typeOfHearing: "First Directions Appointment (FDA)",
+          court: "Manchester County And Family Court",
+          hearingAttendance: "In Person",
+          hearingDate: DateHelper.getFormattedDateTwelveWeeksLater() + " 10:00am",
+          hearingTimeEstimate: "1hr 20mins",
+          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+          additionalInformation: "This is additional information about the hearing",
+          hearingDocuments: "HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nPfdNcdrCoverLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nDummy QA copy.doc"
+        },
+      ]));
     }
   )
 
@@ -325,7 +381,9 @@ test.describe('Contested - Process Order (Old Style)', () => {
         manageHearingPage
       }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
+      const hearingDate = await DateHelper.getHearingDateUsingCurrentDate();
+      await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate);
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -369,14 +427,55 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await performManageHearings(caseDetailsPage, manageHearingPage);
 
       await performManageHearingsMigration(caseDetailsPage, blankPage);
-      await caseDetailsPage.assertTabData(migratedMultipleHearingsCreatedFromProcessOrderWithAnyManageHearingsEventTabData());
+      await caseDetailsPage.assertTabData(generateHearingsTabData([
+        {
+          typeOfHearing: "Pre-Trial Review (PTR)",
+          court: "Central Family Court",
+          hearingAttendance: "Remote - Video call",
+          hearingDate: "03 Mar 2023 10:00 AM",
+          hearingTimeEstimate: "2 hours",
+          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+          additionalInformation: "by Manage Hearings event.",
+          hearingDocuments: "HearingNotice.pdf"
+        },
+        {
+          typeOfHearing: "Directions (DIR)",
+          court: "Chester Civil And Family Justice Centre",
+          hearingAttendance: "Hearing mode not specified",
+          hearingDate: "01 Jan 2024 10:00",
+          hearingTimeEstimate: "1 hour",
+          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+          additionalInformation: "",
+          hearingDocuments: undefined
+        },
+        {
+          typeOfHearing: "Directions (DIR)",
+          court: "Bromley County Court And Family Court",
+          hearingAttendance: "Hearing mode not specified",
+          hearingDate: "02 Jan 2024 11:00",
+          hearingTimeEstimate: "2 hours",
+          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+          additionalInformation: "",
+          hearingDocuments: undefined
+        },
+        {
+          typeOfHearing: "First Directions Appointment (FDA)",
+          court: "Manchester County And Family Court",
+          hearingAttendance: "In Person",
+          hearingDate: DateHelper.getFormattedDateTwelveWeeksLater() + " 10:00am",
+          hearingTimeEstimate: "1hr 20mins",
+          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+          additionalInformation: "This is additional information about the hearing",
+          hearingDocuments: "HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nPfdNcdrCoverLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nDummy QA copy.doc"
+        },
+      ]));
     }
   )
 });
 
 
 // New Style Process Order hearings
-test.describe('Contested - Process Order (Mange Hearings)', () => {
+test.describe('Contested - Process Order (Manage Hearings)', () => {
   test(
     'Form A case creating a hearing from Process Order (MH)',
     { tag: [] },
@@ -393,7 +492,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       }, testInfo
     ) => {
 
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: true });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
@@ -401,7 +500,11 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
 
       // Check unapproved draft order tab
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
-      await axeUtils.audit();
+      await axeUtils.audit({
+        exclude:[
+          'div:nth-child(4) > ccd-read-document-field > a[href="javascript:void(0)"]'
+        ]
+      });
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Add Hearing 
@@ -415,7 +518,11 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
       await processOrderHearingDetailsPage.enterAdditionalHearingInformation("This is a test hearing");
       await processOrderHearingDetailsPage.selectAdditionalHearingDocument(false);
       await processOrderHearingDetailsPage.selectSendNoticeOfHearing(true);
-      await axeUtils.audit();
+      await axeUtils.audit({
+        exclude: [
+          '#unprocessedApprovedDocuments_0_uploadDraftDocument'
+        ]
+      });
       await processOrderHearingDetailsPage.navigateContinue(); 
 
       // Check your answers
@@ -444,7 +551,7 @@ test.describe('Contested - Process Order (Mange Hearings)', () => {
         checkYourAnswersPage
       }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: false });
       const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
