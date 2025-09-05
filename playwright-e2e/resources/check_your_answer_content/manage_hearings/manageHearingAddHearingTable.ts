@@ -23,7 +23,7 @@ export function getManageHearingTableData(params?: {
             {cellItem: "Hearing Time", value: params?.hearingTime ?? "10:00 AM"},
             "This would usually be the applicants local Court",
             {cellItem: "Please state in which Financial Remedies Court Zone the applicant resides", value: params?.courtZone ?? "London"},
-            {cellItem: "Hearing attendance", value: params?.attendance ?? "Remote - video call"},
+            {cellItem: "Hearing Attendance", value: params?.attendance ?? "Remote - video call"},
             {cellItem: "Additional information about the hearing", value: params?.additionalInformation ?? "Hearing details here"},
             {cellItem: "Do you want to upload any other documents?", value: (params?.uploadAnySupportingDocuments ?? true) ? "Yes" : "No"},
             {cellItem: "Please upload any additional documents related to your application.", value: (params?.uploadFiles ?? ["final_hearing_file1.pdf", "final_hearing_file2.pdf"]).join(' ')},
