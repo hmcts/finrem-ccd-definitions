@@ -20,7 +20,6 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
     private readonly uploadGeneralLabel: Locator;
     private readonly uploadInput: Locator;
     private readonly checkTimeEstimateLabel: Locator;
-    private readonly textArea: Locator;
 
     private static readonly DOCUMENT_FORMAT_ERROR_MESSAGE = "Document format is not supported";
     
@@ -40,9 +39,7 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
         this.noRadio = page.locator('#generalApplications_0_generalApplicationHearingRequired_No');
         this.uploadGeneralLabel = page.getByText("Please upload a copy of the application as a Word, PDF, or Excel document (Word/Excel documents will be converted to PDF after submission).");
         this.uploadInput = page.locator('#generalApplications_0_generalApplicationDocument'); 
-        this.textArea = page.locator('#generalApplications_0_generalApplicationTimeEstimate');
-        this.checkTimeEstimateLabel = page.getByLabel('Time estimate');
-    }
+        this.checkTimeEstimateLabel = page.locator('#generalApplications_0_generalApplicationTimeEstimate');    }
 
     private async uploadFile(locator: Locator, errorLocator: Locator, uploadFilePath: string, success: boolean): Promise<void> {
         await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, locator, uploadFilePath, 5, 5000);
@@ -80,6 +77,6 @@ export class CreateGeneralApplicationPage extends BaseJourneyPage {
 
     async fillTimeEstimate(text: string) {
         await expect(this.checkTimeEstimateLabel).toBeVisible(); 
-        await this.textArea.fill(text);
+        await this.checkTimeEstimateLabel.fill(text);
   }
 }
