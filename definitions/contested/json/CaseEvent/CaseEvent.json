@@ -1567,5 +1567,21 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "12/08/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_uploadApprovedOrderMh",
+    "Name": "Upload Approved Order (MH)",
+    "Description": "Upload Approved Order (MH)",
+    "DisplayOrder": 142,
+    "PreConditionState(s)": "caseFileSubmitted;prepareForHearing;generalApplication;generalApplicationOutcome",
+    "PostConditionState": "orderDrawn",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
   }
 ]
