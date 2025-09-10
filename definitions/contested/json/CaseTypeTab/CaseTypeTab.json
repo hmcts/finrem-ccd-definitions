@@ -26,7 +26,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantDetailsLabel",
-    "TabFieldDisplayOrder": "1"
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -35,7 +35,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantFMName",
-    "TabFieldDisplayOrder": "2"
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -44,7 +44,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantLName",
-    "TabFieldDisplayOrder": "3"
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -53,7 +53,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantResideOutsideUK",
-    "TabFieldDisplayOrder": "4"
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -62,7 +62,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "urgentCaseLabel",
-    "TabFieldDisplayOrder": "5"
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
@@ -71,7 +71,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "promptForUrgentCaseQuestion",
-    "TabFieldDisplayOrder": "6"
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
@@ -81,7 +81,7 @@
     "TabDisplayOrder": 2,
     "CaseFieldID": "urgentCaseQuestionDetailsTextArea",
     "FieldShowCondition": "promptForUrgentCaseQuestion=\"Yes\"",
-    "TabFieldDisplayOrder": "7"
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -90,7 +90,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantContactLabel",
-    "TabFieldDisplayOrder": "8",
+    "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "applicantAddress=\"*\" AND applicantAddress.AddressLine1=\"*\""
   },
   {
@@ -100,7 +100,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantAddress",
-    "TabFieldDisplayOrder": "9",
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "applicantAddressConfidential!=\"Yes\""
   },
   {
@@ -110,7 +110,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantPhone",
-    "TabFieldDisplayOrder": "10",
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "applicantAddressConfidential!=\"Yes\""
   },
   {
@@ -120,7 +120,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantEmail",
-    "TabFieldDisplayOrder": "11",
+    "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "applicantAddressConfidential!=\"Yes\""
   },
   {
@@ -130,7 +130,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantRepresentedLabel",
-    "TabFieldDisplayOrder": "12"
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -139,7 +139,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantRepresented",
-    "TabFieldDisplayOrder": "13"
+    "TabFieldDisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
@@ -148,7 +148,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantAddressConfidential",
-    "TabFieldDisplayOrder": "14"
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "15/11/2024",
@@ -157,7 +157,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantInRefugeTab",
-    "TabFieldDisplayOrder": "15"
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -166,7 +166,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantSolicitorDetailLabel",
-    "TabFieldDisplayOrder": "16",
+    "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -176,7 +176,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "solicitorReference",
-    "TabFieldDisplayOrder": "17",
+    "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -186,7 +186,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantSolicitorName",
-    "TabFieldDisplayOrder": "18",
+    "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -196,7 +196,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantSolicitorFirm",
-    "TabFieldDisplayOrder": "19",
+    "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -206,7 +206,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "ApplicantOrganisationPolicy",
-    "TabFieldDisplayOrder": "20",
+    "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -216,7 +216,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantSolicitorAddressLabel",
-    "TabFieldDisplayOrder": "21",
+    "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -226,7 +226,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantSolicitorAddress",
-    "TabFieldDisplayOrder": "22",
+    "TabFieldDisplayOrder": 22,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -236,7 +236,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantSolicitorPhone",
-    "TabFieldDisplayOrder": "23",
+    "TabFieldDisplayOrder": 23,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -246,7 +246,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantSolicitorEmail",
-    "TabFieldDisplayOrder": "24",
+    "TabFieldDisplayOrder": 24,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -256,7 +256,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantSolicitorDXnumber",
-    "TabFieldDisplayOrder": "25",
+    "TabFieldDisplayOrder": 25,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -266,7 +266,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "applicantSolicitorConsentForEmails",
-    "TabFieldDisplayOrder": "26",
+    "TabFieldDisplayOrder": 26,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -276,7 +276,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "appBarristerCollectionLabel",
-    "TabFieldDisplayOrder": "27"
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -285,7 +285,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "appBarristerCollection",
-    "TabFieldDisplayOrder": "28"
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -294,7 +294,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "paperApplication",
-    "TabFieldDisplayOrder": "29",
+    "TabFieldDisplayOrder": 29,
     "FieldShowCondition": "paperApplication=\"Yes\""
   },
   {
@@ -304,7 +304,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "typeOfApplicationLabel",
-    "TabFieldDisplayOrder": "30"
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -313,7 +313,7 @@
     "TabLabel": "Applicant",
     "TabDisplayOrder": 2,
     "CaseFieldID": "typeOfApplication",
-    "TabFieldDisplayOrder": "31"
+    "TabFieldDisplayOrder": 31
   },
   {
     "LiveFrom": "01/09/2023",
@@ -843,7 +843,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentDetailsLabel",
-    "TabFieldDisplayOrder": "1"
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -852,7 +852,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentFMName",
-    "TabFieldDisplayOrder": "2"
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -861,7 +861,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentLName",
-    "TabFieldDisplayOrder": "3"
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -870,7 +870,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentResideOutsideUK",
-    "TabFieldDisplayOrder": "4"
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "21/11/2024",
@@ -879,7 +879,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentInRefugeTab",
-    "TabFieldDisplayOrder": "5"
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "01/01/2017",
@@ -888,7 +888,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentRepresentedLabel",
-    "TabFieldDisplayOrder": "6"
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "01/01/2017",
@@ -897,7 +897,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentRepresented",
-    "TabFieldDisplayOrder": "7"
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -906,7 +906,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorLabel",
-    "TabFieldDisplayOrder": "8",
+    "TabFieldDisplayOrder": 8,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -916,7 +916,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorName",
-    "TabFieldDisplayOrder": "9",
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -926,7 +926,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorReference",
-    "TabFieldDisplayOrder": "10",
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -936,7 +936,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorFirm",
-    "TabFieldDisplayOrder": "11",
+    "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -946,7 +946,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "RespondentOrganisationPolicy",
-    "TabFieldDisplayOrder": "12",
+    "TabFieldDisplayOrder": 12,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -956,7 +956,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorAddressLabel",
-    "TabFieldDisplayOrder": "13",
+    "TabFieldDisplayOrder": 13,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -966,7 +966,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorAddress",
-    "TabFieldDisplayOrder": "14",
+    "TabFieldDisplayOrder": 14,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -976,7 +976,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorPhone",
-    "TabFieldDisplayOrder": "15",
+    "TabFieldDisplayOrder": 15,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -986,7 +986,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorEmail",
-    "TabFieldDisplayOrder": "16",
+    "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -996,7 +996,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rSolicitorDXnumber",
-    "TabFieldDisplayOrder": "17",
+    "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -1006,7 +1006,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "RespSolNotificationsEmailConsent",
-    "TabFieldDisplayOrder": "18",
+    "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -1016,7 +1016,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "rRespondentLabel2",
-    "TabFieldDisplayOrder": "19",
+    "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "respondentRepresented=\"No\""
   },
   {
@@ -1026,7 +1026,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentAddress",
-    "TabFieldDisplayOrder": "20",
+    "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
   {
@@ -1036,7 +1036,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentPhone",
-    "TabFieldDisplayOrder": "21",
+    "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
   {
@@ -1046,7 +1046,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentEmail",
-    "TabFieldDisplayOrder": "22",
+    "TabFieldDisplayOrder": 22,
     "FieldShowCondition": "respondentRepresented=\"No\" AND respondentAddressConfidential!=\"Yes\""
   },
   {
@@ -1056,7 +1056,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respBarristerCollectionLabel",
-    "TabFieldDisplayOrder": "23"
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1065,7 +1065,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respBarristerCollection",
-    "TabFieldDisplayOrder": "24"
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1074,7 +1074,7 @@
     "TabLabel": "Respondent",
     "TabDisplayOrder": 8,
     "CaseFieldID": "respondentAddressConfidential",
-    "TabFieldDisplayOrder": "25",
+    "TabFieldDisplayOrder": 25,
     "FieldShowCondition": "respondentRepresented=\"No\""
   },
   {
@@ -1252,7 +1252,7 @@
     "TabLabel": "Authorisation",
     "TabDisplayOrder": 10,
     "CaseFieldID": "authorisationName",
-    "TabFieldDisplayOrder": 2
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1261,7 +1261,7 @@
     "TabLabel": "Authorisation",
     "TabDisplayOrder": 10,
     "CaseFieldID": "solicitorFirm",
-    "TabFieldDisplayOrder": 3
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1270,7 +1270,7 @@
     "TabLabel": "Authorisation",
     "TabDisplayOrder": 10,
     "CaseFieldID": "authorisation2b",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1279,7 +1279,7 @@
     "TabLabel": "Authorisation",
     "TabDisplayOrder": 10,
     "CaseFieldID": "authorisation3",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1289,7 +1289,7 @@
     "TabDisplayOrder": 10,
     "CaseFieldID": "miniFormA",
     "UserRole": "[APPSOLICITOR]",
-    "TabFieldDisplayOrder": "1"
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1298,7 +1298,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocument",
-    "TabFieldDisplayOrder": "2"
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1307,7 +1307,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocumentPaperCase",
-    "TabFieldDisplayOrder": "3"
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1316,7 +1316,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formC",
-    "TabFieldDisplayOrder": "4"
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1325,7 +1325,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formG",
-    "TabFieldDisplayOrder": "5"
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "12/12/2024",
@@ -1334,7 +1334,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrComplianceLetter",
-    "TabFieldDisplayOrder": "6"
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "12/12/2024",
@@ -1343,7 +1343,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrCoverLetter",
-    "TabFieldDisplayOrder": "7"
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1352,7 +1352,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "outOfFamilyCourtResolution",
-    "TabFieldDisplayOrder": "8"
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1361,7 +1361,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence1",
-    "TabFieldDisplayOrder": "9",
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
   },
   {
@@ -1371,7 +1371,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence2",
-    "TabFieldDisplayOrder": "10",
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
   },
   {
@@ -1381,7 +1381,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadPetition",
-    "TabFieldDisplayOrder": "11",
+    "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "divorceStageReached=\"Petition Issued\""
   },
   {
@@ -1391,7 +1391,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadOtherDocumentLabel",
-    "TabFieldDisplayOrder": "12"
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1400,7 +1400,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadAdditionalDocument",
-    "TabFieldDisplayOrder": "13"
+    "TabFieldDisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1409,7 +1409,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocumentLabel",
-    "TabFieldDisplayOrder": "14"
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1418,7 +1418,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": "15"
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1427,7 +1427,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": "16"
+    "TabFieldDisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1436,7 +1436,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": "17"
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "29/10/2024",
@@ -1445,7 +1445,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": "18"
+    "TabFieldDisplayOrder": 18
   },
   {
     "LiveFrom": "29/10/2024",
@@ -1454,7 +1454,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": "19"
+    "TabFieldDisplayOrder": 19
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1463,7 +1463,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "copyOfPaperFormA",
-    "TabFieldDisplayOrder": "20"
+    "TabFieldDisplayOrder": 20
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1472,7 +1472,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "draftDirectionOrderCollection",
-    "TabFieldDisplayOrder": "21"
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1481,7 +1481,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadHearingOrder",
-    "TabFieldDisplayOrder": "22"
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1490,7 +1490,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "hearingOrderOtherDocuments",
-    "TabFieldDisplayOrder": "23"
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/06/2020",
@@ -1499,7 +1499,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalLetterCollection",
-    "TabFieldDisplayOrder": "24"
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1508,7 +1508,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalEmailCollection",
-    "TabFieldDisplayOrder": "25"
+    "TabFieldDisplayOrder": 25
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1517,7 +1517,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdRes",
-    "TabFieldDisplayOrder": "26"
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1526,7 +1526,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetRes",
-    "TabFieldDisplayOrder": "27"
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1535,7 +1535,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdApp",
-    "TabFieldDisplayOrder": "28"
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1544,7 +1544,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetApp",
-    "TabFieldDisplayOrder": "29"
+    "TabFieldDisplayOrder": 29
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1553,7 +1553,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "confidentialCoverSheetLabel",
-    "TabFieldDisplayOrder": "30"
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1562,7 +1562,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
-    "TabFieldDisplayOrder": "31"
+    "TabFieldDisplayOrder": 31
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1571,7 +1571,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
-    "TabFieldDisplayOrder": "32"
+    "TabFieldDisplayOrder": 32
   },
   {
     "LiveFrom": "01/01/2021",
@@ -1580,7 +1580,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "orderApprovedCoverLetter",
-    "TabFieldDisplayOrder": "33"
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/01/2021",
@@ -1589,7 +1589,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "variationOrderDocument",
-    "TabFieldDisplayOrder": "34"
+    "TabFieldDisplayOrder": 34
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1599,7 +1599,7 @@
     "TabDisplayOrder": 10,
     "CaseFieldID": "miniFormA",
     "UserRole": "[APPBARRISTER]",
-    "TabFieldDisplayOrder": "1"
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1608,7 +1608,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocument",
-    "TabFieldDisplayOrder": "2"
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1617,7 +1617,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocumentPaperCase",
-    "TabFieldDisplayOrder": "3"
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1626,7 +1626,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formC",
-    "TabFieldDisplayOrder": "4"
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1635,7 +1635,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formG",
-    "TabFieldDisplayOrder": "5"
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "12/12/2024",
@@ -1644,7 +1644,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrComplianceLetter",
-    "TabFieldDisplayOrder": "6"
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "12/12/2024",
@@ -1653,7 +1653,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrCoverLetter",
-    "TabFieldDisplayOrder": "7"
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1662,7 +1662,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "outOfFamilyCourtResolution",
-    "TabFieldDisplayOrder": "8"
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1671,7 +1671,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence1",
-    "TabFieldDisplayOrder": "9",
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
   },
   {
@@ -1681,7 +1681,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence2",
-    "TabFieldDisplayOrder": "10",
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
   },
   {
@@ -1691,7 +1691,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadPetition",
-    "TabFieldDisplayOrder": "11",
+    "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "divorceStageReached=\"Petition Issued\""
   },
   {
@@ -1701,7 +1701,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadOtherDocumentLabel",
-    "TabFieldDisplayOrder": "12"
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1710,7 +1710,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadAdditionalDocument",
-    "TabFieldDisplayOrder": "13"
+    "TabFieldDisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1719,7 +1719,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocumentLabel",
-    "TabFieldDisplayOrder": "14"
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1728,7 +1728,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": "15"
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1737,7 +1737,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": "16"
+    "TabFieldDisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1746,7 +1746,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": "17"
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "29/10/2024",
@@ -1755,7 +1755,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": "18"
+    "TabFieldDisplayOrder": 18
   },
   {
     "LiveFrom": "29/10/2024",
@@ -1764,7 +1764,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": "19"
+    "TabFieldDisplayOrder": 19
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1773,7 +1773,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "copyOfPaperFormA",
-    "TabFieldDisplayOrder": "20"
+    "TabFieldDisplayOrder": 20
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1782,7 +1782,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "draftDirectionOrderCollection",
-    "TabFieldDisplayOrder": "21"
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1791,7 +1791,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadHearingOrder",
-    "TabFieldDisplayOrder": "22"
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1800,7 +1800,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "hearingOrderOtherDocuments",
-    "TabFieldDisplayOrder": "23"
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/06/2020",
@@ -1809,7 +1809,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalLetterCollection",
-    "TabFieldDisplayOrder": "24"
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1818,7 +1818,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalEmailCollection",
-    "TabFieldDisplayOrder": "25"
+    "TabFieldDisplayOrder": 25
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1827,7 +1827,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdRes",
-    "TabFieldDisplayOrder": "26"
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1836,7 +1836,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetRes",
-    "TabFieldDisplayOrder": "27"
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1845,7 +1845,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdApp",
-    "TabFieldDisplayOrder": "28"
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1854,7 +1854,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetApp",
-    "TabFieldDisplayOrder": "29"
+    "TabFieldDisplayOrder": 29
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1863,7 +1863,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "confidentialCoverSheetLabel",
-    "TabFieldDisplayOrder": "30"
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1872,7 +1872,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
-    "TabFieldDisplayOrder": "31"
+    "TabFieldDisplayOrder": 31
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1881,7 +1881,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
-    "TabFieldDisplayOrder": "32"
+    "TabFieldDisplayOrder": 32
   },
   {
     "LiveFrom": "01/01/2021",
@@ -1890,7 +1890,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "orderApprovedCoverLetter",
-    "TabFieldDisplayOrder": "33"
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/01/2021",
@@ -1899,7 +1899,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "variationOrderDocument",
-    "TabFieldDisplayOrder": "34"
+    "TabFieldDisplayOrder": 34
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1909,7 +1909,7 @@
     "TabDisplayOrder": 10,
     "CaseFieldID": "miniFormA",
     "UserRole": "[RESPSOLICITOR]",
-    "TabFieldDisplayOrder": "1"
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1918,7 +1918,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocument",
-    "TabFieldDisplayOrder": "2"
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1927,7 +1927,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocumentPaperCase",
-    "TabFieldDisplayOrder": "3"
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1936,7 +1936,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formC",
-    "TabFieldDisplayOrder": "4"
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1945,7 +1945,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formG",
-    "TabFieldDisplayOrder": "5"
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "12/12/2024",
@@ -1954,7 +1954,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrComplianceLetter",
-    "TabFieldDisplayOrder": "6"
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "12/12/2024",
@@ -1963,7 +1963,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrCoverLetter",
-    "TabFieldDisplayOrder": "7"
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1972,7 +1972,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "outOfFamilyCourtResolution",
-    "TabFieldDisplayOrder": "8"
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1981,7 +1981,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence1",
-    "TabFieldDisplayOrder": "9",
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
   },
   {
@@ -1991,7 +1991,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence2",
-    "TabFieldDisplayOrder": "10",
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
   },
   {
@@ -2001,7 +2001,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadPetition",
-    "TabFieldDisplayOrder": "11",
+    "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "divorceStageReached=\"Petition Issued\""
   },
   {
@@ -2011,7 +2011,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadOtherDocumentLabel",
-    "TabFieldDisplayOrder": "12"
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2020,7 +2020,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadAdditionalDocument",
-    "TabFieldDisplayOrder": "13"
+    "TabFieldDisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2029,7 +2029,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocumentLabel",
-    "TabFieldDisplayOrder": "14"
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2038,7 +2038,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": "15"
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2047,7 +2047,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": "16"
+    "TabFieldDisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2056,7 +2056,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": "17"
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2065,7 +2065,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": "18"
+    "TabFieldDisplayOrder": 18
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2074,7 +2074,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": "19"
+    "TabFieldDisplayOrder": 19
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2083,7 +2083,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "copyOfPaperFormA",
-    "TabFieldDisplayOrder": "20"
+    "TabFieldDisplayOrder": 20
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2092,7 +2092,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "draftDirectionOrderCollection",
-    "TabFieldDisplayOrder": "21"
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2101,7 +2101,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadHearingOrder",
-    "TabFieldDisplayOrder": "22"
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2110,7 +2110,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "hearingOrderOtherDocuments",
-    "TabFieldDisplayOrder": "23"
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/06/2020",
@@ -2119,7 +2119,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalLetterCollection",
-    "TabFieldDisplayOrder": "24"
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2128,7 +2128,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalEmailCollection",
-    "TabFieldDisplayOrder": "25"
+    "TabFieldDisplayOrder": 25
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2137,7 +2137,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdRes",
-    "TabFieldDisplayOrder": "26"
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2146,7 +2146,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetRes",
-    "TabFieldDisplayOrder": "27"
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2155,7 +2155,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdApp",
-    "TabFieldDisplayOrder": "28"
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2164,7 +2164,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetApp",
-    "TabFieldDisplayOrder": "29"
+    "TabFieldDisplayOrder": 29
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2173,7 +2173,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "confidentialCoverSheetLabel",
-    "TabFieldDisplayOrder": "30"
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2182,7 +2182,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
-    "TabFieldDisplayOrder": "31"
+    "TabFieldDisplayOrder": 31
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2191,7 +2191,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
-    "TabFieldDisplayOrder": "32"
+    "TabFieldDisplayOrder": 32
   },
   {
     "LiveFrom": "01/01/2021",
@@ -2200,7 +2200,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "orderApprovedCoverLetter",
-    "TabFieldDisplayOrder": "33"
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/01/2021",
@@ -2209,7 +2209,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "variationOrderDocument",
-    "TabFieldDisplayOrder": "34"
+    "TabFieldDisplayOrder": 34
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2219,7 +2219,7 @@
     "TabDisplayOrder": 10,
     "CaseFieldID": "miniFormA",
     "UserRole": "[RESPBARRISTER]",
-    "TabFieldDisplayOrder": "1"
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2228,7 +2228,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocument",
-    "TabFieldDisplayOrder": "2"
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2237,7 +2237,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocumentPaperCase",
-    "TabFieldDisplayOrder": "3"
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2246,7 +2246,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formC",
-    "TabFieldDisplayOrder": "4"
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2255,7 +2255,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formG",
-    "TabFieldDisplayOrder": "5"
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "12/12/2024",
@@ -2264,7 +2264,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrComplianceLetter",
-    "TabFieldDisplayOrder": "6"
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "12/12/2024",
@@ -2273,7 +2273,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrCoverLetter",
-    "TabFieldDisplayOrder": "7"
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2282,7 +2282,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "outOfFamilyCourtResolution",
-    "TabFieldDisplayOrder": "8"
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2291,7 +2291,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence1",
-    "TabFieldDisplayOrder": "9",
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
   },
   {
@@ -2301,7 +2301,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence2",
-    "TabFieldDisplayOrder": "10",
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
   },
   {
@@ -2311,7 +2311,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadPetition",
-    "TabFieldDisplayOrder": "11",
+    "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "divorceStageReached=\"Petition Issued\""
   },
   {
@@ -2321,7 +2321,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadOtherDocumentLabel",
-    "TabFieldDisplayOrder": "12"
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2330,7 +2330,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadAdditionalDocument",
-    "TabFieldDisplayOrder": "13"
+    "TabFieldDisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2339,7 +2339,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocumentLabel",
-    "TabFieldDisplayOrder": "14"
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2348,7 +2348,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": "15"
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2357,7 +2357,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": "16"
+    "TabFieldDisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2366,7 +2366,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": "17"
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2375,7 +2375,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": "18"
+    "TabFieldDisplayOrder": 18
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2384,7 +2384,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": "19"
+    "TabFieldDisplayOrder": 19
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2393,7 +2393,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "copyOfPaperFormA",
-    "TabFieldDisplayOrder": "20"
+    "TabFieldDisplayOrder": 20
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2402,7 +2402,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "draftDirectionOrderCollection",
-    "TabFieldDisplayOrder": "21"
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2411,7 +2411,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadHearingOrder",
-    "TabFieldDisplayOrder": "22"
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2420,7 +2420,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "hearingOrderOtherDocuments",
-    "TabFieldDisplayOrder": "23"
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/06/2020",
@@ -2429,7 +2429,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalLetterCollection",
-    "TabFieldDisplayOrder": "24"
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2438,7 +2438,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalEmailCollection",
-    "TabFieldDisplayOrder": "25"
+    "TabFieldDisplayOrder": 25
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2447,7 +2447,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdRes",
-    "TabFieldDisplayOrder": "26"
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2456,7 +2456,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetRes",
-    "TabFieldDisplayOrder": "27"
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2465,7 +2465,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdApp",
-    "TabFieldDisplayOrder": "28"
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2474,7 +2474,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetApp",
-    "TabFieldDisplayOrder": "29"
+    "TabFieldDisplayOrder": 29
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2483,7 +2483,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "confidentialCoverSheetLabel",
-    "TabFieldDisplayOrder": "30"
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2492,7 +2492,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
-    "TabFieldDisplayOrder": "31"
+    "TabFieldDisplayOrder": 31
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2501,7 +2501,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
-    "TabFieldDisplayOrder": "32"
+    "TabFieldDisplayOrder": 32
   },
   {
     "LiveFrom": "01/01/2021",
@@ -2510,7 +2510,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "orderApprovedCoverLetter",
-    "TabFieldDisplayOrder": "33"
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/01/2021",
@@ -2519,7 +2519,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "variationOrderDocument",
-    "TabFieldDisplayOrder": "34"
+    "TabFieldDisplayOrder": 34
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2529,7 +2529,7 @@
     "TabDisplayOrder": 10,
     "CaseFieldID": "miniFormA",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabFieldDisplayOrder": "1"
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2538,7 +2538,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocument",
-    "TabFieldDisplayOrder": "2"
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2547,7 +2547,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocumentPaperCase",
-    "TabFieldDisplayOrder": "3"
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2556,7 +2556,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formC",
-    "TabFieldDisplayOrder": "4"
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2565,7 +2565,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formG",
-    "TabFieldDisplayOrder": "5"
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "12/12/2024",
@@ -2574,7 +2574,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrComplianceLetter",
-    "TabFieldDisplayOrder": "6"
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "12/12/2024",
@@ -2583,7 +2583,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrCoverLetter",
-    "TabFieldDisplayOrder": "7"
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2592,7 +2592,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "outOfFamilyCourtResolution",
-    "TabFieldDisplayOrder": "8"
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2601,7 +2601,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence1",
-    "TabFieldDisplayOrder": "9",
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
   },
   {
@@ -2611,7 +2611,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence2",
-    "TabFieldDisplayOrder": "10",
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
   },
   {
@@ -2621,7 +2621,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadPetition",
-    "TabFieldDisplayOrder": "11",
+    "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "divorceStageReached=\"Petition Issued\""
   },
   {
@@ -2631,7 +2631,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadOtherDocumentLabel",
-    "TabFieldDisplayOrder": "12"
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2640,7 +2640,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadAdditionalDocument",
-    "TabFieldDisplayOrder": "13"
+    "TabFieldDisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2649,7 +2649,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocumentLabel",
-    "TabFieldDisplayOrder": "14"
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2658,7 +2658,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": "15"
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2667,7 +2667,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": "16"
+    "TabFieldDisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2676,7 +2676,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": "17"
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2685,7 +2685,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": "18"
+    "TabFieldDisplayOrder": 18
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2694,7 +2694,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": "19"
+    "TabFieldDisplayOrder": 19
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2703,7 +2703,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "copyOfPaperFormA",
-    "TabFieldDisplayOrder": "20"
+    "TabFieldDisplayOrder": 20
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2712,7 +2712,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "draftDirectionOrderCollection",
-    "TabFieldDisplayOrder": "21"
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2721,7 +2721,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadHearingOrder",
-    "TabFieldDisplayOrder": "22"
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2730,7 +2730,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "hearingOrderOtherDocuments",
-    "TabFieldDisplayOrder": "23"
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/06/2020",
@@ -2739,7 +2739,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalLetterCollection",
-    "TabFieldDisplayOrder": "24"
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2748,7 +2748,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalEmailCollection",
-    "TabFieldDisplayOrder": "25"
+    "TabFieldDisplayOrder": 25
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2757,7 +2757,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdRes",
-    "TabFieldDisplayOrder": "26"
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2766,7 +2766,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetRes",
-    "TabFieldDisplayOrder": "27"
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2775,7 +2775,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdApp",
-    "TabFieldDisplayOrder": "28"
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2784,7 +2784,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetApp",
-    "TabFieldDisplayOrder": "29"
+    "TabFieldDisplayOrder": 29
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2793,7 +2793,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "confidentialCoverSheetLabel",
-    "TabFieldDisplayOrder": "30"
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2802,7 +2802,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
-    "TabFieldDisplayOrder": "31"
+    "TabFieldDisplayOrder": 31
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2811,7 +2811,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
-    "TabFieldDisplayOrder": "32"
+    "TabFieldDisplayOrder": 32
   },
   {
     "LiveFrom": "01/01/2021",
@@ -2820,7 +2820,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "orderApprovedCoverLetter",
-    "TabFieldDisplayOrder": "33"
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/01/2021",
@@ -2829,7 +2829,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "variationOrderDocument",
-    "TabFieldDisplayOrder": "34"
+    "TabFieldDisplayOrder": 34
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2839,7 +2839,7 @@
     "TabDisplayOrder": 10,
     "CaseFieldID": "miniFormA",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "TabFieldDisplayOrder": "1"
+    "TabFieldDisplayOrder": 1
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2848,7 +2848,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocument",
-    "TabFieldDisplayOrder": "2"
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2857,7 +2857,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadMediatorDocumentPaperCase",
-    "TabFieldDisplayOrder": "3"
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2866,7 +2866,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formC",
-    "TabFieldDisplayOrder": "4"
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2875,7 +2875,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "formG",
-    "TabFieldDisplayOrder": "5"
+    "TabFieldDisplayOrder": 5
   },
   {
     "LiveFrom": "12/12/2024",
@@ -2884,7 +2884,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrComplianceLetter",
-    "TabFieldDisplayOrder": "6"
+    "TabFieldDisplayOrder": 6
   },
   {
     "LiveFrom": "12/12/2024",
@@ -2893,7 +2893,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "pfdNcdrCoverLetter",
-    "TabFieldDisplayOrder": "7"
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2902,7 +2902,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "outOfFamilyCourtResolution",
-    "TabFieldDisplayOrder": "8"
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2911,7 +2911,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence1",
-    "TabFieldDisplayOrder": "9",
+    "TabFieldDisplayOrder": 9,
     "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
   },
   {
@@ -2921,7 +2921,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadEvidence2",
-    "TabFieldDisplayOrder": "10",
+    "TabFieldDisplayOrder": 10,
     "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
   },
   {
@@ -2931,7 +2931,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "divorceUploadPetition",
-    "TabFieldDisplayOrder": "11",
+    "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "divorceStageReached=\"Petition Issued\""
   },
   {
@@ -2941,7 +2941,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadOtherDocumentLabel",
-    "TabFieldDisplayOrder": "12"
+    "TabFieldDisplayOrder": 12
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2950,7 +2950,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadAdditionalDocument",
-    "TabFieldDisplayOrder": "13"
+    "TabFieldDisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2959,7 +2959,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocumentLabel",
-    "TabFieldDisplayOrder": "14"
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2968,7 +2968,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": "15"
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2977,7 +2977,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": "16"
+    "TabFieldDisplayOrder": 16
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2986,7 +2986,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": "17"
+    "TabFieldDisplayOrder": 17
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2995,7 +2995,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": "18"
+    "TabFieldDisplayOrder": 18
   },
   {
     "LiveFrom": "29/10/2024",
@@ -3004,7 +3004,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": "19"
+    "TabFieldDisplayOrder": 19
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3013,7 +3013,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "copyOfPaperFormA",
-    "TabFieldDisplayOrder": "20"
+    "TabFieldDisplayOrder": 20
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3022,7 +3022,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "draftDirectionOrderCollection",
-    "TabFieldDisplayOrder": "21"
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3031,7 +3031,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "uploadHearingOrder",
-    "TabFieldDisplayOrder": "22"
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3040,7 +3040,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "hearingOrderOtherDocuments",
-    "TabFieldDisplayOrder": "23"
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/06/2020",
@@ -3049,7 +3049,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalLetterCollection",
-    "TabFieldDisplayOrder": "24"
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3058,7 +3058,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "generalEmailCollection",
-    "TabFieldDisplayOrder": "25"
+    "TabFieldDisplayOrder": 25
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3067,7 +3067,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdRes",
-    "TabFieldDisplayOrder": "26"
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3076,7 +3076,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetRes",
-    "TabFieldDisplayOrder": "27"
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3085,7 +3085,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintLetterIdApp",
-    "TabFieldDisplayOrder": "28"
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3094,7 +3094,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetApp",
-    "TabFieldDisplayOrder": "29"
+    "TabFieldDisplayOrder": 29
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3103,7 +3103,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "confidentialCoverSheetLabel",
-    "TabFieldDisplayOrder": "30"
+    "TabFieldDisplayOrder": 30
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3112,7 +3112,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
-    "TabFieldDisplayOrder": "31"
+    "TabFieldDisplayOrder": 31
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3121,7 +3121,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
-    "TabFieldDisplayOrder": "32"
+    "TabFieldDisplayOrder": 32
   },
   {
     "LiveFrom": "01/01/2021",
@@ -3130,7 +3130,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "orderApprovedCoverLetter",
-    "TabFieldDisplayOrder": "33"
+    "TabFieldDisplayOrder": 33
   },
   {
     "LiveFrom": "01/01/2021",
@@ -3139,7 +3139,7 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 10,
     "CaseFieldID": "variationOrderDocument",
-    "TabFieldDisplayOrder": "34"
+    "TabFieldDisplayOrder": 34
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3220,7 +3220,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabExpressCaseParticipation",
-    "TabFieldDisplayOrder": "0",
+    "TabFieldDisplayOrder": 1,
     "FieldShowCondition": "expressCaseParticipation!=\"\""
   },
   {
@@ -3230,7 +3230,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabApplicantName",
-    "TabFieldDisplayOrder": "1"
+    "TabFieldDisplayOrder": 2
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3239,7 +3239,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabApplicantSolicitorFirm",
-    "TabFieldDisplayOrder": "2",
+    "TabFieldDisplayOrder": 3,
     "FieldShowCondition": "applicantRepresented=\"Yes\""
   },
   {
@@ -3249,7 +3249,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabRespondentName",
-    "TabFieldDisplayOrder": "3"
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3258,7 +3258,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabRespondentSolicitorFirm",
-    "TabFieldDisplayOrder": "4",
+    "TabFieldDisplayOrder": 5,
     "FieldShowCondition": "respondentRepresented=\"Yes\""
   },
   {
@@ -3268,7 +3268,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabRespondentUnrepresented",
-    "TabFieldDisplayOrder": "5",
+    "TabFieldDisplayOrder": 6,
     "FieldShowCondition": "respondentRepresented=\"No\""
   },
   {
@@ -3279,7 +3279,7 @@
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabDateOfMarriage",
     "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
-    "TabFieldDisplayOrder": "6"
+    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3289,7 +3289,7 @@
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabDateOfSepration",
     "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
-    "TabFieldDisplayOrder": "7"
+    "TabFieldDisplayOrder": 8
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3299,7 +3299,7 @@
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabDivorcePetitionIssuedDate",
     "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
-    "TabFieldDisplayOrder": "8"
+    "TabFieldDisplayOrder": 9
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3309,7 +3309,7 @@
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabNameOfCourtDivorceCentre",
     "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\"",
-    "TabFieldDisplayOrder": "9"
+    "TabFieldDisplayOrder": 10
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3318,7 +3318,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabDivorceDecreeAbsoluteDate",
-    "TabFieldDisplayOrder": "10",
+    "TabFieldDisplayOrder": 11,
     "FieldShowCondition": "divorceStageReached=\"Decree Absolute\""
   },
   {
@@ -3328,7 +3328,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabDivorceDecreeNisiDate",
-    "TabFieldDisplayOrder": "11",
+    "TabFieldDisplayOrder": 12,
     "FieldShowCondition": "divorceStageReached=\"Decree Nisi\""
   },
   {
@@ -3338,7 +3338,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabFastTrackDecision",
-    "TabFieldDisplayOrder": "12"
+    "TabFieldDisplayOrder": 13
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3347,7 +3347,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabFastTrackDecisionReason",
-    "TabFieldDisplayOrder": "13"
+    "TabFieldDisplayOrder": 14
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3356,7 +3356,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabComplexityLabel",
-    "TabFieldDisplayOrder": "14"
+    "TabFieldDisplayOrder": 15
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3365,7 +3365,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabComplexityList",
-    "TabFieldDisplayOrder": "15",
+    "TabFieldDisplayOrder": 16,
     "FieldShowCondition": "addToComplexityListOfCourts=\"trueYes\""
   },
   {
@@ -3375,7 +3375,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabStandardList",
-    "TabFieldDisplayOrder": "16",
+    "TabFieldDisplayOrder": 17,
     "FieldShowCondition": "addToComplexityListOfCourts=\"falseNo\""
   },
   {
@@ -3385,7 +3385,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabUnsureAboutComplexityList",
-    "TabFieldDisplayOrder": "17",
+    "TabFieldDisplayOrder": 18,
     "FieldShowCondition": "addToComplexityListOfCourts=\"trueDontKnow\""
   },
   {
@@ -3395,7 +3395,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabEstimatedAssestsCheckList",
-    "TabFieldDisplayOrder": "18",
+    "TabFieldDisplayOrder": 19,
     "FieldShowCondition": "estimatedAssetsChecklistV2!=\"*\""
   },
   {
@@ -3405,7 +3405,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabEstimatedAssetsCheckList2",
-    "TabFieldDisplayOrder": "19",
+    "TabFieldDisplayOrder": 20,
     "FieldShowCondition": "estimatedAssetsChecklistV2!=\"\""
   },
   {
@@ -3415,7 +3415,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "estimatedAssetsChecklistV2",
-    "TabFieldDisplayOrder": "20",
+    "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "tabNetValueOfHome=\"DONOTSHOW\""
   },
   {
@@ -3425,7 +3425,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabNetValueOfHome",
-    "TabFieldDisplayOrder": "21"
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3434,7 +3434,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabPotentialAllegationChecklist",
-    "TabFieldDisplayOrder": "22"
+    "TabFieldDisplayOrder": 23
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3443,7 +3443,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabDetailPotentialAllegation",
-    "TabFieldDisplayOrder": "23"
+    "TabFieldDisplayOrder": 24
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3452,7 +3452,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabOtherReasonForComplexity",
-    "TabFieldDisplayOrder": "24",
+    "TabFieldDisplayOrder": 25,
     "FieldShowCondition": "otherReasonForComplexity=\"Yes\""
   },
   {
@@ -3462,7 +3462,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabJudgesListingDirectionsLabel",
-    "TabFieldDisplayOrder": "25"
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3471,7 +3471,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabAllocatedCourtListGA",
-    "TabFieldDisplayOrder": "26"
+    "TabFieldDisplayOrder": 27
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3480,7 +3480,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "regionList",
-    "TabFieldDisplayOrder": "27"
+    "TabFieldDisplayOrder": 28
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3489,7 +3489,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "midlandsFRCList",
-    "TabFieldDisplayOrder": "28",
+    "TabFieldDisplayOrder": 29,
     "FieldShowCondition": "regionList=\"midlands\""
   },
   {
@@ -3499,7 +3499,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "nottinghamCourtList",
-    "TabFieldDisplayOrder": "29",
+    "TabFieldDisplayOrder": 30,
     "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"nottingham\""
   },
   {
@@ -3509,7 +3509,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "cfcCourtList",
-    "TabFieldDisplayOrder": "30",
+    "TabFieldDisplayOrder": 31,
     "FieldShowCondition": " regionList=\"london\" AND londonFRCList=\"cfc\""
   },
   {
@@ -3519,7 +3519,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "londonFRCList",
-    "TabFieldDisplayOrder": "31",
+    "TabFieldDisplayOrder": 32,
     "FieldShowCondition": "regionList=\"london\""
   },
   {
@@ -3529,7 +3529,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "northWestFRCList",
-    "TabFieldDisplayOrder": "32",
+    "TabFieldDisplayOrder": 33,
     "FieldShowCondition": "regionList=\"northwest\""
   },
   {
@@ -3539,7 +3539,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "northEastFRCList",
-    "TabFieldDisplayOrder": "33",
+    "TabFieldDisplayOrder": 34,
     "FieldShowCondition": "regionList=\"northeast\""
   },
   {
@@ -3549,7 +3549,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "southEastFRCList",
-    "TabFieldDisplayOrder": "34",
+    "TabFieldDisplayOrder": 35,
     "FieldShowCondition": "regionList=\"southeast\""
   },
   {
@@ -3559,7 +3559,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "southWestFRCList",
-    "TabFieldDisplayOrder": "35",
+    "TabFieldDisplayOrder": 36,
     "FieldShowCondition": "regionList=\"southwest\""
   },
   {
@@ -3569,7 +3569,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "walesFRCList",
-    "TabFieldDisplayOrder": "36",
+    "TabFieldDisplayOrder": 37,
     "FieldShowCondition": "regionList=\"wales\""
   },
   {
@@ -3579,7 +3579,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "birminghamCourtList",
-    "TabFieldDisplayOrder": "37",
+    "TabFieldDisplayOrder": 38,
     "FieldShowCondition": "regionList=\"midlands\" AND midlandsFRCList=\"birmingham\""
   },
   {
@@ -3589,7 +3589,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "liverpoolCourtList",
-    "TabFieldDisplayOrder": "38",
+    "TabFieldDisplayOrder": 39,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"liverpool\""
   },
   {
@@ -3599,7 +3599,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "manchesterCourtList",
-    "TabFieldDisplayOrder": "39",
+    "TabFieldDisplayOrder": 40,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"manchester\""
   },
   {
@@ -3609,7 +3609,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "lancashireCourtList",
-    "TabFieldDisplayOrder": "40",
+    "TabFieldDisplayOrder": 41,
     "FieldShowCondition": "regionList=\"northwest\" AND northWestFRCList=\"lancashire\""
   },
   {
@@ -3619,7 +3619,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "cleavelandCourtList",
-    "TabFieldDisplayOrder": "41",
+    "TabFieldDisplayOrder": 42,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"cleaveland\""
   },
   {
@@ -3629,7 +3629,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "nwyorkshireCourtList",
-    "TabFieldDisplayOrder": "42",
+    "TabFieldDisplayOrder": 43,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"nwyorkshire\""
   },
   {
@@ -3639,7 +3639,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "humberCourtList",
-    "TabFieldDisplayOrder": "43",
+    "TabFieldDisplayOrder": 44,
     "FieldShowCondition": "regionList=\"northeast\" AND northEastFRCList=\"hsyorkshire\""
   },
   {
@@ -3649,7 +3649,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "kentSurreyCourtList",
-    "TabFieldDisplayOrder": "44",
+    "TabFieldDisplayOrder": 45,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"kentfrc\""
   },
   {
@@ -3659,7 +3659,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "bedfordshireCourtList",
-    "TabFieldDisplayOrder": "45",
+    "TabFieldDisplayOrder": 46,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"bedfordshire\""
   },
   {
@@ -3669,7 +3669,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "thamesvalleyCourtList",
-    "TabFieldDisplayOrder": "46",
+    "TabFieldDisplayOrder": 47,
     "FieldShowCondition": "regionList=\"southeast\" AND southEastFRCList=\"thamesvalley\""
   },
   {
@@ -3679,7 +3679,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "devonCourtList",
-    "TabFieldDisplayOrder": "47",
+    "TabFieldDisplayOrder": 48,
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"devon\""
   },
   {
@@ -3689,7 +3689,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "dorsetCourtList",
-    "TabFieldDisplayOrder": "48",
+    "TabFieldDisplayOrder": 49,
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"dorset\""
   },
   {
@@ -3699,7 +3699,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "bristolCourtList",
-    "TabFieldDisplayOrder": "49",
+    "TabFieldDisplayOrder": 50,
     "FieldShowCondition": "regionList=\"southwest\" AND southWestFRCList=\"bristol\""
   },
   {
@@ -3709,7 +3709,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "newportCourtList",
-    "TabFieldDisplayOrder": "50",
+    "TabFieldDisplayOrder": 51,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"newport\""
   },
   {
@@ -3719,7 +3719,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "swanseaCourtList",
-    "TabFieldDisplayOrder": "51",
+    "TabFieldDisplayOrder": 52,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"swansea\""
   },
   {
@@ -3729,7 +3729,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "northWalesCourtList",
-    "TabFieldDisplayOrder": "52",
+    "TabFieldDisplayOrder": 53,
     "FieldShowCondition": "regionList=\"wales\" AND walesFRCList=\"northwales\""
   },
   {
@@ -3739,7 +3739,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "highCourtList",
-    "TabFieldDisplayOrder": "53",
+    "TabFieldDisplayOrder": 54,
     "FieldShowCondition": "regionList=\"highcourt\""
   },
   {
@@ -3749,7 +3749,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "allocatedToBeHeardAtHighCourtJudgeLevel",
-    "TabFieldDisplayOrder": "54"
+    "TabFieldDisplayOrder": 55
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3758,7 +3758,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "allocatedToBeHeardAtHighCourtJudgeLevelText",
-    "TabFieldDisplayOrder": "55",
+    "TabFieldDisplayOrder": 56,
     "FieldShowCondition": "allocatedToBeHeardAtHighCourtJudgeLevel=\"Yes\""
   },
   {
@@ -3768,7 +3768,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "isApplicantsHomeCourt",
-    "TabFieldDisplayOrder": "56"
+    "TabFieldDisplayOrder": 57
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3777,7 +3777,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "reasonForLocalCourt",
-    "TabFieldDisplayOrder": "57",
+    "TabFieldDisplayOrder": 58,
     "FieldShowCondition": "isApplicantsHomeCourt=\"Yes\""
   },
   {
@@ -3787,7 +3787,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "applicantAttendedMIAMLabel",
-    "TabFieldDisplayOrder": "58"
+    "TabFieldDisplayOrder": 59
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3796,7 +3796,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "applicantAttendedMIAM",
-    "TabFieldDisplayOrder": "59",
+    "TabFieldDisplayOrder": 60,
     "FieldShowCondition": "applicantAttendedMIAM=\"IMPOSSIBLE\""
   },
   {
@@ -3806,7 +3806,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "applicantAttendedMIAMYesLabel",
-    "TabFieldDisplayOrder": "60",
+    "TabFieldDisplayOrder": 61,
     "FieldShowCondition": "applicantAttendedMIAM=\"Yes\""
   },
   {
@@ -3816,7 +3816,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "applicantAttendedMIAMNoLabel",
-    "TabFieldDisplayOrder": "61",
+    "TabFieldDisplayOrder": 62,
     "FieldShowCondition": "applicantAttendedMIAM=\"No\""
   },
   {
@@ -3826,7 +3826,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "claimingExemptionMIAMLabel",
-    "TabFieldDisplayOrder": "62",
+    "TabFieldDisplayOrder": 63,
     "FieldShowCondition": "applicantAttendedMIAM=\"No\""
   },
   {
@@ -3836,7 +3836,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "claimingExemptionMIAM",
-    "TabFieldDisplayOrder": "63",
+    "TabFieldDisplayOrder": 64,
     "FieldShowCondition": "applicantAttendedMIAM=\"IMPOSSIBLE\""
   },
   {
@@ -3846,7 +3846,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "claimingExemptionMIAMYesLabel",
-    "TabFieldDisplayOrder": "64",
+    "TabFieldDisplayOrder": 65,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\""
   },
   {
@@ -3856,7 +3856,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "claimingExemptionMIAMNoLabel",
-    "TabFieldDisplayOrder": "65",
+    "TabFieldDisplayOrder": 66,
     "FieldShowCondition": "claimingExemptionMIAM=\"No\""
   },
   {
@@ -3866,7 +3866,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "familyMediatorMIAMLabel",
-    "TabFieldDisplayOrder": "66",
+    "TabFieldDisplayOrder": 67,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM!=\"\""
   },
   {
@@ -3876,7 +3876,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "familyMediatorMIAM",
-    "TabFieldDisplayOrder": "67",
+    "TabFieldDisplayOrder": 68,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND familyMediatorMIAM!=\"\""
   },
   {
@@ -3886,7 +3886,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMCertificationPageLabel",
-    "TabFieldDisplayOrder": "68",
+    "TabFieldDisplayOrder": 69,
     "FieldShowCondition": "mediatorRegistrationNumber!=\"\""
   },
   {
@@ -3896,7 +3896,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "mediatorRegistrationNumber",
-    "TabFieldDisplayOrder": "69",
+    "TabFieldDisplayOrder": 70,
     "FieldShowCondition": "mediatorRegistrationNumber!=\"\""
   },
   {
@@ -3906,7 +3906,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "familyMediatorServiceName",
-    "TabFieldDisplayOrder": "70",
+    "TabFieldDisplayOrder": 71,
     "FieldShowCondition": "mediatorRegistrationNumber!=\"\""
   },
   {
@@ -3916,7 +3916,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "soleTraderName",
-    "TabFieldDisplayOrder": "71",
+    "TabFieldDisplayOrder": 72,
     "FieldShowCondition": "mediatorRegistrationNumber!=\"\""
   },
   {
@@ -3926,7 +3926,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMExemptionsLabel",
-    "TabFieldDisplayOrder": "72",
+    "TabFieldDisplayOrder": 73,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\""
   },
   {
@@ -3936,7 +3936,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMExemptionsChecklist",
-    "TabFieldDisplayOrder": "73",
+    "TabFieldDisplayOrder": 74,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\""
   },
   {
@@ -3946,7 +3946,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMDomesticViolenceLabel",
-    "TabFieldDisplayOrder": "74",
+    "TabFieldDisplayOrder": 75,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"domesticViolence\""
   },
   {
@@ -3956,7 +3956,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMDomesticViolenceChecklist",
-    "TabFieldDisplayOrder": "75",
+    "TabFieldDisplayOrder": 76,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"domesticViolence\""
   },
   {
@@ -3966,7 +3966,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMUrgencyReasonLabel",
-    "TabFieldDisplayOrder": "76",
+    "TabFieldDisplayOrder": 77,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"urgency\""
   },
   {
@@ -3976,7 +3976,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMUrgencyReasonChecklist",
-    "TabFieldDisplayOrder": "77",
+    "TabFieldDisplayOrder": 78,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"urgency\""
   },
   {
@@ -3986,7 +3986,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMPreviousAttendanceLabel",
-    "TabFieldDisplayOrder": "78",
+    "TabFieldDisplayOrder": 79,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"previousMIAMattendance\""
   },
   {
@@ -3996,7 +3996,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMPreviousAttendanceChecklist",
-    "TabFieldDisplayOrder": "79",
+    "TabFieldDisplayOrder": 80,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"previousMIAMattendance\""
   },
   {
@@ -4006,7 +4006,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMPreviousAttendanceChecklistV2",
-    "TabFieldDisplayOrder": "80",
+    "TabFieldDisplayOrder": 81,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist CONTAINS \"previousMIAMattendance\""
   },
   {
@@ -4016,7 +4016,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMOtherGroundsLabel",
-    "TabFieldDisplayOrder": "81",
+    "TabFieldDisplayOrder": 82,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"other\""
   },
   {
@@ -4026,7 +4026,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMOtherGroundsChecklist",
-    "TabFieldDisplayOrder": "82",
+    "TabFieldDisplayOrder": 83,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND  MIAMExemptionsChecklist  CONTAINS \"other\""
   },
   {
@@ -4036,7 +4036,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "MIAMOtherGroundsChecklistV2",
-    "TabFieldDisplayOrder": "83",
+    "TabFieldDisplayOrder": 84,
     "FieldShowCondition": "claimingExemptionMIAM=\"Yes\" AND applicantAttendedMIAM=\"No\" AND MIAMExemptionsChecklist CONTAINS \"other\""
   },
   {
@@ -4046,7 +4046,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "evidenceUnavailableMIAMTabLabel",
-    "TabFieldDisplayOrder": "84",
+    "TabFieldDisplayOrder": 85,
     "FieldShowCondition": "evidenceUnavailableDomesticAbuseMIAM!=\"\" OR evidenceUnavailableUrgencyMIAM!=\"\" OR evidenceUnavailableOtherGroundsMIAM!=\"\" OR evidenceUnavailablePreviousAttendanceMIAM!=\"\""
   },
   {
@@ -4056,7 +4056,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "evidenceUnavailableDomesticAbuseMIAM",
-    "TabFieldDisplayOrder": "85"
+    "TabFieldDisplayOrder": 86
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4065,7 +4065,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "evidenceUnavailableUrgencyMIAM",
-    "TabFieldDisplayOrder": "86"
+    "TabFieldDisplayOrder": 87
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4074,7 +4074,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "evidenceUnavailablePreviousAttendanceMIAM",
-    "TabFieldDisplayOrder": "87"
+    "TabFieldDisplayOrder": 88
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4083,7 +4083,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "evidenceUnavailableOtherGroundsMIAM",
-    "TabFieldDisplayOrder": "88"
+    "TabFieldDisplayOrder": 89
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4092,7 +4092,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "additionalInfoMIAMTabLabel",
-    "TabFieldDisplayOrder": "89",
+    "TabFieldDisplayOrder": 90,
     "FieldShowCondition": "additionalInfoOtherGroundsMIAM!=\"\""
   },
   {
@@ -4102,7 +4102,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "additionalInfoOtherGroundsMIAM",
-    "TabFieldDisplayOrder": "90"
+    "TabFieldDisplayOrder": 91
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4111,7 +4111,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabJudgeAllocatedLabel",
-    "TabFieldDisplayOrder": "91"
+    "TabFieldDisplayOrder": 92
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4120,7 +4120,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "judgeAllocated",
-    "TabFieldDisplayOrder": "92"
+    "TabFieldDisplayOrder": 93
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4129,7 +4129,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabApplicationAllocatedToLabel",
-    "TabFieldDisplayOrder": "93"
+    "TabFieldDisplayOrder": 94
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4138,7 +4138,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "applicationAllocatedTo",
-    "TabFieldDisplayOrder": "94"
+    "TabFieldDisplayOrder": 95
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4148,7 +4148,7 @@
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabCaseAllocatedToLabel",
     "FieldShowCondition": "expressCaseParticipation!=\"Enrolled\"",
-    "TabFieldDisplayOrder": "95"
+    "TabFieldDisplayOrder": 96
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4158,7 +4158,7 @@
     "TabDisplayOrder": 13,
     "CaseFieldID": "caseAllocatedTo",
     "FieldShowCondition": "expressCaseParticipation!=\"Enrolled\"",
-    "TabFieldDisplayOrder": "96"
+    "TabFieldDisplayOrder": 97
   },
   {
     "LiveFrom": "03/04/2025",
@@ -4168,7 +4168,7 @@
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabJudgeAgreesCaseIsExpressLabel",
     "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
-    "TabFieldDisplayOrder": "97"
+    "TabFieldDisplayOrder": 98
   },
   {
     "LiveFrom": "03/04/2025",
@@ -4178,7 +4178,7 @@
     "TabDisplayOrder": 13,
     "CaseFieldID": "judgeAgreesCaseIsExpress",
     "FieldShowCondition": "expressCaseParticipation=\"Enrolled\"",
-    "TabFieldDisplayOrder": "98"
+    "TabFieldDisplayOrder": 99
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4187,7 +4187,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "tabJudgeTimeEstimateLabel",
-    "TabFieldDisplayOrder": "99"
+    "TabFieldDisplayOrder": 100
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4196,7 +4196,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "judgeTimeEstimate",
-    "TabFieldDisplayOrder": "100"
+    "TabFieldDisplayOrder": 101
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4205,7 +4205,7 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "judgeTimeEstimateTextArea",
-    "TabFieldDisplayOrder": "101"
+    "TabFieldDisplayOrder": 102
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4214,7 +4214,79 @@
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 13,
     "CaseFieldID": "reasonForFRCLocation",
-    "TabFieldDisplayOrder": "102"
+    "TabFieldDisplayOrder": 103
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "specialMeasuresApplicationLbl",
+    "TabFieldDisplayOrder": 104
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "tabSpecialAssistanceRequired",
+    "TabFieldDisplayOrder": 105
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "tabSpecificArrangementsRequired",
+    "TabFieldDisplayOrder": 106
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "specialMeasuresPostHearingLbl",
+    "TabFieldDisplayOrder": 107
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "attendingCourtWithAssistanceLabel",
+    "TabFieldDisplayOrder": 108
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "attendingCourtWithAssistance",
+    "TabFieldDisplayOrder": 109
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "attendingCourtWithArrangementLabel",
+    "TabFieldDisplayOrder": 110
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 13,
+    "CaseFieldID": "attendingCourtWithArrangement",
+    "TabFieldDisplayOrder": 111
   },
   {
     "LiveFrom": "01/01/2017",
