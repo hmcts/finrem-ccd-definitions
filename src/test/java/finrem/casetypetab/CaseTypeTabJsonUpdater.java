@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,13 +33,17 @@ class CaseTypeTabJsonUpdater {
     void updateTabDisplayOrder() throws IOException {
         Map<String, Integer> expectedTabDisplayOrder = getExpectedTabDisplayOrder();
         List<Map<String, Object>> jsonData = getInputData();
+        Map<String, Integer> tabIdCounter = new HashMap<>();
 
         for (Map<String, Object> entry : jsonData) {
             String tabId = (String) entry.get("TabID");
 
             if (expectedTabDisplayOrder.containsKey(tabId)) {
+                int order = tabIdCounter.getOrDefault(tabId, 0) + 1;
                 Integer tabDisplayOrder = expectedTabDisplayOrder.get(tabId);
+                tabIdCounter.put(tabId, order);
                 entry.put("TabDisplayOrder", tabDisplayOrder);
+                entry.put("TabFieldDisplayOrder", order);
             }
         }
 
