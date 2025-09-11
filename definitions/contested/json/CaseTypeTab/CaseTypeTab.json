@@ -357,7 +357,8 @@
     "CaseFieldID": "hearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "hearingTabItems !=\"\""
+    "TabShowCondition": "hearingTabItems !=\"\"",
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
   },
   {
     "LiveFrom": "24/07/2025",
@@ -2667,7 +2668,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentDateAdded)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2685,7 +2687,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 18,
+    "DisplayContextParameter": "#TABLE(draftOrder, pensionSharingAnnex, orderStatus, submittedBy, uploadedOnBehalfOf, submittedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
