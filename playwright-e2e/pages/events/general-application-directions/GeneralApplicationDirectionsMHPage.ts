@@ -7,10 +7,14 @@ import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 export class GeneralApplicationDirectionsMHPage extends ManageHearingPage {
 
     readonly isAHearingRequired: Locator;
+    readonly selectNoForNoticeOfHearingErrorMessage: Locator;
+    readonly selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage: Locator;
 
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page, commonActionsHelper);
         this.isAHearingRequired = page.getByText('Is a Hearing required?');
+        this.selectNoForNoticeOfHearingErrorMessage = page.getByText('Select "Yes" for "Do you want')
+        this.selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage = page.getByText('Select Applicant and');
 
     }
 
@@ -20,4 +24,12 @@ export class GeneralApplicationDirectionsMHPage extends ManageHearingPage {
         await radioButton.check();
     }
 
-}
+    async verifyErrorMessageForNoNotice(): Promise<void> {
+        const errorMessage = this.selectNoForNoticeOfHearingErrorMessage
+        await expect(errorMessage).toBeVisible();
+    }
+    async verifyApplicantAndRespondentNotSelectedToReceiveNoticeError(): Promise<void> {
+        const errorMessage = this.selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage;
+        await expect(errorMessage).toBeVisible();
+        }
+    }

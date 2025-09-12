@@ -150,6 +150,12 @@ export class ManageHearingPage extends BaseJourneyPage {
         }
     }
 
+    async unSelectWhoShouldSeeThisOrder(partyType: string, partyName: string) {
+        const checkbox = this.page.getByRole('checkbox', { name: `${partyType} - ${partyName}` });
+        await expect(checkbox).toBeVisible();
+        await checkbox.uncheck();
+    }
+
     async assertErrorMessagesForAllMandatoryFields() {
         const errorMessages = [
             "Type of Hearing is required",

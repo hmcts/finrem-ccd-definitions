@@ -36,10 +36,10 @@ async function performGeneralApplicationDirectionsFlow(
   });
   await generalApplicationDirectionsPage.navigateContinue();
   await generalApplicationDirectionsPage.navigateSubmit();
-    
+
 }
 
-async function performNewGeneralApplicationDirectionsFlow(
+async function performNewGeneralApplicationDirectionsFlowWithHearing(
   caseDetailsPage: any,
   generalApplicationDirectionsMHPage: any,
   checkYourAnswersPage: any,
@@ -57,7 +57,16 @@ async function performNewGeneralApplicationDirectionsFlow(
   await generalApplicationDirectionsMHPage.enterAdditionalInformationAboutHearing('This is a test hearing');
   await generalApplicationDirectionsMHPage.whetherToUploadOtherDocuments(YesNoRadioEnum.YES);
   await generalApplicationDirectionsMHPage.uploadOtherDocuments('test.doc');
+  await generalApplicationDirectionsMHPage.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
+  await generalApplicationDirectionsMHPage.navigateContinue();
+  await generalApplicationDirectionsMHPage.verifyErrorMessageForNoNotice();
   await generalApplicationDirectionsMHPage.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
+  await generalApplicationDirectionsMHPage.unSelectWhoShouldSeeThisOrder('Applicant', 'Frodo Baggins');
+  await generalApplicationDirectionsMHPage.unSelectWhoShouldSeeThisOrder('Respondent', 'Smeagol Gollum');
+  await generalApplicationDirectionsMHPage.selectWhoShouldSeeThisOrder('Intervener1', 'IntApp1');
+  await generalApplicationDirectionsMHPage.navigateContinue();
+  await generalApplicationDirectionsMHPage.verifyApplicantAndRespondentNotSelectedToReceiveNoticeError();
+  
   await generalApplicationDirectionsMHPage.selectAllWhoShouldSeeThisOrder([
     { partyType: 'Applicant', partyName: 'Frodo Baggins' },
     { partyType: 'Respondent', partyName: 'Smeagol Gollum' },
@@ -198,7 +207,7 @@ test.describe('Contested - General Application Directions', () => {
         await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
         await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
         await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-        await performNewGeneralApplicationDirectionsFlow(
+        await performNewGeneralApplicationDirectionsFlowWithHearing(
           caseDetailsPage,
           generalApplicationDirectionsMHPage,
           checkYourAnswersPage,
@@ -225,7 +234,7 @@ test.describe('Contested - General Application Directions', () => {
         await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
         await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
         await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-        await performNewGeneralApplicationDirectionsFlow(
+        await performNewGeneralApplicationDirectionsFlowWithHearing(
           caseDetailsPage,
           generalApplicationDirectionsMHPage,
           checkYourAnswersPage,
@@ -234,6 +243,5 @@ test.describe('Contested - General Application Directions', () => {
         );
       }
     );
-   }
-  );
-});
+  });
+}); 
