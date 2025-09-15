@@ -6,7 +6,7 @@ import {camelCase} from "lodash";
 
 export class ManageHearingPage extends BaseJourneyPage {
 
-    private readonly commonActionsHelper: CommonActionsHelper;
+    readonly commonActionsHelper: CommonActionsHelper;
     private readonly manageHearingTitle: Locator;
     private readonly addANewHearingRadio: Locator;
     private readonly addANewHearingTitle: Locator;

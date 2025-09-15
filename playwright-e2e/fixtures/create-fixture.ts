@@ -1,83 +1,94 @@
-import { test as base } from '@playwright/test';
-import { SigninPage } from '../pages/SigninPage';
-import { BlankPage } from '../pages/BlankPage.ts';
-import { CommonActionsHelper } from '../pages/helpers/CommonActionsHelper';
-import { SolicitorDetailsHelper } from '../pages/helpers/SolicitorDetailsHelper';
+import {test as base} from '@playwright/test';
+import {SigninPage} from '../pages/SigninPage';
+import {BlankPage} from '../pages/BlankPage.ts';
+import {CommonActionsHelper} from '../pages/helpers/CommonActionsHelper';
+import {SolicitorDetailsHelper} from '../pages/helpers/SolicitorDetailsHelper';
 
-import { StartPage } from '../pages/events/create-case/StartPage';
-import { CreateCasePage } from '../pages/events/create-case/CreateCasePage';
-import { SolicitorDetailsPage } from '../pages/events/create-case/SolicitorDetailsPage';
-import { DivorceDetailsPage } from '../pages/events/create-case/DivorceDetailsPage';
-import { ApplicantDetailsPage } from '../pages/events/create-case/ApplicantDetailsPage';
-import { RespondentRepresentedPage } from '../pages/events/create-case/RespondentRepresentedPage';
-import { NatureOfApplicationPage } from '../pages/events/create-case/NatureOfApplicationPage';
-import { PropertyAdjustmentPage } from '../pages/events/create-case/PropertyAdjustmentPage';
-import { PeriodicalPaymentsPage } from '../pages/events/create-case/PeriodicalPaymentsPage';
-import { WrittenAgreementPage } from '../pages/events/create-case/WrittenAgreementPage';
-import { ChildWrittenAgreementPage } from '../pages/events/create-case/ChildWrittenAgreementPage';
-import { FastTrackProcedurePage } from '../pages/events/create-case/FastTrackProcedurePage';
-import { FinancialAssetsPage } from '../pages/events/create-case/FinancialAssetsPage';
-import { FinancialRemedyCourtPage } from '../pages/events/create-case/FinancialRemedyCourtPage';
-import { MiamQuestionPage } from '../pages/events/create-case/MiamQuestionPage';
-import { MiamDetailsPage } from '../pages/events/create-case/MiamDetailsPage';
-import { UploadOrderDocumentsPage } from '../pages/events/create-case/UploadOrderDocumentPage';
-import { CaseDetailsPage } from '../pages/CaseDetailsPage';
-import { RespondentDetailsPage } from '../pages/events/create-case/RespondentDetailsPage';
-import { CreateCaseCheckYourAnswersPage } from '../pages/events/create-case/CreateCaseCheckYourAnswersPage';
-import { ManageCaseDashboardPage } from '../pages/ManageCaseDashboardPage';
-import { HwfApplicationAcceptedPage } from '../pages/events/hwf-application-accepted/HwfApplicationAcceptedPage';
-import { SendOrderPage } from '../pages/events/send-order/SendOrderPage';
-import { IssueApplicationPage } from '../pages/events/issue-application/IssueApplicationPage';
-import { ApproveApplicationPage } from '../pages/events/approve-order/ApproveApplicationPage';
-import { CaseSubmissionPage } from '../pages/events/application-payment-submission/CaseSubmissionPage';
-import { SolicitorAuthPage } from '../pages/events/application-payment-submission/SolicitorAuthPage';
-import { HelpWithFeesPage } from '../pages/events/application-payment-submission/HelpWithFeesPage';
-import { PaymentPage } from '../pages/events/application-payment-submission/PaymentPage';
-import { OrderSummaryPage } from '../pages/events/application-payment-submission/OrderSummaryPage';
-import { ManageOrgDashboardPage } from '../pages/ManageOrgDashboardPage';
-import { ExpressCaseEnrolledPage } from '../pages/events/create-case/ExpressCaseEnrolledPage';
-import { UpdateContactDetailsPage } from '../pages/events/update-contact-details/UpdateContactDetailsPage';
-import { CreateCaseSavingYourAnswersPage } from '../pages/events/create-case/CreateCaseSavingYourAnswersPage';
-import { ListForHearingPage } from '../pages/events/list-for-hearing/ListForHearingPage';
-import { AmendFormAApplicationDetailsPage } from '../pages/events/amend-application-details/AmendFormAApplicationDetailsPage';
-import { ExpressCasePage } from '../pages/events/amend-application-details/ExpressCasePage';
-import { ManageExpressCasePage } from '../pages/events/manage-express-case/ManageExpressCasePage';
-import { AmendPaperApplicationDetailsPage } from '../pages/events/amend-application-details/AmendPaperApplicationDetailsPage';
-import { GiveAllocationDirectionsPage } from '../pages/events/give-allocation-directions/GiveAllocationDirectionPage';
-import { AllocationDirectionsCourtSelectionPage } from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
-import { CreateFlagPage } from  '../pages/events/create-flag/CreateFlagPage';
-import { ChildrensDetailsPage } from '../pages/events/create-case/ChildrensDetailsPage';
-import { CreateGeneralApplicationPage } from '../pages/events/create-general-application/CreateGeneralApplicationPage';
-import { ListForInterimHearingPage } from '../pages/events/list-for-interim-hearing/ListForInterimHearingPage';
-import { ManageFlagPage } from '../pages/events/manage-flag/ManageFlagPage';
-import { GeneralApplicationDirectionsPage } from '../pages/events/general-application-directions/GeneralApplicationDirectionsPage';
-import { UploadDraftOrdersPage } from '../pages/events/upload-draft-orders/UploadDraftOrdersPage';
-import { ManageHearingPage } from '../pages/events/manage-hearings/ManageHearing';
-import { ManageCaseDocumentsPage } from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
-import { CheckYourAnswersPage } from '../pages/CheckYourAnswersPage';
-import { AddNotePage} from '../pages/events/add-note/AddNotePage';
-import { AllocateToJudgePage } from '../pages/events/allocate-to-judge/AllocateToJudgePage';
-import { EventSummaryPage } from '../pages/events/EventSummaryPage';
-import { RefundPage } from '../pages/events/refund/RefundPage';
-import { ManageBarristerPage } from '../pages/events/manage-barrister/ManageBarristerPage';
-import { PrepareForHearingPage } from '../pages/events/prepare-for-hearing/PrepareForHearingPage.ts';
-import { CreateGeneralOrderPage } from '../pages/events/create-general-order/CreateGeneralOrderPage.ts';
-import { ContestedSendOrderPage } from '../pages/events/send-order/ContestedSendOrderPage.ts';
-import { ManageIntervenerPage } from '../pages/events/manage-intervener/ManageIntervenerPage.ts';
+import {StartPage} from '../pages/events/create-case/StartPage';
+import {CreateCasePage} from '../pages/events/create-case/CreateCasePage';
+import {SolicitorDetailsPage} from '../pages/events/create-case/SolicitorDetailsPage';
+import {DivorceDetailsPage} from '../pages/events/create-case/DivorceDetailsPage';
+import {ApplicantDetailsPage} from '../pages/events/create-case/ApplicantDetailsPage';
+import {RespondentRepresentedPage} from '../pages/events/create-case/RespondentRepresentedPage';
+import {NatureOfApplicationPage} from '../pages/events/create-case/NatureOfApplicationPage';
+import {PropertyAdjustmentPage} from '../pages/events/create-case/PropertyAdjustmentPage';
+import {PeriodicalPaymentsPage} from '../pages/events/create-case/PeriodicalPaymentsPage';
+import {WrittenAgreementPage} from '../pages/events/create-case/WrittenAgreementPage';
+import {ChildWrittenAgreementPage} from '../pages/events/create-case/ChildWrittenAgreementPage';
+import {FastTrackProcedurePage} from '../pages/events/create-case/FastTrackProcedurePage';
+import {FinancialAssetsPage} from '../pages/events/create-case/FinancialAssetsPage';
+import {FinancialRemedyCourtPage} from '../pages/events/create-case/FinancialRemedyCourtPage';
+import {MiamQuestionPage} from '../pages/events/create-case/MiamQuestionPage';
+import {MiamDetailsPage} from '../pages/events/create-case/MiamDetailsPage';
+import {UploadOrderDocumentsPage} from '../pages/events/create-case/UploadOrderDocumentPage';
+import {CaseDetailsPage} from '../pages/CaseDetailsPage';
+import {RespondentDetailsPage} from '../pages/events/create-case/RespondentDetailsPage';
+import {CreateCaseCheckYourAnswersPage} from '../pages/events/create-case/CreateCaseCheckYourAnswersPage';
+import {ManageCaseDashboardPage} from '../pages/ManageCaseDashboardPage';
+import {HwfApplicationAcceptedPage} from '../pages/events/hwf-application-accepted/HwfApplicationAcceptedPage';
+import {SendOrderPage} from '../pages/events/send-order/SendOrderPage';
+import {IssueApplicationPage} from '../pages/events/issue-application/IssueApplicationPage';
+import {ApproveApplicationPage} from '../pages/events/approve-order/ApproveApplicationPage';
+import {CaseSubmissionPage} from '../pages/events/application-payment-submission/CaseSubmissionPage';
+import {SolicitorAuthPage} from '../pages/events/application-payment-submission/SolicitorAuthPage';
+import {HelpWithFeesPage} from '../pages/events/application-payment-submission/HelpWithFeesPage';
+import {PaymentPage} from '../pages/events/application-payment-submission/PaymentPage';
+import {OrderSummaryPage} from '../pages/events/application-payment-submission/OrderSummaryPage';
+import {ManageOrgDashboardPage} from '../pages/ManageOrgDashboardPage';
+import {ExpressCaseEnrolledPage} from '../pages/events/create-case/ExpressCaseEnrolledPage';
+import {UpdateContactDetailsPage} from '../pages/events/update-contact-details/UpdateContactDetailsPage';
+import {CreateCaseSavingYourAnswersPage} from '../pages/events/create-case/CreateCaseSavingYourAnswersPage';
+import {ListForHearingPage} from '../pages/events/list-for-hearing/ListForHearingPage';
+import {
+  AmendFormAApplicationDetailsPage
+} from '../pages/events/amend-application-details/AmendFormAApplicationDetailsPage';
+import {ExpressCasePage} from '../pages/events/amend-application-details/ExpressCasePage';
+import {ManageExpressCasePage} from '../pages/events/manage-express-case/ManageExpressCasePage';
+import {
+  AmendPaperApplicationDetailsPage
+} from '../pages/events/amend-application-details/AmendPaperApplicationDetailsPage';
+import {GiveAllocationDirectionsPage} from '../pages/events/give-allocation-directions/GiveAllocationDirectionPage';
+import {
+  AllocationDirectionsCourtSelectionPage
+} from '../pages/events/give-allocation-directions/AllocationDirectionsCourtSelectionPage';
+import {CreateFlagPage} from '../pages/events/create-flag/CreateFlagPage';
+import {ChildrensDetailsPage} from '../pages/events/create-case/ChildrensDetailsPage';
+import {CreateGeneralApplicationPage} from '../pages/events/create-general-application/CreateGeneralApplicationPage';
+import {ListForInterimHearingPage} from '../pages/events/list-for-interim-hearing/ListForInterimHearingPage';
+import {ManageFlagPage} from '../pages/events/manage-flag/ManageFlagPage';
+import {
+  GeneralApplicationDirectionsPage
+} from '../pages/events/general-application-directions/GeneralApplicationDirectionsPage';
+import {UploadDraftOrdersPage} from '../pages/events/upload-draft-orders/UploadDraftOrdersPage';
+import {ManageHearingPage} from '../pages/events/manage-hearings/ManageHearing';
+import {ManageCaseDocumentsPage} from '../pages/events/manage-case-documents/ManageCaseDocumentsPage';
+import {CheckYourAnswersPage} from '../pages/CheckYourAnswersPage';
+import {AddNotePage} from '../pages/events/add-note/AddNotePage';
+import {AllocateToJudgePage} from '../pages/events/allocate-to-judge/AllocateToJudgePage';
+import {EventSummaryPage} from '../pages/events/EventSummaryPage';
+import {RefundPage} from '../pages/events/refund/RefundPage';
+import {ManageBarristerPage} from '../pages/events/manage-barrister/ManageBarristerPage';
+import {PrepareForHearingPage} from '../pages/events/prepare-for-hearing/PrepareForHearingPage.ts';
+import {CreateGeneralOrderPage} from '../pages/events/create-general-order/CreateGeneralOrderPage.ts';
+import {ContestedSendOrderPage} from '../pages/events/send-order/ContestedSendOrderPage.ts';
+import {ManageIntervenerPage} from '../pages/events/manage-intervener/ManageIntervenerPage.ts';
 import {CaseListPage} from '../pages/CaseListPage.ts';
-import { ReferToJudgeApplicationPage } from '../pages/events/refer-to-judge-application/ReferToJudgeApplicationPage.ts';
-import { GeneralApplicationOutcomePage } from '../pages/events/general-application-outcome/GeneralApplicationOutcomePage.ts';
+import {ReferToJudgeApplicationPage} from '../pages/events/refer-to-judge-application/ReferToJudgeApplicationPage.ts';
+import {
+  GeneralApplicationOutcomePage
+} from '../pages/events/general-application-outcome/GeneralApplicationOutcomePage.ts';
 import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
-import { ProcessOrderPage } from '../pages/events/process-order/ProcessOrderPage.ts';
-import { CreateGeneralEmailPage } from '../pages/events/create-general-email/CreateGeneralEmailPage.ts';
-import { SubmitUploadedCaseFilesPage } from '../pages/events/submit-uploaded-case-files/SubmitUploadedCaseFilesPage.ts';
-import { UnprocessedApprovedOrdersPage } from '../pages/events/process-order/UnprocessedApprovedOrdersPage.ts';
-import { ProcessOrderHearingDetailsPage } from '../pages/events/process-order/ProcessOrderHearingDetailsPage.ts';
+import {ProcessOrderPage} from '../pages/events/process-order/ProcessOrderPage.ts';
+import {CreateGeneralEmailPage} from '../pages/events/create-general-email/CreateGeneralEmailPage.ts';
+import {SubmitUploadedCaseFilesPage} from '../pages/events/submit-uploaded-case-files/SubmitUploadedCaseFilesPage.ts';
+import {UnprocessedApprovedOrdersPage} from '../pages/events/process-order/UnprocessedApprovedOrdersPage.ts';
+import {ProcessOrderHearingDetailsPage} from '../pages/events/process-order/ProcessOrderHearingDetailsPage.ts';
 import {ConsentApplicationApprovedPage} from '../pages/events/consent-application/ConsentApplicationApprovedPage.ts';
 import {ConsentOrderNotApprovedPage} from '../pages/events/consent-application/ConsentOrderNotApprovedPage.ts';
-import { GeneralApplicationDirectionsMHPage } from '../pages/events/general-application-directions/GeneralApplicationDirectionsMHPage.ts';
-import { UploadApprovedOrderPage } from '../pages/events/upload-approved-order/UploadApprovedOrderPage';
-import { UploadApprovedOrderMHPage } from '../pages/events/upload-approved-order/UploadApprovedOrderMHPage.ts';
+import {
+  GeneralApplicationDirectionsMHPage
+} from '../pages/events/general-application-directions/GeneralApplicationDirectionsMHPage.ts';
+import {UploadApprovedOrderMHPage} from '../pages/events/upload-approved-order/UploadApprovedOrderMHPage.ts';
 import {NoticeOfChangePage} from '../pages/NoticeOfChangePage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
@@ -158,7 +169,6 @@ type CreateFixtures = {
   consentApplicationApprovePage: ConsentApplicationApprovedPage;
   consentOrderNotApprovedPage: ConsentOrderNotApprovedPage;
   generalApplicationDirectionsMHPage: GeneralApplicationDirectionsMHPage;
-  uploadApprovedOrderPage: UploadApprovedOrderPage;
   uploadApprovedOrderMHPage: UploadApprovedOrderMHPage;
   noticeOfChangePage: NoticeOfChangePage;
 };
@@ -385,9 +395,6 @@ export const test = base.extend<CreateFixtures>({
   },
   generalApplicationDirectionsMHPage: async ({ page }, use) => {
     await use(new GeneralApplicationDirectionsMHPage(page, commonActionsHelper));
-  },
-  uploadApprovedOrderPage: async ({ page }, use) => {
-    await use(new UploadApprovedOrderPage(page, commonActionsHelper));
   },
   uploadApprovedOrderMHPage: async ({ page }, use) => {
     await use(new UploadApprovedOrderMHPage(page, commonActionsHelper));

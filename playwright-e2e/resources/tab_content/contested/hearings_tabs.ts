@@ -136,22 +136,6 @@ export const migratedGeneralApplicationDirectionsTabDataOnHearing1 = [
   }
 ];
 
-export const migratedUploadApprovedOrderTabDataOnHearing1 = [
-  {
-    tabName: 'Hearings',
-    tabContent: [
-      "Hearing 1",
-      { tabItem: "Type of Hearing", value: "Final Hearing (FH)" },
-      { tabItem: "Court", value: "Birmingham Civil And Family Justice Centre" },
-      { tabItem: "Hearing Attendance", value: "Hearing mode not specified" },
-      { tabItem: "Hearing Date", value: '01 Jan 2022 10:00' },
-      { tabItem: "Hearing Time Estimate", value: '30 minutes' },
-      { tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum' },
-      { tabItem: "Additional information about the hearing", value: '' }
-    ]
-  }
-];
-
 export const newUploadApprovedOrderMHTabDataOnHearing1 = [
   {
     tabName: 'Hearings',

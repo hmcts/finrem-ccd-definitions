@@ -51,7 +51,7 @@ export const CommonEvents: Record<string, CaseEvent> = {
   },
   uploadApprovedOrder: {
     listItem: "Upload Approved Order",
-    ccdCallback: "FR_uploadApprovedOrder"
+    ccdCallback: "FR_uploadApprovedOrderMh"
   }
 };
 
@@ -240,10 +240,6 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   sendConsentOrder: {
     listItem: "Send Order (consent)",
     ccdCallback: "FR_consentSendOrder"
-  },
-  uploadApprovedOrderMH:{
-    listItem: "Upload Approved Order (MH)",
-    ccdCallback: "FR_uploadApprovedOrderMh"
   },
 
   // Common events
