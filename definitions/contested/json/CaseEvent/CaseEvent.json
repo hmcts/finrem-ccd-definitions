@@ -1486,5 +1486,21 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "30/09/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_GeneralApplicationDirectionsMH",
+    "Name": "General App Directions (MH)",
+    "Description": "General Application Directions",
+    "DisplayOrder": 126,
+    "PreConditionState(s)": "generalApplicationOutcome;reviewOrder;scheduleRaiseDirectionsOrder;draftOrderNotApproved;orderDrawn;orderSent;solicitorDraftOrder;prepareForHearing;caseFileSubmitted;generalApplication",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
   }
 ]
