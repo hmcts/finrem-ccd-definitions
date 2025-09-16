@@ -4087,7 +4087,7 @@
     "ID": "FR_agreedDraftOrder",
     "ListElementCode": "resubmissionLinkYes",
     "FieldType": "Label",
-    "ElementLabel": "This is a resubmission. <a href=\"cases/case-details/${[CASE_REFERENCE]}#Orders\" target=\"_blank\">(see previously rejected draft orders)</a>",
+    "ElementLabel": "This is a resubmission. <a href=\"cases/case-details/${[CASE_REFERENCE]}#Orders\">(see previously rejected draft orders)</a>",
     "SecurityClassification": "Public",
     "Searchable": "N",
     "FieldShowCondition": "resubmission=\"Yes\""
