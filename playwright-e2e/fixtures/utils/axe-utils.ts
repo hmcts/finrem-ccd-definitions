@@ -50,17 +50,17 @@ export class AxeUtils {
     );
     // added bannerText to exclude cookie banner from axe checks
     // added .caseLocked to exclude the locked case banner from axe checks as this can happen any place
-    if (options?.exclude) {
-      if (Array.isArray(options.exclude)) {
-        options.exclude.push('.caseLocked');
-      } else if (options.exclude.trim() !== '') {
-        options.exclude = [options.exclude, '.caseLocked'];
-      }
-    } else {
-      options && (options.exclude = ['.caseLocked']);
-    }
+    const excludeSelectors = [
+      ...(options?.exclude
+        ? Array.isArray(options.exclude)
+          ? options.exclude
+          : [options.exclude]
+        : []),
+      '.someoneViewing > .bannerText',
+      '.caseLocked'
+    ];
 
-    this.applySelectors(builder, "exclude", options?.exclude);
+    this.applySelectors(builder, "exclude", excludeSelectors);
     this.applySelectors(builder, "include", options?.include);
 
     if (options?.disableRules) builder.disableRules(options.disableRules);
