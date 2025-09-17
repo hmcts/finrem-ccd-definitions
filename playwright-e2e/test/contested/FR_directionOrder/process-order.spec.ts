@@ -597,11 +597,10 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
         unprocessedApprovedOrdersPage, 
         processOrderHearingDetailsPage,
         checkYourAnswersPage,
-        axeUtils
-      }, testInfo
+      },
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: true });
-      const orderDoc = await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrderMH);
