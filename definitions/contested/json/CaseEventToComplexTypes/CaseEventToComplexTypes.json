@@ -4823,7 +4823,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval1",
     "ListElementCode": "courtOrderDate",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "(judgeApproval1.docType=\"DRAFT_ORDER\" OR judgeApproval1.docType=\"PSA\") AND (judgeApproval1.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval1.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
   },
   {
@@ -4959,7 +4959,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval2",
     "ListElementCode": "courtOrderDate",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "(judgeApproval2.docType=\"DRAFT_ORDER\" OR judgeApproval2.docType=\"PSA\") AND (judgeApproval2.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval2.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
   },
   {
@@ -5095,7 +5095,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval3",
     "ListElementCode": "courtOrderDate",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "(judgeApproval3.docType=\"DRAFT_ORDER\" OR judgeApproval3.docType=\"PSA\") AND (judgeApproval3.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval3.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
   },
   {
@@ -5231,7 +5231,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval4",
     "ListElementCode": "courtOrderDate",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "(judgeApproval4.docType=\"DRAFT_ORDER\" OR judgeApproval4.docType=\"PSA\") AND (judgeApproval4.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval4.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
   },
   {
@@ -5367,7 +5367,7 @@
     "CaseEventID": "FR_approveOrders",
     "CaseFieldID": "judgeApproval5",
     "ListElementCode": "courtOrderDate",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "(judgeApproval5.docType=\"DRAFT_ORDER\" OR judgeApproval5.docType=\"PSA\") AND (judgeApproval5.judgeDecision=\"READY_TO_BE_SEALED\" OR judgeApproval5.judgeDecision=\"JUDGE_NEEDS_TO_MAKE_CHANGES\")"
   },
   {
