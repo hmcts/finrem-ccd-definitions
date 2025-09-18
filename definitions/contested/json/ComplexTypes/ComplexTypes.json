@@ -917,6 +917,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "28/01/2025",
+    "ID": "FR_ct_directionOrderCollection",
+    "ListElementCode": "additionalDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Additional attachments",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_directionDetailCollection",
     "ListElementCode": "isAnotherHearingYN",
@@ -1005,16 +1015,6 @@
     "FieldTypeParameter": "FR_fl_hearingTypeDirections",
     "ElementLabel": "Type of hearing values",
     "FieldShowCondition": "isAnotherHearingYN=\"Yes\"",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "28/01/2025",
-    "ID": "FR_ct_directionOrderCollection",
-    "ListElementCode": "additionalDocuments",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
-    "ElementLabel": "Additional attachments",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },

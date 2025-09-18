@@ -6210,6 +6210,22 @@
     "DisplayContext": "MANDATORY"
   },
   {
+    "LiveFrom": "16/09/2025",
+    "ID": "FR_uploadApprovedOrderMhToUploadHearingOrder",
+    "CaseEventID": "FR_uploadApprovedOrderMh",
+    "CaseFieldID": "uploadHearingOrder",
+    "ListElementCode": "uploadDraftDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "16/09/2025",
+    "ID": "FR_uploadApprovedOrderMhToUploadHearingOrder",
+    "CaseEventID": "FR_uploadApprovedOrderMh",
+    "CaseFieldID": "uploadHearingOrder",
+    "ListElementCode": "additionalDocuments",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
     "LiveFrom": "25/06/2025",
     "ID": "FR_uploadApprovedOrderMhToWorkingHearing",
     "CaseEventID": "FR_uploadApprovedOrderMh",
