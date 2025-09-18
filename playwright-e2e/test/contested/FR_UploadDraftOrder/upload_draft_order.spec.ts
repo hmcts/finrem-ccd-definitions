@@ -12,6 +12,7 @@ import {
 } from "../../../resources/tab_content/contested/upload_draft_order_tabs.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
 import {approveOrderTable} from "../../../resources/check_your_answer_content/approve_order/approveOrderTable.ts";
+import {ContestedEventApi} from "../../../data-utils/api/contested/ContestedEventApi.ts";
 
 
 test.describe('Contested - Upload Draft Order', () => {
@@ -208,4 +209,35 @@ test.describe('Contested - Upload Draft Order', () => {
             await manageCaseDashboardPage.signOut();
         }
     );
+
+    test ('Contested - Upload Draft Order - Verify user confidentiality with hearings', async ({loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage}) => {
+        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+        const hearingDate = await DateHelper.getHearingDateUsingCurrentDate();
+
+        await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate, [
+          { action: 'delete', key: 'workingHearing.partiesOnCaseMultiSelectList.value' },
+          {
+            action: 'insert',
+            key: 'workingHearing.partiesOnCaseMultiSelectList.value[0]',
+            value: {
+              code: "[RESPSOLICITOR]",
+              label: "Respondent - Smeagol Gollum"
+            }
+          }
+        ]); // Respondent only sent hearing
+
+        await manageCaseDashboardPage.visit();
+        await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
+        await manageCaseDashboardPage.navigateToCase(caseId);
+
+        await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
+
+        await uploadDraftOrdersPage.chooseAnAgreedOrderFollowingAHearing();
+        await uploadDraftOrdersPage.navigateContinue();
+
+        await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
+
+        // Verify that the hearing details are not shown to the user
+        await uploadDraftOrdersPage.assertHearingDropdownIsEmpty(); // Hearing dropdown should be empty as the user is not part of the hearing
+    });
 });
