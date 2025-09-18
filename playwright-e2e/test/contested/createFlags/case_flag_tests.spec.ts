@@ -33,7 +33,7 @@ const caseFlagTestData = [
     },
 ];
 
-test.describe('Contested Case Flag Tests', () => {
+test.describe('Contested Case Flag Tests', { tag: ['@caseFlag'] }, () => {
     for (const data of caseFlagTestData) {
         test(
             data.title,

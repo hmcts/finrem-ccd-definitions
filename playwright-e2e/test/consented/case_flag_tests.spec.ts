@@ -20,7 +20,7 @@ const caseFlagTestData = [
     }
 ];
 
-test.describe('Consented Case Flag Tests', () => {
+test.describe('Consented Case Flag Tests', { tag: ['@caseFlag'] }, () => {
     for (const data of caseFlagTestData) {
         test(
             'Consented - ' + data.createTitle,
