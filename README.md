@@ -1,5 +1,5 @@
 # finrem-ccd-definitions
-
+#
 
 Financial Remedy configuration definitions for CCD.
 
