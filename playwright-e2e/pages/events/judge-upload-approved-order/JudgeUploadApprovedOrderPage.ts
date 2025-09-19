@@ -94,16 +94,18 @@ export class JudgeUploadApprovedOrderPage extends BaseJourneyPage {
         await this.blurCourtOrderDateInput();
     }
 
-    async enterDraftDirectionOrderDetails() {
+    async enterDraftDirectionOrderDetails(
+        isFinalOrder: YesNoRadioEnum = YesNoRadioEnum.YES,
+        isAnotherHearing: YesNoRadioEnum = YesNoRadioEnum.YES
+    ) {
         await expect(this.draftDirectionOrderDetailsHeader).toBeVisible();
-        const addNewButton = this.page.getByRole('button', { name: 'Add new' }).first()
+        const addNewButton = this.page.getByRole('button', { name: 'Add new' }).first();
         await addNewButton.click();
 
         await expect(this.isThisFinalOrderQuestion).toBeVisible();
-        await this.page.getByLabel(YesNoRadioEnum.YES).click();
+        await this.page.getByRole('group', { name: 'Is this the final order?' }).getByLabel(isFinalOrder).click();
 
         await expect(this.isThereAnotherHearingToBeListedQuestion).toBeVisible();
-        await this.page.getByLabel(YesNoRadioEnum.NO).click();
-        
+        await this.page.getByRole('group', { name: 'Is there another hearing to' }).getByLabel(isAnotherHearing).click();
     }
 }

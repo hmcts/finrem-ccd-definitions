@@ -3,9 +3,8 @@ import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import { giveAllocationGateKeepingTabData } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/gatekeeping_and_allocation_tab';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
-
+import { judgeUploadApprovedOrderTableData } from '../../../resources/check_your_answer_content/judge_approved_order/judgeApprovedOrderTable';
 
 // New describe block for Judge Upload Approved order
 test.describe('Contested - Judge Upload Approved Order', () => {
@@ -17,7 +16,7 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       manageCaseDashboardPage,
       caseDetailsPage,
       judgeUploadApprovedOrderPage,
-      axeUtils
+      checkYourAnswersPage
     }, testInfo) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
       await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId);
@@ -36,8 +35,14 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       await judgeUploadApprovedOrderPage.navigateContinue();
 
       // Draft Direction Orders Details
-      await judgeUploadApprovedOrderPage.enterDraftDirectionOrderDetails();
+      await judgeUploadApprovedOrderPage.enterDraftDirectionOrderDetails(YesNoRadioEnum.YES, YesNoRadioEnum.NO);
+      await judgeUploadApprovedOrderPage.navigateContinue();
 
+      //Check your answers
+      await checkYourAnswersPage.assertCheckYourAnswersPage(judgeUploadApprovedOrderTableData);
+      await judgeUploadApprovedOrderPage.navigateSubmit();
+
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.judgeUploadApprovedOrder.listItem);
 
       // await manageCaseDashboardPage.signOut();
 
