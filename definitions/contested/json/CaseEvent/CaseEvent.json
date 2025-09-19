@@ -1215,20 +1215,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_regenerateFormC",
-    "Name": "Re-generate Form C",
-    "Description": "Re-generate Form C",
-    "DisplayOrder": 146,
-    "PreConditionState(s)": "gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent",
-    "PostConditionState": "*",
-    "SecurityClassification": "Public",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "updateGeneralApplication",
     "Name": "Update General App Status",
     "Description": "Update General Application Status",
