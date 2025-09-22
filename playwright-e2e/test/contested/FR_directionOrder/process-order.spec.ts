@@ -6,6 +6,7 @@ import {YesNoRadioEnum} from '../../../pages/helpers/enums/RadioEnums';
 import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEventApi';
 import {processOrderHearingTabData} from '../../../resources/tab_content/contested/hearings_tabs.ts';
 import {
+  unprocessedApprovedOrdersNoHearingTable,
   unprocessedApprovedOrdersWithNewHearingTable
 } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable.ts';
 import {processOrderCaseDocumentsTabData} from '../../../resources/tab_content/contested/case_document_tabs.ts';
@@ -206,11 +207,11 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
         checkYourAnswersPage,
       },
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
 
       await manageCaseDashboardPage.navigateToCase(caseId);
-      await caseDetailsPage.selectNextStep(ContestedEvents.processOrderMH);
+      await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
 
       // Check unapproved draft order tab
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
@@ -225,7 +226,7 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
       await processOrderHearingDetailsPage.navigateSubmit();
 
       // Assert case details content
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrderMH.listItem);
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrder.listItem);
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
     }
   );

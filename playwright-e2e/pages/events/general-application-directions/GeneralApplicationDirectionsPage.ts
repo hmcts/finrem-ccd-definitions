@@ -17,6 +17,8 @@ export class GeneralApplicationDirectionsPage extends ManageHearingPage {
     private readonly checkJudgeDirectionsLabel: Locator;
     private readonly judgeDirectionsDetails: Locator;
     private readonly additionalInformation: Locator;
+    private readonly selectNoForNoticeOfHearingErrorMessage: Locator;
+    private readonly selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage: Locator;
 
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page, commonActionsHelper);
@@ -33,6 +35,9 @@ export class GeneralApplicationDirectionsPage extends ManageHearingPage {
         this.checkJudgeDirectionsLabel = page.getByText('Directions from the Judge');
         this.judgeDirectionsDetails = page.locator('#generalApplicationDirectionsTextFromJudge');
         this.additionalInformation = this.page.locator(`#generalApplicationDirectionsAdditionalInformation`);
+        this.selectNoForNoticeOfHearingErrorMessage = page.getByText('Select "Yes" for "Do you want')
+        this.selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage = page.getByText('Select Applicant and');
+
     }
 
     async chooseWhetherAHearingIsRequired(whetherAHearingIsRequired: YesNoRadioEnum) {
@@ -67,5 +72,15 @@ export class GeneralApplicationDirectionsPage extends ManageHearingPage {
     async enterDirectionFromJudge(text: string) {
         await expect(this.checkJudgeDirectionsLabel).toBeVisible();
         await this.judgeDirectionsDetails.fill(text);
+    }
+
+    async verifyErrorMessageForNoNotice(): Promise<void> {
+        const errorMessage = this.selectNoForNoticeOfHearingErrorMessage
+        await expect(errorMessage).toBeVisible();
+    }
+
+    async verifyApplicantAndRespondentNotSelectedToReceiveNoticeError(): Promise<void> {
+        const errorMessage = this.selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage;
+        await expect(errorMessage).toBeVisible();
     }
 }
