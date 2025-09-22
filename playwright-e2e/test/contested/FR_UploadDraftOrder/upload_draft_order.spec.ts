@@ -212,7 +212,7 @@ test.describe('Contested - Upload Draft Order', () => {
 
     test ('Contested - Upload Draft Order - Verify user confidentiality with hearings', async ({loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage}) => {
         const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-        const hearingDate = await DateHelper.getHearingDateUsingCurrentDate();
+        const hearingDate = await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
 
         await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate, [
           { action: 'delete', key: 'workingHearing.partiesOnCaseMultiSelectList.value' },

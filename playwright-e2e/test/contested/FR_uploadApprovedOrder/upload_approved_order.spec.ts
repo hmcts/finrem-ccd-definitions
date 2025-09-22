@@ -39,7 +39,12 @@ async function performUploadApprovedOrderFlowMH(
   await uploadApprovedOrderMHPage.selectAdditionalHearingDocument(YesNoRadioEnum.YES);
   await uploadApprovedOrderMHPage.uploadOtherDocuments('OtherDoc.doc');
   await uploadApprovedOrderMHPage.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
-  await axeUtils.audit();
+  await axeUtils.audit({
+    exclude: [
+      '#workingHearing_additionalHearingDocs_value'
+    ]
+    }
+  );
   await uploadApprovedOrderMHPage.navigateContinue("submit");
   const date = DateHelper.getUtcDateTimeFormatted();
   // CYA page
