@@ -5,6 +5,8 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 import { judgeUploadApprovedOrderTableData } from '../../../resources/check_your_answer_content/judge_approved_order/judgeApprovedOrderTable';
+import { judgeApprovedOrderTabData } from '../../../resources/tab_content/contested/judge_approved_order_tab';
+import { AxeUtils } from '@hmcts/playwright-common';
 
 // New describe block for Judge Upload Approved order
 test.describe('Contested - Judge Upload Approved Order', () => {
@@ -16,6 +18,7 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       manageCaseDashboardPage,
       caseDetailsPage,
       judgeUploadApprovedOrderPage,
+      axeUtils,
       checkYourAnswersPage
     }, testInfo) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
@@ -32,6 +35,7 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       await judgeUploadApprovedOrderPage.selectJudgeFromDropdown('Deputy District Judge');
       await judgeUploadApprovedOrderPage.enterNameOfJudge('Judge Judy');
       await judgeUploadApprovedOrderPage.enterCourtOrderDate('01', '01', '2026');
+      await axeUtils.audit();
       await judgeUploadApprovedOrderPage.navigateContinue();
 
       // Draft Direction Orders Details
@@ -44,17 +48,8 @@ test.describe('Contested - Judge Upload Approved Order', () => {
 
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.judgeUploadApprovedOrder.listItem);
 
-      // await manageCaseDashboardPage.signOut();
-
-      // Caseworker login and Send Order
-      // await loginPage.loginWaitForPath(config.caseworker.email, config.caseworker.password, config.manageCaseBaseURL, config.loginPaths.cases);
-      // await manageCaseDashboardPage.navigateToCase(caseId);
-      // await caseDetailsPage.selectNextStep(ContestedEvents.caseworkerSendOrder);
-      // await caseDetailsPage.confirmSendOrder();
-
-      // Accessibility audit and tab data check (add your own checks as needed)
-      // await axeUtils.audit({});
-      // await caseDetailsPage.assertTabData(judgeApprovedOrderTabData); // Uncomment and provide data if needed
+      // Assert tab data
+      await caseDetailsPage.assertTabData(judgeApprovedOrderTabData);
     }
   );
 });
