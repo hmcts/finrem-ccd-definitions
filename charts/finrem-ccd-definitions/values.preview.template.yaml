@@ -64,7 +64,7 @@ finrem-cos:
       FEATURE_RESPONDENT_JOURNEY: true
       FEATURE_ASSIGN_CASE_ACCESS: true
       FEATURE_SOLICITOR_NOC: true
-      SECURE_DOC_ENABLED: false
+      SECURE_DOC_ENABLED: true
       EXPRESS_PILOT_ENABLED: true
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
@@ -82,7 +82,7 @@ finrem-cos:
       PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
       SEND_LETTER_SERVICE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
       DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
-      CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
+      CASE_DOCUMENT_AM_URL: http://${SERVICE_NAME}-cdam
       CRON_CFV_CATEGORISATION_TASK_ENABLED: true
       MANAGE_CASE_UI_BASE_URL: https://xui-${SERVICE_FQDN}
     keyVaults:
