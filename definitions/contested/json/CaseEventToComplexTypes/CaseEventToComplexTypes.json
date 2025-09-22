@@ -6210,6 +6210,22 @@
     "DisplayContext": "MANDATORY"
   },
   {
+    "LiveFrom": "16/09/2025",
+    "ID": "FR_uploadApprovedOrderMhToUploadHearingOrder",
+    "CaseEventID": "FR_uploadApprovedOrderMh",
+    "CaseFieldID": "uploadHearingOrder",
+    "ListElementCode": "uploadDraftDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "16/09/2025",
+    "ID": "FR_uploadApprovedOrderMhToUploadHearingOrder",
+    "CaseEventID": "FR_uploadApprovedOrderMh",
+    "CaseFieldID": "uploadHearingOrder",
+    "ListElementCode": "additionalDocuments",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
     "LiveFrom": "25/06/2025",
     "ID": "FR_uploadApprovedOrderMhToWorkingHearing",
     "CaseEventID": "FR_uploadApprovedOrderMh",
@@ -6552,6 +6568,353 @@
     "LiveFrom": "25/06/2025",
     "ID": "FR_uploadApprovedOrderMhToWorkingHearing",
     "CaseEventID": "FR_uploadApprovedOrderMh",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "partiesOnCaseMultiSelectList",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingTypeDynamicList",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingTimeEstimate",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingDate",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingTime",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection",
+    "DisplayContext": "COMPLEX"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.localCourtLbl",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.region",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.midlandsList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"midlands\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.londonList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"london\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.northWestList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"northwest\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.northEastList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"northeast\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.southEastList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"southeast\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.southWestList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"southwest\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.walesList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"wales\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.hcCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"highcourt\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.nottinghamCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"midlands\" AND workingHearing.hearingCourtSelection.midlandsList=\"nottingham\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.cfcCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"london\" AND workingHearing.hearingCourtSelection.londonList=\"cfc\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.birminghamCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"midlands\" AND workingHearing.hearingCourtSelection.midlandsList=\"birmingham\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.liverpoolCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"northwest\" AND workingHearing.hearingCourtSelection.northWestList=\"liverpool\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.manchesterCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"northwest\" AND workingHearing.hearingCourtSelection.northWestList=\"manchester\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.lancashireCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"northwest\" AND workingHearing.hearingCourtSelection.northWestList=\"lancashire\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.cleavelandCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"northeast\" AND workingHearing.hearingCourtSelection.northEastList=\"cleaveland\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.nwyorkshireCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"northeast\" AND workingHearing.hearingCourtSelection.northEastList=\"nwyorkshire\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.humberCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"northeast\" AND workingHearing.hearingCourtSelection.northEastList=\"hsyorkshire\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.kentSurreyCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"southeast\" AND workingHearing.hearingCourtSelection.southEastList=\"kentfrc\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.bedfordshireCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"southeast\" AND workingHearing.hearingCourtSelection.southEastList=\"bedfordshire\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.thamesvalleyCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"southeast\" AND workingHearing.hearingCourtSelection.southEastList=\"thamesvalley\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.devonCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"southwest\" AND workingHearing.hearingCourtSelection.southWestList=\"devon\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.dorsetCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"southwest\" AND workingHearing.hearingCourtSelection.southWestList=\"dorset\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.bristolCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"southwest\" AND workingHearing.hearingCourtSelection.southWestList=\"bristol\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.newportCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"wales\" AND workingHearing.hearingCourtSelection.walesList=\"newport\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.swanseaCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"wales\" AND workingHearing.hearingCourtSelection.walesList=\"swansea\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.northWalesCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"wales\" AND workingHearing.hearingCourtSelection.walesList=\"northwales\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingCourtSelection.highCourtList",
+    "DisplayContext": "MANDATORY",
+    "FieldShowCondition": "workingHearing.hearingCourtSelection.region=\"highcourt\" AND workingHearing.hearingCourtSelection.hcCourtList=\"highcourt\""
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingMode",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "additionalHearingInformation",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "additionalHearingDocPrompt",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "additionalHearingDocs",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "hearingNoticePrompt",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "13/08/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
     "CaseFieldID": "workingHearing",
     "ListElementCode": "partiesOnCaseMultiSelectList",
     "DisplayContext": "MANDATORY"
