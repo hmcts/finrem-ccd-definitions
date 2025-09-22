@@ -10,7 +10,6 @@ test(
   async ({
     loginPage,
     manageCaseDashboardPage,
-    manageOrgDashboardPage,
     caseDetailsPage,
   }) => {
     // Create and process a form A case up to issue application

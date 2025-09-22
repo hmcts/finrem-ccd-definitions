@@ -1,4 +1,4 @@
-import { expect, test } from '../../../fixtures/fixtures';
+import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { expressCaseGateKeepingTabData, expressCaseGateKeepingNotEnrolledTabData } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
@@ -10,7 +10,6 @@ import { StartPage } from '../../../pages/events/create-case/StartPage';
 import { NatureOfApplicationPage } from '../../../pages/events/create-case/NatureOfApplicationPage';
 import { UploadOrderDocumentsPage } from '../../../pages/events/create-case/UploadOrderDocumentPage';
 import { CreateCaseCheckYourAnswersPage } from '../../../pages/events/create-case/CreateCaseCheckYourAnswersPage';
-import { TestInfo } from 'playwright/test';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { SigninPage } from '../../../pages/SigninPage';
 

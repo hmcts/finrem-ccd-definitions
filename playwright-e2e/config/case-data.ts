@@ -48,10 +48,6 @@ export const CommonEvents: Record<string, CaseEvent> = {
   createGeneralEmail: {
     listItem: "Create General Email",
     ccdCallback: "FR_generalEmail"
-  },
-  uploadApprovedOrder: {
-    listItem: "Upload Approved Order",
-    ccdCallback: "FR_uploadApprovedOrderMh"
   }
 };
 
@@ -77,6 +73,10 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Assign To Judge",
     ccdCallback: "FR_referToJudgeFromConsOrdMade"
   },
+  uploadApprovedOrder: {
+    listItem: "Upload Approved Order",
+    ccdCallback: "FR_uploadApprovedOrder"
+  },
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
@@ -99,10 +99,6 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   progressToListing: {
     listItem: "Progress to Listing",
     ccdCallback: "FR_progressToSchedulingAndListing"
-  },
-  listForHearing: {
-    listItem: "List for Hearing",
-    ccdCallback: "FR_addSchedulingListingInfo"
   },
   amendFormAApplicationDetails: {
     listItem: "Amend Application Details",
@@ -128,20 +124,12 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Allocate to Judge",
     ccdCallback: "FR_allocateToJudge"
   },
-  listForInterimHearing: {
-    listItem: "List for Interim Hearing",
-    ccdCallback: "FR_listForInterimHearing"
-  },
   uploadDraftOrders: {
       listItem: "Upload draft orders",
       ccdCallback: "FR_draftOrders"
   },
   generalApplicationDirections: {
     listItem: "General Application Directions",
-    ccdCallback: "FR_GeneralApplicationDirections"
-  },
-  generalAppDirectionsMH: {
-    listItem: "General App Directions (MH)",
     ccdCallback: "FR_GeneralApplicationDirectionsMH"
   },
   createGeneralApplication: {
@@ -162,10 +150,6 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   },
   processOrder: {
     listItem: "Process Order",
-    ccdCallback: "FR_directionOrder"
-  },
-  processOrderMH: {
-    listItem: "Process Order (MH)",
     ccdCallback: "FR_processOrder"
   },
   manageHearings: {
@@ -212,11 +196,6 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Consent Order",
     ccdCallback: "FR_consentOrder"
   },
-  // (non-prod) Migration events
-  manageHearingsMigration: {
-    listItem: "(Migration) Manage Hearings",
-    ccdCallback: "FR_manageHearingsMigration"
-  },
   createGeneralOrderConsent: {
     listItem: "Create General Order (consent)",
     ccdCallback: "FR_generalOrderConsent"
@@ -241,7 +220,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Send Order (consent)",
     ccdCallback: "FR_consentSendOrder"
   },
-
+  uploadApprovedOrder: {
+    listItem: "Upload Approved Order",
+    ccdCallback: "FR_uploadApprovedOrderMh"
+  },
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
@@ -280,7 +262,6 @@ export const PayloadPath = {
     referToJudgeEmailIsNull: "./playwright-e2e/resources/payload/contested/caseworker/refer-to-judge/judge-email-is-null.json",
     generalApplicationOutcomeOther: "./playwright-e2e/resources/payload/contested/caseworker/general-application-outcome/outcome-is-other.json",
     generalApplicationOldHearingRequiredYes: "./playwright-e2e/resources/payload/contested/caseworker/general-application-directions/old-style-hearing-required-yes.json",
-    listForHearingFdaEgOne: "./playwright-e2e/resources/payload/contested/caseworker/list-for-hearing/fda-example-one.json",
     judiciaryBasicApproveOrders: "./playwright-e2e/resources/payload/contested/judiciary/most-basic-approve-orders.json",
     processOrderBasicTwoHearing: "./playwright-e2e/resources/payload/contested/caseworker/process-order/basic-two-hearing.json",
     createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json",

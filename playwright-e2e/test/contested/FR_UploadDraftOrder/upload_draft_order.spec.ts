@@ -28,9 +28,9 @@ test.describe('Contested - Upload Draft Order', () => {
         checkYourAnswersPage,
         approvedOrderPage,
         axeUtils,
-      }, testInfo
+      }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       let expectedUrl = ContestedEvents.uploadDraftOrders.ccdCallback;
       await manageCaseDashboardPage.visit();
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);

@@ -97,20 +97,20 @@ export class ManageHearingPage extends BaseJourneyPage {
         await courtListDropDown.selectOption(localCourt);
     }
 
-    async selectHearingAttendees(attendance: string) {
+    async selectHearingAttendance(attendance: string) {
         const hearingAttendance = this.page.locator(`#workingHearing_hearingMode`);
         await expect(hearingAttendance).toBeVisible();
         await hearingAttendance.selectOption(attendance);
     }
 
-    async enterAdditionalInformationAboutHearing(information: string) {
+    async enterAdditionalInformationAboutHearing(information: string = "Whatever information is required for the hearing") {
         const additionalInformation = this.page
             .locator(`#workingHearing_additionalHearingInformation`);
         await expect(additionalInformation).toBeVisible();
         await additionalInformation.fill(information);
     }
 
-    async whetherToUploadOtherDocuments(yesOrNo: YesNoRadioEnum) {
+    async selectAdditionalHearingDocument(yesOrNo: YesNoRadioEnum) {
         const uploadOtherDocumentsQuestion = this.page
             .locator(`#workingHearing_additionalHearingDocPrompt`);
         await expect(uploadOtherDocumentsQuestion).toBeVisible();
@@ -173,7 +173,7 @@ export class ManageHearingPage extends BaseJourneyPage {
 
         await this.assertErrorMessage(errorMessages);
 
-        await this.whetherToUploadOtherDocuments(YesNoRadioEnum.YES)
+        await this.selectAdditionalHearingDocument(YesNoRadioEnum.YES)
 
         await this.assertErrorMessage(
             ["Please upload any additional documents related to your application. is required"]
@@ -204,16 +204,16 @@ export class ManageHearingPage extends BaseJourneyPage {
         }
         await this.enterHearingTime(param.time);
         await this.selectCourtForHearing(param.court.zone, param.court.frc, param.court.courtName);
-        await this.selectHearingAttendees(param.attendance);
+        await this.selectHearingAttendance(param.attendance);
         await this.enterAdditionalInformationAboutHearing(param.additionalInformation);
 
         if (param.uploadAnySupportingDocuments) {
-            await this.whetherToUploadOtherDocuments(YesNoRadioEnum.YES);
+            await this.selectAdditionalHearingDocument(YesNoRadioEnum.YES);
             for (let i=0; i< param.uploadFiles.length;i++) {
                 await this.uploadOtherDocuments(param.uploadFiles[i], i);
             }
         } else {
-            await this.whetherToUploadOtherDocuments(YesNoRadioEnum.NO);
+            await this.selectAdditionalHearingDocument(YesNoRadioEnum.NO);
         }
         if (param.sendANoticeOfHearing) {
             await this.selectSendNoticeOfHearing(YesNoRadioEnum.YES);

@@ -1,10 +1,9 @@
 import { type Page, expect, Locator } from '@playwright/test';
-import { GeneralApplicationDirectionsPage } from '../general-application-directions/GeneralApplicationDirectionsPage';
 import { YesNoRadioEnum } from "../../helpers/enums/RadioEnums";
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
-import { GeneralApplicationDirectionsMHPage } from '../general-application-directions/GeneralApplicationDirectionsMHPage';
+import {ManageHearingPage} from "../manage-hearings/ManageHearing.ts";
 
-export class UploadApprovedOrderMHPage extends GeneralApplicationDirectionsMHPage {
+export class UploadApprovedOrderMHPage extends ManageHearingPage {
 
     private readonly IsThisFinalOrderQuestion: Locator;
     private readonly DoYouWantToAddHearingQuestion: Locator;
@@ -15,7 +14,6 @@ export class UploadApprovedOrderMHPage extends GeneralApplicationDirectionsMHPag
     private readonly nameOfJudgeField: Locator;
     private readonly uploadApprovedOrderGroup: Locator;
     private readonly firstUploadApprovedOrderField: Locator;
-
 
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page, commonActionsHelper);
@@ -52,9 +50,7 @@ export class UploadApprovedOrderMHPage extends GeneralApplicationDirectionsMHPag
         await this.courtDayDetails.fill(day);
         await this.courtMonthDetails.fill(month);
         await this.courtYearDetails.fill(year);
-        //await this.blurCourtOrderDateInput();
     }
-
 
     async selectIsThisFinalOrder(answer: YesNoRadioEnum): Promise<void> {
         expect(this.IsThisFinalOrderQuestion).toBeVisible();

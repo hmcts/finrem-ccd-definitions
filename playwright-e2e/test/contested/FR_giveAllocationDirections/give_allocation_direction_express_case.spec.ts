@@ -98,7 +98,7 @@ test.describe('Contested - Give Allocation Directions - Static warning on expres
         caseDetailsPage,
         allocationDirectionsCourtSelectionPage,
         axeUtils
-      },testInfo
+      }
     ) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToAllocateJudge(false); // Pass false or leave blank for non-express pilot case
       await manageCaseDashboardPage.visit();

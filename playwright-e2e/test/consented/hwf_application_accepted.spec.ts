@@ -3,7 +3,6 @@ import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
 
-
 test(
   'Consented - HWF Application Accepted',
   { tag: [] },

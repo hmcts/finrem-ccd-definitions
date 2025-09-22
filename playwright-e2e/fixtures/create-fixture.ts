@@ -34,11 +34,9 @@ import {SolicitorAuthPage} from '../pages/events/application-payment-submission/
 import {HelpWithFeesPage} from '../pages/events/application-payment-submission/HelpWithFeesPage';
 import {PaymentPage} from '../pages/events/application-payment-submission/PaymentPage';
 import {OrderSummaryPage} from '../pages/events/application-payment-submission/OrderSummaryPage';
-import {ManageOrgDashboardPage} from '../pages/ManageOrgDashboardPage';
 import {ExpressCaseEnrolledPage} from '../pages/events/create-case/ExpressCaseEnrolledPage';
 import {UpdateContactDetailsPage} from '../pages/events/update-contact-details/UpdateContactDetailsPage';
 import {CreateCaseSavingYourAnswersPage} from '../pages/events/create-case/CreateCaseSavingYourAnswersPage';
-import {ListForHearingPage} from '../pages/events/list-for-hearing/ListForHearingPage';
 import {
   AmendFormAApplicationDetailsPage
 } from '../pages/events/amend-application-details/AmendFormAApplicationDetailsPage';
@@ -54,7 +52,6 @@ import {
 import {CreateFlagPage} from '../pages/events/create-flag/CreateFlagPage';
 import {ChildrensDetailsPage} from '../pages/events/create-case/ChildrensDetailsPage';
 import {CreateGeneralApplicationPage} from '../pages/events/create-general-application/CreateGeneralApplicationPage';
-import {ListForInterimHearingPage} from '../pages/events/list-for-interim-hearing/ListForInterimHearingPage';
 import {ManageFlagPage} from '../pages/events/manage-flag/ManageFlagPage';
 import {
   GeneralApplicationDirectionsPage
@@ -78,16 +75,12 @@ import {
   GeneralApplicationOutcomePage
 } from '../pages/events/general-application-outcome/GeneralApplicationOutcomePage.ts';
 import {ApproveOrderPage} from '../pages/events/approve-order/ApproveOrderPage.ts';
-import {ProcessOrderPage} from '../pages/events/process-order/ProcessOrderPage.ts';
 import {CreateGeneralEmailPage} from '../pages/events/create-general-email/CreateGeneralEmailPage.ts';
 import {SubmitUploadedCaseFilesPage} from '../pages/events/submit-uploaded-case-files/SubmitUploadedCaseFilesPage.ts';
 import {UnprocessedApprovedOrdersPage} from '../pages/events/process-order/UnprocessedApprovedOrdersPage.ts';
 import {ProcessOrderHearingDetailsPage} from '../pages/events/process-order/ProcessOrderHearingDetailsPage.ts';
 import {ConsentApplicationApprovedPage} from '../pages/events/consent-application/ConsentApplicationApprovedPage.ts';
 import {ConsentOrderNotApprovedPage} from '../pages/events/consent-application/ConsentOrderNotApprovedPage.ts';
-import {
-  GeneralApplicationDirectionsMHPage
-} from '../pages/events/general-application-directions/GeneralApplicationDirectionsMHPage.ts';
 import {UploadApprovedOrderMHPage} from '../pages/events/upload-approved-order/UploadApprovedOrderMHPage.ts';
 import {NoticeOfChangePage} from '../pages/NoticeOfChangePage.ts';
 
@@ -119,7 +112,6 @@ type CreateFixtures = {
   caseDetailsPage: CaseDetailsPage;
   createCaseCheckYourAnswersPage: CreateCaseCheckYourAnswersPage;
   manageCaseDashboardPage: ManageCaseDashboardPage;
-  manageOrgDashboardPage: ManageOrgDashboardPage;
   solicitorAuthPage: SolicitorAuthPage;
   helpWithFeesPage: HelpWithFeesPage;
   paymentPage: PaymentPage;
@@ -132,7 +124,6 @@ type CreateFixtures = {
   expressCaseEnrolledPage: ExpressCaseEnrolledPage;
   updateContactDetailsPage: UpdateContactDetailsPage;
   createCaseSavingYourAnswersPage: CreateCaseSavingYourAnswersPage;
-  listForHearingPage: ListForHearingPage;
   amendFormAApplicationDetailsPage: AmendFormAApplicationDetailsPage;
   expressCasePage: ExpressCasePage;
   manageExpressCasePage: ManageExpressCasePage;
@@ -140,7 +131,6 @@ type CreateFixtures = {
   giveAllocationDirectionsPage: GiveAllocationDirectionsPage;
   amendPaperApplicationDetailsPage: AmendPaperApplicationDetailsPage;
   createFlagPage: CreateFlagPage;
-  listForInterimHearingPage: ListForInterimHearingPage;
   createGeneralApplicationPage: CreateGeneralApplicationPage;
   manageFlagPage: ManageFlagPage;
   generalApplicationDirectionsPage: GeneralApplicationDirectionsPage;
@@ -163,12 +153,10 @@ type CreateFixtures = {
   referToJudgeApplicationPage: ReferToJudgeApplicationPage;
   generalApplicationOutcomePage: GeneralApplicationOutcomePage;
   approvedOrderPage: ApproveOrderPage;
-  processOrderPage: ProcessOrderPage;
   createGeneralEmailPage: CreateGeneralEmailPage;
   submitUploadedCaseFilesPage : SubmitUploadedCaseFilesPage;
   consentApplicationApprovePage: ConsentApplicationApprovedPage;
   consentOrderNotApprovedPage: ConsentOrderNotApprovedPage;
-  generalApplicationDirectionsMHPage: GeneralApplicationDirectionsMHPage;
   uploadApprovedOrderMHPage: UploadApprovedOrderMHPage;
   noticeOfChangePage: NoticeOfChangePage;
 };
@@ -246,9 +234,6 @@ export const test = base.extend<CreateFixtures>({
   manageCaseDashboardPage: async ({ page }, use) => {
     await use(new ManageCaseDashboardPage(page));
   },
-  manageOrgDashboardPage: async ({ page }, use) => {
-    await use(new ManageOrgDashboardPage(page));
-  },
   solicitorAuthPage: async ({ page }, use) => {
     await use(new SolicitorAuthPage(page));
   },
@@ -285,9 +270,6 @@ export const test = base.extend<CreateFixtures>({
   createCaseSavingYourAnswersPage: async ({ page }, use) => {
     await use(new CreateCaseSavingYourAnswersPage(page));
   },
-  listForHearingPage: async ({ page }, use) => {
-    await use(new ListForHearingPage(page, commonActionsHelper));
-  },
   amendFormAApplicationDetailsPage: async ({ page }, use) => {
     await use(new AmendFormAApplicationDetailsPage(page));
   },
@@ -312,14 +294,11 @@ export const test = base.extend<CreateFixtures>({
   createGeneralApplicationPage: async ({ page }, use) => {
     await use(new CreateGeneralApplicationPage(page, commonActionsHelper));
   },
-  listForInterimHearingPage: async ({ page }, use) => {
-    await use(new ListForInterimHearingPage(page, commonActionsHelper));
-  },
   manageFlagPage: async ({ page }, use) => {
     await use(new ManageFlagPage(page));
   },
   generalApplicationDirectionsPage: async ({ page }, use) => {
-    await use(new GeneralApplicationDirectionsPage(page));
+    await use(new GeneralApplicationDirectionsPage(page, commonActionsHelper));
   },
   uploadDraftOrdersPage: async ({ page }, use) => {
     await use(new UploadDraftOrdersPage(page, commonActionsHelper));
@@ -328,7 +307,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new UnprocessedApprovedOrdersPage(page));
   },
   processOrderHearingDetailsPage: async ({ page }, use) => {
-    await use(new ProcessOrderHearingDetailsPage(page));
+    await use(new ProcessOrderHearingDetailsPage(page, commonActionsHelper));
   },
   manageCaseDocumentsPage: async ({ page }, use) => {
     await use(new ManageCaseDocumentsPage(page, commonActionsHelper));
@@ -378,9 +357,6 @@ export const test = base.extend<CreateFixtures>({
   approvedOrderPage: async ({ page }, use) => {
     await use(new ApproveOrderPage(page));
   },
-  processOrderPage: async ({ page }, use) => {
-    await use(new ProcessOrderPage(page, commonActionsHelper));
-  },
   createGeneralEmailPage: async ({ page }, use) => {
     await use(new CreateGeneralEmailPage(page, commonActionsHelper));
   },
@@ -392,9 +368,6 @@ export const test = base.extend<CreateFixtures>({
   },
   consentOrderNotApprovedPage: async ({ page }, use) => {
     await use(new ConsentOrderNotApprovedPage(page));
-  },
-  generalApplicationDirectionsMHPage: async ({ page }, use) => {
-    await use(new GeneralApplicationDirectionsMHPage(page, commonActionsHelper));
   },
   uploadApprovedOrderMHPage: async ({ page }, use) => {
     await use(new UploadApprovedOrderMHPage(page, commonActionsHelper));
