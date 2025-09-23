@@ -583,6 +583,17 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_courtList",
+    "ListElementCode": "clevelandCourtList",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_cleveland_hc_list",
+    "ElementLabel": "Please give the name of the Court which is closest to the Applicants home postcode. If you are unsure, please check on http://courttribunalfinder.service.gov.uk",
+    "FieldShowCondition": "region=\"northeast\" AND northEastList=\"cleaveland\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_courtList",
     "ListElementCode": "nwyorkshireCourtList",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_nw_yorkshire_hc_list",
@@ -1316,7 +1327,7 @@
     "ID": "FR_uploadCaseDocument",
     "ListElementCode": "caseDocuments",
     "FieldType": "Document",
-    "ElementLabel": "Please upload any case documents ",
+    "ElementLabel": "Please upload any case documents",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
