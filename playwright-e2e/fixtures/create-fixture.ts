@@ -399,5 +399,5 @@ export const test = base.extend<CreateFixtures>({
 });
 
 test.afterEach(async ({}, testInfo) => {
-  await saveApiCountsToCsv(testInfo.title + 'retry ' + testInfo.retry);
+  await saveApiCountsToCsv(testInfo.title + ' retry ' + testInfo.retry);
 });

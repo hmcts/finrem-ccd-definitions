@@ -57,6 +57,7 @@ export function saveApiCountsToCsv(testName: string) {
   console.log("Saving API counts to CSV for test: " + testName);
   //ApiCounter.saveResult();
 const filePath = path.resolve(__dirname, "../../api-call-counts.csv");
+  ApiCounter.totalApiCalls = ApiCounter.idamApiCall + ApiCounter.idamCodeApiCall + ApiCounter.serviceTokenCall + ApiCounter.userIdCall + ApiCounter.ccdApiCall;
   const line = `${testName},${ApiCounter.idamApiCall},${ApiCounter.idamCodeApiCall},${ApiCounter.serviceTokenCall},${ApiCounter.userIdCall},${ApiCounter.ccdApiCall},${ApiCounter.totalApiCalls}\n`;
   if (!fs.existsSync(filePath)) {
     fs.writeFileSync(filePath, "Test Name,IDAM API Calls,IDAM Code API Calls,Service Token Calls,User ID Calls,CCD API calls,Total API Calls\n");
