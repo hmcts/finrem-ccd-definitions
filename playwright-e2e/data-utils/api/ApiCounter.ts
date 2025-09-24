@@ -55,8 +55,9 @@ export class ApiCounter {
 
 export function saveApiCountsToCsv(testName: string) {
   console.log("Saving API counts to CSV for test: " + testName);
-  //ApiCounter.saveResult();
-const filePath = path.resolve(__dirname, "../../api-call-counts.csv");
+  const workerId = process.env.TEST_WORKER_INDEX ?? "unknown";
+  const filename = `api-call-counts-worker-${workerId}.csv`;
+  const filePath = path.resolve(__dirname, "../../" + filename);
   ApiCounter.totalApiCalls = ApiCounter.idamApiCall + ApiCounter.idamCodeApiCall + ApiCounter.serviceTokenCall + ApiCounter.userIdCall + ApiCounter.ccdApiCall;
   const line = `${testName},${ApiCounter.idamApiCall},${ApiCounter.idamCodeApiCall},${ApiCounter.serviceTokenCall},${ApiCounter.userIdCall},${ApiCounter.ccdApiCall},${ApiCounter.totalApiCalls}\n`;
   if (!fs.existsSync(filePath)) {
