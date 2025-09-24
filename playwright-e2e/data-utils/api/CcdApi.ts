@@ -7,6 +7,7 @@ import {getServiceToken, getUserId, getUserToken} from "./TokenHelperApi.ts";
 import {AxiosResponse} from "axios";
 import {updateJsonFileWithEnvValues} from "../test_data/JsonEnvValReplacer.ts";
 import config from "../../config/config.ts";
+import {ApiCounter} from "./ApiCounter.ts";
 
 const ccdApiUrl = config.ccdDataStoreApi;
 
@@ -18,6 +19,7 @@ export class CcdApi {
       authToken: string,
       serviceToken: string
   ): Promise<string> {
+    ApiCounter.incrementCcdApiCall();
     const startCaseResponse = await axiosRequest({
       method: "get",
       url: ccdApiUrl + ccdStartCasePath,
@@ -37,7 +39,7 @@ export class CcdApi {
       serviceToken: string,
       payload: any
   ): Promise<AxiosResponse> {
-
+    ApiCounter.incrementCcdApiCall();
     return await axiosRequest({
       url: ccdApiUrl + ccdSaveCasePath,
       method: "post",

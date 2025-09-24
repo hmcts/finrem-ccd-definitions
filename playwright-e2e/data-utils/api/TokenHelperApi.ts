@@ -1,5 +1,6 @@
 import {authenticator} from "otplib";
 import {axiosRequest} from "./ApiHelper.ts";
+import {ApiCounter} from "./ApiCounter.ts";
 
 const env = process.env.RUNNING_ENV && process.env.RUNNING_ENV.startsWith("pr-") ? "aat" : (process.env.RUNNING_ENV || "aat");
 const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
@@ -8,7 +9,7 @@ export async function getUserToken(username: string, password: string): Promise<
     const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
     const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
     const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
-
+    await ApiCounter.incrementIdamCodeApiCall();
     const idamCodeResponse = await axiosRequest({
         method: "post",
         url: idamBaseUrl + idamCodePath,
@@ -20,6 +21,7 @@ export async function getUserToken(username: string, password: string): Promise<
 
     const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse.data.code}`;
 
+    await ApiCounter.incrementIdamApiCall();
     const authTokenResponse = await axiosRequest({
         method: "post",
         url: idamBaseUrl + idamAuthPath,
@@ -39,7 +41,7 @@ export async function getUserId(authToken: string): Promise<string> {
         url: idamBaseUrl + idamDetailsPath,
         headers: { Authorization: `Bearer ${authToken}` },
     });
-
+    await ApiCounter.incrementUserIdCall();
     return userDetailsResponse.data.id;
 }
 
@@ -61,6 +63,6 @@ export async function getServiceToken(): Promise<string> {
             "Content-Type": "application/json",
         },
     });
-
+    await ApiCounter.incrementServiceTokenCall();
     return serviceTokenResponse.data;
 }

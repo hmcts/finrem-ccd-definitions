@@ -133,6 +133,7 @@ withNightlyPipeline(type, product, component) {
                             reportName: "${TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
                     ])
                     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'playwright-e2e/api-call-counts.csv'
                 }
             }
         } else {
