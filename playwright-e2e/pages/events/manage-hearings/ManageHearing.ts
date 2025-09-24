@@ -150,6 +150,12 @@ export class ManageHearingPage extends BaseJourneyPage {
         }
     }
 
+    async unSelectWhoShouldSeeThisOrder(partyType: string, partyName: string) {
+        const checkbox = this.page.getByRole('checkbox', { name: `${partyType} - ${partyName}` });
+        await expect(checkbox).toBeVisible();
+        await checkbox.uncheck();
+    }
+
     async assertErrorMessagesForAllMandatoryFields() {
         const errorMessages = [
             "Type of Hearing is required",
@@ -157,7 +163,7 @@ export class ManageHearingPage extends BaseJourneyPage {
             "Hearing Date is required",
             "Hearing Time is required",
             "Please state in which Financial Remedies Court Zone the applicant resides is required",
-            "Hearing attendance is required",
+            "Hearing Attendance is required",
             "Additional information about the hearing is required",
             "Do you want to upload any other documents? is required",
             "Do you want to send a notice of hearing? is required"

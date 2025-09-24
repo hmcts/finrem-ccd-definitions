@@ -109,6 +109,7 @@ test.describe('Contested - Upload Approved Order (caseworker)', () => {
       await caseDetailsPage.assertTabData(migratedUploadApprovedOrderTabDataOnHearing1);
     }
   );
+  
   test('New Upload Approved Order (MH) event with hearing', { tag: [] }, async ({
     loginPage,
     manageCaseDashboardPage,
@@ -118,11 +119,11 @@ test.describe('Contested - Upload Approved Order (caseworker)', () => {
     axeUtils,
   },
   testInfo
-) => {
-  const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-  await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
-  await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-  await performUploadApprovedOrderFlowMH(caseDetailsPage, uploadApprovedOrderPage, uploadApprovedOrderMHPage, testInfo, axeUtils);
-  await caseDetailsPage.assertTabData(newUploadApprovedOrderMHTabDataOnHearing1);
-});
+  ) => {
+    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+    await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+    await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+    await performUploadApprovedOrderFlowMH(caseDetailsPage, uploadApprovedOrderPage, uploadApprovedOrderMHPage, testInfo, axeUtils);
+    await caseDetailsPage.assertTabData(newUploadApprovedOrderMHTabDataOnHearing1);
+  });
 });

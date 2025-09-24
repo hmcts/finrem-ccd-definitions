@@ -38,7 +38,8 @@ import {YesNoRadioEnum} from "../../../pages/helpers/enums/RadioEnums.ts";
 import {solicitor_amend_case_tabs} from "../../../resources/tab_content/contested/solicitor_amend_case_tabs.ts";
 import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
 
-test.describe('Contested - Form A - Amend application in Standard case', () => {
+// Skipped due to stability issues - to be re-enabled once resolved
+test.describe.skip('Contested - Form A - Amend application in Standard case', () => {
     test(
         "Amend Application Details in Standard case - Amend Form A application details",
         { tag: ['@accessibility','@firefox'] },

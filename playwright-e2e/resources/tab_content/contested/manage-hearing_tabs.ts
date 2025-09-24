@@ -18,12 +18,12 @@ export function getManageHearingTabData(params?: {
             "Hearing 1",
             {tabItem: "Type of Hearing", value: params?.typeOfHearing ?? "Financial Dispute Resolution (FDR)"},
             {tabItem: "Court", value: params?.court ?? "Central Family Court"},
-            {tabItem: "Hearing attendance", value: params?.attendance ?? "In Person"},
-            {tabItem: "Hearing date", value: (params?.hearingDate ?? DateHelper.getUnFormattedDateTwelveWeeksLater()) + " " + (params?.hearingTime ?? "10:00 AM")},
-            {tabItem: "Hearing time estimate", value: params?.duration ?? "2 hours"},
+            {tabItem: "Hearing Attendance", value: params?.attendance ?? "In Person"},
+            {tabItem: "Hearing Date", value: (params?.hearingDate ?? DateHelper.getUnFormattedDateTwelveWeeksLater()) + " " + (params?.hearingTime ?? "10:00 AM")},
+            {tabItem: "Hearing Time Estimate", value: params?.duration ?? "2 hours"},
             {tabItem: "Who has received this notice", value: params?.whoShouldSeeOrder ?? "Applicant - Frodo Baggins, Respondent - Smeagol Gollum, Intervener1 - intApp1, Intervener2 - intResp1"},
             {tabItem: "Additional information about the hearing", value: params?.additionalInformation ?? "Hearing details here"},
-            {tabItem: "Hearing documents", value: (params?.uploadFiles ?? ["HearingNotice.pdf","final_hearing_file1.pdf", "final_hearing_file2.pdf"]).join(' ')},
+            {tabItem: "Hearing Documents", value: (params?.uploadFiles ?? ["HearingNotice.pdf","final_hearing_file1.pdf", "final_hearing_file2.pdf"]).join(' ')},
         ]
     };
 }

@@ -3,13 +3,13 @@ import { ccdApi } from "../../../fixtures/fixtures";
 import config from "../../../config/config";
 import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
 import { ReplacementAction } from "../../../types/replacement-action";
-import { APPROVE_ORDERS_DATA, ISSUE_APPLICATION, PROCESS_ORDER_DATA } from "../../PayloadMutator";
+import { ADD_A_HEARING, APPROVE_ORDERS_DATA, ISSUE_APPLICATION, PROCESS_ORDER_DATA } from "../../PayloadMutator";
 import { DateHelper } from "../../DateHelper";
 
 export class ContestedEventApi {
   private static async updateCaseWorkerSteps(
     caseId: string,
-    steps: { event: string; payload?: string }[]
+    steps: { event: string; payload?: string; replacements?: ReplacementAction[] }[]
   ): Promise<any> {
     let response;
     for (const step of steps) {
@@ -19,7 +19,8 @@ export class ContestedEventApi {
         caseId,
         CaseType.Contested,
         step.event,
-        step.payload || ""
+        step.payload || "",
+        step.replacements || []
       );
     }
     return response;
@@ -410,11 +411,21 @@ export class ContestedEventApi {
     return caseId;
   }
 
-  static async caseWorkerPerformsAddAHearing(caseId: string) {
+  static async caseWorkerPerformsAddAHearing(caseId: string, date?: string, extraReplacements: any[] = []) {
+    const hearingDate = date ? date : await DateHelper.getHearingDateUsingCurrentDate();
     await this.updateCaseWorkerSteps(caseId, [
       {
         event: ContestedEvents.manageHearings.ccdCallback,
         payload: PayloadPath.Contested.manageHearingAddHearing,
+        replacements: ADD_A_HEARING(hearingDate, extraReplacements)
+      },
+    ]);
+  }
+
+  static async manageHearingsMigration(caseId: string) {
+    await this.updateCaseWorkerSteps(caseId, [
+      {
+        event: ContestedEvents.manageHearingsMigration.ccdCallback,
       },
     ]);
   }

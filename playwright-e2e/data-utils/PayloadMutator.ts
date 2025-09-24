@@ -74,3 +74,12 @@ export const ESTIMATED_ASSETS_UNDER_1M = [
           { action: 'delete', key: 'divorcePetitionIssuedDate' },
           { action: 'insert', key: 'divorcePetitionIssuedDate', value: date },
   ];
+  
+  export const ADD_A_HEARING = (
+    date: string,
+    extraReplacements: any[] = []
+  ) => [
+    { action: 'delete', key: 'workingHearing.hearingDate' },
+    { action: 'insert', key: 'workingHearing.hearingDate', value: date },
+    ...extraReplacements
+  ];

@@ -5,5 +5,26 @@
   "CaseEventID": "FR_processOrder",
   "UserRole": "caseworker-divorce-financialremedy-courtadmin",
   "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "24/07/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_processOrder",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "24/07/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_processOrder",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "24/07/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_processOrder",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "R"
   }
 ]

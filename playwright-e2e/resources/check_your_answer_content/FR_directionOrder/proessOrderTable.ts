@@ -40,9 +40,16 @@ export const unprocessedApprovedOrdersWithNewHearingTable: Table = {
     { cellItem: "Hearing Date", value: DateHelper.formatToDayMonthYearShort("2024-01-01") },
     { cellItem: "Hearing Time", value: "10:00" },
     { cellItem: "Please state in which Financial Remedies Court Zone the applicant resides", value: "Midlands" },
-    { cellItem: "Hearing attendance", value: "In person" },
+    { cellItem: "Hearing Attendance", value: "In person" },
     { cellItem: "Additional information about the hearing", value: "This is a test hearing" },
     { cellItem: "Do you want to upload any other documents?", value: "No" },
     { cellItem: "Do you want to send a notice of hearing?", value: "Yes" }
+  ]
+};
+
+export const unprocessedApprovedOrdersNoHearingTable: Table = {
+  tableName: "Check Your Answers",
+  rows: [
+    ...unprocessedApprovedOrders
   ]
 };

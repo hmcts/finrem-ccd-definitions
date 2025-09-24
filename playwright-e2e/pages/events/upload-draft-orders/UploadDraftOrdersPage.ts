@@ -130,4 +130,10 @@ export class UploadDraftOrdersPage extends BaseJourneyPage {
         await closeButton.click();
         await this.page.waitForURL(/case-details/);
     }
+
+    async assertHearingDropdownIsEmpty() {
+        await expect(this.hearingListDropdown).toBeVisible();
+        const options = await this.hearingListDropdown.locator('option').all();
+        expect(options.length).toBeLessThanOrEqual(1);
+    }
 }
