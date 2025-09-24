@@ -79,7 +79,7 @@ import { GeneralApplicationDirectionsMHPage } from '../pages/events/general-appl
 import { UploadApprovedOrderPage } from '../pages/events/upload-approved-order/UploadApprovedOrderPage';
 import { UploadApprovedOrderMHPage } from '../pages/events/upload-approved-order/UploadApprovedOrderMHPage.ts';
 import {NoticeOfChangePage} from '../pages/NoticeOfChangePage.ts';
-import {saveApiCountsToCsv} from "../data-utils/api/ApiCounter.ts";
+import {saveApiCountsToCsv} from '../data-utils/api/ApiCounter.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -399,6 +399,5 @@ export const test = base.extend<CreateFixtures>({
 });
 
 test.afterEach(async ({}, testInfo) => {
-  console.log("In after EACH hook");
   await saveApiCountsToCsv(testInfo.title + 'retry ' + testInfo.retry);
 });
