@@ -5,7 +5,7 @@ import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 import { generateHearingsTabData, processOrderHearingTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
-import { unprocessedApprovedOrdersWithNewHearingTable, unprocessedApprovedOrdersWithOldHearingTable } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable.ts';
+import { unprocessedApprovedOrdersNoHearingTable, unprocessedApprovedOrdersWithNewHearingTable, unprocessedApprovedOrdersWithOldHearingTable } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable.ts';
 import { processOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs.ts';
 import { createDraftOrdersApprovedWithHearingTabData } from '../../../resources/tab_content/contested/draft_orders_tabs.ts';
 import { DateHelper } from '../../../data-utils/DateHelper.ts';
@@ -473,7 +473,6 @@ test.describe('Contested - Process Order (Old Style)', () => {
   )
 });
 
-
 // New Style Process Order hearings
 test.describe('Contested - Process Order (Manage Hearings)', () => {
   test(
@@ -583,6 +582,44 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
       await caseDetailsPage.assertTabData(processOrderHearingTabData);
       await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
       await caseDetailsPage.assertTabData(createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate));
+    }
+  );
+
+  test(
+    'Form A case Process Order (MH) with no hearing added',
+    { tag: [] },
+    async (
+      {
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        uploadDraftOrdersPage, 
+        unprocessedApprovedOrdersPage, 
+        processOrderHearingDetailsPage,
+        checkYourAnswersPage,
+      },
+    ) => {
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: true });
+      await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
+
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectNextStep(ContestedEvents.processOrderMH);
+
+      // Check unapproved draft order tab
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
+      await unprocessedApprovedOrdersPage.navigateContinue();
+
+      // Do NOT add a hearing, just continue
+      await processOrderHearingDetailsPage.selectIsAnotherHearingToBeListed(false);
+      await processOrderHearingDetailsPage.navigateContinue();
+
+      // Check your answers
+      await checkYourAnswersPage.assertCheckYourAnswersPage(unprocessedApprovedOrdersNoHearingTable);
+      await processOrderHearingDetailsPage.navigateSubmit();
+
+      // Assert case details content
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrderMH.listItem);
+      await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
     }
   );
 });
