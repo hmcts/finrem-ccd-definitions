@@ -17,7 +17,7 @@ test(
     giveAllocationDirectionsPage,
     allocateToJudgePage,
     axeUtils
-  }, testInfo
+  }
   ) => {
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 

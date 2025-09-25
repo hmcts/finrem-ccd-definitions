@@ -4,7 +4,6 @@ import { ContestedEventApi } from "../../api/contested/ContestedEventApi";
 import {
   EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
   ESTIMATED_ASSETS_UNDER_1M,
-  LIST_FOR_HEARING,
   REFER_LIST_DATA,
   OUTCOME_LIST_DATA,
   DIRECTIONS_LIST_DATA,
@@ -217,25 +216,6 @@ export class ContestedCaseFactory {
     return caseId;
   }
 
-  static async progressToUploadDraftOrderWithMigratedHearing({
-    isFormA,
-  }: {
-    isFormA: boolean;
-  }): Promise<string> {
-    const caseId = isFormA
-      ? await this.createBaseContestedFormA()
-      : await this.createBaseContestedPaperCase();
-
-    if (isFormA) {
-      await ContestedEventApi.solicitorSubmitFormACase(caseId);
-    }
-
-    await this.caseworkerListForHearing12To16WeeksFromNow(caseId, isFormA);
-    await ContestedEventApi.manageHearingsMigration(caseId);
-
-    return caseId;
-  }
-
   // Process order
   static async createAndProcessFormACaseUpToProcessOrderLegacy(
     isFormA = true,
@@ -243,7 +223,7 @@ export class ContestedCaseFactory {
   ): Promise<string> {
       const caseId = await this.progressToUploadDraftOrder({ isFormA: isFormA });
       await ContestedEventApi.agreedDraftOrderApplicant(caseId);
-      const hearingDate = DateHelper.getIsoDateTwelveWeeksLater();
+      const hearingDate = await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
       const documentDetailsForFutureTestSteps = {
       hearingDate,
       courtOrderDate: hearingDate,
@@ -260,8 +240,6 @@ export class ContestedCaseFactory {
     });
     return caseId;
   }
-
-  
 
   // General Application Directions
   private static async caseworkerProgressToGeneralApplicationReferToJudge(
@@ -291,9 +269,6 @@ export class ContestedCaseFactory {
         currentDate
       );
     }
-
-    const listForHearingDataModifications = LIST_FOR_HEARING(hearingDate);
-
-    await ContestedEventApi.listCaseForHearing(caseId, listForHearingDataModifications);
+    await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId);
   }
 }

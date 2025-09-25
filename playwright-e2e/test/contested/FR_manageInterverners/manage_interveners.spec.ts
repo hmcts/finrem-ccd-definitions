@@ -33,7 +33,7 @@ test.describe('Contested - Manage Interveners', () => {
     test(
     'Contested - Add & Remove Interveners, login as Intervener and verify.', {
         tag: []},
-        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageIntervenersPage, checkYourAnswersPage, axeUtils}, testInfo) => {
+        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageIntervenersPage, checkYourAnswersPage, axeUtils}) => {
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false);
             const expectedUrl = ContestedEvents.manageInterveners.ccdCallback;
