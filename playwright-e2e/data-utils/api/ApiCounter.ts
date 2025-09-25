@@ -18,27 +18,27 @@ export class ApiCounter {
     ApiCounter.ccdApiCall = 0;
     ApiCounter.totalApiCalls = 0;
   }
-  static async incrementIdamApiCall() {
+  static incrementIdamApiCall() {
     ApiCounter.idamApiCall++;
   }
 
-  static async incrementIdamCodeApiCall() {
+  static incrementIdamCodeApiCall() {
     ApiCounter.idamCodeApiCall++;
   }
 
-  static async incrementServiceTokenCall() {
+  static incrementServiceTokenCall() {
     ApiCounter.serviceTokenCall++;
   }
 
-  static async incrementUserIdCall() {
+  static incrementUserIdCall() {
     ApiCounter.userIdCall++;
   }
 
-  static async incrementCcdApiCall() {
+  static incrementCcdApiCall() {
     ApiCounter.ccdApiCall++;
   }
 
-  static async saveResult() {
+  static saveResult() {
     const workerId = process.env.TEST_WORKER_INDEX ?? "unknown";
     console.log(`********* API CALL COUNTS (Worker: ${workerId}) *********`);
     console.log(`IDAM API Calls: ${ApiCounter.idamApiCall}`);
@@ -55,8 +55,7 @@ export class ApiCounter {
 
 export function saveApiCountsToCsv(testName: string) {
   console.log("Saving API counts to CSV for test: " + testName);
-  const workerId = process.env.TEST_WORKER_INDEX ?? "unknown";
-  const filename = `api-call-counts-worker-${workerId}.csv`;
+  const filename = `api-call-counts.csv`;
   const filePath = path.resolve(__dirname, "../../" + filename);
   ApiCounter.totalApiCalls = ApiCounter.idamApiCall + ApiCounter.idamCodeApiCall + ApiCounter.serviceTokenCall + ApiCounter.userIdCall + ApiCounter.ccdApiCall;
   const line = `${testName},${ApiCounter.idamApiCall},${ApiCounter.idamCodeApiCall},${ApiCounter.serviceTokenCall},${ApiCounter.userIdCall},${ApiCounter.ccdApiCall},${ApiCounter.totalApiCalls}\n`;
