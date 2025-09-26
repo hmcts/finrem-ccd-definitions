@@ -64,6 +64,34 @@ If you prefer to make the changes directly to the Excel Configuration file, and 
 3) Once you're finished with your changes in the Excel file, convert back to JSON using `yarn generate-json-{consented/contested}`
 4) Review the JSON file changes to ensure all your changes are correct
 
+## Generate Event Dependency Map For Analysis
+
+To generate an event dependency map for either the contested or consented journey, run the following command from the `definitions` directory:
+
+```
+node contested_events_dependency_map.js <journey>
+```
+
+Replace `<journey>` with either `contested` or `consented` depending on which journey you want to analyze. This will output a JSON file to the console. To save the output to a file, use:
+
+```
+node contested_events_dependency_map.js <journey> > <journey>_events_dependency_map.json
+```
+
+Example for contested journey:
+
+```
+node contested_events_dependency_map.js contested > contested_events_dependency_map.json
+```
+
+Example for consented journey:
+
+```
+node contested_events_dependency_map.js consented > consented_events_dependency_map.json
+```
+
+
+
 ## Dependency Vulnerabilities Check
 Run this script to perform a security audit on Yarn dependencies.
 
