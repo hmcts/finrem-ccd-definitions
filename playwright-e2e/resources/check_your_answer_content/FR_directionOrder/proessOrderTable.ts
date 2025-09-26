@@ -46,3 +46,10 @@ export const unprocessedApprovedOrdersWithNewHearingTable: Table = {
     { cellItem: "Do you want to send a notice of hearing?", value: "Yes" }
   ]
 };
+
+export const unprocessedApprovedOrdersNoHearingTable: Table = {
+  tableName: "Check Your Answers",
+  rows: [
+    ...unprocessedApprovedOrders
+  ]
+};
