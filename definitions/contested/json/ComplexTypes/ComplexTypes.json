@@ -4089,7 +4089,29 @@
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a resubmission?",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "FieldShowCondition": "resubmission=\"DO_NOT_SHOW\"",
+    "_comment": "FieldShowCondition controls the visibility of this field on tab"
+  },
+  {
+    "LiveFrom": "16/09/2025",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "resubmissionLinkYes",
+    "FieldType": "Label",
+    "ElementLabel": "This is a resubmission. <a href=\"cases/case-details/${[CASE_REFERENCE]}#Orders\" target=\"_blank\">(see previously rejected draft orders)</a>",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "FieldShowCondition": "resubmission=\"Yes\""
+  },
+  {
+    "LiveFrom": "16/09/2025",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "resubmissionLinkNo",
+    "FieldType": "Label",
+    "ElementLabel": "This is not a resubmission.",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "FieldShowCondition": "resubmission=\"No\""
   },
   {
     "LiveFrom": "29/10/2024",
