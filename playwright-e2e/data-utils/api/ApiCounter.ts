@@ -1,5 +1,15 @@
-import * as fs from "fs";
+import fs from 'fs-extra';
+import lockfile from 'proper-lockfile';
 import * as path from "path";
+
+type ApiCallCounts = {
+  idamApiCall: number;
+  idamCodeApiCall: number;
+  serviceTokenCall: number;
+  userIdCall: number;
+  ccdApiCall: number;
+  totalApiCalls: number;
+}
 
 export class ApiCounter {
 
@@ -53,15 +63,78 @@ export class ApiCounter {
 
 }
 
-export function saveApiCountsToCsv(testName: string) {
-  console.log("Saving API counts to CSV for test: " + testName);
+export async function saveApiCountsToCsv(workerName: string) {
+  console.log("Saving API counts to CSV for worker: " + workerName);
+  ApiCounter.saveResult();
   const filename = `api-call-counts.csv`;
   const filePath = path.resolve(__dirname, "../../" + filename);
+  console.log(` resolved file path: ${filePath}`);
   ApiCounter.totalApiCalls = ApiCounter.idamApiCall + ApiCounter.idamCodeApiCall + ApiCounter.serviceTokenCall + ApiCounter.userIdCall + ApiCounter.ccdApiCall;
-  const line = `${testName},${ApiCounter.idamApiCall},${ApiCounter.idamCodeApiCall},${ApiCounter.serviceTokenCall},${ApiCounter.userIdCall},${ApiCounter.ccdApiCall},${ApiCounter.totalApiCalls}\n`;
-  if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, "Test Name,IDAM API Calls,IDAM Code API Calls,Service Token Calls,User ID Calls,CCD API calls,Total API Calls\n");
+
+  let release: (() => Promise<void>) | undefined;
+  try{
+    release = await lockfile.lock(filePath, { retries: 5, realpath: false});
+    const exists = await fs.pathExists(filePath);
+    const line = `${workerName},${ApiCounter.idamApiCall},${ApiCounter.idamCodeApiCall},${ApiCounter.serviceTokenCall},${ApiCounter.userIdCall},${ApiCounter.ccdApiCall},${ApiCounter.totalApiCalls}\n`;
+    if (!exists) {
+      await fs.writeFile(filePath, "Test Name,IDAM API Calls,IDAM Code API Calls,Service Token Calls,User ID Calls,CCD API calls,Total API Calls\n");
+    }
+    await fs.appendFile(filePath, line);
+  } catch (err) {
+    console.error("Error acquiring file lock for API counts CSV: ", err);
+  } finally {
+    if (release) {
+      await release().catch(
+       err => console.error("Error releasing file lock for API counts CSV: ", err)
+      );
+    }
   }
-  fs.appendFileSync(filePath, line);
+  ApiCounter.resetCounters();
+}
+
+
+export async function saveApiCountsToJson() {
+  const filename = `api-call-counts.json`;
+  console.log("Saving API counts to JSON for worker: " + process.env.TEST_WORKER_INDEX);
+  const filePath = path.resolve(__dirname, "../../" + filename);
+
+  let release: (() => Promise<void>) | undefined;
+  try {
+    release = await lockfile.lock(filePath, { retries: 5, realpath: false });
+    let prev = {
+      idamApiCall: 0,
+      idamCodeApiCall: 0,
+      serviceTokenCall: 0,
+      userIdCall: 0,
+      ccdApiCall: 0,
+      totalApiCalls: 0
+    };
+    if (await fs.pathExists(filePath)) {
+      prev = await fs.readJson(filePath);
+    }
+    const current = {
+      idamApiCall: prev.idamApiCall + ApiCounter.idamApiCall,
+      idamCodeApiCall: prev.idamCodeApiCall + ApiCounter.idamCodeApiCall,
+      serviceTokenCall: prev.serviceTokenCall + ApiCounter.serviceTokenCall,
+      userIdCall: prev.userIdCall + ApiCounter.userIdCall,
+      ccdApiCall: prev.ccdApiCall + ApiCounter.ccdApiCall,
+      totalApiCalls: prev.totalApiCalls + (
+        ApiCounter.idamApiCall +
+        ApiCounter.idamCodeApiCall +
+        ApiCounter.serviceTokenCall +
+        ApiCounter.userIdCall +
+        ApiCounter.ccdApiCall
+      )
+    };
+    await fs.writeJson(filePath, current, { spaces: 2 });
+  } catch (err) {
+    console.error("Error handling file lock for API counts JSON: ", err);
+  } finally {
+    if (release) {
+      await release().catch(
+        err => console.error("Error releasing file lock for API counts JSON: ", err)
+      );
+    }
+  }
   ApiCounter.resetCounters();
 }

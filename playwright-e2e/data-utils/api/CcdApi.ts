@@ -64,7 +64,7 @@ export class CcdApi {
       console.info("Creating CCD case with event %s...", eventId);
     }
     const authToken = await getUserToken(userName, password);
-    const userId = await getUserId(authToken);
+    const userId = await getUserId(authToken, userName);
     const serviceToken = await getServiceToken();
 
     const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/event-triggers/${eventId}/token`;
@@ -118,7 +118,7 @@ export class CcdApi {
     }
 
     const authToken = await getUserToken(userName, password);
-    const userId = await getUserId(authToken);
+    const userId = await getUserId(authToken, userName);
     const serviceToken = await getServiceToken();
 
     const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
@@ -188,7 +188,7 @@ export class CcdApi {
     }
 
     const authToken = await getUserToken(userName, password);
-    const userId = await getUserId(authToken);
+    const userId = await getUserId(authToken, userName);
     const serviceToken = await getServiceToken();
 
     const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
