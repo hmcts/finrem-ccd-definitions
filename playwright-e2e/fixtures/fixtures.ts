@@ -7,12 +7,12 @@ import {saveApiCountsToJson} from '../data-utils/api/ApiCounter.ts';
 
 export const trial = base.extend<{},{ forEachWorker: void}>({
   forEachWorker: [async ({}, use, testInfo) => {
-    console.log(`---- Starting new worker ${testInfo.workerIndex}`)
+    console.log(`---- Starting new worker ${testInfo.workerIndex}`);
     await use();
-    console.log(`---- DONE with worker ${testInfo.workerIndex}`)
-    await saveApiCountsToJson()
-  }, { scope: 'worker', auto: true }],
-})
+    console.log(`---- DONE with worker ${testInfo.workerIndex}`);
+    await saveApiCountsToJson();
+  }, { scope: 'worker', auto: true }]
+});
 export const test = mergeTests(create, a11yTest, trial);
 export const expect = mergeExpects(a11yExpect);
 export const ccdApi = new CcdApi();
