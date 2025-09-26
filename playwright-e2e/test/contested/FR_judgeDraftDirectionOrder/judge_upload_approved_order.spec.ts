@@ -12,7 +12,7 @@ import { AxeUtils } from '@hmcts/playwright-common';
 test.describe('Contested - Judge Upload Approved Order', () => {
   test(
     'Contested - FormA - Judge uploads approved order without hearing',
-    { tag: [] },
+    { tag: ['@accessibilityfail'] },
     async ({
       loginPage,
       manageCaseDashboardPage,
