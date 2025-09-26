@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import * as path from 'path';
+import {deleteCacheFile} from "./data-utils/api/TokenCachingHelper.ts";
 
 export default async function globalTeardown() {
   const filePath = path.resolve(__dirname, './api-call-counts.json');
@@ -9,6 +10,7 @@ export default async function globalTeardown() {
     console.log(JSON.stringify(data, null, 2));
     console.log('*****************************************');
     await fs.remove(filePath);
+    await deleteCacheFile();
   } else {
     console.log('No API call counts file found.');
   }
