@@ -1,6 +1,5 @@
 import {authenticator} from "otplib";
 import {axiosRequest} from "./ApiHelper.ts";
-import {ApiCounter} from "./ApiCounter.ts";
 import {readCache, writeCache} from "./TokenCachingHelper.ts";
 
 const env = process.env.RUNNING_ENV && process.env.RUNNING_ENV.startsWith("pr-") ? "aat" : (process.env.RUNNING_ENV || "aat");
@@ -11,14 +10,12 @@ export async function getUserToken(username: string, password: string): Promise<
     const cached = tokenCache.get(username);
     const now = Date.now();
     if (cached && cached.expiry > now) {
-        console.log(`using cached token for ${username}`);
         return cached.token;
     }
 
     const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
     const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
     const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
-    ApiCounter.incrementIdamCodeApiCall();
     const idamCodeResponse = await axiosRequest({
         method: "post",
         url: idamBaseUrl + idamCodePath,
@@ -29,8 +26,6 @@ export async function getUserToken(username: string, password: string): Promise<
     });
 
     const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse.data.code}`;
-
-    ApiCounter.incrementIdamApiCall();
 
     const authTokenResponse = await axiosRequest({
         method: "post",
@@ -55,7 +50,6 @@ export async function getUserId(authToken: string, username: string): Promise<st
     const tokenCache = await readCache();
     const cached = tokenCache.get(username);
     if ( cached && cached.userId) {
-        console.log(`using cached userId for ${username}`);
         return cached.userId;
     }
 
@@ -66,7 +60,6 @@ export async function getUserId(authToken: string, username: string): Promise<st
         url: idamBaseUrl + idamDetailsPath,
         headers: { Authorization: `Bearer ${authToken}` },
     });
-    ApiCounter.incrementUserIdCall();
 
     if (cached) {
         cached.userId = userDetailsResponse.data.id;
@@ -89,7 +82,6 @@ export async function getServiceToken(): Promise<string> {
     const cached = tokenCache.get("finrem-service-token");
     const now = Date.now();
     if (cached && cached.expiry > now) {
-        console.log("using cached service token");
         return cached.token;
     }
 
@@ -110,7 +102,6 @@ export async function getServiceToken(): Promise<string> {
             "Content-Type": "application/json",
         },
     });
-    ApiCounter.incrementServiceTokenCall();
 
     tokenCache.set("finrem-service-token",
       {

@@ -25,6 +25,7 @@ export async function readCache(): Promise<Map<string, CachedToken>> {
     if (release) {
       await release().catch(err => {
         console.error('Error releasing lock after read:', err);
+        return new Map();
       });
     }
   }
