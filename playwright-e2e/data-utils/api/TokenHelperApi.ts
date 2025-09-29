@@ -49,7 +49,7 @@ export async function getUserToken(username: string, password: string): Promise<
 export async function getUserId(authToken: string, username: string): Promise<string> {
     const tokenCache = await readCache();
     const cached = tokenCache.get(username);
-    if ( cached && cached.userId) {
+    if (cached && cached.userId) {
         return cached.userId;
     }
 
@@ -125,5 +125,3 @@ export function getJwtExpiry(token: string): number {
         return 0;
     }
 }
-
-
