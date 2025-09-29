@@ -6860,7 +6860,7 @@
     "PageLabel": "Consent Order Application",
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "dateOfMarriage!=\"\"  OR nameOfCourtDivorceCentre!=\"\" OR typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
+    "FieldShowCondition": "dateOfMarriage!=\"\" OR nameOfCourtDivorceCentre!=\"\" OR typeOfApplication=\"In connection to matrimonial and civil partnership proceedings\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
