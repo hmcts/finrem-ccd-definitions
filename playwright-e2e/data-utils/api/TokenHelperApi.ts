@@ -40,7 +40,7 @@ export async function getUserToken(username: string, password: string): Promise<
         token: authTokenResponse.data.access_token,
         expiry: authTokenResponse.data.expires_in * 1000 + now - 60000,
         userId: cached?.userId ?? ""
-        }
+      }
     );
     await writeCache(tokenCache);
     return authTokenResponse.data.access_token;
