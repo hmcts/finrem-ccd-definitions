@@ -12,7 +12,7 @@ export default defineConfig({
   retries: process.env.CI ? 3 : 3,
   expect: { timeout: 180_000 }, // 3 minutes
   timeout: 5*60*1000, //each test execution time is set to 5 min
-  globalTeardown: './playwright-e2e/global-teardown',
+  globalTeardown: './playwright-e2e/config/global-teardown',
   projects: [
     {
       ...ProjectsConfig.chrome,
