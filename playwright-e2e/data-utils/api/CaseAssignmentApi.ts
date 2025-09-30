@@ -17,7 +17,7 @@ export class CaseAssignmentApi {
         const orgAuthToken = await getUserToken(orgCredential.email, orgCredential.password);
         const userAuthToken = await getUserToken(userToAssign.email, userToAssign.password);
 
-        const userId = await getUserId(userAuthToken);
+        const userId = await getUserId(userAuthToken, userToAssign.email);
         const serviceToken = await getServiceToken();
 
         const assignCaseResponse = await axiosRequest({
