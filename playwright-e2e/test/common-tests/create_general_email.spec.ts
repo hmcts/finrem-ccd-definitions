@@ -14,7 +14,7 @@ test.describe('Create General Email', () => {
         { tag: [] },
         async ({ loginPage, manageCaseDashboardPage, createGeneralEmailPage, caseDetailsPage, checkYourAnswersPage }) => {
 
-            const recipientEmail = 'validEmail1@mailinator.com';
+            const recipientEmail = 'fr_respondent_solicitor1@mailinator.com';
 
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
@@ -26,9 +26,9 @@ test.describe('Create General Email', () => {
 
             // Crete General Email
             await caseDetailsPage.selectNextStep(CommonEvents.createGeneralEmail)
-            // await createGeneralEmailPage.enterInvalidEmailAddressAndSubmit(); enable this for DFR-3942
-            await createGeneralEmailPage.enterReceipientEmail(recipientEmail); 
             await createGeneralEmailPage.enterBodyOfEmail('This is a test');
+            await createGeneralEmailPage.enterInvalidEmailAddressAndSubmit(); // assert error message for invalid email
+            await createGeneralEmailPage.enterReceipientEmail(recipientEmail);
             await createGeneralEmailPage.uploadDocument('playwright-e2e/resources/file/test.pdf');
             await createGeneralEmailPage.navigateContinue();
 
@@ -49,7 +49,7 @@ test.describe('Create General Email', () => {
         { tag: [] },
         async ({ loginPage, manageCaseDashboardPage, createGeneralEmailPage, caseDetailsPage, checkYourAnswersPage }) => {
 
-            const recipientEmail = 'validEmail1@mailinator.com';
+            const recipientEmail = 'fr_respondent_solicitor1@mailinator.com';
 
             // Create and setup case
             const caseId = await ConsentedCaseFactory.createConsentedCaseUpToIssueApplication();
@@ -61,9 +61,9 @@ test.describe('Create General Email', () => {
 
             // Crete General Email
             await caseDetailsPage.selectNextStep(CommonEvents.createGeneralEmail)
-            // await createGeneralEmailPage.enterInvalidEmailAddressAndSubmit(); enable this for DFR-3942
-            await createGeneralEmailPage.enterReceipientEmail(recipientEmail); 
             await createGeneralEmailPage.enterBodyOfEmail('This is a test');
+            await createGeneralEmailPage.enterInvalidEmailAddressAndSubmit(); // assert error message for invalid email
+            await createGeneralEmailPage.enterReceipientEmail(recipientEmail); 
             await createGeneralEmailPage.uploadDocument('playwright-e2e/resources/file/test.pdf');
             await createGeneralEmailPage.navigateContinue();
 
