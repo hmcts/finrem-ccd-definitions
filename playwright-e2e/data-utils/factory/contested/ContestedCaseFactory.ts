@@ -217,6 +217,25 @@ export class ContestedCaseFactory {
     return caseId;
   }
 
+  static async progressToUploadDraftOrderWithMigratedHearing({
+    isFormA,
+  }: {
+    isFormA: boolean;
+  }): Promise<string> {
+    const caseId = isFormA
+      ? await this.createBaseContestedFormA()
+      : await this.createBaseContestedPaperCase();
+
+    if (isFormA) {
+      await ContestedEventApi.solicitorSubmitFormACase(caseId);
+    }
+
+    await this.caseworkerListForHearing12To16WeeksFromNow(caseId, isFormA);
+    await ContestedEventApi.manageHearingsMigration(caseId);
+
+    return caseId;
+  }
+
   // Process order
   static async createAndProcessFormACaseUpToProcessOrderLegacy(
     isFormA = true,

@@ -37,7 +37,6 @@ export class CcdApi {
       serviceToken: string,
       payload: any
   ): Promise<AxiosResponse> {
-
     return await axiosRequest({
       url: ccdApiUrl + ccdSaveCasePath,
       method: "post",
@@ -62,7 +61,7 @@ export class CcdApi {
       console.info("Creating CCD case with event %s...", eventId);
     }
     const authToken = await getUserToken(userName, password);
-    const userId = await getUserId(authToken);
+    const userId = await getUserId(authToken, userName);
     const serviceToken = await getServiceToken();
 
     const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/event-triggers/${eventId}/token`;
@@ -78,13 +77,7 @@ export class CcdApi {
     const rawData = readFileSync(path.resolve(dataLocation), "utf-8");
     const data = updateJsonFileWithEnvValues(rawData);
 
-    dataModifications.forEach((mod) => {
-      if (mod.action === "delete") {
-        delete data[mod.key];
-      } else if (mod.action === "insert") {
-        data[mod.key] = mod.value;
-      }
-    });
+    this.makeModifications(dataModifications, data);
 
     const payload = {
       data,
@@ -122,7 +115,7 @@ export class CcdApi {
     }
 
     const authToken = await getUserToken(userName, password);
-    const userId = await getUserId(authToken);
+    const userId = await getUserId(authToken, userName);
     const serviceToken = await getServiceToken();
 
     const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
@@ -142,13 +135,7 @@ export class CcdApi {
     let updatedDataObj = updateJsonFileWithEnvValues(rawData);
 
     // Apply the key-based mutations
-    for (const action of replacements) {
-      if (action.action === "insert") {
-        updatedDataObj[action.key] = action.value;
-      } else if (action.action === "delete") {
-        delete updatedDataObj[action.key];
-      }
-    }
+    this.makeModifications(replacements, updatedDataObj);
 
     const payload = {
       data: updatedDataObj,
@@ -159,7 +146,7 @@ export class CcdApi {
       },
       event_token: eventToken,
     };
-
+    
     const saveCaseResponse = await this.saveCase(
         ccdSaveEventPath,
         authToken,
@@ -198,7 +185,7 @@ export class CcdApi {
     }
 
     const authToken = await getUserToken(userName, password);
-    const userId = await getUserId(authToken);
+    const userId = await getUserId(authToken, userName);
     const serviceToken = await getServiceToken();
 
     const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/${caseType}/cases/${caseId}/event-triggers/${eventId}/token`;
