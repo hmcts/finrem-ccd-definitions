@@ -16,13 +16,16 @@ export class CreateGeneralEmailPage extends BaseJourneyPage {
         this.optionalUploadDocument = page.getByRole('button', { name: 'Upload document' });
     }
 
-    // SEE DFR-3942
-    async enterInvalidEmailAddressAndSubmit(){
-        expect(this.recipientEmailBox).toBeVisible();
-        await this.recipientEmailBox.fill('test');
-        await this.navigateContinue();
+    async assertNotValidEmailAddress(){
         await expect(this.page.getByText('test is not a valid Email address')).toBeVisible();
-        
+    }
+
+    async assertAnErrorOccurred(){
+        await expect(this.page.getByText('An error occurred when sending the email')).toBeVisible();
+    }
+
+    async assertAnGovUkFailedEmailAddressValidation(){
+        await expect(this.page.getByText('Not a valid email address')).toBeVisible();
     }
 
     async enterReceipientEmail(email: string) {

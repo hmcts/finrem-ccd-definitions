@@ -6,7 +6,7 @@ export function createGeneralEmailTabDataConsented(date?: string) :Tab[] {
     {
     tabName: 'Case Documents',
     tabContent: [
-        { tabItem: "Recipient's email", value: "validEmail1@mailinator.com" },
+        { tabItem: "Recipient's email", value: "fr_applicant_solicitor1@mailinator.com" },
         { tabItem: "Email created by", value: "Claire Mumford"},
         { tabItem: "Date Sent", value: date ?? DateHelper.getUtcDateTimeFormatted(), exact: false },
         { tabItem: "Body", value: "This is a test" },
