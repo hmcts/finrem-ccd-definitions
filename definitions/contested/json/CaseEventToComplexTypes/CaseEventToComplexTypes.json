@@ -6210,18 +6210,34 @@
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "16/09/2025",
-    "ID": "FR_uploadApprovedOrderMhToUploadHearingOrder",
-    "CaseEventID": "FR_uploadApprovedOrderMh",
-    "CaseFieldID": "uploadHearingOrder",
+    "LiveFrom": "02/10/2026",
+    "ID": "FR_uploadApprovedOrderToCwApprovedOrderCollection",
+    "CaseEventID": "FR_uploadApprovedOrder",
+    "CaseFieldID": "cwApprovedOrderCollection",
     "ListElementCode": "uploadDraftDocument",
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "16/09/2025",
-    "ID": "FR_uploadApprovedOrderMhToUploadHearingOrder",
+    "LiveFrom": "02/10/2026",
+    "ID": "FR_uploadApprovedOrderToCwApprovedOrderCollection",
+    "CaseEventID": "FR_uploadApprovedOrder",
+    "CaseFieldID": "cwApprovedOrderCollection",
+    "ListElementCode": "additionalDocuments",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "02/10/2026",
+    "ID": "FR_uploadApprovedOrderMhToCwApprovedOrderCollection",
     "CaseEventID": "FR_uploadApprovedOrderMh",
-    "CaseFieldID": "uploadHearingOrder",
+    "CaseFieldID": "cwApprovedOrderCollection",
+    "ListElementCode": "uploadDraftDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "02/10/2026",
+    "ID": "FR_uploadApprovedOrderMhToCwApprovedOrderCollection",
+    "CaseEventID": "FR_uploadApprovedOrderMh",
+    "CaseFieldID": "cwApprovedOrderCollection",
     "ListElementCode": "additionalDocuments",
     "DisplayContext": "OPTIONAL"
   },

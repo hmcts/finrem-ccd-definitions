@@ -5022,5 +5022,56 @@
     "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2026",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "uploadDraftDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Upload Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
+  },
+  {
+    "LiveFrom": "02/10/2026",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "orderDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order created at",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2026",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "isOrderStamped",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2026",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "originalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Original Document",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2026",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "additionalDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Additional attachments",
+    "HintText": "Please upload any additional attachments. You must upload Microsoft Word or PDF documents",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
