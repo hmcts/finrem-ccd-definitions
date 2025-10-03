@@ -3,6 +3,7 @@ import config from "../../../config/config";
 import { ConsentedEvents, CaseType, PayloadPath } from "../../../config/case-data";
 
 export class ConsentedEventApi {
+
   private static async updateCaseWorkerSteps(
     caseId: string,
     steps: { event: string; payload?: string }[]

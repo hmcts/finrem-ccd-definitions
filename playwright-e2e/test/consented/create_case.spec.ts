@@ -1,4 +1,4 @@
-import { test, expect } from '../../fixtures/fixtures';
+import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { createCaseTabData } from '../../resources/tab_content/consented/create_case_tabs';
 import {ConsentedEvents} from "../../config/case-data.ts";

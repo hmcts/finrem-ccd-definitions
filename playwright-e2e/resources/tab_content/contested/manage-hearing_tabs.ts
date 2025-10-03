@@ -19,7 +19,7 @@ export function getManageHearingTabData(params?: {
             {tabItem: "Type of Hearing", value: params?.typeOfHearing ?? "Financial Dispute Resolution (FDR)"},
             {tabItem: "Court", value: params?.court ?? "Central Family Court"},
             {tabItem: "Hearing Attendance", value: params?.attendance ?? "In Person"},
-            {tabItem: "Hearing Date", value: (params?.hearingDate ?? DateHelper.getUnFormattedDateTwelveWeeksLater()) + " " + (params?.hearingTime ?? "10:00 AM")},
+            {tabItem: "Hearing Date", value: (params?.hearingDate ?? DateHelper.getFormattedDateTwelveWeeksLater()) + " " + (params?.hearingTime ?? "10:00 AM")},
             {tabItem: "Hearing Time Estimate", value: params?.duration ?? "2 hours"},
             {tabItem: "Who has received this notice", value: params?.whoShouldSeeOrder ?? "Applicant - Frodo Baggins, Respondent - Smeagol Gollum, Intervener1 - intApp1, Intervener2 - intResp1"},
             {tabItem: "Additional information about the hearing", value: params?.additionalInformation ?? "Hearing details here"},

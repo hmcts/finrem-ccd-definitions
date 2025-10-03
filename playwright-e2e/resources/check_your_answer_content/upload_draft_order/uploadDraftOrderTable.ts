@@ -7,7 +7,7 @@ export const uploadDraftOrderTable: Table = {
         {cellItem: "What kind of draft order do you need to upload?", value: "An agreed order following a hearing (agreed by the parties at the hearing)"},
         'Upload agreed draft orders',
         {cellItem: "Confirm the uploaded documents are for the case", value: "I confirm the uploaded documents are for the Baggins v Gollum case"},
-        {cellItem: "Which hearing was this?", value: `${DateHelper.getFormattedDateTwelveWeeksLater()} 10:00 - First Directions Appointment (FDA)`},
+        {cellItem: "Which hearing was this?", value: `${DateHelper.getFormattedDateTwelveWeeksLater()} 10:00am - First Directions Appointment (FDA)`},
         {cellItem: "Do you know who was the judge at this hearing?", value: "No"},
         {cellItem: "Who are you uploading this on behalf of?", value: "The applicant, Frodo Baggins" },
         {cellItem: "What are you uploading?", value: "OrdersPension Sharing Annexes"},
