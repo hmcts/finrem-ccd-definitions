@@ -13,7 +13,7 @@ export const judgeApprovedOrderTabData: Tab[] = [{
     tabContent: [
         "Upload approved order",
         { tabItem: "Upload Draft Document", value: "judgeApprovedOrder.docx" },
-        { tabItem: "Upload additional attachments", value: "additionalAttachment.pdf" },
+        { tabItem: "Additional attachments", value: "additionalAttachment.pdf" },
     ]
 }
 ];
