@@ -9,6 +9,6 @@ export const processOrderCaseDocumentsTabData: Tab[] = [{
     { tabItem: "Document status", value: "Processed" },
     { tabItem: "Submitted by", value: "Claire Mumford" },
     { tabItem: "Uploaded on behalf of", value: "The applicant" },
-    { tabItem: "Is this a resubmission?", value: "No" }
+    "This is not a resubmission."
   ]
 }]

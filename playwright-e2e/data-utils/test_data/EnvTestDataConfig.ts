@@ -2,8 +2,8 @@ const env = process.env.RUNNING_ENV || 'aat';
 
 const configs = {
   aat: {
-    DOCUMENT_URL: 'http://dm-store-aat.service.core-compute-aat.internal/documents/1011d179-4d65-420b-85d7-2c6387016a31',
-    DOCUMENT_BINARY_URL: 'http://dm-store-aat.service.core-compute-aat.internal/documents/1011d179-4d65-420b-85d7-2c6387016a31/binary',
+    DOCUMENT_URL: 'http://dm-store-aat.service.core-compute-aat.internal/documents/d39e1231-5766-4200-b9ec-fd56fa2e510a',
+    DOCUMENT_BINARY_URL: 'http://dm-store-aat.service.core-compute-aat.internal/documents/d39e1231-5766-4200-b9ec-fd56fa2e510a/binary',
     ORG_ID_1: 'Y707HZM',
     ORG_ID_2: '95V5X7X',
     PBA_NUMBER: 'PBA0089162',
@@ -14,8 +14,8 @@ const configs = {
     APP_SOL_POSTCODE: 'EC3A 2AD'
   },
   demo: {
-    DOCUMENT_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/63cabb81-f3fd-48c8-bdba-d5155b1332e9',
-    DOCUMENT_BINARY_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/63cabb81-f3fd-48c8-bdba-d5155b1332e9/binary',
+    DOCUMENT_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/00345e7e-3516-4722-93a7-21802dac8bb6',
+    DOCUMENT_BINARY_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/00345e7e-3516-4722-93a7-21802dac8bb6/binary',
     ORG_ID_1: 'KUOPA4B',
     ORG_ID_2: 'N7GN4FP',
     PBA_NUMBER: 'PBA0090111',
