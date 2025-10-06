@@ -144,8 +144,8 @@ test.describe("Consent order in contested case", () => {
                                     label: 'generalOrder-',
                                     contentSnippets: [
                                         `Case No: ${caseId}`,
-                                        `Order made by District Judge Mumford on ${DateHelper.getTodayFullFormattedDate()} SITTING AT the`,
-                                        `Family Court at the ${courtName}.`,
+                                        `Order made by District Judge Mumford on ${DateHelper.getTodayFullFormattedDate()} SITTING AT the Family`,
+                                        `Court at the ${courtName}.`,
                                         description
                                     ]
                                 }
