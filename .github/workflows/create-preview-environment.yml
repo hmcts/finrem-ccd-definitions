@@ -64,7 +64,7 @@ jobs:
       - name: Set PR body
         run: |
           if [ -n "${{ github.event.inputs.jira }}" ]; then
-            echo "PR_BODY=See [DFR-${{ github.event.inputs.jira }}](https://tools.hmcts.net/jira/browse/${{ github.event.inputs.jira }})" >> $GITHUB_ENV
+            echo "PR_BODY=See [DFR-${{ github.event.inputs.jira }}](https://tools.hmcts.net/jira/browse/DFR-${{ github.event.inputs.jira }})" >> $GITHUB_ENV
           fi
 
       - name: Create pull request
