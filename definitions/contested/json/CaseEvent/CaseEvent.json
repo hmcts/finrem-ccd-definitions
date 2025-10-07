@@ -1190,7 +1190,7 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_updateCaseDetailsSolicitor",
     "Name": "Update Contact Details",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/get-user-roles",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "Description": "Update solicitor contact details",
     "DisplayOrder": 133,
     "PreConditionState(s)": "*",
