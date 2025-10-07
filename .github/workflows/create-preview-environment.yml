@@ -1,0 +1,80 @@
+name: Create Preview Environment
+permissions:
+  contents: write
+on:
+  workflow_dispatch:
+    inputs:
+      jira:
+        description: 'Jira DFR-'
+        required: true
+        type: string
+      finrem-cos-pr:
+        description: 'finrem-cos PR #'
+        required: true
+        type: string
+      title:
+        description: 'PR Title'
+        required: false
+        type: string
+      branch-name:
+        description: 'Branch name'
+        required: false
+        type: string
+
+jobs:
+  create-pr:
+    name: Create Pull Request
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set branch name
+        run: |
+          if [ -z "${{ github.event.inputs.branch-name }}" ]; then
+            echo "BRANCH_NAME=dfr-${{ github.event.inputs.jira }}-preview-env" >> $GITHUB_ENV
+          else
+            echo "BRANCH_NAME=${{ github.event.inputs.branch-name }}" >> $GITHUB_ENV
+          fi
+
+      - name: Create new branch
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git checkout -b "$BRANCH_NAME"
+          git commit --allow-empty -m "Empty commit"
+          git push origin "$BRANCH_NAME"
+
+      - name: Ensure label exists
+        run: |
+          gh label create "use-finrem-cos-pr-${{ github.event.inputs.finrem-cos-pr }}" --color "#ededed" --description "Preview environment PR" || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set PR title
+        run: |
+          if [ -z "${{ github.event.inputs.title }}" ]; then
+            echo "PR_TITLE=DFR-${{ github.event.inputs.jira }}: Preview environment" >> $GITHUB_ENV
+          else
+            echo "PR_TITLE=${{ github.event.inputs.title }}" >> $GITHUB_ENV
+          fi
+
+      - name: Set PR body
+        run: |
+          if [ -n "${{ github.event.inputs.jira }}" ]; then
+            echo "PR_BODY=See [DFR-${{ github.event.inputs.jira }}](https://tools.hmcts.net/jira/browse/${{ github.event.inputs.jira }})" >> $GITHUB_ENV
+          fi
+
+      - name: Create pull request
+        run: |
+          gh pr create \
+            --title "$PR_TITLE" \
+            --body "$PR_BODY" \
+            --base main \
+            --head $(git rev-parse --abbrev-ref HEAD) \
+            --label "use-finrem-cos-pr-${{ github.event.inputs.finrem-cos-pr }}" \
+            --label "enable_keep_helm" \
+            --draft
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
