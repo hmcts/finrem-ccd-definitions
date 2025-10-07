@@ -72,7 +72,7 @@ jobs:
           gh pr create \
             --title "$PR_TITLE" \
             --body "$PR_BODY" \
-            --base main \
+            --base master \
             --head $(git rev-parse --abbrev-ref HEAD) \
             --label "use-finrem-cos-pr-${{ github.event.inputs.finrem-cos-pr }}" \
             --label "enable_keep_helm" \
