@@ -397,7 +397,7 @@ test.describe("Consent order in contested case", () => {
                     'Reason for Refusal',
                     ...reasons,
                     { cellItem: 'Select Judge', value: 'His Honour Judge' },
-                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_SURNAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             });
@@ -468,7 +468,7 @@ test.describe("Consent order in contested case", () => {
                     { cellItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                     { cellItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                     { cellItem: 'Select Judge', value: 'District Judge' },
-                    { cellItem: "Name of Judge", value: envTestData.JUDGE_SURNAME },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             })
