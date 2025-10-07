@@ -83,7 +83,10 @@ jobs:
       - name: Update PR body with preview environment links
         run: |
           PR_NUMBER=$(gh pr view --json number -q ".number")
-          NEW_BODY="$PR_BODY\r\n- Manage Cases: https://xui-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net\r\n- Manage Orgs: https://xui-mo-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net\r\n- CCD Admin Web: https://admin-web-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net"
+          NEW_BODY="$PR_BODY
+            - Manage Cases : https://xui-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net
+            - Manage Orgs  : https://xui-mo-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net
+            - CCD Admin Web: https://admin-web-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net"
           gh pr edit "$PR_NUMBER" --body "$NEW_BODY"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
