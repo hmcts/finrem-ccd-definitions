@@ -5797,6 +5797,14 @@
     "DisplayContext": "MANDATORY"
   },
   {
+    "LiveFrom": "07/10/2025",
+    "ID": "FR_manageHearingsToWorkingHearing",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "additionalHearingDocs.additionalDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
     "LiveFrom": "25/06/2025",
     "ID": "FR_manageHearingsToWorkingHearing",
     "CaseEventID": "FR_manageHearings",
@@ -6194,6 +6202,14 @@
     "DisplayContext": "MANDATORY"
   },
   {
+    "LiveFrom": "07/10/2025",
+    "ID": "FR_processOrderToWorkingHearing",
+    "CaseEventID": "FR_processOrder",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "additionalHearingDocs.additionalDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
     "LiveFrom": "24/07/2025",
     "ID": "FR_processOrderToWorkingHearing",
     "CaseEventID": "FR_processOrder",
@@ -6557,6 +6573,14 @@
     "DisplayContext": "MANDATORY"
   },
   {
+    "LiveFrom": "07/10/2025",
+    "ID": "FR_uploadApprovedOrderMhToWorkingHearing",
+    "CaseEventID": "FR_uploadApprovedOrderMh",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "additionalHearingDocs.additionalDocument",
+    "DisplayContext": "MANDATORY"
+  },
+  {
     "LiveFrom": "25/06/2025",
     "ID": "FR_uploadApprovedOrderMhToWorkingHearing",
     "CaseEventID": "FR_uploadApprovedOrderMh",
@@ -6901,6 +6925,14 @@
     "CaseEventID": "FR_GeneralApplicationDirectionsMH",
     "CaseFieldID": "workingHearing",
     "ListElementCode": "additionalHearingDocs",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "07/10/2025",
+    "ID": "FR_GenAppDirMHToWorkingHearing",
+    "CaseEventID": "FR_GeneralApplicationDirectionsMH",
+    "CaseFieldID": "workingHearing",
+    "ListElementCode": "additionalHearingDocs.additionalDocument",
     "DisplayContext": "MANDATORY"
   },
   {
