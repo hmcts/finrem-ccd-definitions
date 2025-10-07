@@ -1,5 +1,17 @@
 [
   {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_additionalHearingDocument",
+    "ListElementCode": "additionalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Document",
+    "RegularExpression": ".doc,.docx,.pdf",
+    "HintText": "You must upload Microsoft Word or PDF documents.",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
+  },
+  {
     "LiveFrom": "18/02/2025",
     "ID": "FR_UploadDraftOrderAdditionalDocument",
     "ListElementCode": "orderAttachment",
@@ -4845,12 +4857,11 @@
     "ID": "FR_workingHearing",
     "ListElementCode": "additionalHearingDocs",
     "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
+    "FieldTypeParameter": "FR_additionalHearingDocument",
     "ElementLabel": "Please upload any additional documents related to your application.",
     "FieldShowCondition": "additionalHearingDocPrompt=\"Yes\"",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "hearingNotices"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "28/04/2025",
@@ -4968,12 +4979,11 @@
     "ID": "FR_hearing",
     "ListElementCode": "additionalHearingDocs",
     "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
+    "FieldTypeParameter": "FR_additionalHearingDocument",
     "ElementLabel": "Please upload any additional documents related to your application.",
     "FieldShowCondition": "additionalHearingDocPrompt=\"Yes\"",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "hearingNotices"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "28/04/2025",
