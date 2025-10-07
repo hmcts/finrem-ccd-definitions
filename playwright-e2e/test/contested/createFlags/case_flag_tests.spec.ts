@@ -37,7 +37,7 @@ test.describe('Contested Case Flag Tests', () => {
     for (const data of caseFlagTestData) {
         test(
             data.title,
-            {tag: ["@nightly"]},
+            {tag: []},
             async ({loginPage, manageCaseDashboardPage, caseDetailsPage, createFlagPage}) => {
                 // Create and setup case
                 const caseId = await data.setupCase();
