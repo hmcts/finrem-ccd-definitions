@@ -29,14 +29,25 @@ export class CaseDetailsPage {
     }
 
     async selectNextStep(event: CaseEvent) {
-        await expect(async () => {
+        const maxRetries = 5;
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
             await this.page.waitForLoadState();
             await this.goButton.isVisible();
             await expect(this.selectNextStepDropDown).toBeVisible();
             await this.selectNextStepDropDown.selectOption(event.listItem);
+            if (attempt >= 3) { // if go button click fails multiple times, reload the page
+                await this.page.reload();
+                await this.page.waitForLoadState();
+                await this.goButton.isVisible();
+            }
             await this.goButton.click({ clickCount: 2, delay: 500 });
-            await this.page.waitForURL(`**/${event.ccdCallback}/**`);
-        }).toPass();
+            try {
+                await this.page.waitForURL(`**/${event.ccdCallback}/**`, { timeout: 3000 });
+                return;
+            } catch (e) {
+                if (attempt === maxRetries) throw e;
+            }
+        }
     }
 
     async checkHasBeenUpdated(event: string) {
