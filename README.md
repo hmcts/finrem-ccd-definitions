@@ -75,19 +75,19 @@ node contested_events_dependency_map.js <journey>
 Replace `<journey>` with either `contested` or `consented` depending on which journey you want to analyze. This will output a JSON file to the console. To save the output to a file, use:
 
 ```
-node contested_events_dependency_map.js <journey> > <journey>_events_dependency_map.json
+node events_dependency_map.js <journey> > <journey>_events_dependency_map.json
 ```
 
 Example for contested journey:
 
 ```
-node contested_events_dependency_map.js contested > contested_events_dependency_map.json
+node events_dependency_map.js contested > contested_events_dependency_map.json
 ```
 
 Example for consented journey:
 
 ```
-node contested_events_dependency_map.js consented > consented_events_dependency_map.json
+node events_dependency_map.js consented > consented_events_dependency_map.json
 ```
 
 
