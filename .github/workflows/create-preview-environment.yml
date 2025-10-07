@@ -6,7 +6,11 @@ on:
     inputs:
       jira:
         description: 'Jira DFR-'
-        required: false
+        required: true
+        type: string
+      finrem-cos-pr:
+        description: 'finrem-cos PR #'
+        required: true
         type: string
       title:
         description: 'PR Title'
@@ -15,10 +19,6 @@ on:
       branch-name:
         description: 'Branch name'
         required: false
-        type: string
-      finrem-cos-pr:
-        description: 'finrem-cos PR'
-        required: true
         type: string
 
 jobs:
