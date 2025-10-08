@@ -62,7 +62,7 @@ export const approved_upload_draft_order_tabs: Tab[] = [
             'Uploaded pension sharing annexes',
             'Uploaded pension sharing annexes 1',
             { tabItem: "Order status", value: "Approved by judge"},
-            { tabItem: "Type of hearing", value: "First Directions Appointment (FDA)" },
+            { tabItem: "Type of hearing", value: "FDR" },
             { tabItem: "Judge name", value: envTestData.JUDGE_NAME},
             { tabItem: "Order filed by", value: " The applicant"},
             { tabItem: "Submitted by", value: "Claire Mumford"},
