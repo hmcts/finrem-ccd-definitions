@@ -1,19 +1,23 @@
 import {expect, Locator, Page} from "@playwright/test";
 import {BaseJourneyPage} from "../../BaseJourneyPage.ts";
+import { ManageHearingPage } from "../manage-hearings/ManageHearing.ts";
+import { CommonActionsHelper } from "../../helpers/CommonActionsHelper.ts";
 
-export class ApproveOrderPage extends BaseJourneyPage {
+export class ApproveOrderPage extends ManageHearingPage {
 
     private readonly approveOrdersTitle: Locator;
     private readonly isAnotherHearingListed: Locator;
     private readonly judgeTitle: Locator;
     private readonly draftOrdersReviewed: Locator;
+    private readonly whichOrderIsThisFor: Locator;
 
-    public constructor(page: Page) {
-        super(page);
+    public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
+        super(page, commonActionsHelper);
         this.approveOrdersTitle = page.getByRole('heading', { name: 'Approve orders' });
         this.isAnotherHearingListed = page.locator(`#hearingInstruction_requireAnotherHearing_radio`);
         this.judgeTitle = page.locator(`#extraReportFieldsInput_judgeType`);
         this.draftOrdersReviewed = page.getByText('Draft orders reviewed');
+        this.whichOrderIsThisFor = page.getByLabel('Which order is this hearing')
     }
 
 
@@ -73,5 +77,18 @@ export class ApproveOrderPage extends BaseJourneyPage {
         await expect(closeButton).toBeVisible();
         await closeButton.click();
         await this.page.waitForURL(/case-details/);
+    }
+
+    async selectWhichOrderIsThisFor(orderName: string) {
+        expect(this.whichOrderIsThisFor).toBeVisible();
+        const whichOrderDropdown = this.page.getByLabel('Which order is this hearing')
+        await whichOrderDropdown.selectOption({ label: orderName });
+    }
+    async selectTimeEstimate(option: 'standard' | 'additional' = 'standard') {
+        const radioOption =
+            option === 'standard'
+                ? 'The application can be listed'
+                : 'Additional time is needed (Or';
+        await this.page.getByRole('radio', { name: radioOption }).check();
     }
 }
