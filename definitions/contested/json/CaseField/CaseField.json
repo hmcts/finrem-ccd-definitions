@@ -8517,6 +8517,7 @@
     "LiveFrom": "18/07/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "judgeApprovedOrderCollection",
+    "_comment": "A field to capture judge's approved order (used in upload approved order event)",
     "Label": "Upload approved order",
     "HintText": "You must upload Microsoft Word documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example “JonesFDA11Jul24”",
     "FieldType": "Collection",
@@ -8530,6 +8531,17 @@
     "ID": "isFinalOrder",
     "Label": "Is this the final order?",
     "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "cwApprovedOrderCollection",
+    "_comment": "A field to capture CW's approved order (used in upload approved order event)",
+    "Label": "Upload approved order",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_cwApprovedOrder",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
