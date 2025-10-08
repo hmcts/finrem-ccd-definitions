@@ -64,7 +64,7 @@ jobs:
       - name: Set PR body
         run: |
           if [ -n "${{ github.event.inputs.jira }}" ]; then
-            echo "PR_BODY=See [DFR-${{ github.event.inputs.jira }}](https://tools.hmcts.net/jira/browse/${{ github.event.inputs.jira }})" >> $GITHUB_ENV
+            echo "PR_BODY=See [DFR-${{ github.event.inputs.jira }}](https://tools.hmcts.net/jira/browse/DFR-${{ github.event.inputs.jira }})" >> $GITHUB_ENV
           fi
 
       - name: Create pull request
@@ -77,5 +77,16 @@ jobs:
             --label "use-finrem-cos-pr-${{ github.event.inputs.finrem-cos-pr }}" \
             --label "enable_keep_helm" \
             --draft
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update PR body with preview environment links
+        run: |
+          PR_NUMBER=$(gh pr view --json number -q ".number")
+          NEW_BODY="$PR_BODY
+            - Manage Cases : https://xui-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net
+            - Manage Orgs  : https://xui-mo-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net
+            - CCD Admin Web: https://admin-web-finrem-ccd-definitions-pr-$PR_NUMBER.preview.platform.hmcts.net"
+          gh pr edit "$PR_NUMBER" --body "$NEW_BODY"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
