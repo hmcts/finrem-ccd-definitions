@@ -1834,7 +1834,8 @@
     "TabLabel": "Case Documents",
     "TabDisplayOrder": 9,
     "CaseFieldID": "generalEmailCollection",
-    "TabFieldDisplayOrder": 42
+    "TabFieldDisplayOrder": 42,
+    "DisplayContextParameter":"#TABLE(generalEmailDateSent,generalEmailRecipient)"
   },
   {
     "LiveFrom": "01/01/2017",
