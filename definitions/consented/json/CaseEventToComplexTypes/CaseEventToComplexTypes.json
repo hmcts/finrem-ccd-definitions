@@ -263,7 +263,7 @@
     "ListElementCode": "Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -274,7 +274,7 @@
     "DefaultValue": "[RESPSOLICITOR]",
     "EventElementLabel": "Respondent Organisation Policy",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {

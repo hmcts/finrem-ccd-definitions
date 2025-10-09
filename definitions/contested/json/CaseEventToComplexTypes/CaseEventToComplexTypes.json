@@ -204,7 +204,7 @@
     "DefaultValue": "[APPSOLICITOR]",
     "EventElementLabel": "Applicant Organisation Policy",
     "FieldDisplayOrder": 1,
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {
@@ -343,7 +343,7 @@
     "ListElementCode": "Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",

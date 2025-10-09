@@ -863,6 +863,19 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "RespondentOrganisationPolicy",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "COMPLEX",
+    "PageID": 5,
+    "PageDisplayOrder": 5,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "appRespondentRep=\"Yes\"",
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solicitorCreate",
     "CaseFieldID": "rSolicitorFirm",
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "MANDATORY",
@@ -4149,19 +4162,6 @@
     "PageID": "UploadPension_Solicitor",
     "PageDisplayOrder": 11,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solicitorCreate",
-    "CaseFieldID": "RespondentOrganisationPolicy",
-    "PageFieldDisplayOrder": 7,
-    "DisplayContext": "COMPLEX",
-    "PageID": 5,
-    "PageDisplayOrder": 5,
-    "PageColumnNumber": 1,
-    "FieldShowCondition": "appRespondentRep=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
