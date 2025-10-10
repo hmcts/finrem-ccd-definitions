@@ -35,59 +35,6 @@
   },
   {
     "LiveFrom": "01/01/2017",
-    "ID": "FR_OrderAcceptType",
-    "ListElementCode": "orderLabel",
-    "FieldType": "Label",
-    "ElementLabel": "Order Outcome",
-    "HintText": "Order Outcome, see direction(s) below",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_OrderAcceptType",
-    "ListElementCode": "orderText",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_fl_OrderAccept",
-    "ElementLabel": "Order Direction",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_OrderAcceptType",
-    "ListElementCode": "orderParties",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_fl_Party",
-    "ElementLabel": "Action required by ",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_OrderAcceptType",
-    "ListElementCode": "orderDate&Times",
-    "FieldType": "Date",
-    "ElementLabel": "Action by ",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_OrderAcceptType",
-    "ListElementCode": "orderDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Scanned, annotated Document",
-    "HintText": "See notes on scanned document",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "FR_OrderAcceptType",
-    "ListElementCode": "orderTextArea",
-    "FieldType": "TextArea",
-    "ElementLabel": "Explanation",
-    "HintText": "Optionally, give explanation, as appropriate",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "01/01/2017",
     "ID": "FR_OrderRejectType",
     "ListElementCode": "orderLabel",
     "FieldType": "Label",
