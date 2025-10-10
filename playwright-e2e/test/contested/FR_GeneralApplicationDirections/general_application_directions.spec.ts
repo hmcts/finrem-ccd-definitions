@@ -192,7 +192,7 @@ test.describe('Contested - General Application Directions', () => {
     // non-prod only
     test(
       'General Application Directions (MH) with hearing',
-      { tag: [] },
+      { tag: ['@nightly'] },
       async ({
         loginPage,
         manageCaseDashboardPage,

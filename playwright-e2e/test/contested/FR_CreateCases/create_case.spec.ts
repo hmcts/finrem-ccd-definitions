@@ -8,7 +8,7 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 
 test(
   'Contested - Create Case FormA Matrimonial Submission by Solicitor',
-  { tag: ['@accessibility','@chrome'] },
+  { tag: ['@accessibility','@chrome', '@nightly'] },
   async (
     {
       loginPage,

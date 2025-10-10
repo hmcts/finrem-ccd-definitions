@@ -6,7 +6,7 @@ import { ConsentedCaseFactory } from '../../data-utils/factory/consented/Consent
 
 test(
   'Consented - Issue Application',
-  { tag: [] },
+  { tag: ['@nightly'] },
   async ({
     loginPage,
     manageCaseDashboardPage,

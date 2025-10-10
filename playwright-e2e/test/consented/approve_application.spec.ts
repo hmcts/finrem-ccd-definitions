@@ -6,7 +6,7 @@ import { ConsentedCaseFactory } from '../../data-utils/factory/consented/Consent
 
 test(
   'Consented - Approve Application - Assign to Judge - Upload Approved Order - Send Order',
-  { tag: [] },
+  { tag: ['@nightly'] },
   async (
     { 
       loginPage,

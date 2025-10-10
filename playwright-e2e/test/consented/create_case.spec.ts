@@ -5,7 +5,7 @@ import {ConsentedEvents} from "../../config/case-data.ts";
 
 test(
   'Consented - Create Case',
-  { tag: ['@accessibility','@edge'] },
+  { tag: ['@accessibility','@edge', '@nightly'] },
   async (
     { loginPage,
       manageCaseDashboardPage,
