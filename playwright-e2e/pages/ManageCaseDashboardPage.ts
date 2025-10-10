@@ -26,7 +26,6 @@ export class ManageCaseDashboardPage {
 
   async visit(){
     await this.page.goto(`${this.url}`);
-    // await this.clearCookies(); Causing flaky tests, commenting out for now
   }
 
   async signOut() {
@@ -34,11 +33,4 @@ export class ManageCaseDashboardPage {
     await this.signOutButton.click();
   }
 
-  async clearCookies() {
-    await this.page.context().clearCookies();
-    await this.page.evaluate(() => {
-      window.localStorage.clear();
-      window.sessionStorage.clear();
-    });
-  }
 }

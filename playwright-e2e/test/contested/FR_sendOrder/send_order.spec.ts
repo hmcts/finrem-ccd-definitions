@@ -1,12 +1,9 @@
-import { test } from '../../../fixtures/fixtures';
+import {test} from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import { ContestedEvents } from '../../../config/case-data';
-import { sendOrderTableData } from '../../../resources/check_your_answer_content/send_order/sendOrderTable';
-import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
-import { DateHelper } from '../../../data-utils/DateHelper';
-import { contestedSendOrderTabData } from '../../../resources/tab_content/contested/send_order_tab';
+import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory';
+import {ContestedEvents} from '../../../config/case-data';
+import {sendOrderTableData} from '../../../resources/check_your_answer_content/send_order/sendOrderTable';
+import {contestedSendOrderTabData} from '../../../resources/tab_content/contested/send_order_tab';
 
 test.describe('Contested - Approved and Send Order', () => {
   test(

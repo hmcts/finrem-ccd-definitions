@@ -11,6 +11,7 @@ const FILE_PATHS = {
   xlsx: './playwright-e2e/resources/file/test.xlsx',
   xls: './playwright-e2e/resources/file/test.xls'
 };
+
 //This test is currently flaky due to doc uploads rate limiting and needs to be fixed before re-enabling
 test.describe.skip('Contested - File Type Restrictions on uploading documents', () => { 
   test(

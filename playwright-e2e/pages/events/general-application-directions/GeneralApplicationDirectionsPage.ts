@@ -1,9 +1,9 @@
-import { type Page, expect, Locator } from '@playwright/test';
-import { BaseJourneyPage } from "../../BaseJourneyPage";
-import { YesNoRadioEnum } from "../../helpers/enums/RadioEnums";
-import { camelCase } from "lodash";
+import {expect, Locator, type Page} from '@playwright/test';
+import {YesNoRadioEnum} from "../../helpers/enums/RadioEnums";
+import {ManageHearingPage} from "../manage-hearings/ManageHearing.ts";
+import {CommonActionsHelper} from "../../helpers/CommonActionsHelper.ts";
 
-export class GeneralApplicationDirectionsPage extends BaseJourneyPage {
+export class GeneralApplicationDirectionsPage extends ManageHearingPage {
     private readonly isAHearingRequired: Locator;
     private readonly updateApplicationDirectionsHearingRadio: Locator;
     private readonly recitalDetails: Locator;
@@ -11,18 +11,17 @@ export class GeneralApplicationDirectionsPage extends BaseJourneyPage {
     private readonly judgeDropdown: Locator;
     private readonly judgeNameLabel: Locator;
     private readonly judgeNameDetails: Locator;
-    private readonly courtDayLabel: Locator;
     private readonly courtDayDetails: Locator;
     private readonly courtMonthDetails: Locator;
     private readonly courtYearDetails: Locator;
     private readonly checkJudgeDirectionsLabel: Locator;
     private readonly judgeDirectionsDetails: Locator;
-    private readonly hearingTime: Locator;
-    private readonly hearingTimeEstimate: Locator;
     private readonly additionalInformation: Locator;
+    private readonly selectNoForNoticeOfHearingErrorMessage: Locator;
+    private readonly selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage: Locator;
 
-    public constructor(page: Page) {
-        super(page);
+    public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
+        super(page, commonActionsHelper);
         this.isAHearingRequired = page.locator('#generalApplicationDirectionsHearingRequired');
         this.updateApplicationDirectionsHearingRadio = page.locator('#generalApplicationDirectionsHearingRequired_No');
         this.checkRecitalsLabel = page.getByText('Recitals (Optional)');
@@ -30,15 +29,15 @@ export class GeneralApplicationDirectionsPage extends BaseJourneyPage {
         this.judgeDropdown = page.locator('#generalApplicationDirectionsJudgeType');
         this.judgeNameLabel = page.getByLabel('Name of Judge');
         this.judgeNameDetails = page.locator('#generalApplicationDirectionsJudgeName');
-        this.courtDayLabel = page.getByText('Court order date');
         this.courtDayDetails = page.locator('#generalApplicationDirectionsCourtOrderDate-day');
         this.courtMonthDetails = page.locator('#generalApplicationDirectionsCourtOrderDate-month');
         this.courtYearDetails = page.locator('#generalApplicationDirectionsCourtOrderDate-year');
         this.checkJudgeDirectionsLabel = page.getByText('Directions from the Judge');
         this.judgeDirectionsDetails = page.locator('#generalApplicationDirectionsTextFromJudge');
-        this.hearingTime = this.page.locator(`#generalApplicationDirectionsHearingTime`);
-        this.hearingTimeEstimate = this.page.locator(`#generalApplicationDirectionsHearingTimeEstimate`);
         this.additionalInformation = this.page.locator(`#generalApplicationDirectionsAdditionalInformation`);
+        this.selectNoForNoticeOfHearingErrorMessage = page.getByText('Select "Yes" for "Do you want')
+        this.selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage = page.getByText('Select Applicant and');
+
     }
 
     async chooseWhetherAHearingIsRequired(whetherAHearingIsRequired: YesNoRadioEnum) {
@@ -75,51 +74,13 @@ export class GeneralApplicationDirectionsPage extends BaseJourneyPage {
         await this.judgeDirectionsDetails.fill(text);
     }
 
-    async enterHearingDate(day: string, month: string, year: string) {
-        const hearingDateDay = this.page.locator(`#generalApplicationDirectionsHearingDate-day`);
-        const hearingDateMonth = this.page.locator(`#generalApplicationDirectionsHearingDate-month`);
-        const hearingDateYear = this.page.locator(`#generalApplicationDirectionsHearingDate-year`);
-
-        await expect(hearingDateDay).toBeVisible();
-        await expect(hearingDateMonth).toBeVisible();
-        await expect(hearingDateYear).toBeVisible();
-
-        await hearingDateDay.fill(day);
-        await hearingDateMonth.fill(month);
-        await hearingDateYear.fill(year);
+    async verifyErrorMessageForNoNotice(): Promise<void> {
+        const errorMessage = this.selectNoForNoticeOfHearingErrorMessage
+        await expect(errorMessage).toBeVisible();
     }
 
-    async enterHearingTime(time: string) {
-        await expect(this.hearingTime).toBeVisible();
-        await this.hearingTime.fill(time);
-    }
-
-    async enterTimeEstimate(duration: string) {
-        await expect(this.hearingTimeEstimate).toBeVisible();
-        await this.hearingTimeEstimate.fill(duration);
-    }
-
-    async selectCourtForHearing(courtRegion: string = "London", courtFrc: string = "London FRC",
-                                localCourt: string = "BROMLEY COUNTY COURT AND FAMILY COURT") {
-        const regionListDropDown = this.page.locator(`#generalApplicationDirections_regionList`);
-        await expect(regionListDropDown).toBeVisible();
-        await regionListDropDown.selectOption(courtRegion);
-
-        const frcDropDown = this.page
-            .locator(`#generalApplicationDirections_${camelCase(courtRegion)}FRCList`);
-        await expect(frcDropDown).toBeVisible();
-        await frcDropDown.selectOption(`${courtFrc}`);
-
-        // Select the local court from the visible dropdown
-        const courtListDropDown = this.page.locator(
-            'select[id^="generalApplicationDirections_"][id*="CourtList"]:not(:where(div[hidden] *))'
-        );
-        await expect(courtListDropDown).toBeVisible();
-        await courtListDropDown.selectOption(localCourt);
-    }
-
-    async enterAdditionalInformationAboutHearing(information: string = "Whatever information is required for the hearing") {
-        await expect(this.additionalInformation).toBeVisible();
-        await this.additionalInformation.fill(information);
+    async verifyApplicantAndRespondentNotSelectedToReceiveNoticeError(): Promise<void> {
+        const errorMessage = this.selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage;
+        await expect(errorMessage).toBeVisible();
     }
 }

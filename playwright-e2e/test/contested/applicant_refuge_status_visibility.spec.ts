@@ -17,7 +17,6 @@ test(
     { 
       loginPage,
       manageCaseDashboardPage,
-      manageOrgDashboardPage,
       caseDetailsPage
     }
   ) => {

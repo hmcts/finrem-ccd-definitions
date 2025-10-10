@@ -1,4 +1,4 @@
-import { test, expect } from '../../../fixtures/fixtures';
+import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ApplicationtypeEnum, MaleOrFemaleEnum, YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../resources/tab_content/contested/solicitor_create_case_tabs';
@@ -34,8 +34,7 @@ test(
       caseDetailsPage,
       createCaseSavingYourAnswersPage,
       axeUtils,
-    },
-    testInfo
+    }
   ) => {
     // Set up court information.
     const courtName: string = "COVENTRY COMBINED COURT CENTRE";
