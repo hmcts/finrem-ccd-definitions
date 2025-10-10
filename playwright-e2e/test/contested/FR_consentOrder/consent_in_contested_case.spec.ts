@@ -144,8 +144,8 @@ test.describe("Consent order in contested case", () => {
                                     label: 'generalOrder-',
                                     contentSnippets: [
                                         `Case No: ${caseId}`,
-                                        `Order made by District Judge Mumford on ${DateHelper.getTodayFullFormattedDate()} SITTING AT the`,
-                                        `Family Court at the ${courtName}.`,
+                                        `Order made by District Judge Mumford on ${DateHelper.getTodayFullFormattedDate()} SITTING AT the Family`,
+                                        `Court at the ${courtName}.`,
                                         description
                                     ]
                                 }
@@ -397,7 +397,7 @@ test.describe("Consent order in contested case", () => {
                     'Reason for Refusal',
                     ...reasons,
                     { cellItem: 'Select Judge', value: 'His Honour Judge' },
-                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_SURNAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             });
