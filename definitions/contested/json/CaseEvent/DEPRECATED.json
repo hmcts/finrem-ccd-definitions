@@ -1,0 +1,15 @@
+[
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_createGeneralApplication",
+    "Name": "Create General Application",
+    "Description": "Deprecated -Kept as needed this for existing cases",
+    "DisplayOrder": 124,
+    "PreConditionState(s)": "applicationIssued;schedulingAndHearing;prepareForHearing;solicitorDraftOrder;judgeDraftOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;caseWorkerReview;gateKeepingAndAllocation;caseFileSubmitted;reviewOrder;awaitingJudiciaryResponse;close;orderSent",
+    "PostConditionState": "generalApplication",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N"
+  }
+]
