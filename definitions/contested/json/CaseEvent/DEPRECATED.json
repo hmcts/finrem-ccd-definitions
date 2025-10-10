@@ -21,7 +21,6 @@
     "DisplayOrder": 33,
     "PreConditionState(s)": "reviewOrder",
     "PostConditionState": "draftOrderNotApproved",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested-application-not-approved-submit",
     "RetriesTimeoutURLSubmittedEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
