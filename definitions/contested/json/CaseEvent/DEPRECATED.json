@@ -11,5 +11,21 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_draftOrderNotApproved",
+    "Name": "Draft Order Not Approved",
+    "Description": "Draft Order Not Approved",
+    "DisplayOrder": 33,
+    "PreConditionState(s)": "reviewOrder",
+    "PostConditionState": "draftOrderNotApproved",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested-application-not-approved-submit",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/notify/order-not-approved",
+    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
   }
 ]
