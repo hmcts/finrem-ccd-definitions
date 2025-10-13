@@ -2831,7 +2831,9 @@
     "FieldType": "FR_manageHearingTabItem",
     "ElementLabel": "Hearing details",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "FieldShowCondition": "hearingDetailsForGeneralApplication.tabHearingType=\"*\"",
+    "_comment": "\"FieldShowCondition\" checks hearingDetailsForGeneralApplication.tabHearingType, which is sufficient since it's a mandatory hearing field."
   },
   {
     "LiveFrom": "01/01/2017",
