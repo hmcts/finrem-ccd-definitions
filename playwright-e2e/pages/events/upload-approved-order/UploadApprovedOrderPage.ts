@@ -28,14 +28,20 @@ export class UploadApprovedOrderPage extends BaseJourneyPage {
     private readonly firstHearingDateFieldYear: Locator;
     private readonly firstHearingCourtZoneDropDown: Locator;
     private readonly firstHearingTypeDropDown: Locator;
+    private readonly firstUploadApprovedOrderAdditionalAttachmentAddNewBtn: Locator;
+    private readonly firstUploadApprovedOrderAdditionalAttachmentField: Locator;
+    private readonly secondUploadApprovedOrderField: Locator;
 
     private static readonly DOCUMENT_FORMAT_ERROR_MESSAGE = "Document format is not supported";
     
     public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
         super(page);
         this.commonActionsHelper = commonActionsHelper;
-        this.firstUploadApprovedOrderField = page.locator('#uploadHearingOrder_0_uploadDraftDocument');
+        this.firstUploadApprovedOrderField = page.locator('#cwApprovedOrderCollection_0_uploadDraftDocument');
         this.firstUploadApprovedOrderFieldErrorMessageLocator = page.locator('label:has-text("Upload Approved Order")').locator(`xpath=following-sibling::*[contains(text(), "${UploadApprovedOrderPage.DOCUMENT_FORMAT_ERROR_MESSAGE}")]`);      
+        this.firstUploadApprovedOrderAdditionalAttachmentAddNewBtn = page.locator('#cwApprovedOrderCollection_0_additionalDocuments').getByRole('button', { name: 'Add new' })
+        this.firstUploadApprovedOrderAdditionalAttachmentField = page.locator('#cwApprovedOrderCollection_0_additionalDocuments_value');
+        this.secondUploadApprovedOrderField = page.locator('#cwApprovedOrderCollection_1_uploadDraftDocument');
 
         this.uploadApprovedOrderGroup = page.locator(`div[id$='uploadHearingOrder']`);
         this.judgeDropDown = page.getByLabel('Select Judge');
@@ -58,11 +64,21 @@ export class UploadApprovedOrderPage extends BaseJourneyPage {
     }
 
     async uploadFirstUploadApprovedOrder(documentName: string) {
-        const addNewButton = this.uploadApprovedOrderGroup.getByRole('button', { name: 'Add new' });
-        await addNewButton.click();
-
         const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
         await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.firstUploadApprovedOrderField, filePayload);
+    }
+
+    async uploadSecondUploadApprovedOrder(documentName: string) {
+        const AddNewButton = this.page.getByRole('button', { name: 'Add new' }).nth(2)
+        await AddNewButton.click();
+        const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.secondUploadApprovedOrderField, filePayload);
+    }
+
+    async uploadAdditionalAttachment(documentName: string) {
+        await this.firstUploadApprovedOrderAdditionalAttachmentAddNewBtn.click();
+        const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.docx', documentName);
+        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.firstUploadApprovedOrderAdditionalAttachmentField, filePayload);
     }
 
     async selectJudge(judge: string) {
