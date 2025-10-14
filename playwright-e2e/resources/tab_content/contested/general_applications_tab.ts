@@ -8,7 +8,8 @@ export const contestedGeneralApplicationTabData = [
       { tabItem: "Time estimate", value: "5" },
       { tabItem: "Status", value: "Approved, Completed" },
       { tabItem: "Upload General Application", value: "test.pdf" },
-      ]
+      ],
+      excludedContent: ["Hearing details"]
     }
   ];
 
