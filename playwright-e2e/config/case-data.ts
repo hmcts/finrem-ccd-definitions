@@ -1,4 +1,4 @@
-// Enums for Case Types and User Types
+// Enums for Case Types and User Types*
 export enum CaseType {
   Consented = "FinancialRemedyMVP2",
   Contested = "FinancialRemedyContested"
