@@ -4,7 +4,7 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 import { ContestedEvents } from '../../../config/case-data';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
-import { generateHearingsTabData, processOrderHearingTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import { buildHearingsTabContent, generateHearingsTabData, processOrderHearingTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 import { unprocessedApprovedOrdersNoHearingTable, unprocessedApprovedOrdersWithNewHearingTable, unprocessedApprovedOrdersWithOldHearingTable } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable.ts';
 import { processOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs.ts';
 import { createDraftOrdersApprovedWithHearingTabData } from '../../../resources/tab_content/contested/draft_orders_tabs.ts';
@@ -246,28 +246,30 @@ test.describe('Contested - Process Order (Old Style)', () => {
       await caseDetailsPage.checkHasBeenUpdated('Process Order');
 
       await performManageHearingsMigration(caseDetailsPage, blankPage);
-      await caseDetailsPage.assertTabData(generateHearingsTabData([
-        {
-          typeOfHearing: "Directions (DIR)",
-          court: "Chester Civil And Family Justice Centre",
-          hearingAttendance: "Hearing mode not specified",
-          hearingDate: "01 Jan 2024 10:00",
-          hearingTimeEstimate: "1 hour",
-          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
-          additionalInformation: "",
-          hearingDocuments: undefined
-        },
-        {
-          typeOfHearing: "First Directions Appointment (FDA)",
-          court: "Manchester County And Family Court",
-          hearingAttendance: "In Person",
-          hearingDate: DateHelper.getFormattedDateTwelveWeeksLater() + " 10:00am",
-          hearingTimeEstimate: "1hr 20mins",
-          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
-          additionalInformation: "This is additional information about the hearing",
-          hearingDocuments: "HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nPfdNcdrCoverLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nDummy QA copy.doc"
-        }
-      ]));
+      await caseDetailsPage.assertTabData(
+        buildHearingsTabContent([
+          {
+        typeOfHearing: "Directions (DIR)",
+        court: "Chester Civil And Family Justice Centre",
+        hearingAttendance: "Hearing mode not specified",
+        hearingDate: "01 Jan 2024 10:00",
+        hearingTimeEstimate: "1 hour",
+        whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+        additionalInformation: "",
+        hearingDocuments: undefined
+          },
+          {
+        typeOfHearing: "First Directions Appointment (FDA)",
+        court: "Manchester County And Family Court",
+        hearingAttendance: "In Person",
+        hearingDate: `${await DateHelper.getFormattedDateTwelveWeeksLater()} 10:00am`,
+        hearingTimeEstimate: "1hr 20mins",
+        whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+        additionalInformation: "This is additional information about the hearing",
+        hearingDocuments: "HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nPfdNcdrCoverLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nDummy QA copy.doc"
+          }
+        ])
+      );
 
     }
   );
