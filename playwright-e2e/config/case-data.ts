@@ -1,4 +1,4 @@
-// Enums for Case Types and User Types*
+// Enums for Case Types and User Types
 export enum CaseType {
   Consented = "FinancialRemedyMVP2",
   Contested = "FinancialRemedyContested"
@@ -221,7 +221,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     ccdCallback: "FR_consentSendOrder"
   },
   uploadApprovedOrder: {
-    listItem: "Upload Approved Order",
+    listItem: "Upload approved order",
     ccdCallback: "FR_uploadApprovedOrderMh"
   },
   judgeUploadApprovedOrder: {

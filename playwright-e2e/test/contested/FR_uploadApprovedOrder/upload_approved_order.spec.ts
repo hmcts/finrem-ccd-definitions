@@ -5,6 +5,8 @@ import {ContestedEvents} from '../../../config/case-data.ts';
 import {YesNoRadioEnum} from '../../../pages/helpers/enums/RadioEnums.ts';
 import {newUploadApprovedOrderMHTabDataOnHearing1} from '../../../resources/tab_content/contested/hearings_tabs.ts';
 import {AxeUtils} from "../../../fixtures/utils/axe-utils.ts";
+import { UploadApprovedOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs.ts';
+import { UploadApprovedOrderOrdersTabData } from '../../../resources/tab_content/contested/orders_tab.ts';
 import {UploadApprovedOrderMHPage} from "../../../pages/events/upload-approved-order/UploadApprovedOrderMHPage.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
 
@@ -21,6 +23,8 @@ async function performUploadApprovedOrderFlowMH(
 ): Promise<string> {
   await caseDetailsPage.selectNextStep(ContestedEvents.uploadApprovedOrder);
   await uploadApprovedOrderMHPage.uploadFirstUploadApprovedOrder('approvedOrder.pdf');
+  await uploadApprovedOrderMHPage.uploadSecondUploadApprovedOrder('approvedOrder.pdf');
+  await uploadApprovedOrderMHPage.uploadAdditionalAttachment('additionalAttachment.docx');
   await uploadApprovedOrderMHPage.navigateContinue(ContestedEvents.uploadApprovedOrder.ccdCallback, 2);
   await uploadApprovedOrderMHPage.selectJudge('District Judge');
   await uploadApprovedOrderMHPage.enterJudgeName('District Judge Smith');
@@ -64,7 +68,10 @@ test.describe('Contested - Upload Approved Order (caseworker)', () => {
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
     await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
     await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-    const date = await performUploadApprovedOrderFlowMH(caseDetailsPage, uploadApprovedOrderMHPage, axeUtils);
-    await caseDetailsPage.assertTabData(newUploadApprovedOrderMHTabDataOnHearing1(date));
+    await performUploadApprovedOrderFlowMH(caseDetailsPage, uploadApprovedOrderMHPage, uploadApprovedOrderMHPage, axeUtils);
+    // Verify data on hearings, case documents and orders tabs
+    await caseDetailsPage.assertTabData(newUploadApprovedOrderMHTabDataOnHearing1);
+    await caseDetailsPage.assertTabData(UploadApprovedOrderCaseDocumentsTabData);
+    await caseDetailsPage.assertTabData(UploadApprovedOrderOrdersTabData);
   });
 });
