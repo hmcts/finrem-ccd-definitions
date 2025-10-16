@@ -1,4 +1,5 @@
 import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
+import {DateHelper} from "../../../data-utils/DateHelper.ts";
 
 export const contestedSendOrderTabData = [
   {
@@ -21,6 +22,10 @@ export const contestedSendOrderTabData = [
         "Finalised Orders 1",
         { tabItem: "Upload Document", value: "approvedOrder.pdf" },
         { tabItem: "Additional attachments", value: "additionalAttachment.pdf" },
+        { tabItem: "Order created at", value: DateHelper.getUtcDateTimeFormatted(), exact: false},
+        "Finalised Orders 2",
+        { tabItem: "Upload Document", value: "approvedOrder.pdf" },
+        { tabItem: "Order created at", value: DateHelper.getUtcDateTimeFormatted(), exact: false},
       ]
     }
   ];

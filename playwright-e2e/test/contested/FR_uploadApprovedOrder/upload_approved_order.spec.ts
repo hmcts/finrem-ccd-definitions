@@ -7,7 +7,7 @@ import {newUploadApprovedOrderMHTabDataOnHearing1} from '../../../resources/tab_
 import {AxeUtils} from "../../../fixtures/utils/axe-utils.ts";
 import { UploadApprovedOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs.ts';
 import { UploadApprovedOrderOrdersTabData } from '../../../resources/tab_content/contested/orders_tab.ts';
-import {UploadApprovedOrderMHPage} from "../../../pages/events/upload-approved-order/UploadApprovedOrderMHPage.ts";
+import {UploadApprovedOrderPage} from "../../../pages/events/upload-approved-order/UploadApprovedOrderPage.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
 
 async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
@@ -18,41 +18,41 @@ async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, l
 
 async function performUploadApprovedOrderFlowMH(
   caseDetailsPage: any,
-  uploadApprovedOrderMHPage: UploadApprovedOrderMHPage,
+  uploadApprovedOrderPage: UploadApprovedOrderPage,
   axeUtils: AxeUtils
 ): Promise<string> {
   await caseDetailsPage.selectNextStep(ContestedEvents.uploadApprovedOrder);
-  await uploadApprovedOrderMHPage.uploadFirstUploadApprovedOrder('approvedOrder.pdf');
-  await uploadApprovedOrderMHPage.uploadSecondUploadApprovedOrder('approvedOrder.pdf');
-  await uploadApprovedOrderMHPage.uploadAdditionalAttachment('additionalAttachment.docx');
-  await uploadApprovedOrderMHPage.navigateContinue(ContestedEvents.uploadApprovedOrder.ccdCallback, 2);
-  await uploadApprovedOrderMHPage.selectJudge('District Judge');
-  await uploadApprovedOrderMHPage.enterJudgeName('District Judge Smith');
-  await uploadApprovedOrderMHPage.enterCourtOrderDate('01', '01', '2022');
+  await uploadApprovedOrderPage.uploadFirstUploadApprovedOrder('approvedOrder.pdf');
+  await uploadApprovedOrderPage.uploadSecondUploadApprovedOrder('approvedOrder.pdf');
+  await uploadApprovedOrderPage.uploadAdditionalAttachment('additionalAttachment.docx');
+  await uploadApprovedOrderPage.navigateContinue(ContestedEvents.uploadApprovedOrder.ccdCallback, 2);
+  await uploadApprovedOrderPage.selectJudge('District Judge');
+  await uploadApprovedOrderPage.enterJudgeName('District Judge Smith');
+  await uploadApprovedOrderPage.enterCourtOrderDate('01', '01', '2022');
   await axeUtils.audit();
-  await uploadApprovedOrderMHPage.navigateContinue(ContestedEvents.uploadApprovedOrder.ccdCallback, 3);
-  await uploadApprovedOrderMHPage.selectIsThisFinalOrder(YesNoRadioEnum.YES);
-  await uploadApprovedOrderMHPage.selectDoYouWantToAddHearing(YesNoRadioEnum.YES);
-  await uploadApprovedOrderMHPage.selectTypeOfHearing('First Directions Appointment (FDA)');
-  await uploadApprovedOrderMHPage.enterTimeEstimate('3 hours');
-  await uploadApprovedOrderMHPage.enterHearingDate('01', '01', '2025');
-  await uploadApprovedOrderMHPage.enterHearingTime('10:00');
-  await uploadApprovedOrderMHPage.selectCourtForHearing();
-  await uploadApprovedOrderMHPage.selectHearingAttendance('Remote - video call');
-  await uploadApprovedOrderMHPage.enterAdditionalInformationAboutHearing('This is a test hearing');
-  await uploadApprovedOrderMHPage.selectAdditionalHearingDocument(YesNoRadioEnum.YES);
-  await uploadApprovedOrderMHPage.uploadOtherDocuments('OtherDoc.doc');
-  await uploadApprovedOrderMHPage.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
+  await uploadApprovedOrderPage.navigateContinue(ContestedEvents.uploadApprovedOrder.ccdCallback, 3);
+  await uploadApprovedOrderPage.selectIsThisFinalOrder(YesNoRadioEnum.YES);
+  await uploadApprovedOrderPage.selectDoYouWantToAddHearing(YesNoRadioEnum.YES);
+  await uploadApprovedOrderPage.selectTypeOfHearing('First Directions Appointment (FDA)');
+  await uploadApprovedOrderPage.enterTimeEstimate('3 hours');
+  await uploadApprovedOrderPage.enterHearingDate('01', '01', '2025');
+  await uploadApprovedOrderPage.enterHearingTime('10:00');
+  await uploadApprovedOrderPage.selectCourtForHearing();
+  await uploadApprovedOrderPage.selectHearingAttendance('Remote - video call');
+  await uploadApprovedOrderPage.enterAdditionalInformationAboutHearing('This is a test hearing');
+  await uploadApprovedOrderPage.selectAdditionalHearingDocument(YesNoRadioEnum.YES);
+  await uploadApprovedOrderPage.uploadOtherDocuments('OtherDoc.doc');
+  await uploadApprovedOrderPage.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
   await axeUtils.audit({
     exclude: [
       '#workingHearing_additionalHearingDocs_value'
     ]
     }
   );
-  await uploadApprovedOrderMHPage.navigateContinue("submit");
+  await uploadApprovedOrderPage.navigateContinue("submit");
   const date = DateHelper.getUtcDateTimeFormatted();
   // CYA page
-  await uploadApprovedOrderMHPage.navigateSubmit();
+  await uploadApprovedOrderPage.navigateSubmit();
   return date;
 }
 
@@ -61,16 +61,16 @@ test.describe('Contested - Upload Approved Order (caseworker)', () => {
     loginPage,
     manageCaseDashboardPage,
     caseDetailsPage,
-    uploadApprovedOrderMHPage,
+    uploadApprovedOrderPage,
     axeUtils,
   }
   ) => {
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
     await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
     await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-    await performUploadApprovedOrderFlowMH(caseDetailsPage, uploadApprovedOrderMHPage, uploadApprovedOrderMHPage, axeUtils);
+    await performUploadApprovedOrderFlowMH(caseDetailsPage, uploadApprovedOrderPage, axeUtils);
     // Verify data on hearings, case documents and orders tabs
-    await caseDetailsPage.assertTabData(newUploadApprovedOrderMHTabDataOnHearing1);
+    await caseDetailsPage.assertTabData(newUploadApprovedOrderMHTabDataOnHearing1());
     await caseDetailsPage.assertTabData(UploadApprovedOrderCaseDocumentsTabData);
     await caseDetailsPage.assertTabData(UploadApprovedOrderOrdersTabData);
   });

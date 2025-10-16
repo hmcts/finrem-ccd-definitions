@@ -15,7 +15,7 @@ export const processOrderHearingTabData =[{
   ]
 }];
 
-export function newUploadApprovedOrderMHTabDataOnHearing1(date?: string) : Tab[] {
+export function newUploadApprovedOrderMHTabDataOnHearing1() : Tab[] {
   return [
     {
       tabName: 'Hearings',
@@ -32,15 +32,6 @@ export function newUploadApprovedOrderMHTabDataOnHearing1(date?: string) : Tab[]
           tabItem: "Hearing Documents", value:
             'HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nPfdNcdrCoverLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nOtherDoc.doc'
         }
-      ]
-    },
-    {
-      tabName: 'Orders',
-      tabContent: [
-        "Finalised Orders",
-        "Finalised Orders 1",
-        {tabItem: "Upload Document", value: "approvedOrder.pdf"},
-        {tabItem: "Order created at", value: date ?? DateHelper.getUtcDateTimeFormatted(), exact: false},
       ]
     }
   ];

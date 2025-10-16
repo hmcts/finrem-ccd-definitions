@@ -81,7 +81,7 @@ import {UnprocessedApprovedOrdersPage} from '../pages/events/process-order/Unpro
 import {ProcessOrderHearingDetailsPage} from '../pages/events/process-order/ProcessOrderHearingDetailsPage.ts';
 import {ConsentApplicationApprovedPage} from '../pages/events/consent-application/ConsentApplicationApprovedPage.ts';
 import {ConsentOrderNotApprovedPage} from '../pages/events/consent-application/ConsentOrderNotApprovedPage.ts';
-import {UploadApprovedOrderMHPage} from '../pages/events/upload-approved-order/UploadApprovedOrderMHPage.ts';
+import {UploadApprovedOrderPage} from '../pages/events/upload-approved-order/UploadApprovedOrderPage.ts';
 import {NoticeOfChangePage} from '../pages/NoticeOfChangePage.ts';
 import { JudgeUploadApprovedOrderPage } from '../pages/events/judge-upload-approved-order/JudgeUploadApprovedOrderPage.ts';
 
@@ -158,7 +158,7 @@ type CreateFixtures = {
   submitUploadedCaseFilesPage : SubmitUploadedCaseFilesPage;
   consentApplicationApprovePage: ConsentApplicationApprovedPage;
   consentOrderNotApprovedPage: ConsentOrderNotApprovedPage;
-  uploadApprovedOrderMHPage: UploadApprovedOrderMHPage;
+  uploadApprovedOrderPage: UploadApprovedOrderPage;
   noticeOfChangePage: NoticeOfChangePage;
   judgeUploadApprovedOrderPage: JudgeUploadApprovedOrderPage;
 };
@@ -371,8 +371,8 @@ export const test = base.extend<CreateFixtures>({
   consentOrderNotApprovedPage: async ({ page }, use) => {
     await use(new ConsentOrderNotApprovedPage(page));
   },
-  uploadApprovedOrderMHPage: async ({ page }, use) => {
-    await use(new UploadApprovedOrderMHPage(page, commonActionsHelper));
+  uploadApprovedOrderPage: async ({ page }, use) => {
+    await use(new UploadApprovedOrderPage(page, commonActionsHelper));
   },
   noticeOfChangePage: async ({ page }, use) => {
     await use(new NoticeOfChangePage(page));
