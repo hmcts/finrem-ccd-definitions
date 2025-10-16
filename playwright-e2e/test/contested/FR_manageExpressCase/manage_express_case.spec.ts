@@ -7,7 +7,7 @@ test.describe('Contested - Manage Express Case', () => {
   test(
     'Contested - Enrolled case (Form A Case) - Remove case from express pilot',
     { tag: [] },
-    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage, axeUtils }, testInfo) => {
+    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage, axeUtils }) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(true);
 
       // Navigate to case and assert initial tab data

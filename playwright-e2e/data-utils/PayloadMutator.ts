@@ -18,10 +18,6 @@ export const ESTIMATED_ASSETS_UNDER_1M = [
     { action: 'insert', key: 'issueDate', value: issueDate },
   ];
 
-  export const LIST_FOR_HEARING = (hearingDate: string) => [
-    { action: 'insert', key: 'hearingDate', value: hearingDate },
-  ];
-
   export const DIRECTIONS_LIST_DATA = (codeForGeneralApplicationDirectionsEvent: string) => [
     { action: 'insert', key: 'generalApplicationDirectionsList.value.code', value: codeForGeneralApplicationDirectionsEvent },
     { action: 'insert', key: 'generalApplicationDirectionsList.list_items[0].code', value: codeForGeneralApplicationDirectionsEvent }

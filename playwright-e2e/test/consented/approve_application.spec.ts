@@ -1,6 +1,6 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { CommonEvents, ConsentedEvents } from '../../config/case-data';
+import { ConsentedEvents } from '../../config/case-data';
 import { approvedOrderTabData } from '../../resources/tab_content/consented/approve_application_tabs';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
 
@@ -26,7 +26,7 @@ test(
     await loginPage.loginWaitForPath(config.judge.email, config.judge.password, config.manageCaseBaseURL, config.loginPaths.cases);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
-    // Approve Application 
+    // Approve Application
     await caseDetailsPage.selectNextStep(ConsentedEvents.approveApplication);
     await approveApplicationPage.selectIsSubjectTo(true)
     await approveApplicationPage.selectIsPensionProvider(false);
@@ -36,7 +36,7 @@ test(
     await approveApplicationPage.navigateSubmit();
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.approveApplication.listItem);
 
-    // Assert Tab Data      
+    // Assert Tab Data  
     await caseDetailsPage.assertTabData(approvedOrderTabData);
     await manageCaseDashboardPage.signOut();
 
@@ -63,14 +63,14 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
     
     // Upload Approved Order as Judge
-    await caseDetailsPage.selectNextStep(CommonEvents.uploadApprovedOrder);
+    await caseDetailsPage.selectNextStep(ConsentedEvents.uploadApprovedOrder);
     await approveApplicationPage.selectIsSubjectTo(true)
     await approveApplicationPage.selectIsPensionProvider(false);
     await approveApplicationPage.selectJudge('District Judge')
     await approveApplicationPage.uploadConsentOrderFile('consentOrder.pdf');
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(CommonEvents.uploadApprovedOrder.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.uploadApprovedOrder.listItem);
 
     await manageCaseDashboardPage.signOut();
     

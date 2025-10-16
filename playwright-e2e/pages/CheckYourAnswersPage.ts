@@ -1,5 +1,5 @@
 import {expect, Locator, Page} from "@playwright/test";
-import {Table, TableRowItem} from "./components/table.ts";
+import {Table} from "./components/table.ts";
 
 export class CheckYourAnswersPage {
     private readonly page: Page;

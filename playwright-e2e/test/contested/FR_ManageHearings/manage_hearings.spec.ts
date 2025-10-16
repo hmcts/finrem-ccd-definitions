@@ -56,7 +56,7 @@ async function verifyDifferentActorsForCFV(
                         'with hearing attendance: In Person',
                         'at 10:00 AM',
                         'the probable length of hearing is 2 hours',
-                        DateHelper.formatToDayMonthYear(await DateHelper.getHearingDateUsingCurrentDate()),
+                        DateHelper.formatToDayMonthYear(await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat()),
                         `Dated: ${DateHelper.formatToDayMonthYear(DateHelper.getCurrentDate())}`,
                     ]
                 }
@@ -74,7 +74,7 @@ test.describe('Contested - Manage Hearings', () => {
     test(
         'Contested - Assert validations - Manage Hearings - Pre-Trial Review (PTR)', {
         tag: []},
-        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage, axeUtils}, testInfo) => {
+        async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage, axeUtils}) => {
 
             // Create and setup case
             const date = DateHelper.getCurrentDate();
@@ -288,7 +288,7 @@ test.describe('Contested - Manage Hearings', () => {
                                 'with hearing attendance: In Person',
                                 'at 10:00 AM',
                                 'the probable length of hearing is 2 hours',
-                                DateHelper.formatToDayMonthYear(await DateHelper.getHearingDateUsingCurrentDate()),
+                                DateHelper.formatToDayMonthYear(await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat()),
                                 `Dated: ${DateHelper.formatToDayMonthYear(DateHelper.getCurrentDate())}`,
                             ]
                         }
@@ -332,6 +332,7 @@ test.describe('Contested - Manage Hearings', () => {
                 uploadFiles: ["HearingNotice.pdf", "Form-G.pdf", "PfdNcdrComplianceLetter.pdf", "PfdNcdrCoverLetter.pdf", "OutOfFamilyCourtResolution.pdf", "Form-C.pdf", "Dummy QA copy.doc"]
             })]);
         })
+
     test('Contested - Check state is Prepare For Hearing after Add a Hearing event',
         { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage }) => {
             // Create and setup case up to issue application
