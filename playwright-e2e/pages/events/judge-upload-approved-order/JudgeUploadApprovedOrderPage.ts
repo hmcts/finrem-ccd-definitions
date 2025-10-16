@@ -37,9 +37,6 @@ export class JudgeUploadApprovedOrderPage extends BaseJourneyPage {
     }
 
     async uploadApprovedOrderDocument(fileName: string, position: number = 0) {
-        const addNewButton = this.page.getByRole('button', { name: 'Add new' }).first()
-        await addNewButton.click();
-
         await expect(this.uploadApprovedOrderDocumentHeading).toBeVisible();
 
         const uploadApprovedOrderDocument = this.page

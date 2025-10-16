@@ -5,6 +5,8 @@ import { CommonEvents, ContestedEvents } from '../../../config/case-data.ts';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 import { migratedUploadApprovedOrderTabDataOnHearing1, newUploadApprovedOrderMHTabDataOnHearing1 } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 import {AxeUtils} from "../../../fixtures/utils/axe-utils.ts";
+import { UploadApprovedOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs.ts';
+import { UploadApprovedOrderOrdersTabData } from '../../../resources/tab_content/contested/orders_tab.ts';
 
 async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
     await manageCaseDashboardPage.visit();
@@ -50,6 +52,8 @@ async function performUploadApprovedOrderFlowMH(
 ): Promise<void> {
   await caseDetailsPage.selectNextStep(ContestedEvents.uploadApprovedOrderMH);
   await uploadApprovedOrderPage.uploadFirstUploadApprovedOrder('approvedOrder.pdf');
+  await uploadApprovedOrderPage.uploadSecondUploadApprovedOrder('approvedOrder.pdf');
+  await uploadApprovedOrderPage.uploadAdditionalAttachment('additionalAttachment.docx');
   await uploadApprovedOrderMHPage.navigateContinue();
   await uploadApprovedOrderPage.selectJudge('District Judge');
   await uploadApprovedOrderPage.enterJudgeName('District Judge Smith');
@@ -124,6 +128,9 @@ test.describe('Contested - Upload Approved Order (caseworker)', () => {
     await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
     await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
     await performUploadApprovedOrderFlowMH(caseDetailsPage, uploadApprovedOrderPage, uploadApprovedOrderMHPage, testInfo, axeUtils);
+    // Verify data on hearings, case documents and orders tabs
     await caseDetailsPage.assertTabData(newUploadApprovedOrderMHTabDataOnHearing1);
+    await caseDetailsPage.assertTabData(UploadApprovedOrderCaseDocumentsTabData);
+    await caseDetailsPage.assertTabData(UploadApprovedOrderOrdersTabData);
   });
 });

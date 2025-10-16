@@ -13,3 +13,14 @@ export const contestedSendOrderTabData = [
       ]
     }
   ];
+
+  export const UploadApprovedOrderOrdersTabData = [
+    {
+      tabName: 'Orders',
+      tabContent: [
+        "Finalised Orders 1",
+        { tabItem: "Upload Document", value: "approvedOrder.pdf" },
+        { tabItem: "Additional attachments", value: "additionalAttachment.pdf" },
+      ]
+    }
+  ];
