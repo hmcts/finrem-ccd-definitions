@@ -1054,7 +1054,7 @@
     "ID": "FR_updateCaseDetailsSolicitor",
     "Name": "Update Contact Details",
     "Description": "Update solicitor contact details",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/get-user-roles",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "DisplayOrder": 59,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
