@@ -7,6 +7,7 @@ import { ADD_A_HEARING, APPROVE_ORDERS_DATA, ISSUE_APPLICATION, PROCESS_ORDER_DA
 import { DateHelper } from "../../DateHelper";
 
 export class ContestedEventApi {
+
   private static async updateCaseWorkerSteps(
     caseId: string,
     steps: { event: string; payload?: string; replacements?: ReplacementAction[] }[]
@@ -30,7 +31,6 @@ export class ContestedEventApi {
     caseId: string,
     asCaseWorker: boolean,
     steps: { event: string; jsonObject?: string }[],
-    // jsonObject?: string
   ): Promise<any> {
     const { email, password } = asCaseWorker ? config.caseWorker : config.judge;
     for (const step of steps) {
@@ -99,15 +99,6 @@ export class ContestedEventApi {
       ContestedEvents.applicationPaymentSubmission.ccdCallback,
       PayloadPath.Contested.formASubmit
     );
-  }
-
-  static async caseWorkerHwfDecisionMade(caseId: string) {
-    await this.updateCaseWorkerSteps(caseId, [
-      {
-        event: ContestedEvents.hwfDecisionMade.ccdCallback,
-        payload: PayloadPath.Contested.hwfDecisionMade,
-      },
-    ]);
   }
 
   static async caseWorkerManualPayment(caseId: string) {
@@ -299,19 +290,6 @@ export class ContestedEventApi {
     );
   }
 
-  static async listCaseForHearing(
-    caseId: string,
-    jsonObject: any[] =[]
-  ): Promise<void> {
-    await this.progressCaseToState(
-      caseId,
-      ContestedEvents.listForHearing.ccdCallback,
-      PayloadPath.Contested.listForHearingFdaEgOne,
-      jsonObject,
-      true
-    );
-  }
-
   static async approveOrders(
     caseId: string,
     jsonObject: any[] = []
@@ -412,20 +390,12 @@ export class ContestedEventApi {
   }
 
   static async caseWorkerPerformsAddAHearing(caseId: string, date?: string, extraReplacements: any[] = []) {
-    const hearingDate = date ? date : await DateHelper.getHearingDateUsingCurrentDate();
+    const hearingDate = date ? date : await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
     await this.updateCaseWorkerSteps(caseId, [
       {
         event: ContestedEvents.manageHearings.ccdCallback,
         payload: PayloadPath.Contested.manageHearingAddHearing,
         replacements: ADD_A_HEARING(hearingDate, extraReplacements)
-      },
-    ]);
-  }
-
-  static async manageHearingsMigration(caseId: string) {
-    await this.updateCaseWorkerSteps(caseId, [
-      {
-        event: ContestedEvents.manageHearingsMigration.ccdCallback,
       },
     ]);
   }
