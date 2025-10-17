@@ -22,10 +22,10 @@ export const contestedSendOrderTabData = [
         "Finalised Orders 1",
         { tabItem: "Upload Document", value: "approvedOrder.pdf" },
         { tabItem: "Additional attachments", value: "additionalAttachment.pdf" },
-        { tabItem: "Order created at", value: DateHelper.getUtcDateTimeFormatted(), exact: false},
+        { tabItem: "Order created at", value: DateHelper.getTodayFormattedDate(), exact: false},
         "Finalised Orders 2",
         { tabItem: "Upload Document", value: "approvedOrder.pdf" },
-        { tabItem: "Order created at", value: DateHelper.getUtcDateTimeFormatted(), exact: false},
+        { tabItem: "Order created at", value: DateHelper.getTodayFormattedDate(), exact: false},
       ]
     }
   ];
