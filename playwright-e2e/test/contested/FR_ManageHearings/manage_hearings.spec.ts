@@ -308,7 +308,7 @@ test.describe('Contested - Manage Hearings', () => {
         }
     );
 
-    test('Contested - Add a hearing with case factory and assert tab date as a Judge',
+    test('Contested - Add a hearing with case factory and assert tab data as a Judge',
         { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage }) => {
             //create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false, DateHelper.getCurrentDate());
