@@ -1,7 +1,7 @@
 import {BaseJourneyPage} from "./BaseJourneyPage.ts";
 import config from "../config/config.ts";
-import {ApplicationtypeEnum, YesNoRadioEnum} from "./helpers/enums/RadioEnums.ts";
-import {Page, expect, Locator} from "@playwright/test";
+import {ApplicationtypeEnum} from "./helpers/enums/RadioEnums.ts";
+import {expect, Locator, Page} from "@playwright/test";
 import {envTestData} from "../data-utils/test_data/EnvTestDataConfig.ts";
 
 export class CaseListPage extends BaseJourneyPage {
