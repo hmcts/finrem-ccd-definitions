@@ -173,6 +173,23 @@ See also:
 * https://tools.hmcts.net/confluence/display/RSE/Divorce+Local+Environment+Set+up+using+Preview
 * https://tools.hmcts.net/confluence/display/RSE/Debugging+a+service+in+Preview+Cluster+via+Telepresence
 
+## GitHub Action to Create a Preview Environment
+A GitHub Action is available called [Create Preview Environment](https://github.com/hmcts/finrem-ccd-definitions/actions/workflows/create-preview-environment.yml).
+
+This provides a workflow to create a preview environment for testing a change that only includes Java code updates and no CCD configuration changes.
+
+The workflow creates a new branch and a draft pull request with the required labels needed to create a preview environment.
+
+The workflow is run manually. From the action's workflow page, select the __Run workflow__ button and enter the following inputs:
+- `Use workflow from` - Select `Branch: master`
+- `Jira DFR-` - The Jira ticket number for the change e.g. 1234
+- `finrem-cos PR #` - The PR number for the finrem-cos change e.g. 5678
+- `PR Title` - (optional) The title of the pull request to be created. If left blank then a default title will be used
+- `Branch name` - (optional) The name of the branch to be created. If left blank then a default will be used
+
+The draft pull request that is created will include a link to the Jira ticket and also to
+Manage Cases, Manage Organisation and CCD Admin Web applications in the preview environment.
+
 ## Deploying CCD Config Changes to Demo or ITHC
 
 Config changes are now uploaded to AAT when a PR branch is merged to master. When we want to release config changes to Demo/ITHC:
