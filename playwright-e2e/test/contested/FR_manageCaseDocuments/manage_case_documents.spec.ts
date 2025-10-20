@@ -7,7 +7,7 @@ test.describe('Contested Manage Case Documents', () => {
     test(
         'Contested - Caseworker Manage Case Documents',
         { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage, axeUtils }, testInfo) => {
+        async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage, axeUtils }) => {
             // Create and setup case
             const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
