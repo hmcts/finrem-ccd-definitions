@@ -18,7 +18,7 @@ test(
         manageBarristerPage,
         checkYourAnswersPage,
         axeUtils,
-      },testInfo) => {
+      }) => {
 
         // Create case and progress to HWF decision made
         const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
