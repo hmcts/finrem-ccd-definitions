@@ -109,10 +109,22 @@ export class CaseDetailsPage {
 
                 // Refine the locator to uniquely identify the corresponding <td>
                 const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
-                if (!content.exact) {
-                    await expect(tabValue).toContainText(content.value);
-                } else {
-                    await expect(tabValue).toHaveText(content.value);
+                if(content.clickable) {
+                   await tabItem.click();
+                }
+
+                // Split the expected values by '|'
+                const expectedValues = content.value.split('|')
+                    .map(v => v.trim());
+                for (let i = 0; i < expectedValues.length; i++) {
+                    const tabValue = tabItem.locator(
+                      `xpath=ancestor::*[self::td or self::th]/following-sibling::*[self::td or self::th][${i + 1}]`
+                    );
+                    if (!content.exact) {
+                        await expect(tabValue).toContainText(expectedValues[i]);
+                    } else {
+                        await expect(tabValue).toHaveText(expectedValues[i]);
+                    }
                 }
             }
         }
