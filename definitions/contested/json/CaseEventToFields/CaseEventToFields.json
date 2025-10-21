@@ -11356,7 +11356,9 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "isAddHearingChosen=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "12/08/2025",
@@ -11444,7 +11446,9 @@
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "FieldShowCondition": "isAddHearingChosen=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "04/08/2025",
