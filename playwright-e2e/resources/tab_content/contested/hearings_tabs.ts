@@ -19,24 +19,22 @@ export const processOrderHearingTabData = [
   }
 ];
 
-export function newUploadApprovedOrderMHTabDataOnHearing1() : Tab[] {
+export function newUploadApprovedOrderMHTabDataOnHearing1(): Tab[] {
   return [
     {
       tabName: 'Hearings',
-      tabContent: [
-        "Hearing 1",
-        {tabItem: "Type of Hearing", value: "First Directions Appointment (FDA)"},
-        {tabItem: "Court", value: "Bromley County Court And Family Court"},
-        {tabItem: "Hearing Attendance", value: "Remote - Video call"},
-        {tabItem: "Hearing Date", value: '01 Jan 2025 10:00'},
-        {tabItem: "Hearing Time Estimate", value: '3 hours'},
-        {tabItem: "Who has received this notice", value: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum'},
-        {tabItem: "Additional information about the hearing", value: 'This is a test hearing'},
+      tabContent: buildHearingsTabContent([
         {
-          tabItem: "Hearing Documents", value:
-            'HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nPfdNcdrCoverLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nOtherDoc.doc'
+          typeOfHearing: "First Directions Appointment (FDA)",
+          hearingDate: "01 Jan 2025 10:00",
+          whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
+          court: "Bromley County Court And Family Court",
+          hearingAttendance: "Remote - Video call",
+          hearingTimeEstimate: "3 hours",
+          additionalInformation: "This is a test hearing",
+          hearingDocuments: 'HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nPfdNcdrCoverLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nOtherDoc.doc'
         }
-      ]
+      ])
     }
   ];
 }
