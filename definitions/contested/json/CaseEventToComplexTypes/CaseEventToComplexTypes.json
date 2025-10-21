@@ -5814,44 +5814,44 @@
   }, 
   {
     "LiveFrom": "24/07/2025",
-    "ID": "FR_processOrder_to_uploadHearingOrder",
+    "ID": "FR_processOrder_to_unprocessedUploadHearingDocuments",
     "CaseEventID": "FR_processOrder",
-    "CaseFieldID": "uploadHearingOrder",
+    "CaseFieldID": "unprocessedUploadHearingDocuments",
     "ListElementCode": "uploadDraftDocument",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "24/07/2025",
-    "ID": "FR_processOrder_to_uploadHearingOrder",
+    "ID": "FR_processOrder_to_unprocessedUploadHearingDocuments",
     "CaseEventID": "FR_processOrder",
-    "CaseFieldID": "uploadHearingOrder",
+    "CaseFieldID": "unprocessedUploadHearingDocuments",
     "ListElementCode": "orderDateTime",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "24/07/2025",
-    "ID": "FR_processOrder_to_uploadHearingOrder",
+    "ID": "FR_processOrder_to_unprocessedUploadHearingDocuments",
     "CaseEventID": "FR_processOrder",
-    "CaseFieldID": "uploadHearingOrder",
+    "CaseFieldID": "unprocessedUploadHearingDocuments",
     "ListElementCode": "isOrderStamped",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "24/07/2025",
-    "ID": "FR_processOrder_to_uploadHearingOrder",
+    "ID": "FR_processOrder_to_unprocessedUploadHearingDocuments",
     "CaseEventID": "FR_processOrder",
-    "CaseFieldID": "uploadHearingOrder",
+    "CaseFieldID": "unprocessedUploadHearingDocuments",
     "ListElementCode": "originalDocument",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "24/07/2025",
-    "ID": "FR_processOrder_to_uploadHearingOrder",
+    "ID": "FR_processOrder_to_unprocessedUploadHearingDocuments",
     "CaseEventID": "FR_processOrder",
-    "CaseFieldID": "uploadHearingOrder",
+    "CaseFieldID": "unprocessedUploadHearingDocuments",
     "ListElementCode": "additionalDocuments",
     "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\""
+    "FieldShowCondition": "unprocessedUploadHearingDocuments=\"DONOTSHOW\""
   }, 
   {
     "LiveFrom": "24/07/2025",
