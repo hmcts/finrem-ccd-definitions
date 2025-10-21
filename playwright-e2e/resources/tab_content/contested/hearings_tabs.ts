@@ -9,7 +9,7 @@ export const processOrderHearingTabData = [
         typeOfHearing: "First Directions Appointment (FDA)",
         hearingDate: "01 Jan 2024 10:00",
         whoHasReceivedThisNotice: "Applicant - Frodo Baggins, Respondent - Smeagol Gollum",
-        court: "Coventry Combined Court Centre",
+        court: "Bromley County Court And Family Court",
         hearingAttendance: "In Person",
         hearingTimeEstimate: "30",
         additionalInformation: "This is a test hearing",
