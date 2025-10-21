@@ -2,7 +2,6 @@ import { DateHelper } from "../../../data-utils/DateHelper.ts";
 import {Table} from "../../../pages/components/table.ts";
 
 const hearingDate = DateHelper.getFullDateTwelveWeeksLater();
-const courtOrderDate = DateHelper.getUnFormattedDateTwelveWeeksLater();
 
 export const approveOrderTable: Table = {
     tableName: 'Check your answers',
@@ -10,7 +9,7 @@ export const approveOrderTable: Table = {
         { cellItem: 'Hearing', value: 'First Directions Appointment (FDA) on ' + hearingDate + ' 10:00'},
         'agreed-draft-order-document.docx',
         { cellItem: 'Is this document ready to be sealed and issued?', value: "Yes"},
-        { cellItem: 'Court order date', value: courtOrderDate},
+        { cellItem: 'Court order date', value: hearingDate},
         { cellItem: 'Hearing', value: 'First Directions Appointment (FDA) on ' + hearingDate + ' 10:00'},
         'BagginsFDA.pdf',
         { cellItem: 'Is there another hearing to be listed?', value: "Yes"},
