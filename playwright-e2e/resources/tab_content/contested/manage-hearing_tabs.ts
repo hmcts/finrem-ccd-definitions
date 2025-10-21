@@ -15,7 +15,7 @@ export function getManageHearingTabData(params?: {
     additionalInformation?: string,
     uploadFiles?: string[]
 }): Tab {
-    const hearingDate = params?.hearingDate ?? DateHelper.getUnFormattedDateTwelveWeeksLater();
+    const hearingDate = params?.hearingDate ?? DateHelper.getFormattedDateTwelveWeeksLater();
     const hearingTime = params?.hearingTime ?? "10:00 AM";
     const whoHasReceivedThisNotice = params?.whoShouldSeeOrder ?? "Applicant - Frodo Baggins, Respondent - Smeagol Gollum, Intervener1 - intApp1, Intervener2 - intResp1";
     const hearingDocuments = (params?.uploadFiles ?? ["HearingNotice.pdf", "final_hearing_file1.pdf", "final_hearing_file2.pdf"]).join('\n');
