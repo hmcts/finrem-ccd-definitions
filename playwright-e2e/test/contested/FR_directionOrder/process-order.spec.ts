@@ -104,7 +104,7 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
       await axeUtils.audit({
         exclude:[
-          'div:nth-child(4) > ccd-read-document-field > a[href="javascript:void(0)"]'
+          'div:nth-child(4) > ccd-read-document-field > .govuk-js-link[type=\"button\"]'
         ]
       });
       await unprocessedApprovedOrdersPage.navigateContinue();
