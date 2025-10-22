@@ -219,7 +219,7 @@ test.describe('Contested - Manage Hearings', () => {
     }
 
     test(
-        'Contested - Manage Hearings - Add Hearing and verify access to CFV', {tag: ['@mytest']},
+        'Contested - Manage Hearings - Add Hearing and verify access to CFV', {tag: []},
         async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => { 
 
             // Create and setup case
