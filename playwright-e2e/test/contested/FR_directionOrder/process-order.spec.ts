@@ -1,19 +1,14 @@
 import {test} from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import {ContestedEvents} from '../../../config/case-data';
-import {YesNoRadioEnum} from '../../../pages/helpers/enums/RadioEnums';
-import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEventApi';
-import {processOrderHearingTabData} from '../../../resources/tab_content/contested/hearings_tabs.ts';
-import {
-  unprocessedApprovedOrdersNoHearingTable,
-  unprocessedApprovedOrdersWithNewHearingTable
-} from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable.ts';
-import {processOrderCaseDocumentsTabData} from '../../../resources/tab_content/contested/case_document_tabs.ts';
-import {
-  createDraftOrdersApprovedWithHearingTabData
-} from '../../../resources/tab_content/contested/draft_orders_tabs.ts';
-import {DateHelper} from '../../../data-utils/DateHelper.ts';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
+import { ContestedEvents } from '../../../config/case-data';
+import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
+import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
+import { processOrderHearingTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
+import { unprocessedApprovedOrdersNoHearingTable, unprocessedApprovedOrdersWithNewHearingTable } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable.ts';
+import { processOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs.ts';
+import { createDraftOrdersApprovedWithHearingTabData } from '../../../resources/tab_content/contested/draft_orders_tabs.ts';
+import { DateHelper } from '../../../data-utils/DateHelper.ts';
 
 /**
  * Firstly, performs the upload draft order flow as a step towards the Process Order event.
