@@ -138,6 +138,11 @@ export class ManageHearingPage extends BaseJourneyPage {
         await optionToSelect.check();
     }
 
+    async assertGadSendNoticeOfHearingIsYes() {
+       const noticeField = this.page.locator('dl.case-field:has-text("Do you want to send a notice of hearing?")');
+       await expect(noticeField.locator('span.text-16')).toHaveText('Yes');
+   }
+
     async selectWhoShouldSeeThisOrder(partyType: string, partyName: string) {
         const checkbox = this.page.getByRole('checkbox', { name: `${partyType} - ${partyName}` });
         await expect(checkbox).toBeVisible();
