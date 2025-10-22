@@ -55,7 +55,7 @@ export class CaseDetailsPage {
         await expect(this.successfulUpdateBanner).toContainText(event);
     }
 
-      async assertTabData(tabs: Tab[]) {
+    async assertTabData(tabs: Tab[]) {
         for (const tab of tabs) {
             await this.assertTabHeader(tab.tabName, tab.tabContent[0]);
             await this.assertTabContent(tab.tabContent);
