@@ -57,7 +57,7 @@ export class CaseDetailsPage {
 
     async assertTabData(tabs: Tab[]) {
         for (const tab of tabs) {
-            await this.assertTabHeader(tab.tabName);
+            await this.assertTabHeader(tab.tabName, tab.tabContent[0]);
             await this.assertTabContent(tab.tabContent);
             if (tab.excludedContent) {
                 await this.assertExcludedContent(tab.excludedContent);
@@ -65,11 +65,17 @@ export class CaseDetailsPage {
         }
     }
 
-    private async assertTabHeader(tabName: string): Promise<void> {
+    private async assertTabHeader(tabName: string, firstContent?: TabContentItem): Promise<void> {
         const tabHeader = this.getTabHeader(tabName);
         await expect(tabHeader).toBeVisible();
         await expect(tabHeader).toBeEnabled();
         await tabHeader.click();
+        await this.page.waitForLoadState();
+        if (firstContent) {
+            const text = typeof firstContent === 'string' ? firstContent : firstContent.tabItem;
+            const exact = typeof firstContent === 'object' ? (firstContent.exact ?? true) : true;
+            await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 5000 });
+        }
     }
 
     /**
