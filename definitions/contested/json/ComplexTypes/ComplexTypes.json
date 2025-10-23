@@ -769,7 +769,7 @@
     "ListElementCode": "additionalDocuments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
-    "ElementLabel": "Upload additional attachments",
+    "ElementLabel": "Additional attachments",
     "HintText": "Please upload any additional attachments. You must upload Microsoft Word or PDF documents",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -2831,7 +2831,9 @@
     "FieldType": "FR_manageHearingTabItem",
     "ElementLabel": "Hearing details",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "FieldShowCondition": "hearingDetailsForGeneralApplication.tabHearingType=\"*\"",
+    "_comment": "\"FieldShowCondition\" checks hearingDetailsForGeneralApplication.tabHearingType, which is sufficient since it's a mandatory hearing field."
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2875,6 +2877,16 @@
     "ListElementCode": "Organisation",
     "FieldType": "Organisation",
     "ElementLabel": "Organisation Identifier",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "10/09/2025",
+    "ID": "FR_BarristerCollection",
+    "ListElementCode": "userId",
+    "FieldType": "Text",
+    "ElementLabel": "User Id",
+    "FieldShowCondition": "barristerLabel=\"IMPOSSIBLE\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -4089,7 +4101,29 @@
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a resubmission?",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "FieldShowCondition": "resubmission=\"DO_NOT_SHOW\"",
+    "_comment": "FieldShowCondition controls the visibility of this field on tab"
+  },
+  {
+    "LiveFrom": "16/09/2025",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "resubmissionLinkYes",
+    "FieldType": "Label",
+    "ElementLabel": "This is a resubmission. <a href=\"cases/case-details/${[CASE_REFERENCE]}#Orders\" target=\"_blank\">(see previously rejected draft orders)</a>",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "FieldShowCondition": "resubmission=\"Yes\""
+  },
+  {
+    "LiveFrom": "16/09/2025",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "resubmissionLinkNo",
+    "FieldType": "Label",
+    "ElementLabel": "This is not a resubmission.",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "FieldShowCondition": "resubmission=\"No\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -4997,6 +5031,56 @@
     "ListElementCode": "hearingCaseDocumentType",
     "FieldType": "Text",
     "ElementLabel": " ",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "uploadDraftDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Upload Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "orderDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Order created at",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "isOrderStamped",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "originalDocument",
+    "FieldType": "Document",
+    "ElementLabel": "Original Document",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "additionalDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Additional attachments",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }

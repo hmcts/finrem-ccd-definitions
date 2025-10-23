@@ -1,4 +1,4 @@
-import {expect, test} from "../../../fixtures/fixtures.ts";
+import {test} from "../../../fixtures/fixtures.ts";
 import {ContestedCaseFactory} from "../../../data-utils/factory/contested/ContestedCaseFactory.ts";
 import config from "../../../config/config.ts";
 import {ContestedEvents} from "../../../config/case-data.ts";
@@ -27,7 +27,7 @@ test.describe("Consent order in contested case", () => {
             sendOrderPage,
             eventSummaryPage,
             axeUtils
-        }, testInfo) => {
+        }) => {
             // Set up court information.
             const courtName = "Coventry Combined Court Centre";
             const courtAddress = "140 Much Park Street, Coventry, CV1 2SN";
@@ -144,8 +144,8 @@ test.describe("Consent order in contested case", () => {
                                     label: 'generalOrder-',
                                     contentSnippets: [
                                         `Case No: ${caseId}`,
-                                        `Order made by District Judge Mumford on ${DateHelper.getTodayFullFormattedDate()} SITTING AT the`,
-                                        `Family Court at the ${courtName}.`,
+                                        `Order made by District Judge Mumford on ${DateHelper.getTodayFullFormattedDate()} SITTING AT the Family`,
+                                        `Court at the ${courtName}.`,
                                         description
                                     ]
                                 }
@@ -397,7 +397,7 @@ test.describe("Consent order in contested case", () => {
                     'Reason for Refusal',
                     ...reasons,
                     { cellItem: 'Select Judge', value: 'His Honour Judge' },
-                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_SURNAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             });

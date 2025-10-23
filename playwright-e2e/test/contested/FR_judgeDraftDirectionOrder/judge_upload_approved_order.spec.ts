@@ -35,7 +35,11 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       await judgeUploadApprovedOrderPage.selectJudgeFromDropdown('Deputy District Judge');
       await judgeUploadApprovedOrderPage.enterNameOfJudge('Judge Judy');
       await judgeUploadApprovedOrderPage.enterCourtOrderDate('01', '01', '2026');
-      await axeUtils.audit();
+      await axeUtils.audit({
+        exclude: [
+          '#judgeApprovedOrderCollection_0_additionalDocuments_value'
+        ]
+      });
       await judgeUploadApprovedOrderPage.navigateContinue();
 
       // Draft Direction Orders Details

@@ -9,6 +9,15 @@ export const processOrderCaseDocumentsTabData: Tab[] = [{
     { tabItem: "Document status", value: "Processed" },
     { tabItem: "Submitted by", value: "Claire Mumford" },
     { tabItem: "Uploaded on behalf of", value: "The applicant" },
-    { tabItem: "Is this a resubmission?", value: "No" }
+    "This is not a resubmission."
+  ]
+}]
+
+export const UploadApprovedOrderCaseDocumentsTabData: Tab[] = [{
+  tabName: "Case documents",
+  tabContent: [
+    "Upload Approved Order 1", 
+    { tabItem: "Upload Document", value: "approvedOrder.pdf"},
+    { tabItem: "Additional attachments", value: "additionalAttachment.pdf"}
   ]
 }]

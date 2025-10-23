@@ -21,7 +21,7 @@ export class CreateGeneralEmailPage extends BaseJourneyPage {
         expect(this.recipientEmailBox).toBeVisible();
         await this.recipientEmailBox.fill('test');
         await this.navigateContinue();
-        await expect(this.page.getByText('test is not a valid Email address')).toBeVisible();
+        await expect(this.page.getByLabel('The event could not be created').getByText('test is not a valid Email')).toBeVisible();
         
     }
 
