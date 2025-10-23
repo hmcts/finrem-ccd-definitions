@@ -57,7 +57,7 @@ export class CaseDetailsPage {
 
     async assertTabData(tabs: Tab[]) {
         for (const tab of tabs) {
-            await this.assertTabHeader(tab.tabName);
+            await this.assertTabHeader(tab.tabName, tab.tabContent[0]);
             await this.assertTabContent(tab.tabContent);
             if (tab.excludedContent) {
                 await this.assertExcludedContent(tab.excludedContent);
@@ -65,11 +65,17 @@ export class CaseDetailsPage {
         }
     }
 
-    private async assertTabHeader(tabName: string): Promise<void> {
+    private async assertTabHeader(tabName: string, firstContent?: TabContentItem): Promise<void> {
         const tabHeader = this.getTabHeader(tabName);
         await expect(tabHeader).toBeVisible();
         await expect(tabHeader).toBeEnabled();
         await tabHeader.click();
+        await this.page.waitForLoadState();
+        if (firstContent) {
+            const text = typeof firstContent === 'string' ? firstContent : firstContent.tabItem;
+            const exact = typeof firstContent === 'object' ? (firstContent.exact ?? true) : true;
+            await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 5000 });
+        }
     }
 
     /**
@@ -109,10 +115,22 @@ export class CaseDetailsPage {
 
                 // Refine the locator to uniquely identify the corresponding <td>
                 const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
-                if (!content.exact) {
-                    await expect(tabValue).toContainText(content.value);
-                } else {
-                    await expect(tabValue).toHaveText(content.value);
+                if(content.clickable) {
+                   await tabItem.click();
+                }
+
+                // Split the expected values by '|'
+                const expectedValues = content.value.split('|')
+                    .map(v => v.trim());
+                for (let i = 0; i < expectedValues.length; i++) {
+                    const tabValue = tabItem.locator(
+                      `xpath=ancestor::*[self::td or self::th]/following-sibling::*[self::td or self::th][${i + 1}]`
+                    );
+                    if (!content.exact) {
+                        await expect(tabValue).toContainText(expectedValues[i]);
+                    } else {
+                        await expect(tabValue).toHaveText(expectedValues[i]);
+                    }
                 }
             }
         }
