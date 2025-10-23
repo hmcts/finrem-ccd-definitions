@@ -117,6 +117,7 @@ export class CaseDetailsPage {
                 const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
                 if(content.clickable) {
                    await tabItem.click();
+                   await this.page.waitForLoadState();
                 }
 
                 // Split the expected values by '|'
