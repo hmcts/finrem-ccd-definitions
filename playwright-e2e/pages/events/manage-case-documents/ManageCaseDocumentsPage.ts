@@ -20,17 +20,6 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
   private readonly checkConfidentialTwoLabel: Locator;
   private readonly checkConfidentialThreeLabel: Locator;
   private readonly checkConfidentialFourLabel: Locator;
-  private readonly uploadError: Locator;
-  private readonly summaryUploadLabel: Locator;
-  private readonly summaryUploadedFileLink: Locator;
-  private readonly summaryDocumentTypeLabel: Locator;
-  private readonly summarySpecifyDocTypeLabel: Locator;
-  private readonly summaryDescriptionLabel: Locator;
-  private readonly summaryConfidentialityLabel: Locator;
-  private readonly summaryDocTypeValue: Locator;
-  private readonly summarySpecifyDocTypeValue: Locator;
-  private readonly summaryDescriptionValue: Locator;
-  private readonly summaryConfidentialityValue: Locator; 
 
   private readonly commonActionsHelper: CommonActionsHelper;
 
@@ -55,17 +44,6 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     this.checkConfidentialTwoLabel = page.getByText("Do not use the confidential option to upload a document that you later intend to share as once confidential you will not be able to share it.");
     this.checkConfidentialThreeLabel = page.getByText("Do not select confidential if you are only waiting to exchange documents.");
     this.checkConfidentialFourLabel = page.getByText("Parties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.");
-    this.uploadError = page.getByText('Select or fill the required', { exact: false });
-    this.summaryUploadLabel = page.getByText('Please upload any case documents');
-    this.summaryUploadedFileLink = page.getByRole('link', { name: 'test.docx' }); 
-    this.summaryDocumentTypeLabel = page.getByText('Document type', { exact: true }).first();
-    this.summarySpecifyDocTypeLabel = page.getByText('Please specify document type');
-    this.summaryDescriptionLabel = page.getByText('Provide the date of hearing and a description of the document');
-    this.summaryConfidentialityLabel = page.getByText('Is the document confidential?');
-    this.summaryDocTypeValue = page.getByText('Other', { exact: true }); 
-    this.summarySpecifyDocTypeValue = page.getByText('test', { exact: true });
-    this.summaryDescriptionValue = page.getByText('test case');
-    this.summaryConfidentialityValue = page.getByText('Yes'); 
   } 
 
   // Upload a document
@@ -109,18 +87,4 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     await (isConfidential ? this.yesConfidentialRadio : this.noConfidentialRadio).check();  
   }
 
-  async checkAnswersPage() {
-    await Promise.all([
-      expect(this.summaryUploadLabel).toBeVisible(),
-      expect(this.summaryUploadedFileLink).toBeVisible(),
-      expect(this.summaryDocumentTypeLabel).toBeVisible(),
-      expect(this.summaryDocTypeValue).toBeVisible(),
-      expect(this.summarySpecifyDocTypeLabel).toBeVisible(),
-      expect(this.summarySpecifyDocTypeValue).toBeVisible(),
-      expect(this.summaryDescriptionLabel).toBeVisible(),
-      expect(this.summaryDescriptionValue).toBeVisible(),
-      expect(this.summaryConfidentialityLabel).toBeVisible(),
-      expect(this.summaryConfidentialityValue).toBeVisible(),
-    ]);
-  }
 }
