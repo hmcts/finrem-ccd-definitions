@@ -5,7 +5,7 @@ import { ContestedCaseFactory } from '../../data-utils/factory/contested/Contest
 import { createGeneralEmailTableData } from '../../resources/check_your_answer_content/create_general_email/createGeneralEmailTable';
 import { DateHelper } from '../../data-utils/DateHelper';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
-import { createGeneralEmailTabDataConsented, createGeneralEmailTabDataContested } from '../../resources/tab_content/common-tabs/case_documents_tab';
+import { createGeneralEmailTabData } from '../../resources/tab_content/common-tabs/case_documents_tab';
 
 test.describe('Create General Email', () => {
     test(
@@ -39,7 +39,7 @@ test.describe('Create General Email', () => {
             await caseDetailsPage.checkHasBeenUpdated(CommonEvents.createGeneralEmail.listItem);
 
             //assert case documents tab data
-            await caseDetailsPage.assertTabData(createGeneralEmailTabDataContested(date))
+            await caseDetailsPage.assertTabData(createGeneralEmailTabData(date))
         }
     )
     test(
@@ -74,7 +74,7 @@ test.describe('Create General Email', () => {
             await caseDetailsPage.checkHasBeenUpdated(CommonEvents.createGeneralEmail.listItem);
 
             //assert case documents tab data
-            await caseDetailsPage.assertTabData(createGeneralEmailTabDataConsented(date))
+            await caseDetailsPage.assertTabData(createGeneralEmailTabData(date))
         }
     )
 });
