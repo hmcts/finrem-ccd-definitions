@@ -35,10 +35,7 @@ async function performNewGeneralApplicationDirectionsFlowWithHearing(
   await generalApplicationDirectionsPage.enterAdditionalInformationAboutHearing('This is a test hearing');
   await generalApplicationDirectionsPage.selectAdditionalHearingDocument(YesNoRadioEnum.YES);
   await generalApplicationDirectionsPage.uploadOtherDocuments('test.doc');
-  await generalApplicationDirectionsPage.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
-  await generalApplicationDirectionsPage.navigateContinue();
-  await generalApplicationDirectionsPage.verifyErrorMessageForNoNotice();
-  await generalApplicationDirectionsPage.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
+  await generalApplicationDirectionsPage.assertGadSendNoticeOfHearingIsYes();
   await generalApplicationDirectionsPage.unSelectWhoShouldSeeThisOrder('Applicant', 'Frodo Baggins');
   await generalApplicationDirectionsPage.unSelectWhoShouldSeeThisOrder('Respondent', 'Smeagol Gollum');
   await generalApplicationDirectionsPage.selectWhoShouldSeeThisOrder('Intervener1', 'IntApp1');
