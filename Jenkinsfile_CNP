@@ -248,12 +248,17 @@ withPipeline("nodejs", product, component) {
   }
 
   afterAlways('smoketest:preview') {
-  echo "Archiving Playwright smoke test results and reports..."
-  steps.junit allowEmptyResults: true, testResults: 'test-results/results.xml'
-  steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**'
+  echo "Archiving Playwright smoke test results..."
+
+  steps.junit allowEmptyResults: true, testResults: 'smoke-output/results.xml'
+
+  steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'smoke-output/**'
   steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
   steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
+  steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/trace.zip'
+  steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/*.png'
 }
+
 
   afterSuccess('functionalTest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
