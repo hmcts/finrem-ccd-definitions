@@ -357,7 +357,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new GeneralApplicationOutcomePage(page));
   },
   approvedOrderPage: async ({ page }, use) => {
-    await use(new ApproveOrderPage(page , commonActionsHelper));
+    await use(new ApproveOrderPage(page));
   },
   createGeneralEmailPage: async ({ page }, use) => {
     await use(new CreateGeneralEmailPage(page, commonActionsHelper));
