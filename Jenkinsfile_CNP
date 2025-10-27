@@ -242,17 +242,11 @@ withPipeline("nodejs", product, component) {
     sh 'yarn playwright install'
 }
 
-before('smokeTest:preview') {
-    echo "Uppercase"
-    echo "Installing playwright for environment: ${env.ENV}"
-    sh 'yarn playwright install'
-}
-
   before('functionalTest') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
   }
 
-  afterAlways('smokeTest:preview') {
+  afterAlways('smoketest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/trace.zip'
