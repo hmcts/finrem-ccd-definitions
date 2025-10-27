@@ -1,4 +1,4 @@
-import {expect, test} from "../../../fixtures/fixtures.ts";
+import {test} from "../../../fixtures/fixtures.ts";
 import {ContestedCaseFactory} from "../../../data-utils/factory/contested/ContestedCaseFactory.ts";
 import config from "../../../config/config.ts";
 import {ContestedEvents} from "../../../config/case-data.ts";
@@ -27,7 +27,7 @@ test.describe("Consent order in contested case", () => {
             sendOrderPage,
             eventSummaryPage,
             axeUtils
-        }, testInfo) => {
+        }) => {
             // Set up court information.
             const courtName = "Coventry Combined Court Centre";
             const courtAddress = "140 Much Park Street, Coventry, CV1 2SN";
