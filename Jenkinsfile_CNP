@@ -239,7 +239,8 @@ withPipeline("nodejs", product, component) {
   before('smoketest:preview') {
     echo "Lowercase"
     echo "Installing playwright for environment: ${env.ENV}"
-    sh 'yarn playwright install'
+    yarnBuilder.yarn('playwrightsetup')
+    sh 'yarn test:smoke'
 }
 
   before('functionalTest') {
