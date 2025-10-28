@@ -271,21 +271,21 @@ test.describe('Contested - Upload Draft Order', () => {
 
         await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
 
-       await uploadDraftOrdersPage.chooseASuggestedDraftOrderPriorToAListedHearing();
-            await uploadDraftOrdersPage.navigateContinue();
-            await uploadDraftOrdersPage.assertMandatoryFields(false);
+        await uploadDraftOrdersPage.chooseASuggestedDraftOrderPriorToAListedHearing();
+        await uploadDraftOrdersPage.navigateContinue();
+        await uploadDraftOrdersPage.assertMandatoryFields(false);
 
-            await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
-            await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
-            await uploadDraftOrdersPage.chooseThatYouAreUploadingPensionSharingAnnexes();
-            await uploadDraftOrdersPage.uploadDraftOrder(caseId);
-            await uploadDraftOrdersPage.uploadPensionSharingAnnexes();
-            await uploadDraftOrdersPage.navigateContinue('submit');
+        await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
+        await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
+        await uploadDraftOrdersPage.chooseThatYouAreUploadingPensionSharingAnnexes();
+        await uploadDraftOrdersPage.uploadDraftOrder(caseId);
+        await uploadDraftOrdersPage.uploadPensionSharingAnnexes();
+        await uploadDraftOrdersPage.navigateContinue('submit');
 
-            await checkYourAnswersPage.assertCheckYourAnswersPage(uploadSuggestedDraftOrderTableSolicitor);
-            await uploadDraftOrdersPage.navigateSubmit();
-            await uploadDraftOrdersPage.closeAndReturnToCaseDetails();
-            await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.uploadDraftOrders.listItem);
-            await caseDetailsPage.assertTabData(suggested_draft_order_solicitor_case_document_tabs);
+        await checkYourAnswersPage.assertCheckYourAnswersPage(uploadSuggestedDraftOrderTableSolicitor);
+        await uploadDraftOrdersPage.navigateSubmit();
+        await uploadDraftOrdersPage.closeAndReturnToCaseDetails();
+        await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.uploadDraftOrders.listItem);
+        await caseDetailsPage.assertTabData(suggested_draft_order_solicitor_case_document_tabs);
     });
 });
