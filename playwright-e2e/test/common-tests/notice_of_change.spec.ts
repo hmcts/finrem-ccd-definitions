@@ -45,7 +45,7 @@ test.describe('Notice of Change', () => {
     });
 
     test(
-      'CAA can raise a Notice of Change', { tag: ['@preview'] },
+      'CAA can raise a Notice of Change', { tag: ['@smoke-test'] },
       async ({ loginPage, manageCaseDashboardPage, noticeOfChangePage, caseDetailsPage  }) => {
 
           // Create a contested case by applicant solicitor
