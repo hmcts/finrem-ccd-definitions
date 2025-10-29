@@ -241,25 +241,18 @@ withPipeline("nodejs", product, component) {
     sh 'yarn playwright install'
   }
 
+  afterAlways('smoketest:preview') {
+    echo "Archiving Smoke Test Results for Preview Environment"
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'playwright-report/**'
+  }
+
   before('smoketest:aat') {
     sh 'yarn playwright install'
   }
 
-  before('functionalTest') {
-    echo "Before functionalTest"
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-  }
-
-  afterAlways('smoketest:preview') {
-    echo "Archiving Smoke Test Results for Preview Environment"
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/trace.zip'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/*.png'
-  }
-
-  afterSuccess('functionalTest:preview') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
+  afterAlways('functionalTest:preview') {
+    echo "Archiving Functional Test Results for Preview Environment"
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'playwright-report/**'
   }
 
   afterSuccess('functionalTest:aat') {
