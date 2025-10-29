@@ -229,12 +229,15 @@ withNightlyPipeline(type, product, component) {
         }
     }
 
-    afterAlways('DeleteNightlyDevBranch') {
+   afterAlways('DeleteNightlyDevBranch') {
     stage('Delete nightly dev branch') {
         try {
+            echo "Deleting nightly-dev branch..."
             yarnBuilder.yarn('delete-nightly-dev-branch finrem-ccd-definitions')
+            echo "nightly-dev branch deletion step completed."
         } catch (Error) {
             unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+            echo "Error - Failed to delete nightly-dev branch"
         }
     }
 }
