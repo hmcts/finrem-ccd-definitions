@@ -117,6 +117,7 @@ properties([
     copyArtifactPermission('*'),
 ]);
 withPipeline("nodejs", product, component) {
+  env.FUNCTIONAL_TESTS_WORKERS = 1
 
   loadVaultSecrets(secrets)
   enableHighLevelDataSetup()
@@ -245,10 +246,12 @@ withPipeline("nodejs", product, component) {
   }
 
   before('functionalTest') {
+    echo "Before functionalTest"
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
   }
 
-  afterAlways('smokeTest:preview') {
+  afterAlways('smoketest:preview') {
+    echo "Archiving Smoke Test Results for Preview Environment"
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/trace.zip'
