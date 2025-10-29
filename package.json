@@ -102,7 +102,8 @@
     "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
     "highLevelDataSetup": "echo 'bash ./gradlew highLevelDataSetup --args=$1 && sh bin/after-data-setup-step.sh' > ./temp.sh && sh ./temp.sh",
     "yarn-update": "node bin/set-yarn-version.js",
-    "install-dependencies": "yarn install --silent"
+    "install-dependencies": "yarn install --silent",
+    "delete-nightly-dev-branch": "node node_modules/@hmcts/playwright-common/src/scripts/delete-nightly-dev-branch.js"
   },
   "pre-commit": [
     "lint"
