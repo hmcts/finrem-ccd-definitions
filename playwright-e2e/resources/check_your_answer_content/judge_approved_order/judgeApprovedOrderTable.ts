@@ -5,6 +5,6 @@ export const judgeUploadApprovedOrderTableData: Table = {
     rows: [
         "Upload approved order",
         { cellItem: "Upload Approved Document", value: "judgeApprovedOrder.docx" },
-        { cellItem: "Upload additional attachments", value: "additionalAttachment.pdf" },
+        { cellItem: "Additional attachments", value: "additionalAttachment.pdf" },
     ]
 }

@@ -9902,9 +9902,9 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_uploadApprovedOrder",
-    "CaseFieldID": "uploadHearingOrder",
+    "CaseFieldID": "cwApprovedOrderCollection",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "MANDATORY",
+    "DisplayContext": "COMPLEX",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
@@ -11356,13 +11356,15 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "FieldShowCondition": "isAddHearingChosen=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "12/08/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_uploadApprovedOrderMh",
-    "CaseFieldID": "uploadHearingOrder",
+    "CaseFieldID": "cwApprovedOrderCollection",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "COMPLEX",
     "PageID": 1,
@@ -11444,7 +11446,9 @@
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "FieldShowCondition": "isAddHearingChosen=\"Yes\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "04/08/2025",
