@@ -28,9 +28,9 @@ test.describe('Contested - Upload Draft Order', () => {
         checkYourAnswersPage,
         approvedOrderPage,
         axeUtils,
-      }, testInfo
+      }
     ) => {
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrderWithMigratedHearing({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       let expectedUrl = ContestedEvents.uploadDraftOrders.ccdCallback;
       await manageCaseDashboardPage.visit();
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
@@ -117,7 +117,25 @@ test.describe('Contested - Upload Draft Order', () => {
       expectedUrl = ContestedEvents.approveOrders.ccdCallback;
       await axeUtils.audit();
       await approvedOrderPage.navigateContinue(expectedUrl, 2);
-      await approvedOrderPage.selectIsAnotherHearingListed(false);
+      await approvedOrderPage.selectIsAnotherHearingListed(true);
+      const hearingList = [
+                "Maintenance Pending Suit (MPS)",
+                "First Directions Appointment (FDA)",
+                "Financial Dispute Resolution (FDR)",
+                "Final Hearing (FH)",
+                "Directions (DIR)",
+                "Mention",
+                "Permission to Appeal",
+                "Appeal Hearing (Financial Remedy)",
+                "Application Hearing",
+                "Retrial Hearing",
+                "Pre-Trial Review (PTR)"
+            ];
+      await approvedOrderPage.assertHearingTypeDropDownOptionsAreVisible(hearingList);
+      await approvedOrderPage.selectTypeOfHearing('Financial Dispute Resolution (FDR)');
+      await approvedOrderPage.selectWhichOrderIsThisFor('BagginsFDA.pdf');
+      await approvedOrderPage.selectTimeEstimate();
+
       await approvedOrderPage.navigateContinue(expectedUrl, 3);
       await approvedOrderPage.verifyJudgeTitleListOptions();
       await approvedOrderPage.selectJudgeTitle('District Judge');
@@ -212,7 +230,7 @@ test.describe('Contested - Upload Draft Order', () => {
 
     test ('Contested - Upload Draft Order - Verify user confidentiality with hearings', async ({loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage}) => {
         const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-        const hearingDate = await DateHelper.getHearingDateUsingCurrentDate();
+        const hearingDate = await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
 
         await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate, [
           { action: 'delete', key: 'workingHearing.partiesOnCaseMultiSelectList.value' },
