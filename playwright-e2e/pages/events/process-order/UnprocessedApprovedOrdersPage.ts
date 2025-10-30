@@ -10,7 +10,7 @@ export class UnprocessedApprovedOrdersPage extends BaseJourneyPage {
     }
 
     async checkOrderIsInUnprocessedApprovedOrders(orderFileName: string) {
-        const orderLocator = this.unprocessedApprovedDocuments.getByRole('link', { name: `${orderFileName}` });
+        const orderLocator = this.unprocessedApprovedDocuments.getByRole('button', { name: `${orderFileName}` });
         await orderLocator.waitFor({ state: 'visible' });
         return orderLocator;
     }
