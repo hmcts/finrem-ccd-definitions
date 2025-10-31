@@ -86,3 +86,19 @@ export const suggested_draft_order_case_document_tabs: Tab[] = [
         ]
     }
 ];
+export const suggested_draft_order_solicitor_case_document_tabs: Tab[] = [
+    {
+        tabName: "Case documents",
+        tabContent: [
+            "Suggested draft orders prior to a hearing",
+            "Suggested draft orders prior to a hearing 1",
+            { tabItem: 'Draft order', value: 'agreed-draft-order-document.docx' },
+            { tabItem: 'Submitted by', value: 'APP APP' },
+            { tabItem: 'Submitted by (email address)', value: 'fr_applicant_solicitor1@mailinator.com' },
+            "Suggested draft orders prior to a hearing 2",
+            { tabItem: 'Pension Sharing Annex', value: 'BagginsFDA.pdf' },
+            { tabItem: 'Submitted by', value: 'APP APP' },
+            { tabItem: 'Submitted by (email address)', value: 'fr_applicant_solicitor1@mailinator.com' },
+        ]
+    }
+];
