@@ -8544,5 +8544,15 @@
     "FieldTypeParameter": "FR_cwApprovedOrder",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "11/01/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageCaseDocumentsActionSelection",
+    "Label": "What do you want to do?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_ManageCaseDocumentsAction",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
