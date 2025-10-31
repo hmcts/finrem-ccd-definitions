@@ -173,7 +173,7 @@ test.describe('Contested - Upload Draft Order', () => {
             const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
             let expectedUrl = ContestedEvents.uploadDraftOrders.ccdCallback;
             await manageCaseDashboardPage.visit();
-            await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+            await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
             await manageCaseDashboardPage.navigateToCase(caseId);
 
             await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
