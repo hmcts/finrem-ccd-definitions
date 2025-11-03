@@ -4,10 +4,12 @@ import config from "../../../config/config.ts";
 import {ContestedEvents} from "../../../config/case-data.ts";
 import {YesNoRadioEnum} from "../../../pages/helpers/enums/RadioEnums.ts";
 import {
-    uploadDraftOrderTable, uploadSuggestedDraftOrderTable
+    uploadDraftOrderTable, uploadSuggestedDraftOrderTable,
+    uploadSuggestedDraftOrderTableSolicitor
 } from "../../../resources/check_your_answer_content/upload_draft_order/uploadDraftOrderTable.ts";
 import {
     approved_upload_draft_order_tabs, suggested_draft_order_case_document_tabs,
+    suggested_draft_order_solicitor_case_document_tabs,
     upload_draft_order_tabs
 } from "../../../resources/tab_content/contested/upload_draft_order_tabs.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
@@ -257,5 +259,33 @@ test.describe('Contested - Upload Draft Order', () => {
 
         // Verify that the hearing details are not shown to the user
         await uploadDraftOrdersPage.assertHearingDropdownIsEmpty(); // Hearing dropdown should be empty as the user is not part of the hearing
+    });
+
+    //Form A upload suggested draft order as an applicant solicitor, no hearing on case
+    test('Contested - Upload Suggested Draft Order without Hearing on case', async ({loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, checkYourAnswersPage}) => {
+        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
+
+        await manageCaseDashboardPage.visit();
+        await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
+        await manageCaseDashboardPage.navigateToCase(caseId);
+
+        await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
+
+        await uploadDraftOrdersPage.chooseASuggestedDraftOrderPriorToAListedHearing();
+        await uploadDraftOrdersPage.navigateContinue();
+        await uploadDraftOrdersPage.assertMandatoryFields(false);
+
+        await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
+        await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
+        await uploadDraftOrdersPage.chooseThatYouAreUploadingPensionSharingAnnexes();
+        await uploadDraftOrdersPage.uploadDraftOrder(caseId);
+        await uploadDraftOrdersPage.uploadPensionSharingAnnexes();
+        await uploadDraftOrdersPage.navigateContinue('submit');
+
+        await checkYourAnswersPage.assertCheckYourAnswersPage(uploadSuggestedDraftOrderTableSolicitor);
+        await uploadDraftOrdersPage.navigateSubmit();
+        await uploadDraftOrdersPage.closeAndReturnToCaseDetails();
+        await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.uploadDraftOrders.listItem);
+        await caseDetailsPage.assertTabData(suggested_draft_order_solicitor_case_document_tabs);
     });
 });
