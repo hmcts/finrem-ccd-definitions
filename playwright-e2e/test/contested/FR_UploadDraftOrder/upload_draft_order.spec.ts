@@ -158,7 +158,7 @@ test.describe('Contested - Upload Draft Order', () => {
 
     test(
         'Form A case uploading a Suggested draft order',
-        { tag: [] },
+        { tag: ['@test'] },
         async (
             {
                 loginPage,
