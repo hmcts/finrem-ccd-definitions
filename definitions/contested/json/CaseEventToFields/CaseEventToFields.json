@@ -11564,6 +11564,20 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "N"
+    "ShowSummaryChangeOption": "N",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 2,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "manageCaseDocumentsActionSelection=\"Add_new\""
   }
 ]

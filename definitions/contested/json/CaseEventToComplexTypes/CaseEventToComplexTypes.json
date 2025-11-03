@@ -6934,5 +6934,126 @@
     "CaseFieldID": "workingHearing",
     "ListElementCode": "partiesOnCaseMultiSelectList",
     "DisplayContext": "MANDATORY"
+  },
+
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocuments",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentType",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentOther",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "hearingDetails",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentiality",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentialityWarning0",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentialityWarning1",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentialityWarning2",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentialityWarning3",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentialityWarning4",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentialityWarning5",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentialityWarning6",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentConfidentialityWarning7",
+    "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentFdr",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentParty",
+    "DisplayContext": "MANDATORY"
   }
 ]
