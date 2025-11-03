@@ -44,7 +44,7 @@ test.describe('Notice of Change', () => {
 
     });
 
-    test(
+    test.skip( // will turn back on once CCD-6922 invetigated and resolved
       'CAA can raise a Notice of Change', { tag: [] },
       async ({ loginPage, manageCaseDashboardPage, noticeOfChangePage, caseDetailsPage  }) => {
 

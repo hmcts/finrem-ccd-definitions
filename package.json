@@ -56,9 +56,9 @@
     "test:a11y": "echo test:a11y",
     "test:smoke": "yarn playwright install chromium && yarn playwright test --grep=@smoke-test --project=chromium",
     "test:functional": "yarn playwright install chromium && yarn playwright test --grep=@preview --project=chromium",
-    "test:functional-chromium": "yarn playwright install chromium && yarn playwright test --project=chromium",
+    "test:functional-chromium": "yarn playwright install chromium && yarn playwright test --grep=@chromium --grep=@preview --project=chromium",
     "test:functional-chrome": "yarn playwright install chrome && yarn playwright test --grep=@preview --grep=@chrome --project=chrome",
-    "test:functional-edge": "yarn playwright install msedge && yarn playwright test --grep=@preview --grep=@edge --project=edge",
+    "test:functional-edge": "yarn playwright install msedge && yarn playwright test --project=edge",
     "test:functional-firefox": "yarn playwright install firefox && yarn playwright test --grep=@preview --grep=@firefox --project=firefox",
     "test:functional-webkit": "yarn playwright install webkit && yarn playwright test --grep=@preview --grep=@webkit --project=webkit",
     "test:crossbrowser": "./bin/run-crossbrowser-tests.sh",
@@ -102,7 +102,8 @@
     "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
     "highLevelDataSetup": "echo 'bash ./gradlew highLevelDataSetup --args=$1 && sh bin/after-data-setup-step.sh' > ./temp.sh && sh ./temp.sh",
     "yarn-update": "node bin/set-yarn-version.js",
-    "install-dependencies": "yarn install --silent"
+    "install-dependencies": "yarn install --silent",
+    "delete-nightly-dev-branch": "node node_modules/@hmcts/playwright-common/src/scripts/delete-nightly-dev-branch.js"
   },
   "pre-commit": [
     "lint"
@@ -125,13 +126,12 @@
     "html_codesniffer": "^2.5.1",
     "lodash": "^4.17.21",
     "otplib": "^12.0.1",
-    "playwright": "^1.46.1",
     "proper-lockfile": "^4.1.2"
   },
   "devDependencies": {
     "@hmcts/eslint-config": "^1.4.0",
     "@hmcts/playwright-common": "^1.0.25",
-    "@playwright/test": "^1.46.1",
+    "@playwright/test": "^1.55.1",
     "@shinnn/eslint-config": "^7.0.0",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.0.0",
@@ -152,12 +152,12 @@
     "webdriverio": "^9.0.7"
   },
   "resolutions": {
-    "@eslint/plugin-kit": "^0.3.3",
+    "@eslint/plugin-kit": "^0.4.0",
     "cross-spawn": "^7.0.6",
     "on-headers": "^1.1.0",
     "puppeteer-core": "^24.0.0",
     "ws": "^8.18.0",
     "brace-expansion": "^4.0.1"
   },
-  "packageManager": "yarn@4.9.4"
+  "packageManager": "yarn@4.10.3"
 }
