@@ -230,6 +230,7 @@ test.describe('Contested - Upload Draft Order', () => {
 
     test ('Contested - Upload Draft Order - Verify user confidentiality with hearings', async ({loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage}) => {
         const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+        await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
         const hearingDate = await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
 
         await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate, [
@@ -257,5 +258,20 @@ test.describe('Contested - Upload Draft Order', () => {
 
         // Verify that the hearing details are not shown to the user
         await uploadDraftOrdersPage.assertHearingDropdownIsEmpty(); // Hearing dropdown should be empty as the user is not part of the hearing
+
+        await manageCaseDashboardPage.signOut();
+
+        await loginPage.loginWaitForPath(config.respondent_barrister.email, config.respondent_barrister.password, config.manageCaseBaseURL, config.loginPaths.cases);
+        await manageCaseDashboardPage.navigateToCase(caseId);
+        
+        await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
+        await uploadDraftOrdersPage.chooseAnAgreedOrderFollowingAHearing();
+        await uploadDraftOrdersPage.navigateContinue();
+        
+        await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
+        // Verify that the hearing details are shown to the respondent barrister
+        await uploadDraftOrdersPage.selectFirstAvailableHearing(); // Hearing dropdown should have values as the barrister should have access to the hearing
+
+        
     });
 });
