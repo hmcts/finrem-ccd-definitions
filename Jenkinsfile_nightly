@@ -1,6 +1,6 @@
 #!groovy
 properties([
-        pipelineTriggers([cron('00 17 * * 1-5')]),
+        pipelineTriggers([cron('00 18 * * 1-5')]),
         parameters([
                 string(
                         name: 'RUNNING_ENV',
@@ -72,7 +72,8 @@ def secrets = [
         secret("playwright-solicitor2-username","PLAYWRIGHT_SOLICITOR2_USERNAME"),
         secret("playwright-solicitor2-password","PLAYWRIGHT_SOLICITOR2_PSWD"),
         secret("playwright-respondent-sol2-username","PLAYWRIGHT_RESPONDENT_SOL2_USERNAME"),
-        secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD")
+        secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD"),
+        secret("nightlydevtoken","GITHUB_TOKEN")
     ]
 ]
 
@@ -109,6 +110,14 @@ withNightlyPipeline(type, product, component) {
     loadVaultSecrets(secrets)
 
     afterAlways('DependencyCheckNightly') {
+        stage('Delete nightly dev branch') {
+        try {
+            echo "Cleaning up: running delete-nightly-dev-branch for finrem-ccd-definitions..."
+            yarnBuilder.yarn('delete-nightly-dev-branch finrem-ccd-definitions')
+        } catch (Error) {
+            unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+        }
+    }
         stage('Set up playwright') {
             yarnBuilder.yarn('yarn-update')
             yarnBuilder.yarn('install-dependencies')
@@ -228,4 +237,5 @@ withNightlyPipeline(type, product, component) {
             }
         }
     }
+
 }
