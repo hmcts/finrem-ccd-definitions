@@ -111,7 +111,7 @@ export class CaseDetailsPage {
                 await expect(tabItem).toBeVisible();
             } else {
                 // Handle object content with tabItem and value
-                const tabItem = await this.getVisibleTabContent(content.tabItem, position);
+                const tabItem = await this.getVisibleTabContent(content.tabItem, position, content.exact ?? true);
                 await expect(tabItem).toBeVisible();
 
                 // Refine the locator to uniquely identify the corresponding <td>
@@ -164,8 +164,8 @@ export class CaseDetailsPage {
      * 4. Returns the element at the requested visible position.
      * 5. Throws an error if the requested visible position does not exist.
      */
-    private async getVisibleTabContent(content: string, position: number = 0): Promise<Locator> {
-        const locator = this.page.getByText(content, { exact: true });
+    private async getVisibleTabContent(content: string, position: number = 0, exact: boolean = true): Promise<Locator> {
+        const locator = this.page.getByText(content, { exact });
         const count = await locator.count();
 
         if (count === 1 && position === 0) {
