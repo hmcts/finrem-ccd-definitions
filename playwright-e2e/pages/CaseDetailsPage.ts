@@ -19,7 +19,7 @@ export class CaseDetailsPage {
         this.successfulCreationBanner = page.getByText('has been created');
         this.successfulUpdateBanner = page.getByText('has been updated');
         this.selectNextStepDropDown = page.getByLabel('Next step');
-        this.goButton = page.getByRole('button', { name: 'Go' });
+        this.goButton = page.locator(`//button[text()='Go']`);
         this.closeAndReturnButton = page.getByRole('button', { name: 'Close and Return to case' });
         this.activeCaseFlagOnCase = page.getByLabel('Important').locator('div', { hasText: /There (is|are) \d+ active flag[s]? on/, });
     }
@@ -35,14 +35,15 @@ export class CaseDetailsPage {
             await this.goButton.isVisible();
             await expect(this.selectNextStepDropDown).toBeVisible();
             await this.selectNextStepDropDown.selectOption(event.listItem);
-            if (attempt >= 3) { // if go button click fails multiple times, reload the page
+            if (attempt == 3) { // if go button click fails multiple times, reload the page
                 await this.page.reload();
                 await this.page.waitForLoadState();
                 await this.goButton.isVisible();
+                await this.selectNextStepDropDown.selectOption(event.listItem);
             }
-            await this.goButton.click({ clickCount: 2, delay: 500 });
+            await this.goButton.click({ clickCount: 1, force: true });
             try {
-                await this.page.waitForURL(`**/${event.ccdCallback}/**`, { timeout: 3000 });
+                await this.page.waitForURL(`**/${event.ccdCallback}/**`, { timeout: 6000 });
                 return;
             } catch (e) {
                 if (attempt === maxRetries) throw e;
