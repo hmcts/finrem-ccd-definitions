@@ -72,7 +72,8 @@ def secrets = [
         secret("playwright-solicitor2-username","PLAYWRIGHT_SOLICITOR2_USERNAME"),
         secret("playwright-solicitor2-password","PLAYWRIGHT_SOLICITOR2_PSWD"),
         secret("playwright-respondent-sol2-username","PLAYWRIGHT_RESPONDENT_SOL2_USERNAME"),
-        secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD")
+        secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD"),
+        secret("nightlydevtoken","GITHUB_TOKEN")
     ]
 ]
 
