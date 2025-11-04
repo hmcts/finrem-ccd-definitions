@@ -8,7 +8,7 @@ import {envTestData} from "../../data-utils/test_data/EnvTestDataConfig.ts";
 
 test(
     'Consented - Application Payment Submission',
-    { tag: [] },
+    { tag: ['@chromium'] },
     async (
           {
             loginPage,
