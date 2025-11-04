@@ -272,9 +272,7 @@ test.describe('Contested - Upload Draft Order', () => {
         
         await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
         // Verify that the hearing details are shown to the respondent barrister
-        await uploadDraftOrdersPage.selectFirstAvailableHearing(); // Hearing dropdown should have values as the barrister should have access to the hearing
-
-        
+        await uploadDraftOrdersPage.selectFirstAvailableHearing(); // Hearing dropdown should have values as the barrister should have access to the hearing 
     });
 
     //Form A upload suggested draft order as an applicant solicitor, no hearing on case
