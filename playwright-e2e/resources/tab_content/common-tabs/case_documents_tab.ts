@@ -1,18 +1,18 @@
 import { DateHelper } from "../../../data-utils/DateHelper";
 import { Tab } from "../../../pages/components/tab";
 
-export function createGeneralEmailTabData(date?: string) :Tab[] { 
+export function createGeneralEmailTabData(date?: string, tabName: string = 'Case Documents'): Tab[] { 
     return [
-    {
-    tabName: 'Case Documents',
-   tabContent: buildCaseDocTabGeneralEmailContent([
-        {
-          emailDate: date ?? DateHelper.getUtcDateTimeFormatted(),
-          recipientEmail: "fr_respondent_solicitor1@mailinator.com",
-          createdBy: "Claire Mumford",
-          body: "This is a test",
-          uploadedDoc: "test.pdf"
-        }
+      {
+        tabName,
+        tabContent: buildCaseDocTabGeneralEmailContent([
+          {
+            emailDate: date ?? DateHelper.getUtcDateTimeFormatted(),
+            recipientEmail: "fr_respondent_solicitor1@mailinator.com",
+            createdBy: "Claire Mumford",
+            body: "This is a test",
+            uploadedDoc: "test.pdf"
+          }
       ])
     },
   ];
