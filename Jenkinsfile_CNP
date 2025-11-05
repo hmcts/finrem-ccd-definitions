@@ -117,6 +117,7 @@ properties([
     copyArtifactPermission('*'),
 ]);
 withPipeline("nodejs", product, component) {
+  env.FUNCTIONAL_TESTS_WORKERS = 1
 
   loadVaultSecrets(secrets)
   enableHighLevelDataSetup()
@@ -237,30 +238,26 @@ withPipeline("nodejs", product, component) {
   }
 
   before('smoketest:preview') {
+    env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'smoke-output'
     sh 'yarn playwright install'
   }
 
   before('smoketest:aat') {
+    env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'smoke-output'
     sh 'yarn playwright install'
   }
 
-  before('functionalTest') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+  before('functionalTest:preview') {
+    env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
+    sh 'yarn playwright install'
   }
 
-  afterAlways('smokeTest:preview') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'output/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/smoke/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/trace.zip'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/**/*.png'
-  }
-
-  afterSuccess('functionalTest:preview') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
+  before('functionalTest:aat') {
+    env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
+    sh 'yarn playwright install'
   }
 
   afterSuccess('functionalTest:aat') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/mochawesome.html'
     slackSend(channel: '#finrem-dev', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
     env.ENV='prod'
   }

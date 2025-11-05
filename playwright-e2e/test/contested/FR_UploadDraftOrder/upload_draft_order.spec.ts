@@ -4,10 +4,12 @@ import config from "../../../config/config.ts";
 import {ContestedEvents} from "../../../config/case-data.ts";
 import {YesNoRadioEnum} from "../../../pages/helpers/enums/RadioEnums.ts";
 import {
-    uploadDraftOrderTable, uploadSuggestedDraftOrderTable
+    uploadDraftOrderTable, uploadSuggestedDraftOrderTable,
+    uploadSuggestedDraftOrderTableSolicitor
 } from "../../../resources/check_your_answer_content/upload_draft_order/uploadDraftOrderTable.ts";
 import {
     approved_upload_draft_order_tabs, suggested_draft_order_case_document_tabs,
+    suggested_draft_order_solicitor_case_document_tabs,
     upload_draft_order_tabs
 } from "../../../resources/tab_content/contested/upload_draft_order_tabs.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
@@ -117,7 +119,25 @@ test.describe('Contested - Upload Draft Order', () => {
       expectedUrl = ContestedEvents.approveOrders.ccdCallback;
       await axeUtils.audit();
       await approvedOrderPage.navigateContinue(expectedUrl, 2);
-      await approvedOrderPage.selectIsAnotherHearingListed(false);
+      await approvedOrderPage.selectIsAnotherHearingListed(true);
+      const hearingList = [
+                "Maintenance Pending Suit (MPS)",
+                "First Directions Appointment (FDA)",
+                "Financial Dispute Resolution (FDR)",
+                "Final Hearing (FH)",
+                "Directions (DIR)",
+                "Mention",
+                "Permission to Appeal",
+                "Appeal Hearing (Financial Remedy)",
+                "Application Hearing",
+                "Retrial Hearing",
+                "Pre-Trial Review (PTR)"
+            ];
+      await approvedOrderPage.assertHearingTypeDropDownOptionsAreVisible(hearingList);
+      await approvedOrderPage.selectTypeOfHearing('Financial Dispute Resolution (FDR)');
+      await approvedOrderPage.selectWhichOrderIsThisFor('BagginsFDA.pdf');
+      await approvedOrderPage.selectTimeEstimate();
+
       await approvedOrderPage.navigateContinue(expectedUrl, 3);
       await approvedOrderPage.verifyJudgeTitleListOptions();
       await approvedOrderPage.selectJudgeTitle('District Judge');
@@ -212,6 +232,7 @@ test.describe('Contested - Upload Draft Order', () => {
 
     test ('Contested - Upload Draft Order - Verify user confidentiality with hearings', async ({loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage}) => {
         const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+        await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
         const hearingDate = await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
 
         await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId, hearingDate, [
@@ -239,5 +260,46 @@ test.describe('Contested - Upload Draft Order', () => {
 
         // Verify that the hearing details are not shown to the user
         await uploadDraftOrdersPage.assertHearingDropdownIsEmpty(); // Hearing dropdown should be empty as the user is not part of the hearing
+
+        await manageCaseDashboardPage.signOut();
+
+        await loginPage.loginWaitForPath(config.respondent_barrister.email, config.respondent_barrister.password, config.manageCaseBaseURL, config.loginPaths.cases);
+        await manageCaseDashboardPage.navigateToCase(caseId);
+        
+        await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
+        await uploadDraftOrdersPage.chooseAnAgreedOrderFollowingAHearing();
+        await uploadDraftOrdersPage.navigateContinue();
+        
+        await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
+        // Verify that the hearing details are shown to the respondent barrister
+        await uploadDraftOrdersPage.selectFirstAvailableHearing(); // Hearing dropdown should have values as the barrister should have access to the hearing 
+    });
+
+    //Form A upload suggested draft order as an applicant solicitor, no hearing on case
+    test('Contested - Upload Suggested Draft Order without Hearing on case', async ({loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage, checkYourAnswersPage}) => {
+        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProgressToListing();
+
+        await manageCaseDashboardPage.visit();
+        await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
+        await manageCaseDashboardPage.navigateToCase(caseId);
+
+        await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
+
+        await uploadDraftOrdersPage.chooseASuggestedDraftOrderPriorToAListedHearing();
+        await uploadDraftOrdersPage.navigateContinue();
+        await uploadDraftOrdersPage.assertMandatoryFields(false);
+
+        await uploadDraftOrdersPage.confirmTheUploadedDocsAreForTheCase();
+        await uploadDraftOrdersPage.chooseThatYouAreUploadingOrders();
+        await uploadDraftOrdersPage.chooseThatYouAreUploadingPensionSharingAnnexes();
+        await uploadDraftOrdersPage.uploadDraftOrder(caseId);
+        await uploadDraftOrdersPage.uploadPensionSharingAnnexes();
+        await uploadDraftOrdersPage.navigateContinue('submit');
+
+        await checkYourAnswersPage.assertCheckYourAnswersPage(uploadSuggestedDraftOrderTableSolicitor);
+        await uploadDraftOrdersPage.navigateSubmit();
+        await uploadDraftOrdersPage.closeAndReturnToCaseDetails();
+        await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.uploadDraftOrders.listItem);
+        await caseDetailsPage.assertTabData(suggested_draft_order_solicitor_case_document_tabs);
     });
 });

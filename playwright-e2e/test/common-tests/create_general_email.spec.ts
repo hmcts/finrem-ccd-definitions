@@ -3,10 +3,9 @@ import config from '../../config/config';
 import { CommonEvents } from '../../config/case-data';
 import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
 import { createGeneralEmailTableData } from '../../resources/check_your_answer_content/create_general_email/createGeneralEmailTable';
-import { createGeneralEmailTabDataConsented } from '../../resources/tab_content/consented/case_documents_tab';
 import { DateHelper } from '../../data-utils/DateHelper';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
-import { createGeneralEmailTabDataContested } from '../../resources/tab_content/contested/case_documents_tab';
+import { createGeneralEmailTabData } from '../../resources/tab_content/common-tabs/case_documents_tab';
 
 test.describe('Create General Email', () => {
     test(
@@ -41,7 +40,7 @@ test.describe('Create General Email', () => {
             await caseDetailsPage.checkHasBeenUpdated(CommonEvents.createGeneralEmail.listItem);
 
             //assert case documents tab data
-            await caseDetailsPage.assertTabData(createGeneralEmailTabDataContested(date))
+            await caseDetailsPage.assertTabData(createGeneralEmailTabData(date, 'Case documents'));
         }
     )
     test(
@@ -76,7 +75,7 @@ test.describe('Create General Email', () => {
             await caseDetailsPage.checkHasBeenUpdated(CommonEvents.createGeneralEmail.listItem);
 
             //assert case documents tab data
-            await caseDetailsPage.assertTabData(createGeneralEmailTabDataConsented(date))
+            await caseDetailsPage.assertTabData(createGeneralEmailTabData(date, 'Case Documents'));
         }
     )
 });
