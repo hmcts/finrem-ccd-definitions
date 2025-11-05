@@ -36,10 +36,11 @@ test.describe('Create General Email', () => {
             await createGeneralEmailPage.navigateSubmit();
             // get the current date and time for assertion in tab
             const date= DateHelper.getUtcDateTimeFormatted();
+
             await caseDetailsPage.checkHasBeenUpdated(CommonEvents.createGeneralEmail.listItem);
 
             //assert case documents tab data
-            await caseDetailsPage.assertTabData(createGeneralEmailTabData(date))
+            await caseDetailsPage.assertTabData(createGeneralEmailTabData(date, 'Case documents'));
         }
     )
     test(
@@ -74,7 +75,7 @@ test.describe('Create General Email', () => {
             await caseDetailsPage.checkHasBeenUpdated(CommonEvents.createGeneralEmail.listItem);
 
             //assert case documents tab data
-            await caseDetailsPage.assertTabData(createGeneralEmailTabData(date))
+            await caseDetailsPage.assertTabData(createGeneralEmailTabData(date, 'Case Documents'));
         }
     )
 });
