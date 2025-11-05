@@ -1,0 +1,31 @@
+[
+  {
+    "LiveFrom": "03/11/2025",
+    "ID": "FR_VacateHearingAction",
+    "ListElementCode": "choose_hearings",
+    "FieldType": "DynamicList",
+    "ElementLabel": "Which hearing(s) do you want to vacate?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+  "LiveFrom": "28/04/2025",
+  "ID": "FR_VacateHearingAction",
+  "ListElementCode": "hearingDate",
+  "FieldType": "Date",
+  "ElementLabel": "Hearing Date",
+  "HintText": "This is the date the hearing was vacated by the listing team. This date must be before the hearing date.",
+  "SecurityClassification": "Public",
+  "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/04/2025",
+    "ID": "FR_VacateHearingAction",
+    "ListElementCode": "reasonsForVacating",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_VacateHearingReason",
+    "ElementLabel": "Why is the hearing being vacated?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }
+]

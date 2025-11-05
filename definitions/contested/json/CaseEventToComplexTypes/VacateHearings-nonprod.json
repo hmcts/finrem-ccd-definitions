@@ -1,0 +1,26 @@
+[
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_VacateHearingAction",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "vacateHearingSelection",
+    "ListElementCode": "choose_hearings",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "ID": "FR_VacateHearingAction",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "vacateHearingSelection",
+    "ListElementCode": "hearingDate",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "25/06/2025",
+    "ID": "FR_VacateHearingAction",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "vacateHearingSelection",
+    "ListElementCode": "reasonsForVacating",
+    "DisplayContext": "MANDATORY"
+  }
+]
