@@ -27,5 +27,15 @@
     "ElementLabel": "Why is the hearing being vacated?",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/11/2025",
+    "ID": "FR_VacateHearingAction",
+    "ListElementCode": "specifyOtherReason",
+    "FieldType": "TextArea",
+    "ElementLabel": " ",
+    "FieldShowCondition": "reasonsForVacating=\"Other\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
