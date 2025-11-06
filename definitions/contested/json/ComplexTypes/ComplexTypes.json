@@ -5159,6 +5159,15 @@
   {
     "LiveFrom": "01/11/2025",
     "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "caseDocuments",
+    "FieldType": "Document",
+    "ElementLabel": "Please upload any case documents",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentInput",
     "ListElementCode": "caseDocumentType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_s_caseDocumentType",
