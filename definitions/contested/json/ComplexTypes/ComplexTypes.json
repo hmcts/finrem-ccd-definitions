@@ -5129,78 +5129,7 @@
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the document confidential?",
     "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/11/2025",
-    "ID": "FR_manageCaseDocumentInput",
-    "ListElementCode": "caseDocumentConfidentialityWarning0",
-    "FieldType": "Label",
-    "ElementLabel": "###### ‘Confidential’ should only be selected for documents that you would never want to share with another party, for example a Form C8 for confidential address, or documents relating to a lock and key cases etc.",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/11/2025",
-    "ID": "FR_manageCaseDocumentInput",
-    "ListElementCode": "caseDocumentConfidentialityWarning1",
-    "FieldType": "Label",
-    "ElementLabel": "\n\n###### &nbsp;",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/11/2025",
-    "ID": "FR_manageCaseDocumentInput",
-    "ListElementCode": "caseDocumentConfidentialityWarning2",
-    "FieldType": "Label",
-    "ElementLabel": "###### Do not use the confidential option to upload a document that you later intend to share as once confidential you will not be able to share it.",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/11/2025",
-    "ID": "FR_manageCaseDocumentInput",
-    "ListElementCode": "caseDocumentConfidentialityWarning3",
-    "FieldType": "Label",
-    "ElementLabel": "\n\n###### &nbsp;",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/11/2025",
-    "ID": "FR_manageCaseDocumentInput",
-    "ListElementCode": "caseDocumentConfidentialityWarning4",
-    "FieldType": "Label",
-    "ElementLabel": "###### Do not select confidential if you are only waiting to exchange documents.",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/11/2025",
-    "ID": "FR_manageCaseDocumentInput",
-    "ListElementCode": "caseDocumentConfidentialityWarning5",
-    "FieldType": "Label",
-    "ElementLabel": "\n\n###### &nbsp;",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/11/2025",
-    "ID": "FR_manageCaseDocumentInput",
-    "ListElementCode": "caseDocumentConfidentialityWarning6",
-    "FieldType": "Label",
-    "ElementLabel": "###### Parties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/11/2025",
-    "ID": "FR_manageCaseDocumentInput",
-    "ListElementCode": "caseDocumentConfidentialityWarning7",
-    "FieldType": "Label",
-    "ElementLabel": "\n\n###### &nbsp;",
+    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentType!=\"Without Prejudice offers\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5209,10 +5138,10 @@
     "ID": "FR_manageCaseDocumentInput",
     "ListElementCode": "caseDocumentFdr",
     "FieldType": "YesOrNo",
-    "FieldShowCondition": "caseDocumentConfidentiality=\"No\"",
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
     "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public",
+    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgement\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "Searchable": "N"
   },
   {
@@ -5223,6 +5152,7 @@
     "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "Document on behalf of?",
     "SecurityClassification": "Public",
+    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "Searchable": "N"
   }
 ]
