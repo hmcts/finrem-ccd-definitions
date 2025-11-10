@@ -7,6 +7,16 @@
     "FieldType": "FR_VacateHearingAction",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "relistHearingSelection",
+    "Label": "Will you be relisting the hearing and adding a new date now?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_RelistHearingAction",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
 
