@@ -5,10 +5,10 @@ import {ContestedEvents} from '../../../config/case-data.ts';
 import {YesNoRadioEnum} from '../../../pages/helpers/enums/RadioEnums.ts';
 import {newUploadApprovedOrderMHTabDataOnHearing1} from '../../../resources/tab_content/contested/hearings_tabs.ts';
 import {AxeUtils} from "../../../fixtures/utils/axe-utils.ts";
-import { UploadApprovedOrderCaseDocumentsTabData } from '../../../resources/tab_content/contested/case_document_tabs.ts';
 import { UploadApprovedOrderOrdersTabData } from '../../../resources/tab_content/contested/orders_tab.ts';
 import {UploadApprovedOrderPage} from "../../../pages/events/upload-approved-order/UploadApprovedOrderPage.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
+import { UploadApprovedOrderCaseDocumentsTabData } from '../../../resources/tab_content/common-tabs/case_documents_tab.ts';
 
 async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
     await manageCaseDashboardPage.visit();
