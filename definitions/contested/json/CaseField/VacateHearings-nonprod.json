@@ -17,6 +17,16 @@
     "FieldTypeParameter": "FR_RelistHearingAction",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "vacatedHearings",
+    "Label": "VacatedHearings",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_vacateHearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
 
