@@ -2371,5 +2371,25 @@
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "solicitorServiceAddress",
+    "Label": "Service address",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "_comment_": "Input by applicant solicitor during stop representing a client"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "rSolicitorServiceAddress",
+    "Label": "Service address",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "_comment_": "Input by respondent solicitor during stop representing a client"
   }
 ]

@@ -8554,5 +8554,25 @@
     "FieldTypeParameter": "FR_ct_directionOrderCollection",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantServiceAddress",
+    "Label": "Service address",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "_comment_": "Input by applicant solicitor during stop representing a client"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "rSolicitorServiceAddress",
+    "Label": "Service address",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "_comment_": "Input by respondent solicitor during stop representing a client"
   }
 ]
