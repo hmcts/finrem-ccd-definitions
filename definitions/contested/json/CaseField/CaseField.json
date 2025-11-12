@@ -8544,24 +8544,5 @@
     "FieldTypeParameter": "FR_cwApprovedOrder",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "11/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "serviceAddress",
-    "Label": "Service Address",
-    "FieldType": "changeOrganisationRequestField",
-    "HintText": "Service address where all further documents should be sent to.",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "11/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "doesClientConsentToYouStoppingRepresentation",
-    "Label": "Does your client consent to you stopping representation?",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
   }
 ]
