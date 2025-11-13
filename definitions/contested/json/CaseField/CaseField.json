@@ -8568,11 +8568,27 @@
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantServiceAddressConfidential",
+    "Label": "Keep the Applicant's contact details private from the Respondent?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
     "ID": "rSolicitorServiceAddress",
     "Label": "Service address",
     "FieldType": "AddressUK",
     "SecurityClassification": "Public",
     "Searchable": "N",
     "_comment_": "Input by respondent solicitor during stop representing a client"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "rSolicitorServiceAddressConfidential",
+    "Label": "Keep the Respondent's contact details private from the Applicant?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
   }
 ]
