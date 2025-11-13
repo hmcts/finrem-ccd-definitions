@@ -8590,5 +8590,21 @@
     "Label": "Keep the Respondent's contact details private from the Applicant?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "loginAsApplicantSolicitor",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "loginAsRespondentSolicitor",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
   }
 ]

@@ -7270,5 +7270,19 @@
     "CaseFieldID": "rSolicitorServiceAddressConfidential",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "loginAsApplicantSolicitor",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "loginAsRespondentSolicitor",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
   }
 ]

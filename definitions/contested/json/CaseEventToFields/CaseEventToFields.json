@@ -11558,13 +11558,40 @@
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_stopRepresentingClient",
+    "CaseFieldID": "loginAsApplicantSolicitor",
+    "PageFieldDisplayOrder": -1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition": "loginAsRespondentSolicitor CONTAINS \"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "CaseFieldID": "loginAsRespondentSolicitor",
+    "PageFieldDisplayOrder": -1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition": "loginAsApplicantSolicitor CONTAINS \"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_stopRepresentingClient",
     "CaseFieldID": "applicantServiceAddress",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "loginAsApplicantSolicitor=\"Yes\""
   },
   {
     "LiveFrom": "12/11/2025",
@@ -11576,7 +11603,8 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "loginAsApplicantSolicitor=\"Yes\""
   },
   {
     "LiveFrom": "12/11/2025",
@@ -11588,7 +11616,8 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "loginAsRespondentSolicitor=\"Yes\""
   },
   {
     "LiveFrom": "12/11/2025",
@@ -11600,6 +11629,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "loginAsRespondentSolicitor=\"Yes\""
   }
 ]

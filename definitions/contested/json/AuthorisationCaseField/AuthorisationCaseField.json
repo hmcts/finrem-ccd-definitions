@@ -19500,5 +19500,19 @@
     "CaseFieldID": "rSolicitorServiceAddressConfidential",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "loginAsApplicantSolicitor",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "loginAsRespondentSolicitor",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
   }
 ]
