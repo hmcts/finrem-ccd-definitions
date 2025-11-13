@@ -36,7 +36,9 @@ export const UploadApprovedOrderCaseDocumentsTabData: Tab[] = [{
   tabContent: [
     "Upload Approved Order 1", 
     { tabItem: "Upload Document", value: "approvedOrder.pdf"},
-    { tabItem: "Additional attachments", value: "additionalAttachment.pdf"}
+    { tabItem: "Additional attachments", value: "additionalAttachment.pdf"},
+    "Upload Approved Order 2", 
+    { tabItem: "Upload Document", value: "approvedOrder.pdf"}
   ]
 }]
 
