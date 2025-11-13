@@ -11242,7 +11242,7 @@
     "LiveFrom": "24/07/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_processOrder",
-    "CaseFieldID": "uploadHearingOrder",
+    "CaseFieldID": "unprocessedUploadHearingDocuments",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "COMPLEX",
     "PageID": 1,
@@ -11264,7 +11264,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "FieldShowCondition": "uploadHearingOrder=\"DO_NOT_SHOW\""
+    "FieldShowCondition": "unprocessedUploadHearingDocuments=\"DO_NOT_SHOW\""
   },
   {
     "LiveFrom": "24/07/2025",
@@ -11276,7 +11276,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\"",
+    "FieldShowCondition": "unprocessedUploadHearingDocuments=\"DONOTSHOW\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -11303,7 +11303,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "FieldShowCondition": "uploadHearingOrder=\"DO_NOT_SHOW\""
+    "FieldShowCondition": "unprocessedUploadHearingDocuments=\"DO_NOT_SHOW\""
   },
   {
     "LiveFrom": "24/07/2025",
