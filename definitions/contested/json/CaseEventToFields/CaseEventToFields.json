@@ -11642,7 +11642,8 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "loginAsApplicantSolicitor=\"Yes\""
   },
   {
     "LiveFrom": "12/11/2025",
@@ -11655,6 +11656,32 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "clientConsentOnAppSolStopRep=\"No\""
+    "FieldShowCondition": "clientConsentOnAppSolStopRep=\"No\" AND loginAsApplicantSolicitor=\"Yes\""
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "CaseFieldID": "clientConsentOnRespSolStopRep",
+    "PageFieldDisplayOrder": 7,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "loginAsRespondentSolicitor=\"Yes\""
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "CaseFieldID": "judicialApprovalOnRespSolStopRep",
+    "PageFieldDisplayOrder": 8,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "clientConsentOnAppSolStopRep=\"No\" AND loginAsRespondentSolicitor=\"Yes\""
   }
 ]
