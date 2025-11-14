@@ -1,0 +1,35 @@
+[
+  {
+    "LiveFrom": "03/11/2025",
+    "ID": "FR_VacateHearingAction",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "vacateHearingSelection",
+    "ListElementCode": "chooseHearings",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "03/11/2025",
+    "ID": "FR_VacateHearingAction",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "vacateHearingSelection",
+    "ListElementCode": "hearingDate",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "03/11/2025",
+    "ID": "FR_VacateHearingAction",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "vacateHearingSelection",
+    "ListElementCode": "reasonsForVacating",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "03/11/2025",
+    "ID": "FR_VacateHearingAction",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "vacateHearingSelection",
+    "ListElementCode": "specifyOtherReason",
+    "DisplayContext": "OPTIONAL"
+  }
+]
+
