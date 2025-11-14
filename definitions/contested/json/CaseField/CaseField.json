@@ -8554,5 +8554,25 @@
     "FieldTypeParameter": "FR_ct_directionOrderCollection",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "manageCaseDocumentsActionSelection",
+    "Label": "What do you want to do?",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_ManageCaseDocumentsAction",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "inputManageCaseDocumentCollection",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_manageCaseDocumentInput",
+    "Label": "Add new case document(s)",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
