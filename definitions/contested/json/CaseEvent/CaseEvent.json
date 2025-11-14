@@ -1442,6 +1442,19 @@
     "ShowEventNotes": "N"
   },
   {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "FR_stopRepresentingClient",
+    "Name": "Stop representing a client",
+    "Description": "Stop representing a client",
+    "DisplayOrder": 159,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
     "LiveFrom": "25/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_manageHearingsMigration",
