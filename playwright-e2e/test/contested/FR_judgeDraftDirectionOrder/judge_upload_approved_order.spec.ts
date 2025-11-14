@@ -8,7 +8,6 @@ import { judgeUploadApprovedOrderTableData } from '../../../resources/check_your
 import { judgeApprovedOrderTabData } from '../../../resources/tab_content/contested/judge_approved_order_tab';
 import { AxeUtils } from '@hmcts/playwright-common';
 
-// New describe block for Judge Upload Approved order
 test.describe('Contested - Judge Upload Approved Order', () => {
   test(
     'Contested - FormA - Judge uploads approved order without hearing',
@@ -18,6 +17,8 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       manageCaseDashboardPage,
       caseDetailsPage,
       judgeUploadApprovedOrderPage,
+      unprocessedApprovedOrdersPage,
+      processOrderHearingDetailsPage,
       axeUtils,
       checkYourAnswersPage
     }, testInfo) => {
@@ -51,6 +52,18 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       await judgeUploadApprovedOrderPage.navigateSubmit();
 
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.judgeUploadApprovedOrder.listItem);
+      await manageCaseDashboardPage.signOut();
+
+      //sign in as caseworker and process order
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedHearingOrders('judgeApprovedOrder.docx');
+      await unprocessedApprovedOrdersPage.navigateContinue();
+      await processOrderHearingDetailsPage.selectIsAnotherHearingToBeListed(false);
+      await processOrderHearingDetailsPage.navigateContinue();
+      await processOrderHearingDetailsPage.navigateSubmit();
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.processOrder.listItem);
 
       // Assert tab data
       await caseDetailsPage.assertTabData(judgeApprovedOrderTabData);

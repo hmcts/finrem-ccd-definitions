@@ -9,6 +9,7 @@ import { UploadApprovedOrderOrdersTabData } from '../../../resources/tab_content
 import {UploadApprovedOrderPage} from "../../../pages/events/upload-approved-order/UploadApprovedOrderPage.ts";
 import {DateHelper} from "../../../data-utils/DateHelper.ts";
 import { UploadApprovedOrderCaseDocumentsTabData } from '../../../resources/tab_content/common-tabs/case_documents_tab.ts';
+import { sendOrderTableDataWithUploadApprovedOrder } from '../../../resources/check_your_answer_content/send_order/sendOrderTable.ts';
 
 async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
     await manageCaseDashboardPage.visit();
@@ -56,6 +57,36 @@ async function performUploadApprovedOrderFlowMH(
   return date;
 }
 
+async function performUploadApprovedOrderFlowWithoutHearing(
+  caseDetailsPage: any,
+  uploadApprovedOrderPage: UploadApprovedOrderPage,
+  axeUtils: AxeUtils
+): Promise<string> {
+  await caseDetailsPage.selectNextStep(ContestedEvents.uploadApprovedOrder);
+  await uploadApprovedOrderPage.uploadFirstUploadApprovedOrder('approvedOrder.pdf');
+  await uploadApprovedOrderPage.uploadSecondUploadApprovedOrder('approvedOrder.pdf');
+  await uploadApprovedOrderPage.uploadAdditionalAttachment('additionalAttachment.docx');
+  await uploadApprovedOrderPage.navigateContinue(ContestedEvents.uploadApprovedOrder.ccdCallback, 2);
+  await uploadApprovedOrderPage.selectJudge('District Judge');
+  await uploadApprovedOrderPage.enterJudgeName('District Judge Smith');
+  await uploadApprovedOrderPage.enterCourtOrderDate('01', '01', '2022');
+  await axeUtils.audit();
+  await uploadApprovedOrderPage.navigateContinue(ContestedEvents.uploadApprovedOrder.ccdCallback, 3);
+  await uploadApprovedOrderPage.selectIsThisFinalOrder(YesNoRadioEnum.YES);
+  await uploadApprovedOrderPage.selectDoYouWantToAddHearing(YesNoRadioEnum.NO);
+  await axeUtils.audit({
+    exclude: [
+      '#workingHearing_additionalHearingDocs_value'
+    ]
+    }
+  );
+  await uploadApprovedOrderPage.navigateContinue("submit");
+  const date = DateHelper.getUtcDateTimeFormatted();
+  // CYA page
+  await uploadApprovedOrderPage.navigateSubmit();
+  return date;
+}
+
 test.describe('Contested - Upload Approved Order (caseworker)', () => {
   test('New Upload Approved Order (MH) event with hearing', { tag: [] }, async ({
     loginPage,
@@ -71,6 +102,46 @@ test.describe('Contested - Upload Approved Order (caseworker)', () => {
     await performUploadApprovedOrderFlowMH(caseDetailsPage, uploadApprovedOrderPage, axeUtils);
     // Verify data on hearings, case documents and orders tabs
     await caseDetailsPage.assertTabData(newUploadApprovedOrderMHTabDataOnHearing1());
+    await caseDetailsPage.assertTabData(UploadApprovedOrderCaseDocumentsTabData);
+    await caseDetailsPage.assertTabData(UploadApprovedOrderOrdersTabData);
+  });
+
+  test('Upload Approved Order then send order', { tag: [] }, async ({
+    loginPage, manageCaseDashboardPage,
+    caseDetailsPage,
+    uploadApprovedOrderPage,
+    sendOrderPage,
+    checkYourAnswersPage,
+    axeUtils
+   }
+   ) => {
+    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+    await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+    await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+    await performUploadApprovedOrderFlowWithoutHearing(caseDetailsPage, uploadApprovedOrderPage, axeUtils);
+    // Process order
+    await caseDetailsPage.selectNextStep(ContestedEvents.contestedSendOrder);
+    await sendOrderPage.selectSendApprovedOrder(0);
+    await sendOrderPage.selectSendApprovedOrder(1);
+    await sendOrderPage.includeSupportingDocQuestion();
+    await sendOrderPage.selectSupportingDocument(1, 0); // selects first supporting attachment for order 1
+    await sendOrderPage.navigateContinue()
+    
+    await sendOrderPage.whoShouldReceiveOrder(['Applicant - Frodo Baggins', 'Respondent - Smeagol Gollum']);
+    await sendOrderPage.navigateContinue();
+
+    // Upload additional document
+    await sendOrderPage.uploadDocument('./playwright-e2e/resources/file/test.docx');
+    await sendOrderPage.navigateContinue();
+
+    await sendOrderPage.clickCaseStateButton();
+    await sendOrderPage.selectCaseState('Prepare for Hearing');
+    await sendOrderPage.navigateContinue();
+
+    // CYA page
+    await checkYourAnswersPage.assertCheckYourAnswersPage(sendOrderTableDataWithUploadApprovedOrder); 
+    await sendOrderPage.navigateSubmit();
+    // Verify data on hearings, case documents and orders tabs
     await caseDetailsPage.assertTabData(UploadApprovedOrderCaseDocumentsTabData);
     await caseDetailsPage.assertTabData(UploadApprovedOrderOrdersTabData);
   });
