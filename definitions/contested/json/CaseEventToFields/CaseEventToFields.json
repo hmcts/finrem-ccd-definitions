@@ -11636,7 +11636,7 @@
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_stopRepresentingClient",
-    "CaseFieldID": "clientConsentOnStopRepresentation",
+    "CaseFieldID": "clientConsentOnAppSolStopRep",
     "PageFieldDisplayOrder": 5,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
@@ -11648,13 +11648,13 @@
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_stopRepresentingClient",
-    "CaseFieldID": "judicialApprovalOnStopRepresentation",
+    "CaseFieldID": "judicialApprovalOnAppSolStopRep",
     "PageFieldDisplayOrder": 6,
     "DisplayContext": "MANDATORY",
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "clientConsentOnStopRepresentation=\"No\""
+    "FieldShowCondition": "clientConsentOnAppSolStopRep=\"No\""
   }
 ]
