@@ -5442,7 +5442,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "clientConsentOnAppSolStopRep=\"No\""
+    "FieldShowCondition": "clientConsentOnAppSolStopRep=\"No\" AND loginAsApplicantSolicitor=\"Yes\""
   },
   {
     "LiveFrom": "12/11/2025",
@@ -5467,6 +5467,6 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "clientConsentOnAppSolStopRep=\"No\""
+    "FieldShowCondition": "clientConsentOnRespSolStopRep=\"No\" AND loginAsRespondentSolicitor=\"Yes\""
   }
 ]
