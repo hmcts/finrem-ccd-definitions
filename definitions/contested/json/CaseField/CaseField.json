@@ -8606,5 +8606,21 @@
     "Label": " ",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "clientConsentOnStopRepresentation",
+    "Label": "Does your client consent to you stopping representation?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "judicialApprovalOnStopRepresentation",
+    "Label": "Do you have judicial approval to stop representation?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
   }
 ]
