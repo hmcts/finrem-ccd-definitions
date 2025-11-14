@@ -72,7 +72,8 @@ def secrets = [
         secret("playwright-solicitor2-username","PLAYWRIGHT_SOLICITOR2_USERNAME"),
         secret("playwright-solicitor2-password","PLAYWRIGHT_SOLICITOR2_PSWD"),
         secret("playwright-respondent-sol2-username","PLAYWRIGHT_RESPONDENT_SOL2_USERNAME"),
-        secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD")
+        secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD"),
+        secret("nightlydevtoken","GITHUB_TOKEN")
     ]
 ]
 
@@ -144,6 +145,24 @@ withNightlyPipeline(type, product, component) {
                 }
             }
         } else {
+            stage('Functional playwright tests - edge') {
+                try {
+                    yarnBuilder.yarn('test:functional-edge')
+                } catch (Error) {
+                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+                } finally {
+                    publishHTML([
+                            allowMissing: true,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: 'playwright-report',
+                            reportFiles: 'index.html',
+                            reportName: 'FunctionalTestReport-edge'
+                    ])
+                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+                }
+            }
+            
             stage('Functional playwright tests - chromium') {
                 try {
                     env.TESTS_FOR_ACCESSIBILITY = 'true'
@@ -176,24 +195,6 @@ withNightlyPipeline(type, product, component) {
                             reportDir: 'playwright-report',
                             reportFiles: 'index.html',
                             reportName: 'FunctionalTestReport-chrome'
-                    ])
-                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-                }
-            }
-
-            stage('Functional playwright tests - edge') {
-                try {
-                    yarnBuilder.yarn('test:functional-edge')
-                } catch (Error) {
-                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-                } finally {
-                    publishHTML([
-                            allowMissing: true,
-                            alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: 'playwright-report',
-                            reportFiles: 'index.html',
-                            reportName: 'FunctionalTestReport-edge'
                     ])
                     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
                 }

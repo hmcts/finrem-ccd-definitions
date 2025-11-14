@@ -8544,5 +8544,15 @@
     "FieldTypeParameter": "FR_cwApprovedOrder",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/10/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "unprocessedUploadHearingDocuments",
+    "Label": "Unprocessed Hearing Orders",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_ct_directionOrderCollection",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
