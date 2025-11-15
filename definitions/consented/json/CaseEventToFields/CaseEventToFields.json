@@ -5378,7 +5378,9 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "loginAsApplicantSolicitor=\"Yes\""
+    "FieldShowCondition": "loginAsApplicantSolicitor=\"Yes\"",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "12/11/2025",
