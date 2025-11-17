@@ -10,7 +10,7 @@ import { createGeneralEmailTabData } from '../../resources/tab_content/common-ta
 test.describe('Create General Email', () => {
     test(
         'Contested - Create General Email',
-        { tag: [] },
+        { tag: ['@firefox'] },
         async ({ loginPage, manageCaseDashboardPage, createGeneralEmailPage, caseDetailsPage, checkYourAnswersPage }) => {
 
             const recipientEmail = 'fr_respondent_solicitor1@mailinator.com';
