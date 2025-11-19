@@ -1,7 +1,7 @@
 [
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateOrAdjournAction",
+    "ID": "FR_workingVacatedHearing",
     "ListElementCode": "chooseHearings",
     "FieldType": "DynamicList",
     "ElementLabel": "Which hearing?",
@@ -9,19 +9,19 @@
     "Searchable": "N"
   },
   {
-  "LiveFrom": "03/11/2025",
-  "ID": "FR_vacateOrAdjournAction",
-  "ListElementCode": "hearingDate",
-  "FieldType": "Date",
-  "ElementLabel": "Vacated date",
-  "HintText": "This is the date the hearing was vacated by the listing team. This date must be before the hearing date.",
-  "SecurityClassification": "Public",
-  "Searchable": "N"
+    "LiveFrom": "03/11/2025",
+    "ID": "FR_workingVacatedHearing",
+    "ListElementCode": "vacateHearingDate",
+    "FieldType": "Date",
+    "ElementLabel": "Vacated date",
+    "HintText": "This is the date the hearing was vacated by the listing team. This date must be before the hearing date.",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateOrAdjournAction",
-    "ListElementCode": "vacateOrAdjournReason",
+    "ID": "FR_workingVacatedHearing",
+    "ListElementCode": "vacateReason",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_vacateOrAdjournHearingReason",
     "ElementLabel": "Why is the hearing being vacated?",
@@ -30,11 +30,11 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateOrAdjournAction",
+    "ID": "FR_workingVacatedHearing",
     "ListElementCode": "specifyOtherReason",
     "FieldType": "TextArea",
     "ElementLabel": " ",
-    "FieldShowCondition": "vacateOrAdjournReason=\"Other\"",
+    "FieldShowCondition": "vacateReason=\"Other\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -152,16 +152,6 @@
     "ElementLabel": "Was Migrated?",
     "SecurityClassification": "Public",
     "Searchable": "Y"
-  },
-  {
-    "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateOrAdjournHearing",
-    "ListElementCode": "newHearingDate",
-    "FieldType": "Date",
-    "ElementLabel": "Hearing Date",
-    "HintText": "This is the date the hearing was vacated by the listing team. This date must be before the hearing date.",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
   },
   {
     "LiveFrom": "03/11/2025",
