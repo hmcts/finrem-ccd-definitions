@@ -44,7 +44,7 @@ test.describe('Notice of Change', () => {
 
     });
 
-    test.skip( // will turn back on once DFR-4227 invetigated and resolved
+    test(
       'CAA can raise a Notice of Change', { tag: [] },
       async ({ loginPage, manageCaseDashboardPage, noticeOfChangePage, caseDetailsPage  }) => {
 
