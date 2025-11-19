@@ -199,7 +199,7 @@ test.describe("Consent order in contested case", () => {
                     { cellItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                     { cellItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                     { cellItem: 'Select Judge', value: 'District Judge' },
-                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_SURNAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             })
@@ -213,7 +213,7 @@ test.describe("Consent order in contested case", () => {
                         { tabItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                         { tabItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                         { tabItem: 'Select Judge', value: 'District Judge' },
-                        { tabItem: "Name of Judge", value: envTestData.JUDGE_NAME },
+                        { tabItem: "Name of Judge", value: envTestData.JUDGE_SURNAME },
                         { tabItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                     ]
                 }
@@ -468,7 +468,7 @@ test.describe("Consent order in contested case", () => {
                     { cellItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                     { cellItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                     { cellItem: 'Select Judge', value: 'District Judge' },
-                    { cellItem: "Name of Judge", value: envTestData.JUDGE_NAME },
+                    { cellItem: "Name of Judge", value: envTestData.JUDGE_SURNAME },
                     { cellItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                 ]
             })
@@ -482,7 +482,7 @@ test.describe("Consent order in contested case", () => {
                         { tabItem: 'Does a copy of this order need to be served to the pension provider?', value: 'Yes' },
                         { tabItem: 'Who is responsible for sending a copy of the order to the pension provider?', value: 'The Court' },
                         { tabItem: 'Select Judge', value: 'District Judge' },
-                        { tabItem: "Name of Judge", value: envTestData.JUDGE_NAME },
+                        { tabItem: "Name of Judge", value: envTestData.JUDGE_SURNAME },
                         { tabItem: 'Date of order', value: DateHelper.getTodayFormattedDate() }
                     ]
                 }
