@@ -1,33 +1,33 @@
 [
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_VacateHearingAction",
+    "ID": "FR_vacateOrAdjournAction",
     "CaseEventID": "FR_manageHearings",
-    "CaseFieldID": "vacateOrAdjournHearingSelection",
+    "CaseFieldID": "vacateOrAdjournHearingAction",
     "ListElementCode": "chooseHearings",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_VacateHearingAction",
+    "ID": "FR_vacateOrAdjournAction",
     "CaseEventID": "FR_manageHearings",
-    "CaseFieldID": "vacateOrAdjournHearingSelection",
+    "CaseFieldID": "vacateOrAdjournHearingAction",
     "ListElementCode": "hearingDate",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_VacateHearingAction",
+    "ID": "FR_vacateOrAdjournAction",
     "CaseEventID": "FR_manageHearings",
-    "CaseFieldID": "vacateOrAdjournHearingSelection",
+    "CaseFieldID": "vacateOrAdjournHearingAction",
     "ListElementCode": "vacateOrAdjournReason",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_VacateHearingAction",
+    "ID": "FR_vacateOrAdjournAction",
     "CaseEventID": "FR_manageHearings",
-    "CaseFieldID": "vacateOrAdjournHearingSelection",
+    "CaseFieldID": "vacateOrAdjournHearingAction",
     "ListElementCode": "specifyOtherReason",
     "DisplayContext": "OPTIONAL"
   }

@@ -1,7 +1,7 @@
 [
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_VacateHearingAction",
+    "ID": "FR_vacateOrAdjournAction",
     "ListElementCode": "chooseHearings",
     "FieldType": "DynamicList",
     "ElementLabel": "Which hearing?",
@@ -10,7 +10,7 @@
   },
   {
   "LiveFrom": "03/11/2025",
-  "ID": "FR_VacateHearingAction",
+  "ID": "FR_vacateOrAdjournAction",
   "ListElementCode": "hearingDate",
   "FieldType": "Date",
   "ElementLabel": "Vacated date",
@@ -20,17 +20,17 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_VacateHearingAction",
+    "ID": "FR_vacateOrAdjournAction",
     "ListElementCode": "vacateOrAdjournReason",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_VacateHearingReason",
+    "FieldTypeParameter": "FR_vacateOrAdjournHearingReason",
     "ElementLabel": "Why is the hearing being vacated?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_VacateHearingAction",
+    "ID": "FR_vacateOrAdjournAction",
     "ListElementCode": "specifyOtherReason",
     "FieldType": "TextArea",
     "ElementLabel": " ",
@@ -40,7 +40,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "hearingType",
     "FieldType": "Text",
     "ElementLabel": "Type of Hearing",
@@ -49,7 +49,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "hearingTimeEstimate",
     "FieldType": "Text",
     "ElementLabel": "Hearing Time Estimate",
@@ -58,7 +58,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "hearingDate",
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
@@ -68,7 +68,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "hearingTime",
     "FieldType": "Text",
     "ElementLabel": "Hearing Time",
@@ -77,7 +77,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "hearingCourtSelection",
     "FieldType": "FR_ct_courtList",
     "ElementLabel": " ",
@@ -86,7 +86,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "hearingMode",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_ManageHearingMode",
@@ -96,7 +96,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "additionalHearingInformation",
     "FieldType": "Text",
     "ElementLabel": "Additional information about the hearing",
@@ -105,7 +105,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "additionalHearingDocPrompt",
     "FieldType": "YesOrNo",
     "ElementLabel": "Do you want to upload any other documents?",
@@ -114,7 +114,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "additionalHearingDocs",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
@@ -126,7 +126,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "hearingNoticePrompt",
     "FieldType": "YesOrNo",
     "ElementLabel": "Do you want to send a notice of hearing?",
@@ -136,7 +136,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "partiesOnCase",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_partyOnCase",
@@ -146,7 +146,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "wasMigrated",
     "FieldType": "YesOrNo",
     "ElementLabel": "Was Migrated?",
@@ -155,16 +155,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
-    "ListElementCode": "chooseHearings",
-    "FieldType": "DynamicList",
-    "ElementLabel": "Which hearing?",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "newHearingDate",
     "FieldType": "Date",
     "ElementLabel": "Hearing Date",
@@ -174,17 +165,17 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "vacateOrAdjournReason",
     "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_VacateHearingReason",
+    "FieldTypeParameter": "FR_vacateOrAdjournHearingReason",
     "ElementLabel": "Why is the hearing being vacated?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "specifyOtherReason",
     "FieldType": "TextArea",
     "ElementLabel": " ",
@@ -194,7 +185,7 @@
   },
   {
     "LiveFrom": "03/11/2025",
-    "ID": "FR_vacateHearing",
+    "ID": "FR_vacateOrAdjournHearing",
     "ListElementCode": "hearingStatus",
     "FieldType": "Text",
     "ElementLabel": "Hearing Status",
