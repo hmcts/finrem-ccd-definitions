@@ -5234,7 +5234,7 @@
     "FieldTypeParameter": "FR_fl_EvidenceParty",
     "ElementLabel": "Document on behalf of?",
     "SecurityClassification": "Public",
-    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
+    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "Searchable": "N"
   }
 ]
