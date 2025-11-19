@@ -8,9 +8,6 @@
     "DisplayOrder": 13,
     "PreConditionState(s)": "schedulingAndHearing;generalApplication;generalApplicationOutcome;orderDrawn",
     "PostConditionState": "prepareForHearing",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
@@ -25,10 +22,7 @@
     "DisplayOrder": 142,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
-    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
@@ -104,7 +98,6 @@
     "PreConditionState(s)": "gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;reviewOrder;scheduleRaiseDirectionsOrder;orderDrawn;orderSent",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
   }
