@@ -9,7 +9,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
   private readonly checkConfidentialTwoLabel: Locator;
   private readonly checkConfidentialThreeLabel: Locator;
   private readonly checkConfidentialFourLabel: Locator;
-  private readonly isThisFdrDocumentQuestion: Locator;
+  readonly isThisFdrDocumentQuestion: Locator;
   private readonly addNewRadio: Locator;
 
   private readonly commonActionsHelper: CommonActionsHelper;
@@ -41,11 +41,12 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     return this.page.locator(`#inputManageCaseDocumentCollection_${collectionIndex}_caseDocuments`);
   }
 
-  async uploadDocument(filePath: string, collectionIndex: number = 0) {
+  async uploadDocument(documentName: string, collectionIndex: number = 0) {
     const uploadLabel = this.getUploadLabel(collectionIndex);
     const uploadInput = this.getUploadInput(collectionIndex);
     await expect(uploadLabel).toBeVisible();
-    await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadInput, filePath);
+    const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
+    await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadInput, filePayload);
   }
 
   getTextArea(collectionIndex: number): Locator {
