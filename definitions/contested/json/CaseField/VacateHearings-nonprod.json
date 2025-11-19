@@ -2,7 +2,7 @@
   {
     "LiveFrom": "03/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "vacateHearingSelection",
+    "ID": "vacateOrAdjournHearingSelection",
     "Label": "Vacate Hearing",
     "FieldType": "FR_VacateHearingAction",
     "SecurityClassification": "Public",
@@ -21,7 +21,7 @@
   {
     "LiveFrom": "03/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "vacatedHearingsCollection",
+    "ID": "vacatedOrAdjournedHearings",
     "Label": "VacatedHearings",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_vacateHearing",

@@ -3,7 +3,7 @@
     "LiveFrom": "03/11/2025",
     "ID": "FR_VacateHearingAction",
     "CaseEventID": "FR_manageHearings",
-    "CaseFieldID": "vacateHearingSelection",
+    "CaseFieldID": "vacateOrAdjournHearingSelection",
     "ListElementCode": "chooseHearings",
     "DisplayContext": "MANDATORY"
   },
@@ -11,7 +11,7 @@
     "LiveFrom": "03/11/2025",
     "ID": "FR_VacateHearingAction",
     "CaseEventID": "FR_manageHearings",
-    "CaseFieldID": "vacateHearingSelection",
+    "CaseFieldID": "vacateOrAdjournHearingSelection",
     "ListElementCode": "hearingDate",
     "DisplayContext": "MANDATORY"
   },
@@ -19,15 +19,15 @@
     "LiveFrom": "03/11/2025",
     "ID": "FR_VacateHearingAction",
     "CaseEventID": "FR_manageHearings",
-    "CaseFieldID": "vacateHearingSelection",
-    "ListElementCode": "reasonsForVacating",
+    "CaseFieldID": "vacateOrAdjournHearingSelection",
+    "ListElementCode": "vacateOrAdjournReason",
     "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "03/11/2025",
     "ID": "FR_VacateHearingAction",
     "CaseEventID": "FR_manageHearings",
-    "CaseFieldID": "vacateHearingSelection",
+    "CaseFieldID": "vacateOrAdjournHearingSelection",
     "ListElementCode": "specifyOtherReason",
     "DisplayContext": "OPTIONAL"
   }

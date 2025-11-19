@@ -21,7 +21,7 @@
   {
     "LiveFrom": "03/11/2025",
     "ID": "FR_VacateHearingAction",
-    "ListElementCode": "reasonsForVacating",
+    "ListElementCode": "vacateOrAdjournReason",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_VacateHearingReason",
     "ElementLabel": "Why is the hearing being vacated?",
@@ -34,7 +34,7 @@
     "ListElementCode": "specifyOtherReason",
     "FieldType": "TextArea",
     "ElementLabel": " ",
-    "FieldShowCondition": "reasonsForVacating=\"Other\"",
+    "FieldShowCondition": "vacateOrAdjournReason=\"Other\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -175,7 +175,7 @@
   {
     "LiveFrom": "03/11/2025",
     "ID": "FR_vacateHearing",
-    "ListElementCode": "reasonsForVacating",
+    "ListElementCode": "vacateOrAdjournReason",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_VacateHearingReason",
     "ElementLabel": "Why is the hearing being vacated?",
@@ -188,7 +188,7 @@
     "ListElementCode": "specifyOtherReason",
     "FieldType": "TextArea",
     "ElementLabel": " ",
-    "FieldShowCondition": "reasonsForVacating=\"Other\"",
+    "FieldShowCondition": "vacateOrAdjournReason=\"Other\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
