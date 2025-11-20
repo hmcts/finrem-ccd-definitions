@@ -169,7 +169,15 @@
     "ListElementCode": "specifyOtherReason",
     "FieldType": "TextArea",
     "ElementLabel": " ",
-    "FieldShowCondition": "vacateOrAdjournReason=\"Other\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/11/2025",
+    "ID": "FR_vacateOrAdjournHearing",
+    "ListElementCode": "vacatedOrAdjournedDate",
+    "FieldType": "Date",
+    "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
