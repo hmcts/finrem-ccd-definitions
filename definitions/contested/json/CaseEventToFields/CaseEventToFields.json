@@ -9687,34 +9687,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_listForInterimHearing",
-    "CaseFieldID": "interimHearingsScreenField",
-    "PageFieldDisplayOrder": 2,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageLabel": "Interim Hearings",
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
-    "RetriesTimeoutURLMidEvent": "3,4,5"
-  },
-  {
-    "LiveFrom": "01/06/2022",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_listForInterimHearing",
-    "CaseFieldID": "partiesOnCase",
-    "PageFieldDisplayOrder": 3,
-    "DisplayContext": "MANDATORY",
-    "PageID": 1,
-    "PageLabel": "Interim Hearings",
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_uploadApprovedOrder",
     "CaseFieldID": "cwApprovedOrderCollection",
     "PageFieldDisplayOrder": 1,
@@ -11084,7 +11056,7 @@
     "LiveFrom": "24/07/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_processOrder",
-    "CaseFieldID": "uploadHearingOrder",
+    "CaseFieldID": "unprocessedUploadHearingDocuments",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "COMPLEX",
     "PageID": 1,
@@ -11106,7 +11078,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "FieldShowCondition": "uploadHearingOrder=\"DO_NOT_SHOW\""
+    "FieldShowCondition": "unprocessedUploadHearingDocuments=\"DO_NOT_SHOW\""
   },
   {
     "LiveFrom": "24/07/2025",
@@ -11118,7 +11090,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\"",
+    "FieldShowCondition": "unprocessedUploadHearingDocuments=\"DONOTSHOW\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
@@ -11145,7 +11117,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "FieldShowCondition": "uploadHearingOrder=\"DO_NOT_SHOW\""
+    "FieldShowCondition": "unprocessedUploadHearingDocuments=\"DO_NOT_SHOW\""
   },
   {
     "LiveFrom": "24/07/2025",
