@@ -44,3 +44,12 @@ export const manageCaseDocumentsTableSpecialTypeConfidential: Table = {
         {cellItem: "Is the document confidential?", value: "Yes" },
     ]
 }
+
+export const manageCaseDocumentsTableWithoutPrejudice: Table = {
+    tableName: 'Check your answers',
+    rows: [
+        {cellItem: "Please upload any case documents", value: "withoutPrejudice.docx"},
+        {cellItem: "Document type", value: "Without Prejudice offers"},
+        {cellItem: "Provide the date of hearing and a description of the document", value: "without prejudice test"},
+    ]
+}

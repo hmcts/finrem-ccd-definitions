@@ -43,4 +43,17 @@ export function getSpecialTypeConfidentialDocumentsTabData(uploadDateTime: strin
         ]
     };
 }
-   
+
+export function getWithoutPrejudiceDocumentsTabData(uploadDateTime: string): Tab {
+    return {
+        tabName: "FDR documents",
+        tabContent: [
+            "1",
+            { tabItem: "Please upload any case documents", value: "withoutPrejudice.docx" },
+            { tabItem: "Document type", value: "Without Prejudice offers" },
+            { tabItem: "Is the document confidential?", value: "No" },
+            { tabItem: "Is this a Financial Dispute Resolution document (FDR)?", value: "Yes" },
+            { tabItem: "Upload DateTime", value: uploadDateTime, exact: false },
+        ]
+    };
+}
