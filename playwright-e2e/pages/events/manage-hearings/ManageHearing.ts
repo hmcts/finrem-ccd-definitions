@@ -237,8 +237,62 @@ export class ManageHearingPage extends BaseJourneyPage {
         await removeButton.click({ force: true });
     }
 
-    async validateVacateHearingOptionAvailable() {
+    async selectVacateHearing() {
         await expect(this.vacateHearingRadio).toBeVisible();
         await this.vacateHearingRadio.check();
     }
+
+    async selectHearingToVacate(position: number = 0) {
+        const hearingSelect = this.page.locator('#workingVacatedHearing_chooseHearings');
+        await expect(hearingSelect).toBeVisible();
+
+        // Get all options
+        const options = await hearingSelect.locator('option').all();
+        if (options.length <= position) {
+            throw new Error(`No hearing option at position ${position}`);
+        }
+        const value = await options[position].getAttribute('value');
+        await hearingSelect.selectOption(value!);
+    }
+
+    async fillVacateHearingDate(day: string, month: string, year: string) {
+        const hearingDateDay = this.page.getByRole('textbox', { name: 'Day' })
+        const hearingDateMonth = this.page.getByRole('textbox', { name: 'Month' })
+        const hearingDateYear = this.page.getByRole('textbox', { name: 'Year' })
+
+        await expect(hearingDateDay).toBeVisible();
+        await expect(hearingDateMonth).toBeVisible();
+        await expect(hearingDateYear).toBeVisible();
+
+        await hearingDateDay.fill(day);
+        await hearingDateMonth.fill(month);
+        await hearingDateYear.fill(year);
+    }
+
+    async whyIsTheHearingBeingVacated(reason: string) {
+        const reasonField = this.page.locator('#workingVacatedHearing_vacateReason');
+        await expect(reasonField).toBeVisible();
+        await reasonField.selectOption({ label: reason }); // or value if you want the “1”, “2”, etc.
+    }
+
+    async specifyOtherReasonForVacatingHearing(details: string) {
+        const otherReasonField = this.page.locator('#workingVacatedHearing_specifyOtherReason')
+        await expect(otherReasonField).toBeVisible();
+        await otherReasonField.fill(details);
+    }
+
+    async willYouBeRelistingQuestion(answer: string) {
+        const relistingQuestion = this.page.getByRole('group', { name: 'Will you be relisting the' });
+        await expect(relistingQuestion).toBeVisible();
+
+        // Dynamically select the radio button based on the answer
+        const radioId = answer.toLowerCase() === 'yes' 
+            ? 'relistHearingSelection-Yes' 
+            : 'relistHearingSelection-No';
+
+        const optionToSelectRadio = this.page.locator(`#${radioId}`);
+        await expect(optionToSelectRadio).toBeVisible();
+        await optionToSelectRadio.check();
+    }
+
 }
