@@ -27,5 +27,15 @@
     "FieldTypeParameter": "FR_vacateOrAdjournHearing",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "24/04/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "vacatedOrAdjournedHearingTabItems",
+    "Label": "Vacated or Adjourned Hearings",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_vacatedOrAdjournedHearingTabItems",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
