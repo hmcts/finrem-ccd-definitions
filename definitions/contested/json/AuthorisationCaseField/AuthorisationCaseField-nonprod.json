@@ -11,18 +11,5 @@
         "CRUD": "R"
       }
     ]
-  },
-  {
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "casePaymentWaysToPay",
-    "AccessControl": [
-      {
-        "UserRoles": [
-          "caseworker-divorce-financialremedy-courtadmin",
-          "caseworker-divorce-financialremedy-superuser"
-        ],
-        "CRUD": "R"
-      }
-    ]
   }
 ]
