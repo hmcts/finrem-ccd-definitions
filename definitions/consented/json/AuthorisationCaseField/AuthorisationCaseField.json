@@ -7218,127 +7218,36 @@
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "solicitorServiceAddress",
+    "CaseFieldID": "clientAddressForService",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "solicitorServiceAddressConfidential",
+    "CaseFieldID": "clientAddressForServiceConfidentialLabel",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "rSolicitorServiceAddress",
+    "CaseFieldID": "clientAddressForServiceConfidential",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "rSolicitorServiceAddressConfidential",
+    "CaseFieldID": "stopRepClientConsent",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "solicitorServiceAddress",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "solicitorServiceAddressConfidential",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "rSolicitorServiceAddress",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "rSolicitorServiceAddressConfidential",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "loginAsApplicantSolicitor",
+    "CaseFieldID": "stopRepJudicialApproval",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "loginAsRespondentSolicitor",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "clientConsentOnAppSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "clientConsentOnAppSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "clientConsentOnRespSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "clientConsentOnRespSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "judicialApprovalOnAppSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "judicialApprovalOnAppSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "judicialApprovalOnRespSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseFieldID": "judicialApprovalOnRespSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
   }
 ]
