@@ -19455,120 +19455,36 @@
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "applicantServiceAddress",
+    "CaseFieldID": "clientAddressForService",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "applicantServiceAddressConfidential",
+    "CaseFieldID": "clientAddressForServiceConfidentialLabel",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "rSolicitorServiceAddress",
+    "CaseFieldID": "clientAddressForServiceConfidential",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "rSolicitorServiceAddressConfidential",
+    "CaseFieldID": "stopRepClientConsent",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "applicantServiceAddress",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "rSolicitorServiceAddress",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "rSolicitorServiceAddressConfidential",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "loginAsApplicantSolicitor",
+    "CaseFieldID": "stopRepJudicialApproval",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "loginAsRespondentSolicitor",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "clientConsentOnAppSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "clientConsentOnAppSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "clientConsentOnRespSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "clientConsentOnRespSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "judicialApprovalOnAppSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "judicialApprovalOnAppSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "judicialApprovalOnRespSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "judicialApprovalOnRespSolStopRep",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "R"
   }
 ]

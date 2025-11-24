@@ -8558,59 +8558,33 @@
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicantServiceAddress",
-    "Label": "Service address",
+    "ID": "clientAddressForService",
+    "Label": "Client's address for service",
     "FieldType": "AddressUK",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "_comment_": "Input by applicant solicitor during stop representing a client"
+    "_comment_": "Input by applicant/respondent solicitor during stop representing a client"
   },
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "applicantServiceAddressConfidential",
-    "Label": "Keep the Applicant's contact details private from the Respondent?",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "rSolicitorServiceAddress",
-    "Label": "Service address",
-    "FieldType": "AddressUK",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "_comment_": "Input by respondent solicitor during stop representing a client"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "rSolicitorServiceAddressConfidential",
-    "Label": "Keep the Respondent's contact details private from the Applicant?",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "loginAsApplicantSolicitor",
+    "ID": "clientAddressForServiceConfidentialLabel",
     "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "clientAddressForServiceConfidential",
+    "Label": "${clientAddressForServiceConfidentialLabel}",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "loginAsRespondentSolicitor",
-    "Label": " ",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "clientConsentOnAppSolStopRep",
+    "ID": "stopRepClientConsent",
     "Label": "Does your client consent to you stopping representation?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
@@ -8618,23 +8592,7 @@
   {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "judicialApprovalOnAppSolStopRep",
-    "Label": "Do you have judicial approval to stop representation?",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "clientConsentOnRespSolStopRep",
-    "Label": "Does your client consent to you stopping representation?",
-    "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
-  },
-  {
-    "LiveFrom": "12/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "judicialApprovalOnRespSolStopRep",
+    "ID": "stopRepJudicialApproval",
     "Label": "Do you have judicial approval to stop representation?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
