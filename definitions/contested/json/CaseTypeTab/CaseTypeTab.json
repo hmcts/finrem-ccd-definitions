@@ -62,6 +62,7 @@
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1,
     "TabShowCondition": "hearingTabItems !=\"\"",
+    "_comment_": "Upon Vacate Hearings feature release, the show condition will be updated to include vacatedOrAdjournedHearingTabItems 'hearingTabItems !=\"\" OR vacatedOrAdjournedHearingTabItems !=\"\"'",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
   },
   {
@@ -74,6 +75,7 @@
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "TabFieldDisplayOrder": 1,
     "TabShowCondition": "hearingTabItems !=\"\"",
+    "_comment_": "Upon Vacate Hearings feature release, the show condition will be updated to include vacatedOrAdjournedHearingTabItems 'hearingTabItems !=\"\" OR vacatedOrAdjournedHearingTabItems !=\"\"'",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
   },
   {
