@@ -61,7 +61,7 @@
     "CaseFieldID": "hearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "hearingTabItems !=\"\" OR vacatedOrAdjournedHearingTabItems !=\"\"",
+    "TabShowCondition": "hearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
   },
   {
@@ -73,7 +73,7 @@
     "CaseFieldID": "hearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "hearingTabItems !=\"\" OR vacatedOrAdjournedHearingTabItems !=\"\"",
+    "TabShowCondition": "hearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
   },
   {

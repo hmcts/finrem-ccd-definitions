@@ -1,12 +1,13 @@
 [
   {
-    "LiveFrom": "02/06/2025",
+    "LiveFrom": "03/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "manageHearings-courtAdmin",
     "TabLabel": "Hearings",
     "TabDisplayOrder": 3,
     "CaseFieldID": "vacatedOrAdjournedHearingTabItems",
     "TabFieldDisplayOrder": 2,
+    "TabShowCondition": "vacatedOrAdjournedHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   }
 ]
