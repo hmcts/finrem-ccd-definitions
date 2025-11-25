@@ -16,44 +16,44 @@ test.describe('Contested - Approved and Send Order', () => {
         caseDetailsPage,
         sendOrderPage,
         checkYourAnswersPage,
-        axeUtils,
+        axeUtils
       }, testInfo
     ) => {
         
-    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProcessOrderLegacy();
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProcessOrderLegacy();
     
-    await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(
-      config.caseWorker.email,
-      config.caseWorker.password,
-      config.manageCaseBaseURL,
-      config.loginPaths.worklist
-    );
+      await manageCaseDashboardPage.visit();
+      await loginPage.loginWaitForPath(
+        config.caseWorker.email,
+        config.caseWorker.password,
+        config.manageCaseBaseURL,
+        config.loginPaths.worklist
+      );
 
-    await manageCaseDashboardPage.navigateToCase(caseId);
+      await manageCaseDashboardPage.navigateToCase(caseId);
 
-    // Send Order
-    await caseDetailsPage.selectNextStep(ContestedEvents.contestedSendOrder);
-    await sendOrderPage.selectSendApprovedOrder();
-    await axeUtils.audit();
-    await sendOrderPage.navigateContinue();
-    await axeUtils.audit();
-    await sendOrderPage.navigateContinue();
-    await sendOrderPage.uploadDocument('./playwright-e2e/resources/file/test.docx');
-    await axeUtils.audit();
-    await sendOrderPage.navigateContinue();
-    await sendOrderPage.clickCaseStateButton();
-    await sendOrderPage.selectCaseState('Order Sent');
-    await axeUtils.audit();
-    await sendOrderPage.navigateContinue();
+      // Send Order
+      await caseDetailsPage.selectNextStep(ContestedEvents.contestedSendOrder);
+      await sendOrderPage.selectSendApprovedOrder();
+      await axeUtils.audit();
+      await sendOrderPage.navigateContinue();
+      await axeUtils.audit();
+      await sendOrderPage.navigateContinue();
+      await sendOrderPage.uploadDocument('./playwright-e2e/resources/file/test.docx');
+      await axeUtils.audit();
+      await sendOrderPage.navigateContinue();
+      await sendOrderPage.clickCaseStateButton();
+      await sendOrderPage.selectCaseState('Order Sent');
+      await axeUtils.audit();
+      await sendOrderPage.navigateContinue();
 
-    // Continue about to submit and check your answers
-    await checkYourAnswersPage.assertCheckYourAnswersPage(sendOrderTableData); 
-    await sendOrderPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.contestedSendOrder.listItem);
+      // Continue about to submit and check your answers
+      await checkYourAnswersPage.assertCheckYourAnswersPage(sendOrderTableData); 
+      await sendOrderPage.navigateSubmit();
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.contestedSendOrder.listItem);
 
-    // Assert Order tab data
-    await caseDetailsPage.assertTabData(contestedSendOrderTabData);
+      // Assert Order tab data
+      await caseDetailsPage.assertTabData(contestedSendOrderTabData);
     }
   );
 });

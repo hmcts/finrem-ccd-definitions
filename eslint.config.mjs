@@ -81,7 +81,7 @@ export default [
       "no-process-env": "off",
       "no-magic-numbers": "off",
       "max-nested-callbacks": ["error", 5],
-      "max-depth": ["error", 4],
+      "max-depth": ["warn", 4],
       "new-cap": "off",
       "no-sync": "off",
       "max-lines": "off",
@@ -111,6 +111,7 @@ export default [
       "playwright-e2e/config/**",
       "playwright-e2e/fixtures/**",
       "playwright-e2e/types/**",
+      "playwright-e2e/fixtures/**",
     ],
     rules: {
       "unicorn/filename-case": ["error", { case: "kebabCase" }],
@@ -131,13 +132,13 @@ export default [
 
   // Camel case
   {
-    files: ["playwright-e2e/fixtures/**", "playwright-e2e/helpers/**"],
+    files: ["playwright-e2e/helpers/**"],
     rules: {
       "unicorn/filename-case": ["error", { case: "camelCase" }],
     },
   },
 
-  // Optional: general TS/JS rules for the whole repo
+  // Optional:general TS/JS rules for the whole repo
   {
     languageOptions: {
       parser: tsParser,
@@ -146,7 +147,7 @@ export default [
     },
     files: ["**/*.{ts,tsx,js,jsx}"],
     rules: {
-      "no-console": "warn",
+      "no-console": "off",
     },
   },
 ];

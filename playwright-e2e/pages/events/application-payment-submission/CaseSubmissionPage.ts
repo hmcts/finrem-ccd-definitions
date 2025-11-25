@@ -3,16 +3,16 @@ import { BaseJourneyPage } from '../../BaseJourneyPage';
 
 export class CaseSubmissionPage extends BaseJourneyPage {
 
-    private readonly closeAndReturnButton: Locator; 
+  private readonly closeAndReturnButton: Locator; 
 
-    public constructor(page: Page) {
-        super(page);
+  public constructor(page: Page) {
+    super(page);
     
-        this.closeAndReturnButton = page.getByRole('button', { name: 'Close and Return to case' })
-    }
+    this.closeAndReturnButton = page.getByRole('button', { name: 'Close and Return to case' });
+  }
 
-    async returnToCaseDetails() {
-        await this.page.waitForLoadState();
-        await this.closeAndReturnButton.click()
-    }
+  async returnToCaseDetails() {
+    await this.page.waitForLoadState();
+    await this.closeAndReturnButton.click();
+  }
 }
