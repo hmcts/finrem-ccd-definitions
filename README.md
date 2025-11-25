@@ -83,11 +83,43 @@ Import AAT environment variables. Ask a colleague for an `e2e-aat.env` file. Thi
 source ./e2e-aat.env
 ```
 
-## Verification
+## Code Linting
 
-### Eslint is included and will verify the config is properly formatted:
+We use ESLint to ensure consistent code quality, formatting, and filename conventions across the project.
+
+* Running Linting
+
+To check for linting errors, run:
 
 `yarn lint`
+
+* Fixing Linting Errors
+
+To automatically fix linting issues where possible, run:
+
+`yarn lint --fix`
+
+* Filename Conventions
+
+To avoid linting errors, filenames must follow these conventions:
+
+- snake_case: playwright-e2e/test/**, playwright-e2e/resources/tab_content/**
+
+- kebab-case: playwright-e2e/config/**, playwright-e2e/fixtures/**, playwright-e2e/resources/** (excluding tab_content)
+
+- PascalCase: playwright-e2e/pages/**, playwright-e2e/data-utils/**
+
+- camelCase: playwright-e2e/helpers/**
+
+Example:
+
+✅ login_page.spec.ts (snake_case)
+
+✅ checkout-flow.json (kebab-case)
+
+❌ LoginPage.spec.ts (should be snake_case for test files)
+
+ESLint is configured with eslint-plugin-unicorn to enforce these rules automatically for file names in their respective folders.
 
 ### To run the unit tests to verify you have correctly made changes:
 
