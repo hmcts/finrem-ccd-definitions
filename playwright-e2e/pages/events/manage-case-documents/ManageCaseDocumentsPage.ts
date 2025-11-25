@@ -28,6 +28,41 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     this.addNewRadio = page.getByRole('radio', { name: 'Add New' })
   }
 
+  // Legacy methods (to be removed once old Manage Case Documents event is gone)
+  async legacyUploadDocument(documentName: string, collectionIndex: number = 0) {
+    const uploadInput = this.page.getByRole('button', { name: 'Please upload any case' });
+    await expect(uploadInput).toBeVisible();
+    const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
+    await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadInput, filePayload);
+  }
+
+  async legacyFillDescription(text: string) {
+    const textArea = this.page.getByRole('textbox', { name: 'Provide the date of hearing' });
+    await expect(textArea).toBeVisible();
+    await textArea.fill(text);
+  }
+
+  async legacySelectDocumentType(optionText: string, collectionIndex: number = 0) {
+    const dropdown = this.page.getByLabel('Document type', { exact: true })
+    await expect(dropdown).toBeVisible();
+    await dropdown.selectOption({ label: optionText });
+  }
+
+  async legacySpecifyDocumentTypeIfOther(text: string, collectionIndex: number = 0) {
+    const specifyInput = this.page.getByRole('textbox', { name: 'Please specify document type' })
+    await expect(specifyInput).toBeVisible();
+    await specifyInput.fill(text);
+  }
+
+  async legacyIsDocumentConfidential(isConfidential: boolean) {
+    const yesRadio = this.page.getByRole('radio', { name: 'Yes' });
+    const noRadio = this.page.getByRole('radio', { name: 'No' });
+    const radio = isConfidential ? yesRadio : noRadio;
+    await expect(radio).toBeVisible();
+    await radio.check();
+  }
+
+  // New event methods
   async addNew(){
     await expect(this.addNewRadio).toBeVisible();
     await this.addNewRadio.check();
@@ -78,8 +113,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     await expect(specifyInput).toBeVisible();
     await specifyInput.fill(text);
   }
-  
-  // Assertion
+
   async checkConfidentialityGuideText() {
     await Promise.all([ 
       expect(this.checkConfidentialityLabel).toBeVisible(),
@@ -107,10 +141,8 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     await radio.check();
 
     if (isConfidential) {
-      // If confidential is 'no', FDR question should be visible
       await expect(this.isThisFdrDocumentQuestion).toBeHidden();
     } else {
-      // If confidential is 'yes', FDR question should be visible
       await expect(this.isThisFdrDocumentQuestion).toBeVisible();
     }
   }
