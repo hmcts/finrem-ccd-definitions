@@ -9,10 +9,8 @@ export abstract class BaseJourneyPage {
     private readonly confirmButton: Locator;
     private readonly submitButton: Locator;
     private readonly ignoreWarningAndGoButton: Locator;
-    private readonly addNewButton: Locator;
     private readonly cancelHyperlink: Locator;
     private readonly spinner: Locator;
-
     readonly thereIsAProblemHeader: Locator;
     private readonly fieldIsRequiredErrorMessage: Locator;
     private readonly submitAndReturnEventButton: Locator;
@@ -26,10 +24,8 @@ export abstract class BaseJourneyPage {
         this.previousButton = page.getByRole('button', { name: 'Previous' });
         this.confirmButton = page.getByRole('button', { name: 'Confirm' });
         this.ignoreWarningAndGoButton = page.getByRole('button', { name: 'Ignore Warning and Go' });
-        this.addNewButton = page.getByRole('button', { name: 'Add new' }).nth(0);
         this.cancelHyperlink = page.getByRole('link', { name: 'Cancel' });
         this.spinner = this.page.locator("xuilib-loading-spinner");
-
         this.thereIsAProblemHeader = page.getByRole('heading', { name: 'There is a problem' });
         // error messages
         this.fieldIsRequiredErrorMessage = page.getByText('Field is required');
@@ -156,12 +152,17 @@ export abstract class BaseJourneyPage {
         await this.waitForSpinner();
     }
 
-    async navigateAddNew() {
+    getAddNewButton(position: number = 0): Locator {
+        return this.page.getByRole('button', { name: 'Add new' }).nth(position);
+    }
+
+    async navigateAddNew(position: number = 0) {
+        const addNewButton = this.getAddNewButton(position);
         await this.page.waitForLoadState();
-        await this.addNewButton.scrollIntoViewIfNeeded();
-        await expect(this.addNewButton).toBeVisible();
-        await expect(this.addNewButton).toBeEnabled();
-        await this.addNewButton.click();
+        await addNewButton.scrollIntoViewIfNeeded();
+        await expect(addNewButton).toBeVisible();
+        await expect(addNewButton).toBeEnabled();
+        await addNewButton.click();
         await this.waitForSpinner();
     }
 
