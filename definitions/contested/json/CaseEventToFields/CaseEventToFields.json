@@ -11370,6 +11370,19 @@
     "LiveFrom": "25/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingVacatedHearing",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "manageHearingsActionSelection=\"Vacate_Hearing\""
+  },
+  {
+    "LiveFrom": "25/11/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageHearings",
     "CaseFieldID": "isRelistSelected",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
@@ -11378,18 +11391,5 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "PageShowCondition": "manageHearingsActionSelection=\"Vacate_Hearing\""
-  },
-  {
-    "LiveFrom": "25/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_manageHearings",
-    "CaseFieldID": "workingVacatedHearing",
-    "PageFieldDisplayOrder": 2,
-    "DisplayContext": "COMPLEX",
-    "PageID": 4,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "manageHearingsActionSelection=\"Vacate_Hearing\""
   }
 ]
