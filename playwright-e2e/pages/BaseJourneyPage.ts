@@ -156,14 +156,19 @@ export abstract class BaseJourneyPage {
     await this.waitForSpinner();
   }
 
-  async navigateAddNew() {
-    await this.page.waitForLoadState();
-    await this.addNewButton.scrollIntoViewIfNeeded();
-    await expect(this.addNewButton).toBeVisible();
-    await expect(this.addNewButton).toBeEnabled();
-    await this.addNewButton.click();
-    await this.waitForSpinner();
-  }
+    getAddNewButton(position: number = 0): Locator {
+        return this.page.getByRole('button', { name: 'Add new' }).nth(position);
+    }
+
+    async navigateAddNew(position: number = 0) {
+        const addNewButton = this.getAddNewButton(position);
+        await this.page.waitForLoadState();
+        await addNewButton.scrollIntoViewIfNeeded();
+        await expect(addNewButton).toBeVisible();
+        await expect(addNewButton).toBeEnabled();
+        await addNewButton.click();
+        await this.waitForSpinner();
+    }
 
   async navigateIgnoreWarningAndContinue() {
     const ignoreWarningButton = this.page.getByRole('button', { name: 'Ignore warning and continue' });
