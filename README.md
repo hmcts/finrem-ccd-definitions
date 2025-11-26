@@ -131,8 +131,8 @@ Run full E2E tests of both the Consented & Contested Journeys on CCD
 
 1) Configure defined env variables from [Jenkinsfile_nightly](https://github.com/hmcts/finrem-ccd-definitions/blob/master/Jenkinsfile_nightly) pipeline .
 2) Values for env variables can be found in Azure finrem aat key vault.
-3) `yarn test:functional` will create cases via API (runs on PR and master AAT).
-4) To create cases on demo, point CCD_DATA_API_URL to ccd demo API url and RUNNING_ENV=demo, run the scenario tests.
+3) `yarn test:functional` will create both Consented and Contested cases via API (runs on PR and master AAT).
+4) To create cases on demo RUNNING_ENV=demo, run the scenario tests.
 
 ### Running additional tests in the Jenkins PR Pipeline
 1. Add one or more appropriate labels to your PR in GitHub. Valid labels are:
