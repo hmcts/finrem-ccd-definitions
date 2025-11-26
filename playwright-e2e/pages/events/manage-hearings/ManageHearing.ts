@@ -94,7 +94,7 @@ export class ManageHearingPage extends BaseJourneyPage {
 
     // Select the local court from the visible dropdown
     const courtListDropDown = this.page.locator('select[id^="workingHearing_hearingCourtSelection_"][id*="CourtList"]:not(:where(div[hidden] *))');
-        
+
     await expect(courtListDropDown).toBeVisible();
     await courtListDropDown.selectOption(localCourt);
   }
@@ -287,8 +287,8 @@ export class ManageHearingPage extends BaseJourneyPage {
 
     // Dynamically select the radio button based on the answer
     const radioId = answer.toLowerCase() === 'yes'
-        ? 'isRelistSelected-Yes'
-        : 'isRelistSelected-No';
+      ? 'isRelistSelected-Yes'
+      : 'isRelistSelected-No';
 
     const optionToSelectRadio = this.page.locator(`#${radioId}`);
     await expect(optionToSelectRadio).toBeVisible();
