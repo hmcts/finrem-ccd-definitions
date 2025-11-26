@@ -287,8 +287,8 @@ export class ManageHearingPage extends BaseJourneyPage {
 
         // Dynamically select the radio button based on the answer
         const radioId = answer.toLowerCase() === 'yes' 
-            ? 'relistHearingSelection-Yes' 
-            : 'relistHearingSelection-No';
+            ? 'isRelistSelected-Yes'
+            : 'isRelistSelected-No';
 
         const optionToSelectRadio = this.page.locator(`#${radioId}`);
         await expect(optionToSelectRadio).toBeVisible();
