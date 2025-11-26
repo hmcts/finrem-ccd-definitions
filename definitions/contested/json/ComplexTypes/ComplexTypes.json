@@ -5083,5 +5083,158 @@
     "ElementLabel": "Additional attachments",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentWarning",
+    "ListElementCode": "warning0",
+    "FieldType": "Label",
+    "ElementLabel": "###### ‘Confidential’ should only be selected for documents that you would never want to share with another party, for example a Form C8 for confidential address, or documents relating to a lock and key cases etc.",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentWarning",
+    "ListElementCode": "warning1",
+    "FieldType": "Label",
+    "ElementLabel": "\n\n###### &nbsp;",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentWarning",
+    "ListElementCode": "warning2",
+    "FieldType": "Label",
+    "ElementLabel": "###### Do not use the confidential option to upload a document that you later intend to share as once confidential you will not be able to share it.",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentWarning",
+    "ListElementCode": "warning3",
+    "FieldType": "Label",
+    "ElementLabel": "\n\n###### &nbsp;",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentWarning",
+    "ListElementCode": "warning4",
+    "FieldType": "Label",
+    "ElementLabel": "###### Do not select confidential if you are only waiting to exchange documents.",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentWarning",
+    "ListElementCode": "warning5",
+    "FieldType": "Label",
+    "ElementLabel": "\n\n###### &nbsp;",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentWarning",
+    "ListElementCode": "warning6",
+    "FieldType": "Label",
+    "ElementLabel": "###### Parties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentWarning",
+    "ListElementCode": "warning7",
+    "FieldType": "Label",
+    "ElementLabel": "\n\n###### &nbsp;",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "caseDocuments",
+    "FieldType": "Document",
+    "ElementLabel": "Please upload any case documents",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "caseDocumentType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_s_caseDocumentType",
+    "ElementLabel": "Document type",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "caseDocumentOther",
+    "FieldType": "Text",
+    "ElementLabel": "Please specify document type",
+    "FieldShowCondition": "caseDocumentType=\"other\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "hearingDetails",
+    "FieldType": "TextArea",
+    "ElementLabel": "Provide the date of hearing and a description of the document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "caseDocumentConfidentiality",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is the document confidential?",
+    "HintText": "Document will be placed in the confidential documents tab visible to caseworkers and judges only",
+    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentType!=\"Without Prejudice offers\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "caseDocumentConfidentialityWarning",
+    "FieldType": "FR_manageCaseDocumentWarning",
+    "ElementLabel": " ",
+    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentType!=\"Without Prejudice offers\"",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "caseDocumentFdr",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
+    "HintText": "Document will be placed in the FDR documents tab",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgement\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/11/2025",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "caseDocumentParty",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_fl_EvidenceParty",
+    "ElementLabel": "Document on behalf of?",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
+    "Searchable": "N"
   }
 ]
