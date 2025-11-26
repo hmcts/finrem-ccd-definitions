@@ -1,6 +1,6 @@
-import {BaseJourneyPage} from "./BaseJourneyPage.ts";
-import {Locator, Page} from "@playwright/test";
-import {expect} from "../fixtures/fixtures.ts";
+import {BaseJourneyPage} from './BaseJourneyPage.ts';
+import {Locator, Page} from '@playwright/test';
+import {expect} from '../fixtures/fixtures.ts';
 
 export class NoticeOfChangePage extends BaseJourneyPage {
 
@@ -22,9 +22,9 @@ export class NoticeOfChangePage extends BaseJourneyPage {
     this.noticeOfChangePageTitle = page.getByRole('heading', { name: 'Notice of change' });
     this.onlineCaseReferenceInput = page.getByLabel('Online case reference number');
     this.alreadyHasAccessToCaseTitle = page.getByRole('heading', { name: 'Your organisation already has access to this case' });
-    this.enterClientsDetailsTitle = page.getByRole('heading', { name: `Enter your client's details` });
-    this.clientFirstNameInput = page.getByLabel(`Your client's first name and any middle names`);
-    this.clientLastNameInput = page.getByLabel(`Your client's last name`);
+    this.enterClientsDetailsTitle = page.getByRole('heading', { name: 'Enter your client\'s details' });
+    this.clientFirstNameInput = page.getByLabel('Your client\'s first name and any middle names');
+    this.clientLastNameInput = page.getByLabel('Your client\'s last name');
     this.checkAndSubmitTitle = page.getByRole('heading', { name: 'Check and submit' });
     this.iConfirmAllDetailsAreCorrectCheckbox = page.getByLabel('I confirm all these details are accurate and match what is written on the case.');
     this.iServedNoticeOfChangeToEveryPartyCheckbox = page.getByLabel('I have served notice of this change on every party to the case, including the former legal representative (if there was one).');
@@ -53,7 +53,7 @@ export class NoticeOfChangePage extends BaseJourneyPage {
   }
 
   async assertErrorMessageClientDetailsShouldExactlyMatch() {
-    await this.assertErrorMessage(['Enter the client details exactly as they\'re written on the case, including any mistakes'])
+    await this.assertErrorMessage(['Enter the client details exactly as they\'re written on the case, including any mistakes']);
   }
 
   async assertSummaryList(key: string, value: string) {
@@ -68,8 +68,8 @@ export class NoticeOfChangePage extends BaseJourneyPage {
     await this.checkAndSubmitTitle.waitFor({ state: 'visible' });
     await this.assertSummaryList('Request', 'Notice of change');
     await this.assertSummaryList('Case number', caseNumber);
-    await this.assertSummaryList(`Your client's first name and any middle names`, firstName);
-    await this.assertSummaryList(`Your client's last name`, lastName);
+    await this.assertSummaryList('Your client\'s first name and any middle names', firstName);
+    await this.assertSummaryList('Your client\'s last name', lastName);
   }
 
   async checkAllCheckboxes() {

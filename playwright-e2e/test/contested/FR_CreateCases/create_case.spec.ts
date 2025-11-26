@@ -33,14 +33,14 @@ test(
       createCaseCheckYourAnswersPage,
       caseDetailsPage,
       createCaseSavingYourAnswersPage,
-      axeUtils,
+      axeUtils
     }
   ) => {
     // Set up court information.
-    const courtName: string = "COVENTRY COMBINED COURT CENTRE";
-    const courtAddress: string = "140 Much Park Street, Coventry, CV1 2SN";
-    const courtEmail: string = "FRCBirmingham@justice.gov.uk";
-    const courtPhone: string = "0300 123 5577";
+    const courtName: string = 'COVENTRY COMBINED COURT CENTRE';
+    const courtAddress: string = '140 Much Park Street, Coventry, CV1 2SN';
+    const courtEmail: string = 'FRCBirmingham@justice.gov.uk';
+    const courtPhone: string = '0300 123 5577';
 
     // Sign in
     await manageCaseDashboardPage.visit();
@@ -239,13 +239,13 @@ test(
     testInfo
   ) => {
     // Set up court information.
-    const courtName: string = "COVENTRY COMBINED COURT CENTRE";
-    const courtAddress: string = "140 Much Park Street, Coventry, CV1 2SN";
-    const courtEmail: string = "FRCBirmingham@justice.gov.uk";
-    const courtPhone: string = "0300 123 5577";
+    const courtName: string = 'COVENTRY COMBINED COURT CENTRE';
+    const courtAddress: string = '140 Much Park Street, Coventry, CV1 2SN';
+    const courtEmail: string = 'FRCBirmingham@justice.gov.uk';
+    const courtPhone: string = '0300 123 5577';
 
     // Sign in
-    await manageCaseDashboardPage.visit()
+    await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
 
     // Manage/Create case

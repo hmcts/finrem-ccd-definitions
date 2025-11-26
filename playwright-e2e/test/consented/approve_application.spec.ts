@@ -28,9 +28,9 @@ test(
 
     // Approve Application
     await caseDetailsPage.selectNextStep(ConsentedEvents.approveApplication);
-    await approveApplicationPage.selectIsSubjectTo(true)
+    await approveApplicationPage.selectIsSubjectTo(true);
     await approveApplicationPage.selectIsPensionProvider(false);
-    await approveApplicationPage.selectJudge('District Judge')
+    await approveApplicationPage.selectJudge('District Judge');
     await axeUtils.audit();
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();
@@ -50,7 +50,7 @@ test(
     await allocateToJudgePage.selectAssignToJudgeReason('Draft consent/variation order');
     await allocateToJudgePage.selectAssignToJudgeList('New Application');
     await allocateToJudgePage.enterAssignToJudgeDate();
-    await allocateToJudgePage.enterAssignToJudgeText("This is a test text for the judge assignment.");
+    await allocateToJudgePage.enterAssignToJudgeText('This is a test text for the judge assignment.');
     await axeUtils.audit();
     await allocateToJudgePage.navigateContinue();
     await allocateToJudgePage.navigateSubmit();
@@ -64,9 +64,9 @@ test(
     
     // Upload Approved Order as Judge
     await caseDetailsPage.selectNextStep(ConsentedEvents.uploadApprovedOrder);
-    await approveApplicationPage.selectIsSubjectTo(true)
+    await approveApplicationPage.selectIsSubjectTo(true);
     await approveApplicationPage.selectIsPensionProvider(false);
-    await approveApplicationPage.selectJudge('District Judge')
+    await approveApplicationPage.selectJudge('District Judge');
     await approveApplicationPage.uploadConsentOrderFile('consentOrder.pdf');
     await approveApplicationPage.navigateContinue();
     await approveApplicationPage.navigateSubmit();

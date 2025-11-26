@@ -9,15 +9,15 @@ test(
   'Contested - FormA - Judge Give Allocation Direction',
   { tag: [] },
   async (
-  {
-    loginPage,
-    manageCaseDashboardPage,
-    caseDetailsPage,
-    allocationDirectionsCourtSelectionPage, 
-    giveAllocationDirectionsPage,
-    allocateToJudgePage,
-    axeUtils
-  }
+    {
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage,
+      allocationDirectionsCourtSelectionPage, 
+      giveAllocationDirectionsPage,
+      allocateToJudgePage,
+      axeUtils
+    }
   ) => {
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
@@ -38,9 +38,9 @@ test(
     await allocationDirectionsCourtSelectionPage.navigateContinue();
 
     await giveAllocationDirectionsPage.verifyFastTrackQuestionPresence();
-    await giveAllocationDirectionsPage.selectComplexCase(YesNoRadioEnum.NO)
+    await giveAllocationDirectionsPage.selectComplexCase(YesNoRadioEnum.NO);
     await giveAllocationDirectionsPage.verifyExpressPilotQuestionAbsence();
-    await giveAllocationDirectionsPage.selectFastTrackParticipation(YesNoRadioEnum.YES)
+    await giveAllocationDirectionsPage.selectFastTrackParticipation(YesNoRadioEnum.YES);
     await giveAllocationDirectionsPage.selectJudgeAllocated();
     await giveAllocationDirectionsPage.selectTimeEstimate();
     await axeUtils.audit({

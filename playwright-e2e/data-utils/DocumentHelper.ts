@@ -23,13 +23,13 @@ export class DocumentHelper {
               children: [
                 new TextRun({
                   text: `Case Reference: ${caseReference}`,
-                  bold: true,
-                }),
-              ],
-            }),
-          ],
-        },
-      ],
+                  bold: true
+                })
+              ]
+            })
+          ]
+        }
+      ]
     });
 
     const buffer = await Packer.toBuffer(doc);
