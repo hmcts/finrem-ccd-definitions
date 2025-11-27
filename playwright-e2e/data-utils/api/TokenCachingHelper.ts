@@ -1,6 +1,6 @@
-import lockfile from "proper-lockfile";
-import fs from "fs-extra";
-import path from "path";
+import lockfile from 'proper-lockfile';
+import fs from 'fs-extra';
+import path from 'path';
 
 const CACHE_PATH = path.resolve(__dirname, '../../token-cache.json');
 

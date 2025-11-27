@@ -1,5 +1,5 @@
-import {envTestData} from "./EnvTestDataConfig.ts";
-import fs from "fs";
+import {envTestData} from './EnvTestDataConfig.ts';
+import fs from 'fs';
 
 export function updateJsonFileWithEnvValues(
   jsonStr: string
