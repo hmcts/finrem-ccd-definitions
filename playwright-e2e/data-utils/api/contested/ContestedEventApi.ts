@@ -1,10 +1,10 @@
-import fs from "fs";
-import { ccdApi } from "../../../fixtures/fixtures";
-import config from "../../../config/config";
-import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
-import { ReplacementAction } from "../../../types/replacement-action";
-import { ADD_A_HEARING, APPROVE_ORDERS_DATA, ISSUE_APPLICATION, PROCESS_ORDER_DATA } from "../../PayloadMutator";
-import { DateHelper } from "../../DateHelper";
+import fs from 'fs';
+import { ccdApi } from '../../../fixtures/fixtures';
+import config from '../../../config/config';
+import { ContestedEvents, CaseType, PayloadPath } from '../../../config/case-data';
+import { ReplacementAction } from '../../../types/replacement-action';
+import { ADD_A_HEARING, APPROVE_ORDERS_DATA, ISSUE_APPLICATION, PROCESS_ORDER_DATA } from '../../PayloadMutator';
+import { DateHelper } from '../../DateHelper';
 
 export class ContestedEventApi {
 
@@ -20,7 +20,7 @@ export class ContestedEventApi {
         caseId,
         CaseType.Contested,
         step.event,
-        step.payload || "",
+        step.payload || '',
         step.replacements || []
       );
     }
@@ -30,7 +30,7 @@ export class ContestedEventApi {
   static async updateStepsFromJson(
     caseId: string,
     asCaseWorker: boolean,
-    steps: { event: string; jsonObject?: string }[],
+    steps: { event: string; jsonObject?: string }[]
   ): Promise<any> {
     const { email, password } = asCaseWorker ? config.caseWorker : config.judge;
     for (const step of steps) {
@@ -40,7 +40,7 @@ export class ContestedEventApi {
         caseId,
         CaseType.Contested,
         step.event,
-        step.jsonObject || ""
+        step.jsonObject || ''
       );
     }
   }
@@ -54,8 +54,8 @@ export class ContestedEventApi {
     await this.updateStepsFromJson(caseId, asCaseWorker, [
       {
         event,
-        jsonObject,
-      },
+        jsonObject
+      }
     ]);
   }
 
@@ -84,7 +84,7 @@ export class ContestedEventApi {
     filePath: string,
     dataModifications: ReplacementAction[]
   ): Promise<string> {
-    const fileContent = fs.readFileSync(filePath, "utf8");
+    const fileContent = fs.readFileSync(filePath, 'utf8');
     const json = JSON.parse(fileContent);
     ccdApi.makeModifications(dataModifications, json);
     return json;
@@ -105,8 +105,8 @@ export class ContestedEventApi {
     await this.updateCaseWorkerSteps(caseId, [
       {
         event: ContestedEvents.manualPayment.ccdCallback,
-        payload: PayloadPath.Contested.manualPayment,
-      },
+        payload: PayloadPath.Contested.manualPayment
+      }
     ]);
   }
 
@@ -143,15 +143,15 @@ export class ContestedEventApi {
       await this.updateStepsFromJson(caseId, true, [
         {
           event: ContestedEvents.issueApplication.ccdCallback,
-          jsonObject: issueApplicationJsonObject,
-        },
+          jsonObject: issueApplicationJsonObject
+        }
       ]);
     } else {
       await this.updateCaseWorkerSteps(caseId, [
         {
           event: ContestedEvents.issueApplication.ccdCallback,
-          payload: PayloadPath.Contested.issueApplication,
-        },
+          payload: PayloadPath.Contested.issueApplication
+        }
       ]);
     }
   }
@@ -160,54 +160,54 @@ export class ContestedEventApi {
     await this.updateCaseWorkerSteps(caseId, [
       {
         event: ContestedEvents.hwfDecisionMade.ccdCallback,
-        payload: PayloadPath.Contested.hwfDecisionMade,
-      },
+        payload: PayloadPath.Contested.hwfDecisionMade
+      }
     ]);
   }
 
   static async caseworkerAddsApplicantIntervener(
-    caseId: string,
+    caseId: string
   ): Promise<void> {
     await this.updateCaseWorkerSteps( caseId, [
       {
         event: ContestedEvents.manageInterveners.ccdCallback,
-        payload: PayloadPath.Contested.manageIntervenersAddApplicantInt,
+        payload: PayloadPath.Contested.manageIntervenersAddApplicantInt
       }
-    ])
+    ]);
   }
 
   static async caseworkerAddsRespondentIntervener(
-    caseId: string,
-    ): Promise<void> {
-        await this.updateCaseWorkerSteps( caseId, [
-        {
-            event: ContestedEvents.manageInterveners.ccdCallback,
-            payload: PayloadPath.Contested.manageIntervenersAddRespondentInt,
-        }
-        ])
-    }
+    caseId: string
+  ): Promise<void> {
+    await this.updateCaseWorkerSteps( caseId, [
+      {
+        event: ContestedEvents.manageInterveners.ccdCallback,
+        payload: PayloadPath.Contested.manageIntervenersAddRespondentInt
+      }
+    ]);
+  }
 
-    static async caseworkerAddsApplicantBarrister(
-    caseId: string,
-    ): Promise<void> {
-        await this.updateCaseWorkerSteps( caseId, [
-        {
-            event: ContestedEvents.manageBarrister.ccdCallback,
-            payload: PayloadPath.Contested.manageBarristerAddApplicantBarrister,
-        }
-        ])
-    }
+  static async caseworkerAddsApplicantBarrister(
+    caseId: string
+  ): Promise<void> {
+    await this.updateCaseWorkerSteps( caseId, [
+      {
+        event: ContestedEvents.manageBarrister.ccdCallback,
+        payload: PayloadPath.Contested.manageBarristerAddApplicantBarrister
+      }
+    ]);
+  }
 
-    static async caseworkerAddsRespondentBarrister(
-    caseId: string,
-    ): Promise<void> {
-        await this.updateCaseWorkerSteps( caseId, [
-        {
-            event: ContestedEvents.manageBarrister.ccdCallback,
-            payload: PayloadPath.Contested.manageBarristerAddRespondentBarrister,
-        }
-        ])
-    }
+  static async caseworkerAddsRespondentBarrister(
+    caseId: string
+  ): Promise<void> {
+    await this.updateCaseWorkerSteps( caseId, [
+      {
+        event: ContestedEvents.manageBarrister.ccdCallback,
+        payload: PayloadPath.Contested.manageBarristerAddRespondentBarrister
+      }
+    ]);
+  }
 
   static async caseWorkerProgressFormACaseToListing(
     caseId: string,
@@ -217,8 +217,8 @@ export class ContestedEventApi {
     await this.updateCaseWorkerSteps(caseId, [
       {
         event: ContestedEvents.progressToListing.ccdCallback,
-        payload: PayloadPath.Contested.progressToListing,
-      },
+        payload: PayloadPath.Contested.progressToListing
+      }
     ]);
   }
 
@@ -230,15 +230,15 @@ export class ContestedEventApi {
     await this.updateCaseWorkerSteps(caseId, [
       {
         event: ContestedEvents.progressToListing.ccdCallback,
-        payload: PayloadPath.Contested.progressToListing,
-      },
+        payload: PayloadPath.Contested.progressToListing
+      }
     ]);
   }
 
   static async caseworkerAllocateToJudge(caseId: string) {
     await this.caseWorkerIssueApplication(caseId);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ContestedEvents.allocateToJudge.ccdCallback },
+      { event: ContestedEvents.allocateToJudge.ccdCallback }
     ]);
   }
 
@@ -248,8 +248,8 @@ export class ContestedEventApi {
     const response = await this.updateCaseWorkerSteps(caseId, [
       {
         event: ContestedEvents.createGeneralApplication.ccdCallback,
-        payload: PayloadPath.Contested.generalApplicationCreate,
-      },
+        payload: PayloadPath.Contested.generalApplicationCreate
+      }
     ]);
     return response.case_data.appRespGeneralApplications[0].id;
   }
@@ -316,22 +316,22 @@ export class ContestedEventApi {
   }
 
   static async agreedDraftOrderApplicant(
-    caseId: string,
+    caseId: string
   ): Promise<void> {
     await this.updateCaseWorkerSteps( caseId, [
-  {
-    event: ContestedEvents.uploadDraftOrders.ccdCallback,
-    payload: PayloadPath.Contested.agreedDraftOrderApplicant,
-  }])
-}
+      {
+        event: ContestedEvents.uploadDraftOrders.ccdCallback,
+        payload: PayloadPath.Contested.agreedDraftOrderApplicant
+      }]);
+  }
 
   static async caseworkerCreateFlag(caseId: string) {
     
     await this.updateCaseWorkerSteps(caseId, [
       {
         event: ContestedEvents.createFlag.ccdCallback,
-        payload: PayloadPath.Contested.createFlag,
-      },
+        payload: PayloadPath.Contested.createFlag
+      }
     ]);
   }
 
@@ -383,7 +383,7 @@ export class ContestedEventApi {
     );
 
     // Update the case in CCD
-    await ContestedEventApi.approveOrders(caseId, modifications)
+    await ContestedEventApi.approveOrders(caseId, modifications);
 
     // Return the JSON object
     return caseId;
@@ -396,7 +396,7 @@ export class ContestedEventApi {
         event: ContestedEvents.manageHearings.ccdCallback,
         payload: PayloadPath.Contested.manageHearingAddHearing,
         replacements: ADD_A_HEARING(hearingDate, extraReplacements)
-      },
+      }
     ]);
   }
 

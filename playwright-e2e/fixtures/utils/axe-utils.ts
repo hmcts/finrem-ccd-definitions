@@ -1,9 +1,9 @@
-import { AxeBuilder } from "@axe-core/playwright";
-import { Page } from "@playwright/test";
-import {TestInfo} from "playwright/test";
-import config from "../../config/config.ts";
-import {createHtmlReport} from "axe-html-reporter";
-import {expect} from "../axe-fixture.ts";
+import { AxeBuilder } from '@axe-core/playwright';
+import { Page } from '@playwright/test';
+import {TestInfo} from 'playwright/test';
+import config from '../../config/config.ts';
+import {createHtmlReport} from 'axe-html-reporter';
+import {expect} from '../axe-fixture.ts';
 
 interface AuditOptions {
   exclude?: string | string[];
@@ -13,12 +13,12 @@ interface AuditOptions {
 
 export class AxeUtils {
   private readonly DEFAULT_TAGS = [
-    "wcag2a",
-    "wcag2aa",
-    "wcag21a",
-    "wcag21aa",
-    "wcag22a",
-    "wcag22aa",
+    'wcag2a',
+    'wcag2aa',
+    'wcag21a',
+    'wcag21aa',
+    'wcag22a',
+    'wcag22aa'
   ];
 
   private resultsList: any[] = [];
@@ -27,12 +27,12 @@ export class AxeUtils {
 
   private applySelectors(
     builder: AxeBuilder,
-    method: "exclude" | "include",
+    method: 'exclude' | 'include',
     selectors?: string | string[]
   ) {
     if (!selectors) return;
     (Array.isArray(selectors) ? selectors : [selectors]).forEach((selector) =>
-      builder[method](selector)
+    {return builder[method](selector);}
     );
   }
 
@@ -60,8 +60,8 @@ export class AxeUtils {
       '.caseLocked'
     ];
 
-    this.applySelectors(builder, "exclude", excludeSelectors);
-    this.applySelectors(builder, "include", options?.include);
+    this.applySelectors(builder, 'exclude', excludeSelectors);
+    this.applySelectors(builder, 'include', options?.include);
 
     if (options?.disableRules) builder.disableRules(options.disableRules);
 
@@ -75,8 +75,8 @@ export class AxeUtils {
           console.log(`${violation.id}: ${violation.description}`);
           console.log(`Impact: ${violation.impact}`);
           console.log(
-            `Affected nodes:`,
-            violation.nodes.map((node) => node.html).join("\n")
+            'Affected nodes:',
+            violation.nodes.map((node) => {return node.html;}).join('\n')
           );
         });
       }
@@ -96,13 +96,13 @@ export class AxeUtils {
         results,
         options: {
           projectKey: `${urlEndpoint}`,
-          doNotCreateReportFile: true,
-        },
+          doNotCreateReportFile: true
+        }
       });
 
       htmlReport = this.getUpdatedHtmlReport(htmlReport, unique);
 
-      const reportFileName = (results.violations.length > 0 ? "FAILED " : "") + urlEndpoint;
+      const reportFileName = (results.violations.length > 0 ? 'FAILED ' : '') + urlEndpoint;
       return `
       <details>
         <summary><strong>Page ${idx + 1}: ${reportFileName}</strong></summary>
@@ -129,7 +129,7 @@ export class AxeUtils {
 
     await testInfo.attach('Consolidated Accessibility Report', {
       body: consolidatedHtml,
-      contentType: 'text/html',
+      contentType: 'text/html'
     });
 
     this.resultsList = [];
