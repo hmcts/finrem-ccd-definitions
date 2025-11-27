@@ -26,16 +26,16 @@ test(
     // Update FR court info 
     await caseDetailsPage.selectNextStep(ConsentedEvents.updateFrCourtInfo);
     await financialRemedyCourtPage.selectCourtZoneDropDown(
-        'High Court Family Division', 
-        'High Court Family Division FRC',
-        'High Court Family Division' 
+      'High Court Family Division', 
+      'High Court Family Division FRC',
+      'High Court Family Division' 
     );
     await financialRemedyCourtPage.navigateContinue();
     await financialRemedyCourtPage.verifyHighCourtConsentErrorIsVisible(); // Verify error shown for High Court selection for Consented case
     await financialRemedyCourtPage.selectCourtZoneDropDown(
-        'Midlands', 
-        'Birmingham FRC',
-        'DERBY MAGISTRATES COURT' 
+      'Midlands', 
+      'Birmingham FRC',
+      'DERBY MAGISTRATES COURT' 
     );
     await axeUtils.audit();
     await financialRemedyCourtPage.navigateContinue();

@@ -55,16 +55,16 @@ test(
     //applicant details
     await applicantDetailsPage.enterApplicantDetailsConsented('Frodo', 'Baggins');
     await financialRemedyCourtPage.selectCourtZoneDropDown(
-        'High Court Family Division', 
-        'High Court Family Division FRC',
-        'High Court Family Division' 
+      'High Court Family Division', 
+      'High Court Family Division FRC',
+      'High Court Family Division' 
     );
     await applicantDetailsPage.navigateContinue();
     await financialRemedyCourtPage.verifyHighCourtConsentErrorIsVisible(); // Verify error shown for High Court selection for Consented case
     await financialRemedyCourtPage.selectCourtZoneDropDown(
-        'Midlands', 
-        'Birmingham FRC',
-        'COVENTRY COMBINED COURT CENTRE' 
+      'Midlands', 
+      'Birmingham FRC',
+      'COVENTRY COMBINED COURT CENTRE' 
     );
     await axeUtils.audit();
     await applicantDetailsPage.navigateContinue(url, 5);
