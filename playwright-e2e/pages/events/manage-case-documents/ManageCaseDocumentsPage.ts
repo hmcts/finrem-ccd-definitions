@@ -1,5 +1,5 @@
 import { type Page, expect, Locator } from '@playwright/test';
-import { BaseJourneyPage } from "../../BaseJourneyPage";
+import { BaseJourneyPage } from '../../BaseJourneyPage';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 
 export class ManageCaseDocumentsPage extends BaseJourneyPage {
@@ -18,14 +18,14 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     super(page);
     this.commonActionsHelper = commonActionsHelper;
 
-    this.checkConfidentialityLabel = page.getByText("Is the document confidential?");
-    this.checkConfidentialDocumentTabLabel = page.getByText("Document will be placed in the confidential documents tab visible to caseworkers and judges only");
-    this.checkConfidentialOneLabel = page.getByText("‘Confidential’ should only be selected for documents that you would never want to share with another party, for example a Form C8 for confidential address, or documents relating to a lock and key cases etc.");
-    this.checkConfidentialTwoLabel = page.getByText("Do not use the confidential option to upload a document that you later intend to share as once confidential you will not be able to share it.");
-    this.checkConfidentialThreeLabel = page.getByText("Do not select confidential if you are only waiting to exchange documents.");
-    this.checkConfidentialFourLabel = page.getByText("Parties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.");
-    this.isThisFdrDocumentQuestion = page.getByText('Is this a Financial Dispute')
-    this.addNewRadio = page.getByRole('radio', { name: 'Add New' })
+    this.checkConfidentialityLabel = page.getByText('Is the document confidential?');
+    this.checkConfidentialDocumentTabLabel = page.getByText('Document will be placed in the confidential documents tab visible to caseworkers and judges only');
+    this.checkConfidentialOneLabel = page.getByText('‘Confidential’ should only be selected for documents that you would never want to share with another party, for example a Form C8 for confidential address, or documents relating to a lock and key cases etc.');
+    this.checkConfidentialTwoLabel = page.getByText('Do not use the confidential option to upload a document that you later intend to share as once confidential you will not be able to share it.');
+    this.checkConfidentialThreeLabel = page.getByText('Do not select confidential if you are only waiting to exchange documents.');
+    this.checkConfidentialFourLabel = page.getByText('Parties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.');
+    this.isThisFdrDocumentQuestion = page.getByText('Is this a Financial Dispute');
+    this.addNewRadio = page.getByRole('radio', { name: 'Add New' });
   }
 
   // Legacy methods (to be removed once old Manage Case Documents event is gone)
@@ -43,13 +43,13 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
   }
 
   async legacySelectDocumentType(optionText: string, collectionIndex: number = 0) {
-    const dropdown = this.page.getByLabel('Document type', { exact: true })
+    const dropdown = this.page.getByLabel('Document type', { exact: true });
     await expect(dropdown).toBeVisible();
     await dropdown.selectOption({ label: optionText });
   }
 
   async legacySpecifyDocumentTypeIfOther(text: string, collectionIndex: number = 0) {
-    const specifyInput = this.page.getByRole('textbox', { name: 'Please specify document type' })
+    const specifyInput = this.page.getByRole('textbox', { name: 'Please specify document type' });
     await expect(specifyInput).toBeVisible();
     await specifyInput.fill(text);
   }
@@ -121,7 +121,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
       expect(this.checkConfidentialOneLabel).toBeVisible(),
       expect(this.checkConfidentialTwoLabel).toBeVisible(),
       expect(this.checkConfidentialThreeLabel).toBeVisible(),
-      expect(this.checkConfidentialFourLabel).toBeVisible(),
+      expect(this.checkConfidentialFourLabel).toBeVisible()
     ]);
   }
 

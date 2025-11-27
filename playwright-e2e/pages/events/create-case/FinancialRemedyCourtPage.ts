@@ -58,15 +58,15 @@ export class FinancialRemedyCourtPage extends BaseJourneyPage {
         await courtListDropDown.selectOption(localCourt);
     }
 
-    async selectHighCourtJudgeLevel(isHighCourtJudgeLevel: boolean) {
-        const radioOption = isHighCourtJudgeLevel ? 'Yes' : 'No'; 
-        const optionToSelect = this.highJudgeRadio.getByLabel(radioOption);
-        await optionToSelect.check();
-        if(isHighCourtJudgeLevel) {
-            await expect(this.highCourtJudgeReasonTxtBox).toBeVisible();
-            await this.highCourtJudgeReasonTxtBox.fill('Reason')
-        }
+  async selectHighCourtJudgeLevel(isHighCourtJudgeLevel: boolean) {
+    const radioOption = isHighCourtJudgeLevel ? 'Yes' : 'No'; 
+    const optionToSelect = this.highJudgeRadio.getByLabel(radioOption);
+    await optionToSelect.check();
+    if(isHighCourtJudgeLevel) {
+      await expect(this.highCourtJudgeReasonTxtBox).toBeVisible();
+      await this.highCourtJudgeReasonTxtBox.fill('Reason');
     }
+  }
 
     async verifyHighCourtConsentErrorIsVisible() {
         await expect(this.highCourtConsentError).toBeVisible();
@@ -76,25 +76,25 @@ export class FinancialRemedyCourtPage extends BaseJourneyPage {
         await this.specialFacilitiesTxtBox.fill("Special facilities")
     }
 
-    async enterSpecialArrangements() {
-        await this.specialArrangementsTxtBox.fill("Special Arrangements")
-    }
+  async enterSpecialArrangements() {
+    await this.specialArrangementsTxtBox.fill('Special Arrangements');
+  }
 
-    async selectShouldNotProceedApplicantHomeCourt(notApplicantHomeCourt: boolean) {
-        const radioOption = notApplicantHomeCourt ? 'Yes' : 'No'; 
-        const optionToSelect = this.applicantHomeCourtRadio.getByLabel(radioOption);
-        await optionToSelect.check();
-        if(notApplicantHomeCourt) {
-            await expect(this.reasonForHomeCourtTxtBox).toBeVisible();
-            await this.reasonForHomeCourtTxtBox.fill('Reason')
-        }
+  async selectShouldNotProceedApplicantHomeCourt(notApplicantHomeCourt: boolean) {
+    const radioOption = notApplicantHomeCourt ? 'Yes' : 'No'; 
+    const optionToSelect = this.applicantHomeCourtRadio.getByLabel(radioOption);
+    await optionToSelect.check();
+    if(notApplicantHomeCourt) {
+      await expect(this.reasonForHomeCourtTxtBox).toBeVisible();
+      await this.reasonForHomeCourtTxtBox.fill('Reason');
     }
+  }
 
-    async enterFrcReason() {
-        await this.frcReasonTxtBox.fill("FRC Reason")
-    }
+  async enterFrcReason() {
+    await this.frcReasonTxtBox.fill('FRC Reason');
+  }
 
-    async enterHomeCourtReason() {
-        await this.reasonForHomeCourtTxtBox.fill("FRC Reason")
-    }
+  async enterHomeCourtReason() {
+    await this.reasonForHomeCourtTxtBox.fill('FRC Reason');
+  }
 }
