@@ -10,7 +10,7 @@ test(
     loginPage,
     manageCaseDashboardPage,
     caseDetailsPage,
-    hwfApplicationAcceptedPage,
+    hwfApplicationAcceptedPage
   }) => {
     // Create case and progress to Application Payment Submission
     const caseId = await ConsentedCaseFactory.createConsentedCaseUpToApplicationPaymentSubmission();

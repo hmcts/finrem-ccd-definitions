@@ -11,7 +11,7 @@ test(
     loginPage,
     manageCaseDashboardPage,
     caseDetailsPage,
-    issueApplicationPage,
+    issueApplicationPage
   }) => {
     // Create case and progress to HWF decision made
     const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
@@ -19,8 +19,8 @@ test(
       .toLocaleDateString('en-GB', {
         day: 'numeric',
         month: 'short',
-        year: 'numeric',
-      }).replace(",", "").replace(/\bSept\b/, 'Sep');
+        year: 'numeric'
+      }).replace(',', '').replace(/\bSept\b/, 'Sep');
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();

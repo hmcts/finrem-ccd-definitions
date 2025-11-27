@@ -1,6 +1,6 @@
-import { CaseDataBuilder } from "../CaseDataBuilder";
-import { ConsentedEvents, CaseType, PayloadPath } from "../../../config/case-data";
-import { ConsentedEventApi } from "../../api/consented/ConsentedEventApi";
+import { CaseDataBuilder } from '../CaseDataBuilder';
+import { ConsentedEvents, CaseType, PayloadPath } from '../../../config/case-data';
+import { ConsentedEventApi } from '../../api/consented/ConsentedEventApi';
 
 export class ConsentedCaseFactory {
 
@@ -26,28 +26,28 @@ export class ConsentedCaseFactory {
 
   static async createConsentedCaseUpToApplicationPaymentSubmission(): Promise<string> {
     return this.buildConsentedCaseWithSteps([
-      (id) => ConsentedEventApi.solicitorSubmitCase(id),
+      (id) => {return ConsentedEventApi.solicitorSubmitCase(id);}
     ]);
   }
 
   static async createConsentedCaseUpToHWFDecision(): Promise<string> {
     return this.buildConsentedCaseWithSteps([
-      (id) => ConsentedEventApi.solicitorSubmitCase(id),
-      (id) => ConsentedEventApi.caseWorkerHWFDecisionMade(id),
+      (id) => {return ConsentedEventApi.solicitorSubmitCase(id);},
+      (id) => {return ConsentedEventApi.caseWorkerHWFDecisionMade(id);}
     ]);
   }
 
   static async createConsentedCaseUpToIssueApplication(): Promise<string> {
     return this.buildConsentedCaseWithSteps([
-      (id) => ConsentedEventApi.solicitorSubmitCase(id),
-      (id) => ConsentedEventApi.caseWorkerIssueApplication(id),
+      (id) => {return ConsentedEventApi.solicitorSubmitCase(id);},
+      (id) => {return ConsentedEventApi.caseWorkerIssueApplication(id);}
     ]);
   }
 
   static async createConsentedCaseUpToCreateFlag(): Promise<string> {
     return this.buildConsentedCaseWithSteps([
-      (id) => ConsentedEventApi.solicitorSubmitCase(id),
-      (id) => ConsentedEventApi.caseworkerCreateFlag(id),
+      (id) => {return ConsentedEventApi.solicitorSubmitCase(id);},
+      (id) => {return ConsentedEventApi.caseworkerCreateFlag(id);}
     ]);
   }
 }

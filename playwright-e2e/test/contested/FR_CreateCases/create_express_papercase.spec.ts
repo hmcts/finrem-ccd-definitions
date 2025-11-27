@@ -4,10 +4,10 @@ import { YesNoRadioEnum, ApplicationtypeEnum } from '../../../pages/helpers/enum
 import {createCaseTabData} from '../../../resources/tab_content/contested/caseworker_create_case_tabs';
 import { expressCaseGateKeepingTabData, expressCaseGateKeeping250TabData } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 import {
-    contestedCreateExpressPaperMatrimonyCaseDetailsTable,
-} from "../../../resources/check_your_answer_content/create_case/createCaseTable.ts";
-import {ContestedEvents} from "../../../config/case-data.ts";
-import {envTestData} from "../../../data-utils/test_data/EnvTestDataConfig.ts";
+  contestedCreateExpressPaperMatrimonyCaseDetailsTable
+} from '../../../resources/check_your_answer_content/create_case/createCaseTable.ts';
+import {ContestedEvents} from '../../../config/case-data.ts';
+import {envTestData} from '../../../data-utils/test_data/EnvTestDataConfig.ts';
 
 // Create a test case for the Contested Paper Case
 test(
@@ -37,16 +37,16 @@ test(
       uploadOrderDocumentsPage,
       createCaseCheckYourAnswersPage,
       checkYourAnswersPage,
-      caseDetailsPage,
+      caseDetailsPage
     }
   ) => {
     
     // Set up court information.
-    const courtName: string = "BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE";
+    const courtName: string = 'BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE';
     const expectedURL: string = ContestedEvents.createPaperCase.ccdCallback;
 
     // Sign in
-    await manageCaseDashboardPage.visit()
+    await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
 
     // Manage/Create case
@@ -64,13 +64,13 @@ test(
     await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
     await solicitorDetailsPage.enterSolicitorsFirm('FinRem-1-Org');
     await solicitorDetailsPage.enterReferenceNumber(envTestData.ORG_ID_1);
-      await solicitorDetailsPage.enterUKAddress({
-          buildingAndStreet: envTestData.APP_SOL_BUILDING_STREET,
-          addressLine2: "Water Unite",
-          townOrCity: envTestData.APP_SOL_TOWN_CITY,
-          county: envTestData.APP_SOL_COUNTY,
-          postcodeOrZipcode: envTestData.APP_SOL_POSTCODE,
-      });
+    await solicitorDetailsPage.enterUKAddress({
+      buildingAndStreet: envTestData.APP_SOL_BUILDING_STREET,
+      addressLine2: 'Water Unite',
+      townOrCity: envTestData.APP_SOL_TOWN_CITY,
+      county: envTestData.APP_SOL_COUNTY,
+      postcodeOrZipcode: envTestData.APP_SOL_POSTCODE
+    });
     // Check both application types are present.
     await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT);
     await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.MARRIAGE_CIVIL);
@@ -152,14 +152,14 @@ test(
 
     // Upload additional document
     await uploadOrderDocumentsPage.selectUploadAdditionalDocs(true);
-    await uploadOrderDocumentsPage.uploadOtherDocuments("test1.pdf", "Other");
+    await uploadOrderDocumentsPage.uploadOtherDocuments('test1.pdf', 'Other');
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue(expectedURL + '/submit');
 
     //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
     await createCaseCheckYourAnswersPage.checkNetAssetsQuestion('Under £250,000 (this should be total of combined net assets, but excluding pensions)');
-    await checkYourAnswersPage.assertCheckYourAnswersPage(contestedCreateExpressPaperMatrimonyCaseDetailsTable)
+    await checkYourAnswersPage.assertCheckYourAnswersPage(contestedCreateExpressPaperMatrimonyCaseDetailsTable);
     await createCaseCheckYourAnswersPage.navigateSubmit();
 
     await caseDetailsPage.checkHasBeenCreated();

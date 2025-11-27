@@ -44,51 +44,98 @@ It is also recommend to utilise the [Playwright VSCode](https://marketplace.visu
 
 This repository contains automation tests that can be run locally. To set up the environment variables for configuring URLs and passwords, follow the instructions below:
 
-1. Create a .env  file in the root directory of this project if it doesn't already exist.
+1. Create a .env file in the root directory of the project if it does not already exist.
+This file must NOT be committed to GitHub
 
-2. Add the following environment variables to the .env file: (ask a team mate for details/values can be found in Azure Keyvault)
-    - Can set ENVIRONMENT to use the default URLs for that environment (local/aat/demo/perftest/ithc)
+2. Add the required environment variables (ask a teammate for values or check Azure Key Vault).
+Example template:
 
+export PLAYWRIGHT_SOLICITOR_USERNAME=
+export PLAYWRIGHT_SOLICITOR_PSWD=
 
-```
-export PLAYWRIGHT_SOLICITOR_USERNAME=example@mailinator.com
-export PLAYWRIGHT_SOLICITOR_PSWD=example
-export PLAYWRIGHT_RESPONDENT_SOL_USERNAME=example@mailinator.com
-export PLAYWRIGHT_RESPONDENT_SOL_PSWD=example
-export PLAYWRIGHT_RESP_CAA_USERNAME=example@mailinator.com
-export PLAYWRIGHT_RESP_CAA_PSWD=example
-export PLAYWRIGHT_APPL_CAA_USERNAME=example@mailinator.com
-export PLAYWRIGHT_APPL_CAA_PSWD=example
-export CCD_WEB_URL=http://example.com
-export CCD_ADMIN_USER_NAME=example@mailinator.com
-export CCD_ADMIN_PASSWORD=example
-export USERNAME_SOLICITOR1=example@mailinator.com
-export PASSWORD_SOLICITOR1=example
-export USERNAME_SOLICITOR=example@mailinator.com
-export PASSWORD_SOLICITOR=example
-export USERNAME_CASEWORKER=example@mailinator.com
-export PASSWORD_CASEWORKER=example
-export USERNAME_JUDGE=example@mailinator.com
-export PASSWORD_JUDGE=example
-export USERNAME_CAA=example@mailinator.com
-export PASSWORD_CAA=example
-export CCD_DATA_API_URL=https://example.com
-export XUI_ORG_WEB_URL=https://example.com
-export NIGHTLY_TEST=true
-export IDAM_CLIENT_SECRET=example
-export IDAM_API_URL=https://example.com
-export CCD_SUBMIT_S2S_SECRET=example
-export CCD_ADMIN_URL=https://example.com
-export USERNAME_RESPONDENT_SOLICITOR=example@mailinator.com
-export FINREM_IDAM_CLIENT_SECRET=example
-export FINREM_SYSTEMUPDATE_USERNAME=example@mailinator.com
-export FINREM_SYSTEMUPDATE_PASSWORD=example
-export USERNAME_BARRISTER1=example@mailinator.com
-export PASSWORD_BARRISTER1=example
-```
-Replace the placeholder values with the actual values relevant to your environment.
+export PLAYWRIGHT_RESPONDENT_SOL_USERNAME=
+export PLAYWRIGHT_RESPONDENT_SOL_PSWD=
 
-`CCD_WEB_URL=` Can be used to toggle between PR environment, AAT and local or other environments.
+export PLAYWRIGHT_RESP_CAA_USERNAME=
+export PLAYWRIGHT_RESP_CAA_PSWD=
+export PLAYWRIGHT_APPL_CAA_USERNAME=
+export PLAYWRIGHT_APPL_CAA_PSWD=
+export PLAYWRIGHT_APPL_CAA2_USERNAME=
+export PLAYWRIGHT_APPL_CAA2_PSWD=
+export PLAYWRIGHT_RESP_CAA2_USERNAME=
+export PLAYWRIGHT_RESP_CAA2_PSWD=
+
+export PLAYWRIGHT_APPL_INTERVENER_USERNAME=
+export PLAYWRIGHT_APPL_INTERVENER_PSWD=
+export PLAYWRIGHT_RESP_INTERVENER_USERNAME=
+export PLAYWRIGHT_RESP_INTERVENER_PSWD=
+
+export USERNAME_BARRISTER1=
+export PASSWORD_BARRISTER1=
+export PLAYWRIGHT_RESP_BARRISTER_USERNAME=
+export PLAYWRIGHT_RESP_BARRISTER_PSWD=
+
+export PLAYWRIGHT_SOLICITOR2_USERNAME=
+export PLAYWRIGHT_SOLICITOR2_PSWD=
+export PLAYWRIGHT_RESPONDENT_SOL2_USERNAME=
+export PLAYWRIGHT_RESPONDENT_SOL2_PSWD=
+
+export CCD_ADMIN_USER_NAME=
+export CCD_ADMIN_PASSWORD=
+export USERNAME_SOLICITOR=
+export PASSWORD_SOLICITOR=
+export USERNAME_CASEWORKER=
+export PASSWORD_CASEWORKER=
+export USERNAME_JUDGE=
+export PASSWORD_JUDGE=
+export USERNAME_CAA=
+export PASSWORD_CAA=
+export USERNAME_RESPONDENT_SOLICITOR=
+
+# Secrets / Tokens
+export IDAM_CLIENT_SECRET=
+export CCD_SUBMIT_S2S_SECRET=
+export FINREM_IDAM_CLIENT_SECRET=
+export FINREM_SYSTEMUPDATE_USERNAME=
+export FINREM_SYSTEMUPDATE_PASSWORD=
+export FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY=
+
+# Test Flags
+export NIGHTLY_TEST=
+export TESTS_FOR_ACCESSIBILITY=
+
+# Base URLs (used depending on RUNNING_ENV)
+
+# Main URLs (can be overridden by environment blocks below)
+export CCD_ADMIN_URL=
+export CCD_WEB_URL=
+export CCD_DATA_API_URL=
+export XUI_ORG_WEB_URL=
+export MANAGE_ORG_API_BASE_URL=
+export IDAM_API_URL=
+
+###############################################
+# Environment Selection 
+###############################################
+# Set this to choose which environment to run against:
+# You can control which environment the test suite runs against by setting the RUNNING_ENV variable.
+
+# Supported values:
+
+aat
+
+demo
+
+pr-1234 (replace 1234 with the PR number you want to test against)
+
+# Local Environment
+
+If you want to run tests against local dev environment, override the following URLs so they point to your local containers::
+
+export CCD_WEB_URL=
+export CCD_DATA_API_URL=
+export XUI_ORG_WEB_URL=
+export MANAGE_ORG_API_BASE_URL=
 
 3. Save the .env file.
 
@@ -100,6 +147,44 @@ Before running the automation tests, ensure that all necessary dependencies are 
 yarn install
 ```
 
+## Code Linting
+
+We use ESLint to ensure consistent code quality, formatting, and filename conventions across the project.
+
+* Running Linting
+
+To check for linting errors, run:
+
+`yarn lint`
+
+* Fixing Linting Errors
+
+To automatically fix linting issues where possible, run:
+
+`yarn lint --fix`
+
+* Filename Conventions
+
+To avoid linting errors, filenames must follow these conventions:
+
+- snake_case: playwright-e2e/test/**, playwright-e2e/resources/tab_content/**
+
+- kebab-case: playwright-e2e/config/**, playwright-e2e/fixtures/**, playwright-e2e/resources/** (excluding tab_content)
+
+- PascalCase: playwright-e2e/pages/**, playwright-e2e/data-utils/**
+
+- camelCase: playwright-e2e/helpers/**
+
+Example:
+
+✅ login_page.spec.ts (snake_case)
+
+✅ checkout-flow.json (kebab-case)
+
+❌ LoginPage.spec.ts (should be snake_case for test files)
+
+ESLint is configured with eslint-plugin-unicorn to enforce these rules automatically for file names in their respective folders.
+
 ## Running Tests
 
 Once the environment variables are configured and dependencies are installed, you can run the automation tests using the following command:
@@ -107,9 +192,9 @@ Once the environment variables are configured and dependencies are installed, yo
 yarn playwright test <./playwright-e2e/functional/test_folder/test_file.ts>
 ```
 
-Running all the tests using the VS Code extension can be very resource intensive, instead run all test headless through the terminal using cmd. (Note: The intel macs can usually only handle 1 worker):
+Running all the tests using the VS Code extension can be very resource intensive, instead you can run all test headless through the terminal using cmd. You can also generate a HTML report by passing the --reporter=html flag
 ```
-yarn playwright test playwright-e2e --project=chromium --workers=1   
+yarn playwright test playwright-e2e --project=edge --reporter=html
 ```
 
 
