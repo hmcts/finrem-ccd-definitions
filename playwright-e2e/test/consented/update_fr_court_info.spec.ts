@@ -2,6 +2,8 @@ import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
+import { updateFrCourtInfoTable } from '../../resources/check_your_answer_content/update_fr_court_info/updateCourtInfoTable';
+import { updateFrCourtInfoTabs } from '../../resources/tab_content/consented/update_fr_court_info_tabs';
 
 test(
   'Consented - Update FR court info',
@@ -12,7 +14,8 @@ test(
       manageCaseDashboardPage,
       caseDetailsPage,
       financialRemedyCourtPage,
-      axeUtils
+      axeUtils,
+      checkYourAnswersPage
     }, testInfo
   ) => {
     // Create case and progress to Issue Application
@@ -35,12 +38,17 @@ test(
     await financialRemedyCourtPage.selectCourtZoneDropDown(
       'Midlands', 
       'Birmingham FRC',
-      'DERBY MAGISTRATES COURT' 
+      'WOLVERHAMPTON COMBINED COURT CENTRE' 
     );
     await axeUtils.audit();
     await financialRemedyCourtPage.navigateContinue();
+
+    await checkYourAnswersPage.assertCheckYourAnswersPage(updateFrCourtInfoTable);
     await financialRemedyCourtPage.navigateSubmit();
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.updateFrCourtInfo.listItem);
+
+    //assert tab data
+    await caseDetailsPage.assertTabData(updateFrCourtInfoTabs);
 
     await manageCaseDashboardPage.signOut();
   }
