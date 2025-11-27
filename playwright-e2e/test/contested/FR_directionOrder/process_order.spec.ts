@@ -1,9 +1,9 @@
-import {test} from '../../../fixtures/fixtures';
-import config from '../../../config/config';
-import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import { ContestedEvents } from '../../../config/case-data';
-import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
-import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
+import {test} from '../../../fixtures/fixtures.ts';
+import config from '../../../config/config.ts';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
+import { ContestedEvents } from '../../../config/case-data.ts';
+import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
+import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi.ts';
 import { processOrderHearingTabData } from '../../../resources/tab_content/contested/hearings_tabs.ts';
 import { unprocessedApprovedOrdersNoHearingTable, unprocessedApprovedOrdersWithNewHearingTable } from '../../../resources/check_your_answer_content/FR_directionOrder/proessOrderTable.ts';
 import { createDraftOrdersApprovedWithHearingTabData } from '../../../resources/tab_content/contested/draft_orders_tabs.ts';
@@ -64,16 +64,16 @@ async function progressToProcessOrderEvent(
   const firstDraftOrderItem = eventResponse?.data?.agreedDraftOrderCollection?.[0]?.value?.draftOrder;
   hearingDate = eventResponse?.data?.hearingDate || hearingDate; 
   hearingDate = hearingDate ?? await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
-    const documentDetailsForFutureTestSteps = {
-      hearingDate,
-      courtOrderDate: hearingDate,
-      documentUrl: firstDraftOrderItem?.document_url,
-      documentBinaryUrl: firstDraftOrderItem?.document_binary_url,
-      uploadTimestamp: firstDraftOrderItem?.upload_timestamp,
-      fileName: "agreed-draft-order-document.docx"
-    };
+  const documentDetailsForFutureTestSteps = {
+    hearingDate,
+    courtOrderDate: hearingDate,
+    documentUrl: firstDraftOrderItem?.document_url,
+    documentBinaryUrl: firstDraftOrderItem?.document_binary_url,
+    uploadTimestamp: firstDraftOrderItem?.upload_timestamp,
+    fileName: 'agreed-draft-order-document.docx'
+  };
   await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
-  return documentDetailsForFutureTestSteps
+  return documentDetailsForFutureTestSteps;
 }
 
 // New Style Process Order hearings
@@ -101,7 +101,7 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
 
       // Check unapproved draft order tab
-      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders('agreed-draft-order-document.docx');
       await axeUtils.audit({
         exclude:[
           'div:nth-child(4) > ccd-read-document-field > .govuk-js-link[type=\"button\"]'
@@ -111,13 +111,13 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
 
       // Add Hearing 
       await processOrderHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
-      await processOrderHearingDetailsPage.selectTypeOfHearing("First Directions Appointment (FDA)");
-      await processOrderHearingDetailsPage.enterTimeEstimate("30");
-      await processOrderHearingDetailsPage.enterHearingDate("01", "01", "2024");
-      await processOrderHearingDetailsPage.enterHearingTime("10:00")
+      await processOrderHearingDetailsPage.selectTypeOfHearing('First Directions Appointment (FDA)');
+      await processOrderHearingDetailsPage.enterTimeEstimate('30');
+      await processOrderHearingDetailsPage.enterHearingDate('01', '01', '2024');
+      await processOrderHearingDetailsPage.enterHearingTime('10:00');
       await processOrderHearingDetailsPage.selectCourtForHearing();
-      await processOrderHearingDetailsPage.selectHearingAttendance("In person");
-      await processOrderHearingDetailsPage.enterAdditionalInformationAboutHearing("This is a test hearing");
+      await processOrderHearingDetailsPage.selectHearingAttendance('In person');
+      await processOrderHearingDetailsPage.enterAdditionalInformationAboutHearing('This is a test hearing');
       await processOrderHearingDetailsPage.selectAdditionalHearingDocument(YesNoRadioEnum.NO);
       await processOrderHearingDetailsPage.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
       await axeUtils.audit({
@@ -160,18 +160,18 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
 
       // Check unapproved draft order tab
-      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders('agreed-draft-order-document.docx');
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Add Hearing 
       await processOrderHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
-      await processOrderHearingDetailsPage.selectTypeOfHearing("First Directions Appointment (FDA)");
-      await processOrderHearingDetailsPage.enterTimeEstimate("30");
-      await processOrderHearingDetailsPage.enterHearingDate("01", "01", "2024");
-      await processOrderHearingDetailsPage.enterHearingTime("10:00")
+      await processOrderHearingDetailsPage.selectTypeOfHearing('First Directions Appointment (FDA)');
+      await processOrderHearingDetailsPage.enterTimeEstimate('30');
+      await processOrderHearingDetailsPage.enterHearingDate('01', '01', '2024');
+      await processOrderHearingDetailsPage.enterHearingTime('10:00');
       await processOrderHearingDetailsPage.selectCourtForHearing();
-      await processOrderHearingDetailsPage.selectHearingAttendance("In person");
-      await processOrderHearingDetailsPage.enterAdditionalInformationAboutHearing("This is a test hearing");
+      await processOrderHearingDetailsPage.selectHearingAttendance('In person');
+      await processOrderHearingDetailsPage.enterAdditionalInformationAboutHearing('This is a test hearing');
       await processOrderHearingDetailsPage.selectAdditionalHearingDocument(YesNoRadioEnum.NO);
       await processOrderHearingDetailsPage.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
       await processOrderHearingDetailsPage.navigateContinue(); 
@@ -199,8 +199,8 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
         uploadDraftOrdersPage,
         unprocessedApprovedOrdersPage,
         processOrderHearingDetailsPage,
-        checkYourAnswersPage,
-      },
+        checkYourAnswersPage
+      }
     ) => {
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       await progressToProcessOrderEvent(caseId, loginPage, manageCaseDashboardPage, caseDetailsPage, uploadDraftOrdersPage);
@@ -209,7 +209,7 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
 
       // Check unapproved draft order tab
-      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders("agreed-draft-order-document.docx");
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders('agreed-draft-order-document.docx');
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Do NOT add a hearing, just continue

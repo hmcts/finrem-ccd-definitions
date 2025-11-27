@@ -1,6 +1,6 @@
-import { ccdApi } from "../../../fixtures/fixtures";
-import config from "../../../config/config";
-import { ConsentedEvents, CaseType, PayloadPath } from "../../../config/case-data";
+import { ccdApi } from '../../../fixtures/fixtures';
+import config from '../../../config/config';
+import { ConsentedEvents, CaseType, PayloadPath } from '../../../config/case-data';
 
 export class ConsentedEventApi {
 
@@ -15,7 +15,7 @@ export class ConsentedEventApi {
         caseId,
         CaseType.Consented,
         step.event,
-        step.payload || ""
+        step.payload || ''
       );
     }
   }
@@ -33,14 +33,14 @@ export class ConsentedEventApi {
 
   static async caseWorkerHWFDecisionMade(caseId: string) {
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ConsentedEvents.hwfDecisionMade.ccdCallback},
+      { event: ConsentedEvents.hwfDecisionMade.ccdCallback}
     ]);
   }
 
   static async caseWorkerIssueApplication(caseId: string) {
     await this.caseWorkerHWFDecisionMade(caseId);
     await this.updateCaseWorkerSteps(caseId, [
-      { event: ConsentedEvents.issueApplication.ccdCallback, payload: PayloadPath.Consented.issueApplication },
+      { event: ConsentedEvents.issueApplication.ccdCallback, payload: PayloadPath.Consented.issueApplication }
     ]);
   }
 

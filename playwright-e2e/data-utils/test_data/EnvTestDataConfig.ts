@@ -27,7 +27,7 @@ const configs = {
     APP_SOL_COUNTY: 'Cheshire',
     APP_SOL_POSTCODE: 'WA5 0EX'
   }
-}
+};
 // get the environment variable RUNNING_ENV, default to 'aat' if not set
 export const envTestData =
   configs.hasOwnProperty(env)
