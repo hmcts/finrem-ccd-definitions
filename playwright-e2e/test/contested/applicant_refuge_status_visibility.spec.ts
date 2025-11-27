@@ -7,7 +7,7 @@ import {
   rsExpectedApplicantRefugeStatus
 } from '../../resources/tab_content/contested/applicant_refuge_status_visibility_tabs';
 import {ContestedCaseFactory} from '../../data-utils/factory/contested/ContestedCaseFactory';
-import {CaseTypeEnum} from "../../pages/helpers/enums/RadioEnums.ts";
+import {CaseTypeEnum} from '../../pages/helpers/enums/RadioEnums.ts';
 
 
 test(

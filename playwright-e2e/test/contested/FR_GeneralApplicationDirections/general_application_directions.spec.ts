@@ -3,19 +3,19 @@ import config from '../../../config/config';
 import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import {ContestedEvents} from '../../../config/case-data';
 import {YesNoRadioEnum} from '../../../pages/helpers/enums/RadioEnums';
-import {AxeUtils} from "../../../fixtures/utils/axe-utils.ts";
+import {AxeUtils} from '../../../fixtures/utils/axe-utils.ts';
 import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEventApi.ts';
 import {
   contestedGeneralApplicationDirectionsMHTableData
 } from '../../../resources/check_your_answer_content/general_applcations_directions/generalApplicationDirectionsMHTable.ts';
 import {
   GeneralApplicationDirectionsPage
-} from "../../../pages/events/general-application-directions/GeneralApplicationDirectionsPage.ts";
+} from '../../../pages/events/general-application-directions/GeneralApplicationDirectionsPage.ts';
 
 async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
-    await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
-    await manageCaseDashboardPage.navigateToCase(caseId);
+  await manageCaseDashboardPage.visit();
+  await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+  await manageCaseDashboardPage.navigateToCase(caseId);
 }
 
 async function performNewGeneralApplicationDirectionsFlowWithHearing(
@@ -58,57 +58,57 @@ async function performNewGeneralApplicationDirectionsFlowWithHearing(
   await generalApplicationDirectionsPage.navigateSubmit();
 }
 
-  test.describe('Contested - General Application Directions (MH)', () => {
-    test(
-      'General Application Directions (MH) with hearing',
-      { tag: [] },
-      async ({
-        loginPage,
-        manageCaseDashboardPage,
+test.describe('Contested - General Application Directions (MH)', () => {
+  test(
+    'General Application Directions (MH) with hearing',
+    { tag: [] },
+    async ({
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage,
+      generalApplicationDirectionsPage,
+      checkYourAnswersPage,
+      axeUtils
+    }) => {
+      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
+      await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
+      await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performNewGeneralApplicationDirectionsFlowWithHearing(
         caseDetailsPage,
         generalApplicationDirectionsPage,
         checkYourAnswersPage,
-        axeUtils,
-      },) => {
-        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-        await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
-        await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
-        await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
-        await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-        await performNewGeneralApplicationDirectionsFlowWithHearing(
-          caseDetailsPage,
-          generalApplicationDirectionsPage,
-          checkYourAnswersPage,
-          axeUtils
-        );
-      }
-    );
-
-    test(
-      'Paper case - General Application Directions (MH) with hearing ',
-      { tag: [] },
-      async ({
-        loginPage,
-        manageCaseDashboardPage,
-        caseDetailsPage,
-        generalApplicationDirectionsPage,
-        checkYourAnswersPage,
-        axeUtils,
-      },
-
-      ) => {
-        const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
-        await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
-        await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
-        await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
-        await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
-        await performNewGeneralApplicationDirectionsFlowWithHearing(
-          caseDetailsPage,
-          generalApplicationDirectionsPage,
-          checkYourAnswersPage,
-          axeUtils
-        );
-      }
-    );
-   }
+        axeUtils
+      );
+    }
   );
+
+  test(
+    'Paper case - General Application Directions (MH) with hearing ',
+    { tag: [] },
+    async ({
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage,
+      generalApplicationDirectionsPage,
+      checkYourAnswersPage,
+      axeUtils
+    }
+
+    ) => {
+      const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
+      await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
+      await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
+      await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
+      await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);
+      await performNewGeneralApplicationDirectionsFlowWithHearing(
+        caseDetailsPage,
+        generalApplicationDirectionsPage,
+        checkYourAnswersPage,
+        axeUtils
+      );
+    }
+  );
+}
+);

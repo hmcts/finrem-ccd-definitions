@@ -1,11 +1,11 @@
-import { expect, Locator, Page } from "@playwright/test";
-import { BaseJourneyPage } from "../../BaseJourneyPage";
-import {ManageHearingPage} from "../manage-hearings/ManageHearing.ts";
-import {CommonActionsHelper} from "../../helpers/CommonActionsHelper.ts";
+import { expect, Locator, Page } from '@playwright/test';
+import { BaseJourneyPage } from '../../BaseJourneyPage';
+import {ManageHearingPage} from '../manage-hearings/ManageHearing.ts';
+import {CommonActionsHelper} from '../../helpers/CommonActionsHelper.ts';
 
 export class ProcessOrderHearingDetailsPage extends ManageHearingPage {
 
-  private readonly newHearingAddRadio : Locator
+  private readonly newHearingAddRadio : Locator;
 
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page, commonActionsHelper);

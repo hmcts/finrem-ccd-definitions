@@ -1,193 +1,193 @@
-import {expect, Locator, Page} from "@playwright/test";
-import {BaseJourneyPage} from "../../BaseJourneyPage";
-import {YesNoRadioEnum} from "../../helpers/enums/RadioEnums.ts";
-import {CommonActionsHelper} from "../../helpers/CommonActionsHelper.ts";
-import {camelCase} from "lodash";
+import {expect, Locator, Page} from '@playwright/test';
+import {BaseJourneyPage} from '../../BaseJourneyPage';
+import {YesNoRadioEnum} from '../../helpers/enums/RadioEnums.ts';
+import {CommonActionsHelper} from '../../helpers/CommonActionsHelper.ts';
+import {camelCase} from 'lodash';
 
 export class ManageHearingPage extends BaseJourneyPage {
 
-    readonly commonActionsHelper: CommonActionsHelper;
-    private readonly manageHearingTitle: Locator;
-    private readonly addANewHearingRadio: Locator;
-    private readonly addANewHearingTitle: Locator;
-    private readonly typeOfHearingDropDown: Locator;
-    private readonly hearingTimeEstimate: Locator;
-    private readonly vacateHearingRadio: Locator;   
+  readonly commonActionsHelper: CommonActionsHelper;
+  private readonly manageHearingTitle: Locator;
+  private readonly addANewHearingRadio: Locator;
+  private readonly addANewHearingTitle: Locator;
+  private readonly typeOfHearingDropDown: Locator;
+  private readonly hearingTimeEstimate: Locator;
+  private readonly vacateHearingRadio: Locator;   
 
-    public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
-        super(page);
-        this.commonActionsHelper = commonActionsHelper;
-        this.manageHearingTitle = page.getByRole('heading', { name: "Manage Hearings" })
-        this.addANewHearingRadio = page.getByRole('radio', { name: "Add a new hearing" })
-        this.addANewHearingTitle = page.getByRole('heading', { name: "Add a new hearing" })
-        this.typeOfHearingDropDown = page.getByLabel('Type of Hearing');
-        this.hearingTimeEstimate = this.page.locator(`#workingHearing_hearingTimeEstimate`);
-        this.vacateHearingRadio = page.getByRole('radio', { name: 'Vacate a hearing' })
-    }
+  public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
+    super(page);
+    this.commonActionsHelper = commonActionsHelper;
+    this.manageHearingTitle = page.getByRole('heading', { name: 'Manage Hearings' });
+    this.addANewHearingRadio = page.getByRole('radio', { name: 'Add a new hearing' });
+    this.addANewHearingTitle = page.getByRole('heading', { name: 'Add a new hearing' });
+    this.typeOfHearingDropDown = page.getByLabel('Type of Hearing');
+    this.hearingTimeEstimate = this.page.locator('#workingHearing_hearingTimeEstimate');
+    this.vacateHearingRadio = page.getByRole('radio', { name: 'Vacate a hearing' });
+  }
 
-    async selectAddANewHearing() {
-        await expect(this.manageHearingTitle).toBeVisible();
-        await expect(this.addANewHearingRadio).toBeVisible();
-        await this.addANewHearingRadio.check();
-    }
+  async selectAddANewHearing() {
+    await expect(this.manageHearingTitle).toBeVisible();
+    await expect(this.addANewHearingRadio).toBeVisible();
+    await this.addANewHearingRadio.check();
+  }
 
-    async assertWhatWouldYouLikeToDoRequired() {
-        await this.assertErrorMessage(['What would you like to do? is required'])
-    }
+  async assertWhatWouldYouLikeToDoRequired() {
+    await this.assertErrorMessage(['What would you like to do? is required']);
+  }
 
-    async assertHearingTypeDropDownOptionsAreVisible(options: string[]) {
-       await this.assertDropDownOptionsAreVisible(options, this.typeOfHearingDropDown);
-    }
+  async assertHearingTypeDropDownOptionsAreVisible(options: string[]) {
+    await this.assertDropDownOptionsAreVisible(options, this.typeOfHearingDropDown);
+  }
 
-    async selectTypeOfHearing(typeOfHearing: string) {
-        await expect(this.typeOfHearingDropDown).toBeVisible();
-        await this.typeOfHearingDropDown.selectOption({label : typeOfHearing });
-    }
+  async selectTypeOfHearing(typeOfHearing: string) {
+    await expect(this.typeOfHearingDropDown).toBeVisible();
+    await this.typeOfHearingDropDown.selectOption({label : typeOfHearing });
+  }
 
-    async enterTimeEstimate(duration: string) {
-        await expect(this.hearingTimeEstimate).toBeVisible();
-        await this.hearingTimeEstimate.fill(duration);
-    }
+  async enterTimeEstimate(duration: string) {
+    await expect(this.hearingTimeEstimate).toBeVisible();
+    await this.hearingTimeEstimate.fill(duration);
+  }
 
-    async enterHearingDate(day: string, month: string, year: string) {
-        const hearingDateDay = this.page.locator(`#hearingDate-day`);
-        const hearingDateMonth = this.page.locator(`#hearingDate-month`);
-        const hearingDateYear = this.page.locator(`#hearingDate-year`);
+  async enterHearingDate(day: string, month: string, year: string) {
+    const hearingDateDay = this.page.locator('#hearingDate-day');
+    const hearingDateMonth = this.page.locator('#hearingDate-month');
+    const hearingDateYear = this.page.locator('#hearingDate-year');
 
-        await expect(hearingDateDay).toBeVisible();
-        await expect(hearingDateMonth).toBeVisible();
-        await expect(hearingDateYear).toBeVisible();
+    await expect(hearingDateDay).toBeVisible();
+    await expect(hearingDateMonth).toBeVisible();
+    await expect(hearingDateYear).toBeVisible();
 
-        await hearingDateDay.fill(day);
-        await hearingDateMonth.fill(month);
-        await hearingDateYear.fill(year);
-    }
+    await hearingDateDay.fill(day);
+    await hearingDateMonth.fill(month);
+    await hearingDateYear.fill(year);
+  }
 
-    async enterDefaultHearingDate() {
-        const hearingDate = new Date();
-        hearingDate.setDate(hearingDate.getDate() + 12 * 7); // 12 weeks from now
-        const date = hearingDate.toISOString().split('T')[0];
-        const [year, month, day] = date.split('-');
-        await this.enterHearingDate(day, month, year);
-    }
+  async enterDefaultHearingDate() {
+    const hearingDate = new Date();
+    hearingDate.setDate(hearingDate.getDate() + 12 * 7); // 12 weeks from now
+    const date = hearingDate.toISOString().split('T')[0];
+    const [year, month, day] = date.split('-');
+    await this.enterHearingDate(day, month, year);
+  }
 
-    async assertHearingDateFormatError() {
-        await this.assertErrorMessage(['The data entered is not valid for Hearing Date']);
-    }
+  async assertHearingDateFormatError() {
+    await this.assertErrorMessage(['The data entered is not valid for Hearing Date']);
+  }
 
-    async enterHearingTime(time: string) {
-        const hearingTime = this.page.locator(`#workingHearing_hearingTime`);
-        await expect(hearingTime).toBeVisible();
-        await hearingTime.fill(time);
-    }
+  async enterHearingTime(time: string) {
+    const hearingTime = this.page.locator('#workingHearing_hearingTime');
+    await expect(hearingTime).toBeVisible();
+    await hearingTime.fill(time);
+  }
 
-    async selectCourtForHearing(courtRegion: string = "London", courtFrc: string = "London",
-                                localCourt: string = "BROMLEY COUNTY COURT AND FAMILY COURT") {
-        const regionListDropDown = this.page.locator(`#workingHearing_hearingCourtSelection_region`);
-        await expect(regionListDropDown).toBeVisible();
-        await regionListDropDown.selectOption(courtRegion);
+  async selectCourtForHearing(courtRegion: string = 'London', courtFrc: string = 'London',
+    localCourt: string = 'BROMLEY COUNTY COURT AND FAMILY COURT') {
+    const regionListDropDown = this.page.locator('#workingHearing_hearingCourtSelection_region');
+    await expect(regionListDropDown).toBeVisible();
+    await regionListDropDown.selectOption(courtRegion);
 
-        const frcDropDown = this.page
-            .locator(`#workingHearing_hearingCourtSelection_${camelCase(courtRegion)}List`);
-        await expect(frcDropDown).toBeVisible();
-        await frcDropDown.selectOption(`${courtFrc} FRC`);
+    const frcDropDown = this.page
+      .locator(`#workingHearing_hearingCourtSelection_${camelCase(courtRegion)}List`);
+    await expect(frcDropDown).toBeVisible();
+    await frcDropDown.selectOption(`${courtFrc} FRC`);
 
-        // Select the local court from the visible dropdown
-        const courtListDropDown = this.page.locator('select[id^="workingHearing_hearingCourtSelection_"][id*="CourtList"]:not(:where(div[hidden] *))');
+    // Select the local court from the visible dropdown
+    const courtListDropDown = this.page.locator('select[id^="workingHearing_hearingCourtSelection_"][id*="CourtList"]:not(:where(div[hidden] *))');
         
-        await expect(courtListDropDown).toBeVisible();
-        await courtListDropDown.selectOption(localCourt);
+    await expect(courtListDropDown).toBeVisible();
+    await courtListDropDown.selectOption(localCourt);
+  }
+
+  async selectHearingAttendance(attendance: string) {
+    const hearingAttendance = this.page.locator('#workingHearing_hearingMode');
+    await expect(hearingAttendance).toBeVisible();
+    await hearingAttendance.selectOption(attendance);
+  }
+
+  async enterAdditionalInformationAboutHearing(information: string = 'Whatever information is required for the hearing') {
+    const additionalInformation = this.page
+      .locator('#workingHearing_additionalHearingInformation');
+    await expect(additionalInformation).toBeVisible();
+    await additionalInformation.fill(information);
+  }
+
+  async selectAdditionalHearingDocument(yesOrNo: YesNoRadioEnum) {
+    const uploadOtherDocumentsQuestion = this.page
+      .locator('#workingHearing_additionalHearingDocPrompt');
+    await expect(uploadOtherDocumentsQuestion).toBeVisible();
+    const optionToSelect = uploadOtherDocumentsQuestion.getByLabel(yesOrNo);
+    await optionToSelect.check();
+  }
+
+  async uploadOtherDocuments(docFilename: string, position: number = 0) {
+    await this.navigateAddNew();
+
+    const uploadOtherDocumentFiles = this.page
+      .locator('#workingHearing_additionalHearingDocs_value').nth(position);
+    await expect(uploadOtherDocumentFiles).toBeVisible();
+
+    const filePayload = await this.commonActionsHelper
+      .createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', docFilename);
+
+    await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadOtherDocumentFiles, filePayload);
+  }
+
+  async selectSendNoticeOfHearing(yesOrNo: YesNoRadioEnum) {
+    const sendNoticeOfHearing = this.page.locator('#workingHearing_hearingNoticePrompt');
+    await expect(sendNoticeOfHearing).toBeVisible();
+    const optionToSelect = sendNoticeOfHearing.getByLabel(yesOrNo);
+    await optionToSelect.check();
+  }
+
+  async assertGadSendNoticeOfHearingIsYes() {
+    const noticeField = this.page.locator('dl.case-field:has-text("Do you want to send a notice of hearing?")');
+    await expect(noticeField.locator('span.text-16')).toHaveText('Yes');
+  }
+
+  async selectWhoShouldSeeThisOrder(partyType: string, partyName: string) {
+    const checkbox = this.page.getByRole('checkbox', { name: `${partyType} - ${partyName}` });
+    await expect(checkbox).toBeVisible();
+    await checkbox.check();
+  }
+
+  async selectAllWhoShouldSeeThisOrder(parties: { partyType: string, partyName: string }[]) {
+    for (const { partyType, partyName } of parties) {
+      await this.selectWhoShouldSeeThisOrder(partyType, partyName);
     }
+  }
 
-    async selectHearingAttendance(attendance: string) {
-        const hearingAttendance = this.page.locator(`#workingHearing_hearingMode`);
-        await expect(hearingAttendance).toBeVisible();
-        await hearingAttendance.selectOption(attendance);
-    }
+  async unSelectWhoShouldSeeThisOrder(partyType: string, partyName: string) {
+    const checkbox = this.page.getByRole('checkbox', { name: `${partyType} - ${partyName}` });
+    await expect(checkbox).toBeVisible();
+    await checkbox.uncheck();
+  }
 
-    async enterAdditionalInformationAboutHearing(information: string = "Whatever information is required for the hearing") {
-        const additionalInformation = this.page
-            .locator(`#workingHearing_additionalHearingInformation`);
-        await expect(additionalInformation).toBeVisible();
-        await additionalInformation.fill(information);
-    }
+  async assertErrorMessagesForAllMandatoryFields() {
+    const errorMessages = [
+      'Type of Hearing is required',
+      'Hearing Time Estimate is required',
+      'Hearing Date is required',
+      'Hearing Time is required',
+      'Please state in which Financial Remedies Court Zone the applicant resides is required',
+      'Hearing Attendance is required',
+      'Additional information about the hearing is required',
+      'Do you want to upload any other documents? is required',
+      'Do you want to send a notice of hearing? is required'
+    ];
 
-    async selectAdditionalHearingDocument(yesOrNo: YesNoRadioEnum) {
-        const uploadOtherDocumentsQuestion = this.page
-            .locator(`#workingHearing_additionalHearingDocPrompt`);
-        await expect(uploadOtherDocumentsQuestion).toBeVisible();
-        const optionToSelect = uploadOtherDocumentsQuestion.getByLabel(yesOrNo);
-        await optionToSelect.check();
-    }
+    await this.navigateContinue();
 
-    async uploadOtherDocuments(docFilename: string, position: number = 0) {
-        await this.navigateAddNew();
+    await this.assertErrorMessage(errorMessages);
 
-        const uploadOtherDocumentFiles = this.page
-            .locator(`#workingHearing_additionalHearingDocs_value`).nth(position);
-        await expect(uploadOtherDocumentFiles).toBeVisible();
+    await this.selectAdditionalHearingDocument(YesNoRadioEnum.YES);
 
-        const filePayload = await this.commonActionsHelper
-            .createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', docFilename);
+    await this.assertErrorMessage(
+      ['Please upload any additional documents related to your application. is required']
+    );
+  }
 
-        await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadOtherDocumentFiles, filePayload);
-    }
-
-    async selectSendNoticeOfHearing(yesOrNo: YesNoRadioEnum) {
-        const sendNoticeOfHearing = this.page.locator(`#workingHearing_hearingNoticePrompt`);
-        await expect(sendNoticeOfHearing).toBeVisible();
-        const optionToSelect = sendNoticeOfHearing.getByLabel(yesOrNo);
-        await optionToSelect.check();
-    }
-
-    async assertGadSendNoticeOfHearingIsYes() {
-       const noticeField = this.page.locator('dl.case-field:has-text("Do you want to send a notice of hearing?")');
-       await expect(noticeField.locator('span.text-16')).toHaveText('Yes');
-   }
-
-    async selectWhoShouldSeeThisOrder(partyType: string, partyName: string) {
-        const checkbox = this.page.getByRole('checkbox', { name: `${partyType} - ${partyName}` });
-        await expect(checkbox).toBeVisible();
-        await checkbox.check();
-    }
-
-    async selectAllWhoShouldSeeThisOrder(parties: { partyType: string, partyName: string }[]) {
-        for (const { partyType, partyName } of parties) {
-            await this.selectWhoShouldSeeThisOrder(partyType, partyName);
-        }
-    }
-
-    async unSelectWhoShouldSeeThisOrder(partyType: string, partyName: string) {
-        const checkbox = this.page.getByRole('checkbox', { name: `${partyType} - ${partyName}` });
-        await expect(checkbox).toBeVisible();
-        await checkbox.uncheck();
-    }
-
-    async assertErrorMessagesForAllMandatoryFields() {
-        const errorMessages = [
-            "Type of Hearing is required",
-            "Hearing Time Estimate is required",
-            "Hearing Date is required",
-            "Hearing Time is required",
-            "Please state in which Financial Remedies Court Zone the applicant resides is required",
-            "Hearing Attendance is required",
-            "Additional information about the hearing is required",
-            "Do you want to upload any other documents? is required",
-            "Do you want to send a notice of hearing? is required"
-        ];
-
-        await this.navigateContinue();
-
-        await this.assertErrorMessage(errorMessages);
-
-        await this.selectAdditionalHearingDocument(YesNoRadioEnum.YES)
-
-        await this.assertErrorMessage(
-            ["Please upload any additional documents related to your application. is required"]
-        );
-    }
-
-    async addHearing(param: {
+  async addHearing(param: {
         type: string;
         duration: string;
         date: { day: string; month: string; year: string } | {};
@@ -199,100 +199,100 @@ export class ManageHearingPage extends BaseJourneyPage {
         uploadFiles: string[];
         sendANoticeOfHearing: boolean
     }) {
-        await expect(this.addANewHearingTitle).toBeVisible();
+    await expect(this.addANewHearingTitle).toBeVisible();
 
-        await this.selectTypeOfHearing(param.type);
-        await this.enterTimeEstimate(param.duration);
-        const date = param.date as any;
-        if (date.day && date.month && date.year) {
-            await this.enterHearingDate(date.day, date.month, date.year);
-        } else {
-            await this.enterDefaultHearingDate();
-        }
-        await this.enterHearingTime(param.time);
-        await this.selectCourtForHearing(param.court.zone, param.court.frc, param.court.courtName);
-        await this.selectHearingAttendance(param.attendance);
-        await this.enterAdditionalInformationAboutHearing(param.additionalInformation);
-
-        if (param.uploadAnySupportingDocuments) {
-            await this.selectAdditionalHearingDocument(YesNoRadioEnum.YES);
-            for (let i=0; i< param.uploadFiles.length;i++) {
-                await this.uploadOtherDocuments(param.uploadFiles[i], i);
-            }
-        } else {
-            await this.selectAdditionalHearingDocument(YesNoRadioEnum.NO);
-        }
-        if (param.sendANoticeOfHearing) {
-            await this.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
-        } else {
-            await this.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
-        }
+    await this.selectTypeOfHearing(param.type);
+    await this.enterTimeEstimate(param.duration);
+    const date = param.date as any;
+    if (date.day && date.month && date.year) {
+      await this.enterHearingDate(date.day, date.month, date.year);
+    } else {
+      await this.enterDefaultHearingDate();
     }
+    await this.enterHearingTime(param.time);
+    await this.selectCourtForHearing(param.court.zone, param.court.frc, param.court.courtName);
+    await this.selectHearingAttendance(param.attendance);
+    await this.enterAdditionalInformationAboutHearing(param.additionalInformation);
 
-    async removeContent() {
-        const removeButton = this.page.getByRole('button', { name: 'Remove' });
-        await expect(removeButton).toBeVisible();
-        await removeButton.click({ force: true });
-        await expect(removeButton).toBeVisible();
-        await removeButton.click({ force: true });
+    if (param.uploadAnySupportingDocuments) {
+      await this.selectAdditionalHearingDocument(YesNoRadioEnum.YES);
+      for (let i=0; i< param.uploadFiles.length;i++) {
+        await this.uploadOtherDocuments(param.uploadFiles[i], i);
+      }
+    } else {
+      await this.selectAdditionalHearingDocument(YesNoRadioEnum.NO);
     }
-
-    async selectVacateHearing() {
-        await expect(this.vacateHearingRadio).toBeVisible();
-        await this.vacateHearingRadio.check();
+    if (param.sendANoticeOfHearing) {
+      await this.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
+    } else {
+      await this.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
     }
+  }
 
-    async selectHearingToVacate(position: number = 0) {
-        const hearingSelect = this.page.locator('#workingVacatedHearing_chooseHearings');
-        await expect(hearingSelect).toBeVisible();
+  async removeContent() {
+    const removeButton = this.page.getByRole('button', { name: 'Remove' });
+    await expect(removeButton).toBeVisible();
+    await removeButton.click({ force: true });
+    await expect(removeButton).toBeVisible();
+    await removeButton.click({ force: true });
+  }
 
-        // Get all options
-        const options = await hearingSelect.locator('option').all();
-        if (options.length <= position) {
-            throw new Error(`No hearing option at position ${position}`);
-        }
-        const value = await options[position].getAttribute('value');
-        await hearingSelect.selectOption(value!);
+  async selectVacateHearing() {
+    await expect(this.vacateHearingRadio).toBeVisible();
+    await this.vacateHearingRadio.check();
+  }
+
+  async selectHearingToVacate(position: number = 0) {
+    const hearingSelect = this.page.locator('#workingVacatedHearing_chooseHearings');
+    await expect(hearingSelect).toBeVisible();
+
+    // Get all options
+    const options = await hearingSelect.locator('option').all();
+    if (options.length <= position) {
+      throw new Error(`No hearing option at position ${position}`);
     }
+    const value = await options[position].getAttribute('value');
+    await hearingSelect.selectOption(value!);
+  }
 
-    async fillVacateHearingDate(day: string, month: string, year: string) {
-        const hearingDateDay = this.page.getByRole('textbox', { name: 'Day' })
-        const hearingDateMonth = this.page.getByRole('textbox', { name: 'Month' })
-        const hearingDateYear = this.page.getByRole('textbox', { name: 'Year' })
+  async fillVacateHearingDate(day: string, month: string, year: string) {
+    const hearingDateDay = this.page.getByRole('textbox', { name: 'Day' });
+    const hearingDateMonth = this.page.getByRole('textbox', { name: 'Month' });
+    const hearingDateYear = this.page.getByRole('textbox', { name: 'Year' });
 
-        await expect(hearingDateDay).toBeVisible();
-        await expect(hearingDateMonth).toBeVisible();
-        await expect(hearingDateYear).toBeVisible();
+    await expect(hearingDateDay).toBeVisible();
+    await expect(hearingDateMonth).toBeVisible();
+    await expect(hearingDateYear).toBeVisible();
 
-        await hearingDateDay.fill(day);
-        await hearingDateMonth.fill(month);
-        await hearingDateYear.fill(year);
-    }
+    await hearingDateDay.fill(day);
+    await hearingDateMonth.fill(month);
+    await hearingDateYear.fill(year);
+  }
 
-    async whyIsTheHearingBeingVacated(reason: string) {
-        const reasonField = this.page.locator('#workingVacatedHearing_vacateReason');
-        await expect(reasonField).toBeVisible();
-        await reasonField.selectOption({ label: reason }); // or value if you want the “1”, “2”, etc.
-    }
+  async whyIsTheHearingBeingVacated(reason: string) {
+    const reasonField = this.page.locator('#workingVacatedHearing_vacateReason');
+    await expect(reasonField).toBeVisible();
+    await reasonField.selectOption({ label: reason }); // or value if you want the “1”, “2”, etc.
+  }
 
-    async specifyOtherReasonForVacatingHearing(details: string) {
-        const otherReasonField = this.page.locator('#workingVacatedHearing_specifyOtherReason')
-        await expect(otherReasonField).toBeVisible();
-        await otherReasonField.fill(details);
-    }
+  async specifyOtherReasonForVacatingHearing(details: string) {
+    const otherReasonField = this.page.locator('#workingVacatedHearing_specifyOtherReason');
+    await expect(otherReasonField).toBeVisible();
+    await otherReasonField.fill(details);
+  }
 
-    async willYouBeRelistingQuestion(answer: string) {
-        const relistingQuestion = this.page.getByRole('group', { name: 'Will you be relisting the' });
-        await expect(relistingQuestion).toBeVisible();
+  async willYouBeRelistingQuestion(answer: string) {
+    const relistingQuestion = this.page.getByRole('group', { name: 'Will you be relisting the' });
+    await expect(relistingQuestion).toBeVisible();
 
-        // Dynamically select the radio button based on the answer
-        const radioId = answer.toLowerCase() === 'yes' 
-            ? 'relistHearingSelection-Yes' 
-            : 'relistHearingSelection-No';
+    // Dynamically select the radio button based on the answer
+    const radioId = answer.toLowerCase() === 'yes' 
+      ? 'relistHearingSelection-Yes' 
+      : 'relistHearingSelection-No';
 
-        const optionToSelectRadio = this.page.locator(`#${radioId}`);
-        await expect(optionToSelectRadio).toBeVisible();
-        await optionToSelectRadio.check();
-    }
+    const optionToSelectRadio = this.page.locator(`#${radioId}`);
+    await expect(optionToSelectRadio).toBeVisible();
+    await optionToSelectRadio.check();
+  }
 
 }

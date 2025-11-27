@@ -4,9 +4,9 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { createCaseTabData } from '../../../resources/tab_content/contested/solicitor_create_case_tabs';
 import { expressCaseGateKeepingTabData } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 import {
-    contestedCreateExpressFormAMatrimonyCaseDetailsTable,
-} from "../../../resources/check_your_answer_content/create_case/createCaseTable.ts";
-import {ContestedEvents} from "../../../config/case-data.ts";
+  contestedCreateExpressFormAMatrimonyCaseDetailsTable
+} from '../../../resources/check_your_answer_content/create_case/createCaseTable.ts';
+import {ContestedEvents} from '../../../config/case-data.ts';
 
 test(
   'Create Express Case - Contested FormA Submission, suitable for Express case processing',
@@ -43,14 +43,14 @@ test(
   ) => {
 
     // Set up court information.
-    const courtName: string = "BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE";
-    const courtAddress: string = "Priory Courts, 33 Bull Street, Birmingham, B4 6DS";
-    const courtEmail: string = "FRCBirmingham@justice.gov.uk";
-    const courtPhone: string = "0300 123 5577";
+    const courtName: string = 'BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE';
+    const courtAddress: string = 'Priory Courts, 33 Bull Street, Birmingham, B4 6DS';
+    const courtEmail: string = 'FRCBirmingham@justice.gov.uk';
+    const courtPhone: string = '0300 123 5577';
     const expectedURL: string = ContestedEvents.createCase.ccdCallback;
 
     // Sign in
-    await manageCaseDashboardPage.visit()
+    await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
 
     // Manage/Create case
@@ -158,7 +158,7 @@ test(
     await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
     await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
     await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
-      await uploadOrderDocumentsPage.navigateContinue(expectedURL + '/submit');
+    await uploadOrderDocumentsPage.navigateContinue(expectedURL + '/submit');
 
     //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);

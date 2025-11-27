@@ -1,6 +1,6 @@
-import { CaseDataBuilder } from "../CaseDataBuilder";
-import { ContestedEvents, CaseType, PayloadPath } from "../../../config/case-data";
-import { ContestedEventApi } from "../../api/contested/ContestedEventApi";
+import { CaseDataBuilder } from '../CaseDataBuilder';
+import { ContestedEvents, CaseType, PayloadPath } from '../../../config/case-data';
+import { ContestedEventApi } from '../../api/contested/ContestedEventApi';
 import {
   EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
   ESTIMATED_ASSETS_UNDER_1M,
@@ -8,16 +8,16 @@ import {
   OUTCOME_LIST_DATA,
   DIRECTIONS_LIST_DATA,
   APPLICATION_ISSUE_DATE
-} from "../../PayloadMutator";
-import { DateHelper } from "../../DateHelper";
-import {envTestData} from "../../test_data/EnvTestDataConfig.ts";
+} from '../../PayloadMutator';
+import { DateHelper } from '../../DateHelper';
+import {envTestData} from '../../test_data/EnvTestDataConfig.ts';
 
 export class ContestedCaseFactory {
   private static buildContestedCase({
     isPaper,
     replacements = [],
     event,
-    payloadPath,
+    payloadPath
   }: {
     isPaper: boolean;
     replacements?: any[];
@@ -35,7 +35,7 @@ export class ContestedCaseFactory {
       (isPaper ? PayloadPath.Contested.paper : PayloadPath.Contested.formA);
 
     const builder = new CaseDataBuilder(CaseType.Contested, derivedEvent)
-      [isPaper ? "withCaseWorkerUser" : "withSolicitorUser"]()
+      [isPaper ? 'withCaseWorkerUser' : 'withSolicitorUser']()
       .withPayload(derivedPayloadPath);
 
     if (replacements.length) builder.addReplacements(...replacements);
@@ -47,7 +47,7 @@ export class ContestedCaseFactory {
     return this.buildContestedCase({
       isPaper: false,
       replacements:
-        APPLICATION_ISSUE_DATE(DateHelper.getCurrentDate()),
+        APPLICATION_ISSUE_DATE(DateHelper.getCurrentDate())
     });
   }
 
@@ -58,18 +58,18 @@ export class ContestedCaseFactory {
   static createSchedule1Case(): Promise<string> {
     return this.buildContestedCase({
       isPaper: false,
-      payloadPath: PayloadPath.Contested.schedule1,
+      payloadPath: PayloadPath.Contested.schedule1
     }
-  )  }
+    );  }
 
   // Specialised variants
   static async createContestedFormACaseWithExpressPilotEnrolled(): Promise<string> {
     return this.buildContestedCase({
       isPaper: false,
       replacements: [
-          ...EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
-          ...APPLICATION_ISSUE_DATE(DateHelper.getCurrentDate())
-      ],
+        ...EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
+        ...APPLICATION_ISSUE_DATE(DateHelper.getCurrentDate())
+      ]
     });
   }
 
@@ -77,7 +77,7 @@ export class ContestedCaseFactory {
     return this.buildContestedCase({
       isPaper: true,
       replacements:
-        EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
+        EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT
     });
   }
 
@@ -86,8 +86,8 @@ export class ContestedCaseFactory {
       isPaper: true,
       replacements: [
         ...EXPRESS_PILOT_PARTICIPATING_COURT_REPLACEMENT,
-        ...ESTIMATED_ASSETS_UNDER_1M,
-      ],
+        ...ESTIMATED_ASSETS_UNDER_1M
+      ]
     });
   }
 
@@ -130,10 +130,10 @@ export class ContestedCaseFactory {
   }
 
   static async createContestedCaseUpToHWFDecision(): Promise<string> {
-      const caseId = await this.createBaseContestedFormA();
-      await ContestedEventApi.solicitorSubmitFormACase(caseId);
-      await ContestedEventApi.caseWorkerHWFDecisionMade(caseId);
-      return caseId;
+    const caseId = await this.createBaseContestedFormA();
+    await ContestedEventApi.solicitorSubmitFormACase(caseId);
+    await ContestedEventApi.caseWorkerHWFDecisionMade(caseId);
+    return caseId;
   }
 
   static async createAndProcessFormACaseUpToIssueApplication(
@@ -185,7 +185,7 @@ export class ContestedCaseFactory {
   ): Promise<string> {
     const generalApplicationId = await this.caseworkerProgressToGeneralApplicationReferToJudge(caseId);
     const modifications = OUTCOME_LIST_DATA(generalApplicationId);
-    await ContestedEventApi.generalApplicationOutcome(caseId, modifications)
+    await ContestedEventApi.generalApplicationOutcome(caseId, modifications);
     return caseId;
   }
 
@@ -195,11 +195,11 @@ export class ContestedCaseFactory {
     const codeForDirections = await this.caseWorkerProgressToGeneralApplicationOutcome(caseId);
     const modifications = DIRECTIONS_LIST_DATA(codeForDirections);
     await ContestedEventApi.generalApplicationDirections(caseId, modifications);
-    return caseId
+    return caseId;
   }
 
   static async progressToUploadDraftOrder({
-    isFormA,
+    isFormA
   }: {
     isFormA: boolean;
   }): Promise<string> {
@@ -221,22 +221,22 @@ export class ContestedCaseFactory {
     isFormA = true,
     isExpressPilot = false
   ): Promise<string> {
-      const caseId = await this.progressToUploadDraftOrder({ isFormA: isFormA });
-      await ContestedEventApi.agreedDraftOrderApplicant(caseId);
-      const hearingDate = await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
-      const documentDetailsForFutureTestSteps = {
+    const caseId = await this.progressToUploadDraftOrder({ isFormA: isFormA });
+    await ContestedEventApi.agreedDraftOrderApplicant(caseId);
+    const hearingDate = await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
+    const documentDetailsForFutureTestSteps = {
       hearingDate,
       courtOrderDate: hearingDate,
       documentUrl: envTestData.DOCUMENT_URL,
       documentBinaryUrl: envTestData.DOCUMENT_BINARY_URL,
-      uploadTimestamp: await DateHelper.getCurrentTimestamp(),
+      uploadTimestamp: await DateHelper.getCurrentTimestamp()
     };
 
     await ContestedEventApi.judgeApproveOrders(caseId, documentDetailsForFutureTestSteps);
     await ContestedEventApi.caseWorkerProcessOrderLegacy(caseId, {
       documentUrl: envTestData.DOCUMENT_URL,
       documentBinaryUrl: envTestData.DOCUMENT_BINARY_URL,
-      uploadTimestamp: await DateHelper.getCurrentTimestamp(),
+      uploadTimestamp: await DateHelper.getCurrentTimestamp()
     });
     return caseId;
   }
@@ -247,7 +247,7 @@ export class ContestedCaseFactory {
   ): Promise<string> {
     const generalApplicationId = await ContestedEventApi.caseWorkerProgressToCreateGeneralApplication(caseId);
     const modifications = REFER_LIST_DATA(generalApplicationId);
-    await ContestedEventApi.generalApplicationReferToJudge(caseId, modifications)
+    await ContestedEventApi.generalApplicationReferToJudge(caseId, modifications);
     return generalApplicationId;
   }
 
