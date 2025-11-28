@@ -7054,5 +7054,37 @@
     "CaseFieldID": "inputManageCaseDocumentCollection",
     "ListElementCode": "caseDocumentParty",
     "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "25/11/2025",
+    "ID": "FR_workingVacatedHearing",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingVacatedHearing",
+    "ListElementCode": "chooseHearings",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "25/11/2025",
+    "ID": "FR_workingVacatedHearing",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingVacatedHearing",
+    "ListElementCode": "vacateHearingDate",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "25/11/2025",
+    "ID": "FR_workingVacatedHearing",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingVacatedHearing",
+    "ListElementCode": "vacateReason",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "25/11/2025",
+    "ID": "FR_workingVacatedHearing",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingVacatedHearing",
+    "ListElementCode": "specifyOtherReason",
+    "DisplayContext": "OPTIONAL"
   }
 ]
