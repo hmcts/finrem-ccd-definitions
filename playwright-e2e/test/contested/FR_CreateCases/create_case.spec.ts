@@ -132,7 +132,11 @@ test(
         '#specificArrangementsRequired'
       ]
     });
-    await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
+    await financialRemedyCourtPage.selectCourtZoneDropDown(
+      'Midlands', 
+      'Birmingham FRC',
+      'COVENTRY COMBINED COURT CENTRE' 
+    );
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
@@ -317,7 +321,11 @@ test(
     await financialAssetsPage.navigateContinue();
 
     // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
+    await financialRemedyCourtPage.selectCourtZoneDropDown(
+      'Midlands', 
+      'Birmingham FRC',
+      'COVENTRY COMBINED COURT CENTRE' 
+    );
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();

@@ -77,6 +77,10 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Upload Approved Order",
     ccdCallback: "FR_uploadApprovedOrder"
   },
+  updateFrCourtInfo: {
+    listItem: "Update FR Court Info",
+    ccdCallback: "FR_updateCourtInfo"
+  },
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
