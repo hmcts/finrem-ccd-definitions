@@ -1,9 +1,11 @@
-import {test} from '../../../fixtures/fixtures.ts';
+import {caseAssignmentApi, test} from '../../../fixtures/fixtures.ts';
 import config from '../../../config/config.ts';
 import {ContestedEvents} from '../../../config/case-data.ts';
 import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import { vacateHearingNotRelistedTableData, vacateHearingRelistedTableData } from '../../../resources/check_your_answer_content/manage_hearings/manageHearingVacateHearingTable.ts';
 import { getManageHearingTabData } from '../../../resources/tab_content/contested/manage_hearing_tabs.ts';
+import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi.ts';
+import { CaseTypeEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 
 test.describe('Contested - Vacate Hearings', () => {
 
@@ -44,6 +46,11 @@ test.describe('Contested - Vacate Hearings', () => {
     { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, axeUtils, checkYourAnswersPage }) => {
       // Create and setup case up to issue application
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
+      await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
+      await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
+      await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
+      await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
@@ -77,7 +84,13 @@ test.describe('Contested - Vacate Hearings', () => {
         additionalInformation: 'Hearing details here',
         uploadAnySupportingDocuments: true,
         uploadFiles: ['final_hearing_file1.pdf'],
-        sendANoticeOfHearing: true
+        sendANoticeOfHearing: true,
+        whoShouldSeeOrder: [
+          { partyType: 'Applicant', partyName: 'Frodo Baggins' },
+          { partyType: 'Respondent', partyName: 'Smeagol Gollum' },
+          { partyType: 'Intervener1', partyName: 'intApp1' },
+          { partyType: 'Intervener2', partyName: 'intResp1' }
+        ]
       });
       await axeUtils.audit({
         exclude :[
@@ -99,7 +112,7 @@ test.describe('Contested - Vacate Hearings', () => {
         attendance: 'Remote - Video call',
         hearingTime: '10:00 AM',
         duration: '2 hours',
-        whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',
+        whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum, Intervener1 - intApp1, Intervener2 - intResp1',
         additionalInformation: 'Hearing details here',
         uploadFiles: ['HearingNotice.pdf', 'final_hearing_file1.pdf']
       })]);

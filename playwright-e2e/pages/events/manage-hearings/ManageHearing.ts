@@ -197,7 +197,8 @@ export class ManageHearingPage extends BaseJourneyPage {
         additionalInformation: string;
         uploadAnySupportingDocuments: boolean;
         uploadFiles: string[];
-        sendANoticeOfHearing: boolean
+        sendANoticeOfHearing: boolean;
+        whoShouldSeeOrder?: { partyType: string; partyName: string }[]; // New parameter
     }) {
     await expect(this.addANewHearingTitle).toBeVisible();
 
@@ -226,6 +227,11 @@ export class ManageHearingPage extends BaseJourneyPage {
       await this.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
     } else {
       await this.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
+    }
+
+    // New functionality: Select who should see the order
+    if (param.whoShouldSeeOrder && param.whoShouldSeeOrder.length > 0) {
+      await this.selectAllWhoShouldSeeThisOrder(param.whoShouldSeeOrder);
     }
   }
 
