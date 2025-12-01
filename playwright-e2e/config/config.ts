@@ -60,6 +60,11 @@ const configuration = {
     password: process.env.PASSWORD_CASEWORKER || '',
   },
 
+  superCaseWorker: {
+    email: process.env.USERNAME_SUPERCASEWORKER || '',
+    password: process.env.PASSWORD_SUPERCASEWORKER || '',
+  },
+
   applicant_solicitor: {
     email: process.env.PLAYWRIGHT_SOLICITOR_USERNAME || '',
     password: process.env.PLAYWRIGHT_SOLICITOR_PSWD || '',
