@@ -12,7 +12,7 @@ export class ManageHearingPage extends BaseJourneyPage {
   private readonly addANewHearingTitle: Locator;
   private readonly typeOfHearingDropDown: Locator;
   private readonly hearingTimeEstimate: Locator;
-  private readonly vacateHearingRadio: Locator;   
+  private readonly vacateHearingRadio: Locator;
 
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page);
@@ -94,7 +94,7 @@ export class ManageHearingPage extends BaseJourneyPage {
 
     // Select the local court from the visible dropdown
     const courtListDropDown = this.page.locator('select[id^="workingHearing_hearingCourtSelection_"][id*="CourtList"]:not(:where(div[hidden] *))');
-        
+
     await expect(courtListDropDown).toBeVisible();
     await courtListDropDown.selectOption(localCourt);
   }
@@ -197,7 +197,8 @@ export class ManageHearingPage extends BaseJourneyPage {
         additionalInformation: string;
         uploadAnySupportingDocuments: boolean;
         uploadFiles: string[];
-        sendANoticeOfHearing: boolean
+        sendANoticeOfHearing: boolean;
+        whoShouldSeeOrder?: { partyType: string; partyName: string }[]; // New parameter
     }) {
     await expect(this.addANewHearingTitle).toBeVisible();
 
@@ -226,6 +227,11 @@ export class ManageHearingPage extends BaseJourneyPage {
       await this.selectSendNoticeOfHearing(YesNoRadioEnum.YES);
     } else {
       await this.selectSendNoticeOfHearing(YesNoRadioEnum.NO);
+    }
+
+    // New functionality: Select who should see the order
+    if (param.whoShouldSeeOrder && param.whoShouldSeeOrder.length > 0) {
+      await this.selectAllWhoShouldSeeThisOrder(param.whoShouldSeeOrder);
     }
   }
 
@@ -286,9 +292,9 @@ export class ManageHearingPage extends BaseJourneyPage {
     await expect(relistingQuestion).toBeVisible();
 
     // Dynamically select the radio button based on the answer
-    const radioId = answer.toLowerCase() === 'yes' 
-      ? 'relistHearingSelection-Yes' 
-      : 'relistHearingSelection-No';
+    const radioId = answer.toLowerCase() === 'yes'
+      ? 'isRelistSelected-Yes'
+      : 'isRelistSelected-No';
 
     const optionToSelectRadio = this.page.locator(`#${radioId}`);
     await expect(optionToSelectRadio).toBeVisible();
