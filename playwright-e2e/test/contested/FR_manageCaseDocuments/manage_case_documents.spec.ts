@@ -38,15 +38,15 @@ test.describe('Contested Manage Case Documents', () => {
   );
 
   test(
-    'Contested - Caseworker Manage Case Documents New event, Confidential Document Yes (Non-special types)',
+    'Contested - Super Caseworker Manage Case Documents New event, Confidential Document Yes (Non-special types)',
     { tag: ['@firefox'] },
     async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage, axeUtils, checkYourAnswersPage }) => {
       // Create and setup case
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-      // Login as caseworker and navigate to case
+      // Login as super caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.superCaseWorker.email, config.superCaseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Manage case documents
@@ -75,15 +75,15 @@ test.describe('Contested Manage Case Documents', () => {
     }
   );
 
-  test ('Contested - Caseworker Manage Case Documents New event, Confidential Document No (FDR Document)',
+  test ('Contested - Super Caseworker Manage Case Documents New event, Confidential Document No (FDR Document)',
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage, axeUtils, checkYourAnswersPage }) => {
       // Create and setup case
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-      // Login as caseworker and navigate to case
+      // Login as super caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.superCaseWorker.email, config.superCaseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Manage case documents
@@ -111,15 +111,15 @@ test.describe('Contested Manage Case Documents', () => {
     }
   );
 
-  test  ('Contested - Caseworker Manage Case Documents New event, Confidential Document? Yes, special type',
+  test  ('Contested - Super Caseworker Manage Case Documents New event, Confidential Document? Yes, special type',
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage, axeUtils, checkYourAnswersPage, page }) => {
       // Create and setup case
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-      // Login as caseworker and navigate to case
+      // Login as super caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.superCaseWorker.email, config.superCaseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Manage case documents
@@ -147,15 +147,15 @@ test.describe('Contested Manage Case Documents', () => {
     }
   );
 
-  test ('Contested - Manage Case Documents New event - WITHOUT_PREJUDICE_OFFERS',
+  test ('Contested - Super Caseworker Manage Case Documents New event - WITHOUT_PREJUDICE_OFFERS',
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageCaseDocumentsPage, checkYourAnswersPage, axeUtils, page }) => {
       // Create and setup case
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-      // Login as caseworker and navigate to case
+      // Login as super caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.superCaseWorker.email, config.superCaseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Manage case documents
