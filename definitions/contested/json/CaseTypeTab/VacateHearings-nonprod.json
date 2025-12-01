@@ -1,27 +1,5 @@
 [
   {
-    "LiveFrom": "03/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageHearings-courtAdmin",
-    "TabLabel": "Hearings",
-    "TabDisplayOrder": 3,
-    "CaseFieldID": "vacatedOrAdjournedHearingTabItems",
-    "TabFieldDisplayOrder": 2,
-    "_comment_": "Upon Vacate Hearings feature release, update Hearings Field 1 to include vacatedOrAdjournedHearingTabItems 'hearingTabItems !=\"\" OR vacatedOrAdjournedHearingTabItems !=\"\"'",
-    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
-  },
-  {
-    "LiveFrom": "03/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "manageHearings-judiciary",
-    "TabLabel": "Hearings",
-    "TabDisplayOrder": 3,
-    "CaseFieldID": "vacatedOrAdjournedHearingTabItems",
-    "TabFieldDisplayOrder": 2,
-    "_comment_": "Upon Vacate Hearings feature release, update Hearings Field 1 to include vacatedOrAdjournedHearingTabItems 'hearingTabItems !=\"\" OR vacatedOrAdjournedHearingTabItems !=\"\"'",
-    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
-  },
-  {
     "LiveFrom": "02/06/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "manageHearings-applicant",
