@@ -61,8 +61,18 @@
     "CaseFieldID": "hearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "hearingTabItems !=\"\"",
+    "TabShowCondition": "hearingTabItems !=\"\" OR vacatedOrAdjournedHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-courtAdmin",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "vacatedOrAdjournedHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "24/07/2025",
@@ -73,8 +83,18 @@
     "CaseFieldID": "hearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "hearingTabItems !=\"\"",
+    "TabShowCondition": "hearingTabItems !=\"\" OR vacatedOrAdjournedHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-judiciary",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "vacatedOrAdjournedHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
