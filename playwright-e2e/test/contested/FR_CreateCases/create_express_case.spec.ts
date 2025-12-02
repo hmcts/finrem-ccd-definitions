@@ -120,7 +120,7 @@ test(
     await financialAssetsPage.navigateContinue(expectedURL, 15);
 
     // Financial Remedies Court, a court is selected that is processing Express Case applications.
-    await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
+    await financialRemedyCourtPage.selectCourtZoneDropDown('Midlands', 'Birmingham FRC', courtName);
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();

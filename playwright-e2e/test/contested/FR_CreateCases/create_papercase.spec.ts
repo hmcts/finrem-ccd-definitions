@@ -131,7 +131,7 @@ test(
     await financialAssetsPage.navigateContinue(expectedURL,14);
 
     // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown('COVENTRY COMBINED COURT CENTRE');
+    await financialRemedyCourtPage.selectCourtZoneDropDown('Midlands', 'Birmingham FRC', 'COVENTRY COMBINED COURT CENTRE');
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
@@ -200,8 +200,6 @@ test(
       checkYourAnswersPage
     }
   ) => {
-    // Set up court information.
-    const courtName: string = 'COVENTRY COMBINED COURT CENTRE';
     const expectedURL: string = ContestedEvents.createPaperCase.ccdCallback;
 
     // Sign in
@@ -284,7 +282,7 @@ test(
     await financialAssetsPage.navigateContinue(expectedURL, 14);
 
     // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
+    await financialRemedyCourtPage.selectCourtZoneDropDown('Midlands', 'Birmingham FRC', 'COVENTRY COMBINED COURT CENTRE');
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
