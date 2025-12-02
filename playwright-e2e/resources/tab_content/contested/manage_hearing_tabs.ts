@@ -23,7 +23,7 @@ export function getManageHearingTabData(params?: {
   return {
     tabName: 'Hearings',
     tabContent: [
-      'Hearing',
+      'Hearings',
       { tabItem: 'Type of Hearing', value: 'Hearing Date | Who has received this notice', exact: false },
       {
         tabItem: params?.typeOfHearing ?? 'Financial Dispute Resolution (FDR)',
