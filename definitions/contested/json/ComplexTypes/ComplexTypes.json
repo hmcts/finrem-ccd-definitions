@@ -5427,5 +5427,123 @@
     "ElementLabel": "Hearing Status",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabHearingType",
+    "FieldType": "Text",
+    "ElementLabel": "Type of Hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabCourtSelection",
+    "FieldType": "Text",
+    "ElementLabel": "Court",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabAttendance",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing Attendance",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabDateTime",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabTimeEstimate",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing Time Estimate",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabConfidentialParties",
+    "FieldType": "Text",
+    "ElementLabel": "Who has received this notice",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabAdditionalInformation",
+    "FieldType": "Text",
+    "ElementLabel": "Additional information about the hearing",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabHearingDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Hearing Documents",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabWasMigrated",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Was Migrated?",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabVacatedOrAdjournedDate",
+    "FieldType": "Text",
+    "ElementLabel": "Vacated or Adjourned date",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabVacateOrAdjournReason",
+    "FieldType": "Text",
+    "ElementLabel": "Reason",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabSpecifyOtherReason",
+    "FieldType": "Text",
+    "ElementLabel": "Other Reason",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "01/12/2025",
+    "ID": "FR_vacatedOrAdjournedHearingTabItems",
+    "ListElementCode": "tabHearingStatus",
+    "FieldType": "Text",
+    "ElementLabel": "Hearing status",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]

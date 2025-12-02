@@ -19481,10 +19481,24 @@
     "CRUD": "CRUD"
   },
   {
-    "LiveFrom": "10/06/2025",
+    "LiveFrom": "1/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "vacatedOrAdjournedHearings",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "vacatedOrAdjournedHearingTabItems",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "vacatedOrAdjournedHearingTabItems",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRU"
   }
 ]
