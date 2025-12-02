@@ -91,39 +91,40 @@ export class CaseDetailsPage {
      * Tab array items should be in right order, as they are displayed in the UI.
      */
   private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
-    const tabItemCount: Record<string,number> = {};
+    const tabItemCount: Record<string, number> = {};
     for (const content of tabContent) {
       let tabKey: string;
       let position: number;
 
       if (typeof content === 'string') {
         tabKey = content;
+        position = tabItemCount[tabKey] ?? 0;
+        tabItemCount[tabKey] = position + 1;
       } else {
         tabKey = content.tabItem;
+        // Use explicit position if provided, otherwise use counting logic
+        if (typeof content.position === 'number') {
+          position = content.position;
+        } else {
+          position = tabItemCount[tabKey] ?? 0;
+          tabItemCount[tabKey] = position + 1;
+        }
       }
 
-      position = tabItemCount[tabKey] ?? 0;
-      tabItemCount[tabKey] = position + 1;
-
       if (typeof content === 'string') {
-        // Handle string content
         const tabItem = await this.getVisibleTabContent(content, position);
         await expect(tabItem).toBeVisible();
       } else {
-        // Handle object content with tabItem and value
         const tabItem = await this.getVisibleTabContent(content.tabItem, position, content.exact ?? true);
         await expect(tabItem).toBeVisible();
 
-        // Refine the locator to uniquely identify the corresponding <td>
         const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
-        if(content.clickable) {
+        if (content.clickable) {
           await tabItem.click();
           await this.page.waitForLoadState();
         }
 
-        // Split the expected values by '|'
-        const expectedValues = content.value.split('|')
-          .map(v => {return v.trim();});
+        const expectedValues = content.value.split('|').map(v => {return v.trim();});
         for (let i = 0; i < expectedValues.length; i++) {
           const tabValue = tabItem.locator(
             `xpath=ancestor::*[self::td or self::th]/following-sibling::*[self::td or self::th][${i + 1}]`
