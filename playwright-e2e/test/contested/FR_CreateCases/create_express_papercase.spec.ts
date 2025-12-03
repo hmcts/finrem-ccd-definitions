@@ -41,8 +41,6 @@ test(
     }
   ) => {
     
-    // Set up court information.
-    const courtName: string = 'BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE';
     const expectedURL: string = ContestedEvents.createPaperCase.ccdCallback;
 
     // Sign in
@@ -127,7 +125,7 @@ test(
     await financialAssetsPage.navigateContinue(expectedURL,14);
 
     // Financial Remedies Court, a court is selected that is processing Express Case applications.
-    await financialRemedyCourtPage.selectCourtZoneDropDown(courtName);
+    await financialRemedyCourtPage.selectCourtZoneDropDown('Midlands', 'Birmingham FRC', 'BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE');
     await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
     await financialRemedyCourtPage.enterSpecialFacilities();
     await financialRemedyCourtPage.enterSpecialArrangements();
