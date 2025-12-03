@@ -105,8 +105,18 @@
     "CaseFieldID": "applicantHearingTabItems",
     "UserRole": "[APPSOLICITOR]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "applicantHearingTabItems !=\"\"",
+    "TabShowCondition": "applicantHearingTabItems !=\"\" OR applicantVacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-applicant",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "applicantVacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -117,8 +127,18 @@
     "CaseFieldID": "applicantHearingTabItems",
     "UserRole": "[APPBARRISTER]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "applicantHearingTabItems !=\"\"",
+    "TabShowCondition": "applicantHearingTabItems !=\"\" OR applicantVacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-applicant-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "applicantVacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -129,8 +149,18 @@
     "CaseFieldID": "respondentHearingTabItems",
     "UserRole": "[RESPSOLICITOR]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "respondentHearingTabItems !=\"\"",
+    "TabShowCondition": "respondentHearingTabItems !=\"\" OR respondentVacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-respondent",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "respondentVacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -141,8 +171,18 @@
     "CaseFieldID": "respondentHearingTabItems",
     "UserRole": "[RESPBARRISTER]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "respondentHearingTabItems !=\"\"",
+    "TabShowCondition": "respondentHearingTabItems !=\"\" OR respondentVacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-respondent-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "respondentVacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -153,8 +193,18 @@
     "CaseFieldID": "int1HearingTabItems",
     "UserRole": "[INTVRSOLICITOR1]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "int1HearingTabItems !=\"\"",
+    "TabShowCondition": "int1HearingTabItems !=\"\" OR int1VacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int1",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "int1VacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -165,8 +215,18 @@
     "CaseFieldID": "int1HearingTabItems",
     "UserRole": "[INTVRBARRISTER1]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "int1HearingTabItems !=\"\"",
+    "TabShowCondition": "int1HearingTabItems !=\"\" OR int1VacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int1-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "int1VacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -177,8 +237,18 @@
     "CaseFieldID": "int2HearingTabItems",
     "UserRole": "[INTVRSOLICITOR2]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "int2HearingTabItems !=\"\"",
+    "TabShowCondition": "int2HearingTabItems !=\"\" OR int2VacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int2",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "int2VacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -189,8 +259,18 @@
     "CaseFieldID": "int2HearingTabItems",
     "UserRole": "[INTVRBARRISTER2]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "int2HearingTabItems !=\"\"",
+    "TabShowCondition": "int2HearingTabItems !=\"\" OR int2VacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int2-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "int2VacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -201,8 +281,18 @@
     "CaseFieldID": "int3HearingTabItems",
     "UserRole": "[INTVRSOLICITOR3]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "int3HearingTabItems !=\"\"",
+    "TabShowCondition": "int3HearingTabItems !=\"\" OR int3VacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int3",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "int3VacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -213,8 +303,18 @@
     "CaseFieldID": "int3HearingTabItems",
     "UserRole": "[INTVRBARRISTER3]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "int3HearingTabItems !=\"\"",
+    "TabShowCondition": "int3HearingTabItems !=\"\" OR int3VacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int3-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "int3VacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -225,8 +325,18 @@
     "CaseFieldID": "int4HearingTabItems",
     "UserRole": "[INTVRSOLICITOR4]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "int4HearingTabItems !=\"\"",
+    "TabShowCondition": "int4HearingTabItems !=\"\" OR int4VacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int4",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "int4VacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "02/06/2025",
@@ -237,8 +347,18 @@
     "CaseFieldID": "int4HearingTabItems",
     "UserRole": "[INTVRBARRISTER4]",
     "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "int4HearingTabItems !=\"\"",
+    "TabShowCondition": "int4HearingTabItems !=\"\" OR int4VacOrAdjHearingTabItems !=\"\"",
     "DisplayContextParameter": "#TABLE(tabHearingType, tabDateTime, tabConfidentialParties)"
+  },
+  {
+    "LiveFrom": "1/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "manageHearings-int4-barrister",
+    "TabLabel": "Hearings",
+    "TabDisplayOrder": 3,
+    "CaseFieldID": "int4VacOrAdjHearingTabItems",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(tabHearingType, tabVacatedOrAdjournedDate, tabHearingStatus)"
   },
   {
     "LiveFrom": "01/01/2017",
