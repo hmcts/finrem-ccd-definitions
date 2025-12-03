@@ -269,4 +269,33 @@ export class CaseDetailsPage {
     const stateLabel = this.page.getByText(expectedState, { exact: true });
     await expect(stateLabel).toBeVisible();
   }
+
+  /**
+   * Asserts that each item in the provided tab content array is NOT visible.
+   * For string items, checks invisibility.
+   * For object items, checks both tabItem and value are not visible.
+   */
+  async assertTabDataNotVisible(tabs: Tab[]) {
+    for (const tab of tabs) {
+      // Click the tab header to activate the tab
+      const tabHeader = this.getTabHeader(tab.tabName);
+      await expect(tabHeader).toBeVisible();
+      await tabHeader.click();
+      await this.page.waitForLoadState();
+
+      // Now check that the specified tab contents are NOT visible
+      for (const content of tab.tabContent) {
+        // Skip the first item if it's the tabName string
+        if (typeof content === 'string' && content === tab.tabName) continue;
+        if (typeof content === 'string') {
+          await expect(this.page.getByText(content, { exact: true })).not.toBeVisible();
+        } else {
+          await expect(this.page.getByText(content.tabItem, { exact: content.exact ?? true })).not.toBeVisible();
+          if (content.value) {
+            await expect(this.page.getByText(content.value, { exact: false })).not.toBeVisible();
+          }
+        }
+      }
+    }
+  }
 }
