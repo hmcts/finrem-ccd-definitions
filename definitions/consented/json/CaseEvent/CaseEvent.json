@@ -998,7 +998,7 @@
     "Name": "Update Respondent Details",
     "Description": "Update Respondent Details",
     "DisplayOrder": 128,
-    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;consentOrderApproved;consentOrderMade;awaitingResponse;close;newPaperCase;awaitingInfo;infoReceived;readyForHearing",
+    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;consentOrderMade;awaitingResponse;close;newPaperCase;awaitingInfo;infoReceived;readyForHearing",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
