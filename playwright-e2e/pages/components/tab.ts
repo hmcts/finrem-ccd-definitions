@@ -3,6 +3,7 @@ export interface TabContent {
     value: string;
     exact?: boolean; // Optional property for matching content
     clickable?: boolean; // Optional property to indicate if the item is clickable
+    position?: number; // 
 }
   
 export type TabContentItem = TabContent | string;

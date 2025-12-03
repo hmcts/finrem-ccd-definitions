@@ -91,6 +91,8 @@ def secrets = [
                 secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
                 secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
                 secret('playwright-appl-caa-password', 'PLAYWRIGHT_APPL_CAA_PSWD'),
+                secret("SUPERCASEWORKER-USERNAME","USERNAME_SUPERCASEWORKER"),
+                secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER")
         ]
 ]
 

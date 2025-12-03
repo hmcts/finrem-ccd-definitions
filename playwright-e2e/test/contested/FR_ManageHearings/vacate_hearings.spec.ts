@@ -1,9 +1,9 @@
-import {caseAssignmentApi, test} from '../../../fixtures/fixtures.ts';
+import { caseAssignmentApi, test } from '../../../fixtures/fixtures.ts';
 import config from '../../../config/config.ts';
-import {ContestedEvents} from '../../../config/case-data.ts';
-import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
+import { ContestedEvents } from '../../../config/case-data.ts';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import { vacateHearingNotRelistedTableData, vacateHearingRelistedTableData } from '../../../resources/check_your_answer_content/manage_hearings/manageHearingVacateHearingTable.ts';
-import { getManageHearingTabData } from '../../../resources/tab_content/contested/manage_hearing_tabs.ts';
+import { getManageHearingTabData, getVacatedHearingTabData } from '../../../resources/tab_content/contested/manage_hearing_tabs.ts';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi.ts';
 import { CaseTypeEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 
@@ -36,10 +36,25 @@ test.describe('Contested - Vacate Hearings', () => {
       await manageHearingPage.navigateContinue();
 
       //check your answers page
-      await checkYourAnswersPage.assertCheckYourAnswersPage(vacateHearingNotRelistedTableData); 
+      await checkYourAnswersPage.assertCheckYourAnswersPage(vacateHearingNotRelistedTableData);
       await manageHearingPage.navigateSubmit();
-
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageHearings.listItem);
+
+      //assert tab data
+      await caseDetailsPage.assertTabData([
+        getVacatedHearingTabData({
+          typeOfHearing: 'First Directions Appointment (FDA)',
+          vacatedOrAdjournedDate: '12 Dec 2025',
+          court: 'Manchester County And Family Court',
+          attendance: 'In Person',
+          duration: '1hr 20mins',
+          whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',
+          additionalInformation: 'This is additional information about the hearing',
+          uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'VacateHearingNotice.pdf', 'Dummy QA copy.doc'],
+          reasonForVacating: 'Other - Please specify',
+          otherReasonForVacating: 'The hearing is no longer required'
+        })
+      ]);
     });
 
   test('Contested - Vacate Hearing - Relisted',
@@ -79,7 +94,7 @@ test.describe('Contested - Vacate Hearings', () => {
         duration: '2 hours',
         date: {},
         time: '10:00 AM',
-        court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
+        court: { zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT' },
         attendance: 'Remote - video call',
         additionalInformation: 'Hearing details here',
         uploadAnySupportingDocuments: true,
@@ -93,7 +108,7 @@ test.describe('Contested - Vacate Hearings', () => {
         ]
       });
       await axeUtils.audit({
-        exclude :[
+        exclude: [
           '#workingHearing_additionalHearingDocs_0',
           '#workingHearing_additionalHearingDocs_1'
         ]
@@ -101,12 +116,13 @@ test.describe('Contested - Vacate Hearings', () => {
       await manageHearingPage.navigateContinue();
 
       //check your answers page
-      await checkYourAnswersPage.assertCheckYourAnswersPage(vacateHearingRelistedTableData); 
+      await checkYourAnswersPage.assertCheckYourAnswersPage(vacateHearingRelistedTableData);
       await manageHearingPage.navigateSubmit();
 
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageHearings.listItem);
 
-      await caseDetailsPage.assertTabData([getManageHearingTabData({
+      //assert tab data
+      const relistedHearingData = getManageHearingTabData({
         typeOfHearing: 'Pre-Trial Review (PTR)',
         court: 'Central Family Court',
         attendance: 'Remote - Video call',
@@ -114,7 +130,40 @@ test.describe('Contested - Vacate Hearings', () => {
         duration: '2 hours',
         whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum, Intervener1 - intApp1, Intervener2 - intResp1',
         additionalInformation: 'Hearing details here',
-        uploadFiles: ['HearingNotice.pdf', 'final_hearing_file1.pdf']
-      })]);
+        uploadFiles: ['HearingNotice.pdf', 'VacateHearingNotice.pdf', 'final_hearing_file1.pdf']
+      });
+      const vacatedData = getVacatedHearingTabData({
+        typeOfHearing: 'First Directions Appointment (FDA)',
+        vacatedOrAdjournedDate: '12 Dec 2025',
+        court: 'Manchester County And Family Court',
+        attendance: 'In Person',
+        duration: '1hr 20mins',
+        whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',
+        additionalInformation: 'This is additional information about the hearing',
+        uploadFiles: [
+          'HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'Dummy QA copy.doc'
+        ],
+        reasonForVacating: 'Other - Please specify',
+        otherReasonForVacating: 'The hearing is no longer required'
+      });
+
+      // Set position: 1 for all object tab items except the section header
+      vacatedData.tabContent = vacatedData.tabContent.map(item => {
+        return typeof item === 'object' && item.tabItem && [
+          'Type of Hearing',
+          'Court',
+          'Hearing Attendance',
+          'Hearing Date',
+          'Hearing Time Estimate',
+          'Who has received this notice',
+          'Additional information about the hearing',
+          'Hearing Documents'
+        ].includes(item.tabItem)
+          ? { ...item, position: 1 }
+          : item;
+      }
+      );
+
+      await caseDetailsPage.assertTabData([relistedHearingData, vacatedData]);
     });
 });
