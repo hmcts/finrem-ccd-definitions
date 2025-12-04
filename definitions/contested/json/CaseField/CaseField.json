@@ -8519,7 +8519,7 @@
     "ID": "judgeApprovedOrderCollection",
     "_comment": "A field to capture judge's approved order (used in upload approved order event)",
     "Label": "Upload approved order",
-    "HintText": "You must upload Microsoft Word documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example “JonesFDA11Jul24”",
+    "HintText": "You must upload Microsoft Word or PDF documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example “JonesFDA11Jul24”",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_ct_draftDirectionOrder",
     "SecurityClassification": "Public",
