@@ -80,7 +80,7 @@ async function progressToProcessOrderEvent(
 test.describe('Contested - Process Order (Manage Hearings)', () => {
   test(
     'Form A case creating a hearing from Process Order (MH)',
-    { tag: [] },
+    { tag: ['@MH'] },
     async (
       {
         loginPage,
@@ -141,7 +141,7 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
 
   test(
     'Paper Case creating a hearing from Process Order (MH)',
-    { tag: [] },
+    { tag: ['@MH'] },
     async (
       {
         loginPage,
@@ -190,7 +190,7 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
 
   test(
     'Form A case Process Order (MH) with no hearing added',
-    { tag: [] },
+    { tag: ['@MH'] },
     async (
       {
         loginPage,

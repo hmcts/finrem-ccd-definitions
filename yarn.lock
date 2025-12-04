@@ -1233,6 +1233,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "@types/lodash@npm:4.17.21"
+  checksum: 10/34920830a3bc82ba619cda05e606fef00c148a69b4f19f770645d2587ccdb8e42ef3ddfc174b7884c0c709fc0a1aeb48f7326da969bad12a1464a03efbbe414c
+  languageName: node
+  linkType: hard
+
 "@types/mysql@npm:2.15.26":
   version: 2.15.26
   resolution: "@types/mysql@npm:2.15.26"
@@ -3132,13 +3139,13 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-playwright@npm:^2.0.0, eslint-plugin-playwright@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "eslint-plugin-playwright@npm:2.3.0"
+  version: 2.4.0
+  resolution: "eslint-plugin-playwright@npm:2.4.0"
   dependencies:
     globals: "npm:^16.4.0"
   peerDependencies:
     eslint: ">=8.40.0"
-  checksum: 10/eeed534fa66be9ff31cd262331e485661a8950bb97633ae95ad6c16b60e63ddb43011b33082403bc513dc7edf0819b4bc26e99ed2f7450af64d52845cdc7d8ba
+  checksum: 10/203b47ac983eedc3a627e24df0925d3ebd7572c1a5951196dcefde996109498da59e7ca75f0f537b7424ac328e5b0456bfa1de0a413da7ae698e3b07734b6ebb
   languageName: node
   linkType: hard
 
@@ -3567,6 +3574,7 @@ __metadata:
     "@playwright/test": "npm:^1.55.1"
     "@shinnn/eslint-config": "npm:^7.0.0"
     "@types/fs-extra": "npm:^11.0.4"
+    "@types/lodash": "npm:^4.17.21"
     "@types/node": "npm:^22.0.0"
     "@types/proper-lockfile": "npm:^4.1.4"
     "@typescript-eslint/eslint-plugin": "npm:^8.48.0"

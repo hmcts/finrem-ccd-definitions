@@ -7,7 +7,7 @@ import { getManageHearingTabData, getVacatedHearingTabData } from '../../../reso
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi.ts';
 import { CaseTypeEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 
-test.describe('Contested - Vacate Hearings', () => {
+test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
 
   test('Contested - Vacate Hearing - Not Relisted',
     { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, axeUtils, checkYourAnswersPage }) => {
@@ -102,9 +102,11 @@ test.describe('Contested - Vacate Hearings', () => {
         sendANoticeOfHearing: true,
         whoShouldSeeOrder: [
           { partyType: 'Applicant', partyName: 'Frodo Baggins' },
-          { partyType: 'Respondent', partyName: 'Smeagol Gollum' },
           { partyType: 'Intervener1', partyName: 'intApp1' },
           { partyType: 'Intervener2', partyName: 'intResp1' }
+        ],
+        whoShouldNotSeeOrder: [
+          { partyType: 'Respondent', partyName: 'Smeagol Gollum' }
         ]
       });
       await axeUtils.audit({
@@ -128,7 +130,7 @@ test.describe('Contested - Vacate Hearings', () => {
         attendance: 'Remote - Video call',
         hearingTime: '10:00 AM',
         duration: '2 hours',
-        whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum, Intervener1 - intApp1, Intervener2 - intResp1',
+        whoShouldSeeOrder: 'Applicant - Frodo Baggins, Intervener1 - intApp1, Intervener2 - intResp1',
         additionalInformation: 'Hearing details here',
         uploadFiles: ['HearingNotice.pdf', 'VacateHearingNotice.pdf', 'final_hearing_file1.pdf']
       });
@@ -165,5 +167,21 @@ test.describe('Contested - Vacate Hearings', () => {
       );
 
       await caseDetailsPage.assertTabData([relistedHearingData, vacatedData]);
-    });
+
+      await manageCaseDashboardPage.signOut();
+
+      // login as respondent solicitor and verify relistedHearingData is not visible
+      await manageCaseDashboardPage.visit();
+      await loginPage.loginWaitForPath(
+        config.respondent_solicitor.email,
+        config.respondent_solicitor.password,
+        config.manageCaseBaseURL,
+        config.loginPaths.cases
+      );
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.assertTabDataNotVisible([
+        { tabName: relistedHearingData.tabName, tabContent: [relistedHearingData.tabContent[2]] }
+      ]); // checks Pre-Trial Review (PTR)'hearing is not visible 
+    }
+  );
 });
