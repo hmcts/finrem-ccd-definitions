@@ -87,7 +87,7 @@ async function performUploadApprovedOrderFlowWithoutHearing(
   return date;
 }
 
-test.describe('Contested - Upload Approved Order (caseworker)', () => {
+test.describe('Contested - Upload Approved Order (caseworker)', { tag: ['@MH'] }, () => {
   test('New Upload Approved Order (MH) event with hearing', { tag: [] }, async ({
     loginPage,
     manageCaseDashboardPage,

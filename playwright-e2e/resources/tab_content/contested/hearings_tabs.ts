@@ -51,7 +51,7 @@ export function buildHearingsTabContent(hearings: Array<{
 }>) {
   const tabContent: any[] = [];
   if (hearings.length > 0) {
-    tabContent.push('Hearing');
+    tabContent.push('Hearings');
   }
   hearings.forEach(hearing => {
     tabContent.push({ tabItem: 'Type of Hearing', value: 'Hearing Date | Who has received this notice', exact: false });
