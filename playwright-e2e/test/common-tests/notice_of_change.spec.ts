@@ -129,6 +129,10 @@ test.describe('Notice of Change', () => {
         await checkYourAnswersPage.assertCheckYourAnswersPage(applicantStopRepresentingClientTable);
         await stopRepresentingClientPage.navigateSubmit();
 
+        // Assert are you sure text is shown
+        await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
+        await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
+
         await caseDetailsPage.checkHasBeenUpdated(CommonEvents.stopRepresentingClient.listItem);
 
       }
@@ -162,6 +166,10 @@ test.describe('Notice of Change', () => {
         // check your answers
         await checkYourAnswersPage.assertCheckYourAnswersPage(respondentStopRepresentingClientTable);
         await stopRepresentingClientPage.navigateSubmit();
+
+        // Assert are you sure text is shown
+        await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
+        await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
 
         await caseDetailsPage.checkHasBeenUpdated(CommonEvents.stopRepresentingClient.listItem);
       }
@@ -197,6 +205,10 @@ test.describe('Notice of Change', () => {
         await checkYourAnswersPage.assertCheckYourAnswersPage(applicantStopRepresentingClientTable);
         await stopRepresentingClientPage.navigateSubmit();
 
+        // Assert are you sure text is shown
+        await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
+        await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
+
         await caseDetailsPage.checkHasBeenUpdated(CommonEvents.stopRepresentingClient.listItem);
 
       }
@@ -230,6 +242,10 @@ test.describe('Notice of Change', () => {
         // check your answers
         await checkYourAnswersPage.assertCheckYourAnswersPage(respondentStopRepresentingClientTable);
         await stopRepresentingClientPage.navigateSubmit();
+
+        // Assert are you sure text is shown
+        await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
+        await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
 
         await caseDetailsPage.checkHasBeenUpdated(CommonEvents.stopRepresentingClient.listItem);
       }

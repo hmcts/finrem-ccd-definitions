@@ -4,7 +4,6 @@ export const applicantStopRepresentingClientTable: Table = {
   tableName: 'Check your answers',
   rows: [
     'Client\'s address for service',
-    { cellItem: 'Send?', value: 'Yes' },
     { cellItem: 'Building and Street', value: '10 Selsdon Road' },
     { cellItem: 'Town or City', value: 'London' },
     { cellItem: 'Postcode/Zipcode', value: 'NW2 7NE' },
@@ -19,7 +18,6 @@ export const respondentStopRepresentingClientTable: Table = {
   tableName: 'Check your answers',
   rows: [
     'Client\'s address for service',
-    { cellItem: 'Send?', value: 'Yes' },
     { cellItem: 'Building and Street', value: '10 Selsdon Road' },
     { cellItem: 'Town or City', value: 'London' },
     { cellItem: 'Postcode/Zipcode', value: 'NW2 7NE' },

@@ -11,6 +11,7 @@ export class StopRepresentingClientPage extends UpdateContactDetailsPage {
   private readonly judicialApprovalQuestionText: Locator;
   private readonly judicialApprovalQuestionRadio: Locator;
   private readonly missingClientOrJudicialApprovalError: Locator;
+  private readonly areYouSureYouWishToStopRepresentingText: Locator;
 
 
   public constructor(page: Page) {
@@ -22,6 +23,7 @@ export class StopRepresentingClientPage extends UpdateContactDetailsPage {
     this.judicialApprovalQuestionText = page.getByText('Do you have judicial approval');
     this.judicialApprovalQuestionRadio = page.getByRole('group', { name: 'Do you have judicial approval' });
     this.missingClientOrJudicialApprovalError = page.getByText('You cannot stop representing');
+    this.areYouSureYouWishToStopRepresentingText = page.getByText('Are you sure you wish to stop');
   }
 
   async selectApplicantDetailsPrivate(keepPrivate: YesNoRadioEnum) {
@@ -52,6 +54,10 @@ export class StopRepresentingClientPage extends UpdateContactDetailsPage {
 
   async assertMissingClientOrJudicialApprovalError(){
     await expect(this.missingClientOrJudicialApprovalError).toBeVisible();
+  }
+
+  async assertAreYouSureYouWishToStopRepresentingText(){
+    await expect(this.areYouSureYouWishToStopRepresentingText).toBeVisible();
   }
 }
 
