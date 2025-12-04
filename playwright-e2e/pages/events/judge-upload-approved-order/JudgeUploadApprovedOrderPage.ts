@@ -44,7 +44,7 @@ export class JudgeUploadApprovedOrderPage extends BaseJourneyPage {
 
     await expect(uploadApprovedOrderDocument).toBeVisible();
     const filePayload = await this.commonActionsHelper
-      .createAliasPDFPayload('./playwright-e2e/resources/file/test.docx', fileName);
+      .createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', fileName);
 
     await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadApprovedOrderDocument, filePayload);
 

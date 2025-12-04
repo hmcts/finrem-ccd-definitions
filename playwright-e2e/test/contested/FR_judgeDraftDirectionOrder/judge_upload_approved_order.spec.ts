@@ -32,6 +32,8 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       // Judge uploads order
       await caseDetailsPage.selectNextStep(ContestedEvents.judgeUploadApprovedOrder);
       await judgeUploadApprovedOrderPage.uploadApprovedOrderDocument('judgeApprovedOrder.docx');
+      await judgeUploadApprovedOrderPage.navigateAddNew();
+      await judgeUploadApprovedOrderPage.uploadApprovedOrderDocument('judgeApprovedOrder2.pdf', 1);
       await judgeUploadApprovedOrderPage.uploadAdditionalAttachment('additionalAttachment.pdf');
       await judgeUploadApprovedOrderPage.selectJudgeFromDropdown('Deputy District Judge');
       await judgeUploadApprovedOrderPage.enterNameOfJudge('Judge Judy');
@@ -59,6 +61,7 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedHearingOrders('judgeApprovedOrder.docx');
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedHearingOrders('judgeApprovedOrder2.pdf');
       await unprocessedApprovedOrdersPage.navigateContinue();
       await processOrderHearingDetailsPage.selectIsAnotherHearingToBeListed(false);
       await processOrderHearingDetailsPage.navigateContinue();
