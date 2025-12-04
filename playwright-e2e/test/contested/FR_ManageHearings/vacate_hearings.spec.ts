@@ -7,7 +7,7 @@ import { getManageHearingTabData, getVacatedHearingTabData } from '../../../reso
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi.ts';
 import { CaseTypeEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 
-test.describe('Contested - Vacate Hearings', () => {
+test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
 
   test('Contested - Vacate Hearing - Not Relisted',
     { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, axeUtils, checkYourAnswersPage }) => {
