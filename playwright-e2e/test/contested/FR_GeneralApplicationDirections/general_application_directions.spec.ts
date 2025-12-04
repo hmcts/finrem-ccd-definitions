@@ -61,7 +61,7 @@ async function performNewGeneralApplicationDirectionsFlowWithHearing(
 test.describe('Contested - General Application Directions (MH)', () => {
   test(
     'General Application Directions (MH) with hearing',
-    { tag: [] },
+    { tag: ['@MH'] },
     async ({
       loginPage,
       manageCaseDashboardPage,
@@ -86,7 +86,7 @@ test.describe('Contested - General Application Directions (MH)', () => {
 
   test(
     'Paper case - General Application Directions (MH) with hearing ',
-    { tag: [] },
+    { tag: ['@MH'] },
     async ({
       loginPage,
       manageCaseDashboardPage,
