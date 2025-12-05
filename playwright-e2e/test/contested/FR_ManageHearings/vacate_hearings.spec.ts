@@ -5,7 +5,7 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 import { vacateHearingNotRelistedTableData, vacateHearingRelistedTableData } from '../../../resources/check_your_answer_content/manage_hearings/manageHearingVacateHearingTable.ts';
 import { getManageHearingTabData, getVacatedHearingTabData } from '../../../resources/tab_content/contested/manage_hearing_tabs.ts';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi.ts';
-import { CaseTypeEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
+import { CaseTypeEnum, YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 
 test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
 
@@ -35,6 +35,10 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
       await manageHearingPage.willYouBeRelistingQuestion('no');
       await manageHearingPage.navigateContinue();
 
+      // Do you want to send notices question
+      await manageHearingPage.doYouWantToSendNoticesQuestion(YesNoRadioEnum.YES);
+      await manageHearingPage.navigateContinue();
+      
       //check your answers page
       await checkYourAnswersPage.assertCheckYourAnswersPage(vacateHearingNotRelistedTableData);
       await manageHearingPage.navigateSubmit();

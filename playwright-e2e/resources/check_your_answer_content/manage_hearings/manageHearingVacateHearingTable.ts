@@ -9,7 +9,10 @@ export const vacateHearingNotRelistedTableData: Table = {
     'Vacate Hearing',
     {cellItem: 'Which hearing?', value: hearingDate + ' 10:00am - First Directions Appointment (FDA)'},
     {cellItem: 'When was the hearing vacated?', value: '12 Dec 2025'},
-    {cellItem: 'Why is the hearing being vacated?', value: 'Other - Please specify'}
+    {cellItem: 'Why is the hearing being vacated?', value: 'Other - Please specify'},
+    'The hearing is no longer required',
+    {cellItem: 'Will you be relisting the hearing and adding a new date now?', value: 'No'},
+    {cellItem: 'Do you want to send notices?', value: 'Yes'}
   ]
 };
 

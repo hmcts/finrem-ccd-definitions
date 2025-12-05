@@ -11045,7 +11045,7 @@
     "DisplayContext": "COMPLEX",
     "PageID": 2,
     "PageLabel": "Add a new hearing",
-    "PageDisplayOrder": 2,
+    "PageDisplayOrder": 4,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "PageShowCondition": "manageHearingsActionSelection=\"Add_Hearing\" OR isRelistSelected=\"Yes\"",
@@ -11077,6 +11077,19 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "PageShowCondition": "manageHearingsActionSelection=\"Vacate_Hearing\""
+  },
+  {
+    "LiveFrom": "4/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "shouldSendVacateOrAdjNotice",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 4,
+    "PageDisplayOrder": 5,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "PageShowCondition": "isRelistSelected=\"No\""
   },
   {
     "LiveFrom": "24/07/2025",
