@@ -59,6 +59,13 @@ export class CaseDetailsPage {
   async assertTabData(tabs: Tab[]) {
     for (const tab of tabs) {
       await this.assertTabHeader(tab.tabName, tab.tabContent[0]);
+      // Wait for the first content item to be attached (visible in DOM)
+      const firstContent = tab.tabContent[0];
+      if (firstContent) {
+        const text = typeof firstContent === 'string' ? firstContent : firstContent.tabItem;
+        const exact = typeof firstContent === 'object' ? (firstContent.exact ?? true) : true;
+        await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 5000 });
+      }
       await this.assertTabContent(tab.tabContent);
       if (tab.excludedContent) {
         await this.assertExcludedContent(tab.excludedContent);
@@ -68,14 +75,19 @@ export class CaseDetailsPage {
 
   private async assertTabHeader(tabName: string, firstContent?: TabContentItem): Promise<void> {
     const tabHeader = this.getTabHeader(tabName);
-    await expect(tabHeader).toBeVisible();
+    // Wait for the tab header to be visible and enabled before clicking
+    await tabHeader.waitFor({ state: 'visible' });
     await expect(tabHeader).toBeEnabled();
     await tabHeader.click();
-    await this.page.waitForLoadState();
+
+    // Wait for the first content item to be attached and visible after clicking
     if (firstContent) {
       const text = typeof firstContent === 'string' ? firstContent : firstContent.tabItem;
       const exact = typeof firstContent === 'object' ? (firstContent.exact ?? true) : true;
-      await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 5000 });
+      // Wait for the element to be attached to the DOM
+      await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 10000 });
+      // Wait for the element to be visible (not just attached)
+      await this.page.getByText(text, { exact }).first().waitFor({ state: 'visible', timeout: 10000 });
     }
   }
 
@@ -167,15 +179,19 @@ export class CaseDetailsPage {
      */
   private async getVisibleTabContent(content: string, position: number = 0, exact: boolean = true): Promise<Locator> {
     const locator = this.page.getByText(content, { exact });
+    // Wait for at least one matching element to be attached
+    await locator.first().waitFor({ state: 'attached', timeout: 10000 }).catch(() => {});
     const count = await locator.count();
 
-    if (count === 1 && position === 0) {
-      return locator;
+    if (count === 0) {
+      throw new Error(`No element found for content: ${content}`);
     }
 
     let visibleIndex = 0;
     for (let i = 0; i < count; i++) {
       const element = locator.nth(i);
+      // Wait for each element to be attached before checking visibility
+      await element.waitFor({ state: 'attached', timeout: 10000 }).catch(() => {});
       if (await element.isVisible()) {
         if (visibleIndex === position) {
           return element;
