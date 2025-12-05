@@ -44,9 +44,9 @@ export class UpdateContactDetailsPage extends BaseJourneyPage {
     this.noRadio = page.getByRole('radio', { name: 'No' });
 
     this.checkAddressLabel = page.getByLabel('Enter a UK postcode');
-    this.addressPostcode = page.locator('#respondentAddress_respondentAddress_postcodeInput');
+    this.addressPostcode = page.getByRole('textbox', { name: 'Enter a UK postcode' });
     this.findAddressButton = page.locator('button.button.button-30');
-    this.addressDropdown = page.locator('#respondentAddress_respondentAddress_addressList');
+    this.addressDropdown = page.getByLabel('Select an address');
 
     this.contestedSolicitorNameDetails = page.locator('#applicantSolicitorName');
   }
