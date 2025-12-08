@@ -13,6 +13,7 @@ export class ManageHearingPage extends BaseJourneyPage {
   private readonly typeOfHearingDropDown: Locator;
   private readonly hearingTimeEstimate: Locator;
   private readonly vacateHearingRadio: Locator;
+  private readonly doYouWantToSendNotices: Locator;
 
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page);
@@ -23,6 +24,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     this.typeOfHearingDropDown = page.getByLabel('Type of Hearing');
     this.hearingTimeEstimate = this.page.locator('#workingHearing_hearingTimeEstimate');
     this.vacateHearingRadio = page.getByRole('radio', { name: 'Vacate a hearing' });
+    this.doYouWantToSendNotices = this.page.getByText('Do you want to send notices?');
   }
 
   async selectAddANewHearing() {
@@ -306,6 +308,14 @@ export class ManageHearingPage extends BaseJourneyPage {
     const optionToSelectRadio = this.page.locator(`#${radioId}`);
     await expect(optionToSelectRadio).toBeVisible();
     await optionToSelectRadio.check();
+  }
+
+  async doYouWantToSendNoticesQuestion(answer: YesNoRadioEnum) {
+    await expect(this.doYouWantToSendNotices).toBeVisible();
+
+    const optionToSelect = this.page.getByRole('radio', { name: answer });
+    await expect(optionToSelect).toBeVisible();
+    await optionToSelect.check();
   }
 
 }
