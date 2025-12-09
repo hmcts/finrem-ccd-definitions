@@ -59,6 +59,13 @@ export class CaseDetailsPage {
   async assertTabData(tabs: Tab[]) {
     for (const tab of tabs) {
       await this.assertTabHeader(tab.tabName, tab.tabContent[0]);
+      // Wait for the first content item to be attached (visible in DOM)
+      const firstContent = tab.tabContent[0];
+      if (firstContent) {
+        const text = typeof firstContent === 'string' ? firstContent : firstContent.tabItem;
+        const exact = typeof firstContent === 'object' ? (firstContent.exact ?? true) : true;
+        await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 5000 });
+      }
       await this.assertTabContent(tab.tabContent);
       if (tab.excludedContent) {
         await this.assertExcludedContent(tab.excludedContent);
@@ -68,15 +75,10 @@ export class CaseDetailsPage {
 
   private async assertTabHeader(tabName: string, firstContent?: TabContentItem): Promise<void> {
     const tabHeader = this.getTabHeader(tabName);
-    await expect(tabHeader).toBeVisible();
+    // Wait for the tab header to be visible and enabled before clicking
+    await tabHeader.waitFor({ state: 'visible' });
     await expect(tabHeader).toBeEnabled();
     await tabHeader.click();
-    await this.page.waitForLoadState();
-    if (firstContent) {
-      const text = typeof firstContent === 'string' ? firstContent : firstContent.tabItem;
-      const exact = typeof firstContent === 'object' ? (firstContent.exact ?? true) : true;
-      await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 5000 });
-    }
   }
 
   /**
@@ -91,39 +93,40 @@ export class CaseDetailsPage {
      * Tab array items should be in right order, as they are displayed in the UI.
      */
   private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
-    const tabItemCount: Record<string,number> = {};
+    const tabItemCount: Record<string, number> = {};
     for (const content of tabContent) {
       let tabKey: string;
       let position: number;
 
       if (typeof content === 'string') {
         tabKey = content;
+        position = tabItemCount[tabKey] ?? 0;
+        tabItemCount[tabKey] = position + 1;
       } else {
         tabKey = content.tabItem;
+        // Use explicit position if provided, otherwise use counting logic
+        if (typeof content.position === 'number') {
+          position = content.position;
+        } else {
+          position = tabItemCount[tabKey] ?? 0;
+          tabItemCount[tabKey] = position + 1;
+        }
       }
 
-      position = tabItemCount[tabKey] ?? 0;
-      tabItemCount[tabKey] = position + 1;
-
       if (typeof content === 'string') {
-        // Handle string content
         const tabItem = await this.getVisibleTabContent(content, position);
         await expect(tabItem).toBeVisible();
       } else {
-        // Handle object content with tabItem and value
         const tabItem = await this.getVisibleTabContent(content.tabItem, position, content.exact ?? true);
         await expect(tabItem).toBeVisible();
 
-        // Refine the locator to uniquely identify the corresponding <td>
         const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
-        if(content.clickable) {
+        if (content.clickable) {
           await tabItem.click();
           await this.page.waitForLoadState();
         }
 
-        // Split the expected values by '|'
-        const expectedValues = content.value.split('|')
-          .map(v => {return v.trim();});
+        const expectedValues = content.value.split('|').map(v => {return v.trim();});
         for (let i = 0; i < expectedValues.length; i++) {
           const tabValue = tabItem.locator(
             `xpath=ancestor::*[self::td or self::th]/following-sibling::*[self::td or self::th][${i + 1}]`
@@ -166,15 +169,19 @@ export class CaseDetailsPage {
      */
   private async getVisibleTabContent(content: string, position: number = 0, exact: boolean = true): Promise<Locator> {
     const locator = this.page.getByText(content, { exact });
+    // Wait for at least one matching element to be attached
+    await locator.first().waitFor({ state: 'attached', timeout: 10000 }).catch(() => {});
     const count = await locator.count();
 
-    if (count === 1 && position === 0) {
-      return locator;
+    if (count === 0) {
+      throw new Error(`No element found for content: ${content}`);
     }
 
     let visibleIndex = 0;
     for (let i = 0; i < count; i++) {
       const element = locator.nth(i);
+      // Wait for each element to be attached before checking visibility
+      await element.waitFor({ state: 'attached', timeout: 10000 }).catch(() => {});
       if (await element.isVisible()) {
         if (visibleIndex === position) {
           return element;
@@ -267,5 +274,34 @@ export class CaseDetailsPage {
   async validateCaseState(expectedState: string): Promise<void> {
     const stateLabel = this.page.getByText(expectedState, { exact: true });
     await expect(stateLabel).toBeVisible();
+  }
+
+  /**
+   * Asserts that each item in the provided tab content array is NOT visible.
+   * For string items, checks invisibility.
+   * For object items, checks both tabItem and value are not visible.
+   */
+  async assertTabDataNotVisible(tabs: Tab[]) {
+    for (const tab of tabs) {
+      // Click the tab header to activate the tab
+      const tabHeader = this.getTabHeader(tab.tabName);
+      await expect(tabHeader).toBeVisible();
+      await tabHeader.click();
+      await this.page.waitForLoadState();
+
+      // Now check that the specified tab contents are NOT visible
+      for (const content of tab.tabContent) {
+        // Skip the first item if it's the tabName string
+        if (typeof content === 'string' && content === tab.tabName) continue;
+        if (typeof content === 'string') {
+          await expect(this.page.getByText(content, { exact: true })).not.toBeVisible();
+        } else {
+          await expect(this.page.getByText(content.tabItem, { exact: content.exact ?? true })).not.toBeVisible();
+          if (content.value) {
+            await expect(this.page.getByText(content.value, { exact: false })).not.toBeVisible();
+          }
+        }
+      }
+    }
   }
 }

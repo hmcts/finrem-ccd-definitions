@@ -17,7 +17,7 @@ import {approveOrderTable} from '../../../resources/check_your_answer_content/ap
 import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEventApi.ts';
 
 
-test.describe('Contested - Upload Draft Order', () => {
+test.describe('Contested - Upload Draft Order', { tag: ['@DraftOrder'] }, () => {
   test(
     'Form A case uploading a Agreed draft order',
     { tag: ['@webkit'] },
