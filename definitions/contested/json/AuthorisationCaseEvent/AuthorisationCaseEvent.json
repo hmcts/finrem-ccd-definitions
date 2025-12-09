@@ -2266,5 +2266,12 @@
     "CaseEventID": "FR_newManageCaseDocuments",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "09/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "internal-change-UPDATE_CASE",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CR"
   }
 ]
