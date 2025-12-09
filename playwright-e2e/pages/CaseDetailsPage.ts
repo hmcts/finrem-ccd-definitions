@@ -79,16 +79,6 @@ export class CaseDetailsPage {
     await tabHeader.waitFor({ state: 'visible' });
     await expect(tabHeader).toBeEnabled();
     await tabHeader.click();
-
-    // Wait for the first content item to be attached and visible after clicking
-    if (firstContent) {
-      const text = typeof firstContent === 'string' ? firstContent : firstContent.tabItem;
-      const exact = typeof firstContent === 'object' ? (firstContent.exact ?? true) : true;
-      // Wait for the element to be attached to the DOM
-      await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 10000 });
-      // Wait for the element to be visible (not just attached)
-      await this.page.getByText(text, { exact }).first().waitFor({ state: 'visible', timeout: 10000 });
-    }
   }
 
   /**
