@@ -15,6 +15,7 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     private static final Logger logger = LoggerFactory.getLogger(HighLevelDataSetupApp.class);
 
     private static final List<CcdRoleConfig> CCD_ROLES = List.of(
+            new CcdRoleConfig("payments", "PUBLIC"),
             new CcdRoleConfig("citizen", "PUBLIC"),
             new CcdRoleConfig("caseworker", "PUBLIC"),
             new CcdRoleConfig("caseworker-divorce-financialremedy-courtadmin", "PUBLIC"),

@@ -1,2 +1,36 @@
 [
+  {
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "orderSummary",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "HWFNumber",
+    "TabFieldDisplayOrder": 2,
+    "FieldShowCondition": "HWFNumber=\"IMPOSSIBLE\""
+  },
+  {
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "hwfFeeReferenceNumber",
+    "TabFieldDisplayOrder": 2,
+    "FieldShowCondition": "HWFNumber!=\"\""
+  },
+  {
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "casePaymentHistoryViewer",
+    "TabFieldDisplayOrder": 3
+  }
 ]
