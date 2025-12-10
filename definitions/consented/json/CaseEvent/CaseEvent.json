@@ -1225,5 +1225,15 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "09/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "internal-change-UPDATE_CASE",
+    "Name": "Update case",
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent"
   }
 ]
