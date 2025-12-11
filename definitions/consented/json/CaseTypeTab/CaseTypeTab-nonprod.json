@@ -1,39 +1,40 @@
 [
   {
     "LiveFrom": "10/12/2025",
-    "CaseTypeID": "FinancialRemedyContested",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "TabID": "PaymentHistory",
     "TabLabel": "Payment History",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "orderSummary",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "TabShowCondition": "paperApplication=\"Yes\""
   },
   {
     "LiveFrom": "10/12/2025",
-    "CaseTypeID": "FinancialRemedyContested",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "TabID": "PaymentHistory",
     "TabLabel": "Payment History",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "HWFNumber",
     "TabFieldDisplayOrder": 2,
     "FieldShowCondition": "HWFNumber=\"IMPOSSIBLE\""
   },
   {
     "LiveFrom": "10/12/2025",
-    "CaseTypeID": "FinancialRemedyContested",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "TabID": "PaymentHistory",
     "TabLabel": "Payment History",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "hwfFeeReferenceNumber",
     "TabFieldDisplayOrder": 2,
     "FieldShowCondition": "HWFNumber!=\"\""
   },
   {
     "LiveFrom": "10/12/2025",
-    "CaseTypeID": "FinancialRemedyContested",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "TabID": "PaymentHistory",
     "TabLabel": "Payment History",
-    "TabDisplayOrder": 12,
+    "TabDisplayOrder": 11,
     "CaseFieldID": "casePaymentHistoryViewer",
     "TabFieldDisplayOrder": 3
   }
