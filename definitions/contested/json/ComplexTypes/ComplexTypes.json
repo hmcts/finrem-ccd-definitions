@@ -5272,7 +5272,7 @@
     "ID": "FR_workingVacatedHearing",
     "ListElementCode": "specifyOtherReason",
     "FieldType": "TextArea",
-    "ElementLabel": " ",
+    "ElementLabel": "Other reason",
     "FieldShowCondition": "vacateReason=\"Other\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -5543,7 +5543,7 @@
     "ID": "FR_vacatedOrAdjournedHearingTabItems",
     "ListElementCode": "tabSpecifyOtherReason",
     "FieldType": "Text",
-    "ElementLabel": "Other Reason",
+    "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   },
