@@ -998,7 +998,7 @@
     "Name": "Update Respondent Details",
     "Description": "Update Respondent Details",
     "DisplayOrder": 128,
-    "PreConditionState(s)": "*",
+    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;awaitingResponse;newPaperCase;awaitingInfo;infoReceived;readyForHearing",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
@@ -1206,6 +1206,19 @@
     "PostConditionState": "*",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_stopRepresentingClient",
+    "Name": "Stop representing a client",
+    "Description": "Stop representing a client",
+    "DisplayOrder": 67,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
