@@ -84,9 +84,8 @@ export function getVacatedHearingTabData(params?: {
     { tabItem: 'Reason', value: reasonForVacating }
   ];
 
-  // Only add "Other Reason" if reasonForVacating is "Other - Please specify"
   if (reasonForVacating === 'Other - Please specify') {
-    tabContent.push({ tabItem: 'Other Reason', value: otherReasonForVacating });
+    tabContent.push(otherReasonForVacating);
   }
 
   tabContent.push({ tabItem: 'Hearing Documents', value: hearingDocuments });
