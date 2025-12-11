@@ -1,10 +1,10 @@
-import { test } from '../../../fixtures/fixtures';
-import config from '../../../config/config';
-import {YesNoRadioEnum, ApplicationtypeEnum, MaleOrFemaleEnum} from '../../../pages/helpers/enums/RadioEnums';
+import { test } from '../../../fixtures/fixtures.ts';
+import config from '../../../config/config.ts';
+import {YesNoRadioEnum, ApplicationtypeEnum, MaleOrFemaleEnum} from '../../../pages/helpers/enums/RadioEnums.ts';
 import {
   createCaseTabData,
   createPaperCaseTabDataChildrensAct
-} from '../../../resources/tab_content/contested/caseworker_create_case_tabs';
+} from '../../../resources/tab_content/contested/caseworker_create_case_tabs.ts';
 import {
   contestedCreatePaperChildrenCaseDetailsTable, contestedCreatePaperMatrimonyCaseDetailsTable
 } from '../../../resources/check_your_answer_content/create_case/createCaseTable.ts';
