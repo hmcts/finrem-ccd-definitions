@@ -1318,17 +1318,6 @@
     "TabID": "authorisation",
     "TabLabel": "Authorisation",
     "TabDisplayOrder": 8,
-    "CaseFieldID": "authorisationLa",
-    "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "amountToPay!=\"\" OR paperApplication=\"Yes\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "authorisation",
-    "TabLabel": "Authorisation",
-    "TabDisplayOrder": 8,
     "CaseFieldID": "authorisation1",
     "TabFieldDisplayOrder": 2
   },
