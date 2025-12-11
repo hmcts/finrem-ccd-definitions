@@ -1,10 +1,10 @@
-import { test } from '../../fixtures/fixtures';
-import config from '../../config/config';
-import { ContestedEvents} from '../../config/case-data';
-import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
-import {YesNoRadioEnum} from '../../pages/helpers/enums/RadioEnums.ts';
-import {applicationCaseSubmission} from '../../pages/helpers/PaymentSubmissionHelper.ts';
-import {envTestData} from '../../data-utils/test_data/EnvTestDataConfig.ts';
+import { test } from '../../../fixtures/fixtures';
+import config from '../../../config/config.ts';
+import { ContestedEvents} from '../../../config/case-data.ts';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
+import {YesNoRadioEnum} from '../../../pages/helpers/enums/RadioEnums.ts';
+import {applicationCaseSubmission} from '../../../pages/helpers/PaymentSubmissionHelper.ts';
+import {envTestData} from '../../../data-utils/test_data/EnvTestDataConfig.ts';
 
 
 test(
