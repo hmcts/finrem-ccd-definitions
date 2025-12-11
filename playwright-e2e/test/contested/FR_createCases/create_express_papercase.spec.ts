@@ -1,8 +1,8 @@
-import { test } from '../../../fixtures/fixtures';
-import config from '../../../config/config';
-import { YesNoRadioEnum, ApplicationtypeEnum } from '../../../pages/helpers/enums/RadioEnums';
-import {createCaseTabData} from '../../../resources/tab_content/contested/caseworker_create_case_tabs';
-import { expressCaseGateKeepingTabData, expressCaseGateKeeping250TabData } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
+import { test } from '../../../fixtures/fixtures.ts';
+import config from '../../../config/config.ts';
+import { YesNoRadioEnum, ApplicationtypeEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
+import {createCaseTabData} from '../../../resources/tab_content/contested/caseworker_create_case_tabs.ts';
+import { expressCaseGateKeepingTabData, expressCaseGateKeeping250TabData } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab.ts';
 import {
   contestedCreateExpressPaperMatrimonyCaseDetailsTable
 } from '../../../resources/check_your_answer_content/create_case/createCaseTable.ts';
