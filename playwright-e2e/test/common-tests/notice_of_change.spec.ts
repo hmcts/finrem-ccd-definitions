@@ -133,8 +133,7 @@ test.describe('Notice of Change', () => {
         await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
         await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
 
-        await caseDetailsPage.checkHasBeenUpdated(CommonEvents.stopRepresentingClient.listItem);
-
+        await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor no longer has access to case
       }
     );
     test(
@@ -171,7 +170,7 @@ test.describe('Notice of Change', () => {
         await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
         await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
 
-        await caseDetailsPage.checkHasBeenUpdated(CommonEvents.stopRepresentingClient.listItem);
+        await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor no longer has access to case
       }
     );
     test(
@@ -209,8 +208,7 @@ test.describe('Notice of Change', () => {
         await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
         await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
 
-        await caseDetailsPage.checkHasBeenUpdated(CommonEvents.stopRepresentingClient.listItem);
-
+        await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor no longer has access to case
       }
     );
     test(
@@ -247,7 +245,7 @@ test.describe('Notice of Change', () => {
         await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
         await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
 
-        await caseDetailsPage.checkHasBeenUpdated(CommonEvents.stopRepresentingClient.listItem);
+        await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor no longer has access to case
       }
     );
   }); 
