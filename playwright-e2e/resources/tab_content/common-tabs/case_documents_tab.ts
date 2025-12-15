@@ -42,6 +42,21 @@ export const UploadApprovedOrderCaseDocumentsTabData: Tab[] = [{
   ]
 }];
 
+export const CaseDocumentsTabOnlineFormAPresentTabData: Tab[] = [{
+  tabName: 'Case documents',
+  tabContent: [
+    { tabItem: 'Online Form A', value: 'OnlineForm.pdf' },
+    { tabItem: 'Upload MIAM Document', value: 'test.pdf' },
+    { tabItem: 'Upload Petition', value: 'PETITION FORM A.docx' }
+  ]
+}];
+
+export const CaseDocumentsTabOnlineFormANotPresentTabData: Tab[] = [{
+  tabName: 'Case documents',
+  tabContent: [
+    { tabItem: 'Online Form A', value: 'OnlineForm.pdf' }
+  ]
+}];
 
 export function buildCaseDocTabGeneralEmailContent(emails: Array<{
   emailDate: string,
