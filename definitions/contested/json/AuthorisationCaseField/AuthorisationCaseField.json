@@ -19647,5 +19647,21 @@
     "CaseFieldID": "int4VacOrAdjHearingTabItems",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "C"
+  },
+  {
+    "LiveFrom": "10/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "casePaymentHistoryViewer",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-courtadmin",
+          "caseworker-divorce-financialremedy-superuser",
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-solicitor"
+        ],
+        "CRUD": "R"
+      }
+    ]
   }
 ]

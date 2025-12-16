@@ -3248,67 +3248,45 @@
     "TabFieldDisplayOrder": 33
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "10/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "paymentDetailsTab",
-    "TabLabel": "Payment details",
+    "Channel": "CaseWorker",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
     "TabDisplayOrder": 12,
-    "CaseFieldID": "helpWithFeesQuestion",
+    "CaseFieldID": "orderSummary",
     "TabFieldDisplayOrder": 1
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "10/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "paymentDetailsTab",
-    "TabLabel": "Payment details",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
     "TabDisplayOrder": 12,
     "CaseFieldID": "HWFNumber",
-    "TabFieldDisplayOrder": 2
+    "TabFieldDisplayOrder": 2,
+    "FieldShowCondition": "HWFNumber=\"IMPOSSIBLE\""
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "10/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "paymentDetailsTab",
-    "TabLabel": "Payment details",
+    "Channel": "CaseWorker",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
     "TabDisplayOrder": 12,
-    "CaseFieldID": "amountToPay",
+    "CaseFieldID": "hwfFeeReferenceNumber",
+    "TabFieldDisplayOrder": 2,
+    "FieldShowCondition": "HWFNumber!=\"\""
+  },
+  {
+    "LiveFrom": "10/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "Channel": "CaseWorker",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
+    "TabDisplayOrder": 12,
+    "CaseFieldID": "casePaymentHistoryViewer",
     "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "paymentDetailsTab",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 12,
-    "CaseFieldID": "PBANumber",
-    "TabFieldDisplayOrder": 4
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "paymentDetailsTab",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 12,
-    "CaseFieldID": "PBAreference",
-    "TabFieldDisplayOrder": 5
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "paymentDetailsTab",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 12,
-    "CaseFieldID": "orderSummary",
-    "TabFieldDisplayOrder": 6
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "paymentDetailsTab",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 12,
-    "CaseFieldID": "PBAPaymentReference",
-    "TabFieldDisplayOrder": 7
   },
   {
     "LiveFrom": "01/01/2017",

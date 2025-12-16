@@ -3,7 +3,7 @@
     "RoleName" : "idam:caseworker-divorce-financialremedy-judiciary",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary",
+    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary,payments",
     "ReadOnly": "N",
     "Disabled": "F",
     "CaseAccessCategories": ""
@@ -12,7 +12,7 @@
     "RoleName" : "idam:caseworker-divorce-financialremedy-solicitor",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy-solicitor",
+    "AccessProfiles": "caseworker-divorce-financialremedy-solicitor,payments",
     "ReadOnly": "N",
     "Disabled": "F",
     "CaseAccessCategories": ""
