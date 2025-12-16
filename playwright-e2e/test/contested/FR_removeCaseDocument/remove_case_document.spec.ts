@@ -27,10 +27,11 @@ test(
     // assert OnlineForm.pdf is present in case documents tab before removing
     await caseDetailsPage.assertTabData(CaseDocumentsTabOnlineFormAPresentTabData);
 
-    // Navigate to manage barrister and update applicant barrister
+    // Navigate to Remove Case Document event
     await caseDetailsPage.selectNextStep(ContestedEvents.removeCaseDocument);
 
     //remove document
+    await removeCaseDocumentPage.verifyRemoveCaseDocumentPageDisplayed();
     await removeCaseDocumentPage.removeDocument(1); // remove OnlineForm.pdf document
     await removeCaseDocumentPage.assertAreYouSureYouWantToRemoveDocumentMessageIsDisplayed();
     await axeUtils.audit();
