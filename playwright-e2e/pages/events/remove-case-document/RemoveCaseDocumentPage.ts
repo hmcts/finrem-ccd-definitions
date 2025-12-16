@@ -4,13 +4,13 @@ import { BaseJourneyPage } from '../../BaseJourneyPage';
 export class RemoveCaseDocumentPage extends BaseJourneyPage {
   private removeCaseDocumentHeader: Locator;
   private areYouSureMessage: Locator;
-  private removeButtton: Locator;
+  private removeButton: Locator;
 
   public constructor(page: Page) {
     super(page);
     this.removeCaseDocumentHeader = page.getByRole('heading', { name: 'Remove Case Document' });
     this.areYouSureMessage = page.getByRole('heading', {name: 'Are you sure you want to remove the item?'});
-    this.removeButtton = page.getByRole('button', { name: 'Remove' });
+    this.removeButton = page.getByRole('button', { name: 'Remove' });
   }
 
   async verifyRemoveCaseDocumentPageDisplayed() {
@@ -32,7 +32,7 @@ export class RemoveCaseDocumentPage extends BaseJourneyPage {
 
   async assertAreYouSureYouWantToRemoveDocumentMessageIsDisplayed() {
     await expect(this.areYouSureMessage).toBeVisible();
-    await expect(this.removeButtton).toBeVisible();
-    await this.removeButtton.click();
+    await expect(this.removeButton).toBeVisible();
+    await this.removeButton.click();
   }
 }
