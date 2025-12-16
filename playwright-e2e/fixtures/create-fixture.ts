@@ -83,7 +83,8 @@ import {ConsentApplicationApprovedPage} from '../pages/events/consent-applicatio
 import {ConsentOrderNotApprovedPage} from '../pages/events/consent-application/ConsentOrderNotApprovedPage.ts';
 import {UploadApprovedOrderPage} from '../pages/events/upload-approved-order/UploadApprovedOrderPage.ts';
 import {NoticeOfChangePage} from '../pages/NoticeOfChangePage.ts';
-import { JudgeUploadApprovedOrderPage } from '../pages/events/judge-upload-approved-order/JudgeUploadApprovedOrderPage.ts';
+import {JudgeUploadApprovedOrderPage} from '../pages/events/judge-upload-approved-order/JudgeUploadApprovedOrderPage.ts';
+import {RemoveCaseDocumentPage} from '../pages/events/remove-case-document/RemoveCaseDocumentPage.ts';
 import { StopRepresentingClientPage } from '../pages/events/stop-representing-client/StopRepresentingClientPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
@@ -163,6 +164,7 @@ type CreateFixtures = {
   noticeOfChangePage: NoticeOfChangePage;
   judgeUploadApprovedOrderPage: JudgeUploadApprovedOrderPage;
   stopRepresentingClientPage: StopRepresentingClientPage;
+  removeCaseDocumentPage: RemoveCaseDocumentPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -381,6 +383,9 @@ export const test = base.extend<CreateFixtures>({
   },
   judgeUploadApprovedOrderPage: async ({ page }, use) => {
     await use(new JudgeUploadApprovedOrderPage(page, commonActionsHelper));
+  },
+  removeCaseDocumentPage: async ({ page }, use) => {
+    await use(new RemoveCaseDocumentPage(page));
   },
   stopRepresentingClientPage: async ({ page }, use) => {
     await use(new StopRepresentingClientPage(page));

@@ -6,6 +6,52 @@ import { CommonEvents } from '../../config/case-data.ts';
 import { CaseTypeEnum, YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums.ts';
 import { applicantStopRepresentingClientTable, respondentStopRepresentingClientTable } from '../../resources/check_your_answer_content/stop-representing-client/stopRepresentingClientTable.ts';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory.ts';
+import { ContestedEventApi } from '../../data-utils/api/contested/ContestedEventApi.ts';
+
+const stopRepresentingClientTestData = [
+  {
+    title: 'Consented - App Solicitor Stop representing a client event',
+    user: config.applicant_solicitor,
+    selectApplicant: true,
+    isConsented: true,
+    addBarrister: false
+  },
+  {
+    title: 'Consented - Respondent Solicitor Stop representing a client event',
+    user: config.respondent_solicitor,
+    selectApplicant: false,
+    isConsented: true,
+    addBarrister: false
+  },
+  {
+    title: 'Contested - App Solicitor Stop representing a client event',
+    user: config.applicant_solicitor,
+    selectApplicant: true,
+    isConsented: false,
+    addBarrister: false
+  },
+  {
+    title: 'Contested - Applicant Barrister Stop representing a client event',
+    user: config.applicant_barrister,
+    selectApplicant: true,
+    isConsented: false,
+    addBarrister: true
+  },
+  {
+    title: 'Contested - Respondent Solicitor Stop representing a client event',
+    user: config.respondent_solicitor,
+    selectApplicant: false,
+    isConsented: false,
+    addBarrister: false
+  },
+  {
+    title: 'Contested - Respondent Barrister Stop representing a client event',
+    user: config.respondent_barrister,
+    selectApplicant: false,
+    isConsented: false,
+    addBarrister: true
+  }
+];
 
 test.describe('Notice of Change', () => {
 
@@ -48,7 +94,7 @@ test.describe('Notice of Change', () => {
       await noticeOfChangePage.assertNoticeOfChangeSuccessMessage(caseId.toString());
 
     }
-  ); // <-- semicolon added here
+  );
 
   test(
     'CAA can raise a Notice of Change', { tag: [] },
@@ -98,155 +144,74 @@ test.describe('Notice of Change', () => {
   );
 
   test.describe('Stop representing a client event', () => {
-    test(
-      'Consented - App Solicitor Stop representing a client event', { tag: [] },
-      async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, stopRepresentingClientPage, checkYourAnswersPage }) => {
+    for (const data of stopRepresentingClientTestData) {
+      test(
+        data.title, { tag: [] },
+        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, stopRepresentingClientPage, checkYourAnswersPage }) => {
+          // Create case
+          let caseId;
+          if (data.isConsented) {
+            caseId = await ConsentedCaseFactory.createConsentedCaseUpToIssueApplication();
+          } else {
+            caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+          }
 
-        // Create a contested case by applicant solicitor
-        const caseId = await ConsentedCaseFactory.createConsentedCaseUpToIssueApplication();
-        await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
+          // Assign users/barristers as needed
+          if (data.isConsented && !data.selectApplicant) {
+            await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONSENTED);
+          }
+          if (!data.isConsented && data.addBarrister && data.selectApplicant) {
+            await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
+          }
+          if (!data.isConsented && !data.selectApplicant) {
+            await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
+            if (data.addBarrister) {
+              await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
+            }
+          }
+          
+          await manageCaseDashboardPage.visit();
+          await loginPage.loginWaitForPath(data.user.email, data.user.password, config.manageCaseBaseURL, config.loginPaths.cases);
 
-        await manageCaseDashboardPage.navigateToCase(caseId);
+          await manageCaseDashboardPage.navigateToCase(caseId);
 
-        await caseDetailsPage.selectNextStep((CommonEvents.stopRepresentingClient));
+          await caseDetailsPage.selectNextStep(CommonEvents.stopRepresentingClient);
 
-        await stopRepresentingClientPage.enterAddress('NW2 7NE');
-        await stopRepresentingClientPage.clickFindAddressButton();
-        await stopRepresentingClientPage.selectAddress('10 Selsdon Road, London');
-        await stopRepresentingClientPage.selectApplicantDetailsPrivate(YesNoRadioEnum.YES);
-        await stopRepresentingClientPage.consentToStopRepresentingClient(YesNoRadioEnum.NO);
-        await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.NO);
-        await stopRepresentingClientPage.navigateContinue();
-        
-        // Assert error message is shown for missing judicial approval or client consent
-        await stopRepresentingClientPage.assertMissingClientOrJudicialApprovalError();
-        
-        await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.YES);
-        await stopRepresentingClientPage.navigateContinue();
+          await stopRepresentingClientPage.enterAddress('NW2 7NE');
+          await stopRepresentingClientPage.clickFindAddressButton();
+          await stopRepresentingClientPage.selectAddress('10 Selsdon Road, London');
 
-        // check your answers
-        await checkYourAnswersPage.assertCheckYourAnswersPage(applicantStopRepresentingClientTable);
-        await stopRepresentingClientPage.navigateSubmit();
+          if (data.selectApplicant) {
+            await stopRepresentingClientPage.selectApplicantDetailsPrivate(YesNoRadioEnum.YES);
+          } else {
+            await stopRepresentingClientPage.selectRespondentDetailsPrivate(YesNoRadioEnum.NO);
+          }
 
-        // Assert are you sure text is shown
-        await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
-        await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
+          await stopRepresentingClientPage.consentToStopRepresentingClient(YesNoRadioEnum.NO);
+          await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.NO);
+          await stopRepresentingClientPage.navigateContinue();
 
-        await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor no longer has access to case
-      }
-    );
-    test(
-      'Consented - Respondent Solicitor Stop representing a client event', { tag: [] },
-      async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, stopRepresentingClientPage, checkYourAnswersPage }) => {  
-        // Create a consented case
-        const caseId = await ConsentedCaseFactory.createConsentedCaseUpToIssueApplication();
-        await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONSENTED);
-         
-        await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(config.respondent_solicitor.email, config.respondent_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
+          // Assert error message is shown for missing judicial approval or client consent
+          await stopRepresentingClientPage.assertMissingClientOrJudicialApprovalError();
 
-        await manageCaseDashboardPage.navigateToCase(caseId);
+          await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.YES);
+          await stopRepresentingClientPage.navigateContinue();
 
-        await caseDetailsPage.selectNextStep((CommonEvents.stopRepresentingClient));
-        await stopRepresentingClientPage.enterAddress('NW2 7NE');
-        await stopRepresentingClientPage.clickFindAddressButton();
-        await stopRepresentingClientPage.selectAddress('10 Selsdon Road, London');
-        await stopRepresentingClientPage.selectRespondentDetailsPrivate(YesNoRadioEnum.NO);
-        await stopRepresentingClientPage.consentToStopRepresentingClient(YesNoRadioEnum.NO);
-        await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.NO);
-        await stopRepresentingClientPage.navigateContinue();
-        
-        // Assert error message is shown for missing judicial approval or client consent
-        await stopRepresentingClientPage.assertMissingClientOrJudicialApprovalError();
-        
-        await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.YES);
-        await stopRepresentingClientPage.navigateContinue();
-        // check your answers
-        await checkYourAnswersPage.assertCheckYourAnswersPage(respondentStopRepresentingClientTable);
-        await stopRepresentingClientPage.navigateSubmit();
+          // check your answers
+          if (data.selectApplicant) {
+            await checkYourAnswersPage.assertCheckYourAnswersPage(applicantStopRepresentingClientTable);
+          } else {
+            await checkYourAnswersPage.assertCheckYourAnswersPage(respondentStopRepresentingClientTable);
+          }
+          await stopRepresentingClientPage.navigateSubmit();
 
-        // Assert are you sure text is shown
-        await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
-        await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
+          // Assert are you sure text is shown
+          await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
+          await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
 
-        await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor no longer has access to case
-      }
-    );
-    test(
-      'Contested - App Solicitor Stop representing a client event', { tag: [] },
-      async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, stopRepresentingClientPage, checkYourAnswersPage }) => {
-
-        // Create a contested case by applicant solicitor
-        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-        await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
-
-        await manageCaseDashboardPage.navigateToCase(caseId);
-
-        await caseDetailsPage.selectNextStep((CommonEvents.stopRepresentingClient));
-
-        await stopRepresentingClientPage.enterAddress('NW2 7NE');
-        await stopRepresentingClientPage.clickFindAddressButton();
-        await stopRepresentingClientPage.selectAddress('10 Selsdon Road, London');
-        await stopRepresentingClientPage.selectApplicantDetailsPrivate(YesNoRadioEnum.YES);
-        await stopRepresentingClientPage.consentToStopRepresentingClient(YesNoRadioEnum.NO);
-        await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.NO);
-        await stopRepresentingClientPage.navigateContinue();
-        
-        // Assert error message is shown for missing judicial approval or client consent
-        await stopRepresentingClientPage.assertMissingClientOrJudicialApprovalError();
-        
-        await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.YES);
-        await stopRepresentingClientPage.navigateContinue();
-
-        // check your answers
-        await checkYourAnswersPage.assertCheckYourAnswersPage(applicantStopRepresentingClientTable);
-        await stopRepresentingClientPage.navigateSubmit();
-
-        // Assert are you sure text is shown
-        await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
-        await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
-
-        await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor no longer has access to case
-      }
-    );
-    test(
-      'Contested - Respondent Solicitor Stop representing a client event', { tag: [] },
-      async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, stopRepresentingClientPage, checkYourAnswersPage }) => {  
-        // Create a contested case
-        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-        await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONSENTED);
-         
-        await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(config.respondent_solicitor.email, config.respondent_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
-
-        await manageCaseDashboardPage.navigateToCase(caseId);
-
-        await caseDetailsPage.selectNextStep((CommonEvents.stopRepresentingClient));
-        await stopRepresentingClientPage.enterAddress('NW2 7NE');
-        await stopRepresentingClientPage.clickFindAddressButton();
-        await stopRepresentingClientPage.selectAddress('10 Selsdon Road, London');
-        await stopRepresentingClientPage.selectRespondentDetailsPrivate(YesNoRadioEnum.NO);
-        await stopRepresentingClientPage.consentToStopRepresentingClient(YesNoRadioEnum.NO);
-        await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.NO);
-        await stopRepresentingClientPage.navigateContinue();
-        
-        // Assert error message is shown for missing judicial approval or client consent
-        await stopRepresentingClientPage.assertMissingClientOrJudicialApprovalError();
-        
-        await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.YES);
-        await stopRepresentingClientPage.navigateContinue();
-        // check your answers
-        await checkYourAnswersPage.assertCheckYourAnswersPage(respondentStopRepresentingClientTable);
-        await stopRepresentingClientPage.navigateSubmit();
-
-        // Assert are you sure text is shown
-        await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
-        await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
-
-        await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor no longer has access to case
-      }
-    );
+          await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor/barrister no longer has access to case
+        }
+      );
+    }
   }); 
 });
