@@ -94,7 +94,7 @@ test.describe('Notice of Change', () => {
       await noticeOfChangePage.assertNoticeOfChangeSuccessMessage(caseId.toString());
 
     }
-  ); // <-- semicolon added here
+  );
 
   test(
     'CAA can raise a Notice of Change', { tag: [] },
