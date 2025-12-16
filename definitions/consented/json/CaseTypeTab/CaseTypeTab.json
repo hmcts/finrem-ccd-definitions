@@ -1312,6 +1312,16 @@
     "TabFieldDisplayOrder": 20
   },
   {
+    "LiveFrom": "10/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "TabID": "authorisation",
+    "TabLabel": "Authorisation",
+    "TabDisplayOrder": 8,
+    "CaseFieldID": "amountToPay",
+    "TabFieldDisplayOrder": 1,
+    "FieldShowCondition": "amountToPay=\"IMPOSSIBLE\""
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "Channel": "CaseWorker",
@@ -1322,6 +1332,7 @@
     "TabFieldDisplayOrder": 1,
     "TabShowCondition": "amountToPay!=\"\" OR paperApplication=\"Yes\""
   },
+
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
@@ -1908,96 +1919,46 @@
     "TabFieldDisplayOrder": 1
   },
   {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "PaymentDetails",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "payment",
-    "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "amountToPay!=\"\" OR paperApplication=\"Yes\""
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "PaymentDetails",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "helpWithFeesQuestion",
-    "TabFieldDisplayOrder": 2
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "PaymentDetails",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "HWFNumber",
-    "TabFieldDisplayOrder": 3
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "PaymentDetails",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "orderSummary",
-    "TabFieldDisplayOrder": 4
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "PaymentDetails",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "amountToPay",
-    "TabFieldDisplayOrder": 5
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "PaymentDetails",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "PBANumber",
-    "TabFieldDisplayOrder": 6
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "PaymentDetails",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "PBAreference",
-    "TabFieldDisplayOrder": 7
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "Channel": "CaseWorker",
-    "TabID": "PaymentDetails",
-    "TabLabel": "Payment details",
-    "TabDisplayOrder": 11,
-    "CaseFieldID": "PBAPaymentReference",
-    "TabFieldDisplayOrder": 8
-  },
-  {
-    "LiveFrom": "01/06/2020",
+    "LiveFrom": "10/12/2025",
     "CaseTypeID": "FinancialRemedyMVP2",
     "Channel": "CaseWorker",
     "TabID": "PaymentHistory",
-    "TabLabel": "Payment history",
-    "TabDisplayOrder": 12,
-    "CaseFieldID": "paymentHistory",
-    "TabFieldDisplayOrder": 1,
-    "TabShowCondition": "paperApplication=\"Yes\""
+    "TabLabel": "Payment History",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "orderSummary",
+    "TabFieldDisplayOrder": 1
+  },
+  {
+    "LiveFrom": "10/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "HWFNumber",
+    "TabFieldDisplayOrder": 2,
+    "FieldShowCondition": "HWFNumber=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "10/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "hwfFeeReferenceNumber",
+    "TabFieldDisplayOrder": 2,
+    "FieldShowCondition": "HWFNumber!=\"\""
+  },
+  {
+    "LiveFrom": "10/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "Channel": "CaseWorker",
+    "TabID": "PaymentHistory",
+    "TabLabel": "Payment History",
+    "TabDisplayOrder": 11,
+    "CaseFieldID": "casePaymentHistoryViewer",
+    "TabFieldDisplayOrder": 3
   },
   {
     "LiveFrom": "01/01/2017",
