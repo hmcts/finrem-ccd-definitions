@@ -2,7 +2,7 @@ import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import { CaseDocumentsTabOnlineFormANotPresentTabData, CaseDocumentsTabOnlineFormAPresentTabData } from '../../../resources/tab_content/common-tabs/case_documents_tab';
+import { CaseDocumentsTabOnlineFormATabData } from '../../../resources/tab_content/common-tabs/case_documents_tab';
 
 test(
   'Contested - Remove Case Document',
@@ -25,7 +25,7 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // assert OnlineForm.pdf is present in case documents tab before removing
-    await caseDetailsPage.assertTabData(CaseDocumentsTabOnlineFormAPresentTabData);
+    await caseDetailsPage.assertTabData(CaseDocumentsTabOnlineFormATabData);
 
     // Navigate to Remove Case Document event
     await caseDetailsPage.selectNextStep(ContestedEvents.removeCaseDocument);
@@ -41,7 +41,7 @@ test(
     await removeCaseDocumentPage.navigateSubmit();
 
     // assert OnlineForm.pdf is no longer present in case documents tab after removing
-    await caseDetailsPage.assertTabDataNotVisible(CaseDocumentsTabOnlineFormANotPresentTabData);
+    await caseDetailsPage.assertTabDataNotVisible(CaseDocumentsTabOnlineFormATabData);
 
   });
 
