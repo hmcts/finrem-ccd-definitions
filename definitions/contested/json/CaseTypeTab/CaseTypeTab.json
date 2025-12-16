@@ -3250,7 +3250,6 @@
   {
     "LiveFrom": "10/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "Channel": "CaseWorker",
     "TabID": "PaymentHistory",
     "TabLabel": "Payment History",
     "TabDisplayOrder": 12,
@@ -3270,23 +3269,21 @@
   {
     "LiveFrom": "10/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "Channel": "CaseWorker",
     "TabID": "PaymentHistory",
     "TabLabel": "Payment History",
     "TabDisplayOrder": 12,
     "CaseFieldID": "hwfFeeReferenceNumber",
-    "TabFieldDisplayOrder": 2,
+    "TabFieldDisplayOrder": 3,
     "FieldShowCondition": "HWFNumber!=\"\""
   },
   {
     "LiveFrom": "10/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
-    "Channel": "CaseWorker",
     "TabID": "PaymentHistory",
     "TabLabel": "Payment History",
     "TabDisplayOrder": 12,
     "CaseFieldID": "casePaymentHistoryViewer",
-    "TabFieldDisplayOrder": 3
+    "TabFieldDisplayOrder": 4
   },
   {
     "LiveFrom": "01/01/2017",
