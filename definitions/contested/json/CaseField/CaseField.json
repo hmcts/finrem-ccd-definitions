@@ -7849,6 +7849,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "11/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "documentRemovalStateWarning",
+    "Label": "<br /><div class='govuk-warning-text'><span class='govuk-warning-text__icon' aria-hidden='true'>!</span><strong class='govuk-warning-text__text'>You may need to change the state if you remove any documents that were waiting to be processed e.g orders, consent orders, general applications</strong></div><br>",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/09/2024",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "userCaseAccessList",
