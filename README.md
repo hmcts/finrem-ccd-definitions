@@ -239,3 +239,11 @@ NOTE: Jenkins will populate Judge details in the PROD configs that is not availa
 ## Judge Data in FixedLists
 
 To update judge data in `FixedLists` for Production, see [here](docs/fixedlists-judges.md).
+
+## Precommit checks
+
+[Husky](https://www.npmjs.com/package/husky) handles pre-commit checks
+```sh
+./husky/pre-commit
+```
+runs yarn lint, see the Scipts section in in package.json
