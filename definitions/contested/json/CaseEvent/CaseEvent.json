@@ -1503,5 +1503,15 @@
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
+  },
+  {
+    "LiveFrom": "09/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "internal-change-UPDATE_CASE",
+    "Name": "(internal) update case",
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent"
   }
 ]
