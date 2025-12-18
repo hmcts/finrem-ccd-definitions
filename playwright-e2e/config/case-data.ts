@@ -236,6 +236,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Manage case documents (New)",
     ccdCallback: "FR_newManageCaseDocuments"
   },
+  removeCaseDocument: {
+    listItem: "Remove Case Document",
+    ccdCallback: "FR_removeCaseDocument"
+  },
 
   // Common events
   createFlag: CommonEvents.createFlag,
