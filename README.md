@@ -242,8 +242,17 @@ To update judge data in `FixedLists` for Production, see [here](docs/fixedlists-
 
 ## Precommit checks
 
-[Husky](https://www.npmjs.com/package/husky) handles pre-commit checks
+[Husky](https://www.npmjs.com/package/husky) handles pre-commit checks.
+
+This is the file that determines the precommit checks that are run.
+
 ```sh
 ./husky/pre-commit
 ```
-runs yarn lint, see the Scipts section in in package.json
+The file runs yarn lint, see the Scipts section in in package.json.
+If you get a message to say the pre-commit hook was ignored, register the hook with:
+```sh
+yarn setup-precommit
+```
+The script to setup the pre-commit hook is also called from setup.sh.
+

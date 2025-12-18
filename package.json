@@ -104,7 +104,8 @@
     "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
     "highLevelDataSetup": "echo 'bash ./gradlew highLevelDataSetup --args=$1 && sh bin/after-data-setup-step.sh' > ./temp.sh && sh ./temp.sh",
     "yarn-update": "node bin/set-yarn-version.js",
-    "install-dependencies": "yarn install --silent"
+    "install-dependencies": "yarn install --silent",
+    "setup-precommit": "node bin/setup-precommit-hooks.mjs"
   },
   "dependencies": {
     "@axe-core/playwright": "^4.10.0",
