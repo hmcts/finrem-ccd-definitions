@@ -150,4 +150,20 @@ export class DateHelper {
     return { currentDate, hearingDate };
   }
 
+  /**
+   * Returns the current date and time formatted as "d MMMM yyyy HH:mm:ss" (e.g. "18 December 2025 12:19:54").
+   *
+   * @returns Formatted current date and time string.
+   */
+  static getCurrentDateTimeFull(): string {
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.toLocaleString('en-GB', { month: 'long' });
+    const year = now.getFullYear();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    return `${day} ${month} ${year} ${hours}:${minutes}:${seconds}`;
+  }
+
 }

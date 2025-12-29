@@ -11,6 +11,7 @@ import {CaseSubmissionPage} from '../events/application-payment-submission/CaseS
 import {CheckYourAnswersPage} from '../CheckYourAnswersPage.ts';
 import {AxeUtils} from '../../fixtures/utils/axe-utils.ts';
 import {TestInfo} from 'playwright/test';
+import { DateHelper } from '../../data-utils/DateHelper.ts';
 
 export async function applicationCaseSubmission(
   caseDetailsPage: CaseDetailsPage,
@@ -67,9 +68,10 @@ export async function applicationCaseSubmission(
   await checkYourAnswersPage.assertCheckYourAnswersPage(caseSubmissionTable(param.amount));
 
   await caseSubmissionPage.navigateSubmit();
+  const paymentDateAndTime = DateHelper.getCurrentDateTimeFull();
   await caseSubmissionPage.returnToCaseDetails();
   await caseDetailsPage.checkHasBeenUpdated(param.caseEvent.listItem);
 
   // Assert Tab Data
-  await caseDetailsPage.assertTabData(paymentDetailsTabData(param.hasHelpWithFees?? YesNoRadioEnum.NO, param.pbaNumber, param.reference));
+  await caseDetailsPage.assertTabData(paymentDetailsTabData(param.hasHelpWithFees?? YesNoRadioEnum.NO, param.pbaNumber, param.reference, paymentDateAndTime));
 }

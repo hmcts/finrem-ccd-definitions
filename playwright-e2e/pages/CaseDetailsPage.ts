@@ -59,7 +59,17 @@ export class CaseDetailsPage {
   async assertTabData(tabs: Tab[]) {
     for (const tab of tabs) {
       await this.assertTabHeader(tab.tabName, tab.tabContent[0]);
-      // Wait for the first content item to be attached (visible in DOM)
+
+      // If this is the Payment History tab, click "Review" if it's visible
+      if (tab.tabName === 'Payment History') {
+        // Wait for the link to be attached to the DOM
+        const paymentReviewLink = this.page.getByRole('link', { name: 'Review' });
+        await paymentReviewLink.waitFor({ state: 'visible', timeout: 10000 });
+        await paymentReviewLink.click();
+        await this.page.getByRole('heading', { name: 'Payment details' });
+      }
+
+      // Now assert the tab content (which may now be visible after expanding)
       const firstContent = tab.tabContent[0];
       if (firstContent) {
         const text = typeof firstContent === 'string' ? firstContent : firstContent.tabItem;
@@ -92,7 +102,7 @@ export class CaseDetailsPage {
      * ensuring assertions are made against the correct DOM element.
      * Tab array items should be in right order, as they are displayed in the UI.
      */
-  private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
+  private async assertTabContent(tabContent: TabContentItem[]): Promise<void> { 
     const tabItemCount: Record<string, number> = {};
     for (const content of tabContent) {
       let tabKey: string;
@@ -136,6 +146,17 @@ export class CaseDetailsPage {
           } else {
             await expect(tabValue).toHaveText(expectedValues[i]);
           }
+        }
+        if (typeof content === 'object' && content.tabItem && content.value) {
+          // Special handling for table rows
+          const row = this.page.locator('tr', { has: this.page.getByText(content.tabItem, { exact: content.exact ?? true }) });
+          const valueCell = row.locator('td').nth(1);
+          if (!content.exact) {
+            await expect(valueCell).toContainText(content.value);
+          } else {
+            await expect(valueCell).toHaveText(content.value);
+          }
+          continue;
         }
       }
     }
