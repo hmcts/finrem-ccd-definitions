@@ -5356,7 +5356,34 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
-    "RetriesTimeoutURLMidEvent": "3,4,5"
+    "RetriesTimeoutURLMidEvent": "3,4,5",
+    "FieldShowCondition": "showClientAddressForService=\"Yes\""
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "CaseFieldID": "showClientAddressForService",
+    "PageFieldDisplayOrder": -2,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition": "clientAddressForService=\"DO_NOT_SHOW\""
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "CaseFieldID": "clientAddressForServiceLabel",
+    "PageFieldDisplayOrder": -1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "FieldShowCondition": "clientAddressForService=\"DO_NOT_SHOW\""
   },
   {
     "LiveFrom": "12/11/2025",
@@ -5381,7 +5408,8 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "showClientAddressForService=\"Yes\""
   },
   {
     "LiveFrom": "12/11/2025",
