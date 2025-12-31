@@ -11485,6 +11485,54 @@
     "FieldShowCondition": "showClientAddressForService=\"Yes\""
   },
   {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "CaseFieldID": "extraClientAddr1Label",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "clientAddressForService=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "CaseFieldID": "extraClientAddr1",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "extraClientAddr1Label!=\"\""
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "CaseFieldID": "extraClientAddr1ConfidentialLabel",
+    "PageFieldDisplayOrder": 5,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "clientAddressForService=\"IMPOSSIBLE\""
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "CaseFieldID": "extraClientAddr1Confidential",
+    "PageFieldDisplayOrder": 6,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "FieldShowCondition": "extraClientAddr1ConfidentialLabel!=\"\""
+  },
+  {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_stopRepresentingClient",
