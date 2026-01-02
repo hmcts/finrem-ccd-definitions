@@ -8710,5 +8710,25 @@
     "FieldTypeParameter": "FR_vacatedOrAdjournedHearingTabItems",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "divorceOrderLabel",
+    "Label": "#### DIVORCE ORDER",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "latestDivorceOrderUpload",
+    "Label": "Latest Divorce Order Document",
+    "HintText": "A copy of the latest divorce order is required and must be uploaded for this consent order application. This can either be Decree Absolute/Final Order or Decree Nisi/Conditional Order.",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   }
 ]
