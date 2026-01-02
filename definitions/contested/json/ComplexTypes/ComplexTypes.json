@@ -3368,6 +3368,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "11/12/2025",
+    "ID": "FR_documentToRemove",
+    "ListElementCode": "caseDocumentUploadedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Document Upload Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "17/01/2025",
     "ID": "FR_attachmentsToShare",
     "ListElementCode": "documentId",
@@ -5272,7 +5281,7 @@
     "ID": "FR_workingVacatedHearing",
     "ListElementCode": "specifyOtherReason",
     "FieldType": "TextArea",
-    "ElementLabel": " ",
+    "ElementLabel": "Other reason",
     "FieldShowCondition": "vacateReason=\"Other\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -5543,7 +5552,7 @@
     "ID": "FR_vacatedOrAdjournedHearingTabItems",
     "ListElementCode": "tabSpecifyOtherReason",
     "FieldType": "Text",
-    "ElementLabel": "Other Reason",
+    "ElementLabel": " ",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   },

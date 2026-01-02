@@ -1,8 +1,8 @@
-import {test} from '../../../fixtures/fixtures';
-import config from '../../../config/config';
-import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import {ContestedEvents} from '../../../config/case-data';
-import {YesNoRadioEnum} from '../../../pages/helpers/enums/RadioEnums';
+import {test} from '../../../fixtures/fixtures.ts';
+import config from '../../../config/config.ts';
+import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
+import {ContestedEvents} from '../../../config/case-data.ts';
+import {YesNoRadioEnum} from '../../../pages/helpers/enums/RadioEnums.ts';
 import {AxeUtils} from '../../../fixtures/utils/axe-utils.ts';
 import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEventApi.ts';
 import {

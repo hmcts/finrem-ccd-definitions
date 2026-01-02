@@ -42,6 +42,12 @@ export const UploadApprovedOrderCaseDocumentsTabData: Tab[] = [{
   ]
 }];
 
+export const CaseDocumentsTabOnlineFormATabData: Tab[] = [{
+  tabName: 'Case documents',
+  tabContent: [
+    { tabItem: 'Online Form A', value: 'OnlineForm.pdf' }
+  ]
+}];
 
 export function buildCaseDocTabGeneralEmailContent(emails: Array<{
   emailDate: string,

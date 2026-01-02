@@ -4269,6 +4269,15 @@
     "DisplayContext": "READONLY"
   },
   {
+    "LiveFrom": "03/09/2024",
+    "ID": "FR_documentToRemove",
+    "CaseEventID": "FR_removeCaseDocument",
+    "CaseFieldID": "documentToKeepCollection",
+    "ListElementCode": "caseDocumentUploadedDate",
+    "FieldDisplayOrder": 3,
+    "DisplayContext": "READONLY"
+  },
+  {
     "LiveFrom": "21/01/2025",
     "ID": "FR_sendOrderToOrdersToShareWrapper",
     "CaseEventID": "FR_sendOrder",
@@ -7085,6 +7094,6 @@
     "CaseEventID": "FR_manageHearings",
     "CaseFieldID": "workingVacatedHearing",
     "ListElementCode": "specifyOtherReason",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   }
 ]

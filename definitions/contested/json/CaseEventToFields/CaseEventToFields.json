@@ -10662,11 +10662,23 @@
     "ShowSummaryChangeOption": "N"
   },
   {
+    "LiveFrom": "11/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_removeCaseDocument",
+    "CaseFieldID": "documentRemovalStateWarning",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N"
+  },
+  {
     "LiveFrom": "03/09/2024",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_removeCaseDocument",
     "CaseFieldID": "documentToKeepCollection",
-    "PageFieldDisplayOrder": 1,
+    "PageFieldDisplayOrder": 2,
     "DisplayContext": "READONLY",
     "PageID": 1,
     "PageDisplayOrder": 1,
