@@ -1566,5 +1566,12 @@
     "CaseEventID": "FR_removeUserCaseAccess",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "09/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "internal-change-UPDATE_CASE",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CR"
   }
 ]

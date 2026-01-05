@@ -48,6 +48,10 @@ export const CommonEvents: Record<string, CaseEvent> = {
   createGeneralEmail: {
     listItem: "Create General Email",
     ccdCallback: "FR_generalEmail"
+  },
+  stopRepresentingClient: {
+    listItem: "Stop representing a client",
+    ccdCallback: "FR_stopRepresentingClient"
   }
 };
 
@@ -87,7 +91,8 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
   applicationPaymentSubmission: CommonEvents.applicationPaymentSubmission,
   hwfDecisionMade: CommonEvents.hwfDecisionMade,
   issueApplication: CommonEvents.issueApplication,
-  addNotes: CommonEvents.addNotes
+  addNotes: CommonEvents.addNotes,
+  stopRepresentingClient: CommonEvents.stopRepresentingClient
 };
 
 // Contested Events
