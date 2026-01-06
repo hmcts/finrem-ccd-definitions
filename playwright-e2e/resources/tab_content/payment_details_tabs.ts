@@ -5,7 +5,11 @@ export const paymentDetailsTabData  = (helpWithFees: YesNoRadioEnum, pbaNumber: 
   tabName: 'Payment History',
   tabContent: [
     'Order Summary',
-    // { tabItem: 'FEE0229', value: 'Application for a financial order'},
+    'FEE0229',
+    'Application for a financial order',
+    '£313.00',
+    
+    'Payment details',
     { tabItem: 'Payment amount', value: '£313.00' },
     {
       tabItem: 'Payment method',

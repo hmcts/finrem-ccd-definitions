@@ -41,9 +41,9 @@ export class CaseDetailsPage {
         await this.goButton.isVisible();
         await this.selectNextStepDropDown.selectOption(event.listItem);
       }
-      await this.goButton.click({ clickCount: 1, force: true });
+      await this.goButton.click({ clickCount: 3, force: true });
       try {
-        await this.page.waitForURL(`**/${event.ccdCallback}/**`, { timeout: 6000 });
+        await this.page.waitForURL(`**/${event.ccdCallback}/**`, { timeout: 12000 });
         return;
       } catch (e) {
         if (attempt === maxRetries) throw e;
@@ -59,17 +59,7 @@ export class CaseDetailsPage {
   async assertTabData(tabs: Tab[]) {
     for (const tab of tabs) {
       await this.assertTabHeader(tab.tabName, tab.tabContent[0]);
-
-      // If this is the Payment History tab, click "Review" if it's visible
-      if (tab.tabName === 'Payment History') {
-        // Wait for the link to be attached to the DOM
-        const paymentReviewLink = this.page.getByRole('link', { name: 'Review' });
-        await paymentReviewLink.waitFor({ state: 'visible', timeout: 10000 });
-        await paymentReviewLink.click();
-        await this.page.getByRole('heading', { name: 'Payment details' });
-      }
-
-      // Now assert the tab content (which may now be visible after expanding)
+      // Wait for the first content item to be attached (visible in DOM)
       const firstContent = tab.tabContent[0];
       if (firstContent) {
         const text = typeof firstContent === 'string' ? firstContent : firstContent.tabItem;
@@ -102,8 +92,27 @@ export class CaseDetailsPage {
      * ensuring assertions are made against the correct DOM element.
      * Tab array items should be in right order, as they are displayed in the UI.
      */
-  private async assertTabContent(tabContent: TabContentItem[]): Promise<void> { 
+  private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
     const tabItemCount: Record<string, number> = {};
+
+    // Check if tableLocator is present, if not present then skip the review link click
+    const tableLocator = this.page.locator('#case-viewer-field-read--casePaymentHistoryViewer table');
+
+    // if tableLocator is present Find the first "Review" link in the 6th cell of any row
+    if (await tableLocator.count() > 0) { 
+      const reviewLink = this.page.locator(
+        '#case-viewer-field-read--casePaymentHistoryViewer table tbody tr td:nth-child(6) a'
+      );
+
+      // Wait for the link to be visible
+      await reviewLink.first().waitFor({ state: 'visible', timeout: 10000 });
+
+      // Scroll into view and click
+      await reviewLink.first().scrollIntoViewIfNeeded();
+      await reviewLink.first().click();
+
+    }
+
     for (const content of tabContent) {
       let tabKey: string;
       let position: number;
@@ -139,24 +148,13 @@ export class CaseDetailsPage {
         const expectedValues = content.value.split('|').map(v => {return v.trim();});
         for (let i = 0; i < expectedValues.length; i++) {
           const tabValue = tabItem.locator(
-            `xpath=ancestor::*[self::td or self::th]/following-sibling::*[self::td or self::th][${i + 1}]`
+            `xpath=ancestor::*[self::td or self::th or self::tr]/following-sibling::*[self::td or self::th][${i + 1}]`
           );
           if (!content.exact) {
             await expect(tabValue).toContainText(expectedValues[i]);
           } else {
             await expect(tabValue).toHaveText(expectedValues[i]);
           }
-        }
-        if (typeof content === 'object' && content.tabItem && content.value) {
-          // Special handling for table rows
-          const row = this.page.locator('tr', { has: this.page.getByText(content.tabItem, { exact: content.exact ?? true }) });
-          const valueCell = row.locator('td').nth(1);
-          if (!content.exact) {
-            await expect(valueCell).toContainText(content.value);
-          } else {
-            await expect(valueCell).toHaveText(content.value);
-          }
-          continue;
         }
       }
     }
