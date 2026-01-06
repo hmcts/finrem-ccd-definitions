@@ -104,11 +104,9 @@
     "generate-excel-local-all": "yarn generate-excel-local-consented && yarn generate-excel-local-contested",
     "highLevelDataSetup": "echo 'bash ./gradlew highLevelDataSetup --args=$1 && sh bin/after-data-setup-step.sh' > ./temp.sh && sh ./temp.sh",
     "yarn-update": "node bin/set-yarn-version.js",
-    "install-dependencies": "yarn install --silent"
+    "install-dependencies": "yarn install --silent",
+    "setup-precommit": "node bin/setup-precommit-hooks.mjs"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "dependencies": {
     "@axe-core/playwright": "^4.10.0",
     "@hmcts/nodejs-healthcheck": "^1.8.6",
@@ -147,7 +145,6 @@
     "mocha": "^11.0.0",
     "mochawesome": "^7.1.3",
     "otp": "^0.1.3",
-    "pre-commit": "^1.0.10",
     "prettier": "^3.3.3",
     "pretty-quick": "^4.2.2",
     "sheetjs-style": "^0.15.8",
@@ -156,7 +153,6 @@
   },
   "resolutions": {
     "@eslint/plugin-kit": "^0.5.0",
-    "cross-spawn": "^7.0.6",
     "on-headers": "^1.1.0",
     "puppeteer-core": "^24.0.0",
     "ws": "^8.18.0",
