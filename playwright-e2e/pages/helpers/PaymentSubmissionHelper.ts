@@ -26,7 +26,9 @@ export async function applicationCaseSubmission(
         hasHelpWithFees: YesNoRadioEnum,
         pbaNumber: string,
         reference: string,
-        amount: string
+        amount: string,
+        feeCode: string,
+        feeType: string
     },
   orderSummaryTable: string[][] = [
     ['FEE0229', 'Application for a financial order', '£313.00'],
@@ -73,5 +75,15 @@ export async function applicationCaseSubmission(
   await caseDetailsPage.checkHasBeenUpdated(param.caseEvent.listItem);
 
   // Assert Tab Data
-  await caseDetailsPage.assertTabData(paymentDetailsTabData(param.hasHelpWithFees?? YesNoRadioEnum.NO, param.pbaNumber, param.reference, paymentDateAndTime));
+  await caseDetailsPage.assertTabData(
+    paymentDetailsTabData(
+      param.hasHelpWithFees ?? YesNoRadioEnum.NO,
+      param.pbaNumber,
+      param.reference,
+      paymentDateAndTime,
+      param.amount,
+      param.feeCode,
+      param.feeType
+    )
+  );
 }

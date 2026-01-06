@@ -148,7 +148,7 @@ export class CaseDetailsPage {
         const expectedValues = content.value.split('|').map(v => {return v.trim();});
         for (let i = 0; i < expectedValues.length; i++) {
           const tabValue = tabItem.locator(
-            `xpath=ancestor::*[self::td or self::th or self::tr]/following-sibling::*[self::td or self::th][${i + 1}]`
+            `xpath=following-sibling::*[self::td or self::th][${i + 1}] | ancestor::*[self::td or self::th or self::tr][1]/following-sibling::*[self::td or self::th][${i + 1}]`
           );
           if (!content.exact) {
             await expect(tabValue).toContainText(expectedValues[i]);

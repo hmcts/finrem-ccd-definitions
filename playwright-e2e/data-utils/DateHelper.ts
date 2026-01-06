@@ -151,19 +151,18 @@ export class DateHelper {
   }
 
   /**
-   * Returns the current date and time formatted as "d MMMM yyyy HH:mm:ss" (e.g. "18 December 2025 12:19:54").
+   * Returns the current date and time formatted as "dd MMMM yyyy HH:mm:ss" (e.g. "06 January 2026 16:30").
    *
-   * @returns Formatted current date and time string.
+   * @returns Formatted current date and time string with zero-padded day.
    */
   static getCurrentDateTimeFull(): string {
     const now = new Date();
-    const day = now.getDate();
+    const day = now.getDate().toString().padStart(2, '0'); // zero-padded day
     const month = now.toLocaleString('en-GB', { month: 'long' });
     const year = now.getFullYear();
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    return `${day} ${month} ${year} ${hours}:${minutes}:${seconds}`;
+    return `${day} ${month} ${year} ${hours}:${minutes}:`;
   }
 
 }

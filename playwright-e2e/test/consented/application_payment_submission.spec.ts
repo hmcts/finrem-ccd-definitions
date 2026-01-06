@@ -8,7 +8,7 @@ import {envTestData} from '../../data-utils/test_data/EnvTestDataConfig.ts';
 
 test(
   'Consented - Application Payment Submission',
-  { tag: ['@chromium'] },
+  { tag: ['@chromium', '@payment'] },
   async (
     {
       loginPage,
@@ -29,6 +29,9 @@ test(
     const pbaNumber = envTestData.PBA_NUMBER;
     const reference = 'Reference';
     const hasHelpWithFees = YesNoRadioEnum.NO;
+    const amount = '£60.00';
+    const feeCode = 'FEE0228';
+    const feeType = 'Application (without notice)';
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
@@ -47,7 +50,9 @@ test(
         hasHelpWithFees: hasHelpWithFees,
         pbaNumber: pbaNumber,
         reference: reference,
-        amount: '£60.00'
+        amount: amount,
+        feeCode: feeCode,
+        feeType: feeType
       },
       [
         ['FEE0228', 'Application (without notice)', '£60.00'],
