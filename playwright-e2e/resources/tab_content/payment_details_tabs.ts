@@ -2,13 +2,9 @@ import { DateHelper } from '../../data-utils/DateHelper.ts';
 import {YesNoRadioEnum} from '../../pages/helpers/enums/RadioEnums.ts';
 
 export const paymentDetailsTabData = (
-  helpWithFees: YesNoRadioEnum,
-  pbaNumber: string,
-  reference: string,
-  currentDateTimeFull: string,
-  amount: string,
   feeCode: string,
-  feeType: string
+  feeType: string,
+  amount: string
 ) => {return [{
   tabName: 'Payment History',
   tabContent: [
@@ -16,8 +12,20 @@ export const paymentDetailsTabData = (
     
     feeCode,
     feeType,
-    amount,
-    
+    amount
+
+  ]
+}];};
+
+export function paymentDetailsReviewData(
+  amount: string,
+  helpWithFees: YesNoRadioEnum,
+  feeCode: string,  
+  pbaNumber: string,
+  reference: string,
+  currentDateTimeFull: string
+) {
+  return [
     'Payment details',
     { tabItem: 'Payment amount', value: amount },
     {
@@ -30,7 +38,5 @@ export const paymentDetailsTabData = (
     'Payment status history',
     { tabItem: 'Status', value: 'Date and time' },
     { tabItem: 'Success', value: currentDateTimeFull, exact: false }
-
-
-  ]
-}];};
+  ];
+}

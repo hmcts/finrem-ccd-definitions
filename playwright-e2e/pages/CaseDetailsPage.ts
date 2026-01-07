@@ -95,24 +95,6 @@ export class CaseDetailsPage {
   private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
     const tabItemCount: Record<string, number> = {};
 
-    // Check if tableLocator is present, if not present then skip the review link click
-    const tableLocator = this.page.locator('#case-viewer-field-read--casePaymentHistoryViewer table');
-
-    // if tableLocator is present Find the first "Review" link in the 6th cell of any row
-    if (await tableLocator.count() > 0) { 
-      const reviewLink = this.page.locator(
-        '#case-viewer-field-read--casePaymentHistoryViewer table tbody tr td:nth-child(6) a'
-      );
-
-      // Wait for the link to be visible
-      await reviewLink.first().waitFor({ state: 'visible', timeout: 10000 });
-
-      // Scroll into view and click
-      await reviewLink.first().scrollIntoViewIfNeeded();
-      await reviewLink.first().click();
-
-    }
-
     for (const content of tabContent) {
       let tabKey: string;
       let position: number;
@@ -321,6 +303,24 @@ export class CaseDetailsPage {
           }
         }
       }
+    }
+  }
+
+  /**
+   * Clicks the first "Review" link in the 6th cell of any row in the Payment History table,
+   * if the table and link are present and visible.
+   */
+  async clickPaymentHistoryReviewLink(): Promise<void> {
+    const tableLocator = this.page.locator('#case-viewer-field-read--casePaymentHistoryViewer table');
+    if (await tableLocator.count() > 0) {
+      const reviewLink = this.page.locator(
+        '#case-viewer-field-read--casePaymentHistoryViewer table tbody tr td:nth-child(6) a'
+      );
+      // Wait for the link to be visible
+      await reviewLink.first().waitFor({ state: 'visible', timeout: 20000 });
+      // Scroll into view and click
+      await reviewLink.first().scrollIntoViewIfNeeded();
+      await reviewLink.first().click();
     }
   }
 }

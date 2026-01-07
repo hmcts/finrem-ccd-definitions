@@ -1,7 +1,7 @@
 import {YesNoRadioEnum} from './enums/RadioEnums.ts';
 import {CaseEvent} from '../../config/case-data.ts';
 import {caseSubmissionTable} from '../../resources/check_your_answer_content/case_submission/caseSubmissionTable.ts';
-import {paymentDetailsTabData} from '../../resources/tab_content/payment_details_tabs.ts';
+import {paymentDetailsReviewData, paymentDetailsTabData} from '../../resources/tab_content/payment_details_tabs.ts';
 import {CaseDetailsPage} from '../CaseDetailsPage.ts';
 import {SolicitorAuthPage} from '../events/application-payment-submission/SolicitorAuthPage.ts';
 import {HelpWithFeesPage} from '../events/application-payment-submission/HelpWithFeesPage.ts';
@@ -77,13 +77,25 @@ export async function applicationCaseSubmission(
   // Assert Tab Data
   await caseDetailsPage.assertTabData(
     paymentDetailsTabData(
-      param.hasHelpWithFees ?? YesNoRadioEnum.NO,
-      param.pbaNumber,
-      param.reference,
-      paymentDateAndTime,
-      param.amount,
       param.feeCode,
-      param.feeType
+      param.feeType,
+      param.amount
     )
   );
+
+  await caseDetailsPage.clickPaymentHistoryReviewLink();
+
+  await caseDetailsPage.assertTabData([
+    {
+      tabName: 'Payment History',
+      tabContent: paymentDetailsReviewData(
+        param.amount,
+        param.hasHelpWithFees,
+        param.feeCode,
+        param.pbaNumber,
+        param.reference,
+        paymentDateAndTime
+      )
+    }
+  ]);
 }
