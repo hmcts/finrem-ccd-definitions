@@ -17,13 +17,13 @@ const stopRepresentingClientTestData = [
     addBarrister: false,
     isIntervener: false
   },
-  // {
-  //   title: 'Consented - Respondent Solicitor Stop representing a client event',
-  //   user: config.respondent_solicitor,
-  //   selectApplicant: false,
-  //   isConsented: true,
-  //   addBarrister: false
-  // },
+  {
+    title: 'Consented - Respondent Solicitor Stop representing a client event',
+    user: config.respondent_solicitor,
+    selectApplicant: false,
+    isConsented: true,
+    addBarrister: false
+  },
   {
     title: 'Contested - App Solicitor Stop representing a client event',
     user: config.applicant_solicitor,
@@ -31,48 +31,48 @@ const stopRepresentingClientTestData = [
     isConsented: false,
     addBarrister: false,
     isIntervener: false
-  }
-  // {
-  //   title: 'Contested - Applicant Barrister Stop representing a client event',
-  //   user: config.applicant_barrister,
-  //   selectApplicant: true,
-  //   isConsented: false,
-  //   addBarrister: true
-  //   isIntervener: false
-  // },
-  // {
-  //   title: 'Contested - Respondent Solicitor Stop representing a client event',
-  //   user: config.respondent_solicitor,
-  //   selectApplicant: false,
-  //   isConsented: false,
-  //   addBarrister: false
-  //   isIntervener: false
-  // },
-  // {
-  //   title: 'Contested - Respondent Barrister Stop representing a client event',
-  //   user: config.respondent_barrister,
-  //   selectApplicant: false,
-  //   isConsented: false,
-  //   addBarrister: true
-  //   isIntervener: false
+  },
+  {
+    title: 'Contested - Applicant Barrister Stop representing a client event',
+    user: config.applicant_barrister,
+    selectApplicant: true,
+    isConsented: false,
+    addBarrister: true,
+    isIntervener: false
+  },
+  {
+    title: 'Contested - Respondent Solicitor Stop representing a client event',
+    user: config.respondent_solicitor,
+    selectApplicant: false,
+    isConsented: false,
+    addBarrister: false,
+    isIntervener: false
+  },
+  {
+    title: 'Contested - Respondent Barrister Stop representing a client event',
+    user: config.respondent_barrister,
+    selectApplicant: false,
+    isConsented: false,
+    addBarrister: true,
+    isIntervener: false
 
-  // },
-  // {
-  //   title: 'Contested - Applicant Intervener Stop representing a client event',
-  //   user: config.applicant_intervener,
-  //   selectApplicant: true,
-  //   isConsented: false,
-  //   addBarrister: true,
-  //   isIntervener: true
-  // },
-  // {
-  //   title: 'Contested - Respondent Intervener Stop representing a client event',
-  //   user: config.respondent_intervener,
-  //   selectApplicant: false,
-  //   isConsented: false,
-  //   addBarrister: true,
-  //   isIntervener: true
-  // }
+  },
+  {
+    title: 'Contested - Applicant Intervener Stop representing a client event',
+    user: config.applicant_intervener,
+    selectApplicant: true,
+    isConsented: false,
+    addBarrister: true,
+    isIntervener: true
+  },
+  {
+    title: 'Contested - Respondent Intervener Stop representing a client event',
+    user: config.respondent_intervener,
+    selectApplicant: false,
+    isConsented: false,
+    addBarrister: true,
+    isIntervener: true
+  }
 ];
 
 test.describe('Notice of Change', () => {
