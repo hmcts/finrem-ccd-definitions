@@ -27,3 +27,17 @@ export const respondentStopRepresentingClientTable: Table = {
     { cellItem: 'Do you have judicial approval to stop representation?', value: 'Yes' }
   ]
 };
+
+export const intervenerStopRepresentingClientTable: Table = {
+  tableName: 'Check your answers',
+  rows: [
+    'Client\'s address for service',
+    { cellItem: 'Building and Street', value: '10 Selsdon Road' },
+    { cellItem: 'Town or City', value: 'London' },
+    { cellItem: 'Postcode/Zipcode', value: 'NW2 7NE' },
+    { cellItem: 'Country', value: 'United Kingdom' },
+    { cellItem: 'Keep the Intervener\'s contact details private from the Applicant & Respondent?', value: 'Yes' },
+    { cellItem: 'Does your client consent to you stopping representation?', value: 'No' },
+    { cellItem: 'Do you have judicial approval to stop representation?', value: 'Yes' }
+  ]
+};

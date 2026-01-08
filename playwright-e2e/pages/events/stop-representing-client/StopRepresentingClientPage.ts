@@ -8,6 +8,7 @@ export class StopRepresentingClientPage extends UpdateContactDetailsPage {
   private readonly consentToStopRepresentingRadio: Locator;
   private readonly applicantDetailsPrivateRadio: Locator;
   private readonly respondentDetailsPrivateRadio: Locator;
+  private readonly intervenerDetailsPrivateRadio: Locator;
   private readonly judicialApprovalQuestionText: Locator;
   private readonly judicialApprovalQuestionRadio: Locator;
   private readonly missingClientOrJudicialApprovalError: Locator;
@@ -20,6 +21,7 @@ export class StopRepresentingClientPage extends UpdateContactDetailsPage {
     this.consentToStopRepresentingRadio = page.getByRole('group', { name: 'Does your client consent to' });
     this.applicantDetailsPrivateRadio = page.getByRole('group', { name: 'Keep the Applicant\'s contact' });
     this.respondentDetailsPrivateRadio = page.getByRole('group', { name: 'Keep the Respondent\'s contact' });
+    this.intervenerDetailsPrivateRadio = page.getByRole('group', { name: 'Keep the Intervener\'s contact' });
     this.judicialApprovalQuestionText = page.getByText('Do you have judicial approval');
     this.judicialApprovalQuestionRadio = page.getByRole('group', { name: 'Do you have judicial approval' });
     this.missingClientOrJudicialApprovalError = page.getByText('You cannot stop representing');
@@ -37,6 +39,13 @@ export class StopRepresentingClientPage extends UpdateContactDetailsPage {
     const optionToSelect = this.respondentDetailsPrivateRadio.getByLabel(radioOption);
     await optionToSelect.check();
   }
+
+  async selectIntervenerDetailsPrivate(keepPrivate: YesNoRadioEnum) {
+    const radioOption = keepPrivate === YesNoRadioEnum.YES ? 'Yes' : 'No'; 
+    const optionToSelect = this.intervenerDetailsPrivateRadio.getByLabel(radioOption);
+    await optionToSelect.check();
+  }
+
   
   async consentToStopRepresentingClient(answer: YesNoRadioEnum){
     await expect(this.consentToStopRepresentingText).toBeVisible();
