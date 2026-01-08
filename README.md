@@ -239,3 +239,20 @@ NOTE: Jenkins will populate Judge details in the PROD configs that is not availa
 ## Judge Data in FixedLists
 
 To update judge data in `FixedLists` for Production, see [here](docs/fixedlists-judges.md).
+
+## Precommit checks
+
+[Husky](https://www.npmjs.com/package/husky) handles pre-commit checks.
+
+This is the file that determines the precommit checks that are run.
+
+```sh
+./husky/pre-commit
+```
+The file runs yarn lint, see the Scipts section in in package.json.
+If you get a message to say the pre-commit hook was ignored, register the hook with:
+```sh
+yarn setup-precommit
+```
+The pre-commit hook is automatically set on in the [setup step](https://github.com/hmcts/finrem-ccd-definitions/tree/DFR-4376-remove-pre-commit?tab=readme-ov-file#setup)
+

@@ -998,7 +998,7 @@
     "Name": "Update Respondent Details",
     "Description": "Update Respondent Details",
     "DisplayOrder": 128,
-    "PreConditionState(s)": "*",
+    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;awaitingResponse;newPaperCase;awaitingInfo;infoReceived;readyForHearing",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
@@ -1209,5 +1209,31 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "12/11/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_stopRepresentingClient",
+    "Name": "Stop representing a client",
+    "Description": "Stop representing a client",
+    "DisplayOrder": 67,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "09/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "internal-change-UPDATE_CASE",
+    "Name": "Update case",
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent"
   }
 ]
