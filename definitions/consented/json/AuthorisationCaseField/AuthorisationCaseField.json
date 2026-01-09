@@ -847,6 +847,34 @@
     "CRUD": "CR"
   },
   {
+    "LiveFrom": "09/01/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID":"hwfFeeReferenceNumber",
+    "UserRole": "caseworker-divorce-financialremedy",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "09/01/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID":"hwfFeeReferenceNumber",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "09/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "FinancialRemedyMVP2",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "09/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "FinancialRemedyMVP2",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "createCasePreConfirmationInfoText",
