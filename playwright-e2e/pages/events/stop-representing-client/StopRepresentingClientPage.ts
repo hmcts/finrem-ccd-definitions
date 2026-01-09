@@ -41,27 +41,26 @@ export class StopRepresentingClientPage extends UpdateContactDetailsPage {
   }
 
   async selectIntervenerDetailsPrivate(keepPrivate: YesNoRadioEnum) {
-    const radioOption = keepPrivate === YesNoRadioEnum.YES ? 'Yes' : 'No'; 
+    const radioOption = keepPrivate === YesNoRadioEnum.YES ? 'Yes' : 'No';
     const optionToSelect = this.intervenerDetailsPrivateRadio.getByLabel(radioOption);
     await optionToSelect.check();
   }
 
-  
-  async consentToStopRepresentingClient(answer: YesNoRadioEnum){
+  async consentToStopRepresentingClient(answer: YesNoRadioEnum) {
     await expect(this.consentToStopRepresentingText).toBeVisible();
-    const radioOption = answer === YesNoRadioEnum.YES ? 'Yes' : 'No'; 
+    const radioOption = answer === YesNoRadioEnum.YES ? 'Yes' : 'No';
     const radio = this.consentToStopRepresentingRadio.getByLabel(radioOption, { exact: true });
     await radio.check();
   }
 
-  async selectJudicialApprovalQuestion(answer: YesNoRadioEnum){
+  async selectJudicialApprovalQuestion(answer: YesNoRadioEnum) {
     await expect(this.judicialApprovalQuestionText).toBeVisible();
-    const radioOption = answer === YesNoRadioEnum.YES ? 'Yes' : 'No'; 
+    const radioOption = answer === YesNoRadioEnum.YES ? 'Yes' : 'No';
     const radio = this.judicialApprovalQuestionRadio.getByLabel(radioOption, { exact: true });
     await radio.check();
   }
 
-  async assertMissingClientOrJudicialApprovalError(){
+  async assertMissingClientOrJudicialApprovalError() {
     await expect(this.missingClientOrJudicialApprovalError).toBeVisible();
   }
 
