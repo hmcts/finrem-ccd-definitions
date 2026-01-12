@@ -4,7 +4,7 @@ import { DateHelper } from '../../data-utils/DateHelper.ts';
 import config from '../../config/config.ts';
 import { CommonEvents } from '../../config/case-data.ts';
 import { CaseTypeEnum, YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums.ts';
-import { applicantStopRepresentingClientTable, respondentStopRepresentingClientTable } from '../../resources/check_your_answer_content/stop-representing-client/stopRepresentingClientTable.ts';
+import { applicantStopRepresentingClientTable, intervenerStopRepresentingClientTable, respondentStopRepresentingClientTable } from '../../resources/check_your_answer_content/stop-representing-client/stopRepresentingClientTable.ts';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory.ts';
 import { ContestedEventApi } from '../../data-utils/api/contested/ContestedEventApi.ts';
 
@@ -14,7 +14,8 @@ const stopRepresentingClientTestData = [
     user: config.applicant_solicitor,
     selectApplicant: true,
     isConsented: true,
-    addBarrister: false
+    addBarrister: false,
+    isIntervener: false
   },
   {
     title: 'Consented - Respondent Solicitor Stop representing a client event',
@@ -28,28 +29,49 @@ const stopRepresentingClientTestData = [
     user: config.applicant_solicitor,
     selectApplicant: true,
     isConsented: false,
-    addBarrister: false
+    addBarrister: false,
+    isIntervener: false
   },
   {
     title: 'Contested - Applicant Barrister Stop representing a client event',
     user: config.applicant_barrister,
     selectApplicant: true,
     isConsented: false,
-    addBarrister: true
+    addBarrister: true,
+    isIntervener: false
   },
   {
     title: 'Contested - Respondent Solicitor Stop representing a client event',
     user: config.respondent_solicitor,
     selectApplicant: false,
     isConsented: false,
-    addBarrister: false
+    addBarrister: false,
+    isIntervener: false
   },
   {
     title: 'Contested - Respondent Barrister Stop representing a client event',
     user: config.respondent_barrister,
     selectApplicant: false,
     isConsented: false,
-    addBarrister: true
+    addBarrister: true,
+    isIntervener: false
+
+  },
+  {
+    title: 'Contested - Applicant Intervener Stop representing a client event',
+    user: config.applicant_intervener,
+    selectApplicant: true,
+    isConsented: false,
+    addBarrister: true,
+    isIntervener: true
+  },
+  {
+    title: 'Contested - Respondent Intervener Stop representing a client event',
+    user: config.respondent_intervener,
+    selectApplicant: false,
+    isConsented: false,
+    addBarrister: true,
+    isIntervener: true
   }
 ];
 
@@ -156,20 +178,25 @@ test.describe('Notice of Change', () => {
             caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
           }
 
-          // Assign users/barristers as needed
-          if (data.isConsented && !data.selectApplicant) {
-            await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONSENTED);
-          }
-          if (!data.isConsented && data.addBarrister && data.selectApplicant) {
-            await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
-          }
-          if (!data.isConsented && !data.selectApplicant) {
-            await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
-            if (data.addBarrister) {
-              await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
+          // Assign Solicitors/barristers/Intervener solicitors as needed
+          if (data.isIntervener) {
+            await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
+            await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
+          } else {
+            if (data.isConsented && !data.selectApplicant) {
+              await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONSENTED);
+            }
+            if (!data.isConsented && data.addBarrister && data.selectApplicant) {
+              await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
+            }
+            if (!data.isConsented && !data.selectApplicant) {
+              await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
+              if (data.addBarrister) {
+                await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
+              }
             }
           }
-          
+
           await manageCaseDashboardPage.visit();
           await loginPage.loginWaitForPath(data.user.email, data.user.password, config.manageCaseBaseURL, config.loginPaths.cases);
 
@@ -181,8 +208,10 @@ test.describe('Notice of Change', () => {
           await stopRepresentingClientPage.clickFindAddressButton();
           await stopRepresentingClientPage.selectAddress('10 Selsdon Road, London');
 
-          if (data.selectApplicant) {
+          if (data.selectApplicant && !data.isIntervener) {
             await stopRepresentingClientPage.selectApplicantDetailsPrivate(YesNoRadioEnum.YES);
+          } else if (data.isIntervener) {
+            await stopRepresentingClientPage.selectIntervenerDetailsPrivate(YesNoRadioEnum.YES);
           } else {
             await stopRepresentingClientPage.selectRespondentDetailsPrivate(YesNoRadioEnum.NO);
           }
@@ -198,20 +227,46 @@ test.describe('Notice of Change', () => {
           await stopRepresentingClientPage.navigateContinue();
 
           // check your answers
-          if (data.selectApplicant) {
+          if (data.selectApplicant && !data.isIntervener) {
             await checkYourAnswersPage.assertCheckYourAnswersPage(applicantStopRepresentingClientTable);
-          } else {
+          }
+          else if (data.isIntervener) {
+            await checkYourAnswersPage.assertCheckYourAnswersPage(intervenerStopRepresentingClientTable);
+          }
+          else {
             await checkYourAnswersPage.assertCheckYourAnswersPage(respondentStopRepresentingClientTable);
           }
+          
           await stopRepresentingClientPage.navigateSubmit();
 
           // Assert are you sure text is shown
           await stopRepresentingClientPage.assertAreYouSureYouWishToStopRepresentingText();
           await stopRepresentingClientPage.navigateIgnoreWarningAndGo();
 
-          await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor/barrister no longer has access to case
+          await manageCaseDashboardPage.navigateToCase(caseId, false); // verify solicitor/barrister/intervener no longer has access to case
+
+          await manageCaseDashboardPage.signOut();
+
+          // Try to login as barrister after intervener removal
+          if (data.isIntervener) {
+            // Determine which barrister to use based on selectApplicant
+            const barristerUser = data.selectApplicant
+              ? config.applicant_barrister
+              : config.respondent_barrister;
+
+            await manageCaseDashboardPage.visit();
+            await loginPage.loginWaitForPath(
+              barristerUser.email,
+              barristerUser.password,
+              config.manageCaseBaseURL,
+              config.loginPaths.cases
+            );
+            // Try to navigate to the case and assert access is denied            
+            await manageCaseDashboardPage.navigateToCase(caseId, false);
+                    
+          }
         }
       );
     }
-  }); 
+  });
 });
