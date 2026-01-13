@@ -3704,7 +3704,21 @@
     "LiveFrom": "25/11/2025",
     "ID": "FR_ManageHearingAction",
     "ListElementCode": "Vacate_Hearing",
-    "ListElement": "Vacate a hearing",
+    "ListElement": "Adjourn or Vacate a hearing",
     "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "13/01/2026",
+    "ID": "FR_VacateOrAdjournHearingAction",
+    "ListElementCode": "Adjourn_Action",
+    "ListElement": "Adjourn hearing",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "13/01/2026",
+    "ID": "FR_VacateOrAdjournHearingAction",
+    "ListElementCode": "Vacate_Action",
+    "ListElement": "Vacate hearing",
+    "DisplayOrder": 1
   }
 ]

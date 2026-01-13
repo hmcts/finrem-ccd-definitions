@@ -7065,6 +7065,14 @@
     "DisplayContext": "MANDATORY"
   },
   {
+    "LiveFrom": "13/01/2026",
+    "ID": "FR_workingVacatedHearing",
+    "CaseEventID": "FR_manageHearings",
+    "CaseFieldID": "workingVacatedHearing",
+    "ListElementCode": "chooseVacateOrAdjourn",
+    "DisplayContext": "MANDATORY"
+  },
+  {
     "LiveFrom": "25/11/2025",
     "ID": "FR_workingVacatedHearing",
     "CaseEventID": "FR_manageHearings",
