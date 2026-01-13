@@ -1,6 +1,6 @@
 import {YesNoRadioEnum} from './enums/RadioEnums.ts';
 import {CaseEvent} from '../../config/case-data.ts';
-import {caseSubmissionTable} from '../../resources/check_your_answer_content/case_submission/caseSubmissionTable.ts';
+import {caseSubmissionTable, caseSubmissionTableHWF} from '../../resources/check_your_answer_content/case_submission/caseSubmissionTable.ts';
 import {paymentDetailsReviewData, paymentDetailsTabData} from '../../resources/tab_content/payment_details_tabs.ts';
 import {CaseDetailsPage} from '../CaseDetailsPage.ts';
 import {SolicitorAuthPage} from '../events/application-payment-submission/SolicitorAuthPage.ts';
@@ -98,4 +98,72 @@ export async function applicationCaseSubmission(
       )
     }
   ]);
+}
+
+export async function applicationCaseSubmissionHWF(
+  caseDetailsPage: CaseDetailsPage,
+  solicitorAuthPage: SolicitorAuthPage,
+  helpWithFeesPage: HelpWithFeesPage,
+  orderSummaryPage: OrderSummaryPage,
+  caseSubmissionPage: CaseSubmissionPage,
+  checkYourAnswersPage: CheckYourAnswersPage,
+  param: {
+    caseEvent: CaseEvent,
+    hasHelpWithFees: YesNoRadioEnum,
+    hwfCode: string,
+    reference: string,
+    amount: string,
+    feeCode: string,
+    feeType: string
+  },
+  orderSummaryTable: string[][] = [
+    ['FEE0229', 'Application for a financial order', '£313.00'],
+    ['', 'Total', '£313.00']
+  ],
+  accessibility?: {
+    axeUtils: AxeUtils,
+    testInfo: TestInfo,
+  }
+) {
+  // Application Submission (HWF)
+  await caseDetailsPage.selectNextStep(param.caseEvent);
+
+  await solicitorAuthPage.assertAuthorisationPage();
+  await solicitorAuthPage.assertErrorMessageForMandatoryFields();
+  await solicitorAuthPage.enterSolicitorDetails('Bilbo Baggins', 'Bag End', 'Solicitor');
+  accessibility?.axeUtils.audit();
+  await solicitorAuthPage.navigateContinue();
+
+  await helpWithFeesPage.assertPaymentDetailsPage();
+  await helpWithFeesPage.assertErrorMessageForHelpWithFees();
+  await helpWithFeesPage.selectHelpWithFees(param.hasHelpWithFees ?? YesNoRadioEnum.YES);
+  accessibility?.axeUtils.audit();
+  await helpWithFeesPage.navigateContinue();
+
+  await helpWithFeesPage.enterHwfCode(param.hwfCode);
+  accessibility?.axeUtils.audit();
+  await helpWithFeesPage.navigateContinue();
+
+  await orderSummaryPage.assertOrderSummaryPage();
+  await orderSummaryPage.assertOrderSummaryTable(orderSummaryTable);
+  accessibility?.axeUtils.audit();
+  await orderSummaryPage.navigateContinue();
+
+  await caseSubmissionPage.navigateContinue();
+  await checkYourAnswersPage.assertCheckYourAnswersPage(caseSubmissionTableHWF(param.hwfCode));
+
+  await caseSubmissionPage.navigateSubmit();
+  const paymentDateAndTime = DateHelper.getCurrentDateTimeFull();
+  await caseSubmissionPage.returnToCaseDetails();
+  await caseDetailsPage.checkHasBeenUpdated(param.caseEvent.listItem);
+
+  // Assert Tab Data
+  await caseDetailsPage.assertTabData(
+    paymentDetailsTabData(
+      param.feeCode,
+      param.feeType,
+      param.amount,
+      param.hwfCode
+    )
+  );
 }

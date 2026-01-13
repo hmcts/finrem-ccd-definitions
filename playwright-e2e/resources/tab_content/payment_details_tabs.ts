@@ -4,18 +4,18 @@ import {YesNoRadioEnum} from '../../pages/helpers/enums/RadioEnums.ts';
 export const paymentDetailsTabData = (
   feeCode: string,
   feeType: string,
-  amount: string
+  amount: string,
+  hwfCode?: string
 ) => {return [{
   tabName: 'Payment History',
   tabContent: [
     'Order Summary',
-    
     feeCode,
     feeType,
     amount
-
   ]
-}];};
+}];
+};
 
 export function paymentDetailsReviewData(
   amount: string,
