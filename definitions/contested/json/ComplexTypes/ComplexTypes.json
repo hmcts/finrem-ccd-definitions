@@ -5250,7 +5250,7 @@
   {
     "LiveFrom": "13/01/2026",
     "ID": "FR_workingVacatedHearing",
-    "ListElementCode": "chooseVacateOrAdjourn",
+    "ListElementCode": "vacateOrAdjournAction",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_VacateOrAdjournHearingAction",
     "ElementLabel": "Adjourn or Vacate a hearing?",
@@ -5417,7 +5417,7 @@
     "ListElementCode": "vacateOrAdjournReason",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_vacateOrAdjournHearingReason",
-    "ElementLabel": "Why is the hearing being vacated?",
+    "ElementLabel": "Why is the hearing being adjourned or vacated?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
