@@ -27,7 +27,7 @@ export const adjournHearingRelistedTableData: Table = {
     {cellItem: 'Why is the hearing being adjourned or vacated?', value: 'Other - Please specify'},
     {cellItem: 'Will you be relisting the hearing and adding a new date now?', value: 'Yes - I can add the new date now'},
     'Hearing',
-    {cellItem: 'Type of Hearing', value: 'Pre-Trial Review (PTR)'},
+    {cellItem: 'Type of Hearing', value: 'Adjourned Financial Dispute Resolution (FDR)'},
     {cellItem: 'Hearing Time Estimate', value: '2 hours'},
     {cellItem: 'Hearing Date', value: hearingDate},
     {cellItem: 'Hearing Time', value: '10:00 AM'},

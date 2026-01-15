@@ -88,8 +88,8 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
       await manageHearingPage.fillAdjournOrVacateHearingDate('12', '12', '2025');
       await manageHearingPage.whyIsTheHearingBeingAdjournedOrVacated('Other - Please specify');
       await manageHearingPage.specifyOtherReasonForAdjournOrVacateHearing('The hearing is no longer required');
-      await manageHearingPage.navigateContinue();
       await axeUtils.audit();
+      await manageHearingPage.navigateContinue();
     
       //will you be relisting question
       await manageHearingPage.willYouBeRelistingQuestion('yes');
@@ -97,7 +97,7 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
     
       // add a hearing
       await manageHearingPage.addHearing({
-        type: 'Pre-Trial Review (PTR)',
+        type: 'Adjourned Financial Dispute Resolution (FDR)',
         duration: '2 hours',
         date: {},
         time: '10:00 AM',
@@ -132,7 +132,7 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
     
       //assert tab data
       const relistedHearingData = getManageHearingTabData({
-        typeOfHearing: 'Pre-Trial Review (PTR)',
+        typeOfHearing: 'Adjourned Financial Dispute Resolution (FDR)',
         court: 'Central Family Court',
         attendance: 'Remote - Video call',
         hearingTime: '10:00 AM',
