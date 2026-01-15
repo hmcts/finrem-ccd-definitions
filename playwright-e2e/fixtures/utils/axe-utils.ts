@@ -57,7 +57,8 @@ export class AxeUtils {
           : [options.exclude]
         : []),
       '.someoneViewing > .bannerText',
-      '.caseLocked'
+      '.caseLocked',
+      '.document-tree-container' // Excluding document tree due to aria-required-parent violations on tree items, tracked under EXUI-4025
     ];
 
     this.applySelectors(builder, 'exclude', excludeSelectors);
