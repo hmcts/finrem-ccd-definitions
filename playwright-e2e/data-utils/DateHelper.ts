@@ -150,4 +150,19 @@ export class DateHelper {
     return { currentDate, hearingDate };
   }
 
+  /**
+   * Returns the current date and time formatted as "dd MMMM yyyy HH:mm:ss" (e.g. "06 January 2026 16:30").
+   *
+   * @returns Formatted current date and time string with zero-padded day.
+   */
+  static getCurrentDateTimeFull(): string {
+    const now = new Date();
+    const day = now.getDate().toString().padStart(2, '0'); // zero-padded day
+    const month = now.toLocaleString('en-GB', { month: 'long' });
+    const year = now.getFullYear();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    return `${day} ${month} ${year} ${hours}:${minutes}:`;
+  }
+
 }

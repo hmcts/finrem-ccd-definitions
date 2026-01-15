@@ -1992,12 +1992,13 @@
     "SecurityClassification": "Public"
   },
   {
-    "LiveFrom": "01/06/2020",
+    "LiveFrom": "10/12/2025",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "paymentHistory",
-    "Label": "A history of payments associated with a the case",
+    "ID": "casePaymentHistoryViewer",
+    "Label": "Custom Payment History Viewer",
     "FieldType": "CasePaymentHistoryViewer",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
