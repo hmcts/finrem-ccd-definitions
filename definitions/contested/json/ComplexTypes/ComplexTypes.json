@@ -2969,6 +2969,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "16/01/2026",
+    "ID": "FR_intervener",
+    "ListElementCode": "IntervenerLabel",
+    "FieldType": "Label",
+    "ElementLabel": "Intervener Details",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_intervener",
     "ListElementCode": "intervenerName",
@@ -3108,6 +3117,16 @@
     "ListElementCode": "intervenerInRefuge",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the intervener currently a resident in a refuge?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "16/01/2026",
+    "ID": "FR_intervener",
+    "ListElementCode": "solUserId",
+    "FieldType": "Text",
+    "ElementLabel": "Intervener Solicitor User ID",
+    "FieldShowCondition": "IntervenerLabel=\"IMPOSSIBLE\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
