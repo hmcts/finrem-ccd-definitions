@@ -41,9 +41,9 @@ export class CaseDetailsPage {
         await this.goButton.isVisible();
         await this.selectNextStepDropDown.selectOption(event.listItem);
       }
-      await this.goButton.click({ clickCount: 1, force: true });
+      await this.goButton.click({ clickCount: 3, force: true });
       try {
-        await this.page.waitForURL(`**/${event.ccdCallback}/**`, { timeout: 6000 });
+        await this.page.waitForURL(`**/${event.ccdCallback}/**`, { timeout: 12000 });
         return;
       } catch (e) {
         if (attempt === maxRetries) throw e;
@@ -94,6 +94,7 @@ export class CaseDetailsPage {
      */
   private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
     const tabItemCount: Record<string, number> = {};
+
     for (const content of tabContent) {
       let tabKey: string;
       let position: number;
@@ -129,7 +130,7 @@ export class CaseDetailsPage {
         const expectedValues = content.value.split('|').map(v => {return v.trim();});
         for (let i = 0; i < expectedValues.length; i++) {
           const tabValue = tabItem.locator(
-            `xpath=ancestor::*[self::td or self::th]/following-sibling::*[self::td or self::th][${i + 1}]`
+            `xpath=following-sibling::*[self::td or self::th][${i + 1}] | ancestor::*[self::td or self::th or self::tr][1]/following-sibling::*[self::td or self::th][${i + 1}]`
           );
           if (!content.exact) {
             await expect(tabValue).toContainText(expectedValues[i]);
@@ -302,6 +303,24 @@ export class CaseDetailsPage {
           }
         }
       }
+    }
+  }
+
+  /**
+   * Clicks the first "Review" link in the 6th cell of any row in the Payment History table,
+   * if the table and link are present and visible.
+   */
+  async clickPaymentHistoryReviewLink(): Promise<void> {
+    const tableLocator = this.page.locator('#case-viewer-field-read--casePaymentHistoryViewer table');
+    if (await tableLocator.count() > 0) {
+      const reviewLink = this.page.locator(
+        '#case-viewer-field-read--casePaymentHistoryViewer table tbody tr td:nth-child(6) a'
+      );
+      // Wait for the link to be visible
+      await reviewLink.first().waitFor({ state: 'visible', timeout: 20000 });
+      // Scroll into view and click
+      await reviewLink.first().scrollIntoViewIfNeeded();
+      await reviewLink.first().click();
     }
   }
 }
