@@ -9462,6 +9462,20 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "20/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_updateCaseDetailsSolicitor",
+    "CaseFieldID": "currentUserCaseRole",
+    "PageFieldDisplayOrder": 8,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "RetainHiddenValue": "Y",
+    "FieldShowCondition": "applicantSolicitorAddressLabel=\" \"",
+    "_comment_": "New field needed for page 2, of that approach is kept for respondent solicitor page"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
@@ -9533,19 +9547,6 @@
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_updateCaseDetailsSolicitor",
-    "CaseFieldID": "currentUserCaseRole",
-    "PageFieldDisplayOrder": 9,
-    "DisplayContext": "READONLY",
-    "PageID": 2,
-    "PageDisplayOrder": 2,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "rSolicitorAddressLabel=\" \""
   },
   {
     "LiveFrom": "01/01/2017",
