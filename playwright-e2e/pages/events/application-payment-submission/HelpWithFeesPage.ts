@@ -5,11 +5,13 @@ import {YesNoRadioEnum} from '../../helpers/enums/RadioEnums.ts';
 export class HelpWithFeesPage extends BaseJourneyPage {
   private readonly paymentDetailsTitle: Locator;
   private helpWithFeesRadio: Locator;
+  private hwfCodeTextBox: Locator;
 
   constructor(page: Page) {
     super(page);
     this.paymentDetailsTitle = page.getByRole('heading', { name: 'Payment details' });
     this.helpWithFeesRadio = page.locator('#helpWithFeesQuestion_radio');
+    this.hwfCodeTextBox = page.getByRole('textbox', { name: 'Please enter your Help With' });
   }
 
   async assertPaymentDetailsPage() {
@@ -25,5 +27,10 @@ export class HelpWithFeesPage extends BaseJourneyPage {
   async assertErrorMessageForHelpWithFees() {
     const errorMessage = 'Has the applicant applied for help with fees online? is required';
     await this.assertErrorMessage([errorMessage]);
+  }
+
+  async enterHwfCode(hwfCode: string) {
+    await expect(this.hwfCodeTextBox).toBeVisible();
+    await this.hwfCodeTextBox.fill(hwfCode);
   }
 }

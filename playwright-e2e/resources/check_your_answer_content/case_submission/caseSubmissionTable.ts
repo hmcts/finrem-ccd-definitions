@@ -23,3 +23,20 @@ export function caseSubmissionTable(amount: string): Table {
     ]
   };
 }
+
+export function caseSubmissionTableHWF(hwfCode: string): Table {
+  return {
+    tableName: 'Case Submission Table',
+    rows: [
+      'AUTHORISATION',
+      'I am duly authorised by the Applicant to complete this application.',
+      {cellItem: 'Solicitor Name', value: 'Bilbo Baggins'},
+      {cellItem: 'Solicitor Firm', value: 'Bag End'},
+      {cellItem: 'Solicitor Position', value: 'Solicitor'},
+      {cellItem: 'Date', value: DateHelper.getTodayFormattedDate()},
+      'PAYMENT DETAILS',
+      {cellItem: 'Please enter your Help With Fees reference number', value: hwfCode},
+      `Help with fee reference: ${hwfCode}`
+    ]
+  };
+}
