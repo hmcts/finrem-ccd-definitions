@@ -68,7 +68,6 @@ export async function applicationCaseSubmission(
 
   await caseSubmissionPage.navigateContinue();
   await checkYourAnswersPage.assertCheckYourAnswersPage(caseSubmissionTable(param.amount));
-
   const paymentDateAndTime =  await caseSubmissionPage.navigateSubmit();
   await caseSubmissionPage.returnToCaseDetails();
   await caseDetailsPage.checkHasBeenUpdated(param.caseEvent.listItem);
