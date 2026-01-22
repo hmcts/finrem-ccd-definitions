@@ -1,5 +1,6 @@
 import {expect, Locator, type Page} from '@playwright/test';
 import {FieldDescriptor} from './components/field_descriptor.ts';
+import { DateHelper } from '../data-utils/DateHelper.ts';
 
 export abstract class BaseJourneyPage {
   protected readonly page: Page;
@@ -47,7 +48,9 @@ export abstract class BaseJourneyPage {
     await expect(this.submitButton).toBeEnabled();
     await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
     await this.submitButton.click();
+    const submissionDateAndTime = DateHelper.getCurrentDateTimeFull();
     await this.waitForSpinner();
+    return submissionDateAndTime;
   }
 
   /**
