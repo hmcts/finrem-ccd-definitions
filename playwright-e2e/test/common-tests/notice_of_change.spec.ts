@@ -169,7 +169,7 @@ test.describe('Notice of Change', () => {
     for (const data of stopRepresentingClientTestData) {
       test(
         data.title, { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, stopRepresentingClientPage, checkYourAnswersPage }) => {
+        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, stopRepresentingClientPage, axeUtils, checkYourAnswersPage }) => {
           // Create case
           let caseId;
           if (data.isConsented) {
@@ -179,22 +179,14 @@ test.describe('Notice of Change', () => {
           }
 
           // Assign Solicitors/barristers/Intervener solicitors as needed
-          if (data.isIntervener) {
+          if (data.isConsented) {
+            await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONSENTED);
+          } else {
             await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
             await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
-          } else {
-            if (data.isConsented && !data.selectApplicant) {
-              await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONSENTED);
-            }
-            if (!data.isConsented && data.addBarrister && data.selectApplicant) {
-              await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
-            }
-            if (!data.isConsented && !data.selectApplicant) {
-              await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
-              if (data.addBarrister) {
-                await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
-              }
-            }
+            await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
+            await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
+            await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
           }
 
           await manageCaseDashboardPage.visit();
@@ -218,12 +210,14 @@ test.describe('Notice of Change', () => {
 
           await stopRepresentingClientPage.consentToStopRepresentingClient(YesNoRadioEnum.NO);
           await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.NO);
+          await axeUtils.audit();
           await stopRepresentingClientPage.navigateContinue();
 
           // Assert error message is shown for missing judicial approval or client consent
           await stopRepresentingClientPage.assertMissingClientOrJudicialApprovalError();
 
           await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.YES);
+          await axeUtils.audit();
           await stopRepresentingClientPage.navigateContinue();
 
           // check your answers
