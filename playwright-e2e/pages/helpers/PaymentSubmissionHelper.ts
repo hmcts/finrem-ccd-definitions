@@ -68,9 +68,7 @@ export async function applicationCaseSubmission(
 
   await caseSubmissionPage.navigateContinue();
   await checkYourAnswersPage.assertCheckYourAnswersPage(caseSubmissionTable(param.amount));
-
-  await caseSubmissionPage.navigateSubmit();
-  const paymentDateAndTime = DateHelper.getCurrentDateTimeFull();
+  const paymentDateAndTime =  await caseSubmissionPage.navigateSubmit();
   await caseSubmissionPage.returnToCaseDetails();
   await caseDetailsPage.checkHasBeenUpdated(param.caseEvent.listItem);
 
@@ -153,7 +151,6 @@ export async function applicationCaseSubmissionHWF(
   await checkYourAnswersPage.assertCheckYourAnswersPage(caseSubmissionTableHWF(param.hwfCode));
 
   await caseSubmissionPage.navigateSubmit();
-  const paymentDateAndTime = DateHelper.getCurrentDateTimeFull();
   await caseSubmissionPage.returnToCaseDetails();
   await caseDetailsPage.checkHasBeenUpdated(param.caseEvent.listItem);
 
