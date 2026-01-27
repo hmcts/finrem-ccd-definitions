@@ -4,7 +4,7 @@ import { DateHelper } from '../../data-utils/DateHelper.ts';
 import config from '../../config/config.ts';
 import { CommonEvents } from '../../config/case-data.ts';
 import { CaseTypeEnum, YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums.ts';
-import { applicantStopRepresentingClientTable, intervenerStopRepresentingClientTable, respondentStopRepresentingClientTable } from '../../resources/check_your_answer_content/stop-representing-client/stopRepresentingClientTable.ts';
+import { applicantStopRepresentingClientTable, intervenerAndApplicantStopRepresentingClientTable, intervenerAndRespondentStopRepresentingClientTable, respondentStopRepresentingClientTable } from '../../resources/check_your_answer_content/stop-representing-client/stopRepresentingClientTable.ts';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory.ts';
 import { ContestedEventApi } from '../../data-utils/api/contested/ContestedEventApi.ts';
 
@@ -196,16 +196,23 @@ test.describe('Notice of Change', () => {
 
           await caseDetailsPage.selectNextStep(CommonEvents.stopRepresentingClient);
 
-          await stopRepresentingClientPage.enterAddress('NW2 7NE');
-          await stopRepresentingClientPage.clickFindAddressButton();
-          await stopRepresentingClientPage.selectAddress('10 Selsdon Road, London');
+          await stopRepresentingClientPage.enterAddressForUser('NW2 7NE', '10 Selsdon Road, London');
+          if (!data.isConsented) {
+            await stopRepresentingClientPage.enterAddressForExtraClient('NW2 7NE', '12 Selsdon Road, London');
+          }
 
-          if (data.selectApplicant && !data.isIntervener) {
-            await stopRepresentingClientPage.selectApplicantDetailsPrivate(YesNoRadioEnum.YES);
-          } else if (data.isIntervener) {
-            await stopRepresentingClientPage.selectIntervenerDetailsPrivate(YesNoRadioEnum.YES);
+          if (data.selectApplicant) {
+            if (data.isConsented) {
+              await stopRepresentingClientPage.selectApplicantDetailsPrivate(YesNoRadioEnum.YES);
+            } else {
+              await stopRepresentingClientPage.selectIntervenerDetailsPrivate(YesNoRadioEnum.YES);
+              await stopRepresentingClientPage.selectApplicantDetailsPrivate(YesNoRadioEnum.YES);
+            }
           } else {
             await stopRepresentingClientPage.selectRespondentDetailsPrivate(YesNoRadioEnum.NO);
+            if (!data.isConsented) {
+              await stopRepresentingClientPage.selectIntervenerDetailsPrivate(YesNoRadioEnum.NO, 2);
+            }
           }
 
           await stopRepresentingClientPage.consentToStopRepresentingClient(YesNoRadioEnum.NO);
@@ -221,16 +228,17 @@ test.describe('Notice of Change', () => {
           await stopRepresentingClientPage.navigateContinue();
 
           // check your answers
-          if (data.selectApplicant && !data.isIntervener) {
-            await checkYourAnswersPage.assertCheckYourAnswersPage(applicantStopRepresentingClientTable);
+          let table;
+          if (data.selectApplicant && data.isConsented) {
+            table = applicantStopRepresentingClientTable;
+          } else if (!data.isConsented && data.selectApplicant) {
+            table = intervenerAndApplicantStopRepresentingClientTable;
+          } else if (!data.isConsented && !data.selectApplicant) {
+            table = intervenerAndRespondentStopRepresentingClientTable;
+          } else {
+            table = respondentStopRepresentingClientTable;
           }
-          else if (data.isIntervener) {
-            await checkYourAnswersPage.assertCheckYourAnswersPage(intervenerStopRepresentingClientTable);
-          }
-          else {
-            await checkYourAnswersPage.assertCheckYourAnswersPage(respondentStopRepresentingClientTable);
-          }
-          
+          await checkYourAnswersPage.assertCheckYourAnswersPage(table);
           await stopRepresentingClientPage.navigateSubmit();
 
           // Assert are you sure text is shown
@@ -257,8 +265,7 @@ test.describe('Notice of Change', () => {
             );
             // Try to navigate to the case and assert access is denied            
             await manageCaseDashboardPage.navigateToCase(caseId, false);
-                    
-          }
+          }         
         }
       );
     }
