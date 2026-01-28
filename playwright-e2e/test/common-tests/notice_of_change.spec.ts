@@ -7,6 +7,7 @@ import { CaseTypeEnum, YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnu
 import { applicantStopRepresentingClientTable, intervenerAndApplicantStopRepresentingClientTable, intervenerAndRespondentStopRepresentingClientTable, respondentStopRepresentingClientTable } from '../../resources/check_your_answer_content/stop-representing-client/stopRepresentingClientTable.ts';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory.ts';
 import { ContestedEventApi } from '../../data-utils/api/contested/ContestedEventApi.ts';
+import { title } from 'process';
 
 const stopRepresentingClientTestData = [
   {
@@ -72,7 +73,15 @@ const stopRepresentingClientTestData = [
     isConsented: false,
     addBarrister: true,
     isIntervener: true
-  }
+  },
+  {
+    title: 'Contested - Intervener Barrister Stop representing a client event',
+    user: config.intervener_barrister,
+    selectApplicant: true,
+    isConsented: false,
+    addBarrister: true,
+    isIntervener: true
+  }   
 ];
 
 test.describe('Notice of Change', () => {
@@ -186,6 +195,7 @@ test.describe('Notice of Change', () => {
             await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
             await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
             await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
+            await ContestedEventApi.intervenerAddsIntervenerBarrister(caseId);
             await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
           }
 
