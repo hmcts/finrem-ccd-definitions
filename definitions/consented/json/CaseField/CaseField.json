@@ -2374,14 +2374,31 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "showClientAddressForService",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "clientAddressForServiceLabel",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "clientAddressForService",
-    "Label": "Client's address for service",
+    "Label": "${clientAddressForServiceLabel}",
     "FieldType": "AddressUK",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "_comment_": "Input by applicant/respondent solicitor during stop representing a client"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "12/11/2025",
@@ -2412,6 +2429,206 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "stopRepJudicialApproval",
     "Label": "Do you have judicial approval to stop representation?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "21/01/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "intervener1",
+    "Label": "Intervener 1",
+    "FieldType": "FR_intervener",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/01/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "intervener2",
+    "Label": "Intervener 2",
+    "FieldType": "FR_intervener",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/01/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "intervener3",
+    "Label": "Intervener 3",
+    "FieldType": "FR_intervener",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/01/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "intervener4",
+    "Label": "Intervener 4",
+    "FieldType": "FR_intervener",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr1Id",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr1Label",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr1",
+    "Label": "${extraClientAddr1Label}",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr1ConfidentialLabel",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr1Confidential",
+    "Label": "${extraClientAddr1ConfidentialLabel}",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr2Id",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr2Label",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr2",
+    "Label": "${extraClientAddr2Label}",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr2ConfidentialLabel",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr2Confidential",
+    "Label": "${extraClientAddr2ConfidentialLabel}",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr3Id",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr3Label",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr3",
+    "Label": "${extraClientAddr3Label}",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr3ConfidentialLabel",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr3Confidential",
+    "Label": "${extraClientAddr3ConfidentialLabel}",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr4Id",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr4Label",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr4",
+    "Label": "${extraClientAddr4Label}",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr4ConfidentialLabel",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "extraClientAddr4Confidential",
+    "Label": "${extraClientAddr4ConfidentialLabel}",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
   }
