@@ -73,6 +73,8 @@ def secrets = [
         secret("playwright-solicitor2-password","PLAYWRIGHT_SOLICITOR2_PSWD"),
         secret("playwright-respondent-sol2-username","PLAYWRIGHT_RESPONDENT_SOL2_USERNAME"),
         secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD"),
+        secret("playwright-int-barrister-username","PLAYWRIGHT_INT_BARRISTER_USERNAME"),
+        secret("playwright-int-barrister-password","PLAYWRIGHT_INT_BARRISTER_PSWD"),
         secret("SUPERCASEWORKER-USERNAME","USERNAME_SUPERCASEWORKER"),
         secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER"),
         secret("nightlydevtoken","GITHUB_TOKEN")
