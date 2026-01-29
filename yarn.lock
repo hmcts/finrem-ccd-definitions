@@ -1306,16 +1306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.0.0":
-  version: 22.19.7
-  resolution: "@types/node@npm:22.19.7"
-  dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10/0a5c9cc3bdd2a2d8105735b136e280a2dec90136679adfe82faa7e4de375dcc6b4cebaa6b2de35cc6b37e5e135cdc9486373d574782a4ca22f5eeab299111aa6
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^24.0.1":
+"@types/node@npm:^24.0.0, @types/node@npm:^24.0.1":
   version: 24.10.9
   resolution: "@types/node@npm:24.10.9"
   dependencies:
@@ -3753,7 +3744,7 @@ __metadata:
     "@shinnn/eslint-config": "npm:^7.0.0"
     "@types/fs-extra": "npm:^11.0.4"
     "@types/lodash": "npm:^4.17.21"
-    "@types/node": "npm:^22.0.0"
+    "@types/node": "npm:^24.0.0"
     "@types/proper-lockfile": "npm:^4.1.4"
     "@typescript-eslint/eslint-plugin": "npm:^8.48.0"
     "@typescript-eslint/parser": "npm:^8.48.0"
