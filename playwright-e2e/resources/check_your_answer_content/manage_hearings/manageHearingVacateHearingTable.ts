@@ -6,10 +6,11 @@ const hearingDate =  DateHelper.getFormattedDateTwelveWeeksLater();
 export const vacateHearingNotRelistedTableData: Table = {
   tableName: 'Check your answers',
   rows: [
-    'Vacate Hearing',
+    'Adjourn or Vacate hearing',
+    {cellItem: 'Adjourn or Vacate a hearing?', value: 'Vacate hearing'},
     {cellItem: 'Which hearing?', value: hearingDate + ' 10:00am - First Directions Appointment (FDA)'},
-    {cellItem: 'When was the hearing vacated?', value: '12 Dec 2025'},
-    {cellItem: 'Why is the hearing being vacated?', value: 'Other - Please specify'},
+    {cellItem: 'When was the hearing adjourned or vacated?', value: '12 Dec 2025'},
+    {cellItem: 'Why is the hearing being adjourned or vacated?', value: 'Other - Please specify'},
     'The hearing is no longer required',
     {cellItem: 'Will you be relisting the hearing and adding a new date now?', value: 'No'},
     {cellItem: 'Do you want to send notices?', value: 'Yes'}
@@ -19,10 +20,11 @@ export const vacateHearingNotRelistedTableData: Table = {
 export const vacateHearingRelistedTableData: Table = {
   tableName: 'Check your answers',
   rows: [
-    'Vacate Hearing',
+    'Adjourn or Vacate hearing',
+    {cellItem: 'Adjourn or Vacate a hearing?', value: 'Vacate hearing'},
     {cellItem: 'Which hearing?', value: hearingDate + ' 10:00am - First Directions Appointment (FDA)'},
-    {cellItem: 'When was the hearing vacated?', value: '12 Dec 2025'},
-    {cellItem: 'Why is the hearing being vacated?', value: 'Other - Please specify'},
+    {cellItem: 'When was the hearing adjourned or vacated?', value: '12 Dec 2025'},
+    {cellItem: 'Why is the hearing being adjourned or vacated?', value: 'Other - Please specify'},
     {cellItem: 'Will you be relisting the hearing and adding a new date now?', value: 'Yes - I can add the new date now'},
     'Hearing',
     {cellItem: 'Type of Hearing', value: 'Pre-Trial Review (PTR)'},
@@ -42,10 +44,11 @@ export const vacateHearingRelistedTableData: Table = {
 export const vacateHearingRelistedStandardFdaTableData: Table = {
   tableName: 'Check your answers',
   rows: [
-    'Vacate Hearing',
+    'Adjourn or Vacate hearing',
+    {cellItem: 'Adjourn or Vacate a hearing?', value: 'Vacate hearing'},
     {cellItem: 'Which hearing?', value: hearingDate + ' 10:00am - First Directions Appointment (FDA)'},
-    {cellItem: 'When was the hearing vacated?', value: '12 Dec 2025'},
-    {cellItem: 'Why is the hearing being vacated?', value: 'Other - Please specify'},
+    {cellItem: 'When was the hearing adjourned or vacated?', value: '12 Dec 2025'},
+    {cellItem: 'Why is the hearing being adjourned or vacated?', value: 'Other - Please specify'},
     {cellItem: 'Will you be relisting the hearing and adding a new date now?', value: 'Yes - I can add the new date now'},
     'Hearing',
     {cellItem: 'Type of Hearing', value: 'First Directions Appointment (FDA)'},
@@ -65,10 +68,11 @@ export const vacateHearingRelistedStandardFdaTableData: Table = {
 export const vacateHearingRelistedExpressFdrTableData: Table = {
   tableName: 'Check your answers',
   rows: [
-    'Vacate Hearing',
+    'Adjourn or Vacate hearing',
+    {cellItem: 'Adjourn or Vacate a hearing?', value: 'Vacate hearing'},
     {cellItem: 'Which hearing?', value: hearingDate + ' 10:00am - First Directions Appointment (FDA)'},
-    {cellItem: 'When was the hearing vacated?', value: '12 Dec 2025'},
-    {cellItem: 'Why is the hearing being vacated?', value: 'Other - Please specify'},
+    {cellItem: 'When was the hearing adjourned or vacated?', value: '12 Dec 2025'},
+    {cellItem: 'Why is the hearing being adjourned or vacated?', value: 'Other - Please specify'},
     {cellItem: 'Will you be relisting the hearing and adding a new date now?', value: 'Yes - I can add the new date now'},
     'Hearing',
     {cellItem: 'Type of Hearing', value: 'Financial Dispute Resolution (FDR)'},
