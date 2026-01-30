@@ -1,2 +1,22 @@
 [
+  {
+    "LiveFrom": "29/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantAccessCodes",
+    "Label": " ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_accessCodeEntry",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentAccessCodes",
+    "Label": " ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_accessCodeEntry",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }
 ]
