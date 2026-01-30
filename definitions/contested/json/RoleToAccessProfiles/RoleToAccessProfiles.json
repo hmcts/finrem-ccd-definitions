@@ -3,7 +3,7 @@
     "RoleName" : "idam:caseworker-divorce-financialremedy-judiciary",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyContested",
-    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary",
+    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary,payments",
     "ReadOnly": "N",
     "Disabled": "F",
     "CaseAccessCategories": ""
@@ -12,7 +12,7 @@
     "RoleName" : "idam:caseworker-divorce-financialremedy-solicitor",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyContested",
-    "AccessProfiles": "caseworker-divorce-financialremedy-solicitor",
+    "AccessProfiles": "caseworker-divorce-financialremedy-solicitor,payments",
     "ReadOnly": "N",
     "Disabled": "F",
     "CaseAccessCategories": ""
@@ -21,7 +21,7 @@
     "RoleName" : "idam:caseworker-divorce-financialremedy-courtadmin",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyContested",
-    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin,payments",
     "ReadOnly": "N",
     "Disabled": "F",
     "CaseAccessCategories": ""
@@ -30,7 +30,7 @@
     "RoleName" : "idam:caseworker-divorce-financialremedy-superuser",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyContested",
-    "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
+    "AccessProfiles": "caseworker-divorce-financialremedy-superuser,payments",
     "ReadOnly": "N",
     "Disabled": "F",
     "CaseAccessCategories": ""
