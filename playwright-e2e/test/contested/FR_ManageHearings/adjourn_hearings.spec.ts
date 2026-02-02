@@ -56,7 +56,7 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
           duration: '1hr 20mins',
           whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',
           additionalInformation: 'This is additional information about the hearing',
-          uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'VacateHearingNotice.pdf', 'Dummy QA copy.doc'],
+          uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'AdjournedHearingNotice.pdf', 'Dummy QA copy.doc'],
           reasonForVacating: 'Other - Please specify',
           otherReasonForVacating: 'The hearing is no longer required'
         })
@@ -141,7 +141,7 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
         additionalInformation: 'Hearing details here',
         uploadFiles: ['HearingNotice.pdf', 'final_hearing_file1.pdf']
       });
-      const vacatedData = getVacatedHearingTabData({
+      const adjournedData = getVacatedHearingTabData({
         typeOfHearing: 'First Directions Appointment (FDA)',
         vacatedOrAdjournedDate: '12 Dec 2025',
         hearingStatus: 'Adjourned',
@@ -151,14 +151,14 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
         whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',
         additionalInformation: 'This is additional information about the hearing',
         uploadFiles: [
-          'HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf','VacateHearingNotice.pdf', 'Dummy QA copy.doc'
+          'HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf','AdjournedHearingNotice.pdf', 'Dummy QA copy.doc'
         ],
         reasonForVacating: 'Other - Please specify',
         otherReasonForVacating: 'The hearing is no longer required'
       });
     
       // Set position: 1 for all object tab items except the section header
-      vacatedData.tabContent = vacatedData.tabContent.map(item => {
+      adjournedData.tabContent = adjournedData.tabContent.map(item => {
         return typeof item === 'object' && item.tabItem && [
           'Type of Hearing',
           'Court',
@@ -174,7 +174,7 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
       }
       );
     
-      await caseDetailsPage.assertTabData([relistedHearingData, vacatedData]);
+      await caseDetailsPage.assertTabData([relistedHearingData, adjournedData]);
     
       await manageCaseDashboardPage.signOut();
     
