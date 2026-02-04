@@ -125,6 +125,11 @@ const configuration = {
     password: process.env.PLAYWRIGHT_RESPONDENT_SOL2_PSWD || '',
   },
 
+  intervener_barrister: {
+    email: process.env.PLAYWRIGHT_INT_BARRISTER_USERNAME || '',
+    password: process.env.PLAYWRIGHT_INT_BARRISTER_PSWD || '',
+  },
+
   jurisdiction: {
     familyDivorce: (process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`) === 'https://manage-case.demo.platform.hmcts.net'
     ? 'Family Divorce - v104-26.1'
