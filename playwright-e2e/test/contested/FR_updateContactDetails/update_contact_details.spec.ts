@@ -119,7 +119,7 @@ test(
 );
 
 test(
-  'Contested - Update contact details - change in representation - without changing/removing representation details',
+  'Contested - Update contact details - change of address - without changing/removing representation details',
   { tag: [] },
   async (
     {
