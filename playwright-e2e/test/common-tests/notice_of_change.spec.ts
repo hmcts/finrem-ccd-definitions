@@ -4,9 +4,10 @@ import { DateHelper } from '../../data-utils/DateHelper.ts';
 import config from '../../config/config.ts';
 import { CommonEvents } from '../../config/case-data.ts';
 import { CaseTypeEnum, YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums.ts';
-import { applicantStopRepresentingClientTable, intervenerStopRepresentingClientTable, respondentStopRepresentingClientTable } from '../../resources/check_your_answer_content/stop-representing-client/stopRepresentingClientTable.ts';
+import { applicantStopRepresentingClientTable, intervenerAndApplicantStopRepresentingClientTable, intervenerAndRespondentStopRepresentingClientTable, respondentStopRepresentingClientTable } from '../../resources/check_your_answer_content/stop-representing-client/stopRepresentingClientTable.ts';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory.ts';
 import { ContestedEventApi } from '../../data-utils/api/contested/ContestedEventApi.ts';
+import { title } from 'process';
 
 const stopRepresentingClientTestData = [
   {
@@ -72,7 +73,15 @@ const stopRepresentingClientTestData = [
     isConsented: false,
     addBarrister: true,
     isIntervener: true
-  }
+  },
+  {
+    title: 'Contested - Intervener Barrister Stop representing a client event',
+    user: config.intervener_barrister,
+    selectApplicant: true,
+    isConsented: false,
+    addBarrister: true,
+    isIntervener: true
+  }   
 ];
 
 test.describe('Notice of Change', () => {
@@ -169,7 +178,7 @@ test.describe('Notice of Change', () => {
     for (const data of stopRepresentingClientTestData) {
       test(
         data.title, { tag: [] },
-        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, stopRepresentingClientPage, checkYourAnswersPage }) => {
+        async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, stopRepresentingClientPage, axeUtils, checkYourAnswersPage }) => {
           // Create case
           let caseId;
           if (data.isConsented) {
@@ -179,22 +188,15 @@ test.describe('Notice of Change', () => {
           }
 
           // Assign Solicitors/barristers/Intervener solicitors as needed
-          if (data.isIntervener) {
+          if (data.isConsented) {
+            await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONSENTED);
+          } else {
             await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
             await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
-          } else {
-            if (data.isConsented && !data.selectApplicant) {
-              await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONSENTED);
-            }
-            if (!data.isConsented && data.addBarrister && data.selectApplicant) {
-              await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
-            }
-            if (!data.isConsented && !data.selectApplicant) {
-              await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
-              if (data.addBarrister) {
-                await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
-              }
-            }
+            await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
+            await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
+            await ContestedEventApi.intervenerAddsIntervenerBarrister(caseId);
+            await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
           }
 
           await manageCaseDashboardPage.visit();
@@ -204,39 +206,49 @@ test.describe('Notice of Change', () => {
 
           await caseDetailsPage.selectNextStep(CommonEvents.stopRepresentingClient);
 
-          await stopRepresentingClientPage.enterAddress('NW2 7NE');
-          await stopRepresentingClientPage.clickFindAddressButton();
-          await stopRepresentingClientPage.selectAddress('10 Selsdon Road, London');
+          await stopRepresentingClientPage.enterAddressForUser('NW2 7NE', '10 Selsdon Road, London');
+          if (!data.isConsented) {
+            await stopRepresentingClientPage.enterAddressForExtraClient('NW2 7NE', '12 Selsdon Road, London');
+          }
 
-          if (data.selectApplicant && !data.isIntervener) {
-            await stopRepresentingClientPage.selectApplicantDetailsPrivate(YesNoRadioEnum.YES);
-          } else if (data.isIntervener) {
-            await stopRepresentingClientPage.selectIntervenerDetailsPrivate(YesNoRadioEnum.YES);
+          if (data.selectApplicant) {
+            if (data.isConsented) {
+              await stopRepresentingClientPage.selectApplicantDetailsPrivate(YesNoRadioEnum.YES);
+            } else {
+              await stopRepresentingClientPage.selectIntervenerDetailsPrivate(YesNoRadioEnum.YES);
+              await stopRepresentingClientPage.selectApplicantDetailsPrivate(YesNoRadioEnum.YES);
+            }
           } else {
             await stopRepresentingClientPage.selectRespondentDetailsPrivate(YesNoRadioEnum.NO);
+            if (!data.isConsented) {
+              await stopRepresentingClientPage.selectIntervenerDetailsPrivate(YesNoRadioEnum.NO, 2);
+            }
           }
 
           await stopRepresentingClientPage.consentToStopRepresentingClient(YesNoRadioEnum.NO);
           await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.NO);
+          await axeUtils.audit();
           await stopRepresentingClientPage.navigateContinue();
 
           // Assert error message is shown for missing judicial approval or client consent
           await stopRepresentingClientPage.assertMissingClientOrJudicialApprovalError();
 
           await stopRepresentingClientPage.selectJudicialApprovalQuestion(YesNoRadioEnum.YES);
+          await axeUtils.audit();
           await stopRepresentingClientPage.navigateContinue();
 
           // check your answers
-          if (data.selectApplicant && !data.isIntervener) {
-            await checkYourAnswersPage.assertCheckYourAnswersPage(applicantStopRepresentingClientTable);
+          let table;
+          if (data.selectApplicant && data.isConsented) {
+            table = applicantStopRepresentingClientTable;
+          } else if (!data.isConsented && data.selectApplicant) {
+            table = intervenerAndApplicantStopRepresentingClientTable;
+          } else if (!data.isConsented && !data.selectApplicant) {
+            table = intervenerAndRespondentStopRepresentingClientTable;
+          } else {
+            table = respondentStopRepresentingClientTable;
           }
-          else if (data.isIntervener) {
-            await checkYourAnswersPage.assertCheckYourAnswersPage(intervenerStopRepresentingClientTable);
-          }
-          else {
-            await checkYourAnswersPage.assertCheckYourAnswersPage(respondentStopRepresentingClientTable);
-          }
-          
+          await checkYourAnswersPage.assertCheckYourAnswersPage(table);
           await stopRepresentingClientPage.navigateSubmit();
 
           // Assert are you sure text is shown
@@ -263,8 +275,7 @@ test.describe('Notice of Change', () => {
             );
             // Try to navigate to the case and assert access is denied            
             await manageCaseDashboardPage.navigateToCase(caseId, false);
-                    
-          }
+          }         
         }
       );
     }
