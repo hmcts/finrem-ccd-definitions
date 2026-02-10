@@ -27,6 +27,24 @@ export class ContestedEventApi {
     return response;
   }
 
+  private static async updateIntervenerSteps(
+    caseId: string,
+    steps: { event: string; payload?: string; replacements?: ReplacementAction[] }[]
+  ): Promise<any> {
+    let response;
+    for (const step of steps) {
+      response = await ccdApi.updateCaseInCcd(
+        config.applicant_intervener.email,
+        config.applicant_intervener.password,
+        caseId,
+        CaseType.Contested,
+        step.event,
+        step.payload || '',
+        step.replacements || []
+      );
+    }
+  }
+
   static async updateStepsFromJson(
     caseId: string,
     asCaseWorker: boolean,
@@ -205,6 +223,17 @@ export class ContestedEventApi {
       {
         event: ContestedEvents.manageBarrister.ccdCallback,
         payload: PayloadPath.Contested.manageBarristerAddRespondentBarrister
+      }
+    ]);
+  }
+
+  static async intervenerAddsIntervenerBarrister(
+    caseId: string
+  ): Promise<void> {
+    await this.updateIntervenerSteps( caseId, [
+      {
+        event: ContestedEvents.manageBarrister.ccdCallback,
+        payload: PayloadPath.Contested.manageBarristerAddIntervenerBarrister
       }
     ]);
   }
