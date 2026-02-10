@@ -26,3 +26,25 @@ export const updateContestedApplicantRepresentedContactDetailsTabData = [
     ]
   }
 ];
+
+export const contestedUpdateContactDetailsRespondentRepresentedAddressChangeTabData = [
+  {
+    tabName: 'Respondent',
+    tabContent: [
+      'Respondent’s Details',
+      { tabItem: 'Current First and Middle names', value: 'Smeagol' },
+      { tabItem: 'Current Last Name', value: 'Gollum' },
+      { tabItem: 'Is the Respondent currently a resident in a refuge?', value: 'Yes' },
+      'Respondent’s Solicitor’s Details',
+      { tabItem: 'Solicitor’s name', value: 'Sauron' },
+      { tabItem: 'Solicitor’s firm', value: 'Mnt Doom Sols' },
+      'Respondent’s Solicitor’s Contact Details',
+      { tabItem: 'Building and Street', value: '10 Selsdon Road' },
+      { tabItem: 'Town or City', value: 'London' },
+      { tabItem: 'Postcode/Zipcode', value: 'NW2 7NE' },
+      { tabItem: 'Country', value: 'United Kingdom' },
+      { tabItem: 'Phone Number', value: '07821 639001' },
+      { tabItem: 'Email', value: 'fr_respondent_solicitor1@mailinator.com' }
+    ]
+  }
+];
