@@ -14,6 +14,7 @@ export class ManageHearingPage extends BaseJourneyPage {
   private readonly hearingTimeEstimate: Locator;
   private readonly vacateHearingRadio: Locator;
   private readonly doYouWantToSendNotices: Locator;
+  private readonly adjournOrVacateHearingDropdown: Locator;
 
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page);
@@ -23,8 +24,9 @@ export class ManageHearingPage extends BaseJourneyPage {
     this.addANewHearingTitle = page.getByRole('heading', { name: 'Add a new hearing' });
     this.typeOfHearingDropDown = page.getByLabel('Type of Hearing');
     this.hearingTimeEstimate = this.page.locator('#workingHearing_hearingTimeEstimate');
-    this.vacateHearingRadio = page.getByRole('radio', { name: 'Vacate a hearing' });
+    this.vacateHearingRadio = page.getByRole('radio', { name: 'Adjourn or Vacate a hearing' });
     this.doYouWantToSendNotices = this.page.getByText('Do you want to send notices?');
+    this.adjournOrVacateHearingDropdown = this.page.getByLabel('Adjourn or Vacate a hearing?');
   }
 
   async selectAddANewHearing() {
@@ -252,12 +254,17 @@ export class ManageHearingPage extends BaseJourneyPage {
     await removeButton.click({ force: true });
   }
 
-  async selectVacateHearing() {
+  async selectAdjournOrVacateHearingRadio() {
     await expect(this.vacateHearingRadio).toBeVisible();
     await this.vacateHearingRadio.check();
   }
 
-  async selectHearingToVacate(position: number = 0) {
+  async selectAdjournOrVacateHearingDropdown(option: string) {
+    await expect(this.adjournOrVacateHearingDropdown).toBeVisible();
+    await this.adjournOrVacateHearingDropdown.selectOption({ label: option });
+  }
+
+  async selectHearingToAdjournOrVacate(position: number = 0) {
     const hearingSelect = this.page.locator('#workingVacatedHearing_chooseHearings');
     await expect(hearingSelect).toBeVisible();
 
@@ -270,7 +277,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     await hearingSelect.selectOption(value!);
   }
 
-  async fillVacateHearingDate(day: string, month: string, year: string) {
+  async fillAdjournOrVacateHearingDate(day: string, month: string, year: string) {
     const hearingDateDay = this.page.getByRole('textbox', { name: 'Day' });
     const hearingDateMonth = this.page.getByRole('textbox', { name: 'Month' });
     const hearingDateYear = this.page.getByRole('textbox', { name: 'Year' });
@@ -284,13 +291,13 @@ export class ManageHearingPage extends BaseJourneyPage {
     await hearingDateYear.fill(year);
   }
 
-  async whyIsTheHearingBeingVacated(reason: string) {
+  async whyIsTheHearingBeingAdjournedOrVacated(reason: string) {
     const reasonField = this.page.locator('#workingVacatedHearing_vacateReason');
     await expect(reasonField).toBeVisible();
     await reasonField.selectOption({ label: reason }); // or value if you want the “1”, “2”, etc.
   }
 
-  async specifyOtherReasonForVacatingHearing(details: string) {
+  async specifyOtherReasonForAdjournOrVacateHearing(details: string) {
     const otherReasonField = this.page.locator('#workingVacatedHearing_specifyOtherReason');
     await expect(otherReasonField).toBeVisible();
     await otherReasonField.fill(details);

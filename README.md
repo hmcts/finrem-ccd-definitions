@@ -254,5 +254,5 @@ If you get a message to say the pre-commit hook was ignored, register the hook w
 ```sh
 yarn setup-precommit
 ```
-The pre-commit hook is automatically set on in the [setup step](https://github.com/hmcts/finrem-ccd-definitions/tree/DFR-4376-remove-pre-commit?tab=readme-ov-file#setup)
+The pre-commit hook is automatically set on in the [setup step](https://github.com/hmcts/finrem-ccd-definitions/tree/DFR-4376-remove-pre-commit?tab=readme-ov-file#setup).
 
