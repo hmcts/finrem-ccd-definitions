@@ -5233,7 +5233,7 @@
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
     "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public",
-    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgement\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
+    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "Searchable": "N"
   },
   {
