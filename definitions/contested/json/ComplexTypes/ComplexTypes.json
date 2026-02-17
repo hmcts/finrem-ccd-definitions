@@ -5233,7 +5233,7 @@
     "ElementLabel": "Is this a Financial Dispute Resolution document (FDR)?",
     "HintText": "Document will be placed in the FDR documents tab",
     "SecurityClassification": "Public",
-    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgement\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
+    "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentConfidentiality=\"No\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
     "Searchable": "N"
   },
   {
@@ -5245,6 +5245,16 @@
     "ElementLabel": "Document on behalf of?",
     "SecurityClassification": "Public",
     "FieldShowCondition": "caseDocumentType!=\"\" AND caseDocumentType!=\"Without Prejudice offers\" AND caseDocumentType!=\"Attendance Sheets\" AND caseDocumentType!=\"Judicial notes\" AND caseDocumentType!=\"Judgment\" AND caseDocumentType!=\"Witness Summons\" AND caseDocumentType!=\"Transcript\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "13/01/2026",
+    "ID": "FR_workingVacatedHearing",
+    "ListElementCode": "vacateOrAdjournAction",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_VacateOrAdjournHearingAction",
+    "ElementLabel": "Adjourn or Vacate a hearing?",
+    "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
@@ -5261,8 +5271,8 @@
     "ID": "FR_workingVacatedHearing",
     "ListElementCode": "vacateHearingDate",
     "FieldType": "Date",
-    "ElementLabel": "When was the hearing vacated?",
-    "HintText": "This is the date the hearing was vacated by the listing team. This date must be before the hearing date.",
+    "ElementLabel": "When was the hearing adjourned or vacated?",
+    "HintText": "This is the date the hearing was adjourned or vacated by the listing team.",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5272,7 +5282,7 @@
     "ListElementCode": "vacateReason",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_vacateOrAdjournHearingReason",
-    "ElementLabel": "Why is the hearing being vacated?",
+    "ElementLabel": "Why is the hearing being adjourned or vacated?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5407,7 +5417,7 @@
     "ListElementCode": "vacateOrAdjournReason",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_vacateOrAdjournHearingReason",
-    "ElementLabel": "Why is the hearing being vacated?",
+    "ElementLabel": "Why is the hearing being adjourned or vacated?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5534,7 +5544,7 @@
     "ID": "FR_vacatedOrAdjournedHearingTabItems",
     "ListElementCode": "tabVacatedOrAdjournedDate",
     "FieldType": "Text",
-    "ElementLabel": "Vacated or Adjourned date",
+    "ElementLabel": "Adjourned or Vacated date",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   },
