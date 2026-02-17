@@ -1288,7 +1288,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^25.2.3":
   version: 25.2.3
   resolution: "@types/node@npm:25.2.3"
   dependencies:
@@ -1312,15 +1312,6 @@ __metadata:
   dependencies:
     undici-types: "npm:~6.21.0"
   checksum: 10/bb899551432ce2bf3e1a175d58802f25dfb6a96e574ce1f0056d55d0ce48513961976ee3621215565142a8ad99a2464d9c384fa53ccba0650def031d218800f7
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^24.0.1":
-  version: 24.10.13
-  resolution: "@types/node@npm:24.10.13"
-  dependencies:
-    undici-types: "npm:~7.16.0"
-  checksum: 10/c779d14cf17758a9d603e0c0978c8045bd070e259617ec16f4ddac419ec11aac0e0cf2bb013dab008fdbd2f46c39f82397884662bbdfabeb19bef0079679ea48
   languageName: node
   linkType: hard
 
@@ -3053,16 +3044,16 @@ __metadata:
   linkType: hard
 
 "docx@npm:^9.5.0":
-  version: 9.5.1
-  resolution: "docx@npm:9.5.1"
+  version: 9.5.3
+  resolution: "docx@npm:9.5.3"
   dependencies:
-    "@types/node": "npm:^24.0.1"
+    "@types/node": "npm:^25.2.3"
     hash.js: "npm:^1.1.7"
     jszip: "npm:^3.10.1"
     nanoid: "npm:^5.1.3"
     xml: "npm:^1.0.1"
     xml-js: "npm:^1.6.8"
-  checksum: 10/28f87d3c76352bdd40713468f565c13454927ebb6bc15511cf981bf40f54aecdd50b156bd3bc39bbd21988f6bf3e798964d21555f17939741c7ac3c956039695
+  checksum: 10/61215ce9e677866db31c97bf3704d0942eb34f463e204ab690a0e32514256b773a4d2086ac1a23d761c8137cb5d5cee844345ba04c6f65e1d85b30eba8d92ee8
   languageName: node
   linkType: hard
 
