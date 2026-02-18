@@ -104,6 +104,8 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
       await manageHearingPage.assertHearingDateFormatError();
 
       const hearingList = [
+        'Adjourned Financial Dispute Resolution (FDR)',
+        'Adjourned First Directions Appointment (FDA)',
         'Maintenance Pending Suit (MPS)',
         'First Directions Appointment (FDA)',
         'Financial Dispute Resolution (FDR)',

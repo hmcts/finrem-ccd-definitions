@@ -50,7 +50,8 @@ test(
         reference: reference,
         amount: amount,
         feeCode: feeCode,
-        feeType: feeType
+        feeType: feeType,
+        caseType: 'Consented'
       },
       [
         ['FEE0228', 'Application (without notice)', '£60.00'],
