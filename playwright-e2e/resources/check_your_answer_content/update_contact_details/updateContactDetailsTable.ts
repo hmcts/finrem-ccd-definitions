@@ -64,6 +64,29 @@ export const   contestedUpdateContactDetailsRespondentNotRepresentedTable: Table
   ]
 }; 
 
+export const   contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable: Table = {
+  tableName: 'Update Contact Details',
+  rows: [
+    { cellItem: 'Does this update include a change in representation for either party?', value: 'Yes'},
+    { cellItem: 'Select Party to which the change in representation applies:', value: 'Respondent' },
+    { cellItem: 'Is the respondent represented ?', value: 'Yes', rowType: 'label-value-adjacent' },
+    'Respondent’s Solicitor’s Details',
+    { cellItem: 'Solicitor’s name', value: 'Sauron' },
+    { cellItem: 'Solicitor’s firm', value: 'Mnt Doom Sols'},
+    'Respondent’s Solicitor’s Contact Details',
+    { cellItem:'Building and Street', value: '10 Selsdon Road' },
+    { cellItem: 'Town or City', value: 'London' },
+    { cellItem: 'Postcode/Zipcode', value: 'NW2 7NE' },
+    { cellItem: 'Country', value: 'United Kingdom' },
+    { cellItem: 'Phone Number', value: '07821 639001' },
+    { cellItem: 'Email', value: 'fr_respondent_solicitor1@mailinator.com' },
+    'Respondent’s Details',
+    { cellItem: 'Current First and Middle names', value: 'Smeagol' },
+    { cellItem: 'Current Last Name', value: 'Gollum' },
+    { cellItem: 'Is the Respondent currently a resident in a refuge?', value: 'Yes' }
+  ]
+}; 
+
 export const   updateContactDetailsRespondentNotRepresentedTable = {
   tableName: 'Check your answers',
   rows: [
