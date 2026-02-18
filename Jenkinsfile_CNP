@@ -40,6 +40,7 @@ def secrets = [
                 secret('fixedlists-consented-judgedetails-8', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_8'),
                 secret('fixedlists-consented-judgedetails-9', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_9'),
                 secret('fixedlists-consented-judgedetails-10', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_10'),
+                secret('fixedlists-consented-judgedetails-11', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_11'),
                 secret('userprofile-consented-judgedetails-1', 'USERPROFILE_CONSENTED_JUDGEDETAILS_1'),
                 secret('userprofile-consented-judgedetails-2', 'USERPROFILE_CONSENTED_JUDGEDETAILS_2'),
                 secret('userprofile-consented-judgedetails-3', 'USERPROFILE_CONSENTED_JUDGEDETAILS_3'),
@@ -184,6 +185,7 @@ withPipeline("nodejs", product, component) {
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_9} > FixedLists-judgeDetails9-prod.json'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_10} > FixedLists-judgeDetails10-prod.json'
+              sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_11} > FixedLists-judgeDetails11-prod.json'
             }
 
             yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
@@ -201,6 +203,7 @@ withPipeline("nodejs", product, component) {
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_8} > FixedLists-judgeDetails8-prod.json'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_9} > FixedLists-judgeDetails9-prod.json'
               sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_10} > FixedLists-judgeDetails10-prod.json'
+              sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_11} > FixedLists-judgeDetails11-prod.json'
             }
             yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
             yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
