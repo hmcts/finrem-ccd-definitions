@@ -8,6 +8,8 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
   private readonly promptForAnyDocumentRadio: Locator;
   private readonly promptForUrgentCaseQuestionRadio: Locator;
   private readonly urgentCaseDetailsTextBox: Locator;
+  private readonly divorceOrderHeading: Locator;
+  private readonly divorceOrderUpload: Locator;
 
   private readonly consentOrderDocUpload: Locator;
   private readonly jointD81Radio: Locator;
@@ -32,6 +34,8 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
 
     this.uploadD81Applicant = page.locator('#d81Applicant');
     this.uploadD81Respondent = page.locator('#d81Respondent');
+    this.divorceOrderHeading = page.getByRole('heading', { name: 'DIVORCE ORDER' });
+    this.divorceOrderUpload = page.getByRole('button', { name: 'Latest Divorce Order Document' });
   }
 
   async uploadVariationOrderDoc() {
@@ -53,6 +57,17 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
     if (!(await this.variationOrderDocUpload.isVisible())) {
       await this.navigatePrevious();
     }
+  }
+
+  async uploadDivorceOrderDoc(docFilename: string) {
+    await expect(this.divorceOrderHeading).toBeVisible();
+    await expect(this.divorceOrderUpload).toBeVisible();
+    const filePayload = await this.commonActionsHelper
+      .createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', docFilename);
+
+    await this.commonActionsHelper.uploadWithRateLimitRetry(
+      this.page, this.divorceOrderUpload, filePayload
+    );
   }
 
   async selectUploadAdditionalDocs(uploadAdditionalDocs: Boolean){
