@@ -1,4 +1,4 @@
-import { DateHelper } from '../../data-utils/DateHelper.ts';
+import { envTestData } from '../../data-utils/test_data/EnvTestDataConfig.ts';
 import {YesNoRadioEnum} from '../../pages/helpers/enums/RadioEnums.ts';
 
 export const paymentDetailsTabData = (
@@ -23,8 +23,18 @@ export function paymentDetailsReviewData(
   feeCode: string,  
   pbaNumber: string,
   reference: string,
-  currentDateTimeFull: string
+  currentDateTimeFull: string,
+  caseType: 'Consented' | 'Contested'
 ) {
+  const isDemo = process.env.RUNNING_ENV === 'demo';
+  const isAat = process.env.RUNNING_ENV === 'aat';
+  const pbaAccountName =
+    isDemo && caseType === 'Consented'
+      ? 'solicitorFirm'
+      : isAat && caseType === 'Consented'
+        ? 'FinRem-1-Org'
+        : envTestData.PBA_ACCOUNT_NAME;
+
   return [
     'Payment details',
     { tabItem: 'Payment amount', value: amount },
@@ -32,7 +42,7 @@ export function paymentDetailsReviewData(
       tabItem: 'Payment method',
       value: helpWithFees === YesNoRadioEnum.NO ? 'payment by account' : 'HWF'
     },
-    { tabItem: 'PBA account name', value: feeCode === 'FEE0228' ? 'FinRem-1-Org' : 'Bag End' },
+    { tabItem: 'PBA account name', value: pbaAccountName },
     { tabItem: 'PBA number', value: pbaNumber },
     { tabItem: 'Customer internal reference', value: reference },
     'Payment status history',
