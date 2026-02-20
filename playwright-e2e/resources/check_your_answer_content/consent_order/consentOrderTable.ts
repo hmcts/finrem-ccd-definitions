@@ -20,6 +20,8 @@ export const consentOrderTable: Table = {
     'PENSION DOCUMENTS',
     { cellItem: 'Type of document', value: 'Form P1' },
     { cellItem: 'Document', value: 'Form P1.pdf' },
+    'DIVORCE ORDER',
+    { cellItem: 'Latest Divorce Order Document', value: 'Divorce order.pdf' },
     'Upload original order to be varied',
     { cellItem: 'Original order to be varied', value: 'Variation order.pdf' },
     'OTHER DOCUMENTS'
