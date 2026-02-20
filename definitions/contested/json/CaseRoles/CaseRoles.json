@@ -115,5 +115,23 @@
     "Description": "Role to isolate events for Intervener's Barrister 4",
     "JurisdictionID": "DIVORCE",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "[APPLICANT]",
+    "Name": "Citizen Applicant",
+    "Description": "Citizen Applicant",
+    "JurisdictionID": "DIVORCE",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "01/01/2019",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "[RESPONDENT]",
+    "Name": "Defendant Respondent",
+    "Description": "Defendant Respondent",
+    "JurisdictionID": "DIVORCE",
+    "SecurityClassification": "Public"
   }
 ]
