@@ -40,7 +40,7 @@ export function getManageHearingTabData(params?: {
 }
 
 /**
- * Returns tab data for the Vacated or Adjourned Hearings tab.
+ * Returns tab data for the Adjourned or Vacated Hearings tab.
  */
 export function getVacatedHearingTabData(params?: {
   typeOfHearing?: string,
@@ -68,8 +68,8 @@ export function getVacatedHearingTabData(params?: {
 
   // Build tabContent array
   const tabContent = [
-    'Vacated or Adjourned Hearings',
-    { tabItem: 'Type of Hearing', value: 'Vacated or Adjourned date | Hearing status', exact: false },
+    'Adjourned or Vacated Hearings',
+    { tabItem: 'Type of Hearing', value: 'Adjourned or Vacated date | Hearing status', exact: false },
     {
       tabItem: params?.typeOfHearing ?? 'Financial Dispute Resolution (FDR)',
       value: `${vacatedOrAdjournedDate} | ${hearingStatus}`,
