@@ -23,11 +23,12 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
       await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
 
       //select hearing and vacate hearing
-      await manageHearingPage.selectVacateHearing();
-      await manageHearingPage.selectHearingToVacate(1); //selects first hearing
-      await manageHearingPage.fillVacateHearingDate('12', '12', '2025');
-      await manageHearingPage.whyIsTheHearingBeingVacated('Other - Please specify');
-      await manageHearingPage.specifyOtherReasonForVacatingHearing('The hearing is no longer required');
+      await manageHearingPage.selectAdjournOrVacateHearingRadio();
+      await manageHearingPage.selectAdjournOrVacateHearingDropdown('Vacate hearing');
+      await manageHearingPage.selectHearingToAdjournOrVacate(1); //selects first hearing
+      await manageHearingPage.fillAdjournOrVacateHearingDate('12', '12', '2025');
+      await manageHearingPage.whyIsTheHearingBeingAdjournedOrVacated('Other - Please specify');
+      await manageHearingPage.specifyOtherReasonForAdjournOrVacateHearing('The hearing is no longer required');
       await manageHearingPage.navigateContinue();
       await axeUtils.audit();
 
@@ -80,11 +81,12 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
       await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
 
       //select hearing and vacate hearing
-      await manageHearingPage.selectVacateHearing();
-      await manageHearingPage.selectHearingToVacate(1); //selects first hearing
-      await manageHearingPage.fillVacateHearingDate('12', '12', '2025');
-      await manageHearingPage.whyIsTheHearingBeingVacated('Other - Please specify');
-      await manageHearingPage.specifyOtherReasonForVacatingHearing('The hearing is no longer required');
+      await manageHearingPage.selectAdjournOrVacateHearingRadio();
+      await manageHearingPage.selectAdjournOrVacateHearingDropdown('Vacate hearing');
+      await manageHearingPage.selectHearingToAdjournOrVacate(1); //selects first hearing
+      await manageHearingPage.fillAdjournOrVacateHearingDate('12', '12', '2025');
+      await manageHearingPage.whyIsTheHearingBeingAdjournedOrVacated('Other - Please specify');
+      await manageHearingPage.specifyOtherReasonForAdjournOrVacateHearing('The hearing is no longer required');
       await manageHearingPage.navigateContinue();
       await axeUtils.audit();
 
@@ -207,11 +209,12 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
       await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
 
       //select hearing and vacate hearing
-      await manageHearingPage.selectVacateHearing();
-      await manageHearingPage.selectHearingToVacate(1); //selects first hearing
-      await manageHearingPage.fillVacateHearingDate('12', '12', '2025');
-      await manageHearingPage.whyIsTheHearingBeingVacated('Other - Please specify');
-      await manageHearingPage.specifyOtherReasonForVacatingHearing('The hearing is no longer required');
+      await manageHearingPage.selectAdjournOrVacateHearingRadio();
+      await manageHearingPage.selectAdjournOrVacateHearingDropdown('Vacate hearing');
+      await manageHearingPage.selectHearingToAdjournOrVacate(1); //selects first hearing
+      await manageHearingPage.fillAdjournOrVacateHearingDate('12', '12', '2025');
+      await manageHearingPage.whyIsTheHearingBeingAdjournedOrVacated('Other - Please specify');
+      await manageHearingPage.specifyOtherReasonForAdjournOrVacateHearing('The hearing is no longer required');
       await manageHearingPage.navigateContinue();
       await axeUtils.audit();
 
@@ -289,11 +292,12 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
       await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
 
       //select hearing and vacate hearing
-      await manageHearingPage.selectVacateHearing();
-      await manageHearingPage.selectHearingToVacate(1); //selects first hearing
-      await manageHearingPage.fillVacateHearingDate('12', '12', '2025');
-      await manageHearingPage.whyIsTheHearingBeingVacated('Other - Please specify');
-      await manageHearingPage.specifyOtherReasonForVacatingHearing('The hearing is no longer required');
+      await manageHearingPage.selectAdjournOrVacateHearingRadio();
+      await manageHearingPage.selectAdjournOrVacateHearingDropdown('Vacate hearing');
+      await manageHearingPage.selectHearingToAdjournOrVacate(1); //selects first hearing
+      await manageHearingPage.fillAdjournOrVacateHearingDate('12', '12', '2025');
+      await manageHearingPage.whyIsTheHearingBeingAdjournedOrVacated('Other - Please specify');
+      await manageHearingPage.specifyOtherReasonForAdjournOrVacateHearing('The hearing is no longer required');
       await manageHearingPage.navigateContinue();
       await axeUtils.audit();
 

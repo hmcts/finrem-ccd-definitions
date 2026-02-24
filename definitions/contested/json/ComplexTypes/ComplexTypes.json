@@ -2969,6 +2969,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "16/01/2026",
+    "ID": "FR_intervener",
+    "ListElementCode": "IntervenerLabel",
+    "FieldType": "Label",
+    "ElementLabel": "Intervener Details",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_intervener",
     "ListElementCode": "intervenerName",
@@ -3108,6 +3117,16 @@
     "ListElementCode": "intervenerInRefuge",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is the intervener currently a resident in a refuge?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "16/01/2026",
+    "ID": "FR_intervener",
+    "ListElementCode": "solUserId",
+    "FieldType": "Text",
+    "ElementLabel": "Intervener Solicitor User ID",
+    "FieldShowCondition": "IntervenerLabel=\"IMPOSSIBLE\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5256,6 +5275,16 @@
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
+  { 
+    "LiveFrom": "13/01/2026",
+    "ID": "FR_workingVacatedHearing",
+    "ListElementCode": "vacateOrAdjournAction",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_VacateOrAdjournHearingAction",
+    "ElementLabel": "Adjourn or Vacate a hearing?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
   {
     "LiveFrom": "25/11/2025",
     "ID": "FR_workingVacatedHearing",
@@ -5270,8 +5299,8 @@
     "ID": "FR_workingVacatedHearing",
     "ListElementCode": "vacateHearingDate",
     "FieldType": "Date",
-    "ElementLabel": "When was the hearing vacated?",
-    "HintText": "This is the date the hearing was vacated by the listing team. This date must be before the hearing date.",
+    "ElementLabel": "When was the hearing adjourned or vacated?",
+    "HintText": "This is the date the hearing was adjourned or vacated by the listing team.",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5281,7 +5310,7 @@
     "ListElementCode": "vacateReason",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_vacateOrAdjournHearingReason",
-    "ElementLabel": "Why is the hearing being vacated?",
+    "ElementLabel": "Why is the hearing being adjourned or vacated?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5416,7 +5445,7 @@
     "ListElementCode": "vacateOrAdjournReason",
     "FieldType": "FixedList",
     "FieldTypeParameter": "FR_vacateOrAdjournHearingReason",
-    "ElementLabel": "Why is the hearing being vacated?",
+    "ElementLabel": "Why is the hearing being adjourned or vacated?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5543,7 +5572,7 @@
     "ID": "FR_vacatedOrAdjournedHearingTabItems",
     "ListElementCode": "tabVacatedOrAdjournedDate",
     "FieldType": "Text",
-    "ElementLabel": "Vacated or Adjourned date",
+    "ElementLabel": "Adjourned or Vacated date",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   },
