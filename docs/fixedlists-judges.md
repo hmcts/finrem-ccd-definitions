@@ -27,3 +27,12 @@ The following steps should be used to update judge data stored in the secrets:
 9. Rerun the `finrem-ccd-definitions` Jenkins pipeline to import the updated judge data into production
 
 Note the `bin/judges` directory also contains `import.js` which could be used to update judge data provided in a spreadsheet.
+
+## Important – When Adding New Judges
+The Jenkins pipeline is hardcoded to a maximum chunk number therefore any new file chunks will not be imported. This will result in production cases failing with missing judge details if they are using a judge from the new chunk. Example incident: DFR-4575
+
+If adding judges causes a new chunk file to be created (e.g. judgedetails-12.json), ensure the finrem-ccd-definitions Jenkins pipeline retrieves and injects all fixedlists-consented-judgedetails-* secrets.
+
+This can be done by going to the pipeline configuration and updating the secret retrieval: [Jenkinsfile_CNP](../Jenkinsfile_CNP).
+The pipeline should be retrieving all secrets with the prefix `fixedlists-consented-judgedetails-` and updating `FIXEDLISTS_CONSENTED_JUDGEDETAILS_`
+

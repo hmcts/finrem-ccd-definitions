@@ -28,7 +28,8 @@ export async function applicationCaseSubmission(
         reference: string,
         amount: string,
         feeCode: string,
-        feeType: string
+        feeType: string,
+        caseType?: 'Consented' | 'Contested'
     },
   orderSummaryTable: string[][] = [
     ['FEE0229', 'Application for a financial order', '£313.00'],
@@ -68,9 +69,7 @@ export async function applicationCaseSubmission(
 
   await caseSubmissionPage.navigateContinue();
   await checkYourAnswersPage.assertCheckYourAnswersPage(caseSubmissionTable(param.amount));
-
-  await caseSubmissionPage.navigateSubmit();
-  const paymentDateAndTime = DateHelper.getCurrentDateTimeFull();
+  const paymentDateAndTime =  await caseSubmissionPage.navigateSubmit();
   await caseSubmissionPage.returnToCaseDetails();
   await caseDetailsPage.checkHasBeenUpdated(param.caseEvent.listItem);
 
@@ -94,7 +93,8 @@ export async function applicationCaseSubmission(
         param.feeCode,
         param.pbaNumber,
         param.reference,
-        paymentDateAndTime
+        paymentDateAndTime,
+        param.caseType || 'Contested'
       )
     }
   ]);
@@ -153,7 +153,6 @@ export async function applicationCaseSubmissionHWF(
   await checkYourAnswersPage.assertCheckYourAnswersPage(caseSubmissionTableHWF(param.hwfCode));
 
   await caseSubmissionPage.navigateSubmit();
-  const paymentDateAndTime = DateHelper.getCurrentDateTimeFull();
   await caseSubmissionPage.returnToCaseDetails();
   await caseDetailsPage.checkHasBeenUpdated(param.caseEvent.listItem);
 

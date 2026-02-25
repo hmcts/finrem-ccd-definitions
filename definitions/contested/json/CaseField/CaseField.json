@@ -8606,7 +8606,7 @@
     "LiveFrom": "25/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "workingVacatedHearing",
-    "Label": "Vacate Hearing",
+    "Label": "Adjourn or Vacate hearing",
     "FieldType": "FR_workingVacatedHearing",
     "SecurityClassification": "Public",
     "Searchable": "N"
@@ -8644,7 +8644,7 @@
     "LiveFrom": "25/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "vacatedOrAdjournedHearings",
-    "Label": "Vacated or Adjourned Hearings",
+    "Label": "Adjourned or Vacated Hearings",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_vacateOrAdjournHearing",
     "SecurityClassification": "Public",
@@ -8654,7 +8654,7 @@
     "LiveFrom": "1/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "vacatedOrAdjournedHearingTabItems",
-    "Label": "Vacated or Adjourned Hearings",
+    "Label": "Adjourned or Vacated Hearings",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_vacatedOrAdjournedHearingTabItems",
     "SecurityClassification": "Public",
@@ -8664,7 +8664,7 @@
     "LiveFrom": "1/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "applicantVacOrAdjHearingTabItems",
-    "Label": "Vacated or Adjourned Hearings",
+    "Label": "Adjourned or Vacated Hearings",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_vacatedOrAdjournedHearingTabItems",
     "SecurityClassification": "Public",
@@ -8674,7 +8674,7 @@
     "LiveFrom": "1/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "respondentVacOrAdjHearingTabItems",
-    "Label": "Vacated or Adjourned Hearings",
+    "Label": "Adjourned or Vacated Hearings",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_vacatedOrAdjournedHearingTabItems",
     "SecurityClassification": "Public",
@@ -8684,7 +8684,7 @@
     "LiveFrom": "1/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "int1VacOrAdjHearingTabItems",
-    "Label": "Vacated or Adjourned Hearings",
+    "Label": "Adjourned or Vacated Hearings",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_vacatedOrAdjournedHearingTabItems",
     "SecurityClassification": "Public",
@@ -8694,7 +8694,7 @@
     "LiveFrom": "1/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "int2VacOrAdjHearingTabItems",
-    "Label": "Vacated or Adjourned Hearings",
+    "Label": "Adjourned or Vacated Hearings",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_vacatedOrAdjournedHearingTabItems",
     "SecurityClassification": "Public",
@@ -8704,7 +8704,7 @@
     "LiveFrom": "1/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "int3VacOrAdjHearingTabItems",
-    "Label": "Vacated or Adjourned Hearings",
+    "Label": "Adjourned or Vacated Hearings",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_vacatedOrAdjournedHearingTabItems",
     "SecurityClassification": "Public",
@@ -8714,9 +8714,27 @@
     "LiveFrom": "1/12/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "int4VacOrAdjHearingTabItems",
-    "Label": "Vacated or Adjourned Hearings",
+    "Label": "Adjourned or Vacated Hearings",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_vacatedOrAdjournedHearingTabItems",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "showClientAddressForService",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "clientAddressForServiceLabel",
+    "Label": " ",
+    "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -8724,11 +8742,10 @@
     "LiveFrom": "12/11/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "clientAddressForService",
-    "Label": "Client's address for service",
+    "Label": "${clientAddressForServiceLabel}",
     "FieldType": "AddressUK",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "_comment_": "Input by applicant/respondent solicitor during stop representing a client"
+    "Searchable": "N"
   },
   {
     "LiveFrom": "12/11/2025",
@@ -8761,5 +8778,189 @@
     "Label": "Do you have judicial approval to stop representation?",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr1Id",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr1Label",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr1",
+    "Label": "${extraClientAddr1Label}",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr1ConfidentialLabel",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr1Confidential",
+    "Label": "${extraClientAddr1ConfidentialLabel}",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr2Id",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr2Label",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr2",
+    "Label": "${extraClientAddr2Label}",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr2ConfidentialLabel",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr2Confidential",
+    "Label": "${extraClientAddr2ConfidentialLabel}",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr3Id",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr3Label",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr3",
+    "Label": "${extraClientAddr3Label}",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr3ConfidentialLabel",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr3Confidential",
+    "Label": "${extraClientAddr3ConfidentialLabel}",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr4Id",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr4Label",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr4",
+    "Label": "${extraClientAddr4Label}",
+    "FieldType": "AddressUK",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr4ConfidentialLabel",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "30/12/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "extraClientAddr4Confidential",
+    "Label": "${extraClientAddr4ConfidentialLabel}",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "02/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "divorceOrderLabel",
+    "Label": "#### DIVORCE ORDER",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "latestDivorceOrderUpload",
+    "Label": "Latest Divorce Order Document",
+    "HintText": "A copy of the latest divorce order is required and must be uploaded for this consent order application. This can either be Decree Absolute/Final Order or Decree Nisi/Conditional Order.",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   }
 ]

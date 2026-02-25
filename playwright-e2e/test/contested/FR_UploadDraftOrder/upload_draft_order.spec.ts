@@ -121,6 +121,8 @@ test.describe('Contested - Upload Draft Order', { tag: ['@DraftOrder'] }, () => 
       await approvedOrderPage.navigateContinue(expectedUrl, 2);
       await approvedOrderPage.selectIsAnotherHearingListed(true);
       const hearingList = [
+        'Adjourned Financial Dispute Resolution (FDR)',
+        'Adjourned First Directions Appointment (FDA)',
         'Maintenance Pending Suit (MPS)',
         'First Directions Appointment (FDA)',
         'Financial Dispute Resolution (FDR)',
