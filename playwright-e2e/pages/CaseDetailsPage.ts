@@ -213,24 +213,55 @@ export class CaseDetailsPage {
   ) {
     const heading = this.page.getByRole('heading', { name: 'Case file', level: 2 });
     if (!(await heading.isVisible())) {
-      let paginationBeforeButton = this.page.locator('button.mat-tab-header-pagination-before[aria-hidden="true"]:not([disabled])');
+      let paginationBeforeButton = this.page.locator(
+        'button.mat-tab-header-pagination-before[aria-hidden="true"]:not([disabled])'
+      );
       while (await paginationBeforeButton.count() > 0) {
         await paginationBeforeButton.click();
-        paginationBeforeButton = this.page.locator('button.mat-tab-header-pagination-before[aria-hidden="true"]:not([disabled])');
+        paginationBeforeButton = this.page.locator(
+          'button.mat-tab-header-pagination-before[aria-hidden="true"]:not([disabled])'
+        );
       }
       const caseFileViewButton = this.page.getByRole('tab', { name: 'Case File View', exact: false });
       await caseFileViewButton.click();
       await expect(heading).toBeVisible();
     }
+    const scope = parentLocator ?? this.page;
+
+    // activate via keyboard (bypasses pointer interception)
+    const activateTreeItem = async (treeItem: Locator) => {
+      await expect(treeItem).toBeVisible({ timeout: 30_000 });
+      await treeItem.scrollIntoViewIfNeeded();
+      await treeItem.focus();
+      // Enter is usually correct for tree items
+      await this.page.keyboard.press('Enter');
+    };
+
     for (const node of tree) {
       const currentPath = [...parentPath, node.label];
       if (node.type === 'folder') {
         try {
-          const folderLocator = (parentLocator ?? this.page).locator('.node__name--folder', { hasText: node.label });
-          await folderLocator.click();
-          const folderNode = folderLocator.locator('xpath=ancestor::cdk-nested-tree-node[1]');
-          await expect(folderNode).toHaveAttribute('aria-expanded', 'true');
-          if (node.children && node.children.length > 0) {
+          const folderNode = scope
+            .locator('cdk-nested-tree-node.document-tree-container__folder')
+            .filter({ has: this.page.locator('span.node__name--folder', { hasText: node.label }) })
+            .first();
+          const folderToggle = folderNode.locator('button.node[cdktreenodetoggle]').first();
+          await expect(folderToggle).toBeVisible({ timeout: 30_000 });
+          if ((await folderToggle.getAttribute('aria-expanded')) !== 'true') {
+            // Folder toggle should still be a real click (keyboard Enter may not toggle cdktreenodetoggle reliably)
+            await folderToggle.scrollIntoViewIfNeeded();
+            await folderToggle.click({ timeout: 30_000 });
+            await expect(folderToggle).toHaveAttribute('aria-expanded', 'true', { timeout: 30_000 });
+          }
+          const firstExpectedChild = node.children?.find(c => {return c.type === 'file';})?.label;
+          if (firstExpectedChild) {
+            const expectedFileButton = folderNode
+              .locator('button.node.case-file__node[role="treeitem"]')
+              .filter({ has: this.page.locator('.node-name-document', { hasText: firstExpectedChild }) })
+              .first();
+            await expect(expectedFileButton).toBeVisible({ timeout: 30_000 });
+          }
+          if (node.children?.length) {
             await this.validateFileTree(node.children, currentPath, folderNode, errors);
           }
         } catch (e) {
@@ -238,27 +269,24 @@ export class CaseDetailsPage {
         }
       } else if (node.type === 'file') {
         try {
-          const fileLocator = (parentLocator ?? this.page).locator('.node-name-document', { hasText: node.label });
-          await expect(fileLocator).toBeVisible();
-          await fileLocator.click();
+          const fileButton = scope
+            .locator('button.node.case-file__node[role="treeitem"]')
+            .filter({ has: this.page.locator('span.node-name-document', { hasText: node.label }) })
+            .first();
+          // Option A: focus + Enter (instead of click)
+          await activateTreeItem(fileButton);
           if (node.contentSnippets) {
             for (const snippet of node.contentSnippets) {
               try {
                 const pdfContainer = this.page.locator('.pdfViewer');
                 const pdfTextLocator = pdfContainer.locator('span[role="presentation"]', { hasText: snippet });
-                const containerHandle = await pdfContainer.elementHandle();
-                const snippetHandle = await pdfTextLocator.elementHandle();
-                if (containerHandle && snippetHandle) {
-                  await this.page.evaluate(
-                    ([container, element]) => {
-                      (element as HTMLElement).scrollIntoView({ block: 'center' });
-                    },
-                    [containerHandle, snippetHandle]
-                  );
-                }
-                await expect(pdfTextLocator).toBeVisible();
+                await expect(pdfContainer).toBeVisible({ timeout: 30_000 });
+                await pdfTextLocator.first().scrollIntoViewIfNeeded();
+                await expect(pdfTextLocator.first()).toBeVisible({ timeout: 30_000 });
               } catch (e) {
-                errors.push(`Snippet not found in file "${node.label}" in folder "${parentPath.join(' / ')}": ${snippet}\n${e}`);
+                errors.push(
+                  `Snippet not found in file "${node.label}" in folder "${parentPath.join(' / ')}": ${snippet}\n${e}`
+                );
               }
             }
           }
