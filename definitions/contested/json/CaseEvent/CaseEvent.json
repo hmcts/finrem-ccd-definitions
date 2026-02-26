@@ -1112,7 +1112,7 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "Description": "Update solicitor contact details",
     "DisplayOrder": 133,
-    "PreConditionState(s)": "*",
+    "PreConditionState(s)": "awaitingHWFDecision;awaitingPaymentResponse;applicationSubmitted;applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;close;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;responseReceived;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;paperCaseAdded;caseHidden;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
