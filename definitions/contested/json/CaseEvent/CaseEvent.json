@@ -448,7 +448,7 @@
     "Description": "Approve orders",
     "DisplayOrder": 35,
     "PreConditionState(s)": "*",
-    "PostConditionState": "scheduleRaiseDirectionsOrder",
+    "PostConditionState": "solicitorDraftOrder",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",

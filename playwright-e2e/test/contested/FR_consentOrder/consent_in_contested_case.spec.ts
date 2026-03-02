@@ -68,9 +68,14 @@ test.describe('Consent order in contested case', () => {
       await uploadOrderDocumentsPage.uploadPensionDocument('Form P1');
       await axeUtils.audit();
       await uploadOrderDocumentsPage.navigateContinue(url, 6);
+      
+      await uploadOrderDocumentsPage.uploadDivorceOrderDoc('Divorce order.pdf');
+      await axeUtils.audit();
+      await uploadOrderDocumentsPage.navigateContinue(url, 7);
+
 
       await uploadOrderDocumentsPage.uploadVariationOrderDoc();
-      await uploadOrderDocumentsPage.navigateContinue(url, 7);
+      await uploadOrderDocumentsPage.navigateContinue(url, 8);
 
       await createCaseSavingYourAnswersPage.checkSelectedCourtAddress(courtAddress);
       await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
@@ -303,8 +308,11 @@ test.describe('Consent order in contested case', () => {
       await uploadOrderDocumentsPage.uploadPensionDocument('Form P1');
       await uploadOrderDocumentsPage.navigateContinue(url, 6);
 
-      await uploadOrderDocumentsPage.uploadVariationOrderDoc();
+      await uploadOrderDocumentsPage.uploadDivorceOrderDoc('Divorce order.pdf');
       await uploadOrderDocumentsPage.navigateContinue(url, 7);
+
+      await uploadOrderDocumentsPage.uploadVariationOrderDoc();
+      await uploadOrderDocumentsPage.navigateContinue(url, 8);
 
       await createCaseSavingYourAnswersPage.checkSelectedCourtAddress(courtAddress);
       await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
