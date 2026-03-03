@@ -40,6 +40,7 @@ For Contested Journey:
 yarn generate-excel-all-contested
 ```
 
+
 The generated Excel files will be in `defintions/consented/xlsx` or `defintions/contested/xlsx` respectively.
 
 ### Generate Excel Configs for a specific environment i.e. AAT/DEMO/DEMO-PROD-LIKE/ITHC/PERFTEST
