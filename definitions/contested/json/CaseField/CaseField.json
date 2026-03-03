@@ -5202,6 +5202,24 @@
     "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "N"
+    },
+      {
+    "LiveFrom": "03/03/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "currentUserIsApplicantSolicitor",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+    {
+    "LiveFrom": "03/03/2036",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "currentUserIsRespondentSolicitor",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",

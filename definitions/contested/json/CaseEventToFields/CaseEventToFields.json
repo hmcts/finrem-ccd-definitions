@@ -9491,7 +9491,7 @@
     "LiveFrom": "20/01/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
-    "CaseFieldID": "currentUserCaseRole",
+    "CaseFieldID": "currentUserIsApplicantSolicitor",
     "PageFieldDisplayOrder": 8,
     "DisplayContext": "READONLY",
     "PageID": 1,
@@ -9499,7 +9499,7 @@
     "PageColumnNumber": 1,
     "RetainHiddenValue": "Y",
     "FieldShowCondition": "applicantSolicitorAddressLabel=\" \"",
-    "_comment_": "New field needed for page 2, of that approach is kept for respondent solicitor page"
+    "_comment_": "Applicant page needs distinct event/field ID."
   },
   {
     "LiveFrom": "01/01/2017",
@@ -9511,8 +9511,10 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
     "PageShowCondition": "currentUserCaseRoleLabel=\"RESPSOLICITOR\"",
-    "ShowSummaryChangeOption": "Y"
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "RetriesTimeoutURLMidEvent": "3,4,5"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -9575,11 +9577,25 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "20/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_updateCaseDetailsSolicitor",
+    "CaseFieldID": "currentUserIsRespondentSolicitor",
+    "PageFieldDisplayOrder": 8,
+    "DisplayContext": "READONLY",
+    "PageID": 2,
+    "PageDisplayOrder": 2,
+    "PageColumnNumber": 1,
+    "RetainHiddenValue": "Y",
+    "FieldShowCondition": "rSolicitorAddressLabel=\" \"",
+    "_comment_": "Respondent page needs distinct event/field ID."
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "CaseFieldID": "currentUserCaseRoleLabel",
-    "PageFieldDisplayOrder": 10,
+    "PageFieldDisplayOrder": 8,
     "DisplayContext": "READONLY",
     "PageID": 2,
     "PageDisplayOrder": 2,
