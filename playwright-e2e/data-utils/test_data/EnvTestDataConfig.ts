@@ -2,8 +2,8 @@ const env = process.env.RUNNING_ENV || 'aat';
 
 const configs = {
   aat: {
-    DOCUMENT_URL: 'http://dm-store-aat.service.core-compute-aat.internal/documents/f375d421-e9f9-4e18-9067-f1c920559da8',
-    DOCUMENT_BINARY_URL: 'http://dm-store-aat.service.core-compute-aat.internal/documents/f375d421-e9f9-4e18-9067-f1c920559da8/binary',
+    DOCUMENT_URL: 'http://dm-store-aat.service.core-compute-aat.internal/documents/14159821-7a8a-41d6-b46d-91dbb0339867',
+    DOCUMENT_BINARY_URL: 'http://dm-store-aat.service.core-compute-aat.internal/documents/14159821-7a8a-41d6-b46d-91dbb0339867/binary',
     ORG_ID_1: 'Y707HZM',
     ORG_ID_2: '95V5X7X',
     PBA_NUMBER: 'PBA0089162',
