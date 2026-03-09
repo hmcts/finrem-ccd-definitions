@@ -321,7 +321,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "rSolicitorAddress",
-    "Label": "Their  address",
+    "Label": "          ",
     "FieldType": "AddressUK",
     "SecurityClassification": "Public"
   },
@@ -2172,6 +2172,24 @@
     "FieldType": "Text",
     "SecurityClassification": "Public"
   },
+    {
+    "LiveFrom": "09/03/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "currentUserIsApplicantSolicitor",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+    {
+    "LiveFrom": "09/03/2036",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "currentUserIsRespondentSolicitor",
+    "Label": " ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
@@ -2192,7 +2210,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "rSolicitorAddressLabel",
-    "Label": "Respondent Solicitor Address Label ",
+    "Label": "#### Respondent’s Solicitor’s Contact Details",
     "FieldType": "Label",
     "SecurityClassification": "Public"
   },
