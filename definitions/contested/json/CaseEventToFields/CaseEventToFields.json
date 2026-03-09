@@ -11794,5 +11794,17 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "FieldShowCondition": "stopRepClientConsent=\"No\""
+  },
+  {
+    "LiveFrom": "05/03/2025",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_close",
+    "CaseFieldID": "caseClosureDateField",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
   }
 ]

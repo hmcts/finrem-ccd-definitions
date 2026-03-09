@@ -521,6 +521,7 @@
     "Name": "Close Case",
     "Description": "Close Case",
     "DisplayOrder": 101,
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "PreConditionState(s)": "*",
     "PostConditionState": "close",
     "SecurityClassification": "Public",
