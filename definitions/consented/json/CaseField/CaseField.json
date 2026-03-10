@@ -124,7 +124,7 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "solicitorAddress",
-    "Label": "Your address",
+    "Label": "          ",
     "FieldType": "AddressUK",
     "SecurityClassification": "Public"
   },
@@ -2202,17 +2202,35 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "solicitorAddressLabel",
-    "Label": "Solicitor Address Label",
+    "Label": "## Solicitor’s Contact Details",
     "FieldType": "Label",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "10/03/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "solicitorYourAddressLabel",
+    "Label": "## Your address",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "_comment_": "For when applicant solicitor enter their contact information."
   },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "rSolicitorAddressLabel",
-    "Label": "#### Respondent’s Solicitor’s Contact Details",
+    "Label": "## Respondent’s Solicitor’s Contact Details",
     "FieldType": "Label",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "10/03/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "rSolicitorTheirAddressLabel",
+    "Label": "## Their address",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "_comment_": "For when a third party enters respondent solicitor contact information."
   },
   {
     "LiveFrom": "01/01/2017",
