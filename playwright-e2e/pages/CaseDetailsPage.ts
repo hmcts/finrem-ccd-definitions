@@ -1,3 +1,4 @@
+
 import { type Page, expect, Locator } from '@playwright/test';
 import { CaseEvent } from '../config/case-data';
 import { Tab, TabContentItem } from './components/tab';
@@ -13,6 +14,7 @@ export class CaseDetailsPage {
   readonly goButton: Locator;
   readonly closeAndReturnButton: Locator;
   readonly activeCaseFlagOnCase: Locator;
+  readonly cfvSearchBox: Locator;
 
   public constructor(page: Page) {
     this.page = page;
@@ -22,6 +24,7 @@ export class CaseDetailsPage {
     this.goButton = page.locator('//button[text()=\'Go\']');
     this.closeAndReturnButton = page.getByRole('button', { name: 'Close and Return to case' });
     this.activeCaseFlagOnCase = page.getByLabel('Important').locator('div', { hasText: /There (is|are) \d+ active flag[s]? on/ });
+    this.cfvSearchBox = page.getByRole('searchbox', { name: 'Search by document name' });
   }
 
   async checkHasBeenCreated() {
@@ -350,5 +353,16 @@ export class CaseDetailsPage {
       await reviewLink.first().scrollIntoViewIfNeeded();
       await reviewLink.first().click();
     }
+  }
+
+  /**
+   * Asserts that 'No results found' is visible when searching for a document by name.
+   * @param docName The document name to search for
+   */
+  async assertNoResultsFoundForDocumentInCfv(docName: string) {
+    await this.cfvSearchBox.fill(docName);
+    await this.page.keyboard.press('Enter');
+    const noResults = this.page.getByText('No results found', { exact: false });
+    await expect(noResults).toBeVisible();
   }
 }

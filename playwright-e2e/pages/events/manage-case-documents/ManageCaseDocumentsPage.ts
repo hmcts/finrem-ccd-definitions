@@ -11,6 +11,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
   private readonly checkConfidentialFourLabel: Locator;
   readonly isThisFdrDocumentQuestion: Locator;
   private readonly addNewRadio: Locator;
+  private readonly amendRadio: Locator;
 
   private readonly commonActionsHelper: CommonActionsHelper;
 
@@ -26,6 +27,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     this.checkConfidentialFourLabel = page.getByText('Parties cannot see a document you upload until you formally share it with them within the portal UNLESS it is a FDR document, in which case they will be able to see it immediately without it being formally shared.');
     this.isThisFdrDocumentQuestion = page.getByText('Is this a Financial Dispute');
     this.addNewRadio = page.getByRole('radio', { name: 'Add New' });
+    this.amendRadio = page.getByRole('radio', { name: 'Amend' });
   }
 
   // Legacy methods (to be removed once old Manage Case Documents event is gone)
@@ -68,6 +70,11 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     await this.addNewRadio.check();
   }
 
+  async amendDoc() {
+    await expect(this.amendRadio).toBeVisible();
+    await this.amendRadio.check();
+  }
+
   getUploadLabel(collectionIndex: number = 0): Locator {
     return this.page.getByLabel('Please upload any case').nth(collectionIndex);
   }
@@ -82,6 +89,15 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     await expect(uploadLabel).toBeVisible();
     const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
     await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadInput, filePayload);
+  }
+
+  async removeDocument(collectionIndex: number = 0) {
+    const buttonName = collectionIndex === 0
+      ? 'Remove Add new case document(s)'
+      : `Remove Add new case document(s) ${collectionIndex + 1}`;
+    const removeButton = this.page.getByRole('button', { name: buttonName, exact: true });
+    await expect(removeButton).toBeVisible();
+    await removeButton.click();
   }
 
   getTextArea(collectionIndex: number): Locator {
@@ -139,12 +155,6 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
       : this.getNoConfidentialRadio(collectionIndex);
     await expect(radio).toBeVisible();
     await radio.check();
-
-    if (isConfidential) {
-      await expect(this.isThisFdrDocumentQuestion).toBeHidden();
-    } else {
-      await expect(this.isThisFdrDocumentQuestion).toBeVisible();
-    }
   }
 
   getFdrYesRadio(collectionIndex: number = 0): Locator {
