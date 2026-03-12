@@ -1552,5 +1552,26 @@
     "CaseEventID": "internal-change-UPDATE_CASE",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "09/03/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/03/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "09/03/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
   }
 ]
