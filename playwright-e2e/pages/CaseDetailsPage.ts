@@ -356,13 +356,20 @@ export class CaseDetailsPage {
   }
 
   /**
-   * Asserts that 'No results found' is visible when searching for a document by name.
-   * @param docName The document name to search for
+   * Asserts that a document is visible or not visible in Case File View, depending on shouldBeVisible.
+   * @param docName The document name to check
+   * @param shouldBeVisible Whether the document should be visible
    */
-  async assertNoResultsFoundForDocumentInCfv(docName: string) {
-    await this.cfvSearchBox.fill(docName);
-    await this.page.keyboard.press('Enter');
-    const noResults = this.page.getByText('No results found', { exact: false });
-    await expect(noResults).toBeVisible();
+  async assertDocumentVisibleInCfv(docName: string, shouldBeVisible: boolean) {
+    await expect(this.page.getByRole('tab', { name: 'Case File View' })).toBeVisible();
+    await this.page.getByRole('tab', { name: 'Case File View' }).click();
+    await this.page.getByRole('button', { name: 'Toggle list' }).click();
+    await this.page.getByText('Expand All').click();
+    const docItem = this.page.getByRole('treeitem', { name: docName, exact: true });
+    if (shouldBeVisible) {
+      await expect(docItem).toBeVisible();
+    } else {
+      await expect(docItem).not.toBeVisible();
+    }
   }
 }

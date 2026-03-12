@@ -207,7 +207,7 @@ test.describe('Contested Manage Case Documents', () => {
       // Case documents tab assertion
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
       await caseDetailsPage.assertTabData([amendedDocumentTabData()]);
-      await caseDetailsPage.assertNoResultsFoundForDocumentInCfv('caseDoc.docx');
+      await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
     }
   );
 
@@ -234,7 +234,7 @@ test.describe('Contested Manage Case Documents', () => {
       await manageCaseDocumentsPage.navigateSubmit();
 
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
-      await caseDetailsPage.assertNoResultsFoundForDocumentInCfv('caseDoc.docx');
+      await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
     }
   );
 });

@@ -98,7 +98,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     const removeButton = this.page.getByRole('button', { name: buttonName, exact: true });
     await expect(removeButton).toBeVisible();
     await removeButton.click();
-    await expect(this.page.getByText('Are you sure you want to')).toBeVisible();
+    await expect(this.page.getByRole('heading', { name: 'Are you sure you want to remove the item?' })).toBeVisible();
     await this.page.getByRole('button', { name: 'Remove' }).click();
 
   }
