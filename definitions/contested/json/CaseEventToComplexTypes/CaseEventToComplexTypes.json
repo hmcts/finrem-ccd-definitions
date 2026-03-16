@@ -7065,6 +7065,15 @@
     "DisplayContext": "MANDATORY"
   },
   {
+    "LiveFrom": "20/01/2026",
+    "ID": "FR_newManageCaseDocuments_to_inputManageCaseDocumentCollection",
+    "CaseEventID": "FR_newManageCaseDocuments",
+    "CaseFieldID": "inputManageCaseDocumentCollection",
+    "ListElementCode": "caseDocumentUploadDateTime",
+    "DisplayContext": "OPTIONAL",
+    "FieldShowCondition": "inputManageCaseDocumentCollection=\"IMPOSSIBLAW\""
+  },
+  {
     "LiveFrom": "13/01/2026",
     "ID": "FR_workingVacatedHearing",
     "CaseEventID": "FR_manageHearings",
