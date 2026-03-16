@@ -13,6 +13,7 @@ export class CaseDetailsPage {
   readonly goButton: Locator;
   readonly closeAndReturnButton: Locator;
   readonly activeCaseFlagOnCase: Locator;
+  readonly cfvSearchBox: Locator;
 
   public constructor(page: Page) {
     this.page = page;
@@ -22,6 +23,7 @@ export class CaseDetailsPage {
     this.goButton = page.locator('//button[text()=\'Go\']');
     this.closeAndReturnButton = page.getByRole('button', { name: 'Close and Return to case' });
     this.activeCaseFlagOnCase = page.getByLabel('Important').locator('div', { hasText: /There (is|are) \d+ active flag[s]? on/ });
+    this.cfvSearchBox = page.getByRole('searchbox', { name: 'Search by document name' });
   }
 
   async checkHasBeenCreated() {
@@ -349,6 +351,24 @@ export class CaseDetailsPage {
       // Scroll into view and click
       await reviewLink.first().scrollIntoViewIfNeeded();
       await reviewLink.first().click();
+    }
+  }
+
+  /**
+   * Asserts that a document is visible or not visible in Case File View, depending on shouldBeVisible.
+   * @param docName The document name to check
+   * @param shouldBeVisible Whether the document should be visible
+   */
+  async assertDocumentVisibleInCfv(docName: string, shouldBeVisible: boolean) {
+    await expect(this.page.getByRole('tab', { name: 'Case File View' })).toBeVisible();
+    await this.page.getByRole('tab', { name: 'Case File View' }).click();
+    await this.page.getByRole('button', { name: 'Toggle list' }).click();
+    await this.page.getByText('Expand All').click();
+    const docItem = this.page.getByRole('treeitem', { name: docName, exact: true });
+    if (shouldBeVisible) {
+      await expect(docItem).toBeVisible();
+    } else {
+      await expect(docItem).not.toBeVisible();
     }
   }
 }
