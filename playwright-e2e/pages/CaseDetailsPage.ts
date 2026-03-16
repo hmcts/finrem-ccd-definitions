@@ -1,4 +1,3 @@
-
 import { type Page, expect, Locator } from '@playwright/test';
 import { CaseEvent } from '../config/case-data';
 import { Tab, TabContentItem } from './components/tab';

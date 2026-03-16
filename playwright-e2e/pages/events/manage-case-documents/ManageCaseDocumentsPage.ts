@@ -100,7 +100,6 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     await removeButton.click();
     await expect(this.page.getByRole('heading', { name: 'Are you sure you want to remove the item?' })).toBeVisible();
     await this.page.getByRole('button', { name: 'Remove' }).click();
-
   }
 
   getTextArea(collectionIndex: number): Locator {

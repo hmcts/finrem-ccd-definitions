@@ -1,3 +1,8 @@
+export enum UserType {
+  CaseWorker = 'caseWorker',
+  SuperCaseWorker = 'superCaseWorker',
+  Judge = 'judge'
+}
 import fs from 'fs';
 import { ccdApi } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
@@ -66,18 +71,18 @@ export class ContestedEventApi {
 
   static async updateStepsFromJson(
     caseId: string,
-    userType: 'caseWorker' | 'superCaseWorker' | 'judge',
+    userType: UserType,
     steps: { event: string; jsonObject?: string }[]
   ): Promise<any> {
     let creds;
     switch (userType) {
-    case 'superCaseWorker':
+    case UserType.SuperCaseWorker:
       creds = config.superCaseWorker;
       break;
-    case 'judge':
+    case UserType.Judge:
       creds = config.judge;
       break;
-    case 'caseWorker':
+    case UserType.CaseWorker:
     default:
       creds = config.caseWorker;
     }
@@ -98,7 +103,7 @@ export class ContestedEventApi {
     caseId: string,
     event: string,
     jsonObject: string,
-    userType: 'caseWorker' | 'superCaseWorker' | 'judge'
+    userType: UserType
   ): Promise<void> {
     await this.updateStepsFromJson(caseId, userType, [
       {
@@ -113,7 +118,7 @@ export class ContestedEventApi {
     event: string,
     payloadPath: string,
     modifications: any[] = [],
-    userType: 'caseWorker' | 'superCaseWorker' | 'judge' = 'caseWorker'
+    userType: UserType = UserType.CaseWorker
   ): Promise<void> {
     const jsonObject = await ContestedEventApi.createUpdatedJsonObjectFromFile(
       payloadPath,
@@ -189,7 +194,7 @@ export class ContestedEventApi {
           ISSUE_APPLICATION(issueDate)
         );
 
-      await this.updateStepsFromJson(caseId, 'caseWorker', [
+      await this.updateStepsFromJson(caseId, UserType.CaseWorker, [
         {
           event: ContestedEvents.issueApplication.ccdCallback,
           jsonObject: issueApplicationJsonObject
@@ -359,7 +364,7 @@ export class ContestedEventApi {
       ContestedEvents.approveOrders.ccdCallback,
       PayloadPath.Contested.judiciaryBasicApproveOrders,
       jsonObject,
-      'judge'
+      UserType.Judge
     );
   }
 
