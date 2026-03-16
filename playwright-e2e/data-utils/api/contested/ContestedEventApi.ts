@@ -1,3 +1,8 @@
+export enum UserType {
+  CaseWorker = 'caseWorker',
+  SuperCaseWorker = 'superCaseWorker',
+  Judge = 'judge'
+}
 import fs from 'fs';
 import { ccdApi } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
@@ -17,6 +22,25 @@ export class ContestedEventApi {
       response = await ccdApi.updateCaseInCcd(
         config.caseWorker.email,
         config.caseWorker.password,
+        caseId,
+        CaseType.Contested,
+        step.event,
+        step.payload || '',
+        step.replacements || []
+      );
+    }
+    return response;
+  }
+
+  private static async updateSuperCaseWorkerSteps(
+    caseId: string,
+    steps: { event: string; payload?: string; replacements?: ReplacementAction[] }[]
+  ): Promise<any> {
+    let response;
+    for (const step of steps) {
+      response = await ccdApi.updateCaseInCcd(
+        config.superCaseWorker.email,
+        config.superCaseWorker.password,
         caseId,
         CaseType.Contested,
         step.event,
@@ -47,10 +71,22 @@ export class ContestedEventApi {
 
   static async updateStepsFromJson(
     caseId: string,
-    asCaseWorker: boolean,
+    userType: UserType,
     steps: { event: string; jsonObject?: string }[]
   ): Promise<any> {
-    const { email, password } = asCaseWorker ? config.caseWorker : config.judge;
+    let creds;
+    switch (userType) {
+    case UserType.SuperCaseWorker:
+      creds = config.superCaseWorker;
+      break;
+    case UserType.Judge:
+      creds = config.judge;
+      break;
+    case UserType.CaseWorker:
+    default:
+      creds = config.caseWorker;
+    }
+    const { email, password } = creds;
     for (const step of steps) {
       await ccdApi.updateCaseInCcdFromJSONObject(
         email,
@@ -67,9 +103,9 @@ export class ContestedEventApi {
     caseId: string,
     event: string,
     jsonObject: string,
-    asCaseWorker: boolean
+    userType: UserType
   ): Promise<void> {
-    await this.updateStepsFromJson(caseId, asCaseWorker, [
+    await this.updateStepsFromJson(caseId, userType, [
       {
         event,
         jsonObject
@@ -82,13 +118,13 @@ export class ContestedEventApi {
     event: string,
     payloadPath: string,
     modifications: any[] = [],
-    asCaseWorker: boolean = true
+    userType: UserType = UserType.CaseWorker
   ): Promise<void> {
     const jsonObject = await ContestedEventApi.createUpdatedJsonObjectFromFile(
       payloadPath,
       modifications
     );
-    await this.updateCaseWithJson(caseId, event, jsonObject, asCaseWorker);
+    await this.updateCaseWithJson(caseId, event, jsonObject, userType);
   }
 
   /**
@@ -158,7 +194,7 @@ export class ContestedEventApi {
           ISSUE_APPLICATION(issueDate)
         );
 
-      await this.updateStepsFromJson(caseId, true, [
+      await this.updateStepsFromJson(caseId, UserType.CaseWorker, [
         {
           event: ContestedEvents.issueApplication.ccdCallback,
           jsonObject: issueApplicationJsonObject
@@ -328,7 +364,7 @@ export class ContestedEventApi {
       ContestedEvents.approveOrders.ccdCallback,
       PayloadPath.Contested.judiciaryBasicApproveOrders,
       jsonObject,
-      false
+      UserType.Judge
     );
   }
 
@@ -425,6 +461,16 @@ export class ContestedEventApi {
         event: ContestedEvents.manageHearings.ccdCallback,
         payload: PayloadPath.Contested.manageHearingAddHearing,
         replacements: ADD_A_HEARING(hearingDate, extraReplacements)
+      }
+    ]);
+  }
+
+  static async superCaseworkerAddDocManageCaseDocuments(caseId: string) {
+
+    await this.updateSuperCaseWorkerSteps(caseId, [
+      {
+        event: ContestedEvents.manageCaseDocumentsNewEvent.ccdCallback,
+        payload: PayloadPath.Contested.manageCaseDocumentsAddDoc
       }
     ]);
   }
