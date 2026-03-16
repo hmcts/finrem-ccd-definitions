@@ -57,3 +57,16 @@ export function getWithoutPrejudiceDocumentsTabData(uploadDateTime: string): Tab
     ]
   };
 }
+
+export function amendedDocumentTabData(): Tab {
+  return {
+    tabName: 'Case documents',
+    tabContent: [
+      '1',
+      { tabItem: 'Please upload any case documents', value: 'amendedDoc.docx' },
+      { tabItem: 'Document type', value: 'Witness Summons' },
+      { tabItem: 'Is the document confidential?', value: 'No' },
+      { tabItem: 'Is this a Financial Dispute Resolution document (FDR)?', value: 'No' }
+    ]
+  };
+}
