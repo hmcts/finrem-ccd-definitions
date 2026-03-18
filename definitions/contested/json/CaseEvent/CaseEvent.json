@@ -518,19 +518,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_close",
-    "Name": "Close Case",
-    "Description": "Close Case",
-    "DisplayOrder": 101,
-    "PreConditionState(s)": "*",
-    "PostConditionState": "close",
-    "SecurityClassification": "Public",
-    "ShowSummary": "N",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_amendCase",
     "Name": "Amend Case",
     "Description": "Amend Case",
