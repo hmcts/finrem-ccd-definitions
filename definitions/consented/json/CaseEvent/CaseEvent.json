@@ -202,19 +202,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "FR_close",
-    "Name": "Close Case",
-    "Description": "Close Case",
-    "DisplayOrder": 114,
-    "PreConditionState(s)": "caseAdded;awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;newPaperCase;readyForHearing",
-    "PostConditionState": "close",
-    "SecurityClassification": "Public",
-    "ShowSummary": "N",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_solicitorCreate",
     "Name": "Consent Order Application",
     "Description": "Create an application for financial remedy by consent",

@@ -1,0 +1,22 @@
+[
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseEventID": "FR_close",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-courtadmin"
+        ],
+        "CRUD": "CRU"
+      },
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-solicitor",
+          "caseworker-divorce-financialremedy-judiciary"
+        ],
+        "CRUD": "R"
+      }
+    ]
+  }
+]
