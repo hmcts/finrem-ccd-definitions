@@ -65,5 +65,23 @@
     "HintText": "I confirm I am willing to accept service of all correspondence and orders by email at the email address stated above",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "05/03/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "caseClosureDateField",
+    "Label": "When did the case close?",
+    "HintText": "Enter date",
+    "FieldType": "Date",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "05/03/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "caseMetrics",
+    "Label": " ",
+    "FieldType": "FR_caseMetrics",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]
