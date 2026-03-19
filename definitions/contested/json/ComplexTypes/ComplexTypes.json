@@ -1244,7 +1244,7 @@
     "ElementLabel": "Consent Order Annexed and Stamped",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID":  "applicationsConsentOrderToFinaliseProceedings"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1320,9 +1320,8 @@
     "ElementLabel": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
-    "CategoryID":  "applicationsConsentOrderToFinaliseProceedings"
+    "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
   },
-
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_uploadCaseDocument",
@@ -5221,6 +5220,7 @@
     "FieldType": "TextArea",
     "ElementLabel": "Provide the date of hearing and a description of the document",
     "SecurityClassification": "Public",
+    "FieldShowCondition": "caseDocumentType=\"IMPOSSIBLE\"",
     "Searchable": "N"
   },
   {
@@ -5267,6 +5267,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "20/01/2026",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "caseDocumentUploadDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Upload DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  { 
     "LiveFrom": "13/01/2026",
     "ID": "FR_workingVacatedHearing",
     "ListElementCode": "vacateOrAdjournAction",
