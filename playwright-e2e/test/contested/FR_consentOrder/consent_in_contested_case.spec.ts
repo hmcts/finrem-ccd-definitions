@@ -25,6 +25,7 @@ test.describe('Consent order in contested case', () => {
       createGeneralOrderPage,
       consentApplicationApprovePage,
       sendOrderPage,
+      closeCasePage,
       eventSummaryPage,
       axeUtils
     }) => {
@@ -247,6 +248,13 @@ test.describe('Consent order in contested case', () => {
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.sendConsentOrder.listItem);
 
       await caseDetailsPage.selectNextStep(ContestedEvents.closeCase);
+      await closeCasePage.enterCloseDate({
+        day: '01',
+        month: '01',
+        year: '2025'
+      });
+      await closeCasePage.navigateSubmit();
+      await closeCasePage.enterEventSummary('Closing the case');
       await eventSummaryPage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.closeCase.listItem);
       await manageCaseDashboardPage.signOut();
@@ -267,6 +275,8 @@ test.describe('Consent order in contested case', () => {
       consentOrderNotApprovedPage,
       consentApplicationApprovePage,
       sendOrderPage,
+      closeCasePage,
+      page,
       eventSummaryPage,
       axeUtils
     }, testInfo) => {
@@ -519,7 +529,15 @@ test.describe('Consent order in contested case', () => {
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.sendConsentOrder.listItem);
 
       await caseDetailsPage.selectNextStep(ContestedEvents.closeCase);
+      await closeCasePage.enterCloseDate({
+        day: '01',
+        month: '01',
+        year: '2025'
+      });
+      await closeCasePage.navigateSubmit();
+      await closeCasePage.enterEventSummary('Closing the case');
       await eventSummaryPage.navigateSubmit();
+
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.closeCase.listItem);
       await manageCaseDashboardPage.signOut();
     });
