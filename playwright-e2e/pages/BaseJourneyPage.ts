@@ -13,6 +13,7 @@ export abstract class BaseJourneyPage {
   private readonly addNewButton: Locator;
   private readonly cancelHyperlink: Locator;
   private readonly spinner: Locator;
+  private readonly eventSummaryTextBox: Locator;
 
   readonly thereIsAProblemHeader: Locator;
   private readonly fieldIsRequiredErrorMessage: Locator;
@@ -30,6 +31,7 @@ export abstract class BaseJourneyPage {
     this.addNewButton = page.getByRole('button', { name: 'Add new' }).nth(0);
     this.cancelHyperlink = page.getByRole('link', { name: 'Cancel' });
     this.spinner = this.page.locator('xuilib-loading-spinner');
+    this.eventSummaryTextBox = page.getByRole('textbox', { name: 'Event summary (optional) A' });
 
     this.thereIsAProblemHeader = page.getByRole('heading', { name: 'There is a problem' });
     // error messages
@@ -41,13 +43,18 @@ export abstract class BaseJourneyPage {
     await expect(pageHeading).toBeVisible();
   }
 
+  async enterEventSummary(summary: string) {
+    await expect(this.eventSummaryTextBox).toBeVisible();
+    await this.eventSummaryTextBox.fill(summary);
+  }
+
   async navigateSubmit() {
     await this.page.waitForLoadState();
     await this.submitButton.scrollIntoViewIfNeeded();
     await expect(this.submitButton).toBeVisible();
     await expect(this.submitButton).toBeEnabled();
     await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
-    await this.submitButton.click();
+    await this.submitButton.click({ force: true });
     const submissionDateAndTime = DateHelper.getCurrentDateTimeFull();
     await this.waitForSpinner();
     return submissionDateAndTime;
