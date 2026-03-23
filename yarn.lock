@@ -3044,8 +3044,8 @@ __metadata:
   linkType: hard
 
 "docx@npm:^9.5.0":
-  version: 9.5.3
-  resolution: "docx@npm:9.5.3"
+  version: 9.6.1
+  resolution: "docx@npm:9.6.1"
   dependencies:
     "@types/node": "npm:^25.2.3"
     hash.js: "npm:^1.1.7"
@@ -3053,7 +3053,7 @@ __metadata:
     nanoid: "npm:^5.1.3"
     xml: "npm:^1.0.1"
     xml-js: "npm:^1.6.8"
-  checksum: 10/61215ce9e677866db31c97bf3704d0942eb34f463e204ab690a0e32514256b773a4d2086ac1a23d761c8137cb5d5cee844345ba04c6f65e1d85b30eba8d92ee8
+  checksum: 10/e94a2251a5309e929dd7827040a0fe00b26589bfe75620f75f1596ff13bd9ab225d74b0725a3b4a22dcc779ff69f0cb0929628e392c7ece8e8b2226756e9d2a7
   languageName: node
   linkType: hard
 
@@ -3105,9 +3105,9 @@ __metadata:
   linkType: hard
 
 "dotenv@npm:^17.0.0":
-  version: 17.2.3
-  resolution: "dotenv@npm:17.2.3"
-  checksum: 10/f8b78626ebfff6e44420f634773375c9651808b3e1a33df6d4cc19120968eea53e100f59f04ec35f2a20b2beb334b6aba4f24040b2f8ad61773f158ac042a636
+  version: 17.3.1
+  resolution: "dotenv@npm:17.3.1"
+  checksum: 10/4dde6571dff22c2323a3e33ac25e1e7d51c4b6d60dc884f59e3efe85c8fd3cc8800d6b3925d05c46b19dca08cba821a0a24e22f75a1b9b768c859b98bb927b04
   languageName: node
   linkType: hard
 
@@ -3419,25 +3419,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-playwright@npm:^2.3.0":
-  version: 2.4.0
-  resolution: "eslint-plugin-playwright@npm:2.4.0"
+"eslint-plugin-playwright@npm:^2.3.0, eslint-plugin-playwright@npm:^2.5.1":
+  version: 2.10.1
+  resolution: "eslint-plugin-playwright@npm:2.10.1"
   dependencies:
-    globals: "npm:^16.4.0"
+    globals: "npm:^17.3.0"
   peerDependencies:
     eslint: ">=8.40.0"
-  checksum: 10/203b47ac983eedc3a627e24df0925d3ebd7572c1a5951196dcefde996109498da59e7ca75f0f537b7424ac328e5b0456bfa1de0a413da7ae698e3b07734b6ebb
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-playwright@npm:^2.5.1":
-  version: 2.5.1
-  resolution: "eslint-plugin-playwright@npm:2.5.1"
-  dependencies:
-    globals: "npm:^16.4.0"
-  peerDependencies:
-    eslint: ">=8.40.0"
-  checksum: 10/d6700cc5ef729a756c1c0956f98bf9822d8a2f74e7c2bc130ea15ebed41648cd2b4e0d50225dcb7b5c1c3a796d718c6592bc67fa1fe70cb7b818b147ee93b56f
+  checksum: 10/1b74abf37c19926c0c66845229b598acc7b5730357ded30447771a8f2fa57c3261e73cee044b965d35093a598ce1a94a5bb69d71785e60963ad7472309b025ed
   languageName: node
   linkType: hard
 

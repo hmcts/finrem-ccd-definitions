@@ -294,5 +294,6 @@ export const PayloadPath = {
     manageBarristerAddIntervenerBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-intervener-barrister.json",
     agreedDraftOrderApplicant: "./playwright-e2e/resources/payload/contested/caseworker/upload-draft-orders/agreed-draft-orders-applicant.json",
     manageHearingAddHearing: "./playwright-e2e/resources/payload/contested/caseworker/manage-hearing/add-a-hearing/add-a-hearing.json",
+    manageCaseDocumentsAddDoc: "./playwright-e2e/resources/payload/contested/supercaseworker/manage-case-documents-add.json"
   }
 } as const;

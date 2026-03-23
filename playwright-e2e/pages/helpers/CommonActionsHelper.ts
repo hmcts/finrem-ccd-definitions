@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { Page } from 'playwright';
-import {expect, Locator} from '@playwright/test';
+import { expect, Locator } from '@playwright/test';
 import config from '../../config/config';
 
 export class CommonActionsHelper {
@@ -8,31 +8,31 @@ export class CommonActionsHelper {
   async enterUkAddress(
     page: Page,
     address?: {
-            buildingAndStreet?: string;
-            addressLine2?: string;
-            townOrCity?: string;
-            county?: string;
-            postcodeOrZipcode?: string;
-            country?: string;
-        }
+      buildingAndStreet?: string;
+      addressLine2?: string;
+      townOrCity?: string;
+      county?: string;
+      postcodeOrZipcode?: string;
+      country?: string;
+    }
   ) {
     await page.getByRole('link', { name: 'I can\'t enter a UK postcode' }).click();
-    await page.getByRole('textbox', { name: 'Building and Street'}).fill(address?.buildingAndStreet ?? 'test');
-    await page.getByRole('textbox', { name: 'Address Line 2'}).fill(address?.addressLine2 ?? 'test');
-    await page.getByRole('textbox', { name: 'Town or City'}).fill(address?.townOrCity ?? 'test');
-    await page.getByRole('textbox', { name: 'County'}).fill(address?.county ?? 'test');
-    await page.getByRole('textbox', { name: 'Postcode/Zipcode'}).fill(address?.postcodeOrZipcode ?? 'test');
-    await page.getByRole('textbox', { name: 'Country'}).fill(address?.country ?? 'test');
+    await page.getByRole('textbox', { name: 'Building and Street' }).fill(address?.buildingAndStreet ?? 'test');
+    await page.getByRole('textbox', { name: 'Address Line 2' }).fill(address?.addressLine2 ?? 'test');
+    await page.getByRole('textbox', { name: 'Town or City' }).fill(address?.townOrCity ?? 'test');
+    await page.getByRole('textbox', { name: 'County' }).fill(address?.county ?? 'test');
+    await page.getByRole('textbox', { name: 'Postcode/Zipcode' }).fill(address?.postcodeOrZipcode ?? 'test');
+    await page.getByRole('textbox', { name: 'Country' }).fill(address?.country ?? 'test');
   }
 
   async enterPhoneNumber(page: Page) {
-    await page.getByRole('textbox', { name: 'Phone Number'}).fill('07111111111');
+    await page.getByRole('textbox', { name: 'Phone Number' }).fill('07111111111');
   }
 
   async enterEmailAddress(page: Page, emailAddress: string) {
-    await page.getByRole('textbox', { name: 'Email'}).fill(emailAddress);
+    await page.getByRole('textbox', { name: 'Email' }).fill(emailAddress);
   }
-    
+
   async emailConsent(page: Page, caseType: string, consent: boolean) {
     const radioOption = consent ? 'Yes' : 'No';
     if (caseType === config.caseType.contested) {
@@ -111,7 +111,7 @@ export class CommonActionsHelper {
     }
   }
 
-  async enterDate(element: Locator, date: {year: string, month: string, day: string}) {
+  async enterDate(element: Locator, date: { year: string, month: string, day: string }) {
     const day = element.locator('input[id*=\'-day\']');
     const month = element.locator('input[id*=\'-month\']');
     const year = element.locator('input[id*=\'-year\']');
@@ -123,5 +123,9 @@ export class CommonActionsHelper {
     await day.fill(date.day);
     await month.fill(date.month);
     await year.fill(date.year);
+
+    await day.blur();
+    await month.blur();
+    await year.blur();
   }
 }
