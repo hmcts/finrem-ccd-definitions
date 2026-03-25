@@ -18,7 +18,7 @@ const typeOfHearingData = [
   },
   {
     typeOfHearing: 'First Directions Appointment (FDA)',
-    hearingDocuments: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'final_hearing_file1.pdf', 'final_hearing_file2.pdf']
+    hearingDocuments: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'final_hearing_file1.pdf', 'final_hearing_file2.pdf']
   },
   {
     typeOfHearing: 'Financial Dispute Resolution (FDR)',
@@ -346,7 +346,7 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
         duration: '1hr 20mins',
         whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',
         additionalInformation: 'This is additional information about the hearing',
-        uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'Dummy QA copy.doc']
+        uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'Dummy QA copy.doc']
       })]);
     });
 
