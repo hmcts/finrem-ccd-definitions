@@ -1,4 +1,4 @@
-FROM hmctspublic.azurecr.io/base/node:20-alpine as base
+FROM hmctsprod.azurecr.io/base/node:20-alpine as base
 USER root
 RUN corepack enable
 USER hmcts

@@ -35,7 +35,7 @@ test.describe('Contested - Ready For Hearing', () => {
         duration: '1hr 20mins',
         whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',
         additionalInformation: 'This is additional information about the hearing',
-        uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'Dummy QA copy.doc']
+        uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'Dummy QA copy.doc']
       })]);
     });
 });
