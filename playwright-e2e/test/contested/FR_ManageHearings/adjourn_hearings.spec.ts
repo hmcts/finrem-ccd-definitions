@@ -12,7 +12,7 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
   test('Contested - Adjourn Hearing - Not Relisted',
     { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, axeUtils, checkYourAnswersPage }) => {
       // Create and setup case up to issue application
-      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: false });
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
@@ -56,7 +56,7 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
           duration: '1hr 20mins',
           whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',
           additionalInformation: 'This is additional information about the hearing',
-          uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'AdjournedHearingNotice.pdf', 'Dummy QA copy.doc'],
+          uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'AdjournedHearingNotice.pdf', 'Dummy QA copy.doc'],
           reasonForVacating: 'Other - Please specify',
           otherReasonForVacating: 'The hearing is no longer required'
         })
@@ -151,7 +151,7 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
         whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',
         additionalInformation: 'This is additional information about the hearing',
         uploadFiles: [
-          'HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'PfdNcdrCoverLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf','AdjournedHearingNotice.pdf', 'Dummy QA copy.doc'
+          'HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf','AdjournedHearingNotice.pdf', 'Dummy QA copy.doc'
         ],
         reasonForVacating: 'Other - Please specify',
         otherReasonForVacating: 'The hearing is no longer required'
