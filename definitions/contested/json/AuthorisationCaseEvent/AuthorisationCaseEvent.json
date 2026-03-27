@@ -2278,7 +2278,14 @@
     "LiveFrom": "09/03/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_stopRepresentingClient",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "09/03/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_stopRepresentingClient",
+    "UserRole": "[RESPSOLICITOR]",
     "CRUD": "CRUD"
   }
 ]
