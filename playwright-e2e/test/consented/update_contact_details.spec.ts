@@ -8,6 +8,7 @@ import { consentedApplicantUpdateContactDetailsTableData } from '../../resources
 import { updateApplicantRepresentedContactDetailsTabData } from '../../resources/tab_content/consented/update_contact_details_represented';
 import { updateContactDetailsRespondentNotRepresentedTable } from '../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable';
 import { updateRespondentNonRepresentedContactDetailsTabData  } from '../../resources/tab_content/consented/update_contact_details_not_represented';
+import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
 
 
 test(
@@ -116,5 +117,30 @@ test(
 
     // Assert tab data
     await caseDetailsPage.assertTabData(updateRespondentNonRepresentedContactDetailsTabData);
+  }
+);
+
+test(
+  'Consented - Update contact details - applicant solicitor event',
+  { tag: [] },
+  async (
+    {
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage,
+      updateContactDetailsPage,
+      checkYourAnswersPage,
+      axeUtils
+    }, testInfo) => {
+    // Create case and progress to HWF decision made
+    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+
+    // Login as applicant solicitor
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
+    await manageCaseDashboardPage.navigateToCase(caseId);
+
+    // Update contact details
+    await caseDetailsPage.selectNextStep(ConsentedEvents.updateContactDetails);
   }
 );
