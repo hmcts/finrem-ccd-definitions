@@ -64,4 +64,4 @@ export const updateRespondentNonRepresentedContactDetailsSolChangeTabData = [
       { tabItem: 'Postcode/Zipcode', value: 'NW2 7NE' }
     ]
   }
-]
+];

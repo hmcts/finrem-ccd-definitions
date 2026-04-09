@@ -5,17 +5,17 @@ import { YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums';
 import { updateContactDetailsTabData } from '../../resources/tab_content/consented/update_contact_details_caseworker_tabs';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
 import {
-    consentedApplicantUpdateContactDetailsTableData,
-    postSubmissionApplicantContactDetailsData
+  consentedApplicantUpdateContactDetailsTableData,
+  postSubmissionApplicantContactDetailsData
 } from '../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable';
 import { updateApplicantRepresentedContactDetailsTabData } from '../../resources/tab_content/consented/update_contact_details_represented';
 import { updateContactDetailsRespondentNotRepresentedTable } from '../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable';
 import {
-    updateRespondentNonRepresentedContactDetailsSolChangeTabData,
-    updateRespondentNonRepresentedContactDetailsTabData
+  updateRespondentNonRepresentedContactDetailsSolChangeTabData,
+  updateRespondentNonRepresentedContactDetailsTabData
 } from '../../resources/tab_content/consented/update_contact_details_not_represented';
 import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
-import {TestInfo} from "playwright/test";
+import {TestInfo} from 'playwright/test';
 
 
 test(
@@ -128,74 +128,74 @@ test(
 );
 
 test(
-    'Consented - Update contact details - applicant solicitor event',
-    { tag: [] },
-    async (
-        {
-            loginPage,
-            manageCaseDashboardPage,
-            caseDetailsPage,
-            updateContactDetailsPage,
-            checkYourAnswersPage,
-            axeUtils
-        },
-        testInfo: TestInfo
-    ): Promise<void> => {
+  'Consented - Update contact details - applicant solicitor event',
+  { tag: [] },
+  async (
+    {
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage,
+      updateContactDetailsPage,
+      checkYourAnswersPage,
+      axeUtils
+    },
+    testInfo: TestInfo
+  ): Promise<void> => {
 
-        const caseId: string = await test.step(
-            'Create consented case up to issue application',
-            async () => {
-                return await ConsentedCaseFactory.createConsentedCaseUpToIssueApplication();
-            }
-        );
+    const caseId: string = await test.step(
+      'Create consented case up to issue application',
+      async () => {
+        return await ConsentedCaseFactory.createConsentedCaseUpToIssueApplication();
+      }
+    );
 
-        await test.step('Login as applicant solicitor and open case', async (): Promise<void> => {
-            await manageCaseDashboardPage.visit();
+    await test.step('Login as applicant solicitor and open case', async (): Promise<void> => {
+      await manageCaseDashboardPage.visit();
 
-            await loginPage.loginWaitForPath(
-                config.applicant_solicitor.email,
-                config.applicant_solicitor.password,
-                config.manageCaseBaseURL,
-                config.loginPaths.cases
-            );
+      await loginPage.loginWaitForPath(
+        config.applicant_solicitor.email,
+        config.applicant_solicitor.password,
+        config.manageCaseBaseURL,
+        config.loginPaths.cases
+      );
 
-            await manageCaseDashboardPage.navigateToCase(caseId);
-        });
+      await manageCaseDashboardPage.navigateToCase(caseId);
+    });
 
-        await test.step('Select "Update contact details" event', async (): Promise<void> => {
-            await caseDetailsPage.selectNextStep(
-                ConsentedEvents.updateContactDetails
-            );
-        });
+    await test.step('Select "Update contact details" event', async (): Promise<void> => {
+      await caseDetailsPage.selectNextStep(
+        ConsentedEvents.updateContactDetails
+      );
+    });
 
-        await test.step('Fill in contact details form', async (): Promise<void> => {
-            await updateContactDetailsPage.specifySolicitorName("John Marston");
-            await updateContactDetailsPage.enterAddress('NW2 7NE');
-            await updateContactDetailsPage.clickFindAddressButton();
-            await updateContactDetailsPage.selectAddress('10 Selsdon Road, London');
-            await updateContactDetailsPage.navigateContinue();
-        });
+    await test.step('Fill in contact details form', async (): Promise<void> => {
+      await updateContactDetailsPage.specifySolicitorName('John Marston');
+      await updateContactDetailsPage.enterAddress('NW2 7NE');
+      await updateContactDetailsPage.clickFindAddressButton();
+      await updateContactDetailsPage.selectAddress('10 Selsdon Road, London');
+      await updateContactDetailsPage.navigateContinue();
+    });
 
-        await test.step('Verify check your answers page', async (): Promise<void> => {
-            await checkYourAnswersPage.assertCheckYourAnswersPage(
-                postSubmissionApplicantContactDetailsData
-            );
-        });
+    await test.step('Verify check your answers page', async (): Promise<void> => {
+      await checkYourAnswersPage.assertCheckYourAnswersPage(
+        postSubmissionApplicantContactDetailsData
+      );
+    });
 
-        await test.step('Submit update contact details event', async (): Promise<void> => {
-            await updateContactDetailsPage.navigateSubmit();
-        });
+    await test.step('Submit update contact details event', async (): Promise<void> => {
+      await updateContactDetailsPage.navigateSubmit();
+    });
 
-        await test.step('Verify case has been updated', async (): Promise<void> => {
-            await caseDetailsPage.checkHasBeenUpdated(
-                ConsentedEvents.updateContactDetails.listItem
-            );
-        });
+    await test.step('Verify case has been updated', async (): Promise<void> => {
+      await caseDetailsPage.checkHasBeenUpdated(
+        ConsentedEvents.updateContactDetails.listItem
+      );
+    });
 
-        await test.step('Verify tab data', async (): Promise<void> => {
-            await caseDetailsPage.assertTabData(
-                updateRespondentNonRepresentedContactDetailsSolChangeTabData
-            );
-        });
-    }
+    await test.step('Verify tab data', async (): Promise<void> => {
+      await caseDetailsPage.assertTabData(
+        updateRespondentNonRepresentedContactDetailsSolChangeTabData
+      );
+    });
+  }
 );
