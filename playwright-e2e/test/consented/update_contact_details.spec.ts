@@ -15,7 +15,7 @@ import {
   updateRespondentNonRepresentedContactDetailsTabData
 } from '../../resources/tab_content/consented/update_contact_details_not_represented';
 import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
-import {TestInfo} from 'playwright/test';
+import { TestInfo } from 'playwright/test';
 
 
 test(
@@ -164,7 +164,7 @@ test(
 
     await test.step('Select "Update contact details" event', async (): Promise<void> => {
       await caseDetailsPage.selectNextStep(
-        ConsentedEvents.updateContactDetails
+        ConsentedEvents.updateContactDetailsSolicitor
       );
     });
 

@@ -73,6 +73,10 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Update contact details",
     ccdCallback: "FR_updateContactDetails"
   },
+  updateContactDetailsSolicitor: {
+    listItem: "Update Contact Details",
+    ccdCallback: "FR_updateCaseDetailsSolicitor"
+  },
   assignToJudgeConsentMade: {
     listItem: "Assign To Judge",
     ccdCallback: "FR_referToJudgeFromConsOrdMade"
