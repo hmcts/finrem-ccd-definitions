@@ -25,10 +25,6 @@ repositories {
     }
 }
 
-configurations.all {
-    exclude group: 'commons-logging', module: 'commons-logging'
-}
-
 // region static code analysis
 
 pmd {
