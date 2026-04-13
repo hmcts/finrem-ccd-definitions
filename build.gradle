@@ -56,10 +56,9 @@ jacocoTestReport {
 
 // endregion
 
-task highLevelDataSetup(type: JavaExec) {
-    dependsOn classes
-    main = "finrem.HighLevelDataSetupApp"
-    classpath +=  sourceSets.test.runtimeClasspath
+tasks.register('highLevelDataSetup', JavaExec) {
+    mainClass.set("uk.gov.hmcts.finrem.common.ccd.HighLevelDataSetupApp")
+    classpath += sourceSets.main.runtimeClasspath
     jvmArgs = ['--add-opens=java.base/java.lang.reflect=ALL-UNNAMED']
 }
 
