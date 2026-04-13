@@ -1,4 +1,4 @@
-package finrem;
+package uk.gov.hmcts.finrem.common.ccd;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +16,8 @@ import java.util.Set;
 public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
 
     private static final Set<Integer> TOLERABLE_EXCEPTIONS = Set.of(
-            HttpStatus.GATEWAY_TIMEOUT.value(), HttpStatus.CONFLICT.value(),
-            HttpStatus.SERVICE_UNAVAILABLE.value()
+            HttpStatus.GATEWAY_TIMEOUT.value(),
+            HttpStatus.CONFLICT.value()
     );
 
     private static final Set<CcdEnvironment> HLD_SKIPPABLE_ENVS = Set.of(
