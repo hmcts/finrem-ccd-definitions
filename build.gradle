@@ -4,6 +4,7 @@ plugins {
     id 'checkstyle'
     id 'pmd'
     id 'jacoco'
+    id 'org.sonarqube' version '7.2.3.7755'
 }
 
 group 'com.github.hmcts'
@@ -83,4 +84,15 @@ dependencies {
     testRuntimeOnly group: 'org.glassfish', name: 'jakarta.el', version: '4.0.2'
     testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.44'
     testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.44'
+}
+
+project.tasks['sonarqube'].dependsOn jacocoTestReport
+sonarqube {
+    def sonarExclusions = ['uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.java']
+
+    properties {
+        property "sonar.cpd.exclusions", "**/GeneralApplicationDirectionsNewEventAboutToSubmitHandler.java,**/GeneralApplicationDirectionsNewEventAboutToStartHandler.java"
+        property "sonar.projectKey", "finrem-case-orchestration"
+        property "sonar.exclusions", sonarExclusions.join(', ')
+    }
 }
