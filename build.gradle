@@ -100,7 +100,6 @@ sonarqube {
     ]
 
     properties {
-        property "sonar.cpd.exclusions", "**/uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.class"
         property "sonar.projectKey", "finrem-case-orchestration"
         property "sonar.exclusions", sonarExclusions.join(', ')
         property "sonar.dynamicAnalysis", "reuseReports"
