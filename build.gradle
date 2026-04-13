@@ -52,7 +52,7 @@ jacocoTestReport {
     executionData(test, integration)
 
     classDirectories.setFrom(files(sourceSets.main.output).asFileTree.matching {
-        exclude 'uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.class'
+        exclude '**/uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.class'
     })
 
     reports {
@@ -96,7 +96,7 @@ dependencies {
 project.tasks['sonarqube'].dependsOn jacocoTestReport
 sonarqube {
     def sonarExclusions = [
-            'uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.java'
+            '**/uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.java'
     ]
 
     properties {
