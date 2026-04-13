@@ -4,7 +4,6 @@ plugins {
     id 'checkstyle'
     id 'pmd'
     id 'jacoco'
-    id 'org.sonarqube' version '7.2.3.7755'
 }
 
 group 'com.github.hmcts'
@@ -49,24 +48,18 @@ jacoco {
 }
 
 jacocoTestReport {
-    executionData(test, integration)
-
-    classDirectories.setFrom(files(sourceSets.main.output).asFileTree.matching {
-        exclude  '**/uk/gov/hmcts/finrem/common/ccd/**'
-    })
-
     reports {
         xml.required = true
         csv.required = false
-        xml.outputLocation = file("${getLayout().getBuildDirectory()}/reports/jacoco/test/jacocoTestReport.xml")
     }
 }
 
 // endregion
 
-tasks.register('highLevelDataSetup', JavaExec) {
-    mainClass.set("uk.gov.hmcts.finrem.common.ccd.HighLevelDataSetupApp")
-    classpath += sourceSets.main.runtimeClasspath
+task highLevelDataSetup(type: JavaExec) {
+    dependsOn classes
+    main = "finrem.HighLevelDataSetupApp"
+    classpath +=  sourceSets.test.runtimeClasspath
     jvmArgs = ['--add-opens=java.base/java.lang.reflect=ALL-UNNAMED']
 }
 
@@ -92,20 +85,3 @@ dependencies {
     testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.44'
     testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.44'
 }
-
-project.tasks['sonarqube'].dependsOn jacocoTestReport
-sonarqube {
-    def sonarExclusions = [
-            '**/uk/gov/hmcts/finrem/common/ccd/**',
-            'src/main/java/uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.java'
-    ]
-
-    properties {
-        property "sonar.projectKey", "finrem-case-orchestration"
-        property "sonar.exclusions", sonarExclusions.join(', ')
-        property "sonar.dynamicAnalysis", "reuseReports"
-        property "sonar.java.coveragePlugin", "jacoco"
-        property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.outputLocation.get()}"
-    }
-}
-
