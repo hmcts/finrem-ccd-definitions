@@ -93,6 +93,7 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     @Override
     protected boolean shouldTolerateDataSetupFailure(Throwable e) {
         if (e instanceof ImportException importException) {
+            logger.info("Skipping HLD setup with Bad Gateway or Conflict errors");
             return TOLERABLE_EXCEPTIONS.contains(importException.getHttpStatusCode());
         }
 
