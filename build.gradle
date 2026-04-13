@@ -49,9 +49,16 @@ jacoco {
 }
 
 jacocoTestReport {
+    executionData(test, integration)
+
+    classDirectories.setFrom(files(sourceSets.main.output).asFileTree.matching {
+        exclude 'uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.class'
+    })
+
     reports {
         xml.required = true
         csv.required = false
+        xml.outputLocation = file("${getLayout().getBuildDirectory()}/reports/jacoco/test/jacocoTestReport.xml")
     }
 }
 
@@ -88,11 +95,17 @@ dependencies {
 
 project.tasks['sonarqube'].dependsOn jacocoTestReport
 sonarqube {
-    def sonarExclusions = ['uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.java']
+    def sonarExclusions = [
+            'uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.java'
+    ]
 
     properties {
-        property "sonar.cpd.exclusions", "**/GeneralApplicationDirectionsNewEventAboutToSubmitHandler.java,**/GeneralApplicationDirectionsNewEventAboutToStartHandler.java"
+        property "sonar.cpd.exclusions", "**/uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.class"
         property "sonar.projectKey", "finrem-case-orchestration"
         property "sonar.exclusions", sonarExclusions.join(', ')
+        property "sonar.dynamicAnalysis", "reuseReports"
+        property "sonar.java.coveragePlugin", "jacoco"
+        property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.outputLocation.get()}"
     }
 }
+
