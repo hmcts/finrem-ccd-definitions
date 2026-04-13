@@ -48,7 +48,7 @@ jacoco {
 }
 
 jacocoTestReport {
-    executionData(test, integration)
+    executionData(test)
 
     classDirectories.setFrom(files(sourceSets.main.output).asFileTree.matching {
         exclude  '**/uk/gov/hmcts/finrem/common/ccd/**'
@@ -96,11 +96,11 @@ project.tasks['sonarqube'].dependsOn jacocoTestReport
 sonarqube {
     def sonarExclusions = [
             '**/uk/gov/hmcts/finrem/common/ccd/**',
-            'src/main/java/uk/gov/hmcts/finrem/common/ccd/HighLevelDataSetupApp.java'
     ]
 
     properties {
-        property "sonar.projectKey", "finrem-case-orchestration"
+        property "sonar.projectKey", "FrCcdDefinitions"
+        property "sonar.projectName", "Finrem CCD Definitions"
         property "sonar.exclusions", sonarExclusions.join(', ')
         property "sonar.dynamicAnalysis", "reuseReports"
         property "sonar.java.coveragePlugin", "jacoco"
