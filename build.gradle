@@ -52,9 +52,10 @@ jacocoTestReport {
 
 // endregion
 
-tasks.register('highLevelDataSetup', JavaExec) {
-    mainClass.set("uk.gov.hmcts.finrem.common.ccd.HighLevelDataSetupApp")
-    classpath += sourceSets.main.runtimeClasspath
+task highLevelDataSetup(type: JavaExec) {
+    dependsOn classes
+    main = "finrem.HighLevelDataSetupApp"
+    classpath +=  sourceSets.test.runtimeClasspath
     jvmArgs = ['--add-opens=java.base/java.lang.reflect=ALL-UNNAMED']
 }
 
@@ -67,9 +68,9 @@ tasks.withType(Test) {
 }
 
 dependencies {
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.17'
-    implementation group: 'com.github.hmcts', name: 'befta-fw', version: '9.2.4'
-    implementation group: 'org.springframework', name: 'spring-web', version: '7.0.6'
+    testImplementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.17'
+    testImplementation group: 'com.github.hmcts', name: 'befta-fw', version: '9.2.4'
+    testImplementation group: 'org.springframework', name: 'spring-web', version: '7.0.6'
 
     testImplementation(platform(group: 'org.junit', name: 'junit-bom', version: '5.14.3'))
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter'
