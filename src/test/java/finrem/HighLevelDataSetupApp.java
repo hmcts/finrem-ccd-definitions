@@ -2,15 +2,29 @@ package finrem;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import uk.gov.hmcts.befta.BeftaMain;
 import uk.gov.hmcts.befta.dse.ccd.CcdEnvironment;
 import uk.gov.hmcts.befta.dse.ccd.CcdRoleConfig;
 import uk.gov.hmcts.befta.dse.ccd.DataLoaderToDefinitionStore;
+import uk.gov.hmcts.befta.exception.ImportException;
 import uk.gov.hmcts.befta.util.FileUtils;
 
 import java.util.List;
+import java.util.Set;
 
 public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
+
+    private static final Set<Integer> TOLERABLE_EXCEPTIONS = Set.of(
+            HttpStatus.GATEWAY_TIMEOUT.value(),
+            HttpStatus.CONFLICT.value()
+    );
+
+    private static final Set<CcdEnvironment> HLD_SKIPPABLE_ENVS = Set.of(
+            CcdEnvironment.PREVIEW,
+            CcdEnvironment.PERFTEST,
+            CcdEnvironment.DEMO,
+            CcdEnvironment.ITHC);
 
     private static final Logger logger = LoggerFactory.getLogger(HighLevelDataSetupApp.class);
 
@@ -78,12 +92,12 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
 
     @Override
     protected boolean shouldTolerateDataSetupFailure(Throwable e) {
-        if (getDataSetupEnvironment() == CcdEnvironment.PREVIEW) {
-            logger.error("Data Setup failure ignored", e);
-            return true;
-        } else {
-            return super.shouldTolerateDataSetupFailure(e);
+        if (e instanceof ImportException importException) {
+            logger.info("Skipping HLD setup with Bad Gateway or Conflict errors");
+            return TOLERABLE_EXCEPTIONS.contains(importException.getHttpStatusCode());
         }
+
+        return HLD_SKIPPABLE_ENVS.contains(getDataSetupEnvironment());
     }
 
     /**
