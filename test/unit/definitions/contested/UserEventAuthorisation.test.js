@@ -7,6 +7,12 @@ const AuthorisationCaseState = Object.assign(require('definitions/contested/json
 const CaseEvent = Object.assign(require('definitions/contested/json/CaseEvent/CaseEvent'), []);
 const CaseEventToFields = Object.assign(require('definitions/contested/json/CaseEventToFields/CaseEventToFields'), []);
 
+// FR_updateCaseDetailsSolicitor is an event that contains fields and preconditions where the applicant
+// or respondent solictor may not have access.  This is intentional, so exclude from some of these tests.
+const exclusions = new Set([
+  'FR_updateCaseDetailsSolicitor'
+]);
+
 let AuthCaseEventsActive = [];
 
 function matchEventFieldToAuthField(userRole, caseType) {
@@ -82,10 +88,15 @@ describe('Events authorisation validation', () => {
     });
   });
 
-  it('should have at least CRU or RU access level for all MANDATORY, OPTIONAL and READONLY show/hide event fields', () => {
+  it('should have at least SKIP CRU or RU access level for all MANDATORY, OPTIONAL and READONLY show/hide event fields', () => {
     AuthCaseEventsActive.forEach(eventAuth => {
       const userRole = eventAuth.UserRole;
       const eventName = eventAuth.CaseEventID;
+
+      if (exclusions.has(eventName)) {
+        return;
+      }
+
       const caseType = eventAuth.CaseTypeID;
       let caseFieldsForEvent = CaseEventToFields.filter(getFieldsForEvent(eventName, caseType));
 
@@ -112,6 +123,11 @@ describe('Events authorisation validation', () => {
     CaseEvent.forEach(event => {
       const acceptedPermissions = /C?RU?D?/;
       const eventName = event.ID;
+
+      if (exclusions.has(eventName)) {
+        return;
+      }
+
       const basePreConditionStates = event['PreConditionState(s)'];
       const preConditionStates = basePreConditionStates ? basePreConditionStates.split(';') : [];
       const caseType = event.CaseTypeID;
