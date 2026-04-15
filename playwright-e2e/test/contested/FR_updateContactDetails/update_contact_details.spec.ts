@@ -1,14 +1,22 @@
 import { test } from '../../../fixtures/fixtures.ts';
 import config from '../../../config/config.ts';
-import { ContestedEvents } from '../../../config/case-data.ts';
+import {ConsentedEvents, ContestedEvents} from '../../../config/case-data.ts';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
-import { contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
+import {
+  contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData,
+  postSubmissionApplicantContactDetailsData
+} from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import { contestedUpdateContactDetailsRespondentRepresentedAddressChangeTabData, updateContestedApplicantRepresentedContactDetailsTabData } from '../../../resources/tab_content/contested/update_contact_details_represented.ts';
 import { contestedUpdateContactDetailsTabData } from '../../../resources/tab_content/contested/contested_update_contact_details_caseworker_tabs.ts';
 import { contestedApplicantUpdateContactDetailsTableData } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { contestedUpdateContactDetailsRespondentNotRepresentedTable } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { updateContestedRespondentNonRepresentedContactDetailsTabData  } from '../../../resources/tab_content/contested/update_contact_details_not_represented.ts';
+import {TestInfo} from 'playwright/test';
+import {ConsentedCaseFactory} from '../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
+import {
+  updateRespondentNonRepresentedContactDetailsSolChangeTabData
+} from '../../../resources/tab_content/consented/update_contact_details_not_represented.ts';
 
 test(
   'Contested - Update Contact Details as a caseworker',
@@ -157,5 +165,78 @@ test(
 
     // Assert tab data
     await caseDetailsPage.assertTabData(contestedUpdateContactDetailsRespondentRepresentedAddressChangeTabData);
+  }
+);
+
+test(
+  'Contested - Update contact details - applicant solicitor event',
+  { tag: [] },
+  async (
+    {
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage,
+      updateContactDetailsPage,
+      checkYourAnswersPage,
+      axeUtils
+    },
+    testInfo: TestInfo
+  ): Promise<void> => {
+
+    const caseId: string = await test.step(
+      'Create consented case up to issue application',
+      async () => {
+        return await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      }
+    );
+
+    await test.step('Login as applicant solicitor and open case', async (): Promise<void> => {
+      await manageCaseDashboardPage.visit();
+
+      await loginPage.loginWaitForPath(
+        config.applicant_solicitor.email,
+        config.applicant_solicitor.password,
+        config.manageCaseBaseURL,
+        config.loginPaths.cases
+      );
+
+      await manageCaseDashboardPage.navigateToCase(caseId);
+    });
+
+    await test.step('Select "Update contact details" event', async (): Promise<void> => {
+      await caseDetailsPage.selectNextStep(
+        ConsentedEvents.updateContactDetailsSolicitor
+      );
+    });
+
+    await test.step('Fill in contact details form', async (): Promise<void> => {
+      await updateContactDetailsPage.specifySolicitorName('John Marston');
+      await updateContactDetailsPage.enterAddress('NW2 7NE');
+      await updateContactDetailsPage.clickFindAddressButton();
+      await updateContactDetailsPage.selectAddress('10 Selsdon Road, London');
+      await updateContactDetailsPage.navigateContinue();
+    });
+
+    await test.step('Verify check your answers page', async (): Promise<void> => {
+      await checkYourAnswersPage.assertCheckYourAnswersPage(
+        postSubmissionApplicantContactDetailsData
+      );
+    });
+
+    await test.step('Submit update contact details event', async (): Promise<void> => {
+      await updateContactDetailsPage.navigateSubmit();
+    });
+
+    await test.step('Verify case has been updated', async (): Promise<void> => {
+      await caseDetailsPage.checkHasBeenUpdated(
+        ConsentedEvents.updateContactDetails.listItem
+      );
+    });
+
+    await test.step('Verify tab data', async (): Promise<void> => {
+      await caseDetailsPage.assertTabData(
+        updateRespondentNonRepresentedContactDetailsSolChangeTabData
+      );
+    });
   }
 );
