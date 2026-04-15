@@ -88,7 +88,7 @@ describe('Events authorisation validation', () => {
     });
   });
 
-  it('should have at least SKIP CRU or RU access level for all MANDATORY, OPTIONAL and READONLY show/hide event fields', () => {
+  it('should have at least CRU or RU access level for all MANDATORY, OPTIONAL and READONLY show/hide event fields', () => {
     AuthCaseEventsActive.forEach(eventAuth => {
       const userRole = eventAuth.UserRole;
       const eventName = eventAuth.CaseEventID;
