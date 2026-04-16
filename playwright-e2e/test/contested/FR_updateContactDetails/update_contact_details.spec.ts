@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/fixtures.ts';
 import config from '../../../config/config.ts';
-import {ConsentedEvents, ContestedEvents} from '../../../config/case-data.ts';
+import {CommonEvents, ConsentedEvents, ContestedEvents} from '../../../config/case-data.ts';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 import {
   contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData,
@@ -205,7 +205,7 @@ test(
 
     await test.step('Select "Update contact details" event', async (): Promise<void> => {
       await caseDetailsPage.selectNextStep(
-        ContestedEvents.updateContactDetailsSolicitor
+        CommonEvents.updateContactDetailsSolicitor
       );
     });
 
@@ -229,7 +229,7 @@ test(
 
     await test.step('Verify case has been updated', async (): Promise<void> => {
       await caseDetailsPage.checkHasBeenUpdated(
-          ContestedEvents.updateContactDetails.listItem
+        CommonEvents.updateContactDetails.listItem
       );
     });
 

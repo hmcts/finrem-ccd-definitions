@@ -1,6 +1,6 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import { ConsentedEvents } from '../../config/case-data';
+import {CommonEvents, ConsentedEvents} from '../../config/case-data';
 import { YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums';
 import { updateContactDetailsTabData } from '../../resources/tab_content/consented/update_contact_details_caseworker_tabs';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
@@ -16,7 +16,6 @@ import {
 } from '../../resources/tab_content/consented/update_contact_details_not_represented';
 import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
 import { TestInfo } from 'playwright/test';
-
 
 test(
   'Consented - Update contact details',
@@ -164,7 +163,7 @@ test(
 
     await test.step('Select "Update contact details" event', async (): Promise<void> => {
       await caseDetailsPage.selectNextStep(
-        ConsentedEvents.updateContactDetailsSolicitor
+        CommonEvents.updateContactDetailsSolicitor
       );
     });
 
@@ -188,7 +187,7 @@ test(
 
     await test.step('Verify case has been updated', async (): Promise<void> => {
       await caseDetailsPage.checkHasBeenUpdated(
-        ConsentedEvents.updateContactDetails.listItem
+        CommonEvents.updateContactDetails.listItem
       );
     });
 
