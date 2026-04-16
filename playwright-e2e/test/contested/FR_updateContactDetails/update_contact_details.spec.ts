@@ -184,7 +184,7 @@ test(
   ): Promise<void> => {
 
     const caseId: string = await test.step(
-      'Create consented case up to issue application',
+      'Create contested case up to issue application',
       async () => {
         return await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
       }
@@ -205,7 +205,7 @@ test(
 
     await test.step('Select "Update contact details" event', async (): Promise<void> => {
       await caseDetailsPage.selectNextStep(
-        ConsentedEvents.updateContactDetailsSolicitor
+        ContestedEvents.updateContactDetailsSolicitor
       );
     });
 
@@ -229,7 +229,7 @@ test(
 
     await test.step('Verify case has been updated', async (): Promise<void> => {
       await caseDetailsPage.checkHasBeenUpdated(
-        ConsentedEvents.updateContactDetails.listItem
+          ContestedEvents.updateContactDetails.listItem
       );
     });
 

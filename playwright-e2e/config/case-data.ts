@@ -177,6 +177,10 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     listItem: "Update contact details",
     ccdCallback: "FR_updateContactDetails"
   },
+  updateContactDetailsSolicitor: {
+    listItem: "Update Contact Details",
+    ccdCallback: "FR_updateCaseDetailsSolicitor"
+  },
   refund: {
     listItem: "Refund",
     ccdCallback: "FR_refund"
