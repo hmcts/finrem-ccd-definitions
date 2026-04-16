@@ -1,19 +1,18 @@
 import { test } from '../../../fixtures/fixtures.ts';
 import config from '../../../config/config.ts';
-import {CommonEvents, ConsentedEvents, ContestedEvents} from '../../../config/case-data.ts';
+import { CommonEvents, ContestedEvents } from '../../../config/case-data.ts';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 import {
   contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData,
   postSubmissionApplicantContactDetailsData
 } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
-import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import { contestedUpdateContactDetailsRespondentRepresentedAddressChangeTabData, updateContestedApplicantRepresentedContactDetailsTabData } from '../../../resources/tab_content/contested/update_contact_details_represented.ts';
 import { contestedUpdateContactDetailsTabData } from '../../../resources/tab_content/contested/contested_update_contact_details_caseworker_tabs.ts';
 import { contestedApplicantUpdateContactDetailsTableData } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { contestedUpdateContactDetailsRespondentNotRepresentedTable } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { updateContestedRespondentNonRepresentedContactDetailsTabData  } from '../../../resources/tab_content/contested/update_contact_details_not_represented.ts';
-import {TestInfo} from 'playwright/test';
-import {ConsentedCaseFactory} from '../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
+import { TestInfo } from 'playwright/test';
 import {
   updateRespondentNonRepresentedContactDetailsSolChangeTabData
 } from '../../../resources/tab_content/consented/update_contact_details_not_represented.ts';

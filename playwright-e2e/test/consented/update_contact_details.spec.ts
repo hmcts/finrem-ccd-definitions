@@ -1,6 +1,6 @@
 import { test } from '../../fixtures/fixtures';
 import config from '../../config/config';
-import {CommonEvents, ConsentedEvents} from '../../config/case-data';
+import { CommonEvents, ConsentedEvents } from '../../config/case-data';
 import { YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums';
 import { updateContactDetailsTabData } from '../../resources/tab_content/consented/update_contact_details_caseworker_tabs';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
@@ -14,7 +14,6 @@ import {
   updateRespondentNonRepresentedContactDetailsSolChangeTabData,
   updateRespondentNonRepresentedContactDetailsTabData
 } from '../../resources/tab_content/consented/update_contact_details_not_represented';
-import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
 import { TestInfo } from 'playwright/test';
 
 test(
