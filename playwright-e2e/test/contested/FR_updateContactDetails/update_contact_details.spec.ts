@@ -1,14 +1,21 @@
 import { test } from '../../../fixtures/fixtures.ts';
 import config from '../../../config/config.ts';
-import { ContestedEvents } from '../../../config/case-data.ts';
+import { CommonEvents } from '../../../config/case-data.ts';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
-import { contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
-import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
+import {
+  contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData,
+  postSubmissionApplicantContactDetailsData
+} from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import { contestedUpdateContactDetailsRespondentRepresentedAddressChangeTabData, updateContestedApplicantRepresentedContactDetailsTabData } from '../../../resources/tab_content/contested/update_contact_details_represented.ts';
 import { contestedUpdateContactDetailsTabData } from '../../../resources/tab_content/contested/contested_update_contact_details_caseworker_tabs.ts';
 import { contestedApplicantUpdateContactDetailsTableData } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { contestedUpdateContactDetailsRespondentNotRepresentedTable } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { updateContestedRespondentNonRepresentedContactDetailsTabData  } from '../../../resources/tab_content/contested/update_contact_details_not_represented.ts';
+import { TestInfo } from 'playwright/test';
+import {
+  updateRespondentNonRepresentedContactDetailsSolChangeTabData
+} from '../../../resources/tab_content/consented/update_contact_details_not_represented.ts';
 
 test(
   'Contested - Update Contact Details as a caseworker',
@@ -35,7 +42,7 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Update contact details
-    await caseDetailsPage.selectNextStep(ContestedEvents.updateContactDetails);
+    await caseDetailsPage.selectNextStep(CommonEvents.updateContactDetails);
     await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(false);
     await updateContactDetailsPage.navigateContinue();
     await updateContactDetailsPage.navigateContinue();
@@ -51,7 +58,7 @@ test(
     await checkYourAnswersPage.assertCheckYourAnswersPage(contestedUpdateContactDetailsTableData);
 
     await createCaseCheckYourAnswersPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(CommonEvents.updateContactDetails.listItem);
 
     // Assert tab data
     await caseDetailsPage.assertTabData(contestedUpdateContactDetailsTabData);
@@ -78,7 +85,7 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Update contact details
-    await caseDetailsPage.selectNextStep(ContestedEvents.updateContactDetails);
+    await caseDetailsPage.selectNextStep(CommonEvents.updateContactDetails);
     await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(true);
     await updateContactDetailsPage.checkApplicantRepresented(true);
     await updateContactDetailsPage.navigateContinue();
@@ -90,13 +97,13 @@ test(
     //Continue about to submit and check your answers
     await checkYourAnswersPage.assertCheckYourAnswersPage(contestedApplicantUpdateContactDetailsTableData);
     await updateContactDetailsPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(CommonEvents.updateContactDetails.listItem);
 
     // Assert tab data
     await caseDetailsPage.assertTabData(updateContestedApplicantRepresentedContactDetailsTabData);
 
     // Update contact details and make respondent not represented
-    await caseDetailsPage.selectNextStep(ContestedEvents.updateContactDetails);
+    await caseDetailsPage.selectNextStep(CommonEvents.updateContactDetails);
     await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(true);
     await updateContactDetailsPage.checkRespondentRepresented(false);
     await updateContactDetailsPage.navigateContinue();
@@ -111,7 +118,7 @@ test(
     //Continue about to submit and check your answers
     await checkYourAnswersPage.assertCheckYourAnswersPage(contestedUpdateContactDetailsRespondentNotRepresentedTable); 
     await updateContactDetailsPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(CommonEvents.updateContactDetails.listItem);
 
     // Assert tab data
     await caseDetailsPage.assertTabData(updateContestedRespondentNonRepresentedContactDetailsTabData);
@@ -138,7 +145,7 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
     
     // Update contact details and change respondent address without changing/removing representation details
-    await caseDetailsPage.selectNextStep(ContestedEvents.updateContactDetails);
+    await caseDetailsPage.selectNextStep(CommonEvents.updateContactDetails);
     await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(true);
     await updateContactDetailsPage.checkRespondentRepresented(false);
     await updateContactDetailsPage.navigateContinue();
@@ -153,9 +160,82 @@ test(
     //Continue about to submit and check your answers
     await checkYourAnswersPage.assertCheckYourAnswersPage(contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable); 
     await updateContactDetailsPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(CommonEvents.updateContactDetails.listItem);
 
     // Assert tab data
     await caseDetailsPage.assertTabData(contestedUpdateContactDetailsRespondentRepresentedAddressChangeTabData);
+  }
+);
+
+test(
+  'Contested - Update contact details - applicant solicitor event',
+  { tag: [] },
+  async (
+    {
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage,
+      updateContactDetailsPage,
+      checkYourAnswersPage,
+      axeUtils
+    },
+    testInfo: TestInfo
+  ): Promise<void> => {
+
+    const caseId: string = await test.step(
+      'Create contested case up to issue application',
+      async () => {
+        return await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      }
+    );
+
+    await test.step('Login as applicant solicitor and open case', async (): Promise<void> => {
+      await manageCaseDashboardPage.visit();
+
+      await loginPage.loginWaitForPath(
+        config.applicant_solicitor.email,
+        config.applicant_solicitor.password,
+        config.manageCaseBaseURL,
+        config.loginPaths.cases
+      );
+
+      await manageCaseDashboardPage.navigateToCase(caseId);
+    });
+
+    await test.step('Select "Update contact details" event', async (): Promise<void> => {
+      await caseDetailsPage.selectNextStep(
+        CommonEvents.updateContactDetailsSolicitor
+      );
+    });
+
+    await test.step('Fill in contact details form', async (): Promise<void> => {
+      await updateContactDetailsPage.specifySolicitorName('John Marston');
+      await updateContactDetailsPage.enterAddress('NW2 7NE');
+      await updateContactDetailsPage.clickFindAddressButton();
+      await updateContactDetailsPage.selectAddress('10 Selsdon Road, London');
+      await updateContactDetailsPage.navigateContinue();
+    });
+
+    await test.step('Verify check your answers page', async (): Promise<void> => {
+      await checkYourAnswersPage.assertCheckYourAnswersPage(
+        postSubmissionApplicantContactDetailsData
+      );
+    });
+
+    await test.step('Submit update contact details event', async (): Promise<void> => {
+      await updateContactDetailsPage.navigateSubmit();
+    });
+
+    await test.step('Verify case has been updated', async (): Promise<void> => {
+      await caseDetailsPage.checkHasBeenUpdated(
+        CommonEvents.updateContactDetails.listItem
+      );
+    });
+
+    await test.step('Verify tab data', async (): Promise<void> => {
+      await caseDetailsPage.assertTabData(
+        updateRespondentNonRepresentedContactDetailsSolChangeTabData
+      );
+    });
   }
 );
