@@ -1,6 +1,6 @@
 import { test } from '../../../fixtures/fixtures.ts';
 import config from '../../../config/config.ts';
-import { CommonEvents, ContestedEvents } from '../../../config/case-data.ts';
+import { CommonEvents } from '../../../config/case-data.ts';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 import {
   contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData,
@@ -42,7 +42,7 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Update contact details
-    await caseDetailsPage.selectNextStep(ContestedEvents.updateContactDetails);
+    await caseDetailsPage.selectNextStep(CommonEvents.updateContactDetails);
     await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(false);
     await updateContactDetailsPage.navigateContinue();
     await updateContactDetailsPage.navigateContinue();
@@ -58,7 +58,7 @@ test(
     await checkYourAnswersPage.assertCheckYourAnswersPage(contestedUpdateContactDetailsTableData);
 
     await createCaseCheckYourAnswersPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(CommonEvents.updateContactDetails.listItem);
 
     // Assert tab data
     await caseDetailsPage.assertTabData(contestedUpdateContactDetailsTabData);
@@ -85,7 +85,7 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Update contact details
-    await caseDetailsPage.selectNextStep(ContestedEvents.updateContactDetails);
+    await caseDetailsPage.selectNextStep(CommonEvents.updateContactDetails);
     await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(true);
     await updateContactDetailsPage.checkApplicantRepresented(true);
     await updateContactDetailsPage.navigateContinue();
@@ -97,13 +97,13 @@ test(
     //Continue about to submit and check your answers
     await checkYourAnswersPage.assertCheckYourAnswersPage(contestedApplicantUpdateContactDetailsTableData);
     await updateContactDetailsPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(CommonEvents.updateContactDetails.listItem);
 
     // Assert tab data
     await caseDetailsPage.assertTabData(updateContestedApplicantRepresentedContactDetailsTabData);
 
     // Update contact details and make respondent not represented
-    await caseDetailsPage.selectNextStep(ContestedEvents.updateContactDetails);
+    await caseDetailsPage.selectNextStep(CommonEvents.updateContactDetails);
     await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(true);
     await updateContactDetailsPage.checkRespondentRepresented(false);
     await updateContactDetailsPage.navigateContinue();
@@ -118,7 +118,7 @@ test(
     //Continue about to submit and check your answers
     await checkYourAnswersPage.assertCheckYourAnswersPage(contestedUpdateContactDetailsRespondentNotRepresentedTable); 
     await updateContactDetailsPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(CommonEvents.updateContactDetails.listItem);
 
     // Assert tab data
     await caseDetailsPage.assertTabData(updateContestedRespondentNonRepresentedContactDetailsTabData);
@@ -145,7 +145,7 @@ test(
     await manageCaseDashboardPage.navigateToCase(caseId);
     
     // Update contact details and change respondent address without changing/removing representation details
-    await caseDetailsPage.selectNextStep(ContestedEvents.updateContactDetails);
+    await caseDetailsPage.selectNextStep(CommonEvents.updateContactDetails);
     await updateContactDetailsPage.selectUpdateIncludesRepresentativeChange(true);
     await updateContactDetailsPage.checkRespondentRepresented(false);
     await updateContactDetailsPage.navigateContinue();
@@ -160,7 +160,7 @@ test(
     //Continue about to submit and check your answers
     await checkYourAnswersPage.assertCheckYourAnswersPage(contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable); 
     await updateContactDetailsPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.updateContactDetails.listItem);
+    await caseDetailsPage.checkHasBeenUpdated(CommonEvents.updateContactDetails.listItem);
 
     // Assert tab data
     await caseDetailsPage.assertTabData(contestedUpdateContactDetailsRespondentRepresentedAddressChangeTabData);
