@@ -1,2 +1,66 @@
 [
+  {
+    "LiveFrom": "16/04/2026",
+    "ID": "FR_accessCodeEntry",
+    "CaseEventID": "FR_invalidateApplicantAccessCode",
+    "CaseFieldID": "applicantAccessCodes",
+    "ListElementCode": "accessCode",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "ID": "FR_accessCodeEntry",
+    "CaseEventID": "FR_invalidateApplicantAccessCode",
+    "CaseFieldID": "applicantAccessCodes",
+    "ListElementCode": "createdAt",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "ID": "FR_accessCodeEntry",
+    "CaseEventID": "FR_invalidateApplicantAccessCode",
+    "CaseFieldID": "applicantAccessCodes",
+    "ListElementCode": "validUntil",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "ID": "FR_accessCodeEntry",
+    "CaseEventID": "FR_invalidateApplicantAccessCode",
+    "CaseFieldID": "applicantAccessCodes",
+    "ListElementCode": "isValid",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "ID": "FR_accessCodeEntry",
+    "CaseEventID": "FR_invalidateRespondentAccessCode",
+    "CaseFieldID": "respondentAccessCodes",
+    "ListElementCode": "accessCode",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "ID": "FR_accessCodeEntry",
+    "CaseEventID": "FR_invalidateRespondentAccessCode",
+    "CaseFieldID": "respondentAccessCodes",
+    "ListElementCode": "createdAt",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "ID": "FR_accessCodeEntry",
+    "CaseEventID": "FR_invalidateRespondentAccessCode",
+    "CaseFieldID": "respondentAccessCodes",
+    "ListElementCode": "validUntil",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "ID": "FR_accessCodeEntry",
+    "CaseEventID": "FR_invalidateRespondentAccessCode",
+    "CaseFieldID": "respondentAccessCodes",
+    "ListElementCode": "isValid",
+    "DisplayContext": "OPTIONAL"
+  }
 ]

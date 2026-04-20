@@ -1,2 +1,26 @@
 [
+  {
+    "LiveFrom": "16/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_invalidateApplicantAccessCode",
+    "CaseFieldID": "applicantAccessCodes",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_invalidateRespondentAccessCode",
+    "CaseFieldID": "respondentAccessCodes",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "COMPLEX",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  }
 ]

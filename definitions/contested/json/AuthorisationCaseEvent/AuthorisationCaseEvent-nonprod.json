@@ -19,5 +19,19 @@
     "CaseEventID": "FR_newManageCaseDocuments",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_invalidateApplicantAccessCode",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_invalidateRespondentAccessCode",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CR"
   }
 ]
