@@ -3,13 +3,13 @@ import config from '../../../config/config.ts';
 import { CommonEvents } from '../../../config/case-data.ts';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 import {
-    contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData,
+  contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData
 } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import { contestedUpdateContactDetailsRespondentRepresentedAddressChangeTabData, updateContestedApplicantRepresentedContactDetailsTabData } from '../../../resources/tab_content/contested/update_contact_details_represented.ts';
 import {
-    contestedUpdateContactDetailsTabData,
-    contestedUpdateNonRefugeeContactDetailsTabData
+  contestedUpdateContactDetailsTabData,
+  contestedUpdateNonRefugeeContactDetailsTabData
 } from '../../../resources/tab_content/contested/contested_update_contact_details_caseworker_tabs.ts';
 import { contestedApplicantUpdateContactDetailsTableData } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { contestedUpdateContactDetailsRespondentNotRepresentedTable } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
@@ -221,13 +221,13 @@ test(
 
     await test.step('Verify case has been updated', async (): Promise<void> => {
       await caseDetailsPage.checkHasBeenUpdated(
-          'has been updated with event: Update Contact Details'
+        'has been updated with event: Update Contact Details'
       );
     });
 
     await test.step('Verify tab data', async (): Promise<void> => {
       await caseDetailsPage.assertTabData(
-          contestedUpdateNonRefugeeContactDetailsTabData
+        contestedUpdateNonRefugeeContactDetailsTabData
       );
     });
   }

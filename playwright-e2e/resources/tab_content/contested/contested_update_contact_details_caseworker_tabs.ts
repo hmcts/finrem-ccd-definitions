@@ -42,7 +42,7 @@ export const contestedUpdateNonRefugeeContactDetailsTabData = [
   {
     tabName: 'Respondent',
     tabContent: [
-        'Respondent’s Details',
+      'Respondent’s Details',
       { tabItem: 'Current First and Middle names', value: 'Smeagol' },
       { tabItem: 'Current Last Name', value: 'Gollum' }
     ]
