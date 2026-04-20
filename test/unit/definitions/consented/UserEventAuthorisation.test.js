@@ -7,6 +7,12 @@ const AuthorisationCaseState = Object.assign(require('definitions/consented/json
 const CaseEvent = Object.assign(require('definitions/consented/json/CaseEvent/CaseEvent'), []);
 const CaseEventToFields = Object.assign(require('definitions/consented/json/CaseEventToFields/CaseEventToFields'), []);
 
+// FR_updateCaseDetailsSolicitor is an event that contains fields and preconditions where the applicant
+// or respondent solictor may not have access.  This is intentional, so exclude from some of these tests.
+const exclusions = new Set([
+  'FR_updateCaseDetailsSolicitor'
+]);
+
 let AuthCaseEventsActive = [];
 
 function matchEventFieldToAuthField(userRole, caseType) {
@@ -82,6 +88,11 @@ describe('Events authorisation validation', () => {
     AuthCaseEventsActive.forEach(eventAuth => {
       const userRole = eventAuth.UserRole;
       const eventName = eventAuth.CaseEventID;
+
+      if (exclusions.has(eventName)) {
+        return;
+      }
+
       const caseType = eventAuth.CaseTypeID;
       let caseFieldsForEvent = CaseEventToFields.filter(getFieldsForEvent(eventName, caseType));
 

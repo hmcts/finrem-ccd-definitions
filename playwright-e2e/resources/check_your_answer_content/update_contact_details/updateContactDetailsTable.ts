@@ -121,3 +121,17 @@ export const   consentedApplicantUpdateContactDetailsTableData = {
     { cellItem: 'Current Last Name', value: 'Baggins' }
   ]
 };
+
+export const postSubmissionApplicantContactDetailsData = {
+  tableName: 'Update Contact Details',
+  rows: [
+    { cellItem: 'Solicitor’s name', value: 'John Marston' },
+    { cellItem: 'Your reference', value: envTestData.ORG_ID_1 },
+    { cellItem: 'Building and Street', value: '10 Selsdon Road' },
+    { cellItem: 'Town or City', value: 'London' },
+    { cellItem: 'Country', value: 'United Kingdom'},
+    { cellItem: 'Postcode/Zipcode', value: 'NW2 7NE' },
+    { cellItem: 'Phone Number', value: ''},
+    { cellItem: 'Email', value: ''}
+  ]
+};

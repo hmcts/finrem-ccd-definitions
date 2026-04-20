@@ -52,7 +52,15 @@ export const CommonEvents: Record<string, CaseEvent> = {
   stopRepresentingClient: {
     listItem: "Stop representing a client",
     ccdCallback: "FR_stopRepresentingClient"
-  }
+  },
+  updateContactDetails: {
+    listItem: "Update contact details",
+    ccdCallback: "FR_updateContactDetails"
+  },
+  updateContactDetailsSolicitor: {
+    listItem: "Update Contact Details",
+    ccdCallback: "FR_updateCaseDetailsSolicitor"
+  },
 };
 
 // Consented Events
@@ -68,10 +76,6 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
   sendOrder: {
     listItem: "Send Order",
     ccdCallback: "FR_sendOrderForApproved"
-  },
-  updateContactDetails: {
-    listItem: "Update contact details",
-    ccdCallback: "FR_updateContactDetails"
   },
   assignToJudgeConsentMade: {
     listItem: "Assign To Judge",
@@ -168,10 +172,6 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   manageCaseDocuments: {
     listItem: "Manage case documents",
     ccdCallback: "FR_manageCaseDocuments"
-  },
-  updateContactDetails: {
-    listItem: "Update contact details",
-    ccdCallback: "FR_updateContactDetails"
   },
   refund: {
     listItem: "Refund",

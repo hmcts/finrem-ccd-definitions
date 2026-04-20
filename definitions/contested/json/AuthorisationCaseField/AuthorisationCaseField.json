@@ -19922,5 +19922,19 @@
     "CaseFieldID": "latestDivorceOrderUpload",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "03/03/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "currentUserIsApplicantSolicitor",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+    {
+    "LiveFrom": "03/03/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "currentUserIsRespondentSolicitor",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
   }
 ]

@@ -64,7 +64,7 @@ finrem-cos:
       FEATURE_RESPONDENT_JOURNEY: true
       FEATURE_ASSIGN_CASE_ACCESS: true
       FEATURE_SOLICITOR_NOC: true
-      SECURE_DOC_ENABLED: false
+      SECURE_DOC_ENABLED: true
       EXPRESS_PILOT_ENABLED: true
       MANAGE_HEARING_ENABLED: true
       VACATE_HEARING_ENABLED: true
@@ -85,7 +85,7 @@ finrem-cos:
       PDF_SERVICE_BASEURL: ${PDF_SERVICE_BASEURL}
       SEND_LETTER_SERVICE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
       DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
-      CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-aat.service.core-compute-aat.internal
+      CASE_DOCUMENT_AM_URL: http://${SERVICE_NAME}-cdam
       CRON_CFV_CATEGORISATION_TASK_ENABLED: true
       MANAGE_CASE_UI_BASE_URL: https://xui-${SERVICE_FQDN}
     keyVaults:
@@ -512,4 +512,5 @@ ccd-case-document-am-api:
       DM_STORE_BASE_URL: http://dm-store-aat.service.core-compute-aat.internal
       CCD_DATA_STORE_API_BASE_URL: http://${SERVICE_NAME}-ccd-data-store-api
       CASE_DOCUMENT_AM_API_S2S_SECRET: ${CASE_DOCUMENT_AM_API_S2S_SECRET}
+      CASE_DOCUMENT_S2S_AUTHORISED_SERVICES: finrem_case_orchestration,cd_case_document_am_api,ccd_gw,xui_webapp,ccd_data,bulk_scan_processor
     keyVaults: []
