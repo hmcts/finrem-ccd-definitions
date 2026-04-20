@@ -27,3 +27,24 @@ export const contestedUpdateContactDetailsTabData = [
     ]
   }
 ];
+
+
+export const contestedUpdateNonRefugeeContactDetailsTabData = [
+  {
+    tabName: 'Applicant',
+    tabContent: [
+      'Applicant’s Details',
+      { tabItem: 'Current First and Middle names', value: 'Frodo' },
+      { tabItem: 'Current Last Name', value: 'Baggins' },
+      { tabItem: 'Does the applicant live outside of the UK?', value: 'No' }
+    ]
+  },
+  {
+    tabName: 'Respondent',
+    tabContent: [
+        'Respondent’s Details',
+      { tabItem: 'Current First and Middle names', value: 'Smeagol' },
+      { tabItem: 'Current Last Name', value: 'Gollum' }
+    ]
+  }
+];

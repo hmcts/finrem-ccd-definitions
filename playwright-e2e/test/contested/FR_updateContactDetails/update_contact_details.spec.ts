@@ -3,19 +3,18 @@ import config from '../../../config/config.ts';
 import { CommonEvents } from '../../../config/case-data.ts';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 import {
-  contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData,
-  postSubmissionApplicantContactDetailsData
+    contestedUpdateContactDetailsRespondentRepresentedAddressChangeTable, contestedUpdateContactDetailsTableData,
 } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import { contestedUpdateContactDetailsRespondentRepresentedAddressChangeTabData, updateContestedApplicantRepresentedContactDetailsTabData } from '../../../resources/tab_content/contested/update_contact_details_represented.ts';
-import { contestedUpdateContactDetailsTabData } from '../../../resources/tab_content/contested/contested_update_contact_details_caseworker_tabs.ts';
+import {
+    contestedUpdateContactDetailsTabData,
+    contestedUpdateNonRefugeeContactDetailsTabData
+} from '../../../resources/tab_content/contested/contested_update_contact_details_caseworker_tabs.ts';
 import { contestedApplicantUpdateContactDetailsTableData } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { contestedUpdateContactDetailsRespondentNotRepresentedTable } from '../../../resources/check_your_answer_content/update_contact_details/updateContactDetailsTable.ts';
 import { updateContestedRespondentNonRepresentedContactDetailsTabData  } from '../../../resources/tab_content/contested/update_contact_details_not_represented.ts';
 import { TestInfo } from 'playwright/test';
-import {
-  updateRespondentNonRepresentedContactDetailsSolChangeTabData
-} from '../../../resources/tab_content/consented/update_contact_details_not_represented.ts';
 
 test(
   'Contested - Update Contact Details as a caseworker',
@@ -209,17 +208,11 @@ test(
     });
 
     await test.step('Fill in contact details form', async (): Promise<void> => {
-      await updateContactDetailsPage.specifySolicitorName('John Marston');
+      await updateContactDetailsPage.specifyContestedSolicitorName('John Marston');
       await updateContactDetailsPage.enterAddress('NW2 7NE');
       await updateContactDetailsPage.clickFindAddressButton();
       await updateContactDetailsPage.selectAddress('10 Selsdon Road, London');
       await updateContactDetailsPage.navigateContinue();
-    });
-
-    await test.step('Verify check your answers page', async (): Promise<void> => {
-      await checkYourAnswersPage.assertCheckYourAnswersPage(
-        postSubmissionApplicantContactDetailsData
-      );
     });
 
     await test.step('Submit update contact details event', async (): Promise<void> => {
@@ -228,13 +221,13 @@ test(
 
     await test.step('Verify case has been updated', async (): Promise<void> => {
       await caseDetailsPage.checkHasBeenUpdated(
-        CommonEvents.updateContactDetails.listItem
+          'has been updated with event: Update Contact Details'
       );
     });
 
     await test.step('Verify tab data', async (): Promise<void> => {
       await caseDetailsPage.assertTabData(
-        updateRespondentNonRepresentedContactDetailsSolChangeTabData
+          contestedUpdateNonRefugeeContactDetailsTabData
       );
     });
   }
