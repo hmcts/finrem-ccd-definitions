@@ -131,7 +131,7 @@ export const postSubmissionApplicantContactDetailsData = {
     { cellItem: 'Town or City', value: 'London' },
     { cellItem: 'Country', value: 'United Kingdom'},
     { cellItem: 'Postcode/Zipcode', value: 'NW2 7NE' },
-    { cellItem: 'Phone Number', value: ''},
-    { cellItem: 'Email', value: ''}
+    { cellItem: 'Phone Number', value: '01626 777514' },
+    { cellItem: 'Email', value: 'fr_applicant_solicitor1@mailinator.com' }
   ]
 };
