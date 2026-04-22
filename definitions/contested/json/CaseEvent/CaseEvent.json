@@ -1423,7 +1423,7 @@
     "Name": "Stop representing a client",
     "Description": "Stop representing a client",
     "DisplayOrder": 159,
-    "PreConditionState(s)": "awaitingHWFDecision;awaitingPaymentResponse;applicationSubmitted;applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;close;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;responseReceived;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;paperCaseAdded;caseHidden;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade",
+    "PreConditionState(s)": "applicationIssued;gateKeepingAndAllocation;schedulingAndHearing;prepareForHearing;caseFileSubmitted;close;caseWorkerReview;judgeDraftOrder;solicitorDraftOrder;reviewOrder;draftOrderNotApproved;scheduleRaiseDirectionsOrder;orderDrawn;orderSent;consentedOrderSubmitted;awaitingJudiciaryResponseConsent;consentedOrderAssignJudge;consentedOrderApproved;responseReceived;consentedOrderNotApproved;generalApplication;generalApplicationAwaitingJudiciaryResponse;generalApplicationOutcome;paperCaseAdded;caseHidden;consentProcess;awaitingJudiciaryResponse;consentOrderApproved;consentOrderNotApproved;consentOrderMade",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
