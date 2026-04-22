@@ -1,2 +1,16 @@
 [
+  {
+    "LiveFrom": "22/04/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "bulkScanEnvelopes",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-courtadmin",
+          "caseworker-divorce-systemupdate"
+        ],
+        "CRUD": "CRUD"
+      }
+    ]
+  }
 ]
