@@ -2,8 +2,8 @@
   {
     "LiveFrom": "16/04/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_invalidateApplicantAccessCode",
-    "Name": "Invalidate Access Code",
+    "ID": "CUI_invalidateApplicantAccessCode",
+    "Name": "Invalidate Applicant Code",
     "Description": "Invalidate Applicant Access Code",
     "DisplayOrder": 105,
     "PreConditionState(s)": "*",
@@ -16,8 +16,8 @@
   {
     "LiveFrom": "16/04/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_invalidateRespondentAccessCode",
-    "Name": "Invalidate Access Code",
+    "ID": "CUI_invalidateRespondentAccessCode",
+    "Name": "Invalidate Respondent Code",
     "Description": "Invalidate Respondent Access Code",
     "DisplayOrder": 105,
     "PreConditionState(s)": "*",
