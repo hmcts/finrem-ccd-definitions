@@ -186,7 +186,7 @@ test(
 
     await test.step('Verify case has been updated', async (): Promise<void> => {
       await caseDetailsPage.checkHasBeenUpdated(
-        CommonEvents.updateContactDetails.listItem
+        'has been updated with event: Update Contact Details'
       );
     });
 
