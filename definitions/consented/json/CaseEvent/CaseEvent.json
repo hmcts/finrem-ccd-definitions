@@ -1210,7 +1210,7 @@
     "Name": "Stop representing a client",
     "Description": "Stop representing a client",
     "DisplayOrder": 67,
-    "PreConditionState(s)": "*",
+    "PreConditionState(s)": "applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;awaitingInfo;infoReceived;close;readyForHearing",
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
