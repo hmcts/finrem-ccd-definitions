@@ -1,2 +1,30 @@
 [
+  {
+    "LiveFrom": "16/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "CUI_invalidateApplicantAccessCode",
+    "Name": "Invalidate Applicant Code",
+    "Description": "Invalidate Applicant Access Code",
+    "DisplayOrder": 160,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "CUI_invalidateRespondentAccessCode",
+    "Name": "Invalidate Respondent Code",
+    "Description": "Invalidate Respondent Access Code",
+    "DisplayOrder": 161,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  }
 ]
