@@ -42,7 +42,7 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git checkout master
+          git checkout ${{ github.event.workflow_run.head_branch }}
           git checkout -b "$BRANCH_NAME"
           git commit --allow-empty -m "Empty commit"
           git push origin "$BRANCH_NAME"
