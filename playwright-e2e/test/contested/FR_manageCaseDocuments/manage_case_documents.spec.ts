@@ -239,64 +239,64 @@ test.describe('Contested Manage Case Documents', () => {
     }
   );
 
-    test(
-        'Contested - Document deletion removes reference from Case Data and CFV',
-        { tag: ['@regression', '@supercaseworker'] },
-        async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, page, caseDetailsPage }): Promise<void> => {
-            let caseId: string;
+  test(
+    'Contested - Document deletion removes reference from Case Data and CFV',
+    { tag: ['@regression', '@supercaseworker'] },
+    async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, page, caseDetailsPage }): Promise<void> => {
+      let caseId: string;
 
-            await test.step('Create case and seed document', async (): Promise<void> => {
-                caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-                await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(caseId);
-            });
+      await test.step('Create case and seed document', async (): Promise<void> => {
+        caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+        await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(caseId);
+      });
 
-            await test.step('Login and navigate to case', async (): Promise<void> => {
-                await manageCaseDashboardPage.visit();
+      await test.step('Login and navigate to case', async (): Promise<void> => {
+        await manageCaseDashboardPage.visit();
 
-                await loginPage.loginWaitForPath(
-                    config.superCaseWorker.email,
-                    config.superCaseWorker.password,
-                    config.manageCaseBaseURL,
-                    config.loginPaths.cases
-                );
+        await loginPage.loginWaitForPath(
+          config.superCaseWorker.email,
+          config.superCaseWorker.password,
+          config.manageCaseBaseURL,
+          config.loginPaths.cases
+        );
 
-                await manageCaseDashboardPage.navigateToCase(caseId);
-            });
+        await manageCaseDashboardPage.navigateToCase(caseId);
+      });
 
-            await test.step('Pre-deletion validation and Download', async (): Promise<void> => {
-                await caseDetailsPage.downloadDocumentFromCfv('caseDoc.docx');
-            });
+      await test.step('Pre-deletion validation and Download', async (): Promise<void> => {
+        await caseDetailsPage.downloadDocumentFromCfv('caseDoc.docx');
+      });
 
-            await test.step('Remove document from collection', async (): Promise<void> => {
-                await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
+      await test.step('Remove document from collection', async (): Promise<void> => {
+        await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
 
-                await manageCaseDocumentsPage.amendDoc();
-                await manageCaseDocumentsPage.navigateContinue();
+        await manageCaseDocumentsPage.amendDoc();
+        await manageCaseDocumentsPage.navigateContinue();
 
-                await manageCaseDocumentsPage.removeDocument();
-            });
+        await manageCaseDocumentsPage.removeDocument();
+      });
 
-            await test.step('Submit event and verify response', async (): Promise<void> => {
-                const submitResponsePromise = page.waitForResponse(resp =>
-                    resp.request().method() === 'POST' &&
-                    resp.url().includes('/case-events')
-                );
+      await test.step('Submit event and verify response', async (): Promise<void> => {
+        const submitResponsePromise = page.waitForResponse(resp =>
+        {return resp.request().method() === 'POST' &&
+                    resp.url().includes('/case-events');}
+        );
 
-                await manageCaseDocumentsPage.navigateContinue();
-                await manageCaseDocumentsPage.navigateSubmit();
+        await manageCaseDocumentsPage.navigateContinue();
+        await manageCaseDocumentsPage.navigateSubmit();
 
-                const submitResponse = await submitResponsePromise;
+        const submitResponse = await submitResponsePromise;
 
-                expect([200, 201, 202]).toContain(submitResponse.status());
-            });
+        expect([200, 201, 202]).toContain(submitResponse.status());
+      });
 
-            await test.step('Post-deletion validation', async (): Promise<void> => {
-                await caseDetailsPage.checkHasBeenUpdated(
-                    ContestedEvents.manageCaseDocumentsNewEvent.listItem
-                );
+      await test.step('Post-deletion validation', async (): Promise<void> => {
+        await caseDetailsPage.checkHasBeenUpdated(
+          ContestedEvents.manageCaseDocumentsNewEvent.listItem
+        );
 
-                await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
-            });
-        }
-    );
+        await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
+      });
+    }
+  );
 });
