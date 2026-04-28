@@ -115,18 +115,15 @@
     "ShowEventNotes": "Y"
   },
   {
-    "LiveFrom": "01/11/2025",
+    "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_newManageCaseDocuments",
-    "Name": "Manage case documents (New)",
+    "ID": "FR_manageCaseDocuments",
+    "Name": "Manage case documents",
     "Description": "Manage case documents",
     "DisplayOrder": 105,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
   }
