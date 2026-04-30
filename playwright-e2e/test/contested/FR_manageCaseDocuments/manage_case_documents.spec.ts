@@ -230,11 +230,73 @@ test.describe('Contested Manage Case Documents', () => {
       //expect original document to be visible
       await expect(page.getByRole('button', { name: 'caseDoc.docx' })).toBeVisible();
       await manageCaseDocumentsPage.removeDocument();
+      await expect(page.getByRole('button', { name: 'caseDoc.cox'})).toBeHidden({ timeout: 200 });
       await manageCaseDocumentsPage.navigateContinue();
       await manageCaseDocumentsPage.navigateSubmit();
 
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
       await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
+    }
+  );
+
+  test(
+    'Contested - Document deletion removes reference from Case Data and CFV',
+    { tag: ['@regression', '@supercaseworker'] },
+    async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, page, caseDetailsPage }): Promise<void> => {
+      let caseId: string;
+
+      await test.step('Create case and seed document', async (): Promise<void> => {
+        caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+        await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(caseId);
+      });
+
+      await test.step('Login and navigate to case', async (): Promise<void> => {
+        await manageCaseDashboardPage.visit();
+
+        await loginPage.loginWaitForPath(
+          config.superCaseWorker.email,
+          config.superCaseWorker.password,
+          config.manageCaseBaseURL,
+          config.loginPaths.cases
+        );
+
+        await manageCaseDashboardPage.navigateToCase(caseId);
+      });
+
+      await test.step('Pre-deletion validation and Download', async (): Promise<void> => {
+        await caseDetailsPage.downloadDocumentFromCfv('caseDoc.docx');
+      });
+
+      await test.step('Remove document from collection', async (): Promise<void> => {
+        await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
+
+        await manageCaseDocumentsPage.amendDoc();
+        await manageCaseDocumentsPage.navigateContinue();
+
+        await manageCaseDocumentsPage.removeDocument();
+      });
+
+      await test.step('Submit event and verify response', async (): Promise<void> => {
+        const submitResponsePromise = page.waitForResponse(resp =>
+        {return resp.request().method() === 'POST' &&
+                    resp.url().includes('/case-events');}
+        );
+
+        await manageCaseDocumentsPage.navigateContinue();
+        await manageCaseDocumentsPage.navigateSubmit();
+
+        const submitResponse = await submitResponsePromise;
+
+        expect([200, 201, 202]).toContain(submitResponse.status());
+      });
+
+      await test.step('Post-deletion validation', async (): Promise<void> => {
+        await caseDetailsPage.checkHasBeenUpdated(
+          ContestedEvents.manageCaseDocumentsNewEvent.listItem
+        );
+
+        await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
+      });
     }
   );
 });
