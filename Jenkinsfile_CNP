@@ -7,7 +7,7 @@ import uk.gov.hmcts.contino.GithubAPI
 
 String product = "finrem"
 String component = "ccd-definitions"
-AppPipelineConfig pipelineConf;
+AppPipelineConfig pipelineConf
 
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
@@ -114,11 +114,22 @@ def getFinremCosImage() {
   return "latest"
 }
 
+def setPreviewEnvVars() {
+  def githubApi = new GithubAPI(this)
+  env.ENABLE_WA = false
+  env.ROLE_ASSIGNMENT_URL = "http://am-role-assignment-service-aat.service.core-compute-aat.internal"
+
+  if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:wa')) {
+    env.ENABLE_WA = true
+    env.ROLE_ASSIGNMENT_URL = "https://am-role-assignment-service-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+  }
+}
+
 // Configure branches to sync with master branch
 def branchesToSync = ['demo', 'ithc', 'perftest']
 properties([
     copyArtifactPermission('*'),
-]);
+])
 withPipeline("nodejs", product, component) {
   env.FUNCTIONAL_TESTS_WORKERS = 1
 
@@ -138,7 +149,7 @@ withPipeline("nodejs", product, component) {
   }
   before('highleveldatasetup') {
     echo "CCD definition upload for environment: ${env.ENV}"
-    env.RUNNING_ENV = env.ENV;
+    env.RUNNING_ENV = env.ENV
     yarnBuilder.yarn('setup')
     if('preview' == env.ENV) {
       env.RUNNING_ENV = "aat"
@@ -228,6 +239,7 @@ withPipeline("nodejs", product, component) {
   onPR() {
     env.ENV='preview'
     env.FINREM_COS_IMAGE = getFinremCosImage()
+    setPreviewEnvVars()
   }
 
   onIthc() {

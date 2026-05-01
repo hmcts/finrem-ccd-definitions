@@ -36,6 +36,7 @@ xui-webapp:
       SERVICES_CCD_CASE_ASSIGNMENT_API: http://${SERVICE_NAME}-aac-manage-case-assignment
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}
       JURISDICTIONS: DIVORCE
+      FEATURE_WORKALLOCATION_ENABLED: false
 
 xui-mo-webapp:
   enabled: true
@@ -126,6 +127,8 @@ ccd:
       enabled: true
     elastic:
       enabled: true
+    ras:
+      enabled: ${ENABLE_WA}
 
 
   ingressHost: ${SERVICE_FQDN}
@@ -170,7 +173,7 @@ ccd:
       environment:
         DATA_STORE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
-        DATA_STORE_S2S_AUTHORISED_SERVICES: ccd_gw,ccd_gateway,fpl_case_service,ccd_data,ccd_ps,aac_manage_case_assignment,xui_webapp,ccd_case_document_am_api,divorce_ccd_submission,divorce_frontend,finrem_case_orchestration,finrem_citizen_ui
+        DATA_STORE_S2S_AUTHORISED_SERVICES: ccd_gw,ccd_gateway,fpl_case_service,ccd_data,ccd_ps,aac_manage_case_assignment,xui_webapp,ccd_case_document_am_api,divorce_ccd_submission,divorce_frontend,finrem_case_orchestration,finrem_citizen_ui,wa_workflow_api,wa_task_configuration_api,wa_task_management_api,wa_task_monitor,wa_case_event_handler,am_role_assignment_service
         CCD_S2S_AUTHORISED_SERVICES_CASE_USER_ROLES: aac_manage_case_assignment,fpl_case_service,finrem_case_orchestration,iac,divorce_frontend,civil_service,finrem_citizen_ui
         IDAM_API_BASE_URL: https://idam-api.aat.platform.hmcts.net
         IDAM_OIDC_URL: https://idam-web-public.aat.platform.hmcts.net
@@ -178,7 +181,7 @@ ccd:
         IDAM_DATA_STORE_SYSTEM_USER_USERNAME: ${IDAM_DATA_STORE_SYSTEM_USER_USERNAME}
         IDAM_DATA_STORE_SYSTEM_USER_PASSWORD: ${IDAM_DATA_STORE_SYSTEM_USER_PASSWORD}
         CASE_DOCUMENT_AM_URL: http://${SERVICE_NAME}-cdam
-        ROLE_ASSIGNMENT_URL: http://am-role-assignment-service-aat.service.core-compute-aat.internal
+        ROLE_ASSIGNMENT_URL: ${ROLE_ASSIGNMENT_URL}
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOSTS: ${SERVICE_NAME}-es-master:9200
         ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
@@ -190,11 +193,36 @@ ccd:
 
   am-role-assignment-service:
     java:
-      disableKeyVaults: true
+      devmemoryRequests: 1024Mi
+      devcpuRequests: 500m
+      devmemoryLimits: 2048Mi
+      devcpuLimits: 1500m
+      ingressHost: am-role-assignment-service-${SERVICE_FQDN}
+      autoscaling:
+        enabled: false
+        minReplicas: 1
+        maxReplicas: 1
+      environment:
+        APPLICATION_LOGGING_LEVEL: TRACE
+        CCD_DATA_STORE_URL: http://${SERVICE_NAME}-ccd-data-store-api
+        RUN_LD_ON_STARTUP: false
       keyVaults:
         am:
           secrets:
-            - role-assignment-service-LD-SDK-KEY
+            - name: am-role-assignment-service-s2s-secret
+              alias: AM_ROLE_ASSIGNMENT_SERVICE_SECRET
+            - name: app-insights-connection-string
+              alias: app-insights-connection-string
+            - name: role-assignment-service-IDAM-CLIENT-SECRET
+              alias: ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET
+            - name: role-assignment-service-IDAM-ADMIN-SECRET
+              alias: ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD
+            - name: role-assignment-service-LD-SDK-KEY
+              alias: LD_SDK_KEY
+      secrets:
+        ROLE_ASSIGNMENT_DB_PASSWORD:
+          secretRef: postgres
+          key: PASSWORD
 
   ccd-case-print-service:
     nodejs:
@@ -215,7 +243,7 @@ ccd:
       environment:
         DEFINITION_STORE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
-        DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin,aac_manage_case_assignment
+        DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin,aac_manage_case_assignment,am_role_assignment_service,wa_task_configuration_api,wa_task_management_api
         DEFINITION_STORE_TX_TIMEOUT_DEFAULT: 300
         IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
         OIDC_ISSUER: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
@@ -280,6 +308,11 @@ ccd:
         - name: "pr-${CHANGE_ID}-role-assignment"
         - name: "pr-${CHANGE_ID}-definition-store"
         - name: "pr-${CHANGE_ID}-user-profile"
+        - name: "pr-${CHANGE_ID}-wa-case-event-handler"
+        - name: "pr-${CHANGE_ID}-wa_workflow_api"
+        - name: "pr-${CHANGE_ID}-camunda"
+        - name: "pr-${CHANGE_ID}-cft_task_db"
+        - name: "pr-${CHANGE_ID}-cft_task_db_replica"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
