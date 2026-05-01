@@ -10,10 +10,14 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
-import unicorn from "eslint-plugin-unicorn";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const [nodeMajor, nodeMinor] = process.versions.node.split(".").map(Number);
+const supportsUnicorn = nodeMajor > 20 || (nodeMajor === 20 && nodeMinor >= 10);
+const unicorn = supportsUnicorn
+  ? (await import("eslint-plugin-unicorn")).default
+  : undefined;
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
@@ -38,6 +42,8 @@ export default [
       ".yarn/**",
       "yarn-audit-known-issues",
       "**/*.properties",
+      "Jenkinsfile*",
+      "build.gradle",
     ],
   },
 
@@ -47,7 +53,7 @@ export default [
 
     plugins: {
       mocha,
-      unicorn,
+      ...(unicorn ? { unicorn } : {}),
     },
 
     languageOptions: {
@@ -101,7 +107,7 @@ export default [
       "playwright-e2e/resources/tab_content/**", // Enforce snake_case for tab_content
     ],
     rules: {
-      "unicorn/filename-case": ["error", { case: "snakeCase" }],
+      ...(unicorn ? { "unicorn/filename-case": ["error", { case: "snakeCase" }] } : {}),
     },
   },
 
@@ -114,7 +120,7 @@ export default [
       "playwright-e2e/fixtures/**",
     ],
     rules: {
-      "unicorn/filename-case": ["error", { case: "kebabCase" }],
+      ...(unicorn ? { "unicorn/filename-case": ["error", { case: "kebabCase" }] } : {}),
     },
   },
 
@@ -126,7 +132,7 @@ export default [
       "playwright-e2e/pages/helpers/**",
     ],
     rules: {
-      "unicorn/filename-case": ["error", { case: "pascalCase" }],
+      ...(unicorn ? { "unicorn/filename-case": ["error", { case: "pascalCase" }] } : {}),
     },
   },
 
@@ -134,7 +140,7 @@ export default [
   {
     files: ["playwright-e2e/helpers/**"],
     rules: {
-      "unicorn/filename-case": ["error", { case: "camelCase" }],
+      ...(unicorn ? { "unicorn/filename-case": ["error", { case: "camelCase" }] } : {}),
     },
   },
 
