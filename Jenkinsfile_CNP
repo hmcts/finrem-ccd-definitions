@@ -30,6 +30,8 @@ def secrets = [
                 secret('wa-system-password', 'WA_SYSTEM_PASSWORD'),
                 secret('wa-idam-client-secret', 'WA_IDAM_CLIENT_SECRET'),
                 secret('ld-secret', 'WA_LAUNCH_DARKLY_SDK_KEY'),
+                secret('s2s-secret-task-management-api', 'S2S_SECRET_TASK_MANAGEMENT_API'),
+                secret('s2s-secret-task-monitor', 'S2S_SECRET_TASK_MONITOR'),
                 secret('s2s-secret-workflow-api', 'S2S_SECRET_WORKFLOW_API'),
                 secret('s2s-secret-case-event-handler', 'S2S_SECRET_CASE_EVENT_HANDLER')
         ],
