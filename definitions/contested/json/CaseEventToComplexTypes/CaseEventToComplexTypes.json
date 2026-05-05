@@ -3679,7 +3679,7 @@
     "DefaultValue": "[INTVRSOLICITOR2]",
     "EventElementLabel": "Organisation Policy",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {
@@ -3690,7 +3690,7 @@
     "ListElementCode": "intervenerOrganisation.Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -3918,7 +3918,7 @@
     "DefaultValue": "[INTVRSOLICITOR3]",
     "EventElementLabel": "Organisation Policy",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {
@@ -3929,7 +3929,7 @@
     "ListElementCode": "intervenerOrganisation.Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
@@ -4157,7 +4157,7 @@
     "DefaultValue": "[INTVRSOLICITOR4]",
     "EventElementLabel": "Organisation Policy",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {
@@ -4168,7 +4168,7 @@
     "ListElementCode": "intervenerOrganisation.Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
