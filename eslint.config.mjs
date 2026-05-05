@@ -42,8 +42,11 @@ export default [
       ".yarn/**",
       "yarn-audit-known-issues",
       "**/*.properties",
-      "Jenkinsfile*",
+      "Jenkinsfile",
+      "Jenkinsfile_*",
       "build.gradle",
+      "build/",
+      "*.gradle",
     ],
   },
 
