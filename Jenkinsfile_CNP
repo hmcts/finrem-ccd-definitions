@@ -19,6 +19,20 @@ def secrets = [
                 secret('microservicekey-ccd-ps', 'PRINT_S2S_KEY'),
                 secret('microservicekey-ccd-admin', 'ADMIN_S2S_KEY')
         ],
+        'am-${env}'      : [
+                secret('am-role-assignment-service-s2s-secret', 'AM_ROLE_ASSIGNMENT_SERVICE_SECRET'),
+                secret('role-assignment-service-IDAM-CLIENT-SECRET', 'ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET'),
+                secret('role-assignment-service-IDAM-ADMIN-SECRET', 'ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD'),
+                secret('role-assignment-service-LD-SDK-KEY', 'LD_SDK_AM_KEY')
+        ],
+        'wa-${env}'      : [
+                secret('wa-system-username', 'WA_SYSTEM_USERNAME'),
+                secret('wa-system-password', 'WA_SYSTEM_PASSWORD'),
+                secret('wa-idam-client-secret', 'WA_IDAM_CLIENT_SECRET'),
+                secret('ld-secret', 'WA_LAUNCH_DARKLY_SDK_KEY'),
+                secret('s2s-secret-workflow-api', 'S2S_SECRET_WORKFLOW_API'),
+                secret('s2s-secret-case-event-handler', 'S2S_SECRET_CASE_EVENT_HANDLER')
+        ],
         'ccd-${env}'      : [
                 secret('ccd-api-gateway-oauth2-client-secret', 'API_GATEWAY_IDAM_SECRET'),
                 secret('ccd-admin-web-oauth2-client-secret', 'ADMIN_WEB_IDAM_SECRET'),

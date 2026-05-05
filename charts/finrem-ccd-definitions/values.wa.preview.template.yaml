@@ -50,6 +50,7 @@ wa:
 
   wa-task-management-api:
     java:
+      disableKeyVaults: true
       ingressHost: wa-task-management-api-${SERVICE_FQDN}
       devcpuRequests: 500m
       devmemoryRequests: 1Gi
@@ -63,10 +64,16 @@ wa:
         ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
         ALLOWED_JURISDICTIONS: wa,divorce
         ALLOWED_CASE_TYPES: financialremedymvp2,financialremedycontested
+        LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         MANDATORY_TASK_FIELD_CHECK_ENABLED: true
+        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
+        WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
+        WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
+      keyVaults: []
 
   wa-case-event-handler:
     java:
+      disableKeyVaults: true
       ingressHost: wa-case-event-handler-${SERVICE_FQDN}
       releaseNameOverride: ${SERVICE_NAME}-wa-case-event-handler
       secrets:
@@ -81,27 +88,40 @@ wa:
         CAMUNDA_URL: "http://{{ .Release.Name }}-camunda/engine-rest"
         CCD_URL: "http://{{ .Release.Name }}-ccd-data-store-api"
         CCD_SEARCH_URL: "http://{{ .Release.Name }}-ccd-data-store-api"
+        LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
+        S2S_SECRET_CASE_EVENT_HANDLER: ${S2S_SECRET_CASE_EVENT_HANDLER}
         WA_WORKFLOW_API_URL: "http://{{ .Release.Name }}-wa-workflow-api"
         WA_TASK_MANAGEMENT_API_URL: "http://{{ .Release.Name }}-wa-task-management-api"
+        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
         AZURE_SERVICE_BUS_TOPIC_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_CCD_CASE_EVENTS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
+      keyVaults: []
 
   wa-task-monitor:
     java:
+      disableKeyVaults: true
       ingressHost: wa-task-monitor-${SERVICE_FQDN}
       environment:
+        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
+        WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
+        WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
         WA_TASK_MANAGEMENT_API_URL: http://{{ .Release.Name }}-wa-task-management-api
+      keyVaults: []
 
   wa-workflow-api:
     java:
+      disableKeyVaults: true
       devcpuRequests: 500m
       devmemoryRequests: 1Gi
       devcpuLimits: 2
       devmemoryLimits: 4Gi
       environment:
         DB_READER_USERNAME: "hmcts"
+        LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
+        S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
+      keyVaults: []
 
   wa:
     postgresql:
@@ -112,6 +132,8 @@ servicebusPrimary:
   releaseNameOverride: ${SERVICE_NAME}
   resourceGroup: financial-remedy-aso-preview-rg
   sbNamespace: financial-remedy-servicebus-preview
+  azureName: financial-remedy-sb-preview
+  secretName: financial-remedy-sb-preview
   setup:
     topics:
       - name: ccd-case-events
