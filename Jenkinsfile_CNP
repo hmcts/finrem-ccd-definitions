@@ -3,7 +3,7 @@
 import uk.gov.hmcts.contino.AppPipelineConfig
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure")
+@Library("Infrastructure@github-api-limit")
 
 String product = "finrem"
 String component = "ccd-definitions"
