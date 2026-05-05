@@ -3440,7 +3440,7 @@
     "DefaultValue": "[INTVRSOLICITOR1]",
     "EventElementLabel": "Organisation Policy",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "FieldShowCondition": "divorceCaseNumber=\"IMPOSSIBLAW\""
   },
   {
@@ -3451,7 +3451,7 @@
     "ListElementCode": "intervenerOrganisation.Organisation.OrganisationID",
     "EventElementLabel": "",
     "FieldDisplayOrder": "",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "05/08/2020",
