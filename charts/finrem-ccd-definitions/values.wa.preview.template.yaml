@@ -7,41 +7,28 @@ xui-webapp:
       HEALTH_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service/health
       SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
       SERVICES_WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
-      SERVICES_ROLE_ASSIGNMENT_API: https://am-role-assignment-service-${SERVICE_FQDN}
+      SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
       WA_SUPPORTED_JURISDICTIONS: DIVORCE
       FEATURE_WORKALLOCATION_ENABLED: ${ENABLE_WA}
 
 wa:
   enabled: ${ENABLE_WA}
+  wa:
+    taskBatchCron:
+      enabled: false
+    messageCron:
+      enabled: false
+    reconfigurationBatchCron:
+      enabled: false
+    terminationBatchCron:
+      enabled: false
+    postgresql:
+      enabled: false
   global:
     postgresUsername: hmcts
     postgresSecret: postgres
     postgresHost: financial-remedy-preview.postgres.database.azure.com
     databaseNamePrefix: "pr-${CHANGE_ID}-"
-
-  wa-initiation-batch:
-    enabled: false
-    job:
-      schedule: "*/1 * * * *"
-      releaseNameOverride: "{{ .Release.Name }}-wa-task-batch"
-
-  wa-reconfiguration-batch:
-    enabled: false
-    job:
-      schedule: "*/1 * * * *"
-      releaseNameOverride: "{{ .Release.Name }}-reconfiguration"
-
-  wa-termination-batch:
-    enabled: false
-    job:
-      schedule: "*/1 * * * *"
-      releaseNameOverride: "{{ .Release.Name }}-termination-batch"
-
-  wa-message-cron-service:
-    enabled: false
-    job:
-      schedule: "*/1 * * * *"
-      releaseNameOverride: "{{ .Release.Name }}-wa-message-cron"
 
   camunda-bpm:
     java:
@@ -129,9 +116,11 @@ wa:
         S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
       keyVaults: []
 
-  wa:
-    postgresql:
-      enabled: false
+ccd:
+  ccd-data-store-api:
+    java:
+      environment:
+        ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
 
 servicebusPrimary:
   enabled: true

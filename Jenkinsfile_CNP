@@ -133,11 +133,9 @@ def getFinremCosImage() {
 def setPreviewEnvVars() {
   def githubApi = new GithubAPI(this)
   env.ENABLE_WA = false
-  env.ROLE_ASSIGNMENT_URL = "http://am-role-assignment-service-aat.service.core-compute-aat.internal"
 
   if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:wa')) {
     env.ENABLE_WA = true
-    env.ROLE_ASSIGNMENT_URL = "https://am-role-assignment-service-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
   }
 }
 

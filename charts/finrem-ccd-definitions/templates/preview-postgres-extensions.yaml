@@ -1,0 +1,19 @@
+{{- if .Values.wa.enabled }}
+{{- $configName := "extensions" -}}
+{{- $serverName := printf "%s-preview" .Release.Namespace -}}
+{{- if not (lookup "dbforpostgresql.azure.com/v20250801" "FlexibleServersConfiguration" .Release.Namespace $configName) }}
+apiVersion: dbforpostgresql.azure.com/v20250801
+kind: FlexibleServersConfiguration
+metadata:
+  name: {{ $configName }}
+  annotations:
+    helm.sh/resource-policy: keep
+    serviceoperator.azure.com/reconcile-policy: detach-on-delete
+spec:
+  owner:
+    name: {{ $serverName }}
+  azureName: azure.extensions
+  source: user-override
+  value: "btree_gin"
+{{- end }}
+{{- end }}
