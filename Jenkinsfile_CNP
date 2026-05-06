@@ -3,7 +3,7 @@
 import uk.gov.hmcts.contino.AppPipelineConfig
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure@artifactory-test")
+@Library("Infrastructure@update-artifactory-use")
 
 String product = "finrem"
 String component = "ccd-definitions"
