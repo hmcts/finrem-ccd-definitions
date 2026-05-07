@@ -34,5 +34,133 @@
     "ElementLabel": "Determines if access code is valid",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenApplicantDocument",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "CU_fl_citizenUploadDocuments",
+    "ElementLabel": "Type",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenApplicantDocument",
+    "ListElementCode": "DocumentEmailContent",
+    "FieldType": "TextArea",
+    "ElementLabel": "Email content",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenApplicantDocument",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenApplicantDocument",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date received",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenApplicantDocument",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenApplicantDocument",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenApplicantDocument",
+    "ListElementCode": "generalDocumentUploadDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Upload DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenRespondentDocument",
+    "ListElementCode": "DocumentType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "CU_fl_citizenUploadDocuments",
+    "ElementLabel": "Type",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenRespondentDocument",
+    "ListElementCode": "DocumentEmailContent",
+    "FieldType": "TextArea",
+    "ElementLabel": "Email content",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenRespondentDocument",
+    "ListElementCode": "DocumentLink",
+    "FieldType": "Document",
+    "ElementLabel": "Document Url",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenRespondentDocument",
+    "ListElementCode": "DocumentDateAdded",
+    "FieldType": "Date",
+    "ElementLabel": "Date received",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenRespondentDocument",
+    "ListElementCode": "DocumentComment",
+    "FieldType": "Text",
+    "ElementLabel": "Comment",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenRespondentDocument",
+    "ListElementCode": "DocumentFileName",
+    "FieldType": "Text",
+    "ElementLabel": "File name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "CU_ct_citizenRespondentDocument",
+    "ListElementCode": "generalDocumentUploadDateTime",
+    "FieldType": "DateTime",
+    "ElementLabel": "Upload DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
