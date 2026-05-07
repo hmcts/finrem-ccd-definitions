@@ -17,9 +17,13 @@ java {
 
 repositories {
     mavenLocal()
-    mavenCentral()
-    maven { url 'https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1' }
-
+    maven {
+        name = "hmctsLib"
+        url = uri("https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1")
+        content {
+            includeGroupByRegex("com\\.github\\.hmcts(\\..*)?")
+        }
+    }
     maven {
         url 'https://repo.spring.io/libs-milestone'
     }
