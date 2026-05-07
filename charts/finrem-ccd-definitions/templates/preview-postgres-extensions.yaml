@@ -2,6 +2,7 @@
 {{- $configName := "extensions" -}}
 {{- $serverName := printf "%s-preview" .Release.Namespace -}}
 {{- if not (lookup "dbforpostgresql.azure.com/v20250801" "FlexibleServersConfiguration" .Release.Namespace $configName) }}
+# WA task-management-api Flyway migrations require the btree_gin extension.
 apiVersion: dbforpostgresql.azure.com/v20250801
 kind: FlexibleServersConfiguration
 metadata:
