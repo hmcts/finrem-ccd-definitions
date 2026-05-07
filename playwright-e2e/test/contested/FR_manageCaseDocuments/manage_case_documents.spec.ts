@@ -246,7 +246,7 @@ test.describe('Contested Manage Case Documents', () => {
       //expect original document to be visible
       await expect(page.getByRole('button', { name: 'caseDoc.docx' })).toBeVisible();
       await manageCaseDocumentsPage.removeDocument();
-      await expect(page.getByRole('button', { name: 'caseDoc.cox'})).toBeHidden({ timeout: 200 });
+      await expect(page.getByRole('button', { name: 'caseDoc.dox'})).toBeHidden({ timeout: 200 });
       await manageCaseDocumentsPage.navigateContinue();
       await manageCaseDocumentsPage.navigateSubmit();
 
