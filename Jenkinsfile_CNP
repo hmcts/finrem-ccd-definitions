@@ -3,7 +3,7 @@
 import uk.gov.hmcts.contino.AppPipelineConfig
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure")
+@Library("Infrastructure@fix/axios-and-uuid-cve")
 
 String product = "finrem"
 String component = "ccd-definitions"
