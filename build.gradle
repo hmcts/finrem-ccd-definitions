@@ -17,12 +17,10 @@ java {
 
 repositories {
     mavenLocal()
-    mavenCentral()
-    maven { url 'https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1' }
-
     maven {
-        url 'https://repo.spring.io/libs-milestone'
+        url = "https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1"
     }
+    gradlePluginPortal()
 }
 
 // region static code analysis
