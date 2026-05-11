@@ -42,6 +42,13 @@
     "CRUD": "R"
   },
   {
+    "LiveFrom": "28/04/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
@@ -60,6 +67,13 @@
     "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
     "CaseFieldID": "bulkPrintCoverSheetResConfidential",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "28/04/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "bulkPrintCoverSheetResConfidential",
+    "UserRole": "[RESPSOLICITOR]",
     "CRUD": "R"
   },
   {
