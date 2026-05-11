@@ -1979,7 +1979,8 @@
     "Label": "Upload Document(s)",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "_comment_": "it's a temporary field to capture user input"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1989,7 +1990,8 @@
     "HintText": "General Email",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_GeneralEmailDocument",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "_comment_": "It is used to store email history and display it in the tab."
   },
   {
     "LiveFrom": "10/12/2025",
