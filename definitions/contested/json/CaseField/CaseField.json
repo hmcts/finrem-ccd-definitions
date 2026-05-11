@@ -7528,16 +7528,13 @@
     "CategoryID": "administrativeDocumentsTransitional"
   },
   {
-    "LiveFrom": "13/12/2019",
+    "LiveFrom": "11/05/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "generalEmailUploadedDocuments",
-    "Label": "Upload Document",
-    "HintText": "File size must not exceed 2MB.",
+    "Label": "Upload Document(s)",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
-    "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "administrativeDocumentsTransitional"
+    "SecurityClassification": "Public"
   },
   {
     "LiveFrom": "01/01/2017",
