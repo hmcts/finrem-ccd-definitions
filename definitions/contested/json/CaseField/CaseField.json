@@ -7530,10 +7530,11 @@
   {
     "LiveFrom": "13/12/2019",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalEmailUploadedDocument",
+    "ID": "generalEmailUploadedDocuments",
     "Label": "Upload Document",
     "HintText": "File size must not exceed 2MB.",
-    "FieldType": "Document",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "administrativeDocumentsTransitional"

@@ -1973,12 +1973,12 @@
     "SecurityClassification": "Public"
   },
   {
-    "LiveFrom": "15/04/2020",
+    "LiveFrom": "11/05/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "generalEmailUploadedDocument",
-    "Label": "Upload Document",
-    "HintText": "File size must not exceed 2MB.",
-    "FieldType": "Document",
+    "ID": "generalEmailUploadedDocuments",
+    "Label": "Upload Document(s)",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
     "SecurityClassification": "Public"
   },
   {
