@@ -37,7 +37,7 @@ export const updateRespondentNonRepresentedContactDetailsSolChangeTabData = [
   {
     tabName: 'Applicant',
     tabContent: [
-        'APPLICANT DETAILS',
+      'APPLICANT DETAILS',
       { tabItem: 'Current First and Middle names', value: 'Frodo' },
       { tabItem: 'Current Last Name', value: 'Baggins' },
       { tabItem: 'Please state in which Financial Remedies Court Zone the applicant resides', value: 'Midlands'},
@@ -49,4 +49,4 @@ export const updateRespondentNonRepresentedContactDetailsSolChangeTabData = [
       { tabItem: 'Your reference', value: envTestData.ORG_ID_1 }
     ]
   }
-]
+];
