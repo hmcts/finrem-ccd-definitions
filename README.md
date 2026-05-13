@@ -262,6 +262,6 @@ If you are needing to work with the Work Allocation feature follow these guideli
 
 1) Check if the file you need to work with has a copy with the suffix "fileName"-wa.json
 2) Check the entry/row you need to edit: if the change is part of a Work Allocation cut/delete the entry from the base file and copy it over 
-in the -wa-nonprod.json version of the file and make any wa specific changes in the -wa-nonprod.json file. Also include the base event in nonprod.json file so to maintain the base functionality for non prod environments. Also copy to the -prod.json file to maintain the same functionality in prod.
+in the -wa-nonprod.json version of the file and make any wa specific changes in the -wa-nonprod.json file. Also include the base event in nonprod.json file so to maintain the base functionality for non prod environments. Also copy to the -prod.json only if your event has prod specific behaviour.
 3) When you generate the definitions use the WA script in order to see your changes reflected in the xlsx file.
 4) Case events for WA also need the publish flag, set this manually "Pusblish":"Y".
