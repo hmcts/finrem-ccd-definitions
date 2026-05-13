@@ -15,10 +15,17 @@ elif [ -z "$waExclusion" ]; then
 else
   fullExclusion="${EXCLUDE},${waExclusion}"
 fi
+
+if [ "$WA_ENABLED" = "true" ]; then
+  outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-wa-${GIT_COMMIT:-base}.xlsx"
+else
+  outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-${GIT_COMMIT:-base}.xlsx"
+fi
+
 pushd ccd-definition-processor && \
   CCD_DEF_CASE_TYPE_ID=FinancialRemedyMVP2 \
   yarn --cwd ccd-definition-processor json2xlsx \
   -D ../definitions/consented/json \
   -e ${fullExclusion} \
-  -o ../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-${GIT_COMMIT:-base}.xlsx && \
+  -o ${outputFile} && \
 popd
