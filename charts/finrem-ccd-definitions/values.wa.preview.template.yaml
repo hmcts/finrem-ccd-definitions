@@ -9,7 +9,7 @@ xui-webapp:
       SERVICES_WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
       SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
       WA_SUPPORTED_JURISDICTIONS: DIVORCE
-      FEATURE_WORKALLOCATION_ENABLED: ${ENABLE_WA}
+      FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
 
 wa:
   enabled: ${ENABLE_WA}

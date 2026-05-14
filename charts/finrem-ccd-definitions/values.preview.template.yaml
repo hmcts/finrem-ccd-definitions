@@ -36,7 +36,7 @@ xui-webapp:
       SERVICES_CCD_CASE_ASSIGNMENT_API: http://${SERVICE_NAME}-aac-manage-case-assignment
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}
       JURISDICTIONS: DIVORCE
-      FEATURE_WORKALLOCATION_ENABLED: false
+      FINREM_WORK_ALLOCATION_ENABLED: false
 
 xui-mo-webapp:
   enabled: true
