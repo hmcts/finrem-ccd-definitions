@@ -5194,6 +5194,33 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "scannedFileName",
+    "FieldType": "Text",
+    "ElementLabel": "Original scanned file name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "Original scanned file name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Original scanned file name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/11/2025",
     "ID": "FR_manageCaseDocumentInput",
     "ListElementCode": "caseDocumentType",
