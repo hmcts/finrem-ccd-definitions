@@ -1,0 +1,163 @@
+# OVERRIDE VALUES IF pr-values:wa label is applied
+
+xui-webapp:
+  enabled: true
+  nodejs:
+    environment:
+      HEALTH_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service/health
+      SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
+      SERVICES_WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
+      SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
+      WA_SUPPORTED_JURISDICTIONS: DIVORCE
+      FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
+
+wa:
+  enabled: ${ENABLE_WA}
+  wa:
+    taskBatchCron:
+      enabled: false
+    messageCron:
+      enabled: false
+    reconfigurationBatchCron:
+      enabled: false
+    terminationBatchCron:
+      enabled: false
+    postgresql:
+      enabled: false
+  global:
+    postgresUsername: hmcts
+    postgresSecret: postgres
+    postgresHost: financial-remedy-preview.postgres.database.azure.com
+    databaseNamePrefix: "pr-${CHANGE_ID}-"
+
+  camunda-bpm:
+    java:
+      devcpuRequests: 500m
+      devmemoryRequests: 1Gi
+      devcpuLimits: 2
+      devmemoryLimits: 4Gi
+      environment:
+        CAMUNDA_DB_CONN_OPTIONS: "?stringtype=unspecified&reWriteBatchedInserts=true&sslmode=require"
+
+  wa-task-management-api:
+    java:
+      disableKeyVaults: true
+      ingressHost: wa-task-management-api-${SERVICE_FQDN}
+      devcpuRequests: 500m
+      devmemoryRequests: 1Gi
+      devcpuLimits: 2
+      devmemoryLimits: 4Gi
+      environment:
+        CAMUNDA_URL: "http://{{ .Release.Name }}-camunda/engine-rest"
+        IDAM_URL: "https://idam-api.{{ .Values.global.environment }}.platform.hmcts.net"
+        S2S_URL: "http://rpe-service-auth-provider-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal"
+        OPEN_ID_IDAM_URL: "https://idam-web-public.{{ .Values.global.environment }}.platform.hmcts.net"
+        ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
+        ALLOWED_JURISDICTIONS: wa,divorce
+        ALLOWED_CASE_TYPES: financialremedymvp2,financialremedycontested
+        LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
+        MANDATORY_TASK_FIELD_CHECK_ENABLED: true
+        S2S_SECRET_TASK_MANAGEMENT_API: ${S2S_SECRET_TASK_MANAGEMENT_API}
+        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
+        WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
+        WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
+      keyVaults: []
+
+  wa-case-event-handler:
+    java:
+      disableKeyVaults: true
+      ingressHost: wa-case-event-handler-${SERVICE_FQDN}
+      releaseNameOverride: ${SERVICE_NAME}-wa-case-event-handler
+      secrets:
+        AZURE_SERVICE_BUS_CONNECTION_STRING:
+          secretRef: financial-remedy-sb-preview
+          key: connectionString
+      devcpuRequests: 500m
+      devmemoryRequests: 1Gi
+      devcpuLimits: 2
+      devmemoryLimits: 4Gi
+      environment:
+        CAMUNDA_URL: "http://{{ .Release.Name }}-camunda/engine-rest"
+        CCD_URL: "http://{{ .Release.Name }}-ccd-data-store-api"
+        CCD_SEARCH_URL: "http://{{ .Release.Name }}-ccd-data-store-api"
+        LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
+        ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
+        S2S_SECRET_CASE_EVENT_HANDLER: ${S2S_SECRET_CASE_EVENT_HANDLER}
+        WA_WORKFLOW_API_URL: "http://{{ .Release.Name }}-wa-workflow-api"
+        WA_TASK_MANAGEMENT_API_URL: "http://{{ .Release.Name }}-wa-task-management-api"
+        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
+        AZURE_SERVICE_BUS_TOPIC_NAME: ${SERVICE_NAME}-ccd-case-events
+        AZURE_SERVICE_BUS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
+        AZURE_SERVICE_BUS_CCD_CASE_EVENTS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
+      keyVaults: []
+
+  wa-task-monitor:
+    java:
+      disableKeyVaults: true
+      ingressHost: wa-task-monitor-${SERVICE_FQDN}
+      environment:
+        S2S_SECRET_TASK_MONITOR: ${S2S_SECRET_TASK_MONITOR}
+        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
+        WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
+        WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
+        WA_TASK_MANAGEMENT_API_URL: http://{{ .Release.Name }}-wa-task-management-api
+      keyVaults: []
+
+  wa-workflow-api:
+    java:
+      disableKeyVaults: true
+      devcpuRequests: 500m
+      devmemoryRequests: 1Gi
+      devcpuLimits: 2
+      devmemoryLimits: 4Gi
+      environment:
+        DB_READER_USERNAME: "hmcts"
+        LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
+        S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
+      keyVaults: []
+
+ccd:
+  ccd-data-store-api:
+    java:
+      environment:
+        ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
+
+servicebusPrimary:
+  enabled: true
+  releaseNameOverride: ${SERVICE_NAME}
+  resourceGroup: financial-remedy-aso-preview-rg
+  sbNamespace: financial-remedy-servicebus-preview
+  azureName: financial-remedy-sb-preview
+  secretName: financial-remedy-sb-preview
+  setup:
+    topics:
+      - name: ccd-case-events
+        subscriptionNeeded: yes
+        requiresSession: true
+
+ccd-message-publisher:
+  enabled: true
+  servicebusPrimary:
+    enabled: false
+  java:
+    ingressHost: ccd-message-publisher-${SERVICE_FQDN}
+    releaseNameOverride: ${SERVICE_NAME}-ccd-message-publisher
+    disableKeyVaults: true
+    devcpuRequests: 500m
+    devmemoryRequests: 1Gi
+    devcpuLimits: 1
+    devmemoryLimits: 4Gi
+    environment:
+      DATA_STORE_DB_HOST: financial-remedy-preview.postgres.database.azure.com
+      DATA_STORE_DB_NAME: "pr-${CHANGE_ID}-data-store"
+      DATA_STORE_DB_USERNAME: hmcts
+      DATA_STORE_DB_OPTIONS: "?stringtype=unspecified&reWriteBatchedInserts=true&sslmode=require"
+      CCD_CASE_EVENTS_DESTINATION: ${SERVICE_NAME}-ccd-case-events
+    secrets:
+      SERVICE_BUS_CONNECTION_STRING:
+        secretRef: financial-remedy-sb-preview
+        key: connectionString
+      DATA_STORE_DB_PASSWORD:
+        secretRef: postgres
+        key: PASSWORD
+        disabled: false

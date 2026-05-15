@@ -1,0 +1,67 @@
+{{- if .Values.servicebusPrimary.enabled }}
+{{- $resourceGroupName := .Values.servicebusPrimary.resourceGroup -}}
+{{- $namespaceName := .Values.servicebusPrimary.sbNamespace -}}
+{{- $azureNamespaceName := .Values.servicebusPrimary.azureName | default "financial-remedy-sb-preview" -}}
+{{- $sharedSecretName := .Values.servicebusPrimary.secretName | default "financial-remedy-sb-preview" -}}
+{{- if not (lookup "resources.azure.com/v1api20200601" "ResourceGroup" .Release.Namespace $resourceGroupName) }}
+apiVersion: resources.azure.com/v1api20200601
+kind: ResourceGroup
+metadata:
+  name: {{ $resourceGroupName }}
+  annotations:
+    helm.sh/resource-policy: keep
+    serviceoperator.azure.com/reconcile-policy: skip
+spec:
+  azureName: {{ $resourceGroupName }}
+  location: uksouth
+---
+{{- end }}
+{{- if not (lookup "servicebus.azure.com/v1api20211101" "Namespace" .Release.Namespace $namespaceName) }}
+apiVersion: servicebus.azure.com/v1api20211101
+kind: Namespace
+metadata:
+  name: {{ $namespaceName }}
+  annotations:
+    helm.sh/resource-policy: keep
+    serviceoperator.azure.com/reconcile-policy: detach-on-delete
+spec:
+  azureName: {{ $azureNamespaceName }}
+  location: uksouth
+  owner:
+    name: {{ $resourceGroupName }}
+  sku:
+    name: Standard
+  tags:
+    app.kubernetes.io_name: financial-remedy
+    application: financial-remedy
+    builtFrom: https://github.com/HMCTS/finrem-ccd-definitions
+    businessArea: CFT
+    environment: development
+  zoneRedundant: false
+---
+{{- end }}
+{{- if not (lookup "servicebus.azure.com/v1api20211101" "NamespacesAuthorizationRule" .Release.Namespace $sharedSecretName) }}
+apiVersion: servicebus.azure.com/v1api20211101
+kind: NamespacesAuthorizationRule
+metadata:
+  name: {{ $sharedSecretName }}
+  annotations:
+    helm.sh/resource-policy: keep
+spec:
+  azureName: RootManageSharedAccessKey
+  operatorSpec:
+    secrets:
+      primaryConnectionString:
+        name: {{ $sharedSecretName }}
+        key: connectionString
+      primaryKey:
+        name: {{ $sharedSecretName }}
+        key: primaryKey
+  owner:
+    name: {{ $namespaceName }}
+  rights:
+    - Listen
+    - Send
+    - Manage
+{{- end }}
+{{- end }}
