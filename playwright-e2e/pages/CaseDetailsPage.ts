@@ -1,4 +1,4 @@
-import { type Page, expect, Locator } from '@playwright/test';
+import {type Page, expect, Locator, Download} from '@playwright/test';
 import { CaseEvent } from '../config/case-data';
 import { Tab, TabContentItem } from './components/tab';
 import {FileTree} from './components/case_file_view_tree.ts';
@@ -354,21 +354,49 @@ export class CaseDetailsPage {
     }
   }
 
-  /**
-   * Asserts that a document is visible or not visible in Case File View, depending on shouldBeVisible.
-   * @param docName The document name to check
-   * @param shouldBeVisible Whether the document should be visible
-   */
-  async assertDocumentVisibleInCfv(docName: string, shouldBeVisible: boolean) {
+  async openCaseFileView(): Promise<void> {
+    await this.page.getByText('Case File View').click();
+  }
+
+  async openAndExpandCfv(): Promise<void> {
     await expect(this.page.getByRole('tab', { name: 'Case File View' })).toBeVisible();
-    await this.page.getByRole('tab', { name: 'Case File View' }).click();
-    await this.page.getByRole('button', { name: 'Toggle list' }).click();
+
+    await this.openCaseFileView();
+
+    const toggleButton = this.page.getByRole('button', { name: 'Toggle list' });
+    await toggleButton.click();
+
+    await expect(this.page.getByRole('tree')).toBeVisible();
+
     await this.page.getByText('Expand All').click();
-    const docItem = this.page.getByRole('treeitem', { name: docName, exact: true });
+  }
+
+  async assertDocumentVisibleInCfv(docName: string, shouldBeVisible: boolean): Promise<void> {
+    await this.openAndExpandCfv();
+
+    const docItem: Locator = this.page.getByRole('treeitem', { name: docName, exact: true });
+
     if (shouldBeVisible) {
       await expect(docItem).toBeVisible();
     } else {
-      await expect(docItem).not.toBeVisible();
+      await expect(docItem).toHaveCount(0);
+      // better than not.toBeVisible() if element is removed from DOM
     }
+  }
+
+  async downloadDocumentFromCfv(fileName: string): Promise<void> {
+    await this.openAndExpandCfv();
+
+    const docRow: Locator = this.page.getByRole('treeitem', { name: new RegExp(fileName) });
+
+    const downloadPromise: Promise<Download> = this.page.waitForEvent('download');
+
+    await docRow.getByRole('button').click();
+
+    await this.page.getByRole('listitem').filter({ hasText: 'Download' }).click();
+
+    const download: Download = await downloadPromise;
+
+    expect(download.suggestedFilename()).toContain(fileName);
   }
 }

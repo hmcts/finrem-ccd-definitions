@@ -1,11 +1,27 @@
-import { expect, test } from '../../../fixtures/fixtures';
+import {expect, test} from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedEvents } from '../../../config/case-data';
-import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import { amendCaseDocumentsTable, manageCaseDocumentsTable, manageCaseDocumentsTableNewConfidential, manageCaseDocumentsTableNewFdrDoc, manageCaseDocumentsTableSpecialTypeConfidential, manageCaseDocumentsTableWithoutPrejudice } from '../../../resources/check_your_answer_content/manage_case_documents/manageCaseDocumentsTable';
-import { DateHelper } from '../../../data-utils/DateHelper';
-import { amendedDocumentTabData, getConfidentialDocumentsTabData, getFdrDocumentsTabData, getSpecialTypeConfidentialDocumentsTabData, getWithoutPrejudiceDocumentsTabData } from '../../../resources/tab_content/contested/manage_case_documents_tabs';
-import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
+import {ContestedEvents} from '../../../config/case-data';
+import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory';
+import {
+  amendCaseDocumentsTable,
+  manageCaseDocumentsTable,
+  manageCaseDocumentsTableNewConfidential,
+  manageCaseDocumentsTableNewFdrDoc,
+  manageCaseDocumentsTableSpecialTypeConfidential,
+  manageCaseDocumentsTableWithoutPrejudice
+} from '../../../resources/check_your_answer_content/manage_case_documents/manageCaseDocumentsTable';
+import {DateHelper} from '../../../data-utils/DateHelper';
+import {
+  amendedDocumentTabData,
+  getConfidentialDocumentsTabData,
+  getFdrDocumentsTabData,
+  getSpecialTypeConfidentialDocumentsTabData,
+  getWithoutPrejudiceDocumentsTabData
+} from '../../../resources/tab_content/contested/manage_case_documents_tabs';
+import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEventApi';
+import {DocumentClient, DocumentMetadata} from '../../../data-utils/api/DocumentClient.ts';
+import {CaseTab} from '../../../pages/ManageCaseDashboardPage.ts';
+import {Locator} from '@playwright/test';
 
 test.describe('Contested Manage Case Documents', () => {
   test(
@@ -230,6 +246,7 @@ test.describe('Contested Manage Case Documents', () => {
       //expect original document to be visible
       await expect(page.getByRole('button', { name: 'caseDoc.docx' })).toBeVisible();
       await manageCaseDocumentsPage.removeDocument();
+      await expect(page.getByRole('button', { name: 'caseDoc.dox'})).toBeHidden({ timeout: 200 });
       await manageCaseDocumentsPage.navigateContinue();
       await manageCaseDocumentsPage.navigateSubmit();
 
@@ -237,4 +254,100 @@ test.describe('Contested Manage Case Documents', () => {
       await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
     }
   );
+
+  test('Contested - Document deletion removes reference from Case Data', async ({
+    page,
+    manageCaseDashboardPage,
+    loginPage,
+    caseDetailsPage,
+    manageCaseDocumentsPage
+  }): Promise<void> => {
+    let documentId: string;
+    let cookieHeader: string;
+    let caseId: string;
+
+    const filename: string = 'caseDoc.docx';
+
+    await test.step('Create case and seed document', async (): Promise<void> => {
+      caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(caseId);
+    });
+
+    await test.step('Login and navigate to case', async ():Promise<void> => {
+      await manageCaseDashboardPage.visit();
+
+      await loginPage.loginWaitForPath(
+        config.superCaseWorker.email,
+        config.superCaseWorker.password,
+        config.manageCaseBaseURL,
+        config.loginPaths.cases
+      );
+    });
+
+    await test.step('Capture document ID from case data', async (): Promise<void> => {
+      const responsePromise = page.waitForResponse(res =>
+      {return res.url().includes('/data/internal/cases/') &&
+                res.status() === 200;}
+      );
+
+      await manageCaseDashboardPage.navigateToCase(caseId);
+
+      await manageCaseDashboardPage.navigateToTab(CaseTab.ConfDocuments);
+
+      const documentButton: Locator = page.getByRole('button', { name: filename });
+
+      await expect(documentButton).toBeVisible();
+
+      const response = await responsePromise;
+      const caseData: JSON = await response.json();
+
+      const raw: string = JSON.stringify(caseData);
+
+      const match: RegExpMatchArray | null = raw.match(/documents\/([a-f0-9-]+)\/binary/);
+
+      expect(match).toBeTruthy();
+
+      documentId = match![1];
+
+      const cookies = await page.context().cookies();
+      cookieHeader = cookies.map(c => {return `${c.name}=${c.value}`;}).join('; ');
+    });
+
+    await test.step('Verify document exists before deletion', async (): Promise<void> => {
+      const documentClient = new DocumentClient(
+        config.superCaseWorker.email,
+        config.superCaseWorker.password
+      );
+
+      const metadata: DocumentMetadata = await documentClient.getDocumentCookies(documentId, cookieHeader);
+
+      expect(metadata).toBeTruthy();
+      expect(metadata._links.self.href).toContain(documentId);
+    });
+
+    await test.step('Delete the document via UI', async (): Promise<void> => {
+      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
+
+      await manageCaseDocumentsPage.amendDoc();
+      await manageCaseDocumentsPage.navigateContinue();
+
+      await manageCaseDocumentsPage.removeDocument();
+    });
+
+    await test.step('Submit event and verify response', async (): Promise<void> => {
+      await manageCaseDocumentsPage.navigateContinue();
+      await manageCaseDocumentsPage.navigateSubmit();
+    });
+
+    await test.step('Re-fetch case data and assert document reference removed', async (): Promise<void> => {
+
+      await manageCaseDashboardPage.navigateToTab(CaseTab.CaseDocuments);
+
+      const documentButton = page.getByRole('button', { name: filename});
+
+      const noDocuments: number = 0;
+
+      await expect(documentButton).toHaveCount(noDocuments);
+    });
+  });
 });
