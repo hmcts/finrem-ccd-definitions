@@ -5194,6 +5194,33 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "15/05/2026",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "scannedFileName",
+    "FieldType": "Text",
+    "ElementLabel": "Original scanned file name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "15/05/2026",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "fileName",
+    "FieldType": "Text",
+    "ElementLabel": "Original file name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "15/05/2026",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "scannedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Original scanned file date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/11/2025",
     "ID": "FR_manageCaseDocumentInput",
     "ListElementCode": "caseDocumentType",
@@ -5272,6 +5299,24 @@
     "ListElementCode": "caseDocumentUploadDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Upload DateTime",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "15/05/2026",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "selectForUpdate",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Update",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "15/05/2026",
+    "ID": "FR_manageCaseDocumentInput",
+    "ListElementCode": "exceptionRecordReference",
+    "FieldType": "Text",
+    "ElementLabel": "Exception record reference",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
