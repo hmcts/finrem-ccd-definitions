@@ -77,7 +77,7 @@ dependencies {
     testImplementation(platform(group: 'org.junit', name: 'junit-bom', version: '5.14.3'))
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter'
 
-    testImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.21.2'
+    testImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.21.3'
     testImplementation group: 'commons-io', name: 'commons-io', version: '2.21.0'
     testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.27.7'
 
