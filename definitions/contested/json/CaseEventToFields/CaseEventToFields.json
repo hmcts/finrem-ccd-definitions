@@ -10706,7 +10706,7 @@
     "PageLabel": "Upload draft orders",
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "PageShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
+    "PageShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\" OR typeOfDraftOrder=\"acceleratedProcedureOrders14DaysBeforeHearing\"",
     "ShowSummaryChangeOption": "Y"
   },
   {
