@@ -3,7 +3,7 @@
 set -euo pipefail
 
 repo_url=${1:-}
-branch_name=${2:-master}
+branch_name=${2:-main}
 target_dir=${3:-camunda}
 
 if [[ -z "${repo_url}" ]]; then

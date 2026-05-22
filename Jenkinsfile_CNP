@@ -153,11 +153,14 @@ def setCommonWaPreviewEnvVars() {
 }
 
 def uploadWaPreviewDmnDefinitions() {
+  def waTaskConfigRepoUrl = env.WA_TASK_CONFIG_REPO_URL ?: 'https://github.com/hmcts/finrem-task-configuration.git'
+  def waTaskConfigBranch = env.WA_TASK_CONFIG_BRANCH ?: 'main'
+
   dir("${WORKSPACE}") {
-    sh '''
-      ./bin/wa/pull-latest-task-config-files.sh "${WA_TASK_CONFIG_REPO_URL:-}" "${WA_TASK_CONFIG_BRANCH:-master}" camunda
+    sh """
+      ./bin/wa/pull-latest-task-config-files.sh "${waTaskConfigRepoUrl}" "${waTaskConfigBranch}" camunda
       ./bin/wa/import-dmn-diagram.sh . financial-remedy finrem camunda
-    '''
+    """
   }
 }
 
