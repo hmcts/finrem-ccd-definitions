@@ -490,6 +490,7 @@ ccd:
                 hosts => ["${SERVICE_NAME}-es-master"]
                 sniffing => false
                 index => "%{[index_id]}"
+                document_type => "_doc"
                 document_id => "%{id}"
                 timeout => 60
             }
