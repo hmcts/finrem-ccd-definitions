@@ -39,3 +39,16 @@ dependencies:
     version: ~1.7.16
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: ccd-case-document-am-api.enabled
+  - name: servicebus
+    version: 1.2.2
+    repository: 'oci://hmctsprod.azurecr.io/helm'
+    alias: servicebusPrimary
+    condition: servicebusPrimary.enabled
+  - name: wa
+    version: ~1.1.0
+    repository: 'oci://hmctsprod.azurecr.io/helm'
+    condition: wa.enabled
+  - name: ccd-message-publisher
+    version: ~0.1.22
+    repository: 'oci://hmctsprod.azurecr.io/helm'
+    condition: ccd-message-publisher.enabled
