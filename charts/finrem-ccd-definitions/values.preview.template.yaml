@@ -321,6 +321,12 @@ ccd:
     persistence:
       enabled: false
     extraEnvs:
+      - name: DATA_STORE_PASS
+        value: hmcts
+      - name: DATA_STORE_URL
+        value: "jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/{{ .Values.global.databaseNamePrefix }}data-store?sslmode=require&stringtype=unspecified"
+      - name: DATA_STORE_USER
+        value: hmcts
       - name: ES_HOSTS
         value: "${SERVICE_NAME}-es-master"
     extraInitContainers: |
