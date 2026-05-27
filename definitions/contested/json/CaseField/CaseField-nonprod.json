@@ -18,5 +18,25 @@
     "FieldTypeParameter": "FR_accessCodeEntry",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "citizenApplicantDocument",
+    "Label": "Upload Applicant Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenApplicantDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "citizenRespondentDocument",
+    "Label": "Upload Respondent Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenRespondentDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
