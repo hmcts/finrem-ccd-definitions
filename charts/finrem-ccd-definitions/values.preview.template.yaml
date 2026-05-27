@@ -312,7 +312,6 @@ ccd:
     nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     replicas: 1
-    clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
 
   logstash:
     image: hmctsprod.azurecr.io/imported/elastic/logstash
@@ -488,7 +487,7 @@ ccd:
       03_output.conf: |
         output {
             elasticsearch {
-                hosts => ["http://${SERVICE_NAME}-es-master:9200"]
+                hosts => ["${SERVICE_NAME}-es-master"]
                 sniffing => false
                 index => "%{[index_id]}"
                 document_type => "_doc"
