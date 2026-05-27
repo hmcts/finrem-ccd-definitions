@@ -143,6 +143,8 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
@@ -846,19 +848,6 @@
     "PostConditionState": "*",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "10/07/2020",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "FR_UploadPensionDocument_Solicitor",
-    "Name": "Upload Pension Documents",
-    "Description": "Upload pension documents",
-    "DisplayOrder": 46,
-    "PreConditionState(s)": "awaitingInfo;awaitingResponse;readyForHearing",
-    "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"

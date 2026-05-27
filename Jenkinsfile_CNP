@@ -7,7 +7,7 @@ import uk.gov.hmcts.contino.GithubAPI
 
 String product = "finrem"
 String component = "ccd-definitions"
-AppPipelineConfig pipelineConf;
+AppPipelineConfig pipelineConf
 
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
@@ -18,6 +18,22 @@ def secrets = [
                 secret('microservicekey-ccd-gw', 'API_GATEWAY_S2S_KEY'),
                 secret('microservicekey-ccd-ps', 'PRINT_S2S_KEY'),
                 secret('microservicekey-ccd-admin', 'ADMIN_S2S_KEY')
+        ],
+        'am-${env}'      : [
+                secret('am-role-assignment-service-s2s-secret', 'AM_ROLE_ASSIGNMENT_SERVICE_SECRET'),
+                secret('role-assignment-service-IDAM-CLIENT-SECRET', 'ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET'),
+                secret('role-assignment-service-IDAM-ADMIN-SECRET', 'ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD'),
+                secret('role-assignment-service-LD-SDK-KEY', 'LD_SDK_AM_KEY')
+        ],
+        'wa-${env}'      : [
+                secret('wa-system-username', 'WA_SYSTEM_USERNAME'),
+                secret('wa-system-password', 'WA_SYSTEM_PASSWORD'),
+                secret('wa-idam-client-secret', 'WA_IDAM_CLIENT_SECRET'),
+                secret('ld-secret', 'WA_LAUNCH_DARKLY_SDK_KEY'),
+                secret('s2s-secret-task-management-api', 'S2S_SECRET_TASK_MANAGEMENT_API'),
+                secret('s2s-secret-task-monitor', 'S2S_SECRET_TASK_MONITOR'),
+                secret('s2s-secret-workflow-api', 'S2S_SECRET_WORKFLOW_API'),
+                secret('s2s-secret-case-event-handler', 'S2S_SECRET_CASE_EVENT_HANDLER')
         ],
         'ccd-${env}'      : [
                 secret('ccd-api-gateway-oauth2-client-secret', 'API_GATEWAY_IDAM_SECRET'),
@@ -114,11 +130,20 @@ def getFinremCosImage() {
   return "latest"
 }
 
+def setPreviewEnvVars() {
+  def githubApi = new GithubAPI(this)
+  env.ENABLE_WA = false
+
+  if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:wa')) {
+    env.ENABLE_WA = true
+  }
+}
+
 // Configure branches to sync with master branch
 def branchesToSync = ['demo', 'ithc', 'perftest']
 properties([
     copyArtifactPermission('*'),
-]);
+])
 withPipeline("nodejs", product, component) {
   env.FUNCTIONAL_TESTS_WORKERS = 1
 
@@ -138,7 +163,7 @@ withPipeline("nodejs", product, component) {
   }
   before('highleveldatasetup') {
     echo "CCD definition upload for environment: ${env.ENV}"
-    env.RUNNING_ENV = env.ENV;
+    env.RUNNING_ENV = env.ENV
     yarnBuilder.yarn('setup')
     if('preview' == env.ENV) {
       env.RUNNING_ENV = "aat"
@@ -228,6 +253,7 @@ withPipeline("nodejs", product, component) {
   onPR() {
     env.ENV='preview'
     env.FINREM_COS_IMAGE = getFinremCosImage()
+    setPreviewEnvVars()
   }
 
   onIthc() {
