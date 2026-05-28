@@ -312,6 +312,9 @@ ccd:
     nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     replicas: 1
+    extraEnvs:
+      - name: discovery.type
+        value: single-node
 
   logstash:
     image: hmctsprod.azurecr.io/imported/elastic/logstash
