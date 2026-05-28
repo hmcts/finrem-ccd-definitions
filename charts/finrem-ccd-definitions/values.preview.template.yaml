@@ -313,6 +313,11 @@ ccd:
     clusterName: "es"
     replicas: 1
     clusterHealthCheckParams: "wait_for_status=yellow&timeout=30s"
+    extraEnvs:
+      - name: discovery.type
+        value: single-node
+      - name: cluster.initial_master_nodes
+        value: ""
 
   logstash:
     image: hmctsprod.azurecr.io/imported/elastic/logstash
