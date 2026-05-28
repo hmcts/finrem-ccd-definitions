@@ -2,15 +2,23 @@ import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import { amendCaseDocumentsTable, manageCaseDocumentsTable, manageCaseDocumentsTableNewConfidential, manageCaseDocumentsTableNewFdrDoc, manageCaseDocumentsTableSpecialTypeConfidential, manageCaseDocumentsTableWithoutPrejudice } from '../../../resources/check_your_answer_content/manage_case_documents/manageCaseDocumentsTable';
+import {
+    amendCaseDocumentsTable,
+    manageCaseDocumentsTable,
+    manageCaseDocumentsTableNewConfidential,
+    manageCaseDocumentsTableNewFdrDoc,
+    manageCaseDocumentsTableNewNonConfidential,
+    manageCaseDocumentsTableSpecialTypeConfidential,
+    manageCaseDocumentsTableWithoutPrejudice
+} from '../../../resources/check_your_answer_content/manage_case_documents/manageCaseDocumentsTable';
 import { DateHelper } from '../../../data-utils/DateHelper';
 import { amendedDocumentTabData, getConfidentialDocumentsTabData, getFdrDocumentsTabData, getSpecialTypeConfidentialDocumentsTabData, getWithoutPrejudiceDocumentsTabData } from '../../../resources/tab_content/contested/manage_case_documents_tabs';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 
 test.describe('Contested Manage Case Documents', () => {
   test(
-    'Contested - Caseworker Manage Case Documents (Legacy Event)',
-    { tag: [] },
+    'Contested - Caseworker Manage Case Documents, adding non-confidential document',
+    { tag: ['@caseworker'] },
     async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage, axeUtils, checkYourAnswersPage }) => {
       // Create and setup case
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
@@ -23,18 +31,16 @@ test.describe('Contested Manage Case Documents', () => {
       // Manage case documents
       await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
       await manageCaseDocumentsPage.navigateAddNew(); 
-      await manageCaseDocumentsPage.legacyUploadDocument('test.docx');
-      await manageCaseDocumentsPage.legacySelectDocumentType('Other');
-      await manageCaseDocumentsPage.legacySpecifyDocumentTypeIfOther('test');
-      await manageCaseDocumentsPage.legacyFillDescription('test case');
-      await manageCaseDocumentsPage.checkConfidentialityGuideText();
-      await manageCaseDocumentsPage.legacyIsDocumentConfidential(true);
-      await axeUtils.audit();
-
-      //Continue about to submit and check your answers
+      await manageCaseDocumentsPage.uploadCaseDocument('test.docx');
+      await manageCaseDocumentsPage.selectDocument('Other');
+      await manageCaseDocumentsPage.fillDocumentType('test document type');
+      await manageCaseDocumentsPage.checkConfidentiality('non-confidential');
+      await manageCaseDocumentsPage.checkFdr(false);
+      await manageCaseDocumentsPage.checkDocumentBehalfOfApplicant();
       await manageCaseDocumentsPage.navigateContinue();
-      await checkYourAnswersPage.assertCheckYourAnswersPage(manageCaseDocumentsTable);
+      await checkYourAnswersPage.assertCheckYourAnswersPage(manageCaseDocumentsTableNewNonConfidential);
       await manageCaseDocumentsPage.navigateSubmit();
+      await axeUtils.audit();
     }
   );
 

@@ -12,6 +12,16 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
   readonly isThisFdrDocumentQuestion: Locator;
   private readonly addNewRadio: Locator;
   private readonly amendRadio: Locator;
+  private readonly fileUpload: Locator
+  private readonly documentType: Locator;
+  private readonly documentSpecified: Locator;
+  private readonly confidentialYesRadio: Locator;
+  private readonly confidentialNoRadio: Locator;
+  private readonly fdrYesRadio: Locator;
+  private readonly fdrNoRadio: Locator;
+  private readonly applicantRadio: Locator;
+
+
 
   private readonly commonActionsHelper: CommonActionsHelper;
 
@@ -28,14 +38,49 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     this.isThisFdrDocumentQuestion = page.getByText('Is this a Financial Dispute');
     this.addNewRadio = page.getByRole('radio', { name: 'Add New' });
     this.amendRadio = page.getByRole('radio', { name: 'Amend' });
+    this.fileUpload = page.getByRole('button', { name: 'Please upload any case' });
+    this.documentType = page.getByLabel('Document type', { exact: true });
+    this.documentSpecified = page.getByRole('textbox', { name: 'Please specify document type' })
+    this.confidentialYesRadio = page.getByRole('group', { name: 'Is the document confidential?' }).getByLabel('Yes');
+    this.confidentialNoRadio = page.getByRole('group', { name: 'Is the document confidential?' }).getByLabel('No');
+    this.fdrYesRadio = page.getByRole('group', { name: 'Is this a Financial Dispute' }).getByLabel('Yes');
+    this.fdrNoRadio = page.getByRole('group', { name: 'Is this a Financial Dispute' }).getByLabel('No');
+    this.applicantRadio = page.getByRole('radio', { name: 'Applicant' });
   }
 
-  // Legacy methods (to be removed once old Manage Case Documents event is gone)
-  async legacyUploadDocument(documentName: string, collectionIndex: number = 0) {
-    const uploadInput = this.page.getByRole('button', { name: 'Please upload any case' });
-    await expect(uploadInput).toBeVisible();
+  public async uploadCaseDocument(documentName: string): Promise<void> {
+    await expect(this.fileUpload).toBeVisible();
     const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
-    await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadInput, filePayload);
+    await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.fileUpload, filePayload);
+  }
+  public async selectDocument(option: string): Promise<void> {
+    await expect(this.documentType).toBeVisible();
+    await this.documentType.selectOption({ label: option });
+  }
+
+  public async fillDocumentType(description: string): Promise<void> {
+    await expect(this.documentSpecified).toBeVisible();
+    await this.documentSpecified.fill(description);
+  }
+
+  public async checkConfidentiality(option: 'confidential' | 'non-confidential'): Promise <void> {
+    const radio: Locator =
+        option === 'confidential'
+            ? this.confidentialYesRadio
+            : this.confidentialNoRadio;
+
+    await radio.check();
+  }
+
+  public async checkFdr(option: true | false): Promise<void> {
+    const radio: Locator =
+        option ? this.fdrYesRadio : this.fdrNoRadio;
+    await radio.check();
+  }
+
+  public async checkDocumentBehalfOfApplicant(): Promise<void> {
+    await expect(this.applicantRadio).toBeVisible();
+    await this.applicantRadio.check();
   }
 
   async legacyFillDescription(text: string) {
@@ -114,12 +159,6 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     return this.page.locator(`#inputManageCaseDocumentCollection_${collectionIndex}_caseDocumentOther`);
   }
 
-  async fillDescription(text: string, collectionIndex: number = 0) {
-    const textArea = this.getTextArea(collectionIndex);
-    await expect(textArea).toBeVisible();
-    await textArea.fill(text);
-  }
-
   async selectDocumentType(optionText: string, collectionIndex: number = 0) {
     const dropdown = this.getDocumentTypeDropdown(collectionIndex);
     await expect(dropdown).toBeVisible();
@@ -182,5 +221,10 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     const partyRadio = partySection.getByText(partyName);
     await expect(partyRadio).toBeVisible();
     await partyRadio.click();
+  }
+
+  async navigateAddNew(): Promise<void> {
+    await this.addNewRadio.check();
+    await this.continueButton.click();
   }
 }
