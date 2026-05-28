@@ -243,7 +243,7 @@ ccd:
         OIDC_ISSUER: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
         WELSH_TRANSLATION_ENABLED: false
         ELASTIC_SEARCH_ENABLED: true
-        ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master:9200
+        ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
       ingressHost: ccd-definition-store-${SERVICE_FQDN}
 
   ccd-admin-web:
@@ -328,7 +328,7 @@ ccd:
       - name: DATA_STORE_USER
         value: hmcts
       - name: ES_HOSTS
-        value: "${SERVICE_NAME}-es-master:9200"
+        value: "${SERVICE_NAME}-es-master"
     extraInitContainers: |
       - name: download-postgres-jdbc
         image: hmctsprod.azurecr.io/curl:7.70.0
