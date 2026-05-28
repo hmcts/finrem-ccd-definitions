@@ -312,7 +312,7 @@ ccd:
     nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     replicas: 1
-    clusterHealthCheckParams: "wait_for_status=green&timeout=1s"
+    clusterHealthCheckParams: "wait_for_status=yellow&timeout=30s"
 
   logstash:
     image: hmctsprod.azurecr.io/imported/elastic/logstash
