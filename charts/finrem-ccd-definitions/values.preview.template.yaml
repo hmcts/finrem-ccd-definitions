@@ -313,6 +313,7 @@ ccd:
     clusterName: "es"
     replicas: 1
     clusterHealthCheckParams: "wait_for_status=yellow&timeout=30s"
+    antiAffinity: "soft"
     extraEnvs:
       - name: discovery.type
         value: single-node
