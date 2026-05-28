@@ -93,43 +93,43 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
     @Override
     protected boolean shouldTolerateDataSetupFailure(Throwable e) {
         if (e instanceof ImportException importException) {
-            logger.info("Skipping HLD setup with Bad Gateway or Conflict errors");
+            logger.info("Skipping HLD setup with Bad Gateway or Conflict errors", e);
             return TOLERABLE_EXCEPTIONS.contains(importException.getHttpStatusCode());
         }
 
         return HLD_SKIPPABLE_ENVS.contains(getDataSetupEnvironment());
     }
 
-//    /**
-//     * Workaround for <a href="https://tools.hmcts.net/jira/browse/CCD-5362">CCD-5362</a>.
-//     * @param definitionsPath definitions path
-//     */
-//    @Override
-//    protected void importDefinitionsAt(String definitionsPath) {
-//        List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
-//        logger.info("{} definition files will be uploaded to '{}' on {}.", definitionFileResources.size(),
-//                BeftaMain.getConfig().getDefinitionStoreUrl(), getDataSetupEnvironment());
-//
-//        try {
-//            for (String fileName : definitionFileResources) {
-//                importDefinitionFile(fileName);
-//            }
-//        } finally {
-//            FileUtils.deleteDirectory("definition_files");
-//        }
-//    }
+    /**
+     * Workaround for <a href="https://tools.hmcts.net/jira/browse/CCD-5362">CCD-5362</a>.
+     * @param definitionsPath definitions path
+     */
+    @Override
+    protected void importDefinitionsAt(String definitionsPath) {
+        List<String> definitionFileResources = getAllDefinitionFilesToLoadAt(definitionsPath);
+        logger.info("{} definition files will be uploaded to '{}' on {}.", definitionFileResources.size(),
+                BeftaMain.getConfig().getDefinitionStoreUrl(), getDataSetupEnvironment());
 
-//    private void importDefinitionFile(String fileName) {
-//        try {
-//            logger.info("\n\nImporting {}...", fileName);
-//            importDefinition(fileName);
-//            logger.info("\nImported {}.\n\n", fileName);
-//        } catch (Exception e) {
-//            String message = "Couldn't import {} - Exception: {}.\n\n";
-//            logger.error(message, fileName, e.getMessage());
-//            if (!shouldTolerateDataSetupFailure(e)) {
-//                throw new RuntimeException(e);
-//            }
-//        }
-//    }
+        try {
+            for (String fileName : definitionFileResources) {
+                importDefinitionFile(fileName);
+            }
+        } finally {
+            FileUtils.deleteDirectory("definition_files");
+        }
+    }
+
+    private void importDefinitionFile(String fileName) {
+        try {
+            logger.info("\n\nImporting {}...", fileName);
+            importDefinition(fileName);
+            logger.info("\nImported {}.\n\n", fileName);
+        } catch (Exception e) {
+            String message = "Couldn't import {} - Exception: {}.\n\n";
+            logger.error(message, fileName, e.getMessage());
+            if (!shouldTolerateDataSetupFailure(e)) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
 }
