@@ -244,6 +244,7 @@ ccd:
         WELSH_TRANSLATION_ENABLED: false
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
+        ELASTIC_SEARCH_CASE_INDEX_MAPPING_FIELDS_LIMIT: 50000
         LOG_LEVEL_ROOT: DEBUG
       ingressHost: ccd-definition-store-${SERVICE_FQDN}
 
