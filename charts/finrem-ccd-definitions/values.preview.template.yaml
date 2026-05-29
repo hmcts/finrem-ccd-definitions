@@ -312,9 +312,7 @@ ccd:
     nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     replicas: 1
-    clusterInitialMasterNodes: []
-    esConfig:
-      discovery.type: single-node
+    clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
 
   logstash:
     image: hmctsprod.azurecr.io/imported/elastic/logstash
