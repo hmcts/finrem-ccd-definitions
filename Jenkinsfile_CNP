@@ -186,19 +186,19 @@ withPipeline("nodejs", product, component) {
     ES_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-es-master:9200"
 
     echo "=== Cluster health ==="
-    curl -s "\$ES_URL/_cluster/health?pretty"
+    curl -v "\$ES_URL/_cluster/health?pretty"
 
     echo ""
     echo "=== Indices ==="
-    curl -s "\$ES_URL/_cat/indices?v"
+    curl -v "\$ES_URL/_cat/indices?v"
 
     echo ""
     echo "=== Aliases ==="
-    curl -s "\$ES_URL/_cat/aliases?v"
+    curl -v "\$ES_URL/_cat/aliases?v"
 
     echo ""
     echo "=== Mappings check (sample index) ==="
-    curl -s "\$ES_URL/_mapping?pretty" | head -n 200
+    curl -v "\$ES_URL/_mapping?pretty" | head -n 200
   """
       }
 
