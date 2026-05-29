@@ -179,6 +179,43 @@ withPipeline("nodejs", product, component) {
         yarnBuilder.yarn("copy-preview-xlxs-to-resources")
       }
 
+      stageWithAgent('Bootstrap Elasticsearch aliases', product) {
+        sh """
+    set -e
+
+    ES_URL="http://${SERVICE_NAME}-es-master:9200"
+
+    echo "Waiting for Elasticsearch..."
+
+    until curl -s "$ES_URL/_cluster/health?wait_for_status=yellow&timeout=30s" > /dev/null; do
+      sleep 5
+    done
+
+    echo "Creating aliases..."
+
+    curl -s -X POST "$ES_URL/_aliases" \
+      -H 'Content-Type: application/json' \
+      -d '{
+        "actions": [
+          {
+            "add": {
+              "index": "financialremedycontested_cases-000001",
+              "alias": "financialremedycontested_cases"
+            }
+          },
+          {
+            "add": {
+              "index": "financialremedymvp2_cases-000001",
+              "alias": "financialremedymvp2_cases"
+            }
+          }
+        ]
+      }'
+
+    echo "Alias bootstrap complete"
+  """
+      }
+
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.CCD_WEB_URL = "https://xui-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.XUI_ORG_WEB_URL = "https://xui-mo-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
