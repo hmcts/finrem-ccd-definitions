@@ -160,7 +160,6 @@ export abstract class BaseJourneyPage {
   }
 
   async navigateAddNew(position: number = 0) {
-    await this.page.pause();
     const addNewButton = this.getAddNewButton(position);
     await this.page.waitForLoadState();
     await addNewButton.scrollIntoViewIfNeeded();
