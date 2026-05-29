@@ -185,8 +185,6 @@ withPipeline("nodejs", product, component) {
         sh """
     set -e
 
-    ES_URL="http://${SERVICE_NAME}-es-master:9200"
-
     echo "=== Cluster health ==="
     curl -s "$ES_URL/_cluster/health?pretty"
 
