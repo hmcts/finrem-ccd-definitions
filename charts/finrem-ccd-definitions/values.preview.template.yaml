@@ -312,6 +312,7 @@ ccd:
     nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     replicas: 1
+    clusterInitialMasterNodes: []
     extraEnvs:
       - name: discovery.type
         value: single-node
