@@ -108,8 +108,8 @@ export abstract class BaseJourneyPage {
     await expect(this.continueButton).toBeEnabled();
 
     const finalUrl = expectedUrl
-        ? `${expectedUrl}${pageNumber ?? ''}`
-        : undefined;
+      ? `${expectedUrl}${pageNumber ?? ''}`
+      : undefined;
 
     await this.continueButton.click();
 

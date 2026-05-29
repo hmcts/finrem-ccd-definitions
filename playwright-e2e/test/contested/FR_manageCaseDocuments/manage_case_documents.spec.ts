@@ -7,7 +7,7 @@ import {
     manageCaseDocumentsTable,
     manageCaseDocumentsTableNewConfidential,
     manageCaseDocumentsTableNewFdrDoc,
-    manageCaseDocumentsTableNewNonConfidential,
+    manageCaseDocumentsTableNewNonConfidential, manageCaseDocumentsTableNonConfidentialWitnessSummons,
     manageCaseDocumentsTableSpecialTypeConfidential,
     manageCaseDocumentsTableWithoutPrejudice
 } from '../../../resources/check_your_answer_content/manage_case_documents/manageCaseDocumentsTable';
@@ -46,142 +46,53 @@ test.describe('Contested Manage Case Documents', () => {
 
   test(
     'Contested - Super Caseworker Manage Case Documents New event, Confidential Document Yes (Non-special types)',
-    { tag: ['@firefox'] },
-    async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage, axeUtils, checkYourAnswersPage }) => {
-      // Create and setup case
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-
-      // Login as super caseworker and navigate to case
-      await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.superCaseWorker.email, config.superCaseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
-      await manageCaseDashboardPage.navigateToCase(caseId);
-
-      // Manage case documents
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
-      await manageCaseDocumentsPage.addNew();
-      await manageCaseDocumentsPage.navigateContinue();
-      await manageCaseDocumentsPage.uploadDocument('caseDoc.docx');
-      await manageCaseDocumentsPage.selectDocumentType('Other');
-      await manageCaseDocumentsPage.specifyDocumentTypeIfOther('test');
-      await manageCaseDocumentsPage.checkConfidentialityGuideText();
-      await manageCaseDocumentsPage.isDocumentConfidential(true);
-      await manageCaseDocumentsPage.documentOnBehalfOf(0, 'Applicant');
-      await axeUtils.audit();
-
-      //Continue about to submit and check your answers
-      await manageCaseDocumentsPage.navigateContinue();
-      await checkYourAnswersPage.assertCheckYourAnswersPage(manageCaseDocumentsTableNewConfidential);
-      await manageCaseDocumentsPage.navigateSubmit();
-      const uploadDateTime = DateHelper.getUtcDateTimeFormatted();
-
-
-      //FDR documents tab assertion
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
-      await caseDetailsPage.assertTabData([getConfidentialDocumentsTabData(uploadDateTime)]);
-    }
-  );
-
-  test ('Contested - Super Caseworker Manage Case Documents New event, Confidential Document No (FDR Document)',
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage, axeUtils, checkYourAnswersPage }) => {
-      // Create and setup case
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-      // Login as super caseworker and navigate to case
-      await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.superCaseWorker.email, config.superCaseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
-      await manageCaseDashboardPage.navigateToCase(caseId);
+        // Create and setup case
+        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-      // Manage case documents
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
-      await manageCaseDocumentsPage.addNew();
-      await manageCaseDocumentsPage.navigateContinue();
-      await manageCaseDocumentsPage.uploadDocument('fdrDoc.docx');
-      await manageCaseDocumentsPage.selectDocumentType('Bill of Costs');
-      await manageCaseDocumentsPage.checkConfidentialityGuideText();
-      await manageCaseDocumentsPage.isDocumentConfidential(false);
-      await manageCaseDocumentsPage.isThisAnFdrDocument(true);
-      await manageCaseDocumentsPage.documentOnBehalfOf(0, 'Respondent');
-      await axeUtils.audit();
+        // Login as caseworker and navigate to case
+        await manageCaseDashboardPage.visit();
+        await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+        await manageCaseDashboardPage.navigateToCase(caseId);
 
-      //Continue about to submit and check your answers
-      await manageCaseDocumentsPage.navigateContinue();
-      await checkYourAnswersPage.assertCheckYourAnswersPage(manageCaseDocumentsTableNewFdrDoc);
-      await manageCaseDocumentsPage.navigateSubmit();
-      const uploadDateTime = DateHelper.getUtcDateTimeFormatted();
-
-      //FDR documents tab assertion
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
-      await caseDetailsPage.assertTabData([getFdrDocumentsTabData(uploadDateTime)]);
+        // Manage case documents
+        await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
+        await manageCaseDocumentsPage.navigateAddNew();
+        await manageCaseDocumentsPage.uploadCaseDocument('test.docx');
+        await manageCaseDocumentsPage.selectDocument('Other');
+        await manageCaseDocumentsPage.fillDocumentType('test');
+        await manageCaseDocumentsPage.checkConfidentiality('confidential');
+        await manageCaseDocumentsPage.checkDocumentBehalfOfApplicant();
+        await manageCaseDocumentsPage.navigateContinue();
+        await checkYourAnswersPage.assertCheckYourAnswersPage(manageCaseDocumentsTableNewConfidential);
+        await manageCaseDocumentsPage.navigateSubmit();
+        await axeUtils.audit();
     }
   );
 
-  test  ('Contested - Super Caseworker Manage Case Documents New event, Confidential Document? Yes, special type',
+  test  ('Contested - Super Caseworker Manage Case Documents New event, non-confidential document, witness summons',
     { tag: [] },
     async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, caseDetailsPage, axeUtils, checkYourAnswersPage, page }) => {
-      // Create and setup case
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+        // Create and setup case
+        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-      // Login as super caseworker and navigate to case
-      await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.superCaseWorker.email, config.superCaseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
-      await manageCaseDashboardPage.navigateToCase(caseId);
+        // Login as caseworker and navigate to case
+        await manageCaseDashboardPage.visit();
+        await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+        await manageCaseDashboardPage.navigateToCase(caseId);
 
-      // Manage case documents
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
-      await manageCaseDocumentsPage.addNew();
-      await manageCaseDocumentsPage.navigateContinue();
-      await manageCaseDocumentsPage.uploadDocument('confidentialDoc.docx');
-      await manageCaseDocumentsPage.selectDocumentType('Attendance Sheets');
-      await manageCaseDocumentsPage.checkConfidentialityGuideText();
-      await manageCaseDocumentsPage.isDocumentConfidential(true);
-      // FDR question and Document on behalf should be hidden for certain document types
-      await expect(manageCaseDocumentsPage.isThisFdrDocumentQuestion).toBeHidden();
-      await expect(page.getByText('Document on behalf of?')).toBeHidden();
-      await axeUtils.audit();
-
-      //Continue about to submit and check your answers
-      await manageCaseDocumentsPage.navigateContinue();
-      await checkYourAnswersPage.assertCheckYourAnswersPage(manageCaseDocumentsTableSpecialTypeConfidential);
-      await manageCaseDocumentsPage.navigateSubmit();
-      const uploadDateTime = DateHelper.getUtcDateTimeFormatted();
-      // Confidential documents tab assertion
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
-      await caseDetailsPage.assertTabData([getSpecialTypeConfidentialDocumentsTabData(uploadDateTime)]);
-    }
-  );
-
-  test ('Contested - Super Caseworker Manage Case Documents New event - WITHOUT_PREJUDICE_OFFERS',
-    { tag: [] },
-    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageCaseDocumentsPage, checkYourAnswersPage, axeUtils, page }) => {
-      // Create and setup case
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-
-      // Login as super caseworker and navigate to case
-      await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.superCaseWorker.email, config.superCaseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
-      await manageCaseDashboardPage.navigateToCase(caseId);
-
-      // Manage case documents
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
-      await manageCaseDocumentsPage.addNew();
-      await manageCaseDocumentsPage.navigateContinue();
-      await manageCaseDocumentsPage.uploadDocument('withoutPrejudice.docx');
-      await manageCaseDocumentsPage.selectDocumentType('Without Prejudice offers');
-      // Confidentiality question, FDR question and Document on behalf should be hidden for Without Prejudice offers document type
-      await expect(page.getByText('Is the document confidential?')).toBeHidden();
-      await expect(manageCaseDocumentsPage.isThisFdrDocumentQuestion).toBeHidden();
-      await expect(page.getByText('Document on behalf of?')).toBeHidden();
-      await axeUtils.audit();
-
-      //Continue about to submit and check your answers
-      await manageCaseDocumentsPage.navigateContinue();
-      await checkYourAnswersPage.assertCheckYourAnswersPage(manageCaseDocumentsTableWithoutPrejudice);
-      await manageCaseDocumentsPage.navigateSubmit();
-      const uploadDateTime = DateHelper.getUtcDateTimeFormatted();
-      // Confidential documents tab assertion
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
-      await caseDetailsPage.assertTabData([getWithoutPrejudiceDocumentsTabData(uploadDateTime)]);
+        // Manage case documents
+        await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
+        await manageCaseDocumentsPage.navigateAddNew();
+        await manageCaseDocumentsPage.uploadCaseDocument('test.docx');
+        await manageCaseDocumentsPage.selectDocument('Witness Summons');
+        await manageCaseDocumentsPage.checkConfidentiality('non-confidential');
+        await manageCaseDocumentsPage.navigateContinue();
+        await checkYourAnswersPage.assertCheckYourAnswersPage(manageCaseDocumentsTableNonConfidentialWitnessSummons);
+        await manageCaseDocumentsPage.navigateSubmit();
+        await axeUtils.audit();
     }
   );
 
@@ -198,22 +109,15 @@ test.describe('Contested Manage Case Documents', () => {
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Manage case documents - amend document
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
+      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
       await manageCaseDocumentsPage.amendDoc();
-      await manageCaseDocumentsPage.navigateContinue();
-      //expect original document to be visible
       await expect(page.getByRole('button', { name: 'caseDoc.docx' })).toBeVisible();
-      await manageCaseDocumentsPage.uploadDocument('amendedDoc.docx');
-      await manageCaseDocumentsPage.selectDocumentType('Witness Summons');
-      await manageCaseDocumentsPage.checkConfidentialityGuideText();
-      await manageCaseDocumentsPage.isDocumentConfidential(false);
-      await manageCaseDocumentsPage.navigateContinue();
-      await checkYourAnswersPage.assertCheckYourAnswersPage(amendCaseDocumentsTable);
-      await manageCaseDocumentsPage.navigateSubmit();
-      // Case documents tab assertion
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
-      await caseDetailsPage.assertTabData([amendedDocumentTabData()]);
-      await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
+      await manageCaseDocumentsPage.uploadDocument('test.docx');
+        await manageCaseDocumentsPage.selectDocument('Witness Summons');
+        await manageCaseDocumentsPage.checkConfidentiality('non-confidential');
+        await manageCaseDocumentsPage.navigateContinue();
+        await checkYourAnswersPage.assertCheckYourAnswersPage(manageCaseDocumentsTableNonConfidentialWitnessSummons);
+        await manageCaseDocumentsPage.navigateSubmit();
     }
   );
 
@@ -230,16 +134,15 @@ test.describe('Contested Manage Case Documents', () => {
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Manage case documents - amend document
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
+      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
       await manageCaseDocumentsPage.amendDoc();
-      await manageCaseDocumentsPage.navigateContinue();
       //expect original document to be visible
       await expect(page.getByRole('button', { name: 'caseDoc.docx' })).toBeVisible();
       await manageCaseDocumentsPage.removeDocument();
       await manageCaseDocumentsPage.navigateContinue();
       await manageCaseDocumentsPage.navigateSubmit();
 
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocuments.listItem);
       await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
     }
   );

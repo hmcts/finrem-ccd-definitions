@@ -26,13 +26,22 @@ export const manageCaseDocumentsTableNewNonConfidential: Table = {
 export const manageCaseDocumentsTableNewConfidential: Table = {
   tableName: 'Check your answers',
   rows: [
-    {cellItem: 'Please upload any case documents', value: 'caseDoc.docx'},
+    {cellItem: 'Please upload any case documents', value: 'test.docx'},
     {cellItem: 'Document type', value: 'Other'},
     {cellItem: 'Please specify document type', value: 'test'},
     {cellItem: 'Is the document confidential?', value: 'Yes' },
     {cellItem: 'Document on behalf of?', value: 'Applicant' }
   ]
 };
+
+export const manageCaseDocumentsTableNonConfidentialWitnessSummons: Table = {
+  tableName: 'Check your answers',
+  rows: [
+    { cellItem: 'Please upload any case documents', value: 'test.docx' },
+    { cellItem: 'Document type', value: 'Witness Summons' },
+    { cellItem: 'Is the document confidential?', value: 'No' },
+  ]
+}
 
 export const manageCaseDocumentsTableNewFdrDoc: Table = {
   tableName: 'Check your answers',

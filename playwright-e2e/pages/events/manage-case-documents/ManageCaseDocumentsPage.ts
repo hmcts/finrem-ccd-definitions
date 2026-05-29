@@ -12,7 +12,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
   readonly isThisFdrDocumentQuestion: Locator;
   private readonly addNewRadio: Locator;
   private readonly amendRadio: Locator;
-  private readonly fileUpload: Locator
+  private readonly fileUpload: Locator;
   private readonly documentType: Locator;
   private readonly documentSpecified: Locator;
   private readonly confidentialYesRadio: Locator;
@@ -40,7 +40,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     this.amendRadio = page.getByRole('radio', { name: 'Amend' });
     this.fileUpload = page.getByRole('button', { name: 'Please upload any case' });
     this.documentType = page.getByLabel('Document type', { exact: true });
-    this.documentSpecified = page.getByRole('textbox', { name: 'Please specify document type' })
+    this.documentSpecified = page.getByRole('textbox', { name: 'Please specify document type' });
     this.confidentialYesRadio = page.getByRole('group', { name: 'Is the document confidential?' }).getByLabel('Yes');
     this.confidentialNoRadio = page.getByRole('group', { name: 'Is the document confidential?' }).getByLabel('No');
     this.fdrYesRadio = page.getByRole('group', { name: 'Is this a Financial Dispute' }).getByLabel('Yes');
@@ -66,8 +66,8 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
   public async checkConfidentiality(option: 'confidential' | 'non-confidential'): Promise <void> {
     const radio: Locator =
         option === 'confidential'
-            ? this.confidentialYesRadio
-            : this.confidentialNoRadio;
+          ? this.confidentialYesRadio
+          : this.confidentialNoRadio;
 
     await radio.check();
   }
@@ -118,6 +118,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
   async amendDoc() {
     await expect(this.amendRadio).toBeVisible();
     await this.amendRadio.check();
+    await this.continueButton.click();
   }
 
   getUploadLabel(collectionIndex: number = 0): Locator {
