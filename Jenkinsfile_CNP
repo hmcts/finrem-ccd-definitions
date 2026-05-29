@@ -187,13 +187,13 @@ withPipeline("nodejs", product, component) {
 
     echo "Waiting for Elasticsearch..."
 
-    until curl -s "$ES_URL/_cluster/health?wait_for_status=yellow&timeout=30s" > /dev/null; do
+    until curl -s "\$ES_URL/_cluster/health?wait_for_status=yellow&timeout=30s" > /dev/null; do
       sleep 5
     done
 
     echo "Creating aliases..."
 
-    curl -s -X POST "$ES_URL/_aliases" \
+    curl -s -X POST "\$ES_URL/_aliases" \
       -H 'Content-Type: application/json' \
       -d '{
         "actions": [
@@ -212,7 +212,7 @@ withPipeline("nodejs", product, component) {
         ]
       }'
 
-    echo "Alias bootstrap complete"
+    echo "Done"
   """
       }
 
