@@ -178,12 +178,12 @@ withPipeline("nodejs", product, component) {
         yarnBuilder.yarn("generate-excel-preview-contested")
         yarnBuilder.yarn("copy-preview-xlxs-to-resources")
       }
-      environment {
-        ES_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-es-master:9200"
-      }
+
       stageWithAgent('Debug Elasticsearch aliases', product) {
         sh """
     set -e
+
+    ES_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-es-master:9200"
 
     echo "=== Cluster health ==="
     curl -s "$ES_URL/_cluster/health?pretty"
