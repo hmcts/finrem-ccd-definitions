@@ -188,7 +188,7 @@ withPipeline("nodejs", product, component) {
 
     echo "Waiting for Elasticsearch..."
 
-    until curl -s "\$ES_URL/_cluster/health?wait_for_status=yellow&timeout=30s" > /dev/null; do
+    until curl -v "\$ES_URL/_cluster/health?wait_for_status=yellow&timeout=30s" > /dev/null; do
       sleep 5
     done
 
