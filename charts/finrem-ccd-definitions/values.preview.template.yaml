@@ -313,9 +313,8 @@ ccd:
     clusterName: "es"
     replicas: 1
     clusterInitialMasterNodes: []
-    extraEnvs:
-      - name: discovery.type
-        value: single-node
+    esConfig:
+      discovery.type: single-node
 
   logstash:
     image: hmctsprod.azurecr.io/imported/elastic/logstash
