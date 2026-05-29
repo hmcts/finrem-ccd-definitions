@@ -179,52 +179,6 @@ withPipeline("nodejs", product, component) {
         yarnBuilder.yarn("copy-preview-xlxs-to-resources")
       }
 
-      stage('Expose ES') {
-        steps {
-          sh """
-      kubectl port-forward svc/finrem-ccd-definitions-pr-${CHANGE_ID}-es-master 9200:9200 -n financial-remedy &
-      sleep 5
-    """
-        }
-      }
-      stageWithAgent('Bootstrap Elasticsearch aliases', product) {
-        sh """
-    set -e
-
-    ES_URL="http://localhost:9200"
-    curl \$ES_URL
-
-    echo "Waiting for Elasticsearch..."
-
-    until curl -v "\$ES_URL/_cluster/health?wait_for_status=yellow&timeout=30s" > /dev/null; do
-      sleep 5
-    done
-
-    echo "Creating aliases..."
-
-    curl -s -X POST "\$ES_URL/_aliases" \
-      -H 'Content-Type: application/json' \
-      -d '{
-        "actions": [
-          {
-            "add": {
-              "index": "financialremedycontested_cases-000001",
-              "alias": "financialremedycontested_cases"
-            }
-          },
-          {
-            "add": {
-              "index": "financialremedymvp2_cases-000001",
-              "alias": "financialremedymvp2_cases"
-            }
-          }
-        ]
-      }'
-
-    echo "Done"
-  """
-      }
-
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.CCD_WEB_URL = "https://xui-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.XUI_ORG_WEB_URL = "https://xui-mo-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
