@@ -179,34 +179,12 @@ withPipeline("nodejs", product, component) {
         yarnBuilder.yarn("copy-preview-xlxs-to-resources")
       }
 
-      stageWithAgent('Debug Elasticsearch aliases', product) {
-        sh """
-    set -e
-
-    ES_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-es-master.financial-remedy.svc.cluster.local:9200"
-
-    echo "=== Cluster health ==="
-    curl -v "\$ES_URL/_cluster/health?pretty"
-
-    echo ""
-    echo "=== Indices ==="
-    curl -v "\$ES_URL/_cat/indices?v"
-
-    echo ""
-    echo "=== Aliases ==="
-    curl -v "\$ES_URL/_cat/aliases?v"
-
-    echo ""
-    echo "=== Mappings check (sample index) ==="
-    curl -v "\$ES_URL/_mapping?pretty" | head -n 200
-  """
-      }
-
       stageWithAgent('Bootstrap Elasticsearch aliases', product) {
         sh """
     set -e
 
     ES_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-es-master:9200"
+    curl $ES_URL
 
     echo "Waiting for Elasticsearch..."
 
