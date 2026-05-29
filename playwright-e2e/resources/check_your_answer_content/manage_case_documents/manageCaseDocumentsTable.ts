@@ -1,16 +1,5 @@
 import { Table } from '../../../pages/components/table';
 
-export const manageCaseDocumentsTable: Table = {
-  tableName: 'Check your answers',
-  rows: [
-    {cellItem: 'Please upload any case documents', value: 'test.docx'},
-    {cellItem: 'Document type', value: 'Other'},
-    {cellItem: 'Please specify document type', value: 'test'},
-    {cellItem: 'Provide the date of hearing and a description of the document', value: 'test case'},
-    {cellItem: 'Is the document confidential?', value: 'Yes' }
-  ]
-};
-
 export const manageCaseDocumentsTableNewNonConfidential: Table = {
   tableName: 'Check your answers',
   rows: [
@@ -39,43 +28,6 @@ export const manageCaseDocumentsTableNonConfidentialWitnessSummons: Table = {
   rows: [
     { cellItem: 'Please upload any case documents', value: 'test.docx' },
     { cellItem: 'Document type', value: 'Witness Summons' },
-    { cellItem: 'Is the document confidential?', value: 'No' },
-  ]
-}
-
-export const manageCaseDocumentsTableNewFdrDoc: Table = {
-  tableName: 'Check your answers',
-  rows: [
-    {cellItem: 'Please upload any case documents', value: 'fdrDoc.docx'},
-    {cellItem: 'Document type', value: 'Bill of Costs'},
-    {cellItem: 'Is the document confidential?', value: 'No' },
-    {cellItem: 'Is this a Financial Dispute Resolution document (FDR)?', value: 'Yes' },
-    {cellItem: 'Document on behalf of?', value: 'Respondent' }
-  ]
-};
-
-export const manageCaseDocumentsTableSpecialTypeConfidential: Table = {
-  tableName: 'Check your answers',
-  rows: [
-    {cellItem: 'Please upload any case documents', value: 'confidentialDoc.docx'},
-    {cellItem: 'Document type', value: 'Attendance Sheets'},
-    {cellItem: 'Is the document confidential?', value: 'Yes' }
-  ]
-};
-
-export const manageCaseDocumentsTableWithoutPrejudice: Table = {
-  tableName: 'Check your answers',
-  rows: [
-    {cellItem: 'Please upload any case documents', value: 'withoutPrejudice.docx'},
-    {cellItem: 'Document type', value: 'Without Prejudice offers'}
-  ]
-};
-
-export const amendCaseDocumentsTable: Table = {
-  tableName: 'Check your answers',
-  rows: [
-    {cellItem: 'Please upload any case documents', value: 'amendedDoc.docx'},
-    {cellItem: 'Document type', value: 'Witness Summons'},
-    {cellItem: 'Is the document confidential?', value: 'No' }
+    { cellItem: 'Is the document confidential?', value: 'No' }
   ]
 };
