@@ -318,8 +318,6 @@ ccd:
     extraEnvs:
       - name: discovery.type
         value: single-node
-      - name: cluster.initial_master_nodes
-        value: ""
 
   logstash:
     image: hmctsprod.azurecr.io/imported/elastic/logstash
