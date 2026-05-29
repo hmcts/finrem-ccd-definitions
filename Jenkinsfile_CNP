@@ -184,7 +184,7 @@ withPipeline("nodejs", product, component) {
     set -e
 
     ES_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-es-master:9200"
-    curl $ES_URL
+    curl \$ES_URL
 
     echo "Waiting for Elasticsearch..."
 
