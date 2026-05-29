@@ -312,9 +312,6 @@ ccd:
     nameOverride: ${SERVICE_NAME}-es
     clusterName: "es"
     replicas: 1
-    clusterHealthCheckParams: "wait_for_status=green&timeout=60s"
-    minimumMasterNodes: 1
-    antiAffinity: "soft"
     extraEnvs:
       - name: discovery.type
         value: single-node
