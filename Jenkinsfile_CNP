@@ -179,11 +179,19 @@ withPipeline("nodejs", product, component) {
         yarnBuilder.yarn("copy-preview-xlxs-to-resources")
       }
 
+      stage('Expose ES') {
+        steps {
+          sh """
+      kubectl port-forward svc/finrem-ccd-definitions-pr-${CHANGE_ID}-es-master 9200:9200 -n financial-remedy &
+      sleep 5
+    """
+        }
+      }
       stageWithAgent('Bootstrap Elasticsearch aliases', product) {
         sh """
     set -e
 
-    ES_URL="http://finrem-ccd-definitions-pr-${CHANGE_ID}-es-master:9200"
+    ES_URL="http://localhost:9200"
     curl \$ES_URL
 
     echo "Waiting for Elasticsearch..."
