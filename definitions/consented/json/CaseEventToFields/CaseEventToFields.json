@@ -3439,10 +3439,20 @@
     "CaseEventID": "FR_solUploadDocument",
     "CaseFieldID": "solUploadDocuments",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "MANDATORY",
     "PageID": "solUploadDocuments",
     "PageLabel": "Upload Solicitor Documents",
     "PageDisplayOrder": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solUploadDocument",
+    "CaseFieldID": "readyToSubmitDocument",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": "solUploadDocuments",
     "ShowSummaryChangeOption": "Y"
   },
   {
