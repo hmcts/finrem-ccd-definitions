@@ -1,5 +1,13 @@
 [
   {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "readyToSubmitDocument",
+    "Label": "Are you ready to submit your document?",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public"
+  },
+  {
     "LiveFrom": "01/06/2020",
     "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
     "ID": "generalLetterPreview",
