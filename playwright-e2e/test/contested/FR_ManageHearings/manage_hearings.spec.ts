@@ -273,6 +273,20 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
       await checkYourAnswersPage.assertCheckYourAnswersPage(expectedTable);
       await manageHearingPage.navigateSubmit();
       await manageHearingPage.govNotifyManageHearingError();
+
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectHeader('Hearings');
+
+        await caseDetailsPage.assertHearingTable(
+            'Financial Dispute Resolution (FDR)',
+            '24 Aug 2026 10:00 AM',
+            [
+                'Applicant - Frodo Baggins',
+                'Respondent - Smeagol Gollum',
+                'Intervener1 - intApp1',
+                'Intervener2 - intResp1'
+            ]
+        );
     });
 
     test('Verify access for applicant solicitor', async ({manageCaseDashboardPage, loginPage, caseDetailsPage}) => {

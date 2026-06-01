@@ -49,23 +49,12 @@ test.describe('Contested Manage Case Documents', () => {
 
       await test.step('Upload non-confidential document', async () => {
         await manageCaseDocumentsPage.navigateAddNew();
-
         await manageCaseDocumentsPage.uploadCaseDocument('test.docx');
-
         await manageCaseDocumentsPage.selectDocument('Other');
-
-        await manageCaseDocumentsPage.fillDocumentType(
-          'test document type'
-        );
-
-        await manageCaseDocumentsPage.checkConfidentiality(
-          'non-confidential'
-        );
-
+        await manageCaseDocumentsPage.fillDocumentType('test document type');
+        await manageCaseDocumentsPage.checkConfidentiality('non-confidential');
         await manageCaseDocumentsPage.checkFdr(false);
-
         await manageCaseDocumentsPage.checkDocumentBehalfOfApplicant();
-
         await manageCaseDocumentsPage.navigateContinue();
       });
 
@@ -123,19 +112,11 @@ test.describe('Contested Manage Case Documents', () => {
 
       await test.step('Upload confidential document', async () => {
         await manageCaseDocumentsPage.navigateAddNew();
-
         await manageCaseDocumentsPage.uploadCaseDocument('test.docx');
-
         await manageCaseDocumentsPage.selectDocument('Other');
-
         await manageCaseDocumentsPage.fillDocumentType('test');
-
-        await manageCaseDocumentsPage.checkConfidentiality(
-          'confidential'
-        );
-
+        await manageCaseDocumentsPage.checkConfidentiality('confidential');
         await manageCaseDocumentsPage.checkDocumentBehalfOfApplicant();
-
         await manageCaseDocumentsPage.navigateContinue();
       });
 
@@ -168,8 +149,7 @@ test.describe('Contested Manage Case Documents', () => {
       let caseId: string;
 
       await test.step('Create contested case', async () => {
-        caseId =
-                    await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+        caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
       });
 
       await test.step('Login as caseworker', async () => {
