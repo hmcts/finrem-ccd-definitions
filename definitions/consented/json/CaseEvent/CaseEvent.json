@@ -884,19 +884,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "FR_solCompleteUploadDocument",
-    "Name": "Submit response",
-    "Description": "Submit response to information request",
-    "DisplayOrder": 49,
-    "PreConditionState(s)": "awaitingInfo",
-    "PostConditionState": "infoReceived",
-    "SecurityClassification": "Public",
-    "ShowSummary": "N",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_caseSubmissionFromInfoReceived",
     "Name": "Case Submission",
     "Description": "Case Submission",
