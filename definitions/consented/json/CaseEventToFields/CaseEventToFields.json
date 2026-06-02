@@ -3443,7 +3443,9 @@
     "PageID": "solUploadDocuments",
     "PageLabel": "Upload Solicitor Documents",
     "PageDisplayOrder": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent",
+    "CallBackURLMidEvent_1": "3,4,5"
   },
   {
     "LiveFrom": "01/06/2026",
