@@ -3613,6 +3613,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "orderType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderOrderType",
+    "ElementLabel": "Order Type",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "orderStatus",
@@ -3804,6 +3814,16 @@
     "ElementLabel": "Date refused",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "orderType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderOrderType",
+    "ElementLabel": "Order Type",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -4073,6 +4093,16 @@
     "ElementLabel": "Cover Letter",
     "SecurityClassification": "Public",
     "CategoryID": "postHearingDraftOrder",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "orderType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderOrderType",
+    "ElementLabel": "Order type",
+    "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
