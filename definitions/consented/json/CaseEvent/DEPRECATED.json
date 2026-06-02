@@ -1,0 +1,15 @@
+[
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_solUploadDocument",
+    "Name": "Solicitor Upload document",
+    "Description": "Solicitor Upload document",
+    "DisplayOrder": 48,
+    "PreConditionState(s)": "awaitingInfo;readyForHearing",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  }
+]
