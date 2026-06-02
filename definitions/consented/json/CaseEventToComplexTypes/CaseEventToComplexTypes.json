@@ -894,5 +894,69 @@
     "ListElementCode": "caseDocument",
     "FieldDisplayOrder": 2,
     "DisplayContext": "READONLY"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_solUploadDocumentv2_to_solUploadDocuments",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "solUploadDocuments",
+    "ListElementCode": "DocumentType",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_solUploadDocumentv2_to_solUploadDocuments",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "solUploadDocuments",
+    "ListElementCode": "DocumentLink",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_solUploadDocumentv2_to_solUploadDocuments",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "solUploadDocuments",
+    "ListElementCode": "DocumentDateAdded",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_solUploadDocumentv2_to_solUploadDocuments",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "solUploadDocuments",
+    "ListElementCode": "DocumentComment",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_solUploadDocumentv2_to_solUploadDocuments",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "solUploadDocuments",
+    "ListElementCode": "DocumentEmailContent",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_solUploadDocumentv2_to_solUploadDocuments",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "solUploadDocuments",
+    "ListElementCode": "DocumentFileName",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_solUploadDocumentv2_to_pensionCollection",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "pensionCollection",
+    "ListElementCode": "typeOfDocument",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_solUploadDocumentv2_to_pensionCollection",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "pensionCollection",
+    "ListElementCode": "uploadedDocument",
+    "DisplayContext": "MANDATORY"
   }
 ]
