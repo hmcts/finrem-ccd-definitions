@@ -3434,9 +3434,9 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solUploadDocument",
+    "CaseEventID": "FR_solUploadDocumentv2",
     "CaseFieldID": "solUploadDocuments",
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "MANDATORY",
@@ -3448,9 +3448,31 @@
   {
     "LiveFrom": "01/06/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solUploadDocument",
-    "CaseFieldID": "readyToSubmitDocument",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "pensionCollectionL",
     "PageFieldDisplayOrder": 2,
+    "DisplayContext": "READONLY",
+    "PageID": "solUploadDocuments",
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "pensionCollection",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "MANDATORY",
+    "PageID": "solUploadDocuments",
+    "PageDisplayOrder": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "readyToSubmitDocument",
+    "PageFieldDisplayOrder": 4,
     "DisplayContext": "MANDATORY",
     "PageID": "solUploadDocuments",
     "ShowSummaryChangeOption": "Y"
