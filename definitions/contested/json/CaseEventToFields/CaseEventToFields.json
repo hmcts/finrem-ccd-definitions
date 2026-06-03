@@ -10707,7 +10707,8 @@
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
     "PageShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\" OR typeOfDraftOrder=\"acceleratedProcedureOrders14DaysBeforeHearing\"",
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
     "LiveFrom": "09/01/2025",
