@@ -16,5 +16,23 @@
     "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseManagementCategory",
+    "Label": " ",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseManagementLocation",
+    "Label": " ",
+    "FieldType": "CaseLocation",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
