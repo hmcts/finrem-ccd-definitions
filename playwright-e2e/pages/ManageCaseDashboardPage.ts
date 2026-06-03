@@ -24,7 +24,7 @@ export class ManageCaseDashboardPage {
     }
   }
 
-  async visit(){
+  async visit(): Promise<void>{
     await this.page.goto(`${this.url}`);
   }
 
