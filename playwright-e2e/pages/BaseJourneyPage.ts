@@ -5,7 +5,7 @@ import { DateHelper } from '../data-utils/DateHelper.ts';
 export abstract class BaseJourneyPage {
   protected readonly page: Page;
 
-  private readonly continueButton: Locator;
+  protected readonly continueButton: Locator;
   private readonly previousButton: Locator;
   private readonly confirmButton: Locator;
   private readonly submitButton: Locator;
@@ -21,7 +21,6 @@ export abstract class BaseJourneyPage {
 
   public constructor(page: Page) {
     this.page = page;
-
     this.submitButton = page.getByRole('button', { name: 'Submit' });
     this.submitAndReturnEventButton = page.getByRole('button', { name: 'Submit' });
     this.continueButton = page.getByRole('button', { name: 'Continue' });
@@ -104,30 +103,20 @@ export abstract class BaseJourneyPage {
     return responseBody;
   }
 
-  async navigateContinue(expectedUrl?: string, pageNumber?: number) {
-    await this.page.waitForLoadState();
-    await this.continueButton.scrollIntoViewIfNeeded();
+  public async navigateContinue(expectedUrl?: string, pageNumber?: number): Promise<void> {
     await expect(this.continueButton).toBeVisible();
     await expect(this.continueButton).toBeEnabled();
-    await this.wait(100); // if wait is not added, validation message (such as "the field is required") is not displayed
 
-    if (expectedUrl) {
-      expectedUrl = `${expectedUrl}${pageNumber ? pageNumber : ''}`;
-      const maxRetries = 5;
-      for (let attempt = 1; attempt <= maxRetries; attempt++) {
-        await this.continueButton.click({ force: true });
-        await this.waitForSpinner();
-        try {
-          await this.page.waitForURL(new RegExp(expectedUrl), { timeout: 2000 });
-          return;
-        } catch (err) {
-          if (attempt === maxRetries) throw err;
-          await this.wait(200);
-        }
-      }
-    } else {
-      await this.continueButton.click({ force: true });
-      await this.waitForSpinner();
+    const finalUrl = expectedUrl
+      ? `${expectedUrl}${pageNumber ?? ''}`
+      : undefined;
+
+    await this.continueButton.click();
+
+    await this.waitForSpinner();
+
+    if (finalUrl) {
+      await this.page.waitForURL(new RegExp(finalUrl));
     }
   }
 

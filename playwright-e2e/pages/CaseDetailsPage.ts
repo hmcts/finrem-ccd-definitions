@@ -30,6 +30,13 @@ export class CaseDetailsPage {
     await expect(this.successfulCreationBanner).toBeVisible();
   }
 
+  public async selectHeader(header: string): Promise<void> {
+    const tabHeader = this.page.getByRole('tab', { name: header });
+
+    await expect(tabHeader).toBeVisible();
+    await tabHeader.click();
+  }
+
   async selectNextStep(event: CaseEvent) {
     const maxRetries = 5;
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
@@ -369,6 +376,22 @@ export class CaseDetailsPage {
       await expect(docItem).toBeVisible();
     } else {
       await expect(docItem).not.toBeVisible();
+    }
+  }
+
+  public async assertHearingTable(
+      hearingType: string,
+      hearingDate: string,
+      recipients: string[]
+  ): Promise<void> {
+
+    const table = this.page.locator('table.complex-panel-table').first();
+
+    await expect(table).toContainText(hearingType);
+    await expect(table).toContainText(hearingDate);
+
+    for (const recipient of recipients) {
+      await expect(table).toContainText(recipient);
     }
   }
 }
