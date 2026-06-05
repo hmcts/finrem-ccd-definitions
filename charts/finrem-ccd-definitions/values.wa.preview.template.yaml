@@ -18,7 +18,7 @@ rd-caseworker-ref-api:
   servicebus:
     enabled: false
   java:
-    image: hmctsprod.azurecr.io/rd/caseworker-ref-api:pr-1142
+    image: hmctsprod.azurecr.io/rd/caseworker-ref-api:latest
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-rd-caseworker-ref-api
     ingressHost: rd-caseworker-ref-api-${SERVICE_FQDN}
@@ -112,7 +112,6 @@ wa:
         WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
         WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
         WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
-      keyVaults: []
 
   wa-case-event-handler:
     java:
@@ -140,7 +139,6 @@ wa:
         AZURE_SERVICE_BUS_TOPIC_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_CCD_CASE_EVENTS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
-      keyVaults: []
 
   wa-task-monitor:
     java:
@@ -152,7 +150,6 @@ wa:
         WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
         WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
         WA_TASK_MANAGEMENT_API_URL: http://{{ .Release.Name }}-wa-task-management-api
-      keyVaults: []
 
   wa-workflow-api:
     java:
@@ -165,7 +162,6 @@ wa:
         DB_READER_USERNAME: "hmcts"
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
-      keyVaults: []
 
 ccd:
   ccd-data-store-api:
