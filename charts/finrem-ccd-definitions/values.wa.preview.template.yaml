@@ -16,8 +16,7 @@ xui-webapp:
 am-role-assignment-service:
   enabled: ${ENABLE_WA}
   java:
-    image: hmctsprod.azurecr.io/rd/caseworker-ref-api:latest
-    #hmctsprod.azurecr.io/am/role-assignment-service:pr-2733
+    image: hmctsprod.azurecr.io/am/role-assignment-service:pr-2733
     disableKeyVaults: true
     devmemoryRequests: 1024Mi
     devcpuRequests: 500m
@@ -48,7 +47,7 @@ rd-caseworker-ref-api:
   servicebus:
     enabled: false
   java:
-    image: hmctsprod.azurecr.io/rd/caseworker-ref-api:latest
+    image: hmctsprod.azurecr.io/rd/caseworker-ref-api:pr-1142
     imagePullPolicy: Always
     releaseNameOverride: ${SERVICE_NAME}-rd-caseworker-ref-api
     ingressHost: rd-caseworker-ref-api-${SERVICE_FQDN}
