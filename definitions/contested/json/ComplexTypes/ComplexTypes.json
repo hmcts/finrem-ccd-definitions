@@ -766,20 +766,20 @@
   {
     "LiveFrom": "28/01/2025",
     "ID": "FR_ct_draftDirectionOrder",
-    "ListElementCode": "additionalDocuments",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
-    "ElementLabel": "Additional attachments",
-    "HintText": "Please upload any additional attachments. You must upload Microsoft Word or PDF documents",
+    "ListElementCode": "isThisFinalYN",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this the final order?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "28/01/2025",
     "ID": "FR_ct_draftDirectionOrder",
-    "ListElementCode": "isThisFinalYN",
-    "FieldType": "YesOrNo",
-    "ElementLabel": "Is this the final order?",
+    "ListElementCode": "additionalDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Additional attachments",
+    "HintText": "Please upload any additional attachments. You must upload Microsoft Word or PDF documents",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
