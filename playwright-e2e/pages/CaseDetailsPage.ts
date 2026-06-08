@@ -380,9 +380,9 @@ export class CaseDetailsPage {
   }
 
   public async assertHearingTable(
-      hearingType: string,
-      hearingDate: string,
-      recipients: string[]
+    hearingType: string,
+    hearingDate: string,
+    recipients: string[]
   ): Promise<void> {
 
     const table = this.page.locator('table.complex-panel-table').first();
