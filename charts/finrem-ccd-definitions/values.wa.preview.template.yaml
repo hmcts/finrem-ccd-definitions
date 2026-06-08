@@ -90,7 +90,6 @@ wa:
         AZURE_SERVICE_BUS_TOPIC_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_CCD_CASE_EVENTS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
-        REFRESH_FLAG: "0"
         LOGGING_LEVEL_UK_GOV_HMCTS: DEBUG
         TEMP_RESTART: true
         MESSAGE_PROCESSING_POLL_INTERVAL_MILLISECONDS: 1000
@@ -126,7 +125,6 @@ wa:
       devcpuLimits: 2
       devmemoryLimits: 4Gi
       environment:
-        REFRESH_FLAG: ""
         DB_READER_USERNAME: "hmcts"
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
