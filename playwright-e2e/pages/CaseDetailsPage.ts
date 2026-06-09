@@ -1,7 +1,7 @@
-import {type Page, expect, Locator, Download} from '@playwright/test';
+import { type Page, expect, Locator, Download } from '@playwright/test';
 import { CaseEvent } from '../config/case-data';
 import { Tab, TabContentItem } from './components/tab';
-import {FileTree} from './components/case_file_view_tree.ts';
+import { FileTree } from './components/case_file_view_tree.ts';
 
 export class CaseDetailsPage {
 

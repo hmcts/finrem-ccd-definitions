@@ -1,7 +1,7 @@
-import {expect, test} from '../../../fixtures/fixtures';
+import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import {ContestedEvents} from '../../../config/case-data';
-import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory';
+import { ContestedEvents } from '../../../config/case-data';
+import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import {DateHelper} from '../../../data-utils/DateHelper';
 import {
   amendedDocumentTabData,
@@ -10,10 +10,10 @@ import {
   getSpecialTypeConfidentialDocumentsTabData,
   getWithoutPrejudiceDocumentsTabData
 } from '../../../resources/tab_content/contested/manage_case_documents_tabs';
-import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEventApi';
-import {DocumentClient, DocumentMetadata} from '../../../data-utils/api/DocumentClient.ts';
-import {CaseTab} from '../../../pages/ManageCaseDashboardPage.ts';
-import {Locator} from '@playwright/test';
+import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
+import { DocumentClient, DocumentMetadata } from '../../../data-utils/api/DocumentClient.ts';
+import { CaseTab } from '../../../pages/ManageCaseDashboardPage.ts';
+import { Locator } from '@playwright/test';
 import {
   manageCaseDocumentsTableNewConfidential,
   manageCaseDocumentsTableNewNonConfidential,
