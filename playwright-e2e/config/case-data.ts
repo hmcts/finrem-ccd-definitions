@@ -171,7 +171,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   },
   manageCaseDocuments: {
     listItem: "Manage case documents",
-    ccdCallback: "FR_manageCaseDocuments"
+    ccdCallback: "FR_newManageCaseDocuments"
   },
   refund: {
     listItem: "Refund",

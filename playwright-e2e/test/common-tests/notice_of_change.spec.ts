@@ -81,7 +81,7 @@ const stopRepresentingClientTestData = [
     isConsented: false,
     addBarrister: true,
     isIntervener: true
-  }   
+  }
 ];
 
 test.describe('Notice of Change', () => {
@@ -127,52 +127,56 @@ test.describe('Notice of Change', () => {
     }
   );
 
-  test(
-    'CAA can raise a Notice of Change', { tag: [] },
-    async ({ loginPage, manageCaseDashboardPage, noticeOfChangePage, caseDetailsPage }) => {
+  for (const caseType of ['contested', 'consented']) {
+    test(
+      `CAA can raise a Notice of Change - ${caseType}`, { tag: [] },
+      async ({ loginPage, manageCaseDashboardPage, noticeOfChangePage, caseDetailsPage }) => {
 
-      // Create a contested case by applicant solicitor
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false, DateHelper.getCurrentDate());
-      const date = DateHelper.getUtcDateTimeFormatted();
-      await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.applicant_solicitor2.email, config.applicant_solicitor2.password, config.manageCaseBaseURL, config.loginPaths.cases);
+        // Create a contested case by applicant solicitor
+        const caseId = caseType === 'consented' ? await ConsentedCaseFactory.createConsentedCaseUpToIssueApplication() :
+          await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false, DateHelper.getCurrentDate());
 
-      // Raise Notice of Change, first attempt with wrong client details,
-      await noticeOfChangePage.navigateToNoticeOfChange();
-      await noticeOfChangePage.enterOnlineCaseReference(caseId.toString());
-      await noticeOfChangePage.navigateContinue();
+        const date = DateHelper.getUtcDateTimeFormatted();
+        await manageCaseDashboardPage.visit();
+        await loginPage.loginWaitForPath(config.applicant_solicitor2.email, config.applicant_solicitor2.password, config.manageCaseBaseURL, config.loginPaths.cases);
 
-      await noticeOfChangePage.enterClientsDetails('Frodo', 'Baggi');
-      await noticeOfChangePage.navigateContinue();
-      await noticeOfChangePage.assertErrorMessageClientDetailsShouldExactlyMatch();
+        // Raise Notice of Change, first attempt with wrong client details,
+        await noticeOfChangePage.navigateToNoticeOfChange();
+        await noticeOfChangePage.enterOnlineCaseReference(caseId.toString());
+        await noticeOfChangePage.navigateContinue();
 
-      // second attempt with client already on case,
-      await noticeOfChangePage.enterClientsDetails('Frodo', 'Baggins');
-      await noticeOfChangePage.navigateContinue();
-      await noticeOfChangePage.assertCheckAndSubmitPage(caseId.toString(), 'Frodo', 'Baggins');
-      await noticeOfChangePage.checkAllCheckboxes();
+        await noticeOfChangePage.enterClientsDetails('Frodo', 'Baggi');
+        await noticeOfChangePage.navigateContinue();
+        await noticeOfChangePage.assertErrorMessageClientDetailsShouldExactlyMatch();
 
-      await noticeOfChangePage.navigateSubmit();
+        // second attempt with client already on case,
+        await noticeOfChangePage.enterClientsDetails('Frodo', 'Baggins');
+        await noticeOfChangePage.navigateContinue();
+        await noticeOfChangePage.assertCheckAndSubmitPage(caseId.toString(), 'Frodo', 'Baggins');
+        await noticeOfChangePage.checkAllCheckboxes();
 
-      await noticeOfChangePage.assertNoticeOfChangeSuccessMessage(caseId.toString());
+        await noticeOfChangePage.navigateSubmit();
 
-      await manageCaseDashboardPage.navigateToCase(caseId);
+        await noticeOfChangePage.assertNoticeOfChangeSuccessMessage(caseId.toString());
 
-      await caseDetailsPage.assertTabData([
-        {
-          tabName: 'Applicant',
-          tabContent: [
-            { tabItem: 'Solicitor’s firm', value: 'FinRem-3-Org' },
-            { tabItem: 'Last NoC Requested By', value: config.applicant_solicitor2.email },
-            'Previous Organisations 1',
-            { tabItem: 'From Timestamp', value: date, exact: false },
-            { tabItem: 'Organisation Name', value: 'FinRem-1-Org' },
-            { tabItem: 'Email', value: config.applicant_solicitor2.email }
-          ]
-        }
-      ]);
-    }
-  );
+        await manageCaseDashboardPage.navigateToCase(caseId);
+
+        await caseDetailsPage.assertTabData([
+          {
+            tabName: 'Applicant',
+            tabContent: [
+              { tabItem: caseType === 'contested' ? 'Solicitor’s firm' : 'Name of your firm', value: 'FinRem-3-Org' },
+              { tabItem: 'Last NoC Requested By', value: config.applicant_solicitor2.email },
+              'Previous Organisations 1',
+              { tabItem: 'From Timestamp', value: date, exact: false },
+              { tabItem: 'Organisation Name', value: 'FinRem-1-Org' },
+              { tabItem: 'Email', value: config.applicant_solicitor2.email }
+            ]
+          }
+        ]);
+      }
+    );
+  }
 
   test.describe('Stop representing a client event', () => {
     for (const data of stopRepresentingClientTestData) {
@@ -273,9 +277,9 @@ test.describe('Notice of Change', () => {
               config.manageCaseBaseURL,
               config.loginPaths.cases
             );
-            // Try to navigate to the case and assert access is denied            
+            // Try to navigate to the case and assert access is denied
             await manageCaseDashboardPage.navigateToCase(caseId, false);
-          }         
+          }
         }
       );
     }
