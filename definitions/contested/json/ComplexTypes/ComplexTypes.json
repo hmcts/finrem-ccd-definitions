@@ -798,7 +798,8 @@
     "ID": "FR_ct_draftDirectionDetailsCollection",
     "ListElementCode": "isThisFinalYN",
     "FieldType": "YesOrNo",
-    "ElementLabel": "REMOVE FR_ct_draftDirectionDetailsCollection - Is this the final order?",
+    "ElementLabel": "Is this the final order?",
+    "FieldShowCondition": "isThisFinalYN=\"DONOTSHOW\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -900,7 +901,7 @@
     "ID": "FR_ct_directionOrderCollection",
     "ListElementCode": "uploadDraftDocument",
     "FieldType": "Document",
-    "ElementLabel": "Upload Document",
+    "ElementLabel": "FR_ct_directionOrderCollection - Upload Document",
     "HintText": "PLEASE NOTE: You must upload a Word or PDF version of document",
     "SecurityClassification": "Public",
     "Searchable": "N",
@@ -3295,6 +3296,16 @@
     "ListElementCode": "isOrderStamped",
     "FieldType": "YesOrNo",
     "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "isThisFinalYN",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "TEST Final Order",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
