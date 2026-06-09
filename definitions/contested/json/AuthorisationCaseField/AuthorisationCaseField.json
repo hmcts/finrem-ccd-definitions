@@ -4132,12 +4132,26 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "generalEmailUploadedDocuments",
+    "CaseFieldID": "generalEmailUploadedDocument",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
   {
     "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalEmailUploadedDocument",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "09/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalEmailUploadedDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "09/06/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalEmailUploadedDocuments",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
