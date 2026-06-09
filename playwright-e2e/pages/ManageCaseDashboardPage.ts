@@ -33,7 +33,7 @@ export class ManageCaseDashboardPage {
     await expect(tabLocator).toHaveAttribute('aria-selected', 'true');
   }
 
-  async visit(){
+  async visit(): Promise<void>{
     await this.page.goto(`${this.url}`);
   }
 

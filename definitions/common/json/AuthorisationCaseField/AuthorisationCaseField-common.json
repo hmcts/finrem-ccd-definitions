@@ -42,6 +42,13 @@
     "CRUD": "R"
   },
   {
+    "LiveFrom": "28/04/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
     "LiveFrom": "16/03/2020",
     "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
     "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
@@ -63,10 +70,45 @@
     "CRUD": "R"
   },
   {
+    "LiveFrom": "28/04/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "bulkPrintCoverSheetResConfidential",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
     "LiveFrom": "09/03/2026",
     "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
     "CaseFieldID": "caseClosureDateField",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "19/05/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "bin_fileUrls",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "19/05/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "bin_fileUrls",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "19/05/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "bin_fileUrls",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "19/05/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "bin_fileUrls",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRUD"
   }
 ]

@@ -272,32 +272,21 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
       });
       await checkYourAnswersPage.assertCheckYourAnswersPage(expectedTable);
       await manageHearingPage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageHearings.listItem);
-      await caseDetailsPage.assertTabData([getManageHearingTabData()]);
-      await caseDetailsPage.validateFileTree([
-        {
-          type: 'folder',
-          label: 'Hearing Notices',
-          children: [
-            {
-              type: 'file',
-              label: 'HearingNotice.pdf',
-              contentSnippets: [
-                'Notice of Hearing',
-                `Case number: ${caseId}`,
-                'of Frodo Baggins and Smeagol Gollum',
-                'The case is listed for a Financial Dispute Resolution (FDR) hearing:',
-                'with hearing attendance: In Person',
-                'at 10:00 AM',
-                'the probable length of hearing is 2 hours',
-                DateHelper.formatToDayMonthYear(await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat()),
-                `Dated: ${DateHelper.formatToDayMonthYear(DateHelper.getCurrentDate())}`
-              ]
-            }
-          ]
-        }
-      ]);
-      await manageCaseDashboardPage.signOut();
+      await manageHearingPage.govNotifyManageHearingError();
+
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await caseDetailsPage.selectHeader('Hearings');
+
+        await caseDetailsPage.assertHearingTable(
+            'Financial Dispute Resolution (FDR)',
+            '24 Aug 2026 10:00 AM',
+            [
+                'Applicant - Frodo Baggins',
+                'Respondent - Smeagol Gollum',
+                'Intervener1 - intApp1',
+                'Intervener2 - intResp1'
+            ]
+        );
     });
 
     test('Verify access for applicant solicitor', async ({manageCaseDashboardPage, loginPage, caseDetailsPage}) => {

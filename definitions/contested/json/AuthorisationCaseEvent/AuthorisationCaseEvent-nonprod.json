@@ -1,26 +1,5 @@
 [
   {
-    "LiveFrom": "01/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_newManageCaseDocuments",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
-  },
-  {
-    "LiveFrom": "01/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_newManageCaseDocuments",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/11/2025",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_newManageCaseDocuments",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
-  },
-  {
     "LiveFrom": "16/04/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "CUI_invalidateApplicantAccessCode",
@@ -31,6 +10,20 @@
     "LiveFrom": "16/04/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "CUI_invalidateRespondentAccessCode",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "30/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_applicantUploadDocuments",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "30/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_respondentUploadDocuments",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CR"
   }
