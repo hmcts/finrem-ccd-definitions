@@ -2,14 +2,6 @@ import {expect, test} from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import {ContestedEvents} from '../../../config/case-data';
 import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import {
-  amendCaseDocumentsTable,
-  manageCaseDocumentsTable,
-  manageCaseDocumentsTableNewConfidential,
-  manageCaseDocumentsTableNewFdrDoc,
-  manageCaseDocumentsTableSpecialTypeConfidential,
-  manageCaseDocumentsTableWithoutPrejudice
-} from '../../../resources/check_your_answer_content/manage_case_documents/manageCaseDocumentsTable';
 import {DateHelper} from '../../../data-utils/DateHelper';
 import {
   amendedDocumentTabData,
@@ -22,14 +14,11 @@ import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEven
 import {DocumentClient, DocumentMetadata} from '../../../data-utils/api/DocumentClient.ts';
 import {CaseTab} from '../../../pages/ManageCaseDashboardPage.ts';
 import {Locator} from '@playwright/test';
-import { ContestedEvents } from '../../../config/case-data';
-import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import {
   manageCaseDocumentsTableNewConfidential,
   manageCaseDocumentsTableNewNonConfidential,
   manageCaseDocumentsTableNonConfidentialWitnessSummons
 } from '../../../resources/check_your_answer_content/manage_case_documents/manageCaseDocumentsTable';
-import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 
 test.describe('Contested Manage Case Documents', () => {
   test(
@@ -429,79 +418,75 @@ test.describe('Contested Manage Case Documents', () => {
     });
   });
 });
-  test(
-    'Super caseworker can remove an existing document',
-    async ({
-      loginPage,
-      manageCaseDashboardPage,
-      manageCaseDocumentsPage,
-      page,
-      caseDetailsPage
-    }) => {
-      let caseId: string;
+test(
+  'Super caseworker can remove an existing document',
+  async ({
+    loginPage,
+    manageCaseDashboardPage,
+    manageCaseDocumentsPage,
+    page,
+    caseDetailsPage
+  }) => {
+    let caseId: string;
 
-      await test.step(
-        'Create contested case with existing document',
-        async () => {
-          caseId =
-                        await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+    await test.step(
+      'Create contested case with existing document',
+      async () => {
+        caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-          await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(
-            caseId
-          );
-        }
-      );
-
-      await test.step('Login as super caseworker', async () => {
-        await manageCaseDashboardPage.visit();
-
-        await loginPage.loginWaitForPath(
-          config.superCaseWorker.email,
-          config.superCaseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
+        await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(
+          caseId
         );
       });
 
-      await test.step('Open manage case documents event', async () => {
-        await manageCaseDashboardPage.navigateToCase(caseId);
+    await test.step('Login as super caseworker', async () => {
+      await manageCaseDashboardPage.visit();
 
-        await caseDetailsPage.selectNextStep(
-          ContestedEvents.manageCaseDocuments
-        );
-      });
-
-      await test.step('Open amend document flow', async () => {
-        await manageCaseDocumentsPage.amendDoc();
-
-        await expect(
-          page.getByRole('button', { name: 'caseDoc.docx' })
-        ).toBeVisible();
-      });
-
-      await test.step('Remove existing document', async () => {
-        await manageCaseDocumentsPage.removeDocument();
-
-        await manageCaseDocumentsPage.navigateContinue();
-      });
-
-      await test.step('Submit document removal', async () => {
-        await manageCaseDocumentsPage.navigateSubmit();
-      });
-
-      await test.step(
-        'Verify document has been removed from case file view',
-        async () => {
-          await caseDetailsPage.checkHasBeenUpdated(
-            ContestedEvents.manageCaseDocuments.listItem
-          );
-
-          await caseDetailsPage.assertDocumentVisibleInCfv(
-            'caseDoc.docx',
-            false
-          );
-        }
+      await loginPage.loginWaitForPath(
+        config.superCaseWorker.email,
+        config.superCaseWorker.password,
+        config.manageCaseBaseURL,
+        config.loginPaths.cases
       );
-    }
-  );
-});
+    });
+
+    await test.step('Open manage case documents event', async () => {
+      await manageCaseDashboardPage.navigateToCase(caseId);
+
+      await caseDetailsPage.selectNextStep(
+        ContestedEvents.manageCaseDocuments
+      );
+    });
+
+    await test.step('Open amend document flow', async () => {
+      await manageCaseDocumentsPage.amendDoc();
+
+      await expect(
+        page.getByRole('button', {name: 'caseDoc.docx'})
+      ).toBeVisible();
+    });
+
+    await test.step('Remove existing document', async () => {
+      await manageCaseDocumentsPage.removeDocument();
+
+      await manageCaseDocumentsPage.navigateContinue();
+    });
+
+    await test.step('Submit document removal', async () => {
+      await manageCaseDocumentsPage.navigateSubmit();
+    });
+
+    await test.step(
+      'Verify document has been removed from case file view',
+      async () => {
+        await caseDetailsPage.checkHasBeenUpdated(
+          ContestedEvents.manageCaseDocuments.listItem
+        );
+
+        await caseDetailsPage.assertDocumentVisibleInCfv(
+          'caseDoc.docx',
+          false
+        );
+      }
+    );
+  });

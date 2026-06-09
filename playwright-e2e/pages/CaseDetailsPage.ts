@@ -394,21 +394,23 @@ export class CaseDetailsPage {
   async downloadDocumentFromCfv(fileName: string): Promise<void> {
     await this.openAndExpandCfv();
 
-    const docRow: Locator = this.page.getByRole('treeitem', { name: new RegExp(fileName) });
+    const docRow: Locator = this.page.getByRole('treeitem', {name: new RegExp(fileName)});
 
     const downloadPromise: Promise<Download> = this.page.waitForEvent('download');
 
     await docRow.getByRole('button').click();
 
-    await this.page.getByRole('listitem').filter({ hasText: 'Download' }).click();
+    await this.page.getByRole('listitem').filter({hasText: 'Download'}).click();
 
     const download: Download = await downloadPromise;
 
     expect(download.suggestedFilename()).toContain(fileName);
+  }
+
   public async assertHearingTable(
-      hearingType: string,
-      hearingDate: string,
-      recipients: string[]
+    hearingType: string,
+    hearingDate: string,
+    recipients: string[]
   ): Promise<void> {
 
     const table = this.page.locator('table.complex-panel-table').first();
