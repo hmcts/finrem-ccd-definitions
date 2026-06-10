@@ -92,5 +92,15 @@
     "FieldType": "DynamicList",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "10/06/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "bin_fileUrlsCollection",
+    "Label": " ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]
