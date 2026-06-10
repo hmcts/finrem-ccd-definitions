@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
+#
+# Creates Finrem WA org mappings for AAT caseworker user IDs listed in
+# aat-caseworker-user-ids.json. Jenkins runs this after WA preview install so
+# the PR AM org-role-mapping service has users available for task testing.
 
 set -euo pipefail
 
 basedir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-user_type=${1:-CASEWORKER}
+user_ids_file=${1:-"${basedir}/aat-caseworker-user-ids.json"}
+user_type=${2:-CASEWORKER}
 org_role_mapping_url=${ORG_ROLE_MAPPING_URL:-}
 
 if [[ -z "${org_role_mapping_url}" && -n "${CHANGE_ID:-}" ]]; then
@@ -15,8 +20,18 @@ if [[ -z "${org_role_mapping_url}" ]]; then
   exit 1
 fi
 
+if [[ ! -f "${user_ids_file}" ]]; then
+  echo "User ID file ${user_ids_file} not found." >&2
+  exit 1
+fi
+
 if ! command -v jq >/dev/null 2>&1; then
-  echo "jq is required to build the org mapping request." >&2
+  echo "jq is required to validate ${user_ids_file}." >&2
+  exit 1
+fi
+
+if ! jq -e '.userIds | type == "array" and length > 0' "${user_ids_file}" >/dev/null; then
+  echo "User ID file ${user_ids_file} must contain a non-empty userIds array." >&2
   exit 1
 fi
 
@@ -31,38 +46,11 @@ if [[ -z "${idam_token}" || -z "${s2s_token}" ]]; then
   exit 1
 fi
 
-user_ids=()
-for credential_pair in \
-  USERNAME_CASEWORKER:PASSWORD_CASEWORKER \
-  USERNAME_SUPERCASEWORKER:PASSWORD_SUPERCASEWORKER
-do
-  username_env=${credential_pair%%:*}
-  password_env=${credential_pair##*:}
-  username=${!username_env:-}
-  password=${!password_env:-}
-
-  if [[ -z "${username}" || -z "${password}" ]]; then
-    echo "Skipping ${username_env}/${password_env}: credentials are not available."
-    continue
-  fi
-
-  user_token=$("${basedir}/../utils/idam-lease-user-token.sh" "${username}" "${password}")
-  user_id=$("${basedir}/../utils/idam-user-id.sh" "${user_token}")
-
-  if [[ -n "${user_id}" && "${user_id}" != "null" ]]; then
-    user_ids+=("${user_id}")
-  fi
-done
-
-if [[ "${#user_ids[@]}" -eq 0 ]]; then
-  echo "No Finrem caseworker user IDs found for WA org mapping." >&2
-  exit 1
-fi
-
-payload=$(printf '%s\n' "${user_ids[@]}" | jq -R . | jq -s '{userIds: .}')
+payload=$(jq -c '{userIds: .userIds}' "${user_ids_file}")
+user_count=$(jq '.userIds | length' "${user_ids_file}")
 url="${org_role_mapping_url}/am/testing-support/createOrgMapping?userType=${user_type}"
 
-echo "Creating WA org mappings for ${#user_ids[@]} ${user_type} user(s)."
+echo "Creating WA org mappings for ${user_count} ${user_type} user(s) from ${user_ids_file}."
 curl --silent --show-error --fail "${url}" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${idam_token}" \
