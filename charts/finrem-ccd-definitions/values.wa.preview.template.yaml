@@ -60,19 +60,7 @@ am-org-role-mapping-service:
         secretRef: postgres
         key: PASSWORD
         disabled: false
-    keyVaults:
-      am:
-        secrets:
-          - name: app-insights-connection-string
-            alias: app-insights-connection-string
-          - name: am-org-role-mapping-service-s2s-secret
-            alias: AM_ORG_ROLE_MAPPING_SERVICE_SECRET
-          - name: orm-IDAM-CLIENT-ID
-            alias: ORM_IDAM_CLIENT_ID
-          - name: orm-IDAM-CLIENT-SECRET
-            alias: ORG_ROLE_MAPPING_IDAM_CLIENT_SECRET
-          - name: orm-IDAM-ADMIN-SECRET
-            alias: ORG_ROLE_MAPPING_IDAM_ADMIN_PASSWORD
+    keyVaults: []
     devcpuRequests: 500m
     devmemoryRequests: 1Gi
     devcpuLimits: 1
