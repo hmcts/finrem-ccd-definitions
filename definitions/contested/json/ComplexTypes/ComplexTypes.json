@@ -766,6 +766,15 @@
   {
     "LiveFrom": "28/01/2025",
     "ID": "FR_ct_draftDirectionOrder",
+    "ListElementCode": "isThisFinalYN",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this the final order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "28/01/2025",
+    "ID": "FR_ct_draftDirectionOrder",
     "ListElementCode": "additionalDocuments",
     "FieldType": "Collection",
     "FieldTypeParameter": "Document",
@@ -790,6 +799,7 @@
     "ListElementCode": "isThisFinalYN",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this the final order?",
+    "FieldShowCondition": "isThisFinalYN=\"DONOTSHOW\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3286,6 +3296,16 @@
     "ListElementCode": "isOrderStamped",
     "FieldType": "YesOrNo",
     "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "isThisFinalYN",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "TEST Final Order",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
