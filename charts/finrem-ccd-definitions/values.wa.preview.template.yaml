@@ -46,6 +46,7 @@ am-org-role-mapping-service:
   enabled: ${ENABLE_WA}
   java:
     image: hmctsprod.azurecr.io/am/org-role-mapping-service:pr-2772
+    disableKeyVaults: true
     ingressHost: am-org-role-mapping-service-${SERVICE_FQDN}
     releaseNameOverride: ${SERVICE_NAME}-am-org-role-mapping-service
     secrets:
@@ -88,6 +89,10 @@ am-org-role-mapping-service:
       JRD_TOPIC_NAME: "{{ .Release.Name}}-jrd-topic"
       AMQP_CRD_SHARED_ACCESS_KEY_VALUE: "$(SB_ACCESS_KEY)"
       AMQP_JRD_SHARED_ACCESS_KEY_VALUE: "$(SB_ACCESS_KEY)"
+      AM_ORG_ROLE_MAPPING_SERVICE_SECRET: ${AM_ORG_ROLE_MAPPING_SERVICE_SECRET}
+      ORM_IDAM_CLIENT_ID: ${ORM_IDAM_CLIENT_ID}
+      ORG_ROLE_MAPPING_IDAM_CLIENT_SECRET: ${ORG_ROLE_MAPPING_IDAM_CLIENT_SECRET}
+      ORG_ROLE_MAPPING_IDAM_ADMIN_PASSWORD: ${ORG_ROLE_MAPPING_IDAM_ADMIN_PASSWORD}
       ORG_ROLE_MAPPING_DB_HOST: financial-remedy-preview.postgres.database.azure.com
       ORG_ROLE_MAPPING_DB_NAME: "pr-${CHANGE_ID}-org-role-mapping"
       ORG_ROLE_MAPPING_DB_USERNAME: hmcts
