@@ -162,6 +162,7 @@ wa:
 
   camunda-bpm:
     java:
+      ingressHost: camunda-${SERVICE_FQDN}
       devcpuRequests: 500m
       devmemoryRequests: 1Gi
       devcpuLimits: 2
