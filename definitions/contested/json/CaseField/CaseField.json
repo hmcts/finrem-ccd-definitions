@@ -6778,9 +6778,10 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "additionalDocument",
-    "Label": "Please upload any additional document",
-    "FieldType": "Document",
+    "ID": "additionalDocuments",
+    "Label": "Please upload any additional documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "approvedOrders"
