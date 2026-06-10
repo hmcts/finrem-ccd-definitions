@@ -149,6 +149,7 @@ def setCommonWaPreviewEnvVars() {
   env.S2S_URL_BASE = 'http://rpe-service-auth-provider-aat.service.core-compute-aat.internal'
   env.CCD_API_GATEWAY_IDAM_CLIENT_SECRET = env.API_GATEWAY_IDAM_SECRET
   env.ROLE_ASSIGNMENT_URL = "https://am-role-assignment-service-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+  env.ORG_ROLE_MAPPING_URL = "https://am-org-role-mapping-service-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
   env.CAMUNDA_BASE_URL = "https://camunda-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
   env.WA_CAMUNDA_S2S_MICROSERVICE = 'finrem_case_orchestration'
 }
@@ -176,7 +177,7 @@ def uploadWaPreviewBpmnDefinitions() {
 
 def setupWaPreviewRoleAssignments() {
   dir("${WORKSPACE}") {
-    sh './bin/wa/setup-role-assignments.sh ./bin/wa/role-assignments.json'
+    sh './bin/wa/setup-role-assignments.sh'
   }
 }
 
@@ -206,6 +207,7 @@ withPipeline("nodejs", product, component) {
     onPR {
       if (env.ENABLE_WA?.toBoolean()) {
         setCommonWaPreviewEnvVars()
+        println """After akschartsinstall upload DMN and BPMN diagrams and setup WA org mappings using ${env.ORG_ROLE_MAPPING_URL}""".stripIndent()
         sh 'chmod -R +x ./bin'
         uploadWaPreviewDmnDefinitions()
         uploadWaPreviewBpmnDefinitions()

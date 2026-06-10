@@ -8,6 +8,7 @@ xui-webapp:
       SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
       SERVICES_WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
       SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
+      SERVICES_ROLE_ASSIGNMENT_MAPPING_API: http://${SERVICE_NAME}-am-org-role-mapping-service
       SERVICES_CASE_CASEWORKER_API: http://${SERVICE_NAME}-rd-caseworker-ref-api
       HEALTH_CASE_CASEWORKER_API: http://${SERVICE_NAME}-rd-caseworker-ref-api/health
       WA_SUPPORTED_JURISDICTIONS: DIVORCE
