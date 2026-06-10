@@ -764,7 +764,7 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "28/01/2025",
+    "LiveFrom": "01/06/2026",
     "ID": "FR_ct_draftDirectionOrder",
     "ListElementCode": "isThisFinalYN",
     "FieldType": "YesOrNo",
@@ -908,7 +908,7 @@
     "CategoryID": "approvedOrders"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2026",
     "ID": "FR_ct_directionOrderCollection",
     "ListElementCode": "isThisFinalYN",
     "FieldType": "YesOrNo",
@@ -3301,11 +3301,11 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2026",
     "ID": "view_finalOrderCollection",
     "ListElementCode": "isThisFinalYN",
     "FieldType": "YesOrNo",
-    "ElementLabel": "TEST Final Order",
+    "ElementLabel": "Final Order",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
