@@ -49,10 +49,37 @@ fi
 payload=$(jq -c '{userIds: .userIds}' "${user_ids_file}")
 user_count=$(jq '.userIds | length' "${user_ids_file}")
 url="${org_role_mapping_url}/am/testing-support/createOrgMapping?userType=${user_type}"
+response_file=$(mktemp)
+trap 'rm -f "${response_file}"' EXIT
 
 echo "Creating WA org mappings for ${user_count} ${user_type} user(s) from ${user_ids_file}."
-curl --silent --show-error --fail "${url}" \
+status_code=$(curl --silent --show-error --output "${response_file}" --write-out "%{http_code}" --request POST "${url}" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${idam_token}" \
   -H "ServiceAuthorization: ${s2s_token}" \
-  -d "${payload}"
+  -d "${payload}") || {
+    curl_exit=$?
+    echo "WA org mapping setup request failed with curl exit code ${curl_exit}." >&2
+    exit "${curl_exit}"
+  }
+
+case "${status_code}" in
+  2*)
+    echo "WA org mappings created successfully."
+    ;;
+  404)
+    if grep -Eiq "Caseworker data could not be found|User details.*found in RD" "${response_file}"; then
+      echo "Skipping WA org mapping setup because the configured ${user_type} user(s) were not found in RD."
+      cat "${response_file}"
+    else
+      echo "WA org mapping setup failed with HTTP ${status_code}." >&2
+      cat "${response_file}" >&2
+      exit 1
+    fi
+    ;;
+  *)
+    echo "WA org mapping setup failed with HTTP ${status_code}." >&2
+    cat "${response_file}" >&2
+    exit 1
+    ;;
+esac
