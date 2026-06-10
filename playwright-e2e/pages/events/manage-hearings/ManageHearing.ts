@@ -15,6 +15,7 @@ export class ManageHearingPage extends BaseJourneyPage {
   private readonly vacateHearingRadio: Locator;
   private readonly doYouWantToSendNotices: Locator;
   private readonly adjournOrVacateHearingDropdown: Locator;
+  private readonly manageHearingError: Locator;
 
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page);
@@ -27,6 +28,7 @@ export class ManageHearingPage extends BaseJourneyPage {
     this.vacateHearingRadio = page.getByRole('radio', { name: 'Adjourn or Vacate a hearing' });
     this.doYouWantToSendNotices = this.page.getByText('Do you want to send notices?');
     this.adjournOrVacateHearingDropdown = this.page.getByLabel('Adjourn or Vacate a hearing?');
+    this.manageHearingError = this.page.getByRole('heading', { name: 'Manage Hearings completed' });
   }
 
   async selectAddANewHearing() {
@@ -323,6 +325,10 @@ export class ManageHearingPage extends BaseJourneyPage {
     const optionToSelect = this.page.getByRole('radio', { name: answer });
     await expect(optionToSelect).toBeVisible();
     await optionToSelect.check();
+  }
+
+  public async govNotifyManageHearingError(): Promise<void> {
+    await expect(this.manageHearingError).toBeVisible();
   }
 
 }
