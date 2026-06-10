@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+#
+# Reads WA role assignment config and applies each entry for available test users.
+# This is part of preview setup so users used in automated/manual testing have
+# the organisational roles expected by the WA task screens.
 
 set -euo pipefail
 
