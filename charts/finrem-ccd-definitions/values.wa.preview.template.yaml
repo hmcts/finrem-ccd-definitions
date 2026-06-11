@@ -12,25 +12,25 @@ xui-webapp:
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
       GLOBAL_SEARCH_SERVICES: "IA,CIVIL,PRIVATELAW,PUBLICLAW,EMPLOYMENT,ST_CIC,DIVORCE"
 
-  ccd-definition-store-api:
-    java:
-      disableKeyVaults: true
-      autoscaling:
-        enabled: false
-      imagePullPolicy: Always
-      image: hmctsprod.azurecr.io/ccd/definition-store-api:latest
-      environment:
-        DEFINITION_STORE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
-        DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
-        DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin,aac_manage_case_assignment,am_role_assignment_service,wa_task_configuration_api,wa_task_management_api
-        DEFINITION_STORE_TX_TIMEOUT_DEFAULT: 300
-        IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
-        OIDC_ISSUER: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
-        WELSH_TRANSLATION_ENABLED: false
-        ELASTIC_SEARCH_ENABLED: true
-        ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
-        DATA_STORE_DEFAULT_LOG_LEVEL: DEBUG
-      ingressHost: ccd-definition-store-${SERVICE_FQDN}
+ccd-definition-store-api:
+  java:
+    disableKeyVaults: true
+    autoscaling:
+      enabled: false
+    imagePullPolicy: Always
+    image: hmctsprod.azurecr.io/ccd/definition-store-api:latest
+    environment:
+      DEFINITION_STORE_DB_HOST: '{{ tpl .Values.global.postgresHostname $}}'
+      DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
+      DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_data,ccd_gw,ccd_admin,aac_manage_case_assignment,am_role_assignment_service,wa_task_configuration_api,wa_task_management_api
+      DEFINITION_STORE_TX_TIMEOUT_DEFAULT: 300
+      IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
+      OIDC_ISSUER: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
+      WELSH_TRANSLATION_ENABLED: false
+      ELASTIC_SEARCH_ENABLED: true
+      ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
+      DATA_STORE_DEFAULT_LOG_LEVEL: DEBUG
+    ingressHost: ccd-definition-store-${SERVICE_FQDN}
 wa:
   enabled: ${ENABLE_WA}
   wa:
