@@ -3303,16 +3303,6 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "view_finalOrderCollection",
-    "ListElementCode": "isThisFinalYN",
-    "FieldType": "YesOrNo",
-    "ElementLabel": "TEST Final Order",
-    "SecurityClassification": "Public",
-    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "ID": "view_finalOrderCollection",
     "ListElementCode": "orderDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Order created at",
