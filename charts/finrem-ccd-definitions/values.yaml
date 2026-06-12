@@ -4,8 +4,18 @@ tags:
 idam-pr:
   enabled: false
 
+
 xui-webapp:
-  enabled: false
+  enabled: true
+  nodejs:
+    environment:
+      HEALTH_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service/health
+      SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
+      SERVICES_WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
+      SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
+      WA_SUPPORTED_JURISDICTIONS: DIVORCE
+      FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
+      GLOBAL_SEARCH_SERVICES: "IA,CIVIL,PRIVATELAW,PUBLICLAW,EMPLOYMENT,ST_CIC,DIVORCE"
 
 xui-mo-webapp:
   enabled: false
@@ -33,10 +43,4 @@ servicebusPrimary:
   enabled: false
 
 ccd-message-publisher:
-  enabled: false
-
-rd-caseworker-ref-api:
-  enabled: false
-
-am-org-role-mapping-service:
   enabled: false

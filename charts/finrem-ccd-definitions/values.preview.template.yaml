@@ -244,6 +244,7 @@ ccd:
         WELSH_TRANSLATION_ENABLED: false
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
+        DATA_STORE_DEFAULT_LOG_LEVEL: DEBUG
       ingressHost: ccd-definition-store-${SERVICE_FQDN}
 
   ccd-admin-web:
@@ -307,8 +308,6 @@ ccd:
         - name: "pr-${CHANGE_ID}-camunda"
         - name: "pr-${CHANGE_ID}-cft_task_db"
         - name: "pr-${CHANGE_ID}-cft_task_db_replica"
-        - name: "pr-${CHANGE_ID}-org-role-mapping"
-        - name: "pr-${CHANGE_ID}-rd-caseworker-ref-api"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
