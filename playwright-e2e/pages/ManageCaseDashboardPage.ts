@@ -24,15 +24,6 @@ export class ManageCaseDashboardPage {
     }
   }
 
-  async navigateToTab(tab: CaseTab): Promise<void> {
-    const tabLocator = this.page.getByRole('tab', { name: tab });
-
-    await expect(tabLocator).toBeVisible();
-    await tabLocator.click();
-
-    await expect(tabLocator).toHaveAttribute('aria-selected', 'true');
-  }
-
   async visit(): Promise<void>{
     await this.page.goto(`${this.url}`);
   }
@@ -42,10 +33,4 @@ export class ManageCaseDashboardPage {
     await this.signOutButton.click();
   }
 
-}
-
-export enum CaseTab {
-  History = 'History',
-  CaseDocuments = 'Case documents',
-  ConfDocuments = 'Confidential Documents'
 }

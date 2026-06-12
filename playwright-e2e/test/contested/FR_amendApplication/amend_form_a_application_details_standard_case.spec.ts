@@ -192,7 +192,6 @@ test.describe.skip('Contested - Form A - Amend application in Standard case', ()
         caseSubmissionPage,
         checkYourAnswersPage,
         {
-          feeCode: '', feeType: '',
           caseEvent: ContestedEvents.applicationPaymentSubmission,
           hasHelpWithFees: hasHelpWithFees,
           pbaNumber: pbaNumber,

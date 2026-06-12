@@ -1,6 +1,7 @@
 import { type Page, expect, Locator } from '@playwright/test';
 import { YesNoRadioEnum } from '../../helpers/enums/RadioEnums';
 import { UpdateContactDetailsPage } from '../update-contact-details/UpdateContactDetailsPage';
+import { p } from '../../../../playwright-report/trace/assets/defaultSettingsView-BEpdCv1S';
 
 export class StopRepresentingClientPage extends UpdateContactDetailsPage {
 
