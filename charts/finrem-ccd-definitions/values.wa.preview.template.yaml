@@ -48,13 +48,15 @@ wa:
       devcpuLimits: 2
       devmemoryLimits: 4Gi
       environment:
-        CAMUNDA_URL: "http://{{ .Release.Name }}-camunda/engine-rest"
+        CAMUNDA_URL: http://${SERVICE_NAME}-camunda/engine-rest
+        LOGGING_LEVEL_UK_GOV_HMCTS: DEBUG
+        TEMP_FLAG: false
         IDAM_URL: "https://idam-api.{{ .Values.global.environment }}.platform.hmcts.net"
         S2S_URL: "http://rpe-service-auth-provider-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal"
         OPEN_ID_IDAM_URL: "https://idam-web-public.{{ .Values.global.environment }}.platform.hmcts.net"
         ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
-        ALLOWED_JURISDICTIONS: wa,divorce
-        ALLOWED_CASE_TYPES: financialremedymvp2,financialremedycontested
+        ALLOWED_JURISDICTIONS: wa,ia,sscs,civil,publiclaw,privatelaw,st_cic,employment,sscs,divorce
+        ALLOWED_CASE_TYPES: asylum,wacasetype,sscs,civil,generalapplication,care_supervision_epo,prlapps,criminalinjuriescompensation,et_englandwales,et_scotland,benefit,financialremedycontested,financialremedymvp2,finrem_exceptionrecord,privatelaw_exceptionrecord,bail
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         MANDATORY_TASK_FIELD_CHECK_ENABLED: true
         S2S_SECRET_TASK_MANAGEMENT_API: ${S2S_SECRET_TASK_MANAGEMENT_API}
@@ -77,18 +79,25 @@ wa:
       devcpuLimits: 2
       devmemoryLimits: 4Gi
       environment:
-        CAMUNDA_URL: "http://{{ .Release.Name }}-camunda/engine-rest"
-        CCD_URL: "http://{{ .Release.Name }}-ccd-data-store-api"
-        CCD_SEARCH_URL: "http://{{ .Release.Name }}-ccd-data-store-api"
+        CAMUNDA_URL: http://${SERVICE_NAME}-camunda/engine-rest
+        CCD_URL: http://${SERVICE_NAME}-ccd-data-store-api
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
         S2S_SECRET_CASE_EVENT_HANDLER: ${S2S_SECRET_CASE_EVENT_HANDLER}
-        WA_WORKFLOW_API_URL: "http://{{ .Release.Name }}-wa-workflow-api"
-        WA_TASK_MANAGEMENT_API_URL: "http://{{ .Release.Name }}-wa-task-management-api"
+        WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
+        WA_TASK_MANAGEMENT_API_URL: http://${SERVICE_NAME}-wa-task-management-api
         WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
         AZURE_SERVICE_BUS_TOPIC_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_CCD_CASE_EVENTS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
+        LOGGING_LEVEL_UK_GOV_HMCTS: DEBUG
+        TEMP_RESTART: true
+        MESSAGE_PROCESSING_POLL_INTERVAL_MILLISECONDS: 1000
+        SPRING_DATASOURCE_HIKARI_CONNECTION_TIMEOUT: 30000
+        SPRING_DATASOURCE_HIKARI_IDLE_TIMEOUT: 6000
+        SPRING_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE: 5
+        SPRING_DATASOURCE_HIKARI_MAX_LIFETIME: 300000
+        SPRING_DATASOURCE_HIKARI_MINIMUM_IDLE: 2
       keyVaults: []
 
   wa-task-monitor:
@@ -100,7 +109,12 @@ wa:
         WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
         WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
         WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
-        WA_TASK_MANAGEMENT_API_URL: http://{{ .Release.Name }}-wa-task-management-api
+        WA_TASK_MANAGEMENT_API_URL: http://${SERVICE_NAME}-wa-task-management-api
+        LOGGING_LEVEL_UK_GOV_HMCTS: DEBUG
+        INITIATION_TIME_LIMIT: 180
+        TERMINATION_TIME_LIMIT: 180
+        CLEAN_UP_CAMUNDA_MAX_RESULTS: 500
+        CLEAN_UP_STARTED_DAYS_BEFORE: 10
       keyVaults: []
 
   wa-workflow-api:
@@ -114,6 +128,7 @@ wa:
         DB_READER_USERNAME: "hmcts"
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
+        WA_TASK_MANAGEMENT_API_URL: http://${SERVICE_NAME}-wa-task-management-api
       keyVaults: []
 
 ccd:
