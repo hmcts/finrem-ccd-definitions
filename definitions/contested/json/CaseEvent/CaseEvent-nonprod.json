@@ -26,5 +26,33 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "30/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "CUI_applicantUploadDocuments",
+    "Name": "Applicant Document Upload",
+    "Description": "Applicant Document Upload",
+    "DisplayOrder": 162,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
+    "LiveFrom": "30/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "CUI_respondentUploadDocuments",
+    "Name": "Respondent Document Upload",
+    "Description": "Respondent Document Upload",
+    "DisplayOrder": 163,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
   }
 ]
