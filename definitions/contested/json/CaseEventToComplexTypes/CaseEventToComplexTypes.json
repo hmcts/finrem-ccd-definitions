@@ -719,7 +719,7 @@
     "ID": "FR_ct_draftDirectionDetailsCollection",
     "CaseEventID": "FR_draftOrderApproved",
     "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -4376,7 +4376,16 @@
     "CaseEventID": "FR_judgeDraftDirectionOrder",
     "CaseFieldID": "judgeApprovedOrderCollection",
     "ListElementCode": "uploadDraftDocument",
-    "EventElementLabel": "Upload Approved Document",
+    "EventElementLabel": "PAGE1 - FR_judgeDraftDirectionOrder_to_judgeApprovedOrderCollection - Upload Approved Document",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "01/06/2022",
+    "ID": "FR_judgeDraftDirectionOrder_to_judgeApprovedOrderCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "judgeApprovedOrderCollection",
+    "ListElementCode": "isFinalOrder",
+    "ElementLabel": "PAGE1 - FR_judgeDraftDirectionOrder_to_judgeApprovedOrderCollection - Is this the final order?",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -4400,7 +4409,7 @@
     "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
     "CaseEventID": "FR_judgeDraftDirectionOrder",
     "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -6231,6 +6240,14 @@
     "ID": "FR_uploadApprovedOrderToCwApprovedOrderCollection",
     "CaseEventID": "FR_uploadApprovedOrder",
     "CaseFieldID": "cwApprovedOrderCollection",
+    "ListElementCode": "isFinalOrder",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_uploadApprovedOrderToCwApprovedOrderCollection",
+    "CaseEventID": "FR_uploadApprovedOrder",
+    "CaseFieldID": "cwApprovedOrderCollection",
     "ListElementCode": "additionalDocuments",
     "DisplayContext": "OPTIONAL"
   },
@@ -6241,6 +6258,14 @@
     "CaseFieldID": "cwApprovedOrderCollection",
     "ListElementCode": "uploadDraftDocument",
     "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_uploadApprovedOrderMhToCwApprovedOrderCollection",
+    "CaseEventID": "FR_uploadApprovedOrderMh",
+    "CaseFieldID": "cwApprovedOrderCollection",
+    "ListElementCode": "isFinalOrder",
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "02/10/2025",

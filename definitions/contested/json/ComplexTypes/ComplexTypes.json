@@ -758,8 +758,17 @@
     "ID": "FR_ct_draftDirectionOrder",
     "ListElementCode": "uploadDraftDocument",
     "FieldType": "Document",
-    "ElementLabel": "Upload Draft Document",
+    "ElementLabel": "FR_ct_draftDirectionOrder - Upload Draft Document",
     "RegularExpression": ".doc,.docx,.pdf",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_ct_draftDirectionOrder",
+    "ListElementCode": "isFinalOrder",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "PAGE 1 OK - FR_ct_draftDirectionDetailsCollection -> FR_ct_draftDirectionOrder - Is this the final order?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -787,9 +796,9 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_draftDirectionDetailsCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "FieldType": "YesOrNo",
-    "ElementLabel": "Is this the final order?",
+    "ElementLabel": "REMOVE PAGE2 - FR_ct_draftDirectionDetailsCollection - Is this the final order?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -891,18 +900,18 @@
     "ID": "FR_ct_directionOrderCollection",
     "ListElementCode": "uploadDraftDocument",
     "FieldType": "Document",
-    "ElementLabel": "Upload Document",
+    "ElementLabel": "TAB1 OK - FR_ct_directionOrderCollection - Upload Document",
     "HintText": "PLEASE NOTE: You must upload a Word or PDF version of document",
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "approvedOrders"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2026",
     "ID": "FR_ct_directionOrderCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "FieldType": "YesOrNo",
-    "ElementLabel": "Is this a final order?",
+    "ElementLabel": "TAB1 NOT OK - FR_ct_draftDirectionOrder - Is this the final order?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -2294,9 +2303,9 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_hearingInformationCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "FieldType": "YesOrNo",
-    "ElementLabel": "Is this the final order?",
+    "ElementLabel": "FR_ct_hearingInformationCollection - Is this the final order?",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -3276,6 +3285,16 @@
     "ListElementCode": "originalDocument",
     "FieldType": "Document",
     "ElementLabel": "Original Document",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "isFinalOrder",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Final Order",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
@@ -5086,7 +5105,7 @@
     "ID": "FR_cwApprovedOrder",
     "ListElementCode": "uploadDraftDocument",
     "FieldType": "Document",
-    "ElementLabel": "Upload Document",
+    "ElementLabel": "FR_cwApprovedOrder - Upload Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "hearingNotices"
@@ -5097,6 +5116,16 @@
     "ListElementCode": "orderDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Order created at",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "isFinalOrder",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Final Order",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
