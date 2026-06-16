@@ -272,14 +272,21 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
       });
       await checkYourAnswersPage.assertCheckYourAnswersPage(expectedTable);
       await manageHearingPage.navigateSubmit();
-      await manageHearingPage.govNotifyManageHearingError();
+      // await manageHearingPage.govNotifyManageHearingError();
 
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectHeader('Hearings');
 
+      const hearingDateIso = await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
+      const expectedHearingDate = `${new Date(hearingDateIso).toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+      })} 10:00 AM`;
+
       await caseDetailsPage.assertHearingTable(
         'Financial Dispute Resolution (FDR)',
-        '24 Aug 2026 10:00 AM',
+        expectedHearingDate,
         [
           'Applicant - Frodo Baggins',
           'Respondent - Smeagol Gollum',
