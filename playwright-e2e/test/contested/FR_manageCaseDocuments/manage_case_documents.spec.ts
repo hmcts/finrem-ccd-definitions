@@ -264,7 +264,7 @@ test.describe('Contested Manage Case Documents', () => {
         await manageCaseDocumentsPage.amendDoc();
 
         await expect(
-          page.getByRole('button', { name: 'caseDoc.docx' })
+          page.getByRole('link', { name: 'caseDoc.docx' })
         ).toBeVisible();
       });
 
@@ -307,17 +307,17 @@ test.describe('Contested Manage Case Documents', () => {
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Manage case documents - amend document
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
+      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
       await manageCaseDocumentsPage.amendDoc();
-      await manageCaseDocumentsPage.navigateContinue();
+
       //expect original document to be visible
-      await expect(page.getByRole('button', { name: 'caseDoc.docx' })).toBeVisible();
+      await expect(page.getByRole('link', { name: 'caseDoc.docx' })).toBeVisible();
       await manageCaseDocumentsPage.removeDocument();
-      await expect(page.getByRole('button', { name: 'caseDoc.dox'})).toBeHidden({ timeout: 200 });
+      await expect(page.getByRole('link', { name: 'caseDoc.docx' })).toBeHidden({ timeout: 200 });
       await manageCaseDocumentsPage.navigateContinue();
       await manageCaseDocumentsPage.navigateSubmit();
 
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocuments.listItem);
       await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
     }
   );
@@ -358,22 +358,18 @@ test.describe('Contested Manage Case Documents', () => {
       );
 
       await manageCaseDashboardPage.navigateToCase(caseId);
-
       await manageCaseDashboardPage.navigateToTab(CaseTab.ConfDocuments);
 
-      const documentButton: Locator = page.getByRole('button', { name: filename });
+      const documentButton: Locator = page.getByRole('link', { name: filename });
 
       await expect(documentButton).toBeVisible();
 
       const response = await responsePromise;
       const caseData: JSON = await response.json();
-
       const raw: string = JSON.stringify(caseData);
-
       const match: RegExpMatchArray | null = raw.match(/documents\/([a-f0-9-]+)\/binary/);
 
       expect(match).toBeTruthy();
-
       documentId = match![1];
 
       const cookies = await page.context().cookies();
@@ -393,11 +389,8 @@ test.describe('Contested Manage Case Documents', () => {
     });
 
     await test.step('Delete the document via UI', async (): Promise<void> => {
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
-
+      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
       await manageCaseDocumentsPage.amendDoc();
-      await manageCaseDocumentsPage.navigateContinue();
-
       await manageCaseDocumentsPage.removeDocument();
     });
 
@@ -407,17 +400,14 @@ test.describe('Contested Manage Case Documents', () => {
     });
 
     await test.step('Re-fetch case data and assert document reference removed', async (): Promise<void> => {
-
       await manageCaseDashboardPage.navigateToTab(CaseTab.CaseDocuments);
-
-      const documentButton = page.getByRole('button', { name: filename});
-
+      const documentButton = page.getByRole('link', { name: filename});
       const noDocuments: number = 0;
-
       await expect(documentButton).toHaveCount(noDocuments);
     });
   });
 });
+
 test(
   'Super caseworker can remove an existing document',
   async ({
@@ -462,7 +452,7 @@ test(
       await manageCaseDocumentsPage.amendDoc();
 
       await expect(
-        page.getByRole('button', {name: 'caseDoc.docx'})
+        page.getByRole('link', {name: 'caseDoc.docx'})
       ).toBeVisible();
     });
 
