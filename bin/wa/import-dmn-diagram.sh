@@ -15,6 +15,7 @@ microservice=${WA_CAMUNDA_S2S_MICROSERVICE:-finrem_case_orchestration}
 s2s_secret=${WA_CAMUNDA_S2S_SECRET:-${FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY:-}}
 camunda_base_url=${CAMUNDA_BASE_URL:-http://localhost:9404}
 
+
 dmn_source="${requested_dmn_dir}"
 if [[ ! -d "${dmn_source}" ]]; then
   dmn_source="${workspace}/${requested_dmn_dir}"
