@@ -265,3 +265,14 @@ If you are needing to work with the Work Allocation feature follow these guideli
 in the -wa-nonprod.json version of the file and make any wa specific changes in the -wa-nonprod.json file. Also include the base event in nonprod.json file so to maintain the base functionality for non prod environments. Also copy to the -prod.json only if your event has prod specific behaviour.
 3) When you generate the definitions use the WA script in order to see your changes reflected in the xlsx file.
 4) Case events for WA also need the publish flag, set this manually "Pusblish":"Y".
+
+### Work Allocation preview environment
+
+Add the `pr-values:wa` label to a PR to enable the WA preview overlay in `values.wa.preview.template.yaml`.
+This keeps the normal Finrem preview stack and adds the WA-specific services needed for testing:
+
+- WA pods: Camunda, task management API, workflow API, case event handler and task monitor.
+- Supporting services: `rd-caseworker-ref-api`, `ccd-message-publisher`, preview service bus topic/subscription and AM role assignment service.
+- Post-deploy setup: Jenkins pulls Finrem DMNs and shared WA BPMNs, imports them into Camunda, then applies configured WA role assignments for test users.
+
+Use `enable_keep_helm` as well if the preview deployment needs to stay available after the build for manual testing.
