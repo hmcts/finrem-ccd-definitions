@@ -139,9 +139,11 @@ export class DateHelper {
     const date = new Date(dateStr);
     return new Intl.DateTimeFormat('en-GB', {
       day: 'numeric',
-      month: 'short',
+      month: 'long',
       year: 'numeric'
-    }).format(date);
+    })
+    .format(date)
+    .replace(/\b([A-Za-z]{4,})\b/g, m => m.slice(0, 3));
   }
 
   static async getFormattedHearingDate(): Promise<{ currentDate: string; hearingDate: string }> {
