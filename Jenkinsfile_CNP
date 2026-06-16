@@ -22,10 +22,6 @@ def secrets = [
         ],
         'am-${env}'      : [
                 secret('am-role-assignment-service-s2s-secret', 'AM_ROLE_ASSIGNMENT_SERVICE_SECRET'),
-                secret('am-org-role-mapping-service-s2s-secret', 'AM_ORG_ROLE_MAPPING_SERVICE_SECRET'),
-                secret('orm-IDAM-CLIENT-ID', 'ORM_IDAM_CLIENT_ID'),
-                secret('orm-IDAM-CLIENT-SECRET', 'ORG_ROLE_MAPPING_IDAM_CLIENT_SECRET'),
-                secret('orm-IDAM-ADMIN-SECRET', 'ORG_ROLE_MAPPING_IDAM_ADMIN_PASSWORD'),
                 secret('role-assignment-service-IDAM-CLIENT-SECRET', 'ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET'),
                 secret('role-assignment-service-IDAM-ADMIN-SECRET', 'ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD'),
                 secret('role-assignment-service-LD-SDK-KEY', 'LD_SDK_AM_KEY')
@@ -227,6 +223,7 @@ withPipeline("nodejs", product, component) {
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.DEFINITION_STORE_URL_BASE = "https://ccd-definition-store-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+      env.EXCLUDE = getPreviewDefinitionExclusions()
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
       }
