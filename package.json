@@ -113,7 +113,6 @@
   "dependencies": {
     "@axe-core/playwright": "^4.10.0",
     "@hmcts/nodejs-logging": "^4.0.4",
-    "@hmcts/properties-volume": "^1.4.0",
     "axe-html-reporter": "^2.2.11",
     "axios": "^1.18.0",
     "config": "^4.0.0",
@@ -159,7 +158,8 @@
     "puppeteer-core": "^24.0.0",
     "ws": "^8.18.0",
     "brace-expansion": "1.1.14",
-    "uuid": "^11.0.0"
+    "uuid": "^11.0.0",
+    "from-data": "^2.5.6"
   },
   "packageManager": "yarn@4.10.3"
 }
