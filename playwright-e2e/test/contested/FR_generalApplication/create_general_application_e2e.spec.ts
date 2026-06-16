@@ -82,6 +82,11 @@ test.describe('Contested General Application e2e', () => {
       await axeUtils.audit();
       await generalApplicationDirectionsPage.navigateContinue();
 
+      // General Application Direction - preview order page
+      await generalApplicationDirectionsPage.verifyGeneralApplicationDirectionPreviewLinkIsVisible();
+      await axeUtils.audit();
+      await generalApplicationDirectionsPage.navigateContinue();
+
       // General Application Directions - Check your answers page
       await checkYourAnswersPage.assertCheckYourAnswersPage(contestedGeneralApplicationDirectionsTableData); 
       await generalApplicationDirectionsPage.navigateSubmit();
