@@ -4605,6 +4605,7 @@
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
     "ListElementCode": "judgeNameGuidance",
+    "FieldShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
     "DisplayContext": "READONLY"
   },
   {
@@ -4613,6 +4614,7 @@
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
     "ListElementCode": "judgeKnownAtHearing",
+    "FieldShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
     "DisplayContext": "MANDATORY"
   },
   {
