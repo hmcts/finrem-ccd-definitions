@@ -142,8 +142,8 @@ export class DateHelper {
       month: 'long',
       year: 'numeric'
     })
-    .format(date)
-    .replace(/\b([A-Za-z]{4,})\b/g, m => m.slice(0, 3));
+      .format(date)
+      .replace(/\b([A-Za-z]{4,})\b/g, m => {return m.slice(0, 3);});
   }
 
   static async getFormattedHearingDate(): Promise<{ currentDate: string; hearingDate: string }> {
