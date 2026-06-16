@@ -39,7 +39,7 @@ async function verifyDifferentActorsForCFV(
   await manageCaseDashboardPage.visit();
   await loginPage.loginWaitForPath(userCred.email, userCred.password, config.manageCaseBaseURL, config.loginPaths.cases);
   await manageCaseDashboardPage.navigateToCase(caseId);
-  await caseDetailsPage.assertTabData([getManageHearingTabData()]);
+  await caseDetailsPage.assertTabData([await getManageHearingTabData()]);
   await caseDetailsPage.validateFileTree([
     {
       type: 'folder',
@@ -272,21 +272,15 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
       });
       await checkYourAnswersPage.assertCheckYourAnswersPage(expectedTable);
       await manageHearingPage.navigateSubmit();
-      // await manageHearingPage.govNotifyManageHearingError();
+      await manageHearingPage.govNotifyManageHearingError();
 
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectHeader('Hearings');
 
-      const hearingDateIso = await DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
-      const expectedHearingDate = `${new Date(hearingDateIso).toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric'
-      })} 10:00 AM`;
-
+     
       await caseDetailsPage.assertHearingTable(
         'Financial Dispute Resolution (FDR)',
-        expectedHearingDate,
+        await DateHelper.getFormattedDateTwelveWeeksLaterWithZeroPaddedDay(),
         [
           'Applicant - Frodo Baggins',
           'Respondent - Smeagol Gollum',
@@ -337,7 +331,7 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
         typeOfHearing: 'First Directions Appointment (FDA)',
         court: 'Manchester County And Family Court',
         attendance: 'In Person',
-        hearingDate: DateHelper.getFormattedDateTwelveWeeksLater(),
+        hearingDate: DateHelper.getFormattedDateTwelveWeeksLaterWithZeroPaddedDay(),
         hearingTime: '10:00am',
         duration: '1hr 20mins',
         whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',

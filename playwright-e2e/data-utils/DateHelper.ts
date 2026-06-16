@@ -79,7 +79,7 @@ export class DateHelper {
      *
      * @returns Hearing date string in ISO format (date only) as a promise resolving to a string.
      */
-  static async getHearingDateTwelveWeeksLaterInISOFormat(): Promise<string> {
+  static getHearingDateTwelveWeeksLaterInISOFormat(): string {
     const hearingDate = new Date();
     hearingDate.setDate(hearingDate.getDate() + 12 * 7);
     return hearingDate.toISOString().split('T')[0];
@@ -98,6 +98,16 @@ export class DateHelper {
       .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
       .replace(/\b([A-Za-z]{4,})\b/g, m => {return m.slice(0, 3);});
   };
+
+  static getFormattedDateTwelveWeeksLaterWithZeroPaddedDay(): string {
+    const hearingDateIso =  DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
+      const expectedHearingDate = `${new Date(hearingDateIso).toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+      })}`;
+    return expectedHearingDate;
+  }
 
   /**
    * Returns a date 12 weeks and 1 day later than today, formatted as "dd Month yyyy" (e.g. "6 August 2025").
