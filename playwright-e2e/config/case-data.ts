@@ -79,7 +79,7 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
   },
   assignToJudgeConsentMade: {
     listItem: "Assign To Judge",
-    ccdCallback: "FR_referToJudgeFromConsOrdMade"
+    ccdCallback: "FR_referToJudgeFromClose"
   },
   uploadApprovedOrder: {
     listItem: "Upload Approved Order",
