@@ -719,7 +719,7 @@
     "ID": "FR_ct_draftDirectionDetailsCollection",
     "CaseEventID": "FR_draftOrderApproved",
     "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -4384,7 +4384,7 @@
     "ID": "FR_judgeDraftDirectionOrder_to_judgeApprovedOrderCollection",
     "CaseEventID": "FR_judgeDraftDirectionOrder",
     "CaseFieldID": "judgeApprovedOrderCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "DisplayContext": "OPTIONAL"
   },
   {
@@ -4408,7 +4408,7 @@
     "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
     "CaseEventID": "FR_judgeDraftDirectionOrder",
     "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -4613,7 +4613,6 @@
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
     "ListElementCode": "judgeNameGuidance",
-    "FieldShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
     "DisplayContext": "READONLY"
   },
   {
@@ -4622,7 +4621,6 @@
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
     "ListElementCode": "judgeKnownAtHearing",
-    "FieldShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -6241,6 +6239,14 @@
     "ID": "FR_uploadApprovedOrderToCwApprovedOrderCollection",
     "CaseEventID": "FR_uploadApprovedOrder",
     "CaseFieldID": "cwApprovedOrderCollection",
+    "ListElementCode": "isFinalOrder",
+    "DisplayContext": "OPTIONAL"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_uploadApprovedOrderToCwApprovedOrderCollection",
+    "CaseEventID": "FR_uploadApprovedOrder",
+    "CaseFieldID": "cwApprovedOrderCollection",
     "ListElementCode": "additionalDocuments",
     "DisplayContext": "OPTIONAL"
   },
@@ -6251,6 +6257,14 @@
     "CaseFieldID": "cwApprovedOrderCollection",
     "ListElementCode": "uploadDraftDocument",
     "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_uploadApprovedOrderMhToCwApprovedOrderCollection",
+    "CaseEventID": "FR_uploadApprovedOrderMh",
+    "CaseFieldID": "cwApprovedOrderCollection",
+    "ListElementCode": "isFinalOrder",
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "02/10/2025",

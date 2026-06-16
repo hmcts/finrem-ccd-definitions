@@ -766,7 +766,7 @@
   {
     "LiveFrom": "01/06/2026",
     "ID": "FR_ct_draftDirectionOrder",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this the final order?",
     "SecurityClassification": "Public",
@@ -796,10 +796,10 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_draftDirectionDetailsCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this the final order?",
-    "FieldShowCondition": "isThisFinalYN=\"DONOTSHOW\"",
+    "FieldShowCondition": "isFinalOrder=\"DONOTSHOW\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -910,7 +910,7 @@
   {
     "LiveFrom": "01/06/2026",
     "ID": "FR_ct_directionOrderCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this a final order?",
     "SecurityClassification": "Public",
@@ -2304,7 +2304,7 @@
   {
     "LiveFrom": "01/01/2017",
     "ID": "FR_ct_hearingInformationCollection",
-    "ListElementCode": "isThisFinalYN",
+    "ListElementCode": "isFinalOrder",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this the final order?",
     "SecurityClassification": "Public",
@@ -3291,6 +3291,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "01/06/2026",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "isFinalOrder",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Final Order",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "28/01/2025",
     "ID": "view_finalOrderCollection",
     "ListElementCode": "additionalDocuments",
@@ -3306,16 +3316,6 @@
     "ListElementCode": "isOrderStamped",
     "FieldType": "YesOrNo",
     "ElementLabel": "Order stamped",
-    "SecurityClassification": "Public",
-    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "01/06/2026",
-    "ID": "view_finalOrderCollection",
-    "ListElementCode": "isThisFinalYN",
-    "FieldType": "YesOrNo",
-    "ElementLabel": "Final Order",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
@@ -4304,8 +4304,8 @@
     "ListElementCode": "agreedDraftOrderDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
-    "RegularExpression": ".doc,.docx,.pdf",
-    "HintText": "You must upload Microsoft Word or PDF documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example \"JonesFDA11Jul24\"",
+    "RegularExpression": ".doc,.docx",
+    "HintText": "You must upload Microsoft Word documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example \"JonesFDA11Jul24\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5147,6 +5147,16 @@
     "ListElementCode": "orderDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Order created at",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_cwApprovedOrder",
+    "ListElementCode": "isFinalOrder",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Final Order",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
