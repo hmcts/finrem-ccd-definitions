@@ -52,7 +52,3 @@ dependencies:
     version: ~0.1.22
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: ccd-message-publisher.enabled
-  - name: rd-caseworker-ref-api
-    version: 1.0.13
-    repository: 'oci://hmctsprod.azurecr.io/helm'
-    condition: rd-caseworker-ref-api.enabled

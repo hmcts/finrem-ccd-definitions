@@ -17,8 +17,7 @@ def secrets = [
                 secret('microservicekey-ccd-definition', 'DEFINITION_STORE_S2S_KEY'),
                 secret('microservicekey-ccd-gw', 'API_GATEWAY_S2S_KEY'),
                 secret('microservicekey-ccd-ps', 'PRINT_S2S_KEY'),
-                secret('microservicekey-ccd-admin', 'ADMIN_S2S_KEY'),
-                secret('microservicekey-rd-caseworker-ref-api', 'CASEWORKER_REF_API_S2S_SECRET')
+                secret('microservicekey-ccd-admin', 'ADMIN_S2S_KEY')
         ],
         'am-${env}'      : [
                 secret('am-role-assignment-service-s2s-secret', 'AM_ROLE_ASSIGNMENT_SERVICE_SECRET'),
