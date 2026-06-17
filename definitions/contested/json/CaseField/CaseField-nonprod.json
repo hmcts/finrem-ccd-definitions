@@ -38,25 +38,5 @@
     "FieldTypeParameter": "CU_ct_citizenRespondentDocument",
     "SecurityClassification": "Public",
     "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "notificationsAudits",
-    "Label": "Notification Audit",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "notificationAuditEntry",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "notificationsToBeSent",
-    "Label": " ",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "notificationAuditEntry",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
   }
 ]

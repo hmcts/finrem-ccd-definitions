@@ -2692,6 +2692,88 @@
     "Searchable": "Y"
   },
   {
+    "LiveFrom": "14/05/2026",
+    "ID": "notificationAuditEntry",
+    "ListElementCode": "createdAt",
+    "FieldType": "Date",
+    "ElementLabel": "Date the notification audit was created",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "14/05/2026",
+    "ID": "notificationAuditEntry",
+    "ListElementCode": "wasSent",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Was the notification sent successfully",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "14/05/2026",
+    "ID": "notificationAuditEntry",
+    "ListElementCode": "eventId",
+    "FieldType": "Text",
+    "ElementLabel": "Event Name",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "14/05/2026",
+    "ID": "notificationAuditEntry",
+    "ListElementCode": "party",
+    "FieldType": "Text",
+    "ElementLabel": "Party",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "14/05/2026",
+    "ID": "notificationAuditEntry",
+    "ListElementCode": "type",
+    "FieldType": "Text",
+    "ElementLabel": "Notification Type",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "14/05/2026",
+    "ID": "notificationAuditEntry",
+    "ListElementCode": "emailId",
+    "FieldType": "Text",
+    "ElementLabel": "Email ID",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "14/05/2026",
+    "ID": "notificationAuditEntry",
+    "ListElementCode": "emailTemplate",
+    "FieldType": "Text",
+    "ElementLabel": "Email Template",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "14/05/2026",
+    "ID": "notificationAuditEntry",
+    "ListElementCode": "letterId",
+    "FieldType": "Text",
+    "ElementLabel": "Letter ID",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "14/05/2026",
+    "ID": "notificationAuditEntry",
+    "ListElementCode": "attachedPostalDocs",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Text",
+    "ElementLabel": "Posted document filenames",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "generalApplicationCollection",
     "ListElementCode": "generalApplicationReceivedFrom",
