@@ -719,7 +719,7 @@
     "ID": "FR_ct_draftDirectionDetailsCollection",
     "CaseEventID": "FR_draftOrderApproved",
     "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "isFinalOrder",
+    "ListElementCode": "isThisFinalYN",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -4408,7 +4408,7 @@
     "ID": "FR_judgeDraftDirectionOrder_to_draftDirectionDetailsCollection",
     "CaseEventID": "FR_judgeDraftDirectionOrder",
     "CaseFieldID": "draftDirectionDetailsCollection",
-    "ListElementCode": "isFinalOrder",
+    "ListElementCode": "isThisFinalYN",
     "DisplayContext": "MANDATORY"
   },
   {
