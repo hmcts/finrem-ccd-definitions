@@ -7444,6 +7444,24 @@
   {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "appDocuments",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "citizenApplicantDocument",
+    "TabFieldDisplayOrder": 21
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "appDocuments",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "citizenRespondentDocument",
+    "TabFieldDisplayOrder": 22
+  },
+  {
+    "LiveFrom": "01/02/2021",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,

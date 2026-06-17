@@ -138,6 +138,14 @@
   {
     "LiveFrom": "01/09/23",
     "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "applicantDocumentsCitizen",
+    "CategoryLabel": "Citizen Documents",
+    "DisplayOrder": "18",
+    "ParentCategoryID": "applicantDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
     "CategoryID": "applicantDocumentsCertificatesOfService",
     "CategoryLabel": "Certificates Of Service",
     "DisplayOrder": "18",
@@ -213,6 +221,14 @@
     "CategoryID": "respondentDocumentsS25Statement",
     "CategoryLabel": "S25 Statement",
     "DisplayOrder": "27",
+    "ParentCategoryID": "respondentDocuments"
+  },
+  {
+    "LiveFrom": "01/09/23",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "respondentDocumentsCitizen",
+    "CategoryLabel": "Citizen Documents",
+    "DisplayOrder": "53",
     "ParentCategoryID": "respondentDocuments"
   },
   {
