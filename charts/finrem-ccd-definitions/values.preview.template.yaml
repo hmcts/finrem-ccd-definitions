@@ -128,8 +128,6 @@ ccd:
       enabled: true
     elastic:
       enabled: true
-    ras:
-      enabled: ${ENABLE_WA}
 
 
   ingressHost: ${SERVICE_FQDN}
