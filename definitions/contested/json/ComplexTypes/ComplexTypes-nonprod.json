@@ -46,6 +46,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "18/06/2026",
+    "ID": "CU_ct_citizenApplicantDocument",
+    "ListElementCode": "isFDR",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Financial dispute resolution",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "06/05/2026",
     "ID": "CU_ct_citizenApplicantDocument",
     "ListElementCode": "DocumentEmailContent",
@@ -106,6 +115,15 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "CU_fl_citizenUploadDocuments",
     "ElementLabel": "Type",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "18/06/2026",
+    "ID": "CU_ct_citizenRespondentDocument",
+    "ListElementCode": "isFDR",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Financial dispute resolution",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
