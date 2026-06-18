@@ -16,6 +16,7 @@ am-role-assignment-service:
   enabled: ${ENABLE_WA}
   java:
     image: hmctsprod.azurecr.io/am/role-assignment-service:pr-2733
+    imagePullPolicy: Always
     disableKeyVaults: true
     devmemoryRequests: 1024Mi
     devcpuRequests: 500m
