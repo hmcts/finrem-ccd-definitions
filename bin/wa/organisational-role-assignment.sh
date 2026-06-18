@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-#
-# Creates one organisational role assignment for a supplied test user.
-# The WA preview setup uses this so selected Finrem users have the AM roles
-# needed to see and work allocated tasks.
 
 set -euo pipefail
 

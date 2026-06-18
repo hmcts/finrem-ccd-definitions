@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-#
-# Uploads Finrem Work Allocation DMN decision tables to the preview Camunda engine.
-# Jenkins runs this after the WA preview pods are installed so each PR environment
-# has the task configuration decisions needed by WA.
 
 set -euo pipefail
 

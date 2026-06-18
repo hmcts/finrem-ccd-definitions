@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-#
-# Pulls the shared standalone WA BPMN resources into ./resources.
-# Jenkins does this before importing BPMN so preview uses the central WA
-# workflow definitions rather than storing a copy in this repository.
 
 set -euo pipefail
 

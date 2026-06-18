@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-#
-# Pulls Finrem WA task configuration DMN files into a local import directory.
-# Jenkins runs this before DMN import so the preview Camunda deployment uses
-# the latest task configuration from the configured task-configuration repo.
 
 set -euo pipefail
 
