@@ -192,32 +192,6 @@ ccd:
         UPLOAD_TIMESTAMP_FEATURED_CASE_TYPES: FinancialRemedyContested, FinancialRemedyMVP2
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
 
-  am-role-assignment-service:
-    java:
-      disableKeyVaults: true
-      devmemoryRequests: 1024Mi
-      devcpuRequests: 500m
-      devmemoryLimits: 2048Mi
-      devcpuLimits: 1500m
-      ingressHost: am-role-assignment-service-${SERVICE_FQDN}
-      autoscaling:
-        enabled: false
-        minReplicas: 1
-        maxReplicas: 1
-      environment:
-        AM_ROLE_ASSIGNMENT_SERVICE_SECRET: ${AM_ROLE_ASSIGNMENT_SERVICE_SECRET}
-        APPLICATION_LOGGING_LEVEL: TRACE
-        CCD_DATA_STORE_URL: http://${SERVICE_NAME}-ccd-data-store-api
-        LD_SDK_KEY: ${LD_SDK_AM_KEY}
-        ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD: ${ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD}
-        ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET: ${ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET}
-        RUN_LD_ON_STARTUP: false
-      keyVaults: []
-      secrets:
-        ROLE_ASSIGNMENT_DB_PASSWORD:
-          secretRef: postgres
-          key: PASSWORD
-
   ccd-case-print-service:
     nodejs:
       disableKeyVaults: true
