@@ -236,7 +236,7 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
 
       // Check unapproved draft order tab
-      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders('agreed-draft-order-document.docx');
+      await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedApprovedOrders('agreed-draft-order-document.');
       await unprocessedApprovedOrdersPage.navigateContinue();
 
       // Do NOT add a hearing, just continue
