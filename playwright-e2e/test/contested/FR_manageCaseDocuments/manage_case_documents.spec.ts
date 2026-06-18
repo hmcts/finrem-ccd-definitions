@@ -119,7 +119,7 @@ async function openAmendDocumentFlowStep(
 ): Promise<void> {
   await test.step('Open amend document flow', async () => {
     await manageCaseDocumentsPage.amendDoc();
-    await expect(page.getByRole('link', { name: SEEDED_DOCUMENT_FILENAME })).toBeVisible();
+    await expect(page.getByRole('button', { name: SEEDED_DOCUMENT_FILENAME })).toBeVisible();
   });
 }
 
