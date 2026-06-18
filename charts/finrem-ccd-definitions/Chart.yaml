@@ -60,7 +60,3 @@ dependencies:
     version: 0.0.76
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: am-org-role-mapping-service.enabled
-  - name: am-role-assignment-service
-    version: 0.0.84
-    repository: 'oci://hmctsprod.azurecr.io/helm'
-    condition: am-role-assignment-service.enabled

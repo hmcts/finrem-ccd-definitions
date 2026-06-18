@@ -13,7 +13,7 @@ xui-webapp:
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
 
 am-role-assignment-service:
-  enabled: ${ENABLE_WA}
+  enabled: true
   java:
     image: hmctsprod.azurecr.io/am/role-assignment-service:pr-2733
     disableKeyVaults: true
