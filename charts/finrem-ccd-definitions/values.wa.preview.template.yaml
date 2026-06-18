@@ -34,10 +34,6 @@ am-role-assignment-service:
       ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD: ${ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD}
       ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET: ${ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET}
       RUN_LD_ON_STARTUP: false
-    secrets:
-      ROLE_ASSIGNMENT_DB_PASSWORD:
-        secretRef: postgres
-        key: PASSWORD
 
 ccd-data-store-api:
   enabled: ${ENABLE_WA}
