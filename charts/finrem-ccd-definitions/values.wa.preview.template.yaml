@@ -15,25 +15,24 @@ xui-webapp:
 am-role-assignment-service:
   enabled: true
   java:
-    image: hmctsprod.azurecr.io/am/role-assignment-service:pr-2733
+    image: 'hmctsprod.azurecr.io/am/role-assignment-service:pr-2733'
     disableKeyVaults: true
-    devmemoryRequests: 1024Mi
-    devcpuRequests: 500m
-    devmemoryLimits: 2048Mi
-    devcpuLimits: 1500m
+    keyVaults:
+      am:
+        secrets:
+          - role-assignment-service-LD-SDK-KEY
     ingressHost: am-role-assignment-service-${SERVICE_FQDN}
-    autoscaling:
-      enabled: false
-      minReplicas: 1
-      maxReplicas: 1
     environment:
-      AM_ROLE_ASSIGNMENT_SERVICE_SECRET: ${AM_ROLE_ASSIGNMENT_SERVICE_SECRET}
-      APPLICATION_LOGGING_LEVEL: TRACE
-      CCD_DATA_STORE_URL: http://${SERVICE_NAME}-ccd-data-store-api
+      ROLE_ASSIGNMENT_DB_HOST: '{{ .Values.global.postgresHostname }}'
+      ROLE_ASSIGNMENT_DB_NAME: "{{ .Values.global.databaseNamePrefix }}role-assignment"
+      CCD_DATA_STORE_URL: "http://${SERVICE_NAME}-ccd-data-store-api"
+      ROLE_ASSIGNMENT_S2S_AUTHORISED_SERVICES: probate_backend,ccd_gw,am_role_assignment_service,am_org_role_mapping_service,wa_task_management_api,wa_task_configuration_api,xui_webapp,aac_manage_case_assignment,ccd_data,wa_workflow_api,wa_task_monitor,wa_case_event_handler,iac,hmc_cft_hearing_service,ccd_case_disposer
+      LAUNCH_DARKLY_ENV: pr
       LD_SDK_KEY: ${LD_SDK_AM_KEY}
-      ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD: ${ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD}
-      ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET: ${ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET}
-      RUN_LD_ON_STARTUP: false
+  devcpuRequests: 250m
+  devcpuLimits: 512m
+  devmemoryRequests: 1Gi
+  devmemoryLimits: 2Gi
 
 ccd-data-store-api:
   enabled: ${ENABLE_WA}
