@@ -83,15 +83,15 @@ export class AxeUtils {
       }
     }
 
-    const formatted = results.violations.map(v => ({
+    const formatted = results.violations.map(v => {return {
       rule: v.id,
       impact: v.impact,
       url: this.page.url(),
-      nodes: v.nodes.map(n => ({
+      nodes: v.nodes.map(n => {return {
         html: n.html,
-        target: n.target,
-      })),
-    }));
+        target: n.target
+      };})
+    };});
 
     expect.soft(formatted, 'Accessibility violations').toEqual([]);
   }

@@ -138,81 +138,81 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
   );
 
   test(
-      'Paper Case creating a hearing from Process Order (MH)',
-      { tag: ['@MH'] },
-      async ({
-               loginPage,
-               manageCaseDashboardPage,
-               caseDetailsPage,
-               uploadDraftOrdersPage,
-               unprocessedApprovedOrdersPage,
-               processOrderHearingDetailsPage,
-               checkYourAnswersPage,
-             }) => {
-        const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({
-          isFormA: false,
-        });
+    'Paper Case creating a hearing from Process Order (MH)',
+    { tag: ['@MH'] },
+    async ({
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage,
+      uploadDraftOrdersPage,
+      unprocessedApprovedOrdersPage,
+      processOrderHearingDetailsPage,
+      checkYourAnswersPage
+    }) => {
+      const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({
+        isFormA: false
+      });
 
-        const orderDoc = await progressToProcessOrderEvent(
-            caseId,
-            loginPage,
-            manageCaseDashboardPage,
-            caseDetailsPage,
-            uploadDraftOrdersPage
+      const orderDoc = await progressToProcessOrderEvent(
+        caseId,
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        uploadDraftOrdersPage
+      );
+
+      await test.step('Navigate to case and open Process Order event', async () => {
+        await manageCaseDashboardPage.navigateToCase(caseId);
+        await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
+      });
+
+      await test.step('Navigate through approved order', async () => {
+        await unprocessedApprovedOrdersPage.navigateContinue();
+      });
+
+      await test.step('Add hearing details', async () => {
+        await processOrderHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
+        await processOrderHearingDetailsPage.selectTypeOfHearing(
+          'First Directions Appointment (FDA)'
+        );
+        await processOrderHearingDetailsPage.enterTimeEstimate('30');
+        await processOrderHearingDetailsPage.enterHearingDate('01', '01', '2024');
+        await processOrderHearingDetailsPage.enterHearingTime('10:00');
+        await processOrderHearingDetailsPage.selectCourtForHearing();
+        await processOrderHearingDetailsPage.selectHearingAttendance('In person');
+        await processOrderHearingDetailsPage.enterAdditionalInformationAboutHearing(
+          'This is a test hearing'
+        );
+        await processOrderHearingDetailsPage.selectAdditionalHearingDocument(
+          YesNoRadioEnum.NO
+        );
+        await processOrderHearingDetailsPage.selectSendNoticeOfHearing(
+          YesNoRadioEnum.YES
         );
 
-        await test.step('Navigate to case and open Process Order event', async () => {
-          await manageCaseDashboardPage.navigateToCase(caseId);
-          await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
-        });
+        await processOrderHearingDetailsPage.navigateContinue();
+      });
 
-        await test.step('Navigate through approved order', async () => {
-          await unprocessedApprovedOrdersPage.navigateContinue();
-        });
+      await test.step('Check your answers and submit', async () => {
+        await checkYourAnswersPage.assertCheckYourAnswersPage(
+          unprocessedApprovedOrdersWithNewHearingTable
+        );
 
-        await test.step('Add hearing details', async () => {
-          await processOrderHearingDetailsPage.selectIsAnotherHearingToBeListed(true);
-          await processOrderHearingDetailsPage.selectTypeOfHearing(
-              'First Directions Appointment (FDA)'
-          );
-          await processOrderHearingDetailsPage.enterTimeEstimate('30');
-          await processOrderHearingDetailsPage.enterHearingDate('01', '01', '2024');
-          await processOrderHearingDetailsPage.enterHearingTime('10:00');
-          await processOrderHearingDetailsPage.selectCourtForHearing();
-          await processOrderHearingDetailsPage.selectHearingAttendance('In person');
-          await processOrderHearingDetailsPage.enterAdditionalInformationAboutHearing(
-              'This is a test hearing'
-          );
-          await processOrderHearingDetailsPage.selectAdditionalHearingDocument(
-              YesNoRadioEnum.NO
-          );
-          await processOrderHearingDetailsPage.selectSendNoticeOfHearing(
-              YesNoRadioEnum.YES
-          );
+        await processOrderHearingDetailsPage.navigateSubmit();
+      });
 
-          await processOrderHearingDetailsPage.navigateContinue();
-        });
+      await test.step('Verify case updated with hearing and documents', async () => {
+        await caseDetailsPage.checkHasBeenUpdated(
+          ContestedEvents.processOrder.listItem
+        );
 
-        await test.step('Check your answers and submit', async () => {
-          await checkYourAnswersPage.assertCheckYourAnswersPage(
-              unprocessedApprovedOrdersWithNewHearingTable
-          );
-
-          await processOrderHearingDetailsPage.navigateSubmit();
-        });
-
-        await test.step('Verify case updated with hearing and documents', async () => {
-          await caseDetailsPage.checkHasBeenUpdated(
-              ContestedEvents.processOrder.listItem
-          );
-
-          await caseDetailsPage.assertTabData(processOrderHearingTabData);
-          await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
-          await caseDetailsPage.assertTabData(
-              createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate)
-          );
-        });
-      }
+        await caseDetailsPage.assertTabData(processOrderHearingTabData);
+        await caseDetailsPage.assertTabData(processOrderCaseDocumentsTabData);
+        await caseDetailsPage.assertTabData(
+          createDraftOrdersApprovedWithHearingTabData(orderDoc.hearingDate)
+        );
+      });
+    }
   );
 
   test(
