@@ -13,7 +13,6 @@ xui-webapp:
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
 
 am-role-assignment-service:
-  enabled: ${ENABLE_WA}
   java:
     image: hmctsprod.azurecr.io/am/role-assignment-service:pr-2733
     imagePullPolicy: Always
@@ -226,6 +225,21 @@ wa:
         S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
 
 ccd:
+  ccd:
+    definitionImporter:
+      enabled: false
+    managementWeb:
+      enabled: false
+    apiGatewayWeb:
+      enabled: true
+    s2s:
+      enabled: false
+    printService:
+      enabled: true
+    elastic:
+      enabled: true
+    ras:
+      enabled: true
   ccd-data-store-api:
     java:
       environment:
