@@ -286,7 +286,7 @@ test.describe('Contested Manage Case Documents', () => {
         await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
         await manageCaseDocumentsPage.amendDoc();
 
-        const originalDocument = page.getByRole('link', { name: SEEDED_DOCUMENT_FILENAME });
+        const originalDocument = page.getByRole('button', { name: SEEDED_DOCUMENT_FILENAME });
         await expect(originalDocument).toBeVisible();
 
         await manageCaseDocumentsPage.removeDocument();
@@ -326,7 +326,7 @@ test.describe('Contested Manage Case Documents', () => {
       await manageCaseDashboardPage.navigateToCase(caseId);
       await manageCaseDashboardPage.navigateToTab(CaseTab.ConfDocuments);
 
-      const documentButton: Locator = page.getByRole('link', { name: SEEDED_DOCUMENT_FILENAME });
+      const documentButton: Locator = page.getByRole('button', { name: SEEDED_DOCUMENT_FILENAME });
       await expect(documentButton).toBeVisible();
 
       const response = await responsePromise;

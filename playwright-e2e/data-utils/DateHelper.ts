@@ -100,13 +100,18 @@ export class DateHelper {
   };
 
   static getFormattedDateTwelveWeeksLaterWithZeroPaddedDay(): string {
-    const hearingDateIso =  DateHelper.getHearingDateTwelveWeeksLaterInISOFormat();
-    const expectedHearingDate = `${new Date(hearingDateIso).toLocaleDateString('en-GB', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric'
-    })}`;
-    return expectedHearingDate;
+    const date = new Date(
+        DateHelper.getHearingDateTwelveWeeksLaterInISOFormat()
+    );
+
+    const months = [
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+    ];
+
+    return `${String(date.getDate()).padStart(2, '0')} ${
+        months[date.getMonth()]
+    } ${date.getFullYear()}`;
   }
 
   /**

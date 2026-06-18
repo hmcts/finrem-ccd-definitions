@@ -6,54 +6,81 @@ import {sendOrderTableData} from '../../../resources/check_your_answer_content/s
 import {contestedSendOrderTabData} from '../../../resources/tab_content/contested/orders_tab';
 
 test.describe('Contested - Approved and Send Order', () => {
-  test(
-    'Form A case up to process order and send order',
-    { tag: ['@process-order'] },
-    async (
-      {
-        loginPage,
-        manageCaseDashboardPage,
-        caseDetailsPage,
-        sendOrderPage,
-        checkYourAnswersPage,
-        axeUtils
-      }, testInfo
-    ) => {
-        
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToProcessOrderLegacy();
-    
-      await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(
-        config.caseWorker.email,
-        config.caseWorker.password,
-        config.manageCaseBaseURL,
-        config.loginPaths.worklist
-      );
+    test(
+        'Form A case up to process order and send order',
+        { tag: ['@process-order'] },
+        async ({
+                   loginPage,
+                   manageCaseDashboardPage,
+                   caseDetailsPage,
+                   sendOrderPage,
+                   checkYourAnswersPage,
+                   axeUtils,
+               }) => {
+            const caseId = await test.step(
+                'Create Form A case up to Process Order',
+                async () => {
+                    return await ContestedCaseFactory.createAndProcessFormACaseUpToProcessOrderLegacy();
+                }
+            );
 
-      await manageCaseDashboardPage.navigateToCase(caseId);
+            await test.step('Caseworker sends approved order', async () => {
+                await manageCaseDashboardPage.visit();
 
-      // Send Order
-      await caseDetailsPage.selectNextStep(ContestedEvents.contestedSendOrder);
-      await sendOrderPage.selectSendApprovedOrder();
-      await axeUtils.audit();
-      await sendOrderPage.navigateContinue();
-      await axeUtils.audit();
-      await sendOrderPage.navigateContinue();
-      await sendOrderPage.uploadDocument('./playwright-e2e/resources/file/test.docx');
-      await axeUtils.audit();
-      await sendOrderPage.navigateContinue();
-      await sendOrderPage.clickCaseStateButton();
-      await sendOrderPage.selectCaseState('Order Sent');
-      await axeUtils.audit();
-      await sendOrderPage.navigateContinue();
+                await loginPage.loginWaitForPath(
+                    config.caseWorker.email,
+                    config.caseWorker.password,
+                    config.manageCaseBaseURL,
+                    config.loginPaths.worklist
+                );
 
-      // Continue about to submit and check your answers
-      await checkYourAnswersPage.assertCheckYourAnswersPage(sendOrderTableData); 
-      await sendOrderPage.navigateSubmit();
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.contestedSendOrder.listItem);
+                await manageCaseDashboardPage.navigateToCase(caseId);
 
-      // Assert Order tab data
-      await caseDetailsPage.assertTabData(contestedSendOrderTabData);
-    }
-  );
+                await caseDetailsPage.selectNextStep(
+                    ContestedEvents.contestedSendOrder
+                );
+
+                await sendOrderPage.selectSendApprovedOrder();
+
+                await axeUtils.audit();
+
+                await sendOrderPage.navigateContinue();
+
+                await axeUtils.audit();
+
+                await sendOrderPage.navigateContinue();
+
+                await sendOrderPage.uploadDocument(
+                    './playwright-e2e/resources/file/test.docx'
+                );
+
+                await sendOrderPage.navigateContinue();
+
+                await sendOrderPage.clickCaseStateButton();
+                await sendOrderPage.selectCaseState('Order Sent');
+
+                await axeUtils.audit();
+
+                await sendOrderPage.navigateContinue();
+            });
+
+            await test.step('Submit send order event', async () => {
+                await checkYourAnswersPage.assertCheckYourAnswersPage(
+                    sendOrderTableData
+                );
+
+                await sendOrderPage.navigateSubmit();
+
+                await caseDetailsPage.checkHasBeenUpdated(
+                    ContestedEvents.contestedSendOrder.listItem
+                );
+            });
+
+            await test.step('Verify order tab data', async () => {
+                await caseDetailsPage.assertTabData(
+                    contestedSendOrderTabData
+                );
+            });
+        }
+    );
 });

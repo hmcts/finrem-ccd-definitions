@@ -38,7 +38,7 @@ export class GeneralApplicationDirectionsPage extends ManageHearingPage {
     this.additionalInformation = this.page.locator('#generalApplicationDirectionsAdditionalInformation');
     this.selectNoForNoticeOfHearingErrorMessage = page.getByText('Select "Yes" for "Do you want');
     this.selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage = page.getByText('Select Applicant and');
-    this.generalApplicationDirectionPreviewLink = page.getByRole('link', { name: 'generalApplicationOrder.pdf' });
+    this.generalApplicationDirectionPreviewLink = page.getByRole('button', { name: 'generalApplicationOrder.pdf' });
   }
 
   async chooseWhetherAHearingIsRequired(whetherAHearingIsRequired: YesNoRadioEnum) {
