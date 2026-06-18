@@ -8,7 +8,7 @@ set -euo pipefail
 
 basedir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 user_ids_file=${1:-"${basedir}/aat-caseworker-user-ids.json"}
-user_type=${2:-JUDICIAL}
+user_type=${2:-CASEWORKER}
 org_role_mapping_url=${ORG_ROLE_MAPPING_URL:-}
 
 if [[ -z "${org_role_mapping_url}" && -n "${CHANGE_ID:-}" ]]; then
