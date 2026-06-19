@@ -4613,6 +4613,7 @@
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
     "ListElementCode": "judgeNameGuidance",
+    "FieldShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
     "DisplayContext": "READONLY"
   },
   {
@@ -4621,6 +4622,7 @@
     "CaseEventID": "FR_draftOrders",
     "CaseFieldID": "uploadAgreedDraftOrder",
     "ListElementCode": "judgeKnownAtHearing",
+    "FieldShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
     "DisplayContext": "MANDATORY"
   },
   {
@@ -6240,7 +6242,7 @@
     "CaseEventID": "FR_uploadApprovedOrder",
     "CaseFieldID": "cwApprovedOrderCollection",
     "ListElementCode": "isFinalOrder",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "02/10/2025",
@@ -6264,7 +6266,7 @@
     "CaseEventID": "FR_uploadApprovedOrderMh",
     "CaseFieldID": "cwApprovedOrderCollection",
     "ListElementCode": "isFinalOrder",
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "MANDATORY"
   },
   {
     "LiveFrom": "02/10/2025",
