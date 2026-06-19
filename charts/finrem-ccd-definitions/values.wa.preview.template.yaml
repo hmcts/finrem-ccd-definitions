@@ -3,6 +3,8 @@
 xui-webapp:
   enabled: true
   nodejs:
+    imagePullPolicy: Always
+    image: hmctsprod.azurecr.io/xui/webapp:pr-5225
     environment:
       HEALTH_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service/health
       SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
