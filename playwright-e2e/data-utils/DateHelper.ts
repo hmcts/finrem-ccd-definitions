@@ -101,12 +101,12 @@ export class DateHelper {
 
   static getFormattedDateTwelveWeeksLaterWithZeroPaddedDay(): string {
     const date = new Date(
-        DateHelper.getHearingDateTwelveWeeksLaterInISOFormat()
+      DateHelper.getHearingDateTwelveWeeksLaterInISOFormat()
     );
 
     return `${String(date.getDate()).padStart(2, '0')} ${date
-        .toLocaleDateString('en-GB', { month: 'short' })
-        .slice(0, 3)} ${date.getFullYear()}`;
+      .toLocaleDateString('en-GB', { month: 'short' })
+      .slice(0, 3)} ${date.getFullYear()}`;
   }
 
   /**
