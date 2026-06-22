@@ -2,23 +2,161 @@ import { expect, test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
-import {DateHelper} from '../../../data-utils/DateHelper';
-import {
-  amendedDocumentTabData,
-  getConfidentialDocumentsTabData,
-  getFdrDocumentsTabData,
-  getSpecialTypeConfidentialDocumentsTabData,
-  getWithoutPrejudiceDocumentsTabData
-} from '../../../resources/tab_content/contested/manage_case_documents_tabs';
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 import { DocumentClient, DocumentMetadata } from '../../../data-utils/api/DocumentClient.ts';
 import { CaseTab } from '../../../pages/ManageCaseDashboardPage.ts';
-import { Locator } from '@playwright/test';
+import { SigninPage } from '../../../pages/SigninPage';
+import { ManageCaseDashboardPage } from '../../../pages/ManageCaseDashboardPage';
+import { ManageCaseDocumentsPage } from '../../../pages/events/manage-case-documents/ManageCaseDocumentsPage';
+import { CaseDetailsPage } from '../../../pages/CaseDetailsPage';
+import { CheckYourAnswersPage } from '../../../pages/CheckYourAnswersPage';
+import { AxeUtils } from '../../../fixtures/utils/axe-utils';
+import { Table } from '../../../pages/components/table.ts';
+import { Locator, Page } from '@playwright/test';
 import {
   manageCaseDocumentsTableNewConfidential,
   manageCaseDocumentsTableNewNonConfidential,
   manageCaseDocumentsTableNonConfidentialWitnessSummons
 } from '../../../resources/check_your_answer_content/manage_case_documents/manageCaseDocumentsTable';
+
+const UPLOAD_FILENAME: string = 'test.docx';
+const SEEDED_DOCUMENT_FILENAME: string = 'caseDoc.docx';
+
+type Confidentiality = 'confidential' | 'non-confidential';
+
+async function createContestedCaseStep(): Promise<string> {
+  return test.step('Create contested case', async () => {
+    return ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+  });
+}
+
+async function seedDocumentStep(caseId: string): Promise<void> {
+  await test.step('Seed case with existing document', async () => {
+    await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(caseId);
+  });
+}
+
+async function loginAsCaseworkerStep(
+  loginPage: SigninPage,
+  manageCaseDashboardPage: ManageCaseDashboardPage
+): Promise<void> {
+  await test.step('Login as caseworker', async () => {
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(
+      config.caseWorker.email,
+      config.caseWorker.password,
+      config.manageCaseBaseURL,
+      config.loginPaths.worklist
+    );
+  });
+}
+
+async function loginAsSuperCaseworkerStep(
+  loginPage: SigninPage,
+  manageCaseDashboardPage: ManageCaseDashboardPage
+): Promise<void> {
+  await test.step('Login as super caseworker', async () => {
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(
+      config.superCaseWorker.email,
+      config.superCaseWorker.password,
+      config.manageCaseBaseURL,
+      config.loginPaths.cases
+    );
+  });
+}
+
+async function openManageCaseDocumentsEventStep(
+  manageCaseDashboardPage: ManageCaseDashboardPage,
+  caseDetailsPage: CaseDetailsPage,
+  caseId: string
+): Promise<void> {
+  await test.step('Open manage case documents event', async () => {
+    await manageCaseDashboardPage.navigateToCase(caseId);
+    await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
+  });
+}
+
+async function uploadNewOtherDocumentStep(
+  manageCaseDocumentsPage: ManageCaseDocumentsPage,
+  options: {
+    documentType: string;
+    confidentiality: Confidentiality;
+    includeFdr?: boolean;
+  }
+): Promise<void> {
+  await test.step(`Upload ${options.confidentiality} document`, async () => {
+    await manageCaseDocumentsPage.navigateAddNew();
+    await manageCaseDocumentsPage.uploadCaseDocument(UPLOAD_FILENAME);
+    await manageCaseDocumentsPage.selectDocument('Other');
+    await manageCaseDocumentsPage.fillDocumentType(options.documentType);
+    await manageCaseDocumentsPage.checkConfidentiality(options.confidentiality);
+
+    if (options.includeFdr !== undefined) {
+      await manageCaseDocumentsPage.checkFdr(options.includeFdr);
+    }
+
+    await manageCaseDocumentsPage.checkDocumentBehalfOfApplicant();
+    await manageCaseDocumentsPage.navigateContinue();
+  });
+}
+
+async function uploadNewWitnessSummonsStep(
+  manageCaseDocumentsPage: ManageCaseDocumentsPage
+): Promise<void> {
+  await test.step('Upload non-confidential witness summons document', async () => {
+    await manageCaseDocumentsPage.navigateAddNew();
+    await manageCaseDocumentsPage.uploadCaseDocument(UPLOAD_FILENAME);
+    await manageCaseDocumentsPage.selectDocument('Witness Summons');
+    await manageCaseDocumentsPage.checkConfidentiality('non-confidential');
+    await manageCaseDocumentsPage.navigateContinue();
+  });
+}
+
+async function openAmendDocumentFlowStep(
+  manageCaseDocumentsPage: ManageCaseDocumentsPage,
+  page: Page
+): Promise<void> {
+  await test.step('Open amend document flow', async () => {
+    await manageCaseDocumentsPage.amendDoc();
+    await expect(page.getByRole('button', { name: SEEDED_DOCUMENT_FILENAME })).toBeVisible();
+  });
+}
+
+async function uploadAmendedWitnessSummonsStep(
+  manageCaseDocumentsPage: ManageCaseDocumentsPage
+): Promise<void> {
+  await test.step('Upload amended document', async () => {
+    await manageCaseDocumentsPage.uploadDocument(UPLOAD_FILENAME);
+    await manageCaseDocumentsPage.selectDocument('Witness Summons');
+    await manageCaseDocumentsPage.checkConfidentiality('non-confidential');
+    await manageCaseDocumentsPage.navigateContinue();
+  });
+}
+
+async function verifyCheckYourAnswersStep(
+  checkYourAnswersPage: CheckYourAnswersPage,
+  expectedContent: Table
+): Promise<void> {
+  await test.step('Verify check your answers summary', async () => {
+    await checkYourAnswersPage.assertCheckYourAnswersPage(expectedContent);
+  });
+}
+
+async function continueAndSubmitStep(
+  manageCaseDocumentsPage: ManageCaseDocumentsPage,
+  stepLabel: string
+): Promise<void> {
+  await test.step(stepLabel, async () => {
+    await manageCaseDocumentsPage.navigateSubmit();
+  });
+}
+
+async function runAccessibilityAuditStep(axeUtils: AxeUtils): Promise<void> {
+  await test.step('Run accessibility audit', async () => {
+    await axeUtils.audit();
+  });
+}
 
 test.describe('Contested Manage Case Documents', () => {
   test(
@@ -32,56 +170,21 @@ test.describe('Contested Manage Case Documents', () => {
       axeUtils,
       checkYourAnswersPage
     }) => {
-      let caseId: string;
+      const caseId = await createContestedCaseStep();
 
-      await test.step('Create contested case', async () => {
-        caseId =
-                    await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      await loginAsCaseworkerStep(loginPage, manageCaseDashboardPage);
+      await openManageCaseDocumentsEventStep(manageCaseDashboardPage, caseDetailsPage, caseId);
+      await uploadNewOtherDocumentStep(manageCaseDocumentsPage, {
+        documentType: 'test document type',
+        confidentiality: 'non-confidential',
+        includeFdr: false
       });
-
-      await test.step('Login as caseworker', async () => {
-        await manageCaseDashboardPage.visit();
-
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.worklist
-        );
-      });
-
-      await test.step('Open manage case documents event', async () => {
-        await manageCaseDashboardPage.navigateToCase(caseId);
-
-        await caseDetailsPage.selectNextStep(
-          ContestedEvents.manageCaseDocuments
-        );
-      });
-
-      await test.step('Upload non-confidential document', async () => {
-        await manageCaseDocumentsPage.navigateAddNew();
-        await manageCaseDocumentsPage.uploadCaseDocument('test.docx');
-        await manageCaseDocumentsPage.selectDocument('Other');
-        await manageCaseDocumentsPage.fillDocumentType('test document type');
-        await manageCaseDocumentsPage.checkConfidentiality('non-confidential');
-        await manageCaseDocumentsPage.checkFdr(false);
-        await manageCaseDocumentsPage.checkDocumentBehalfOfApplicant();
-        await manageCaseDocumentsPage.navigateContinue();
-      });
-
-      await test.step('Verify check your answers summary', async () => {
-        await checkYourAnswersPage.assertCheckYourAnswersPage(
-          manageCaseDocumentsTableNewNonConfidential
-        );
-      });
-
-      await test.step('Submit manage case documents event', async () => {
-        await manageCaseDocumentsPage.navigateSubmit();
-      });
-
-      await test.step('Run accessibility audit', async () => {
-        await axeUtils.audit();
-      });
+      await verifyCheckYourAnswersStep(
+        checkYourAnswersPage,
+        manageCaseDocumentsTableNewNonConfidential
+      );
+      await continueAndSubmitStep(manageCaseDocumentsPage, 'Submit manage case documents event');
+      await runAccessibilityAuditStep(axeUtils);
     }
   );
 
@@ -95,55 +198,20 @@ test.describe('Contested Manage Case Documents', () => {
       axeUtils,
       checkYourAnswersPage
     }) => {
-      let caseId: string;
+      const caseId = await createContestedCaseStep();
 
-      await test.step('Create contested case', async () => {
-        caseId =
-                    await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+      await loginAsCaseworkerStep(loginPage, manageCaseDashboardPage);
+      await openManageCaseDocumentsEventStep(manageCaseDashboardPage, caseDetailsPage, caseId);
+      await uploadNewOtherDocumentStep(manageCaseDocumentsPage, {
+        documentType: 'test',
+        confidentiality: 'confidential'
       });
-
-      await test.step('Login as caseworker', async () => {
-        await manageCaseDashboardPage.visit();
-
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.worklist
-        );
-      });
-
-      await test.step('Open manage case documents event', async () => {
-        await manageCaseDashboardPage.navigateToCase(caseId);
-
-        await caseDetailsPage.selectNextStep(
-          ContestedEvents.manageCaseDocuments
-        );
-      });
-
-      await test.step('Upload confidential document', async () => {
-        await manageCaseDocumentsPage.navigateAddNew();
-        await manageCaseDocumentsPage.uploadCaseDocument('test.docx');
-        await manageCaseDocumentsPage.selectDocument('Other');
-        await manageCaseDocumentsPage.fillDocumentType('test');
-        await manageCaseDocumentsPage.checkConfidentiality('confidential');
-        await manageCaseDocumentsPage.checkDocumentBehalfOfApplicant();
-        await manageCaseDocumentsPage.navigateContinue();
-      });
-
-      await test.step('Verify check your answers summary', async () => {
-        await checkYourAnswersPage.assertCheckYourAnswersPage(
-          manageCaseDocumentsTableNewConfidential
-        );
-      });
-
-      await test.step('Submit manage case documents event', async () => {
-        await manageCaseDocumentsPage.navigateSubmit();
-      });
-
-      await test.step('Run accessibility audit', async () => {
-        await axeUtils.audit();
-      });
+      await verifyCheckYourAnswersStep(
+        checkYourAnswersPage,
+        manageCaseDocumentsTableNewConfidential
+      );
+      await continueAndSubmitStep(manageCaseDocumentsPage, 'Submit manage case documents event');
+      await runAccessibilityAuditStep(axeUtils);
     }
   );
 
@@ -157,63 +225,17 @@ test.describe('Contested Manage Case Documents', () => {
       axeUtils,
       checkYourAnswersPage
     }) => {
-      let caseId: string;
+      const caseId = await createContestedCaseStep();
 
-      await test.step('Create contested case', async () => {
-        caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-      });
-
-      await test.step('Login as caseworker', async () => {
-        await manageCaseDashboardPage.visit();
-
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.worklist
-        );
-      });
-
-      await test.step('Open manage case documents event', async () => {
-        await manageCaseDashboardPage.navigateToCase(caseId);
-
-        await caseDetailsPage.selectNextStep(
-          ContestedEvents.manageCaseDocuments
-        );
-      });
-
-      await test.step(
-        'Upload non-confidential witness summons document',
-        async () => {
-          await manageCaseDocumentsPage.navigateAddNew();
-
-          await manageCaseDocumentsPage.uploadCaseDocument('test.docx');
-
-          await manageCaseDocumentsPage.selectDocument(
-            'Witness Summons'
-          );
-
-          await manageCaseDocumentsPage.checkConfidentiality(
-            'non-confidential'
-          );
-
-          await manageCaseDocumentsPage.navigateContinue();
-        }
+      await loginAsCaseworkerStep(loginPage, manageCaseDashboardPage);
+      await openManageCaseDocumentsEventStep(manageCaseDashboardPage, caseDetailsPage, caseId);
+      await uploadNewWitnessSummonsStep(manageCaseDocumentsPage);
+      await verifyCheckYourAnswersStep(
+        checkYourAnswersPage,
+        manageCaseDocumentsTableNonConfidentialWitnessSummons
       );
-
-      await test.step('Verify check your answers summary', async () => {
-        await checkYourAnswersPage.assertCheckYourAnswersPage(
-          manageCaseDocumentsTableNonConfidentialWitnessSummons
-        );
-      });
-
-      await test.step('Submit manage case documents event', async () => {
-        await manageCaseDocumentsPage.navigateSubmit();
-      });
-
-      await test.step('Run accessibility audit', async () => {
-        await axeUtils.audit();
-      });
+      await continueAndSubmitStep(manageCaseDocumentsPage, 'Submit manage case documents event');
+      await runAccessibilityAuditStep(axeUtils);
     }
   );
 
@@ -227,98 +249,57 @@ test.describe('Contested Manage Case Documents', () => {
       caseDetailsPage,
       checkYourAnswersPage
     }) => {
-      let caseId: string;
+      const caseId = await createContestedCaseStep();
+      await seedDocumentStep(caseId);
 
-      await test.step(
-        'Create contested case with existing document',
-        async () => {
-          caseId =
-                        await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-
-          await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(
-            caseId
-          );
-        }
+      await loginAsSuperCaseworkerStep(loginPage, manageCaseDashboardPage);
+      await openManageCaseDocumentsEventStep(manageCaseDashboardPage, caseDetailsPage, caseId);
+      await openAmendDocumentFlowStep(manageCaseDocumentsPage, page);
+      await uploadAmendedWitnessSummonsStep(manageCaseDocumentsPage);
+      await verifyCheckYourAnswersStep(
+        checkYourAnswersPage,
+        manageCaseDocumentsTableNonConfidentialWitnessSummons
       );
-
-      await test.step('Login as super caseworker', async () => {
-        await manageCaseDashboardPage.visit();
-
-        await loginPage.loginWaitForPath(
-          config.superCaseWorker.email,
-          config.superCaseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
-      });
-
-      await test.step('Open manage case documents event', async () => {
-        await manageCaseDashboardPage.navigateToCase(caseId);
-
-        await caseDetailsPage.selectNextStep(
-          ContestedEvents.manageCaseDocuments
-        );
-      });
-
-      await test.step('Open amend document flow', async () => {
-        await manageCaseDocumentsPage.amendDoc();
-
-        await expect(
-          page.getByRole('button', { name: 'caseDoc.docx' })
-        ).toBeVisible();
-      });
-
-      await test.step('Upload amended document', async () => {
-        await manageCaseDocumentsPage.uploadDocument('test.docx');
-
-        await manageCaseDocumentsPage.selectDocument(
-          'Witness Summons'
-        );
-
-        await manageCaseDocumentsPage.checkConfidentiality(
-          'non-confidential'
-        );
-
-        await manageCaseDocumentsPage.navigateContinue();
-      });
-
-      await test.step('Verify check your answers summary', async () => {
-        await checkYourAnswersPage.assertCheckYourAnswersPage(
-          manageCaseDocumentsTableNonConfidentialWitnessSummons
-        );
-      });
-
-      await test.step('Submit amended document', async () => {
-        await manageCaseDocumentsPage.navigateSubmit();
-      });
+      await continueAndSubmitStep(manageCaseDocumentsPage, 'Submit amended document');
     }
   );
 
-  test('Contested - Super Caseworker Manage Case Documents New event, amend event, delete existing document', 
+  test(
+    'Contested - Super Caseworker Manage Case Documents New event, amend event, delete existing document',
     { tag: [] },
-    async ({ loginPage, manageCaseDashboardPage, manageCaseDocumentsPage, page, caseDetailsPage, axeUtils, checkYourAnswersPage }) => {
-      // Create and setup case
-      const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-      await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(caseId);
+    async ({
+      loginPage,
+      manageCaseDashboardPage,
+      manageCaseDocumentsPage,
+      page,
+      caseDetailsPage
+    }) => {
+      const caseId = await createContestedCaseStep();
+      await seedDocumentStep(caseId);
 
-      // Login as super caseworker and navigate to case
-      await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.superCaseWorker.email, config.superCaseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
-      await manageCaseDashboardPage.navigateToCase(caseId);
+      await loginAsSuperCaseworkerStep(loginPage, manageCaseDashboardPage);
+      await test.step('Navigate to case', async () => {
+        await manageCaseDashboardPage.navigateToCase(caseId);
+      });
 
-      // Manage case documents - amend document
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
-      await manageCaseDocumentsPage.amendDoc();
-      await manageCaseDocumentsPage.navigateContinue();
-      //expect original document to be visible
-      await expect(page.getByRole('button', { name: 'caseDoc.docx' })).toBeVisible();
-      await manageCaseDocumentsPage.removeDocument();
-      await expect(page.getByRole('button', { name: 'caseDoc.dox'})).toBeHidden({ timeout: 200 });
-      await manageCaseDocumentsPage.navigateContinue();
-      await manageCaseDocumentsPage.navigateSubmit();
+      await test.step('Amend flow and delete existing document', async () => {
+        await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
+        await manageCaseDocumentsPage.amendDoc();
 
-      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocumentsNewEvent.listItem);
-      await caseDetailsPage.assertDocumentVisibleInCfv('caseDoc.docx', false);
+        const originalDocument = page.getByRole('button', { name: SEEDED_DOCUMENT_FILENAME });
+        await expect(originalDocument).toBeVisible();
+
+        await manageCaseDocumentsPage.removeDocument();
+        await expect(originalDocument).toBeHidden({ timeout: 200 });
+
+        await manageCaseDocumentsPage.navigateContinue();
+        await manageCaseDocumentsPage.navigateSubmit();
+      });
+
+      await test.step('Verify document is removed from case file view', async () => {
+        await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocuments.listItem);
+        await caseDetailsPage.assertDocumentVisibleInCfv(SEEDED_DOCUMENT_FILENAME, false);
+      });
     }
   );
 
@@ -331,53 +312,35 @@ test.describe('Contested Manage Case Documents', () => {
   }): Promise<void> => {
     let documentId: string;
     let cookieHeader: string;
-    let caseId: string;
 
-    const filename: string = 'caseDoc.docx';
+    const caseId = await createContestedCaseStep();
+    await seedDocumentStep(caseId);
 
-    await test.step('Create case and seed document', async (): Promise<void> => {
-      caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-      await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(caseId);
-    });
-
-    await test.step('Login and navigate to case', async ():Promise<void> => {
-      await manageCaseDashboardPage.visit();
-
-      await loginPage.loginWaitForPath(
-        config.superCaseWorker.email,
-        config.superCaseWorker.password,
-        config.manageCaseBaseURL,
-        config.loginPaths.cases
-      );
-    });
+    await loginAsSuperCaseworkerStep(loginPage, manageCaseDashboardPage);
 
     await test.step('Capture document ID from case data', async (): Promise<void> => {
-      const responsePromise = page.waitForResponse(res =>
-      {return res.url().includes('/data/internal/cases/') &&
-                res.status() === 200;}
-      );
+      const responsePromise = page.waitForResponse(response => {
+        return response.url().includes('/data/internal/cases/') && response.status() === 200;
+      });
 
       await manageCaseDashboardPage.navigateToCase(caseId);
-
       await manageCaseDashboardPage.navigateToTab(CaseTab.ConfDocuments);
 
-      const documentButton: Locator = page.getByRole('button', { name: filename });
-
+      const documentButton: Locator = page.getByRole('button', { name: SEEDED_DOCUMENT_FILENAME });
       await expect(documentButton).toBeVisible();
 
       const response = await responsePromise;
-      const caseData: JSON = await response.json();
-
-      const raw: string = JSON.stringify(caseData);
-
-      const match: RegExpMatchArray | null = raw.match(/documents\/([a-f0-9-]+)\/binary/);
+      const caseData: unknown = await response.json();
+      const rawCaseData: string = JSON.stringify(caseData);
+      const match: RegExpMatchArray | null = rawCaseData.match(/documents\/([a-f0-9-]+)\/binary/);
 
       expect(match).toBeTruthy();
-
       documentId = match![1];
 
       const cookies = await page.context().cookies();
-      cookieHeader = cookies.map(c => {return `${c.name}=${c.value}`;}).join('; ');
+      cookieHeader = cookies.map(cookie => {
+        return `${cookie.name}=${cookie.value}`;
+      }).join('; ');
     });
 
     await test.step('Verify document exists before deletion', async (): Promise<void> => {
@@ -392,101 +355,45 @@ test.describe('Contested Manage Case Documents', () => {
       expect(metadata._links.self.href).toContain(documentId);
     });
 
-    await test.step('Delete the document via UI', async (): Promise<void> => {
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocumentsNewEvent);
-
+    await test.step('Delete document via UI and submit event', async (): Promise<void> => {
+      await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
       await manageCaseDocumentsPage.amendDoc();
-      await manageCaseDocumentsPage.navigateContinue();
-
       await manageCaseDocumentsPage.removeDocument();
-    });
-
-    await test.step('Submit event and verify response', async (): Promise<void> => {
       await manageCaseDocumentsPage.navigateContinue();
       await manageCaseDocumentsPage.navigateSubmit();
     });
 
-    await test.step('Re-fetch case data and assert document reference removed', async (): Promise<void> => {
-
+    await test.step('Assert document reference is removed from case documents tab', async (): Promise<void> => {
       await manageCaseDashboardPage.navigateToTab(CaseTab.CaseDocuments);
-
-      const documentButton = page.getByRole('button', { name: filename});
-
-      const noDocuments: number = 0;
-
-      await expect(documentButton).toHaveCount(noDocuments);
+      const documentButton = page.getByRole('link', { name: SEEDED_DOCUMENT_FILENAME });
+      await expect(documentButton).toHaveCount(0);
     });
   });
-});
-test(
-  'Super caseworker can remove an existing document',
-  async ({
+
+  test('Super caseworker can remove an existing document', async ({
     loginPage,
     manageCaseDashboardPage,
     manageCaseDocumentsPage,
     page,
     caseDetailsPage
   }) => {
-    let caseId: string;
+    const caseId = await createContestedCaseStep();
+    await seedDocumentStep(caseId);
 
-    await test.step(
-      'Create contested case with existing document',
-      async () => {
-        caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-
-        await ContestedEventApi.superCaseworkerAddDocManageCaseDocuments(
-          caseId
-        );
-      });
-
-    await test.step('Login as super caseworker', async () => {
-      await manageCaseDashboardPage.visit();
-
-      await loginPage.loginWaitForPath(
-        config.superCaseWorker.email,
-        config.superCaseWorker.password,
-        config.manageCaseBaseURL,
-        config.loginPaths.cases
-      );
-    });
-
-    await test.step('Open manage case documents event', async () => {
-      await manageCaseDashboardPage.navigateToCase(caseId);
-
-      await caseDetailsPage.selectNextStep(
-        ContestedEvents.manageCaseDocuments
-      );
-    });
-
-    await test.step('Open amend document flow', async () => {
-      await manageCaseDocumentsPage.amendDoc();
-
-      await expect(
-        page.getByRole('button', {name: 'caseDoc.docx'})
-      ).toBeVisible();
-    });
+    await loginAsSuperCaseworkerStep(loginPage, manageCaseDashboardPage);
+    await openManageCaseDocumentsEventStep(manageCaseDashboardPage, caseDetailsPage, caseId);
+    await openAmendDocumentFlowStep(manageCaseDocumentsPage, page);
 
     await test.step('Remove existing document', async () => {
       await manageCaseDocumentsPage.removeDocument();
-
       await manageCaseDocumentsPage.navigateContinue();
     });
 
-    await test.step('Submit document removal', async () => {
-      await manageCaseDocumentsPage.navigateSubmit();
+    await continueAndSubmitStep(manageCaseDocumentsPage, 'Submit document removal');
+
+    await test.step('Verify document has been removed from case file view', async () => {
+      await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.manageCaseDocuments.listItem);
+      await caseDetailsPage.assertDocumentVisibleInCfv(SEEDED_DOCUMENT_FILENAME, false);
     });
-
-    await test.step(
-      'Verify document has been removed from case file view',
-      async () => {
-        await caseDetailsPage.checkHasBeenUpdated(
-          ContestedEvents.manageCaseDocuments.listItem
-        );
-
-        await caseDetailsPage.assertDocumentVisibleInCfv(
-          'caseDoc.docx',
-          false
-        );
-      }
-    );
   });
+});
