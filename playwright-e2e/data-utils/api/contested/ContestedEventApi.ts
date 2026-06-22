@@ -469,7 +469,7 @@ export class ContestedEventApi {
 
     await this.updateSuperCaseWorkerSteps(caseId, [
       {
-        event: ContestedEvents.manageCaseDocumentsNewEvent.ccdCallback,
+        event: ContestedEvents.manageCaseDocuments.ccdCallback,
         payload: PayloadPath.Contested.manageCaseDocumentsAddDoc
       }
     ]);

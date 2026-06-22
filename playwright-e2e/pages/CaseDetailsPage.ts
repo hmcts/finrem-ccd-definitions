@@ -361,25 +361,14 @@ export class CaseDetailsPage {
     }
   }
 
-  async openCaseFileView(): Promise<void> {
-    await this.page.getByText('Case File View').click();
-  }
-
-  async openAndExpandCfv(): Promise<void> {
+  async openCfv(): Promise<void> {
     await expect(this.page.getByRole('tab', { name: 'Case File View' })).toBeVisible();
-
-    await this.openCaseFileView();
-
-    const toggleButton = this.page.getByRole('button', { name: 'Toggle list' });
-    await toggleButton.click();
-
+    await this.page.getByText('Case File View').click();
     await expect(this.page.getByRole('tree')).toBeVisible();
-
-    await this.page.getByText('Expand All').click();
   }
 
   async assertDocumentVisibleInCfv(docName: string, shouldBeVisible: boolean): Promise<void> {
-    await this.openAndExpandCfv();
+    await this.openCfv();
 
     const docItem: Locator = this.page.getByRole('treeitem', { name: docName, exact: true });
 
@@ -392,7 +381,7 @@ export class CaseDetailsPage {
   }
 
   async downloadDocumentFromCfv(fileName: string): Promise<void> {
-    await this.openAndExpandCfv();
+    await this.openCfv();
 
     const docRow: Locator = this.page.getByRole('treeitem', {name: new RegExp(fileName)});
 
