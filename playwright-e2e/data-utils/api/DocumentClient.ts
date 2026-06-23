@@ -23,7 +23,9 @@ export class DocumentClient {
   async getDocumentCookies(documentId: string, cookieHeader: string): Promise<DocumentMetadata> {
     const response = await axiosRequest({
       method: 'get',
-      url: `https://manage-case.${process.env.RUNNING_ENV}.platform.hmcts.net/documents/${documentId}`,
+      url: process.env.RUNNING_ENV === 'localhost' 
+        ? `http://localhost:3000/documents/${documentId}` 
+        : `https://manage-case.${process.env.RUNNING_ENV}.platform.hmcts.net/documents/${documentId}`,
       headers: {
         Cookie: cookieHeader
       },
