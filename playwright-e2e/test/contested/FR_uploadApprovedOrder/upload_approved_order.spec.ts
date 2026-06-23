@@ -113,8 +113,7 @@ test.describe('Contested - Upload Approved Order (caseworker)', { tag: ['@MH'] }
     sendOrderPage,
     checkYourAnswersPage,
     axeUtils
-  }
-  ) => {
+  }) => {
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
     await ContestedCaseFactory.caseWorkerProgressToGeneralApplicationOutcome(caseId);
     await loginAsCaseWorker(caseId, manageCaseDashboardPage, loginPage);

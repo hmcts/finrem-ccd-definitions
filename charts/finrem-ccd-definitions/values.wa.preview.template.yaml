@@ -8,7 +8,6 @@ xui-webapp:
       SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
       SERVICES_WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
       SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
-      SERVICES_ROLE_ASSIGNMENT_MAPPING_API: http://${SERVICE_NAME}-am-org-role-mapping-service
       WA_SUPPORTED_JURISDICTIONS: DIVORCE
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
 
