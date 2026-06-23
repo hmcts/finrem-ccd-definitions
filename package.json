@@ -83,7 +83,7 @@
     "generate-excel-ithc-consented": "bash bin/consented/generate-excel-ithc-consented.sh",
     "generate-excel-perftest-consented": "bash bin/consented/generate-excel-perftest-consented.sh",
     "generate-excel-prod-consented": "bash bin/consented/generate-excel-prod-consented.sh",
-    "generate-excel-all-consented": "yarn generate-excel-consented && yarn generate-excel-local-consented && yarn generate-excel-demo-consented && yarn generate-excel-aat-consented && yarn generate-excel-ithc-consented && yarn generate-excel-demo-prod-like-consented && yarn generate-excel-perftest-consented && yarn generate-excel-prod-consented && yarn generate-excel-preview-wa-consented && yarn generate-excel-aat-wa-consented",
+    "generate-excel-all-consented": "yarn generate-excel-consented && yarn generate-excel-local-consented && yarn generate-excel-demo-consented && yarn generate-excel-aat-consented && yarn generate-excel-ithc-consented && yarn generate-excel-demo-prod-like-consented && yarn generate-excel-perftest-consented && yarn generate-excel-prod-consented",
     "generate-json-contested": "bash bin/contested/generate-json-contested.sh",
     "generate-excel-contested": "yarn run copy-common-components-contested && bash bin/contested/generate-excel-contested.sh",
     "generate-excel-local-contested": "bash bin/contested/generate-excel-local-contested.sh",

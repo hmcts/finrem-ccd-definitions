@@ -244,7 +244,6 @@ ccd:
         WELSH_TRANSLATION_ENABLED: false
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
-        DATA_STORE_DEFAULT_LOG_LEVEL: DEBUG
       ingressHost: ccd-definition-store-${SERVICE_FQDN}
 
   ccd-admin-web:
