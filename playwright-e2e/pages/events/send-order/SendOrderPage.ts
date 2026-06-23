@@ -13,8 +13,8 @@ export class SendOrderPage extends BaseJourneyPage {
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page);
     this.commonActionsHelper = commonActionsHelper;
-    this.uploadLabel = page.getByText('Please upload any additional document (Optional');
-    this.uploadInput = page.locator('#additionalDocument'); 
+    this.uploadLabel = page.getByText('Please upload any additional documents (Optional) Add new');
+    this.uploadInput = page.locator('#additionalDocuments_value'); 
     this.caseStateButton = page.locator('#sendOrderPostStateOption');
     this.caseStateDropdown = page.locator('#sendOrderPostStateOption'); 
     this.includeSupportingDocQuestionCheckbox = page.getByRole('checkbox', { name: 'Yes' });
@@ -50,7 +50,8 @@ export class SendOrderPage extends BaseJourneyPage {
   // Upload a document
   async uploadDocument(filePath: string) {
     await expect(this.uploadLabel).toBeVisible();
-    await this.uploadInput.setInputFiles(filePath);;
+    await this.navigateAddNew();
+    await this.uploadInput.setInputFiles(filePath);
   }
 
   async clickCaseStateButton(): Promise<void> {
