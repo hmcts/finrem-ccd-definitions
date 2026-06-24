@@ -19,6 +19,7 @@ export class GeneralApplicationDirectionsPage extends ManageHearingPage {
   private readonly additionalInformation: Locator;
   private readonly selectNoForNoticeOfHearingErrorMessage: Locator;
   private readonly selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage: Locator;
+  private readonly generalApplicationDirectionPreviewLink: Locator;
 
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page, commonActionsHelper);
@@ -37,7 +38,7 @@ export class GeneralApplicationDirectionsPage extends ManageHearingPage {
     this.additionalInformation = this.page.locator('#generalApplicationDirectionsAdditionalInformation');
     this.selectNoForNoticeOfHearingErrorMessage = page.getByText('Select "Yes" for "Do you want');
     this.selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage = page.getByText('Select Applicant and');
-
+    this.generalApplicationDirectionPreviewLink = page.getByRole('button', { name: 'generalApplicationOrder.pdf' });
   }
 
   async chooseWhetherAHearingIsRequired(whetherAHearingIsRequired: YesNoRadioEnum) {
@@ -82,5 +83,9 @@ export class GeneralApplicationDirectionsPage extends ManageHearingPage {
   async verifyApplicantAndRespondentNotSelectedToReceiveNoticeError(): Promise<void> {
     const errorMessage = this.selectApplicantAndRespondentForWhoShouldSeeThisOrderErrorMessage;
     await expect(errorMessage).toBeVisible();
+  }
+
+  async verifyGeneralApplicationDirectionPreviewLinkIsVisible(): Promise<void> {
+    await expect(this.generalApplicationDirectionPreviewLink).toBeVisible();
   }
 }
