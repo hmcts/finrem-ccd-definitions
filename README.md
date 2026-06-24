@@ -275,4 +275,4 @@ This keeps the normal Finrem preview stack and adds the WA-specific services nee
 - Supporting services: `rd-caseworker-ref-api`, `ccd-message-publisher`, preview service bus topic/subscription and AM role assignment service.
 - Post-deploy setup: Jenkins pulls Finrem DMNs and shared WA BPMNs, imports them into Camunda, then applies configured WA role assignments for test users.
 
-Use `enable_keep_helm` as well if the preview deployment needs to stay available after the build for manual testing.
+Use `enable_keep_helm`, as well, if the preview deployment needs to stay available after the build for manual testing.
