@@ -968,6 +968,12 @@
     "ListElement": "WARWICKSHIRE JUSTICE CENTRE"
   },
   {
+    "LiveFrom": "17/06/2026",
+    "ID": "FR_birmingham_hc_list",
+    "ListElementCode": "FR_birmingham_hc_list_12",
+    "ListElement": "WOLVERHAMPTON HEARING CENTRE"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "ID": "FR_liverpool_hc_list",
     "ListElementCode": "FR_liverpool_hc_list_1",
@@ -3366,11 +3372,39 @@
     "DisplayOrder": 1
   },
   {
+    "LiveFrom": "20/05/2026",
+    "ID": "FR_typeOfDraftOrderList",
+    "ListElementCode": "acceleratedProcedureOrders14DaysBeforeHearing",
+    "ListElement": "Accelerated Procedure Orders-Orders must be uploaded no less than 14 days before the hearing date.",
+    "DisplayOrder": 2
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_typeOfDraftOrderList",
     "ListElementCode": "aSuggestedDraftOrderPriorToAListedHearing",
     "ListElement": "A suggested draft order prior to a listed hearing (this will just be placed on file for the hearing)",
+    "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_fl_draftOrderOrderType",
+    "ListElementCode": "AGREED_ORDER",
+    "ListElement": "An agreed order following a hearing",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_fl_draftOrderOrderType",
+    "ListElementCode": "ACCELERATED_PROCEDURE_ORDER",
+    "ListElement": "Accelerated Procedure Order",
     "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_fl_draftOrderOrderType",
+    "ListElementCode": "SUGGESTED_ORDER",
+    "ListElement": "A suggested draft order",
+    "DisplayOrder": 3
   },
   {
     "LiveFrom": "29/10/2024",

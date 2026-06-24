@@ -3633,6 +3633,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_draftOrderDocumentReview",
+    "ListElementCode": "orderType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderOrderType",
+    "ElementLabel": "Order Type",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_draftOrderDocumentReview",
     "ListElementCode": "orderStatus",
@@ -3822,6 +3832,16 @@
     "ListElementCode": "refusedDate",
     "FieldType": "DateTime",
     "ElementLabel": "Date refused",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_psaDocumentReview",
+    "ListElementCode": "orderType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderOrderType",
+    "ElementLabel": "Order Type",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -4096,6 +4116,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_agreedDraftOrder",
+    "ListElementCode": "orderType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_draftOrderOrderType",
+    "ElementLabel": "Order type",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_agreedDraftOrder",
     "ListElementCode": "orderStatus",
@@ -4255,8 +4285,8 @@
     "ListElementCode": "agreedDraftOrderDocument",
     "FieldType": "Document",
     "ElementLabel": "Document",
-    "RegularExpression": ".doc,.docx",
-    "HintText": "You must upload Microsoft Word documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example \"JonesFDA11Jul24\"",
+    "RegularExpression": ".doc,.docx,.pdf",
+    "HintText": "You must upload Microsoft Word or PDF documents. Document names should clearly reflect the party name, the type of hearing and the date of the hearing. For example \"JonesFDA11Jul24\"",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
