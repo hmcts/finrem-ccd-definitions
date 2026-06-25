@@ -1,4 +1,5 @@
 #!groovy
+
 properties([
         pipelineTriggers([cron('00 18 * * 1-5')]),
         parameters([
@@ -15,12 +16,12 @@ properties([
                 string(
                         name: 'TAGS_TO_RUN',
                         defaultValue: '',
-                        description: 'Optionally, run a single or multiple tags (comma separated e.g. @cui, @exui)'
+                        description: 'Optionally run tags (comma separated e.g. @cui,@exui)'
                 ),
                 choice(
                         name: 'BROWSER_TO_RUN',
                         choices: ['chromium', 'chrome', 'firefox', 'webkit', 'msedge'],
-                        description: 'Choose what browsers will be run (only when a tag is specified)'
+                        description: 'Browser used only when tags are specified'
                 )
         ])
 ])
@@ -31,81 +32,115 @@ import uk.gov.hmcts.contino.AppPipelineConfig
 String type = 'nodejs'
 String product = 'finrem'
 String component = 'ccd-definitions'
+
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
-static Map < String, Object > secret(String secretName, String envVariable) {
-    [$class: 'AzureKeyVaultSecret',
-     secretType: 'Secret',
-     name: secretName,
-     envVariable: envVariable
+static Map<String, Object> secret(String secretName, String envVariable) {
+    return [
+            $class      : 'AzureKeyVaultSecret',
+            secretType  : 'Secret',
+            name        : secretName,
+            envVariable : envVariable
     ]
 }
 
 def secrets = [
-    "finrem-${params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV}": [
-        secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
-        secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
-        secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
-        secret('playwright-appl-caa-password', 'PLAYWRIGHT_APPL_CAA_PSWD'),
-        secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
-        secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
-        secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
-        secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
-        secret('playwright-applicant-intervener-username', 'PLAYWRIGHT_APPL_INTERVENER_USERNAME'),
-        secret('playwright-applicant-intervener-password', 'PLAYWRIGHT_APPL_INTERVENER_PSWD'),
-        secret('playwright-respondent-intervener-username', 'PLAYWRIGHT_RESP_INTERVENER_USERNAME'),
-        secret('playwright-respondent-intervener-password', 'PLAYWRIGHT_RESP_INTERVENER_PSWD'),
-        secret('username-caseworker', 'USERNAME_CASEWORKER'),
-        secret('password-caseworker', 'PASSWORD_CASEWORKER'),
-        secret('fr-judge-username', 'USERNAME_JUDGE'),
-        secret('fr-judge-password', 'PASSWORD_JUDGE'),
-        secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
-        secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
-        secret('barrister1-username', 'USERNAME_BARRISTER1'),
-        secret('barrister1-password', 'PASSWORD_BARRISTER1'),
-        secret("playwright-barrister2-respondent-username","PLAYWRIGHT_RESP_BARRISTER_USERNAME"),
-        secret("playwright-barrister2-respondent-testing-password","PLAYWRIGHT_RESP_BARRISTER_PSWD"),
-        secret("playwright-appl-caa2-username","PLAYWRIGHT_APPL_CAA2_USERNAME"),
-        secret("playwright-appl-caa2-password","PLAYWRIGHT_APPL_CAA2_PSWD"),
-        secret("playwright-respondent-caa2-username","PLAYWRIGHT_RESP_CAA2_USERNAME"),
-        secret("playwright-respondent-caa2-password","PLAYWRIGHT_RESP_CAA2_PSWD"),
-        secret("playwright-solicitor2-username","PLAYWRIGHT_SOLICITOR2_USERNAME"),
-        secret("playwright-solicitor2-password","PLAYWRIGHT_SOLICITOR2_PSWD"),
-        secret("playwright-respondent-sol2-username","PLAYWRIGHT_RESPONDENT_SOL2_USERNAME"),
-        secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD"),
-        secret("playwright-int-barrister-username","PLAYWRIGHT_INT_BARRISTER_USERNAME"),
-        secret("playwright-int-barrister-password","PLAYWRIGHT_INT_BARRISTER_PSWD"),
-        secret("SUPERCASEWORKER-USERNAME","USERNAME_SUPERCASEWORKER"),
-        secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER"),
-        secret("nightlydevtoken","GITHUB_TOKEN")
-    ]
+        "finrem-${params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV}": [
+                secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
+                secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
+                secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
+                secret('playwright-appl-caa-password', 'PLAYWRIGHT_APPL_CAA_PSWD'),
+                secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
+                secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
+                secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
+                secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
+                secret('playwright-applicant-intervener-username', 'PLAYWRIGHT_APPL_INTERVENER_USERNAME'),
+                secret('playwright-applicant-intervener-password', 'PLAYWRIGHT_APPL_INTERVENER_PSWD'),
+                secret('playwright-respondent-intervener-username', 'PLAYWRIGHT_RESP_INTERVENER_USERNAME'),
+                secret('playwright-respondent-intervener-password', 'PLAYWRIGHT_RESP_INTERVENER_PSWD'),
+                secret('username-caseworker', 'USERNAME_CASEWORKER'),
+                secret('password-caseworker', 'PASSWORD_CASEWORKER'),
+                secret('fr-judge-username', 'USERNAME_JUDGE'),
+                secret('fr-judge-password', 'PASSWORD_JUDGE'),
+                secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
+                secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
+                secret('barrister1-username', 'USERNAME_BARRISTER1'),
+                secret('barrister1-password', 'PASSWORD_BARRISTER1'),
+                secret('playwright-barrister2-respondent-username', 'PLAYWRIGHT_RESP_BARRISTER_USERNAME'),
+                secret('playwright-barrister2-respondent-testing-password', 'PLAYWRIGHT_RESP_BARRISTER_PSWD'),
+                secret('playwright-appl-caa2-username', 'PLAYWRIGHT_APPL_CAA2_USERNAME'),
+                secret('playwright-appl-caa2-password', 'PLAYWRIGHT_APPL_CAA2_PSWD'),
+                secret('playwright-respondent-caa2-username', 'PLAYWRIGHT_RESP_CAA2_USERNAME'),
+                secret('playwright-respondent-caa2-password', 'PLAYWRIGHT_RESP_CAA2_PSWD'),
+                secret('playwright-solicitor2-username', 'PLAYWRIGHT_SOLICITOR2_USERNAME'),
+                secret('playwright-solicitor2-password', 'PLAYWRIGHT_SOLICITOR2_PSWD'),
+                secret('playwright-respondent-sol2-username', 'PLAYWRIGHT_RESPONDENT_SOL2_USERNAME'),
+                secret('playwright-respondent-sol2-password', 'PLAYWRIGHT_RESPONDENT_SOL2_PSWD'),
+                secret('playwright-int-barrister-username', 'PLAYWRIGHT_INT_BARRISTER_USERNAME'),
+                secret('playwright-int-barrister-password', 'PLAYWRIGHT_INT_BARRISTER_PSWD'),
+                secret('SUPERCASEWORKER-USERNAME', 'USERNAME_SUPERCASEWORKER'),
+                secret('SUPERCASEWORKER-PASSWORD', 'PASSWORD_SUPERCASEWORKER'),
+                secret('nightlydevtoken', 'GITHUB_TOKEN')
+        ]
 ]
 
 def pipelineConf = new AppPipelineConfig()
 pipelineConf.vaultSecrets = secrets
 
+/**
+ * Build playwright command safely
+ */
 def buildPlaywrightCommand(tags, browser) {
-    if (tags == null || tags.trim().isEmpty()) {
-        return;
+    if (!tags?.trim()) {
+        error('No tags supplied')
     }
-    def tagList = tags.split(',').collect { it.trim() }
 
-    def command = 'yarn playwright test '
+    def tagList = tags
+            .split(',')
+            .collect { it.trim() }
+            .findAll { it }
+
     tagList.each { tag ->
-        if (!tag.isEmpty()) {
-            command += " --grep ${tag}"
+        if (!(tag ==~ /^@[A-Za-z0-9_-]+$/)) {
+            error("Invalid tag supplied: ${tag}")
         }
     }
 
+    def grepExpression = tagList
+            .collect { java.util.regex.Pattern.quote(it) }
+            .join('|')
+
+    def command = "yarn playwright test --grep '${grepExpression}'"
+
     if (browser) {
         command += " --project=${browser}"
-        command = "playwright install ${browser} && ${command}"
     }
 
     return command
 }
 
+/**
+ * Reusable runner for each browser
+ */
+def runBrowser(name, command, reportDir) {
+    try {
+        yarnBuilder.yarn(command)
+    } catch (Exception e) {
+        unstable(message: "${name} failed: ${e.message}")
+    } finally {
+        publishHTML([
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: reportDir,
+                reportFiles: 'index.html',
+                reportName: "FunctionalTestReport-${name}"
+        ])
+    }
+}
+
 withNightlyPipeline(type, product, component) {
+
     env.NIGHTLY_TEST = 'true'
     env.NODE_ENV = 'ci'
     env.FUNCTIONAL_TESTS_WORKERS = params.FUNCTIONAL_TESTS_WORKERS
@@ -113,133 +148,67 @@ withNightlyPipeline(type, product, component) {
 
     loadVaultSecrets(secrets)
 
+    /**
+     * SETUP
+     */
+    stage('Set up playwright') {
+        yarnBuilder.yarn('yarn-update')
+        yarnBuilder.yarn('install-dependencies')
+        yarnBuilder.yarn('playwright install --with-deps')
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+        env.ENV = params.RUNNING_ENV
+    }
+
+    /**
+     * TEST EXECUTION
+     */
+    stage('Run tests') {
+
+        if (!params.TAGS_TO_RUN?.trim()) {
+
+            parallel(
+                    edge: {
+                        runBrowser('edge', 'test:functional-edge', 'playwright-report-edge')
+                    },
+                    chromium: {
+                        runBrowser('chromium', 'test:functional-chromium', 'playwright-report-chromium')
+                    },
+                    chrome: {
+                        runBrowser('chrome', 'test:functional-chrome', 'playwright-report-chrome')
+                    },
+                    firefox: {
+                        runBrowser('firefox', 'test:functional-firefox', 'playwright-report-firefox')
+                    },
+                    webkit: {
+                        runBrowser('webkit', 'test:functional-webkit', 'playwright-report-webkit')
+                    }
+            )
+
+        } else {
+
+            stage("${params.TAGS_TO_RUN} E2E Tests") {
+                try {
+                    def cmd = buildPlaywrightCommand(params.TAGS_TO_RUN, params.BROWSER_TO_RUN)
+                    currentBuild.displayName = "${params.TAGS_TO_RUN} - ${params.BROWSER_TO_RUN}"
+                    yarnBuilder.yarn(cmd)
+                } catch (Exception e) {
+                    unstable(message: "Tagged tests failed: ${e.message}")
+                }
+            }
+        }
+    }
+
+    /**
+     * CLEANUP (ALWAYS RUNS)
+     */
     afterAlways('DependencyCheckNightly') {
         stage('Delete nightly dev branch') {
-        try {
-            echo "Cleaning up: running delete-nightly-dev-branch for finrem-ccd-definitions..."
-            yarnBuilder.yarn('delete-nightly-dev-branch finrem-ccd-definitions')
-        } catch (Error) {
-            unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-        }
-    }
-        stage('Set up playwright') {
-            yarnBuilder.yarn('yarn-update')
-            yarnBuilder.yarn('install-dependencies')
-            steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-            env.ENV = 'aat'
-        }
-
-        if (!params.TAGS_TO_RUN.isEmpty()) {
-            stage("${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}") {
-                try {
-                    currentBuild.displayName = "${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
-                    yarnBuilder.yarn(buildPlaywrightCommand(params.TAGS_TO_RUN, params.BROWSER_TO_RUN))
-                } catch (Error) {
-                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-                } finally {
-                    publishHTML([
-                            allowMissing: true,
-                            alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: "playwright-report",
-                            reportFiles: 'index.html',
-                            reportName: "${TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
-                    ])
-                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-                }
-            }
-        } else {
-            stage('Functional playwright tests - edge') {
-                try {
-                    env.TESTS_FOR_ACCESSIBILITY = 'true'
-                    yarnBuilder.yarn('test:functional-edge')
-                } catch (Error) {
-                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-                } finally {
-                    publishHTML([
-                            allowMissing: true,
-                            alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: 'playwright-report',
-                            reportFiles: 'index.html',
-                            reportName: 'FunctionalTestReport-edge'
-                    ])
-                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-                }
-            }
-            
-            stage('Functional playwright tests - chromium') {
-                try {
-                    yarnBuilder.yarn('test:functional-chromium')
-                } catch (Error) {
-                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-                } finally {
-                    publishHTML([
-                            allowMissing         : true,
-                            alwaysLinkToLastBuild: true,
-                            keepAll              : true,
-                            reportDir            : 'playwright-report',
-                            reportFiles          : 'index.html',
-                            reportName           : 'FunctionalTestReport-chromium'
-                    ])
-                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-                }
-            }
-
-            stage('Functional playwright tests - chrome') {
-                try {
-                    yarnBuilder.yarn('test:functional-chrome')
-                } catch (Error) {
-                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-                } finally {
-                    publishHTML([
-                            allowMissing: true,
-                            alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: 'playwright-report',
-                            reportFiles: 'index.html',
-                            reportName: 'FunctionalTestReport-chrome'
-                    ])
-                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-                }
-            }
-
-            stage('Functional playwright tests - firefox') {
-                try {
-                    yarnBuilder.yarn('test:functional-firefox')
-                } catch (Error) {
-                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-                } finally {
-                    publishHTML([
-                            allowMissing         : true,
-                            alwaysLinkToLastBuild: true,
-                            keepAll              : true,
-                            reportDir            : 'playwright-report',
-                            reportFiles          : 'index.html',
-                            reportName           : 'FunctionalTestReport-firefox'
-                    ])
-                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-                }
-            }
-
-            stage('Functional playwright tests - webkit') {
-                try {
-                    yarnBuilder.yarn('test:functional-webkit')
-                } catch (Error) {
-                    unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-                } finally {
-                    publishHTML([
-                            allowMissing         : true,
-                            alwaysLinkToLastBuild: true,
-                            keepAll              : true,
-                            reportDir            : 'playwright-report',
-                            reportFiles          : 'index.html',
-                            reportName           : 'FunctionalTestReport-webkit'
-                    ])
-                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
-                }
+            try {
+                echo "Cleaning up nightly branch..."
+                yarnBuilder.yarn('delete-nightly-dev-branch finrem-ccd-definitions')
+            } catch (Exception e) {
+                unstable(message: "Cleanup unstable: ${e.message}")
             }
         }
     }
-
 }
