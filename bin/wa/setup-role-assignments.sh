@@ -25,19 +25,7 @@ if [[ ! -f "${user_ids_file}" ]]; then
 fi
 
 if ! command -v jq >/dev/null 2>&1; then
-  echo "jq is required to validate ${user_ids_file}." >&2
-  exit 1
-fi
-
-# Validate the file contains at least one non-empty array.
-if ! jq -e '
-    (.caseworker // []) | type == "array"
-    and
-    (.judicial // []) | type == "array"
-    and
-    (((.caseworker // []) | length) > 0 or ((.judicial // []) | length) > 0)
-' "${user_ids_file}" >/dev/null; then
-  echo "User ID file must contain a non-empty caseworker and/or judicial array." >&2
+  echo "jq is required." >&2
   exit 1
 fi
 
@@ -60,7 +48,7 @@ create_org_mappings() {
   local user_type=$2
 
   local user_count
-  user_count=$(jq --arg key "${json_key}" '.[$key] | length' "${user_ids_file}")
+  user_count=$(jq --arg key "${json_key}" '(.[$key] // []) | length' "${user_ids_file}")
 
   if [[ "${user_count}" -eq 0 ]]; then
     echo "No ${json_key} users found. Skipping."
@@ -68,7 +56,7 @@ create_org_mappings() {
   fi
 
   local payload
-  payload=$(jq -c --arg key "${json_key}" '{userIds: .[$key]}' "${user_ids_file}")
+  payload=$(jq -c --arg key "${json_key}" '{userIds: (.[$key] // [])}' "${user_ids_file}")
 
   local url="${org_role_mapping_url}/am/testing-support/createOrgMapping?userType=${user_type}"
 
@@ -95,7 +83,7 @@ create_org_mappings() {
       ;;
     404)
       if grep -Eiq "Caseworker data could not be found|User details.*found in RD" "${response_file}"; then
-        echo "Skipping ${user_type} mapping because the configured users were not found in RD."
+        echo "Skipping WA org mapping setup because the configured ${user_type} user(s) were not found in RD."
         cat "${response_file}"
       else
         echo "WA org mapping setup failed with HTTP ${status_code}." >&2
