@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Creates Finrem WA org mappings for AAT caseworker user IDs listed in
+# Creates Finrem WA org mappings for AAT user IDs listed by user type in
 # aat-caseworker-user-ids.json. Jenkins runs this after WA preview install so
 # the PR AM org-role-mapping service has users available for task testing.
 
@@ -8,8 +8,23 @@ set -euo pipefail
 
 basedir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 user_ids_file=${1:-"${basedir}/aat-caseworker-user-ids.json"}
-user_type=${2:-CASEWORKER}
+user_type=${2:-JUDICIAL}
 org_role_mapping_url=${ORG_ROLE_MAPPING_URL:-}
+
+case "${user_type,,}" in
+  caseworker)
+    user_type=CASEWORKER
+    user_ids_key=caseworker
+    ;;
+  judicial)
+    user_type=JUDICIAL
+    user_ids_key=judicial
+    ;;
+  *)
+    echo "User type ${user_type} is not supported. Use CASEWORKER or JUDICIAL." >&2
+    exit 1
+    ;;
+esac
 
 if [[ -z "${org_role_mapping_url}" && -n "${CHANGE_ID:-}" ]]; then
   org_role_mapping_url="https://am-org-role-mapping-service-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
@@ -30,8 +45,8 @@ if ! command -v jq >/dev/null 2>&1; then
   exit 1
 fi
 
-if ! jq -e '.userIds | type == "array" and length > 0' "${user_ids_file}" >/dev/null; then
-  echo "User ID file ${user_ids_file} must contain a non-empty userIds array." >&2
+if ! jq -e --arg user_ids_key "${user_ids_key}" '.[$user_ids_key] | type == "array" and length > 0' "${user_ids_file}" >/dev/null; then
+  echo "User ID file ${user_ids_file} must contain a non-empty ${user_ids_key} array." >&2
   exit 1
 fi
 
@@ -46,8 +61,8 @@ if [[ -z "${idam_token}" || -z "${s2s_token}" ]]; then
   exit 1
 fi
 
-payload=$(jq -c '{userIds: .userIds}' "${user_ids_file}")
-user_count=$(jq '.userIds | length' "${user_ids_file}")
+payload=$(jq -c --arg user_ids_key "${user_ids_key}" '{userIds: .[$user_ids_key]}' "${user_ids_file}")
+user_count=$(jq --arg user_ids_key "${user_ids_key}" '.[$user_ids_key] | length' "${user_ids_file}")
 url="${org_role_mapping_url}/am/testing-support/createOrgMapping?userType=${user_type}"
 response_file=$(mktemp)
 trap 'rm -f "${response_file}"' EXIT
