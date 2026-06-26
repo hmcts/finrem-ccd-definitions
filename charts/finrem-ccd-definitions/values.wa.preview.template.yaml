@@ -8,8 +8,59 @@ xui-webapp:
       SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
       SERVICES_WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
       SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
+      SERVICES_CASE_CASEWORKER_API: http://${SERVICE_NAME}-rd-caseworker-ref-api
+      HEALTH_CASE_CASEWORKER_API: http://${SERVICE_NAME}-rd-caseworker-ref-api/health
       WA_SUPPORTED_JURISDICTIONS: DIVORCE
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
+
+rd-caseworker-ref-api:
+  enabled: ${ENABLE_WA}
+  servicebus:
+    enabled: false
+  java:
+    image: hmctsprod.azurecr.io/rd/caseworker-ref-api:latest
+    imagePullPolicy: Always
+    releaseNameOverride: ${SERVICE_NAME}-rd-caseworker-ref-api
+    ingressHost: rd-caseworker-ref-api-${SERVICE_FQDN}
+    aadIdentityName: finrem
+    disableKeyVaults: true
+    devcpuRequests: 500m
+    devmemoryRequests: 1Gi
+    devcpuLimits: 1
+    devmemoryLimits: 2Gi
+    environment:
+      POSTGRES_HOST: financial-remedy-preview.postgres.database.azure.com
+      POSTGRES_PORT: 5432
+      POSTGRES_DB_NAME: pr-${CHANGE_ID}-rd-caseworker-ref-api
+      POSTGRES_USERNAME: hmcts
+      POSTGRES_CONNECTION_OPTIONS: "?sslmode=require&stringtype=unspecified"
+      CASEWORKER_REF_API_S2S_SECRET: ${CASEWORKER_REF_API_S2S_SECRET}
+      CRD_S2S_AUTHORISED_SERVICES: rd_caseworker_ref_api,rd_professional_api,am_org_role_mapping_service,xui_webapp
+      idam_url: https://idam-api.aat.platform.hmcts.net
+      S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+      IDAM_CLIENT_ID: microservicekey-rd-caseworker-ref-api
+      USER_PROFILE_URL: http://rd-user-profile-api-aat.service.core-compute-aat.internal
+      LOCATION_REF_DATA_URL: http://rd-location-ref-api-aat.service.core-compute-aat.internal
+      OPEN_ID_API_BASE_URI: https://idam-web-public.aat.platform.hmcts.net/o
+      OIDC_ISSUER_URL: https://forgerock-am.service.core-compute-idam-aat.internal:8443/openam/oauth2/hmcts
+      LD_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
+      LAUNCH_DARKLY_ENV: preview
+      ENVIRONMENT_NAME: preview
+      CWRD_MQ_HOST: rd-servicebus-sandbox.servicebus.windows.net
+      CWRD_MQ_USERNAME: SendAndListenSharedAccessKey
+      CASEWORKER_TOPIC_PRIMARY_SEND_LISTEN_SHARED_ACCESS_KEY: AAAAAAAAAAAAAAAA
+      CWRD_MQ_TOPIC_NAME: rd-caseworker-topic-sandbox
+      CWRD_MQ_TRUST_ALL_CERTS: false
+      CWRD_DATA_PER_MESSAGE: 50
+      STAFF_UPLOAD_FILE: false
+      IDAM_ROLE_MAPPING_FILE: true
+      REFORM_SERVICE_NAME: rd-caseworker-ref-api
+      REFORM_TEAM: rd
+      REFORM_ENVIRONMENT: preview
+    secrets:
+      POSTGRES_PASSWORD:
+        secretRef: postgres
+        key: PASSWORD
 
 wa:
   enabled: ${ENABLE_WA}
@@ -63,7 +114,6 @@ wa:
         WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
         WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
         WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
-      keyVaults: []
 
   wa-case-event-handler:
     java:
@@ -109,6 +159,7 @@ wa:
         WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
         WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
         WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
+        WA_TASK_MANAGEMENT_API_URL: http://{{ .Release.Name }}-wa-task-management-api
         WA_TASK_MANAGEMENT_API_URL: http://${SERVICE_NAME}-wa-task-management-api
         LOGGING_LEVEL_UK_GOV_HMCTS: DEBUG
         INITIATION_TIME_LIMIT: 180

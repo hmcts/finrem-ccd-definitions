@@ -39,7 +39,7 @@ async function verifyDifferentActorsForCFV(
   await manageCaseDashboardPage.visit();
   await loginPage.loginWaitForPath(userCred.email, userCred.password, config.manageCaseBaseURL, config.loginPaths.cases);
   await manageCaseDashboardPage.navigateToCase(caseId);
-  await caseDetailsPage.assertTabData([getManageHearingTabData()]);
+  await caseDetailsPage.assertTabData([await getManageHearingTabData()]);
   await caseDetailsPage.validateFileTree([
     {
       type: 'folder',
@@ -223,70 +223,126 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
   test.describe.serial('Contested - Manage Hearings - Add Hearing and verify access to CFV', () => {
     let caseId: string;
 
-    test('Create case and add hearing', async ({loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, checkYourAnswersPage}) => {
-      // Create and setup case
-      caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-      await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
-      await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
-      await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
-      await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
-      await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
+    test('Create case and add hearing', async ({
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage,
+      manageHearingPage,
+      checkYourAnswersPage
+    }) => {
+      await test.step('Create and prepare contested case', async () => {
+        caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-      // Login as caseworker and navigate to case
-      await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
-      await manageCaseDashboardPage.navigateToCase(caseId);
-      console.info(`Navigated to case with ID: ${caseId}`);
+        await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
+        await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
+        await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
+        await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
 
-      // Manage hearings
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageHearings);
-      await manageHearingPage.selectAddANewHearing();
-      await manageHearingPage.navigateContinue(); 
-      await manageHearingPage.addHearing({
-        type: 'Financial Dispute Resolution (FDR)',
-        duration: '2 hours',
-        date: {},
-        time: '10:00 AM',
-        court: {zone: 'London', frc: 'London', courtName: 'CENTRAL FAMILY COURT'},
-        attendance: 'In person',
-        additionalInformation: 'Hearing details here',
-        uploadAnySupportingDocuments: true,
-        uploadFiles: ['final_hearing_file1.pdf', 'final_hearing_file2.pdf'],
-        sendANoticeOfHearing: true                
+        await caseAssignmentApi.assignCaseToRespondent(
+          caseId,
+          CaseTypeEnum.CONTESTED
+        );
       });
 
-      //Who should see this order - all parties
-      await manageHearingPage.selectAllWhoShouldSeeThisOrder([
-        { partyType: 'Applicant', partyName: 'Frodo Baggins' },
-        { partyType: 'Respondent', partyName: 'Smeagol Gollum' },
-        { partyType: 'Intervener1', partyName: 'IntApp1' },
-        { partyType: 'Intervener2', partyName: 'IntResp1' }
-      ]);
+      await test.step('Login as caseworker and open case', async () => {
+        await manageCaseDashboardPage.visit();
 
-      await manageHearingPage.navigateContinue();
-      await manageHearingPage.navigateIgnoreWarningAndContinue();
-      const expectedTable = getManageHearingTableData({
-        typeOfHearing: 'Financial Dispute Resolution (FDR)',
-        attendance: 'In person',
-        whoShouldSeeOrder: 'Applicant - Frodo Baggins\nRespondent - Smeagol Gollum\nIntervener1 - intApp1\nIntervener2 - intResp1'
+        await loginPage.loginWaitForPath(
+          config.caseWorker.email,
+          config.caseWorker.password,
+          config.manageCaseBaseURL,
+          config.loginPaths.worklist
+        );
+
+        await manageCaseDashboardPage.navigateToCase(caseId);
+
+        console.info(`Navigated to case with ID: ${caseId}`);
       });
-      await checkYourAnswersPage.assertCheckYourAnswersPage(expectedTable);
-      await manageHearingPage.navigateSubmit();
-      await manageHearingPage.govNotifyManageHearingError();
 
-      await manageCaseDashboardPage.navigateToCase(caseId);
-      await caseDetailsPage.selectHeader('Hearings');
+      await test.step('Add new hearing', async () => {
+        await caseDetailsPage.selectNextStep(
+          ContestedEvents.manageHearings
+        );
+
+        await manageHearingPage.selectAddANewHearing();
+        await manageHearingPage.navigateContinue();
+
+        await manageHearingPage.addHearing({
+          type: 'Financial Dispute Resolution (FDR)',
+          duration: '2 hours',
+          date: {},
+          time: '10:00 AM',
+          court: {
+            zone: 'London',
+            frc: 'London',
+            courtName: 'CENTRAL FAMILY COURT'
+          },
+          attendance: 'In person',
+          additionalInformation: 'Hearing details here',
+          uploadAnySupportingDocuments: true,
+          uploadFiles: [
+            'final_hearing_file1.pdf',
+            'final_hearing_file2.pdf'
+          ],
+          sendANoticeOfHearing: true
+        });
+
+        await manageHearingPage.selectAllWhoShouldSeeThisOrder([
+          {
+            partyType: 'Applicant',
+            partyName: 'Frodo Baggins'
+          },
+          {
+            partyType: 'Respondent',
+            partyName: 'Smeagol Gollum'
+          },
+          {
+            partyType: 'Intervener1',
+            partyName: 'IntApp1'
+          },
+          {
+            partyType: 'Intervener2',
+            partyName: 'IntResp1'
+          }
+        ]);
+
+        await manageHearingPage.navigateContinue();
+        await manageHearingPage.navigateIgnoreWarningAndContinue();
+
+        const expectedTable = getManageHearingTableData({
+          typeOfHearing: 'Financial Dispute Resolution (FDR)',
+          attendance: 'In person',
+          whoShouldSeeOrder:
+                      'Applicant - Frodo Baggins\n' +
+                      'Respondent - Smeagol Gollum\n' +
+                      'Intervener1 - intApp1\n' +
+                      'Intervener2 - intResp1'
+        });
+
+        await checkYourAnswersPage.assertCheckYourAnswersPage(
+          expectedTable
+        );
+
+        await manageHearingPage.navigateSubmit();
+        await manageHearingPage.govNotifyManageHearingError();
+      });
+
+      await test.step('Verify hearing details', async () => {
+        await manageCaseDashboardPage.navigateToCase(caseId);
+
+        await caseDetailsPage.selectHeader('Hearings');
 
         await caseDetailsPage.assertHearingTable(
-            'Financial Dispute Resolution (FDR)',
-            '24 Aug 2026 10:00 AM',
-            [
-                'Applicant - Frodo Baggins',
-                'Respondent - Smeagol Gollum',
-                'Intervener1 - intApp1',
-                'Intervener2 - intResp1'
-            ]
+          'Financial Dispute Resolution (FDR)',
+          await DateHelper.getFormattedDateTwelveWeeksLaterWithZeroPaddedDay(),
+          [
+            'Applicant - Frodo Baggins',
+            'Respondent - Smeagol Gollum',
+            'Intervener1 - intApp1',
+            'Intervener2 - intResp1'
+          ]
         );
+      });
     });
 
     test('Verify access for applicant solicitor', async ({manageCaseDashboardPage, loginPage, caseDetailsPage}) => {
@@ -330,7 +386,7 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
         typeOfHearing: 'First Directions Appointment (FDA)',
         court: 'Manchester County And Family Court',
         attendance: 'In Person',
-        hearingDate: DateHelper.getFormattedDateTwelveWeeksLater(),
+        hearingDate: DateHelper.getFormattedDateTwelveWeeksLaterWithZeroPaddedDay(),
         hearingTime: '10:00am',
         duration: '1hr 20mins',
         whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',

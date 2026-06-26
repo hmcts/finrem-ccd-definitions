@@ -26,7 +26,26 @@ The following steps should be used to update judge data stored in the secrets:
 8. Run `./update-prod-secrets.sh` to update the secrets in the Azure Key Vault with the files in `bin/judges/build/output`
 9. Rerun the `finrem-ccd-definitions` Jenkins pipeline to import the updated judge data into production
 
-Note the `bin/judges` directory also contains `import.js` which could be used to update judge data provided in a spreadsheet.
+**Temporary mitigation for judge email corrections and removals (agreed with Mark and Naomi):**
+
+As a temporary measure while a long-term solution is being designed, we will not modify or delete existing judge entries in a way that removes historical continuity.
+
+- For judges whose email address needs to be corrected:
+    - Create a **new judge entry** with the corrected email address
+    - Mark the existing judge entry as **"DO NOT USE"**
+
+- For judges that need to be removed:
+    - Retain the existing judge entry
+    - Mark it clearly as **"DO NOT USE"**
+
+This ensures that:
+- New cases do not select obsolete or incorrect judges
+- Existing cases are not impacted by changes to historical data
+
+This approach is explicitly temporary and will be replaced by a more sustainable solution.
+
+## Spreadsheet Import Option
+The `bin/judges` directory also contains `import.js` which could be used to update judge data provided in a spreadsheet.
 
 ## Important – When Adding New Judges
 The Jenkins pipeline is hardcoded to a maximum chunk number therefore any new file chunks will not be imported. This will result in production cases failing with missing judge details if they are using a judge from the new chunk. Example incident: DFR-4575
