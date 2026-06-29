@@ -84,6 +84,7 @@ am-org-role-mapping-service:
       ORG_ROLE_MAPPING_IDAM_CLIENT_SECRET: ${ORG_ROLE_MAPPING_IDAM_CLIENT_SECRET}
       ORG_ROLE_MAPPING_IDAM_ADMIN_PASSWORD: ${ORG_ROLE_MAPPING_IDAM_ADMIN_PASSWORD}
       ORG_ROLE_MAPPING_DB_HOST: financial-remedy-preview.postgres.database.azure.com
+      JUDICIAL_BOOKING_APP_URL: http://am-judicial-booking-service-aat.service.core-compute-aat.internal
       ORG_ROLE_MAPPING_DB_NAME: "pr-${CHANGE_ID}-org-role-mapping"
       ORG_ROLE_MAPPING_DB_USERNAME: hmcts
       ORG_ROLE_MAPPING_DB_PORT: 5432
