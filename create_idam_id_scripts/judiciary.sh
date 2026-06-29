@@ -55,6 +55,8 @@ do
     # Create user
     RESPONSE=$(curl -s \
         --location "$BASE_URL" \
+        --proto '=https' \
+        --proto-redir '=https' \
         --header "Content-Type: application/json" \
         --data-raw "$USER_JSON")
 
