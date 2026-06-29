@@ -63,10 +63,21 @@ export class UploadApprovedOrderPage extends ManageHearingPage {
     await this.nameOfJudgeField.fill(text);
   }
 
+  async blurCourtOrderDateInput(): Promise<void> {
+    await this.courtDayDetails.blur();
+    await this.courtMonthDetails.blur();
+    await this.courtYearDetails.blur();
+  }
+
   async enterCourtOrderDate(day: string, month: string, year: string) {
+    await expect(this.courtDayDetails).toBeVisible();
+    await expect(this.courtMonthDetails).toBeVisible();
+    await expect(this.courtYearDetails).toBeVisible();
+
     await this.courtDayDetails.fill(day);
     await this.courtMonthDetails.fill(month);
     await this.courtYearDetails.fill(year);
+    await this.blurCourtOrderDateInput();
   }
 
   async selectIsThisFinalOrder(answer: YesNoRadioEnum): Promise<void> {
