@@ -1,0 +1,40 @@
+[
+   {
+      "password":"Password123!",
+      "payload":{
+         "user":{
+            "id": "5a6ebd0e-c887-4842-8cf7-ce53b691102d",
+            "email":"fr_ctscadmin11@justice.gov.uk",
+            "forename":"Ctsc",
+            "surname":"Admin",
+            "roleNames":[
+               "caseworker",
+               "caseworker-divorce",
+               "caseworker-divorce-financialremedy",
+               "caseworker-divorce-financialremedy-courtadmin",
+               "caseworker-divorce-financialremedy-judiciary"
+            ]
+         }
+      }
+   },
+   {
+      "email":"fr_ctscteamleader10@justice.gov.uk",
+      "password":"Password123!",
+      "payload":{
+         "user":{
+            "id": "c87bd61b-d048-490f-8c40-7304d24598f1",
+            "email":"fr_ctscteamleader11@justice.gov.uk",
+            "forename":"Ctsc",
+            "surname":"Teamleader",
+            "roleNames":[
+               "caseworker",
+               "caseworker-divorce",
+               "caseworker-divorce-financialremedy",
+               "caseworker-divorce-financialremedy-courtadmin",
+               "caseworker-divorce-financialremedy-superuser",
+               "caseworker-divorce-financialremedy-judiciary"
+            ]
+         }
+      }
+   }
+]
