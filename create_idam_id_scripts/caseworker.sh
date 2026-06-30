@@ -6,13 +6,14 @@ USERS_FILE="caseworker_request.json"
 
 ENVIRONMENT="${1:-}"
 ACTION="${2:-}"
+PASSWORD="${3:-}"
 
 # Azure Key Vault configuration
 KEYVAULT_NAME="finrem-aat"
 SECRET_NAME="finrem-idam-client-secret"
 
-if [[ -z "$ENVIRONMENT" || -z "$ACTION" ]]; then
-    echo "Usage: ./idam_batch.sh <env> <add|update>"
+if [[ -z "$ENVIRONMENT" || -z "$ACTION" || -z "$PASSWORD" ]]; then
+    echo "Usage: ./idam_batch.sh <env> <add|update> <password>"
     exit 1
 fi
 
@@ -85,10 +86,9 @@ delete_user_if_exists() {
 create_user() {
     local token="$1"
     local payload="$2"
-    local password="$3"
-    local email="$4"
+    local email="$3"
 
-    final_payload=$(echo "$payload" | jq --arg pw "$password" '.password = $pw')
+    final_payload=$(echo "$payload" | jq --arg pw "$PASSWORD" '.password = $pw')
 
     response=$(curl -s -w "\n%{http_code}" -X POST \
         "https://idam-testing-support-api.${ENVIRONMENT}.platform.hmcts.net/test/idam/users" \
@@ -126,7 +126,6 @@ echo "▶ Processing users from: $USERS_FILE"
 
 while read -r user; do
 
-    password=$(echo "$user" | jq -r '.password')
     payload=$(echo "$user" | jq -c '.payload')
     email=$(echo "$user" | jq -r '.payload.user.email')
     userId=$(echo "$user" | jq -r '.payload.user.id')
@@ -150,12 +149,12 @@ while read -r user; do
             delete_user_if_exists "$token" "$userId"
 
             echo "  ▶ Creating user..."
-            create_user "$token" "$payload" "$password" "$email"
+            create_user "$token" "$payload" "$email"
             ;;
         update)
             echo "  ▶ Updating user (delete + recreate)..."
             delete_user_if_exists "$token" "$userId"
-            create_user "$token" "$payload" "$password" "$email"
+            create_user "$token" "$payload" "$email"
             ;;
         *)
             echo "  ❌ Invalid action: $ACTION"

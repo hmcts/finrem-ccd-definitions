@@ -3,14 +3,14 @@
 set -euo pipefail
 
 # Validate arguments
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <environment>"
-    echo "Example: $0 aat"
-    echo "Example: $0 perftest"
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <environment> <password>"
+    echo "Example: $0 aat MySecurePassword123"
     exit 1
 fi
 
 ENVIRONMENT="$1"
+PASSWORD="$2"
 
 INPUT_FILE="judiciary_request.json"
 OUTPUT_FILE="judiciary_response.json"
@@ -33,6 +33,7 @@ IDS=()
 
 echo "Using environment: $ENVIRONMENT"
 echo "Base URL: $BASE_URL"
+echo "Password placeholder will be injected at runtime"
 echo
 
 while IFS= read -r USER_JSON
@@ -41,6 +42,9 @@ do
 
     echo "=================================================="
     echo "Processing: $EMAIL"
+
+    # Inject runtime password
+    USER_JSON=$(echo "$USER_JSON" | jq --arg pw "$PASSWORD" '.password = $pw')
 
     # Delete existing user
     DELETE_STATUS=$(curl -s \
