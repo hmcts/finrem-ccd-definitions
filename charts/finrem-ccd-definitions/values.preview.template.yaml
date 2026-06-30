@@ -307,6 +307,7 @@ ccd:
         - name: "pr-${CHANGE_ID}-camunda"
         - name: "pr-${CHANGE_ID}-cft_task_db"
         - name: "pr-${CHANGE_ID}-cft_task_db_replica"
+        - name: "pr-${CHANGE_ID}-org-role-mapping"
         - name: "pr-${CHANGE_ID}-rd-caseworker-ref-api"
 
   elasticsearch:
