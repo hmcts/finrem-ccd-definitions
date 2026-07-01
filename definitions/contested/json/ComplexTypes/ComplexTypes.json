@@ -764,6 +764,15 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_ct_draftDirectionOrder",
+    "ListElementCode": "isThisFinalYN",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this the final order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "28/01/2025",
     "ID": "FR_ct_draftDirectionOrder",
     "ListElementCode": "additionalDocuments",
@@ -790,6 +799,8 @@
     "ListElementCode": "isThisFinalYN",
     "FieldType": "YesOrNo",
     "ElementLabel": "Is this the final order?",
+    "FieldShowCondition": "isThisFinalYN=\"DONOTSHOW\"",
+    "_comment": "No longer used as moved to Direction order collection",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -896,6 +907,15 @@
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "approvedOrders"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "ID": "FR_ct_directionOrderCollection",
+    "ListElementCode": "isThisFinalYN",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Is this a final order?",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3287,6 +3307,16 @@
     "ListElementCode": "isOrderStamped",
     "FieldType": "YesOrNo",
     "ElementLabel": "Order stamped",
+    "SecurityClassification": "Public",
+    "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "ID": "view_finalOrderCollection",
+    "ListElementCode": "isThisFinalYN",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Final Order",
     "SecurityClassification": "Public",
     "FieldShowCondition": "uploadDraftDocument=\"DONOTSHOW\"",
     "Searchable": "N"
