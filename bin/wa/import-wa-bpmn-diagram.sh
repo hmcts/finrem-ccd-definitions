@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+#
+# Uploads Work Allocation BPMN process definitions to the preview Camunda engine.
+# These BPMN resources define the standalone WA task workflow and are required
+# before WA services can create and manage tasks in the PR environment.
 
 set -euo pipefail
 
