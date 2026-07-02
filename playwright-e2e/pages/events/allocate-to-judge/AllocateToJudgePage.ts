@@ -19,8 +19,8 @@ export class AllocateToJudgePage extends BaseJourneyPage {
     this.assignToJudgeHeader = page.getByRole('heading', { name: 'Update Assign to Judge' });
     this.assignToJudgeReason = page.locator('#assignedToJudgeReason');
     this.assignToJudgeList = page.locator('#assignedToJudge');
-    this.assignToJudgeDate = page.locator('#referToJudgeDateFromConsOrdMade');
-    this.assignToJudgeText = page.locator('#referToJudgeTextFromConsOrdMade');
+    this.assignToJudgeDate = page.locator('#referToJudgeDateFromClose');
+    this.assignToJudgeText = page.locator('#referToJudgeTextFromClose');
     this.commonActionsHelper = commonActionsHelper;
   }
 

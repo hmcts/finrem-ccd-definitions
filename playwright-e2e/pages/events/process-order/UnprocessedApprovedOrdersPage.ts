@@ -17,7 +17,6 @@ export class UnprocessedApprovedOrdersPage extends BaseJourneyPage {
 
   async checkOrderIsInUnprocessedHearingOrders(orderFileName: string) {
     const orderLocator = this.page.getByRole('button', { name: `${orderFileName}` });
-    await orderLocator.waitFor({ state: 'visible' });
     return orderLocator;
   }
 }
