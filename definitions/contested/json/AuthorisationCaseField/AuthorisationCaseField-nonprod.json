@@ -26,5 +26,19 @@
     "CaseFieldID": "citizenRespondentDocument",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "citizenApplicantDocument",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "citizenRespondentDocument",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CR"
   }
 ]
