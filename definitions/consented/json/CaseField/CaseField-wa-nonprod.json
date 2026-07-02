@@ -1,0 +1,38 @@
+[
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "SearchCriteria",
+    "Label": "Search Criteria",
+    "FieldType": "SearchCriteria",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseNameHmctsInternal",
+    "Label": "Case Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseManagementCategory",
+    "Label": "Case Management Category",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseManagementLocation",
+    "Label": "Case Location",
+    "FieldType": "CaseLocation",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  }
+]
