@@ -3111,7 +3111,8 @@
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_GeneralEmailDocument",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "_comment_": "It is used to store email history and display it in the tab."
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7529,15 +7530,14 @@
     "CategoryID": "administrativeDocumentsTransitional"
   },
   {
-    "LiveFrom": "13/12/2019",
+    "LiveFrom": "11/05/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "generalEmailUploadedDocument",
-    "Label": "Upload Document",
-    "HintText": "File size must not exceed 2MB.",
-    "FieldType": "Document",
+    "ID": "generalEmailUploadedDocuments",
+    "Label": "Upload Document(s)",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
-    "Searchable": "N",
-    "CategoryID": "administrativeDocumentsTransitional"
+    "_comment_": "it's a temporary field to capture user input"
   },
   {
     "LiveFrom": "01/01/2017",
