@@ -1,2 +1,26 @@
 [
+  {
+    "LiveFrom": "30/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_applicantUploadDocuments",
+    "CaseFieldID": "citizenApplicantDocument",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "30/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_respondentUploadDocuments",
+    "CaseFieldID": "citizenRespondentDocument",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y"
+  }
 ]
