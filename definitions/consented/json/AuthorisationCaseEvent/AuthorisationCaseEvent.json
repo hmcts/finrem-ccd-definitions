@@ -247,7 +247,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solUploadDocument",
+    "CaseEventID": "FR_solUploadDocumentv2",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
   },
@@ -583,7 +583,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solUploadDocument",
+    "CaseEventID": "FR_solUploadDocumentv2",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CR"
   },
@@ -884,7 +884,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solUploadDocument",
+    "CaseEventID": "FR_solUploadDocumentv2",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
@@ -1278,7 +1278,7 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_solCompleteUploadDocument",
     "UserRole": "[APPSOLICITOR]",
-    "CRUD": "CR"
+    "CRUD": "R"
   },
   {
     "LiveFrom": "10/07/2020",
@@ -1578,6 +1578,55 @@
     "LiveFrom": "09/03/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solUploadDocument",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solUploadDocument",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solUploadDocument",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solUploadDocument",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_UploadPensionDocument_Solicitor",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_UploadPensionDocument_Solicitor",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_UploadPensionDocument_Solicitor",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   }
