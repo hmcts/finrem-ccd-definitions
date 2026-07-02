@@ -4468,47 +4468,6 @@
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "29/01/2025",
-    "ID": "FR_directionOrder_to_uploadHearingOrder",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "uploadHearingOrder",
-    "ListElementCode": "uploadDraftDocument",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "29/01/2025",
-    "ID": "FR_directionOrder_to_uploadHearingOrder",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "uploadHearingOrder",
-    "ListElementCode": "orderDateTime",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "29/01/2025",
-    "ID": "FR_directionOrder_to_uploadHearingOrder",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "uploadHearingOrder",
-    "ListElementCode": "isOrderStamped",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "29/01/2025",
-    "ID": "FR_directionOrder_to_uploadHearingOrder",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "uploadHearingOrder",
-    "ListElementCode": "originalDocument",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "29/01/2025",
-    "ID": "FR_directionOrder_to_uploadHearingOrder",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "uploadHearingOrder",
-    "ListElementCode": "additionalDocuments",
-    "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\""
-  },
-  {
     "LiveFrom": "29/10/2024",
     "ID": "FR_SuggestedDraftOrders",
     "CaseEventID": "FR_draftOrders",
@@ -5467,15 +5426,6 @@
     "ListElementCode": "judgeType",
     "DisplayContext": "MANDATORY"
   },
-  {
-    "LiveFrom": "27/12/2024",
-    "ID": "FR_directionOrderToUnprocessedApprovedDocuments",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "unprocessedApprovedDocuments",
-    "ListElementCode": "uploadDraftDocument",
-    "DisplayContext": "MANDATORY",
-    "EventHintText": "PLEASE NOTE: You must upload a Word document or PDF version of document."
-  }, 
   {
     "LiveFrom": "25/06/2025",
     "ID": "FR_manageHearingsToWorkingHearing",
