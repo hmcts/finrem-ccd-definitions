@@ -2,5 +2,9 @@
   {"CaseTypeID": "FinancialRemedyMVP2", "CaseFieldID": "SearchCriteria", "UserRole": "GS_profile", "CRUD": "R"},
   {"CaseTypeID": "FinancialRemedyMVP2", "CaseFieldID": "caseNameHmctsInternal", "UserRole": "GS_profile", "CRUD": "R"},
   {"CaseTypeID": "FinancialRemedyMVP2", "CaseFieldID": "caseManagementCategory", "UserRole": "GS_profile", "CRUD": "R"},
-  {"CaseTypeID": "FinancialRemedyMVP2", "CaseFieldID": "caseManagementLocation", "UserRole": "GS_profile", "CRUD": "R"}
-]
+  {"CaseTypeID": "FinancialRemedyMVP2", "CaseFieldID": "caseManagementLocation", "UserRole": "GS_profile", "CRUD": "R"},
+
+  {"CaseTypeID": "FinancialRemedyMVP2", "CaseFieldID": "caseNameHmctsInternal", "UserRole": "caseworker-wa-task-configuration", "CRUD": "CRU"},
+  {"CaseTypeID": "FinancialRemedyMVP2", "CaseFieldID": "caseManagementCategory", "UserRole": "caseworker-wa-task-configuration", "CRUD": "CRU"},
+  {"CaseTypeID": "FinancialRemedyMVP2", "CaseFieldID": "caseManagementLocation", "UserRole": "caseworker-wa-task-configuration", "CRUD": "CRU"}
+  ]
