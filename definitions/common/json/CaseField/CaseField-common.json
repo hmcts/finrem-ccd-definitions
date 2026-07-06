@@ -93,11 +93,12 @@
     "Searchable": "Y"
   },
   {
-    "LiveFrom": "19/05/2026",
+    "LiveFrom": "10/06/2026",
     "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
-    "ID": "bin_fileUrls",
+    "ID": "bin_fileUrlsCollection",
     "Label": " ",
-    "FieldType": "DynamicList",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_binFileUrls",
     "SecurityClassification": "Public",
     "Searchable": "Y"
   }
