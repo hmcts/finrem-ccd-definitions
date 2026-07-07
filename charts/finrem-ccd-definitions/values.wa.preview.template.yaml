@@ -100,14 +100,6 @@ am-org-role-mapping-service:
 wa:
   enabled: ${ENABLE_WA}
   wa:
-    taskBatchCron:
-      enabled: false
-    messageCron:
-      enabled: false
-    reconfigurationBatchCron:
-      enabled: false
-    terminationBatchCron:
-      enabled: false
     postgresql:
       enabled: false
   global:
