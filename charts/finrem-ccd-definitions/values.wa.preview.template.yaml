@@ -191,6 +191,8 @@ wa:
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
   wa-message-cron-service:
+    java:
+      ingressHost: wa-msg-cron-svc-${SERVICE_FQDN}
     job:
       schedule: "*/1 * * * *"
 
