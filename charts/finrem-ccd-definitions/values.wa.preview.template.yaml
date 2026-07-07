@@ -190,11 +190,11 @@ wa:
         DB_READER_USERNAME: "hmcts"
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
+
   wa-message-cron-service:
-    java:
-      ingressHost: wa-msg-cron-svc-${SERVICE_FQDN}
     job:
       schedule: "*/1 * * * *"
+      releaseNameOverride: "{{ .Release.Name }}-wa-message-cron"
 
   wa-initiation-batch:
     job:
