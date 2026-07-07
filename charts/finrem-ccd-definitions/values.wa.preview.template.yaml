@@ -182,6 +182,7 @@ wa:
   wa-message-cron-service:
     job:
       schedule: "*/1 * * * *"
+      releaseNameOverride: "{{ .Release.Name }}-wa-message-cron"
 
   wa-initiation-batch:
     job:
