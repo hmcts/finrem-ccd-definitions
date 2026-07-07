@@ -11,8 +11,8 @@ import { envTestData } from '../../data-utils/test_data/EnvTestDataConfig.ts';
 import { ManageCaseDashboardPage } from '../../pages/ManageCaseDashboardPage.ts';
 import { SigninPage } from '../../pages/SigninPage.ts';
 import {
-    APPLICATION_FEE,
-    ORDER_SUMMARY
+  APPLICATION_FEE,
+  ORDER_SUMMARY
 } from './test_data/payment_fees.ts';
 
 const REFERENCE = 'Reference';
