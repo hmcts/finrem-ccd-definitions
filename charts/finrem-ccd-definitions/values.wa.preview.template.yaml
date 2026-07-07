@@ -195,21 +195,30 @@ wa:
     job:
       schedule: "*/1 * * * *"
       releaseNameOverride: "{{ .Release.Name }}-wa-message-cron"
+    environment:
+      S2S_SECRET_TASK_MONITOR: ${S2S_SECRET_TASK_MONITOR}
+      WA_CASE_EVENT_HANDLER_SERVICE_URL: http://{{ .Release.Name }}-wa-case-event-handler
 
   wa-initiation-batch:
     job:
       schedule: "*/1 * * * *"
       releaseNameOverride: "{{ .Release.Name }}-wa-task-batch"
+    environment:
+      S2S_SECRET_TASK_MONITOR: ${S2S_SECRET_TASK_MONITOR}
 
   wa-reconfiguration-batch:
     job:
       schedule: "*/1 * * * *"
       releaseNameOverride: "{{ .Release.Name }}-reconfiguration"
+    environment:
+      S2S_SECRET_TASK_MONITOR: ${S2S_SECRET_TASK_MONITOR}
 
   wa-termination-batch:
     job:
       schedule: "*/1 * * * *"
       releaseNameOverride: "{{ .Release.Name }}-termination-batch"
+    environment:
+        S2S_SECRET_TASK_MONITOR: ${S2S_SECRET_TASK_MONITOR}
 
 
 ccd:
