@@ -830,6 +830,18 @@
     "ListElement": "NOTTINGHAM JUSTICE CENTRE"
   },
   {
+    "LiveFrom": "23/06/2026",
+    "ID": "FR_s_NottinghamList",
+    "ListElementCode": "FR_s_NottinghamList_12",
+    "ListElement": "NUNEATON COUNTY COURT"
+  },
+  {
+    "LiveFrom": "23/06/2026",
+    "ID": "FR_s_NottinghamList",
+    "ListElementCode": "FR_s_NottinghamList_13",
+    "ListElement": "NORTHAMPTON MAGISTRATES' COURT"
+  },
+  {
     "LiveFrom": "03/01/2017",
     "ID": "FR_s_CFCList",
     "ListElementCode": "FR_s_CFCList_1",
@@ -3356,6 +3368,55 @@
     "ListElementCode": "unableToQuantify",
     "ListElement": "Unable to quantify",
     "DisplayOrder": 6
+  },
+    {
+    "LiveFrom": "06/07/2026",
+    "ID": "FR_ms_estimatedAssetsChecklist3",
+    "ListElementCode": "overTwentyMillionPounds",
+    "ListElement": "Over £20 million",
+    "DisplayOrder": 1
+  },
+  {
+    "LiveFrom": "06/07/2026",
+    "ID": "FR_ms_estimatedAssetsChecklist3",
+    "ListElementCode": "betweenTenAndTwentyMillionPounds",
+    "ListElement": "£10 million - £20 million",
+    "DisplayOrder": 2
+  },
+  {
+    "LiveFrom": "06/07/2026",
+    "ID": "FR_ms_estimatedAssetsChecklist3",
+    "ListElementCode": "betweenFiveAndTenMillionPounds",
+    "ListElement": "£5 million - £10 million",
+    "DisplayOrder": 3
+  },
+  {
+    "LiveFrom": "06/07/2026",
+    "ID": "FR_ms_estimatedAssetsChecklist3",
+    "ListElementCode": "betweenOneAndFiveMillionPounds",
+    "ListElement": "£1 million - £5 million",
+    "DisplayOrder": 4
+  },
+  {
+    "LiveFrom": "06/07/2026",
+    "ID": "FR_ms_estimatedAssetsChecklist3",
+    "ListElementCode": "betweenFiveHundredThousandAndOneMillionPounds",
+    "ListElement": "£500,000 - £1 million",
+    "DisplayOrder": 5
+  },
+  {
+    "LiveFrom": "06/07/2026",
+    "ID": "FR_ms_estimatedAssetsChecklist3",
+    "ListElementCode": "betweenTwoHundredAndFiftyThousandAndFiveHundredThousandPounds",
+    "ListElement": "£250,000 - £500,000",
+    "DisplayOrder": 6
+  },
+    {
+    "LiveFrom": "06/07/2026",
+    "ID": "FR_ms_estimatedAssetsChecklist3",
+    "ListElementCode": "underTwoHundredAndFiftyThousandPounds",
+    "ListElement": "Under £250,000 (this should be total of combined net assets, but excluding pensions)",
+    "DisplayOrder": 7
   },
   {
     "LiveFrom": "17/01/2025",
