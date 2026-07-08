@@ -136,6 +136,10 @@ wa:
         ALLOWED_CASE_TYPES: financialremedymvp2,financialremedycontested
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         MANDATORY_TASK_FIELD_CHECK_ENABLED: true
+        S2S_SECRET_TASK_MANAGEMENT_API: ${S2S_SECRET_TASK_MANAGEMENT_API}
+        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
+        WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
+        WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
 
   wa-case-event-handler:
     java:
@@ -156,6 +160,10 @@ wa:
         CCD_SEARCH_URL: "http://{{ .Release.Name }}-ccd-data-store-api"
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
+        S2S_SECRET_CASE_EVENT_HANDLER: ${S2S_SECRET_CASE_EVENT_HANDLER}
+        WA_WORKFLOW_API_URL: "http://{{ .Release.Name }}-wa-workflow-api"
+        WA_TASK_MANAGEMENT_API_URL: "http://{{ .Release.Name }}-wa-task-management-api"
+        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
         AZURE_SERVICE_BUS_TOPIC_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_CCD_CASE_EVENTS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
@@ -165,6 +173,10 @@ wa:
       disableKeyVaults: true
       ingressHost: wa-task-monitor-${SERVICE_FQDN}
       environment:
+        S2S_SECRET_TASK_MONITOR: ${S2S_SECRET_TASK_MONITOR}
+        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
+        WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
+        WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
         WA_TASK_MANAGEMENT_API_URL: http://{{ .Release.Name }}-wa-task-management-api
 
   wa-workflow-api:
