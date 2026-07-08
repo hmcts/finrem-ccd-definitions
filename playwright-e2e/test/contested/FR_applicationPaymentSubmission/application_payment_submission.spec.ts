@@ -42,7 +42,6 @@ function createPaymentData(fee: { amount: string; code: string; type: string; })
   };
 }
 
-
 test(
   'Contested - Case Submission - PBA Payment Matrimonial',
   { tag: ['@payment'] },
@@ -106,8 +105,6 @@ test(
   }
 );
 
-
-
 test(
   'Contested - Case Submission - PBA Payment Schedule 1 case',
   { tag: ['@payment'] },
@@ -122,7 +119,6 @@ test(
     caseSubmissionPage,
     checkYourAnswersPage
   }) => {
-
 
     const caseId = await test.step('Create Schedule 1 case', async () => {
       return await ContestedCaseFactory.createSchedule1Case();
@@ -139,10 +135,7 @@ test(
 
     });
 
-
     await test.step('Submit Schedule 1 PBA payment', async () => {
-
-
       await applicationCaseSubmission(
         caseDetailsPage,
         solicitorAuthPage,
@@ -176,8 +169,6 @@ test(
   }
 );
 
-
-
 test(
   'Contested - Case Submission - HWF Payment',
   { tag: ['@payment', '@hwf'] },
@@ -208,7 +199,6 @@ test(
 
     });
 
-
     await test.step('Submit HWF payment', async () => {
 
 
@@ -237,9 +227,6 @@ test(
           ]
         ]
       );
-
-
     });
-
   }
 );
