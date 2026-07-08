@@ -10,6 +10,7 @@ export default defineConfig({
   testMatch:'*spec.ts',
   snapshotDir: "./playwright-e2e/snapshots",
   retries: process.env.CI ? 3 : 3,
+  workers: Number(process.env.FUNCTIONAL_TESTS_WORKERS || 4),
   expect: { timeout: 180_000 }, // 3 minutes
   timeout: 5*60*1000, //each test execution time is set to 5 min
   globalTeardown: './playwright-e2e/config/global-teardown',
