@@ -7,5 +7,24 @@
     "FieldType": "DynamicMultiSelectList",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "additionalDocument",
+    "Label": "Please upload any additional document",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "approvedOrders"
+  },
+  {
+    "LiveFrom": "19/05/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "bin_fileUrls",
+    "Label": " ",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]

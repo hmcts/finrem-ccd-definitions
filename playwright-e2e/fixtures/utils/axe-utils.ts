@@ -83,7 +83,17 @@ export class AxeUtils {
       }
     }
 
-    expect.soft(results.violations, `Accessibility violations found on ${this.page.url()}`).toEqual([]);
+    const formatted = results.violations.map(v => {return {
+      rule: v.id,
+      impact: v.impact,
+      url: this.page.url(),
+      nodes: v.nodes.map(n => {return {
+        html: n.html,
+        target: n.target
+      };})
+    };});
+
+    expect.soft(formatted, 'Accessibility violations').toEqual([]);
   }
 
   public async generateReport(testInfo: TestInfo) {

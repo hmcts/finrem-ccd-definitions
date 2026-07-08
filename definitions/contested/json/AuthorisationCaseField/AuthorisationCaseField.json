@@ -15213,7 +15213,7 @@
   {
     "LiveFrom": "01/05/2022",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "additionalDocument",
+    "CaseFieldID": "additionalDocuments",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   },
@@ -19935,6 +19935,13 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "currentUserIsRespondentSolicitor",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "05/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "generalApplicationDirectionsPreview",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   }
 ]

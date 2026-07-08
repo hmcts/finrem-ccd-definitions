@@ -17,10 +17,15 @@ def secrets = [
                 secret('microservicekey-ccd-definition', 'DEFINITION_STORE_S2S_KEY'),
                 secret('microservicekey-ccd-gw', 'API_GATEWAY_S2S_KEY'),
                 secret('microservicekey-ccd-ps', 'PRINT_S2S_KEY'),
-                secret('microservicekey-ccd-admin', 'ADMIN_S2S_KEY')
+                secret('microservicekey-ccd-admin', 'ADMIN_S2S_KEY'),
+                secret('microservicekey-rd-caseworker-ref-api', 'CASEWORKER_REF_API_S2S_SECRET')
         ],
         'am-${env}'      : [
                 secret('am-role-assignment-service-s2s-secret', 'AM_ROLE_ASSIGNMENT_SERVICE_SECRET'),
+                secret('am-org-role-mapping-service-s2s-secret', 'AM_ORG_ROLE_MAPPING_SERVICE_SECRET'),
+                secret('orm-IDAM-CLIENT-ID', 'ORM_IDAM_CLIENT_ID'),
+                secret('orm-IDAM-CLIENT-SECRET', 'ORG_ROLE_MAPPING_IDAM_CLIENT_SECRET'),
+                secret('orm-IDAM-ADMIN-SECRET', 'ORG_ROLE_MAPPING_IDAM_ADMIN_PASSWORD'),
                 secret('role-assignment-service-IDAM-CLIENT-SECRET', 'ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET'),
                 secret('role-assignment-service-IDAM-ADMIN-SECRET', 'ROLE_ASSIGNMENT_IDAM_ADMIN_PASSWORD'),
                 secret('role-assignment-service-LD-SDK-KEY', 'LD_SDK_AM_KEY')
@@ -139,6 +144,47 @@ def setPreviewEnvVars() {
   }
 }
 
+def getPreviewDefinitionExclusions() {
+  return env.ENABLE_WA?.toBoolean() ? '*-prod.json' : '*-prod.json,*-wa-nonprod.json'
+}
+
+def setCommonWaPreviewEnvVars() {
+  env.IDAM_API_URL_BASE = 'https://idam-api.aat.platform.hmcts.net'
+  env.S2S_URL_BASE = 'http://rpe-service-auth-provider-aat.service.core-compute-aat.internal'
+  env.CCD_API_GATEWAY_IDAM_CLIENT_SECRET = env.API_GATEWAY_IDAM_SECRET
+  env.ROLE_ASSIGNMENT_URL = "https://am-role-assignment-service-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+  env.ORG_ROLE_MAPPING_URL = "https://am-org-role-mapping-service-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+  env.CAMUNDA_BASE_URL = "https://camunda-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+  env.WA_CAMUNDA_S2S_MICROSERVICE = 'finrem_case_orchestration'
+}
+
+def uploadWaPreviewDmnDefinitions() {
+  def waTaskConfigRepoUrl = env.WA_TASK_CONFIG_REPO_URL ?: 'https://github.com/hmcts/finrem-task-configuration.git'
+  def waTaskConfigBranch = env.WA_TASK_CONFIG_BRANCH ?: 'master'
+
+  dir("${WORKSPACE}") {
+    sh """
+      ./bin/wa/pull-latest-task-config-files.sh "${waTaskConfigRepoUrl}" "${waTaskConfigBranch}" camunda
+      ./bin/wa/import-dmn-diagram.sh . financial-remedy finrem camunda
+    """
+  }
+}
+
+def uploadWaPreviewBpmnDefinitions() {
+  dir("${WORKSPACE}") {
+    sh '''
+      ./bin/wa/pull-latest-camunda-wa-files.sh "${WA_TASK_BPMN_BRANCH:-master}"
+      ./bin/wa/import-wa-bpmn-diagram.sh .
+    '''
+  }
+}
+
+def setupWaPreviewRoleAssignments() {
+  dir("${WORKSPACE}") {
+    sh './bin/wa/setup-role-assignments.sh'
+  }
+}
+
 // Configure branches to sync with master branch
 def branchesToSync = ['demo', 'ithc', 'perftest']
 properties([
@@ -161,6 +207,18 @@ withPipeline("nodejs", product, component) {
       }
     }
   }
+  afterSuccess('akschartsinstall') {
+    onPR {
+      if (env.ENABLE_WA?.toBoolean()) {
+        setCommonWaPreviewEnvVars()
+        println """After akschartsinstall upload DMN and BPMN diagrams and setup WA org mappings using ${env.ORG_ROLE_MAPPING_URL}""".stripIndent()
+        sh 'chmod -R +x ./bin'
+        uploadWaPreviewDmnDefinitions()
+        uploadWaPreviewBpmnDefinitions()
+        setupWaPreviewRoleAssignments()
+      }
+    }
+  }
   before('highleveldatasetup') {
     echo "CCD definition upload for environment: ${env.ENV}"
     env.RUNNING_ENV = env.ENV
@@ -171,6 +229,7 @@ withPipeline("nodejs", product, component) {
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.CCD_DATA_API_URL = "https://ccd-data-store-api-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.DEFINITION_STORE_URL_BASE = "https://ccd-definition-store-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+      env.EXCLUDE = getPreviewDefinitionExclusions()
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
       }

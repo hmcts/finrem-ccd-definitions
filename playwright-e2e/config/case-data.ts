@@ -79,7 +79,7 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
   },
   assignToJudgeConsentMade: {
     listItem: "Assign To Judge",
-    ccdCallback: "FR_referToJudgeFromConsOrdMade"
+    ccdCallback: "FR_referToJudgeFromClose"
   },
   uploadApprovedOrder: {
     listItem: "Upload Approved Order",
@@ -171,7 +171,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   },
   manageCaseDocuments: {
     listItem: "Manage case documents",
-    ccdCallback: "FR_manageCaseDocuments"
+    ccdCallback: "FR_newManageCaseDocuments"
   },
   refund: {
     listItem: "Refund",
@@ -236,10 +236,6 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   judgeUploadApprovedOrder: {
     listItem: "Upload approved order",
     ccdCallback: "FR_judgeDraftDirectionOrder"
-  },
-  manageCaseDocumentsNewEvent: {
-    listItem: "Manage case documents (New)",
-    ccdCallback: "FR_newManageCaseDocuments"
   },
   removeCaseDocument: {
     listItem: "Remove Case Document",

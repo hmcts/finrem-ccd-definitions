@@ -790,6 +790,16 @@
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
+    {
+    "LiveFrom": "06/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "estimatedAssetsChecklistV3",
+    "Label": "Select one",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_ms_estimatedAssetsChecklist3",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
@@ -6777,9 +6787,10 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "additionalDocument",
-    "Label": "Please upload any additional document",
-    "FieldType": "Document",
+    "ID": "additionalDocuments",
+    "Label": "Please upload any additional documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "approvedOrders"
@@ -8980,5 +8991,14 @@
     "SecurityClassification": "Public",
     "Searchable": "N",
     "CategoryID": "applicationsConsentOrderToFinaliseProceedings"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "generalApplicationDirectionsPreview",
+    "Label": "Preview of General Applications Directions",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]

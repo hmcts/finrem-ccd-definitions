@@ -83,5 +83,15 @@
     "FieldType": "FR_caseMetrics",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "10/06/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "bin_fileUrlsCollection",
+    "Label": " ",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_binFileUrls",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]
