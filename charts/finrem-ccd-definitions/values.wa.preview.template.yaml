@@ -15,6 +15,12 @@ xui-webapp:
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
       GLOBAL_SEARCH_SERVICES: "IA,CIVIL,PRIVATELAW,PUBLICLAW,EMPLOYMENT,ST_CIC,DIVORCE"
 
+finrem-cos:
+  enabled: true
+  java:
+    environment:
+      FEATURE_GLOBAL_SEARCH_ENABLED: true
+
 ccd-data-store-api:
   enabled: ${ENABLE_WA}
   java:
