@@ -11,24 +11,6 @@
   {
     "LiveFrom": "29/01/2026",
     "ID": "FR_accessCodeEntry",
-    "ListElementCode": "createdAt",
-    "FieldType": "DateTime",
-    "ElementLabel": "Date the access code is created",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/01/2026",
-    "ID": "FR_accessCodeEntry",
-    "ListElementCode": "validUntil",
-    "FieldType": "DateTime",
-    "ElementLabel": "Date the access code expires (90 days after created date)",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/01/2026",
-    "ID": "FR_accessCodeEntry",
     "ListElementCode": "isValid",
     "FieldType": "YesOrNo",
     "ElementLabel": "Determines if access code is valid",
@@ -42,6 +24,15 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "CU_fl_citizenUploadDocuments",
     "ElementLabel": "Type",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "18/06/2026",
+    "ID": "CU_ct_citizenApplicantDocument",
+    "ListElementCode": "isFDR",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Financial dispute resolution",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -106,6 +97,15 @@
     "FieldType": "FixedList",
     "FieldTypeParameter": "CU_fl_citizenUploadDocuments",
     "ElementLabel": "Type",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "18/06/2026",
+    "ID": "CU_ct_citizenRespondentDocument",
+    "ListElementCode": "isFDR",
+    "FieldType": "YesOrNo",
+    "ElementLabel": "Financial dispute resolution",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
