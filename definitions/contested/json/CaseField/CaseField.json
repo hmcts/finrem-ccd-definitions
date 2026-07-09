@@ -791,6 +791,25 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "06/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "estimatedAssetsChecklistV3",
+    "Label": "Select one",
+    "FieldType": "FixedRadioList",
+    "FieldTypeParameter": "FR_ms_estimatedAssetsChecklist3",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "estimatedAssetsChecklistVersion",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "netValueOfHomeLabel",
