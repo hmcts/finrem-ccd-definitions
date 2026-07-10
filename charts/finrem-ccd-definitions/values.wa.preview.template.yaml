@@ -19,7 +19,7 @@ finrem-cos:
   enabled: true
   java:
     environment:
-      FEATURE_GLOBAL_SEARCH_ENABLED: true
+      GLOBAL_SEARCH_ENABLED: true
 
 ccd-data-store-api:
   enabled: ${ENABLE_WA}
