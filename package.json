@@ -108,7 +108,9 @@
     "highLevelDataSetup": "echo 'bash ./gradlew highLevelDataSetup --args=$1 && sh bin/after-data-setup-step.sh' > ./temp.sh && sh ./temp.sh",
     "yarn-update": "node bin/set-yarn-version.js",
     "install-dependencies": "yarn install --silent",
-    "setup-precommit": "node bin/setup-precommit-hooks.mjs"
+    "setup-precommit": "node bin/setup-precommit-hooks.mjs",
+    "test:zap-smoke": "yarn playwright install chromium && yarn playwright test --grep=@smoke-test --project=zap-chromium",
+    "test:zap-check": "node bin/check-zap-report.js zap-reports/zap-report.json zap/zap-rules.conf"
   },
   "dependencies": {
     "@axe-core/playwright": "^4.10.0",

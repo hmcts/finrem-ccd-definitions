@@ -1,6 +1,9 @@
 #!groovy
+
 properties([
-        pipelineTriggers([cron('00 18 * * 1-5')]),
+        pipelineTriggers([
+                cron('00 18 * * 1-5')
+        ]),
         parameters([
                 string(
                         name: 'RUNNING_ENV',
@@ -19,8 +22,20 @@ properties([
                 ),
                 choice(
                         name: 'BROWSER_TO_RUN',
-                        choices: ['all', 'chromium', 'chrome', 'firefox', 'webkit', 'msedge'],
+                        choices: [
+                                'all',
+                                'chromium',
+                                'chrome',
+                                'firefox',
+                                'webkit',
+                                'msedge'
+                        ],
                         description: 'Select a browser, or choose "all" to run every browser'
+                ),
+                booleanParam(
+                        name: 'RUN_ZAP_SMOKE_TESTS',
+                        defaultValue: true,
+                        description: 'Run the Chromium Playwright smoke tests through OWASP ZAP'
                 )
         ])
 ])
@@ -31,55 +46,168 @@ import uk.gov.hmcts.contino.AppPipelineConfig
 String type = 'nodejs'
 String product = 'finrem'
 String component = 'ccd-definitions'
+
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
-static Map < String, Object > secret(String secretName, String envVariable) {
-    [$class: 'AzureKeyVaultSecret',
-     secretType: 'Secret',
-     name: secretName,
-     envVariable: envVariable
+static Map<String, Object> secret(
+        String secretName,
+        String envVariable
+) {
+    [
+            $class    : 'AzureKeyVaultSecret',
+            secretType: 'Secret',
+            name      : secretName,
+            envVariable: envVariable
     ]
 }
 
-// Dynamically resolve vault environment prefix based on parameters
-String vaultEnv = params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV
+// Dynamically resolve vault environment prefix based on parameters.
+String vaultEnv = params.RUNNING_ENV.startsWith('pr')
+        ? 'aat'
+        : params.RUNNING_ENV
+
 def secrets = [
         "${product}-${vaultEnv}": [
-                secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
-                secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
-                secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
-                secret('playwright-appl-caa-password', 'PLAYWRIGHT_APPL_CAA_PSWD'),
-                secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
-                secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
-                secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
-                secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
-                secret('playwright-applicant-intervener-username', 'PLAYWRIGHT_APPL_INTERVENER_USERNAME'),
-                secret('playwright-applicant-intervener-password', 'PLAYWRIGHT_APPL_INTERVENER_PSWD'),
-                secret('playwright-respondent-intervener-username', 'PLAYWRIGHT_RESP_INTERVENER_USERNAME'),
-                secret('playwright-respondent-intervener-password', 'PLAYWRIGHT_RESP_INTERVENER_PSWD'),
-                secret('username-caseworker', 'USERNAME_CASEWORKER'),
-                secret('password-caseworker', 'PASSWORD_CASEWORKER'),
-                secret('fr-judge-username', 'USERNAME_JUDGE'),
-                secret('fr-judge-password', 'PASSWORD_JUDGE'),
-                secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
-                secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
-                secret('barrister1-username', 'USERNAME_BARRISTER1'),
-                secret('barrister1-password', 'PASSWORD_BARRISTER1'),
-                secret("playwright-barrister2-respondent-username","PLAYWRIGHT_RESP_BARRISTER_USERNAME"),
-                secret("playwright-barrister2-respondent-testing-password","PLAYWRIGHT_RESP_BARRISTER_PSWD"),
-                secret("playwright-appl-caa2-username","PLAYWRIGHT_APPL_CAA2_USERNAME"),
-                secret("playwright-appl-caa2-password","PLAYWRIGHT_APPL_CAA2_PSWD"),
-                secret("playwright-respondent-caa2-username","PLAYWRIGHT_RESP_CAA2_USERNAME"),
-                secret("playwright-respondent-caa2-password","PLAYWRIGHT_RESP_CAA2_PSWD"),
-                secret("playwright-solicitor2-username","PLAYWRIGHT_SOLICITOR2_USERNAME"),
-                secret("playwright-solicitor2-password","PLAYWRIGHT_SOLICITOR2_PSWD"),
-                secret("playwright-respondent-sol2-username","PLAYWRIGHT_RESPONDENT_SOL2_USERNAME"),
-                secret("playwright-respondent-sol2-password","PLAYWRIGHT_RESPONDENT_SOL2_PSWD"),
-                secret("playwright-int-barrister-username","PLAYWRIGHT_INT_BARRISTER_USERNAME"),
-                secret("playwright-int-barrister-password","PLAYWRIGHT_INT_BARRISTER_PSWD"),
-                secret("SUPERCASEWORKER-USERNAME","USERNAME_SUPERCASEWORKER"),
-                secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER"),
-                secret("nightlydevtoken","GITHUB_TOKEN")
+                secret(
+                        'playwright-solicitor-username',
+                        'PLAYWRIGHT_SOLICITOR_USERNAME'
+                ),
+                secret(
+                        'playwright-solicitor-password',
+                        'PLAYWRIGHT_SOLICITOR_PSWD'
+                ),
+                secret(
+                        'playwright-appl-caa-username',
+                        'PLAYWRIGHT_APPL_CAA_USERNAME'
+                ),
+                secret(
+                        'playwright-appl-caa-password',
+                        'PLAYWRIGHT_APPL_CAA_PSWD'
+                ),
+                secret(
+                        'playwright-respondent-sol-username',
+                        'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'
+                ),
+                secret(
+                        'playwright-respondent-sol-password',
+                        'PLAYWRIGHT_RESPONDENT_SOL_PSWD'
+                ),
+                secret(
+                        'playwright-respondent-caa-username',
+                        'PLAYWRIGHT_RESP_CAA_USERNAME'
+                ),
+                secret(
+                        'playwright-respondent-caa-password',
+                        'PLAYWRIGHT_RESP_CAA_PSWD'
+                ),
+                secret(
+                        'playwright-applicant-intervener-username',
+                        'PLAYWRIGHT_APPL_INTERVENER_USERNAME'
+                ),
+                secret(
+                        'playwright-applicant-intervener-password',
+                        'PLAYWRIGHT_APPL_INTERVENER_PSWD'
+                ),
+                secret(
+                        'playwright-respondent-intervener-username',
+                        'PLAYWRIGHT_RESP_INTERVENER_USERNAME'
+                ),
+                secret(
+                        'playwright-respondent-intervener-password',
+                        'PLAYWRIGHT_RESP_INTERVENER_PSWD'
+                ),
+                secret(
+                        'username-caseworker',
+                        'USERNAME_CASEWORKER'
+                ),
+                secret(
+                        'password-caseworker',
+                        'PASSWORD_CASEWORKER'
+                ),
+                secret(
+                        'fr-judge-username',
+                        'USERNAME_JUDGE'
+                ),
+                secret(
+                        'fr-judge-password',
+                        'PASSWORD_JUDGE'
+                ),
+                secret(
+                        'idam-client-secret',
+                        'IDAM_CLIENT_SECRET'
+                ),
+                secret(
+                        'finrem-case-orchestration-service-s2s-key',
+                        'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'
+                ),
+                secret(
+                        'barrister1-username',
+                        'USERNAME_BARRISTER1'
+                ),
+                secret(
+                        'barrister1-password',
+                        'PASSWORD_BARRISTER1'
+                ),
+                secret(
+                        'playwright-barrister2-respondent-username',
+                        'PLAYWRIGHT_RESP_BARRISTER_USERNAME'
+                ),
+                secret(
+                        'playwright-barrister2-respondent-testing-password',
+                        'PLAYWRIGHT_RESP_BARRISTER_PSWD'
+                ),
+                secret(
+                        'playwright-appl-caa2-username',
+                        'PLAYWRIGHT_APPL_CAA2_USERNAME'
+                ),
+                secret(
+                        'playwright-appl-caa2-password',
+                        'PLAYWRIGHT_APPL_CAA2_PSWD'
+                ),
+                secret(
+                        'playwright-respondent-caa2-username',
+                        'PLAYWRIGHT_RESP_CAA2_USERNAME'
+                ),
+                secret(
+                        'playwright-respondent-caa2-password',
+                        'PLAYWRIGHT_RESP_CAA2_PSWD'
+                ),
+                secret(
+                        'playwright-solicitor2-username',
+                        'PLAYWRIGHT_SOLICITOR2_USERNAME'
+                ),
+                secret(
+                        'playwright-solicitor2-password',
+                        'PLAYWRIGHT_SOLICITOR2_PSWD'
+                ),
+                secret(
+                        'playwright-respondent-sol2-username',
+                        'PLAYWRIGHT_RESPONDENT_SOL2_USERNAME'
+                ),
+                secret(
+                        'playwright-respondent-sol2-password',
+                        'PLAYWRIGHT_RESPONDENT_SOL2_PSWD'
+                ),
+                secret(
+                        'playwright-int-barrister-username',
+                        'PLAYWRIGHT_INT_BARRISTER_USERNAME'
+                ),
+                secret(
+                        'playwright-int-barrister-password',
+                        'PLAYWRIGHT_INT_BARRISTER_PSWD'
+                ),
+                secret(
+                        'SUPERCASEWORKER-USERNAME',
+                        'USERNAME_SUPERCASEWORKER'
+                ),
+                secret(
+                        'SUPERCASEWORKER-PASSWORD',
+                        'PASSWORD_SUPERCASEWORKER'
+                ),
+                secret(
+                        'nightlydevtoken',
+                        'GITHUB_TOKEN'
+                )
         ]
 ]
 
@@ -88,11 +216,15 @@ pipelineConf.vaultSecrets = secrets
 
 def buildPlaywrightCommand(tags, browser) {
     if (tags == null || tags.trim().isEmpty()) {
-        return;
+        return null
     }
-    def tagList = tags.split(',').collect { it.trim() }
 
-    def command = 'yarn playwright test '
+    def tagList = tags
+            .split(',')
+            .collect { it.trim() }
+
+    def command = 'yarn playwright test'
+
     tagList.each { tag ->
         if (!tag.isEmpty()) {
             command += " --grep ${tag}"
@@ -107,33 +239,38 @@ def buildPlaywrightCommand(tags, browser) {
     return command
 }
 
-// Helper to handle repeated browser testing stages boilerplate cleanly
-def runBrowserStage = { String browserName,
-                        String yarnScript,
-                        Map envOverrides = [:] ->
+// Helper to handle repeated browser testing stage boilerplate.
+def runBrowserStage = {
+    String browserName,
+    String yarnScript,
+    Map envOverrides = [:] ->
 
     return {
         stage("Functional playwright tests - ${browserName}") {
             try {
                 if (envOverrides) {
-                    withEnv(envOverrides.collect { k, v -> "${k}=${v}" }) {
+                    withEnv(
+                            envOverrides.collect {
+                                key, value -> "${key}=${value}"
+                            }
+                    ) {
                         yarnBuilder.yarn(yarnScript)
                     }
                 } else {
                     yarnBuilder.yarn(yarnScript)
                 }
-
             } catch (Error e) {
-                unstable(message: "${STAGE_NAME} is unstable: ${e}")
-
+                unstable(
+                        message: "${STAGE_NAME} is unstable: ${e}"
+                )
             } finally {
                 publishHTML([
-                        allowMissing: true,
+                        allowMissing         : true,
                         alwaysLinkToLastBuild: true,
-                        keepAll: true,
-                        reportDir: 'playwright-report',
-                        reportFiles: 'index.html',
-                        reportName: "FunctionalTestReport-${browserName}"
+                        keepAll              : true,
+                        reportDir            : 'playwright-report',
+                        reportFiles          : 'index.html',
+                        reportName           : "FunctionalTestReport-${browserName}"
                 ])
 
                 steps.archiveArtifacts(
@@ -154,60 +291,182 @@ withNightlyPipeline(type, product, component) {
     loadVaultSecrets(secrets)
 
     afterAlways('DependencyCheckNightly') {
-
         stage('Set up playwright') {
             yarnBuilder.yarn('yarn-update')
             yarnBuilder.yarn('install-dependencies')
-            steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-            env.ENV = params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV
+
+            steps.archiveArtifacts(
+                    allowEmptyArchive: true,
+                    artifacts: 'definitions/**/xlsx/*.xlsx'
+            )
+
+            env.ENV = params.RUNNING_ENV.startsWith('pr')
+                    ? 'aat'
+                    : params.RUNNING_ENV
         }
 
         if (!params.TAGS_TO_RUN.isEmpty()) {
-            stage("${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}") {
+            stage(
+                    "${params.TAGS_TO_RUN} E2E Tests for " +
+                            "${params.BROWSER_TO_RUN}"
+            ) {
                 try {
-                    currentBuild.displayName = "${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
-                    yarnBuilder.yarn(buildPlaywrightCommand(params.TAGS_TO_RUN, params.BROWSER_TO_RUN))
+                    currentBuild.displayName =
+                            "${params.TAGS_TO_RUN} E2E Tests for " +
+                                    "${params.BROWSER_TO_RUN}"
+
+                    yarnBuilder.yarn(
+                            buildPlaywrightCommand(
+                                    params.TAGS_TO_RUN,
+                                    params.BROWSER_TO_RUN
+                            )
+                    )
                 } catch (Error e) {
-                    unstable(message: "${STAGE_NAME} is unstable: " + e.toString())
+                    unstable(
+                            message: "${STAGE_NAME} is unstable: " +
+                                    e.toString()
+                    )
                 } finally {
                     publishHTML([
-                            allowMissing: true,
+                            allowMissing         : true,
                             alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: "playwright-report",
-                            reportFiles: 'index.html',
-                            reportName: "${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
+                            keepAll              : true,
+                            reportDir            : 'playwright-report',
+                            reportFiles          : 'index.html',
+                            reportName           :
+                                    "${params.TAGS_TO_RUN} E2E Tests for " +
+                                            "${params.BROWSER_TO_RUN}"
                     ])
-                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+
+                    steps.archiveArtifacts(
+                            allowEmptyArchive: true,
+                            artifacts:
+                                    'build/reports/tests/functionalTest/**/*'
+                    )
                 }
             }
         } else {
-            // Define all potential browser stages available
+            // Define all potential browser stages.
             def allStages = [
-                    'msedge': ['Edge Tests': runBrowserStage('edge', 'test:functional-edge', ['TESTS_FOR_ACCESSIBILITY': 'true'])],
-                    'chromium': ['Chromium Tests': runBrowserStage('chromium', 'test:functional-chromium')],
-                    'chrome': ['Chrome Tests': runBrowserStage('chrome', 'test:functional-chrome')],
-                    'firefox': ['Firefox Tests': runBrowserStage('firefox', 'test:functional-firefox')],
-                    'webkit': ['Webkit Tests': runBrowserStage('webkit', 'test:functional-webkit')]
+                    'msedge': [
+                            'Edge Tests': runBrowserStage(
+                                    'edge',
+                                    'test:functional-edge',
+                                    [
+                                            'TESTS_FOR_ACCESSIBILITY': 'true'
+                                    ]
+                            )
+                    ],
+                    'chromium': [
+                            'Chromium Tests': runBrowserStage(
+                                    'chromium',
+                                    'test:functional-chromium'
+                            )
+                    ],
+                    'chrome': [
+                            'Chrome Tests': runBrowserStage(
+                                    'chrome',
+                                    'test:functional-chrome'
+                            )
+                    ],
+                    'firefox': [
+                            'Firefox Tests': runBrowserStage(
+                                    'firefox',
+                                    'test:functional-firefox'
+                            )
+                    ],
+                    'webkit': [
+                            'Webkit Tests': runBrowserStage(
+                                    'webkit',
+                                    'test:functional-webkit'
+                            )
+                    ]
             ]
 
-            // Build the specific parallel stages execution map based on selection
+            // Build the parallel stages based on the selected browser.
             def stagesToRun = [:]
 
             if (params.BROWSER_TO_RUN == 'all') {
                 allStages.each { browser, stageMap ->
                     stagesToRun.putAll(stageMap)
                 }
-            } else if (allStages.containsKey(params.BROWSER_TO_RUN)) {
-                stagesToRun.putAll(allStages[params.BROWSER_TO_RUN])
+            } else if (
+                    allStages.containsKey(params.BROWSER_TO_RUN)
+            ) {
+                stagesToRun.putAll(
+                        allStages[params.BROWSER_TO_RUN]
+                )
             }
 
-            // Only run stages mapped out
             if (stagesToRun) {
                 parallel(stagesToRun)
             } else {
-                echo "No matching browser found for choice: ${params.BROWSER_TO_RUN}"
+                echo(
+                        'No matching browser found for choice: ' +
+                                params.BROWSER_TO_RUN
+                )
             }
+        }
+
+        /*
+         * Run OWASP ZAP after the standard Playwright tests.
+         */
+        if (params.RUN_ZAP_SMOKE_TESTS) {
+                        stage('OWASP ZAP Playwright Smoke Tests') {
+                                try {
+
+                                        withEnv([
+                                                        'ZAP_PORT=8080',
+                                                        'ZAP_REPORT_DIR=zap-reports',
+                                                        'ZAP_IMAGE=ghcr.io/zaproxy/zaproxy:2.17.0'
+                                        ]) {
+
+                                                steps.sh '''
+                                                        chmod +x bin/run-zap-smoke.sh
+
+                                                        echo "========================================"
+                                                        echo "Starting OWASP ZAP Playwright Smoke Test"
+                                                        echo "========================================"
+
+                                                        ./bin/run-zap-smoke.sh
+
+                                                        echo "========================================"
+                                                        echo "Evaluating ZAP Report"
+                                                        echo "========================================"
+
+                                                        yarn test:zap-check
+                                                '''
+                                        }
+
+                                } catch (Error e) {
+
+                                        unstable(
+                                                        message: "OWASP ZAP stage is unstable: ${e}"
+                                        )
+
+                                } finally {
+
+                                        publishHTML([
+                                                        allowMissing: true,
+                                                        alwaysLinkToLastBuild: true,
+                                                        keepAll: true,
+                                                        reportDir: 'zap-reports',
+                                                        reportFiles: 'zap-report.html',
+                                                        reportName: 'OWASP ZAP Report'
+                                        ])
+
+                                        steps.archiveArtifacts(
+                                                        allowEmptyArchive: true,
+                                                        artifacts: '''
+                                                                zap-reports/**/*,
+                                                                playwright-report/**/*,
+                                                                test-results/**/*
+                                                        '''.stripIndent().trim()
+                                        )
+
+                                        echo 'OWASP ZAP reports archived.'
+                                }
+                        }
         }
     }
 }
