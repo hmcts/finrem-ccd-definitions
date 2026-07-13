@@ -3477,7 +3477,7 @@
     "TabDisplayOrder": 14,
     "CaseFieldID": "tabEstimatedAssestsCheckList",
     "TabFieldDisplayOrder": 19,
-    "FieldShowCondition": "estimatedAssetsChecklistV2!=\"*\""
+    "FieldShowCondition": "estimatedAssetsChecklistV2!=\"*\" AND estimatedAssetsChecklistV3!=\"*\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3490,12 +3490,32 @@
     "FieldShowCondition": "estimatedAssetsChecklistV2!=\"\""
   },
   {
+    "LiveFrom": "13/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "tabEstimatedAssetsCheckList3",
+    "TabFieldDisplayOrder": 20,
+    "FieldShowCondition": "estimatedAssetsChecklistV3!=\"\""
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "gatekeepingTab",
     "TabLabel": "Gatekeeping and allocation ",
     "TabDisplayOrder": 14,
     "CaseFieldID": "estimatedAssetsChecklistV2",
+    "TabFieldDisplayOrder": 21,
+    "FieldShowCondition": "tabNetValueOfHome=\"DONOTSHOW\""
+  },
+  {
+    "LiveFrom": "13/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "gatekeepingTab",
+    "TabLabel": "Gatekeeping and allocation ",
+    "TabDisplayOrder": 14,
+    "CaseFieldID": "estimatedAssetsChecklistV3",
     "TabFieldDisplayOrder": 21,
     "FieldShowCondition": "tabNetValueOfHome=\"DONOTSHOW\""
   },
