@@ -26,5 +26,61 @@
     "CaseEventID": "CUI_respondentUploadDocuments",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_applicantUploadDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_respondentUploadDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_applicantUploadDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_respondentUploadDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_applicantUploadDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_respondentUploadDocuments",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_applicantUploadDocuments",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_respondentUploadDocuments",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CR"
   }
 ]
