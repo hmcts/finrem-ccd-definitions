@@ -236,13 +236,19 @@ ccd:
     persistence:
       enabled: false
     extraEnvs:
+      - name: DATA_STORE_PASS
+        value: hmcts
+      - name: DATA_STORE_URL
+        value: "jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/{{ .Values.global.databaseNamePrefix }}data-store?sslmode=require&stringtype=unspecified"
+      - name: DATA_STORE_USER
+        value: hmcts
       - name: ES_HOSTS
         value: "${SERVICE_NAME}-es-master"
     extraInitContainers: |
       - name: download-postgres-jdbc
         image: hmctsprod.azurecr.io/curl:7.70.0
         command: ['curl', '-L', 'https://jdbc.postgresql.org/download/postgresql-42.7.9.jar', '-o', '/logstash-lib/postgresql.jar']
-        volumeMounts:
+      volumeMounts:
         - name: logstash-lib
           mountPath: /logstash-lib
     extraVolumes: |
@@ -274,7 +280,7 @@ ccd:
       01_input.conf: |
         input  {
           jdbc {
-            jdbc_connection_string => "jdbc:postgresql://private-law-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store?stringtype=unspecified&sslmode=require"
+            jdbc_connection_string => "jdbc:postgresql://financial-remedy-preview.postgres.database.azure.com:5432/pr-${CHANGE_ID}-data-store?sslmode=require&stringtype=unspecified"
             jdbc_user => "hmcts"
             jdbc_password_filepath => "/etc/logstash/secrets/PASSWORD"
             jdbc_validate_connection => true
