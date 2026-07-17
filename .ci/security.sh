@@ -88,7 +88,7 @@ echo "Creating Jenkins report without medium-severity findings"
 jq '
   .site |= map(
     .alerts |= map(
-      select(((.riskcode // "0") | tostring) != "2")
+      select(((.riskcode // "0") | tonumber) >= 3)
     )
   )
 ' "${RAW_JSON_REPORT}" > "${FILTERED_JSON_REPORT}"
