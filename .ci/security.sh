@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+echo "========================================"
+echo "CUSTOM FINREM SECURITY.SH"
+echo "========================================"
+exit 99
+
 set -euo pipefail
 
 REPORT_DIR="/zap/wrk"
