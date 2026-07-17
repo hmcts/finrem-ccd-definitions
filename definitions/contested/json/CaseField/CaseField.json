@@ -771,6 +771,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "17/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "estimatedAssetsLabelV3",
+    "Label": "## Please state the current estimated assets in this case (this should include pensions for all but the under £250,000 option).\r\n ## If the net assets, excluding pensions, are under £250,000, then the bottom option should be chosen even if the addition of pensions would otherwise take the case into a higher bracket.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "_comment_": "This label and estimatedAssetsLabel are mutually exclusive, controlled by a FieldShowCondition"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "estimatedAssetsChecklist",
