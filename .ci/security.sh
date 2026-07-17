@@ -47,6 +47,7 @@ zap-baseline.py \
   -z "-config globalexcludeurl.url_list.url\\(0\\).regex='^https?:\\/\\/.*\\/(?:.*login.*)+$'"
 
 HTML_REPORT="${REPORT_DIR}/${REPORT_HTML}"
+RAW_JSON_REPORT="${REPORT_DIR}/${REPORT_JSON_RAW}"
 JSON_REPORT="${REPORT_DIR}/${REPORT_JSON}"
 
 if [[ ! -f "${HTML_REPORT}" ]]; then
@@ -54,13 +55,30 @@ if [[ ! -f "${HTML_REPORT}" ]]; then
   exit 1
 fi
 
-if [[ ! -f "${JSON_REPORT}" ]]; then
-  echo "ZAP JSON report was not generated: ${JSON_REPORT}"
+if [[ ! -f "${RAW_JSON_REPORT}" ]]; then
+  echo "ZAP JSON report was not generated: ${RAW_JSON_REPORT}"
   exit 1
 fi
 
+echo "Creating Jenkins report without medium findings"
+
+jq '
+  .site |= map(
+    .alerts |= map(
+      select(((.riskcode // "0") | tostring) != "2")
+    )
+  )
+' "${RAW_JSON_REPORT}" > "${JSON_REPORT}"
+
 cp "${HTML_REPORT}" "${OUTPUT_DIR}/${REPORT_HTML}"
+cp "${RAW_JSON_REPORT}" "${OUTPUT_DIR}/${REPORT_JSON_RAW}"
 cp "${JSON_REPORT}" "${OUTPUT_DIR}/${REPORT_JSON}"
 
+chown -R 1001:1002 \
+  "${HTML_REPORT}" \
+  "${RAW_JSON_REPORT}" \
+  "${JSON_REPORT}" \
+  "${OUTPUT_DIR}"
+
 echo "ZAP baseline scan completed"
-echo "Reports copied to ${OUTPUT_DIR}"
+echo "Full reports copied to ${OUTPUT_DIR}"
