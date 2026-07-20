@@ -8,9 +8,15 @@ xui-webapp:
       SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
       SERVICES_WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
       SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
-      WA_SUPPORTED_JURISDICTIONS: DIVORCE
+      WA_SUPPORTED_JURISDICTIONS: IA,CIVIL,PRIVATELAW,PUBLICLAW,EMPLOYMENT,ST_CIC,PROBATE,DIVORCE
+      GLOBAL_SEARCH_SERVICES: IA,CIVIL,PRIVATELAW,PUBLICLAW,ST_CIC,EMPLOYMENT,PROBATE,DIVORCE
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
-
+    keyVaults:
+      rpx:
+        resourceGroup: rpx
+        secrets:
+          - name: launch-darkly-client-id-onboarding
+            alias: LAUNCH_DARKLY_CLIENT_ID
 ccd-data-store-api:
   enabled: ${ENABLE_WA}
   java:
