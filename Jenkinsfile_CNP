@@ -160,7 +160,7 @@ def setCommonWaPreviewEnvVars() {
 
 def uploadWaPreviewDmnDefinitions() {
   def waTaskConfigRepoUrl = env.WA_TASK_CONFIG_REPO_URL ?: 'https://github.com/hmcts/finrem-task-configuration.git'
-  def waTaskConfigBranch = env.WA_TASK_CONFIG_BRANCH ?: 'master'
+  def waTaskConfigBranch = env.WA_TASK_CONFIG_BRANCH ?: 'DFR-5369_working_1'
 
   dir("${WORKSPACE}") {
     sh """
