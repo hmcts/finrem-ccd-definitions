@@ -7,7 +7,7 @@
 set -euo pipefail
 
 workspace=${1:?Workspace path is required}
-tenant_id=${2:-financial-remedy}
+tenant_id=${2:-divorce}
 product=${3:-finrem}
 requested_dmn_dir=${4:-camunda}
 basedir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
