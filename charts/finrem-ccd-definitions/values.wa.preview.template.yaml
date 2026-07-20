@@ -15,8 +15,8 @@ xui-webapp:
       GLOBAL_SEARCH_SERVICES: "IA,CIVIL,PRIVATELAW,PUBLICLAW,ST_CIC,EMPLOYMENT,PROBATE,DIVORCE"
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
     keyVaults:
-      rpx:
-        resourceGroup: rpx
+      rpx-aat:
+        resourceGroup: rpx-aat
         secrets:
           - name: launch-darkly-client-id-onboarding
             alias: LAUNCH_DARKLY_CLIENT_ID
