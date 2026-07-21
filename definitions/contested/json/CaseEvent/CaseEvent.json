@@ -153,21 +153,6 @@
     "ShowEventNotes": "Y"
   },
   {
-    "_comment_": "Will be moved to DEPRECATED.json",
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_giveAllocationDirections",
-    "Name": "Give Allocation Directions",
-    "Description": "Give Allocation Directions",
-    "DisplayOrder": 12,
-    "PreConditionState(s)": "gateKeepingAndAllocation",
-    "PostConditionState": "schedulingAndHearing",
-    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
-  },
-  {
     "LiveFrom": "21/07/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "FR_giveAllocationDirectionsV2",
