@@ -23,6 +23,7 @@ xui-webapp:
           - mc-idam-client-secret
           - system-user-name
           - system-user-password
+          - appinsights-connection-string-mc
           - name: launch-darkly-client-id-onboarding
             alias: LAUNCH_DARKLY_CLIENT_ID
             
