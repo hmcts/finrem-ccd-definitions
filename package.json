@@ -98,7 +98,7 @@
     "copy-common-components-consented": "cp -R definitions/common/json/* definitions/consented/json",
     "copy-common-components-contested": "cp -R definitions/common/json/* definitions/contested/json",
     "copy-local-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-local-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-local-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
-    "copy-preview-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-preview-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-preview-consented-wa-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
+    "copy-preview-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-preview-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-preview-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "copy-aat-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-aat-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-aat-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "copy-demo-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-demo-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-demo-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
     "copy-ithc-xlxs-to-resources": "cp -R definitions/contested/xlsx/ccd-config-ithc-contested-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition && cp -R definitions/consented/xlsx/ccd-config-ithc-consented-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition",
@@ -116,7 +116,7 @@
     "@hmcts/nodejs-logging": "^4.0.4",
     "@hmcts/properties-volume": "^1.4.0",
     "axe-html-reporter": "^2.2.11",
-    "axios": "^1.16.0",
+    "axios": "^1.18.0",
     "config": "^4.0.0",
     "docx": "^9.5.0",
     "dotenv": "^17.0.0",
@@ -160,7 +160,9 @@
     "puppeteer-core": "^24.0.0",
     "ws": "^8.18.0",
     "brace-expansion": "1.1.15",
-    "uuid": "^11.0.0"
+    "uuid": "^11.0.0",
+    "form-data": "^4.0.6",
+    "body-parser": "^2.3.0"
   },
   "packageManager": "yarn@4.10.3"
 }
