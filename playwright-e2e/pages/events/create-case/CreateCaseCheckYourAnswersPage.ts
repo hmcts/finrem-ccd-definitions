@@ -12,7 +12,7 @@ export class CreateCaseCheckYourAnswersPage extends BaseJourneyPage{
     super(page);
     this.applicantInRefugeAnswer = page.getByRole('row', { name: 'Is the Applicant currently a resident in a refuge?' }).locator('span').nth(1);
     this.respondentInRefugeAnswer = page.getByRole('row', { name: 'Is the Respondent currently a resident in a refuge?' }).locator('span').nth(1);
-    this.netAssetsAnswer = page.getByRole('row', { name: 'Select one' }).locator('span').nth(1);
+    this.netAssetsAnswer = page.getByRole('row', { name: 'Select the nearest estimate of the case value' }).locator('span').nth(1);
   }
 
   async checkApplicantInRefugeQuestion(answer: YesNoRadioEnum) {
