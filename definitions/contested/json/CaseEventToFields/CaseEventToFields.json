@@ -11044,7 +11044,7 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "FieldShowCondition": "expressCaseParticipation=\"Enrolled\""
+    "_comment_": "PT Todo - remove - Removed: FieldShowCondition that days expressCaseParticipation=Enrolled"
   },
   {
     "LiveFrom": "21/07/2026",
@@ -11057,7 +11057,8 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "FieldShowCondition": "expressCaseParticipation=\"Withdrawn\""
+    "FieldShowCondition": "expressCaseParticipation=\"IMPOSSIBLE\"",
+    "_comment_": "PT Todo - remove this whole label reference and the label when cleaning up"
   },
   {
     "LiveFrom": "21/07/2026",
@@ -11070,7 +11071,8 @@
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "FieldShowCondition": "expressCaseParticipation!=\"Enrolled\" AND expressCaseParticipation!=\"Withdrawn\""
+    "FieldShowCondition": "expressCaseParticipation=\"IMPOSSIBLE\"",
+    "_comment_": "PT Todo - remove this whole label reference (but keep the the label for V1) when cleaning up"
   },
   {
     "LiveFrom": "21/07/2026",
