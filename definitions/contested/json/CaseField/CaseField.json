@@ -1860,6 +1860,33 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "shouldAllocateToExpressPilotLabel",
+    "Label": "## Should this case be allocated to the Express Pilot?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "shouldAllocateToExpressPilot",
+    "Label": "   ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "showShouldAllocateToExpressPilot",
+    "Label": "   ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "caseAllocatedToLabel",
