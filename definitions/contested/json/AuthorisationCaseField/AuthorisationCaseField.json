@@ -18256,9 +18256,23 @@
     "CRUD": "R"
   },
   {
+    "LiveFrom": "13/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "tabEstimatedAssetsCheckList3",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "tabEstimatedAssetsCheckList2",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "13/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "tabEstimatedAssetsCheckList3",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
   },
@@ -19930,7 +19944,7 @@
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
-    {
+  {
     "LiveFrom": "03/03/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "currentUserIsRespondentSolicitor",
@@ -19942,6 +19956,48 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "generalApplicationDirectionsPreview",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "10/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsChecklistV3",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "10/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsChecklistV3",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "10/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsChecklistV3",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+    {
+    "LiveFrom": "10/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsChecklistVersion",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "10/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsChecklistVersion",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "10/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsChecklistVersion",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
   }
 ]
