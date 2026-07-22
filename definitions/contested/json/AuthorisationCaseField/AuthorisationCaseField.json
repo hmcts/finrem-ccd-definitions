@@ -19979,7 +19979,7 @@
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
   },
-    {
+  {
     "LiveFrom": "10/07/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "estimatedAssetsChecklistVersion",
@@ -19998,6 +19998,20 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "estimatedAssetsChecklistVersion",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsLabelV3",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "estimatedAssetsLabelV3",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CRUD"
   }
 ]
