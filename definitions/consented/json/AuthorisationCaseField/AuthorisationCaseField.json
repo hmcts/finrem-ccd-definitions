@@ -170,6 +170,13 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "applicantLName",
+    "UserRole": "caseworker-wa-task-configuration",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "regionList",
     "UserRole": "caseworker-divorce-financialremedy",
     "CRUD": "CR"
@@ -383,6 +390,13 @@
     "CaseFieldID": "appRespondentLName",
     "UserRole": "caseworker-divorce-financialremedy",
     "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "appRespondentLName",
+    "UserRole": "caseworker-wa-task-configuration",
+    "CRUD": "R"
   },
   {
     "LiveFrom": "01/01/2017",
