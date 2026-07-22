@@ -158,7 +158,7 @@
     "ID": "FR_giveAllocationDirectionsV2",
     "Name": "Give Allocation Directions",
     "Description": "Give Allocation Directions",
-    "DisplayOrder": 13,
+    "DisplayOrder": 12,
     "PreConditionState(s)": "gateKeepingAndAllocation",
     "PostConditionState": "schedulingAndHearing",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
