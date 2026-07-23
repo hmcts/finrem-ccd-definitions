@@ -11005,8 +11005,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "showShouldAllocateToExpressPilot=\"Yes\""
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "21/07/2026",
@@ -11018,22 +11017,7 @@
     "PageID": 1,
     "PageDisplayOrder": 1,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "showShouldAllocateToExpressPilot=\"Yes\""
-  },
-  {
-    "LiveFrom": "21/07/2026",
-    "CaseTypeID": "FinancialRemedyContested",
-    "CaseEventID": "FR_manageExpressCase_v2",
-    "CaseFieldID": "showShouldAllocateToExpressPilot",
-    "PageFieldDisplayOrder": 1,
-    "DisplayContext": "READONLY",
-    "PageID": 1,
-    "PageDisplayOrder": 1,
-    "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "N",
-    "RetainHiddenValue": "Y",
-    "FieldShowCondition": "shouldAllocateToExpressPilotLabel=\"IMPOSSIBLE\""
+    "ShowSummaryChangeOption": "Y"
   },
   {
     "LiveFrom": "24/04/2025",
