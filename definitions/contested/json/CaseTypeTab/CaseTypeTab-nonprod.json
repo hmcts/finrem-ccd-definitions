@@ -1,2 +1,22 @@
 [
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "appDocuments",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "citizenApplicantDocument",
+    "TabFieldDisplayOrder": 21,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "resDocuments",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "citizenRespondentDocument",
+    "TabFieldDisplayOrder": 21,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  }
 ]
