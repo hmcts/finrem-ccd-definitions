@@ -3,105 +3,105 @@
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "awaitingHWFDecision",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "awaitingPayment",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "awaitingPaymentResponse",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "applicationSubmitted",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "applicationIssued",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "referredToJudge",
-    "UserRole": "caseworker-wa-task-configuration,GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "orderMade",
-    "UserRole": "caseworker-wa-task-configuration,GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "consentOrderApproved",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "consentOrderMade",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "awaitingResponse",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "responseReceived",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "close",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CR"
   },
   {
     "LiveFrom":  "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "awaitingInfo",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "R"
   },
   {
     "LiveFrom":  "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "infoReceived",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "R"
   },
   {
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "caseAdded",
-    "UserRole": "caseworker-wa-task-configuration, GS_profile",
+    "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "CRU"
   },
   {
@@ -110,5 +110,110 @@
     "CaseStateID": "newPaperCase",
     "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingHWFDecision",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingPayment",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingPaymentResponse",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "applicationSubmitted",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "referredToJudge",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "orderMade",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingResponse",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "responseReceived",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "close",
+    "UserRole": "GS_profile",
+    "CRUD": "CR"
+  },
+  {
+    "LiveFrom":  "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "awaitingInfo",
+    "UserRole": "GS_profile",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom":  "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "infoReceived",
+    "UserRole": "GS_profile",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "caseAdded",
+    "UserRole": "GS_profile",
+    "CRUD": "CRU"
   }
 ]
