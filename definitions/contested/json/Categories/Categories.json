@@ -1734,5 +1734,21 @@
     "CategoryLabel": "Witness summons",
     "DisplayOrder": "217",
     "ParentCategoryID": "hearingDocuments"
+  },
+  {
+    "LiveFrom": "01/07/26",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "applicantDocumentsUpdatedDisclosure",
+    "CategoryLabel": "Updated Disclosure",
+    "DisplayOrder": "218",
+    "ParentCategoryID": "applicantDocuments"
+  },
+  {
+    "LiveFrom": "01/07/26",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CategoryID": "respondentDocumentsUpdatedDisclosure",
+    "CategoryLabel": "Updated Disclosure",
+    "DisplayOrder": "219",
+    "ParentCategoryID": "respondentDocuments"
   }
 ]
