@@ -165,7 +165,7 @@ def uploadWaPreviewDmnDefinitions() {
   dir("${WORKSPACE}") {
     sh """
       ./bin/wa/pull-latest-task-config-files.sh "${waTaskConfigRepoUrl}" "${waTaskConfigBranch}" camunda
-      ./bin/wa/import-dmn-diagram.sh . financial-remedy finrem camunda
+      ./bin/wa/import-dmn-diagram.sh . divorce finrem camunda
     """
   }
 }

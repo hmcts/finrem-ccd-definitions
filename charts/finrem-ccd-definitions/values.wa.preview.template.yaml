@@ -73,14 +73,6 @@ am-org-role-mapping-service:
 wa:
   enabled: ${ENABLE_WA}
   wa:
-    taskBatchCron:
-      enabled: false
-    messageCron:
-      enabled: false
-    reconfigurationBatchCron:
-      enabled: false
-    terminationBatchCron:
-      enabled: false
     postgresql:
       enabled: false
   global:
@@ -116,7 +108,8 @@ wa:
         ALLOWED_JURISDICTIONS: wa,divorce
         ALLOWED_CASE_TYPES: financialremedymvp2,financialremedycontested
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
-        MANDATORY_TASK_FIELD_CHECK_ENABLED: true
+        MANDATORY_TASK_FIELD_CHECK_ENABLED: false
+        CCD_DATA_STORE_URL: http://${SERVICE_NAME}-ccd-data-store-api
         S2S_SECRET_TASK_MANAGEMENT_API: ${S2S_SECRET_TASK_MANAGEMENT_API}
         WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
         WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
@@ -171,6 +164,27 @@ wa:
         DB_READER_USERNAME: "hmcts"
         LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
         S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
+
+  wa-message-cron-service:
+    job:
+      schedule: "*/1 * * * *"
+      releaseNameOverride: "{{ .Release.Name }}-wa-message-cron"
+
+  wa-initiation-batch:
+    job:
+      schedule: "*/1 * * * *"
+      releaseNameOverride: "{{ .Release.Name }}-wa-task-batch"
+
+  wa-reconfiguration-batch:
+    job:
+      schedule: "*/1 * * * *"
+      releaseNameOverride: "{{ .Release.Name }}-reconfiguration"
+
+  wa-termination-batch:
+    job:
+      schedule: "*/1 * * * *"
+      releaseNameOverride: "{{ .Release.Name }}-termination-batch"
+
 
 ccd:
   ccd:
