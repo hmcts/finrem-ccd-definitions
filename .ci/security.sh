@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 set -euo pipefail
 
 REPORT_DIR="/zap/wrk"
@@ -31,8 +33,13 @@ echo "Target: ${TARGET_URL}"
 mkdir -p "${REPORT_DIR}"
 mkdir -p "${OUTPUT_DIR}"
 
+echo "Checking ZAP rules file"
+ls -la /zap/wrk/zap
+cat /zap/wrk/zap/zap-rules.conf
+
 zap-baseline.py \
   -t "${TARGET_URL}" \
+  -c "/zap/wrk/zap/zap-rules.conf" \
   -r "${REPORT_HTML}" \
   -J "${REPORT_JSON}" \
   -I \
