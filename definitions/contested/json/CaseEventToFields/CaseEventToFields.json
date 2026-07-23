@@ -11022,6 +11022,20 @@
     "FieldShowCondition": "showShouldAllocateToExpressPilot=\"Yes\""
   },
   {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageExpressCase_v2",
+    "CaseFieldID": "showShouldAllocateToExpressPilot",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "READONLY",
+    "PageID": 1,
+    "PageDisplayOrder": 1,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "RetainHiddenValue": "Y",
+    "FieldShowCondition": "shouldAllocateToExpressPilotLabel=\"IMPOSSIBLE\""
+  },
+  {
     "LiveFrom": "24/04/2025",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_manageHearings",
