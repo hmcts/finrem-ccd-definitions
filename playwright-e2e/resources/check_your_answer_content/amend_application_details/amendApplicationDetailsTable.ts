@@ -70,7 +70,7 @@ export const  contestedFormAAmendApplicationDetailsTable: Table = {
     'Should this application be allocated to the Complexity List of the Financial Remedies Court?',
     { cellItem: 'A complex case could be retained for hearing within the Financial Remedy Centre and/or allocated to a higher tier of Judiciary', value: 'No'},
     'Please state the current estimated net assets in this case:',
-    { cellItem: 'Select one', value: 'Under £250,000 (this should be total of combined net assets, but excluding pensions)'},
+    { cellItem: 'Select the nearest estimate of the case value', value: 'Under £250,000 (this should be total of combined net assets, but excluding pensions)'},
     { cellItem: 'Of the above value, what is the net value of the family home?', value: '125000', rowType: 'label-value-adjacent' },
     'Please tick any potential allegations/issues which may arise',
     { cellItem: 'Select all that apply', value: 'Pre- or post-nuptial agreementsComplex asset or income structuresNon-disclosure of assets'},
