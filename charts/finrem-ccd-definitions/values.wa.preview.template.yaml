@@ -24,7 +24,7 @@ finrem-cos:
 am-org-role-mapping-service:
   enabled: ${ENABLE_WA}
   java:
-    image: hmctsprod.azurecr.io/am/org-role-mapping-service:pr-2772
+    image: hmctsprod.azurecr.io/am/org-role-mapping-service:pr-2821
     disableKeyVaults: true
     ingressHost: am-org-role-mapping-service-${SERVICE_FQDN}
     releaseNameOverride: ${SERVICE_NAME}-am-org-role-mapping-service
