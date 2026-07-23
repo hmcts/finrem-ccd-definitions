@@ -1185,7 +1185,35 @@
     "PageID": 14,
     "PageDisplayOrder": 14,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V2\""
+  },
+  {
+    "LiveFrom": "10/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "estimatedAssetsChecklistV3",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 14,
+    "PageDisplayOrder": 14,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V3\""
+  },
+  {
+    "LiveFrom": "10/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_solicitorCreate",
+    "CaseFieldID": "estimatedAssetsChecklistVersion",
+    "PageFieldDisplayOrder": 15,
+    "DisplayContext": "READONLY",
+    "PageID": 14,
+    "PageDisplayOrder": 14,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "_comment_": "estimatedAssetsChecklistVersion is a system field, so hide.",
+    "FieldShowCondition": "estimatedAssetsLabel=\"Not the label value\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5069,8 +5097,21 @@
     "DisplayContext": "MANDATORY",
     "PageID": 14,
     "PageDisplayOrder": 14,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V2\""
+  },
+  {
+    "LiveFrom": "13/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "estimatedAssetsChecklistV3",
+    "PageFieldDisplayOrder": 4,
+    "DisplayContext": "MANDATORY",
+    "PageID": 14,
+    "PageDisplayOrder": 14,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V3\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5184,6 +5225,20 @@
     "PageColumnNumber": 1,
     "FieldShowCondition": "potentialAllegationChecklist CONTAINS \"potential*\" AND otherReasonForComplexity=\"Yes\"",
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "13/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendApplication",
+    "CaseFieldID": "estimatedAssetsChecklistVersion",
+    "PageFieldDisplayOrder": 14,
+    "DisplayContext": "READONLY",
+    "PageID": 14,
+    "PageDisplayOrder": 14,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "N",
+    "_comment_": "estimatedAssetsChecklistVersion is a system field, so hide.",
+    "FieldShowCondition": "estimatedAssetsLabel=\"Not the label value\""
   },
   {
     "LiveFrom": "01/01/2017",
@@ -10706,8 +10761,9 @@
     "PageLabel": "Upload draft orders",
     "PageDisplayOrder": 3,
     "PageColumnNumber": 1,
-    "PageShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\"",
-    "ShowSummaryChangeOption": "Y"
+    "PageShowCondition": "typeOfDraftOrder=\"anAgreedOrderFollowingAHearing\" OR typeOfDraftOrder=\"acceleratedProcedureOrders14DaysBeforeHearing\"",
+    "ShowSummaryChangeOption": "Y",
+    "CallBackURLMidEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdMidEvent"
   },
   {
     "LiveFrom": "09/01/2025",

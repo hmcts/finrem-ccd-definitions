@@ -83,7 +83,7 @@
     "generate-excel-ithc-consented": "bash bin/consented/generate-excel-ithc-consented.sh",
     "generate-excel-perftest-consented": "bash bin/consented/generate-excel-perftest-consented.sh",
     "generate-excel-prod-consented": "bash bin/consented/generate-excel-prod-consented.sh",
-    "generate-excel-all-consented": "yarn generate-excel-consented && yarn generate-excel-local-consented && yarn generate-excel-demo-consented && yarn generate-excel-aat-consented && yarn generate-excel-ithc-consented && yarn generate-excel-demo-prod-like-consented && yarn generate-excel-perftest-consented && yarn generate-excel-prod-consented",
+    "generate-excel-all-consented": "yarn generate-excel-consented && yarn generate-excel-local-consented && yarn generate-excel-demo-consented && yarn generate-excel-aat-consented && yarn generate-excel-ithc-consented && yarn generate-excel-demo-prod-like-consented && yarn generate-excel-perftest-consented && yarn generate-excel-prod-consented && yarn generate-excel-preview-wa-consented && yarn generate-excel-aat-wa-consented",
     "generate-json-contested": "bash bin/contested/generate-json-contested.sh",
     "generate-excel-contested": "yarn run copy-common-components-contested && bash bin/contested/generate-excel-contested.sh",
     "generate-excel-local-contested": "bash bin/contested/generate-excel-local-contested.sh",
@@ -116,7 +116,7 @@
     "@hmcts/nodejs-logging": "^4.0.4",
     "@hmcts/properties-volume": "^1.4.0",
     "axe-html-reporter": "^2.2.11",
-    "axios": "^1.16.0",
+    "axios": "^1.18.0",
     "config": "^4.0.0",
     "docx": "^9.5.0",
     "dotenv": "^17.0.0",
@@ -131,7 +131,7 @@
   "devDependencies": {
     "@hmcts/eslint-config": "^1.4.0",
     "@hmcts/playwright-common": "^1.0.25",
-    "@playwright/test": "^1.55.1",
+    "@playwright/test": "1.60.0",
     "@shinnn/eslint-config": "^7.0.0",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash": "^4.17.21",
@@ -159,8 +159,10 @@
     "on-headers": "^1.1.0",
     "puppeteer-core": "^24.0.0",
     "ws": "^8.18.0",
-    "brace-expansion": "1.1.14",
-    "uuid": "^11.0.0"
+    "brace-expansion": "1.1.16",
+    "uuid": "^11.0.0",
+    "form-data": "^4.0.6",
+    "body-parser": "^2.3.0"
   },
   "packageManager": "yarn@4.10.3"
 }
