@@ -1373,11 +1373,11 @@
     "ShowEventNotes": "Y"
   },
   {
-    "LiveFrom": "28/02/2025",
+    "LiveFrom": "21/07/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_manageExpressCase",
+    "ID": "FR_manageExpressCase_v2",
     "Name": "Manage Express Case",
-    "Description": "Remove a case from the Express Pilot",
+    "Description": "Manage whether a case is in the Express Pilot",
     "DisplayOrder": 157,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
