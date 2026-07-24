@@ -148,6 +148,7 @@ def getPreviewDefinitionExclusions() {
   return env.ENABLE_WA?.toBoolean() ? '*-prod.json' : '*-prod.json,*-wa-nonprod.json'
 }
 
+
 def setCommonWaPreviewEnvVars() {
   env.IDAM_API_URL_BASE = 'https://idam-api.aat.platform.hmcts.net'
   env.S2S_URL_BASE = 'http://rpe-service-auth-provider-aat.service.core-compute-aat.internal'
