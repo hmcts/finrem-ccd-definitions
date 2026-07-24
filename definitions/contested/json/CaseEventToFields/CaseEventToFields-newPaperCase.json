@@ -1109,7 +1109,21 @@
     "PageID": 13,
     "PageDisplayOrder": 13,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V2\""
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_newPaperCase",
+    "CaseFieldID": "estimatedAssetsLabelV3",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "READONLY",
+    "PageID": 13,
+    "PageDisplayOrder": 13,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V3\""
   },
   {
     "LiveFrom": "13/02/2025",
@@ -3431,7 +3445,21 @@
     "PageID": 14,
     "PageDisplayOrder": 14,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V2\""
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_amendPaperApplication",
+    "CaseFieldID": "estimatedAssetsLabelV3",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "READONLY",
+    "PageID": 14,
+    "PageDisplayOrder": 14,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V3\""
   },
   {
     "LiveFrom": "13/02/2025",
