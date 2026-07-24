@@ -20013,5 +20013,33 @@
     "CaseFieldID": "showShouldAllocateToExpressPilot",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "29/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantAccessCodes",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "29/01/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentAccessCodes",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "citizenApplicantDocument",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "citizenRespondentDocument",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
   }
 ]
