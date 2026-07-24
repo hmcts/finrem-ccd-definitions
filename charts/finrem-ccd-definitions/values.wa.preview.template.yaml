@@ -11,10 +11,25 @@ xui-webapp:
       SERVICES_WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
       SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
       SERVICES_ROLE_ASSIGNMENT_MAPPING_API: http://${SERVICE_NAME}-am-org-role-mapping-service
-      WA_SUPPORTED_JURISDICTIONS: DIVORCE
+      WA_SUPPORTED_JURISDICTIONS: IA,CIVIL,PRIVATELAW,PUBLICLAW,EMPLOYMENT,ST_CIC,PROBATE,DIVORCE
+      GLOBAL_SEARCH_SERVICES: IA,CIVIL,PRIVATELAW,PUBLICLAW,ST_CIC,EMPLOYMENT,PROBATE,DIVORCE
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
-      GLOBAL_SEARCH_SERVICES: "IA,CIVIL,PRIVATELAW,PUBLICLAW,EMPLOYMENT,ST_CIC,DIVORCE"
-
+    keyVaults:
+      rpx:
+        resourceGroup: rpx
+        secrets:
+          - mc-s2s-client-secret
+          - mc-idam-client-secret
+          - appinsights-instrumentationkey-mc
+          - appinsights-connection-string-mc
+          - system-user-name
+          - system-user-password
+          - mc-session-secret
+          - name: webapp-redis6-connection-string
+            alias: webapp-redis-connection-string
+          - name: launch-darkly-client-id-onboarding
+            alias: LAUNCH_DARKLY_CLIENT_ID
+            
 ccd-data-store-api:
   enabled: ${ENABLE_WA}
   java:
