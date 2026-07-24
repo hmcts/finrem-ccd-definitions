@@ -1087,11 +1087,12 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "11/05/2026",
     "ID": "FR_GeneralEmailDocument",
-    "ListElementCode": "generalEmailUploadedDocument",
-    "FieldType": "Document",
-    "ElementLabel": "Upload Document",
+    "ListElementCode": "generalEmailUploadedDocuments",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "ElementLabel": "Upload Document(s)",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
