@@ -119,12 +119,13 @@ test(
     //Financial assets
     await financialAssetsPage.selectComplexityList('Yes');
     // start, check all the asset radio options are present
-    await financialAssetsPage.selectAssetsValue('Over £15 million');
-    await financialAssetsPage.selectAssetsValue('£7.5 - £15 million');
-    await financialAssetsPage.selectAssetsValue('£1 - £7.5 million');
-    await financialAssetsPage.selectAssetsValue('Under £1 million');
-    await financialAssetsPage.selectAssetsValue('Under £250,000');
-    await financialAssetsPage.selectAssetsValue('Unable to quantify');
+    await financialAssetsPage.selectAssetsValue('Over £20 million');
+    await financialAssetsPage.selectAssetsValue('£10 million - £20 million');
+    await financialAssetsPage.selectAssetsValue('£5 million - £10 million');
+    await financialAssetsPage.selectAssetsValue('£1 million - £5 million');
+    await financialAssetsPage.selectAssetsValue('£500,000 - £1 million');
+    await financialAssetsPage.selectAssetsValue('Under £250,000 (this should be total of combined net assets, but excluding pensions)');
+    await financialAssetsPage.selectAssetsValue('£250,000 - £500,000');
     // end, checked all the asset radio options are present
     await financialAssetsPage.insertFamilyHomeValue('125,000');
     await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
@@ -159,7 +160,7 @@ test(
 
     //Continue about to submit and check your answers
     await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
-    await createCaseCheckYourAnswersPage.checkNetAssetsQuestion('Unable to quantify');
+    await createCaseCheckYourAnswersPage.checkNetAssetsQuestion('£250,000 - £500,000');
     await checkYourAnswersPage.assertCheckYourAnswersPage(contestedCreatePaperMatrimonyCaseDetailsTable);
 
     await createCaseCheckYourAnswersPage.navigateSubmit();
