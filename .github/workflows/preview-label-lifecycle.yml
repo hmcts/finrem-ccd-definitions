@@ -1,0 +1,92 @@
+name: Preview Label Lifecycle
+
+on:
+  pull_request:
+    types: [closed, reopened]
+
+permissions:
+  issues: write
+  pull-requests: write
+  contents: read
+
+jobs:
+  manage-preview-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Manage preview labels on close/reopen
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issue_number = pr.number;
+            const action = context.payload.action;
+
+            // Read preview label from hidden PR body marker.
+            const body = pr.body || "";
+            const previewMatch = body.match(/<!--\s*preview-label:(use-pr-[^>\s]+)\s*-->/i);
+            const keepHelmMatch = body.match(/<!--\s*preview-keep-helm:(enable_keep_helm)\s*-->/i);
+
+            const previewLabel = previewMatch ? previewMatch[1] : null;
+            const keepHelmLabel = keepHelmMatch ? keepHelmMatch[1] : null;
+
+            if (!previewLabel) {
+              core.info("No preview label marker found; skipping.");
+              return;
+            }
+
+            if (action === "closed") {
+              // Remove labels from PR (ignore if already absent).
+              for (const label of [previewLabel, "enable_keep_helm"]) {
+                try {
+                  await github.rest.issues.removeLabel({
+                    owner, repo, issue_number, name: label
+                  });
+                  core.info(`Removed label ${label} from PR #${issue_number}`);
+                } catch (e) {
+                  core.info(`Label ${label} not present on PR #${issue_number} (or cannot remove).`);
+                }
+              }
+
+              // Delete the dynamic repo label to avoid stale label buildup.
+              try {
+                await github.rest.issues.deleteLabel({
+                  owner, repo, name: previewLabel
+                });
+                core.info(`Deleted repo label ${previewLabel}`);
+              } catch (e) {
+                core.info(`Repo label ${previewLabel} already missing or cannot delete.`);
+              }
+            }
+
+            if (action === "reopened") {
+              // Recreate repo label if needed.
+              try {
+                await github.rest.issues.getLabel({ owner, repo, name: previewLabel });
+                core.info(`Repo label ${previewLabel} already exists.`);
+              } catch (e) {
+                await github.rest.issues.createLabel({
+                  owner,
+                  repo,
+                  name: previewLabel,
+                  color: "ededed",
+                  description: "Preview environment PR"
+                });
+                core.info(`Recreated repo label ${previewLabel}.`);
+              }
+
+              // Re-add labels to PR.
+              const labelsToAdd = [previewLabel];
+              if (keepHelmLabel === "enable_keep_helm") {
+                labelsToAdd.push("enable_keep_helm");
+              }
+
+              await github.rest.issues.addLabels({
+                owner,
+                repo,
+                issue_number,
+                labels: labelsToAdd
+              });
+              core.info(`Re-applied labels on reopen: ${labelsToAdd.join(", ")}`);
+            }
