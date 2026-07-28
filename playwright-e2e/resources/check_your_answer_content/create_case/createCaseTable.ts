@@ -214,7 +214,7 @@ export const contestedCreateExpressPaperMatrimonyCaseDetailsTable: Table = {
     { cellItem: 'Is the application suitable to be dealt with under the Fast Track Procedure?', value: 'No', rowType: 'label-value-adjacent' },
     'Should this application be allocated to the Complexity List of the Financial Remedies Court?',
     { cellItem: 'A complex case could be retained for hearing within the Financial Remedy Centre and/or allocated to a higher tier of Judiciary', value: 'Yes'},
-    'Please state the current estimated net assets in this case:',
+    'Please state the current estimated assets in this case (this should include pensions for all but the under £250,000 option).If the net assets, excluding pensions, are under £250,000, then the bottom option should be chosen even if the addition of pensions would otherwise take the case into a higher bracket.',
     { cellItem: 'Select the nearest estimate of the case value', value: 'Under £250,000 (this should be total of combined net assets, but excluding pensions)'},
     { cellItem: 'Of the above value, what is the net value of the family home?', value: '125,000', rowType: 'label-value-adjacent' },
     'Please tick any potential allegations/issues which may arise',
