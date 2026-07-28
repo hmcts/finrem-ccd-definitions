@@ -82,32 +82,63 @@ export class CommonActionsHelper {
     };
   }
 
+  /**
+   * Uploads a file and retries when the external API reports rate limiting.
+   *
+   * The delay uses exponential backoff, doubling after each failed attempt.
+   * With an initial wait of 500 milliseconds and nine retries, the delays are
+   * 500, 1000, 2000, 4000, 8000, 16000, 32000, 60000 and 60000 milliseconds.
+   * Delays are capped at 60000 milliseconds.
+   *
+   * @param page Playwright page used to wait between attempts.
+   * @param uploadField File input used for the upload.
+   * @param fileToUpload File payload or path to upload.
+   * @param maxRetries Maximum number of retries after the initial attempt.
+   * @param waitMs Initial backoff delay in milliseconds.
+   * @param maxWaitMs Maximum delay permitted between attempts.
+   */
   async uploadWithRateLimitRetry(
     page: Page,
     uploadField: Locator,
-    fileToUpload: { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> } | string,
-    maxRetries: number = 5,
-    waitMs: number = 5000
-  ) {
-    for (let attempt = 0; attempt < maxRetries; attempt++) {
+    fileToUpload:
+      | { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> }
+      | string,
+    maxRetries: number = 9,
+    waitMs: number = 500,
+    maxWaitMs: number = 60_000
+  ): Promise<void> {
+    const errorLocator = uploadField.locator(
+      'xpath=../preceding-sibling::span[contains(text(), "Your request was rate limited. Please wait a few seconds before retrying your document upload")]'
+    );
+
+    // Add one because maxRetries excludes the initial upload attempt.
+    const maxAttempts = maxRetries + 1;
+
+    for (let attempt = 0; attempt < maxAttempts; attempt++) {
       await uploadField.setInputFiles(fileToUpload);
 
       await this.waitForAllUploadsToBeCompleted(page);
 
-      // Check for rate limit error in a preceding span sibling
-      const errorLocator = uploadField.locator(
-        'xpath=../preceding-sibling::span[contains(text(), "Your request was rate limited. Please wait a few seconds before retrying your document upload")]'
-      );
-      const isErrorVisible = await errorLocator.isVisible({ timeout: 2000 });
+      const isErrorVisible = await errorLocator.isVisible({
+        timeout: 2_000,
+      });
 
       if (!isErrorVisible) {
-        return; // Success
+        return;
       }
-      if (attempt < maxRetries - 1) {
-        await page.waitForTimeout(waitMs);
-      } else {
-        throw new Error('Rate limit error persists after retries');
+
+      if (attempt === maxAttempts - 1) {
+        throw new Error(
+          `Rate limit error persists after ${maxAttempts} upload attempts`
+        );
       }
+
+      const backoffMs = Math.min(
+        waitMs * 2 ** attempt,
+        maxWaitMs
+      );
+
+      await page.waitForTimeout(backoffMs);
     }
   }
 
