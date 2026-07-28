@@ -108,11 +108,16 @@ jobs:
           gh pr edit "$PR_NUMBER" --body "$NEW_BODY"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Set PR body
         run: |
           PREVIEW_LABEL="use-pr-${{ github.event.inputs.finrem-cos-pr }}"
           if [ -n "${{ github.event.inputs.jira }}" ]; then
-            echo "PR_BODY=See [DFR-${{ github.event.inputs.jira }}](https://tools.hmcts.net/jira/browse/DFR-${{ github.event.inputs.jira }})
-          <!-- preview-label:${PREVIEW_LABEL} -->
-          <!-- preview-keep-helm:enable_keep_helm -->" >> $GITHUB_ENV
+            {
+              echo "PR_BODY<<EOF"
+              echo "See [DFR-${{ github.event.inputs.jira }}](https://tools.hmcts.net/jira/browse/DFR-${{ github.event.inputs.jira }})"
+              echo "<!-- preview-label:${PREVIEW_LABEL} -->"
+              echo "<!-- preview-keep-helm:enable_keep_helm -->"
+              echo "EOF"
+            } >> "$GITHUB_ENV"
           fi
