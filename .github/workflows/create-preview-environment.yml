@@ -40,12 +40,30 @@ jobs:
 
       - name: Create new branch with empty commit
         run: |
+          set -euo pipefail
           git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git checkout "${{ github.event.repository.default_branch }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com}"
+          
+          DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
+          
+          # Ensure remote refs are available
+          git fetch origin --prune
+          
+          # Prefer the repository default branch from remote; fallback to main
+          if git show-ref --verify --quiet "refs/remotes/origin/${DEFAULT_BRANCH}"; then
+            git checkout -B "${DEFAULT_BRANCH}" "origin/${DEFAULT_BRANCH}"
+          elif git show-ref --verify --quiet "refs/remotes/origin/main"; then
+            git checkout -B main origin/main
+            DEFAULT_BRANCH=main
+          else
+            echo "Could not find origin/${DEFAULT_BRANCH} or origin/main"
+            git branch -a
+            exit 1
+          fi
+          
           git checkout -b "$BRANCH_NAME"
           git commit --allow-empty -m "Empty commit"
-          git push origin "$BRANCH_NAME"
+          git push -u origin "$BRANCH_NAME"
 
       - name: Ensure label exists
         run: |
