@@ -87,7 +87,7 @@ export class CommonActionsHelper {
    *
    * The delay uses exponential backoff, doubling after each failed attempt.
    * With an initial wait of 500 milliseconds and nine retries, the delays are
-   * 500, 1000, 2000, 4000, 8000, 16000, 32000, 60000 and 60000 milliseconds.
+   * 500, 1000, 2000, 4000, 8000, 16000, 32000 and 60000 milliseconds.
    * Delays are capped at 60000 milliseconds.
    *
    * @param page Playwright page used to wait between attempts.
@@ -120,7 +120,7 @@ export class CommonActionsHelper {
       await this.waitForAllUploadsToBeCompleted(page);
 
       const isErrorVisible = await errorLocator.isVisible({
-        timeout: 2_000,
+        timeout: 2_000
       });
 
       if (!isErrorVisible) {
