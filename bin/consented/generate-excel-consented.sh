@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-WA_ENABLED=${WA_ENABLED:-false}
-if [ "$WA_ENABLED" = "true" ]; then
+ENABLE_WA=${ENABLE_WA:-false}
+if [ "$ENABLE_WA" = "true" ]; then
   waExclusion=""
 else
   waExclusion="*-wa-nonprod.json"
@@ -16,7 +16,7 @@ else
   fullExclusion="${EXCLUDE},${waExclusion}"
 fi
 
-if [ "$WA_ENABLED" = "true" ]; then
+if [ "$ENABLE_WA" = "true" ]; then
   outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-wa-${GIT_COMMIT:-base}.xlsx"
 else
   outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-${GIT_COMMIT:-base}.xlsx"

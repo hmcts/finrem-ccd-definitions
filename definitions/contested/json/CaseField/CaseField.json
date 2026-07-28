@@ -771,6 +771,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "17/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "estimatedAssetsLabelV3",
+    "Label": "## Please state the current estimated assets in this case (this should include pensions for all but the under £250,000 option).\r\n ## If the net assets, excluding pensions, are under £250,000, then the bottom option should be chosen even if the addition of pensions would otherwise take the case into a higher bracket.",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "_comment_": "This label and estimatedAssetsLabel are mutually exclusive, controlled by a FieldShowCondition"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "estimatedAssetsChecklist",
@@ -1860,6 +1870,33 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "shouldAllocateToExpressPilotLabel",
+    "Label": "## Should this case be allocated to the Express Pilot?",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "shouldAllocateToExpressPilot",
+    "Label": "   ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "showShouldAllocateToExpressPilot",
+    "Label": "   ",
+    "FieldType": "YesOrNo",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "caseAllocatedToLabel",
@@ -2637,6 +2674,15 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "tabEstimatedAssetsCheckList2",
     "Label": "**The net assets in this case are currently estimated to be in the order of**  ${estimatedAssetsChecklistV2}",
+    "FieldType": "Label",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "13/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "tabEstimatedAssetsCheckList3",
+    "Label": "**The net assets in this case are currently estimated to be in the order of**  ${estimatedAssetsChecklistV3}",
     "FieldType": "Label",
     "SecurityClassification": "Public",
     "Searchable": "N"

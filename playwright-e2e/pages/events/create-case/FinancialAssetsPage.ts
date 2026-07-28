@@ -15,7 +15,7 @@ export class FinancialAssetsPage extends BaseJourneyPage {
   public constructor(page: Page) {
     super(page);
     this.complexityListMultiChoice = this.page.locator('#addToComplexityListOfCourts');
-    this.netAssetsMultiChoice = this.page.locator('#estimatedAssetsChecklistV2');
+    this.netAssetsMultiChoice = this.page.locator('#estimatedAssetsChecklistV3');
     this.netAssetsMultiChoicePaperCase = this.page.locator('#estimatedAssetsChecklist');
     this.netFamilyHomeValueTxtBox = this.page.locator('#netValueOfHome');
     this.potentialIssuesNotApplicableCheckbox = this.page.locator('#potentialAllegationChecklist-notApplicable');
