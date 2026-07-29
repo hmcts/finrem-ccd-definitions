@@ -4,7 +4,7 @@ import { BaseJourneyPage } from '../../BaseJourneyPage';
 export class AmendPaperApplicationDetailsPage extends BaseJourneyPage {
   private estimatedAssetsLabel: Locator;
   private estimatedAssetsUnder250k: Locator;
-  private estimatedAssertsUnder1M: Locator;
+  private estimatedAssertsOver20M: Locator;
   private netValueOfHome: Locator;
   private regionList: Locator;
   private northWestFRCList: Locator;
@@ -14,9 +14,9 @@ export class AmendPaperApplicationDetailsPage extends BaseJourneyPage {
 
   public constructor(page: Page) {
     super(page);
-    this.estimatedAssetsLabel = this.page.getByText('Please state the current estimated net assets in this case:');
-    this.estimatedAssetsUnder250k = this.page.getByLabel('Under £250,000 (this should be total of combined net assets, but excluding pensions)');
-    this.estimatedAssertsUnder1M = this.page.getByLabel('Under £1 million');
+    this.estimatedAssetsLabel = this.page.getByText('Please state the current estimated assets in this case (this');
+    this.estimatedAssetsUnder250k = this.getEstimatedAssetsUnder250k();
+    this.estimatedAssertsOver20M = this.page.getByLabel('Over £20 million');
     this.netValueOfHome = this.page.locator('input[id="netValueOfHome"]');
     this.regionList = this.page.getByLabel('Please state in which Financial Remedies Court Zone the applicant resides');
     this.northWestFRCList = this.page.locator('select[id="northWestFRCList"]');
@@ -34,9 +34,9 @@ export class AmendPaperApplicationDetailsPage extends BaseJourneyPage {
     await this.estimatedAssetsUnder250k.check();
   }
 
-  async selectUnder1M() {
-    expect(this.estimatedAssertsUnder1M).toBeVisible();
-    await this.estimatedAssertsUnder1M.check();
+  async selectOver20M() {
+    expect(this.estimatedAssertsOver20M).toBeVisible();
+    await this.estimatedAssertsOver20M.check();
   }
 
   async enterEstimatedAssets(value: string) {
@@ -66,4 +66,20 @@ export class AmendPaperApplicationDetailsPage extends BaseJourneyPage {
     await this.birminghamCourtList.selectOption('COVENTRY COMBINED COURT CENTRE');
   }
 
+  /**
+   * Returns the visible and enabled "Under £250,000" estimated-assets radio button.
+   *
+   * Two matching radio buttons exist on the page, but the older version is disabled.
+   * This locator selects the active radio button without relying on DOM order.
+   *
+   * @returns The locator for the active "Under £250,000" radio button.
+   */
+  private getEstimatedAssetsUnder250k(): Locator {
+    return this.page
+      .getByLabel(
+        'Under £250,000 (this should be total of combined net assets, but excluding pensions)'
+      )
+      .filter({ visible: true })
+      .and(this.page.locator(':enabled'));
+  }
 }
