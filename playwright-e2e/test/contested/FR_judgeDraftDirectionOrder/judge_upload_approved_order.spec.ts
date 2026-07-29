@@ -32,8 +32,11 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       // Judge uploads order
       await caseDetailsPage.selectNextStep(ContestedEvents.judgeUploadApprovedOrder);
       await judgeUploadApprovedOrderPage.uploadApprovedOrderDocument('judgeApprovedOrder.docx');
+      await judgeUploadApprovedOrderPage.selectIsThisFinalOrder(YesNoRadioEnum.NO);
       await judgeUploadApprovedOrderPage.navigateAddNew();
       await judgeUploadApprovedOrderPage.uploadApprovedOrderDocument('judgeApprovedOrder2.pdf', 1);
+      await judgeUploadApprovedOrderPage.selectIsThisFinalOrder(YesNoRadioEnum.YES, 1);
+
       await judgeUploadApprovedOrderPage.uploadAdditionalAttachment('additionalAttachment.pdf');
       await judgeUploadApprovedOrderPage.selectJudgeFromDropdown('Deputy District Judge');
       await judgeUploadApprovedOrderPage.enterNameOfJudge('Judge Judy');
@@ -46,7 +49,7 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       await judgeUploadApprovedOrderPage.navigateContinue();
 
       // Draft Direction Orders Details
-      await judgeUploadApprovedOrderPage.enterDraftDirectionOrderDetails(YesNoRadioEnum.YES, YesNoRadioEnum.NO);
+      await judgeUploadApprovedOrderPage.enterDraftDirectionOrderDetails(YesNoRadioEnum.NO);
       await judgeUploadApprovedOrderPage.navigateContinue();
 
       //Check your answers

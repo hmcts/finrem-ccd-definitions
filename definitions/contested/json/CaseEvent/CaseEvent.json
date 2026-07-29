@@ -844,7 +844,7 @@
     "DisplayOrder": 122,
     "PostConditionState": "paperCaseAdded",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-paper-case-org-policy",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
@@ -1142,6 +1142,8 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
   },

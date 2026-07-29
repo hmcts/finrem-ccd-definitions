@@ -33,7 +33,7 @@ export class JudgeUploadApprovedOrderPage extends BaseJourneyPage {
     this.courtOrderYear = page.getByRole('textbox', { name: 'Year' });
     this.draftDirectionOrderDetailsHeader = page.getByRole('heading', { name: 'Draft Direction Orders Details' }).first();
     this.isThisFinalOrderQuestion = page.getByRole('group', { name: 'Is this the final order?' });
-    this.isThereAnotherHearingToBeListedQuestion = page.getByRole('group', { name: 'Is this the final order?' });
+    this.isThereAnotherHearingToBeListedQuestion = page.getByRole('group', { name: 'Is there another hearing to' });
   }
 
   async uploadApprovedOrderDocument(fileName: string, position: number = 0) {
@@ -91,18 +91,19 @@ export class JudgeUploadApprovedOrderPage extends BaseJourneyPage {
     await this.blurCourtOrderDateInput();
   }
 
-  async enterDraftDirectionOrderDetails(
-    isFinalOrder: YesNoRadioEnum = YesNoRadioEnum.YES,
-    isAnotherHearing: YesNoRadioEnum = YesNoRadioEnum.YES
-  ) {
+  async enterDraftDirectionOrderDetails(isAnotherHearing: YesNoRadioEnum = YesNoRadioEnum.YES) {
+
     await expect(this.draftDirectionOrderDetailsHeader).toBeVisible();
     const addNewButton = this.page.getByRole('button', { name: 'Add new' }).first();
     await addNewButton.click();
 
-    await expect(this.isThisFinalOrderQuestion).toBeVisible();
-    await this.page.getByRole('group', { name: 'Is this the final order?' }).getByLabel(isFinalOrder).click();
-
     await expect(this.isThereAnotherHearingToBeListedQuestion).toBeVisible();
     await this.page.getByRole('group', { name: 'Is there another hearing to' }).getByLabel(isAnotherHearing).click();
+  }
+
+  async selectIsThisFinalOrder(answer: YesNoRadioEnum,position: number = 0): Promise<void> {
+
+    expect(this.isThisFinalOrderQuestion.nth(position)).toBeVisible();
+    await this.isThisFinalOrderQuestion.nth(position).getByLabel(answer).click();
   }
 }
