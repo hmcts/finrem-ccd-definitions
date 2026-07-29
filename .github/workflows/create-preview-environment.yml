@@ -49,14 +49,14 @@ jobs:
           # Ensure remote refs are available
           git fetch origin --prune
           
-          # Prefer the repository default branch from remote; fallback to main
+          # Prefer the repository default branch from remote; fallback to master
           if git show-ref --verify --quiet "refs/remotes/origin/${DEFAULT_BRANCH}"; then
             git checkout -B "${DEFAULT_BRANCH}" "origin/${DEFAULT_BRANCH}"
-          elif git show-ref --verify --quiet "refs/remotes/origin/main"; then
-            git checkout -B main origin/main
-            DEFAULT_BRANCH=main
+          elif git show-ref --verify --quiet "refs/remotes/origin/master"; then
+            git checkout -B master origin/master
+            DEFAULT_BRANCH=master
           else
-            echo "Could not find origin/${DEFAULT_BRANCH} or origin/main"
+            echo "Could not find origin/${DEFAULT_BRANCH} or origin/master"
             git branch -a
             exit 1
           fi
