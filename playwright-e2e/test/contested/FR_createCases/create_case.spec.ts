@@ -249,120 +249,157 @@ test(
     const courtPhone: string = '0300 123 5577';
 
     // Sign in
-    await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
+    await test.step('Sign in to manage case dashboard', async () => {
+      await manageCaseDashboardPage.visit();
+      await loginPage.loginWaitForPath(config.applicant_solicitor.email, config.applicant_solicitor.password, config.manageCaseBaseURL, config.loginPaths.cases);
+    });
 
     // Manage/Create case
-    await createCasePage.startCase(
-      config.jurisdiction.familyDivorce,
-      config.caseType.contested,
-      config.eventType.formA
-    );
-
-    await startPage.navigateContinue();
+    await test.step('Start Form A contested case', async () => {
+      await createCasePage.startCase(
+        config.jurisdiction.familyDivorce,
+        config.caseType.contested,
+        config.eventType.formA
+      );
+      await startPage.navigateContinue();
+    });
 
     // Enter applicant details
-    await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
-    await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
-    await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
-    await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT); //Childrens Act case type
-    await solicitorDetailsPage.navigateContinue();
+    await test.step('Enter applicant solicitor details', async () => {
+      await solicitorDetailsPage.selectOrganisation(config.organisationNames.finRem1Org);
+      await solicitorDetailsPage.enterSolicitorDetails('Bilbo Baggins', config.applicant_solicitor.email);
+      await solicitorDetailsPage.setEmailConsent(config.caseType.contested);
+      await solicitorDetailsPage.selectApplicationType(ApplicationtypeEnum.CHILDRENS_ACT); //Childrens Act case type
+      await solicitorDetailsPage.navigateContinue();
+    });
 
-    //applicant details
+    // applicant details
     const keepPrivate: boolean = true;
     const applicantInRefuge: YesNoRadioEnum = YesNoRadioEnum.YES;
-    await applicantDetailsPage.enterApplicantDetailsContested('Frodo', 'Baggins', keepPrivate, applicantInRefuge);
-    await applicantDetailsPage.navigateContinue();
+    await test.step('Enter applicant personal details', async () => {
+      await applicantDetailsPage.enterApplicantDetailsContested('Frodo', 'Baggins', keepPrivate, applicantInRefuge);
+      await applicantDetailsPage.navigateContinue();
+    });
 
-    //Child(ren) details
-    await childrensDetailsPage.addNewChild();
-    await childrensDetailsPage.childLiveInEnglandOrWales(YesNoRadioEnum.YES);
-    await childrensDetailsPage.enterChildFullName('Child A');
-    await childrensDetailsPage.enterChildDateOfBirth('01', '01', '2010');
-    await childrensDetailsPage.genderOfChild(MaleOrFemaleEnum.FEMALE);
-    await childrensDetailsPage.relationshipOfApplicantToChild('Mother');
-    await childrensDetailsPage.relationshipOfRespondentToChild('Father');
-    await axeUtils.audit();
-    await childrensDetailsPage.navigateContinue();
+    // Child(ren) details
+    await test.step('Enter children details', async () => {
+      await childrensDetailsPage.addNewChild();
+      await childrensDetailsPage.childLiveInEnglandOrWales(YesNoRadioEnum.YES);
+      await childrensDetailsPage.enterChildFullName('Child A');
+      await childrensDetailsPage.enterChildDateOfBirth('01', '01', '2010');
+      await childrensDetailsPage.genderOfChild(MaleOrFemaleEnum.FEMALE);
+      await childrensDetailsPage.relationshipOfApplicantToChild('Mother');
+      await childrensDetailsPage.relationshipOfRespondentToChild('Father');
+      await axeUtils.audit();
+      await childrensDetailsPage.navigateContinue();
+    });
 
-    //respondent details
-    await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
-    await respondentDetailsPage.checkRefugeFieldNotPresent();
-    await respondentDetailsPage.navigateContinue();
+    // respondent details
+    await test.step('Enter respondent names', async () => {
+      await respondentDetailsPage.enterRespondentNames('Smeagol', 'Gollum');
+      await respondentDetailsPage.checkRefugeFieldNotPresent();
+      await respondentDetailsPage.navigateContinue();
+    });
 
     // Respondent solicitor details
-    await respondentRepresentedPage.selectRespondentRepresentedContested(true);
-    await respondentRepresentedPage.selectOrganisation(config.organisationNames.finRem2Org);
-    await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
-    await respondentRepresentedPage.navigateContinue();
+    await test.step('Enter respondent solicitor details', async () => {
+      await respondentRepresentedPage.selectRespondentRepresentedContested(true);
+      await respondentRepresentedPage.selectOrganisation(config.organisationNames.finRem2Org);
+      await respondentRepresentedPage.enterSolicitorsDetails('Sauron', config.respondent_solicitor.email);
+      await respondentRepresentedPage.navigateContinue();
+    });
 
     // Nature of App
-    await natureOfApplicationPage.selectNatureOfApplicationChildrens();
-    await natureOfApplicationPage.navigateContinue();
+    await test.step('Select nature of application', async () => {
+      await natureOfApplicationPage.selectNatureOfApplicationChildrens();
+      await natureOfApplicationPage.navigateContinue();
+    });
 
     // Periodical Payments
-    await periodicalPaymentsPage.selectPeriodicalPaymentsContested(true);
-    await periodicalPaymentsPage.navigateContinue();
+    await test.step('Select periodical payments', async () => {
+      await periodicalPaymentsPage.selectPeriodicalPaymentsContested(true);
+      await periodicalPaymentsPage.navigateContinue();
+    });
 
     // Written Agreement
-    await childWrittenAgreementPage.selectWrittenAgreement(YesNoRadioEnum.NO);
-    await axeUtils.audit();
-    await childWrittenAgreementPage.navigateContinue();
+    await test.step('Select written agreement option', async () => {
+      await childWrittenAgreementPage.selectWrittenAgreement(YesNoRadioEnum.NO);
+      await axeUtils.audit();
+      await childWrittenAgreementPage.navigateContinue();
+    });
 
-    //Fast track procedure
-    await fastTrackProcedurePage.selectFastTrack(true);
-    await fastTrackProcedurePage.navigateContinue();
+    // Fast track procedure
+    await test.step('Select fast track procedure', async () => {
+      await fastTrackProcedurePage.selectFastTrack(true);
+      await fastTrackProcedurePage.navigateContinue();
+    });
 
-    //Financial assets
-    await financialAssetsPage.selectComplexityList('Yes');
-    await financialAssetsPage.selectAssetsValue('Under £250,000');
-    await financialAssetsPage.insertFamilyHomeValue('125,000');
-    await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
-    await financialAssetsPage.navigateContinue();
+    // Financial assets
+    await test.step('Enter financial assets details', async () => {
+      await financialAssetsPage.selectComplexityList('Yes');
+      await financialAssetsPage.selectAssetsValue('Under £250,000');
+      await financialAssetsPage.insertFamilyHomeValue('125,000');
+      await financialAssetsPage.checkPotentialIssueNotApplicableCheckbox();
+      await financialAssetsPage.navigateContinue();
+    });
 
     // Financial Remedies Court
-    await financialRemedyCourtPage.selectCourtZoneDropDown(
-      'Midlands', 
-      'Birmingham FRC',
-      'COVENTRY COMBINED COURT CENTRE' 
-    );
-    await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
-    await financialRemedyCourtPage.enterSpecialFacilities();
-    await financialRemedyCourtPage.enterSpecialArrangements();
-    await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
-    await financialRemedyCourtPage.enterFrcReason();
-    await financialRemedyCourtPage.navigateContinue();
+    await test.step('Select Financial Remedies Court details', async () => {
+      await financialRemedyCourtPage.selectCourtZoneDropDown(
+        'Midlands',
+        'Birmingham FRC',
+        'COVENTRY COMBINED COURT CENTRE'
+      );
+      await financialRemedyCourtPage.selectHighCourtJudgeLevel(true);
+      await financialRemedyCourtPage.enterSpecialFacilities();
+      await financialRemedyCourtPage.enterSpecialArrangements();
+      await financialRemedyCourtPage.selectShouldNotProceedApplicantHomeCourt(true);
+      await financialRemedyCourtPage.enterFrcReason();
+      await financialRemedyCourtPage.navigateContinue();
+    });
 
     // Has attended miam
-    await miamQuestionPage.selectHasAttendedMiam(true);
-    await miamQuestionPage.navigateContinue();
+    await test.step('Select MIAM attendance question', async () => {
+      await miamQuestionPage.selectHasAttendedMiam(true);
+      await miamQuestionPage.navigateContinue();
+    });
 
     // Miam details
-    await miamDetailsPage.enterMediatorRegistrationNumber();
-    await miamDetailsPage.enterFamilyMediatorServiceName();
-    await miamDetailsPage.enterSoleTraderName();
-    await miamDetailsPage.uploadMiamDoc();
-    await miamDetailsPage.navigateContinue();
+    await test.step('Enter MIAM details and upload document', async () => {
+      await miamDetailsPage.enterMediatorRegistrationNumber();
+      await miamDetailsPage.enterFamilyMediatorServiceName();
+      await miamDetailsPage.enterSoleTraderName();
+      await miamDetailsPage.uploadMiamDoc();
+      await miamDetailsPage.navigateContinue();
+    });
 
     // Upload variation Order Document
-    await uploadOrderDocumentsPage.uploadVariationOrderDoc();
-    await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
-    await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
-    await uploadOrderDocumentsPage.navigateContinue();
+    await test.step('Upload variation order and additional documents', async () => {
+      await uploadOrderDocumentsPage.uploadVariationOrderDoc();
+      await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
+      await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
+      await uploadOrderDocumentsPage.navigateContinue();
+    });
 
     // Saving your application. What happens next. If you need help.
-    await createCaseSavingYourAnswersPage.checkSelectedCourtAddress(courtAddress);
-    await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
-    await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
-    await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
-    await createCaseSavingYourAnswersPage.navigateContinue();
+    await test.step('Verify saving application and court information', async () => {
+      await createCaseSavingYourAnswersPage.checkSelectedCourtAddress(courtAddress);
+      await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
+      await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
+      await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
+      await createCaseSavingYourAnswersPage.navigateContinue();
+    });
 
-    //Continue about to submit and check your answers
-    await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
-    await createCaseCheckYourAnswersPage.navigateSubmit();
-    await caseDetailsPage.checkHasBeenCreated();
+    // Continue about to submit and check your answers
+    await test.step('Check answers and submit case', async () => {
+      await createCaseCheckYourAnswersPage.checkApplicantInRefugeQuestion(applicantInRefuge);
+      await createCaseCheckYourAnswersPage.navigateSubmit();
+      await caseDetailsPage.checkHasBeenCreated();
+    });
 
     // Assert tab data
-    await caseDetailsPage.assertTabData(createCaseTabDataChildrensAct);
+    await test.step('Assert case tab data', async () => {
+      await caseDetailsPage.assertTabData(createCaseTabDataChildrensAct);
+    });
   }
 );
