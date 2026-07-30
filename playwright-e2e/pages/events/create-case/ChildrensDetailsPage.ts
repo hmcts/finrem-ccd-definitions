@@ -41,11 +41,11 @@ export class ChildrensDetailsPage extends BaseJourneyPage {
   }
 
   async enterChildDateOfBirth(day: string, month: string, year: string) {
-    await this.dayOfBirthTextBox.fill(day);
-    await this.monthOfBirthTextBox.fill(month);
-    await this.yearOfBirthTextBox.fill(year);
+    // Adding a delay (in milliseconds) between key presses
+    await this.dayOfBirthTextBox.pressSequentially(day, { delay: 100 });
+    await this.monthOfBirthTextBox.pressSequentially(month, { delay: 100 });
+    await this.yearOfBirthTextBox.pressSequentially(year, { delay: 100 });
   }
-
   async genderOfChild(genderOfChild: MaleOrFemaleEnum) {
     const genderOption = this.genderRadio.locator(`input[type="radio"][id$="${genderOfChild}"]`);
     await genderOption.evaluate((el: HTMLInputElement) => {return el.click();});
