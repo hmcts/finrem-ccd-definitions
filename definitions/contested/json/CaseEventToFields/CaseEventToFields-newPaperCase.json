@@ -1110,7 +1110,7 @@
     "PageDisplayOrder": 13,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V2\""
+    "FieldShowCondition": "paperEstimatedAssetsChecklistVersion=\"V2\""
   },
   {
     "LiveFrom": "22/07/2026",
@@ -1123,7 +1123,7 @@
     "PageDisplayOrder": 13,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V3\""
+    "FieldShowCondition": "paperEstimatedAssetsChecklistVersion=\"V3\""
   },
   {
     "LiveFrom": "13/02/2025",
@@ -1136,7 +1136,7 @@
     "PageDisplayOrder": 13,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V2\""
+    "FieldShowCondition": "paperEstimatedAssetsChecklistVersion=\"V2\""
   },
   {
     "LiveFrom": "13/07/2026",
@@ -1149,20 +1149,20 @@
     "PageDisplayOrder": 13,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V3\""
+    "FieldShowCondition": "paperEstimatedAssetsChecklistVersion=\"V3\""
   },
   {
     "LiveFrom": "13/07/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_newPaperCase",
-    "CaseFieldID": "estimatedAssetsChecklistVersion",
+    "CaseFieldID": "paperEstimatedAssetsChecklistVersion",
     "PageFieldDisplayOrder": 6,
     "DisplayContext": "READONLY",
     "PageID": 13,
     "PageDisplayOrder": 13,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "_comment_": "estimatedAssetsChecklistVersion is a system field, so hide.",
+    "_comment_": "paperEstimatedAssetsChecklistVersion is a system field, so hide.",
     "FieldShowCondition": "estimatedAssetsLabel=\"Not the label value\""
   },
   {
@@ -3446,7 +3446,7 @@
     "PageDisplayOrder": 14,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V2\""
+    "FieldShowCondition": "paperEstimatedAssetsChecklistVersion=\"V2\""
   },
   {
     "LiveFrom": "22/07/2026",
@@ -3459,7 +3459,7 @@
     "PageDisplayOrder": 14,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V3\""
+    "FieldShowCondition": "paperEstimatedAssetsChecklistVersion=\"V3\""
   },
   {
     "LiveFrom": "13/02/2025",
@@ -3472,7 +3472,7 @@
     "PageDisplayOrder": 14,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V2\""
+    "FieldShowCondition": "paperEstimatedAssetsChecklistVersion=\"V2\""
   },
   {
     "LiveFrom": "14/07/2026",
@@ -3485,20 +3485,20 @@
     "PageDisplayOrder": 14,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
-    "FieldShowCondition": "estimatedAssetsChecklistVersion=\"V3\""
+    "FieldShowCondition": "paperEstimatedAssetsChecklistVersion=\"V3\""
   },
   {
     "LiveFrom": "14/07/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_amendPaperApplication",
-    "CaseFieldID": "estimatedAssetsChecklistVersion",
+    "CaseFieldID": "paperEstimatedAssetsChecklistVersion",
     "PageFieldDisplayOrder": 6,
     "DisplayContext": "READONLY",
     "PageID": 14,
     "PageDisplayOrder": 14,
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "N",
-    "_comment_": "estimatedAssetsChecklistVersion is a system field, so hide.",
+    "_comment_": "paperEstimatedAssetsChecklistVersion is a system field, so hide.",
     "FieldShowCondition": "estimatedAssetsLabel=\"Not the label value\""
   },
   {
