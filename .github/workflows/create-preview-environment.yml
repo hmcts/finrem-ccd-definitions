@@ -108,7 +108,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set PR body
+      - name: Update PR body
         run: |
           PREVIEW_LABEL="use-pr-${{ github.event.inputs.finrem-cos-pr }}"
           if [ -n "${{ github.event.inputs.jira }}" ]; then
