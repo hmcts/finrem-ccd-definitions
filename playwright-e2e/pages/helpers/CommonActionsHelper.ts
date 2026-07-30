@@ -86,9 +86,9 @@ export class CommonActionsHelper {
    * Uploads a file and retries when the external API reports rate limiting.
    *
    * The delay uses exponential backoff, doubling after each failed attempt.
-   * With an initial wait of 500 milliseconds and nine retries, the delays are
-   * 500, 1000, 2000, 4000, 8000, 16000, 32000 and 60000 milliseconds.
-   * Delays are capped at 60000 milliseconds.
+   * With an initial wait of 500 milliseconds and 19 retries, the delays begin:
+   * 500, 1000, 2000, 4000, 8000, 16000, 29000 milliseconds.
+   * Delays are capped at 29000 milliseconds.  Tests timeout at 30000 milliseconds.
    *
    * @param page Playwright page used to wait between attempts.
    * @param uploadField File input used for the upload.
@@ -103,9 +103,9 @@ export class CommonActionsHelper {
     fileToUpload:
       | { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> }
       | string,
-    maxRetries: number = 9,
+    maxRetries: number = 19,
     waitMs: number = 500,
-    maxWaitMs: number = 60_000
+    maxWaitMs: number = 29_000
   ): Promise<void> {
     const errorLocator = uploadField.locator(
       'xpath=../preceding-sibling::span[contains(text(), "Your request was rate limited. Please wait a few seconds before retrying your document upload")]'
