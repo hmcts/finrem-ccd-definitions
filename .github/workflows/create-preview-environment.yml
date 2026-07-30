@@ -40,7 +40,6 @@ jobs:
 
       - name: Create new branch with empty commit
         run: |
-          set -euo pipefail
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           
