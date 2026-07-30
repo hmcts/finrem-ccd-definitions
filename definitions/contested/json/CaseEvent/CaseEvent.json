@@ -153,9 +153,9 @@
     "ShowEventNotes": "Y"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "21/07/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_giveAllocationDirections",
+    "ID": "FR_giveAllocationDirectionsV2",
     "Name": "Give Allocation Directions",
     "Description": "Give Allocation Directions",
     "DisplayOrder": 12,
@@ -1142,6 +1142,8 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
   },
