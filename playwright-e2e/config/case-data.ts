@@ -119,7 +119,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   },
   manageExpressCase: {
     listItem: "Manage Express Case",
-    ccdCallback: "FR_manageExpressCase_V2"
+    ccdCallback: "FR_manageExpressCase_v2"
   },
   giveAllocationDirection: {
     listItem: "Give Allocation Directions",
