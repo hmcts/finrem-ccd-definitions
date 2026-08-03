@@ -123,7 +123,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   },
   giveAllocationDirection: {
     listItem: "Give Allocation Directions",
-    ccdCallback: "FR_giveAllocationDirections"
+    ccdCallback: "FR_giveAllocationDirectionsV2"
   },
   amendPaperApplicationDetails: {
     listItem: "Amend Application Details",
