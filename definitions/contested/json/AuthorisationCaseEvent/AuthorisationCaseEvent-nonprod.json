@@ -82,5 +82,26 @@
     "CaseEventID": "CUI_respondentUploadDocuments",
     "UserRole": "[RESPONDENT]",
     "CRUD": "CR"
+  },
+  {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_giveAllocationDirectionsV2",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_giveAllocationDirectionsV2",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_giveAllocationDirectionsV2",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CR"
   }
 ]
