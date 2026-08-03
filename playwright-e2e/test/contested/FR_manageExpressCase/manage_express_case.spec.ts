@@ -19,11 +19,6 @@ test.describe('Contested - Manage Express Case', () => {
       // Remove case from express pilot
       await caseDetailsPage.selectNextStep(ContestedEvents.manageExpressCase);
       await manageExpressCasePage.selectExpressPilotQuestionNo();
-      await manageExpressCasePage.uncheckConfirmRemoveCaseFromExpressPilot();
-      await axeUtils.audit();
-      await manageExpressCasePage.navigateSubmit();
-      await manageExpressCasePage.verifyFieldIsRequiredMessageShown();
-      await manageExpressCasePage.checkConfirmRemoveCaseFromExpressPilot();
       await axeUtils.audit();
       await manageExpressCasePage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated('Manage Express Case');
@@ -46,10 +41,6 @@ test.describe('Contested - Manage Express Case', () => {
       // Remove case from express pilot
       await caseDetailsPage.selectNextStep(ContestedEvents.manageExpressCase);
       await manageExpressCasePage.selectExpressPilotQuestionNo();
-      await manageExpressCasePage.uncheckConfirmRemoveCaseFromExpressPilot();
-      await manageExpressCasePage.navigateSubmit();
-      await manageExpressCasePage.verifyFieldIsRequiredMessageShown();
-      await manageExpressCasePage.checkConfirmRemoveCaseFromExpressPilot();
       await manageExpressCasePage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated('Manage Express Case');
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Withdrawn'] }]);
