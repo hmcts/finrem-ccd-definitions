@@ -25,8 +25,13 @@ export class ManageExpressCasePage extends BaseJourneyPage {
   async selectExpressPilotQuestion(yesOrNo: string) {
     expect(this.manageExpressCaseTitle).toBeVisible();
     expect(this.expressPilotQuestionHeader).toBeVisible();
-    const option = this.page.locator(`input[type="radio"][name="shouldAllocateToExpressPilot"][id="shouldAllocateToExpressPilot_${yesOrNo}"]`);
+    const option = this.page.locator(`input[type="radio"][name="shouldAllocateToExpressPilot"][id="expressPilotQuestion_${yesOrNo}"]`);
     await option.check();
+
+    // expect the warning to be displayed
+    if (yesOrNo === 'No') {
+      await this.verifyRemoveFromExpressPilotElements();
+    }
   }
 
   async selectExpressPilotQuestionNo() {

@@ -50,7 +50,7 @@ test.describe('Contested - Manage Express Case', () => {
   test(
     'Contested - Not qualified case (Form A Case) - Show not enrolled message',
     { tag: [] },
-    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage }) => {
+    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage }) => {
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false);
 
       // Navigate to case and assert initial tab data
@@ -60,9 +60,9 @@ test.describe('Contested - Manage Express Case', () => {
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }]);
 
       // Verify not enrolled message
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageExpressCase);
-      await manageExpressCasePage.verifyExpressPilotNotEnrolled();
-      await manageExpressCasePage.navigateSubmit();
+      await caseDetailsPage.selectNextStepAndExpectErrorMessage(ContestedEvents.manageExpressCase, 
+        'This case is not enrolled in the Express Financial Remedy Pilot and does meet the criteria to be enrolled');
+      
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }]);
     }
   );
@@ -70,7 +70,7 @@ test.describe('Contested - Manage Express Case', () => {
   test(
     'Contested - Not qualified case (Paper Case) - Show not enrolled message',
     { tag: [] },
-    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageExpressCasePage }) => {
+    async ({ loginPage, manageCaseDashboardPage, caseDetailsPage }) => {
       const caseId = await ContestedCaseFactory.createAndSubmitPaperCase(false);
 
       // Navigate to case and assert initial tab data
@@ -80,9 +80,8 @@ test.describe('Contested - Manage Express Case', () => {
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }]);
 
       // Verify not enrolled message
-      await caseDetailsPage.selectNextStep(ContestedEvents.manageExpressCase);
-      await manageExpressCasePage.verifyExpressPilotNotEnrolled();
-      await manageExpressCasePage.navigateSubmit();
+      await caseDetailsPage.selectNextStepAndExpectErrorMessage(ContestedEvents.manageExpressCase, 
+        'This case is not enrolled in the Express Financial Remedy Pilot and does meet the criteria to be enrolled');
       await caseDetailsPage.assertTabData([{ tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }]);
     }
   );
