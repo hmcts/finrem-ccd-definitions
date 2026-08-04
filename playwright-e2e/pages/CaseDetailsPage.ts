@@ -411,4 +411,31 @@ export class CaseDetailsPage {
       await expect(table).toContainText(recipient);
     }
   }
+
+  async selectNextStepAndExpectErrorMessage(
+    event: CaseEvent,
+    expectedErrorMessage: string
+  ) {
+    const maxRetries = 5;
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      await this.page.waitForLoadState();
+      await this.goButton.isVisible();
+      await expect(this.selectNextStepDropDown).toBeVisible();
+      await this.selectNextStepDropDown.selectOption(event.listItem);
+      if (attempt === 3) { // if go button click fails multiple times, reload the page
+        await this.page.reload();
+        await this.page.waitForLoadState();
+        await this.goButton.isVisible();
+        await this.selectNextStepDropDown.selectOption(event.listItem);
+      }
+      await this.goButton.click({ clickCount: 3, force: true });
+
+      try {
+        await expect(this.page.getByText(expectedErrorMessage)).toBeVisible();
+        return;
+      } catch (e) {
+        if (attempt === maxRetries) throw e;
+      }
+    }
+  }
 }
