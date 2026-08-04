@@ -37,6 +37,7 @@ xui-webapp:
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}
       JURISDICTIONS: DIVORCE
       FINREM_WORK_ALLOCATION_ENABLED: false
+    keyVaults: []
 
 xui-mo-webapp:
   enabled: true

@@ -27,7 +27,7 @@ xui-webapp:
           - mc-idam-client-secret
           - system-user-name
           - system-user-password
-          - name: launch-darkly-client-id
+          - name: launch-darkly-client-id-onboarding
             alias: LAUNCH_DARKLY_CLIENT_ID
             
 ccd-data-store-api:
