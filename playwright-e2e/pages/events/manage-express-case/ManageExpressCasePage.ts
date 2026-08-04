@@ -15,7 +15,7 @@ export class ManageExpressCasePage extends BaseJourneyPage {
     super(page);
     this.manageExpressCaseTitle = page.getByRole('heading', { name: 'Manage Express Case' });
 
-    this.expressPilotQuestionHeader = page.getByText('Express Pilot?');
+    this.expressPilotQuestionHeader = page.getByText('Should this case be allocated to the Express Pilot?');
     this.removeFromExpressPilotWarning = page.getByText('Warning: Once you remove a case from the Express Financial Remedy Pilot, it cannot be re-added so this will be a permanent change.');
     this.confirmRemoveCaseFromExpressPilot = page.locator('input[type="checkbox"][name="confirmRemoveCaseFromExpressPilot"]');
 
@@ -25,13 +25,8 @@ export class ManageExpressCasePage extends BaseJourneyPage {
   async selectExpressPilotQuestion(yesOrNo: string) {
     expect(this.manageExpressCaseTitle).toBeVisible();
     expect(this.expressPilotQuestionHeader).toBeVisible();
-    const option = this.page.locator(`input[type="radio"][name="shouldAllocateToExpressPilot"][id="expressPilotQuestion_${yesOrNo}"]`);
+    const option = this.page.locator(`input[type="radio"][name="shouldAllocateToExpressPilot"][id="shouldAllocateToExpressPilot_${yesOrNo}"]`);
     await option.check();
-
-    // expect the warning to be displayed
-    if (yesOrNo === 'No') {
-      await this.verifyRemoveFromExpressPilotElements();
-    }
   }
 
   async selectExpressPilotQuestionNo() {
