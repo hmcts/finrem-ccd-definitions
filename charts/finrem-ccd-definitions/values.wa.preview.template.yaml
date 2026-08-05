@@ -3,6 +3,8 @@
 xui-webapp:
   enabled: true
   nodejs:
+    imagePullPolicy: Always
+    image: hmctsprod.azurecr.io/xui/webapp:pr-5225
     environment:
       HEALTH_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service/health
       SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
@@ -53,7 +55,7 @@ ccd-data-store-api:
 am-org-role-mapping-service:
   enabled: ${ENABLE_WA}
   java:
-    image: hmctsprod.azurecr.io/am/org-role-mapping-service:pr-2772
+    image: hmctsprod.azurecr.io/am/org-role-mapping-service:latest
     disableKeyVaults: true
     ingressHost: am-org-role-mapping-service-${SERVICE_FQDN}
     releaseNameOverride: ${SERVICE_NAME}-am-org-role-mapping-service
@@ -223,7 +225,7 @@ ccd:
         ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
   am-role-assignment-service:
     java:
-      image: hmctsprod.azurecr.io/am/role-assignment-service:pr-2733
+      image: hmctsprod.azurecr.io/am/role-assignment-service:latest
       imagePullPolicy: Always
       disableKeyVaults: true
       devmemoryRequests: 1024Mi
