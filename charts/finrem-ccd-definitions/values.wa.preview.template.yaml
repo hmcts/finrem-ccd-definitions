@@ -10,6 +10,10 @@ xui-webapp:
       SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
       SERVICES_WA_WORKFLOW_API_URL: http://${SERVICE_NAME}-wa-workflow-api
       SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
+      SERVICES_IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
+      SERVICES_S2S: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+      FEATURE_REDIS_ENABLED: false
+      FEATURE_APP_INSIGHTS_ENABLED: false
       WA_SUPPORTED_JURISDICTIONS: IA,CIVIL,PRIVATELAW,PUBLICLAW,EMPLOYMENT,ST_CIC,PROBATE,DIVORCE
       GLOBAL_SEARCH_SERVICES: IA,CIVIL,PRIVATELAW,PUBLICLAW,ST_CIC,EMPLOYMENT,PROBATE,DIVORCE
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
@@ -17,8 +21,12 @@ xui-webapp:
       rpx:
         resourceGroup: rpx
         secrets:
-          - name: launch-darkly-client-id-onboarding
-            alias: LAUNCH_DARKLY_CLIENT_ID
+          - mc-session-secret
+          - mc-s2s-client-secret
+          - mc-idam-client-secret
+          - system-user-name
+          - system-user-password
+          - launch-darkly-client-id-onboarding
 ccd-data-store-api:
   enabled: ${ENABLE_WA}
   java:
