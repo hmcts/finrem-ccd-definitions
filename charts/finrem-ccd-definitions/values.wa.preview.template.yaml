@@ -14,7 +14,12 @@ xui-webapp:
       FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
       WA_SUPPORTED_JURISDICTIONS: "IA,CIVIL,PRIVATELAW,PUBLICLAW,EMPLOYMENT,ST_CIC,PROBATE,DIVORCE"
       GLOBAL_SEARCH_SERVICES: "IA,CIVIL,PRIVATELAW,PUBLICLAW,ST_CIC,EMPLOYMENT,PROBATE,DIVORCE"
-      LAUNCH_DARKLY_CLIENT_ID: launch-darkly-client-id-onboarding
+      keyVaults:
+        rpx:
+          resourceGroup: rpx
+          secrets:
+            - name: launch-darkly-client-id-onboarding
+              alias: LAUNCH_DARKLY_CLIENT_ID
 
 ccd-data-store-api:
   enabled: ${ENABLE_WA}
