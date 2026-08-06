@@ -83,7 +83,7 @@ test.describe('Contested - Paper Case - Amend application into Express Pilot', (
         await amendPaperApplicationDetailsPage.navigateContinue();
       }
       await amendPaperApplicationDetailsPage.verifyEstimatedAssetsLabelIsVisible();
-      await amendPaperApplicationDetailsPage.selectUnder1M();
+      await amendPaperApplicationDetailsPage.selectOver20M();
       await amendPaperApplicationDetailsPage.enterEstimatedAssets('999999');
       await amendPaperApplicationDetailsPage.navigateContinue();
       await amendPaperApplicationDetailsPage.navigateContinue();
