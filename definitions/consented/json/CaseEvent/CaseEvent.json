@@ -867,9 +867,9 @@
     "ShowEventNotes": "Y"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "FR_solUploadDocument",
+    "ID": "FR_solUploadDocumentv2",
     "Name": "Solicitor Upload document",
     "Description": "Solicitor Upload document",
     "DisplayOrder": 48,
@@ -877,20 +877,11 @@
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "FR_solCompleteUploadDocument",
-    "Name": "Submit response",
-    "Description": "Submit response to information request",
-    "DisplayOrder": 49,
-    "PreConditionState(s)": "awaitingInfo",
-    "PostConditionState": "infoReceived",
-    "SecurityClassification": "Public",
-    "ShowSummary": "N",
-    "ShowEventNotes": "Y"
+    "ShowEventNotes": "Y",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "RetriesTimeoutURLSubmittedEvent": "0"
   },
   {
     "LiveFrom": "01/01/2017",
