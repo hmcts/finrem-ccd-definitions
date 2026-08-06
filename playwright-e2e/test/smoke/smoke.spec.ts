@@ -10,6 +10,9 @@ test(
       manageCaseDashboardPage
     }
   ) => {
+    console.log(`Caseworker Email: ${config.caseWorker.email}`);
+    console.log(`Caseworker Password: ${config.caseWorker.password}`);
+
     await manageCaseDashboardPage.visit();
     await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
   }
