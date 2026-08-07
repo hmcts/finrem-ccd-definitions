@@ -1249,8 +1249,15 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_newPaperCase",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-courtadmin",
+          "caseworker-divorce-systemupdate"
+        ],
+        "CRUD": "CR"
+      }
+    ]
   },
   {
     "LiveFrom": "10/07/2020",
