@@ -23,4 +23,8 @@ export class ManageExpressCasePage extends BaseJourneyPage {
   async selectExpressPilotQuestionNo() {
     await this.selectExpressPilotQuestion('No');
   }
+
+  async selectExpressPilotQuestionYes() {
+    await this.selectExpressPilotQuestion('Yes');
+  }
 }
