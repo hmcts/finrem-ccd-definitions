@@ -3067,9 +3067,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docx@npm:^9.5.0":
-  version: 9.6.1
-  resolution: "docx@npm:9.6.1"
+"docx@npm:^9.7.1":
+  version: 9.7.1
+  resolution: "docx@npm:9.7.1"
   dependencies:
     "@types/node": "npm:^25.2.3"
     hash.js: "npm:^1.1.7"
@@ -3077,7 +3077,7 @@ __metadata:
     nanoid: "npm:^5.1.3"
     xml: "npm:^1.0.1"
     xml-js: "npm:^1.6.8"
-  checksum: 10/e94a2251a5309e929dd7827040a0fe00b26589bfe75620f75f1596ff13bd9ab225d74b0725a3b4a22dcc779ff69f0cb0929628e392c7ece8e8b2226756e9d2a7
+  checksum: 10/cc4355b96cf74449ad370cf515eaca313efb2fdfba957873d234d2feccd76bf35a93cfbe649f537c7afbecdac1196c01c83ca82d110b9740e015a4bac43aee83
   languageName: node
   linkType: hard
 
@@ -3895,7 +3895,7 @@ __metadata:
     axios: "npm:^1.18.0"
     chai: "npm:^6.0.0"
     config: "npm:^4.0.0"
-    docx: "npm:^9.5.0"
+    docx: "npm:^9.7.1"
     dotenv: "npm:^17.0.0"
     eslint: "npm:^9.15.0"
     eslint-plugin-mocha: "npm:^11.2.0"
@@ -4822,14 +4822,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:^4.0.0, js-yaml@npm:^4.1.0, js-yaml@npm:^4.1.1, js-yaml@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "js-yaml@npm:4.3.0"
+"js-yaml@npm:4.3.1":
+  version: 4.3.1
+  resolution: "js-yaml@npm:4.3.1"
   dependencies:
     argparse: "npm:^2.0.1"
   bin:
     js-yaml: bin/js-yaml.js
-  checksum: 10/2bcec3a8118d7f744badeb04e14366578d234a736f353d41fe35d2305e4ce2409a8e041d277f07cd6bbc8aaa12128d650a68ce43247072519bede20962d2126f
+  checksum: 10/2ce71b5d632abbd77da80447bf860e8a0264e54bffe94840984887d58b023761495b523727547904517a6107a1ef189854b361e0fc44995ee13a84f222d7bd42
   languageName: node
   linkType: hard
 
@@ -5606,12 +5606,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^5.1.3":
-  version: 5.1.6
-  resolution: "nanoid@npm:5.1.6"
+"nanoid@npm:5.1.16":
+  version: 5.1.16
+  resolution: "nanoid@npm:5.1.16"
   bin:
     nanoid: bin/nanoid.js
-  checksum: 10/4109dbcf596d7f297a9b42f459b8f01694a03ebbdd2f41408d963ad54e5ec7234cbe7b4acad137751f31add11bb4fb3415a3e688082516745812811f05570014
+  checksum: 10/b1e702e2b7072e74ac2ae880907d0a291853a36617ec5c3d27d81ab04965ebc0d4d0f707cf9220928cf93d5370b1f561c930efee853dc9c1a3facaefdf1a42ee
   languageName: node
   linkType: hard
 
