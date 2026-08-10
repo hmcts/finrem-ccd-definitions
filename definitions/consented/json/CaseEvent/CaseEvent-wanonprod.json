@@ -14,6 +14,19 @@
     "ShowSummary": "Y",
     "ShowEventNotes": "N",
     "Publish": "Y"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "attachScannedDocs",
+    "Name": "Attach scanned docs",
+    "Description": "Attach scanned docs",
+    "DisplayOrder": 112,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y",
+    "Publish": "Y"
   }
 ]
-
