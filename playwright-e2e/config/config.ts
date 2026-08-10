@@ -159,7 +159,7 @@ const configuration = {
 
   loginPaths: {
     cases: 'cases',
-    worklist: 'cases',//'work/my-work/list', DFR-5540 Temporary WA permission Fix
+    worklist: 'work/my-work/list',
     organisation: 'organisation',
   }
 
