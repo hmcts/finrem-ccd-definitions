@@ -13,7 +13,7 @@ const consentedCaseFlagTestData = [
     createTitle: 'Caseworker creates case flag',
     manageTitle: 'Caseworker manages case flag',
     user: config.caseWorker,
-    path: config.loginPaths.worklist
+    path: config.loginPaths.cases
   },
   {
     createTitle: 'Judge creates case flag',
@@ -29,7 +29,7 @@ const contestedCaseFlagTestData = [
     title: 'Caseworker creates case flag for Form A',
     setupCase: () => {return ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();},
     user: config.caseWorker,
-    path: config.loginPaths.worklist
+    path: config.loginPaths.cases
   },
   // { CCD-6802 raised, will turn back on once fixed
   //   title: 'Judge creates case flag for Form A',
@@ -41,13 +41,13 @@ const contestedCaseFlagTestData = [
     title: 'Caseworker creates case flag for Paper Case',
     setupCase: () => {return ContestedCaseFactory.createAndSubmitPaperCase();},
     user: config.caseWorker,
-    path: config.loginPaths.worklist
+    path: config.loginPaths.cases
   },
   {
     title: 'Caseworker creates case flag for Schedule1 Case',
     setupCase: () => {return ContestedCaseFactory.createAndProcessSchedule1CaseUpToIssueApplication();},
     user: config.caseWorker,
-    path: config.loginPaths.worklist
+    path: config.loginPaths.cases
   }
 ];
 
@@ -165,7 +165,7 @@ test.describe('Case Flag Tests', () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Manage each flag individually

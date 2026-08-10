@@ -44,7 +44,7 @@ test(
   ) => {
     // Sign in
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
     const expectedURL: string = ContestedEvents.createPaperCase.ccdCallback;
     // Manage/Create case
     await createCasePage.startCase(
@@ -205,7 +205,7 @@ test(
 
     await test.step('Sign in', async () => {
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
     });
 
     await test.step('Manage/Create case', async () => {
