@@ -69,7 +69,7 @@ export function buildCaseDocTabGeneralEmailContent(emails: Array<{
     tabContent.push({ tabItem: 'Email created by', value: email.createdBy });
     tabContent.push({ tabItem: 'Body', value: email.body });
     if (email.uploadedDoc) {
-      tabContent.push({ tabItem: 'Upload Document', value: email.uploadedDoc });
+      tabContent.push({ tabItem: 'Upload Document(s)', value: email.uploadedDoc });
     }
   });
   return tabContent;

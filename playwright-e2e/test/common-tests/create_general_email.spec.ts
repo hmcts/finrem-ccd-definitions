@@ -73,7 +73,7 @@ test.describe('Create General Email', () => {
       await caseDetailsPage.checkHasBeenUpdated(CommonEvents.createGeneralEmail.listItem);
 
       //assert case documents tab data
-      await caseDetailsPage.assertTabData(createGeneralEmailTabData(date, 'Case Documents'));
+      await caseDetailsPage.assertTabData(createGeneralEmailTabData(date, 'Case documents'));
     }
   );
 });
