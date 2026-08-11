@@ -60,7 +60,7 @@ test.describe('Contested - Judge Upload Approved Order', () => {
       await manageCaseDashboardPage.signOut();
 
       //sign in as caseworker and process order
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.processOrder);
       await unprocessedApprovedOrdersPage.checkOrderIsInUnprocessedHearingOrders('judgeApprovedOrder.docx');
