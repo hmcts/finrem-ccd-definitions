@@ -16,15 +16,6 @@ export class CreateGeneralEmailPage extends BaseJourneyPage {
     this.optionalUploadDocument = page.getByRole('button', { name: 'Upload document' });
   }
 
-  // SEE DFR-3942
-  async enterInvalidEmailAddressAndSubmit(){
-    expect(this.recipientEmailBox).toBeVisible();
-    await this.recipientEmailBox.fill('test');
-    await this.navigateContinue();
-    await expect(this.page.getByLabel('The event could not be created').getByText('test is not a valid Email')).toBeVisible();
-        
-  }
-
   async enterReceipientEmail(email: string) {
     expect(this.recipientEmailBox).toBeVisible();
     await this.recipientEmailBox.fill(email);
