@@ -1,0 +1,93 @@
+[
+   {
+      "password":"Password123!",
+      "payload":{
+         "user":{
+            "id": "5a6ebd0e-c887-4842-8cf7-ce53b691102d",
+            "email":"fr_ctscadmin11@justice.gov.uk",
+            "forename":"Ctsc",
+            "surname":"Admin",
+            "roleNames":[
+               "caseworker",
+               "caseworker-divorce",
+               "caseworker-divorce-financialremedy",
+               "caseworker-divorce-financialremedy-courtadmin"
+            ]
+         }
+      }
+   },
+   {
+      "password":"Password123!",
+      "payload":{
+         "user":{
+            "id": "aa9c5d3e-077e-416b-8dec-7154922b52ca",
+            "email":"fr_ctscadmin_qa2@justice.gov.uk",
+            "forename":"QA 1 Ctsc",
+            "surname":"Admin",
+            "roleNames":[
+               "caseworker",
+               "caseworker-divorce",
+               "caseworker-divorce-financialremedy",
+               "caseworker-divorce-financialremedy-courtadmin"
+            ]
+         }
+      }
+   },
+   {
+      "password": "Password123!",
+      "payload": {
+         "user": {
+            "id": "1bb15ccd-92ba-4902-a5fa-bf0e3f851c37",
+            "email": "fr_nbcadmin11@justice.gov.uk",
+            "forename": "NBC",
+            "surname": "Admin11",
+            "roleNames": [
+               "caseworker-divorce-courtadmin_beta",
+               "caseworker-divorce",
+               "caseworker-divorce-financialremedy-courtadmin",
+               "caseworker-divorce-financialremedy",
+               "payments",
+               "caseworker-divorce-courtadmin",
+               "caseworker"
+            ]
+         }
+      }
+   },
+   {
+      "password": "Password123!",
+      "payload": {
+         "user": {
+            "id": "829d99af-eb20-4ce0-82d9-2ba36c3d7a19",
+            "email": "fr_nbcadmin12@justice.gov.uk",
+            "forename": "NBC",
+            "surname": "Admin12",
+            "roleNames":[
+               "caseworker",
+               "caseworker-divorce",
+               "caseworker-divorce-financialremedy",
+               "caseworker-divorce-financialremedy-courtadmin"
+            ]
+         }
+      }
+   },
+   {
+      "email":"fr_ctscteamleader10@justice.gov.uk",
+      "password":"Password123!",
+      "payload":{
+         "user":{
+            "id": "c87bd61b-d048-490f-8c40-7304d24598f1",
+            "email":"fr_ctscteamleader11@justice.gov.uk",
+            "forename":"Ctsc",
+            "surname":"Teamleader",
+            "roleNames":[
+               "caseworker",
+               "caseworker-divorce",
+               "caseworker-divorce-financialremedy",
+               "caseworker-divorce-financialremedy-courtadmin",
+               "caseworker-divorce-financialremedy-superuser",
+               "task-supervisor"
+            ]
+         }
+      }
+   }
+]
