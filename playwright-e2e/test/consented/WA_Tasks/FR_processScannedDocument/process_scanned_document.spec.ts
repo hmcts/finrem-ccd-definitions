@@ -18,6 +18,26 @@ const users = [
   }
 ] as const;
 
+const dueDate = new Date();
+let workingDaysAdded = 0;
+
+while (workingDaysAdded < 5) {
+  dueDate.setDate(dueDate.getDate() + 1);
+
+  const day = dueDate.getDay();
+  const isWeekend = day === 0 || day === 6;
+
+  if (!isWeekend) {
+    workingDaysAdded++;
+  }
+}
+
+const formattedDueDate = dueDate.toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+});
+
 test.describe('Process scanned document tasks', () => {
   for (const user of users) {
     test(
@@ -27,7 +47,8 @@ test.describe('Process scanned document tasks', () => {
         page,
         loginPage,
         manageCaseDashboardPage,
-        caseDetailsPage
+        caseDetailsPage,
+        taskUiChecks
       }) => {
         const caseId =
               await ConsentedCaseFactory.createConsentedCaseUpToApplicationPaymentSubmission();
@@ -75,7 +96,17 @@ test.describe('Process scanned document tasks', () => {
             );
 
             await manageCaseDashboardPage.navigateToCase(caseId);
-            await manageCaseDashboardPage.assertTaskVisible(taskName);
+            await taskUiChecks.navigateToTasks();
+            await taskUiChecks.assertTaskVisible(taskName);
+            await taskUiChecks.assertTaskUI(
+              {
+                name: taskName,
+                priority: 'low',
+                dueDate: formattedDueDate,
+                assignedTo: 'Unassigned'
+              },
+              user.name
+            );
             await manageCaseDashboardPage.signOut();
           }
         );

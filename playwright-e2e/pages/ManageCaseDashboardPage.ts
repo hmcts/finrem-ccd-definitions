@@ -33,33 +33,6 @@ export class ManageCaseDashboardPage {
     await expect(tabLocator).toHaveAttribute('aria-selected', 'true');
   }
 
-  async assertTaskVisible(taskName: string): Promise<void> {
-    const escapedTaskName = taskName.replace(
-      /[.*+?^${}()|[\]\\]/g,
-      '\\$&'
-    );
-    const taskNameRegex = new RegExp(escapedTaskName, 'i');
-    const taskLocator = this.page.getByText(taskNameRegex).first();
-    const maxAttempts = 3;
-
-    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-      await this.navigateToTab(CaseTab.Tasks);
-
-      if (await taskLocator.isVisible()) {
-        return;
-      }
-
-      if (attempt < maxAttempts) {
-        await this.page.reload({ waitUntil: 'domcontentloaded' });
-      }
-    }
-
-    await expect(
-      taskLocator,
-      `"${taskName}" was not visible after ${maxAttempts} attempts`
-    ).toBeVisible();
-  }
-
   async visit(): Promise<void>{
     await this.page.goto(`${this.url}`);
   }
