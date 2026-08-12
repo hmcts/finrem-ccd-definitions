@@ -96,7 +96,7 @@ export class TaskUiChecks {
           label: /^Assign task$/
         },
         'Reassign task': {
-          selector: '#action_assign',
+          selector: '#action_reassign',
           label: /^Reassign task$/
         },
         'Cancel task': {
@@ -148,9 +148,8 @@ export class TaskUiChecks {
       exact: true
     });
 
-    if (await confirmationButton.isVisible()) {
-      await confirmationButton.click();
-    }
+    await expect(confirmationButton).toBeVisible();
+    await confirmationButton.click();
   }
 
   async assertTaskNotVisible(taskName: string): Promise<void> {
@@ -176,10 +175,10 @@ export class TaskUiChecks {
   }
 
   async assertAssignedTaskActions(userRole?: string): Promise<void> {
-    const actions: TaskManagementAction[] = ['Mark as done', 'Cancel'];
+    const actions: TaskManagementAction[] = ['Mark as done'];
 
     if (userRole === 'CTSC Team Leader') {
-      actions.push('Reassign task', 'Unassign task');
+      actions.push('Reassign task', 'Unassign task', 'Cancel');
     }
 
     await this.assertManagementActions(actions, true);
@@ -199,7 +198,7 @@ export class TaskUiChecks {
     await nextStepLink.click();
     await this.page.waitForLoadState('domcontentloaded');
   }
-  
+
   async assertTaskUI(
     task: TaskDetails,
     userRole: string

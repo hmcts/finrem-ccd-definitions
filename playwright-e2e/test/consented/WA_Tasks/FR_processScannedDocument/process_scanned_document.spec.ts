@@ -23,25 +23,25 @@ const completionActions = [
   'Attach scanned document'
 ] as const;
 
-const dueDate = new Date();
-let workingDaysAdded = 0;
+const getFormattedDueDate = (): string => {
+  const dueDate = new Date();
+  let workingDaysAdded = 0;
 
-while (workingDaysAdded < 5) {
-  dueDate.setDate(dueDate.getDate() + 1);
+  while (workingDaysAdded < 5) {
+    dueDate.setDate(dueDate.getDate() + 1);
 
-  const day = dueDate.getDay();
-  const isWeekend = day === 0 || day === 6;
-
-  if (!isWeekend) {
-    workingDaysAdded++;
+    const day = dueDate.getDay();
+    if (day !== 0 && day !== 6) {
+      workingDaysAdded++;
+    }
   }
-}
 
-const formattedDueDate = dueDate.toLocaleDateString('en-GB', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric'
-});
+  return dueDate.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+};
 
 test.describe('Process scanned document task tests', () => {
   for (const user of users) {
@@ -124,7 +124,7 @@ test.describe('Process scanned document task tests', () => {
                 {
                   name: taskName,
                   priority: 'low',
-                  dueDate: formattedDueDate,
+                  dueDate: getFormattedDueDate(),
                   assignedTo: 'Unassigned'
                 },
                 user.name
