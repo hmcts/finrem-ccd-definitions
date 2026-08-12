@@ -46,7 +46,7 @@ test(
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-        console.log(`[INFO] LR debug | config.waEnabled: ${config.waEnabled}`);
+    console.log(`[INFO] LR debug | config.waEnabled: ${config.waEnabled}`);
     if (config.waEnabled) {
         console.log(`[INFO] LR debug | WA ENABLED, login path check: ${config.loginPaths.worklist}`);
         await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
