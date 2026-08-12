@@ -1,13 +1,20 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
 export interface TaskDetails {
-    name: string;
-    priority: string;
-    dueDate: string;
-    assignedTo: string;
+  name: string;
+  priority: string;
+  dueDate: string;
+  assignedTo: string;
 }
 
-export type TaskManagementAction = 'Assign task' | 'Cancel task' | 'Assign to me';
+export type TaskManagementAction =
+    'Assign task'
+    | 'Reassign task'
+    | 'Cancel task'
+    | 'Cancel'
+    | 'Assign to me'
+    | 'Mark as done'
+    | 'Unassign task';
 
 export class TaskUiChecks {
 
@@ -28,12 +35,8 @@ export class TaskUiChecks {
   }
 
   async assertTaskVisible(taskName: string): Promise<void> {
-    const escapedTaskName = taskName.replace(
-      /[.*+?^${}()|[\]\\]/g,
-      '\\$&'
-    );
-    const taskNameRegex = new RegExp(escapedTaskName, 'i');
-    const taskLocator = this.page.getByText(taskNameRegex).first();
+    const escapedTaskName = taskName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const taskLocator = this.page.getByText(new RegExp(escapedTaskName, 'i')).first();
     const maxAttempts = 3;
 
     for (let attempt = 1; attempt <= maxAttempts; attempt++) {
@@ -70,19 +73,133 @@ export class TaskUiChecks {
       'Assign task',
       'Cancel task',
       'Assign to me'
-    ]
+    ],
+    taskAssigned = false
   ): Promise<void> {
     for (const action of actions) {
-      const actionLocator = action === 'Assign task'
-        ? this.page.locator('#action_assign')
-        : action === 'Cancel task'
-          ? this.page.locator('#action_cancel')
-          : this.page.locator('#action_claim');
+      if (
+        taskAssigned &&
+          (action === 'Assign task' || action === 'Assign to me')
+      ) {
+        continue;
+      }
+
+      const actionDetails: Record<
+          TaskManagementAction,
+          {
+            selector: string;
+            label: RegExp;
+          }
+      > = {
+        'Assign task': {
+          selector: '#action_assign',
+          label: /^Assign task$/
+        },
+        'Reassign task': {
+          selector: '#action_assign',
+          label: /^Reassign task$/
+        },
+        'Cancel task': {
+          selector: '#action_cancel',
+          label: /^Cancel task$/
+        },
+        Cancel: {
+          selector: '#action_cancel',
+          label: /^Cancel(?: task)?$/
+        },
+        'Assign to me': {
+          selector: '#action_claim',
+          label: /^Assign to me$/
+        },
+        'Mark as done': {
+          selector: '#action_complete',
+          label: /^Mark as done$/
+        },
+        'Unassign task': {
+          selector: '#action_unclaim',
+          label: /^Unassign task$/
+        }
+      };
+
+      const { selector, label } = actionDetails[action];
+      const actionLocator = this.page.locator(selector);
 
       await expect(actionLocator).toBeVisible();
+      await expect(actionLocator).toHaveText(label);
     }
   }
 
+  async assignTaskToMe(): Promise<void> {
+    const assignToMeLink = this.page.locator('#action_claim');
+
+    await expect(assignToMeLink).toBeVisible();
+    await assignToMeLink.click();
+    await expect(assignToMeLink).not.toBeVisible();
+  }
+
+  async markTaskAsDone(): Promise<void> {
+    const markAsDoneLink = this.page.locator('#action_complete');
+
+    await expect(markAsDoneLink).toBeVisible();
+    await markAsDoneLink.click();
+
+    const confirmationButton = this.page.getByRole('button', {
+      name: 'Mark as done',
+      exact: true
+    });
+
+    if (await confirmationButton.isVisible()) {
+      await confirmationButton.click();
+    }
+  }
+
+  async assertTaskNotVisible(taskName: string): Promise<void> {
+    const taskLocator = this.page.getByText(taskName, { exact: true });
+    const maxAttempts = 3;
+
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      await this.navigateToTasks();
+
+      if (!(await taskLocator.isVisible())) {
+        return;
+      }
+
+      if (attempt < maxAttempts) {
+        await this.page.reload({ waitUntil: 'domcontentloaded' });
+      }
+    }
+
+    await expect(
+      taskLocator,
+      `"${taskName}" was still visible after ${maxAttempts} attempts`
+    ).not.toBeVisible();
+  }
+
+  async assertAssignedTaskActions(userRole?: string): Promise<void> {
+    const actions: TaskManagementAction[] = ['Mark as done', 'Cancel'];
+
+    if (userRole === 'CTSC Team Leader') {
+      actions.push('Reassign task', 'Unassign task');
+    }
+
+    await this.assertManagementActions(actions, true);
+  }
+
+  async assertNextStepVisible(nextStep: string): Promise<void> {
+    await this.assertLabelAndValue('Next steps', nextStep);
+  }
+
+  async selectTaskNextStep(nextStep: string): Promise<void> {
+    const nextStepLink = this.page.getByRole('link', {
+      name: nextStep,
+      exact: true
+    });
+
+    await expect(nextStepLink).toBeVisible();
+    await nextStepLink.click();
+    await this.page.waitForLoadState('domcontentloaded');
+  }
+  
   async assertTaskUI(
     task: TaskDetails,
     userRole: string
@@ -90,11 +207,7 @@ export class TaskUiChecks {
     await this.assertTaskDetails(task);
     await this.assertManagementActions(['Assign to me']);
 
-    const teamLeaderActions: TaskManagementAction[] = [
-      'Assign task',
-      'Cancel task'
-    ];
-
+    const teamLeaderActions: TaskManagementAction[] = ['Assign task', 'Cancel task'];
     if (userRole === 'CTSC Team Leader') {
       await this.assertManagementActions(teamLeaderActions);
       return;
