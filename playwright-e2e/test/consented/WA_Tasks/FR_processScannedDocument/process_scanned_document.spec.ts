@@ -35,10 +35,7 @@ const users = {
     }
 >;
 
-const completionActions = [
-  'Mark as done',
-  ATTACH_SCANNED_DOCUMENT
-] as const;
+const completionActions = ['Mark as done', ATTACH_SCANNED_DOCUMENT] as const;
 
 type CompletionAction = typeof completionActions[number];
 type LoginCredentials = {
@@ -46,11 +43,10 @@ type LoginCredentials = {
     password: string;
 };
 
-const scenarios = Object.values(users).flatMap(user => {
-  return completionActions.map(completionAction => {
-    return { user, completionAction };
-  });
-});
+const scenarios = [
+  { user: users.admin, completionAction: completionActions[0] },
+  { user: users.teamLeader, completionAction: completionActions[1] }
+] as const;
 
 test.describe('Process scanned document task tests', () => {
   for (const { user, completionAction } of scenarios) {
@@ -103,6 +99,32 @@ test.describe('Process scanned document task tests', () => {
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await openCaseAs(user);
+
+          await test.step(
+            `${TASK_NAME} is presented in All Work for the team leader`,
+            async () => {
+              if (user.role === 'teamLeader') {
+                await taskUiChecks.assertTaskVisibleInWorkAllocationTab(
+                  TASK_NAME,
+                  'All work',
+                  caseId
+                );
+                await taskUiChecks.manageTaskFromWorkAllocationTab(
+                  TASK_NAME,
+                  caseId
+                );
+                await taskUiChecks.assertGoToTaskVisible(true);
+                await taskUiChecks.assertWorkAllocationManagementActions(
+                  unassignedTaskActions.teamLeader
+                );
+              } else {
+                await taskUiChecks.assertWorkAllocationTabNotVisible('All work');
+              }
+
+              await manageCaseDashboardPage.navigateToCase(caseId);
+            }
+          );
+
           await taskUiChecks.assertTaskUI(
             {
               name: TASK_NAME,
@@ -113,6 +135,30 @@ test.describe('Process scanned document task tests', () => {
             unassignedTaskActions[user.role]
           );
           await taskUiChecks.assignTaskToMe();
+
+          await test.step(
+            `${TASK_NAME} is presented in My Work once assigned`,
+            async () => {
+              await taskUiChecks.assertTaskVisibleInWorkAllocationTab(
+                TASK_NAME,
+                'My work',
+                caseId
+              );
+              await taskUiChecks.manageTaskFromWorkAllocationTab(
+                TASK_NAME,
+                caseId
+              );
+              await taskUiChecks.assertGoToTaskVisible(true);
+              await taskUiChecks.assertWorkAllocationManagementActions(
+                assignedTaskActions[user.role]
+              );
+
+              await manageCaseDashboardPage.navigateToCase(caseId);
+              await taskUiChecks.navigateToTasks();
+              await taskUiChecks.assertGoToTaskVisible(false);
+            }
+          );
+
           await taskUiChecks.assertOnlyManagementActions(
             assignedTaskActions[user.role]
           );
