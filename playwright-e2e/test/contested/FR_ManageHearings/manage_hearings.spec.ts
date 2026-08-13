@@ -82,7 +82,7 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
       console.info(`Navigated to case with ID: ${caseId}`);
 
@@ -173,7 +173,7 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
 
         // Login as caseworker and navigate to case
         await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+        await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
         await manageCaseDashboardPage.navigateToCase(caseId);
         console.info(`Navigated to case with ID: ${caseId}`);
 
@@ -251,7 +251,7 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
           config.caseWorker.email,
           config.caseWorker.password,
           config.manageCaseBaseURL,
-          config.loginPaths.worklist
+          config.loginPaths.cases
         );
 
         await manageCaseDashboardPage.navigateToCase(caseId);
@@ -405,7 +405,7 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Assert state is now Prepare For Hearing
