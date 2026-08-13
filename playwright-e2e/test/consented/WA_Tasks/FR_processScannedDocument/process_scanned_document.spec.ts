@@ -1,185 +1,146 @@
-import { expect, test } from '../../../../fixtures/fixtures.ts';
+import { test } from '../../../../fixtures/fixtures.ts';
 import config from '../../../../config/config.ts';
 import { CommonEvents } from '../../../../config/case-data.ts';
+import { DateHelper } from '../../../../data-utils/DateHelper.ts';
 import { ConsentedCaseFactory } from '../../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
+import type {
+  TaskManagementAction,
+  TaskUserRole
+} from '../../../../pages/WAtasks/TaskUiChecks.ts';
 
-const taskName = 'Process Scanned Documents';
+const TASK_NAME = 'Process Scanned Documents';
+const ATTACH_SCANNED_DOCUMENT = 'Attach scanned document';
 
-const users = [
-  {
+const users = {
+  admin: {
+    role: 'admin',
     name: 'CTSC Admin',
-    credentialsEmail: config.ctsc_admin.email,
-    credentialsPassword: config.ctsc_admin.password
+    email: config.ctsc_admin.email,
+    password: config.ctsc_admin.password
   },
-  {
+  teamLeader: {
+    role: 'teamLeader',
     name: 'CTSC Team Leader',
-    credentialsEmail: config.ctsc_teamleader.email,
-    credentialsPassword: config.ctsc_teamleader.password
+    email: config.ctsc_teamleader.email,
+    password: config.ctsc_teamleader.password
   }
-] as const;
+} as const satisfies Record<
+    TaskUserRole,
+    {
+        role: TaskUserRole;
+        name: string;
+        email: string;
+        password: string;
+    }
+>;
 
 const completionActions = [
   'Mark as done',
-  'Attach scanned document'
+  ATTACH_SCANNED_DOCUMENT
 ] as const;
 
-const getFormattedDueDate = (): string => {
-  const dueDate = new Date();
-  let workingDaysAdded = 0;
+type CompletionAction = typeof completionActions[number];
+type TestUser = {
+    role: TaskUserRole;
+    name: string;
+    email: string;
+    password: string;
+};
 
-  while (workingDaysAdded < 5) {
-    dueDate.setDate(dueDate.getDate() + 1);
-
-    const day = dueDate.getDay();
-    if (day !== 0 && day !== 6) {
-      workingDaysAdded++;
-    }
-  }
-
-  return dueDate.toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
+const scenarios = Object.values(users).flatMap(user => {
+  return completionActions.map(completionAction => {
+    return { user, completionAction };
   });
+});
+
+const assignedActions: Record<TaskUserRole, TaskManagementAction[]> = {
+  admin: ['Cancel task', 'Mark as done'],
+  teamLeader: [
+    'Cancel task',
+    'Mark as done',
+    'Reassign task',
+    'Unassign task'
+  ]
 };
 
 test.describe('Process scanned document task tests', () => {
-  for (const user of users) {
-    for (const completionAction of completionActions) {
-      test(
-        `${user.name} completes the task using ${completionAction}`,
-        { tag: ['@waTasks'] },
-        async ({
-          page,
-          loginPage,
-          manageCaseDashboardPage,
-          caseDetailsPage,
-          taskUiChecks
-        }) => {
-          const caseId =
-                        await ConsentedCaseFactory
-                          .createConsentedCaseUpToApplicationPaymentSubmission();
+  for (const { user, completionAction } of scenarios) {
+    test(
+      `${user.name} completes the task using ${completionAction}`,
+      { tag: ['@waTasks'] },
+      async ({
+        loginPage,
+        manageCaseDashboardPage,
+        caseDetailsPage,
+        taskUiChecks
+      }) => {
+        const caseId = await ConsentedCaseFactory
+          .createConsentedCaseUpToApplicationPaymentSubmission();
 
-          await test.step(
-            'Create the Process Scanned Documents task',
-            async () => {
-              await manageCaseDashboardPage.visit();
-
-              await loginPage.loginWaitForPath(
-                config.caseWorker.email,
-                config.caseWorker.password,
-                config.manageCaseBaseURL,
-                config.loginPaths.worklist
-              );
-
-              await manageCaseDashboardPage.navigateToCase(caseId);
-
-              await caseDetailsPage.selectNextStep(
-                CommonEvents.attachScannedDocs
-              );
-
-              await page
-                .getByRole('button', { name: 'Continue' })
-                .click();
-
-              await page
-                .getByRole('group', {
-                  name: 'Supplementary evidence handled'
-                })
-                .getByLabel('No')
-                .check();
-
-              await page
-                .getByRole('button', { name: 'Continue' })
-                .click();
-
-              await page
-                .getByRole('button', { name: 'Submit' })
-                .click();
-
-              await expect(
-                caseDetailsPage.successfulUpdateBanner
-              ).toBeVisible();
-
-              await manageCaseDashboardPage.signOut();
-            }
+        const openCaseAs = async (testUser: TestUser): Promise<void> => {
+          await manageCaseDashboardPage.visit();
+          await loginPage.loginWaitForPath(
+            testUser.email,
+            testUser.password,
+            config.manageCaseBaseURL,
+            config.loginPaths.worklist
           );
+          await manageCaseDashboardPage.navigateToCase(caseId);
+        };
 
-          await test.step(
-            `${user.name} can see and assign the task`,
-            async () => {
-              await manageCaseDashboardPage.visit();
+        const completeTask = async (
+          action: CompletionAction
+        ): Promise<void> => {
+          if (action === 'Mark as done') {
+            await taskUiChecks.markTaskAsDone();
+            return;
+          }
 
-              await loginPage.loginWaitForPath(
-                user.credentialsEmail,
-                user.credentialsPassword,
-                config.manageCaseBaseURL,
-                config.loginPaths.worklist
-              );
+          await taskUiChecks.selectTaskNextStep(ATTACH_SCANNED_DOCUMENT);
+          await caseDetailsPage.completeAttachScannedDocumentsEvent(true);
+        };
 
-              await manageCaseDashboardPage.navigateToCase(caseId);
-              await taskUiChecks.assertTaskVisible(taskName);
+        await test.step('Create the Process Scanned Documents task', async () => {
+          await openCaseAs({
+            role: 'admin',
+            name: 'Caseworker',
+            email: config.caseWorker.email,
+            password: config.caseWorker.password
+          });
+          await caseDetailsPage.selectNextStep(CommonEvents.attachScannedDocs);
+          await caseDetailsPage.completeAttachScannedDocumentsEvent(false);
+          await manageCaseDashboardPage.signOut();
+        });
 
-              await taskUiChecks.assertTaskUI(
-                {
-                  name: taskName,
-                  priority: 'low',
-                  dueDate: getFormattedDueDate(),
-                  assignedTo: 'Unassigned'
-                },
-                user.name
-              );
-
-              await taskUiChecks.assignTaskToMe();
-              await taskUiChecks.assertAssignedTaskActions(user.name);
-
-              await taskUiChecks.assertNextStepVisible(
-                'Attach scanned document'
-              );
-            }
+        await test.step(`${user.name} can see and assign the task`, async () => {
+          await openCaseAs(user);
+          await taskUiChecks.assertTaskVisible(TASK_NAME);
+          await taskUiChecks.assertTaskUI(
+            {
+              name: TASK_NAME,
+              priority: 'low',
+              dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
+              assignedTo: 'Unassigned'
+            },
+            user.role
           );
-
-          await test.step(
-            `${user.name} completes the task using ${completionAction}`,
-            async () => {
-              await manageCaseDashboardPage.navigateToCase(caseId);
-              await taskUiChecks.navigateToTasks();
-              if (completionAction === 'Mark as done') {
-                await taskUiChecks.markTaskAsDone();
-              } else {
-                await taskUiChecks.selectTaskNextStep(
-                  'Attach scanned document'
-                );
-
-                await page
-                  .getByRole('button', { name: 'Continue' })
-                  .click();
-
-                await page
-                  .getByRole('group', {
-                    name: 'Supplementary evidence handled'
-                  })
-                  .getByLabel('Yes')
-                  .check();
-
-                await page
-                  .getByRole('button', { name: 'Continue' })
-                  .click();
-
-                await page
-                  .getByRole('button', { name: 'Submit' })
-                  .click();
-
-                await expect(
-                  caseDetailsPage.successfulUpdateBanner
-                ).toBeVisible();
-              }
-
-              await taskUiChecks.assertTaskNotVisible(taskName);
-            }
+          await taskUiChecks.assignTaskToMe();
+          await taskUiChecks.assertOnlyManagementActions(
+            assignedActions[user.role]
           );
-        }
-      );
-    }
+          await taskUiChecks.assertNextStepVisible(ATTACH_SCANNED_DOCUMENT);
+        });
+
+        await test.step(
+          `${user.name} completes the task using ${completionAction}`,
+          async () => {
+            await manageCaseDashboardPage.navigateToCase(caseId);
+            await taskUiChecks.navigateToTasks();
+            await completeTask(completionAction);
+            await taskUiChecks.assertTaskNotVisible(TASK_NAME);
+          }
+        );
+      }
+    );
   }
 });
