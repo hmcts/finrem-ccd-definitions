@@ -3,10 +3,11 @@ import config from '../../../../config/config.ts';
 import { CommonEvents } from '../../../../config/case-data.ts';
 import { DateHelper } from '../../../../data-utils/DateHelper.ts';
 import { ConsentedCaseFactory } from '../../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
-import type {
-  TaskManagementAction,
-  TaskUserRole
-} from '../../../../pages/WAtasks/TaskUiChecks.ts';
+import {
+  assignedTaskActions,
+  unassignedTaskActions,
+  type TaskUserRole
+} from '../../../../pages/WAtasks/TaskTypes.ts';
 
 const TASK_NAME = 'Process Scanned Documents';
 const ATTACH_SCANNED_DOCUMENT = 'Attach scanned document';
@@ -40,9 +41,7 @@ const completionActions = [
 ] as const;
 
 type CompletionAction = typeof completionActions[number];
-type TestUser = {
-    role: TaskUserRole;
-    name: string;
+type LoginCredentials = {
     email: string;
     password: string;
 };
@@ -52,16 +51,6 @@ const scenarios = Object.values(users).flatMap(user => {
     return { user, completionAction };
   });
 });
-
-const assignedActions: Record<TaskUserRole, TaskManagementAction[]> = {
-  admin: ['Cancel task', 'Mark as done'],
-  teamLeader: [
-    'Cancel task',
-    'Mark as done',
-    'Reassign task',
-    'Unassign task'
-  ]
-};
 
 test.describe('Process scanned document task tests', () => {
   for (const { user, completionAction } of scenarios) {
@@ -77,11 +66,13 @@ test.describe('Process scanned document task tests', () => {
         const caseId = await ConsentedCaseFactory
           .createConsentedCaseUpToApplicationPaymentSubmission();
 
-        const openCaseAs = async (testUser: TestUser): Promise<void> => {
+        const openCaseAs = async (
+          credentials: LoginCredentials
+        ): Promise<void> => {
           await manageCaseDashboardPage.visit();
           await loginPage.loginWaitForPath(
-            testUser.email,
-            testUser.password,
+            credentials.email,
+            credentials.password,
             config.manageCaseBaseURL,
             config.loginPaths.worklist
           );
@@ -102,8 +93,6 @@ test.describe('Process scanned document task tests', () => {
 
         await test.step('Create the Process Scanned Documents task', async () => {
           await openCaseAs({
-            role: 'admin',
-            name: 'Caseworker',
             email: config.caseWorker.email,
             password: config.caseWorker.password
           });
@@ -114,7 +103,6 @@ test.describe('Process scanned document task tests', () => {
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await openCaseAs(user);
-          await taskUiChecks.assertTaskVisible(TASK_NAME);
           await taskUiChecks.assertTaskUI(
             {
               name: TASK_NAME,
@@ -122,11 +110,11 @@ test.describe('Process scanned document task tests', () => {
               dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
               assignedTo: 'Unassigned'
             },
-            user.role
+            unassignedTaskActions[user.role]
           );
           await taskUiChecks.assignTaskToMe();
           await taskUiChecks.assertOnlyManagementActions(
-            assignedActions[user.role]
+            assignedTaskActions[user.role]
           );
           await taskUiChecks.assertNextStepVisible(ATTACH_SCANNED_DOCUMENT);
         });

@@ -1,35 +1,12 @@
 import { expect, type Locator, type Page } from '@playwright/test';
+import {
+  taskManagementActions,
+  type TaskDetails,
+  type TaskManagementAction
+} from './TaskTypes.ts';
 
-export interface TaskDetails {
-  name: string;
-  priority: string;
-  dueDate: string;
-  assignedTo: string;
-}
-
-export type TaskManagementAction =
-    'Assign task'
-    | 'Reassign task'
-    | 'Cancel task'
-    | 'Assign to me'
-    | 'Mark as done'
-    | 'Unassign task';
-
-export type TaskUserRole = 'admin' | 'teamLeader';
-
-const actionDetails: Record<
-    TaskManagementAction,
-    { label: RegExp }
-> = {
-  'Assign task': { label: /^Assign task$/ },
-  'Reassign task': { label: /^Reassign task$/ },
-  'Cancel task': { label: /^Cancel task$/ },
-  'Assign to me': { label: /^Assign to me$/ },
-  'Mark as done': { label: /^Mark as done$/ },
-  'Unassign task': { label: /^Unassign task$/ }
-};
-
-const managementActions = Object.keys(actionDetails) as TaskManagementAction[];
+const DEFAULT_REFRESH_ATTEMPTS = 12;
+const DEFAULT_REFRESH_INTERVAL = 5_000;
 
 export class TaskUiChecks {
 
@@ -49,29 +26,6 @@ export class TaskUiChecks {
     await expect(this.activeTasksHeading).toBeVisible();
   }
 
-  async assertTaskVisible(taskName: string): Promise<void> {
-    const escapedTaskName = taskName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const taskLocator = this.page.getByText(new RegExp(escapedTaskName, 'i')).first();
-    const maxAttempts = 12;
-
-    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-      await this.navigateToTasks();
-
-      if (await taskLocator.isVisible()) {
-        return;
-      }
-
-      if (attempt < maxAttempts) {
-        await this.page.waitForTimeout(5_000);
-        await this.page.reload({ waitUntil: 'domcontentloaded' });
-      }
-    }
-
-    throw new Error(
-      `"${taskName}" was not visible after ${maxAttempts} refresh attempts`
-    );
-  }
-
   async assertTaskDetails(task: TaskDetails): Promise<void> {
     const taskHeading = this.page.getByText(task.name, { exact: true });
 
@@ -83,38 +37,20 @@ export class TaskUiChecks {
     await expect(this.page.getByText('Manage', { exact: true })).toBeVisible();
   }
 
-  async assertManagementActions(
-    actions: TaskManagementAction[] = [
-      'Assign task',
-      'Cancel task',
-      'Assign to me'
-    ]
-  ): Promise<void> {
-    const manageSection = this.getManageSection();
-
-    for (const action of actions) {
-      const actionLocator = manageSection.getByText(
-        actionDetails[action].label
-      );
-
-      await expect(actionLocator).toBeVisible();
-    }
-  }
-
   async assertOnlyManagementActions(
-    actions: TaskManagementAction[]
+    actions: readonly TaskManagementAction[]
   ): Promise<void> {
-    await this.assertManagementActions(actions);
     const manageSection = this.getManageSection();
 
-    for (const action of managementActions) {
-      if (!actions.includes(action)) {
-        await expect(
-          manageSection.getByText(actionDetails[action].label)
-        ).not.toBeVisible({
-          timeout: 5_000
-        });
+    for (const action of taskManagementActions) {
+      const actionLocator = manageSection.getByText(action, { exact: true });
+
+      if (actions.includes(action)) {
+        await expect(actionLocator).toBeVisible();
+        continue;
       }
+
+      await expect(actionLocator).not.toBeVisible({ timeout: 5_000 });
     }
   }
 
@@ -128,7 +64,8 @@ export class TaskUiChecks {
 
   async markTaskAsDone(): Promise<void> {
     const markAsDoneLink = this.getManageSection().getByText(
-      actionDetails['Mark as done'].label
+      'Mark as done',
+      { exact: true }
     );
 
     await expect(markAsDoneLink).toBeVisible();
@@ -144,25 +81,7 @@ export class TaskUiChecks {
   }
 
   async assertTaskNotVisible(taskName: string): Promise<void> {
-    const taskLocator = this.page.getByText(taskName, { exact: true });
-    const maxAttempts = 12;
-
-    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-      await this.navigateToTasks();
-
-      if (!(await taskLocator.isVisible())) {
-        return;
-      }
-
-      if (attempt < maxAttempts) {
-        await this.page.waitForTimeout(5_000);
-        await this.page.reload({ waitUntil: 'domcontentloaded' });
-      }
-    }
-
-    throw new Error(
-      `"${taskName}" was still visible after ${maxAttempts} refresh attempts`
-    );
+    await this.waitForTaskVisibility(taskName, false);
   }
 
   async assertNextStepVisible(nextStep: string): Promise<void> {
@@ -182,14 +101,44 @@ export class TaskUiChecks {
 
   async assertTaskUI(
     task: TaskDetails,
-    userRole: TaskUserRole
+    actions: readonly TaskManagementAction[]
   ): Promise<void> {
+    await this.waitForTaskVisibility(task.name, true);
     await this.assertTaskDetails(task);
-    await this.assertOnlyManagementActions(
-      userRole === 'teamLeader'
-        ? ['Assign task', 'Cancel task', 'Assign to me']
-        : ['Assign to me']
+    await this.assertOnlyManagementActions(actions);
+  }
+
+  private async waitForTaskVisibility(
+    taskName: string,
+    shouldBeVisible: boolean
+  ): Promise<void> {
+    const taskLocator = this.getTaskLocator(taskName);
+
+    for (let attempt = 1; attempt <= DEFAULT_REFRESH_ATTEMPTS; attempt++) {
+      await this.navigateToTasks();
+
+      if (await taskLocator.isVisible() === shouldBeVisible) {
+        return;
+      }
+
+      if (attempt < DEFAULT_REFRESH_ATTEMPTS) {
+        await this.page.waitForTimeout(DEFAULT_REFRESH_INTERVAL);
+        await this.page.reload({ waitUntil: 'domcontentloaded' });
+      }
+    }
+
+    const actualState = shouldBeVisible ? 'not visible' : 'still visible';
+    throw new Error(
+      `"${taskName}" was ${actualState} after `
+      + `${DEFAULT_REFRESH_ATTEMPTS} refresh attempts`
     );
+  }
+
+  private getTaskLocator(taskName: string): Locator {
+    const escapedTaskName = taskName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return this.page
+      .getByText(new RegExp(`^${escapedTaskName}$`, 'i'))
+      .first();
   }
 
   private async assertLabelAndValue(label: string, value: string): Promise<void> {
