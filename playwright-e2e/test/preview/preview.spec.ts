@@ -19,13 +19,10 @@ test(
     const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    console.log(`[INFO] LR debug | config.waEnabled: ${config.waEnabled}`);
     if (config.waEnabled) {
-        console.log(`[INFO] LR debug | WA ENABLED, login path check: ${config.loginPaths.worklist}`);
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     } else {
-        console.log(`[INFO] LR debug | WA DISABLED, login path check: ${config.loginPaths.cases}`);
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
     }
     await manageCaseDashboardPage.navigateToCase(caseId);
     // Assert tab data
@@ -47,9 +44,9 @@ test(
     // Login as caseworker
     await manageCaseDashboardPage.visit();
     if (config.waEnabled) {
-        await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     } else {
-        await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
     }
     await manageCaseDashboardPage.navigateToCase(caseId);
     // Assert tab data
