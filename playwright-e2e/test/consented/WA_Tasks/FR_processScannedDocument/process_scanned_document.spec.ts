@@ -3,53 +3,21 @@ import config from '../../../../config/config.ts';
 import { CommonEvents } from '../../../../config/case-data.ts';
 import { DateHelper } from '../../../../data-utils/DateHelper.ts';
 import { ConsentedCaseFactory } from '../../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
+import type { TaskCompletionAction } from '../../../../pages/WAtasks/TaskScenario.ts';
 import {
-  assignedTaskActions,
-  unassignedTaskActions,
-  type TaskUserRole
-} from '../../../../pages/WAtasks/TaskTypes.ts';
+  ATTACH_SCANNED_DOCUMENT,
+  processScannedDocuments,
+  processScannedDocumentUserScenarios
+} from './process_scanned_documents.scenario.ts';
 
-const TASK_NAME = 'Process Scanned Documents';
-const ATTACH_SCANNED_DOCUMENT = 'Attach scanned document';
-
-const users = {
-  admin: {
-    role: 'admin',
-    name: 'CTSC Admin',
-    email: config.ctsc_admin.email,
-    password: config.ctsc_admin.password
-  },
-  teamLeader: {
-    role: 'teamLeader',
-    name: 'CTSC Team Leader',
-    email: config.ctsc_teamleader.email,
-    password: config.ctsc_teamleader.password
-  }
-} as const satisfies Record<
-    TaskUserRole,
-    {
-        role: TaskUserRole;
-        name: string;
-        email: string;
-        password: string;
-    }
->;
-
-const completionActions = ['Mark as done', ATTACH_SCANNED_DOCUMENT] as const;
-
-type CompletionAction = typeof completionActions[number];
+const TASK_NAME = processScannedDocuments.taskName;
 type LoginCredentials = {
     email: string;
     password: string;
 };
 
-const scenarios = [
-  { user: users.admin, completionAction: completionActions[0] },
-  { user: users.teamLeader, completionAction: completionActions[1] }
-] as const;
-
 test.describe('Process scanned document task tests', () => {
-  for (const { user, completionAction } of scenarios) {
+  for (const { user, completionAction } of processScannedDocumentUserScenarios) {
     test(
       `${user.name} completes the task using ${completionAction}`,
       { tag: ['@waTasks'] },
@@ -76,7 +44,7 @@ test.describe('Process scanned document task tests', () => {
         };
 
         const completeTask = async (
-          action: CompletionAction
+          action: TaskCompletionAction
         ): Promise<void> => {
           if (action === 'Mark as done') {
             await taskUiChecks.markTaskAsDone();
@@ -115,7 +83,7 @@ test.describe('Process scanned document task tests', () => {
                 );
                 await taskUiChecks.assertGoToTaskVisible(true);
                 await taskUiChecks.assertWorkAllocationManagementActions(
-                  unassignedTaskActions.teamLeader
+                  processScannedDocuments.roles.teamLeader.unassignedActions
                 );
               } else {
                 await taskUiChecks.assertWorkAllocationTabNotVisible('All work');
@@ -132,7 +100,7 @@ test.describe('Process scanned document task tests', () => {
               dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
               assignedTo: 'Unassigned'
             },
-            unassignedTaskActions[user.role]
+            processScannedDocuments.roles[user.role].unassignedActions
           );
           await taskUiChecks.assignTaskToMe();
 
@@ -150,7 +118,7 @@ test.describe('Process scanned document task tests', () => {
               );
               await taskUiChecks.assertGoToTaskVisible(true);
               await taskUiChecks.assertWorkAllocationManagementActions(
-                assignedTaskActions[user.role]
+                processScannedDocuments.roles[user.role].assignedActions
               );
 
               await manageCaseDashboardPage.navigateToCase(caseId);
@@ -160,7 +128,7 @@ test.describe('Process scanned document task tests', () => {
           );
 
           await taskUiChecks.assertOnlyManagementActions(
-            assignedTaskActions[user.role]
+            processScannedDocuments.roles[user.role].assignedActions
           );
           await taskUiChecks.assertNextStepVisible(ATTACH_SCANNED_DOCUMENT);
         });
