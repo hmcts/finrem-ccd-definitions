@@ -6088,5 +6088,17 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "FieldShowCondition": "stopRepClientConsent=\"No\""
+  },
+  {
+    "LiveFrom": "14/08/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_HWFAcceptedAndIssue",
+    "CaseFieldID": "issueDate",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": "updateIssueDate",
+    "PageLabel": "Update Issue Date",
+    "PageDisplayOrder": 1,
+    "ShowSummaryChangeOption": "Y"
   }
 ]
