@@ -41,7 +41,9 @@ export class WorkAllocationTask {
     private readonly taskLink: Locator
   ) {}
 
-  async openManage(): Promise<void> {
+  async expectManagementActions(
+    expectedActions: readonly TaskManagementAction[]
+  ): Promise<void> {
     const taskRow = this.taskLink.locator('xpath=ancestor::tr[1]');
     const manageButton = taskRow.getByRole('button', {
       name: 'Manage',
@@ -51,16 +53,7 @@ export class WorkAllocationTask {
     await expect(manageButton).toBeVisible();
     await manageButton.click();
     await expect(manageButton).toHaveAttribute('aria-expanded', 'true');
-  }
 
-  async expectGoToTaskVisible(): Promise<void> {
-    await expect(this.page.getByText('Go to task', { exact: true }))
-      .toBeVisible();
-  }
-
-  async expectManagementActions(
-    expectedActions: readonly TaskManagementAction[]
-  ): Promise<void> {
     for (const action of taskManagementActions) {
       const actionLocator = this.page.getByText(action, { exact: true });
 

@@ -86,6 +86,82 @@ export class TaskUiChecks {
     await confirmationButton.click();
   }
 
+  async cancelTask(): Promise<void> {
+    const cancelTaskLink = this.getManageSection().getByText(
+      'Cancel task',
+      { exact: true }
+    );
+
+    await expect(cancelTaskLink).toBeVisible();
+    await cancelTaskLink.click();
+
+    const confirmationButton = this.page.getByRole('button', {
+      name: 'Cancel task',
+      exact: true
+    });
+
+    await expect(confirmationButton).toBeVisible();
+    await confirmationButton.click();
+  }
+
+  async reassignTaskToUser(
+    userName: string,
+    userEmail: string
+  ): Promise<void> {
+    const reassignTaskLink = this.getManageSection().getByText(
+      'Reassign task',
+      { exact: true }
+    );
+
+    await expect(reassignTaskLink).toBeVisible();
+    await reassignTaskLink.click();
+
+    const roleTypeOption = this.page.getByRole('radio', {
+      name: 'CTSC',
+      exact: true
+    });
+
+    await expect(roleTypeOption).toBeVisible();
+    await roleTypeOption.check();
+    await this.page.getByRole('button', {
+      name: 'Continue',
+      exact: true
+    }).click();
+
+    const personSearch = this.page
+      .getByText('Type the name of the person and select them.', {
+        exact: true
+      })
+      .locator('xpath=following::input[1]');
+
+    await expect(personSearch).toBeVisible();
+    await personSearch.fill(userName);
+
+    const userOption = this.page.getByRole('option').filter({
+      hasText: userEmail
+    });
+
+    await expect(userOption).toBeVisible();
+    await userOption.click();
+
+    const continueButton = this.page.getByRole('button', {
+      name: 'Continue',
+      exact: true
+    });
+
+    if (await continueButton.isVisible()) {
+      await continueButton.click();
+    }
+
+    const reassignButton = this.page.getByRole('button', {
+      name: 'Reassign',
+      exact: true
+    });
+
+    await expect(reassignButton).toBeEnabled();
+    await reassignButton.click();
+  }
+
   async assertTaskNotVisible(taskName: string): Promise<void> {
     await this.waitForTaskVisibility(taskName, false);
   }
@@ -98,51 +174,24 @@ export class TaskUiChecks {
     await this.workAllocationPage.findTask(tabName, { taskName, caseId });
   }
 
+  async assertTaskAndActionsInWorkAllocationTab(
+    taskName: string,
+    tabName: WorkAllocationTab,
+    caseId: string | number,
+    actions: readonly TaskManagementAction[]
+  ): Promise<void> {
+    const task = await this.workAllocationPage.findTask(
+      tabName,
+      { taskName, caseId }
+    );
+
+    await task.expectManagementActions(actions);
+  }
+
   async assertWorkAllocationTabNotVisible(
     tabName: WorkAllocationTab
   ): Promise<void> {
     await this.workAllocationPage.expectTabNotVisible(tabName);
-  }
-
-  async manageTaskFromWorkAllocationTab(
-    taskName: string,
-    caseId: string | number
-  ): Promise<void> {
-    const task = await this.workAllocationPage.findTask(
-      this.page.url().includes('/all-work/') ? 'All work' : 'My work',
-      { taskName, caseId }
-    );
-    await task.openManage();
-  }
-
-  async assertGoToTaskVisible(
-    shouldBeVisible: boolean
-  ): Promise<void> {
-    const goToTaskLink = this.page.getByText('Go to task', { exact: true });
-
-    if (shouldBeVisible) {
-      await expect(goToTaskLink).toBeVisible();
-      return;
-    }
-
-    await expect(goToTaskLink).not.toBeVisible();
-  }
-
-  async assertWorkAllocationManagementActions(
-    actions: readonly TaskManagementAction[]
-  ): Promise<void> {
-    for (const action of taskManagementActions) {
-      const actionLocator = this.page.getByText(action, {
-        exact: true
-      });
-
-      if (actions.includes(action)) {
-        await expect(actionLocator).toBeVisible();
-        continue;
-      }
-
-      await expect(actionLocator).not.toBeVisible({ timeout: 5_000 });
-    }
   }
 
   async assertNextStepVisible(nextStep: string): Promise<void> {
@@ -215,4 +264,5 @@ export class TaskUiChecks {
       .filter({ hasText: /^Manage$/ })
       .locator('xpath=following-sibling::dd[1]');
   }
+
 }

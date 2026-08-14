@@ -46,5 +46,14 @@ export const processScannedDocumentUserScenarios = [
       password: config.ctsc_teamleader.password
     },
     completionAction: ATTACH_SCANNED_DOCUMENT
+  },
+  {
+    user: {
+      role: 'admin',
+      name: 'CTSC Admin',
+      email: config.ctsc_admin.email,
+      password: config.ctsc_admin.password
+    },
+    completionAction: 'Cancel task'
   }
 ] as const satisfies readonly TaskUserScenario[];
