@@ -1208,5 +1208,21 @@
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent"
+  },
+  {
+    "LiveFrom": "14/08/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_HWFAcceptedAndIssue",
+    "Name": "HWF Accepted & Issue",
+    "Description": "HWF Accepted & Issue",
+    "DisplayOrder": 68,
+    "PreConditionState(s)": "awaitingHWFDecision;awaitingPaymentResponse",
+    "PostConditionState": "applicationSubmitted",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "RetriesTimeoutURLSubmittedEvent": "0",
+    "SecurityClassification": "Public",
+    "ShowSummary": "N",
+    "ShowEventNotes": "Y"
   }
 ]
