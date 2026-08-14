@@ -37,13 +37,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_HWFDecisionMade",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_paymentMadeFromHWF",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CR"
@@ -65,21 +58,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_HWFDecisionMadeFromAwaitingPayment",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_paymentMadeFromAwaitingPayment",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_issueApplication",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "CR"
   },
@@ -380,13 +359,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_HWFDecisionMade",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_paymentMadeFromHWF",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
@@ -408,21 +380,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_HWFDecisionMadeFromAwaitingPayment",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_paymentMadeFromAwaitingPayment",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_issueApplication",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "R"
   },
@@ -688,13 +646,6 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_HWFDecisionMade",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_paymentMadeFromHWF",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
@@ -716,21 +667,7 @@
   {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_HWFDecisionMadeFromAwaitingPayment",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_paymentMadeFromAwaitingPayment",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_issueApplication",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
@@ -1032,48 +969,6 @@
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_caseSubmissionFromInfoReceived",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_issueApplicationFromAwaitingInfo",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_issueApplicationFromInfoReceived",
-    "UserRole": "caseworker-divorce-financialremedy-solicitor",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_issueApplicationFromAwaitingInfo",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_issueApplicationFromInfoReceived",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CR"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_issueApplicationFromAwaitingInfo",
-    "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "CRUD": "R"
-  },
-  {
-    "LiveFrom": "01/01/2017",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_issueApplicationFromInfoReceived",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
