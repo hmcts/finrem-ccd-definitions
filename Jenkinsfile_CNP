@@ -343,14 +343,12 @@ withPipeline("nodejs", product, component) {
 
   before('functionalTest:preview') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
-    sh 'yarn playwright install',
-    sh 'bin/task-test-setup/run_jobs.sh'
+    sh 'yarn playwright install'
   }
 
   before('functionalTest:aat') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
-    sh 'yarn playwright install',
-    sh 'bin/task-test-setup/run_jobs.sh'
+    sh 'yarn playwright install'
   }
 
   afterSuccess('functionalTest:aat') {
