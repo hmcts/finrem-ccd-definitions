@@ -3,7 +3,6 @@ import config from '../../../../config/config.ts';
 import { DateHelper } from '../../../../data-utils/DateHelper.ts';
 import { ConsentedCaseFactory } from '../../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
 import { ConsentedEventApi } from '../../../../data-utils/api/consented/ConsentedEventApi.ts';
-import type { CaseDetailsPage } from '../../../../pages/CaseDetailsPage.ts';
 import type { ManageCaseDashboardPage } from '../../../../pages/ManageCaseDashboardPage.ts';
 import type { SigninPage } from '../../../../pages/SigninPage.ts';
 import type { TaskCompletionAction } from '../../../../pages/WAtasks/TaskScenario.ts';
@@ -19,8 +18,7 @@ type LoginCredentials = {
     password: string;
 };
 
-type ProcessTaskPages = {
-  caseDetailsPage: CaseDetailsPage;
+type SessionPages = {
   loginPage: SigninPage;
   manageCaseDashboardPage: ManageCaseDashboardPage;
 };
@@ -28,7 +26,7 @@ type ProcessTaskPages = {
 const loginAndOpenCase = async (
   credentials: LoginCredentials,
   caseId: string,
-  { loginPage, manageCaseDashboardPage }: ProcessTaskPages
+  { loginPage, manageCaseDashboardPage }: SessionPages
 ): Promise<void> => {
   await manageCaseDashboardPage.visit();
   await loginPage.loginWaitForPath(
@@ -62,8 +60,7 @@ test.describe('Process scanned document task tests', () => {
         caseDetailsPage,
         taskUiChecks
       }) => {
-        const pages = {
-          caseDetailsPage,
+        const sessionPages = {
           loginPage,
           manageCaseDashboardPage
         };
@@ -87,7 +84,7 @@ test.describe('Process scanned document task tests', () => {
         };
 
         await test.step(`${user.name} can see and assign the task`, async () => {
-          await loginAndOpenCase(user, caseId, pages);
+          await loginAndOpenCase(user, caseId, sessionPages);
 
           await taskUiChecks.assertTaskUI(
             {
@@ -123,13 +120,11 @@ test.describe('Process scanned document task tests', () => {
     async ({
       loginPage,
       manageCaseDashboardPage,
-      caseDetailsPage,
       taskUiChecks
     }) => {
       test.setTimeout(15 * 60 * 1000);
 
-      const pages = {
-        caseDetailsPage,
+      const sessionPages = {
         loginPage,
         manageCaseDashboardPage
       };
@@ -139,7 +134,7 @@ test.describe('Process scanned document task tests', () => {
         await loginAndOpenCase(
           config.ctsc_teamleader,
           caseId,
-          pages
+          sessionPages
         );
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,

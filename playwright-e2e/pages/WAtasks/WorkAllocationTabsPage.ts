@@ -70,10 +70,6 @@ export class WorkAllocationTabsPage {
 
   public constructor(private readonly page: Page) {}
 
-  async expectTabNotVisible(tabName: WorkAllocationTab): Promise<void> {
-    await expect(this.getTab(tabName)).not.toBeVisible();
-  }
-
   async findTask(
     tabName: WorkAllocationTab,
     identity: WorkAllocationTaskIdentity

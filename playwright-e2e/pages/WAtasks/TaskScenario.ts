@@ -8,7 +8,6 @@ export type TaskCompletionAction = 'Mark as done' | string;
 export interface TaskRoleExpectation {
   readonly assignedActions: readonly TaskManagementAction[];
   readonly unassignedActions: readonly TaskManagementAction[];
-  readonly workAllocationTabs: readonly ('All work' | 'My work')[];
 }
 
 export interface TaskScenario {

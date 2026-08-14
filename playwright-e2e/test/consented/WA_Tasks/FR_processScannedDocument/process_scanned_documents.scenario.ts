@@ -16,12 +16,10 @@ export const processScannedDocuments = defineTaskScenario({
   dueInWorkingDays: 5,
   roles: {
     admin: {
-      workAllocationTabs: ['My work'],
       unassignedActions: unassignedTaskActions.admin,
       assignedActions: assignedTaskActions.admin
     },
     teamLeader: {
-      workAllocationTabs: ['All work', 'My work'],
       unassignedActions: unassignedTaskActions.teamLeader,
       assignedActions: assignedTaskActions.teamLeader
     }

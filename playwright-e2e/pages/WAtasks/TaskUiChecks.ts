@@ -188,12 +188,6 @@ export class TaskUiChecks {
     await task.expectManagementActions(actions);
   }
 
-  async assertWorkAllocationTabNotVisible(
-    tabName: WorkAllocationTab
-  ): Promise<void> {
-    await this.workAllocationPage.expectTabNotVisible(tabName);
-  }
-
   async assertNextStepVisible(nextStep: string): Promise<void> {
     await this.assertLabelAndValue('Next steps', nextStep);
   }
