@@ -7,41 +7,52 @@ import {createCaseTabData} from '../../resources/tab_content/contested/solicitor
 
 
 test(
-  'Consented Tab Verification',
-  { tag: ['@preview'] },
-  async (
-    { 
-      loginPage, 
-      manageCaseDashboardPage, 
-      caseDetailsPage 
+    'Consented Tab Verification',
+    { tag: ['@preview'] },
+    async (
+        {
+            loginPage,
+            manageCaseDashboardPage,
+            caseDetailsPage
+        }
+    ) => {
+        const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
+        // Login as caseworker
+        await manageCaseDashboardPage.visit();
+        console.log(`[INFO] LR debug | config.waEnabled: ${config.waEnabled}`);
+        if (config.waEnabled) {
+            console.log(`[INFO] LR debug | WA ENABLED, login path check: ${config.loginPaths.worklist}`);
+            await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+        } else {
+            console.log(`[INFO] LR debug | WA DISABLED, login path check: ${config.loginPaths.cases}`);
+            await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+        }
+        await manageCaseDashboardPage.navigateToCase(caseId);
+        // Assert tab data
+        await caseDetailsPage.assertTabData(createCaseTabDataPreview);
     }
-  ) => {
-    const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
-    // Login as caseworker
-    await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
-    await manageCaseDashboardPage.navigateToCase(caseId);
-    // Assert tab data
-    await caseDetailsPage.assertTabData(createCaseTabDataPreview);
-  }
 );
 
 test(
-  'Contested Tab Verification',
-  { tag: ['@preview'] },
-  async (
-    { 
-      loginPage, 
-      manageCaseDashboardPage, 
-      caseDetailsPage 
+    'Contested Tab Verification',
+    { tag: ['@preview'] },
+    async (
+        {
+            loginPage,
+            manageCaseDashboardPage,
+            caseDetailsPage
+        }
+    ) => {
+        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+        // Login as caseworker
+        await manageCaseDashboardPage.visit();
+        if (config.waEnabled) {
+            await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+        } else {
+            await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+        }
+        await manageCaseDashboardPage.navigateToCase(caseId);
+        // Assert tab data
+        await caseDetailsPage.assertTabData(createCaseTabData);
     }
-  ) => {
-    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-    // Login as caseworker
-    await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
-    await manageCaseDashboardPage.navigateToCase(caseId);
-    // Assert tab data
-    await caseDetailsPage.assertTabData(createCaseTabData);
-  }
 );
