@@ -344,13 +344,13 @@ withPipeline("nodejs", product, component) {
   before('functionalTest:preview') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
     sh 'yarn playwright install'
-    sh 'cd create_idam_id_scripts && ./run_jobs.sh'
+    sh './run_jobs.sh
   }
 
   before('functionalTest:aat') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
     sh 'yarn playwright install'
-    sh 'cd create_idam_id_scripts && ./run_jobs.sh'
+    sh './run_jobs.sh
   }
 
   afterSuccess('functionalTest:aat') {
