@@ -46,7 +46,7 @@ async function loginAsCaseworkerStep(
       config.caseWorker.email,
       config.caseWorker.password,
       config.manageCaseBaseURL,
-      config.loginPaths.cases
+      config.loginPaths.worklist
     );
   });
 }

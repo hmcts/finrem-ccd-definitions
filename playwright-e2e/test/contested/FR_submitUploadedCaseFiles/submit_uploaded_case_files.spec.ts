@@ -19,7 +19,7 @@ test.describe('Contested - Ready For Hearing', () => {
         
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Submit Uploaded Case Files 

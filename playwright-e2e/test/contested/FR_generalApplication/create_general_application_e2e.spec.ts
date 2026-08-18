@@ -34,7 +34,7 @@ test.describe('Contested General Application e2e', () => {
           config.caseWorker.email,
           config.caseWorker.password,
           config.manageCaseBaseURL,
-          config.loginPaths.cases
+          config.loginPaths.worklist
         );
 
         await manageCaseDashboardPage.navigateToCase(caseId);
@@ -127,7 +127,7 @@ test.describe('Contested General Application e2e', () => {
           config.caseWorker.email,
           config.caseWorker.password,
           config.manageCaseBaseURL,
-          config.loginPaths.cases
+          config.loginPaths.worklist
         );
 
         await manageCaseDashboardPage.navigateToCase(caseId);

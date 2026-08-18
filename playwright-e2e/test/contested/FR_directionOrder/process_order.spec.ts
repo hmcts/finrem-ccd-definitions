@@ -45,7 +45,7 @@ async function progressToProcessOrderEvent(
     config.caseWorker.email,
     config.caseWorker.password,
     config.manageCaseBaseURL,
-    config.loginPaths.cases
+    config.loginPaths.worklist
   );
   await manageCaseDashboardPage.navigateToCase(caseId);
 

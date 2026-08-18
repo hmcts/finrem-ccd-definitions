@@ -27,7 +27,7 @@ for (const data of caseNotesTestData) {
 
       // Create and setup case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       const caseId = await data.setupCase();
 
       // Navigate to case

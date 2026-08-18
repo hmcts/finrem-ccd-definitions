@@ -16,7 +16,7 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       //navigate to manage hearings event
@@ -74,7 +74,7 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       //navigate to manage hearings event
@@ -202,7 +202,7 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       //navigate to manage hearings event
@@ -285,7 +285,7 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       //navigate to manage hearings event

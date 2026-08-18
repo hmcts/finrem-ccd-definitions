@@ -20,7 +20,7 @@ test.describe('Contested - Manage Express Case', () => {
           config.caseWorker.email,
           config.caseWorker.password,
           config.manageCaseBaseURL,
-          config.loginPaths.cases
+          config.loginPaths.worklist
         );
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
@@ -68,7 +68,7 @@ test.describe('Contested - Manage Express Case', () => {
           config.caseWorker.email,
           config.caseWorker.password,
           config.manageCaseBaseURL,
-          config.loginPaths.cases
+          config.loginPaths.worklist
         );
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
@@ -105,7 +105,7 @@ test.describe('Contested - Manage Express Case', () => {
           config.caseWorker.email,
           config.caseWorker.password,
           config.manageCaseBaseURL,
-          config.loginPaths.cases
+          config.loginPaths.worklist
         );
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
@@ -153,7 +153,7 @@ test.describe('Contested - Manage Express Case', () => {
           config.caseWorker.email,
           config.caseWorker.password,
           config.manageCaseBaseURL,
-          config.loginPaths.cases
+          config.loginPaths.worklist
         );
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
@@ -190,7 +190,7 @@ test.describe('Contested - Manage Express Case', () => {
           config.caseWorker.email,
           config.caseWorker.password,
           config.manageCaseBaseURL,
-          config.loginPaths.cases
+          config.loginPaths.worklist
         );
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
@@ -226,7 +226,7 @@ test.describe('Contested - Manage Express Case', () => {
           config.caseWorker.email,
           config.caseWorker.password,
           config.manageCaseBaseURL,
-          config.loginPaths.cases
+          config.loginPaths.worklist
         );
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
