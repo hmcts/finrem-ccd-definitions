@@ -25,6 +25,12 @@ RESULT_IDS="[]"
 
 ensure_azure_login() {
     if ! az account show >/dev/null 2>&1; then
+        if [[ -n "${CI:-}" || -n "${JENKINS_URL:-}" ]]; then
+            echo "No Azure CLI session is available in AZURE_CONFIG_DIR=${AZURE_CONFIG_DIR:-<not set>}."
+            echo "Interactive Azure login is disabled in CI."
+            exit 1
+        fi
+
         echo "Logging into Azure..."
         az login
     fi
