@@ -61,6 +61,22 @@ export class DateHelper {
       .replace(/\bSept\b/, 'Sep');
   }
 
+  // Todo
+  static getFormattedLondonDateTimeWithSeconds(date: Date = new Date()): string {
+    return date.toLocaleString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+      timeZone: 'Europe/London'
+    })
+      .replace(/\b(am|pm)\b/gi, marker => marker.toUpperCase())
+      .replace(/\bSept\b/, 'Sep');
+  }
+
   /**
    * Returns today's date formatted as "d Month yyyy" (e.g. "06 August 2025").
    *
