@@ -354,6 +354,24 @@
     "ShowEventNotes": "Y"
   },
   {
+    "LiveFrom": "19/08/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "FR_feeAccountDebitedAndIssue",
+    "Name": "Fee Account Debited & Issue",
+    "Description": "Fee Account Debited & Issue",
+    "DisplayOrder": 10,
+    "PreConditionState(s)": "awaitingPayment;awaitingHWFDecision",
+    "PostConditionState": "referredToJudge",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
+    "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
+    "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "RetriesTimeoutURLSubmittedEvent": "0",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "Y"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyMVP2",
     "ID": "FR_HWFDecisionMadeFromAwaitingPayment",
