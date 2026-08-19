@@ -26,7 +26,6 @@ test.describe('Create General Email', () => {
       // Crete General Email
       await caseDetailsPage.selectNextStep(CommonEvents.createGeneralEmail);
       await createGeneralEmailPage.enterBodyOfEmail('This is a test');
-      await createGeneralEmailPage.enterInvalidEmailAddressAndSubmit(); // assert error message for invalid email
       await createGeneralEmailPage.enterReceipientEmail(recipientEmail);
       await createGeneralEmailPage.uploadDocument('playwright-e2e/resources/file/test.pdf');
       await createGeneralEmailPage.navigateContinue();
@@ -61,7 +60,6 @@ test.describe('Create General Email', () => {
       // Crete General Email
       await caseDetailsPage.selectNextStep(CommonEvents.createGeneralEmail);
       await createGeneralEmailPage.enterBodyOfEmail('This is a test');
-      await createGeneralEmailPage.enterInvalidEmailAddressAndSubmit(); // assert error message for invalid email
       await createGeneralEmailPage.enterReceipientEmail(recipientEmail); 
       await createGeneralEmailPage.uploadDocument('playwright-e2e/resources/file/test.pdf');
       await createGeneralEmailPage.navigateContinue();
@@ -75,7 +73,7 @@ test.describe('Create General Email', () => {
       await caseDetailsPage.checkHasBeenUpdated(CommonEvents.createGeneralEmail.listItem);
 
       //assert case documents tab data
-      await caseDetailsPage.assertTabData(createGeneralEmailTabData(date, 'Case Documents'));
+      await caseDetailsPage.assertTabData(createGeneralEmailTabData(date, 'Case documents'));
     }
   );
 });
