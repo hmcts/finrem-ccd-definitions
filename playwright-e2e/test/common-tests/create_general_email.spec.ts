@@ -30,7 +30,7 @@ function getDateTimesForTabText(
         estimatedSubmitDateTime.getTime() - index * 1000
       );
 
-      return DateHelper.getFormattedLondonDateTimeWithSeconds(
+      return DateHelper.getUtcDateTimeFormattedWithSeconds(
         adjustedDate
       );
     }
@@ -95,7 +95,7 @@ test.describe('Create General Email', () => {
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
       // todo - revert to cases
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Create General Email
@@ -137,7 +137,7 @@ test.describe('Create General Email', () => {
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
       // todo revert to cases
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Crete General Email

@@ -61,8 +61,12 @@ export class DateHelper {
       .replace(/\bSept\b/, 'Sep');
   }
 
-  // Todo
-  static getFormattedLondonDateTimeWithSeconds(date: Date = new Date()): string {
+  /**
+   * Returns the current date and time formatted as "d MMM yyyy, HH:mm:ss" then adds a PM suffix (e.g. "6 Aug 2025, 11:02:20 PM").
+   *
+   * @returns Formatted current date and time string.
+   */
+  static getUtcDateTimeFormattedWithSeconds(date: Date = new Date()): string {
     return date.toLocaleString('en-GB', {
       day: 'numeric',
       month: 'short',
@@ -71,7 +75,7 @@ export class DateHelper {
       minute: '2-digit',
       second: '2-digit',
       hour12: true,
-      timeZone: 'Europe/London'
+      timeZone: 'UTC'
     })
       .replace(/\b(am|pm)\b/gi, marker => {return marker.toUpperCase();})
       .replace(/\bSept\b/, 'Sep');
