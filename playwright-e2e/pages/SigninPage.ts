@@ -6,13 +6,11 @@ export class SigninPage extends BaseJourneyPage{
   
   private readonly emailInputLocator: Locator;
   private readonly passwordInputLocator: Locator;
-  private readonly signinButtonLocator: Locator;
 
   public constructor(page: Page) {
     super(page);
     this.emailInputLocator = page.getByLabel('Email address');
     this.passwordInputLocator = page.getByRole('textbox', { name: 'Password' });
-    this.signinButtonLocator = page.getByRole('button', { name: 'Sign in' });
   }
 
   private async login(email: string, password: string) {
