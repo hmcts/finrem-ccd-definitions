@@ -16,11 +16,13 @@ import { CaseDetailsPage } from '../../pages/CaseDetailsPage';
  * is one second earlier than the previous value.
  *
  * @param estimatedSubmitDateTime Latest expected submission time.
+ * @param timeZone timeZone of the machine running finrem COS.  Either UTC or Europe/london
  * @param numberOfAttempts Number of timestamp candidates to generate.
  * @returns London-formatted timestamps from most recent to oldest.
  */
 function getDateTimesForTabText(
   estimatedSubmitDateTime: Date = new Date(),
+  timeZone: string = 'UTC',
   numberOfAttempts: number = 10
 ): string[] {
   return Array.from(
@@ -30,8 +32,9 @@ function getDateTimesForTabText(
         estimatedSubmitDateTime.getTime() - index * 1000
       );
 
-      return DateHelper.getUtcDateTimeFormattedWithSeconds(
-        adjustedDate
+      return DateHelper.getDateTimeFormattedWithSeconds(
+        adjustedDate,
+        timeZone
       );
     }
   );
@@ -111,7 +114,7 @@ test.describe('Create General Email', () => {
       await createGeneralEmailPage.navigateSubmit();
 
       const estimatedSubmitDateTime = new Date();
-      const tabDateTimesToTry = getDateTimesForTabText(estimatedSubmitDateTime);
+      const tabDateTimesToTry = getDateTimesForTabText(estimatedSubmitDateTime, DateHelper.getTimeZone());
 
       await caseDetailsPage.checkHasBeenUpdated(
         CommonEvents.createGeneralEmail.listItem
@@ -152,7 +155,7 @@ test.describe('Create General Email', () => {
       await createGeneralEmailPage.navigateSubmit();
 
       const estimatedSubmitDateTime = new Date();
-      const tabDateTimesToTry = getDateTimesForTabText(estimatedSubmitDateTime);
+      const tabDateTimesToTry = getDateTimesForTabText(estimatedSubmitDateTime, DateHelper.getTimeZone());
 
       await caseDetailsPage.checkHasBeenUpdated(
         CommonEvents.createGeneralEmail.listItem
