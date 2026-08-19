@@ -1,15 +1,15 @@
 import { type Page, type Locator, expect } from '@playwright/test';
+import { BaseJourneyPage } from './BaseJourneyPage';
 import config from '../config/config.ts';
 
-export class SigninPage {
+export class SigninPage extends BaseJourneyPage{
   
-  private readonly page: Page;
   private readonly emailInputLocator: Locator;
   private readonly passwordInputLocator: Locator;
   private readonly signinButtonLocator: Locator;
 
   public constructor(page: Page) {
-    this.page = page;
+    super(page);
     this.emailInputLocator = page.getByLabel('Email address');
     this.passwordInputLocator = page.getByRole('textbox', { name: 'Password' });
     this.signinButtonLocator = page.getByRole('button', { name: 'Sign in' });
@@ -18,11 +18,10 @@ export class SigninPage {
   private async login(email: string, password: string) {
     await expect(this.emailInputLocator).toBeVisible();
     await this.emailInputLocator.fill(email);
+    await this.navigateContinue();
     await expect(this.passwordInputLocator).toBeVisible();
     await this.passwordInputLocator.fill(password);
-    await expect(this.signinButtonLocator).toBeVisible();
-    await expect(this.signinButtonLocator).toBeEnabled();
-    await this.signinButtonLocator.click();
+    await this.navigateContinue();
   }
 
   /**
