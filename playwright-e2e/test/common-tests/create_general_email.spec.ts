@@ -94,7 +94,6 @@ test.describe('Create General Email', () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      // todo - revert to cases
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
@@ -136,7 +135,6 @@ test.describe('Create General Email', () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      // todo revert to cases
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
       await manageCaseDashboardPage.navigateToCase(caseId);
 
