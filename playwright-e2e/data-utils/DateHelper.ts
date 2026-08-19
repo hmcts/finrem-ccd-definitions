@@ -73,7 +73,7 @@ export class DateHelper {
       hour12: true,
       timeZone: 'Europe/London'
     })
-      .replace(/\b(am|pm)\b/gi, marker => marker.toUpperCase())
+      .replace(/\b(am|pm)\b/gi, marker => {return marker.toUpperCase();})
       .replace(/\bSept\b/, 'Sep');
   }
 

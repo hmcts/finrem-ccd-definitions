@@ -14,7 +14,7 @@ export class CreateGeneralEmailPage extends BaseJourneyPage {
     this.recipientEmailBox = page.getByRole('textbox', { name: 'Recipient\'s email' });
     this.bodyofEmailBox = page.getByRole('textbox', { name: 'Please fill in the body of' });
     this.fileUpload = page.locator('input[type="file"]#generalEmailUploadedDocuments_value'
-  );
+    );
   }
 
   // SEE DFR-3942
@@ -35,6 +35,7 @@ export class CreateGeneralEmailPage extends BaseJourneyPage {
     expect(this.bodyofEmailBox).toBeVisible();
     await this.bodyofEmailBox.fill(body);
   }
+  
   async uploadDocument(filePath: string) {
     await this.navigateAddNew();
     await expect(this.fileUpload).toBeVisible();
