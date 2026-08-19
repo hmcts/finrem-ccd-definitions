@@ -162,7 +162,8 @@ test.describe('Create General Email', () => {
 
       await assertGeneralEmailTabDataForPossibleDates(
         caseDetailsPage,
-        tabDateTimesToTry
+        tabDateTimesToTry,
+        'Case Documents' // override as Contested tab is called 'Case documents'
       );
     }
   );
