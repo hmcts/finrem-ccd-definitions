@@ -3434,15 +3434,36 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "01/06/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_solUploadDocument",
+    "CaseEventID": "FR_solUploadDocumentv2",
     "CaseFieldID": "solUploadDocuments",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "OPTIONAL",
+    "DisplayContext": "COMPLEX",
     "PageID": "solUploadDocuments",
     "PageLabel": "Upload Solicitor Documents",
     "PageDisplayOrder": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "pensionCollection",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "COMPLEX",
+    "PageID": "solUploadDocuments",
+    "PageDisplayOrder": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "01/06/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_solUploadDocumentv2",
+    "CaseFieldID": "readyToSubmitDocument",
+    "PageFieldDisplayOrder": 3,
+    "DisplayContext": "MANDATORY",
+    "PageID": "solUploadDocuments",
     "ShowSummaryChangeOption": "Y"
   },
   {
