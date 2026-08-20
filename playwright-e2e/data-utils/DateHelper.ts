@@ -42,7 +42,7 @@ export class DateHelper {
   };
 
   /**
-   * Returns the current date and time formatted as "d MMM yyyy, HH:mm" (e.g. "6 Aug 2025, 11:02").
+   * Returns the current date and time formatted as "d MMM yyyy, h:mm" (e.g. "6 Aug 2025, 11:02").
    *
    * @returns Formatted current date and time string.
    */
@@ -62,7 +62,7 @@ export class DateHelper {
   }
 
   /**
-   * Returns the current date and time formatted as "d MMM yyyy, HH:mm:ss" then adds a PM suffix (e.g. "6 Aug 2025, 11:02:20 PM").
+   * Returns the current date and time formatted as "d MMM yyyy, h:mm:ss" then adds a PM suffix (e.g. "6 Aug 2025, 11:02:20 PM").
    * For local running, may need to change so that timezone: 'Europe/London'
    *
    * @returns Formatted current date and time string.
