@@ -31,7 +31,7 @@ export class CaseDetailsPage {
   }
 
   public async selectHeader(header: string): Promise<void> {
-    const tabHeader = this.page.getByRole('tab', { name: header });
+    const tabHeader = this.page.getByRole('tab', { name: header, exact: true });
 
     await expect(tabHeader).toBeVisible();
     await tabHeader.click();
