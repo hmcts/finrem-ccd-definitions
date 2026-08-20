@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
-USERS_FILE="caseworker_request.json"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+USERS_FILE="${SCRIPT_DIR}/caseworker_request.json"
+OUTPUT_FILE="${SCRIPT_DIR}/caseworker_response.json"
 
 ENVIRONMENT="${1:-}"
 ACTION="${2:-}"
@@ -175,11 +177,11 @@ done < <(jq -c '.[]' "$USERS_FILE")
 # WRITE RESULT JSON
 ###############################################
 
-echo "$RESULT_IDS" | jq . > caseworker_response.json
+echo "$RESULT_IDS" | jq . > "$OUTPUT_FILE"
 
 echo ""
 echo "========================================"
-echo "▶ New User IDs written to caseworker_response.json"
+echo "▶ New User IDs written to $OUTPUT_FILE"
 echo "========================================"
 
-cat caseworker_response.json
+cat "$OUTPUT_FILE"
