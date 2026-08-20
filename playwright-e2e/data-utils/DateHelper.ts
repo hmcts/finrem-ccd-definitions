@@ -62,6 +62,27 @@ export class DateHelper {
   }
 
   /**
+   * Returns the current date and time formatted as "d MMM yyyy, HH:mm:ss" then adds a PM suffix (e.g. "6 Aug 2025, 11:02:20 PM").
+   * For local running, may need to change so that timezone: 'Europe/London'
+   *
+   * @returns Formatted current date and time string.
+   */
+  static getDateTimeFormattedWithSeconds(date: Date = new Date(), timeZone: string = 'UTC'): string {
+    return date.toLocaleString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+      timeZone: timeZone
+    })
+      .replace(/\b(am|pm)\b/gi, marker => {return marker.toUpperCase();})
+      .replace(/\bSept\b/, 'Sep');
+  }
+
+  /**
    * Returns today's date formatted as "d Month yyyy" (e.g. "06 August 2025").
    *
    * @returns Formatted current date string.
@@ -177,4 +198,18 @@ export class DateHelper {
     return `${day} ${month} ${year} ${hours}:${minutes}:`;
   }
 
+  /**
+   * Returns the timezone for the current test environment.
+   *
+   * AAT and Demo use UTC. Local uses Europe/London.
+   *
+   * @returns `"UTC"` for AAT or Demo; otherwise, `"Europe/London"`.
+   */
+  static getTimeZone(): 'UTC' | 'Europe/London' {
+    const runningEnvironment = process.env.RUNNING_ENV?.toLowerCase();
+
+    return runningEnvironment === 'aat' || runningEnvironment === 'demo'
+      ? 'UTC'
+      : 'Europe/London';
+  }
 }

@@ -22,7 +22,7 @@ test(
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     await caseDetailsPage.selectNextStep(ContestedEvents.allocateToJudge);
