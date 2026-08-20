@@ -334,23 +334,23 @@ withPipeline("nodejs", product, component) {
   before('smoketest:preview') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'smoke-output'
     sh 'yarn playwright install'
+    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
   }
 
   before('smoketest:aat') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'smoke-output'
     sh 'yarn playwright install'
+    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
   }
 
   before('functionalTest:preview') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
     sh 'yarn playwright install'
-    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
   }
 
   before('functionalTest:aat') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
     sh 'yarn playwright install'
-    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
   }
 
   afterSuccess('functionalTest:aat') {
