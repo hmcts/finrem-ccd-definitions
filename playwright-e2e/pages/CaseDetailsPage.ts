@@ -127,7 +127,7 @@ export class CaseDetailsPage {
         const tabItem = await this.getVisibleTabContent(content, position);
         await expect(tabItem).toBeVisible();
       } else {
-        const tabItem = await this.getVisibleTabContent(content.tabItem, position, content.exact ?? true);
+        const tabItem = await this.getVisibleTabContent(content.tabItem, position);
         await expect(tabItem).toBeVisible();
 
         const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
@@ -177,8 +177,8 @@ export class CaseDetailsPage {
      * 4. Returns the element at the requested visible position.
      * 5. Throws an error if the requested visible position does not exist.
      */
-  private async getVisibleTabContent(content: string, position: number = 0, exact: boolean = true): Promise<Locator> {
-    const locator = this.page.getByText(content, { exact });
+  private async getVisibleTabContent(content: string, position: number = 0): Promise<Locator> {
+    const locator = this.page.getByText(content, { exact: true });
     // Wait for at least one matching element to be attached
     await locator.first().waitFor({ state: 'attached', timeout: 10000 }).catch(() => {});
     const count = await locator.count();
