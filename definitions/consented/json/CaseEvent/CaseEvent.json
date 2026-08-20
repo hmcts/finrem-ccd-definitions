@@ -360,7 +360,7 @@
     "Name": "Fee Account Debited & Issue",
     "Description": "Fee Account Debited & Issue",
     "DisplayOrder": 11,
-    "PreConditionState(s)": "awaitingPayment;awaitingHWFDecision",
+    "PreConditionState(s)": "awaitingPayment;awaitingHWFDecision;awaitingPaymentResponse",
     "PostConditionState": "referredToJudge",
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
