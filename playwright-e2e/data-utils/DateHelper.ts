@@ -1,20 +1,20 @@
 export class DateHelper {
 
   /**
-     * Returns today's date as a string in "YYYY-MM-DD" format.
-     *
-     * @returns Current date string in ISO format (date only) as a promise resolving to a string.
-     */
+   * Returns today's date as a string in "YYYY-MM-DD" format.
+   *
+   * @returns Current date string in ISO format (date only) as a promise resolving to a string.
+   */
   static getCurrentDate(): string {
     return new Date().toISOString().split('T')[0];
   }
 
   /**
-     * Returns a timestamp.  It's UTC.
-     * Formated as: "2023-10-06T12:34:56.789Z".  Postgres stores as "2023-10-06T12:34:56.789000" (localtime).
-     *
-     * @returns Current datetime string in ISO format as a promise resolving to a string.
-     */
+   * Returns a timestamp.  It's UTC.
+   * Formated as: "2023-10-06T12:34:56.789Z".  Postgres stores as "2023-10-06T12:34:56.789000" (localtime).
+   *
+   * @returns Current datetime string in ISO format as a promise resolving to a string.
+   */
   static async getCurrentTimestamp(): Promise<string> {
     return new Date().toISOString();
   }
@@ -92,14 +92,39 @@ export class DateHelper {
     return this.formatToDayMonthYear(today);
   };
 
+  /**
+   * Returns a date a given number of weekdays from the supplied date.
+   * Saturdays and Sundays are excluded.
+   */
+  static getFormattedDateAfterWorkingDays(
+    workingDays: number,
+    from: Date = new Date()
+  ): string {
+    const date = new Date(from);
+    let workingDaysAdded = 0;
+
+    while (workingDaysAdded < workingDays) {
+      date.setDate(date.getDate() + 1);
+      if (date.getDay() !== 0 && date.getDay() !== 6) {
+        workingDaysAdded++;
+      }
+    }
+
+    return date.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+  }
+
   //************ Hearing Date Helpers ************//
 
   /**
-     * This is for cases that aren't "fast track" or "express".
-     * Returns a hearing date, 12 weeks later than current date, as a string in "YYYY-MM-DD" format.
-     *
-     * @returns Hearing date string in ISO format (date only) as a promise resolving to a string.
-     */
+   * This is for cases that aren't "fast track" or "express".
+   * Returns a hearing date, 12 weeks later than current date, as a string in "YYYY-MM-DD" format.
+   *
+   * @returns Hearing date string in ISO format (date only) as a promise resolving to a string.
+   */
   static getHearingDateTwelveWeeksLaterInISOFormat(): string {
     const hearingDate = new Date();
     hearingDate.setDate(hearingDate.getDate() + 12 * 7);
@@ -144,12 +169,12 @@ export class DateHelper {
   };
 
   /**
-     * Converts a date string (ISO format) into a formatted date string
-     * in the format "dd Month yyyy" (e.g. "06 August 2025").
-     *
-     * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
-     * @returns A promise that resolves with the formatted date string.
-     */
+   * Converts a date string (ISO format) into a formatted date string
+   * in the format "dd Month yyyy" (e.g. "06 August 2025").
+   *
+   * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
+   * @returns A promise that resolves with the formatted date string.
+   */
   static formatToDayMonthYear(dateStr: string): string {
     const date = new Date(dateStr);
     return new Intl.DateTimeFormat('en-GB', {
@@ -160,12 +185,12 @@ export class DateHelper {
   }
 
   /**
-     * Converts a date string (ISO format) into a formatted date string
-     * in the short month format "dd Month yyyy" (e.g. "06 Aug 2025").
-     *
-     * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
-     * @returns A promise that resolves with the formatted date string.
-     */
+   * Converts a date string (ISO format) into a formatted date string
+   * in the short month format "dd Month yyyy" (e.g. "06 Aug 2025").
+   *
+   * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
+   * @returns A promise that resolves with the formatted date string.
+   */
   static formatToDayMonthYearShort(dateStr: string): string {
     const date = new Date(dateStr);
     return new Intl.DateTimeFormat('en-GB', {

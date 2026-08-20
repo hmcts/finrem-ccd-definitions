@@ -61,6 +61,10 @@ export const CommonEvents: Record<string, CaseEvent> = {
     listItem: "Update Contact Details",
     ccdCallback: "FR_updateCaseDetailsSolicitor"
   },
+  attachScannedDocs: {
+    listItem: "Attach scanned docs",
+    ccdCallback: "attachScannedDocs"
+  }
 };
 
 // Consented Events

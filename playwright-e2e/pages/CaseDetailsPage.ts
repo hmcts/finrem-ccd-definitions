@@ -65,6 +65,19 @@ export class CaseDetailsPage {
     await expect(this.successfulUpdateBanner).toContainText(event);
   }
 
+  async completeAttachScannedDocumentsEvent(
+    supplementaryEvidenceHandled: boolean
+  ): Promise<void> {
+    await this.page.getByRole('button', { name: 'Continue' }).click();
+    await this.page
+      .getByRole('group', { name: 'Supplementary evidence handled' })
+      .getByLabel(supplementaryEvidenceHandled ? 'Yes' : 'No')
+      .check();
+    await this.page.getByRole('button', { name: 'Continue' }).click();
+    await this.page.getByRole('button', { name: 'Submit' }).click();
+    await expect(this.successfulUpdateBanner).toBeVisible();
+  }
+
   async assertTabData(tabs: Tab[]) {
     for (const tab of tabs) {
       await this.assertTabHeader(tab.tabName, tab.tabContent[0]);
@@ -91,16 +104,16 @@ export class CaseDetailsPage {
   }
 
   /**
-     * Asserts that each item in the provided tab content array is visible and, if applicable, contains the expected value.
-     *
-     * The function supports both string and object tab content items. For string items, it checks visibility.
-     * For object items, it checks both visibility and that the corresponding value cell contains the expected text.
-     *
-     * The `tabItemCount` record is used to track the number of times each unique tab item key has been processed.
-     * This allows the function to correctly select the nth visible instance of a tab item when the same label appears multiple times,
-     * ensuring assertions are made against the correct DOM element.
-     * Tab array items should be in right order, as they are displayed in the UI.
-     */
+   * Asserts that each item in the provided tab content array is visible and, if applicable, contains the expected value.
+   *
+   * The function supports both string and object tab content items. For string items, it checks visibility.
+   * For object items, it checks both visibility and that the corresponding value cell contains the expected text.
+   *
+   * The `tabItemCount` record is used to track the number of times each unique tab item key has been processed.
+   * This allows the function to correctly select the nth visible instance of a tab item when the same label appears multiple times,
+   * ensuring assertions are made against the correct DOM element.
+   * Tab array items should be in right order, as they are displayed in the UI.
+   */
   private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
     const tabItemCount: Record<string, number> = {};
 
@@ -163,20 +176,20 @@ export class CaseDetailsPage {
   }
 
   /**
-     * Returns the `Locator` for the nth visible element matching the given text content.
-     *
-     * @param content - The exact text to match in the DOM.
-     * @param position - The zero-based index of the visible element to return (default is 0).
-     * @returns A Playwright `Locator` for the requested visible element.
-     * @throws Error if no visible element is found at the specified position.
-     *
-     * Logic:
-     * 1. Finds all elements matching the exact text.
-     * 2. If only one match and position is 0, returns it directly.
-     * 3. Otherwise, iterates through all matches, counting only those that are visible.
-     * 4. Returns the element at the requested visible position.
-     * 5. Throws an error if the requested visible position does not exist.
-     */
+   * Returns the `Locator` for the nth visible element matching the given text content.
+   *
+   * @param content - The exact text to match in the DOM.
+   * @param position - The zero-based index of the visible element to return (default is 0).
+   * @returns A Playwright `Locator` for the requested visible element.
+   * @throws Error if no visible element is found at the specified position.
+   *
+   * Logic:
+   * 1. Finds all elements matching the exact text.
+   * 2. If only one match and position is 0, returns it directly.
+   * 3. Otherwise, iterates through all matches, counting only those that are visible.
+   * 4. Returns the element at the requested visible position.
+   * 5. Throws an error if the requested visible position does not exist.
+   */
   private async getVisibleTabContent(content: string, position: number = 0, exact: boolean = true): Promise<Locator> {
     const locator = this.page.getByText(content, { exact });
     // Wait for at least one matching element to be attached
