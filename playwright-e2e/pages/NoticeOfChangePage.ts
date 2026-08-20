@@ -1,6 +1,8 @@
 import {BaseJourneyPage} from './BaseJourneyPage.ts';
+import { CommonActionsHelper } from './helpers/CommonActionsHelper.ts';
 import {Locator, Page} from '@playwright/test';
 import {expect} from '../fixtures/fixtures.ts';
+import { DateHelper } from '../data-utils/DateHelper.ts';
 
 export class NoticeOfChangePage extends BaseJourneyPage {
 
@@ -14,10 +16,11 @@ export class NoticeOfChangePage extends BaseJourneyPage {
   private readonly checkAndSubmitTitle: Locator;
   private readonly iConfirmAllDetailsAreCorrectCheckbox: Locator;
   private readonly iServedNoticeOfChangeToEveryPartyCheckbox: Locator;
+  private readonly commonActionsHelper: CommonActionsHelper;
 
-
-  public constructor(page: Page) {
+  public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page);
+    this.commonActionsHelper = commonActionsHelper;
     this.noticeOfChangeButton = page.getByRole('link', { name: ' Notice of change ' });
     this.noticeOfChangePageTitle = page.getByRole('heading', { name: 'Notice of change' });
     this.onlineCaseReferenceInput = page.getByLabel('Online case reference number');
@@ -85,6 +88,12 @@ export class NoticeOfChangePage extends BaseJourneyPage {
     console.log(act);
 
     await expect(this.page.getByText(String(caseId).replace(/(\d{4})(?=\d)/g, '$1-'))).toBeVisible();
+  }
 
+  getDateTimesForTabText(): string[] {
+    return this.commonActionsHelper.getDateTimesForTabText(
+      new Date(),
+      DateHelper.getTimeZone()
+    );
   }
 }

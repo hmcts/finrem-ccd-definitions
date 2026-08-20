@@ -2,6 +2,9 @@ import fs from 'fs';
 import { Page } from 'playwright';
 import { expect, Locator } from '@playwright/test';
 import config from '../../config/config';
+import { DateHelper } from '../../data-utils/DateHelper.ts';
+import { CaseDetailsPage } from '../CaseDetailsPage.ts';
+import { createGeneralEmailTabData } from '../../resources/tab_content/common-tabs/case_documents_tab.ts';
 
 export class CommonActionsHelper {
 
@@ -159,4 +162,32 @@ export class CommonActionsHelper {
     await month.blur();
     await year.blur();
   }
+
+  /**
+     * Generates possible timestamps for a tab assertion.
+     *
+     * The first value is an estimated submission time. Each subsequent value
+     * is one second earlier than the previous value.
+     *
+     * @param estimatedSubmitDateTime Latest expected submission time.
+     * @param timeZone Timezone used by FinRem COS, such as UTC or Europe/London.
+     * @param numberOfAttempts Number of timestamp candidates to generate.
+     * @returns Formatted timestamps ordered from most recent to oldest.
+     */
+    getDateTimesForTabText(
+      estimatedSubmitDateTime: Date = new Date(),
+      timeZone: string = 'UTC',
+      numberOfAttempts: number = 10
+    ): string[] {
+      return Array.from({ length: numberOfAttempts }, (_, index) => {
+        const adjustedDate = new Date(
+          estimatedSubmitDateTime.getTime() - index * 1_000
+        );
+
+        return DateHelper.getDateTimeFormattedWithSeconds(
+          adjustedDate,
+          timeZone
+        );
+      });
+    }
 }

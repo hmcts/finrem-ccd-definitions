@@ -3,42 +3,10 @@ import config from '../../config/config';
 import { CommonEvents } from '../../config/case-data';
 import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
 import { createGeneralEmailTableData } from '../../resources/check_your_answer_content/create_general_email/createGeneralEmailTable';
-import { DateHelper } from '../../data-utils/DateHelper';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
 import { createGeneralEmailTabData } from '../../resources/tab_content/common-tabs/case_documents_tab';
 import { CaseDetailsPage } from '../../pages/CaseDetailsPage';
 
-/**
- * A date time, to the second, is used as a tab item on the Case Details tab.
- * To mitigate flaky tests, we check will retry numberOfAttempts times with older datetimes.
- *
- * The first value is the estimated submission time. Each subsequent value
- * is one second earlier than the previous value.
- *
- * @param estimatedSubmitDateTime Latest expected submission time.
- * @param timeZone timeZone of the machine running finrem COS.  Either UTC or Europe/london
- * @param numberOfAttempts Number of timestamp candidates to generate.
- * @returns London-formatted timestamps from most recent to oldest.
- */
-function getDateTimesForTabText(
-  estimatedSubmitDateTime: Date = new Date(),
-  timeZone: string = 'UTC',
-  numberOfAttempts: number = 10
-): string[] {
-  return Array.from(
-    { length: numberOfAttempts },
-    (_, index) => {
-      const adjustedDate = new Date(
-        estimatedSubmitDateTime.getTime() - index * 1000
-      );
-
-      return DateHelper.getDateTimeFormattedWithSeconds(
-        adjustedDate,
-        timeZone
-      );
-    }
-  );
-}
 
 /**
  * Attempts to assert the General Email tab data using a collection of
@@ -113,8 +81,7 @@ test.describe('Create General Email', () => {
 
       await createGeneralEmailPage.navigateSubmit();
 
-      const estimatedSubmitDateTime = new Date();
-      const tabDateTimesToTry = getDateTimesForTabText(estimatedSubmitDateTime, DateHelper.getTimeZone());
+      const tabDateTimesToTry = createGeneralEmailPage.getDateTimesForTabText();
 
       await caseDetailsPage.checkHasBeenUpdated(
         CommonEvents.createGeneralEmail.listItem
@@ -154,8 +121,7 @@ test.describe('Create General Email', () => {
 
       await createGeneralEmailPage.navigateSubmit();
 
-      const estimatedSubmitDateTime = new Date();
-      const tabDateTimesToTry = getDateTimesForTabText(estimatedSubmitDateTime, DateHelper.getTimeZone());
+      const tabDateTimesToTry = createGeneralEmailPage.getDateTimesForTabText();
 
       await caseDetailsPage.checkHasBeenUpdated(
         CommonEvents.createGeneralEmail.listItem
