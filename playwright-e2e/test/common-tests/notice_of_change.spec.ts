@@ -11,16 +11,16 @@ import { buildNoticeOfChangeTabData } from '../../resources/tab_content/common-t
 import { CaseDetailsPage } from '../../pages/CaseDetailsPage.ts';
 
 /**
- * Attempts to assert the General Email tab data using a collection of
- * possible timestamps.
+ * Attempts to assert the Applicant tab data using a collection of
+ * possible 'From Timestamp' values.
  *
  * The timestamps are tried in their supplied order. The method returns as
  * soon as an assertion succeeds. If every assertion fails, the final
  * assertion error is rethrown.
  *
  * @param caseDetailsPage Page object used to perform the tab assertion.
- * @param possibleDateTimes Possible timestamps ordered by preference.
- * @param tabName Name of the case-details tab containing the email data.
+ * @param caseType 'consented' or 'contested'
+ * @param possibleDateTimes Possible 'From Timestamp' values to check on the tab.
  * @throws The final assertion error when none of the timestamps match.
  */
 async function assertTabDataForPossibleDates(
