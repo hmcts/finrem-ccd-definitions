@@ -49,7 +49,7 @@ jobs:
 
       - name: Ensure label exists
         run: |
-          gh label create "use-finrem-cos-pr-${{ github.event.inputs.finrem-cos-pr }}" --color "#ededed" --description "Preview environment PR" || true
+          gh label create "use-pr-${{ github.event.inputs.finrem-cos-pr }}" --color "#ededed" --description "Preview environment PR" || true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -74,7 +74,7 @@ jobs:
             --body "$PR_BODY" \
             --base master \
             --head $(git rev-parse --abbrev-ref HEAD) \
-            --label "use-finrem-cos-pr-${{ github.event.inputs.finrem-cos-pr }}" \
+            --label "use-pr-${{ github.event.inputs.finrem-cos-pr }}" \
             --label "enable_keep_helm" \
             --draft
         env:
