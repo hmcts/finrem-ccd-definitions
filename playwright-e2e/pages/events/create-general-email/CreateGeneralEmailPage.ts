@@ -1,6 +1,7 @@
 import { expect, Locator, Page } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
-import { CommonActionsHelper } from '../../helpers/CommonActionsHelper.js';
+import { CommonActionsHelper } from '../../helpers/CommonActionsHelper.ts';
+import { DateHelper } from '../../../data-utils/DateHelper.js';
 
 export class CreateGeneralEmailPage extends BaseJourneyPage {
   private readonly commonActionsHelper: CommonActionsHelper;
@@ -40,6 +41,13 @@ export class CreateGeneralEmailPage extends BaseJourneyPage {
     await this.navigateAddNew();
     await expect(this.fileUpload).toBeVisible();
     await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.fileUpload, filePath);
+  }
+
+  getDateTimesForTabText(): string[] {
+    return this.commonActionsHelper.getDateTimesForTabText(
+      new Date(),
+      DateHelper.getTimeZone()
+    );
   }
 }
 
