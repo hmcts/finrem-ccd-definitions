@@ -44,7 +44,7 @@ test.describe('Consent order in contested case', () => {
         config.caseWorker.email,
         config.caseWorker.password,
         config.manageCaseBaseURL,
-        config.loginPaths.worklist
+        config.loginPaths.cases
       );
       await manageCaseDashboardPage.navigateToCase(caseId);
 
@@ -232,7 +232,7 @@ test.describe('Consent order in contested case', () => {
         config.caseWorker.email,
         config.caseWorker.password,
         config.manageCaseBaseURL,
-        config.loginPaths.worklist
+        config.loginPaths.cases
       );
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.sendConsentOrder);
@@ -295,7 +295,7 @@ test.describe('Consent order in contested case', () => {
         config.caseWorker.email,
         config.caseWorker.password,
         config.manageCaseBaseURL,
-        config.loginPaths.worklist
+        config.loginPaths.cases
       );
       await manageCaseDashboardPage.navigateToCase(caseId);
 
@@ -439,7 +439,7 @@ test.describe('Consent order in contested case', () => {
         config.caseWorker.email,
         config.caseWorker.password,
         config.manageCaseBaseURL,
-        config.loginPaths.worklist
+        config.loginPaths.cases
       );
       await manageCaseDashboardPage.navigateToCase(caseId);
 
@@ -513,7 +513,7 @@ test.describe('Consent order in contested case', () => {
         config.caseWorker.email,
         config.caseWorker.password,
         config.manageCaseBaseURL,
-        config.loginPaths.worklist
+        config.loginPaths.cases
       );
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.sendConsentOrder);
