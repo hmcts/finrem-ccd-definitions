@@ -164,30 +164,30 @@ export class CommonActionsHelper {
   }
 
   /**
-     * Generates possible timestamps for a tab assertion.
-     *
-     * The first value is an estimated submission time. Each subsequent value
-     * is one second earlier than the previous value.
-     *
-     * @param estimatedSubmitDateTime Latest expected submission time.
-     * @param timeZone Timezone used by FinRem COS, such as UTC or Europe/London.
-     * @param numberOfAttempts Number of timestamp candidates to generate.
-     * @returns Formatted timestamps ordered from most recent to oldest.
-     */
-    getDateTimesForTabText(
-      estimatedSubmitDateTime: Date = new Date(),
-      timeZone: string = 'UTC',
-      numberOfAttempts: number = 10
-    ): string[] {
-      return Array.from({ length: numberOfAttempts }, (_, index) => {
-        const adjustedDate = new Date(
-          estimatedSubmitDateTime.getTime() - index * 1_000
-        );
+   * Generates possible timestamps for a tab assertion.
+   *
+   * The first value is an estimated submission time. Each subsequent value
+   * is one second earlier than the previous value.
+   *
+   * @param estimatedSubmitDateTime Latest expected submission time.
+   * @param timeZone Timezone used by FinRem COS, such as UTC or Europe/London.
+   * @param numberOfAttempts Number of timestamp candidates to generate.  So if 20, 20 timestamps produced to check.
+   * @returns Formatted timestamps ordered from most recent to oldest.
+   */
+  getDateTimesForTabText(
+    estimatedSubmitDateTime: Date = new Date(),
+    timeZone: string = 'UTC',
+    numberOfAttempts: number = 20
+  ): string[] {
+    return Array.from({ length: numberOfAttempts }, (_, index) => {
+      const adjustedDate = new Date(
+        estimatedSubmitDateTime.getTime() - index * 1_000
+      );
 
-        return DateHelper.getDateTimeFormattedWithSeconds(
-          adjustedDate,
-          timeZone
-        );
-      });
-    }
+      return DateHelper.getDateTimeFormattedWithSeconds(
+        adjustedDate,
+        timeZone
+      );
+    });
+  }
 }

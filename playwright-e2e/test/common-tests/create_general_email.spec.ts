@@ -40,7 +40,8 @@ async function assertGeneralEmailTabDataForPossibleDates(
         createGeneralEmailTabData(
           possibleDateTime,
           tabName
-        )
+        ),
+        1_000 // shorter test timeout for faster retries.
       );
 
       return;

@@ -3,6 +3,7 @@ import { CommonActionsHelper } from './helpers/CommonActionsHelper.ts';
 import {Locator, Page} from '@playwright/test';
 import {expect} from '../fixtures/fixtures.ts';
 import { DateHelper } from '../data-utils/DateHelper.ts';
+import { time } from 'console';
 
 export class NoticeOfChangePage extends BaseJourneyPage {
 
@@ -90,10 +91,21 @@ export class NoticeOfChangePage extends BaseJourneyPage {
     await expect(this.page.getByText(String(caseId).replace(/(\d{4})(?=\d)/g, '$1-'))).toBeVisible();
   }
 
-  getDateTimesForTabText(): string[] {
+  /**
+   * Returns date-time strings to check for in a tab.
+   *
+   * @param estimatedSubmitDateTime Date-time to format. Defaults to the current date and time.
+   * @param timeZone Time zone used for formatting. Defaults to the value returned
+   * by `DateHelper.getTimeZone()`, based on the environment in which the test runs.
+   * @returns The formatted date-time strings to check for in the tab text.
+   */
+  getDateTimesForTabText(
+    estimatedSubmitDateTime: Date = new Date(),
+    timeZone: string = DateHelper.getTimeZone()
+  ): string[] {
     return this.commonActionsHelper.getDateTimesForTabText(
-      new Date(),
-      DateHelper.getTimeZone()
+      estimatedSubmitDateTime,
+      timeZone
     );
   }
 }

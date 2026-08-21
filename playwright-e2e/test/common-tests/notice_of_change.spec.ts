@@ -26,7 +26,7 @@ import { CaseDetailsPage } from '../../pages/CaseDetailsPage.ts';
 async function assertTabDataForPossibleDates(
   caseDetailsPage: CaseDetailsPage,
   caseType: string,
-  possibleDateTimes: string[],
+  possibleDateTimes: string[]
 ): Promise<void> {
   if (possibleDateTimes.length === 0) {
     throw new Error(
@@ -39,13 +39,14 @@ async function assertTabDataForPossibleDates(
   for (const possibleDateTime of possibleDateTimes) {
     try {
       const tabData = buildNoticeOfChangeTabData(
-          caseType,
-          config.applicant_solicitor2.email,
-          config.applicant_solicitor2.email,
-          possibleDateTime
-        );
+        caseType,
+        config.applicant_solicitor2.email,
+        config.applicant_solicitor2.email,
+        possibleDateTime
+      );
 
-      await caseDetailsPage.assertTabData(tabData);
+      const shortContentAssertionTimeout = 1_000; // speeds up checking from Playwright default
+      await caseDetailsPage.assertTabData(tabData, shortContentAssertionTimeout);
 
       return;
     } catch (error) {
@@ -174,8 +175,7 @@ test.describe('Notice of Change', () => {
     }
   );
 
-  // pt todo - put consented back
-  for (const caseType of ['contested']) {
+  for (const caseType of ['contested', 'consented']) {
     test(
       `CAA can raise a Notice of Change - ${caseType}`, { tag: [] },
       async ({ loginPage, manageCaseDashboardPage, noticeOfChangePage, caseDetailsPage }) => {
@@ -184,8 +184,9 @@ test.describe('Notice of Change', () => {
         const caseId = caseType === 'consented' ? await ConsentedCaseFactory.createConsentedCaseUpToIssueApplication() :
           await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(false, DateHelper.getCurrentDate());
 
-        // const tabDateTimesToTry = DateHelper.getUtcDateTimeFormatted();
-        const tabDateTimesToTry = noticeOfChangePage.getDateTimesForTabText();
+        const estimatedSubmitDateTime = new Date();
+        // From Timestamp will always show on the Applicant tab as UTC, because test data has been created by CCD API.  So override to UTC below.
+        const fromTimestampTimesOnTab = noticeOfChangePage.getDateTimesForTabText(estimatedSubmitDateTime, 'UTC');
         await manageCaseDashboardPage.visit();
         await loginPage.loginWaitForPath(config.applicant_solicitor2.email, config.applicant_solicitor2.password, config.manageCaseBaseURL, config.loginPaths.cases);
 
@@ -213,7 +214,7 @@ test.describe('Notice of Change', () => {
         await assertTabDataForPossibleDates(
           caseDetailsPage,
           caseType,
-          tabDateTimesToTry
+          fromTimestampTimesOnTab
         );
       }
     );

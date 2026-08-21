@@ -54,7 +54,7 @@ export class DateHelper {
       year: 'numeric',
       hour: 'numeric',
       minute: '2-digit',
-      hour12: true,
+      hourCycle: 'h12',
       timeZone: 'UTC'
     })
       .replace(/\b( am| pm)\b/i, '')
@@ -75,7 +75,7 @@ export class DateHelper {
       hour: 'numeric',
       minute: '2-digit',
       second: '2-digit',
-      hour12: true,
+      hourCycle: 'h12',
       timeZone: timeZone
     })
       .replace(/\b(am|pm)\b/gi, marker => {return marker.toUpperCase();})
@@ -201,7 +201,7 @@ export class DateHelper {
   /**
    * Returns the timezone for the current test environment.
    *
-   * AAT and Demo use UTC. Local uses Europe/London.
+   * AAT and Demo Finrem use UTC. Local Finrem typically uses the dev machine clock (Europe/London).
    *
    * @returns `"UTC"` for AAT or Demo; otherwise, `"Europe/London"`.
    */
