@@ -4,17 +4,19 @@ import config from '../config/config.ts';
 
 export class SigninPage extends BaseJourneyPage{
   
+  private readonly emailLabelLocator: Locator;
   private readonly emailInputLocator: Locator;
   private readonly passwordInputLocator: Locator;
 
   public constructor(page: Page) {
     super(page);
-    this.emailInputLocator = page.getByLabel('Enter your email address');
+    this.emailLabelLocator = page.getByLabel('Enter your email address');
+    this.emailInputLocator = page.locator('#email');
     this.passwordInputLocator = page.getByRole('textbox', { name: 'Password' });
   }
 
   private async login(email: string, password: string) {
-    await expect(this.emailInputLocator).toBeVisible();
+    await expect(this.emailLabelLocator).toBeVisible();
     await this.emailInputLocator.fill(email);
     await this.navigateContinue();
     await expect(this.passwordInputLocator).toBeVisible();
