@@ -83,8 +83,8 @@ export class CaseDetailsPage {
   }
 
   private async assertTabHeader(
-      tabName: string,
-      firstContent?: TabContentItem
+    tabName: string,
+    firstContent?: TabContentItem
   ): Promise<void> {
     const tabHeader = this.getTabHeader(tabName);
 
@@ -96,7 +96,7 @@ export class CaseDetailsPage {
 
       try {
         await expect(tabHeader).toHaveAttribute('aria-selected', 'true', {
-          timeout: 1000,
+          timeout: 1000
         });
         return;
       } catch {
