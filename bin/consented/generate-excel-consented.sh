@@ -28,7 +28,7 @@ echo "Creating definition for ENABLE_WA = '${ENABLE_WA}' flag with value CCD_DEF
 
 pushd ccd-definition-processor && \
   CCD_DEF_CASE_TYPE_ID=FinancialRemedyMVP2 \
-  CCD_DEF_PUBLISH=${publishWAEvent} \
+  CCD_DEF_PUBLISH=${publishWAEvent:-N} \
   yarn --cwd ccd-definition-processor json2xlsx \
   -D ../definitions/consented/json \
   -e ${fullExclusion} \
