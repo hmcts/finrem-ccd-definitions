@@ -65,7 +65,10 @@ export class CaseDetailsPage {
     await expect(this.successfulUpdateBanner).toContainText(event);
   }
 
-  async assertTabData(tabs: Tab[]) {
+  async assertTabData(
+    tabs: Tab[],
+    contentAssertionTimeout?: number
+  ) {
     for (const tab of tabs) {
       await this.assertTabHeader(tab.tabName, tab.tabContent[0]);
       // Wait for the first content item to be attached (visible in DOM)
@@ -75,19 +78,38 @@ export class CaseDetailsPage {
         const exact = typeof firstContent === 'object' ? (firstContent.exact ?? true) : true;
         await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 5000 });
       }
-      await this.assertTabContent(tab.tabContent);
+      await this.assertTabContent(tab.tabContent, contentAssertionTimeout);
       if (tab.excludedContent) {
         await this.assertExcludedContent(tab.excludedContent);
       }
     }
   }
 
-  private async assertTabHeader(tabName: string, firstContent?: TabContentItem): Promise<void> {
+  private async assertTabHeader(
+    tabName: string,
+    firstContent?: TabContentItem
+  ): Promise<void> {
     const tabHeader = this.getTabHeader(tabName);
-    // Wait for the tab header to be visible and enabled before clicking
+
     await tabHeader.waitFor({ state: 'visible' });
     await expect(tabHeader).toBeEnabled();
-    await tabHeader.click();
+
+    for (let attempt = 1; attempt <= 5; attempt++) {
+      await tabHeader.click({ force: true });
+
+      try {
+        await expect(tabHeader).toHaveAttribute('aria-selected', 'true', {
+          timeout: 1000
+        });
+        return;
+      } catch {
+        if (attempt === 5) {
+          throw new Error(`Failed to click tab "${tabName}" after 5 attempts`);
+        }
+
+        await this.page.waitForTimeout(500);
+      }
+    }
   }
 
   /**
@@ -101,7 +123,14 @@ export class CaseDetailsPage {
      * ensuring assertions are made against the correct DOM element.
      * Tab array items should be in right order, as they are displayed in the UI.
      */
-  private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
+  private async assertTabContent(
+    tabContent: TabContentItem[],
+    timeout?: number
+  ): Promise<void> {
+    const customExpect =
+      timeout === undefined
+        ? expect
+        : expect.configure({ timeout });
     const tabItemCount: Record<string, number> = {};
 
     for (const content of tabContent) {
@@ -125,10 +154,10 @@ export class CaseDetailsPage {
 
       if (typeof content === 'string') {
         const tabItem = await this.getVisibleTabContent(content, position);
-        await expect(tabItem).toBeVisible();
+        await customExpect(tabItem).toBeVisible();
       } else {
         const tabItem = await this.getVisibleTabContent(content.tabItem, position);
-        await expect(tabItem).toBeVisible();
+        await customExpect(tabItem).toBeVisible();
 
         const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
         if (content.clickable) {
@@ -142,9 +171,9 @@ export class CaseDetailsPage {
             `xpath=following-sibling::*[self::td or self::th][${i + 1}] | ancestor::*[self::td or self::th or self::tr][1]/following-sibling::*[self::td or self::th][${i + 1}]`
           );
           if (!content.exact) {
-            await expect(tabValue).toContainText(expectedValues[i]);
+            await customExpect(tabValue).toContainText(expectedValues[i]);
           } else {
-            await expect(tabValue).toHaveText(expectedValues[i]);
+            await customExpect(tabValue).toHaveText(expectedValues[i]);
           }
         }
       }
