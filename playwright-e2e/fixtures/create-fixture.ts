@@ -383,7 +383,7 @@ export const test = base.extend<CreateFixtures>({
     await use(new UploadApprovedOrderPage(page, commonActionsHelper));
   },
   noticeOfChangePage: async ({ page }, use) => {
-    await use(new NoticeOfChangePage(page));
+    await use(new NoticeOfChangePage(page, commonActionsHelper));
   },
   judgeUploadApprovedOrderPage: async ({ page }, use) => {
     await use(new JudgeUploadApprovedOrderPage(page, commonActionsHelper));
