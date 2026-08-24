@@ -85,12 +85,31 @@ export class CaseDetailsPage {
     }
   }
 
-  private async assertTabHeader(tabName: string, firstContent?: TabContentItem): Promise<void> {
+  private async assertTabHeader(
+    tabName: string,
+    firstContent?: TabContentItem
+  ): Promise<void> {
     const tabHeader = this.getTabHeader(tabName);
-    // Wait for the tab header to be visible and enabled before clicking
+
     await tabHeader.waitFor({ state: 'visible' });
     await expect(tabHeader).toBeEnabled();
-    await tabHeader.click();
+
+    for (let attempt = 1; attempt <= 5; attempt++) {
+      await tabHeader.click({ force: true });
+
+      try {
+        await expect(tabHeader).toHaveAttribute('aria-selected', 'true', {
+          timeout: 1000
+        });
+        return;
+      } catch {
+        if (attempt === 5) {
+          throw new Error(`Failed to click tab "${tabName}" after 5 attempts`);
+        }
+
+        await this.page.waitForTimeout(500);
+      }
+    }
   }
 
   /**
