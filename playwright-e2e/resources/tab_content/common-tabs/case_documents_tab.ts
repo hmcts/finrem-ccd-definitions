@@ -18,6 +18,22 @@ export function createGeneralEmailTabData(date?: string, tabName: string = 'Case
   ];
 }
 
+export function buildNoticeOfChangeTabData(caseType : string, nocRequestedByEmail: string, previousSolicitorEmail: string, fromTimestamp: string): Tab[] {
+  return [
+    {
+      tabName: 'Applicant',
+      tabContent: [
+        { tabItem: caseType === 'contested' ? 'Solicitor’s firm' : 'Name of your firm', value: 'FinRem-3-Org' },
+        { tabItem: 'Last NoC Requested By', value: nocRequestedByEmail },
+        'Previous Organisations 1',
+        { tabItem: 'From Timestamp', value: fromTimestamp, exact: false },
+        { tabItem: 'Organisation Name', value: 'FinRem-1-Org' },
+        { tabItem: 'Email', value: previousSolicitorEmail }
+      ]
+    }
+  ];
+}
+
 export const processOrderCaseDocumentsTabData: Tab[] = [{
   tabName: 'Case documents',
   tabContent: [
