@@ -65,19 +65,6 @@ export class CaseDetailsPage {
     await expect(this.successfulUpdateBanner).toContainText(event);
   }
 
-  async completeAttachScannedDocumentsEvent(
-    supplementaryEvidenceHandled: boolean
-  ): Promise<void> {
-    await this.page.getByRole('button', { name: 'Continue' }).click();
-    await this.page
-      .getByRole('group', { name: 'Supplementary evidence handled' })
-      .getByLabel(supplementaryEvidenceHandled ? 'Yes' : 'No')
-      .check();
-    await this.page.getByRole('button', { name: 'Continue' }).click();
-    await this.page.getByRole('button', { name: 'Submit' }).click();
-    await expect(this.successfulUpdateBanner).toBeVisible();
-  }
-
   async assertTabData(
     tabs: Tab[],
     contentAssertionTimeout?: number

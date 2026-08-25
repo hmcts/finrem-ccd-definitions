@@ -57,7 +57,7 @@ test.describe('Process scanned document task tests', () => {
       async ({
         loginPage,
         manageCaseDashboardPage,
-        caseDetailsPage,
+        attachScannedDocumentsPage,
         taskUiChecks
       }) => {
         const sessionPages = {
@@ -80,7 +80,7 @@ test.describe('Process scanned document task tests', () => {
           }
 
           await taskUiChecks.selectTaskNextStep(ATTACH_SCANNED_DOCUMENT);
-          await caseDetailsPage.completeAttachScannedDocumentsEvent(true);
+          await attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(true);
         };
 
         await test.step(`${user.name} can see and assign the task`, async () => {

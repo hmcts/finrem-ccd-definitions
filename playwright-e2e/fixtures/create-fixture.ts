@@ -88,6 +88,7 @@ import {RemoveCaseDocumentPage} from '../pages/events/remove-case-document/Remov
 import { StopRepresentingClientPage } from '../pages/events/stop-representing-client/StopRepresentingClientPage.ts';
 import { CloseCasePage } from '../pages/events/close-case/CloseCasePage.ts';
 import { TaskUiChecks } from '../pages/WAtasks/TaskUiChecks.ts';
+import { AttachScannedDocumentsPage } from '../pages/events/attach-scanned-doc/AttachScannedDocumentsPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -169,6 +170,7 @@ type CreateFixtures = {
   removeCaseDocumentPage: RemoveCaseDocumentPage;
   closeCasePage: CloseCasePage;
   taskUiChecks: TaskUiChecks;
+  attachScannedDocumentsPage: AttachScannedDocumentsPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -399,5 +401,8 @@ export const test = base.extend<CreateFixtures>({
   },
   taskUiChecks: async ({ page }, use) => {
     await use(new TaskUiChecks(page));
+  },
+  attachScannedDocumentsPage: async ({ page }, use) => {
+    await use(new AttachScannedDocumentsPage(page));
   }
 });
