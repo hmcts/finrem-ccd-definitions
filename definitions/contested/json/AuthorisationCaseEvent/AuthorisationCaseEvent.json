@@ -2253,7 +2253,7 @@
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
   },
-    {
+  {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
@@ -2280,5 +2280,33 @@
     "CaseEventID": "FR_updateCaseDetailsSolicitor",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "24/08/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_manageExpressCase_v2",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_giveAllocationDirectionsV2",
+    "UserRole": "caseworker-divorce-financialremedy-solicitor",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_giveAllocationDirectionsV2",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "21/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "FR_giveAllocationDirectionsV2",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "CR"
   }
 ]
