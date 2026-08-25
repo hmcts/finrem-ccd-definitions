@@ -31,6 +31,20 @@ export class ConsentedEventApi {
     );
   }
 
+  static async caseWorkerAttachScannedDocuments(
+    caseId: string,
+    supplementaryEvidenceHandled: boolean
+  ): Promise<void> {
+    await ccdApi.updateCaseInCcdFromJSONObject(
+      config.caseWorker.email,
+      config.caseWorker.password,
+      caseId,
+      CaseType.Consented,
+      'attachScannedDocs',
+      { evidenceHandled: supplementaryEvidenceHandled ? 'Yes' : 'No' }
+    );
+  }
+
   static async caseWorkerHWFDecisionMade(caseId: string) {
     await this.updateCaseWorkerSteps(caseId, [
       { event: ConsentedEvents.hwfDecisionMade.ccdCallback}
