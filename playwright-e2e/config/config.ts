@@ -132,6 +132,16 @@ const configuration = {
     password: process.env.PLAYWRIGHT_INT_BARRISTER_PSWD || '',
   },
 
+  ctsc_admin: {
+    email: process.env.CTSC_ADMIN_USERNAME || '',
+    password: process.env.STAFF_FR_PASSWORD || '',
+  },
+
+  ctsc_teamleader: {
+    email: process.env.CTSC_TEAMLEADER_USERNAME || '',
+    password: process.env.STAFF_FR_PASSWORD || '',
+  },
+
   jurisdiction: {
     familyDivorce: (process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`) === 'https://manage-case.demo.platform.hmcts.net'
     ? 'Family Divorce - v104-26.1'
