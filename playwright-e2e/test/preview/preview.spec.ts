@@ -10,16 +10,20 @@ test(
   'Consented Tab Verification',
   { tag: ['@preview'] },
   async (
-    { 
-      loginPage, 
-      manageCaseDashboardPage, 
-      caseDetailsPage 
+    {
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage
     }
   ) => {
     const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    if (config.waEnabled) {
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    } else {
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+    }
     await manageCaseDashboardPage.navigateToCase(caseId);
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabDataPreview);
@@ -30,16 +34,20 @@ test(
   'Contested Tab Verification',
   { tag: ['@preview'] },
   async (
-    { 
-      loginPage, 
-      manageCaseDashboardPage, 
-      caseDetailsPage 
+    {
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage
     }
   ) => {
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    if (config.waEnabled) {
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    } else {
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+    }
     await manageCaseDashboardPage.navigateToCase(caseId);
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabData);

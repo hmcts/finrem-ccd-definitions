@@ -8,6 +8,8 @@ const env = process.env.RUNNING_ENV || 'aat';
 // Any new data added below will immediately be available wherever config is imported.
 const configuration = {
 
+  waEnabled: String(process.env.ENABLE_WA).toLowerCase() === 'true',
+
   // URLs
   idamUrl:
     process.env.IDAM_API_URL
@@ -47,7 +49,7 @@ const configuration = {
         : `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`
     ),
 
-  run_accessibility: 
+  run_accessibility:
     process.env.TESTS_FOR_ACCESSIBILITY || false,
 
   judge: {
@@ -130,6 +132,16 @@ const configuration = {
     password: process.env.PLAYWRIGHT_INT_BARRISTER_PSWD || '',
   },
 
+  ctsc_admin: {
+    email: process.env.CTSC_ADMIN_USERNAME || '',
+    password: process.env.STAFF_FR_PASSWORD || '',
+  },
+
+  ctsc_teamleader: {
+    email: process.env.CTSC_TEAMLEADER_USERNAME || '',
+    password: process.env.STAFF_FR_PASSWORD || '',
+  },
+
   jurisdiction: {
     familyDivorce: (process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`) === 'https://manage-case.demo.platform.hmcts.net'
     ? 'Family Divorce - v104-26.1'
@@ -150,7 +162,7 @@ const configuration = {
     finRem1Org: 'FinRem-1-Org',
     finRem2Org: 'FinRem-2-Org',
   },
-  
+
   divorceStage: {
     decreeNisi: '1: Decree Nisi',
     decreeAbsolute: '2: Decree Absolute',

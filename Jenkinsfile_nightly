@@ -1,6 +1,6 @@
 #!groovy
 properties([
-        pipelineTriggers([cron('00 18 * * 1-5')]),
+        pipelineTriggers([cron('00 16 * * 1-5')]),
         parameters([
                 string(
                         name: 'RUNNING_ENV',
@@ -160,6 +160,10 @@ withNightlyPipeline(type, product, component) {
             yarnBuilder.yarn('install-dependencies')
             steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
             env.ENV = params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV
+        }
+
+        stage('Create WA test users') {
+            steps.sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
         }
 
         if (!params.TAGS_TO_RUN.isEmpty()) {
