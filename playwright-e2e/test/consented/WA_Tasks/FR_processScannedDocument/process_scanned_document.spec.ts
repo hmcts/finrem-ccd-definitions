@@ -146,8 +146,6 @@ test.describe('Process scanned document task tests', () => {
 
       await manageCaseDashboardPage.navigateToCase(caseId);
       await taskUiChecks.assertTaskVisible(TASK_NAME);
-      // TODO: Enable when the task retains its CTSC Admin assignment.
-      // await taskUiChecks.assertTaskAssignedTo('CTSC Admin');
     }
   );
 
