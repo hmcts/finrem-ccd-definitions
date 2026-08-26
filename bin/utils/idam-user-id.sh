@@ -3,7 +3,7 @@
 set -euo pipefail
 
 user_token=${1:?User token is required}
-idam_api_base_url=${IDAM_API_URL_BASE:-https://idam-api.aat.platform.hmcts.net}
+idam_api_base_url=${IDAM_API_URL_BASE:-https://idam-web-public.aat.platform.hmcts.net}
 
 curl --silent --show-error --fail \
   -X GET "${idam_api_base_url}/details" \
