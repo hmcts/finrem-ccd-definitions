@@ -170,10 +170,6 @@ export class TaskUiChecks {
     await this.waitForTaskVisibility(taskName, true);
   }
 
-  async assertTaskAssignedTo(userName: string): Promise<void> {
-    await this.assertLabelAndValue('Assigned to', userName);
-  }
-
   async assertTaskVisibleInWorkAllocationTab(
     taskName: string,
     tabName: WorkAllocationTab,
