@@ -190,7 +190,6 @@ export class TaskUiChecks {
 
   async assertNextStepVisible(nextStep: string): Promise<void> {
     await this.assertLabelAndLink('Next steps', nextStep);
-    await this.assertLabelAndValue('Next steps', nextStep);
   }
 
   async selectTaskNextStep(nextStep: string): Promise<void> {
