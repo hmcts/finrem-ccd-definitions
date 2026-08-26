@@ -3,7 +3,7 @@ import {axiosRequest} from './ApiHelper.ts';
 import {readCache, writeCache} from './TokenCachingHelper.ts';
 
 const env = process.env.RUNNING_ENV && process.env.RUNNING_ENV.startsWith('pr-') ? 'aat' : (process.env.RUNNING_ENV || 'aat');
-const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
+const idamBaseUrl = `https://idam-web-public.${env}.platform.hmcts.net`;
 
 export async function getUserToken(username: string, password: string): Promise<string> {
   const tokenCache = await readCache();
