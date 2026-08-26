@@ -1405,7 +1405,8 @@
     "ID": "evidenceHandled",
     "Label": "Supplementary evidence handled",
     "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
