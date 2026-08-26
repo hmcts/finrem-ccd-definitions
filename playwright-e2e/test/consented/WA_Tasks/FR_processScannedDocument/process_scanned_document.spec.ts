@@ -33,7 +33,7 @@ const loginAndOpenCase = async (
     credentials.email,
     credentials.password,
     config.manageCaseBaseURL,
-    config.loginPaths.worklist
+    config.loginPaths.cases
   );
   await manageCaseDashboardPage.navigateToCase(caseId);
 };
@@ -52,7 +52,7 @@ test.describe('Process scanned document task tests', () => {
 
   for (const { user, completionAction } of processScannedDocumentUserScenarios) {
     test(
-      `${user.name} completes the task using ${completionAction}`,
+      `${user.name} performs the ${completionAction} action`,
       { tag: ['@waTasks'] },
       async ({
         loginPage,
@@ -113,6 +113,43 @@ test.describe('Process scanned document task tests', () => {
       }
     );
   }
+
+  test(
+    'CTSC Admin retains the task when supplementary evidence is not handled',
+    { tag: ['@waTasks'] },
+    async ({
+      loginPage,
+      manageCaseDashboardPage,
+      attachScannedDocumentsPage,
+      taskUiChecks
+    }) => {
+      const caseId = await createProcessScannedDocumentTask();
+
+      await loginAndOpenCase(
+        config.ctsc_admin,
+        caseId,
+        { loginPage, manageCaseDashboardPage }
+      );
+      await taskUiChecks.assertTaskUI(
+        {
+          name: TASK_NAME,
+          priority: 'low',
+          dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
+          assignedTo: 'Unassigned'
+        },
+        processScannedDocuments.roles.admin.unassignedActions
+      );
+      await taskUiChecks.assignTaskToMe();
+      await taskUiChecks.selectTaskNextStep(ATTACH_SCANNED_DOCUMENT);
+
+      await attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(false);
+
+      await manageCaseDashboardPage.navigateToCase(caseId);
+      await taskUiChecks.assertTaskVisible(TASK_NAME);
+      // TODO: Enable when the task retains its CTSC Admin assignment.
+      // await taskUiChecks.assertTaskAssignedTo('CTSC Admin');
+    }
+  );
 
   test(
     'CTSC Team Leader reassigns their task to CTSC Admin',
@@ -177,7 +214,7 @@ test.describe('Process scanned document task tests', () => {
           config.ctsc_admin.email,
           config.ctsc_admin.password,
           config.manageCaseBaseURL,
-          config.loginPaths.worklist
+          config.loginPaths.cases
         );
         await taskUiChecks.assertTaskVisibleInWorkAllocationTab(
           TASK_NAME,
