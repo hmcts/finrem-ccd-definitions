@@ -14,8 +14,8 @@ const configuration = {
   idamUrl:
     process.env.IDAM_API_URL
     || (env.startsWith('pr-')
-      ? 'https://idam-api.aat.platform.hmcts.net'
-      : `https://idam-api.${env}.platform.hmcts.net`),
+      ? 'https://idam-web-public.aat.platform.hmcts.net'
+      : `https://idam-web-public.${env}.platform.hmcts.net`),
 
   manageCaseBaseURL:
     process.env.CCD_WEB_URL
