@@ -149,7 +149,7 @@ def getPreviewDefinitionExclusions() {
 }
 
 def setCommonWaPreviewEnvVars() {
-  env.IDAM_API_URL_BASE = 'https://idam-api.aat.platform.hmcts.net'
+  env.IDAM_API_URL_BASE = 'https://idam-web-public.aat.platform.hmcts.net'
   env.S2S_URL_BASE = 'http://rpe-service-auth-provider-aat.service.core-compute-aat.internal'
   env.CCD_API_GATEWAY_IDAM_CLIENT_SECRET = env.API_GATEWAY_IDAM_SECRET
   env.ROLE_ASSIGNMENT_URL = "https://am-role-assignment-service-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
