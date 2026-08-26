@@ -54,8 +54,6 @@ for (const data of caseNotesTestData) {
 
       await addNotePage.navigateContinue();
 
-      await eventSummaryPage.enterEventSummaryAndDescription('Test Event Summary', 'Test Event Description');
-
       await addNotePage.navigateSubmit();
       await caseDetailsPage.checkHasBeenUpdated(data.event.listItem);
       await caseDetailsPage.assertTabData(notesTabData(DateHelper.getTodayFormattedDate()));
