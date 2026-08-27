@@ -93,6 +93,10 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Update FR Court Info",
     ccdCallback: "FR_updateCourtInfo"
   },
+  hwfFeeAccountDebited: {
+    listItem: "Fee Account Debited",
+    ccdCallback: "FR_paymentMadeFromHWF"
+  },
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
