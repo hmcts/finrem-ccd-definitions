@@ -183,6 +183,11 @@ A PR will create a full CCD/ExUI stack in the preview environment as defined in 
 If you require a particular finrem-cos PR image rather than the latest production image then you should specify this
 using a GitHub label. Add a label `use-finrem-cos-pr-number` replacing `number` with the value required.
 
+For the wa-task (Camunda DMN files) configuration the master branch of the 
+[finrem-task-configuration](https://github.com/hmcts/finrem-task-configuration) repository is used by default. To 
+install another branch add the label `use-finrem-wa-task-branch-{wa-task-branch}` replacing `{wa-task-branch}` with the 
+name of the desired branch.
+
 GitHub will have the main URL for a PR deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.preview.platform.hmcts.net/`
 
 This can be found be clicking 'View Deployment' in the conversation tab of the PR. However, this URL in itself is not very useful.
