@@ -166,6 +166,10 @@ export class TaskUiChecks {
     await this.waitForTaskVisibility(taskName, false);
   }
 
+  async assertTaskVisible(taskName: string): Promise<void> {
+    await this.waitForTaskVisibility(taskName, true);
+  }
+
   async assertTaskVisibleInWorkAllocationTab(
     taskName: string,
     tabName: WorkAllocationTab,
