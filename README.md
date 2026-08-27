@@ -268,7 +268,7 @@ in the -wa-nonprod.json version of the file and make any wa specific changes in 
 
 ### Work Allocation preview environment
 
-Add the `pr-values:wa` label to a PR to enable the WA preview overlay in `values.wa.preview.template.yaml`.
+Add the `pr-values:wa` label to a PR to enable the WA preview overlay in `values.gs.preview.template.yaml`.
 This keeps the normal Finrem preview stack and adds the WA-specific services needed for testing:
 
 - WA pods: Camunda, task management API, workflow API, case event handler and task monitor.

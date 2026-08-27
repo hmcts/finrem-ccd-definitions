@@ -9,7 +9,7 @@ export class SigninPage extends BaseJourneyPage{
 
   public constructor(page: Page) {
     super(page);
-    this.emailInputLocator = page.getByRole('textbox', { name: 'email' });
+    this.emailInputLocator = page.getByLabel('Email address');
     this.passwordInputLocator = page.getByRole('textbox', { name: 'Password' });
   }
 
