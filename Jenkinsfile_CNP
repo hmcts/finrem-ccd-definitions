@@ -135,6 +135,14 @@ def getFinremCosImage() {
   return "latest"
 }
 
+def getWaTaskConfigBranch() {
+  def githubApi = new GithubAPI(this)
+  for (label in githubApi.getLabelsbyPattern(env.BRANCH_NAME, "use-finrem-wa-task-branch-") ) {
+    return label.minus("use-finrem-wa-task-branch-")
+  }
+  return "master"
+}
+
 def setPreviewEnvVars() {
   def githubApi = new GithubAPI(this)
   env.ENABLE_WA = false
@@ -160,7 +168,7 @@ def setCommonWaPreviewEnvVars() {
 
 def uploadWaPreviewDmnDefinitions() {
   def waTaskConfigRepoUrl = env.WA_TASK_CONFIG_REPO_URL ?: 'https://github.com/hmcts/finrem-task-configuration.git'
-  def waTaskConfigBranch = env.WA_TASK_CONFIG_BRANCH ?: 'DFR-5514_1'
+  def waTaskConfigBranch = env.WA_TASK_CONFIG_BRANCH ?: 'master'
 
   dir("${WORKSPACE}") {
     sh """
@@ -317,6 +325,7 @@ withPipeline("nodejs", product, component) {
   onPR() {
     env.ENV='preview'
     env.FINREM_COS_IMAGE = getFinremCosImage()
+    env.WA_TASK_CONFIG_BRANCH = getWaTaskConfigBranch()
     setPreviewEnvVars()
   }
 
