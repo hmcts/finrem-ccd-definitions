@@ -47,6 +47,6 @@ export function paymentDetailsReviewData(
     { tabItem: 'Customer internal reference', value: reference },
     'Payment status history',
     { tabItem: 'Status', value: 'Date and time' },
-    { tabItem: 'Success', value: currentDateTimeFull, exact: false, position: 1 }
+    { tabItem: 'Success', value: currentDateTimeFull, exact: false}
   ];
 }
