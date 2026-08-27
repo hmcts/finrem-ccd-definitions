@@ -236,8 +236,8 @@ withPipeline("nodejs", product, component) {
       }
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-contested")
-        if (env.ENABLE_GS?.toBoolean()) {
-            yarnBuilder.yarn("copy-preview-xlxs-to-resources-gs")
+        if (env.ENABLE_WA?.toBoolean()) {
+            yarnBuilder.yarn("copy-preview-xlxs-to-resources-wa")
         } else {
             yarnBuilder.yarn("copy-preview-xlxs-to-resources")
         }
