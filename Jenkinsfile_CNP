@@ -140,9 +140,7 @@ def setPreviewEnvVars() {
   env.ENABLE_GS = false
 
   if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:gs')) {
-    println """before ENABLE_GS:  ${env.ENABLE_GS}""".stripIndent()
     env.ENABLE_GS = true
-    println """after ENABLE_GS:  ${env.ENABLE_GS}""".stripIndent()
   }
 }
 
@@ -238,8 +236,8 @@ withPipeline("nodejs", product, component) {
       }
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-contested")
-        if (env.ENABLE_WA?.toBoolean()) {
-            yarnBuilder.yarn("copy-preview-xlxs-to-resources-wa")
+        if (env.ENABLE_GS?.toBoolean()) {
+            yarnBuilder.yarn("copy-preview-xlxs-to-resources-gs")
         } else {
             yarnBuilder.yarn("copy-preview-xlxs-to-resources")
         }
