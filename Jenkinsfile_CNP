@@ -145,7 +145,7 @@ def setPreviewEnvVars() {
 }
 
 def getPreviewDefinitionExclusions() {
-  return env.ENABLE_GS?.toBoolean() ? '*-prod.json' : '*-prod.json,*-wa-nonprod.json'
+  return env.ENABLE_GS?.toBoolean() ? '*-prod.json' : '*-prod.json,*-gs-nonprod.json'
 }
 
 def setCommonWaPreviewEnvVars() {
