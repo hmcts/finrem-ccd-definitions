@@ -89,6 +89,7 @@ import { StopRepresentingClientPage } from '../pages/events/stop-representing-cl
 import { CloseCasePage } from '../pages/events/close-case/CloseCasePage.ts';
 import { TaskUiChecks } from '../pages/WAtasks/TaskUiChecks.ts';
 import { AttachScannedDocumentsPage } from '../pages/events/attach-scanned-doc/AttachScannedDocumentsPage.ts';
+import { HwfFeeAccountDebitedPage } from '../pages/events/hwf-fee-account-debited/HwfFeeAccountDebitedPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -124,6 +125,7 @@ type CreateFixtures = {
   orderSummaryPage: OrderSummaryPage;
   caseSubmissionPage: CaseSubmissionPage;
   hwfApplicationAcceptedPage: HwfApplicationAcceptedPage;
+  hwfFeeAccountDebitedPage: HwfFeeAccountDebitedPage;
   issueApplicationPage: IssueApplicationPage;
   approveApplicationPage: ApproveApplicationPage;
   sendOrderPage: SendOrderPage;
@@ -264,6 +266,9 @@ export const test = base.extend<CreateFixtures>({
   hwfApplicationAcceptedPage: async ({ page }, use) => {
     await use(new HwfApplicationAcceptedPage(page));
   },
+  hwfFeeAccountDebitedPage:async ({ page }, use) => {
+    await use(new HwfFeeAccountDebitedPage(page));
+},
   issueApplicationPage: async ({ page }, use) => {
     await use(new IssueApplicationPage(page));
   },
