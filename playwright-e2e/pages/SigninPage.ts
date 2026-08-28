@@ -38,12 +38,12 @@ export class SigninPage extends BaseJourneyPage{
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
         await this.login(email, password);
-        
+        console.log("after login call: expectedUrl: " + expectedUrl + " requiredPath: " + requiredPath);
         let timeoutAmount = 30000;
         if ( expectedUrl === 'http://localhost:3000') {
           timeoutAmount = 2000;
         }
-
+console.log("before page wait login call: expectedUrl: " + expectedUrl + " requiredPath: " + requiredPath);
         await this.page.waitForURL(`${expectedUrl}/${requiredPath}`, { timeout: timeoutAmount });
         return;
       } catch (err) {
