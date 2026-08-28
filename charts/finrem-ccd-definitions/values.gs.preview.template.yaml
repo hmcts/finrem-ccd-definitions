@@ -12,7 +12,7 @@ xui-webapp:
       SERVICES_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service
       SERVICES_ROLE_ASSIGNMENT_MAPPING_API: http://${SERVICE_NAME}-am-org-role-mapping-service
       WA_SUPPORTED_JURISDICTIONS: DIVORCE
-      FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_WA}
+      FINREM_WORK_ALLOCATION_ENABLED: ${ENABLE_GS}
       GLOBAL_SEARCH_SERVICES: "IA,CIVIL,PRIVATELAW,PUBLICLAW,EMPLOYMENT,ST_CIC,DIVORCE"
 
 finrem-cos:
@@ -22,7 +22,7 @@ finrem-cos:
       GLOBAL_SEARCH_ENABLED: true
 
 am-org-role-mapping-service:
-  enabled: ${ENABLE_WA}
+  enabled: ${ENABLE_GS}
   java:
     image: hmctsprod.azurecr.io/am/org-role-mapping-service:latest
     disableKeyVaults: true
@@ -71,7 +71,7 @@ am-org-role-mapping-service:
       ORM_ENV: pr
 
 wa:
-  enabled: ${ENABLE_WA}
+  enabled: ${ENABLE_GS}
   wa:
     postgresql:
       enabled: false
@@ -203,7 +203,7 @@ ccd:
     ras:
       enabled: true
   ccd-data-store-api:
-    enabled: ${ENABLE_WA}
+    enabled: ${ENABLE_GS}
     java:
       disableKeyVaults: true
       autoscaling:
