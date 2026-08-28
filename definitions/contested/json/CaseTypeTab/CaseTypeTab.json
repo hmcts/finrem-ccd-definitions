@@ -4620,7 +4620,8 @@
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadConsentOrder",
     "UserRole": "[APPSOLICITOR]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4647,7 +4648,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadOrder",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 4,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4656,7 +4658,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalOrderCollection",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 5,
+    "DisplayContextParameter": "#TABLE(uploadDraftDocument,isFinalOrder,orderDateTime)"
   },
   {
     "LiveFrom": "07/01/2025",
@@ -4665,7 +4668,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalisedOrdersCollection",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 6,
+    "DisplayContextParameter": "#TABLE(finalisedDocument,submittedBy,approvalDate,finalOrder)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4683,7 +4687,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "refusedOrdersCollection",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 8,
+    "DisplayContextParameter": "#TABLE(refusedDocument,refusedDate,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4693,7 +4698,8 @@
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadConsentOrder",
     "UserRole": "[APPBARRISTER]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4720,7 +4726,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadOrder",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 4,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4729,7 +4736,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalOrderCollection",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 5,
+    "DisplayContextParameter": "#TABLE(uploadDraftDocument,isFinalOrder,orderDateTime)"
   },
   {
     "LiveFrom": "07/01/2025",
@@ -4738,7 +4746,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalisedOrdersCollection",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 6,
+    "DisplayContextParameter": "#TABLE(finalisedDocument,submittedBy,approvalDate,finalOrder)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4756,7 +4765,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "refusedOrdersCollection",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 8,
+    "DisplayContextParameter": "#TABLE(refusedDocument,refusedDate,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4766,7 +4776,8 @@
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadConsentOrder",
     "UserRole": "[RESPSOLICITOR]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4793,7 +4804,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadOrder",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 4,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4802,7 +4814,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalOrderCollection",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 5,
+    "DisplayContextParameter": "#TABLE(uploadDraftDocument,isFinalOrder,orderDateTime)"
   },
   {
     "LiveFrom": "07/01/2025",
@@ -4811,7 +4824,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalisedOrdersCollection",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 6,
+    "DisplayContextParameter": "#TABLE(finalisedDocument,submittedBy,approvalDate,finalOrder)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4829,7 +4843,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "refusedOrdersCollection",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 8,
+    "DisplayContextParameter": "#TABLE(refusedDocument,refusedDate,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4839,7 +4854,8 @@
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadConsentOrder",
     "UserRole": "[RESPBARRISTER]",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4866,7 +4882,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadOrder",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 4,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4875,7 +4892,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalOrderCollection",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 5,
+    "DisplayContextParameter": "#TABLE(uploadDraftDocument,isFinalOrder,orderDateTime)"
   },
   {
     "LiveFrom": "07/01/2025",
@@ -4884,7 +4902,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalisedOrdersCollection",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 6,
+    "DisplayContextParameter": "#TABLE(finalisedDocument,submittedBy,approvalDate,finalOrder)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4902,7 +4921,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "refusedOrdersCollection",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 8,
+    "DisplayContextParameter": "#TABLE(refusedDocument,refusedDate,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4912,7 +4932,8 @@
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadConsentOrder",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4939,7 +4960,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadOrder",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 4,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4948,7 +4970,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalOrderCollection",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 5,
+    "DisplayContextParameter": "#TABLE(uploadDraftDocument,isFinalOrder,orderDateTime)"
   },
   {
     "LiveFrom": "07/01/2025",
@@ -4957,7 +4980,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalisedOrdersCollection",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 6,
+    "DisplayContextParameter": "#TABLE(finalisedDocument,submittedBy,approvalDate,finalOrder)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4975,7 +4999,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "refusedOrdersCollection",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 8,
+    "DisplayContextParameter": "#TABLE(refusedDocument,refusedDate,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -4985,7 +5010,8 @@
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadConsentOrder",
     "UserRole": "caseworker-divorce-financialremedy-judiciary",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5012,7 +5038,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "uploadOrder",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 4,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentDateAdded,DocumentLink,DocumentType)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5021,7 +5048,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalOrderCollection",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 5,
+    "DisplayContextParameter": "#TABLE(uploadDraftDocument,isFinalOrder,orderDateTime)"
   },
   {
     "LiveFrom": "07/01/2025",
@@ -5030,7 +5058,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "finalisedOrdersCollection",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 6,
+    "DisplayContextParameter": "#TABLE(finalisedDocument,submittedBy,approvalDate,finalOrder)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -5048,7 +5077,8 @@
     "TabLabel": "Orders",
     "TabDisplayOrder": 17,
     "CaseFieldID": "refusedOrdersCollection",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 8,
+    "DisplayContextParameter": "#TABLE(refusedDocument,refusedDate,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
