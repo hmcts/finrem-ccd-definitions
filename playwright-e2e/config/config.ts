@@ -50,7 +50,7 @@ const configuration = {
       ),
 
   run_accessibility:
-    process.env.TESTS_FOR_ACCESSIBILITY || false,
+      process.env.TESTS_FOR_ACCESSIBILITY || false,
 
   judge: {
     email: process.env.USERNAME_JUDGE || '',
