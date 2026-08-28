@@ -1,20 +1,20 @@
 export class DateHelper {
 
   /**
-     * Returns today's date as a string in "YYYY-MM-DD" format.
-     *
-     * @returns Current date string in ISO format (date only) as a promise resolving to a string.
-     */
+   * Returns today's date as a string in "YYYY-MM-DD" format.
+   *
+   * @returns Current date string in ISO format (date only) as a promise resolving to a string.
+   */
   static getCurrentDate(): string {
     return new Date().toISOString().split('T')[0];
   }
 
   /**
-     * Returns a timestamp.  It's UTC.
-     * Formated as: "2023-10-06T12:34:56.789Z".  Postgres stores as "2023-10-06T12:34:56.789000" (localtime).
-     *
-     * @returns Current datetime string in ISO format as a promise resolving to a string.
-     */
+   * Returns a timestamp.  It's UTC.
+   * Formated as: "2023-10-06T12:34:56.789Z".  Postgres stores as "2023-10-06T12:34:56.789000" (localtime).
+   *
+   * @returns Current datetime string in ISO format as a promise resolving to a string.
+   */
   static async getCurrentTimestamp(): Promise<string> {
     return new Date().toISOString();
   }
@@ -42,7 +42,7 @@ export class DateHelper {
   };
 
   /**
-   * Returns the current date and time formatted as "d MMM yyyy, HH:mm" (e.g. "6 Aug 2025, 11:02").
+   * Returns the current date and time formatted as "d MMM yyyy, h:mm" (e.g. "6 Aug 2025, 11:02").
    *
    * @returns Formatted current date and time string.
    */
@@ -54,7 +54,7 @@ export class DateHelper {
       year: 'numeric',
       hour: 'numeric',
       minute: '2-digit',
-      hour12: true,
+      hourCycle: 'h12',
       timeZone: 'UTC'
     })
       .replace(/\b( am| pm)\b/i, '')
@@ -62,7 +62,7 @@ export class DateHelper {
   }
 
   /**
-   * Returns the current date and time formatted as "d MMM yyyy, HH:mm:ss" then adds a PM suffix (e.g. "6 Aug 2025, 11:02:20 PM").
+   * Returns the current date and time formatted as "d MMM yyyy, h:mm:ss" then adds a PM suffix (e.g. "6 Aug 2025, 11:02:20 PM").
    * For local running, may need to change so that timezone: 'Europe/London'
    *
    * @returns Formatted current date and time string.
@@ -75,7 +75,7 @@ export class DateHelper {
       hour: 'numeric',
       minute: '2-digit',
       second: '2-digit',
-      hour12: true,
+      hourCycle: 'h12',
       timeZone: timeZone
     })
       .replace(/\b(am|pm)\b/gi, marker => {return marker.toUpperCase();})
@@ -92,14 +92,139 @@ export class DateHelper {
     return this.formatToDayMonthYear(today);
   };
 
+  /**
+   * Returns a date a given number of weekdays from the supplied date.
+   * Saturdays, Sundays and standard England and Wales bank holidays are excluded.
+   */
+  static getFormattedDateAfterWorkingDays(
+    workingDays: number,
+    from: Date = new Date()
+  ): string {
+    const date = new Date(from);
+    let workingDaysAdded = 0;
+
+    while (workingDaysAdded < workingDays) {
+      date.setDate(date.getDate() + 1);
+      if (this.isWorkingDay(date)) {
+        workingDaysAdded++;
+      }
+    }
+
+    return date.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+  }
+
+  private static isWorkingDay(date: Date): boolean {
+    return date.getDay() !== 0
+      && date.getDay() !== 6
+      && !this.getEnglandAndWalesBankHolidays(date.getFullYear())
+        .has(this.toLocalIsoDate(date));
+  }
+
+  private static getEnglandAndWalesBankHolidays(year: number): Set<string> {
+    const holidays = new Set<string>();
+    const add = (date: Date): void => {
+      holidays.add(this.toLocalIsoDate(date));
+    };
+
+    add(this.getSubstituteWeekday(new Date(year, 0, 1)));
+
+    const easterSunday = this.getEasterSunday(year);
+    const goodFriday = new Date(easterSunday);
+    goodFriday.setDate(goodFriday.getDate() - 2);
+    add(goodFriday);
+    const easterMonday = new Date(easterSunday);
+    easterMonday.setDate(easterMonday.getDate() + 1);
+    add(easterMonday);
+
+    add(this.getNthWeekdayOfMonth(year, 4, 1, 1));
+    add(this.getLastWeekdayOfMonth(year, 4, 1));
+    add(this.getLastWeekdayOfMonth(year, 7, 1));
+
+    const christmasDay = new Date(year, 11, 25);
+    const boxingDay = new Date(year, 11, 26);
+    if (christmasDay.getDay() === 6) {
+      add(new Date(year, 11, 27));
+      add(new Date(year, 11, 28));
+    } else if (christmasDay.getDay() === 0) {
+      add(new Date(year, 11, 27));
+      add(boxingDay);
+    } else {
+      add(christmasDay);
+      add(this.getSubstituteWeekday(boxingDay));
+    }
+
+    return holidays;
+  }
+
+  private static getSubstituteWeekday(date: Date): Date {
+    const substitute = new Date(date);
+    if (substitute.getDay() === 6) {
+      substitute.setDate(substitute.getDate() + 2);
+    } else if (substitute.getDay() === 0) {
+      substitute.setDate(substitute.getDate() + 1);
+    }
+    return substitute;
+  }
+
+  private static getNthWeekdayOfMonth(
+    year: number,
+    month: number,
+    weekday: number,
+    occurrence: number
+  ): Date {
+    const date = new Date(year, month, 1);
+    date.setDate(1 + ((7 + weekday - date.getDay()) % 7) + (occurrence - 1) * 7);
+    return date;
+  }
+
+  private static getLastWeekdayOfMonth(
+    year: number,
+    month: number,
+    weekday: number
+  ): Date {
+    const date = new Date(year, month + 1, 0);
+    date.setDate(date.getDate() - ((7 + date.getDay() - weekday) % 7));
+    return date;
+  }
+
+  private static getEasterSunday(year: number): Date {
+    const a = year % 19;
+    const b = Math.floor(year / 100);
+    const c = year % 100;
+    const d = Math.floor(b / 4);
+    const e = b % 4;
+    const f = Math.floor((b + 8) / 25);
+    const g = Math.floor((b - f + 1) / 3);
+    const h = (19 * a + b - d - g + 15) % 30;
+    const i = Math.floor(c / 4);
+    const k = c % 4;
+    const l = (32 + 2 * e + 2 * i - h - k) % 7;
+    const m = Math.floor((a + 11 * h + 22 * l) / 451);
+    const month = Math.floor((h + l - 7 * m + 114) / 31);
+    const day = ((h + l - 7 * m + 114) % 31) + 1;
+    return new Date(year, month - 1, day);
+  }
+
+  private static toLocalIsoDate(date: Date): string {
+    return [
+      date.getFullYear(),
+      String(date.getMonth() + 1).padStart(2, '0'),
+      String(date.getDate()).padStart(2, '0')
+    ].join('-');
+  }
+
   //************ Hearing Date Helpers ************//
 
   /**
-     * This is for cases that aren't "fast track" or "express".
-     * Returns a hearing date, 12 weeks later than current date, as a string in "YYYY-MM-DD" format.
-     *
-     * @returns Hearing date string in ISO format (date only) as a promise resolving to a string.
-     */
+   * This is for cases that aren't "fast track" or "express".
+   * Returns a hearing date, 12 weeks later than current date, as a string in "YYYY-MM-DD" format.
+   *
+   * @returns Hearing date string in ISO format (date only) as a promise resolving to a string.
+   */
   static getHearingDateTwelveWeeksLaterInISOFormat(): string {
     const hearingDate = new Date();
     hearingDate.setDate(hearingDate.getDate() + 12 * 7);
@@ -144,12 +269,12 @@ export class DateHelper {
   };
 
   /**
-     * Converts a date string (ISO format) into a formatted date string
-     * in the format "dd Month yyyy" (e.g. "06 August 2025").
-     *
-     * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
-     * @returns A promise that resolves with the formatted date string.
-     */
+   * Converts a date string (ISO format) into a formatted date string
+   * in the format "dd Month yyyy" (e.g. "06 August 2025").
+   *
+   * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
+   * @returns A promise that resolves with the formatted date string.
+   */
   static formatToDayMonthYear(dateStr: string): string {
     const date = new Date(dateStr);
     return new Intl.DateTimeFormat('en-GB', {
@@ -160,12 +285,12 @@ export class DateHelper {
   }
 
   /**
-     * Converts a date string (ISO format) into a formatted date string
-     * in the short month format "dd Month yyyy" (e.g. "06 Aug 2025").
-     *
-     * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
-     * @returns A promise that resolves with the formatted date string.
-     */
+   * Converts a date string (ISO format) into a formatted date string
+   * in the short month format "dd Month yyyy" (e.g. "06 Aug 2025").
+   *
+   * @param dateStr - A valid ISO date string (e.g. "2025-08-06").
+   * @returns A promise that resolves with the formatted date string.
+   */
   static formatToDayMonthYearShort(dateStr: string): string {
     const date = new Date(dateStr);
     return new Intl.DateTimeFormat('en-GB', {
@@ -201,7 +326,7 @@ export class DateHelper {
   /**
    * Returns the timezone for the current test environment.
    *
-   * AAT and Demo use UTC. Local uses Europe/London.
+   * AAT and Demo Finrem use UTC. Local Finrem typically uses the dev machine clock (Europe/London).
    *
    * @returns `"UTC"` for AAT or Demo; otherwise, `"Europe/London"`.
    */
