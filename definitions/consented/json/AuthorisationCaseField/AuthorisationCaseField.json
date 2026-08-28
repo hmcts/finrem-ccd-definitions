@@ -788,7 +788,8 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "pensionCollection",
     "UserRole": "caseworker-divorce-financialremedy",
-    "CRUD": "CR"
+    "CRUD": "CR",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
