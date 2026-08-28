@@ -12,45 +12,45 @@ const configuration = {
 
   // URLs
   idamUrl:
-    process.env.IDAM_API_URL
-    || (env.startsWith('pr-')
-      ? 'https://idam-api.aat.platform.hmcts.net'
-      : `https://idam-api.${env}.platform.hmcts.net`),
+      process.env.IDAM_API_URL
+      || (env.startsWith('pr-')
+          ? 'https://idam-api.aat.platform.hmcts.net'
+          : `https://idam-api.${env}.platform.hmcts.net`),
 
   manageCaseBaseURL:
-    process.env.CCD_WEB_URL
-    || (
-      env.startsWith('pr-')
-        ? `https://xui-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
-        : `https://manage-case.${env}.platform.hmcts.net`
-    ),
+      process.env.CCD_WEB_URL
+      || (
+          env.startsWith('pr-')
+              ? `https://xui-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
+              : `https://manage-case.${env}.platform.hmcts.net`
+      ),
 
   manageOrgBaseURL:
-    process.env.XUI_ORG_WEB_URL
-    || (
-      env.startsWith('pr-')
-        ? `https://xui-mo-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
-        : `https://manage-org.${env}.platform.hmcts.net`
-    ),
+      process.env.XUI_ORG_WEB_URL
+      || (
+          env.startsWith('pr-')
+              ? `https://xui-mo-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
+              : `https://manage-org.${env}.platform.hmcts.net`
+      ),
 
   manageOrgAPIBaseURL:
-    process.env.MANAGE_ORG_API_BASE_URL
-    || (
-      env.startsWith('pr-')
-        ? `https://aac-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
-        : `http://aac-manage-case-assignment-${env}.service.core-compute-${env}.internal`
-    ),
+      process.env.MANAGE_ORG_API_BASE_URL
+      || (
+          env.startsWith('pr-')
+              ? `https://aac-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
+              : `http://aac-manage-case-assignment-${env}.service.core-compute-${env}.internal`
+      ),
 
   ccdDataStoreApi:
-    process.env.CCD_DATA_API_URL
-    || (
-      env.startsWith('pr-')
-        ? `https://ccd-data-store-api-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
-        : `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`
-    ),
+      process.env.CCD_DATA_API_URL
+      || (
+          env.startsWith('pr-')
+              ? `https://ccd-data-store-api-finrem-ccd-definitions-${env}.preview.platform.hmcts.net`
+              : `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`
+      ),
 
   run_accessibility:
-    process.env.TESTS_FOR_ACCESSIBILITY || false,
+      process.env.TESTS_FOR_ACCESSIBILITY || false,
 
   judge: {
     email: process.env.USERNAME_JUDGE || '',
@@ -98,8 +98,8 @@ const configuration = {
   },
 
   respondent_intervener: {
-      email: process.env.PLAYWRIGHT_RESP_INTERVENER_USERNAME || '',
-      password: process.env.PLAYWRIGHT_RESP_INTERVENER_PSWD || '',
+    email: process.env.PLAYWRIGHT_RESP_INTERVENER_USERNAME || '',
+    password: process.env.PLAYWRIGHT_RESP_INTERVENER_PSWD || '',
   },
 
   respondent_barrister: {
@@ -144,8 +144,8 @@ const configuration = {
 
   jurisdiction: {
     familyDivorce: (process.env.CCD_WEB_URL || `https://manage-case.${env}.platform.hmcts.net`) === 'https://manage-case.demo.platform.hmcts.net'
-    ? 'Family Divorce - v104-26.1'
-    : 'Family Divorce'
+        ? 'Family Divorce - v104-26.1'
+        : 'Family Divorce'
   },
 
   caseType: {
