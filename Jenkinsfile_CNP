@@ -140,7 +140,9 @@ def setPreviewEnvVars() {
   env.ENABLE_GS = false
 
   if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:gs')) {
+    println """before ENABLE_GS:  ${env.ENABLE_GS}""".stripIndent()
     env.ENABLE_GS = true
+    println """after ENABLE_GS:  ${env.ENABLE_GS}""".stripIndent()
   }
 }
 
