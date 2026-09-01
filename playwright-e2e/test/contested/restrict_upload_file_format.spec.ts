@@ -1,5 +1,4 @@
 import { test } from '../../fixtures/fixtures';
-import config from '../../config/config';
 import { ContestedEvents } from '../../config/case-data';
 import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
 
@@ -25,7 +24,7 @@ test.describe.skip('Contested - File Type Restrictions on uploading documents', 
     }) => {
       const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.createGeneralApplication);
 
@@ -48,7 +47,7 @@ test.describe.skip('Contested - File Type Restrictions on uploading documents', 
     }) => {
       const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.createGeneralApplication);
 
@@ -71,7 +70,7 @@ test.describe.skip('Contested - File Type Restrictions on uploading documents', 
     }) => {
       const caseId = await ContestedCaseFactory.createAndSubmitPaperCase();
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.createGeneralApplication);
 
