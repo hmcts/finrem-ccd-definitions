@@ -3,7 +3,7 @@ import { BaseJourneyPage } from './BaseJourneyPage';
 import config from '../config/config.ts';
 
 export class SigninPage extends BaseJourneyPage{
-  
+
   private readonly emailInputLocator: Locator;
   private readonly passwordInputLocator: Locator;
 
@@ -22,10 +22,23 @@ export class SigninPage extends BaseJourneyPage{
     await this.navigateContinue();
   }
 
+  async loginCaseworker() {
+    const defaultLoginPath = config.waEnabled
+        ? config.loginPaths.worklist
+        : config.loginPaths.cases;
+
+    await this.loginWaitForPath(
+        config.caseWorker.email,
+        config.caseWorker.password,
+        config.manageCaseBaseURL,
+        defaultLoginPath)
+    ;
+  }
+
   /**
    *  Resilient login.  Requires the path that you expect a User to land on.
    *  For instance, Solicitors and Caseworker land on pages with different paths.
-   *   Faster timeout works for local running, but remains as safer Playwright default for AAT.
+   *  Faster timeout works for local running, but remains as safer Playwright default for AAT.
    * @param email
    * @param password
    * @param expectedUrl
@@ -33,12 +46,11 @@ export class SigninPage extends BaseJourneyPage{
    */
   async loginWaitForPath(email: string, password: string, expectedUrl: string, requiredPath: string) {
     const maxRetries = 10;
-    if (process.env.RUNNING_ENV === 'demo' && requiredPath.endsWith('list')) { requiredPath = config.loginPaths.cases; }
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
         await this.login(email, password);
-        
+
         let timeoutAmount = 30000;
         if ( expectedUrl === 'http://localhost:3000') {
           timeoutAmount = 2000;
