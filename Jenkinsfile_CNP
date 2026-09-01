@@ -3,7 +3,7 @@
 import uk.gov.hmcts.contino.AppPipelineConfig
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure")
+@Library("Infrastructure@2.5.1")
 
 String product = "finrem"
 String component = "ccd-definitions"
@@ -252,7 +252,7 @@ withPipeline("nodejs", product, component) {
     } else {
 
       withSubscription(env.ENV != 'prod' ? 'nonprod' : 'prod') {
-        withTeamSecrets(pipelineConf, 'aat') {
+        withTeamSecrets(pipelineConf, env.ENV == 'prod' ? 'prod' : 'aat') {
           stageWithAgent('Generate Financial Remedy Consented Case config', product) {
             dir('definitions/consented/json/UserProfile') {
               sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
@@ -335,11 +335,13 @@ withPipeline("nodejs", product, component) {
   before('smoketest:preview') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'smoke-output'
     sh 'yarn playwright install'
+    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
   }
 
   before('smoketest:aat') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'smoke-output'
     sh 'yarn playwright install'
+    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
   }
 
   before('functionalTest:preview') {
