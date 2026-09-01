@@ -71,7 +71,7 @@ am-org-role-mapping-service:
       ORM_ENV: pr
 
 wa:
-  enabled: ${ENABLE_GS}
+  enabled: false
   wa:
     postgresql:
       enabled: false
