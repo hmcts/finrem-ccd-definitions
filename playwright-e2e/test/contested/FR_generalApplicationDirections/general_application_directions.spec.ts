@@ -1,5 +1,4 @@
 import {test} from '../../../fixtures/fixtures.ts';
-import config from '../../../config/config.ts';
 import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import {ContestedEvents} from '../../../config/case-data.ts';
 import {YesNoRadioEnum} from '../../../pages/helpers/enums/RadioEnums.ts';

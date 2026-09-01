@@ -1,4 +1,3 @@
-import config from '../../config/config';
 import { test } from '../../fixtures/fixtures';
 import { createCaseTabDataPreview } from '../../resources/tab_content/consented/create_case_tabs';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';

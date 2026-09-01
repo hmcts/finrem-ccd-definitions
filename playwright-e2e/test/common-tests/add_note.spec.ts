@@ -1,5 +1,4 @@
 import {test} from '../../fixtures/fixtures.ts';
-import config from '../../config/config.ts';
 import {ConsentedCaseFactory} from '../../data-utils/factory/consented/ConsentedCaseFactory.ts';
 import {ConsentedEvents, ContestedEvents} from '../../config/case-data.ts';
 import {notesTabData} from '../../resources/tab_content/common-tabs/notes_tabs.ts';

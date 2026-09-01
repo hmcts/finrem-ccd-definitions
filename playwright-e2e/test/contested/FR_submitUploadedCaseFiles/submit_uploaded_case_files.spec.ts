@@ -1,5 +1,4 @@
 import {test} from '../../../fixtures/fixtures';
-import config from '../../../config/config';
 import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import {ContestedEvents} from '../../../config/case-data';
 import {getManageHearingTabData} from '../../../resources/tab_content/contested/manage_hearing_tabs.ts';

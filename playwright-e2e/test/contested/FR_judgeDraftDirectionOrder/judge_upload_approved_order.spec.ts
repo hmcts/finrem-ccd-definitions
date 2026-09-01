@@ -6,7 +6,6 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 import { judgeUploadApprovedOrderTableData } from '../../../resources/check_your_answer_content/judge_approved_order/judgeApprovedOrderTable';
 import { judgeApprovedOrderTabData } from '../../../resources/tab_content/contested/judge_approved_order_tab';
-import { AxeUtils } from '@hmcts/playwright-common';
 
 test.describe('Contested - Judge Upload Approved Order', () => {
   test(

@@ -1,5 +1,4 @@
 import { test } from '../../../fixtures/fixtures';
-import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { sendOrderTableData } from '../../../resources/check_your_answer_content/send_order/sendOrderTable';

@@ -1,5 +1,4 @@
 import { test } from '../../../fixtures/fixtures';
-import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { CaseDocumentsTabOnlineFormATabData } from '../../../resources/tab_content/common-tabs/case_documents_tab';
