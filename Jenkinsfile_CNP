@@ -213,8 +213,6 @@ withPipeline("nodejs", product, component) {
         setCommonWaPreviewEnvVars()
         println """After akschartsinstall upload DMN and BPMN diagrams and setup WA org mappings using ${env.ORG_ROLE_MAPPING_URL}""".stripIndent()
         sh 'chmod -R +x ./bin'
-        uploadWaPreviewDmnDefinitions()
-        uploadWaPreviewBpmnDefinitions()
         setupWaPreviewRoleAssignments()
       }
     }
