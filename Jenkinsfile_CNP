@@ -3,7 +3,7 @@
 import uk.gov.hmcts.contino.AppPipelineConfig
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure")
+@Library("Infrastructure@2.5.1")
 
 String product = "finrem"
 String component = "ccd-definitions"
@@ -137,7 +137,6 @@ def getFinremCosImage() {
 
 def setPreviewEnvVars() {
   def githubApi = new GithubAPI(this)
-  env.ENABLE_WA = false
 
   if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:wa')) {
     env.ENABLE_WA = true
@@ -252,7 +251,7 @@ withPipeline("nodejs", product, component) {
     } else {
 
       withSubscription(env.ENV != 'prod' ? 'nonprod' : 'prod') {
-        withTeamSecrets(pipelineConf, 'aat') {
+        withTeamSecrets(pipelineConf, env.ENV == 'prod' ? 'prod' : 'aat') {
           stageWithAgent('Generate Financial Remedy Consented Case config', product) {
             dir('definitions/consented/json/UserProfile') {
               sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'

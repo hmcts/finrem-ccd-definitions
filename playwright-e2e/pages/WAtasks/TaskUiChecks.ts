@@ -166,6 +166,10 @@ export class TaskUiChecks {
     await this.waitForTaskVisibility(taskName, false);
   }
 
+  async assertTaskVisible(taskName: string): Promise<void> {
+    await this.waitForTaskVisibility(taskName, true);
+  }
+
   async assertTaskVisibleInWorkAllocationTab(
     taskName: string,
     tabName: WorkAllocationTab,
@@ -189,7 +193,7 @@ export class TaskUiChecks {
   }
 
   async assertNextStepVisible(nextStep: string): Promise<void> {
-    await this.assertLabelAndValue('Next steps', nextStep);
+    await this.assertLabelAndLink('Next steps', nextStep);
   }
 
   async selectTaskNextStep(nextStep: string): Promise<void> {
@@ -250,6 +254,14 @@ export class TaskUiChecks {
 
     await expect(labelLocator).toBeVisible();
     await expect(this.page.getByText(value, { exact: true })).toBeVisible();
+  }
+
+  // Added to differentiate event link locator inside task tab from Next Steps eg:Issue Application
+  private async assertLabelAndLink(label: string, link: string): Promise<void> {
+    const labelLocator = this.page.getByText(label, { exact: true });
+
+    await expect(labelLocator).toBeVisible();
+    await expect(this.page.getByRole('link', { name: link, exact: true })).toBeVisible();  
   }
 
   private getManageSection(): Locator {
