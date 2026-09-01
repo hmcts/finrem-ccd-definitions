@@ -19,11 +19,7 @@ test(
     const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    if (config.gsEnabled) {
-        await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
-    } else {
-        await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
-    }
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
     await manageCaseDashboardPage.navigateToCase(caseId);
     // Assert tab data
     await caseDetailsPage.assertTabData(createCaseTabDataPreview);
@@ -43,7 +39,7 @@ test(
     const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    if (config.gsEnabled) {
+    if (config.waEnabled) {
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
     } else {
       await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
