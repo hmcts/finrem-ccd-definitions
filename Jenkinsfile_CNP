@@ -137,7 +137,6 @@ def getFinremCosImage() {
 
 def setPreviewEnvVars() {
   def githubApi = new GithubAPI(this)
-  env.ENABLE_WA = false
 
   if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:wa')) {
     env.ENABLE_WA = true
