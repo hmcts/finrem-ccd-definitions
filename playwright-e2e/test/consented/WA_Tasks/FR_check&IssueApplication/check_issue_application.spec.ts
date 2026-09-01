@@ -40,15 +40,20 @@ const loginAndOpenCase = async (
   await manageCaseDashboardPage.navigateToCase(caseId);
 };
 
-const createCheckIssueApplicationTask = async (): Promise<string> => {
+const createCheckIssueApplicationTaskHWF = async (): Promise<string> => {
   const caseId = await ConsentedCaseFactory
     .createConsentedCaseUpToApplicationPaymentSubmission();
 
-  if (Math.random() < 0.5) {
     await ConsentedEventApi.caseWorkerHWFDecisionMade(caseId);
-  } else {
+  
+  return caseId;
+};
+
+const createCheckIssueApplicationTaskFAB = async (): Promise<string> => {
+  const caseId = await ConsentedCaseFactory
+    .createConsentedCaseUpToApplicationPaymentSubmission();
+
     await ConsentedEventApi.caseWorkerHwfFeeAccountDebited(caseId);
-  }
   
   return caseId;
 };
@@ -71,7 +76,7 @@ test.describe('Check and Issue Application task tests', () => {
           loginPage,
           manageCaseDashboardPage
         };
-        const caseId = await createCheckIssueApplicationTask();
+        const caseId = await createCheckIssueApplicationTaskHWF();
 
         const completeTask = async (
           action: TaskCompletionAction
@@ -137,7 +142,7 @@ test.describe('Check and Issue Application task tests', () => {
         loginPage,
         manageCaseDashboardPage
       };
-      const caseId = await createCheckIssueApplicationTask();
+      const caseId = await createCheckIssueApplicationTaskFAB();
 
       await test.step('Team Leader assigns the task to themselves', async () => {
         await loginAndOpenCase(
