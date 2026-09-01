@@ -40,7 +40,7 @@ test.describe('Contested - Manage Interveners', () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
       console.info(`Navigated to case with ID: ${caseId}`);
 
@@ -108,7 +108,7 @@ test.describe('Contested - Manage Interveners', () => {
 
       // login as caseworker and Remove Intervener
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       await caseDetailsPage.selectNextStep(ContestedEvents.manageInterveners);

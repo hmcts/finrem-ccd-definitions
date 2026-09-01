@@ -35,7 +35,7 @@ test.describe('Contested - Upload Draft Order', { tag: ['@DraftOrder'] }, () => 
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       let expectedUrl = ContestedEvents.uploadDraftOrders.ccdCallback;
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
@@ -154,7 +154,7 @@ test.describe('Contested - Upload Draft Order', { tag: ['@DraftOrder'] }, () => 
       await manageCaseDashboardPage.signOut();
 
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.assertTabData(approved_upload_draft_order_tabs);
     }
@@ -175,7 +175,7 @@ test.describe('Contested - Upload Draft Order', { tag: ['@DraftOrder'] }, () => 
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       let expectedUrl = ContestedEvents.uploadDraftOrders.ccdCallback;
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
