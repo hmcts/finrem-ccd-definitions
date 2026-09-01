@@ -5,10 +5,10 @@ import config from '../../config/config.ts';
 import { CommonEvents } from '../../config/case-data.ts';
 import { CaseTypeEnum, YesNoRadioEnum } from '../../pages/helpers/enums/RadioEnums.ts';
 import {
-    applicantStopRepresentingClientTable,
-    intervenerAndApplicantStopRepresentingClientTable,
-    intervenerAndRespondentStopRepresentingClientTable,
-    respondentStopRepresentingClientTable
+  applicantStopRepresentingClientTable,
+  intervenerAndApplicantStopRepresentingClientTable,
+  intervenerAndRespondentStopRepresentingClientTable,
+  respondentStopRepresentingClientTable
 } from '../../resources/check_your_answer_content/stop-representing-client/stopRepresentingClientTable.ts';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory.ts';
 import { ContestedEventApi } from '../../data-utils/api/contested/ContestedEventApi.ts';
