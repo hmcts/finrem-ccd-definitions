@@ -137,8 +137,12 @@ def getFinremCosImage() {
 
 def setPreviewEnvVars() {
   def githubApi = new GithubAPI(this)
+  env.ENABLE_WA = false
   env.ENABLE_GS = false
 
+  if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:wa')) {
+    env.ENABLE_WA = true
+  }
   if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:gs')) {
     env.ENABLE_GS = true
   }
@@ -209,11 +213,13 @@ withPipeline("nodejs", product, component) {
   }
   afterSuccess('akschartsinstall') {
     onPR {
-      if (env.ENABLE_GS?.toBoolean()) {
-        setCommonWaPreviewEnvVars()
+      setCommonWaPreviewEnvVars()
+      setupWaPreviewRoleAssignments()
+      if (env.ENABLE_WA?.toBoolean()) {
         println """After akschartsinstall upload DMN and BPMN diagrams and setup WA org mappings using ${env.ORG_ROLE_MAPPING_URL}""".stripIndent()
         sh 'chmod -R +x ./bin'
-        setupWaPreviewRoleAssignments()
+        uploadWaPreviewDmnDefinitions()
+        uploadWaPreviewBpmnDefinitions()
       }
     }
   }
@@ -230,12 +236,13 @@ withPipeline("nodejs", product, component) {
       env.EXCLUDE = getPreviewDefinitionExclusions()
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
+        yarnBuilder.yarn("generate-excel-preview-wa-consented")
         yarnBuilder.yarn("generate-excel-preview-gs-consented")
       }
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-contested")
-        if (env.ENABLE_GS?.toBoolean()) {
-            yarnBuilder.yarn("copy-preview-xlxs-to-resources-gs")
+        if (env.ENABLE_WA?.toBoolean()) {
+            yarnBuilder.yarn("copy-preview-xlxs-to-resources-wa")
         } else {
             yarnBuilder.yarn("copy-preview-xlxs-to-resources")
         }
