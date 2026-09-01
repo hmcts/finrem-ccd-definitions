@@ -15,8 +15,8 @@ test(
   }) => {
     // Create case and progress to HWF decision made
     const caseId = Math.random() < 0.5 
-  ? await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision() 
-  : await ConsentedCaseFactory.createConsentedCaseUpToHwfFeeAccountDebited();
+      ? await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision() 
+      : await ConsentedCaseFactory.createConsentedCaseUpToHwfFeeAccountDebited();
     
     const dateToday = new Date()
       .toLocaleDateString('en-GB', {
@@ -27,7 +27,7 @@ test(
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-      await loginPage.loginCaseworker();
+    await loginPage.loginCaseworker();
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Issue Application

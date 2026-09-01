@@ -268,7 +268,7 @@ export const test = base.extend<CreateFixtures>({
   },
   hwfFeeAccountDebitedPage:async ({ page }, use) => {
     await use(new HwfFeeAccountDebitedPage(page));
-},
+  },
   issueApplicationPage: async ({ page }, use) => {
     await use(new IssueApplicationPage(page));
   },

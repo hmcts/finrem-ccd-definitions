@@ -24,14 +24,14 @@ export class SigninPage extends BaseJourneyPage{
 
   async loginCaseworker() {
     const defaultLoginPath = config.waEnabled
-        ? config.loginPaths.worklist
-        : config.loginPaths.cases;
+      ? config.loginPaths.worklist
+      : config.loginPaths.cases;
 
     await this.loginWaitForPath(
-        config.caseWorker.email,
-        config.caseWorker.password,
-        config.manageCaseBaseURL,
-        defaultLoginPath)
+      config.caseWorker.email,
+      config.caseWorker.password,
+      config.manageCaseBaseURL,
+      defaultLoginPath)
     ;
   }
 
