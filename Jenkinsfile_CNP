@@ -243,6 +243,8 @@ withPipeline("nodejs", product, component) {
         yarnBuilder.yarn("generate-excel-preview-contested")
         if (env.ENABLE_WA?.toBoolean()) {
             yarnBuilder.yarn("copy-preview-xlxs-to-resources-wa")
+        } else if (env.ENABLE_GS?.toBoolean()) {
+          yarnBuilder.yarn("copy-preview-xlxs-to-resources-gs")
         } else {
             yarnBuilder.yarn("copy-preview-xlxs-to-resources")
         }
