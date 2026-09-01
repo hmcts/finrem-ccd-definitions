@@ -38,7 +38,7 @@ export class SigninPage extends BaseJourneyPage{
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
         await this.login(email, password);
-
+        
         let timeoutAmount = 30000;
         if ( expectedUrl === 'http://localhost:3000') {
           timeoutAmount = 2000;
