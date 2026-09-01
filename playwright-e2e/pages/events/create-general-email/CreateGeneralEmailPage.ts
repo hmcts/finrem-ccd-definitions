@@ -36,7 +36,7 @@ export class CreateGeneralEmailPage extends BaseJourneyPage {
     expect(this.bodyofEmailBox).toBeVisible();
     await this.bodyofEmailBox.fill(body);
   }
-  
+
   async uploadDocument(filePath: string) {
     await this.navigateAddNew();
     await expect(this.fileUpload).toBeVisible();
@@ -50,4 +50,3 @@ export class CreateGeneralEmailPage extends BaseJourneyPage {
     );
   }
 }
-

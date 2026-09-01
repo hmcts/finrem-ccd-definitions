@@ -14,7 +14,10 @@ test(
     issueApplicationPage
   }) => {
     // Create case and progress to HWF decision made
-    const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
+    const caseId = Math.random() < 0.5 
+  ? await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision() 
+  : await ConsentedCaseFactory.createConsentedCaseUpToHwfFeeAccountDebited();
+    
     const dateToday = new Date()
       .toLocaleDateString('en-GB', {
         day: 'numeric',
@@ -24,7 +27,7 @@ test(
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Issue Application
