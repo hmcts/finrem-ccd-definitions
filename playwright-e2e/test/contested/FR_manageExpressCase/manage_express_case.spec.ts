@@ -16,12 +16,7 @@ test.describe('Contested - Manage Express Case', () => {
 
       await test.step('Navigate to case and assert initial tab data', async () => {
         await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
+        await loginPage.loginCaseworker();
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
           { tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Enrolled'] }
@@ -64,12 +59,7 @@ test.describe('Contested - Manage Express Case', () => {
 
       await test.step('Navigate to case and assert initial tab data', async () => {
         await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
+        await loginPage.loginCaseworker();
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
           { tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Enrolled'] }
@@ -101,12 +91,7 @@ test.describe('Contested - Manage Express Case', () => {
 
       await test.step('Navigate to case and assert initial tab data', async () => {
         await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
+        await loginPage.loginCaseworker();
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
           { tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Enrolled'] }
@@ -149,12 +134,7 @@ test.describe('Contested - Manage Express Case', () => {
 
       await test.step('Navigate to case and assert initial tab data', async () => {
         await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
+        await loginPage.loginCaseworker();
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
           { tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Enrolled'] }
@@ -186,12 +166,7 @@ test.describe('Contested - Manage Express Case', () => {
 
       await test.step('Navigate to case and assert initial tab data', async () => {
         await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
+        await loginPage.loginCaseworker();
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
           { tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }
@@ -222,12 +197,7 @@ test.describe('Contested - Manage Express Case', () => {
 
       await test.step('Navigate to case and assert initial tab data', async () => {
         await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
+        await loginPage.loginCaseworker();
         await manageCaseDashboardPage.navigateToCase(caseId);
         await caseDetailsPage.assertTabData([
           { tabName: 'Gatekeeping and allocation', tabContent: ['Express Pilot Participation: Does not qualify'] }

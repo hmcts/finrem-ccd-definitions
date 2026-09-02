@@ -111,7 +111,7 @@ export abstract class BaseJourneyPage {
       ? `${expectedUrl}${pageNumber ?? ''}`
       : undefined;
 
-    await this.clickAndWaitForNavigation(this.continueButton, finalUrl);
+    await this.clickAndWaitForNavigation(this.continueButton, finalUrl, false);
   }
 
   async navigateConfirm() {
@@ -119,7 +119,7 @@ export abstract class BaseJourneyPage {
     await this.confirmButton.scrollIntoViewIfNeeded();
     await expect(this.confirmButton).toBeVisible();
     await expect(this.confirmButton).toBeEnabled();
-    await this.clickAndWaitForNavigation(this.confirmButton);
+    await this.clickAndWaitForNavigation(this.confirmButton, undefined, true);
   }
 
   async navigatePrevious() {
@@ -127,7 +127,7 @@ export abstract class BaseJourneyPage {
     await this.previousButton.scrollIntoViewIfNeeded();
     await expect(this.previousButton).toBeVisible();
     await expect(this.previousButton).toBeEnabled();
-    await this.clickAndWaitForNavigation(this.previousButton);
+    await this.clickAndWaitForNavigation(this.previousButton, undefined, true);
   }
 
   async navigateIgnoreWarningAndGo() {
@@ -135,14 +135,14 @@ export abstract class BaseJourneyPage {
     await this.ignoreWarningAndGoButton.scrollIntoViewIfNeeded();
     await expect(this.ignoreWarningAndGoButton).toBeVisible();
     await expect(this.ignoreWarningAndGoButton).toBeEnabled();
-    await this.clickAndWaitForNavigation(this.ignoreWarningAndGoButton);
+    await this.clickAndWaitForNavigation(this.ignoreWarningAndGoButton, undefined, false);
   }
 
   async navigateCancel() {
     await this.page.waitForLoadState();
     await this.cancelHyperlink.scrollIntoViewIfNeeded();
     await expect(this.cancelHyperlink).toBeVisible();
-    await this.clickAndWaitForNavigation(this.cancelHyperlink);
+    await this.clickAndWaitForNavigation(this.cancelHyperlink, undefined, true);
   }
 
   getAddNewButton(position: number = 0): Locator {
@@ -179,22 +179,22 @@ export abstract class BaseJourneyPage {
       .toBe(0);
   }
 
-  private async waitForNavigation(expectedUrl?: string) {
-    if (expectedUrl) {
-      await this.page.waitForURL(new RegExp(expectedUrl));
-      return;
-    }
-
+  private async waitForUrlChange() {
     const initialUrl = this.page.url();
     await this.page.waitForURL(url => {
       return url.toString() !== initialUrl;
     });
   }
 
-  private async clickAndWaitForNavigation(button: Locator, expectedUrl?: string) {
-    const waitForNavigation = this.waitForNavigation(expectedUrl);
+  private async clickAndWaitForNavigation(button: Locator, expectedUrl?: string, requireUrlChange: boolean = true) {
     await button.click();
-    await waitForNavigation;
+
+    if (expectedUrl) {
+      await this.page.waitForURL(new RegExp(expectedUrl));
+    } else if (requireUrlChange) {
+      await this.waitForUrlChange();
+    }
+
     await this.waitForSpinner();
   }
 
