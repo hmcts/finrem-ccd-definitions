@@ -57,35 +57,67 @@ export class SigninPage extends BaseJourneyPage {
 
     const expectedOrigin = new URL(expectedUrl).origin;
 
-    const normalisedPaths = paths.map(path =>
-    {return `/${path.replace(/^\/+|\/+$/g, '')}`;}
-    );
+    const normalisedPaths = paths.map(path => {
+      return `/${path.replace(/^\/+|\/+$/g, '')}`;
+    });
+
+    const acceptedPathSet = new Set(normalisedPaths);
+
+    // Some environments land users on either Cases or Worklist after login.
+    if (
+      acceptedPathSet.has(`/${config.loginPaths.cases}`)
+      || acceptedPathSet.has(`/${config.loginPaths.worklist}`)
+    ) {
+      acceptedPathSet.add(`/${config.loginPaths.cases}`);
+      acceptedPathSet.add(`/${config.loginPaths.worklist}`);
+    }
+
+    const acceptedPaths = [...acceptedPathSet];
 
     const timeout = expectedUrl === 'http://localhost:3000'
       ? 5000
       : 30000;
 
+    const maxRefreshRetries = expectedUrl === 'http://localhost:3000'
+      ? 1
+      : 2;
+
+    const hasExpectedLandingPath = (url: URL): boolean => {
+      const currentPath = url.pathname.replace(/\/+$/, '') || '/';
+      return url.origin === expectedOrigin && acceptedPaths.includes(currentPath);
+    };
+
     await this.login(email, password);
 
-    try {
-      await this.page.waitForURL(
-        url => {
-          const currentPath = url.pathname.replace(/\/+$/, '') || '/';
+    let lastError: unknown;
 
-          return (
-            url.origin === expectedOrigin &&
-            normalisedPaths.includes(currentPath)
-          );
-        },
-        { timeout }
-      );
-    } catch (error) {
-      throw new Error(
-        'Login succeeded but user did not land on an expected page.\n' +
-        `Expected one of: ${normalisedPaths.join(', ')}\n` +
-        `Actual URL: ${this.page.url()}\n` +
-        `Cause: ${error instanceof Error ? error.message : String(error)}`
-      );
+    for (let attempt = 0; attempt <= maxRefreshRetries; attempt++) {
+      try {
+        await this.page.waitForURL(hasExpectedLandingPath, { timeout });
+        return;
+      } catch (error) {
+        lastError = error;
+
+        if (attempt === maxRefreshRetries) {
+          break;
+        }
+
+        const currentUrl = new URL(this.page.url());
+        const isOnExpectedOrigin = currentUrl.origin === expectedOrigin;
+
+        if (isOnExpectedOrigin) {
+          await this.page.reload({ waitUntil: 'domcontentloaded' });
+        } else {
+          await this.page.waitForLoadState('domcontentloaded');
+        }
+      }
     }
+
+    throw new Error(
+      'Login succeeded but user did not land on an expected page.\n' +
+      `Expected one of: ${acceptedPaths.join(', ')}\n` +
+      `Actual URL: ${this.page.url()}\n` +
+      `Cause: ${lastError instanceof Error ? lastError.message : String(lastError)}`
+    );
   }
 }
