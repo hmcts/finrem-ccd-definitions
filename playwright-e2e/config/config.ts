@@ -8,7 +8,7 @@ const env = process.env.RUNNING_ENV || 'aat';
 // Any new data added below will immediately be available wherever config is imported.
 const configuration = {
 
-  waEnabled: String(process.env.ENABLE_WA).toLowerCase() === 'true',
+  waEnabled: String(process.env.ENABLE_WA ?? 'true').toLowerCase() === 'true',
 
   // URLs
   idamUrl:
@@ -130,6 +130,16 @@ const configuration = {
   intervener_barrister: {
     email: process.env.PLAYWRIGHT_INT_BARRISTER_USERNAME || '',
     password: process.env.PLAYWRIGHT_INT_BARRISTER_PSWD || '',
+  },
+
+  ctsc_admin: {
+    email: process.env.CTSC_ADMIN_USERNAME || '',
+    password: process.env.STAFF_FR_PASSWORD || '',
+  },
+
+  ctsc_teamleader: {
+    email: process.env.CTSC_TEAMLEADER_USERNAME || '',
+    password: process.env.STAFF_FR_PASSWORD || '',
   },
 
   jurisdiction: {

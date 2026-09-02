@@ -87,6 +87,9 @@ import {JudgeUploadApprovedOrderPage} from '../pages/events/judge-upload-approve
 import {RemoveCaseDocumentPage} from '../pages/events/remove-case-document/RemoveCaseDocumentPage.ts';
 import { StopRepresentingClientPage } from '../pages/events/stop-representing-client/StopRepresentingClientPage.ts';
 import { CloseCasePage } from '../pages/events/close-case/CloseCasePage.ts';
+import { TaskUiChecks } from '../pages/WAtasks/TaskUiChecks.ts';
+import { AttachScannedDocumentsPage } from '../pages/events/attach-scanned-doc/AttachScannedDocumentsPage.ts';
+import { HwfFeeAccountDebitedPage } from '../pages/events/hwf-fee-account-debited/HwfFeeAccountDebitedPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -122,6 +125,7 @@ type CreateFixtures = {
   orderSummaryPage: OrderSummaryPage;
   caseSubmissionPage: CaseSubmissionPage;
   hwfApplicationAcceptedPage: HwfApplicationAcceptedPage;
+  hwfFeeAccountDebitedPage: HwfFeeAccountDebitedPage;
   issueApplicationPage: IssueApplicationPage;
   approveApplicationPage: ApproveApplicationPage;
   sendOrderPage: SendOrderPage;
@@ -167,6 +171,8 @@ type CreateFixtures = {
   stopRepresentingClientPage: StopRepresentingClientPage;
   removeCaseDocumentPage: RemoveCaseDocumentPage;
   closeCasePage: CloseCasePage;
+  taskUiChecks: TaskUiChecks;
+  attachScannedDocumentsPage: AttachScannedDocumentsPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -259,6 +265,9 @@ export const test = base.extend<CreateFixtures>({
   },
   hwfApplicationAcceptedPage: async ({ page }, use) => {
     await use(new HwfApplicationAcceptedPage(page));
+  },
+  hwfFeeAccountDebitedPage:async ({ page }, use) => {
+    await use(new HwfFeeAccountDebitedPage(page));
   },
   issueApplicationPage: async ({ page }, use) => {
     await use(new IssueApplicationPage(page));
@@ -394,5 +403,11 @@ export const test = base.extend<CreateFixtures>({
   },
   closeCasePage: async ({ page }, use) => {    
     await use(new CloseCasePage(page, commonActionsHelper));
+  },
+  taskUiChecks: async ({ page }, use) => {
+    await use(new TaskUiChecks(page));
+  },
+  attachScannedDocumentsPage: async ({ page }, use) => {
+    await use(new AttachScannedDocumentsPage(page));
   }
 });
