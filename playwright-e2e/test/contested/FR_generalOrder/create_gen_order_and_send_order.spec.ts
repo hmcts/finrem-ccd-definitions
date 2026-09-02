@@ -1,5 +1,4 @@
 import { test } from '../../../fixtures/fixtures';
-import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { sendOrderTableData } from '../../../resources/check_your_answer_content/send_order/sendOrderTable';
@@ -27,7 +26,7 @@ test.describe('Contested Create Send Order to an applicant solicitor', () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Create general application

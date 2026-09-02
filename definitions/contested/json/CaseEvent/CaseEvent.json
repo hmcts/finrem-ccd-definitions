@@ -153,9 +153,9 @@
     "ShowEventNotes": "Y"
   },
   {
-    "LiveFrom": "01/01/2017",
+    "LiveFrom": "21/07/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_giveAllocationDirections",
+    "ID": "FR_giveAllocationDirectionsV2",
     "Name": "Give Allocation Directions",
     "Description": "Give Allocation Directions",
     "DisplayOrder": 12,
@@ -516,8 +516,7 @@
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
+    "ShowSummary": "Y"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -844,7 +843,7 @@
     "DisplayOrder": 122,
     "PostConditionState": "paperCaseAdded",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
-    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/contested/set-paper-case-org-policy",
+    "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
     "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
@@ -1142,6 +1141,8 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "RetriesTimeoutURLAboutToSubmitEvent": "3,4,5",
+    "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
   },
@@ -1373,11 +1374,11 @@
     "ShowEventNotes": "Y"
   },
   {
-    "LiveFrom": "28/02/2025",
+    "LiveFrom": "21/07/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "FR_manageExpressCase",
+    "ID": "FR_manageExpressCase_v2",
     "Name": "Manage Express Case",
-    "Description": "Remove a case from the Express Pilot",
+    "Description": "Manage whether a case is in the Express Pilot",
     "DisplayOrder": 157,
     "PreConditionState(s)": "*",
     "PostConditionState": "*",
@@ -1469,6 +1470,7 @@
     "CallBackURLAboutToStartEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToStartEvent",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "ShowSummary": "Y",
     "ShowEventNotes": "N"
   },

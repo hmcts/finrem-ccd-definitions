@@ -2,6 +2,9 @@ import fs from 'fs';
 import { Page } from 'playwright';
 import { expect, Locator } from '@playwright/test';
 import config from '../../config/config';
+import { DateHelper } from '../../data-utils/DateHelper.ts';
+import { CaseDetailsPage } from '../CaseDetailsPage.ts';
+import { createGeneralEmailTabData } from '../../resources/tab_content/common-tabs/case_documents_tab.ts';
 
 export class CommonActionsHelper {
 
@@ -82,32 +85,63 @@ export class CommonActionsHelper {
     };
   }
 
+  /**
+   * Uploads a file and retries when the external API reports rate limiting.
+   *
+   * The delay uses exponential backoff, doubling after each failed attempt.
+   * With an initial wait of 500 milliseconds and 19 retries, the delays begin:
+   * 500, 1000, 2000, 4000, 8000, 16000, 29000 milliseconds.
+   * Delays are capped at 29000 milliseconds.  Tests timeout at 30000 milliseconds.
+   *
+   * @param page Playwright page used to wait between attempts.
+   * @param uploadField File input used for the upload.
+   * @param fileToUpload File payload or path to upload.
+   * @param maxRetries Maximum number of retries after the initial attempt.
+   * @param waitMs Initial backoff delay in milliseconds.
+   * @param maxWaitMs Maximum delay permitted between attempts.
+   */
   async uploadWithRateLimitRetry(
     page: Page,
     uploadField: Locator,
-    fileToUpload: { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> } | string,
-    maxRetries: number = 5,
-    waitMs: number = 5000
-  ) {
-    for (let attempt = 0; attempt < maxRetries; attempt++) {
+    fileToUpload:
+      | { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> }
+      | string,
+    maxRetries: number = 19,
+    waitMs: number = 500,
+    maxWaitMs: number = 29_000
+  ): Promise<void> {
+    const errorLocator = uploadField.locator(
+      'xpath=../preceding-sibling::span[contains(text(), "Your request was rate limited. Please wait a few seconds before retrying your document upload")]'
+    );
+
+    // Add one because maxRetries excludes the initial upload attempt.
+    const maxAttempts = maxRetries + 1;
+
+    for (let attempt = 0; attempt < maxAttempts; attempt++) {
       await uploadField.setInputFiles(fileToUpload);
 
       await this.waitForAllUploadsToBeCompleted(page);
 
-      // Check for rate limit error in a preceding span sibling
-      const errorLocator = uploadField.locator(
-        'xpath=../preceding-sibling::span[contains(text(), "Your request was rate limited. Please wait a few seconds before retrying your document upload")]'
-      );
-      const isErrorVisible = await errorLocator.isVisible({ timeout: 2000 });
+      const isErrorVisible = await errorLocator.isVisible({
+        timeout: 2_000
+      });
 
       if (!isErrorVisible) {
-        return; // Success
+        return;
       }
-      if (attempt < maxRetries - 1) {
-        await page.waitForTimeout(waitMs);
-      } else {
-        throw new Error('Rate limit error persists after retries');
+
+      if (attempt === maxAttempts - 1) {
+        throw new Error(
+          `Rate limit error persists after ${maxAttempts} upload attempts`
+        );
       }
+
+      const backoffMs = Math.min(
+        waitMs * 2 ** attempt,
+        maxWaitMs
+      );
+
+      await page.waitForTimeout(backoffMs);
     }
   }
 
@@ -127,5 +161,33 @@ export class CommonActionsHelper {
     await day.blur();
     await month.blur();
     await year.blur();
+  }
+
+  /**
+   * Generates possible timestamps for a tab assertion.
+   *
+   * The first value is an estimated submission time. Each subsequent value
+   * is one second earlier than the previous value.
+   *
+   * @param estimatedSubmitDateTime Latest expected submission time.
+   * @param timeZone Timezone used by FinRem COS, such as UTC or Europe/London.
+   * @param numberOfAttempts Number of timestamp candidates to generate.  So if 20, 20 timestamps produced to check.
+   * @returns Formatted timestamps ordered from most recent to oldest.
+   */
+  getDateTimesForTabText(
+    estimatedSubmitDateTime: Date = new Date(),
+    timeZone: string = 'UTC',
+    numberOfAttempts: number = 20
+  ): string[] {
+    return Array.from({ length: numberOfAttempts }, (_, index) => {
+      const adjustedDate = new Date(
+        estimatedSubmitDateTime.getTime() - index * 1_000
+      );
+
+      return DateHelper.getDateTimeFormattedWithSeconds(
+        adjustedDate,
+        timeZone
+      );
+    });
   }
 }

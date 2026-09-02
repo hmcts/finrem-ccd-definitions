@@ -61,6 +61,10 @@ export const CommonEvents: Record<string, CaseEvent> = {
     listItem: "Update Contact Details",
     ccdCallback: "FR_updateCaseDetailsSolicitor"
   },
+  attachScannedDocs: {
+    listItem: "Attach scanned docs",
+    ccdCallback: "attachScannedDocs"
+  }
 };
 
 // Consented Events
@@ -88,6 +92,10 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
   updateFrCourtInfo: {
     listItem: "Update FR Court Info",
     ccdCallback: "FR_updateCourtInfo"
+  },
+  hwfFeeAccountDebited: {
+    listItem: "Fee Account Debited",
+    ccdCallback: "FR_paymentMadeFromHWF"
   },
   // Common events
   createFlag: CommonEvents.createFlag,
@@ -119,11 +127,11 @@ export const ContestedEvents: Record<string, CaseEvent> = {
   },
   manageExpressCase: {
     listItem: "Manage Express Case",
-    ccdCallback: "FR_manageExpressCase"
+    ccdCallback: "FR_manageExpressCase_v2"
   },
   giveAllocationDirection: {
     listItem: "Give Allocation Directions",
-    ccdCallback: "FR_giveAllocationDirections"
+    ccdCallback: "FR_giveAllocationDirectionsV2"
   },
   amendPaperApplicationDetails: {
     listItem: "Amend Application Details",

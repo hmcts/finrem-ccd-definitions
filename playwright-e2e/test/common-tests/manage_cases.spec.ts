@@ -19,7 +19,7 @@ test.describe('Confidentiality of cases', () => {
       await manageCaseDashboardPage.signOut();
 
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseworkerCaseId);
       await manageCaseDashboardPage.navigateToCase(solCaseId, false);
       await manageCaseDashboardPage.signOut();
@@ -32,7 +32,7 @@ test(
   'Validate Case List Page filter fields', {tag: []},
   async ({loginPage, manageCaseDashboardPage, caseListPage}) => {
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    await loginPage.loginCaseworker();
     await caseListPage.visit();
 
     await caseListPage.verifyCaseListPageForConsentedCase([

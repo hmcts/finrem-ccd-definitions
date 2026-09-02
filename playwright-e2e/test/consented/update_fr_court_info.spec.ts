@@ -1,5 +1,4 @@
 import { test } from '../../fixtures/fixtures';
-import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
 import { updateFrCourtInfoTable } from '../../resources/check_your_answer_content/update_fr_court_info/updateCourtInfoTable';
@@ -23,7 +22,7 @@ test(
 
     // Login in as caseworker
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    await loginPage.loginCaseworker();
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Update FR court info 

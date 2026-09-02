@@ -1,5 +1,4 @@
 import { test } from '../../../fixtures/fixtures';
-import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { CaseDocumentsTabOnlineFormATabData } from '../../../resources/tab_content/common-tabs/case_documents_tab';
@@ -21,7 +20,7 @@ test(
 
     // Login as caseworker and navigate to case
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.worklist);
+    await loginPage.loginCaseworker();
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // assert OnlineForm.pdf is present in case documents tab before removing

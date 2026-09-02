@@ -1,19 +1,21 @@
 import { expect, Locator, Page } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
-import { CommonActionsHelper } from '../../helpers/CommonActionsHelper.js';
+import { CommonActionsHelper } from '../../helpers/CommonActionsHelper.ts';
+import { DateHelper } from '../../../data-utils/DateHelper.js';
 
 export class CreateGeneralEmailPage extends BaseJourneyPage {
   private readonly commonActionsHelper: CommonActionsHelper;
   private readonly recipientEmailBox: Locator;
   private readonly bodyofEmailBox: Locator;
-  private readonly optionalUploadDocument: Locator;
+  private readonly fileUpload: Locator;
 
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page);
     this.commonActionsHelper = commonActionsHelper;
     this.recipientEmailBox = page.getByRole('textbox', { name: 'Recipient\'s email' });
     this.bodyofEmailBox = page.getByRole('textbox', { name: 'Please fill in the body of' });
-    this.optionalUploadDocument = page.getByRole('button', { name: 'Upload document' });
+    this.fileUpload = page.locator('input[type="file"]#generalEmailUploadedDocuments_value'
+    );
   }
 
   // SEE DFR-3942
@@ -34,9 +36,17 @@ export class CreateGeneralEmailPage extends BaseJourneyPage {
     expect(this.bodyofEmailBox).toBeVisible();
     await this.bodyofEmailBox.fill(body);
   }
+
   async uploadDocument(filePath: string) {
-    expect(this.optionalUploadDocument).toBeVisible();
-    await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.optionalUploadDocument, filePath);
+    await this.navigateAddNew();
+    await expect(this.fileUpload).toBeVisible();
+    await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.fileUpload, filePath);
+  }
+
+  getDateTimesForTabText(): string[] {
+    return this.commonActionsHelper.getDateTimesForTabText(
+      new Date(),
+      DateHelper.getTimeZone()
+    );
   }
 }
-

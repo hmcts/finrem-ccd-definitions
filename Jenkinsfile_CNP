@@ -137,7 +137,6 @@ def getFinremCosImage() {
 
 def setPreviewEnvVars() {
   def githubApi = new GithubAPI(this)
-  env.ENABLE_WA = false
 
   if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:wa')) {
     env.ENABLE_WA = true
@@ -165,7 +164,7 @@ def uploadWaPreviewDmnDefinitions() {
   dir("${WORKSPACE}") {
     sh """
       ./bin/wa/pull-latest-task-config-files.sh "${waTaskConfigRepoUrl}" "${waTaskConfigBranch}" camunda
-      ./bin/wa/import-dmn-diagram.sh . financial-remedy finrem camunda
+      ./bin/wa/import-dmn-diagram.sh . divorce finrem camunda
     """
   }
 }
@@ -232,10 +231,15 @@ withPipeline("nodejs", product, component) {
       env.EXCLUDE = getPreviewDefinitionExclusions()
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
+        yarnBuilder.yarn("generate-excel-preview-wa-consented")
       }
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-contested")
-        yarnBuilder.yarn("copy-preview-xlxs-to-resources")
+        if (env.ENABLE_WA?.toBoolean()) {
+            yarnBuilder.yarn("copy-preview-xlxs-to-resources-wa")
+        } else {
+            yarnBuilder.yarn("copy-preview-xlxs-to-resources")
+        }
       }
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
@@ -330,11 +334,13 @@ withPipeline("nodejs", product, component) {
   before('smoketest:preview') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'smoke-output'
     sh 'yarn playwright install'
+    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
   }
 
   before('smoketest:aat') {
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'smoke-output'
     sh 'yarn playwright install'
+    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
   }
 
   before('functionalTest:preview') {

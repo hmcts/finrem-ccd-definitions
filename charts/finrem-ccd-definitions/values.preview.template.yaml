@@ -71,6 +71,9 @@ finrem-cos:
       VACATE_HEARING_ENABLED: true
       FINREM_CITIZEN_UI_ENABLED: true
       FINREM_WORK_ALLOCATION_ENABLED: false
+      MANAGE_CASE_DOCS_DELETE_ENABLED: true
+      ESTIMATED_ASSETS_CHECKLIST_V3_ENABLED: true
+      PAPER_ESTIMATED_ASSETS_CHECKLIST_V3_ENABLED: false
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
@@ -336,7 +339,7 @@ ccd:
       - name: download-postgres-jdbc
         image: hmctsprod.azurecr.io/curl:7.70.0
         command: ['curl', '-L', 'https://jdbc.postgresql.org/download/postgresql-42.7.9.jar', '-o', '/logstash-lib/postgresql.jar']
-      volumeMounts:
+        volumeMounts:
         - name: logstash-lib
           mountPath: /logstash-lib
     extraVolumes: |

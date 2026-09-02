@@ -4380,6 +4380,14 @@
     "DisplayContext": "MANDATORY"
   },
   {
+    "LiveFrom": "01/06/2026",
+    "ID": "FR_judgeDraftDirectionOrder_to_judgeApprovedOrderCollection",
+    "CaseEventID": "FR_judgeDraftDirectionOrder",
+    "CaseFieldID": "judgeApprovedOrderCollection",
+    "ListElementCode": "isFinalOrder",
+    "DisplayContext": "MANDATORY"
+  },
+  {
     "LiveFrom": "29/01/2025",
     "ID": "FR_judgeDraftDirectionOrder_to_judgeApprovedOrderCollection",
     "CaseEventID": "FR_judgeDraftDirectionOrder",
@@ -4466,47 +4474,6 @@
     "CaseFieldID": "draftDirectionDetailsCollection",
     "ListElementCode": "nottinghamList",
     "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "29/01/2025",
-    "ID": "FR_directionOrder_to_uploadHearingOrder",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "uploadHearingOrder",
-    "ListElementCode": "uploadDraftDocument",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "29/01/2025",
-    "ID": "FR_directionOrder_to_uploadHearingOrder",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "uploadHearingOrder",
-    "ListElementCode": "orderDateTime",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "29/01/2025",
-    "ID": "FR_directionOrder_to_uploadHearingOrder",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "uploadHearingOrder",
-    "ListElementCode": "isOrderStamped",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "29/01/2025",
-    "ID": "FR_directionOrder_to_uploadHearingOrder",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "uploadHearingOrder",
-    "ListElementCode": "originalDocument",
-    "DisplayContext": "MANDATORY"
-  },
-  {
-    "LiveFrom": "29/01/2025",
-    "ID": "FR_directionOrder_to_uploadHearingOrder",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "uploadHearingOrder",
-    "ListElementCode": "additionalDocuments",
-    "DisplayContext": "OPTIONAL",
-    "FieldShowCondition": "uploadHearingOrder=\"DONOTSHOW\""
   },
   {
     "LiveFrom": "29/10/2024",
@@ -5468,15 +5435,6 @@
     "DisplayContext": "MANDATORY"
   },
   {
-    "LiveFrom": "27/12/2024",
-    "ID": "FR_directionOrderToUnprocessedApprovedDocuments",
-    "CaseEventID": "FR_directionOrder",
-    "CaseFieldID": "unprocessedApprovedDocuments",
-    "ListElementCode": "uploadDraftDocument",
-    "DisplayContext": "MANDATORY",
-    "EventHintText": "PLEASE NOTE: You must upload a Word document or PDF version of document."
-  }, 
-  {
     "LiveFrom": "25/06/2025",
     "ID": "FR_manageHearingsToWorkingHearing",
     "CaseEventID": "FR_manageHearings",
@@ -6233,6 +6191,14 @@
     "ID": "FR_uploadApprovedOrderToCwApprovedOrderCollection",
     "CaseEventID": "FR_uploadApprovedOrder",
     "CaseFieldID": "cwApprovedOrderCollection",
+    "ListElementCode": "isFinalOrder",
+    "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_uploadApprovedOrderToCwApprovedOrderCollection",
+    "CaseEventID": "FR_uploadApprovedOrder",
+    "CaseFieldID": "cwApprovedOrderCollection",
     "ListElementCode": "additionalDocuments",
     "DisplayContext": "OPTIONAL"
   },
@@ -6243,6 +6209,14 @@
     "CaseFieldID": "cwApprovedOrderCollection",
     "ListElementCode": "uploadDraftDocument",
     "DisplayContext": "MANDATORY"
+  },
+  {
+    "LiveFrom": "02/10/2025",
+    "ID": "FR_uploadApprovedOrderMhToCwApprovedOrderCollection",
+    "CaseEventID": "FR_uploadApprovedOrderMh",
+    "CaseFieldID": "cwApprovedOrderCollection",
+    "ListElementCode": "isFinalOrder",
+    "DisplayContext": "OPTIONAL"
   },
   {
     "LiveFrom": "02/10/2025",
