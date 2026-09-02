@@ -92,6 +92,15 @@ def buildPlaywrightCommand(tags, browser) {
     }
     def tagList = tags.split(',').collect { it.trim() }
 
+    def projectByBrowser = [
+            'msedge': 'edge',
+            'edge': 'edge',
+            'chromium': 'chromium',
+            'chrome': 'chrome',
+            'firefox': 'firefox',
+            'webkit': 'webkit'
+    ]
+
     def command = 'yarn playwright test '
     tagList.each { tag ->
         if (!tag.isEmpty()) {
@@ -99,9 +108,13 @@ def buildPlaywrightCommand(tags, browser) {
         }
     }
 
-    if (browser) {
-        command += " --project=${browser}"
-        command = "playwright install ${browser} && ${command}"
+    if (browser && browser != 'all') {
+        def playwrightProject = projectByBrowser[browser] ?: browser
+        command += " --project=${playwrightProject}"
+
+        // Keep install target aligned to project naming where possible.
+        def installBrowser = playwrightProject == 'edge' ? 'msedge' : playwrightProject
+        command = "playwright install ${installBrowser} && ${command}"
     }
 
     return command
