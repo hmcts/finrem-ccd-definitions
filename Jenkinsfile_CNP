@@ -3,7 +3,7 @@
 import uk.gov.hmcts.contino.AppPipelineConfig
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure@2.5.1")
+@Library("Infrastructure")
 
 String product = "finrem"
 String component = "ccd-definitions"
@@ -149,7 +149,17 @@ def setPreviewEnvVars() {
 }
 
 def getPreviewDefinitionExclusions() {
-  return env.ENABLE_GS?.toBoolean() ? '*-prod.json' : '*-prod.json,*-gs-nonprod.json'
+  def exclusions = ['*-prod.json']
+
+  if (!env.ENABLE_GS?.toBoolean()) {
+    exclusions << '*-gs-nonprod.json'
+  }
+
+  if (!env.ENABLE_WA?.toBoolean()) {
+    exclusions << '*-wa-nonprod.json'
+  }
+
+  return exclusions.join(',')
 }
 
 def setCommonWaPreviewEnvVars() {
@@ -259,7 +269,7 @@ withPipeline("nodejs", product, component) {
     } else {
 
       withSubscription(env.ENV != 'prod' ? 'nonprod' : 'prod') {
-        withTeamSecrets(pipelineConf, env.ENV == 'prod' ? 'prod' : 'aat') {
+        withTeamSecrets(pipelineConf, 'aat') {
           stageWithAgent('Generate Financial Remedy Consented Case config', product) {
             dir('definitions/consented/json/UserProfile') {
               sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
