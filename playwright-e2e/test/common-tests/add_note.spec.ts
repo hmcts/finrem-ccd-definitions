@@ -1,5 +1,4 @@
 import {test} from '../../fixtures/fixtures.ts';
-import config from '../../config/config.ts';
 import {ConsentedCaseFactory} from '../../data-utils/factory/consented/ConsentedCaseFactory.ts';
 import {ConsentedEvents, ContestedEvents} from '../../config/case-data.ts';
 import {notesTabData} from '../../resources/tab_content/common-tabs/notes_tabs.ts';
@@ -27,7 +26,7 @@ for (const data of caseNotesTestData) {
 
       // Create and setup case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       const caseId = await data.setupCase();
 
       // Navigate to case

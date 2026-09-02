@@ -25,7 +25,7 @@ properties([
         ])
 ])
 
-@Library("Infrastructure@2.5.1")
+@Library("Infrastructure")
 import uk.gov.hmcts.contino.AppPipelineConfig
 
 String type = 'nodejs'
