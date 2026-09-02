@@ -1,5 +1,4 @@
 import { test } from '../../fixtures/fixtures';
-import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
 
@@ -17,7 +16,7 @@ test(
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+    await loginPage.loginCaseworker();
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // HWF Payment
