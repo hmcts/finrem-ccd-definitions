@@ -111,13 +111,7 @@ export abstract class BaseJourneyPage {
       ? `${expectedUrl}${pageNumber ?? ''}`
       : undefined;
 
-    await this.continueButton.click();
-
-    await this.waitForSpinner();
-
-    if (finalUrl) {
-      await this.page.waitForURL(new RegExp(finalUrl));
-    }
+    await this.clickAndWaitForNavigation(this.continueButton, finalUrl);
   }
 
   async navigateConfirm() {
@@ -125,8 +119,7 @@ export abstract class BaseJourneyPage {
     await this.confirmButton.scrollIntoViewIfNeeded();
     await expect(this.confirmButton).toBeVisible();
     await expect(this.confirmButton).toBeEnabled();
-    await this.confirmButton.click();
-    await this.waitForSpinner();
+    await this.clickAndWaitForNavigation(this.confirmButton);
   }
 
   async navigatePrevious() {
@@ -134,8 +127,7 @@ export abstract class BaseJourneyPage {
     await this.previousButton.scrollIntoViewIfNeeded();
     await expect(this.previousButton).toBeVisible();
     await expect(this.previousButton).toBeEnabled();
-    await this.previousButton.click();
-    await this.waitForSpinner();
+    await this.clickAndWaitForNavigation(this.previousButton);
   }
 
   async navigateIgnoreWarningAndGo() {
@@ -143,16 +135,14 @@ export abstract class BaseJourneyPage {
     await this.ignoreWarningAndGoButton.scrollIntoViewIfNeeded();
     await expect(this.ignoreWarningAndGoButton).toBeVisible();
     await expect(this.ignoreWarningAndGoButton).toBeEnabled();
-    await this.ignoreWarningAndGoButton.click();
-    await this.waitForSpinner();
+    await this.clickAndWaitForNavigation(this.ignoreWarningAndGoButton);
   }
 
   async navigateCancel() {
     await this.page.waitForLoadState();
     await this.cancelHyperlink.scrollIntoViewIfNeeded();
     await expect(this.cancelHyperlink).toBeVisible();
-    await this.cancelHyperlink.click();
-    await this.waitForSpinner();
+    await this.clickAndWaitForNavigation(this.cancelHyperlink);
   }
 
   getAddNewButton(position: number = 0): Locator {
@@ -187,6 +177,25 @@ export abstract class BaseJourneyPage {
           return await this.spinner.count();
         })
       .toBe(0);
+  }
+
+  private async waitForNavigation(expectedUrl?: string) {
+    if (expectedUrl) {
+      await this.page.waitForURL(new RegExp(expectedUrl));
+      return;
+    }
+
+    const initialUrl = this.page.url();
+    await this.page.waitForURL(url => {
+      return url.toString() !== initialUrl;
+    });
+  }
+
+  private async clickAndWaitForNavigation(button: Locator, expectedUrl?: string) {
+    const waitForNavigation = this.waitForNavigation(expectedUrl);
+    await button.click();
+    await waitForNavigation;
+    await this.waitForSpinner();
   }
 
   async verifyFieldIsRequiredMessageShown() {
