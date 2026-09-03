@@ -39,8 +39,7 @@
     "PreConditionState(s)": "awaitingHWFDecision;awaitingPayment;awaitingPaymentResponse;applicationSubmitted;applicationIssued;referredToJudge;orderMade;consentOrderApproved;consentOrderMade;awaitingResponse;responseReceived;close;newPaperCase;awaitingInfo;readyForHearing",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
-    "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
+    "ShowSummary": "Y"
   },
   {
     "LiveFrom": "17/02/2025",
@@ -187,7 +186,7 @@
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y",
-    "Publish": "Y"
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
