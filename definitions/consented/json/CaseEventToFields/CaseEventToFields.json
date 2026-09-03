@@ -6095,8 +6095,9 @@
     "CaseEventID": "FR_approveApplication",
     "CaseFieldID": "pensionCollection",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "HIDDEN",
+    "DisplayContext": "OPTIONAL",
     "PageID": 1,
+    "FieldShowCondition": "[STATE]=\"NeverShow\"",
     "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
@@ -6105,8 +6106,9 @@
     "CaseEventID": "FR_uploadApprovedOrder",
     "CaseFieldID": "pensionCollection",
     "PageFieldDisplayOrder": 1,
-    "DisplayContext": "HIDDEN",
+    "DisplayContext": "OPTIONAL",
     "PageID": 1,
+    "FieldShowCondition": "[STATE]=\"NeverShow\"",
     "Publish": "${CCD_DEF_PUBLISH}"
   }
 ]
