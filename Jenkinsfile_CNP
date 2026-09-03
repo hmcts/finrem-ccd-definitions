@@ -223,8 +223,10 @@ withPipeline("nodejs", product, component) {
   }
   afterSuccess('akschartsinstall') {
     onPR {
-      setCommonWaPreviewEnvVars()
-      setupWaPreviewRoleAssignments()
+      if (env.ENABLE_WA?.toBoolean() || env.ENABLE_GS?.toBoolean()) {
+        setCommonWaPreviewEnvVars()
+        setupWaPreviewRoleAssignments()
+      }
       if (env.ENABLE_WA?.toBoolean()) {
         println """After akschartsinstall upload DMN and BPMN diagrams and setup WA org mappings using ${env.ORG_ROLE_MAPPING_URL}""".stripIndent()
         sh 'chmod -R +x ./bin'

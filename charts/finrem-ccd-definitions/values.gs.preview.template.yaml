@@ -4,7 +4,7 @@ xui-webapp:
   enabled: true
   nodejs:
     imagePullPolicy: Always
-    image: hmctsprod.azurecr.io/xui/webapp:pr-5225
+    image: hmctsprod.azurecr.io/xui/webapp:latest
     environment:
       HEALTH_ROLE_ASSIGNMENT_API: http://${SERVICE_NAME}-am-role-assignment-service/health
       SERVICES_WORK_ALLOCATION_TASK_API: http://${SERVICE_NAME}-wa-task-management-api
@@ -70,51 +70,6 @@ am-org-role-mapping-service:
       DB_FEATURE_FLAG_ENABLE: st_cic_wa_1_0
       ORM_ENV: pr
 
-wa:
-  enabled: ${ENABLE_GS}
-  wa:
-    postgresql:
-      enabled: false
-  global:
-    postgresUsername: hmcts
-    postgresSecret: postgres
-    postgresHost: financial-remedy-preview.postgres.database.azure.com
-    databaseNamePrefix: "pr-${CHANGE_ID}-"
-
-  camunda-bpm:
-    java:
-      ingressHost: camunda-${SERVICE_FQDN}
-      devcpuRequests: 500m
-      devmemoryRequests: 1Gi
-      devcpuLimits: 2
-      devmemoryLimits: 4Gi
-      environment:
-        CAMUNDA_DB_CONN_OPTIONS: "?stringtype=unspecified&reWriteBatchedInserts=true&sslmode=require"
-
-  wa-task-management-api:
-    java:
-      disableKeyVaults: true
-      ingressHost: wa-task-management-api-${SERVICE_FQDN}
-      devcpuRequests: 500m
-      devmemoryRequests: 1Gi
-      devcpuLimits: 2
-      devmemoryLimits: 4Gi
-      environment:
-        CAMUNDA_URL: "http://{{ .Release.Name }}-camunda/engine-rest"
-        IDAM_URL: "https://idam-api.{{ .Values.global.environment }}.platform.hmcts.net"
-        S2S_URL: "http://rpe-service-auth-provider-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal"
-        OPEN_ID_IDAM_URL: "https://idam-web-public.{{ .Values.global.environment }}.platform.hmcts.net"
-        ROLE_ASSIGNMENT_URL: http://${SERVICE_NAME}-am-role-assignment-service
-        ALLOWED_JURISDICTIONS: wa,divorce
-        ALLOWED_CASE_TYPES: financialremedymvp2,financialremedycontested
-        LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
-        MANDATORY_TASK_FIELD_CHECK_ENABLED: true
-        CCD_DATA_STORE_URL: http://${SERVICE_NAME}-ccd-data-store-api
-        S2S_SECRET_TASK_MANAGEMENT_API: ${S2S_SECRET_TASK_MANAGEMENT_API}
-        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
-        WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
-        WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
-
   wa-case-event-handler:
     java:
       disableKeyVaults: true
@@ -141,50 +96,6 @@ wa:
         AZURE_SERVICE_BUS_TOPIC_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
         AZURE_SERVICE_BUS_CCD_CASE_EVENTS_SUBSCRIPTION_NAME: ${SERVICE_NAME}-ccd-case-events
-
-  wa-task-monitor:
-    java:
-      disableKeyVaults: true
-      ingressHost: wa-task-monitor-${SERVICE_FQDN}
-      environment:
-        S2S_SECRET_TASK_MONITOR: ${S2S_SECRET_TASK_MONITOR}
-        WA_IDAM_CLIENT_SECRET: ${WA_IDAM_CLIENT_SECRET}
-        WA_SYSTEM_PASSWORD: ${WA_SYSTEM_PASSWORD}
-        WA_SYSTEM_USERNAME: ${WA_SYSTEM_USERNAME}
-        WA_TASK_MANAGEMENT_API_URL: http://{{ .Release.Name }}-wa-task-management-api
-
-  wa-workflow-api:
-    java:
-      disableKeyVaults: true
-      devcpuRequests: 500m
-      devmemoryRequests: 1Gi
-      devcpuLimits: 2
-      devmemoryLimits: 4Gi
-      environment:
-        DB_READER_USERNAME: "hmcts"
-        LAUNCH_DARKLY_SDK_KEY: ${WA_LAUNCH_DARKLY_SDK_KEY}
-        S2S_SECRET_WORKFLOW_API: ${S2S_SECRET_WORKFLOW_API}
-
-  wa-message-cron-service:
-    job:
-      schedule: "*/1 * * * *"
-      releaseNameOverride: "{{ .Release.Name }}-wa-message-cron"
-
-  wa-initiation-batch:
-    job:
-      schedule: "*/1 * * * *"
-      releaseNameOverride: "{{ .Release.Name }}-wa-task-batch"
-
-  wa-reconfiguration-batch:
-    job:
-      schedule: "*/1 * * * *"
-      releaseNameOverride: "{{ .Release.Name }}-reconfiguration"
-
-  wa-termination-batch:
-    job:
-      schedule: "*/1 * * * *"
-      releaseNameOverride: "{{ .Release.Name }}-termination-batch"
-
 
 ccd:
   ccd:
