@@ -1,34 +1,44 @@
 import { type Page, type Locator, expect } from '@playwright/test';
+import { BaseJourneyPage } from './BaseJourneyPage';
 import config from '../config/config.ts';
 
-export class SigninPage {
-  
-  private readonly page: Page;
+export class SigninPage extends BaseJourneyPage{
+
   private readonly emailInputLocator: Locator;
   private readonly passwordInputLocator: Locator;
-  private readonly signinButtonLocator: Locator;
 
   public constructor(page: Page) {
-    this.page = page;
-    this.emailInputLocator = page.getByLabel('Email address');
+    super(page);
+    this.emailInputLocator = page.getByLabel('Enter your email address');
     this.passwordInputLocator = page.getByRole('textbox', { name: 'Password' });
-    this.signinButtonLocator = page.getByRole('button', { name: 'Sign in' });
   }
 
   private async login(email: string, password: string) {
     await expect(this.emailInputLocator).toBeVisible();
     await this.emailInputLocator.fill(email);
+    await this.navigateContinue();
     await expect(this.passwordInputLocator).toBeVisible();
     await this.passwordInputLocator.fill(password);
-    await expect(this.signinButtonLocator).toBeVisible();
-    await expect(this.signinButtonLocator).toBeEnabled();
-    await this.signinButtonLocator.click();
+    await this.navigateContinue();
+  }
+
+  async loginCaseworker() {
+    const defaultLoginPath = config.waEnabled
+      ? config.loginPaths.worklist
+      : config.loginPaths.cases;
+
+    await this.loginWaitForPath(
+      config.caseWorker.email,
+      config.caseWorker.password,
+      config.manageCaseBaseURL,
+      defaultLoginPath)
+    ;
   }
 
   /**
    *  Resilient login.  Requires the path that you expect a User to land on.
    *  For instance, Solicitors and Caseworker land on pages with different paths.
-   *   Faster timeout works for local running, but remains as safer Playwright default for AAT.
+   *  Faster timeout works for local running, but remains as safer Playwright default for AAT.
    * @param email
    * @param password
    * @param expectedUrl
@@ -36,12 +46,11 @@ export class SigninPage {
    */
   async loginWaitForPath(email: string, password: string, expectedUrl: string, requiredPath: string) {
     const maxRetries = 10;
-    if (process.env.RUNNING_ENV === 'demo' && requiredPath.endsWith('list')) { requiredPath = config.loginPaths.cases; }
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
         await this.login(email, password);
-        
+
         let timeoutAmount = 30000;
         if ( expectedUrl === 'http://localhost:3000') {
           timeoutAmount = 2000;

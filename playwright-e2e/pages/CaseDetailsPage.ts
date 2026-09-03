@@ -31,7 +31,7 @@ export class CaseDetailsPage {
   }
 
   public async selectHeader(header: string): Promise<void> {
-    const tabHeader = this.page.getByRole('tab', { name: header });
+    const tabHeader = this.page.getByRole('tab', { name: header, exact: true });
 
     await expect(tabHeader).toBeVisible();
     await tabHeader.click();
@@ -65,7 +65,10 @@ export class CaseDetailsPage {
     await expect(this.successfulUpdateBanner).toContainText(event);
   }
 
-  async assertTabData(tabs: Tab[]) {
+  async assertTabData(
+    tabs: Tab[],
+    contentAssertionTimeout?: number
+  ) {
     for (const tab of tabs) {
       await this.assertTabHeader(tab.tabName, tab.tabContent[0]);
       // Wait for the first content item to be attached (visible in DOM)
@@ -75,33 +78,59 @@ export class CaseDetailsPage {
         const exact = typeof firstContent === 'object' ? (firstContent.exact ?? true) : true;
         await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 5000 });
       }
-      await this.assertTabContent(tab.tabContent);
+      await this.assertTabContent(tab.tabContent, contentAssertionTimeout);
       if (tab.excludedContent) {
         await this.assertExcludedContent(tab.excludedContent);
       }
     }
   }
 
-  private async assertTabHeader(tabName: string, firstContent?: TabContentItem): Promise<void> {
+  private async assertTabHeader(
+    tabName: string,
+    firstContent?: TabContentItem
+  ): Promise<void> {
     const tabHeader = this.getTabHeader(tabName);
-    // Wait for the tab header to be visible and enabled before clicking
+
     await tabHeader.waitFor({ state: 'visible' });
     await expect(tabHeader).toBeEnabled();
-    await tabHeader.click();
+
+    for (let attempt = 1; attempt <= 5; attempt++) {
+      await tabHeader.click({ force: true });
+
+      try {
+        await expect(tabHeader).toHaveAttribute('aria-selected', 'true', {
+          timeout: 1000
+        });
+        return;
+      } catch {
+        if (attempt === 5) {
+          throw new Error(`Failed to click tab "${tabName}" after 5 attempts`);
+        }
+
+        await this.page.waitForTimeout(500);
+      }
+    }
   }
 
   /**
-     * Asserts that each item in the provided tab content array is visible and, if applicable, contains the expected value.
-     *
-     * The function supports both string and object tab content items. For string items, it checks visibility.
-     * For object items, it checks both visibility and that the corresponding value cell contains the expected text.
-     *
-     * The `tabItemCount` record is used to track the number of times each unique tab item key has been processed.
-     * This allows the function to correctly select the nth visible instance of a tab item when the same label appears multiple times,
-     * ensuring assertions are made against the correct DOM element.
-     * Tab array items should be in right order, as they are displayed in the UI.
-     */
-  private async assertTabContent(tabContent: TabContentItem[]): Promise<void> {
+   * Asserts that each item in the provided tab content array is visible and, if applicable, contains the expected value.
+   *
+   * The function supports both string and object tab content items. For string items, it checks visibility.
+   * For object items, it checks both visibility and that the corresponding value cell contains the expected text.
+   *
+   * The `tabItemCount` record is used to track the number of times each unique tab item key has been processed.
+   * This allows the function to correctly select the nth visible instance of a tab item when the same label appears multiple times,
+   * ensuring assertions are made against the correct DOM element.
+   * Tab array items should be in right order, as they are displayed in the UI.
+   */
+  private async assertTabContent(
+    tabContent: TabContentItem[],
+    timeout?: number
+  ): Promise<void> {
+    const customExpect =
+      timeout === undefined
+        ? expect
+        : expect.configure({ timeout });
     const tabItemCount: Record<string, number> = {};
 
     for (const content of tabContent) {
@@ -125,10 +154,10 @@ export class CaseDetailsPage {
 
       if (typeof content === 'string') {
         const tabItem = await this.getVisibleTabContent(content, position);
-        await expect(tabItem).toBeVisible();
+        await customExpect(tabItem).toBeVisible();
       } else {
         const tabItem = await this.getVisibleTabContent(content.tabItem, position, content.exact ?? true);
-        await expect(tabItem).toBeVisible();
+        await customExpect(tabItem).toBeVisible();
 
         const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
         if (content.clickable) {
@@ -142,9 +171,9 @@ export class CaseDetailsPage {
             `xpath=following-sibling::*[self::td or self::th][${i + 1}] | ancestor::*[self::td or self::th or self::tr][1]/following-sibling::*[self::td or self::th][${i + 1}]`
           );
           if (!content.exact) {
-            await expect(tabValue).toContainText(expectedValues[i]);
+            await customExpect(tabValue).toContainText(expectedValues[i]);
           } else {
-            await expect(tabValue).toHaveText(expectedValues[i]);
+            await customExpect(tabValue).toHaveText(expectedValues[i]);
           }
         }
       }
@@ -163,20 +192,20 @@ export class CaseDetailsPage {
   }
 
   /**
-     * Returns the `Locator` for the nth visible element matching the given text content.
-     *
-     * @param content - The exact text to match in the DOM.
-     * @param position - The zero-based index of the visible element to return (default is 0).
-     * @returns A Playwright `Locator` for the requested visible element.
-     * @throws Error if no visible element is found at the specified position.
-     *
-     * Logic:
-     * 1. Finds all elements matching the exact text.
-     * 2. If only one match and position is 0, returns it directly.
-     * 3. Otherwise, iterates through all matches, counting only those that are visible.
-     * 4. Returns the element at the requested visible position.
-     * 5. Throws an error if the requested visible position does not exist.
-     */
+   * Returns the `Locator` for the nth visible element matching the given text content.
+   *
+   * @param content - The exact text to match in the DOM.
+   * @param position - The zero-based index of the visible element to return (default is 0).
+   * @returns A Playwright `Locator` for the requested visible element.
+   * @throws Error if no visible element is found at the specified position.
+   *
+   * Logic:
+   * 1. Finds all elements matching the exact text.
+   * 2. If only one match and position is 0, returns it directly.
+   * 3. Otherwise, iterates through all matches, counting only those that are visible.
+   * 4. Returns the element at the requested visible position.
+   * 5. Throws an error if the requested visible position does not exist.
+   */
   private async getVisibleTabContent(content: string, position: number = 0, exact: boolean = true): Promise<Locator> {
     const locator = this.page.getByText(content, { exact });
     // Wait for at least one matching element to be attached
