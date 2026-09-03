@@ -6088,5 +6088,25 @@
     "PageColumnNumber": 1,
     "ShowSummaryChangeOption": "Y",
     "FieldShowCondition": "stopRepClientConsent=\"No\""
+  },
+  {
+    "LiveFrom": "03/09/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_approveApplication",
+    "CaseFieldID": "pensionCollection",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "HIDDEN",
+    "PageID": 1,
+    "Publish": "${CCD_DEF_PUBLISH}"
+  },
+  {
+    "LiveFrom": "03/09/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_uploadApprovedOrder",
+    "CaseFieldID": "pensionCollection",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "HIDDEN",
+    "PageID": 1,
+    "Publish": "${CCD_DEF_PUBLISH}"
   }
 ]
