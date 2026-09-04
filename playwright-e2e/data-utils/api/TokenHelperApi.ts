@@ -2,7 +2,7 @@ import {authenticator} from 'otplib';
 import {axiosRequest} from './ApiHelper.ts';
 import {readCache, writeCache} from './TokenCachingHelper.ts';
 
-const env = process.env.RUNNING_ENV && process.env.RUNNING_ENV.startsWith('pr-') ? 'aat' : (process.env.RUNNING_ENV || 'aat');
+const env = process.env.RUNNING_ENV?.startsWith('pr-') ? 'aat' : (process.env.RUNNING_ENV || 'aat');
 const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 
 export async function getUserToken(username: string, password: string): Promise<string> {
@@ -14,42 +14,40 @@ export async function getUserToken(username: string, password: string): Promise<
   }
 
   const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
-  const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
-  const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
-  const idamCodeResponse = await axiosRequest({
-    method: 'post',
-    url: idamBaseUrl + idamCodePath,
-    headers: {
-      Authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
-  });
 
-  const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${idamCodeResponse.data.code}`;
-
-  const authTokenResponse = await axiosRequest({
+  const idamTokenResponse = await axiosRequest({
     method: 'post',
-    url: idamBaseUrl + idamAuthPath,
+    url: `${idamBaseUrl}/o/token`,
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
-    }
+    },
+    data: new URLSearchParams({
+      grant_type: 'password',
+      username,
+      password,
+      client_id: 'divorce',
+      client_secret: idamClientSecret!,
+      scope: 'openid profile roles'
+    }).toString()
   });
 
   tokenCache.set(username,
     {
-      token: authTokenResponse.data.access_token,
-      expiry: authTokenResponse.data.expires_in * 1000 + now - 60000,
+      token: idamTokenResponse.data.access_token,
+      expiry: idamTokenResponse.data.expires_in * 1000 + now - 60000,
       userId: cached?.userId ?? ''
     }
   );
+
   await writeCache(tokenCache);
-  return authTokenResponse.data.access_token;
+
+  return idamTokenResponse.data.access_token;
 }
 
 export async function getUserId(authToken: string, username: string): Promise<string> {
   const tokenCache = await readCache();
   const cached = tokenCache.get(username);
-  if (cached && cached.userId) {
+  if (cached?.userId) {
     return cached.userId;
   }
 
