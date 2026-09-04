@@ -56,7 +56,21 @@ export class SigninPage extends BaseJourneyPage{
           timeoutAmount = 2000;
         }
 
-        await this.page.waitForURL(`${expectedUrl}/${requiredPath}`, { timeout: timeoutAmount });
+
+    const expected = `${expectedUrl}/${requiredPath}`;
+
+    console.log('Expected URL:', expected);
+    console.log('Current URL before wait:', this.page.url());
+
+    await this.page.waitForURL(expected, {
+      timeout: timeoutAmount,
+    });
+
+    console.log('Current URL after wait:', this.page.url());
+
+
+
+      //  await this.page.waitForURL(`${expectedUrl}/${requiredPath}`, { timeout: timeoutAmount });
         return;
       } catch (err) {
         if (attempt === maxRetries) throw err;
