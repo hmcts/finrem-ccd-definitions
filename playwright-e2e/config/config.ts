@@ -8,7 +8,7 @@ const env = process.env.RUNNING_ENV || 'aat';
 // Any new data added below will immediately be available wherever config is imported.
 const configuration = {
 
-  waEnabled: String(process.env.ENABLE_WA ?? 'true').toLowerCase() === 'true',
+  waEnabled: String(process.env.ENABLE_WA).toLowerCase() === 'true',
 
   // URLs
   idamUrl:
@@ -58,8 +58,8 @@ const configuration = {
   },
 
   caseWorker: {
-    email: process.env.USERNAME_CASEWORKER || '',
-    password: process.env.PASSWORD_CASEWORKER || '',
+    email: process.env.ENABLE_WA ? (process.env.USERNAME_CASEWORKER || '') : 'fr_nbcteamleader12@justice.gov.uk',
+    password: process.env.ENABLE_WA ? (process.env.PASSWORD_CASEWORKER || '') : 'Password123!',
   },
 
   superCaseWorker: {

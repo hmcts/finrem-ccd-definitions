@@ -23,6 +23,7 @@ export class SigninPage extends BaseJourneyPage{
   }
 
   async loginCaseworker() {
+    console.log(`Running playwright tests - config.waEnabled: ${config.waEnabled}`);
     const defaultLoginPath = config.waEnabled
       ? config.loginPaths.worklist
       : config.loginPaths.cases;
