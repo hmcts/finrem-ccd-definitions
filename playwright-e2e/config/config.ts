@@ -8,8 +8,7 @@ const env = process.env.RUNNING_ENV || 'aat';
 // Any new data added below will immediately be available wherever config is imported.
 const configuration = {
 
-  console.log(`Running playwright tests against ${env} environment.  Enable WA: ${process.env.ENABLE_WA}, Enable GS: ${process.env.ENABLE_GS}`),
-  waEnabled: String(process.env.ENABLE_WA ?? 'true').toLowerCase() === 'true',
+  waEnabled: String(process.env.ENABLE_WA).toLowerCase() === 'true',
 
   // URLs
   idamUrl:
