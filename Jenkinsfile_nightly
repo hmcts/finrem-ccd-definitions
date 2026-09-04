@@ -88,33 +88,43 @@ pipelineConf.vaultSecrets = secrets
 
 def buildPlaywrightCommand(tags, browser) {
     if (tags == null || tags.trim().isEmpty()) {
-        return;
+        return
     }
+
     def tagList = tags.split(',').collect { it.trim() }
 
     def projectByBrowser = [
-            'msedge': 'edge',
-            'edge': 'edge',
+            'msedge'  : 'edge',
+            'edge'    : 'edge',
             'chromium': 'chromium',
-            'chrome': 'chrome',
-            'firefox': 'firefox',
-            'webkit': 'webkit'
+            'chrome'  : 'chrome',
+            'firefox' : 'firefox',
+            'webkit'  : 'webkit'
     ]
 
-    def command = 'yarn playwright test '
+    def command = 'yarn playwright test'
+
     tagList.each { tag ->
         if (!tag.isEmpty()) {
             command += " --grep ${tag}"
         }
     }
 
-    if (browser && browser != 'all') {
+    if (browser == 'all') {
+        // Chrome and Edge are system browsers on the Jenkins agent.
+        // Chromium, Firefox and WebKit require Playwright-managed binaries.
+        command = "yarn playwright install chromium firefox webkit && ${command}"
+
+    } else if (browser) {
         def playwrightProject = projectByBrowser[browser] ?: browser
+
         command += " --project=${playwrightProject}"
 
-        // Keep install target aligned to project naming where possible.
-        def installBrowser = playwrightProject == 'edge' ? 'msedge' : playwrightProject
-        command = "playwright install ${installBrowser} && ${command}"
+        def installBrowser = playwrightProject == 'edge'
+                ? 'msedge'
+                : playwrightProject
+
+        command = "yarn playwright install ${installBrowser} && ${command}"
     }
 
     return command
