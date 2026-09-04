@@ -127,12 +127,21 @@ def runBrowserStage = { String browserName,
 
     return {
         stage("Functional playwright tests - ${browserName}") {
+
+            def outputDir = "test-results-${browserName}"
+            def reportDir = "playwright-report-${browserName}"
+
+            def playwrightEnv = [
+                    "PLAYWRIGHT_OUTPUT_DIR=${outputDir}",
+                    "PLAYWRIGHT_HTML_REPORT_DIR=${reportDir}"
+            ]
+
+            envOverrides.each { key, value ->
+                playwrightEnv.add("${key}=${value}")
+            }
+
             try {
-                if (envOverrides) {
-                    withEnv(envOverrides.collect { k, v -> "${k}=${v}" }) {
-                        yarnBuilder.yarn(yarnScript)
-                    }
-                } else {
+                withEnv(playwrightEnv) {
                     yarnBuilder.yarn(yarnScript)
                 }
 
@@ -144,14 +153,14 @@ def runBrowserStage = { String browserName,
                         allowMissing: true,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: 'playwright-report',
+                        reportDir: reportDir,
                         reportFiles: 'index.html',
                         reportName: "FunctionalTestReport-${browserName}"
                 ])
 
                 steps.archiveArtifacts(
                         allowEmptyArchive: true,
-                        artifacts: 'build/reports/tests/functionalTest/**/*'
+                        artifacts: "${outputDir}/**/*"
                 )
             }
         }
@@ -180,10 +189,34 @@ withNightlyPipeline(type, product, component) {
         }
 
         if (!params.TAGS_TO_RUN.isEmpty()) {
+
+            def browserName = params.BROWSER_TO_RUN == 'msedge'
+                    ? 'edge'
+                    : params.BROWSER_TO_RUN
+
+            def outputSuffix = browserName == 'all'
+                    ? 'tagged-all'
+                    : "tagged-${browserName}"
+
+            def outputDir = "test-results-${outputSuffix}"
+            def reportDir = "playwright-report-${outputSuffix}"
+
             stage("${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}") {
                 try {
                     currentBuild.displayName = "${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
-                    yarnBuilder.yarn(buildPlaywrightCommand(params.TAGS_TO_RUN, params.BROWSER_TO_RUN))
+
+                    withEnv([
+                            "PLAYWRIGHT_OUTPUT_DIR=${outputDir}",
+                            "PLAYWRIGHT_HTML_REPORT_DIR=${reportDir}"
+                    ]) {
+                        yarnBuilder.yarn(
+                                buildPlaywrightCommand(
+                                        params.TAGS_TO_RUN,
+                                        params.BROWSER_TO_RUN
+                                )
+                        )
+                    }
+
                 } catch (Error e) {
                     unstable(message: "${STAGE_NAME} is unstable: " + e.toString())
                 } finally {
@@ -191,21 +224,50 @@ withNightlyPipeline(type, product, component) {
                             allowMissing: true,
                             alwaysLinkToLastBuild: true,
                             keepAll: true,
-                            reportDir: "playwright-report",
+                            reportDir: reportDir,
                             reportFiles: 'index.html',
                             reportName: "${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
                     ])
-                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+
+                    steps.archiveArtifacts(
+                            allowEmptyArchive: true,
+                            artifacts: "${outputDir}/**/*"
+                    )
                 }
             }
         } else {
-            // Define all potential browser stages available
             def allStages = [
-                    'msedge': ['Edge Tests': runBrowserStage('edge', 'test:functional-edge', ['TESTS_FOR_ACCESSIBILITY': 'true'])],
-                    'chromium': ['Chromium Tests': runBrowserStage('chromium', 'test:functional-chromium')],
-                    'chrome': ['Chrome Tests': runBrowserStage('chrome', 'test:functional-chrome')],
-                    'firefox': ['Firefox Tests': runBrowserStage('firefox', 'test:functional-firefox')],
-                    'webkit': ['Webkit Tests': runBrowserStage('webkit', 'test:functional-webkit')]
+                    'msedge': [
+                            'Edge Tests': runBrowserStage(
+                                    'edge',
+                                    'test:functional-edge',
+                                    ['TESTS_FOR_ACCESSIBILITY': 'true']
+                            )
+                    ],
+                    'chromium': [
+                            'Chromium Tests': runBrowserStage(
+                                    'chromium',
+                                    'test:functional-chromium'
+                            )
+                    ],
+                    'chrome': [
+                            'Chrome Tests': runBrowserStage(
+                                    'chrome',
+                                    'test:functional-chrome'
+                            )
+                    ],
+                    'firefox': [
+                            'Firefox Tests': runBrowserStage(
+                                    'firefox',
+                                    'test:functional-firefox'
+                            )
+                    ],
+                    'webkit': [
+                            'Webkit Tests': runBrowserStage(
+                                    'webkit',
+                                    'test:functional-webkit'
+                            )
+                    ]
             ]
 
             // Build the specific parallel stages execution map based on selection
