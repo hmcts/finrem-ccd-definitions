@@ -1,4 +1,4 @@
-
+import dotenv from 'dotenv';
 dotenv.config();
 
 const env = process.env.RUNNING_ENV || 'aat';
@@ -53,7 +53,7 @@ const configuration = {
     process.env.TESTS_FOR_ACCESSIBILITY || false,
 
   judge: {
-    email: env.process.env.USERNAME_JUDGE || '',
+    email: process.env.USERNAME_JUDGE || '',
     password: process.env.PASSWORD_JUDGE || '',
   },
 
