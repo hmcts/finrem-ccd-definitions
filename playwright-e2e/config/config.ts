@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+
 dotenv.config();
 
 const env = process.env.RUNNING_ENV || 'aat';
@@ -53,13 +53,13 @@ const configuration = {
     process.env.TESTS_FOR_ACCESSIBILITY || false,
 
   judge: {
-    email: process.env.USERNAME_JUDGE || '',
+    email: env.process.env.USERNAME_JUDGE || '',
     password: process.env.PASSWORD_JUDGE || '',
   },
 
   caseWorker: {
-    email: process.env.USERNAME_CASEWORKER || '',
-    password: process.env.PASSWORD_CASEWORKER || '',
+    email: process.env.ENABLE_WA ? (process.env.USERNAME_CASEWORKER || '') : 'fr_nbcteamleader12@justice.gov.uk',
+    password: process.env.ENABLE_WA ? (process.env.PASSWORD_CASEWORKER || '') : 'Password123!',
   },
 
   superCaseWorker: {
