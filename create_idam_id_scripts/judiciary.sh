@@ -17,7 +17,7 @@ PASSWORD="$2"
 INPUT_FILE="${SCRIPT_DIR}/judiciary_request.json"
 OUTPUT_FILE="${SCRIPT_DIR}/judiciary_response.json"
 
-BASE_URL="https://idam-api.${ENVIRONMENT}.platform.hmcts.net/testing-support/accounts"
+BASE_URL="https://idam-web-public.${ENVIRONMENT}.platform.hmcts.net/testing-support/accounts"
 
 # Verify input file exists
 if [ ! -f "$INPUT_FILE" ]; then
