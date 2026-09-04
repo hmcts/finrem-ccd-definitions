@@ -136,7 +136,6 @@ test.describe('Check and Issue Application task tests', () => {
       manageCaseDashboardPage,
       taskUiChecks
     }) => {
-      test.setTimeout(15 * 60 * 1000);
 
       const sessionPages = {
         loginPage,

@@ -209,7 +209,7 @@ withNightlyPipeline(type, product, component) {
                             "PLAYWRIGHT_OUTPUT_DIR=${outputDir}",
                             "PLAYWRIGHT_HTML_REPORT_DIR=${reportDir}"
                     ]) {
-                        yarnBuilder.yarn(
+                        steps.sh(
                                 buildPlaywrightCommand(
                                         params.TAGS_TO_RUN,
                                         params.BROWSER_TO_RUN

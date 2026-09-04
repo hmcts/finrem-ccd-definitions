@@ -157,8 +157,7 @@ test.describe('Process scanned document task tests', () => {
       manageCaseDashboardPage,
       taskUiChecks
     }) => {
-      test.setTimeout(15 * 60 * 1000);
-
+      
       const sessionPages = {
         loginPage,
         manageCaseDashboardPage
