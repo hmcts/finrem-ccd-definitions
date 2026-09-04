@@ -248,15 +248,18 @@ withPipeline("nodejs", product, component) {
       env.EXCLUDE = getPreviewDefinitionExclusions()
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
-        yarnBuilder.yarn("generate-excel-preview-wa-consented")
-        yarnBuilder.yarn("generate-excel-preview-gs-consented")
+        if(env.ENABLE_WA?.toBoolean()) {
+          yarnBuilder.yarn("generate-excel-preview-wa-consented")
+        } else if (env.ENABLE_GS?.toBoolean()) {
+          yarnBuilder.yarn("generate-excel-preview-gs-consented")
+        }
       }
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-contested")
         if (env.ENABLE_WA?.toBoolean()) {
             yarnBuilder.yarn("copy-preview-xlxs-to-resources-wa")
         } else if (env.ENABLE_GS?.toBoolean()) {
-          yarnBuilder.yarn("copy-preview-xlxs-to-resources-gs")
+            yarnBuilder.yarn("copy-preview-xlxs-to-resources-gs")
         } else {
             yarnBuilder.yarn("copy-preview-xlxs-to-resources")
         }
