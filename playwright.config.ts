@@ -1,17 +1,26 @@
-import { CommonConfig, ProjectsConfig } from "@hmcts/playwright-common";
-import { defineConfig } from "@playwright/test";
+import { CommonConfig, ProjectsConfig } from '@hmcts/playwright-common';
+import { defineConfig } from '@playwright/test';
 
-const outputDir = process.env.PLAYWRIGHT_OUTPUT_DIR || 'test-results';
-const htmlReportDir = process.env.PLAYWRIGHT_HTML_REPORT_DIR || 'playwright-report';
+const isNightly = process.env.NIGHTLY_TEST === 'true';
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
+const outputDir =
+  process.env.PLAYWRIGHT_OUTPUT_DIR || 'test-results';
+
+const htmlReportDir =
+  process.env.PLAYWRIGHT_HTML_REPORT_DIR || 'playwright-report';
+
 export default defineConfig({
   ...CommonConfig.recommended,
+
   testDir: './playwright-e2e',
   testMatch: '*spec.ts',
-  snapshotDir: "./playwright-e2e/snapshots",
+
+  // Temporarily exclude all WA Task tests from nightly runs
+  testIgnore: isNightly
+    ? ['**/test/consented/WA_Tasks/**']
+    : [],
+
+  snapshotDir: './playwright-e2e/snapshots',
   retries: process.env.CI ? 2 : 1,
   workers: Number(process.env.FUNCTIONAL_TESTS_WORKERS || 3),
   expect: {
