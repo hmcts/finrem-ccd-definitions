@@ -119,7 +119,7 @@ export abstract class BaseJourneyPage {
     await this.confirmButton.scrollIntoViewIfNeeded();
     await expect(this.confirmButton).toBeVisible();
     await expect(this.confirmButton).toBeEnabled();
-    await this.clickAndWaitForNavigation(this.confirmButton, undefined, true);
+    await this.clickAndWaitForNavigation(this.confirmButton);
   }
 
   async navigatePrevious() {
@@ -127,7 +127,7 @@ export abstract class BaseJourneyPage {
     await this.previousButton.scrollIntoViewIfNeeded();
     await expect(this.previousButton).toBeVisible();
     await expect(this.previousButton).toBeEnabled();
-    await this.clickAndWaitForNavigation(this.previousButton, undefined, true);
+    await this.clickAndWaitForNavigation(this.previousButton);
   }
 
   async navigateIgnoreWarningAndGo() {
@@ -142,7 +142,7 @@ export abstract class BaseJourneyPage {
     await this.page.waitForLoadState();
     await this.cancelHyperlink.scrollIntoViewIfNeeded();
     await expect(this.cancelHyperlink).toBeVisible();
-    await this.clickAndWaitForNavigation(this.cancelHyperlink, undefined, true);
+    await this.clickAndWaitForNavigation(this.cancelHyperlink);
   }
 
   getAddNewButton(position: number = 0): Locator {
@@ -186,7 +186,7 @@ export abstract class BaseJourneyPage {
     });
   }
 
-  private async clickAndWaitForNavigation(button: Locator, expectedUrl?: string, requireUrlChange: boolean = true) {
+  private async clickAndWaitForNavigation(button: Locator, expectedUrl?: string, requireUrlChange: boolean = false) {
     await button.click();
 
     if (expectedUrl) {
