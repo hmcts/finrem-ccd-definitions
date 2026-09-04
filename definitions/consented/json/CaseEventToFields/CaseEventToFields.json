@@ -6100,5 +6100,17 @@
     "PageLabel": "Update Issue Date",
     "PageDisplayOrder": 1,
     "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "19/08/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_feeAccountDebitedAndIssue",
+    "CaseFieldID": "issueDate",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": "updateIssueDate",
+    "PageLabel": "Update Issue Date",
+    "PageDisplayOrder": 1,
+    "ShowSummaryChangeOption": "Y"
   }
 ]
