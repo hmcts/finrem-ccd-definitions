@@ -812,7 +812,8 @@
     "HintText": "If the application contains an application for a pension sharing, pension compensation sharing, pension attachment or pension compensation attachment order, please upload the relevant pension form(s) from the list below",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_PensionType",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -884,7 +885,8 @@
     "ID": "helpWithFeesQuestion",
     "Label": "Has the applicant applied for help with fees online?",
     "FieldType": "YesOrNo",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1082,7 +1084,8 @@
     "HintText": "Warning: Previous orders will appear at the top of the page. To avoid overwriting a previous order, please ensure you scroll to the bottom of the page and choose ‘Add New’. A blank template will then appear for you to complete.",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_orderRefusal",
-    "SecurityClassification": "Public"
+    "SecurityClassification": "Public",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
