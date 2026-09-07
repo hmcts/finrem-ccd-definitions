@@ -60,3 +60,8 @@ dependencies:
     version: 0.0.77
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: am-org-role-mapping-service.enabled
+  - name: finrem-cron
+    version: 0.0.11
+    repository: 'oci://hmctsprod.azurecr.io/helm'
+    condition:  finrem-cron.enabled
+
