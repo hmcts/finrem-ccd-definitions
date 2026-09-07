@@ -555,7 +555,6 @@ finrem-cron:
     kind: CronJob
     imagePullPolicy: Always
     image: hmctsprod.azurecr.io/finrem/cos:${FINREM_COS_IMAGE}
-    aadIdentityName: finrem
     args:
       - run
       - GlobalSearchMigrationTask
