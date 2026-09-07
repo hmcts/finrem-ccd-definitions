@@ -58,8 +58,8 @@ const configuration = {
   },
 
   caseWorker: {
-    email: process.env.ENABLE_WA ? (process.env.USERNAME_CASEWORKER || '') : 'fr_nbcteamleader12@justice.gov.uk',
-    password: process.env.ENABLE_WA ? (process.env.PASSWORD_CASEWORKER || '') : 'Password123!',
+    email: process.env.USERNAME_CASEWORKER || '',
+    password: process.env.PASSWORD_CASEWORKER || '',
   },
 
   superCaseWorker: {
