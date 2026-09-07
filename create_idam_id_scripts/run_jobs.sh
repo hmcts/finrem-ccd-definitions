@@ -4,9 +4,9 @@
 set -e
 
 echo "Running caseworker.sh..."
-./caseworker.sh aat add Password123!
+./create_idam_id_scripts/caseworker.sh aat add Password123!
 
 echo "Running judiciary.sh..."
-./judiciary.sh aat Hmcts1234
+./create_idam_id_scripts/judiciary.sh aat Hmcts1234
 
 echo "Both scripts executed successfully."

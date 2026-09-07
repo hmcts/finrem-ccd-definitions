@@ -47,5 +47,6 @@ export class ManageCaseDashboardPage {
 export enum CaseTab {
   History = 'History',
   CaseDocuments = 'Case documents',
-  ConfDocuments = 'Confidential Documents'
+  ConfDocuments = 'Confidential Documents',
+  Tasks = 'Tasks'
 }

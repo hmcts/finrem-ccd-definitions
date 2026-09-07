@@ -1,5 +1,4 @@
 import { test } from '../../fixtures/fixtures';
-import config from '../../config/config';
 import { CommonEvents } from '../../config/case-data';
 import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
 import { createGeneralEmailTableData } from '../../resources/check_your_answer_content/create_general_email/createGeneralEmailTable';
@@ -66,7 +65,7 @@ test.describe('Create General Email', () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Create General Email
@@ -106,7 +105,7 @@ test.describe('Create General Email', () => {
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Crete General Email
