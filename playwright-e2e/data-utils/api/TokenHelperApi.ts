@@ -3,7 +3,8 @@ import {axiosRequest} from './ApiHelper.ts';
 import {readCache, writeCache} from './TokenCachingHelper.ts';
 
 const env = process.env.RUNNING_ENV && process.env.RUNNING_ENV.startsWith('pr-') ? 'aat' : (process.env.RUNNING_ENV || 'aat');
-const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
+const idamApiBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
+const idamOidcBaseUrl = `https://idam-web-public.${env}.platform.hmcts.net`;
 
 export async function getUserToken(username: string, password: string): Promise<string> {
   const tokenCache = await readCache();
@@ -17,7 +18,7 @@ export async function getUserToken(username: string, password: string): Promise<
 
   const idamTokenResponse = await axiosRequest({
     method: 'post',
-    url: `${idamBaseUrl}/o/token`,
+    url: `${idamOidcBaseUrl}/o/token`,
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -55,7 +56,7 @@ export async function getUserId(authToken: string, username: string): Promise<st
 
   const userDetailsResponse = await axiosRequest({
     method: 'get',
-    url: idamBaseUrl + idamDetailsPath,
+    url: idamApiBaseUrl + idamDetailsPath,
     headers: { Authorization: `Bearer ${authToken}` }
   });
 
