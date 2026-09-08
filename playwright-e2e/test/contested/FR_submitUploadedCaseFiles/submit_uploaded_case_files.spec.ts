@@ -1,5 +1,4 @@
 import {test} from '../../../fixtures/fixtures';
-import config from '../../../config/config';
 import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import {ContestedEvents} from '../../../config/case-data';
 import {getManageHearingTabData} from '../../../resources/tab_content/contested/manage_hearing_tabs.ts';
@@ -19,7 +18,7 @@ test.describe('Contested - Ready For Hearing', () => {
         
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // Submit Uploaded Case Files 
