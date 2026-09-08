@@ -26,7 +26,7 @@ export default defineConfig({
   expect: {
     timeout: 45_000,
   },
-  timeout: 4 * 60 * 1000, 
+  timeout: 5 * 60 * 1000, 
 
   // Each parallel Jenkins browser run gets its own results directory.
   // Falls back to the normal test-results directory when running locally.

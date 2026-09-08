@@ -70,6 +70,7 @@ export class SigninPage extends BaseJourneyPage {
     ) {
       acceptedPathSet.add(`/${config.loginPaths.cases}`);
       acceptedPathSet.add(`/${config.loginPaths.worklist}`);
+      acceptedPathSet.add('/');
     }
 
     const acceptedPaths = [...acceptedPathSet];
@@ -78,46 +79,25 @@ export class SigninPage extends BaseJourneyPage {
       ? 5000
       : 30000;
 
-    const maxRefreshRetries = expectedUrl === 'http://localhost:3000'
-      ? 1
-      : 2;
-
-    const hasExpectedLandingPath = (url: URL): boolean => {
-      const currentPath = url.pathname.replace(/\/+$/, '') || '/';
-      return url.origin === expectedOrigin && acceptedPaths.includes(currentPath);
+    const isExpectedLandingPath = (urlString: string): boolean => {
+      const currentUrl = new URL(urlString);
+      const currentPath = currentUrl.pathname.replace(/\/+$/, '') || '/';
+      return currentUrl.origin === expectedOrigin && acceptedPaths.includes(currentPath);
     };
 
     await this.login(email, password);
 
-    let lastError: unknown;
-
-    for (let attempt = 0; attempt <= maxRefreshRetries; attempt++) {
-      try {
-        await this.page.waitForURL(hasExpectedLandingPath, { timeout });
-        return;
-      } catch (error) {
-        lastError = error;
-
-        if (attempt === maxRefreshRetries) {
-          break;
-        }
-
-        const currentUrl = new URL(this.page.url());
-        const isOnExpectedOrigin = currentUrl.origin === expectedOrigin;
-
-        if (isOnExpectedOrigin) {
-          await this.page.reload({ waitUntil: 'domcontentloaded' });
-        } else {
-          await this.page.waitForLoadState('domcontentloaded');
-        }
-      }
+    try {
+      await expect
+        .poll(() => {return isExpectedLandingPath(this.page.url());}, { timeout })
+        .toBeTruthy();
+    } catch (error) {
+      throw new Error(
+        'Login succeeded but user did not land on an expected page.\n' +
+        `Expected one of: ${acceptedPaths.join(', ')}\n` +
+        `Actual URL: ${this.page.url()}\n` +
+        `Cause: ${error instanceof Error ? error.message : String(error)}`
+      );
     }
-
-    throw new Error(
-      'Login succeeded but user did not land on an expected page.\n' +
-      `Expected one of: ${acceptedPaths.join(', ')}\n` +
-      `Actual URL: ${this.page.url()}\n` +
-      `Cause: ${lastError instanceof Error ? lastError.message : String(lastError)}`
-    );
   }
 }

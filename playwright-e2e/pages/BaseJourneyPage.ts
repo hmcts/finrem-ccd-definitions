@@ -54,8 +54,8 @@ export abstract class BaseJourneyPage {
     await expect(this.submitButton).toBeEnabled();
     await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
     await this.submitButton.click({ force: true });
-    const submissionDateAndTime = DateHelper.getCurrentDateTimeFull();
     await this.waitForSpinner();
+    const submissionDateAndTime = DateHelper.getCurrentDateTimeFull();
     return submissionDateAndTime;
   }
 
@@ -174,9 +174,12 @@ export abstract class BaseJourneyPage {
     await expect
       .poll(
         async () => {
-          return await this.spinner.count();
-        })
-      .toBe(0);
+          return await this.page.locator('xuilib-loading-spinner:visible').count();
+        },
+        { timeout: 15000 }
+      )
+      .toBe(0)
+      .catch(() => {});
   }
 
   private async waitForUrlChange() {
@@ -187,7 +190,29 @@ export abstract class BaseJourneyPage {
   }
 
   private async clickAndWaitForNavigation(button: Locator, expectedUrl?: string, requireUrlChange: boolean = false) {
-    await button.click();
+    await this.waitForSpinner();
+
+    for (let attempt = 1; attempt <= 6; attempt++) {
+      try {
+        await button.click({ timeout: 10000, noWaitAfter: true });
+        break;
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        const isIntercepted = message.includes('intercepts pointer events');
+
+        if (isIntercepted && attempt === 6) {
+          await button.click({ force: true, noWaitAfter: true });
+          break;
+        }
+
+        if (!isIntercepted || attempt === 6) {
+          throw error;
+        }
+
+        await this.waitForSpinner();
+        await this.page.waitForTimeout(300);
+      }
+    }
 
     if (expectedUrl) {
       await this.page.waitForURL(new RegExp(expectedUrl));

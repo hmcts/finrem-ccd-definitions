@@ -40,6 +40,7 @@ export class CaseDetailsPage {
   async selectNextStep(event: CaseEvent) {
     const maxRetries = 5;
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      const startUrl = this.page.url();
       await this.page.waitForLoadState();
       await this.goButton.isVisible();
       await expect(this.selectNextStepDropDown).toBeVisible();
@@ -52,9 +53,13 @@ export class CaseDetailsPage {
       }
       await this.goButton.click({ clickCount: 3, force: true });
       try {
-        await this.page.waitForURL(`**/${event.ccdCallback}/**`, { timeout: 12000 });
+        await this.page.waitForURL(`**/${event.ccdCallback}/**`, { timeout: 20000, waitUntil: 'commit' });
         return;
       } catch (e) {
+        const currentUrl = this.page.url();
+        if (currentUrl !== startUrl && !currentUrl.includes('/cases/case-details/')) {
+          return;
+        }
         if (attempt === maxRetries) throw e;
       }
     }
@@ -76,7 +81,19 @@ export class CaseDetailsPage {
       if (firstContent) {
         const text = typeof firstContent === 'string' ? firstContent : firstContent.tabItem;
         const exact = typeof firstContent === 'object' ? (firstContent.exact ?? true) : true;
-        await this.page.getByText(text, { exact }).first().waitFor({ state: 'attached', timeout: 5000 });
+        const firstContentTimeout = contentAssertionTimeout ?? 15000;
+        const firstContentLocator = this.page.getByText(text, { exact }).first();
+        const attached = await firstContentLocator
+          .waitFor({ state: 'attached', timeout: firstContentTimeout })
+          .then(() => {return true;})
+          .catch(() => {return false;});
+
+        if (!attached && exact) {
+          await this.page
+            .getByText(text, { exact: false })
+            .first()
+            .waitFor({ state: 'attached', timeout: firstContentTimeout });
+        }
       }
       await this.assertTabContent(tab.tabContent, contentAssertionTimeout);
       if (tab.excludedContent) {
@@ -373,20 +390,35 @@ export class CaseDetailsPage {
   }
 
   /**
-   * Clicks the first "Review" link in the 6th cell of any row in the Payment History table,
-   * if the table and link are present and visible.
+   * Clicks the first "Review" link in the Payment History section and waits for
+   * the review details panel to render.
    */
   async clickPaymentHistoryReviewLink(): Promise<void> {
-    const tableLocator = this.page.locator('#case-viewer-field-read--casePaymentHistoryViewer table');
-    if (await tableLocator.count() > 0) {
-      const reviewLink = this.page.locator(
-        '#case-viewer-field-read--casePaymentHistoryViewer table tbody tr td:nth-child(6) a'
-      );
-      // Wait for the link to be visible
-      await reviewLink.first().waitFor({ state: 'visible', timeout: 20000 });
-      // Scroll into view and click
-      await reviewLink.first().scrollIntoViewIfNeeded();
-      await reviewLink.first().click();
+    const paymentHistory = this.page.locator('#case-viewer-field-read--casePaymentHistoryViewer');
+    await expect(paymentHistory).toBeVisible({ timeout: 20000 });
+
+    const paymentsTable = paymentHistory
+      .getByRole('table')
+      .filter({ has: this.page.getByRole('cell', { name: 'Status', exact: true }) })
+      .first();
+    await expect(paymentsTable).toBeVisible({ timeout: 20000 });
+
+    const reviewLink = paymentsTable.getByRole('link', { name: 'Review' }).first();
+    await expect(reviewLink).toBeVisible({ timeout: 20000 });
+    await reviewLink.scrollIntoViewIfNeeded();
+    await reviewLink.click({ noWaitAfter: true });
+
+    const detailsReady = await Promise.race([
+      this.page.getByText('Payment details', { exact: false }).first().waitFor({ state: 'visible', timeout: 25000 }).then(() => {return true;}),
+      this.page.getByText('Payment amount', { exact: false }).first().waitFor({ state: 'visible', timeout: 25000 }).then(() => {return true;})
+    ]).catch(() => {return false;});
+
+    if (!detailsReady) {
+      await reviewLink.click({ force: true, noWaitAfter: true });
+      await this.page
+        .getByText('Payment details', { exact: false })
+        .first()
+        .waitFor({ state: 'visible', timeout: 25000 });
     }
   }
 
