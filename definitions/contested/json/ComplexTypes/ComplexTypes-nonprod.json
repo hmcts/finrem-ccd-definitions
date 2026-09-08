@@ -18,6 +18,24 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "04/09/2026",
+    "ID": "FR_accessCodeEntry",
+    "ListElementCode": "userIdamID",
+    "FieldType": "Text",
+    "ElementLabel": "IDAM user ID used to validate access code",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "04/09/2026",
+    "ID": "FR_accessCodeEntry",
+    "ListElementCode": "usedAt",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date and time access code was validated",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "06/05/2026",
     "ID": "CU_ct_citizenApplicantDocument",
     "ListElementCode": "DocumentType",
