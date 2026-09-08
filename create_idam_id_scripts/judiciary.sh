@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
 # Validate arguments
 if [ $# -ne 2 ]; then
     echo "Usage: $0 <environment> <password>"
@@ -12,8 +14,8 @@ fi
 ENVIRONMENT="$1"
 PASSWORD="$2"
 
-INPUT_FILE="judiciary_request.json"
-OUTPUT_FILE="judiciary_response.json"
+INPUT_FILE="${SCRIPT_DIR}/judiciary_request.json"
+OUTPUT_FILE="${SCRIPT_DIR}/judiciary_response.json"
 
 BASE_URL="https://idam-api.${ENVIRONMENT}.platform.hmcts.net/testing-support/accounts"
 
