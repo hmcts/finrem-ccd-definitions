@@ -16,6 +16,13 @@
   {
     "LiveFrom": "16/04/2026",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_linkApplicantToCase",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "CUI_linkRespondentToCase",
     "UserRole": "caseworker-divorce-systemupdate",
     "CRUD": "CR"
@@ -25,6 +32,13 @@
     "CaseTypeID": "FinancialRemedyContested",
     "CaseEventID": "CUI_linkRespondentToCase",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "16/04/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseEventID": "CUI_linkRespondentToCase",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
     "CRUD": "R"
   },
   {
