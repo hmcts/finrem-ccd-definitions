@@ -555,9 +555,6 @@ finrem-cron:
     kind: CronJob
     imagePullPolicy: Always
     image: hmctsprod.azurecr.io/finrem/cos:${FINREM_COS_IMAGE}
-    args:
-      - run
-      - GlobalSearchMigrationTask
     schedule: "0 0/10 * * *"
     concurrencyPolicy: Forbid
     environment:
