@@ -2669,5 +2669,13 @@
     "Label": "${extraClientAddr4ConfidentialLabel}",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "08/09/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseManagementLocation",
+    "Label": "  ",
+    "FieldType": "CaseLocation",
+    "SecurityClassification": "Public"
   }
 ]
