@@ -3,7 +3,6 @@ import {axiosRequest} from './ApiHelper.ts';
 import {readCache, writeCache} from './TokenCachingHelper.ts';
 
 const env = process.env.RUNNING_ENV && process.env.RUNNING_ENV.startsWith('pr-') ? 'aat' : (process.env.RUNNING_ENV || 'aat');
-const idamApiBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 const idamOidcBaseUrl = `https://idam-web-public.${env}.platform.hmcts.net`;
 
 export async function getUserToken(username: string, password: string): Promise<string> {
@@ -48,32 +47,33 @@ export async function getUserToken(username: string, password: string): Promise<
 export async function getUserId(authToken: string, username: string): Promise<string> {
   const tokenCache = await readCache();
   const cached = tokenCache.get(username);
+
   if (cached?.userId) {
     return cached.userId;
   }
 
-  const idamDetailsPath = '/details';
+  const idamUserInfoPath = '/o/userinfo';
 
-  const userDetailsResponse = await axiosRequest({
+  const userInfoResponse = await axiosRequest({
     method: 'get',
-    url: idamApiBaseUrl + idamDetailsPath,
+    url: idamOidcBaseUrl + idamUserInfoPath,
     headers: { Authorization: `Bearer ${authToken}` }
   });
 
   if (cached) {
-    cached.userId = userDetailsResponse.data.id;
+    cached.userId = userInfoResponse.data.uid;
     tokenCache.set(username, cached);
   } else {
-    tokenCache.set(username,
-      {
-        token: authToken,
-        expiry: 0,
-        userId: userDetailsResponse.data.id
-      }
-    );
+    tokenCache.set(username, {
+      token: authToken,
+      expiry: 0,
+      userId: userInfoResponse.data.uid
+    });
   }
+
   await writeCache(tokenCache);
-  return userDetailsResponse.data.id;
+
+  return userInfoResponse.data.uid;
 }
 
 export async function getServiceToken(): Promise<string> {
