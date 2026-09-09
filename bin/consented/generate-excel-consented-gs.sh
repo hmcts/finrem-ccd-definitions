@@ -17,10 +17,8 @@ else
 fi
 
 if [ "$ENABLE_GS" = "true" ]; then
-  publishGSEvent="Y"
   outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-gs-${GIT_COMMIT:-base}.xlsx"
 else
-  publishGSEvent="N"
   outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-${GIT_COMMIT:-base}.xlsx"
 fi
 
@@ -28,7 +26,7 @@ echo "Creating definition for ENABLE_GS = '${ENABLE_GS}' flag with value CCD_DEF
 
 pushd ccd-definition-processor && \
   CCD_DEF_CASE_TYPE_ID=FinancialRemedyMVP2 \
-  CCD_DEF_PUBLISH=${publishGSEvent:-N} \
+  CCD_DEF_PUBLISH=N \
   yarn --cwd ccd-definition-processor json2xlsx \
   -D ../definitions/consented/json \
   -e ${fullExclusion} \
