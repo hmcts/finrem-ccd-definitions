@@ -84,14 +84,14 @@
     "CRUD": "CR"
   },
   {
-    "LiveFrom":  "15/07/2026",
+    "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "awaitingInfo",
     "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "R"
   },
   {
-    "LiveFrom":  "15/07/2026",
+    "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "infoReceived",
     "UserRole": "caseworker-wa-task-configuration",
@@ -108,6 +108,13 @@
     "LiveFrom": "15/07/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseStateID": "newPaperCase",
+    "UserRole": "caseworker-wa-task-configuration",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseStateID": "readyForHearing",
     "UserRole": "caseworker-wa-task-configuration",
     "CRUD": "R"
   },
