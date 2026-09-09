@@ -51,6 +51,12 @@ export class ConsentedEventApi {
     ]);
   }
 
+  static async caseWorkerHwfFeeAccountDebited(caseId: string) {
+    await this.updateCaseWorkerSteps(caseId, [
+      { event: ConsentedEvents.hwfFeeAccountDebited.ccdCallback}
+    ]);
+  }
+
   static async caseWorkerIssueApplication(caseId: string) {
     await this.caseWorkerHWFDecisionMade(caseId);
     await this.updateCaseWorkerSteps(caseId, [
