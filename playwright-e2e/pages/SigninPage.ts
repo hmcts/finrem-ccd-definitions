@@ -56,7 +56,10 @@ export class SigninPage extends BaseJourneyPage{
           timeoutAmount = 2000;
         }
 
-        await this.page.waitForURL(`${expectedUrl}/${requiredPath}`, { timeout: timeoutAmount });
+        await this.page.waitForURL(
+          new RegExp(`${expectedUrl}/(${config.loginPaths.worklist}|${config.loginPaths.cases})`),
+          { timeout: timeoutAmount }
+        );
         return;
       } catch (err) {
         if (attempt === maxRetries) throw err;
