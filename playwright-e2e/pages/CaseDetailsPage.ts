@@ -38,31 +38,30 @@ export class CaseDetailsPage {
   }
 
   async selectNextStep(event: CaseEvent) {
-    const maxRetries = 5;
-    for (let attempt = 1; attempt <= maxRetries; attempt++) {
-      const startUrl = this.page.url();
-      await this.page.waitForLoadState();
-      await this.goButton.isVisible();
-      await expect(this.selectNextStepDropDown).toBeVisible();
-      await this.selectNextStepDropDown.selectOption(event.listItem);
-      if (attempt === 3) { // if go button click fails multiple times, reload the page
-        await this.page.reload();
-        await this.page.waitForLoadState();
-        await this.goButton.isVisible();
-        await this.selectNextStepDropDown.selectOption(event.listItem);
-      }
-      await this.goButton.click({ clickCount: 3, force: true });
-      try {
-        await this.page.waitForURL(`**/${event.ccdCallback}/**`, { timeout: 20000, waitUntil: 'commit' });
-        return;
-      } catch (e) {
-        const currentUrl = this.page.url();
-        if (currentUrl !== startUrl && !currentUrl.includes('/cases/case-details/')) {
-          return;
-        }
-        if (attempt === maxRetries) throw e;
-      }
+    try {
+      await this.runNextStep(event);
+    } catch {
+      // Some pages can populate slowly; refresh once and retry.
+      await this.page.reload({ waitUntil: 'domcontentloaded' });
+      await this.runNextStep(event);
     }
+  }
+
+  private async runNextStep(event: CaseEvent): Promise<void> {
+    await this.waitForNextStepControls();
+    await this.selectNextStepDropDown.selectOption(event.listItem);
+    await this.goButton.click();
+
+    await this.page.waitForURL(`**/${event.ccdCallback}/**`, {
+      timeout: 20000,
+      waitUntil: 'commit'
+    });
+  }
+
+  private async waitForNextStepControls(): Promise<void> {
+    await this.page.waitForLoadState('domcontentloaded');
+    await this.selectNextStepDropDown.waitFor({ state: 'visible', timeout: 20000 });
+    await this.goButton.waitFor({ state: 'visible', timeout: 20000 });
   }
 
   async checkHasBeenUpdated(event: string) {
