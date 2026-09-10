@@ -78,7 +78,7 @@ test.describe('Consent order in contested case', () => {
       await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
       await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
       await axeUtils.audit();
-      await createCaseSavingYourAnswersPage.navigateContinue(url+ '/submit');
+      await createCaseSavingYourAnswersPage.navigateContinue();
 
       await checkYourAnswersPage.assertCheckYourAnswersPage(consentOrderTable);
       await createCaseSavingYourAnswersPage.navigateSubmit();
@@ -313,7 +313,7 @@ test.describe('Consent order in contested case', () => {
       await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
       await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
       await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
-      await createCaseSavingYourAnswersPage.navigateContinue(url+ '/submit');
+      await createCaseSavingYourAnswersPage.navigateContinue();
 
       await checkYourAnswersPage.assertCheckYourAnswersPage(consentOrderTable);
       await createCaseSavingYourAnswersPage.navigateSubmit();

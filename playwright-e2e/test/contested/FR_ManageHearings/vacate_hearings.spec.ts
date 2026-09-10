@@ -66,11 +66,6 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
     { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, axeUtils, checkYourAnswersPage }) => {
       // Create and setup case up to issue application
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
-      await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
-      await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
-      await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
-      await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
-      await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
@@ -107,9 +102,7 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
         uploadFiles: ['final_hearing_file1.pdf'],
         sendANoticeOfHearing: true,
         whoShouldSeeOrder: [
-          { partyType: 'Applicant', partyName: 'Frodo Baggins' },
-          { partyType: 'Intervener1', partyName: 'intApp1' },
-          { partyType: 'Intervener2', partyName: 'intResp1' }
+          { partyType: 'Applicant', partyName: 'Frodo Baggins' }
         ],
         whoShouldNotSeeOrder: [
           { partyType: 'Respondent', partyName: 'Smeagol Gollum' }
@@ -136,7 +129,7 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
         attendance: 'Remote - Video call',
         hearingTime: '10:00 AM',
         duration: '2 hours',
-        whoShouldSeeOrder: 'Applicant - Frodo Baggins, Intervener1 - intApp1, Intervener2 - intResp1',
+        whoShouldSeeOrder: 'Applicant - Frodo Baggins',
         additionalInformation: 'Hearing details here',
         uploadFiles: ['HearingNotice.pdf', 'final_hearing_file1.pdf']
       });
@@ -194,11 +187,6 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
     { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, axeUtils, checkYourAnswersPage }) => {
       // Create and setup case up to issue application
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
-      await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
-      await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
-      await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
-      await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
-      await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
@@ -235,10 +223,10 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
         uploadFiles: ['final_hearing_file1.pdf'],
         sendANoticeOfHearing: true,
         whoShouldSeeOrder: [
-          { partyType: 'Applicant', partyName: 'Frodo Baggins' },
-          { partyType: 'Respondent', partyName: 'Smeagol Gollum' },
-          { partyType: 'Intervener1', partyName: 'intApp1' },
-          { partyType: 'Intervener2', partyName: 'intResp1' }
+          { partyType: 'Applicant', partyName: 'Frodo Baggins' }
+        ],
+        whoShouldNotSeeOrder: [
+          { partyType: 'Respondent', partyName: 'Smeagol Gollum' }
         ]
       });
       await axeUtils.audit({
@@ -262,7 +250,7 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
         attendance: 'Remote - Video call',
         hearingTime: '10:00 AM',
         duration: '2 hours',
-        whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum, Intervener1 - intApp1, Intervener2 - intResp1',
+        whoShouldSeeOrder: 'Applicant - Frodo Baggins',
         additionalInformation: 'Hearing details here',
         uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'final_hearing_file1.pdf']
       });
@@ -277,11 +265,6 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
       // Create and setup case up to issue application
       const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication(true); // Express case
       await ContestedEventApi.caseWorkerPerformsAddAHearing(caseId);
-      await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
-      await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
-      await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
-      await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
-      await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
 
       // Login as caseworker and navigate to case
       await manageCaseDashboardPage.visit();
@@ -318,10 +301,10 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
         uploadFiles: ['final_hearing_file1.pdf'],
         sendANoticeOfHearing: true,
         whoShouldSeeOrder: [
-          { partyType: 'Applicant', partyName: 'Frodo Baggins' },
-          { partyType: 'Respondent', partyName: 'Smeagol Gollum' },
-          { partyType: 'Intervener1', partyName: 'intApp1' },
-          { partyType: 'Intervener2', partyName: 'intResp1' }
+          { partyType: 'Applicant', partyName: 'Frodo Baggins' }
+        ],
+        whoShouldNotSeeOrder: [
+          { partyType: 'Respondent', partyName: 'Smeagol Gollum' }
         ]
       });
       await axeUtils.audit({
@@ -345,7 +328,7 @@ test.describe('Contested - Vacate Hearings', { tag: ['@MH'] }, () => {
         attendance: 'Remote - Video call',
         hearingTime: '10:00 AM',
         duration: '2 hours',
-        whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum, Intervener1 - intApp1, Intervener2 - intResp1',
+        whoShouldSeeOrder: 'Applicant - Frodo Baggins',
         additionalInformation: 'Hearing details here',
         uploadFiles: ['HearingNotice.pdf', 'Form-G.pdf', 'PfdNcdrComplianceLetter.pdf', 'OutOfFamilyCourtResolution.pdf', 'Form-C.pdf', 'final_hearing_file1.pdf']
       });

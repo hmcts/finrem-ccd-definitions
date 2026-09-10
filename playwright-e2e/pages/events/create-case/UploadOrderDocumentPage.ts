@@ -39,21 +39,13 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
   }
 
   async uploadVariationOrderDoc() {
-    let attempts = 0;
-    while (attempts < 4) {
-      await this.variationOrderDocUpload.setInputFiles('./playwright-e2e/resources/file/Variation order.pdf');
-      await this.commonActionsHelper.waitForAllUploadsToBeCompleted(this.page);
-      await this.navigateContinue();
-      const variationDocErrorMessage = this.page.getByText('Your request was rate limited. Please wait a few seconds before retrying your document upload');
-      const isRateLimited = await variationDocErrorMessage.isVisible();
-      if (!isRateLimited) {
-        break;
-      }
-      await this.page.waitForTimeout(2500);
-      await this.navigatePrevious();
-      await this.navigateContinue();
-      attempts++;
-    }
+    await this.commonActionsHelper.uploadWithRateLimitRetry(
+      this.page,
+      this.variationOrderDocUpload,
+      './playwright-e2e/resources/file/Variation order.pdf'
+    );
+    await this.navigateContinue();
+
     if (!(await this.variationOrderDocUpload.isVisible())) {
       await this.navigatePrevious();
     }
@@ -113,7 +105,6 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
     const radioOption = uploadJointD81 ? 'Yes' : 'No'; 
     const optionToSelect = this.jointD81Radio.getByLabel(radioOption);
     await optionToSelect.check();
-    await this.page.waitForTimeout(3000); //flaky rate limiting issue with D81 upload
     if(uploadJointD81) {
       await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadJointD81, './playwright-e2e/resources/file/test.pdf');
     } else {

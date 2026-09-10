@@ -29,7 +29,7 @@ export class ManageCaseDashboardPage {
       }
 
       if (attempt < 3) {
-        await this.page.waitForTimeout(1500);
+        await this.page.waitForURL(/\/cases(?:\/|$)/, { timeout: 2_000 }).catch(() => {});
       }
     }
 
@@ -54,7 +54,8 @@ export class ManageCaseDashboardPage {
   }
 
   async signOut() {
-    await this.page.waitForLoadState();
+    await this.page.waitForLoadState('domcontentloaded');
+    await expect(this.signOutButton).toBeVisible();
     await this.signOutButton.click();
   }
 

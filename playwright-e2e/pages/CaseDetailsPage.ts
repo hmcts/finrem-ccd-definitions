@@ -49,6 +49,7 @@ export class CaseDetailsPage {
 
   private async runNextStep(event: CaseEvent): Promise<void> {
     await this.waitForNextStepControls();
+    await this.assertEventExistsInNextStepList(event.listItem);
     await this.selectNextStepDropDown.selectOption(event.listItem);
     await this.goButton.click();
 
@@ -62,6 +63,18 @@ export class CaseDetailsPage {
     await this.page.waitForLoadState('domcontentloaded');
     await this.selectNextStepDropDown.waitFor({ state: 'visible', timeout: 20000 });
     await this.goButton.waitFor({ state: 'visible', timeout: 20000 });
+  }
+
+  private async assertEventExistsInNextStepList(eventName: string): Promise<void> {
+    const options = await this.selectNextStepDropDown.locator('option').allTextContents();
+    const trimmedOptions = options.map(option => {return option.trim();}).filter(option => {return option.length > 0;});
+    const eventExists = trimmedOptions.includes(eventName);
+
+    if (!eventExists) {
+      const message = `[CaseDetailsPage] Event not found in event list: "${eventName}".`;
+      console.error(message);
+      throw new Error(message);
+    }
   }
 
   async checkHasBeenUpdated(event: string) {
@@ -481,11 +494,13 @@ export class CaseDetailsPage {
       await this.page.waitForLoadState();
       await this.goButton.isVisible();
       await expect(this.selectNextStepDropDown).toBeVisible();
+      await this.assertEventExistsInNextStepList(event.listItem);
       await this.selectNextStepDropDown.selectOption(event.listItem);
       if (attempt === 3) { // if go button click fails multiple times, reload the page
         await this.page.reload();
         await this.page.waitForLoadState();
         await this.goButton.isVisible();
+        await this.assertEventExistsInNextStepList(event.listItem);
         await this.selectNextStepDropDown.selectOption(event.listItem);
       }
       await this.goButton.click({ clickCount: 3, force: true });
