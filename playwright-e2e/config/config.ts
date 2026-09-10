@@ -8,7 +8,7 @@ const env = process.env.RUNNING_ENV || 'aat';
 // Any new data added below will immediately be available wherever config is imported.
 const configuration = {
 
-  waEnabled: String(process.env.ENABLE_WA).toLowerCase() === 'true',
+  waEnabled: String(process.env.ENABLE_WA ?? 'true').toLowerCase() === 'true',
 
   // URLs
   idamUrl:

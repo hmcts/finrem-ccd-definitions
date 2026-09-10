@@ -256,7 +256,7 @@ export class TaskUiChecks {
     await expect(this.page.getByText(value, { exact: true })).toBeVisible();
   }
 
-// Added to differentiate event link locator inside task tab from Next Steps eg:Issue Application
+  // Added to differentiate event link locator inside task tab from Next Steps eg:Issue Application
   private async assertLabelAndLink(label: string, link: string): Promise<void> {
     const labelLocator = this.page.getByText(label, { exact: true });
 

@@ -1,5 +1,4 @@
 import { test } from '../../fixtures/fixtures';
-import config from '../../config/config';
 import { ConsentedEvents } from '../../config/case-data';
 import { adminNotesTabData } from '../../resources/tab_content/consented/admin_notes_tabs';
 import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
@@ -15,8 +14,8 @@ test(
   }) => {
     // Create case and progress to HWF decision made
     const caseId = Math.random() < 0.5 
-  ? await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision() 
-  : await ConsentedCaseFactory.createConsentedCaseUpToHwfFeeAccountDebited();
+      ? await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision() 
+      : await ConsentedCaseFactory.createConsentedCaseUpToHwfFeeAccountDebited();
     
     const dateToday = new Date()
       .toLocaleDateString('en-GB', {
@@ -27,7 +26,7 @@ test(
 
     // Login as caseworker
     await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+    await loginPage.loginCaseworker();
     await manageCaseDashboardPage.navigateToCase(caseId);
 
     // Issue Application
