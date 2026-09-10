@@ -53,7 +53,7 @@ test.describe('Process scanned document task tests', () => {
   for (const { user, completionAction } of processScannedDocumentUserScenarios) {
     test(
       `${user.name} performs the ${completionAction} action`,
-      { tag: ['@waTasks'] },
+      { tag: ['@waTasks', '@preview'] },
       async ({
         loginPage,
         manageCaseDashboardPage,
@@ -116,7 +116,7 @@ test.describe('Process scanned document task tests', () => {
 
   test(
     'CTSC Admin retains the task when supplementary evidence is not handled',
-    { tag: ['@waTasks'] },
+    { tag: ['@waTasks', '@preview'] },
     async ({
       loginPage,
       manageCaseDashboardPage,
@@ -151,7 +151,7 @@ test.describe('Process scanned document task tests', () => {
 
   test(
     'CTSC Team Leader reassigns their task to CTSC Admin',
-    { tag: ['@waTasks'] },
+    { tag: ['@waTasks', '@preview'] },
     async ({
       loginPage,
       manageCaseDashboardPage,
