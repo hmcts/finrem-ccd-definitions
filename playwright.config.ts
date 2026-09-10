@@ -1,8 +1,6 @@
 import { CommonConfig, ProjectsConfig } from '@hmcts/playwright-common';
 import { defineConfig } from '@playwright/test';
 
-const isNightly = process.env.NIGHTLY_TEST === 'true';
-
 const outputDir =
   process.env.PLAYWRIGHT_OUTPUT_DIR || 'test-results';
 
@@ -14,11 +12,6 @@ export default defineConfig({
 
   testDir: './playwright-e2e',
   testMatch: '*spec.ts',
-
-  // Temporarily exclude all WA Task tests from nightly runs
-  testIgnore: isNightly
-    ? ['**/test/consented/WA_Tasks/**']
-    : [],
 
   snapshotDir: './playwright-e2e/snapshots',
   retries: process.env.CI ? 2 : 1,
