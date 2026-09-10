@@ -37,7 +37,7 @@ export class ConsentedCaseFactory {
     ]);
   }
 
-    static async createConsentedCaseUpToHwfFeeAccountDebited(): Promise<string> {
+  static async createConsentedCaseUpToHwfFeeAccountDebited(): Promise<string> {
     return this.buildConsentedCaseWithSteps([
       (id) => {return ConsentedEventApi.solicitorSubmitCase(id);},
       (id) => {return ConsentedEventApi.caseWorkerHwfFeeAccountDebited(id);}
