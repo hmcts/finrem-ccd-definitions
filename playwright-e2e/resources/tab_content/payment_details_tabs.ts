@@ -1,18 +1,20 @@
 import { envTestData } from '../../data-utils/test_data/EnvTestDataConfig.ts';
 import {YesNoRadioEnum} from '../../pages/helpers/enums/RadioEnums.ts';
 
+const FEE_AND_PAY_UI_COMPONENT_PAYMENTS_HEADING = 'Payments';
+
 export const paymentDetailsTabData = (
   feeCode: string,
   feeType: string,
-  amount: string,
-  hwfCode?: string
+  amount: string
 ) => {return [{
   tabName: 'Payment History',
   tabContent: [
     'Order Summary',
     feeCode,
     feeType,
-    amount
+    amount,
+    FEE_AND_PAY_UI_COMPONENT_PAYMENTS_HEADING
   ]
 }];
 };
