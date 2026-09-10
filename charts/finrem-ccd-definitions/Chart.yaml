@@ -1,7 +1,7 @@
 apiVersion: v2
 description: Financial Remedy - CCD Definitions
 name: finrem-ccd-definitions
-version: 2.2.54
+version: 2.2.55
 dependencies:
   - name: nodejs
     version: 3.2.1
@@ -60,3 +60,8 @@ dependencies:
     version: 0.0.77
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: am-org-role-mapping-service.enabled
+  - name: finrem-cron
+    version: 0.0.11
+    repository: 'oci://hmctsprod.azurecr.io/helm'
+    condition:  finrem-cron.enabled
+
