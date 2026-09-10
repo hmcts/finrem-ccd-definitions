@@ -44,7 +44,7 @@ const createCheckIssueApplicationTaskHWF = async (): Promise<string> => {
   const caseId = await ConsentedCaseFactory
     .createConsentedCaseUpToApplicationPaymentSubmission();
 
-    await ConsentedEventApi.caseWorkerHWFDecisionMade(caseId);
+  await ConsentedEventApi.caseWorkerHWFDecisionMade(caseId);
   
   return caseId;
 };
@@ -53,7 +53,7 @@ const createCheckIssueApplicationTaskFAB = async (): Promise<string> => {
   const caseId = await ConsentedCaseFactory
     .createConsentedCaseUpToApplicationPaymentSubmission();
 
-    await ConsentedEventApi.caseWorkerHwfFeeAccountDebited(caseId);
+  await ConsentedEventApi.caseWorkerHwfFeeAccountDebited(caseId);
   
   return caseId;
 };
