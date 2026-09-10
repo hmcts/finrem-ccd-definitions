@@ -214,4 +214,6 @@ withNightlyPipeline(type, product, component) {
             }
         }
     }
+
+    enableSlackNotifications('#finrem-dev')
 }
