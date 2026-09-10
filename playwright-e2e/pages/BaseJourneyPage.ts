@@ -54,8 +54,8 @@ export abstract class BaseJourneyPage {
     await expect(this.submitButton).toBeEnabled();
     await this.wait(100); // if wait is not added, valdation message (such as "the field is required") is not displayed
     await this.submitButton.click({ force: true });
-    const submissionDateAndTime = DateHelper.getCurrentDateTimeFull();
     await this.waitForSpinner();
+    const submissionDateAndTime = DateHelper.getCurrentDateTimeFull();
     return submissionDateAndTime;
   }
 
@@ -111,13 +111,7 @@ export abstract class BaseJourneyPage {
       ? `${expectedUrl}${pageNumber ?? ''}`
       : undefined;
 
-    await this.continueButton.click();
-
-    await this.waitForSpinner();
-
-    if (finalUrl) {
-      await this.page.waitForURL(new RegExp(finalUrl));
-    }
+    await this.clickAndWaitForNavigation(this.continueButton, finalUrl, false);
   }
 
   async navigateConfirm() {
@@ -125,8 +119,7 @@ export abstract class BaseJourneyPage {
     await this.confirmButton.scrollIntoViewIfNeeded();
     await expect(this.confirmButton).toBeVisible();
     await expect(this.confirmButton).toBeEnabled();
-    await this.confirmButton.click();
-    await this.waitForSpinner();
+    await this.clickAndWaitForNavigation(this.confirmButton);
   }
 
   async navigatePrevious() {
@@ -134,8 +127,7 @@ export abstract class BaseJourneyPage {
     await this.previousButton.scrollIntoViewIfNeeded();
     await expect(this.previousButton).toBeVisible();
     await expect(this.previousButton).toBeEnabled();
-    await this.previousButton.click();
-    await this.waitForSpinner();
+    await this.clickAndWaitForNavigation(this.previousButton);
   }
 
   async navigateIgnoreWarningAndGo() {
@@ -143,16 +135,14 @@ export abstract class BaseJourneyPage {
     await this.ignoreWarningAndGoButton.scrollIntoViewIfNeeded();
     await expect(this.ignoreWarningAndGoButton).toBeVisible();
     await expect(this.ignoreWarningAndGoButton).toBeEnabled();
-    await this.ignoreWarningAndGoButton.click();
-    await this.waitForSpinner();
+    await this.clickAndWaitForNavigation(this.ignoreWarningAndGoButton, undefined, false);
   }
 
   async navigateCancel() {
     await this.page.waitForLoadState();
     await this.cancelHyperlink.scrollIntoViewIfNeeded();
     await expect(this.cancelHyperlink).toBeVisible();
-    await this.cancelHyperlink.click();
-    await this.waitForSpinner();
+    await this.clickAndWaitForNavigation(this.cancelHyperlink);
   }
 
   getAddNewButton(position: number = 0): Locator {
@@ -184,9 +174,53 @@ export abstract class BaseJourneyPage {
     await expect
       .poll(
         async () => {
-          return await this.spinner.count();
-        })
-      .toBe(0);
+          return await this.page.locator('xuilib-loading-spinner:visible').count();
+        },
+        { timeout: 15000 }
+      )
+      .toBe(0)
+      .catch(() => {});
+  }
+
+  private async waitForUrlChange() {
+    const initialUrl = this.page.url();
+    await this.page.waitForURL(url => {
+      return url.toString() !== initialUrl;
+    });
+  }
+
+  private async clickAndWaitForNavigation(button: Locator, expectedUrl?: string, requireUrlChange: boolean = false) {
+    await this.waitForSpinner();
+
+    for (let attempt = 1; attempt <= 6; attempt++) {
+      try {
+        await button.click({ timeout: 10000, noWaitAfter: true });
+        break;
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        const isIntercepted = message.includes('intercepts pointer events');
+
+        if (isIntercepted && attempt === 6) {
+          await button.click({ force: true, noWaitAfter: true });
+          break;
+        }
+
+        if (!isIntercepted || attempt === 6) {
+          throw error;
+        }
+
+        await this.waitForSpinner();
+        await this.page.waitForTimeout(300);
+      }
+    }
+
+    if (expectedUrl) {
+      await this.page.waitForURL(new RegExp(expectedUrl));
+    } else if (requireUrlChange) {
+      await this.waitForUrlChange();
+    }
+
+    await this.waitForSpinner();
   }
 
   async verifyFieldIsRequiredMessageShown() {

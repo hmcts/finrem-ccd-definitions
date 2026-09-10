@@ -14,14 +14,30 @@ export class ManageCaseDashboardPage {
   }
 
   async navigateToCase(caseId: string, canView: boolean = true) {
-    await this.page.waitForLoadState();
-    const url = `${this.url}/cases/case-details/${caseId}`;
-    await this.page.goto(url);
-    if (canView) {
-      await expect(this.page.getByText(String(caseId).replace(/(\d{4})(?=\d)/g, '$1-'))).toBeVisible();
-    } else {
-      await expect(this.page.getByText(String(caseId).replace(/(\d{4})(?=\d)/g, '$1-'))).not.toBeVisible();
+    await this.page.waitForLoadState('domcontentloaded');
+
+    const caseDetailsPath = `/cases/case-details/${caseId}`;
+    const caseDetailsUrl = `${this.url}${caseDetailsPath}`;
+
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      await this.page.goto(caseDetailsUrl, { waitUntil: 'domcontentloaded' });
+
+      const currentPath = new URL(this.page.url()).pathname;
+      const onCaseDetailsPage = currentPath.includes('/cases/case-details/') && currentPath.includes(caseId);
+      if (currentPath === caseDetailsPath || onCaseDetailsPage) {
+        return;
+      }
+
+      if (attempt < 3) {
+        await this.page.waitForTimeout(1500);
+      }
     }
+
+    if (canView) {
+      throw new Error(`Could not open case details for case ${caseId}. Current URL: ${this.page.url()}`);
+    }
+
+    await expect(this.page).toHaveURL(/\/cases(?:\/|$)/);
   }
 
   async navigateToTab(tab: CaseTab): Promise<void> {

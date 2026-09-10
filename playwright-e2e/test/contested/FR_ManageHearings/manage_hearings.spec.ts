@@ -247,12 +247,7 @@ test.describe('Contested - Manage Hearings', { tag: ['@MH'] }, () => {
       await test.step('Login as caseworker and open case', async () => {
         await manageCaseDashboardPage.visit();
 
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
+        await loginPage.loginCaseworker();
 
         await manageCaseDashboardPage.navigateToCase(caseId);
 
