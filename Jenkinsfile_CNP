@@ -135,6 +135,14 @@ def getFinremCosImage() {
   return "latest"
 }
 
+def getWaTaskConfigPrNumber() {
+  def githubApi = new GithubAPI(this)
+  for (label in githubApi.getLabelsbyPattern(env.BRANCH_NAME, "use-finrem-wa-task-pr-") ) {
+    return label.minus("use-finrem-wa-task-pr-")
+  }
+  return ""
+}
+
 def setPreviewEnvVars() {
   def githubApi = new GithubAPI(this)
 
@@ -163,7 +171,7 @@ def uploadWaPreviewDmnDefinitions() {
 
   dir("${WORKSPACE}") {
     sh """
-      ./bin/wa/pull-latest-task-config-files.sh "${waTaskConfigRepoUrl}" "${waTaskConfigBranch}" camunda
+      ./bin/wa/pull-latest-task-config-files.sh "${waTaskConfigRepoUrl}" "${env.WA_TASK_CONFIG_PR_NUMBER}" "${waTaskConfigBranch}" camunda
       ./bin/wa/import-dmn-diagram.sh . divorce finrem camunda
     """
   }
@@ -316,6 +324,7 @@ withPipeline("nodejs", product, component) {
   onPR() {
     env.ENV='preview'
     env.FINREM_COS_IMAGE = getFinremCosImage()
+    env.WA_TASK_CONFIG_PR_NUMBER = getWaTaskConfigPrNumber()
     setPreviewEnvVars()
   }
 
