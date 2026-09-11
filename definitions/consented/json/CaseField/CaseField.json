@@ -2672,5 +2672,21 @@
     "Label": "${extraClientAddr4ConfidentialLabel}",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "11/09/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseNameHmctsInternal",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "11/09/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "caseManagementCategory",
+    "Label": " ",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public"
   }
 ]
