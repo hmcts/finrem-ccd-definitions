@@ -897,7 +897,7 @@
     "Name": "Solicitor Upload document",
     "Description": "Solicitor Upload document",
     "DisplayOrder": 48,
-    "PreConditionState(s)": "awaitingInfo;readyForHearing",
+    "PreConditionState(s)": "awaitingInfo;awaitingResponse",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
