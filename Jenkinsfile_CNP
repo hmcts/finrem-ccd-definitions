@@ -11,8 +11,7 @@ AppPipelineConfig pipelineConf
 
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
-def nonProdFinremSecrets = [
-        secret('case-document-am-api-s2s-secret', 'CASE_DOCUMENT_AM_API_S2S_SECRET'),
+def commonFinremSecrets = [
         secret('fixedlists-consented-judgedetails-1', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_1'),
         secret('fixedlists-consented-judgedetails-2', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_2'),
         secret('fixedlists-consented-judgedetails-3', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_3'),
@@ -24,12 +23,17 @@ def nonProdFinremSecrets = [
         secret('fixedlists-consented-judgedetails-9', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_9'),
         secret('fixedlists-consented-judgedetails-10', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_10'),
         secret('fixedlists-consented-judgedetails-11', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_11'),
+
         secret('userprofile-consented-judgedetails-1', 'USERPROFILE_CONSENTED_JUDGEDETAILS_1'),
         secret('userprofile-consented-judgedetails-2', 'USERPROFILE_CONSENTED_JUDGEDETAILS_2'),
         secret('userprofile-consented-judgedetails-3', 'USERPROFILE_CONSENTED_JUDGEDETAILS_3'),
         secret('userprofile-consented-judgedetails-4', 'USERPROFILE_CONSENTED_JUDGEDETAILS_4'),
         secret('userprofile-consented-judgedetails-5', 'USERPROFILE_CONSENTED_JUDGEDETAILS_5'),
-        secret('userprofile-consented-judgedetails-6', 'USERPROFILE_CONSENTED_JUDGEDETAILS_6'),
+        secret('userprofile-consented-judgedetails-6', 'USERPROFILE_CONSENTED_JUDGEDETAILS_6')
+]
+
+def nonProdOnlyFinremSecrets = [
+        secret('case-document-am-api-s2s-secret', 'CASE_DOCUMENT_AM_API_S2S_SECRET'),
         secret('userprofile-consented-judgedetails-7', 'USERPROFILE_CONSENTED_JUDGEDETAILS_7'),
         secret('userprofile-consented-judgedetails-8', 'USERPROFILE_CONSENTED_JUDGEDETAILS_8'),
         secret('userprofile-consented-judgedetails-9', 'USERPROFILE_CONSENTED_JUDGEDETAILS_9'),
@@ -79,25 +83,7 @@ def nonProdFinremSecrets = [
         secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER")
 ]
 
-def prodFinremSecrets = [
-        secret('fixedlists-consented-judgedetails-1', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_1'),
-        secret('fixedlists-consented-judgedetails-2', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_2'),
-        secret('fixedlists-consented-judgedetails-3', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_3'),
-        secret('fixedlists-consented-judgedetails-4', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_4'),
-        secret('fixedlists-consented-judgedetails-5', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_5'),
-        secret('fixedlists-consented-judgedetails-6', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_6'),
-        secret('fixedlists-consented-judgedetails-7', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_7'),
-        secret('fixedlists-consented-judgedetails-8', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_8'),
-        secret('fixedlists-consented-judgedetails-9', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_9'),
-        secret('fixedlists-consented-judgedetails-10', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_10'),
-        secret('fixedlists-consented-judgedetails-11', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_11'),
-        secret('userprofile-consented-judgedetails-1', 'USERPROFILE_CONSENTED_JUDGEDETAILS_1'),
-        secret('userprofile-consented-judgedetails-2', 'USERPROFILE_CONSENTED_JUDGEDETAILS_2'),
-        secret('userprofile-consented-judgedetails-3', 'USERPROFILE_CONSENTED_JUDGEDETAILS_3'),
-        secret('userprofile-consented-judgedetails-4', 'USERPROFILE_CONSENTED_JUDGEDETAILS_4'),
-        secret('userprofile-consented-judgedetails-5', 'USERPROFILE_CONSENTED_JUDGEDETAILS_5'),
-        secret('userprofile-consented-judgedetails-6', 'USERPROFILE_CONSENTED_JUDGEDETAILS_6')
-]
+def nonProdFinremSecrets = commonFinremSecrets + nonProdOnlyFinremSecrets
 
 def secrets = [
         's2s-${env}'      : [
@@ -245,7 +231,7 @@ withPipeline("nodejs", product, component) {
     env.RUNNING_ENV = env.ENV
 
     pipelineConf.vaultSecrets['finrem-${env}'] =
-            env.ENV == 'prod' ? prodFinremSecrets : nonProdFinremSecrets
+            env.ENV == 'prod' ? commonFinremSecrets : nonProdFinremSecrets
 
     yarnBuilder.yarn('setup')
     if('preview' == env.ENV) {
