@@ -9084,5 +9084,21 @@
     "FieldType": "Text",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "11/09/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseNameHmctsInternal",
+    "Label": " ",
+    "FieldType": "Text",
+    "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom": "11/09/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "caseManagementCategory",
+    "Label": " ",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public"
   }
 ]
