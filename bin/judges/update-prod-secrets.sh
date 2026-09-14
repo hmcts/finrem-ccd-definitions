@@ -13,8 +13,19 @@ fi
 # Loop to download secrets based on the file count
 for ((i=1; i<=file_count; i++))
 do
-    az keyvault secret set --file build/output/judgedetails-$i.json --name fixedlists-consented-judgedetails-$i --vault-name finrem-aat
-    echo "Secret fixedlists-consented-judgedetails-$i updated"
+    az keyvault secret set \
+      --file build/output/judgedetails-$i.json \
+      --name fixedlists-consented-judgedetails-$i \
+      --vault-name finrem-aat
+
+    echo "Updated fixedlists-consented-judgedetails-$i in finrem-aat"
+
+    az keyvault secret set \
+      --file build/output/judgedetails-$i.json \
+      --name fixedlists-consented-judgedetails-$i \
+      --vault-name finrem-prod
+
+    echo "Updated fixedlists-consented-judgedetails-$i in finrem-prod"
 done
 
 echo "Update complete"
