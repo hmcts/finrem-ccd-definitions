@@ -44,7 +44,6 @@ export class UploadOrderDocumentsPage extends BaseJourneyPage {
       this.variationOrderDocUpload,
       './playwright-e2e/resources/file/Variation order.pdf'
     );
-    await this.navigateContinue();
 
     if (!(await this.variationOrderDocUpload.isVisible())) {
       await this.navigatePrevious();
