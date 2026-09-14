@@ -1,5 +1,4 @@
 import {test} from '../../../fixtures/fixtures.ts';
-import config from '../../../config/config.ts';
 import {ContestedCaseFactory} from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import {ContestedEvents} from '../../../config/case-data.ts';
 import {YesNoRadioEnum} from '../../../pages/helpers/enums/RadioEnums.ts';
@@ -13,7 +12,7 @@ import { sendOrderTableDataWithUploadApprovedOrder } from '../../../resources/ch
 
 async function loginAsCaseWorker(caseId: string, manageCaseDashboardPage: any, loginPage: any): Promise<void> {
   await manageCaseDashboardPage.visit();
-  await loginPage.loginWaitForPath(config.caseWorker.email, config.caseWorker.password, config.manageCaseBaseURL, config.loginPaths.cases);
+  await loginPage.loginCaseworker();
   await manageCaseDashboardPage.navigateToCase(caseId);
 }
 
