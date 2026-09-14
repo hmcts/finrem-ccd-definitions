@@ -106,7 +106,7 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
 test.describe('Contested - Amend Application Details join/exit express case Form A', () => {
   test(
     'Contested Form A - Amend Application Details. Exit Express Pilot content shown.  Amendment added a Variation Order, so criteria not met.',
-    { tag: [''] },
+    { tag: [] },
     async (
       {
         loginPage,
