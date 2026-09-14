@@ -548,3 +548,36 @@ ccd-case-document-am-api:
       CASE_DOCUMENT_AM_API_S2S_SECRET: ${CASE_DOCUMENT_AM_API_S2S_SECRET}
       CASE_DOCUMENT_S2S_AUTHORISED_SERVICES: finrem_case_orchestration,cd_case_document_am_api,ccd_gw,xui_webapp,ccd_data,bulk_scan_processor
     keyVaults: []
+
+finrem-cron:
+  enabled: true
+  job:
+    kind: CronJob
+    imagePullPolicy: Always
+    image: hmctsprod.azurecr.io/finrem/cos:${FINREM_COS_IMAGE}
+    schedule: "0 0/10 * * *"
+    concurrencyPolicy: Forbid
+    environment:
+      AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+      IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
+      PRD_API_URL: http://rd-professional-api-aat.service.core-compute-aat.internal
+      IDAM_S2S_URL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+      FINREM_NOTIFICATION_SERVICE_BASE_URL: http://finrem-ns-aat.service.core-compute-aat.internal
+      PAYMENT_SERVICE_API_BASEURL: http://finrem-ps-aat.service.core-compute-aat.internal
+      ACA_SERVICE_API_BASEURL: http://aac-manage-case-assignment-aat.service.core-compute-aat.internal
+      CCD_DATA_STORE_API_BASEURL: "http://${SERVICE_NAME}-ccd-data-store-api"
+      IDAM_API_REDIRECT_URL: https://finrem-frontend-aat.service.core-compute-aat.internal/oauth2/callback
+      DOCUMENT_MANAGEMENT_STORE_URL: http://dm-store-aat.service.core-compute-aat.internal
+      SEND_LETTER_SERVICE_BASEURL: http://rpe-send-letter-service-aat.service.core-compute-aat.internal
+      PAYMENT_API_URL: http://payment-api-aat.service.core-compute-aat.internal
+      FEES_API_URL: http://fees-register-api-aat.service.core-compute-aat.internal
+      CASE_DOCUMENT_AM_URL: "https://ccd-case-document-am-api-${SERVICE_FQDN}"
+      CRON_WAIT_TIME_MINS: 1
+      CRON_BATCHSIZE: 20000
+      TASK_NAME: GlobalSearchMigrationTask
+      CRON_DRY_RUN: false
+      CRON_SUPPLEMENTARY_DATA_UPDATE: true
+      CRON_GLOBAL_SEARCH_MIGRATION_ENABLED: true
+      CRON_GLOBAL_SEARCH_MIGRATION_BATCH_SIZE: 100
+
+
