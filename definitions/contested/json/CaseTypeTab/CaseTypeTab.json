@@ -1572,7 +1572,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "DisplayContextParameter": "#TABLE(fileName,caseDocumentParty,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1581,7 +1582,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentType,generalDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1590,7 +1592,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 17,
+    "DisplayContextParameter": "#TABLE(url,type,scannedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -1599,7 +1602,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 18,
+    "DisplayContextParameter": "#TABLE(draftOrder,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -1608,7 +1612,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 19,
+    "DisplayContextParameter": "#TABLE(draftOrder,uploadedOnBehalfOf,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1874,7 +1879,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "DisplayContextParameter": "#TABLE(fileName,caseDocumentParty,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1883,7 +1889,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentType,generalDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -1892,7 +1899,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 17,
+    "DisplayContextParameter": "#TABLE(url,type,scannedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -1901,7 +1909,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 18,
+    "DisplayContextParameter": "#TABLE(draftOrder,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -1910,7 +1919,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 19,
+    "DisplayContextParameter": "#TABLE(draftOrder,uploadedOnBehalfOf,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2176,7 +2186,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "DisplayContextParameter": "#TABLE(fileName,caseDocumentParty,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2185,7 +2196,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentType,generalDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2194,7 +2206,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 17,
+    "DisplayContextParameter": "#TABLE(url,type,scannedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2203,7 +2216,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 18,
+    "DisplayContextParameter": "#TABLE(draftOrder,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2212,7 +2226,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 19,
+    "DisplayContextParameter": "#TABLE(draftOrder,uploadedOnBehalfOf,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2478,7 +2493,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "DisplayContextParameter": "#TABLE(fileName,caseDocumentParty,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2487,7 +2503,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentType,generalDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2496,7 +2513,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 17,
+    "DisplayContextParameter": "#TABLE(url,type,scannedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2505,7 +2523,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 18,
+    "DisplayContextParameter": "#TABLE(draftOrder,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2514,7 +2533,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 19,
+    "DisplayContextParameter": "#TABLE(draftOrder,uploadedOnBehalfOf,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2780,7 +2800,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "DisplayContextParameter": "#TABLE(fileName,caseDocumentParty,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2789,7 +2810,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentType,generalDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -2798,7 +2820,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 17,
+    "DisplayContextParameter": "#TABLE(url,type,scannedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2807,7 +2830,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 18,
+    "DisplayContextParameter": "#TABLE(draftOrder,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -2816,7 +2840,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 19,
+    "DisplayContextParameter": "#TABLE(draftOrder,uploadedOnBehalfOf,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3082,7 +3107,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadCaseDocument",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "DisplayContextParameter": "#TABLE(fileName,caseDocumentParty,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3091,7 +3117,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "uploadGeneralDocuments",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "DisplayContextParameter": "#TABLE(DocumentFileName,DocumentType,generalDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -3100,7 +3127,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "scannedDocuments",
-    "TabFieldDisplayOrder": 17
+    "TabFieldDisplayOrder": 17,
+    "DisplayContextParameter": "#TABLE(url,type,scannedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -3109,7 +3137,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "agreedDraftOrderCollection",
-    "TabFieldDisplayOrder": 18
+    "TabFieldDisplayOrder": 18,
+    "DisplayContextParameter": "#TABLE(draftOrder,submittedBy,submittedDate)"
   },
   {
     "LiveFrom": "29/10/2024",
@@ -3118,7 +3147,8 @@
     "TabLabel": "Case documents",
     "TabDisplayOrder": 11,
     "CaseFieldID": "suggestedDraftOrderCollection",
-    "TabFieldDisplayOrder": 19
+    "TabFieldDisplayOrder": 19,
+    "DisplayContextParameter": "#TABLE(draftOrder,uploadedOnBehalfOf,submittedDate)"
   },
   {
     "LiveFrom": "01/01/2017",
