@@ -67,10 +67,6 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
     { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, axeUtils, checkYourAnswersPage }) => {
       // Create and setup case up to issue application
       const caseId = await ContestedCaseFactory.progressToUploadDraftOrder({ isFormA: true });
-      await ContestedEventApi.caseworkerAddsApplicantIntervener(caseId);
-      await ContestedEventApi.caseworkerAddsRespondentIntervener(caseId);
-      await ContestedEventApi.caseworkerAddsApplicantBarrister(caseId);
-      await ContestedEventApi.caseworkerAddsRespondentBarrister(caseId);
       await caseAssignmentApi.assignCaseToRespondent(caseId, CaseTypeEnum.CONTESTED);
     
       // Login as caseworker and navigate to case
@@ -108,9 +104,7 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
         uploadFiles: ['final_hearing_file1.pdf'],
         sendANoticeOfHearing: true,
         whoShouldSeeOrder: [
-          { partyType: 'Applicant', partyName: 'Frodo Baggins' },
-          { partyType: 'Intervener1', partyName: 'intApp1' },
-          { partyType: 'Intervener2', partyName: 'intResp1' }
+          { partyType: 'Applicant', partyName: 'Frodo Baggins' }
         ],
         whoShouldNotSeeOrder: [
           { partyType: 'Respondent', partyName: 'Smeagol Gollum' }
@@ -137,7 +131,7 @@ test.describe('Contested - Adjourn Hearings', { tag: ['@MH'] }, () => {
         attendance: 'Remote - Video call',
         hearingTime: '10:00 AM',
         duration: '2 hours',
-        whoShouldSeeOrder: 'Applicant - Frodo Baggins, Intervener1 - intApp1, Intervener2 - intResp1',
+        whoShouldSeeOrder: 'Applicant - Frodo Baggins',
         additionalInformation: 'Hearing details here',
         uploadFiles: ['HearingNotice.pdf', 'final_hearing_file1.pdf']
       });

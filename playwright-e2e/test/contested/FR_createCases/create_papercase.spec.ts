@@ -14,7 +14,7 @@ import {envTestData} from '../../../data-utils/test_data/EnvTestDataConfig.ts';
 // Create a test case for the Contested Paper Case
 test(
   'Create Case - Contested Paper Case',
-  { tag: ['@additionalTest'] },
+  { tag: ['@additionalTest', '@nightlyfix'] },
   async (
     {
       loginPage,

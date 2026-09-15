@@ -42,12 +42,7 @@ async function loginAsCaseworkerStep(
 ): Promise<void> {
   await test.step('Login as caseworker', async () => {
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(
-      config.caseWorker.email,
-      config.caseWorker.password,
-      config.manageCaseBaseURL,
-      config.loginPaths.cases
-    );
+    await loginPage.loginCaseworker();
   });
 }
 

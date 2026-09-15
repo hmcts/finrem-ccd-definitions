@@ -30,12 +30,7 @@ test.describe('Contested General Application e2e', () => {
 
       await test.step('Caseworker creates General Application', async () => {
         await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
+        await loginPage.loginCaseworker();
 
         await manageCaseDashboardPage.navigateToCase(caseId);
 
@@ -123,12 +118,7 @@ test.describe('Contested General Application e2e', () => {
         await manageCaseDashboardPage.signOut();
 
         await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
+        await loginPage.loginCaseworker();
 
         await manageCaseDashboardPage.navigateToCase(caseId);
 
