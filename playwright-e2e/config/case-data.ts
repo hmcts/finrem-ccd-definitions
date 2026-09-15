@@ -210,7 +210,7 @@ export const ContestedEvents: Record<string, CaseEvent> = {
     ccdCallback: "FR_submitUploadedCaseFiles"
   },
   consentOrder: {
-    listItem: "Consent Order",
+    listItem: "Final Consent Order",
     ccdCallback: "FR_consentOrder"
   },
   createGeneralOrderConsent: {
