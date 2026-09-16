@@ -1,17 +1,12 @@
 import { test } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
-import { ContestedEvents } from '../../../config/case-data';
 import { expressCaseGateKeepingTabData, expressCaseGateKeepingNotEnrolledTabData } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 import { createCaseTabData } from '../../../resources/tab_content/contested/solicitor_create_case_tabs';
-import { ExpressCasePage } from '../../../pages/events/amend-application-details/ExpressCasePage';
 import { ManageCaseDashboardPage } from '../../../pages/ManageCaseDashboardPage';
 import { CaseDetailsPage } from '../../../pages/CaseDetailsPage';
-import { StartPage } from '../../../pages/events/create-case/StartPage';
-import { NatureOfApplicationPage } from '../../../pages/events/create-case/NatureOfApplicationPage';
-import { UploadOrderDocumentsPage } from '../../../pages/events/create-case/UploadOrderDocumentPage';
-import { CreateCaseCheckYourAnswersPage } from '../../../pages/events/create-case/CreateCaseCheckYourAnswersPage';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { SigninPage } from '../../../pages/SigninPage';
+import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi';
 
 const enum ExpressTestType {
   TestingForExpressExit = 'Testing for content to say that the case is no longer express',
@@ -24,12 +19,7 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
   expressTestType: ExpressTestType,
   loginPage: SigninPage,
   manageCaseDashboardPage: ManageCaseDashboardPage,
-  caseDetailsPage: CaseDetailsPage,
-  startPage: StartPage,
-  natureOfApplicationPage: NatureOfApplicationPage,
-  expressCasePage: ExpressCasePage,
-  uploadOrderDocumentsPage: UploadOrderDocumentsPage,
-  createCaseCheckYourAnswersPage: CreateCaseCheckYourAnswersPage
+  caseDetailsPage: CaseDetailsPage
 ): Promise<void> {
   await manageCaseDashboardPage.visit();
   await loginPage.loginWaitForPath(
@@ -51,43 +41,22 @@ async function performAmendFormAApplicationDetailsFlowForExpressPilot(
     await caseDetailsPage.assertTabData(expressCaseGateKeepingNotEnrolledTabData);
     break;
   }
-  await caseDetailsPage.selectNextStep(ContestedEvents.amendFormAApplicationDetails);
-  await startPage.navigateContinue();
-  await startPage.navigateContinue(); // Applicant representation
-  await startPage.navigateContinue(); // Divorce / Dissolution details
-  await startPage.navigateContinue(); // Enter Applicant's name and address
-  await startPage.navigateContinue(); // Enter respondent names
-  await startPage.navigateContinue(); // Respondent's representation details
-  // Nature of App - Select Variation order if testing that we exit Express Pilot
-  if (ExpressTestType.TestingForExpressExit === expressTestType) {
-    await natureOfApplicationPage.selectVariationOrderOnly();
-  }
-  await natureOfApplicationPage.navigateContinue();
-  await startPage.navigateContinue(); // Select Fast Track No
-  await startPage.navigateContinue(); // Complete complexity list and assets details
-  await startPage.navigateContinue(); // Complete court details
-  // Check the express page, depending on what you are testing
+  let expressEnrolled: boolean;
   switch (expressTestType) {
-  case ExpressTestType.TestingForExpressExit:
-    await expressCasePage.checkExitContent();
-    await expressCasePage.navigateContinue();
-    break;
   case ExpressTestType.TestingForExpressEntry:
-    await expressCasePage.checkEnterContent();
-    await expressCasePage.checkLinkResolves();
-    await expressCasePage.navigateContinue();
+    expressEnrolled = true;
     break;
+  case ExpressTestType.TestingForExpressExit:
   case ExpressTestType.TestForNoExpressContent:
-    // no express page shown, test resumes from next page in journey.
+    expressEnrolled = false;
     break;
   }
-  await startPage.navigateContinue(); // Complete MIAM Yes/No
-  await startPage.navigateContinue(); // Complete MIAM certification details
-  await uploadOrderDocumentsPage.uploadVariationOrderDoc(); // Upload variation Order Document
-  await uploadOrderDocumentsPage.navigateContinue();
-  await uploadOrderDocumentsPage.navigateContinue();
-  await createCaseCheckYourAnswersPage.navigateSubmit();
-  await caseDetailsPage.checkHasBeenUpdated('Amend Application Details');
+
+  await ContestedEventApi.caseworkerPerformsAmendApplicationDetails(
+    caseId,
+    expressEnrolled
+  );
+  await manageCaseDashboardPage.navigateToCase(caseId);
   await caseDetailsPage.assertTabData(createCaseTabData); // Assert case creation tab data
   // Check the express part of the gatekeeping and allocation tab, depending on what you are testing
   switch (expressTestType) {
@@ -111,12 +80,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
       {
         loginPage,
         manageCaseDashboardPage,
-        caseDetailsPage,
-        startPage,
-        natureOfApplicationPage,
-        expressCasePage,
-        uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage
+        caseDetailsPage
       }
     ) => {
       const caseId =
@@ -126,12 +90,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
         ExpressTestType.TestingForExpressExit,
         loginPage,
         manageCaseDashboardPage,
-        caseDetailsPage,
-        startPage,
-        natureOfApplicationPage,
-        expressCasePage,
-        uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage
+        caseDetailsPage
       );
     }
   );
@@ -143,12 +102,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
       {
         loginPage,
         manageCaseDashboardPage,
-        caseDetailsPage,
-        startPage,
-        natureOfApplicationPage,
-        expressCasePage,
-        uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage
+        caseDetailsPage
       }
     ) => {
       const caseId =
@@ -158,12 +112,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
         ExpressTestType.TestingForExpressEntry,
         loginPage,
         manageCaseDashboardPage,
-        caseDetailsPage,
-        startPage,
-        natureOfApplicationPage,
-        expressCasePage,
-        uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage
+        caseDetailsPage
       );
     }
   );
@@ -175,12 +124,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
       {
         loginPage,
         manageCaseDashboardPage,
-        caseDetailsPage,
-        startPage,
-        natureOfApplicationPage,
-        expressCasePage,
-        uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage
+        caseDetailsPage
       }
     ) => {
       const caseId = await ContestedCaseFactory.createBaseContestedFormA();
@@ -189,12 +133,7 @@ test.describe('Contested - Amend Application Details join/exit express case Form
         ExpressTestType.TestForNoExpressContent,
         loginPage,
         manageCaseDashboardPage,
-        caseDetailsPage,
-        startPage,
-        natureOfApplicationPage,
-        expressCasePage,
-        uploadOrderDocumentsPage,
-        createCaseCheckYourAnswersPage
+        caseDetailsPage
       );
     }
   );

@@ -298,6 +298,8 @@ export const PayloadPath = {
     manageBarristerAddIntervenerBarrister: "./playwright-e2e/resources/payload/contested/caseworker/manage-barristers/add-intervener-barrister.json",
     agreedDraftOrderApplicant: "./playwright-e2e/resources/payload/contested/caseworker/upload-draft-orders/agreed-draft-orders-applicant.json",
     manageHearingAddHearing: "./playwright-e2e/resources/payload/contested/caseworker/manage-hearing/add-a-hearing/add-a-hearing.json",
-    manageCaseDocumentsAddDoc: "./playwright-e2e/resources/payload/contested/supercaseworker/manage-case-documents-add.json"
+    manageCaseDocumentsAddDoc: "./playwright-e2e/resources/payload/contested/supercaseworker/manage-case-documents-add.json",
+    amendApplicationDetailsExpressEnrolled: "./playwright-e2e/resources/payload/contested/solicitor/amend-application-details/amend-application-details-express-enrolled.json",
+    amendApplicationDetailsLeaveExpress: "./playwright-e2e/resources/payload/contested/solicitor/amend-application-details/amend-application-details-leave-express.json"
   }
 } as const;

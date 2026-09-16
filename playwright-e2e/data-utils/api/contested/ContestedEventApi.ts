@@ -51,6 +51,25 @@ export class ContestedEventApi {
     return response;
   }
 
+  private static async updateSolicitorSteps(
+    caseId: string,
+    steps: { event: string; payload?: string; replacements?: ReplacementAction[] }[]
+  ): Promise<any> {
+    let response;
+    for (const step of steps) {
+      response = await ccdApi.updateCaseInCcd(
+        config.applicant_solicitor.email,
+        config.applicant_solicitor.password,
+        caseId,
+        CaseType.Contested,
+        step.event,
+        step.payload || '',
+        step.replacements || []
+      );
+    }
+    return response;
+  }
+
   private static async updateIntervenerSteps(
     caseId: string,
     steps: { event: string; payload?: string; replacements?: ReplacementAction[] }[]
@@ -475,4 +494,12 @@ export class ContestedEventApi {
     ]);
   }
 
+  static async caseworkerPerformsAmendApplicationDetails (caseId: string, expressEnrolled: boolean) {
+    await this.updateSolicitorSteps(caseId, [
+      {
+        event: ContestedEvents.amendFormAApplicationDetails.ccdCallback,
+        payload: expressEnrolled ? PayloadPath.Contested.amendApplicationDetailsExpressEnrolled : PayloadPath.Contested.amendApplicationDetailsLeaveExpress
+      }
+    ]);
+  }
 }

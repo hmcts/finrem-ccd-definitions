@@ -48,21 +48,10 @@ export class CaseDetailsPage {
   }
 
   private async runNextStep(event: CaseEvent): Promise<void> {
-    await this.waitForNextStepControls();
+    await expect(this.selectNextStepDropDown).toBeVisible();
     await this.assertEventExistsInNextStepList(event.listItem);
     await this.selectNextStepDropDown.selectOption(event.listItem);
     await this.goButton.click();
-
-    await this.page.waitForURL(`**/${event.ccdCallback}/**`, {
-      timeout: 20000,
-      waitUntil: 'commit'
-    });
-  }
-
-  private async waitForNextStepControls(): Promise<void> {
-    await this.page.waitForLoadState('domcontentloaded');
-    await this.selectNextStepDropDown.waitFor({ state: 'visible', timeout: 20000 });
-    await this.goButton.waitFor({ state: 'visible', timeout: 20000 });
   }
 
   private async assertEventExistsInNextStepList(eventName: string): Promise<void> {
