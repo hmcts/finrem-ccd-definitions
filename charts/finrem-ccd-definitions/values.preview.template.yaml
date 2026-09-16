@@ -318,6 +318,10 @@ ccd:
     clusterName: "es"
     replicas: 1
     clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
+    persistentVolumeClaimRetentionPolicy:
+      enabled: true
+      whenDeleted: Delete
+      whenScaled: Delete
 
   logstash:
     image: hmctsprod.azurecr.io/imported/elastic/logstash
