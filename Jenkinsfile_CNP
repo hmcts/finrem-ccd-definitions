@@ -366,6 +366,13 @@ withPipeline("nodejs", product, component) {
   }
 
   before('functionalTest:preview') {
+    // Use the test accounts provisioned by create_idam_id_scripts/run_jobs.sh.
+    def staffUsers = readJSON file: 'create_idam_id_scripts/caseworker_request.json'
+    def admin = staffUsers.find { it.payload.user.email == 'fr_ctscadmin11@justice.gov.uk' }
+    def teamLeader = staffUsers.find { it.payload.user.email == 'fr_ctscteamleader11@justice.gov.uk' }
+    env.CTSC_ADMIN_USERNAME = admin.payload.user.email
+    env.CTSC_TEAMLEADER_USERNAME = teamLeader.payload.user.email
+    env.STAFF_FR_PASSWORD = admin.password
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
     sh 'yarn playwright install'
   }
