@@ -433,7 +433,7 @@
     "PreConditionState(s)": "applicationIssued;readyForHearing",
     "PostConditionState": "referredToJudge",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
@@ -526,7 +526,7 @@
     "PreConditionState(s)": "orderMade",
     "PostConditionState": "referredToJudge",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
@@ -541,7 +541,7 @@
     "PreConditionState(s)": "consentOrderApproved",
     "PostConditionState": "referredToJudge",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
@@ -556,7 +556,7 @@
     "PreConditionState(s)": "consentOrderMade",
     "PostConditionState": "referredToJudge",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
@@ -571,7 +571,7 @@
     "PreConditionState(s)": "awaitingResponse",
     "PostConditionState": "referredToJudge",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
@@ -586,7 +586,7 @@
     "PreConditionState(s)": "responseReceived",
     "PostConditionState": "referredToJudge",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
@@ -601,7 +601,7 @@
     "PreConditionState(s)": "close",
     "PostConditionState": "referredToJudge",
     "CallBackURLSubmittedEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdSubmittedEvent",
-    "RetriesTimeoutURLSubmittedEvent": "3,4,5",
+    "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
     "ShowEventNotes": "Y"
