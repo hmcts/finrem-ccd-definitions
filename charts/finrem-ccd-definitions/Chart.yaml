@@ -7,7 +7,7 @@ dependencies:
     version: 3.2.1
     repository: 'oci://hmctsprod.azurecr.io/helm'
   - name: ccd
-    version: 9.2.4
+    version: 9.3.0
     repository: 'oci://hmctsprod.azurecr.io/helm'
     tags:
       - finrem-ccd-stack
