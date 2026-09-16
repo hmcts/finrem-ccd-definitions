@@ -128,6 +128,7 @@ test(
     // Financial Remedies Court, a court is selected that isn't currently processing Express Case applications.
     await axeUtils.audit({
       exclude: [
+        '#netValueOfHome', // DFR-5685
         '#specialAssistanceRequired',
         '#specificArrangementsRequired'
       ]
@@ -145,7 +146,12 @@ test(
     await financialRemedyCourtPage.navigateContinue();
 
     // Has attended miam
-    await axeUtils.audit();
+    await axeUtils.audit({
+      exclude: [
+        '#specialAssistanceRequired', //DFR-5685
+        '#specificArrangementsRequired'
+      ]
+    });
     await miamQuestionPage.selectHasAttendedMiam(true);
     await miamQuestionPage.navigateContinue();
 
