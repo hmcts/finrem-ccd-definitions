@@ -64,7 +64,7 @@ test.describe('Check and Issue Application task tests', () => {
   for (const { user, completionAction } of checkIssueApplicationUserScenarios) {
     test(
       `${user.name} completes the task using ${completionAction}`,
-      { tag: ['@waTasks'] },
+      { tag: ['@waTasks', '@preview'] },
       async ({
         loginPage,
         manageCaseDashboardPage,
@@ -130,7 +130,7 @@ test.describe('Check and Issue Application task tests', () => {
 
   test(
     'CTSC Team Leader reassigns their task to CTSC Admin',
-    { tag: ['@waTasks'] },
+    { tag: ['@waTasks', '@preview'] },
     async ({
       loginPage,
       manageCaseDashboardPage,

@@ -8,9 +8,7 @@ export default defineConfig({
   ...CommonConfig.recommended,
   testDir: './playwright-e2e',
   testMatch:'*spec.ts',
-  testIgnore: process.env.ENABLE_WA !== 'true'
-  || process.env.BRANCH_NAME === 'master'
-  || process.env.NIGHTLY_TEST === 'true'
+  testIgnore: process.env.BRANCH_NAME === 'master' || process.env.NIGHTLY_TEST === 'true'
     ? ['**/WA_Tasks/**']
     : [],
   snapshotDir: "./playwright-e2e/snapshots",
