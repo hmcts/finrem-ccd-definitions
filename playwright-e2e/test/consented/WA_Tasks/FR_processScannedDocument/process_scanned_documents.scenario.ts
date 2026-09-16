@@ -34,6 +34,15 @@ export const processScannedDocumentUserScenarios = [
       email: config.ctsc_admin.email,
       password: config.ctsc_admin.password
     },
+    completionAction: ATTACH_SCANNED_DOCUMENT
+  },
+  {
+    user: {
+      role: 'admin',
+      name: 'CTSC Admin',
+      email: config.ctsc_admin.email,
+      password: config.ctsc_admin.password
+    },
     completionAction: 'Mark as done'
   },
   {

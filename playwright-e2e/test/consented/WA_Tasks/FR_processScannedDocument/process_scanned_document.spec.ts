@@ -2,7 +2,9 @@ import { test } from '../../../../fixtures/fixtures.ts';
 import config from '../../../../config/config.ts';
 import { DateHelper } from '../../../../data-utils/DateHelper.ts';
 import { ConsentedCaseFactory } from '../../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
-import { ConsentedEventApi } from '../../../../data-utils/api/consented/ConsentedEventApi.ts';
+import { CommonEvents } from '../../../../config/case-data.ts';
+import type { CaseDetailsPage } from '../../../../pages/CaseDetailsPage.ts';
+import type { AttachScannedDocumentsPage } from '../../../../pages/events/attach-scanned-doc/AttachScannedDocumentsPage.ts';
 import type { ManageCaseDashboardPage } from '../../../../pages/ManageCaseDashboardPage.ts';
 import type { SigninPage } from '../../../../pages/SigninPage.ts';
 import type { TaskCompletionAction } from '../../../../pages/WAtasks/TaskScenario.ts';
@@ -38,11 +40,20 @@ const loginAndOpenCase = async (
   await manageCaseDashboardPage.navigateToCase(caseId);
 };
 
-const createProcessScannedDocumentTask = async (): Promise<string> => {
+const createProcessScannedDocumentTask = async (
+  user: LoginCredentials,
+  pages: SessionPages & {
+    caseDetailsPage: CaseDetailsPage;
+    attachScannedDocumentsPage: AttachScannedDocumentsPage;
+  }
+): Promise<string> => {
   const caseId = await ConsentedCaseFactory
     .createConsentedCaseUpToApplicationPaymentSubmission();
 
-  await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
+  await loginAndOpenCase(user, caseId, pages);
+  await pages.caseDetailsPage.selectNextStep(CommonEvents.attachScannedDocs);
+  await pages.attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(false);
+  await pages.manageCaseDashboardPage.navigateToCase(caseId);
 
   return caseId;
 };
@@ -57,6 +68,7 @@ test.describe('Process scanned document task tests', () => {
       async ({
         loginPage,
         manageCaseDashboardPage,
+        caseDetailsPage,
         attachScannedDocumentsPage,
         taskUiChecks
       }) => {
@@ -64,7 +76,9 @@ test.describe('Process scanned document task tests', () => {
           loginPage,
           manageCaseDashboardPage
         };
-        const caseId = await createProcessScannedDocumentTask();
+        const caseId = await createProcessScannedDocumentTask(user, {
+          ...sessionPages, caseDetailsPage, attachScannedDocumentsPage
+        });
 
         const completeTask = async (
           action: TaskCompletionAction
@@ -84,8 +98,6 @@ test.describe('Process scanned document task tests', () => {
         };
 
         await test.step(`${user.name} can see and assign the task`, async () => {
-          await loginAndOpenCase(user, caseId, sessionPages);
-
           await taskUiChecks.assertTaskUI(
             {
               name: TASK_NAME,
@@ -120,16 +132,13 @@ test.describe('Process scanned document task tests', () => {
     async ({
       loginPage,
       manageCaseDashboardPage,
+      caseDetailsPage,
       attachScannedDocumentsPage,
       taskUiChecks
     }) => {
-      const caseId = await createProcessScannedDocumentTask();
-
-      await loginAndOpenCase(
-        config.ctsc_admin,
-        caseId,
-        { loginPage, manageCaseDashboardPage }
-      );
+      const caseId = await createProcessScannedDocumentTask(config.ctsc_admin, {
+        loginPage, manageCaseDashboardPage, caseDetailsPage, attachScannedDocumentsPage
+      });
       await taskUiChecks.assertTaskUI(
         {
           name: TASK_NAME,
@@ -155,6 +164,8 @@ test.describe('Process scanned document task tests', () => {
     async ({
       loginPage,
       manageCaseDashboardPage,
+      caseDetailsPage,
+      attachScannedDocumentsPage,
       taskUiChecks
     }) => {
       test.setTimeout(15 * 60 * 1000);
@@ -163,14 +174,11 @@ test.describe('Process scanned document task tests', () => {
         loginPage,
         manageCaseDashboardPage
       };
-      const caseId = await createProcessScannedDocumentTask();
+      const caseId = await createProcessScannedDocumentTask(config.ctsc_teamleader, {
+        ...sessionPages, caseDetailsPage, attachScannedDocumentsPage
+      });
 
       await test.step('Team Leader assigns the task to themselves', async () => {
-        await loginAndOpenCase(
-          config.ctsc_teamleader,
-          caseId,
-          sessionPages
-        );
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,
           'All work',
