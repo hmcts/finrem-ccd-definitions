@@ -366,6 +366,7 @@ withPipeline("nodejs", product, component) {
   }
 
   before('functionalTest:preview') {
+    env.FUNCTIONAL_TESTS_WORKERS = 2
     // Use the test accounts provisioned by create_idam_id_scripts/run_jobs.sh.
     def staffUsers = readJSON file: 'create_idam_id_scripts/caseworker_request.json'
     def admin = staffUsers.find { it.payload.user.email == 'fr_ctscadmin11@justice.gov.uk' }
