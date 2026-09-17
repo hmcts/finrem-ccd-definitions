@@ -153,8 +153,7 @@ test(
 
     // Upload variation Order Document
     await uploadOrderDocumentsPage.uploadVariationOrderDoc();
-    await uploadOrderDocumentsPage.selectUploadAdditionalDocs(true);
-    await uploadOrderDocumentsPage.uploadOtherDocuments('test1.pdf', 'Other');
+    await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue(expectedURL + '/submit');
 
@@ -318,10 +317,9 @@ test(
     });
 
     await test.step('Upload variation Order Document', async () => {
-      await uploadOrderDocumentsPage.selectUploadAdditionalDocs(true);
-      await uploadOrderDocumentsPage.uploadOtherDocuments('test1.pdf', 'Other');
-      await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
       await uploadOrderDocumentsPage.uploadVariationOrderDoc();
+      await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
+      await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
       await uploadOrderDocumentsPage.navigateContinue();
     });
 
