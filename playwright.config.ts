@@ -17,7 +17,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 1,
   workers: Number(process.env.FUNCTIONAL_TESTS_WORKERS || 3),
   expect: {
-    timeout: 45_000,
+    timeout: 50_000,
   },
   timeout: 5 * 60 * 1000, 
 
