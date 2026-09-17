@@ -73,7 +73,7 @@ finrem-cos:
       FINREM_WORK_ALLOCATION_ENABLED: false
       MANAGE_CASE_DOCS_DELETE_ENABLED: true
       ESTIMATED_ASSETS_CHECKLIST_V3_ENABLED: true
-      PAPER_ESTIMATED_ASSETS_CHECKLIST_V3_ENABLED: false
+      PAPER_ESTIMATED_ASSETS_CHECKLIST_V3_ENABLED: true
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       IDAM_OIDC_URL: https://idam-web-public.aat.platform.hmcts.net
@@ -319,6 +319,10 @@ ccd:
     clusterName: "es"
     replicas: 1
     clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
+    persistentVolumeClaimRetentionPolicy:
+      enabled: true
+      whenDeleted: Delete
+      whenScaled: Delete
 
   logstash:
     image: hmctsprod.azurecr.io/imported/elastic/logstash
