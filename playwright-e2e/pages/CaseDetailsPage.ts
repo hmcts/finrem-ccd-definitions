@@ -396,30 +396,36 @@ export class CaseDetailsPage {
    */
   async clickPaymentHistoryReviewLink(): Promise<void> {
     const paymentHistory = this.page.locator('#case-viewer-field-read--casePaymentHistoryViewer');
-    await expect(paymentHistory).toBeVisible({ timeout: 20000 });
+    await expect(paymentHistory).toBeVisible();
 
     const paymentsTable = paymentHistory
       .getByRole('table')
       .filter({ has: this.page.getByRole('cell', { name: 'Status', exact: true }) })
       .first();
-    await expect(paymentsTable).toBeVisible({ timeout: 20000 });
+    await expect(paymentsTable).toBeVisible();
 
     const reviewLink = paymentsTable.getByRole('link', { name: 'Review' }).first();
-    await expect(reviewLink).toBeVisible({ timeout: 20000 });
+    await expect(reviewLink).toBeVisible();
     await reviewLink.scrollIntoViewIfNeeded();
     await reviewLink.click({ noWaitAfter: true });
 
-    const detailsReady = await Promise.race([
-      this.page.getByText('Payment details', { exact: false }).first().waitFor({ state: 'visible', timeout: 25000 }).then(() => {return true;}),
-      this.page.getByText('Payment amount', { exact: false }).first().waitFor({ state: 'visible', timeout: 25000 }).then(() => {return true;})
-    ]).catch(() => {return false;});
+    const paymentDetails = this.page.getByText('Payment details', { exact: false }).first();
+    const paymentAmount = this.page.getByText('Payment amount', { exact: false }).first();
+
+    const hasVisibleDetailsPanel = async (): Promise<boolean> => {
+      return await paymentDetails.isVisible() || await paymentAmount.isVisible();
+    };
+
+    const detailsReady = await expect
+      .poll(hasVisibleDetailsPanel)
+      .toBeTruthy()
+      .then(() => {return true;})
+      .catch(() => {return false;});
 
     if (!detailsReady) {
       await reviewLink.click({ force: true, noWaitAfter: true });
-      await this.page
-        .getByText('Payment details', { exact: false })
-        .first()
-        .waitFor({ state: 'visible', timeout: 25000 });
+
+      await expect.poll(hasVisibleDetailsPanel).toBeTruthy();
     }
   }
 

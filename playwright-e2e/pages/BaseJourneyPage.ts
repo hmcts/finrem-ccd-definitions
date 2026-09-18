@@ -31,9 +31,7 @@ export abstract class BaseJourneyPage {
     this.cancelHyperlink = page.getByRole('link', { name: 'Cancel' });
     this.spinner = this.page.locator('xuilib-loading-spinner');
     this.eventSummaryTextBox = page.getByRole('textbox', { name: 'Event summary (optional) A' });
-
     this.thereIsAProblemHeader = page.getByRole('heading', { name: 'There is a problem' });
-
     // error messages
     this.fieldIsRequiredErrorMessage = page.getByText('Field is required');
   }
