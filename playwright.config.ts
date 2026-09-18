@@ -9,7 +9,6 @@ const htmlReportDir =
 
 export default defineConfig({
   ...CommonConfig.recommended,
-
   testDir: './playwright-e2e',
   testMatch: '*spec.ts',
   testIgnore: process.env.BRANCH_NAME === 'master' || process.env.NIGHTLY_TEST === 'true'
