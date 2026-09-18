@@ -2,7 +2,7 @@ import { test } from '../../../fixtures/fixtures';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { ContestedEvents } from '../../../config/case-data';
 
-test.describe('Contested - Paper Case - Amend application into Express Pilot', () => {
+test.describe('Contested - Paper Case - Amend application into Express Pilot', { tag: ['@Express'] }, () => {
   test(
     'Enrollment message dynamic page should be inserted when changing total value of assets',
     { tag: [] },
