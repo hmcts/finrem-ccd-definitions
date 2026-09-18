@@ -101,5 +101,34 @@
     "FieldTypeParameter": "FR_binFileUrls",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "18/09/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "notificationsAudits",
+    "Label": "Notification Audit",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "notificationAuditEntry",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "18/09/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "notificationsToBeSent",
+    "Label": "Notifications to be sent",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "notificationAuditEntry",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "18/09/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "notificationEventId",
+    "Label": "Notification Event ID",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
