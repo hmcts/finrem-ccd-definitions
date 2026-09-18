@@ -53,7 +53,7 @@ test.describe('Process scanned document task tests', () => {
   for (const { user, completionAction } of processScannedDocumentUserScenarios) {
     test(
       `${user.name} performs the ${completionAction} action`,
-      { tag: completionAction === ATTACH_SCANNED_DOCUMENT ? ['@waTasks', '@preview'] : ['@waTasks'] },
+      { tag: ['@waTasks'] },
       async ({
         loginPage,
         manageCaseDashboardPage,
@@ -157,7 +157,6 @@ test.describe('Process scanned document task tests', () => {
       manageCaseDashboardPage,
       taskUiChecks
     }) => {
-      test.setTimeout(15 * 60 * 1000);
 
       const sessionPages = {
         loginPage,
