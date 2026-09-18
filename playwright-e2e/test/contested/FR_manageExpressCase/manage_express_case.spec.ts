@@ -3,7 +3,7 @@ import config from '../../../config/config';
 import { ContestedEvents } from '../../../config/case-data';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 
-test.describe('Contested - Manage Express Case', () => {
+test.describe('Contested - Manage Express Case', { tag: ['@Express'] }, () => {
   test(
     'Contested - Qualified case (Form A Case) - Enroll a case to express pilot',
     { tag: [] },

@@ -8,7 +8,7 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 
 test(
   'Contested - Create Case FormA Matrimonial Submission by Solicitor',
-  { tag: ['@accessibility','@chrome'] },
+  { tag: ['@accessibility','@chrome','@CreateCase'] },
   async (
     {
       loginPage,
@@ -197,7 +197,7 @@ test(
 
 test(
   'Contested - Caseworker view tabs post case creation',
-  { tag: [] },
+  { tag: ['@CreateCase'] },
   async (
     {
       loginPage,
@@ -220,7 +220,7 @@ test(
 
 test(
   'Contested - Create Case Form A Childrens Act Submission by Solicitor',
-  { tag: ['@accessibility'] },
+  { tag: ['@accessibility','@CreateCase'] },
   async (
     {
       loginPage,

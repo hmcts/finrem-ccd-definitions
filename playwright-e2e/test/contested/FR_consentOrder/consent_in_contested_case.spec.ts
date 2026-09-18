@@ -9,7 +9,7 @@ import {
 import {DateHelper} from '../../../data-utils/DateHelper.ts';
 import {envTestData} from '../../../data-utils/test_data/EnvTestDataConfig.ts';
 
-test.describe('Consent order in contested case', () => {
+test.describe('Consent order in contested case', { tag: ['@ConsentInContested'] }, () => {
   test(
     'Create consent order in Form A contested case - Consent Order - General Consent Order - respond to consent order - assign to judge - approve consent application - send consent order - close case',
     { tag: ['@accessibility'] },

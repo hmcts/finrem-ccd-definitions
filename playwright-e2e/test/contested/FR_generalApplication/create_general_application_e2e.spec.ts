@@ -6,7 +6,7 @@ import { contestedGeneralApplicationDirectionsTableData } from '../../../resourc
 import { contestedGeneralApplicationJudgeTabData, contestedGeneralApplicationReferToJudgeTabData, contestedGeneralApplicationTabData } from '../../../resources/tab_content/contested/general_applications_tab';
 import { generalApplicationTableData } from '../../../resources/check_your_answer_content/create_general_application/createGeneralApplicationsTable';
 
-test.describe('Contested General Application e2e', () => {
+test.describe('Contested General Application e2e', { tag: ['@GeneralApplication'] }, () => {
   test(
     'Contested - General Application e2e',
     { tag: [] },

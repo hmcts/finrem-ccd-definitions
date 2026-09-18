@@ -59,7 +59,7 @@ async function loginForCaseFlagTests(
   await loginPage.loginWaitForPath(user.email, user.password, config.manageCaseBaseURL, path);
 }
 
-test.describe('Case Flag Tests', () => {
+test.describe('Case Flag Tests', { tag: ['@CaseFlag'] }, () => {
   // Consented case flag tests
   for (const data of consentedCaseFlagTestData) {
     test(

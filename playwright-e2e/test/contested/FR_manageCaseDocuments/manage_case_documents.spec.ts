@@ -153,7 +153,7 @@ async function runAccessibilityAuditStep(axeUtils: AxeUtils): Promise<void> {
   });
 }
 
-test.describe('Contested Manage Case Documents', () => {
+test.describe('Contested Manage Case Documents', { tag: ['@ManageCaseDocuments'] }, () => {
   test(
     'Caseworker can add a non-confidential document',
     { tag: ['@caseworker'] },

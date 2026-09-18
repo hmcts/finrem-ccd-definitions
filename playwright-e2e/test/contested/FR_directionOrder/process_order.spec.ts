@@ -71,10 +71,9 @@ async function progressToProcessOrderEvent(
 }
 
 // New Style Process Order hearings
-test.describe('Contested - Process Order (Manage Hearings)', () => {
+test.describe('Contested - Process Order (Manage Hearings)', { tag: ['@ManageHearings'] }, () => {
   test(
     'Form A case creating a hearing from Process Order (MH)',
-    { tag: ['@MH'] },
     async (
       {
         loginPage,
@@ -133,7 +132,6 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
 
   test(
     'Paper Case creating a hearing from Process Order (MH)',
-    { tag: ['@MH'] },
     async ({
       loginPage,
       manageCaseDashboardPage,
@@ -211,7 +209,6 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
 
   test(
     'Form A case Process Order (MH) with no hearing added',
-    { tag: ['@MH'] },
     async (
       {
         loginPage,
