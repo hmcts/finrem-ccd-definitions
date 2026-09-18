@@ -12,6 +12,9 @@ export default defineConfig({
 
   testDir: './playwright-e2e',
   testMatch: '*spec.ts',
+  testIgnore: process.env.BRANCH_NAME === 'master' || process.env.NIGHTLY_TEST === 'true'
+    ? ['**/WA_Tasks/**']
+    : [],
 
   snapshotDir: './playwright-e2e/snapshots',
   retries: process.env.CI ? 2 : 1,
