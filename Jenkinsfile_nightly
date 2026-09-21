@@ -250,7 +250,7 @@ withNightlyPipeline(type, product, component) {
                     'msedge': [
                             'Edge Tests': runBrowserStage(
                                     'edge',
-                                    'test:functional-edge',
+                                    'test:functional',
                                     ['TESTS_FOR_ACCESSIBILITY': 'true']
                             )
                     ],
