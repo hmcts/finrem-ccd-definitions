@@ -4400,6 +4400,16 @@
     "Searchable": "N"
   },
   {
+    "LiveFrom": "21/09/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "appUpdatingDisclosureCollection",
+    "Label": "Updating Disclosure",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "appCaseSummariesCollection",
@@ -4494,6 +4504,16 @@
     "CaseTypeID": "FinancialRemedyContested",
     "ID": "respStatementsExhibitsCollection",
     "Label": "Statements & Exhibits",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "FR_uploadCaseDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "21/09/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respUpdatingDisclosureCollection",
+    "Label": "Updating Disclosure",
     "FieldType": "Collection",
     "FieldTypeParameter": "FR_uploadCaseDocument",
     "SecurityClassification": "Public",
