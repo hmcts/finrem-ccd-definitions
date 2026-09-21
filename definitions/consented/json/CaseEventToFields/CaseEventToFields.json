@@ -3893,7 +3893,8 @@
     "PageLabel": "BulkScanning",
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6090,6 +6091,30 @@
     "FieldShowCondition": "stopRepClientConsent=\"No\""
   },
   {
+    "LiveFrom": "14/08/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_HWFAcceptedAndIssue",
+    "CaseFieldID": "issueDate",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": "updateIssueDate",
+    "PageLabel": "Update Issue Date",
+    "PageDisplayOrder": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
+    "LiveFrom": "19/08/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_feeAccountDebitedAndIssue",
+    "CaseFieldID": "issueDate",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "MANDATORY",
+    "PageID": "updateIssueDate",
+    "PageLabel": "Update Issue Date",
+    "PageDisplayOrder": 1,
+    "ShowSummaryChangeOption": "Y"
+  },
+  {
     "LiveFrom": "03/09/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_approveApplication",
@@ -6110,5 +6135,5 @@
     "PageID": 1,
     "FieldShowCondition": "[STATE]=\"NeverShow\"",
     "Publish": "${CCD_DEF_PUBLISH}"
-  }
+  },
 ]
