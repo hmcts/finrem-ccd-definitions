@@ -20090,5 +20090,47 @@
     "CaseFieldID": "shouldAllocateToExpressPilotLabel",
     "UserRole": "caseworker-divorce-financialremedy-courtadmin",
     "CRUD": "R"
+  },
+  {
+    "LiveFrom": "21/09/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appUpdatingDisclosureCollection",
+    "UserRole": "[APPSOLICITOR]",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appUpdatingDisclosureCollection",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "appUpdatingDisclosureCollection",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "RU"
+  },
+  {
+    "LiveFrom": "21/09/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respUpdatingDisclosureCollection",
+    "UserRole": "[RESPSOLICITOR]",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respUpdatingDisclosureCollection",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respUpdatingDisclosureCollection",
+    "UserRole": "caseworker-divorce-financialremedy-judiciary",
+    "CRUD": "RU"
   }
 ]
