@@ -7318,12 +7318,12 @@
     "TabFieldDisplayOrder": 4
   },
   {
-    "LiveFrom": "01/02/2021",
+    "LiveFrom": "21/09/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appCaseSummariesCollection",
+    "CaseFieldID": "appUpdatingDisclosureCollection",
     "TabFieldDisplayOrder": 5
   },
   {
@@ -7332,7 +7332,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appFormsHCollection",
+    "CaseFieldID": "appCaseSummariesCollection",
     "TabFieldDisplayOrder": 6
   },
   {
@@ -7341,7 +7341,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appExpertEvidenceCollection",
+    "CaseFieldID": "appFormsHCollection",
     "TabFieldDisplayOrder": 7
   },
   {
@@ -7350,7 +7350,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appCorrespondenceDocsCollection",
+    "CaseFieldID": "appExpertEvidenceCollection",
     "TabFieldDisplayOrder": 8
   },
   {
@@ -7359,16 +7359,16 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appOtherCollection",
+    "CaseFieldID": "appCorrespondenceDocsCollection",
     "TabFieldDisplayOrder": 9
   },
   {
-    "LiveFrom": "01/06/2020",
+    "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appCorrespondenceCollection",
+    "CaseFieldID": "appOtherCollection",
     "TabFieldDisplayOrder": 10
   },
   {
@@ -7377,7 +7377,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appFRFormsCollection",
+    "CaseFieldID": "appCorrespondenceCollection",
     "TabFieldDisplayOrder": 11
   },
   {
@@ -7386,7 +7386,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appEvidenceCollection",
+    "CaseFieldID": "appFRFormsCollection",
     "TabFieldDisplayOrder": 12
   },
   {
@@ -7395,7 +7395,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appTrialBundleCollection",
+    "CaseFieldID": "appEvidenceCollection",
     "TabFieldDisplayOrder": 13
   },
   {
@@ -7404,7 +7404,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appConfidentialDocsCollection",
+    "CaseFieldID": "appTrialBundleCollection",
     "TabFieldDisplayOrder": 14
   },
   {
@@ -7413,7 +7413,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "applicantScanDocuments",
+    "CaseFieldID": "appConfidentialDocsCollection",
     "TabFieldDisplayOrder": 15
   },
   {
@@ -7422,7 +7422,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "bulkPrintCoverSheetApp",
+    "CaseFieldID": "applicantScanDocuments",
     "TabFieldDisplayOrder": 16
   },
   {
@@ -7431,7 +7431,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
+    "CaseFieldID": "bulkPrintCoverSheetApp",
     "TabFieldDisplayOrder": 17
   },
   {
@@ -7440,7 +7440,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appOrderCollections",
+    "CaseFieldID": "bulkPrintCoverSheetAppConfidential",
     "TabFieldDisplayOrder": 18
   },
   {
@@ -7449,7 +7449,7 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appConsentApprovedOrders",
+    "CaseFieldID": "appOrderCollections",
     "TabFieldDisplayOrder": 19
   },
   {
@@ -7458,8 +7458,17 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "appRefusedOrderCollection",
+    "CaseFieldID": "appConsentApprovedOrders",
     "TabFieldDisplayOrder": 20
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "appDocuments",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "appRefusedOrderCollection",
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/02/2021",
@@ -7498,12 +7507,12 @@
     "TabFieldDisplayOrder": 4
   },
   {
-    "LiveFrom": "01/02/2021",
+    "LiveFrom": "21/09/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respCaseSummariesCollection",
+    "CaseFieldID": "respStatementsExhibitsCollection",
     "TabFieldDisplayOrder": 5
   },
   {
@@ -7512,7 +7521,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respFormsHCollection",
+    "CaseFieldID": "respCaseSummariesCollection",
     "TabFieldDisplayOrder": 6
   },
   {
@@ -7521,7 +7530,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respExpertEvidenceCollection",
+    "CaseFieldID": "respFormsHCollection",
     "TabFieldDisplayOrder": 7
   },
   {
@@ -7530,7 +7539,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respCorrespondenceDocsColl",
+    "CaseFieldID": "respExpertEvidenceCollection",
     "TabFieldDisplayOrder": 8
   },
   {
@@ -7539,16 +7548,16 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respOtherCollection",
+    "CaseFieldID": "respCorrespondenceDocsColl",
     "TabFieldDisplayOrder": 9
   },
   {
-    "LiveFrom": "01/06/2020",
+    "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respCorrespondenceCollection",
+    "CaseFieldID": "respOtherCollection",
     "TabFieldDisplayOrder": 10
   },
   {
@@ -7557,7 +7566,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respFRFormsCollection",
+    "CaseFieldID": "respCorrespondenceCollection",
     "TabFieldDisplayOrder": 11
   },
   {
@@ -7566,7 +7575,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respEvidenceCollection",
+    "CaseFieldID": "respFRFormsCollection",
     "TabFieldDisplayOrder": 12
   },
   {
@@ -7575,7 +7584,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respTrialBundleCollection",
+    "CaseFieldID": "respEvidenceCollection",
     "TabFieldDisplayOrder": 13
   },
   {
@@ -7584,7 +7593,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respConfidentialDocsCollection",
+    "CaseFieldID": "respTrialBundleCollection",
     "TabFieldDisplayOrder": 14
   },
   {
@@ -7593,7 +7602,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respondentScanDocuments",
+    "CaseFieldID": "respConfidentialDocsCollection",
     "TabFieldDisplayOrder": 15
   },
   {
@@ -7602,7 +7611,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "bulkPrintCoverSheetRes",
+    "CaseFieldID": "respondentScanDocuments",
     "TabFieldDisplayOrder": 16
   },
   {
@@ -7611,7 +7620,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "bulkPrintCoverSheetResConfidential",
+    "CaseFieldID": "bulkPrintCoverSheetRes",
     "TabFieldDisplayOrder": 17
   },
   {
@@ -7620,7 +7629,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respOrderCollections",
+    "CaseFieldID": "bulkPrintCoverSheetResConfidential",
     "TabFieldDisplayOrder": 18
   },
   {
@@ -7629,7 +7638,7 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respConsentApprovedOrders",
+    "CaseFieldID": "respOrderCollections",
     "TabFieldDisplayOrder": 19
   },
   {
@@ -7638,8 +7647,17 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "respRefusedOrderCollection",
+    "CaseFieldID": "respConsentApprovedOrders",
     "TabFieldDisplayOrder": 20
+  },
+  {
+    "LiveFrom": "01/06/2020",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "resDocuments",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "respRefusedOrderCollection",
+    "TabFieldDisplayOrder": 21
   },
   {
     "LiveFrom": "01/02/2021",
