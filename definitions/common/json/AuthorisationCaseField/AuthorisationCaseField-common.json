@@ -145,5 +145,19 @@
     "CaseFieldID": "notificationEventId",
     "UserRole": "caseworker-divorce-financialremedy-superuser",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "18/09/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "notificationsToBeSent",
+    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
+    "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "18/09/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "CaseFieldID": "notificationsToBeSent",
+    "UserRole": "caseworker-divorce-financialremedy-superuser",
+    "CRUD": "CRUD"
   }
 ]
