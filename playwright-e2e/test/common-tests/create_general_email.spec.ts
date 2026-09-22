@@ -52,7 +52,7 @@ async function assertGeneralEmailTabDataForPossibleDates(
   throw lastError;
 }
 
-test.describe('Create General Email', () => {
+test.describe('Create General Email', { tag: ['@CreateGeneralEmail'] }, () => {
   test(
     'Contested - Create General Email',
     { tag: [] },

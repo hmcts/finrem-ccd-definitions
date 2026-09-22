@@ -28,7 +28,7 @@ async function verifyIntervenerAsDifferentUser(
   await manageCaseDashboardPage.signOut();
 }
 
-test.describe('Contested - Manage Interveners', () => {
+test.describe('Contested - Manage Interveners', { tag: ['@ManageInterveners'] }, () => {
 
   test(
     'Contested - Add & Remove Interveners, login as Intervener and verify.', {

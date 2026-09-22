@@ -8,7 +8,7 @@ import { manageBarristeRespondentTabData } from '../../../resources/tab_content/
 
 test(
   'Contested - Manage Barrister',
-  { tag: [] },
+  { tag: ['@ManageBarrister'] },
   async (
     {
       loginPage,
