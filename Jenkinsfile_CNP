@@ -292,6 +292,7 @@ withPipeline("nodejs", product, component) {
     } else {
 
       def subscription = targetEnvironment != 'prod' ? 'nonprod' : 'prod'
+
       withSubscription(subscription, product, targetEnvironment) {
         withTeamSecrets(pipelineConf, targetEnvironment == 'prod' ? 'prod' : 'aat') {
           stageWithEnvironmentAgent('Generate Financial Remedy Consented Case config', product, targetEnvironment) {
