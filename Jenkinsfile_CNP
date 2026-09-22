@@ -289,9 +289,10 @@ withPipeline("nodejs", product, component) {
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     } else {
 
-      withSubscription(env.ENV != 'prod' ? 'nonprod' : 'prod') {
+      def subscription = env.ENV != 'prod' ? 'nonprod' : 'prod'
+      withSubscription(subscription, product, env.ENV) {
         withTeamSecrets(pipelineConf, env.ENV == 'prod' ? 'prod' : 'aat') {
-          stageWithAgent('Generate Financial Remedy Consented Case config', product) {
+          stageWithEnvironmentAgent('Generate Financial Remedy Consented Case config', product, env.ENV) {
             if (env.ENV == 'prod') {
               dir('definitions/consented/json/UserProfile') {
                 sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
@@ -320,7 +321,7 @@ withPipeline("nodejs", product, component) {
             yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
           }
 
-          stageWithAgent('Generate Financial Remedy Contested Case config', product) {
+          stageWithEnvironmentAgent('Generate Financial Remedy Contested Case config', product, env.ENV) {
             if (env.ENV == 'prod') {
               dir('definitions/contested/json/FixedLists') {
                 sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
