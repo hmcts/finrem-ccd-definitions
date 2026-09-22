@@ -249,7 +249,7 @@ withPipeline("nodejs", product, component) {
     }
   }
   before('highleveldatasetup') {
-    def targetEnvironment = params.ENVIRONMENT ?: env.ENV
+    def targetEnvironment = env.ENV
 
     echo "CCD definition upload for environment: ${targetEnvironment}"
     env.RUNNING_ENV = targetEnvironment
@@ -405,9 +405,13 @@ before('smoketest:aat') {
     sh 'yarn playwright install'
   }
 
-before('functionalTest:aat') {
-  env.PLAYWRIGHT_OUTPUT_DIR = 'test-results-functional-aat'
-  env.PLAYWRIGHT_HTML_REPORT_DIR = 'playwright-report-functional-aat'
-  sh 'yarn playwright install'
-}
+  before('functionalTest:aat') {
+    env.PLAYWRIGHT_OUTPUT_DIR = 'test-results-functional-aat'
+    env.PLAYWRIGHT_HTML_REPORT_DIR = 'playwright-report-functional-aat'
+    sh 'yarn playwright install'
+  }
+
+  afterSuccess('functionalTest:aat') {
+    env.ENV = 'prod'
+  }
 }
