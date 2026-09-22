@@ -249,14 +249,16 @@ withPipeline("nodejs", product, component) {
     }
   }
   before('highleveldatasetup') {
-    echo "CCD definition upload for environment: ${env.ENV}"
-    env.RUNNING_ENV = env.ENV
+    def targetEnvironment = params.ENVIRONMENT ?: env.ENV
+
+    echo "CCD definition upload for environment: ${targetEnvironment}"
+    env.RUNNING_ENV = targetEnvironment
 
     pipelineConf.vaultSecrets['finrem-${env}'] =
-            env.ENV == 'prod' ? prodFinremSecrets : nonProdFinremSecrets
+            targetEnvironment == 'prod' ? prodFinremSecrets : nonProdFinremSecrets
 
     yarnBuilder.yarn('setup')
-    if('preview' == env.ENV) {
+    if ('preview' == targetEnvironment) {
       env.RUNNING_ENV = "aat"
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
@@ -289,11 +291,11 @@ withPipeline("nodejs", product, component) {
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     } else {
 
-      def subscription = env.ENV != 'prod' ? 'nonprod' : 'prod'
-      withSubscription(subscription, product, env.ENV) {
-        withTeamSecrets(pipelineConf, env.ENV == 'prod' ? 'prod' : 'aat') {
-          stageWithEnvironmentAgent('Generate Financial Remedy Consented Case config', product, env.ENV) {
-            if (env.ENV == 'prod') {
+      def subscription = targetEnvironment != 'prod' ? 'nonprod' : 'prod'
+      withSubscription(subscription, product, targetEnvironment) {
+        withTeamSecrets(pipelineConf, targetEnvironment == 'prod' ? 'prod' : 'aat') {
+          stageWithEnvironmentAgent('Generate Financial Remedy Consented Case config', product, targetEnvironment) {
+            if (targetEnvironment == 'prod') {
               dir('definitions/consented/json/UserProfile') {
                 sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
                 sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_2} > UserProfile-judgeDetails2-prod.json'
@@ -318,11 +320,11 @@ withPipeline("nodejs", product, component) {
               }
             }
 
-            yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
+            yarnBuilder.yarn("generate-excel-${targetEnvironment}-consented")
           }
 
-          stageWithEnvironmentAgent('Generate Financial Remedy Contested Case config', product, env.ENV) {
-            if (env.ENV == 'prod') {
+          stageWithEnvironmentAgent('Generate Financial Remedy Contested Case config', product, targetEnvironment) {
+            if (targetEnvironment == 'prod') {
               dir('definitions/contested/json/FixedLists') {
                 sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
                 sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
@@ -338,16 +340,16 @@ withPipeline("nodejs", product, component) {
               }
             }
 
-            yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
-            yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
+            yarnBuilder.yarn("generate-excel-${targetEnvironment}-contested")
+            yarnBuilder.yarn("copy-${targetEnvironment}-xlxs-to-resources")
           }
           steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-          env.CCD_ADMIN_URL = "https://ccd-admin-web.${env.ENV}.platform.hmcts.net"
-          env.CCD_DATA_API_URL = "http://ccd-data-store-api-${env.ENV}.service.core-compute-aat.internal"
-          env.CCD_WEB_URL = "https://manage-case.${env.ENV}.platform.hmcts.net"
-          env.XUI_ORG_WEB_URL = "https://manage-org.${env.ENV}.platform.hmcts.net"
-          env.CCD_CONSENTED_FILE_NAME = "ccd-config-${env.ENV}-consented-${GIT_COMMIT}.xlsx"
-          env.CCD_CONTESTED_FILE_NAME = "ccd-config-${env.ENV}-contested-${GIT_COMMIT}.xlsx"
+          env.CCD_ADMIN_URL = "https://ccd-admin-web.${targetEnvironment}.platform.hmcts.net"
+          env.CCD_DATA_API_URL = "http://ccd-data-store-api-${targetEnvironment}.service.core-compute-aat.internal"
+          env.CCD_WEB_URL = "https://manage-case.${targetEnvironment}.platform.hmcts.net"
+          env.XUI_ORG_WEB_URL = "https://manage-org.${targetEnvironment}.platform.hmcts.net"
+          env.CCD_CONSENTED_FILE_NAME = "ccd-config-${targetEnvironment}-consented-${GIT_COMMIT}.xlsx"
+          env.CCD_CONTESTED_FILE_NAME = "ccd-config-${targetEnvironment}-contested-${GIT_COMMIT}.xlsx"
         }
       }
     }
