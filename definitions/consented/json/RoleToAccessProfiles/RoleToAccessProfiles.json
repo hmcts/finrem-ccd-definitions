@@ -97,5 +97,54 @@
     "ReadOnly": "N",
     "Disabled": "F",
     "CaseAccessCategories": ""
+  },
+  {
+    "RoleName" : "judge",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "ctsc",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "ctsc-team-leader",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "hearing-centre-admin",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "hearing-centre-team-leader",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "national-business-centre",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "nbc-team-leader",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
+    "ReadOnly": "N"
   }
 ]
