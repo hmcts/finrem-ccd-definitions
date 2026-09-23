@@ -6115,6 +6115,28 @@
     "ShowSummaryChangeOption": "Y"
   },
   {
+    "LiveFrom": "03/09/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_approveApplication",
+    "CaseFieldID": "pensionCollection",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "FieldShowCondition": "[STATE]=\"NeverShow\"",
+    "Publish": "${CCD_DEF_PUBLISH}"
+  },
+  {
+    "LiveFrom": "03/09/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_uploadApprovedOrder",
+    "CaseFieldID": "pensionCollection",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": 1,
+    "FieldShowCondition": "[STATE]=\"NeverShow\"",
+    "Publish": "${CCD_DEF_PUBLISH}"
+  },
+  {
     "LiveFrom": "17/09/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
     "CaseEventID": "FR_orderRefusal",

@@ -3,7 +3,7 @@
 import uk.gov.hmcts.contino.AppPipelineConfig
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure@2.5.1")
+@Library("Infrastructure@2.5.3")
 
 String product = "finrem"
 String component = "ccd-definitions"
@@ -150,14 +150,29 @@ def getWaTaskConfigPrNumber() {
 
 def setPreviewEnvVars() {
   def githubApi = new GithubAPI(this)
+  env.ENABLE_WA = false
+  env.ENABLE_GS = false
 
   if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:wa')) {
     env.ENABLE_WA = true
   }
+  if (githubApi.checkForLabel(env.BRANCH_NAME, 'pr-values:gs')) {
+    env.ENABLE_GS = true
+  }
 }
 
 def getPreviewDefinitionExclusions() {
-  return env.ENABLE_WA?.toBoolean() ? '*-prod.json' : '*-prod.json,*-wa-nonprod.json'
+  def exclusions = ['*-prod.json']
+
+  if (!env.ENABLE_GS?.toBoolean()) {
+    exclusions << '*-gs-nonprod.json'
+  }
+
+  if (!env.ENABLE_WA?.toBoolean()) {
+    exclusions << '*-wa-nonprod.json'
+  }
+
+  return exclusions.join(',')
 }
 
 def setCommonWaPreviewEnvVars() {
@@ -221,25 +236,29 @@ withPipeline("nodejs", product, component) {
   }
   afterSuccess('akschartsinstall') {
     onPR {
-      if (env.ENABLE_WA?.toBoolean()) {
+      if (env.ENABLE_WA?.toBoolean() || env.ENABLE_GS?.toBoolean()) {
         setCommonWaPreviewEnvVars()
+        setupWaPreviewRoleAssignments()
+      }
+      if (env.ENABLE_WA?.toBoolean()) {
         println """After akschartsinstall upload DMN and BPMN diagrams and setup WA org mappings using ${env.ORG_ROLE_MAPPING_URL}""".stripIndent()
         sh 'chmod -R +x ./bin'
         uploadWaPreviewDmnDefinitions()
         uploadWaPreviewBpmnDefinitions()
-        setupWaPreviewRoleAssignments()
       }
     }
   }
   before('highleveldatasetup') {
-    echo "CCD definition upload for environment: ${env.ENV}"
-    env.RUNNING_ENV = env.ENV
+    def targetEnvironment = env.ENV
+
+    echo "CCD definition upload for environment: ${targetEnvironment}"
+    env.RUNNING_ENV = targetEnvironment
 
     pipelineConf.vaultSecrets['finrem-${env}'] =
-            env.ENV == 'prod' ? prodFinremSecrets : nonProdFinremSecrets
+            targetEnvironment == 'prod' ? prodFinremSecrets : nonProdFinremSecrets
 
     yarnBuilder.yarn('setup')
-    if('preview' == env.ENV) {
+    if ('preview' == targetEnvironment) {
       env.RUNNING_ENV = "aat"
       env.COS_API_URL = "http://finrem-ccd-definitions-pr-${CHANGE_ID}-finrem-cos"
       env.AAC_API_URL = "https://aac-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
@@ -249,11 +268,16 @@ withPipeline("nodejs", product, component) {
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
         yarnBuilder.yarn("generate-excel-preview-wa-consented")
+        if (env.ENABLE_GS?.toBoolean()) {
+          yarnBuilder.yarn("generate-excel-preview-gs-consented")
+        }
       }
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-contested")
         if (env.ENABLE_WA?.toBoolean()) {
             yarnBuilder.yarn("copy-preview-xlxs-to-resources-wa")
+        } else if (env.ENABLE_GS?.toBoolean()) {
+            yarnBuilder.yarn("copy-preview-xlxs-to-resources-gs")
         } else {
             yarnBuilder.yarn("copy-preview-xlxs-to-resources")
         }
@@ -267,10 +291,11 @@ withPipeline("nodejs", product, component) {
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     } else {
 
-      withSubscription(env.ENV != 'prod' ? 'nonprod' : 'prod') {
-        withTeamSecrets(pipelineConf, env.ENV == 'prod' ? 'prod' : 'aat') {
-          stageWithAgent('Generate Financial Remedy Consented Case config', product) {
-            if (env.ENV == 'prod') {
+      def subscription = targetEnvironment != 'prod' ? 'nonprod' : 'prod'
+      withSubscription(subscription, product, targetEnvironment) {
+        withTeamSecrets(pipelineConf, targetEnvironment == 'prod' ? 'prod' : 'aat') {
+          stageWithEnvironmentAgent('Generate Financial Remedy Consented Case config', product, targetEnvironment) {
+            if (targetEnvironment == 'prod') {
               dir('definitions/consented/json/UserProfile') {
                 sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_1} > UserProfile-judgeDetails1-prod.json'
                 sh 'echo ${USERPROFILE_CONSENTED_JUDGEDETAILS_2} > UserProfile-judgeDetails2-prod.json'
@@ -295,11 +320,11 @@ withPipeline("nodejs", product, component) {
               }
             }
 
-            yarnBuilder.yarn("generate-excel-${env.ENV}-consented")
+            yarnBuilder.yarn("generate-excel-${targetEnvironment}-consented")
           }
 
-          stageWithAgent('Generate Financial Remedy Contested Case config', product) {
-            if (env.ENV == 'prod') {
+          stageWithEnvironmentAgent('Generate Financial Remedy Contested Case config', product, targetEnvironment) {
+            if (targetEnvironment == 'prod') {
               dir('definitions/contested/json/FixedLists') {
                 sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_1} > FixedLists-judgeDetails1-prod.json'
                 sh 'echo ${FIXEDLISTS_CONSENTED_JUDGEDETAILS_2} > FixedLists-judgeDetails2-prod.json'
@@ -315,16 +340,16 @@ withPipeline("nodejs", product, component) {
               }
             }
 
-            yarnBuilder.yarn("generate-excel-${env.ENV}-contested")
-            yarnBuilder.yarn("copy-${env.ENV}-xlxs-to-resources")
+            yarnBuilder.yarn("generate-excel-${targetEnvironment}-contested")
+            yarnBuilder.yarn("copy-${targetEnvironment}-xlxs-to-resources")
           }
           steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-          env.CCD_ADMIN_URL = "https://ccd-admin-web.${env.ENV}.platform.hmcts.net"
-          env.CCD_DATA_API_URL = "http://ccd-data-store-api-${env.ENV}.service.core-compute-aat.internal"
-          env.CCD_WEB_URL = "https://manage-case.${env.ENV}.platform.hmcts.net"
-          env.XUI_ORG_WEB_URL = "https://manage-org.${env.ENV}.platform.hmcts.net"
-          env.CCD_CONSENTED_FILE_NAME = "ccd-config-${env.ENV}-consented-${GIT_COMMIT}.xlsx"
-          env.CCD_CONTESTED_FILE_NAME = "ccd-config-${env.ENV}-contested-${GIT_COMMIT}.xlsx"
+          env.CCD_ADMIN_URL = "https://ccd-admin-web.${targetEnvironment}.platform.hmcts.net"
+          env.CCD_DATA_API_URL = "http://ccd-data-store-api-${targetEnvironment}.service.core-compute-aat.internal"
+          env.CCD_WEB_URL = "https://manage-case.${targetEnvironment}.platform.hmcts.net"
+          env.XUI_ORG_WEB_URL = "https://manage-org.${targetEnvironment}.platform.hmcts.net"
+          env.CCD_CONSENTED_FILE_NAME = "ccd-config-${targetEnvironment}-consented-${GIT_COMMIT}.xlsx"
+          env.CCD_CONTESTED_FILE_NAME = "ccd-config-${targetEnvironment}-contested-${GIT_COMMIT}.xlsx"
         }
       }
     }
@@ -354,29 +379,39 @@ withPipeline("nodejs", product, component) {
   }
 
   before('smoketest:preview') {
-    env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'smoke-output'
-    sh 'yarn playwright install'
-    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
-  }
+  env.PLAYWRIGHT_OUTPUT_DIR = 'test-results-smoke-preview'
+  env.PLAYWRIGHT_HTML_REPORT_DIR = 'playwright-report-smoke-preview'
+  sh 'yarn playwright install'
+  sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
+}
 
-  before('smoketest:aat') {
-    env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'smoke-output'
-    sh 'yarn playwright install'
-    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
-  }
+before('smoketest:aat') {
+  env.PLAYWRIGHT_OUTPUT_DIR = 'test-results-smoke-aat'
+  env.PLAYWRIGHT_HTML_REPORT_DIR = 'playwright-report-smoke-aat'
+  sh 'yarn playwright install'
+  sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
+}
 
   before('functionalTest:preview') {
+    // Use the test accounts provisioned by create_idam_id_scripts/run_jobs.sh.
+    def staffUsers = readJSON file: 'create_idam_id_scripts/caseworker_request.json'
+    def admin = staffUsers.find { it.payload.user.email == 'fr_ctscadmin11@justice.gov.uk' }
+    def teamLeader = staffUsers.find { it.payload.user.email == 'fr_ctscteamleader11@justice.gov.uk' }
+    env.CTSC_ADMIN_USERNAME = admin.payload.user.email
+    env.CTSC_TEAMLEADER_USERNAME = teamLeader.payload.user.email
+    env.STAFF_FR_PASSWORD = admin.password
     env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
     sh 'yarn playwright install'
   }
 
   before('functionalTest:aat') {
-    env.PLAYWRIGHT_HTML_OUTPUT_DIR = 'functional-output'
+    env.PLAYWRIGHT_OUTPUT_DIR = 'test-results-functional-aat'
+    env.PLAYWRIGHT_HTML_REPORT_DIR = 'playwright-report-functional-aat'
     sh 'yarn playwright install'
   }
 
   afterSuccess('functionalTest:aat') {
     slackSend(channel: '#finrem-dev', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
-    env.ENV='prod'
+    env.ENV = 'prod'
   }
 }

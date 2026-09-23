@@ -5,7 +5,7 @@ import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory';
 import { expressCaseGateKeepingTabDataJudgeAllocation } from '../../../resources/tab_content/contested/gatekeeping_and_allocation/express_case_gatekeeping_tab';
 
-test.describe('Contested - Give Allocation Directions - \'should this case remain in the Express Pilot?\' on express pilot cases', () => {
+test.describe('Contested - Give Allocation Directions - \'should this case remain in the Express Pilot?\' on express pilot cases', { tag: ['@Express'] }, () => {
   test(
     'Should display EP question if it is an express pilot case.',
     { tag: [] },
@@ -66,7 +66,7 @@ test.describe('Contested - Give Allocation Directions - \'should this case remai
   );
 });
 
-test.describe('Contested - Give Allocation Directions - Static warning on express pilot cases', () => {
+test.describe('Contested - Give Allocation Directions - Static warning on express pilot cases', { tag: ['@Express'] }, () => {
   test(
     'Should display a static warning message if it is an express pilot case',
     { tag: [] },
