@@ -57,7 +57,7 @@ dependencies:
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: rd-caseworker-ref-api.enabled
   - name: am-org-role-mapping-service
-    version: 0.0.77
+    version: 0.0.78
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: am-org-role-mapping-service.enabled
   - name: finrem-cron
