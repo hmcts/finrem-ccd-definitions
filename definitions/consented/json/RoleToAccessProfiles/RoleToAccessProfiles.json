@@ -1,27 +1,9 @@
 [
   {
-    "RoleName" : "idam:caseworker-divorce-financialremedy-judiciary",
-    "Authorisation": "",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary,payments",
-    "ReadOnly": "N",
-    "Disabled": "F",
-    "CaseAccessCategories": ""
-  },
-  {
     "RoleName" : "idam:caseworker-divorce-financialremedy-solicitor",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
     "AccessProfiles": "caseworker-divorce-financialremedy-solicitor,payments",
-    "ReadOnly": "N",
-    "Disabled": "F",
-    "CaseAccessCategories": ""
-  },
-  {
-    "RoleName" : "idam:caseworker-divorce-financialremedy-courtadmin",
-    "Authorisation": "",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin,payments",
     "ReadOnly": "N",
     "Disabled": "F",
     "CaseAccessCategories": ""
@@ -54,6 +36,15 @@
     "CaseAccessCategories": ""
   },
   {
+    "RoleName" : "idam:caseworker-financialremedy-rparobot",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-financialremedy-rparobot",
+    "ReadOnly": "N",
+    "Disabled": "F",
+    "CaseAccessCategories": ""
+  },
+  {
     "RoleName" : "[RESPSOLICITOR]",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
@@ -81,21 +72,52 @@
     "CaseAccessCategories": ""
   },
   {
-    "RoleName" : "idam:caseworker-divorce-financialremedy-superuser",
+    "RoleName" : "judge",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy-superuser,payments",
-    "ReadOnly": "N",
-    "Disabled": "F",
-    "CaseAccessCategories": ""
+    "AccessProfiles": "caseworker-divorce-financialremedy,caseworker-divorce-financialremedy-judiciary",
+    "ReadOnly": "N"
   },
   {
-    "RoleName" : "idam:caseworker-financialremedy-rparobot",
+    "RoleName" : "ctsc",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-financialremedy-rparobot",
-    "ReadOnly": "N",
-    "Disabled": "F",
-    "CaseAccessCategories": ""
+    "AccessProfiles": "caseworker-divorce-financialremedy,caseworker-divorce-financialremedy-courtadmin",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "ctsc-team-leader",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "hearing-centre-admin",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "hearing-centre-team-leader",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "national-business-centre",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "nbc-team-leader",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
+    "ReadOnly": "N"
   }
 ]
