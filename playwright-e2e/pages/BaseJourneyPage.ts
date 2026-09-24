@@ -165,7 +165,6 @@ export abstract class BaseJourneyPage {
       await ignoreWarningButton.waitFor({ state: 'visible', timeout: 7000 });
       await ignoreWarningButton.click();
     } catch {
-    // No warning page shown for this path; continue silently.
     }
   }
 
