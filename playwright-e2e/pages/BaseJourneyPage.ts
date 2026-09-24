@@ -158,10 +158,14 @@ export abstract class BaseJourneyPage {
     await this.waitForSpinner();
   }
 
+  // ...existing code...
   async navigateIgnoreWarningAndContinue() {
-    const ignoreWarningButton = this.page.getByRole('button', { name: 'Ignore warning and continue' });
-    if (await ignoreWarningButton.isVisible().catch(() => {return false;})) {
+    const ignoreWarningButton = this.page.getByRole('button', { name: 'Ignore Warning and Continue' });
+    try {
+      await ignoreWarningButton.waitFor({ state: 'visible', timeout: 7000 });
       await ignoreWarningButton.click();
+    } catch {
+    // No warning page shown for this path; continue silently.
     }
   }
 
