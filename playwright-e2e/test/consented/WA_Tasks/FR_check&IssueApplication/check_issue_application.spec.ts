@@ -64,7 +64,7 @@ test.describe('Check and Issue Application task tests', () => {
   for (const { user, completionAction } of checkIssueApplicationUserScenarios) {
     test(
       `${user.name} completes the task using ${completionAction}`,
-      { tag: ['@waTasks'] },
+      { tag: completionAction === ISSUE_APPLICATION ? ['@waTasks', '@preview'] : ['@waTasks'] },
       async ({
         loginPage,
         manageCaseDashboardPage,
