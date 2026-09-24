@@ -137,7 +137,7 @@ const stopRepresentingClientTestData = [
   }
 ];
 
-test.describe('Notice of Change', () => {
+test.describe('Notice of Change', { tag: ['@NOC'] }, () => {
 
   test.skip( // needs to be fixed DFR-4058
     'Applicant sol cannot raise a Notice of Change for respondent', { tag: [] },
