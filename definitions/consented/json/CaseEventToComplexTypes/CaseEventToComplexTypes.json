@@ -825,7 +825,8 @@
     "ListElementCode": "orderRefusal",
     "EventElementLabel": "Reason for Refusal",
     "FieldDisplayOrder": 2,
-    "DisplayContext": "MANDATORY"
+    "DisplayContext": "MANDATORY",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -835,7 +836,8 @@
     "ListElementCode": "orderRefusalOther",
     "EventElementLabel": "Other (please specify)",
     "FieldDisplayOrder": 3,
-    "DisplayContext": "OPTIONAL"
+    "DisplayContext": "OPTIONAL",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
