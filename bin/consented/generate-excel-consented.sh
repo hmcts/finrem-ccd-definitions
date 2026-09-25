@@ -32,7 +32,7 @@ fi
 fullExclusion=$(IFS=","; echo "${fullExclusionArray[*]}")
 
 if [ "$ENABLE_WA" = "true" ] && [ "$ENABLE_GS" = "true" ]; then
-  outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-wa-ga-${GIT_COMMIT:-base}.xlsx"
+  outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-wa-gs-${GIT_COMMIT:-base}.xlsx"
 elif [ "$ENABLE_WA" = "true" ]; then
   outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-wa-${GIT_COMMIT:-base}.xlsx"
 elif [ "$ENABLE_GS" = "true" ]; then
