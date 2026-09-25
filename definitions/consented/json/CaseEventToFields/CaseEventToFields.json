@@ -6135,5 +6135,19 @@
     "PageID": 1,
     "FieldShowCondition": "[STATE]=\"NeverShow\"",
     "Publish": "${CCD_DEF_PUBLISH}"
+  },
+  {
+    "LiveFrom": "17/09/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_orderRefusal",
+    "CaseFieldID": "orderRefusalCollection",
+    "PageFieldDisplayOrder": 1,
+    "DisplayContext": "OPTIONAL",
+    "PageID": "1",
+    "PageDisplayOrder": 3,
+    "PageColumnNumber": 1,
+    "ShowSummaryChangeOption": "Y",
+    "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
+    "Publish": "${CCD_DEF_PUBLISH}"
   }
 ]
