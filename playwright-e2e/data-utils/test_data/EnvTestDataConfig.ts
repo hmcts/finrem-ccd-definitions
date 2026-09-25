@@ -16,8 +16,8 @@ const configs = {
     APP_SOL_POSTCODE: 'EC3A 2AD'
   },
   demo: {
-    DOCUMENT_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/8cf8ec66-a0b4-41de-a9d8-ed6722939e14',
-    DOCUMENT_BINARY_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/8cf8ec66-a0b4-41de-a9d8-ed6722939e14/binary',
+    DOCUMENT_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/d441d7ff-a187-418a-8d47-31198c3e5042',
+    DOCUMENT_BINARY_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/d441d7ff-a187-418a-8d47-31198c3e5042/binary',
     ORG_ID_1: 'KUOPA4B',
     ORG_ID_2: 'N7GN4FP',
     PBA_NUMBER: 'PBA0090111',
