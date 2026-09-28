@@ -394,10 +394,8 @@ withPipeline("nodejs", product, component) {
 
   before('smoketest:preview') {
     setPlaywrightIdamEnv()
-
     env.PLAYWRIGHT_OUTPUT_DIR = 'test-results-smoke-preview'
     env.PLAYWRIGHT_HTML_REPORT_DIR = 'playwright-report-smoke-preview'
-
     sh 'yarn playwright install'
     sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
 }
