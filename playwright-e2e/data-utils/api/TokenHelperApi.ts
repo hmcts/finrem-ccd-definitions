@@ -44,36 +44,26 @@ export async function getUserToken(username: string, password: string): Promise<
   return idamTokenResponse.data.access_token;
 }
 
-export async function getUserId(authToken: string, username: string): Promise<string> {
-  const tokenCache = await readCache();
-  const cached = tokenCache.get(username);
+export function getUserId(authToken: string): string {
+  const payload = authToken.replace(/^Bearer\s+/i, '').split('.')[1];
 
-  if (cached?.userId) {
-    return cached.userId;
+  if (!payload) {
+    throw new Error('Invalid auth token: JWT payload is missing');
   }
 
-  const idamUserInfoPath = '/o/userinfo';
+  try {
+    const decoded = Buffer.from(payload, 'base64url').toString('utf8');
+    const { uid } = JSON.parse(decoded);
 
-  const userInfoResponse = await axiosRequest({
-    method: 'get',
-    url: idamOidcBaseUrl + idamUserInfoPath,
-    headers: { Authorization: `Bearer ${authToken}` }
-  });
+    if (!uid) {
+      throw new Error('User ID not found in auth token');
+    }
 
-  if (cached) {
-    cached.userId = userInfoResponse.data.uid;
-    tokenCache.set(username, cached);
-  } else {
-    tokenCache.set(username, {
-      token: authToken,
-      expiry: 0,
-      userId: userInfoResponse.data.uid
-    });
+    return uid;
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    throw new Error(`Failed to decode user ID from auth token: ${message}`);
   }
-
-  await writeCache(tokenCache);
-
-  return userInfoResponse.data.uid;
 }
 
 export async function getServiceToken(): Promise<string> {
