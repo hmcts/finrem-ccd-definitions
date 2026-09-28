@@ -44,7 +44,7 @@ fi
 echo "fullExclusion = ${fullExclusion}"
 echo "outputFile = ${outputFile}"
 
-echo "Creating definition for ENABLE_WA = '${ENABLE_WA}' flag with value CCD_DEF_PUBLISH = ${publishWAEvent}"
+echo "Creating definition with flags: ENABLE_WA = '${ENABLE_WA}', ENABLE_GS = '${ENABLE_GS}' and with value CCD_DEF_PUBLISH = ${publishWAEvent}"
 
 pushd ccd-definition-processor && \
   CCD_DEF_CASE_TYPE_ID=FinancialRemedyMVP2 \
