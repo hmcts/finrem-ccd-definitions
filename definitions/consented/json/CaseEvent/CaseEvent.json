@@ -1256,5 +1256,19 @@
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "CallBackURLAboutToSubmitEvent": "${CCD_DEF_COS_URL}/case-orchestration/ccdAboutToSubmitEvent"
+  },
+  {
+    "LiveFrom": "01/01/2017",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "mockTestEvent_base",
+    "Name": "Mock Event to test import [base]",
+    "Description": "Mock Event to test import [base]",
+    "DisplayOrder": 140,
+    "PreConditionState(s)": "*",
+    "PostConditionState": "*",
+    "SecurityClassification": "Public",
+    "ShowSummary": "Y",
+    "ShowEventNotes": "N",
+    "Publish": "${CCD_DEF_PUBLISH}"
   }
 ]
