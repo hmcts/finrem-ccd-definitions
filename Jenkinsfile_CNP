@@ -118,7 +118,8 @@ def secrets = [
                 secret('idam-data-store-client-secret','IDAM_OAUTH2_DATA_STORE_CLIENT_SECRET'),
                 secret('idam-data-store-system-user-username','IDAM_DATA_STORE_SYSTEM_USER_USERNAME'),
                 secret('idam-data-store-system-user-password','IDAM_DATA_STORE_SYSTEM_USER_PASSWORD'),
-                secret('AppInsightsInstrumentationKey', 'APP_INSIGHTS_INSTRUMENTATION_KEY')
+                secret('AppInsightsInstrumentationKey', 'APP_INSIGHTS_INSTRUMENTATION_KEY'),
+                secret('session-keys', 'SESSION_KEYS')
         ],
         'finrem-${env}'      : nonProdFinremSecrets
 ]
