@@ -253,10 +253,14 @@ withPipeline("nodejs", product, component) {
   before('akschartsinstall') {
     onPR {
       withAcrClient('preview') {
-        def cosHelm = new uk.gov.hmcts.contino.Helm(this, 'finrem-cos')
-        cosHelm.authenticateAcr()
+        sh '''
+          set +x
+          AZURE_CONFIG_DIR=/opt/jenkins/.azure-preview \
+            az acr login --name "$REGISTRY_NAME" \
+              --subscription "$REGISTRY_SUBSCRIPTION"
 
-        sh 'helm dependency build charts/finrem-cos'
+          helm dependency build charts/finrem-cos
+        '''
       }
     }
   }
