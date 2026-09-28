@@ -250,6 +250,20 @@ withPipeline("nodejs", product, component) {
       }
     }
   }
+  before('akschartsinstall') {
+    onPR {
+      withAcrClient('preview') {
+        sh '''
+          set +x
+          AZURE_CONFIG_DIR=/opt/jenkins/.azure-preview \
+            az acr login --name "$REGISTRY_NAME" \
+              --subscription "$REGISTRY_SUBSCRIPTION"
+
+          helm dependency build charts/finrem-cos
+        '''
+      }
+    }
+  }
   before('highleveldatasetup') {
     def targetEnvironment = env.ENV
 
