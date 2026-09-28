@@ -1,0 +1,18 @@
+java:
+  devcpuRequests: 250m
+  devmemoryRequests: 1Gi
+  devcpuLimits: 1
+  devmemoryLimits: 1Gi
+  image: ${IMAGE_NAME}
+  ingressHost: ${SERVICE_FQDN}
+  environment:
+    FEATURE_CASEWORKER_NOC: true
+    FEATURE_ASSIGN_CASE_ACCESS: true
+    FEATURE_SOLICITOR_NOC: true
+    FEATURE_SEND_LETTER_RECIPIENT_CHECK: false
+    FEATURE_INTERVENER_ENABLED: false
+    SECURE_DOC_ENABLED: false
+    MANAGE_HEARING_ENABLED: true
+    VACATE_HEARING_ENABLED: true
+    FINREM_CITIZEN_UI_ENABLED: true
+    GLOBAL_SEARCH_ENABLED: true

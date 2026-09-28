@@ -250,6 +250,16 @@ withPipeline("nodejs", product, component) {
       }
     }
   }
+  before('akschartsinstall') {
+    onPR {
+      withAcrClient('preview') {
+        def cosHelm = new uk.gov.hmcts.contino.Helm(this, 'finrem-cos')
+        cosHelm.authenticateAcr()
+
+        sh 'helm dependency build charts/finrem-cos'
+      }
+    }
+  }
   before('highleveldatasetup') {
     def targetEnvironment = env.ENV
 

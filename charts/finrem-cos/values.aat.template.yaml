@@ -1,0 +1,8 @@
+# Don't modify this file, it is only needed for the pipeline to set the image and ingressHost
+java:
+  image: ${IMAGE_NAME}
+  ingressHost: ${SERVICE_FQDN}
+  environment:
+    FEATURE_SEND_LETTER_RECIPIENT_CHECK: false
+    FEATURE_INTERVENER_ENABLED: false
+    SECURE_DOC_ENABLED: false
