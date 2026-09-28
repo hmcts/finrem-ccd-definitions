@@ -149,7 +149,6 @@ def getWaTaskConfigPrNumber() {
   return ""
 }
 
-
 def setPreviewEnvVars() {
   def githubApi = new GithubAPI(this)
   env.ENABLE_WA = false
