@@ -217,7 +217,6 @@ def setupWaPreviewRoleAssignments() {
 
 def setPlaywrightIdamEnv() {
     def idamEnv = env.ENV == 'preview' ? 'aat' : env.ENV
-
     env.IDAM_CLIENT_ID = 'finrem'
     env.IDAM_WEB_URL =
             "https://idam-web-public.${idamEnv}.platform.hmcts.net"
