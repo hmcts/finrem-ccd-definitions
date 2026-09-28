@@ -79,7 +79,8 @@ def secrets = [
                 secret("playwright-int-barrister-password","PLAYWRIGHT_INT_BARRISTER_PSWD"),
                 secret("SUPERCASEWORKER-USERNAME","USERNAME_SUPERCASEWORKER"),
                 secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER"),
-                secret("nightlydevtoken","GITHUB_TOKEN")
+                secret("nightlydevtoken","GITHUB_TOKEN"),
+                secret('idam-secret', 'IDAM_SECRET')
         ]
 ]
 
@@ -188,11 +189,25 @@ withNightlyPipeline(type, product, component) {
     afterAlways('DependencyCheckNightly') {
 
         stage('Set up playwright') {
-            yarnBuilder.yarn('yarn-update')
-            yarnBuilder.yarn('install-dependencies')
-            steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-            env.ENV = params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV
-        }
+    yarnBuilder.yarn('yarn-update')
+    yarnBuilder.yarn('install-dependencies')
+
+    steps.archiveArtifacts(
+        allowEmptyArchive: true,
+        artifacts: 'definitions/**/xlsx/*.xlsx'
+    )
+
+    env.ENV = params.RUNNING_ENV.startsWith('pr')
+            ? 'aat'
+            : params.RUNNING_ENV
+
+    env.IDAM_CLIENT_ID = 'finrem'
+    env.IDAM_WEB_URL = "https://idam-web-public.${env.ENV}.platform.hmcts.net"
+    env.IDAM_TESTING_SUPPORT_URL =
+            "https://idam-testing-support-api.${env.ENV}.platform.hmcts.net"
+
+    env.LOG_LEVEL = 'warn'
+}
 
         stage('Create WA test users') {
             steps.sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
