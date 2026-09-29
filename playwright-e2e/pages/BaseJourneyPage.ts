@@ -158,7 +158,6 @@ export abstract class BaseJourneyPage {
     await this.waitForSpinner();
   }
 
-  // ...existing code...
   async navigateIgnoreWarningAndContinue() {
     const ignoreWarningButton = this.page.getByRole('button', { name: 'Ignore Warning and Continue' });
     try {
