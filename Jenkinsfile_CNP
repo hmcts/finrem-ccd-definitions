@@ -268,30 +268,11 @@ withPipeline("nodejs", product, component) {
       env.DEFINITION_STORE_URL_BASE = "https://ccd-definition-store-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
       env.EXCLUDE = getPreviewDefinitionExclusions()
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
-
         yarnBuilder.yarn("generate-excel-preview-consented")
-
-//        if (env.ENABLE_WA?.toBoolean() && env.ENABLE_GS?.toBoolean()) {
-//          yarnBuilder.yarn("generate-excel-preview-wa-gs-consented")
-//        } else if (env.ENABLE_WA?.toBoolean()) {
-//          yarnBuilder.yarn("generate-excel-preview-wa-consented")
-//        } else if (env.ENABLE_GS?.toBoolean()) {
-//          yarnBuilder.yarn("generate-excel-preview-gs-consented")
-//        } else {
-//          yarnBuilder.yarn("generate-excel-preview-consented")
-//        }
       }
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-contested")
-        if (env.ENABLE_WA?.toBoolean() && env.ENABLE_GS?.toBoolean()) {
-            yarnBuilder.yarn("copy-preview-xlxs-to-resources-wa-gs")
-        } else if (env.ENABLE_WA?.toBoolean()) {
-            yarnBuilder.yarn("copy-preview-xlxs-to-resources-wa")
-        } else if (env.ENABLE_GS?.toBoolean()) {
-            yarnBuilder.yarn("copy-preview-xlxs-to-resources-gs")
-        } else {
-            yarnBuilder.yarn("copy-preview-xlxs-to-resources")
-        }
+        yarnBuilder.yarn("copy-preview-xlxs-to-resources")
       }
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
