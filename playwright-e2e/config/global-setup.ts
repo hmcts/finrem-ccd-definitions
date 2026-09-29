@@ -11,9 +11,19 @@ const SOLICITOR_ROLES = [
   'caseworker-divorce-solicitor',
 ];
 
+function requireEnv(name: string): string {
+  const value = process.env[name];
+
+  if (!value) {
+    throw new Error(`Missing required environment variable: ${name}`);
+  }
+
+  return value;
+}
+
 const users = [
   {
-    id: '89068764-a612-48bd-a10b-463e9546a0d2',
+    id: requireEnv('PLAYWRIGHT_SOLICITOR_ID'),
     email: config.applicant_solicitor.email,
     password: config.applicant_solicitor.password,
     forename: 'APP',
@@ -21,7 +31,7 @@ const users = [
     roleNames: SOLICITOR_ROLES,
   },
   {
-    id: 'c3f32daa-539f-4156-b355-2c246c5fae79',
+    id: requireEnv('PLAYWRIGHT_RESPONDENT_SOL_ID'),
     email: config.respondent_solicitor.email,
     password: config.respondent_solicitor.password,
     forename: 'RESPONDENT',
