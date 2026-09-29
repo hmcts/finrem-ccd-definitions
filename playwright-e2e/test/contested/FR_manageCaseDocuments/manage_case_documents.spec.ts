@@ -42,12 +42,7 @@ async function loginAsCaseworkerStep(
 ): Promise<void> {
   await test.step('Login as caseworker', async () => {
     await manageCaseDashboardPage.visit();
-    await loginPage.loginWaitForPath(
-      config.caseWorker.email,
-      config.caseWorker.password,
-      config.manageCaseBaseURL,
-      config.loginPaths.cases
-    );
+    await loginPage.loginCaseworker();
   });
 }
 
@@ -158,7 +153,7 @@ async function runAccessibilityAuditStep(axeUtils: AxeUtils): Promise<void> {
   });
 }
 
-test.describe('Contested Manage Case Documents', () => {
+test.describe('Contested Manage Case Documents', { tag: ['@ManageCaseDocuments'] }, () => {
   test(
     'Caseworker can add a non-confidential document',
     { tag: ['@caseworker'] },

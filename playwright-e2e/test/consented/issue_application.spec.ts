@@ -14,7 +14,7 @@ test(
   }) => {
     // Create case and progress to HWF decision made
     const caseId = Math.random() < 0.5 
-      ? await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision() 
+      ? await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision()
       : await ConsentedCaseFactory.createConsentedCaseUpToHwfFeeAccountDebited();
     
     const dateToday = new Date()

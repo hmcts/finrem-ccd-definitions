@@ -101,5 +101,32 @@
     "FieldTypeParameter": "FR_binFileUrls",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom":  "15/07/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "caseNameHmctsInternal",
+    "Label": "Case Name",
+    "FieldType": "Text",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
+  },
+  {
+    "LiveFrom":  "15/07/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "caseManagementCategory",
+    "Label": "Case Management Category",
+    "FieldType": "DynamicList",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom":  "15/07/2026",
+    "CaseTypeID": "${CCD_DEF_CASE_TYPE_ID}",
+    "ID": "caseManagementLocation",
+    "Label": "Case Location",
+    "FieldType": "CaseLocation",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]

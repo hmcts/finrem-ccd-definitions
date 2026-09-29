@@ -2,7 +2,189 @@
   {
     "LiveFrom": "25/06/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseStateID": "prepareForHearing",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationSubmitted",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingHWFDecision",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingPaymentResponse",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseAdded",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseHidden",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "draftOrderNotApproved",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "paperCaseAdded",
     "UserRole": "[APPLICANT]",
     "CRUD": "CRU"
   },
@@ -10,6 +192,272 @@
     "LiveFrom": "25/06/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "prepareForHearing",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationIssued",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "applicationSubmitted",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingHWFDecision",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponse",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingJudiciaryResponseConsent",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "awaitingPaymentResponse",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseAdded",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseFileSubmitted",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseHidden",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "caseWorkerReview",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderApproved",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderMade",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentOrderNotApproved",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentProcess",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderApproved",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderAssignJudge",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderNotApproved",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "consentedOrderSubmitted",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "draftOrderNotApproved",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "gateKeepingAndAllocation",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplication",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationAwaitingJudiciaryResponse",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "generalApplicationOutcome",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "judgeDraftOrder",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderDrawn",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "orderSent",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "paperCaseAdded",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "prepareForHearing",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "responseReceived",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "reviewOrder",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "scheduleRaiseDirectionsOrder",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "schedulingAndHearing",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "solicitorDraftOrder",
     "UserRole": "[RESPONDENT]",
     "CRUD": "CRU"
   }

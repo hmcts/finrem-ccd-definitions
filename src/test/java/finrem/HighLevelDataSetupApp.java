@@ -42,7 +42,8 @@ public class HighLevelDataSetupApp extends DataLoaderToDefinitionStore {
             new CcdRoleConfig("caseworker-caa", "PUBLIC"),
             new CcdRoleConfig("caseworker-approver", "PUBLIC"),
             new CcdRoleConfig("caseworker-financialremedy-rparobot", "PUBLIC"),
-            new CcdRoleConfig("caseworker-wa-task-configuration", "RESTRICTED")
+            new CcdRoleConfig("caseworker-wa-task-configuration", "RESTRICTED"),
+            new CcdRoleConfig("GS_profile", "PUBLIC")
     );
 
     /**

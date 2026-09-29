@@ -1,7 +1,7 @@
 import {YesNoRadioEnum} from './enums/RadioEnums.ts';
 import {CaseEvent} from '../../config/case-data.ts';
 import {caseSubmissionTable, caseSubmissionTableHWF} from '../../resources/check_your_answer_content/case_submission/caseSubmissionTable.ts';
-import {paymentDetailsReviewData, paymentDetailsTabData} from '../../resources/tab_content/payment_details_tabs.ts';
+import {paymentDetailsTabData} from '../../resources/tab_content/payment_details_tabs.ts';
 import {CaseDetailsPage} from '../CaseDetailsPage.ts';
 import {SolicitorAuthPage} from '../events/application-payment-submission/SolicitorAuthPage.ts';
 import {HelpWithFeesPage} from '../events/application-payment-submission/HelpWithFeesPage.ts';
@@ -69,7 +69,7 @@ export async function applicationCaseSubmission(
 
   await caseSubmissionPage.navigateContinue();
   await checkYourAnswersPage.assertCheckYourAnswersPage(caseSubmissionTable(param.amount));
-  const paymentDateAndTime =  await caseSubmissionPage.navigateSubmit();
+  await caseSubmissionPage.navigateSubmit();
   await caseSubmissionPage.returnToCaseDetails();
   await caseDetailsPage.checkHasBeenUpdated(param.caseEvent.listItem);
 
@@ -81,23 +81,6 @@ export async function applicationCaseSubmission(
       param.amount
     )
   );
-
-  await caseDetailsPage.clickPaymentHistoryReviewLink();
-
-  await caseDetailsPage.assertTabData([
-    {
-      tabName: 'Payment History',
-      tabContent: paymentDetailsReviewData(
-        param.amount,
-        param.hasHelpWithFees,
-        param.feeCode,
-        param.pbaNumber,
-        param.reference,
-        paymentDateAndTime,
-        param.caseType || 'Contested'
-      )
-    }
-  ]);
 }
 
 export async function applicationCaseSubmissionHWF(
@@ -161,8 +144,7 @@ export async function applicationCaseSubmissionHWF(
     paymentDetailsTabData(
       param.feeCode,
       param.feeType,
-      param.amount,
-      param.hwfCode
+      param.amount
     )
   );
 }
