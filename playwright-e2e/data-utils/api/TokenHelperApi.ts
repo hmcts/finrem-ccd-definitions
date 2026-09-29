@@ -9,7 +9,8 @@ export async function getUserToken(username: string, password: string): Promise<
   const tokenCache = await readCache();
   const cached = tokenCache.get(username);
   const now = Date.now();
-  if (cached && cached.expiry > now) {
+
+  if (cached && cached.expiry > now && cached.userId) {
     return cached.token;
   }
 
@@ -31,39 +32,46 @@ export async function getUserToken(username: string, password: string): Promise<
     }).toString()
   });
 
-  tokenCache.set(username,
-    {
-      token: idamTokenResponse.data.access_token,
-      expiry: idamTokenResponse.data.expires_in * 1000 + now - 60000,
-      userId: cached?.userId ?? ''
-    }
+  const idToken = idamTokenResponse.data.id_token;
+
+  if (!idToken) {
+    throw new Error('IDAM token response did not contain an id_token');
+  }
+
+  const payloadPart = idToken.split('.')[1];
+
+  if (!payloadPart) {
+    throw new Error('Invalid ID token: JWT payload is missing');
+  }
+
+  const decodedPayload = JSON.parse(
+    Buffer.from(payloadPart, 'base64url').toString('utf8')
   );
+
+  if (!decodedPayload.uid) {
+    throw new Error('User ID not found in ID token');
+  }
+
+  tokenCache.set(username, {
+    token: idamTokenResponse.data.access_token,
+    expiry: idamTokenResponse.data.expires_in * 1000 + now - 60000,
+    userId: String(decodedPayload.uid)
+  });
 
   await writeCache(tokenCache);
 
   return idamTokenResponse.data.access_token;
 }
 
-export function getUserId(authToken: string): string {
-  const payload = authToken.replace(/^Bearer\s+/i, '').split('.')[1];
+export async function getUserId(username: string): Promise<string> {
+  const tokenCache = await readCache();
+  const cached = tokenCache.get(username);
 
-  if (!payload) {
-    throw new Error('Invalid auth token: JWT payload is missing');
+  if (!cached?.userId) {
+    throw new Error(`User ID not found for ${username}`);
   }
 
-  try {
-    const decoded = Buffer.from(payload, 'base64url').toString('utf8');
-    const { uid } = JSON.parse(decoded);
-
-    if (!uid) {
-      throw new Error('User ID not found in auth token');
-    }
-
-    return uid;
-  } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
-    throw new Error(`Failed to decode user ID from auth token: ${message}`);
-  }
+  return cached.userId;
 }
 
 export async function getServiceToken(): Promise<string> {
