@@ -6149,5 +6149,16 @@
     "ShowSummaryChangeOption": "Y",
     "FieldShowCondition": "[STATE]=\"IMPOSSIBLE\"",
     "Publish": "${CCD_DEF_PUBLISH}"
+  },
+  {
+    "LiveFrom": "03/09/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseEventID": "FR_applicationPaymentSubmission",
+    "CaseFieldID": "helpWithFeesQuestion",
+    "PageFieldDisplayOrder": 2,
+    "DisplayContext": "MANDATORY",
+    "PageID": 2,
+    "FieldShowCondition": "[STATE]=\"NeverShow\"",
+    "Publish": "${CCD_DEF_PUBLISH}"
   }
 ]
