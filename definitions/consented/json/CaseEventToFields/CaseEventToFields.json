@@ -2855,7 +2855,8 @@
     "PageID": 2,
     "PageDisplayOrder": 2,
     "PageColumnNumber": 1,
-    "ShowSummaryChangeOption": "Y"
+    "ShowSummaryChangeOption": "Y",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -6133,17 +6134,6 @@
     "PageFieldDisplayOrder": 1,
     "DisplayContext": "OPTIONAL",
     "PageID": 1,
-    "FieldShowCondition": "[STATE]=\"NeverShow\"",
-    "Publish": "${CCD_DEF_PUBLISH}"
-  },
-  {
-    "LiveFrom": "03/09/2026",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "CaseEventID": "FR_applicationPaymentSubmission",
-    "CaseFieldID": "helpWithFeesQuestion",
-    "PageFieldDisplayOrder": 2,
-    "DisplayContext": "MANDATORY",
-    "PageID": 2,
     "FieldShowCondition": "[STATE]=\"NeverShow\"",
     "Publish": "${CCD_DEF_PUBLISH}"
   }
