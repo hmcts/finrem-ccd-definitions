@@ -25,7 +25,7 @@ properties([
         ])
 ])
 
-@Library("Infrastructure@2.5.1")
+@Library("Infrastructure@2.5.3")
 import uk.gov.hmcts.contino.AppPipelineConfig
 
 String type = 'nodejs'
@@ -47,10 +47,12 @@ def secrets = [
         "${product}-${vaultEnv}": [
                 secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
                 secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
+                secret('playwright-solicitor-id', 'PLAYWRIGHT_SOLICITOR_ID'),
                 secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
                 secret('playwright-appl-caa-password', 'PLAYWRIGHT_APPL_CAA_PSWD'),
                 secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
                 secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
+                secret('playwright-respondent-sol-id', 'PLAYWRIGHT_RESPONDENT_SOL_ID'),
                 secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
                 secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
                 secret('playwright-applicant-intervener-username', 'PLAYWRIGHT_APPL_INTERVENER_USERNAME'),
@@ -79,7 +81,8 @@ def secrets = [
                 secret("playwright-int-barrister-password","PLAYWRIGHT_INT_BARRISTER_PSWD"),
                 secret("SUPERCASEWORKER-USERNAME","USERNAME_SUPERCASEWORKER"),
                 secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER"),
-                secret("nightlydevtoken","GITHUB_TOKEN")
+                secret("nightlydevtoken","GITHUB_TOKEN"),
+                secret('idam-secret', 'IDAM_SECRET')
         ]
 ]
 
@@ -188,11 +191,25 @@ withNightlyPipeline(type, product, component) {
     afterAlways('DependencyCheckNightly') {
 
         stage('Set up playwright') {
-            yarnBuilder.yarn('yarn-update')
-            yarnBuilder.yarn('install-dependencies')
-            steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-            env.ENV = params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV
-        }
+    yarnBuilder.yarn('yarn-update')
+    yarnBuilder.yarn('install-dependencies')
+
+    steps.archiveArtifacts(
+        allowEmptyArchive: true,
+        artifacts: 'definitions/**/xlsx/*.xlsx'
+    )
+
+    env.ENV = params.RUNNING_ENV.startsWith('pr')
+            ? 'aat'
+            : params.RUNNING_ENV
+
+    env.IDAM_CLIENT_ID = 'finrem'
+    env.IDAM_WEB_URL = "https://idam-web-public.${env.ENV}.platform.hmcts.net"
+    env.IDAM_TESTING_SUPPORT_URL =
+            "https://idam-testing-support-api.${env.ENV}.platform.hmcts.net"
+
+    env.LOG_LEVEL = 'warn'
+}
 
         stage('Create WA test users') {
             steps.sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
