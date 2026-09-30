@@ -84,14 +84,14 @@
     "RoleName" : "judge",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary",
+    "AccessProfiles": "caseworker-divorce-financialremedy,caseworker-divorce-financialremedy-judiciary",
     "ReadOnly": "N"
   },
   {
     "RoleName" : "ctsc",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin",
+    "AccessProfiles": "caseworker-divorce-financialremedy,caseworker-divorce-financialremedy-courtadmin",
     "ReadOnly": "N"
   },
   {
