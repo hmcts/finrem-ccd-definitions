@@ -36,6 +36,7 @@ export default defineConfig({
     }],
   ],
 
+  globalSetup: './playwright-e2e/config/global-setup',
   globalTeardown: './playwright-e2e/config/global-teardown',
 
   projects: [
