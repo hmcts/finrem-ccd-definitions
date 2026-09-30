@@ -360,14 +360,20 @@ withPipeline("nodejs", product, component) {
 
   onIthc() {
     env.ENV='ithc'
+    env.ENABLE_WA = false
+    env.ENABLE_GS = false
   }
 
   onDemo() {
     env.ENV='demo'
+    env.ENABLE_WA = false
+    env.ENABLE_GS = false
   }
 
   onPerftest() {
     env.ENV='perftest'
+    env.ENABLE_WA = false
+    env.ENABLE_GS = false
   }
 
   before('smoketest:preview') {
