@@ -14,4 +14,4 @@ fi
 
 echo "Copying definitions file with VARIANT_FLAGS = '${VARIANT_FLAGS}'."
 
-cp -R definitions/consented/xlsx/ccd-config-preview-consented${VARIANT_FLAGS}-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition
+cp -R definitions/consented/xlsx/ccd-config-perftest-consented${VARIANT_FLAGS}-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition
