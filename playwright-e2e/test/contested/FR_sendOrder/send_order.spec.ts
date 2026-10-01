@@ -27,12 +27,7 @@ test.describe('Contested - Approved and Send Order', () => {
       await test.step('Caseworker sends approved order', async () => {
         await manageCaseDashboardPage.visit();
 
-        await loginPage.loginWaitForPath(
-          config.caseWorker.email,
-          config.caseWorker.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
+        await loginPage.loginCaseworker();
 
         await manageCaseDashboardPage.navigateToCase(caseId);
 
