@@ -2,10 +2,8 @@
 ENABLE_WA=${ENABLE_WA:-false}
 ENABLE_GS=${ENABLE_GS:-false}
 
-# Default to empty string
 VARIANT_FLAGS=""
 
-# Conditionally build the suffix
 if [ "$ENABLE_WA" = "true" ]; then
   VARIANT_FLAGS="-wa"
 fi
@@ -16,5 +14,4 @@ fi
 
 echo "Copying definitions file with VARIANT_FLAGS = '${VARIANT_FLAGS}'."
 
-# 2. Copy the consented file using the dynamic suffix
-cp -R definitions/consented/xlsx/ccd-config-preview-consented${VARIANT_FLAGS}-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition/
+cp -R definitions/consented/xlsx/ccd-config-preview-consented${VARIANT_FLAGS}-${GIT_COMMIT:-base}.xlsx src/test/resources/ccd_definition
