@@ -10,7 +10,7 @@ import {ContestedEvents} from '../../../config/case-data.ts';
 
 test(
   'Create Express Case - Contested FormA Submission, suitable for Express case processing',
-  { tag: ['@accessibility'] },
+  { tag: ['@accessibility', '@Express', '@CreateCase'] },
   async (
     {
       loginPage,

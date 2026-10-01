@@ -2672,5 +2672,14 @@
     "Label": "${extraClientAddr4ConfidentialLabel}",
     "FieldType": "YesOrNo",
     "SecurityClassification": "Public"
+  },
+  {
+    "LiveFrom":  "15/07/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "SearchCriteria",
+    "Label": "Search Criteria",
+    "FieldType": "SearchCriteria",
+    "SecurityClassification": "Public",
+    "Searchable": "Y"
   }
 ]
