@@ -37,6 +37,7 @@ xui-webapp:
       SERVICES_TERMS_AND_CONDITIONS: http://xui-terms-and-conditions-${SERVICE_FQDN}
       JURISDICTIONS: DIVORCE
       FINREM_WORK_ALLOCATION_ENABLED: false
+      FEATURE_WORKALLOCATION_ENABLED: ${ENABLE_WA}
 
 xui-mo-webapp:
   enabled: true
@@ -51,6 +52,7 @@ xui-mo-webapp:
       SERVICES_CCD_DATA_STORE_API: http://${SERVICE_NAME}-ccd-data-store-api
       SERVICES_MCA_PROXY_API: http://${SERVICE_NAME}-aac-manage-case-assignment
       CASE_TYPES: "FinancialRemedyMVP2,FinancialRemedyContested"
+      FEATURE_WORKALLOCATION_ENABLED: ${ENABLE_WA}
 
 finrem-cos:
   enabled: true
