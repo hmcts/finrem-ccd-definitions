@@ -362,6 +362,8 @@ withPipeline("nodejs", product, component) {
 
   onMaster() {
     env.ENV='aat'
+    env.ENABLE_WA = false
+    env.ENABLE_GS = false
   }
 
   onPR() {
