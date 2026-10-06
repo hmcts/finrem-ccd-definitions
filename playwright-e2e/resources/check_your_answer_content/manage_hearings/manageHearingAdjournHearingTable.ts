@@ -37,6 +37,6 @@ export const adjournHearingRelistedTableData: Table = {
     {cellItem: 'Do you want to upload any other documents?', value: 'Yes'},
     {cellItem: 'Please upload any additional documents related to your application.', value: 'final_hearing_file1.pdf'},
     {cellItem: 'Do you want to send a notice of hearing?', value: 'Yes'},
-    {cellItem: 'Who should see this order?', value: 'Applicant - Frodo Baggins\nIntervener1 - intApp1\nIntervener2 - intResp1'}
+    {cellItem: 'Who should see this order?', value: 'Applicant - Frodo Baggins'}
   ]
 };

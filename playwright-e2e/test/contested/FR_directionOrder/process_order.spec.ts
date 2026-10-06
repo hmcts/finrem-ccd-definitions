@@ -1,5 +1,4 @@
 import {test} from '../../../fixtures/fixtures.ts';
-import config from '../../../config/config.ts';
 import { ContestedCaseFactory } from '../../../data-utils/factory/contested/ContestedCaseFactory.ts';
 import { ContestedEvents } from '../../../config/case-data.ts';
 import { YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
@@ -41,12 +40,7 @@ async function progressToProcessOrderEvent(
   fileName: string;
 }> {
   await manageCaseDashboardPage.visit();
-  await loginPage.loginWaitForPath(
-    config.caseWorker.email,
-    config.caseWorker.password,
-    config.manageCaseBaseURL,
-    config.loginPaths.cases
-  );
+  await loginPage.loginCaseworker();
   await manageCaseDashboardPage.navigateToCase(caseId);
 
   await caseDetailsPage.selectNextStep(ContestedEvents.uploadDraftOrders);
@@ -77,10 +71,9 @@ async function progressToProcessOrderEvent(
 }
 
 // New Style Process Order hearings
-test.describe('Contested - Process Order (Manage Hearings)', () => {
+test.describe('Contested - Process Order (Manage Hearings)', { tag: ['@ManageHearings'] }, () => {
   test(
     'Form A case creating a hearing from Process Order (MH)',
-    { tag: ['@MH'] },
     async (
       {
         loginPage,
@@ -139,7 +132,6 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
 
   test(
     'Paper Case creating a hearing from Process Order (MH)',
-    { tag: ['@MH'] },
     async ({
       loginPage,
       manageCaseDashboardPage,
@@ -217,7 +209,6 @@ test.describe('Contested - Process Order (Manage Hearings)', () => {
 
   test(
     'Form A case Process Order (MH) with no hearing added',
-    { tag: ['@MH'] },
     async (
       {
         loginPage,

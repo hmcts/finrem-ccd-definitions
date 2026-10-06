@@ -1,6 +1,6 @@
 #!groovy
 properties([
-        pipelineTriggers([cron('00 16 * * 1-5')]),
+        pipelineTriggers([cron('00 17 * * 1-5')]),
         parameters([
                 string(
                         name: 'RUNNING_ENV',
@@ -9,7 +9,7 @@ properties([
                 ),
                 string(
                         name: 'FUNCTIONAL_TESTS_WORKERS',
-                        defaultValue: '4',
+                        defaultValue: '3',
                         description: 'Number of workers running functional tests'
                 ),
                 string(
@@ -25,7 +25,7 @@ properties([
         ])
 ])
 
-@Library("Infrastructure")
+@Library("Infrastructure@2.5.3")
 import uk.gov.hmcts.contino.AppPipelineConfig
 
 String type = 'nodejs'
@@ -47,10 +47,12 @@ def secrets = [
         "${product}-${vaultEnv}": [
                 secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
                 secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
+                secret('playwright-solicitor-id', 'PLAYWRIGHT_SOLICITOR_ID'),
                 secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
                 secret('playwright-appl-caa-password', 'PLAYWRIGHT_APPL_CAA_PSWD'),
                 secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
                 secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
+                secret('playwright-respondent-sol-id', 'PLAYWRIGHT_RESPONDENT_SOL_ID'),
                 secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
                 secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
                 secret('playwright-applicant-intervener-username', 'PLAYWRIGHT_APPL_INTERVENER_USERNAME'),
@@ -79,7 +81,8 @@ def secrets = [
                 secret("playwright-int-barrister-password","PLAYWRIGHT_INT_BARRISTER_PSWD"),
                 secret("SUPERCASEWORKER-USERNAME","USERNAME_SUPERCASEWORKER"),
                 secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER"),
-                secret("nightlydevtoken","GITHUB_TOKEN")
+                secret("nightlydevtoken","GITHUB_TOKEN"),
+                secret('idam-secret', 'IDAM_SECRET')
         ]
 ]
 
@@ -88,20 +91,43 @@ pipelineConf.vaultSecrets = secrets
 
 def buildPlaywrightCommand(tags, browser) {
     if (tags == null || tags.trim().isEmpty()) {
-        return;
+        return
     }
+
     def tagList = tags.split(',').collect { it.trim() }
 
-    def command = 'yarn playwright test '
+    def projectByBrowser = [
+            'msedge'  : 'edge',
+            'edge'    : 'edge',
+            'chromium': 'chromium',
+            'chrome'  : 'chrome',
+            'firefox' : 'firefox',
+            'webkit'  : 'webkit'
+    ]
+
+    def command = 'yarn playwright test'
+
     tagList.each { tag ->
         if (!tag.isEmpty()) {
             command += " --grep ${tag}"
         }
     }
 
-    if (browser) {
-        command += " --project=${browser}"
-        command = "playwright install ${browser} && ${command}"
+    if (browser == 'all') {
+        // Chrome and Edge are system browsers on the Jenkins agent.
+        // Chromium, Firefox and WebKit require Playwright-managed binaries.
+        command = "yarn playwright install chromium firefox webkit && ${command}"
+
+    } else if (browser) {
+        def playwrightProject = projectByBrowser[browser] ?: browser
+
+        command += " --project=${playwrightProject}"
+
+        def installBrowser = playwrightProject == 'edge'
+                ? 'msedge'
+                : playwrightProject
+
+        command = "yarn playwright install ${installBrowser} && ${command}"
     }
 
     return command
@@ -114,12 +140,21 @@ def runBrowserStage = { String browserName,
 
     return {
         stage("Functional playwright tests - ${browserName}") {
+
+            def outputDir = "test-results-${browserName}"
+            def reportDir = "playwright-report-${browserName}"
+
+            def playwrightEnv = [
+                    "PLAYWRIGHT_OUTPUT_DIR=${outputDir}",
+                    "PLAYWRIGHT_HTML_REPORT_DIR=${reportDir}"
+            ]
+
+            envOverrides.each { key, value ->
+                playwrightEnv.add("${key}=${value}")
+            }
+
             try {
-                if (envOverrides) {
-                    withEnv(envOverrides.collect { k, v -> "${k}=${v}" }) {
-                        yarnBuilder.yarn(yarnScript)
-                    }
-                } else {
+                withEnv(playwrightEnv) {
                     yarnBuilder.yarn(yarnScript)
                 }
 
@@ -131,14 +166,14 @@ def runBrowserStage = { String browserName,
                         allowMissing: true,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: 'playwright-report',
+                        reportDir: reportDir,
                         reportFiles: 'index.html',
                         reportName: "FunctionalTestReport-${browserName}"
                 ])
 
                 steps.archiveArtifacts(
                         allowEmptyArchive: true,
-                        artifacts: 'build/reports/tests/functionalTest/**/*'
+                        artifacts: "${outputDir}/**/*"
                 )
             }
         }
@@ -156,21 +191,59 @@ withNightlyPipeline(type, product, component) {
     afterAlways('DependencyCheckNightly') {
 
         stage('Set up playwright') {
-            yarnBuilder.yarn('yarn-update')
-            yarnBuilder.yarn('install-dependencies')
-            steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-            env.ENV = params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV
-        }
+    yarnBuilder.yarn('yarn-update')
+    yarnBuilder.yarn('install-dependencies')
+
+    steps.archiveArtifacts(
+        allowEmptyArchive: true,
+        artifacts: 'definitions/**/xlsx/*.xlsx'
+    )
+
+    env.ENV = params.RUNNING_ENV.startsWith('pr')
+            ? 'aat'
+            : params.RUNNING_ENV
+
+    env.IDAM_CLIENT_ID = 'finrem'
+    env.IDAM_WEB_URL = "https://idam-web-public.${env.ENV}.platform.hmcts.net"
+    env.IDAM_TESTING_SUPPORT_URL =
+            "https://idam-testing-support-api.${env.ENV}.platform.hmcts.net"
+
+    env.LOG_LEVEL = 'warn'
+}
 
         stage('Create WA test users') {
             steps.sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
         }
 
         if (!params.TAGS_TO_RUN.isEmpty()) {
+
+            def browserName = params.BROWSER_TO_RUN == 'msedge'
+                    ? 'edge'
+                    : params.BROWSER_TO_RUN
+
+            def outputSuffix = browserName == 'all'
+                    ? 'tagged-all'
+                    : "tagged-${browserName}"
+
+            def outputDir = "test-results-${outputSuffix}"
+            def reportDir = "playwright-report-${outputSuffix}"
+
             stage("${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}") {
                 try {
                     currentBuild.displayName = "${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
-                    yarnBuilder.yarn(buildPlaywrightCommand(params.TAGS_TO_RUN, params.BROWSER_TO_RUN))
+
+                    withEnv([
+                            "PLAYWRIGHT_OUTPUT_DIR=${outputDir}",
+                            "PLAYWRIGHT_HTML_REPORT_DIR=${reportDir}"
+                    ]) {
+                        steps.sh(
+                                buildPlaywrightCommand(
+                                        params.TAGS_TO_RUN,
+                                        params.BROWSER_TO_RUN
+                                )
+                        )
+                    }
+
                 } catch (Error e) {
                     unstable(message: "${STAGE_NAME} is unstable: " + e.toString())
                 } finally {
@@ -178,21 +251,50 @@ withNightlyPipeline(type, product, component) {
                             allowMissing: true,
                             alwaysLinkToLastBuild: true,
                             keepAll: true,
-                            reportDir: "playwright-report",
+                            reportDir: reportDir,
                             reportFiles: 'index.html',
                             reportName: "${params.TAGS_TO_RUN} E2E Tests for ${params.BROWSER_TO_RUN}"
                     ])
-                    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/tests/functionalTest/**/*'
+
+                    steps.archiveArtifacts(
+                            allowEmptyArchive: true,
+                            artifacts: "${outputDir}/**/*"
+                    )
                 }
             }
         } else {
-            // Define all potential browser stages available
             def allStages = [
-                    'msedge': ['Edge Tests': runBrowserStage('edge', 'test:functional-edge', ['TESTS_FOR_ACCESSIBILITY': 'true'])],
-                    'chromium': ['Chromium Tests': runBrowserStage('chromium', 'test:functional-chromium')],
-                    'chrome': ['Chrome Tests': runBrowserStage('chrome', 'test:functional-chrome')],
-                    'firefox': ['Firefox Tests': runBrowserStage('firefox', 'test:functional-firefox')],
-                    'webkit': ['Webkit Tests': runBrowserStage('webkit', 'test:functional-webkit')]
+                    'msedge': [
+                            'Edge Tests': runBrowserStage(
+                                    'edge',
+                                    'test:functional-edge',
+                                    ['TESTS_FOR_ACCESSIBILITY': 'true']
+                            )
+                    ],
+                    'chromium': [
+                            'Chromium Tests': runBrowserStage(
+                                    'chromium',
+                                    'test:functional-chromium'
+                            )
+                    ],
+                    'chrome': [
+                            'Chrome Tests': runBrowserStage(
+                                    'chrome',
+                                    'test:functional-chrome'
+                            )
+                    ],
+                    'firefox': [
+                            'Firefox Tests': runBrowserStage(
+                                    'firefox',
+                                    'test:functional-firefox'
+                            )
+                    ],
+                    'webkit': [
+                            'Webkit Tests': runBrowserStage(
+                                    'webkit',
+                                    'test:functional-webkit'
+                            )
+                    ]
             ]
 
             // Build the specific parallel stages execution map based on selection

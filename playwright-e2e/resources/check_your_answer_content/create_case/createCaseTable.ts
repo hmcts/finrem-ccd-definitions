@@ -125,8 +125,7 @@ export const miamDetails: TableRowItem[] = [
 
 export const variationOrderDetails: TableRowItem[] = [
   'Upload original order to be varied',
-  { cellItem: 'Original order to be varied', value: ' Variation order.pdf' },
-  { cellItem: 'Do you want to upload any other documents ?', value: 'Yes', rowType: 'label-value-adjacent' }
+  { cellItem: 'Original order to be varied', value: ' Variation order.pdf' }
 ];
 
 export const urgentCase: TableRowItem[] = [

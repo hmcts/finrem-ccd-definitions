@@ -181,7 +181,12 @@ https://tools.hmcts.net/confluence/display/FR/Feature+toggles+for+CCD+definition
 A PR will create a full CCD/ExUI stack in the preview environment as defined in the [Helm chart](charts/finrem-ccd-definitions/values.preview.template.yaml).
 
 If you require a particular finrem-cos PR image rather than the latest production image then you should specify this
-using a GitHub label. Add a label `use-finrem-cos-pr-number` replacing `number` with the value required.
+using a GitHub label. Add a label `use-pr-number` replacing `number` with the value required.
+
+For the wa-task (Camunda DMN files) configuration the master branch of the 
+[finrem-task-configuration](https://github.com/hmcts/finrem-task-configuration) repository is used by default. To 
+install another version from a PR you can add the label `use-finrem-wa-task-pr-{wa-task-pr-number}` replacing 
+`{wa-task-pr-number}` with the required PR number.
 
 GitHub will have the main URL for a PR deployment. e.g. `https://finrem-ccd-definitions-pr-<number>.preview.platform.hmcts.net/`
 

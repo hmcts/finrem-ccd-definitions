@@ -1,18 +1,20 @@
 import { envTestData } from '../../data-utils/test_data/EnvTestDataConfig.ts';
 import {YesNoRadioEnum} from '../../pages/helpers/enums/RadioEnums.ts';
 
+const FEE_AND_PAY_UI_COMPONENT_PAYMENTS_HEADING = 'Payments';
+
 export const paymentDetailsTabData = (
   feeCode: string,
   feeType: string,
-  amount: string,
-  hwfCode?: string
+  amount: string
 ) => {return [{
   tabName: 'Payment History',
   tabContent: [
     'Order Summary',
     feeCode,
     feeType,
-    amount
+    amount,
+    FEE_AND_PAY_UI_COMPONENT_PAYMENTS_HEADING
   ]
 }];
 };
@@ -35,6 +37,12 @@ export function paymentDetailsReviewData(
         ? 'FinRem-1-Org'
         : envTestData.PBA_ACCOUNT_NAME;
 
+  const paymentStatusDate = currentDateTimeFull
+    .split(' ')
+    .slice(0, 3)
+    .join(' ')
+    .trim();
+
   return [
     'Payment details',
     { tabItem: 'Payment amount', value: amount },
@@ -47,6 +55,6 @@ export function paymentDetailsReviewData(
     { tabItem: 'Customer internal reference', value: reference },
     'Payment status history',
     { tabItem: 'Status', value: 'Date and time' },
-    { tabItem: 'Success', value: currentDateTimeFull, exact: false, position: 1 }
+    { tabItem: 'Success', value: paymentStatusDate || currentDateTimeFull, exact: false, position: 1 }
   ];
 }
