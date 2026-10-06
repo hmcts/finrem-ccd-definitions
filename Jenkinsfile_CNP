@@ -72,14 +72,17 @@ def nonProdFinremSecrets = [
         secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
         secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
         secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
+        secret('playwright-solicitor-id', 'PLAYWRIGHT_SOLICITOR_ID'),
         secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
         secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
+        secret('playwright-respondent-sol-id', 'PLAYWRIGHT_RESPONDENT_SOL_ID'),
         secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
         secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
         secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
         secret('playwright-appl-caa-password', 'PLAYWRIGHT_APPL_CAA_PSWD'),
         secret("SUPERCASEWORKER-USERNAME","USERNAME_SUPERCASEWORKER"),
-        secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER")
+        secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER"),
+        secret('idam-secret', 'IDAM_SECRET'),
 ]
 
 def secrets = [
@@ -212,6 +215,16 @@ def setupWaPreviewRoleAssignments() {
   dir("${WORKSPACE}") {
     sh './bin/wa/setup-role-assignments.sh'
   }
+}
+
+def setPlaywrightIdamEnv() {
+    def idamEnv = env.ENV == 'preview' ? 'aat' : env.ENV
+    env.IDAM_CLIENT_ID = 'finrem'
+    env.IDAM_WEB_URL =
+            "https://idam-web-public.${idamEnv}.platform.hmcts.net"
+    env.IDAM_TESTING_SUPPORT_URL =
+            "https://idam-testing-support-api.${idamEnv}.platform.hmcts.net"
+    env.LOG_LEVEL = 'warn'
 }
 
 // Configure branches to sync with master branch
@@ -381,13 +394,15 @@ withPipeline("nodejs", product, component) {
   }
 
   before('smoketest:preview') {
-  env.PLAYWRIGHT_OUTPUT_DIR = 'test-results-smoke-preview'
-  env.PLAYWRIGHT_HTML_REPORT_DIR = 'playwright-report-smoke-preview'
-  sh 'yarn playwright install'
-  sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
+    setPlaywrightIdamEnv()
+    env.PLAYWRIGHT_OUTPUT_DIR = 'test-results-smoke-preview'
+    env.PLAYWRIGHT_HTML_REPORT_DIR = 'playwright-report-smoke-preview'
+    sh 'yarn playwright install'
+    sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
 }
 
 before('smoketest:aat') {
+  setPlaywrightIdamEnv()
   env.PLAYWRIGHT_OUTPUT_DIR = 'test-results-smoke-aat'
   env.PLAYWRIGHT_HTML_REPORT_DIR = 'playwright-report-smoke-aat'
   sh 'yarn playwright install'
@@ -399,6 +414,7 @@ before('smoketest:aat') {
     def staffUsers = readJSON file: 'create_idam_id_scripts/caseworker_request.json'
     def admin = staffUsers.find { it.payload.user.email == 'fr_ctscadmin11@justice.gov.uk' }
     def teamLeader = staffUsers.find { it.payload.user.email == 'fr_ctscteamleader11@justice.gov.uk' }
+    setPlaywrightIdamEnv()
     env.CTSC_ADMIN_USERNAME = admin.payload.user.email
     env.CTSC_TEAMLEADER_USERNAME = teamLeader.payload.user.email
     env.STAFF_FR_PASSWORD = admin.password
@@ -407,6 +423,7 @@ before('smoketest:aat') {
   }
 
   before('functionalTest:aat') {
+    setPlaywrightIdamEnv()
     env.PLAYWRIGHT_OUTPUT_DIR = 'test-results-functional-aat'
     env.PLAYWRIGHT_HTML_REPORT_DIR = 'playwright-report-functional-aat'
     sh 'yarn playwright install'
