@@ -50,6 +50,7 @@
     "reset-ccd-submodule": "bin/setup.sh",
     "setup": "bin/setup.sh",
     "lint": "eslint --fix .",
+    "create-test-users": "node playwright-e2e/config/create-test-users.ts",
     "test": "NODE_PATH=. mocha test/unit/**/*.js",
     "test:all": "yarn lint; yarn test; yarn test:a11y; yarn test:functional",
     "test:coverage": "echo test:coverage",
