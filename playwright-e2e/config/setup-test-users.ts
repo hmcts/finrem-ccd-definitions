@@ -44,7 +44,7 @@ function configureIdamUrls(): void {
 
 const users = [
   {
-    id: requireEnv('PLAYWRIGHT_SOLICITOR_ID'),
+    id: requireEnv('PLAYWRIGHT_APPLICANT_SOLICITOR_ID'),
     email: config.applicant_solicitor.email,
     password: config.applicant_solicitor.password,
     forename: 'APP',
@@ -52,7 +52,7 @@ const users = [
     roleNames: SOLICITOR_ROLES,
   },
   {
-    id: requireEnv('PLAYWRIGHT_RESPONDENT_SOL_ID'),
+    id: requireEnv('PLAYWRIGHT_RESPONDENT_SOLICITOR_ID'),
     email: config.respondent_solicitor.email,
     password: config.respondent_solicitor.password,
     forename: 'RESPONDENT',
