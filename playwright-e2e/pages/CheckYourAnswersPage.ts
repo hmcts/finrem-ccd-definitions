@@ -9,7 +9,7 @@ export class CheckYourAnswersPage {
   public constructor(page: Page) {
     this.page = page;
     this.checkYourAnswersTitle = page.getByRole('heading', { name: 'Check your answers' });
-    this.checkYourAnswersTable = page.locator('table[aria-describedby=\'check your answers table\']');
+    this.checkYourAnswersTable = page.getByRole('table', {name: 'check your answers table' });
   }
 
   /**
