@@ -161,7 +161,6 @@
     "pretty-quick": "^4.2.2",
     "sheetjs-style": "^0.15.8",
     "sonar-scanner": "^3.1.0",
-    "tsx": "^4.23.15",
     "webdriverio": "^9.0.7"
   },
   "resolutions": {
@@ -175,7 +174,8 @@
     "body-parser": "^2.3.0",
     "js-yaml": "4.3.2",
     "nanoid": "5.1.16",
-    "qs": "6.16.0"
+    "qs": "6.16.0",
+    "proxy-addr": "^2.0.8"
   },
   "packageManager": "yarn@4.18.0"
 }
