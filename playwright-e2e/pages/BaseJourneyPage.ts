@@ -159,9 +159,11 @@ export abstract class BaseJourneyPage {
   }
 
   async navigateIgnoreWarningAndContinue() {
-    const ignoreWarningButton = this.page.getByRole('button', { name: 'Ignore warning and continue' });
-    if (await ignoreWarningButton.isVisible().catch(() => {return false;})) {
+    const ignoreWarningButton = this.page.getByRole('button', { name: 'Ignore Warning and Continue' });
+    try {
+      await ignoreWarningButton.waitFor({ state: 'visible', timeout: 7000 });
       await ignoreWarningButton.click();
+    } catch {
     }
   }
 
