@@ -103,13 +103,7 @@ The setup obtains an IDAM token, deletes each configured user by email, and recr
 
 `RUNNING_ENV` controls which environment is used for test-user setup:
 
-| `RUNNING_ENV` | IDAM environment | Applicant name | Respondent name |
-| --- | --- | --- | --- |
-| `aat` | AAT | `APP APP` | `RESPONDENT RESPONDENT` |
-| `pr-*` | AAT | `APP APP` | `RESPONDENT RESPONDENT` |
-| `demo` | Demo | `Senior Dude` | `Junior Dude` |
-
-AAT and Demo use separate IDAM client secrets and **separate fixed solicitor UUIDs**. Set the matching values in your local environment or CI configuration. The environment-specific naming and UUID selection are configured in `setup-test-users.ts`.
+AAT and Demo use separate IDAM client secrets and **separate fixed solicitor UUIDs**. Set the matching values in your local .env file. The environment-specific naming and UUID selection are configured in `setup-test-users.ts`.
 
 | Environment variable | Purpose |
 | --- | --- |
