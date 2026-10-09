@@ -13,14 +13,32 @@
   },
   {
     "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "caseNameHmctsInternal",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "caseManagementCategory",
     "UserRole": "GS_profile",
     "CRUD": "R"
   },
   {
     "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "caseManagementCategory",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "CaseTypeID": "FinancialRemedyMVP2",
     "CaseFieldID": "caseManagementLocation",
     "UserRole": "GS_profile",
     "CRUD": "R"
+  },
+  {
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "caseManagementLocation",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
   }
 ]
