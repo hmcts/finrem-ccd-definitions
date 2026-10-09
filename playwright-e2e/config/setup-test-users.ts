@@ -29,6 +29,16 @@ function getIdamEnvironment(): string {
     : runningEnv;
 }
 
+function getIdamSecret(): string {
+  const env = getIdamEnvironment(); 
+
+  if (env === 'demo') {
+    return process.env.IDAM_SECRET_DEMO?.trim() || requireEnv('IDAM_SECRET');
+  }
+
+  return process.env.IDAM_SECRET_AAT?.trim() || requireEnv('IDAM_SECRET');
+}
+
 function configureIdamUrls(): void {
   const env = getIdamEnvironment();
 
@@ -42,21 +52,47 @@ function configureIdamUrls(): void {
     `https://idam-testing-support-api.${env}.platform.hmcts.net`;
 }
 
+type SolicitorParty = 'applicant' | 'respondent';
+
+function getSolicitorName(party: SolicitorParty): { forename: string; surname: string } {
+  const isDemo = getIdamEnvironment() === 'demo';
+
+  if (party === 'applicant') {
+    return isDemo
+      ? { forename: 'Senior', surname: 'Dude' }
+      : { forename: 'APP', surname: 'APP' };
+  }
+
+  return isDemo
+    ? { forename: 'Junior', surname: 'Dude' }
+    : { forename: 'RESPONDENT', surname: 'RESPONDENT' };
+}
+
+function getApplicantSolicitorId(): string {
+  return getIdamEnvironment() === 'demo'
+    ? requireEnv('PLAYWRIGHT_APPLICANT_SOLICITOR_ID_DEMO')
+    : requireEnv('PLAYWRIGHT_APPLICANT_SOLICITOR_ID');
+}
+
+function getRespondentSolicitorId(): string {
+  return getIdamEnvironment() === 'demo'
+    ? requireEnv('PLAYWRIGHT_RESPONDENT_SOLICITOR_ID_DEMO')
+    : requireEnv('PLAYWRIGHT_RESPONDENT_SOLICITOR_ID');
+}
+
 const users = [
   {
-    id: requireEnv('PLAYWRIGHT_APPLICANT_SOLICITOR_ID'),
+    id: getApplicantSolicitorId(),
     email: config.applicant_solicitor.email,
     password: config.applicant_solicitor.password,
-    forename: 'APP',
-    surname: 'APP',
+    ...getSolicitorName('applicant'),
     roleNames: SOLICITOR_ROLES,
   },
   {
-    id: requireEnv('PLAYWRIGHT_RESPONDENT_SOLICITOR_ID'),
+    id: getRespondentSolicitorId(),
     email: config.respondent_solicitor.email,
     password: config.respondent_solicitor.password,
-    forename: 'RESPONDENT',
-    surname: 'RESPONDENT',
+    ...getSolicitorName('respondent'),
     roleNames: SOLICITOR_ROLES,
   },
 ];
@@ -98,7 +134,7 @@ export async function setupTestUsers(): Promise<void> {
     const bearerToken = await idamUtils.generateIdamToken({
       grantType: 'client_credentials',
       clientId: requireEnv('IDAM_CLIENT_ID'),
-      clientSecret: requireEnv('IDAM_SECRET'),
+      clientSecret: getIdamSecret(),
       scope: 'profile roles',
     });
 
