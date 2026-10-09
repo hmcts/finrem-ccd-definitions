@@ -1,7 +1,7 @@
 apiVersion: v2
 description: Financial Remedy - CCD Definitions
 name: finrem-ccd-definitions
-version: 2.2.61
+version: 2.2.62
 dependencies:
   - name: nodejs
     version: 3.3.1
@@ -53,7 +53,7 @@ dependencies:
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: ccd-message-publisher.enabled
   - name: rd-caseworker-ref-api
-    version: 1.0.13
+    version: 1.0.19
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: rd-caseworker-ref-api.enabled
   - name: am-org-role-mapping-service
