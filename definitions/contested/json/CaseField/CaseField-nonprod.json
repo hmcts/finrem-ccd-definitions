@@ -25,7 +25,7 @@
     "ID": "citizenApplicantDocument",
     "Label": "Citizen Documents",
     "FieldType": "Collection",
-    "FieldTypeParameter": "CU_ct_citizenApplicantDocument",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -35,7 +35,47 @@
     "ID": "citizenRespondentDocument",
     "Label": "Citizen Documents",
     "FieldType": "Collection",
-    "FieldTypeParameter": "CU_ct_citizenRespondentDocument",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantDocCollection",
+    "Label": "Citizen Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentDocCollection",
+    "Label": "Citizen Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fdrDocCollection",
+    "Label": "Citizen Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "divorceSolutionDocCollection",
+    "Label": "Citizen Documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
