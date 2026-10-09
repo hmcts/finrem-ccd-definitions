@@ -9,7 +9,8 @@ export async function getUserToken(username: string, password: string): Promise<
   const tokenCache = await readCache();
   const cached = tokenCache.get(username);
   const now = Date.now();
-  if (cached && cached.expiry > now) {
+
+  if (cached && cached.expiry > now && cached.userId) {
     return cached.token;
   }
 
@@ -31,49 +32,46 @@ export async function getUserToken(username: string, password: string): Promise<
     }).toString()
   });
 
-  tokenCache.set(username,
-    {
-      token: idamTokenResponse.data.access_token,
-      expiry: idamTokenResponse.data.expires_in * 1000 + now - 60000,
-      userId: cached?.userId ?? ''
-    }
+  const idToken = idamTokenResponse.data.id_token;
+
+  if (!idToken) {
+    throw new Error('IDAM token response did not contain an id_token');
+  }
+
+  const payloadPart = idToken.split('.')[1];
+
+  if (!payloadPart) {
+    throw new Error('Invalid ID token: JWT payload is missing');
+  }
+
+  const decodedPayload = JSON.parse(
+    Buffer.from(payloadPart, 'base64url').toString('utf8')
   );
+
+  if (!decodedPayload.uid) {
+    throw new Error('User ID not found in ID token');
+  }
+
+  tokenCache.set(username, {
+    token: idamTokenResponse.data.access_token,
+    expiry: idamTokenResponse.data.expires_in * 1000 + now - 60000,
+    userId: String(decodedPayload.uid)
+  });
 
   await writeCache(tokenCache);
 
   return idamTokenResponse.data.access_token;
 }
 
-export async function getUserId(authToken: string, username: string): Promise<string> {
+export async function getUserId(username: string): Promise<string> {
   const tokenCache = await readCache();
   const cached = tokenCache.get(username);
 
-  if (cached?.userId) {
-    return cached.userId;
+  if (!cached?.userId) {
+    throw new Error(`User ID not found for ${username}`);
   }
 
-  const idamUserInfoPath = '/o/userinfo';
-
-  const userInfoResponse = await axiosRequest({
-    method: 'get',
-    url: idamOidcBaseUrl + idamUserInfoPath,
-    headers: { Authorization: `Bearer ${authToken}` }
-  });
-
-  if (cached) {
-    cached.userId = userInfoResponse.data.uid;
-    tokenCache.set(username, cached);
-  } else {
-    tokenCache.set(username, {
-      token: authToken,
-      expiry: 0,
-      userId: userInfoResponse.data.uid
-    });
-  }
-
-  await writeCache(tokenCache);
-
-  return userInfoResponse.data.uid;
+  return cached.userId;
 }
 
 export async function getServiceToken(): Promise<string> {
