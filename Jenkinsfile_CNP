@@ -282,20 +282,10 @@ withPipeline("nodejs", product, component) {
       env.EXCLUDE = getPreviewDefinitionExclusions()
       stageWithAgent('Generate Financial Remedy Consented Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-consented")
-        yarnBuilder.yarn("generate-excel-preview-wa-consented")
-        if (env.ENABLE_GS?.toBoolean()) {
-          yarnBuilder.yarn("generate-excel-preview-gs-consented")
-        }
       }
       stageWithAgent('Generate Financial Remedy Contested Case config', product) {
         yarnBuilder.yarn("generate-excel-preview-contested")
-        if (env.ENABLE_WA?.toBoolean()) {
-            yarnBuilder.yarn("copy-preview-xlxs-to-resources-wa")
-        } else if (env.ENABLE_GS?.toBoolean()) {
-            yarnBuilder.yarn("copy-preview-xlxs-to-resources-gs")
-        } else {
-            yarnBuilder.yarn("copy-preview-xlxs-to-resources")
-        }
+        yarnBuilder.yarn("copy-preview-xlxs-to-resources")
       }
 
       env.CCD_ADMIN_URL = "https://admin-web-finrem-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
@@ -372,6 +362,8 @@ withPipeline("nodejs", product, component) {
 
   onMaster() {
     env.ENV='aat'
+    env.ENABLE_WA = false
+    env.ENABLE_GS = false
   }
 
   onPR() {
@@ -383,14 +375,20 @@ withPipeline("nodejs", product, component) {
 
   onIthc() {
     env.ENV='ithc'
+    env.ENABLE_WA = false
+    env.ENABLE_GS = false
   }
 
   onDemo() {
     env.ENV='demo'
+    env.ENABLE_WA = false
+    env.ENABLE_GS = false
   }
 
   onPerftest() {
     env.ENV='perftest'
+    env.ENABLE_WA = false
+    env.ENABLE_GS = false
   }
 
   before('smoketest:preview') {
