@@ -412,6 +412,8 @@ finrem-cron:
     image: hmctsprod.azurecr.io/finrem/cos:${FINREM_COS_IMAGE}
     schedule: "*/15 * * * *"
     concurrencyPolicy: Forbid
+    disableActiveClusterCheck: true
+    suspend: false
     environment:
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
