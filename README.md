@@ -41,19 +41,22 @@ yarn generate-excel-all-contested
 ```
 
 The generated Excel files will be in `defintions/consented/xlsx` or `defintions/contested/xlsx` respectively.
+Note that this generates all versions of the CCD data given the different combinations of enabling the work allocation and global search features.
 
 ### Generate Excel Configs for a specific environment i.e. AAT/DEMO/DEMO-PROD-LIKE/ITHC/PERFTEST
 
 * Note DEMO-PROD-LIKE does not include '-nonprod' files so should be a replication of the Production config, just pointing to Demo.
 ```sh
-yarn generate-bulk-excel-(local/demo/aat/ithc/perftest/demo-prod-like/prod)
+yarn generate-excel-(local/demo/aat/ithc/perftest/demo-prod-like/prod)-(consented/contested)
 ```
-
 E.g.:
 `yarn generate-excel-aat-consented`
 or
 `yarn generate-excel-aat-contested`
 
+* Note that this process will only generate the versions appropriate to what combination of work allocation and global search features are enabled based on environment variables (\$ENABLE_WA and \$ENABLE_GS).
+* Both the consented and contested definitions for the local environment can be generaated using `yarn generate-excel-local-all`.
+To use the prod version of the data for local you can use `yarn generate-excel-local-with-prod-all`.
 
 ## Convert Excel to JSON
 
