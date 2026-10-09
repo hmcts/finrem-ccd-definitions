@@ -3,7 +3,7 @@
 import uk.gov.hmcts.contino.AppPipelineConfig
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure@2.5.3")
+@Library("Infrastructure@2.12.1")
 
 String product = "finrem"
 String component = "ccd-definitions"
@@ -72,10 +72,10 @@ def nonProdFinremSecrets = [
         secret('username-respondent-solicitor', 'USERNAME_RESPONDENT_SOLICITOR'),
         secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
         secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
-        secret('playwright-solicitor-id', 'PLAYWRIGHT_SOLICITOR_ID'),
+        secret('playwright-solicitor-id', 'PLAYWRIGHT_APPLICANT_SOLICITOR_ID'),
         secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
         secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
-        secret('playwright-respondent-sol-id', 'PLAYWRIGHT_RESPONDENT_SOL_ID'),
+        secret('playwright-respondent-sol-id', 'PLAYWRIGHT_RESPONDENT_SOLICITOR_ID'),
         secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
         secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
         secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
