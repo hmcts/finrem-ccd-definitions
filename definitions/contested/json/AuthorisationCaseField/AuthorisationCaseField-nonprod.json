@@ -17,28 +17,123 @@
     "LiveFrom": "06/05/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "citizenApplicantDocument",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-courtadmin",
+          "[APPLICANT]"
+        ],
+        "CRUD": "CRUD"
+      }
+    ]
   },
   {
     "LiveFrom": "06/05/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseFieldID": "citizenRespondentDocument",
-    "UserRole": "caseworker-divorce-financialremedy-courtadmin",
-    "CRUD": "CRUD"
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-courtadmin",
+          "[RESPONDENT]"
+        ],
+        "CRUD": "CRUD"
+      }
+    ]
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "applicantDocCollection",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-courtadmin",
+          "[APPSOLICITOR]",
+          "[APPBARRISTER]",
+          "[APPLICANT]"
+        ],
+        "CRUD": "CRUD"
+      }
+    ]
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "respondentDocCollection",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-courtadmin",
+          "[RESPSOLICITOR]",
+          "[RESPBARRISTER]",
+          "[RESPONDENT]"
+        ],
+        "CRUD": "CRUD"
+      }
+    ]
   },
   {
     "LiveFrom": "25/06/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "citizenApplicantDocument",
-    "UserRole": "[APPLICANT]",
-    "CRUD": "CRUD"
+    "CaseFieldID": "fdrDocCollection",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-courtadmin",
+          "[APPSOLICITOR]",
+          "[APPBARRISTER]",
+          "[APPLICANT]"
+        ],
+        "CRUD": "CRUD"
+      }
+    ]
   },
   {
     "LiveFrom": "25/06/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "citizenRespondentDocument",
-    "UserRole": "[RESPONDENT]",
-    "CRUD": "CRUD"
+    "CaseFieldID": "divorceSolutionDocCollection",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-courtadmin",
+          "[APPSOLICITOR]",
+          "[APPBARRISTER]",
+          "[APPLICANT]",
+          "[RESPSOLICITOR]",
+          "[RESPBARRISTER]",
+          "[RESPONDENT]"
+        ],
+        "CRUD": "CRUD"
+      }
+    ],
+    "_comment": "Do we want to expose these docs to all parties?"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingBundleDocCollection",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-courtadmin",
+          "[APPSOLICITOR]",
+          "[APPBARRISTER]",
+          "[APPLICANT]",
+          "[RESPSOLICITOR]",
+          "[RESPBARRISTER]",
+          "[RESPONDENT]"
+        ],
+        "CRUD": "CRUD"
+      }
+    ],
+    "_comment": "Do we want to expose these docs to all parties?"
   }
 ]

@@ -5,8 +5,8 @@
     "TabID": "appDocuments",
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
-    "CaseFieldID": "citizenApplicantDocument",
-    "TabFieldDisplayOrder": 21,
+    "CaseFieldID": "applicantDocCollection",
+    "TabFieldDisplayOrder": 22,
     "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
   },
   {
@@ -15,8 +15,8 @@
     "TabID": "resDocuments",
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
-    "CaseFieldID": "citizenRespondentDocument",
-    "TabFieldDisplayOrder": 21,
+    "CaseFieldID": "respondentDocCollection",
+    "TabFieldDisplayOrder": 22,
     "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
   }
 ]
