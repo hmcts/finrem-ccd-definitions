@@ -83,6 +83,38 @@ Import AAT environment variables. Ask a colleague for an `e2e-aat.env` file. Thi
 source ./e2e-aat.env
 ```
 
+## Playwright Test User Management
+
+The Playwright suite uses idam-testing-support-api to create test accounts for Financial Remedy journeys. The shared setup lives in `playwright-e2e/config/setup-test-users.ts` and is called by both Playwright global setup and the manual creation command.
+
+### Create or refresh users
+
+Load the appropriate non-production environment configuration (see [Run E2E Tests Locally](#run-e2e-tests-locally)), then run:
+
+```bash
+yarn create-test-users
+```
+
+This calls `playwright-e2e/config/create-test-users.ts` and refreshes the configured accounts without running the Playwright tests. Playwright also invokes the same setup through `playwright-e2e/config/global-setup.ts` before a test run.
+
+The setup obtains an IDAM token, deletes each configured user by email, and recreates the account with its existing UUID and user roles. **This refreshes existing test identities; it does not create new Manage Organisation associtations.** Keeping the same UUID is important because Manage Org links professional users to organisations by ID.
+
+### Environment selection
+
+`RUNNING_ENV` controls which environment is used for test-user setup:
+
+AAT and Demo use separate IDAM client secrets and **separate fixed solicitor UUIDs**. Set the matching values in your local .env file. The environment-specific naming and UUID selection are configured in `setup-test-users.ts`.
+
+| Environment variable | Purpose |
+| --- | --- |
+| `RUNNING_ENV` | Selects AAT, Demo or a PR environment (PR uses AAT IDAM). |
+| `IDAM_CLIENT_ID` | OAuth client identifier. |
+| `IDAM_SECRET_AAT` / `IDAM_SECRET_DEMO` | Environment-specific OAuth client secrets. The proposed resolver also supports `IDAM_SECRET` as a fallback. |
+| `PLAYWRIGHT_APPLICANT_SOLICITOR_ID` / `PLAYWRIGHT_RESPONDENT_SOLICITOR_ID` | Fixed AAT solicitor UUIDs. |
+| `PLAYWRIGHT_APPLICANT_SOLICITOR_ID_DEMO` / `PLAYWRIGHT_RESPONDENT_SOLICITOR_ID_DEMO` | Fixed Demo solicitor UUIDs. |
+
+Solicitor email addresses and passwords are supplied through the existing Playwright configuration. Keep local credentials out of Git.
+
 ## Code Linting
 
 We use ESLint to ensure consistent code quality, formatting, and filename conventions across the project.
