@@ -80,7 +80,24 @@
   {
     "LiveFrom": "25/06/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "fdrDocCollection",
+    "CaseFieldID": "fdrRespondentDocCollection",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-courtadmin",
+          "[RESPSOLICITOR]",
+          "[RESPBARRISTER]",
+          "[RESPONDENT]"
+        ],
+        "CRUD": "CRUD"
+      }
+    ]
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "fdrApplicantDocCollection",
     "AccessControl": [
       {
         "UserRoles": [
@@ -97,15 +114,12 @@
   {
     "LiveFrom": "25/06/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "divorceSolutionDocCollection",
+    "CaseFieldID": "divorceRespondentDocCollection",
     "AccessControl": [
       {
         "UserRoles": [
           "caseworker-divorce-financialremedy-judiciary",
           "caseworker-divorce-financialremedy-courtadmin",
-          "[APPSOLICITOR]",
-          "[APPBARRISTER]",
-          "[APPLICANT]",
           "[RESPSOLICITOR]",
           "[RESPBARRISTER]",
           "[RESPONDENT]"
@@ -118,7 +132,7 @@
   {
     "LiveFrom": "25/06/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "CaseFieldID": "hearingBundleDocCollection",
+    "CaseFieldID": "divorceApplicantDocCollection",
     "AccessControl": [
       {
         "UserRoles": [
@@ -126,10 +140,43 @@
           "caseworker-divorce-financialremedy-courtadmin",
           "[APPSOLICITOR]",
           "[APPBARRISTER]",
-          "[APPLICANT]",
+          "[APPLICANT]"
+        ],
+        "CRUD": "CRUD"
+      }
+    ],
+    "_comment": "Do we want to expose these docs to all parties?"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingRespondentDocCollection",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-courtadmin",
           "[RESPSOLICITOR]",
           "[RESPBARRISTER]",
           "[RESPONDENT]"
+        ],
+        "CRUD": "CRUD"
+      }
+    ],
+    "_comment": "Do we want to expose these docs to all parties?"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseFieldID": "hearingApplicantDocCollection",
+    "AccessControl": [
+      {
+        "UserRoles": [
+          "caseworker-divorce-financialremedy-judiciary",
+          "caseworker-divorce-financialremedy-courtadmin",
+          "[APPSOLICITOR]",
+          "[APPBARRISTER]",
+          "[APPLICANT]"
         ],
         "CRUD": "CRUD"
       }

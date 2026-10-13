@@ -62,7 +62,7 @@
   {
     "LiveFrom": "06/05/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "fdrDocCollection",
+    "ID": "fdrRespondentDocCollection",
     "Label": "Citizen uploaded FDR documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
@@ -72,8 +72,8 @@
   {
     "LiveFrom": "06/05/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "divorceSolutionDocCollection",
-    "Label": "Citizen uploaded divorce solution documents",
+    "ID": "fdrApplicantDocCollection",
+    "Label": "Citizen uploaded FDR documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
     "SecurityClassification": "Public",
@@ -82,7 +82,37 @@
   {
     "LiveFrom": "06/05/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "hearingBundleDocCollection",
+    "ID": "divorceRespondentDocCollection",
+    "Label": "Respondent citizen uploaded divorce documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "divorceApplicantDocCollection",
+    "Label": "Applicant citizen uploaded divorce documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingRespondentDocCollection",
+    "Label": "Citizen uploaded hearing bundle documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingApplicantDocCollection",
     "Label": "Citizen uploaded hearing bundle documents",
     "FieldType": "Collection",
     "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
