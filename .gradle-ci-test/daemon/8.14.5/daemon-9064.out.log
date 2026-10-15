@@ -1,0 +1,225 @@
+2026-10-15T14:05:08.268+0100 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonMain] Assuming the daemon was started with following jvm opts: [-XX:MaxMetaspaceSize=384m, -XX:+HeapDumpOnOutOfMemoryError, -Xms256m, -Xmx512m, -Dfile.encoding=UTF-8, -Duser.country=GB, -Duser.language=en, -Duser.variant]
+2026-10-15T14:05:08.322+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface utun3
+2026-10-15T14:05:08.322+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2026-10-15T14:05:08.323+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:ce81:b1c:bd2c:69e%utun3
+2026-10-15T14:05:08.323+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface utun2
+2026-10-15T14:05:08.323+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2026-10-15T14:05:08.323+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:81ed:4ea:82b0:587e%utun2
+2026-10-15T14:05:08.323+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface utun1
+2026-10-15T14:05:08.323+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2026-10-15T14:05:08.323+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:637f:c781:e022:dedd%utun1
+2026-10-15T14:05:08.323+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface utun0
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:dee5:790c:936c:eac6%utun0
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface llw0
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:68a7:8eff:fe03:4372%llw0
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface awdl0
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:68a7:8eff:fe03:4372%awdl0
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface en0
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2026-10-15T14:05:08.324+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fda9:adc9:59dc:6185:14c5:6cd0:6fcf:4002%en0
+2026-10-15T14:05:08.325+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:1092:8dc:af3c:abcd%en0
+2026-10-15T14:05:08.325+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /192.168.0.108
+2026-10-15T14:05:08.325+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface lo0
+2026-10-15T14:05:08.325+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? true
+2026-10-15T14:05:08.325+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Ignoring remote address on loopback interface /fe80:0:0:0:0:0:0:1%lo0
+2026-10-15T14:05:08.325+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /0:0:0:0:0:0:0:1%lo0
+2026-10-15T14:05:08.325+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /127.0.0.1
+2026-10-15T14:05:08.345+0100 [INFO] [org.gradle.launcher.daemon.server.Daemon] start() called on daemon - DefaultDaemonContext[uid=c2e5d40e-0f8f-4dd8-8bd6-7f947459d8f2,javaHome=/Users/adam.lee/.sdkman/candidates/java/21.0.6-amzn,javaVersion=21,javaVendor=Amazon.com Inc.,daemonRegistryDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions/.gradle-ci-test/daemon,pid=9064,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=384m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=GB,-Duser.language=en,-Duser.variant]
+2026-10-15T14:05:08.359+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Listening on [43137d15-e2d4-414e-ad91-ef29bc1cce45 port:59816, addresses:[localhost/127.0.0.1]].
+2026-10-15T14:05:08.366+0100 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] Daemon starting at: Thu Oct 15 14:05:08 BST 2026, with address: [43137d15-e2d4-414e-ad91-ef29bc1cce45 port:59816, addresses:[localhost/127.0.0.1]]
+2026-10-15T14:05:08.366+0100 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertising the daemon address to the clients: [43137d15-e2d4-414e-ad91-ef29bc1cce45 port:59816, addresses:[localhost/127.0.0.1]]
+2026-10-15T14:05:08.366+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertised daemon context: DefaultDaemonContext[uid=c2e5d40e-0f8f-4dd8-8bd6-7f947459d8f2,javaHome=/Users/adam.lee/.sdkman/candidates/java/21.0.6-amzn,javaVersion=21,javaVendor=Amazon.com Inc.,daemonRegistryDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions/.gradle-ci-test/daemon,pid=9064,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=384m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=GB,-Duser.language=en,-Duser.variant]
+2026-10-15T14:05:08.366+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Storing daemon address: [43137d15-e2d4-414e-ad91-ef29bc1cce45 port:59816, addresses:[localhost/127.0.0.1]], context: DefaultDaemonContext[uid=c2e5d40e-0f8f-4dd8-8bd6-7f947459d8f2,javaHome=/Users/adam.lee/.sdkman/candidates/java/21.0.6-amzn,javaVersion=21,javaVendor=Amazon.com Inc.,daemonRegistryDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions/.gradle-ci-test/daemon,pid=9064,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=384m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=GB,-Duser.language=en,-Duser.variant]
+2026-10-15T14:05:08.371+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2026-10-15T14:05:08.372+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2026-10-15T14:05:08.374+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2026-10-15T14:05:08.374+0100 [LIFECYCLE] [org.gradle.launcher.daemon.server.Daemon] Daemon server started.
+2026-10-15T14:05:08.374+0100 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonStartupCommunication] Completed writing the daemon greeting. Closing streams...
+2026-10-15T14:05:08.377+0100 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] stopOnExpiration() called on daemon
+2026-10-15T14:05:08.378+0100 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] awaitExpiration() called on daemon
+2026-10-15T14:05:08.378+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+2026-10-15T14:05:08.388+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:59817 to /127.0.0.1:59816.
+2026-10-15T14:05:08.402+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 32: received class org.gradle.launcher.daemon.protocol.Build
+2026-10-15T14:05:08.402+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 32: Received non-IO message from client: Build{id=930ebf67-7f9c-40f8-bbc0-57fddf506f46, currentDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions}
+2026-10-15T14:05:08.402+0100 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=930ebf67-7f9c-40f8-bbc0-57fddf506f46, currentDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions}.
+2026-10-15T14:05:08.402+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=930ebf67-7f9c-40f8-bbc0-57fddf506f46, currentDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions} with connection: socket connection from /127.0.0.1:59816 to /127.0.0.1:59817.
+2026-10-15T14:05:08.404+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=930ebf67-7f9c-40f8-bbc0-57fddf506f46, currentDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:59816 to /127.0.0.1:59817] after 7.666666666666667E-4 minutes of idle
+2026-10-15T14:05:08.404+0100 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [43137d15-e2d4-414e-ad91-ef29bc1cce45 port:59816, addresses:[localhost/127.0.0.1]]
+2026-10-15T14:05:08.404+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [43137d15-e2d4-414e-ad91-ef29bc1cce45 port:59816, addresses:[localhost/127.0.0.1]]
+2026-10-15T14:05:08.404+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2026-10-15T14:05:08.404+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2026-10-15T14:05:08.405+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2026-10-15T14:05:08.405+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
+2026-10-15T14:05:08.405+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+2026-10-15T14:05:08.405+0100 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=930ebf67-7f9c-40f8-bbc0-57fddf506f46, currentDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions}. Dispatching build started information...
+2026-10-15T14:05:08.405+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 34: dispatching org.gradle.launcher.daemon.protocol.BuildStarted@91c7f06
+2026-10-15T14:05:08.406+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: [PATH, FPATH, P9K_TTY, SDKMAN_DIR, LOGNAME, PWD, INFOPATH, NVM_CD_FLAGS, SHELL, FIG_TERM, PAGER, SDKMAN_CANDIDATES_API, COPILOT_CLI_INSTALL_EVENT_DIR, HOMEBREW_CELLAR, ZSH, TMPDIR, P9K_SSH, PROCESS_LAUNCHED_BY_CW, XPC_FLAGS, __CF_USER_TEXT_ENCODING, LESS, LC_CTYPE, LS_COLORS, SHLVL, AUTH_PROVIDER_SERVICE_CLIENT_KEY, _P9K_SSH_TTY, JAVA_HOME, TERM, HOMEBREW_PREFIX, LANG, _P9K_TTY, COMMAND_MODE, NVM_INC, HOMEBREW_REPOSITORY, XPC_SERVICE_NAME, SDKMAN_CANDIDATES_DIR, __CFBundleIdentifier, NVM_DIR, CCD_IMPORT_USERNAME_AAT, CI, LSCOLORS, CCD_IMPORT_PASSWORD_AAT, SDKMAN_PLATFORM, PROCESS_LAUNCHED_BY_Q, USER, TERMINAL_EMULATOR, SSH_AUTH_SOCK, OSLogRateLimit, PYTHONUNBUFFERED, FINREM_CLIENT_SECRET_AAT, NVM_BIN, HOME]
+2026-10-15T14:05:08.408+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+2026-10-15T14:05:08.408+0100 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 9064). The daemon log file: /Users/adam.lee/Repos/finrem/finrem-ccd-definitions/.gradle-ci-test/daemon/8.14.5/daemon-9064.out.log
+2026-10-15T14:05:08.409+0100 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting build in new daemon [memory: 512 MiB]
+2026-10-15T14:05:08.410+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+2026-10-15T14:05:08.410+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=c2e5d40e-0f8f-4dd8-8bd6-7f947459d8f2,javaHome=/Users/adam.lee/.sdkman/candidates/java/21.0.6-amzn,javaVersion=21,javaVendor=Amazon.com Inc.,daemonRegistryDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions/.gradle-ci-test/daemon,pid=9064,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=384m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=GB,-Duser.language=en,-Duser.variant]
+
+[Incubating] Problems report is available at: file:///Users/adam.lee/Repos/finrem/finrem-ccd-definitions/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava'.
+> Could not resolve all files for configuration ':testCompileClasspath'.
+   > Did not resolve 'io.micrometer:micrometer-observation:1.16.5' which is part of the dependency lock state
+   > Did not resolve 'org.projectlombok:lombok:1.18.48' which is part of the dependency lock state
+   > Did not resolve 'io.micrometer:micrometer-commons:1.16.5' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:cucumber-gherkin:7.18.0' which is part of the dependency lock state
+   > Did not resolve 'org.junit.jupiter:junit-jupiter-params:5.14.4' which is part of the dependency lock state
+   > Did not resolve 'com.fasterxml.jackson:jackson-bom:2.21.3' which is part of the dependency lock state
+   > Did not resolve 'org.junit:junit-bom:5.14.4' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:messages:24.1.0' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:cucumber-java:7.18.0' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:cucumber-junit:7.18.0' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:gherkin:28.0.0' which is part of the dependency lock state
+   > Did not resolve 'org.springframework:spring-beans:7.0.7' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:cucumber-expressions:17.1.0' which is part of the dependency lock state
+   > Did not resolve 'junit:junit:4.13.2' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:testng-xml-formatter:0.1.0' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:query:12.2.0' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:cucumber-gherkin-messages:7.18.0' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:datatable:7.18.0' which is part of the dependency lock state
+   > Did not resolve 'org.junit.jupiter:junit-jupiter:5.14.4' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:docstring:7.18.0' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:ci-environment:10.0.1' which is part of the dependency lock state
+   > Did not resolve 'org.slf4j:slf4j-api:2.0.17' which is part of the dependency lock state
+   > Did not resolve 'com.fasterxml.jackson.core:jackson-annotations:2.21' which is part of the dependency lock state
+   > Did not resolve 'commons-io:commons-io:2.21.0' which is part of the dependency lock state
+   > Did not resolve 'com.fasterxml.jackson.core:jackson-core:2.21.3' which is part of the dependency lock state
+   > Did not resolve 'org.junit.jupiter:junit-jupiter-api:5.14.4' which is part of the dependency lock state
+   > Did not resolve 'com.github.hmcts:befta-fw:9.2.9' which is part of the dependency lock state
+   > Did not resolve 'org.jspecify:jspecify:1.0.0' which is part of the dependency lock state
+   > Did not resolve 'commons-logging:commons-logging:1.3.5' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:tag-expressions:6.1.0' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:cucumber-core:7.18.0' which is part of the dependency lock state
+   > Did not resolve 'org.opentest4j:opentest4j:1.3.0' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:html-formatter:21.3.1' which is part of the dependency lock state
+   > Did not resolve 'org.springframework:spring-web:7.0.7' which is part of the dependency lock state
+   > Did not resolve 'org.apiguardian:apiguardian-api:1.1.2' which is part of the dependency lock state
+   > Did not resolve 'org.assertj:assertj-core:3.27.7' which is part of the dependency lock state
+   > Did not resolve 'com.fasterxml.jackson.core:jackson-databind:2.21.3' which is part of the dependency lock state
+   > Did not resolve 'org.hamcrest:hamcrest-core:1.3' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:junit-xml-formatter:0.4.0' which is part of the dependency lock state
+   > Did not resolve 'io.cucumber:cucumber-plugin:7.18.0' which is part of the dependency lock state
+   > Did not resolve 'net.bytebuddy:byte-buddy:1.18.3' which is part of the dependency lock state
+   > Did not resolve 'org.junit.platform:junit-platform-commons:1.14.4' which is part of the dependency lock state
+   > Did not resolve 'org.springframework:spring-core:7.0.7' which is part of the dependency lock state
+   > Could not resolve org.projectlombok:lombok:1.18.48.
+     Required by:
+         root project :
+      > Could not resolve org.projectlombok:lombok:1.18.48.
+         > Could not get resource 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/projectlombok/lombok/1.18.48/lombok-1.18.48.pom'.
+            > Could not GET 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/projectlombok/lombok/1.18.48/lombok-1.18.48.pom'.
+               > artifactory.platform.hmcts.net
+   > Could not resolve org.slf4j:slf4j-api:2.0.17.
+     Required by:
+         root project :
+      > Could not resolve org.slf4j:slf4j-api:2.0.17.
+         > Could not get resource 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.pom'.
+            > Could not HEAD 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.pom'.
+               > artifactory.platform.hmcts.net
+   > Could not resolve com.github.hmcts:befta-fw:9.2.9.
+     Required by:
+         root project :
+      > Could not resolve com.github.hmcts:befta-fw:9.2.9.
+         > Could not get resource 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/com/github/hmcts/befta-fw/9.2.9/befta-fw-9.2.9.pom'.
+            > Could not GET 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/com/github/hmcts/befta-fw/9.2.9/befta-fw-9.2.9.pom'.
+               > artifactory.platform.hmcts.net
+   > Could not resolve org.springframework:spring-web:7.0.7.
+     Required by:
+         root project :
+      > Could not resolve org.springframework:spring-web:7.0.7.
+         > Could not get resource 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/springframework/spring-web/7.0.7/spring-web-7.0.7.pom'.
+            > Could not GET 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/springframework/spring-web/7.0.7/spring-web-7.0.7.pom'.
+               > artifactory.platform.hmcts.net
+   > Could not resolve org.junit:junit-bom:5.14.4.
+     Required by:
+         root project :
+      > Could not resolve org.junit:junit-bom:5.14.4.
+         > Could not get resource 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/junit/junit-bom/5.14.4/junit-bom-5.14.4.pom'.
+            > Could not GET 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/junit/junit-bom/5.14.4/junit-bom-5.14.4.pom'.
+               > artifactory.platform.hmcts.net: nodename nor servname provided, or not known
+   > Could not resolve org.junit.jupiter:junit-jupiter:5.14.4.
+     Required by:
+         root project :
+      > Could not resolve org.junit.jupiter:junit-jupiter:5.14.4.
+         > Could not get resource 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/junit/jupiter/junit-jupiter/5.14.4/junit-jupiter-5.14.4.pom'.
+            > Could not GET 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/junit/jupiter/junit-jupiter/5.14.4/junit-jupiter-5.14.4.pom'.
+               > artifactory.platform.hmcts.net
+   > Could not resolve com.fasterxml.jackson.core:jackson-databind:2.21.3.
+     Required by:
+         root project :
+      > Could not resolve com.fasterxml.jackson.core:jackson-databind:2.21.3.
+         > Could not get resource 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/com/fasterxml/jackson/core/jackson-databind/2.21.3/jackson-databind-2.21.3.pom'.
+            > Could not GET 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/com/fasterxml/jackson/core/jackson-databind/2.21.3/jackson-databind-2.21.3.pom'.
+               > artifactory.platform.hmcts.net
+   > Could not resolve commons-io:commons-io:2.21.0.
+     Required by:
+         root project :
+      > Could not resolve commons-io:commons-io:2.21.0.
+         > Could not get resource 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/commons-io/commons-io/2.21.0/commons-io-2.21.0.pom'.
+            > Could not GET 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/commons-io/commons-io/2.21.0/commons-io-2.21.0.pom'.
+               > artifactory.platform.hmcts.net
+   > Could not resolve org.assertj:assertj-core:3.27.7.
+     Required by:
+         root project :
+      > Could not resolve org.assertj:assertj-core:3.27.7.
+         > Could not get resource 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/assertj/assertj-core/3.27.7/assertj-core-3.27.7.pom'.
+            > Could not GET 'https://artifactory.platform.hmcts.net/artifactory/maven-remotes/org/assertj/assertj-core/3.27.7/assertj-core-3.27.7.pom'.
+               > artifactory.platform.hmcts.net
+> There are 9 more failures with identical causes.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.5/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 4s
+1 actionable task: 1 executed
+2026-10-15T14:05:10.964+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+2026-10-15T14:05:10.969+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+2026-10-15T14:05:10.969+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=930ebf67-7f9c-40f8-bbc0-57fddf506f46, currentDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:59816 to /127.0.0.1:59817]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@612930e with state Busy
+2026-10-15T14:05:10.969+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=930ebf67-7f9c-40f8-bbc0-57fddf506f46, currentDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:59816 to /127.0.0.1:59817]
+2026-10-15T14:05:10.969+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
+2026-10-15T14:05:10.969+0100 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as idle, address: [43137d15-e2d4-414e-ad91-ef29bc1cce45 port:59816, addresses:[localhost/127.0.0.1]]
+2026-10-15T14:05:10.969+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [43137d15-e2d4-414e-ad91-ef29bc1cce45 port:59816, addresses:[localhost/127.0.0.1]]
+2026-10-15T14:05:10.981+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2026-10-15T14:05:10.981+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2026-10-15T14:05:10.983+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2026-10-15T14:05:10.983+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+2026-10-15T14:05:10.983+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.launcher.exec.BuildActionResult@11170c58]
+2026-10-15T14:05:10.983+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 31: dispatching Success[value=org.gradle.launcher.exec.BuildActionResult@11170c58]
+2026-10-15T14:05:10.989+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.CleanUpVirtualFileSystemAfterBuild] Cleaning virtual file system after build finished
+2026-10-15T14:05:10.989+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=930ebf67-7f9c-40f8-bbc0-57fddf506f46, currentDir=/Users/adam.lee/Repos/finrem/finrem-ccd-definitions}
+2026-10-15T14:05:11.000+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 32: received class org.gradle.launcher.daemon.protocol.CloseInput
+2026-10-15T14:05:11.000+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 32: Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@3d1eca56
+2026-10-15T14:05:11.000+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 32: received class org.gradle.launcher.daemon.protocol.Finished
+2026-10-15T14:05:11.000+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 32: Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@680985cc
+2026-10-15T14:05:11.000+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@680985cc
+2026-10-15T14:05:11.000+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 31: stopping connection
+2026-10-15T14:05:11.001+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+2026-10-15T14:05:11.001+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 32: received null
+2026-10-15T14:05:11.001+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 32: Received end-of-input from client.
+2026-10-15T14:05:11.002+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 31: stopping connection
+2026-10-15T14:05:18.388+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on daemon addresses registry.
+2026-10-15T14:05:18.388+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2026-10-15T14:05:18.388+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2026-10-15T14:05:18.389+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on daemon addresses registry.
+2026-10-15T14:05:18.389+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2026-10-15T14:05:18.389+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
