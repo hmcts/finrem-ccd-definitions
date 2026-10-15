@@ -11,13 +11,12 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
     repositories {
         maven {
             name = 'HMCTSArtifactory'
             url = uri('https://artifactory.platform.hmcts.net/artifactory/maven-remotes')
-            content {
-                excludeGroup 'ch.qos.logback'
-            }
         }
 
         maven {
@@ -27,7 +26,10 @@ dependencyResolutionManagement {
                 includeGroup 'com.github.hmcts'
             }
         }
-        mavenLocal()
-        mavenCentral()
+
+        if (!System.getenv('CI')) {
+            mavenLocal()
+            mavenCentral()
+        }
     }
 }

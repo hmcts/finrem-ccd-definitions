@@ -19,6 +19,11 @@ java {
     }
 }
 
+configurations.named('testRuntimeClasspath') {
+    exclude group: 'ch.qos.logback', module: 'logback-classic'
+    exclude group: 'ch.qos.logback', module: 'logback-core'
+}
+
 // region static code analysis
 
 pmd {
