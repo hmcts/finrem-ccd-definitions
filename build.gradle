@@ -1,16 +1,3 @@
-buildscript {
-    repositories {
-        def pipelineEnvironments = [
-                'preview', 'aat', 'prod', 'demo', 'perftest', 'ithc'
-        ]
-
-        if (!(System.getenv('ENVIRONMENT') in pipelineEnvironments)) {
-            mavenLocal()
-            mavenCentral()
-        }
-    }
-}
-
 plugins {
     id 'java'
     id 'java-library'
@@ -32,10 +19,6 @@ java {
     }
 }
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
 // region static code analysis
 
 pmd {
