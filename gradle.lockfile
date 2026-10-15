@@ -1,6 +1,8 @@
 # This is a Gradle generated file for dependency locking.
 # Manual edits can break the build and are not advised.
 # This file is expected to be part of source control.
+ch.qos.logback:logback-classic:1.5.32=testRuntimeClasspath
+ch.qos.logback:logback-core:1.5.32=testRuntimeClasspath
 com.auth0:java-jwt:4.5.0=testRuntimeClasspath
 com.beust:jcommander:1.48=pmd
 com.fasterxml.jackson.core:jackson-annotations:2.21=testCompileClasspath,testRuntimeClasspath
