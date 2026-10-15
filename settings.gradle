@@ -15,20 +15,19 @@ dependencyResolutionManagement {
         maven {
             name = 'HMCTSArtifactory'
             url = uri('https://artifactory.platform.hmcts.net/artifactory/maven-remotes')
+            content {
+                excludeGroup 'ch.qos.logback'
+            }
         }
 
         maven {
             name = 'HMCTSAzureArtifacts'
             url = uri('https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1')
-
             content {
                 includeGroup 'com.github.hmcts'
             }
         }
-
-        if (!System.getenv('CI')) {
-            mavenLocal()
-            mavenCentral()
-        }
+        mavenLocal()
+        mavenCentral()
     }
 }
