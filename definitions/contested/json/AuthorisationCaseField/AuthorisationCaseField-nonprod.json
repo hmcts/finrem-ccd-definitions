@@ -134,7 +134,7 @@
     "AccessControl": [
       {
         "UserRoles": [
-          "[APPLICANT]"
+          "[RESPONDENT]"
         ],
         "CRUD": "CRUD"
       },
@@ -142,8 +142,8 @@
         "UserRoles": [
           "caseworker-divorce-financialremedy-judiciary",
           "caseworker-divorce-financialremedy-courtadmin",
-          "[APPSOLICITOR]",
-          "[APPBARRISTER]"
+          "[RESPSOLICITOR]",
+          "[RESPBARRISTER]"
         ],
         "CRUD": "R"
       }
