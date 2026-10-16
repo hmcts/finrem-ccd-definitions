@@ -3,7 +3,7 @@
 import uk.gov.hmcts.contino.AppPipelineConfig
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure@2.5.3")
+@Library("Infrastructure@2.12.2")
 
 String product = "finrem"
 String component = "ccd-definitions"
@@ -65,10 +65,10 @@ def nonProdFinremSecrets = [
         secret('barrister1-password', 'PASSWORD_BARRISTER1'),
         secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
         secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
-        secret('playwright-solicitor-id', 'PLAYWRIGHT_SOLICITOR_ID'),
+        secret('playwright-solicitor-id', 'PLAYWRIGHT_APPLICANT_SOLICITOR_ID'),
         secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
         secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
-        secret('playwright-respondent-sol-id', 'PLAYWRIGHT_RESPONDENT_SOL_ID'),
+        secret('playwright-respondent-sol-id', 'PLAYWRIGHT_RESPONDENT_SOLICITOR_ID'),
         secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
         secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
         secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
@@ -77,6 +77,13 @@ def nonProdFinremSecrets = [
         secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER"),
         secret('idam-secret', 'IDAM_SECRET'),
 ]
+
+def demoFinremSecrets = nonProdFinremSecrets.collect { vaultSecret ->
+    if (vaultSecret.envVariable in ['PLAYWRIGHT_APPLICANT_SOLICITOR_ID', 'PLAYWRIGHT_RESPONDENT_SOLICITOR_ID']) {
+        return vaultSecret + [envVariable: "${vaultSecret.envVariable}_DEMO"]
+    }
+    return vaultSecret
+}
 
 def secrets = [
         's2s-${env}'      : [
@@ -263,7 +270,8 @@ withPipeline("nodejs", product, component) {
     env.RUNNING_ENV = targetEnvironment
 
     pipelineConf.vaultSecrets['finrem-${env}'] =
-            targetEnvironment == 'prod' ? prodFinremSecrets : nonProdFinremSecrets
+            targetEnvironment == 'prod' ? prodFinremSecrets :
+                    targetEnvironment == 'demo' ? demoFinremSecrets : nonProdFinremSecrets
 
     yarnBuilder.yarn('setup')
     if ('preview' == targetEnvironment) {
