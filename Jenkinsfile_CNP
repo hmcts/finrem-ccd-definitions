@@ -85,6 +85,13 @@ def nonProdFinremSecrets = [
         secret('idam-secret', 'IDAM_SECRET'),
 ]
 
+def demoFinremSecrets = nonProdFinremSecrets.collect { vaultSecret ->
+    if (vaultSecret.envVariable in ['PLAYWRIGHT_APPLICANT_SOLICITOR_ID', 'PLAYWRIGHT_RESPONDENT_SOLICITOR_ID']) {
+        return vaultSecret + [envVariable: "${vaultSecret.envVariable}_DEMO"]
+    }
+    return vaultSecret
+}
+
 def secrets = [
         's2s-${env}'      : [
                 secret('microservicekey-ccd-data', 'DATA_STORE_S2S_KEY'),
@@ -270,7 +277,8 @@ withPipeline("nodejs", product, component) {
     env.RUNNING_ENV = targetEnvironment
 
     pipelineConf.vaultSecrets['finrem-${env}'] =
-            targetEnvironment == 'prod' ? prodFinremSecrets : nonProdFinremSecrets
+            targetEnvironment == 'prod' ? prodFinremSecrets :
+                    targetEnvironment == 'demo' ? demoFinremSecrets : nonProdFinremSecrets
 
     yarnBuilder.yarn('setup')
     if ('preview' == targetEnvironment) {
@@ -308,7 +316,7 @@ withPipeline("nodejs", product, component) {
 
       def subscription = targetEnvironment != 'prod' ? 'nonprod' : 'prod'
       withSubscription(subscription, product, targetEnvironment) {
-        withTeamSecrets(pipelineConf, targetEnvironment == 'prod' ? 'prod' : 'aat') {
+        withTeamSecrets(pipelineConf, targetEnvironment) {
           stageWithEnvironmentAgent('Generate Financial Remedy Consented Case config', product, targetEnvironment) {
             if (targetEnvironment == 'prod') {
               dir('definitions/consented/json/UserProfile') {
