@@ -22,20 +22,100 @@
   {
     "LiveFrom": "06/05/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "citizenApplicantDocument",
+    "ID": "uploadedCuiApplicantDocuments",
     "Label": "Citizen Documents",
     "FieldType": "Collection",
-    "FieldTypeParameter": "CU_ct_citizenApplicantDocument",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "06/05/2026",
     "CaseTypeID": "FinancialRemedyContested",
-    "ID": "citizenRespondentDocument",
+    "ID": "uploadedCuiRespondentDocuments",
     "Label": "Citizen Documents",
     "FieldType": "Collection",
-    "FieldTypeParameter": "CU_ct_citizenRespondentDocument",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "applicantDocCollection",
+    "Label": "Applicant citizen uploaded documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "respondentDocCollection",
+    "Label": "Respondent citizen uploaded documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fdrRespondentDocCollection",
+    "Label": "Citizen uploaded FDR documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "fdrApplicantDocCollection",
+    "Label": "Citizen uploaded FDR documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "divorceRespondentDocCollection",
+    "Label": "Respondent citizen uploaded divorce documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "divorceApplicantDocCollection",
+    "Label": "Applicant citizen uploaded divorce documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingRespondentDocCollection",
+    "Label": "Citizen uploaded hearing bundle documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "06/05/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "hearingApplicantDocCollection",
+    "Label": "Citizen uploaded hearing bundle documents",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
