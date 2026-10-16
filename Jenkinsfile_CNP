@@ -314,7 +314,11 @@ withPipeline("nodejs", product, component) {
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     } else {
 
-      def subscription = targetEnvironment != 'prod' ? 'nonprod' : 'prod'
+      def subscription = targetEnvironment in ['ithc', 'perftest']
+              ? 'qa'
+              : targetEnvironment == 'prod'
+              ? 'prod'
+              : 'nonprod'
       withSubscription(subscription, product, targetEnvironment) {
         withTeamSecrets(pipelineConf, targetEnvironment) {
           stageWithEnvironmentAgent('Generate Financial Remedy Consented Case config', product, targetEnvironment) {
