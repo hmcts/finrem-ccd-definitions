@@ -3,7 +3,7 @@
 import uk.gov.hmcts.contino.AppPipelineConfig
 import uk.gov.hmcts.contino.GithubAPI
 
-@Library("Infrastructure@2.12.1")
+@Library("Infrastructure@2.12.2")
 
 String product = "finrem"
 String component = "ccd-definitions"
@@ -84,6 +84,13 @@ def nonProdFinremSecrets = [
         secret("SUPERCASEWORKER-PASSWORD","PASSWORD_SUPERCASEWORKER"),
         secret('idam-secret', 'IDAM_SECRET'),
 ]
+
+def demoFinremSecrets = nonProdFinremSecrets.collect { vaultSecret ->
+    if (vaultSecret.envVariable in ['PLAYWRIGHT_APPLICANT_SOLICITOR_ID', 'PLAYWRIGHT_RESPONDENT_SOLICITOR_ID']) {
+        return vaultSecret + [envVariable: "${vaultSecret.envVariable}_DEMO"]
+    }
+    return vaultSecret
+}
 
 def secrets = [
         's2s-${env}'      : [
@@ -270,7 +277,8 @@ withPipeline("nodejs", product, component) {
     env.RUNNING_ENV = targetEnvironment
 
     pipelineConf.vaultSecrets['finrem-${env}'] =
-            targetEnvironment == 'prod' ? prodFinremSecrets : nonProdFinremSecrets
+            targetEnvironment == 'prod' ? prodFinremSecrets :
+                    targetEnvironment == 'demo' ? demoFinremSecrets : nonProdFinremSecrets
 
     yarnBuilder.yarn('setup')
     if ('preview' == targetEnvironment) {
@@ -296,9 +304,13 @@ withPipeline("nodejs", product, component) {
       steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
     } else {
 
-      def subscription = targetEnvironment != 'prod' ? 'nonprod' : 'prod'
+      def subscription = targetEnvironment in ['ithc', 'perftest']
+              ? 'qa'
+              : targetEnvironment == 'prod'
+              ? 'prod'
+              : 'nonprod'
       withSubscription(subscription, product, targetEnvironment) {
-        withTeamSecrets(pipelineConf, targetEnvironment == 'prod' ? 'prod' : 'aat') {
+        withTeamSecrets(pipelineConf, targetEnvironment) {
           stageWithEnvironmentAgent('Generate Financial Remedy Consented Case config', product, targetEnvironment) {
             if (targetEnvironment == 'prod') {
               dir('definitions/consented/json/UserProfile') {
