@@ -20,7 +20,7 @@ import {ContestedEventApi} from '../../../data-utils/api/contested/ContestedEven
 test.describe('Contested - Upload Draft Order', { tag: ['@DraftOrder'] }, () => {
   test(
     'Form A case uploading a Agreed draft order',
-    { tag: ['@webkit'] },
+    { tag: ['@webkit', '@debug'] },
     async (
       {
         loginPage,

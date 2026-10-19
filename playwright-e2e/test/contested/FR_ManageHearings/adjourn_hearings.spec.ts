@@ -5,9 +5,8 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 import { getManageHearingTabData, getVacatedHearingTabData } from '../../../resources/tab_content/contested/manage_hearing_tabs.ts';
 import { CaseTypeEnum, YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 import { adjournHearingNotRelistedTableData, adjournHearingRelistedTableData } from '../../../resources/check_your_answer_content/manage_hearings/manageHearingAdjournHearingTable.ts';
-import { ContestedEventApi } from '../../../data-utils/api/contested/ContestedEventApi.ts';
 
-test.describe('Contested - Adjourn Hearings', { tag: ['@ManageHearings'] }, () => {
+test.describe('Contested - Adjourn Hearings', { tag: ['@ManageHearings', '@debug'] }, () => {
 
   test('Contested - Adjourn Hearing - Not Relisted',
     { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, axeUtils, checkYourAnswersPage }) => {

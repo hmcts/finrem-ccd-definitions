@@ -263,108 +263,55 @@ export class CaseDetailsPage {
 
   
   async validateFileTree(tree: FileTree): Promise<void> {
-    const errors: string[] = [];
+    await this.openCfv();
 
-    const heading = this.page.getByRole('heading', {
-      name: 'Case file',
-      level: 2
-    });
-
-    if (!(await heading.isVisible())) {
-      await this.openCfv();
-    }
-
-    const validateNodes = async (
+    const validate = async (
       nodes: FileTree,
-      parentPath: string[] = []
+      scope: Locator = this.page.locator('cdk-tree')
     ): Promise<void> => {
       for (const node of nodes) {
-        const currentPath = [...parentPath, node.label];
+        if (node.type === 'folder') {
+          const folder = scope
+            .locator('cdk-nested-tree-node.document-tree-container__folder')
+            .filter({
+              has: this.page.locator('button[cdktreenodetoggle]')
+                .getByText(node.label, { exact: true })
+            })
+            .first();
 
-        try {
-          if (node.type === 'folder') {
-          // Find the folder by its exact displayed name
-            const folderToggle = this.page
-              .locator('button.node[cdktreenodetoggle]:visible')
-              .filter({
-                has: this.page.locator('span.node__name--folder')
-                  .getByText(node.label, { exact: true })
-              })
-              .first();
+          const toggle = folder.locator('button[cdktreenodetoggle]').first();
 
-            await expect(folderToggle).toBeVisible({
-              timeout: 30000
-            });
+          await expect(toggle).toBeVisible();
 
-            // Expand folder if collapsed
-            if (
-              await folderToggle.getAttribute('aria-expanded') !== 'true'
-            ) {
-              await folderToggle.click();
-
-              await expect(folderToggle).toHaveAttribute(
-                'aria-expanded',
-                'true'
-              );
-            }
-
-            if (node.children?.length) {
-              await validateNodes(node.children, currentPath);
-            }
-
-          } else {
-          // Locate the document by its displayed filename
-            const file = this.page.locator(
-              `span.node-name-document[title="${node.label}"]`
-            );
-
-            await expect(file).toBeVisible({
-              timeout: 30000
-            });
-
-            // Open document when content validation is required
-            if (node.contentSnippets?.length) {
-              const fileButton = file.locator(
-                'xpath=ancestor::button[1]'
-              );
-
-              await fileButton.focus();
-              await fileButton.press('Enter');
-
-              const pdfContainer = this.page.locator('.pdfViewer');
-
-              await expect(pdfContainer).toBeVisible({
-                timeout: 30000
-              });
-
-              for (const snippet of node.contentSnippets) {
-                await expect(
-                  pdfContainer.locator(
-                    'span[role="presentation"]',
-                    { hasText: snippet }
-                  ).first()
-                ).toBeVisible({
-                  timeout: 30000
-                });
-              }
-            }
+          if (await toggle.getAttribute('aria-expanded') !== 'true') {
+            await toggle.click();
           }
 
-        } catch (error) {
-          errors.push(
-            `${node.type === 'folder' ? 'Folder' : 'File'} validation failed: ${currentPath.join(' / ')}\n${error}`
-          );
+          if (node.children?.length) {
+            await validate(node.children, folder);
+          }
+
+        } else {
+          const file = scope.locator(
+            `button.case-file__node[aria-label="${node.label}"]`
+          ).first();
+
+          await expect(file).toBeVisible();
+
+          if (node.contentSnippets?.length) {
+            await file.click();
+
+            const viewer = this.page.locator('.pdfViewer');
+
+            for (const snippet of node.contentSnippets) {
+              await expect(viewer).toContainText(snippet);
+            }
+          }
         }
       }
     };
 
-    await validateNodes(tree);
-
-    if (errors.length > 0) {
-      throw new Error(
-        'File tree validation errors:\n' + errors.join('\n\n')
-      );
-    }
+    await validate(tree);
   }
 
 
@@ -441,11 +388,25 @@ export class CaseDetailsPage {
     }
   }
 
+  
   async openCfv(): Promise<void> {
-    await expect(this.page.getByRole('tab', { name: 'Case File View' })).toBeVisible();
-    await this.page.getByText('Case File View').click();
+    const cfvTab = this.page.getByRole('tab', {
+      name: 'Case File View'
+    });
+
+    const scrollLeft = this.page.locator(
+      'button.mat-tab-header-pagination-before'
+    );
+
+    // Scroll tabs to the beginning
+    while (await scrollLeft.isVisible() && await scrollLeft.isEnabled()) {
+      await scrollLeft.click();
+    }
+
+    await cfvTab.click();
     await expect(this.page.getByRole('tree')).toBeVisible();
   }
+
 
   async assertDocumentVisibleInCfv(docName: string, shouldBeVisible: boolean): Promise<void> {
     await this.openCfv();

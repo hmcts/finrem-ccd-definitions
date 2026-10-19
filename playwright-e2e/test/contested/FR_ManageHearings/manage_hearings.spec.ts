@@ -69,7 +69,7 @@ async function verifyDifferentActorsForCFV(
   }
 }
 
-test.describe('Contested - Manage Hearings', { tag: ['@ManageHearings'] }, () => {
+test.describe('Contested - Manage Hearings', { tag: ['@ManageHearings', '@debug'] }, () => {
 
   test(
     'Contested - Assert validations - Manage Hearings - Pre-Trial Review (PTR)', {
