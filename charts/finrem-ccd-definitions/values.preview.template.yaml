@@ -96,6 +96,7 @@ finrem-cos:
       CASE_DOCUMENT_AM_URL: http://${SERVICE_NAME}-cdam
       CRON_CFV_CATEGORISATION_TASK_ENABLED: true
       MANAGE_CASE_UI_BASE_URL: https://xui-${SERVICE_FQDN}
+      ALWAY_GENERATE_CUI_ACCESS_CODES_ENABLED: true
     keyVaults:
       finrem:
         secrets:
