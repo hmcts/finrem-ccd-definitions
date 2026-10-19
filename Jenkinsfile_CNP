@@ -78,6 +78,41 @@ def nonProdFinremSecrets = [
         secret('idam-secret', 'IDAM_SECRET'),
 ]
 
+def qaEnvExcludedFinremSecrets = [
+        'SUPERCASEWORKER-PASSWORD',
+        'SUPERCASEWORKER-USERNAME',
+        'barrister1-password',
+        'barrister1-username',
+        'fr-judge-password',
+        'fr-judge-username',
+        'idam-caa-password',
+        'idam-caa-username',
+        'idam-client-secret',
+        'idam-mca-client-secret',
+        'idam-noc-approver-password',
+        'idam-noc-approver-username',
+        'manage-case-s2s-key',
+        'notify-mca-api-key',
+        'password-caseworker',
+        'playwright-appl-caa-password',
+        'playwright-appl-caa-username',
+        'playwright-respondent-caa-password',
+        'playwright-respondent-caa-username',
+        'playwright-respondent-sol-id',
+        'playwright-respondent-sol-password',
+        'playwright-respondent-sol-username',
+        'playwright-solicitor-id',
+        'username-caseworker',
+        'userprofile-consented-judgedetails-7',
+        'userprofile-consented-judgedetails-8',
+        'userprofile-consented-judgedetails-9',
+        'userprofile-contested-judgedetails'
+]
+
+def qaEnvFinremSecrets = nonProdFinremSecrets.findAll { vaultSecret ->
+  !(vaultSecret.name in qaEnvExcludedFinremSecrets)
+}
+
 def demoFinremSecrets = nonProdFinremSecrets.collect { vaultSecret ->
     if (vaultSecret.envVariable in ['PLAYWRIGHT_APPLICANT_SOLICITOR_ID', 'PLAYWRIGHT_RESPONDENT_SOLICITOR_ID']) {
         return vaultSecret + [envVariable: "${vaultSecret.envVariable}_DEMO"]
@@ -271,7 +306,9 @@ withPipeline("nodejs", product, component) {
 
     pipelineConf.vaultSecrets['finrem-${env}'] =
             targetEnvironment == 'prod' ? prodFinremSecrets :
-                    targetEnvironment == 'demo' ? demoFinremSecrets : nonProdFinremSecrets
+                    targetEnvironment == 'demo' ? demoFinremSecrets :
+                            targetEnvironment in ['ithc', 'perftest'] ? qaEnvFinremSecrets :
+                                    nonProdFinremSecrets
 
     yarnBuilder.yarn('setup')
     if ('preview' == targetEnvironment) {
