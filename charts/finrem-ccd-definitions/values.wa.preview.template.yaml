@@ -93,7 +93,7 @@ wa:
 
   wa-task-management-api:
     java:
-      image: hmctspublic.azurecr.io/wa/task-management-api:latest
+      image: hmctsprod.azurecr.io/wa/task-management-api:latest
       imagePullPolicy: Always
       disableKeyVaults: true
       ingressHost: wa-task-management-api-${SERVICE_FQDN}
