@@ -119,5 +119,47 @@
     "CaseTypeID": "FinancialRemedyMVP2",
     "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
     "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "hmcts-admin",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "hmcts-judiciary",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "hmcts-legal-operations",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "hmcts-ctsc",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "specific-access-legal-operations",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "specific-access-admin",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "GS_profile",
+    "ReadOnly": "N"
   }
 ]
