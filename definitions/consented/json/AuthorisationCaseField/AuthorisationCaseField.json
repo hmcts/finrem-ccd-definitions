@@ -7531,5 +7531,54 @@
     "CaseFieldID": "currentUserIsRespondentSolicitor",
     "UserRole": "caseworker-divorce-financialremedy-solicitor",
     "CRUD": "CRUD"
+  },
+  {
+    "LiveFrom": "16/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "SearchCriteria",
+    "UserRole": "GS_profile",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "16/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "caseNameHmctsInternal",
+    "UserRole": "GS_profile",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "16/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "caseNameHmctsInternal",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "16/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "caseManagementCategory",
+    "UserRole": "GS_profile",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "16/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "caseManagementCategory",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "16/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "caseManagementLocation",
+    "UserRole": "GS_profile",
+    "CRUD": "R"
+  },
+  {
+    "LiveFrom": "16/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "CaseFieldID": "caseManagementLocation",
+    "UserRole": "caseworker-divorce-systemupdate",
+    "CRUD": "CRU"
   }
 ]
