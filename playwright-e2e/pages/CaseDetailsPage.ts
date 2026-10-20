@@ -184,11 +184,17 @@ export class CaseDetailsPage {
         }
 
         const expectedValues = content.value.split('|').map(v => {return v.trim();});
+
         for (let i = 0; i < expectedValues.length; i++) {
-          const tabValue = tabItem.locator(
-            `xpath=following-sibling::*[self::td or self::th][${i + 1}] | ancestor::*[self::td or self::th or self::tr][1]/following-sibling::*[self::td or self::th][${i + 1}]`
-          );
-          if (!content.exact) {
+          const tabValue = content.valueColumn
+            ? tabItem.locator(
+              `xpath=ancestor::tr[1]/td[${content.valueColumn}]`
+            )
+            : tabItem.locator(
+              `xpath=following-sibling::*[self::td or self::th][${i + 1}] | ancestor::*[self::td or self::th or self::tr][1]/following-sibling::*[self::td or self::th][${i + 1}]`
+            );
+
+          if (content.exact === false) {
             await customExpect(tabValue).toContainText(expectedValues[i]);
           } else {
             await customExpect(tabValue).toHaveText(expectedValues[i]);
@@ -293,7 +299,7 @@ export class CaseDetailsPage {
 
         } else {
           const file = scope.locator(
-            `button.case-file__node[aria-label="${node.label}"]`
+            `button.case-file__node[aria-label^="${node.label}"]`
           ).first();
 
           await expect(file).toBeVisible();
