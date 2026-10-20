@@ -413,17 +413,14 @@ withPipeline("nodejs", product, component) {
 
   onIthc() {
     env.ENV='ithc'
-    env.ENABLE_GS = true
   }
 
   onDemo() {
     env.ENV='demo'
-    env.ENABLE_GS = true
   }
 
   onPerftest() {
     env.ENV='perftest'
-    env.ENABLE_GS = true
   }
 
   before('smoketest:preview') {
