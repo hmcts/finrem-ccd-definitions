@@ -402,6 +402,7 @@ withPipeline("nodejs", product, component) {
 
   onMaster() {
     env.ENV='aat'
+    env.ENABLE_GS = true
   }
 
   onPR() {
@@ -409,18 +410,22 @@ withPipeline("nodejs", product, component) {
     env.FINREM_COS_IMAGE = getFinremCosImage()
     env.WA_TASK_CONFIG_PR_NUMBER = getWaTaskConfigPrNumber()
     setPreviewEnvVars()
+    env.ENABLE_GS = true
   }
 
   onIthc() {
     env.ENV='ithc'
+    env.ENABLE_GS = true
   }
 
   onDemo() {
     env.ENV='demo'
+    env.ENABLE_GS = true
   }
 
   onPerftest() {
     env.ENV='perftest'
+    env.ENABLE_GS = true
   }
 
   before('smoketest:preview') {
