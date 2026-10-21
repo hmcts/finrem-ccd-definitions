@@ -44,7 +44,7 @@ function createPaymentData(fee: { amount: string; code: string; type: string; })
 
 test(
   'Contested - Case Submission - PBA Payment Matrimonial',
-  { tag: ['@payment'] },
+  { tag: ['@payment', '@CaseSubmission'] },
   async ({
     loginPage,
     manageCaseDashboardPage,
@@ -107,7 +107,7 @@ test(
 
 test(
   'Contested - Case Submission - PBA Payment Schedule 1 case',
-  { tag: ['@payment'] },
+  { tag: ['@payment', '@CaseSubmission'] },
   async ({
     loginPage,
     manageCaseDashboardPage,
@@ -171,7 +171,7 @@ test(
 
 test(
   'Contested - Case Submission - HWF Payment',
-  { tag: ['@payment', '@hwf'] },
+  { tag: ['@payment', '@hwf', '@CaseSubmission'] },
   async ({
     loginPage,
     manageCaseDashboardPage,

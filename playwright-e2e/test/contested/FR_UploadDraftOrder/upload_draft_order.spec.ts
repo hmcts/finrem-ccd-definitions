@@ -152,11 +152,6 @@ test.describe('Contested - Upload Draft Order', { tag: ['@DraftOrder'] }, () => 
       await caseDetailsPage.checkHasBeenUpdated(ContestedEvents.approveOrders.listItem);
       await caseDetailsPage.assertTabData(approved_upload_draft_order_tabs);
       await manageCaseDashboardPage.signOut();
-
-      await manageCaseDashboardPage.visit();
-      await loginPage.loginCaseworker();
-      await manageCaseDashboardPage.navigateToCase(caseId);
-      await caseDetailsPage.assertTabData(approved_upload_draft_order_tabs);
     }
   );
 

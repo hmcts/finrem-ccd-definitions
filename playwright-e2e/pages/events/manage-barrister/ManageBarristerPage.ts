@@ -25,7 +25,7 @@ export class ManageBarristerPage extends BaseJourneyPage {
     super(page);
     this.updatePartyBarristerChangeRadio = page.locator('#updateIncludesRepresentativeChange_radio');
     this.applicantRadio = page.getByRole('radio', { name: 'Applicant' });
-    this.respondentRadio = page.getByLabel('Respondent');
+    this.respondentRadio = page.getByRole('radio', { name: 'Respondent' });
     this.manageBarristerAddNewButton = page.locator('button.button.write-collection-add-item__top');
     this.checkBarristerFirstNameLabel = page.getByText('Full name');
     this.barristerFirstNameDetails = page.locator('#appBarristerCollection_0_name');

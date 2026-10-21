@@ -36,7 +36,7 @@ async function loginAndOpenCase(
 
 test(
   'Consented - Case Submission - PBA Payment',
-  { tag: ['@chromium', '@payment'] },
+  { tag: ['@chromium', '@payment', '@CaseSubmission'] },
   async ({
     loginPage,
     manageCaseDashboardPage,
@@ -87,7 +87,7 @@ test(
 
 test(
   'Consented - Case Submission - HWF Payment',
-  { tag: ['@payment', '@hwf'] },
+  { tag: ['@payment', '@hwf', '@CaseSubmission'] },
   async ({
     loginPage,
     manageCaseDashboardPage,

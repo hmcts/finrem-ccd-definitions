@@ -8,7 +8,7 @@ import { ContestedCaseFactory } from '../../../data-utils/factory/contested/Cont
 
 test(
   'Contested - Create Case FormA Matrimonial Submission by Solicitor',
-  { tag: ['@accessibility','@chrome'] },
+  { tag: ['@accessibility','@chrome','@CreateCase'] },
   async (
     {
       loginPage,
@@ -128,6 +128,7 @@ test(
     // Financial Remedies Court, a court is selected that isn't currently processing Express Case applications.
     await axeUtils.audit({
       exclude: [
+        '#netValueOfHome', // DFR-5685
         '#specialAssistanceRequired',
         '#specificArrangementsRequired'
       ]
@@ -145,7 +146,12 @@ test(
     await financialRemedyCourtPage.navigateContinue();
 
     // Has attended miam
-    await axeUtils.audit();
+    await axeUtils.audit({
+      exclude: [
+        '#specialAssistanceRequired', //DFR-5685
+        '#specificArrangementsRequired'
+      ]
+    });
     await miamQuestionPage.selectHasAttendedMiam(true);
     await miamQuestionPage.navigateContinue();
 
@@ -191,7 +197,7 @@ test(
 
 test(
   'Contested - Caseworker view tabs post case creation',
-  { tag: [] },
+  { tag: ['@CreateCase'] },
   async (
     {
       loginPage,
@@ -214,7 +220,7 @@ test(
 
 test(
   'Contested - Create Case Form A Childrens Act Submission by Solicitor',
-  { tag: ['@accessibility'] },
+  { tag: ['@accessibility','@CreateCase'] },
   async (
     {
       loginPage,

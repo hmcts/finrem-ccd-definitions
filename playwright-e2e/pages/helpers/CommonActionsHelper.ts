@@ -104,42 +104,41 @@ export class CommonActionsHelper {
     page: Page,
     uploadField: Locator,
     fileToUpload:
-      | { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> }
-      | string,
-    maxRetries: number = 19,
-    waitMs: number = 500,
-    maxWaitMs: number = 29_000
+    | { name: string; mimeType: string; buffer: Buffer<ArrayBuffer> }
+    | string,
+    maxRetries: number = 5,
+    waitMs: number = 5_000,
+    maxWaitMs: number = 20_000
   ): Promise<void> {
-    const errorLocator = uploadField.locator(
-      'xpath=../preceding-sibling::span[contains(text(), "Your request was rate limited. Please wait a few seconds before retrying your document upload")]'
+    const rateLimitError = page.getByText(
+      'Your request was rate limited. Please wait a few seconds before retrying your document upload'
     );
 
-    // Add one because maxRetries excludes the initial upload attempt.
     const maxAttempts = maxRetries + 1;
 
-    for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
       await uploadField.setInputFiles(fileToUpload);
 
       await this.waitForAllUploadsToBeCompleted(page);
 
-      const isErrorVisible = await errorLocator.isVisible({
-        timeout: 2_000
-      });
+      const isRateLimited = await rateLimitError.isVisible();
 
-      if (!isErrorVisible) {
+      if (!isRateLimited) {
         return;
       }
 
-      if (attempt === maxAttempts - 1) {
+      if (attempt === maxAttempts) {
         throw new Error(
-          `Rate limit error persists after ${maxAttempts} upload attempts`
+          `Document upload remained rate limited after ${maxAttempts} attempts`
         );
       }
 
       const backoffMs = Math.min(
-        waitMs * 2 ** attempt,
+        waitMs * 2 ** (attempt - 1),
         maxWaitMs
       );
+
+      await uploadField.setInputFiles([]);
 
       await page.waitForTimeout(backoffMs);
     }

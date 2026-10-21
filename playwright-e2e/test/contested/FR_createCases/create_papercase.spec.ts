@@ -14,7 +14,7 @@ import {envTestData} from '../../../data-utils/test_data/EnvTestDataConfig.ts';
 // Create a test case for the Contested Paper Case
 test(
   'Create Case - Contested Paper Case',
-  { tag: ['@additionalTest'] },
+  { tag: ['@CreateCase'] },
   async (
     {
       loginPage,
@@ -153,8 +153,7 @@ test(
 
     // Upload variation Order Document
     await uploadOrderDocumentsPage.uploadVariationOrderDoc();
-    await uploadOrderDocumentsPage.selectUploadAdditionalDocs(true);
-    await uploadOrderDocumentsPage.uploadOtherDocuments('test1.pdf', 'Other');
+    await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
     await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
     await uploadOrderDocumentsPage.navigateContinue(expectedURL + '/submit');
 
@@ -175,7 +174,7 @@ test(
 
 test(
   'Create Case - Contested Paper case Children Act Submission by Case Worker',
-  { tag: ['@accessibility'] },
+  { tag: ['@accessibility','@CreateCase'] },
   async (
     {
       loginPage,
@@ -318,10 +317,9 @@ test(
     });
 
     await test.step('Upload variation Order Document', async () => {
-      await uploadOrderDocumentsPage.selectUploadAdditionalDocs(true);
-      await uploadOrderDocumentsPage.uploadOtherDocuments('test1.pdf', 'Other');
-      await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
       await uploadOrderDocumentsPage.uploadVariationOrderDoc();
+      await uploadOrderDocumentsPage.selectUploadAdditionalDocs(false);
+      await uploadOrderDocumentsPage.selectUrgentCaseQuestionRadio(false);
       await uploadOrderDocumentsPage.navigateContinue();
     });
 

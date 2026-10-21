@@ -53,7 +53,7 @@ test.describe('Process scanned document task tests', () => {
   for (const { user, completionAction } of processScannedDocumentUserScenarios) {
     test(
       `${user.name} performs the ${completionAction} action`,
-      { tag: ['@waTasks'] },
+      { tag: completionAction === ATTACH_SCANNED_DOCUMENT ? ['@waTasks', '@preview'] : ['@waTasks'] },
       async ({
         loginPage,
         manageCaseDashboardPage,

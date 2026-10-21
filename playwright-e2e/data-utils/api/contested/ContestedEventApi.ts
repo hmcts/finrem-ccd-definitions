@@ -8,7 +8,7 @@ import { ccdApi } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ContestedEvents, CaseType, PayloadPath } from '../../../config/case-data';
 import { ReplacementAction } from '../../../types/replacement-action';
-import { ADD_A_HEARING, APPROVE_ORDERS_DATA, ISSUE_APPLICATION, PROCESS_ORDER_DATA } from '../../PayloadMutator';
+import { ADD_A_HEARING, APPLICATION_ISSUE_DATE, APPROVE_ORDERS_DATA, ISSUE_APPLICATION, PROCESS_ORDER_DATA } from '../../PayloadMutator';
 import { DateHelper } from '../../DateHelper';
 
 export class ContestedEventApi {
@@ -41,6 +41,25 @@ export class ContestedEventApi {
       response = await ccdApi.updateCaseInCcd(
         config.superCaseWorker.email,
         config.superCaseWorker.password,
+        caseId,
+        CaseType.Contested,
+        step.event,
+        step.payload || '',
+        step.replacements || []
+      );
+    }
+    return response;
+  }
+
+  private static async updateSolicitorSteps(
+    caseId: string,
+    steps: { event: string; payload?: string; replacements?: ReplacementAction[] }[]
+  ): Promise<any> {
+    let response;
+    for (const step of steps) {
+      response = await ccdApi.updateCaseInCcd(
+        config.applicant_solicitor.email,
+        config.applicant_solicitor.password,
         caseId,
         CaseType.Contested,
         step.event,
@@ -475,4 +494,18 @@ export class ContestedEventApi {
     ]);
   }
 
+  static async caseworkerPerformsAmendApplicationDetails (caseId: string, expressEnrolled: boolean) {
+    const divorcePetitionIssuedDate = DateHelper.getCurrentDate();
+    const payload = expressEnrolled
+      ? PayloadPath.Contested.amendApplicationDetailsExpressEnrolled
+      : PayloadPath.Contested.amendApplicationDetailsLeaveExpress;
+
+    await this.updateSolicitorSteps(caseId, [
+      {
+        event: ContestedEvents.amendFormAApplicationDetails.ccdCallback,
+        payload,
+        replacements: APPLICATION_ISSUE_DATE(divorcePetitionIssuedDate)
+      }
+    ]);
+  }
 }

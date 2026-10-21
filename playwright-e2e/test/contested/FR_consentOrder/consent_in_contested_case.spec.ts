@@ -9,7 +9,7 @@ import {
 import {DateHelper} from '../../../data-utils/DateHelper.ts';
 import {envTestData} from '../../../data-utils/test_data/EnvTestDataConfig.ts';
 
-test.describe('Consent order in contested case', () => {
+test.describe('Consent order in contested case', { tag: ['@ConsentInContested'] }, () => {
   test(
     'Create consent order in Form A contested case - Consent Order - General Consent Order - respond to consent order - assign to judge - approve consent application - send consent order - close case',
     { tag: ['@accessibility'] },
@@ -40,12 +40,7 @@ test.describe('Consent order in contested case', () => {
 
       // Sign in
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(
-        config.caseWorker.email,
-        config.caseWorker.password,
-        config.manageCaseBaseURL,
-        config.loginPaths.cases
-      );
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       await caseDetailsPage.selectNextStep(ContestedEvents.consentOrder);
@@ -83,7 +78,7 @@ test.describe('Consent order in contested case', () => {
       await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
       await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
       await axeUtils.audit();
-      await createCaseSavingYourAnswersPage.navigateContinue(url+ '/submit');
+      await createCaseSavingYourAnswersPage.navigateContinue();
 
       await checkYourAnswersPage.assertCheckYourAnswersPage(consentOrderTable);
       await createCaseSavingYourAnswersPage.navigateSubmit();
@@ -228,12 +223,7 @@ test.describe('Consent order in contested case', () => {
 
       // log in as caseworker to check the consent order
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(
-        config.caseWorker.email,
-        config.caseWorker.password,
-        config.manageCaseBaseURL,
-        config.loginPaths.cases
-      );
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.sendConsentOrder);
       await sendOrderPage.navigateContinue();
@@ -291,12 +281,7 @@ test.describe('Consent order in contested case', () => {
 
       // Sign in
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(
-        config.caseWorker.email,
-        config.caseWorker.password,
-        config.manageCaseBaseURL,
-        config.loginPaths.cases
-      );
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       await caseDetailsPage.selectNextStep(ContestedEvents.consentOrder);
@@ -328,7 +313,7 @@ test.describe('Consent order in contested case', () => {
       await createCaseSavingYourAnswersPage.checkSelectedCourtName(courtName);
       await createCaseSavingYourAnswersPage.checkSelectedCourtPhone(courtPhone);
       await createCaseSavingYourAnswersPage.checkSelectedCourtEmail(courtEmail);
-      await createCaseSavingYourAnswersPage.navigateContinue(url+ '/submit');
+      await createCaseSavingYourAnswersPage.navigateContinue();
 
       await checkYourAnswersPage.assertCheckYourAnswersPage(consentOrderTable);
       await createCaseSavingYourAnswersPage.navigateSubmit();
@@ -435,12 +420,7 @@ test.describe('Consent order in contested case', () => {
       await manageCaseDashboardPage.signOut();
 
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(
-        config.caseWorker.email,
-        config.caseWorker.password,
-        config.manageCaseBaseURL,
-        config.loginPaths.cases
-      );
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
 
       // respond  to consent order
@@ -509,12 +489,7 @@ test.describe('Consent order in contested case', () => {
 
       // log in as caseworker to check the consent order
       await manageCaseDashboardPage.visit();
-      await loginPage.loginWaitForPath(
-        config.caseWorker.email,
-        config.caseWorker.password,
-        config.manageCaseBaseURL,
-        config.loginPaths.cases
-      );
+      await loginPage.loginCaseworker();
       await manageCaseDashboardPage.navigateToCase(caseId);
       await caseDetailsPage.selectNextStep(ContestedEvents.sendConsentOrder);
       await sendOrderPage.navigateContinue();
