@@ -56,7 +56,7 @@ export const  contestedFormAAmendApplicationDetailsTable: Table = {
     { cellItem: 'Country', value: 'United Kingdom'},
     { cellItem: 'Phone Number', value: '07821 639001'},
     { cellItem: 'Email', value: 'fr_respondent_solicitor1@mailinator.com'},
-    { cellItem: 'What is the nature of the application ?', value: 'Maintenance Pending SuitLump Sum OrderProperty Adjustment OrderA settlement or a transfer of property for the benefit of the child(ren)Periodical Payment OrderPension Sharing OrderPension Compensation Sharing OrderPension Attachment OrderPension Compensation Attachment OrderVariation Order', rowType: 'label-value-adjacent',},
+    { cellItem: 'What is the nature of the application ?', value: 'Maintenance Pending SuitLump Sum OrderProperty Adjustment OrderA settlement or a transfer of property for the benefit of the child(ren)Periodical Payment OrderPension Sharing OrderPension Compensation Sharing OrderPension Attachment OrderPension Compensation Attachment OrderVariation Order', rowType: 'label-value-adjacent'},
     'Property adjustment order details',
     {cellItem: 'Property address', value: 'Test Address'},
     {cellItem: 'Name(s) and address(es) of any mortgage(s) for property', value: 'Test Mortgage'},

@@ -6,7 +6,7 @@ import { getManageHearingTabData, getVacatedHearingTabData } from '../../../reso
 import { CaseTypeEnum, YesNoRadioEnum } from '../../../pages/helpers/enums/RadioEnums.ts';
 import { adjournHearingNotRelistedTableData, adjournHearingRelistedTableData } from '../../../resources/check_your_answer_content/manage_hearings/manageHearingAdjournHearingTable.ts';
 
-test.describe('Contested - Adjourn Hearings', { tag: ['@ManageHearings', '@debug'] }, () => {
+test.describe('Contested - Adjourn Hearings', { tag: ['@ManageHearings'] }, () => {
 
   test('Contested - Adjourn Hearing - Not Relisted',
     { tag: [] }, async ({ loginPage, manageCaseDashboardPage, caseDetailsPage, manageHearingPage, axeUtils, checkYourAnswersPage }) => {
