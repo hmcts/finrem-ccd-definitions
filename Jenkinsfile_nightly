@@ -1,6 +1,6 @@
 #!groovy
 properties([
-        pipelineTriggers([cron('00 17 * * 1-5')]),
+        pipelineTriggers([cron('30 15 * * 1-5')]),
         parameters([
                 string(
                         name: 'RUNNING_ENV',
@@ -43,16 +43,17 @@ static Map < String, Object > secret(String secretName, String envVariable) {
 
 // Dynamically resolve vault environment prefix based on parameters
 String vaultEnv = params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV
+String solicitorIdSuffix = vaultEnv == 'demo' ? '_DEMO' : ''
 def secrets = [
         "${product}-${vaultEnv}": [
                 secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
                 secret('playwright-solicitor-password', 'PLAYWRIGHT_SOLICITOR_PSWD'),
-                secret('playwright-solicitor-id', 'PLAYWRIGHT_APPLICANT_SOLICITOR_ID'),
+                secret('playwright-solicitor-id', "PLAYWRIGHT_APPLICANT_SOLICITOR_ID${solicitorIdSuffix}"),
                 secret('playwright-appl-caa-username', 'PLAYWRIGHT_APPL_CAA_USERNAME'),
                 secret('playwright-appl-caa-password', 'PLAYWRIGHT_APPL_CAA_PSWD'),
                 secret('playwright-respondent-sol-username', 'PLAYWRIGHT_RESPONDENT_SOL_USERNAME'),
                 secret('playwright-respondent-sol-password', 'PLAYWRIGHT_RESPONDENT_SOL_PSWD'),
-                secret('playwright-respondent-sol-id', 'PLAYWRIGHT_RESPONDENT_SOLICITOR_ID'),
+                secret('playwright-respondent-sol-id', "PLAYWRIGHT_RESPONDENT_SOLICITOR_ID${solicitorIdSuffix}"),
                 secret('playwright-respondent-caa-username', 'PLAYWRIGHT_RESP_CAA_USERNAME'),
                 secret('playwright-respondent-caa-password', 'PLAYWRIGHT_RESP_CAA_PSWD'),
                 secret('playwright-applicant-intervener-username', 'PLAYWRIGHT_APPL_INTERVENER_USERNAME'),
