@@ -37,9 +37,9 @@ export class TaskUiChecks {
 
     await expect(this.activeTasksHeading).toBeVisible();
     await expect(taskHeading).toBeVisible();
-    await this.assertLabelAndValue('Priority', task.priority);
-    await this.assertLabelAndValue('Due date', task.dueDate);
-    await this.assertLabelAndValue('Assigned to', task.assignedTo);
+    await this.assertLabelAndValue(taskHeading, 'Priority', task.priority);
+    await this.assertLabelAndValue(taskHeading, 'Due date', task.dueDate);
+    await this.assertLabelAndValue(taskHeading, 'Assigned to', task.assignedTo);
     await expect(this.page.getByText('Manage', { exact: true })).toBeVisible();
   }
 
@@ -249,12 +249,18 @@ export class TaskUiChecks {
       .first();
   }
 
-  private async assertLabelAndValue(label: string, value: string): Promise<void> {
-    const labelLocator = this.page.getByText(label, { exact: true });
+private async assertLabelAndValue(taskName: string, label: string, value: string): Promise<void> {
 
-    await expect(labelLocator).toBeVisible();
-    await expect(this.page.getByText(value, { exact: true })).toBeVisible();
-  }
+  const taskSection = this.page .locator('exui-case-task').filter({
+      has: this.page.getByText(taskName, { exact: true })
+    });
+
+  await expect(taskSection).toBeVisible();
+
+  await expect(taskSection.getByText(label, { exact: true })).toBeVisible();
+
+  await expect(taskSection.getByText(value, { exact: true })).toBeVisible();
+}
 
   // Added to differentiate event link locator inside task tab from Next Steps eg:Issue Application
   private async assertLabelAndLink(label: string, link: string): Promise<void> {

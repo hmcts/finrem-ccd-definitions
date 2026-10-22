@@ -89,7 +89,7 @@ test.describe('Process scanned document task tests', () => {
           await taskUiChecks.assertTaskUI(
             {
               name: TASK_NAME,
-              priority: 'LOW',
+              priority: 'low',
               dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
               assignedTo: 'Unassigned'
             },
@@ -133,7 +133,7 @@ test.describe('Process scanned document task tests', () => {
       await taskUiChecks.assertTaskUI(
         {
           name: TASK_NAME,
-          priority: 'LOW',
+          priority: 'low',
           dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
           assignedTo: 'Unassigned'
         },
@@ -181,7 +181,7 @@ test.describe('Process scanned document task tests', () => {
         await taskUiChecks.assertTaskUI(
           {
             name: TASK_NAME,
-            priority: 'LOW',
+            priority: 'low',
             dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
             assignedTo: 'Unassigned'
           },
