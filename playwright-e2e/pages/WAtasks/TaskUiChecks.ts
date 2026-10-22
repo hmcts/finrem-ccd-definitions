@@ -33,14 +33,19 @@ export class TaskUiChecks {
   }
 
   async assertTaskDetails(task: TaskDetails): Promise<void> {
-    const taskHeading = this.page.getByText(task.name, { exact: true });
+    const taskContainer = this.page.locator('exui-case-task').filter({
+      has: this.page.getByText(task.name, { exact: true })
+    });
 
     await expect(this.activeTasksHeading).toBeVisible();
-    await expect(taskHeading).toBeVisible();
-    await this.assertLabelAndValue(taskHeading, 'Priority', task.priority);
-    await this.assertLabelAndValue(taskHeading, 'Due date', task.dueDate);
-    await this.assertLabelAndValue(taskHeading, 'Assigned to', task.assignedTo);
-    await expect(this.page.getByText('Manage', { exact: true })).toBeVisible();
+
+    await expect(taskContainer).toBeVisible();
+
+    await this.assertLabelAndValue(taskContainer, 'Priority', task.priority);
+    await this.assertLabelAndValue(taskContainer, 'Due date', task.dueDate);
+    await this.assertLabelAndValue(taskContainer, 'Assigned to', task.assignedTo);
+
+    await expect(taskContainer.getByText('Manage', { exact: true })).toBeVisible();
   }
 
   async assertOnlyManagementActions(
