@@ -254,18 +254,12 @@ export class TaskUiChecks {
       .first();
   }
 
-private async assertLabelAndValue(taskName: string, label: string, value: string): Promise<void> {
+  async assertLabelAndValue(taskSection: Locator, label: string, value: string) {
+    await expect(taskSection).toBeVisible();
 
-  const taskSection = this.page .locator('exui-case-task').filter({
-      has: this.page.getByText(taskName, { exact: true })
-    });
-
-  await expect(taskSection).toBeVisible();
-
-  await expect(taskSection.getByText(label, { exact: true })).toBeVisible();
-
-  await expect(taskSection.getByText(value, { exact: true })).toBeVisible();
-}
+    await expect(taskSection.getByText(label, { exact: true })).toBeVisible();
+    await expect(taskSection.getByText(value, { exact: true })).toBeVisible();
+  }
 
   // Added to differentiate event link locator inside task tab from Next Steps eg:Issue Application
   private async assertLabelAndLink(label: string, link: string): Promise<void> {
