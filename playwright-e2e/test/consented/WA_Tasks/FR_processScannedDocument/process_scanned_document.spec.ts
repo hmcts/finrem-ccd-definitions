@@ -133,7 +133,7 @@ test.describe('Process scanned document task tests', () => {
       await taskUiChecks.assertTaskUI(
         {
           name: TASK_NAME,
-          priority: 'low',
+          priority: 'LOW',
           dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
           assignedTo: 'Unassigned'
         },
