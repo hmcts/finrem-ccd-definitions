@@ -33,20 +33,33 @@ export class TaskUiChecks {
   }
 
   async assertTaskDetails(task: TaskDetails): Promise<void> {
-    const taskHeading = this.page.getByText(task.name, { exact: true });
+    const taskContainer = this.page.locator('exui-case-task').filter({
+      has: this.page.getByText(task.name, { exact: true })
+    });
 
     await expect(this.activeTasksHeading).toBeVisible();
-    await expect(taskHeading).toBeVisible();
-    await this.assertLabelAndValue('Priority', task.priority);
-    await this.assertLabelAndValue('Due date', task.dueDate);
-    await this.assertLabelAndValue('Assigned to', task.assignedTo);
-    await expect(this.page.getByText('Manage', { exact: true })).toBeVisible();
+
+    await expect(taskContainer).toBeVisible();
+
+    await this.assertLabelAndValue(taskContainer, 'Priority', task.priority);
+    await this.assertLabelAndValue(taskContainer, 'Due date', task.dueDate);
+    await this.assertLabelAndValue(taskContainer, 'Assigned to', task.assignedTo);
+
+    await expect(taskContainer.getByText('Manage', { exact: true })).toBeVisible();
   }
 
   async assertOnlyManagementActions(
-    actions: readonly TaskManagementAction[]
+      taskName: string,
+      actions: readonly TaskManagementAction[]
   ): Promise<void> {
-    const manageSection = this.getManageSection();
+    const taskContainer = this.page.locator('exui-case-task').filter({
+      has: this.page.getByText(taskName, { exact: true })
+    });
+
+    const manageSection = taskContainer
+        .locator('dt')
+        .filter({ hasText: /^Manage$/ })
+        .locator('xpath=following-sibling::dd[1]');
 
     for (const action of taskManagementActions) {
       const actionLocator = manageSection.getByText(action, { exact: true });
@@ -60,8 +73,12 @@ export class TaskUiChecks {
     }
   }
 
-  async assignTaskToMe(): Promise<void> {
-    const assignToMeLink = this.page.locator('#action_claim');
+  async assignTaskToMe(taskName: string) {
+    const taskContainer = this.page.locator('exui-case-task').filter({
+      has: this.page.getByText(taskName, { exact: true })
+    });
+
+    const assignToMeLink = taskContainer.locator('#action_claim');
 
     await expect(assignToMeLink).toBeVisible();
     await assignToMeLink.click();
@@ -213,7 +230,7 @@ export class TaskUiChecks {
   ): Promise<void> {
     await this.waitForTaskVisibility(task.name, true);
     await this.assertTaskDetails(task);
-    await this.assertOnlyManagementActions(actions);
+    await this.assertOnlyManagementActions(task.name, actions);
   }
 
   private async waitForTaskVisibility(
@@ -249,11 +266,11 @@ export class TaskUiChecks {
       .first();
   }
 
-  private async assertLabelAndValue(label: string, value: string): Promise<void> {
-    const labelLocator = this.page.getByText(label, { exact: true });
+  async assertLabelAndValue(taskSection: Locator, label: string, value: string) {
+    await expect(taskSection).toBeVisible();
 
-    await expect(labelLocator).toBeVisible();
-    await expect(this.page.getByText(value, { exact: true })).toBeVisible();
+    await expect(taskSection.getByText(label, { exact: true })).toBeVisible();
+    await expect(taskSection.getByText(value, { exact: true })).toBeVisible();
   }
 
   // Added to differentiate event link locator inside task tab from Next Steps eg:Issue Application
