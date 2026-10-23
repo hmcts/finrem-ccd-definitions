@@ -4694,9 +4694,28 @@
   {
     "LiveFrom": "29/10/2024",
     "ID": "FR_refusedOrderOrPsa",
-    "ListElementCode": "refusedDate",
-    "FieldType": "DateTime",
-    "ElementLabel": "Date refused",
+    "ListElementCode": "hearingDate",
+    "FieldType": "Date",
+    "ElementLabel": "Hearing Date",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "16/01/2025",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "orderFiledBy",
+    "FieldType": "Text",
+    "ElementLabel": "Order filed by",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "17/12/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "judgeType",
+    "FieldType": "FixedList",
+    "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
+    "ElementLabel": "Judge Type",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -4710,11 +4729,20 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "16/01/2025",
+    "LiveFrom": "29/10/2024",
     "ID": "FR_refusedOrderOrPsa",
-    "ListElementCode": "orderFiledBy",
+    "ListElementCode": "judgeFeedback",
     "FieldType": "Text",
-    "ElementLabel": "Order filed by",
+    "ElementLabel": "Judge feedback",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "29/10/2024",
+    "ID": "FR_refusedOrderOrPsa",
+    "ListElementCode": "refusedDate",
+    "FieldType": "DateTime",
+    "ElementLabel": "Date refused",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -4742,34 +4770,6 @@
     "ListElementCode": "submittedDate",
     "FieldType": "DateTime",
     "ElementLabel": "Date submitted",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_refusedOrderOrPsa",
-    "ListElementCode": "judgeFeedback",
-    "FieldType": "Text",
-    "ElementLabel": "Judge feedback",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "29/10/2024",
-    "ID": "FR_refusedOrderOrPsa",
-    "ListElementCode": "hearingDate",
-    "FieldType": "Date",
-    "ElementLabel": "Hearing Date",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "17/12/2024",
-    "ID": "FR_refusedOrderOrPsa",
-    "ListElementCode": "judgeType",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "FR_fl_RefusalOrderJudgeType",
-    "ElementLabel": "Judge Type",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
@@ -5130,97 +5130,6 @@
     "ListElementCode": "hearingCaseDocumentType",
     "FieldType": "Text",
     "ElementLabel": " ",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "ID": "notificationAuditEntry",
-    "ListElementCode": "createdAt",
-    "FieldType": "DateTime",
-    "ElementLabel": "Date the notification audit was created",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "ID": "notificationAuditEntry",
-    "ListElementCode": "wasSent",
-    "FieldType": "YesOrNo",
-    "ElementLabel": "Was the notification sent successfully",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "ID": "notificationAuditEntry",
-    "ListElementCode": "eventId",
-    "FieldType": "Text",
-    "ElementLabel": "Event Name",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "ID": "notificationAuditEntry",
-    "ListElementCode": "party",
-    "FieldType": "Text",
-    "ElementLabel": "Party",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "ID": "notificationAuditEntry",
-    "ListElementCode": "type",
-    "FieldType": "Text",
-    "ElementLabel": "Notification Type",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "ID": "notificationAuditEntry",
-    "ListElementCode": "emailId",
-    "FieldType": "Text",
-    "ElementLabel": "Email ID",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "ID": "notificationAuditEntry",
-    "ListElementCode": "emailTemplate",
-    "FieldType": "Text",
-    "ElementLabel": "Email Template",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "ID": "notificationAuditEntry",
-    "ListElementCode": "letterId",
-    "FieldType": "Text",
-    "ElementLabel": "Letter ID",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "ID": "notificationAuditEntry",
-    "ListElementCode": "attachedPostalDocs",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Text",
-    "ElementLabel": "Posted document filenames",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "14/05/2026",
-    "ID": "notificationAuditEntry",
-    "ListElementCode": "notificationTrackerId",
-    "FieldType": "Text",
-    "ElementLabel": "Notification Tracker ID",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
