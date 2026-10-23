@@ -95,11 +95,9 @@ test.describe('Process scanned document task tests', () => {
             },
             processScannedDocuments.roles[user.role].unassignedActions
           );
-          await taskUiChecks.assignTaskToMe();
-
-          await taskUiChecks.assertOnlyManagementActions(
-            processScannedDocuments.roles[user.role].assignedActions
-          );
+          await taskUiChecks.assignTaskToMe(TASK_NAME);
+          await taskUiChecks.assertOnlyManagementActions(TASK_NAME,
+              processScannedDocuments.roles[user.role].assignedActions);
           await taskUiChecks.assertNextStepVisible(ATTACH_SCANNED_DOCUMENT);
         });
 
@@ -139,7 +137,7 @@ test.describe('Process scanned document task tests', () => {
         },
         processScannedDocuments.roles.admin.unassignedActions
       );
-      await taskUiChecks.assignTaskToMe();
+      await taskUiChecks.assignTaskToMe(TASK_NAME);
       await taskUiChecks.selectTaskNextStep(ATTACH_SCANNED_DOCUMENT);
 
       await attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(false);
@@ -187,7 +185,7 @@ test.describe('Process scanned document task tests', () => {
           },
           processScannedDocuments.roles.teamLeader.unassignedActions
         );
-        await taskUiChecks.assignTaskToMe();
+        await taskUiChecks.assignTaskToMe(TASK_NAME);
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,
           'My work',

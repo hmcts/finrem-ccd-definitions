@@ -48,30 +48,37 @@ export class TaskUiChecks {
     await expect(taskContainer.getByText('Manage', { exact: true })).toBeVisible();
   }
 
-async assertOnlyManagementActions(
-    taskContainer: Locator,
-    actions: readonly TaskManagementAction[]
-): Promise<void> {
+  async assertOnlyManagementActions(
+      taskName: string,
+      actions: readonly TaskManagementAction[]
+  ): Promise<void> {
+    const taskContainer = this.page.locator('exui-case-task').filter({
+      has: this.page.getByText(taskName, { exact: true })
+    });
 
-  const manageSection = taskContainer
-      .locator('dt')
-      .filter({ hasText: /^Manage$/ })
-      .locator('xpath=following-sibling::dd[1]');
+    const manageSection = taskContainer
+        .locator('dt')
+        .filter({ hasText: /^Manage$/ })
+        .locator('xpath=following-sibling::dd[1]');
 
-  for (const action of taskManagementActions) {
-    const actionLocator = manageSection.getByText(action, { exact: true });
+    for (const action of taskManagementActions) {
+      const actionLocator = manageSection.getByText(action, { exact: true });
 
-    if (actions.includes(action)) {
-      await expect(actionLocator).toBeVisible();
-      continue;
+      if (actions.includes(action)) {
+        await expect(actionLocator).toBeVisible();
+        continue;
+      }
+
+      await expect(actionLocator).not.toBeVisible({ timeout: 5_000 });
     }
-
-    await expect(actionLocator).not.toBeVisible({ timeout: 5_000 });
   }
-}
 
-  async assignTaskToMe(): Promise<void> {
-    const assignToMeLink = this.page.locator('#action_claim');
+  async assignTaskToMe(taskName: string) {
+    const taskContainer = this.page.locator('exui-case-task').filter({
+      has: this.page.getByText(taskName, { exact: true })
+    });
+
+    const assignToMeLink = taskContainer.locator('#action_claim');
 
     await expect(assignToMeLink).toBeVisible();
     await assignToMeLink.click();
@@ -218,17 +225,12 @@ async assertOnlyManagementActions(
   }
 
   async assertTaskUI(
-      task: TaskDetails,
-      actions: readonly TaskManagementAction[]
+    task: TaskDetails,
+    actions: readonly TaskManagementAction[]
   ): Promise<void> {
     await this.waitForTaskVisibility(task.name, true);
     await this.assertTaskDetails(task);
-
-    const taskContainer = this.page.locator('exui-case-task').filter({
-      has: this.page.getByText(task.name, { exact: true })
-    });
-
-    await this.assertOnlyManagementActions(taskContainer, actions);
+    await this.assertOnlyManagementActions(task.name, actions);
   }
 
   private async waitForTaskVisibility(
