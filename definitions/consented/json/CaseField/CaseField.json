@@ -2681,5 +2681,25 @@
     "FieldType": "SearchCriteria",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "19/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderApplicantLetterPack",
+    "Label": "Documents posted to applicant",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "19/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderRespondentLetterPack",
+    "Label": "Documents posted to respondent",
+    "FieldType": "Collection",
+    "FieldTypeParameter": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
