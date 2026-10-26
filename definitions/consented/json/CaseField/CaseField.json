@@ -2685,20 +2685,18 @@
   {
     "LiveFrom": "19/10/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "consentOrderApplicantLetterPack",
-    "Label": "Documents posted to applicant",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
+    "ID": "consentOrderApprovedCoverLetterApp",
+    "Label": "Applicant's covert letter for approved consent order",
+    "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "19/10/2026",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "ID": "consentOrderRespondentLetterPack",
-    "Label": "Documents posted to respondent",
-    "FieldType": "Collection",
-    "FieldTypeParameter": "Document",
+    "ID": "consentOrderApprovedCoverLetterResp",
+    "Label": "Respondent's covert letter for approved consent order",
+    "FieldType": "Document",
     "SecurityClassification": "Public",
     "Searchable": "N"
   }
