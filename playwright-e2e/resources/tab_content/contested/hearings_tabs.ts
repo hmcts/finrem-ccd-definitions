@@ -32,7 +32,7 @@ export function newUploadApprovedOrderMHTabDataOnHearing1(): Tab[] {
           hearingAttendance: 'Remote - Video call',
           hearingTimeEstimate: '3 hours',
           additionalInformation: 'This is a test hearing',
-          hearingDocuments: 'HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nOtherDoc.doc'
+          hearingDocuments: 'HearingNotice.pdf\nForm-G.pdf\nPfdNcdrComplianceLetter.pdf\nOutOfFamilyCourtResolution.pdf\nForm-C.pdf\nOtherDoc.doc\napprovedOrder.pdf\napprovedOrder.pdf'
         }
       ])
     }
