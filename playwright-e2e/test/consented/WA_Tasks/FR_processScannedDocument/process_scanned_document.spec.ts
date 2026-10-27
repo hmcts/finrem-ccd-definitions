@@ -44,8 +44,6 @@ const createProcessScannedDocumentTask = async (): Promise<string> => {
 
   await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
 
-  await ConsentedEventApi.caseWorkerHwfFeeAccountDebited(caseId); // clear the created CHWF task
-
   return caseId;
 };
 
@@ -84,6 +82,19 @@ test.describe('Process scanned document task tests', () => {
           await taskUiChecks.selectTaskNextStep(ATTACH_SCANNED_DOCUMENT);
           await attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(true);
         };
+
+        const completeCHWFTask = async (): Promise<void> => {
+          await taskUiChecks.cancelTask();
+          return;
+        };
+
+        await test.step(
+          `CHWF task is closed`,
+          async () => {
+            await completeCHWFTask();
+            await taskUiChecks.assertTaskNotVisible("Check Help with Fees");
+          }
+        );
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
