@@ -88,8 +88,7 @@ test.describe('Process scanned document task tests', () => {
           await taskUiChecks.navigateToTasks();
 
           await taskUiChecks.cancelCheckHelpWithFeesTask();
-        }
-        );
+        });
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await taskUiChecks.assertTaskUI(

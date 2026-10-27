@@ -46,8 +46,6 @@ const createCheckIssueApplicationTaskHWF = async (): Promise<string> => {
 
   await ConsentedEventApi.caseWorkerHWFDecisionMade(caseId);
 
-  await ConsentedEventApi.caseWorkerHwfFeeAccountDebited(caseId); // clear the created CHWF task
-
   return caseId;
 };
 
@@ -98,6 +96,13 @@ test.describe('Check and Issue Application task tests', () => {
           await issueApplicationPage.navigateSubmit();
           await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.issueApplication.listItem);
         };
+
+        await test.step('CHWF task is closed', async () => {
+          await loginAndOpenCase(user, caseId, sessionPages);
+          await taskUiChecks.navigateToTasks();
+
+          await taskUiChecks.cancelCheckHelpWithFeesTask();
+        });
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
