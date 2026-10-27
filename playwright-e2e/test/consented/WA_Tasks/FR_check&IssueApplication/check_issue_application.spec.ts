@@ -109,10 +109,9 @@ test.describe('Check and Issue Application task tests', () => {
             },
             checkIssueApplication.roles[user.role].unassignedActions
           );
-          await taskUiChecks.assignTaskToMe();
 
-          await taskUiChecks.navigateToTasks();
           await taskUiChecks.cancelCheckHelpWithFeesTask();
+          await taskUiChecks.assignTaskToMe();
 
           await taskUiChecks.assertOnlyManagementActions(
             checkIssueApplication.roles[user.role].assignedActions
@@ -169,6 +168,7 @@ test.describe('Check and Issue Application task tests', () => {
           },
           checkIssueApplication.roles.teamLeader.unassignedActions
         );
+        await taskUiChecks.cancelCheckHelpWithFeesTask();
         await taskUiChecks.assignTaskToMe();
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,

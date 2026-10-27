@@ -95,10 +95,9 @@ test.describe('Process scanned document task tests', () => {
             },
             processScannedDocuments.roles[user.role].unassignedActions
           );
-          await taskUiChecks.assignTaskToMe();
 
-          await taskUiChecks.navigateToTasks();
           await taskUiChecks.cancelCheckHelpWithFeesTask();
+          await taskUiChecks.assignTaskToMe();
 
           await taskUiChecks.assertOnlyManagementActions(
             processScannedDocuments.roles[user.role].assignedActions
@@ -190,6 +189,7 @@ test.describe('Process scanned document task tests', () => {
           },
           processScannedDocuments.roles.teamLeader.unassignedActions
         );
+        await taskUiChecks.cancelCheckHelpWithFeesTask();
         await taskUiChecks.assignTaskToMe();
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,
