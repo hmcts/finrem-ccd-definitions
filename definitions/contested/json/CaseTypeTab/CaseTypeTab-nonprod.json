@@ -18,5 +18,23 @@
     "CaseFieldID": "citizenRespondentDocument",
     "TabFieldDisplayOrder": 21,
     "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  },
+  {
+    "LiveFrom": "26/10/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "applicantAccessCodes",
+    "TabFieldDisplayOrder": 32
+  },
+  {
+    "LiveFrom": "26/10/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "respondentDetailsTab",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 9,
+    "CaseFieldID": "respondentAccessCodes",
+    "TabFieldDisplayOrder": 26
   }
 ]
