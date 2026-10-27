@@ -83,12 +83,12 @@ test.describe('Process scanned document task tests', () => {
           await attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(true);
         };
 
-        await test.step(`CHWF task is closed`, async () => {
-              await loginAndOpenCase(user, caseId, sessionPages);
-              await taskUiChecks.navigateToTasks();
+        await test.step('CHWF task is closed', async () => {
+          await loginAndOpenCase(user, caseId, sessionPages);
+          await taskUiChecks.navigateToTasks();
 
-              await taskUiChecks.cancelCheckHelpWithFeesTask();
-          }
+          await taskUiChecks.cancelCheckHelpWithFeesTask();
+        }
         );
 
         await test.step(`${user.name} can see and assign the task`, async () => {

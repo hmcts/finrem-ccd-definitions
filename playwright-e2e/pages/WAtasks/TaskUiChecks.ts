@@ -278,11 +278,11 @@ export class TaskUiChecks {
     await this.page.waitForLoadState('domcontentloaded');
 
     await hwfTask
-        .locator('dt')
-        .filter({ hasText: /^Manage$/ })
-        .locator('xpath=following-sibling::dd[1]')
-        .getByText('Cancel task', { exact: true })
-        .click();
+      .locator('dt')
+      .filter({ hasText: /^Manage$/ })
+      .locator('xpath=following-sibling::dd[1]')
+      .getByText('Cancel task', { exact: true })
+      .click();
 
     await this.page.getByRole('button', { name: 'Cancel task', exact: true }).click();
 
