@@ -97,15 +97,9 @@ test.describe('Check and Issue Application task tests', () => {
           await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.issueApplication.listItem);
         };
 
-        await test.step('CHWF task is closed', async () => {
-          await loginAndOpenCase(user, caseId, sessionPages);
-          await taskUiChecks.navigateToTasks();
-
-          await taskUiChecks.cancelCheckHelpWithFeesTask();
-        });
-
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
+          await taskUiChecks.cancelCheckHelpWithFeesTask();
 
           await taskUiChecks.assertTaskUI(
             {
