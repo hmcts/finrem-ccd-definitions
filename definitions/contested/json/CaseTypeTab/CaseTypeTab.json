@@ -657,6 +657,15 @@
     "TabFieldDisplayOrder": 31
   },
   {
+    "LiveFrom": "26/10/2016",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "applicantDetailsTab",
+    "TabLabel": "Applicant",
+    "TabDisplayOrder": 4,
+    "CaseFieldID": "applicantAccessCodes",
+    "TabFieldDisplayOrder": 32
+  },
+  {
     "LiveFrom": "01/01/2017",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "ApplicantAddressConfidential-solicitor",
@@ -1230,6 +1239,15 @@
     "CaseFieldID": "respondentAddressConfidential",
     "TabFieldDisplayOrder": 25,
     "FieldShowCondition": "respondentRepresented=\"No\""
+  },
+  {
+    "LiveFrom": "26/10/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "respondentDetailsTab",
+    "TabLabel": "Respondent",
+    "TabDisplayOrder": 9,
+    "CaseFieldID": "respondentAccessCodes",
+    "TabFieldDisplayOrder": 26
   },
   {
     "LiveFrom": "01/01/2017",
@@ -7501,15 +7519,6 @@
     "TabFieldDisplayOrder": 21
   },
   {
-    "LiveFrom": "26/10/2026",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "appDocuments",
-    "TabLabel": "Applicant Documents",
-    "TabDisplayOrder": 20,
-    "CaseFieldID": "applicantAccessCodes",
-    "TabFieldDisplayOrder": 22
-  },
-  {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "resDocuments",
@@ -7697,16 +7706,7 @@
     "TabDisplayOrder": 21,
     "CaseFieldID": "respRefusedOrderCollection",
     "TabFieldDisplayOrder": 21
-  },
-  {
-    "LiveFrom": "26/10/2026",
-    "CaseTypeID": "FinancialRemedyContested",
-    "TabID": "resDocuments",
-    "TabLabel": "Respondent Documents",
-    "TabDisplayOrder": 21,
-    "CaseFieldID": "respondentAccessCodes",
-    "TabFieldDisplayOrder": 22
-  },
+  },"",
   {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
